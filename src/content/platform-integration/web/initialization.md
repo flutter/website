@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings" table below). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Common warning" info below). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -101,7 +101,7 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
-## Customize the Flutter Loader
+## Customize the Flutter loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
 arguments to customize initialization behavior:
@@ -209,4 +209,25 @@ _flutter.loader.load({
     await appRunner.runApp();
   }
 });
+```
+
+## Common warning
+
+If you experience a warning similar to the following:
+
+```text
+Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecated.
+Use "{{flutter_service_worker_version}}" template token instead.
+```
+
+You can fix this by changing the following line in the web/index.html file:
+
+```html
+var serviceWorkerVersion = null;
+```
+
+Change it to this:
+
+```html
+var serviceWorkerVersion = '{{flutter_service_worker_version}}';
 ```
