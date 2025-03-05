@@ -16,6 +16,7 @@
   article {
     min-width: 8rem;
     max-width: $site-content-max-width;
+    min-height: calc(100vh - $site-header-height - $site-inline-toc-height);
     padding: 2rem;
 
     img {

@@ -411,6 +411,15 @@ function setupFeedback() {
   }, { once: true });
 }
 
+function setupPlatformKeys() {
+  const os = getOS();
+  const specialKey = os === 'macos' ? 'Command' : 'Control';
+  document.querySelectorAll('kbd.special-key')
+      .forEach(function (element) {
+        element.textContent = specialKey;
+      });
+}
+
 function setupSite() {
   scrollSidenavIntoView();
   initCookieNotice();
@@ -423,6 +432,7 @@ function setupSite() {
   setupTabs();
 
   setupToc();
+  setupPlatformKeys();
   setupFeedback();
 }
 
