@@ -19,13 +19,18 @@ be better handled nested within another widget.
 
 Consider an Internet of Things (IoT) setup flow for a wireless
 light bulb that you control with your app.
-This setup flow consists of 4 pages: 
-find nearby bulbs, select the bulb that you want to add,
-add the bulb, and then complete the setup.
+This setup flow consists of four pages: 
+
+* `find_devices` page: Find nearby bulbs.
+* `select_device` page: Select the bulb that you want to
+  add.
+* `connecting` page: Add the bulb.
+* `finished` page: Complete the setup.
+
 You could orchestrate this behavior from your top-level 
 `Navigator` widget. However, it makes more sense to define a second, 
 nested `Navigator` widget within your `SetupFlow` widget,
-and let the nested `Navigator` take ownership over the 4 pages
+and let the nested `Navigator` take ownership over the four pages
 in the setup flow. This delegation of navigation facilitates
 greater local control, which is 
 generally preferable when developing software.
@@ -160,7 +165,7 @@ want to exit the setup flow.
 
 Prompt the user to confirm exiting the setup flow,
 and ensure that the prompt appears when the user
-presses the hardware back button on Android.
+presses the hardware back button on their device.
 
 <?code-excerpt "lib/prompt_user.dart (PromptUser)"?>
 ```dart
@@ -232,7 +237,7 @@ PreferredSizeWidget _buildFlowAppBar() {
 ```
 
 When the user taps the back arrow in the app bar,
-or presses the back button on Android,
+or presses the back button on their device,
 an alert dialog pops up to confirm that the
 user wants to leave the setup flow.
 If the user presses **Leave**, then the setup flow pops itself 
