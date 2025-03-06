@@ -752,6 +752,7 @@
       { "source": "/to/spm", "destination": "/packages-and-plugins/swift-package-manager", "type": 301 },
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
       { "source": "/to/switch-flutter-version", "destination": "/release/upgrade/#switching-to-a-specific-flutter-version", "type": 301 },
+      { "source": "/to/team-infra", "destination": "https://github.com/flutter/flutter/blob/main/docs/triage/Infra-Triage.md, "type": 301 },
       { "source": "/to/track-widget-creation", "destination": "/tools/devtools/inspector#track-widget-creation", "type": 301 },
       { "source": "/to/troubleshoot-devices", "destination": "/get-started/install", "type": 301 },
       { "source": "/to/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
