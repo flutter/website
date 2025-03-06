@@ -148,11 +148,64 @@ you first need to [install Flutter][flutter-setup] and
 Then follow these steps:
 
  1. <h3>Launch Android Studio</h3>
+
+    Open Android Studio with the Dart and Flutter plugins installed.
+
  1. <h3>Begin project creation</h3>
+
+    If you're on the IDE welcome dialog that says **Welcome to Android Studio**,
+    find and click the **New Flutter Project** button in the center.
+
+    If you already have a project open, either close it or
+    go to **File** <span aria-label="and then">></span> **New**
+    <span aria-label="and then">></span> **New Flutter Project...**.
+
  1. <h3>Choose a project type</h3>
+
+    In the **New Project** dialog, under **Generators** in the left panel,
+    select **Flutter**.
+
+ 1. <h3>Verify Flutter SDK setup</h3>
+
+    At the top of the right panel, ensure the **Flutter SDK path** value matches
+    the location of the Flutter SDK you'd like to develop with.
+    If not, update it by choosing or specifying the correct one.
+
  1. <h3>Configure your project</h3>
+
+    Click **Next** to continue to project configuration.
+    Multiple configuration options should appear.
+
+    In the **Project name** field, enter a name for your app that
+    follows the `lowercase_with_underscores` naming convention,
+    following the [Effective Dart][package-name] guidelines.
+
+    If you're not creating an application,
+    select another template from the **Project type** dropdown.
+
+    If you're creating an app that you might publish in the future,
+    set the **Organization** field [to your company domain][as-set-org].
+
+    The other fields can be kept as is or
+    configured according to your project's needs.
+
  1. <h3>Finish project creation</h3>
+
+    Once you've completed the configuration of your project,
+    click **Create** to begin project initialization.
+
+ 1. <h3>Wait for workspace initialization</h3>
+
+    Android Studio will now initialize your workspace,
+    bootstrap your project file structure,
+    and retrieve your app's dependencies.
+    This might take a while and can be tracked at the bottom of the window.
+
  1. <h3>Run your app</h3>
+
+    Your new app should now be created and open in Android Studio.
+    To try your new app,
+    follow the steps to [run and debug][as-run] in Android Studio.
 
 {:.steps}
 
@@ -161,6 +214,8 @@ If you need more help with developing Flutter in Android Studio,
 check out the [Android Studio for Flutter reference][as-more].
 
 [as-setup]: /tools/android-studio#installation-and-setup
+[as-set-org]: /tools/android-studio#set-the-company-domain
+[as-run]: /tools/android-studio#running-and-debugging
 [as-more]: /tools/android-studio
 
 ## IntelliJ
@@ -170,12 +225,66 @@ you first need to [install Flutter][flutter-setup] and
 [set up IntelliJ][ij-setup] for Flutter development.
 Then follow these steps:
 
- 1. <h3>Launch IntelliJ or other JetBrains IDE</h3>
+ 1. <h3>Launch IntelliJ</h3>
+
+    Open IntelliJ IDEA or your preferred IntelliJ-based IDE by JetBrains
+    that has the Dart and Flutter plugins installed.
+
  1. <h3>Begin project creation</h3>
+
+    If you're on the IDE welcome dialog that says **Welcome to IntelliJ IDEA**,
+    find and click the **New Project** button in the upper right corner.
+
+    If you already have a project open, either close it or
+    go to **File** <span aria-label="and then">></span> **New**
+    <span aria-label="and then">></span> **New Project...**.
+
  1. <h3>Choose a project type</h3>
+
+    In the **New Project** dialog, under **Generators** in the left panel,
+    select **Flutter**.
+
+ 1. <h3>Verify Flutter SDK setup</h3>
+
+    At the top of the right panel, ensure the **Flutter SDK path** value matches
+    the location of the Flutter SDK you'd like to develop with.
+    If not, update it by choosing or specifying the correct one.
+
  1. <h3>Configure your project</h3>
+
+    Click **Next** to continue to project configuration.
+    Multiple configuration options should appear.
+
+    In the **Project name** field, enter a name for your app that
+    follows the `lowercase_with_underscores` naming convention,
+    following the [Effective Dart][package-name] guidelines.
+
+    If you're not creating an application,
+    select another template from the **Project type** dropdown.
+
+    If you're creating an app that you might publish in the future,
+    set the **Organization** field [to your company domain][ij-set-org].
+
+    The other fields can be kept as is or
+    configured according to your project's needs.
+
  1. <h3>Finish project creation</h3>
+
+    Once you've completed the configuration of your project,
+    click **Create** to begin project initialization.
+
+ 1. <h3>Wait for workspace initialization</h3>
+
+    IntelliJ will now initialize your workspace,
+    bootstrap your project file structure,
+    and retrieve your app's dependencies.
+    This might take a while and can be tracked at the bottom of the window.
+
  1. <h3>Run your app</h3>
+
+    Your new app should now be created and open in IntelliJ.
+    To try your new app,
+    follow the steps to [run and debug][ij-run] in IntelliJ.
 
 {:.steps}
 
@@ -185,6 +294,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 [ij-setup]: /tools/android-studio#installation-and-setup
 [ij-more]: /tools/android-studio
+[ij-run]: /tools/android-studio#running-and-debugging
 
 ## Project IDX
 
