@@ -153,7 +153,7 @@ In this section, shell out the basic Flutter app code to start your app.
    ```
 
 [Set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 
 ## Add the Title section
 

@@ -65,13 +65,13 @@ restart your IDE so that it can detect the new device.
 ### Create and run
 
 Creating a new project with desktop support is no different
-than [creating a new Flutter project][] for other platforms.
+from [creating a new Flutter project][] for other platforms.
 
 Once you've configured your environment for desktop
 support, you can create and run a desktop application
 either in the IDE or from the command line.
 
-[creating a new Flutter project]: /get-started/test-drive
+[creating a new Flutter project]: /reference/create-new-app
 
 #### Using an IDE
 
