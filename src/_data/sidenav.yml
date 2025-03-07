@@ -864,6 +864,8 @@
           permalink: /dash
         - title: Widget index
           permalink: /reference/widgets
+        - title: Create a new app
+          permalink: /reference/create-new-app
         - title: flutter CLI
           permalink: /reference/flutter-cli
         - title: API docs
