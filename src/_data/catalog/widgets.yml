@@ -839,16 +839,6 @@
   link: https://api.flutter.dev/flutter/cupertino/CupertinoSearchTextField-class.html
   image:
     src: /assets/images/docs/widget-catalog/cupertino-search-field.png
-- name: CupertinoSegmentedControl
-  description: >-
-    An iOS-style segmented control. Used to select mutually exclusive options in
-    a horizontal list.
-  categories:
-    - 'Cupertino'
-  subcategories: []
-  link: https://api.flutter.dev/flutter/cupertino/CupertinoSegmentedControl-class.html
-  image:
-    src: /assets/images/docs/widget-catalog/cupertino-segmented-control.png
 - name: CupertinoSlider
   description: Used to select from a range of values.
   categories:

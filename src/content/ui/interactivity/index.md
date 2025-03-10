@@ -764,7 +764,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Gestures]: /cookbook/gestures
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
