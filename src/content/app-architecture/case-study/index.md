@@ -84,45 +84,45 @@ The following is how the code is organized within the Compass application.
 
 ```plaintext
 lib
-|____ui
-| |____core
-| | |____ui
-| | | |____<shared widgets>
-| | |____themes
-| |____<FEATURE NAME>
-| | |____view_model
-| | | |_____<view_model class>.dart
-| | |____widgets
-| | | |____<feature name>_screen.dart
-| | | |____<other widgets>
-|____domain
-| |____models
-| | |____<model name>.dart
-|____data
-| |____repositories
-| | |____<repository class>.dart
-| |____services
-| | |____<service class>.dart
-| |____model
-| | |____<api model class>.dart
-|____config
-|____utils
-|____routing
-|____main_staging.dart
-|____main_development.dart
-|____main.dart
+├─┬─ ui
+│ ├─┬─ core
+│ │ ├─┬─ ui
+│ │ │ └─── <shared widgets>
+│ │ └─ themes
+│ └─┬─ <FEATURE NAME>
+│   ├─┬─ view_model
+│   │ └─── <view_model class>.dart
+│   └─┬─widgets
+│     ├── <feature name>_screen.dart
+│     └── <other widgets>
+├─┬─ domain
+│ └─┬─ models
+│   └─── <model name>.dart
+├─┬─ data
+│ ├─┬─ repositories
+│ │ └─── <repository class>.dart
+│ ├─┬─ services
+│ │ └─── <service class>.dart
+│ └─┬─ model
+│   └─── <api model class>.dart
+├─── config
+├─── utils
+├─── routing
+├─── main_staging.dart
+├─── main_development.dart
+└─── main.dart
 
 // The test folder contains unit and widget tests
 test
-|____data
-|____domain
-|____ui
-|____utils
+├─── data
+├─── domain
+├─── ui
+└─── utils
 
 // The testing folder contains mocks other classes need to execute tests
 testing
-|____fakes
-|____models
+├─── fakes
+└─── models
 ```
 
 Most of the application code lives in the
