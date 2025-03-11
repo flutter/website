@@ -15,7 +15,7 @@ choose your preferred environment and follow the corresponding instructions.
 <div class="card-grid">
   <a class="card outlined-card" href="#vs-code">
     <div class="card-header">
-      <header class="card-title">VS Code</header>
+      <span class="card-title">VS Code</span>
     </div>
     <div class="card-content">
       <p>Create a new Flutter app without leaving VS Code.</p>
@@ -23,7 +23,7 @@ choose your preferred environment and follow the corresponding instructions.
   </a>
   <a class="card outlined-card" href="#android-studio">
     <div class="card-header">
-      <header class="card-title">Android Studio</header>
+      <span class="card-title">Android Studio</span>
     </div>
     <div class="card-content">
       <p>Create a new Flutter app without leaving Android Studio.</p>
@@ -31,7 +31,7 @@ choose your preferred environment and follow the corresponding instructions.
   </a>
   <a class="card outlined-card" href="#intellij">
     <div class="card-header">
-      <header class="card-title">IntelliJ</header>
+      <span class="card-title">IntelliJ</span>
     </div>
     <div class="card-content">
       <p>Create a new Flutter app without leaving your IntelliJ-based IDE.</p>
@@ -39,7 +39,7 @@ choose your preferred environment and follow the corresponding instructions.
   </a>
   <a class="card outlined-card" href="#project-idx">
     <div class="card-header">
-      <header class="card-title">Project IDX</header>
+      <span class="card-title">Project IDX</span>
     </div>
     <div class="card-content">
       <p>For quick and easy setup, create a new Flutter app in Project IDX.</p>
@@ -47,7 +47,7 @@ choose your preferred environment and follow the corresponding instructions.
   </a>
   <a class="card outlined-card" href="#terminal">
     <div class="card-header">
-      <header class="card-title">Terminal</header>
+      <span class="card-title">Terminal</span>
     </div>
     <div class="card-content">
       <p>For maximum flexibility, create a new Flutter app from the command line.</p>
@@ -55,10 +55,10 @@ choose your preferred environment and follow the corresponding instructions.
   </a>
   <a class="card outlined-card" href="/add-to-app#get-started">
     <div class="card-header">
-      <header class="card-title">
+      <span class="card-title">
         <span>Add to app</span>
         <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
-      </header>
+      </span>
     </div>
     <div class="card-content">
       <p>Create a new Flutter module to embed in an existing app.</p>

@@ -23,7 +23,7 @@ or the platform you already have set up.
       {% endcase -%}
     </div>
     <div class="card-header text-center">
-      <header class="card-title">Make {{ target }} and Linux desktop apps</header>
+      <span class="card-title">Make {{ target }} and Linux desktop apps</span>
     </div>
   </a>
 {% endfor %}
