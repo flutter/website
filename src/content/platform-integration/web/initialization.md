@@ -222,6 +222,6 @@ Use "{{flutter_service_worker_version}}" template token instead.
 
 You can fix this by deleting the following line in the `web/index.html` file:
 
-```html
+```html title="web/index.html"
 var serviceWorkerVersion = null;
 ```
