@@ -220,7 +220,7 @@ Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecat
 Use "{{flutter_service_worker_version}}" template token instead.
 ```
 
-You can fix this by deleting the following line in the web/index.html file:
+You can fix this by deleting the following line in the `web/index.html` file:
 
 ```html
 var serviceWorkerVersion = null;
