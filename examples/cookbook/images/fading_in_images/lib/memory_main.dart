@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
             const Center(child: CircularProgressIndicator()),
             Center(
               // #docregion MemoryNetwork
-              child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: 'https://picsum.photos/250?image=9',
+              child: FadeInImage(
+                placeholder: const TransparentImage(),
+                image: NetworkImage('https://picsum.photos/250?image=9'),
               ),
               // #enddocregion MemoryNetwork
             ),
