@@ -1,12 +1,19 @@
 ---
 title: Flutter tutorials and sample code
-description: A catalog of Flutter sample applications. 
+description: A catalog of Flutter sample applications.
 short-title: Samples
 toc: false
+js: [ { url: '/assets/js/samples.js', defer: true } ]
 ---
 
-
-<div class="dropdown-group">
+<div id="samples-filters" class="dropdown-group">
+    <button class="chip filter-chip" data-filter="isCodelab" role="checkbox" aria-checked="false" aria-label="Show only Codelabs.">
+      <svg class="chip-icon leading-icon" viewBox="0 0 18 18" aria-hidden="true">
+        <path d="M6.75012 12.1274L3.62262 8.99988L2.55762 10.0574L6.75012 14.2499L15.7501 5.24988L14.6926 4.19238L6.75012 12.1274Z"></path>
+      </svg>
+      <span class="label">Codelabs</span>
+    </button>
+    {% comment %}
     <select class='dropdown-select' name="type" id="type">
         <option value="codelabs">All types</option>
         <option value="codelabs">Codelab</option>
@@ -19,42 +26,18 @@ toc: false
         <option value="samples">Layout</option>
         <option value="recipes">Cookbook recipes</option>
     </select>
+    {% endcomment %}
 </div>
 
+{% assign categories = samples_data.categories -%} 
+{%- assign samples = samples_data.items -%}
 
-{% for section in samples %}
-<h2>{{section.category}}</h2>
-<p>{{section.description}}</p>
-<table class="table table-striped" style="border-bottom:1px #DADCE0 solid">
-        <tr class="tr-main-head" style="text-align: left">
-            <th style="width: 8%"></th>
-            <th style="width: 15%">Title</th>
-            <th style="width: 22%">Features</th>
-            <th style="width: 50%">Description</th>
-            <th style="width: 10%">Link</th>
-        </tr>
-        {% for sample in section.samples %}
-            <tr>
-                <td>
-                    {%- if sample.platform == "dart" -%}
-                    <img src='/assets/images/branding/dart/64.png' alt="Dart icon" width="24px"/>
-                    {%- else -%}
-                    <img src='/assets/images/branding/flutter/icon/1080.png' alt="Flutter icon" width="24px"/>
-                    {% endif %}
-                </td>
-                <td>
-                    <p>{{sample.title}}</p>
-                </td>
-                <td>
-                    <p>{{sample.features}}</p>
-                </td>
-                <td>
-                    <p>{{sample.description}}</p>
-                </td>
-                <td>
-                    <a href="{{sample.link}}">Source</a>
-                </td>
-            </tr>
-        {% endfor %}
-</table>
+<section id="all-samples-tables">
+
+{% for category in categories -%}
+    <h2>{{category.name}}</h2>
+    <p>{{category.description}}</p>
+        {% assign type_samples = samples | where: "type", category.type %}
+        {% render docs/samples/sample-table.md, samples:type_samples %}
 {% endfor %}
+</section>

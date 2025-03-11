@@ -1,0 +1,43 @@
+{
+"categories": [
+  {
+    "type": "quickstart",
+    "name": "Quickstart samples",
+    "description": "Sample code that covers a single SDK feature."
+  },
+  {
+    "type": "codelab",
+    "name": "Codelabs",
+    "description": "The Flutter Codelabs provide a guided, hands-on coding experience. Some codelabs run in DartPad&mdash;no downloads required!"
+  }
+],
+"items": [
+  {
+    "name": "Add-to-app",
+    "description": "Recommended approaches for adding Flutter to existing apps.",
+    "categories": [
+      "platforms",
+      "iOS",
+      "Android"
+    ],
+    "sdk": "flutter",
+    "type": "quickstart",
+    "source-link": {
+      "url": "https://github.com/flutter/samples/tree/main/add_to_app",
+      "label": "Github"
+    }
+  },
+  {
+    "name": "Building your first Flutter app",
+    "description": "An instructor-led version of our very popular \"Write your first Flutter app\" codelab (listed below).",
+    "categories": [
+      "beginner-friendly"
+    ],
+    "sdk": "flutter",
+    "type": "codelab",
+    "source-link": {
+      "url": "https://github.com/flutter/samples/tree/main/add_to_app",
+      "label": "Google Codelab"
+    }
+  }
+]}

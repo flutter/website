@@ -100,7 +100,11 @@
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
 - title: Tutorials and samples
-  permalink: /samples
+  children:
+    - title: Samples
+      permalink: /samples
+    - title: Cookbook
+      permalink: /cookbook
 
 - title: Stay up to date
   permalink: /release

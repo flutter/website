@@ -37,7 +37,7 @@
         "Write your first Flutter app" codelab
         (listed below).
       link: https://github.com/flutter/samples
-      link-text: Google Codelabs
+      link-text: "Google Codelabs"
       platform: flutter
     - title: Your first Flutter app
       features: animations
@@ -48,7 +48,7 @@
         (This also replaces the previous "write your first Flutter app"
         for mobile, part 1 and part 2 codelabs.)
       link: https://github.com/flutter/samples
-      link-text: Google Codelabs
+      link-text: "Google Codelabs"
       platform: flutter
 
 
