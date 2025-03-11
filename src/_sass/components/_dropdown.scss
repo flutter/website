@@ -1,0 +1,25 @@
+@use '../base/variables' as *;
+
+.dropdown-group {
+  align-items: center;
+  background-color: $site-color-codeblock-bg;
+  display: flex;
+  padding: 20px 18px;
+}
+
+.dropdown-select {
+  padding: 10px 24px;
+  margin-right: 1rem;
+  background-color: transparent;
+  border: 1px solid $site-color-light-grey;
+  border-radius: 4px;
+}
+
+.dropdown-select option {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0;
+}

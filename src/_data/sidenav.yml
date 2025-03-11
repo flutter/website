@@ -51,13 +51,8 @@
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
-    - divider
-    - title: Codelabs
-      permalink: /codelabs
-    - title: Cookbook
-      permalink: /cookbook
-    - title: Demos and samples
-      permalink: https://github.com/flutter/samples
+- title: Tutorials and samples
+  permalink: /samples
 
 - title: Stay up to date
   permalink: /release

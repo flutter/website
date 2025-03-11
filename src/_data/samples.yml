@@ -1,0 +1,69 @@
+- category: Quickstart samples
+  description: |
+    Sample code that covers a single SDK feature.
+  samples:
+    - title: Add-to-app
+      features: platforms, iOS, Android
+      platform: flutter
+      description: Recommended approaches for adding Flutter to existing Android and iOS apps.
+      link: https://github.com/flutter/samples/tree/main/add_to_app
+      link-text: Github
+
+    - title: Animations
+      features: animations
+      description: A showcase of Flutter's animation features.
+      link: https://github.com/flutter/samples/tree/main/animations
+      platform: flutter
+      link-text: Github
+
+    - title: Command line
+      features: dart
+      description: A demonstration of how to build a CLI in Dart.
+      link: https://github.com/dart-lang/samples/tree/main/command_line
+      link-text: Github
+      platform: dart
+
+
+- category: Codelabs
+  description: |
+    The Flutter codelabs provide a guided, 
+    hands-on coding experience. Some codelabs
+    run in DartPad&mdash;no downloads required!
+  samples:
+    - title: Building your first Flutter app
+      features: Beginner friendly, widgets
+      description: | 
+        An instructor-led version of our very popular
+        "Write your first Flutter app" codelab
+        (listed below).
+      link: https://github.com/flutter/samples
+      link-text: Google Codelabs
+      platform: flutter
+    - title: Your first Flutter app
+      features: animations
+      description: |
+        Create a simple app that automatically generates cool-sounding names,
+        such as "newstay", "lightstream", "mainbrake", or "graypine".
+        This app is responsive and runs on mobile, desktop, and web.
+        (This also replaces the previous "write your first Flutter app"
+        for mobile, part 1 and part 2 codelabs.)
+      link: https://github.com/flutter/samples
+      link-text: Google Codelabs
+      platform: flutter
+
+
+- category: Demo applications
+  description: |
+    Full(er) featured sample applications.
+  samples:
+    - title: Rolodex
+      features: Cupertino, animations
+      description: A Flutter implementation of the iOS contacts app.
+      link: https://github.com/flutter/samples
+      platform: flutter
+
+    - title: Sample 1
+      features: animations
+      description: How to do animations?!
+      link: https://github.com/flutter/samples
+      platform: dart
