@@ -88,11 +88,11 @@ lib
 │ ├─┬─ core
 │ │ ├─┬─ ui
 │ │ │ └─── <shared widgets>
-│ │ └─ themes
+│ │ └─── themes
 │ └─┬─ <FEATURE NAME>
 │   ├─┬─ view_model
 │   │ └─── <view_model class>.dart
-│   └─┬─widgets
+│   └─┬─ widgets
 │     ├── <feature name>_screen.dart
 │     └── <other widgets>
 ├─┬─ domain
