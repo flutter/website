@@ -2,6 +2,54 @@
 
 - title: Set up Flutter
   permalink: /get-started/install
+  hiddenChildren: true
+  children:
+    - title: Choose a platform
+      permalink: /get-started/install
+    - title: On Windows
+      permalink: /get-started/install/windows
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/windows
+        - title: Target Android
+          permalink: /get-started/install/windows/mobile
+        - title: Target web
+          permalink: /get-started/install/windows/web
+        - title: Target desktop
+          permalink: /get-started/install/windows/desktop
+    - title: On macOS
+      permalink: /get-started/install/macos
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/macos
+        - title: Target iOS
+          permalink: /get-started/install/macos/mobile-ios
+        - title: Target Android
+          permalink: /get-started/install/macos/mobile-android
+        - title: Target web
+          permalink: /get-started/install/macos/web
+        - title: Target desktop
+          permalink: /get-started/install/macos/desktop
+    - title: On Linux
+      permalink: /get-started/install/linux
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/linux
+        - title: Target Android
+          permalink: /get-started/install/linux/android
+        - title: Target web
+          permalink: /get-started/install/linux/web
+        - title: Target desktop
+          permalink: /get-started/install/linux/desktop
+    - title: On ChromeOS
+      permalink: /get-started/install/chromeos
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/chromeos
+        - title: Target Android
+          permalink: /get-started/install/chromeos/android
+        - title: Target web
+          permalink: /get-started/install/chromeos/web
 
 - title: Learn Flutter
   children:
@@ -658,8 +706,10 @@
   children:
     - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Create flavors of an app
+    - title: Create app flavors for Android
       permalink: /deployment/flavors
+    - title: Create app flavors for iOS and macOS
+      permalink: /deployment/flavors-ios
     - title: Build and release an Android app
       permalink: /deployment/android
     - title: Build and release an iOS app
@@ -809,6 +859,8 @@
           permalink: /dash
         - title: Widget index
           permalink: /reference/widgets
+        - title: Create a new app
+          permalink: /reference/create-new-app
         - title: flutter CLI
           permalink: /reference/flutter-cli
         - title: API docs

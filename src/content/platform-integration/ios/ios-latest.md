@@ -5,6 +5,13 @@ description: >-
   the latest releases of iOS.
 ---
 
+:::warning
+iOS 18.4 beta 1 breaks Flutter's debug mode on physical devices.
+If you have upgraded your physical device to iOS 18.4 beta 1,
+please upgrade to iOS 18.4 beta 2.
+See [flutter#163984][] for details.
+:::
+
 You can develop Flutter on the iOS platform, even on
 the latest release of iOS. The latest Flutter SDK
 already supports a number of the features in the
@@ -13,6 +20,7 @@ latest release of iOS.
 Of course, if you find a bug on Flutter,
 please [file an issue][].
 
+[flutter#163984]: {{site.github}}/flutter/flutter/issues/163984
 [file an issue]: {{site.github}}/flutter/flutter/issues
 
 ## iOS 18 release

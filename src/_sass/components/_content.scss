@@ -3,15 +3,20 @@
 .site-content {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   min-width: 0;
   width: 100%;
 
   min-height: calc(100vh - $site-header-height);
 
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+
   article {
     min-width: 8rem;
     max-width: $site-content-max-width;
+    min-height: calc(100vh - $site-header-height - $site-inline-toc-height);
     padding: 2rem;
 
     img {
@@ -23,7 +28,7 @@
     }
   }
 
-  &__title {
+  #site-header-wrapper {
     margin-block-end: 1.5rem;
 
     h1 {
@@ -41,17 +46,21 @@
 
   h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 7rem;
     line-height: 1.2;
     font-family: $site-font-family-ui;
     font-weight: 400;
+
+    @media (min-width: 1200px) {
+      scroll-margin-top: 5rem;
+    }
   }
 
   h1 {
     font-size: 2.75rem;
     margin-top: 0;
     margin-bottom: 0;
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 8rem;
   }
 
   h2 {

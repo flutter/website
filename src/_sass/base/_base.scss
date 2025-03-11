@@ -289,9 +289,81 @@ details {
   }
 }
 
+ol.steps {
+  position: relative;
+  list-style: none;
+  counter-reset: steps;
+  padding-inline-start: 2.5rem;
+  margin-block-end: 1rem;
+
+  $step-indicator-height: 1.75rem;
+
+  li {
+    position: relative;
+    counter-increment: steps;
+
+    > h3:first-child {
+      display: flex;
+      align-items: center;
+      height: $step-indicator-height;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: $site-color-body-light;
+      margin-block-end: 0.5rem;
+    }
+
+    > * {
+      &:first-child {
+        margin-block-start: 0;
+      }
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      padding-block-end: 0.75rem;
+
+      &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        top: 0;
+        left: calc($step-indicator-height / 2 - 2.5rem - 1px);
+        width: 2px;
+        height: 100%;
+        background-color: $sidenav-divider-color;
+      }
+    }
+
+    &:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: $site-font-family-ui;
+      content: counter(steps);
+      user-select: none;
+      z-index: 10;
+
+      position: absolute;
+      left: -2.5rem;
+
+      height: $step-indicator-height;
+      width: $step-indicator-height;
+      background-color: $sidenav-divider-color;
+      color: $site-color-body-light;
+      font-weight: 500;
+      border-radius: 100%;
+    }
+  }
+}
+
 main {
   ol + img, ul + img, ol + p, ul + p, p + p + img,
-  li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child, ul + p:last-child {
+  article li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child,
+  ul + p:last-child {
     margin-bottom: 1rem;
   }
 }

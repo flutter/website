@@ -23,9 +23,11 @@
 @use 'components/next-prev-nav';
 @use 'components/pill';
 @use 'components/sidebar';
+@use 'components/side-menu';
 @use 'components/site-switcher';
 @use 'components/tabs';
 @use 'components/toc';
+@use 'components/trailing';
 
 // Styles for specific pages, alphabetically ordered.
 @use 'pages/not-found';

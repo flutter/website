@@ -9,9 +9,12 @@ description: Learn how Flutter's layout mechanism works and how to build a layou
 
 <?code-excerpt path-base=""?>
 
+## Overview
+
 :::secondary What's the point?
+* Layouts in Flutter are built with widgets.
 * Widgets are classes used to build UIs.
-* Widgets are used for both layout and UI elements.
+* Widgets are also used to build UI elements.
 * Compose simple widgets to build complex widgets.
 :::
 
@@ -22,10 +25,16 @@ and text that you see in a Flutter app are all widgets.
 But things you don't see are also widgets,
 such as the rows, columns, and grids that arrange,
 constrain, and align the visible widgets.
+You create a layout by composing widgets to build more
+complex widgets.
 
-You create a layout by composing widgets to build more complex widgets.
-For example, the first screenshot below shows 3 icons with a label
-under each one:
+## Conceptual example
+
+In the following example, the first screenshot displays
+three icons with labels and the second screenshot includes
+the visual layout for rows and columns. In the second
+screenshot, `debugPaintSizeEnabled` is set to `true` so you
+can see the visual layout.
 
 <div class="side-by-side">
   <div class="centered-rows">
@@ -36,18 +45,8 @@ under each one:
   </div>
 </div>
 
-The second screenshot displays the visual layout, showing a row of
-3 columns where each column contains an icon and a label.
-
-:::note
-Most of the screenshots in this tutorial are displayed with
-`debugPaintSizeEnabled` set to `true` so you can see the visual layout.
-For more information, see
-[Debugging layout issues visually][], a section in
-[Using the Flutter inspector][].
-:::
-
-Here's a diagram of the widget tree for this UI:
+Here's a diagram of the widget tree for the previous
+example:
 
 <img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center" alt="Node tree">
 
@@ -57,16 +56,29 @@ that allows you to customize its child widget. Use a `Container` when
 you want to add padding, margins, borders, or background color,
 to name some of its capabilities.
 
-In this example, each [`Text`][] widget is placed in a `Container`
+Each [`Text`][] widget is placed in a `Container`
 to add margins. The entire [`Row`][] is also placed in a
 `Container` to add padding around the row.
 
-The rest of the UI in this example is controlled by properties.
+The rest of the UI is controlled by properties.
 Set an [`Icon`][]'s color using its `color` property.
 Use the `Text.style` property to set the font, its color, weight, and so on.
 Columns and rows have properties that allow you to specify how their
 children are aligned vertically or horizontally, and how much space
 the children should occupy.
+
+:::note
+Most of the screenshots in this tutorial are displayed with
+`debugPaintSizeEnabled` set to `true` so you can see the
+visual layout. For more information, see
+[Debugging layout issues visually][].
+:::
+
+[`Container`]: {{api}}/widgets/Container-class.html
+[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
+[`Icon`]: {{api}}/material/Icons-class.html
+[`Row`]: {{api}}/widgets/Row-class.html
+[`Text`]: {{api}}/widgets/Text-class.html
 
 ## Lay out a widget
 
@@ -80,35 +92,41 @@ or an image on the screen.
 ### 1. Select a layout widget
 
 Choose from a variety of [layout widgets][] based
-on how you want to align or constrain the visible widget,
+on how you want to align or constrain a visible widget,
 as these characteristics are typically passed on to the
 contained widget.
 
-This example uses [`Center`][] which centers its content
-horizontally and vertically.
+For example, you could use the
+[`Center`][] layout widget to center a visible widget
+horizontally and vertically:
+
+```dart
+Center(
+  //content here
+)
+```
+
+[`Center`]: {{api}}/widgets/Center-class.html
+[layout widgets]: /ui/widgets/layout
 
 ### 2. Create a visible widget
 
-For example, create a [`Text`][] widget:
+Choose a [visible widget][] for your app to contain
+visible elements, such as [text][], [images][], or
+[icons][].
 
-<?code-excerpt "layout/base/lib/main.dart (text)" replace="/child: //g"?>
+For example, you could use the [`Text`][] widget display
+some text:
+
 ```dart
-Text('Hello World'),
+Text('Hello World')
 ```
 
-Create an [`Image`][] widget:
-
-<?code-excerpt "layout/lakes/step5/lib/main.dart (image-asset)" remove="/width|height/"?>
-```dart
-
-```
-
-Create an [`Icon`][] widget:
-
-<?code-excerpt "layout/lakes/step5/lib/main.dart (icon)"?>
-```dart
-Icon(Icons.star, color: Colors.red[500]),
-```
+[icons]: {{api}}/material/Icons-class.html
+[images]: {{api}}/widgets/Image-class.html
+[text]: {{api}}/widgets/Text-class.html
+[`Text`]: {{api}}/widgets/Text-class.html
+[visible widget]: /ui/widgets
 
 ### 3. Add the visible widget to the layout widget
 
@@ -136,7 +154,48 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-#### Material apps
+<a id="non-material-apps"></a>
+<a id="material-apps"></a>
+<a id="cupertino-apps"></a>
+
+{% tabs "app-type-tabs" %}
+
+{% tab "Standard apps" %}
+
+For a general app, you can add the `Container` widget to
+the app's `build()` method:
+
+<?code-excerpt path-base="layout/non_material"?>
+<?code-excerpt "lib/main.dart (my-app)"?>
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Center(
+        child: Text(
+          'Hello World',
+          textDirection: TextDirection.ltr,
+          style: TextStyle(fontSize: 32, color: Colors.black87),
+        ),
+      ),
+    );
+  }
+}
+```
+
+By default, a general app doesn't include an `AppBar`,
+title, or background color. If you want these features in a
+general app, you have to build them yourself. This app
+changes the background color to white and the text to
+dark grey to mimic a Material app.
+
+{% endtab %}
+
+{% tab "Material apps" %}
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
@@ -175,7 +234,9 @@ libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
-#### Cupertino apps
+{% endtab %}
+
+{% tab "Cupertino apps" %}
 
 To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
 
@@ -235,47 +296,28 @@ You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
+{% endtab %}
+
+{% endtabs %}
+
 [`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
+[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
 [`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
 [`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
+[Cupertino library]: {{api}}/cupertino/cupertino-library.html
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
+[`build()`]: {{api}}/widgets/StatelessWidget/build.html
+[Material library]: {{api}}/material/material-library.html
+[`Scaffold`]: {{api}}/material/Scaffold-class.html
+[widgets library]: {{api}}/widgets/widgets-library.html
 
-#### Non-Material apps
-
-For a non-Material app, you can add the `Container` widget to the app's
-`build()` method:
-
-<?code-excerpt path-base="layout/non_material"?>
-<?code-excerpt "lib/main.dart (my-app)"?>
-```dart
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Center(
-        child: Text(
-          'Hello World',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(fontSize: 32, color: Colors.black87),
-        ),
-      ),
-    );
-  }
-}
-```
-
-By default, a non-Material app doesn't include an `AppBar`, title,
-or background color. If you want these features in a non-Material app,
-you have to build them yourself. This app changes the background
-color to white and the text to dark grey to mimic a Material app.
+### 5. Run your app
 
 <div class="side-by-side">
 <div>
 
-That's it! When you run the app, you should see _Hello World_.
+After you've added your widgets, run your app. When you run
+the app, you should see _Hello World_.
 
 App source code:
 
@@ -338,6 +380,12 @@ and up to 3 lines of text.  Instead of Column, you might prefer
 if its content is too long to fit the available space.
 For more information, see [Common layout widgets][].
 :::
+
+[Common layout widgets]: #common-layout-widgets
+[`Column`]: {{api}}/widgets/Column-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[`Row`]: {{api}}/widgets/Row-class.html
 
 ### Aligning widgets
 
@@ -427,6 +475,10 @@ space evenly between, above, and below each image.
 </div>
 </div>
 
+[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
+[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
+[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+
 ### Sizing widgets
 
 When a layout is too large to fit a device, a yellow
@@ -492,6 +544,7 @@ the flex factor of the middle image to 2:
 </div>
 </div>
 
+[`Expanded`]: {{api}}/widgets/Expanded-class.html
 [sizing]: {{examples}}/layout/sizing
 
 ### Packing widgets
@@ -691,10 +744,11 @@ using **Window > Scale**.
 
 **App source:** [pavlova]({{examples}}/layout/pavlova)
 
+<hr>
+
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
-
-<hr>
+[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
 
 ## Common layout widgets
 
@@ -713,7 +767,12 @@ from the [widgets library][], and specialized widgets from the
 [Material library][]. Any app can use the widgets library but
 only Material apps can use the Material Components library.
 
-### Standard widgets
+<a id="standard-widgets"></a>
+<a id="materials-widgets"></a>
+
+{% tabs "os-archive-tabs" %}
+
+{% tab "Standard widgets" %}
 
 * [`Container`](#container): Adds padding, margins, borders,
   background color, or other decorations to a widget.
@@ -721,12 +780,49 @@ only Material apps can use the Material Components library.
 * [`ListView`](#listview): Lays widgets out as a scrollable list.
 * [`Stack`](#stack): Overlaps a widget on top of another.
 
-### Material widgets
+{% endtab %}
 
+{% tab "Material widgets" %}
+
+* [`Scaffold`][]: Provides a structured layout framework
+  with slots for common Material Design app elements.
+* [`AppBar`][]: Creates a horizontal bar that's typically
+  displayed at the top of a screen.
 * [`Card`](#card): Organizes related info into a box with
   rounded corners and a drop shadow.
 * [`ListTile`](#listtile): Organizes up to 3 lines of text,
   and optional leading and trailing icons, into a row.
+
+{% endtab %}
+
+{% tab "Cupertino widgets" %}
+
+* [`CupertinoPageScaffold`][]: Provides the basic layout
+  structure for an iOS-style page.   
+* [`CupertinoNavigationBar`][]: Creates an iOS-style
+  navigation bar at the top of the screen.   
+* [`CupertinoSegmentedControl`][]: Creates a segmented
+  control for selecting.   
+* [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]:
+  Creates the characteristic iOS bottom tab bar.
+
+{% endtab %}
+
+{% endtabs %}
+
+[`Scaffold`]: {{api}}/material/Scaffold-class.html
+[`AppBar`]: {{api}}/material/AppBar-class.html
+[`Container`]: {{api}}/widgets/Container-class.html
+[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSegmentedControl`]: {{api}}/cupertino/CupertinoSegmentedControl-class.html
+[`CupertinoTabBar`]: {{api}}/cupertino/CupertinoTabBar-class.html
+[`CupertinoTabScaffold`]: {{api}}/cupertino/CupertinoTabScaffold-class.html
+[`GridView`]: {{api}}/widgets/GridView-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[Material library]: {{api}}/material/material-library.html
+[widgets library]: {{api}}/widgets/widgets-library.html
 
 ### Container
 
@@ -738,6 +834,8 @@ color or image.
 
 <div class="side-by-side">
 <div>
+
+[`Container`]: {{api}}/widgets/Container-class.html
 
 #### Summary (Container)
 
@@ -807,6 +905,9 @@ You can find more `Container` examples in the [tutorial][].
 
 <hr>
 
+[`Container`]: {{api}}/widgets/Container-class.html
+[tutorial]: /ui/layout/tutorial
+
 ### GridView
 
 Use [`GridView`][] to lay widgets out as a two-dimensional
@@ -814,6 +915,8 @@ list. `GridView` provides two pre-fabricated lists,
 or you can build your own custom grid. When a `GridView`
 detects that its contents are too long to fit the render box,
 it automatically scrolls.
+
+[`GridView`]: {{api}}/widgets/GridView-class.html
 
 #### Summary (GridView)
 
@@ -836,6 +939,9 @@ row and column a cell occupies (for example,
 it's the entry in the "calorie" column for the "avocado" row), use
 [`Table`][] or [`DataTable`][].
 :::
+
+[`DataTable`]: {{api}}/material/DataTable-class.html
+[`Table`]: {{api}}/widgets/Table-class.html
 
 #### Examples (GridView)
 
@@ -880,11 +986,15 @@ List<Widget> _buildGridTileList(int count) =>
 
 <hr>
 
+[`GridTile`]: {{api}}/material/GridTile-class.html
+
 ### ListView
 
 [`ListView`][], a column-like widget, automatically
 provides scrolling when its content is too long for
 its render box.
+
+[`ListView`]: {{api}}/widgets/ListView-class.html
 
 #### Summary (ListView)
 
@@ -893,6 +1003,8 @@ its render box.
 * Detects when its content won't fit and provides scrolling
 * Less configurable than `Column`, but easier to use and
   supports scrolling
+
+[`Column`]: {{api}}/widgets/Column-class.html
 
 #### Examples (ListView)
 
@@ -956,11 +1068,16 @@ ListTile _tile(String title, String subtitle, IconData icon) {
 
 <hr>
 
+[`Colors`]: {{api}}/material/Colors-class.html
+[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
+
 ### Stack
 
 Use [`Stack`][] to arrange widgets on top of a base
 widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
+
+[`Stack`]: {{api}}/widgets/Stack-class.html
 
 #### Summary (Stack)
 
@@ -1043,6 +1160,13 @@ For a list of supported elevation values, see [Elevation][] in the
 [Material guidelines][Material Design].
 Specifying an unsupported value disables the drop shadow entirely.
 
+[`Card`]: {{api}}/material/Card-class.html
+[Elevation]: {{site.material}}/styles/elevation
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[Material Design]: {{site.material}}/styles
+[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
+[Material library]: {{api}}/material/material-library.html
+
 #### Summary (Card)
 
 * Implements a [Material card][]
@@ -1052,6 +1176,9 @@ Specifying an unsupported value disables the drop shadow entirely.
 * Displayed with rounded corners and a drop shadow
 * A `Card`'s content can't scroll
 * From the [Material library][]
+
+[Material card]: {{site.material}}/components/cards
+[Material library]: {{api}}/material/material-library.html
 
 #### Examples (Card)
 
@@ -1120,12 +1247,19 @@ containing up to 3 lines of text and optional leading
 and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
+[`Card`]: {{api}}/material/Card-class.html
+[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListView`]: {{api}}/widgets/ListView-class.html
+[Material library]: {{api}}/material/material-library.html
+
 #### Summary (ListTile)
 
 * A specialized row that contains up to 3 lines of text and
   optional icons
 * Less configurable than `Row`, but easier to use
 * From the [Material library][]
+
+[Material library]: {{api}}/material/material-library.html
 
 #### Examples (ListTile)
 
@@ -1156,6 +1290,8 @@ to learn how Flutter positions and sizes
 the components in a layout. For more information,
 see [Understanding constraints][].
 
+[Understanding constraints]: /ui/layout/constraints
+
 ## Videos
 
 The following videos, part of the
@@ -1177,6 +1313,8 @@ focuses on a widget. Several of them includes layout widgets.
 {% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week', true %}
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
+
+[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
 ## Other resources
 
@@ -1201,48 +1339,9 @@ The following resources might help when writing layout code.
 [Zero to One with Flutter][]
 : One person's experience writing his first Flutter app.
 
-[Cupertino library]: {{api}}/cupertino/cupertino-library.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[Adding assets and images]: /ui/assets/assets-and-images
-[API reference docs]: {{api}}
-[`build()`]: {{api}}/widgets/StatelessWidget/build.html
-[`Card`]: {{api}}/material/Card-class.html
-[`Center`]: {{api}}/widgets/Center-class.html
-[`Column`]: {{api}}/widgets/Column-class.html
-[Common layout widgets]: #common-layout-widgets
-[`Colors`]: {{api}}/material/Colors-class.html
-[`Container`]: {{api}}/widgets/Container-class.html
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
-[`DataTable`]: {{api}}/material/DataTable-class.html
-[Elevation]: {{site.material}}/styles/elevation
-[`Expanded`]: {{api}}/widgets/Expanded-class.html
-[Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
-[`GridView`]: {{api}}/widgets/GridView-class.html
-[`GridTile`]: {{api}}/material/GridTile-class.html
-[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
-[`Icon`]: {{api}}/material/Icons-class.html
-[`Image`]: {{api}}/widgets/Image-class.html
 [Layout tutorial]: /ui/layout/tutorial
-[layout widgets]: /ui/widgets/layout
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
-[Material card]: {{site.material}}/components/cards
-[Material Design]: {{site.material}}/styles
-[Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
-[Material library]: {{api}}/material/material-library.html
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
-[`Row`]: {{api}}/widgets/Row-class.html
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
-[`Stack`]: {{api}}/widgets/Stack-class.html
-[`Table`]: {{api}}/widgets/Table-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
-[tutorial]: /ui/layout/tutorial
-[widgets library]: {{api}}/widgets/widgets-library.html
 [Widget catalog]: /ui/widgets
-[Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
-[Understanding constraints]: /ui/layout/constraints
-[Using the Flutter inspector]: /tools/devtools/inspector
+[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
+[API reference docs]: {{api}}
+[Adding assets and images]: /ui/assets/assets-and-images
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

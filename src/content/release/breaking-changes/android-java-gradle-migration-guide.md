@@ -11,7 +11,9 @@ If you've recently upgraded Android Studio to the Flamingo
 release and have either run or built an existing Android app,
 you might have run into an error similar to the following:
 
-![Error dialog in Android Studio Flamingo: MultipleCompilationErrorsException](/assets/images/docs/releaseguide/android-studio-flamingo-error.png){:width="80%"}
+```sh
+Caused by: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:
+```
 
 The terminal output for this error is
 similar to the following:
@@ -95,7 +97,7 @@ To use select your top-level `build.gradle` file in Android Studio then select
 Tools -> AGP Upgrade Assistant. 
 
 ### Solution 2: Command line
-Run `flutter analyze --suggestion` to see if your AGP, Java, and Gradle versions are compatible. 
+Run `flutter analyze --suggestions` to see if your AGP, Java, and Gradle versions are compatible. 
 If Gradle needs to be updated you can update it with `./gradlew wrapper --gradle-version=SOMEGRADLEVERSION`
 where SOMEGRADLEVERSION is the version (you can use a newer version)
 suggested by `flutter analyze`. 

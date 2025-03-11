@@ -7,7 +7,7 @@ function setupTabs() {
   tabsWrappers.forEach(function (tabWrapper) {
     const saveKey = tabWrapper.dataset.tabSaveKey;
     const localStorageKey = `tab-save-${saveKey}`;
-    const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    const tabs = tabWrapper.querySelectorAll(':scope > .nav-tabs a.nav-link');
     let tabToChangeTo;
 
     tabs.forEach(function (tab) {
@@ -87,9 +87,10 @@ function _findAndActivateTabsWithSaveId(saveKey, saveId) {
 }
 
 function _activateTabWithSaveId(tabWrapper, saveId) {
-  const tabToActivate = tabWrapper.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
+  const tabsNav = tabWrapper.querySelector(':scope > .nav-tabs');
+  const tabToActivate = tabsNav.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
   if (tabToActivate) {
-    const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    const tabs = tabsNav.querySelectorAll('a.nav-link');
     _clearActiveTabs(tabs);
     _setActiveTab(tabToActivate);
   }

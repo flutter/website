@@ -24,7 +24,7 @@ a, button {
   background: none;
   cursor: pointer;
 
-  &.filled-button {
+  &.filled-button, &.text-button {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -32,12 +32,16 @@ a, button {
     outline-offset: 2px;
     border-radius: 24px;
     font-weight: 500;
+    gap: 0.3rem;
     padding: 0.5rem 1rem;
-    background-color: $site-color-primary;
-    color: $site-color-white;
     text-decoration: none;
     cursor: pointer;
     user-select: none;
+  }
+
+  &.filled-button {
+    background-color: $site-color-primary;
+    color: $site-color-white;
 
     &:hover {
       @include mixins.interaction-style(8%);
@@ -45,6 +49,18 @@ a, button {
 
     &:active {
       @include mixins.interaction-style(16%);
+    }
+  }
+
+  &.text-button {
+    color: $site-color-primary;
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
     }
   }
 

@@ -35,7 +35,7 @@ or choose any Flutter application
 that has been migrated to be
 [compatible with Wasm](#js-interop-wasm).
 
-[sample app]: /get-started/test-drive
+[sample app]: /reference/create-new-app
 
 ### Modify the index page
 

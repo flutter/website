@@ -2,16 +2,21 @@
 
 .site-header {
   background-color: $site-color-white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
   font-family: $site-font-family-ui;
   position: sticky;
   top: 0;
   z-index: $site-z-header;
+  border-bottom: 0.1rem solid $sidenav-divider-color;
+
+  @media (min-width: 1200px) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    border-bottom: none;
+  }
 
   .navbar {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 0.75rem;
@@ -119,8 +124,35 @@
   }
 
   #fallback-search-button {
+    display: none;
+
+    @media (min-width: 320px) {
+      display: unset;
+    }
+
     @media (min-width: 576px) {
       display: none;
     }
+  }
+}
+
+// Toggle between menu and close buttons if sidenav is open or not.
+#menu-toggle span.material-symbols {
+  &:first-child {
+    display: inline;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+body.open_menu #menu-toggle span.material-symbols {
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    display: inline;
   }
 }
