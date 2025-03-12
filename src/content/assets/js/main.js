@@ -17,12 +17,29 @@ function setupSidenavInteractivity() {
       }
     }
   });
+}
 
-  // Set up collapse and expand for sidenav buttons.
-  const toggles = document.querySelectorAll('.nav-link.collapsible');
+function setupCollapsibleElements() {
+  const toggles = document.querySelectorAll('[data-toggle="collapse"]');
   toggles.forEach(function (toggle) {
+    const targetSelector = toggle.getAttribute('data-target');
+    if (!targetSelector) return;
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+
     toggle.addEventListener('click', (e) => {
-      toggle.classList.toggle('collapsed');
+      if (toggle.classList.contains('collapsed')) {
+        toggle.classList.remove('collapsed');
+        toggle.ariaExpanded = 'true';
+
+        target.classList.add('show');
+      } else {
+        toggle.classList.add('collapsed');
+        toggle.ariaExpanded = 'false';
+
+        target.classList.remove('show');
+      }
+
       e.preventDefault();
     });
   });
@@ -433,6 +450,7 @@ function setupSite() {
 
   setupToc();
   setupPlatformKeys();
+  setupCollapsibleElements();
   setupFeedback();
 }
 
