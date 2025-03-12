@@ -1,6 +1,7 @@
 ---
 title: Technical Writer, Languages
 toc: false
+description: Learn about and apply to this technical writer role!
 ---
 
 {% comment %}
