@@ -8,15 +8,7 @@ description: Open job listings for the Flutter and Dart teams.
 
 #### Sunnyvale, CA, USA
 
-* [Tech Writer II](/jobs/tw)
+* [Tech Writer II](/jobs/tech_writer_ii)
 
-{% comment %}
-Is this position still open?
-#### Viby, Denmark
-* [Software Engineering Manager, Dart](/jobs/eng_mgr_denmark)
-{% endcomment %}
-
-{% comment %}
 The Flutter and Dart SWE teams aren't currently hiring.
 Thanks for your interest!
-{% endcomment %}
