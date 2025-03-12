@@ -25,6 +25,7 @@ $site-color-body-caption: color.scale($site-color-body, $lightness: 30%);
 $site-color-footer: #303c42;
 $site-color-primary: $flutter-color-blue-500;
 $site-color-panel-background: color.scale($site-color-primary, $lightness: 95%);
+$site-color-card-border: rgba(0, 0, 0, .125);
 $sidenav-divider-color: #e7e8ed;
 
 // Fonts

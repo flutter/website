@@ -40,7 +40,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
-{% ytEmbed 'PbcILiN8rbo', 'Take a deep dive into Flutter animation', true %}
+{% ytEmbed 'PbcILiN8rbo', 'Take a deep dive into Flutter animation' %}
 
 ## Implicit and explicit animations
 
@@ -71,7 +71,7 @@ For more information, watch
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
 
-{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations', true %}
+{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations' %}
 
 ### Explicit animations
 
@@ -80,7 +80,7 @@ If you need to build an explicit animation from scratch, watch
 AnimatedBuilder and AnimatedWidget][].
 (Also published as a [_companion article_][article5].)
 
-{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget', true %}
+{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget' %}
 
 ## Animation types
 
