@@ -443,6 +443,11 @@ td ol, td ul, td dl, td p {
     padding: 0 0.75rem;
     text-wrap: pretty;
   }
+
+  lite-youtube {
+    border-radius: 0.25rem;
+    border: 2px solid $site-color-card-border;
+  }
 }
 
 lite-youtube:not(.full-width) {

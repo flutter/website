@@ -62,32 +62,32 @@ like input, layout, and text.
 help you quickly get started with Flutter widgets.
 
 <div class="card-grid wide">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
       {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true %}
     </div>
