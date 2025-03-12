@@ -6,17 +6,15 @@ description: Open job listings for the Flutter and Dart teams.
 
 ## Current openings
 
-#### Mainland China
-* [Developer Relations Engineer](/jobs/dre-china)
+#### Sunnyvale, CA, USA
 
-#### Mexico City, Mexico
-* [Software Engineer III](/jobs/swe_iii)
-* [Senior Software Engineer](/jobs/senior_swe)
-* [Software Engineering Manager II](/jobs/swe_manager_ii)
-* [Senior Software Engineering Manager](/jobs/senior_swe_mgr)
+* [Tech Writer II](/jobs/tw)
 
+{% comment %}
+Is this position still open?
 #### Viby, Denmark
 * [Software Engineering Manager, Dart](/jobs/eng_mgr_denmark)
+{% endcomment %}
 
 {% comment %}
 The Flutter and Dart SWE teams aren't currently hiring.
