@@ -80,12 +80,12 @@ widgets in [What is State?][]
 <div class="card-grid">
   <div class="card wrapped-card">
     <div class="card-content">
-      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
+      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true %}
     </div>
   </div>
   <div class="card wrapped-card">
     <div class="card-content">
-      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
+      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true %}
     </div>
   </div>
 </div>
@@ -107,12 +107,12 @@ using helper methods][standalone-widgets] or
 <div class="card-grid">
   <div class="card wrapped-card">
     <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
+      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
     </div>
   </div>
   <div class="card wrapped-card">
     <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
+      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
     </div>
   </div>
 </div>

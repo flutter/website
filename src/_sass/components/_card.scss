@@ -8,6 +8,9 @@
   margin-block-end: 1rem;
   justify-content: center;
 
+  // Disable lite-youtube shadow for videos in cards.
+  --lite-youtube-frame-shadow-visible: false;
+
   &.wide {
     --card-min-width: 19rem;
   }

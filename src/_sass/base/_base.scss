@@ -445,6 +445,10 @@ td ol, td ul, td dl, td p {
   }
 }
 
+lite-youtube:not(.full-width) {
+  max-width: 560px;
+}
+
 .footnote-ref a {
   scroll-margin-top: 6rem;
 }

@@ -191,7 +191,7 @@ doesn't need a `BuildContext`.
 :::note
 To learn more, watch this short Package of the Week video on the GetIt package:
 
-{% ytEmbed 'f9XQD5mf6FY', 'get_it | Flutter package of the week', true %}
+{% ytEmbed 'f9XQD5mf6FY', 'get_it | Flutter package of the week' %}
 :::
 
 [Flutter state management for minimalists]: {{site.medium}}/flutter-community/flutter-state-management-for-minimalists-4c71a2f2f0c1?sk=6f9cedfb550ca9cc7f88317e2e7055a0
