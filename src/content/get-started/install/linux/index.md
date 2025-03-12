@@ -14,7 +14,7 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
 
 <div class="card-grid narrow">
 {% for target in target-list %}
-  <a class="card outlined-card install-card card-linux" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}">
+  <a class="card outlined-card install-card card-linux" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}/{{target | downcase}}" aria-label="Linux setup instructions for first deploying to {{target}}">
     {% assign icon = target | downcase -%}
     <div class="card-leading">
       {% if icon == 'desktop' -%}
@@ -26,7 +26,7 @@ js: [{url: '/assets/js/temp/linux-install-redirector.js'}]
       {% endif -%}
     </div>
     <div class="card-header text-center">
-      <header class="card-title">{{target}}</header>
+      <span class="card-title">{{target}}</span>
       {% if icon == 'android' -%}
         <span class="card-subtitle">Recommended</span>
       {% endif -%}

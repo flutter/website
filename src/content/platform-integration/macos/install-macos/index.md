@@ -27,7 +27,7 @@ or the platform you already have set up.
       <span class="material-symbols" aria-hidden="true">laptop_mac</span>
     </div>
     <div class="card-header text-center">
-      <header class="card-title">Make {{ target }} and macOS desktop apps</header>
+      <span class="card-title">Make {{ target }} and macOS desktop apps</span>
     </div>
   </a>
 {% endfor %}

@@ -33,7 +33,7 @@ our [videos](/resources/videos) page.
       {% endif -%}
     </div>
     <div class="card-header">
-      <header class="card-title">{{comp.name}}</header>
+      <span class="card-title">{{comp.name}}</span>
     </div>
     <div class="card-content">
       <p class="card-text">{{ comp.description | truncatewords: 25 }}</p>

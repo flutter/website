@@ -25,7 +25,7 @@ or the platform you already have set up.
       <span class="material-symbols" aria-hidden="true">desktop_windows</span>
     </div>
     <div class="card-header text-center">
-      <header class="card-title">Make Windows desktop and {{ target }} apps</header>
+      <span class="card-title">Make Windows desktop and {{ target }} apps</span>
     </div>
   </a>
 {% endfor %}

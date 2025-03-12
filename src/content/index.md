@@ -8,7 +8,7 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 {% for card in docs_cards -%}
   <a class="card outlined-card" href="{{card.url}}">
     <div class="card-header">
-      <header class="card-title">{{card.name}}</header>
+      <span class="card-title">{{card.name}}</span>
     </div>
     <div class="card-content">
       <p>{{card.description}}</p>

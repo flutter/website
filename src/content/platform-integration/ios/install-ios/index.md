@@ -27,7 +27,7 @@ or the platform you already have set up.
       <span class="material-symbols" aria-hidden="true">phone_iphone</span>
     </div>
     <div class="card-header text-center">
-      <header class="card-title">Make iOS and {{ target }}{% if target == 'macOS' %} desktop{% endif %} apps</header>
+      <span class="card-title">Make iOS and {{ target }}{% if target == 'macOS' %} desktop{% endif %} apps</span>
     </div>
   </a>
 {% endfor %}
