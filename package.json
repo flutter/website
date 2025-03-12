@@ -12,7 +12,7 @@
     "node": ">=22.11.0",
     "pnpm": ">=9.12.3"
   },
-  "packageManager": "pnpm@10.5.0",
+  "packageManager": "pnpm@10.6.2",
   "scripts": {
     "serve": "PRODUCTION=false tsx node_modules/@11ty/eleventy/cmd.cjs --serve --config=eleventy.config.ts",
     "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
@@ -22,8 +22,8 @@
     "@11ty/eleventy": "^3.0.0",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.13.5",
-    "firebase-tools": "^13.31.2",
+    "@types/node": "^22.13.10",
+    "firebase-tools": "^13.34.0",
     "hast-util-from-html": "^2.0.3",
     "hast-util-select": "^6.0.4",
     "hast-util-to-html": "^9.0.5",
@@ -37,7 +37,7 @@
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
     "sass": "^1.85.1",
-    "shiki": "^2.5.0",
+    "shiki": "^3.2.1",
     "tsx": "^4.19.3"
   },
   "pnpm": {
