@@ -6,59 +6,49 @@ description: Learn how to write custom platform-specific code in your app.
 
 <?code-excerpt path-base="platform_integration"?>
 
-This guide describes how to write custom platform-specific code.
-Some platform-specific functionality is available
-through existing packages;
-see [using packages][].
+This guide describes how to use custom platform-specific
+code with Flutter.
 
-[using packages]: /packages-and-plugins/using-packages
+## Overview
 
-:::note
-The information in this page is valid for most platforms,
-but platform-specific code for the web generally uses
-[JS interoperability][] or the [`dart:html` library][] instead.
-:::
+You can use platform-specific code in your Flutter app. 
+A few common ways to do this include:
 
-Flutter uses a flexible system that allows you to call
-platform-specific APIs in a language that works directly
-with those APIs:
+* Use Flutter's platform channel APIs to pass messages
+  between Flutter and your desired platforms. For more
+  information, see [Call platform-specific code using platform channels](#example).
 
-* Kotlin or Java on Android
-* Swift or Objective-C on iOS
-* C++ on Windows
-* Objective-C on macOS
-* C on Linux
+* Use the `Pigeon` package to generate type-safe
+  platform-specific code. For more
+  information, see [Call platform-specific code using the Pigeon package](#pigeon).
 
-Flutter's builtin platform-specific API support
-doesn't rely on code generation,
-but rather on a flexible message passing style.
-Alternatively, you can use the [Pigeon][pigeon]
-package for [sending structured typesafe messages][]
-with code generation:
+Flutter supports the following platforms and
+platform-specific languages:
 
-* The Flutter portion of the app sends messages to its _host_,
-  the non-Dart portion of the app, over a platform channel.
-
-* The _host_ listens on the platform channel, and receives the message.
-  It then calls into any number of platform-specific APIs&mdash;using
-  the native programming language&mdash;and sends a response back to the
-  _client_, the Flutter portion of the app.
+* **Android**: Kotlin, Java
+* **iOS**: Swift, Objective-C
+* **Windows**: C++
+* **macOS**: Objective-C
+* **Linux**: C
 
 :::note
-This guide addresses using the platform channel mechanism
-if you need to use the platform's APIs in a non-Dart language.
-But you can also write platform-specific Dart code
-in your Flutter app by inspecting the
-[`defaultTargetPlatform`][] property.
-[Platform adaptations][] lists some
-platform-specific adaptations that Flutter
-automatically performs for you in the framework.
+* The information in this page is valid for most platforms,
+  but platform-specific code for the web generally uses
+  [JS interoperability][] or the [`dart:html` library][] instead.
+
+* This guide addresses using the platform channel mechanism
+  if you need to use the platform's APIs in a non-Dart language.
+  However, you can also write platform-specific Dart code
+  in your Flutter app by inspecting the
+  [`defaultTargetPlatform`][] property.
+  [Platform adaptations][] lists some
+  platform-specific adaptations that Flutter
+  automatically performs for you in the framework.
 :::
 
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
-[pigeon]: {{site.pub-pkg}}/pigeon
 
-## Architectural overview: platform channels {:#architecture}
+## Architectural overview of platform channels {:#architecture}
 
 Messages are passed between the client (UI)
 and host (platform) using platform
@@ -66,38 +56,36 @@ channels as illustrated in this diagram:
 
 ![Platform channels architecture](/assets/images/docs/PlatformChannels.png){:width="100%"}
 
-Messages and responses are passed asynchronously,
-to ensure the user interface remains responsive.
+In the preceding diagram, messages and responses are passed
+asynchronously through channels to ensure the user interface
+remains responsive. On the client side,
+[`MethodChannel` for Flutter][] enables
+sending messages that correspond to method calls. On the
+platform side, [`MethodChannel` for Android][] and
+[`FlutterMethodChannel` for iOS][] enable receiving method
+calls and sending back a result. These classes allow you to
+develop a platform plugin with very little _boilerplate_
+code.
 
 :::note
-Even though Flutter sends messages to and from Dart asynchronously,
-whenever you invoke a channel method, you must invoke that method on the
-platform's main thread. See the [section on threading][]
-for more information.
+* Even though Flutter sends messages to and from Dart asynchronously,
+  whenever you invoke a channel method, you must invoke that method on the
+  platform's main thread. See the [section on threading][]
+  for more information.
+* If desired, method calls can also be sent in the reverse direction,
+  with the platform acting as client to methods implemented in Dart.
+  For a concrete example, check out the [`quick_actions`][] plugin.
 :::
 
-On the client side, [`MethodChannel`][] enables sending
-messages that correspond to method calls. On the platform side,
-`MethodChannel` on Android ([`MethodChannelAndroid`][]) and
-`FlutterMethodChannel` on iOS ([`MethodChanneliOS`][])
-enable receiving method calls and sending back a
-result. These classes allow you to develop a platform plugin
-with very little 'boilerplate' code.
+## Data types support {:#codec}
 
-:::note
-If desired, method calls can also be sent in the reverse direction,
-with the platform acting as client to methods implemented in Dart.
-For a concrete example, check out the [`quick_actions`][] plugin.
-:::
-
-### Platform channel data types support and codecs {:#codec}
-
-The standard platform channels use a standard message codec that supports
-efficient binary serialization of simple JSON-like values, such as booleans,
-numbers, Strings, byte buffers, and Lists and Maps of these
-(see [`StandardMessageCodec`][] for details).
-The serialization and deserialization of these values to and from
-messages happens automatically when you send and receive values.
+The standard platform channel APIs and the Pigeon package
+use a standard message codec called [`StandardMessageCodec`][]
+that supports efficient binary serialization of simple
+JSON-like values, such as booleans, numbers, Strings,
+byte buffers, Lists, and Maps. The serialization and
+deserialization of these values to and from messages happens
+automatically when you send and receive values.
 
 The following table shows how Dart values are received on the
 platform side and vice versa:
@@ -230,7 +218,9 @@ platform side and vice versa:
 {% endtab %}
 {% endtabs %}
 
-## Example: Calling platform-specific code using platform channels {:#example}
+[MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
+
+## Call platform-specific code using platform channels {:#example}
 
 The following code demonstrates how to call
 a platform-specific API to retrieve and display
@@ -1125,42 +1115,38 @@ You should now be able to run the application on Linux.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
-## Typesafe platform channels using Pigeon {:#pigeon}
+## Call platform-specific code using the Pigeon package {:#pigeon}
 
-The previous example uses `MethodChannel`
-to communicate between the host and client,
-which isn't typesafe. Calling and receiving
-messages depends on the host and client declaring
-the same arguments and datatypes in order for messages to work.
-You can use the [Pigeon][pigeon] package as
-an alternative to `MethodChannel`
+You can use the [`Pigeon`][] package as
+an alternative to Flutter's platform channel APIs
 to generate code that sends messages in a
-structured, typesafe manner.
+structured, type-safe manner. The workflow for Pigeon
+looks like this:
 
-With [Pigeon][pigeon], the messaging protocol is defined
+  * The Flutter app sends structured
+    type-safe messages to its _host_, the non-Dart portion
+    of the app, over a platform channel.
+
+  * The _host_ listens on the platform channel, and receives
+    the message. It then calls into any number of
+    platform-specific APIs using the native programming
+    language and sends a response back to the _client_,
+    the Flutter portion of the app.
+
+Using this package eliminates the need to match
+strings between host and client for the names and
+data types of messages. It supports nested classes,
+grouping messages into APIs, generation of asynchronous
+wrapper code and sending messages in either direction. The
+generated code is readable and guarantees there are no
+conflicts between multiple clients of different versions.
+
+With Pigeon, the messaging protocol is defined
 in a subset of Dart that then generates messaging
-code for Android, iOS, macOS, or Windows. You can find a more complete
-example and more information on the [`pigeon`][pigeon]
-page on pub.dev.
-
-Using [Pigeon][pigeon] eliminates the need to match
-strings between host and client
-for the names and datatypes of messages.
-It supports: nested classes, grouping
-messages into APIs, generation of
-asynchronous wrapper code and sending messages
-in either direction. The generated code is readable
-and guarantees there are no conflicts between
-multiple clients of different versions.
-Supported languages are Objective-C, Java, Kotlin, C++,
-and Swift (with Objective-C interop).
-
-### Pigeon example
-
-**Pigeon file:**
+code for Android, iOS, macOS, or Windows. For example:
 
 <?code-excerpt "pigeon/lib/pigeon_source.dart (search)"?>
-```dart
+```dart title="pigeon_source.dart"
 import 'package:pigeon/pigeon.dart';
 
 class SearchRequest {
@@ -1182,10 +1168,8 @@ abstract class Api {
 }
 ```
 
-**Dart usage:**
-
 <?code-excerpt "pigeon/lib/use_pigeon.dart (use-api)"?>
-```dart
+```dart title="use_pigeon.dart"
 import 'generated_pigeon.dart';
 
 Future<void> onClick() async {
@@ -1196,33 +1180,8 @@ Future<void> onClick() async {
 }
 ```
 
-## Separate platform-specific code from UI code {:#separate}
-
-If you expect to use your platform-specific code
-in multiple Flutter apps, you might consider
-separating the code into a platform plugin located
-in a directory outside your main application.
-See [developing packages][] for details.
-
-## Publish platform-specific code as a package {:#publish}
-
-To share your platform-specific code with other developers
-in the Flutter ecosystem, see [publishing packages][].
-
-## Custom channels and codecs
-
-Besides the above mentioned `MethodChannel`,
-you can also use the more basic
-[`BasicMessageChannel`][], which supports basic,
-asynchronous message passing using a custom message codec.
-You can also use the specialized [`BinaryCodec`][],
-[`StringCodec`][], and [`JSONMessageCodec`][]
-classes, or create your own codec.
-
-You might also check out an example of a custom codec
-in the [`cloud_firestore`][] plugin,
-which is able to serialize and deserialize many more
-types than the default types.
+You can find a more complete example and more information
+on the [`pigeon`][] page on pub.dev.
 
 ## Channels and platform threading
 
@@ -1245,7 +1204,7 @@ On iOS, this thread is officially
 referred to as [the main thread][].
 :::
 
-### Using plugins and channels from background isolates
+### Use plugins and channels from a background isolate {: #using-plugins-and-channels-from-background-isolates }
 
 Plugins and channels can be used by any `Isolate`, but that `Isolate` has to be
 a root `Isolate` (the one created by Flutter) or registered as a background
@@ -1270,14 +1229,15 @@ void main() {
 }
 ```
 
-### Executing channel handlers on background threads
+### Execute channel handlers on a background thread (Android) {: #executing-channel-handlers-on-background-threads }
 
 In order for a channel's platform side handler to
-execute on a background thread, you must use the
-Task Queue API. Currently, this feature is only
-supported on iOS and Android.
+execute on a background thread on an Android app, you must
+use the Task Queue API.
 
-In Kotlin:
+{% tabs "lang-tabs" %}
+
+{% tab "Kotlin" %}
 
 ```kotlin
 override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -1291,7 +1251,9 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 }
 ```
 
-In Java:
+{% endtab %}
+
+{% tab "Java" %}
 
 ```java
 @Override
@@ -1309,12 +1271,19 @@ public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
 }
 ```
 
-In Swift:
+{% endtab %}
 
-:::note
-In release 2.10, the Task Queue API is only available on the `master` channel
-for iOS.
-:::
+{% endtabs %}
+
+### Execute channel handlers on a background thread (iOS)
+
+In order for a channel's platform side handler to
+execute on a background thread on an iOS app, you must use
+the Task Queue API.
+
+{% tabs "lang-tabs" %}
+
+{% tab "Swift" %}
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
@@ -1328,12 +1297,9 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 }
 ```
 
-In Objective-C:
+{% endtab %}
 
-:::note
-In release 2.10, the Task Queue API is only available on the `master` channel
-for iOS.
-:::
+{% tab "Objective-C" %}
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -1349,7 +1315,16 @@ for iOS.
 }
 ```
 
-### Jumping to the UI thread in Android
+{% endtab %}
+
+{% endtabs %}
+
+:::note
+In release 2.10, the Task Queue API is only available on the `master` channel
+for iOS.
+:::
+
+### Jump to the UI thread (Android) {: #jumping-to-the-ui-thread-in-android }
 
 To comply with channels' UI thread requirement,
 you might need to jump from a background thread
@@ -1359,7 +1334,9 @@ In Android, you can accomplish this by `post()`ing a
 which causes the `Runnable` to execute on the
 main thread at the next opportunity.
 
-In Kotlin:
+{% tabs "lang-tabs" %}
+
+{% tab "Kotlin" %}
 
 ```kotlin
 Handler(Looper.getMainLooper()).post {
@@ -1367,7 +1344,9 @@ Handler(Looper.getMainLooper()).post {
 }
 ```
 
-In Java:
+{% endtab %}
+
+{% tab "Java" %}
 
 ```java
 new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -1378,7 +1357,11 @@ new Handler(Looper.getMainLooper()).post(new Runnable() {
 });
 ```
 
-### Jumping to the main thread in iOS
+{% endtab %}
+
+{% endtabs %}
+
+### Jump to the main thread (iOS) {: #jumping-to-the-main-thread-in-ios }
 
 To comply with channel's main thread requirement,
 you might need to jump from a background thread to
@@ -1386,7 +1369,9 @@ iOS's main thread to execute a channel method.
 You can accomplish this in iOS by executing a
 [block][] on the main [dispatch queue][]:
 
-In Objective-C:
+{% tabs "lang-tabs" %}
+
+{% tab "Objective-C" %}
 
 ```objc
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1394,7 +1379,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
 ```
 
-In Swift:
+{% endtab %}
+
+{% tab "Swift" %}
 
 ```swift
 DispatchQueue.main.async {
@@ -1402,12 +1389,85 @@ DispatchQueue.main.async {
 }
 ```
 
+{% endtab %}
+
+{% endtabs %}
+
+## Supplementals
+
+### Common channels and codecs {:#codec2}
+
+The following is a list of some common platform channel APIs
+that you can use to write platform-specific code:
+
+* [`MethodChannel`][] for Flutter: A named channel that you
+  can use to communicate with platform plugins using
+  asynchronous method calls. By default this channel uses
+  the [`StandardMessageCodec`][] codec.
+  This channel is not type safe, which means calling and
+  receiving messages depends on the host and client
+  declaring the same arguments and data types in order for
+  messages to work.
+
+* [`BasicMessageChannel`][] for Flutter: A named channel
+  that supports basic, asynchronous message passing, using a
+  supported message codec. Not type safe.
+
+* [Engine Embedder APIs][] for Platforms: These
+  platform-specific APIs contain platform-specific
+  channel APIs.
+
+You can create your own codec or use an existing one. The
+following is a list of some existing codecs that you can use
+with platform-specific code:
+
+* [`StandardMessageCodec`][]: A commonly used message codec
+  that encodes and decodes a wide range of data types into
+  a platform-agnostic binary format for transmission across
+  platform channels. The serialization and deserialization
+  of values to and from messages happens automatically when
+  you send and receive values. For a list of supported
+  data types, see [Platform channel data types support](#codec).
+
+* [`BinaryCodec`][]: A message codec that passes raw binary
+  data between the Dart side of your Flutter app and the
+  native platform side. It does not perform any higher-level
+  encoding or decoding of data structures.
+
+* [`StringCodec`][]: A message codec that encodes and
+  decodes strings, using UTF-8 encoding.
+
+* [`JSONMessageCodec`][]: A message codec that encodes and
+  decodes JSON-formatted data, using UTF-8 encoding.
+
+* [`FirestoreMessageCodec`][]: A message codec that handles
+  the exchange of messages sent across the platform channel
+  between your Flutter app and the native
+  Firebase Firestore SDKs (on Android and iOS).
+
+[MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
+
+### Separate platform-specific code from UI code {:#separate}
+
+If you expect to use your platform-specific code
+in multiple Flutter apps, you might consider
+separating the code into a platform plugin located
+in a directory outside your main application.
+See [developing packages][] for details.
+
+### Publish platform-specific code as a package {:#publish}
+
+To share your platform-specific code with other developers
+in the Flutter ecosystem, see [publishing packages][].
+
 [`BasicMessageChannel`]: {{site.api}}/flutter/services/BasicMessageChannel-class.html
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
-[`cloud_firestore`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
+[`FirestoreMessageCodec`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
 [`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: /packages-and-plugins/developing-packages
+[Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
+[`Pigeon`]: {{site.pub-pkg}}/pigeon
 [plugins]: /packages-and-plugins/developing-packages#plugin
 [dispatch queue]: {{site.apple-dev}}/documentation/dispatch/dispatchqueue
 [`/examples/platform_channel/`]: {{site.repo.flutter}}/tree/main/examples/platform_channel
@@ -1415,8 +1475,9 @@ DispatchQueue.main.async {
 [JS interoperability]: {{site.dart-site}}/web/js-interop
 [`JSONMessageCodec`]: {{site.api}}/flutter/services/JSONMessageCodec-class.html
 [`MethodChannel`]: {{site.api}}/flutter/services/MethodChannel-class.html
-[`MethodChannelAndroid`]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
-[`MethodChanneliOS`]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
+[`MethodChannel` for Flutter]: {{site.api}}/flutter/services/MethodChannel-class.html
+[`MethodChannel` for Android]: {{site.api}}/javadoc/io/flutter/plugin/common/MethodChannel.html
+[`FlutterMethodChannel` for iOS]: {{site.api}}/ios-embedder/interface_flutter_method_channel.html
 [Platform adaptations]: /platform-integration/platform-adaptations
 [publishing packages]: /packages-and-plugins/developing-packages#publish
 [`quick_actions`]: {{site.pub}}/packages/quick_actions
@@ -1425,4 +1486,3 @@ DispatchQueue.main.async {
 [`StringCodec`]: {{site.api}}/flutter/services/StringCodec-class.html
 [the main thread]: {{site.apple-dev}}/documentation/uikit?language=objc
 [the UI thread]: {{site.android-dev}}/guide/components/processes-and-threads#Threads
-[sending structured typesafe messages]: #pigeon
