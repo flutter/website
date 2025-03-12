@@ -1,0 +1,45 @@
+@use '../base/variables' as *;
+
+.samples-table {
+  width: 100%;
+  border-radius: 4px;
+
+  tr {
+    background-color: $table-mainhead-fill-color !important;
+    border: none;
+  }
+
+  .tr-main-head {
+    th {
+      font-weight: 400;
+      border-top: none;
+    }
+
+    th h3 {
+      padding: 0;
+      margin: 0;
+    }
+
+    th label {
+      font-weight: 400;
+    }
+  }
+
+  .tr-sub-head {
+    th {
+      border-top: none;
+      border-bottom: 1px solid $site-color-light-grey;
+    }
+  }
+
+  tr td {
+    background-color: white;
+    border-top:none;
+    border-bottom: 1px solid $site-color-light-grey;
+  }
+
+  .td-icon {
+    color: $site-color-nav-links
+  }
+
+}
