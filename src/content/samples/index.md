@@ -6,52 +6,60 @@ toc: false
 js: [ { url: '/assets/js/samples.js', defer: true } ]
 ---
 
-<div id="samples-filters" class="dropdown-group">
-    <button class="chip filter-chip" data-filter="isCodelab" role="checkbox" aria-checked="false" aria-label="Show only Codelabs.">
-      <svg class="chip-icon leading-icon" viewBox="0 0 18 18" aria-hidden="true">
-        <path d="M6.75012 12.1274L3.62262 8.99988L2.55762 10.0574L6.75012 14.2499L15.7501 5.24988L14.6926 4.19238L6.75012 12.1274Z"></path>
-      </svg>
-      <span class="label">Codelabs</span>
-    </button>
-    {% comment %}
-    <select class='dropdown-select' name="type" id="type">
-        <option value="codelabs">All types</option>
-        <option value="codelabs">Codelab</option>
-        <option value="samples">Sample code</option>
-        <option value="recipes">Cookbook recipes</option>
-    </select>
-    <select class='dropdown-select' name="feature" id="type">
-        <option value="codelabs">All features</option>
-        <option value="codelabs">Animations</option>
-        <option value="samples">Layout</option>
-        <option value="recipes">Cookbook recipes</option>
-    </select>
-    {% endcomment %}
+<div id="samples-filter-group" class="chip-filters-group" style="margin-bottom:20px"> 
+<div id="chip-set" class="chip-set">
+    <div class="button-menu-wrapper">
+      <button class="chip select-chip" data-menu="type-menu" data-title="Type" aria-controls="type-menu" aria-expanded="false">
+        <span class="label">Type</span>
+        <svg class="chip-icon trailing-icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5H7z"></path>
+        </svg>
+      </button>
+        <div id="type-menu" class="select-menu">
+            <ul role="listbox">
+                <li><button class='selected' data-filter="all" role="option" aria-selected="true">
+                  <span class="label">All</span>
+                </button></li>
+                <li><button data-filter="codelab" role="option" aria-selected="false">
+                  <span class="label">Codelab</span>
+                </button></li>
+                <li><button data-filter="recipe" role="option" aria-selected="false">
+                  <span class="label">Cookbook Recipe</span>
+                </button></li>
+                <li><button data-filter="sample" role="option" aria-selected="false">
+                  <span class="label">Sample code</span>
+                </button></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="search-row">
+        <div class="search-wrapper">
+          <span class="material-symbols leading-icon" aria-hidden="true">search</span>
+          <input type="search" placeholder="Search resources..." aria-label="Search learning resources by name and category">
+        </div>
+    </div>
+ <button class="text-button" id="reset-filters">Clear filters</button>
 </div>
 
 <section id="all-samples-tables">
-
 {% for type in samples -%}
-    <h2>{{type.name}}</h2>
-    <p>{{type.description}}</p>
-        <table class="samples-table table" style="border-bottom:1px #DADCE0 solid;">
+        <table id="table-{{type.type}}" class="samples-table table" style="border-bottom:1px #DADCE0 solid;" >
+            <tr class="tr-main-head tr-head" style="text-align: left" id="tr-header-{{item.type}}">
+                <th></th>
+                <th colspan="3">
+                    <div class="th-section-head">{{type.name}}</div>
+                    <label>{{type.description}}</label>
+                </th>
+            </tr>
+            <tr class="tr-sub-head tr-head" style="text-align: left">
+                <th style="width: 5%"></th>
+                <th style="width: 30%">Title</th>
+                <th style="width: 40%">Description</th>
+                <th align="center" style="width: 10%">Link</th>
+            </tr>
             {% for item in type.items -%}
-                {% if item.type == "header" -%}
-                    <tr class="tr-main-head" style="text-align: left">
-                        <th></th>
-                        <th colspan="3">
-                            <h3>{{item.name}}</h3>
-                            <label>{{item.description}}</label>
-                        </th>
-                    </tr>
-                    <tr class="tr-sub-head" style="text-align: left">
-                        <th style="width: 5%"></th>
-                        <th style="width: 30%">Title</th>
-                        <th style="width: 40%">Description</th>
-                        <th align="center" style="width: 10%">Link</th>
-                    </tr>
-                {% else -%}
-                    <tr id="{{item.name}}">
+                    <tr class='table-row' id="{{item.name}}" data-type="{{item.type}}" data-categories='{{item.categories | join: ", "}}'>
                         <td>
                             {%- if item.sdk == "dart" -%}
                                 <img src='/assets/images/branding/dart/64.png' alt="Dart icon" width="24px"/>
@@ -75,7 +83,6 @@ js: [ { url: '/assets/js/samples.js', defer: true } ]
                             </a>
                         </td>
                     </tr>
-               {% endif -%}
             {% endfor -%}
         </table>
 

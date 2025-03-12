@@ -1,0 +1,169 @@
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+.chip-filters-group {
+  --chip-container-color: white;
+  --chip-border-color: rgba(0, 0, 0, .35);
+  --chip-selected-container-color: rgb(194 229 255);
+  --chip-text-color: #3a3a3a;
+
+  --menu-border-color: rgba(0, 0, 0, .35);
+  --menu-container-color: #ffffff;
+  --menu-item-container-color: transparent;
+  --menu-item-selected-container-color: rgb(194 229 255);
+  --menu-item-text-color: #3a3a3a;
+
+  display: flex;
+  padding: 20px 18px;
+
+  .chip-set {
+    display: flex;
+    flex-direction: row;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  button.chip {
+    border: 1px solid var(--chip-border-color);
+    border-radius: 8px;
+    height: 3rem;
+    padding: 0 .5rem;
+    background: $chip-container-color;
+    color: var(--chip-text-color);
+    font-weight: 500;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    .label {
+      background: none;
+    }
+
+    &:hover {
+      @include interaction-style(4%);
+    }
+
+    &:active {
+      @include interaction-style(8%);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--focus-outline-color);
+      border-color: transparent;
+    }
+
+    .chip-icon {
+      align-self: center;
+      fill: currentcolor;
+      position: relative;
+      height: 18px;
+      width: 18px;
+    }
+
+    .leading-icon {
+      display: none;
+      margin-right: 0.25rem;
+    }
+  }
+
+  button.chip {
+    &.selected {
+      background-color: var(--chip-selected-container-color);
+      border: none;
+
+      .leading-icon {
+        display: flex;
+      }
+    }
+  }
+
+  .button-menu-wrapper {
+    position: relative;
+    height: 3rem;
+
+    .select-menu {
+      display: none;
+      position: absolute;
+      overflow: auto;
+      z-index: 5;
+      background-color: var(--menu-container-color);
+      border-radius: 0.5rem;
+      border: 1px solid var(--menu-border-color);
+      min-width: 100%;
+      max-height: 15rem;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+      overscroll-behavior: contain;
+      margin-top: 0.25rem;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        li {
+          &:first-child {
+            padding-top: 0.5rem;
+          }
+
+          &:last-child {
+            padding-bottom: 0.5rem;
+          }
+        }
+
+        // Menu item button.
+        button {
+          padding: 0.2rem 0.75rem 0.2rem 0.5rem;
+          width: 100%;
+          border: none;
+          background: none;
+          color: var(--menu-item-text-color);
+          font-weight: 500;
+          text-align: left;
+          user-select: none;
+
+          &:hover {
+            @include interaction-style(4%);
+          }
+
+          &:focus {
+            @include interaction-style(6%);
+          }
+
+          &:active {
+            @include interaction-style(8%);
+          }
+
+          display: flex;
+          flex-direction: row;
+
+          span.material-symbols {
+            align-self: center;
+            vertical-align: center;
+            fill: currentcolor;
+            position: relative;
+            font-size: 1.25rem;
+            margin-right: 0.4rem;
+
+            font-variation-settings: 'FILL' 1;
+          }
+
+          &.selected {
+            background-color: var(--menu-item-selected-container-color);
+          }
+        }
+      }
+
+      &.show-menu {
+        display: flex;
+      }
+    }
+  }
+}

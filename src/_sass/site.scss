@@ -12,7 +12,7 @@
 @use 'components/books';
 @use 'components/button';
 @use 'components/card';
-@use 'components/chip-filter-button';
+@use 'components/chip-filters-row';
 @use 'components/code';
 @use 'components/content';
 @use 'components/cookie-notice';
@@ -26,7 +26,7 @@
 @use 'components/sidebar';
 @use 'components/side-menu';
 @use 'components/site-switcher';
-@use 'components/samples-table';
+
 @use 'components/tabs';
 @use 'components/toc';
 @use 'components/trailing';
@@ -34,6 +34,7 @@
 // Styles for specific pages, alphabetically ordered.
 @use 'pages/not-found';
 @use 'pages/search';
+@use 'pages/samples_index';
 
 // Must be imported last to ensure that
 // the print overrides take priority over earlier defined styles.

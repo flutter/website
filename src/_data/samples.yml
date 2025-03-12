@@ -1,14 +1,12 @@
-- type: sample
-  name: Sample code
+- type: quickstart
+  name: Quickstart samples
   description: Sample code that covers a single SDK feature.
   items:
-    - name: Quickstarts
-      description: Sample code that covers a single SDK feature.
-      type: header
     - name: Asset transformation
       description: Demonstrates how to transform images' color scales and formats.
       categories:
         - images
+        - UI
       sdk: flutter
       type: recipe
       source-link:
@@ -200,9 +198,6 @@
       source-link:
         url: https://github.com/flutter/samples
         label: Github
-    - name: Native platform samples
-      description: Native platform samples
-      type: header
     - name: Add-to-app
       description: Recommended approaches for adding Flutter to existing apps.
       categories:
