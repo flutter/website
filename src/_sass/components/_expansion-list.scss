@@ -112,6 +112,7 @@
   }
 
   .expansion-panel-body {
+    display: none;
     margin: auto;
     width: 90%;
     border-top: .05rem solid rgba(0, 0, 0, 0.125);
@@ -124,6 +125,10 @@
       margin-bottom: 1rem;
       margin-top: 1.5rem;
       border-top: .05rem solid rgba(0, 0, 0, 0.125);
+    }
+
+    &.show {
+      display: block;
     }
   }
 
