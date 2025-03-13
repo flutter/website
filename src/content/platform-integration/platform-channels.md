@@ -1180,7 +1180,7 @@ Future<void> onClick() async {
 }
 ```
 
-You can find a more complete example and more information
+You can find a complete example and more information
 on the [`pigeon`][] page on pub.dev.
 
 ## Channels and platform threading
