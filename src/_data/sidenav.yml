@@ -101,12 +101,12 @@
 
 - title: Tutorials and samples
   children:
-    - title: Samples
-      permalink: /samples
-    - title: Cookbook
-      permalink: /cookbook
     - title: Codelabs
       permalink: /codelabs
+    - title: Cookbook
+      permalink: /cookbook
+    - title: Samples
+      permalink: /samples
 
 - title: Stay up to date
   permalink: /release
