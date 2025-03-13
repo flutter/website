@@ -40,7 +40,7 @@ or the platform you already have set up.
       <span class="material-symbols" aria-hidden="true">phone_android</span>
     </div>
     <div class="card-header text-center">
-      <header class="card-title">
+      <span class="card-title">
         Make Android and
         {% if target contains "iOS" -%}
         {{target}} apps on macOS
@@ -49,7 +49,7 @@ or the platform you already have set up.
         {%- else -%}
         {{target}} desktop apps
         {%- endif -%}
-      </header>
+      </span>
     </div>
   </a>
 {% endfor %}

@@ -29,21 +29,21 @@ in Flutter, see the following resources:
   video that gives an overview of the
   `SliverAppBar` widget.
 
-  {% ytEmbed 'R9C5KMJKluE', 'SliverAppBar | Flutter widget of the week', true %}
+  {% ytEmbed 'R9C5KMJKluE', 'SliverAppBar | Flutter widget of the week' %}
 
 **[SliverList and SliverGrid][]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the `SliverList`
   and `SliverGrid` widgets.
 
-  {% ytEmbed 'ORiTTaVY6mM', 'SliverList & SliverGrid | Flutter widget of the week', true %}
+  {% ytEmbed 'ORiTTaVY6mM', 'SliverList & SliverGrid | Flutter widget of the week' %}
 
 **[Slivers explained - Making dynamic layouts][]**
 : A 50-minute episode of [The Boring Show][]
   where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
   discuss the power of slivers.
 
-  {% ytEmbed 'Mz3kHQxBjGg', 'Slivers explained - Making dynamic layouts', true %}
+  {% ytEmbed 'Mz3kHQxBjGg', 'Slivers explained - Making dynamic layouts' %}
 
 ## API docs
 

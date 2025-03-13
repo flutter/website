@@ -10,7 +10,7 @@
 
 
 {% if entry == 'divider' -%}
-  <div class="sidenav-divider"></div>
+  <li aria-hidden="true"><div class="sidenav-divider"></div></li>
 {% elsif entry.header -%}
   <li class="nav-header">{{entry.header}}</li>
 {%- elsif entry.children -%}

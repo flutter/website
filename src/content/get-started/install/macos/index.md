@@ -21,7 +21,7 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
   {% assign targetlink = target | downcase %}
   {% endcase %}
 
-  <a class="card outlined-card install-card card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
+  <a class="card outlined-card install-card card-macos" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}" aria-label="macOS setup instructions for first deploying to {{target}}">
     {% assign icon = target | downcase -%}
     <div class="card-leading">
       {% case icon %}
@@ -36,7 +36,7 @@ js: [{url: '/assets/js/temp/macos-install-redirector.js'}]
       {% endcase -%}
     </div>
     <div class="card-header text-center">
-      <header class="card-title">{{target}}</header>
+      <span class="card-title">{{target}}</span>
       {% if icon == 'ios' -%}
         <span class="card-subtitle">Recommended</span>
       {% endif -%}

@@ -8,7 +8,7 @@ description: Get started with Flutter. Widgets, examples, updates, and API docs 
 {% for card in docs_cards -%}
   <a class="card outlined-card" href="{{card.url}}">
     <div class="card-header">
-      <header class="card-title">{{card.name}}</header>
+      <span class="card-title">{{card.name}}</span>
     </div>
     <div class="card-content">
       <p>{{card.description}}</p>
@@ -78,14 +78,14 @@ Learn more about `Stateless` and `Stateful`
 widgets in [What is State?][]
 
 <div class="card-grid">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
+      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
+      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true %}
     </div>
   </div>
 </div>
@@ -94,7 +94,7 @@ widgets in [What is State?][]
 [What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
 
 {% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
-{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
+{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!' %}
 {% endvideoWrapper %}
 
 ## Want to skill up?
@@ -105,14 +105,14 @@ using helper methods][standalone-widgets] or
 [what is "BuildContext" and how is it used][buildcontext]?
 
 <div class="card-grid">
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
+      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
     </div>
   </div>
-  <div class="card wrapped-card">
+  <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
+      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
     </div>
   </div>
 </div>

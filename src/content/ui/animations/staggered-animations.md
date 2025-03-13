@@ -56,7 +56,7 @@ staggered_pic_selection.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-{% ytEmbed '0fFvnZemmh8', 'Staggered animation example', true %}
+{% ytEmbed '0fFvnZemmh8', 'Staggered animation example' %}
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.

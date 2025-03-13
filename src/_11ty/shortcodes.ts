@@ -10,17 +10,11 @@ export function registerShortcodes(eleventyConfig: UserConfig): void {
 }
 
 function _setupMedia(eleventyConfig: UserConfig): void {
-  eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, skipAlternativeLink = false, fullWidth = false) {
-    let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
-        src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen loading="lazy"></iframe><br>`;
-
-    if (!skipAlternativeLink) {
-      embedMarkup += `<p><a href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener" title="Open '${title}' video in new tab">${title}</a></p>`;
-    }
-
-    return embedMarkup;
+  eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, fullWidth = false) {
+    return `
+<lite-youtube videoid="${id}" videotitle="${title}" ${fullWidth ? 'class="full-width"' : ''}>
+  <p><a class="lite-youtube-fallback" href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener">Watch on YouTube in a new tab: "${title}"</a></p>
+</lite-youtube>`;
   });
 
   eleventyConfig.addPairedShortcode('videoWrapper', function (content: string, intro = '') {

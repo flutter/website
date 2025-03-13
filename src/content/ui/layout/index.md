@@ -1298,9 +1298,9 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-{% ytEmbed 'wE7khGHVkYY', 'How to create stateless widgets', true %}
+{% ytEmbed 'wE7khGHVkYY', 'How to create stateless widgets' %}
 
-{% ytEmbed 'AqCMFXEmf3w', 'How and when stateful widgets are best used', true %}
+{% ytEmbed 'AqCMFXEmf3w', 'How and when stateful widgets are best used' %}
 
 [Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
@@ -1310,7 +1310,7 @@ Each episode of the
 [Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 focuses on a widget. Several of them includes layout widgets.
 
-{% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week', true %}
+{% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week' %}
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
