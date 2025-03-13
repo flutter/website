@@ -3,35 +3,42 @@ const _filters = {
     searchTerm: '',
 };
 
+/* Finds all the relevant HTML elements, and adds click handlers to them that
+*  facilitate searching and filtering the samples index page.
+*/
 function setupSampleFilters() {
     /*
     * Section -- set up tables and rows
     *
     * Finds each table row with sample data and creates a "sampleInfo" Map
-    *   Each table row has a link to the resource, and a GA custom event is added to it here.
+    * Each table row has a link to the resource, and a GA custom event is added to it here.
     * Finds each <table> so they can be conditionally hidden in [filterSamples()]
-    *   There's one table per resource type (i.e. codelab, recipes, etc)
+    * There's one table per resource type (i.e. codelab, recipes, etc)
     *
     */
     const tableSection = document.getElementById('all-samples-tables');
     const tables = tableSection?.querySelectorAll('.samples-table');
     const rows = tableSection?.querySelectorAll('.table-row');
     const sampleInfo = [];
+    const tableInfo = [];
     rows.forEach(row => {
         const sampleName = row.id;
         if (!sampleName) return;
         sampleInfo.push({
             name: sampleName,
             type: row.dataset.type,
-            categories: row.dataset.categories.split(', '),
+            tags: row.dataset.tags.split(', '),
         });
 
         const sourceButton = row.querySelector('.td-icon');
         if (!sourceButton) return;
         sourceButton.addEventListener('click', async () => {
-            console.log('clicked source button');
             // TODO(ewindmill): Custom analytics event
         });
+    });
+    tables.forEach(table => {
+        // removes 'table-' from the id
+       tableInfo.push(table.id.slice(6));
     });
 
     /* Section - Filters */
@@ -42,7 +49,10 @@ function setupSampleFilters() {
     *   Adds an event handler to filter on input
     */
     const searchInput = filtersSection.querySelector('.search-wrapper input');
-    searchInput.addEventListener('input', filterSamples);
+    searchInput.addEventListener('input', event => {
+        _filters.searchTerm = searchInput.value.toLowerCase();
+        filterSamples();
+    });
 
 
     /* Section Filters - Set up select chips
@@ -70,7 +80,8 @@ function setupSampleFilters() {
         options.forEach(option => {
             option.addEventListener('click', () => {
                 if (option.classList.contains('selected')) {
-                    _filters[chip.dataset.menu] = 'all';
+                    const menuName = chip.dataset.menu.slice(5);
+                    _filters[menuName] = 'all';
                     _resetChip(chip);
                 } else {
                     // adds class 'selected' to the chip and option
@@ -82,7 +93,7 @@ function setupSampleFilters() {
                     chip.querySelector('.label').textContent = option.querySelector('.label').textContent;
                     chip.dataset.filter = option.dataset.filter;
                     // i.e. "type-menu"
-                    const menuName = chip.dataset.menu.split('-').slice(0, -1);
+                    const menuName = chip.dataset.menu.slice(5);
                     _filters[menuName] = option.dataset.filter;
                 }
 
@@ -95,31 +106,49 @@ function setupSampleFilters() {
     filtersSection.querySelector('#reset-filters').addEventListener('click', () => {
         searchInput.value = '';
         selectChips.forEach(chip => _resetChip(chip));
+        _resetFilters();
         filterSamples();
     });
 
-    /// TODO: handle hiding tables
     function filterSamples() {
         const samplesToShow = new Set();
+        const tablesToShow = new Set();
 
         // if no filters are selected, show everything
         if (_filters.type === 'all' && _filters.searchTerm === "") {
             for (const sample of sampleInfo) {
                 samplesToShow.add(sample.name);
             }
+            for (const table of tableInfo) {
+                tablesToShow.add(table);
+            }
+        } else {
+            for (const sample of sampleInfo) {
+                const matchesType = _filters.type.includes(sample.type) || _filters.type === 'all';
+
+                const nameMatchesTerm =
+                    (_filters.searchTerm !== '' && sample.name.toLowerCase().includes(_filters.searchTerm))
+                    || _filters.searchTerm === '';
+
+                // combine tags into one long String, which will be compared to the search term
+                const tags = sample.tags.join(' ');
+                const tagsMatchesTerm =
+                    (_filters.searchTerm !== '' && tags.toLowerCase().includes(_filters.searchTerm))
+                    || _filters.searchTerm === '';
+
+
+                if (matchesType && (nameMatchesTerm || tagsMatchesTerm)) {
+                    samplesToShow.add(sample.name);
+                    for (const table of tableInfo) {
+                        if (table === sample.type || _filters.type === 'all') {
+                            tablesToShow.add(table);
+                        }
+                    }
+                }
+            }
         }
 
-        for (const sample of sampleInfo) {
-            if (_filters.searchTerm !== "" &&
-                (sample.name.includes(_filters.searchTerm)
-                    || sample.categories.includes(_filters.searchTerm))) {
-                samplesToShow.add(sample.name);
-            }
 
-            if (sample.type === _filters["type"]) {
-                samplesToShow.add(sample.name);
-            }
-        }
 
         rows.forEach(row => {
             const sampleName = row.id;
@@ -129,6 +158,16 @@ function setupSampleFilters() {
                 row.classList.add('hidden');
             }
         });
+
+
+        tables.forEach(table => {
+            const tableId = table.id.slice(6);
+            if (tablesToShow.has(tableId)) {
+                table.classList.remove('hidden');
+            } else {
+                table.classList.add('hidden');
+            }
+        })
     }
 
     document.addEventListener('click', (event) => {
@@ -146,6 +185,11 @@ function setupSampleFilters() {
     });
 
     filterSamples();
+}
+
+function _resetFilters() {
+    _filters.type = 'all';
+    _filters.searchTerm = '';
 }
 
 function _resetChip(chip) {

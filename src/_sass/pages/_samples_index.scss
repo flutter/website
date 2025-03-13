@@ -54,6 +54,11 @@
 .samples-table {
   width: 100%;
   border-radius: 4px;
+  display: block;
+
+  &.hidden {
+    display: none
+  }
 
   tr {
     background-color: $table-mainhead-fill-color !important;
