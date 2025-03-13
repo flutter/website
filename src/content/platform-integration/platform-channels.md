@@ -1445,7 +1445,7 @@ with platform-specific code:
   between your Flutter app and the native
   Firebase Firestore SDKs (on Android and iOS).
 
-[MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
+[MessageCodec]: {{site.api}}/flutter/services/MessageCodec-class.html
 
 ### Separate platform-specific code from UI code {:#separate}
 
