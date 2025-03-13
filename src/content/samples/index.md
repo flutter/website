@@ -20,9 +20,9 @@ js: [ { url: '/assets/js/samples.js', defer: true } ]
                 <li><button class='selected' data-filter="all" role="option" aria-selected="true">
                   <span class="label">All</span>
                 </button></li>
-                {%- for category in samples.categories -%}
-                    <li><button data-filter='{{category.types | join: ","}}' role="option" aria-selected="false">
-                        <span class="label">{{category.label}}</span>
+                {%- for filter in samples_index.filters -%}
+                    <li><button data-filter='{{filter.types | join: ","}}' role="option" aria-selected="false">
+                        <span class="label">{{filter.label}}</span>
                     </button></li>
                 {%- endfor -%}
             </ul>
@@ -38,8 +38,12 @@ js: [ { url: '/assets/js/samples.js', defer: true } ]
  <button class="text-button" id="reset-filters">Clear filters</button>
 </div>
 
+
 <section id="all-samples-tables">
-{% for group in samples.items -%}
-    {%- render docs/samples/sample-table.md group:group -%}
-{% endfor %}
+    {%- render docs/samples/sample-table.md category:samples_index.codelabs -%}
+    {%- render docs/samples/sample-table.md category:samples_index.cookbook -%}
+    {%- render docs/samples/sample-table.md category:samples_index.quickstarts -%}
+    {%- render docs/samples/sample-table.md category:samples_index.demos -%}
 </section>
+
+

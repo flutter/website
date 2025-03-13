@@ -2,7 +2,6 @@
 
 #samples-filter-group {
   width: 100%;
-  width: 100%;
   display: flex;
   flex-direction: row;
 
@@ -17,6 +16,7 @@
       display: flex;
       align-items: center;
       width: 100%;
+      background-color: white;
 
       border: 1px solid rgba(0, 0, 0, .25);
       border-radius: 1rem;
@@ -34,7 +34,7 @@
       }
 
       input {
-        background: none;
+        background: white;
         width: 100%;
         font-size: 1rem;
         cursor: text;
@@ -54,42 +54,48 @@
 .samples-table {
   width: 100%;
   border-radius: 4px;
-  display: block;
+  margin-bottom: 2rem;
 
   &.hidden {
     display: none
   }
 
   tr {
-    background-color: $table-mainhead-fill-color !important;
     border: none;
   }
 
   .tr-main-head {
+
+
     th {
+      background: $table-head-fill-color;
       font-weight: 400;
       border-top: none;
     }
 
-    th .th-section-head {
+    th .th-title {
       font-size: 1.5rem;
       padding: 0;
       margin: 0;
     }
 
-    th label {
+    th .th-description {
       font-weight: 400;
+      font-size: 1rem;
     }
   }
 
   .tr-sub-head {
+    background: $table-head-fill-color;
     th {
       border-top: none;
       border-bottom: 1px solid $site-color-light-grey;
+      font-size: .85rem;
+      padding-top: 0;
+      padding-bottom: .25rem;
     }
 
   }
-
 
   .table-row {
     &.hidden {
@@ -97,10 +103,18 @@
     }
   }
 
+  .tr-separator td {
+    font-weight: 500;
+    background-color: $site-color-codeblock-bg;
+    padding: 12px 6px;
+  }
+
   tr td {
-    background-color: white;
     border-top: none;
+    background: white;
     border-bottom: 1px solid $site-color-light-grey;
+    padding: 6px;
+    vertical-align: middle;
   }
 
   .td-icon {

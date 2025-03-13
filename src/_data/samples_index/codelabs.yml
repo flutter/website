@@ -1,0 +1,14 @@
+type: codelab
+name: Codelabs
+description: Codelabs
+items:
+  - name: Building your first Flutter app
+    description: An instructor-led version of our very popular "Write your first Flutter
+      app" codelab (listed below).
+    tags:
+      - beginner-friendly
+    sdk: flutter
+    type: codelab
+    source-link:
+      url: https://github.com/flutter/samples/tree/main/add_to_app
+      label: Google Codelab

@@ -105,6 +105,8 @@
       permalink: /samples
     - title: Cookbook
       permalink: /cookbook
+    - title: Codelabs
+      permalink: /codelabs
 
 - title: Stay up to date
   permalink: /release

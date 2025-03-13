@@ -50,7 +50,7 @@ function setupSampleFilters() {
     */
     const searchInput = filtersSection.querySelector('.search-wrapper input');
     searchInput.addEventListener('input', event => {
-        _filters.searchTerm = searchInput.value.toLowerCase();
+        _filters.searchTerm = searchInput.value.toLowerCase().trim();
         filterSamples();
     });
 
@@ -140,7 +140,7 @@ function setupSampleFilters() {
                 if (matchesType && (nameMatchesTerm || tagsMatchesTerm)) {
                     samplesToShow.add(sample.name);
                     for (const table of tableInfo) {
-                        if (table === sample.type || _filters.type === 'all') {
+                        if (table === sample.type) {
                             tablesToShow.add(table);
                         }
                     }
