@@ -1137,7 +1137,7 @@ Using this package eliminates the need to match
 strings between host and client for the names and
 data types of messages. It supports nested classes,
 grouping messages into APIs, generation of asynchronous
-wrapper code and sending messages in either direction. The
+wrapper code, and sending messages in either direction. The
 generated code is readable and guarantees there are no
 conflicts between multiple clients of different versions.
 
