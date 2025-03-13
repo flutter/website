@@ -1319,11 +1319,6 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 
 {% endtabs %}
 
-:::note
-In release 2.10, the Task Queue API is only available on the `master` channel
-for iOS.
-:::
-
 ### Jump to the UI thread (Android) {: #jumping-to-the-ui-thread-in-android }
 
 To comply with channels' UI thread requirement,
