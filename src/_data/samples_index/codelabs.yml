@@ -15,8 +15,9 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.yt.watch}}?v=8sAyPDLorek
+      label: YouTube
+      url: https://www.youtube.com/watch?v=8sAyPDLorek
+      
   - name: Your first Flutter app
     description: |
       Create a simple app that automatically generates cool-sounding names,
@@ -29,8 +30,9 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-codelab-first
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
+      
   - name: Write your first Flutter app on the web
     description: |
       Implement a simple web app in DartPad (no downloads
@@ -58,8 +60,9 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/dart-patterns-records
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/dart-patterns-records
+      
   - name: Building scrolling experiences in Flutter
     description: |
       Start with an app that performs simple, straightforward scrolling
@@ -70,8 +73,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.yt.watch}}?v=YY-_yrZdjGc
+      label: YouTube
+      url: https://www.youtube.com/watch?v=YY-_yrZdjGc
 
   #Design
 
@@ -84,8 +87,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
 
   - name: Building next generation UIs in Flutter
     description: |
@@ -96,8 +99,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-next-gen-uis
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
 
   - name: Adaptive Apps in Flutter
     description: |
@@ -109,8 +112,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-adaptive-app
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
 
   - name: Building Beautiful Transitions with Material Motion for Flutter
     description: |
@@ -121,8 +124,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/material-motion-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/material-motion-flutter
 
   - name: How to debug layout issues with the Flutter Inspector
     description: |
@@ -134,8 +137,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+      label: Medium
+      url: https://medium.com/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
   - name: Implicit animations
     description: |
@@ -159,8 +162,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/mdc-101-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/mdc-101-flutter
 
   - name: MDC-102 Flutter - Material Structure and Layout
     description: |
@@ -172,8 +175,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/mdc-102-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/mdc-102-flutter
 
   - name: MDC-103 Flutter - Material Theming with Color, Shape, Elevation, and Type
     description: |
@@ -185,8 +188,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/mdc-103-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/mdc-103-flutter
 
   - name:
       MDC-104 Flutter: Material Advanced Components
@@ -198,8 +201,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/mdc-104-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/mdc-104-flutter
 
   #Flutter with
 
@@ -214,8 +217,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/admob-ads-in-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
 
   - name: Adding an AdMob banner and native inline ads to a Flutter app
     description: |
@@ -227,8 +230,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
 
   - name: Adding in-app purchases to your Flutter app
     description: |
@@ -240,8 +243,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-in-app-purchases
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
 
    ## Firebase
 
@@ -254,8 +257,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
+      label: Google Codelab
+      url: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
 
   - name: Get to know Firebase for Flutter
     description: |
@@ -267,8 +270,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
+      label: Google Codelab
+      url: https://firebase.google.com/codelabs/firebase-get-to-know-flutter
 
   - name: Local development for your Flutter apps using the Firebase Emulator Suite
     description: |
@@ -280,8 +283,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
+      label: Google Codelab
+      url: https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
 
   - name: Send and receive notifications for a Flutter app using Firebase Cloud Messaging
     description: |
@@ -293,8 +296,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.firebase}}/codelabs/firebase-fcm-flutter
+      label: Google Codelab
+      url: https://firebase.google.com/codelabs/firebase-fcm-flutter
 
   ## Games
 
@@ -308,8 +311,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-codelab-soloud
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-codelab-soloud
 
   - name: Build a 2D physics game with Flutter and Flame
     description: |
@@ -321,8 +324,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-flame-forge2d
 
   - name: Build a word puzzle with Flutter
     description: |
@@ -334,8 +337,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-word-puzzle
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-word-puzzle
 
   - name: Introduction to Flame with Flutter
     description: |
@@ -348,8 +351,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
 
   ## TensorFlow
   
@@ -361,8 +364,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
+      label: Google Codelab
+      url: https://developers.google.com/codelabs/classify-text-update-tensorflow-serving
       
   - name: Create a Flutter app to classify texts with TensorFlow
     description: |
@@ -373,8 +376,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
+      label: Google Codelab
+      url: https://developers.google.com/codelabs/classify-texts-flutter-tensorflow-serving
   
   - name: Train a comment-spam detection model with TensorFlow Lite Model Maker
     description: |
@@ -385,8 +388,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.developers}}/codelabs/classify-text-tensorflow-serving
+      label: Google Codelab
+      url: https://developers.google.com/codelabs/classify-text-tensorflow-serving
       
   ## Other techs
   
@@ -399,8 +402,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/google-maps-in-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
       
   - name: Adding WebView to your Flutter app
     description: |
@@ -411,8 +414,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-webview
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-webview
       
   - name: Build voice bots for Android with Dialogflow and Flutter
     description: |
@@ -425,8 +428,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/dialogflow-flutter
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/dialogflow-flutter
       
   - name: Create haikus about Google products with the PaLM API and Flutter
     description: |
@@ -439,8 +442,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/haiku-generator
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/haiku-generator
       
   - name: Using FFI in a Flutter plugin
     description: |
@@ -453,8 +456,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-ffigen
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-ffigen
 
   # Testing
   
@@ -468,8 +471,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-app-testing/
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-app-testing/
 
   # Platform
   
@@ -483,8 +486,8 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/flutter-home-screen-widgets
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/flutter-home-screen-widgets
       
   - name: Write a Flutter desktop application
     description: |
@@ -498,5 +501,5 @@ items:
     sdk: flutter
     type: codelab
     source-link:
-      label: Flutter docs
-      url: {{site.codelabs}}/codelabs/flutter-github-client
+      label: Google Codelab
+      url: https://codelabs.developers.google.com/codelabs/flutter-github-client
