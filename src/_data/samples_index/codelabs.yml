@@ -13,7 +13,7 @@ items:
       - widgets
       - intro
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.yt.watch}}?v=8sAyPDLorek
@@ -27,7 +27,7 @@ items:
       - widgets
       - intro
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-codelab-first
@@ -41,7 +41,7 @@ items:
       - intro
       - widgets
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: /get-started/codelab-web
@@ -56,7 +56,7 @@ items:
     tags:
       - dart
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/dart-patterns-records
@@ -68,7 +68,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.yt.watch}}?v=YY-_yrZdjGc
@@ -82,7 +82,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
@@ -94,7 +94,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-next-gen-uis
@@ -107,7 +107,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-adaptive-app
@@ -119,7 +119,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/material-motion-flutter
@@ -132,7 +132,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
@@ -145,7 +145,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: /codelabs/implicit-animations
@@ -157,7 +157,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/mdc-101-flutter
@@ -170,7 +170,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/mdc-102-flutter
@@ -183,7 +183,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/mdc-103-flutter
@@ -196,7 +196,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/mdc-104-flutter
@@ -212,7 +212,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/admob-ads-in-flutter
@@ -225,7 +225,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/admob-inline-ads-in-flutter
@@ -238,7 +238,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-in-app-purchases
@@ -252,7 +252,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
@@ -265,7 +265,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.firebase}}/codelabs/firebase-get-to-know-flutter
@@ -278,7 +278,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
@@ -291,7 +291,7 @@ items:
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.firebase}}/codelabs/firebase-fcm-flutter
@@ -303,169 +303,200 @@ items:
       The SoLoud package, a free and portable engine,
       delivers the low-latency and high-performance sound that's
       essential for many games.
-      In this codelab, learn how to add SoLoud to your game.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 
   - name: Build a 2D physics game with Flutter and Flame
-    description:
+    description: |
+      This codelab guides you through crafting game mechanics in a
+      Flutter and Flame game using a 2D physics simulation along
+      the lines of Box2D, called Forge2D.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-flame-forge2d
+
   - name: Build a word puzzle with Flutter
-    description:
+    description: |
+      This codelab focuses on building word puzzle games,
+      and dives into using Flutter's background processing
+      to generate expansive crossword-style grids of interlocking words.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-word-puzzle
-  - name: Forge2D
-    description:
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url: {{site.pub-pkg}}/forge2d
+
   - name: Introduction to Flame with Flutter
-    description:
+    description: |
+      Build a Breakout clone using the Flame 2D game engine and
+      embed it in a Flutter wrapper. You will use Flame's Effects
+      to animate and remove components, along with the `google_fonts` and
+      `flutter_animate` packages, to make the whole game look well designed.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-flame-brick-breaker
-  - name: SoLoud
-    description:
+
+  ## TensorFlow
+  
+  - name: TensorFlow Lite Model Maker
+    description: |
+      Create a custom text-classification model with TensorFlow Lite Model Maker.
     tags:
       - testing
     sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url: {{site.pub-pkg}}/flutter_soloud
-  - name: Create a custom text-classification model with TensorFlow Lite Model Maker
-    description:
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.developers}}/codelabs/classify-text-update-tensorflow-serving
+      
   - name: Create a Flutter app to classify texts with TensorFlow
-    description:
+    description: |
+      Learn how to run a text-classification inference from a Flutter
+      app with TensorFlow Serving through REST and gRPC.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.developers}}/codelabs/classify-texts-flutter-tensorflow-serving
+  
   - name: Train a comment-spam detection model with TensorFlow Lite Model Maker
-    description:
+    description: |
+      Learn how to install the TensorFlow Lite Model Maker with Colab,
+      how to use a data loader, and how to build a model.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.developers}}/codelabs/classify-text-tensorflow-serving
+      
+  ## Other techs
+  
   - name: Adding Google Maps to a Flutter app
-    description:
+    description: |
+      Display a Google map in an app, retrieve data from a
+      web service, and display the data as markers on the map.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/google-maps-in-flutter
+      
   - name: Adding WebView to your Flutter app
-    description:
+    description: |
+      With the WebView Flutter plugin you can add a WebView
+      widget to your Android or iOS Flutter app.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-webview
+      
   - name: Build voice bots for Android with Dialogflow and Flutter
-    description:
+    description: |
+      Learn how to build a mobile FAQ bot that can answer most
+      common questions about the tool Dialogflow. End users
+      can interact with the text interface or stream a voice
+      interaction via the built-in microphone of a mobile device.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/dialogflow-flutter
-  - name: Build voice bots for mobile with Dialogflow and Flutter
-    description:
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url: {{site.yt.watch}}?v=O7JfSF3CJ84
+      
   - name: Create haikus about Google products with the PaLM API and Flutter
-    description:
+    description: |
+      Learn how to build an app that uses the PaLM API to
+      generate haikus based on Google product names. The
+      PaLM API gives you access to Google's
+      state-of-the-art large language models.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/haiku-generator
+      
   - name: Using FFI in a Flutter plugin
-    description:
+    description: |
+      Learn how to use Dart's FFI (foreign function interface)
+      library, ffigen, allowing you to leverage
+      existing native libraries that provide a
+      C interface.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-ffigen
 
   # Testing
+  
   - name: How to test a Flutter app
-    description:
+    description: |
+      Start with a simple app that manages state with the Provider package.
+      Unit test the provider package. Write widget tests for two of the
+      widgets. Use Flutter Driver to create an integration test.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-app-testing/
 
   # Platform
-  - name: home-screen
-    description:
+  
+  - name: Adding a Home Screen widget to your Flutter app
+    description: |
+      Learn how to add a Home Screen widget to your Flutter app
+      on iOS. This applies to your home screen, lock screen, or the
+      today view.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/flutter-home-screen-widgets
+      
   - name: Write a Flutter desktop application
-    description:
+    description: |
+      Build a Flutter desktop app (Windows, Linux, or macOS)
+      that accesses GitHub APIs to retrieve your repositories,
+      assigned issues, and pull requests. As part of this task,
+      create and use plugins to interact with native APIs and desktop applications,
+      and use code generation to build type-safe client libraries for GitHub's APIs.
     tags:
       - testing
     sdk: flutter
-    type: recipe
+    type: codelab
     source-link:
       label: Flutter docs
       url: {{site.codelabs}}/codelabs/flutter-github-client
