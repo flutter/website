@@ -22,6 +22,7 @@
 @use 'components/misc';
 @use 'components/next-prev-nav';
 @use 'components/pill';
+@use 'components/search_and_filter';
 @use 'components/sidebar';
 @use 'components/side-menu';
 @use 'components/site-switcher';
@@ -32,6 +33,7 @@
 // Styles for specific pages, alphabetically ordered.
 @use 'pages/not-found';
 @use 'pages/search';
+@use 'pages/samples_index';
 
 // Must be imported last to ensure that
 // the print overrides take priority over earlier defined styles.

@@ -1,0 +1,12 @@
+# Each represents an option in the 'type' filter. The name is displayed as a dropdown option,
+#  and the types represent which tables will be shown when selected
+- label: Cookbook recipes
+  types:
+    - recipe
+- label: Tutorials
+  types:
+    - codelab
+- label: Sample code
+  types:
+    - quickstart
+    - demo
