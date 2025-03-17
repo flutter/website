@@ -70,6 +70,6 @@ Here is an example of automatically formatted code *with* trailing commas:
 
 ![Automatically formatted code with trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
 
-And the same code automatically formatted code *without* trailing commas:
+And the same code automatically formatted *without* trailing commas:
 
 ![Automatically formatted code without trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}
