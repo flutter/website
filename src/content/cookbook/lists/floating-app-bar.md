@@ -161,7 +161,7 @@ To create this effect:
 ```dart
 slivers: [
   // Add the navigation bar to the CustomScrollView.
-  const CupertinoSliverNavigationBar(
+  CupertinoSliverNavigationBar(
     // Provide a standard title.
     largeTitle: Text('Floating App Bar'),
   ),
