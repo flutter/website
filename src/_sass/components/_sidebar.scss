@@ -120,6 +120,10 @@
 
       + ul {
         display: none;
+
+        &.show {
+          display: block;
+        }
       }
 
       &:hover {
@@ -133,10 +137,6 @@
       &:not(.collapsed) {
         .expander {
           transform: rotate(180deg);
-        }
-
-        + ul {
-          display: block;
         }
       }
 
