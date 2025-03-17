@@ -6,11 +6,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // #docregion CustomScrollView
-    return const Scaffold(
-      // No app bar property provided yet.
-      body: CustomScrollView(
-        // Add the app bar and list of items as slivers in the next steps.
-        slivers: <Widget>[],
+    return const MaterialApp(
+      title: 'Floating App Bar',
+      home: Scaffold(
+        // No app bar property provided yet.
+        body: CustomScrollView(
+          // Add the app bar and list of items as slivers in the next steps.
+          slivers: <Widget>[],
+        ),
       ),
     );
     // #enddocregion CustomScrollView

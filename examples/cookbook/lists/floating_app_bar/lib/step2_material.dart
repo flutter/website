@@ -7,33 +7,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Floating App Bar';
-
     return const MaterialApp(
-      title: title,
+      title: 'Floating App Bar',
       home: Scaffold(
         // No appbar provided to the Scaffold, only a body with a
         // CustomScrollView.
-        // #docregion SliverAppBar
         body: CustomScrollView(
+          // #docregion SliverAppBar
           slivers: [
             // Add the app bar to the CustomScrollView.
             SliverAppBar(
               // Provide a standard title.
-              title: Text(title),
-              // Allows the user to reveal the app bar if they begin scrolling
+              title: Text('Floating App Bar'),
+              // Pin the app bar when scrolling.
               pinned: true,
-              // Allows the user to reveal the app bar if they begin scrolling
-              // back up the list of items.
-              floating: true,
               // Display a placeholder widget to visualize the shrinking size.
               flexibleSpace: Placeholder(),
               // Make the initial height of the SliverAppBar larger than normal.
               expandedHeight: 200,
             ),
           ],
+          // #enddocregion SliverAppBar
         ),
-        // #enddocregion SliverAppBar
       ),
     );
   }

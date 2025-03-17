@@ -57,11 +57,14 @@ code if it exists.
 
 <?code-excerpt "lib/starter_material.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
-Scaffold(
-  // No app bar property provided yet.
-  body: CustomScrollView(
-    // Add the app bar and list of items as slivers in the next steps.
-    slivers: <Widget>[],
+MaterialApp(
+  title: 'Floating App Bar',
+  home: Scaffold(
+    // No app bar property provided yet.
+    body: CustomScrollView(
+      // Add the app bar and list of items as slivers in the next steps.
+      slivers: <Widget>[],
+    ),
   ),
 );
 ```
@@ -73,6 +76,7 @@ Scaffold(
 <?code-excerpt "lib/starter_cupertino.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
 CupertinoApp(
+  title: 'Floating Navigation Bar',
   home: CupertinoPageScaffold(
     // No navigation bar property provided yet.
     child: CustomScrollView(
@@ -102,38 +106,31 @@ uses the `SliverAppBar` to display a title,
 tabs, images and more.
 
 However, the `SliverAppBar` also gives you the ability to
-create a "floating" app bar that scrolls offscreen as the
-user scrolls down the list. Furthermore, you can configure
-the `SliverAppBar` to shrink and expand as the user scrolls.
+create a "floating" app bar that shrinks and floats when
+you're not at the top of the page.
 
 To create this effect:
 
   1. Start with an app bar that displays only a title.
   2. Set the `pinned` property to `true`.
-  2. Set the `floating` property to `true`.
   3. Add a `flexibleSpace` widget that fills the available
      `expandedHeight`.
 
 <?code-excerpt "lib/step2_material.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
-CustomScrollView(
-  slivers: [
-    // Add the app bar to the CustomScrollView.
-    SliverAppBar(
-      // Provide a standard title.
-      title: Text(title),
-      // Allows the user to reveal the app bar if they begin scrolling
-      pinned: true,
-      // Allows the user to reveal the app bar if they begin scrolling
-      // back up the list of items.
-      floating: true,
-      // Display a placeholder widget to visualize the shrinking size.
-      flexibleSpace: Placeholder(),
-      // Make the initial height of the SliverAppBar larger than normal.
-      expandedHeight: 200,
-    ),
-  ],
-)
+slivers: [
+  // Add the app bar to the CustomScrollView.
+  SliverAppBar(
+    // Provide a standard title.
+    title: Text('Floating App Bar'),
+    // Pin the app bar when scrolling.
+    pinned: true,
+    // Display a placeholder widget to visualize the shrinking size.
+    flexibleSpace: Placeholder(),
+    // Make the initial height of the SliverAppBar larger than normal.
+    expandedHeight: 200,
+  ),
+],
 ```
 
 :::tip
@@ -150,25 +147,25 @@ offscreen.
 {% tab "Cupertino widgets" %}
 
 Flutter provides the [`CupertinoSliverNavigationBar`][]
-widget, which you can use to add a navigation bar for your
-list. When used inside of a `CustomScrollView`,
-the title shrinks when you scroll down and floats when
+widget, which lets you have a "floating" navigation
+bar that shrinks when you scroll down and floats when
 you're not at the top of the page.
 
-For this example, add `CupertinoSliverNavigationBar` to
-`CustomScrollView`.
+To create this effect: 
+
+  1. Add `CupertinoSliverNavigationBar` to
+     `CustomScrollView`. 
+  2. Start with an app bar that displays only a title.
 
 <?code-excerpt "lib/step2_cupertino.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
 ```dart
-child: CustomScrollView(
-  slivers: [
-    // Add the navigation bar to the CustomScrollView.
-    const CupertinoSliverNavigationBar(
-      // Provide a standard title.
-      largeTitle: Text(title),
-    ),
-  ],
-)
+slivers: [
+  // Add the navigation bar to the CustomScrollView.
+  const CupertinoSliverNavigationBar(
+    // Provide a standard title.
+    largeTitle: Text('Floating App Bar'),
+  ),
+],
 ```
 
 {% endtab %}
@@ -185,15 +182,6 @@ display a list of items one after the other, use the
 `SliverList` widget. If you need to display a grid list, use
 the `SliverGrid` widget.
 
-The `SliverList` and `SliverGrid` widgets take one required
-parameter: a sliver delegate, which provides a
-list of widgets to `SliverList` or `SliverGrid`.
-
-There are many types of sliver delegates. In the following
-example, the [`SliverChildBuilderDelegate`][] is used to
-to create a list of items that are built lazily as you
-scroll, just like the `ListView.builder` widget.
-
 {% tabs "device-type-tabs" %}
 
 {% tab "Material widgets" %}
@@ -201,15 +189,13 @@ scroll, just like the `ListView.builder` widget.
 <?code-excerpt "lib/main_material.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
 // Next, create a SliverList
-SliverList(
-  // Use a delegate to build items as they're scrolled on screen.
-  delegate: SliverChildBuilderDelegate(
-    // The builder function returns a ListTile with a title that
-    // displays the index of the current item.
-    (context, index) => ListTile(title: Text('Item #$index')),
-    // Builds 50 ListTiles
-    childCount: 50,
-  ),
+SliverList.builder(
+  // The builder function returns a ListTile with a title that
+  // displays the index of the current item.
+  itemBuilder:
+      (context, index) => ListTile(title: Text('Item #$index')),
+  // Builds 50 ListTiles
+  itemCount: 50,
 )
 ```
 
@@ -220,16 +206,14 @@ SliverList(
 <?code-excerpt "lib/main_cupertino.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
 // Next, create a SliverList
-SliverList(
-  // Use a delegate to build items as they're scrolled on screen.
-  delegate: SliverChildBuilderDelegate(
-    // The builder function returns a ListTile with a title that
-    // displays the index of the current item.
-    (context, index) =>
-        CupertinoListTile(title: Text('Item #$index')),
-    // Builds 50 ListTiles
-    childCount: 50,
-  ),
+SliverList.builder(
+  // The builder function returns a ListTile with a title that
+  // displays the index of the current item.
+  itemBuilder:
+      (context, index) =>
+          CupertinoListTile(title: Text('Item #$index')),
+  // Builds 50 ListTiles
+  itemCount: 50,
 )
 ```
 
@@ -267,26 +251,21 @@ class MyApp extends StatelessWidget {
             const SliverAppBar(
               // Provide a standard title.
               title: Text(title),
-              // Allows the user to reveal the app bar if they begin scrolling
+              // Pin the app bar when scrolling
               pinned: true,
-              // Allows the user to reveal the app bar if they begin scrolling
-              // back up the list of items.
-              floating: true,
               // Display a placeholder widget to visualize the shrinking size.
               flexibleSpace: Placeholder(),
               // Make the initial height of the SliverAppBar larger than normal.
               expandedHeight: 200,
             ),
             // Next, create a SliverList
-            SliverList(
-              // Use a delegate to build items as they're scrolled on screen.
-              delegate: SliverChildBuilderDelegate(
-                // The builder function returns a ListTile with a title that
-                // displays the index of the current item.
-                (context, index) => ListTile(title: Text('Item #$index')),
-                // Builds 50 ListTiles
-                childCount: 50,
-              ),
+            SliverList.builder(
+              // The builder function returns a ListTile with a title that
+              // displays the index of the current item.
+              itemBuilder:
+                  (context, index) => ListTile(title: Text('Item #$index')),
+              // Builds 50 ListTiles
+              itemCount: 50,
             ),
           ],
         ),
@@ -330,16 +309,14 @@ class MyApp extends StatelessWidget {
               largeTitle: Text(title),
             ),
             // Next, create a SliverList
-            SliverList(
-              // Use a delegate to build items as they're scrolled on screen.
-              delegate: SliverChildBuilderDelegate(
-                // The builder function returns a ListTile with a title that
-                // displays the index of the current item.
-                (context, index) =>
-                    CupertinoListTile(title: Text('Item #$index')),
-                // Builds 50 ListTiles
-                childCount: 50,
-              ),
+            SliverList.builder(
+              // The builder function returns a ListTile with a title that
+              // displays the index of the current item.
+              itemBuilder:
+                  (context, index) =>
+                      CupertinoListTile(title: Text('Item #$index')),
+              // Builds 50 ListTiles
+              itemCount: 50,
             ),
           ],
         ),

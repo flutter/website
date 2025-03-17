@@ -23,16 +23,14 @@ class MyApp extends StatelessWidget {
             ),
             // #docregion SliverList
             // Next, create a SliverList
-            SliverList(
-              // Use a delegate to build items as they're scrolled on screen.
-              delegate: SliverChildBuilderDelegate(
-                // The builder function returns a ListTile with a title that
-                // displays the index of the current item.
-                (context, index) =>
-                    CupertinoListTile(title: Text('Item #$index')),
-                // Builds 50 ListTiles
-                childCount: 50,
-              ),
+            SliverList.builder(
+              // The builder function returns a ListTile with a title that
+              // displays the index of the current item.
+              itemBuilder:
+                  (context, index) =>
+                      CupertinoListTile(title: Text('Item #$index')),
+              // Builds 50 ListTiles
+              itemCount: 50,
             ),
             // #enddocregion SliverList
           ],

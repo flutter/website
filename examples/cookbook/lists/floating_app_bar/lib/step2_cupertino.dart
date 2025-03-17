@@ -7,24 +7,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Floating Navigation Bar';
-
-    return CupertinoApp(
-      title: title,
+    return const CupertinoApp(
+      title: 'Floating App Bar',
       home: CupertinoPageScaffold(
         // No navigation bar provided to CupertinoPageScaffold,
         // only a body with a CustomScrollView.
-        // #docregion SliverAppBar
         child: CustomScrollView(
+          // #docregion SliverAppBar
           slivers: [
             // Add the navigation bar to the CustomScrollView.
             const CupertinoSliverNavigationBar(
               // Provide a standard title.
-              largeTitle: Text(title),
+              largeTitle: Text('Floating App Bar'),
             ),
           ],
+          // #enddocregion SliverAppBar
         ),
-        // #enddocregion SliverAppBar
       ),
     );
   }

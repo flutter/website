@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion CustomScrollView
     return const CupertinoApp(
+      title: 'Floating Navigation Bar',
       home: CupertinoPageScaffold(
         // No navigation bar property provided yet.
         child: CustomScrollView(
