@@ -4,6 +4,10 @@ short-title: Supported platforms
 description: The platforms that Flutter supports by platform version.
 ---
 
+**Note**: For important security considerations related to different platforms
+and SDK versions, please refer to the [Platform Vulnerabilities][]
+documentation.
+
 As of Flutter {{site.appnow.flutter}},
 Flutter supports deploying apps on the following combinations of
 hardware architectures and operating system versions.
@@ -27,3 +31,5 @@ Flutter supports deploying to the following platforms.
 {%- endfor %}
 
 {:.table .table-striped}
+
+[Platform Vulnerabilities]: /reference/vulnerabilities

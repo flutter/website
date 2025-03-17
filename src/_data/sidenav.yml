@@ -860,6 +860,8 @@
     - title: Reference
       permalink: /reference
       children:
+        - title: Platform Vulnerabilities
+          permalink: /reference/vulnerabilities
         - title: Who is Dash?
           permalink: /dash
         - title: Widget index
