@@ -24,12 +24,12 @@ class MyApp extends StatelessWidget {
             // #docregion SliverList
             // Next, create a SliverList
             SliverList.builder(
-              // The builder function returns a ListTile with a title that
-              // displays the index of the current item.
+              // The builder function returns a CupertinoListTile with a title
+              // that displays the index of the current item.
               itemBuilder:
                   (context, index) =>
                       CupertinoListTile(title: Text('Item #$index')),
-              // Builds 50 ListTiles
+              // Builds 50 CupertinoListTile
               itemCount: 50,
             ),
             // #enddocregion SliverList
