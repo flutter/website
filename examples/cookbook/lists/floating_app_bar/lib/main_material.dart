@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        // No appbar provided to the Scaffold, only a body with a
+        // No app bar provided to Scaffold, only a body with a
         // CustomScrollView.
         body: CustomScrollView(
           slivers: [
@@ -20,9 +20,8 @@ class MyApp extends StatelessWidget {
             const SliverAppBar(
               // Provide a standard title.
               title: Text(title),
-              // Allows the user to reveal the app bar if they begin scrolling
-              // back up the list of items.
-              floating: true,
+              // Pin the app bar when scrolling
+              pinned: true,
               // Display a placeholder widget to visualize the shrinking size.
               flexibleSpace: Placeholder(),
               // Make the initial height of the SliverAppBar larger than normal.
@@ -30,15 +29,13 @@ class MyApp extends StatelessWidget {
             ),
             // #docregion SliverList
             // Next, create a SliverList
-            SliverList(
-              // Use a delegate to build items as they're scrolled on screen.
-              delegate: SliverChildBuilderDelegate(
-                // The builder function returns a ListTile with a title that
-                // displays the index of the current item.
-                (context, index) => ListTile(title: Text('Item #$index')),
-                // Builds 1000 ListTiles
-                childCount: 1000,
-              ),
+            SliverList.builder(
+              // The builder function returns a ListTile with a title that
+              // displays the index of the current item.
+              itemBuilder:
+                  (context, index) => ListTile(title: Text('Item #$index')),
+              // Builds 50 ListTiles
+              itemCount: 50,
             ),
             // #enddocregion SliverList
           ],
