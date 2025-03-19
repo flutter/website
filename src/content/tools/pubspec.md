@@ -169,8 +169,7 @@ Subfields of `assets`:
   subfields.
 * `path`: The path to a directory.
 * `flavors`: A list of flutter flavors to use with assets
-  at a specific path. Currently, this works with
-  Android-specific Flutter flavors. To learn more about
+  at a specific path. To learn more about
   flavors, see [Set up flavors for iOS and macOS] and
   [Set up flavors for Android].
 
