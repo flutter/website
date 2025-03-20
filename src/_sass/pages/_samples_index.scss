@@ -19,7 +19,7 @@
       background-color: white;
 
       border: 1px solid rgba(0, 0, 0, .25);
-      border-radius: 1rem;
+      border-radius: 2rem;
       height: 3rem;
       padding: 0 .5rem;
 
@@ -117,8 +117,26 @@
     vertical-align: middle;
   }
 
-  .td-icon {
-    color: $site-color-nav-links
-  }
+}
 
+#all-samples-grid {
+
+  .card {
+    &:hover {
+      box-shadow: 0px 0px 20px -5px $site-color-light-grey;
+      background-image: none;
+      transition: .25s ease;
+    }
+
+    .card-leading {
+      background-color: $flutter-color-light-blue;
+      justify-content: space-between !important;
+      margin: -1rem;
+      padding: 1rem 1rem .5rem;
+    }
+
+    .card-title {
+      margin-top: 1rem;
+    }
+  }
 }

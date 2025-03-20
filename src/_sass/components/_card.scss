@@ -134,6 +134,12 @@
         font-weight: 400;
       }
     }
+
+    .card-trailing {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
   }
 
   a.card {

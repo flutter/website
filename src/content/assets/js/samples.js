@@ -16,7 +16,7 @@ function setupSampleFilters() {
     * There's one table per resource type (i.e. codelab, recipes, etc)
     *
     */
-    const tableSection = document.getElementById('all-samples-tables');
+    const sampleCards = document.getElementById('all-samples-grid')?.querySelectorAll('.card');
     const tables = tableSection?.querySelectorAll('.samples-table');
     const rows = tableSection?.querySelectorAll('.table-row');
     const sampleInfo = [];

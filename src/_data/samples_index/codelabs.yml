@@ -6,8 +6,8 @@ items:
   - name: Building your first Flutter app
     description: |
       An instructor-led version of our very popular
-       "Write your first Flutter app" codelab
-       (listed below).
+      "Write your first Flutter app" codelab
+      (listed below).
     tags:
       - beginner
       - widgets
@@ -153,7 +153,7 @@ items:
       label: Flutter docs
       url: /codelabs/implicit-animations
 
-  - name: MDC-101 Flutter - Material Components (MDC) Basics
+  - name: MDC-101 - Material Components (MDC) Basics
     description: |
       Learn the basics of using Material Components by building
       a simple app with core components.
@@ -165,7 +165,7 @@ items:
       label: Google Codelab
       url: https://codelabs.developers.google.com/codelabs/mdc-101-flutter
 
-  - name: MDC-102 Flutter - Material Structure and Layout
+  - name: MDC-102 - Material Structure and Layout
     description: |
       Learn how to use Material for structure and layout in Flutter.
       Continue building the e-commerce app, introduced in MDC-101,
@@ -178,7 +178,7 @@ items:
       label: Google Codelab
       url: https://codelabs.developers.google.com/codelabs/mdc-102-flutter
 
-  - name: MDC-103 Flutter - Material Theming with Color, Shape, Elevation, and Type
+  - name: MDC-103 - Material Theming with Color, Shape, Elevation, and Type
     description: |
       Discover how Material Components for Flutter make it
       easy to differentiate your product, and express your
@@ -191,8 +191,7 @@ items:
       label: Google Codelab
       url: https://codelabs.developers.google.com/codelabs/mdc-103-flutter
 
-  - name:
-      MDC-104 Flutter: Material Advanced Components
+  - name: MDC-104 - Material Advanced Components
     description: |
       Improve your design and learn to use our advanced
       component backdrop menu.

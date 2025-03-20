@@ -1,0 +1,1219 @@
+- name: Add a drawer
+  description: To a screen!
+  tags:
+    - drawer
+    - material
+  sdk: flutter
+  type: quickstart
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/drawer
+
+- name: Add a number
+  description: To another number! With a + operator! Lorem Ipsum, etc.
+  tags:
+    - dart
+    - math
+  sdk: dart
+  type: quickstart
+  source-link:
+    label: Dart docs
+    url: /cookbook/design/drawer
+
+# Good for beginners
+- name: Building your first Flutter app
+  description: |
+    An instructor-led version of our very popular
+    "Write your first Flutter app" codelab
+    (listed below).
+  tags:
+    - beginner
+    - widgets
+    - intro
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: YouTube
+    url: https://www.youtube.com/watch?v=8sAyPDLorek
+
+- name: Your first Flutter app
+  description: |
+    Create a simple app that automatically generates cool-sounding names,
+    such as "newstay", "lightstream", "mainbrake", or "graypine".
+    This app is responsive and runs on mobile, desktop, and web.
+  tags:
+    - beginner
+    - widgets
+    - intro
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
+
+- name: Write your first Flutter app on the web
+  description: |
+    Implement a simple web app in DartPad (no downloads
+      required!) that displays a sign-in screen
+      containing three text fields.
+  tags:
+    - beginner
+    - intro
+    - widgets
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Flutter docs
+    url: /get-started/codelab-web
+
+# Next steps
+
+- name: Records and Patterns in Dart 3
+  description: |
+    Discover Dart 3's new records and patterns features.
+    Learn how you can use them in a Flutter app to help you
+    write more readable and maintainable Dart code.
+  tags:
+    - dart
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/dart-patterns-records
+
+- name: Building scrolling experiences in Flutter
+  description: |
+    Start with an app that performs simple, straightforward scrolling
+      and enhance it to create fancy and custom scrolling effects
+      by using slivers.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: YouTube
+    url: https://www.youtube.com/watch?v=YY-_yrZdjGc
+
+#Design
+
+- name: Take your Flutter app from boring to beautiful
+  description: |
+    Learn how to use some of the features in Material 3
+    to make your app beautiful and responsive.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
+
+- name: Building next generation UIs in Flutter
+  description: |
+    Learn how to build a Flutter app that uses the power of `flutter_animate`,
+    fragment shaders, and particle fields.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
+
+- name: Adaptive Apps in Flutter
+  description: |
+    Learn how to build a Flutter app that adapts to the
+      platform that it's running on, be that Android, iOS,
+      the web, Windows, macOS, or Linux.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
+
+- name: Building Beautiful Transitions with Material Motion for Flutter
+  description: |
+    Learn how to use the Material [animations][] package to
+    add pre-built transitions to a Material app called Reply.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/material-motion-flutter
+
+- name: How to debug layout issues with the Flutter Inspector
+  description: |
+    Step-by-step instructions on how to debug 
+    common layout problems using the Flutter
+    Inspector and Layout Explorer.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Medium
+    url: https://medium.com/flutter/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+
+- name: Implicit animations
+  description: |
+    Use DartPad (no downloads required!) to learn how to use
+    implicit animations to add motion and create
+    visual effects for the widgets in your UI.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Flutter docs
+    url: /codelabs/implicit-animations
+
+- name: MDC-101 - Material Components (MDC) Basics
+  description: |
+    Learn the basics of using Material Components by building
+    a simple app with core components.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-101-flutter
+
+- name: MDC-102 - Material Structure and Layout
+  description: |
+    Learn how to use Material for structure and layout in Flutter.
+    Continue building the e-commerce app, introduced in MDC-101,
+    by adding navigation, structure, and data.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-102-flutter
+
+- name: MDC-103 - Material Theming with Color, Shape, Elevation, and Type
+  description: |
+    Discover how Material Components for Flutter make it
+    easy to differentiate your product, and express your
+    brand through design.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-103-flutter
+
+- name: MDC-104 - Material Advanced Components
+  description: |
+    Improve your design and learn to use our advanced
+    component backdrop menu.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-104-flutter
+
+#Flutter with
+
+## Monetizing Flutter
+- name: Adding AdMob Ads to a Flutter app
+  description: |
+    Learn how to add an AdMob banner, an interstitial ad,
+    and a rewarded ad to an app called Awesome Drawing Quiz,
+    a game that lets players guess the name of the drawing.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+
+- name: Adding an AdMob banner and native inline ads to a Flutter app
+  description: |
+    Learn how to implement inline banner and native ads
+    to a travel booking app that lists possible
+    flight destinations.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+
+- name: Adding in-app purchases to your Flutter app
+  description: |
+    Extend a simple gaming app that uses the Dash mascot as
+    currency to offer three types of in-app purchases:
+    consumable, non-consumable, and subscription.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+
+## Firebase
+
+- name: Add a user authentication flow to a Flutter app using FirebaseUI
+  description: |
+    Learn how to add Firebase authentication to a Flutter app
+    with only a few lines of code.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+
+- name: Get to know Firebase for Flutter
+  description: |
+    Build an event RSVP and guestbook chat app on both Android
+    and iOS using Flutter, authenticating users with Firebase
+    Authentication, and sync data using Cloud Firestore.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-get-to-know-flutter
+
+- name: Local development for your Flutter apps using the Firebase Emulator Suite
+  description: |
+    Learn how to use the Firebase Emulator Suite when
+    developing with Flutter. You will also learn to use
+    the Auth and Firestore emulators.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+
+- name: Send and receive notifications for a Flutter app using Firebase Cloud Messaging
+  description: |
+    Learn how to develop a multi-platform app with Flutter
+    and Firebase Cloud Messaging, integrating FCM to send and
+    receive messages on Android, iOS, and web.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-fcm-flutter
+
+## Games
+
+- name: Add sound and music to your Flutter game with SoLoud
+  description: |
+    The SoLoud package, a free and portable engine,
+    delivers the low-latency and high-performance sound that's
+    essential for many games.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-soloud
+
+- name: Build a 2D physics game with Flutter and Flame
+  description: |
+    This codelab guides you through crafting game mechanics in a
+    Flutter and Flame game using a 2D physics simulation along
+    the lines of Box2D, called Forge2D.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-flame-forge2d
+
+- name: Build a word puzzle with Flutter
+  description: |
+    This codelab focuses on building word puzzle games,
+    and dives into using Flutter's background processing
+    to generate expansive crossword-style grids of interlocking words.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-word-puzzle
+
+- name: Introduction to Flame with Flutter
+  description: |
+    Build a Breakout clone using the Flame 2D game engine and
+    embed it in a Flutter wrapper. You will use Flame's Effects
+    to animate and remove components, along with the `google_fonts` and
+    `flutter_animate` packages, to make the whole game look well designed.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
+
+## TensorFlow
+
+- name: TensorFlow Lite Model Maker
+  description: |
+    Create a custom text-classification model with TensorFlow Lite Model Maker.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://developers.google.com/codelabs/classify-text-update-tensorflow-serving
+
+- name: Create a Flutter app to classify texts with TensorFlow
+  description: |
+    Learn how to run a text-classification inference from a Flutter
+    app with TensorFlow Serving through REST and gRPC.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://developers.google.com/codelabs/classify-texts-flutter-tensorflow-serving
+
+- name: Train a comment-spam detection model with TensorFlow Lite Model Maker
+  description: |
+    Learn how to install the TensorFlow Lite Model Maker with Colab,
+    how to use a data loader, and how to build a model.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://developers.google.com/codelabs/classify-text-tensorflow-serving
+
+## Other techs
+
+- name: Adding Google Maps to a Flutter app
+  description: |
+    Display a Google map in an app, retrieve data from a
+    web service, and display the data as markers on the map.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+
+- name: Adding WebView to your Flutter app
+  description: |
+    With the WebView Flutter plugin you can add a WebView
+    widget to your Android or iOS Flutter app.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-webview
+
+- name: Build voice bots for Android with Dialogflow and Flutter
+  description: |
+    Learn how to build a mobile FAQ bot that can answer most
+    common questions about the tool Dialogflow. End users
+    can interact with the text interface or stream a voice
+    interaction via the built-in microphone of a mobile device.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/dialogflow-flutter
+
+- name: Create haikus about Google products with the PaLM API and Flutter
+  description: |
+    Learn how to build an app that uses the PaLM API to
+    generate haikus based on Google product names. The
+    PaLM API gives you access to Google's
+    state-of-the-art large language models.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/haiku-generator
+
+- name: Using FFI in a Flutter plugin
+  description: |
+    Learn how to use Dart's FFI (foreign function interface)
+    library, ffigen, allowing you to leverage
+    existing native libraries that provide a
+    C interface.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-ffigen
+
+# Testing
+
+- name: How to test a Flutter app
+  description: |
+    Start with a simple app that manages state with the Provider package.
+    Unit test the provider package. Write widget tests for two of the
+    widgets. Use Flutter Driver to create an integration test.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-app-testing/
+
+# Platform
+
+- name: Adding a Home Screen widget to your Flutter app
+  description: |
+    Learn how to add a Home Screen widget to your Flutter app
+    on iOS. This applies to your home screen, lock screen, or the
+    today view.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/flutter-home-screen-widgets
+
+- name: Write a Flutter desktop application
+  description: |
+    Build a Flutter desktop app (Windows, Linux, or macOS)
+    that accesses GitHub APIs to retrieve your repositories,
+    assigned issues, and pull requests. As part of this task,
+    create and use plugins to interact with native APIs and desktop applications,
+    and use code generation to build type-safe client libraries for GitHub's APIs.
+  tags:
+    - testing
+  sdk: flutter
+  type: codelab
+  source-link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-github-client
+
+
+
+
+- name: Animate a page route transition
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/animation/page-route-animation
+- name: Animate a widget using a physics simulation
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/animation/physics-simulation
+- name: Animate the properties of a container
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/animation/animated-container
+- name: Fade a widget in and out
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/animation/opacity-animation
+
+- name: Add a drawer to a screen
+  description: TODO write description
+  tags:
+    - design
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/drawer
+- name: Display a snackbar
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/snackbars
+- name: Export fonts from a package
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/package-fonts
+- name: Update the UI based on orientation
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/orientation
+- name: Use a custom font
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/fonts
+- name: Use themes to share colors and font styles
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/themes
+- name: Work with tabs
+  description: TODO write description
+  tags:
+    -
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/design/tabs
+
+- type: separator
+  name: Effects
+- name: Create a download button
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/download-button
+- name: Create a nested navigation flow
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/nested-nav
+- name: Create a scrolling parallax effect
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/parallax-scrolling
+- name: Create a shimmer loading effect
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/shimmer-loading
+- name: Create a staggered menu animation
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/staggered-menu-animation
+- name: Create a typing indicator
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/typing-indicator
+- name: Create an expandable FAB
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/expandable-fab
+- name: Create gradient chat bubbles
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/gradient-bubbles
+- name: Drag a UI element
+  description: TODO write description
+  tags:
+    - ui
+    - effects
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/effects/drag-a-widget
+
+- type: separator
+  name: Forms
+- name: Build a form with validation
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/forms/validation
+- name: Create and style a text field
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/forms/text-input
+- name: Focus and text fields
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/forms/focus
+- name: Handle changes to a text field
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/forms/text-field-changes
+- name: Retrieve the value of a text field
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/forms/retrieve-input
+- type: separator
+  name: Games
+- name: Add achievements and leaderboards to your mobile game
+  description: TODO write description
+  tags:
+    - games
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/games/achievements-leaderboard
+- name: Add multiplayer support via Firestore
+  description: TODO write description
+  tags:
+    - games
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/games/firestore-multiplayer
+- name: Add ads to your mobile Flutter app or game
+  description: TODO write description
+  tags:
+    - games
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/plugins/google-mobile-ads
+
+- type: separator
+  name: Gestures
+- name: Add Material touch ripples
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/gestures/ripples
+- name: Handle taps
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/gestures/handling-taps
+- name: Implement swipe to dismiss
+  description: TODO write description
+  tags:
+    - input
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/gestures/dismissible
+
+- type: separator
+  name: Images
+- name: Display images from the internet
+  description: TODO write description
+  tags:
+    - image
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/images/network-image
+- name: Fade in images with a placeholder
+  description: TODO write description
+  tags:
+    - image
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/images/fading-in-images
+
+- type: separator
+  name: Lists
+- name: Create a grid list
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/grid-lists
+- name: Create a horizontal list
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/horizontal-list
+- name: Create lists with different types of items
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/mixed-list
+- name: Place a floating app bar above a list
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/floating-app-bar
+- name: Use lists
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/basic-list
+- name: Work with long lists
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/long-lists
+- name: Create a list with spaced items
+  description: TODO write description
+  tags:
+    - list
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/lists/spaced-items
+
+- type: separator
+  name: Navigation
+- name: Animate a widget across screens
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/hero-animations
+- name: Navigate to a new screen and back
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/navigation-basics
+- name: Navigate with named routes
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/named-routes
+- name: Pass arguments to a named route
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/navigate-with-arguments
+- name: Set up app links for Android
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/set-up-app-links
+- name: Set up universal links for iOS
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/set-up-universal-links
+- name: Return data from a screen
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/returning-data
+- name: Send data to a new screen
+  description: TODO write description
+  tags:
+    - navigation
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/navigation/passing-data
+
+- type: separator
+  name: Networking
+- name: Fetch data from the internet
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/fetch-data
+- name: Make authenticated requests
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/authenticated-requests
+- name: Send data to the internet
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/send-data
+- name: Update data over the internet
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/update-data
+- name: Delete data on the internet
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/delete-data
+- name: Communicate with WebSockets
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/web-sockets
+- name: Parse JSON in the background
+  description: TODO write description
+  tags:
+    - networking
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/networking/background-parsing
+
+- type: separator
+  name: Data and persistence
+  tags:
+    - data
+    - persistence
+- name: Persist data with SQLite
+  description: TODO write description
+  tags:
+    - data
+    - persistence
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/persistence/sqlite
+- name: Read and write files
+  description: TODO write description
+  tags:
+    - data
+    - persistence
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/persistence/reading-writing-files
+- name: Store key-value data on disk
+  description: TODO write description
+  tags:
+    - data
+    - persistence
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/persistence/key-value
+
+- type: plugins
+  name: Plugins
+  tags:
+    - plugins
+- name: Play and pause a video
+  description: TODO write description
+  tags:
+    - plugins
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/plugins/play-video
+- name: Add ads to your mobile Flutter app or game
+  description: TODO write description
+  tags:
+    - plugins
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/plugins/google-mobile-ads
+- name: Take a picture using the camera
+  description: TODO write description
+  tags:
+    - plugins
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/plugins/picture-using-camera
+
+- type: separator
+  name: Testing and maintenance
+  tags:
+    - testing
+    - maintenance
+    - error
+- name: Report errors to a service
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/maintenance/error-reporting
+- name: An introduction to integration testing
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/integration/introduction
+- name: Performance profiling
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/integration/profiling
+- name: An introduction to unit testing
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/unit/introduction
+- name: Mock dependencies using Mockito
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/unit/mocking
+- name: An introduction to widget testing
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/introduction
+- name: Find widgets
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/finders
+- name: Handle scrolling
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/scrolling
+- name: Test the orientation of an app
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/orientation
+- name: Tap, drag, and enter text
+  description: TODO write description
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/tap-drag

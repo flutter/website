@@ -1,7 +1,7 @@
 @use '../base/variables' as *;
 
 .rrec-pill {
-  border-radius: 8px;
+  border-radius: 14px;
   margin: $site-spacer / 2;
   padding: $site-spacer / 2;
   text-align: center;
@@ -20,5 +20,32 @@
   &.info {
     background: darken($alert-info-bg, 10%);
     color: darken($alert-info-bg, 60%);
+  }
+}
+
+.pill-sm {
+  border-radius: 20px;
+  padding: $site-spacer / 3 $site-spacer / 2;
+  text-align: center;
+  font-size: .8rem;
+
+
+  // Grey by default
+  background: $site-color-light-grey;
+  color: $site-color-body-light;
+
+  &.flutter-blue {
+    color: lighten($flutter-color-light-blue, 10%);
+    background: $flutter-color-blue-500;
+  }
+
+  &.teal {
+    color: lighten($flutter-color-light-teal, 10%);
+    background: $flutter-color-teal;
+  }
+
+  &.purple {
+    color: lighten($flutter-color-light-purple, 10%);
+    background: $flutter-color-purple;
   }
 }

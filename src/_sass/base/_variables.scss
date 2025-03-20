@@ -3,6 +3,7 @@
 // Colors
 $flutter-color-blue: #043875;
 $flutter-color-teal: #158477;
+$flutter-color-light-teal: #B8EDE1;
 $flutter-color-blue-on-dark: #B8EAFE;
 $flutter-color-blue-500: #0468D7;
 $flutter-color-blue-600: #0553B1;
@@ -12,7 +13,10 @@ $flutter-color-fuchsia: #E64637;
 $flutter-color-yellow: #FFF275;
 $flutter-color-yellow-300: #FFF59C;
 $flutter-color-light-blue: #E7F8FF;
+$flutter-color-sky-blue: #B8EAFE;
 $flutter-dark-blue-texture: #232C33;
+$flutter-color-purple: #6200EE;
+$flutter-color-light-purple: #C6BAFA;
 $site-color-black: #000;
 $site-color-white: #FFF;
 $site-color-codeblock-bg: #F8F9FA;
@@ -61,6 +65,10 @@ $chip-container-color: $site-color-white;
 $chip-border-color: rgba(0,0,0,.35);
 $chip-selected-container-color: $flutter-color-blue-on-dark;
 $chip-text-color: #3a3a3a;
+
+$pill-bg-purple: $flutter-color-light-purple;
+$pill-bg-teal: $flutter-color-light-teal;
+$pill-bg-blue: $flutter-color-sky-blue;
 
 // Tables
 $table-head-fill-color: $site-color-panel-background;
