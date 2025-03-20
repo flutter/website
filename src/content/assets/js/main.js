@@ -416,13 +416,21 @@ function setupFeedback() {
   if (!feedbackUpButton || !feedbackDownButton) return;
 
   feedbackUpButton.addEventListener('click', (_) => {
-    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'up'});
+    window.dataLayer?.push({
+      'event': 'inline_feedback',
+      'feedback_type': 'up',
+      'page_location': window.location.href
+    });
 
     feedbackContainer.classList.add('feedback-up');
   }, { once: true });
 
   feedbackDownButton.addEventListener('click', (_) => {
-    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'down'});
+    window.dataLayer?.push({
+      'event': 'inline_feedback',
+      'feedback_type': 'down',
+      'page_location': window.location.href
+    });
 
     feedbackContainer.classList.add('feedback-down');
   }, { once: true });
