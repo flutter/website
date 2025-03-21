@@ -24,7 +24,7 @@
             <div class="card-leading">
                 {%- liquid
                     case item.type
-                        when 'codelab'
+                        when 'codelab' or 'workshop'
                             assign pill-color = 'flutter-blue'
                         when 'quickstart'
                             assign pill-color = 'purple'
@@ -35,7 +35,7 @@
                     endcase -%}
                 <span class="pill-sm {{ pill-color }}">{{ item.type | capitalize }}</span>
                 {%- if item.source-link.label == "Github" -%}
-                    <svg width="24px" height="24px">
+                    <svg style="color:black" width="24px" height="24px">
                         <use href="/assets/images/social/github.svg#github"></use>
                     </svg>
                 {%- elsif item.source-link.label == 'Flutter docs' -%}
@@ -47,8 +47,8 @@
                         <use href="/assets/images/social/google-developers.svg#google-developers"></use>
                     </svg>
                 {%- elsif item.source-link.label == "YouTube" -%}
-                    <svg width="24px" height="24px">
-                        <use href="/assets/images/social/youtube#youtube"></use>
+                    <svg style="color:red" width="24px" height="24px">
+                        <use href="/assets/images/social/youtube.svg#youtube"></use>
                     </svg>
                 {%- endif -%}
             </div>

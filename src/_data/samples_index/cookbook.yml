@@ -1,114 +1,111 @@
-- type: separator
-  name: Animations
-  tags:
-    - animations
+# Animations
+
 - name: Animate a page route transition
-  description: TODO write description
+  description: Transition between routes by animating the new route into view from the bottom of the screen.
   tags:
-    -
+    - animation
+    - route
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/animation/page-route-animation
+
 - name: Animate a widget using a physics simulation
-  description: TODO write description
+  description: Learn how to move a widget from a dragged point back to the center using a spring simulation.
   tags:
-    -
+    - animation
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/animation/physics-simulation
+
 - name: Animate the properties of a container
-  description: TODO write description
+  description: Use AnimatedContainer to animate the size, background color, and border radius of a Container.
   tags:
-    -
+    - animation
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/animation/animated-container
+
 - name: Fade a widget in and out
-  description: TODO write description
+  description: The AnimatedOpacity widget makes it easy to perform opacity animations.
   tags:
-    -
+    - animation
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/animation/opacity-animation
 
-- type: separator
-  name: Design
-  tags:
-    - design
+# Design
+
 - name: Add a drawer to a screen
-  description: TODO write description
+  description: Use the Drawer widget in combination with a Scaffold to create a layout with a Material Design drawer.
   tags:
-    - design
+    - widget
+    - material
+    - drawer
+    - layout
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/drawer
+
 - name: Display a snackbar
-  description: TODO write description
-  tags:
-    -
+  description: Use the Snackbar widget to display messages to your users.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/snackbars
+
 - name: Export fonts from a package
-  description: TODO write description
-  tags:
-    -
+  description: Use a font across multiple apps.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/package-fonts
+
 - name: Update the UI based on orientation
-  description: TODO write description
-  tags:
-    -
+  description: Build a list that displays two columns in portrait mode and three columns in landscape mode.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/orientation
+
 - name: Use a custom font
-  description: TODO write description
-  tags:
-    -
+  description: Apply fonts to your entire app or individual widgets.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/fonts
+
 - name: Use themes to share colors and font styles
-  description: TODO write description
-  tags:
-    -
+  description: To share styles across your app, use Themes.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/themes
+
 - name: Work with tabs
-  description: TODO write description
-  tags:
-    -
+  description: Working with tabs is a common pattern in mobile apps that follow the Material Design or Cupertino guidelines.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/design/tabs
 
-- type: separator
-  name: Effects
+# Effects
+
 - name: Create a download button
   description: TODO write description
   tags:

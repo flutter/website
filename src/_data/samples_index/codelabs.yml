@@ -1,22 +1,20 @@
 # Good for beginners
-- name: Building your first Flutter app
+- name: Your first Flutter app (workshop)
   description: |
     An instructor-led version of our very popular
-    "Write your first Flutter app" codelab
-    (listed below).
+    "Write your first Flutter app" codelab.
   tags:
     - beginner
     - intro
   sdk: flutter
-  type: codelab
+  type: workshop
   source-link:
     label: YouTube
     url: https://www.youtube.com/watch?v=8sAyPDLorek
 
 - name: Your first Flutter app
   description: |
-    Create a simple app that automatically generates cool-sounding names,
-    such as "newstay", "lightstream", "mainbrake", or "graypine".
+    Create a simple random-name generator app.
     This app is responsive and runs on mobile, desktop, and web.
   tags:
     - beginner
@@ -27,7 +25,7 @@
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
 
-- name: Write your first Flutter app on the web
+- name: Your first Flutter app on the web
   description: |
     Implement a simple web app in DartPad (no downloads
       required!) that displays a sign-in screen
