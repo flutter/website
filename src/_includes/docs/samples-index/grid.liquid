@@ -13,6 +13,7 @@
         <a id="{{ item.name }}"
            data-type="{{ item.type }}"
            data-tags='{{ item.tags | join: ", " }}'
+           data-description="{{ item.description }}"
            class="card outlined-card"
            href="{{ item.source-link.url }}">
             <div class="card-image-holder-material-3">
@@ -44,6 +45,10 @@
                 {%- elsif item.source-link.label == "Google Codelab" -%}
                     <svg width="24px" height="24px">
                         <use href="/assets/images/social/google-developers.svg#google-developers"></use>
+                    </svg>
+                {%- elsif item.source-link.label == "YouTube" -%}
+                    <svg width="24px" height="24px">
+                        <use href="/assets/images/social/youtube#youtube"></use>
                     </svg>
                 {%- endif -%}
             </div>

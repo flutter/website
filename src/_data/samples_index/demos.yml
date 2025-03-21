@@ -1,51 +1,47 @@
-type: demo
-name: Demo apps
-description: Full(er) featured sample applications.
-items:
-  - name: Add-to-app
-    description: Recommended approaches for adding Flutter to existing apps.
-    tags:
-      - platforms
-      - iOS
-      - Android
-    sdk: flutter
-    type: demo
-    source-link:
-      url: https://github.com/flutter/samples/tree/main/add_to_app
-      label: Github
-  - name: android_splash_screen
-    description:
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url:
-  - name: ios_app_clip
-    description:
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url:
-  - name: platform_channels
-    description: A sample Flutter app which demonstrates how to use `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec`.
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url:
-  - name: platform_view_swift
-    description: A Flutter sample app that combines a native iOS UIViewController with a full-screen Flutter view.
-    tags:
-      - testing
-    sdk: flutter
-    type: recipe
-    source-link:
-      label: Flutter docs
-      url:
+- name: Add-to-app
+  description: Recommended approaches for adding Flutter to existing apps.
+  tags:
+    - platforms
+    - iOS
+    - Android
+  sdk: flutter
+  type: demo
+  source-link:
+    url: https://github.com/flutter/samples/tree/main/add_to_app
+    label: Github
+- name: android_splash_screen
+  description:
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url:
+- name: ios_app_clip
+  description:
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url:
+- name: platform_channels
+  description: A sample Flutter app which demonstrates how to use `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec`.
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url:
+- name: platform_view_swift
+  description: A Flutter sample app that combines a native iOS UIViewController with a full-screen Flutter view.
+  tags:
+    - testing
+  sdk: flutter
+  type: recipe
+  source-link:
+    label: Flutter docs
+    url:

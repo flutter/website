@@ -13,6 +13,7 @@ function setupSampleFilters() {
             name: sampleName,
             type: card.dataset.type,
             tags: card.dataset.tags.split(', '),
+            description: card.dataset.description,
         });
 
         // TODO(ewindmill): Add GA custom event
@@ -30,7 +31,8 @@ function setupSampleFilters() {
         for (const sample of samplesInfo) {
             if (sample.name.toLowerCase().includes(searchTerm) ||
                 sample.tags.join('').toLowerCase().includes(searchTerm) ||
-                sample.type.toLowerCase().includes(searchTerm)) {
+                sample.type.toLowerCase().includes(searchTerm) ||
+                sample.description.toLowerCase().includes(searchTerm)) {
                 samplesToShow.add(sample.name);
             }
 
