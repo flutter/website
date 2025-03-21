@@ -51,76 +51,7 @@
   }
 }
 
-.samples-table {
-  width: 100%;
-  border-radius: 4px;
-  margin-bottom: 2rem;
-
-  &.hidden {
-    display: none
-  }
-
-  tr {
-    border: none;
-  }
-
-  .tr-main-head {
-
-
-    th {
-      background: $table-head-fill-color;
-      font-weight: 400;
-      border-top: none;
-    }
-
-    th .th-title {
-      font-size: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    th .th-description {
-      font-weight: 400;
-      font-size: 1rem;
-    }
-  }
-
-  .tr-sub-head {
-    background: $table-head-fill-color;
-    th {
-      border-top: none;
-      border-bottom: 1px solid $site-color-light-grey;
-      font-size: .85rem;
-      padding-top: 0;
-      padding-bottom: .25rem;
-    }
-
-  }
-
-  .table-row {
-    &.hidden {
-      display: none;
-    }
-  }
-
-  .tr-separator td {
-    font-weight: 500;
-    background-color: $site-color-codeblock-bg;
-    padding: 12px 6px;
-  }
-
-  tr td {
-    border-top: none;
-    background: white;
-    border-bottom: 1px solid $site-color-light-grey;
-    padding: 6px;
-    vertical-align: middle;
-  }
-
-}
-
 #all-samples-grid {
-
   .card {
     &:hover {
       box-shadow: 0px 0px 20px -5px $site-color-light-grey;
