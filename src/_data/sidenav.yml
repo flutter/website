@@ -188,6 +188,8 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: Add an AdMob banner and native inline ads
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Integrate multimedia ads (video)
+            permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
           - title: Google AdMob mediation
             permalink: https://developers.google.com/admob/flutter/mediation
           - title: Interactive Media Ads SDK
