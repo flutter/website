@@ -309,7 +309,7 @@ names in Xcode for two schemes called `staging` and
     * Under **Information Property List**, find the
       following key and update the value for it:
 
-      * **Key**: `Bundle display name`
+      * **Key**: `CFBundleDisplayName`
       * **Value**: `$(APP_DISPLAY_NAME)`
 
 1.  Launch the app for each scheme (`staging`, `production`)
