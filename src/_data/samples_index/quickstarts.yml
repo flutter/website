@@ -49,6 +49,7 @@
   source-link:
     url: https://github.com/flutter/samples
     label: Github
+
 - name: form_app
   description: A sample demonstrating different types of forms and best practices.
   tags:
@@ -186,6 +187,7 @@
   source-link:
     url: https://github.com/flutter/samples
     label: Github
+
 - name: ng-flutter
   description: A simple Angular app (and component) that replicates the above example, but in an Angular style.
   tags:

@@ -24,7 +24,9 @@
             <div class="card-leading">
                 {%- liquid
                     case item.type
-                        when 'codelab' or 'workshop'
+                        when 'codelab'
+                            assign pill-color = 'flutter-blue'
+                        when 'workshop'
                             assign pill-color = 'flutter-blue'
                         when 'quickstart'
                             assign pill-color = 'purple'

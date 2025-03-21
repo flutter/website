@@ -1,49 +1,49 @@
 # Good for beginners
-- name: Your first Flutter app workshop
-  description: |
-    An instructor-led version of our very popular
-    "Write your first Flutter app" codelab.
-  tags:
-    - beginner
-    - intro
-  sdk: flutter
-  type: workshop
-  source-link:
-    label: YouTube
-    url: https://www.youtube.com/watch?v=8sAyPDLorek
-
-- name: Your first Flutter app
-  description: |
-    Create a simple random-name generator app.
-    This app is responsive and runs on mobile, desktop, and web.
-  tags:
-    - beginner
-    - intro
-  sdk: flutter
-  type: codelab
-  source-link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
-
-- name: Your first Flutter app on the web
-  description: |
-    Implement a simple web app in DartPad (no downloads
-      required!) that displays a sign-in screen
-      containing three text fields.
-  tags:
-    - beginner
-    - intro
-    - web
-    - dartpad
-  sdk: flutter
-  type: codelab
-  source-link:
-    label: Flutter docs
-    url: /get-started/codelab-web
+#- name: Your first Flutter app workshop
+#  description: |
+#    An instructor-led version of our very popular
+#    "Write your first Flutter app" codelab.
+#  tags:
+#    - beginner
+#    - intro
+#  sdk: flutter
+#  type: workshop
+#  source-link:
+#    label: YouTube
+#    url: https://www.youtube.com/watch?v=8sAyPDLorek
+#
+#- name: Your first Flutter app
+#  description: |
+#    Create a simple random-name generator app.
+#    This app is responsive and runs on mobile, desktop, and web.
+#  tags:
+#    - beginner
+#    - intro
+#  sdk: flutter
+#  type: codelab
+#  source-link:
+#    label: Google Codelab
+#    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
+#
+#- name: Your first Flutter app on the web
+#  description: |
+#    Implement a simple web app in DartPad (no downloads
+#      required!) that displays a sign-in screen
+#      containing three text fields.
+#  tags:
+#    - beginner
+#    - intro
+#    - web
+#    - dartpad
+#  sdk: flutter
+#  type: codelab
+#  source-link:
+#    label: Flutter docs
+#    url: /get-started/codelab-web
 
 # Next steps
 
-- name: Records and Patterns in Dart 3
+- name: Records and Patterns in Dart
   description: |
     Discover Dart 3's new records and patterns features.
     Learn how you can use them in a Flutter app to help you
@@ -52,13 +52,13 @@
     - dart
     - records
     - pattern matching
-  sdk: flutter
+  sdk: dart
   type: codelab
   source-link:
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/dart-patterns-records
 
-- name: Building scrolling experiences in Flutter
+- name: Scrolling experiences in Flutter
   description: |
     Start with an app that performs simple, straightforward scrolling
       and enhance it to create fancy and custom scrolling effects
