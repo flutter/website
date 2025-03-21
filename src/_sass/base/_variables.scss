@@ -3,6 +3,7 @@
 // Colors
 $flutter-color-blue: #043875;
 $flutter-color-teal: #158477;
+$flutter-color-light-teal: #B8EDE1;
 $flutter-color-blue-on-dark: #B8EAFE;
 $flutter-color-blue-500: #0468D7;
 $flutter-color-blue-600: #0553B1;
@@ -12,7 +13,10 @@ $flutter-color-fuchsia: #E64637;
 $flutter-color-yellow: #FFF275;
 $flutter-color-yellow-300: #FFF59C;
 $flutter-color-light-blue: #E7F8FF;
+$flutter-color-sky-blue: #B8EAFE;
 $flutter-dark-blue-texture: #232C33;
+$flutter-color-purple: #6200EE;
+$flutter-color-light-purple: #C6BAFA;
 $site-color-black: #000;
 $site-color-white: #FFF;
 $site-color-codeblock-bg: #F8F9FA;
@@ -55,3 +59,6 @@ $alert-info-bg:           #e7f8ff;
 $alert-warning-bg:        #fcf8e3;
 $alert-danger-bg:         #fef3f6;
 $alert-danger-fg:         #cb1425;
+
+// Components
+$chip-container-color: $site-color-white;
