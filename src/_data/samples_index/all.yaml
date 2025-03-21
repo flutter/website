@@ -1,25 +1,3 @@
-- name: Add a drawer
-  description: To a screen!
-  tags:
-    - drawer
-    - material
-  sdk: flutter
-  type: quickstart
-  source-link:
-    label: Flutter docs
-    url: /cookbook/design/drawer
-
-- name: Add a number
-  description: To another number! With a + operator! Lorem Ipsum, etc.
-  tags:
-    - dart
-    - math
-  sdk: dart
-  type: quickstart
-  source-link:
-    label: Dart docs
-    url: /cookbook/design/drawer
-
 # Good for beginners
 - name: Building your first Flutter app
   description: |
