@@ -107,67 +107,59 @@
 # Effects
 
 - name: Create a download button
-  description: TODO write description
+  description: Build a download button that transitions through multiple visual states, based on the status of an app download.
   tags:
     - ui
     - effects
+    - animations
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/download-button
+
 - name: Create a nested navigation flow
-  description: TODO write description
-  tags:
-    - ui
-    - effects
+  description: Create top level routes, and routes nested below specific widgets.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/nested-nav
+
 - name: Create a scrolling parallax effect
-  description: TODO write description
-  tags:
-    - ui
-    - effects
+  description: Create the parallax effect by building a list of cards with images that 'move'.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/parallax-scrolling
+
 - name: Create a shimmer loading effect
-  description: TODO write description
-  tags:
-    - ui
-    - effects
+  description: Communicate that data is loading with a chrome color shimmer on the screen.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/shimmer-loading
+
 - name: Create a staggered menu animation
-  description: TODO write description
-  tags:
-    - ui
-    - effects
+  description: Build a drawer menu with animated content that is staggered and has a button that pops in at the bottom
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/staggered-menu-animation
+
 - name: Create a typing indicator
-  description: TODO write description
-  tags:
-    - ui
-    - effects
+  description: Build a speech bubble typing indicator that animates in and out of view.
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/typing-indicator
+
 - name: Create an expandable FAB
-  description: TODO write description
+  description: Create a floating action button that spawns other action buttons.
   tags:
     - ui
     - effects
@@ -176,67 +168,61 @@
   source-link:
     label: Flutter docs
     url: /cookbook/effects/expandable-fab
-- name: Create gradient chat bubbles
-  description: TODO write description
-  tags:
-    - ui
-    - effects
-  sdk: flutter
-  type: recipe
-  source-link:
-    label: Flutter docs
-    url: /cookbook/effects/gradient-bubbles
+
 - name: Drag a UI element
-  description: TODO write description
+  description: Build a drag-and-drop interaction when the user long presses.
   tags:
-    - ui
-    - effects
+    - mobile
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/effects/drag-a-widget
 
-- type: separator
-  name: Forms
+
+# Forms
 - name: Build a form with validation
-  description: TODO write description
+  description: Learn how to add validation to a form.
   tags:
-    - input
+    - user input
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/forms/validation
+
 - name: Create and style a text field
-  description: TODO write description
+  description:  In this recipe, explore how to create and style text fields.
   tags:
-    - input
+    - user input
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/forms/text-input
+
 - name: Focus and text fields
-  description: TODO write description
+  description: Shift focus to a text field programmatically.
   tags:
-    - input
+    - user input
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/forms/focus
+
 - name: Handle changes to a text field
-  description: TODO write description
+  description: Listen for changes to a TextField using a callback.
   tags:
-    - input
+    - user input
   sdk: flutter
   type: recipe
   source-link:
     label: Flutter docs
     url: /cookbook/forms/text-field-changes
+
 - name: Retrieve the value of a text field
-  description: TODO write description
+  description: Learn how to retrieve the text a user has entered into a text field.
   tags:
     - input
   sdk: flutter
@@ -244,8 +230,8 @@
   source-link:
     label: Flutter docs
     url: /cookbook/forms/retrieve-input
-- type: separator
-  name: Games
+
+# Games
 - name: Add achievements and leaderboards to your mobile game
   description: TODO write description
   tags:
