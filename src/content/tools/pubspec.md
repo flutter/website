@@ -214,9 +214,9 @@ flutter:
 
 ### default-flavor field
 
-Assign a default Flutter flavor for an Android app.
+Assign a default Flutter flavor for an app.
 When used, you don't need to include the name of this
-flavor in Flutter build command.
+flavor in Flutter launch command.
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -225,8 +225,8 @@ flutter:
 
 In the following example, an Android Flutter app has a
 flavor called `staging` and `production`. The `production`
-flavor is the default flavor. When that flavor is built,
-you don't need to include it in the build command.
+flavor is the default flavor. When that flavor is run,
+you don't need to include it in the launch command.
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -234,17 +234,19 @@ flutter:
 ```
 
 ```console title="console"
-// Use this command to build the default flavor (production).
-flutter build --flavor
+// Use this command to run the default flavor (production).
+flutter run
 
-// Use this command to build non-default flavors (staging).
-flutter build --flavor staging
+// Use this command to run non-default flavors (staging).
+flutter run --flavor staging
 ```
 
-To learn how to create Flutter flavors for Android apps,
-see [Set up Flutter flavors for Android][]
+To learn how to create Flutter flavors,
+see [Set up Flutter flavors for Android][] and
+[Set up Flutter flavors for iOS and macOS][].
 
 [Set up Flutter flavors for Android]: /deployment/flavors
+[Set up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
 
 ### deferred-components field
 
@@ -530,16 +532,16 @@ The `plugin` field has this structure:
 flutter:
   plugin:
     platforms:
-      platform_type: # Optional
-        package: com.example.my_plugin # Platform-specific
-        pluginClass: MyPlugin # Platform-specific, optional
-        dartPluginClass: MyPluginClassName # Platform-specific, optional
-        ffiPlugin: true # Optional
-        default_package: my_plugin_name # Optional
-        fileName: hello_web.dart # Optional
-        sharedDarwinSource: true # Platform-specific, optional
+      [android | ios | linux | macos | windows | web]:
+        package: com.example.my_plugin
+        pluginClass: MyPlugin
+        dartPluginClass: MyPluginClassName
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: hello_web.dart
+        sharedDarwinSource: true
       [...]
-    implements: # Optional
+    implements:
       - example_platform_interface
 ```
 
@@ -548,16 +550,13 @@ Subfields of `plugin`:
 * `platforms`: A list of platforms that will have
   configuration settings.
 
-* `platform_type`: Replace with the platform name. This
-  can be `android`, `ios`, `linux`, `macos`, `windows` or
-  `web`.
-
-* `package`: The Android package name of the plugin.
+* `package`: The Android package name of the plugin. This
+  can be used with the Android platform and is required.
 
 * `pluginClass`: The name of the plugin class. Optional if
   `dartPluginClass` is used for the same platform. This
-  can be used with the Android, iOS, Linux macOS, Windows
-  platforms.
+  can be used with the Android, iOS, Linux macOS, and
+  Windows platforms.
 
 * `default_package`: Optional. The package that should be
   used as the default implementation of a platform
@@ -567,8 +566,8 @@ Subfields of `plugin`:
 
 * `dartPluginClass`: Optional. The Dart class that serves
   as the entry point for a Flutter plugin. This
-  can be used with the Android, iOS, Linux macOS, Windows
-  platforms.
+  can be used with the Android, iOS, Linux macOS, and
+  Windows platforms.
 
 * `sharedDarwinSource`: Optional. Indicates that the plugin
   shares native code between iOS and macOS. This
