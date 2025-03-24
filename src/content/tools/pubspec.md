@@ -136,7 +136,7 @@ section in the same page.
 
 The `asset` field has this structure:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - { path_to_file | path_to_directory | flavor_path_field }
@@ -175,7 +175,7 @@ Subfields of `assets`:
 
 You can pass in a path to a file:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - assets/images/my_image_a.png
@@ -184,7 +184,7 @@ flutter:
 
 You can pass in a path to a directory:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - assets/images/
@@ -194,7 +194,7 @@ flutter:
 You can pass in a path to a directory for specific
 flavors:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - path: assets/flavor_a_and_b/images
@@ -212,13 +212,119 @@ flutter:
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
 [resolution aware]: /ui/assets/assets-and-images#resolution-aware
 
+### default-flavor field
+
+Assign a default Flutter flavor for an Android app.
+When used, you don't need to include the name of this
+flavor in Flutter build command.
+
+```yaml title="pubspec.yaml"
+flutter:
+  default-flavor: flavor_name # Android-only field
+```
+
+In the following example, an Android Flutter app has a
+flavor called `staging` and `production`. The `production`
+flavor is the default flavor. When that flavor is built,
+you don't need to include it in the build command.
+
+```yaml title="pubspec.yaml"
+flutter:
+  default-flavor: production
+```
+
+```console title="console"
+// Use this command to build the default flavor (production).
+flutter build --flavor
+
+// Use this command to build non-default flavors (staging).
+flutter build --flavor staging
+```
+
+To learn how to create Flutter flavors for Android apps,
+see [Set up Flutter flavors for Android][]
+
+[Set up Flutter flavors for Android]: /deployment/flavors
+
+### deferred-components field
+
+Defer initial the download size of an Android app. Most
+often used with large applications, modularized applications,
+and applications with on-demand features.
+
+The `deferred-components` field has this structure:
+
+```yaml title="pubspec.yaml"
+flutter:
+  deferred-components:
+    component_name:
+      import: string_expression
+      libraries:
+        - string_expression
+        [...]
+      assets:
+        - string_expression
+        [...]
+      android:
+        feature-name: string_expression
+    [...]
+```
+
+Deferred component subfields:
+
+* `component_name`: The unique identifier for a specific
+  deferred component.
+* `import`: The Dart library that acts as the entry point
+  for the deferred component.
+* `libraries`: A list of Dart library paths that are part of
+  the deferred component.
+* `assets`: A list of asset paths that are associated with
+  the deferred component.
+* `android`: A map that contains Android-specific
+  configurations for the deferred component.
+* `feature-name`: The name of the Android dynamic feature
+  module that corresponds to the Flutter deferred component.
+  This name is used to link the Flutter component to the
+  Android module during the build process.
+
+Example:
+
+```yaml title="pubspec.yaml"
+flutter:
+  deferred-components:
+    feature_a:
+      import: 'package:my_app/features/feature_a/feature_a.dart'
+      libraries:
+        - 'package:my_app/features/feature_a/feature_a.dart'
+        - 'package:my_app/features/feature_a/util.dart'
+      assets:
+        - 'assets/feature_a_1/'
+        - 'assets/feature_a_2/'
+      android:
+        feature-name: 'feature_a'
+    feature_b:
+      import: 'package:my_app/features/feature_b/feature_b.dart'
+      libraries:
+        - 'package:my_app/features/feature_b/feature_b.dart'
+      assets:
+        - 'assets/feature_b/'
+      android:
+        feature-name: 'feature_b'
+```
+
+To learn more about how you can use deferred components with
+a Flutter Android app, see
+[Deferred components for Android]. 
+
+[Deferred components for Android]: /perf/deferred-components
+
 ### disable-swift-package-manager field
 
 Disable the use of the Swift Package Manager (SPM) so that
 it no longer manages dependencies in your iOS Flutter
 project.
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   disable-swift-package-manager: true
 ```
@@ -229,7 +335,7 @@ Include flavor-specific data in your Flutter app.
 
 The `flavors` field has this structure:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   flavors:
     [flavor_field]
@@ -258,7 +364,7 @@ Flavor-specific subfields:
 Bundle flavor-specific data with two flavors of
 your app. For example:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   flavors:
     staging:
@@ -283,7 +389,7 @@ To learn more about flavors, see
 A field that contains Flutter-specific settings for your
 app.
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   [flutter_field]
   [...]
@@ -301,7 +407,7 @@ see the [Use a custom font][] and
 
 The `fonts` field has this structure:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   fonts:
     -  { font_family_field | font_asset_field }
@@ -336,7 +442,7 @@ Subfields of `fonts`:
 
 Use a font that is not part of a font family:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   fonts:
     - asset: fonts/Roboto-Regular.ttf
@@ -346,7 +452,7 @@ flutter:
 
 Use a font family:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   fonts:
   - family: Roboto # Optional
@@ -361,7 +467,7 @@ Alternatively, if you have a font that requires no family,
 weight or style requirements, you can declare it as a simple
 asset:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - fonts/Roboto-Regular.ttf
@@ -378,7 +484,7 @@ subfield of `flutter` and `material`.
 
 Enable general localization:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   generate: true
 ```
@@ -386,7 +492,7 @@ flutter:
 Enable general localization and Material Design
 localization:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   generate: true
   material:
@@ -398,7 +504,7 @@ flutter:
 Enable Material Design localization. This works with the
 `ARB` localization files.
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   material:
     generate: true
@@ -407,79 +513,80 @@ flutter:
 Enable general localization and Material Design
 localization:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   generate: true
   material:
     generate: true
 ```
 
-### module field
-
-Add this field if you are creating a Flutter module to
-embed in an existing native Android or iOS app. If you are
-building a standalone Flutter application, you don't need
-this field.
-
-```yaml
-flutter:
-  module:
-    androidX: true # Optional
-    androidPackage: com.example.my_module # Optional
-    iosSwiftVersion: '5.0' # Optional
-    iosBundleIdentifier: com.example.myModule # Optional
-```
-
-Subfields of `module`:
-
-* `androidX`: Optional. A boolean value that indicates
-  whether the Flutter module should use AndroidX libraries.
-* `androidPackage`: Optional. The package name of the
-  android module.
-* `iosSwiftVersion`: Optional. The minimum Swift version
-  that the iOS part of the Flutter module supports.
-* `iosBundleIdentifier`: Optional. The bundle identifier for
-  the iOS module.
-
 ### plugin field
 
 Configure settings specifically for Flutter plugins.
 
-```yaml
+The `plugin` field has this structure:
+
+```yaml title="pubspec.yaml"
 flutter:
   plugin:
     platforms:
-      android: # Optional
-        package: com.example.my_plugin
-        pluginClass: MyPlugin
-      ios: # Optional
-        pluginClass: MyPlugin
-      linux: # Optional
-        pluginClass: MyPlugin
-      macos: # Optional
-        pluginClass: MyPlugin
-      windows: # Optional
-        pluginClass: MyPlugin
-      web: # Optional
-        default_package: my_plugin_web
+      platform_type: # Optional
+        package: com.example.my_plugin # Platform-specific
+        pluginClass: MyPlugin # Platform-specific, optional
+        dartPluginClass: MyPluginClassName # Platform-specific, optional
+        ffiPlugin: true # Optional
+        default_package: my_plugin_name # Optional
+        fileName: hello_web.dart # Optional
+        sharedDarwinSource: true # Platform-specific, optional
+      [...]
+    implements: # Optional
+      - example_platform_interface
 ```
 
 Subfields of `plugin`:
 
 * `platforms`: A list of platforms that will have
   configuration settings.
-* `android`: Optional. The configurations settings for
-  Android.
-* `ios`: Optional. The configurations settings for iOS.
-* `linux`: Optional. The configurations settings for Linux.
-* `macos`: Optional. The configurations settings for macOS.
-* `windows`: Optional. The configurations settings for
-  Windows.
-* `web`: Optional. The configurations settings for the web.
+
+* `platform_type`: Replace with the platform name. This
+  can be `android`, `ios`, `linux`, `macos`, `windows` or
+  `web`.
+
 * `package`: The Android package name of the plugin.
-* `pluginClass`: The name of the plugin class.
-* `default_package`: The name of the package containing the
-  web implementation of the plugin.
+
+* `pluginClass`: The name of the plugin class. Optional if
+  `dartPluginClass` is used for the same platform. This
+  can be used with the Android, iOS, Linux macOS, Windows
+  platforms.
+
+* `default_package`: Optional. The package that should be
+  used as the default implementation of a platform
+  interface. Only applicable to federated plugins, where the
+  plugin's implementation is split into multiple
+  platform-specific packages.
+
+* `dartPluginClass`: Optional. The Dart class that serves
+  as the entry point for a Flutter plugin. This
+  can be used with the Android, iOS, Linux macOS, Windows
+  platforms.
+
+* `sharedDarwinSource`: Optional. Indicates that the plugin
+  shares native code between iOS and macOS. This
+  can be used with the iOS and macOS platforms.
+
+* `fileName`: Optional. The file that contains the plugin
+  class.
+
+* `ffiPlugin`: Optional. True if the plugin uses a
+  Foreign Function Interface (FFI).
+
+* `implements`: Optional. The platform interfaces that a
+  Flutter plugin implements.
+
+To learn more about plugins, see
+[Developing packages & plugins][].
+
+[Developing packages & plugins]: /packages-and-plugins/developing-packages
 
 ### shaders field
 
@@ -492,7 +599,7 @@ the application just like an asset.
 
 The `shaders` field has this structure:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   shaders:
     -  { path_to_file | path_to_directory }
@@ -511,7 +618,7 @@ flutter:
 
 Add specific shaders:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   shaders:
     - assets/shaders/shader_a.frag
@@ -520,7 +627,7 @@ flutter:
 
 Add a directory of shaders:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   shaders:
     - assets/shaders/
@@ -529,7 +636,7 @@ flutter:
 Alternatively, you can add your shader directory to the
 `assets` field:
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   assets:
     - assets/shaders/my_shader.frag
@@ -539,7 +646,7 @@ flutter:
 
 Use Material Design components in your Flutter app.
 
-```yaml
+```yaml title="pubspec.yaml"
 flutter:
   uses-material-design: true
 ```
@@ -557,7 +664,7 @@ can be added to the `dependencies` field. Use this if
 your project relies on the Flutter SDK, not a regular
 package from pub.dev.
 
-```yaml
+```yaml title="pubspec.yaml"
 dependencies:
   flutter:
     sdk: flutter
@@ -570,7 +677,7 @@ can be added to the `dependencies` field. Use this to
 enable the localization of `ARB` files. Often used with
 the `intl` package.
 
-```yaml
+```yaml title="pubspec.yaml"
 dependencies:
   flutter_localizations:
     sdk: flutter
@@ -584,7 +691,7 @@ can be added to the `dependencies` field. Use this if you
 have unit, widget, or integration tests for your Flutter
 app.
 
-```yaml
+```yaml title="pubspec.yaml"
 dependencies:
   flutter_test:
     sdk: flutter
@@ -596,7 +703,7 @@ A package that that provides a set of recommended lints for
 Flutter projects. This package can be added to the
 `dev_dependency` field in the pubspec.
 
-```yaml
+```yaml title="pubspec.yaml"
 dev_dependencies:
   flutter_lints: ^2.0.0
 ```
@@ -607,7 +714,7 @@ A package that provides a set of Apple's Cupertino icons
 for use in Flutter applications. This package can be added
 to the `dependency` field in the pubspec.
 
-```yaml
+```yaml title="pubspec.yaml"
 dependencies:
   cupertino_icons: ^1.0.0
 ```
