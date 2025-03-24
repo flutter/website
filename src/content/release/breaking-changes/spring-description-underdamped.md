@@ -47,7 +47,7 @@ in the next sections.
 ### Default constructor
 If the `SpringDescription` was built with the default constructor with mass `m`, stiffness `k`, and damping `c`,
 then it should be changed with the following formula:
-```
+```plaintext
 new_m = 1
 new_c = c * m
 new_k = (4 * (k / m) - (c / m)^2 + (c * m)^2) / 4
@@ -76,12 +76,12 @@ const spring = SpringDescription(
 ### `.withDampingRatio` constructor
 If the `SpringDescription` was built with the `.withDampingRatio` constructor with mass `m`, stiffness `k`, and ratio `z`,
 then first calculate damping
-```
+```plaintext
 c = z * 2 * sqrt(m * k)
 ```
 
 Then apply the formula above. Optionally you might convert the result back to damping ratio with
-```
+```plaintext
 new_z = new_c / 2 / sqrt(new_m * new_k)
 ```
 
