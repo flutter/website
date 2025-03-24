@@ -445,6 +445,7 @@
       { "source": "/go/go-router-v9-breaking-changes", "destination": "https://docs.google.com/document/d/16plvWc9ablQsUs7w6bWDpTZ7PwMP4YUhV-qMQ3iljE0/edit?usp=sharing", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
+      { "source": "/go/google-sign-in-authn-authz-updates", "destination": "https://docs.google.com/document/d/1m-VWG9L0o5GL2oiKWZf7bjyGbFykVYidd9HuML-IEl4/edit?usp=sharing", "type": 301 },
       { "source": "/go/google-testing-v2", "destination": "https://docs.google.com/document/d/1Sg_CsGa3VxMNOXFKvoXEPNneD6OUuXIUsmFEjhluhDw", "type": 301 },
       { "source": "/go/google-maps-advanced-markers", "destination": "https://docs.google.com/document/d/1HRyq_aFcYeSKDDyYetce_1Z9Q-GR9ONX_46JioAScQk/edit?usp=sharing", "type": 301 },
       { "source": "/go/handling-synchronous-keyboard-events", "destination": "https://docs.google.com/document/d/1rWXSjkb2ZKv-cpg26lVK0aZi4cVeXJ8j7YmSJdq2TOM/edit", "type": 301 },
