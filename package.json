@@ -15,7 +15,7 @@
   "packageManager": "pnpm@10.6.2",
   "scripts": {
     "serve": "PRODUCTION=false tsx node_modules/@11ty/eleventy/cmd.cjs --serve --config=eleventy.config.ts",
-    "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs  --config=eleventy.config.ts",
+    "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
     "build-site-for-production": "PRODUCTION=true OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts"
   },
   "devDependencies": {
