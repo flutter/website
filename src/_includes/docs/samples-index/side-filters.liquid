@@ -1,0 +1,44 @@
+<div id="samples-filter-group">
+    <div class="table-title">Filter by</div>
+    <div class="table-content">
+        <h4>Subject</h4>
+        <ul id="filters-tags">
+            {% for filter in filters.tags -%}
+                <li class="hidden">
+                    <input type="checkbox"
+                           role="checkbox"
+                           name="filter-{{filter}}"
+                           id="filter-{{filter}}">
+                    <label for="filter-{{filter}}">{{filter | capitalize}}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button id="filters-tags-show-button">More</button>
+        <h4>Type</h4>
+        <ul id="filters-type">
+            {% for filter in filters.type -%}
+                <li class="hidden">
+                    <input type="checkbox"
+                           role="checkbox"
+                           name="filter-{{filter}}"
+                           id="filter-{{filter}}">
+                    <label for="filter-{{filter}}">{{filter | capitalize}}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button id="filters-type-show-button">More</button>
+        <h4>Difficulty</h4>
+        <ul id="filters-difficulty">
+            {% for filter in filters.difficulty -%}
+                <li class="hidden">
+                    <input type="checkbox"
+                           role="checkbox"
+                           name="filter-{{filter}}"
+                           id="filter-{{filter}}">
+                    <label for="filter-{{filter}}">{{filter | capitalize}}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button id="filters-difficulty-show-button">More</button>
+    </div>
+</div>

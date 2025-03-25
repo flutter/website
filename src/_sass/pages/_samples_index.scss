@@ -1,51 +1,102 @@
 @use '../base/variables' as *;
 
-#samples-filter-group {
-  width: 100%;
+#samples-index-page {
+  .alert-secondary {
+    width: 900px;
+    margin-bottom: 2rem;
+    border-left: none !important;
+  }
+}
+
+#samples-index-content {
   display: flex;
   flex-direction: row;
 
-  .search-row {
+  .left-col {
+    margin-right: 1rem;
+    flex: 2;
+  }
+
+  .right-col {
+    width: 220px;
+  }
+}
+
+#samples-filter-group {
+  border: 1px solid $site-color-light-grey;
+
+  .table-title {
+    text-align: center;
+    color: $site-color-sub-grey;
+    font-weight: bold;
+    font-size: .9rem;
+    padding: .5rem;
+    border-bottom: 1px solid $site-color-light-grey;
+  }
+
+  .table-content {
+    padding: 1rem;
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 2rem;
+
+    .hidden {
+      display: none;
+    }
+  }
+
+
+  li {
+    list-style: none;
+    padding-left: 0;
+
+    label {
+      font-size: .9rem;
+    }
+  }
+
+  h4 {
+    margin: 0 0 1rem;
+  }
+
+}
+
+#samples-search-group {
+  .search-wrapper {
     display: flex;
-    flex-direction: row;
     align-items: center;
     width: 100%;
-    gap: 0.5rem;
+    background-color: white;
 
-    .search-wrapper {
-      display: flex;
-      align-items: center;
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 2rem;
+    height: 3rem;
+    padding: 0 .5rem;
+
+    &:has(:focus-visible) {
+      outline: 2px solid var(--focus-outline-color);
+      border-color: transparent;
+    }
+
+    .leading-icon {
+      padding-left: 0.25rem;
+      user-select: none;
+    }
+
+    input {
+      background: white;
       width: 100%;
-      background-color: white;
+      font-size: 1rem;
+      cursor: text;
 
-      border: 1px solid rgba(0, 0, 0, .25);
-      border-radius: 2rem;
-      height: 3rem;
-      padding: 0 .5rem;
-
-      &:has(:focus-visible) {
-        outline: 2px solid var(--focus-outline-color);
-        border-color: transparent;
+      &:focus {
+        outline: none;
       }
 
-      .leading-icon {
-        padding-left: 0.25rem;
-        user-select: none;
-      }
-
-      input {
-        background: white;
-        width: 100%;
-        font-size: 1rem;
-        cursor: text;
-
-        &:focus {
-          outline: none;
-        }
-
-        &::-webkit-search-cancel-button {
-          display: none;
-        }
+      &::-webkit-search-cancel-button {
+        display: none;
       }
     }
   }
@@ -56,7 +107,7 @@
 }
 
 #all-samples-grid {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--card-min-width, 15rem)), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   grid-auto-rows: minmax(250px, 1fr);
 
   .card {

@@ -9,24 +9,27 @@ function setupSampleFilters() {
     sampleCards.forEach(card => {
         const sampleName = card.id;
         if (!sampleName) return;
+        let tags = card.dataset.tags.split(', ');
         samplesInfo.push({
             name: sampleName,
             type: card.dataset.type,
-            tags: card.dataset.tags.split(', '),
+            tags: tags,
             description: card.dataset.description,
         });
 
-        card.addEventListener('click', async () => {
+        card.addEventListener('click', async (event) => {
+            console.log(event);
+            event.preventDefault();
             window.dataLayer?.push({
                 'event': 'samples_index_click',
                 'resource_type': card.dataset.type,
                 'resource_title': sampleName,
-            })
+            });
         });
     });
 
-    const filtersSection = document.getElementById('samples-filter-group');
-    const searchInput = filtersSection.querySelector('.search-wrapper input');
+    const searchSection = document.getElementById('samples-search-group');
+    const searchInput = searchSection.querySelector('.search-wrapper input');
 
     function filterSamples() {
         const samplesToShow = new Set();
@@ -38,9 +41,7 @@ function setupSampleFilters() {
                 sample.description.toLowerCase().includes(searchTerm)) {
                 samplesToShow.add(sample.name);
             }
-
         }
-
 
         sampleCards.forEach(card => {
             const sampleName = card.id;
@@ -89,12 +90,37 @@ function _closeMenusAndToggle(menuToToggle = '') {
     });
 }
 
+function setUpCollapsibleFilterLists() {
+    const filterSidebar = document.getElementById('samples-filter-group');
+    const filterGroups = filterSidebar.querySelectorAll('ul');
+    const toggleButtons = filterSidebar.querySelectorAll('button');
+    toggleButtons.forEach(button => {
+        const id = button.id;
+        const correspondingUlId = "#" + id.split('-').slice(0, 2).join('-');
+        filterSidebar.querySelector(correspondingUlId);
+        button.addEventListener('click', event => {
+            button.textContent = 'Less';
+        });
+    });
+
+    // Show the first few to start
+    filterGroups.forEach(ul => {
+        const allFiltersForGroup = ul.querySelectorAll('li');
+        if (allFiltersForGroup.length >= 1) allFiltersForGroup[0].classList.remove('hidden');
+        if (allFiltersForGroup.length >= 2) allFiltersForGroup[1].classList.remove('hidden');
+    });
+
+
+}
+
 document.onreadystatechange = () => {
     switch (document.readyState) {
         case "interactive":
+            setUpCollapsibleFilterLists();
             setupSampleFilters();
             break;
         case "complete":
+            setUpCollapsibleFilterLists();
             setupSampleFilters();
             break;
     }

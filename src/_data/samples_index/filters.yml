@@ -3,6 +3,8 @@ tags:
   - Animation
   - Layout
   - Design
+  - Another tag
+  - And another one (ja rule voice)
   - etc
 difficulty:
   - beginner
@@ -11,10 +13,10 @@ type:
   - sample
   - workshop
 
-item:
-  name: string
-  description: string
-  type: quickstart
-  url: github
-  difficulty: 1,2, or 3
-  tags:
+#item:
+#  name: string
+#  description: string
+#  type: quickstart
+#  url: github
+#  difficulty: 1,2, or 3
+#  tags:
