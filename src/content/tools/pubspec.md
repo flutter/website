@@ -139,7 +139,7 @@ The `asset` field has this structure:
 ```yaml title="pubspec.yaml"
 flutter:
   assets:
-    - { path_to_file | path_to_directory | flavor_path_field }
+    - [ path_to_file | path_to_directory | flavor_path_field ]
     [...]
 ```
 
@@ -532,16 +532,44 @@ The `plugin` field has this structure:
 flutter:
   plugin:
     platforms:
-      [android | ios | linux | macos | windows | web]:
+      android: # Optional
         package: com.example.my_plugin
         pluginClass: MyPlugin
         dartPluginClass: MyPluginClassName
         ffiPlugin: true
         default_package: my_plugin_name
-        fileName: hello_web.dart
+        fileName: my_file.dart
+      ios: # Optional
+        pluginClass: MyPlugin
+        dartPluginClass: MyPluginClassName
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: my_file.dart
         sharedDarwinSource: true
-      [...]
-    implements:
+      macos: # Optional
+        pluginClass: MyPlugin
+        dartPluginClass: MyPluginClassName
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: my_file.dart
+        sharedDarwinSource: true
+      windows: # Optional
+        pluginClass: MyPlugin
+        dartPluginClass: MyPluginClassName
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: my_file.dart
+      linux: # Optional
+        pluginClass: MyPlugin
+        dartPluginClass: MyPluginClassName
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: my_file.dart
+      web: # Optional
+        ffiPlugin: true
+        default_package: my_plugin_name
+        fileName: my_file.dart
+    implements: # Optional
       - example_platform_interface
 ```
 
@@ -549,36 +577,28 @@ Subfields of `plugin`:
 
 * `platforms`: A list of platforms that will have
   configuration settings.
-
 * `package`: The Android package name of the plugin. This
   can be used with the Android platform and is required.
-
 * `pluginClass`: The name of the plugin class. Optional if
   `dartPluginClass` is used for the same platform. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
-
 * `default_package`: Optional. The package that should be
   used as the default implementation of a platform
   interface. Only applicable to federated plugins, where the
   plugin's implementation is split into multiple
   platform-specific packages.
-
 * `dartPluginClass`: Optional. The Dart class that serves
   as the entry point for a Flutter plugin. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
-
 * `sharedDarwinSource`: Optional. Indicates that the plugin
   shares native code between iOS and macOS. This
   can be used with the iOS and macOS platforms.
-
 * `fileName`: Optional. The file that contains the plugin
   class.
-
 * `ffiPlugin`: Optional. True if the plugin uses a
   Foreign Function Interface (FFI).
-
 * `implements`: Optional. The platform interfaces that a
   Flutter plugin implements.
 
