@@ -16,9 +16,12 @@ function setupSampleFilters() {
             description: card.dataset.description,
         });
 
-        // TODO(ewindmill): Add GA custom event
         card.addEventListener('click', async () => {
-            console.log(`clicked ${sampleName}`);
+            window.dataLayer?.push({
+                'event': 'samples_index_click',
+                'resource_type': card.dataset.type,
+                'resource_title': sampleName,
+            })
         });
     });
 
