@@ -23,9 +23,9 @@ package for a simple transparent placeholder.
 
 <?code-excerpt "lib/memory_main.dart (MemoryNetwork)" replace="/^child\: //g"?>
 ```dart
-FadeInImage.memoryNetwork(
-  placeholder: kTransparentImage,
-  image: 'https://picsum.photos/250?image=9',
+FadeInImage(
+  placeholder: const TransparentImage(),
+  image: NetworkImage('https://picsum.photos/250?image=9'),
 ),
 ```
 
@@ -55,9 +55,9 @@ class MyApp extends StatelessWidget {
           children: <Widget>[
             const Center(child: CircularProgressIndicator()),
             Center(
-              child: FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: 'https://picsum.photos/250?image=9',
+              child: FadeInImage(
+                placeholder: const TransparentImage(),
+                image: NetworkImage('https://picsum.photos/250?image=9'),
               ),
             ),
           ],
