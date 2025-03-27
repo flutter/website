@@ -47,3 +47,12 @@
   link:
     label: Flutter docs
     url:
+
+
+- name: simplistic_editor
+  description: This sample text editor showcases the use of [TextEditingDeltas] and a DeltaTextInputClient to expand and contract styled ranges of text.
+  tags:
+  type: quickstart
+  link:
+    url: https://github.com/flutter/samples
+    label: Flutter Github
