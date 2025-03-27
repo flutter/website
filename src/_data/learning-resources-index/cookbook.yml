@@ -5,7 +5,6 @@
   tags:
     - animation
     - route
-
   type: recipe
   link:
     label: Flutter docs
@@ -15,7 +14,6 @@
   description: Learn how to move a widget from a dragged point back to the center using a spring simulation.
   tags:
     - animation
-
   type: recipe
   link:
     label: Flutter docs
@@ -25,7 +23,6 @@
   description: Use AnimatedContainer to animate the size, background color, and border radius of a Container.
   tags:
     - animation
-
   type: recipe
   link:
     label: Flutter docs
@@ -35,7 +32,6 @@
   description: The AnimatedOpacity widget makes it easy to perform opacity animations.
   tags:
     - animation
-
   type: recipe
   link:
     label: Flutter docs
@@ -50,7 +46,6 @@
     - material
     - drawer
     - layout
-
   type: recipe
   link:
     label: Flutter docs
@@ -58,7 +53,6 @@
 
 - name: Display a snackbar
   description: Use the Snackbar widget to display messages to your users.
-
   type: recipe
   link:
     label: Flutter docs
@@ -66,7 +60,6 @@
 
 - name: Export fonts from a package
   description: Use a font across multiple apps.
-
   type: recipe
   link:
     label: Flutter docs
@@ -74,7 +67,6 @@
 
 - name: Update the UI based on orientation
   description: Build a list that displays two columns in portrait mode and three columns in landscape mode.
-
   type: recipe
   link:
     label: Flutter docs
@@ -82,7 +74,6 @@
 
 - name: Use a custom font
   description: Apply fonts to your entire app or individual widgets.
-
   type: recipe
   link:
     label: Flutter docs
@@ -90,7 +81,6 @@
 
 - name: Use themes to share colors and font styles
   description: To share styles across your app, use Themes.
-
   type: recipe
   link:
     label: Flutter docs
@@ -98,7 +88,6 @@
 
 - name: Work with tabs
   description: Working with tabs is a common pattern in mobile apps that follow the Material Design or Cupertino guidelines.
-
   type: recipe
   link:
     label: Flutter docs
@@ -112,7 +101,6 @@
     - ui
     - effects
     - animations
-
   type: recipe
   link:
     label: Flutter docs
@@ -120,7 +108,9 @@
 
 - name: Create a nested navigation flow
   description: Create top level routes, and routes nested below specific widgets.
-
+  tags:
+    - navigation
+    - routing
   type: recipe
   link:
     label: Flutter docs
@@ -128,31 +118,34 @@
 
 - name: Create a scrolling parallax effect
   description: Create the parallax effect by building a list of cards with images that 'move'.
-
   type: recipe
+  tags:
+    - design
   link:
     label: Flutter docs
     url: /cookbook/effects/parallax-scrolling
 
 - name: Create a shimmer loading effect
   description: Communicate that data is loading with a chrome color shimmer on the screen.
-
   type: recipe
+  tags:
+    - animation
   link:
     label: Flutter docs
     url: /cookbook/effects/shimmer-loading
 
 - name: Create a staggered menu animation
   description: Build a drawer menu with animated content that is staggered and has a button that pops in at the bottom
-
   type: recipe
+  tags:
+    - animation
+    - design
   link:
     label: Flutter docs
     url: /cookbook/effects/staggered-menu-animation
 
 - name: Create a typing indicator
   description: Build a speech bubble typing indicator that animates in and out of view.
-
   type: recipe
   link:
     label: Flutter docs
@@ -163,7 +156,6 @@
   tags:
     - ui
     - effects
-
   type: recipe
   link:
     label: Flutter docs
@@ -172,20 +164,19 @@
 - name: Drag a UI element
   description: Build a drag-and-drop interaction when the user long presses.
   tags:
-    - mobile
-
+    - interaction
+    - design
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/effects/drag-a-widget
 
-
 # Forms
 - name: Build a form with validation
   description: Learn how to add validation to a form.
   tags:
-    - user input
-
+    - input
+    - interaction
   type: recipe
   link:
     label: Flutter docs
@@ -194,8 +185,7 @@
 - name: Create and style a text field
   description:  In this recipe, explore how to create and style text fields.
   tags:
-    - user input
-
+    - input
   type: recipe
   link:
     label: Flutter docs
@@ -204,8 +194,7 @@
 - name: Focus and text fields
   description: Shift focus to a text field programmatically.
   tags:
-    - user input
-
+    - input
   type: recipe
   link:
     label: Flutter docs
@@ -214,8 +203,7 @@
 - name: Handle changes to a text field
   description: Listen for changes to a TextField using a callback.
   tags:
-    - user input
-
+    - input
   type: recipe
   link:
     label: Flutter docs
@@ -225,7 +213,6 @@
   description: Learn how to retrieve the text a user has entered into a text field.
   tags:
     - input
-
   type: recipe
   link:
     label: Flutter docs
@@ -237,7 +224,6 @@
   description: Use the games_services package to add leaderboard functionality to your mobile game.
   tags:
     - games
-
   type: recipe
   link:
     label: Flutter docs
@@ -249,7 +235,6 @@
     - games
     - ads
     - firebase
-
   type: recipe
   link:
     label: Flutter docs
@@ -260,7 +245,6 @@
   tags:
     - games
     - ads
-
   type: recipe
   link:
     label: Flutter docs
@@ -273,7 +257,6 @@
   tags:
     - input
     - material
-
   type: recipe
   link:
     label: Flutter docs
@@ -283,7 +266,6 @@
   description: Use the GestureDetector widget to respond to fundamental actions, such as tapping and dragging.
   tags:
     - input
-
   type: recipe
   link:
     label: Flutter docs
@@ -293,7 +275,6 @@
   description: Learn how to use the Dismissible widget.
   tags:
     - input
-
   type: recipe
   link:
     label: Flutter docs
@@ -305,7 +286,7 @@
   description: TODO write description
   tags:
     - image
-
+    - beginner
   type: recipe
   link:
     label: Flutter docs
@@ -314,7 +295,6 @@
   description: TODO write description
   tags:
     - image
-
   type: recipe
   link:
     label: Flutter docs
@@ -322,131 +302,140 @@
 
 # Lists
 
-- name: Create a grid list
-  description: TODO write description
+- name: Grid lists
+  description: Learn to use a GridView widget.
   tags:
     - list
-
+    - layout
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/grid-lists
-- name: Create a horizontal list
-  description: TODO write description
+
+- name: Horizontal lists
+  description: Learn to display items horizontally in a scrollable list.
   tags:
     - list
-
+    - layout
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/horizontal-list
-- name: Create lists with different types of items
-  description: TODO write description
+
+- name: Lists with different types of items
+  description: Create a list with headers followed by a few list items.
   tags:
     - list
-
+    - layout
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/mixed-list
-- name: Place a floating app bar above a list
-  description: TODO write description
+
+- name: Lists and floating app bars
+  description: Place a floating app bar or navigation bar above a list.
   tags:
     - list
-
+    - layout
+    - scrolling
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/floating-app-bar
-- name: Use lists
-  description: TODO write description
+
+- name: Basic lists
+  description: Learn to display items with the ListView widget.
   tags:
     - list
-
+    - layout
+    - scrolling
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/basic-list
-- name: Work with long lists
-  description: TODO write description
+
+- name: Long lists
+  description: Work with longer lists with the Listview.builder constructor.
   tags:
     - list
-
+    - layout
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/long-lists
-- name: Create a list with spaced items
-  description: TODO write description
+
+- name: Lists with spaced items
+  description: Create a list with padding between items.
   tags:
     - list
-
+    - layout
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/lists/spaced-items
 
-- type: separator
-  name: Navigation
 - name: Animate a widget across screens
-  description: TODO write description
+  description: Use the Hero widget to animate a widget from one screen to the next.
   tags:
     - navigation
-
+    - animation
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/hero-animations
+
 - name: Navigate to a new screen and back
-  description: TODO write description
+  description: This recipe uses the Navigator to navigate to a new route.
   tags:
     - navigation
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/navigation-basics
-- name: Navigate with named routes
-  description: TODO write description
+
+- name: Named routes
+  description: Create named routes and navigate to them.
   tags:
     - navigation
-
+    - routing
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/named-routes
-- name: Pass arguments to a named route
-  description: TODO write description
+
+- name: Arguments and named routes
+  description: Pass arguments to a named route and read the arguments on that route.
   tags:
     - navigation
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/navigate-with-arguments
-- name: Set up app links for Android
-  description: TODO write description
+
+- name: Android app links
+  description: Set up deep linking on Android
   tags:
     - navigation
-
+    - android
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/set-up-app-links
-- name: Set up universal links for iOS
-  description: TODO write description
+
+- name: iOS universal links
+  description: Set up deep linking on Android
   tags:
     - navigation
-
+    - iOS
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/set-up-universal-links
+
 - name: Return data from a screen
   description: TODO write description
   tags:
     - navigation
-
   type: recipe
   link:
     label: Flutter docs
