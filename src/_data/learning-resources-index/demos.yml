@@ -6,7 +6,7 @@
     - Android
   sdk: flutter
   type: demo
-  source-link:
+  link:
     url: https://github.com/flutter/samples/tree/main/add_to_app
     label: Github
 - name: android_splash_screen
@@ -15,7 +15,7 @@
     - testing
   sdk: flutter
   type: recipe
-  source-link:
+  link:
     label: Flutter docs
     url:
 - name: ios_app_clip
@@ -24,7 +24,7 @@
     - testing
   sdk: flutter
   type: recipe
-  source-link:
+  link:
     label: Flutter docs
     url:
 - name: platform_channels
@@ -33,7 +33,7 @@
     - testing
   sdk: flutter
   type: recipe
-  source-link:
+  link:
     label: Flutter docs
     url:
 - name: platform_view_swift
@@ -42,6 +42,6 @@
     - testing
   sdk: flutter
   type: recipe
-  source-link:
+  link:
     label: Flutter docs
     url:

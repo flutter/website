@@ -1,44 +1,39 @@
-<div id="samples-filter-group">
+<div id="resource-filter-group">
     <div class="table-title">Filter by</div>
     <div class="table-content">
         <h4>Subject</h4>
-        <ul id="filters-tags">
+        <ul id="filters-tags" class="collapsed">
             {% for filter in filters.tags -%}
                 <li class="hidden">
                     <input type="checkbox"
                            role="checkbox"
                            name="filter-{{filter}}"
+                           data-category="tags"
                            id="filter-{{filter}}">
                     <label for="filter-{{filter}}">{{filter | capitalize}}</label>
                 </li>
-            {% endfor %}
+            {% endfor -%}
         </ul>
-        <button id="filters-tags-show-button">More</button>
+        <button id="filters-tags-show-button">
+            <span class="label">More</span>
+            <span class="material-symbols" aria-hidden="true">expand_more</span>
+        </button>
         <h4>Type</h4>
-        <ul id="filters-type">
+        <ul id="filters-type" class="collapsed">
             {% for filter in filters.type -%}
                 <li class="hidden">
                     <input type="checkbox"
                            role="checkbox"
+                           data-category="type"
                            name="filter-{{filter}}"
                            id="filter-{{filter}}">
                     <label for="filter-{{filter}}">{{filter | capitalize}}</label>
                 </li>
-            {% endfor %}
+            {% endfor -%}
         </ul>
-        <button id="filters-type-show-button">More</button>
-        <h4>Difficulty</h4>
-        <ul id="filters-difficulty">
-            {% for filter in filters.difficulty -%}
-                <li class="hidden">
-                    <input type="checkbox"
-                           role="checkbox"
-                           name="filter-{{filter}}"
-                           id="filter-{{filter}}">
-                    <label for="filter-{{filter}}">{{filter | capitalize}}</label>
-                </li>
-            {% endfor %}
-        </ul>
-        <button id="filters-difficulty-show-button">More</button>
+        <button id="filters-type-show-button">
+            <span class="label">More</span>
+            <span class="material-symbols" aria-hidden="true">expand_more</span>
+        </button>
     </div>
 </div>

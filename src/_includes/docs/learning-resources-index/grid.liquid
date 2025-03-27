@@ -1,11 +1,11 @@
-<section class="card-grid" id="all-samples-grid">
-    {%- for item in samples -%}
+<section class="card-grid" id="all-resources-grid">
+    {%- for item in resources -%}
         <a id="{{ item.name }}"
            data-type="{{ item.type }}"
            data-tags='{{ item.tags | join: ", " }}'
            data-description="{{ item.description }}"
            class="card outlined-card"
-           href="{{ item.source-link.url }}">
+           href="{{ item.link.url }}">
             <div class="card-image-holder-material-3">
                 {%- if item.imageUrl -%}
                     <img src='{{ item.imageUrl }}'>
@@ -26,19 +26,19 @@
                             assign pill-color = 'teal'
                     endcase -%}
                 <span class="pill-sm {{ pill-color }}">{{ item.type | capitalize }}</span>
-                {%- if item.source-link.label == "Github" -%}
+                {%- if item.link.label == "Github" -%}
                     <svg style="color:black" width="24px" height="24px">
                         <use href="/assets/images/social/github.svg#github"></use>
                     </svg>
-                {%- elsif item.source-link.label == 'Flutter docs' -%}
+                {%- elsif item.link.label == 'Flutter docs' -%}
                     <img src='/assets/images/branding/flutter/icon/1080.png' alt="Flutter icon" width="24px"/>
-                {%- elsif item.source-link.label == 'Dart docs' -%}
+                {%- elsif item.link.label == 'Dart docs' -%}
                     <img src='/assets/images/branding/dart/64.png' alt="Dart icon" width="24px"/>
-                {%- elsif item.source-link.label == "Google Codelab" -%}
+                {%- elsif item.link.label == "Google Codelab" -%}
                     <svg width="24px" height="24px">
                         <use href="/assets/images/social/google-developers.svg#google-developers"></use>
                     </svg>
-                {%- elsif item.source-link.label == "YouTube" -%}
+                {%- elsif item.link.label == "YouTube" -%}
                     <svg style="color:red" width="24px" height="24px">
                         <use href="/assets/images/social/youtube.svg#youtube"></use>
                     </svg>
@@ -49,6 +49,15 @@
             </div>
             <div class="card-content" style="flex:2;align-self: start">
                 <p style="align-self: start">{{ item.description }}</p>
+            </div>
+            <div class="card-trailing">
+                {%  if item.difficulty == 'beginner' -%}
+                    <img src='/assets/images/docs/resource-index/beginner.png' alt="Beginner icon" width="24px"/>
+                {%  elsif item.difficulty == 'intermediate' -%}
+                    <img src='/assets/images/docs/resource-index/intermediate.png' alt="Intermediate icon" width="24px"/>
+                {%  elsif item.difficulty == 'advanced' -%}
+                    <img src='/assets/images/docs/resource-index/advanced.png' alt="Advanced icon" width="24px"/>
+                {% endif -%}
             </div>
         </a>
     {%- endfor -%}

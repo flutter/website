@@ -30,9 +30,10 @@
 @use 'components/trailing';
 
 // Styles for specific pages, alphabetically ordered.
+@use 'pages/learning_resources_index';
 @use 'pages/not-found';
 @use 'pages/search';
-@use 'pages/samples_index';
+
 
 // Must be imported last to ensure that
 // the print overrides take priority over earlier defined styles.

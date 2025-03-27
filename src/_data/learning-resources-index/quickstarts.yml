@@ -5,7 +5,7 @@
     - UI
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: Background isolate channels
@@ -14,7 +14,7 @@
     - performance
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: code_sharing
@@ -22,7 +22,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: context_menus
@@ -30,7 +30,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: desktop_photo_search
@@ -38,7 +38,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: dynamic_theme
@@ -46,7 +46,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 
@@ -55,7 +55,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: game_template
@@ -64,7 +64,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: gemini_tasks
@@ -72,7 +72,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: google_maps
@@ -80,7 +80,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: infinite_list
@@ -88,7 +88,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: isolate_example
@@ -96,7 +96,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: navigation_and_routing
@@ -104,7 +104,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: place_tracker
@@ -112,7 +112,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: platform_design
@@ -120,7 +120,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: provider_counter
@@ -128,7 +128,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: provider_shopper
@@ -136,7 +136,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: simple_shader
@@ -144,7 +144,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: simplistic_calculator
@@ -152,7 +152,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: simplistic_editor
@@ -160,7 +160,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: testing_app
@@ -168,7 +168,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: web_embedding
@@ -176,7 +176,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 - name: element_embedding_demo
@@ -184,7 +184,7 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github
 
@@ -193,6 +193,6 @@
   tags:
   sdk: flutter
   type: quickstart
-  source-link:
+  link:
     url: https://github.com/flutter/samples
     label: Github

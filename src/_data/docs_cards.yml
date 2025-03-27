@@ -7,12 +7,9 @@
 - name: API docs
   description: Bookmark the API reference docs for the Flutter framework.
   url: https://api.flutter.dev/
-- name: Cookbook
-  description: Browse the cookbook for many easy Flutter recipes.
-  url: /cookbook
-- name: Samples
-  description: Check out the Flutter examples.
-  url: /samples-index
+- name: Guides and tutorials
+  description: Browse sample code, tutorials and how-tos.
+  url: /learning-resources-index
 - name: Videos
   description: View the many videos on the Flutter YouTube channel.
   url: https://www.youtube.com/@flutterdev
