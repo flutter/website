@@ -1,7 +1,7 @@
 const filters = {
     // These properties track the active filters and/or search term
-    type: new Set(),
-    tags: new Set(),
+    selectedTypes: new Set(),
+    selectedTags: new Set(),
     difficulty: new Set(),
     searchTerm: '',
     // The keys correspond to a checkbox in the filter sidebar (created from
@@ -14,11 +14,31 @@ const filters = {
         'workshop': ['workshop', 'video'],
         'how to': ['recipe', 'how to']
     },
+    resourceTagMapping: {
+        'ai': ['ai', 'gemini', 'llm'],
+        'animation': ['animations', 'animate'],
+        'architecture': ['state-management', 'architecture', 'provider', 'bloc', 'stream'],
+        'cupertino': ['cupertino', 'ios', 'macos'],
+        'dart': ['dart', 'cli'],
+        'design': ['design', 'widgets'],
+        'desktop': ['windows', 'macos', 'linux'],
+        'firebase': ['firebase', 'firestore', 'cloud'],
+        'good for beginners': ['beginner', 'beginners'],
+        'google apis': ['google', 'gemini', 'maps', 'firebase', 'cloud'],
+        'ios': ['cupertino', 'ios'],
+        'layout': ['layout', 'lists', 'scrolling', 'widgets'],
+        'material': ['material', 'android'],
+        'routing and navigation': ['routing', 'route', 'navigation', 'navigator'],
+        'state management': ['state-management', 'architecture', 'provider', 'bloc', 'stream'],
+        'testing': ['testing', 'tests', "test", 'perf', 'performance'],
+        'web': ['web', 'wasm'],
+        'widgets': ['widgets', 'layout'],
+    },
 
     // Checks for existing filters, but not search terms
     hasFilters: function () {
-        return this.type.size > 0 ||
-            this.tags.size > 0 ||
+        return this.selectedTypes.size > 0 ||
+            this.selectedTags.size > 0 ||
             this.difficulty.size > 0;
         },
     // Takes a Set, and returns a filtered Set
@@ -28,10 +48,11 @@ const filters = {
         if (this.hasFilters()) {
             for (const resource of resources) {
                 const tags = resource.tags.join(' ').toLowerCase();
-                const selectedFilterTags = Array.from(filters.tags);
+                const selectedFilterTags = Array.from(filters.selectedTags);
                 const matchesTags = selectedFilterTags.some(t => {return tags.includes(t)});
+
                 const type = resource.type.toLowerCase();
-                const selectedTypes = Array.from(filters.type);
+                const selectedTypes = Array.from(filters.selectedTypes);
                 const matchesTypes = selectedTypes.some(t => {return t === type});
 
                 if (matchesTags || matchesTypes) {
@@ -164,7 +185,7 @@ function _setupResourceInfo(resourceCards) {
 
         card.addEventListener('click', async (_) => {
             window.dataLayer?.push({
-                'event': 'resources_index_click',
+                'event': 'samples_index_click',
                 'resource_type': card.dataset.type,
                 'resource_title': resourceName,
             });
@@ -183,6 +204,10 @@ function _setupFilterChange(checkbox, onChange) {
         if (checkbox.checked) {
             switch (category) {
                 case 'tags':
+                    console.log(filter);
+                    const tagGroup = filters.resourceTypeMapping[filter];
+                    tagGroup.forEach(tag => filters[category].add(tag))
+                    break;
                 case 'difficulty':
                     filters[category].add(filter);
                     break;

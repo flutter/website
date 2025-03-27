@@ -580,7 +580,7 @@
   description: Report errors to Sentry crash reporting.
   tags:
     - testing
-    - maintenance
+    - reporting
   type: recipe
   link:
     label: Flutter docs
