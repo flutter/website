@@ -63,22 +63,6 @@ const filters = {
     }
 }
 
-// The remaining functions deal with the DOM
-function filterResources() {
-    const resourcesToShow = filters.filter(resourcesInfo);
-    resourceCards.forEach(card => {
-        const resourceName = card.id;
-        if (resourcesToShow.has(resourceName)) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-    const resourcesCount = document.getElementById('displayed-resource-card-count');
-    resourcesCount.textContent = resourcesToShow.size.toString();
-}
-
-
 function _setupResourceFilters() {
     // index the resource metadata
     const resourceCards = document.getElementById('all-resources-grid')?.querySelectorAll('.card');
@@ -105,9 +89,7 @@ function _setupResourceFilters() {
     });
 
     function filterResources() {
-        console.log(filters.tags);
         const resourcesToShow = filters.filter(resourcesInfo);
-        console.log(resourcesToShow);
         resourceCards.forEach(card => {
             const resourceName = card.id;
             if (resourcesToShow.has(resourceName)) {
@@ -193,7 +175,6 @@ function _setupResourceInfo(resourceCards) {
     return resourcesInfo;
 }
 
-// TODO
 function _setupFilterChange(checkbox, onChange) {
     const id = checkbox.id;
     const filter = id.split('-')[1].toLowerCase();
@@ -237,25 +218,24 @@ function _setupFilterChange(checkbox, onChange) {
 
 // This button is only displayed on smaller screens
 function _setupDropdownMenu() {
-    const searchGroup = document.getElementById('resource-search-group');
-    if (!searchGroup) return;
+    const pageContent = document.getElementById('resource-index-content');
+    if (!pageContent) return;
 
-    const dropdownButton = searchGroup.querySelector('.dropdown-button');
-    const dropdownMenu = searchGroup.querySelector('.dropdown-content');
-    if (!dropdownButton || !dropdownMenu) return;
+    const filtersButton = pageContent.querySelector('.show-filters-button');
+    const filtersEl = pageContent.querySelector('.right-col');
+    if (!filtersButton || !filtersEl) return;
 
     function _closeMenu() {
-        dropdownMenu.classList.remove('show');
-        dropdownButton.ariaExpanded = 'false';
+        filtersEl.classList.remove('show');
+        filtersButton.ariaExpanded = 'false';
     }
 
-    dropdownButton.addEventListener('click', (_) => {
-        if (dropdownMenu.classList.contains('show')) {
+    filtersButton.addEventListener('click', (_) => {
+        if (filtersEl.classList.contains('show')) {
             _closeMenu();
         } else {
-            console.log('open');
-            dropdownMenu.classList.add('show');
-            dropdownButton.ariaExpanded = 'true';
+            filtersEl.classList.add('show');
+            filtersButton.ariaExpanded = 'true';
         }
     });
 
@@ -265,15 +245,15 @@ function _setupDropdownMenu() {
         }
     });
 
-    // Close the dropdown if anywhere not in the inline TOC is clicked.
-    document.addEventListener('click', (event) => {
-        if (event.target.closest('#resource-search-group')) {
+    // Close the dropdown if anywhere not in the filters menu is.
+    const content = document.getElementById('all-resources-grid');
+    content.addEventListener('click', (event) => {
+        if (!filtersEl.classList.contains('show')) {
             return;
         }
         _closeMenu();
     });
 }
-
 document.onreadystatechange = () => {
     switch (document.readyState) {
         case "interactive":

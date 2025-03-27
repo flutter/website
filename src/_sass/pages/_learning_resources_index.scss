@@ -1,13 +1,5 @@
 @use '../base/variables' as *;
 
-#resource-index-page {
-  .alert-secondary {
-    width: 900px;
-    margin-bottom: 2rem;
-    border-left: none !important;
-  }
-}
-
 #resource-index-content {
   display: flex;
   flex-direction: row;
@@ -20,13 +12,43 @@
   .right-col {
     width: 220px;
     @media (max-width: 840px) {
-      display: none;
+      position: fixed;
+      // height of navbar
+      top: 4rem;
+      bottom: 0;
+      right: -10rem;
+      background-color: var(--site-switcher-bg, #ffffff);
+      box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 0.4rem;
+      width: max-content;
+
+      @keyframes slidein {
+        0% {
+          right: -10rem;
+        }
+        100% {
+          right: 0;
+        }
+      }
+
+      &.show {
+        animation-duration: 500ms;
+        animation-delay: 200ms;
+        animation-name: slidein;
+        animation-iteration-count: 1;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+      }
     }
   }
 }
 
 #resource-filter-group {
   border: 1px solid $site-color-light-grey;
+
+  @media (max-width: 840px) {
+    border-bottom: none;
+  }
 
   .table-title {
     text-align: center;
@@ -121,28 +143,10 @@
       }
     }
 
-    button.dropdown-button {
+    button.show-filters-button {
+      padding: 1rem;
       @media (min-width: 840px) {
         display: none;
-      }
-    }
-
-    .dropdown-position {
-      position: relative;
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 15px;
-        right:15px;
-        background-color: var(--site-switcher-bg, #ffffff);
-        box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 0.4rem;
-        width: max-content;
-
-        &.show {
-          display: block;
-        }
       }
     }
   }
