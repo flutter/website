@@ -26,12 +26,10 @@ const filters = {
         const resourcesToShow = new Set();
         let filteredResources = [];
         if (this.hasFilters()) {
-            // TODO: START HERE TOMORROW this code is reached on change, but filters don't work
             for (const resource of resources) {
-                const tags = resource.tags.join('').toLowerCase();
+                const tags = resource.tags.join(' ').toLowerCase();
                 const selectedFilterTags = Array.from(filters.tags);
-                const matchesTags = selectedFilterTags.some(t => {tags.contains(t)});
-
+                const matchesTags = selectedFilterTags.some(t => {return tags.includes(t)});
                 const type = resource.type.toLowerCase();
                 const selectedTypes = Array.from(filters.type);
                 const matchesTypes = selectedTypes.some(t => {return t === type});
@@ -71,6 +69,7 @@ function _setupResourceFilters() {
 
     // sets up the resource count element that says "Showing x / y" below the search bar.
     const allResourcesCount = document.getElementById('total-resource-card-count');
+    // TODO: why is the length 1 greater than whats displayed?
     allResourcesCount.textContent = (resourcesInfo.length - 1).toString();
 
     // set up search bar interaction
@@ -78,7 +77,7 @@ function _setupResourceFilters() {
     const searchInput = searchSection.querySelector('.search-wrapper input');
     searchInput.addEventListener('input', event => {
         filters.searchTerm = searchInput.value.toLowerCase();
-        filterResources(resourcesInfo);
+        filterResources();
     });
 
     // set up checkbox interaction handling
@@ -155,8 +154,7 @@ function _setupResourceInfo(resourceCards) {
     resourceCards.forEach(card => {
         const resourceName = card.id;
         if (!resourceName) return;
-        let tags = card.dataset.tags.split(', ').map(t => t.toLowerCase());
-
+        const tags = card.dataset.tags.split(', ').map(t => t.toLowerCase());
         resourcesInfo.push({
             name: resourceName,
             type: card.dataset.type,
