@@ -205,3 +205,14 @@
   link:
     url: https://github.com/flutter/samples/tree/main/web_embedding/ng-flutter
     label: Flutter Github
+
+- name: Platform channels
+  description: A sample Flutter app which demonstrates how to use `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec`.
+  tags:
+    - platforms
+    - android
+    - ios
+  type: quickstart
+  link:
+    url: https://github.com/flutter/samples/tree/main/platform_channels
+    label: Flutter Github
