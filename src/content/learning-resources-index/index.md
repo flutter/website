@@ -16,7 +16,7 @@ This page lists all of our additional learning resources:
 * Feature-rich demo applications that show how larger applications are built.
 :::
 
-{% assign resources = learning-resources-index.codelabs | concat: learning-resources-index.cookbook | concat: learning-resources-index.demos | concat: learning-resources-index.quickstarts | sort: 'name' -%}
+{% assign resources = learning-resources-index.codelabs | concat: learning-resources-index.cookbook | concat: learning-resources-index.demos | concat: learning-resources-index.quickstarts_flutter | concat: learning-resources-index.quickstarts_dart | sort: 'name' -%}
 
 {% assign filters = learning-resources-index.filters -%}
 

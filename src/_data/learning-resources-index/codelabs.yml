@@ -2,11 +2,10 @@
 - name: Your first Flutter app workshop
   description: |
     An instructor-led version of our very popular
-    "Write your first Flutter app" codelab.
+    'Write your first Flutter app' codelab.
   tags:
     - beginner
     - intro
-  sdk: flutter
   type: workshop
   link:
     label: YouTube
@@ -19,7 +18,6 @@
   tags:
     - beginner
     - intro
-  sdk: flutter
   type: codelab
   link:
     label: Google Codelab
@@ -35,7 +33,6 @@
     - intro
     - web
     - dartpad
-  sdk: flutter
   type: codelab
   link:
     label: Flutter docs
@@ -66,7 +63,7 @@
   tags:
     - scrolling
     - scroll
-  sdk: flutter
+
   type: codelab
   link:
     label: YouTube
@@ -83,7 +80,7 @@
     - material
     - responsive
     - adaptive
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -98,7 +95,7 @@
     - flutter animate
     - ui
     - shaders
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -118,7 +115,7 @@
     - android
     - ios
     - web
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -131,7 +128,7 @@
   tags:
     - animations
     - material
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -146,7 +143,7 @@
     - debug
     - tooling
     - developer tools
-  sdk: flutter
+
   type: codelab
   link:
     label: Medium
@@ -159,7 +156,7 @@
     visual effects for the widgets in your UI.
   tags:
     - animations
-  sdk: flutter
+
   type: codelab
   link:
     label: Flutter docs
@@ -172,7 +169,7 @@
   tags:
     - material
     - design
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -186,7 +183,7 @@
   tags:
     - material
     - design
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -200,7 +197,7 @@
   tags:
     - material
     - design
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -213,7 +210,7 @@
   tags:
     - material
     - design
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -231,7 +228,7 @@
     - ads
     - admob
     - monetization
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -246,7 +243,7 @@
     - ads
     - admob
     - monetization
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -260,7 +257,7 @@
   tags:
     - in app purchases
     - monetization
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -276,7 +273,7 @@
     - firebase
     - authentication
     - firebase UI
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -293,7 +290,7 @@
     - ios
     - firestore
     - real time database
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -311,7 +308,7 @@
     - web
     - android
     - ios
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -327,7 +324,7 @@
   tags:
     - game
     - audio
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -341,7 +338,7 @@
   tags:
     - game
     - physics
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -355,7 +352,7 @@
   tags:
     - game
     - isolate
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -371,7 +368,7 @@
     - game
     - intro
     - beginner
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -386,7 +383,7 @@
   tags:
     - google maps
     - maps
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -400,7 +397,7 @@
     - android
     - ios
     - webview
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -416,7 +413,7 @@
     - FFI
     - interop
     - plugin
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -431,7 +428,7 @@
     widgets. Use Flutter Driver to create an integration test.
   tags:
     - testing
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -447,7 +444,7 @@
   tags:
     - ios
     - home screen widget
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab
@@ -465,7 +462,7 @@
     - windows
     - linux
     - macos
-  sdk: flutter
+
   type: codelab
   link:
     label: Google Codelab

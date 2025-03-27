@@ -5,7 +5,7 @@
   tags:
     - animation
     - route
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -15,7 +15,7 @@
   description: Learn how to move a widget from a dragged point back to the center using a spring simulation.
   tags:
     - animation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -25,7 +25,7 @@
   description: Use AnimatedContainer to animate the size, background color, and border radius of a Container.
   tags:
     - animation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -35,7 +35,7 @@
   description: The AnimatedOpacity widget makes it easy to perform opacity animations.
   tags:
     - animation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -50,7 +50,7 @@
     - material
     - drawer
     - layout
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -58,7 +58,7 @@
 
 - name: Display a snackbar
   description: Use the Snackbar widget to display messages to your users.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -66,7 +66,7 @@
 
 - name: Export fonts from a package
   description: Use a font across multiple apps.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -74,7 +74,7 @@
 
 - name: Update the UI based on orientation
   description: Build a list that displays two columns in portrait mode and three columns in landscape mode.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -82,7 +82,7 @@
 
 - name: Use a custom font
   description: Apply fonts to your entire app or individual widgets.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -90,7 +90,7 @@
 
 - name: Use themes to share colors and font styles
   description: To share styles across your app, use Themes.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -98,7 +98,7 @@
 
 - name: Work with tabs
   description: Working with tabs is a common pattern in mobile apps that follow the Material Design or Cupertino guidelines.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -112,7 +112,7 @@
     - ui
     - effects
     - animations
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -120,7 +120,7 @@
 
 - name: Create a nested navigation flow
   description: Create top level routes, and routes nested below specific widgets.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -128,7 +128,7 @@
 
 - name: Create a scrolling parallax effect
   description: Create the parallax effect by building a list of cards with images that 'move'.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -136,7 +136,7 @@
 
 - name: Create a shimmer loading effect
   description: Communicate that data is loading with a chrome color shimmer on the screen.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -144,7 +144,7 @@
 
 - name: Create a staggered menu animation
   description: Build a drawer menu with animated content that is staggered and has a button that pops in at the bottom
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -152,7 +152,7 @@
 
 - name: Create a typing indicator
   description: Build a speech bubble typing indicator that animates in and out of view.
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -163,7 +163,7 @@
   tags:
     - ui
     - effects
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -173,7 +173,7 @@
   description: Build a drag-and-drop interaction when the user long presses.
   tags:
     - mobile
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -185,7 +185,7 @@
   description: Learn how to add validation to a form.
   tags:
     - user input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -195,7 +195,7 @@
   description:  In this recipe, explore how to create and style text fields.
   tags:
     - user input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -205,7 +205,7 @@
   description: Shift focus to a text field programmatically.
   tags:
     - user input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -215,7 +215,7 @@
   description: Listen for changes to a TextField using a callback.
   tags:
     - user input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -225,80 +225,87 @@
   description: Learn how to retrieve the text a user has entered into a text field.
   tags:
     - input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/forms/retrieve-input
 
 # Games
-- name: Add achievements and leaderboards to your mobile game
-  description: TODO write description
+
+- name: Add achievements and leaderboards to your game
+  description: Use the games_services package to add leaderboard functionality to your mobile game.
   tags:
     - games
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/games/achievements-leaderboard
 
-- name: Add multiplayer support via Firestore
-  description: TODO write description
+- name: Add multiplayer support to your Flutter game
+  description: Use the cloud_firestore package to implement multiplayer capabilities in your game.
   tags:
     - games
-  sdk: flutter
+    - ads
+    - firebase
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/games/firestore-multiplayer
 
-- name: Add ads to your mobile Flutter app or game
-  description: TODO write description
+- name: Add ads to your Flutter game
+  description: Use the google_mobile_ads package to add a banner ad to your app or game.
   tags:
     - games
-  sdk: flutter
+    - ads
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/plugins/google-mobile-ads
 
-- type: separator
-  name: Gestures
+# Gestures
+
 - name: Add Material touch ripples
-  description: TODO write description
+  description: Use the Inkwell widget to display a ripple animation.
   tags:
     - input
-  sdk: flutter
+    - material
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/gestures/ripples
+
 - name: Handle taps
-  description: TODO write description
+  description: Use the GestureDetector widget to respond to fundamental actions, such as tapping and dragging.
   tags:
     - input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/gestures/handling-taps
+
 - name: Implement swipe to dismiss
-  description: TODO write description
+  description: Learn how to use the Dismissible widget.
   tags:
     - input
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/gestures/dismissible
 
-- type: separator
-  name: Images
+# Images
+
 - name: Display images from the internet
   description: TODO write description
   tags:
     - image
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -307,19 +314,19 @@
   description: TODO write description
   tags:
     - image
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/images/fading-in-images
 
-- type: separator
-  name: Lists
+# Lists
+
 - name: Create a grid list
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -328,7 +335,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -337,7 +344,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -346,7 +353,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -355,7 +362,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -364,7 +371,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -373,7 +380,7 @@
   description: TODO write description
   tags:
     - list
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -385,7 +392,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -394,7 +401,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -403,7 +410,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -412,7 +419,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -421,7 +428,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -430,7 +437,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -439,7 +446,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -448,7 +455,7 @@
   description: TODO write description
   tags:
     - navigation
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -460,7 +467,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -469,7 +476,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -478,7 +485,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -487,7 +494,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -496,7 +503,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -505,7 +512,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -514,7 +521,7 @@
   description: TODO write description
   tags:
     - networking
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -530,7 +537,7 @@
   tags:
     - data
     - persistence
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -540,7 +547,7 @@
   tags:
     - data
     - persistence
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -550,7 +557,7 @@
   tags:
     - data
     - persistence
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -564,7 +571,7 @@
   description: TODO write description
   tags:
     - plugins
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -573,7 +580,7 @@
   description: TODO write description
   tags:
     - plugins
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -582,7 +589,7 @@
   description: TODO write description
   tags:
     - plugins
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -598,7 +605,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -607,7 +614,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -616,7 +623,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -625,7 +632,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -634,7 +641,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -643,7 +650,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -652,7 +659,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -661,7 +668,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -670,7 +677,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs
@@ -679,7 +686,7 @@
   description: TODO write description
   tags:
     - testing
-  sdk: flutter
+
   type: recipe
   link:
     label: Flutter docs

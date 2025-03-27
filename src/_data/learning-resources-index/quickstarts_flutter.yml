@@ -3,196 +3,209 @@
   tags:
     - images
     - UI
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
+    
+- name: Add Material touch ripples
+  description: Use the Inkwell widget to display a ripple animation.
+  tags:
+    - input
+    - material
+
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/gestures/ripples
+
 - name: Background isolate channels
   description: Demonstrates how to use long-lived isolates.
   tags:
     - performance
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
+
 - name: code_sharing
   description: Demonstrates how to share business logic between Flutter client and Dart server using `package:shelf`.
   tags:
-  sdk: flutter
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
+    
 - name: context_menus
   description: This sample shows how to create and customize cross-platform context menus, such as the text selection toolbar on mobile or the right click menu on desktop.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: desktop_photo_search
   description: Demonstrates desktop features in both Material and FluentUI design systems.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: dynamic_theme
   description: A developer sample demonstrating how to call on-device Flutter APIs based on output from the Gemini API.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 
 - name: form_app
   description: A sample demonstrating different types of forms and best practices.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: game_template
   description: |
     (**note: deprecated!**) A starter game in Flutter with all the bells and whistles of a mobile (iOS & Android) game.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: gemini_tasks
   description: A developer sample written in Flutter demonstrating how to interact with a to-do list in natural language using the Gemini API.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: google_maps
   description: Demonstrates the Google Maps for Flutter plugin.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: infinite_list
-  description: A Flutter sample app that shows an implementation of the "infinite list" UX pattern.
+  description: A Flutter sample app that shows an implementation of the 'infinite list' UX pattern.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: isolate_example
   description: A sample application that demonstrate best practices when using [isolates].
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: navigation_and_routing
   description: A sample that shows how to use [go_router] API to handle common navigation scenarios.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: place_tracker
   description: A sample place tracking app that uses the [google_maps_flutter plugin].
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: platform_design
   description: This sample project shows a Flutter app that maximizes application code reuse while adhering to different design patterns on Android and iOS.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: provider_counter
   description: The starter Flutter application, but using [package:provider] to manage state.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: provider_shopper
   description: A Flutter sample app that shows a state management approach using [package:provider].
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: simple_shader
   description: A simple [Flutter fragment shaders] sample project.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: simplistic_calculator
   description: A calculator to demonstrate a simple start for a desktop Flutter app.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: simplistic_editor
   description: This sample text editor showcases the use of [TextEditingDeltas] and a DeltaTextInputClient to expand and contract styled ranges of text.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: testing_app
   description: A sample app that shows different types of testing in Flutter.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: web_embedding
   description: This directory contains examples of how to embed Flutter in web apps (without iframes).
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 - name: element_embedding_demo
   description: Modifies the index.html of a flutter app so it is launched in a custom hostElement. This is the most basic embedding example.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
 
 - name: ng-flutter
   description: A simple Angular app (and component) that replicates the above example, but in an Angular style.
   tags:
-  sdk: flutter
+
   type: quickstart
   link:
     url: https://github.com/flutter/samples
-    label: Github
+    label: Flutter Github
