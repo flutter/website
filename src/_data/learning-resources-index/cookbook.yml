@@ -433,249 +433,231 @@
     url: /cookbook/navigation/set-up-universal-links
 
 - name: Return data from a screen
-  description: TODO write description
+  description: Return data from one screen to another with the Navigator.pop method.
   tags:
     - navigation
+    - routing
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/returning-data
+
 - name: Send data to a new screen
-  description: TODO write description
+  description: Send data from one screen to new one.
   tags:
     - navigation
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/navigation/passing-data
 
-- type: separator
-  name: Networking
+# Networking
+
 - name: Fetch data from the internet
-  description: TODO write description
+  description: Learn to use HTTP in your app.
   tags:
     - networking
-
+    - http
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/fetch-data
+
 - name: Make authenticated requests
-  description: TODO write description
+  description: Authorization headers in HTTP
   tags:
     - networking
-
+    - http
+    - auth
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/authenticated-requests
+
 - name: Send data to the internet
-  description: TODO write description
+  description: Send HTTP POST requests in your app.
   tags:
     - networking
-
+    - http
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/send-data
+
 - name: Update data over the internet
-  description: TODO write description
+  description: Send an HTTP put request.
   tags:
     - networking
-
+    - http
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/update-data
+
 - name: Delete data on the internet
-  description: TODO write description
+  description: Send an HTTP delete request.
   tags:
     - networking
-
+    - http
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/delete-data
-- name: Communicate with WebSockets
-  description: TODO write description
+
+- name: WebSockets
+  description: Connect to and communicate with a websocket.
   tags:
     - networking
-
+    - websocket
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/web-sockets
+
 - name: Parse JSON in the background
-  description: TODO write description
+  description: Learn to use Dart's Isolate objects
   tags:
     - networking
-
+    - isolates
+    - threading
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/networking/background-parsing
 
-- type: separator
-  name: Data and persistence
-  tags:
-    - data
-    - persistence
 - name: Persist data with SQLite
-  description: TODO write description
+  description: Use the sqflite package.
   tags:
     - data
     - persistence
-
+    - SQL
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/persistence/sqlite
+
 - name: Read and write files
-  description: TODO write description
+  description: Use the dart:io library and path_provider plugin to save files to disk.
   tags:
     - data
     - persistence
-
+    - io
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/persistence/reading-writing-files
+
 - name: Store key-value data on disk
-  description: TODO write description
+  description: Persist data with shared_preferences
   tags:
     - data
     - persistence
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/persistence/key-value
 
-- type: plugins
-  name: Plugins
-  tags:
-    - plugins
 - name: Play and pause a video
-  description: TODO write description
+  description: Play videos stored on the file system, as an asset, or from the internet.
   tags:
     - plugins
-
+    - video
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/plugins/play-video
-- name: Add ads to your mobile Flutter app or game
-  description: TODO write description
+
+- name: Use the camera
+  description: Learn to use a devices camera.
   tags:
     - plugins
-
-  type: recipe
-  link:
-    label: Flutter docs
-    url: /cookbook/plugins/google-mobile-ads
-- name: Take a picture using the camera
-  description: TODO write description
-  tags:
-    - plugins
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/plugins/picture-using-camera
 
-- type: separator
-  name: Testing and maintenance
+- name: Report errors to a service
+  description: Report errors to Sentry crash reporting.
   tags:
     - testing
     - maintenance
-    - error
-- name: Report errors to a service
-  description: TODO write description
-  tags:
-    - testing
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/maintenance/error-reporting
-- name: An introduction to integration testing
-  description: TODO write description
-  tags:
-    - testing
 
-  type: recipe
-  link:
-    label: Flutter docs
-    url: /cookbook/testing/integration/introduction
 - name: Performance profiling
-  description: TODO write description
+  description: Write a test that records a performance timeline.
   tags:
     - testing
-
+    - performance
+    - perf
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/integration/profiling
-- name: An introduction to unit testing
-  description: TODO write description
+
+- name: Write unit tests
+  description: An introduction to writing unit tests.
   tags:
     - testing
-
+    - unit testing
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/unit/introduction
-- name: Mock dependencies using Mockito
-  description: TODO write description
+
+- name: Write widget tests
+  description: An introduction to writing widget tests.
   tags:
     - testing
-
-  type: recipe
-  link:
-    label: Flutter docs
-    url: /cookbook/testing/unit/mocking
-- name: An introduction to widget testing
-  description: TODO write description
-  tags:
-    - testing
-
+    - unit testing
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/widget/introduction
-- name: Find widgets
-  description: TODO write description
+
+- name: Mock dependencies in tests
+  description: The basics of mocking with the Mockito package.
   tags:
     - testing
+    - unit testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/unit/mocking
 
+- name: Find widgets in tests
+  description: This recipe looks at the 'find' constant provided by the flutter_test package.
+  tags:
+    - testing
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/widget/finders
+
 - name: Handle scrolling
-  description: TODO write description
+  description: Learn how to scroll in widget tests.
   tags:
     - testing
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/widget/scrolling
-- name: Test the orientation of an app
-  description: TODO write description
+
+- name: App orientation
+  description: Learn how to check app orientation in widget tests.
   tags:
     - testing
-
   type: recipe
   link:
     label: Flutter docs
     url: /cookbook/testing/widget/orientation
+
 - name: Tap, drag, and enter text
-  description: TODO write description
+  description: Interact with widgets in widget tests.
   tags:
     - testing
-
   type: recipe
   link:
     label: Flutter docs
