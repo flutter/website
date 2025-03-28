@@ -28,6 +28,11 @@
     }
   }
 
+  .wide-site-content {
+    max-width: $site-content-wide-max-width;
+    width: 100%;
+  }
+
   #site-header-wrapper {
     margin-block-end: 1.5rem;
 

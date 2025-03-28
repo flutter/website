@@ -85,6 +85,23 @@ export default function (eleventyConfig: UserConfig) {
     filter: (path: string) => path.includes('src') || path.includes('images'),
   });
 
+  eleventyConfig.addFilter("shuffle", (arr: Array<any>) => {
+    let currentIndex = arr.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [arr[currentIndex], arr[randomIndex]] = [
+        arr[randomIndex], arr[currentIndex]];
+    }
+
+    return arr;
+  });
+
   if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.
     // Doing so during serving isn't worth the extra build time.
