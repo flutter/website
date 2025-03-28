@@ -34,7 +34,6 @@
 @use 'pages/not-found';
 @use 'pages/search';
 
-
 // Must be imported last to ensure that
 // the print overrides take priority over earlier defined styles.
 @use 'base/print-overrides';

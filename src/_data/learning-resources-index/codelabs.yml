@@ -63,7 +63,6 @@
   tags:
     - scrolling
     - scroll
-
   type: codelab
   link:
     label: YouTube
@@ -80,7 +79,6 @@
     - material
     - responsive
     - adaptive
-
   type: codelab
   link:
     label: Google Codelab
@@ -128,7 +126,6 @@
   tags:
     - animations
     - material
-
   type: codelab
   link:
     label: Google Codelab
@@ -143,7 +140,6 @@
     - debug
     - tooling
     - developer tools
-
   type: codelab
   link:
     label: Medium
@@ -156,7 +152,6 @@
     visual effects for the widgets in your UI.
   tags:
     - animations
-
   type: codelab
   link:
     label: Flutter docs
@@ -169,7 +164,6 @@
   tags:
     - material
     - design
-
   type: codelab
   link:
     label: Google Codelab
@@ -183,7 +177,6 @@
   tags:
     - material
     - design
-
   type: codelab
   link:
     label: Google Codelab
@@ -197,7 +190,6 @@
   tags:
     - material
     - design
-
   type: codelab
   link:
     label: Google Codelab
@@ -210,7 +202,6 @@
   tags:
     - material
     - design
-
   type: codelab
   link:
     label: Google Codelab
@@ -243,7 +234,6 @@
     - ads
     - admob
     - monetization
-
   type: codelab
   link:
     label: Google Codelab
@@ -257,7 +247,6 @@
   tags:
     - in app purchases
     - monetization
-
   type: codelab
   link:
     label: Google Codelab
@@ -273,7 +262,6 @@
     - firebase
     - authentication
     - firebase UI
-
   type: codelab
   link:
     label: Google Codelab
@@ -290,7 +278,6 @@
     - ios
     - firestore
     - real time database
-
   type: codelab
   link:
     label: Google Codelab
@@ -308,7 +295,6 @@
     - web
     - android
     - ios
-
   type: codelab
   link:
     label: Google Codelab
@@ -324,7 +310,6 @@
   tags:
     - game
     - audio
-
   type: codelab
   link:
     label: Google Codelab
@@ -338,7 +323,6 @@
   tags:
     - game
     - physics
-
   type: codelab
   link:
     label: Google Codelab
@@ -352,7 +336,6 @@
   tags:
     - game
     - isolate
-
   type: codelab
   link:
     label: Google Codelab
@@ -368,7 +351,6 @@
     - game
     - intro
     - beginner
-
   type: codelab
   link:
     label: Google Codelab
@@ -383,7 +365,6 @@
   tags:
     - google maps
     - maps
-
   type: codelab
   link:
     label: Google Codelab
@@ -397,7 +378,6 @@
     - android
     - ios
     - webview
-
   type: codelab
   link:
     label: Google Codelab
@@ -413,7 +393,6 @@
     - FFI
     - interop
     - plugin
-
   type: codelab
   link:
     label: Google Codelab
@@ -428,7 +407,6 @@
     widgets. Use Flutter Driver to create an integration test.
   tags:
     - testing
-
   type: codelab
   link:
     label: Google Codelab
@@ -444,7 +422,6 @@
   tags:
     - ios
     - home screen widget
-
   type: codelab
   link:
     label: Google Codelab
@@ -462,7 +439,6 @@
     - windows
     - linux
     - macos
-
   type: codelab
   link:
     label: Google Codelab

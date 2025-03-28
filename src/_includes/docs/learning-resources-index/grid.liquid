@@ -33,13 +33,11 @@
                         <use href="/assets/images/social/github.svg#github"></use>
                     </svg>
                 {%- elsif item.link.label == 'Dart Github' -%}
-                    <svg style="color:black" width="24px" height="24px">
-                        <use href="/assets/images/branding/dart/logo.svg"></use>
-                    </svg>
+                    <img src="/assets/images/branding/dart/logo.svg" width="24px" alt="Dart logo" />
                 {%- elsif item.link.label == 'Flutter docs' -%}
-                    <img src='/assets/images/branding/flutter/icon/1080.png' alt="Flutter icon" width="24px"/>
+                    <img src='/assets/images/branding/flutter/icon/1080.png' alt="Flutter logo" width="24px"/>
                 {%- elsif item.link.label == 'Dart docs' -%}
-                    <img src='/assets/images/branding/dart/64.png' alt="Dart icon" width="24px"/>
+                    <img src='/assets/images/branding/dart/logo.svg' alt="Dart icon" width="24px"/>
                 {%- elsif item.link.label == "Google Codelab" -%}
                     <svg width="24px" height="24px">
                         <use href="/assets/images/social/google-developers.svg#google-developers"></use>
@@ -47,6 +45,10 @@
                 {%- elsif item.link.label == "YouTube" -%}
                     <svg style="color:red" width="24px" height="24px">
                         <use href="/assets/images/social/youtube.svg#youtube"></use>
+                    </svg>
+                {%- elsif item.link.label == "Medium" -%}
+                    <svg style="color:black" width="24px" height="24px">
+                        <use href="/assets/images/social/medium.svg#medium"></use>
                     </svg>
                 {%- endif -%}
             </div>
