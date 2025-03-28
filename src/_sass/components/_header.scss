@@ -1,12 +1,10 @@
-@use '../base/variables' as *;
-
 .site-header {
-  background-color: $site-color-white;
-  font-family: $site-font-family-ui;
+  background-color: var(--site-base-bgColor);
+  font-family: var(--site-ui-fontFamily);
   position: sticky;
   top: 0;
-  z-index: $site-z-header;
-  border-bottom: 0.1rem solid $sidenav-divider-color;
+  z-index: var(--site-z-header);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
 
   @media (min-width: 1200px) {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
@@ -21,7 +19,7 @@
     justify-content: space-between;
     padding: 0.5rem 0.75rem;
 
-    min-height: $site-header-height;
+    min-height: var(--site-header-height);
 
     #menu-toggle {
       margin-left: 0.25rem;
@@ -61,13 +59,13 @@
     }
 
     .nav-link {
-      color: $site-color-nav-links;
+      color: var(--site-base-fgColor-alt);
       padding: 0.25rem .5rem;
       position: relative;
       text-decoration: none;
 
       &:hover {
-        color: $site-color-body;
+        color: var(--site-base-fgColor);
       }
     }
   }
@@ -95,15 +93,15 @@
 
     &::before {
       content: 'search';
-      color: $site-color-nav-links;
-      font: $site-font-icon;
+      color: var(--site-base-fgColor-alt);
+      font: 24px/1 var(--site-icon-fontFamily);
       pointer-events: none;
       position: absolute;
       left: 0.75rem;
     }
 
     &:hover::before {
-      color: $site-color-body;
+      color: var(--site-base-fgColor);
     }
   }
 

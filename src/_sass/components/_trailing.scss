@@ -1,12 +1,10 @@
-@use '../base/variables' as *;
-
 #trailing-content {
   font-size: 0.875rem;
   margin: 0;
   margin-block-start: 1rem;
-  font-family: $site-font-family-ui;
+  font-family: var(--site-ui-fontFamily);
 
-  border-top: 0.05rem solid $site-color-light-grey;
+  border-top: 0.05rem solid var(--site-inset-borderColor);
 }
 
 #page-feedback {

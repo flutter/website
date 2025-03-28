@@ -1,5 +1,3 @@
-@use 'variables' as *;
-
 main {
   .side-by-side {
     display: grid;
@@ -58,7 +56,7 @@ main {
   }
 
   .simple-border {
-    border: 1px solid $site-color-light-grey;
+    border: 1px solid var(--site-inset-borderColor);
   }
 }
 
