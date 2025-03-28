@@ -151,40 +151,56 @@
     }
   }
 
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+
     label {
       color: $site-color-sub-grey;
-      font-size: .9rem;
+
       padding: .25rem 1rem 0 0;
       margin: 0;
       text-align: end;
     }
-  }
 
-  .resource-index-icon {
-    color: $site-color-black;
-  }
-
-
-  #all-resources-grid {
-    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-    grid-auto-rows: minmax(250px, 1fr);
-
-    .card {
-      &:hover {
-        box-shadow: 0px 0px 20px -5px $site-color-light-grey;
-        background-image: none;
-        transition: .25s ease;
-      }
-
-      .card-leading {
-        background-color: $flutter-color-light-blue;
-        justify-content: space-between !important;
-        margin: -1rem;
-        padding: 1rem 1rem .5rem;
-      }
-
-      .card-title {
-        margin-top: 1rem;
-      }
+    button {
+      padding: .25rem;
+      color: $flutter-color-blue-500;
+      display: flex;
+      align-items: center;
+    }
+    button:hover {
+      color: $flutter-color-blue-on-dark;
     }
   }
+}
+
+.resource-index-icon {
+  color: $site-color-black;
+}
+
+
+#all-resources-grid {
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+
+  .card {
+    &:hover {
+      box-shadow: 0px 0px 20px -5px $site-color-light-grey;
+      background-image: none;
+      transition: .25s ease;
+    }
+
+    .card-leading {
+      background-color: $flutter-color-light-blue;
+      justify-content: space-between !important;
+      margin: -1rem;
+      padding: 1rem 1rem .5rem;
+    }
+
+    .card-title {
+      margin-top: 1rem;
+    }
+  }
+}

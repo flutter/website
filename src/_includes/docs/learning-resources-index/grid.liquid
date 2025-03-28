@@ -5,7 +5,9 @@
            data-tags='{{ item.tags | join: ", " }}'
            data-description="{{ item.description }}"
            class="card outlined-card"
-           href="{{ item.link.url }}">
+           href="{{ item.link.url }}"
+           target="_blank"
+        >
             <div class="card-image-holder-material-3">
                 {%- if item.imageUrl -%}
                     <img src='{{ item.imageUrl }}'>
@@ -26,9 +28,13 @@
                             assign pill-color = 'teal'
                     endcase -%}
                 <span class="pill-sm {{ pill-color }}">{{ item.type | capitalize }}</span>
-                {%- if item.link.label == "Github" -%}
+                {%- if item.link.label == "Flutter Github" -%}
                     <svg style="color:black" width="24px" height="24px">
                         <use href="/assets/images/social/github.svg#github"></use>
+                    </svg>
+                {%- elsif item.link.label == 'Dart Github' -%}
+                    <svg style="color:black" width="24px" height="24px">
+                        <use href="/assets/images/branding/dart/logo.svg"></use>
                     </svg>
                 {%- elsif item.link.label == 'Flutter docs' -%}
                     <img src='/assets/images/branding/flutter/icon/1080.png' alt="Flutter icon" width="24px"/>

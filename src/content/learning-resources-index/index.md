@@ -16,7 +16,7 @@ This page lists all of our additional learning resources:
 * Feature-rich demo applications that show how larger applications are built.
 :::
 
-{% assign resources = learning-resources-index.codelabs | concat: learning-resources-index.cookbook | concat: learning-resources-index.demos | concat: learning-resources-index.quickstarts_flutter | concat: learning-resources-index.quickstarts_dart | sort: 'name' -%}
+{% assign resources = learning-resources-index.codelabs | concat: learning-resources-index.cookbook | concat: learning-resources-index.demos | concat: learning-resources-index.quickstarts_flutter | concat: learning-resources-index.quickstarts_dart | shuffle -%}
 
 {% assign filters = learning-resources-index.filters -%}
 
@@ -38,9 +38,15 @@ This page lists all of our additional learning resources:
                     <span class="material-symbols" aria-hidden="true">filter_list</span>
                 </button>
             </div>
-            <label for="resource-search">
-                Showing <span id="displayed-resource-card-count">0</span> / <span id="total-resource-card-count">0</span>
-            </label>
+            <div class="label-row">
+                <label for="resource-search">
+                    Showing <span id="displayed-resource-card-count">0</span> / <span id="total-resource-card-count">0</span>
+                </label>
+                <button id="clear-resource-index-filters">
+                    <span class="material-symbols" aria-hidden="true">close_small</span>
+                    <span>Clear filters</span>
+                </button>
+            </div>
         </div>
         {%- render docs/learning-resources-index/grid.liquid resources:resources -%}
     </div>

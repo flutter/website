@@ -1,8 +1,7 @@
 const filters = {
     // These properties track the active filters and/or search term
-    selectedTypes: new Set(),
-    selectedTags: new Set(),
-    difficulty: new Set(),
+    type: new Set(),
+    tags: new Set(),
     searchTerm: '',
     // The keys correspond to a checkbox in the filter sidebar (created from
     //      'type' in src/_data/learning-resources-index/filters.yml)
@@ -16,7 +15,7 @@ const filters = {
     },
     resourceTagMapping: {
         'ai': ['ai', 'gemini', 'llm'],
-        'animation': ['animations', 'animate'],
+        'animation': ['animations', 'animate', 'animation'],
         'architecture': ['state-management', 'architecture', 'provider', 'bloc', 'stream'],
         'cupertino': ['cupertino', 'ios', 'macos'],
         'dart': ['dart', 'cli'],
@@ -37,10 +36,9 @@ const filters = {
 
     // Checks for existing filters, but not search terms
     hasFilters: function () {
-        return this.selectedTypes.size > 0 ||
-            this.selectedTags.size > 0 ||
-            this.difficulty.size > 0;
-        },
+        return this.type.size > 0 ||
+            this.tags.size > 0;
+    },
     // Takes a Set, and returns a filtered Set
     filter: function (resources) {
         const resourcesToShow = new Set();
@@ -48,12 +46,16 @@ const filters = {
         if (this.hasFilters()) {
             for (const resource of resources) {
                 const tags = resource.tags.join(' ').toLowerCase();
-                const selectedFilterTags = Array.from(filters.selectedTags);
-                const matchesTags = selectedFilterTags.some(t => {return tags.includes(t)});
+                const selectedFilterTags = Array.from(filters.tags);
+                const matchesTags = selectedFilterTags.some(t => {
+                    return tags.includes(t)
+                });
 
                 const type = resource.type.toLowerCase();
-                const selectedTypes = Array.from(filters.selectedTypes);
-                const matchesTypes = selectedTypes.some(t => {return t === type});
+                const selectedTypes = Array.from(filters.type);
+                const matchesTypes = selectedTypes.some(t => {
+                    return t === type
+                });
 
                 if (matchesTags || matchesTypes) {
                     filteredResources.push(resource);
@@ -79,6 +81,11 @@ const filters = {
         }
 
         return resourcesToShow;
+    },
+    clear: function () {
+        this.type.clear();
+        this.tags.clear();
+        this.searchTerm = '';
     }
 }
 
@@ -90,13 +97,12 @@ function _setupResourceFilters() {
 
     // sets up the resource count element that says "Showing x / y" below the search bar.
     const allResourcesCount = document.getElementById('total-resource-card-count');
-    // TODO: why is the length 1 greater than whats displayed?
-    allResourcesCount.textContent = (resourcesInfo.length - 1).toString();
+    allResourcesCount.textContent = (resourcesInfo.length).toString();
 
     // set up search bar interaction
     const searchSection = document.getElementById('resource-search-group');
     const searchInput = searchSection.querySelector('.search-wrapper input');
-    searchInput.addEventListener('input', event => {
+    searchInput.addEventListener('input', _ => {
         filters.searchTerm = searchInput.value.toLowerCase();
         filterResources();
     });
@@ -106,6 +112,17 @@ function _setupResourceFilters() {
     const allCheckboxes = filterSection.querySelectorAll('input');
     allCheckboxes.forEach(checkbox => {
         _setupFilterChange(checkbox, filterResources);
+    });
+
+    // Clear filters button
+    const clearFiltersButton = document.getElementById("clear-resource-index-filters");
+    clearFiltersButton.addEventListener('click', _ => {
+        filters.clear();
+        searchInput.value = '';
+        filterResources();
+        allCheckboxes.forEach(box => {
+            box.checked = false;
+        })
     });
 
     function filterResources() {
@@ -185,31 +202,32 @@ function _setupResourceInfo(resourceCards) {
 
         card.addEventListener('click', async (_) => {
             window.dataLayer?.push({
-                'event': 'samples_index_click',
-                'resource_type': card.dataset.type,
-                'resource_title': resourceName,
+                'event': 'learning_resource_index_click',
+                'learning_resource_type': card.dataset.type,
+                'learning_resource_title': resourceName,
             });
         });
     });
     return resourcesInfo;
 }
 
-function _setupFilterChange(checkbox, onChange) {
+function _setupFilterChange(checkbox, filterResources) {
     const id = checkbox.id;
     const filter = id.split('-')[1].toLowerCase();
-    // category refers to the filter types: tags, type and difficulty
+    // category refers to the filter types: tags, type
     const category = checkbox.dataset.category.toLowerCase();
 
     checkbox.addEventListener('change', _ => {
         if (checkbox.checked) {
+            window.dataLayer?.push({
+                'event': 'learning_resource_index_filter_selected',
+                'learning_resource_filter_name': filter,
+                'learning_resource_filter_type': category,
+            });
             switch (category) {
                 case 'tags':
-                    console.log(filter);
-                    const tagGroup = filters.resourceTypeMapping[filter];
+                    const tagGroup = filters.resourceTagMapping[filter];
                     tagGroup.forEach(tag => filters[category].add(tag))
-                    break;
-                case 'difficulty':
-                    filters[category].add(filter);
                     break;
                 case 'type':
                     const typeGroup = filters.resourceTypeMapping[filter];
@@ -219,8 +237,8 @@ function _setupFilterChange(checkbox, onChange) {
         } else {
             switch (category) {
                 case 'tags':
-                case 'difficulty':
-                    filters[category].delete(filter);
+                    const tagGroup = filters.resourceTagMapping[filter];
+                    tagGroup.forEach(tag => filters[category].delete(tag))
                     break;
                 case 'type':
                     const typeGroup = filters.resourceTypeMapping[filter];
@@ -229,13 +247,7 @@ function _setupFilterChange(checkbox, onChange) {
             }
         }
 
-        // TODO: not implemented in Google Analytics
-        window.dataLayer?.push({
-            'event': 'resources_index_filter',
-            'filter_name': filter,
-            'filter_type': category,
-        });
-        onChange();
+        filterResources();
     });
 }
 
@@ -270,24 +282,20 @@ function _setupDropdownMenu() {
 
     // Close the dropdown if anywhere not in the filters menu is.
     const content = document.getElementById('all-resources-grid');
-    content.addEventListener('click', (event) => {
+    content.addEventListener('click', (_) => {
         if (!filtersEl.classList.contains('show')) {
             return;
         }
         _closeMenu();
     });
 }
+
+
 document.onreadystatechange = () => {
-    switch (document.readyState) {
-        case "interactive":
-            _setUpCollapsibleFilterLists();
-            _setupResourceFilters();
-            _setupDropdownMenu();
-            break;
-        case "complete":
-            _setUpCollapsibleFilterLists();
-            _setupResourceFilters();
-            _setupDropdownMenu();
-            break;
+    if (document.readyState === "interactive" ||
+        document.readyState === "complete") {
+        _setupResourceFilters();
+        _setUpCollapsibleFilterLists();
+        _setupDropdownMenu();
     }
 }
