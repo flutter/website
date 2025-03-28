@@ -1,5 +1,4 @@
 @use '../base/mixins';
-@use '../base/variables' as *;
 
 #site-switcher {
   position: relative;
@@ -7,7 +6,7 @@
   justify-content: center;
 
   .dropdown-content {
-    z-index: 1060;
+    z-index: var(--site-z-dropdown);
     transform: scale(0.9);
     top: 2.25rem;
   }
@@ -75,7 +74,7 @@ button.dropdown-button {
     padding: 0 0.3rem;
     font-size: 1.25rem;
     font-weight: 500;
-    color: $site-color-body;
+    color: var(--site-base-fgColor);
     line-height: 1.3;
     border-radius: 0.25rem;
     background-color: rgb(194, 229, 255);
