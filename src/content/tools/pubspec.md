@@ -261,7 +261,7 @@ flutter:
   deferred-components:
     name: component_name
       libraries:
-        - package: string_expression
+        - string_expression
         [...]
       assets:
         - string_expression
@@ -275,7 +275,6 @@ Deferred component subfields:
   component.
 * `libraries`: A list of Dart libraries that are part of
   the deferred component.
-* `package`: A Dart library path.
 * `assets`: A list of asset paths that are associated with
   the deferred component.
 
@@ -286,10 +285,10 @@ flutter:
   deferred-components:
     - name: box_component
       libraries:
-        - package: path/to/box.dart
+        - package:testdeferredcomponents/box.dart
     - name: gallery_feature
       libraries:
-        - package: path/to/gallery_feature.dart
+        - package:testdeferredcomponents/gallery_feature.dart
       assets:
         - assets/gallery_images/gallery_feature.png
 ```
