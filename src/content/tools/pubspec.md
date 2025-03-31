@@ -259,59 +259,39 @@ The `deferred-components` field has this structure:
 ```yaml title="pubspec.yaml"
 flutter:
   deferred-components:
-    component_name:
-      import: string_expression
+    name: component_name
       libraries:
-        - string_expression
+        - package: string_expression
         [...]
       assets:
         - string_expression
         [...]
-      android:
-        feature-name: string_expression
     [...]
 ```
 
 Deferred component subfields:
 
-* `component_name`: The unique identifier for a specific
-  deferred component.
-* `import`: The Dart library that acts as the entry point
-  for the deferred component.
-* `libraries`: A list of Dart library paths that are part of
+* `name`: The unique identifier for a specific deferred
+  component.
+* `libraries`: A list of Dart libraries that are part of
   the deferred component.
+* `package`: A Dart library path.
 * `assets`: A list of asset paths that are associated with
   the deferred component.
-* `android`: A map that contains Android-specific
-  configurations for the deferred component.
-* `feature-name`: The name of the Android dynamic feature
-  module that corresponds to the Flutter deferred component.
-  This name is used to link the Flutter component to the
-  Android module during the build process.
 
 Example:
 
 ```yaml title="pubspec.yaml"
 flutter:
   deferred-components:
-    feature_a:
-      import: 'package:my_app/features/feature_a/feature_a.dart'
+    - name: box_component
       libraries:
-        - 'package:my_app/features/feature_a/feature_a.dart'
-        - 'package:my_app/features/feature_a/util.dart'
-      assets:
-        - 'assets/feature_a_1/'
-        - 'assets/feature_a_2/'
-      android:
-        feature-name: 'feature_a'
-    feature_b:
-      import: 'package:my_app/features/feature_b/feature_b.dart'
+        - package: testdeferredcomponents/box.dart
+    - name: gallery_feature
       libraries:
-        - 'package:my_app/features/feature_b/feature_b.dart'
+        - package: testdeferredcomponents/gallery_feature.dart
       assets:
-        - 'assets/feature_b/'
-      android:
-        feature-name: 'feature_b'
+        - assets/gallery_images/gallery_feature.png
 ```
 
 To learn more about how you can use deferred components with
