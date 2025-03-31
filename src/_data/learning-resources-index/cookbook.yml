@@ -662,3 +662,69 @@
   link:
     label: Flutter docs
     url: /cookbook/testing/widget/tap-drag
+
+- name: Persistent storage architecture - SQL
+  description: Save complex application data to a user's device with SQL.
+  tags:
+    - data
+    - SQL
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/sql
+
+- name: Error handling with Result objects
+  description: Improve error handling across classes with Result objects.
+  tags:
+    - error handling
+    - testing
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/result
+
+- name: Optimistic state
+  description: Improve the perception of responsiveness of an application by implementing optimistic state.
+  tags:
+    - user experience
+    - asynchronous dart
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/optimistic-state
+
+- name: Offline First
+  description: Implement offline-first support for one feature in an application.
+  tags:
+    - user experience
+    - network
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/offline-first
+
+- name: Persistent storage architecture - Key-value data
+  description: Save application data to a user's on-device key-value store.
+  tags:
+    - data
+    - network
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/key-value-data
+
+- name: Command pattern
+  description: Simplify view model logic by implementing a Command class.
+  tags:
+    - mvvm
+    - asynchronous dart
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/command
