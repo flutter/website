@@ -286,10 +286,10 @@ flutter:
   deferred-components:
     - name: box_component
       libraries:
-        - package: testdeferredcomponents/box.dart
+        - package: path/to/box.dart
     - name: gallery_feature
       libraries:
-        - package: testdeferredcomponents/gallery_feature.dart
+        - package: path/to/gallery_feature.dart
       assets:
         - assets/gallery_images/gallery_feature.png
 ```
