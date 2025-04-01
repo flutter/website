@@ -139,7 +139,8 @@ The `asset` field has this structure:
 ```yaml title="pubspec.yaml"
 flutter:
   assets:
-    - [ path_to_file | path_to_directory | flavor_path_field ]
+    - [ path_to_file | path_to_directory ]
+      [ flavor_path_field ]
     [...]
 ```
 
