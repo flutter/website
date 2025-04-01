@@ -405,7 +405,7 @@ a [`Dismissible`][] widget.
 Recall this code from the previous snippet:
 
 {% render docs/code-and-image.md,
-image:"app-architecture/case-study/dismissible.gif",
+image:"app-architecture/case-study/dismissible.webp",
 img-style:"max-height: 480px; border-radius: 12px; border: black 2px solid;",
 alt: "A clip that demonstrates the 'dismissible' functionality of the Compass app."
 code:"

@@ -175,7 +175,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/retrieve-input.gif" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/retrieve-input.webp" alt="Retrieve Text Input Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

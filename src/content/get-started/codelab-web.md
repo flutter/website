@@ -20,7 +20,7 @@ does work on mobile and desktop
 once you download and configure the appropriate tooling.
 :::
 
-<img src="/assets/images/docs/get-started/sign-up.gif" alt="The web app that you'll be building." class='site-image-right'>
+<img src="/assets/images/docs/get-started/sign-up.webp" alt="The web app that you'll be building." class='site-image-right'>
 
 This is a guide to creating your first Flutter **web** app.
 If you are familiar with object-oriented programming,

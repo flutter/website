@@ -276,7 +276,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.gif" alt="Use floating app bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/> 
 </noscript>
 
 {% endtab %}
@@ -327,7 +327,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.gif" alt="Use floating nav bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/> 
 </noscript>
 
 {% endtab %}

@@ -92,7 +92,7 @@ class MyButton extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/ripples.gif" alt="Ripples Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/ripples.webp" alt="Ripples Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

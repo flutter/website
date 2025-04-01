@@ -130,7 +130,7 @@ class OrientationList extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/orientation.gif" alt="Orientation Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/orientation.webp" alt="Orientation Demo" class="site-mobile-screenshot" />
 </noscript>
 
 ## Locking device orientation

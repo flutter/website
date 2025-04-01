@@ -36,7 +36,7 @@ since it has a larger descent.
 
 | Before (`Ahem`) | After | Animated Diff |
 | :---: | :---: | :---: |
-| ![before](assets/material.ink_sparkle.bottom_right.0_masterImage.png) | ![after](assets/material.ink_sparkle.bottom_right.0_testImage.png) | ![baseline_animated](assets/baseline.gif) |
+| ![before](assets/material.ink_sparkle.bottom_right.0_masterImage.png) | ![after](assets/material.ink_sparkle.bottom_right.0_testImage.png) | ![baseline_animated](assets/baseline.webp) |
 
 **2. Different decoration position**
 
@@ -49,7 +49,7 @@ positions for each line.
 
 | Before (`Ahem`) | After | Animated Diff |
 | :---: | :---: | :---: |
-| ![before](assets/widgets.text_golden.Decoration.1_masterImage.png) | ![after](assets/widgets.text_golden.Decoration.1_testImage.png) |  ![baseline_animated](assets/underline.gif) |
+| ![before](assets/widgets.text_golden.Decoration.1_masterImage.png) | ![after](assets/widgets.text_golden.Decoration.1_testImage.png) |  ![baseline_animated](assets/underline.webp) |
 
 **3. The glyph used for unmapped characters are slightly different**
 
@@ -58,7 +58,7 @@ a slight difference:
 
 | Before (`Ahem`) | After | Diff |
 | :---: | :---: | :---: |
-| ![before](assets/material.floating_action_button_test.clip_masterImage.png) | ![after](assets/material.floating_action_button_test.clip_testImage.png) | ![not_def_animated](assets/not_def.gif) |
+| ![before](assets/material.floating_action_button_test.clip_masterImage.png) | ![after](assets/material.floating_action_button_test.clip_testImage.png) | ![not_def_animated](assets/not_def.webp) |
 
 ## References
 
