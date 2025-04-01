@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-$_base_primary_color: #0468D7;
+$base_primary_color: #0468D7;
 
 // Root variables shared by both light and dark mode.
 body {
@@ -37,21 +37,21 @@ body {
 
   --site-base-bgColor: #ffffff;
   --site-base-fgColor: #212121;
-  --site-base-fgColor-lighter: color.scale(#212121, $lightness: 20%);
-  --site-base-fgColor-subtle: color.scale(#212121, $lightness: 20%);
+  --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
+  --site-base-fgColor-subtle: #{color.scale(#212121, $lightness: 20%)};
   --site-base-fgColor-alt: #6a6f71;
 
-  --site-primary-color: $_base_primary_color;
+  --site-primary-color: #{$base_primary_color};
   --site-primary-color-dark: #0553B1;
   --site-primary-color-darker: #043875;
   --site-primary-color-darkest: #042B59;
 
-  --site-primary-color-highlight: color.change($_base_primary_color, $alpha: 0.05);
+  --site-primary-color-highlight: #{color.change($base_primary_color, $alpha: 0.05)};
 
   --site-onPrimary-color: #B8EAFE;
-  --site-onPrimary-color-light: color.mix(#fff, #B8EAFE, 25%);
-  --site-onPrimary-color-lighter: color.mix(#fff, #B8EAFE, 50%);
-  --site-onPrimary-color-lightest: color.mix(#fff, #B8EAFE, 75%);
+  --site-onPrimary-color-light: #{color.mix(#fff, #B8EAFE, 25%)};
+  --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
+  --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
 
   --site-inset-bgColor: #F8F9FA;
   --site-inset-bgColor-translucent: rgba(248, 249, 250, 0.7);
@@ -62,11 +62,11 @@ body {
   --site-footer-bgColor: #303c42;
   --site-footer-fgColor: #DADCE0;
 
-  --site-banner-bgColor: linear-gradient(139deg, $_base_primary_color, #833ef2);
+  --site-banner-bgColor: linear-gradient(139deg, #{$base_primary_color}, #833ef2);
   --site-banner-fgColor: #fff;
 
   --site-card-borderColor: var(--site-outline);
-  --site-filledCard-bgColor: color.scale($_base_primary_color, $lightness: 95%);
+  --site-filledCard-bgColor: #{color.scale($base_primary_color, $lightness: 95%)};
   --site-filledCard-fgColor: var(--site-base-fgColor);
 
   --site-filledButton-bgColor: var(--site-primary-color);
