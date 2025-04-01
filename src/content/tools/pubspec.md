@@ -302,68 +302,13 @@ a Flutter Android app, see
 ### disable-swift-package-manager field
 
 Disable the use of the Swift Package Manager (SPM) so that
-it no longer manages dependencies in your iOS Flutter
-project.
+it no longer manages dependencies in your iOS and macOS
+Flutter projects.
 
 ```yaml title="pubspec.yaml"
 flutter:
   disable-swift-package-manager: true
 ```
-
-### flavors field
-
-Include flavor-specific data in your Flutter app.
-
-The `flavors` field has this structure:
-
-```yaml title="pubspec.yaml"
-flutter:
-  flavors:
-    [flavor_field]
-    [...]
-```
-
-```yaml
-# flavor_field structure
-my_flavor:
-  name: string_expression
-  bundle_id: string_expression # Optional
-  android: # Optional
-    application_id: string_expression
-```
-
-Flavor-specific subfields:
-
-* `my_flavor`: Replace this with the flavor ID.
-* `name`: The name of the flavor.
-* `bundle_id`: Optional. The iOS bundle identifier for the
-  flavor.
-* `android`: Optional. Contains Android settings.
-* `application_id`: The Android application ID for the
-  flavor.
-
-Bundle flavor-specific data with two flavors of
-your app. For example:
-
-```yaml title="pubspec.yaml"
-flutter:
-  flavors:
-    staging:
-      name: 'My App (Staging)'
-      bundle_id: 'com.example.myapp.staging'
-      android:
-        application_id: 'com.example.myapp.staging'
-    production:
-      name: 'My App (Production)'
-      bundle_id: 'com.example.myapp.production'
-      android:
-        application_id: 'com.example.myapp.production'  
-```
-
-To learn more about flavors, see
-[Set up Flutter flavors for Android][]
-
-[Set up Flutter flavors for Android]: /deployment/flavors
 
 ### flutter field
 
@@ -468,37 +413,6 @@ Enable general localization:
 ```yaml title="pubspec.yaml"
 flutter:
   generate: true
-```
-
-Enable general localization and Material Design
-localization:
-
-```yaml title="pubspec.yaml"
-flutter:
-  generate: true
-  material:
-    generate: true
-```
-
-### material field
-
-Enable Material Design localization. This works with the
-`ARB` localization files.
-
-```yaml title="pubspec.yaml"
-flutter:
-  material:
-    generate: true
-```
-
-Enable general localization and Material Design
-localization:
-
-```yaml title="pubspec.yaml"
-flutter:
-  generate: true
-  material:
-    generate: true
 ```
 
 ### plugin field
