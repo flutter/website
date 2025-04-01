@@ -2,7 +2,7 @@
   position: relative;
   z-index: var(--site-z-footer);
   background-color: var(--site-footer-bgColor);
-  color: var(--site-footer-color);
+  color: var(--site-footer-fgColor);
   padding: 32px;
 
   font-family: var(--site-ui-fontFamily);
@@ -93,7 +93,7 @@
   }
 
   a {
-    color: var(--site-footer-color);
+    color: var(--site-footer-fgColor);
     font-family: var(--site-ui-fontFamily);
 
     &:hover, &:focus, &:active {
