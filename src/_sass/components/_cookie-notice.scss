@@ -1,16 +1,14 @@
-@use '../base/variables' as *;
-
 #cookie-notice {
   display: none;
   justify-content: center;
-  background-color: $site-color-white;
+  background-color: var(--site-base-bgColor);
   padding: 1.5rem;
   position: fixed;
   bottom: 0;
   width: 100%;
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.3);
   opacity: 0;
-  z-index: 1060;
+  z-index: var(--site-z-dropdown);
 
   @keyframes fadein {
     0% {

@@ -1,5 +1,4 @@
 @use '../base/mixins';
-@use '../base/variables' as *;
 
 #site-prev-next {
   display: flex;
@@ -33,7 +32,7 @@
     flex-basis: 100%;
 
     text-decoration: none;
-    color: $site-color-body;
+    color: var(--site-base-fgColor);
     border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 0.25rem;
 

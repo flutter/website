@@ -1,0 +1,96 @@
+@use 'sass:color';
+
+$base_primary_color: #0468D7;
+
+// Root variables shared by both light and dark mode.
+body {
+  // Site typography.
+  --site-ui-fontFamily: 'Google Sans', 'Roboto', ui-sans, sans-serif;
+  --site-body-fontFamily: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
+  --site-code-fontFamily: 'Google Sans Mono', 'Roboto Mono', ui-monospace, monospace;
+  --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
+
+  // Site layout sizes.
+  --site-header-height: 4rem;
+  --site-subheader-height: 2.5rem;
+
+  // Site visual hierarchy levels.
+  --site-z-base: 1;
+  --site-z-container: 5;
+  --site-z-floating: 10;
+  --site-z-side: 20;
+  --site-z-footer: 30;
+  --site-z-subheader: 40;
+  --site-z-header: 50;
+  --site-z-dropdown: 100;
+  --site-z-top: 1000;
+
+  // Misc site styles.
+  --site-square-radius: 0.4rem;
+}
+
+body {
+  --site-outline: rgba(0, 0, 0, .125);
+  --site-outline-variant: #e7e8ed;
+
+  --site-interaction-base-values: 0 0 0;
+
+  --site-base-bgColor: #ffffff;
+  --site-base-fgColor: #212121;
+  --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
+  --site-base-fgColor-subtle: #{color.scale(#212121, $lightness: 20%)};
+  --site-base-fgColor-alt: #6a6f71;
+
+  --site-primary-color: #{$base_primary_color};
+  --site-primary-color-dark: #0553B1;
+  --site-primary-color-darker: #043875;
+  --site-primary-color-darkest: #042B59;
+
+  --site-primary-color-highlight: #{color.change($base_primary_color, $alpha: 0.05)};
+
+  --site-onPrimary-color: #B8EAFE;
+  --site-onPrimary-color-light: #{color.mix(#fff, #B8EAFE, 25%)};
+  --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
+  --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
+
+  --site-inset-bgColor: #F8F9FA;
+  --site-inset-bgColor-translucent: rgba(248, 249, 250, 0.7);
+  --site-inset-fgColor: var(--site-base-fgColor);
+  --site-inset-borderColor: #DADCE0;
+
+  // Specific UI element styles.
+  --site-footer-bgColor: #303c42;
+  --site-footer-fgColor: #DADCE0;
+
+  --site-banner-bgColor: linear-gradient(139deg, #{$base_primary_color}, #833ef2);
+  --site-banner-fgColor: #fff;
+
+  --site-card-borderColor: var(--site-outline);
+  --site-filledCard-bgColor: #{color.scale($base_primary_color, $lightness: 95%)};
+  --site-filledCard-fgColor: var(--site-base-fgColor);
+
+  --site-filledButton-bgColor: var(--site-primary-color);
+  --site-filledButton-fgColor: #fff;
+
+  --site-alert-info-color: #2058b7;
+  --site-alert-tip-color: #0c7927;
+  --site-alert-important-color: #7e5ac2;
+  --site-alert-warning-color: #9e6300;
+  --site-alert-error-color: #cd3434;
+  // Dark mode options:
+  // --site-alert-info-color: #308bf5;
+  // --site-alert-tip-color: #25c04b;
+  // --site-alert-important-color: #a676ff;
+  // --site-alert-warning-color: #cea11f;
+  // --site-alert-error-color: #ff4141;
+
+  &:not(.dark-mode) .dark-mode-visible {
+    display: none !important;
+  }
+
+  &.dark-mode {
+    .light-mode-visible {
+      display: none !important;
+    }
+  }
+}
