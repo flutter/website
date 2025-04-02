@@ -320,6 +320,30 @@ project called `flavors_example`.
 [Launch a flavor]: #launching-your-app-flavors
 [App Icon Generator]: https://www.appicon.co/
 
+### Bundle assets
+
+If you have assets that are only used in a specific flavor
+in your app, you can configure them to only be bundled into
+your app when launching that flavor. This prevents your
+app bundle size from being bloated by unused assets. To
+bundle assets for each flavor, add the `flavors` subfield
+to the `assets` field in your project's pubspec. To learn
+more, see the [`assets` field][] in
+[Flutter pubspec options][].
+
+[`assets` field]: /tools/pubspec#assets
+[Flutter pubspec options]: /tools/pubspec
+
+### Set a default flavor
+
+You can have your app use a specific flavor when you
+launch your app without specifying a flavor. To do this,
+you need to add the `default-flavor` field to your project's
+pubspec. To learn more, see the [`default-flavor` field][]
+in [Flutter pubspec options][].
+
+[`default-flavor` field]: /tools/pubspec#default-flavor-field
+
 ### Add unique build settings
 
 If you have additional build settings that you would like to
