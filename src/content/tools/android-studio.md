@@ -246,7 +246,7 @@ The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 `Option`+`Return` on macOS), as illustrated here:
 
-![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
+![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.webp){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -272,7 +272,7 @@ Live templates can be used to speed up entering typical code structures.
 They are invoked by typing their prefix, and then selecting it in the code
 completion window:
 
-![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
+![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.webp){:width="100%"}
 
 The Flutter plugin includes the following templates:
 

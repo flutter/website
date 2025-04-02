@@ -147,7 +147,7 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/snackbar.gif" alt="SnackBar Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [Gestures]: /cookbook#gestures

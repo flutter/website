@@ -371,7 +371,7 @@ negative or positive value that you want.
 By switching between different
 densities, you can easily adjust your UI.
 
-![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.webp){:width="100%"}
 
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:

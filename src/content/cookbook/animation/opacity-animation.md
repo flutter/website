@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/fade-in-out.gif" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

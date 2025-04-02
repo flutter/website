@@ -16,7 +16,7 @@ You can now make your **own** digital Dash using
 
 ![A sample of Dashatars](/assets/images/dash/Dashatars.png){:width="100%"}<br>
 
-![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.gif)
+![GIF of Dash fainting created for Flutter Engage](/assets/images/dash/dash-fainting.webp)
 
 [Dashatar]: https://dashatar-dev.web.app/#/
 
