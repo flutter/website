@@ -1,21 +1,20 @@
 @use '../base/mixins';
-@use '../base/variables' as *;
 
 a {
-  color: $site-color-primary;
+  color: var(--site-primary-color);
   border-radius: 0.25rem;
 
   &:hover {
-    color: $site-color-primary;
+    color: var(--site-primary-color);
     text-decoration: underline;
   }
 
   &:active {
-    color: $flutter-color-blue-600;
+    color: var(--site-primary-color-dark);
   }
 
   &:visited {
-    color: $site-color-primary;
+    color:var(--site-primary-color);
   }
 }
 
@@ -40,8 +39,8 @@ a, button {
   }
 
   &.filled-button {
-    background-color: $site-color-primary;
-    color: $site-color-white;
+    background-color: var(--site-filledButton-bgColor);
+    color: var(--site-filledButton-fgColor);
 
     &:hover {
       @include mixins.interaction-style(8%);
@@ -53,7 +52,7 @@ a, button {
   }
 
   &.text-button {
-    color: $site-color-primary;
+    color: var(--site-primary-color);
 
     &:hover {
       @include mixins.interaction-style(4%);
@@ -67,7 +66,7 @@ a, button {
   &.icon-button {
     border-radius: 0.25rem;
     padding: 0.25rem;
-    color: $site-color-nav-links;
+    color: var(--site-base-fgColor-alt);
     text-decoration: none;
 
     display: flex;
@@ -82,7 +81,7 @@ a, button {
     }
 
     &:hover {
-      color: $site-color-body;
+      color: var(--site-base-fgColor);
     }
   }
 }

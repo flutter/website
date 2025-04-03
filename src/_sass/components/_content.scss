@@ -1,5 +1,3 @@
-@use '../base/variables' as *;
-
 .site-content {
   display: flex;
   justify-content: center;
@@ -7,7 +5,7 @@
   min-width: 0;
   width: 100%;
 
-  min-height: calc(100vh - $site-header-height);
+  min-height: calc(100vh - var(--site-header-height));
 
   @media (min-width: 1200px) {
     flex-direction: row;
@@ -15,8 +13,8 @@
 
   article {
     min-width: 8rem;
-    max-width: $site-content-max-width;
-    min-height: calc(100vh - $site-header-height - $site-inline-toc-height);
+    max-width: 960px;
+    min-height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
     padding: 2rem;
 
     img {
@@ -29,7 +27,7 @@
   }
 
   .wide-site-content {
-    max-width: $site-content-wide-max-width;
+    max-width: 1200px;
     width: 100%;
   }
 
@@ -53,7 +51,7 @@
     text-wrap: balance;
     scroll-margin-top: 7rem;
     line-height: 1.2;
-    font-family: $site-font-family-ui;
+    font-family: var(--site-ui-fontFamily);
     font-weight: 400;
 
     @media (min-width: 1200px) {
@@ -110,7 +108,7 @@
       text-decoration: none;
 
       &:hover {
-        color: $site-color-primary;
+        color: var(--site-primary-color);
       }
 
       &:focus {
@@ -118,7 +116,7 @@
       }
 
       &:active {
-        color: $flutter-color-dark-blue;
+        color: var(--site-primary-color-darkest);
       }
     }
 
@@ -148,7 +146,7 @@ nav.breadcrumbs {
     align-items: center;
     list-style: none;
 
-    font-family: $site-font-family-ui;
+    font-family: var(--site-ui-fontFamily);
 
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +164,7 @@ nav.breadcrumbs {
       }
 
       &.active a {
-        color: $site-color-nav-links;
+        color: var(--site-base-fgColor-alt);
         cursor: default;
         text-decoration: none;
       }
@@ -178,7 +176,7 @@ nav.breadcrumbs {
 
     .child-icon {
       user-select: none;
-      color: $site-color-body-light;
+      color: var(--site-base-fgColor-lighter);
     }
   }
 }

@@ -134,7 +134,7 @@ class TabBarDemo extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/tabs.gif" alt="Tabs Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/tabs.webp" alt="Tabs Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

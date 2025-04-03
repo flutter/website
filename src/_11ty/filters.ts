@@ -30,6 +30,25 @@ export function registerFilters(eleventyConfig: UserConfig): void {
   eleventyConfig.addFilter('generate_toc', generateToc);
   eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
   eleventyConfig.addFilter('slugify', slugify);
+  eleventyConfig.addFilter('camelCaseBreaker', camelCaseBreaker);
+}
+
+function camelCaseBreaker(stringToBreak: string): string {
+  // Only consider non-empty text.
+  if (!stringToBreak
+      || typeof stringToBreak !== 'string'
+      || stringToBreak.length === 0) {
+    return stringToBreak;
+  }
+
+  const firstCharacter = stringToBreak[0];
+  const restOfString = stringToBreak.substring(1);
+
+  // Replace all capital letters in the rest of the string with <wbr> + letter.
+  const processedRest =
+      restOfString.replace(/([A-Z])/g, '<wbr>$&');
+
+  return firstCharacter + processedRest;
 }
 
 /**

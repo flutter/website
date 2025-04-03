@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/grid-list.gif" alt="Grid List Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/grid-list.webp" alt="Grid List Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html

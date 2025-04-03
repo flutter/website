@@ -1,14 +1,11 @@
-@use '../base/variables' as *;
-
 #site-footer {
   position: relative;
-  z-index: 1000;
-  background-color: $site-color-footer;
+  z-index: var(--site-z-footer);
+  background-color: var(--site-footer-bgColor);
+  color: var(--site-footer-fgColor);
   padding: 32px;
 
-  color: $site-color-light-grey;
-  font-weight: 400;
-  font-family: $site-font-family-ui;
+  font-family: var(--site-ui-fontFamily);
   font-size: 14px;
 
   .brand {
@@ -96,11 +93,11 @@
   }
 
   a {
-    color: $site-color-light-grey;
-    font-family: $site-font-family-ui;
+    color: var(--site-footer-fgColor);
+    font-family: var(--site-ui-fontFamily);
 
     &:hover, &:focus, &:active {
-      color: $site-color-white;
+      color: #fff;
     }
   }
 }

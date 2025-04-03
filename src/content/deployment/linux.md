@@ -44,8 +44,9 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD is required during the snap build process. Once installed, LXD needs to be
-configured for use. The default answers are suitable for most use cases.
+LXD is required during the snap build process.
+Once installed, LXD needs to be configured for use.
+The default answers are suitable for most use cases.
 
 ```console
 $ sudo lxd init
@@ -390,7 +391,7 @@ You can learn more from the following links on the
 
 ## Additional deployment resources
 
-### [flutter_distributor][]
+### [fastforge][]
 
 > An all-in-one Flutter application packaging and distribution tool,
 providing you with a one-stop solution to meet various distribution needs.
@@ -421,6 +422,6 @@ Supports Flatpak preparation for publishing on [Flathub][].
 [Snapcraft extensions]: https://snapcraft.io/docs/snapcraft-extensions
 [Supported plugins]: https://snapcraft.io/docs/supported-plugins
 [Ubuntu]: https://ubuntu.com/download/desktop
-[flutter_distributor]: https://pub.dev/packages/flutter_distributor
-[flatpak-flutter]: https://github.com/TheAppgineer/flatpak-flutter
+[fastforge]: {{site.github}}/fastforgedev/fastforge
+[flatpak-flutter]: {{site.github}}/TheAppgineer/flatpak-flutter
 [Flathub]: https://flathub.org

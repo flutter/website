@@ -10,7 +10,7 @@ for Dart and Flutter.
 _Flutter DevTools_ and _Dart DevTools_ refer to the
 same set of tools.
 
-![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
+![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.webp){:width="100%"}
 
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:

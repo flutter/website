@@ -1,51 +1,52 @@
-@use '../base/variables' as *;
-
 .rrec-pill {
   border-radius: 8px;
-  margin: $site-spacer / 2;
-  padding: $site-spacer / 2;
+  margin: 0.5rem;
+  padding: 0.5rem;
   text-align: center;
 
   // Grey by default
-  background: $site-color-light-grey;
-  color: $site-color-body-light;
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
 
   // Green
   &.success {
-    background: darken($alert-success-bg, 10%);
-    color: $alert-success-fg;
+    background: darken(#f1fbf9, 10%);
+    color: #155723;
   }
 
   // Blue
   &.info {
-    background: darken($alert-info-bg, 10%);
-    color: darken($alert-info-bg, 60%);
+    $info-bg: #e7f8ff;
+    background: darken($info-bg, 10%);
+    color: darken($info-bg, 60%);
   }
 }
 
 .pill-sm {
   border-radius: 20px;
-  padding: $site-spacer / 3 $site-spacer / 2;
+  padding: 0.35rem 0.5rem;
   text-align: center;
   font-size: .8rem;
 
-
   // Grey by default
-  background: $site-color-light-grey;
-  color: $site-color-body-light;
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
+
+  // TODO(parlough): Consider if these colors can be shared and if
+  // compatible with dark mode.
 
   &.flutter-blue {
-    color: lighten($flutter-color-light-blue, 10%);
-    background: $flutter-color-blue-500;
+    color: lighten(#E7F8FF, 10%);
+    background: #0468D7;
   }
 
   &.teal {
-    color: lighten($flutter-color-light-teal, 10%);
-    background: $flutter-color-teal;
+    color: lighten(#B8EDE1, 10%);
+    background: #158477;
   }
 
   &.purple {
-    color: lighten($flutter-color-light-purple, 10%);
-    background: $flutter-color-purple;
+    color: lighten(#C6BAFA, 10%);
+    background: #6200EE;
   }
 }

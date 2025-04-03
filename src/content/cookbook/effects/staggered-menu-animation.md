@@ -20,7 +20,7 @@ in at the bottom.
 
 The following animation shows the app's behavior:
 
-![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.gif){:.site-mobile-screenshot}
+![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.webp){:.site-mobile-screenshot}
 
 ## Create the menu without animations
 
