@@ -116,7 +116,7 @@
       padding: 0 .5rem;
 
       &:has(:focus-visible) {
-        outline: 2px solid var(--focus-outline-color);
+        outline: 2px solid var(--site-primary-color);
         border-color: transparent;
       }
 
