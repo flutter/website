@@ -17,7 +17,7 @@
       {% endif -%}
     </div>
     <div class="card-header">
-      <header class="card-title">{{comp.name}}</header>
+      <header class="card-title">{{comp.name | camelCaseBreaker}}</header>
     </div>
     <div class="card-content">
       <p>{{ comp.description | truncatewords: 25 }}</p>
@@ -47,7 +47,7 @@
           {% endif -%}
         </div>
         <div class="card-header">
-          <header class="card-title">{{comp.name}}</header>
+          <header class="card-title">{{comp.name | camelCaseBreaker}}</header>
         </div>
         <div class="card-content">
           <p>{{ comp.description | truncatewords: 25 }}</p>
