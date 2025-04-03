@@ -18,7 +18,6 @@ To include your course, [submit a PR][]:
 * [The Complete Dart Developer Guide][] by Andrea Bizzotto
 * [Flutter & Dart - The Complete Guide, 2023 Edition][]
 * [The Complete 2021 Flutter Development Bootcamp Using Dart][] by App Brewery
-* [Flutter Crash Course][] by Nick Manning
 * [Flutter leicht gemacht 2022 - Zero to Mastery!][] by Max Berktold (German)
 * [Flutter Zero to Hero][] by Veli Bacik (Turkish)
 * [Flutter Bootcamp][] by Rubens de Melo (Portuguese)
