@@ -9,10 +9,10 @@
 
   .right-col {
     width: 220px;
+
     @media (max-width: 840px) {
       position: fixed;
-      // height of navbar
-      top: 4rem;
+      top: var(--site-header-height);
       bottom: 0;
       right: -10rem;
       background-color: var(--site-switcher-bg, #ffffff);
@@ -84,10 +84,10 @@
     color: var(--site-primary-color);
     margin: 0 0 2rem;
     padding: .5rem 0 1rem 1rem;
-  }
 
-  button:hover {
-    color: var(--site-onPrimary-color);
+    &:hover {
+      color: var(--site-onPrimary-color);
+    }
   }
 
   .hidden {
@@ -167,9 +167,10 @@
       color: var(--site-primary-color);
       display: flex;
       align-items: center;
-    }
-    button:hover {
-      color: var(--site-onPrimary-color-light);
+
+      &:hover {
+        color: var(--site-onPrimary-color-light);
+      }
     }
   }
 }
