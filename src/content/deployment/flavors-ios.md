@@ -389,7 +389,7 @@ an iOS project called `flavors_example`.
       * **Release-production**: `AppIcon-production`
 
 1.  Launch the app for each scheme (`staging`, `production`)
-    and check to make sure that the app display name has
+    and check to make sure that the app icon has
     changed for each. To launch a scheme, see the steps in
     [Launch an Xcode scheme][].
 
