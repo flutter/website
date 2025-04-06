@@ -6,7 +6,7 @@
     <div id="site-switcher" class="dropdown">
       <button class="dropdown-button site-wordmark" aria-expanded="false" aria-controls="site-switcher-menu" aria-label="Switch between Flutter and Dart sites">
         <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
-        <span>Flutter</span>
+        <span class="name">Flutter</span>
         <span class="subtype">Docs</span>
         <span class="material-symbols" aria-hidden="true">unfold_more</span>
       </button>
@@ -69,6 +69,35 @@
       <a href="/search" id="fallback-search-button" class="icon-button" aria-label="Navigate to the docs search page." title="Navigate to the docs search page.">
         <span class="material-symbols" aria-hidden="true">search</span>
       </a>
+      <div id="theme-switcher" class="dropdown">
+        <button class="dropdown-button icon-button" title="Select a theme" aria-label="Select a theme" aria-expanded="false" aria-controls="site-switcher-menu">
+          <span class="material-symbols" aria-hidden="true">contrast</span>
+        </button>
+        <div class="dropdown-content" id="theme-menu">
+          <div class="dropdown-menu">
+            <ul>
+              <li>
+                <button data-theme="light" title="Switch to light mode" aria-label="Switch to light mode">
+                  <span class="material-symbols" aria-hidden="true">light_mode</span>
+                  <span>Light</span>
+                </button>
+              </li>
+              <li>
+                <button data-theme="dark" title="Switch to dark mode" aria-label="Switch to dark mode">
+                  <span class="material-symbols" aria-hidden="true">dark_mode</span>
+                  <span>Dark</span>
+                </button>
+              </li>
+              <li>
+                <button data-theme="auto" title="Follow the device theme" aria-label="Follow the device theme">
+                  <span class="material-symbols" aria-hidden="true">night_sight_auto</span>
+                  <span>Automatic</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <a id="call-to-action" class="filled-button" href="/get-started/install/">Get started</a>
       <button
           id="menu-toggle"

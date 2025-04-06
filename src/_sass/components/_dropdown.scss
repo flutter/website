@@ -1,10 +1,13 @@
+@use '../base/mixins';
+
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--site-switcher-bg, #ffffff);
+  background-color: var(--site-raised-bgColor);
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.4rem;
   width: max-content;
+  border: var(--site-outline-variant) 1px solid;
 
   &.show {
     display: block;
@@ -19,7 +22,7 @@
   }
 
   .dropdown-menu {
-    padding: 0.4rem;
+    padding: 0.2rem;
 
     ul {
       display: flex;
@@ -29,14 +32,26 @@
       margin: 0;
 
       li {
-        padding: 0.3rem;
+        padding: 0.25rem;
 
-        a {
+        a, button {
           display: flex;
           align-items: center;
           flex-direction: row;
+          width: 100%;
+          gap: 0.4rem;
+          padding: 0.2rem 0.4rem;
+          border-radius: var(--site-radius);
 
           text-decoration: none;
+
+          &:hover {
+            @include mixins.interaction-style(4%);
+          }
+
+          &:active {
+            @include mixins.interaction-style(6%);
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 .site-header {
-  background-color: var(--site-base-bgColor);
+  background-color: var(--site-raised-bgColor);
   font-family: var(--site-ui-fontFamily);
   position: sticky;
   top: 0;
@@ -107,13 +107,13 @@
 
   &__searchfield {
     border: 0;
-    padding: 0.5rem 0.5rem 0.5rem 2rem;
     font-size: 1rem;
     transition: width .35s ease-in-out;
     width: 24px;
     cursor: pointer;
     border-radius: 24px;
-    padding-left: 2.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    background: none;
 
     &:focus {
       width: 220px;

@@ -46,7 +46,7 @@ pre {
   }
 
   .highlight {
-    background: #FFF59C;
+    background: var(--site-code-highlight-bgColor);
     padding: 0.1em;
   }
 
@@ -156,12 +156,12 @@ pre {
     transition: opacity 0.4s;
 
     &:hover, &:focus {
-      color: var(--site-primary-color);
+      color: var(--site-link-fgColor);
       opacity: 1;
     }
 
     &:active {
-      color: var(--site-primary-color-darker);
+      color: var(--site-link-fgColor-active);
     }
   }
 }

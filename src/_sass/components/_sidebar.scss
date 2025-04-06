@@ -136,10 +136,11 @@
       }
 
       &.active {
-        background-color: rgb(245, 245, 246);
+        //background-color: rgb(245, 245, 246);
+        background-color: rgb(var(--site-interaction-base-values) / 4%);
 
         &:not(.collapsible) {
-          color: var(--site-primary-color);
+          color: var(--site-link-fgColor);
         }
       }
     }

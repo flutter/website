@@ -1,0 +1,12 @@
+#theme-switcher {
+  position: relative;
+  margin-left: 0.1rem;
+
+  > .dropdown-content {
+    right: -0.5rem;
+
+    .material-symbols {
+      font-size: 20px;
+    }
+  }
+}
