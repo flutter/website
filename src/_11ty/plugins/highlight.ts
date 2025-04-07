@@ -100,7 +100,7 @@ function _highlight(
 
   // Specially handle DartPad snippets so that inject_embed can convert them.
   if (language.includes('dartpad')) {
-    const theme = attributes['theme'] ?? 'light';
+    const theme = attributes['theme'] ?? 'dark';
     const title = attributes['title'] ?? 'Runnable Flutter sample';
     const height = attributes['height'];
     const runAutomatically = attributes['run'] ?? 'false';

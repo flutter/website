@@ -255,7 +255,6 @@ pre {
 
 // Border and resizability for dartpad
 iframe[src^="https://dartpad"] {
-  border: 1px solid #ccc;
   margin-bottom: 1rem;
   min-height: 400px;
   resize: vertical;

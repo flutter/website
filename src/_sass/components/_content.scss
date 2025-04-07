@@ -124,7 +124,7 @@
 
   // Embedded DartPad
   iframe {
-    border: 1px solid #ccc;
+    border: 2px solid var(--site-outline-variant);
     max-width: 100%;
   }
 }
