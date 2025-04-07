@@ -203,9 +203,10 @@ table {
 
   thead {
     vertical-align: bottom;
+    background-color: var(--site-raised-bgColor);
 
     th {
-      border-bottom: 1px solid var(--site-inset-borderColor);
+      //border-bottom: 1px solid var(--site-inset-borderColor);
       text-align: start;
     }
   }
@@ -215,7 +216,7 @@ table {
       vertical-align: top;
 
       &:nth-of-type(odd) {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgb(var(--site-interaction-base-values) / 3%)
       }
     }
   }
@@ -382,7 +383,7 @@ td ol, td ul, td dl, td p {
 .figure-caption {
   font-size: .875rem;
   font-style: italic;
-  color: #041E3C;
+  color: var(--site-base-fgColor-lighter);
 }
 
 .card-os-bug {

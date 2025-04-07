@@ -60,8 +60,14 @@
     }
   }
 
-  .gsc-result-info {
+  .gsc-result-info, .gs-spelling {
     color: var(--site-base-fgColor-lighter);
+  }
+
+  .gs-no-results-result .gs-snippet {
+    border: none;
+    background-color: var(--site-raised-bgColor);
+    border-radius: var(--site-radius);
   }
 
   .gsc-webResult {

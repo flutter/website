@@ -3,7 +3,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--site-raised-bgColor);
+  background-color: var(--site-header-bgColor);
   box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.4rem;
   width: max-content;
@@ -14,7 +14,7 @@
   }
 
   .dropdown-divider {
-    background-color: #e7e8ed;
+    background-color: var(--site-outline-variant);
     border-radius: 0.5rem;
     height: 0.125rem;
     margin: 0.25rem;

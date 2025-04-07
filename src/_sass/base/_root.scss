@@ -19,7 +19,6 @@ body {
   --site-z-container: 5;
   --site-z-floating: 10;
   --site-z-side: 20;
-  --site-z-footer: 30;
   --site-z-subheader: 40;
   --site-z-header: 50;
   --site-z-dropdown: 100;
@@ -42,7 +41,7 @@ body {
   --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
   --site-base-fgColor-alt: #6a6f71;
 
-  --site-raised-bgColor: var(--site-base-bgColor);
+  --site-raised-bgColor: #e9ecef;
 
   --site-primary-color: #{$base_primary_color};
   --site-accent-color: #833ef2;
@@ -67,6 +66,8 @@ body {
   --site-link-fgColor-active: #0553B1;
 
   --site-wordmark-fgColor: #4a4a4a;
+
+  --site-header-bgColor: var(--site-base-bgColor);
 
   --site-footer-bgColor: #303c42;
   --site-footer-fgColor: #DADCE0;
@@ -120,8 +121,8 @@ body {
     --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
     --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
 
-    --site-inset-bgColor: #242b32;
-    --site-inset-bgColor-translucent: rgba(36, 43, 50, 0.7);
+    --site-inset-bgColor: #202731; // pub.dev uses #242b32;
+    --site-inset-bgColor-translucent: rgba(32, 39, 49, 0.7);
     --site-inset-fgColor: var(--site-base-fgColor);
     --site-inset-borderColor: #485563;
 
@@ -130,6 +131,8 @@ body {
     --site-link-fgColor-active: #28a3f7;
 
     --site-wordmark-fgColor: #fff;
+
+    --site-header-bgColor: var(--site-raised-bgColor);
 
     --site-footer-bgColor: #27323a;
     --site-footer-fgColor: #DADCE0;
@@ -144,13 +147,13 @@ body {
     --site-filledButton-bgColor: var(--site-primary-color);
     --site-filledButton-fgColor: #fff;
 
-    --site-code-highlight-bgColor: rgba(164, 158, 62, 0.2);
+    --site-code-highlight-bgColor: rgba(164, 158, 62, 0.15);
 
-    --site-alert-info-color: #308bf5;
+    --site-alert-info-color: #439bff;
     --site-alert-tip-color: #25c04b;
-    --site-alert-important-color: #a676ff;
+    --site-alert-important-color: #ac7fff;
     --site-alert-warning-color: #cea11f;
-    --site-alert-error-color: #ff4141;
+    --site-alert-error-color: #ff5d5d;
 
     .shiki, .shiki span {
       color: var(--shiki-dark) !important;

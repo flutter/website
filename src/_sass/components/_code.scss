@@ -212,7 +212,7 @@ pre {
   border: 1px solid var(--site-inset-borderColor);
 
   .code-block-header {
-    background-color: #e9ecef;
+    background-color: var(--site-raised-bgColor);
     border-bottom: 1px solid var(--site-inset-borderColor);
     font-size: 0.9375rem;
     font-weight: 500;
