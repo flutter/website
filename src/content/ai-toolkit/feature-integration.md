@@ -19,8 +19,8 @@ additional functionality:
 * **Welcome messages**: Display an initial greeting to users.
 * **Suggested prompts**: Offer users predefined prompts to guide interactions.
 * **System instructions**: Provide the LLM with specific input to influence its responses.
-* **Disabling attachments and audio input**: Removing optional parts of the chat UI.
-* **Manageing cancel or error behavior**: Changing the user cancelation or LLM error behavior.
+* **Disable attachments and audio input**: Remove optional parts of the chat UI.
+* **Manage cancel or error behavior**: Change the user cancellation or LLM error behavior.
 * **Managing history**: Every LLM provider allows for managing chat history,
   which is useful for clearing it,
   changing it dynamically and storing it between sessions.
