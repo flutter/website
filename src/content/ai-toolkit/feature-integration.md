@@ -21,7 +21,7 @@ additional functionality:
 * **System instructions**: Provide the LLM with specific input to influence its responses.
 * **Disable attachments and audio input**: Remove optional parts of the chat UI.
 * **Manage cancel or error behavior**: Change the user cancellation or LLM error behavior.
-* **Managing history**: Every LLM provider allows for managing chat history,
+* **Manage history**: Every LLM provider allows for managing chat history,
   which is useful for clearing it,
   changing it dynamically and storing it between sessions.
 * **Chat serialization/deserialization**: Store and retrieve conversations
