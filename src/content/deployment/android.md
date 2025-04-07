@@ -73,7 +73,7 @@ Material Components by following the steps described in the
 
 For example:
 
-1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle.kts`:
 
    ```groovy
    dependencies {
