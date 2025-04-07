@@ -242,7 +242,7 @@ class ChatPage extends StatelessWidget {
 You can override any or all of these parameters and the `LlmChatView` will use
 its defaults for anything you don't override.
 
-## Managing history
+## Manage history
 
 The [standard interface that defines all LLM providers][providerIF]
 that can plug into the chat view includes the ability to
