@@ -204,7 +204,7 @@ class ChatPage extends StatelessWidget {
 
 Both of these flags default to `true`.
 
-## Manageing cancel or error behavior
+## Manage cancel or error behavior
 
 Be default, when the use cancels an LLM request, the LLM's response will be
 appended with the string "CANCEL" and a message will pop up that the user has
