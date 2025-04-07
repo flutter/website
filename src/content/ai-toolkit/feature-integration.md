@@ -214,7 +214,7 @@ string "ERROR" and an alert dialog will pop up with the details of the error.
 
 You can override the cancel and error behavior with the `cancelMessage`,
 `errorMessage`, `onCancelCallback` and `onErrorCallback` parameters of the
-`LlmChatView`. For example, the following code replaces the default cancelation
+`LlmChatView`. For example, the following code replaces the default cancellation
 handling behavior:
 
 ```dart
