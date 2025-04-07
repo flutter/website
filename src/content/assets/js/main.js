@@ -1,10 +1,6 @@
 const _prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
 function setupTheme() {
-  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-  document.body.classList.add(storedTheme);
-  _switchToPreferenceIfAuto();
-
   const themeMenu = document.getElementById('theme-menu');
   if (themeMenu) {
     const themeButtons = themeMenu.querySelectorAll('button');

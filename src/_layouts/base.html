@@ -103,6 +103,19 @@
 
     </div>
 
+    <script>
+      const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+
+      if (storedTheme === 'auto-mode') {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.add('light-mode');
+        }
+      } else {
+        document.body.classList.add(storedTheme);
+      }
+    </script>
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
