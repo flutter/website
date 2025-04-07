@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
 }
 ```
 
-## Disabling attachments and audio input
+## Disable attachments and audio input
 
 If you'd like to disable attachments (the + button) or audio input (the mic button),
 you can do so with the `enableAttachments` and `enableVoiceNotes` parameters to
