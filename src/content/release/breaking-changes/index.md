@@ -45,6 +45,7 @@ They're sorted by release and listed in alphabetical order:
 * [Changing the default `goldenFileComparator` for `integration_test`s][]
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
+* [Semantics roles update on the menu system][]
 
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
@@ -57,6 +58,7 @@ They're sorted by release and listed in alphabetical order:
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
+[Semantics roles update on the menu system]: /release/breaking-changes/menu-semantics-roles
 
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
