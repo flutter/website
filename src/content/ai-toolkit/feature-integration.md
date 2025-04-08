@@ -206,7 +206,7 @@ Both of these flags default to `true`.
 
 ## Manage cancel or error behavior
 
-Be default, when the use cancels an LLM request, the LLM's response will be
+Be default, when the user cancels an LLM request, the LLM's response will be
 appended with the string "CANCEL" and a message will pop up that the user has
 canceled the request. Likewise, in the event of an LLM error, like a dropped
 network connection, the LLM's response will be appended with the
