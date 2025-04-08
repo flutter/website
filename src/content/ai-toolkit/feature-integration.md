@@ -188,12 +188,12 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ...
+    // ...
 
     return Scaffold(
       appBar: AppBar(title: const Text('Restricted Chat')),
       body: LlmChatView(
-        ...
+        // ...
         enableAttachments: false,
         enableVoiceNotes: false,
       ),
@@ -206,7 +206,7 @@ Both of these flags default to `true`.
 
 ## Manage cancel or error behavior
 
-Be default, when the user cancels an LLM request, the LLM's response will be
+By default, when the user cancels an LLM request, the LLM's response will be
 appended with the string "CANCEL" and a message will pop up that the user has
 canceled the request. Likewise, in the event of an LLM error, like a dropped
 network connection, the LLM's response will be appended with the
@@ -219,7 +219,7 @@ handling behavior:
 
 ```dart
 class ChatPage extends StatelessWidget {
-  ...
+  // ...
 
   void _onCancel(BuildContext context) {
     ScaffoldMessenger.of(
@@ -231,7 +231,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(title: const Text(App.title)),
     body: LlmChatView(
-      ...
+      // ...
       onCancelCallback: _onCancel,
       cancelMessage: 'Request cancelled',
     ),

@@ -95,7 +95,7 @@ repository to prevent unauthorized access.
 
 You'll also need to choose a specific Gemini model name
 to use in creating an instance of the Gemini model.
-The following example uses gemini-2.0-flash,
+The following example uses `gemini-2.0-flash`,
 but you can choose from an [ever-expanding set of models][models].
 
 [models]: https://ai.google.dev/gemini-api/docs/models/gemini
@@ -222,27 +222,28 @@ To enable your users to take advantage of features like voice input and media
 attachments, ensure that your app has the necessary permissions:
 
 * **Network access:**
-To enable network access on macOS, add the following to your `*.entitlements` files:
+  To enable network access on macOS,
+  add the following to your `*.entitlements` files:
 
-```xml
-<plist version="1.0">
+  ```xml
+  <plist version="1.0">
     <dict>
       ...
       <key>com.apple.security.network.client</key>
       <true/>
     </dict>
-</plist>
-```
+  </plist>
+  ```
 
-To enable network access on Android, ensure that your `AndroidManifest.xml` file
-contains the following:
+  To enable network access on Android,
+  ensure that your `AndroidManifest.xml` file contains the following:
 
-```xml
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    ...
-    <uses-permission android:name="android.permission.INTERNET"/>
-</manifest>
-```
+  ```xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+      ...
+      <uses-permission android:name="android.permission.INTERNET"/>
+  </manifest>
+  ```
 
 * **Microphone access**: Configure according to the
   [record package's permission setup instructions][record].
