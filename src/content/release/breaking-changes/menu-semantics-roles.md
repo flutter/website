@@ -7,32 +7,34 @@ description: >-
 
 ## Summary
 
-`MenuAnchor`, `MenuBar`, `MenuItemButton`, `SubmenuButton`, `CheckboxMenuButton`
-and `RadioMenuButton` have been wired up to `ARIA` menu roles. The menu button
-widgets should only be used as children of the menu-related widgets, such as
-`MenuAnchor` and `MenuBar`.
+To support accessibility and ensure that screen readers announce roles correctly
+on the web, `MenuAnchor`, `MenuBar`, `MenuItemButton`, `SubmenuButton`, 
+`CheckboxMenuButton`, and `RadioMenuButton` have been wired up to `ARIA` menu 
+roles. These menu button widgets should only be used as children of menu-related
+widgets, such as `MenuAnchor` and `MenuBar`.
 
 ## Background
 
 The `MenuAnchor` and `MenuBar` widgets are used to show menus or sub-menus. 
 The children of these widgets are composed of menu items, such as 
-`MenuItemButton`, `SubmenuButton`, `CheckboxMenuButton` and `RadioMenuButton`.
+`MenuItemButton`, `SubmenuButton`, `CheckboxMenuButton`, and `RadioMenuButton`.
 
-To ensure the screen readers announce roles correctly on the web, after these
-widgets are wired up to the `ARIA` menu roles, widgets with menu item roles 
-should only be used as children of widgets with `menu` or `menuBar` roles.
+After these widgets are wired up to the `ARIA` menu roles, widgets with menu 
+item roles should only be used as children of widgets with `menu` or `menuBar` 
+roles.
 
 ## Migration guide
 
 This change added a check for menu buttons.
 An error messages similar to "A menu item must be a child of a menu or a menu
-bar" might appear if the app or a test directly uses menu item buttons instead 
+bar" might appear if the menu item buttons are used directly instead 
 of using them within widgets with a role of `SemanticsRole.menu` or 
 `SemanticsRole.menuBar`. Menu item buttons include: `MenuItemButton`, 
 `SubmenuButton`, `CheckboxMenuButton` and `RadioMenuButton`.
 
-For example, before the migration, if an app used a menu button outside of a 
-menu context:
+Before migration:
+
+The following example uses a menu button outside of a menu context:
 
 ```dart
 MaterialApp(
@@ -48,9 +50,10 @@ MaterialApp(
 )
 ```
 
-An exception will be thrown and the error message will appear. Therefore, to 
-fix the error, replace the menu button widgets with other standard buttons, such 
-as:
+After migration:
+
+The previous code now throws an exception and displays an error message. To 
+fix the error, replace the menu button widgets with other standard buttons:
 
 ```dart
 MaterialApp(
@@ -108,8 +111,7 @@ MaterialApp(
 );
 ```
 
-In tests, if a test was constructed as follows to test some features of the
-`CheckboxMenuButton`:
+An example test, before migration:
 
 ```dart
 await tester.pumpWidget(
@@ -122,7 +124,7 @@ await tester.pumpWidget(
 );
 ```
 
-After the migration, the test should be updated to:
+The same test, after migration:
 
 ```dart
 await tester.pumpWidget(
