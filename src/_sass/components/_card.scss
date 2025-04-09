@@ -43,11 +43,6 @@
       border: 1px solid var(--card-border-color, var(--site-card-borderColor));
     }
 
-    &.card-highlight {
-      border-color: rgba(var(--site-interaction-base-values) / 37.5%);
-      //background-color: var(--site-raised-bgColor);
-    }
-
     &.wrapped-card {
       padding: 0;
       border-width: 2px;
