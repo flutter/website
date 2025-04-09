@@ -1112,8 +1112,7 @@ and falls back to CanvasKit otherwise.
 The draw.io source for the following image is in /diagrams/resources
 {% endcomment %}
 
-![Flutter web
-architecture](/assets/images/docs/arch-overview/web-framework-diagram.drawio.png){:width="100%"}
+![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png)
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need
