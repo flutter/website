@@ -74,8 +74,9 @@ Flutter **enables Impeller by default** on iOS.
 
 ### Android
 
-Flutter **enables Impeller by default** on Android.
-On devices that don't support Vulkan,
+Impeller is **available and enabled by default on
+**Android API 29+**.
+On devices running lower versions of Android or don't support Vulkan,
 Impeller falls back to the the legacy OpenGL renderer.
 No action on your part is necessary for this fallback behavior.
 
