@@ -5,7 +5,7 @@ description: What is Impeller and how to enable it?
 
 :::note
 As of the 3.27 release, Impeller is the default
-rendering engine for both iOS and Android.
+rendering engine for both iOS and Android API 29+.
 To see _detailed_ info on where Impeller is currently supported,
 check out the [Can I use Impeller?][] page.
 :::
