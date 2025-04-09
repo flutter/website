@@ -1,8 +1,8 @@
 ---
 title: Code formatting
-description: >
-    Flutter's code formatter formats your code
-    following recommended style guidelines.
+description: >-
+  Flutter's code formatter formats your code
+  following recommended style guidelines.
 ---
 
 
