@@ -36,7 +36,7 @@
     }
 
     &.filled-card {
-      background-color: var(--card-container-color, rgb(242, 245, 255));
+      background-color: var(--site-inset-bgColor-translucent);
     }
 
     &.outlined-card {

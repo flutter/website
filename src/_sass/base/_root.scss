@@ -31,7 +31,7 @@ body {
 body {
   color-scheme: light;
 
-  --site-outline: rgba(0, 0, 0, .125);
+  --site-outline: rgba(194, 198, 214, .75);
   --site-outline-variant: #e7e8ed;
 
   --site-interaction-base-values: 0 0 0;
@@ -96,7 +96,7 @@ body {
 
   &.dark-mode {
     color-scheme: dark;
-    --site-outline: rgba(255, 255, 255, .125);
+    --site-outline: rgba(95, 100, 119, .75);
     --site-outline-variant: #252834;
 
     --site-interaction-base-values: 255 255 255;
