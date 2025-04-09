@@ -225,7 +225,8 @@ use an iOS simulator to test your extension in debug mode.
    [Adding a Flutter Screen][]. For example, you can display a
    specific route in your Flutter app within a share extension.
 
-1. Cancel the request in `viewDidDisappear`, which will be called when the share extension is dismissed by gesture. 
+1. Cancel the request in `viewDidDisappear`, which will be called 
+when the share extension is dismissed with a gesture. 
 
     ```swift
     import UIKit
