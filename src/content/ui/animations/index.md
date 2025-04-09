@@ -161,11 +161,6 @@ or might partially or completely overlap.
 
 * [Staggered Animations][]
 
-{% comment %}
-  Save so I can remember how to add it back later.
-  <img src="/assets/images/docs/ic_new_releases_black_24px.svg" alt="this doc is new!"> NEW<br>
-{% endcomment -%}
-
 <a id="concepts"></a>
 
 ## Essential animation concepts and classes
