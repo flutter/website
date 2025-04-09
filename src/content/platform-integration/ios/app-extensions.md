@@ -259,7 +259,7 @@ use an iOS simulator to test your extension in debug mode.
 
 ## Advanced scrolling behavior
 
-By default, flutter view does not receive any touch event in a share extension. 
+By default, flutter view does not handle scroll gestures in a share extension. 
 To support a scrollable list in the share extension, follow [this instruction][]. 
 
 [this instruction]: {{site.github}}/flutter/website/issues/164670#issuecomment-2740702986
