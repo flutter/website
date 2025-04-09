@@ -252,9 +252,10 @@ use an iOS simulator to test your extension in debug mode.
     }
     ```
 :::note
-1. If you do not cancel the request in `viewDidDisappear`, the `ShareViewController` will not be deallocated after being dismissed. 
+1. If you _don't_ cancel the request in `viewDidDisappear`, 
+the `ShareViewController` won't be deallocated after being dismissed. 
 
-2. You have to pass in the bundle identifier as the error domain, otherwise it will result in an `EXC_BAD_INSTRUCTION` crash. 
+2. You must pass in the bundle identifier as the error domain, otherwise it crashes with an `EXC_BAD_INSTRUCTION` error. 
 :::
 
 ## Advanced scrolling behavior
