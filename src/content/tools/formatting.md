@@ -54,22 +54,7 @@ run the `dart format` command:
 $ dart format path1 path2 [...]
 ```
 
-## Using trailing commas
+To learn more about the Dart formatter,
+check out the dart.dev docs on [`dart format`][].
 
-Flutter code often involves building fairly deep tree-shaped data structures,
-for example in a `build` method. To get good automatic formatting,
-we recommend you adopt the optional *trailing commas*.
-The guideline for adding a trailing comma is simple: Always
-add a trailing comma at the end of a parameter list in
-functions, methods, and constructors where you care about
-keeping the formatting you crafted.
-This helps the automatic formatter to insert an appropriate
-amount of line breaks for Flutter-style code.
-
-Here is an example of automatically formatted code *with* trailing commas:
-
-![Automatically formatted code with trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-with.png){:width="100%"}
-
-And the same code automatically formatted *without* trailing commas:
-
-![Automatically formatted code without trailing commas](/assets/images/docs/tools/android-studio/trailing-comma-without.png){:width="100%"}
+[`dart format`]: {{site.dart-site}}/tools/dart-format
