@@ -4,12 +4,12 @@ layout: base
 
 {% if toc != false -%}
 {% assign tocContents = content | generate_toc %}
-{% if tocContents == null or tocContents == '' -%}
+{% if tocContents == null or tocContents == '' or tocContents.count < 2 -%}
 {% assign toc = false %}
 {% endif -%}
 {% endif -%}
 
-<div id="site-main-row">
+<div id="site-main-row" class="{% if toc == false %}no-toc{% endif %}">
   <div id="sidenav" class="site-sidebar">
     {% render sidenav-level-1.html, url:page.url, nav:sidenav, activeNav:activeNav %}
   </div>

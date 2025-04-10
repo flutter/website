@@ -3,7 +3,8 @@
 #sidenav {
   margin: 0;
   min-width: 16rem;
-  height: calc(100vh - var(--site-header-height));
+  height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
+  top: calc(var(--site-header-height) + var(--site-subheader-height));
   padding: 1.15rem 1rem 4rem;
   scrollbar-width: thin;
   position: fixed;
