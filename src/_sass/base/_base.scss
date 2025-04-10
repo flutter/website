@@ -360,7 +360,7 @@ ol.steps {
 main {
   ol + img, ul + img, ol + p, ul + p, p + p + img,
   article li:not(.toc-entry, .breadcrumb-item, .nav-item):last-child,
-  ul + p:last-child {
+  ul + p:last-child, .table {
     margin-bottom: 1rem;
   }
 }

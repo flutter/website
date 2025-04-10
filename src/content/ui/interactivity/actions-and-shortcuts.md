@@ -29,7 +29,7 @@ contexts. An [`Action`][] can be a simple callback (as in the case of
 the [`CallbackAction`][]) or something more complex that integrates with entire
 undo/redo architectures (for example) or other logic.
 
-![Using Shortcuts Diagram][]{:width="100%"}
+![Using Shortcuts Diagram][]{:width="100%" .diagram-wrap}
 
 [`Shortcuts`][] are key bindings that activate by pressing a key or combination
 of keys. The key combinations reside in a table with their bound intent. When
