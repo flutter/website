@@ -1,7 +1,8 @@
 ---
 title: Layouts in Flutter
 short-title: Layout
-description: Learn how Flutter's layout mechanism works and how to build a layout.
+description: >-
+  Learn how Flutter's layout mechanism works and how to build your app's layout.
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -102,7 +103,7 @@ horizontally and vertically:
 
 ```dart
 Center(
-  //content here
+  // Content to be centered here.
 )
 ```
 
@@ -154,9 +155,9 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-<a id="non-material-apps"></a>
-<a id="material-apps"></a>
-<a id="cupertino-apps"></a>
+<a id="non-material-apps" aria-hidden="true"></a>
+<a id="material-apps" aria-hidden="true"></a>
+<a id="cupertino-apps" aria-hidden="true"></a>
 
 {% tabs "app-type-tabs" %}
 
@@ -238,7 +239,8 @@ or you can build your own set of custom widgets.
 
 {% tab "Cupertino apps" %}
 
-To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
+To create a `Cupertino` app,
+use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
 
 Unlike `Material`, it doesn't provide a default banner or background color.
 You need to set these yourself.
@@ -278,7 +280,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Text('Hello World')],
+            children: [Text('Hello World')],
           ),
         ),
       ),
@@ -291,7 +293,7 @@ class MyApp extends StatelessWidget {
 The [Cupertino library][] implements widgets that follow
 [Apple's Human Interface Guidelines for iOS][].
 When designing your UI, you can use
-widgets from the standard [widgets library][], or the Cupertino library.
+widgets from the standard [widgets library][] or the Cupertino library.
 You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
@@ -371,7 +373,7 @@ You'll implement some of Pavlova's layout code in
 :::note
 `Row` and `Column` are basic primitive widgets for horizontal
 and vertical layouts&mdash;these low-level widgets allow for maximum
-customization. Flutter also offers specialized, higher level widgets
+customization. Flutter also offers specialized, higher-level widgets
 that might be sufficient for your needs. For example,
 instead of `Row` you might prefer [`ListTile`][],
 an easy-to-use widget with properties for leading and trailing icons,
@@ -767,8 +769,8 @@ from the [widgets library][], and specialized widgets from the
 [Material library][]. Any app can use the widgets library but
 only Material apps can use the Material Components library.
 
-<a id="standard-widgets"></a>
-<a id="materials-widgets"></a>
+<a id="standard-widgets" aria-hidden="true"></a>
+<a id="materials-widgets" aria-hidden="true"></a>
 
 {% tabs "os-archive-tabs" %}
 
@@ -1143,7 +1145,7 @@ Widget _buildStack() {
 
 A [`Card`][], from the [Material library][],
 contains related nuggets of information and can
-be composed from almost any widget, but is often used with
+be composed of almost any widget, but is often used with
 [`ListTile`][]. `Card` has a single child,
 but its child can be a column, row, list, grid,
 or other widget that supports multiple children.
@@ -1306,14 +1308,14 @@ explain `Stateless` and `Stateful` widgets.
 
 ---
 
-Each episode of the
-[Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
-focuses on a widget. Several of them includes layout widgets.
+Each episode of the [Widget of the Week series][] focuses on a widget.
+Several of them include layout widgets.
 
 {% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week' %}
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
+[Widget of the Week series]: {{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
 ## Other resources
@@ -1337,7 +1339,7 @@ The following resources might help when writing layout code.
 : Explains how to add images and other assets to your app's package.
 
 [Zero to One with Flutter][]
-: One person's experience writing his first Flutter app.
+: One person's experience writing their first Flutter app.
 
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets
