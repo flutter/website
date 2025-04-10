@@ -35,6 +35,7 @@ ul.nav-tabs {
     border-radius: 0.125rem;
     white-space: nowrap;
     user-select: none;
+    outline-offset: 1px;
 
     &:hover {
       @include mixins.interaction-style(4%);
