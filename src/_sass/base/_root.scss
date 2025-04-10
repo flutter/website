@@ -105,7 +105,7 @@ body {
 
     --site-base-bgColor: #121317;
     --site-base-fgColor: #dcdcdc;
-    --site-base-fgColor-lighter: #{color.scale(#dcdcdc, $lightness: -30%)};
+    --site-base-fgColor-lighter: #{color.scale(#dcdcdc, $lightness: -25%)};
     --site-base-fgColor-alt: #a8acad;
 
     --site-raised-bgColor: #1c1e27;
