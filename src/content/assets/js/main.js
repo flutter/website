@@ -4,17 +4,33 @@ function setupTheme() {
   const themeMenu = document.getElementById('theme-menu');
   if (themeMenu) {
     const themeButtons = themeMenu.querySelectorAll('button');
+
+    function updateButtonSelectedState() {
+      const theme =
+          document.body.classList.contains('auto-mode') ? 'auto' :
+          document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+
+      themeButtons.forEach((button) => {
+        button.ariaSelected = button.dataset.theme === theme ? 'true' : 'false';
+      });
+    }
+
     themeButtons.forEach((button) => {
       button.addEventListener('click', (_) => {
-        document.body.classList.remove('auto-mode');
-        document.body.classList.remove('dark-mode');
-        document.body.classList.remove('light-mode');
         const newMode = `${button.dataset.theme}-mode`;
-        document.body.classList.add(newMode);
+        const bodyClasses = document.body.classList;
+        if (bodyClasses.contains(newMode)) return;
+
+        bodyClasses.remove('auto-mode', 'dark-mode', 'light-mode');
+        bodyClasses.add(newMode);
         window.localStorage.setItem('theme', newMode);
         _switchToPreferenceIfAuto();
+
+        updateButtonSelectedState();
       });
     });
+
+    updateButtonSelectedState();
   }
 
   _prefersDarkMode.addEventListener('change', _switchToPreferenceIfAuto);
