@@ -1,4 +1,4 @@
-{% assign cache_bust = '?v=5' %}
+{% assign cache_bust = '?v=6' %}
 {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
@@ -8,8 +8,7 @@
     <title>{% if short-title %}{{short-title}}{% else %}{{title}}{% endif %} | {{site.title}}</title>
     <link rel="icon" href="/assets/images/branding/flutter/icon/64.png">
     <link rel="apple-touch-icon" href="/assets/images/branding/flutter/logo/flutter-logomark-320px.png">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {% unless strip_fonts == true -%}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,6 +102,24 @@
 
     </div>
 
+    {% comment %}
+      This script is used to set the theme based on the user's
+      previously selected theme.
+      It is inline in the HTML to avoid theme flashing.
+    {% endcomment %}
+    <script>
+      const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+
+      if (storedTheme === 'auto-mode') {
+        document.body.classList.add(
+            'auto-mode',
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark-mode' : 'light-mode'
+        );
+      } else {
+        document.body.classList.add(storedTheme);
+      }
+    </script>
     <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
     <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>

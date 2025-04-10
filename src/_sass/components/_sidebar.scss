@@ -3,7 +3,8 @@
 #sidenav {
   margin: 0;
   min-width: 16rem;
-  height: calc(100vh - var(--site-header-height));
+  height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
+  top: calc(var(--site-header-height) + var(--site-subheader-height));
   padding: 1.15rem 1rem 4rem;
   scrollbar-width: thin;
   position: fixed;
@@ -39,6 +40,7 @@
 
   .nav-header {
     font-weight: bolder;
+    font-size: 1rem;
     padding: 0.25rem 0.4rem 0;
     color: var(--site-base-fgColor-lighter);
   }
@@ -136,16 +138,17 @@
       }
 
       &.active {
-        background-color: rgb(245, 245, 246);
+        //background-color: rgb(245, 245, 246);
+        background-color: rgb(var(--site-interaction-base-values) / 4%);
 
         &:not(.collapsible) {
-          color: var(--site-primary-color);
+          color: var(--site-link-fgColor);
         }
       }
     }
   }
 
-  > nav ul {
+  nav > ul {
     // Only apply styles to top-level entries.
     > li {
       font-size: 1rem;
@@ -153,6 +156,10 @@
 
     ul {
       margin-left: 0.675rem;
+    }
+
+    > .nav-header {
+      font-size: 1.075rem;
     }
   }
 }

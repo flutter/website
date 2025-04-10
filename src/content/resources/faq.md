@@ -161,14 +161,14 @@ See [editor configuration][] for setup details,
 and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
 
-[Project IDX][], currently in beta,
+[Firebase Studio][], currently in preview,
 is an AI-assisted workspace for full-stack,
 multiplatform app development in the cloud.
-IDX supports Dart and Flutter. For more information,
-check out the [Project IDX Getting Started][] guide.
+Firebase Studio supports Dart and Flutter. For more information,
+check out [Get started with Firebase Studio][].
 
-[Project IDX]: https://idx.dev/
-[Project IDX Getting Started]: https://developers.google.com/idx/guides/get-started
+[Firebase Studio]: https://firebase.studio/
+[Get started with Firebase Studio]: https://firebase.google.com/docs/studio/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one

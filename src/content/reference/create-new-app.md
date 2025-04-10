@@ -37,12 +37,12 @@ choose your preferred environment and follow the corresponding instructions.
       <p>Create a new Flutter app without leaving your IntelliJ-based IDE.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="#project-idx">
+  <a class="card outlined-card" href="#firebase-studio">
     <div class="card-header">
-      <span class="card-title">Project IDX</span>
+      <span class="card-title">Firebase Studio</span>
     </div>
     <div class="card-content">
-      <p>For quick and easy setup, create a new Flutter app in Project IDX.</p>
+      <p>For quick and easy setup, create a new Flutter app in Firebase Studio.</p>
     </div>
   </a>
   <a class="card outlined-card" href="#terminal">
@@ -296,31 +296,33 @@ check out the [IntelliJ for Flutter reference][ij-more].
 [ij-more]: /tools/android-studio
 [ij-run]: /tools/android-studio#running-and-debugging
 
-## Project IDX
+<a id="project-idx" aria-hidden="true"></a>
 
-To create a Flutter app with [Project IDX][idx],
-you first need a Google account and to [set up IDX][idx-setup].
+## Firebase studio
+
+To create a Flutter app with [Firebase Studio][fbs],
+you first need a Google account and to [set up Firebase Studio][fbs-setup].
 Then follow these steps:
 
- 1. <h3>Launch Project IDX</h3>
+ 1. <h3>Launch Firebase Studio</h3>
 
-    In your preferred browser, navigate to the [IDX dashboard][]
-    found at `idx.google.com`.
+    In your preferred browser, navigate to the [Firebase Studio dashboard][]
+    found at `studio.firebase.google.com/`.
     If you haven't yet, you might need to log in to your Google account.
 
  1. <h3>Create a new workspace</h3>
 
-    In the IDX dashboard, find the **New workspace** card.
+    In the Firebase Studio dashboard, find the **Start coding an app** section.
     It should include a variety of templates to choose from.
     Select the **Flutter** template.
-    If you can't find it, it might be under the **Mobile** category.
+    If you can't find it, it might be under a **Mobile** category.
 
  1. <h3>Name your workspace</h3>
 
-    IDX should prompt you to **Name your workspace**.
+    Firebase Studio should prompt you to **Name your workspace**.
     This name is distinct from the name of your Flutter app.
     Choose a descriptive name that you'll recognize
-    in a list of your IDX workspaces.
+    in a list of your workspaces.
 
  1. <h3>Provision your new workspace</h3>
 
@@ -329,28 +331,28 @@ Then follow these steps:
 
  1. <h3>Wait for workspace initialization</h3>
 
-    IDX will now initialize your workspace,
+    Firebase Studio will now initialize your workspace,
     bootstrap your project file structure,
     and retrieve your app's dependencies.
     This might take a while.
 
 1. <h3>Run your app</h3>
 
-   Your new app should now be created and open in IDX.
-   To try your new app, follow the docs provided by Project IDX to
-   [preview your app][idx-preview] on the web or on Android.
+   Your new app should now be created and opened in the Firebase Studio editor.
+   To try your new app, follow the docs provided by Firebase Studio to
+   [preview your app][fbs-preview] on the web or on Android.
 
 {:.steps}
 
-You've successfully created a new Flutter app in Project IDX!
+You've successfully created a new Flutter app in Firebase Studio!
 If you need help configuring your workspace,
-check out [Customize your IDX workspace][].
+check out [Customize your Firebase studio workspace][fbs-customize].
 
-[idx]: https://idx.dev/
-[IDX dashboard]: https://idx.google.com/
-[idx-setup]: https://developers.google.com/idx/guides/get-started
-[idx-preview]: https://developers.google.com/idx/guides/preview-apps
-[Customize your IDX workspace]: https://developers.google.com/idx/guides/customize-idx-env
+[fbs]: https://firebase.studio
+[Firebase Studio dashboard]: https://studio.firebase.google.com/
+[fbs-setup]: https://firebase.google.com/docs/studio/get-started
+[fbs-preview]: https://firebase.google.com/docs/studio/preview-apps
+[fbs-customize]: https://firebase.google.com/docs/studio/customize-workspace
 
 ## Terminal
 
@@ -367,7 +369,7 @@ Then follow these steps:
 
     Ensure your current working directory
     is the desired parent directory for your new app.
-    Do not create the project folder, the `flutter` tool will do so.
+    Don't create the project folder, the `flutter` tool will do so.
 
  1. <h3>Configure project creation</h3>
 

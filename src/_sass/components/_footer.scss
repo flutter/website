@@ -1,6 +1,5 @@
 #site-footer {
   position: relative;
-  z-index: var(--site-z-footer);
   background-color: var(--site-footer-bgColor);
   color: var(--site-footer-fgColor);
   padding: 32px;
@@ -51,6 +50,8 @@
   .footer-social-links {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
 
     a {

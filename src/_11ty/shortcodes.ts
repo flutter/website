@@ -64,7 +64,7 @@ function _setupTabs(eleventyConfig: UserConfig) {
 
       const tabSaveId = slugify(tabName);
       tabMarkup += `<li class="nav-item">
-  <a class="nav-link ${tabIsActive ? "active" : ""}" data-tab-save-id="${tabSaveId}" id="${tabId}" href="#${tabPanelId}" role="tab" aria-controls="${tabPanelId}" aria-selected="${tabIsActive ? "true" : "false"}">${tabName}</a>
+  <a class="nav-link ${tabIsActive ? "active" : ""}" tabindex="0" data-tab-save-id="${tabSaveId}" id="${tabId}" href="#${tabPanelId}" role="tab" aria-controls="${tabPanelId}" aria-selected="${tabIsActive ? "true" : "false"}">${tabName}</a>
 </li>`;
     }
 

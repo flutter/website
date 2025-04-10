@@ -46,7 +46,7 @@ pre {
   }
 
   .highlight {
-    background: #FFF59C;
+    background: var(--site-code-highlight-bgColor);
     padding: 0.1em;
   }
 
@@ -156,12 +156,12 @@ pre {
     transition: opacity 0.4s;
 
     &:hover, &:focus {
-      color: var(--site-primary-color);
+      color: var(--site-link-fgColor);
       opacity: 1;
     }
 
     &:active {
-      color: var(--site-primary-color-darker);
+      color: var(--site-link-fgColor-active);
     }
   }
 }
@@ -212,7 +212,7 @@ pre {
   border: 1px solid var(--site-inset-borderColor);
 
   .code-block-header {
-    background-color: #e9ecef;
+    background-color: var(--site-raised-bgColor);
     border-bottom: 1px solid var(--site-inset-borderColor);
     font-size: 0.9375rem;
     font-weight: 500;
@@ -255,7 +255,6 @@ pre {
 
 // Border and resizability for dartpad
 iframe[src^="https://dartpad"] {
-  border: 1px solid #ccc;
   margin-bottom: 1rem;
   min-height: 400px;
   resize: vertical;

@@ -41,11 +41,11 @@
         padding: 0.2rem;
 
         &:hover {
-          color: var(--site-primary-color);
+          color: var(--site-link-fgColor);
         }
 
         &:active {
-          color: var(--site-primary-color-darker);
+          color: var(--site-link-fgColor-active);
         }
       }
     }

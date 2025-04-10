@@ -19,9 +19,21 @@
 
     img {
       object-fit: contain;
+
+      &.diagram-wrap {
+        background-color: var(--site-diagram-wrap-bgColor);
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      &.small-diagram-wrap {
+        background-color: var(--site-diagram-wrap-bgColor);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
     }
 
-    > img {
+    > img, > lite-youtube {
       margin-bottom: 1rem;
     }
   }
@@ -98,12 +110,12 @@
       line-height: 1;
       transition: all 0.15s ease-in-out;
       overflow: hidden;
-      color: #4a4a4a;
+      color: var(--site-base-fgColor-alt);
       opacity: 0;
       text-decoration: none;
 
       &:hover {
-        color: var(--site-primary-color);
+        color: var(--site-link-fgColor);
       }
 
       &:focus {
@@ -111,7 +123,7 @@
       }
 
       &:active {
-        color: var(--site-primary-color-darkest);
+        color: var(--site-link-fgColor-active);
       }
     }
 
@@ -124,7 +136,8 @@
 
   // Embedded DartPad
   iframe {
-    border: 1px solid #ccc;
+    border: 2px solid var(--site-outline-variant);
+    background-color: var(--site-inset-bgColor);
     max-width: 100%;
   }
 }

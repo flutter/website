@@ -36,15 +36,11 @@
     }
 
     &.filled-card {
-      background-color: var(--card-container-color, rgb(242, 245, 255));
+      background-color: var(--site-inset-bgColor-translucent);
     }
 
     &.outlined-card {
-      border: 1px solid var(--card-border-color, rgba(0, 0, 0, .125));
-    }
-
-    &.card-highlight {
-      border-color: rgba(0, 0, 0, .375);
+      border: 1px solid var(--card-border-color, var(--site-card-borderColor));
     }
 
     &.wrapped-card {
@@ -125,6 +121,7 @@
 
         span.material-symbols {
           font-size: 3.5rem;
+          color: var(--site-primary-color);
         }
       }
 
@@ -139,7 +136,7 @@
     text-decoration: none;
 
     .card-title {
-      color: var(--site-primary-color);
+      color: var(--site-link-fgColor);
     }
 
     &:hover {
@@ -181,7 +178,7 @@
   z-index: -1;
   background-size: 0;
   opacity: .999;
-  background-color: #fff;
+  background-color: var(--site-outline-variant);
   margin: -1rem -1rem 0;
 
   img {
