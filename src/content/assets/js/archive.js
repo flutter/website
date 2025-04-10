@@ -34,6 +34,8 @@ function updateTable(releases, os) {
       continue;
     }
 
+    const tableBody = table.querySelector('tbody');
+
     table.classList.add('collapsed');
     const loadingElements = table.querySelectorAll('.loading');
     loadingElements.forEach(function (element) {
@@ -61,14 +63,14 @@ function updateTable(releases, os) {
         cell.colSpan = 6;
         cell.appendChild(showAll);
         row.appendChild(cell);
-        table.appendChild(row);
+        tableBody.appendChild(row);
       }
 
       const row = document.createElement('tr');
       if (index >= releasesToShow) {
         row.classList.add('overflow');
       }
-      table.appendChild(row);
+      tableBody.appendChild(row);
 
       const hashLabel = document.createElement('span');
       hashLabel.textContent = release.hash.substr(0, 7);

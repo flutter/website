@@ -327,7 +327,7 @@ App source code:
 * [Non-Material app]({{examples}}/layout/non_material)
 
 </div>
-{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-class:"simple-border", img-style:"max-height: 400px;"  %}
+{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
 </div>
 <hr>
 

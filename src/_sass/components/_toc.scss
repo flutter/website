@@ -17,7 +17,7 @@
   }
 
   position: sticky;
-  top: calc(var(--site-header-height) + 0.1rem);
+  top: var(--site-header-height);
 
   background-color: var(--site-base-bgColor);
   border-bottom: 0.1rem solid var(--site-outline-variant);
@@ -98,7 +98,7 @@
       border-radius: 0.4rem;
       box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
 
-      top: var(--site-subheader-height) + .75rem;
+      top: calc(var(--site-subheader-height) + .75rem);
       left: 0.75rem;
 
       min-width: 18rem;
@@ -125,11 +125,11 @@
       }
 
       &:hover {
-        color: var(--site-primary-color);
+        color: var(--site-link-fgColor);
       }
 
       &:active {
-        color: var(--site-primary-color-darker);
+        color: var(--site-link-fgColor-active);
       }
     }
 

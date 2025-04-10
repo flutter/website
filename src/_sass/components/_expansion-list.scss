@@ -25,6 +25,7 @@
         font-size: 24px;
 
         transition: transform .25s ease-in-out;
+        color: var(--site-base-fgColor-lighter);
       }
 
       .collapsing {
@@ -36,10 +37,10 @@
           transform: rotate(180deg);
         }
       }
-    }
 
-    a:hover {
-      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -67,7 +68,7 @@
 
     .expansion-panel-title-content {
       .content-title {
-        color: #000;
+        color: var(--site-base-fgColor);
         font-size: 1rem;
         font-weight: 500;
         margin-bottom: .25rem;
@@ -114,7 +115,7 @@
     display: none;
     margin: auto;
     width: 90%;
-    border-top: .05rem solid rgba(0, 0, 0, 0.125);
+    border-top: .05rem solid var(--site-card-borderColor);
 
     p {
       margin-top: 1.5rem;

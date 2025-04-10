@@ -1,20 +1,20 @@
 @use '../base/mixins';
 
 a {
-  color: var(--site-primary-color);
+  color: var(--site-link-fgColor);
   border-radius: 0.25rem;
 
   &:hover {
-    color: var(--site-primary-color);
+    color: var(--site-link-fgColor);
     text-decoration: underline;
   }
 
   &:active {
-    color: var(--site-primary-color-dark);
+    color: var(--site-link-fgColor-active);
   }
 
   &:visited {
-    color:var(--site-primary-color);
+    color:var(--site-link-fgColor);
   }
 }
 

@@ -1,4 +1,5 @@
 import { getSingletonHighlighter, Highlighter } from 'shiki';
+import dashDarkTheme from '../syntax/dark-dark.js';
 import dashLightTheme from '../syntax/dash-light.js';
 import MarkdownIt from 'markdown-it';
 import * as hast from 'hast';
@@ -17,7 +18,7 @@ const _terminalLanguages = {
  *   copy buttons, etc.
  * - Syntax highlights the contents according to the specified language
  *   using the shiki package that uses TextMate grammars
- *   and Code -OSS themes.
+ *   and Code-OSS themes.
  *
  * @param markdown The markdown-it instance to configure syntax highlighting for.
  */
@@ -50,7 +51,7 @@ export async function configureHighlighting(markdown: MarkdownIt): Promise<void>
       'csharp',
       'cmake',
     ],
-    themes: [dashLightTheme],
+    themes: [dashLightTheme, dashDarkTheme],
   });
 
   markdown.renderer.rules.fence = function (tokens, index) {
@@ -99,7 +100,7 @@ function _highlight(
 
   // Specially handle DartPad snippets so that inject_embed can convert them.
   if (language.includes('dartpad')) {
-    const theme = attributes['theme'] ?? 'light';
+    const theme = attributes['theme'] ?? 'dark';
     const title = attributes['title'] ?? 'Runnable Flutter sample';
     const height = attributes['height'];
     const runAutomatically = attributes['run'] ?? 'false';
@@ -168,7 +169,10 @@ function _highlight(
 
   return highlighter.codeToHtml(content, {
     lang: language,
-    theme: 'dash-light',
+    themes: {
+      light: 'dash-light',
+      dark: 'dash-dark',
+    },
     transformers: [
       {
         pre(preElement) {
