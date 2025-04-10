@@ -103,15 +103,20 @@
 
     </div>
 
+    {% comment %}
+      This script is used to set the theme based on the user's
+      previously selected theme.
+      It is inline in the HTML to avoid theme flashing.
+    {% endcomment %}
     <script>
       const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
 
       if (storedTheme === 'auto-mode') {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.body.classList.add('dark-mode');
-        } else {
-          document.body.classList.add('light-mode');
-        }
+        document.body.classList.add(
+            'auto-mode',
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark-mode' : 'light-mode'
+        );
       } else {
         document.body.classList.add(storedTheme);
       }

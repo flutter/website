@@ -18,11 +18,10 @@ function setupTheme() {
     themeButtons.forEach((button) => {
       button.addEventListener('click', (_) => {
         const newMode = `${button.dataset.theme}-mode`;
-        const bodyClasses = document.body.classList;
-        if (bodyClasses.contains(newMode)) return;
 
-        bodyClasses.remove('auto-mode', 'dark-mode', 'light-mode');
-        bodyClasses.add(newMode);
+        document.body.classList.remove('auto-mode', 'dark-mode', 'light-mode');
+        document.body.classList.add(newMode);
+
         window.localStorage.setItem('theme', newMode);
         _switchToPreferenceIfAuto();
 
