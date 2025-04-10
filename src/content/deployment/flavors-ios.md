@@ -260,7 +260,7 @@ your iOS app. You can also use these steps to configure a
 macOS project by replacing any reference to `iOS` with
 `macOS`.
 
-### Create a distinct app display name
+### Create distinct app display names {: #create_a_distinct_app_display_name }
 
 If you have multiple schemes, a distinct app name can
 quickly identify which scheme your deployed app is using.
@@ -396,32 +396,50 @@ an iOS project called `flavors_example`.
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 [App Icon Generator]: https://www.appicon.co/
 
-### Add unique build settings
+### Add distinct bundle identifiers
 
-You can use [build settings][] to govern your iOS build
-process from compilation and linking to debugging and
-distribution. One way that you can use build settings
-with Flutter flavors is to assign those build settings
-to Xcode build configurations. For example, you might want
-to assign different API URLs to  `Debug-staging` and
-`Debug-production`. For example: 
+A bundle identifier is a unique identifier for your
+application on Apple's platforms. If you are using multiple
+Xcode schemes as Flutter flavors, you can have Apple treat
+each scheme as a separate application. To do this, you need
+to assign a different bundle identifier to each scheme. 
+This allows you to test new features or bug fixes in one
+version of the app (for example `staging`) without affecting
+another version of the app (for example, `production`).
 
-```plaintext title="debug-staging-settings.xcconfig"
-# Debug-staging build settings
-API_BASE_URL = staging.flavors.com/api
-```
+The following steps show how to set a unique
+bundle identifier for two Xcode schemes called `staging`
+and `production` in an iOS project called `flavors_example`.
 
-```plaintext title="debug-production-settings.xcconfig"
-# Debug-production build settings
-API_BASE_URL = flavors.com/api
-```
+1.  In Xcode, open the **project navigator**
+    (**View > Navigators > Project**).
 
-If you would like to add additional build settings for
-a specific build configuration, see Apple's
-[Adding a build configuration file to your project][].
+1.  In the main window under **TARGETS**, select
+    **Runner**.
 
-[build settings]: https://developer.apple.com/documentation/xcode/build-settings-reference/
-[Adding a build configuration file to your project]: https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+1.  Open the **Build Settings** tab.
+
+1.  Navigate to the **Packaging** section.
+
+1.  Expand the **Product Bundle Identifier** setting to
+    see the different build configurations.
+
+1.  For each scheme's build configuration, set the
+    desired bundle identifier. For example:
+
+    *   Debug-staging, Profile-staging, Release-staging:
+
+        `com.example.flavorsExample.staging`
+
+    *   Debug, Profile, Release, Debug-production,
+        Profile-production, Release-production:
+        
+        `com.example.flavorsExample`
+
+1.  Ensure that these bundle identifiers are included in
+    your App ID and your App ID is [registered in your Apple Developer account][].
+
+[registered in your Apple Developer account]: https://developer.apple.com/help/account/identifiers/register-an-app-id/
 
 ### Bundle assets
 
@@ -436,15 +454,6 @@ more, see the [`assets` field][] in
 
 [`assets` field]: /tools/pubspec#assets
 [Flutter pubspec options]: /tools/pubspec
-
-### Add additional customizations
-
-This document contains a few common Xcode scheme
-configurations, but there are many more that you can apply.
-To learn about them, see
-[Customizing the build schemes for a project][].
-
-[Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
 
 ### Update Podfiles
 
@@ -476,6 +485,42 @@ project by replacing any reference to `iOS` with `macOS`.
       'Release-production' => :release,
       ...
     ```
+
+### Add unique build settings
+
+You can use [build settings][] to govern your iOS build
+process from compilation and linking to debugging and
+distribution. One way that you can use build settings
+with Flutter flavors is to assign those build settings
+to Xcode build configurations. For example, you might want
+to assign different API URLs to  `Debug-staging` and
+`Debug-production`. For example: 
+
+```plaintext title="debug-staging-settings.xcconfig"
+# Debug-staging build settings
+API_BASE_URL = staging.flavors.com/api
+```
+
+```plaintext title="debug-production-settings.xcconfig"
+# Debug-production build settings
+API_BASE_URL = flavors.com/api
+```
+
+If you would like to add additional build settings for
+a specific build configuration, see Apple's
+[Adding a build configuration file to your project][].
+
+[build settings]: https://developer.apple.com/documentation/xcode/build-settings-reference/
+[Adding a build configuration file to your project]: https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+### Add additional customizations
+
+This document contains a few common Xcode scheme
+configurations, but there are many more that you can apply.
+To learn about them, see
+[Customizing the build schemes for a project][].
+
+[Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
 
 ## More information
 
