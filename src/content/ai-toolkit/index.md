@@ -48,24 +48,26 @@ Here's the online demo hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-Or, you can open it in IDX, Google's IDE that runs in the cloud:
+Or, you can open it in [Firebase Studio][],
+Google's full-stack AI workspace and IDE that runs in the cloud:
 
-<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai">
+<a href="https://studio.firebase.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://cdn.idx.dev/btn/try_light_32.svg">
+      srcset="https://cdn.firebasestudio.dev/btn/try_light_32.svg">
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://cdn.idx.dev/btn/try_dark_32.svg">
+      srcset="https://cdn.firebasestudio.dev/btn/try_dark_32.svg">
     <img
       height="32"
-      alt="Try in IDX"
-      src="https://cdn.idx.dev/btn/try_purple_32.svg">
+      alt="Try in Firebase Studio"
+      src="https://cdn.firebasestudio.dev/btn/try_blue_32.svg">
   </picture>
 </a>
 
 [src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
+[Firebase Studio]: https://firebase.studio/
 
 ## Get started
 

@@ -19,6 +19,18 @@
 
     img {
       object-fit: contain;
+
+      &.diagram-wrap {
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      &.small-diagram-wrap {
+        background-color: #f8f9fa;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
     }
 
     > img, > lite-youtube {

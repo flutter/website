@@ -1,7 +1,8 @@
 ---
 title: Layouts in Flutter
 short-title: Layout
-description: Learn how Flutter's layout mechanism works and how to build a layout.
+description: >-
+  Learn how Flutter's layout mechanism works and how to build your app's layout.
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -48,7 +49,7 @@ can see the visual layout.
 Here's a diagram of the widget tree for the previous
 example:
 
-<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center" alt="Node tree">
+<img src='/assets/images/docs/ui/layout/sample-flutter-layout.png' class="text-center diagram-wrap" alt="Node tree">
 
 Most of this should look as you might expect, but you might be wondering
 about the containers (shown in pink). [`Container`][] is a widget class
@@ -102,7 +103,7 @@ horizontally and vertically:
 
 ```dart
 Center(
-  //content here
+  // Content to be centered here.
 )
 ```
 
@@ -154,9 +155,9 @@ A Flutter app is itself a widget, and most widgets have a [`build()`][]
 method. Instantiating and returning a widget in the app's `build()` method
 displays the widget.
 
-<a id="non-material-apps"></a>
-<a id="material-apps"></a>
-<a id="cupertino-apps"></a>
+<a id="non-material-apps" aria-hidden="true"></a>
+<a id="material-apps" aria-hidden="true"></a>
+<a id="cupertino-apps" aria-hidden="true"></a>
 
 {% tabs "app-type-tabs" %}
 
@@ -238,7 +239,8 @@ or you can build your own set of custom widgets.
 
 {% tab "Cupertino apps" %}
 
-To create a `Cupertino` app, use `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
+To create a `Cupertino` app,
+use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
 
 Unlike `Material`, it doesn't provide a default banner or background color.
 You need to set these yourself.
@@ -278,7 +280,7 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Text('Hello World')],
+            children: [Text('Hello World')],
           ),
         ),
       ),
@@ -291,7 +293,7 @@ class MyApp extends StatelessWidget {
 The [Cupertino library][] implements widgets that follow
 [Apple's Human Interface Guidelines for iOS][].
 When designing your UI, you can use
-widgets from the standard [widgets library][], or the Cupertino library.
+widgets from the standard [widgets library][] or the Cupertino library.
 You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
@@ -359,11 +361,11 @@ columns inside of rows or columns.
 This layout is organized as a `Row`. The row contains two children:
 a column on the left, and an image on the right:
 
-<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' alt="Screenshot with callouts showing the row containing two children">
+<img src='/assets/images/docs/ui/layout/pavlova-diagram.png' class="diagram-wrap" alt="Screenshot with callouts showing the row containing two children">
 
 The left column's widget tree nests rows and columns.
 
-<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
+<img src='/assets/images/docs/ui/layout/pavlova-left-column-diagram.png' class="diagram-wrap" alt="Diagram showing a left column broken down to its sub-rows and sub-columns">
 
 You'll implement some of Pavlova's layout code in
 [Nesting rows and columns](#nesting-rows-and-columns).
@@ -371,7 +373,7 @@ You'll implement some of Pavlova's layout code in
 :::note
 `Row` and `Column` are basic primitive widgets for horizontal
 and vertical layouts&mdash;these low-level widgets allow for maximum
-customization. Flutter also offers specialized, higher level widgets
+customization. Flutter also offers specialized, higher-level widgets
 that might be sufficient for your needs. For example,
 instead of `Row` you might prefer [`ListTile`][],
 an easy-to-use widget with properties for leading and trailing icons,
@@ -397,10 +399,10 @@ axis runs horizontally.
 
 <div class="side-by-side">
   <div class="centered-rows">
-    <img src='/assets/images/docs/ui/layout/row-diagram.png' alt="Diagram showing the main axis and cross axis for a row">
+    <img src='/assets/images/docs/ui/layout/row-diagram.png' class="diagram-wrap" alt="Diagram showing the main axis and cross axis for a row">
   </div>
   <div class="centered-rows">
-    <img src='/assets/images/docs/ui/layout/column-diagram.png' alt="Diagram showing the main axis and cross axis for a column">
+    <img src='/assets/images/docs/ui/layout/column-diagram.png' class="diagram-wrap" alt="Diagram showing the main axis and cross axis for a column">
   </div>
 </div>
 
@@ -440,7 +442,7 @@ space evenly between, before, and after each image.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' alt="Row with 3 evenly spaced images">
+  <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="small-diagram-wrap" alt="Row with 3 evenly spaced images">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
@@ -469,7 +471,7 @@ space evenly between, above, and below each image.
 
 </div>
 <div class="text-center">
-  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" alt="Column showing 3 images spaced evenly">
+  <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" class="small-diagram-wrap" alt="Column showing 3 images spaced evenly">
 
   **App source:** [row_column]({{examples}}/layout/row_column)
 </div>
@@ -485,7 +487,7 @@ When a layout is too large to fit a device, a yellow
 and black striped pattern appears along the affected edge.
 Here is an [example][sizing] of a row that is too wide:
 
-<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="text-center" alt="Overly-wide row">
+<img src='/assets/images/docs/ui/layout/layout-too-large.png' class="text-center" style="max-height: 15rem;" alt="Overly-wide row">
 
 Widgets can be sized to fit within a row or column by using the
 [`Expanded`][] widget. To fix the previous example where the
@@ -509,7 +511,7 @@ wrap each image with an `Expanded` widget.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
+  <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="small-diagram-wrap" alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 </div>
@@ -538,7 +540,7 @@ the flex factor of the middle image to 2:
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' alt="Row of 3 images with the middle image twice as wide as the others">
+  <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="small-diagram-wrap" alt="Row of 3 images with the middle image twice as wide as the others">
 
   **App source:** [sizing]({{examples}}/layout/sizing)
 </div>
@@ -573,7 +575,7 @@ uses this property to pack the star icons together.
 
 </div>
 <div>
-  <img src='/assets/images/docs/ui/layout/packed.png' class="simple-border" alt="Row of 5 stars, packed together in the middle of the row">
+  <img src='/assets/images/docs/ui/layout/packed.png' class="small-diagram-wrap" alt="Row of 5 stars, packed together in the middle of the row">
 
   **App source:** [pavlova]({{examples}}/layout/pavlova)
 </div>
@@ -594,7 +596,7 @@ columns of icons and text.
 
 The widget tree for the ratings row:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="text-center" alt="Ratings row widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-rating-row.png' class="text-center diagram-wrap" alt="Ratings row widget tree">
 
 The `ratings` variable creates a row containing a smaller row
 of 5-star icons, and text:
@@ -643,7 +645,7 @@ The icons row, below the ratings row, contains 3 columns;
 each column contains an icon and two lines of text,
 as you can see in its widget tree:
 
-<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="text-center" alt="Icon widget tree">
+<img src='/assets/images/docs/ui/layout/widget-tree-pavlova-icon-row.png' class="text-center diagram-wrap" alt="Icon widget tree">
 
 The `iconList` variable defines the icons row:
 
@@ -767,8 +769,8 @@ from the [widgets library][], and specialized widgets from the
 [Material library][]. Any app can use the widgets library but
 only Material apps can use the Material Components library.
 
-<a id="standard-widgets"></a>
-<a id="materials-widgets"></a>
+<a id="standard-widgets" aria-hidden="true"></a>
+<a id="materials-widgets" aria-hidden="true"></a>
 
 {% tabs "os-archive-tabs" %}
 
@@ -846,7 +848,7 @@ color or image.
 
 </div>
 <div class="text-center">
-  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' alt="Diagram showing: margin, border, padding, and content">
+  <img src='/assets/images/docs/ui/layout/margin-padding-border.png' class="diagram-wrap" alt="Diagram showing: margin, border, padding, and content">
 </div>
 </div>
 
@@ -1143,7 +1145,7 @@ Widget _buildStack() {
 
 A [`Card`][], from the [Material library][],
 contains related nuggets of information and can
-be composed from almost any widget, but is often used with
+be composed of almost any widget, but is often used with
 [`ListTile`][]. `Card` has a single child,
 but its child can be a column, row, list, grid,
 or other widget that supports multiple children.
@@ -1306,14 +1308,14 @@ explain `Stateless` and `Stateful` widgets.
 
 ---
 
-Each episode of the
-[Widget of the Week series]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
-focuses on a widget. Several of them includes layout widgets.
+Each episode of the [Widget of the Week series][] focuses on a widget.
+Several of them include layout widgets.
 
 {% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week' %}
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
+[Widget of the Week series]: {{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG
 [Flutter in Focus]: {{site.yt.watch}}?v=wgTBLj7rMPM&list=PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2
 
 ## Other resources
@@ -1337,7 +1339,7 @@ The following resources might help when writing layout code.
 : Explains how to add images and other assets to your app's package.
 
 [Zero to One with Flutter][]
-: One person's experience writing his first Flutter app.
+: One person's experience writing their first Flutter app.
 
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets

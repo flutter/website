@@ -34,6 +34,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
    in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `TextField.canRequestFocus`][]
@@ -47,6 +48,7 @@ They're sorted by release and listed in alphabetical order:
 * [Underdamped spring formula changed][]
 
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
+[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor

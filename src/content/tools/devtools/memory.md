@@ -393,7 +393,7 @@ deeper analysis in Google Sheets or other tools,
 download the data in CSV format.
 Toggle **Refresh on GC**, to see allocation in real time.
 
-![Screenshot of the profile tab page](/assets/images/docs/tools/devtools/profile-tab-2.png){:width="100%"}
+![Screenshot of the profile tab page](/assets/images/docs/tools/devtools/profile-tab.png){:width="100%"}
 
 ### Diff Snapshots tab
 
