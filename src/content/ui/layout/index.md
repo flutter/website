@@ -159,7 +159,7 @@ displays the widget.
 <a id="material-apps" aria-hidden="true"></a>
 <a id="cupertino-apps" aria-hidden="true"></a>
 
-{% tabs "app-type-tabs" %}
+{% tabs "app-type-tabs", true %}
 
 {% tab "Standard apps" %}
 
@@ -772,41 +772,58 @@ only Material apps can use the Material Components library.
 <a id="standard-widgets" aria-hidden="true"></a>
 <a id="materials-widgets" aria-hidden="true"></a>
 
-{% tabs "os-archive-tabs" %}
+{% tabs "widget-types-tabs", true %}
 
 {% tab "Standard widgets" %}
 
-* [`Container`](#container): Adds padding, margins, borders,
+[`Container`](#container)
+: Adds padding, margins, borders,
   background color, or other decorations to a widget.
-* [`GridView`](#gridview): Lays widgets out as a scrollable grid.
-* [`ListView`](#listview): Lays widgets out as a scrollable list.
-* [`Stack`](#stack): Overlaps a widget on top of another.
+
+[`GridView`](#gridview)
+: Lays widgets out as a scrollable grid.
+
+[`ListView`](#listview)
+: Lays widgets out as a scrollable list.
+
+[`Stack`](#stack)
+: Overlaps a widget on top of another.
 
 {% endtab %}
 
 {% tab "Material widgets" %}
 
-* [`Scaffold`][]: Provides a structured layout framework
+[`Scaffold`][]
+: Provides a structured layout framework
   with slots for common Material Design app elements.
-* [`AppBar`][]: Creates a horizontal bar that's typically
+
+[`AppBar`][]
+: Creates a horizontal bar that's typically
   displayed at the top of a screen.
-* [`Card`](#card): Organizes related info into a box with
+
+[`Card`](#card)
+: Organizes related info into a box with
   rounded corners and a drop shadow.
-* [`ListTile`](#listtile): Organizes up to 3 lines of text,
+
+[`ListTile`](#listtile)
+: Organizes up to 3 lines of text,
   and optional leading and trailing icons, into a row.
 
 {% endtab %}
 
 {% tab "Cupertino widgets" %}
 
-* [`CupertinoPageScaffold`][]: Provides the basic layout
-  structure for an iOS-style page.   
-* [`CupertinoNavigationBar`][]: Creates an iOS-style
-  navigation bar at the top of the screen.   
-* [`CupertinoSegmentedControl`][]: Creates a segmented
-  control for selecting.   
-* [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]:
-  Creates the characteristic iOS bottom tab bar.
+[`CupertinoPageScaffold`][]
+: Provides the basic layout structure for an iOS-style page.
+
+[`CupertinoNavigationBar`][]
+: Creates an iOS-style  navigation bar at the top of the screen.
+
+[`CupertinoSegmentedControl`][]
+: Creates a segmented control for selecting.
+
+[`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]
+: Creates the characteristic iOS bottom tab bar.
 
 {% endtab %}
 
