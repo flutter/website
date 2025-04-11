@@ -59,7 +59,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
   final emulatorProcess = await Process.start('npm', const [
     'exec',
     '--',
-    'firebase',
+    'firebase-tools',
     'emulators:start',
     '--only',
     'hosting',
