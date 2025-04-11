@@ -19,7 +19,7 @@
     "build-site-for-production": "PRODUCTION=true OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "3.0.1-alpha.5",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^22.14.0",
