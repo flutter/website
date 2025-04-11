@@ -42,6 +42,7 @@ body {
   --site-base-fgColor-alt: #6a6f71;
 
   --site-raised-bgColor: #e9ecef;
+  --site-raised-bgColor-translucent: #{color.change(#e9ecef, $alpha: 0.2)};
 
   --site-primary-color: #{$base_primary_color};
   --site-accent-color: #833ef2;
@@ -56,8 +57,8 @@ body {
   --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
   --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
 
-  --site-inset-bgColor: #F8F9FA;
-  --site-inset-bgColor-translucent: rgba(248, 249, 250, 0.8);
+  --site-inset-bgColor: #F6F7F8;
+  --site-inset-bgColor-translucent: rgba(237, 240, 242, 0.8);
   --site-inset-fgColor: var(--site-base-fgColor);
   --site-inset-borderColor: #DADCE0;
 
@@ -109,6 +110,7 @@ body {
     --site-base-fgColor-alt: #a8acad;
 
     --site-raised-bgColor: #1c1e27;
+    --site-raised-bgColor-translucent: #{color.change(#1c1e27, $alpha: 0.4)};
 
     --site-primary-color: #{$base_primary_color};
     --site-accent-color: #b07fff;

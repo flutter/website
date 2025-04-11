@@ -35,9 +35,9 @@ function _setupTabs(eleventyConfig: UserConfig) {
   let currentTabWrapperId = 0;
   let currentTabPaneId = 0;
 
-  eleventyConfig.addPairedShortcode('tabs', function (content: string, saveKey: string) {
+  eleventyConfig.addPairedShortcode('tabs', function (content: string, saveKey: string, wrapped: boolean = false) {
     const tabWrapperId = currentTabWrapperId++;
-    let tabMarkup = `<div id="${tabWrapperId}" class="tabs-wrapper" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav-tabs" role="tablist">`;
+    let tabMarkup = `<div id="${tabWrapperId}" class="tabs-wrapper${wrapped ? " wrapped" : ""}" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav-tabs" role="tablist">`;
 
     // Only select child tab panes that don't already have a parent wrapper.
     const tabPanes = selectAll('.tab-pane[data-tab-wrapper-id="undefined"]', fromHtml(content));

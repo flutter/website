@@ -15,7 +15,11 @@
     min-width: 8rem;
     max-width: 960px;
     min-height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
-    padding: 2rem;
+    padding: 1.5rem;
+
+    @media (min-width: 576px) {
+      padding: 2rem;
+    }
 
     img {
       object-fit: contain;

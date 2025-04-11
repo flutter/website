@@ -8,6 +8,9 @@
   }
 }
 
+$wrapper-padding: 0.375rem;
+$wrapper-radius: 0.125rem;
+
 ul.nav-tabs {
   list-style: none;
 
@@ -15,8 +18,8 @@ ul.nav-tabs {
   flex-direction: row;
   align-items: center;
 
-  padding: 0.375rem;
-  border-radius: 0.125rem;
+  padding: $wrapper-padding;
+  border-radius: $wrapper-radius;
   background-color: var(--site-raised-bgColor);
   gap: 0.5rem;
   overflow-x: scroll;
@@ -54,6 +57,30 @@ ul.nav-tabs {
       a {
         outline: none;
       }
+    }
+  }
+}
+
+.tabs-wrapper.wrapped {
+  .nav-tabs {
+    margin-bottom: 0;
+  }
+
+  .tab-content {
+    padding: 1rem 1rem 0;
+    background-color: var(--site-raised-bgColor-translucent);
+
+    border: $wrapper-padding solid var(--site-raised-bgColor);
+    border-top: none;
+    border-bottom-left-radius: $wrapper-radius;
+    border-bottom-right-radius: $wrapper-radius;
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    .tab-pane > :first-child {
+      margin-block-start: 0;
     }
   }
 }

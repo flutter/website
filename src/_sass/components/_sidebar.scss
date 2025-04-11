@@ -32,6 +32,7 @@
     border-right: 0.1rem solid var(--site-outline-variant);
     padding: 0.75rem 0.75rem 2.25rem;
     position: sticky;
+    height: calc(100vh - var(--site-header-height));
     top: var(--site-header-height);
     overscroll-behavior: auto;
     width: 16rem;
