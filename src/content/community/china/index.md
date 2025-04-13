@@ -5,7 +5,7 @@ toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
-{% assign flutter-sdk = 'flutter_opsys_v3.13.0-stable.' %}
+{% assign flutter-sdk = 'flutter_opsys_3.13.0-stable.' %}
 {% capture sdk-path -%}flutter_infra_release/releases/stable/opsys/{{flutter-sdk}}{%- endcapture %}
 
 {% render docs/china-notice-cn.md %}
