@@ -121,7 +121,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `22.12` or later)_:
+and already the latest stable version _(currently `22.14` or later)_:
 
 ```console
 node --version
@@ -336,14 +336,14 @@ you can build a full version and upload it to Firebase.
   - Head back to your local terminal and verify that you're logged in.
 
     ```console
-    firebase login
+    npm exec -- firebase-tools login
     ```
 
   - Ensure that your project exists and activate that project:
 
     ```console
-    firebase projects:list
-    firebase use <your-project>
+    npm exec -- firebase-tools projects:list
+    npm exec -- firebase-tools use <your-project>
     ```
 
 2. From the root directory of the repository, build the site:
@@ -358,7 +358,7 @@ you can build a full version and upload it to Firebase.
 3. Deploy to your activated Firebase project's default hosting site:
 
    ```console
-   firebase deploy --only hosting
+   npm exec -- firebase-tools deploy --only hosting
    ```
 
 4. Navigate to your PR on GitHub and include the link of the staged version.

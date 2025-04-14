@@ -55,11 +55,27 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     return 1;
   }
 
-  print('Starting the Firebase hosting emulator asynchronously...');
+  final toolVersionOutput = await Process.run('npm', const [
+    'exec',
+    '--',
+    'firebase-tools',
+    '--version',
+  ]);
+
+  final firebaseToolsVersion = (toolVersionOutput.stdout as String?)?.trim();
+  if (firebaseToolsVersion == null || firebaseToolsVersion.isEmpty) {
+    stderr.writeln('Error: Could not determine firebase-tools version!');
+    return 1;
+  }
+
+  print(
+    'Using firebase-tools $firebaseToolsVersion to start the '
+    'Firebase hosting emulator asynchronously...',
+  );
   final emulatorProcess = await Process.start('npm', const [
     'exec',
     '--',
-    'firebase',
+    'firebase-tools',
     'emulators:start',
     '--only',
     'hosting',
