@@ -225,6 +225,9 @@ use an iOS simulator to test your extension in debug mode.
    [Adding a Flutter Screen][]. For example, you can display a
    specific route in your Flutter app within a share extension.
 
+1. Cancel the request in `viewDidDisappear`, which will be called 
+when the share extension is dismissed with a gesture. 
+
     ```swift
     import UIKit
     import Flutter
@@ -241,8 +244,27 @@ use an iOS simulator to test your extension in debug mode.
             view.addSubview(flutterViewController.view)
             flutterViewController.view.frame = view.bounds
         }
+
+        override func viewDidDisappear(_ animated: Bool) {
+            super.viewDidDisappear(animated)
+            self.extensionContext?.cancelRequest(
+                withError: NSError(domain: Bundle.main.bundleIdentifier!, code: 0))
+        }
     }
     ```
+:::note
+1. If you _don't_ cancel the request in `viewDidDisappear`, 
+the `ShareViewController` won't be deallocated after being dismissed. 
+
+2. You must pass in the bundle identifier as the error domain, otherwise it crashes with an `EXC_BAD_INSTRUCTION` error. 
+:::
+
+## Advanced scrolling behavior
+
+By default, flutter view does not handle scroll gestures in a share extension. 
+To support a scrollable list in the share extension, follow [this instruction][]. 
+
+[this instruction]: {{site.github}}/flutter/website/issues/164670#issuecomment-2740702986
 
 ## Test extensions
 
