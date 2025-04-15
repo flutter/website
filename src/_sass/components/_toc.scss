@@ -1,14 +1,12 @@
-@use '../base/variables' as *;
-
 #toc-top {
-  font-family: $site-font-family-ui;
+  font-family: var(--site-ui-fontFamily);
 
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
-  height: $site-inline-toc-height;
+  height: var(--site-subheader-height);
 
   @media (min-width: 240px) {
     display: flex;
@@ -19,14 +17,14 @@
   }
 
   position: sticky;
-  top: $site-header-height + 0.1rem;
+  top: var(--site-header-height);
 
-  background: $site-color-white;
-  border-bottom: 0.1rem solid $sidenav-divider-color;
+  background-color: var(--site-base-bgColor);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
   box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
 
   font-size: 0.875rem;
-  z-index: $site-z-subnav;
+  z-index: var(--site-z-subheader);
 
   > button.dropdown-button {
     display: flex;
@@ -46,7 +44,7 @@
 
     .material-symbols {
       user-select: none;
-      color: $site-color-nav-links;
+      color: var(--site-base-fgColor-alt);
       font-size: 20px;
     }
   }
@@ -71,7 +69,7 @@
   }
 
   #current-header {
-    color: $site-color-nav-links;
+    color: var(--site-base-fgColor-alt);
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,12 +78,12 @@
   .dropdown-content {
     position: absolute;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-    border-bottom: 0.1rem solid $sidenav-divider-color;
+    border-bottom: 0.1rem solid var(--site-outline-variant);
     border-radius: 0;
 
-    top: $site-inline-toc-height;
+    top: var(--site-subheader-height);
     left: 0;
-    max-height: calc(75vh - $site-header-height);
+    max-height: calc(75vh - var(--site-header-height));
     min-width: 100%;
     max-width: 100%;
 
@@ -100,7 +98,7 @@
       border-radius: 0.4rem;
       box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
 
-      top: $site-inline-toc-height + .75rem;
+      top: calc(var(--site-subheader-height) + .75rem);
       left: 0.75rem;
 
       min-width: 18rem;
@@ -114,7 +112,7 @@
       text-decoration: none;
       display: flex;
       align-items: center;
-      color: $site-color-nav-links;
+      color: var(--site-base-fgColor-alt);
       font-weight: 500;
 
       .material-symbols {
@@ -127,11 +125,11 @@
       }
 
       &:hover {
-        color: $site-color-primary;
+        color: var(--site-link-fgColor);
       }
 
       &:active {
-        color: color-mix(in srgb, $site-color-primary, #000 16%);
+        color: var(--site-link-fgColor-active);
       }
     }
 

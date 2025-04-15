@@ -114,7 +114,7 @@ standard  "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The Layout Explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.webp){:width="100%"}
 
 Clicking a widget in the layout explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
@@ -142,7 +142,7 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -155,7 +155,7 @@ Supported values:
 
 ###### crossAxisAlignment
 
-![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The Layout Explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -166,7 +166,7 @@ Supported values:
 
 ###### FlexParentData.flex
 
-![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The Layout Explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.webp){:width="100%"}
 
 Layout Explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
@@ -174,7 +174,7 @@ factor of a flex widget's child can be any int.
 
 ###### Flexible.fit
 
-![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The Layout Explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.webp){:width="100%"}
 
 Layout Explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
@@ -223,8 +223,8 @@ The following links provide more info.
 
 The following screen recordings show before and after slowing an animation.
 
-![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.gif)
-![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.gif)
+![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.webp)
+![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.webp)
 
 ### Show guidelines
 
@@ -350,7 +350,7 @@ class EverythingRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.gif)
+![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.webp)
 
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
@@ -372,7 +372,7 @@ class AreaRepaintsPage extends StatelessWidget {
 }
 ```
 
-![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.gif)
+![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.webp)
 
 `RepaintBoundary` widgets have tradeoffs. They can help with performance,
 but they also have an overhead of creating a new canvas,

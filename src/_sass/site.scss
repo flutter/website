@@ -2,6 +2,10 @@
 // the reset is applied before any other styles are applied.
 @use 'base/reset';
 
+// Must be imported second to ensure that our defined CSS variables are defined
+// before any other styles are applied and they are used.
+@use 'base/root';
+
 // Base site styles.
 @use 'base/base';
 @use 'base/utils';
@@ -26,6 +30,7 @@
 @use 'components/side-menu';
 @use 'components/site-switcher';
 @use 'components/tabs';
+@use 'components/theming';
 @use 'components/toc';
 @use 'components/trailing';
 

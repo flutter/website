@@ -1,5 +1,3 @@
-@use '../base/variables' as *;
-
 .site-content {
   display: flex;
   justify-content: center;
@@ -7,7 +5,7 @@
   min-width: 0;
   width: 100%;
 
-  min-height: calc(100vh - $site-header-height);
+  min-height: calc(100vh - var(--site-header-height));
 
   @media (min-width: 1200px) {
     flex-direction: row;
@@ -15,15 +13,31 @@
 
   article {
     min-width: 8rem;
-    max-width: $site-content-max-width;
-    min-height: calc(100vh - $site-header-height - $site-inline-toc-height);
-    padding: 2rem;
+    max-width: 960px;
+    min-height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
+    padding: 1.5rem;
+
+    @media (min-width: 576px) {
+      padding: 2rem;
+    }
 
     img {
       object-fit: contain;
+
+      &.diagram-wrap {
+        background-color: var(--site-diagram-wrap-bgColor);
+        padding: 1rem;
+        border-radius: 1rem;
+      }
+
+      &.small-diagram-wrap {
+        background-color: var(--site-diagram-wrap-bgColor);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
     }
 
-    > img {
+    > img, > lite-youtube {
       margin-bottom: 1rem;
     }
   }
@@ -53,7 +67,7 @@
     text-wrap: balance;
     scroll-margin-top: 7rem;
     line-height: 1.2;
-    font-family: $site-font-family-ui;
+    font-family: var(--site-ui-fontFamily);
     font-weight: 400;
 
     @media (min-width: 1200px) {
@@ -105,12 +119,12 @@
       line-height: 1;
       transition: all 0.15s ease-in-out;
       overflow: hidden;
-      color: #4a4a4a;
+      color: var(--site-base-fgColor-alt);
       opacity: 0;
       text-decoration: none;
 
       &:hover {
-        color: $site-color-primary;
+        color: var(--site-link-fgColor);
       }
 
       &:focus {
@@ -118,7 +132,7 @@
       }
 
       &:active {
-        color: $flutter-color-dark-blue;
+        color: var(--site-link-fgColor-active);
       }
     }
 
@@ -131,7 +145,8 @@
 
   // Embedded DartPad
   iframe {
-    border: 1px solid #ccc;
+    border: 2px solid var(--site-outline-variant);
+    background-color: var(--site-inset-bgColor);
     max-width: 100%;
   }
 }
@@ -148,7 +163,7 @@ nav.breadcrumbs {
     align-items: center;
     list-style: none;
 
-    font-family: $site-font-family-ui;
+    font-family: var(--site-ui-fontFamily);
 
     display: flex;
     flex-wrap: wrap;
@@ -166,7 +181,7 @@ nav.breadcrumbs {
       }
 
       &.active a {
-        color: $site-color-nav-links;
+        color: var(--site-base-fgColor-alt);
         cursor: default;
         text-decoration: none;
       }
@@ -178,7 +193,7 @@ nav.breadcrumbs {
 
     .child-icon {
       user-select: none;
-      color: $site-color-body-light;
+      color: var(--site-base-fgColor-lighter);
     }
   }
 }

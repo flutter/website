@@ -1,5 +1,4 @@
 @use '../base/mixins';
-@use '../base/variables' as *;
 
 .tab-pane {
   display: none;
@@ -9,6 +8,9 @@
   }
 }
 
+$wrapper-padding: 0.375rem;
+$wrapper-radius: 0.125rem;
+
 ul.nav-tabs {
   list-style: none;
 
@@ -16,9 +18,9 @@ ul.nav-tabs {
   flex-direction: row;
   align-items: center;
 
-  padding: 0.375rem;
-  border-radius: 0.125rem;
-  background-color: $site-color-codeblock-bg;
+  padding: $wrapper-padding;
+  border-radius: $wrapper-radius;
+  background-color: var(--site-raised-bgColor);
   gap: 0.5rem;
   overflow-x: scroll;
   scrollbar-width: thin;
@@ -28,7 +30,7 @@ ul.nav-tabs {
   }
 
   a {
-    font-family: $site-font-family-ui;
+    font-family: var(--site-ui-fontFamily);
     text-decoration: none;
     color: inherit;
     display: block;
@@ -36,14 +38,15 @@ ul.nav-tabs {
     border-radius: 0.125rem;
     white-space: nowrap;
     user-select: none;
+    outline-offset: 1px;
 
     &:hover {
       @include mixins.interaction-style(4%);
     }
 
     &.active {
-      background-color: $site-color-primary;
-      color: $site-color-white;
+      background-color: var(--site-filledButton-bgColor);
+      color: var(--site-filledButton-fgColor);
     }
 
     &:active {
@@ -51,11 +54,33 @@ ul.nav-tabs {
     }
 
     &:focus-visible {
-      outline: 2px solid var(--focus-outline-color);
-
       a {
         outline: none;
       }
+    }
+  }
+}
+
+.tabs-wrapper.wrapped {
+  .nav-tabs {
+    margin-bottom: 0;
+  }
+
+  .tab-content {
+    padding: 1rem 1rem 0;
+    background-color: var(--site-raised-bgColor-translucent);
+
+    border: $wrapper-padding solid var(--site-raised-bgColor);
+    border-top: none;
+    border-bottom-left-radius: $wrapper-radius;
+    border-bottom-right-radius: $wrapper-radius;
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    .tab-pane > :first-child {
+      margin-block-start: 0;
     }
   }
 }

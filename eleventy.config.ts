@@ -8,7 +8,7 @@ import { markdown } from './src/_11ty/plugins/markdown.js';
 import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
 import { UserConfig } from '@11ty/eleventy';
 
-import minifier from 'html-minifier-terser';
+import swcHtml from '@swc/html';
 import yaml from 'js-yaml';
 import { EleventyRenderPlugin } from '@11ty/eleventy';
 
@@ -109,12 +109,17 @@ export default function (eleventyConfig: UserConfig) {
       if (this.page.outputPath && this.page.outputPath.endsWith('.html')) {
         // Minify the page's content if it's an HTML file.
         // Other options can be enabled, but each should be tested.
-        return await minifier.minify(content, {
-          useShortDoctype: true,
+
+        const minifiedHtml = await swcHtml.minify(content, {
+          scriptingEnabled: true,
           removeComments: true,
-          collapseWhitespace: true,
-          minifyJS: true,
+          collapseWhitespaces: 'smart',
+          removeRedundantAttributes: 'smart',
+          minifyCss: true,
+          minifyConditionalComments: true,
         });
+
+        return minifiedHtml.code;
       }
 
       return content;

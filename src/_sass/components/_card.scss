@@ -1,5 +1,4 @@
 @use '../base/mixins';
-@use '../base/variables' as *;
 
 .card-grid {
   display: grid;
@@ -37,15 +36,11 @@
     }
 
     &.filled-card {
-      background-color: var(--card-container-color, rgb(242, 245, 255));
+      background-color: var(--site-inset-bgColor-translucent);
     }
 
     &.outlined-card {
-      border: 1px solid var(--card-border-color, rgba(0, 0, 0, .125));
-    }
-
-    &.card-highlight {
-      border-color: rgba(0, 0, 0, .375);
+      border: 1px solid var(--card-border-color, var(--site-card-borderColor));
     }
 
     &.wrapped-card {
@@ -62,21 +57,21 @@
     .card-header {
       display: flex;
       flex-direction: column;
-      color: $site-color-body;
+      color: var(--site-base-fgColor);
 
       .card-title {
         font-size: 1.25rem;
         font-weight: 500;
         margin: 0;
         overflow: hidden;
-        font-family: $site-font-family-ui;
+        font-family: var(--site-ui-fontFamily);
       }
 
       .card-subtitle {
         font-size: 0.875rem;
         font-weight: 400;
         margin-top: -0.25rem;
-        color: $site-color-primary;
+        color: var(--site-primary-color);
       }
 
       &.text-center {
@@ -89,7 +84,7 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
-      color: var(--card-text-color, $site-color-body);
+      color: var(--card-text-color, var(--site-base-fgColor));
 
       p {
         margin: 0;
@@ -102,7 +97,7 @@
         code {
           font-size: 0.95em;
           background-color: rgba(0, 0, 0, .05);
-          color: var(--card-text-color, $site-color-body);
+          color: var(--card-text-color, var(--site-base-fgColor));
           border-radius: .25rem;
           padding: .1rem .25rem;
           text-wrap: nowrap;
@@ -126,11 +121,12 @@
 
         span.material-symbols {
           font-size: 3.5rem;
+          color: var(--site-primary-color);
         }
       }
 
       .card-title {
-        color: $site-color-body-light;
+        color: var(--site-base-fgColor-lighter);
         font-weight: 400;
       }
     }
@@ -140,7 +136,7 @@
     text-decoration: none;
 
     .card-title {
-      color: $site-color-primary;
+      color: var(--site-link-fgColor);
     }
 
     &:hover {
@@ -182,7 +178,7 @@
   z-index: -1;
   background-size: 0;
   opacity: .999;
-  background-color: $site-color-white;
+  background-color: var(--site-outline-variant);
   margin: -1rem -1rem 0;
 
   img {

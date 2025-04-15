@@ -62,7 +62,7 @@ Following the Optimistic State idea,
 the button should instantly change to “Subscribed” once it is tapped, 
 and only change back to “Subscribe” if the request failed.
 
-<img src='/assets/images/docs/cookbook/architecture/optimistic-state.gif'
+<img src='/assets/images/docs/cookbook/architecture/optimistic-state.webp'
 class="site-mobile-screenshot" alt="Animation of application with subscribe button" >
 
 ## Feature architecture

@@ -8,12 +8,12 @@ of widgets that implement Apple's iOS design language
 for Flutter apps. The widgets have a similar look
 and feel to iOS, including rounded corners, gradients,
 and minimalistic design.
-They also include iOS interactions and animations. 
+They also include iOS interactions and animations.
 
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
 
-{% ytEmbed '3PdUaidHc-E?si=xDp3bU50oSuljzye', 'Flutter\'s Cupertino Package' %}
+{% ytEmbed '3PdUaidHc-E', 'Flutter\'s Cupertino Package' %}
 
 ## More information {:.no_toc}
 

@@ -15,19 +15,11 @@ built with [Eleventy][] and hosted on [Firebase][].
 [Flutter]: https://docs.flutter.dev/
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
 
-<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
-    <img
-      height="32"
-      alt="Open in IDX"
-      src="https://cdn.idx.dev/btn/open_purple_32.svg">
-  </picture>
+<a href="https://studio.firebase.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
+  <img
+    height="32"
+    alt="Open in Firebase Studio"
+    src="https://cdn.firebasestudio.dev/btn/open_blue_32.svg">
 </a>
 
 ## Issues, bugs, and requests
@@ -129,7 +121,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `22.12` or later)_:
+and already the latest stable version _(currently `22.14` or later)_:
 
 ```console
 node --version
@@ -344,14 +336,14 @@ you can build a full version and upload it to Firebase.
   - Head back to your local terminal and verify that you're logged in.
 
     ```console
-    firebase login
+    npm exec -- firebase-tools login
     ```
 
   - Ensure that your project exists and activate that project:
 
     ```console
-    firebase projects:list
-    firebase use <your-project>
+    npm exec -- firebase-tools projects:list
+    npm exec -- firebase-tools use <your-project>
     ```
 
 2. From the root directory of the repository, build the site:
@@ -366,7 +358,7 @@ you can build a full version and upload it to Firebase.
 3. Deploy to your activated Firebase project's default hosting site:
 
    ```console
-   firebase deploy --only hosting
+   npm exec -- firebase-tools deploy --only hosting
    ```
 
 4. Navigate to your PR on GitHub and include the link of the staged version.

@@ -1,10 +1,10 @@
-@use '../base/variables' as *;
 @use '../base/mixins';
 
 #sidenav {
   margin: 0;
   min-width: 16rem;
-  height: calc(100vh - $site-header-height);
+  height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));
+  top: calc(var(--site-header-height) + var(--site-subheader-height));
   padding: 1.15rem 1rem 4rem;
   scrollbar-width: thin;
   position: fixed;
@@ -12,8 +12,8 @@
   overflow-y: auto;
   display: none;
   width: 100%;
-  z-index: $site-z-sidenav;
-  background-color: $site-color-white;
+  z-index: var(--site-z-side);
+  background-color: var(--site-base-bgColor);
 
   @at-root body.open_menu {
     overflow-y: hidden;
@@ -29,10 +29,11 @@
 
   @media (min-width: 1024px) {
     display: block;
-    border-right: 0.1rem solid $sidenav-divider-color;
+    border-right: 0.1rem solid var(--site-outline-variant);
     padding: 0.75rem 0.75rem 2.25rem;
     position: sticky;
-    top: calc($site-header-height);
+    height: calc(100vh - var(--site-header-height));
+    top: var(--site-header-height);
     overscroll-behavior: auto;
     width: 16rem;
     background: none;
@@ -40,8 +41,9 @@
 
   .nav-header {
     font-weight: bolder;
+    font-size: 1rem;
     padding: 0.25rem 0.4rem 0;
-    color: $site-color-body-light;
+    color: var(--site-base-fgColor-lighter);
   }
 
   ul {
@@ -52,7 +54,7 @@
   }
 
   .sidenav-divider {
-    background-color: $sidenav-divider-color;
+    background-color: var(--site-outline-variant);
     border-radius: 0.5rem;
     width: 100%;
     height: 0.125rem;
@@ -91,13 +93,9 @@
 
       cursor: pointer;
 
-      color: $site-color-body;
-      font-family: $site-font-family-ui;
+      color: var(--site-base-fgColor);
+      font-family: var(--site-ui-fontFamily);
       text-decoration: none;
-
-      &:focus-visible {
-        outline: 2px solid var(--focus-outline-color);
-      }
 
       > div {
         display: inline-block;
@@ -105,7 +103,7 @@
         .material-symbols {
           font-size: 0.825rem;
           margin-left: 0.125rem;
-          color: $site-color-nav-links;
+          color: var(--site-base-fgColor-alt);
         }
       }
 
@@ -114,7 +112,7 @@
       }
 
       .expander {
-        color: $site-color-body-light;
+        color: var(--site-base-fgColor-lighter);
         transition: transform .3s ease-in-out;
       }
 
@@ -141,16 +139,17 @@
       }
 
       &.active {
-        background-color: rgb(245, 245, 246);
+        //background-color: rgb(245, 245, 246);
+        background-color: rgb(var(--site-interaction-base-values) / 4%);
 
         &:not(.collapsible) {
-          color: $site-color-primary;
+          color: var(--site-link-fgColor);
         }
       }
     }
   }
 
-  > nav ul {
+  nav > ul {
     // Only apply styles to top-level entries.
     > li {
       font-size: 1rem;
@@ -158,6 +157,10 @@
 
     ul {
       margin-left: 0.675rem;
+    }
+
+    > .nav-header {
+      font-size: 1.075rem;
     }
   }
 }

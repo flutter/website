@@ -20,7 +20,7 @@ multiple visual states, based on the status of an app download.
 
 The following animation shows the app's behavior:
 
-![The download button cycles through its stages](/assets/images/docs/cookbook/effects/DownloadButton.gif){:.site-mobile-screenshot}
+![The download button cycles through its stages](/assets/images/docs/cookbook/effects/DownloadButton.webp){:.site-mobile-screenshot}
 
 ## Define a new stateless widget
 

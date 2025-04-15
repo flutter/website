@@ -349,9 +349,11 @@ final String verificationCode;
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time,
-you'll get errors similar to what is shown in the image below.
+you'll get errors similar to the following:
 
-![IDE warning when the generated code for a model class does not exist yet.](/assets/images/docs/json/ide_warning.png)
+```plaintext
+Target of URI hasn't been generated: 'user.g.dart'.
+```
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code

@@ -102,7 +102,7 @@ Use [`prototypeItem`][] or [`itemExtent`][] if your list has items of fixed size
 Use [`itemExtentBuilder`][] if your list has items of different sizes.
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/long-lists.webp" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html

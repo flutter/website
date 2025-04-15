@@ -1,25 +1,24 @@
-@use '../base/variables' as *;
-
 .rrec-pill {
   border-radius: 8px;
-  margin: $site-spacer / 2;
-  padding: $site-spacer / 2;
+  margin: 0.5rem;
+  padding: 0.5rem;
   text-align: center;
 
   // Grey by default
-  background: $site-color-light-grey;
-  color: $site-color-body-light;
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
 
   // Green
   &.success {
-    background: darken($alert-success-bg, 10%);
-    color: $alert-success-fg;
+    background: darken(#f1fbf9, 10%);
+    color: #155723;
   }
 
   // Blue
   &.info {
-    background: darken($alert-info-bg, 10%);
-    color: darken($alert-info-bg, 60%);
+    $info-bg: #e7f8ff;
+    background: darken($info-bg, 10%);
+    color: darken($info-bg, 60%);
   }
 }
 

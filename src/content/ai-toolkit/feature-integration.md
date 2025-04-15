@@ -19,7 +19,9 @@ additional functionality:
 * **Welcome messages**: Display an initial greeting to users.
 * **Suggested prompts**: Offer users predefined prompts to guide interactions.
 * **System instructions**: Provide the LLM with specific input to influence its responses.
-* **Managing history**: Every LLM provider allows for managing chat history,
+* **Disable attachments and audio input**: Remove optional parts of the chat UI.
+* **Manage cancel or error behavior**: Change the user cancellation or LLM error behavior.
+* **Manage history**: Every LLM provider allows for managing chat history,
   which is useful for clearing it,
   changing it dynamically and storing it between sessions.
 * **Chat serialization/deserialization**: Store and retrieve conversations
@@ -58,7 +60,7 @@ class ChatPage extends StatelessWidget {
          welcomeMessage: 'Hello and welcome to the Flutter AI Toolkit!',
          provider: GeminiProvider(
            model: GenerativeModel(
-             model: 'gemini-1.5-flash',
+             model: 'gemini-2.0-flash',
              apiKey: geminiApiKey,
            ),
          ),
@@ -99,7 +101,7 @@ class ChatPage extends StatelessWidget {
          ],
          provider: GeminiProvider(
            model: GenerativeModel(
-             model: 'gemini-1.5-flash',
+             model: 'gemini-2.0-flash',
              apiKey: geminiApiKey,
            ),
          ),
@@ -130,7 +132,7 @@ class _HomePageState extends State<HomePage> {
       history: history,
         ...,
         model: GenerativeModel(
-          model: 'gemini-1.5-flash',
+          model: 'gemini-2.0-flash',
           apiKey: geminiApiKey,
           ...,
           systemInstruction: Content.system('''
@@ -174,7 +176,73 @@ class _HomePageState extends State<HomePage> {
 }
 ```
 
-## Managing history
+## Disable attachments and audio input
+
+If you'd like to disable attachments (the **+** button) or audio input (the mic button),
+you can do so with the `enableAttachments` and `enableVoiceNotes` parameters to
+the `LlmChatView` constructor:
+
+```dart
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // ...
+
+    return Scaffold(
+      appBar: AppBar(title: const Text('Restricted Chat')),
+      body: LlmChatView(
+        // ...
+        enableAttachments: false,
+        enableVoiceNotes: false,
+      ),
+    );
+  }
+}
+```
+
+Both of these flags default to `true`.
+
+## Manage cancel or error behavior
+
+By default, when the user cancels an LLM request, the LLM's response will be
+appended with the string "CANCEL" and a message will pop up that the user has
+canceled the request. Likewise, in the event of an LLM error, like a dropped
+network connection, the LLM's response will be appended with the
+string "ERROR" and an alert dialog will pop up with the details of the error.
+
+You can override the cancel and error behavior with the `cancelMessage`,
+`errorMessage`, `onCancelCallback` and `onErrorCallback` parameters of the
+`LlmChatView`. For example, the following code replaces the default cancellation
+handling behavior:
+
+```dart
+class ChatPage extends StatelessWidget {
+  // ...
+
+  void _onCancel(BuildContext context) {
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Chat cancelled')));
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text(App.title)),
+    body: LlmChatView(
+      // ...
+      onCancelCallback: _onCancel,
+      cancelMessage: 'Request cancelled',
+    ),
+  );
+}
+```
+
+You can override any or all of these parameters and the `LlmChatView` will use
+its defaults for anything you don't override.
+
+## Manage history
 
 The [standard interface that defines all LLM providers][providerIF]
 that can plug into the chat view includes the ability to

@@ -2,7 +2,7 @@
 {% capture pageSource -%} {{repo}}/tree/{{site.branch}}/{{page.inputPath | replace: './', ''}} {%- endcapture -%}
 {% assign url = site.url | append: page.url -%}
 
-<div id="trailing-content">
+<div id="trailing-content" data-nosnippet="true">
   <div id="page-feedback">
     <div class="feedback initial-feedback">
       <div>Was this page's content helpful?</div>

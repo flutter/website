@@ -260,7 +260,7 @@ your iOS app. You can also use these steps to configure a
 macOS project by replacing any reference to `iOS` with
 `macOS`.
 
-### Create a distinct app display name
+### Create distinct app display names {: #create_a_distinct_app_display_name }
 
 If you have multiple schemes, a distinct app name can
 quickly identify which scheme your deployed app is using.
@@ -389,12 +389,102 @@ an iOS project called `flavors_example`.
       * **Release-production**: `AppIcon-production`
 
 1.  Launch the app for each scheme (`staging`, `production`)
-    and check to make sure that the app display name has
+    and check to make sure that the app icon has
     changed for each. To launch a scheme, see the steps in
     [Launch an Xcode scheme][].
 
 [Launch an Xcode scheme]: #launch-an-xcode-scheme
 [App Icon Generator]: https://www.appicon.co/
+
+### Add distinct bundle identifiers
+
+A bundle identifier is a unique identifier for your
+application on Apple's platforms. If you are using multiple
+Xcode schemes as Flutter flavors, you can have Apple treat
+each scheme as a separate application. To do this, you need
+to assign a different bundle identifier to each scheme. 
+This allows you to test new features or bug fixes in one
+version of the app (for example `staging`) without affecting
+another version of the app (for example, `production`).
+
+The following steps show how to set a unique
+bundle identifier for two Xcode schemes called `staging`
+and `production` in an iOS project called `flavors_example`.
+
+1.  In Xcode, open the **project navigator**
+    (**View > Navigators > Project**).
+
+1.  In the main window under **TARGETS**, select
+    **Runner**.
+
+1.  Open the **Build Settings** tab.
+
+1.  Navigate to the **Packaging** section.
+
+1.  Expand the **Product Bundle Identifier** setting to
+    see the different build configurations.
+
+1.  For each scheme's build configuration, set the
+    desired bundle identifier. For example:
+
+    *   Debug-staging, Profile-staging, Release-staging:
+
+        `com.example.flavorsExample.staging`
+
+    *   Debug, Profile, Release, Debug-production,
+        Profile-production, Release-production:
+        
+        `com.example.flavorsExample`
+
+1.  Ensure that these bundle identifiers are included in
+    your App ID and your App ID is [registered in your Apple Developer account][].
+
+[registered in your Apple Developer account]: https://developer.apple.com/help/account/identifiers/register-an-app-id/
+
+### Bundle assets
+
+If you have assets that are only used in a specific flavor
+in your app, you can configure them to only be bundled into
+your app when launching that flavor. This prevents your
+app bundle size from being bloated by unused assets. To
+bundle assets for each flavor, add the `flavors` subfield
+to the `assets` field in your project's pubspec. To learn
+more, see the [`assets` field][] in
+[Flutter pubspec options][].
+
+[`assets` field]: /tools/pubspec#assets
+[Flutter pubspec options]: /tools/pubspec
+
+### Update Podfiles
+
+If you are creating new Xcode schemes for a Flutter iOS
+project and you have an iOS Podfile in an existing
+Flutter project, you must update the Flutter iOS Podfile to
+match the changes you made in Xcode.
+
+The following steps show how to update your iOS Podfile to
+include two new Xcode schemes called `staging` and
+`production` in a Flutter project called `flavors_example`.
+You can also use these steps to update a macOS
+project by replacing any reference to `iOS` with `macOS`.
+
+1. In your IDE, open the `ios/Podfile` file.
+1. Make the following updates and save your changes.
+
+    ```ruby title="flavors_example/ios/Podfile"
+    project 'Runner', {
+      ...
+      'Debug' => :debug,
+      'Debug-staging' => :debug,
+      'Debug-production' => :debug,
+      'Profile' => :release,
+      'Profile-staging' => :release,
+      'Profile-production' => :release,
+      'Release' => :release,
+      'Release-staging' => :release,
+      'Release-production' => :release,
+      ...
+    ```
 
 ### Add unique build settings
 
@@ -431,37 +521,6 @@ To learn about them, see
 [Customizing the build schemes for a project][].
 
 [Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
-
-### Update Podfiles
-
-If you are creating new Xcode schemes for a Flutter iOS
-project and you have an iOS Podfile in an existing
-Flutter project, you must update the Flutter iOS Podfile to
-match the changes you made in Xcode.
-
-The following steps show how to update your iOS Podfile to
-include two new Xcode schemes called `staging` and
-`production` in a Flutter project called `flavors_example`.
-You can also use these steps to update a macOS
-project by replacing any reference to `iOS` with `macOS`.
-
-1. In your IDE, open the `ios/Podfile` file.
-1. Make the following updates and save your changes.
-
-    ```ruby title="flavors_example/ios/Podfile"
-    project 'Runner', {
-      ...
-      'Debug' => :debug,
-      'Debug-staging' => :debug,
-      'Debug-production' => :debug,
-      'Profile' => :release,
-      'Profile-staging' => :release,
-      'Profile-production' => :release,
-      'Release' => :release,
-      'Release-staging' => :release,
-      'Release-production' => :release,
-      ...
-    ```
 
 ## More information
 
