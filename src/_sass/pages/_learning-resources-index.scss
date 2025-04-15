@@ -1,3 +1,5 @@
+@use '../base/variables' as *;
+
 #resource-index-content {
   display: flex;
   flex-direction: row;
@@ -9,10 +11,10 @@
 
   .right-col {
     width: 220px;
+
     @media (max-width: 840px) {
       position: fixed;
-      // height of navbar
-      top: 4rem;
+      top: var(--site-header-height);
       bottom: 0;
       right: -15rem;
       background-color: var(--site-inset-bgColor);
@@ -42,7 +44,7 @@
 }
 
 #resource-filter-group {
-  border: 1px solid rgba(0,0,0,.25);
+  border: 1px solid var(--site-inset-borderColor);
 
   @media (max-width: 840px) {
     border-bottom: none;
@@ -50,11 +52,11 @@
 
   .table-title {
     text-align: center;
-    color: rgba(0,0,0,.5);
+    color: var(--site-base-fgColor-subtle);
     font-weight: bold;
     font-size: .9rem;
     padding: .5rem;
-    border-bottom: 1px solid rgba(0,0,0,.25);
+    border-bottom: 1px solid var(--site-inset-borderColor);
   }
 
   .table-content {
@@ -64,7 +66,6 @@
   ul {
     padding-left: 0;
     margin-bottom: .5rem;
-
 
     li {
       list-style: none;
@@ -86,13 +87,13 @@
   }
 
   button {
-    color: var(--site-link-fgColor);
+    color: var(--site-primary-color);
     margin: 0 0 2rem;
     padding: .5rem 0 1rem 1rem;
-  }
 
-  button:hover {
-    color: var(--site-onPrimary-color);
+    &:hover {
+      color: var(--site-onPrimary-color);
+    }
   }
 
   .hidden {
@@ -115,13 +116,13 @@
       width: 100%;
       background-color: white;
 
-      border: 1px solid rgba(0, 0, 0, .25);
+      border: 1px solid var(--site-outline);
       border-radius: 2rem;
       height: 3rem;
       padding: 0 .5rem;
 
       &:has(:focus-visible) {
-        outline: 2px solid var(--site-card-borderColor);
+        outline: 2px solid var(--site-primary-color);
         border-color: transparent;
       }
 
@@ -160,7 +161,7 @@
     font-size: .9rem;
 
     label {
-      color: var(--site-base-fgColor-alt);
+      color: var(--site-base-fgColor-subtle);
 
       padding: .25rem 1rem 0 0;
       margin: 0;
@@ -172,21 +173,22 @@
       color: var(--site-primary-color);
       display: flex;
       align-items: center;
-    }
-    button:hover {
-      color: var(--site-onPrimary-color);
-    }
 
-    button:disabled, button[disabled] {
-      color: var(--site-inset-bgColor-translucent);
-      cursor: default;
+      &:hover {
+        color: var(--site-onPrimary-color-light);
+      }
+
+      &:disabled, &[disabled] {
+        color: var(--site-inset-bgColor-translucent);
+        cursor: default;
+      }
     }
 
   }
 }
 
 .resource-index-icon {
-  color: #000000;
+  color: var(--site-base-fgColor);
 }
 
 
@@ -196,13 +198,13 @@
 
   .card {
     &:hover {
-      box-shadow: 0px 0px 20px -5px var(--site-card-onHover-boxShadow-color);
+      box-shadow: 0 0 20px -5px var(--site-inset-borderColor);
       background-image: none;
       transition: .25s ease;
     }
 
     .card-leading {
-      background-color: var(--site-onPrimary-color-lighter);
+      background-color: var(--site-onPrimary-color-light);
       justify-content: space-between !important;
       margin: -1rem;
       padding: 1rem 1rem .5rem;

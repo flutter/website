@@ -24,21 +24,25 @@
 
 .pill-sm {
   border-radius: 20px;
-  padding: .5rem;
+  padding: 0.35rem 0.5rem;
   text-align: center;
   font-size: .8rem;
 
 
   // Grey by default
-  background: var(--site-inset-bgColor-translucent);
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
+
+  // TODO(parlough): Consider if these colors can be shared and if
+  // compatible with dark mode.
 
   &.flutter-blue {
-    color: lighten(#B8EAFE, 10%);
-    background: var(--site-primary-color);
+    color: lighten(#E7F8FF, 10%);
+    background: #0468D7;
   }
 
   &.teal {
-    color: lighten(#A7FFEB, 10%);
+    color: lighten(#B8EDE1, 10%);
     background: #158477;
   }
 
