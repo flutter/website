@@ -37,6 +37,10 @@ You can modify the setting at any time from the DevTools Extensions dialog:
 
 ![Screenshot of extension enablement dialog](/assets/images/docs/tools/devtools/extension_dialog.png)
 
+> Note: if the extension requires a running a connection to a running
+application, you will not see the enablement prompt or enablement settings until
+DevTools is connected to a running app.**
+
 Extension enablement states are stored in a `devtools_options.yaml`
 file in the root of the user's project
 (similar to `analysis_options.yaml`).
