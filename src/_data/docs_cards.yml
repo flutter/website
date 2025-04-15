@@ -9,7 +9,7 @@
   url: https://api.flutter.dev/
 - name: Guides and tutorials
   description: Browse sample code, tutorials and how-tos.
-  url: /learning-resources-index
+  url: /reference/learning-resources
 - name: Videos
   description: View the many videos on the Flutter YouTube channel.
   url: https://www.youtube.com/@flutterdev

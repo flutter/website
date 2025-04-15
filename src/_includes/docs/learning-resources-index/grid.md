@@ -8,11 +8,11 @@
            href="{{ item.link.url }}"
            target="_blank"
         >
-            <div class="card-image-holder-material-3">
-                {%- if item.imageUrl -%}
+            {%- if item.imageUrl -%}
+                <div class="card-image-holder-material-3">
                     <img src='{{ item.imageUrl }}'>
-                {%- endif -%}
-            </div>
+                </div>
+            {%- endif -%}
             <div class="card-leading">
                 {%- liquid
                     case item.type
@@ -55,17 +55,10 @@
             <div class="card-header">
                 <span class="card-title">{{ item.name }}</span>
             </div>
-            <div class="card-content" style="flex:2;align-self: start">
-                <p style="align-self: start">{{ item.description }}</p>
-            </div>
-            <div class="card-trailing">
-                {%  if item.difficulty == 'beginner' -%}
-                    <img src='/assets/images/docs/resource-index/beginner.png' alt="Beginner icon" width="24px"/>
-                {%  elsif item.difficulty == 'intermediate' -%}
-                    <img src='/assets/images/docs/resource-index/intermediate.png' alt="Intermediate icon" width="24px"/>
-                {%  elsif item.difficulty == 'advanced' -%}
-                    <img src='/assets/images/docs/resource-index/advanced.png' alt="Advanced icon" width="24px"/>
-                {% endif -%}
+            <div class="card-content">
+
+                {{ item.description }}
+
             </div>
         </a>
     {%- endfor -%}

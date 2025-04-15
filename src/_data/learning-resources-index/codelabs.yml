@@ -254,7 +254,7 @@
 
 ## Firebase
 
-- name: Add a user authentication flow to a Flutter app using FirebaseUI
+- name: Add a user authentication flow using FirebaseUI
   description: |
     Learn how to add Firebase authentication to a Flutter app
     with only a few lines of code.
@@ -283,7 +283,7 @@
     label: Google Codelab
     url: https://firebase.google.com/codelabs/firebase-get-to-know-flutter
 
-- name: Send and receive notifications for a Flutter app using Firebase Cloud Messaging
+- name: Notifications with Firebase Cloud Messaging
   description: |
     Learn how to develop a multi-platform app with Flutter
     and Firebase Cloud Messaging, integrating FCM to send and
@@ -318,8 +318,7 @@
 - name: Build a 2D physics game with Flutter and Flame
   description: |
     This codelab guides you through crafting game mechanics in a
-    Flutter and Flame game using a 2D physics simulation along
-    the lines of Box2D, called Forge2D.
+    Flutter and Flame game using a 2D physics simulation called Forge2D.
   tags:
     - game
     - physics
@@ -344,9 +343,7 @@
 - name: Introduction to Flame with Flutter
   description: |
     Build a Breakout clone using the Flame 2D game engine and
-    embed it in a Flutter wrapper. You will use Flame's Effects
-    to animate and remove components, along with the `google_fonts` and
-    `flutter_animate` packages, to make the whole game look well designed.
+    embed it in a Flutter wrapper.
   tags:
     - game
     - intro
@@ -430,10 +427,8 @@
 - name: Write a Flutter desktop application
   description: |
     Build a Flutter desktop app (Windows, Linux, or macOS)
-    that accesses GitHub APIs to retrieve your repositories,
-    assigned issues, and pull requests. As part of this task,
-    create and use plugins to interact with native APIs and desktop applications,
-    and use code generation to build type-safe client libraries for GitHub's APIs.
+    that accesses GitHub APIs, and 
+    create and use plugins to interact with native APIs and desktop applications.
   tags:
     - desktop
     - windows

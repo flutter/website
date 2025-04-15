@@ -91,8 +91,9 @@ const filters = {
 
 function _setupResourceFilters() {
     // index the resource metadata
-    const resourceCards = document.getElementById('all-resources-grid')?.querySelectorAll('.card');
-    if (!resourceCards) return;
+    const resourceGrid = document.getElementById('all-resources-grid');
+    if (!resourceGrid) return;
+    const resourceCards = resourceGrid.querySelectorAll('.card');
     const resourcesInfo = _setupResourceInfo(resourceCards);
 
     // sets up the resource count element that says "Showing x / y" below the search bar.
@@ -125,7 +126,12 @@ function _setupResourceFilters() {
         })
     });
 
+    function toggleClearFiltersButton() {
+        clearFiltersButton.disabled = !(filters.hasFilters() || filters.searchTerm > 0);
+    }
+
     function filterResources() {
+        toggleClearFiltersButton();
         const resourcesToShow = filters.filter(resourcesInfo);
         resourceCards.forEach(card => {
             const resourceName = card.id;
@@ -289,6 +295,18 @@ function _setupDropdownMenu() {
         _closeMenu();
     });
 }
+
+function shuffleElements(container) {
+    const elements = container.children;
+    for (let i = elements.length; i >= 0; i--) {
+        container.appendChild(elements[Math.random() * i | 0]);
+    }
+}
+
+window.addEventListener('load', (_) => {
+    const resourceGrid = document.getElementById('all-resources-grid');
+    shuffleElements(resourceGrid);
+})
 
 
 document.onreadystatechange = () => {

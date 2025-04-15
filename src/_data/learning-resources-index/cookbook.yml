@@ -291,8 +291,9 @@
   link:
     label: Flutter docs
     url: /cookbook/images/network-image
+
 - name: Fade in images with a placeholder
-  description: TODO write description
+  description: Use the FadeInImage widget to show a visual placeholder before an image loads.
   tags:
     - image
   type: recipe
