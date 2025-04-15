@@ -283,7 +283,7 @@
 # Images
 
 - name: Display images from the internet
-  description: TODO write description
+  description: To work with images from a URL, use the Image.network() constructor.
   tags:
     - image
     - beginner

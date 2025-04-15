@@ -1,5 +1,3 @@
-@use '../base/variables' as *;
-
 #resource-index-content {
   display: flex;
   flex-direction: row;
@@ -17,7 +15,7 @@
       top: 4rem;
       bottom: 0;
       right: -10rem;
-      background-color: var(--site-switcher-bg, #ffffff);
+      background-color: var(--site-inset-bgColor);
       box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
       border-radius: 0.4rem;
       width: max-content;
@@ -44,7 +42,7 @@
 }
 
 #resource-filter-group {
-  border: 1px solid $site-color-light-grey;
+  border: 1px solid rgba(0,0,0,.25);
 
   @media (max-width: 840px) {
     border-bottom: none;
@@ -52,11 +50,11 @@
 
   .table-title {
     text-align: center;
-    color: $site-color-sub-grey;
+    color: rgba(0,0,0,.5);
     font-weight: bold;
     font-size: .9rem;
     padding: .5rem;
-    border-bottom: 1px solid $site-color-light-grey;
+    border-bottom: 1px solid rgba(0,0,0,.25);
   }
 
   .table-content {
@@ -83,13 +81,13 @@
   }
 
   button {
-    color: $flutter-color-blue-500;
+    color: var(--site-link-fgColor);
     margin: 0 0 2rem;
     padding: .5rem 0 1rem 1rem;
   }
 
   button:hover {
-    color: $flutter-color-blue-on-dark;
+    color: var(--site-onPrimary-color);
   }
 
   .hidden {
@@ -118,7 +116,7 @@
       padding: 0 .5rem;
 
       &:has(:focus-visible) {
-        outline: 2px solid var(--focus-outline-color);
+        outline: 2px solid var(--site-card-borderColor);
         border-color: transparent;
       }
 
@@ -157,7 +155,7 @@
     font-size: .9rem;
 
     label {
-      color: $site-color-sub-grey;
+      color: var(--site-base-fgColor-alt);
 
       padding: .25rem 1rem 0 0;
       margin: 0;
@@ -166,18 +164,18 @@
 
     button {
       padding: .25rem;
-      color: $flutter-color-blue-500;
+      color: var(--site-primary-color);
       display: flex;
       align-items: center;
     }
     button:hover {
-      color: $flutter-color-blue-on-dark;
+      color: var(--site-onPrimary-color);
     }
   }
 }
 
 .resource-index-icon {
-  color: $site-color-black;
+  color: #000000;
 }
 
 
@@ -187,13 +185,13 @@
 
   .card {
     &:hover {
-      box-shadow: 0px 0px 20px -5px $site-color-light-grey;
+      box-shadow: 0px 0px 20px -5px var(--site-card-onHover-boxShadow-color);
       background-image: none;
       transition: .25s ease;
     }
 
     .card-leading {
-      background-color: $flutter-color-light-blue;
+      background-color: var(--site-onPrimary-color-lighter);
       justify-content: space-between !important;
       margin: -1rem;
       padding: 1rem 1rem .5rem;
