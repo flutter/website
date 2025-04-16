@@ -100,6 +100,7 @@ export default function (eleventyConfig: UserConfig) {
           removeRedundantAttributes: 'smart',
           minifyCss: true,
           minifyConditionalComments: true,
+          quotes: true,
         });
 
         return minifiedHtml.code;
