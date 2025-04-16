@@ -119,6 +119,19 @@
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
 
+- name: Animations in Flutter
+  description: |
+    Learn how to build animated effects in Flutter. You'll learn how to build
+    implicit and explicit animations, and customize 
+    navigation transition animations the animations package and predictive back
+    on Android.
+  tags:
+    - animations
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/advanced-flutter-animations
+
 - name: Building Beautiful Transitions with Material Motion for Flutter
   description: |
     Learn how to use the Material animations package to
