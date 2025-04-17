@@ -11,7 +11,7 @@ const filters = {
         'tutorial': ['codelab', 'tutorial'],
         'sample code': ['quickstart', 'demo', 'sample', 'sample code'],
         'workshop': ['workshop', 'video'],
-        'how to': ['recipe', 'how to']
+        'recipe': ['recipe', 'how to', 'cookbook']
     },
     resourceTagMapping: {
         'ai': ['ai', 'gemini', 'llm'],
