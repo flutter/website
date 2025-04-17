@@ -1261,7 +1261,7 @@ Docs added and updated since the last announcement include:
   see [Web support for Flutter][] and
   [Web support for Flutter goes beta][] on the Medium publication.
   Also, the [building a web app with Flutter][] page is updated.
-* A new [write your first Flutter app on the web][] codelab
+* A new write your first Flutter app on the web codelab
   is added to the [Get started][] docs, and includes
   instructions on setting breakpoints in DevTools!
 * We've introduced a program for recommending particular Dart and
@@ -1299,7 +1299,6 @@ Happy Fluttering!
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [implicit animations]: /codelabs/implicit-animations
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
-[write your first Flutter app on the web]: /get-started/codelab-web
 [Get started]: /get-started/install
 
 ## 10 Sep 2019: 1.9 release
