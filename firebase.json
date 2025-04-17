@@ -120,6 +120,7 @@
       { "source": "/cookbook/testing/widget-test-tap-drag", "destination": "/cookbook/testing/widget/tap-drag", "type": 301 },
       { "source": "/deployment/fastlane-cd", "destination": "/deployment/cd#fastlane", "type": 301 },
       { "source": "/get-started", "destination": "/get-started/install", "type": 301 },
+      { "source": "/get-started/codelab-web", "destination": "/get-started/codelab", "type": 301 },
       { "source": "/get-started/flutter-for", "destination": "/get-started/learn-flutter", "type": 301 },
       { "source": "/get-started/flutter-for/ios-devs", "destination": "/get-started/flutter-for/swiftui-devs", "type": 301 },
       { "source": "/get-started/fwe/:rest*", "destination": "/get-started/fundamentals/:rest*", "type": 301 },

@@ -35,12 +35,8 @@ that works on mobile, desktop, and web.
 
 :::tip
 The codelab above walks you through writing your first Flutter
-app for all platforms &mdash; mobile, desktop and web.
-You might prefer to take
-[another codelab written specifically for the web][codelab-web].
+app for all platforms &mdash; mobile, desktop, and web.
 :::
-
-[codelab-web]: /get-started/codelab-web
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:

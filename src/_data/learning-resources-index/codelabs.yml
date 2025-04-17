@@ -23,21 +23,6 @@
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
 
-- name: Your first Flutter app on the web
-  description: |
-    Implement a simple web app in DartPad (no downloads
-      required!) that displays a sign-in screen
-      containing three text fields.
-  tags:
-    - beginner
-    - intro
-    - web
-    - dartpad
-  type: codelab
-  link:
-    label: Flutter docs
-    url: /get-started/codelab-web
-
 # Next steps
 
 - name: Records and Patterns in Dart
