@@ -116,14 +116,15 @@ To summarize:
 [lowest level]:  {{site.android-dev}}/docs/quality-guidelines/large-screen-app-quality#T3-8
 [override a locked screen]: {{site.android-dev}}/guide/topics/large-screens/large-screen-compatibility-mode#per-app_overrides
 
-### Avoid orientation-based layouts
+### Avoid device orientation-based layouts
 
 Avoid using `MediaQuery`'s orientation field
-or `OrientationBuilder` to switch between
-different app layouts. This is similar to the
-guidance of not checking device types to determine
-screen size. The device's orientation also doesn't
-necessarily inform you of how much space your app window has.
+or `OrientationBuilder` near the top of your widget tree
+to switch between different app layouts. This is
+similar to the guidance of not checking device types
+to determine screen size. The device's orientation also
+doesn't necessarily inform you of how much space your
+app window has.
 
 Instead, use `MediaQuery`'s `sizeOf` or `LayoutBuilder`,
 as discussed in the [General approach][] page.
