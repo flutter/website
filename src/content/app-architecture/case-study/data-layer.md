@@ -84,7 +84,7 @@ Some methods return data classes that are
 specifically for raw data from the API,
 such as the `BookingApiModel` class.
 As you'll soon see, repositories extract data and
-expose it to s in a different format.
+expose it in a different format.
 :::
 
 
