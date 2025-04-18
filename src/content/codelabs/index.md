@@ -157,7 +157,7 @@ Learn how to use Flutter with other technologies.
 ### Flutter and Firebase
 
 * [Build a Gemini powered Flutter app][]—**NEW**<br>
-  In this codelab, you’ll learn how to integrate Gemini API into your Flutter
+  In this codelab, you’ll learn how to integrate Gemini into your Flutter
   app using Vertex AI in Firebase.
 
 * [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
