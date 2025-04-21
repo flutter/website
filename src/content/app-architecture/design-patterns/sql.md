@@ -235,18 +235,19 @@ Future<Result<void>> _delete(int id) async {
 
 ### Todo list domain layer
 
-The domain layer of this example application contains the ToDo item data model.
+The domain layer of this example application contains
+the `Todo` item data model.
 
-Items are presented by an immutable data class. 
+Items are presented by an immutable data class.
 In this case, the application uses the `freezed` package to generate the code.
 
-The class has two properties, an id represented by an `int`, 
+The class has two properties, an ID represented by an `int`,
 and a task description, represented by a `String`.
 
 <?code-excerpt "lib/business/model/todo.dart (Todo)"?>
 ```dart
 @freezed
-class Todo with _$Todo {
+abstract class Todo with _$Todo {
   const factory Todo({
     /// The unique identifier of the Todo item.
     required int id,
@@ -259,7 +260,7 @@ class Todo with _$Todo {
 
 ### Todo list data layer
 
-The data layer of this functionality is composed of two classes, 
+The data layer of this functionality is composed of two classes,
 the `TodoRepository` and the `DatabaseService`.
 
 The `TodoRepository` acts as the source of truth for all the ToDo items. 

@@ -96,7 +96,7 @@ that has been created using the [`freezed`][] package.
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart
 @freezed
-class UserProfile with _$UserProfile {
+abstract class UserProfile with _$UserProfile {
   const factory UserProfile({
     required String name,
     required String photoUrl,
@@ -474,7 +474,7 @@ For example, `bool synchronized`:
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)"?>
 ```dart
 @freezed
-class UserProfile with _$UserProfile {
+abstract class UserProfile with _$UserProfile {
   const factory UserProfile({
     required String name,
     required String photoUrl,
