@@ -47,7 +47,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
 * [Semantics roles update on the menu system][]
-* [RenderConstrainedLayoutBuilder renamed RenderAbstractLayoutBuilderMixin][]
+* [`RenderConstrainedLayoutBuilder` renamed `RenderAbstractLayoutBuilderMixin`][]
 
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
 [Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
@@ -62,7 +62,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
 [Semantics roles update on the menu system]: /release/breaking-changes/menu-semantics-roles
-[RenderConstrainedLayoutBuilder renamed RenderAbstractLayoutBuilderMixin]: /release/breaking-changes/RenderConstrainedLayoutBuilder-mixin
+[`RenderConstrainedLayoutBuilder` renamed `RenderAbstractLayoutBuilderMixin`]: /release/breaking-changes/RenderConstrainedLayoutBuilder-mixin
 
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
