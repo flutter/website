@@ -62,7 +62,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
 [Semantics roles update on the menu system]: /release/breaking-changes/menu-semantics-roles
-[RenderConstrainedLayoutBuilder renamed RenderAbstractLayoutBuilderMixin]: /release/breaking-changes/RenderConstrainedLayoutBuilder-mixin.md
+[RenderConstrainedLayoutBuilder renamed RenderAbstractLayoutBuilderMixin]: /release/breaking-changes/RenderConstrainedLayoutBuilder-mixin
 
 <a id="]:
 
