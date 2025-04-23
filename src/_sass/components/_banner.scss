@@ -10,17 +10,20 @@
   gap: 0.5rem;
   padding: 0.75rem;
   text-align: center;
-  background-color: var(--site-banner-bgColor);
+  background: var(--site-banner-bgColor);
   color: var(--site-banner-fgColor);
+  z-index: var(--site-z-floating);
 
   p {
     overflow-wrap: anywhere;
     word-break: normal;
     margin: 0;
     flex-grow: 1;
+    text-wrap: balance;
   }
 
   a, button {
+    white-space: nowrap;
     color: var(--site-onPrimary-color);
     font-family: var(--site-ui-fontFamily);
 

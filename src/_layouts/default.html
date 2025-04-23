@@ -15,24 +15,33 @@ layout: base
   </div>
 
   <main class="site-content">
-    {% if toc != false and tocContents.count > 1 -%}
-    {% render top-toc.html, tocContents:tocContents, title:title %}
-    <aside id="side-menu">
-      {% render side-toc.html, tocContents:tocContents %}
-    </aside>
+    {% if toc != false -%}
+      {% render top-toc.html, tocContents:tocContents, title:title %}
     {% endif -%}
-    <article>
-      <header id="site-header-wrapper">
-        <h1 id="document-title">{{ title }}</h1>
-        {% if show_breadcrumbs != false -%}
-        {% include breadcrumbs.html %}
-        {% endif -%}
-      </header>
-      {{ content }}
+    {%- if site.showBanner and showBanner != false -%}
+    <div id="site-banner" role="alert">
+      <p>{% render banner.html %}</p>
+    </div>
+    {% endif -%}
+    <div class="after-leading-content">
+      {% if toc != false -%}
+      <aside id="side-menu">
+        {% render side-toc.html, tocContents:tocContents %}
+      </aside>
+      {% endif -%}
+      <article>
+        <header id="site-header-wrapper">
+          <h1 id="document-title">{{ title }}</h1>
+          {% if show_breadcrumbs != false -%}
+          {% include breadcrumbs.html %}
+          {% endif -%}
+        </header>
+        {{ content }}
 
-      {% render next-prev-nav.html, prev:prev, next:next %}
+        {% render next-prev-nav.html, prev:prev, next:next %}
 
-      {% include trailing.html %}
-    </article>
+        {% include trailing.html %}
+      </article>
+    </div>
   </main>
 </div>

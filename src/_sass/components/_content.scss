@@ -1,14 +1,15 @@
 .site-content {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   min-width: 0;
   width: 100%;
 
   min-height: calc(100vh - var(--site-header-height));
 
-  @media (min-width: 1200px) {
+  .after-leading-content {
+    display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
   article {
