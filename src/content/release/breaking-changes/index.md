@@ -9,6 +9,14 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
+::::important
+These breaking change docs are accurate, as of the release
+under which they are published. Over time, the
+workarounds described here might become inaccurate.
+We don't, in general, keep these breaking change docs up
+to date as of each release.
+:::
+
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
 
