@@ -12,7 +12,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pigeon: ^18.0.0
+  pigeon: ^25.3.1
 
 dev_dependencies:
   flutter_test:

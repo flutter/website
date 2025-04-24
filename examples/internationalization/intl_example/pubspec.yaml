@@ -15,7 +15,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  intl_translation: ^0.20.0
+  # TODO(parlough): Add back when analyzer constraints allow.
+  # intl_translation: ^0.20.1
 
 flutter:
   uses-material-design: true
