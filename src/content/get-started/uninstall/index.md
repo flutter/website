@@ -20,31 +20,31 @@ Select your development platform from the following tabs.
 {% assign id = os | downcase -%}
 {% case os %}
 {% when 'Windows' -%}
-{% assign dirinstall='C:\\user\{username}\dev\' %}
-{% assign localappdata='%LOCALAPPDATA%\' %}
-{% assign appdata='%APPDATA%\' %}
-{% assign ps-localappdata='$env:LOCALAPPDATA\' %}
-{% assign ps-appdata='$env:APPDATA\' %}
-{% assign unzip='Expand-Archive' %}
-{% assign path='C:\\user\{username}\dev' %}
-{% assign prompt='C:\\>' %}
-{% assign terminal='PowerShell' %}
-{% assign rm = 'Remove-Item -Recurse -Force -Path' %}
-{% capture rm-sdk %}Remove-Item -Recurse -Force -Path '{{dirinstall}}flutter'{% endcapture %}
+{% assign dirinstall="C:\\user\\{username}\\dev\\" %}
+{% assign localappdata="%LOCALAPPDATA%" %}
+{% assign appdata="%APPDATA%" %}
+{% assign ps-localappdata="$env:LOCALAPPDATA" %}
+{% assign ps-appdata="$env:APPDATA" %}
+{% assign unzip="Expand-Archive" %}
+{% assign path="C:\\user\\{username}\\dev" %}
+{% assign prompt="C:\\>" %}
+{% assign terminal="PowerShell" %}
+{% assign rm = "Remove-Item -Recurse -Force -Path" %}
+{% capture rm-sdk %}Remove-Item -Recurse -Force -Path "{{dirinstall}}flutter"{% endcapture %}
 {% capture dart-files %}
-{{localappdata}}.dartServer
-{{appdata}}.dart
-{{appdata}}.dart-tool
+{{localappdata}}\.dartServer
+{{appdata}}\.dart
+{{appdata}}\.dart-tool
 {% endcapture %}
 {% capture rm-dart-files %}
-{{prompt}} {{rm}} {{ps-localappdata}}.dartServer,{{ps-appdata}}.dart,{{ps-appdata}}.dart-tool
+{{prompt}} {{rm}} "{{ps-localappdata}}\.dartServer", "{{ps-appdata}}\.dart", "{{ps-appdata}}\.dart-tool"
 {% endcapture %}
-{% capture flutter-files %}{{appdata}}.flutter-devtools{% endcapture %}
+{% capture flutter-files %}{{appdata}}\.flutter-devtools{% endcapture %}
 {% capture rm-flutter-files %}
-{{prompt}} {{rm}} {{ps-appdata}}.flutter-devtools
+{{prompt}} {{rm}} "{{ps-appdata}}\.flutter-devtools"
 {% endcapture %}
 {% capture rm-pub-dir %}
-{{prompt}} {{rm}} {{ps-localappdata}}Pub\Cache
+{{prompt}} {{rm}} "{{ps-localappdata}}\Pub\Cache"
 {% endcapture %}
 {% else -%}
 {% assign dirinstall='~/development' %}
