@@ -1,6 +1,7 @@
 .site-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-width: 0;
   width: 100%;
 
@@ -123,6 +124,7 @@
       color: var(--site-base-fgColor-alt);
       opacity: 0;
       text-decoration: none;
+      user-select: none;
 
       &:hover {
         color: var(--site-link-fgColor);
