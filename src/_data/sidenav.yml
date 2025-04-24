@@ -848,12 +848,12 @@
     - divider
     - title: Contribute
       children:
-      - title: Create useful bug reports
-        permalink: /resources/bug-reports
-      - title: Contribute to Flutter
-        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-      - title: Discover proposed features
-        permalink: /resources/design-docs
+        - title: Contribute to Flutter
+          permalink: /contribute
+        - title: Create useful bug reports
+          permalink: /resources/bug-reports
+        - title: Discover proposed features
+          permalink: /resources/design-docs
     - title: Reference
       permalink: /reference
       children:
