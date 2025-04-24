@@ -28,8 +28,6 @@ For an example using SwiftUI, consult the iOS directory in [News Feed App][].
 
 ## Development system requirements
 
-Your development environment must meet the
-[macOS system requirements for Flutter][] with [Xcode installed][].
 Flutter supports Xcode {{site.appmin.xcode}} or later and
 [CocoaPods][] {{site.appmin.cocoapods}} or later.
 
@@ -316,7 +314,6 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [CocoaPods]: https://cocoapods.org/
 [debugging functionalities such as hot-reload and DevTools]: /add-to-app/debugging
 [app-size]: /resources/faq#how-big-is-the-flutter-engine
-[macOS system requirements for Flutter]: /get-started/install/macos/mobile-ios#verify-system-requirements
 [VS Code]: /tools/vs-code
 [Xcode installed]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
 [News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
