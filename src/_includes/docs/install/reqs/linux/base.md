@@ -1,10 +1,4 @@
-## Verify system requirements
-
-To install and run Flutter,
-your {{include.os}} environment must meet the following hardware
-and software requirements.
-
-### Software requirements
+## Software requirements
 
 To write and compile Flutter code for {{include.target}},
 you must have the following version of {{include.os}} and the listed
@@ -12,7 +6,7 @@ software packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
 {% if include.os == 'Linux' %}
 {%- capture supported-os %}
@@ -25,7 +19,7 @@ and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
 
 Flutter supports {{supported-os}}.
 
-#### Development tools {:.no_toc}
+### Development tools {:.no_toc}
 
 {% include docs/install/reqs/linux/software.md target=include.target os=include.os %}
 
@@ -34,7 +28,7 @@ Flutter supports {{supported-os}}.
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-## Configure a text editor or IDE
+# Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with

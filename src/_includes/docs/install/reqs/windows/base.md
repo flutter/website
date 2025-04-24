@@ -1,4 +1,4 @@
-### Software requirements
+## Software requirements
 
 To write and compile Flutter code for {{include.target}},
 you must have the following version of Windows and the listed
@@ -6,13 +6,13 @@ software packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
 Flutter supports {{site.devmin.windows}} or later.
 These versions of Windows should include the required
 [Windows PowerShell][] {{site.appmin.powershell}} or later.
 
-#### Development tools
+### Development tools
 
 Download and install the Windows version of the following packages:
 
@@ -24,7 +24,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 {% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
-## Configure a text editor or IDE
+# Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with

@@ -7,14 +7,14 @@
 {% assign v-target = include.target %}
 {% endcase %}
 
-### Software requirements
+## Software requirements
 
 To write and compile Flutter code for {{v-target}},
 install the following packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
 Flutter supports developing on macOS {{site.devmin.macos}} or later.
 This guide presumes your Mac runs the `zsh` as your default shell.
@@ -23,7 +23,7 @@ This guide presumes your Mac runs the `zsh` as your default shell.
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
-#### Development tools
+### Development tools
 
 Download and install the following packages.
 
@@ -34,7 +34,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 {% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
-#### Text editor or integrated development environment
+### Text editor or integrated development environment
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
