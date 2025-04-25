@@ -89,7 +89,7 @@ before resuming your app.
 
 ## Other resources
 
-HTTP and HTTPS requests are also surfaced in the [Timeline][timeline] as
+HTTP and HTTPS requests are also surfaced in the [`Timeline`][timeline] as
 asynchronous timeline events. Viewing network activity in the timeline can be
 useful if you want to see how HTTP traffic aligns with other events happening
 in your app or in the Flutter framework.
