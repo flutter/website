@@ -16,10 +16,12 @@ your Dart or Flutter application.
 
 ## What network traffic is recorded?
 
-All network traffic that originates from `dart:io` (like the [`HttpClient`][]
-class) or that is logged using the [`http_profile`][] package is recorded in the
-network request table. This includes network traffic from the
-[`cupertino_http`][], [`cronet_http`][], and [`ok_http`][] packages.
+All network traffic that originates from `dart:io` (like the
+[`HttpClient`][HttpClient] class) or that is logged using the
+[`http_profile`][http_profile] package is recorded in the network request
+table. This includes network traffic from the
+[`cupertino_http`][cupertino_http], [`cronet_http`][cronet_http], and
+[`ok_http`][ok_http] packages.
 
 For a web app that makes requests using the browser, we recommend using browser
 tools to inspect network traffic, such as [Chrome DevTools][].
@@ -100,11 +102,11 @@ check out a guided [Network View tutorial][network-tutorial].
 The tutorial also uses the view to identify network activity that
 causes poor app performance.
 
-[`HttpClient`]: {{site.api}}/dart-io/HttpClient-class.html
-[`http_profile`]: {{site.pub-pkg}}/http_profile
-[`cupertino_http`]: {{site.pub-pkg}}/cupertino_http
-[`cronet_http`]: {{site.pub-pkg}}/cronet_http
-[`ok_http`]: {{site.pub-pkg}}/ok_http
+[HttpClient]: {{site.api}}/dart-io/HttpClient-class.html
+[http_profile]: {{site.pub-pkg}}/http_profile
+[cupertino_http]: {{site.pub-pkg}}/cupertino_http
+[cronet_http]: {{site.pub-pkg}}/cronet_http
+[ok_http]: {{site.pub-pkg}}/ok_http
 [Chrome DevTools]: https://developer.chrome.com/docs/devtools/network
 [timeline]: /tools/devtools/performance#timeline-events-tab
 [network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c
