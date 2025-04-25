@@ -16,7 +16,7 @@ your Dart or Flutter application.
 
 ## What network traffic is recorded?
 
-All network traffic which originates from `dart:io` (like the [HttpClient][]
+All network traffic that originates from `dart:io` (like the [`HttpClient`][]
 class) or which is logged via the [http_profile][] package is recorded in the
 network request table. This includes network traffic from the
 [cupertino_http][], [cronet_http][], and [ok_http][] packages.
