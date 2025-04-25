@@ -100,11 +100,11 @@ check out a guided [Network View tutorial][network-tutorial].
 The tutorial also uses the view to identify network activity that
 causes poor app performance.
 
-[HttpClient]: https://api.dart.dev/dart-io/HttpClient-class.html
-[http_profile]: https://pub.dev/packages/http_profile
-[cupertino_http]: https://pub.dev/packages/cupertino_http
-[cronet_http]: https://pub.dev/packages/cronet_http
-[ok_http]: https://pub.dev/packages/ok_http
+[`HttpClient`]: {{site.api}}/dart-io/HttpClient-class.html
+[`http_profile`]: {{site.pub-pkg}}/http_profile
+[`cupertino_http`]: {{site.pub-pkg}}/cupertino_http
+[`cronet_http`]: {{site.pub-pkg}}/cronet_http
+[`ok_http`]: {{site.pub-pkg}}/ok_http
 [Chrome DevTools]: https://developer.chrome.com/docs/devtools/network
 [timeline]: /tools/devtools/performance#timeline-events-tab
 [network-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-network-view-part-4-of-8-afce2463687c
