@@ -30,8 +30,8 @@ When you open the Network page, DevTools immediately starts recording network
 traffic. To pause and resume recording, use the **Pause** and **Resume**
 buttons (upper left).
 
-When a network request is sent by your app, it will appear in the network
-request table (left). It will be listed as "Pending" until a complete response
+When a network request is sent by your app, it appears in the network
+request table (left). It's listed as "Pending" until a complete response
 is received.
 
 Select a network request from the table (left) to view details (right). You can
