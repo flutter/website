@@ -28,7 +28,7 @@ Flutter supports {{supported-os}}.
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-# Configure a text editor or IDE
+## Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with

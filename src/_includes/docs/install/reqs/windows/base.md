@@ -24,7 +24,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 {% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
-# Configure a text editor or IDE
+## Configure a text editor or IDE
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
