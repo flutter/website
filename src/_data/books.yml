@@ -145,3 +145,10 @@
   cover: flutter-design-patterns-and-best-practices.jpg
   link: "https://www.amazon.com/Flutter-Design-Patterns-Best-Practices/dp/1801072647"
   desc: "Elevate your mobile app development skills using reusable software development methodologies and code design principles, leveraging proven strategies from industry experts who have fostered thriving developer communities."
+- title: 'The Ultimate Guide to Flutter Interviews'
+  authors:
+    - Otniel Campos
+  publisher: Kindle
+  cover: ultimate-guide.jpg
+  link: "https://www.amazon.com/dp/B0DFLW21K8"
+  desc: "More than 200 verbal questions and practical examples. Gain valuable insights and strategies to excel in all crucial aspects of Flutter technology and be well-prepared for your upcoming interviews."
