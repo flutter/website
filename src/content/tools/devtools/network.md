@@ -19,7 +19,7 @@ your Dart or Flutter application.
 All network traffic that originates from `dart:io` (like the [`HttpClient`][]
 class) or that is logged using the [`http_profile`][] package is recorded in the
 network request table. This includes network traffic from the
-[cupertino_http][], [cronet_http][], and [ok_http][] packages.
+[`cupertino_http`][], [`cronet_http`][], and [`ok_http`][] packages.
 
 For a web app which makes requests via the browser, we recommend using browser
 tools to inspect network traffic, such as [Chrome DevTools][].
