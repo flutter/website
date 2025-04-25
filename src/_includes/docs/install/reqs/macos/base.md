@@ -7,34 +7,14 @@
 {% assign v-target = include.target %}
 {% endcase %}
 
-## Verify system requirements
-
-To install and run Flutter,
-your {{include.os}} environment must meet the following hardware
-and software requirements.
-
-### Hardware requirements
-
-Your {{include.os}} Flutter development environment must meet the following
-minimal hardware requirements.
-
-|     Requirement              |                                    Minimum                               |    Recommended      |
-|:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
-| CPU Cores                    | 4                                                                        | 8                   |
-| Memory in GB                 | 8                                                                        | 16                  |
-| Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| Free disk space in GB        | {% include docs/install/reqs/macos/storage.md target=include.target %}
-
-{:.table .table-striped}
-
-### Software requirements
+## Software requirements
 
 To write and compile Flutter code for {{v-target}},
 install the following packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
 Flutter supports developing on macOS {{site.devmin.macos}} or later.
 This guide presumes your Mac runs the `zsh` as your default shell.
@@ -43,7 +23,7 @@ This guide presumes your Mac runs the `zsh` as your default shell.
 
 {% include docs/install/reqs/macos/apple-silicon.md %}
 
-#### Development tools
+### Development tools
 
 Download and install the following packages.
 
@@ -54,7 +34,7 @@ To troubleshoot installation issues, consult that product's documentation.
 
 {% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
 
-#### Text editor or integrated development environment
+### Text editor or integrated development environment
 
 You can build apps with Flutter using any text editor or
 integrated development environment (IDE) combined with
