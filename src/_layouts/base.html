@@ -73,7 +73,7 @@
     {% endfor -%}
     {% endif -%}
   </head>
-  <body{% if body_class %} class="{{ body_class }}"{% endif %}>
+  <body class="show-windows {% if body_class %}{{ body_class }}{% endif %}">
 
     {% render cookie-notice.html %}
 
