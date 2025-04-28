@@ -1,32 +1,35 @@
 ---
-title: Install help
-description: This page describes some common installation issues new Flutter users have run into and offers suggestions to resolve them.
+title: Install troubleshooting
+short-title: Troubleshoot
+description: >-
+  Get help with common installation issues new Flutter developers have run into.
 ---
 
-This page describes some common installation issues new Flutter users have 
+This page describes some common installation issues new Flutter users have
 encountered and offers suggestions on how to resolve them.
 If you are still experiencing problems, consider reaching out to any of
 the resources listed under [community support channels][].
 To add a topic to this page or make a correction,
 you can file an issue or a pull request using the buttons at the top of the page.
 
-## Get the Flutter SDK
+[community support channels]: #community-support
 
+## Get the Flutter SDK
 
 ### Unable to find the `flutter` command
 
 __What does this issue look like?__
 
-When you try to run the `flutter` command, 
-the console fails to find it. 
+When you try to run the `flutter` command,
+the console fails to find it.
 The error usually looks as follows:
 
 ```plaintext
 'flutter' is not recognized as an internal or external command operable program or batch file
 ```
 
-Error messages on macOS and Linux could look slightly different from 
-the one on Windows. 
+Error messages on macOS and Linux could look slightly different from
+the one on Windows.
 
 __Explanation and suggestions__
 
@@ -40,6 +43,9 @@ to identify the location of your `flutter` folder.
 
 See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
+[windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows
+[set up VS Code]: /get-started/editor
+[config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 
 ### Flutter in special folders
 
@@ -65,15 +71,15 @@ such as `C:\src\flutter`.
 
 ### Having multiple versions of Java installed
 
-__What does this issue look like?__ 
+__What does this issue look like?__
 
 The command `flutter doctor --android-licenses` fails.
 Running `flutter doctor –verbose` gives an error message
 like the following:
 
 ```plaintext
-java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider 
-has been compiled by a more recent version of the Java Runtime (class file version 55.0), 
+java.lang.UnsupportedClassVersionError: com/android/prefs/AndroidLocationsProvider
+has been compiled by a more recent version of the Java Runtime (class file version 55.0),
 this version of the Java Runtime only recognizes class file versions up to 52.0
 ```
 
@@ -81,11 +87,11 @@ __Explanation and suggestions__
 
 The error occurs when an older version of the
 Java Development Kit (JDK)
-is installed on your computer. 
+is installed on your computer.
 
 If you don't need multiple versions of Java,
 uninstall existing JDKs from your computer.
-Flutter automatically uses the JDK included in Android Studio. 
+Flutter automatically uses the JDK included in Android Studio.
 
 If you do need another version of Java,
 try the workaround described in
@@ -96,6 +102,10 @@ check out the [Android Java Gradle migration guide][]
 or [flutter doctor --android-licenses not working due to
     java.lang.UnsupportedClassVersionError - Stack Overflow][so java version].
 
+[java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
+[Android Java Gradle migration guide]: /release/breaking-changes/android-java-gradle-migration-guide
+[so java version]: {{site.so}}/questions/75328050/
+
 ### `cmdline-tools` component is missing
 
 __What does this issue look like?__
@@ -105,9 +115,9 @@ The `flutter doctor` command complains that the
 For example:
 
 ```plaintext noHighlight
-[!] Android toolchain - develop for Android devices (Android SDK version 33.0.2) 
-    • Android SDK at C:\Users\My PC\AppData\Local\Android\sdk 
-    X cmdline-tools component is missing 
+[!] Android toolchain - develop for Android devices (Android SDK version 33.0.2)
+    • Android SDK at C:\Users\My PC\AppData\Local\Android\sdk
+    X cmdline-tools component is missing
 ```
 
 __Explanation and suggestions__
@@ -116,19 +126,20 @@ The easiest way to get the cmdline-tools is through the
 SDK Manager in Android Studio.
 To do this, use the following instructions:
 
-1. Open the SDK Manager from Android Studio,
-   by selecting **Tools > SDK Manager** from the menu bar.
+1. Open the SDK Manager from Android Studio by
+   selecting **Tools > SDK Manager** from the menu bar.
 2. Select the latest Android SDK
    (or a specific version that your app requires),
-   Android SDK Command-line Tools, and Android SDK Build-Tools. 
+   Android SDK Command-line Tools, and Android SDK Build-Tools.
 3. Click **Apply** to install the selected artifacts.
 
-![Android Studio SDK
-Manager](/assets/images/docs/get-started/install_android_tools.png)
+![Android Studio SDK Manager](/assets/images/docs/get-started/install_android_tools.png)
 
 If you're not using Android Studio,
 you can download the tools using the
 [sdkmanager][] command-line tool.
+
+[sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
 
 ## macOS setup
 
@@ -187,11 +198,11 @@ exit code: 69
 
 __Explanation and suggestions__
 
-This issue is related to networking. 
-Try the following instructions to troubleshoot: 
+This issue is related to networking.
+Try the following instructions to troubleshoot:
 
 * Check your internet connection.
-  Make sure that you are connected to the
+  Make sure that you're connected to the
   internet and that your connection is stable.
 * Restart your devices, including your computer
   and networking equipment.
@@ -202,6 +213,8 @@ Try the following instructions to troubleshoot:
   with the `flutter doctor -v` command and ask for help in
   one of the [community support channels][].
 
+[community support channels]: #community-support
+
 ## Community support
 
 The Flutter community is helpful and welcoming.
@@ -210,21 +223,13 @@ consider asking for support from one of the following channels:
 
 * [/r/flutterhelp](https://www.reddit.com/r/flutterhelp/) on Reddit
 * [/r/flutterdev](https://discord.gg/rflutterdev) on Discord,
-  particularly the `install-and-setup` channel on this server. 
-* [StackOverflow][], 
+  particularly the `install-and-setup` channel on this server.
+* [StackOverflow][],
   in particular, questions tagged with [#flutter][] or [#dart][].
 
 To be respectful of everyone's time,
-search the archive for a similar issue before posting a new one. 
+search the archive for a similar issue before posting a new one.
 
 [StackOverflow]: {{site.so}}
 [#dart]: {{site.so}}/questions/tagged/dart
 [#flutter]: {{site.so}}/questions/tagged/flutter
-[Android Java Gradle migration guide]: /release/breaking-changes/android-java-gradle-migration-guide
-[community support channels]: #community-support
-[java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
-[so java version]: {{site.so}}/questions/75328050/
-[set up VS Code]: /get-started/editor
-[config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
-[sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
-[windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows
