@@ -2,7 +2,6 @@
 title: Install Flutter
 short-title: Install
 description: Learn how to install and set up Flutter.
-show_breadcrumbs: false
 os-list: [Windows, macOS, Linux, ChromeOS]
 js: [{url: '/assets/js/page/install-current.js'}]
 ---
