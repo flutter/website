@@ -17,7 +17,8 @@ your Dart or Flutter application.
 ## What network traffic is recorded?
 
 All network traffic that originates from `dart:io` (like the
-[`HttpClient`][HttpClient] class) or that is logged using the
+[`HttpClient`][HttpClient] class) is logged, including the [`dio`][dio]
+package. Also all network traffic that is logged using the
 [`http_profile`][http_profile] package is recorded in the network request
 table. This includes network traffic from the
 [`cupertino_http`][cupertino_http], [`cronet_http`][cronet_http], and
@@ -103,6 +104,7 @@ The tutorial also uses the view to identify network activity that
 causes poor app performance.
 
 [HttpClient]: {{site.api}}/dart-io/HttpClient-class.html
+[dio]: https://pub.dev/packages/dio
 [http_profile]: {{site.pub-pkg}}/http_profile
 [cupertino_http]: {{site.pub-pkg}}/cupertino_http
 [cronet_http]: {{site.pub-pkg}}/cronet_http
