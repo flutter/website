@@ -97,14 +97,14 @@ However, you need to figure out what to set for the `gridDelegate`.
 Flutter provides powerful premade `gridDelegates`
 that you can use, namely:
 
-[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`][]
+[`SliverGridDelegateWithFixedCrossAxisCount`][]
 : Lets you assign a specific number of columns to your grid.
 
-[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`][] 
+[`SliverGridDelegateWithMaxCrossAxisExtent`][] 
 : Lets you define a max item width.
 
-[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
-[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
+[`SliverGridDelegateWithFixedCrossAxisCount`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
+[`SliverGridDelegateWithMaxCrossAxisExtent`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 
 :::secondary
 Don't use the grid delegate for these classes that lets
