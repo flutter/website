@@ -33,7 +33,7 @@ follow Microsoft's instructions for the relevant platform:
 [Install on Windows]: https://code.visualstudio.com/docs/setup/windows
 [Install on Linux]: https://code.visualstudio.com/docs/setup/linux
 
-## Install the Flutter extension for VS Code {: #install-extension}
+### Install the Flutter extension {: #install-extension}
 
 1. Start **VS Code**.
 
@@ -45,7 +45,7 @@ follow Microsoft's instructions for the relevant platform:
 
 [Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
 
-## Validate your VS Code setup {: #validate-setup}
+### Validate your VS Code setup {: #validate-setup}
 
 1. Go to **View** <span aria-label="and then">></span>
    **Command Palette...**.
