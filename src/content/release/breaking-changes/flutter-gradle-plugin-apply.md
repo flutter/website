@@ -116,8 +116,9 @@ If you made some changes to this file, make sure they're placed after
 `pluginManagement {}` and `plugins {}` blocks, since Gradle enforces
 that no other code can be placed before these blocks.
 
-The Settings flutter gradle plugin (`dev.flutter.flutter-plugin-loader`) needs to 
-have no apply (the default is true) or should be set to true.
+The settings Flutter Gradle Plugin (`dev.flutter.flutter-plugin-loader`)
+should not have apply false (the default is true) or should be explicitly
+set to true.
 
 
 ### android/build.gradle
@@ -192,8 +193,8 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 ```
-`"dev.flutter.flutter-gradle-plugin"` is the project flutter 
-gradle plugin. Which is a different string than the value applied 
+`"dev.flutter.flutter-gradle-plugin"` is the project Flutter 
+Gradle Plugin. Which is a different string than the value applied 
 in settings.gradle(.kts) (`"dev.flutter.flutter-plugin-loader"`). 
 
 Finally, if your `dependencies` block contains a dependency
