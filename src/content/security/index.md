@@ -127,5 +127,5 @@ technical release blog post.
   be sure to update your fork and consider sharing your
   changes with the community.
 
-[upgrade your package dependencies]: /release/upgrade
+[upgrade your package dependencies]: /install/upgrade
 

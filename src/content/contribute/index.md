@@ -157,8 +157,8 @@ To get started,
 [switch][switch-channels] to the [`beta` channel][beta-channel] today
 and account for any [necessary migrations][].
 
-[switch-channels]: /release/upgrade#changing-channels
-[beta-channel]: /release/upgrade#the-beta-channel
+[switch-channels]: /install/upgrade#change-channels
+[beta-channel]: /install/upgrade#the-beta-channel
 [report-bugs]: {{site.github}}/flutter/flutter/issues/new/choose
 [necessary migrations]: /release/breaking-changes
 

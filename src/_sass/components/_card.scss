@@ -65,6 +65,14 @@
         margin: 0;
         overflow: hidden;
         font-family: var(--site-ui-fontFamily);
+
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+
+      &.text-center .card-title {
+        justify-content: center;
       }
 
       .card-subtitle {

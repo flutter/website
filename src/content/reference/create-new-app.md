@@ -298,7 +298,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 <a id="project-idx" aria-hidden="true"></a>
 
-## Firebase studio
+## Firebase Studio
 
 To create a Flutter app with [Firebase Studio][fbs],
 you first need a Google account and to [set up Firebase Studio][fbs-setup].

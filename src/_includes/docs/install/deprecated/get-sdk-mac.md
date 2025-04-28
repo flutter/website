@@ -133,5 +133,5 @@ For additional download options, check out `flutter help precache`.
 [Snap Store]: https://snapcraft.io/store
 [snapd]: https://snapcraft.io/flutter
 [Update your path]: #update-your-path
-[Upgrading Flutter]: /release/upgrade
+[Upgrading Flutter]: /install/upgrade
 [Mac computers with Apple silicon]: https://support.apple.com/en-us/HT211814
