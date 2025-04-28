@@ -106,7 +106,7 @@
   permalink: /release
   children:
     - title: Upgrade
-      permalink: /release/upgrade
+      permalink: /install/upgrade
     - title: SDK archive
       permalink: /release/archive
     - divider

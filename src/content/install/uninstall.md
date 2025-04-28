@@ -12,7 +12,7 @@ delete the directories that store Flutter and its configuration files.
 
 Select your development platform from the following tabs.
 
-{% tabs %}
+{% tabs "dev-os" %}
 
 {% for os in os-list %}
 {% tab os %}

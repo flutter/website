@@ -119,4 +119,4 @@ run the `flutter doctor` command again.
 [Installing snapd]: https://snapcraft.io/docs/installing-snapd
 [SDK archive]: /release/archive
 [Update your path]: #update-your-path
-[Upgrading Flutter]: /release/upgrade
+[Upgrading Flutter]: /install/upgrade
