@@ -194,7 +194,7 @@ plugins {
 }
 ```
 `"dev.flutter.flutter-gradle-plugin"` is the project Flutter 
-Gradle Plugin. Which is a different string than the value applied 
+Gradle Plugin, which is a different string than the value applied 
 in settings.gradle(.kts) (`"dev.flutter.flutter-plugin-loader"`). 
 
 Finally, if your `dependencies` block contains a dependency
