@@ -44,5 +44,5 @@ consult the following resources.
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 
-[upgrade]: /release/upgrade
-[uninstall]: /get-started/uninstall?tab={{include.devos}}
+[upgrade]: /install/upgrade
+[uninstall]: /install/uninstall?tab-save-dev-os={{include.devos}}

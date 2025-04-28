@@ -9,7 +9,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-::::important
+:::important
 These breaking change docs are accurate, as of the release
 under which they are published. Over time, the
 workarounds described here might become inaccurate.

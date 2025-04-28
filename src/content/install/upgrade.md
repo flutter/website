@@ -1,14 +1,16 @@
 ---
-title: Upgrading Flutter
-short-title: Upgrading
-description: How to upgrade Flutter.
+title: Upgrade Flutter
+short-title: Upgrade
+description: Learn how to upgrade Flutter and switch to another channel.
 ---
 
 No matter which one of the Flutter release channels
 you follow, you can use the `flutter` command to upgrade your
 Flutter SDK or the packages that your app depends on.
 
-## Upgrading the Flutter SDK
+<a id="upgrading-the-flutter-sdk" aria-hidden="true"></a>
+
+## Upgrade the Flutter SDK
 
 To update the Flutter SDK use the `flutter upgrade` command:
 
@@ -24,7 +26,9 @@ and want an even more recent version of the Flutter SDK,
 switch to the **beta** channel using `flutter channel beta`,
 and then run `flutter upgrade`.
 
-### Keeping informed
+<a id="keep-informed" aria-hidden="true"></a>
+
+### Keep informed
 
 We publish [migration guides][] for known breaking changes.
 
@@ -83,7 +87,9 @@ it is more likely to contain serious regressions.
 The latest documentation for the **main** branch
 is at: <https://main-api.flutter.dev>
 
-### Changing channels
+<a id="changing-channels" aria-hidden="true"></a>
+
+### Change channels
 
 To view your current channel, use the following command:
 
@@ -101,8 +107,9 @@ $ flutter channel beta
 $ flutter upgrade
 ```
 
+<a id="switching-to-a-specific-flutter-version" aria-hidden="true"></a>
 
-## Switching to a specific Flutter version
+## Switch to a specific Flutter version
 
 To switch to a specific Flutter version:
 
@@ -124,8 +131,9 @@ To switch to a specific Flutter version:
    $ git checkout <Flutter version>
    ```
 
+<a id="upgrading-packages" aria-hidden="true"></a>
 
-## Upgrading packages
+## Upgrade packages
 
 If you've modified your `pubspec.yaml` file, or you want to update
 only the packages that your app depends upon
