@@ -33,8 +33,6 @@ You might find the following docs useful:
 * [Flutter's modes][]
 * [Debugging Flutter apps programmatically][]
 
-[Flutter enabled IDE/editor]: /get-started/editor
-
 [Debugging Flutter apps programmatically]: /testing/code-debugging
 [Flutter's modes]: /testing/build-modes
 [Flutter performance profiling]: /perf/ui-performance

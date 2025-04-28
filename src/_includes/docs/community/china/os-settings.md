@@ -100,9 +100,6 @@ This procedure requires using {{shell}}.
    {{prompt}} flutter doctor
    ```
 
-1. Return to the [setting up Flutter](/get-started/editor)
-   guide and continue from that procedure.
-
 From this example, `flutter pub get` fetches packages from `flutter-io.cn`,
 in any terminal where you set `PUB_HOSTED_URL` and `FLUTTER_STORAGE_BASE_URL`.
 

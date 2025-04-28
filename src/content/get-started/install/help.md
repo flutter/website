@@ -224,7 +224,7 @@ search the archive for a similar issue before posting a new one.
 [community support channels]: #community-support
 [java binary path]: {{site.repo.flutter}}/issues/106416#issuecomment-1522198064
 [so java version]: {{site.so}}/questions/75328050/
-[set up VS Code]: /get-started/editor
+[set up VS Code]: /tools/vs-code#setup
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 [sdkmanager]: {{site.android-dev}}/studio/command-line/sdkmanager
 [windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows
