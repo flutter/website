@@ -74,7 +74,7 @@ check out how to [Install Flutter manually][].
  1. <h3>Launch VS Code</h3>
 
     If not already open, open VS Code by searching for it with Spotlight
-    or opening it manually from the directory you installed it in.
+    or opening it manually from the directory where it's installed.
 
  1. <h3>Add the Flutter extension to VS Code</h3>
 
@@ -125,7 +125,7 @@ check out how to [Install Flutter manually][].
 
        If you agree, click **OK**.
 
-    1. To ensure Flutter is available all terminals:
+    1. To ensure that Flutter is available on all terminals:
 
        1. Close, then reopen all terminal windows.
        1. Restart VS Code.
@@ -183,7 +183,7 @@ it's time to create an app and try out Flutter development!
 
        A file dialog will appear.
        Select or create the parent directory where the project will be created.
-       Don't create the project folder itself, the Flutter tool will do so.
+       Don't create the project folder itself, the Flutter tool handles that.
        To confirm your selection,
        click **Select a folder to create the project in**.
 
@@ -272,7 +272,7 @@ it's time to create an app and try out Flutter development!
     1. Try clicking the
        ![increment (+)](/assets/images/docs/get-started/quick/increment-button.png){: .text-icon}
        button again.
-       Notice the value is decremented instead of incremented.
+       Notice the value decreases instead of increases.
 
  1. <h3>Explore the Flutter sidebar</h3>
 
