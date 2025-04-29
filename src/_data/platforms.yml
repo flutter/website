@@ -5,7 +5,7 @@
   unsupported: '20 and earlier'
 - platform: 'iOS'
   target-arch: 'Arm64'
-  supported: '12 to 18'
+  supported: '13 to 18'
   ci-tested: '17'
   unsupported: '11 and earlier'
 - platform: 'macOS'
