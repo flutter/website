@@ -85,7 +85,7 @@ targetmin:
   linux:
     debian: 10
     ubuntu: '20.04 LTS'
-  ios: 12
+  ios: 13
   android: 'Android API level 21'
 
 ## Software current versions
