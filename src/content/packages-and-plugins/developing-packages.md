@@ -1065,7 +1065,7 @@ PENDING
 [iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]: /get-started/editor
+[Flutter editor]: /tools/editors
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html

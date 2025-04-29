@@ -399,6 +399,6 @@ widgets and render objects.
 [static-variables]: {{site.dart-site}}/language/classes#static-variables
 [const-new]: {{site.dart-site}}/language/variables#final-and-const
 [Dart Virtual Machine (VM)]: {{site.dart-site}}/overview#platform
-[Flutter editor]: /get-started/editor
+[Flutter editor]: /tools/editors
 [Issue 43574]: {{site.repo.flutter}}/issues/43574
 [kernel files]: {{site.github}}/dart-lang/sdk/tree/main/pkg/kernel
