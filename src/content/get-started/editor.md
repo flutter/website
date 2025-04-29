@@ -8,6 +8,7 @@ next:
   title: Create your first app
   path: /get-started/codelab
 toc: false
+sitemap: false
 ---
 
 You can build apps with Flutter using any text editor or
