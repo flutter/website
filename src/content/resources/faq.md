@@ -178,7 +178,7 @@ of the many editors that support [editing Dart][].
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
 [editing Dart]: {{site.dart-site}}/tools
-[editor configuration]: /get-started/editor
+[editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [VS Code]: https://code.visualstudio.com/
 
