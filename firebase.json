@@ -125,6 +125,7 @@
       { "source": "/get-started/flutter-for/ios-devs", "destination": "/get-started/flutter-for/swiftui-devs", "type": 301 },
       { "source": "/get-started/fwe/:rest*", "destination": "/get-started/fundamentals/:rest*", "type": 301 },
       { "source": "/get-started/install/null", "destination": "/get-started/install", "type": 301 },
+      { "source": "/get-started/install/help", "destination": "/install/troubleshoot", "type": 301 },
       { "source": "/get-started/learn-more", "destination": "/get-started/learn-flutter", "type": 301 },
       { "source": "/get-started/test-drive*", "destination": "/get-started/codelab", "type": 301 },
       { "source": "/get-started/uninstall", "destination": "/install/uninstall", "type": 301 },
