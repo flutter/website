@@ -51,7 +51,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            // TODO: Update the platforms your plugin supports.
            // If your plugin only supports iOS, remove `.macOS(...)`.
            // If your plugin only supports macOS, remove `.iOS(...)`.
-           .iOS("13.0"),
+           .iOS("12.0"),
            .macOS("10.14")
        ],
        products: [
@@ -93,7 +93,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            // TODO: Update the platforms your plugin supports.
            // If your plugin only supports iOS, remove `.macOS(...)`.
            // If your plugin only supports macOS, remove `.iOS(...)`.
-           [!.iOS("13.0"),!]
+           [!.iOS("12.0"),!]
            [!.macOS("10.14")!]
        ],
    ```
@@ -107,7 +107,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        // TODO: Update your plugin name.
        name: [!"plugin_name"!],
        platforms: [
-           .iOS("13.0"),
+           .iOS("12.0"),
            .macOS("10.14")
        ],
        products: [
