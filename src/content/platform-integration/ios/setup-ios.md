@@ -241,7 +241,7 @@ support connecting Flutter to native iOS code.
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugin]: /packages-and-plugins/developing-packages#types
 
-## Check your development setup with Flutter doctor
+## Validate your development setup
 
 The `flutter doctor` command validates all required components of a
 complete Flutter development environment.
