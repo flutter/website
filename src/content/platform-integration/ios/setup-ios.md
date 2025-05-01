@@ -6,22 +6,19 @@ description: >-
 short-title: Set up iOS
 ---
 
-## Install Flutter
+Learn how to set up your development environment
+to run, build, and deploy Flutter apps for iOS devices.
 
-To set up your development environment for iOS,
-you first need to install Flutter on your
-development machine.
+:::note
+If you haven't set up Flutter already,
+visit and follow the [Get started with Flutter][] guide first.
 
 If you have already installed Flutter,
 ensure that it's [up to date][].
-
-:::note Did you know?
-When you install or update the Flutter framework,
-it also installs and updates the Dart language for you.
 :::
 
-If Flutter is installed and up to date,
-continue to the next step.
+[Get started with Flutter]: /get-started/install
+[up to date]: /install/upgrade
 
 [up to date]: /install/upgrade
 
