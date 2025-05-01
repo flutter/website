@@ -13,27 +13,27 @@ development machine.
 If you have already installed Flutter,
 ensure that it's [up to date][].
 
-If Flutter is installed and up to date,
-continue to the next step.
-
-:::Did you know?
+:::note Did you know?
 When you install or update the Flutter framework,
 it also installs and updates the Dart language for you.
 :::
+
+If Flutter is installed and up to date,
+continue to the next step.
 
 [up to date]: /install/upgrade
 
 ## Install Xcode
 
-With Xcode, you can develop Flutter apps to run on
-an iOS device or on the simulator.
+With Xcode, you can run Flutter apps on
+an iOS physical device or on the iOS Simulator.
 
 If you haven't done so already,
 install and set up [Xcode][].
 If you have installed Xcode, ensure that
-it's up to date. Once Xcode is installed,
-configured (with the command-line tools and the license),
-and up to date, skip to the next step.
+it's up to date and continue to the next step.
+(After setting up the command-line tools
+and accepting the license, as shown here.)
 
 [Xcode]: https://developer.apple.com/xcode/
 
@@ -48,6 +48,7 @@ Sign the Xcode license agreement:
 
 ```console
 {{prompt1}} sudo xcodebuild -license
+```
 
 ## Configure your target iOS device
 
@@ -60,7 +61,7 @@ For that reason, we recommend starting with the Simulator.
 {% tabs "ios-simulator-or-not" %}
 {% tab "Virtual device" %}
 
-### Configure your iOS simulator
+### Configure your iOS Simulator
 
 Use the following steps:
 
@@ -101,9 +102,9 @@ Use the following steps:
      **General** <span aria-label="and then">></span>
      **About**.
 
-1. (Only if needed)If you selected simulated high-screen density
-   iOS device, it might overflow your screen.
-   If that occurs,
+1. (_Only if needed_) If you selected a simulated
+   high-screen density iOS device,
+   it might overflow your screen. If that occurs,
    change the presented size in the **Simulator** app.
 
     | **Display Size**  |                          **Menu command**                          |     **Keyboard shortcut**     |
@@ -125,7 +126,7 @@ Set up each iOS device on which you want to test.
 1. Attach your iOS device to the USB port on your Mac.
 
 1. On first connecting an iOS device to your Mac,
-   your iOS device displays the **Trust this computer?** dialog.
+   your device will display the **Trust this computer?** dialog.
 
 1. Click **Trust**.
 
@@ -134,7 +135,7 @@ Set up each iOS device on which you want to test.
 ### Enable Developer Mode
 
 Apple requires enabling **[Developer Mode][]**
-to protect against malicious software.
+on the device to protect against malicious software.
 
 1. Tap on **Settings** <span aria-label="and then">></span>
    **Privacy & Security** <span aria-label="and then">></span>
@@ -154,7 +155,7 @@ to protect against malicious software.
 
 To send your app to a physical iOS device,
 _even_ for testing, you must establish trust
-between your Mac and the iOS device.
+between your Mac and the device.
 In addition to trusting the device when that
 popup appears, you must upload a signed
 developer certificate to your device.
@@ -205,6 +206,9 @@ If the **codesign wants to access key...** dialog appears:
 [Apple Developer]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
 
+{% endtab %}
+{% endtabs %}
+
 ---
 
 ## Install CocoaPods
@@ -212,8 +216,8 @@ If the **codesign wants to access key...** dialog appears:
 If your app depends on any [Flutter plugin][]
 that uses native iOS code,
 install [CocoaPods][cocoapods].
-CocoaPods bundles various dependencies across
-Flutter and iOS code.
+CocoaPods bundles various dependencies that
+support connecting Flutter to native iOS code.
 
 1. Install `cocoapods` following the
    [CocoaPods install guide][cocoapods].
@@ -237,7 +241,7 @@ Flutter and iOS code.
 1. To apply this change, restart all open terminal sessions.
 
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
-[Flutter plugins]: /packages-and-plugins/developing-packages#types
+[Flutter plugin]: /packages-and-plugins/developing-packages#types
 
 ## Check your development setup with Flutter doctor
 
@@ -254,7 +258,7 @@ Since these instructions did not install for Android
 or desktop development, you can ignore Flutter doctor's
 error reports for those components for now.
 
-If the `flutter doctor` command returns other errors
+If the `flutter doctor` command returns other errors,
 run it again with the verbose flag.
 
 ```console
