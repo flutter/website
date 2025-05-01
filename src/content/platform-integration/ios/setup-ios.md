@@ -1,5 +1,5 @@
 ---
-title: Install and set up for iOS development
+title: Set up iOS development
 description: Configure your system to develop Flutter for iOS.
 short-title: Set up iOS
 ---
