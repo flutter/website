@@ -78,7 +78,6 @@ Use the following steps:
     ```
 
 1. Set your Simulator to use a 64-bit device.
-   This covers iPhone 5s or later.
 
    * From **Xcode**, choose a simulator device type.
 
