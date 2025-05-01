@@ -41,13 +41,13 @@ To configure Xcode's command-line tools,
 use the following command:
 
 ```console
-{{prompt1}} sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
+$ sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
 ```
 
 Sign the Xcode license agreement:
 
 ```console
-{{prompt1}} sudo xcodebuild -license
+$ sudo xcodebuild -license
 ```
 
 ## Configure your target iOS device
@@ -58,8 +58,8 @@ the Simulator up and running than a physical device,
 which requires more setup.
 For that reason, we recommend starting with the Simulator.
 
-{% tabs "ios-simulator-or-not" %}
-{% tab "Virtual device" %}
+{% tabs "ios-simulator-or-physical-device" %}
+{% tab "Simulator" %}
 
 ### Configure your iOS Simulator
 
@@ -68,13 +68,13 @@ Use the following steps:
 1. To install the iOS Simulator, run the following command.
 
     ```console
-    {{prompt1}} xcodebuild -downloadPlatform iOS
+    $ xcodebuild -downloadPlatform iOS
     ```
 
 1. Start the Simulator with the following command:
 
     ```console
-    {{prompt1}} open -a Simulator
+    $ open -a Simulator
     ```
 
 1. Set your Simulator to use a 64-bit device.
@@ -189,7 +189,7 @@ run your app on your iOS device once, then try again.
 1. Under the **Developer App** heading,
    you should find your certificate.
 
-1. Tap the Certificate.
+1. Tap the certificate.
 
 1. Tap **Trust "&lt;certificate&gt;"**.
 
@@ -251,7 +251,7 @@ complete Flutter development environment.
 From the command-line, run the following command:
 
    ```console
-   {{prompt}} flutter doctor
+   $ flutter doctor
    ```
 
 Since these instructions did not install for Android
@@ -262,7 +262,7 @@ If the `flutter doctor` command returns other errors,
 run it again with the verbose flag.
 
 ```console
-{{prompt}} flutter doctor -v
+$ flutter doctor -v
 ```
 
 Follow the instructions in the output for software
