@@ -1,6 +1,8 @@
 ---
 title: Set up iOS development
-description: Configure your system to develop Flutter for iOS.
+description: >-
+  Configure your development environment to
+  run, build, and deploy Flutter apps for iOS devices.
 short-title: Set up iOS
 ---
 
