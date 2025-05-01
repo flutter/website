@@ -168,7 +168,7 @@ a personal Apple Developer account is free and works.
 
 :::note Apple Developer program
 When you want to _deploy_ your app to the
-Play store, you will need to upgrade your
+App Store, you will need to upgrade your
 personal Apple Developer account to
 a professional account.
 :::
