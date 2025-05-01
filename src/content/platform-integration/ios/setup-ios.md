@@ -175,11 +175,11 @@ personal Apple Developer account to
 a professional account.
 :::
 
-##### Create a developer certificate
+### Prepare the device
 
 Find your **Profiles & Device Management** menu under
 **Settings**. (The exact location can vary by device.)
-Toggle your Certificate to **Enable**.
+Toggle your certificate to **Enable**.
 
 :::note
 If you can't find **VPN & Device Management** menu,
