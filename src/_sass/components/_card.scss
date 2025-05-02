@@ -10,6 +10,10 @@
   // Disable lite-youtube shadow for videos in cards.
   --lite-youtube-frame-shadow-visible: false;
 
+  &.link-cards {
+    margin-block: 2rem;
+  }
+
   &.wide {
     --card-min-width: 19rem;
   }
@@ -23,7 +27,7 @@
     display: flex;
     flex-direction: column;
 
-    border-radius: 0.25rem;
+    border-radius: var(--site-radius);
     padding: 1rem;
     gap: 0.5rem;
     height: auto;
@@ -36,7 +40,7 @@
     }
 
     &.filled-card {
-      background-color: var(--site-inset-bgColor-translucent);
+      background-color: var(--site-filledCard-bgColor);
     }
 
     &.outlined-card {
@@ -52,6 +56,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 1rem;
     }
 
     .card-header {
@@ -137,10 +142,40 @@
         color: var(--site-base-fgColor-lighter);
         font-weight: 400;
       }
+
+      &.selected-card {
+        background-color: var(--site-primary-color-highlight);
+        border-color: var(--site-primary-color);
+      }
+    }
+
+    &.list-card {
+      .card-title {
+        font-size: 1.75rem;
+      }
+
+      ul {
+        width: 100%;
+        margin: 0;
+        list-style-type: none;
+        padding-inline-start: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+
+        li {
+          width: 100%;
+        }
+
+        a.text-button {
+          width: 100%;
+          padding: .3rem .8rem;
+        }
+      }
     }
   }
 
-  a.card {
+  a.card, button.card {
     text-decoration: none;
 
     .card-title {
