@@ -220,7 +220,7 @@ widgets to offer a dramatically more accessible experience.
 
 {% ytEmbed 'bWbBgbmAdQs', 'Building Flutter apps with accessibility in mind' %}
 
-## Enhancing Accessibility with Semantic Roles in Flutter
+## Enhancing Accessibility with Semantic Roles
 
 ### What are Semantic Roles?
 
