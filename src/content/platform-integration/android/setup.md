@@ -346,7 +346,7 @@ or begin improving integration with Android.
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/docs/get-started/quick/pointing-the-way.png" height="160" aria-hidden="true" alt="Explore Flutter learning resources">
+      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
     </div>
     <div class="card-header">
       <span class="card-title">Continue learning Flutter</span>
@@ -373,7 +373,7 @@ or begin improving integration with Android.
   </div>
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/docs/platform-integration/flutter-on-phone.svg" height="160" aria-hidden="true" alt="Keep up to date with Flutter">
+      <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
     </div>
     <div class="card-header">
       <span class="card-title">Build for Android</span>
