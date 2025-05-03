@@ -696,7 +696,7 @@
       { "source": "/to/add-swift-package-manager-manually", "destination": "/packages-and-plugins/swift-package-manager/for-app-developers#add-to-a-flutter-app-manually", "type": 301 },
       { "source": "/to/add-web-support", "destination": "/platform-integration/web/building#add-web-support-to-an-existing-app", "type": 301 },
       { "source": "/to/android-ffi", "destination": "/platform-integration/android/c-interop", "type": 301 },
-      { "source": "/to/android-setup", "destination": "/platform-integration/android/install-android", "type": 301 },
+      { "source": "/to/android-setup", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/to/android-supported-architectures", "destination": "/deployment/android#what-are-the-supported-target-architectures", "type": 301 },
       { "source": "/to/asset-from-package", "destination": "/ui/assets/assets-and-images#from-packages", "type": 301 },
       { "source": "/to/brick-breaker", "destination": "https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker", "type": 301 },
