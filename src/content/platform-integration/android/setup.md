@@ -335,7 +335,18 @@ run a Flutter app on a physical Android device, follow these steps:
     Depending on if you set up an emulator or a device,
     at least one should output an entry with the platform marked as **android**.
 
+ 1. <h3>Troubleshoot setup issues</h3>
+
+    If you need help resolving any setup issues,
+    check out [Install and setup troubleshooting][].
+
+    If you still have issues or questions,
+    reach out on one of the Flutter [community][] channels.
+
 {: .steps}
+
+[Install and setup troubleshooting]: /install/troubleshoot#android-setup
+[community]: {{site.main-url}}/community
 
 ## Start developing for Android
 
