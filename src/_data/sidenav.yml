@@ -513,8 +513,8 @@
     - title: Android
       permalink: /platform-integration/android
       children:
-        - title: Add Android as build target
-          permalink: /platform-integration/android/install-android
+        - title: Set up Android development
+          permalink: /platform-integration/android/setup
         - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
         - title: Add predictive back

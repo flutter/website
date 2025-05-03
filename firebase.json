@@ -140,6 +140,8 @@
       { "source": "/packages-and-plugins/plugins-in-tests", "destination": "/testing/plugins-in-tests", "type": 301 },
       { "source": "/packages-and-plugins/plugin-api-migration", "destination": "/release/breaking-changes/plugin-api-migration", "type": 301 },
       { "source": "/platform-integration/android/androidx-migration", "destination": "/release/breaking-changes/androidx-migration", "type": 301 },
+      { "source": "/platform-integration/android/install-android", "destination": "/platform-integration/android/setup", "type": 301 },
+      { "source": "/platform-integration/android/install-android/:rest*", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
       { "source": "/platform-integration/c-interop", "destination": "/platform-integration", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },

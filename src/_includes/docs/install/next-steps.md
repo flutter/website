@@ -20,7 +20,7 @@ consult the following resources.
 * [Upgrade Flutter][upgrade]
 {%- case next-step.add-android %}
 {%- when 'Y' %}
-* [Add Android compilation tools](/platform-integration/android/install-android/install-android-from-{{andtarget}})
+* [Add Android compilation tools](/platform-integration/android/setup)
 {%- endcase %}
 {%- case next-step.add-chrome %}
 {%- when 'Y' %}
