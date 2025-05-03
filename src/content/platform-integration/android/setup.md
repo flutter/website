@@ -38,120 +38,112 @@ a physical Android device or an Android Emulator.
 If you haven't done so already,
 install and set up the latest stable version of [Android Studio][].
 
-<ol class="steps">
-<li class="linux-only">
-  <h3>Install Android Studio prerequisites</h3>
+ 1. <h3>Install prerequisites libraries</h3>
 
-  If you're developing on Linux, first install the prerequisite,
-  [documented collection of 32-bit libraries][64bit-libs].
+    If you're developing on Linux, first install the
+    [prerequisite collection of 32-bit libraries][64bit-libs]
+    that Android Studio requires.
+    {: .linux-only}
 
-  [64bit-libs]: https://developer.android.com/studio/install#64bit-libs
+ 1. <h3>Install Android Studio</h3>
 
-</li>
-<li>
-  <h3>Install Android Studio</h3>
+    If you haven't done so already, [install and set up][as-install]
+    the latest stable version of [Android Studio][].
 
-  If you haven't done so already, [install and set up][as-install]
-  the latest stable version of [Android Studio][].
+    If you already have Android Studio installed,
+    ensure that it's [up to date][as-update].
 
-  If you already have Android Studio installed,
-  ensure that it's [up to date][as-update].
+ 1. <h3>Install Android SDK and tools</h3>
 
-</li>
-<li>
-  <h3>Install Android SDK and tools</h3>
+    1. Launch **Android Studio**.
 
-  1. Launch **Android Studio**.
+    1. Go to the **Settings** page to view the **SDK Manager**.
 
-  1. Go to the **Settings** page to view the **SDK Manager**.
+      1. If you have a project open,
+         go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
 
-     1. If you have a project open,
-        go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
+      1. If the **Welcome to Android Studio** dialog is open,
+         click the **More Options** icon that follows the **Open** button,
+         then click **SDK Manager** from the dropdown menu.
 
-     1. If the **Welcome to Android Studio** dialog is open,
-        click the **More Options** icon that follows the **Open** button,
-        then click **SDK Manager** from the dropdown menu.
+    1. If the **SDK Platforms** tab is not open, switch to it.
 
-  1. If the **SDK Platforms** tab is not open, switch to it.
+    1. Verify that the first entry with an **API Level** of
+       **{{ site.platform.androidApiLevel }}** has been selected.
 
-  1. Verify that the first entry with an **API Level** of
-     **{{ site.platform.androidApiLevel }}** has been selected.
+       If the **Status** column displays
+       **Update available** or **Not installed**:
 
-     If the **Status** column displays
-     **Update available** or **Not installed**:
+       1. Select the checkbox for that entry or row.
 
-     1. Select the checkbox for that entry or row.
+       1. Click **Apply**.
 
-     1. Click **Apply**.
+       1. When the **Confirm Change** dialog displays, click **OK**.
 
-     1. When the **Confirm Change** dialog displays, click **OK**.
+          The **SDK Component Installer** dialog displays with a
+          progress indicator.
 
-        The **SDK Component Installer** dialog displays with a
-        progress indicator.
+       1. When the installation finishes, click **Finish**.
 
-     1. When the installation finishes, click **Finish**.
+       {: type="a"}
 
-     {: type="a"}
+    1. Switch to the **SDK Tools** tab.
 
-  1. Switch to the **SDK Tools** tab.
+    1. Verify that the following SDK Tools have been selected:
 
-  1. Verify that the following SDK Tools have been selected:
+       - **Android SDK Build-Tools**
+       - **Android SDK Command-line Tools**
+       - **Android Emulator**
+       - **Android SDK Platform-Tools**
 
-     - **Android SDK Build-Tools**
-     - **Android SDK Command-line Tools**
-     - **Android Emulator**
-     - **Android SDK Platform-Tools**
+    1. If the **Status** column for any of the preceding tools displays
+       **Update available** or **Not installed**:
 
-  1. If the **Status** column for any of the preceding tools displays
-     **Update available** or **Not installed**:
+       1. Select the checkbox for the necessary tools.
 
-     1. Select the checkbox for the necessary tools.
+       1. Click **Apply**.
 
-     1. Click **Apply**.
+       1. When the **Confirm Change** dialog displays, click **OK**.
 
-     1. When the **Confirm Change** dialog displays, click **OK**.
+          The **SDK Component Installer** dialog displays with a
+          progress indicator.
 
-        The **SDK Component Installer** dialog displays with a
-        progress indicator.
+       1. When the installation finishes, click **Finish**.
 
-     1. When the installation finishes, click **Finish**.
+       {: type="a"}
 
-     {: type="a"}
+   1. <h3>Agree to the Android licenses</h3>
 
-</li>
-<li>
-  <h3>Agree to the Android licenses</h3>
+      Before you can use Flutter and after you install all prerequisites,
+      agree to the licenses of the Android SDK platform.
 
-  Before you can use Flutter and after you install all prerequisites,
-  agree to the licenses of the Android SDK platform.
+      1. Open your preferred terminal.
 
-  1. Open your preferred terminal.
+      1. Run the following command to review and sign the SDK licenses.
 
-  1. Run the following command to review and sign the SDK licenses.
+         ```console
+         $ flutter doctor --android-licenses
+         ```
 
-     ```console
-     $ flutter doctor --android-licenses
-     ```
+      1. Read and accept any necessary licenses.
 
-  1. Read and accept any necessary licenses.
+         If you haven't accepted each of the SDK licenses previously,
+         you'll need to review and agree to them before developing for Android.
 
-     If you haven't accepted each of the SDK licenses previously,
-     you'll need to review and agree to them before developing for Android.
+         Before agreeing to the terms of each license,
+         read each with care.
 
-     Before agreeing to the terms of each license,
-     read each with care.
+         Once you've accepted all the necessary licenses successfully,
+         you should see output similar to the following:
 
-     Once you've accepted all the necessary licenses successfully,
-     you should see output similar to the following:
+         ```console
+         All SDK package licenses accepted.
+         ```
 
-     ```console
-     All SDK package licenses accepted.
-     ```
-
-</li>
-</ol>
+{: .steps}
 
 [Android Studio]: https://developer.android.com/studio
+[64bit-libs]: https://developer.android.com/studio/install#64bit-libs
 [as-install]: https://developer.android.com/studio/install
 [as-update]: https://developer.android.com/studio/intro/update
 
@@ -309,7 +301,7 @@ run a Flutter app on a physical Android device, follow these steps:
 ## Validate your setup
 
  1. <h3>Check for toolchain issues</h3>
- 
+
     To check for any issues with your Android development setup,
     run the `flutter doctor` command in your preferred terminal:
 
