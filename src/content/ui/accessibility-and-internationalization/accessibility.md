@@ -243,9 +243,12 @@ Flutter provides the [`Semantics` widget][] with the [`SemanticsRole` enum][] to
 
 **1. Automatic Semantics from Standard Widgets:**
 
-Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, and `Table`, automatically include semantic information, including their roles. Whenever possible, prefer using these standard widgets as they handle many accessibility aspects out-of-the-box.
+Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, and `Table`,
+automatically include semantic information along with their roles.
+Whenever possible, prefer using these standard widgets
+as they handle many accessibility aspects out-of-the-box.
 
-**2. Explicitly Adding or Overriding Roles:**
+**2. Explicitly adding or overriding roles:**
 
 For custom components or when the default semantics aren't sufficient, use the `Semantics` widget to define the role:
 
