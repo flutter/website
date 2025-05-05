@@ -1,5 +1,5 @@
-{% assign os =  include.os | downcase -%}
-{% assign channel =  include.channel | downcase -%}
+{% assign os = include.os | downcase -%}
+{% assign channel = include.channel | downcase -%}
 
 Select from the following scrollable list:
 

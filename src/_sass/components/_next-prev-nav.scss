@@ -1,58 +1,64 @@
-@use '../base/variables' as *;
+@use '../base/mixins';
 
-.site-nextprev-nav, // Nav with both links
-.site-nextprev-nav__single // Nav with single link
-{
-  clear: both;
+#site-prev-next {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-block-end: 1rem;
 
-  ul {
-    $spacer-base: 0.75rem;
+  .prev {
+    text-align: left;
+    justify-content: flex-start;
+  }
 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  .next {
+    text-align: right;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
 
-    li {
-      display: flex;
-      margin-bottom: $spacer-base;
-      white-space: nowrap;
+  @media (min-width: 576px) {
+    flex-wrap: nowrap;
 
-      a {
-        text-overflow: ellipsis;
-        overflow: hidden;
-      }
-
-      &.prev:before {
-        color: $site-color-primary;
-        content: "\2329"; // &lang;
-        padding-right: $spacer-base * 0.5;
-      }
-
-      &.next {
-        justify-content: flex-end;
-        text-align: right;
-      }
-
-      &.next:after {
-        color: $site-color-primary;
-        content: "\232A"; // &rang;
-        padding-left: $spacer-base * 0.5;
-      }
+    .prev, .next {
+      max-width: 50%;
     }
   }
-}
 
-.site-nextprev-nav > ul > li {
-  width: 49%;
+  a {
+    overflow-x: hidden;
+    flex-basis: 100%;
 
-  &.prev { float: left; }
-}
+    text-decoration: none;
+    color: var(--site-base-fgColor);
+    border: 1px solid var(--site-outline);
+    border-radius: 0.25rem;
 
-.site-nextprev-nav__single > ul > li {
-  &.prev { width: 100%; }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    min-height: 100%;
 
-  &.next {
-    float: right;
-    width: 100%;
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+
+      .prev-next-subtitle {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+    }
+
+    &:hover {
+      @include mixins.interaction-style(3%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(5%);
+    }
   }
 }

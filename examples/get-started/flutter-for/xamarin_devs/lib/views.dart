@@ -22,10 +22,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -49,10 +46,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return const Text('Toggle One');
     }
-    return CupertinoButton(
-      onPressed: () {},
-      child: const Text('Toggle Two'),
-    );
+    return CupertinoButton(onPressed: () {}, child: const Text('Toggle Two'));
   }
 
   @override
@@ -68,4 +62,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
+
 // #enddocregion add-remove-element

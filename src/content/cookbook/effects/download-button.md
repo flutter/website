@@ -20,7 +20,7 @@ multiple visual states, based on the status of an app download.
 
 The following animation shows the app's behavior:
 
-![The download button cycles through its stages](/assets/images/docs/cookbook/effects/DownloadButton.gif){:.site-mobile-screenshot}
+![The download button cycles through its stages](/assets/images/docs/cookbook/effects/DownloadButton.webp){:.site-mobile-screenshot}
 
 ## Define a new stateless widget
 
@@ -34,9 +34,7 @@ Define a new stateless widget called `DownloadButton`.
 ```dart
 @immutable
 class DownloadButton extends StatelessWidget {
-  const DownloadButton({
-    super.key,
-  });
+  const DownloadButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,21 +54,14 @@ should take to animate from one status to another.
 
 <?code-excerpt "lib/visual_states.dart (VisualStates)"?>
 ```dart
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 @immutable
 class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.transitionDuration = const Duration(
-      milliseconds: 500,
-    ),
+    this.transitionDuration = const Duration(milliseconds: 500),
   });
 
   final DownloadStatus status;
@@ -134,9 +125,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.transitionDuration = const Duration(
-      milliseconds: 500,
-    ),
+    this.transitionDuration = const Duration(milliseconds: 500),
   });
 
   final DownloadStatus status;
@@ -271,9 +260,9 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
-                ),
+              fontWeight: FontWeight.bold,
+              color: CupertinoColors.activeBlue,
+            ),
           ),
         ),
       ),
@@ -505,18 +494,18 @@ class _ExampleCupertinoDownloadButtonState
     super.initState();
     _downloadControllers = List<DownloadController>.generate(
       20,
-      (index) => SimulatedDownloadController(onOpenDownload: () {
-        _openDownload(index);
-      }),
+      (index) => SimulatedDownloadController(
+        onOpenDownload: () {
+          _openDownload(index);
+        },
+      ),
     );
   }
 
   void _openDownload(int index) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Open App ${index + 1}'),
-      ),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Open App ${index + 1}')));
   }
 
   @override
@@ -580,17 +569,11 @@ class DemoAppIcon extends StatelessWidget {
           height: 80,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.red, Colors.blue],
-              ),
+              gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Center(
-              child: Icon(
-                Icons.ac_unit,
-                color: Colors.white,
-                size: 40,
-              ),
+              child: Icon(Icons.ac_unit, color: Colors.white, size: 40),
             ),
           ),
         ),
@@ -599,12 +582,7 @@ class DemoAppIcon extends StatelessWidget {
   }
 }
 
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 abstract class DownloadController implements ChangeNotifier {
   DownloadStatus get downloadStatus;
@@ -621,9 +599,9 @@ class SimulatedDownloadController extends DownloadController
     DownloadStatus downloadStatus = DownloadStatus.notDownloaded,
     double progress = 0.0,
     required VoidCallback onOpenDownload,
-  })  : _downloadStatus = downloadStatus,
-        _progress = progress,
-        _onOpenDownload = onOpenDownload;
+  }) : _downloadStatus = downloadStatus,
+       _progress = progress,
+       _onOpenDownload = onOpenDownload;
 
   DownloadStatus _downloadStatus;
   @override
@@ -833,9 +811,9 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
-                ),
+              fontWeight: FontWeight.bold,
+              color: CupertinoColors.activeBlue,
+            ),
           ),
         ),
       ),
@@ -865,12 +843,15 @@ class ProgressIndicatorWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor: isDownloading
-                ? CupertinoColors.lightBackgroundGray
-                : Colors.transparent,
-            valueColor: AlwaysStoppedAnimation(isFetching
-                ? CupertinoColors.lightBackgroundGray
-                : CupertinoColors.activeBlue),
+            backgroundColor:
+                isDownloading
+                    ? CupertinoColors.lightBackgroundGray
+                    : Colors.transparent,
+            valueColor: AlwaysStoppedAnimation(
+              isFetching
+                  ? CupertinoColors.lightBackgroundGray
+                  : CupertinoColors.activeBlue,
+            ),
             strokeWidth: 2,
             value: isFetching ? null : progress,
           );

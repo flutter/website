@@ -1,5 +1,8 @@
-import { UserConfig } from '@11ty/eleventy';
-import { slugify } from './utils/slugify.js';
+import {UserConfig} from '@11ty/eleventy';
+import {slugify} from './utils/slugify.js';
+import {fromHtml} from 'hast-util-from-html';
+import {selectAll} from 'hast-util-select';
+import {toHtml} from 'hast-util-to-html';
 
 export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);
@@ -7,17 +10,11 @@ export function registerShortcodes(eleventyConfig: UserConfig): void {
 }
 
 function _setupMedia(eleventyConfig: UserConfig): void {
-  eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, skipAlternativeLink = false, fullWidth = false) {
-    let embedMarkup = `<iframe ${fullWidth ? 'class="full-width"' : 'width="560" height="315"'} 
-        src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen loading="lazy"></iframe><br>`;
-
-    if (!skipAlternativeLink) {
-      embedMarkup += `<p><a href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener" title="Open '${title}' video in new tab">${title}</a></p>`;
-    }
-
-    return embedMarkup;
+  eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, fullWidth = false) {
+    return `
+<lite-youtube videoid="${id}" videotitle="${title}" ${fullWidth ? 'class="full-width"' : ''}>
+  <p><a class="lite-youtube-fallback" href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener">Watch on YouTube in a new tab: "${title}"</a></p>
+</lite-youtube>`;
   });
 
   eleventyConfig.addPairedShortcode('videoWrapper', function (content: string, intro = '') {
@@ -33,55 +30,60 @@ function _setupMedia(eleventyConfig: UserConfig): void {
 }
 
 function _setupTabs(eleventyConfig: UserConfig) {
-  // Variable shared between all tabs to ensure each has a unique ID.
-  let currentTabId = 0;
+  // Counter shared between all tabs and wrappers to
+  // ensure each has a unique ID.
+  let currentTabWrapperId = 0;
+  let currentTabPaneId = 0;
 
-  // Variables that are shared between the tabs within a tabs shortcode,
-  // and should be reset before returning from tabs.
-  let tabs = [];
-  let markTabAsActive = true;
+  eleventyConfig.addPairedShortcode('tabs', function (content: string, saveKey: string, wrapped: boolean = false) {
+    const tabWrapperId = currentTabWrapperId++;
+    let tabMarkup = `<div id="${tabWrapperId}" class="tabs-wrapper${wrapped ? " wrapped" : ""}" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav-tabs" role="tablist">`;
 
-  eleventyConfig.addPairedShortcode('tabs', function (content: string, saveKey: string) {
-    let tabMarkup = `<div class="tabs-wrapper" ${saveKey ? `data-tab-save-key="${slugify(saveKey)}"` : ''}><ul class="nav nav-tabs" role="tablist">`;
-    let activeTab = true;
+    // Only select child tab panes that don't already have a parent wrapper.
+    const tabPanes = selectAll('.tab-pane[data-tab-wrapper-id="undefined"]', fromHtml(content));
+    if (tabPanes.length <= 1) {
+      throw new Error(`Tabs with save key of ${saveKey} needs more than one tab!`);
+    }
 
-    tabs.forEach((tab) => {
-      const tabName = tab.name;
-      const tabSaveId = slugify(tabName);
-      const tabId = `${tab.id}-tab`;
+    let setTabToActive = true;
+    for (const tabPane of tabPanes) {
+      // Keep track of the tab wrapper ID to avoid including
+      // a duplicate of this tab's contents in a parent wrapper.
+      tabPane.properties.dataTabWrapperId = tabWrapperId;
+
+      const tabId = tabPane.properties.dataTabId! as string;
       const tabPanelId = `${tabId}-panel`;
+      const tabName = tabPane.properties.dataTabName! as string;
+      const tabIsActive = setTabToActive;
+
+      // Only set the first tab of a wrapper to active initially.
+      if (tabIsActive) {
+        tabPane.properties['className'] += ' active';
+        setTabToActive = false;
+      }
+
+      const tabSaveId = slugify(tabName);
       tabMarkup += `<li class="nav-item">
-  <a class="nav-link ${activeTab ? "active" : ""}" data-tab-save-id="${tabSaveId}" id="${tabId}" href="#${tabPanelId}" role="tab" aria-controls="${tabPanelId}" aria-selected="${activeTab ? "true" : "false"}">${tabName}</a>
+  <a class="nav-link ${tabIsActive ? "active" : ""}" tabindex="0" data-tab-save-id="${tabSaveId}" id="${tabId}" href="#${tabPanelId}" role="tab" aria-controls="${tabPanelId}" aria-selected="${tabIsActive ? "true" : "false"}">${tabName}</a>
 </li>`;
-      activeTab = false;
-    });
+    }
 
     tabMarkup += '</ul><div class="tab-content">\n';
-    tabMarkup += content;
+    tabMarkup += toHtml(tabPanes);
     tabMarkup += '\n</div></div>';
-
-    // Reset shared variables.
-    tabs = [];
-    markTabAsActive = true;
 
     return tabMarkup;
   });
 
   eleventyConfig.addPairedShortcode('tab', function (content: string, tabName: string) {
-    const tabIdNumber = currentTabId++;
-    tabs.push({name: tabName, id: tabIdNumber});
+    const tabIdNumber = currentTabPaneId++;
     const tabId = `${tabIdNumber}-tab`;
     const tabPanelId = `${tabId}-panel`;
-    const tabContent = `<div class="tab-pane ${markTabAsActive ? "active" : ""}" id="${tabPanelId}" role="tabpanel" aria-labelledby="${tabId}">
+    return `<div class="tab-pane" id="${tabPanelId}" role="tabpanel" aria-labelledby="${tabId}" data-tab-id="${tabId}" data-tab-name="${tabName}" data-tab-wrapper-id="undefined">
 
 ${content}
 
 </div>
 `;
-
-    // No other tabs should be marked as active.
-    markTabAsActive = false;
-
-    return tabContent;
   });
 }

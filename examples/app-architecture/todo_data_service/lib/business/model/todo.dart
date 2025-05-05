@@ -4,7 +4,7 @@ part 'todo.freezed.dart';
 
 // #docregion Todo
 @freezed
-class Todo with _$Todo {
+abstract class Todo with _$Todo {
   const factory Todo({
     /// The unique identifier of the Todo item.
     required int id,
@@ -13,4 +13,5 @@ class Todo with _$Todo {
     required String task,
   }) = _Todo;
 }
+
 // #enddocregion Todo

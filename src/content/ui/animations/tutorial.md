@@ -204,7 +204,7 @@ object to hold the animation. Add the following `AnimatedLogo` class:
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
-      : super(listenable: animation);
+    : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -306,7 +306,7 @@ it listens for a state change and prints an update.
 The highlighted line shows the change:
 
 <?code-excerpt "animate3/lib/main.dart (print-state)" plaster="none" replace="/\/\/ (\.\..*)/$1;/g; /\n  }/$&\n  \/\/ .../g"?>
-```dart highlightLines=11
+```dart highlightLines=14
 class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   late Animation<double> animation;
   late AnimationController controller;
@@ -314,10 +314,13 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
-    animation = Tween<double>(begin: 0, end: 300).animate(controller)
-      ..addStatusListener((status) => print('$status'));
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    animation =
+        Tween<double>(begin: 0, end: 300).animate(controller)
+          ..addStatusListener((status) => print('$status'));
     controller.forward();
   }
   // ...
@@ -391,8 +394,7 @@ dirty as necessary, so you don't need to call `addListener()`.
 The widget tree for the [animate4][]
 example looks like this:
 
-<img src="/assets/images/docs/ui/AnimatedBuilder-WidgetTree.png"
-    alt="AnimatedBuilder widget tree" class="d-block mx-auto" width="160px">
+{% render docs/app-figure.md, image:"ui/AnimatedBuilder-WidgetTree.png", alt:"AnimatedBuilder widget tree" %}
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
@@ -568,8 +570,10 @@ Each tween manages an aspect of the animation. For example:
 
 <?code-excerpt "animate5/lib/main.dart (tweens)" plaster="none"?>
 ```dart
-controller =
-    AnimationController(duration: const Duration(seconds: 2), vsync: this);
+controller = AnimationController(
+  duration: const Duration(seconds: 2),
+  vsync: this,
+);
 sizeAnimation = Tween<double>(begin: 0, end: 300).animate(controller);
 opacityAnimation = Tween<double>(begin: 0.1, end: 1).animate(controller);
 ```
@@ -590,7 +594,7 @@ The following code shows the changes with highlights:
 ```dart
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
-      : super(listenable: animation);
+    : super(listenable: animation);
 
   // Make the Tweens static because they don't change.
   [!static final _opacityTween = Tween<double>(begin: 0.1, end: 1);!]
@@ -627,8 +631,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
     animation = [!CurvedAnimation(parent: controller, curve: Curves.easeIn)!]
       ..addStatusListener((status) {
         if (status == AnimationStatus.completed) {

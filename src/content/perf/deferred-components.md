@@ -1,5 +1,5 @@
 ---
-title: Deferred components
+title: Deferred components for Android and web
 description: How to create deferred components for improved download performance.
 ---
 
@@ -7,44 +7,34 @@ description: How to create deferred components for improved download performance
 
 ## Introduction
 
-Flutter has the capability to build apps that can
-download additional Dart code and assets at runtime.
-This allows apps to reduce install apk size and download
-features and assets when needed by the user.
+With Flutter, Android and web apps have the capability to download deferred
+components (additional code and assets) while the app is already running. This
+is helpful if you have a large app and only want to install components if and
+when they are needed by the user.
 
-We refer to each uniquely downloadable bundle of Dart
-libraries and assets as a "deferred component".
-To load these components, use [Dart's deferred imports][dart-def-import].
-They can be compiled into split AOT and JavaScript shared libraries.
+While Flutter supports deferred loading on Android and the web, the
+implementations differ. Both require [Dart's deferred imports][dart-def-import].
 
-:::note
-Flutter supports deferred, or "lazy", loading on Android and the web.
-The implementations differ.
-Android's [dynamic feature modules][] deliver the
-deferred components packaged as Android modules.
-The web creates these components as separate `*.js` files.
-Deferred code doesn't impact other platforms,
-which continue to build as normal with all deferred
-components and assets included at initial install time.
-:::
+*   Android's [dynamic feature modules][] deliver the
+    deferred components packaged as Android modules.
 
-Though you can defer loading modules,
-you must build the entire app and upload that app as a single
-[Android App Bundle][android-app-bundle] (`*.aab`).
-Flutter doesn't support dispatching partial updates without re-uploading
-new Android App Bundles for the entire application.
+    When building for Android, though you can defer loading modules,
+    you must build the entire app and upload that app as a single
+    [Android App Bundle][android-app-bundle] (AAB).
+    Flutter doesn't support dispatching partial updates without re-uploading
+    new Android App Bundles for the entire application.
 
-Flutter performs deferred loading when you compile your app
-in [release or profile mode][].
-Debug mode treats all deferred components as regular imports.
-The components are present at launch and load immediately.
-This allows debug builds to hot reload.
+    Flutter performs deferred loading when you compile your Android app
+    in [release or profile mode][], but debug mode treats all
+    deferred components as regular imports.
+
+*   The web creates deferred components as separate `*.js` files.
 
 For a deeper dive into the technical details of
 how this feature works, see [Deferred Components][]
 on the [Flutter wiki][].
 
-## How to set your project up for deferred components
+## How to set your Android project up for deferred components
 
 The following instructions explain how to set up your
 Android app for deferred loading.
@@ -193,7 +183,7 @@ in [step 3.3][] once `gen_snapshot` produces the loading units.
 ### Step 2: Implementing deferred Dart libraries
 
 Next, implement deferred loaded Dart libraries in your
-app's Dart code. The implementation does not need
+app's Dart code. The implementation doesn't need
 to be feature complete yet. The example in the
 rest of this page adds a new simple deferred widget
 as a placeholder. You can also convert existing code
@@ -223,11 +213,7 @@ class DeferredBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      width: 30,
-      color: Colors.blue,
-    );
+    return Container(height: 30, width: 30, color: Colors.blue);
   }
 }
 ```
@@ -338,13 +324,13 @@ entry in `pubspec.yaml`.
 The `flutter build appbundle` command
 runs the validator and attempts to build the app with
 `gen_snapshot` instructed to produce split AOT shared libraries
-as separate `.so` files. On the first run, the validator will
+as separate SO files. On the first run, the validator will
 likely fail as it detects issues; the tool makes
 recommendations for how to set up the project and fix these issues.
 
 The validator is split into two sections: prebuild
 and post-gen_snapshot validation. This is because any
-validation referencing loading units cannot be performed
+validation referencing loading units can't be performed
 until `gen_snapshot` completes and produces a final set
 of loading units.
 
@@ -355,7 +341,7 @@ app without the validator by passing the
 This can result in unexpected and confusing
 instructions to resolve failures.
 This flag is meant to be used in
-custom implementations that do not rely on the default
+custom implementations that don't rely on the default
 Play-store-based implementation that the validator checks for.
 :::
 
@@ -395,8 +381,8 @@ For example:
 An Android dynamic feature module for
 each deferred component exists and contains a `build.gradle`
 and `src/main/AndroidManifest.xml` file.
-This only checks for existence and does not validate
-the contents of these files. If a file does not exist,
+This only checks for existence and doesn't validate
+the contents of these files. If a file doesn't exist,
 it generates a default recommended one.
 
 </li>
@@ -484,14 +470,14 @@ flutter:
 ```
 
 To assign a loading unit to a deferred component,
-add any Dart lib in the loading unit into the
+add any Dart library in the loading unit into the
 libraries section of the feature module.
 Keep the following guidelines in mind:
 
 <ul>
 <li>
 
-Loading units should not be included
+Loading units shouldn't be included
 in more than one component.
 
 </li>
@@ -548,11 +534,11 @@ Assets-only components can also be defined by omitting the
 libraries section. These assets-only components must be
 installed with the [`DeferredComponent`][] utility class in
 services rather than `loadLibrary()`.
-Since Dart libs are packaged together with assets,
+Since Dart libraries are packaged together with assets,
 if a Dart library is loaded with `loadLibrary()`,
 any assets in the component are loaded as well.
 However, installing by component name and the services utility
-won't load any dart libraries in the component.
+won't load any Dart libraries in the component.
 
 You are free to include assets in any component,
 as long as they are installed and loaded when they
@@ -588,15 +574,15 @@ runs without further recommendations.
 When successful, this command outputs an `app-release.aab`
 file in `build/app/outputs/bundle/release`.
 
-A successful build does not always mean the app was
+A successful build doesn't always mean the app was
 built as intended. It is up to you to ensure that all loading
 units and Dart libraries are included in the way you intended.
 For example, a common mistake is accidentally importing a
 Dart library without the `deferred` keyword,
 resulting in a deferred library being compiled as part of
-the base loading unit. In this case, the Dart lib would
+the base loading unit. In this case, the Dart library would
 load properly because it is always present in the base,
-and the lib would not be split off. This can be checked
+and the library wouldn't be split off. This can be checked
 by examining the `deferred_components_loading_units.yaml`
 file to verify that the generated loading units are described
 as intended.
@@ -611,11 +597,11 @@ recommended changes to continue the build.
 
 ### Running the app locally
 
-Once your app has successfully built an `.aab` file,
+Once your app has successfully built an AAB file,
 use Android's [`bundletool`][] to perform
 local testing with the `--local-testing` flag.
 
-To run the `.aab` file on a test device,
+To run the AAB file on a test device,
 download the bundletool jar executable from
 [github.com/google/bundletool/releases][] and run:
 
@@ -628,13 +614,13 @@ $ java -jar bundletool.jar install-apks --apks=<your_temp_dir>/app.apks
 Where `<your_app_project_dir>` is the path to your app's
 project directory and `<your_temp_dir>` is any temporary
 directory used to store the outputs of bundletool.
-This unpacks your `.aab` file into an `.apks` file and
+This unpacks your AAB file into an APK file and
 installs it on the device. All available Android dynamic
 features are loaded onto the device locally and
 installation of deferred components is emulated.
 
 Before running `build-apks` again,
-remove the existing app .apks file:
+remove the existing app APK file:
 
 ```console
 $ rm <your_temp_dir>/app.apks
@@ -647,9 +633,9 @@ unless it detects a new version number.
 
 ### Releasing to the Google Play Store
 
-The built `.aab` file can be uploaded directly to
+The built AAB file can be uploaded directly to
 the Play store as normal. When `loadLibrary()` is called,
-the needed Android module containing the Dart AOT lib and
+the needed Android module containing the Dart AOT library and
 assets is downloaded by the Flutter engine using the
 Play store's delivery feature.
 
@@ -668,4 +654,3 @@ Play store's delivery feature.
 [step 3.3]: #step-3.3
 [android-app-bundle]: {{site.android-dev}}/guide/app-bundle
 [dart-def-import]: https://dart.dev/language/libraries#lazily-loading-a-library
-

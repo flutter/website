@@ -15,6 +15,7 @@ class AbsorbKeysExample extends StatelessWidget {
       child: child,
     );
   }
+
   // #enddocregion absorb-keys
 }
 
@@ -33,6 +34,7 @@ class NoAExample extends StatelessWidget {
       child: const TextField(),
     );
   }
+
   // #enddocregion no-letter-a
 }
 
@@ -52,6 +54,7 @@ class BuilderExample extends StatelessWidget {
       ),
     );
   }
+
   // #enddocregion builder
 }
 
@@ -68,26 +71,17 @@ class OrderedButtonRow extends StatelessWidget {
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(2),
-            child: TextButton(
-              child: const Text('ONE'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('ONE'), onPressed: () {}),
           ),
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(1),
-            child: TextButton(
-              child: const Text('TWO'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('TWO'), onPressed: () {}),
           ),
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(3),
-            child: TextButton(
-              child: const Text('THREE'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('THREE'), onPressed: () {}),
           ),
           const Spacer(),
         ],
@@ -95,4 +89,5 @@ class OrderedButtonRow extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion ordered-button-row

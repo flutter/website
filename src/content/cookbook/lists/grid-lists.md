@@ -22,15 +22,16 @@ generate a list of 100 widgets that display their index in the list.
 <?code-excerpt "lib/main.dart (GridView)" replace="/^body\: //g"?>
 ```dart
 GridView.count(
-  // Create a grid with 2 columns. If you change the scrollDirection to
-  // horizontal, this produces 2 rows.
+  // Create a grid with 2 columns.
+  // If you change the scrollDirection to horizontal,
+  // this produces 2 rows.
   crossAxisCount: 2,
-  // Generate 100 widgets that display their index in the List.
+  // Generate 100 widgets that display their index in the list.
   children: List.generate(100, (index) {
     return Center(
       child: Text(
         'Item $index',
-        style: Theme.of(context).textTheme.headlineSmall,
+        style: TextTheme.of(context).headlineSmall,
       ),
     );
   }),
@@ -57,19 +58,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: GridView.count(
-          // Create a grid with 2 columns. If you change the scrollDirection to
-          // horizontal, this produces 2 rows.
+          // Create a grid with 2 columns.
+          // If you change the scrollDirection to horizontal,
+          // this produces 2 rows.
           crossAxisCount: 2,
-          // Generate 100 widgets that display their index in the List.
+          // Generate 100 widgets that display their index in the list.
           children: List.generate(100, (index) {
             return Center(
               child: Text(
                 'Item $index',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: TextTheme.of(context).headlineSmall,
               ),
             );
           }),
@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/grid-list.gif" alt="Grid List Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/grid-list.webp" alt="Grid List Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html

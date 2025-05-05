@@ -9,7 +9,7 @@ description: >
 
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
-If you are intereted in how to architect a Flutter app,
+If you are interested in how to architect a Flutter app,
 check out [Architecting Flutter apps][].
 
 [Architecting Flutter apps]: /app-architecture
@@ -292,9 +292,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Home Page'),
-        ),
+        appBar: AppBar(title: const Text('My Home Page')),
         body: Center(
           child: Builder(
             builder: (context) {
@@ -491,7 +489,7 @@ You can use `InheritedWidget` to create a state widget
 that wraps a common ancestor in the
 widget tree, as shown in this example:
 
-![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
+![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%" .diagram-wrap}
 
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 
@@ -591,7 +589,7 @@ such as Windows or macOS.
 :::note
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information on Impeller, 
+For more information, 
 visit [Impeller rendering engine][]
 :::
 
@@ -604,8 +602,7 @@ rendering pipeline is that **simple is fast**.
 Flutter has a straightforward pipeline for how data flows to
 the system, as shown in the following sequencing diagram:
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%" .diagram-wrap}
 
 Let's take a look at some of these phases in greater detail.
 
@@ -650,8 +647,7 @@ as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy might therefore be deeper than what the code represents,
 as in this case[^2]:
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widgets.png){:width="40%" .diagram-wrap}
 
 This explains why, when you examine the tree through
 a debug tool such as the
@@ -669,8 +665,7 @@ hierarchy. There are two basic types of elements:
 - `RenderObjectElement`, an element that participates in the layout or paint
   phases.
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%" .diagram-wrap}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we'll come to later.
@@ -717,8 +712,7 @@ an image, and
 [`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
 applies a transformation before painting its child.
 
-![Differences between the widgets hierarchy and the element and render
-trees](/assets/images/docs/arch-overview/trees.png){:width="100%"}
+![Differences between the widgets hierarchy and the element and render trees](/assets/images/docs/arch-overview/trees.png){:width="100%" .diagram-wrap}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -732,8 +726,7 @@ the child _must_ respect the constraints given to it by its parent. Children
 respond by **passing up a size** to their parent object within the constraints
 the parent established.
 
-![Constraints go down, sizes go
-up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
+![Constraints go down, sizes go up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="70%" .diagram-wrap}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent's constraints and is ready to be painted by calling the
@@ -855,8 +848,7 @@ Swift. Data is serialized from a Dart type like `Map` into a standard format,
 and then deserialized into an equivalent representation in Kotlin (such as
 `HashMap`) or Swift (such as `Dictionary`).
 
-![How platform channels allow Flutter to communicate with host
-code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
+![How platform channels allow Flutter to communicate with host code](/assets/images/docs/arch-overview/platform-channels.png){:width="65%" .diagram-wrap}
 
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -920,24 +912,27 @@ here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
-typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  Int32 uType,
-);
+typedef MessageBoxNative =
+    Int32 Function(
+      IntPtr hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      Int32 uType,
+    );
 
-typedef MessageBoxDart = int Function(
-  int hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  int uType,
-);
+typedef MessageBoxDart =
+    int Function(
+      int hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      int uType,
+    );
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final messageBox =
-      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+  final messageBox = user32.lookupFunction<MessageBoxNative, MessageBoxDart>(
+    'MessageBoxW',
+  );
 
   final result = messageBox(
     0, // No owner window
@@ -1056,23 +1051,63 @@ is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
 
-On the web, Flutter offers two build modes and two renderers.
-Flutter has a canvas-based renderer with two compile modes:
-JS and Wasm.
+On the web, Flutter offers two renderers:
 
-Flutter chooses the build mode when building the app,
-and determines which renderers are available at runtime.
-For a default build, Flutter chooses the `canvaskit`
-renderer at runtime. For a WebAssembly build,
-Flutter chooses the `skwasm` renderer at runtime,
-and falls back to canvaskit if the browser doesn't support skwasm.
+<table class="table table-striped">
+<tr>
+<th>Renderer</th>
+<th>Compilation target</th>
+</tr>
+
+<tr>
+<td>CanvasKit
+</td>
+<td>JavaScript
+</td>
+</tr>
+
+<tr>
+<td>Skwasm
+</td>
+<td>WebAssembly
+</td>
+</tr>
+</table>
+
+_Build modes_ are command-line options that dictate
+which renderers are available when you run the app.
+
+Flutter offers two _build_ modes:
+
+<table class="table table-striped">
+<tr>
+<th>Build mode</th>
+<th>Available renderer(s)</th>
+</tr>
+
+<tr>
+<td>default</td>
+<td>CanvasKit</td>
+</tr>
+
+<tr>
+<td>`--wasm`</td>
+<td>Skwasm (preferred), CanvasKit (fallback)</td>
+</tr>
+</table>
+
+
+The default mode makes only CanvasKit renderer available.
+The `--wasm` option makes both renderers available,
+and chooses the engine based on browser capabilities:
+preferring Skwasm if the browser is capable of running it,
+and falls back to CanvasKit otherwise.
 
 {% comment %}
 The draw.io source for the following image is in /diagrams/resources
 {% endcomment %}
 
-![Flutter web
-architecture](/assets/images/docs/arch-overview/web-framework-diagram.drawio.png){:width="100%"}
+![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png){:width="80%" .diagram-wrap}
 
 Perhaps the most notable difference compared to other
 platforms on which Flutter runs is that there is no need

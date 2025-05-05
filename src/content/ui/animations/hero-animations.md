@@ -268,7 +268,7 @@ using Flutter's hero widget. When using `MaterialPageRoute`
 to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion spec][].
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the [hero_animation][].
 
 To run the example:
@@ -286,11 +286,7 @@ The custom PhotoHero class maintains the hero,
 and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
-<div class="text-center mb-4">
-
-  ![PhotoHero class widget tree](/assets/images/docs/ui/animations/photohero-class.png)
-
-</div>
+{% render docs/app-figure.md, image:"ui/animations/photohero-class.png", alt:"PhotoHero class widget tree %}
 
 Here's the code:
 
@@ -485,7 +481,7 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the
 [radial_hero_animation][] GitHub directory.
 
@@ -552,11 +548,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-<div class="text-center mb-4">
-
-  ![RadialExpansion widget tree](/assets/images/docs/ui/animations/radial-expansion-class.png)
-
-</div>
+{% render docs/app-figure.md, image:"ui/animations/radial-expansion-class.png", alt:"RadialExpansion widget tree" %}
 
 Here's the code:
 
@@ -622,7 +614,7 @@ Key information:
 [Building Layouts in Flutter]: /ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
-[Create a new Flutter example]: /get-started/test-drive
+[Create a new Flutter app]: /reference/create-new-app
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html

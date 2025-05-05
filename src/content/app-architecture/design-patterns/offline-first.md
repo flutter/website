@@ -96,7 +96,7 @@ that has been created using the [`freezed`][] package.
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)" remove="@Default(false) bool synchronized,"?>
 ```dart
 @freezed
-class UserProfile with _$UserProfile {
+abstract class UserProfile with _$UserProfile {
   const factory UserProfile({
     required String name,
     required String photoUrl,
@@ -250,12 +250,18 @@ so the UI shows the latest data.
 <?code-excerpt "lib/ui/user_profile/user_profile_viewmodel.dart (load)"?>
 ```dart
 Future<void> load() async {
-  await _userProfileRepository.getUserProfile().listen((userProfile) {
-    _userProfile = userProfile;
-    notifyListeners();
-  }, onError: (error) {
-    // handle error
-  }).asFuture();
+  await _userProfileRepository
+      .getUserProfile()
+      .listen(
+        (userProfile) {
+          _userProfile = userProfile;
+          notifyListeners();
+        },
+        onError: (error) {
+          // handle error
+        },
+      )
+      .asFuture();
 }
 ```
 ### Using only local data
@@ -401,10 +407,7 @@ for example every five minutes.
 
 <?code-excerpt "lib/data/repositories/user_profile_repository.dart (Timer)"?>
 ```dart
-Timer.periodic(
-  const Duration(minutes: 5),
-  (timer) => sync(),
-);
+Timer.periodic(const Duration(minutes: 5), (timer) => sync());
 ```
 
 The `sync()` method then fetches the `UserProfile` from the database, 
@@ -426,8 +429,9 @@ Future<void> sync() async {
     await _apiClientService.putUserProfile(userProfile);
 
     // Set the user profile as synchronized
-    await _databaseService
-        .updateUserProfile(userProfile.copyWith(synchronized: true));
+    await _databaseService.updateUserProfile(
+      userProfile.copyWith(synchronized: true),
+    );
   } catch (e) {
     // Try again later
   }
@@ -470,7 +474,7 @@ For example, `bool synchronized`:
 <?code-excerpt "lib/domain/model/user_profile.dart (UserProfile)"?>
 ```dart
 @freezed
-class UserProfile with _$UserProfile {
+abstract class UserProfile with _$UserProfile {
   const factory UserProfile({
     required String name,
     required String photoUrl,

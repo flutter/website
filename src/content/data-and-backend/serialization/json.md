@@ -174,13 +174,10 @@ class User {
   User(this.name, this.email);
 
   User.fromJson(Map<String, dynamic> json)
-      : name = json['name'] as String,
-        email = json['email'] as String;
+    : name = json['name'] as String,
+      email = json['email'] as String;
 
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'email': email,
-      };
+  Map<String, dynamic> toJson() => {'name': name, 'email': email};
 }
 ```
 
@@ -352,10 +349,11 @@ final String verificationCode;
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time,
-you'll get errors similar to what is shown in the image below.
+you'll get errors similar to the following:
 
-![IDE warning when the generated code for a model class does not exist
-yet.](/assets/images/docs/json/ide_warning.png){:.mw-100}
+```plaintext
+Target of URI hasn't been generated: 'user.g.dart'.
+```
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code

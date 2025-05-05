@@ -48,24 +48,26 @@ Here's the online demo hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-Or, you can open it in IDX, Google's IDE that runs in the cloud:
+Or, you can open it in [Firebase Studio][],
+Google's full-stack AI workspace and IDE that runs in the cloud:
 
-<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai">
+<a href="https://studio.firebase.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://cdn.idx.dev/btn/try_light_32.svg">
+      srcset="https://cdn.firebasestudio.dev/btn/try_light_32.svg">
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://cdn.idx.dev/btn/try_dark_32.svg">
+      srcset="https://cdn.firebasestudio.dev/btn/try_dark_32.svg">
     <img
       height="32"
-      alt="Try in IDX"
-      src="https://cdn.idx.dev/btn/try_purple_32.svg">
+      alt="Try in Firebase Studio"
+      src="https://cdn.firebasestudio.dev/btn/try_blue_32.svg">
   </picture>
 </a>
 
 [src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
+[Firebase Studio]: https://firebase.studio/
 
 ## Get started
 
@@ -95,7 +97,7 @@ repository to prevent unauthorized access.
 
 You'll also need to choose a specific Gemini model name
 to use in creating an instance of the Gemini model.
-The following example uses gemini-1.5-flash,
+The following example uses `gemini-2.0-flash`,
 but you can choose from an [ever-expanding set of models][models].
 
 [models]: https://ai.google.dev/gemini-api/docs/models/gemini
@@ -116,7 +118,7 @@ class ChatPage extends StatelessWidget {
         body: LlmChatView(
           provider: GeminiProvider(
             model: GenerativeModel(
-              model: 'gemini-1.5-flash',
+              model: 'gemini-2.0-flash',
               apiKey: 'GEMINI-API-KEY',
             ),
           ),
@@ -192,7 +194,7 @@ class ChatPage extends StatelessWidget {
         body: LlmChatView(
           provider: VertexProvider(
             chatModel: FirebaseVertexAI.instance.generativeModel(
-              model: 'gemini-1.5-flash',
+              model: 'gemini-2.0-flash',
             ),
           ),
         ),
@@ -218,9 +220,32 @@ For a complete example, check out [vertex.dart][] on GitHub.
 
 <li><b>Set up device permissions</b>
 
-To enable your users to take advantage of features
-like voice input and media attachments,
-ensure that your app has the necessary permissions:
+To enable your users to take advantage of features like voice input and media
+attachments, ensure that your app has the necessary permissions:
+
+* **Network access:**
+  To enable network access on macOS,
+  add the following to your `*.entitlements` files:
+
+  ```xml
+  <plist version="1.0">
+    <dict>
+      ...
+      <key>com.apple.security.network.client</key>
+      <true/>
+    </dict>
+  </plist>
+  ```
+
+  To enable network access on Android,
+  ensure that your `AndroidManifest.xml` file contains the following:
+
+  ```xml
+  <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+      ...
+      <uses-permission android:name="android.permission.INTERNET"/>
+  </manifest>
+  ```
 
 * **Microphone access**: Configure according to the
   [record package's permission setup instructions][record].

@@ -23,7 +23,7 @@ Use this method in the following use cases:
 
 This method only works with the `beta` or `stable` [release channels][].
 
-[release channels]: /release/upgrade#switching-flutter-channels
+[release channels]: /install/upgrade#switching-flutter-channels
 
 #### Example project structure {:#method-c-structure}
 

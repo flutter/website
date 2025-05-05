@@ -1,24 +1,4 @@
-## Verify system requirements
-
-To install and run Flutter,
-your {{include.os}} environment must meet the following hardware
-and software requirements.
-
-### Hardware requirements
-
-Your {{include.os}} Flutter development environment must meet the following
-minimal hardware requirements.
-
-|     Requirement              |                                    Minimum                               |    Recommended      |
-|:-----------------------------|:------------------------------------------------------------------------:|:-------------------:|
-| x86_64 CPU Cores             | 4                                                                        | 8                   |
-| Memory in GB                 | 8                                                                        | 16                  |
-| Display resolution in pixels | WXGA (1366 x 768)                                                        | FHD (1920 x 1080)   |
-| Free disk space in GB        | {% include docs/install/reqs/windows/storage.md target=include.target %}
-
-{:.table .table-striped}
-
-### Software requirements
+## Software requirements
 
 To write and compile Flutter code for {{include.target}},
 you must have the following version of Windows and the listed
@@ -26,13 +6,13 @@ software packages.
 
 {% render docs/install/admonitions/install-dart.md %}
 
-#### Operating system
+### Operating system
 
 Flutter supports {{site.devmin.windows}} or later.
 These versions of Windows should include the required
 [Windows PowerShell][] {{site.appmin.powershell}} or later.
 
-#### Development tools
+### Development tools
 
 Download and install the Windows version of the following packages:
 

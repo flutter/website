@@ -1,32 +1,28 @@
-@use '../base/variables' as *;
-
 .site-header {
-  background-color: $site-color-white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-  font-family: $site-font-family-alt;
+  background-color: var(--site-header-bgColor);
+  font-family: var(--site-ui-fontFamily);
   position: sticky;
   top: 0;
-  z-index: $site-z-header;
+  z-index: var(--site-z-header);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
+
+  @media (min-width: 1200px) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    border-bottom: none;
+  }
 
   .navbar {
-    font-size: 1rem;
-    min-height: $site-header-height;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+
+    min-height: var(--site-header-height);
 
     #menu-toggle {
-      appearance: none;
-      border: none;
-      background: none;
-      color: $site-color-nav-links;
-      margin-right: 1rem;
-      padding: 0;
-
-      .material-symbols {
-        font-size: 28px;
-      }
-
-      &:hover {
-        color: $site-color-body;
-      }
+      margin-left: 0.25rem;
 
       @media (min-width: 1024px) {
         display: none;
@@ -39,6 +35,7 @@
       img {
         width: 129px;
         height: 37px;
+        vertical-align: middle;
       }
     }
 
@@ -49,6 +46,9 @@
     }
 
     .navbar-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
       flex-direction: row;
       gap: 0.5rem;
       display: none;
@@ -59,99 +59,98 @@
     }
 
     .nav-link {
-      color: $site-color-nav-links;
+      color: var(--site-base-fgColor-alt);
       padding: 0.25rem .5rem;
       position: relative;
       text-decoration: none;
 
       &:hover {
-        color: $site-color-body;
+        color: var(--site-base-fgColor);
       }
     }
   }
 
-  &__cta {
+  #call-to-action {
     margin-left: 0.5rem;
     padding: 0.5rem 1rem !important;
     display: none;
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
       display: unset;
     }
   }
 
   &__search {
-    display: flex;
+    display: none;
     position: relative;
     align-items: center;
     vertical-align: middle;
+    margin-left: 1rem;
+
+    @media (min-width: 576px) {
+      display: flex;
+    }
 
     &::before {
       content: 'search';
-      color: $site-color-nav-links;
-      font: $site-font-icon;
+      color: var(--site-base-fgColor-alt);
+      font: 24px/1 var(--site-icon-fontFamily);
       pointer-events: none;
       position: absolute;
-      left: 0.25rem;
+      left: 0.75rem;
     }
 
     &:hover::before {
-      color: $site-color-body;
-    }
-
-    @media (min-width: 768px) {
-      margin-left: 1rem;
+      color: var(--site-base-fgColor);
     }
   }
 
   &__searchfield {
     border: 0;
-    padding-left: 2rem;
     font-size: 1rem;
-    height: unset;
     transition: width .35s ease-in-out;
     width: 24px;
     cursor: pointer;
+    border-radius: 24px;
+    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    background: none;
 
     &:focus {
       width: 220px;
       cursor: auto;
     }
   }
+
+  #fallback-search-button {
+    display: none;
+
+    @media (min-width: 320px) {
+      display: unset;
+    }
+
+    @media (min-width: 576px) {
+      display: none;
+    }
+  }
 }
 
-
-header.site-header {
-  .dropdown-menu {
-    position: absolute;
-    float: none;
-    top: 32px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-    border-radius: 4px;
-    padding: 0.75rem;
-    border: 1px solid #eee;
+// Toggle between menu and close buttons if sidenav is open or not.
+#menu-toggle span.material-symbols {
+  &:first-child {
+    display: inline;
   }
 
-  .dropdown-item {
-    padding: 0.55rem 1.2rem;
-    font-size: 14px;
-    color: #444;
-    border-radius: 4px;
+  &:last-child {
+    display: none;
+  }
+}
 
-    &:hover,
-    &.active {
-      color: #000;
-      background-color: #f6f6f6;
-      transition: background-color 300ms ease;
-    }
-
-    &.active {
-      font-weight: 500;
-    }
+body.open_menu #menu-toggle span.material-symbols {
+  &:first-child {
+    display: none;
   }
 
-  .dropdown-toggle::after {
-    position: relative;
-    top: 1px;
+  &:last-child {
+    display: inline;
   }
 }

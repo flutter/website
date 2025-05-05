@@ -34,10 +34,7 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Image.network(
-      imageUrl,
-      fit: BoxFit.cover,
-    );
+    return Image.network(imageUrl, fit: BoxFit.cover);
   }
 
   Widget _buildGradient() {
@@ -73,10 +70,7 @@ class LocationListItem extends StatelessWidget {
           ),
           Text(
             country,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),
@@ -152,9 +146,5 @@ const locations = [
     place: 'Mexico',
     imageUrl: '$urlPrefix/06-mexico-city.jpg',
   ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: '$urlPrefix/07-cairo.jpg',
-  ),
+  Location(name: 'Cairo', place: 'Egypt', imageUrl: '$urlPrefix/07-cairo.jpg'),
 ];

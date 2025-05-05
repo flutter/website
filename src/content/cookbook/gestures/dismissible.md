@@ -48,9 +48,7 @@ be able to swipe these items away just yet.
 ListView.builder(
   itemCount: items.length,
   itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(items[index]),
-    );
+    return ListTile(title: Text(items[index]));
   },
 )
 ```
@@ -85,12 +83,11 @@ itemBuilder: (context, index) {
       });
 
       // Then show a snackbar.
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text('$item dismissed')));
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('$item dismissed')));
     },
-    child: ListTile(
-      title: Text(item),
-    ),
+    child: ListTile(title: Text(item)),
   );
 },
 ```
@@ -154,9 +151,7 @@ class MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
@@ -174,14 +169,13 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar.
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
               // Show a red background as the item is swiped away.
               background: Container(color: Colors.red),
-              child: ListTile(
-                title: Text(item),
-              ),
+              child: ListTile(title: Text(item)),
             );
           },
         ),
@@ -192,7 +186,7 @@ class MyAppState extends State<MyApp> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/dismissible.gif" alt="Dismissible Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/dismissible.webp" alt="Dismissible Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

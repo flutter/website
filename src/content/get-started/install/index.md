@@ -8,15 +8,12 @@ js: [{url: '/assets/js/page/install-current.js'}]
 
 <div class="card-grid narrow">
 {% for os in os-list %}
-  <a class="card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}">
-    <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = os | downcase -%}
-            <img src="/assets/images/docs/brand-svg/{{icon}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo"> 
-        </span>
-        <span class="text-muted text-nowrap">{{os}}</span>
-      </header>
+  <a class="card outlined-card install-card" id="install-{{os | remove: ' ' | downcase}}" href="/get-started/install/{{os | remove: ' ' | downcase}}" aria-label="{{os}} setup instructions">
+    <div class="card-leading">
+      <img src="/assets/images/docs/brand-svg/{{os | downcase}}.svg" width="72" height="72" aria-hidden="true" alt="{{os}} logo">
+    </div>
+    <div class="card-header text-center">
+      <span class="card-title">{{os}}</span>
     </div>
   </a>
 {% endfor %}

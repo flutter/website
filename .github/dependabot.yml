@@ -133,7 +133,6 @@ updates:
       - "/examples/data-and-backend/json"
       - "/examples/deployment/obfuscate"
       - "/examples/example_utils"
-      - "/examples/get-started/codelab_web"
       - "/examples/get-started/flutter-for/android_devs"
       - "/examples/get-started/flutter-for/declarative"
       - "/examples/get-started/flutter-for/ios_devs"

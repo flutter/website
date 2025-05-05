@@ -14,6 +14,7 @@ The web is just another device target for your app.
 To get started, visit [Building a web application with Flutter][].
 
 ## Powered by WebAssembly
+
 Dart and Flutter can compile to WebAssembly,
 a binary instruction format that enables fast apps on all major browsers.
 
@@ -23,6 +24,7 @@ check out the following video.
 {% ytEmbed 'lpnKWK-KEYs?start=1712', 'What\'s new in Flutter - WebAssembly' %}
 
 ## How it works
+
 Adding web support to Flutter involved implementing Flutter's
 core drawing layer on top of standard browser APIs, in addition
 to compiling Dart to JavaScript, instead of the ARM machine code that
@@ -35,11 +37,10 @@ Flutter core and framework along with your application
 into a single, minified source file that can be deployed to
 any web server.
 
-<img src="/assets/images/docs/arch-overview/web-framework-diagram.drawio.png"
-alt="Flutter architecture for web"
-width="100%">
+<img src="/assets/images/docs/arch-overview/web-framework-diagram.png" alt="Flutter architecture for web" >
 
 ## What types of apps can I build?
+
 While you can do a lot on the web,
 Flutter's web support is most valuable in the
 following scenarios:
@@ -90,5 +91,5 @@ The following resources can help you get started:
 [Preparing an app for web release]: /deployment/web
 [Progressive Web Application]: https://web.dev/progressive-web-apps/
 [web FAQ]: /platform-integration/web/faq
-[web samples for Flutter]: https://flutter.github.io/samples/#?platform=web
+[web samples for Flutter]: https://github.com/flutter/samples/#?platform=web
 [Web renderers]: /platform-integration/web/renderers

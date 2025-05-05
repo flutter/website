@@ -40,9 +40,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -68,5 +66,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
           (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
+
   // #enddocregion load-data
 }

@@ -1,21 +1,22 @@
-{% if include.next or include.prev -%}
-  {% if include.next and include.prev -%}
-    {% assign nav_class = 'site-nextprev-nav' -%}
-  {% else -%}
-    {% assign nav_class = 'site-nextprev-nav__single' -%}
-  {% endif -%}
-  <nav class="{{nav_class}}">
-    <ul>
-      {% if include.prev.path -%}
-      <li class="prev">
-          <a href="{{ include.prev.path }}">{{ include.prev.title }}</a>
-      </li>
-      {% endif -%}
-      {% if include.next.path -%}
-      <li class="next">
-          <a href="{{ include.next.path }}">{{ include.next.title }}</a>
-      </li>
-      {% endif -%}
-    </ul>
+{% if next or prev -%}
+  <nav id="site-prev-next">
+    {% if prev.path -%}
+    <a class="prev" href="{{ prev.path }}">
+      <span class="material-symbols" aria-hidden="true">chevron_left</span>
+      <div>
+        <span class="prev-next-subtitle" aria-label="Previous page:">Previous</span>
+        <span class="prev-next-title">{{ prev.title}}</span>
+      </div>
+    </a>
+    {% endif -%}
+    {% if next.path -%}
+    <a class="next" href="{{ next.path }}">
+      <div>
+        <span class="prev-next-subtitle" aria-label="Next page:">Next</span>
+        <span class="prev-next-title">{{ next.title}}</span>
+      </div>
+      <span class="material-symbols" aria-hidden="true">chevron_right</span>
+    </a>
+    {% endif -%}
   </nav>
 {% endif -%}

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MainApp extends StatefulWidget {
-  const MainApp({
-    super.key,
-    required this.viewModel,
-  });
+  const MainApp({super.key, required this.viewModel});
 
   final HomeViewModel viewModel;
 
@@ -37,9 +34,7 @@ class _MainAppState extends State<MainApp> {
           listenable: widget.viewModel.load,
           builder: (context, child) {
             if (widget.viewModel.load.running) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
+              return const Center(child: CircularProgressIndicator());
             }
             // #enddocregion CommandListenable
 
@@ -56,9 +51,7 @@ class _MainAppState extends State<MainApp> {
             builder: (context, _) {
               // #enddocregion ListenableBuilder
               if (widget.viewModel.user == null) {
-                return const Center(
-                  child: Text('No user'),
-                );
+                return const Center(child: Text('No user'));
               }
 
               return Center(
@@ -88,6 +81,7 @@ class _MainAppState extends State<MainApp> {
       // Show Snackbar
     }
   }
+
   // #enddocregion _onViewModelChanged
 }
 
@@ -181,4 +175,5 @@ class Command extends ChangeNotifier {
     _completed = false;
   }
 }
+
 // #enddocregion Command

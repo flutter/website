@@ -30,9 +30,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -40,10 +38,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   List<Widget> _getListData() {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ));
+      widgets.add(
+        Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
+      );
     }
     return widgets;
   }

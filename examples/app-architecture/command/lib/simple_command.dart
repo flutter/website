@@ -40,4 +40,5 @@ class HomeViewModel extends ChangeNotifier {
     // load user
   }
 }
+
 // #enddocregion ViewModel

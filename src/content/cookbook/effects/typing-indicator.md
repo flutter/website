@@ -18,7 +18,7 @@ speech bubble typing indicator that animates in and out of view.
 
 The following animation shows the app's behavior:
 
-![The typing indicator is turned on and off](/assets/images/docs/cookbook/effects/TypingIndicator.gif){:.site-mobile-screenshot}
+![The typing indicator is turned on and off](/assets/images/docs/cookbook/effects/TypingIndicator.webp){:.site-mobile-screenshot}
 
 ## Define the typing indicator widget
 
@@ -95,18 +95,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(
-      vsync: this,
-    );
+    _appearanceController = AnimationController(vsync: this);
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,
       curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
       reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
-    ).drive(Tween<double>(
-      begin: 0.0,
-      end: 60.0,
-    ));
+    ).drive(Tween<double>(begin: 0.0, end: 60.0));
 
     if (widget.showIndicator) {
       _showIndicator();
@@ -149,9 +144,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
     return AnimatedBuilder(
       animation: _indicatorSpaceAnimation,
       builder: (context, child) {
-        return SizedBox(
-          height: _indicatorSpaceAnimation.value,
-        );
+        return SizedBox(height: _indicatorSpaceAnimation.value);
       },
     );
   }
@@ -226,20 +219,15 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(
-      vsync: this,
-    )..addListener(() {
-        setState(() {});
-      });
+    _appearanceController = AnimationController(vsync: this)..addListener(() {
+      setState(() {});
+    });
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,
       curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
       reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
-    ).drive(Tween<double>(
-      begin: 0.0,
-      end: 60.0,
-    ));
+    ).drive(Tween<double>(begin: 0.0, end: 60.0));
 
     _smallBubbleAnimation = CurvedAnimation(
       parent: _appearanceController,
@@ -298,10 +286,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
     return AnimatedBuilder(
       animation: _indicatorSpaceAnimation,
       builder: (context, child) {
-        return SizedBox(
-          height: _indicatorSpaceAnimation.value,
-          child: child,
-        );
+        return SizedBox(height: _indicatorSpaceAnimation.value, child: child);
       },
       child: Stack(
         children: [
@@ -309,19 +294,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
             animation: _smallBubbleAnimation,
             left: 8,
             bottom: 8,
-            bubble: CircleBubble(
-              size: 8,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 8, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _mediumBubbleAnimation,
             left: 10,
             bottom: 10,
-            bubble: CircleBubble(
-              size: 16,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 16, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _largeBubbleAnimation,
@@ -355,10 +334,7 @@ class CircleBubble extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: bubbleColor,
-      ),
+      decoration: BoxDecoration(shape: BoxShape.circle, color: bubbleColor),
     );
   }
 }
@@ -500,10 +476,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
     return AnimatedBuilder(
       animation: _indicatorSpaceAnimation,
       builder: (context, child) {
-        return SizedBox(
-          height: _indicatorSpaceAnimation.value,
-          child: child,
-        );
+        return SizedBox(height: _indicatorSpaceAnimation.value, child: child);
       },
       child: Stack(
         children: [
@@ -511,19 +484,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
             animation: _smallBubbleAnimation,
             left: 8,
             bottom: 8,
-            bubble: CircleBubble(
-              size: 8,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 8, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _mediumBubbleAnimation,
             left: 10,
             bottom: 10,
-            bubble: CircleBubble(
-              size: 16,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 16, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _largeBubbleAnimation,
@@ -684,9 +651,7 @@ void main() {
 const _backgroundColor = Color(0xFF333333);
 
 class ExampleIsTyping extends StatefulWidget {
-  const ExampleIsTyping({
-    super.key,
-  });
+  const ExampleIsTyping({super.key});
 
   @override
   State<ExampleIsTyping> createState() => _ExampleIsTypingState();
@@ -699,9 +664,7 @@ class _ExampleIsTypingState extends State<ExampleIsTyping> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: _backgroundColor,
-      appBar: AppBar(
-        title: const Text('Typing Indicator'),
-      ),
+      appBar: AppBar(title: const Text('Typing Indicator')),
       body: Column(
         children: [
           Expanded(
@@ -719,9 +682,7 @@ class _ExampleIsTypingState extends State<ExampleIsTyping> {
           ),
           Align(
             alignment: Alignment.bottomLeft,
-            child: TypingIndicator(
-              showIndicator: _isSomeoneTyping,
-            ),
+            child: TypingIndicator(showIndicator: _isSomeoneTyping),
           ),
           Container(
             color: Colors.grey,
@@ -782,20 +743,15 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(
-      vsync: this,
-    )..addListener(() {
-        setState(() {});
-      });
+    _appearanceController = AnimationController(vsync: this)..addListener(() {
+      setState(() {});
+    });
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,
       curve: const Interval(0.0, 0.4, curve: Curves.easeOut),
       reverseCurve: const Interval(0.0, 1.0, curve: Curves.easeOut),
-    ).drive(Tween<double>(
-      begin: 0.0,
-      end: 60.0,
-    ));
+    ).drive(Tween<double>(begin: 0.0, end: 60.0));
 
     _smallBubbleAnimation = CurvedAnimation(
       parent: _appearanceController,
@@ -862,10 +818,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
     return AnimatedBuilder(
       animation: _indicatorSpaceAnimation,
       builder: (context, child) {
-        return SizedBox(
-          height: _indicatorSpaceAnimation.value,
-          child: child,
-        );
+        return SizedBox(height: _indicatorSpaceAnimation.value, child: child);
       },
       child: Stack(
         children: [
@@ -873,19 +826,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
             animation: _smallBubbleAnimation,
             left: 8,
             bottom: 8,
-            bubble: CircleBubble(
-              size: 8,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 8, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _mediumBubbleAnimation,
             left: 10,
             bottom: 10,
-            bubble: CircleBubble(
-              size: 16,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 16, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _largeBubbleAnimation,
@@ -920,10 +867,7 @@ class CircleBubble extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: bubbleColor,
-      ),
+      decoration: BoxDecoration(shape: BoxShape.circle, color: bubbleColor),
     );
   }
 }
@@ -1062,10 +1006,7 @@ class FlashingCircle extends StatelessWidget {
 }
 
 class FakeMessage extends StatelessWidget {
-  const FakeMessage({
-    super.key,
-    required this.isBig,
-  });
+  const FakeMessage({super.key, required this.isBig});
 
   final bool isBig;
 

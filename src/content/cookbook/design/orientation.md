@@ -9,10 +9,13 @@ js:
 <?code-excerpt path-base="cookbook/design/orientation"?>
 
 In some situations,
-you want to update the display of an app when the user
-rotates the screen from portrait mode to landscape mode. For example,
+you want to update the display of an app when the shape of the
+available space changes like when a user rotates
+the screen from portrait mode to landscape mode. For example,
 the app might show one item after the next in portrait mode,
 yet put those same items side-by-side in landscape mode.
+Expanded docs covering this and more can be found
+in the [adaptive ui documenation][].
 
 In Flutter, you can build different layouts depending
 on a given [`Orientation`][].
@@ -69,8 +72,10 @@ body: OrientationBuilder(
 :::note
 If you're interested in the orientation of the screen,
 rather than the amount of space available to the parent,
-use `MediaQuery.of(context).orientation` instead of an
+use `MediaQuery.orientationOf(context)` instead of an
 `OrientationBuilder` widget.
+Using `MediaQuery.orientationOf` as a way to orignize ui
+is [discouraged][]. Instead use `MediaQuery.sizeOf(context)`
 :::
 
 ## Interactive example
@@ -92,9 +97,7 @@ class MyApp extends StatelessWidget {
 
     return const MaterialApp(
       title: appTitle,
-      home: OrientationList(
-        title: appTitle,
-      ),
+      home: OrientationList(title: appTitle),
     );
   }
 }
@@ -111,15 +114,15 @@ class OrientationList extends StatelessWidget {
       body: OrientationBuilder(
         builder: (context, orientation) {
           return GridView.count(
-            // Create a grid with 2 columns in portrait mode, or 3 columns in
-            // landscape mode.
+            // Create a grid with 2 columns in portrait mode, or
+            // 3 columns in landscape mode.
             crossAxisCount: orientation == Orientation.portrait ? 2 : 3,
-            // Generate 100 widgets that display their index in the List.
+            // Generate 100 widgets that display their index in the list.
             children: List.generate(100, (index) {
               return Center(
                 child: Text(
                   'Item $index',
-                  style: Theme.of(context).textTheme.displayLarge,
+                  style: TextTheme.of(context).displayLarge,
                 ),
               );
             }),
@@ -132,7 +135,7 @@ class OrientationList extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/orientation.gif" alt="Orientation Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/orientation.webp" alt="Orientation Demo" class="site-mobile-screenshot" />
 </noscript>
 
 ## Locking device orientation
@@ -159,9 +162,7 @@ For a list of all the possible values, check out [`DeviceOrientation`].
 ```dart
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
 ```
@@ -172,3 +173,5 @@ void main() {
 [`OrientationBuilder`]: {{site.api}}/flutter/widgets/OrientationBuilder-class.html
 [`Orientation`]: {{site.api}}/flutter/widgets/Orientation.html
 [`SystemChrome.setPreferredOrientations()`]: {{site.api}}/flutter/services/SystemChrome/setPreferredOrientations.html
+[adaptive ui documenation]: {{site.api}}/ui/adaptive-responsive
+[discouraged]: {{site.api}}/ui/adaptive-responsive/best-practices

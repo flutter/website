@@ -104,7 +104,7 @@ pluginManagement {
 }
 
 plugins {
-    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0" // apply true
     id "com.android.application" version "{agpVersion}" apply false
     id "org.jetbrains.kotlin.android" version "{kotlinVersion}" apply false
 }
@@ -115,6 +115,11 @@ include ":app"
 If you made some changes to this file, make sure they're placed after
 `pluginManagement {}` and `plugins {}` blocks, since Gradle enforces
 that no other code can be placed before these blocks.
+
+The settings Flutter Gradle Plugin (`dev.flutter.flutter-plugin-loader`)
+should not have apply false (the default is true) or should be explicitly
+set to true.
+
 
 ### android/build.gradle
 
@@ -188,6 +193,9 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 ```
+`"dev.flutter.flutter-gradle-plugin"` is the project Flutter 
+Gradle Plugin, which is a different string than the value applied 
+in settings.gradle(.kts) (`"dev.flutter.flutter-plugin-loader"`). 
 
 Finally, if your `dependencies` block contains a dependency
 on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 

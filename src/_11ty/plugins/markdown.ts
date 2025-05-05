@@ -13,7 +13,6 @@ export const markdown = (() => {
     .use(markdownItAttrs, {
       leftDelimiter: '{:',
       rightDelimiter: '}',
-      allowedAttributes: ['id', 'class', /^data-.*$/],
     })
     .use(markdownItAnchor, {
       slugify: (s) => slugify(s),
@@ -68,7 +67,7 @@ function _registerAside(markdown: MarkdownIt, id: string, defaultTitle: string |
         return `<aside class="alert ${style}">
 ${title !== null ? `<div class="alert-header">
 ${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` : ''}
-<span>${title}</span></div>` : ''}
+<span>${markdown.renderInline(title)}</span></div>` : ''}
 <div class="alert-content">
 `;
       } else {

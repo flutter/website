@@ -20,25 +20,23 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
   {% else %}
   {% assign targetlink = target | downcase %}
   {% endcase %}
-  <a class="card card-app-type card-windows" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}">
-    <div class="card-body">
-      <header class="card-title text-center">
-        <span class="d-block h1">
-          {% assign icon = target | downcase -%}
-          {% case icon %}
-          {% when 'desktop' -%}
-            <span class="material-symbols">desktop_windows</span>
-          {% when 'android' -%}
-            <span class="material-symbols">phone_android</span>
-          {% when 'web' -%}
-            <span class="material-symbols">web</span>
-          {% endcase -%}
-        </span>
-        <span class="text-muted text-nowrap">{{target}}</span>
-        {% if icon == 'android' -%}
-          <div class="card-subtitle">Recommended</div>
-        {% endif -%}
-      </header>
+  <a class="card outlined-card install-card card-windows" id="install-{{os | downcase}}" href="/get-started/install/{{os | downcase}}/{{targetlink}}" aria-label="Windows setup instructions for first deploying to {{target}}">
+    {% assign icon = target | downcase -%}
+    <div class="card-leading">
+      {% case icon %}
+      {% when 'desktop' -%}
+        <span class="material-symbols" aria-hidden="true">desktop_windows</span>
+      {% when 'android' -%}
+        <span class="material-symbols" aria-hidden="true">phone_android</span>
+      {% when 'web' -%}
+        <span class="material-symbols" aria-hidden="true">web</span>
+      {% endcase -%}
+    </div>
+    <div class="card-header text-center">
+      <span class="card-title">{{target}}</span>
+      {% if icon == 'android' -%}
+        <span class="card-subtitle">Recommended</span>
+      {% endif -%}
     </div>
   </a>
 {% endfor %}

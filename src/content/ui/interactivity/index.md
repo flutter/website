@@ -33,7 +33,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100 text-center" alt="The custom widget you'll create" width="200px">
+{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -205,22 +205,19 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           child: IconButton(
             padding: const EdgeInsets.all(0),
             alignment: Alignment.center,
-            [!icon: (_isFavorited!]
-                ? const Icon(Icons.star)
-                : const Icon(Icons.star_border)),
+            [!icon:!]
+                (_isFavorited
+                    ? const Icon(Icons.star)
+                    : const Icon(Icons.star_border)),
             color: Colors.red[500],
             [!onPressed: _toggleFavorite,!]
           ),
         ),
-        SizedBox(
-          width: 18,
-          child: SizedBox(
-            [!child: Text('$_favoriteCount'),!]
-          ),
-        ),
+        SizedBox(width: 18, child: SizedBox([!child: Text('$_favoriteCount'))),!]
       ],
     );
   }
+
   // ···
 }
 ```
@@ -349,17 +346,17 @@ creates a container that, when tapped, toggles between a
 green or grey box. The `_active` boolean determines the
 color: green for active or grey for inactive.
 
-<div class="row mb-4">
-  <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
-    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
+<div class="side-by-side text-center">
+  <div class="text-center">
+    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="simple-border" width="150px" alt="Active state">
+    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="simple-border" width="150px" alt="Inactive state">
   </div>
 </div>
 
 These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
-<a id="self-managed"></a>
+<a id="self-managed" aria-hidden="true"></a>
 
 ### The widget manages its own state
 
@@ -437,12 +434,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        body: const Center(
-          child: TapboxA(),
-        ),
+        appBar: AppBar(title: const Text('Flutter Demo')),
+        body: const Center(child: TapboxA()),
       ),
     );
   }
@@ -507,10 +500,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxB(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxB(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -518,11 +508,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  const TapboxB({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxB({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -616,10 +602,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxC(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxC(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -627,11 +610,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  const TapboxC({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxC({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -679,16 +658,16 @@ class _TapboxCState extends State<TapboxC> {
         height: 200,
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
-          border: _highlight
-              ? Border.all(
-                  color: Colors.teal[700]!,
-                  width: 10,
-                )
-              : null,
+          border:
+              _highlight
+                  ? Border.all(color: Colors.teal[700]!, width: 10)
+                  : null,
         ),
         child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32, color: Colors.white)),
+          child: Text(
+            widget.active ? 'Active' : 'Inactive',
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
         ),
       ),
     );
@@ -785,7 +764,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Gestures]: /cookbook/gestures
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

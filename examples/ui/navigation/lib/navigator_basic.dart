@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation basics',
-    home: FirstScreen(),
-  ));
+  runApp(const MaterialApp(title: 'Navigation basics', home: FirstScreen()));
 }
 
 class FirstScreen extends StatelessWidget {
@@ -12,9 +9,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
+      appBar: AppBar(title: const Text('First Screen')),
       body: Center(
         child: ElevatedButton(
           // #docregion push-route
@@ -36,9 +31,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Screen'),
-      ),
+      appBar: AppBar(title: const Text('Second Screen')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Pop current screen'),

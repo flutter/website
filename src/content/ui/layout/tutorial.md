@@ -142,9 +142,7 @@ In this section, shell out the basic Flutter app code to start your app.
        return MaterialApp(
          title: appTitle,
          home: Scaffold(
-           appBar: AppBar(
-             title: const Text(appTitle),
-           ),
+           appBar: AppBar(title: const Text(appTitle)),
            body: const Center(
              child: Text('Hello World'),
            ),
@@ -155,7 +153,7 @@ In this section, shell out the basic Flutter app code to start your app.
    ```
 
 [Set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 
 ## Add the Title section
 
@@ -173,11 +171,7 @@ Add the following code after the `MyApp` class.
 <?code-excerpt "step2/lib/main.dart (title-section)"?>
 ```dart
 class TitleSection extends StatelessWidget {
-  const TitleSection({
-    super.key,
-    required this.name,
-    required this.location,
-  });
+  const TitleSection({super.key, required this.name, required this.location});
 
   final String name;
   final String location;
@@ -198,25 +192,15 @@ class TitleSection extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(
-                  location,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
-                ),
+                Text(location, style: TextStyle(color: Colors.grey[500])),
               ],
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
@@ -318,6 +302,7 @@ class ButtonSection extends StatelessWidget {
     final Color color = Theme.of(context).primaryColor;
     // ···
   }
+
 }
 ```
 
@@ -400,25 +385,14 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ButtonWithText(
-            color: color,
-            icon: Icons.call,
-            label: 'CALL',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.near_me,
-            label: 'ROUTE',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.share,
-            label: 'SHARE',
-          ),
+          ButtonWithText(color: color, icon: Icons.call, label: 'CALL'),
+          ButtonWithText(color: color, icon: Icons.near_me, label: 'ROUTE'),
+          ButtonWithText(color: color, icon: Icons.share, label: 'SHARE'),
         ],
       ),
     );
   }
+
 }
 
 class ButtonWithText extends StatelessWidget {
@@ -439,6 +413,7 @@ class ButtonWithText extends StatelessWidget {
       // ···
     );
   }
+
 }
 ```
 
@@ -472,10 +447,7 @@ Add the following code as a separate widget after the `ButtonSection` widget.
 <?code-excerpt "step4/lib/main.dart (text-section)"?>
 ```dart
 class TextSection extends StatelessWidget {
-  const TextSection({
-    super.key,
-    required this.description,
-  });
+  const TextSection({super.key, required this.description});
 
   final String description;
 
@@ -483,10 +455,7 @@ class TextSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(32),
-      child: Text(
-        description,
-        softWrap: true,
-      ),
+      child: Text(description, softWrap: true),
     );
   }
 }
@@ -573,12 +542,7 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      image,
-      width: 600,
-      height: 240,
-      fit: BoxFit.cover,
-    );
+    return Image.asset(image, width: 600, height: 240, fit: BoxFit.cover);
   }
 }
 ```

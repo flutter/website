@@ -50,9 +50,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: Stack(
           children: <Widget>[
             const Center(child: CircularProgressIndicator()),
@@ -70,7 +68,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Fading In Image Demo](/assets/images/docs/cookbook/fading-in-images.gif){:.site-mobile-screenshot}
+![Fading In Image Demo](/assets/images/docs/cookbook/fading-in-images.webp){:.site-mobile-screenshot}
 
 ## From asset bundle
 
@@ -114,9 +112,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: Center(
           child: FadeInImage.assetNetwork(
             placeholder: 'assets/loading.gif',
@@ -129,7 +125,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-![Asset fade-in](/assets/images/docs/cookbook/fading-in-asset-demo.gif){:.site-mobile-screenshot}
+![Asset fade-in](/assets/images/docs/cookbook/fading-in-asset-demo.webp){:.site-mobile-screenshot}
 
 
 [Adding assets and images]: /ui/assets/assets-and-images

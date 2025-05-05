@@ -31,10 +31,6 @@ trees, and can be used for the following:
 
 As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
 
-:::note
-Please note that the [legacy inspector][] will be removed in a future release. Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
-:::
-
 [inspector settings dialog]: #inspector-settings
 [legacy inspector]: /tools/devtools/legacy-inspector
 [filing a bug]: https://github.com/flutter/devtools/issues/new 
@@ -199,7 +195,7 @@ standard "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 
-![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.gif){:width="100%"}
+![The flex explorer showing errors and device inspector](/assets/images/docs/tools/devtools/layout_explorer_errors_and_device.webp){:width="100%"}
 
 Clicking a widget in the flex explorer mirrors
 the selection on the on-device inspector. **Select Widget Mode**
@@ -227,7 +223,7 @@ such as [`mainAxisSize`][], [`textDirection`][], and
 
 ###### mainAxisAlignment
 
-![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.gif){:width="100%"}
+![The flex explorer changing main axis alignment](/assets/images/docs/tools/devtools/layout_explorer_main_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -240,7 +236,7 @@ Supported values:
 
 ###### crossAxisAlignment
 
-![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.gif){:width="100%"}
+![The flex explorer changing cross axis alignment](/assets/images/docs/tools/devtools/layout_explorer_cross_axis_alignment.webp){:width="100%"}
 
 Supported values:
 
@@ -251,7 +247,7 @@ Supported values:
 
 ###### FlexParentData.flex
 
-![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.gif){:width="100%"}
+![The flex explorer changing flex factor](/assets/images/docs/tools/devtools/layout_explorer_flex.webp){:width="100%"}
 
 The flex explorer supports 7 flex options in the UI
 (null, 0, 1, 2, 3, 4, 5), but technically the flex
@@ -259,7 +255,7 @@ factor of a flex widget's child can be any int.
 
 ###### Flexible.fit
 
-![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.gif){:width="100%"}
+![The flex explorer changing fit](/assets/images/docs/tools/devtools/layout_explorer_fit.webp){:width="100%"}
 
 The flex explorer supports the two different types of
 [`FlexFit`][]: `loose` and `tight`.
@@ -298,8 +294,8 @@ The following links provide more info.
 
 The following screen recordings show before and after slowing an animation.
 
-![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.gif)
-![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.gif)
+![Screen recording showing normal animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-disabled.webp)
+![Screen recording showing slowed animation speed](/assets/images/docs/tools/devtools/debug-toggle-slow-animations-enabled.webp)
 
 ### Show guidelines
 
@@ -419,15 +415,13 @@ class EverythingRepaintsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
-      body: const Center(
-        child: CircularProgressIndicator(),
-      ),
+      body: const Center(child: CircularProgressIndicator()),
     );
   }
 }
 ```
 
-![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.gif)
+![Screen recording of a whole screen repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-1.webp)
 
 Wrapping the progress indicator in a `RepaintBoundary` causes
 only that section of the screen to repaint:
@@ -442,16 +436,14 @@ class AreaRepaintsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Repaint Example')),
       body: const Center(
-        child: RepaintBoundary(
-          child: CircularProgressIndicator(),
-        ),
+        child: RepaintBoundary(child: CircularProgressIndicator()),
       ),
     );
   }
 }
 ```
 
-![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.gif)
+![Screen recording of a just a progress indicator repainting](/assets/images/docs/tools/devtools/debug-toggle-guidelines-repaint-2.webp)
 
 `RepaintBoundary` widgets have tradeoffs. They can help with performance,
 but they also have an overhead of creating a new canvas,
@@ -504,11 +496,7 @@ class ResizedImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      'dash.png',
-      cacheHeight: 213,
-      cacheWidth: 392,
-    );
+    return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
 ```
@@ -575,6 +563,23 @@ the discussion on [common problems when debugging][].
 Hovering over any widget displays its properties and values.
 
 Toggling this value enables or disables the hover inspection functionality.
+
+### Enable widget tree auto-refreshing
+
+When enabled, the widget tree automatically refreshes after
+a hot-reload or a navigation event. 
+
+
+### Use legacy inspector
+
+When enabled, use the [legacy inspector][] instead of the new inspector. 
+
+:::note
+The [legacy inspector][] will be removed in a future release.
+Let us know if there are issues preventing you from using the new inspector by [filing a bug][].
+:::
+
+[legacy inspector]: /tools/devtools/legacy-inspector
 
 ### Package directories
 

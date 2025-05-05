@@ -41,13 +41,9 @@ In this example, display each String on its own line.
 ```dart
 ListView.builder(
   itemCount: items.length,
-  prototypeItem: ListTile(
-    title: Text(items.first),
-  ),
+  prototypeItem: ListTile(title: Text(items.first)),
   itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(items[index]),
-    );
+    return ListTile(title: Text(items[index]));
   },
 )
 ```
@@ -78,18 +74,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           itemCount: items.length,
-          prototypeItem: ListTile(
-            title: Text(items.first),
-          ),
+          prototypeItem: ListTile(title: Text(items.first)),
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
-            );
+            return ListTile(title: Text(items[index]));
           },
         ),
       ),
@@ -112,7 +102,7 @@ Use [`prototypeItem`][] or [`itemExtent`][] if your list has items of fixed size
 Use [`itemExtentBuilder`][] if your list has items of different sizes.
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/long-lists.gif" alt="Long Lists Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/long-lists.webp" alt="Long Lists Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`List.generate`]: {{site.api}}/flutter/dart-core/List/List.generate.html

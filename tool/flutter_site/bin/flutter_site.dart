@@ -12,15 +12,14 @@ import 'package:path/path.dart' as path;
 void main(List<String> args) async {
   // Verify that we are running from the root of the website repository.
   if (!Directory(path.join('tool', 'flutter_site')).existsSync()) {
-    throw Exception(
-      'Error: Wrong directory, run from root of the repository.',
-    );
+    throw Exception('Error: Wrong directory, run from root of the repository.');
   }
 
   final runner = FlutterSiteCommandRunner();
   try {
-    final result =
-        await runner.run(args).whenComplete(io.sharedStdIn.terminate);
+    final result = await runner
+        .run(args)
+        .whenComplete(io.sharedStdIn.terminate);
 
     exit(result is int ? result : 0);
   } on UsageException catch (e) {

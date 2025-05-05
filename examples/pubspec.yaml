@@ -2,7 +2,7 @@ name: flutter_docs_examples
 publish_to: none
 
 environment:
-  sdk: ^3.6.0
+  sdk: ^3.7.0
 
 workspace:
   - _animation/basic_hero_animation
@@ -91,11 +91,11 @@ workspace:
   - cookbook/testing/unit/mocking
   - cookbook/testing/widget/finders
   - cookbook/testing/widget/introduction
+  - cookbook/testing/widget/orientation_tests
   - cookbook/testing/widget/scrolling
   - cookbook/testing/widget/tap_drag
   - data-and-backend/json
   - deployment/obfuscate
-  - get-started/codelab_web
   - get-started/flutter-for/android_devs
   - get-started/flutter-for/declarative
   - get-started/flutter-for/ios_devs

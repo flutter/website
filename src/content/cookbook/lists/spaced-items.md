@@ -53,11 +53,11 @@ even when the parent container is too small.
 
 <?code-excerpt "lib/spaced_list.dart (builder)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: Placeholder(),
-  );
-});
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(child: Placeholder());
+  },
+);
 ```
 
 ## 2. Add a `ConstrainedBox` inside the `SingleChildScrollView`
@@ -77,14 +77,16 @@ namely the maximum height of the [`BoxConstraints`][].
 
 <?code-excerpt "lib/spaced_list.dart (constrainedBox)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: Placeholder(),
-    ),
-  );
-});
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: Placeholder(),
+      ),
+    );
+  },
+);
 ```
 
 However, you don't set the `maxHeight` parameter,
@@ -101,21 +103,23 @@ set the `mainAxisAlignment` to `MainAxisAlignment.spaceBetween`.
 
 <?code-excerpt "lib/spaced_list.dart (column)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ItemWidget(text: 'Item 1'),
-          ItemWidget(text: 'Item 2'),
-          ItemWidget(text: 'Item 3'),
-        ],
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ItemWidget(text: 'Item 1'),
+            ItemWidget(text: 'Item 2'),
+            ItemWidget(text: 'Item 3'),
+          ],
+        ),
       ),
-    ),
-  );
-});
+    );
+  },
+);
 ```
 
 Alternatively, you can use the [`Spacer`][] widget 
@@ -128,25 +132,25 @@ instead of expanding infinitely.
 
 <?code-excerpt "lib/spaced_list.dart (intrinsic)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: IntrinsicHeight(
-        child: Column(
-          children: [
-            ItemWidget(text: 'Item 1'),
-            Spacer(),
-            ItemWidget(text: 'Item 2'),
-            Expanded(
-              child: ItemWidget(text: 'Item 3'),
-            ),
-          ],
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: IntrinsicHeight(
+          child: Column(
+            children: [
+              ItemWidget(text: 'Item 1'),
+              Spacer(),
+              ItemWidget(text: 'Item 2'),
+              Expanded(child: ItemWidget(text: 'Item 3')),
+            ],
+          ),
         ),
       ),
-    ),
-  );
-});
+    );
+  },
+);
 ```
 
 :::tip
@@ -180,44 +184,39 @@ class SpacedItemsList extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        cardTheme: CardTheme(color: Colors.blue.shade50),
-        useMaterial3: true,
+        cardTheme: CardThemeData(color: Colors.blue.shade50),
       ),
       home: Scaffold(
-        body: LayoutBuilder(builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List.generate(
-                    items, (index) => ItemWidget(text: 'Item $index')),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: List.generate(
+                    items,
+                    (index) => ItemWidget(text: 'Item $index'),
+                  ),
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          },
+        ),
       ),
     );
   }
 }
 
 class ItemWidget extends StatelessWidget {
-  const ItemWidget({
-    super.key,
-    required this.text,
-  });
+  const ItemWidget({super.key, required this.text});
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: SizedBox(
-        height: 100,
-        child: Center(child: Text(text)),
-      ),
-    );
+    return Card(child: SizedBox(height: 100, child: Center(child: Text(text))));
   }
 }
 ```

@@ -1,13 +1,13 @@
-/**
- * Set up interactivity of tabs created with the `{% tabs %}` shortcode.
- */
+/** Set up interactivity of tabs created with the `{% tabs %}` shortcode. */
 function setupTabs() {
+  _applyFromQueryParameters();
+
   const tabsWrappers = document.querySelectorAll('.tabs-wrapper');
 
   tabsWrappers.forEach(function (tabWrapper) {
     const saveKey = tabWrapper.dataset.tabSaveKey;
     const localStorageKey = `tab-save-${saveKey}`;
-    const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    const tabs = tabWrapper.querySelectorAll(':scope > .nav-tabs a.nav-link');
     let tabToChangeTo;
 
     tabs.forEach(function (tab) {
@@ -48,6 +48,23 @@ function setupTabs() {
   });
 }
 
+/** Apply force overrides from query parameters to saved tabs. */
+function _applyFromQueryParameters() {
+  const currentUrl = new URL(window.location.href);
+  const searchParams = currentUrl.searchParams;
+  const paramsToDelete = [];
+
+  searchParams.forEach((value, key) => {
+    if (key.startsWith('tab-save-')) {
+      localStorage.setItem(key, value);
+      paramsToDelete.push(key);
+    }
+  });
+
+  paramsToDelete.forEach(key => searchParams.delete(key));
+  window.history.replaceState({}, '', currentUrl.toString());
+}
+
 function _clearActiveTabs(tabs) {
   tabs.forEach(function (tab) {
     tab.classList.remove('active');
@@ -70,9 +87,10 @@ function _findAndActivateTabsWithSaveId(saveKey, saveId) {
 }
 
 function _activateTabWithSaveId(tabWrapper, saveId) {
-  const tabToActivate = tabWrapper.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
+  const tabsNav = tabWrapper.querySelector(':scope > .nav-tabs');
+  const tabToActivate = tabsNav.querySelector(`a.nav-link[data-tab-save-id="${saveId}"]`);
   if (tabToActivate) {
-    const tabs = tabWrapper.querySelectorAll('a.nav-link');
+    const tabs = tabsNav.querySelectorAll('a.nav-link');
     _clearActiveTabs(tabs);
     _setActiveTab(tabToActivate);
   }

@@ -158,6 +158,8 @@ agree to the licenses of the Android SDK platform.
 1. Before agreeing to the terms of each license,
    read each with care.
 
+{% if include.devos == 'macOS' %}
+
 #### Troubleshooting licensing issues
 
 <details>
@@ -208,5 +210,7 @@ source ~/.zshrc
 ```
 
 </details>
+
+{% endif %}
 
 {% endif %}

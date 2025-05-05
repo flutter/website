@@ -2,7 +2,7 @@
 
 [Flutter logo]: https://github.com/dart-lang/site-shared/blob/main/src/_assets/image/flutter/icon/64.png?raw=1
 
-# [Flutter][] documentation website 
+# [Flutter][] documentation website
 
 The [documentation site][Flutter] for the [Flutter framework][],
 built with [Eleventy][] and hosted on [Firebase][].
@@ -15,58 +15,50 @@ built with [Eleventy][] and hosted on [Firebase][].
 [Flutter]: https://docs.flutter.dev/
 [Repo on GitHub Actions]: https://github.com/flutter/website/actions?query=workflow%3Abuild+branch%3Amain
 
-<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
-  <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://cdn.idx.dev/btn/open_light_32.svg">
-    <img
-      height="32"
-      alt="Open in IDX"
-      src="https://cdn.idx.dev/btn/open_purple_32.svg">
-  </picture>
+<a href="https://studio.firebase.google.com/import?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fwebsite">
+  <img
+    height="32"
+    alt="Open in Firebase Studio"
+    src="https://cdn.firebasestudio.dev/btn/open_blue_32.svg">
 </a>
 
 ## Issues, bugs, and requests
 
-We welcome contributions and feedback on our website. 
+We welcome contributions and feedback on our website.
 Please file a request in our
-[issue tracker](https://github.com/flutter/website/issues/new/choose) 
-or create a [pull request](https://github.com/flutter/website/pulls). 
-For simple changes (such as tweaking some text), 
+[issue tracker](https://github.com/flutter/website/issues/new/choose)
+or create a [pull request](https://github.com/flutter/website/pulls).
+For simple changes (such as tweaking some text),
 it's easiest to make changes using the GitHub UI.
 
-If you have an issue with the 
-API docs on [api.flutter.dev](https://api.flutter.dev), 
-please file those issues on 
-the [`flutter/flutter`](https://github.com/flutter/flutter/issues) repo, 
-not on this (`flutter/website`) repo. 
-The API docs are embedded in Flutter's source code, 
+If you have an issue with the
+API docs on [api.flutter.dev](https://api.flutter.dev),
+please file those issues on
+the [`flutter/flutter`](https://github.com/flutter/flutter/issues) repo,
+not on this (`flutter/website`) repo.
+The API docs are embedded in Flutter's source code,
 so the engineering team handles those.
 
 
 ## Before you submit a PR
 
-We love it when the community gets involved in improving our docs! 
+We love it when the community gets involved in improving our docs!
 But here are a few notes to keep in mind before you submit a PR:
 
-- When triaging issues, 
-  we sometimes label an issue with the tag **PRs welcome**. 
+- When triaging issues,
+  we sometimes label an issue with the tag **PRs welcome**.
   But we welcome PRs on other issues as well&mdash;
   it doesn't have to be tagged with that label.
-- Please don't run our docs through Grammarly (or similar) 
+- Please don't run our docs through Grammarly (or similar)
   and submit those changes as a PR.
 - We follow the [Google Developer Documentation Style Guidelines][] —
-  for example, don't use "i.e." or "e.g.", 
+  for example, don't use "i.e." or "e.g.",
   avoid writing in first person,
   and avoid writing in future tense.
   You can start with the
-  [style guide highlights](https://developers.google.com/style/highlights) 
-  or the [word list](https://developers.google.com/style/word-list), 
-  or use the search bar that's at the top of every style guide page. 
+  [style guide highlights](https://developers.google.com/style/highlights)
+  or the [word list](https://developers.google.com/style/word-list),
+  or use the search bar at the top of every style guide page.
 
 > We truly thank you for your willingness and helpfulness
 > in keeping the website docs up to date!
@@ -83,12 +75,12 @@ you probably don't need to build this site.
 Often you can make changes using the GitHub UI.
 If needed, we can stage the changes automatically in your pull request.
 
-> [!IMPORTANT]  
+> [!IMPORTANT] 
 > If you are cloning this repository locally,
 > follow the below instruction on cloning with its submodule.
 
 If your change involves code samples, adds/removes pages, or affects navigation,
-do consider building and test your work before submitting.
+do consider building and testing your work before submitting.
 
 If you want or need to build the site, follow the steps below.
 
@@ -129,7 +121,7 @@ If you prefer, you can use a version manager such as [nvm][],
 and run `nvm install` from the repository's root directory.
 
 If you already have Node installed, verify it's available on your path
-and already the latest stable version _(currently `22.12` or later)_:
+and already the latest stable version _(currently `22.14` or later)_:
 
 ```console
 node --version
@@ -239,7 +231,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    ```console
    pnpm install
    ```
-   
+
    Rerun `pnpm install` whenever you incorporate the
    latest changes to the `main` branch or if you
    experience dependency or import errors when building the site.
@@ -318,7 +310,7 @@ in the corresponding `.dart` files.
 
 The `.dart` files are the source of truth for code snippets,
 and the preceding `<?code-excerpt>` instructions in Markdown files specify
-how the snippets are copied from the `.dart` files. 
+how the snippets are copied from the `.dart` files.
 
 To resolve this error and update the Markdown snippets to match,
 from the root of the `website` directory,
@@ -341,17 +333,17 @@ you can build a full version and upload it to Firebase.
   - Navigate to the [Firebase Console](https://console.firebase.google.com)
     and create your own Firebase project (for example, `flutter-dev-staging`).
 
-  - Head back to your local terminal and verify that you are logged in.
+  - Head back to your local terminal and verify that you're logged in.
 
     ```console
-    firebase login
+    npm exec -- firebase-tools login
     ```
 
   - Ensure that your project exists and activate that project:
 
     ```console
-    firebase projects:list
-    firebase use <your-project>
+    npm exec -- firebase-tools projects:list
+    npm exec -- firebase-tools use <your-project>
     ```
 
 2. From the root directory of the repository, build the site:
@@ -366,7 +358,7 @@ you can build a full version and upload it to Firebase.
 3. Deploy to your activated Firebase project's default hosting site:
 
    ```console
-   firebase deploy --only hosting
+   npm exec -- firebase-tools deploy --only hosting
    ```
 
 4. Navigate to your PR on GitHub and include the link of the staged version.

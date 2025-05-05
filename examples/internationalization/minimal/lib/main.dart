@@ -37,12 +37,8 @@ class DemoLocalizations {
   }
 
   static const _localizedValues = <String, Map<String, String>>{
-    'en': {
-      'title': 'Hello World',
-    },
-    'es': {
-      'title': 'Hola Mundo',
-    },
+    'en': {'title': 'Hello World'},
+    'es': {'title': 'Hola Mundo'},
   };
 
   static List<String> languages() => _localizedValues.keys.toList();
@@ -80,12 +76,8 @@ class DemoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(DemoLocalizations.of(context).title),
-      ),
-      body: Center(
-        child: Text(DemoLocalizations.of(context).title),
-      ),
+      appBar: AppBar(title: Text(DemoLocalizations.of(context).title)),
+      body: Center(child: Text(DemoLocalizations.of(context).title)),
     );
   }
 }
@@ -102,10 +94,7 @@ class Demo extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
-      supportedLocales: const [
-        Locale('en', ''),
-        Locale('es', ''),
-      ],
+      supportedLocales: const [Locale('en', ''), Locale('es', '')],
       // Watch out: MaterialApp creates a Localizations widget
       // with the specified delegates. DemoLocalizations.of()
       // will only find the app's Localizations widget if its

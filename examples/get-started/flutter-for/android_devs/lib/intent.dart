@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 // #docregion map
 void main() {
-  runApp(MaterialApp(
-    home: const MyAppHome(), // Becomes the route named '/'.
-    routes: <String, WidgetBuilder>{
-      '/a': (context) => const MyPage(title: 'page A'),
-      '/b': (context) => const MyPage(title: 'page B'),
-      '/c': (context) => const MyPage(title: 'page C'),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      home: const MyAppHome(), // Becomes the route named '/'.
+      routes: <String, WidgetBuilder>{
+        '/a': (context) => const MyPage(title: 'page A'),
+        '/b': (context) => const MyPage(title: 'page B'),
+        '/c': (context) => const MyPage(title: 'page C'),
+      },
+    ),
+  );
 }
 // #enddocregion map
 

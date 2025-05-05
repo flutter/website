@@ -22,22 +22,9 @@ one of the following codelabs:
   Create a simple app that automatically generates cool-sounding names,
   such as "newstay", "lightstream", "mainbrake", or "graypine".
   This app is responsive and runs on mobile, desktop, and web.
-  (This also replaces the previous "write your first Flutter app"
-  for mobile, part 1 and part 2 codelabs.)
-
-* [Write your first Flutter app on the web][]<br>
-  Implement a simple web app in DartPad (no downloads
-  required!) that displays a sign-in screen
-  containing three text fields. As the user fills out the
-  fields, a progress bar animates along the top of the
-  sign-in area. This codelab is written specifically for
-  the web, but if you have downloaded and configured
-  Android and iOS tooling, the completed app
-  works on Android and iOS devices, as well.
 
 [Building your first Flutter app]: {{site.yt.watch}}?v=8sAyPDLorek
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
-[Write your first Flutter app on the web]: /get-started/codelab-web
 
 ## Next steps
 
@@ -75,6 +62,13 @@ like layout and animations:
   Not an official codelab, but step-by-step instructions on
   how to debug common layout problems using the Flutter
   Inspector and Layout Explorer.
+
+* [Animations in Flutter][]<br>
+  Learn everything you need to know to build animated effects
+  using Flutter. This codelab covers implicitly animated widgets,
+  explicitly animated widgets, animation controllers,
+  how to use components from the Material [animations][] package,
+  and how to set up [Predictive Back][] on Android.
 
 * [Implicit animations][]<br>
   Use DartPad (no downloads required!) to learn how to use
@@ -130,6 +124,8 @@ like layout and animations:
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.yt.watch}}?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Animations in Flutter]: {{site.codelabs}}/advanced-flutter-animations
+[Predictive Back]: {{site.docs}}/release/breaking-changes/android-predictive-back
 [Implicit animations]: /codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter
@@ -169,6 +165,10 @@ Learn how to use Flutter with other technologies.
 
 ### Flutter and Firebase
 
+* [Build a Gemini powered Flutter app][]—**NEW**<br>
+  In this codelab, you’ll learn how to integrate Gemini into your Flutter
+  app using Vertex AI in Firebase.
+
 * [Add a user authentication flow to a Flutter app using FirebaseUI][]<br>
   Learn how to add Firebase authentication to a Flutter app
   with only a few lines of code.
@@ -193,6 +193,7 @@ Learn how to use Flutter with other technologies.
   and Firebase Cloud Messaging, integrating FCM to send and
   receive messages on Android, iOS, and web.
 
+[Build a Gemini powered Flutter app]: {{site.codelabs}}/codelabs/flutter-gemini-colorist
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [firebase-ws]: {{site.yt.watch}}?v=wUSkeTaBonA
 [Get to know Firebase for Flutter]: {{site.firebase}}/codelabs/firebase-get-to-know-flutter

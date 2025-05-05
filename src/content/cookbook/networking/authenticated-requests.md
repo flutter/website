@@ -21,9 +21,7 @@ class from the `dart:io` library.
 final response = await http.get(
   Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
   // Send authorization headers to the backend.
-  headers: {
-    HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
-  },
+  headers: {HttpHeaders.authorizationHeader: 'Basic your_api_token_here'},
 );
 ```
 
@@ -44,9 +42,7 @@ Future<Album> fetchAlbum() async {
   final response = await http.get(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
     // Send authorization headers to the backend.
-    headers: {
-      HttpHeaders.authorizationHeader: 'Basic your_api_token_here',
-    },
+    headers: {HttpHeaders.authorizationHeader: 'Basic your_api_token_here'},
   );
   final responseJson = jsonDecode(response.body) as Map<String, dynamic>;
 
@@ -58,24 +54,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }

@@ -55,6 +55,21 @@ LinearProgressIndicator(
 ),
 ```
 
+To update your entire app to use the updated `LinearProgressIndicator` design,
+set the `ProgressIndicatorThemeData.year2023` property to `false` in your
+`MaterialApp`:
+
+```dart highlightLines=2
+return MaterialApp(
+  theme: ThemeData(progressIndicatorTheme: const ProgressIndicatorThemeData(year2023: false)),
+        // ...
+        LinearProgressIndicator(
+          year2023: false,
+          value: 0.5,
+        ),
+        // ...
+```
+
 To opt into the updated design spec for the `CircularProgressIndicator`,
 set the `year2023` flag to `false`:
 
@@ -65,10 +80,25 @@ CircularProgressIndicator(
 ),
 ```
 
+To update your entire app to use the updated `CircularProgressIndicator` design,
+set the `ProgressIndicatorThemeData.year2023` property to `false` in your
+`MaterialApp`:
+
+```dart highlightLines=2
+return MaterialApp(
+  theme: ThemeData(progressIndicatorTheme: const ProgressIndicatorThemeData(year2023: false)),
+        // ...
+        CircularProgressIndicator(
+          year2023: false,
+          value: 0.5,
+        ),
+        // ...
+```
+
 ## Timeline
 
 Landed in version: 3.28.0-0.1.pre<br>
-In stable release: Not yet
+In stable release: 3.29
 
 ## References
 

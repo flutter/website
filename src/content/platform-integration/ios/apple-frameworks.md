@@ -54,7 +54,7 @@ should provide details.
 
 | Use Case                                       | Apple Framework or Class                                                              | Flutter Plugin               |
 |------------------------------------------------|---------------------------------------------------------------------------------------|------------------------------|
-| Access the photo library                       | `PhotoKit`using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController` | [`image_picker`][]           |
+| Access the photo library                       | `PhotoKit` using the `Photos` and `PhotosUI ` frameworks and `UIImagePickerController`| [`image_picker`][]           |
 | Access the camera                              | `UIImagePickerController` using the `.camera` `sourceType`                            | [`image_picker`][]           |
 | Use advanced camera features                   | `AVFoundation`                                                                        | [`camera`][]                 |
 | Offer In-app purchases                         | `StoreKit`                                                                            | [`in_app_purchase`][][^1]    |

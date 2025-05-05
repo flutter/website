@@ -1,12 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 // #docregion Display
 @immutable
@@ -14,9 +9,7 @@ class DownloadButton extends StatelessWidget {
   const DownloadButton({
     super.key,
     required this.status,
-    this.transitionDuration = const Duration(
-      milliseconds: 500,
-    ),
+    this.transitionDuration = const Duration(milliseconds: 500),
   });
 
   final DownloadStatus status;
@@ -78,4 +71,5 @@ class ButtonShapeWidget extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion Display

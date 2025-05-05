@@ -43,8 +43,6 @@ To learn more, check out [dart.dev/go/macros][].
 * We have three new codelabs and a new guide for the Games Toolkit.
   To see the list of additions,
   check out the updated [Casual Games Toolkit][] page.
-* A new section, [Conditionally bundling assets based on flavor][],
-  in the Flavors page.
 * Flutter support for Web Assembly (Wasm) has now reached stable.
   To learn more, check out the updated
   [Support for WebAssembly (Wasm)][] page.
@@ -70,7 +68,6 @@ To learn more, check out [dart.dev/go/macros][].
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
-[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [Flutter fundamentals docs]: /get-started/fundamentals
 [Flutter install]: /get-started/install
 [Flutter web app initialization]: /platform-integration/web/initialization
@@ -1264,7 +1261,7 @@ Docs added and updated since the last announcement include:
   see [Web support for Flutter][] and
   [Web support for Flutter goes beta][] on the Medium publication.
   Also, the [building a web app with Flutter][] page is updated.
-* A new [write your first Flutter app on the web][] codelab
+* A new write your first Flutter app on the web codelab
   is added to the [Get started][] docs, and includes
   instructions on setting breakpoints in DevTools!
 * We've introduced a program for recommending particular Dart and
@@ -1302,7 +1299,6 @@ Happy Fluttering!
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [implicit animations]: /codelabs/implicit-animations
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
-[write your first Flutter app on the web]: /get-started/codelab-web
 [Get started]: /get-started/install
 
 ## 10 Sep 2019: 1.9 release

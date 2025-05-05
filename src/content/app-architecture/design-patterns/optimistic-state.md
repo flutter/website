@@ -62,7 +62,7 @@ Following the Optimistic State idea,
 the button should instantly change to “Subscribed” once it is tapped, 
 and only change back to “Subscribe” if the request failed.
 
-<img src='/assets/images/docs/cookbook/architecture/optimistic-state.gif'
+<img src='/assets/images/docs/cookbook/architecture/optimistic-state.webp'
 class="site-mobile-screenshot" alt="Animation of application with subscribe button" >
 
 ## Feature architecture
@@ -78,9 +78,7 @@ create these Dart classes in a Flutter project:
 <?code-excerpt "lib/starter.dart (Starter)"?>
 ```dart
 class SubscribeButton extends StatefulWidget {
-  const SubscribeButton({
-    super.key,
-  });
+  const SubscribeButton({super.key});
 
   @override
   State<SubscribeButton> createState() => _SubscribeButtonState();
@@ -117,9 +115,7 @@ to the `SubscribeButtonViewModel`:
 <?code-excerpt "lib/main.dart (ViewModelStart)" replace="/y;$/y;\n}/g"?>
 ```dart
 class SubscribeButtonViewModel extends ChangeNotifier {
-  SubscribeButtonViewModel({
-    required this.subscriptionRepository,
-  });
+  SubscribeButtonViewModel({required this.subscriptionRepository});
 
   final SubscriptionRepository subscriptionRepository;
 }
@@ -130,10 +126,7 @@ And add the `SubscribeButtonViewModel` to the `SubscribeButton` widget:
 <?code-excerpt "lib/main.dart (Widget)"?>
 ```dart
 class SubscribeButton extends StatefulWidget {
-  const SubscribeButton({
-    super.key,
-    required this.viewModel,
-  });
+  const SubscribeButton({super.key, required this.viewModel});
 
   /// Subscribe button view model.
   final SubscribeButtonViewModel viewModel;
@@ -260,9 +253,7 @@ The complete `SubscribeButtonViewModel` should look like this:
 /// Subscribe button View Model.
 /// Handles the subscribe action and exposes the state to the subscription.
 class SubscribeButtonViewModel extends ChangeNotifier {
-  SubscribeButtonViewModel({
-    required this.subscriptionRepository,
-  });
+  SubscribeButtonViewModel({required this.subscriptionRepository});
 
   final SubscriptionRepository subscriptionRepository;
 
@@ -297,6 +288,7 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
 }
 ```
 
@@ -317,12 +309,14 @@ Widget build(BuildContext context) {
     builder: (context, _) {
       return FilledButton(
         onPressed: widget.viewModel.subscribe,
-        style: widget.viewModel.subscribed
-            ? SubscribeButtonStyle.subscribed
-            : SubscribeButtonStyle.unsubscribed,
-        child: widget.viewModel.subscribed
-            ? const Text('Subscribed')
-            : const Text('Subscribe'),
+        style:
+            widget.viewModel.subscribed
+                ? SubscribeButtonStyle.subscribed
+                : SubscribeButtonStyle.unsubscribed,
+        child:
+            widget.viewModel.subscribed
+                ? const Text('Subscribed')
+                : const Text('Subscribe'),
       );
     },
   );
@@ -389,11 +383,9 @@ void _onViewModelChange() {
     // Reset the error state
     widget.viewModel.error = false;
     // Show an error message
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Failed to subscribe'),
-      ),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
   }
 }
 ```
@@ -476,10 +468,7 @@ class MyApp extends StatelessWidget {
 /// A button that simulates a subscription action.
 /// For example, subscribing to a newsletter or a streaming channel.
 class SubscribeButton extends StatefulWidget {
-  const SubscribeButton({
-    super.key,
-    required this.viewModel,
-  });
+  const SubscribeButton({super.key, required this.viewModel});
 
   /// Subscribe button view model.
   final SubscribeButtonViewModel viewModel;
@@ -508,12 +497,14 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       builder: (context, _) {
         return FilledButton(
           onPressed: widget.viewModel.subscribe,
-          style: widget.viewModel.subscribed
-              ? SubscribeButtonStyle.subscribed
-              : SubscribeButtonStyle.unsubscribed,
-          child: widget.viewModel.subscribed
-              ? const Text('Subscribed')
-              : const Text('Subscribe'),
+          style:
+              widget.viewModel.subscribed
+                  ? SubscribeButtonStyle.subscribed
+                  : SubscribeButtonStyle.unsubscribed,
+          child:
+              widget.viewModel.subscribed
+                  ? const Text('Subscribed')
+                  : const Text('Subscribe'),
         );
       },
     );
@@ -526,13 +517,12 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       // Reset the error state
       widget.viewModel.error = false;
       // Show an error message
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Failed to subscribe'),
-        ),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
   }
+
 }
 
 class SubscribeButtonStyle {
@@ -548,9 +538,7 @@ class SubscribeButtonStyle {
 /// Subscribe button View Model.
 /// Handles the subscribe action and exposes the state to the subscription.
 class SubscribeButtonViewModel extends ChangeNotifier {
-  SubscribeButtonViewModel({
-    required this.subscriptionRepository,
-  });
+  SubscribeButtonViewModel({required this.subscriptionRepository});
 
   final SubscriptionRepository subscriptionRepository;
 
@@ -585,6 +573,7 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
+
 }
 
 /// Repository of subscriptions.

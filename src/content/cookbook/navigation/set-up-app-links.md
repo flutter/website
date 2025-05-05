@@ -9,21 +9,15 @@ Deep linking is a mechanism for launching an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
-:::note
-Did you know that Flutter DevTools provides a
-deep link validation tool for Android?
-An iOS version of the tool is in the works.
-Learn more and see a demo at [Validate deep links][].
-:::
-
-[Validate deep links]: /tools/devtools/deep-links
-
 An _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 
 Setting up app links requires one to own a web domain.
 Otherwise, consider using [Firebase Hosting][]
 or [GitHub Pages][] as a temporary solution.
+
+Once you've set up your deep links, you can validate them.
+To learn more, see [Validate deep links][].
 
 ## 1. Customize a Flutter application
 
@@ -186,7 +180,7 @@ The hosted file should look similar to this:
 
 :::note
 If you have multiple flavors, you can have many sha256_cert_fingerprint 
-values in thesha256_cert_fingerprints field. 
+values in the sha256_cert_fingerprints field. 
 Just add it to the sha256_cert_fingerprints list
 :::
 
@@ -233,3 +227,4 @@ Source code: [deeplink_cookbook][]
 [GitHub Pages]: https://pages.github.com
 [app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app
+[Validate deep links]: /tools/devtools/deep-links

@@ -5,7 +5,7 @@ description: What is Impeller and how to enable it?
 
 :::note
 As of the 3.27 release, Impeller is the default
-rendering engine for both iOS and Android.
+rendering engine for both iOS and Android API 29+.
 To see _detailed_ info on where Impeller is currently supported,
 check out the [Can I use Impeller?][] page.
 :::
@@ -16,7 +16,7 @@ check out the [Can I use Impeller?][] page.
 
 Impeller provides a new rendering runtime for Flutter.
 Impeller precompiles a [smaller, simpler set of shaders][]
-at Engine-build time so they don't compile at runtime.
+at engine-build time so they don't compile at runtime.
 
 [smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
 
@@ -74,9 +74,9 @@ Flutter **enables Impeller by default** on iOS.
 
 ### Android
 
-Flutter **enables Impeller by default** on Android.
-On devices that don't support Vulkan,
-Impeller will fallback to the the legacy OpenGL renderer.
+Impeller is **available and enabled by default on Android API 29+**.
+On devices running lower versions of Android or don't support Vulkan,
+Impeller falls back to the the legacy OpenGL renderer.
 No action on your part is necessary for this fallback behavior.
 
 * To _disable_ Impeller when debugging,
@@ -95,6 +95,14 @@ No action on your part is necessary for this fallback behavior.
     android:name="io.flutter.embedding.android.EnableImpeller"
     android:value="false" />
 ```
+
+### Web
+
+Flutter on the web offers [two renderers][] --
+`canvaskit` and `skwasm` -- which both currently use Skia.
+They might use Impeller in the future.
+
+[two renderers]: /platform-integration/web/renderers#renderers
 
 ### macOS
 

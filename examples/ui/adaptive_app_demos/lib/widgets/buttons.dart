@@ -43,11 +43,12 @@ class SecondaryMenuButton extends StatelessWidget {
 }
 
 class SelectedPageButton extends StatelessWidget {
-  const SelectedPageButton(
-      {super.key,
-      required this.onPressed,
-      required this.label,
-      required this.isSelected});
+  const SelectedPageButton({
+    super.key,
+    required this.onPressed,
+    required this.label,
+    required this.isSelected,
+  });
   final VoidCallback? onPressed;
   final String label;
   final bool isSelected;

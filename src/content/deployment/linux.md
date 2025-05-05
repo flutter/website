@@ -11,7 +11,8 @@ options in your IDE. By default,
 Flutter builds a _debug_ version of your app.
 
 When you're ready to prepare a _release_ version of your app,
-for example to [publish to the Snap Store][snap],
+for example to [publish to the Snap Store][snap] or an
+[alternative channel](#additional-deployment-resources),
 this page can help.
 
 ## Prerequisites
@@ -43,8 +44,9 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD is required during the snap build process. Once installed, LXD needs to be
-configured for use. The default answers are suitable for most use cases.
+LXD is required during the snap build process.
+Once installed, LXD needs to be configured for use.
+The default answers are suitable for most use cases.
 
 ```console
 $ sudo lxd init
@@ -374,7 +376,7 @@ depending on how the snap was built, and if there are
 any specific security concerns. If the checks pass
 without errors, the snap becomes available in the store.
 
-## Additional resources
+## Additional snapcraft resources
 
 You can learn more from the following links on the
 [snapcraft.io][] site:
@@ -387,6 +389,20 @@ You can learn more from the following links on the
 * [Snapcraft extensions][]
 * [Supported plugins][]
 
+## Additional deployment resources
+
+### [fastforge][]
+
+> An all-in-one Flutter application packaging and distribution tool,
+providing you with a one-stop solution to meet various distribution needs.
+
+Supports popular packaging formats like, appimage, deb, pacman, rpm, and more.
+
+### [flatpak-flutter][]
+
+> Flatpak manifest tooling for the offline build of Flutter apps.
+
+Supports Flatpak preparation for publishing on [Flathub][].
 
 
 [Environment variables]: https://snapcraft.io/docs/environment-variables
@@ -406,3 +422,6 @@ You can learn more from the following links on the
 [Snapcraft extensions]: https://snapcraft.io/docs/snapcraft-extensions
 [Supported plugins]: https://snapcraft.io/docs/supported-plugins
 [Ubuntu]: https://ubuntu.com/download/desktop
+[fastforge]: {{site.github}}/fastforgedev/fastforge
+[flatpak-flutter]: {{site.github}}/TheAppgineer/flatpak-flutter
+[Flathub]: https://flathub.org

@@ -24,13 +24,12 @@ class MyApp extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Hello World'),
-            ],
+            children: [Text('Hello World')],
           ),
         ),
       ),
     );
   }
 }
+
 // #enddocregion my-app

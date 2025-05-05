@@ -35,7 +35,7 @@ or choose any Flutter application
 that has been migrated to be
 [compatible with Wasm](#js-interop-wasm).
 
-[sample app]: /get-started/test-drive
+[sample app]: /reference/create-new-app
 
 ### Modify the index page
 
@@ -91,13 +91,13 @@ final isRunningWithWasm = identical(double.nan, double.nan);
 
 ### Serve the built output with an HTTP server
 
-Flutter web WebAssembly uses multiple threads to render your application
+Flutter web WebAssembly can use multiple threads to render your application
 faster, with less jank. To do this, Flutter uses advanced browser features that
 require specific HTTP response headers.
 
-:::warning
-Flutter web applications won't run with WebAssembly unless the server is
-configured to send specific HTTP headers.
+:::important
+Flutter web applications compiled with WebAssembly won't run with multiple-threads
+unless the server is configured to send specific HTTP headers.
 :::
 
 | Name | Value |

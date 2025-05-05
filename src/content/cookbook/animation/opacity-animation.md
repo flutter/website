@@ -29,11 +29,7 @@ draw a green box on screen.
 
 <?code-excerpt "lib/main.dart (Container)" replace="/^child: //g;/\),$/)/g"?>
 ```dart
-Container(
-  width: 200,
-  height: 200,
-  color: Colors.green,
-)
+Container(width: 200, height: 200, color: Colors.green)
 ```
 
 ## 2. Define a `StatefulWidget`
@@ -62,10 +58,7 @@ the `stful` snippet to quickly generate this code.
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  const MyHomePage({
-    super.key,
-    required this.title,
-  });
+  const MyHomePage({super.key, required this.title});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -135,11 +128,7 @@ AnimatedOpacity(
   opacity: _visible ? 1.0 : 0.0,
   duration: const Duration(milliseconds: 500),
   // The green box must be a child of the AnimatedOpacity widget.
-  child: Container(
-    width: 200,
-    height: 200,
-    color: Colors.green,
-  ),
+  child: Container(width: 200, height: 200, color: Colors.green),
 )
 ```
 
@@ -167,10 +156,7 @@ class MyApp extends StatelessWidget {
 // The StatefulWidget's job is to take data and create a State class.
 // In this case, the widget takes a title, and creates a _MyHomePageState.
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-    required this.title,
-  });
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -187,9 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: AnimatedOpacity(
           // If the widget is visible, animate to 0.0 (invisible).
@@ -197,11 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
           opacity: _visible ? 1.0 : 0.0,
           duration: const Duration(milliseconds: 500),
           // The green box must be a child of the AnimatedOpacity widget.
-          child: Container(
-            width: 200,
-            height: 200,
-            color: Colors.green,
-          ),
+          child: Container(width: 200, height: 200, color: Colors.green),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -221,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/fade-in-out.gif" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/fade-in-out.webp" alt="Fade In and Out Demo" class="site-mobile-screenshot" />
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html

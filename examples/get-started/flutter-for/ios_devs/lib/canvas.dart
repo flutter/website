@@ -24,8 +24,9 @@ class SignatureState extends State<Signature> {
       onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition = referenceBox.globalToLocal(
+            details.globalPosition,
+          );
           _points = List.from(_points)..add(localPosition);
         });
       },
@@ -48,10 +49,11 @@ class SignaturePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Paint paint = Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5;
+    final Paint paint =
+        Paint()
+          ..color = Colors.black
+          ..strokeCap = StrokeCap.round
+          ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -63,4 +65,5 @@ class SignaturePainter extends CustomPainter {
   bool shouldRepaint(SignaturePainter oldDelegate) =>
       oldDelegate.points != points;
 }
+
 // #enddocregion custom-painter

@@ -464,7 +464,7 @@ Flutter continues to support CocoaPods.
 :::
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /release/upgrade#switching-flutter-channels
+[`main` channel]: /install/upgrade#switching-flutter-channels
 
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
@@ -1065,7 +1065,7 @@ PENDING
 [iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]: /get-started/editor
+[Flutter editor]: /tools/editors
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html

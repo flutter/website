@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,157 +10,140 @@ part of 'todo.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$Todo {
-  /// The unique identifier of the Todo item.
-  int get id => throw _privateConstructorUsedError;
 
-  /// The task description of the Todo item.
-  String get task => throw _privateConstructorUsedError;
+/// The unique identifier of the Todo item.
+ int get id;/// The task description of the Todo item.
+ String get task;
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TodoCopyWith<Todo> get copyWith => _$TodoCopyWithImpl<Todo>(this as Todo, _$identity);
 
-  /// Create a copy of Todo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Todo&&(identical(other.id, id) || other.id == id)&&(identical(other.task, task) || other.task == task));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,id,task);
+
+@override
+String toString() {
+  return 'Todo(id: $id, task: $task)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TodoCopyWith<$Res> {
-  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res, Todo>;
-  @useResult
-  $Res call({int id, String task});
-}
+abstract mixin class $TodoCopyWith<$Res>  {
+  factory $TodoCopyWith(Todo value, $Res Function(Todo) _then) = _$TodoCopyWithImpl;
+@useResult
+$Res call({
+ int id, String task
+});
 
+
+
+
+}
 /// @nodoc
-class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+class _$TodoCopyWithImpl<$Res>
     implements $TodoCopyWith<$Res> {
-  _$TodoCopyWithImpl(this._value, this._then);
+  _$TodoCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Todo _self;
+  final $Res Function(Todo) _then;
 
-  /// Create a copy of Todo
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? task = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      task: null == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? task = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,task: null == task ? _self.task : task // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$$TodoImplCopyWith(
-          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
-      __$$TodoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int id, String task});
 }
 
-/// @nodoc
-class __$$TodoImplCopyWithImpl<$Res>
-    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
-    implements _$$TodoImplCopyWith<$Res> {
-  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Todo
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? task = null,
-  }) {
-    return _then(_$TodoImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      task: null == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$TodoImpl implements _Todo {
-  const _$TodoImpl({required this.id, required this.task});
 
-  /// The unique identifier of the Todo item.
-  @override
-  final int id;
+class _Todo implements Todo {
+  const _Todo({required this.id, required this.task});
+  
 
-  /// The task description of the Todo item.
-  @override
-  final String task;
+/// The unique identifier of the Todo item.
+@override final  int id;
+/// The task description of the Todo item.
+@override final  String task;
 
-  @override
-  String toString() {
-    return 'Todo(id: $id, task: $task)';
-  }
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TodoCopyWith<_Todo> get copyWith => __$TodoCopyWithImpl<_Todo>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TodoImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.task, task) || other.task == task));
-  }
 
-  @override
-  int get hashCode => Object.hash(runtimeType, id, task);
 
-  /// Create a copy of Todo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
-      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Todo&&(identical(other.id, id) || other.id == id)&&(identical(other.task, task) || other.task == task));
 }
 
-abstract class _Todo implements Todo {
-  const factory _Todo({required final int id, required final String task}) =
-      _$TodoImpl;
 
-  /// The unique identifier of the Todo item.
-  @override
-  int get id;
+@override
+int get hashCode => Object.hash(runtimeType,id,task);
 
-  /// The task description of the Todo item.
-  @override
-  String get task;
-
-  /// Create a copy of Todo
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'Todo(id: $id, task: $task)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$TodoCopyWith(_Todo value, $Res Function(_Todo) _then) = __$TodoCopyWithImpl;
+@override @useResult
+$Res call({
+ int id, String task
+});
+
+
+
+
+}
+/// @nodoc
+class __$TodoCopyWithImpl<$Res>
+    implements _$TodoCopyWith<$Res> {
+  __$TodoCopyWithImpl(this._self, this._then);
+
+  final _Todo _self;
+  final $Res Function(_Todo) _then;
+
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? task = null,}) {
+  return _then(_Todo(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int,task: null == task ? _self.task : task // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

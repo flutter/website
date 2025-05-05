@@ -73,7 +73,7 @@ Material Components by following the steps described in the
 
 For example:
 
-1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle`:
+1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle.kts`:
 
    ```groovy
    dependencies {
@@ -196,18 +196,25 @@ don't check it into public source control.
 ### Configure signing in Gradle
 
 When building your app in release mode, configure Gradle to use your upload key.
-To configure Gradle, edit the `<project>/android/app/build.gradle` file.
+To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 
 1. Define and load the keystore properties file before the `android`
    property block.
 
 1. Set the `keystoreProperties` object to load the `key.properties` file.
 
-   ```groovy diff title="[project]/android/app/build.gradle"
-   + def keystoreProperties = new Properties()
-   + def keystorePropertiesFile = rootProject.file('key.properties')
+   ```kotlin diff title="[project]/android/app/build.gradle.kts"
+   + import java.util.Properties
+   + import java.io.FileInputStream
+   +
+     plugins {
+        ...
+     }
+   +
+   + val keystoreProperties = Properties()
+   + val keystorePropertiesFile = rootProject.file("key.properties")
    + if (keystorePropertiesFile.exists()) {
-   +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+   +     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
    + }
    +
      android {
@@ -218,16 +225,16 @@ To configure Gradle, edit the `<project>/android/app/build.gradle` file.
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
-   ```groovy diff title="[project]/android/app/build.gradle"
+   ```kotlin diff title="[project]/android/app/build.gradle.kts"
      android {
          // ...
 
    +     signingConfigs {
-   +         release {
-   +             keyAlias = keystoreProperties['keyAlias']
-   +             keyPassword = keystoreProperties['keyPassword']
-   +             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-   +             storePassword = keystoreProperties['storePassword']
+   +         create("release") {
+   +             keyAlias = keystoreProperties["keyAlias"] as String
+   +             keyPassword = keystoreProperties["keyPassword"] as String
+   +             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
+   +             storePassword = keystoreProperties["storePassword"] as String
    +         }
    +     }
          buildTypes {
@@ -235,8 +242,8 @@ To configure Gradle, edit the `<project>/android/app/build.gradle` file.
                  // TODO: Add your own signing config for the release build.
                  // Signing with the debug keys for now,
                  // so `flutter run --release` works.
-   -             signingConfig = signingConfigs.debug
-   +             signingConfig = signingConfigs.release
+   -             signingConfig = signingConfigs.getByName("debug")
+   +             signingConfig = signingConfigs.getByName("release")
              }
          }
      ...
@@ -359,10 +366,10 @@ Verify the following values:
 To verify the Android build configuration,
 review the `android` block in the default
 [Gradle build script][gradlebuild].
-The default Gradle build script is found at `[project]/android/app/build.gradle`.
+The default Gradle build script is found at `[project]/android/app/build.gradle.kts`.
 You can change the values of any of these properties.
 
-```groovy title="[project]/android/app/build.gradle"
+```kotlin title="[project]/android/app/build.gradle.kts"
 android {
     namespace = "com.example.[project]"
     // Any value starting with "flutter." gets its value from
@@ -394,7 +401,7 @@ android {
 
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 
-### Properties to adjust in build.gradle
+### Properties to adjust in build.gradle.kts
 
 | Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
 |----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|

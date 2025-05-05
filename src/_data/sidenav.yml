@@ -2,6 +2,54 @@
 
 - title: Set up Flutter
   permalink: /get-started/install
+  hiddenChildren: true
+  children:
+    - title: Choose a platform
+      permalink: /get-started/install
+    - title: On Windows
+      permalink: /get-started/install/windows
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/windows
+        - title: Target Android
+          permalink: /get-started/install/windows/mobile
+        - title: Target web
+          permalink: /get-started/install/windows/web
+        - title: Target desktop
+          permalink: /get-started/install/windows/desktop
+    - title: On macOS
+      permalink: /get-started/install/macos
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/macos
+        - title: Target iOS
+          permalink: /get-started/install/macos/mobile-ios
+        - title: Target Android
+          permalink: /get-started/install/macos/mobile-android
+        - title: Target web
+          permalink: /get-started/install/macos/web
+        - title: Target desktop
+          permalink: /get-started/install/macos/desktop
+    - title: On Linux
+      permalink: /get-started/install/linux
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/linux
+        - title: Target Android
+          permalink: /get-started/install/linux/android
+        - title: Target web
+          permalink: /get-started/install/linux/web
+        - title: Target desktop
+          permalink: /get-started/install/linux/desktop
+    - title: On ChromeOS
+      permalink: /get-started/install/chromeos
+      children:
+        - title: Choose a target
+          permalink: /get-started/install/chromeos
+        - title: Target Android
+          permalink: /get-started/install/chromeos/android
+        - title: Target web
+          permalink: /get-started/install/chromeos/web
 
 - title: Learn Flutter
   children:
@@ -34,6 +82,8 @@
       children:
         - title: Flutter for Android devs
           permalink: /get-started/flutter-for/android-devs
+        - title: Flutter for Jetpack Compose devs
+          permalink: /get-started/flutter-for/compose-devs
         - title: Flutter for SwiftUI devs
           permalink: /get-started/flutter-for/swiftui-devs
         - title: Flutter for UIKit devs
@@ -49,19 +99,14 @@
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
-    - divider
-    - title: Codelabs
-      permalink: /codelabs
-    - title: Cookbook
-      permalink: /cookbook
-    - title: Demos and samples
-      permalink: https://flutter.github.io/samples/
+- title: Tutorials and samples
+  permalink: /reference/learning-resources
 
 - title: Stay up to date
   permalink: /release
   children:
     - title: Upgrade
-      permalink: /release/upgrade
+      permalink: /install/upgrade
     - title: SDK archive
       permalink: /release/archive
     - divider
@@ -137,6 +182,8 @@
             permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
           - title: Add an AdMob banner and native inline ads
             permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+          - title: Integrate multimedia ads (video)
+            permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
           - title: Google AdMob mediation
             permalink: https://developers.google.com/admob/flutter/mediation
           - title: Interactive Media Ads SDK
@@ -661,8 +708,10 @@
   children:
     - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
-    - title: Create flavors of an app
+    - title: Create app flavors for Android
       permalink: /deployment/flavors
+    - title: Create app flavors for iOS and macOS
+      permalink: /deployment/flavors-ios
     - title: Build and release an Android app
       permalink: /deployment/android
     - title: Build and release an iOS app
@@ -799,12 +848,12 @@
     - divider
     - title: Contribute
       children:
-      - title: Create useful bug reports
-        permalink: /resources/bug-reports
-      - title: Contribute to Flutter
-        permalink: https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md
-      - title: Discover proposed features
-        permalink: /resources/design-docs
+        - title: Contribute to Flutter
+          permalink: /contribute
+        - title: Create useful bug reports
+          permalink: /resources/bug-reports
+        - title: Discover proposed features
+          permalink: /resources/design-docs
     - title: Reference
       permalink: /reference
       children:
@@ -812,6 +861,8 @@
           permalink: /dash
         - title: Widget index
           permalink: /reference/widgets
+        - title: Create a new app
+          permalink: /reference/create-new-app
         - title: flutter CLI
           permalink: /reference/flutter-cli
         - title: API docs

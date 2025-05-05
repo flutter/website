@@ -8,11 +8,11 @@ js:
 
 <?code-excerpt path-base="cookbook/navigation/navigation_basics"?>
 
-Most apps contain several screens for displaying different types of
-information.
-For example, an app might have a screen that displays products.
-When the user taps the image of a product, a new screen displays
-details about the product.
+Most apps contain several screens for displaying different
+types of information. For example, an app might have a
+screen that displays products. When the user taps the image
+of a product, a new screen displays details about the
+product.
 
 :::note Terminology
 In Flutter, _screens_ and _pages_ are called _routes_.
@@ -29,8 +29,8 @@ The next few sections show how to navigate between two routes,
 using these steps:
 
   1. Create two routes.
-  2. Navigate to the second route using Navigator.push().
-  3. Return to the first route using Navigator.pop().
+  2. Navigate to the second route using `Navigator.push()`.
+  3. Return to the first route using `Navigator.pop()`.
 
 ## 1. Create two routes
 
@@ -41,6 +41,10 @@ second route returns to the first route.
 
 First, set up the visual structure:
 
+{% tabs "os-android" %}
+
+{% tab "Android" %}
+
 <?code-excerpt "lib/main_step1.dart (first-second-routes)"?>
 ```dart
 class FirstRoute extends StatelessWidget {
@@ -49,9 +53,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -70,9 +72,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -86,17 +86,71 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
+{% endtab %}
+
+{% tab "iOS" %}
+
+<?code-excerpt "lib/main_step1_cupertino.dart (first-second-routes)"?>
+```dart
+class FirstRoute extends StatelessWidget {
+  const FirstRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(middle: Text('First Route')),
+      child: Center(
+        child: CupertinoButton(
+          child: const Text('Open route'),
+          onPressed: () {
+            // Navigate to second route when tapped.
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  const SecondRoute({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(middle: Text('Second Route')),
+      child: Center(
+        child: CupertinoButton(
+          onPressed: () {
+            // Navigate back to first route when tapped.
+          },
+          child: const Text('Go back!'),
+        ),
+      ),
+    );
+  }
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
+
 ## 2. Navigate to the second route using Navigator.push()
 
 To switch to a new route, use the [`Navigator.push()`][]
 method. The `push()` method adds a `Route` to the stack of routes managed by
 the `Navigator`. Where does the `Route` come from?
-You can create your own, or use a [`MaterialPageRoute`][],
-which is useful because it transitions to the
-new route using a platform-specific animation.
+You can create your own, or use  a platform-specific route
+such as [`MaterialPageRoute`][] or [`CupertinoPageRoute`][].
+A platform-specific route is useful because it transitions
+to the new route using a platform-specific animation.
 
 In the `build()` method of the `FirstRoute` widget,
 update the `onPressed()` callback:
+
+{% tabs "os-android" %}
+
+{% tab "Android" %}
 
 <?code-excerpt "lib/main_step2.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
 ```dart
@@ -108,6 +162,25 @@ onPressed: () {
   );
 }
 ```
+
+{% endtab %}
+
+{% tab "iOS" %}
+
+<?code-excerpt "lib/main_step2_cupertino.dart (first-route-on-pressed)" replace="/^\},$/}/g"?>
+```dart
+// Within the `FirstRoute` widget:
+onPressed: () {
+  Navigator.push(
+    context,
+    CupertinoPageRoute(builder: (context) => const SecondRoute()),
+  );
+}
+```
+
+{% endtab %}
+
+{% endtabs %}
 
 ## 3. Return to the first route using Navigator.pop()
 
@@ -129,15 +202,16 @@ onPressed: () {
 
 ## Interactive example
 
+{% tabs "os-android" %}
+
+{% tab "Android" %}
+
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter navigation hands-on example in DartPad" run="true"
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
+  runApp(const MaterialApp(title: 'Navigation Basics', home: FirstRoute()));
 }
 
 class FirstRoute extends StatelessWidget {
@@ -146,9 +220,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -170,9 +242,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -187,45 +257,19 @@ class SecondRoute extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/navigation-basics.webp" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
 </noscript>
 
-## Navigation with CupertinoPageRoute
+{% endtab %}
 
-In the previous example you learned how to navigate between screens
-using the [`MaterialPageRoute`][] from [Material Components][].
-However, in Flutter you are not limited to Material design language,
-instead, you also have access to [Cupertino][] (iOS-style) widgets.
-
-Implementing navigation with Cupertino widgets follows the same steps
-as when using [`MaterialPageRoute`][], 
-but instead you use [`CupertinoPageRoute`][]
-which provides an iOS-style transition animation.
-
-In the following example, these widgets have been replaced:
-
-- [`MaterialApp`][] replaced by [`CupertinoApp`].
-- [`Scaffold`][] replaced by [`CupertinoPageScaffold`][].
-- [`ElevatedButton`][] replaced by [`CupertinoButton`][].
-
-This way, the example follows the current iOS design language.
-
-:::secondary
-You don't need to replace all Material widgets with Cupertino versions
-to use [`CupertinoPageRoute`][]
-since Flutter allows you to mix and match Material and Cupertino widgets
-depending on your needs.
-:::
+{% tab "iOS" %}
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```dartpad title="Flutter Cupertino theme hands-on example in DartPad" run="true"
 import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const CupertinoApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
+  runApp(const CupertinoApp(title: 'Navigation Basics', home: FirstRoute()));
 }
 
 class FirstRoute extends StatelessWidget {
@@ -234,9 +278,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('First Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('First Route')),
       child: Center(
         child: CupertinoButton(
           child: const Text('Open route'),
@@ -258,9 +300,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Second Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('Second Route')),
       child: Center(
         child: CupertinoButton(
           onPressed: () {
@@ -275,8 +315,12 @@ class SecondRoute extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.gif" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/navigation-basics-cupertino.webp" alt="Navigation Basics Cupertino Demo" class="site-mobile-screenshot" />
 </noscript>
+
+{% endtab %}
+
+{% endtabs %}
 
 ## Additional navigation methods
 

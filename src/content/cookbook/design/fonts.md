@@ -49,7 +49,7 @@ This guide makes the following presumptions:
 :::
 
 [set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 
 ## Choose a font
 

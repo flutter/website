@@ -111,7 +111,7 @@ You can style a button based on its state using `WidgetStateProperty`.
 
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/ElevatedButton.gif",
+image:"fwe/user-input/ElevatedButton.webp",
 caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
 alt: "A GIF of an elevated button with the text \"Enabled\""
 code:"
@@ -166,7 +166,7 @@ but doesn't allow users to highlight or copy the text.
 `SelectableText` displays a string of _user-selectable_ text.
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/SelectableText.gif",
+image:"fwe/user-input/SelectableText.webp",
 caption: "This figure shows a cursor highlighting a portion of a string of text."
 alt: 'A GIF of a cursor highlighting two lines of text from a paragraph.'
 code:"
@@ -227,7 +227,7 @@ Widget build(BuildContext context) {
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
-[Rich Text Editor]: https://flutter.github.io/samples/rich_text_editor.html
+[Rich Text Editor]: https://github.com/flutter/samples/tree/main/rich_text_editor
 [Rich Text Editor code]: {{site.github}}/flutter/samples/tree/main/simplistic_editor
 
 ### `TextField`
@@ -256,7 +256,7 @@ The class supports other configurable properties, such as
 `readOnly` which prevents the user from changing the text.
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/TextField.gif",
+image:"fwe/user-input/TextField.webp",
 caption: "This figure shows text being typed into a TextField with a selected border and label."
 alt: "A GIF of a text field with the label \"Mascot Name\", purple focus border and the phrase \"Dash the hummingbird\" being typed in."
 code:"
@@ -360,7 +360,7 @@ Widget build(BuildContext context) {
 <span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
-[Form app]: https://flutter.github.io/samples/web/form_app/
+[Form app]: https://github.com/flutter/samples/tree/main/form_app/
 [Form app code]: {{site.github}}/flutter/samples/tree/main/form_app
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
@@ -400,7 +400,7 @@ A `SegmentedButton` has a few relevant properties:
   providing a way to configure a `selectedIcon`.
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/segmented-button.gif",
+image:"fwe/user-input/segmented-button.webp",
 caption: "This figure shows a SegmentedButton, each segment with an icon and
 text representing its value."
 alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year.
@@ -548,7 +548,7 @@ Configuration parameters include the following:
   customizing the widget's look and behavior.
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/dropdownmenu.gif",
+image:"fwe/user-input/dropdownmenu.webp",
 caption: "This figure shows a DropdownMenu widget with 5 value options. Each
 option's text color is styled to represent the color value."
 alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options:
@@ -622,7 +622,7 @@ Configuration parameters for the `Slider` widget:
 
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/slider.gif",
+image:"fwe/user-input/slider.webp",
 caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0
 broken up into 5 divisions. It shows the current value as a label as the dial 
 is dragged."
@@ -689,7 +689,7 @@ The configuration for `Checkbox` and `Switch` contain:
 ### Checkbox
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/checkbox.gif",
+image:"fwe/user-input/checkbox.webp",
 caption: "This figure shows a checkbox being checked and unchecked."
 alt: "A GIF that shows a pointer clicking a checkbox 
 and then clicking again to uncheck it."
@@ -715,7 +715,7 @@ Widget build(BuildContext context) {
 ### Switch
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/Switch.gif",
+image:"fwe/user-input/Switch.webp",
 caption: "This figure shows a Switch widget that is toggled on and off."
 alt: "A GIF of a Switch widget that is toggled on and off. In its off state,
 it is gray with dark gray borders. In its on state, 
@@ -755,7 +755,7 @@ the other radio buttons are unselected.
   gets triggered when users click it, like `Switch` and `Checkbox`
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/Radio.gif",
+image:"fwe/user-input/Radio.webp",
 caption: "This figure shows a column of ListTiles containing a radio button and
 label, where only one radio button can be selected at a time."
 alt: "A GIF of 4 ListTiles in a column, each containing a leading Radio button
@@ -829,7 +829,7 @@ These convenience widgets are the same checkbox and switch widgets,
 but support a label (as a `ListTile`).
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/SpecialListTiles.gif",
+image:"fwe/user-input/SpecialListTiles.webp",
 caption: "This figure shows a column containing a CheckboxListTile and
 a SwitchListTile being toggled."
 alt: "A ListTile with a leading icon, title text, and a trailing checkbox being
@@ -912,7 +912,7 @@ which returns a `Future<DateTime>`,
 so don't forget to await the asynchronous function call!
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/DatePicker.gif",
+image:"fwe/user-input/DatePicker.webp",
 caption: "This figure shows a DatePicker that is displayed when the
 \"Pick a date\" button is clicked."
 alt: "A GIF of a pointer clicking a button that says \"Pick a date\",
@@ -963,7 +963,7 @@ Instead of returning a `Future<DateTime>`,
 Once again, don't forget to await the function call!
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/TimePicker.gif",
+image:"fwe/user-input/TimePicker.webp",
 caption: "This figure shows a TimePicker that is displayed when the 
 \"Pick a time\" button is clicked."
 alt: "A GIF of a pointer clicking a button that says \"Pick a time\", then shows
@@ -1034,7 +1034,7 @@ It has a number of configuration parameters, including:
   identified from sibling `Dismissible` widgets in the widget tree.
 
 {% render docs/code-and-image.md,
-image:"fwe/user-input/Dismissible.gif",
+image:"fwe/user-input/Dismissible.webp",
 caption: "This figure shows a list of Dismissible widgets that each contain a
 ListTile. Swiping across the ListTile reveals a green background makes the tile
 disappear."
@@ -1110,7 +1110,7 @@ the `Dismissible` widget described in the previous section.
 
 [Material Widget Library]: /ui/widgets/material
 [Material Library API docs]: {{site.api}}/flutter/material/material-library.html
-[Material 3 Demo]: https://flutter.github.io/samples/web/material_3_demo/
+[Material 3 Demo]: https://github.com/flutter/samples/tree/main/material_3_demo
 
 [`flutter_slidable`]: {{site.pub}}/packages/flutter_slidable
 [flutter_slidable (Package of the Week)]: {{site.youtube-site}}/watch?v=QFcFEpFmNJ8

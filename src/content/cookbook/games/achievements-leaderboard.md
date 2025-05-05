@@ -279,8 +279,10 @@ class GamesServicesController {
   ///
   /// Does nothing when the game isn't signed into the underlying
   /// games service.
-  Future<void> awardAchievement(
-      {required String iOS, required String android}) async {
+  Future<void> awardAchievement({
+    required String iOS,
+    required String android,
+  }) async {
     if (!await signedIn) {
       _log.warning('Trying to award achievement when not logged in.');
       return;
@@ -288,10 +290,7 @@ class GamesServicesController {
 
     try {
       await GamesServices.unlock(
-        achievement: Achievement(
-          androidID: android,
-          iOSID: iOS,
-        ),
+        achievement: Achievement(androidID: android, iOSID: iOS),
       );
     } catch (e) {
       _log.severe('Cannot award achievement: $e');

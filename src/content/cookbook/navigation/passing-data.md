@@ -66,9 +66,7 @@ final todos = List.generate(
 ListView.builder(
   itemCount: todos.length,
   itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(todos[index].title),
-    );
+    return ListTile(title: Text(todos[index].title));
   },
 )
 ```
@@ -97,16 +95,12 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       //passing in the ListView.builder
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(todos[index].title),
-          );
+          return ListTile(title: Text(todos[index].title));
         },
       ),
     );
@@ -139,9 +133,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -223,9 +215,7 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -260,9 +250,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -291,9 +279,7 @@ class DetailScreen extends StatelessWidget {
 
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -327,9 +313,7 @@ ListView.builder(
             builder: (context) => const DetailScreen(),
             // Pass the arguments as part of the RouteSettings. The
             // DetailScreen reads the arguments from these settings.
-            settings: RouteSettings(
-              arguments: todos[index],
-            ),
+            settings: RouteSettings(arguments: todos[index]),
           ),
         );
       },
@@ -376,9 +360,7 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -394,9 +376,7 @@ class TodosScreen extends StatelessWidget {
                   builder: (context) => const DetailScreen(),
                   // Pass the arguments as part of the RouteSettings. The
                   // DetailScreen reads the arguments from these settings.
-                  settings: RouteSettings(
-                    arguments: todos[index],
-                  ),
+                  settings: RouteSettings(arguments: todos[index]),
                 ),
               );
             },
@@ -416,9 +396,7 @@ class DetailScreen extends StatelessWidget {
 
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -429,7 +407,7 @@ class DetailScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/passing-data.webp" alt="Passing Data Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

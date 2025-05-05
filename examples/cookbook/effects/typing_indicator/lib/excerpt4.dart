@@ -67,10 +67,7 @@ class _TypingIndicatorState extends State<TypingIndicator>
     return AnimatedBuilder(
       animation: _indicatorSpaceAnimation,
       builder: (context, child) {
-        return SizedBox(
-          height: _indicatorSpaceAnimation.value,
-          child: child,
-        );
+        return SizedBox(height: _indicatorSpaceAnimation.value, child: child);
       },
       child: Stack(
         children: [
@@ -78,19 +75,13 @@ class _TypingIndicatorState extends State<TypingIndicator>
             animation: _smallBubbleAnimation,
             left: 8,
             bottom: 8,
-            bubble: CircleBubble(
-              size: 8,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 8, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _mediumBubbleAnimation,
             left: 10,
             bottom: 10,
-            bubble: CircleBubble(
-              size: 16,
-              bubbleColor: widget.bubbleColor,
-            ),
+            bubble: CircleBubble(size: 16, bubbleColor: widget.bubbleColor),
           ),
           AnimatedBubble(
             animation: _largeBubbleAnimation,
@@ -208,4 +199,5 @@ class FlashingCircle extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion animation-controller
