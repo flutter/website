@@ -224,9 +224,14 @@ widgets to offer a dramatically more accessible experience.
 
 ### What are Semantic Roles?
 
-Semantic roles define the purpose of a UI element, helping screen readers and other assistive tools interpret and present your application effectively to users. For example, a role can indicate if a widget is a button, a link, a heading, a slider, or part of a table. 
+Semantic roles define the purpose of a UI element, helping screen readers
+and other assistive tools interpret and present your application effectively
+to users. For example, a role can indicate if a widget is a button, a link,
+a heading, a slider, or part of a table. 
 
-While Flutter's standard widgets often provide these semantics automatically, a custom component without a clearly defined role can be incomprehensible to a screen reader user.
+While Flutter's standard widgets often provide these semantics automatically,
+a custom component without a clearly defined role can be incomprehensible
+to a screen reader user.
 
 
 By assigning appropriate roles, you ensure that:
@@ -237,7 +242,10 @@ By assigning appropriate roles, you ensure that:
 
 ### Using `SemanticsRole` in Flutter for web
 
-Flutter provides the [`Semantics` widget][] with the [`SemanticsRole` enum][] to allow developers to assign specific roles to their widgets. When your Flutter web app is rendered, these Flutter-specific roles are translated into corresponding ARIA roles in the web page's HTML structure.
+Flutter provides the [`Semantics` widget][] with the [`SemanticsRole` enum][]
+to allow developers to assign specific roles to their widgets. When your
+Flutter web app is rendered, these Flutter-specific roles are translated into
+corresponding ARIA roles in the web page's HTML structure.
 
 [`SemanticsRole` enum]: {{site.api}}/flutter/dart-ui/SemanticsRole.html
 
@@ -250,7 +258,8 @@ as they handle many accessibility aspects out-of-the-box.
 
 **2. Explicitly adding or overriding roles:**
 
-For custom components or when the default semantics aren't sufficient, use the `Semantics` widget to define the role:
+For custom components or when the default semantics aren't sufficient,
+use the `Semantics` widget to define the role:
 
 Here's an example of how you might explicitly define a list and its items:
 
