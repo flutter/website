@@ -235,7 +235,7 @@ By assigning appropriate roles, you ensure that:
 * Users can navigate your application more effectively using assistive technologies.
 * Your application adheres to web accessibility standards, improving usability.
 
-### Using `SemanticsRole` in Flutter for Web
+### Using `SemanticsRole` in Flutter for web
 
 Flutter provides the [`Semantics` widget][] with the [`SemanticsRole` enum][] to allow developers to assign specific roles to their widgets. When your Flutter web app is rendered, these Flutter-specific roles are translated into corresponding ARIA roles in the web page's HTML structure.
 
