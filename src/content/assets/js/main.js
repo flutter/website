@@ -534,11 +534,64 @@ function setupPlatformKeys() {
       });
 }
 
+function _osNameFromId(osId) {
+  switch (osId) {
+    case 'macos':
+      return 'macOS';
+    case 'linux':
+      return 'Linux';
+    case 'chromeos':
+      return 'ChromeOS';
+    default:
+      return 'Windows';
+  }
+}
+
+function _adjustSelectedOs(osId) {
+  if (!osId) return;
+
+  const osName = _osNameFromId(osId);
+  const selectedOsTextSpans = document.querySelectorAll('.selected-os-text');
+  selectedOsTextSpans.forEach(function (span) {
+    span.textContent = osName;
+  });
+
+  const osSelectors = document.querySelectorAll('.os-selector button');
+  osSelectors.forEach(function (osSelector) {
+    if (osSelector.getAttribute('data-os') === osId) {
+      osSelector.classList.add('selected-card');
+    } else {
+      osSelector.classList.remove('selected-card');
+    }
+  });
+
+  document.body.classList.remove('show-macos', 'show-linux', 'show-windows', 'show-chromeos');
+  document.body.classList.add(`show-${osId}`);
+}
+
+function setupOsSelectors() {
+  const currentOsId = getOS() ?? 'windows';
+  _adjustSelectedOs(currentOsId);
+
+  const osSelectors = document.querySelectorAll('.os-selector');
+
+  for (const osSelector of osSelectors) {
+    const osButtons = osSelector.querySelectorAll('button');
+    for (const osButton of osButtons) {
+      const osId = osButton.getAttribute('data-os');
+      osButton.addEventListener('click', (e) => {
+        _adjustSelectedOs(osId);
+      });
+    }
+  }
+}
+
 function setupSite() {
   setupTheme();
   scrollSidenavIntoView();
   initCookieNotice();
 
+  setupOsSelectors();
   setupSidenavInteractivity();
   setUpCodeBlockButtons();
 

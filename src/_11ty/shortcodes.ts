@@ -7,6 +7,33 @@ import {toHtml} from 'hast-util-to-html';
 export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);
   _setupMedia(eleventyConfig);
+  _setupOsSelector(eleventyConfig);
+}
+
+function _setupOsSelector(eleventyConfig: UserConfig): void {
+  eleventyConfig.addShortcode('osSelector', function () {
+    const osNames = ['Windows', 'macOS', 'Linux', 'ChromeOS'];
+
+    function createOsButton(osName: string, selected: boolean = false) {
+      const osId = osName.toLowerCase();
+      return `
+<button class="card outlined-card install-card${selected ? ' selected-card' : ''}" id="install-${osId}" data-os="${osId}" aria-label="Update docs to cover ${osName}">
+  <div class="card-leading">
+    <img src="/assets/images/docs/brand-svg/${osId}.svg" width="72" height="72" aria-hidden="true" alt="${osName} logo">
+  </div>
+  <div class="card-header text-center">
+    <span class="card-title">${osName}</span>
+  </div>
+</button>`;
+    }
+
+    return `
+<div class="card-grid narrow os-selector">
+  ${osNames.map((osName) => {
+      return createOsButton(osName, osName === 'Windows');
+    }).join('\n')}
+</div>`;
+  });
 }
 
 function _setupMedia(eleventyConfig: UserConfig): void {

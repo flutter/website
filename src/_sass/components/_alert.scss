@@ -27,8 +27,16 @@ aside.alert {
   .alert-content {
     color: var(--site-base-fgColor);
 
+    > :first-child {
+      margin-block-start: 0;
+    }
+
     > :last-child {
-      margin-bottom: 0;
+      margin-block-end: 0;
+    }
+
+    > ul {
+      padding-inline-start: 1.5rem;
     }
   }
 
