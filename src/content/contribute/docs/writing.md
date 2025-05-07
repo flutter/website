@@ -66,7 +66,7 @@ Google guidelines on [Cross-references and linking][].
 ### Configure link destinations
 
 For easier editing, shorter lines, and reduced duplication,
-prefer using Markdown [link references][] instead of inline links.
+prefer using Markdown link references instead of inline links.
 
 Place the link definitions at the end of the
 current section where they're used, before the next header.
