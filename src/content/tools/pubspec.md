@@ -4,7 +4,7 @@ description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
 This page is primarily aimed at folks who write
-Flutter apps. If you write packages or plugins,
+Flutter apps. If you write packages or plugins, 
 (perhaps you want to create a federated plugin),
 you should check out the
 [Developing packages and plugins][] page.
@@ -24,11 +24,11 @@ that _white space (tabs v spaces) matters_.
 The pubspec specifies dependencies
 that the project requires, such as:
 
-- Particular packages and their versions
-- Fonts
-- Images
-- Developer packages (like testing or mocking packages)
-- Particular constraints on the version of the Flutter SDK
++ Particular packages and their versions
++ Fonts
++ Images
++ Developer packages (like testing or mocking packages)
++ Particular constraints on the version of the Flutter SDK
 
 Fields common to both Dart and Flutter projects
 are described in [the pubspec file][] on [dart.dev][].
@@ -110,7 +110,7 @@ dev_dependencies:
 Flutter-specific and Dart-specific fields can be added to
 the Flutter pubspec. To learn more about Flutter-specific
 fields, see the following sections. To learn more about
-Dart-specific fields, see [Dart's pubspec supported fields][].
+Dart-specific fields, see [Dart's pubspec supported fields][]. 
 
 :::note
 The pubspec can have additional auto-generated Flutter
@@ -156,24 +156,23 @@ flutter:
 # path_to_directory structure
 - path/to/directory/
 ```
-
 ```yaml
 # flavor_path_field strucure
 - path: path/to/directory
   flavors:
-    - flavor_name
+  - flavor_name
 ```
 
 Subfields of `assets`:
 
-- `path_to_file`: A string that represents the path to
+* `path_to_file`: A string that represents the path to
   a file.
-- `path_to_directory`: A string that represents the path to
+* `path_to_directory`: A string that represents the path to
   a directory.
-- `flavor_path_field`: A path field and its flavor
+* `flavor_path_field`: A path field and its flavor
   subfields.
-- `path`: The path to a directory.
-- `flavors`: A list of flutter flavors to use with assets
+* `path`: The path to a directory.
+* `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
   flavors, see [Set up flavors for iOS and macOS] and
   [Set up flavors for Android].
@@ -204,11 +203,11 @@ flutter:
   assets:
     - path: assets/flavor_a_and_b/images
       flavors:
-        - flavor_a
-        - flavor_b
+      - flavor_a
+      - flavor_b
     - path: assets/flavor_c/images
       flavors:
-        - flavor_c
+      - flavor_c
 ```
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios
@@ -296,11 +295,11 @@ flutter:
 
 Deferred component subfields:
 
-- `name`: The unique identifier for a specific deferred
+* `name`: The unique identifier for a specific deferred
   component.
-- `libraries`: A list of Dart libraries that are part of
+* `libraries`: A list of Dart libraries that are part of
   the deferred component.
-- `assets`: A list of asset paths that are associated with
+* `assets`: A list of asset paths that are associated with
   the deferred component.
 
 Example:
@@ -320,7 +319,7 @@ flutter:
 
 To learn more about how you can use deferred components with
 a Flutter Android app, see
-[Deferred components for Android].
+[Deferred components for Android]. 
 
 [Deferred components for Android]: /perf/deferred-components
 
@@ -391,13 +390,13 @@ flutter:
 
 Subfields of `fonts`:
 
-- `family`: Optional. The font family name. Can have
++ `family`: Optional. The font family name. Can have
   multiple font assets.
-- `asset`: The font to use.
-- `weight`: Optional. The weight of the font. This can be
++ `asset`: The font to use.
++ `weight`: Optional. The weight of the font. This can be
   `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800` or
   `900`.
-- `style`: Optional. The style of the font. This can be
++ `style`: Optional. The style of the font. This can be
   `italic`.
 
 Use a font that is not part of a font family:
@@ -407,7 +406,7 @@ flutter:
   fonts:
     - asset: fonts/Roboto-Regular.ttf
       weight: 900 # Optional
-      style: italic # Optional
+      style: italic # Optional  
 ```
 
 Use a font family:
@@ -502,31 +501,31 @@ flutter:
 
 Subfields of `plugin`:
 
-- `platforms`: A list of platforms that will have
+* `platforms`: A list of platforms that will have
   configuration settings.
-- `package`: The Android package name of the plugin. This
+* `package`: The Android package name of the plugin. This
   can be used with the Android platform and is required.
-- `pluginClass`: The name of the plugin class. Optional if
+* `pluginClass`: The name of the plugin class. Optional if
   `dartPluginClass` is used for the same platform. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
-- `default_package`: Optional. The package that should be
+* `default_package`: Optional. The package that should be
   used as the default implementation of a platform
   interface. Only applicable to federated plugins, where the
   plugin's implementation is split into multiple
   platform-specific packages.
-- `dartPluginClass`: Optional. The Dart class that serves
+* `dartPluginClass`: Optional. The Dart class that serves
   as the entry point for a Flutter plugin. This
   can be used with the Android, iOS, Linux macOS, and
   Windows platforms.
-- `sharedDarwinSource`: Optional. Indicates that the plugin
+* `sharedDarwinSource`: Optional. Indicates that the plugin
   shares native code between iOS and macOS. This
   can be used with the iOS and macOS platforms.
-- `fileName`: Optional. The file that contains the plugin
+* `fileName`: Optional. The file that contains the plugin
   class.
-- `ffiPlugin`: Optional. True if the plugin uses a
+* `ffiPlugin`: Optional. True if the plugin uses a
   Foreign Function Interface (FFI).
-- `implements`: Optional. The platform interfaces that a
+* `implements`: Optional. The platform interfaces that a
   Flutter plugin implements.
 
 To learn more about plugins, see
@@ -670,11 +669,11 @@ dependencies:
 For more information on packages, plugins,
 and pubspec files, see the following:
 
-- [Creating packages][] on dart.dev
-- [Glossary of package terms][] on dart.dev
-- [Package dependencies][] on dart.dev
-- [Using packages][]
-- [What not to commit][] on dart.dev
+* [Creating packages][] on dart.dev
+* [Glossary of package terms][] on dart.dev
+* [Package dependencies][] on dart.dev
+* [Using packages][]
+* [What not to commit][] on dart.dev
 
 [Creating packages]: {{site.dart-site}}/guides/libraries/create-library-packages
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
