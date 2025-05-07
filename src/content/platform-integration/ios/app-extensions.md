@@ -3,60 +3,97 @@ title: Adding iOS app extensions
 description: Learn how to add app extensions to your Flutter apps
 ---
 
-iOS app extensions allow you to expand functionality
-outside your app. Your app could appear as a home screen widget,
+This guide shows you how to use iOS app extensions with a
+Flutter app.
+
+## Overview {: #overview }
+
+[Apple's app extensions][] allow you to expand functionality
+outside of your iOS app. Your app could appear as a home screen widget,
 or you can make portions of your app available within other apps.
+For example, when a user selects a photo to
+share in the iOS Photo app, a Flutter app called
+`Example App With Extension` is displayed in the
+Photo apps share sheet.
 
-To learn more about app extensions, check out
-[Apple's documentation][].
+<figure>
+  <div class="site-figure-container">
+    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-2.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
+  </div>
+</figure>
 
-:::note
-If you experience a build error when building an
-iOS app that includes an app extension, be
-aware that there is an open bug. The workaround
-involves changing the order of the build process.
-For more information, check out
-[Issue #9690][] and [Issue #135056][].
-:::
+[Apple's app extensions]: {{site.apple-dev}}/app-extensions/
 
-[Issue #9690]:   {{site.github}}/flutter/website/issues/9690
-[Issue #135056]: {{site.github}}/flutter/flutter/issues/135056
+## Add an app extension to your Flutter app {: #add-extension }
 
-iOS 18 added support for customizing a device's
-Control Center, including creating multiple pages.
-You can also create new toggles for the Control Center
-using the [`ControlCenter`][] API, to feature your app.
+If you want to integrate your Flutter app with
+the iOS operating system, you can add Apple app extensions
+to your Flutter project. For a seamless workflow, the
+following steps show how to add a `Share Extension`
+app extension to a new Flutter app called
+`example_app_with_extension`, but you can always start with
+an existing project.
 
-[`ControlCenter`]: {{site.apple-dev}}/documentation/widgetkit/controlcenter
+1.  In the console, create a new Flutter project called
+    `example_app_with_extension`.
 
-## How do you add an app extension to your Flutter app?
+    ```console
+    $ flutter create example_app_with_extension
+    ```
 
-To add an app extension to your Flutter app,
-add the extension point *target* to your Xcode project.
+1.  In the console, open the Xcode workspace for the
+    `example_app_with_extension` project.
 
-1. Open the default Xcode workspace in your project by running
-   `open ios/Runner.xcworkspace` in a terminal window from your
-   Flutter project directory.
-1. In Xcode, select **File -> New -> Target** from the menu bar. 
+    ```console
+    $ cd example_app_with_extension && open ios/Runner.xcworkspace
+    ```
 
-    <figure>
-      <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-new-target.png' alt='Opening the File -> New menu, then selecting Target in Xcode.' height='300'>
-      </div>
-    </figure>
-1. Select the app extension you intend to add.
-   This selection generates extension-specific code 
-   within a new folder in your project.
-   To learn more about the generated code and the SDKs for each
-   extension point, check out the resources in
-   [Apple's documentation][].
+1.  In Xcode, add an app extension called `Share Extension`
+    and call it `ShareExtension`.
 
-To learn how to add a home screen widget to your iOS device,
-check out the 
-[Adding a Home Screen Widget to your Flutter app][lab]
-codelab.
+    *   In the Xcode menu bar, select
+        **File** > **New** > **Target**.
+    
+    *   Add **Share Extension**.
 
-## How do Flutter apps interact with App Extensions? 
+    *   In the **Name field**, enter **ShareExtension**.
+
+    *   Click **Finish**.
+
+    *   In the **Activate … Scheme** dialog box that
+        appears, select **Activate**.
+
+1.  In Xcode, change the order of the build process.
+
+    *   In the **project navigator**, at the top, select
+        **Runner**.
+
+    *   In the main window under **TARGETS**, select
+        **Runner**.
+
+    *   Open the **Build Phases** tab.
+
+    *   Drag **Embed Foundation Extensions** above
+        **Run Script**.
+
+1.  In the console, run the following command to rebuild your
+    iOS app:
+
+    ```console
+    $ flutter build ios --config-only
+    ```
+
+1.  [Test your app with the simulator][].
+
+When you add a new app extension, Xcode generates
+sample code based on the template you selected. For more
+information about the generated code and WidgetKit, see
+[Apple's app extension documentation][].
+
+[Test your app with the simulator]: #test-on-a-simulator
+[Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
+
+## How Flutter apps interact with app extensions {: #interact-app-extensions }
 
 Flutter apps interact with app extensions using the same
 techniques as UIKit or SwiftUI apps.
@@ -67,7 +104,7 @@ The app and your extension can read and write to
 shared resources or use higher-level APIs
 to communicate with each other.
 
-### Using higher-level APIs
+### Higher-level APIs {: #using-higher-level-apis }
 
 Some extensions have APIs. For example, 
 the [Core Spotlight][] framework indexes your app,
@@ -81,7 +118,7 @@ To find plugins that wrap extension APIs,
 check out [Leveraging Apple's System APIs and Frameworks][leverage]
 or search [pub.dev][].
 
-### Sharing resources
+### Share resources {: #sharing-resources }
 
 To share resources between your Flutter app
 and your app extension, put the `Runner` app target
@@ -117,7 +154,7 @@ Choose one of the following sources for your data.
   the [`path_provider`][] plugin to create a database with the
   [`sqflite`][] plugin.
 
-### Background updates
+### Background updates {: #background-updates }
 
 Background tasks provide a means to update your extension
 through code regardless of the status of your app.
@@ -125,21 +162,29 @@ through code regardless of the status of your app.
 To schedule background work from your Flutter app,
 use the [`workmanager`][] plugin.
 
-### Deep linking
+### Deep linking {: #deep-linking }
 
 You might want to direct users from an
 app extension to a specific page in your Flutter app.
 To open a specific route in your app,
 you can use [Deep Linking][].
 
-## Creating app extension UIs with Flutter
+### Scrollable lists {: #advanced-scrolling-behavior }
 
-Some app extensions display a user interface.
+By default, flutter view does not handle scroll gestures
+in a share extension. To support a scrollable list in
+the share extension, follow [these instructions][].
 
-For example, share extensions allow users to conveniently
-share content with other apps,
-such as sharing a picture to create
-a new post on a social media app.
+[these instructions]: {{site.github}}/flutter/flutter/issues/164670#issuecomment-2740702986
+
+## Display a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter }
+
+In many cases, you can display your Flutter app directly
+within an iOS app extension with a `FlutterViewController`.
+In the following example, a Flutter app called
+`Test Extension` is displayed within the
+iOS [Share][] extension, which lets users share content
+between apps.
 
 <figure>
   <div class="site-figure-container">
@@ -147,167 +192,296 @@ a new post on a social media app.
   </div>
 </figure>
 
-As of the 3.16 release, you can build
-Flutter UI for an app extension,
-though you must use an extension-safe
-`Flutter.xcframework` and embed the
-`FlutterViewController` as described in
-the following section.
+Use the following steps to display a Flutter app inside of
+a [Share][] app extension. In this example the app extension
+scheme is called `ShareExtension`, the Flutter app scheme is
+called `Runner`, and the Flutter app is called `MyApp`:
 
-:::note
-Due to the memory limitations of app extensions,
-use Flutter to build an app extension UI for extension
-types that have memory limits larger than 100MB.
-For example, Share extensions have a 120MB memory limit.
+1.  [Add an extension to your Flutter app][] if you haven't
+    already done so.
 
-In addition, Flutter uses extra memory in debug mode.
-Therefore, Flutter doesn't fully support running
-app extensions in debug mode on physical devices
-when used to build extension UI; it might run out of memory.
-As an alternative,
-use an iOS simulator to test your extension in debug mode.
-:::
+1.  In the console, navigate to your Flutter project
+    directory and then open your project in Xcode
+    with the following command: 
 
-1. Locate the extension-safe `Flutter.xcframework` file,
-   at `<path_to_flutter_sdk>/bin/cache/artifacts/engine/ios/extension_safe/Flutter.xcframework`.
-   
-    * To build for release or profile modes,
-      find the framework file under the
-      `ios-release` or `ios-profile` folder, respectively.
-
-1. Drag and drop the `Flutter.xcframework` file into your
-   share extension's frameworks and libraries list.
-   Make sure the embed column says "Embed & Sign".
-
-   <figure>
-     <div class="site-figure-container">
-       <img src='/assets/images/docs/development/platform-integration/app-extensions/embed-framework.png' alt='The Flutter.xcframework file being marked as Embed & Sign in Xcode.' height='300'>
-     </div>
-   </figure>
-
-1. Open the Flutter app project settings in Xcode
-   to share build configurations. 
-
-   {: type="a"}
-   1. Navigate to the **Info** tab.
-   1. Expand the **Configurations** group. 
-   1. Expand the **Debug**, **Profile**, and **Release** entries.
-   1. For each of these configurations, make sure the value in the
-      **Based on configuration file** drop-down menu for your
-      extension matches the one selected for the normal app target.
-
-    <figure>
-      <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png' alt='An example Xcode Runner configuration with each property set to: Based on configuration file.' height='300'>
-      </div>
-    </figure>
-
-1. (Optional) Replace any storyboard files with an extension class, if needed.
-
-    {: type="a"}
-    1. In the `Info.plist` file,
-       delete the **NSExtensionMainStoryboard** property.
-    1. Add the **NSExtensionPrincipalClass** property.
-    1. Set the value for this property to the entry point of the extension.
-       For example, for share extensions, it's usually
-       `<YourShareExtensionTargetName>.ShareViewController`.
-       If you use Objective-C to implement the extension,
-       you should omit the `<YourShareExtensionTargetName>.`
-       portion.<br>
-
-    <figure>
-      <div class="site-figure-container">
-        <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-info.png' alt='Setting the NSExtensionPrincipalClass property in the Info.plist file within Xcode.' height='300'>
-      </div>
-    </figure>
-
-1. Embed the `FlutterViewController` as described in
-   [Adding a Flutter Screen][]. For example, you can display a
-   specific route in your Flutter app within a share extension.
-
-1. Cancel the request in `viewDidDisappear`, which will be called 
-when the share extension is dismissed with a gesture. 
-
-    ```swift
-    import UIKit
-    import Flutter
-
-    class ShareViewController: UIViewController {
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            showFlutter()
-        }
-
-        func showFlutter() {
-            let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
-            addChild(flutterViewController)
-            view.addSubview(flutterViewController.view)
-            flutterViewController.view.frame = view.bounds
-        }
-
-        override func viewDidDisappear(_ animated: Bool) {
-            super.viewDidDisappear(animated)
-            self.extensionContext?.cancelRequest(
-                withError: NSError(domain: Bundle.main.bundleIdentifier!, code: 0))
-        }
-    }
+    ```console
+    open ios/Runner.xcworkspace
     ```
-:::note
-1. If you _don't_ cancel the request in `viewDidDisappear`, 
-the `ShareViewController` won't be deallocated after being dismissed. 
 
-2. You must pass in the bundle identifier as the error domain, otherwise it crashes with an `EXC_BAD_INSTRUCTION` error. 
-:::
+1.  (Xcode) Disable user script sandboxing.
 
-## Advanced scrolling behavior
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
-By default, flutter view does not handle scroll gestures in a share extension. 
-To support a scrollable list in the share extension, follow [this instruction][]. 
+    *   In the main window under **TARGETS**, select the
+        scheme called **ShareExtension**.
 
-[this instruction]: {{site.github}}/flutter/website/issues/164670#issuecomment-2740702986
+    *   Open the **Build Settings** tab.
 
-## Test extensions
+    *   Navigate to **Build Options**.
 
-Testing extensions on simulators and physical devices
-have slightly different procedures.
+    *   Set **User Script Sandboxing** as **No**.
 
-{% comment %}
-The different procedures are necessary due to bugs(which bugs?) in Xcode.
-Revisit these docs after future Xcode releases to see if they are fixed.
-{% endcomment -%}
+1.  (Xcode) Add the pre-action to the ShareExtension scheme.
 
-### Test on a simulator
+    *   Open the **Manage Schemes** window
+        (**Product** > **Scheme** > **Manage Schemes**).
 
-1. Build and run the main application target.
-1. After the app is launched on the simulator,
-   press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
-   to minimize the app, which switches to the home screen.
-1. Launch an app that supports the share extension,
-   such as the Photos app.
-1. Select a photo, tap the share button, then tap
-   on the share extension icon of your app.
+    *   Select the **ShareExtension** scheme and edit it.
 
-### Test on a physical device
+    *   Expand the **Build** tab.
 
-You can use the following procedure or the
-[Testing on simulators](#test-on-a-simulator) instructions
-to test on physical devices.
+    *   Select **Pre-actions**.
 
-1. Launch the share extension target.
-1. In the popup window that says "Choose an app to run",
-   select an app that can be used to test share extension,
-   such as the Photos app.
+    *   Click **+** and select **New Run Script Action**.
+
+    *   In the **Provide build settings from**
+        drop-down list, select **ShareExtension**.
+
+    *   In the **Shell** text field, enter:
+
+        ```console
+        /bin/sh "$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh" prepare
+        ```
+
+    *   Click **Close**.
+
+1.  (Xcode) Share the build configurations.
+
+    *   Open the **project navigator**.
+
+    *   In the main window under **PROJECT**, select
+        **Runner**.
+
+    *   Open the **Info** tab.
+
+    *   Expand **Configuration**.
+
+    *   Expand **Debug** and update the value for
+        **ShareExtension** to match the value for
+        **Runner**.
+
+    *   Repeat the previous step for **Profile**, and
+        **Release**.
+
+1.  (Xcode, Optional) Replace any storyboard files with
+    an extension class, if needed.
+
+    *   Open the **project navigator**.
+
+    *   Select **Runner** > **ShareExtension** > **Info**.
+
+    *   Expand **Information Property List**.
+
+    *   Delete the **NSExtensionMainStoryboard** key.
+
+    *   Add the **NSExtensionPrincipalClass** key.
+
+    *   Add one of these values for the
+        `NSExtensionPrincipalClass` key:
+
+        *   (Swift) **ShareExtension.ShareViewController**
+        *   (Objective-C)  **ShareViewController**
+
+1.  (Xcode) Update the `ShareViewController` to use the
+    `FlutterViewController`.
+
+    *   Open the **project navigator**.
+
+    *   Select **Runner** > **ShareExtension** > **ShareViewController**.
+
+    *   Update the `ShareViewController` file to use the
+        `FlutterViewController` class:
+
+{% tabs "register-plugins-tabs", true %}
+
+{% tab "UIKit-Swift" %}
+
+```swift title="ShareViewController.swift"
+import UIKit
+import Flutter
+
+class ShareViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showFlutter()
+    }
+
+    func showFlutter() {
+        let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+        addChild(flutterViewController)
+        view.addSubview(flutterViewController.view)
+        flutterViewController.view.frame = view.bounds
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.extensionContext?.cancelRequest(
+            withError: NSError(domain: Bundle.main.bundleIdentifier!, code: 0))
+    }
+}
+```
+
+{% endtab %}
+
+{% tab "UIKit-ObjC" %}
+
+```objc title="ShareViewController.m"
+#import "ShareViewController.h"
+#import "GeneratedPluginRegistrant.h"
+@import Flutter;
+
+@implementation ShareViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self showFlutter];
+}
+
+- (void)showFlutter {
+    FlutterEngine *flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+    [flutterEngine run];
+    [GeneratedPluginRegistrant registerWithRegistry:flutterEngine];
+    FlutterViewController *flutterViewController =
+            [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
+    [self addChildViewController:flutterViewController];
+    [self.view addSubview:flutterViewController.view];
+    flutterViewController.view.frame = self.view.bounds;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.extensionContext cancelRequestWithError:[NSError errorWithDomain:NSBundle.mainBundle.bundleIdentifier code:0 userInfo:nil]];
+}
+@end
+```
+
+{% endtab %}
+
+{% endtabs %}
+
+1.  (Xcode) Add `GeneratedPluginRegistrant.m` to the
+    app extension target.
+
+    *   Open the **project navigator**.
+
+    *   In the main window under **TARGETS**, select the
+        scheme called **ShareExtension**.
+
+    *   Open the **Build Phases** tab.
+
+    *   Expand **Compile Sources**.
+
+    *   Click **+**.
+
+    *   From the list in the
+        _Choose item to add_ dialog box, select
+        **GeneratedPluginRegistrant.m**.
+
+    *   Click **Add**.
+
+1.  (Xcode, Swift only) In Xcode, update the
+    `SWIFT_OBJC_BRIDGING_HEADER` build setting.
+
+    *   Open the **project navigator**.
+
+    *   In the main window under **TARGETS**, select the
+        scheme called **Runner**.
+
+    *   Open the **Build Settings** tab.
+
+    *   Navigate to **Swift Compiler - General** and make
+        sure that the following key and value exist:
+        
+        ```console
+        Objective-C Bridging Header: Runner/Runner-Bridging-Header.h
+        ```
+
+11.  (Xcode) [Test your app with the simulator][].
+
+[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Add an extension to your Flutter app]: #add-extension
+
+## Test an app extension {: #test-extensions }
+
+After you've added an app extension to your Flutter project,
+you can test it, using a simulator or physical device.
+If you are testing you extension in debug mode, you must
+use the iOS simulator.
+
+The following steps assume you're using the sample
+application and Share extension from
+[Adding iOS app extensions][].
+
+{% tabs "register-plugins-tabs", true %}
+
+{% tab "Simulator" %}
+
+1.  Add an app extension to your project.
+
+1.  In Xcode, run your iOS app.
+
+    *   In Xcode, go to **Product** > **Scheme** and then
+        select **Runner**.
+
+    *   Run the scheme (**Product** > **Run**).
+
+1.  In the simulator, test your app extension.
+
+    *   Launch an app that supports the Share extension,
+        such as the Photos app.
+
+    *   Select a photo, tap the share button, then tap
+        on the share extension icon of your app.
+
+[Adding iOS app extensions]: #add-extension
+
+{% endtab %}
+
+{% tab "Physical device" %}
+
+1. Add an app extension to your project.
+
+1. Launch the Share extension target.
+
+1. In the popup window that says **Choose an app to run**,
+   select an app that can be used to test the 
+   Share extension, such as the Photos app.
+
 1. Select a photo, tap the share button,
    then tap on the share extension icon of your app.
 
-## Tutorials
+{% endtab %}
+
+{% endtabs %}
+
+## Constraints {: #constraints }
+
+*   You must use an iOS simulator to test your extension in
+    debug mode.
+
+*   Flutter doesn't fully support running app extensions in
+    debug mode on physical devices when used to build
+    extension UIs because a physical device might run out of
+    memory.
+
+*   iOS app extensions have limited memory.
+    It is advisable to only modify an app extension's UI
+    if the app extension supports at least 100MB of memory.
+
+
+## Other resources {: #other-resources }
 
 For step-by-step instruction for using app
 extensions with your Flutter iOS app, check out the
 [Adding a Home Screen Widget to your Flutter app][lab]
 codelab.
 
-[Adding a Flutter Screen]: /add-to-app/ios/add-flutter-screen?tab=vc-uikit-swift-tab#alternatively-create-a-flutterviewcontroller-with-an-implicit-flutterengine
+To learn more about the various ways you can add a
+Flutter Screen to an iOS app, see
+[Adding a Flutter Screen to an iOS app][].
+
+[Adding a Flutter Screen to an iOS app]: /add-to-app/ios/add-flutter-screen
+[Add an app extension to your Flutter app]: #add-extension
 [App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
 [Apple's documentation]: {{site.apple-dev}}/app-extensions/
 [Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
