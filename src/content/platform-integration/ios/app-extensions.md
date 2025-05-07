@@ -18,7 +18,7 @@ Photo apps share sheet.
 
 <figure>
   <div class="site-figure-container">
-    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-2.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
+    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-a.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
   </div>
 </figure>
 
@@ -90,8 +90,8 @@ sample code based on the template you selected. For more
 information about the generated code and WidgetKit, see
 [Apple's app extension documentation][].
 
-[Test your app with the simulator]: #test-on-a-simulator
 [Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
+[Test your app with the simulator]: #test-extensions
 
 ## How Flutter apps interact with app extensions {: #interact-app-extensions }
 
@@ -117,6 +117,11 @@ Flutter plugins wrap these APIs.
 To find plugins that wrap extension APIs,
 check out [Leveraging Apple's System APIs and Frameworks][leverage]
 or search [pub.dev][].
+
+[Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
+[leverage]: /platform-integration/ios/apple-frameworks
+[pub.dev]: {{site.pub-pkg}}
+[WidgetKit]: {{site.apple-dev}}/documentation/widgetkit
 
 ### Share resources {: #sharing-resources }
 
@@ -154,6 +159,12 @@ Choose one of the following sources for your data.
   the [`path_provider`][] plugin to create a database with the
   [`sqflite`][] plugin.
 
+[App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
+[`path_provider`]: {{site.pub-pkg}}/path_provider
+[read and write files]: /cookbook/persistence/reading-writing-files
+[`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
+[`sqflite`]: {{site.pub-pkg}}/sqflite
+
 ### Background updates {: #background-updates }
 
 Background tasks provide a means to update your extension
@@ -162,12 +173,16 @@ through code regardless of the status of your app.
 To schedule background work from your Flutter app,
 use the [`workmanager`][] plugin.
 
+[`workmanager`]: {{site.pub-pkg}}/workmanager
+
 ### Deep linking {: #deep-linking }
 
 You might want to direct users from an
 app extension to a specific page in your Flutter app.
 To open a specific route in your app,
 you can use [Deep Linking][].
+
+[Deep Linking]:/ui/navigation/deep-linking
 
 ### Scrollable lists {: #advanced-scrolling-behavior }
 
@@ -398,8 +413,9 @@ class ShareViewController: UIViewController {
 
 11.  (Xcode) [Test your app with the simulator][].
 
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Add an extension to your Flutter app]: #add-extension
+[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Test your app with the simulator]: #test-extensions
 
 ## Test an app extension {: #test-extensions }
 
@@ -468,7 +484,6 @@ application and Share extension from
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
-
 ## Other resources {: #other-resources }
 
 For step-by-step instruction for using app
@@ -481,17 +496,4 @@ Flutter Screen to an iOS app, see
 [Adding a Flutter Screen to an iOS app][].
 
 [Adding a Flutter Screen to an iOS app]: /add-to-app/ios/add-flutter-screen
-[Add an app extension to your Flutter app]: #add-extension
-[App Group]: {{site.apple-dev}}/documentation/xcode/configuring-app-groups
-[Apple's documentation]: {{site.apple-dev}}/app-extensions/
-[Core Spotlight]: {{site.apple-dev}}/documentation/corespotlight
-[Deep Linking]:/ui/navigation/deep-linking
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
-[leverage]: /platform-integration/ios/apple-frameworks
-[`path_provider`]: {{site.pub-pkg}}/path_provider
-[pub.dev]: {{site.pub-pkg}}
-[read and write files]: /cookbook/persistence/reading-writing-files
-[`shared_preference_app_group`]: {{site.pub-pkg}}/shared_preference_app_group
-[`sqflite`]: {{site.pub-pkg}}/sqflite
-[WidgetKit]: {{site.apple-dev}}/documentation/widgetkit
-[`workmanager`]: {{site.pub-pkg}}/workmanager
