@@ -1,4 +1,4 @@
-{% assign cache_bust = '?v=6' %}
+{% assign cache_bust = '?v=7' %}
 {% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@
     {% endfor -%}
     {% endif -%}
   </head>
-  <body{% if body_class %} class="{{ body_class }}"{% endif %}>
+  <body class="show-windows {% if body_class %}{{ body_class }}{% endif %}">
 
     {% render cookie-notice.html %}
 

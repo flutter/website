@@ -100,3 +100,7 @@ appnow:
   xcode: '16'
   ios: '17'
   cocoapods: '1.16'
+
+platform:
+  androidApiLevel: '35'
+  minimumAndroidVersion: ''
