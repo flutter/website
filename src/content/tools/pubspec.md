@@ -222,7 +222,7 @@ A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
 is executed.
 
 > NOTE: This feature is only available as of
-> [#167953](https://github.com/flutter/flutter/pull/167953) on the `master`
+> [#167953]({{site.github}}flutter/flutter/pull/167953) on the `main`
 > channel.
 
 The available keys mirror those available in `flutter config --list`.
