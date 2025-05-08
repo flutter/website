@@ -99,8 +99,9 @@
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
-- title: Tutorials and samples
-  permalink: /reference/learning-resources
+    - divider
+    - title: Samples & tutorials
+      permalink: /reference/learning-resources
 
 - title: Stay up to date
   permalink: /release
