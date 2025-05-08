@@ -85,6 +85,9 @@ dev_dependencies:
 
   [!generate: true!] # Enables generation of localized strings from arb files
 
+  [!config:!] # App-specific configuration flags that mirror flutter config
+    [!enable-swift-package-manager: true!]
+
   [!assets:!]  # Lists assets, such as image files
     [!- images/a_dot_burr.png!]
     [!- images/a_dot_ham.png!]
@@ -213,6 +216,26 @@ flutter:
 [asset images in package dependencies]: /ui/assets/assets-and-images#from-packages
 [resolution aware]: /ui/assets/assets-and-images#resolution-aware
 
+### config field {: #config }
+
+A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
+is executed.
+
+> NOTE: This feature is only available as of
+> [#167953]({{site.github}}flutter/flutter/pull/167953) on the `main`
+> channel.
+
+The available keys mirror those available in `flutter config --list`.
+
+```yaml title="pubspec.yaml"
+flutter:
+  config:
+    enable-swift-package-manager: true
+```
+
+Flags are only read from the current _application_ package, and have no effect
+in the context of a package or dependency.
+
 ### default-flavor field
 
 Assign a default Flutter flavor for an app.
@@ -310,6 +333,15 @@ Flutter projects.
 flutter:
   disable-swift-package-manager: true
 ```
+
+> NOTE: As of [#168433]({{site.github}}/flutter/flutter/pull/168433) on the
+> `main` channel, this propery has moved to the [`config`](#config) section:
+>
+> ```yaml title="pubspec.yaml"
+> flutter:
+>   config:
+>     enable-swift-package-manager: false
+> ```
 
 ### flutter field
 
