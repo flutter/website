@@ -13,8 +13,8 @@ This allows you, for example, to use the native web views directly inside your
 Flutter app.
 
 :::note
-This page discusses how to host your own native macOS views within a Flutter
-app.
+This page discusses how to host your own
+native macOS views within a Flutter app.
 If you'd like to embed native Android views in your Flutter app,
 see [Hosting native Android views][].
 If you'd like to embed native iOS views in your Flutter app,
@@ -24,72 +24,64 @@ see [Hosting native iOS views][].
 [Hosting native Android views]: /platform-integration/android/platform-views
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 
-:::note Version note
+:::version-note
 Platform view support on macOS isn't fully functional as of the current release.
 For example, gesture support isn't yet available on macOS.
 Stay tuned for a future stable release.
 :::
-macOS uses Hybrid composition, which means that the native `NSView` is appended
-to the view hierarchy.
+
+macOS uses Hybrid composition, which means that the
+native `NSView` is appended to the view hierarchy.
 
 To create a platform view on macOS, use the following instructions:
 
 ## On the Dart side
 
-On the Dart side, create a `Widget` and add the build implementation, as shown
-in the following steps.
+On the Dart side, create a `Widget` and add the build implementation,
+as shown in the following steps:
 
 In the Dart widget file, make changes similar to those 
 shown in `native_view_example.dart`:
 
-<ol>
-<li>
+ 1. Add the following imports:
 
-Add the following imports:
+    <?code-excerpt "lib/native_view_example_4.dart (import)"?>
+    ```dart
+    import 'package:flutter/foundation.dart';
+    import 'package:flutter/services.dart';
+    ```
 
-<?code-excerpt "lib/native_view_example_4.dart (import)"?>
-```dart
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
-```
+ 1. Implement a `build()` method:
 
-</li>
+    <?code-excerpt "lib/native_view_example_4.dart (macos-composition)"?>
+    ```dart
+    Widget build(BuildContext context) {
+      // This is used in the platform side to register the view.
+      const String viewType = '<platform-view-type>';
+      // Pass parameters to the platform side.
+      final Map<String, dynamic> creationParams = <String, dynamic>{};
+    
+      return AppKitView(
+        viewType: viewType,
+        layoutDirection: TextDirection.ltr,
+        creationParams: creationParams,
+        creationParamsCodec: const StandardMessageCodec(),
+      );
+    }
+    ```
 
-<li>
-
-Implement a `build()` method:
-
-<?code-excerpt "lib/native_view_example_4.dart (macos-composition)"?>
-```dart
-Widget build(BuildContext context) {
-  // This is used in the platform side to register the view.
-  const String viewType = '<platform-view-type>';
-  // Pass parameters to the platform side.
-  final Map<String, dynamic> creationParams = <String, dynamic>{};
-
-  return AppKitView(
-    viewType: viewType,
-    layoutDirection: TextDirection.ltr,
-    creationParams: creationParams,
-    creationParamsCodec: const StandardMessageCodec(),
-  );
-}
-```
-
-</li>
-</ol>
-
-For more information, see the API docs for: [`AppKitView`][].
+For more information, check out the [`AppKitView`][] API docs.
 
 [`AppKitView`]: {{site.api}}/flutter/widgets/AppKitView-class.html
 
 ## On the platform side
 
-Implement the factory and the platform view. The `NativeViewFactory` creates the
-platform view, and the platform view provides a reference to the `NSView`. For
-example, `NativeView.swift`:
+Implement the factory and the platform view.
+The `NativeViewFactory` creates the platform view, and
+the platform view provides a reference to the `NSView`.
+For example, `NativeView.swift`:
 
-```swift
+```swift title="NativeView.swift"
 import Cocoa
 import FlutterMacOS
 
@@ -111,7 +103,8 @@ class NativeViewFactory: NSObject, FlutterPlatformViewFactory {
       binaryMessenger: messenger)
   }
 
-  /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
+  /// Implementing this method is only necessary when
+  /// the `arguments` in `createWithFrame` is not `nil`.
   public func createArgsCodec() -> (FlutterMessageCodec & NSObjectProtocol)? {
     return FlutterStandardMessageCodec.sharedInstance()
   }
@@ -130,11 +123,11 @@ class NativeView: NSView {
     // macOS views can be created here
     createNativeView(view: self)
   }
-    
+
     required init?(coder nsCoder: NSCoder) {
         super.init(coder: nsCoder)
     }
-    
+
   func createNativeView(view _view: NSView) {
     let nativeLabel = NSTextField()
     nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
@@ -148,14 +141,14 @@ class NativeView: NSView {
     _view.addSubview(nativeLabel)
   }
 }
-
 ```
 
-Finally, register the platform view. This can be done in an app or a plugin.
+Finally, register the platform view.
+This can be done in an app or a plugin.
 
 For app registration, modify the App's `MainFlutterWindow.swift`:
 
-```swift
+```swift title="MainFlutterWindow.swift"
 import Cocoa
 import FlutterMacOS
 
@@ -172,10 +165,9 @@ class MainFlutterWindow: NSWindow {
 }
 ```
 
-For plugin registration, modify the plugin's main file (for example,
-`Plugin.swift`):
+For plugin registration, modify the plugin's main file:
 
-```swift
+```swift title="Plugin.swift"
 import Cocoa
 import FlutterMacOS
 
@@ -187,7 +179,7 @@ public class Plugin: NSObject, FlutterPlugin {
 }
 ```
 
-For more information, see the API docs for:
+For more information, check out the API docs for:
 
 * [`FlutterPlatformViewFactory`][]
 * [`FlutterPlatformView`][]
@@ -227,6 +219,7 @@ Widget build(BuildContext context) {
 [`defaultTargetPlatform`]: {{site.api}}/flutter/foundation/defaultTargetPlatform.html
 
 ## Performance
+
 Platform views in Flutter come with performance trade-offs.
 
 For example, in a typical Flutter app, the Flutter UI is composed on a dedicated
