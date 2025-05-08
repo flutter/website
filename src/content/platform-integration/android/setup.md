@@ -20,7 +20,7 @@ ensure that it's [up to date][].
 [Get started with Flutter]: /get-started/install
 [up to date]: /install/upgrade
 
-## Choose your development platform
+## Choose your development platform {: #dev-platform}
 
 The instructions on this page are configured to cover
 setting up Android development on a **Windows**{:.selected-os-text} device.
@@ -30,7 +30,7 @@ please select one of the following.
 
 {% osSelector %}
 
-## Set up Android tooling
+## Set up Android tooling {: #set-up-tooling}
 
 With Android Studio, you can run Flutter apps on
 a physical Android device or an Android Emulator.
@@ -147,7 +147,7 @@ install and set up the latest stable version of [Android Studio][].
 [as-install]: https://developer.android.com/studio/install
 [as-update]: https://developer.android.com/studio/intro/update
 
-## Set up an Android device
+## Set up an Android device {: #set-up-devices}
 
 You can debug Flutter apps on physical Android devices or
 by running them on an Android emulator.
@@ -298,7 +298,7 @@ run a Flutter app on a physical Android device, follow these steps:
 {% endtab %}
 {% endtabs %}
 
-## Validate your setup
+## Validate your setup {: #validate-setup}
 
  1. <h3>Check for toolchain issues</h3>
 
@@ -340,7 +340,7 @@ run a Flutter app on a physical Android device, follow these steps:
 [Install and setup troubleshooting]: /install/troubleshoot#android-setup
 [community]: {{site.main-url}}/community
 
-## Start developing for Android
+## Start developing for Android {: #start-developing}
 
 Now that you've set up Android development for Flutter,
 you can continue your Flutter learning journey while testing on Android

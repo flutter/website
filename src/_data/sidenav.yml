@@ -574,8 +574,8 @@
       children:
         - title: Web support in Flutter
           permalink: /platform-integration/web
-        - title: Add web as build target
-          permalink: /platform-integration/web/install-web
+        - title: Set up web development
+          permalink: /platform-integration/web/setup
         - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Compile to WebAssembly
