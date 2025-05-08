@@ -504,11 +504,6 @@ in the bullet points above.
 +   Widget build(BuildContext context) {
 +     final animation = listenable as Animation<double>;
 +     return Center(
-+       child: Container(
-+         margin: const EdgeInsets.symmetric(vertical: 10),
-+         height: animation.value,
-+         width: animation.value,
-+         child: const FlutterLogo(),
 +       child: AnimatedBuilder(
 +         animation: animation,
 +         builder: (context, child) {
