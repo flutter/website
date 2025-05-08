@@ -11,7 +11,7 @@
   --lite-youtube-frame-shadow-visible: false;
 
   &.link-cards {
-    margin-block: 2rem;
+    margin-block: 1.5rem;
   }
 
   &.wide {
@@ -161,7 +161,7 @@
         padding-inline-start: 0;
         display: flex;
         flex-direction: column;
-        gap: 0.35rem;
+        gap: 0.45rem;
 
         li {
           width: 100%;
@@ -169,7 +169,7 @@
 
         a.text-button {
           width: 100%;
-          padding: .3rem .8rem;
+          padding: .15rem .6rem;
         }
       }
     }
