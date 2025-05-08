@@ -292,6 +292,7 @@ details {
   }
 }
 
+// TODO(parlough): Clean this up and simplify list item styles for all content.
 ol.steps {
   position: relative;
   list-style: none;
@@ -317,11 +318,17 @@ ol.steps {
     }
   }
 
+  ul > li {
+    &:not(:last-child) {
+      padding-block-end: .5rem;
+    }
+  }
+
   > li {
     position: relative;
     counter-increment: steps;
 
-    ol, ul {
+    ol {
       padding-inline-start: 1.25rem;
     }
 
