@@ -110,14 +110,15 @@
     - title: SDK archive
       permalink: /release/archive
     - divider
-    - title: What's new
-      permalink: /release/whats-new
     - title: Release notes
       permalink: /release/release-notes
     - title: Breaking changes
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
+    - divider
+    - title: What's new in the docs
+      permalink: /release/whats-new
 
 - title: App solutions
   children:
