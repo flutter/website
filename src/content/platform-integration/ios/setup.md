@@ -61,8 +61,8 @@ install [CocoaPods][cocoapods].
 CocoaPods bundles various dependencies that
 support connecting Flutter to native iOS code.
 
-1. Install `cocoapods` following the
-   [CocoaPods installation guide][cocoapods].
+Install `cocoapods` following the
+[CocoaPods installation guide][cocoapods].
 
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugin]: /packages-and-plugins/developing-packages#types
