@@ -99,8 +99,9 @@
         - title: Flutter versus Swift concurrency
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
-- title: Tutorials and samples
-  permalink: /reference/learning-resources
+    - divider
+    - title: Samples & tutorials
+      permalink: /reference/learning-resources
 
 - title: Stay up to date
   permalink: /release
@@ -110,47 +111,49 @@
     - title: SDK archive
       permalink: /release/archive
     - divider
-    - title: What's new
-      permalink: /release/whats-new
     - title: Release notes
       permalink: /release/release-notes
     - title: Breaking changes
       permalink: /release/breaking-changes
     - title: Compatibility policy
       permalink: /release/compatibility-policy
+    - divider
+    - title: What's new in the docs
+      permalink: /release/whats-new
 
 - title: App solutions
   children:
-    - title: AI
+    - title: Create with AI
       children:
-      - title: AI Toolkit guide
-        permalink: /ai-toolkit
-        children:
-        - title: Overview
+        - title: AI Toolkit
           permalink: /ai-toolkit
-        - title: User experience
-          permalink: /ai-toolkit/user-experience
-        - title: Feature integration
-          permalink: /ai-toolkit/feature-integration
-        - title: Custom LLM providers
-          permalink: /ai-toolkit/custom-llm-providers
-        - title: Chat client sample
-          permalink: /ai-toolkit/chat-client-sample
-      - title: Build with Google AI Dart SDK (video)
-        permalink: https://www.youtube.com/watch?v=1AuzJEiHjO4
-    - title: Firebase & Firestore
+          expanded: true
+          children:
+            - title: Overview
+              permalink: /ai-toolkit
+            - title: User experience
+              permalink: /ai-toolkit/user-experience
+            - title: Feature integration
+              permalink: /ai-toolkit/feature-integration
+            - title: Custom LLM providers
+              permalink: /ai-toolkit/custom-llm-providers
+            - title: Chat client sample
+              permalink: /ai-toolkit/chat-client-sample
+        - title: Vertex AI in Firebase
+          permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
+    - title: Develop with Firebase
       children:
-      - title: Overview
-        permalink: /data-and-backend/firebase
-      - title: Discover Firebase for Flutter
-        permalink: https://firebase.google.com/docs/flutter
-      - title: Get to know Firebase for Flutter
-        permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
-      - title: Add a user authentication flow to a Flutter app using FirebaseUI
-        permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
-      - title: Get to know Firebase for web
-        permalink: https://firebase.google.com/codelabs/firebase-get-to-know-web
-    - title: Games
+        - title: Overview
+          permalink: /data-and-backend/firebase
+        - title: Discover Firebase for Flutter
+          permalink: https://firebase.google.com/docs/flutter
+        - title: Get to know Firebase for Flutter
+          permalink: https://www.youtube.com/watch?v=wUSkeTaBonA
+        - title: Add a user authentication flow to a Flutter app using FirebaseUI
+          permalink: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+        - title: Get to know Firebase for web
+          permalink: https://firebase.google.com/codelabs/firebase-get-to-know-web
+    - title: Build multi-platform games
       children:
         - title: Overview
           permalink: /resources/games-toolkit
@@ -170,46 +173,40 @@
           permalink: https://firebase.google.com/docs/crashlytics/get-started?platform=flutter
         - title: Intro to Flame with Flutter
           permalink: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
-    - title: Monetization
+    - title: Monetize your app
       children:
-        - title: Advertising
+        - title: Integrate ads
           children:
-          - title: Ads overview
-            permalink: /resources/ads-overview
-          - title: Add advertising
-            permalink: /cookbook/plugins/google-mobile-ads
-          - title: Add AdMob ads to your Flutter app
-            permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
-          - title: Add an AdMob banner and native inline ads
-            permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
-          - title: Integrate multimedia ads (video)
-            permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
-          - title: Google AdMob mediation
-            permalink: https://developers.google.com/admob/flutter/mediation
-          - title: Interactive Media Ads SDK
-            permalink: https://pub.dev/packages/interactive_media_ads
-        - title: In-app purchases
+            - title: Ads overview
+              permalink: /resources/ads-overview
+            - title: Add advertising
+              permalink: /cookbook/plugins/google-mobile-ads
+            - title: Add AdMob ads to your Flutter app
+              permalink: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+            - title: Add an AdMob banner and native inline ads
+              permalink: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+            - title: Integrate multimedia ads (video)
+              permalink: https://www.youtube.com/watch?v=U8x5n6RwZOo
+            - title: Google AdMob mediation
+              permalink: https://developers.google.com/admob/flutter/mediation
+            - title: Interactive Media Ads SDK
+              permalink: https://pub.dev/packages/interactive_media_ads
+        - title: Support payments
           children:
-          - title: In-app purchases overview
-            permalink: /resources/in-app-purchases-overview
-          - title: Add in-app purchases
-            permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
-        - title: Payments
-          children:
-          - title: Payments overview
-            permalink: /resources/payments-overview
-          - title: Google pay package
-            permalink: https://pub.dev/packages/pay
-    - title: Maps
+            - title: Payments overview
+              permalink: /resources/payments-overview
+            - title: Google pay package
+              permalink: https://pub.dev/packages/pay
+        - title: Add in-app purchases
+          permalink: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+    - title: Integrate maps
       children:
         - title: Add Google maps to a Flutter app
           permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
         - title: Google Maps package
           permalink: https://developers.google.com/maps/flutter-package
-    - title: News
-      children:
-        - title: Build a news app
-          permalink: /resources/news-toolkit
+    - title: Build a news app
+      permalink: /resources/news-toolkit
 
 - divider
 - header: User interface
@@ -513,8 +510,8 @@
     - title: Android
       permalink: /platform-integration/android
       children:
-        - title: Add Android as build target
-          permalink: /platform-integration/android/install-android
+        - title: Set up Android development
+          permalink: /platform-integration/android/setup
         - title: Add a splash screen
           permalink: /platform-integration/android/splash-screen
         - title: Add predictive back
@@ -577,8 +574,8 @@
       children:
         - title: Web support in Flutter
           permalink: /platform-integration/web
-        - title: Add web as build target
-          permalink: /platform-integration/web/install-web
+        - title: Set up web development
+          permalink: /platform-integration/web/setup
         - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Compile to WebAssembly

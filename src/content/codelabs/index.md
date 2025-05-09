@@ -63,6 +63,13 @@ like layout and animations:
   how to debug common layout problems using the Flutter
   Inspector and Layout Explorer.
 
+* [Animations in Flutter][]<br>
+  Learn everything you need to know to build animated effects
+  using Flutter. This codelab covers implicitly animated widgets,
+  explicitly animated widgets, animation controllers,
+  how to use components from the Material [animations][] package,
+  and how to set up [Predictive Back][] on Android.
+
 * [Implicit animations][]<br>
   Use DartPad (no downloads required!) to learn how to use
   implicit animations to add motion and create
@@ -117,6 +124,8 @@ like layout and animations:
 [Building Beautiful Transitions with Material Motion for Flutter]: {{site.codelabs}}/codelabs/material-motion-flutter
 [Building scrolling experiences in Flutter]: {{site.yt.watch}}?v=YY-_yrZdjGc
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[Animations in Flutter]: {{site.codelabs}}/advanced-flutter-animations
+[Predictive Back]: {{site.docs}}/release/breaking-changes/android-predictive-back
 [Implicit animations]: /codelabs/implicit-animations
 [MDC-101 Flutter: Material Components (MDC) Basics]: {{site.codelabs}}/codelabs/mdc-101-flutter
 [MDC-102 Flutter: Material Structure and Layout]: {{site.codelabs}}/codelabs/mdc-102-flutter

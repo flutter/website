@@ -1,7 +1,8 @@
 ---
 title: Android Studio and IntelliJ
-description: >
-  How to develop Flutter apps in Android Studio or other IntelliJ products.
+description: >-
+  Learn how to develop Flutter apps in
+  Android Studio and other IntelliJ products.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -13,10 +14,105 @@ description: >
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
 
-Follow the [Set up an editor](/get-started/editor?tab=androidstudio)
-instructions to install the Dart and Flutter plugins.
+## Installation and setup {: #setup}
+
+Android Studio and IntelliJ IDEA offer a complete,
+IDE experience once you install the Flutter plugin.
+
+To install the latest version of the following IDEs, follow their instructions:
+
+- [Android Studio][]
+- [IntelliJ IDEA Community][]
+- [IntelliJ IDEA Ultimate][]
+
+[Android Studio]: {{site.android-dev}}/studio/install
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+
+### Install the Flutter plugin {: #install-plugin}
+
+{% tabs "dev-os" %}
+
+{% tab "Windows" %}
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+{% endtab %}
+{% tab "macOS" %}
+
+1. Start Android Studio or IntelliJ.
+
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
+
+   You can also press <kbd>Cmd</kbd> + <kbd>,</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+{% endtab %}
+{% tab "Linux" %}
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+{% endtab %}
+
+{% endtabs %}
 
 ### Updating the plugins {:#updating}
 

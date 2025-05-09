@@ -1,0 +1,25 @@
+body {
+  &:not(.show-windows) {
+    .windows-only {
+      display: none;
+    }
+  }
+
+  &:not(.show-macos) {
+    .macos-only {
+      display: none;
+    }
+  }
+
+  &:not(.show-linux) {
+    .linux-only {
+      display: none;
+    }
+  }
+
+  &:not(.show-chromeos) {
+    .chromeos-only {
+      display: none;
+    }
+  }
+}

@@ -7,20 +7,20 @@ To learn more about DevTools, check out the
 
 ## General updates
 
-* Fixed various memory leaks and lifecycle issues.
-  * [#8901](https://github.com/flutter/devtools/pull/8901)
-  * [#8902](https://github.com/flutter/devtools/pull/8902)
-  * [#8907](https://github.com/flutter/devtools/pull/8907)
-  * [#8917](https://github.com/flutter/devtools/pull/8917)
-  * [#8932](https://github.com/flutter/devtools/pull/8932)
-  * [#8933](https://github.com/flutter/devtools/pull/8933)
-  * [#8934](https://github.com/flutter/devtools/pull/8934)
-  * [#8935](https://github.com/flutter/devtools/pull/8935)
-  * [#8937](https://github.com/flutter/devtools/pull/8937)
-  * [#8953](https://github.com/flutter/devtools/pull/8953)
-  * [#8969](https://github.com/flutter/devtools/pull/8969)
-  * [#8970](https://github.com/flutter/devtools/pull/8970)
-  * [#8975](https://github.com/flutter/devtools/pull/8975)
+* Fixed various memory leaks and lifecycle issues. - 
+[#8901](https://github.com/flutter/devtools/pull/8901),
+[#8902](https://github.com/flutter/devtools/pull/8902),
+[#8907](https://github.com/flutter/devtools/pull/8907),
+[#8917](https://github.com/flutter/devtools/pull/8917),
+[#8932](https://github.com/flutter/devtools/pull/8932),
+[#8933](https://github.com/flutter/devtools/pull/8933),
+[#8934](https://github.com/flutter/devtools/pull/8934),
+[#8935](https://github.com/flutter/devtools/pull/8935),
+[#8937](https://github.com/flutter/devtools/pull/8937),
+[#8953](https://github.com/flutter/devtools/pull/8953),
+[#8969](https://github.com/flutter/devtools/pull/8969),
+[#8970](https://github.com/flutter/devtools/pull/8970),
+[#8975](https://github.com/flutter/devtools/pull/8975)
 
 ## CPU profiler updates
 
@@ -61,10 +61,6 @@ To learn more about DevTools, check out the
 
 * Changed the context menu style to be consistent with other screens
   [#8859](https://github.com/flutter/devtools/pull/8859).
-* Fixed an issue where HTTP requests would sometimes not be displayed properly,
-  particularly when DevTools is communicating with
-  an application over a slow network connection. -
-  [#8860](https://github.com/flutter/devtools/pull/8860)
 
 ## Full commit history
 

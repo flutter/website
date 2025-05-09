@@ -51,7 +51,7 @@ to identify the location of your `flutter` folder.
 See also: [Configuring PATH and Environment Variables - Dart Code][config path]
 
 [windows path]: https://www.wikihow.com/Change-the-PATH-Environment-Variable-on-Windows
-[set up VS Code]: /get-started/editor
+[set up VS Code]: /tools/vs-code#setup
 [config path]: https://dartcode.org/docs/configuring-path-and-environment-variables/
 
 ### Flutter in special folders

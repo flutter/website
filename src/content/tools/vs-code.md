@@ -13,11 +13,56 @@ description: How to develop Flutter apps in Visual Studio Code.
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
 
-Follow the [Set up an editor][] instructions to
-install the Dart and Flutter extensions
-(also called plugins).
+## Installation and setup {: #setup}
+
+[VS Code][] is a code editor to build and debug apps.
+With the Flutter extension installed, you can compile, deploy, and debug
+Flutter apps.
+
+To install the latest version of VS Code,
+follow Microsoft's instructions for the relevant platform:
+
+- [Install on macOS][]
+- [Install on Windows][]
+- [Install on Linux][]
+
+[VS Code]: https://code.visualstudio.com/
+[Install on macOS]: https://code.visualstudio.com/docs/setup/mac
+[Install on Windows]: https://code.visualstudio.com/docs/setup/windows
+[Install on Linux]: https://code.visualstudio.com/docs/setup/linux
+
+### Install the Flutter extension {: #install-extension}
+
+1. Start **VS Code**.
+
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
+
+1. Click **Install**.
+   Installing the Flutter extension also installs the Dart extension.
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+### Validate your VS Code setup {: #validate-setup}
+
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
+
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
+
+1. Type `doctor`.
+
+1. Select **Flutter: Run Flutter Doctor**.
+
+   Once you select this command, VS Code does the following:
+
+   - Opens the **Output** panel.
+   - Displays **flutter (flutter)** in the dropdown on the upper right
+     of this panel.
+   - Displays the output of `flutter doctor` command.
 
 ### Updating the extension {:#updating}
 
@@ -166,7 +211,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 
 ### Run app in debug, profile, or release mode
 
-Flutter offers many different build modes to run your app in. 
+Flutter offers many different build modes to run your app in.
 You can read more about them in [Flutter's build modes][].
 
 1. Open the `launch.json` file in VS Code.
@@ -376,5 +421,4 @@ When filing new issues, include [flutter doctor][] output.
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
-[Set up an editor]: /get-started/editor?tab=vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png
