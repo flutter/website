@@ -56,8 +56,7 @@ sudo softwareupdate --install-rosetta --agree-to-license
 
 ## Install CocoaPods
 
-If your app depends on any [Flutter plugin][]
-that uses native iOS code,
+To support [Flutter plugins][] that use native iOS code,
 install [CocoaPods][cocoapods].
 CocoaPods bundles various dependencies that
 support connecting Flutter to native iOS code.
