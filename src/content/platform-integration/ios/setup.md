@@ -65,7 +65,7 @@ Install `cocoapods` following the
 [CocoaPods installation guide][cocoapods].
 
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
-[Flutter plugin]: /packages-and-plugins/developing-packages#types
+[Flutter plugins]: /packages-and-plugins/developing-packages#types
 
 ## Configure your target iOS device
 
