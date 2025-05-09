@@ -63,7 +63,7 @@ physical device.
 
 Use the following steps:
 
-1. To install the iOS Simulator, run the following command.
+1. To install the iOS Simulator, run the following command:
 
     ```console
     $ xcodebuild -downloadPlatform iOS
