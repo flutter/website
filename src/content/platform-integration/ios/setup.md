@@ -78,7 +78,7 @@ physical device.
 {% tabs "ios-simulator-or-physical-device" %}
 {% tab "Simulator" %}
 
-### Configure your iOS Simulator
+### Configure your iOS Simulator {:.no_toc}
 
 Use the following steps:
 
@@ -99,7 +99,7 @@ Use the following steps:
 
 Set up each iOS device on which you want to test.
 
-### Configure your physical iOS device {:#attach}
+### Configure your physical iOS device {:#attach .no_toc}
 
 1. Attach your iOS device to the USB port on your Mac.
 
@@ -110,7 +110,7 @@ Set up each iOS device on which you want to test.
 
    ![Trust Mac][]
 
-### Enable Developer Mode
+### Enable Developer Mode {: .no_toc}
 
 Apple requires enabling **[Developer Mode][]**
 on the device to protect against malicious software.
@@ -126,7 +126,7 @@ on the device to protect against malicious software.
 1. When the **Turn on Developer Mode?** dialog appears,
    tap **Turn On**.
 
-### Create a developer code signing certificate
+### Create a developer code signing certificate {: .no_toc}
 
 To send your app to a physical iOS device,
 _even_ for testing, you must establish trust
@@ -150,7 +150,7 @@ personal Apple Developer account to
 a professional account.
 :::
 
-### Prepare the device
+### Prepare the device {: .no_toc}
 
 Find your **Profiles & Device Management** menu under
 **Settings**. (The exact location can vary by device.)
