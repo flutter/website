@@ -51,11 +51,10 @@ $ sudo xcodebuild -license
 
 ## Configure your target iOS device
 
-Note that the behavior of the iOS Simulator can vary
-from an actual physical device. It's easier to get
-the Simulator up and running than a physical device,
-which requires more setup.
-For that reason, we recommend starting with the Simulator.
+We recommend starting with the iOS Simulator as
+it's easier to get setup than a physical iOS device.
+However, you should also test your app on an actual
+physical device.
 
 {% tabs "ios-simulator-or-physical-device" %}
 {% tab "Simulator" %}
