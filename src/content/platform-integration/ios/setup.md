@@ -1,9 +1,9 @@
 ---
 title: Set up iOS development
+short-title: Set up iOS
 description: >-
   Configure your development environment to
   run, build, and deploy Flutter apps for iOS devices.
-short-title: Set up iOS
 ---
 
 Learn how to set up your development environment
@@ -190,5 +190,65 @@ If the **codesign wants to access key...** dialog appears:
 Follow the instructions in the output for software
 you might need to install or further tasks to perform.
 
+## Start developing for iOS {: #start-developing}
+
 **Congratulations.**
-You can now start developing Flutter apps for iOS!
+You can now start developing and testing Flutter apps on iOS!
+
+<div class="card-grid link-cards">
+  <div class="card filled-card list-card">
+    <div class="card-leading">
+      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
+    </div>
+    <div class="card-header">
+      <span class="card-title">Continue learning Flutter</span>
+    </div>
+    <div class="card-content">
+      <ul>
+        <li>
+          <a class="text-button" href="/get-started/codelab">Write your first app</a>
+        </li>
+        <li>
+          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+        </li>
+        <li>
+          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
+        </li>
+        <li>
+          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
+        </li>
+        <li>
+          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card filled-card list-card">
+    <div class="card-leading">
+      <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
+    </div>
+    <div class="card-header">
+      <span class="card-title">Build for iOS</span>
+    </div>
+    <div class="card-content">
+      <ul>
+        <li>
+          <a class="text-button" href="/deployment/ios">Build and deploy to iOS</a>
+        </li>
+        <li>
+          <a class="text-button" href="/platform-integration/ios/c-interop">Bind to native iOS code</a>
+        </li>
+        <li>
+          <a class="text-button" href="/platform-integration/android/splash-screen">Add a splash screen</a>
+        </li>
+        <li>
+          <a class="text-button" href="/platform-integration/ios/platform-views">Embed native iOS views</a>
+        </li>
+        <li>
+          <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">Use Swift Package Manager</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
