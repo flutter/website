@@ -30,17 +30,23 @@ install and set up [Xcode][].
 
 [Xcode]: https://developer.apple.com/xcode/
 
-Configure Xcode's command-line tools:
+ 1. Configure Xcode's command-line tools:
 
-```console
-$ sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
-```
+    ```console
+    $ sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
+    ```
 
-Sign the Xcode license agreement:
+ 1. Sign the Xcode license agreement:
 
-```console
-$ sudo xcodebuild -license
-```
+    ```console
+    $ sudo xcodebuild -license
+    ```
+
+ 1. Download iOS platform support and simulator runtimes:
+
+    ```console
+    $ xcodebuild -downloadPlatform iOS
+    ```
 
 ## Install Rosetta
 
@@ -70,7 +76,7 @@ Install `cocoapods` following the
 ## Configure your target iOS device
 
 We recommend starting with the iOS Simulator as
-it's easier to get setup than a physical iOS device.
+it's easier to get set up than a physical iOS device.
 However, you should also test your app on an actual
 physical device.
 
@@ -79,19 +85,17 @@ physical device.
 
 ### Configure your iOS Simulator {:.no_toc}
 
-Use the following steps:
+Start the iOS Simulator with the following command:
 
-1. To install the iOS Simulator, run the following command:
+```console
+$ open -a Simulator
+```
 
-    ```console
-    $ xcodebuild -downloadPlatform iOS
-    ```
+If you need to install a simulator for a different OS version,
+check out [Downloading and installing additional Xcode components][]
+on the Apple Developer site.
 
-1. Start the Simulator with the following command:
-
-    ```console
-    $ open -a Simulator
-    ```
+[Downloading and installing additional Xcode components]: {{site.apple-dev}}/documentation/xcode/downloading-and-installing-additional-xcode-components
 
 {% endtab %}
 {% tab "Physical device" %}
@@ -184,10 +188,6 @@ If the **codesign wants to access key...** dialog appears:
 {% endtabs %}
 
 ---
-
-
-Follow the instructions in the output for software
-you might need to install or further tasks to perform.
 
 ## Start developing for iOS {: #start-developing}
 
