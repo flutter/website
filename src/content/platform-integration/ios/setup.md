@@ -20,8 +20,6 @@ ensure that it's [up to date][].
 [Get started with Flutter]: /get-started/install
 [up to date]: /install/upgrade
 
-[up to date]: /install/upgrade
-
 ## Install Xcode
 
 With Xcode, you can run Flutter apps on
@@ -29,10 +27,6 @@ an iOS physical device or on the iOS Simulator.
 
 If you haven't done so already,
 install and set up [Xcode][].
-If you have installed Xcode, ensure that
-it's up to date and continue to the next step.
-(After setting up the command-line tools
-and accepting the license, as shown here.)
 
 [Xcode]: https://developer.apple.com/xcode/
 
@@ -47,6 +41,32 @@ Sign the Xcode license agreement:
 ```console
 $ sudo xcodebuild -license
 ```
+
+## Install Rosetta, if applicable
+
+If you are developing on an [Apple Silicon][] (ARM) Mac,
+[install Rosetta 2][].
+
+```console
+sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+[Apple Silicon]: https://support.apple.com/en-us/116943
+[install Rosetta 2]: https://support.apple.com/en-us/102527
+
+## Install CocoaPods
+
+If your app depends on any [Flutter plugin][]
+that uses native iOS code,
+install [CocoaPods][cocoapods].
+CocoaPods bundles various dependencies that
+support connecting Flutter to native iOS code.
+
+1. Install `cocoapods` following the
+   [CocoaPods installation guide][cocoapods].
+
+[cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
+[Flutter plugin]: /packages-and-plugins/developing-packages#types
 
 ## Configure your target iOS device
 
@@ -73,44 +93,6 @@ Use the following steps:
     ```console
     $ open -a Simulator
     ```
-
-1. Set your Simulator to use a 64-bit device.
-
-   * From **Xcode**, choose a simulator device type.
-
-     1. Go to **Window** <span aria-label="and then">></span>
-        **Devices and Simulators** or press
-        <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>.
-
-     2. Once the **Devices and Simulators** dialog opens,
-        click **Simulators**.
-
-     3. Choose a **Simulator** from the left-hand list or
-        press **+** to create a new simulator.
-
-   * From the **Simulator** app, go to
-     **File** <span aria-label="and then">></span>
-     **Open Simulator** <span aria-label="and then">></span>
-     Choose your target iOS device.
-
-   * To check the device version in the Simulator,
-     open the **Settings** app <span aria-label="and then">></span>
-     **General** <span aria-label="and then">></span>
-     **About**.
-
-1. (_Only if needed_) If you selected a simulated
-   high-screen density iOS device,
-   it might overflow your screen. If that occurs,
-   change the presented size in the **Simulator** app.
-
-    | **Display Size**  |                          **Menu command**                          |     **Keyboard shortcut**     |
-    |:-----------------:|:------------------------------------------------------------------:|:-----------------------------:|
-    | Small             | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |
-    | Moderate          | **Window** <span aria-label="and then">></span> **Point Accurate** | <kbd>Cmd</kbd> + <kbd>2</kbd> |
-    | HD accurate       | **Window** <span aria-label="and then">></span> **Pixel Accurate** | <kbd>Cmd</kbd> + <kbd>3</kbd> |
-    | Fit to screen     | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
-    
-    {:.table .table-striped}
 
 {% endtab %}
 {% tab "Physical device" %}
@@ -143,9 +125,6 @@ on the device to protect against malicious software.
 
 1. When the **Turn on Developer Mode?** dialog appears,
    tap **Turn On**.
-
-   The dialog explains that Developer Mode requires reducing
-   the security of the iOS device.
 
 ### Create a developer code signing certificate
 
@@ -207,59 +186,6 @@ If the **codesign wants to access key...** dialog appears:
 
 ---
 
-## Install CocoaPods
-
-If your app depends on any [Flutter plugin][]
-that uses native iOS code,
-install [CocoaPods][cocoapods].
-CocoaPods bundles various dependencies that
-support connecting Flutter to native iOS code.
-
-1. Install `cocoapods` following the
-   [CocoaPods install guide][cocoapods].
-
-   ```console
-   $ sudo gem install cocoapods
-   ```
-
-1. Launch your preferred text editor to update its path variable.
-
-1. For example, if you use Zsh, open `~/.zshenv` in your text editor.
-
-1. Copy the following line and paste it at the end of your `~/.zshenv` file.
-
-   ```bash
-   export PATH=$HOME/.gem/bin:$PATH
-   ```
-
-1. Save your `~/.zshenv` file.
-
-1. To apply this change, restart all open terminal sessions.
-
-[cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
-[Flutter plugin]: /packages-and-plugins/developing-packages#types
-
-## Validate your development setup
-
-The `flutter doctor` command validates all required components of a
-complete Flutter development environment.
-
-From the command-line, run the following command:
-
-   ```console
-   $ flutter doctor
-   ```
-
-Since these instructions did not install for Android
-or desktop development, you can ignore Flutter doctor's
-error reports for those components for now.
-
-If the `flutter doctor` command returns other errors,
-run it again with the verbose flag.
-
-```console
-$ flutter doctor -v
-```
 
 Follow the instructions in the output for software
 you might need to install or further tasks to perform.

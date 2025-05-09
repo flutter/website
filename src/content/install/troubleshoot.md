@@ -1,18 +1,25 @@
 ---
-title: Install troubleshooting
+title: Troubleshooting installation
 short-title: Troubleshoot
 description: >-
-  Get help with common installation issues new Flutter developers have run into.
+  Get help with common installation issues that new
+  Flutter developers might have run into.
 ---
 
-This page describes some common installation issues new Flutter users have
-encountered and offers suggestions on how to resolve them.
-If you are still experiencing problems, consider reaching out to any of
+This page describes some common installation issues that
+new Flutter users have encountered and offers suggestions
+on how to resolve them.
+
+If you are still experiencing problems after
+using this page, consider reaching out to any of
 the resources listed under [community support channels][].
 To add a topic to this page or make a correction,
-you can file an issue or a pull request using the buttons at the top of the page.
+you can [file an issue][] or
+submit a [pull request][] on GitHub.
 
 [community support channels]: #community-support
+[file an issue]: {{site.github}}/flutter/website/issues/new
+[pull request]: {{site.github}}/flutter/website/pulls
 
 ## Get the Flutter SDK
 
@@ -169,6 +176,47 @@ To fix this:
    Toggle on the permission for all the code editors and terminals you use to
    launch Flutter apps.
    You might need to restart your code editor, terminal, and physical device.
+
+### Problem running the iOS Simulator
+
+Set your Simulator to use a 64-bit device.
+
+   * From **Xcode**, choose a simulator device type.
+
+     1. Go to **Window** <span aria-label="and then">></span>
+        **Devices and Simulators** or press
+        <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>.
+
+     2. Once the **Devices and Simulators** dialog opens,
+        click **Simulators**.
+
+     3. Choose a **Simulator** from the left-hand list or
+        press **+** to create a new simulator.
+
+   * From the **Simulator** app, go to
+     **File** <span aria-label="and then">></span>
+     **Open Simulator** <span aria-label="and then">></span>
+     Choose your target iOS device.
+
+   * To check the device version in the Simulator,
+     open the **Settings** app <span aria-label="and then">></span>
+     **General** <span aria-label="and then">></span>
+     **About**.
+
+### Window overflow using Simulator
+
+If you selected a simulated high-screen density iOS device,
+it might overflow your screen. If that occurs,
+change the presented size in the **Simulator** app.
+
+    | **Display Size**  |                          **Menu command**                          |     **Keyboard shortcut**     |
+    |:-----------------:|:------------------------------------------------------------------:|:-----------------------------:|
+    | Small             | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |
+    | Moderate          | **Window** <span aria-label="and then">></span> **Point Accurate** | <kbd>Cmd</kbd> + <kbd>2</kbd> |
+    | HD accurate       | **Window** <span aria-label="and then">></span> **Pixel Accurate** | <kbd>Cmd</kbd> + <kbd>3</kbd> |
+    | Fit to screen     | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
+    
+    {:.table .table-striped}
 
 ## Other problems
 
