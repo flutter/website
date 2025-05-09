@@ -239,7 +239,7 @@ You can now start developing and testing Flutter apps on iOS!
           <a class="text-button" href="/platform-integration/ios/c-interop">Bind to native iOS code</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/android/splash-screen">Add a splash screen</a>
+          <a class="text-button" href="/platform-integration/ios/apple-frameworks">Leverage system frameworks</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/ios/platform-views">Embed native iOS views</a>
