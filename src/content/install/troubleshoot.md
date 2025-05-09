@@ -177,47 +177,6 @@ To fix this:
    launch Flutter apps.
    You might need to restart your code editor, terminal, and physical device.
 
-### Problem running the iOS Simulator
-
-Set your Simulator to use a 64-bit device.
-
-   * From **Xcode**, choose a simulator device type.
-
-     1. Go to **Window** <span aria-label="and then">></span>
-        **Devices and Simulators** or press
-        <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>2</kbd>.
-
-     2. Once the **Devices and Simulators** dialog opens,
-        click **Simulators**.
-
-     3. Choose a **Simulator** from the left-hand list or
-        press **+** to create a new simulator.
-
-   * From the **Simulator** app, go to
-     **File** <span aria-label="and then">></span>
-     **Open Simulator** <span aria-label="and then">></span>
-     Choose your target iOS device.
-
-   * To check the device version in the Simulator,
-     open the **Settings** app <span aria-label="and then">></span>
-     **General** <span aria-label="and then">></span>
-     **About**.
-
-### Window overflow using Simulator
-
-If you selected a simulated high-screen density iOS device,
-it might overflow your screen. If that occurs,
-change the presented size in the **Simulator** app.
-
-    | **Display Size**  |                          **Menu command**                          |     **Keyboard shortcut**     |
-    |:-----------------:|:------------------------------------------------------------------:|:-----------------------------:|
-    | Small             | **Window** <span aria-label="and then">></span> **Physical Size**  | <kbd>Cmd</kbd> + <kbd>1</kbd> |
-    | Moderate          | **Window** <span aria-label="and then">></span> **Point Accurate** | <kbd>Cmd</kbd> + <kbd>2</kbd> |
-    | HD accurate       | **Window** <span aria-label="and then">></span> **Pixel Accurate** | <kbd>Cmd</kbd> + <kbd>3</kbd> |
-    | Fit to screen     | **Window** <span aria-label="and then">></span> **Fit Screen**     | <kbd>Cmd</kbd> + <kbd>4</kbd> |
-    
-    {:.table .table-striped}
-
 ## Other problems
 
 ### Exit code 69
