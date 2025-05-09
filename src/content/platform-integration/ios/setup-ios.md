@@ -36,8 +36,7 @@ and accepting the license, as shown here.)
 
 [Xcode]: https://developer.apple.com/xcode/
 
-To configure Xcode's command-line tools,
-use the following command:
+Configure Xcode's command-line tools:
 
 ```console
 $ sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
