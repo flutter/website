@@ -1,18 +1,25 @@
 ---
-title: Install troubleshooting
+title: Troubleshooting installation
 short-title: Troubleshoot
 description: >-
-  Get help with common installation issues new Flutter developers have run into.
+  Get help with common installation issues that new
+  Flutter developers might have run into.
 ---
 
-This page describes some common installation issues new Flutter users have
-encountered and offers suggestions on how to resolve them.
-If you are still experiencing problems, consider reaching out to any of
+This page describes some common installation issues that
+new Flutter users have encountered and offers suggestions
+on how to resolve them.
+
+If you are still experiencing problems after
+using this page, consider reaching out to any of
 the resources listed under [community support channels][].
 To add a topic to this page or make a correction,
-you can file an issue or a pull request using the buttons at the top of the page.
+you can [file an issue][] or
+submit a [pull request][] on GitHub.
 
 [community support channels]: #community-support
+[file an issue]: {{site.github}}/flutter/website/issues/new
+[pull request]: {{site.github}}/flutter/website/pulls
 
 ## Get the Flutter SDK
 
