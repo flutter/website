@@ -42,7 +42,7 @@ Sign the Xcode license agreement:
 $ sudo xcodebuild -license
 ```
 
-## Install Rosetta, if applicable
+## Install Rosetta
 
 If you are developing on an [Apple Silicon][] (ARM) Mac,
 [install Rosetta 2][].
