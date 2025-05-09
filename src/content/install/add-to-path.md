@@ -182,7 +182,7 @@ check out [this tutorial on setting your PATH][other-path].
 
     Replace `<path-to-sdk>` with the path to your Flutter SDK install.
 
-    ```bash title=".zshenv"
+    ```bash
     export PATH="<path-to-sdk>/bin:$PATH"
     ```
 
@@ -190,7 +190,7 @@ check out [this tutorial on setting your PATH][other-path].
     `development/flutter` folder inside your user directory,
     you'd add the following to the file:
 
-    ```bash title=".zshenv"
+    ```bash
     export PATH="$HOME/development/flutter/bin:$PATH"
     ```
 
