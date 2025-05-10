@@ -160,7 +160,7 @@ All repositories output corresponding domain models.
 These data models differ from API models in that they only contain the data
 needed by the rest of the app.
 API models contain raw data that often needs to be filtered,
-combined, or deleted to be useful to the app's s.
+combined, or deleted to be useful to the app's view models.
 The repo refines the raw data and outputs it as domain models.
 
 In the example app, domain models are exposed through
