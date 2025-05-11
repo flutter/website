@@ -292,6 +292,11 @@ details {
   }
 }
 
+hr {
+  border: 1px solid var(--site-outline-variant);
+  border-radius: 1rem;
+}
+
 // TODO(parlough): Clean this up and simplify list item styles for all content.
 ol.steps {
   position: relative;
