@@ -3,6 +3,7 @@ import {slugify} from './utils/slugify.js';
 import {fromHtml} from 'hast-util-from-html';
 import {selectAll} from 'hast-util-select';
 import {toHtml} from 'hast-util-to-html';
+import {escapeHtml} from 'markdown-it/lib/common/utils.mjs';
 
 export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);
@@ -38,8 +39,21 @@ function _setupOsSelector(eleventyConfig: UserConfig): void {
 
 function _setupMedia(eleventyConfig: UserConfig): void {
   eleventyConfig.addShortcode('ytEmbed', function (id: string, title: string, fullWidth = false) {
+    const escapedTitle = title && title.length > 0 ? escapeHtml(title) : '';
+
+    let startTime = 0;
+    if (id.includes('?')) {
+      id = id.split('?')[0];
+
+      const idAndStartTime = id.split('start=');
+      if (idAndStartTime.length > 1) {
+        const startTimeString = idAndStartTime[1];
+        startTime = Number.parseInt(startTimeString);
+      }
+    }
+
     return `
-<lite-youtube videoid="${id}" videotitle="${title}" ${fullWidth ? 'class="full-width"' : ''}>
+<lite-youtube videoid="${id}" videotitle="${escapedTitle}" videoStartAt="${startTime}" ${fullWidth ? 'class="full-width"' : ''}>
   <p><a class="lite-youtube-fallback" href="https://www.youtube.com/watch/${id}" target="_blank" rel="noopener">Watch on YouTube in a new tab: "${title}"</a></p>
 </lite-youtube>`;
   });
