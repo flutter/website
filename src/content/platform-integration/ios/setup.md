@@ -64,9 +64,6 @@ an iOS physical device or on the iOS Simulator.
        Before agreeing to the terms of each license,
        read each with care.
 
-       Once you've accepted all the necessary licenses successfully,
-       the command should output how to review the licenses.
-
  1. <h3>Download prerequisite tooling</h3>
 
     To download iOS platform support and
@@ -91,11 +88,11 @@ an iOS physical device or on the iOS Simulator.
     To support [Flutter plugins][] that use native iOS or macOS code,
     install the latest version of [CocoaPods][].
 
-    Install CocoaPods following the
+    Install CocoaPods by following the
     [CocoaPods installation guide][].
 
     If you've already installed CocoaPods,
-    update it following the [CocoaPods update guide][].
+    update it by following the [CocoaPods update guide][].
 
 {: .steps}
 
@@ -172,7 +169,7 @@ Set up each iOS device on which you want to test.
 
     To create a signed development certificate,
     you need an Apple ID.
-    If you don't have one, create one.
+    If you don't have one, [create one][apple-account-new].
     You must also enroll in the [Apple Developer program][]
     and create an [Apple Developer account][].
     If you're just _testing_ your app on an iOS device,
@@ -212,6 +209,7 @@ Set up each iOS device on which you want to test.
 
 {: .steps}
 
+[apple-account-new]: https://support.apple.com/en-us/108647
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Apple Developer program]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
