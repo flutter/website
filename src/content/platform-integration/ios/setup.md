@@ -224,7 +224,7 @@ Set up each iOS device on which you want to test.
 **Congratulations.**
 Now that you've set up iOS development for Flutter,
 you can continue your Flutter learning journey while testing on iOS
-or begin improving integration with Android.
+or begin improving integration with iOS.
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
