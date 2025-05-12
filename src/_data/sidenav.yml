@@ -595,8 +595,8 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
-        - title: Add Windows as build target
-          permalink: /platform-integration/windows/install-windows
+        - title: Set up Windows development
+          permalink: /platform-integration/windows/setup
         - title: Build a Windows app
           permalink: /platform-integration/windows/building
 
