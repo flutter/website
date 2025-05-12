@@ -107,7 +107,7 @@ an iOS physical device or on the iOS Simulator.
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
 [CocoaPods update guide]: https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods
 
-## Set up your target iOS device {: #set-up-devices}
+## Set up an iOS device {: #set-up-devices}
 
 We recommend starting with the iOS Simulator as
 it's easier to get set up than a physical iOS device.
