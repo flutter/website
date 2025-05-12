@@ -164,7 +164,7 @@ or begin expanding integration with macOS.
   </div>
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-desktop.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
+      <img src="/assets/images/decorative/flutter-on-desktop.svg" height="160" aria-hidden="true" alt="An outline of Flutter desktop support.">
     </div>
     <div class="card-header">
       <span class="card-title">Build for macOS</span>
