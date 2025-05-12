@@ -40,7 +40,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-visual-studio %}
 {%- when 'Y' %}
-* [Add Windows desktop compilation tools](/platform-integration/windows/install-windows/install-windows-from-{{mod-target}})
+* [Add Windows desktop compilation tools](/platform-integration/windows/setup)
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 

@@ -253,7 +253,7 @@ the Flutter team recommends you first try out
           <a class="text-button" href="/platform-integration/macos/install-macos">Target macOS</a>
         </li>
         <li class="windows-only">
-          <a class="text-button" href="/platform-integration/windows/install-windows">Target Windows</a>
+          <a class="text-button" href="/platform-integration/windows/setup">Target Windows</a>
         </li>
         <li class="linux-only">
           <a class="text-button" href="/platform-integration/linux/install-linux">Target Linux</a>

@@ -152,6 +152,8 @@
       { "source": "/platform-integration/web/initialization-legacy", "destination": "/platform-integration/web/initialization", "type": 301 },
       { "source": "/platform-integration/web/install-web", "destination": "/platform-integration/web/setup", "type": 301 },
       { "source": "/platform-integration/web/bootstrapping", "destination": "/platform-integration/web/initialization", "type": 301 },
+      { "source": "/platform-integration/windows/install-windows", "destination": "/platform-integration/windows/setup", "type": 301 },
+      { "source": "/platform-integration/windows/install-windows/:rest*", "destination": "/platform-integration/windows/setup", "type": 301 },
       { "source": "/platform-integration/windows/run-loop-migration", "destination": "/release/breaking-changes/windows-run-loop", "type": 301 },
       { "source": "/platform-integration/windows/version-migration", "destination": "/release/breaking-changes/windows-version-information", "type": 301 },
       { "source": "/platform-integration/windows/dark-mode-migration", "destination": "/release/breaking-changes/windows-dark-mode", "type": 301 },
