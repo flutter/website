@@ -11,14 +11,15 @@ Flutter app.
 [iOS app extensions][] allow you to expand functionality
 outside of your iOS app. Your app could appear as a home screen widget,
 or you can make portions of your app available within other apps.
-For example, when a user selects a photo to
-share in the iOS Photo app, a Flutter app called
+
+In the following example, when a user selects a
+photo to share in the iOS Photo app, a Flutter app called
 `Example App With Extension` is displayed in the
-Photo apps share sheet.
+Photo apps share sheet:
 
 <figure>
   <div class="site-figure-container">
-    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
+    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension.png' alt='Share sheet with a Flutter app in it.' height='400'>
   </div>
 </figure>
 
@@ -29,7 +30,7 @@ Photo apps share sheet.
 If you want to integrate your Flutter app with
 the iOS operating system, you can add iOS app extensions
 to your Flutter project. For a seamless workflow, the
-following steps show how to add a `Share Extension`
+following steps show how to add a [Share][]
 app extension to a new Flutter app called
 `example_app_with_extension`, but you can always start with
 an existing project.
@@ -48,7 +49,7 @@ an existing project.
     $ cd example_app_with_extension && open ios/Runner.xcworkspace
     ```
 
-1.  In Xcode, add an app extension called `Share Extension`
+1.  In Xcode, add an app extension called `Share`
     and call it `ShareExtension`.
 
     *   In the Xcode menu bar, select
@@ -65,6 +66,9 @@ an existing project.
 
 1.  In Xcode, change the order of the build process.
 
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+    
     *   In the **project navigator**, at the top, select
         **Runner**.
 
@@ -92,6 +96,7 @@ information about the generated code and WidgetKit, see
 
 [Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
 [Test your app with the simulator]: #test-extensions
+[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 
 ## Test an iOS app extension {: #test-extensions }
 
@@ -240,9 +245,10 @@ you can use [Deep Linking][].
 ### Add a scrollable list {: #advanced-scrolling-behavior }
 
 By default, flutter view does not handle scroll gestures
-in a share extension. To support a scrollable list in
-the share extension, follow [these instructions][].
+in a [Share][] extension. To support a scrollable list in
+the Share extension, follow [these instructions][].
 
+[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [these instructions]: {{site.github}}/flutter/flutter/issues/164670#issuecomment-2740702986
 
 ### Open a Flutter app through an iOS app extension {: #creating-app-extension-uis-with-flutter }
@@ -250,14 +256,15 @@ the share extension, follow [these instructions][].
 You can open your Flutter app directly
 through some iOS app extensions, such as the
 [Share][] extension, with a `FlutterViewController`.
+
 In the following example, a Flutter app called
 `Example App With Extension` is opened through the
 Share extension, which lets users share content
-between apps.
+between apps:
 
 <figure>
   <div class="site-figure-container">
-    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-open-app.gif' alt='An example of an entry added to the share menu by a Flutter app' height='300'>
+    <img src='/assets/images/docs/development/platform-integration/app-extensions/share-extension-open-app.gif' alt='An example of an entry added to the share menu by a Flutter app' height='400'>
   </div>
 </figure>
 
@@ -283,8 +290,8 @@ called `Runner`, and the Flutter app is called
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   In the main window under **TARGETS**, select the
-        scheme called **ShareExtension**.
+    *   In the main window under **TARGETS**, select
+        **ShareExtension**.
 
     *   Open the **Build Settings** tab.
 
@@ -319,7 +326,8 @@ called `Runner`, and the Flutter app is called
 
 1.  In Xcode, share the build configurations.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
     *   In the main window under **PROJECT**, select
         **Runner**.
@@ -338,7 +346,8 @@ called `Runner`, and the Flutter app is called
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
     *   Select **Runner** > **ShareExtension** > **Info**.
 
@@ -357,7 +366,8 @@ called `Runner`, and the Flutter app is called
 1.  In Xcode, update the `ShareViewController` to use the
     `FlutterViewController`.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
     *   Select **Runner** > **ShareExtension** > **ShareViewController**.
 
@@ -379,7 +389,9 @@ class ShareViewController: UIViewController {
     }
 
     func showFlutter() {
-        let flutterViewController = FlutterViewController(project: nil, nibName: nil, bundle: nil)
+        let flutterEngine = FlutterEngine(name: "my flutter engine")
+        flutterEngine.run()
+        let flutterViewController = FlutterViewController(engine: flutterEngine, nibName: nil, bundle: nil)
         addChild(flutterViewController)
         view.addSubview(flutterViewController.view)
         flutterViewController.view.frame = view.bounds
@@ -398,8 +410,8 @@ class ShareViewController: UIViewController {
 {% tab "UIKit-ObjC" %}
 
 ```objc title="ShareViewController.h"
-#import <UIKit/UIKit.h>
-#import <Flutter/Flutter.h>
+@import Flutter;
+@import UIKit;
 
 @interface ShareViewController : UIViewController
 
@@ -443,7 +455,6 @@ class ShareViewController: UIViewController {
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
 
-
 ### Register plugins
 
 Use the following steps to register plugins for
@@ -458,10 +469,11 @@ called `Runner`, and the Flutter app is called
 1.  In Xcode, add `GeneratedPluginRegistrant.m` to the
     app extension target.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
-    *   In the main window under **TARGETS**, select the
-        scheme called **ShareExtension**.
+    *   In the main window under **TARGETS**, select 
+        **ShareExtension**.
 
     *   Open the **Build Phases** tab.
 
@@ -478,24 +490,25 @@ called `Runner`, and the Flutter app is called
 1.  (Swift only) In Xcode, update the
     `SWIFT_OBJC_BRIDGING_HEADER` build setting.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
-    *   In the main window under **TARGETS**, select the
-        scheme called **ShareExtension**.
+    *   In the main window under **TARGETS**, select
+        **ShareExtension**.
 
     *   Open the **Build Settings** tab.
 
-    *   Navigate to **Swift Compiler - General** and make
-        sure that the following key and value exist:
-        
-        ```console
-        Objective-C Bridging Header: Runner/Runner-Bridging-Header.h
-        ```
+    *   Select the **All** filter.
+
+    *   Navigate to **Swift Compiler - General** and change
+        the value for the **Objective-C Bridging Header**
+        key to **Runner/Runner-Bridging-Header.h**.
 
 1.  In Xcode, update the code for `ShareViewController`
     to register `GeneratedPluginRegistrant.h`.
 
-    *   Open the **project navigator**.
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
 
     *   Select **Runner** > **ShareExtension** > **ShareViewController**.
 
@@ -508,7 +521,7 @@ called `Runner`, and the Flutter app is called
 
 ```swift title="ShareViewController.swift"
 // Add this inside `showFlutter()` at the top
-GeneratedPluginRegistrant.register(with: self)
+GeneratedPluginRegistrant.register(with: flutterEngine)
 ```
 
 {% endtab %}
