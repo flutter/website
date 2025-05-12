@@ -145,6 +145,8 @@
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
       { "source": "/platform-integration/c-interop", "destination": "/platform-integration", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
+      { "source": "/platform-integration/ios/install-ios", "destination": "/platform-integration/ios/setup", "type": 301 },
+      { "source": "/platform-integration/ios/install-ios/:rest*", "destination": "/platform-integration/ios/setup", "type": 301 },
       { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
       { "source": "/platform-integration/macos/install-macos", "destination": "/platform-integration/macos/setup", "type": 301 },
       { "source": "/platform-integration/macos/install-macos/:rest*", "destination": "/platform-integration/macos/setup", "type": 301 },
