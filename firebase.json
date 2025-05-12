@@ -146,6 +146,8 @@
       { "source": "/platform-integration/c-interop", "destination": "/platform-integration", "type": 301 },
       { "source": "/platform-integration/ios-app-clip", "destination": "/platform-integration/ios/ios-app-clip", "type": 301 },
       { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
+      { "source": "/platform-integration/macos/install-macos", "destination": "/platform-integration/macos/setup", "type": 301 },
+      { "source": "/platform-integration/macos/install-macos/:rest*", "destination": "/platform-integration/macos/setup", "type": 301 },
       { "source": "/platform-integration/platform-adaptations", "destination": "/ui/adaptive-responsive/platform-adaptations", "type": 301 },
       { "source": "/platform-integration/platform-views", "destination": "/platform-integration/android/platform-views", "type": 301 },
       { "source": "/platform-integration/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
