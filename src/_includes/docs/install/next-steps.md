@@ -36,7 +36,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-linux-tools %}
 {%- when 'Y' %}
-* [Add Linux compilation tools](/platform-integration/linux/install-linux/install-linux-from-{{mod-target}})
+* [Add Linux compilation tools](/platform-integration/linux/setup)
 {%- endcase %}
 {%- case next-step.add-visual-studio %}
 {%- when 'Y' %}

@@ -554,8 +554,8 @@
     - title: Linux
       permalink: /platform-integration/linux
       children:
-        - title: Add Linux as build target
-          permalink: /platform-integration/linux/install-linux
+        - title: Set up Linux development
+          permalink: /platform-integration/linux/setup
         - title: Build a Linux app
           permalink: /platform-integration/linux/building
     - title: macOS
