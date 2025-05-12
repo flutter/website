@@ -88,7 +88,7 @@ an iOS physical device or on the iOS Simulator.
 
  1. <h3>Install CocoaPods</h3>
 
-    To support [Flutter plugins][] that use native macOS code,
+    To support [Flutter plugins][] that use native iOS or macOS code,
     install the latest version of [CocoaPods][].
 
     Install CocoaPods following the
@@ -173,7 +173,7 @@ Set up each iOS device on which you want to test.
     To create a signed development certificate,
     you need an Apple ID.
     If you don't have one, create one.
-    You must also enroll in the [Apple Developer][] program
+    You must also enroll in the [Apple Developer program][]
     and create an [Apple Developer account][].
     If you're just _testing_ your app on an iOS device,
     a personal Apple Developer account is free and works.
@@ -213,7 +213,7 @@ Set up each iOS device on which you want to test.
 {: .steps}
 
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
-[Apple Developer]: {{site.apple-dev}}/programs/
+[Apple Developer program]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
 
 {% endtab %}
