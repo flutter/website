@@ -186,6 +186,7 @@ or begin expanding integration with macOS.
         <li>
           <a class="text-button" href="/packages-and-plugins/swift-package-manager/for-app-developers">Use Swift Package Manager</a>
         </li>
+      </ul>
     </div>
   </div>
 </div>
