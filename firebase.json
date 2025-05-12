@@ -148,6 +148,8 @@
       { "source": "/platform-integration/ios/install-ios", "destination": "/platform-integration/ios/setup", "type": 301 },
       { "source": "/platform-integration/ios/install-ios/:rest*", "destination": "/platform-integration/ios/setup", "type": 301 },
       { "source": "/platform-integration/ios/splash-screen", "destination": "/platform-integration/ios/launch-screen", "type": 301 },
+      { "source": "/platform-integration/linux/install-linux", "destination": "/platform-integration/linux/setup", "type": 301 },
+      { "source": "/platform-integration/linux/install-linux/:rest*", "destination": "/platform-integration/linux/setup", "type": 301 },
       { "source": "/platform-integration/macos/install-macos", "destination": "/platform-integration/macos/setup", "type": 301 },
       { "source": "/platform-integration/macos/install-macos/:rest*", "destination": "/platform-integration/macos/setup", "type": 301 },
       { "source": "/platform-integration/platform-adaptations", "destination": "/ui/adaptive-responsive/platform-adaptations", "type": 301 },
