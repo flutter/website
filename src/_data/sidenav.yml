@@ -561,8 +561,8 @@
     - title: macOS
       permalink: /platform-integration/macos
       children:
-        - title: Add macOS as build target
-          permalink: /platform-integration/macos/install-macos
+        - title: Set up macOS development
+          permalink: /platform-integration/macos/setup
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
         - title: Bind to native code
@@ -595,8 +595,8 @@
     - title: Windows
       permalink: /platform-integration/windows
       children:
-        - title: Add Windows as build target
-          permalink: /platform-integration/windows/install-windows
+        - title: Set up Windows development
+          permalink: /platform-integration/windows/setup
         - title: Build a Windows app
           permalink: /platform-integration/windows/building
 

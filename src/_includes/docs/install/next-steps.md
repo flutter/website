@@ -32,7 +32,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-xcode %}
 {%- when 'Y' %}
-* [Add macOS compilation tools](/platform-integration/macos/install-macos/install-macos-from-{{mod-target}})
+* [Add macOS compilation tools](/platform-integration/macos/setup)
 {%- endcase %}
 {%- case next-step.add-linux-tools %}
 {%- when 'Y' %}
@@ -40,7 +40,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-visual-studio %}
 {%- when 'Y' %}
-* [Add Windows desktop compilation tools](/platform-integration/windows/install-windows/install-windows-from-{{mod-target}})
+* [Add Windows desktop compilation tools](/platform-integration/windows/setup)
 {%- endcase %}
 * [Uninstall Flutter][uninstall]
 
