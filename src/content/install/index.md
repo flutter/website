@@ -63,7 +63,7 @@ on your preferred development and target device.
           <span class="card-subtitle">For specific releases</span>
         </div>
         <div class="card-content">
-          <p>Manually install and set up the Flutter SDK.</p>
+          <p>Manually install and set up a specific Flutter SDK release.</p>
         </div>
       </a>
     </div>
@@ -81,7 +81,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On any device</span>
         </div>
         <div class="card-content">
-          <p>Quickly build and run simple single-file Flutter apps on the web.</p>
+          <p>Set up your development environment to build Flutter apps for Android.</p>
         </div>
       </a>
       <a class="card outlined-card" href="/platform-integration/ios/setup" target="_blank">
@@ -90,7 +90,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On macOS only</span>
         </div>
         <div class="card-content">
-          <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+          <p>Set up your development environment to build Flutter apps for iOS.</p>
         </div>
       </a>
       <a class="card outlined-card" href="/platform-integration/web/setup" target="_blank">
@@ -99,7 +99,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On any device</span>
         </div>
         <div class="card-content">
-          <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+          <p>Set up your development environment to build Flutter apps for the web.</p>
         </div>
       </a>
       <a class="card outlined-card" href="/platform-integration/windows/setup" target="_blank">
@@ -108,7 +108,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On Windows only</span>
         </div>
         <div class="card-content">
-          <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+          <p>Set up your development environment to build Flutter apps for Windows desktop.</p>
         </div>
       </a>
       <a class="card outlined-card" href="/platform-integration/macos/setup" target="_blank">
@@ -117,7 +117,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On macOS only</span>
         </div>
         <div class="card-content">
-          <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+          <p>Set up your development environment to build Flutter apps for macOS desktop.</p>
         </div>
       </a>
       <a class="card outlined-card" href="/platform-integration/linux/setup" target="_blank">
@@ -126,7 +126,7 @@ on your preferred development and target device.
           <span class="card-subtitle">On Linux only</span>
         </div>
         <div class="card-content">
-          <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+          <p>Set up your development environment to build Flutter apps for Linux desktop.</p>
         </div>
       </a>
     </div>
