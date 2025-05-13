@@ -6,17 +6,18 @@ description: >
 
 ## Summary
 
-Both elevation and thickness semantics properties and their related apis were removed
+Both elevation and thickness semantics properties and their related APIs were removed.
 
 ## Context
 
-Both elevation and thickness semantics properties were created for fuchsia's 3D rendering.
-They were never implemented and thus remained unused. There were also no other known usage
-for these properties. These properties added unnecessary code complexity and were removed.
+Both elevation and thickness semantics properties were created for Fuchsia's 3D rendering.
+They were never implemented and thus remained unused. There was also no other known usage
+for these properties. These properties added unnecessary code complexity and have been removed.
 
 ## Description of change
 
-We removed `SemanticsConfiguration.elevation`, `SemanticsConfiguration.thickness`,
+The following properties are removed `SemanticsConfiguration.elevation`,
+`SemanticsConfiguration.thickness`,
 `SemanticsNode.thickness`, `SemanticsNode.elevation`, and `SemanticsNode.elevationAdjustment`.
 
 ## Migration guide
