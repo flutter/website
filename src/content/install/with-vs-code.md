@@ -228,7 +228,7 @@ the Flutter team recommends you first try out
 [developing for the web][web-setup]!
 :::
 
-[web-setup]: /platform-integration/web/install-web
+[web-setup]: /platform-integration/web/setup
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
@@ -241,7 +241,7 @@ the Flutter team recommends you first try out
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/platform-integration/web/install-web">Target the web</a>
+          <a class="text-button" href="/platform-integration/web/setup">Target the web</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/android/setup">Target Android</a>
