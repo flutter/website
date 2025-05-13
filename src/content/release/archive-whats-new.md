@@ -364,7 +364,7 @@ You might also check out [Introducing Dart 3][].
 [top app bar and navigation bar]: /platform-integration/platform-adaptations#top-app-bar-and-navigation-bar
 [bottom navigation bar]: /platform-integration/platform-adaptations#bottom-navigation-bars
 [Anatomy of an app]: /resources/architectural-overview#anatomy-of-an-app
-[SDK archive page]: /release/archive
+[SDK archive page]: /install/archive
 
 **Codelabs**
 
@@ -1433,7 +1433,7 @@ or [download the release][].
 We are updating DartPad to work with Flutter. Try the new
 Basic Flutter layout codelab and tell us what you think!
 
-[download the release]: /release/archive
+[download the release]: /install/archive
 [Flutter 1.5]: {{site.google-blog}}/2019/05/Flutter-io19.html
 [1.5.4 release notes]: /release/release-notes/release-notes-1.5.4
 

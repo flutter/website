@@ -51,6 +51,26 @@
         - title: Target web
           permalink: /get-started/install/chromeos/web
 
+- title: Install Flutter
+  permalink: /install
+  hiddenChildren: true
+  children:
+    - title: Overview
+      permalink: /install
+    - title: Install with VS Code
+      permalink: /install/with-vs-code
+    - title: Install manually
+      permalink: /install/manual
+    - title: Update SDK
+      permalink: /install/upgrade
+    - title: SDK archive
+      permalink: /install/archive
+    - divider
+    - title: Add to path
+      permalink: /install/add-to-path
+    - title: Troubleshoot
+      permalink: /install/troubleshoot
+
 - title: Learn Flutter
   children:
     - title: Introduction
@@ -106,11 +126,6 @@
 - title: Stay up to date
   permalink: /release
   children:
-    - title: Upgrade
-      permalink: /install/upgrade
-    - title: SDK archive
-      permalink: /release/archive
-    - divider
     - title: Release notes
       permalink: /release/release-notes
     - title: Breaking changes
