@@ -113,14 +113,14 @@ application and Share extension from
 
 {% tab "Simulator" %}
 
-1.  Add an app extension to your project.
+1.  In Xcode, [add an app extension to your project][].
 
-1.  In Xcode, run your iOS app.
+1.  In the console, use the following command to run your
+    iOS app:
 
-    *   In Xcode, go to **Product** > **Scheme** and then
-        select **Runner**.
-
-    *   Run the scheme (**Product** > **Run**).
+    ```console
+    $ flutter run
+    ```
 
 1.  In the simulator, test your app extension.
 
@@ -130,26 +130,32 @@ application and Share extension from
     *   Select a photo, tap the share button, then tap
         on the share extension icon of your app.
 
-[Adding iOS app extensions]: #add-extension
-
 {% endtab %}
 
 {% tab "Physical device" %}
 
-1. Add an app extension to your project.
+1.  Add an app extension to your project.
 
-1. Launch the Share extension target.
+1.  In the console, run your Flutter app in release mode:
 
-1. In the popup window that says **Choose an app to run**,
-   select an app that can be used to test the 
-   Share extension, such as the Photos app.
+    ```console
+    $ flutter run --release
+    ```
 
-1. Select a photo, tap the share button,
-   then tap on the share extension icon of your app.
+1.  On your device, test your app extension.
+
+    *   Launch an app that supports the Share extension,
+        such as the Photos app.
+    
+    *   Select a photo, tap the share button, then tap on
+        the share extension icon of your app.
 
 {% endtab %}
 
 {% endtabs %}
+
+[Adding iOS app extensions]: #add-extension
+[add an app extension to your project]: #add-extension
 
 ## Additional ways to interact with iOS app extensions {: #interact-app-extensions }
 
@@ -251,14 +257,14 @@ the Share extension, follow [these instructions][].
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [these instructions]: {{site.github}}/flutter/flutter/issues/164670#issuecomment-2740702986
 
-### Open a Flutter app through an iOS app extension {: #creating-app-extension-uis-with-flutter }
+### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter }
 
 You can open your Flutter app directly
-through some iOS app extensions, such as the
+in some iOS app extensions, such as the
 [Share][] extension, with a `FlutterViewController`.
 
 In the following example, a Flutter app called
-`Example App With Extension` is opened through the
+`Example App With Extension` is opened in the
 Share extension, which lets users share content
 between apps:
 
@@ -342,6 +348,12 @@ called `Runner`, and the Flutter app is called
 
     *   Repeat the previous step for **Profile**, and
         **Release**.
+    
+    *   When you are finished, make sure that the
+        configurations look similar to the following:
+
+        ![Xcode configurations](/assets/images/docs/development/platform-integration/app-extensions/xcode-configurations.png)
+
 
 1.  (Optional) In Xcode, replace any storyboard files with
     an extension class, if needed.
