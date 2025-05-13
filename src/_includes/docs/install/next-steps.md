@@ -28,7 +28,7 @@ consult the following resources.
 {%- endcase %}
 {%- case next-step.add-simulator %}
 {%- when 'Y' %}
-* [Add iOS simulator or device](/platform-integration/ios/install-ios/install-ios-from-{{mod-target}})
+* [Add iOS simulator or device](/platform-integration/ios/setup)
 {%- endcase %}
 {%- case next-step.add-xcode %}
 {%- when 'Y' %}
