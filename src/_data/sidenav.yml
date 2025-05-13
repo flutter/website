@@ -60,7 +60,7 @@
       permalink: /install/with-vs-code
     - title: Install manually
       permalink: /install/manual
-    - title: Update SDK
+    - title: Upgrade SDK
       permalink: /install/upgrade
     - title: SDK archive
       permalink: /install/archive
