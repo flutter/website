@@ -109,7 +109,7 @@ The Flutter Property Editor can be used in conjunction with hot reload to view c
     * [VS Code instructions][]
     * [Android Studio/IntelliJ instructions][]
 
-3.  Any changes you make from the Flutter Property Editor will automatically be
+3.  Any changes you make from the Flutter Property Editor are automatically
     reflected in your running app.
 
 ## Feature set
