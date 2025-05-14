@@ -162,7 +162,7 @@ Each property input in the Flutter Property Editor is accompanied by information
 to help you understand its usage.
 
 - **Type and name:** The **type** (for example, `StackFit`) and the **name**
-  (for example, `fit`) of the constructor parameter  are displayed as a label
+  (for example, `fit`) of the constructor parameter are displayed as a label
   for each input field.
 
     ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
