@@ -43,7 +43,7 @@ UI development and iteration.
     }
     ```
 
-4.  The Flutter Property Editor panel will automatically update to display the
+4.  The Flutter Property Editor panel automatically updates to display the
     properties of the widget at your cursor location.
 
 [VS Code]: /tools/vs-code#property-editor
