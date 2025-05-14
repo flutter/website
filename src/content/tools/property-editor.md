@@ -79,7 +79,7 @@ Both actions will automatically:
 [Android Studio/IntelliJ instructions]: /tools/devtools/android-studio/#run-and-debug
 [Flutter inspector]: /tools/devtools/inspector
 [inspector's widget tree]: /tools/devtools/inspector#flutter-widget-tree
-["Select Widget Mode"]: /tools/devtools/inspector#inspect-widget
+["Select Widget Mode"]: /tools/devtools/inspector#inspect-a-widget
 
 #### Integration with hot reload
 
