@@ -804,6 +804,8 @@
           permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
+    - title: Flutter Property Editor
+      permalink: /tools/property-editor    
     - title: SDK overview
       permalink: /tools/sdk
     - title: Flutter's pubspec options
