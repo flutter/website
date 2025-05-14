@@ -211,7 +211,7 @@ properties of interest.
     ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}   
 
 * **Filter by "set" properties:**
-    * Use the filter menu button to open  the filter options. Check "Only
+    * Use the filter menu button to open the filter options. Check "Only
       include properties that are set in the code."
     * This will hide all properties that have not been explicitly set in your
       code, allowing you to focus only on the properties you have explictly set.
