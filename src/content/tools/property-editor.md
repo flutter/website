@@ -143,7 +143,7 @@ constructor argument.
 - **string, double, and int properties:**
     * These are represented by text input fields.
     * Simply type the new value into the field.
-    * Press Tab or Enter to apply the edit directly to your source code.
+    * Press ••Tab•• or ••Enter•• to apply the edit directly to your source code.
 
 - **boolean and enum properties:**
     * These are represented by dropdown menus.
