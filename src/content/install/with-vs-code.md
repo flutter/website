@@ -294,7 +294,7 @@ the Flutter team recommends you first try out
     <div class="card-content">
       <ul>
         <li>
-          <a class="text-button" href="/install/update">Update Flutter</a>
+          <a class="text-button" href="/install/upgrade">Update Flutter</a>
         </li>
         <li>
           <a class="text-button" href="/release/release-notes">Find out what's new</a>

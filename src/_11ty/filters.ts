@@ -31,6 +31,15 @@ export function registerFilters(eleventyConfig: UserConfig): void {
   eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
   eleventyConfig.addFilter('slugify', slugify);
   eleventyConfig.addFilter('camelCaseBreaker', camelCaseBreaker);
+  eleventyConfig.addFilter('startsWith', startsWith);
+}
+
+function startsWith(content: string, prefix: string): boolean {
+  if (typeof content !== 'string' || typeof prefix !== 'string') {
+    return false;
+  }
+
+  return content.startsWith(prefix);
 }
 
 function camelCaseBreaker(stringToBreak: string): string {

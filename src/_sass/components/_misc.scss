@@ -61,11 +61,19 @@
     @media (min-width: 576px) {
       font-size: 150%;
       padding: 0.7rem;
+
+      .material-symbols {
+        font-size: 120%;
+      }
     }
 
     @media (min-width: 900px) {
       font-size: 200%;
       padding: 1rem;
+
+      .material-symbols {
+        font-size: 150%;
+      }
     }
   }
 }
