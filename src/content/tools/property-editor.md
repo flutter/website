@@ -227,7 +227,7 @@ properties of interest.
     ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"} 
 
 * **Clear the current filter:**
-    * The clear button (an `X` icon button) will clear out any active filters,
+    * The clear button (an `X` icon button) clears out any active filters,
       displaying all properties of the widget again.
 
     ![Filter input with clear button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-clear-button.png){:width="500px"}
