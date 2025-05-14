@@ -79,7 +79,7 @@ used as the visual version of the label.
 [Highlight repaints]: #highlight-repaints
 [Highlight oversized images]: #highlight-oversized-images
 
-## Inspecting a widget {: #inspect-widget}
+## Inspecting a widget
 
 You can browse the interactive widget tree to view nearby
 widgets and see their field values.

@@ -75,8 +75,8 @@ Both actions will automatically:
 - Jump to the widget's declaration in your source code.
 - Load the selected widget in the Flutter Property Editor.
 
-[VS Code instructions]: tools/devtools/vscode/#run-and-debug
-[Android Studio/IntelliJ instructions]: tools/devtools/android-studio/#run-and-debug
+[VS Code instructions]: /tools/devtools/vscode/#run-and-debug
+[Android Studio/IntelliJ instructions]: /tools/devtools/android-studio/#run-and-debug
 [Flutter inspector]: /tools/devtools/inspector
 [inspector's widget tree]: /tools/devtools/inspector#flutter-widget-tree
 ["Select Widget Mode"]: /tools/devtools/inspector#inspect-widget
