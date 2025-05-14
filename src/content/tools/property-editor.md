@@ -133,7 +133,7 @@ Editor, make sure to follow the [Dart style guide][].
 
 ![Flutter Property Editor gif displaying the documentation for a Text widget](/assets/images/docs/tools/devtools/property-editor-documentation.gif)
 
-[Dart style guide]: https://dart.dev/effective-dart/documentation
+[Dart style guide]: {{site.dart-site}}/effective-dart/documentation
 
 ### Editing widget properties
 
