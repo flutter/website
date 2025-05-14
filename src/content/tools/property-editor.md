@@ -194,8 +194,8 @@ to help you understand its usage.
 
 ### Filtering properties
 
-For widgets with many properties, the filter bar can help to quickly locate the
-ones you are interested in.
+For widgets with many properties, the filter bar can help to quickly locate
+properties of interest.
 
 * **Filter by text:**
     * Simply type into the filter bar. The list of properties will dynamically
