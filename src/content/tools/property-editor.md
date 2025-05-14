@@ -168,7 +168,7 @@ to help you understand its usage.
     ![Type and name label for a property input](/assets/images/docs/tools/devtools/property-editor-name-type.png){:width="500px"}
 
 - **Info tooltip (ⓘ):**
-    * Hovering over the info icon next to a property input will display a tooltip.
+    * Hovering over the info icon next to a property input displays a tooltip.
     * The information in the tooltip includes:
         * The default value of the property, if one is defined in the widget's constructor.
         * Any documentation for that property.
