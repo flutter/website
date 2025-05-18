@@ -543,7 +543,7 @@ The parser ignores any string of characters
 wrapped with a pair of single quotes.
 To use a normal single quote character,
 use a pair of consecutive single quotes.
-For example, the follow text is converted
+For example, the following text is converted
 to a Dart `String`:
 
 ```json
