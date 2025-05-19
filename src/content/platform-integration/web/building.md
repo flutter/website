@@ -55,7 +55,7 @@ If you prefer, you can use the `edge` device type on Windows,
 or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
-<a name="hot-reload-web></a>
+<a id="hot-reload-web" aria-hidden="true" ></a>
 :::note Hot reload on the web
 As of the Flutter 3.32 release, you can experiment
 with hot reload on the web behind a flag.
