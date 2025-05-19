@@ -18,9 +18,16 @@ main code, main kbd {
 }
 
 main kbd {
-  background-color: var(--site-base-fgColor);
-  border: none;
-  color: var(--site-inset-borderColor);
+  font-weight: 500;
+  padding: 0.05rem 0.35rem;
+
+  border-width: 1.5px;
+  border-bottom-width: 3px;
+  border-radius: 0.35rem;
+  box-shadow: inset 0 1px 1px rgb(var(--site-interaction-base-values) / 5%);
+
+  // Reduce word spacing so the + combinator is closer.
+  word-spacing: -0.25em;
 }
 
 pre {
