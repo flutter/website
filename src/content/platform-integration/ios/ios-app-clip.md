@@ -355,12 +355,6 @@ Unfortunately `flutter attach` cannot auto-discover
 the Flutter session in an App Clip due to
 networking permission restrictions.
 
-In order to debug your App Clip and use functionalities
-like hot reload, you must look for the Observatory URI
-from the console output in Xcode after running.
-
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/observatory-uri.png" %}
-
 You must then copy and paste it back into the
 `flutter attach` command to connect.
 
