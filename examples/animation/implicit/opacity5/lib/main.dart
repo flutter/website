@@ -27,10 +27,9 @@ class _FadeInDemoState extends State<FadeInDemo> {
             'Show Details',
             style: TextStyle(color: Colors.blueAccent),
           ),
-          onPressed:
-              () => setState(() {
-                opacity = 1;
-              }),
+          onPressed: () => setState(() {
+            opacity = 1;
+          }),
         ),
         AnimatedOpacity(
           duration: const Duration(seconds: 2),
@@ -53,7 +52,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: Scaffold(body: Center(child: FadeInDemo())));
+    return const MaterialApp(
+      home: Scaffold(body: Center(child: FadeInDemo())),
+    );
   }
 }
 

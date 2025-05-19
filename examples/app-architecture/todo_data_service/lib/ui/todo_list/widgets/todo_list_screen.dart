@@ -71,8 +71,8 @@ class _TodoListScreenState extends State<TodoListScreen> {
                 ),
                 // #docregion FilledButton
                 FilledButton.icon(
-                  onPressed:
-                      () => widget.viewModel.add.execute(_controller.text),
+                  onPressed: () =>
+                      widget.viewModel.add.execute(_controller.text),
                   label: const Text('Add'),
                   icon: const Icon(Icons.add),
                 ),

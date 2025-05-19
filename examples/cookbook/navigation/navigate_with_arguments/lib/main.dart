@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
     // #docregion OnGenerateRoute
     return MaterialApp(
       routes: {
-        ExtractArgumentsScreen.routeName:
-            (context) => const ExtractArgumentsScreen(),
+        ExtractArgumentsScreen.routeName: (context) =>
+            const ExtractArgumentsScreen(),
       },
       // #enddocregion routes
       // Provide a function to handle named routes.

@@ -5,7 +5,7 @@ description: >-
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 # #docregion flutter-localizations
 dependencies:

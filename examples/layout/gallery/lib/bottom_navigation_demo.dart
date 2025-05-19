@@ -67,10 +67,9 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo>
         0,
         bottomNavigationBarItems.length - 2,
       );
-      _currentIndex.value =
-          _currentIndex.value
-              .clamp(0, bottomNavigationBarItems.length - 1)
-              .toInt();
+      _currentIndex.value = _currentIndex.value
+          .clamp(0, bottomNavigationBarItems.length - 1)
+          .toInt();
     }
 
     return MaterialApp(

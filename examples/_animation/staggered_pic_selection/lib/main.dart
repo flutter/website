@@ -263,10 +263,9 @@ class _PhotoItemState extends State<PhotoItem> with TickerProviderStateMixin {
           child: ClipRect(
             child: SlideTransition(
               position: _replaceNewPhotoAnimation,
-              child:
-                  _newPhoto == null
-                      ? null
-                      : Image.asset(_newPhoto!.asset, fit: BoxFit.cover),
+              child: _newPhoto == null
+                  ? null
+                  : Image.asset(_newPhoto!.asset, fit: BoxFit.cover),
             ),
           ),
         ),
@@ -290,8 +289,9 @@ class _ImagesDemoState extends State<ImagesDemo>
 
   void _selectPhoto(int photoIndex) {
     setState(() {
-      _selectedPhotoIndex =
-          photoIndex == _selectedPhotoIndex ? null : photoIndex;
+      _selectedPhotoIndex = photoIndex == _selectedPhotoIndex
+          ? null
+          : photoIndex;
     });
   }
 

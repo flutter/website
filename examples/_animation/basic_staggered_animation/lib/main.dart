@@ -31,33 +31,33 @@ class StaggerAnimation extends StatelessWidget {
           curve: const Interval(0.250, 0.375, curve: Curves.ease),
         ),
       ),
-      padding = EdgeInsetsTween(
-        begin: const EdgeInsets.only(bottom: 16),
-        end: const EdgeInsets.only(bottom: 75),
-      ).animate(
-        CurvedAnimation(
-          parent: controller,
-          curve: const Interval(0.250, 0.375, curve: Curves.ease),
-        ),
-      ),
-      borderRadius = BorderRadiusTween(
-        begin: BorderRadius.circular(4),
-        end: BorderRadius.circular(75),
-      ).animate(
-        CurvedAnimation(
-          parent: controller,
-          curve: const Interval(0.375, 0.500, curve: Curves.ease),
-        ),
-      ),
-      color = ColorTween(
-        begin: Colors.indigo[100],
-        end: Colors.orange[400],
-      ).animate(
-        CurvedAnimation(
-          parent: controller,
-          curve: const Interval(0.500, 0.750, curve: Curves.ease),
-        ),
-      );
+      padding =
+          EdgeInsetsTween(
+            begin: const EdgeInsets.only(bottom: 16),
+            end: const EdgeInsets.only(bottom: 75),
+          ).animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.250, 0.375, curve: Curves.ease),
+            ),
+          ),
+      borderRadius =
+          BorderRadiusTween(
+            begin: BorderRadius.circular(4),
+            end: BorderRadius.circular(75),
+          ).animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.375, 0.500, curve: Curves.ease),
+            ),
+          ),
+      color = ColorTween(begin: Colors.indigo[100], end: Colors.orange[400])
+          .animate(
+            CurvedAnimation(
+              parent: controller,
+              curve: const Interval(0.500, 0.750, curve: Curves.ease),
+            ),
+          );
 
   final Animation<double> controller;
   final Animation<double> opacity;

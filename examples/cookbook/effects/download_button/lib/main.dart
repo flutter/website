@@ -48,7 +48,7 @@ class _ExampleCupertinoDownloadButtonState
       appBar: AppBar(title: const Text('Apps')),
       body: ListView.separated(
         itemCount: _downloadControllers.length,
-        separatorBuilder: (_, __) => const Divider(),
+        separatorBuilder: (_, _) => const Divider(),
         itemBuilder: _buildListItem,
       ),
     );
@@ -377,10 +377,9 @@ class ProgressIndicatorWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor:
-                isDownloading
-                    ? CupertinoColors.lightBackgroundGray
-                    : Colors.transparent,
+            backgroundColor: isDownloading
+                ? CupertinoColors.lightBackgroundGray
+                : Colors.transparent,
             valueColor: AlwaysStoppedAnimation(
               isFetching
                   ? CupertinoColors.lightBackgroundGray

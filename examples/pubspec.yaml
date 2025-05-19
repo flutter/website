@@ -2,7 +2,7 @@ name: flutter_docs_examples
 publish_to: none
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 workspace:
   - _animation/basic_hero_animation

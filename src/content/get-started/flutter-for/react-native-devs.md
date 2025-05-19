@@ -1309,10 +1309,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
-                child:
-                    toggleState
-                        ? const Text('Blink')
-                        : const Text('Stop Blinking'),
+                child: toggleState
+                    ? const Text('Blink')
+                    : const Text('Stop Blinking'),
               ),
             ),
           ],

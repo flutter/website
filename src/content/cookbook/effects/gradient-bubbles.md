@@ -68,10 +68,9 @@ applied to the bubble.
 BubbleBackground(
   // The colors of the gradient, which are different
   // depending on which user sent this message.
-  colors:
-      message.isMine
-          ? const [Color(0xFF6C7689), Color(0xFF3A364B)]
-          : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
+  colors: message.isMine
+      ? const [Color(0xFF6C7689), Color(0xFF3A364B)]
+      : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
   // The content within the bubble.
   child: DefaultTextStyle.merge(
     style: const TextStyle(fontSize: 18.0, color: Colors.white),
@@ -102,7 +101,10 @@ class BubbleBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: BubblePainter(colors: colors), child: child);
+    return CustomPaint(
+      painter: BubblePainter(colors: colors),
+      child: child,
+    );
   }
 }
 
@@ -210,16 +212,15 @@ class BubblePainter extends CustomPainter {
       Offset.zero,
       ancestor: scrollableBox,
     );
-    final paint =
-        Paint()
-          ..shader = ui.Gradient.linear(
-            scrollableRect.topCenter,
-            scrollableRect.bottomCenter,
-            _colors,
-            [0.0, 1.0],
-            TileMode.clamp,
-            Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-          );
+    final paint = Paint()
+      ..shader = ui.Gradient.linear(
+        scrollableRect.topCenter,
+        scrollableRect.bottomCenter,
+        _colors,
+        [0.0, 1.0],
+        TileMode.clamp,
+        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+      );
     canvas.drawRect(Offset.zero & size, paint);
   }
 }
@@ -324,8 +325,9 @@ class MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final messageAlignment =
-        message.isMine ? Alignment.topLeft : Alignment.topRight;
+    final messageAlignment = message.isMine
+        ? Alignment.topLeft
+        : Alignment.topRight;
 
     return FractionallySizedBox(
       alignment: messageAlignment,
@@ -402,16 +404,15 @@ class BubblePainter extends CustomPainter {
       Offset.zero,
       ancestor: scrollableBox,
     );
-    final paint =
-        Paint()
-          ..shader = ui.Gradient.linear(
-            scrollableRect.topCenter,
-            scrollableRect.bottomCenter,
-            _colors,
-            [0.0, 1.0],
-            TileMode.clamp,
-            Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-          );
+    final paint = Paint()
+      ..shader = ui.Gradient.linear(
+        scrollableRect.topCenter,
+        scrollableRect.bottomCenter,
+        _colors,
+        [0.0, 1.0],
+        TileMode.clamp,
+        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+      );
     canvas.drawRect(Offset.zero & size, paint);
   }
 
