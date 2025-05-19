@@ -1,10 +1,21 @@
 
 ### Remove Flutter from your Windows Path variable {:.no_toc}
 
-To remove Flutter commands from {{include.terminal}},
+To remove Flutter commands from PowerShell,
 remove Flutter to the `PATH` environment variable.
 
-{% render docs/install/reqs/windows/open-envvars.md %}
+1. Press <kbd>Windows</kbd> + <kbd>Pause</kbd>.
+
+   If your keyboard lacks a <kbd>Pause</kbd> key,
+   try <kbd>Windows</kbd> + <kbd>Fn</kbd> + <kbd>B</kbd>.
+
+   The **System > About** dialog displays.
+
+1. Click **Advanced System Settings**
+   <span aria-label="and then">></span> **Advanced**
+   <span aria-label="and then">></span> **Environment Variables...**
+
+   The **Environment Variables** dialog displays.
 
 1. Under **User variables for (username)** section,
    look for the **Path** entry.
@@ -22,4 +33,4 @@ remove Flutter to the `PATH` environment variable.
 
 1. To enable these changes,
    close and reopen any existing
-   command prompts and {{include.terminal}} instances.
+   command prompts and PowerShell instances.

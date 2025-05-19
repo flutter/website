@@ -3,19 +3,20 @@
 
 {% render docs/help-link.md, location:'win-doctor' %}
 
-{% assign compiler = include.compiler %}
+{% assign compiler = '' %}
 
 {% case include.devos %}
 {% when 'Windows' -%}
    {% assign terminal='PowerShell' %}
    {% assign prompt='PS C:\>' %}
-{% when "macOS" -%}
+{% when 'macOS' -%}
    {% assign terminal='your Terminal' %}
    {% assign prompt='$' %}
 {% else -%}
    {% assign terminal='a shell' %}
    {% assign prompt='$' %}
 {% endcase -%}
+
 {% case include.target %}
 {% when 'macOS','Windows','Linux' %}
 {% assign work-target = include.target | append: ' desktop' %}
@@ -51,9 +52,8 @@ complete Flutter development environment for {{include.devos}}.
 
 As you chose to develop for {{include.target}},
 you do not need _all_ components.
-If you followed this guide, the result of your command should resemble:
-
-{% include docs/install/flutter-doctor-success.md config=include.config devos=include.devos -%}
+If you followed this guide, the command should output
+`[✓]` for the tooling and platforms you set up.
 
 ### Troubleshoot Flutter doctor issues
 

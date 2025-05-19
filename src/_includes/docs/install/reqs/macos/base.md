@@ -12,27 +12,73 @@
 To write and compile Flutter code for {{v-target}},
 install the following packages.
 
-{% render docs/install/admonitions/install-dart.md %}
-
 ### Operating system
 
 Flutter supports developing on macOS {{site.devmin.macos}} or later.
-This guide presumes your Mac runs the `zsh` as your default shell.
+This guide presumes your Mac runs the `zsh` as your [default shell][zsh-mac].
 
-{% include docs/install/reqs/macos/zsh-config.md target=include.target %}
+Some Flutter components require the
+[Rosetta 2 translation process][need-rosetta].
+If you're developing on an [Apple Silicon][] (ARM) Mac,
+install [Rosetta 2][rosetta]:
 
-{% include docs/install/reqs/macos/apple-silicon.md %}
+```console
+$ sudo softwareupdate --install-rosetta --agree-to-license
+```
+
+[zsh-mac]: https://support.apple.com/en-us/102360
+[Apple Silicon]: https://support.apple.com/en-us/HT211814
+[rosetta]: https://support.apple.com/en-us/HT211861
+[need-rosetta]: {{site.repo.this}}/pull/7119#issuecomment-1124537969
 
 ### Development tools
 
 Download and install the following packages.
 
-{% include docs/install/reqs/macos/software.md target=include.target %}
+{% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' to debug and compile native Swift or ObjectiveC code.' %}
+{% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile and enable Flutter plugins in your native apps.' %}
+{% capture android -%}
+[Android Studio][] {{site.appmin.android_studio}} or later to
+debug and compile Java or Kotlin code for Android.
+Flutter requires the full version of Android Studio.
+{% endcapture %}
+{% assign chrome = "[Google Chrome][] to debug JavaScript code for web apps." %}
+{% assign git-main = '[Git][] ' | append: site.appmin.git_mac | append: ' or later to manage source code.' %}
+{% assign git-xcode = "The Xcode installation includes " %}
+{% capture git-other -%}
+To check if you have `git` installed,
+type `git version` in your Terminal.
+If you need to install `git`, type `brew install git`.
+{% endcapture %}
+
+{% case include.target %}
+{% when 'desktop','iOS' %}
+
+* {{xcode}} {{git-xcode}} {{git-main}}
+* {{cocoapods}}
+
+{% when 'Android' %}
+
+* {{android}}
+* {{git-main}}
+  {{- git-other}}
+
+{% when 'Web' -%}
+
+* {{chrome}}
+* {{git-main}}
+  {{- git-other}}
+
+{% endcase %}
 
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-{% render docs/install/reqs/flutter-sdk/flutter-doctor-precedence.md %}
+[Git]: https://formulae.brew.sh/formula/git
+[Android Studio]: https://developer.android.com/studio/install#mac
+[Xcode]: {{site.apple-dev}}/xcode/
+[CocoaPods]: https://cocoapods.org/
+[Google Chrome]: https://www.google.com/chrome/dr/download/
 
 ### Text editor or integrated development environment
 
