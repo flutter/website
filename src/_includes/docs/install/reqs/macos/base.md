@@ -14,7 +14,7 @@ install the following packages.
 
 ### Operating system
 
-Flutter supports developing on macOS {{site.devmin.macos}} or later.
+Flutter supports developing on macOS 12 (Monterey) or later.
 This guide presumes your Mac runs the `zsh` as your [default shell][zsh-mac].
 
 Some Flutter components require the
@@ -35,39 +35,30 @@ $ sudo softwareupdate --install-rosetta --agree-to-license
 
 Download and install the following packages.
 
-{% assign xcode = '[Xcode][] ' | append: site.appnow.xcode | append: ' to debug and compile native Swift or ObjectiveC code.' %}
-{% assign cocoapods = '[CocoaPods][] ' | append: site.appnow.cocoapods | append: ' to compile and enable Flutter plugins in your native apps.' %}
-{% capture android -%}
-[Android Studio][] {{site.appmin.android_studio}} or later to
-debug and compile Java or Kotlin code for Android.
-Flutter requires the full version of Android Studio.
-{% endcapture %}
-{% assign chrome = "[Google Chrome][] to debug JavaScript code for web apps." %}
-{% assign git-main = '[Git][] ' | append: site.appmin.git_mac | append: ' or later to manage source code.' %}
-{% assign git-xcode = "The Xcode installation includes " %}
-{% capture git-other -%}
-To check if you have `git` installed,
-type `git version` in your Terminal.
-If you need to install `git`, type `brew install git`.
-{% endcapture %}
-
 {% case include.target %}
 {% when 'desktop','iOS' %}
 
-* {{xcode}} {{git-xcode}} {{git-main}}
-* {{cocoapods}}
+* [Xcode][] to debug and compile native Swift or Objective-C code.
+  The Xcode installation also includes Git to manage Flutter versions
+  and your own source code versioning.
+* [CocoaPods][] to compile and enable Flutter plugins in your native apps.
 
 {% when 'Android' %}
 
-* {{android}}
-* {{git-main}}
-  {{- git-other}}
+* [Android Studio][] to debug and compile Java or Kotlin code for Android.
+  Flutter requires the full version of Android Studio.
+* [Git][] to manage Flutter versions and your own source code versioning.
+  To check if you have `git` installed,
+  type `git version` in your Terminal.
+  If you need to install `git`, run `xcode-select --install`.
 
 {% when 'Web' -%}
 
-* {{chrome}}
-* {{git-main}}
-  {{- git-other}}
+* [Google Chrome][] to debug JavaScript code for web apps.
+* [Git][] to manage Flutter versions and your own source code versioning.
+  To check if you have `git` installed,
+  type `git version` in your Terminal.
+  If you need to install `git`, run `xcode-select --install`.
 
 {% endcase %}
 
@@ -78,7 +69,7 @@ To troubleshoot installation issues, consult that product's documentation.
 [Android Studio]: https://developer.android.com/studio/install#mac
 [Xcode]: {{site.apple-dev}}/xcode/
 [CocoaPods]: https://cocoapods.org/
-[Google Chrome]: https://www.google.com/chrome/dr/download/
+[Google Chrome]: https://www.google.com/chrome/
 
 ### Text editor or integrated development environment
 
@@ -91,18 +82,14 @@ syntax highlighting, widget editing assists, debugging, and other features.
 
 Popular options include:
 
-* [Visual Studio Code][] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  with the [Flutter plugin for IntelliJ][].
-* [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
-  with both the [Flutter plugin for IntelliJ][] and
-  the [Android plugin for IntelliJ][].
+* [Visual Studio Code][] with the [Flutter extension for VS Code][].
+* [Android Studio][] with the [Flutter plugin for IntelliJ][].
+* [IntelliJ IDEA][] with both
+  the [Flutter plugin for IntelliJ][] and the [Android plugin for IntelliJ][].
 
 :::recommend
 The Flutter team recommends installing
-[Visual Studio Code][] {{site.appmin.vscode}} or later and the
-[Flutter extension for VS Code][].
+[Visual Studio Code][] and the [Flutter extension for VS Code][].
 This combination simplifies installing the Flutter SDK.
 :::
 
