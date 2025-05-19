@@ -150,7 +150,7 @@ choose from one of the persistent caching strategies found below.
 ## Persistent caches
 
 Caching data in memory will never see your precious cache
-outlive a user single session.
+outlive a single user session.
 To enjoy the performance benefits of cache hits on fresh
 launches of your application, you need to cache data somewhere
 on the device's hard drive.
