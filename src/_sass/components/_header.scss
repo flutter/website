@@ -22,8 +22,6 @@
     min-height: var(--site-header-height);
 
     #menu-toggle {
-      margin-left: 0.25rem;
-
       @media (min-width: 1024px) {
         display: none;
       }
@@ -43,19 +41,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-    }
-
-    .navbar-nav {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      flex-direction: row;
-      gap: 0.5rem;
-      display: none;
-
-      @media (min-width: 1200px) {
-        display: flex;
-      }
+      gap: .5rem;
     }
 
     .nav-link {
@@ -71,8 +57,7 @@
   }
 
   #call-to-action {
-    margin-left: 0.5rem;
-    padding: 0.5rem 1rem !important;
+    padding: 0.5rem 1rem;
     display: none;
 
     @media (min-width: 1024px) {
@@ -94,14 +79,18 @@
     &::before {
       content: 'search';
       color: var(--site-base-fgColor-alt);
-      font: 24px/1 var(--site-icon-fontFamily);
+      font: 28px/1 var(--site-icon-fontFamily);
       pointer-events: none;
       position: absolute;
-      left: 0.75rem;
+      left: 1.25rem;
     }
 
     &:hover::before {
       color: var(--site-base-fgColor);
+    }
+
+    &:focus-within::before {
+      //left: 1rem;
     }
   }
 
@@ -112,7 +101,7 @@
     width: 24px;
     cursor: pointer;
     border-radius: 24px;
-    padding: 0.5rem 0.5rem 0.5rem 2.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
     background: none;
 
     &:focus {
@@ -152,5 +141,33 @@ body.open_menu #menu-toggle span.material-symbols {
 
   &:last-child {
     display: inline;
+  }
+}
+
+#site-primary-logo {
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  > span {
+    &.name {
+      display: none;
+
+      @media (min-width: 420px) {
+        display: unset;
+      }
+    }
+
+    &.subtype {
+      margin-left: 0;
+
+      @media (min-width: 420px) {
+        margin-left: 0.4rem;
+      }
+    }
   }
 }
