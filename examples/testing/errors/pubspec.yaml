@@ -4,12 +4,12 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^2.25.4
+  firebase_core: ^2.32.0
 
 dev_dependencies:
   integration_test:

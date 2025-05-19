@@ -949,8 +949,8 @@ class DemoLocalizations {
   static Future<DemoLocalizations> load(Locale locale) {
     final String name =
         locale.countryCode == null || locale.countryCode!.isEmpty
-            ? locale.languageCode
-            : locale.toString();
+        ? locale.languageCode
+        : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {

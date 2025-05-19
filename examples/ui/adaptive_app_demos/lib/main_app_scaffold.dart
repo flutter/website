@@ -75,49 +75,44 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
             children: [
               const AppTitleBar(),
               Expanded(
-                child:
-                    isLoggedOut
-                        // If logged out, show just the login page with no menus
-                        ? const LoginPage()
-                        // Otherwise, show the full application with dynamic scaffold
-                        : Focus(
-                          autofocus: true,
-                          child: Scaffold(
-                            key: _scaffoldKey,
-                            drawer:
-                                useTabs
-                                    ? const _SideMenu(showPageButtons: false)
-                                    : null,
-                            appBar:
-                                useTabs
-                                    ? AppBar(
-                                      backgroundColor: Colors.blue.shade300,
-                                    )
-                                    : null,
-                            body: Stack(
-                              children: [
-                                // Vertical layout with Tab controller and drawer
-                                if (useTabs) ...[
-                                  Column(
-                                    children: [
-                                      Expanded(child: _PageStack()),
-                                      _TabMenu(),
-                                    ],
-                                  ),
-                                ]
-                                // Horizontal layout with desktop style side menu
-                                else ...[
-                                  Row(
-                                    children: [
-                                      const _SideMenu(),
-                                      Expanded(child: _PageStack()),
-                                    ],
-                                  ),
-                                ],
+                child: isLoggedOut
+                    // If logged out, show just the login page with no menus
+                    ? const LoginPage()
+                    // Otherwise, show the full application with dynamic scaffold
+                    : Focus(
+                        autofocus: true,
+                        child: Scaffold(
+                          key: _scaffoldKey,
+                          drawer: useTabs
+                              ? const _SideMenu(showPageButtons: false)
+                              : null,
+                          appBar: useTabs
+                              ? AppBar(backgroundColor: Colors.blue.shade300)
+                              : null,
+                          body: Stack(
+                            children: [
+                              // Vertical layout with Tab controller and drawer
+                              if (useTabs) ...[
+                                Column(
+                                  children: [
+                                    Expanded(child: _PageStack()),
+                                    _TabMenu(),
+                                  ],
+                                ),
+                              ]
+                              // Horizontal layout with desktop style side menu
+                              else ...[
+                                Row(
+                                  children: [
+                                    const _SideMenu(),
+                                    Expanded(child: _PageStack()),
+                                  ],
+                                ),
                               ],
-                            ),
+                            ],
                           ),
                         ),
+                      ),
               ),
             ],
           ),
@@ -200,10 +195,9 @@ class _TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap all the main menu buttons in Expanded() so they fill up the screen horizontally
-    List<Expanded> tabButtons =
-        getMainMenuChildren(
-          context,
-        ).map((btn) => Expanded(child: btn)).toList();
+    List<Expanded> tabButtons = getMainMenuChildren(
+      context,
+    ).map((btn) => Expanded(child: btn)).toList();
     return Column(
       children: [
         // Top Divider

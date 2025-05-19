@@ -3,12 +3,12 @@ description: Sample code for themes cookbook recipe.
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  google_fonts: ^6.1.0
+  google_fonts: ^6.2.1
 
 flutter:
   uses-material-design: true

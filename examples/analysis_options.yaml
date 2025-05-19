@@ -32,6 +32,7 @@ linter:
     - prefer_relative_imports
     - prefer_single_quotes
     - sort_unnamed_constructors_first
+    - strict_top_level_inference
     - test_types_in_equals
     - throw_in_finally
     - type_annotate_public_apis
@@ -39,4 +40,5 @@ linter:
     - unnecessary_breaks
     - unnecessary_library_directive
     - unnecessary_statements
+    - unnecessary_underscores
     - use_is_even_rather_than_modulo

@@ -67,7 +67,10 @@ class _DraggableCardState extends State<DraggableCard>
         });
       },
       onPanEnd: (details) {},
-      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+      child: Align(
+        alignment: _dragAlignment,
+        child: Card(child: widget.child),
+      ),
     );
     // #enddocregion gesture
   }

@@ -370,14 +370,13 @@ once and get it through the builder.
 <?code-excerpt "lib/src/performance.dart (child)" replace="/\bchild\b/[!$&!]/g"?>
 ```dart
 return Consumer<CartModel>(
-  builder:
-      (context, cart, [!child!]) => Stack(
-        children: [
-          // Use SomeExpensiveWidget here, without rebuilding every time.
-          if ([!child!] != null) [!child!],
-          Text('Total price: ${cart.totalPrice}'),
-        ],
-      ),
+  builder: (context, cart, [!child!]) => Stack(
+    children: [
+      // Use SomeExpensiveWidget here, without rebuilding every time.
+      if ([!child!] != null) [!child!],
+      Text('Total price: ${cart.totalPrice}'),
+    ],
+  ),
   // Build the expensive widget here.
   [!child!]: const SomeExpensiveWidget(),
 );

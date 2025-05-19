@@ -1051,8 +1051,14 @@ class Example23 extends Example {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(color: red, child: const Text('Hello!', style: big)),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: red,
+          child: const Text('Hello!', style: big),
+        ),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1086,7 +1092,10 @@ class Example24 extends Example {
             style: big,
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1126,7 +1135,10 @@ class Example25 extends Example {
             ),
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1792,8 +1804,14 @@ and you'll see an error in the console.
 ```dart
 Row(
   children: [
-    Container(color: red, child: const Text('Hello!', style: big)),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: red,
+      child: const Text('Hello!', style: big),
+    ),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```
@@ -1823,7 +1841,10 @@ Row(
         style: big,
       ),
     ),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```
@@ -1852,7 +1873,10 @@ Row(
         ),
       ),
     ),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```

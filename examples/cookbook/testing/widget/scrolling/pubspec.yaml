@@ -3,12 +3,12 @@ description: Scrollable widget testing.
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  path_provider: ^2.1.2
+  path_provider: ^2.1.5
   path: ^1.9.0
   flutter_test:
     sdk: flutter

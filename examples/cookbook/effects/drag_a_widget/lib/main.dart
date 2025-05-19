@@ -116,7 +116,10 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       children: [
         SafeArea(
           child: Column(
-            children: [Expanded(child: _buildMenuList()), _buildPeopleRow()],
+            children: [
+              Expanded(child: _buildMenuList()),
+              _buildPeopleRow(),
+            ],
           ),
         ),
       ],
