@@ -55,7 +55,8 @@ If you prefer, you can use the `edge` device type on Windows,
 or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
-:::note Hot reload on the web {{#hot-reload-web}}
+<a name="hot-reload-web></a>
+:::note Hot reload on the web
 As of the Flutter 3.32 release, you can experiment
 with hot reload on the web behind a flag.
 [Hot restart][], which restarts your app
@@ -119,8 +120,8 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers. For more information,
-see [Web renderers][].
+Flutter web offers multiple build modes and renderers.
+For more information, see [Web renderers][].
 
 ## Build your app
 
