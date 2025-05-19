@@ -27,4 +27,4 @@ consult the following resources.
 * [Uninstall Flutter][uninstall]
 
 [upgrade]: /install/upgrade
-[uninstall]: /install/uninstall?tab-save-dev-os={{include.devos}}
+[uninstall]: /install/uninstall
