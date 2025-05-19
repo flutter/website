@@ -175,7 +175,7 @@ then extract the SDK to where you want it stored.
     the directory you want to store the Flutter SDK in.
 
     1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path the bundle you downloaded.
+    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
     1. Replace `<destination_directory_path>` with the path to the
        folder you want the extracted SDK to be in.
     1. Run the edited command in your preferred terminal.
@@ -217,7 +217,7 @@ then extract the SDK to where you want it stored.
     the directory you want to store the Flutter SDK in.
 
     1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path the bundle you downloaded.
+    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
     1. Replace `<destination_directory_path>` with the path to the
        folder you want the extracted SDK to be in.
     1. Run the edited command in your preferred terminal.
@@ -254,7 +254,7 @@ then extract the SDK to where you want it stored.
     the directory you want to store the Flutter SDK in.
 
     1. Copy the following command.
-    1. Replace `<sdk_zip_path>` with the path the bundle you downloaded.
+    1. Replace `<sdk_zip_path>` with the path to the bundle you downloaded.
     1. Replace `<destination_directory_path>` with the path to the
        folder you want the extracted SDK to be in.
     1. Run the edited command in your preferred terminal.

@@ -333,8 +333,9 @@ ol.steps {
     position: relative;
     counter-increment: steps;
 
-    ol {
+    ol, ul {
       padding-inline-start: 2rem;
+      margin-block-end: 0.75rem;
     }
 
     > h3:first-child {
