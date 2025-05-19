@@ -70,6 +70,11 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
 
+<a id="released-in-flutter-332" aria-hidden="true"></a>
+### Released in Flutter 3.32
+
+* TODO
+
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
 

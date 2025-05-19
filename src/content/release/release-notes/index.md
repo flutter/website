@@ -12,6 +12,8 @@ For information about bug-fix releases,
 check out the Flutter [CHANGELOG][].
 :::
 
+* 3.32.0
+  * [3.32.0 breaking changes & migrations][]
 * 3.29.0
   * [3.29.0 announcement][]
   * [3.29.0 release notes & change log][]
@@ -93,6 +95,7 @@ check out the Flutter [CHANGELOG][].
 * Earlier
   * [Archived release notes][]
 
+[3.32.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-32
 [3.29.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-29-f90c380c2317
 [3.29.0 release notes & change log]: /release/release-notes/release-notes-3.29.0
 [3.29.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-29
