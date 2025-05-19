@@ -3,7 +3,6 @@ title: Start building Flutter Android apps on Windows
 description: Configure your system to develop Flutter mobile apps on Windows.
 short-title: Make Android apps
 target: Android
-config: WindowsAndroid
 devos: Windows
 next:
   title: Create your first app
@@ -16,6 +15,6 @@ next:
 
 {% include docs/install/compiler/android.md devos=devos target=target attempt='first' %}
 
-{% include docs/install/flutter-doctor.md devos=devos target=target config=config %}
+{% include docs/install/flutter-doctor.md devos=devos target=target %}
 
-{% include docs/install/next-steps.md devos=devos target=target config=config %}
+{% include docs/install/next-steps.md devos=devos target=target %}
