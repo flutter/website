@@ -6,6 +6,7 @@ import * as hast from 'hast';
 
 const _terminalLanguages = {
   'console': '$',
+  'ps': 'C:\\>',
 };
 
 /**

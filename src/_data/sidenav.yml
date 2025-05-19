@@ -69,6 +69,8 @@
       permalink: /install/add-to-path
     - title: Troubleshoot
       permalink: /install/troubleshoot
+    - title: Uninstall SDK
+      permalink: /install/uninstall
 
 - title: Learn Flutter
   children:
@@ -132,6 +134,8 @@
     - title: Compatibility policy
       permalink: /release/compatibility-policy
     - divider
+    - title: Medium publication
+      permalink: https://medium.com/flutter
     - title: What's new in the docs
       permalink: /release/whats-new
 
