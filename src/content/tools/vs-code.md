@@ -394,6 +394,23 @@ You can also press
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
 or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
 
+## Flutter Property Editor {: #property-editor}
+
+The Flutter Property Editor is a powerful tool provided by the [Flutter
+extension][] that lets you view and modify widget properties directly from its
+visual interface.
+
+### How to open the Flutter Property Editor in VS Code
+
+1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:width="20px"} in the VS Code sidebar.
+2. The Flutter Property Editor will load in the side panel.
+3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+![Flutter Property Editor side panel in VS Code](/assets/images/docs/tools/devtools/property-editor-vscode.png){:width="600px"}
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+[documentation]: /tools/property-editor
+
 ## Troubleshooting
 
 ### Known issues and feedback

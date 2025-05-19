@@ -10,7 +10,7 @@ This can be done using the normal **Plugins** page in the IntelliJ
 and Android Studio settings. Once that page is open,
 you can search the marketplace for the Flutter plugin.
 
-## Start an app to debug
+## Start an app to debug {: #run-and-debug}
 
 To open DevTools, you first need to run a Flutter app.
 This can be accomplished by opening a Flutter project,

@@ -55,7 +55,7 @@ Use your mirror site in the browser or in other applications
 like IDM or Thunder.
 This should improve download speed.
 
-[SDK archive]: /release/archive
+[SDK archive]: /install/archive
 
 The following example shows how to change the URL for Flutter's download site
 from Google's archive to CFUG's mirror.

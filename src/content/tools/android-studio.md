@@ -472,6 +472,23 @@ location of the Android SDK:
     Flutter (as reported by `flutter doctor`).
  1. Click **OK**.
 
+## Flutter Property Editor {: #property-editor}
+
+The Flutter Property Editor is a powerful tool provided by the [Flutter
+plugin][] that lets you view and modify widget properties directly from its
+visual interface.
+
+### How to open the Flutter Property Editor in Android Studio and IntelliJ
+
+1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor Android Studio/IntelliJ icon](/assets/images/docs/tools/devtools/property-editor-icon-android-studio.png){:width="20px"} in the Android Studio or IntelliJ sidebar.
+2. The Flutter Property Editor will load in the side panel.
+3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+![Flutter Property Editor side panel in Android Studio/IntelliJ](/assets/images/docs/tools/devtools/property-editor-android-studio.png){:width="600px"}
+
+[Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
+[documentation]: /tools/property-editor
+
 ## Troubleshooting
 
 ### Known issues and feedback

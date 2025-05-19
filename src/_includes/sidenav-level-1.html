@@ -17,7 +17,8 @@
         {% assign isActive = false -%}
         {% assign class = '' -%}
       {% endif -%}
-      {% assign hidingChildren = entry.hiddenChildren == true and not pageUrlPath contains entry.permalink -%}
+      {% assign startsWithEntry = pageUrlPath | startsWith: entry.permalink -%}
+      {% assign hidingChildren = entry.hiddenChildren == true and not startsWithEntry -%}
       {% if entry.children and not hidingChildren -%}
         {% if isActive or entry.expanded -%}
           {% assign expanded = 'true' -%}

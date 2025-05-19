@@ -42,6 +42,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Removed semantics elevation and thickness][]
 * [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
    in favor of `RouteTransitionRecord.markForComplete`
@@ -55,6 +56,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
 
+[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
 [Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route

@@ -93,7 +93,7 @@ then extract the SDK.
 
    When finished, the Flutter SDK should be in the `{{flutter-path}}` directory.
 
-[SDK archive]: /release/archive
+[SDK archive]: /install/archive
 [move-dl]: https://answers.microsoft.com/en-us/windows/forum/all/move-download-folder-to-other-drive-in-windows-10/67d58118-4ccd-473e-a3da-4e79fdb4c878
 
 {% case include.os %}

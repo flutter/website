@@ -1,6 +1,5 @@
 ---
 title: Set up Android development
-short-title: Set up Android
 description: >-
   Configure your development environment to
   run, build, and deploy Flutter apps for Android devices.
@@ -13,7 +12,7 @@ to run, build, and deploy Flutter apps for Android devices.
 If you haven't set up Flutter already,
 visit and follow the [Get started with Flutter][] guide first.
 
-If you have already installed Flutter,
+If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
@@ -342,6 +341,7 @@ run a Flutter app on a physical Android device, follow these steps:
 
 ## Start developing for Android {: #start-developing}
 
+Congratulations!
 Now that you've set up Android development for Flutter,
 you can continue your Flutter learning journey while testing on Android
 or begin improving integration with Android.

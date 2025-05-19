@@ -1,6 +1,5 @@
 ---
 title: Set up iOS development
-short-title: Set up iOS
 description: >-
   Configure your development environment to
   run, build, and deploy Flutter apps for iOS devices.
@@ -13,67 +12,99 @@ to run, build, and deploy Flutter apps for iOS devices.
 If you haven't set up Flutter already,
 visit and follow the [Get started with Flutter][] guide first.
 
-If you have already installed Flutter,
+If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
 [Get started with Flutter]: /get-started/install
 [up to date]: /install/upgrade
 
-## Install Xcode
+## Set up iOS tooling {: #set-up-tooling}
 
 With Xcode, you can run Flutter apps on
 an iOS physical device or on the iOS Simulator.
 
-If you haven't done so already,
-install and set up [Xcode][].
+ 1. <h3>Install Xcode</h3>
 
-[Xcode]: https://developer.apple.com/xcode/
+    If you haven't done so already,
+    [install and set up the latest version of Xcode][xcode].
 
- 1. Configure Xcode's command-line tools:
+    If you've already installed Xcode,
+    update it to the latest version using the
+    same installation method you used originally.
+
+ 1. <h3>Set up Xcode command-line tools</h3>
+
+    To configure the Xcode command-line tools to use
+    the version of Xcode you installed,
+    run the following command in your preferred terminal:
 
     ```console
     $ sudo sh -c 'xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -runFirstLaunch'
     ```
 
- 1. Sign the Xcode license agreement:
+    If you downloaded Xcode elsewhere or need to use a different version,
+    replace `/Applications/Xcode.app` with the path to there instead.
 
-    ```console
-    $ sudo xcodebuild -license
-    ```
+ 1. <h3>Agree to the Xcode licenses</h3>
 
- 1. Download iOS platform support and simulator runtimes:
+    After you've set up Xcode and configured its command-line tools,
+    agree to the Xcode licenses.
+
+    1. Open your preferred terminal.
+
+    1. Run the following command to review and sign the Xcode licenses.
+
+       ```console
+       $ sudo xcodebuild -license
+       ```
+
+    1. Read and agree to all necessary licenses.
+
+       Before agreeing to the terms of each license,
+       read each with care.
+
+ 1. <h3>Download prerequisite tooling</h3>
+
+    To download iOS platform support and
+    the latest iOS Simulator runtimes,
+    run the following command in your preferred terminal.
 
     ```console
     $ xcodebuild -downloadPlatform iOS
     ```
 
-## Install Rosetta
+ 1. <h3>Install Rosetta</h3>
 
-If you are developing on an [Apple Silicon][] (ARM) Mac,
-[install Rosetta 2][].
+    If you're developing on an [Apple Silicon][] (ARM) Mac,
+    [install Rosetta 2][]:
 
-```console
-sudo softwareupdate --install-rosetta --agree-to-license
-```
+    ```console
+    $ sudo softwareupdate --install-rosetta --agree-to-license
+    ```
 
+ 1. <h3>Install CocoaPods</h3>
+
+    To support [Flutter plugins][] that use native iOS or macOS code,
+    install the latest version of [CocoaPods][].
+
+    Install CocoaPods by following the
+    [CocoaPods installation guide][].
+
+    If you've already installed CocoaPods,
+    update it by following the [CocoaPods update guide][].
+
+{: .steps}
+
+[xcode]: https://developer.apple.com/xcode/
 [Apple Silicon]: https://support.apple.com/en-us/116943
 [install Rosetta 2]: https://support.apple.com/en-us/102527
-
-## Install CocoaPods
-
-To support [Flutter plugins][] that use native iOS code,
-install [CocoaPods][cocoapods].
-CocoaPods bundles various dependencies that
-support connecting Flutter to native iOS code.
-
-Install `cocoapods` following the
-[CocoaPods installation guide][cocoapods].
-
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
+[CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
+[CocoaPods update guide]: https://guides.cocoapods.org/using/getting-started.html#updating-cocoapods
 
-## Configure your target iOS device
+## Set up an iOS device {: #set-up-devices}
 
 We recommend starting with the iOS Simulator as
 it's easier to get set up than a physical iOS device.
@@ -82,8 +113,6 @@ physical device.
 
 {% tabs "ios-simulator-or-physical-device" %}
 {% tab "Simulator" %}
-
-### Configure your iOS Simulator {:.no_toc}
 
 Start the iOS Simulator with the following command:
 
@@ -102,86 +131,87 @@ on the Apple Developer site.
 
 Set up each iOS device on which you want to test.
 
-### Configure your physical iOS device {:#attach .no_toc}
+ 1. <h3>Configure your physical iOS device</h3>
 
-1. Attach your iOS device to the USB port on your Mac.
+    1. Attach your iOS device to the USB port on your Mac.
 
-1. On first connecting an iOS device to your Mac,
-   your device will display the **Trust this computer?** dialog.
+    1. On first connecting an iOS device to your Mac,
+       your device displays the **Trust this computer?** dialog.
 
-1. Click **Trust**.
+    1. Click **Trust**.
 
-   ![Trust Mac][]
+       ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
+ 
+ 1. <h3>Configure your physical iOS device</h3>
 
-### Enable Developer Mode {: .no_toc}
+    Apple requires enabling **[Developer Mode][]**
+    on the device to protect against malicious software.
 
-Apple requires enabling **[Developer Mode][]**
-on the device to protect against malicious software.
+    1. Tap on **Settings** <span aria-label="and then">></span>
+       **Privacy & Security** <span aria-label="and then">></span>
+       **Developer Mode**.
 
-1. Tap on **Settings** <span aria-label="and then">></span>
-   **Privacy & Security** <span aria-label="and then">></span>
-   **Developer Mode**.
+    1. Tap to toggle **Developer Mode** to **On**.
 
-1. Tap to toggle **Developer Mode** to **On**.
+    1. Restart the device.
 
-1. Restart the device.
+    1. When the **Turn on Developer Mode?** dialog appears,
+       tap **Turn On**.
 
-1. When the **Turn on Developer Mode?** dialog appears,
-   tap **Turn On**.
+ 1. <h3>Create a developer code signing certificate</h3>
 
-### Create a developer code signing certificate {: .no_toc}
+    To send your app to a physical iOS device,
+    _even_ for testing, you must establish trust
+    between your Mac and the device.
+    In addition to trusting the device when that
+    popup appears, you must upload a signed
+    developer certificate to your device.
 
-To send your app to a physical iOS device,
-_even_ for testing, you must establish trust
-between your Mac and the device.
-In addition to trusting the device when that
-popup appears, you must upload a signed
-developer certificate to your device.
+    To create a signed development certificate,
+    you need an Apple ID.
+    If you don't have one, [create one][apple-account-new].
+    You must also enroll in the [Apple Developer program][]
+    and create an [Apple Developer account][].
+    If you're just _testing_ your app on an iOS device,
+    a personal Apple Developer account is free and works.
 
-To create a signed development certificate,
-you need an Apple ID.
-If you don't have one, create one.
-You must also enroll in the [Apple Developer][] program
-and create an [Apple Developer account][]. If you
-are just _testing_ your app on an iOS device,
-a personal Apple Developer account is free and works.
+    :::note Apple Developer program
+    When you want to _deploy_ your app to the App Store,
+    you'll need to upgrade your personal Apple Developer account to
+    a professional account.
+    :::
 
-:::note Apple Developer program
-When you want to _deploy_ your app to the
-App Store, you will need to upgrade your
-personal Apple Developer account to
-a professional account.
-:::
+ 1. <h3>Prepare the device</h3>
 
-### Prepare the device {: .no_toc}
+    1. Find the **VPN & Device Management** menu under **Settings**.
 
-Find your **Profiles & Device Management** menu under
-**Settings**. (The exact location can vary by device.)
-Toggle your certificate to **Enable**.
+       Toggle your certificate to **Enable**.
 
-:::note
-If you can't find **VPN & Device Management** menu,
-run your app on your iOS device once, then try again.
-:::
+       :::note
+       If you can't find the **VPN & Device Management** menu,
+       run your app on your iOS device once, then try again.
+       :::
 
-1. Under the **Developer App** heading,
-   you should find your certificate.
+    1. Under the **Developer App** heading,
+       you should find your certificate.
 
-1. Tap the certificate.
+    1. Tap the certificate.
 
-1. Tap **Trust "&lt;certificate&gt;"**.
+    1. Tap **Trust "&lt;certificate&gt;"**.
 
-1. When the dialog displays, tap **Trust**.
+    1. When the dialog displays, tap **Trust**.
 
-If the **codesign wants to access key...** dialog appears:
+       If the **codesign wants to access key...** dialog appears:
 
-1. Enter your macOS password.
+       1. Enter your macOS password.
 
-1. Tap **Always Allow**.
+       1. Tap **Always Allow**.
 
-[Trust Mac]: /assets/images/docs/setup/trust-computer.png
+{: .steps}
+
+[apple-account-new]: https://support.apple.com/en-us/108647
 [Developer Mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
-[Apple Developer]: {{site.apple-dev}}/programs/
+[Apple Developer program]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
 
 {% endtab %}
@@ -192,7 +222,9 @@ If the **codesign wants to access key...** dialog appears:
 ## Start developing for iOS {: #start-developing}
 
 **Congratulations.**
-You can now start developing and testing Flutter apps on iOS!
+Now that you've set up iOS development for Flutter,
+you can continue your Flutter learning journey while testing on iOS
+or begin improving integration with iOS.
 
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
