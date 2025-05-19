@@ -17,21 +17,23 @@ allowing you to quickly view the effects of your changes.
 
 To hot reload a Flutter app:
 
-1. Run the app from a supported [Flutter editor][] or a terminal window.
-   Either a physical or virtual device can be the target.
-   **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
-1. Modify one of the Dart files in your project.
-   Most types of code changes can be hot reloaded;
-   for a list of changes that require a hot restart,
-   see [Special cases](#special-cases).
-1. If you're working in an IDE/editor that supports Flutter's IDE tools
-   and hot reload on save is enabled,,
-   select **Save All** (`cmd-s`/`ctrl-s`),
-   or click the hot reload button on the toolbar.
+ 1. Run the app from a supported [Flutter editor][] or a terminal window.
+    Either a physical or virtual device can be the target.
+    **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
+ 1. Modify one of the Dart files in your project.
+    Most types of code changes can be hot reloaded;
+    for a list of changes that require a hot restart,
+    see [Special cases](#special-cases).
+ 1. If you're working in an IDE/editor that supports Flutter's IDE tools
+    and hot reload on save is enabled,
+    select **Save All** (`cmd-s`/`ctrl-s`),
+    or click the hot reload button on the toolbar.
 
-:::tip To enable hot reload on save {#hot-reload-on-save}
-From your preferred IDE,
-enable autosave and hot reloads on save.
+    <a id="hot-reload-on-save" aria-hidden="true"></a>
+
+    :::tip To enable hot reload on save
+    From your preferred IDE,
+    enable autosave and hot reloads on save.
 
     **VS Code**
 
@@ -45,16 +47,16 @@ enable autosave and hot reloads on save.
     **Android Studio and IntelliJ**
 
     * Open `Settings > Tools > Actions on Save` and select
-     `Configure autosave options`.
+      `Configure autosave options`.
         - Check the option to `Save files if the IDE is idle for X seconds`.
         - **Recommended:** Set a small delay duration. For example, 2 seconds.
 
     * Open `Settings > Languages & Frameworks > Flutter`.
         - Check the option to `Perform hot reload on save`.
-:::
+    :::
 
-   If you're running the app at the command line using `flutter run`,
-   enter `r` in the terminal window.
+    If you're running the app at the command line using `flutter run`,
+    enter `r` in the terminal window.
 
 After a successful hot reload operation,
 you'll see a message in the console similar to:

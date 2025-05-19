@@ -56,6 +56,7 @@ or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
 <a id="hot-reload-web" aria-hidden="true" ></a>
+
 :::note Hot reload on the web
 As of the Flutter 3.32 release, you can experiment
 with hot reload on the web behind a flag.
@@ -93,17 +94,18 @@ flutter run -d chrome --web-experimental-hot-reload
 ```
 
 When hot reload is enabled,
-you can reload your application by pressing “r”
-in the running terminal, or “R” to hot restart.
+you can reload your application by pressing "r"
+in the running terminal, or "R" to hot restart.
 
 ### Reloading in DartPad
 
 Hot reload is also enabled in the main channel
-of DartPad with a new “Reload” button.
+of DartPad with a new "Reload" button.
 The feature is only available if Flutter is detected
 in the running application. You can begin a hot reloadable
 session by selecting a sample app provided by DartPad
 and selecting the beta or main channel in the bottom right.
+
 :::
 
 [Hot restart]: /tools/hot-reload
