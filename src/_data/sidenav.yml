@@ -132,6 +132,8 @@
     - title: Compatibility policy
       permalink: /release/compatibility-policy
     - divider
+    - title: Medium publication
+      permalink: https://medium.com/flutter
     - title: What's new in the docs
       permalink: /release/whats-new
 

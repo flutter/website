@@ -994,7 +994,7 @@ Widget build(BuildContext context) {
           selectedTime = pickedTime;
         });
       },
-      label: const Text('Pick a date'),
+      label: const Text('Pick a time'),
     )
   ]);
 }
@@ -1036,7 +1036,7 @@ It has a number of configuration parameters, including:
 {% render docs/code-and-image.md,
 image:"fwe/user-input/Dismissible.webp",
 caption: "This figure shows a list of Dismissible widgets that each contain a
-ListTile. Swiping across the ListTile reveals a green background makes the tile
+ListTile. Swiping across the ListTile reveals a green background and makes the tile
 disappear."
 alt: "A screenshot of three widgets, spaced evenly from each other."
 code:"
@@ -1191,7 +1191,7 @@ This page was an introduction to handling user input.
 Now that you know how to handle input from app users,
 you can make your app even more interesting by adding
 external data. In the next section,
-you'll learn now to fetch data for your app over a network,
+you'll learn how to fetch data for your app over a network,
 how to convert data to and from JSON, authentication,
 and other networking features.
 
