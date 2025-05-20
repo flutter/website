@@ -1,6 +1,6 @@
 ---
 title: Removed semantics elevation and thickness
-description: >
+description: >-
   Removed elevation and thickness from semantics properties.
 ---
 
@@ -44,8 +44,8 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 
 ## Timeline
 
-Landed in version: 3.32.0
-In stable release: TBD
+Landed in version: Not yet<br>
+In stable release: Not yet
 
 ## References
 
