@@ -52,7 +52,7 @@ check out the Flutter [CHANGELOG][].
 * Add color to CupertinoButton.filled constructor by @vizakenjack in [161660](https://github.com/flutter/flutter/pull/161660)
 * Adjust padding for Cupertino sheet content by @MitchellGoodwin in [162481](https://github.com/flutter/flutter/pull/162481)
 * Make CupertinoSheetRoute usable with Cupertino(Sliver)NavigationBar by @victorsanni in [162181](https://github.com/flutter/flutter/pull/162181)
-* [web] Only create one <style> for SelectableRegion by @mdebbar in [161682](https://github.com/flutter/flutter/pull/161682)
+* [web] Only create one `<style>` for SelectableRegion by @mdebbar in [161682](https://github.com/flutter/flutter/pull/161682)
 * fix: RangeError when selecting text in SelectionArea by @rkishan516 in [162228](https://github.com/flutter/flutter/pull/162228)
 * Added equals and hashCode for TextInputConfiguration and AutofillConfiguration by @Paulik8 in [162238](https://github.com/flutter/flutter/pull/162238)
 * Add role check in SemanticsNode._isDifferentFromCurrentSemanticAnnotation function. by @ksokolovskyi in [162578](https://github.com/flutter/flutter/pull/162578)
