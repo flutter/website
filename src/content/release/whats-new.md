@@ -45,7 +45,7 @@ so you might have already noticed some of them:
 * The website has been made more accessible
 * Files have been moved around (we always provide redirects)
 
-**Docs updated or added since the 3.32 release**
+**Docs updated or added since the 3.29 release**
 
 * An updated [Flutter on iOS][] page.
 * We have a new [workflow for installing Flutter][] on the various
