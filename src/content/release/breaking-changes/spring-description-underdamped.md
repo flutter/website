@@ -45,8 +45,11 @@ provided [JSFiddle for migration][]. Detailed formulas and explanations follow
 in the next sections.
 
 ### Default constructor
-If the `SpringDescription` was built with the default constructor with mass `m`, stiffness `k`, and damping `c`,
+
+If the `SpringDescription` was built with the default constructor with
+mass `m`, stiffness `k`, and damping `c`,
 then it should be changed with the following formula:
+
 ```plaintext
 new_m = 1
 new_c = c * m
@@ -74,13 +77,17 @@ const spring = SpringDescription(
 ```
 
 ### `.withDampingRatio` constructor
-If the `SpringDescription` was built with the `.withDampingRatio` constructor with mass `m`, stiffness `k`, and ratio `z`,
-then first calculate damping
+
+If the `SpringDescription` was built with the `.withDampingRatio` constructor
+with mass `m`, stiffness `k`, and ratio `z`, then first calculate damping:
+
 ```plaintext
 c = z * 2 * sqrt(m * k)
 ```
 
-Then apply the formula above. Optionally you might convert the result back to damping ratio with
+Then apply the formula above.
+Optionally, you might convert the result back to damping ratio with:
+
 ```plaintext
 new_z = new_c / 2 / sqrt(new_m * new_k)
 ```
@@ -108,7 +115,7 @@ const spring = SpringDescription.withDampingRatio(
 ## Timeline
 
 Landed in version: 3.31.0-0.1.pre<br>
-In stable release: Not yet
+In stable release: 3.32
 
 ## References
 
