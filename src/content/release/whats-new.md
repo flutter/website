@@ -62,6 +62,9 @@ so you might have already noticed some of them:
 * A completely rewritten page for
   [setting up Flutter flavors for iOS and macOS][].
 * A new page for [setting up Flutter flavors for Android][].
+* The Cupertino instructions were updated for the
+  [Place a floating app bar above a list][floating-app-bar]
+  cookbook recipe.
 * You can now
   [improve accessibility of your apps with SemanticRoles][semantic-roles].
 * Also, don't forget to check out the [breaking changes][bc-3.32]
@@ -73,6 +76,7 @@ so you might have already noticed some of them:
 
 [adding iOS app extensions]: /platform-integration/ios/app-extensions
 [Android Studio/IntelliJ]: /tools/android-studio#property-editor
+[floating app bar]: /cookbook/lists/floating-app-bar
 [Flutter on iOS]: https://flutter.dev/multi-platform/ios
 [Flutter Property Editor]: /tools/property-editor
 [semantic-roles]: /ui/accessibility-and-internationalization/accessibility#enhancing-accessibility-with-semantic-roles
