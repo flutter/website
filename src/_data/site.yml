@@ -61,4 +61,4 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.29.3'
+currentFlutterVersion: '3.32.0'
