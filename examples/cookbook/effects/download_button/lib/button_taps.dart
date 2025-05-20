@@ -80,10 +80,9 @@ class ProgressIndicatorWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor:
-                isDownloading
-                    ? CupertinoColors.lightBackgroundGray
-                    : Colors.transparent,
+            backgroundColor: isDownloading
+                ? CupertinoColors.lightBackgroundGray
+                : Colors.transparent,
             valueColor: AlwaysStoppedAnimation(
               isFetching
                   ? CupertinoColors.lightBackgroundGray

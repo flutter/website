@@ -31,10 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text('$_counter'),
             TextButton(
-              onPressed:
-                  () => setState(() {
-                    _counter++;
-                  }),
+              onPressed: () => setState(() {
+                _counter++;
+              }),
               child: const Text('+'),
             ),
           ],

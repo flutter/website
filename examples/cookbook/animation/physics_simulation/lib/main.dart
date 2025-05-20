@@ -102,7 +102,10 @@ class _DraggableCardState extends State<DraggableCard>
         _runAnimation(details.velocity.pixelsPerSecond, size);
       },
       // #enddocregion onPanEnd
-      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+      child: Align(
+        alignment: _dragAlignment,
+        child: Card(child: widget.child),
+      ),
     );
   }
 }

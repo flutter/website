@@ -437,10 +437,9 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
           builder: (context, child) {
             return IconButton(
               onPressed: _toggleDrawer,
-              icon:
-                  _isDrawerOpen() || _isDrawerOpening()
-                      ? const Icon(Icons.clear, color: Colors.black)
-                      : const Icon(Icons.menu, color: Colors.black),
+              icon: _isDrawerOpen() || _isDrawerOpening()
+                  ? const Icon(Icons.clear, color: Colors.black)
+                  : const Icon(Icons.menu, color: Colors.black),
             );
           },
         ),

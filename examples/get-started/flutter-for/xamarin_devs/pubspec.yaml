@@ -6,7 +6,7 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
@@ -14,7 +14,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  http: ^1.2.0
+  http: ^1.4.0
 
 dev_dependencies:
   flutter_test:

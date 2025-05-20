@@ -446,11 +446,10 @@ class SignaturePainter extends CustomPainter {
   final List<Offset?> points;
   @override
   void paint(Canvas canvas, Size size) {
-    var paint =
-        Paint()
-          ..color = Colors.black
-          ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5;
+    var paint = Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -766,8 +765,8 @@ Future<void> loadData() async {
   final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final response = await http.get(dataURL);
   setState(() {
-    widgets =
-        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -842,8 +841,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final response = await http.get(dataURL);
     setState(() {
-      widgets =
-          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 
@@ -878,8 +877,8 @@ Future<void> loadData() async {
   final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final response = await http.get(dataURL);
   setState(() {
-    widgets =
-        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1216,8 +1215,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final response = await http.get(dataURL);
     setState(() {
-      widgets =
-          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 }

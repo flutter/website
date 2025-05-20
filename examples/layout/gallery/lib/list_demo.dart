@@ -31,10 +31,9 @@ class ListDemo extends StatelessWidget {
                     child: CircleAvatar(child: Text('$index')),
                   ),
                   title: Text('Item $index'),
-                  subtitle:
-                      type == ListDemoType.twoLine
-                          ? const Text('Secondary text')
-                          : null,
+                  subtitle: type == ListDemoType.twoLine
+                      ? const Text('Secondary text')
+                      : null,
                 ),
             ],
           ),

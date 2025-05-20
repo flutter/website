@@ -69,6 +69,8 @@
       permalink: /install/add-to-path
     - title: Troubleshoot
       permalink: /install/troubleshoot
+    - title: Uninstall SDK
+      permalink: /install/uninstall
 
 - title: Learn Flutter
   children:

@@ -103,8 +103,8 @@ RegEx removes the return statement and adds the closing parenthesis at the end
 ```dart
 MaterialApp(
   routes: {
-    ExtractArgumentsScreen.routeName:
-        (context) => const ExtractArgumentsScreen(),
+    ExtractArgumentsScreen.routeName: (context) =>
+        const ExtractArgumentsScreen(),
   },
 )
 ```
@@ -208,8 +208,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        ExtractArgumentsScreen.routeName:
-            (context) => const ExtractArgumentsScreen(),
+        ExtractArgumentsScreen.routeName: (context) =>
+            const ExtractArgumentsScreen(),
       },
       // Provide a function to handle named routes.
       // Use this function to identify the named

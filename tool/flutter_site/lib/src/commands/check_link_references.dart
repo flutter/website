@@ -60,10 +60,11 @@ int _checkLinkReferences() {
 Map<String, List<String>> _findInvalidLinkReferences(Directory directory) {
   final invalidReferences = <String, List<String>>{};
 
-  for (final filePath in directory
-      .listSync(recursive: true)
-      .map((f) => f.path)
-      .where((p) => path.extension(p) == '.html')) {
+  for (final filePath
+      in directory
+          .listSync(recursive: true)
+          .map((f) => f.path)
+          .where((p) => path.extension(p) == '.html')) {
     final content = File(filePath).readAsStringSync();
     final results = _findInContent(content);
     if (results.isNotEmpty) {

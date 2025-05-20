@@ -569,7 +569,6 @@ Toggling this value enables or disables the hover inspection functionality.
 When enabled, the widget tree automatically refreshes after
 a hot-reload or a navigation event. 
 
-
 ### Use legacy inspector
 
 When enabled, use the [legacy inspector][] instead of the new inspector. 

@@ -75,7 +75,10 @@ class _DraggableCardState extends State<DraggableCard>
         _runAnimation();
       },
       // #docregion align
-      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+      child: Align(
+        alignment: _dragAlignment,
+        child: Card(child: widget.child),
+      ),
       // #enddocregion align
     );
     // #enddocregion gesture

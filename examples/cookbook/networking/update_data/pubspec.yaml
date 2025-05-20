@@ -3,12 +3,12 @@ description: Update Data
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.0
+  http: ^1.4.0
 
 flutter:
   uses-material-design: true

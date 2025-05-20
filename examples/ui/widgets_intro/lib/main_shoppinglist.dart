@@ -94,14 +94,13 @@ class _ShoppingListState extends State<ShoppingList> {
       appBar: AppBar(title: const Text('Shopping List')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        children:
-            widget.products.map((product) {
-              return ShoppingListItem(
-                product: product,
-                inCart: _shoppingCart.contains(product),
-                onCartChanged: _handleCartChanged,
-              );
-            }).toList(),
+        children: widget.products.map((product) {
+          return ShoppingListItem(
+            product: product,
+            inCart: _shoppingCart.contains(product),
+            onCartChanged: _handleCartChanged,
+          );
+        }).toList(),
       ),
     );
   }

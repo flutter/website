@@ -47,10 +47,6 @@ Syncing files to device iPhone 15 Pro...
 
 To hot reload the changes while running, press "r".
 To hot restart (and rebuild state). press "R".
-An Observatory debugger and profiler on iPhone 15 Pro is available at:
-http://127.0.0.1:65525/EXmCgco5zjo=/
-For a more detailed help message, press "h".
-To detach, press "d"; to quit, press "q".
 ```
 
 ## Debug iOS extension in Xcode and VS Code

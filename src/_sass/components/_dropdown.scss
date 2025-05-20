@@ -8,6 +8,7 @@
   border-radius: 0.4rem;
   width: max-content;
   border: var(--site-outline-variant) 1px solid;
+  z-index: var(--site-z-dropdown);
 
   &.show {
     display: block;

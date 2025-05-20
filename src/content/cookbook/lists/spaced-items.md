@@ -216,7 +216,9 @@ class ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(child: SizedBox(height: 100, child: Center(child: Text(text))));
+    return Card(
+      child: SizedBox(height: 100, child: Center(child: Text(text))),
+    );
   }
 }
 ```

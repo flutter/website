@@ -154,7 +154,8 @@ class MyScaffold extends StatelessWidget {
               'Example title',
               style:
                   Theme.of(context) //
-                  .primaryTextTheme.titleLarge,
+                      .primaryTextTheme
+                      .titleLarge,
             ),
           ),
           const Expanded(child: Center(child: Text('Hello, world!'))),
@@ -325,7 +326,11 @@ class MyButton extends StatelessWidget {
 }
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(body: Center(child: MyButton()))));
+  runApp(
+    const MaterialApp(
+      home: Scaffold(body: Center(child: MyButton())),
+    ),
+  );
 }
 ```
 
@@ -413,7 +418,11 @@ class _CounterState extends State<Counter> {
 }
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(body: Center(child: Counter()))));
+  runApp(
+    const MaterialApp(
+      home: Scaffold(body: Center(child: Counter())),
+    ),
+  );
 }
 ```
 
@@ -496,7 +505,11 @@ class _CounterState extends State<Counter> {
 }
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(body: Center(child: Counter()))));
+  runApp(
+    const MaterialApp(
+      home: Scaffold(body: Center(child: Counter())),
+    ),
+  );
 }
 ```
 
@@ -723,14 +736,13 @@ class _ShoppingListState extends State<ShoppingList> {
       appBar: AppBar(title: const Text('Shopping List')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
-        children:
-            widget.products.map((product) {
-              return ShoppingListItem(
-                product: product,
-                inCart: _shoppingCart.contains(product),
-                onCartChanged: _handleCartChanged,
-              );
-            }).toList(),
+        children: widget.products.map((product) {
+          return ShoppingListItem(
+            product: product,
+            inCart: _shoppingCart.contains(product),
+            onCartChanged: _handleCartChanged,
+          );
+        }).toList(),
       ),
     );
   }
