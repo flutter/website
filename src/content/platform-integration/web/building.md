@@ -95,12 +95,10 @@ in the running terminal, or "R" to hot restart.
 
 ### Reloading in DartPad
 
-Hot reload is also enabled in the main channel
-of DartPad with a new "Reload" button.
+Hot reload is also enabled in DartPad with a new "Reload" button.
 The feature is only available if Flutter is detected
 in the running application. You can begin a hot reloadable
-session by selecting a sample app provided by DartPad
-and selecting the beta or main channel in the bottom right.
+session by selecting a sample app provided by DartPad.
 
 :::
 
