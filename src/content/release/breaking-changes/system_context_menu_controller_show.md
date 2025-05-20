@@ -1,6 +1,6 @@
 ---
 title: SystemContextMenuController.show Deprecated
-description: >
+description: >-
   `SystemContextMenuController`'s `show` method is deprecated and replaced by
   its `showWithItems` method.
 ---
@@ -85,7 +85,7 @@ _controller.showWithItems(selectionRect, defaultItemDatas);
 ## Timeline
 
 Landed in version: 3.29.0-0.3.pre<br>
-In stable release: not yet
+In stable release: 3.32
 
 ## References
 

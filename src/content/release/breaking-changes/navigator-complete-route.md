@@ -28,13 +28,15 @@ use `remove` currently return `null`. In the future, we might extend these
 methods with an optional callback function to allow developers to handle pop
 logic in indirect scenarios (such as `removeUntil`).
 
-Before this PR, methods bellow can't return a result :
+Before this PR, the methods below can't return a result:
+
 ```dart
 Navigator.of(context).removeRoute(route);
 Navigator.of(context).removeRouteBelow(route);
 ```
 
-After this PR, methods can return a result :
+After this PR, methods can return a result:
+
 ```dart
 Navigator.of(context).removeRoute(route, result);
 Navigator.of(context).removeRouteBelow(route, result);
@@ -50,8 +52,8 @@ as expected with new capabilities.
 
 ## Timeline
 
-Landed in version: Not yet<br>
-In stable release: Not yet
+Landed in version: 3.31.0-0.0.pre<br>
+In stable release: 3.32
 
 ## References
 
