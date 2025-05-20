@@ -70,12 +70,8 @@ Note this is in the Dart SDK repository where it's easier
 for us to track issues. Known issues can be seen in the
 associated [GitHub project][]. 
 
-To try hot reload on the web:
-1. You must be on either the `beta` or `main` channel.
-   It's not yet available on the `stable` channel.
-   [How to switch channels][].
-1. Pass the `--web-experimental-hot-reload` flag
-   wherever you invoke `flutter run`.
+To try hot reload for the web, pass the `--web-experimental-hot-reload` flag
+wherever you invoke `flutter run -d chrome`.
 
 ### Running from VS Code
 
@@ -99,12 +95,10 @@ in the running terminal, or "R" to hot restart.
 
 ### Reloading in DartPad
 
-Hot reload is also enabled in the main channel
-of DartPad with a new "Reload" button.
+Hot reload is also enabled in DartPad with a new "Reload" button.
 The feature is only available if Flutter is detected
 in the running application. You can begin a hot reloadable
-session by selecting a sample app provided by DartPad
-and selecting the beta or main channel in the bottom right.
+session by selecting a sample app provided by DartPad.
 
 :::
 
