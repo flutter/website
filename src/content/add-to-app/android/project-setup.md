@@ -202,15 +202,40 @@ host Android app, make the following changes.
 1. Add the `dependencyResolutionManagement` displayed in this step to the
    `settings.gradle` file.
 
-   ```groovy
-   dependencyResolutionManagement {
-      repositoriesMode = RepositoriesMode.PREFER_SETTINGS
-      repositories {
-          google()
-          mavenCentral()
-      }
-   }
-   ```
+{% tabs "settings.gradle.kts" %}
+{% tab "Kotlin" %}
+
+```kotlin title="settings.gradle.kts"
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    val storageUrl: String = System.getenv("FLUTTER_STORAGE_BASE_URL") ?: "https://storage.googleapis.com"
+    repositories {
+        google()
+        mavenCentral()
+        maven("$storageUrl/download.flutter.io")
+    }
+}
+```
+
+{% endtab %}
+{% tab "Groovy" %}
+
+```groovy title="settings.gradle"
+dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.PREFER_SETTINGS
+    String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url = uri("$storageUrl/download.flutter.io")
+        }
+    }
+}
+```
+
+{% endtab %}
+{% endtabs %}
 
 {% endtab %}
 {% endtabs %}
