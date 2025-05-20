@@ -13,7 +13,6 @@ check out the Flutter [CHANGELOG][].
 :::
 
 * 3.32.0
-  * [3.32.0 announcement][]
   * [3.32.0 release notes & change log][]
   * [3.32.0 breaking changes & migrations][]
 * 3.29.0
