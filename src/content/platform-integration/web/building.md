@@ -70,12 +70,8 @@ Note this is in the Dart SDK repository where it's easier
 for us to track issues. Known issues can be seen in the
 associated [GitHub project][]. 
 
-To try hot reload on the web:
-1. You must be on either the `beta` or `main` channel.
-   It's not yet available on the `stable` channel.
-   [How to switch channels][].
-1. Pass the `--web-experimental-hot-reload` flag
-   wherever you invoke `flutter run`.
+To try hot reload for the web, pass the `--web-experimental-hot-reload` flag
+wherever you invoke `flutter run -d chrome`.
 
 ### Running from VS Code
 
