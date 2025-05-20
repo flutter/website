@@ -1,6 +1,6 @@
 ---
 title: SystemContextMenuController.show Deprecated
-description: >
+description: >-
   `SystemContextMenuController`'s `show` method is deprecated and replaced by
   its `showWithItems` method.
 ---
@@ -85,7 +85,7 @@ _controller.showWithItems(selectionRect, defaultItemDatas);
 ## Timeline
 
 Landed in version: 3.29.0-0.3.pre<br>
-In stable release: not yet
+In stable release: 3.32
 
 ## References
 
@@ -113,7 +113,7 @@ Relevant PRs:
 [`SystemContextMenu`]: {{site.api}}/flutter/services/SystemContextMenu.html
 
 [Secure paste milestone 2]: {{site.repo.flutter}}/pull/159013
-[ios secure_paste show menu item based on info sent from framework]: {{sites.repo.engine}}/pull/161103
+[ios secure_paste show menu item based on info sent from framework]: {{site.repo.engine}}/pull/161103
 [Native ios context menu]: {{site.repo.flutter}}/pull/143002
 [ios_edit_menu add native edit menu]: {{site.repo.flutter}}/pull/50095
 [Flutter should support iOS 15's Secure Paste feature]: {{site.repo.flutter}}/issues/103163

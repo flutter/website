@@ -43,28 +43,34 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Removed semantics elevation and thickness][]
+* [Deprecate `TextField.canRequestFocus`][]
+* [Localized messages are generated into source, not a synthetic package][]
+* [Stop generating `AssetManifest.json`][]
+
+[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+
+<a id="released-in-flutter-332" aria-hidden="true"></a>
+### Released in Flutter 3.32
+
+* [Deprecate `SystemContextMenuController.show`][]
 * [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
-   in favor of `RouteTransitionRecord.markForComplete`
-* [Deprecate `TextField.canRequestFocus`][]
+  in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
-* [Localized messages are generated into source, not a synthetic package][]
 * [Material Theme System Updates][]
-* [Stop generating `AssetManifest.json`][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
 * [Changing the default `goldenFileComparator` for `integration_test`s][]
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
 
-[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
-[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
+[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: /release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
-[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight

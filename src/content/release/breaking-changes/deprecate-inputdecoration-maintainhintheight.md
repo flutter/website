@@ -13,9 +13,9 @@ in favor of the [`InputDecoration.maintainHintSize`][] parameter.
 
 ## Context
 
-The defaults intrincic size of an input decorator depends on the hint size.
-The [`InputDecoration.maintainHintSize`][] parameter can be set to false to
-make the intrincic size ignores the hint size when the hint is not visible.
+The default intrinsic size of an input decorator depends on the hint size.
+The [`InputDecoration.maintainHintSize`][] parameter can be set to `false` to
+make the intrinsic size ignores the hint size when the hint isn't visible.
 Previously, the `InputDecoration.maintainHintHeight` parameter was
 used to override the default intrinsic height and had no impact on the
 intrinsic width.
@@ -29,7 +29,7 @@ width and height depend on the hint dimensions.
 ## Migration guide
 
 Replace [`InputDecoration.maintainHintHeight`][] with
-[`InputDecoration.maintainHintSize`][] to override the default intrisic size
+[`InputDecoration.maintainHintSize`][] to override the default intrinsic size
 computation.
 
 Code before migration:
@@ -55,7 +55,7 @@ TextField(
 ## Timeline
 
 Landed in version: 3.30.0-0.0.pre<br>
-In stable release: Not yet
+In stable release: 3.32
 
 ## References
 

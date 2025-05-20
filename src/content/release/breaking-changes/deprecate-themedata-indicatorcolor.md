@@ -51,8 +51,8 @@ theme: ThemeData(
 
 ## Timeline
 
-Landed in version: Not yet<br>
-In stable release: Not yet
+Landed in version: 3.30.0-0.0.pre<br>
+In stable release: 3.32
 
 ## References
 
