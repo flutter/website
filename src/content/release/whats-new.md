@@ -76,7 +76,7 @@ so you might have already noticed some of them:
 
 [adding iOS app extensions]: /platform-integration/ios/app-extensions
 [Android Studio/IntelliJ]: /tools/android-studio#property-editor
-[floating app bar]: /cookbook/lists/floating-app-bar
+[floating-app-bar]: /cookbook/lists/floating-app-bar
 [Flutter on iOS]: https://flutter.dev/multi-platform/ios
 [Flutter Property Editor]: /tools/property-editor
 [semantic-roles]: /ui/accessibility-and-internationalization/accessibility#enhancing-accessibility-with-semantic-roles
