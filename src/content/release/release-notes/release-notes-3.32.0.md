@@ -13,6 +13,7 @@ check out the Flutter [CHANGELOG][].
 ## Flutter framework
 
 ### Framework
+
 * Do not block vertical drag gestures in CupertinoSheetRoute body by @MitchellGoodwin in [161696](https://github.com/flutter/flutter/pull/161696)
 * Make `PipelineOwner` a `base` class by @LongCatIsLooong in [161789](https://github.com/flutter/flutter/pull/161789)
 * [Impeller] backfilling TextContents unit tests by @gaaclarke in [161625](https://github.com/flutter/flutter/pull/161625)
@@ -208,7 +209,9 @@ check out the Flutter [CHANGELOG][].
 * Add `RoundedSuperellipseBorder` and apply it to `CupertinoActionSheet` by @dkwingsmt in [166303](https://github.com/flutter/flutter/pull/166303)
 * Fix: DraggableScrollableSheet may not close if snapping is enabled by @chika3742 in [165557](https://github.com/flutter/flutter/pull/165557)
 * add check for announcement support per platform by @ash2moon in [166099](https://github.com/flutter/flutter/pull/166099)
+
 ### Material
+
 * feat: Change default value of keyboardDismissBehavior by @EArminjon in [158580](https://github.com/flutter/flutter/pull/158580)
 * Reland "#143249 Autocomplete options width" by @victorsanni in [161695](https://github.com/flutter/flutter/pull/161695)
 * fix reorderable_list_test.dart by @yjbanov in [161836](https://github.com/flutter/flutter/pull/161836)
@@ -318,7 +321,9 @@ check out the Flutter [CHANGELOG][].
 * Feat: Add yearShape property to DatePickerThemeData by @rkishan516 in [163909](https://github.com/flutter/flutter/pull/163909)
 * Fix `DropdownMenu` keyboard navigation on filtered entries by @ahmedrasar in [165868](https://github.com/flutter/flutter/pull/165868)
 * Initialize Flutter Beta (`flutter-3.32-candidate.0`) by @matanlurey in [166783](https://github.com/flutter/flutter/pull/166783)
+
 ### iOS
+
 * Enabled provisioning updates and device registration during building xcarchive. by @czarny in [159622](https://github.com/flutter/flutter/pull/159622)
 * When parsing flavors, handle Xcode build configurations that are not lowercase by @jmagman in [161455](https://github.com/flutter/flutter/pull/161455)
 * Avoid iOS text selection crash by returning nil range by @importRyan in [161996](https://github.com/flutter/flutter/pull/161996)
@@ -350,7 +355,9 @@ check out the Flutter [CHANGELOG][].
 * [ios][pv]fully revert the UIScreen.main deprecated API change by @hellohuanlin in [166080](https://github.com/flutter/flutter/pull/166080)
 * [Engine][iOS] Cancel animation when recieved `UIKeyboardWillHideNotification` with duration 0.0 by @koji-1009 in [164884](https://github.com/flutter/flutter/pull/164884)
 * Trim any text before osascript JSON response by @vashworth in [166296](https://github.com/flutter/flutter/pull/166296)
+
 ### Android
+
 * fix failing lint : findByPath requires a specific ordering of project evaluation in `aar_init_script.gradle` by @AbdeMohlbi in [159301](https://github.com/flutter/flutter/pull/159301)
 * Add a README with instructions for editing and running tests for the FGP by @gmackall in [161830](https://github.com/flutter/flutter/pull/161830)
 * Refactor code inside flutter.groovy  by @AbdeMohlbi in [160250](https://github.com/flutter/flutter/pull/160250)
@@ -425,13 +432,17 @@ check out the Flutter [CHANGELOG][].
 * [reland] Convert the Flutter Gradle Plugin entirely to Kotlin source by @gmackall in [166676](https://github.com/flutter/flutter/pull/166676)
 * bump warn agp version from 7.3 to 8.3 by @reidbaker in [166555](https://github.com/flutter/flutter/pull/166555)
 * Fix warnings in FGP  by @gmackall in [166727](https://github.com/flutter/flutter/pull/166727)
+
 ### Windows
+
 * [Windows] Allow apps to prefer low power GPUs by @zaiste-linganer in [162490](https://github.com/flutter/flutter/pull/162490)
 * [windows] Implement merged UI and platform thread by @knopp in [162935](https://github.com/flutter/flutter/pull/162935)
 * [Windows] Use enum to configure UI thread policy by @knopp in [163727](https://github.com/flutter/flutter/pull/163727)
 * [windows] wire the focus request and the focus events through the Windows platform by @mattkae in [164296](https://github.com/flutter/flutter/pull/164296)
 * [Windows] Make lifecycle manager updates atomic by @knopp in [164872](https://github.com/flutter/flutter/pull/164872)
+
 ### Linux
+
 * Remove some stray printf debugging by @robert-ancell in [161706](https://github.com/flutter/flutter/pull/161706)
 * Make fl_keyboard_manager_handle_event async by @robert-ancell in [161637](https://github.com/flutter/flutter/pull/161637)
 * Refactor event redispatching by @robert-ancell in [161701](https://github.com/flutter/flutter/pull/161701)
@@ -452,7 +463,9 @@ check out the Flutter [CHANGELOG][].
 * Move tracking of renderables from FlRenderer to FlEngine by @robert-ancell in [165848](https://github.com/flutter/flutter/pull/165848)
 * Move OpenGL context management to FlOpenGLManager by @robert-ancell in [166025](https://github.com/flutter/flutter/pull/166025)
 * Rename FlRenderer to FlCompositorOpenGL by @robert-ancell in [166037](https://github.com/flutter/flutter/pull/166037)
+
 ### Web
+
 * Get `et` working for local web engine builds. by @eyebrowsoffire in [161825](https://github.com/flutter/flutter/pull/161825)
 * [web] Remove spam from test output by @mdebbar in [161774](https://github.com/flutter/flutter/pull/161774)
 * [web] Remove deprecated web-only APIs from dart:ui by @mdebbar in [161775](https://github.com/flutter/flutter/pull/161775)
@@ -501,7 +514,9 @@ check out the Flutter [CHANGELOG][].
 * Reland "[skwasm] Dynamic Threading" by @eyebrowsoffire in [166454](https://github.com/flutter/flutter/pull/166454)
 * Disable firefox image_to_byte_data_test as a group. by @eyebrowsoffire in [166559](https://github.com/flutter/flutter/pull/166559)
 * [CP-beta][skwasm] Use `queueMicrotask` instead of `postMessage` when single-threaded by @flutteractionsbot in [167154](https://github.com/flutter/flutter/pull/167154)
+
 ### Tooling
+
 * route CLI command usage information through the logger instead of using `print` by @andrewkolos in [161533](https://github.com/flutter/flutter/pull/161533)
 * remove usage of `Usage` from build system by @andrewkolos in [160663](https://github.com/flutter/flutter/pull/160663)
 * Set meta tag in default index by @srujzs in [161493](https://github.com/flutter/flutter/pull/161493)
@@ -622,9 +637,13 @@ check out the Flutter [CHANGELOG][].
 * [flutter_tools] Update dwds version to 24.3.10 by @srujzs in [166699](https://github.com/flutter/flutter/pull/166699)
 * Roll pub packages by @flutter-pub-roller-bot in [166503](https://github.com/flutter/flutter/pull/166503)
 * [ Widget Preview ] Add initial support for communications over the Dart Tooling Daemon (DTD) by @bkonyi in [166698](https://github.com/flutter/flutter/pull/166698)
+
 ### Documentation
+
 * Update `generate_gradle_lockfiles.dart` to handle batch updating kotlin Gradle files by @gmackall in [162628](https://github.com/flutter/flutter/pull/162628)
-### Other Changes
+
+### Other changes
+
 * Roll pub packages by @flutter-pub-roller-bot in [161680](https://github.com/flutter/flutter/pull/161680)
 * [Impeller] Update partial repaint to use a fullsize onscreen. by @jonahwilliams in [161626](https://github.com/flutter/flutter/pull/161626)
 * Enable duplicate `linux_host_engine_test`. by @matanlurey in [161613](https://github.com/flutter/flutter/pull/161613)
@@ -978,7 +997,8 @@ check out the Flutter [CHANGELOG][].
 * Update `engine.version` by @matanlurey in [167295](https://github.com/flutter/flutter/pull/167295)
 * Make a NOP edit to (re)-trigger postsubmits by @matanlurey in [167407](https://github.com/flutter/flutter/pull/167407)
 
-## New Contributors
+## New contributors
+
 * @lukepighetti made their first contribution in [161803](https://github.com/flutter/flutter/pull/161803)
 * @mernen made their first contribution in [161863](https://github.com/flutter/flutter/pull/161863)
 * @sethmfuller made their first contribution in [161650](https://github.com/flutter/flutter/pull/161650)
