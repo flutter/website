@@ -68,7 +68,7 @@ install and set up the latest stable version of [Android Studio][].
     1. If the **SDK Platforms** tab is not open, switch to it.
 
     1. Verify that the first entry with an **API Level** of
-       **{{ site.platform.androidApiLevel }}** has been selected.
+       **35** has been selected.
 
        If the **Status** column displays
        **Update available** or **Not installed**:

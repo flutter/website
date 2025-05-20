@@ -8,8 +8,8 @@ software packages.
 
 {% if include.os == 'Linux' %}
 {%- capture supported-os %}
-Debian Linux {{site.devmin.linux.debian}} or later
-and Ubuntu Linux {{site.devmin.linux.ubuntu}} or later
+Debian 11 or later
+and Ubuntu 22.04 or later LTS
 {% endcapture -%}
 {% else %}
 {% assign supported-os = 'ChromeOS' %}
@@ -73,7 +73,7 @@ To develop Flutter on {{include.os}}:
       $ sudo apt-get install libc6:amd64 libstdc++6:amd64 lib32z1 libbz2-1.0:amd64
       ```
 
-   1. Install [Android Studio][] {{site.appmin.android_studio}} or later to
+   1. Install [Android Studio][] to
       debug and compile Java or Kotlin code for Android.
       Flutter requires the full version of Android Studio.
 
@@ -106,16 +106,13 @@ syntax highlighting, widget editing assists, debugging, and other features.
 
 Popular options include:
 
-* [Visual Studio Code][vscode] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  with the [Flutter plugin for IntelliJ][].
-* [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
-  with the [Flutter plugin for IntelliJ][].
+* [Visual Studio Code][vscode] with the [Flutter extension for VS Code][].
+* [Android Studio][] with the [Flutter plugin for IntelliJ][].
+* [IntelliJ IDEA][] with the [Flutter plugin for IntelliJ][].
 
 :::recommend
-The Flutter team recommends installing [Visual Studio Code][vscode]
-{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+The Flutter team recommends installing
+[Visual Studio Code][vscode] and the [Flutter extension for VS Code][].
 This combination simplifies installing the Flutter SDK.
 :::
 

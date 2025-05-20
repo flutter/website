@@ -20,7 +20,7 @@
 To create Android apps with Flutter, verify that the following Android
 components have been installed.
 
-* **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+* **Android SDK Platform, API 35**
 * **Android SDK Command-line Tools**
 * **Android SDK Build-Tools**
 * **Android SDK Platform-Tools**
@@ -43,7 +43,7 @@ Otherwise, you can skip to the [next section][check-dev].
 
 1. Install the following components:
 
-   * **Android SDK Platform, API {{ site.appnow.android_sdk }}**
+   * **Android SDK Platform, API 35**
    * **Android SDK Command-line Tools**
    * **Android SDK Build-Tools**
    * **Android SDK Platform-Tools**
@@ -65,12 +65,12 @@ Otherwise, you can skip to the [next section][check-dev].
 
 1. Click **SDK Platforms**.
 
-1. Verify that **Android API {{ site.appnow.android_sdk }}** has been selected.
+1. Verify that **Android API 35** has been selected.
 
    If the **Status** column displays **Update available** or **Not installed**:
 
    {:type="a"}
-   1. Select **Android API {{ site.appnow.android_sdk }}**.
+   1. Select **Android API 35**.
 
    1. Click **Apply**.
 
@@ -207,7 +207,7 @@ follow these steps to create and select an emulator.
 {% render docs/help-link.md, location:'android-device', section:'#android-setup' %}
 
 To configure your Flutter app to run on a physical Android device,
-you need an Android device running {{site.targetmin.android}} or later.
+you need a [supported version of Android][supported-version].
 
 1. Enable **Developer options** and **USB debugging** on your device
    as described in the
@@ -254,6 +254,8 @@ you need an Android device running {{site.targetmin.android}} or later.
 
 {% endtab %}
 {% endtabs %}
+
+[supported-version]: /reference/supported-platforms
 
 {% if include.attempt == 'first' %}
 

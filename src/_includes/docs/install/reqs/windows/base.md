@@ -6,25 +6,25 @@ software packages.
 
 ### Operating system
 
-Flutter supports {{site.devmin.windows}} or later.
+Flutter supports developing on 64-bit versions of Windows 10 and 11.
 
 ### Development tools
 
 Download and install the Windows version of the following packages:
 
-* [Git for Windows][] {{site.appmin.git_win}} or later to manage source code.
+* [Git for Windows][] to manage Flutter versions and
+  your own source code versioning.
 
 {% if include.target == 'desktop' -%}
 
 * [Visual Studio 2022][] to debug and compile native C++ Windows code.
   Make sure to install the **Desktop development with C++** workload.
-  This enables building Windows app including all of its default components.
+  This enables building Windows apps, including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
 
 {% elsif include.target == 'Android' -%}
 
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  to debug and compile Java or Kotlin code for Android.
+* [Android Studio][] to debug and compile Java or Kotlin code for Android.
 
 {% elsif include.target == 'Web' -%}
 
@@ -34,10 +34,9 @@ Download and install the Windows version of the following packages:
 
 * [Visual Studio 2022][] with the **Desktop development with C++** workload
   or [Build Tools for Visual Studio 2022][].
-  This enables building Windows app including all of its default components.
+  This enables building Windows apps, including all of its default components.
   **Visual Studio** is an IDE separate from **[Visual Studio _Code_][]**.
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  to debug and compile Java or Kotlin code for Android.
+* [Android Studio][] to debug and compile Java or Kotlin code for Android.
 * The latest version of [Google Chrome][] to debug JavaScript code for web apps.
 
 {% endif -%}
@@ -62,16 +61,13 @@ syntax highlighting, widget editing assists, debugging, and other features.
 
 Popular options include:
 
-* [Visual Studio Code][] {{site.appmin.vscode}} or later
-  with the [Flutter extension for VS Code][].
-* [Android Studio][] {{site.appmin.android_studio}} or later
-  with the [Flutter plugin for IntelliJ][].
-* [IntelliJ IDEA][] {{site.appmin.intellij_idea}} or later
-  with the [Flutter plugin for IntelliJ][].
+* [Visual Studio Code][] with the [Flutter extension for VS Code][].
+* [Android Studio][] with the [Flutter plugin for IntelliJ][].
+* [IntelliJ IDEA][] with the [Flutter plugin for IntelliJ][].
 
 :::recommend
-The Flutter team recommends installing [Visual Studio Code][]
-{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+The Flutter team recommends installing
+[Visual Studio Code][] and the [Flutter extension for VS Code][].
 This combination simplifies installing the Flutter SDK.
 :::
 
