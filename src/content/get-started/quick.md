@@ -1,7 +1,9 @@
 ---
-title: Get started with Flutter
+title: Set up and test drive Flutter
 short-title: Get started
-description: Get started developing your first app with Flutter!
+description: >-
+  Set up Flutter on your device and
+  get started developing your first multi-platform app with Flutter!
 toc: false
 showBanner: false
 sitemap: false
@@ -249,18 +251,16 @@ it's time to create an app and try out Flutter development!
     1. Choose the **Application** template.
 
        VS Code should prompt you with **Which Flutter template?**.
-       Depending on what type of Flutter project you want to create,
-       you'd choose the corresponding template.
-       For a new Flutter app and the purposes of this walkthrough,
-       choose **Application**, which scaffolds a simple, counting app.
+       Choose **Application** to bootstrap a simple counter app.
 
     1. Create or select the parent directory for your new app's folder.
 
-       A file dialog will appear.
-       Select or create the parent directory where the project will be created.
-       Don't create the project folder itself, the Flutter tool handles that.
-       To confirm your selection,
-       click **Select a folder to create the project in**.
+       A file dialog should appear.
+
+       1. Select or create the parent directory where
+          you want the project to be created.
+       1. To confirm your selection,
+          click **Select a folder to create the project in**.
 
     1. Enter a name for your app.
 
@@ -302,10 +302,9 @@ it's time to create an app and try out Flutter development!
        Go to **Run** <span aria-label="and then">></span>
        **Start Debugging** or press <kbd>F5</kbd>.
 
-       Your app will be built, then a new instance of Chrome should open and
+       `flutter run` is used to build and start your app,
+       then a new instance of Chrome should open and
        start running your newly created app.
-
-    You can also run your app from the terminal with the `flutter run` command.
 
  1. <h3>Try hot reload</h3>
 
@@ -318,9 +317,7 @@ it's time to create an app and try out Flutter development!
     then see the change in your running app.
 
     1. In the running app, try adding to the counter a few times by
-       clicking the
-       ![increment (+)](/assets/images/docs/get-started/increment-button.png){: .text-icon}
-       button.
+       clicking the ![increment (+)][increment-button]{: .text-icon} button.
 
     1. With your app still running, make a change in the `lib/main.dart` file.
 
@@ -337,16 +334,13 @@ it's time to create an app and try out Flutter development!
 
     1. Save your changes
        (**File** <span aria-label="and then">></span> **Save All**) or
-       click the **Hot Reload**
-       ![hot reload icon](/assets/images/docs/get-started/hot-reload.svg){: .text-icon}
-       button.
+       click the **Hot Reload** ![hot reload icon][]{: .text-icon} button.
 
-       Flutter will update the running app without losing any existing state.
+       Flutter updates the running app without losing any existing state.
        Notice the existing value stayed the same.
 
     1. Try clicking the
-       ![increment (+)](/assets/images/docs/get-started/increment-button.png){: .text-icon}
-       button again.
+       ![increment (+)][increment-button]{: .text-icon} button again.
        Notice the value decreases instead of increases.
 
  1. <h3>Explore the Flutter sidebar</h3>
@@ -363,18 +357,17 @@ it's time to create an app and try out Flutter development!
 
     1. Open the Flutter sidebar in VS Code.
 
-       Either open it with the Flutter
-       ![Flutter logo](/assets/images/branding/flutter/logo/square.svg){: .text-icon}
-       button in the VS Code sidebar or open it from the command palette by
+       Either open it with the Flutter ![Flutter logo][]{: .text-icon} button in
+       the VS Code sidebar or open it from the command palette by
        running the **Flutter: Focus on Flutter Sidebar View** command.
 
-    1. If your app isn't running still, start debugging it again.
+    1. If your app isn't running, start debugging it again.
 
        Go to **Run** <span aria-label="and then">></span>
        **Start Debugging** or press <kbd>F5</kbd>.
 
-    1. In the Flutter sidebar, under **DevTools**, click
-       the **Flutter Inspector** button.
+    1. In the Flutter sidebar, under **DevTools**,
+       click the **Flutter Inspector** button.
 
        A separate **Widget Inspector** panel should open in VS Code.
 
@@ -387,9 +380,14 @@ it's time to create an app and try out Flutter development!
        the VS Code editor should navigate to and focus the line where
        the widget was included.
 
-    1. Try out other features in the widget inspector and Flutter sidebar.
+    1. Explore and try out other features in
+       the widget inspector and Flutter sidebar.
 
 {:.steps}
+
+[increment-button]: /assets/images/docs/get-started/increment-button.png
+[hot reload icon]: /assets/images/docs/get-started/hot-reload.svg
+[Flutter logo]: /assets/images/branding/flutter/logo/square.svg
 
 ## Continue your Flutter journey {: #next-steps}
 
