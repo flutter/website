@@ -44,12 +44,10 @@ They're sorted by release and listed in alphabetical order:
 
 * [Removed semantics elevation and thickness][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Localized messages are generated into source, not a synthetic package][]
 * [Stop generating `AssetManifest.json`][]
 
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
@@ -62,6 +60,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
 * [Material Theme System Updates][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Localized messages are generated into source, not a synthetic package][]
 * [Changing the default `goldenFileComparator` for `integration_test`s][]
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
@@ -70,6 +69,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: /release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator

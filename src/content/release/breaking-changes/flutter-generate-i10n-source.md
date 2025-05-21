@@ -14,6 +14,9 @@ or modify the `package_config.json` of the app.
 Applications or tools that referenced `package:flutter_gen` should instead
 reference source files generated into the app's source directory directly.
 
+In addition, the property `generate: true` is now required when using generated
+i10n source.
+
 ## Background
 
 `flutter_gen` is a virtual (synthetic) package that is
@@ -33,6 +36,9 @@ following entry in their `pubspec.yaml`:
 flutter:
   generate: true
 ```
+
+If your app previously used `gen-i10n` without this property, it is now
+required.
 
 A synthetic package (`package:flutter_gen`) is
 created and referenced by the app:
@@ -69,8 +75,8 @@ There are two ways to migrate away from importing `package:flutter_gen`:
 
 ## Timeline
 
-Landed in version: Not yet<br>
-Stable release: Not yet
+Landed in version: 3.28.0-0.0.pre<br>
+Stable release: 3.32.0
 
 One stable release after this change lands,
 `package:flutter_gen` support will be removed.
