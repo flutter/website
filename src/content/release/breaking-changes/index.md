@@ -47,12 +47,14 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
+* [Component theme normalization updates][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
