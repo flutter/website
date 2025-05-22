@@ -56,8 +56,8 @@ final InputDecorationThemeData inputDecorationTheme = InputDecorationTheme.of(co
 
 ## Timeline
 
-Landed in version: 3.33.0-1.0.pre<br>
-Stable release: 3.33
+Landed in version: Not yet<br>
+Stable release: Not yet
 
 ## References
 
