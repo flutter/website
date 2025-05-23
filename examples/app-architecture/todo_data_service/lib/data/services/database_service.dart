@@ -53,15 +53,14 @@ class DatabaseService {
         _kTableTodo,
         columns: [_kColumnId, _kColumnTask],
       );
-      final list =
-          entries
-              .map(
-                (element) => Todo(
-                  id: element[_kColumnId] as int,
-                  task: element[_kColumnTask] as String,
-                ),
-              )
-              .toList();
+      final list = entries
+          .map(
+            (element) => Todo(
+              id: element[_kColumnId] as int,
+              task: element[_kColumnTask] as String,
+            ),
+          )
+          .toList();
       return Result.ok(list);
     } on Exception catch (e) {
       return Result.error(e);

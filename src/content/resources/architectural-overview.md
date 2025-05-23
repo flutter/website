@@ -25,13 +25,16 @@ much code as possible.
 
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
-(On web, Flutter supports hot restart.)
+(On web, Flutter supports hot restart and
+[hot reload behind a flag][].)
 For release, Flutter apps are compiled directly to machine code,
 whether Intel x64 or ARM instructions,
 or to JavaScript if targeting the web.
 The framework is open source, with a permissive BSD license,
 and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
+
+[hot reload behind a flag]: /platform-integration/web/building#hot-reload-web
 
 This overview is divided into a number of sections:
 
@@ -1123,8 +1126,8 @@ runs into such a difference.
 During development time, Flutter web uses
 [`dartdevc`]({{site.dart-site}}/tools/dartdevc),
 a compiler that supports incremental compilation
-and therefore allows hot restart
-(although not currently hot reload) for apps.
+and therefore allows hot restart and
+[hot reload behind a flag][].
 Conversely, when you are ready to create a production app
 for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
 Dart's highly-optimized production JavaScript compiler is used,

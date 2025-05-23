@@ -87,10 +87,9 @@ class GridListDemo extends StatelessWidget {
           crossAxisSpacing: 8,
           padding: const EdgeInsets.all(8),
           childAspectRatio: 1,
-          children:
-              _photos.map<Widget>((photo) {
-                return _GridDemoPhotoItem(photo: photo, tileStyle: type);
-              }).toList(),
+          children: _photos.map<Widget>((photo) {
+            return _GridDemoPhotoItem(photo: photo, tileStyle: type);
+          }).toList(),
         ),
       ),
     );

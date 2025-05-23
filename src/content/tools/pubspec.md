@@ -63,7 +63,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -650,7 +650,7 @@ Flutter projects. This package can be added to the
 
 ```yaml title="pubspec.yaml"
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 ```
 
 ### cupertino_icons

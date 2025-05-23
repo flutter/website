@@ -928,8 +928,14 @@ class Example23 extends Example {
     // #docregion Example23
     return Row(
       children: [
-        Container(color: red, child: const Text('Hello!', style: big)),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: red,
+          child: const Text('Hello!', style: big),
+        ),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
     // #enddocregion Example23
@@ -965,7 +971,10 @@ class Example24 extends Example {
             style: big,
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
     // #enddocregion Example24
@@ -1007,7 +1016,10 @@ class Example25 extends Example {
             ),
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
     // #enddocregion Example25

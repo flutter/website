@@ -124,10 +124,9 @@ class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
           return ListTile(
             key: Key(plant.name),
             title: Text(plant.name),
-            tileColor:
-                widget.selectedPlant?.name == plant.name
-                    ? Colors.black12
-                    : Colors.white,
+            tileColor: widget.selectedPlant?.name == plant.name
+                ? Colors.black12
+                : Colors.white,
             onTap: () {
               widget.onSelectPlant(plant);
             },

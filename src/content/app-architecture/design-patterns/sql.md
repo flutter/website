@@ -147,8 +147,8 @@ and passes in the text controller value.
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (FilledButton)" replace="/^\),$/)/g"?>
 ```dart
 FilledButton.icon(
-  onPressed:
-      () => widget.viewModel.add.execute(_controller.text),
+  onPressed: () =>
+      widget.viewModel.add.execute(_controller.text),
   label: const Text('Add'),
   icon: const Icon(Icons.add),
 )
@@ -376,15 +376,14 @@ Future<Result<List<Todo>>> getAll() async {
       _kTableTodo,
       columns: [_kColumnId, _kColumnTask],
     );
-    final list =
-        entries
-            .map(
-              (element) => Todo(
-                id: element[_kColumnId] as int,
-                task: element[_kColumnTask] as String,
-              ),
-            )
-            .toList();
+    final list = entries
+        .map(
+          (element) => Todo(
+            id: element[_kColumnId] as int,
+            task: element[_kColumnTask] as String,
+          ),
+        )
+        .toList();
     return Result.ok(list);
   } on Exception catch (e) {
     return Result.error(e);

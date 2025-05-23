@@ -28,20 +28,19 @@ class AdaptiveDataTablePage extends StatelessWidget {
             Expanded(
               child: ScrollViewWithScrollbars(
                 child: Column(
-                  children:
-                      items.map((i) {
-                        return Container(
-                          color: i.isEven ? Colors.grey.shade300 : null,
-                          child: Row(
-                            children: [
-                              _TableRowItem('Item $i, Column 1'),
-                              if (showCol2) _TableRowItem('Item $i, Column 2'),
-                              if (showCol3) _TableRowItem('Item $i, Column 3'),
-                              if (showCol4) _TableRowItem('Item $i, Column 4'),
-                            ],
-                          ),
-                        );
-                      }).toList(),
+                  children: items.map((i) {
+                    return Container(
+                      color: i.isEven ? Colors.grey.shade300 : null,
+                      child: Row(
+                        children: [
+                          _TableRowItem('Item $i, Column 1'),
+                          if (showCol2) _TableRowItem('Item $i, Column 2'),
+                          if (showCol3) _TableRowItem('Item $i, Column 3'),
+                          if (showCol4) _TableRowItem('Item $i, Column 4'),
+                        ],
+                      ),
+                    );
+                  }).toList(),
                 ),
               ),
             ),

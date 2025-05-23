@@ -83,10 +83,9 @@ of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 ```dart
 final items = List<ListItem>.generate(
   1000,
-  (i) =>
-      i % 6 == 0
-          ? HeadingItem('Heading $i')
-          : MessageItem('Sender $i', 'Message body $i'),
+  (i) => i % 6 == 0
+      ? HeadingItem('Heading $i')
+      : MessageItem('Sender $i', 'Message body $i'),
 );
 ```
 
@@ -128,10 +127,9 @@ void main() {
     MyApp(
       items: List<ListItem>.generate(
         1000,
-        (i) =>
-            i % 6 == 0
-                ? HeadingItem('Heading $i')
-                : MessageItem('Sender $i', 'Message body $i'),
+        (i) => i % 6 == 0
+            ? HeadingItem('Heading $i')
+            : MessageItem('Sender $i', 'Message body $i'),
       ),
     ),
   );

@@ -21,10 +21,9 @@ void main() {
       await tester.pump();
 
       // Verify initial orientation is portrait.
-      final orientation =
-          MediaQuery.of(
-            tester.element(find.byType(OrientationList)),
-          ).orientation;
+      final orientation = MediaQuery.of(
+        tester.element(find.byType(OrientationList)),
+      ).orientation;
       expect(orientation, Orientation.portrait);
 
       // Verify there are only 2 columns in portrait mode.
@@ -51,10 +50,9 @@ void main() {
       await tester.pump();
 
       // Verify initial orientation is landscape.
-      final orientation =
-          MediaQuery.of(
-            tester.element(find.byType(OrientationList)),
-          ).orientation;
+      final orientation = MediaQuery.of(
+        tester.element(find.byType(OrientationList)),
+      ).orientation;
       expect(orientation, Orientation.landscape);
 
       // Verify there are only 3 columns in landscape mode.

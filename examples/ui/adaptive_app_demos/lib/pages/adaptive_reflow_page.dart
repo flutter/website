@@ -46,21 +46,18 @@ class AdaptiveReflowPage extends StatelessWidget {
         }
         // In vertical or horizontal mode, use a ExpandedScrollingFlex with the same set of children
         else {
-          Axis direction =
-              reflowMode == ReflowMode.horizontal
-                  ? Axis.horizontal
-                  : Axis.vertical;
+          Axis direction = reflowMode == ReflowMode.horizontal
+              ? Axis.horizontal
+              : Axis.vertical;
           return ExpandedScrollingFlex(
-            scrollViewBuilder:
-                (axis, child) =>
-                    ScrollViewWithScrollbars(axis: axis, child: child),
+            scrollViewBuilder: (axis, child) =>
+                ScrollViewWithScrollbars(axis: axis, child: child),
             direction: direction,
-            children:
-                [
-                  _ContentPanel1(),
-                  _ContentPanel2(),
-                  _ContentPanel3(),
-                ].map((c) => Expanded(child: c)).toList(),
+            children: [
+              _ContentPanel1(),
+              _ContentPanel2(),
+              _ContentPanel3(),
+            ].map((c) => Expanded(child: c)).toList(),
           );
         }
       },

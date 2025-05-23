@@ -309,14 +309,12 @@ Widget build(BuildContext context) {
     builder: (context, _) {
       return FilledButton(
         onPressed: widget.viewModel.subscribe,
-        style:
-            widget.viewModel.subscribed
-                ? SubscribeButtonStyle.subscribed
-                : SubscribeButtonStyle.unsubscribed,
-        child:
-            widget.viewModel.subscribed
-                ? const Text('Subscribed')
-                : const Text('Subscribe'),
+        style: widget.viewModel.subscribed
+            ? SubscribeButtonStyle.subscribed
+            : SubscribeButtonStyle.unsubscribed,
+        child: widget.viewModel.subscribed
+            ? const Text('Subscribed')
+            : const Text('Subscribe'),
       );
     },
   );
@@ -497,14 +495,12 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       builder: (context, _) {
         return FilledButton(
           onPressed: widget.viewModel.subscribe,
-          style:
-              widget.viewModel.subscribed
-                  ? SubscribeButtonStyle.subscribed
-                  : SubscribeButtonStyle.unsubscribed,
-          child:
-              widget.viewModel.subscribed
-                  ? const Text('Subscribed')
-                  : const Text('Subscribe'),
+          style: widget.viewModel.subscribed
+              ? SubscribeButtonStyle.subscribed
+              : SubscribeButtonStyle.unsubscribed,
+          child: widget.viewModel.subscribed
+              ? const Text('Subscribed')
+              : const Text('Subscribe'),
         );
       },
     );

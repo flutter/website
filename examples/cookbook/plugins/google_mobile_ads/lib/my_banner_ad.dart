@@ -11,12 +11,11 @@ class MyBannerAdWidget extends StatefulWidget {
   ///
   /// TODO: replace this test ad unit with your own ad unit
   // #docregion adUnitId
-  final String adUnitId =
-      Platform.isAndroid
-          // Use this ad unit on Android...
-          ? 'ca-app-pub-3940256099942544/6300978111'
-          // ... or this one on iOS.
-          : 'ca-app-pub-3940256099942544/2934735716';
+  final String adUnitId = Platform.isAndroid
+      // Use this ad unit on Android...
+      ? 'ca-app-pub-3940256099942544/6300978111'
+      // ... or this one on iOS.
+      : 'ca-app-pub-3940256099942544/2934735716';
   // #enddocregion adUnitId
 
   MyBannerAdWidget({super.key, this.adSize = AdSize.banner});
@@ -36,12 +35,11 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
       child: SizedBox(
         width: widget.adSize.width.toDouble(),
         height: widget.adSize.height.toDouble(),
-        child:
-            _bannerAd == null
-                // Nothing to render yet.
-                ? const SizedBox()
-                // The actual ad.
-                : AdWidget(ad: _bannerAd!),
+        child: _bannerAd == null
+            // Nothing to render yet.
+            ? const SizedBox()
+            // The actual ad.
+            : AdWidget(ad: _bannerAd!),
       ),
     );
   }

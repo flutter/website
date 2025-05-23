@@ -6,9 +6,9 @@
 
 ### Use VS Code to install Flutter {:.no_toc}
 
-To install Flutter using these instructions, verify that
-you have installed [Visual Studio Code][]
-{{site.appmin.vscode}} or later and the [Flutter extension for VS Code][].
+To install Flutter using these instructions,
+verify that you've installed
+[Visual Studio Code][] and the [Flutter extension for VS Code][].
 
 #### Prompt VS Code to install Flutter
 
@@ -26,10 +26,10 @@ you have installed [Visual Studio Code][]
    {:type="a"}
    1. If you have the Flutter SDK installed, click **Locate SDK**.
 
-   1. If you do not have the Flutter SDK installed,
+   1. If you don't have the Flutter SDK installed,
       click **Download SDK**.
 
-      This option sends you the Flutter install page if you have not
+      This option sends you the Flutter install page if you haven't
       installed Git {% if include.os == "Windows" %}for Windows {% endif %}as
       directed in the [development tools prerequisites][].
 
@@ -48,65 +48,43 @@ you have installed [Visual Studio Code][]
    {% if include.os == "Windows" -%}
    Consider `%USERPROFILE%` or `C:\dev`.
 
-   {% render docs/install/admonitions/install-paths.md %}
+   :::warning
+   Don't install Flutter to a directory or path that meets
+   one or both of the following conditions:
+
+   * The path contains special characters or spaces.
+   * The path requires elevated privileges.
+
+   As an example, `C:\Program Files` fails both conditions.
+   :::
+
    {% else -%}
    Consider `~/development/`
    {% endif %}
 
 1. Click **Clone Flutter**.
 
-   While downloading Flutter, VS Code displays this pop-up notification:
+   While downloading Flutter, VS Code displays these pop-up notifications:
 
    ```console
    Downloading the Flutter SDK. This may take a few minutes.
    ```
 
-   This download takes a few minutes.
-   If you suspect that the download has hung, click **Cancel** then
-   start the installation again.
-
-1. Once it finishes downloading Flutter, the **Output** panel displays.
-
-   ```console
-   Checking Dart SDK version...
-   Downloading Dart SDK from the Flutter engine ...
-   Expanding downloaded archive...
-   ```
-
-   When successful, VS Code displays this pop-up notification:
-
    ```console
    Initializing the Flutter SDK. This may take a few minutes.
    ```
 
-   While initializing, the **Output** panel displays the following:
+   The download and installation take a few minutes.
+   If you suspect that the download has hung, click **Cancel**,
+   then start the installation again.
 
-   ```console
-   Building flutter tool...
-   Running pub upgrade...
-   Resolving dependencies...
-   Got dependencies.
-   Downloading Material fonts...
-   Downloading Gradle Wrapper...
-   Downloading package sky_engine...
-   Downloading flutter_patched_sdk tools...
-   Downloading flutter_patched_sdk_product tools...
-   Downloading windows-x64 tools...
-   Downloading windows-x64/font-subset tools...
-   ```
-
-   This process also runs `flutter doctor -v`.
-   At this point in the procedure, _ignore this output._
-   Flutter Doctor might show errors that don't apply to this quick start.
-
-   When the Flutter install succeeds, VS Code displays this pop-up notification:
+   When the Flutter installation succeeds,
+   VS Code displays this pop-up notification:
 
    ```console
    Do you want to add the Flutter SDK to PATH so it's accessible
    in external terminals?
    ```
-
-{% if include.os=='Windows' %}
 
 1. Click **Add SDK to PATH**.
 
@@ -116,17 +94,16 @@ you have installed [Visual Studio Code][]
    The Flutter SDK was added to your PATH
    ```
 
-{% endif %}
-
-1. VS Code may display a Google Analytics notice.
+1. VS Code might display a Google Analytics notice.
 
    If you agree, click **OK**.
 
 1. To enable `flutter` in all {{include.terminal}} windows:
 
-   {:type="a"}
    1. Close, then reopen all {{include.terminal}} windows.
    1. Restart VS Code.
+
+   {:type="a"}
 
 [development tools prerequisites]: #development-tools
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/mac

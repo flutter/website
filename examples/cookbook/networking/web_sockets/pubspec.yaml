@@ -3,12 +3,12 @@ description: Web Sockets
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.8.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  web_socket_channel: ^2.4.3
+  web_socket_channel: ^3.0.3
 
 flutter:
   uses-material-design: true

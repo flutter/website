@@ -1309,10 +1309,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
-                child:
-                    toggleState
-                        ? const Text('Blink')
-                        : const Text('Stop Blinking'),
+                child: toggleState
+                    ? const Text('Blink')
+                    : const Text('Stop Blinking'),
               ),
             ),
           ],
@@ -2225,11 +2224,33 @@ every time you make a change, you can hot reload your app instantly.
 The app is updated to reflect your change,
 and the current state of the app is preserved.
 
+First, from your preferred IDE,
+enable autosave and hot reloads on save.
+
+    **VS Code**
+
+    Add the following to your `.vscode/settings.json` file:
+
+    ```json
+    "files.autoSave": "afterDelay",
+    "dart.flutterHotReloadOnSave": "all",
+    ```
+    **Android Studio and IntelliJ**
+
+    * Open `Settings > Tools > Actions on Save` and select
+     `Configure autosave options`.
+        - Check the option to `Save files if the IDE is idle for X seconds`.
+        - **Recommended:** Set a small delay duration. For example, 2 seconds.
+   
+    * Open `Settings > Languages & Frameworks > Flutter`.
+        - Check the option to `Perform hot reload on save`.
+
+
 In React Native,
 the shortcut is ⌘R for the iOS Simulator and tapping R twice on
 Android emulators.
 
-In Flutter, If you are using IntelliJ IDE or Android Studio,
+In Flutter, if you are using IntelliJ IDE or Android Studio,
 you can select Save All (⌘s/ctrl-s), or you can click the
 Hot Reload button on the toolbar. If you
 are running the app at the command line using `flutter run`,

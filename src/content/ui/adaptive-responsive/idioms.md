@@ -205,7 +205,10 @@ return const SelectableText.rich(
   TextSpan(
     children: [
       TextSpan(text: 'Hello'),
-      TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+      TextSpan(
+        text: 'Bold',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
     ],
   ),
 );
@@ -316,8 +319,9 @@ This can be easily handled in Flutter using the
 
 <?code-excerpt "lib/widgets/ok_cancel_dialog.dart (row-text-direction)"?>
 ```dart
-TextDirection btnDirection =
-    DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
+TextDirection btnDirection = DeviceType.isWindows
+    ? TextDirection.rtl
+    : TextDirection.ltr;
 return Row(
   children: [
     const Spacer(),

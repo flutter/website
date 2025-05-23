@@ -12,7 +12,10 @@ class BubbleBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: BubblePainter(colors: colors), child: child);
+    return CustomPaint(
+      painter: BubblePainter(colors: colors),
+      child: child,
+    );
   }
 }
 

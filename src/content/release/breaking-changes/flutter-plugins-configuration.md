@@ -132,8 +132,8 @@ being output will now fail.
 
 ## Timeline
 
-Landed in version: Not yet<br>
-Stable release: Not yet
+Landed in version: 3.28.0-0.0.pre<br>
+Stable release: 3.32
 
 One stable release after this change lands,
 `.flutter-plugins` will no longer be generated.

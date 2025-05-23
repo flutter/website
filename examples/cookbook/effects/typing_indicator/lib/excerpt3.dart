@@ -27,9 +27,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(vsync: this)..addListener(() {
-      setState(() {});
-    });
+    _appearanceController = AnimationController(vsync: this)
+      ..addListener(() {
+        setState(() {});
+      });
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,

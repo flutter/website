@@ -73,8 +73,9 @@ class MessageBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final messageAlignment =
-        message.isMine ? Alignment.topLeft : Alignment.topRight;
+    final messageAlignment = message.isMine
+        ? Alignment.topLeft
+        : Alignment.topRight;
 
     return FractionallySizedBox(
       alignment: messageAlignment,
@@ -151,16 +152,15 @@ class BubblePainter extends CustomPainter {
       Offset.zero,
       ancestor: scrollableBox,
     );
-    final paint =
-        Paint()
-          ..shader = ui.Gradient.linear(
-            scrollableRect.topCenter,
-            scrollableRect.bottomCenter,
-            _colors,
-            [0.0, 1.0],
-            TileMode.clamp,
-            Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
-          );
+    final paint = Paint()
+      ..shader = ui.Gradient.linear(
+        scrollableRect.topCenter,
+        scrollableRect.bottomCenter,
+        _colors,
+        [0.0, 1.0],
+        TileMode.clamp,
+        Matrix4.translationValues(-origin.dx, -origin.dy, 0.0).storage,
+      );
     canvas.drawRect(Offset.zero & size, paint);
   }
 
