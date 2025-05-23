@@ -44,7 +44,7 @@ defines a new widget called `Tile`.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -69,7 +69,7 @@ every widget, and will always return another widget.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -124,9 +124,10 @@ more properties of the `Container` next.)
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
-  final Letter letter;
+  final String letter;
+  final HitType hitType;
 
   @override
   Widget build(BuildContext context) {
@@ -146,7 +147,7 @@ Next, add a [`Border`][] to the box with the following code:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -185,7 +186,7 @@ To achieve this in UI, use a [switch expression][] to set the
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -210,17 +211,17 @@ class Tile extends StatelessWidget {
 }
 ```
 
-## **Child widgets**
+## Child widgets
 
 Finally, add the `Center` and `Text` widgets to the `Container.child` property. 
 
-99% of widgets in the Flutter SDK have a `child` or `children` property that’s
+Most the widgets in the Flutter SDK have a `child` or `children` property that’s
 meant to be passed a widget or a list of widgets, respectively. It's best
 practice to use the same naming convention in your own custom widgets.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -271,6 +272,7 @@ lesson, you’ll start building the game grid itself.
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`constructor`]: {{site.dart-site}}/language/constructors
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`Border`]: {{site.api}}/flutter/widgets/Container-class.html
 [`ColoredBox`]: {{site.api}}/flutter/widgets/ColoredBox-class.html
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
