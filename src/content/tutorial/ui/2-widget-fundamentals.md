@@ -26,7 +26,7 @@ The game logic of this application isn’t concerned with Flutter and is outside
 the scope of this tutorial. Instead, import the [`flutter_gse`][]
 package, which contains the logic. 
 
-```
+```shell
 $ flutter pub add flutter_gse
 ```
 
@@ -131,11 +131,11 @@ class Tile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 	// NEW
-	return Container(
+	  return Container(
        width: 60,
        height: 60,
        // TODO: fill in with widgets
-);
+    );
   }
 }
 ```
