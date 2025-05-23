@@ -1,0 +1,221 @@
+---
+title: Layout
+description: Learn about common layout widgets in Flutter.
+permalink: /tutorial/layout/
+---
+
+{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+
+
+Given that Flutter is a UI toolkit, you'll spend a lot of time creating layouts
+with Flutter widgets. In this section, you'll learn how to build layouts with
+some of the most common layout widgets, including high-level widgets like
+[`Scaffold`][] and [`AppBar`][], which help layout the structure of a screen, to
+lower-level widgets like [`Column`][] or [`Row`][],  which lays out widgets
+vertically or horizontally.
+
+## `Scaffold` and `AppBar`
+
+Mobile applications often have a bar at the top called an “app bar”, which might
+display a title, navigation controls, and/or actions. 
+
+{%- comment %} TODO(ewindmill) example appbar {%- endcomment %}
+
+The simplest way to add an appbar to your app in Flutter is with two widgets:
+`Scaffold` and `AppBar`.
+
+`Scaffold` is a convenience widget that provides a Material-style page layout,
+making it simple to add an app bar, drawer, navigation bar and more to a page of
+your app, and `AppBar` is, of course, the app bar.
+
+The code generated from the `$ flutter create --empty` command already contains
+an `AppBar` widget and `Scaffold` widget. This code updates it to use an
+additional layout widget: [`Align`][]. This sets the position of the title to
+the left, which would be centered by default. The `Text` widget contains the
+title itself.
+
+Modify the `Scaffold` within your `MainApp`'s `build` method:
+
+```dart
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Align(
+            alignment: Alignment.centerLeft,
+            child: Text('Birdle'),
+          ),
+        ),
+        body: Center(child: Tile()),
+      ),
+    );
+  }
+}
+```
+
+## **Create the GamePage widget**
+
+Add the following code for a new widget, called `GamePage`, to your `main.dart`
+file. This widget will eventually display the  UI elements needed for the game
+itself.
+
+```dart
+class GamePage extends StatelessWidget {
+  const GamePage({super.key});
+  // This manages game logic, and is out of scope for this lesson
+  final Game _game = Game();
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: Replace with screen contents
+    return Container();
+  }
+}
+```
+
+:::note Challenge
+Display the `GamePage` rather than a `Tile`.
+
+**Solution:**
+
+```dart
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        // Changed from `Tile` 
+        body: Center(child: GamePage()),
+      ),
+    );
+  }
+}
+```
+:::
+
+## Arrange widgets with `Column` and `Row`
+
+The main content of the `GamePage` is the grid of tiles that display a user’s
+guesses.
+
+{%- comment %} TODO(ewindmill) add image {%- endcomment %}
+
+There are a number of ways you can build this layout, and the simplest is with
+`Column` and `Row` widgets.  Each row contains five tiles, which represents the
+five letters in a guess, and there are five of those rows. You’ll need a column
+with several row children. First, return a `Column` (wrapped with a `Padding`
+widget) from the `GamePage.build` method.
+
+```dart
+class GamePage extends StatelessWidget {
+  const GamePage({super.key});
+  // This manages game logic, and is out of scope for this lesson
+  final Game _game = Game();
+
+    @override
+    Widget build(BuildContext context) {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          spacing: 5.0,
+          children: [
+            // Add children next
+          ],
+        ),
+      );
+    }`
+}
+```
+
+The `spacing` puts five pixels between each element on the main axis.
+
+Within `Column.children`, add one row *for each* element in the `_game.guesses`
+list. 
+
+:::note
+This `guesses` list is a **fixed-size** list, starting with five elements, one for each *potential* guess. It will always contain exactly
+five elements, and therefor there will always be five rows rendered.
+:::
+
+```dart
+// In GamePage.build method:
+@override
+Widget build(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      spacing: 5.0,
+      children: [
+        for (var guess in _game.guesses)
+            Row(
+              spacing: 5.0,
+              children: [
+               // tiles
+              ]
+            ),
+        ],
+      ],
+    ),
+  );
+}
+```
+
+This is called a [`collection-for`][] loop, a Dart feature that allows you to
+unfurl a list inside of another list when the loop is executed. This is syntactic-sugar that
+added to Dart to make it easier for Flutter devs to work with collections of
+widgets. It achieves the same as the following psuedo code:
+
+```dart
+[...ListOfData.map((element) => Widget(element)).toList()],
+```
+
+In this case, it’s adding five `Row` widgets to the column, one for each guess
+on the `Game` object.
+
+:::note Challenge
+
+Add a `Tile` to each row for each letter allowed in the guess.
+
+**Solution:**
+
+```dart
+Widget build(BuildContext context) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      spacing: 5.0,
+      children: [
+          for (var guess in _game.guesses)
+            Row(
+              spacing: 5.0,
+              children: [
+               for (var letter in guess) Tile(letter.char, letter.type),
+              ]
+            ),
+        ],
+      ],
+    ),
+  );
+}
+```
+
+:::
+
+When you reload your app, you should see a 5x5 grid of white squares.
+
+{%- comment %}
+TODO(ewindmill) image
+{%- endcomment %}
+
+[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Align`]: {{site.api}}/flutter/widgets/Align-class.html
+[`collection-for`]: {{site.dart-site}}/language/collections#for-element
