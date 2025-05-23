@@ -715,7 +715,7 @@
       { "source": "/to/build-modes", "destination": "/testing/build-modes", "type": 301 },
       { "source": "/to/baa", "destination": "https://flutter.dev/events/building-agentic-apps", "type": 301 },
       { "source": "/to/china-setup", "destination": "/community/china", "type": 301 },
-      { "source": "/to/ci-yaml", "destination": "https://github.com/flutter/flutter/blob/main/docs/infra/Ci-Yaml.md", "type": 301 },
+      { "source": "/to/ci-yaml", "destination": "https://github.com/flutter/flutter/blob/main/docs/infra/Ci-Best-Practices.md", "type": 301 },
       { "source": "/to/crash-reporting", "destination": "/reference/crash-reporting", "type": 301 },
       { "source": "/to/debug-mode", "destination": "/testing/build-modes#debug", "type": 301 },
       { "source": "/to/debug-render-layer", "destination": "/testing/code-debugging#print-the-render-tree", "type": 301 },
