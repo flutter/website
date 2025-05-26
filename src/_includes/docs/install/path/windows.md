@@ -15,7 +15,7 @@
 
     1. Click **Advanced System Settings**
        <span aria-label="and then">></span> **Advanced**
-       <span aria-label="and then">></span> ad**Environment Variables...**.
+       <span aria-label="and then">></span> **Environment Variables...**.
 
        The **Environment Variables** dialog opens.
 
