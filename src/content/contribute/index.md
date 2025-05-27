@@ -3,7 +3,7 @@ title: Contribute to Flutter
 short-title: Contribute
 description: >-
   Learn about contributing to the Flutter project and its surrounding ecosystem.
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 ![Dash and her friends excited for your contribution](/assets/images/dash/dash-contribute.png){:height="160px" style="float: right;"}

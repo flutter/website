@@ -7,34 +7,48 @@ import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
 import { UserConfig } from '@11ty/eleventy';
 
 export function registerFilters(eleventyConfig: UserConfig): void {
-  eleventyConfig.addFilter('children_pages', function (pages: any, pageUrl: string) {
+  eleventyConfig.addFilter('childPagesOf', function (pages: any[], pageUrl: string) {
     return pages.filter((page) => page.url.includes(pageUrl) && page.url !== pageUrl);
   });
 
-  // TODO(parlough): Make this more generic.
-  eleventyConfig.addFilter('widget_filter', function (widgets: any, field: string, subName: string) {
-    return widgets.filter((comp) => comp[field]?.includes(subName) ?? false);
-  });
-
-  eleventyConfig.addFilter('throw_error', function (error: string | null): never {
+  eleventyConfig.addFilter('throwError', function (error: string | null): never {
     // TODO(parlough): See if more context can be added to this error
     //   or if there's a better built-in solution.
     throw new Error(error);
   });
 
-  eleventyConfig.addFilter('regex_replace', regexReplace);
-  eleventyConfig.addFilter('toISOString', toISOString);
-  eleventyConfig.addFilter('toSimpleDate', toSimpleDate);
-  eleventyConfig.addFilter('active_nav_for_page', activeNavForPage);
-  eleventyConfig.addFilter('array_to_sentence_string', arrayToSentenceString);
-  eleventyConfig.addFilter('generate_toc', generateToc);
-  eleventyConfig.addFilter('breadcrumbsForPage', breadcrumbsForPage);
+  eleventyConfig.addFilter('filterByProperty', _filterByProperty);
+  eleventyConfig.addFilter('regexReplace', _regexReplace);
+  eleventyConfig.addFilter('toISOString', _toISOString);
+  eleventyConfig.addFilter('toSimpleDate', _toSimpleDate);
+  eleventyConfig.addFilter('activeNavForPage', _activeNavForPage);
+  eleventyConfig.addFilter('arrayToSentenceString', _arrayToSentenceString);
+  eleventyConfig.addFilter('generateToc', _generateToc);
+  eleventyConfig.addFilter('breadcrumbsForPage', _breadcrumbsForPage);
   eleventyConfig.addFilter('slugify', slugify);
-  eleventyConfig.addFilter('camelCaseBreaker', camelCaseBreaker);
-  eleventyConfig.addFilter('startsWith', startsWith);
+  eleventyConfig.addFilter('camelCaseBreaker', _camelCaseBreaker);
+  eleventyConfig.addFilter('startsWith', _startsWith);
 }
 
-function startsWith(content: string, prefix: string): boolean {
+function _filterByProperty(
+  items: (object | Map<any, any>)[],
+  property: string,
+  valueToCompareTo: any,
+  useIncludes: boolean = false,
+): any[] {
+  return items.filter(function (item) {
+    const value = item[property];
+    if (value === null) return false;
+
+    if (useIncludes) {
+      return value.includes(valueToCompareTo);
+    }
+
+    return value === valueToCompareTo;
+  });
+}
+
+function _startsWith(content: string, prefix: string): boolean {
   if (typeof content !== 'string' || typeof prefix !== 'string') {
     return false;
   }
@@ -42,7 +56,7 @@ function startsWith(content: string, prefix: string): boolean {
   return content.startsWith(prefix);
 }
 
-function camelCaseBreaker(stringToBreak: string): string {
+function _camelCaseBreaker(stringToBreak: string): string {
   // Only consider non-empty text.
   if (!stringToBreak
       || typeof stringToBreak !== 'string'
@@ -69,7 +83,7 @@ function camelCaseBreaker(stringToBreak: string): string {
  * @param replacement
  * @return The resulting string with the replacement made.
  */
-function regexReplace(input: string, regex: RegExp, replacement = ''): string {
+function _regexReplace(input: string, regex: RegExp, replacement: string = ''): string {
   return input.toString().replace(new RegExp(regex), replacement);
 }
 
@@ -81,16 +95,16 @@ function regexReplace(input: string, regex: RegExp, replacement = ''): string {
  * @param input The date to convert
  * @return The ISO string
  */
-function toISOString(input: string | Date): string {
+function _toISOString(input: string | Date): string {
   if (input instanceof Date) {
     return input.toISOString();
-  } else {
-    // If it's not a Date object, assume it's already in string format.
-    return input;
   }
+
+  // If it's not a Date object, assume it's already in string format.
+  return input;
 }
 
-function toSimpleDate(input: string | Date): string {
+function _toSimpleDate(input: string | Date): string {
   let dateString: string;
   if (input instanceof Date) {
     dateString = input.toISOString();
@@ -101,7 +115,7 @@ function toSimpleDate(input: string | Date): string {
   return dateString.split('T')[0];
 }
 
-function activeNavForPage(pageUrlPath: string, activeNav: any) {
+function _activeNavForPage(pageUrlPath: string, activeNav: any) {
   // Split the path for this page, dropping everything before the path:
   // Example: docs.flutter.dev/cookbook/networking/update-data ->
   // [cookbook, networking, update-data]
@@ -146,7 +160,7 @@ function activeNavForPage(pageUrlPath: string, activeNav: any) {
   return activeEntries;
 }
 
-function arrayToSentenceString(list: string[], joiner = 'and'): string {
+function _arrayToSentenceString(list: string[], joiner = 'and'): string {
   if (!list || list.length === 0) {
     return '';
   }
@@ -169,11 +183,11 @@ function arrayToSentenceString(list: string[], joiner = 'and'): string {
   return result;
 }
 
-function generateToc(contents: string) {
+function _generateToc(contents: string) {
   // TODO(parlough): Speed this up.
   //   Perhaps do the processing before HTML rendering?
   //   Maybe shouldn't be a filter.
-  const dom = fromHtml(contents);
+  const dom = fromHtml(contents, {fragment: true});
   const headers = selectAll('h2, h3', dom);
   if (headers.length < 1) {
     // If there's only one header, there's no point of a TOC.
@@ -220,7 +234,7 @@ function generateToc(contents: string) {
   };
 }
 
-function breadcrumbsForPage(page: any): {title: string, url: string}[] {
+function _breadcrumbsForPage(page: any): {title: string, url: string}[] {
   const breadcrumbs = [];
 
   // Retrieve the liquid data for this page.

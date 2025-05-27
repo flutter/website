@@ -28,7 +28,7 @@ which reflects how strongly the Flutter team recommends it.
 * **Conditional**: This practice can improve your app in certain circumstances.
 <br /><br />
 
-{% for section in architecture_recommendations %}
+{% for section in architectureRecommendations %}
 <h2>{{section.category}}</h2>
 <p>{{section.description}}</p>
 <table class="table table-striped" style="border-bottom:1px #DADCE0 solid">

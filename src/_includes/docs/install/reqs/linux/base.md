@@ -7,15 +7,15 @@ software packages.
 ### Operating system
 
 {% if include.os == 'Linux' %}
-{%- capture supported-os %}
+{%- capture supportedOs %}
 Debian 11 or later
 and Ubuntu 22.04 or later LTS
 {% endcapture -%}
 {% else %}
-{% assign supported-os = 'ChromeOS' %}
+{% assign supportedOs = 'ChromeOS' %}
 {% endif %}
 
-Flutter supports {{supported-os}}.
+Flutter supports {{supportedOs}}.
 
 ### Development tools {:.no_toc}
 

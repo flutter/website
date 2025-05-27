@@ -4,20 +4,20 @@ toc: false
 sitemap: false
 ---
 
-{% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
-{% assign path_parts = url | split: '/' -%}
+{% assign url = page.url | regexReplace: '/index$|/index.html$|/$' -%}
+{% assign pathParts = url | split: '/' -%}
 {% assign topics = sidenav -%}
 {% assign path = '' -%}
 
 {% comment %}
-  - path_parts[0] == '' because page.url always starts with '/'
+  - pathParts[0] == '' because page.url always starts with '/'
 {% endcomment -%}
 
-{% for path_part in path_parts -%}
+{% for pathPart in pathParts -%}
   {% if forloop.first == true -%}
     {% assign path = '' -%}
   {% else -%}
-    {% assign path = path | append: '/' | append: path_part -%}
+    {% assign path = path | append: '/' | append: pathPart -%}
   {% endif -%}
   {% if forloop.index0 > 0 and path != '/ui' -%}
     {% assign topics = topics | where: "permalink", path -%}

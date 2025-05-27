@@ -1,7 +1,7 @@
 ---
 title: Terms of Service
 description: The terms of service for the Flutter website.
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 The Flutter website (the "Website") is hosted by Google. By using and / or

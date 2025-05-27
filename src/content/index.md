@@ -1,11 +1,13 @@
 ---
 title: Flutter documentation
 short-title: Docs
-description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+description: >-
+  Get started with Flutter. Widgets, examples, updates, and API docs to
+  help you write your first Flutter app.
 ---
 
 <div class="card-grid">
-{% for card in docs_cards -%}
+{% for card in docsCards -%}
   <a class="card filled-card outlined-card" href="{{card.url}}">
     <div class="card-header">
       <span class="card-title">{{card.name}}</span>
