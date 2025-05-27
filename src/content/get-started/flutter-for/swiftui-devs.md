@@ -5,8 +5,6 @@ description: Learn how to apply SwiftUI developer knowledge when building Flutte
 
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
-{% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
-
 SwiftUI developers who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing SwiftUI knowledge to Flutter.

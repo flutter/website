@@ -6,16 +6,16 @@ email: flutter-dev@googlegroups.com
 google_analytics_id: UA-67589403-1
 google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
 google_tag_manager_id: GTM-ND4LWWZ
-default_share_image: /assets/images/flutter-logo-sharing.png
+defaultShareImage: /assets/images/flutter-logo-sharing.png
 
 showBanner: true
 
-github_username: flutter
 branch: main
 repo:
   organization: https://github.com/flutter
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
+  games: https://github.com/flutter/games
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
   gallery-archive: https://github.com/flutter/gallery
@@ -24,8 +24,6 @@ repo:
   wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
   api: https://api.dart.dev
-  sdk:
-    channel: stable
 sdk:
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 social:

@@ -5,8 +5,6 @@ description: Learn how to apply Jetpack Compose developer knowledge when buildin
 
 <?code-excerpt path-base="get-started/flutter-for/compose_devs"?>
 
-{% assign sample_path = "blob/main/examples/get-started/flutter-for/compose_devs" %}
-
 :::note
 If you have experience building Android apps with Views (XML),
 check out [Flutter for Android developers][].

@@ -69,7 +69,7 @@ to customize page generation.
 
 ### `layout`
 
-### `show_breadcrumbs`
+### `showBreadcrumbs`
 
 ### `showBanner`
 

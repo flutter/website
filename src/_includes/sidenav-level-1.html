@@ -1,5 +1,5 @@
-{% assign pageUrlPath = url | regex_replace: '/index$|/index\.html$|\.html$|/$' -%}
-{% assign activeEntries = pageUrlPath | active_nav_for_page: activeNav -%}
+{% assign pageUrlPath = url | regexReplace: '/index$|/index\.html$|\.html$|/$' -%}
+{% assign activeEntries = pageUrlPath | activeNavForPage: activeNav -%}
 
 <nav>
 <ul>

@@ -122,18 +122,18 @@ Are you ready? To get started:
    have a Discord account).
 1. Review the codelabs and cookbook recipes.
 
-   * {{recipe-icon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
+   * {{recipeIcon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
    * {{codelab}} Build a [word puzzle][] with Flutter.—**NEW**
    * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—**NEW**
    * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—**NEW**
-   * {{recipe-icon}}Make your games more engaging
+   * {{recipeIcon}}Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
-   * Monetize your games with {{recipe-icon}}[in-game ads][ads-recipe]
+   * Monetize your games with {{recipeIcon}}[in-game ads][ads-recipe]
      and {{codelab}} [in-app purchases][iap-recipe].
    * Add user authentication flow to your game with
-     {{recipe-icon}} [Firebase Authentication][firebase-auth].
+     {{recipeIcon}} [Firebase Authentication][firebase-auth].
    * Collect analytics about crashes and errors inside your game
-     with {{recipe-icon}} [Firebase Crashlytics][firebase-crashlytics].
+     with {{recipeIcon}} [Firebase Crashlytics][firebase-crashlytics].
 
 1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
 1. Write your game!
@@ -163,23 +163,23 @@ and Very Good Ventures created new games.
 Once you feel ready to go beyond these games templates,
 investigate other resources that our community recommended.
 
-{% assign pkg-icon = '<span class="material-symbols">package_2</span>' %}
-{% assign doc-icon = '<span class="material-symbols">quick_reference_all</span>' %}
-{% assign codelab = '<span class="material-symbols">science</span>' %}
-{% assign engine = '<span class="material-symbols">manufacturing</span>' %}
-{% assign tool-icon = '<span class="material-symbols">handyman</span>' %}
-{% assign recipe-icon = '<span class="material-symbols">book_5</span>' %}
-{% assign assets-icon = '<span class="material-symbols">photo_album</span>' %}
-{% assign api-icon = '<span class="material-symbols">api</span>' %}
+{% assign pkgIcon = '<span class="material-symbols" aria-label="Package">package_2</span>' %}
+{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation">api</span>' %}
+{% assign docIcon = '<span class="material-symbols" aria-label="Guide">quick_reference_all</span>' %}
+{% assign codelab = '<span class="material-symbols" aria-label="Codelab">science</span>' %}
+{% assign engine = '<span class="material-symbols" aria-label="Game engine">manufacturing</span>' %}
+{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application">handyman</span>' %}
+{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe">book_5</span>' %}
+{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets">photo_album</span>' %}
 
 :::secondary
-{{pkg-icon}} Flutter package<br>
-{{api-icon}} API documentation<br>
-{{codelab}} Codelab <br>
-{{recipe-icon}} Cookbook recipe<br>
-{{tool-icon}} Desktop application<br>
-{{assets-icon}} Game assets<br>
-{{doc-icon}} Guide<br>
+{{pkgIcon}} Flutter package<br>
+{{apiIcon}} API documentation<br>
+{{codelab}} Codelab<br>
+{{recipeIcon}} Cookbook recipe<br>
+{{toolIcon}} Desktop application<br>
+{{assetsIcon}} Game assets<br>
+{{docIcon}} Guide<br>
 :::
 
 <table class="table table-striped">
@@ -192,10 +192,10 @@ investigate other resources that our community recommended.
 <td>Animation and sprites</td>
 <td>
 
-{{recipe-icon}} [Special effects][]<br>
-{{tool-icon}} [Spriter Pro][]<br>
-{{pkg-icon}} [rive][]<br>
-{{pkg-icon}} [spriteWidget][]
+{{recipeIcon}} [Special effects][]<br>
+{{toolIcon}} [Spriter Pro][]<br>
+{{pkgIcon}} [rive][]<br>
+{{pkgIcon}} [spriteWidget][]
 
 </td>
 </tr>
@@ -204,7 +204,7 @@ investigate other resources that our community recommended.
 <td>App review</td>
 <td>
 
-{{pkg-icon}} [app_review][]
+{{pkgIcon}} [app_review][]
 
 </td>
 </tr>
@@ -213,8 +213,8 @@ investigate other resources that our community recommended.
 <td>Audio</td>
 <td>
 
-{{pkg-icon}} [audioplayers][]<br>
-{{pkg-icon}} [flutter_soloud][]—**NEW**<br>
+{{pkgIcon}} [audioplayers][]<br>
+{{pkgIcon}} [flutter_soloud][]—**NEW**<br>
 {{codelab}}  [Add sound and music to your Flutter game with SoLoud][]—**NEW**
 
 </td>
@@ -242,8 +242,8 @@ investigate other resources that our community recommended.
 <td>Debugging</td>
 <td>
 
-{{doc-icon}} [Firebase Crashlytics overview][firebase-crashlytics]<br>
-{{pkg-icon}} [firebase_crashlytics][]
+{{docIcon}} [Firebase Crashlytics overview][firebase-crashlytics]<br>
+{{pkgIcon}} [firebase_crashlytics][]
 
 </td>
 </tr>
@@ -252,7 +252,7 @@ investigate other resources that our community recommended.
 <td>Drivers</td>
 <td>
 
-{{pkg-icon}} [win32_gamepad][]
+{{pkgIcon}} [win32_gamepad][]
 
 </td>
 </tr>
@@ -261,9 +261,9 @@ investigate other resources that our community recommended.
 <td>Game assets<br>and asset tools</td>
 <td>
 
-{{assets-icon}} [CraftPix][]<br>
-{{assets-icon}} [Game Developer Studio][]<br>
-{{tool-icon}} [GIMP][]
+{{assetsIcon}} [CraftPix][]<br>
+{{assetsIcon}} [Game Developer Studio][]<br>
+{{toolIcon}} [GIMP][]
 
 </td>
 </tr>
@@ -272,9 +272,9 @@ investigate other resources that our community recommended.
 <td>Game engines</td>
 <td>
 
-{{pkg-icon}} [Flame][flame-pkg]<br>
-{{pkg-icon}} [Bonfire][bonfire-pkg]<br>
-{{pkg-icon}} [forge2d][]
+{{pkgIcon}} [Flame][flame-pkg]<br>
+{{pkgIcon}} [Bonfire][bonfire-pkg]<br>
+{{pkgIcon}} [forge2d][]
 
 </td>
 </tr>
@@ -283,8 +283,8 @@ investigate other resources that our community recommended.
 <td>Game features</td>
 <td>
 
-{{recipe-icon}} [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
-{{recipe-icon}} [Add multiplayer support to your game][multiplayer-recipe]
+{{recipeIcon}} [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
+{{recipeIcon}} [Add multiplayer support to your game][multiplayer-recipe]
 
 </td>
 </tr>
@@ -293,7 +293,7 @@ investigate other resources that our community recommended.
 <td>Game services integration</td>
 <td>
 
-{{pkg-icon}} [games_services][game-svc-pkg]
+{{pkgIcon}} [games_services][game-svc-pkg]
 
 </td>
 </tr>
@@ -311,7 +311,7 @@ investigate other resources that our community recommended.
 <td>Level editor</td>
 <td>
 
-{{tool-icon}} [Tiled][]
+{{toolIcon}} [Tiled][]
 
 </td>
 </tr>
@@ -320,10 +320,10 @@ investigate other resources that our community recommended.
 <td>Monetization</td>
 <td>
 
-{{recipe-icon}} [Add advertising to your Flutter game][ads-recipe]<br>
+{{recipeIcon}} [Add advertising to your Flutter game][ads-recipe]<br>
 {{codelab}}  [Add AdMob ads to a Flutter app][]<br>
 {{codelab}}  [Add in-app purchases to your Flutter app][iap-recipe]<br>
-{{doc-icon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
+{{docIcon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
 
 </td>
 </tr>
@@ -332,9 +332,9 @@ investigate other resources that our community recommended.
 <td>Persistence</td>
 <td>
 
-{{pkg-icon}} [shared_preferences][]<br>
-{{pkg-icon}} [sqflite][]<br>
-{{pkg-icon}} [cbl_flutter][] (Couchbase Lite)<br>
+{{pkgIcon}} [shared_preferences][]<br>
+{{pkgIcon}} [sqflite][]<br>
+{{pkgIcon}} [cbl_flutter][] (Couchbase Lite)<br>
 
 </td>
 </tr>
@@ -343,8 +343,8 @@ investigate other resources that our community recommended.
 <td>Special effects</td>
 <td>
 
-{{api-icon}} [Paint API][]<br>
-{{recipe-icon}} [Special effects][]
+{{apiIcon}} [Paint API][]<br>
+{{recipeIcon}} [Special effects][]
 
 </td>
 </tr>
@@ -354,13 +354,11 @@ investigate other resources that our community recommended.
 <td>
 
 {{codelab}} [Build next generation UIs in Flutter][]<br>
-{{doc-icon}} [Best practices for optimizing Flutter web loading speed][]—**NEW**
+{{docIcon}} [Best practices for optimizing Flutter web loading speed][]—**NEW**
 
 </td>
 </tr>
 </table>
-
-{% assign games-gh = site.github | append: '/flutter/games' -%}
 
 [Ads]: https://ads.google.com/intl/en_us/home/flutter/#!/
 [Air Hockey]: https://play.google.com/store/apps/details?id=com.ignacemaes.airhockey
@@ -371,10 +369,10 @@ investigate other resources that our community recommended.
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
 [install Flutter]: /get-started/install
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
-[basic-template-readme]: {{games-gh}}/blob/main/templates/basic/README.md
-[basic-template]: {{games-gh}}/tree/main/templates/basic
-[card-template-readme]: {{games-gh}}/blob/main/templates/card/README.md
-[card-template]: {{games-gh}}/tree/main/templates/card
+[basic-template-readme]: {{site.repo.games}}/blob/main/templates/basic/README.md
+[basic-template]: {{site.repo.games}}/tree/main/templates/basic
+[card-template-readme]: {{site.repo.games}}/blob/main/templates/card/README.md
+[card-template]: {{site.repo.games}}/tree/main/templates/card
 [check your region's eligibility]: https://www.google.com/intl/en/ads/coupons/terms/flutter/
 [discord-direct]: https://discord.com/login?redirect_to=%2Fchannels%2F509714518008528896%2F788415774938103829
 [firebase_crashlytics]: {{site.pub}}/packages/firebase_crashlytics
@@ -382,10 +380,10 @@ investigate other resources that our community recommended.
 [flip-blog]: {{site.google-blog}}/2023/05/how-its-made-io-flip-adds-twist-to.html
 [flip-game]: https://flip.withgoogle.com/#/
 [game-discord]: https://discord.gg/qUyQFVbV45
-[game-repo]: {{games-gh}}
+[game-repo]: {{site.repo.games}}
 [pinball-game]: https://pinball.flutter.dev/#/
-[runner-template-readme]: {{games-gh}}/blob/main/templates/endless_runner/README.md
-[runner-template]: {{games-gh}}/tree/main/templates/endless_runner
+[runner-template-readme]: {{site.repo.games}}/blob/main/templates/endless_runner/README.md
+[runner-template]: {{site.repo.games}}/tree/main/templates/endless_runner
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis

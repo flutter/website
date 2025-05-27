@@ -1,18 +1,18 @@
 
 {% assign id = include.ref-os | downcase -%}
-{% assign mainpath = include.filepath -%}
+{% assign mainPath = include.filepath -%}
 {%- case id %}
 {% when 'windows','macos' %}
-{%- assign file-format = 'zip' %}
+{%- assign fileFormat = 'zip' %}
 {% else %}
-{%- assign file-format = 'tar.xz' %}
+{%- assign fileFormat = 'tar.xz' %}
 {% endcase %}
 {%- if id == 'chromeos' %}
 {% assign plat = 'linux' %}
 {%- else %}
 {% assign plat = id %}
 {% endif %}
-{% capture filepath -%}{{mainpath | replace: "opsys", plat}}{{file-format}} {% endcapture -%}
+{% capture filepath -%}{{mainPath | replace: "opsys", plat}}{{fileFormat}} {% endcapture -%}
 
 To download the {{include.ref-os}} 3.13 version of the Flutter SDK,
 you would change the original URL from:

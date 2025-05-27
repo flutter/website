@@ -5,7 +5,7 @@
   Usage: {% include docs/testing_toc.md type='unit' %}
 {% endcomment -%}
 {% assign dir = 'cookbook/testing/' | append: include.type -%}
-{% assign recipes = collections.all | children_pages: dir | sort: 'title' %}
+{% assign recipes = collections.all | childPagesOf: dir | sort: 'title' %}
 
 {% for recipe in recipes -%}
 {% comment -%}
