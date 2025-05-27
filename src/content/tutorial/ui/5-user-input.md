@@ -4,9 +4,7 @@ description: Accept input from the user with buttons and text fields
 permalink: /tutorial/user-input/
 ---
 
-{%- comment %}
-TODO(ewindmill) embed video
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
 
 The app theoretically displays the users guesses in `Tile` widgets,
