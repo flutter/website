@@ -50,14 +50,14 @@ class MainApp extends StatelessWidget {
             child: Text('Birdle'),
           ),
         ),
-        body: Center(child: Tile()),
+        body: Center(child: Tile('A', HitType.hit)),
       ),
     );
   }
 }
 ```
 
-## **Create the GamePage widget**
+## Create the GamePage widget
 
 Add the following code for a new widget, called `GamePage`, to your `main.dart`
 file. This widget will eventually display the  UI elements needed for the game
@@ -77,8 +77,7 @@ class GamePage extends StatelessWidget {
 }
 ```
 
-:::note Challenge
-Display the `GamePage` rather than a `Tile`.
+:::note Challenge Display the `GamePage` rather than a `Tile`.
 
 **Solution:**
 
@@ -138,38 +137,41 @@ The `spacing` puts five pixels between each element on the main axis.
 Within `Column.children`, add one row *for each* element in the `_game.guesses`
 list. 
 
-:::note
-This `guesses` list is a **fixed-size** list, starting with five elements, one for each *potential* guess. It will always contain exactly
-five elements, and therefor there will always be five rows rendered.
-:::
+:::note This `guesses` list is a **fixed-size** list, starting with five
+elements, one for each *potential* guess. It will always contain exactly five
+elements, and therefor there will always be five rows rendered. :::
 
 ```dart
-// In GamePage.build method:
-@override
-Widget build(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Column(
-      spacing: 5.0,
-      children: [
-        for (var guess in _game.guesses)
-            Row(
-              spacing: 5.0,
-              children: [
-               // tiles
-              ]
-            ),
-        ],
-      ],
-    ),
-  );
+class GamePage extends StatelessWidget {
+  const GamePage({super.key});
+  // This manages game logic, and is out of scope for this lesson
+  final Game _game = Game();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        spacing: 5.0,
+        children: [
+          for (var guess in _game.guesses)
+              Row(
+                spacing: 5.0,
+                children: [
+                // tiles
+                ]
+              ),
+          ],
+      ),
+    );
+  }
 }
 ```
 
-This is called a [`collection-for`][] loop, a Dart feature that allows you to
-unfurl a list inside of another list when the loop is executed. This is syntactic-sugar that
-added to Dart to make it easier for Flutter devs to work with collections of
-widgets. It achieves the same as the following psuedo code:
+This is called a [collection-for][] loop, a Dart feature that allows you to
+unfurl a list inside of another list when the loop is executed. This is
+syntactic-sugar that added to Dart to make it easier for Flutter devs to work
+with collections of widgets. It achieves the same as the following psuedo code:
 
 ```dart
 [...ListOfData.map((element) => Widget(element)).toList()],
@@ -180,28 +182,36 @@ on the `Game` object.
 
 :::note Challenge
 
-Add a `Tile` to each row for each letter allowed in the guess.
+Add a `Tile` to each row for each letter allowed in the guess. 
+The `guess` variable in the loop is a [record][] with the type 
+`({String char, HitType type})`.
 
 **Solution:**
 
 ```dart
-Widget build(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: Column(
-      spacing: 5.0,
-      children: [
-          for (var guess in _game.guesses)
-            Row(
-              spacing: 5.0,
-              children: [
-               for (var letter in guess) Tile(letter.char, letter.type),
-              ]
-            ),
-        ],
-      ],
-    ),
-  );
+class GamePage extends StatelessWidget {
+  const GamePage({super.key});
+  // This manages game logic, and is out of scope for this lesson
+  final Game _game = Game();
+    
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        spacing: 5.0,
+        children: [
+            for (var guess in _game.guesses)
+              Row(
+                spacing: 5.0,
+                children: [
+                  for (var letter in guess) 
+                    Tile(letter.char, letter.type),
+                ]
+              ),
+          ],
+      ),
+    );
+  }
 }
 ```
 
@@ -209,13 +219,12 @@ Widget build(BuildContext context) {
 
 When you reload your app, you should see a 5x5 grid of white squares.
 
-{%- comment %}
-TODO(ewindmill) image
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) image {%- endcomment %}
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
-[`collection-for`]: {{site.dart-site}}/language/collections#for-element
+[collection-for]: {{site.dart-site}}/language/collections#for-element
+[record]: {{site.dart-site}}/language/records

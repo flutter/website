@@ -44,12 +44,12 @@ defines a new widget called `Tile`.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
 
-  // ...
+  // ... 
 }
 ```
 
@@ -69,14 +69,14 @@ every widget, and will always return another widget.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
 
   @override
   Widget build(BuildContext context) {
-	// TODO: fill in with widgets
+	// TODO: Replace Containter with widgets.
 	return Container();
   }
 }
@@ -97,8 +97,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-		      // NEW
-          child: Tile('A', HitType.hit),
+          child: Tile('A', HitType.hit), // NEW
         ),
       ),
     );
@@ -124,7 +123,7 @@ more properties of the `Container` next.)
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -135,7 +134,7 @@ class Tile extends StatelessWidget {
 	  return Container(
        width: 60,
        height: 60,
-       // TODO: fill in with widgets
+       // TODO: Add needed widgets
     );
   }
 }
@@ -257,11 +256,11 @@ passed into the `Tile` you created:
 ```dart
 // main.dart line ~16
 // green
-child: Tile('A', HitType.hit))
+child: Tile('A', HitType.hit)
 // grey
-child: Tile('A', HitType.miss))
+child: Tile('A', HitType.miss)
 // yellow
-child: Tile('A', HitType.partial))
+child: Tile('A', HitType.partial)
 ```
 
 Soon, this small box will be one of many widgets on the screen. In the next

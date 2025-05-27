@@ -14,7 +14,7 @@ By the end, you’ll have built a handful of small apps that demonstrate
 the critical features of Flutter development (and more!)
 
 {%- comment %}
-<!-- TODO(ewindmill) Embedded video -->
+TODO(ewindmill) welcome video
 {%- endcomment %}
 
 ## What is Flutter?
