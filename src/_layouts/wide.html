@@ -3,7 +3,7 @@ layout: base
 ---
 
 {% if toc != false -%}
-{% assign tocContents = content | generate_toc %}
+{% assign tocContents = content | generateToc %}
 {% if tocContents == null or tocContents == '' -%}
 {% assign toc = false %}
 {% endif -%}
@@ -24,7 +24,7 @@ layout: base
         <article class="wide-site-content">
             <header id="site-header-wrapper">
                 <h1 id="document-title">{{ title }}</h1>
-                {% if show_breadcrumbs != false -%}
+                {% if showBreadcrumbs != false -%}
                 {% include breadcrumbs.html %}
                 {% endif -%}
             </header>

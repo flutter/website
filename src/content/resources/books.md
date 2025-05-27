@@ -44,7 +44,7 @@ The following sections have more information about each book.
 <a href="{{book.link}}">{{book.title}}</a>
 </h3>
 
-by {{book.authors | array_to_sentence_string}}
+by {{book.authors | arrayToSentenceString}}
 {:.authors}
 
 {{book.desc}}

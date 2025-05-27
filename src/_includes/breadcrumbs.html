@@ -6,7 +6,7 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
 - https://search.google.com/structured-data/testing-tool
 {% endcomment %}
 
-{% assign url = page.url | regex_replace: '/index$|/index.html$|/$' -%}
+{% assign url = page.url | regexReplace: '/index$|/index.html$|/$' -%}
 
 {% if url.size > 0 -%}
 {% assign breadcrumbs = page | breadcrumbsForPage -%}
@@ -17,7 +17,7 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
     <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
         property="itemListElement" typeof="ListItem"
         {%- if forloop.last %} aria-current="page"{% endif %}>
-      <a href="{{ crumb.url | regex_replace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
+      <a href="{{ crumb.url | regexReplace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
         <span property="name">{{crumb.title}}</span>
       </a>
       <meta property="position" content="{{forloop.index0}}" />
