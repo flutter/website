@@ -30,10 +30,11 @@ across platforms.
 
 ## How to use this tutorial
 
-You should be familiar with the Dart programming language to follow this tutorial. This tutorial assumes you have all the knowledge from its Dart 
-counterpart, the [Learn Dart tutorial][]. 
-(Alternatively, if you’re comfortable with another all-purpose object oriented 
-language, like Java or Kotlin, you’ll likely be okay.)
+You should be familiar with the Dart programming language to follow this
+tutorial. This tutorial assumes you have all the knowledge from its Dart
+counterpart, the [Learn Dart tutorial][]. (Alternatively, if you’re comfortable
+with another all-purpose object oriented language, like Java or Kotlin, you’ll
+likely be okay.)
 
 ## Set up
 

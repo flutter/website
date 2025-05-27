@@ -22,7 +22,8 @@ $ devtools
 
 :::note Run in your IDE You can also run the dev tools directly inside your IDE
 (e.g., in VS Code, click the Flutter icon in the sidebar and then "Open
-DevTools"). :::
+DevTools"). 
+:::
 
 ## The widget inspector
 
@@ -164,8 +165,8 @@ could change the numerical value in the Property Editor and see the update
 instantly on your running app without needing to recompile or even hot reload.
 This allows for rapid iteration on UI design.
 
-[Dart's DevTools]: {{site}}/tools/devtools
-[constraints]: {{site}}/ui/layout/constraints
+[Dart's DevTools]: /tools/devtools
+[constraints]: /ui/layout/constraints
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
