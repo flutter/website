@@ -37,10 +37,10 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-The type definition of the line **`final void Function(String)
-onSubmitGuess;`** might look overwhelming if you're new to Dart. It
-declares a `final` member of the class called `onSubmitGuess`, which
-has a type of `void Function(String)`. It’s a function that takes a
+The type definition of the line `final void Function(String) onSubmitGuess;` 
+might look overwhelming if you're new to Dart. 
+It declares a `final` member of the class called `onSubmitGuess`, 
+whichhas a type of `void Function(String)`. It’s a function that takes a
 single `String` argument (the user's guess) and doesn't return any
 value (denoted by `void`). 
 
@@ -54,14 +54,12 @@ By the end of this lesson, the passed in `onGuessSubmitted` function
 will be called when a user enters a guess. First, you'll need to build
 the visual parts of this widget. This is what the widget will look like.
 
-{%- comment %}
-TODO(ewindmill) embed video
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
 ## The `TextField` widget
 
-Given the text field and button are side-by-side, this a good use
-case for a `Row` widget. Replace the placeholder `Container` in your
+Given the text field and button are side-by-side, this a good use case
+for a `Row` widget. Replace the placeholder `Container` in your
 `build` method with a `Row` containing an `Expanded` `TextField`:
 
 ```dart
@@ -78,8 +76,8 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		     maxLength: 5,
-             decoration: InputDecoration(
+              maxLength: 5,
+              decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -87,7 +85,6 @@ class GuessInput extends StatelessWidget {
             ),
           ),
         ),
-        // Add a 'submit button'
       ],
     );
   }
@@ -102,8 +99,8 @@ fill all the available space along the main axis (horizontal for
 children. This makes the `TextField` stretch to take up all the space
 *except* what’s taken by other widgets in the row. 
 
-:::tip 
-`Expanded` is often the solution to “[unbound width/height][]” errors. 
+:::tip Tip
+`Expanded` is often the solution to "[unbound width/height][]" exceptions. 
 :::
 
 Also new is the `TextField` widget. This widget is the star of the
@@ -174,14 +171,14 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController, // NEW
- 		   ),
+              controller: _textEditingController, // NEW
+            ),
           ),
         ),
       ],
@@ -216,20 +213,19 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController,
-		      onSubmitted: (String input) { // NEW
+              controller: _textEditingController,
+              onSubmitted: (String input) { // NEW
                 print(_textEditingController.text); // Temporary
-              } 
- 		 ),
+              }
+            ),
           ),
         ),
-        // 
       ],
     );
   }
@@ -264,18 +260,18 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController,
-		      onSubmitted: (_) { // UPDATED
+              controller: _textEditingController,
+              onSubmitted: (_) { // UPDATED
                 print(_textEditingController.text); // Temporary
                 _textEditingController.clear(); // NEW
               } 
- 		    ),
+            ),
           ),
         ),
       ],
@@ -311,33 +307,31 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+		          maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController,
-		      autoFocus: true // NEW
-		      onSubmitted: (String input) {
+		          controller: _textEditingController,
+		          autoFocus: true // NEW
+		          onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
               } 
- 		 ),
+ 		        ),
           ),
         ),
-        // IconButton will go here later
       ],
     );
   }
 }
 ```
 
-The second issue requires you to use a
-[`FocusNode`](https://api.flutter.dev/flutter/widgets/FocusNode-class.html),
-which is used to manage the keyboard focus in Flutter. You can use it
-to request that a `TextField` gain focus (making the keyboard appear
-on mobile) or to know when a field has focus. 
+The second issue requires you to use a [`FocusNode`][], which is used
+to manage the keyboard focus in Flutter. You can use it to request
+that a `TextField` gain focus (making the keyboard appear on mobile)
+or to know when a field has focus. 
 
 First, create a `FocusNode` in the `GuessInput` class:
 
@@ -379,21 +373,21 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController,
-		      autoFocus: true
+              controller: _textEditingController,
+              autoFocus: true
               focusNode: _focusNode, // NEW
-		      onSubmitted: (String input) {
+              onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
                 _focusNode.requestFocus(); // NEW
               } 
- 		    ),
+            ),
           ),
         ),
       ],
@@ -415,9 +409,10 @@ class GuessInput extends StatelessWidget {
   final void Function(String) onSubmitGuess;
 
   final TextEditingController _textEditingController = TextEditingController();
+
   final FocusNode _focusNode = FocusNode();
 
-    @override
+  @override
   Widget build(BuildContext context) {
     return Row(
       children: [
@@ -425,21 +420,21 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		      maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		      controller: _textEditingController,
-		      autoFocus: true
+              controller: _textEditingController,
+              autoFocus: true
               focusNode: _focusNode,
-		      onSubmitted: (_) {
-                onSubmitGuess(_textEditingController.text.trim()); // UPDATED
+              onSubmitted: (String input) {
+                onSubmitGuess(_textEditionController.text.trim())
                 _textEditingController.clear();
                 _focusNode.requestFocus();
               } 
- 		    ),
+            ),
           ),
         ),
       ],
@@ -473,12 +468,14 @@ class GamePage extends StatelessWidget {
           for (var guess in _game.guesses)
             Row(
               spacing: 5.0,
-              children: [for (var letter in guess) Tile(letter)],
+              children: [
+                for (var letter in guess) Tile(letter),
+              ],
             ),
           GuessInput(
             onSubmitGuess: (String guess) {
-		      // TODO, handle guess
-		      print(guess); // Temporary
+              // TODO, handle guess
+              print(guess); // Temporary
             }
           ),
         ],
@@ -560,9 +557,9 @@ class GuessInput extends StatelessWidget {
           padding: EdgeInsets.zero,
           icon: Icon(Icons.arrow_circle_up),
           onPressed: () {
-           onSubmitGuess(_textEditingController.text.trim());
-           _textEditingController.clear();
-           _focusNode.requestFocus();
+            onSubmitGuess(_textEditingController.text.trim());
+            _textEditingController.clear();
+            _focusNode.requestFocus();
           },
         ),
       ],
@@ -575,12 +572,12 @@ This method is doing the same as the `onSubmitted` callback on the `TextField`.
 
 :::note Challenge - Share "on submitted" logic.
 
-You may be thinking, “Shouldn’t we
-abstract these methods into one function and pass it to both inputs?”
-You could, but it wouldn’t be as clean as you might think because the
-callbacks to `IconButton.onPressed` and `TextField.onSubmitted`
-require different arguments. That said, if the logic was more complex,
-it'd be better to do so. 
+You may be thinking, "Shouldn’t we abstract these methods into one
+function and pass it to both inputs?" You could, but it wouldn’t be as
+clean as you might think because the callbacks to
+`IconButton.onPressed` and `TextField.onSubmitted` require different
+arguments. That said, if the logic was more complex, it'd be better to
+do so. 
 
 **Solution**
 

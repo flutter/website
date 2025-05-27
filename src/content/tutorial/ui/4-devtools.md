@@ -4,16 +4,14 @@ description: Learn to use the Dart DevTools when developing Flutter apps.
 permalink: /tutorial/devtools/
 ---
 
-{%- comment %}
-TODO(ewindmill) embed video
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
 As your Flutter app grows in complexity, it becomes both more important and more
 difficult to understand how each widget's properties are affecting the UI.
 [Dart's DevTools][] assists you with two particularly useful features: the
 **widget inspector** and the **property editor**.
 
-First, launch DevTools by running the following commands while your app is running:
+First, launch DevTools by running the following commands while your app is running in debug mode:
 
 ```shell
 $ flutter pub global activate devtools
@@ -21,9 +19,10 @@ $ devtools
 ```
 
 :::note Run in your IDE 
-You can also run the dev tools directly inside your IDE
-(e.g., in VS Code, click the Flutter icon in the sidebar and then "Open
-DevTools"). 
+
+You can also run the dev tools directly inside [VSCode][] and [Intellij][],
+provided you have the Flutter plugin installed.
+
 :::
 
 ## The widget inspector
@@ -33,9 +32,7 @@ helps you understand the layout of your UI and identify which widgets are
 responsible for different parts of the screen. Running against the app you've
 built so far, the inspector looks like this:
 
-{%- comment %}
-TODO(ewindmill) scrren shot
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) scrrenshot {%- endcomment %}
 
 Consider the `GamePage` widget you created in this section:
 
@@ -44,7 +41,6 @@ class GamePage extends StatelessWidget {
   const GamePage({super.key});
   
   final Game _game = Game();
-
 
   @override  
   Widget build(BuildContext context) {
@@ -84,49 +80,51 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-In the widget inspector, you should see a tree of exactly the same widgets that
-are in your code: `MaterialApp` as the root, with `Scaffold` as its `home` and
-an `AppBar` as its `appBar`, and so on down the entire tree to the `Row` widgets
-with `Tile` children. You can select any widget in the tree to see its
-properties and even jump to its source code in your IDE.
+In the widget inspector, you should see a tree of exactly the same
+widgets that are in your code: `MaterialApp` as the root, with
+`Scaffold` as its `home` and an `AppBar` as its `appBar`, and so on
+down the entire tree to the `Row` widgets with `Tile` children. You
+can select any widget in the tree to see its properties and even jump
+to its source code in your IDE.
 
 ## Debugging layout issues
 
 The widget inspector is perhaps most useful for debugging layout issues.
 
-In certain situations, a widget's [constraints][] are unbounded, or infinite. This means
-that either the maximum width or the maximum height is set to
-[`double.infinity`][]. A widget that tries to be as big as possible won't function
-usefully when given an unbounded constraint and, in debug mode, throws an
-exception.
+In certain situations, a widget's [constraints][] are unbounded, or
+infinite. This means that either the maximum width or the maximum
+height is set to [`double.infinity`][]. A widget that tries to be as
+big as possible won't function usefully when given an unbounded
+constraint and, in debug mode, throws an exception.
 
-The most common case where a render box ends up with an unbounded constraint is
-within a flex box widget ([`Row`][] or [`Column`][]), and within a scrollable region
-(such as [`ListView`][] and other [`ScrollView`][] subclasses). `ListView`, for
-example, tries to expand to fit the space available in its cross-direction
-(perhaps it's a vertically-scrolling block and tries to be as wide as its
-parent). If you nest a vertically scrolling `ListView` inside a horizontally
-scrolling `ListView`, the inner list tries to be as wide as possible, which is
-infinitely wide, since the outer one is scrollable in that direction.
+The most common case where a render box ends up with an unbounded
+constraint is within a flex box widget ([`Row`][] or [`Column`][]),
+and within a scrollable region (such as [`ListView`][] and other
+[`ScrollView`][] subclasses). `ListView`, for example, tries to expand
+to fit the space available in its cross-direction (perhaps it's a
+vertically-scrolling block and tries to be as wide as its parent). If
+you nest a vertically scrolling `ListView` inside a horizontally
+scrolling `ListView`, the inner list tries to be as wide as possible,
+which is infinitely wide, since the outer one is scrollable in that
+direction.
 
 Perhaps the most common error you'll run into while building a Flutter
-application is due to incorrectly using layout widgets, and is referred to as
-the "unbounded constraints" error.
+application is due to incorrectly using layout widgets, and is
+referred to as the "unbounded constraints" error.
 
-Watch the following video to get an understanding of how to spot and resolve this issue.
+Watch the following video to get an understanding of how to spot and
+resolve this issue.
 
 {% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
 
 ## The Property Editor
 
-When you select a widget in the Widget Inspector, the Property Editor displays
-all the properties of that selected widget. This is a powerful tool for
-understanding why a widget looks the way it does and for experimenting with
-property changes in real-time.
+When you select a widget in the Widget Inspector, the Property Editor
+displays all the properties of that selected widget. This is a
+powerful tool for understanding why a widget looks the way it does and
+for experimenting with property changes in real-time.
 
-{%- comment %}
-TODO(ewindmill) scrren shot
-{%- endcomment %}
+{%- comment %} TODO(ewindmill) scrren shot {%- endcomment %}
 
 Look at the `Tile` widget's `build` method from earlier:
 
@@ -154,10 +152,10 @@ class Tile extends StatelessWidget {
 }
 ```
 
-If you select a `Tile` widget in the Widget Inspector, the Property Editor would
-show you its `width` (60), `height` (60), and the `decoration` property. You
-could then expand the `BoxDecoration` to see the `border` and `color`
-properties.
+If you select a `Tile` widget in the Widget Inspector, the Property
+Editor would show you its `width` (60), `height` (60), and the
+`decoration` property. You could then expand the `BoxDecoration` to
+see the `border` and `color` properties.
 
 For many properties, you can even modify their values directly within the
 Property Editor. For example, if you wanted to quickly test how a different
@@ -173,3 +171,5 @@ This allows for rapid iteration on UI design.
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
+[VSCode]: /tools/vs-code
+[Intellij]: /tools/android-studio
