@@ -130,9 +130,11 @@ Look at the `Tile` widget's `build` method from earlier:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(this.letter, {super.key});
+  const Tile(required this.letter, required hitType, {super.key});
 
-  final Letter letter;
+  final String letter;
+  final HitType hitType;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -140,10 +142,10 @@ class Tile extends StatelessWidget {
       height: 60,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
-        color: switch (letter.type) {
-          LetterType.hit => Colors.green,
-          LetterType.partial => Colors.yellow,
-          LetterType.miss => Colors.grey,
+        color: switch (hitType) {
+          HitType.hit => Colors.green,
+          HitType.partial => Colors.yellow,
+          HitType.miss => Colors.grey,
           _ => Colors.white,
         },
       ),
