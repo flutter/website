@@ -383,7 +383,7 @@ investigate other resources that our community recommended.
 [game-repo]: {{site.repo.games}}
 [pinball-game]: https://pinball.flutter.dev/#/
 [runner-template-readme]: {{site.repo.games}}/blob/main/templates/endless_runner/README.md
-[runner-template]: {{games-gh}}/tree/main/templates/endless_runner
+[runner-template]: {{site.repo.games}}/tree/main/templates/endless_runner
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
 [Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
