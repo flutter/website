@@ -77,7 +77,7 @@ class GamePage extends StatelessWidget {
 }
 ```
 
-:::note Challenge Display the `GamePage` rather than a `Tile`.
+:::note Challenge - Display the `GamePage` rather than a `Tile`.
 
 **Solution:**
 

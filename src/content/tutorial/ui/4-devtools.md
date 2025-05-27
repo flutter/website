@@ -20,7 +20,8 @@ $ flutter pub global activate devtools
 $ devtools
 ```
 
-:::note Run in your IDE You can also run the dev tools directly inside your IDE
+:::note Run in your IDE 
+You can also run the dev tools directly inside your IDE
 (e.g., in VS Code, click the Flutter icon in the sidebar and then "Open
 DevTools"). 
 :::
@@ -116,7 +117,7 @@ Watch the following video to get an understanding of how to spot and resolve thi
 
 {% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
 
-## **The Property Editor**
+## The Property Editor
 
 When you select a widget in the Widget Inspector, the Property Editor displays
 all the properties of that selected widget. This is a powerful tool for
