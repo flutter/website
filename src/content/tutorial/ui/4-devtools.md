@@ -167,6 +167,7 @@ This allows for rapid iteration on UI design.
 
 [Dart's DevTools]: /tools/devtools
 [constraints]: /ui/layout/constraints
+[`double.infinity`]:{{site.api}}/flutter/dart-core/double/infinity-constant.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
