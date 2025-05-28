@@ -12,10 +12,10 @@ callback for a set of `Radio` widgets. As a result, the individual `Radio.groupV
 
 ## Context
 
-To meet APG (ARIA Practices Guide) requirements for keyboard navigation and semantic properties in
-radio button groups, Flutter needed a dedicated radio group concept. Introducing a wrapper widget,
-RadioGroup, provides this out-of-the-box support. This change also presented an opportunity to
-simplify the API for individual Radio widgets.
+To meet APG (ARIA Practices Guide) requirements for keyboard navigation and
+semantic properties in radio button groups, Flutter needed a dedicated radio group concept.
+Introducing a wrapper widget, `RadioGroup`, provides this out-of-the-box support.
+This change also presented an opportunity to simplify the API for individual `Radio` widgets.
 
 ## Description of change
 
