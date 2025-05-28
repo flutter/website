@@ -1,5 +1,5 @@
 ---
-title: `Redesigned the Radio Widget`
+title: Redesigned the Radio Widget
 description: >-
   Changes to the Radio widget
 ---
