@@ -19,8 +19,13 @@ This change also presented an opportunity to simplify the API for individual `Ra
 
 ## Description of change
 
-Deprecated `Radio.onChanged`, `Radio.groupValue`, `CupertinoRadio.onChanged`,
-`CupertinoRadio.groupValue`, `RadioListTile.groupValue`, and `RadioListTile.onChanged`.
+The following API is deprecated:
+* `Radio.onChanged`
+* `Radio.groupValue`
+* `CupertinoRadio.onChanged`
+* `CupertinoRadio.groupValue`
+* `RadioListTile.groupValue`
+* `RadioListTile.onChanged`.
 
 ## Migration guide
 
