@@ -24,7 +24,7 @@ Deprecated `Radio.onChanged`, `Radio.groupValue`, `CupertinoRadio.onChanged`,
 
 ## Migration guide
 
-If you are using these properties, you can refactor them with `RadioGroup`
+If you are using these properties, you can refactor them with `RadioGroup`.
 
 ### Case 1: trivial case
 
