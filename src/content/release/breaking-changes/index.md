@@ -42,10 +42,12 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Redesigned the Radio Widget][]
 * [Removed semantics elevation and thickness][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 
+[Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
