@@ -117,7 +117,7 @@ the `FlutterPluginRegistrant` API to accomplish the same thing.
 }
 ```
 
-The first option where `PluginRegistrant` is hooked up to the
+In this option the `PluginRegistrant` is hooked up to the
 `FlutterViewController.pluginRegistrant` `IBOutlet` in the Storyboard. This option
 is preferred since it avoids the `UIApplicationDelegate`.
 
