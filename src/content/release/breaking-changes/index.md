@@ -46,11 +46,13 @@ They're sorted by release and listed in alphabetical order:
 * [Removed semantics elevation and thickness][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
+* [Component theme normalization updates][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
@@ -77,7 +79,6 @@ They're sorted by release and listed in alphabetical order:
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
-
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
 
