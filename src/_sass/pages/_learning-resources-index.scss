@@ -1,3 +1,41 @@
+.close-icon {
+  font-size: 1rem;
+  cursor: pointer;
+}
+// smaller screen filter by
+@media (max-width: 839px) {
+  #resource-filter-group-wrapper{
+    position: fixed;
+    top: var(--site-header-height);
+    bottom: 0;
+    right: -220px;            
+    width: 220px;
+    background-color: var(--site-inset-bgColor);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+#close-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: 0; }
+#close-filter-toggle:checked     + #resource-filter-group-wrapper { right: -220px; }
+
+// close icon in small screen
+  #resource-filter-group .filter-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0.75rem;
+  }
+}
+// Large screens
+@media (min-width: 840px) {
+  #resource-filter-group {
+    position: static !important;
+    right: auto !important;
+  }
+  #resource-filter-group .filter-header {
+    display: none !important;
+  }
+}
+
 #resource-index-content {
   display: flex;
   flex-direction: row;
