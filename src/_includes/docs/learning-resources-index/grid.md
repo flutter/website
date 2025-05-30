@@ -29,8 +29,8 @@
                     endcase -%}
                 <span class="pill-sm {{ pill-color }}">{{ item.type | capitalize }}</span>
                 {%- if item.link.label == "Flutter Github" -%}
-                    <svg style="color:black" width="24px" height="24px">
-                        <use href="/assets/images/social/github.svg#github"></use>
+                    <svg class="monochrome-icon" width="24px" height="24px">
+                      <use href="/assets/images/social/github.svg#github"></use>
                     </svg>
                 {%- elsif item.link.label == 'Dart Github' -%}
                     <img src="/assets/images/branding/dart/logo.svg" width="24px" alt="Dart logo" />
@@ -40,15 +40,15 @@
                     <img src='/assets/images/branding/dart/logo.svg' alt="Dart icon" width="24px"/>
                 {%- elsif item.link.label == "Google Codelab" -%}
                     <svg width="24px" height="24px">
-                        <use href="/assets/images/social/google-developers.svg#google-developers"></use>
+                      <use href="/assets/images/social/google-developers.svg#google-developers"></use>
                     </svg>
                 {%- elsif item.link.label == "YouTube" -%}
-                    <svg style="color:red" width="24px" height="24px">
-                        <use href="/assets/images/social/youtube.svg#youtube"></use>
+                    <svg style="color: red" width="24px" height="24px">
+                      <use href="/assets/images/social/youtube.svg#youtube"></use>
                     </svg>
                 {%- elsif item.link.label == "Medium" -%}
-                    <svg style="color:black" width="24px" height="24px">
-                        <use href="/assets/images/social/medium.svg#medium"></use>
+                    <svg class="monochrome-icon" width="24px" height="24px">
+                      <use href="/assets/images/social/medium.svg#medium"></use>
                     </svg>
                 {%- endif -%}
             </div>
