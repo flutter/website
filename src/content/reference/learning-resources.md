@@ -22,11 +22,7 @@ This page lists all of our additional learning resources:
 
 <div id="resource-index-content">
     <div class="left-col" id="resource-index-main-content">
-        <div 
-            id="resource-search-group" 
-            class="chip-filters-group" 
-            style="margin-bottom:20px"
-        >
+        <div id="resource-search-group" class="chip-filters-group">
             <div class="top-row">
                 <div class="search-wrapper" id="resource-search">
                     <span class="material-symbols leading-icon" aria-hidden="true">search</span>
@@ -34,7 +30,7 @@ This page lists all of our additional learning resources:
                         aria-label="Search learning resources by name and category">
                 </div>
                 {% comment -%}This dropdown is shown on narrow screens{% endcomment -%}
-                <button class="show-filters-button">
+                <button class="icon-button show-filters-button">
                     <span class="material-symbols" aria-hidden="true">filter_list</span>
                 </button>
             </div>
