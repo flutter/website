@@ -244,7 +244,7 @@ flavor in Flutter launch command.
 
 ```yaml title="pubspec.yaml"
 flutter:
-  default-flavor: flavor_name # Android-only field
+  default-flavor: flavor_name
 ```
 
 In the following example, an Android Flutter app has a
