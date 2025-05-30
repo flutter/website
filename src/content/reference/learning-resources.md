@@ -3,7 +3,7 @@ title: Flutter learning resources
 description: A catalog of Flutter sample applications, codelabs, and tutorials.
 short-title: Learning resources
 showBreadcrumbs: false
-layout: wide
+extraBodyClass: wide-site-content
 toc: false
 js: [ { url: '/assets/js/learning-resources-index.js', defer: true } ]
 ---

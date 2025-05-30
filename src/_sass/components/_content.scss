@@ -43,11 +43,11 @@
     > img, > lite-youtube {
       margin-bottom: 1rem;
     }
-  }
 
-  .wide-site-content {
-    max-width: 1200px;
-    width: 100%;
+    @at-root body.wide-site-content & {
+      max-width: 1200px;
+      width: 100%;
+    }
   }
 
   #site-header-wrapper {
