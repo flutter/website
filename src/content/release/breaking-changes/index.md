@@ -52,7 +52,7 @@ They're sorted by release and listed in alphabetical order:
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate.md
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
