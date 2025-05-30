@@ -37,7 +37,7 @@ since the Flutter engine won’t have been created yet.
 
 ### Info.plist migration
 
-`UISceneDelegate`s must be specified in an app’s Info.plist or specified in `application:configurationForConnectingSceneSession:options:`. The Flutter tool will attempt to automatically edit the Info.plist if no `UISceneDelegate` is specified, so nothing may be required beyond running flutter run or flutter build again. Projects can be manually upgraded by adding the following to the Info.plist. `FlutterSceneDelegate` is the new class in the Flutter framework that users can use as the `UISceneDelegate`.
+`UISceneDelegate`s must be specified in an app’s Info.plist or specified in `application:configurationForConnectingSceneSession:options:`. The Flutter tool will attempt to automatically edit the Info.plist if no `UISceneDelegate` is specified, so nothing may be required beyond running `flutter run` or `flutter build ios` again. Projects can be manually upgraded by adding the following to the Info.plist. `FlutterSceneDelegate` is the new class in the Flutter framework that users can use as the `UISceneDelegate`.
 
 ```plist
 <?xml version="1.0" encoding="UTF-8"?>
