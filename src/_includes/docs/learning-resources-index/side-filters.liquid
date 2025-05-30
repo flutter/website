@@ -19,9 +19,9 @@
             <span class="material-symbols" aria-hidden="true">expand_more</span>
         </button>
         <h4>Type</h4>
-        <ul id="filters-type" class="collapsed">
+        <ul id="filters-type">
             {% for filter in filters.type -%}
-                <li class="hidden">
+                <li>
                     <input type="checkbox"
                            role="checkbox"
                            data-category="type"
@@ -31,9 +31,5 @@
                 </li>
             {% endfor -%}
         </ul>
-        <button id="filters-type-show-button">
-            <span class="label">More</span>
-            <span class="material-symbols" aria-hidden="true">expand_more</span>
-        </button>
     </div>
 </div>
