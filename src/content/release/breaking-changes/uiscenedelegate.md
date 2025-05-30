@@ -46,7 +46,7 @@ build` again. Projects can be manually upgraded by adding the following to the
 Info.plist. `FlutterSceneDelegate` is the new class in the Flutter framework
 that users can use as the `UISceneDelegate`.
 
-```plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
