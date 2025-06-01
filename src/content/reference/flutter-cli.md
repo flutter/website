@@ -55,7 +55,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | config          | `flutter config --build-dir=<DIRECTORY>`       | Configure Flutter settings. To remove a setting, configure it to an empty string. |
 | create          | `flutter create <DIRECTORY>`                   | Creates a new project.                                                            |
 | custom-devices  | `flutter custom-devices list`                  | Add, delete, list, and reset custom devices.                                      |
-| devices         | `flutter devices -d <DEVICE_ID>`               | List all connected devices.                                                       |
+| devices         | `flutter devices`                              | List all connected devices.                                                       |
 | doctor          | `flutter doctor`                               | Show information about the installed tooling.                                     |
 | downgrade       | `flutter downgrade`                            | Downgrade Flutter to the last active version for the current channel.             |
 | drive           | `flutter drive`                                | Runs Flutter Driver tests for the current project.                                |
