@@ -18,9 +18,9 @@ Most Flutter apps won't have custom logic inside of
 Those apps won't need to do any code migration.
 In most cases, Flutter automatically migrates the Info.plist.
 
-Apple is requiring the adoption of the `UISceneDelegate` which reorders the
+Apple now requires the adoption of `UISceneDelegate`, which reorders the
 initialization of iOS apps. After a `UISceneDelegate` is specified,
-initialization of the Storyboard will be delayed until after
+initialization of the Storyboard is delayed until after calling
 `application:didFinishLaunchingWithOptions:`. That means
 `UIApplicationDelegate.window` and
 `UIApplicationDelegate.window.rootViewController` cannot be accessed from
