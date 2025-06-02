@@ -29,10 +29,10 @@ initialization of the Storyboard is delayed until after calling
 Apple is driving the adoption of the `UISceneDelegate` API since it allows apps
 to have multiple instances of their UIs, like multitasking on iPadOS.
 
-Previously, Flutter’s documentation would suggest that
+Previously, Flutter’s documentation indicated that
 `application:didFinishLaunchingWithOptions:` was a good place to set up platform
-channels for users that want easy interop between the host application and
-Flutter. That is no longer a reliable place to register these platform channels
+channels to create interop between the host application and Flutter.
+That is no longer a reliable place to register these platform channels,
 since the Flutter engine won’t have been created yet.
 
 ## Migration guide
