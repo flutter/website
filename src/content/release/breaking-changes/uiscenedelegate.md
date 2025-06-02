@@ -39,7 +39,7 @@ since the Flutter engine won’t have been created yet.
 
 ### Info.plist migration
 
-`UISceneDelegate`s must be specified in an app’s Info.plist or specified in
+`UISceneDelegate`s must be specified in an app’s Info.plist or in
 `application:configurationForConnectingSceneSession:options:`. The Flutter tool
 will attempt to automatically edit the Info.plist if no `UISceneDelegate` is
 specified, so nothing might be required beyond running `flutter run` or `flutter
