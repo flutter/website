@@ -608,28 +608,30 @@ Add support for Swift in the standard template setup that uses Objective-C:
 1. Open the file `AppDelegate.swift` located under **Runner > Runner**
    in the Project navigator.
 
-Override the `application:didFinishLaunchingWithOptions:` function and create
-a `FlutterMethodChannel` tied to the channel name
-`samples.flutter.dev/battery`:
+Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
+the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
+as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
+channel name `samples.flutter.dev/battery` in the `registerPlugins` method.
 
 ```swift title="AppDelegate.swift"
 @UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
+@objc class AppDelegate: FlutterAppDelegate, FlutterPluginRegistrant {
   override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    pluginRegistrant = self
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+  func registerPlugins(_ registry: FlutterPluginRegistry) {
+    let registrar = registry.registrar(forPlugin: "battery")
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.binaryMessenger)
+                                              binaryMessenger: registrar.messenger)
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
       // Handle battery messages.
     })
-
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+    GeneratedPluginRegistrant.register(with: registry)
   }
 }
 ```
@@ -690,31 +692,39 @@ Start by opening the iOS host portion of the Flutter app in Xcode:
 1. Open the file `AppDelegate.m`, located under **Runner > Runner**
    in the Project navigator.
 
-Create a `FlutterMethodChannel` and add a handler inside the `application
-didFinishLaunchingWithOptions:` method.
-Make sure to use the same channel name
-as was used on the Flutter client side.
+Make `AppDelegate` implement the `FlutterPluginRegistrant` protocol. Override
+the `application:didFinishLaunchingWithOptions:` function. Set the `AppDelegate`
+as the `pluginRegistrant`. Then create a `FlutterMethodChannel` tied to the
+channel name `samples.flutter.dev/battery` in the `registerWithRegistry:`
+method.
 
 ```objc title="AppDelegate.m"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
 
+@interface AppDelegate () <FlutterPluginRegistrant>
+@end
+
 @implementation AppDelegate
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-  FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
+  self.pluginRegistrant = self;
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
 
+- (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  NSObject<FlutterPluginRegistrar>* registrar = [registry registrarForPlugin:@"battery"];
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
                                           methodChannelWithName:@"samples.flutter.dev/battery"
-                                          binaryMessenger:controller.binaryMessenger];
+                                          binaryMessenger:registrar.messenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // This method is invoked on the UI thread.
     // TODO
   }];
 
-  [GeneratedPluginRegistrant registerWithRegistry:self];
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+  [GeneratedPluginRegistrant registerWithRegistry:registry];
 }
+@end
 ```
 
 Next, add the iOS ObjectiveC code that uses the iOS battery APIs to
