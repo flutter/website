@@ -14,9 +14,8 @@ it might have to be updated.
 ## Background
 
 Most Flutter apps won't have custom logic inside of
-`application:didFinishLaunchingWithOptions:`.
-Those apps won't need to do any code migration.
-In most cases, Flutter automatically migrates the Info.plist.
+`application:didFinishLaunchingWithOptions:`. Those apps won't need to do any
+code migration. In most cases, Flutter automatically migrates the Info.plist.
 
 Apple now requires the adoption of `UISceneDelegate`, which reorders the
 initialization of iOS apps. After a `UISceneDelegate` is specified,
@@ -31,9 +30,9 @@ to have multiple instances of their UIs, like multitasking on iPadOS.
 
 Previously, Flutter’s documentation indicated that
 `application:didFinishLaunchingWithOptions:` was a good place to set up platform
-channels to create interop between the host application and Flutter.
-That is no longer a reliable place to register these platform channels,
-since the Flutter engine won’t have been created yet.
+channels to create interop between the host application and Flutter. That is no
+longer a reliable place to register these platform channels, since the Flutter
+engine won’t have been created yet.
 
 ## Migration guide
 
@@ -45,7 +44,7 @@ will attempt to automatically edit the Info.plist if no `UISceneDelegate` is
 specified, so nothing might be required beyond running `flutter run` or `flutter
 build` again. Projects can be manually upgraded by adding the following to the
 Info.plist. `FlutterSceneDelegate` is the new class in the Flutter framework
-that users can use as the `UISceneDelegate`.
+that performs as the `UISceneDelegate`.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -82,10 +81,10 @@ As seen in Xcode's editor:
 
 ### Creating platform channels in `application:didFinishLaunchingWithOptions:`
 
-Apps that create the `FlutterViewController` programmatically can continue
-to operate as before. Apps that rely on Storyboards (and XIBs) to create
-platform channels in `application:didFinishLaunchingWithOptions:` should now use
-the `FlutterPluginRegistrant` API to accomplish the same thing.
+Apps that create the `FlutterViewController` programmatically can continue to
+operate as before. Apps that rely on Storyboards (and XIBs) to create platform
+channels in `application:didFinishLaunchingWithOptions:` should now use the
+`FlutterPluginRegistrant` API to accomplish the same thing.
 
 #### Before
 
@@ -206,8 +205,8 @@ Set up the `FlutterPluginRegistrant` programmatically through the
 
 ### Bespoke FlutterViewController usage
 
-For apps that use `FlutterViewController`s instantiated from Storyboards
-in `application:didFinishLaunchingWithOptions:` for reasons other than creating
+For apps that use `FlutterViewController`s instantiated from Storyboards in
+`application:didFinishLaunchingWithOptions:` for reasons other than creating
 platform channels, it is their responsibility to accommodate the new
 initialization order.
 
@@ -218,7 +217,7 @@ Migration options:
 - Specify a `UISceneDelegate` in the Info.plist or in the
   `UIApplicationDelegate` and put the logic in
   `scene:willConnectToSession:options:`.  See [Apple’s
-  documentation](https://developer.apple.com/documentation/uikit/specifying-the-scenes-your-app-supports)
+  documentation]({{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports)
   for more information.
 
 #### Example
