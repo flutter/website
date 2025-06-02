@@ -77,7 +77,7 @@ that performs as the `UISceneDelegate`.
 
 As seen in Xcode's editor:
 
-![Xcode plist editor for UISceneDelegate](assets/uiscenedelegate-plist.png)
+![Xcode plist editor for UISceneDelegate](/assets/images/docs/breaking-changes/uiscenedelegate-plist.png)
 
 ### Creating platform channels in `application:didFinishLaunchingWithOptions:`
 
