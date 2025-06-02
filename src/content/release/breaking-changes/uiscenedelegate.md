@@ -13,9 +13,10 @@ be updated.
 
 ## Background
 
-Most Flutter users will not have custom logic inside of
-`application:didFinishLaunchingWithOptions:`. Those apps will not need to do any
-code migration. In most cases Flutter will automatically migrate the Info.plist.
+Most Flutter apps won't have custom logic inside of
+`application:didFinishLaunchingWithOptions:`.
+Those apps won't need to do any code migration.
+In most cases, Flutter automatically migrates the Info.plist.
 
 Apple is requiring the adoption of the `UISceneDelegate` which reorders the
 initialization of iOS apps. After a `UISceneDelegate` is specified,
