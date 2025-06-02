@@ -4,7 +4,7 @@ description: Shows how to create a simple Hero transition.
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   flutter:

@@ -163,7 +163,7 @@ dev_dependencies:
   # ... added dependencies
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   [!integration_test:!]
     [!sdk: flutter!]
 # ...

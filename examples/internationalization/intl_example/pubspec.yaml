@@ -3,7 +3,7 @@ description: Example of a Flutter app using the intl library services.
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   flutter:
