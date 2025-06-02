@@ -242,6 +242,5 @@ Migration options:
 
 ## References
 
-- https://github.com/flutter/flutter/issues/167267 - The initial reported issue.
-- https://developer.apple.com/documentation/uikit/specifying-the-scenes-your-app-supports
-  - Apple’s documentation on specifying `UISceneDelegate`s.
+- [Issue 167267]({{site.github}}/flutter/flutter/issues/167267) - The initial reported issue.
+- [Apple’s documentation on specifying `UISceneDelegate`s]({{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports)
