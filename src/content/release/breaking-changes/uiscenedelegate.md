@@ -82,8 +82,8 @@ As seen in Xcode's editor:
 
 ### Creating platform channels in `application:didFinishLaunchingWithOptions:`
 
-For users creating `FlutterViewController`s programmatically, they can continue
-to operate as before. User’s relying on Storyboards (and XIBs) that are creating
+Apps that create the `FlutterViewController` programmatically can continue
+to operate as before. Apps that rely on Storyboards (and XIBs) to create
 platform channels in `application:didFinishLaunchingWithOptions:` should now use
 the `FlutterPluginRegistrant` API to accomplish the same thing.
 
