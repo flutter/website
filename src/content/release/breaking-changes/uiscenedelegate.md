@@ -6,7 +6,7 @@ description: >
 
 ## Summary
 
-Apple is requiring iOS developers to adopt the UISceneDelegate protocol which
+Apple now requires iOS developers to adopt the UISceneDelegate protocol, which
 changes the order of initialization when applications launch. Certain usages of
 Flutter inside `application:didFinishLaunchingWithOptions:` on iOS will have to
 be updated.
