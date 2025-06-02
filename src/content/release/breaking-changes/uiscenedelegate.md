@@ -206,9 +206,9 @@ Set up the `FlutterPluginRegistrant` programmatically through the
 
 ### Bespoke FlutterViewController usage
 
-For users that are using `FlutterViewController`s instantiated from Storyboards
-in `application:didFinishLaunchingWithOptions:` for things other than creating
-platform channels, it will be their responsibility to accommodate the new
+For apps that use `FlutterViewController`s instantiated from Storyboards
+in `application:didFinishLaunchingWithOptions:` for reasons other than creating
+platform channels, it is their responsibility to accommodate the new
 initialization order.
 
 Migration options:
