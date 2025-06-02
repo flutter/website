@@ -7,9 +7,9 @@ description: >
 ## Summary
 
 Apple now requires iOS developers to adopt the UISceneDelegate protocol, which
-changes the order of initialization when applications launch. Certain usages of
-Flutter inside `application:didFinishLaunchingWithOptions:` on iOS will have to
-be updated.
+changes the order of initialization when an application launches.
+If your app on iOS modifies `application:didFinishLaunchingWithOptions:`,
+it might have to be updated.
 
 ## Background
 
