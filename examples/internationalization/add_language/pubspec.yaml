@@ -3,7 +3,7 @@ description: An i18n app example that adds a supported language
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   flutter:

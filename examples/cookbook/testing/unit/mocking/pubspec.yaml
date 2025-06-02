@@ -3,7 +3,7 @@ description: Use the Mockito package to mimic the behavior of services for testi
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   flutter:

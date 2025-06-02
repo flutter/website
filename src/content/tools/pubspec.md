@@ -77,7 +77,7 @@ dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^5.0.0!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^6.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 
@@ -626,7 +626,7 @@ the `intl` package.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.0
+  intl: any
 ```
 
 ### flutter_test package
@@ -650,7 +650,7 @@ Flutter projects. This package can be added to the
 
 ```yaml title="pubspec.yaml"
 dev_dependencies:
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
 ```
 
 ### cupertino_icons

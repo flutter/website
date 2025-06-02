@@ -4,7 +4,7 @@ description: An introductory example to staggered animations.
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   flutter:

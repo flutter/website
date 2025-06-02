@@ -3,7 +3,7 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0-0
+  sdk: ^3.8.0
 
 dependencies:
   collection: any # Pull the version of collection from Flutter.
