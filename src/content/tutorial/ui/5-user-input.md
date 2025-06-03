@@ -571,11 +571,12 @@ This method does the same as the `onSubmitted` callback on the `TextField`.
 :::note Challenge - Share "on submitted" logic.
 
 You might be thinking, "Shouldn’t we abstract these methods into one
-function and pass it to both inputs?" You could, but it wouldn’t be as
-clean as you might think because the callbacks to
-`IconButton.onPressed` and `TextField.onSubmitted` require different
-arguments. That said, if the logic was more complex, it'd be better to
-do so. 
+function and pass it to both inputs?" You could, and as your app grows
+in complexity, you probably should. That said, the callbacks
+`IconButton.onPressed` and `TextField.onSubmitted` have different
+ signatures, so it's not completely straight-forward.
+
+Refactor the code such that the logic inside this methods isn't repeated.
 
 **Solution**
 

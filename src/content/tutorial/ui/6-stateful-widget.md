@@ -11,7 +11,7 @@ doesn't yet update to reflect the user’s guesses. When this app is
 complete, each tile in the next unfilled row should update after each
 submitted user guess by:
 
-* Displaying the correct letter  
+* Displaying the correct letter.
 * Changing color to reflect whether the letter is correct (green), is
   in the word but at an incorrect position (yellow), or incorrect in
   both position and type (grey).
@@ -62,6 +62,12 @@ a stateless widget to a stateful widget, do the following steps:
 3. Implement the `createState()` method in `GamePage`, which returns
    an instance of `_GamePageState`. 
 
+:::tip Quick assists
+
+You don't have to manually do this work, as the Flutter plugin for VSCode and Intellij provides ["quick assists"][], which will do this conversion for you.
+
+:::
+
 Your modified code should look like this:
 
 ```dart
@@ -104,12 +110,6 @@ class _GamePageState extends State<GamePage> {
   }
 }
 ```
-
-:::tip Quick assists
-
-The Flutter plugin for VSCode and Intellij provides ["quick assists"][], which will do this conversion for you.
-
-:::
 
 ## Updating the UI with `setState`
 

@@ -117,9 +117,9 @@ resolve this issue.
 
 {% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
 
-## The Property Editor
+## The property editor
 
-When you select a widget in the Widget Inspector, the Property Editor
+When you select a widget in the Widget Inspector, the property editor
 displays all the properties of that selected widget. This is a
 powerful tool for understanding why a widget looks the way it does and
 for experimenting with property changes in real-time.

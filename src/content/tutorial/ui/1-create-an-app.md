@@ -127,5 +127,4 @@ development cycles lightning fast. Soon, you’ll add ephemeral state and see ju
 that.
 
 [Flutter CLI tool]: /reference/flutter-cli
-[Wordle, the popular New York Times game]:
-    https://www.nytimes.com/games/wordle/index.html 
+[Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html 

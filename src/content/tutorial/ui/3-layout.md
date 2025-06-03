@@ -21,7 +21,7 @@ display a title, navigation controls, and/or actions.
 
 {%- comment %} TODO(ewindmill) example appbar {%- endcomment %}
 
-The simplest way to add an appbar to your app in Flutter is with two widgets:
+The simplest way to add an appbar to your app is by combining two widgets:
 `Scaffold` and `AppBar`.
 
 `Scaffold` is a convenience widget that provides a Material-style page layout,
@@ -137,9 +137,11 @@ The `spacing` property puts five pixels between each element on the main axis.
 Within `Column.children`, add one row *for each* element in the `_game.guesses`
 list. 
 
-:::note This `guesses` list is a **fixed-size** list, starting with five
+:::note 
+This `guesses` list is a **fixed-size** list, starting with five
 elements, one for each *potential* guess. It will always contain exactly five
-elements, and therefor there will always be five rows rendered. :::
+elements, and therefor there will always be five rows rendered. 
+:::
 
 ```dart
 class GamePage extends StatelessWidget {
