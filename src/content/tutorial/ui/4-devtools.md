@@ -6,8 +6,8 @@ permalink: /tutorial/devtools/
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
-As your Flutter app grows in complexity, it becomes both more important and more
-difficult to understand how each widget's properties are affecting the UI.
+As your Flutter app grows in complexity, it becomes more important and more
+difficult to understand how each widget's properties affect the UI.
 [Dart's DevTools][] assists you with two particularly useful features: the
 **widget inspector** and the **property editor**.
 

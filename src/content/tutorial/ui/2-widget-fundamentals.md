@@ -55,8 +55,8 @@ class Tile extends StatelessWidget {
 
 ### Constructor
 
-It has a [`constructor`][], which defines
-what data needs to be passed into the widget to render the widget.  Here,a
+The `Tile` class has a [`constructor`][] that defines
+what data needs to be passed into the widget to render the widget.  Here, a
 `String` is passed in, which represents the guessed letter, and a `HitType`,
 which is an enum value defined in the  `flutter_gse` package and used to
 determine the color of the tile. (For example `HitType.hit` results in a green
@@ -214,7 +214,7 @@ class Tile extends StatelessWidget {
 
 Finally, add the `Center` and `Text` widgets to the `Container.child` property. 
 
-Most the widgets in the Flutter SDK have a `child` or `children` property that’s
+Most widgets in the Flutter SDK have a `child` or `children` property that’s
 meant to be passed a widget or a list of widgets, respectively. It's best
 practice to use the same naming convention in your own custom widgets.
 
@@ -250,8 +250,8 @@ class Tile extends StatelessWidget {
 }
 ```
 
-There’s now a green box displayed. To toggle the color, update the `HitType`
-passed into the `Tile` you created:
+On hot reload a green box appears. To toggle the color,
+update and hot reload the `HitType` passed into the `Tile` you created:
 
 ```dart
 // main.dart line ~16

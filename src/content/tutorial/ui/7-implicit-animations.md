@@ -13,7 +13,7 @@ behavior.
 In this lesson, you'll learn about one of the most common and
 versatile implicit animation widgets: [`AnimatedContainer`][]. With
 just two additional lines of code, the background color of each `Tile`
-will change over half a second.
+animates to a new color in about half a second.
 
 ## Convert `Container` to `AnimatedContainer`
 

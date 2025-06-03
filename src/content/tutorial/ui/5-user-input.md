@@ -9,15 +9,15 @@ permalink: /tutorial/user-input/
 
 The app theoretically displays the users guesses in `Tile` widgets,
 but it needs a way for users to input those guesses. In this lesson,
-build that with two interaction widgets: [`TextField`][] and
+build that functionality with two interaction widgets: [`TextField`][] and
 [`IconButton`][].
 
 ## Callback functions
 
 To allow users to type in their guesses, you'll create a dedicated
 widget named `GuessInput`. First, create the basic structure for your
-`GuessInput` widget, which should require a callback function called
-`onSubmitGuess` as an argument.
+`GuessInput` widget that requires a callback function as an argument.
+Name the callback function `onSubmitGuess`.
 
 Add the following code to your `main.dart` file.
 
@@ -35,10 +35,9 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-The type definition of the line `final void Function(String) onSubmitGuess;` 
-might look overwhelming if you're new to Dart. 
-It declares a `final` member of the class called `onSubmitGuess`, 
-whichhas a type of `void Function(String)`. It’s a function that takes a
+The line `final void Function(String) onSubmitGuess;` 
+declares a `final` member of the class called `onSubmitGuess` 
+that has the type `void Function(String)`. This function takes a
 single `String` argument (the user's guess) and doesn't return any
 value (denoted by `void`). 
 
@@ -49,15 +48,15 @@ which keeps the interaction widget reusable and decoupled from any
 specific functionality. 
 
 By the end of this lesson, the passed in `onGuessSubmitted` function
-will be called when a user enters a guess. First, you'll need to build
+is called when a user enters a guess. First, you'll need to build
 the visual parts of this widget. This is what the widget will look like.
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
 ## The `TextField` widget
 
-Given the text field and button are side-by-side, this a good use case
-for a `Row` widget. Replace the placeholder `Container` in your
+Given that the text field and button are side-by-side, this a good reason to use
+a `Row` widget. Replace the `Container` placeholder in your
 `build` method with a `Row` containing an `Expanded` `TextField`:
 
 ```dart
@@ -89,7 +88,7 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-Some of these widgets have been in previous lessons: `Row` and
+You have seen some of these widgets in previous lessons: `Row` and
 `Padding`. New, though, is the [`Expanded`][] widget. When a child of
 a `Row` (or `Column`) is wrapped in `Expanded`, it tells that child to
 fill all the available space along the main axis (horizontal for
@@ -231,9 +230,9 @@ class GuessInput extends StatelessWidget {
 ```
 
 In this case, you could print the `input` passed to the `onSubmitted`
-callback directly, but in this app will have a better experience if
-the text is cleared after each guess, and you need the controller to
-do that. Update the code to do this:
+callback directly, but a better user experience clears the text
+after each guess: You need a `TextEditingController` to
+do that. Update the code as follows:
 
 :::note
 In Dart, it’s good practice to use a [wildcard][] to
@@ -287,8 +286,7 @@ focused automatically when the app launches.  And after the user
 enters a guess, the focus should stay in the `TextField` so they can
 enter their next guess. 
 
-To resolve the first focus issue, you only need to set a property on
-the `TextField`.
+To resolve the first focus issue, set up the `autoFocus` property on the `TextField`.
 
 ```dart
 class GuessInput extends StatelessWidget {
@@ -326,9 +324,9 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-The second issue requires you to use a [`FocusNode`][], which is used
-to manage the keyboard focus in Flutter. You can use it to request
-that a `TextField` gain focus (making the keyboard appear on mobile)
+The second issue requires you to use a [`FocusNode`][] to
+manage the keyboard focus. You can use `FocusNode` to request
+that a `TextField` gain focus (making the keyboard appear on mobile),
 or to know when a field has focus. 
 
 First, create a `FocusNode` in the `GuessInput` class:
@@ -394,11 +392,14 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-Now when you press ‘Enter’ after inputting text, you can continue typing.
+Now, when you press ‘Enter’ after inputting text, you can continue typing.
 
 ## Use the input
 
-Finally, you need to do something with the text the user inputs. Recall that the constructor for the `GuessInput` requires a callback called `onGuessSubmitted`. In the `GuessInput`, you only need to use that callback. Replace the `print` statement with a call to that function.
+Finally, you need to handle the text that the user enters.
+Recall that the constructor for `GuessInput` requires a callback called
+`onGuessSubmitted`. In `GuessInput`, you need to use that callback.
+Replace the `print` statement with a call to that function.
 
 ```dart
 class GuessInput extends StatelessWidget {
@@ -442,12 +443,11 @@ class GuessInput extends StatelessWidget {
 ```
 
 :::note 
-`trim` is used to ensure there’s no additional whitespace
-entered, which would allow the user to to enter a four letter word
-(plus a whitespace).
+The `trim` function ensures that no whitespace entered;
+otherwise, the user could enter a four letter word plus a whitespace.
 :::
 
-The remaining needed functionality needs to be handled in the parent
+The remaining functionality is handled in the parent
 widget, `GamePage`.  In the `build` method of that class, add the
 `GuessInput` widget under the `Row` widgets in the `Column`’s
 children.
@@ -484,7 +484,7 @@ class GamePage extends StatelessWidget {
 ```
 
 For the moment, this only prints the guess to prove that it’s wired up
-correctly.  Submitting the guess requires us to use the functionality
+correctly.  Submitting the guess requires using the functionality
 of a `StatefulWidget`, which you’ll do in the [`StatefulWidget` lesson][].
 
 ## Buttons
@@ -502,13 +502,13 @@ these buttons (and many other interaction widgets) require two
 arguments (in addition to their optional arguments): 
 
 * A callback function passed to `onPressed`.   
-* A widget that makes up the content of the button (often a `Text` or `Icon`).
+* A widget that makes up the content of the button (often `Text` or an `Icon`).
 
 Add an icon button to the row widget’s children list in the
-`GuessInput` widget, and give it an [`Icon`][] widget to display. The
-`Icon` widget itself requires icon configuration, and in this case the
-`padding` property, which sets the padding betweenthe edge of the
-button and the icon it wraps, is set to zero. This removes the default
+`GuessInput` widget, and give it an [`Icon`][] widget to display.
+The `Icon` widget requires configuration; in this case, the
+`padding` property sets the padding between the edge of the
+button and the icon it wraps to zero. This removes the default
 padding and makes the button smaller.
 
 ```dart
@@ -566,11 +566,11 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-This method is doing the same as the `onSubmitted` callback on the `TextField`. 
+This method does the same as the `onSubmitted` callback on the `TextField`. 
 
 :::note Challenge - Share "on submitted" logic.
 
-You may be thinking, "Shouldn’t we abstract these methods into one
+You might be thinking, "Shouldn’t we abstract these methods into one
 function and pass it to both inputs?" You could, but it wouldn’t be as
 clean as you might think because the callbacks to
 `IconButton.onPressed` and `TextField.onSubmitted` require different
