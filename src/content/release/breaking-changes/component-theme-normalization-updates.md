@@ -21,7 +21,7 @@ In `ThemeData`:
   changed from `BottomAppBarTheme` to `BottomAppBarThemeData`.
 
 The return type of the component theme `xTheme.of()` methods and
-`Theme.of().xTheme` have also changed to `xThemeData` accordingly.
+`Theme.of().xTheme` have also changed to `xThemeData`.
 
 Code before migration:
 
