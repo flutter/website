@@ -6,47 +6,51 @@ description: >
 
 ## Summary
 
-Apple now requires iOS developers to adopt the UISceneDelegate protocol, which
-changes the order of initialization when an application launches.
+Apple now requires iOS developers to adopt the UISceneDelegate protocol,
+which changes the order of initialization when an application launches.
 If your app on iOS modifies `application:didFinishLaunchingWithOptions:`,
 it might have to be updated.
 
 ## Background
 
-Most Flutter apps won't have custom logic inside of
-`application:didFinishLaunchingWithOptions:`. Those apps won't need to do any
-code migration. In most cases, Flutter automatically migrates the Info.plist.
+Most Flutter apps won't have
+custom logic inside of `application:didFinishLaunchingWithOptions:`.
+Those apps won't need to do any code migration.
+In most cases, Flutter automatically migrates the `Info.plist`.
 
-Apple now requires the adoption of `UISceneDelegate`, which reorders the
-initialization of iOS apps. After a `UISceneDelegate` is specified,
-initialization of the Storyboard is delayed until after calling
-`application:didFinishLaunchingWithOptions:`. That means
-`UIApplicationDelegate.window` and
-`UIApplicationDelegate.window.rootViewController` cannot be accessed from
-`application:didFinishLaunchingWithOptions:`.
+Apple now requires the adoption of `UISceneDelegate`,
+which reorders the initialization of iOS apps.
+After a `UISceneDelegate` is specified, initialization of the Storyboard is
+delayed until after calling `application:didFinishLaunchingWithOptions:`.
+That means `UIApplicationDelegate.window` and
+`UIApplicationDelegate.window.rootViewController` can't be
+accessed from `application:didFinishLaunchingWithOptions:`.
 
-Apple is driving the adoption of the `UISceneDelegate` API since it allows apps
-to have multiple instances of their UIs, like multitasking on iPadOS.
+Apple is driving the adoption of the `UISceneDelegate` API since it
+allows apps to have multiple instances of their UIs,
+like multitasking on iPadOS.
 
 Previously, Flutter’s documentation indicated that
-`application:didFinishLaunchingWithOptions:` was a good place to set up platform
-channels to create interop between the host application and Flutter. That is no
-longer a reliable place to register these platform channels, since the Flutter
-engine won’t have been created yet.
+`application:didFinishLaunchingWithOptions:` was a good place to
+set up platform channels to create interop between
+the host application and Flutter.
+That is no longer a reliable place to register these platform channels,
+since the Flutter engine won't have been created yet.
 
 ## Migration guide
 
 ### Info.plist migration
 
-`UISceneDelegate`s must be specified in an app’s Info.plist or in
-`application:configurationForConnectingSceneSession:options:`. The Flutter tool
-will attempt to automatically edit the Info.plist if no `UISceneDelegate` is
-specified, so nothing might be required beyond running `flutter run` or `flutter
-build` again. Projects can be manually upgraded by adding the following to the
-Info.plist. `FlutterSceneDelegate` is the new class in the Flutter framework
-that performs as the `UISceneDelegate`.
+`UISceneDelegate`s must be specified in an app's `Info.plist` or in
+`application:configurationForConnectingSceneSession:options:`.
+The Flutter tool attempts to automatically edit the `Info.plist` if
+no `UISceneDelegate` is specified, so nothing might be required beyond
+running `flutter run` or `flutter build` again.
+Projects can be manually upgraded by adding the following to the `Info.plist`.
+`FlutterSceneDelegate` is the new class in the Flutter framework that
+performs as the `UISceneDelegate`.
 
-```xml
+```xml title="Info.plist"
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -81,9 +85,10 @@ As seen in Xcode's editor:
 
 ### Creating platform channels in `application:didFinishLaunchingWithOptions:`
 
-Apps that create the `FlutterViewController` programmatically can continue to
-operate as before. Apps that rely on Storyboards (and XIBs) to create platform
-channels in `application:didFinishLaunchingWithOptions:` should now use the
+Apps that create the `FlutterViewController` programmatically can
+continue to operate as before.
+Apps that rely on Storyboards (and XIBs) to create platform channels in
+`application:didFinishLaunchingWithOptions:` should now use the
 `FlutterPluginRegistrant` API to accomplish the same thing.
 
 #### Before
@@ -205,20 +210,21 @@ Set up the `FlutterPluginRegistrant` programmatically through the
 
 ### Bespoke FlutterViewController usage
 
-For apps that use `FlutterViewController`s instantiated from Storyboards in
-`application:didFinishLaunchingWithOptions:` for reasons other than creating
-platform channels, it is their responsibility to accommodate the new
-initialization order.
+For apps that use a `FlutterViewController` instantiated from Storyboards in
+`application:didFinishLaunchingWithOptions:` for reasons other than
+creating platform channels, it is their responsibility to
+accommodate the new initialization order.
 
 Migration options:
 
-- Subclass `FlutterViewController` and put the logic in the subclasses’
-  `awakeFromNib`.
-- Specify a `UISceneDelegate` in the Info.plist or in the
-  `UIApplicationDelegate` and put the logic in
-  `scene:willConnectToSession:options:`.  See [Apple’s
-  documentation]({{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports)
-  for more information.
+- Subclass `FlutterViewController` and put the logic in
+  the subclasses' `awakeFromNib`.
+- Specify a `UISceneDelegate` in the `Info.plist` or
+  in the `UIApplicationDelegate` and
+  put the logic in `scene:willConnectToSession:options:`.
+  For more information, check out [Apple's documentation][apple-delegate-docs].
+
+[apple-delegate-docs]: {{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports
 
 #### Example
 
@@ -236,10 +242,13 @@ Migration options:
 - Landed in main: TBD
 - Landed in stable: TBD
 - Unknown: Apple changes their warning to an assert and Flutter apps that
-  haven’t adopted `UISceneDelegate` will start crashing on startup with the
+  haven't adopted `UISceneDelegate` will start crashing on startup with the
   latest SDK.
 
 ## References
 
-- [Issue 167267]({{site.github}}/flutter/flutter/issues/167267) - The initial reported issue.
-- [Apple’s documentation on specifying `UISceneDelegate`s]({{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports)
+- [Issue 167267][] - The initial reported issue.
+- [Apple's documentation on specifying `UISceneDelegate`s][apple-delegate-docs]
+
+[Issue 167267]: {{site.github}}/flutter/flutter/issues/167267
+[apple-delegate-docs]: {{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports
