@@ -30,7 +30,7 @@ the UI to update.
 
 {%- comment %} TODO(ewindmill) diagram {%- endcomment %}
 
-The basic `StatefulWidget` structure:
+Here is the basic `StatefulWidget` structure (don't do anything yet):
 
 ```dart
 class ExampleWidget extends StatefulWidget {
@@ -50,7 +50,8 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 
 ## Convert `GamePage` to a stateful widget
 
-To convert the `GamePage` widget (or any other) from a stateless widget to a stateful widget, do the following steps:
+To convert the `GamePage` widget (or any other) from
+a stateless widget to a stateful widget, do the following steps:
 
 1. Change `GamePage` to extend `StatefulWidget` instead of
    `StatelessWidget`.  
@@ -122,9 +123,9 @@ therefore is state that might change and require the UI to update.
 When this state is mutated, the grid should be re-drawn to show the
 user’s guess.
 
-To implement this, update the callback function passed to the
-`GuessInput`. The function needs to call `setState`, and within
-`setState` it needs to execute the logic to determin if the users
+To implement this, update the callback function passed to
+`GuessInput`. The function needs to call `setState` and, within
+`setState`, it needs to execute the logic to determine whether the users
 guess was correct. 
 
 :::note

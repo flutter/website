@@ -106,7 +106,7 @@ The app will build and launch in a new instance of chrome.
 
 **Stateful hot reload**, if you haven't heard of it, allows a running Flutter
 app to re-render updated business logic or UI code in less than a second - all
-without losing your place in the app. This is the part that hooks most Flutter
+without losing your place in the app. This is the feature that hooks most Flutter
 developers.
 
 In your IDE, open the `main.dart` file and navigate to line \~15 and find this
