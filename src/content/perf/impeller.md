@@ -54,23 +54,8 @@ the [Can I use Impeller?][] page.
 
 ### iOS
 
-Flutter **enables Impeller by default** on iOS.
-
-* To _disable_ Impeller on iOS when debugging,
-  pass `--no-enable-impeller` to the `flutter run` command.
-
-  ```console
-  flutter run --no-enable-impeller
-  ```
-
-* To _disable_ Impeller on iOS when deploying your app,
-  add the following tags under the top-level `<dict>` tag in your
-  app's `Info.plist` file.
-
-  ```xml
-    <key>FLTEnableImpeller</key>
-    <false />
-  ```
+Since [Flutter 3.29](https://medium.com/flutter/whats-new-in-flutter-3-29-f90c380c2317), Impeller is the **default on iOS** with no ability to
+switch to Skia.
 
 ### Android
 
