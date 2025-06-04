@@ -158,7 +158,7 @@ Apps that rely on Storyboards (and XIBs) to create platform channels in
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 
-  func registerPlugins(_ registry: FlutterPluginRegistry) {
+  func register(with registry: any FlutterPluginRegistry) {
     let registrar = registry.registrar(forPlugin: "battery")
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
                                               binaryMessenger: registrar.messenger)
