@@ -30,11 +30,31 @@ final BottomAppBarTheme bottomAppBarTheme = Theme.of(context).bottomAppBarTheme;
 final BottomAppBarTheme bottomAppBarTheme = BottomAppBarTheme.of(context);
 ```
 
+```dart
+final ThemeData theme = ThemeData(
+  bottomAppBarTheme: BottomAppBarTheme(),
+);
+
+final ThemeData theme = ThemeData().copyWith(
+  bottomAppBarTheme: BottomAppBarTheme(),
+);
+```
+
 Code after migration:
 
 ```dart
 final BottomAppBarThemeData bottomAppBarTheme = Theme.of(context).bottomAppBarTheme;
 final BottomAppBarThemeData bottomAppBarTheme = BottomAppBarTheme.of(context);
+```
+
+```dart
+final ThemeData theme = ThemeData(
+  bottomAppBarTheme: BottomAppBarThemeData(),
+);
+
+final ThemeData theme = ThemeData().copyWith(
+  bottomAppBarTheme: BottomAppBarThemeData(),
+);
 ```
 
 ## Timeline
