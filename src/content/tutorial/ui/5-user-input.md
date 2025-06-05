@@ -51,7 +51,7 @@ By the end of this lesson, the passed in `onGuessSubmitted` function
 is called when a user enters a guess. First, you'll need to build
 the visual parts of this widget. This is what the widget will look like.
 
-{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+<img src='/assets/images/docs/tutorial/app_with_input.png' alt="A screenshot of the Flutter property editor tool.">
 
 ## The `TextField` widget
 
@@ -491,10 +491,6 @@ of a `StatefulWidget`, which you’ll do in the [`StatefulWidget` lesson][].
 
 To improve the UX on mobile and reflect well-known UI, there should
 also be a button that can submit the guess.
-
-{%- comment %}
-TODO(ewindmill) embed video
-{%- endcomment %}
 
 There are many button widgets built into Flutter, like [`TextButton`][],
 [`ElevatedButton`][], and the button you’ll use now: [`IconButton`][].  All of

@@ -21,7 +21,8 @@ $ devtools
 :::note Run in your IDE 
 
 You can also run the dev tools directly inside [VSCode][] and [Intellij][],
-provided you have the Flutter plugin installed.
+provided you have the Flutter plugin installed. The screenshots in this lesson 
+are from VSCode.
 
 :::
 
@@ -32,7 +33,7 @@ helps you understand the layout of your UI and identify which widgets are
 responsible for different parts of the screen. Running against the app you've
 built so far, the inspector looks like this:
 
-{%- comment %} TODO(ewindmill) scrrenshot {%- endcomment %}
+<img src='/assets/images/docs/tutorial/widget_inspector.png' alt="A screenshot of the Flutter widget inspector tool.">
 
 Consider the `GamePage` widget you created in this section:
 
@@ -124,7 +125,7 @@ displays all the properties of that selected widget. This is a
 powerful tool for understanding why a widget looks the way it does and
 for experimenting with property changes in real-time.
 
-{%- comment %} TODO(ewindmill) scrren shot {%- endcomment %}
+<img src='/assets/images/docs/tutorial/property_editor.png' alt="A screenshot of the Flutter property editor tool.">
 
 Look at the `Tile` widget's `build` method from earlier:
 

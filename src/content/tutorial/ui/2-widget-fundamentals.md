@@ -16,10 +16,6 @@ complex UI code into manageable pieces, and create cleaner, more maintainable
 code.  By the end of this lesson, you’ll have created your own custom Tile
 widget.
 
-{%- comment %}
-<!-- TODO(ewindmill) embed video -->
-{%- endcomment %}
-
 :::note Import the game logic. 
 
 The game logic of this application isn’t concerned with Flutter and is outside
@@ -176,9 +172,10 @@ guess. The tile will be green when the user has guessed correctly, yellow when
 the letter is correct but the position is incorrect, and gray if the guess is
 wrong on both axes. 
 
-{%- comment %}
-<!-- TODO(ewindmill) embed video -->
-{%- endcomment %}
+The following figure shows all three possibilities.
+
+<img src='/assets/images/docs/tutorial/tiles.png' alt="A screenshot of a green, yellow, and grey tile.">
+
 
 To achieve this in UI, use a [switch expression][] to set the
 `color` of the `BoxDecoration`.

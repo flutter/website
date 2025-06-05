@@ -28,7 +28,10 @@ can't change after creation), the `State` object is long-lived, can
 hold mutable data, and can be rebuilt when that data changes, causing
 the UI to update.
 
-{%- comment %} TODO(ewindmill) diagram {%- endcomment %}
+This widget tree imagines a simple app that has a counter, 
+which increases when the button is pressed.
+
+<img src='/assets/images/docs/tutorial/widget_tree_stateful.png' alt="A diagram of a widget tree with a stateful widget and state object.">
 
 Here is the basic `StatefulWidget` structure (don't do anything yet):
 
@@ -64,7 +67,9 @@ a stateless widget to a stateful widget, do the following steps:
 
 :::tip Quick assists
 
-You don't have to manually do this work, as the Flutter plugin for VSCode and Intellij provides ["quick assists"][], which will do this conversion for you.
+You don't have to manually do this work, as the Flutter plugin for
+VSCode and Intellij provides ["quick assists"][], which will do this
+conversion for you.
 
 :::
 
@@ -130,7 +135,8 @@ guess was correct.
 
 :::note
 
-The game logic is abstracted away into the [`Game` object][], and outside of the scope of this tutorial.
+The game logic is abstracted away into the [`Game` object][], and
+outside of the scope of this tutorial.
 
 :::
 

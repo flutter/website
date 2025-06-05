@@ -19,7 +19,7 @@ which lay out widgets vertically or horizontally.
 Mobile applications often have a bar at the top called an “app bar”, which can
 display a title, navigation controls, and/or actions. 
 
-{%- comment %} TODO(ewindmill) example appbar {%- endcomment %}
+<img src='/assets/images/docs/tutorial/apppad.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
 The simplest way to add an appbar to your app is by combining two widgets:
 `Scaffold` and `AppBar`.
@@ -56,6 +56,15 @@ class MainApp extends StatelessWidget {
   }
 }
 ```
+
+### An updated widget tree
+
+Considering your app's widget tree gets more important as your app
+grows. At this point, there's a "branch" in the tree for the first
+time, and it now looks like the following figure.
+
+<img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' alt="A screenshot that resembles the popular game Wordle.">
+
 
 ## Create the GamePage widget
 
@@ -100,10 +109,10 @@ class MainApp extends StatelessWidget {
 
 ## Arrange widgets with `Column` and `Row`
 
-The main content of the `GamePage` is the grid of tiles that display a user’s
+The main content of the `GamePage` is the grid will eventually be the tiles that display a user’s
 guesses.
 
-{%- comment %} TODO(ewindmill) add image {%- endcomment %}
+<img src='/assets/images/docs/tutorial/birdle.png' alt="A screenshot that resembles the popular game Wordle.">
 
 There are a number of ways you can build this layout, and the simplest is with
 `Column` and `Row` widgets.  Each row contains five tiles that represent the
@@ -182,6 +191,20 @@ with collections of widgets. It achieves the same as the following psuedo code:
 In this case, it adds five `Row` widgets to the column, one for each guess
 on the `Game` object.
 
+### An updated widget tree
+
+The widget tree for this app has expanded significantly in this
+lesson. Now, it looks more like the following figure (although it's
+abridged for ledgeibility.)
+
+### An updated widget tree
+
+Considering your app's widget tree gets more important as your app
+grows. At this point, there's a "branch" in the tree for the first
+time, and it now looks like the following figure.
+
+<img src='/assets/images/docs/tutorial/widget_tree_rows_columns.png' alt="A diagram showing a tree like structure with a node for each widget in the app.">
+
 :::note Challenge
 
 Add a `Tile` to each row for each letter allowed in the guess. 
@@ -221,7 +244,7 @@ class GamePage extends StatelessWidget {
 
 When you reload your app, you should see a 5x5 grid of white squares.
 
-{%- comment %} TODO(ewindmill) image {%- endcomment %}
+<img src='/assets/images/docs/tutorial/grid_of_tiles.png' alt="A screenshot that resembles the popular game Wordle.">
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html

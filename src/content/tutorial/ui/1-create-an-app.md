@@ -16,9 +16,7 @@ By the end of this tutorial, you’ll have learned the fundamentals of building
 Flutter UIs, and your app will look like the following screenshot (and it’ll
 even mostly work 😀).
 
-{%- comment %}
-<!-- TODO(ewindmill) screenshot -->
-{%- endcomment %}
+<img src='/assets/images/docs/tutorial/birdle.png' width="100%" alt="A screenshot that resembles the popular game Wordle.">
 
 ## Create a new Flutter project
 
@@ -83,9 +81,7 @@ custom widgets that display a UI.
 
 At the moment, the widget tree is quite simple:
 
-{%- comment %}
-<!-- TODO(ewindmill) widget tree diagram -->
-{%- endcomment %}
+<img src='/assets/images/docs/tutorial/initial_widget_tree.png' alt="A screenshot that resembles the popular game Wordle.">
 
 ## Run your app
 
@@ -97,10 +93,7 @@ $ flutter run -d chrome
 
 The app will build and launch in a new instance of chrome. 
 
-{%- comment %}
-<!-- TODO(ewindmill) screenshot of app at start -->
-{%- endcomment %}
-
+<img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
 
 ## Hot reload
 
