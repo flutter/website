@@ -17,14 +17,14 @@
     </div>
     <div class="feedback good-feedback">
       <div>Thank you for your feedback!</div>
-      <a href="{{repo}}/issues/new?labels=from.page-feedback" class="text-button" aria-label="Provide feedback">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true">feedback</span>
         <span>Provide details</span>
       </a>
     </div>
     <div class="feedback bad-feedback">
       <div>Thank you for your feedback! Please let us know what we can do to improve.</div>
-      <a href="{{repo}}/issues/new?labels=from.page-feedback" class="text-button" aria-label="Provide feedback or report an issue">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback or report an issue" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true">bug_report</span>
         <span>Provide details</span>
       </a>

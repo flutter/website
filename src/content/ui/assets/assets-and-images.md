@@ -372,28 +372,14 @@ let path = mainBundle.path(forResource: key, ofType: nil)
 For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
-The [`ios_platform_images`][] plugin on pub.dev wraps
-up this logic in a convenient category. You fetch
-an image as follows:
-
-**Objective-C:**
-```objc
-[UIImage flutterImageWithName:@"icons/heart.png"];
-```
-
-**Swift:**
-```swift
-UIImage.flutterImageNamed("icons/heart.png")
-```
-
 ### Loading iOS images in Flutter
 
 When implementing Flutter by
 [adding it to an existing iOS app][add-to-app],
 you might have images hosted in iOS that you
 want to use in Flutter. To accomplish
-that, use the [`ios_platform_images`][] plugin
-available on pub.dev.
+that, use [platform channels][] to pass the image
+data to Dart as `FlutterStandardTypedData`.
 
 ## Platform assets
 
@@ -515,7 +501,7 @@ For more details, see
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
-[`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
+[platform channels]: /platform-integration/platform-channels
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
