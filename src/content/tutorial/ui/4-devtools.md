@@ -174,5 +174,5 @@ This allows for rapid iteration on UI design.
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
-[VSCode]: /tools/vs-code
+[VS Code]: /tools/vs-code
 [IntelliJ]: /tools/android-studio
