@@ -13,8 +13,8 @@ submitted user guess by:
 
 * Displaying the correct letter.
 * Changing color to reflect whether the letter is correct (green), is
-  in the word but at an incorrect position (yellow), or incorrect in
-  both position and type (grey).
+  in the word but at an incorrect position (yellow), or doesn't appear
+  in the word at all (grey).
 
 To handle this dynamic behavior, you need to convert `GamePage` from a
 `StatelessWidget` to a [`StatefulWidget`][].
@@ -28,8 +28,9 @@ can't change after creation), the `State` object is long-lived, can
 hold mutable data, and can be rebuilt when that data changes, causing
 the UI to update.
 
-This widget tree imagines a simple app that has a counter, 
-which increases when the button is pressed.
+For example, the following widget tree imagines a simple app
+that has a counter that increases when the button is pressed,
+and uses a stateful widget.
 
 <img src='/assets/images/docs/tutorial/widget_tree_stateful.png' alt="A diagram of a widget tree with a stateful widget and state object.">
 
@@ -67,8 +68,8 @@ a stateless widget to a stateful widget, do the following steps:
 
 :::tip Quick assists
 
-You don't have to manually do this work, as the Flutter plugin for
-VSCode and Intellij provides ["quick assists"][], which will do this
+You don't have to manually do this work, as the Flutter plugins for
+VS Code and IntelliJ provides ["quick assists"][], which will do this
 conversion for you.
 
 :::

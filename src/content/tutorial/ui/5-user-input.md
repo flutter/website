@@ -7,12 +7,12 @@ permalink: /tutorial/user-input/
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
 
-The app theoretically displays the users guesses in `Tile` widgets,
-but it needs a way for users to input those guesses. In this lesson,
+The app will display the user's guesses in the `Tile` widgets,
+but it needs a way for the user to input those guesses. In this lesson,
 build that functionality with two interaction widgets: [`TextField`][] and
 [`IconButton`][].
 
-## Callback functions
+## Implement callback functions
 
 To allow users to type in their guesses, you'll create a dedicated
 widget named `GuessInput`. First, create the basic structure for your
@@ -42,12 +42,12 @@ single `String` argument (the user's guess) and doesn't return any
 value (denoted by `void`). 
 
 This callback tells us that the logic that actually handles the user's
-guess will be written elsewhere.  It's good practice for interaction
-widgets to be passed these functions as callbacks from their parent,
-which keeps the interaction widget reusable and decoupled from any
+guess will be written elsewhere.  It's good practice for interactive
+widgets to use callback functions to keep the widget
+that handles interactions reusable and decoupled from any
 specific functionality. 
 
-By the end of this lesson, the passed in `onGuessSubmitted` function
+By the end of this lesson, the passed-in `onGuessSubmitted` function
 is called when a user enters a guess. First, you'll need to build
 the visual parts of this widget. This is what the widget will look like.
 
@@ -55,8 +55,8 @@ the visual parts of this widget. This is what the widget will look like.
 
 ## The `TextField` widget
 
-Given that the text field and button are side-by-side, this a good reason to use
-a `Row` widget. Replace the `Container` placeholder in your
+Given that the text field and button are displayed side-by-side,
+create them as a `Row` widget. Replace the `Container` placeholder in your
 `build` method with a `Row` containing an `Expanded` `TextField`:
 
 ```dart
@@ -88,8 +88,8 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-You have seen some of these widgets in previous lessons: `Row` and
-`Padding`. New, though, is the [`Expanded`][] widget. When a child of
+You have seen `Row` and `Padding` widgets in previous lessons.
+New, though, is the [`Expanded`][] widget. When a child of
 a `Row` (or `Column`) is wrapped in `Expanded`, it tells that child to
 fill all the available space along the main axis (horizontal for
 `Row`, vertical for `Column`) that hasn't been taken by other
@@ -97,21 +97,20 @@ children. This makes the `TextField` stretch to take up all the space
 *except* what’s taken by other widgets in the row. 
 
 :::tip Tip
-`Expanded` is often the solution to "[unbound width/height][]" exceptions. 
+`Expanded` is often the solution to "[unbounded width/height][]" exceptions. 
 :::
 
-Also new is the `TextField` widget. This widget is the star of the
-show in this lesson.  This is the basic Flutter widget for text input. 
+The `TextField` widget is also new in this lesson and is the star of the show.
+This is the basic Flutter widget for text input. 
 
-Thus far, `TextField` has the following configurations. 
+Thus far, `TextField` has the following configuration.
 
 * It’s decorated with a rounded border. Notice that the decoration
-  configuration is very similar to how a `Container` and box
-  decorations are decorated.  
-* Its `maxLength` property is set to 5, which is how many letters are
-  allowed in any guess in the game.
+  configuration is very similar to how a `Container` and boxes are decorated.  
+* Its `maxLength` property is set to 5 because the game only
+  allows guesses of 5-letter words.
 
-## Handling text with `TextEditingController`
+## Handle text with `TextEditingController`
 
 Next, you need a way to manage the text that the user types into the
 input field. For this, use a [`TextEditingController`][]. 
@@ -188,7 +187,7 @@ Now, when a user inputs text, you can capture it with the
 `_textEditingController`, but you'll need to know *when* to capture
 it. The simplest way to react to input is by using the
 `TextField.onSubmitted` argument. This argument accepts a callback,
-and the callback will be triggered whenever the user presses the
+and the callback is triggered whenever the user presses the
 "Enter" key on the keyboard while the text field has focus.
  
 For now, ensure that this works by adding the following callback to
@@ -235,7 +234,7 @@ after each guess: You need a `TextEditingController` to
 do that. Update the code as follows:
 
 :::note
-In Dart, it’s good practice to use a [wildcard][] to
+In Dart, it’s good practice to use the `_` [wildcard][] to
 hide the input to a function that’ll never be used. The following
 example does so.
 :::
@@ -277,7 +276,7 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-## Input focus
+## Gain input focus
 
 Often, you want a specific input or widget to automatically gain focus
 without the user taking action. In this app, for example, the only
@@ -443,7 +442,7 @@ class GuessInput extends StatelessWidget {
 ```
 
 :::note 
-The `trim` function ensures that no whitespace entered;
+The `trim` function prevents whitespace from being entered;
 otherwise, the user could enter a four letter word plus a whitespace.
 :::
 
