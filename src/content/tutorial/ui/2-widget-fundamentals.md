@@ -16,6 +16,7 @@ complex UI code into manageable pieces, and create cleaner, more maintainable
 code.  By the end of this lesson, you’ll have created your own custom Tile
 widget.
 
+
 ## Anatomy of a stateless widget
 
 A `Widget` is a Dart class that extends one of the Flutter widget classes, in
@@ -250,21 +251,8 @@ child: Tile('A', HitType.partial)
 Soon, this small box will be one of many widgets on the screen. In the next
 lesson, you’ll start building the game grid itself. 
 
-:::note Import the game logic. 
-
-The game logic of this application isn’t concerned with Flutter and is outside
-the scope of this tutorial. Instead, import the [`flutter_gse`][]
-package, which contains the logic. 
-
-```shell
-$ flutter pub add flutter_gse
-```
-
-[Read more about using pub packages][].
-:::
 
 [`flutter_gse`]: {{site.pub}}/packages/flutter_gse
-[Read more about using pub packages]: {{site.dart-site}}/tools/pub/packages
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`constructor`]: {{site.dart-site}}/language/constructors
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html

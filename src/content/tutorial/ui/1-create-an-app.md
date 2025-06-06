@@ -32,6 +32,20 @@ $ flutter create birdle --empty
 
 This creates a new Flutter project using the minimal “empty” template.
 
+## Import the game logic
+
+The game logic of this application isn’t concerned with Flutter and is outside
+the scope of this tutorial. Instead, import the [`flutter_gse`][]
+package, which contains the logic. 
+
+Importing packages is done via `pub`, Dart's package manager. You can
+[read more about using pub packages][] if you're curious, but it isn't
+required knowledge for this tutorial.
+
+```shell
+$ flutter pub add flutter_gse
+```
+
 ## Examine the code
 
 In your IDE, open the file at `lib/main.dart`. Starting from the top, you’ll see
@@ -100,8 +114,7 @@ The app will build and launch in a new instance of Chrome.
 
 **Stateful hot reload**, if you haven't heard of it, allows a running Flutter
 app to re-render updated business logic or UI code in less than a second - all
-without losing your place in the app. This is the feature that Flutter
-developers love.
+without losing your place in the app.
 
 In your IDE, open the `main.dart` file and navigate to line ~15 and find this
 code:
@@ -112,13 +125,9 @@ child: Text('Hello World!'),
 
 Change the text inside the string to anything you want. Then, hot-reload your
 app by pressing `r` in your terminal where the app is running. The running app
-should instantly show your updated text.
+should instantly show your updated text. 
 
-This is only part of the power of hot reload, because the app doesn’t currently
-have ephemeral state. If the app did have state that could change, you’d see
-that you can update the code and the app will maintain its state, making
-development cycles lightning fast. Soon, you’ll add ephemeral state and see just
-that.
 
 [Flutter CLI tool]: /reference/flutter-cli
 [Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html 
+[read more about using pub packages]: {{site.dart-site}}/tools/pub/packages
