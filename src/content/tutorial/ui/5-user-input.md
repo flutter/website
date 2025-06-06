@@ -88,8 +88,8 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-You have seen `Row` and `Padding` widgets in previous lessons.
-New, though, is the [`Expanded`][] widget. When a child of
+You have seen some of these widgets in previous lessons: `Row` and
+`Padding`. New, though, is the [`Expanded`][] widget. When a child of
 a `Row` (or `Column`) is wrapped in `Expanded`, it tells that child to
 fill all the available space along the main axis (horizontal for
 `Row`, vertical for `Column`) that hasn't been taken by other
@@ -631,7 +631,7 @@ class GuessInput extends StatelessWidget {
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
-[unbound width/height]: https://www.youtube.com/watch?v=jckqXR5CrPI
+[unbounded width/height]: https://www.youtube.com/watch?v=jckqXR5CrPI
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [wildcard]: {{site.dart-site}}/language/pattern-types#wildcard
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
