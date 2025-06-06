@@ -19,7 +19,7 @@ TODO(ewindmill) welcome video
 
 ## What is Flutter?
 
-Flutter is an open-source UI toolkit that helps you build native compiled, 
+Flutter is an open-source UI toolkit that helps you build natively compiled, 
 expressive apps across mobile, web, and desktop from a single codebase. 
 It’s declarative, reactive, features hot reload for fast development cycles, 
 and has a rich set of customizable widgets for creating expressive interfaces.

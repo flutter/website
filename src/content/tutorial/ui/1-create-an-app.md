@@ -88,10 +88,11 @@ At the moment, the widget tree is quite simple:
 In your terminal at the root of your Flutter app, run:
 
 ```shell
+$ cd birdle
 $ flutter run -d chrome
 ```
 
-The app will build and launch in a new instance of chrome. 
+The app will build and launch in a new instance of Chrome. 
 
 <img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
 
@@ -99,10 +100,10 @@ The app will build and launch in a new instance of chrome.
 
 **Stateful hot reload**, if you haven't heard of it, allows a running Flutter
 app to re-render updated business logic or UI code in less than a second - all
-without losing your place in the app. This is the feature that hooks most Flutter
-developers.
+without losing your place in the app. This is the feature that Flutter
+developers love.
 
-In your IDE, open the `main.dart` file and navigate to line \~15 and find this
+In your IDE, open the `main.dart` file and navigate to line ~15 and find this
 code:
 
 ```dart
