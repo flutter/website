@@ -6,30 +6,30 @@ permalink: /tutorial/devtools/
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
-As your Flutter app grows in complexity, it becomes more important and more
-difficult to understand how each widget's properties affect the UI.
+As your Flutter app grows in complexity, it becomes more important
+to understand how each of the widgets properties affect the UI.
 [Dart's DevTools][] assists you with two particularly useful features: the
 **widget inspector** and the **property editor**.
 
 First, launch DevTools by running the following commands while your app is running in debug mode:
 
 ```shell
-$ flutter pub global activate devtools
+$ flutter pub global activate devtools  # You only need to run this once
 $ devtools
 ```
 
 :::note Run in your IDE 
 
-You can also run the dev tools directly inside [VSCode][] and [Intellij][],
+You can also run DevTools directly inside [VS Code][] and [IntelliJ][],
 provided you have the Flutter plugin installed. The screenshots in this lesson 
-are from VSCode.
+are from VS Code.
 
 :::
 
 ## The widget inspector
 
 The widget inspector allows you to visualize and explore your widget tree. It
-helps you understand the layout of your UI and identify which widgets are
+helps you understand the layout of your UI and identifies which widgets are
 responsible for different parts of the screen. Running against the app you've
 built so far, the inspector looks like this:
 
@@ -120,10 +120,10 @@ resolve this issue.
 
 ## The property editor
 
-When you select a widget in the Widget Inspector, the property editor
+When you select a widget in the widget inspector, the property editor
 displays all the properties of that selected widget. This is a
 powerful tool for understanding why a widget looks the way it does and
-for experimenting with property changes in real-time.
+for experimenting with property value changes in real-time.
 
 <img src='/assets/images/docs/tutorial/property_editor.png' alt="A screenshot of the Flutter property editor tool.">
 
@@ -161,9 +161,9 @@ Editor would show you its `width` (60), `height` (60), and the
 see the `border` and `color` properties.
 
 For many properties, you can even modify their values directly within the
-Property Editor. For example, if you wanted to quickly test how a different
-`width` or `height` would look for your `Container` in the `Tile` widget, you
-could change the numerical value in the Property Editor and see the update
+property editor. For example, to quickly test how a different
+`width` or `height` would look for your `Container` in the `Tile` widget,
+ change the numerical value in the Property Editor and see the update
 instantly on your running app without needing to recompile or even hot reload.
 This allows for rapid iteration on UI design.
 
@@ -175,4 +175,4 @@ This allows for rapid iteration on UI design.
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 [VSCode]: /tools/vs-code
-[Intellij]: /tools/android-studio
+[IntelliJ]: /tools/android-studio

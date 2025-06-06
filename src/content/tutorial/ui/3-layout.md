@@ -11,21 +11,21 @@ Given that Flutter is a UI toolkit, you'll spend a lot of time creating layouts
 with Flutter widgets. In this section, you'll learn how to build layouts with
 some of the most common layout widgets, including high-level widgets like
 [`Scaffold`][] and [`AppBar`][], which lay out the structure of a screen, to
-lower-level widgets like [`Column`][] or [`Row`][], 
-which lay out widgets vertically or horizontally.
+lower-level widgets like [`Column`][] or [`Row`][] 
+that lay out widgets vertically or horizontally.
 
 ## `Scaffold` and `AppBar`
 
-Mobile applications often have a bar at the top called an “app bar”, which can
+Mobile applications often have a bar at the top called an “app bar” that can
 display a title, navigation controls, and/or actions. 
 
 <img src='/assets/images/docs/tutorial/apppad.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
-The simplest way to add an appbar to your app is by combining two widgets:
+The simplest way to add an appbar to your app is by using two widgets:
 `Scaffold` and `AppBar`.
 
 `Scaffold` is a convenience widget that provides a Material-style page layout,
-making it simple to add an app bar, drawer, navigation bar and more to a page of
+making it simple to add an app bar, drawer, navigation bar, and more to a page of
 your app. `AppBar` is, of course, the app bar.
 
 The code generated from the `$ flutter create --empty` command already contains
@@ -59,8 +59,8 @@ class MainApp extends StatelessWidget {
 
 ### An updated widget tree
 
-Considering your app's widget tree gets more important as your app
-grows. At this point, there's a "branch" in the tree for the first
+Note that your app's widget tree gets more important as your app
+grows. At this point, there's a "branch" in the widget tree for the first
 time, and it now looks like the following figure.
 
 <img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' alt="A screenshot that resembles the popular game Wordle.">
@@ -109,15 +109,15 @@ class MainApp extends StatelessWidget {
 
 ## Arrange widgets with `Column` and `Row`
 
-The main content of the `GamePage` is the grid will eventually be the tiles that display a user’s
-guesses.
+The `GamePage` layout contains the grid of tiles that display a user’s guesses.
 
 <img src='/assets/images/docs/tutorial/birdle.png' alt="A screenshot that resembles the popular game Wordle.">
 
 There are a number of ways you can build this layout, and the simplest is with
 `Column` and `Row` widgets.  Each row contains five tiles that represent the
-five letters in a guess, with five those rows total. You’ll need a column
-with five row children. First, return a `Column` (wrapped with a `Padding`
+five letters in a guess, with five rows total. You’ll need a column
+with five rows, each row containing five children.
+First, return a `Column` (wrapped with a `Padding`
 widget) from the `GamePage.build` method.
 
 ```dart
@@ -148,8 +148,8 @@ list.
 
 :::note 
 This `guesses` list is a **fixed-size** list, starting with five
-elements, one for each *potential* guess. It will always contain exactly five
-elements, and therefor there will always be five rows rendered. 
+elements, one for each *potential* guess. The list will always contain exactly five
+elements, and therefore will always render five rows. 
 :::
 
 ```dart
@@ -181,8 +181,8 @@ class GamePage extends StatelessWidget {
 
 This is called a [collection-for][] loop, a Dart feature that allows you to
 unfurl a list inside of another list when the loop is executed.
-This syntactic-sugar makes it easier for Flutter devs to work
-with collections of widgets. It achieves the same as the following psuedo code:
+This syntactic sugar makes it easier for you to work
+with collections of widgets and achieves the same as the following psuedo code:
 
 ```dart
 [...ListOfData.map((element) => Widget(element)).toList()],
@@ -195,7 +195,7 @@ on the `Game` object.
 
 The widget tree for this app has expanded significantly in this
 lesson. Now, it looks more like the following figure (although it's
-abridged for ledgeibility.)
+abridged for legibility.)
 
 ### An updated widget tree
 

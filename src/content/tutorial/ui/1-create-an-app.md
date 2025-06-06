@@ -96,7 +96,7 @@ The app will build and launch in a new instance of Chrome.
 
 <img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
 
-## Hot reload
+## Use hot reload
 
 **Stateful hot reload**, if you haven't heard of it, allows a running Flutter
 app to re-render updated business logic or UI code in less than a second - all

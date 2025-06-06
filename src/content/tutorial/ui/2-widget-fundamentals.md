@@ -18,7 +18,7 @@ widget.
 
 ## Anatomy of a stateless widget
 
-A widget is a Dart class that extends one of a handful of widget classes, in
+A `Widget` is a Dart class that extends one of the Flutter widget classes, in
 this case
 [`StatelessWidget`][].
 
@@ -234,7 +234,7 @@ class Tile extends StatelessWidget {
 }
 ```
 
-On hot reload a green box appears. To toggle the color,
+Hot reload and a green box appears. To toggle the color,
 update and hot reload the `HitType` passed into the `Tile` you created:
 
 ```dart
