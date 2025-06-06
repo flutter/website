@@ -131,3 +131,4 @@ should instantly show your updated text.
 [Flutter CLI tool]: /reference/flutter-cli
 [Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html 
 [read more about using pub packages]: {{site.dart-site}}/tools/pub/packages
+[`flutter_gse`]: {{site.pub}}/packages/flutter_gse

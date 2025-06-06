@@ -252,7 +252,7 @@ Soon, this small box will be one of many widgets on the screen. In the next
 lesson, you’ll start building the game grid itself. 
 
 
-[`flutter_gse`]: {{site.pub}}/packages/flutter_gse
+
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`constructor`]: {{site.dart-site}}/language/constructors
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
