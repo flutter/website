@@ -214,7 +214,7 @@ Most legacy Flutter projects will be registering plugins with the
 `GeneratedPluginRegistrant` at application launch. The
 `GeneratedPluginRegistrant` is registering platform channels under the hood and
 should be migrated as [platform channels
-are](#creating-platform-channels-in-applicationdidfinishlaunchingwithoptions).
+are](#creating-platform-channels-in-application-didfinishlaunchingwithoptions).
 This will avoid any runtime warnings about using a `FlutterLaunchEngine`.
 
 {% tabs "darwin-language" %}
