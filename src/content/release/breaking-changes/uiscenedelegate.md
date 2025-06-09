@@ -161,7 +161,7 @@ Apps that rely on Storyboards (and XIBs) to create platform channels in
   func register(with registry: any FlutterPluginRegistry) {
     let registrar = registry.registrar(forPlugin: "battery")
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: registrar.messenger)
+                                              binaryMessenger: registrar!.messenger())
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
