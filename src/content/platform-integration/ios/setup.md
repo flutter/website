@@ -129,6 +129,17 @@ on the Apple Developer site.
 {% endtab %}
 {% tab "Physical device" %}
 
+:::warning
+An upcoming change to iOS has caused a temporary break in Flutter's debug mode
+on physical devices running iOS 26 (currently in beta).
+If your physical device is already on iOS 26, we recommend switching to the
+**Virtual device** tab and following the instructions for using a simulator.
+See [Flutter on latest iOS][] for details.
+:::
+
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+
+
 Set up each iOS device on which you want to test.
 
  1. <h3>Configure your physical iOS device</h3>
