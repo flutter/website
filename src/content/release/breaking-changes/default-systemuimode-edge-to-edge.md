@@ -6,14 +6,14 @@ description: >-
 ---
 
 :::note
-You may have found this page because you have seen a warning in the Google
-Play Console concerning "Edge-to-edge may not display for all users" or "Your
-"app uses deprecated APIs or parameters for edge-to-edge". These warnings
-**will not** impact users.
+You might have found this page because you see a warning in the Google Play
+Console concerning "Edge-to-edge may not display for all users" or "Your app
+uses deprecated APIs or parameters for edge-to-edge". These warnings **will
+not** impact users.
 
 This warning references deprecated code used in the Flutter engine to implement
-edge-to-edge mode on devices running below Android 15 that will continue to
-work should you set edge-to-edge mode in your app. See
+edge-to-edge mode, but this code will continue to work should you set
+edge-to-edge mode in your app. See
 https://github.com/flutter/flutter/issues/169810 for more information.
 :::
 
