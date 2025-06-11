@@ -13,8 +13,7 @@ not** impact users.
 
 This warning references deprecated code used in the Flutter engine to implement
 edge-to-edge mode, but this code will continue to work should you set
-edge-to-edge mode in your app. See
-https://github.com/flutter/flutter/issues/169810 for more information.
+edge-to-edge mode in your app. See [flutter#169810] for more information.
 :::
 
 ## Summary
@@ -126,3 +125,4 @@ Stable release: 3.27
 
 [The supported Flutter `SystemUiMode`s]: {{site.api}}/flutter/services/SystemUiMode.html
 [The Android 15 edge-to-edge behavior changes guide]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
+[flutter#169810]: https://github.com/flutter/flutter/issues/169810
