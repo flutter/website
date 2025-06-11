@@ -5,7 +5,7 @@ description: >
 ---
 
 :::note
-We are preparing for a breaking change that has not yet been finalized or
+This is an upcoming breaking change that has not yet been finalized or
 implementated. The current details are provisional and may be altered. Further
 announcements will be made as the change approaches implementation.
 :::
