@@ -12,8 +12,9 @@ uses deprecated APIs or parameters for edge-to-edge". These warnings **will
 not** impact users.
 
 This warning references deprecated code used in the Flutter engine to implement
-edge-to-edge mode, but this code will continue to work should you set
-edge-to-edge mode in your app. See [flutter#169810] for more information.
+edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
+changes for users, so it will continue to work should you set edge-to-edge
+mode in your app. See [flutter#169810] for more information.
 :::
 
 ## Summary
