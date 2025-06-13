@@ -5,6 +5,18 @@ description: >-
     in to edge-to-edge mode.
 ---
 
+:::note
+You might have found this page because you see a warning in the Google Play
+Console concerning "Edge-to-edge may not display for all users" or "Your app
+uses deprecated APIs or parameters for edge-to-edge". These warnings **will
+not** impact users.
+
+This warning references deprecated code used in the Flutter engine to implement
+edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
+changes for users, so it will continue to work should you set edge-to-edge
+mode in your app. See [flutter#169810] for more information.
+:::
+
 ## Summary
 
 If your Flutter app targets Android SDK version 15 or later,
@@ -114,3 +126,4 @@ Stable release: 3.27
 
 [The supported Flutter `SystemUiMode`s]: {{site.api}}/flutter/services/SystemUiMode.html
 [The Android 15 edge-to-edge behavior changes guide]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
+[flutter#169810]: https://github.com/flutter/flutter/issues/169810
