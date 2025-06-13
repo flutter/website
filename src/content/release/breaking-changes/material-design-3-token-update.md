@@ -5,6 +5,32 @@ description: >-
   the Flutter Material library.
 ---
 
+# Flutter 3.33+
+
+This release includes an update to `package:material_color_utilities` from
+`v0.11.1` to `0.13.`. This updated package includes algorithm changes that align
+with the colors changes that were shipped in Flutter 3.27 (see below).
+
+The algorithm changes affect the same properties:
+
+- `onPrimaryContainer`
+- `onSecondaryContainer`
+- `onTertiaryContainer`
+- `onErrorContainer`
+
+The changes will be reflected when generating scheme using
+
+- `ColorScheme.fromSeed`
+- `ColorScheme.fromImageProvider`
+- `ThemeData(colorScheme:..)`
+
+In general, we believe the colors generated will be more legible and visually
+appealing, but if you want to maintain the previous colors when upgrading
+you will have to manually set those properties to their desired color after
+generating.
+
+# Flutter 3.27
+
 ## Summary
 
 The Material Design tokens updated the mapping of
@@ -14,10 +40,10 @@ Testing identified this change as [non-breaking][] in Flutter, but
 some customers might notice this small change.
 The update affected the following color properties:
 
-* `onPrimaryContainer` (Primary10 to Primary30)
-* `onSecondaryContainer` (Secondary10 to Secondary30)
-* `onTertiaryContainer` (Tertiary10 to Tertiary30)
-* `onErrorContainer` (Error10 to Error30)
+- `onPrimaryContainer` (Primary10 to Primary30)
+- `onSecondaryContainer` (Secondary10 to Secondary30)
+- `onTertiaryContainer` (Tertiary10 to Tertiary30)
+- `onErrorContainer` (Error10 to Error30)
 
 Widgets that have been using these roles as their
 default values might look different.
@@ -73,7 +99,7 @@ final chip = ChipTheme(
     ),
   ),
   child: ActionChip(
-    label: const Text('action chip'), 
+    label: const Text('action chip'),
     onPressed: () {}
   )
 );
@@ -88,14 +114,14 @@ In stable release: 3.27
 
 API documentation:
 
-* [`ColorScheme`][]
-* [`ThemeData`][]
-* [`Chip`][]
+- [`ColorScheme`][]
+- [`ThemeData`][]
+- [`Chip`][]
 
 Relevant PRs:
 
-* [Update tokens to v5.0.0][]
-* [Update tokens to v6.1.0][]
+- [Update tokens to v5.0.0][]
+- [Update tokens to v6.1.0][]
 
 [`ColorScheme`]: {{site.api}}/flutter/material/ColorScheme-class.html
 [`ThemeData`]: {{site.api}}/flutter/material/ThemeData-class.html
