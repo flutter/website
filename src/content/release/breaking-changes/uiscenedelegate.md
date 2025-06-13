@@ -210,7 +210,7 @@ Set up the `FlutterPluginRegistrant` programmatically through the
 
 ### Registering plugins in `application:didFinishLaunchingWithOptions:`
 
-Most legacy Flutter projects will be registering plugins with the
+Most legacy Flutter projects register plugins with
 `GeneratedPluginRegistrant` at application launch. The
 `GeneratedPluginRegistrant` is registering platform channels under the hood and
 should be migrated as [platform channels
