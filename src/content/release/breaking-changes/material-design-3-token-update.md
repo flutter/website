@@ -18,7 +18,7 @@ The algorithm changes affect the same properties:
 - `onTertiaryContainer`
 - `onErrorContainer`
 
-The changes will be reflected when generating scheme using
+The changes will be reflected when generating a scheme using
 
 - `ColorScheme.fromSeed`
 - `ColorScheme.fromImageProvider`
