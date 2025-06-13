@@ -212,9 +212,9 @@ Set up the `FlutterPluginRegistrant` programmatically through the
 
 Most legacy Flutter projects register plugins with
 `GeneratedPluginRegistrant` at application launch. The
-`GeneratedPluginRegistrant` is registering platform channels under the hood and
+`GeneratedPluginRegistrant` object registers platform channels under the hood and
 should be migrated as [platform channels
-are](#creating-platform-channels-in-application-didfinishlaunchingwithoptions).
+are migrating](#creating-platform-channels-in-application-didfinishlaunchingwithoptions).
 This will avoid any runtime warnings about using a `FlutterLaunchEngine`.
 
 {% tabs "darwin-language" %}
