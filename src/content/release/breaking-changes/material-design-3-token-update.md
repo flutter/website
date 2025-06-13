@@ -9,7 +9,7 @@ description: >-
 
 This release updates `package:material_color_utilities` from
 `v0.11.1` to `0.13.`. This updated package includes algorithm changes that align
-with the colors changes that were shipped in Flutter 3.27 (see below).
+with the colors changes shipped in Flutter 3.27 (see below).
 
 The algorithm changes affect the same properties:
 
