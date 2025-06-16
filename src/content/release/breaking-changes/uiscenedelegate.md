@@ -214,6 +214,56 @@ Apps that rely on Storyboards (and XIBs) to create platform channels in
 Set up the `FlutterPluginRegistrant` programmatically through the
 `FlutterAppDelegate`.
 
+### Registering plugins in `application:didFinishLaunchingWithOptions:`
+
+Most legacy Flutter projects register plugins with
+`GeneratedPluginRegistrant` at application launch. The
+`GeneratedPluginRegistrant` object registers platform channels under the hood and
+should be migrated as [platform channels
+are migrating](#creating-platform-channels-in-application-didfinishlaunchingwithoptions).
+This will avoid any runtime warnings about using a `FlutterLaunchEngine`.
+
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
+
+```swift
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate, FlutterPluginRegistrant {
+  override func application(
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    pluginRegistrant = self
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  func register(with registry: any FlutterPluginRegistry) {
+    GeneratedPluginRegistrant.register(with: registry)
+  }
+}
+```
+
+{% endtab %}
+{% tab "Obj-C" %}
+
+```objc
+@interface AppDelegate () <FlutterPluginRegistrant>
+@end
+
+@implementation AppDelegate
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+  self.pluginRegistrant = self;
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  [GeneratedPluginRegistrant registerWithRegistry:registry];
+}
+@end
+```
+
+{% endtab %}
+{% endtabs %}
+
 ### Bespoke FlutterViewController usage
 
 For apps that use a `FlutterViewController` instantiated from Storyboards in
