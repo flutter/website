@@ -156,5 +156,49 @@ To embed your dynamic frameworks, complete the following procedure.
    1. Select **Product** <span aria-label="and then">></span>
       **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
 
+#### Set LLDB Init File
+
+Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
+on an iOS 26 or later device may crash.
+
+1. Add `FLUTTER_OUTPUT_PATH` to build settings.
+
+   1. Open `MyApp.xcworkspace` in Xcode.
+
+   1. In the **Project Navigator**, click on your project.
+
+   1. Click the **Build Settings** tab.
+
+   1. Click the `+` icon and select **Add User Defined Setting**
+
+      {% render docs/captioned-image.liquid,
+      image:"development/add-to-app/ios/project-setup/add-user-defined-setting.png",
+      caption:"Click the `+` icon and select **Add User Defined Setting**" %}
+
+   1. Rename `NEW_SETTING` to `FLUTTER_OUTPUT_PATH` and set its value to the
+      relative path for the `flutter build ios-frameowork` output.
+
+      For example, if your app is located at `/path/to/MyApp` and your Flutter
+      output is located at `/path/to/MyApp/Flutter`, the relative path would
+      be `./Flutter`.
+
+1. Set the LLDB Init File.
+
+   1. Go to **Product > Scheme > Edit Scheme**.
+
+   1. Select the **Run** section in the left side bar.
+
+   1. Set the **LLDB Init File** to the following:
+
+      ```
+      $(SRCROOT)/$(FLUTTER_OUTPUT_PATH)/flutter_lldbinit
+      ```
+
+      If your scheme already has an **LLDB Init File**, you can add Flutter's LLDB file to it by adding the following:
+
+      ```
+      command source $(SRCROOT)/$(FLUTTER_OUTPUT_PATH)/flutter_lldbinit
+      ```
+
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [static-framework]: https://developer.apple.com/library/archive/technotes/tn2435/_index.html
