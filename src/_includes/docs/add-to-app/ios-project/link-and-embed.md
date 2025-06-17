@@ -190,13 +190,13 @@ on an iOS 26 or later device may crash.
 
    1. Set the **LLDB Init File** to the following:
 
-      ```
+      ```console
       $(SRCROOT)/$(FLUTTER_OUTPUT_PATH)/flutter_lldbinit
       ```
 
       If your scheme already has an **LLDB Init File**, you can add Flutter's LLDB file to it by adding the following:
 
-      ```
+      ```console
       command source $(SRCROOT)/$(FLUTTER_OUTPUT_PATH)/flutter_lldbinit
       ```
 
