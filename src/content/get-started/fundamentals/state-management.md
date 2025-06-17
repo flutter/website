@@ -483,7 +483,7 @@ class CounterViewModel extends ChangeNotifier {
       await model.updateCountOnServer(incrementedCount);
       count = incrementedCount;
     } catch(e) {
-      errorMessage = 'Count not update count';
+      errorMessage = 'Could not update count';
     }
     notifyListeners();
   }
