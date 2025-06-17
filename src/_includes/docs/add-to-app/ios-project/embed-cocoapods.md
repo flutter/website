@@ -141,8 +141,10 @@ into your iOS app, complete the following procedure.
 
 #### Set LLDB Init File
 
+:::warning
 Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
 on an iOS 26 or later device may crash.
+:::
 
 1. Add `FLUTTER_APPLICATION_PATH` to build settings.
 
@@ -162,6 +164,16 @@ on an iOS 26 or later device may crash.
       the same relative path you put in your Podfile in the **Update your
       Podfile** section.
 
+1. Generate Flutter LLDB files.
+
+   1. Within your flutter application, run the following:
+
+   ```console
+   flutter build ios --config-only
+   ```
+
+   This will generate the LLDB files in the `.ios/Flutter/ephemeral` directory.
+
 1. Set the LLDB Init File.
 
    1. Go to **Product > Scheme > Edit Scheme**.
@@ -174,7 +186,8 @@ on an iOS 26 or later device may crash.
       $(SRCROOT)/$(FLUTTER_APPLICATION_PATH)/.ios/Flutter/ephemeral/flutter_lldbinit
       ```
 
-      If your scheme already has an **LLDB Init File**, you can add Flutter's LLDB file to it by adding the following:
+      If your scheme already has an **LLDB Init File**, you can add Flutter's
+      LLDB file to it by adding the following:
 
       ```console
       command source $(SRCROOT)/$(FLUTTER_APPLICATION_PATH)/.ios/Flutter/ephemeral/flutter_lldbinit
