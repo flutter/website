@@ -755,6 +755,7 @@
       { "source": "/to/integration-testing", "destination": "/cookbook/testing/integration/introduction", "type": 301 },
       { "source": "/to/intellij-setup", "destination": "/tools/android-studio#setup", "type": 301 },
       { "source": "/to/internationalization", "destination": "/ui/accessibility-and-internationalization/internationalization", "type": 301 },
+      { "source": "/to/ios-add-to-app-embed-setup", "destination": "/add-to-app/ios/project-setup#embed-a-flutter-module-in-your-ios-app", "type": 301 },
       { "source": "/to/ios-app-signing", "destination": "/deployment/ios#review-xcode-project-settings", "type": 301 },
       { "source": "/to/ios-create-flutter-engine", "destination": "/add-to-app/ios/add-flutter-screen#create-a-flutterengine", "type": 301 },
       { "source": "/to/ios-deploy", "destination": "/deployment/ios", "type": 301 },
