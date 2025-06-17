@@ -81,7 +81,7 @@ The view model exposes state as public members.
 On the view model in the following code example,
 the exposed data is a `User` object,
 as well as the user's saved itineraries which
-are exposed as an object of type `List<TripSummary>`.
+are exposed as an object of type `List<BookingSummary>`.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel {
