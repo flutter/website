@@ -75,7 +75,7 @@ Coming from another platform? Check out Flutter for:
 {% videoWrapper 'Check out what\'s new in Flutter at Google IO 2025' %}
 {% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
 {% endvideoWrapper %}
-
+<br>
 
 For more Flutter at Google I/O 2025, check out
 [How to build agentic apps with Flutter and Firebase AI Logic][] 
