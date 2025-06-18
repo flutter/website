@@ -187,10 +187,14 @@ on an iOS 26 or later device may crash.
       ```
 
       If your scheme already has an **LLDB Init File**, you can add Flutter's
-      LLDB file to it by adding the following:
+      LLDB file to it. The path to Flutter's LLDB Init File must be relative
+      to the location of your project's LLDB Init File.
+
+      For example, if your LLDB file is located at `/path/to/MyApp/.lldbinit`,
+      you would add the following:
 
       ```console
-      command source $(PROJECT_DIR)/Flutter/flutter_lldbinit
+      command source --relative-to-command-file "Flutter/flutter_lldbinit"
       ```
 
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework

@@ -146,24 +146,6 @@ Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
 on an iOS 26 or later device may crash.
 :::
 
-1. Add `FLUTTER_APPLICATION_PATH` to build settings.
-
-   1. Open `MyApp.xcworkspace` in Xcode.
-
-   1. In the **Project Navigator**, click on your project.
-
-   1. Click the **Build Settings** tab.
-
-   1. Click the `+` icon and select **Add User Defined Setting**
-
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/add-user-defined-setting.png",
-      caption:"Click the `+` icon and select **Add User Defined Setting**" %}
-
-   1. Rename `NEW_SETTING` to `FLUTTER_APPLICATION_PATH` and set its value to
-      the same relative path you put in your Podfile in the **Update your
-      Podfile** section.
-
 1. Generate Flutter LLDB files.
 
    1. Within your flutter application, run the following:
@@ -180,17 +162,23 @@ on an iOS 26 or later device may crash.
 
    1. Select the **Run** section in the left side bar.
 
-   1. Set the **LLDB Init File** to the following:
+   1. Set the **LLDB Init File** using the same relative path to your Flutter
+      application as you put in your Podfile in the **Update your Podfile**
+      section.
 
       ```console
-      $(SRCROOT)/$(FLUTTER_APPLICATION_PATH)/.ios/Flutter/ephemeral/flutter_lldbinit
+      $(SRCROOT)/../my_flutter/.ios/Flutter/ephemeral/flutter_lldbinit
       ```
 
       If your scheme already has an **LLDB Init File**, you can add Flutter's
-      LLDB file to it by adding the following:
+      LLDB file to it. The path to Flutter's LLDB Init File must be relative
+      to the location of your project's LLDB Init File.
+
+      For example, if your LLDB file is located at `/path/to/MyApp/.lldbinit`,
+      you would add the following:
 
       ```console
-      command source $(SRCROOT)/$(FLUTTER_APPLICATION_PATH)/.ios/Flutter/ephemeral/flutter_lldbinit
+      command source --relative-to-command-file "../my_flutter/.ios/Flutter/ephemeral/flutter_lldbinit"
       ```
 
 [build-modes]: /testing/build-modes
