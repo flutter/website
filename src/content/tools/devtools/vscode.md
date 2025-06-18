@@ -17,7 +17,7 @@ in VS Code and clicking **Run > Start Debugging** (`F5`).
 
 ## Launch DevTools
 
-Once the debug session is active and the applicationi has started,
+Once the debug session is active and the application has started,
 the **Open DevTools** commands become available in the
 VS Code command palette (`F1`):
 
