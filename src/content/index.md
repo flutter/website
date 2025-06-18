@@ -72,8 +72,8 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-{% videoWrapper 'Check out what's new in Flutter at Google IO 2025' %}
-{% ytEmbed 'v6Rzo5khNE8', 'What's new in Flutter' %}
+{% videoWrapper 'Check out what\'s new in Flutter at Google IO 2025' %}
+{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
 {% endvideoWrapper %}
 
 For more Flutter at Gooogle I/O 2025, check out
