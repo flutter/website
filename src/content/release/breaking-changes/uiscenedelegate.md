@@ -4,6 +4,12 @@ description: >
   A guide for Flutter iOS developers to adopt Apple's UISceneDelegate protocol.
 ---
 
+:::note
+This is an upcoming breaking change that has not yet been finalized or
+implementated. The current details are provisional and may be altered. Further
+announcements will be made as the change approaches implementation.
+:::
+
 ## Summary
 
 Apple now requires iOS developers to adopt the UISceneDelegate protocol,
@@ -161,7 +167,7 @@ Apps that rely on Storyboards (and XIBs) to create platform channels in
   func register(with registry: any FlutterPluginRegistry) {
     let registrar = registry.registrar(forPlugin: "battery")
     let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: registrar.messenger)
+                                              binaryMessenger: registrar!.messenger())
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
@@ -207,6 +213,56 @@ Apps that rely on Storyboards (and XIBs) to create platform channels in
 
 Set up the `FlutterPluginRegistrant` programmatically through the
 `FlutterAppDelegate`.
+
+### Registering plugins in `application:didFinishLaunchingWithOptions:`
+
+Most legacy Flutter projects register plugins with
+`GeneratedPluginRegistrant` at application launch. The
+`GeneratedPluginRegistrant` object registers platform channels under the hood and
+should be migrated as [platform channels
+are migrating](#creating-platform-channels-in-application-didfinishlaunchingwithoptions).
+This will avoid any runtime warnings about using a `FlutterLaunchEngine`.
+
+{% tabs "darwin-language" %}
+{% tab "Swift" %}
+
+```swift
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate, FlutterPluginRegistrant {
+  override func application(
+      _ application: UIApplication,
+      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    pluginRegistrant = self
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+
+  func register(with registry: any FlutterPluginRegistry) {
+    GeneratedPluginRegistrant.register(with: registry)
+  }
+}
+```
+
+{% endtab %}
+{% tab "Obj-C" %}
+
+```objc
+@interface AppDelegate () <FlutterPluginRegistrant>
+@end
+
+@implementation AppDelegate
+- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+  self.pluginRegistrant = self;
+  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (void)registerWithRegistry:(NSObject<FlutterPluginRegistry>*)registry {
+  [GeneratedPluginRegistrant registerWithRegistry:registry];
+}
+@end
+```
+
+{% endtab %}
+{% endtabs %}
 
 ### Bespoke FlutterViewController usage
 
