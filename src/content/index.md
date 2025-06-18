@@ -72,32 +72,29 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-Check out the Introducing Flutter series.
-Learn Flutter basics like
-[how do I make my first Flutter app?][first-app]
-In Flutter, "everything is a widget"!
-Learn more about `Stateless` and `Stateful`
-widgets in [What is State?][]
+{% videoWrapper 'Check out what's new in Flutter @ Google I/O 2025!' %}
+{% ytEmbed 'v6Rzo5khNE8', 'What's new in Flutter' %}
+{% endvideoWrapper %}
+
+For more Flutter at Gooogle I/O 2025, check out
+[How to build agentic apps with Flutter and Firebase AI Logic][] 
+and [How Flutter makes the most of your platforms][]
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true %}
+      {% ytEmbed 'xo271p-Fl_4', 'How to build agentic apps with Flutter and Firebase AI Logic', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true %}
+      {% ytEmbed 'flwULzNYRac', 'How Flutter makes the most of your platforms', true %}
     </div>
   </div>
 </div>
 
-[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
-[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
-
-{% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
-{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!' %}
-{% endvideoWrapper %}
+[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
+[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
 
 ## Want to skill up?
 
