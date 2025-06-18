@@ -736,6 +736,7 @@
       { "source": "/to/et", "destination": "https://flutter.dev/to/engine-tool", "type": 301 },
       { "source": "/to/experimental-branches", "destination": "https://github.com/flutter/flutter/blob/main/docs/infra/Experimental-Branch.md", "type": 301 },
       { "source": "/to/favorites", "destination": "/packages-and-plugins/favorites", "type": 301 },
+      { "source": "/to/feature-flags", "destination": "https://github.com/flutter/flutter/blob/main/docs/contributing/Feature-flags.md", "type": 301 },
       { "source": "/to/federated-plugins", "destination": "/packages-and-plugins/developing-packages#federated-plugins", "type": 301 },
       { "source": "/to/ffi-package", "destination": "/packages-and-plugins/developing-packages#plugin-ffi", "type": 301 },
       { "source": "/to/flutter-gen-deprecation", "destination": "/release/breaking-changes/flutter-generate-i10n-source", "type": 301 },
