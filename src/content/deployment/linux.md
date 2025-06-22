@@ -106,7 +106,7 @@ summary: Super Cool App
 description: Super Cool App that does everything!
 
 confinement: strict
-base: core22
+base: core24
 grade: stable
 
 slots:
@@ -151,7 +151,7 @@ This section defines how the snap is built.
 
 ```yaml
 confinement: strict
-base: core18
+base: core24
 grade: stable
 ```
 
