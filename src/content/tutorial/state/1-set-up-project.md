@@ -8,9 +8,10 @@ In this tutorial, you'll learn how to work with data in a Flutter app.
 You'll build an app that fetches and displays article summaries from
 the [Wikipedia API][]. 
 
-<img src="/assets/images/docs/tutorial/wikipedia_app.png" width="100%"
-alt="A screenshot of the completed Wikipedia reader app showing an
-article with image, title, description, and extract text.">
+<img src="/assets/images/docs/tutorial/wikipedia_app.png" height="500px" 
+style="border:1px solid black" alt="A screenshot of the completed 
+Wikipedia reader app showing an article with image, title, 
+description, and extract text.">
 
 This tutorial explores:
 
