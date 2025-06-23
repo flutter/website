@@ -8,7 +8,7 @@ permalink: /tutorial/create-an-app/
 <!-- TODO(ewindmill) embed video -->
 {%- endcomment %}
 
-In this first section of the Flutter tutorial, you’ll build the core UI of an
+In this tutorial, you’ll build the core UI of an
 app called ‘Birdle’, a game similar to [Wordle, the popular New York Times
 game][].
 
