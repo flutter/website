@@ -116,25 +116,27 @@ class ArticleView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Wikipedia Flutter'),
+        actions: [],
       ),
       body: ListenableBuilder(
         listenable: viewModel,
         builder: (context, child) {
-          return Center(
-            child: switch ((
-              viewModel.loading,
-              viewModel.summary,
-              viewModel.errorMessage,
-            )) {
-              (true, _, _) => CircularProgressIndicator(),
-              (false, _, String message) => Text('Error: $message'),
-              (false, null, null) => Text('An unknown error has occurred'),
-              (false, Summary summary, null) => ArticlePage(
-                summary: summary,
-                nextArticleCallback: viewModel.getRandomArticleSummary,
-              ),
-            },
-          );
+          return switch ((
+            viewModel.loading,
+            viewModel.summary,
+            viewModel.errorMessage,
+          )) {
+            (true, _, _) => CircularProgressIndicator(),
+            (false, _, String message) => Center(child: Text(message)),
+            (false, null, null) => Center(
+              child: Text('An unknown error has occurred'),
+            ),
+            // summary must be non-null in this swich case
+            (false, Summary _, null) => ArticlePage(
+              summary: viewModel.summary!,
+              onPressed: viewModel.getRandomArticleSummary,
+            ),
+          };
         },
       ),
     );

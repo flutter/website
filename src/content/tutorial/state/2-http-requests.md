@@ -13,9 +13,8 @@ ViewModel manages state and connects them. The core tenet of MVVM
 in separate classes (outside your UI widgets) makes your code more
 testable, reusable, and easier to maintain. 
 
-{%- comment %}
-<!-- TODO(ewindmill) add MVVM diagram -->
-{%- endcomment %}
+<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%" 
+alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
 
 A single feature in your app contains one of each MVVM component. In
 this tutorial, you'll create an `ArticleModel`, `ArticleViewModel` and
