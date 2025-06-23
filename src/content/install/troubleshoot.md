@@ -81,7 +81,7 @@ such as `C:\src\flutter`.
 __What does this issue look like?__
 
 The command `flutter doctor --android-licenses` fails.
-Running `flutter doctor –verbose` gives an error message
+Running `flutter doctor --verbose` gives an error message
 like the following:
 
 ```plaintext
