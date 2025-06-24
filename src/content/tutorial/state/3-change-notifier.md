@@ -186,4 +186,5 @@ Hot reload your app and check your console output. You should see
 either an article title or an error message, which confirms that your
 Model and ViewModel are wired up correctly.
 
-[ChangeNotifier]: https://api.flutter.dev/flutter/foundation/ChangeNotifier-class.html
+[ChangeNotifier]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
+[try-catch block]: {{site.dart-site}}/language/error-handling

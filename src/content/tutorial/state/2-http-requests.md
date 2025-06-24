@@ -125,6 +125,6 @@ tutorial][].
 [architectural pattern]: /architecture/guide
 [JSON]: {{site.dart-site}}/tutorial/json
 [`async` and `await`]: https://dart.dev/language/async
-[Future]: https://api.dart.dev/stable/dart-async/Future-class.html
+[`Future`]: https://api.dart.dev/stable/dart-async/Future-class.html
 [Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
 [Dart Getting Started tutorial]: {{site.dart-site}}/tutorial/json
