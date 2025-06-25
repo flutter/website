@@ -51,7 +51,7 @@ class="site-mobile-screenshot" alt="ToDo application in dark mode" >
 
 :::note
 The full, runnable source-code for this example is
-available in [`/examples/cookbook/architecture/todo_data_service/`][].
+available in [`/examples/cookbook/app-architecture/todo_data_service/`][].
 :::
 
 ## Storing theme selection key-value data
