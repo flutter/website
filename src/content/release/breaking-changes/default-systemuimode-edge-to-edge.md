@@ -26,10 +26,12 @@ To maintain non-edge-to-edge app behavior
 (including an unset `SystemUiMode`),
 follow the steps in [migration guide](#migration-guide).
 
-Note: If your Flutter app targets Android SDK version 16 or later,
+:::note
+If your Flutter app targets Android SDK version 16 or later,
 your app automatically displays in edge-to-edge mode, and you
 cannot opt-out. To learn more about this change, check out the
 [Android 16 release notes][].
+:::
 
 [`SystemUiMode`]: {{site.api}}/flutter/services/SystemUiMode.html
 
