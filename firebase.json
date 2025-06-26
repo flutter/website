@@ -456,6 +456,7 @@
       { "source": "/go/go-router-v13-breaking-changes", "destination": "https://docs.google.com/document/d/1FRdW_p29zH0I3KEMQKW_QMMN7owiQ5Wx-PUhhZpehSg/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v14-breaking-changes", "destination": "https://docs.google.com/document/d/1Z6RYo7rGIdtryvQvAntekF53zoz4iy4XvIamBxRWa4Y/edit?usp=sharing&resourcekey=0-CH_yB7ur4gLvSuqPtB5bZA", "type": 301 },
       { "source": "/go/go-router-v15-breaking-changes", "destination": "https://docs.google.com/document/d/1107edi31gPcr4rIbUBvkLqZJiP999ZLI7d85InLbmIw/edit?usp=sharing", "type": 301 },
+      { "source": "/go/go-router-v15-2-0-breaking-changes", "destination": "https://docs.google.com/document/d/1SFRO8U2toOlAaZ38dsuEU7Wm5fn41wvBCWKiwADqfmw/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v2-5-breaking-changes", "destination": "https://docs.google.com/document/d/1MoEM3C6sDvMUuZYCxlYoMI2QJlkONu8i9G53uy5xk-M/edit", "type": 301 },
       { "source": "/go/go-router-v2-breaking-changes", "destination": "https://docs.google.com/document/d/12iXx214phOag-XCetaGbSzziXGaHX82V-wMi_-8W04M/edit", "type": 301 },
       { "source": "/go/go-router-v3-breaking-changes", "destination": "https://docs.google.com/document/d/1TZ8G_TZ6Dqcpz64qXxArGhtHKFECDEPZFEuxYwQjJz4/edit#", "type": 301 },
