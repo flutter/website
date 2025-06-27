@@ -28,7 +28,7 @@ The deprecation affects the following classes and methods:
 
 When using the deprecated `color` parameter, you'll see warnings like:
 
-```
+```txt
 'color' is deprecated and shouldn't be used. Use backgroundColor instead.
 This feature was deprecated after v3.33.0-0.2.pre.
 ```
@@ -36,7 +36,7 @@ This feature was deprecated after v3.33.0-0.2.pre.
 The classes also include assertion checks to prevent using both parameters
 simultaneously:
 
-```
+```txt
 The color and backgroundColor parameters mean the same thing. Only specify one.
 ```
 
@@ -104,7 +104,7 @@ themeData.copyWith(
 ## Timeline
 
 Landed in version: 3.33.0-0.2.pre<br>
-In stable release: Not yet
+In stable release: 3.35.4
 
 ## References
 
@@ -115,4 +115,4 @@ API documentation:
 
 Relevant PRs:
 
-- [AppBar theme color parameter deprecation #170624](https://github.com/flutter/flutter/pull/170624)
+- [AppBar theme color parameter deprecation #170624]({{site.github}}/flutter/flutter/pull/170624)

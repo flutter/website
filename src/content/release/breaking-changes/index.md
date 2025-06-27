@@ -63,6 +63,7 @@ They're sorted by release and listed in alphabetical order:
 
 * [Component theme normalization updates][]
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Deprecate app bar color][]
 * [Redesigned the `Radio` widget][]
 * [Removed semantics elevation and thickness][]
 * [The `Form` widget no longer supports being a sliver][]
@@ -71,6 +72,7 @@ They're sorted by release and listed in alphabetical order:
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[Deprecate app bar color]: /release/breaking-changes/appbar-theme-color
 [Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
