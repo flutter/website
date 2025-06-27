@@ -6,8 +6,8 @@ description: >
 
 ## Summary
 
-The [`SemanticsProperties.focusable`][] and [`SemanticsConfiguration.isFocusable`][] parameters were deprecated
-in favor of the [`SemanticsProperties.focused`][] and [`SemanticsConfiguration.isFocused`][] parameter.
+The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable` parameters were deprecated
+in favor of the `SemanticsProperties.focused` and `SemanticsConfiguration.isFocused` parameter.
 
 ## Context
 
@@ -22,8 +22,7 @@ favor of `SemanticsConfiguration.isFocused`, which is a nullable boolean, settin
 
 ## Migration guide
 
-Replace [`SemanticsConfiguration.isFocusable`][] with
-[`SemanticsConfiguration.isFocused`][]
+Replace `SemanticsConfiguration.isFocusable` with `SemanticsConfiguration.isFocused`
 
 Example 1: setting isFocused to `true` or `false` will automatically set isFocusable to `true`.
 
