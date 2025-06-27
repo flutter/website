@@ -24,7 +24,7 @@ favor of `SemanticsConfiguration.isFocused`, which is a nullable boolean, settin
 
 Replace `SemanticsConfiguration.isFocusable` with `SemanticsConfiguration.isFocused`
 
-Example 1: setting isFocused to `true` or `false` will automatically set isFocusable to `true`.
+### Example 1: setting isFocused to `true` or `false` will automatically set isFocusable to `true`.
 
 Code before migration:
 
@@ -43,7 +43,7 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 }
 ```
 
-Example 1: setting isFocused to null will automatically set isFocusable to `false`.
+### Example 2: setting isFocused to null will automatically set isFocusable to `false`.
 
 Code before migration:
 
