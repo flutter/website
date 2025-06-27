@@ -16,7 +16,7 @@ testable, reusable, and easier to maintain.
 <img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%" 
 alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
 
-A single feature in your app contains one of each MVVM component. In
+A single feature in your app contains each one of the MVVM components. In
 this tutorial, you'll create an `ArticleModel`, `ArticleViewModel` and
 `ArticleView`, in addition to Flutter widgets.
 
