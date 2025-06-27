@@ -43,7 +43,7 @@ The color and backgroundColor parameters mean the same thing. Only specify one.
 ## Migration guide
 
 Replace all uses of the `color` parameter with `backgroundColor` in
-AppBarTheme and AppBarThemeData constructors and copyWith methods.
+`AppBarTheme` and `AppBarThemeData` constructors and `copyWith` methods.
 
 Code before migration:
 
