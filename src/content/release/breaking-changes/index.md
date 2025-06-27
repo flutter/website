@@ -48,6 +48,7 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [Component theme normalization updates][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
@@ -55,6 +56,7 @@ They're sorted by release and listed in alphabetical order:
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
+[Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
