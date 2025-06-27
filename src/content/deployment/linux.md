@@ -106,7 +106,7 @@ summary: Super Cool App
 description: Super Cool App that does everything!
 
 confinement: strict
-base: core24
+base: core22
 grade: stable
 
 slots:
