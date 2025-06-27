@@ -110,8 +110,8 @@ In stable release: Not yet
 
 API documentation:
 
-- [`AppBarTheme`](https://master-api.flutter.dev/flutter/material/AppBarTheme-class.html)
-- [`AppBarThemeData`](https://master-api.flutter.dev/flutter/material/AppBarThemeData-class.html)
+- [`AppBarTheme`](https://main-api.flutter.dev/flutter/material/AppBarTheme-class.html)
+- [`AppBarThemeData`](https://main-api.flutter.dev/flutter/material/AppBarThemeData-class.html)
 
 Relevant PRs:
 
