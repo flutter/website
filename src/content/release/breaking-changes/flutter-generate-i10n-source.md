@@ -27,7 +27,7 @@ As the package isn't listed in an app's `pubspec.yaml`, and
 is created via re-writing the generated `package_config.json` file,
 many problems have been created.
 
-## Migration Guide
+## Migration guide
 
 This change only affects apps that have the
 following entry in their `pubspec.yaml`:
@@ -78,8 +78,8 @@ There are two ways to migrate away from importing `package:flutter_gen`:
 Landed in version: 3.28.0-0.0.pre<br>
 Stable release: 3.32.0
 
-One stable release after this change lands,
-`package:flutter_gen` support will be removed.
+**In the next stable release after this change lands,
+`package:flutter_gen` support will be removed.**
 
 ## References
 
