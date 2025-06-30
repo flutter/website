@@ -6,8 +6,9 @@ description: >
 
 ## Summary
 
-The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable` parameters were deprecated
-in favor of the `SemanticsProperties.focused` and `SemanticsConfiguration.isFocused` parameter.
+The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`
+parameters were deprecated in favor of the `SemanticsProperties.focused` and
+`SemanticsConfiguration.isFocused` parameters.
 
 ## Context
 
