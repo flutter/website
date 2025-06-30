@@ -1,5 +1,5 @@
 ---
-title: Deprecate  `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`
+title: Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`
 description: >
   The `focusable` parameter has been replaced by `isFocused`.
 ---
