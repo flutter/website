@@ -15,10 +15,10 @@ deprecated in favor of the `initialValue` parameter.
 
 The `value` parameter of the [`DropdownButtonFormField`][] constructor was used
 to initialize [`DropdownButtonFormField.initialValue`][].
-Not using the same name was confusing, for instance users assumed that setting
-`value` would change the current selected value. This was not the case as it
-was used to set the initial value which is the one used for the first build and
-when the field is reset.
+Not using the same name was confusing. For example,
+developers falsely assumed that setting `value` would change
+the current selected value. This was not the case—it
+only set the initial value or when the field is reset.
 
 ## Description of change
 
