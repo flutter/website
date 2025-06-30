@@ -12,7 +12,10 @@ parameters were deprecated in favor of the `SemanticsProperties.focused` and
 
 ## Context
 
-The `SemanticsConfiguration.isFocusable` is a boolean to describe if the semantics node can have input focus, and `SemanticsConfiguration.isFocused` is a boolean to describe if the semantics node has input focus.
+The `SemanticsConfiguration.isFocusable` is a boolean to describe
+whether the semantics node can have input focus, and
+`SemanticsConfiguration.isFocused` is a boolean to describe if the
+semantics node has input focus.
 
 same with `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
 
