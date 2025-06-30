@@ -17,7 +17,7 @@ whether the semantics node can have input focus, and
 `SemanticsConfiguration.isFocused` is a boolean to describe if the
 semantics node has input focus.
 
-same with `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
+The fix is the same with `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
 
 ## Description of change
 
