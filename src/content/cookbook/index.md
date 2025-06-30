@@ -34,7 +34,6 @@ reference to help you build up an application.
 - [Create a staggered menu animation](/cookbook/effects/staggered-menu-animation)
 - [Create a typing indicator](/cookbook/effects/typing-indicator)
 - [Create an expandable FAB](/cookbook/effects/expandable-fab)
-- [Create gradient chat bubbles](/cookbook/effects/gradient-bubbles)
 - [Drag a UI element](/cookbook/effects/drag-a-widget)
 
 
