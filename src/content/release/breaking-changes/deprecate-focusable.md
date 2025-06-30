@@ -22,7 +22,9 @@ The fix is the same with `SemanticsProperties.focusable` and `SemanticsPropertie
 ## Description of change
 
 The `SemanticsConfiguration.isFocusable` is deprecated in
-favor of `SemanticsConfiguration.isFocused`, which is a nullable boolean, setting it to true/false will automatically make isFocusable to `true` and setting it to null will make isFocusable to false.
+favor of `SemanticsConfiguration.isFocused`, which is a nullable boolean;
+setting it to true/false automatically sets `isFocusable` to `true`,
+and setting it to null sets `isFocusable` to `false`.
 
 ## Migration guide
 
