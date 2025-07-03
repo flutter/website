@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // #docregion app-localizations-import
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'l10n/app_localizations.dart';
 // #enddocregion app-localizations-import
 
 // #docregion localization-delegates-import

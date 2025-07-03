@@ -293,7 +293,7 @@ control placement in Jetpack Compose are one vertical and horizontal property
 from the following: `verticalArrangement`, `verticalAlignment`,
 `horizontalAlignment`, and `horizontalArrangement`. The trick to determine
 which is the `MainAxis` is to look for the property that ends in `arrangement`. 
-The `CrossAxis` will be the property that ends in `alightment`.
+The `CrossAxis` will be the property that ends in `alignment`.
 :::
 
 ### Displaying a list view

@@ -266,7 +266,7 @@ complete the following instructions:
 
 6. Now, run `flutter pub get` or `flutter run` and codegen takes place automatically.
    You should find generated files in the directory at the path you specified
-   with the `arb-dir` or `output-dir` options.
+   with the `arb-dir` or `output-dir` options
    Alternatively, you can also run `flutter gen-l10n` to
    generate the same files without running the app.
 
@@ -276,7 +276,7 @@ complete the following instructions:
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (app-localizations-import)"?>
    ```dart
-   import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+   import 'l10n/app_localizations.dart';
    ```
 
    <?code-excerpt "gen_l10n_example/lib/main.dart (material-app)"?>

@@ -18,14 +18,12 @@ description: >-
     change landed.
   * One of the most important things to fill out 
     in this template is the *Timeline* section.
-    I won't approve/merge the PR until the "landed in"
-    release info is provided. For example:
-    `Landed in version: 1.21.0-5.0.pre<br>`.
+    For example: `Landed in version: 1.21.0-5.0.pre<br>`.
     Do NOT list the PR in this section. Also, don't
     fill in the "stable" release info unless it's
     already in a published stable release.
-    After a stable release, I go through and confirm
-    that updates have made it to stable and I then
+    After a stable release, we confirm
+    that updates have made it to stable and then
     update the breaking change and the index file.
   * The text in this page should be backwards looking,
     so write about previous behavior in past tense,

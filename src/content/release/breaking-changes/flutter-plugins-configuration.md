@@ -124,7 +124,7 @@ To smoke test whether your build relies on a `.flutter-plugins` file,
 you can use the feature flag `explicit-package-dependencies`:
 
 ```console
-$ flutter config explicit-package-dependencies
+$ flutter config --explicit-package-dependencies
 ```
 
 Any build tools or scripts that might rely on the `.flutter-plugins` file
