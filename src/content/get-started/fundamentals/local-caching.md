@@ -200,10 +200,13 @@ For a more thorough guide, see the following resources:
 * Drift, a relational database: [`drift` package][]
 * Hive, a non-relational database: [`hive` package][]
 * Isar, a non-relational database: [`isar` package][]
+* Remote Caching, a lightweight caching system for API responses: [`remote_caching` package][]
 
 [`drift` package]: {{site.pub-pkg}}/drift
 [`hive` package]: {{site.pub-pkg}}/hive
 [`isar` package]: {{site.pub-pkg}}/isar
+['remote_caching' package]: {{site.pub-pkg}}/remote_caching
+
 [Persist data with SQLite]: /cookbook/persistence/sqlite
 [`sqlite3` package]: {{site.pub-pkg}}/sqlite3
 
