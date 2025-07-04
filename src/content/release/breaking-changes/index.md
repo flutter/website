@@ -51,6 +51,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
+[Deprecate app bar color]: /release/breaking-changes/appbar-theme-color
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
