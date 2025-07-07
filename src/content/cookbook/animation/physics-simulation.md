@@ -279,7 +279,7 @@ onPanEnd: (details) {
 ```
 
 :::note
-Now that the animation controller uses a simulation it's `duration` argument
+Now that the animation controller uses a simulation, its `duration` argument
 is no longer required.
 :::
 
