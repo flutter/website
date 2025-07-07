@@ -205,7 +205,7 @@ For a more thorough guide, see the following resources:
 [`drift` package]: {{site.pub-pkg}}/drift
 [`hive` package]: {{site.pub-pkg}}/hive
 [`isar` package]: {{site.pub-pkg}}/isar
-['remote_caching' package]: {{site.pub-pkg}}/remote_caching
+[`remote_caching` package]: {{site.pub-pkg}}/remote_caching
 
 [Persist data with SQLite]: /cookbook/persistence/sqlite
 [`sqlite3` package]: {{site.pub-pkg}}/sqlite3
