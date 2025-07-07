@@ -53,7 +53,7 @@
     - google
   type: quickstart
   link:
-    url: https://github.com/flutter/samplestree/main/dynamic_theme
+    url: https://github.com/flutter/samples/tree/main/dynamic_theme
     label: Flutter Github
 
 - name: Form app
@@ -63,7 +63,7 @@
     - layout
   type: quickstart
   link:
-    url: https://github.com/flutter/samplestree/main/form_app
+    url: https://github.com/flutter/samples/tree/main/form_app
     label: Flutter Github
 
 - name: AI todo list
