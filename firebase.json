@@ -492,6 +492,7 @@
       { "source": "/go/inheritedwidget-subscription", "destination": "https://docs.google.com/document/d/14BhIyj52NFYuyrWXe8bHJTZp7I67iKNmtOQXHCNH5GQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/inheritedwidget-workshop", "destination": "https://dartpad.dev/workshops.html?webserver=https://dartpad-workshops-io2021.web.app/inherited_widget", "type": 301 },
       { "source": "/go/input-field-autofill", "destination": "https://docs.google.com/document/d/1wYLsoc7NiHl2jFueB4Ros09E3nDCotdWVovDCFSMcAk/edit", "type": 301 },
+      { "source": "/go/intrinsic-box", "destination": "https://docs.google.com/document/d/1fTTEDEdH4i9mPXh7IiQ2w8TOwHYpGu7dSk1vFH2Hgow/edit", "type": 301 },
       { "source": "/go/introduce-disposable", "destination": "https://docs.google.com/document/d/1cjylBOczGk70x-sn1iZYVNAfpPZdtGWsm_KzoNQX0jc/edit", "type": 301 },
       { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 },
       { "source": "/go/ios-17-text-input", "destination": "https://docs.google.com/document/d/1sM3HMv-SQin39yX1aPUU7vtGv7Hcef1Quc3QhRXBl6A/edit?resourcekey=0-SFYD8vmOIkXiXCZvB1Wlcw", "type": 301 },
