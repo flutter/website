@@ -47,7 +47,7 @@ project(":app").projectDir = File(rootDir, "android/app/")
 
 #### or `build.gradle`
 
-Add the line:
+Add the following line:
 ```dart
 project(':app').projectDir = new File(rootDir, 'android/app/')
 ```
