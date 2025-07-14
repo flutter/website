@@ -40,7 +40,7 @@ val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("build").get(
 
 #### `build.gradle.kts`
 
-Add the line:
+Add the following line:
 ```dart
 project(":app").projectDir = File(rootDir, "android/app/")
 ```
