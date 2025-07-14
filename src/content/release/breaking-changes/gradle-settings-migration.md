@@ -12,7 +12,7 @@ completion in Android Studio.
 
 ## Context
 
-In order to detect Flutter and Gradle modules in one IDE instance the Gradle settings need to be
+In order to detect Flutter and Gradle modules in the same IDE instance, the Gradle settings need to be
 moved so that the IDE can see both project types at once.
 
 ## Migration guide
