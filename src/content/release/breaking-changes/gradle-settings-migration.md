@@ -19,9 +19,11 @@ moved so that the IDE can see both project types at once.
 
 ### Moving files
 
-The files `android/settings.gradle[.kts]` (with the `.kts` suffix when you use the Kotlin
-script), `android/build.gradle[.kts]`, `android/gradle.properties` and
-`android/local.properties` must be moved to the root directory of your project.
+The following files must be moved to the root directory of your project:
+- `android/settings.gradle[.kts]` (with the `.kts` suffix when you use the Kotlin script)
+- `android/build.gradle[.kts]`
+- `android/gradle.properties`
+- `android/local.properties`
 
 ### Changing files
 
