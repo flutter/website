@@ -29,7 +29,7 @@ The following files must be moved to the root directory of your project:
 
 #### `build.gradle.kts`
 
-The `newBuildDir` needs to be changed from:
+Change the `newBuildDir` value from:
 ```dart
 val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
 ```
