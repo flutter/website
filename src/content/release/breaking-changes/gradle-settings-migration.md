@@ -52,8 +52,8 @@ Add the following line:
 project(':app').projectDir = new File(rootDir, 'android/app/')
 ```
 
-When you have multiple modules then can add them in the `build.gradle[.kts]` too you just need to
-replace the module name and use your actual path.
+When your project has multiple modules, add them in `build.gradle[.kts]` and
+replace the module name with the actual path.
 
 ## Timeline
 
