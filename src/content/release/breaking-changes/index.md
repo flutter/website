@@ -50,6 +50,7 @@ They're sorted by release and listed in alphabetical order:
 * [Component theme normalization updates][]
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
 * [The Form widget no longer supports being a sliver.][]
+* [The default page transition on Android is now PredictiveBackPageTransitionBuilder][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
@@ -59,6 +60,7 @@ They're sorted by release and listed in alphabetical order:
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
 [The Form widget no longer supports being a sliver.]:/release/breaking-changes/form-semantics
+[The default page transition on Android is now PredictiveBackPageTransitionBuilder]:/release/breaking-changes/default-android-page-transition
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
