@@ -87,7 +87,7 @@ in the [DevTools issue tracker][]. Thanks!
 
 ## DevTools versioning
 
-DevTools is distrubited as part of the Flutter SDK. To get access to the latest
+DevTools is distributed as part of the Flutter SDK. To get access to the latest
 DevTools functionality, run `flutter upgrade` to get the most up-to-date version
 of Flutter. To access DevTools features before they hit the Flutter `stable`
 channel, consider switching to the `beta` or `main` channels.

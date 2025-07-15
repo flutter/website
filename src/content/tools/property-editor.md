@@ -217,7 +217,7 @@ properties of interest.
     * Use the filter menu button to open the filter options. Check "Only
       include properties that are set in the code."
     * This hides all properties that have not been explicitly set in your
-      code, allowing you to focus only on the properties you have explictly set.
+      code, allowing you to focus only on the properties you have explicitly set.
 
     ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}   
 
