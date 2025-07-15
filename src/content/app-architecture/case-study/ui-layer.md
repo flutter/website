@@ -636,7 +636,7 @@ the Command pattern. [Read about it on GitHub][].
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`notifyListeners`]: {{site.api}}/flutter/foundation/ChangeNotifier/notifyListeners.html
 [state-management documentation]: /get-started/fundamentals/state-management
-[`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
 [`flutter_command`]: {{site.pub-pkg}}/flutter_command
