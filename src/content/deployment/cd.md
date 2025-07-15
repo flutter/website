@@ -188,7 +188,7 @@ secrets in pull requests that you accept and merge.
            (for example, `osx_image: xcode9.2`).
     * In the script phase of the CI task:
          * Run `flutter build appbundle` or
-           `flutter build ios --release --no-codesign`,
+           `flutter build ios --release --no-codesign --config-only`,
            depending on the platform.
          * `cd android` or `cd ios`
          * `bundle exec fastlane [name of the lane]`
