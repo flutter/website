@@ -2266,6 +2266,15 @@ class SampleApp extends StatelessWidget {
 }
 ```
 
+## Homescreen Widgets
+
+### How do I create a homescreen widget? 
+
+Android homescreen widgets cannot be created fully using Flutter. They must 
+use either Jetpack Glance(preferred method) or XML layout code. Using
+the third-party package, [home_widget][], you can wire a homescreen widget 
+to Dart code, embed a Flutter component (as an image) in a host widget, and
+share data to/from Flutter to the homescreen widget.
 
 ## Databases and local storage
 
@@ -2385,3 +2394,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: /ui/widgets/layout
 [Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[home_widget]: https://pub.dev/packages/home_widget
