@@ -574,6 +574,18 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
+## Call Dart code / Render Flutter content in iOS app extensions 
+
+The [home_widget][] package provides a large amount of functionality,
+including allowing you to:
+
+* [respond to user input][] in app extensions 
+  using Dart Code.
+  
+* [render Flutter widgets][] in an app extension as an image, and,
+  
+* [save and retrieve data][] from `UserDefaults` on iOS.
+
 ## Other resources {: #other-resources }
 
 For step-by-step instruction for using app
@@ -587,3 +599,7 @@ Flutter Screen to an iOS app, see
 
 [Adding a Flutter Screen to an iOS app]: /add-to-app/ios/add-flutter-screen
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
+[home_widget]: https://pub.dev/packages/home_widget
+[save and retreive data]: https://docs.page/abausg/home_widget/usage/sync-data
+[render Flutter widgets]: https://docs.page/abausg/home_widget/features/render-flutter-widgets
+[respond to user input]: https://docs.page/abausg/home_widget/features/interactive-widgets
