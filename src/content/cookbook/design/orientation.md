@@ -74,7 +74,7 @@ If you're interested in the orientation of the screen,
 rather than the amount of space available to the parent,
 use `MediaQuery.orientationOf(context)` instead of an
 `OrientationBuilder` widget.
-Using `MediaQuery.orientationOf` as a way to orignize ui
+Using `MediaQuery.orientationOf` as a way to organize UI
 is [discouraged][]. Instead use `MediaQuery.sizeOf(context)`
 :::
 

@@ -503,7 +503,7 @@ Below, you can find the full `Command` class
 as implemented in the [Compass App example][]
 for the Flutter architecture guidelines. 
 It also uses the [`Result` class][] 
-to determine if the action completed successfuly or with an error.
+to determine if the action completed successfully or with an error.
 
 This implementation also includes two types of commands,
 a `Command0`, for actions without parameters, 
