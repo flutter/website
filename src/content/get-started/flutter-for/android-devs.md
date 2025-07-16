@@ -2266,7 +2266,7 @@ class SampleApp extends StatelessWidget {
 }
 ```
 
-## Homescreen Widgets
+## Homescreen widgets
 
 ### How do I create a homescreen widget? 
 
