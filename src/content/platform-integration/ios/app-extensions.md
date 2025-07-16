@@ -579,7 +579,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 The [home_widget][] package provides a large amount of functionality,
 which includes allowing the following:
 
-* [respond to user input][] in app extensions 
+* [Respond to user input][] in app extensions 
   using Dart Code.
   
 * [Render Flutter widgets][] in an app extension as an image.
