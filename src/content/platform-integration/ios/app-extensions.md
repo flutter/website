@@ -577,7 +577,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 ## Call Dart code / render Flutter content in iOS app extensions 
 
 The [home_widget][] package provides a large amount of functionality,
-including allowing you to:
+which includes allowing the following:
 
 * [respond to user input][] in app extensions 
   using Dart Code.
