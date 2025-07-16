@@ -574,7 +574,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
-## Call Dart code / Render Flutter content in iOS app extensions 
+## Call Dart code / render Flutter content in iOS app extensions 
 
 The [home_widget][] package provides a large amount of functionality,
 including allowing you to:
