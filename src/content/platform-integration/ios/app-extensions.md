@@ -584,7 +584,7 @@ which includes allowing the following:
   
 * [Render Flutter widgets][] in an app extension as an image.
   
-* [save and retrieve data][] from `UserDefaults` on iOS.
+* [Save and retrieve data][] from `UserDefaults` on iOS.
 
 ## Other resources {: #other-resources }
 
