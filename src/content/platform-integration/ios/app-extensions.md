@@ -600,6 +600,6 @@ Flutter Screen to an iOS app, see
 [Adding a Flutter Screen to an iOS app]: /add-to-app/ios/add-flutter-screen
 [lab]: {{site.codelabs}}/flutter-home-screen-widgets
 [home_widget]: https://pub.dev/packages/home_widget
-[save and retrieve data]: https://docs.page/abausg/home_widget/usage/sync-data
-[render Flutter widgets]: https://docs.page/abausg/home_widget/features/render-flutter-widgets
-[respond to user input]: https://docs.page/abausg/home_widget/features/interactive-widgets
+[Save and retrieve data]: https://docs.page/abausg/home_widget/usage/sync-data
+[Render Flutter widgets]: https://docs.page/abausg/home_widget/features/render-flutter-widgets
+[Respond to user input]: https://docs.page/abausg/home_widget/features/interactive-widgets
