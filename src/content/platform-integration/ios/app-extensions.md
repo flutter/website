@@ -582,7 +582,7 @@ which includes allowing the following:
 * [respond to user input][] in app extensions 
   using Dart Code.
   
-* [render Flutter widgets][] in an app extension as an image, and,
+* [Render Flutter widgets][] in an app extension as an image.
   
 * [save and retrieve data][] from `UserDefaults` on iOS.
 
