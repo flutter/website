@@ -749,7 +749,7 @@ The following are roughly equivalent Compose and Flutter code for using a font f
 as listed above.
 
 ```kotlin
-// Font files bunded with app
+// Font files bundled with app
 val firaSansFamily = FontFamily(
    Font(R.font.firasans_regular, FontWeight.Normal),
    // ...
@@ -778,7 +778,7 @@ After instantiating a provider that references the special strings for the font 
 you would use the same `FontFamily` declaration.
 
 ```kotlin
-// Font files bunded with app
+// Font files bundled with app
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
     providerPackage = "com.google.android.gms",

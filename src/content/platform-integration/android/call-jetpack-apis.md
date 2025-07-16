@@ -76,7 +76,7 @@ glue code.
 [`MethodChannel`][methodchannels-api-docs]s are an alternate
 way Flutter apps can invoke arbitrary native code.
 Unlike the FFI solution described in the previous step,
-MethodChannels are always asychronous, which
+MethodChannels are always asynchronous, which
 might or might not matter to you, depending on your use case. As
 with FFI and direct calls to native code, using a `MethodChannel`
 requires a small amount of glue code to translate your Dart objects

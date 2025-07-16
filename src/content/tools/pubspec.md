@@ -335,7 +335,7 @@ flutter:
 ```
 
 > NOTE: As of [#168433]({{site.github}}/flutter/flutter/pull/168433) on the
-> `main` channel, this propery has moved to the [`config`](#config) section:
+> `main` channel, this property has moved to the [`config`](#config) section:
 >
 > ```yaml title="pubspec.yaml"
 > flutter:
