@@ -324,6 +324,7 @@
       { "source": "/go/colorscheme-enhancements", "destination": "https://docs.google.com/document/d/1cIBW0jMRrtWVA5E0TB0qmwqSgLoVDIVPOysKYJOvH7U/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
+      { "source": "/go/compass-25", "destination": "https://github.com/flutter/demos/tree/main/compass_25", "type": 301 },
       { "source": "/go/configurable-autosubmit", "destination": "https://docs.google.com/document/d/14pf4jfBy1-PHYmJLVbeqrh1swTF01SZ2YD3DR_Qv3kM/edit?usp=sharing&resourcekey=0-AW7-kNNGmmpSUqyOvBdwRg", "type": 301 },
       { "source": "/go/contextual-menus", "destination": "https://docs.google.com/document/d/1F1itGgbSS3Cbq70hScSCNriDoux1sMGF9LHZsMdvU74/edit?resourcekey=0-RkHGwhe-tcoTGlaQyclPtQ", "type": 301 },
       { "source": "/go/cross_file-content-uri-implementation", "destination": "https://docs.google.com/document/d/1-d7uWlB9ERPIOFRQ1nJGGiPDb9ALh7QxincEPOmGc3c", "type": 301 },
