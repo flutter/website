@@ -25,7 +25,7 @@ to an existing project.
 To create a new app that includes web support, run the following command:
 
 ```console
-$ flutter create my_app 
+$ flutter create my_app
 ```
 
 ### Add web support to an existing project
@@ -38,7 +38,7 @@ $ flutter create . --platforms web
 ```
 
 This creates a `web/` directory containing the web assets used to bootstrap
-and run your Flutter app. 
+and run your Flutter app.
 
 ## Run your app
 
@@ -118,7 +118,7 @@ session by selecting a sample app provided by DartPad.
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
-[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=6_web_hot_reload.yml
+[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
 [GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
 
 ### Run your app using WebAssembly
