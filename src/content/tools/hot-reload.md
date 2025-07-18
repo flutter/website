@@ -76,25 +76,26 @@ The code updates and execution continues.
 **What is the difference between hot reload, hot restart,
 and full restart?**
 
-* **Hot reload** loads code changes into the VM and re-builds
-  the widget tree, preserving the app state;
+* **Hot reload** loads code changes into the VM or Chrome,
+  and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
   (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
-* **Hot restart** loads code changes into the VM,
+* **Hot restart** loads code changes into the VM or Chrome,
   and restarts the Flutter app, losing the app state.
+  On the web with the `-d chrome` device this can restart the
+  the app without a full browser page refresh.
   (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
 * **Full restart** restarts the iOS, Android, or web app.
   This takes longer because it also recompiles the
-  Java / Kotlin / Objective-C / Swift code. On the web,
-  it also restarts the Dart Development Compiler.
+  Java / Kotlin / Objective-C / Swift / JavaScript code.
+  On the web, it also restarts the Dart Development Compiler.
   There is no specific keyboard shortcut for this;
   you need to stop and start the run configuration.
 
-Flutter web currently supports hot restart and
-[hot reload behind an experimental flag][].
+Flutter web now supports hot restart and [hot reload][].
 :::
 
-[hot reload behind an experimental flag]: /platform-integration/web/building#hot-reload-web
+[hot reload]: /platform-integration/web/building#hot-reload-web
 
 ![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio

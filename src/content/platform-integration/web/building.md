@@ -58,40 +58,53 @@ navigate to a local URL in the browser of your choice.
 <a id="hot-reload-web" aria-hidden="true" ></a>
 
 :::note Hot reload on the web
-As of the Flutter 3.32 release, you can experiment
-with hot reload on the web behind a flag.
-[Hot restart][], which restarts your app
-without refreshing the web page,
-doesn't require a flag.
+As of the Flutter 3.35 release, hot reload is enabled
+on the web by default for the chrome device.
+[Hot restart][] is still available is still available as well.
 
 If you discover any issues we ask that you file a bug
-using our new [Web Hot Reload issue template][].
+using our [Web Hot Reload issue template][].
 Note this is in the Dart SDK repository where it's easier
 for us to track issues. Known issues can be seen in the
-associated [GitHub project][]. 
+associated [GitHub project][].
 
-To try hot reload for the web, pass the `--web-experimental-hot-reload` flag
-wherever you invoke `flutter run -d chrome`.
+Hot reload can be temporarily disabled with the
+`--no-web-experimental-hot-reload` flag
+wherever you invoke `flutter run`. This flag will be removed
+in a future release.
 
-### Running from VS Code
+### Disabling in VS Code
 
-If you use debug configurations in VS code,
-you can add this extra configuration to your
-[`launch.json` file][].
+To temporarily disable hot reload support from VS Code,
+update your [`launch.json` file][] file with
+the flag `--no-web-experimental-hot-reload`.
 
-### Running from the command line
+```plaintext
+"configurations": [
+    ...
+    {
+      "name": "Flutter for web (hot reload disabled)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "-d",
+        "chrome",
+        "--no-web-experimental-hot-reload",
+      ]
+    }
+  ]
+```
+
+### Disabling from the command line
 
 If you use `flutter run` from the command line,
-you can now run hot reload on the web with the
+you can temporarily disable hot reload on the web with the
 following command:
 
 ```console
-flutter run -d chrome --web-experimental-hot-reload
+flutter run -d chrome --no-web-experimental-hot-reload
 ```
-
-When hot reload is enabled,
-you can reload your application by pressing "r"
-in the running terminal, or "R" to hot restart.
 
 ### Reloading in DartPad
 
