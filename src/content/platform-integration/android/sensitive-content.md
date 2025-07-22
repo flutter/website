@@ -33,7 +33,9 @@ no advantage over having one `SensitiveContent` widget in your app’s widget tr
 
 ## Using the `SensitiveContent` widget
 
-Given some content that you want to protect from media screen share, e.g. some `MySensitiveContent()` widget, you can wrap it with the `SensitiveContent` widget like so:
+Given some content that you want to protect from media screen share
+(for example, a `MySensitiveContent()` widget),
+you can wrap it with the `SensitiveContent` widget as shown in the following example:
 
 ```dart
 class MyWidget extends StatelessWidget {
