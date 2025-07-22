@@ -51,7 +51,8 @@ class MyWidget extends StatelessWidget {
 
 ## For more information
 
-You can find more information about the [`SensitiveContent`] widget in its docs and more about the available content sensitivity modes in the [`ContentSensitivity`] docs.
+For more information, visit the [`SensitiveContent`][]
+and [`ContentSensitivity`][] API docs.
 
 [`SensitiveContent`]: {{site.api}}/flutter/widgets/SensitiveContent-class.html
 [`ContentSensitivity`]: {{site.api}}/flutter/services/ContentSensitivity.html
