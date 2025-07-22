@@ -20,7 +20,9 @@ during media projection. This feature is available on Android API 35+
 and has no effect on lower API versions.
 
 :::note
-The content sensitivity `autoSensitive` is not supported as of Flutter 3.35 and will behave the same as `notSensitive`. See the [tracking issue] for more information.
+The `autoSensitive` value isn't supported as of
+Flutter 3.35 and behaves the same as `notSensitive`.
+See the [tracking issue][] for more information.
 :::
 
 You may have as many SensitiveContent widgets in your happ as you wish, but if any one widget has sensitive content sensitivity, then the screen will be obscured during media projection; otherwise, it will not. Thus, for most use cases, using multiplied `SensitiveContent` widgets will provide no advantage over having one SensitiveContent widget in your app’s widget tree.
