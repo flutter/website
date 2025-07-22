@@ -24,8 +24,11 @@ The `autoSensitive` value isn't supported as of
 Flutter 3.35 and behaves the same as `notSensitive`.
 See the [tracking issue][] for more information.
 :::
-
-You may have as many SensitiveContent widgets in your happ as you wish, but if any one widget has sensitive content sensitivity, then the screen will be obscured during media projection; otherwise, it will not. Thus, for most use cases, using multiplied `SensitiveContent` widgets will provide no advantage over having one SensitiveContent widget in your app’s widget tree.
+You can have as many `SensitiveContent` widgets in your app as you wish,
+but if _any _ single widget has a `sensitive` content value,
+the screen will be obscured during media projection.
+Thus, for most use cases, using multiple `SensitiveContent` widgets provides
+no advantage over having one `SensitiveContent` widget in your app’s widget tree.
 
 
 ## Using the `SensitiveContent` widget
