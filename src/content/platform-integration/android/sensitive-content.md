@@ -9,7 +9,15 @@ This feature has landed in Flutter 3.35 and is available on Android API 35+.  Yo
 
 ## About the `SensitiveContent` widget
 
-You may use the SensitiveContent widget in your app to set the content sensitivity of a child `Widget` which will be one of the following [`ContentSensitivity`] values: notSensitive, sensitive, and autoSensitive. The mode that you choose will help determine the overall content sensitivity of your app, which will then be used to determine whether or not the device screen should be obscured (blacked out) during media projection to protect users’ sensitive data. Specifically, setting the `sensitive` mode will ensure that the screen is obscured during media projection. This feature is available on Android API 35+ and will act as a no-op on lower API versions.
+You might use the `SensitiveContent` widget in your app to set the content sensitivity
+of a child `Widget`, which will have one of the following [`ContentSensitivity`]
+values: `notSensitive`, `sensitive`, or `autoSensitive`.
+The mode that you choose helps to determine the overall content sensitivity of your app,
+which is then used to determine whether the device screen should be obscured
+(blacked out) during media projection to protect users’ sensitive data.
+Specifically, setting the `sensitive` mode ensures that the screen is obscured
+during media projection. This feature is available on Android API 35+
+and has no effect on lower API versions.
 
 :::note
 The content sensitivity `autoSensitive` is not supported as of Flutter 3.35 and will behave the same as `notSensitive`. See the [tracking issue] for more information.
