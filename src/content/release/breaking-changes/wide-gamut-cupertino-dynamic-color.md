@@ -52,7 +52,7 @@ final intBlue = _floatToInt8(color.b);
 
 ### Opacity
 
-Before Flutter 3.27, Color had the concept of "opacity" which showed up in the
+Before Flutter 3.27, `Color` had the concept of "opacity", which showed up in the
 methods `opacity` and `withOpacity()`. Since Flutter 3.27, alpha is stored as a 
 floating-point value. Using `.a` and `.withValues()` will give the full 
 expression of a floating-point value and won't be quantized (restricted to a 
