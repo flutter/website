@@ -86,7 +86,7 @@ server:
 
 #### Advanced regex proxy
 
-You can also use the `regex` field for more flexible and complex matching! 
+You can also use the `regex` field for more flexible and complex matching.
 
 ```yaml
 #web_dev_config.yaml
