@@ -18,7 +18,11 @@ and proxy rules&emdash;ensuring a consistent development environment.
 
 ## Create a configuration file
 
-Add a `web_dev_config.yaml` file in the root directory of your Flutter project. If you haven’t set up a Flutter project, visit [Building a web application with Flutter](https://docs.flutter.dev/platform-integration/web/building) to get started. 
+Add a `web_dev_config.yaml` file to the root directory of your Flutter project.
+If you haven’t set up a Flutter project,
+visit [Building a web application with Flutter][] to get started.
+
+[Building a web application with Flutter]: /platform-integration/web/building
 
 ## Add configuration settings
 
