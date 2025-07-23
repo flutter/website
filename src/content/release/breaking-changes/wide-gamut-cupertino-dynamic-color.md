@@ -7,7 +7,7 @@ description: >-
 ## Summary
 
 Certain properties and methods in [`CupertinoDynamicColor`][] were deprecated 
-to align with [`Color`][] class due to [wide gamut color spaces][] support 
+to align with the [`Color`][] class due to [wide gamut color spaces][] support 
 added in [Flutter 3.27][Migration guide for wide gamut Color].
 
 ## Context
