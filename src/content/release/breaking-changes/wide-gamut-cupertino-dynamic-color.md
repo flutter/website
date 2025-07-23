@@ -116,4 +116,4 @@ Relevant PRs:
 [Migration guide for wide gamut Color]: /release/breaking-changes/wide-gamut-framework
 [Implement wide gamut color support in the Framework]: {{site.repo.flutter}}/issues/127855
 [CupertinoDynamicColor is missing deprecation notices]: {{site.repo.flutter}}/issues/171059
-[Add missing deprecations to CupertinoDynamicColor]: {{site.repo.engine}}/pull/171160
+[Add missing deprecations to CupertinoDynamicColor]: {{site.repo.flutter}}/pull/171160
