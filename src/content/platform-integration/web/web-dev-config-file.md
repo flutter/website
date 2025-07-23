@@ -42,7 +42,7 @@ server:
 
 ### Custom headers
 
-You can also inject custom HTTP headers into the development server’s responses!
+You can also inject custom HTTP headers into the development server’s responses.
 
 ```yaml
 #web_dev_config.yaml
