@@ -101,8 +101,10 @@ server:
 
 **Explanation:** 
 
-* A request to `/users/123/` matches the first rule exactly, so it will be forwarded to `http://localhost:5000/users/123/`  
-* A request to `/api/v1/users/profile/` starts with the second rule path, so it will be forwarded to `http://localhost:4000/users/profile/?apiVersion=v1`
+* A request to `/users/123/` matches the first rule exactly,
+   so it is forwarded to `http://localhost:5000/users/123/`.
+* A request to `/api/v1/users/profile/` starts with the second rule path,
+   so it is forwarded to `http://localhost:4000/users/profile/?apiVersion=v1`.
 
 ## Configuration precedence
 
