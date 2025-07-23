@@ -28,7 +28,7 @@ visit [Building a web application with Flutter][] to get started.
 
 ### Basic server configuration
 
-You can define the host, port, and HTTPS settings for your development server!
+You can define the host, port, and HTTPS settings for your development server.
 
 ```yaml
 #web_dev_config.yaml
