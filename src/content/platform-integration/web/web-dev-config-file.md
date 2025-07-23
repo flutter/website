@@ -78,9 +78,11 @@ server:
 
 **Explanation:** 
 
-* A request to `/users/names` will be forwarded to `http://localhost:5000/users/names`.   
-* A request to `/data/2023/` will be forwarded to `http://localhost:4000/report/2023` because `replace: “/report/”` replaces the `/data/` prefix
-* A request to `/products/item/123` will be forwarded to `http://localhost:4000/item/123`. `replace: ""` removes the `/products/` prefix by replacing it with an empty string  
+* A request to `/users/names` is forwarded to `http://localhost:5000/users/names`.   
+* A request to `/data/2023/` is forwarded to `http://localhost:4000/report/2023`
+   because `replace: “/report/”` replaces the `/data/` prefix.
+* A request to `/products/item/123` is forwarded to `http://localhost:4000/item/123`
+   because`replace: ""` removes the `/products/` prefix by replacing it with an empty string. 
 
 #### Advanced regex proxy
 
