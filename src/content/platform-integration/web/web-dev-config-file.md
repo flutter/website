@@ -60,7 +60,7 @@ Requests are matched in order from the `web_dev_config.yaml` file.
 
 #### Basic string proxy
 
-Use the `prefix` field for simple path prefix matching!
+Use the `prefix` field for simple path prefix matching.
 
 ```yaml
 #web_dev_config.yaml
