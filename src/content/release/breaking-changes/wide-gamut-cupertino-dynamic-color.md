@@ -14,8 +14,8 @@ added in [Flutter 3.27][Migration guide for wide gamut Color].
 
 The `Color` class was updated to support wide gamut color spaces, but some 
 corresponding deprecations were not initially applied to 
-`CupertinoDynamicColor` due to its implementation rather than extension of 
-`Color`.
+`CupertinoDynamicColor` due to its implementation rather than due to
+the extension of `Color`.
 
 ## Description of change
 
