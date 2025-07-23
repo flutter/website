@@ -58,9 +58,9 @@ navigate to a local URL in the browser of your choice.
 <a id="hot-reload-web" aria-hidden="true" ></a>
 
 :::note Hot reload on the web
-As of the Flutter 3.35 release, hot reload is enabled
-on the web by default for the chrome device.
-[Hot restart][] is still available is still available as well.
+As of the Flutter 3.35 release,
+hot reload is enabled by default on the web.
+[Hot restart][] is still available as well.
 
 If you discover any issues we ask that you file a bug
 using our [Web Hot Reload issue template][].
