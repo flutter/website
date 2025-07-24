@@ -26,6 +26,12 @@ see [What's new][].**
 
 ## New to Flutter?
 
+Ready to build beautiful, multiplatform apps from a single codebase? This video will walk you through the fundamentals of Flutter and show you how to get started.
+
+{% videoWrapper 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
+{% endvideoWrapper %}
+
 Once you've [Set up Flutter][],
 you should follow the 
 [Write your first Flutter app][] codelab 
