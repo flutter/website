@@ -97,34 +97,10 @@ and [How Flutter makes the most of your platforms][].
 [How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
 [How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
 
-## Want to skill up?
+To learn about all of the Flutter video series, see our [videos][] page.
 
-Dive deeper into how Flutter works under the hood!
-Learn [why you write standalone widgets instead of
-using helper methods][standalone-widgets] or
-[what is "BuildContext" and how is it used][buildcontext]?
+We release new videos almost every week!
 
-<div class="card-grid">
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
-    </div>
-  </div>
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
-    </div>
-  </div>
-</div>
-
-[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
-
-To learn about all of the Flutter video series,
-see our [videos][] page.
-
-We release new videos almost every week on the Flutter YouTube channel:
-
-<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Check out the Flutter YouTube channel</a>
 
 [videos]: /resources/videos
