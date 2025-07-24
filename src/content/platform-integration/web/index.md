@@ -84,8 +84,8 @@ The following resources can help you get started:
 * You can chat and ask web-related questions on the
   **#help** channel on [Discord][].
 
-[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
 [Building a web application with Flutter]: /platform-integration/web/building
+[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
 [Creating responsive apps]: /ui/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue
