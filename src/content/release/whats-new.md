@@ -18,7 +18,9 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
+<div class="video-wrapper">
 {% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter' %}
+</div>
 
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
