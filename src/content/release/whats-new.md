@@ -18,14 +18,14 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
-{% ytEmbed 'v6Rzo5khNE8', 'What's new in Flutter', true %}
-
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
 ## 20 May 2025: Google I/O release 3.32
+
+{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
 
 Flutter 3.32 is live! For more information,
 check out the [Flutter 3.32 technical blog post][3.32-tech].
