@@ -24,6 +24,10 @@ Widget of the Week series cover a few of them.
 
 {{< youtube esnBf6V4C34 >}}
 
+{{< youtube ua54JU7k1Us >}}
+
+{{< youtube 24tg_N4sdMQ >}}
+
 ## More information {:.no_toc}
 
 
