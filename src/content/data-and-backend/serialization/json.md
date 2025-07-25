@@ -27,6 +27,8 @@ overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 :::
 
+{{< youtube ngsxzZt5DoY >}}
+
 ## Which JSON serialization method is right for me?
 
 This article covers two general strategies for working with JSON:

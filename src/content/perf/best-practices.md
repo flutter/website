@@ -106,6 +106,18 @@ For more information, check out:
 
 ---
 
+### Use StringBuffer for efficient string building
+
+When you need to build a string from multiple parts, especially inside a loop, 
+using the `+` operator can be inefficient because it creates a new `String` 
+object on each concatenation. A better approach is to use `StringBuffer`, 
+which collects all the strings and concatenates them only once, when you call 
+`toString()`.
+
+{{< youtube xSsFtDY-nOw >}}
+
+---
+
 ### Use saveLayer() thoughtfully
 
 Some Flutter code uses `saveLayer()`, an expensive operation,

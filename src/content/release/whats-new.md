@@ -18,6 +18,8 @@ join the [flutter-announce][] Google group.
 For Dart, you can join the [Dart Announce][] Google group,
 and review the [Dart changelog][].
 
+{{< youtube v6Rzo5khNE8 >}}
+
 [Dart Announce]: {{site.groups}}/a/dartlang.org/g/announce
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce

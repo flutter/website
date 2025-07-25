@@ -26,6 +26,8 @@ in order:
     through some of the most important pieces of 
     building Flutter applications.
 
+{{< youtube W4JWeQolJsU >}}
+
 ## Apply your existing knowledge
 
 * [Flutter for Android developers][]
