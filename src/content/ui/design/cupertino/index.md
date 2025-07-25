@@ -13,9 +13,15 @@ They also include iOS interactions and animations.
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
 
-{% ytEmbed '3PdUaidHc-E', 'Flutter\'s Cupertino Package' %}
+{% ytEmbed '3PdUaidHc-E', 'Flutter's Cupertino Package' %}
+
+To see a specific widget in action, the following video from the
+Widget of the Week series covers the `CupertinoRadio` widget.
+
+{{< youtube D0xwcz2IqAY >}}
 
 ## More information {:.no_toc}
+
 
 To learn more about using the Cupertino
 package with Flutter,
