@@ -4,9 +4,7 @@ description: Resources to help you learn Flutter.
 toc: false
 ---
 
-<div class="video-wrapper">
-{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
-</div>
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}
 
 ## For new Flutter developers
 
@@ -30,9 +28,7 @@ in order:
     through some of the most important pieces of 
     building Flutter applications.
 
-<div class="video-wrapper">
-{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
-</div>
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}
 
 ## Apply your existing knowledge
 
