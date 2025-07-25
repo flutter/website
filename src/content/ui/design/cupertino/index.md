@@ -45,7 +45,7 @@ check out the following resources:
 ```console
 cd path/to/flutter
 cd examples/api
-flutter run lib/cupertino/switch/cupertino_switch.0.dart
+flutter run lib/cupertino/switch/cupertino_switch.0.2.dart
 ```
 
 [Cupertino API examples]: {{site.github}}/flutter/flutter/tree/master/examples/api/lib/cupertino
