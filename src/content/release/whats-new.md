@@ -25,8 +25,6 @@ and review the [Dart changelog][].
 
 ## 20 May 2025: Google I/O release 3.32
 
-{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
-
 Flutter 3.32 is live! For more information,
 check out the [Flutter 3.32 technical blog post][3.32-tech].
 You might also check out the [Dart 3.8 release][] blog post.
