@@ -1,0 +1,21 @@
+# Flutter Documentation
+
+> Flutter is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.
+
+This file provides a guide for Large Language Models to understand the Flutter documentation website. For a complete list of all pages, please see the sitemap.
+
+## Key Resources
+
+*   [Get Started](/get-started/install) - The entry point for new Flutter developers.
+*   [Write your first Flutter app](/get-started/codelab) - A guided codelab for building a simple Flutter app.
+*   [Flutter Fundamentals](/get-started/fundamentals) - Core concepts of Flutter development.
+*   [Cookbook](/cookbook) - A collection of recipes for common Flutter tasks.
+*   [API Reference]({{site.api}}) - The complete Flutter API documentation.
+*   [What's New](/release/whats-new) - The latest updates and changes to Flutter.
+
+## Optional
+
+*   [Performance Best Practices](/perf/best-practices) - Tips for writing high-performance Flutter code.
+*   [Deployment](/deployment) - Guides for deploying Flutter apps to various platforms.
+*   [UI](/ui) - Information on Flutter's UI system, including widgets and layout.
+*   [Data & Backend](/data-and-backend) - How to work with data and backends in Flutter.
