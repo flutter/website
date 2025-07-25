@@ -4,6 +4,10 @@ description: Resources to help you learn Flutter.
 toc: false
 ---
 
+<div class="video-wrapper">
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
+</div>
+
 ## For new Flutter developers
 
 If you're brand new to Flutter, 
