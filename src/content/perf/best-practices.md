@@ -114,7 +114,7 @@ object on each concatenation. A better approach is to use `StringBuffer`,
 which collects all the strings and concatenates them only once, when you call 
 `toString()`.
 
-{{< youtube xSsFtDY-nOw >}}
+{% ytEmbed 'xSsFtDY-nOw', 'StringBuffer (Technique of the Week)' %}
 
 ---
 

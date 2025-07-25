@@ -26,7 +26,7 @@ in order:
     through some of the most important pieces of 
     building Flutter applications.
 
-{{< youtube W4JWeQolJsU >}}
+{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase' %}
 
 ## Apply your existing knowledge
 
