@@ -15,17 +15,12 @@ glimpse of the Cupertino package:
 
 {% ytEmbed '3PdUaidHc-E', 'Flutter's Cupertino Package' %}
 
-To see some Cupertino widgets in action, the following videos from the
-Widget of the Week series cover a few of them.
+To see a specific widget in action, the following video from the
+Widget of the Week series covers the `CupertinoRadio` widget.
 
 {{< youtube D0xwcz2IqAY >}}
 
-{{< youtube 5H-WvH5O29I >}}
-
-{{< youtube esnBf6V4C34 >}}
-
 ## More information {:.no_toc}
-
 
 
 To learn more about using the Cupertino
