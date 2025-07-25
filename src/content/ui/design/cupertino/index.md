@@ -13,7 +13,7 @@ They also include iOS interactions and animations.
 The following 15-minute video provides a high-level
 glimpse of the Cupertino package:
 
-{% ytEmbed '3PdUaidHc-E', 'Flutter's Cupertino Package' %}
+{% ytEmbed '3PdUaidHc-E', 'Flutter\'s Cupertino Package' %}
 
 To see some Cupertino widgets in action, the following videos from the
 Widget of the Week series cover a few of them.
