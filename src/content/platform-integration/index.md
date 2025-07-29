@@ -21,7 +21,7 @@ Occasionally you need to integrate with platform-specific functionality.
 For example, you might want to use a native library that's
 only available on iOS and iPadOS.
 For many use cases, you can find and use one of the many [Flutter plugins][]
-provided by the Flutter team and amazing Flutter community.
+provided by the Flutter team and the amazing Flutter community.
 If none of them meet your needs, you can
 [write platform-specific code][] and even [create your own plugin][].
 
