@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  go_router: ^14.6.2
+  go_router: ^16.0.0
 
 flutter:
   uses-material-design: true

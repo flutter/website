@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  ffi: ^2.1.0
+  ffi: ^2.1.4
 
 flutter:
   uses-material-design: true
