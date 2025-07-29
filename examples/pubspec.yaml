@@ -106,7 +106,7 @@ workspace:
   - integration_test
   - integration_test_migration
   - internationalization/add_language
-#  - internationalization/gen_l10n_example
+  - internationalization/gen_l10n_example
   - internationalization/intl_example
   - internationalization/minimal
   - layout/base
