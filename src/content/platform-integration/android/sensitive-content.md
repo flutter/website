@@ -5,9 +5,8 @@ description: >-
   Learn how to protect sensitive content in your Flutter app.
 ---
 
-This feature has landed in Flutter 3.35 and is available on Android API 35+.
-You can try it out by using the [`SensitiveContent`] widget. See the guide
-below for details.
+This feature is available on Android API 35+, and you can try it out by using
+the [`SensitiveContent`] widget. See the guide below for details.
 
 ## About the `SensitiveContent` widget
 
@@ -26,7 +25,7 @@ available on Android API 35+ and has no effect on lower API versions.
 
 :::note
 The `autoSensitive` value isn't supported as of Flutter 3.35 and behaves
-the same as `notSensitive`. See the [tracking issue][] for more information.
+the same as `notSensitive`. See the [Issue #160879][] for more information.
 :::
 
 ## Using the `SensitiveContent` widget
@@ -47,6 +46,9 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
+When running on Android API 35+, this code will have no effect, so the screen
+will never been obscured during media projection.
+
 ## For more information
 
 For more information, visit the [`SensitiveContent`][]
@@ -54,4 +56,4 @@ and [`ContentSensitivity`][] API docs.
 
 [`SensitiveContent`]: {{site.api}}/flutter/widgets/SensitiveContent-class.html
 [`ContentSensitivity`]: {{site.api}}/flutter/services/ContentSensitivity.html
-[tracking issue]: {{site.github}}/flutter/flutter/issues/160879
+[Issue #160879]: {{site.github}}/flutter/flutter/issues/160879
