@@ -1,8 +1,8 @@
 ---
 title: Set up and test drive Flutter
-short-title: Get started
+short-title: Set up & test drive
 description: >-
-  Set up Flutter on your device and
+  Set up Flutter on your device with VS Code and
   get started developing your first multi-platform app with Flutter!
 toc: false
 showBanner: false
@@ -21,7 +21,7 @@ and test drive Flutter's developer experience.
 
 :::
 
-## Choose your development platform {: #dev-platform}
+## Confirm your development platform {: #dev-platform}
 
 The instructions on this page are configured to cover
 installing and test driving Flutter on a **Windows**{:.selected-os-text} device.
@@ -160,7 +160,7 @@ follow the instructions in [Install Flutter manually][].
 
     To add the Dart and Flutter extensions to VS Code,
     visit the [Flutter extension's marketplace page][flutter-vscode],
-    and click **Install**.
+    then click **Install**.
     If prompted by your browser, allow it to open VS Code.
 
  1. <h3>Install Flutter with VS Code</h3>
