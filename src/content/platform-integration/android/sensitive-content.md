@@ -21,7 +21,8 @@ but if _any_ one of those widgets has a `sensitive` content value, then the
 screen will be obscured during media projection. Thus, for most use cases,
 using multiple `SensitiveContent` widgets provides no advantage over having
 one `SensitiveContent` widget in your app’s widget tree. This feature is
-available on Android API 35+ and has no effect on lower API versions.
+available on Android API 35+ and has no effect on lower API versions and
+other platforms.
 
 :::note
 The `autoSensitive` value isn't supported as of Flutter 3.35 and behaves
@@ -46,8 +47,10 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
-When running on Android API 35+, this code will have no effect, so the screen
-will never been obscured during media projection.
+When running on Android API 34 and below, the screen will not been obscured
+during media projection. The widget will exist in the tree but has no other
+effect, and you do not need to avoid usages of `SensitiveContent` on platforms
+that do not support this feature.
 
 ## For more information
 
