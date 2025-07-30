@@ -787,6 +787,7 @@
       { "source": "/to/platform-channels", "destination": "/platform-integration/platform-channels", "type": 301 },
       { "source": "/to/platform-channels-codec", "destination": "/platform-integration/platform-channels#codec", "type": 301 },
       { "source": "/to/platform-plugins", "destination": "/packages-and-plugins/using-packages", "type": 301 },
+      { "source": "/to/platform-setup", "destination": "/platform-integration#setup", "type": 301 },
       { "source": "/to/previous-releases", "destination": "/install/archive", "type": 301 },
       { "source": "/to/profile-mode", "destination": "/testing/build-modes#profile", "type": 301 },
       { "source": "/to/pub-system-cache", "destination": "https://dart.dev/tools/pub/glossary#system-cache", "type": 301 },
