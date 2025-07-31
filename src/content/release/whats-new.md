@@ -23,6 +23,51 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
+## 13 August 2025: release 3.35
+
+Flutter 3.35 is live! For more information,
+check out the [Flutter 3.35 technical blog post][3.35-tech].
+You might also check out the [Dart 3.9 release][] blog post.
+
+[3.32-tech]: {{site.medium}}/flutter/xxx
+[Dart 3.9 release]: {{site.medium}}/dartlang/xxx
+
+**Website update**
+
+xxx: Put any notable updates to the site infrastructure here. If none exist, delete this note and the "Website update" label. [PENDING]
+
+**Docs updated or added since the 3.32 release**
+
+* Hot reload is now available on the web and no longer
+  requires an experimental flag. For more information,
+  check out [hot reload][].
+
+* xxx: John R will be adding a placeholder AI page (and a link to it from the sidenav) that mentions Firebase Studio, Gemini, and links to info about the Dart MCP server. (And maybe his page will link to both Amanda's and Ander's Medium posts.) [PENDING]
+
+* Each stable release affects which versions of
+  deployed platforms that Flutter supports.
+  For more information, visit the updated
+  [supported platforms][] page.
+
+* On Android, you can now protect sensitive content,
+  such as customer information, when you share your screen.
+  Learn more by visiting [Protect your app's sensitive content][].
+
+* You can now configure server settings for web development.
+  Learn more at [Set up a web development configuration file][].
+
+* Also, don't forget to check out the [breaking changes][bc-3.35]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[bc-3.35]: xxx
+[hot reload]: /tools/hot-reload
+[Protect your app's sensitive content]: /platform-integration/android/sensitive-content
+[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
+[supported platforms]: /reference/supported-platforms
+
+---
+
 ## 20 May 2025: Google I/O release 3.32
 
 Flutter 3.32 is live! For more information,
@@ -85,39 +130,6 @@ so you might have already noticed some of them:
 [use hot reload on web]: /platform-integration/web/building#hot-reload-web
 [VS Code]: /tools/vs-code#property-editor
 [workflow for installing Flutter]: /install
-
----
-
-## 12 February 2025: 3.29 release
-
-Flutter 3.29 is live! For more information,
-check out the [Flutter 3.29 technical blog post][3.29-tech].
-You might also check out the [Dart 3.7 release][] blog post.
-
-[3.29-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-29-f90c380c2317
-[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
-
-**Docs updated or added since the 3.27 release**
-
-* As Flutter evolves, so do its internals. The
-  [Architectural overview page][] is updated.
-
-* For those of you coming from Android development
-  who are familiar with Jetpack Compose, please visit
-  [Flutter for Jetpack Compose devs][].
-
-* A new cookbook recipe is added for testing a
-  widget's orientation, [Test orientation][].
-
-* Also, don't forget to check out the [breaking changes][bc-3.29]
-  page for this release. That's also where you'll find useful
-  migration info.
-
-[Architectural overview page]: /resources/architectural-overview
-[bc-3.29]: /release/breaking-changes#released-in-flutter-3-29
-[Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
-[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
-[Test orientation]: /cookbook/testing/widget/orientation
 
 ---
 
