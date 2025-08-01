@@ -1,7 +1,9 @@
 ---
 title: Choose your development platform to get started
 short-title: Install
-description: Install Flutter and get started. Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
+description: >-
+  Install Flutter and get started developing!
+  Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.
 os-list: [Windows, macOS, Linux, ChromeOS]
 js: [{url: '/assets/js/page/install-current.js'}]
 ---
@@ -18,5 +20,14 @@ js: [{url: '/assets/js/page/install-current.js'}]
   </a>
 {% endfor %}
 </div>
+
+:::tip Planning to use VS Code?
+Are you planning to use VS Code to develop Flutter apps?
+
+Try out the streamlined getting-started experience
+outlined in [Set up and test drive Flutter][]!
+
+[Set up and test drive Flutter]: /get-started/quick
+:::
 
 {% render docs/china-notice.md %}
