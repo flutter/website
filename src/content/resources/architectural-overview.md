@@ -23,6 +23,12 @@ that feel natural on different platforms,
 embracing differences where they exist while sharing as
 much code as possible.
 
+> **Go deeper with the "How Flutter Works" series**
+>
+> Want a guided tour of Flutter's architecture? Watch this 6-part video series that explores what happens to your Dart code after you run `flutter build`, from the framework down to the engine.
+>
+> <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
 (On web, Flutter supports hot restart and
@@ -269,6 +275,12 @@ This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
 task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+
+## The Three Trees: Widget, Element, and RenderObject
+
+Flutter's UI is built on a foundational concept of three parallel trees. Widgets provide the declarative configuration you write, Elements manage the lifecycle and state, and RenderObjects handle the layout and painting. Understanding how these trees work together is key to mastering Flutter.
+
+To learn more, watch the videos on **[The Three Trees](https://www.youtube.com/watch?v=xiW3ahr4CRU&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM&index=2)** and the **[State class lifecycle](https://www.youtube.com/watch?v=FP737UMx7ss&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM&index=3)** from the "How Flutter Works" series.
 
 ## Widgets
 
@@ -544,6 +556,12 @@ Flutter apps use utility packages like
 `InheritedWidget`. Flutter's layered architecture also enables alternative
 approaches to implement the transformation of state into UI, such as the
 [flutter_hooks]({{site.pub}}/packages/flutter_hooks) package.
+
+## The Rendering Pipeline: From Widget to Pixel
+
+While many widgets simply configure other widgets, `RenderObjectWidget` is the bridge to the rendering layer. It creates and configures `RenderObject`s, which are responsible for the actual layout, painting, and hit-testing of your UI.
+
+For a visual explanation, see the videos on the **[RenderObjectWidget](https://www.youtube.com/watch?v=zcJlHVVM84I&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM&index=4)** and the **[RenderObject](https://www.youtube.com/watch?v=EuG12bebwac&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM&index=5)**.
 
 ## Rendering and layout
 
@@ -832,6 +850,8 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
+
+For a detailed look at how the engine and embedders work together, watch the video on **[The Flutter Engine and Embedders](https://www.youtube.com/watch?v=Y2aBMjWVv2Y&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM&index=6)**.
 
 ## Integrating with other code
 
