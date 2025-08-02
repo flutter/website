@@ -34,8 +34,8 @@ Because `Navigator` keeps a stack of `Route` objects (representing the history
 stack), The `push()` method also takes a `Route` object. The `MaterialPageRoute`
 object is a subclass of `Route` that specifies the transition animations for
 Material Design. For more examples of how to use the `Navigator`, follow the
-[navigation recipes][] from the Flutter Cookbook or visit the [Navigator API
-documentation][`Navigator`].
+[navigation recipes][] from the Flutter Cookbook or
+visit the [Navigator API documentation][`Navigator`].
 
 ## Using named routes
 
@@ -160,7 +160,7 @@ resources:
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
 [Deep linking]: /ui/navigation/deep-linking
-[navigation recipes]: /cookbook#navigation
+[navigation recipes]: /cookbook/navigation
 [`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [Navigate with named routes]: /cookbook/navigation/named-routes
 [go_router]: {{site.pub}}/packages/go_router

@@ -40,7 +40,7 @@ in order:
 ## Other resources
 
 * [Flutter samples][]
-* [Flutter cookbook][]
+* [Flutter learning resources][]
 * [Flutter API Docs][]
 
 Reach out to us on our [mailing list][]. 
@@ -50,7 +50,7 @@ Happy Fluttering!
 
 [Dart language overview]: {{site.dart-site}}/overview
 [Flutter API Docs]: {{site.api}}
-[Flutter cookbook]: /cookbook
+[Flutter learning resources]: /reference/learning-resources
 [Flutter for Android developers]: /get-started/flutter-for/android-devs
 [Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
 [Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs

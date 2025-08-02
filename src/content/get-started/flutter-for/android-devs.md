@@ -2059,8 +2059,7 @@ customize many parameters, such as:
 ## Form input
 
 For more information on using Forms,
-see [Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+see [Retrieve the value of a text field][].
 
 ### What is the equivalent of a "hint" on an Input?
 
@@ -2374,7 +2373,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[Flutter cookbook]: /cookbook
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
 [`geolocator`]: {{site.pub}}/packages/geolocator
