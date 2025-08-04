@@ -367,10 +367,6 @@ class ContactListsPage extends StatelessWidget {
 // ... _ContactListView from above.
 ```
 
-Until navigation is implemented in the next lesson, you won't be able
-to see the `ContactsListPage` in your running app. 
-
-
 This basic implementation demonstrates how to use slivers with dynamic
 data in a reusable component.
 

@@ -122,7 +122,7 @@ The app builds and launches in a new instance of Chrome. It displays
 ## Create the data models
 
 Before building the UI, create the data structures and sample data that
-your app will use. This section is lightly explained because it's not
+the app will use. This section is lightly explained because it's not
 the focus of this tutorial.
 
 ### `Contact` data
@@ -471,7 +471,7 @@ class ContactGroupsModel {
 }
 ```
 
-If you aren't familiar with `ValueNotifier`, we recommend that you
+If you aren't familiar with `ValueNotifier`, you should
 [complete the previous tutorial][] before continuing, which is all
 about state.
 

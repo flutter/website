@@ -145,12 +145,13 @@ screens.
 
 ## Update the main app
 
-Update your `main.dart` to use the adaptive layout, so you can see
+Update `main.dart` to use the adaptive layout, so you can see
 your changes.
 
 ```dart
 import 'package:flutter/cupertino.dart';
 import 'package:rolodex/data/contact_group.dart';
+import 'package:rolodex/screens/adaptive_layout.dart';
 
 final contactGroupsModel = ContactGroupsModel();
 
