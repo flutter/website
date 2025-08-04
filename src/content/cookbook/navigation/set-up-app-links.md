@@ -187,9 +187,8 @@ Just add it to the sha256_cert_fingerprints list
 ## Testing
 
 You can use a real device or the Emulator to test an app link,
-but first make sure you have executed `flutter run` in release mode
-at least once on the devices. This ensures that the Flutter
-application is installed.
+but first make sure you have executed `flutter run` at least once on
+the devices. This ensures that the Flutter application is installed.
 
 <img src="/assets/images/docs/cookbook/set-up-app-links-emulator-installed.png" alt="Emulator screenshot" width="50%" />
 
@@ -201,10 +200,6 @@ adb shell 'am start -a android.intent.action.VIEW \
     -d "http://<web-domain>/details"' \
     <package name>
 ```
-
-:::note
-For apps that are installed locally using Android Studio, 
-:::
 
 :::note
 This doesn't test whether the web files are
