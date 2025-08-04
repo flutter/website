@@ -989,7 +989,7 @@ of the `url_launcher` plugin available to `hello`:
 
 ```yaml
 dependencies:
-  url_launcher: ^6.3.1
+  url_launcher: ^6.3.2
 ```
 
 You can now `import 'package:url_launcher/url_launcher.dart'`
