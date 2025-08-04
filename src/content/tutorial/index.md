@@ -33,7 +33,7 @@ across platforms.
 You should be familiar with the Dart programming language to follow this
 tutorial. This tutorial assumes you have all the knowledge from its Dart
 counterpart, the [Learn Dart tutorial][]. (Alternatively, if you’re comfortable
-with another all-purpose object oriented language, like Java or Kotlin, you’ll	
+with another all-purpose object oriented language, like Java or Kotlin, you’ll
 likely be okay.)
 
 ## Set up
@@ -45,10 +45,6 @@ or by using [Firebase Studio][], a web IDE that supports Flutter.
 If you’re running locally, this tutorial assumes that you’re running Flutter
 apps on the web, using [Chrome][]. This doesn’t require Xcode or Android Studio, 
 and thus is the quickest way to start using Flutter.  
-If you prefer to run Flutter apps on Android, 
-iOS, MacOS, or any other supported platform, you’ll have no problem following the tutorial. 
-But some features, like resizing a window to see how UI renders 
-on different screen sizes, aren’t available on mobile simulators.
 
 ## Contents
 
