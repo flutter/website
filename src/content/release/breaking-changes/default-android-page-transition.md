@@ -1,6 +1,7 @@
 ---
-title: Replace with title of breaking change
-description: Brief description similar to the "context" section below. The description shouldn't have any linebreaks - let it go long and wrap. Text below should break at 80 chars or less.
+title: The default page transition on Android is now PredictiveBackPageTransitionBuilder
+description: Android's default page transition has been updated to match the
+platform and to support predictive back.
 ---
 
 {% comment %}
