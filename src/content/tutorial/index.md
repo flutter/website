@@ -14,12 +14,12 @@ By the end, you’ll have built a handful of small apps that demonstrate
 the critical features of Flutter development (and more!)
 
 {%- comment %}
-<!-- TODO(ewindmill) Embedded video -->
+TODO(ewindmill) welcome video
 {%- endcomment %}
 
 ## What is Flutter?
 
-Flutter is an open-source UI toolkit that helps you build native compiled, 
+Flutter is an open-source UI toolkit that helps you build natively compiled, 
 expressive apps across mobile, web, and desktop from a single codebase. 
 It’s declarative, reactive, features hot reload for fast development cycles, 
 and has a rich set of customizable widgets for creating expressive interfaces.
@@ -30,11 +30,11 @@ across platforms.
 
 ## How to use this tutorial
 
-You should be familiar with the Dart programming language to follow
-this tutorial. This tutorial assumes you have all the knowledge from
-its Dart counterpart, the [Learn Dart tutorial][]. (Alternatively, if
-you’re comfortable with another all-purpose object oriented language,
-like Java or Kotlin, you’ll likely be okay.)
+You should be familiar with the Dart programming language to follow this
+tutorial. This tutorial assumes you have all the knowledge from its Dart
+counterpart, the [Learn Dart tutorial][]. (Alternatively, if you’re comfortable
+with another all-purpose object oriented language, like Java or Kotlin, you’ll	
+likely be okay.)
 
 ## Set up
 
