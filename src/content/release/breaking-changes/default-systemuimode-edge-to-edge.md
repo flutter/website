@@ -19,12 +19,19 @@ mode in your app. See [flutter#169810] for more information.
 
 ## Summary
 
-If your Flutter app targets Android SDK version 15 or later,
+If your Flutter app targets Android SDK version 15,
 your app automatically displays in edge-to-edge mode,
 as documented on the [`SystemUiMode`][] API page.
 To maintain non-edge-to-edge app behavior
 (including an unset `SystemUiMode`),
 follow the steps in [migration guide](#migration-guide).
+
+:::note
+If your Flutter app targets Android SDK version 16 or later,
+your app automatically displays in edge-to-edge mode, and you
+cannot opt-out. To learn more about this change, check out the
+[Android 16 release notes][].
+:::
 
 [`SystemUiMode`]: {{site.api}}/flutter/services/SystemUiMode.html
 
@@ -32,7 +39,7 @@ follow the steps in [migration guide](#migration-guide).
 
 By default, Android enforces [edge-to-edge mode][] for all apps that
 target Android 15 or later.
-To learn more about this change, check out the [Android release notes][].
+To learn more about this change, check out the [Android 15 release notes][].
 This impacts devices running on Android SDK 15+ or API 35+.
 
 Prior to Flutter 3.27, Flutter apps target Android 14 by default and
@@ -46,7 +53,7 @@ If your app explicitly sets `SystemUiMode.edgeToEdge` to run in
 edge-to-edge mode by calling [`SystemChrome.setEnabledSystemUIMode`][],
 then your app is already migrated. Apps needing more time to migrate to
 edge-to-edge mode must use the following steps to opt out on
-devices running Android SDK 15+.
+devices running Android SDK 15.
 
 Be aware of the following:
 
@@ -57,7 +64,8 @@ Be aware of the following:
     removes the ability to opt out**.
 
 [edge-to-edge mode]: {{site.android-dev}}/develop/ui/views/layout/edge-to-edge
-[Android release notes]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
+[Android 15 release notes]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
+[Android 16 release notes]: {{site.android-dev}}/about/versions/16/behavior-changes-16#edge-to-edge
 [`SystemChrome.setEnabledSystemUIMode`]: {{site.api}}/flutter/services/SystemChrome/setEnabledSystemUIMode.html
 
 ## Migration guide
@@ -105,7 +113,7 @@ There, add the following attribute to the style:
 ```
 
 This modified style opts your app out of edge-to-edge for
-apps targeting Android SDK 15+.
+apps targeting Android SDK 15.
 So now you're done!
 
 ## Timeline
@@ -123,7 +131,9 @@ Stable release: 3.27
 
 * [The supported Flutter `SystemUiMode`s][]
 * [The Android 15 edge-to-edge behavior changes guide][]
+* [The Android 16 edge-to-edge behavior changes guide][]
 
 [The supported Flutter `SystemUiMode`s]: {{site.api}}/flutter/services/SystemUiMode.html
 [The Android 15 edge-to-edge behavior changes guide]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
+[The Android 16 edge-to-edge behavior changes guide]: {{site.android-dev}}/about/versions/16/behavior-changes-16#edge-to-edge
 [flutter#169810]: https://github.com/flutter/flutter/issues/169810

@@ -13,7 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   css_colors: ^1.1.7
-  url_launcher: ^6.3.1
+  url_launcher: ^6.3.2
   battery: ^2.0.3
   flutter_test:
     sdk: flutter

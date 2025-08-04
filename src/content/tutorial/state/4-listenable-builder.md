@@ -148,7 +148,7 @@ This is an excellent example of how a declarative, reactive framework
 like Flutter and a pattern like MVVM work together: The UI is rendered
 based on the state, and updates when a state changes demands it, but
 it doesn't manage any state or the process of updating itself. The
-business logic and rendering are completely separate from eachother.
+business logic and rendering are completely separate from each other.
 
 
 ## Complete the UI

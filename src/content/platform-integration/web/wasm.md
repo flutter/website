@@ -83,7 +83,7 @@ const isRunningWithWasm = bool.fromEnvironment('dart.tool.dart2wasm');
 ```
 
 Alternatively, you can use differences in number representations
-to test whether the native (Wasm) number representaton is used.
+to test whether the native (Wasm) number representation is used.
 
 ```dart
 final isRunningWithWasm = identical(double.nan, double.nan);

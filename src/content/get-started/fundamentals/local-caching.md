@@ -198,12 +198,13 @@ For a more thorough guide, see the following resources:
 * Cookbook: [Persist data with SQLite][]
 * SQLite alternate: [`sqlite3` package][]
 * Drift, a relational database: [`drift` package][]
-* Hive, a non-relational database: [`hive` package][]
-* Isar, a non-relational database: [`isar` package][]
+* Hive CE, a non-relational database: [`hive_ce` package][]
+* Remote Caching, a lightweight caching system for API responses: [`remote_caching` package][]
 
 [`drift` package]: {{site.pub-pkg}}/drift
-[`hive` package]: {{site.pub-pkg}}/hive
-[`isar` package]: {{site.pub-pkg}}/isar
+[`hive_ce` package]: {{site.pub-pkg}}/hive_ce
+[`remote_caching` package]: {{site.pub-pkg}}/remote_caching
+
 [Persist data with SQLite]: /cookbook/persistence/sqlite
 [`sqlite3` package]: {{site.pub-pkg}}/sqlite3
 
