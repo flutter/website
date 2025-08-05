@@ -35,8 +35,7 @@ The following information is available for each Flutter release in the
 SDK archive:
 
 *   **Flutter version**: The version number of the Flutter SDK
-    (for example, 3.0.0, 2.10.5). This follows semantic versioning, indicating
-    the significance of changes between releases.
+    (for example, 3.0.0, 2.10.5). Flutter doesn't follow semantic versioning.
 *   **Architecture**: The processor architecture the SDK is built for
     (for example, x64, arm64). This specifies the type of processor the SDK is
     compatible with.
