@@ -142,7 +142,10 @@
 - title: App solutions
   children:
     - title: Create with AI
+      permalink: /ai
       children:
+        - title: Overview
+          permalink: /ai
         - title: AI Toolkit
           permalink: /ai-toolkit
           expanded: true
