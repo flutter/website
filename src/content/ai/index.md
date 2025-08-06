@@ -1,24 +1,84 @@
 ---
 title: Create with AI
 description: >
-  Learn how to use AI to build Flutter apps.
+  Learn how to use AI to build Flutter apps, from powerful SDKs that integrate AI features directly into your app to tools that accelerate your development workflow.
 ---
 
-Why use Flutter and AI?
-* Add AI features to your Dart or Flutter app, focusing on app logic and let
-  Google SDKs like Firebase AI Logic do the rest
-* Use models built on Google's extensive research and development (or other
-  models?)
+This guide covers how you can leverage AI tools to build AI-powered features for
+your Flutter apps and streamline your Flutter and Dart development.
+
+## Build AI-powered experiences with Flutter
+
+Using AI in your Flutter app unlocks new user experiences that allow your app
+to support natural language understanding and content generation. 
+
+To get started building AI-powered experiences in Flutter, check out these 
+resources:
+
+* [Firebase AI Logic][] - The official Firebase SDK for using generative AI
+  features directly in Flutter. Compatible with the Gemini Developer API or
+  Vertex AI.
+* [Flutter AI Toolkit][] - A sample app with pre-built widgets to help you build
+  AI-powered features in Flutter
+
+---
+
+## AI development tools
+
+AI can not only be a feature in your app, but also a powerful assistant in your
+development workflow. Tools like Gemini Code Assist and the Gemini CLI can help
+you write code faster, understand complex concepts, and reduce boilerplate.
+
+### Gemini Code Assist
+
+[Gemini Code Assist][] is an AI-powered collaborator available in Visual Studio Code
+and JetBrains IDEs (including Android Studio). It has a deep understanding of
+your project's codebase and can help you with:
+
+* **Code completion and generation**: It suggests and generates entire blocks of
+  code based on the context of what you're writing.
+* **In-editor chat**: You can ask questions about your code, Flutter concepts,
+  or best practices directly within your IDE.
+* **Debugging and explanation**: If you encounter an error, you can ask Gemini
+  Code Assist to explain it and suggest a fix, and [Dart Model Context Protocol (MCP)
+server][]
 
 
-Table of contents:
-* How to use AI development tools like Gemini CLI and Gemini Code Assist with
-  Flutter
-* How and why to use the Dart MCP server (https://dart.dev/tools/mcp-server)
-* Link to Vertex AI in Firebase
-* Link to AI toolkit 
-* Link to video - [How to build agentic apps with Flutter and Firebase AI Logic][]
-* Link to Firebase AI Logic website
+### Gemini CLI
 
-[AI toolkit]: /ai-toolkit
-[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
+The [Gemini CLI][] is a command-line AI workflow tool. It allows you to interact
+with Gemini models for a variety of tasks without leaving your development
+environment. You can use it to:
+
+* Quickly scaffold a new Flutter widget, Dart function, or a complete app.
+* Use MCP server tools, such as the Dart MCP server
+* Automate tasks like committing and pushing changes to a Git repository
+
+To get started, visit the [Gemini CLI][] website or try this [Gemini CLI
+codelab][].
+
+---
+
+## Dart Model Context Protocol (MCP) Server
+
+For AI tools like Gemini Code Assist and the Gemini CLI to provide assistance
+during Flutter development, they need to use tools that communicate with Dart and
+Flutter's developer tools. The **Dart Model Context Protocol (MCP) server** makes
+this possible.
+
+The MCP server provides a growing list of tools to analyze and fix errors, hot
+reload, get the selected widget, and more. This bridges the gap between the AI's
+natural language understanding, and Dart and Flutter's suite of developer tools.
+
+To get started, check out the official documentation for the [Dart MCP server][]
+on dart.dev.
+
+---
+
+[Gemini Code Assist]: https://codeassist.google/
+[Gemini CLI codelab]: https://codelabs.developers.google.com/gemini-cli-hands-on
+[Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
+[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}/watch?v=xo271p-Fl_4
+[Flutter AI Toolkit]: {{site.url}}/ai-toolkit
+[Dart MCP server]: {{site.dart-site}}/tools/mcp-server)
+[Dart Model Context Protocol (MCP) server]: #dart-model-context-protocol-mcp-server
