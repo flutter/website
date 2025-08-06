@@ -1,7 +1,9 @@
 ---
 title: Create with AI
 description: >
-  Learn how to use AI to build Flutter apps, from powerful SDKs that integrate AI features directly into your app to tools that accelerate your development workflow.
+  Learn how to use AI to build Flutter apps, from powerful SDKs that integrate
+  AI features directly into your app to tools that accelerate your development
+  workflow.
 ---
 
 This guide covers how you can leverage AI tools to build AI-powered features for
