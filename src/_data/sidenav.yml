@@ -148,7 +148,7 @@
           permalink: /ai
         - title: AI Toolkit
           permalink: /ai-toolkit
-          expanded: true
+          expanded: false
           children:
             - title: Overview
               permalink: /ai-toolkit
