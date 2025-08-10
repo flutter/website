@@ -821,7 +821,7 @@
       { "source": "/to/web-images", "destination": "/platform-integration/web/web-images", "type": 301 },
       { "source": "/to/web-multiview-runwidget", "destination": "/platform-integration/web/embedding-flutter-web#replace-runapp-by-runwidget-in-dart", "type": 301 },
       { "source": "/to/web-renderers", "destination": "/platform-integration/web/renderers", "type": 301 },
-      { "source": "/to/widget-previews", "destination": "/development/tools/widget-previews", "type": 301 },
+     { "source": "/to/widget-previews", "destination": "https://docs.google.com/document/d/1iMHDjC8HY_0xoOh1soxIf3MWLCtz4nD_Vn2goodO5YA/edit?tab=t.cf4w60pgaj0u", "type": 301 },
       { "source": "/to/widget-testing", "destination": "/cookbook/testing/widget/introduction", "type": 301 },
       { "source": "/to/windows-android-setup", "destination": "/get-started/install/windows/mobile", "type": 301 },
       { "source": "/to/windows-ffi", "destination": "/platform-integration/windows/building#integrating-with-windows", "type": 301 },
