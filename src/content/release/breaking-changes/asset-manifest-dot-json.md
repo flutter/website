@@ -100,4 +100,4 @@ Relevant PR:
 [`AssetManifest`]: {{site.api}}/flutter/services/AssetManifest-class.html
 [(Issue #143577)]: {{site.repo.flutter}}/issues/143577
 [`standard_message_codec`]: {{site.pub-pkg}}/standard_message_codec
-[PR 169382]: {{site.repo.flutter}}/pull/172594
+[PR 172594]: {{site.repo.flutter}}/pull/172594
