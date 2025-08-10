@@ -3,12 +3,12 @@ description: Background parsing
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.9.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.4.0
+  http: ^1.5.0
 
 flutter:
   uses-material-design: true
