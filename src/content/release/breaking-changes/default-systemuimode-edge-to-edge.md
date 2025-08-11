@@ -119,7 +119,7 @@ Add the following attribute to the appropriate style:
 ```
 
 Make sure to apply the same change in the night mode styles file as well:
-`your_app/android/app/src/main/res/values-night/styles.xml`
+`your_app/android/app/src/main/res/values-night/styles.xml`.
 
 Ensure both styles are updated consistently in both files.
 
