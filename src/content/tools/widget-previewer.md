@@ -7,10 +7,6 @@ In this guide, you will learn how to use the
 Flutter Widget Previewer to see your widgets render in
 real-time, separate from a full app.
 
-## What is it?
-
-Put some text here.
-
 :::note
 The Flutter Widget Preview requires Flutter version 3.35 or
 higher.
