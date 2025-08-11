@@ -85,7 +85,7 @@ dev_dependencies:
 
   [!generate: true!] # Enables generation of localized strings from arb files
 
-  [!config:!] # App-specific configuration flags that mirror flutter config
+  [!config:!] # App-specific configuration flags that mirror `flutter config`
     [!enable-swift-package-manager: true!]
 
   [!assets:!]  # Lists assets, such as image files
@@ -239,6 +239,15 @@ flutter:
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
+
+Keys include:
+
+* `cli-animations`, which disables the `flutter` CLI's animations if set to `false`.
+  Defaults to `true`.
+* `enable-swift-package-manager`, which enables [Swift Package Manager integration][]
+  for iOS and macOS projects.
+
+[Swift Package Manager integration]: /packages-and-plugins/swift-package-manager/for-app-developers
 
 ### default-flavor field
 
