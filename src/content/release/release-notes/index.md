@@ -101,7 +101,7 @@ check out the Flutter [CHANGELOG][].
 * Earlier
   * [Archived release notes][]
 
-[3.35.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-35 
+[3.35.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-35-c58ef72e3766
 [3.35.0 release notes & change log]: /release/release-notes/release-notes-3.35.0
 [3.35.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-35
 [3.32.0 announcement]: {{site.flutter-medium}}/whats-new-in-flutter-3-32-40c1086bab6e
