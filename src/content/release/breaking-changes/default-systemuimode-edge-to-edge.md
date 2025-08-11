@@ -106,7 +106,7 @@ Add the following attribute to the appropriate style:
 <resources>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         ...
-	      <!-- Add the following line: -->
+        <!-- Add the following line: -->
         <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
     </style>
     ...
