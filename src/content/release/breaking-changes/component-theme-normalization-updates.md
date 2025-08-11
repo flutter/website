@@ -98,8 +98,8 @@ const TimePickerThemeData timePickerTheme = TimePickerThemeData(inputDecorationT
 
 ## Timeline
 
-Landed in version: 3.33.0-1.0.pre<br>
-Stable release: Not yet
+Landed in version: 3.33.0-1.0.pre through 3.35.0-0.0.pre<br>
+Stable release: 3.35
 
 ## References
 
