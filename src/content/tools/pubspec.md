@@ -244,8 +244,8 @@ Keys include:
 
 * `cli-animations`, which disables the `flutter` CLI's animations if set to `false`.
   Defaults to `true`.
-* `enable-swift-package-manager`, which enables [Swift Package Manager integration][]
-  for iOS and macOS projects.
+* `enable-swift-package-manager`, which enables the
+  [Swift Package Manager integration][] for iOS and macOS projects.
 
 [Swift Package Manager integration]: /packages-and-plugins/swift-package-manager/for-app-developers
 
