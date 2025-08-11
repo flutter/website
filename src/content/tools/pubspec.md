@@ -229,7 +229,7 @@ is executed.
 > [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
 > channel.
 
-The available keys mirror those available in `flutter config --help`.
+The available keys mirror those available in `flutter config --list`.
 
 ```yaml title="pubspec.yaml"
 flutter:
@@ -237,6 +237,8 @@ flutter:
     cli-animations: false
     enable-swift-package-manager: true
 ```
+
+Use `flutter config --help` for a description of each flag.
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
