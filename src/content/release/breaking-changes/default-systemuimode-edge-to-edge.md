@@ -97,7 +97,7 @@ Modify these default styles in your manifest file:
 ```
 
 Locate the style definition in:
-`your_app/android/app/src/main/res/values/styles.xml`
+`your_app/android/app/src/main/res/values/styles.xml`.
 
 Add the following attribute to the appropriate style:
 
