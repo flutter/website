@@ -87,6 +87,11 @@
   id: async
 - name: Scrolling
   description: Scroll multiple widgets as children of the parent.
+  subcategories:
+    - name: 'Sliver widgets'
+      description: >-
+        These widgets take a portion of a CustomScrollView and
+        apply a layout to that portion.
   id: scrolling
 - name: Accessibility
   description: Make your app accessible.

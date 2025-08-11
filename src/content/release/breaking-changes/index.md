@@ -48,6 +48,9 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [Component theme normalization updates][]
+* [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [The Form widget no longer supports being a sliver.][]
+* [Migration guide for wide gamut CupertinoDynamicColor][]
 
 [Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
@@ -55,6 +58,9 @@ They're sorted by release and listed in alphabetical order:
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
+[Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[The Form widget no longer supports being a sliver.]: /release/breaking-changes/form-semantics
+[Migration guide for wide gamut CupertinoDynamicColor]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
@@ -70,7 +76,6 @@ They're sorted by release and listed in alphabetical order:
 * [Changing the default `goldenFileComparator` for `integration_test`s][]
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
-* [Component theme normalization updates][]
 
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
 [Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: /release/breaking-changes/expansion-tile-controller
@@ -82,7 +87,7 @@ They're sorted by release and listed in alphabetical order:
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
 [Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
-[Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
+
 <a id="released-in-flutter-329" aria-hidden="true"></a>
 ### Released in Flutter 3.29
 

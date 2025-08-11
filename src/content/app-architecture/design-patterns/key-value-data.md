@@ -243,7 +243,7 @@ hiding this third-party dependency from the rest of the application
 
 :::note
 A third-party dependency is a way to refer to packages and plugins 
-eveloped by other developers outside your organization.
+developed by other programmers outside of your organization.
 :::
 
 <?code-excerpt "lib/data/services/shared_preferences_service.dart (SharedPreferencesService)"?>

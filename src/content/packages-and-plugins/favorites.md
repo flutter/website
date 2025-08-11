@@ -55,7 +55,6 @@ are as follows:
 * Hillel Coren
 * Ander Dobo
 * Simon Lightfoot
-* Lara Martín
 * John Ryan
 * Diego Velasquez
 
