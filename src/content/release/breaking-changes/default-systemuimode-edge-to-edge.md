@@ -99,7 +99,7 @@ Modify these default styles in your manifest file:
 Locate the style definition in:
 `your_app/android/app/src/main/res/values/styles.xml`.
 
-Add the following attribute to the appropriate style:
+Add the following attribute to the appropriate styles:
 
 ```xml title="styles.xml" highlightLines=6,12
 <?xml version="1.0" encoding="utf-8"?>
