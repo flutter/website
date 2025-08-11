@@ -101,7 +101,7 @@ Locate the style definition in:
 
 Add the following attribute to the appropriate style:
 
-```xml title="styles.xml" highlightLines=7
+```xml title="styles.xml" highlightLines=6,12
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
