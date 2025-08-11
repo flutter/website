@@ -229,25 +229,17 @@ is executed.
 > [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
 > channel.
 
-The available keys mirror those available in `flutter config --list`.
+The available keys mirror those available in `flutter config --help`.
 
 ```yaml title="pubspec.yaml"
 flutter:
   config:
+    cli-animations: false
     enable-swift-package-manager: true
 ```
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
-
-Keys include:
-
-* `cli-animations`, which disables the `flutter` CLI's animations if set to `false`.
-  Defaults to `true`.
-* `enable-swift-package-manager`, which enables the
-  [Swift Package Manager integration][] for iOS and macOS projects.
-
-[Swift Package Manager integration]: /packages-and-plugins/swift-package-manager/for-app-developers
 
 ### default-flavor field
 
