@@ -593,7 +593,7 @@ Those parameters can be specified as the value
 of the placeholder's `optionalParameters` object.
 For example, to specify the optional `decimalDigits`
 parameter for `compactCurrency`,
-make the following changes to the `lib/l10n/app_en.arg` file:
+make the following changes to the `lib/l10n/app_en.arb` file:
 
 {% raw %}
 <?code-excerpt "gen_l10n_example/lib/l10n/app_en.arb" skip="34" take="13" replace="/},$/}/g"?>
