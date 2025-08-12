@@ -550,6 +550,8 @@
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
           permalink:  /platform-integration/android/chromeos
+        - title: Protect your app's sensitive content
+          permalink: /platform-integration/android/sensitive-content
     - title: iOS
       permalink: /platform-integration/ios
       children:
