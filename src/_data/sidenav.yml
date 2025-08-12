@@ -141,27 +141,6 @@
 
 - title: App solutions
   children:
-    - title: Create with AI
-      permalink: /ai
-      children:
-        - title: Overview
-          permalink: /ai
-        - title: AI Toolkit
-          permalink: /ai-toolkit
-          expanded: false
-          children:
-            - title: Overview
-              permalink: /ai-toolkit
-            - title: User experience
-              permalink: /ai-toolkit/user-experience
-            - title: Feature integration
-              permalink: /ai-toolkit/feature-integration
-            - title: Custom LLM providers
-              permalink: /ai-toolkit/custom-llm-providers
-            - title: Chat client sample
-              permalink: /ai-toolkit/chat-client-sample
-        - title: Vertex AI in Firebase
-          permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
     - title: Develop with Firebase
       children:
         - title: Overview
@@ -228,6 +207,28 @@
           permalink: https://developers.google.com/maps/flutter-package
     - title: Build a news app
       permalink: /resources/news-toolkit
+
+- title: Create with AI
+  permalink: /ai
+  children:
+    - title: Overview
+      permalink: /ai
+    - title: AI Toolkit
+      permalink: /ai-toolkit
+      expanded: false
+      children:
+        - title: Overview
+          permalink: /ai-toolkit
+        - title: User experience
+          permalink: /ai-toolkit/user-experience
+        - title: Feature integration
+          permalink: /ai-toolkit/feature-integration
+        - title: Custom LLM providers
+          permalink: /ai-toolkit/custom-llm-providers
+        - title: Chat client sample
+          permalink: /ai-toolkit/chat-client-sample
+    - title: Vertex AI in Firebase
+      permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
 
 - divider
 - header: User interface
