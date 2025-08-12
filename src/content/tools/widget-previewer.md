@@ -1,17 +1,25 @@
 ---
 title: Flutter Widget Previewer
-description: Learn how to use the Flutter Widget Previewer to see your widgets render in real-time, separate from a full app.
+description: >-
+  Learn how to use the Flutter Widget Previewer to see your
+  widgets render in real-time, separate from your full app.
 ---
 
 In this guide, you will learn how to use the
-Flutter Widget Previewer to see your widgets render in
-real-time, separate from a full app.
+Flutter Widget Previewer.
 
-:::note
+## Overview
+
+With the Flutter Widget Previewer, you can see your widgets
+render in real-time, separate from a full app, in the
+Chrome browser. To start the previewer, show a widget
+in it, and customize a preview, see the following sections.
+
+:::version-note
 The Flutter Widget Preview requires Flutter version 3.35 or
 higher.
 
-Please be aware that this is an **experimental release**
+Please be aware that this is an **experimental feature**
 available in the Flutter stable channel. The APIs are not
 stable and *will change*. This guide is for the current
 early access version, and you should expect future updates
@@ -90,14 +98,15 @@ use to customize the preview:
 
 *   **`name`**: A descriptive name for the preview.
 
-*   **`size`**: Artificial size constraints using a Size
-    object.
+*   **`size`**: Artificial size constraints using a
+    `Size` object.
   
 *   **`textScaleFactor`**: A custom font scale.
 
 *   **`wrapper`**: A function that wraps your previewed
     widget in a specific widget tree (for example, to inject
-    application state into the widget tree via a Provider).
+    application state into the widget tree with a
+    `InheritedWidget`).
   
 *   **`theme`**: A function to provide Material and
     Cupertino theming data.
@@ -107,14 +116,14 @@ use to customize the preview:
 *   **`localizations`**: A function to apply a localization
     configuration.
 
-[`@Preview`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widget_previews/widget_previews.dart
+[`@Preview`]: {{site.api}}/flutter/widgets/Preview-class.html
 
-## Restrictions and Limitations
+## Restrictions and limitations
 
 The Flutter Widget Previewer has certain restrictions you
 should be aware of:
 
-*   **Public Constants**: All arguments provided to the
+*   **Public constants**: All arguments provided to the
     `@Preview` annotation must be public and constant.
     This is required for the previewer's code generation
     implementation to work correctly. The requirement for
@@ -128,9 +137,10 @@ should be aware of:
     Flutter Web, which doesn't have access to the underlying
     native platform APIs. While web plugins may work when
     using Chrome, there is no guarantee that they will work
-    within IDEs when support is added in a future release.  
+    within other environments, such as when embedded in
+    IDEs.  
 
-*   **Asset Paths**: When using `fromAsset` APIs from
+*   **Asset paths**: When using `fromAsset` APIs from
     `dart:ui` to load resources, you must use
     **package-based paths** instead of direct local paths.
     This ensures that the assets can be correctly located
@@ -138,12 +148,12 @@ should be aware of:
     example, use `'packages/my_package_name/assets/my_image.png'`
     instead of `'assets/my_image.png'`.  
 
-*   **Browser Support**: At this time, the previewer is only
+*   **Browser support**: At this time, the previewer is only
     supported on Chrome as it requires hot reload
     support. Web server and IDE support for this feature is
     planned for a future release.  
 
-*   **Unconstrained Widgets**: Unconstrained widgets are
+*   **Unconstrained widgets**: Unconstrained widgets are
     automatically constrained to approximately half the
     height and width of the widget previewer. This behavior
     is likely to change in the future, so constraints should

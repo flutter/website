@@ -249,9 +249,9 @@ next lesson in the learning pathway.
 
 You can see your widgets render in real-time, separate from
 a full app. To learn more, see the
-[Flutter Widgets Previewer guide][].
+[Flutter Widget Previewer][] guide.
 
-[Flutter Widgets Previewer guide]: /tools/widget-previewer
+[Flutter Widget Previewer]: /tools/widget-previewer
 
 ## Next: Layouts
 
