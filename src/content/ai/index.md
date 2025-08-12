@@ -54,7 +54,7 @@ with Gemini models for a variety of tasks without leaving your development
 environment. You can use it to:
 
 * Quickly scaffold a new Flutter widget, Dart function, or a complete app.
-* Use MCP server tools, such as the Dart MCP server
+* Use MCP server tools, such as the Dart and Flutter MCP server
 * Automate tasks like committing and pushing changes to a Git repository
 
 To get started, visit the [Gemini CLI][] website, or try this
@@ -64,10 +64,14 @@ To get started, visit the [Gemini CLI][] website, or try this
 
 ## Dart and Flutter MCP Server
 
-For AI tools like Gemini Code Assist and the Gemini CLI to provide assistance
-during Flutter development, they need to use tools that communicate with Dart and
-Flutter's developer tools. The Dart and Flutter MCP Server makes
-this possible.
+To provide assistance during Flutter development, AI tools such as
+Gemini Code Assist and Gemini CLI need to communicate with Dart
+and Flutter's developer tools. The Dart and
+Flutter MCP (model context protocol) Server facilitates this
+communication. The model context protocol is a specification that
+outlines how development tools can share the context of a user's code
+with an AI model, which allows the AI to better understand and interact
+with the code.
 
 The MCP server provides a growing list of tools to analyze and fix errors, hot
 reload, get the selected widget, and more. This bridges the gap between the AI's
