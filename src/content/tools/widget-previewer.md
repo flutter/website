@@ -105,7 +105,7 @@ use to customize the preview:
 
 *   **`wrapper`**: A function that wraps your previewed
     widget in a specific widget tree (for example, to inject
-    application state into the widget tree with a
+    application state into the widget tree with an
     `InheritedWidget`).
   
 *   **`theme`**: A function to provide Material and
