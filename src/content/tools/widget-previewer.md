@@ -135,7 +135,7 @@ should be aware of:
     the `dart:io` library are not supported. This is because
     the widget previewer is built with
     Flutter Web, which doesn't have access to the underlying
-    native platform APIs. While web plugins may work when
+    native platform APIs. While web plugins might work when
     using Chrome, there is no guarantee that they will work
     within other environments, such as when embedded in
     IDEs.  
