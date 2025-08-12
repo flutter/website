@@ -29,38 +29,43 @@ but many are.
 To avoid being broken by future versions of Flutter,
 consider submitting your tests to the framework's [test registry][].
 
-## Breaking changes by release
-
-The following guides are available.
-They're sorted by release and listed in alphabetical order:
-
 [breaking change policy]: /release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
+## Breaking changes by release
+
+The following guides are available.
+They're sorted by release and listed in alphabetical order:
+
 ### Not yet released to stable
 
-* [Redesigned the Radio Widget][]
-* [Removed semantics elevation and thickness][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
-* [Component theme normalization updates][]
-* [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
-* [The Form widget no longer supports being a sliver.][]
-* [Migration guide for wide gamut CupertinoDynamicColor][]
+* [`CupertinoDynamicColor` wide gamut support][]
 
-[Redesigned the Radio Widget]: /release/breaking-changes/radio-api-redesign
-[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+
+<a id="released-in-flutter-335" aria-hidden="true"></a>
+### Released in Flutter 3.35
+
+* [Component theme normalization updates][]
+* [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Redesigned the `Radio` widget][]
+* [Removed semantics elevation and thickness][]
+* [The `Form` widget no longer supports being a sliver][]
+
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
-[The Form widget no longer supports being a sliver.]: /release/breaking-changes/form-semantics
-[Migration guide for wide gamut CupertinoDynamicColor]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
+[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
+[The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
