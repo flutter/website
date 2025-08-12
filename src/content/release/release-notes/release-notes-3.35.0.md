@@ -10,9 +10,10 @@ check out the Flutter [CHANGELOG][].
 
 [CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
 
-## What's Changed
+## What's changed
 
 ### Framework
+
 * Fix TreeSliver rendering offset. by @yiiim in [166442](https://github.com/flutter/flutter/pull/166442)
 * SliverEnsureSemantics by @Renzo-Olivares in [165589](https://github.com/flutter/flutter/pull/165589)
 * [framework] re-enable skipped impeller goldens. by @jonahwilliams in [166354](https://github.com/flutter/flutter/pull/166354)
@@ -203,7 +204,9 @@ check out the Flutter [CHANGELOG][].
 * Reland "Add feature flags to the framework" by @loic-sharma in [171545](https://github.com/flutter/flutter/pull/171545)
 * [CP-beta]Fix: Ensure Text widget locale is included in semantics language tag by @flutteractionsbot in [172711](https://github.com/flutter/flutter/pull/172711)
 * [CP-beta][web] Text editing test accepts both behaviors in Firefox by @flutteractionsbot in [173053](https://github.com/flutter/flutter/pull/173053)
+
 ### Material
+
 * fix(ListTileTheme): isThreeLine is missing. by @StanleyCocos in [165481](https://github.com/flutter/flutter/pull/165481)
 * Fix CarouselView demo page is not functional using mouse scroll by @huycozy in [166512](https://github.com/flutter/flutter/pull/166512)
 * Fix: Focus on leading icon when null by @whopavan in [164966](https://github.com/flutter/flutter/pull/164966)
@@ -366,7 +369,9 @@ check out the Flutter [CHANGELOG][].
 * [Cupertino] Make some widgets no longer use RSuperellipse by @dkwingsmt in [171830](https://github.com/flutter/flutter/pull/171830)
 * License cpp 710 by @gaaclarke in [171989](https://github.com/flutter/flutter/pull/171989)
 * Fix CheckedPopupMenuItem semantics to use menuItemCheckbox role with checked state by @flutter-zl in [171749](https://github.com/flutter/flutter/pull/171749)
+
 ### iOS
+
 * Add runtime flag for enable flutter_gpu, off by default. by @jonahwilliams in [165337](https://github.com/flutter/flutter/pull/165337)
 * [iOS/macOS] Add Xcode error if dev dependencies are incorrect by @loic-sharma in [165916](https://github.com/flutter/flutter/pull/165916)
 * Don't throw on error for mDNS when searching for Dart VML url on core devices by @vashworth in [167135](https://github.com/flutter/flutter/pull/167135)
@@ -418,7 +423,9 @@ check out the Flutter [CHANGELOG][].
 * [ Tool ] Enable `omit_obvious_*_types` and `specify_nonobvious_*_types` lints by @bkonyi in [172018](https://github.com/flutter/flutter/pull/172018)
 * Apply superellipse clipping to iOS platform views using an approximated round rect by @jason-simmons in [172033](https://github.com/flutter/flutter/pull/172033)
 * [CP-beta]Revert #160653 Fix view removal process for AutofillContextAction.cancel by @flutteractionsbot in [172675](https://github.com/flutter/flutter/pull/172675)
+
 ### Android
+
 * [Impeller] Speed up vulkan startup time by re-using existing vulkan context. by @jonahwilliams in [166784](https://github.com/flutter/flutter/pull/166784)
 * Reverts "[Impeller] Speed up vulkan startup time by re-using existing vulkan context. (#166784)" by @auto-submit[bot] in [166938](https://github.com/flutter/flutter/pull/166938)
 * [Impeller] defer vulkan context initialization as long as possible. by @jonahwilliams in [166941](https://github.com/flutter/flutter/pull/166941)
@@ -475,7 +482,9 @@ check out the Flutter [CHANGELOG][].
 * fix android studio lint about lambda function by @AbdeMohlbi in [172063](https://github.com/flutter/flutter/pull/172063)
 * [Android] remove obsolete gradle api in FGP by @Sameri11 in [172085](https://github.com/flutter/flutter/pull/172085)
 * [CP-beta]Update warnGradleVersion to `8.7.0` by @flutteractionsbot in [172787](https://github.com/flutter/flutter/pull/172787)
+
 ### Windows
+
 * [Windows] Enable merged platform and UI thread by default by @knopp in [163726](https://github.com/flutter/flutter/pull/163726)
 * Revert "[Windows] Enable merged platform and UI thread by default" by @loic-sharma in [167420](https://github.com/flutter/flutter/pull/167420)
 * Ignore stdout in WindowsTest.LaunchMainHasNoOutput by @jason-simmons in [167583](https://github.com/flutter/flutter/pull/167583)
@@ -486,7 +495,9 @@ check out the Flutter [CHANGELOG][].
 * [Windows] Use ANGLE blit extension on GLES 2.0 by @loic-sharma in [170298](https://github.com/flutter/flutter/pull/170298)
 * Reland (#167738)  but with some flags updated to use enum  by @hannah-hyj in [170505](https://github.com/flutter/flutter/pull/170505)
 * Multi-window support (engine) by @knopp in [168728](https://github.com/flutter/flutter/pull/168728)
+
 ### Linux
+
 * [Linux] Merge UI And Platform thread by @knopp in [162671](https://github.com/flutter/flutter/pull/162671)
 * Fix uninitalized fields in FlutterWindowMetricsEvent by @robert-ancell in [168446](https://github.com/flutter/flutter/pull/168446)
 * Fix framebuffer leak rendering to secondary views. by @robert-ancell in [168447](https://github.com/flutter/flutter/pull/168447)
@@ -499,7 +510,9 @@ check out the Flutter [CHANGELOG][].
 * Clear background in the GTK layer, instead of OpenGL by @robert-ancell in [170840](https://github.com/flutter/flutter/pull/170840)
 * Fix multi-view GL rendering not working since software rendering was added by @robert-ancell in [171409](https://github.com/flutter/flutter/pull/171409)
 * Refactor compositor classes by @robert-ancell in [171414](https://github.com/flutter/flutter/pull/171414)
+
 ### Web
+
 * Remove package:macros and package:_macros from pubspec.yaml by @alexmarkov in [166749](https://github.com/flutter/flutter/pull/166749)
 * [web:skwasm] be consistent about handling imbalanced layer push/pop sequence by @yjbanov in [166887](https://github.com/flutter/flutter/pull/166887)
 * [skwasm] Use `queueMicrotask` instead of `postMessage` when single-threaded by @eyebrowsoffire in [166997](https://github.com/flutter/flutter/pull/166997)
@@ -535,7 +548,9 @@ check out the Flutter [CHANGELOG][].
 * [Web a11y]Update table cell to use LabelRepresentation.sizedSpan  by @hannah-hyj in [172013](https://github.com/flutter/flutter/pull/172013)
 * Add RSuperellipse support to Web (global cache) by @dkwingsmt in [171489](https://github.com/flutter/flutter/pull/171489)
 * [web] Delete unused files in the engine by @harryterkelsen in [172035](https://github.com/flutter/flutter/pull/172035)
+
 ### Tooling
+
 * Allow dart pub deps --json to fail without causing an explicit crash. by @matanlurey in [166778](https://github.com/flutter/flutter/pull/166778)
 * Roll pub packages by @flutter-pub-roller-bot in [166779](https://github.com/flutter/flutter/pull/166779)
 * Add `buildMode`, `icuDataPath` and `engineRevision` interpolations for custom devices by @vially in [164455](https://github.com/flutter/flutter/pull/164455)
@@ -739,10 +754,14 @@ check out the Flutter [CHANGELOG][].
 * [ Tool ] Fix `flutter upgrade` stating that an upgrade is available on `main` when up to date by @bkonyi in [172141](https://github.com/flutter/flutter/pull/172141)
 * [CP-beta] Add a warning on usage of `dartPluginClass: 'none'`. by @flutteractionsbot in [172498](https://github.com/flutter/flutter/pull/172498)
 * [CP-beta] Emit a warning on `--[no-]disable-dds`, preferring `--no-dds` by @flutteractionsbot in [172790](https://github.com/flutter/flutter/pull/172790)
+
 ### Documentation
+
 * Adding utf-8 encoding to hello world's html template by @Markzipan in [168162](https://github.com/flutter/flutter/pull/168162)
 * Update hello_world example to current layout flutter create uses by @robert-ancell in [168571](https://github.com/flutter/flutter/pull/168571)
-### Other Changes
+
+### Other changes
+
 * Re-disable microbenchmarks iOS. by @jonahwilliams in [166788](https://github.com/flutter/flutter/pull/166788)
 * [Impeller] disable no decal metal test. by @jonahwilliams in [166771](https://github.com/flutter/flutter/pull/166771)
 * [Impeller] keep device holder and allocator alive until last vk image is destroyed. by @jonahwilliams in [166725](https://github.com/flutter/flutter/pull/166725)
@@ -1069,7 +1088,8 @@ check out the Flutter [CHANGELOG][].
 * Update engine version for 3.35-0.2.pre by @eyebrowsoffire in [172987](https://github.com/flutter/flutter/pull/172987)
 * Update engine.version again for 3.35-0.2 by @eyebrowsoffire in [173116](https://github.com/flutter/flutter/pull/173116)
 
-## New Contributors
+## New contributors
+
 * @vially made their first contribution in [164455](https://github.com/flutter/flutter/pull/164455)
 * @whopavan made their first contribution in [164966](https://github.com/flutter/flutter/pull/164966)
 * @MaironLucas made their first contribution in [164102](https://github.com/flutter/flutter/pull/164102)
