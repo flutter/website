@@ -212,7 +212,7 @@
   permalink: /ai
   children:
     - title: Overview
-      permalink: /ai
+      permalink: /ai/create-with-ai
     - title: AI Toolkit
       permalink: /ai-toolkit
       expanded: false
