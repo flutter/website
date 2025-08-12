@@ -826,6 +826,8 @@
           permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
+    - title: Flutter Widget Previewer
+      permalink: /tools/widget-previewer  
     - title: Flutter Property Editor
       permalink: /tools/property-editor    
     - title: SDK overview

@@ -6,7 +6,7 @@ description: >
 
 :::note
 This is an upcoming breaking change that has not yet been finalized or
-implementated. The current details are provisional and may be altered. Further
+implemented. The current details are provisional and may be altered. Further
 announcements will be made as the change approaches implementation.
 :::
 
@@ -295,8 +295,8 @@ Migration options:
 
 ## Timeline
 
-- Landed in main: TBD
-- Landed in stable: TBD
+- Landed in version: Not yet
+- In stable release: Not yet
 - Unknown: Apple changes their warning to an assert and Flutter apps that
   haven't adopted `UISceneDelegate` will start crashing on startup with the
   latest SDK.
