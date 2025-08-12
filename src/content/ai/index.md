@@ -19,8 +19,8 @@ resources:
 
 * [Firebase AI Logic][] - The official Firebase SDK for using generative AI
   features directly in Flutter. Compatible with the Gemini Developer API or
-  Vertex AI. To get started, check out the [official
-  documentation][firebase-ai-logic-docs].
+  Vertex AI. To get started, check out the
+  [official documentation][firebase-ai-logic-docs].
 * [Flutter AI Toolkit][] - A sample app with pre-built widgets to help you build
   AI-powered features in Flutter
 
@@ -43,8 +43,8 @@ your project's codebase and can help you with:
 * **In-editor chat**: You can ask questions about your code, Flutter concepts,
   or best practices directly within your IDE.
 * **Debugging and explanation**: If you encounter an error, you can ask Gemini
-  Code Assist to explain it and suggest a fix, and [Dart Model Context Protocol (MCP)
-server][]
+  Code Assist to explain it and suggest a fix, and
+  [Dart and Flutter MCP Server][dart-mcp-flutter-docs]
 
 
 ### Gemini CLI
@@ -57,24 +57,24 @@ environment. You can use it to:
 * Use MCP server tools, such as the Dart MCP server
 * Automate tasks like committing and pushing changes to a Git repository
 
-To get started, visit the [Gemini CLI][] website, or try this [Gemini CLI
-codelab][].
+To get started, visit the [Gemini CLI][] website, or try this
+[Gemini CLI codelab][].
 
 ---
 
-## Dart Model Context Protocol (MCP) Server
+## Dart and Flutter MCP Server
 
 For AI tools like Gemini Code Assist and the Gemini CLI to provide assistance
 during Flutter development, they need to use tools that communicate with Dart and
-Flutter's developer tools. The [Dart Model Context Protocol server][Dart MCP server] makes
+Flutter's developer tools. The Dart and Flutter MCP Server makes
 this possible.
 
 The MCP server provides a growing list of tools to analyze and fix errors, hot
 reload, get the selected widget, and more. This bridges the gap between the AI's
 natural language understanding, and Dart and Flutter's suite of developer tools.
 
-To get started, check out the official documentation for the [Dart MCP server][]
-on dart.dev and the [Dart MCP repository][dart-mcp-github].
+To get started, check out the official documentation for the [Dart and Flutter MCP server][dart-mcp-dart-docs]
+on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 
 ---
 
@@ -85,6 +85,6 @@ on dart.dev and the [Dart MCP repository][dart-mcp-github].
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}/watch?v=xo271p-Fl_4
 [Flutter AI Toolkit]: {{site.url}}/ai-toolkit
-[Dart MCP server]: {{site.dart-site}}/tools/mcp-server
+[dart-mcp-dart-docs]: {{site.dart-site}}/tools/mcp-server
 [dart-mcp-github]: {{site.github}}/dart-lang/ai/tree/main/pkgs/dart_mcp_server
-[Dart Model Context Protocol (MCP) server]: #dart-model-context-protocol-mcp-server
+[dart-mcp-flutter-docs]: #dart-and-flutter-mcp-server
