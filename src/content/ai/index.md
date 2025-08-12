@@ -73,9 +73,10 @@ outlines how development tools can share the context of a user's code
 with an AI model, which allows the AI to better understand and interact
 with the code.
 
-The MCP server provides a growing list of tools to analyze and fix errors, hot
-reload, get the selected widget, and more. This bridges the gap between the AI's
-natural language understanding, and Dart and Flutter's suite of developer tools.
+The Dart and Flutter MCP server provides a growing list of tools to analyze
+and fix errors, hot reload, get the selected widget, and more. This bridges
+the gap between the AI's natural language understanding, and
+Dart and Flutter's suite of developer tools.
 
 To get started, check out the official documentation for the [Dart and Flutter MCP server][dart-mcp-dart-docs]
 on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
