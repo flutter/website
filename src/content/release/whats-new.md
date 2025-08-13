@@ -29,8 +29,8 @@ Flutter 3.35 is live! For more information,
 check out the [Flutter 3.35 technical blog post][3.35-tech].
 You might also check out the [Dart 3.9 release][] blog post.
 
-[3.32-tech]: {{site.medium}}/flutter/xxx
-[Dart 3.9 release]: {{site.medium}}/dartlang/xxx
+[3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-35-c58ef72e3766
+[Dart 3.9 release]: {{site.medium}}/dartlang/announcing-dart-3-9-ba49e8f38298
 
 **Website update**
 
