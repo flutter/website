@@ -138,7 +138,7 @@ follow these steps to create and select an emulator.
 
 1. Start **Android Studio**.
 
-1. Go to the **Settings** dialog to view the **SDK Manager**.
+1. Go to the **Settings** dialog to view the **Device Manager**.
 
    1. If you have a project open,
       go to **Tools** <span aria-label="and then">></span>
