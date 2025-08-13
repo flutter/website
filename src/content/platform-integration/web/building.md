@@ -42,6 +42,10 @@ and run your Flutter app.
 
 ## Run your app
 
+See the following sections to run your app.
+
+### Run your app from the command line
+
 Select [Chrome][] as your app's target device to run and debug
 a Flutter web app:
 
@@ -120,8 +124,6 @@ The feature is only available if Flutter is detected
 in the running application. You can begin a hot reloadable
 session by selecting a sample app provided by DartPad.
 
-:::
-
 [Hot restart]: /tools/hot-reload
 [How to switch channels]: /install/upgrade#switching-flutter-channels
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
@@ -129,6 +131,10 @@ session by selecting a sample app provided by DartPad.
 [GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
+
+See the following sections to build your app.
+
+### Build your app from the command line
 
 Run the following command to generate a release build:
 
