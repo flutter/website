@@ -67,13 +67,20 @@ using our [Web Hot Reload issue template][].
 Note this is in the Dart SDK repository where it's easier
 for us to track issues. Known issues can be seen in the
 associated [GitHub project][].
+:::
 
-Hot reload can be temporarily disabled with the
-`--no-web-experimental-hot-reload` flag
-wherever you invoke `flutter run`. This flag will be removed
-in a future release.
+### Run your app using WebAssembly
 
-### Disabling in VS Code
+You can pass the `--wasm` flag to run your app using WebAssembly:
+
+```console
+$ flutter run -d chrome --wasm
+```
+
+Flutter web offers multiple build modes and renderers.
+For more information, see [Web renderers][].
+
+### Disable hot reload in VS Code
 
 To temporarily disable hot reload support from VS Code,
 update your [`launch.json` file][] file with
@@ -96,7 +103,7 @@ the flag `--no-web-experimental-hot-reload`.
   ]
 ```
 
-### Disabling from the command line
+### Disable hot reload from the command line
 
 If you use `flutter run` from the command line,
 you can temporarily disable hot reload on the web with the
@@ -106,7 +113,7 @@ following command:
 flutter run -d chrome --no-web-experimental-hot-reload
 ```
 
-### Reloading in DartPad
+### Use hot reload in DartPad
 
 Hot reload is also enabled in DartPad with a new "Reload" button.
 The feature is only available if Flutter is detected
@@ -120,17 +127,6 @@ session by selecting a sample app provided by DartPad.
 [`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
 [Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
 [GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
-
-### Run your app using WebAssembly
-
-You can pass the `--wasm` flag to run your app using WebAssembly:
-
-```console
-$ flutter run -d chrome --wasm
-```
-
-Flutter web offers multiple build modes and renderers.
-For more information, see [Web renderers][].
 
 ## Build your app
 
