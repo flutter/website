@@ -32,17 +32,20 @@ You might also check out the [Dart 3.9 release][] blog post.
 [3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-35-c58ef72e3766
 [Dart 3.9 release]: {{site.medium}}/dartlang/announcing-dart-3-9-ba49e8f38298
 
-**Website update**
-
-xxx: Put any notable updates to the site infrastructure here. If none exist, delete this note and the "Website update" label. [PENDING]
-
 **Docs updated or added since the 3.32 release**
 
 * Hot reload is now available on the web and no longer
   requires an experimental flag. For more information,
   check out [hot reload][].
 
-* xxx: John R will be adding a placeholder AI page (and a link to it from the sidenav) that mentions Firebase Studio, Gemini, and links to info about the Dart MCP server. (And maybe his page will link to both Amanda's and Ander's Medium posts.) [PENDING]
+* There is a new [Create with AI][] guide which covers
+  how you can leverage AI tools like Gemini Code Assist,
+  GeminiCLI, and the Dart and Flutter MCP Server to build
+  AI-powered features for your Flutter apps.
+
+* You can now use the [Flutter Widget Previewer][] guide
+  to help you view a preview of your Flutter widgets in
+  Chrome.
 
 * Each stable release affects which versions of
   deployed platforms that Flutter supports.
@@ -60,7 +63,9 @@ xxx: Put any notable updates to the site infrastructure here. If none exist, del
   page for this release. That's also where you'll find useful
   migration info.
 
-[bc-3.35]: xxx
+[Flutter Widget Previewer]: /tools/widget-previewer
+[Create with AI]: /ai/create-with-ai
+[bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
 [hot reload]: /tools/hot-reload
 [Protect your app's sensitive content]: /platform-integration/android/sensitive-content
 [Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
