@@ -1,9 +1,10 @@
 ---
-title: Deprecate `DropdownButtonFormField` constuctor parameter `value` in
-  favor of the parameter `initialValue`
+title: >-
+  Deprecated the 'value' parameter of
+  the 'DropdownButtonFormField' constructor
 description: >-
-  The `DropdownButtonFormField` constructor parameter `value` has been replaced
-  by the parameter `initialValue`
+  The `DropdownButtonFormField` constructor parameter `value` has been
+  replaced by the parameter `initialValue`.
 ---
 
 ## Summary
@@ -49,8 +50,8 @@ DropdownButtonFormField(
 
 ## Timeline
 
-Landed in version: 3.33.0-1.0.pre<br>
-In stable release: TBD
+Landed in version: 3.35.0-0.0.pre<br>
+In stable release: 3.35
 
 ## References
 

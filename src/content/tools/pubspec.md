@@ -92,6 +92,9 @@ dev_dependencies:
     [!- images/a_dot_burr.png!]
     [!- images/a_dot_ham.png!]
 
+  [!licenses:!] # Lists additional license files to be bundled with the app
+    [!- assets/my_license.txt!]
+
   [!fonts:!]              # Required if your app uses custom fonts
     [!- family: Schyler!]
       [!fonts:!]
@@ -156,6 +159,7 @@ flutter:
 # path_to_directory structure
 - path/to/directory/
 ```
+
 ```yaml
 # flavor_path_field strucure
 - path: path/to/directory
@@ -446,6 +450,20 @@ Enable general localization:
 ```yaml title="pubspec.yaml"
 flutter:
   generate: true
+```
+
+### licenses field {: #licenses}
+
+A list of additional license file paths that should be bundled with your
+application. These files are typically found within your project's `assets`
+directory.
+
+The `licenses` field has this structure:
+
+```yaml title="pubspec.yaml"
+flutter:
+  licenses:
+    - [path_to_file]
 ```
 
 ### plugin field
