@@ -27,6 +27,8 @@ overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 :::
 
+{% ytEmbed 'ngsxzZt5DoY', 'dart:convert (Technique of the Week)' %}
+
 ## Which JSON serialization method is right for me?
 
 This article covers two general strategies for working with JSON:

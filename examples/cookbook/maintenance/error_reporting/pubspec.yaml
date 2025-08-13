@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sentry_flutter: ^7.16.0
+  sentry_flutter: ^9.5.0
 
 dev_dependencies:
   flutter_test:
