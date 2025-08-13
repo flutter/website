@@ -38,9 +38,8 @@ To distribute your macOS application, you can either
 [distribute it through the macOS App Store][],
 or you can distribute the `.app` itself,
 perhaps from your own website.
-As of macOS 10.14.5, you need to notarize
-your macOS application before distributing
-it outside of the macOS App Store.
+You need to notarize your macOS application before
+distributing it outside the macOS App Store.
 
 The first step in both of the above processes
 involves working with your application inside of Xcode.
