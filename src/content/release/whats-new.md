@@ -23,7 +23,7 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
-## 13 August 2025: release 3.35
+## 13 August 2025: Release 3.35
 
 Flutter 3.35 is live! For more information,
 check out the [Flutter 3.35 technical blog post][3.35-tech].
@@ -56,9 +56,6 @@ You might also check out the [Dart 3.9 release][] blog post.
   such as customer information, when you share your screen.
   Learn more by visiting [Protect your app's sensitive content][].
 
-* You can now configure server settings for web development.
-  Learn more at [Set up a web development configuration file][].
-
 * Also, don't forget to check out the [breaking changes][bc-3.35]
   page for this release. That's also where you'll find useful
   migration info.
@@ -68,7 +65,6 @@ You might also check out the [Dart 3.9 release][] blog post.
 [bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
 [hot reload]: /tools/hot-reload
 [Protect your app's sensitive content]: /platform-integration/android/sensitive-content
-[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
 [supported platforms]: /reference/supported-platforms
 
 ---
