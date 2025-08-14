@@ -94,6 +94,21 @@ Other useful docs include:
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
+## Disco
+
+A library focused solely on dependency injection.
+It sits between Provider and Riverpod — respecting the widget tree like
+Provider, while supporting multiple providers of the same type and
+encouraging business logic separation like Riverpod. Unlike both,
+it purposefully avoids built-in reactivity, making it a natural
+complement to any state-management solution.
+
+* [Official Documentation][]
+* [Disco package][]
+
+[Official Documentation]: https://disco.mariuti.com/
+[disco package]: {{site.pub-pkg}}/disco
+
 ## June
 
 A lightweight and modern state management library that focuses on providing
