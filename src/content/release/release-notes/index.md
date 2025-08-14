@@ -12,8 +12,8 @@ For information about bug-fix releases,
 check out the Flutter [CHANGELOG][].
 :::
 
-* 3.35.0 _(Tentative)_
-  {% comment %}* [3.35.0 announcement][]{% endcomment %}
+* 3.35.0
+  * [3.35.0 announcement][]
   * [3.35.0 release notes & change log][]
   * [3.35.0 breaking changes & migrations][]
 * 3.32.0

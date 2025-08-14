@@ -429,7 +429,7 @@ final container = Container(
   child: Center(
     child: Transform(
       alignment: Alignment.center,
-      transform: Matrix4.identity()..scale(1.5),
+      transform: Matrix4.identity()..scaleByDouble(1.5, 1.5, 1.5, 1.5),
       child: Container(
         // red box
         padding: const EdgeInsets.all(16),
