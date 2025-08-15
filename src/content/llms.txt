@@ -70,6 +70,11 @@ This file provides a curated list of resources to help Large Language Models und
 - [Testing Flutter Apps](https://docs.flutter.dev/testing): An introduction to the different types of testing in Flutter: unit, widget, and integration.
 - [An introduction to integration testing](https://docs.flutter.dev/testing/integration-testing): Test the interaction between different parts of your app.
 - [Mocking dependencies for widget tests](https://docs.flutter.dev/cookbook/testing/unit/mocking): Isolate your widgets from their dependencies during testing.
+- [Finding widgets](https://docs.flutter.dev/cookbook/testing/widget/finding-widgets): A guide on how to find specific widget instances in a test environment.
+- [Tapping, dragging, and entering text](https://docs.flutter.dev/cookbook/testing/widget/tap-drag-enter-text): A cookbook recipe on how to perform common user interactions in a widget test.
+- [Golden file testing](https://docs.flutter.dev/testing#golden-file-testing): The official documentation on how to perform screenshot testing for your widgets.
+- [Visualizing code coverage](https://docs.flutter.dev/testing/coverage): A guide on how to generate and interpret code coverage reports for your Flutter project.
+- [Continuous integration and testing with GitHub Actions](https://docs.flutter.dev/testing/ci): A guide on how to set up automated build and test pipelines.
 - [Debugging Flutter Apps](https://docs.flutter.dev/testing/debugging): Techniques and tools for finding and fixing issues in your code.
 - [Flutter DevTools](https://docs.flutter.dev/tools/devtools): An overview of the suite of performance and debugging tools for Flutter and Dart.
 
@@ -89,6 +94,12 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Multi-Platform Development
 
+- **Android:**
+    - [Android integration](https://docs.flutter.dev/platform-integration/android): The main landing page for Android-specific information.
+    - [Build and release for Android](https://docs.flutter.dev/deployment/android): A guide to packaging and deploying your Flutter app to the Google Play Store.
+- **iOS:**
+    - [iOS integration](https://docs.flutter.dev/platform-integration/ios): The main landing page for iOS-specific information.
+    - [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
 - **Web:**
     - [Web Renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
     - [SEO for Flutter Web](https://docs.flutter.dev/platform-integration/web/seo): Improve search engine visibility.
@@ -98,11 +109,7 @@ This file provides a curated list of resources to help Large Language Models und
     - [Build and release for macOS](https://docs.flutter.dev/deployment/macos): A guide to packaging and deploying your Flutter app to macOS.
     - [Build and release for Linux](https://docs.flutter.dev/deployment/linux): A guide to packaging and deploying your Flutter app to Linux.
 
-### Deployment
 
-- [Build and release for Android](https://docs.flutter.dev/deployment/android): A guide to packaging and deploying your Flutter app to the Google Play Store.
-- [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
-- [Continuous integration and testing with GitHub Actions](https://docs.flutter.dev/testing/ci): Set up automated build and test pipelines.
 
 ### Practical Development Concerns
 
