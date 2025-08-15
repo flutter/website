@@ -1,5 +1,5 @@
 ---
-title: The default page transition on Android is now PredictiveBackPageTransitionBuilder
+title: The default page transition on Android is now PredictiveBackPageTransitionsBuilder
 description: Android's default page transition has been updated to match the
 platform and to support predictive back.
 ---
@@ -61,30 +61,29 @@ platform and to support predictive back.
 
 ## Summary
 
-{% comment %}
-  A brief (one- to three-line) summary that gives
-  context as to what changed so that someone can
-  find it when browsing through an index of
-  breaking changes, ideally using keywords from
-  the symptoms you would see if you had not yet
-  migrated (for example, the text from probable
-  error messages).
-{% endcomment %}
+The default page transition on Android has been updated from
+[`ZoomPageTransitionsBuilder`][] to [`PredictiveBackPageTransitionsBuilder`][]. When
+not using predictive back, this falls back to
+[`FadeForwardsPageTransitionsBuilder`][].
 
 ## Context
 
-{% comment %}
-  High-level description of what API changed and why.
-  Should be clear enough to be understandable to someone
-  who has no context about this breaking change,
-  such as someone who doesn't know the underlying API.
-  This section should also answer the question
-  "what is the problem that led to considering making
-  a breaking change?"
-{% endcomment %}
+Android has been rolling out a feature called predictive back, where performing
+a back gesture allows the user to peek at the previous route or app and possibly
+cancel the navigation. Flutter added support for this with the [`PopScope`][]
+widget followed by [`PredictiveBackPageTransitionsBuilder`][].
+
+In the meantime, Android also updated its default page transition. Flutter added
+support for this with [`FadeForwardsPageTransitionsBuilder`][].
+
+Finally with this change, [`PredictiveBackPageTransitionsBuilder`][] has
+replaced [`ZoomPageTransitionsBuilder`][] as the default page transition on
+Android. Any time that navigation happens without a predictive back gesture,
+[`FadeForwardsPageTransitionsBuilder`][] is used.
 
 ## Description of change
 
+TODO(justinmc): Maybe take some from Context section above.
 {% comment %}
 A technical description of the actual change,
 with code samples showing how the API changed.
@@ -97,32 +96,147 @@ error messages.
 
 ## Migration guide
 
-{% comment %}
-  A description of how to make the change.
-  If a migration tool is available,
-  discuss it here. Even if there is a tool,
-  a description of how to make the change manually
-  must be provided. This section needs before and
-  after code examples that are relevant to the
-  developer.
-{% endcomment %}
+If you want to keep your app's page transition exactly the same as before, you
+can simply set your page transition explicitly in your app's theme. Keep in mind
+that you will not be able to support predictive back route transitions.
 
 Code before migration:
 
 <!-- skip -->
 ```dart
-// Example of code before the change.
+return MaterialApp(
+  // ThemeData.pageTransitionsTheme is the default.
+  home: const MyFirstScreen(),
+);
 ```
 
 Code after migration:
 
 <!-- skip -->
 ```dart
-// Example of code after the change.
+return MaterialApp(
+  theme: ThemeData(
+    // ThemeData.pageTransitionsTheme is explicitly set to the old transition.
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: ZoomPageTransitionsBuilder(),
+      },
+    ),
+  ),
+  home: const MyFirstScreen(),
+);
+```
+
+One side effect of changing the default transition is that the duration that it
+takes to transition between pages has increased from 300ms to 450ms. This may
+cause breakages in tests that depend on the previous transition duration.
+Fortunately, it's possible to use [`TransitionDurationObserver`][] to keep tests
+independent of whatever page transition is used.
+
+Code before migration:
+
+<!-- skip -->
+```dart
+testWidgets('example', (WidgetTester tester) async {
+  await tester.pumpWidget(
+    MaterialApp(
+      onGenerateRoute: (RouteSettings settings) { ... },
+    ),
+  );
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsNothing);
+
+  // Pump through the whole transition, hardcoded to 300ms.
+  await tester.tap(find.text('Next'));
+  await tester.pump(const Duration(milliseconds: 300));
+
+  expect(find.text('Page 1'), findsNothing);
+  expect(find.text('Page 2'), findsOneWidget);
+});
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+testWidgets('example', (WidgetTester tester) async {
+  final TransitionDurationObserver observer = TransitionDurationObserver();
+
+  await tester.pumpWidget(
+    MaterialApp(
+      navigatorObservers: <NavigatorObserver>[observer],
+      onGenerateRoute: (RouteSettings settings) { ... },
+    ),
+  );
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsNothing);
+
+  // Pump through the whole transition independent of the duration.
+  await tester.tap(find.text('Next'));
+  await observer.pumpPastTransition(tester);
+
+  expect(find.text('Page 1'), findsNothing);
+  expect(find.text('Page 2'), findsOneWidget);
+});
+```
+
+It's even possible to write tests that need to pump part of the way through a
+page transition without depending on the exact duration.
+
+Code before migration:
+
+<!-- skip -->
+```dart
+testWidgets('example', (WidgetTester tester) async {
+  await tester.pumpWidget(
+    MaterialApp(
+      onGenerateRoute: (RouteSettings settings) { ... },
+    ),
+  );
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsNothing);
+
+  // Pump through half of the transition with a hardcoded value.
+  await tester.tap(find.text('Back'));
+  await tester.pump(const Duration(milliseconds: 150));
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsOneWidget);
+});
+```
+
+Code after migration:
+
+<!-- skip -->
+```dart
+testWidgets('example', (WidgetTester tester) async {
+  final TransitionDurationObserver observer = TransitionDurationObserver();
+
+  await tester.pumpWidget(
+    MaterialApp(
+      navigatorObservers: <NavigatorObserver>[observer],
+      onGenerateRoute: (RouteSettings settings) { ... },
+    ),
+  );
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsNothing);
+
+  // Pump through half of the transition independent of the duration.
+  await tester.tap(find.text('Back'));
+  await tester.pump(observer.transitionDuration ~/ 2);
+
+  expect(find.text('Page 1'), findsOneWidget);
+  expect(find.text('Page 2'), findsOneWidget);
+});
 ```
 
 ## Timeline
 
+TODO(justinmc): Should land any minute now...
 {% comment %}
   The version # of the SDK where this change was
   introduced.  If there is a deprecation window,
@@ -143,6 +257,7 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 ## References
 
+TODO(justinmc)
 {% comment %}
   These links are commented out because they
   cause the GitHubActions (GHA) linkcheck to fail.
@@ -154,17 +269,19 @@ Reverted in version: xxx  (OPTIONAL, delete if not used)
 
 API documentation:
 
-* [`ClassName`][]
+* [`ZoomPageTransitionsBuilder`][]
+* [`PredictiveBackPageTransitionsBuilder`][]
+* [`FadeForwardsPageTransitionsBuilder`][]
+* [`PopScope`][]
+* [`TransitionDurationObserver`][]
 
 Relevant issues:
 
-* [Issue xxxx][]
-* [Issue yyyy][]
+* [Android predictive back route transitions][]
 
 Relevant PRs:
 
-* [PR title #1][]
-* [PR title #2][]
+* [Predictive back route transitions by default][]
 {% endcomment %}
 
 {% comment %}
@@ -183,15 +300,15 @@ Relevant PRs:
   and a master channel (master-api) link.
 
 <!-- Stable channel link: -->
-[`ClassName`]: {{site.api}}/flutter/[link_to_relevant_page].html
+[`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
+[`PredictiveBackPageTransitionsBuilder`]: {{site.api}}/flutter/material/PredictiveBackPageTransitionsBuilder-class.html
+[`FadeForwardsPageTransitionsBuilder`]: {{site.api}}/flutter/material/FadeForwardsPageTransitionsBuilder-class.html
+[`PopScope`]: {{site.api}}/flutter/widgets/PopScope-class.html
+[`TransitionDurationObserver`]: {{site.api}}/flutter/flutter_test/TransitionDurationObserver-class.html
 
 <!-- Master channel link: -->
 {% include master-api.md %}
 
-[`ClassName`]: https://master-api.flutter.dev/flutter/[link_to_relevant_page].html
-
-[Issue xxxx]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[Issue yyyy]: {{site.github}}/flutter/flutter/issues/[link_to_actual_issue]
-[PR title #1]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
-[PR title #2]: {{site.github}}/flutter/flutter/pull/[link_to_actual_pr]
+[Android predictive back route transitions]: {{site.github.com}}/flutter/flutter/issues/131961
+[Predictive back route transitions by default]: {{site.github}}/flutter/flutter/pull/165832
 {% endcomment %}
