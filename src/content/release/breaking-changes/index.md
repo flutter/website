@@ -46,6 +46,7 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [`CupertinoDynamicColor` wide gamut support][]
+* [The default page transition on Android is now PredictiveBackPageTransitionBuilder][]
 
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
@@ -66,6 +67,7 @@ They're sorted by release and listed in alphabetical order:
 [Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
+[The default page transition on Android is now PredictiveBackPageTransitionBuilder]:/release/breaking-changes/default-android-page-transition
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
