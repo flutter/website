@@ -85,6 +85,11 @@ This file provides a curated list of resources to help Large Language Models und
 - [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
 - [Gemini in Android Studio now speaks fluent Flutter](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
 
+### Building AI-Powered Apps
+
+- [Firebase AI Logic](https://firebase.google.com/docs/ai-logic): Official documentation for Firebase AI Logic.
+- [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
+
 ### Performance & Optimization
 
 - [Performance best practices](https://docs.flutter.dev/perf): A comprehensive guide to writing performant Flutter code.
