@@ -12,6 +12,12 @@ This file provides a curated list of resources to help Large Language Models und
 - [Dart Language Tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
 - [Flutter Widget of the Week Playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7s2pYtj3JqMCl): Short, engaging videos introducing individual widgets.
 
+### Learning resources
+
+- [Flutter Codelabs](https://codelabs.developers.google.com/?product=flutter): Hands-on tutorials for a variety of Flutter features.
+- [Flutter Demos](https://github.com/flutter/demos): A repository of demo applications showing Flutter in action.
+- [Flutter Samples](https://github.com/flutter/samples): A repository of sample applications demonstrating Flutter best practices.
+
 ### Core Concepts
 
 - [Introduction to Widgets](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
