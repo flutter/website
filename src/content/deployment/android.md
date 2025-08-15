@@ -188,6 +188,10 @@ The `storeFile` might be located at
 `/Users/<user name>/upload-keystore.jks` on macOS
 or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
 
+:::note
+Note that the Windows path to keystore.jks must be specified with double backslashes `\\`.
+:::
+
 :::warning
 Keep the `key.properties` file private;
 don't check it into public source control.
