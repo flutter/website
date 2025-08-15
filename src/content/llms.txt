@@ -78,6 +78,14 @@ This file provides a curated list of resources to help Large Language Models und
 - [Debugging Flutter Apps](https://docs.flutter.dev/testing/debugging): Techniques and tools for finding and fixing issues in your code.
 - [Flutter DevTools](https://docs.flutter.dev/tools/devtools): An overview of the suite of performance and debugging tools for Flutter and Dart.
 
+### Tools
+
+#### AI-assisted development
+- [Create with AI](https://docs.flutter.dev/ai/create-with-ai): An overview of how to use AI to supercharge your Flutter development.
+- [The Dart and Flutter MCP Server](https://dart.dev/tools/mcp-server): Technical details on the server that enables AI features in the IDE.
+- [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
+- [Gemini in Android Studio now speaks fluent Flutter](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
+
 ### Performance & Optimization
 
 - [Performance best practices](https://docs.flutter.dev/perf): A comprehensive guide to writing performant Flutter code.
