@@ -1,13 +1,14 @@
 ---
 title: Migration guide for wide gamut CupertinoDynamicColor
 description: >-
-  Addressing previously missed deprecations in CupertinoDynamicColor to align with wide gamut Color API.
+  Addressing previously missed deprecations in CupertinoDynamicColor to
+  align with wide gamut Color API.
 ---
 
 ## Summary
 
-Certain properties and methods in [`CupertinoDynamicColor`][] were deprecated 
-to align with the [`Color`][] class due to [wide gamut color spaces][] support 
+Certain properties and methods in [`CupertinoDynamicColor`][] were deprecated
+to align with the [`Color`][] class due to [wide gamut color spaces][] support
 added in [Flutter 3.27][Migration guide for wide gamut Color].
 
 ## Context
@@ -19,16 +20,16 @@ the extension of `Color`.
 
 ## Description of change
 
-1. The [`CupertinoDynamicColor.red`][] is deprecated in favor of 
-  [`CupertinoDynamicColor.r`].
-1. The [`CupertinoDynamicColor.green`][] is deprecated in favor of 
-  [`CupertinoDynamicColor.g`].
-1. The [`CupertinoDynamicColor.blue`][] is deprecated in favor of 
-  [`CupertinoDynamicColor.b`].
-1. The [`CupertinoDynamicColor.opacity`][] is deprecated in favor of 
-  [`CupertinoDynamicColor.a`].
-1. The [`CupertinoDynamicColor.withOpacity()`][] is deprecated in favor of 
-  [`CupertinoDynamicColor.withValues()`].
+1.  The [`CupertinoDynamicColor.red`][] field is deprecated in
+    favor of [`CupertinoDynamicColor.r`].
+1.  The [`CupertinoDynamicColor.green`][] is deprecated in
+    favor of [`CupertinoDynamicColor.g`].
+1.  The [`CupertinoDynamicColor.blue`][] is deprecated in
+    favor of [`CupertinoDynamicColor.b`].
+1.  The [`CupertinoDynamicColor.opacity`][] is deprecated in
+    favor of [`CupertinoDynamicColor.a`].
+1.  The [`CupertinoDynamicColor.withOpacity()`][] is deprecated in
+    favor of [`CupertinoDynamicColor.withValues()`].
 
 
 ## Migration guide
@@ -53,10 +54,10 @@ final intBlue = _floatToInt8(color.b);
 ### Opacity
 
 Before Flutter 3.27, `Color` had the concept of "opacity", which showed up in the
-methods `opacity` and `withOpacity()`. Since Flutter 3.27, alpha is stored as a 
-floating-point value. Using `.a` and `.withValues()` will give the full 
-expression of a floating-point value and won't be quantized (restricted to a 
-limited range). That means "alpha" expresses the intent of "opacity" more 
+methods `opacity` and `withOpacity()`. Since Flutter 3.27, alpha is stored as a
+floating-point value. Using `.a` and `.withValues()` will give the full
+expression of a floating-point value and won't be quantized (restricted to a
+limited range). That means "alpha" expresses the intent of "opacity" more
 correctly.
 
 #### Migrate `opacity`
@@ -82,7 +83,7 @@ final x = color.withValues(alpha: 0.5);
 
 ## Timeline
 
-Landed in version: 3.33.0-1.0.pre<br>
+Landed in version: Not yet<br>
 Stable release: Not yet
 
 ## References

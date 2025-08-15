@@ -6,7 +6,7 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.9.0-0
 
 workspace:
   - my_widgets
@@ -15,7 +15,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  http: ^1.4.0
+  http: ^1.5.0
   google_sign_in: ^6.3.0
   shared_preferences: ^2.5.3
   my_widgets:
