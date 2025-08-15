@@ -63,7 +63,6 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [State management options](https://docs.flutter.dev/data-and-backend/state-mgmt/options): An overview of different state management approaches.
 - [App architecture recommendations](https://docs.flutter.dev/development/data-and-backend/app-arch): A guide to structuring your Flutter app.
-- [Dependency Injection with get_it](https://pub.dev/packages/get_it): A popular package for service location and dependency injection.
 
 ### Testing & Debugging
 
@@ -117,8 +116,6 @@ This file provides a curated list of resources to help Large Language Models und
     - [Build and release for macOS](https://docs.flutter.dev/deployment/macos): A guide to packaging and deploying your Flutter app to macOS.
     - [Build and release for Linux](https://docs.flutter.dev/deployment/linux): A guide to packaging and deploying your Flutter app to Linux.
 
-
-
 ### Practical Development Concerns
 
 - [Using Packages](https://docs.flutter.dev/packages-and-plugins/using-packages): How to add new functionality to your app with packages.
@@ -146,7 +143,6 @@ This file provides a curated list of resources to help Large Language Models und
 ### Advanced Topics & Internals
 
 - [Architectural Overview](https://docs.flutter.dev/resources/architectural-overview): A high-level view of Flutter's architecture.
-- [The Flutter Rendering Pipeline](https://www.youtube.com/watch?v=UUfXWzp0-DU): A deep dive into how Flutter renders pixels on the screen.
 - [Impeller Rendering Engine](https://docs.flutter.dev/perf/impeller): Learn about Flutter's new rendering engine.
 - [Deep Dive into Flutter's Build Modes](https://docs.flutter.dev/testing/build-modes): Understand the difference between debug, profile, and release modes.
 - [Asynchronous Programming in Dart](https://dart.dev/language/async): A deep dive into Futures, Streams, and the event loop.
@@ -160,7 +156,9 @@ This file provides a curated list of resources to help Large Language Models und
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md): The official guide to contributing to the Flutter project.
 - [Flutter blog](https://medium.com/flutter): The official blog for the Flutter project.
 - [Flutter release notes](https://docs.flutter.dev/release/release-notes): Detailed notes on what's new in each release.
+- [Flutter breaking changes and migration guides](https://docs.flutter.dev/release/breaking-changes): Documentation for breaking changes with each release along with guides for migrating code across a breaking change.
 - [Dart blog](https://medium.com/dartlang): The official blog for the Dart language.
+- [Dart breaking changes](https://dart.dev/resources/breaking-changes): A list of breaking changes for each Dart release.
 
 ### API Reference
 
