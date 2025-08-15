@@ -1952,6 +1952,14 @@
     - 'Animation and motion'
   subcategories: []
   link: https://api.flutter.dev/flutter/widgets/SliverFadeTransition-class.html
+- name: SliverFillRemaining
+  description: >-
+    A sliver that contains a single box child that fills the remaining space
+    in the viewport.
+  categories: []
+  subcategories:
+    - 'Sliver widgets'
+  link: https://api.flutter.dev/flutter/widgets/SliverFillRemaining-class.html
 - name: SliverFixedExtentList
   description: >-
     A sliver that places multiple box children with the same main axis extent in

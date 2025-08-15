@@ -10,7 +10,8 @@ next:
 ---
 
 To get started with Flutter,
-you need to have some familiarity with the Dart programming language, which Flutter
+you need to have some familiarity with the
+Dart programming language, which Flutter
 applications are written in, and widgets,
 which are the building blocks of Flutter UI.
 Both will be introduced on this page, but you'll continue
@@ -243,6 +244,14 @@ next lesson in the learning pathway.
 * [`ElevatedButton`][]
 * [`Image`][]
 * [`Icon`][]
+
+## Widget previewer
+
+You can see your widgets render in real-time, separate from
+a full app. To learn more, see the
+[Flutter Widget Previewer][] guide.
+
+[Flutter Widget Previewer]: /tools/widget-previewer
 
 ## Next: Layouts
 

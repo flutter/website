@@ -35,7 +35,7 @@ val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build"
 ```
 to:
 ```dart
-val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("build").get()
+val newBuildDir: Directory = rootProject.layout.buildDirectory.get()
 ```
 
 #### `build.gradle.kts`

@@ -300,7 +300,7 @@ target '<name of your App Clip target>'
 ```
 
 At the top of the file,
-also uncomment `platform :ios, '12.0'` and set the
+also uncomment `platform :ios, '13.0'` and set the
 version to the lowest of the two target's iOS
 Deployment Target.
 

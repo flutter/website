@@ -103,9 +103,10 @@ Then follow these steps:
 
  1. <h3>Select a project location</h3>
 
-    A file dialog will appear.
-    Select or create the parent directory where the project will be created.
-    Do not create the project folder itself, the Flutter tool will do so.
+    A file dialog should appear.
+    Select or create the parent directory where
+    you want the project to be created.
+    Don't create the project folder itself, the Flutter tool does so.
     To confirm your selection,
     click **Select a folder to create the project in**.
 
@@ -119,7 +120,7 @@ Then follow these steps:
  1. <h3>Wait for project initialization</h3>
 
     Based on the information you entered,
-    VS Code will use `flutter create` to bootstrap your application.
+    VS Code uses `flutter create` to bootstrap your app.
     Progress is often surfaced as a notification in the bottom right
     and can also be accessed from the **Output** panel.
 
