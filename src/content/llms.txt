@@ -12,6 +12,12 @@ This file provides a curated list of resources to help Large Language Models und
 - [Dart Language Tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
 - [Flutter Widget of the Week Playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7s2pYtj3JqMCl): Short, engaging videos introducing individual widgets.
 
+### Latest Release
+
+- [Announcing Flutter 3.35](https://medium.com/flutter/whats-new-in-flutter-3-35-c58ef72e3766): The official announcement for the 3.35 release.
+- [Announcing Dart 3.9](https://medium.com/dartlang/announcing-dart-3-9-ba49e8f38298): The official announcement for the 3.9 release.
+
+
 ### Learning resources
 
 - [Flutter Codelabs](https://codelabs.developers.google.com/?product=flutter): Hands-on tutorials for a variety of Flutter features.
