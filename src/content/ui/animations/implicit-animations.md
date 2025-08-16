@@ -23,9 +23,8 @@ about implicit animations in Flutter.
   how to use implicit animations.
 
 [`AnimatedContainer` sample][]
-: A step-by-step recipe from the [Flutter cookbook][]
-  for using the [`AnimatedContainer`][]
-  implicitly animated widget.
+: A step-by-step recipe for using the
+  [`AnimatedContainer`][] implicitly animated widget.
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
@@ -73,6 +72,5 @@ implicitly animated widgets:
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: /cookbook
 [Implicit animations codelab]: /codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

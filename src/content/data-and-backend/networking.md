@@ -42,7 +42,7 @@ Learn more about [setting up entitlements][].
 
 For a practical sample of various networking tasks (incl. fetching data,
 WebSockets, and parsing data in the background) see the 
-[networking cookbook](/cookbook#networking).
+[networking cookbook recipes](/cookbook/networking).
 
 [declare]: {{site.android-dev}}/training/basics/network-ops/connecting
 [`http`]: {{site.pub-pkg}}/http

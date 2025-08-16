@@ -366,7 +366,7 @@ application.
 For examples of using fonts
 see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
-[Flutter cookbook][].
+Flutter cookbook.
 
 The `fonts` field has this structure:
 
@@ -437,7 +437,6 @@ flutter:
 ```
 
 [Export fonts from a package]: /cookbook/design/package-fonts
-[Flutter cookbook]: /cookbook
 [Use a custom font]: /cookbook/design/fonts
 
 ### generate field
