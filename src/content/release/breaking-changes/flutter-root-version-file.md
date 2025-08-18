@@ -1,17 +1,18 @@
 ---
 title: $FLUTTER_ROOT/bin/cache/flutter.version.json replaces $FLUTTER_ROOT/version
 description: >-
-  The deprecated `$FLUTTER_ROOT/version` tool file output has been replaced by
-  `$FLUTTER_ROOT/bin/cache/flutter.version.json`, and any build scripts or
+  The deprecated '$FLUTTER_ROOT/version' tool file output has been replaced by
+  '$FLUTTER_ROOT/bin/cache/flutter.version.json', and any build scripts or
   references to it must also be updated.
 ---
 
 ## Summary
 
-The `flutter` tool will no longer output the `$FLUTTER_ROOT/version` metadata
-file, and only outputs `$FLUTTER_ROOT/bin/cache/flutter.version.json`.
+The `flutter` tool will no longer
+output the `$FLUTTER_ROOT/version` metadata file, and
+only output `$FLUTTER_ROOT/bin/cache/flutter.version.json`.
 
-Tools and build scripts that rely on the precense of `$FLUTTER_ROOT/version`
+Tools and build scripts that rely on the presence of `$FLUTTER_ROOT/version`
 need to be updated.
 
 ## Background
@@ -48,8 +49,8 @@ Generating both files is a source of technical debt.
 
 ## Migration guide
 
-Most Flutter developers don't parse or use this file, but custom tools or CI
-configurations might.
+Most Flutter developers don't parse or use this file, but
+custom tools or CI configurations might.
 
 For example, the Flutter team's own `api.flutter.dev` generation script:
 
@@ -69,7 +70,7 @@ final String version = () {
 }();
 ```
 
-To temporarily opt-out of `$FLUTTER_ROOT/version` no longer be emitted:
+To temporarily opt-out of `$FLUTTER_ROOT/version` no longer being emitted:
 
 ```sh
 flutter config --no-enable-omit-legacy-version-file
