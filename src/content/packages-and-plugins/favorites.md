@@ -54,6 +54,7 @@ are as follows:
 * Pooja Bhaumik
 * Hillel Coren
 * Ander Dobo
+* Majid Hajian
 * Simon Lightfoot
 * John Ryan
 * Diego Velasquez
