@@ -4,6 +4,14 @@ short-title: Install
 description: Learn how to install and set up Flutter.
 ---
 
+:::tip
+If you've never set up or developed an app with Flutter before
+and plan to use VS Code or other Code - OSS derived editor,
+follow [Set up and test drive Flutter][].
+:::
+
+[Set up and test drive Flutter]: /get-started/quick
+
 ## Try Flutter {:#try}
 
 You can quickly try Flutter online without any local setup.
@@ -36,7 +44,7 @@ You can quickly try Flutter online without any local setup.
 ## Install and get started {: #get-started}
 
 To get started developing with Flutter,
-follow these steps to install, set up, and try out Flutter
+follow these steps to install and set up Flutter
 on your preferred development and target device.
 
  1. <h3>Install Flutter</h3>
