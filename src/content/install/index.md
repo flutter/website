@@ -4,7 +4,7 @@ short-title: Install
 description: Learn how to install and set up Flutter.
 ---
 
-:::tip
+:::recommend
 If you've never set up or developed an app with Flutter before
 and plan to use VS Code or another Code - OSS derived editor,
 follow [Set up and test drive Flutter][].
