@@ -8,3 +8,8 @@ sitemap: false
 ---
 
 The Flutter codelabs provide a guided, hands-on coding experience with Flutter!
+
+To discover codelabs and other learning materials relevant to you,
+check out the [learning resources index][].
+
+[learning resources index]: /reference/learning-resources
