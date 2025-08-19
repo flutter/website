@@ -23,7 +23,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion transitionsBuilder

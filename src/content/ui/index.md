@@ -544,7 +544,7 @@ class Product {
   final String name;
 }
 
-typedef CartChangedCallback = Function(Product product, bool inCart);
+typedef CartChangedCallback = void Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
@@ -648,7 +648,7 @@ class Product {
   final String name;
 }
 
-typedef CartChangedCallback = Function(Product product, bool inCart);
+typedef CartChangedCallback = void Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
