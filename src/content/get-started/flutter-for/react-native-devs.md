@@ -157,7 +157,10 @@ In Dart, only the boolean value `true` is treated as true.
 <?code-excerpt "lib/main.dart (true)"?>
 ```dart
 /// Dart
-var myNull;
+var myNull = potentiallyNull();
+if (myNull == null) {
+  print('use "== null" to check null');
+}
 var zero = 0;
 if (zero == 0) {
   print('use "== 0" to check zero');
@@ -1656,7 +1659,7 @@ transition. It takes a [`WidgetBuilder`][] as a required parameter.
 ```dart
 Navigator.push(
   context,
-  MaterialPageRoute(builder: (context) => const UsualNavScreen()),
+  MaterialPageRoute<void>(builder: (context) => const UsualNavScreen()),
 );
 ```
 

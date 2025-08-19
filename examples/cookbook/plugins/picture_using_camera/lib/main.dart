@@ -103,7 +103,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
             // If the picture was taken, display it on a new screen.
             await Navigator.of(context).push(
-              MaterialPageRoute(
+              MaterialPageRoute<void>(
                 builder: (context) => DisplayPictureScreen(
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.

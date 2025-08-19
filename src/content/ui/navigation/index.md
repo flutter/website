@@ -25,7 +25,9 @@ as `push()` `or pop()`:
 child: const Text('Open second screen'),
 onPressed: () {
   Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => const SecondScreen()),
+    MaterialPageRoute<void>(
+      builder: (context) => const SecondScreen(),
+    ),
   );
 },
 ```
@@ -155,7 +157,7 @@ resources:
   Medium, describes how to use the `Router` widget directly, without
   a routing package.
 * The [Router design document][] contains the motivation and design of the
-  Router` API.
+  `Router` API.
 
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html

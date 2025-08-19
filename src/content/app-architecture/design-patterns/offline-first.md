@@ -261,7 +261,7 @@ Future<void> load() async {
           // handle error
         },
       )
-      .asFuture();
+      .asFuture<void>();
 }
 ```
 ### Using only local data

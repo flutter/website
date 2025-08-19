@@ -3,7 +3,7 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.9.0
 
 dependencies:
   collection: any # Pull the version of package:collection from Flutter.
@@ -12,4 +12,4 @@ dependencies:
     sdk: flutter
   google_sign_in: ^6.3.0
   googleapis: ^14.0.0
-  http: ^1.4.0
+  http: ^1.5.0

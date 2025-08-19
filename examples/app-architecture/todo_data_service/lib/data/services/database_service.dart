@@ -86,7 +86,7 @@ class DatabaseService {
   }
   // #enddocregion Delete
 
-  Future close() async {
+  Future<void> close() async {
     await _database?.close();
     _database = null;
   }

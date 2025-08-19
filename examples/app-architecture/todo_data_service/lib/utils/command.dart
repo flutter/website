@@ -41,7 +41,7 @@ abstract class Command<T> extends ChangeNotifier {
   bool get completed => _result is Ok;
 
   /// Get last action result
-  Result? get result => _result;
+  Result<T>? get result => _result;
 
   /// Clear last action result
   void clearResult() {
@@ -79,7 +79,7 @@ class Command0<T> extends Command<T> {
 
   /// Executes the action.
   Future<void> execute() async {
-    await _execute(() => _action());
+    await _execute(_action);
   }
 }
 
