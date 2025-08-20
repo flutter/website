@@ -16,7 +16,6 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.8
   http: ^1.5.0
-  google_sign_in: ^6.3.0
   shared_preferences: ^2.5.3
   my_widgets:
     path: my_widgets
