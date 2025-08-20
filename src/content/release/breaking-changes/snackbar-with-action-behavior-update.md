@@ -23,9 +23,9 @@ until they are acknowledged.
 
 This change aligns with the Material 3 design specifications for `SnackBar`s:
 * Old behavior: A `SnackBar` with an action button would auto-dismiss after a
-duration unless talkback was enabled.
-* New behavior: A `SnackBar` with an action button will not auto-dismiss. It will 
-remain on screen until it is dismissed by the user.
+  duration unless talkback was enabled.
+* New behavior: A `SnackBar` with an action button won't auto-dismiss; 
+   it remains on screen until dismissed by the user.
 
 To allow users to override this behavior, an optional `persist` property has 
 been added to `SnackBar`. When it is true, the `SnackBar` will not auto-dismiss  
