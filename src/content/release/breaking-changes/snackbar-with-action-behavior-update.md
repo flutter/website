@@ -27,12 +27,12 @@ This change aligns with the Material 3 design specifications for `SnackBar`s:
 * New behavior: A `SnackBar` with an action button won't auto-dismiss; 
    it remains on screen until dismissed by the user.
 
-To allow users to override this behavior, an optional `persist` property has 
-been added to `SnackBar`. When it is true, the `SnackBar` will not auto-dismiss  
-and will remain on screen until manually dismissed by the user. When false, the 
-`SnackBar` will auto-dismiss after its standard duration, regardless of the 
-presence of an action. When it is null, the `SnackBar` will use the default 
-behavior, which is to not auto-dismiss if an action is present.
+To override this behavior, an optional `persist` property has 
+been added to `SnackBar`. When `persist` is true, the `SnackBar` won't auto-dismiss  
+and remains on screen until manually dismissed by the user. When false, the 
+`SnackBar` auto-dismisses after its standard duration, regardless of the 
+presence of an action. When null, the `SnackBar` follows the default 
+behavior, which won't auto-dismiss if an action is present.
 
 ## Migration guide
 
