@@ -112,9 +112,8 @@ in the previous section.
 
 <?code-excerpt "lib/main.dart (init)"?>
 ```dart
-final _googleSignIn = GoogleSignIn(
-  scopes: <String>[YouTubeApi.youtubeReadonlyScope],
-);
+final _googleSignIn = GoogleSignIn.instance;
+final _scopes = [YouTubeApi.youtubeReadonlyScope];
 ```
 
 Follow the instructions provided by
@@ -144,7 +143,10 @@ you can create an authenticated client.
 
 <?code-excerpt "lib/main.dart (signin-call)"?>
 ```dart
-var httpClient = (await _googleSignIn.authenticatedClient())!;
+var httpClient =
+    (await _currentUser!.authorizationClient.authorizationForScopes(
+      _scopes,
+    ))!.authClient(scopes: _scopes);
 ```
 
 This [`Client`][] instance includes the necessary
