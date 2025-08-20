@@ -36,9 +36,8 @@ class _LikedVideosWidget extends StatefulWidget {
 
 class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   // #docregion init
-  final _googleSignIn = GoogleSignIn(
-    scopes: <String>[YouTubeApi.youtubeReadonlyScope],
-  );
+  final _googleSignIn = GoogleSignIn.instance;
+  final _scopes = [YouTubeApi.youtubeReadonlyScope];
   // #enddocregion init
 
   GoogleSignInAccount? _currentUser;
@@ -47,15 +46,19 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   @override
   void initState() {
     super.initState();
-    _googleSignIn.onCurrentUserChanged.listen((account) {
+    _googleSignIn.initialize();
+    _googleSignIn.authenticationEvents.listen((event) {
       setState(() {
-        _currentUser = account;
+        _currentUser = switch (event) {
+          GoogleSignInAuthenticationEventSignIn signInEvent => signInEvent.user,
+          _ => null,
+        };
       });
       if (_currentUser != null) {
         _downloadLikedList();
       }
     });
-    //_googleSignIn.signInSilently();
+    _googleSignIn.attemptLightweightAuthentication();
   }
 
   @override
@@ -121,7 +124,10 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
 
   Future<void> _downloadLikedList() async {
     // #docregion signin-call
-    var httpClient = (await _googleSignIn.authenticatedClient())!;
+    var httpClient =
+        (await _currentUser!.authorizationClient.authorizationForScopes(
+          _scopes,
+        ))!.authClient(scopes: _scopes);
     // #enddocregion signin-call
 
     // #docregion playlist
@@ -141,7 +147,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   Future<void> _onSignIn() async {
     _lastMessage = null;
     try {
-      await _googleSignIn.signIn();
+      await _googleSignIn.authenticate();
     } catch (error) {
       _snackbarError(error.toString());
     }
