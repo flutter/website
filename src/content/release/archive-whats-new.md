@@ -1265,8 +1265,7 @@ see [Announcing Flutter 1.20][].
   performance docs.
 * [Developing for iOS 14 beta][] outlines some issues you might
   run into if developing for devices running iOS 14 beta.
-* New instructions for [installing Flutter on Linux using
-  snapd.][]
+* New instructions for installing Flutter on Linux using snapd.
 * Updated the [Desktop support][] page to reflect that Linux
   desktop apps (as well as macOS) are available as alpha.
 * Several new Flutter books have been published. The
