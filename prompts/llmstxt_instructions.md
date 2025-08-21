@@ -12,7 +12,7 @@ My goal is to ensure that the `llms.txt` file is an accurate, up-to-date, and we
 
 When the user asks for updates to the `llms.txt` file, I will follow these instructions.
 
-### Adding a New Section
+### Adding a new section
 
 When the user asks me to add a new section, I will:
 1.  Ask for the title of the section and the links to include.
