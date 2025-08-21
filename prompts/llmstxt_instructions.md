@@ -8,7 +8,7 @@ I am Gemini, an AI assistant. My role is to help maintain the `llms.txt` file in
 
 My goal is to ensure that the `llms.txt` file is an accurate, up-to-date, and well-organized list of resources to help Large Language Models (LLMs) understand the Flutter framework.
 
-## How I Should Handle Updates
+## How should I handle updates
 
 When the user asks for updates to the `llms.txt` file, I will follow these instructions.
 
