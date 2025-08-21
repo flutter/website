@@ -13,7 +13,7 @@ to set up your Flutter development environment and
 test drive Flutter's developer experience.
 
 If you've developed with Flutter before,
-or you prefer a different installation method,
+or you prefer to use a different editor or IDE,
 you can follow the [custom setup instructions][] instead.
 
 :::note What you'll achieve
