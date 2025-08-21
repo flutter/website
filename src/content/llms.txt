@@ -182,6 +182,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Full Flutter API Reference](https://api.flutter.dev/): The complete, searchable reference for all Flutter libraries, classes, and functions.
 
 ## Flutter for developers
+
 [Flutter for Android developers](https://docs.flutter.dev/get-started/flutter-for/android-devs): This document is meant for Android developers looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of the Android framework then you can use this document as a jump start to Flutter development.
 [Flutter for Jetpack Compose developers](https://docs.flutter.dev/get-started/flutter-for/compose-devs): This document is meant for Jetpack Compose developers looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of the Jetpack Compose then you can use this document as a jump start to Flutter development.
 [Flutter for SwiftUI Developers](https://docs.flutter.dev/get-started/flutter-for/swiftui-devs): This document is meant for SwiftUI developers looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of SwiftUI then you can use this document as a jump start to Flutter development.
@@ -189,4 +190,3 @@ This file provides a curated list of resources to help Large Language Models und
 [Flutter for React Native developers](https://docs.flutter.dev/get-started/flutter-for/react-native-devs): This document is meant for React native developers looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of React Native then you can use this document as a jump start to Flutter development.
 [Flutter for web developers](https://docs.flutter.dev/get-started/flutter-for/web-devs): This document is meant for web developers looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of web development then you can use this document as a jump start to Flutter development.
 [Flutter for Xamarin.Forms developers](https://docs.flutter.dev/get-started/flutter-for/xamarin-forms-devs): This document is meant for Xamarin.Forms looking to apply their existing knowledge to build mobile apps with Flutter. If you understand the fundamentals of Xamarin.Forms then you can use this document as a jump start to Flutter development.
-
