@@ -91,6 +91,7 @@ Firebase Studio, and other Code OSS-based editors.
 Once you've successfully installed Flutter,
 set up development for at least one target platform
 to continue your journey with Flutter.
+You can always set up development for additional target platforms later.
 
 <div class="card-grid wide">
  <a class="card outlined-card" href="/platform-integration/android/setup" target="_blank">
