@@ -48,7 +48,7 @@ This guide makes the following presumptions:
 1. You're adding the Raleway and RobotoMono fonts to your Flutter app.
 :::
 
-[set up your Flutter environment]: /get-started/install
+[set up your Flutter environment]: /get-started
 [new-flutter-app]: /reference/create-new-app
 
 ## Choose a font

@@ -434,5 +434,5 @@ check out the [Flutter CLI reference][cli-reference].
 
 [cli-reference]: /reference/flutter-cli
 
-[flutter-setup]: /get-started/install
+[flutter-setup]: /get-started
 [package-name]: {{site.dart-site}}/effective-dart/style#do-name-packages-and-file-system-entities-using-lowercase-with-underscores

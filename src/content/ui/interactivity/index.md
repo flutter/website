@@ -745,7 +745,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 : This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
+[Android emulator]: /platform-integration/android/setup#set-up-devices
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
@@ -766,7 +766,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
+[iOS simulator]: /platform-integration/ios/setup#set-up-devices
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
@@ -781,7 +781,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: /get-started/install
+[set up]: /get-started
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html
