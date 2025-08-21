@@ -38,7 +38,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [Basic widgets](https://docs.flutter.dev/ui/widgets/basics): Learn about essential widgets like `Text`, `Image`, `Icon`, and `Button`.
 - [Build a Form with validation](https://docs.flutter.dev/cookbook/forms/validation): Create a form and validate user input.
-- [Cookbook: Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
+- [Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
 - [Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
 - [Basic list](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
 - [ Grid list](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
@@ -47,7 +47,7 @@ This file provides a curated list of resources to help Large Language Models und
 ### Adding interactivity & navigation
 
 - [Cookbook: Handle taps](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
-- [State Management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
+- [State management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
 - [Navigation and Routing](https://docs.flutter.dev/ui/navigation): An introduction to navigating between different screens in your app.
 - [Cookbook: Navigate to a new screen and back](https://docs.flutter.dev/cookbook/navigation/navigation-basics): The most basic navigation pattern.
 - [Cookbook: Send data to a new screen](https://docs.flutter.dev/cookbook/navigation/passing-data): Pass data to another screen.
