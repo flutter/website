@@ -51,7 +51,7 @@ install an IDE or editor with support for Dart and Flutter.
 Some popular options include VS Code, Android Studio,
 Firebase Studio, and other Code OSS-based editors.
 
-<div class="card-grid">
+<div class="card-grid wide">
  <a class="card outlined-card" href="/tools/vs-code#setup" target="_blank">
    <div class="card-header">
      <span class="card-title">VS Code</span>
@@ -82,14 +82,6 @@ Firebase Studio, and other Code OSS-based editors.
    </div>
    <div class="card-content">
      <p>Create a new Flutter workspace in Firebase Studio.</p>
-   </div>
- </a>
- <a class="card outlined-card" href="/tools/vs-code#setup" target="_blank">
-   <div class="card-header">
-     <span class="card-title">Code OSS editors</span>
-   </div>
-   <div class="card-content">
-     <p>Set up Flutter support in Code OSS-based editors.</p>
    </div>
  </a>
 </div>
