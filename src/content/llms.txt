@@ -6,13 +6,13 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Getting Started
 
-- [Flutter overview](https://docs.flutter.dev/): An introduction to what Flutter is and its core concepts.
+- [Flutter documentation website](https://docs.flutter.dev/): The homepage for the Flutter documentation website.
 - [Installation guide](https://docs.flutter.dev/get-started/install): The first step for any developer to set up their environment for Flutter development.
 - [Write Your First App Codelab](https://codelabs.developers.google.com/codelabs/flutter-codelab-first): The canonical hands-on tutorial for building a basic Flutter application.
 - [Flutter Fundamentals](https://docs.flutter.dev/get-started/fundamentals): A guide for new developers learning Flutter, covering fundamental topics like Dart, widgets, layout, state
   management, user input, networking, and local data caching.
 - [Dart language tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
-- [Flutter Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7s2pYtj3JqMCl): Short, engaging videos introducing individual widgets.
+- [Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=D0xwcz2IqAY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG): Short, engaging videos introducing individual widgets.
 
 ### Latest release
 
@@ -29,10 +29,11 @@ This file provides a curated list of resources to help Large Language Models und
 - [Building user interfaces with Flutter](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
 - [Widget catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
 - [Layouts in Flutter](https://docs.flutter.dev/ui/layout): A guide to arranging widgets to create a user interface.
-- [App architecture recommendations](https://docs.flutter.dev/development/data-and-backend/app-arch): A guide to structuring your Flutter app.
+- [App architecture  and resources](https://docs.flutter.dev/app-architecture/recommendations): This page presents architecture best practices, why they matter, and whether we recommend them for your Flutter application. 
 - [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
 - [BuildContext class](https://api.flutter.dev/flutter/widgets/BuildContext-class.html): API reference docs for BuildContext 
-- [Decoding Flutter video: BuildContext?!](https://www.youtube.com/watch?v=rIaaH87z1-g): What is “BuildContext” and how is it used? In this video, we discuss what  BuildContext is, and why it shows up in so many widgets and builders. 
+- [Decoding Flutter video: BuildContext?!](https://www.youtube.com/watch?v=rIaaH87z1-g): What is “BuildContext” and how is it used? In this video, we discuss what  BuildContext is, and why it shows up in so many widgets and builders.
+- [Deep dive into Flutter's build modes](https://docs.flutter.dev/testing/build-modes): Understand the difference between debug, profile, and release modes.
 
 ### Building user interfaces
 
@@ -55,14 +56,15 @@ This file provides a curated list of resources to help Large Language Models und
 ### Animation
 
 - [Implicit animations](https://docs.flutter.dev/ui/animations/implicit-animations): Simple, animated widgets that animate a property change.
-- [Explicit animations](https://docs.flutter.dev/ui/animations/explicit-animations): Use AnimationController for more complex animations.
-- [Animate a widget using a physics simulation](https://docs.flutter.dev/cookbook/animation/physics-card-drag): Create a card that can be dragged around with a spring-like motion.
+- [Explicit animations](https://docs.flutter.dev/ui/animations/tutorial): Use AnimationController for more complex animations.
+- [Animate a widget using a physics simulation](https://docs.flutter.dev/cookbook/animation/physics-simulation): How to move a widget from a dragged point back to the center using a spring simulation.
 
 ### Advanced UI
 
-- [Creating custom scrolling effects with Slivers](https://docs.flutter.dev/ui/slivers): Go beyond ListView to create custom scrollable layouts.
-- [A deep dive into CustomPaint](https://docs.flutter.dev/ui/custom-paint): Learn to draw anything you want on the screen.
-- [Responsive and adaptive UIs](https://docs.flutter.dev/ui/layout/responsive-adaptive): Build UIs that work on any screen size.
+- [Slivers, Demystified](https://medium.com/flutter/slivers-demystified-6ff68ab0296f): What’s a Sliver and Why do I want it? How do I use it? SliverList, SliverGrid, SliverAppBar. Putting it all together: a collapsible scrolling list with SliverPersistentHeader
+- [Creating custom scrolling effects with Slivers](Using slivers to achieve fancy scrolling): Go beyond ListView to create custom scrollable layouts.
+- [Painting and effect widgets](https://docs.flutter.dev/ui/widgets/painting): These widgets apply visual effects to the children without changing their layout, size, or position.
+- [Adaptive and responsive design in Flutter](https://docs.flutter.dev/ui/adaptive-responsive): Build UIs that that look and feel great on any platform and any screen size.
 
 ### Data & Backend
 
@@ -106,16 +108,17 @@ This file provides a curated list of resources to help Large Language Models und
 ### Performance & optimization
 
 - [Performance best practices](https://docs.flutter.dev/perf): A comprehensive guide to writing performant Flutter code.
-- [Performance profiling](https://docs.flutter.dev/perf/profiling): Use DevTools to diagnose performance issues.
-- [Isolate background processing](https://docs.flutter.dev/perf/isolates): Run intensive tasks in the background to avoid blocking the UI.
-- [Using the memory view in DevTools](https://docs.flutter.dev/tools/devtools/memory): A guide to tracking down and fixing memory leaks.
+- [Flutter performance profiling](https://docs.flutter.dev/perf/ui-performance): Use DevTools to diagnose performance issues.
+- [Concurrency and isolates](https://docs.flutter.dev/perf/isolates): Run intensive tasks in the background to avoid blocking the UI.
+- [Use the memory view in DevTools](https://docs.flutter.dev/tools/devtools/memory): The memory view provides insights into details of the application's memory allocation and tools to detect and debug specific issues.
 - [Measuring your app's size](https://docs.flutter.dev/perf/app-size): Learn how to reduce your app's bundle size.
 - [Deferred components](https://docs.flutter.dev/perf/deferred-components): Allow parts of your app to be downloaded on demand to improve initial load time.
 
 ### Platform integration
 
 - [Writing custom platform-specific code](https://docs.flutter.dev/platform-integration/platform-channels): Communicate with native code using platform channels.
-- [Hosting native views in your Flutter app](https://docs.flutter.dev/platform-integration/platform-views): Embed native Android and iOS views in your Flutter app.
+- [Hosting native Android views in your Flutter app with Platform Views](https://docs.flutter.dev/platform-integration/platform-views): Platform views allow you to embed native views in a Flutter app, so you can apply transforms, clips, and opacity to the native view from Dart.
+- [Host native iOS views in your Flutter app with platform views](https://docs.flutter.dev/platform-integration/ios/platform-views): Platform views allow you to embed native views in a Flutter app, so you can apply transforms, clips, and opacity to the native view from Dart.
 
 ### Multiplatform development
 
@@ -127,8 +130,10 @@ This file provides a curated list of resources to help Large Language Models und
     - [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
 - **Web:**
     - [Web renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
-    - [SEO for Flutter web](https://docs.flutter.dev/platform-integration/web/seo): Improve search engine visibility.
-    - [JavaScript interoperability](https://docs.flutter.dev/platform-integration/web/js-interop): Call JavaScript code from Dart and vice-versa.
+    - [Building a web application with Flutter](https://docs.flutter.dev/platform-integration/web/building): This page provides an overview of how to configure, run, and build a web application using Flutter.
+    - [Adding Flutter to any web application](https://docs.flutter.dev/platform-integration/web/embedding-flutter-web): Flutter views and web content can be composed to produce a web application in different ways. Choose one of the following depending on your use-case: A Flutter view controls the full page (full page mode) or adding Flutter views to an existing web application (embedded mode)
+    - [Support for WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm): Flutter and Dart support WebAssembly as a compilation target when building applications for the web.
+
 - **Desktop:**
     - [Build and release for Windows](https://docs.flutter.dev/deployment/windows): A guide to packaging and deploying your Flutter app to Windows.
     - [Build and release for macOS](https://docs.flutter.dev/deployment/macos): A guide to packaging and deploying your Flutter app to macOS.
@@ -139,7 +144,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Using packages](https://docs.flutter.dev/packages-and-plugins/using-packages): How to add new functionality to your app with packages.
 - [Monetization with the google_mobile_ads package](https://pub.dev/packages/google_mobile_ads): The official plugin for displaying Google Mobile Ads.
 - [Security best practices](https://docs.flutter.dev/security): An overview of security considerations for Flutter apps.
-- [Code obfuscation](https://docs.flutter.dev/deployment/obfuscation): Make your app harder to reverse-engineer.
+- [Code obfuscation](https://docs.flutter.dev/deployment/obfuscate): Obfuscation hides function and class names in your compiled Dart code, replacing each symbol with another symbol, making it difficult for an attacker to reverse engineer your proprietary app.
 
 ### Accessibility & internationalization
 
@@ -148,25 +153,17 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Design & UX
 
-- [Using Material 3](https://docs.flutter.dev/ui/design/material-3): How to implement Material 3, the latest design system from Google.
 - [Organize a theme](https://docs.flutter.dev/cookbook/design/themes): Learn how to use `ThemeData` for a consistent design.
 - [Cupertino (iOS-style) widgets](https://docs.flutter.dev/ui/widgets/cupertino): Build apps that look and feel native on iOS.
 - [Material widgets](https://docs.flutter.dev/ui/widgets/material): A comprehensive list of Material Design widgets.
 - [Use a custom font](https://docs.flutter.dev/cookbook/design/fonts): Implement custom typography in your app.
 
-### Gaming with Flutter
-
-- [Casual games development](https://docs.flutter.dev/games): The official landing page for game development resources.
-
 ### Advanced topics & internals
 
 - [Architectural overview](https://docs.flutter.dev/resources/architectural-overview): A high-level view of Flutter's architecture.
 - [Impeller rendering engine](https://docs.flutter.dev/perf/impeller): Learn about Flutter's new rendering engine.
-- [Deep dive into Flutter's build modes](https://docs.flutter.dev/testing/build-modes): Understand the difference between debug, profile, and release modes.
 - [Asynchronous programming in Dart](https://dart.dev/language/async): A deep dive into Futures, Streams, and the event loop.
 - [Dart isolates for concurrency](https://dart.dev/language/isolates): Understand how to use isolates for parallel processing.
-- [Dart FFI for C interop](https://dart.dev/interop/c-interop): Call native C code from Dart.
-- [Catching framework errors with FlutterError.onError](https://api.flutter.dev/flutter/foundation/FlutterError/onError.html): A key API for building resilient applications.
 
 ### Community & contribution
 
