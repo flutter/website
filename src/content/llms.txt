@@ -177,7 +177,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Dart blog](https://medium.com/dartlang): The official blog for the Dart language.
 - [Dart breaking changes](https://dart.dev/resources/breaking-changes): A list of breaking changes for each Dart release.
 
-### API Reference
+### API reference
 
 - [Full Dart API reference](https://api.dart.dev/): The complete, searchable reference for all Dart libraries, classes, and functions.
 - [Full Flutter API Reference](https://api.flutter.dev/): The complete, searchable reference for all Flutter libraries, classes, and functions.
