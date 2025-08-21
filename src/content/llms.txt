@@ -169,7 +169,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Community & Contribution
 
-- [Package Development Best Practices](https://flutter.dev/docs/development/packages-and-plugins/developing-packages): Learn how to create high-quality, publishable packages.
+- [Package development best practices](https://flutter.dev/docs/development/packages-and-plugins/developing-packages): Learn how to create high-quality, publishable packages.
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md): The official guide to contributing to the Flutter project.
 - [Flutter blog](https://medium.com/flutter): The official blog for the Flutter project.
 - [Flutter release notes](https://docs.flutter.dev/release/release-notes): Detailed notes on what's new in each release.
