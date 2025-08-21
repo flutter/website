@@ -30,7 +30,7 @@ you can follow the [custom setup instructions][] instead.
 ## Confirm your development platform {: #dev-platform}
 
 The instructions on this page are configured to cover
-installing and test driving Flutter on a **Windows**{:.selected-os-text} device.
+installing and trying out Flutter on a **Windows**{:.selected-os-text} device.
 
 If you'd like to follow the instructions for a different OS,
 please select one of the following.

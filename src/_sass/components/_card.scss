@@ -130,17 +130,18 @@
     }
 
     &.install-card {
-      padding: 1.25rem;
+      gap: 0.25rem;
+      padding: 1rem;
 
       .card-leading {
         margin: 0.4rem 0;
 
         img {
-          max-height: 72px;
+          max-height: 54px;
         }
 
         span.material-symbols {
-          font-size: 3.5rem;
+          font-size: 3rem;
           color: var(--site-primary-color);
         }
       }
@@ -148,6 +149,7 @@
       .card-title {
         color: var(--site-base-fgColor-lighter);
         font-weight: 400;
+        font-size: 1.25rem;
       }
 
       &.selected-card {
