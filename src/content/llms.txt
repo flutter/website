@@ -7,12 +7,12 @@ This file provides a curated list of resources to help Large Language Models und
 ### Getting Started
 
 - [Flutter overview](https://docs.flutter.dev/): An introduction to what Flutter is and its core concepts.
-- [Installation Guide](https://docs.flutter.dev/get-started/install): The first step for any developer to set up their environment for Flutter development.
+- [Installation guide](https://docs.flutter.dev/get-started/install): The first step for any developer to set up their environment for Flutter development.
 - [Write Your First App Codelab](https://docs.flutter.dev/get-started/codelab): The canonical hands-on tutorial for building a basic Flutter application.
-- [Dart Language Tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
-- [Flutter Widget of the Week Playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7s2pYtj3JqMCl): Short, engaging videos introducing individual widgets.
+- [Dart language tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
+- [Flutter Widget of the Week playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7s2pYtj3JqMCl): Short, engaging videos introducing individual widgets.
 
-### Latest Release
+### Latest release
 
 - [Announcing Flutter 3.35](https://medium.com/flutter/whats-new-in-flutter-3-35-c58ef72e3766): The official announcement for the 3.35 release.
 - [Announcing Dart 3.9](https://medium.com/dartlang/announcing-dart-3-9-ba49e8f38298): The official announcement for the 3.9 release.
@@ -20,29 +20,29 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Learning resources
 
-- [Flutter Codelabs](https://codelabs.developers.google.com/?product=flutter): Hands-on tutorials for a variety of Flutter features.
-- [Flutter Demos](https://github.com/flutter/demos): A repository of demo applications showing Flutter in action.
-- [Flutter Samples](https://github.com/flutter/samples): A repository of sample applications demonstrating Flutter best practices.
+- [Flutter codelabs](https://codelabs.developers.google.com/?product=flutter): Hands-on tutorials for a variety of Flutter features.
+- [Flutter demos](https://github.com/flutter/demos): A repository of demo applications showing Flutter in action.
+- [Flutter samples](https://github.com/flutter/samples): A repository of sample applications demonstrating Flutter best practices.
 
-### Core Concepts
+### Core concepts
 
 - [Introduction to Widgets](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
-- [Widget Catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
+- [Widget catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
 - [Layouts in Flutter](https://docs.flutter.dev/ui/layout): A guide to arranging widgets to create a user interface.
 - [Understanding BuildContext](https://docs.flutter.dev/ui/layout/constraints): A deep dive into how BuildContext works.
-- [State Management Overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
+- [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
 
-### Building User Interfaces
+### Building user interfaces
 
-- [Basic Widgets Tutorial](https://docs.flutter.dev/ui/widgets/basics): Learn about essential widgets like `Text`, `Image`, `Icon`, and `Button`.
-- [Building Forms with Validation](https://docs.flutter.dev/cookbook/forms/validation): Create a form and validate user input.
+- [Basic widgets](https://docs.flutter.dev/ui/widgets/basics): Learn about essential widgets like `Text`, `Image`, `Icon`, and `Button`.
+- [Build a Form with validation](https://docs.flutter.dev/cookbook/forms/validation): Create a form and validate user input.
 - [Cookbook: Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
-- [Cookbook: Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
-- [Cookbook: Basic List](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
-- [Cookbook: Grid List](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
-- [Cookbook: Horizontal List](https://docs.flutter.dev/cookbook/lists/horizontal-list): Create a list that scrolls horizontally.
+- [Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
+- [Basic list](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
+- [ Grid list](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
+- [Horizontal list](https://docs.flutter.dev/cookbook/lists/horizontal-list): Create a list that scrolls horizontally.
 
-### Adding Interactivity & Navigation
+### Adding interactivity & navigation
 
 - [Cookbook: Handle taps](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
 - [State Management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
@@ -55,7 +55,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [Implicit animations](https://docs.flutter.dev/ui/animations/implicit-animations): Simple, animated widgets that animate a property change.
 - [Explicit animations](https://docs.flutter.dev/ui/animations/explicit-animations): Use AnimationController for more complex animations.
-- [Cookbook: Animate a widget using a physics simulation](https://docs.flutter.dev/cookbook/animation/physics-card-drag): Create a card that can be dragged around with a spring-like motion.
+- [Animate a widget using a physics simulation](https://docs.flutter.dev/cookbook/animation/physics-card-drag): Create a card that can be dragged around with a spring-like motion.
 
 ### Advanced UI
 
@@ -65,20 +65,20 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Data & Backend
 
-- [Cookbook: Fetch data from the internet](https://docs.flutter.dev/cookbook/networking/fetch-data): Make a basic HTTP request.
+- [Fetch data from the internet](https://docs.flutter.dev/cookbook/networking/fetch-data): Make a basic HTTP request.
 - [Networking with Flutter](https://docs.flutter.dev/data-and-backend/networking): How to make HTTP requests and handle JSON data.
 - [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase): A guide to using Firebase as a backend for your Flutter app.
-- [Cookbook: Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite): Learn the basics of local database storage.
-- [Cookbook: Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value): For simple data storage using `shared_preferences`.
+- [Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite): Learn the basics of local database storage.
+- [Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value): For simple data storage using `shared_preferences`.
 
-### State Management & Architecture
+### State management & architecture
 
 - [State management options](https://docs.flutter.dev/data-and-backend/state-mgmt/options): An overview of different state management approaches.
 - [App architecture recommendations](https://docs.flutter.dev/development/data-and-backend/app-arch): A guide to structuring your Flutter app.
 
-### Testing & Debugging
+### Testing & debugging
 
-- [Testing Flutter Apps](https://docs.flutter.dev/testing): An introduction to the different types of testing in Flutter: unit, widget, and integration.
+- [Testing flutter apps](https://docs.flutter.dev/testing): An introduction to the different types of testing in Flutter: unit, widget, and integration.
 - [An introduction to integration testing](https://docs.flutter.dev/testing/integration-testing): Test the interaction between different parts of your app.
 - [Mocking dependencies for widget tests](https://docs.flutter.dev/cookbook/testing/unit/mocking): Isolate your widgets from their dependencies during testing.
 - [Finding widgets](https://docs.flutter.dev/cookbook/testing/widget/finding-widgets): A guide on how to find specific widget instances in a test environment.
@@ -86,7 +86,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Golden file testing](https://docs.flutter.dev/testing#golden-file-testing): The official documentation on how to perform screenshot testing for your widgets.
 - [Visualizing code coverage](https://docs.flutter.dev/testing/coverage): A guide on how to generate and interpret code coverage reports for your Flutter project.
 - [Continuous integration and testing with GitHub Actions](https://docs.flutter.dev/testing/ci): A guide on how to set up automated build and test pipelines.
-- [Debugging Flutter Apps](https://docs.flutter.dev/testing/debugging): Techniques and tools for finding and fixing issues in your code.
+- [Debugging Flutter apps](https://docs.flutter.dev/testing/debugging): Techniques and tools for finding and fixing issues in your code.
 - [Flutter DevTools](https://docs.flutter.dev/tools/devtools): An overview of the suite of performance and debugging tools for Flutter and Dart.
 
 ### Tools
@@ -102,7 +102,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Firebase AI Logic](https://firebase.google.com/docs/ai-logic): Official documentation for Firebase AI Logic.
 - [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
 
-### Performance & Optimization
+### Performance & optimization
 
 - [Performance best practices](https://docs.flutter.dev/perf): A comprehensive guide to writing performant Flutter code.
 - [Performance profiling](https://docs.flutter.dev/perf/profiling): Use DevTools to diagnose performance issues.
@@ -111,12 +111,12 @@ This file provides a curated list of resources to help Large Language Models und
 - [Measuring your app's size](https://docs.flutter.dev/perf/app-size): Learn how to reduce your app's bundle size.
 - [Deferred components](https://docs.flutter.dev/perf/deferred-components): Allow parts of your app to be downloaded on demand to improve initial load time.
 
-### Platform Integration
+### Platform integration
 
 - [Writing custom platform-specific code](https://docs.flutter.dev/platform-integration/platform-channels): Communicate with native code using platform channels.
 - [Hosting native views in your Flutter app](https://docs.flutter.dev/platform-integration/platform-views): Embed native Android and iOS views in your Flutter app.
 
-### Multi-Platform Development
+### Multiplatform development
 
 - **Android:**
     - [Android integration](https://docs.flutter.dev/platform-integration/android): The main landing page for Android-specific information.
@@ -125,41 +125,41 @@ This file provides a curated list of resources to help Large Language Models und
     - [iOS integration](https://docs.flutter.dev/platform-integration/ios): The main landing page for iOS-specific information.
     - [Build and release for iOS](https://docs.flutter.dev/deployment/ios): A guide to packaging and deploying your Flutter app to the Apple App Store.
 - **Web:**
-    - [Web Renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
-    - [SEO for Flutter Web](https://docs.flutter.dev/platform-integration/web/seo): Improve search engine visibility.
-    - [JavaScript Interoperability](https://docs.flutter.dev/platform-integration/web/js-interop): Call JavaScript code from Dart and vice-versa.
+    - [Web renderers](https://docs.flutter.dev/platform-integration/web/renderers): Learn about the HTML and CanvasKit renderers.
+    - [SEO for Flutter web](https://docs.flutter.dev/platform-integration/web/seo): Improve search engine visibility.
+    - [JavaScript interoperability](https://docs.flutter.dev/platform-integration/web/js-interop): Call JavaScript code from Dart and vice-versa.
 - **Desktop:**
     - [Build and release for Windows](https://docs.flutter.dev/deployment/windows): A guide to packaging and deploying your Flutter app to Windows.
     - [Build and release for macOS](https://docs.flutter.dev/deployment/macos): A guide to packaging and deploying your Flutter app to macOS.
     - [Build and release for Linux](https://docs.flutter.dev/deployment/linux): A guide to packaging and deploying your Flutter app to Linux.
 
-### Practical Development Concerns
+### Practical development concerns
 
-- [Using Packages](https://docs.flutter.dev/packages-and-plugins/using-packages): How to add new functionality to your app with packages.
+- [Using packages](https://docs.flutter.dev/packages-and-plugins/using-packages): How to add new functionality to your app with packages.
 - [Monetization with the google_mobile_ads package](https://pub.dev/packages/google_mobile_ads): The official plugin for displaying Google Mobile Ads.
 - [Security best practices](https://docs.flutter.dev/security): An overview of security considerations for Flutter apps.
 - [Code obfuscation](https://docs.flutter.dev/deployment/obfuscation): Make your app harder to reverse-engineer.
 
-### Accessibility & Internationalization
+### Accessibility & internationalization
 
 - [Accessibility in Flutter](https://docs.flutter.dev/accessibility-and-localization/accessibility): A guide to making your Flutter app accessible to all users.
-- [Internationalizing Flutter Apps](https://docs.flutter.dev/accessibility-and-localization/internationalization): How to prepare your app for a global audience.
+- [Internationalizing Flutter apps](https://docs.flutter.dev/accessibility-and-localization/internationalization): How to prepare your app for a global audience.
 
 ### Design & UX
 
 - [Using Material 3](https://docs.flutter.dev/ui/design/material-3): How to implement Material 3, the latest design system from Google.
-- [Cookbook: Organize a theme](https://docs.flutter.dev/cookbook/design/themes): Learn how to use `ThemeData` for a consistent design.
+- [Organize a theme](https://docs.flutter.dev/cookbook/design/themes): Learn how to use `ThemeData` for a consistent design.
 - [Cupertino (iOS-style) widgets](https://docs.flutter.dev/ui/widgets/cupertino): Build apps that look and feel native on iOS.
 - [Material widgets](https://docs.flutter.dev/ui/widgets/material): A comprehensive list of Material Design widgets.
-- [Cookbook: Use a custom font](https://docs.flutter.dev/cookbook/design/fonts): Implement custom typography in your app.
+- [Use a custom font](https://docs.flutter.dev/cookbook/design/fonts): Implement custom typography in your app.
 
 ### Gaming with Flutter
 
 - [Casual games development](https://docs.flutter.dev/games): The official landing page for game development resources.
 
-### Advanced Topics & Internals
+### Advanced topics & internals
 
-- [Architectural Overview](https://docs.flutter.dev/resources/architectural-overview): A high-level view of Flutter's architecture.
+- [Architectural overview](https://docs.flutter.dev/resources/architectural-overview): A high-level view of Flutter's architecture.
 - [Impeller rendering engine](https://docs.flutter.dev/perf/impeller): Learn about Flutter's new rendering engine.
 - [Deep dive into Flutter's build modes](https://docs.flutter.dev/testing/build-modes): Understand the difference between debug, profile, and release modes.
 - [Asynchronous programming in Dart](https://dart.dev/language/async): A deep dive into Futures, Streams, and the event loop.
