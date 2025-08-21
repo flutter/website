@@ -46,12 +46,12 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Adding interactivity & navigation
 
-- [Cookbook: Handle taps](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
-- [State Management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
-- [Navigation and Routing](https://docs.flutter.dev/ui/navigation): An introduction to navigating between different screens in your app.
-- [Routing and navigation with GoRouter](https://docs.flutter.dev/ui/navigation): The official guide for `go_router`, the recommended solution for complex navigation.
-- [Cookbook: Navigate to a new screen and back](https://docs.flutter.dev/cookbook/navigation/navigation-basics): The most basic navigation pattern.
-- [Cookbook: Send data to a new screen](https://docs.flutter.dev/cookbook/navigation/passing-data): Pass data to another screen.
+- [Handle taps](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
+- [State management for beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
+- [Navigation and routing](https://docs.flutter.dev/ui/navigation): An introduction to navigating between different screens in your app.
+- [Navigation and routing with GoRouter](https://docs.flutter.dev/ui/navigation/XXX): The official guide for `go_router`, the recommended solution for complex navigation.
+- [Navigate to a new screen and back](https://docs.flutter.dev/cookbook/navigation/navigation-basics): The most basic navigation pattern.
+- [Send data to a new screen](https://docs.flutter.dev/cookbook/navigation/passing-data): Pass data to another screen.
 
 ### Animation
 
