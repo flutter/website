@@ -218,9 +218,9 @@ For instance:
 
 <?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
-var youTubeApi = YouTubeApi(authenticatedClient);
+final youTubeApi = YouTubeApi(authenticatedClient);
 
-var favorites = await youTubeApi.playlistItems.list(
+final favorites = await youTubeApi.playlistItems.list(
   ['snippet'],
   playlistId: 'LL', // Liked List
 );

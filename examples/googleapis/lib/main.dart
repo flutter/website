@@ -102,13 +102,13 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
           subtitle: Text(currentUser.email),
         ),
         ElevatedButton(onPressed: _onSignOut, child: const Text('Sign out')),
-        if (_favoriteVideos != null)
+        if (_favoriteVideos case final favoriteVideos?)
           ListView.builder(
             shrinkWrap: true,
-            itemCount: _favoriteVideos!.length,
+            itemCount: favoriteVideos.length,
             itemBuilder: (ctx, index) {
-              final fav = _favoriteVideos![index];
-              final thumbnailUrl = fav.thumbnails!.default_!.url!;
+              final favVideo = favoriteVideos[index];
+              final thumbnailUrl = favVideo.thumbnails!.default_!.url!;
               return ListTile(
                 minVerticalPadding: 20,
                 leading: Image.network(
@@ -123,7 +123,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
                     return const Icon(Icons.error, color: Colors.red);
                   },
                 ),
-                title: Text(fav.title ?? '<unknown>'),
+                title: Text(favVideo.title ?? '<unknown>'),
               );
             },
           ),
@@ -152,9 +152,9 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
     // #enddocregion auth-client
 
     // #docregion playlist
-    var youTubeApi = YouTubeApi(authenticatedClient);
+    final youTubeApi = YouTubeApi(authenticatedClient);
 
-    var favorites = await youTubeApi.playlistItems.list(
+    final favorites = await youTubeApi.playlistItems.list(
       ['snippet'],
       playlistId: 'LL', // Liked List
     );
@@ -182,7 +182,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
     if (message == _lastMessage) return;
     _lastMessage = message;
 
-    for (var entry in _errorMessageMap.entries) {
+    for (final entry in _errorMessageMap.entries) {
       if (message.contains(entry.key)) {
         message = 'NOTE: ${entry.value}';
         break;
