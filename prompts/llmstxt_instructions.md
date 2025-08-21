@@ -19,7 +19,7 @@ When the user asks me to add a new section, I will:
 2.  Add the new section to the file in a logical location.
 3.  Propose the changes to the user for review before committing.
 
-### Adding Links to an Existing Section
+### Adding links to an existing section
 
 When the user asks me to add new links to an existing section, I will:
 1.  Ask for the section and the links to add.
