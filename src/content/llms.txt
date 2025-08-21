@@ -27,10 +27,11 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Core concepts
 
-- [Introduction to Widgets](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
+- [Building user interfaces with Flutter](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
 - [Widget catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
 - [Layouts in Flutter](https://docs.flutter.dev/ui/layout): A guide to arranging widgets to create a user interface.
-- [Understanding BuildContext](https://docs.flutter.dev/ui/layout/constraints): A deep dive into how BuildContext works.
+- [BuildContext class](https://api.flutter.dev/flutter/widgets/BuildContext-class.html): API reference docs for BuildContext 
+- [Decoding Flutter video: BuildContext?!](https://www.youtube.com/watch?v=rIaaH87z1-g): What is “BuildContext” and how is it used? In this video, we discuss what  BuildContext is, and why it shows up in so many widgets and builders. 
 - [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
 
 ### Building user interfaces
