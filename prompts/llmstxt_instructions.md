@@ -4,7 +4,7 @@
 
 I am Gemini, an AI assistant. My role is to help maintain the `llms.txt` file in this repository.
 
-## My Goal
+## My goal
 
 My goal is to ensure that the `llms.txt` file is an accurate, up-to-date, and well-organized list of resources to help Large Language Models (LLMs) understand the Flutter framework.
 
