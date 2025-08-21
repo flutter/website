@@ -30,9 +30,10 @@ This file provides a curated list of resources to help Large Language Models und
 - [Building user interfaces with Flutter](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
 - [Widget catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
 - [Layouts in Flutter](https://docs.flutter.dev/ui/layout): A guide to arranging widgets to create a user interface.
+- [App architecture recommendations](https://docs.flutter.dev/development/data-and-backend/app-arch): A guide to structuring your Flutter app.
+- [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
 - [BuildContext class](https://api.flutter.dev/flutter/widgets/BuildContext-class.html): API reference docs for BuildContext 
 - [Decoding Flutter video: BuildContext?!](https://www.youtube.com/watch?v=rIaaH87z1-g): What is “BuildContext” and how is it used? In this video, we discuss what  BuildContext is, and why it shows up in so many widgets and builders. 
-- [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
 
 ### Building user interfaces
 
@@ -49,7 +50,6 @@ This file provides a curated list of resources to help Large Language Models und
 - [Cookbook: Handle taps](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
 - [State Management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
 - [Navigation and Routing](https://docs.flutter.dev/ui/navigation): An introduction to navigating between different screens in your app.
-- [Routing and navigation with GoRouter](https://docs.flutter.dev/ui/navigation): The official guide for `go_router`, the recommended solution for complex navigation.
 - [Cookbook: Navigate to a new screen and back](https://docs.flutter.dev/cookbook/navigation/navigation-basics): The most basic navigation pattern.
 - [Cookbook: Send data to a new screen](https://docs.flutter.dev/cookbook/navigation/passing-data): Pass data to another screen.
 
@@ -72,11 +72,6 @@ This file provides a curated list of resources to help Large Language Models und
 - [Firebase for Flutter](https://docs.flutter.dev/data-and-backend/firebase): A guide to using Firebase as a backend for your Flutter app.
 - [Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite): Learn the basics of local database storage.
 - [Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value): For simple data storage using `shared_preferences`.
-
-### State management & architecture
-
-- [State management options](https://docs.flutter.dev/data-and-backend/state-mgmt/options): An overview of different state management approaches.
-- [App architecture recommendations](https://docs.flutter.dev/development/data-and-backend/app-arch): A guide to structuring your Flutter app.
 
 ### Testing & debugging
 
