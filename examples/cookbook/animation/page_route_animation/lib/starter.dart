@@ -25,7 +25,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -47,7 +47,7 @@ class Page2 extends StatelessWidget {
 }
 // #enddocregion Starter
 
-Route step1() {
+Route<void> step1() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step1
@@ -62,7 +62,7 @@ Route step1() {
   );
 }
 
-Route step2() {
+Route<void> step2() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step2
@@ -85,7 +85,7 @@ void createCurves() {
   // #enddocregion step3
 }
 
-Route step4() {
+Route<void> step4() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step4

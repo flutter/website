@@ -12,7 +12,7 @@
     "node": ">=22.12.0",
     "pnpm": ">=10.8.1"
   },
-  "packageManager": "pnpm@10.13.1",
+  "packageManager": "pnpm@10.14.0",
   "scripts": {
     "serve": "PRODUCTION=false tsx node_modules/@11ty/eleventy/cmd.cjs --serve --config=eleventy.config.ts",
     "build-site-for-staging": "PRODUCTION=false OPTIMIZE=true tsx node_modules/@11ty/eleventy/cmd.cjs --config=eleventy.config.ts",
@@ -20,10 +20,10 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "3.1.2",
-    "@swc/html": "^1.13.1",
+    "@swc/html": "^1.13.3",
     "@types/hast": "^3.0.4",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^22.16.5",
+    "@types/node": "^22.17.2",
     "hast-util-from-html": "^2.0.3",
     "hast-util-select": "^6.0.4",
     "hast-util-to-html": "^9.0.5",
@@ -35,8 +35,8 @@
     "markdown-it-container": "^4.0.0",
     "markdown-it-deflist": "^3.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "sass": "^1.89.2",
-    "shiki": "^3.8.1",
-    "tsx": "4.19.4"
+    "sass": "^1.90.0",
+    "shiki": "^3.10.0",
+    "tsx": "^4.20.4"
   }
 }

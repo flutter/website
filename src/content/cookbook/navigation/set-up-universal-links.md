@@ -53,13 +53,13 @@ It provides a simple API to handle complex routing scenarios.
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),

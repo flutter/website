@@ -181,9 +181,7 @@ class SelectableTravelDestinationItem extends StatelessWidget {
                 clipBehavior: Clip.antiAlias,
                 shape: shape,
                 child: InkWell(
-                  onLongPress: () {
-                    onSelected();
-                  },
+                  onLongPress: onSelected,
                   splashColor: colorScheme.onSurface.withValues(alpha: 0.12),
                   highlightColor: Colors.transparent,
                   child: Stack(
