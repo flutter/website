@@ -12,7 +12,7 @@ import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sig
 import 'package:flutter/material.dart';
 
 // #docregion google-import
-/// Provides the `GoogleSignIn` class
+/// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
 // #enddocregion google-import
 
@@ -31,35 +31,51 @@ class _LikedVideosWidget extends StatefulWidget {
   const _LikedVideosWidget();
 
   @override
-  State createState() => _LikedVideosWidgetState();
+  State<_LikedVideosWidget> createState() => _LikedVideosWidgetState();
 }
 
 class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
-  // #docregion init
-  final _googleSignIn = GoogleSignIn.instance;
-  final _scopes = [YouTubeApi.youtubeReadonlyScope];
-  // #enddocregion init
-
+  // #docregion post-init
   GoogleSignInAccount? _currentUser;
+
+  // #enddocregion post-init
   List<PlaylistItemSnippet>? _favoriteVideos;
 
+  // #docregion init
+  final _googleSignIn = GoogleSignIn.instance;
+
+  // #docregion post-init
   @override
   void initState() {
     super.initState();
+    // #enddocregion post-init
     _googleSignIn.initialize();
-    _googleSignIn.authenticationEvents.listen((event) {
-      setState(() {
-        _currentUser = switch (event) {
-          GoogleSignInAuthenticationEventSignIn signInEvent => signInEvent.user,
-          _ => null,
-        };
+    // #enddocregion init
+
+    // #docregion post-init
+    _googleSignIn.initialize().then((_) {
+      _googleSignIn.authenticationEvents.listen((event) {
+        setState(() {
+          _currentUser = switch (event) {
+            GoogleSignInAuthenticationEventSignIn() => event.user,
+            _ => null,
+          };
+        });
+        // #enddocregion post-init
+        if (_currentUser case final currentUser?) {
+          _downloadLikedList(currentUser);
+        }
+        // #docregion post-init
       });
-      if (_currentUser != null) {
-        _downloadLikedList();
-      }
+      // #enddocregion post-init
+
+      // Attempt to authenticate a previously signed in user.
+      _googleSignIn.attemptLightweightAuthentication();
+      // #docregion post-init
     });
-    _googleSignIn.attemptLightweightAuthentication();
+    // #docregion init
   }
+  // #enddocregion init, post-init
 
   @override
   Widget build(BuildContext context) {
@@ -78,19 +94,12 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   }
 
   List<Widget> _widgets() {
-    return [
-      if (_currentUser == null) ...[
-        const Padding(
-          padding: EdgeInsets.all(8),
-          child: Text('You are not currently signed in.'),
-        ),
-        ElevatedButton(onPressed: _onSignIn, child: const Text('Sign in')),
-      ],
-      if (_currentUser != null) ...[
+    if (_currentUser case final currentUser?) {
+      return [
         ListTile(
-          leading: GoogleUserCircleAvatar(identity: _currentUser!),
-          title: Text(_currentUser!.displayName ?? ''),
-          subtitle: Text(_currentUser!.email),
+          leading: GoogleUserCircleAvatar(identity: currentUser),
+          title: Text(currentUser.displayName ?? ''),
+          subtitle: Text(currentUser.email),
         ),
         ElevatedButton(onPressed: _onSignOut, child: const Text('Sign out')),
         if (_favoriteVideos != null)
@@ -118,20 +127,32 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
               );
             },
           ),
-      ],
+      ];
+    }
+
+    return [
+      const Padding(
+        padding: EdgeInsets.all(8),
+        child: Text('You are not currently signed in.'),
+      ),
+      ElevatedButton(onPressed: _onSignIn, child: const Text('Sign in')),
     ];
   }
 
-  Future<void> _downloadLikedList() async {
-    // #docregion signin-call
-    var httpClient =
-        (await _currentUser!.authorizationClient.authorizationForScopes(
-          _scopes,
-        ))!.authClient(scopes: _scopes);
-    // #enddocregion signin-call
+  Future<void> _downloadLikedList(GoogleSignInAccount currentUser) async {
+    // #docregion scope-authorize
+    const relevantScopes = [YouTubeApi.youtubeReadonlyScope];
+    final authorization = await currentUser.authorizationClient
+        .authorizationForScopes(relevantScopes);
+    // #enddocregion scope-authorize
+    // #docregion auth-client
+    final authenticatedClient = authorization!.authClient(
+      scopes: relevantScopes,
+    );
+    // #enddocregion auth-client
 
     // #docregion playlist
-    var youTubeApi = YouTubeApi(httpClient);
+    var youTubeApi = YouTubeApi(authenticatedClient);
 
     var favorites = await youTubeApi.playlistItems.list(
       ['snippet'],

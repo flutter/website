@@ -45,13 +45,13 @@ To use Google APIs, follow these steps:
 
 1. Pick the desired API
 1. Enable the API
-1. Authenticate user with the required scopes
+1. Authenticate and determine the current user
 1. Obtain an authenticated HTTP client
 1. Create and use the desired API class
 
 ## 1. Pick the desired API
 
-The documentation for [package:googleapis][] lists
+The documentation for [`package:googleapis`][] lists
 each API as a separate Dart library&emdash;in a
 `name_version` format.
 Check out [`youtube_v3`][] as an example.
@@ -66,7 +66,7 @@ exposes the scopes that represent the permissions
 needed to use the API. For example,
 the [Constants section][] of the
 `YouTubeApi` class lists the available scopes.
-To request access to read (but not write) an end-users
+To request access to read (but not write) an end-user's
 YouTube data, authenticate the user with
 [`youtubeReadonlyScope`][].
 
@@ -77,7 +77,7 @@ import 'package:googleapis/youtube/v3.dart';
 ```
 
 [Constants section]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html#constants
-[package:googleapis]: {{site.pub-api}}/googleapis
+[`package:googleapis`]: {{site.pub-api}}/googleapis
 [`youtube_v3`]: {{site.pub-api}}/googleapis/latest/youtube_v3/youtube_v3-library.html
 [`YouTubeApi`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi-class.html
 [`youtubeReadonlyScope`]: {{site.pub-api}}/googleapis/latest/youtube_v3/YouTubeApi/youtubeReadonlyScope-constant.html
@@ -94,33 +94,77 @@ For details, see the [getting started instructions][].
 [getting started instructions]: https://cloud.google.com/apis/docs/getting-started
 [YouTube Data API v3]: https://console.cloud.google.com/apis/library/youtube.googleapis.com
 
-## 3. Authenticate the user with the required scopes
+## 3. Authenticate and determine the current user
 
 Use the [google_sign_in][gsi-pkg] package to
 authenticate users with their Google identity.
-Configure signin for each platform you want to support.
+Configure sign in for each platform you want to support.
 
 <?code-excerpt "lib/main.dart (google-import)"?>
 ```dart
-/// Provides the `GoogleSignIn` class
+/// Provides the `GoogleSignIn` class.
 import 'package:google_sign_in/google_sign_in.dart';
 ```
 
-When instantiating the [`GoogleSignIn`][] class,
-provide the desired scopes as discussed
-in the previous section.
+The package's functionality is accessed through
+a static instance of the [`GoogleSignIn`][] class.
+Before interacting with the instance,
+the `initialize` method must be called and allowed to complete.
 
 <?code-excerpt "lib/main.dart (init)"?>
 ```dart
 final _googleSignIn = GoogleSignIn.instance;
-final _scopes = [YouTubeApi.youtubeReadonlyScope];
+
+@override
+void initState() {
+  super.initState();
+  _googleSignIn.initialize();
+  // ···
+}
 ```
 
-Follow the instructions provided by
-[`package:google_sign_in`][gsi-pkg]
-to allow a user to authenticate.
+Once initialization is complete but before user authentication,
+listen to authentication events to determine if a user signed in.
 
-Once authenticated,
+<?code-excerpt "lib/main.dart (post-init)" plaster="none"?>
+```dart highlightLines=1,7,9-12
+GoogleSignInAccount? _currentUser;
+
+@override
+void initState() {
+  super.initState();
+  _googleSignIn.initialize().then((_) {
+    _googleSignIn.authenticationEvents.listen((event) {
+      setState(() {
+        _currentUser = switch (event) {
+          GoogleSignInAuthenticationEventSignIn() => event.user,
+          _ => null,
+        };
+      });
+    });
+  });
+}
+```
+
+Once you're listening to any relevant authentication events,
+you can attempt to authenticate a previously signed-in user.
+
+```dart highlightLines=5-6
+void initState() {
+  super.initState();
+  _googleSignIn.initialize().then((_) {
+    // ...
+    // Attempt to authenticate a previously signed in user.
+    _googleSignIn.attemptLightweightAuthentication();
+  });
+}
+```
+
+To also allow for new users to authenticate,
+follow the instructions provided by
+[`package:google_sign_in`][gsi-pkg].
+
+Once a user has been authenticated,
 you must obtain an authenticated HTTP client.
 
 [gsi-pkg]: {{site.pub-pkg}}/google_sign_in
@@ -128,35 +172,44 @@ you must obtain an authenticated HTTP client.
 
 ## 4. Obtain an authenticated HTTP client
 
-The [extension_google_sign_in_as_googleapis_auth][]
-package provides an [extension method][] on `GoogleSignIn`
-called [`authenticatedClient`][].
+Once you have a signed-in user, request the
+relevant client authorization tokens using [`authorizationForScopes`][]
+for the API scopes that your app requires.
+
+<?code-excerpt "lib/main.dart (scope-authorize)"?>
+```dart
+const relevantScopes = [YouTubeApi.youtubeReadonlyScope];
+final authorization = await currentUser.authorizationClient
+    .authorizationForScopes(relevantScopes);
+```
+
+:::note
+If your scopes require user interaction,
+you'll need to use [`authorizeScopes`][] from an interaction handler
+instead of `authorizationForScopes`.
+:::
+
+Once you have the relevant authorization tokens,
+use the [`authClient`][] extension from
+[`package:extension_google_sign_in_as_googleapis_auth`][] to
+set up an authenticated HTTP client with the relevant credentials applied.
 
 <?code-excerpt "lib/main.dart (auth-import)"?>
 ```dart
 import 'package:extension_google_sign_in_as_googleapis_auth/extension_google_sign_in_as_googleapis_auth.dart';
 ```
 
-Add a listener to [`onCurrentUserChanged`][]
-and when the event value isn't `null`,
-you can create an authenticated client.
-
-<?code-excerpt "lib/main.dart (signin-call)"?>
+<?code-excerpt "lib/main.dart (auth-client)"?>
 ```dart
-var httpClient =
-    (await _currentUser!.authorizationClient.authorizationForScopes(
-      _scopes,
-    ))!.authClient(scopes: _scopes);
+final authenticatedClient = authorization!.authClient(
+  scopes: relevantScopes,
+);
 ```
 
-This [`Client`][] instance includes the necessary
-credentials when invoking Google API classes.
-
-[`authenticatedClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authenticatedClient.html
-[`Client`]: {{site.pub-api}}/http/latest/http/Client-class.html
-[extension_google_sign_in_as_googleapis_auth]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
-[extension method]: {{site.dart-site}}/guides/language/extension-methods
-[`onCurrentUserChanged`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignIn/onCurrentUserChanged.html
+[`authorizationForScopes`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignInAuthorizationClient/authorizationForScopes.html
+[`authorizeScopes`]: {{site.pub-api}}/google_sign_in/latest/google_sign_in/GoogleSignInAuthorizationClient/authorizeScopes.html
+[`authClient`]: {{site.pub-api}}/extension_google_sign_in_as_googleapis_auth/latest/extension_google_sign_in_as_googleapis_auth/GoogleApisGoogleSignInAuth/authClient.html
+[`package:extension_google_sign_in_as_googleapis_auth`]: {{site.pub-pkg}}/extension_google_sign_in_as_googleapis_auth
 
 ## 5. Create and use the desired API class
 
@@ -165,7 +218,7 @@ For instance:
 
 <?code-excerpt "lib/main.dart (playlist)"?>
 ```dart
-var youTubeApi = YouTubeApi(httpClient);
+var youTubeApi = YouTubeApi(authenticatedClient);
 
 var favorites = await youTubeApi.playlistItems.list(
   ['snippet'],
