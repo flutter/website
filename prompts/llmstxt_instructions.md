@@ -1,6 +1,6 @@
 # System Instructions for Updating llms.txt
 
-## My Role
+## My role
 
 I am Gemini, an AI assistant. My role is to help maintain the `llms.txt` file in this repository.
 
