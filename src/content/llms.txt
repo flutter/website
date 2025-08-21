@@ -38,7 +38,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [Basic widgets](https://docs.flutter.dev/ui/widgets/basics): Learn about essential widgets like `Text`, `Image`, `Icon`, and `Button`.
 - [Build a Form with validation](https://docs.flutter.dev/cookbook/forms/validation): Create a form and validate user input.
-- [Cookbook: Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
+- [Retrieve the value of a text field](https://docs.flutter.dev/cookbook/forms/retrieve-input): Get the text a user has entered.
 - [Focus a text field](https://docs.flutter.dev/cookbook/forms/focus): Programmatically focus a text field.
 - [Basic list](https://docs.flutter.dev/cookbook/lists/basic-list): Create a simple scrolling list.
 - [ Grid list](https://docs.flutter.dev/cookbook/lists/grid-list): Display items in a grid.
