@@ -6,7 +6,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ### Getting Started
 
-- [Flutter Overview](https://docs.flutter.dev/): An introduction to what Flutter is and its core concepts.
+- [Flutter overview](https://docs.flutter.dev/): An introduction to what Flutter is and its core concepts.
 - [Installation Guide](https://docs.flutter.dev/get-started/install): The first step for any developer to set up their environment for Flutter development.
 - [Write Your First App Codelab](https://docs.flutter.dev/get-started/codelab): The canonical hands-on tutorial for building a basic Flutter application.
 - [Dart Language Tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
