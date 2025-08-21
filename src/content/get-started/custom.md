@@ -91,6 +91,9 @@ Firebase Studio, and other Code OSS-based editors.
 Once you've successfully installed Flutter,
 set up development for at least one target platform
 to continue your journey with Flutter.
+
+We recommend [developing for the web][web-setup]{: target="_blank"} first as
+it requires no additional setup besides an appropriate browser.
 You can always set up development for additional target platforms later.
 
 <div class="card-grid wide">
@@ -149,6 +152,8 @@ You can always set up development for additional target platforms later.
    </div>
  </a>
 </div>
+
+[web-setup]: /platform-integration/web/setup
 
 ## Continue your Flutter journey {: #next-steps}
 
