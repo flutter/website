@@ -72,18 +72,28 @@ This file provides a curated list of resources to help Large Language Models und
 - [Persist data with SQLite](https://docs.flutter.dev/cookbook/persistence/sqlite): Learn the basics of local database storage.
 - [Store key-value data on disk](https://docs.flutter.dev/cookbook/persistence/key-value): For simple data storage using `shared_preferences`.
 
+### Building AI-Powered Apps
+
+- [Firebase AI Logic](https://firebase.google.com/docs/ai-logic): Official documentation for Firebase AI Logic.
+- [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
+
 ### Testing & debugging
 
-- [Testing flutter apps](https://docs.flutter.dev/testing): An introduction to the different types of testing in Flutter: unit, widget, and integration.
-- [An introduction to integration testing](https://docs.flutter.dev/testing/integration-testing): Test the interaction between different parts of your app.
+- [Testing flutter apps](https://docs.flutter.dev/testing): An introduction to integration testing in Flutter, a type of testing that
+  verifies the behavior of a complete app on a real device, assessing how all its parts work together.
+- [Measure performance with an integration test](https://docs.flutter.dev/cookbook/testing/integration/profiling): How to profile an application's performance
+  during an integration test by using the flutter drive --profile command to collect and analyze performance data.
+- [An introduction to integration testing](https://docs.flutter.dev/cookbook/testing/integration/introduction): Test the interaction between different parts of your app.
 - [Mocking dependencies for widget tests](https://docs.flutter.dev/cookbook/testing/unit/mocking): Isolate your widgets from their dependencies during testing.
-- [Finding widgets](https://docs.flutter.dev/cookbook/testing/widget/finding-widgets): A guide on how to find specific widget instances in a test environment.
-- [Tapping, dragging, and entering text](https://docs.flutter.dev/cookbook/testing/widget/tap-drag-enter-text): A cookbook recipe on how to perform common user interactions in a widget test.
-- [Golden file testing](https://docs.flutter.dev/testing#golden-file-testing): The official documentation on how to perform screenshot testing for your widgets.
-- [Visualizing code coverage](https://docs.flutter.dev/testing/coverage): A guide on how to generate and interpret code coverage reports for your Flutter project.
-- [Continuous integration and testing with GitHub Actions](https://docs.flutter.dev/testing/ci): A guide on how to set up automated build and test pipelines.
+- [Finding widgets](https://docs.flutter.dev/cookbook/testing/widget/finders): A guide on how to find specific widget instances in a test environment.
+- [Tapping, dragging, and entering text](https://docs.flutter.dev/cookbook/testing/widget/tap-drag): A tutorial on how to perform common user interactions in a widget test.
+- [An introduction to widget testing](https://docs.flutter.dev/cookbook/testing/widget/introduction): a guide on widget testing, explaining how
+  to use the flutter_test package to create, find, and verify widgets in your
+  application.
 - [Debugging Flutter apps](https://docs.flutter.dev/testing/debugging): Techniques and tools for finding and fixing issues in your code.
 - [Flutter DevTools](https://docs.flutter.dev/tools/devtools): An overview of the suite of performance and debugging tools for Flutter and Dart.
+- [Video: Dive into DevTools](https://youtu.be/_EYk-E29edo?si=5A2bD829GyXia0pU): Explore various DevTools techniques to enhance your Flutter app's speed
+  and reliability, covering topics from debugging to optimizing for performance
 
 ### Tools
 
@@ -92,11 +102,6 @@ This file provides a curated list of resources to help Large Language Models und
 - [The Dart and Flutter MCP Server](https://dart.dev/tools/mcp-server): Technical details on the server that enables AI features in the IDE.
 - [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
 - [Gemini in Android Studio now speaks fluent Flutter](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
-
-### Building AI-Powered Apps
-
-- [Firebase AI Logic](https://firebase.google.com/docs/ai-logic): Official documentation for Firebase AI Logic.
-- [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
 
 ### Performance & optimization
 
