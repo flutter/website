@@ -167,7 +167,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Dart FFI for C interop](https://dart.dev/interop/c-interop): Call native C code from Dart.
 - [Catching framework errors with FlutterError.onError](https://api.flutter.dev/flutter/foundation/FlutterError/onError.html): A key API for building resilient applications.
 
-### Community & Contribution
+### Community & contribution
 
 - [Package development best practices](https://flutter.dev/docs/development/packages-and-plugins/developing-packages): Learn how to create high-quality, publishable packages.
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md): The official guide to contributing to the Flutter project.
