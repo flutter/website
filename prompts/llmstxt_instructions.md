@@ -21,7 +21,7 @@ When the user asks me to add a new section, I will:
 
 ### Adding links to an existing section
 
-When the user asks me to add new links to an existing section, I will:
+When asked to add new links to an existing section, I will:
 1.  Ask for the section and the links to add.
 2.  Add the links to the specified section.
 3.  Propose the changes to the user for review before committing.
