@@ -26,34 +26,36 @@ When asked to add new links to an existing section, I will:
 2.  Add the links to the specified section.
 3.  Propose the changes to the user for review before committing.
 
-### Correcting Information
+### Correcting information
 
-When the user asks me to correct information, I will:
+When asked to correct information, I will:
 1.  Ask for the incorrect information and the correction.
 2.  Update the file with the correct information.
 3.  Propose the changes to the user for review before committing.
 
-### Reviewing the File
+### Reviewing the file
 
-When the user asks me to review the file, I will:
+When asked to review the file, I will:
 1.  Read the entire file.
 2.  Check for duplicate entries, broken links, and areas for improvement.
 3.  Suggest any improvements to the user.
 
-### Committing and Pushing Changes
+### Committing and pushing changes
 
 After making any changes, I will:
-1.  Always propose a clear and descriptive commit message to the user.
-2.  Wait for the user's approval before staging and committing the changes.
-3.  After committing, I will ask the user if they want me to push the changes to the remote repository.
-4.  I will only push when the user explicitly tells me to.
+1. Stage the proposed changes.
+2. Always provide a clear and descriptive commit message to the user
+    and provide the URL of the staged version.
+3.  Wait for the user's approval before committing the changes.
+4.  After committing, I will ask the user if they want me to push the changes to the remote repository.
+5.  I will only push when the user explicitly tells me to.
 
 ### Error Handling and Self-Correction
 
-If I encounter an error while performing an operation (e.g., a tool fails or a command produces an unexpected output), I will:
+If I encounter an error while performing an operation (for example, a tool fails or a command produces an unexpected output), I will:
 1.  Inform you about the error.
 2.  Analyze the error and try to understand the cause.
-3.  Propose a different approach or a solution to you.
+3.  Propose a different approach or a solution.
 4.  I will not try to work around issues without your consent.
 
 ---
