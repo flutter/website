@@ -1,7 +1,14 @@
 - header: Get started
 
+
 - title: Set up Flutter
-  permalink: /get-started/quick
+  permalink: /get-started
+  hiddenChildren: true
+  children:
+    - title: Quick start
+      permalink: /get-started/quick
+    - title: Custom setup
+      permalink: /get-started/custom
 
 - title: Install Flutter
   permalink: /install

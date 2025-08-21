@@ -1,16 +1,20 @@
 ---
 title: Set up and test drive Flutter
-short-title: Set up & test drive
+short-title: Quick start
 description: >-
-  Set up Flutter on your device with VS Code and
+  Set up Flutter on your device with a VS-Code-based editor and
   get started developing your first multi-platform app with Flutter!
-toc: false
 showBanner: false
 sitemap: false
 ---
 
-Learn how to use VS Code to set up your Flutter development environment
-and test drive Flutter's developer experience.
+Learn how to use any OSS-based editor, such as VS Code,
+to set up your Flutter development environment and
+test drive Flutter's developer experience.
+
+If you've developed with Flutter before,
+or you prefer a different installation method,
+you can follow the [custom setup instructions][] instead.
 
 :::note What you'll achieve
 
@@ -20,6 +24,8 @@ and test drive Flutter's developer experience.
 - Try out Flutter development features like stateful hot reload.
 
 :::
+
+[custom setup instructions]: /get-started/custom
 
 ## Confirm your development platform {: #dev-platform}
 
@@ -70,6 +76,11 @@ first install the following tools.
     To quickly install Flutter, then edit and debug your apps,
     [install and set up Visual Studio Code][vscode-install].
 
+    You can instead install and use any other Code OSS-based editor
+    that supports VS Code extensions.
+    If you choose to do so, for the rest of this article,
+    assume VS Code refers to the editor of your choice.
+
 {: .steps .chromeos-only}
 
  1. <h3>Install the Xcode command-line tools</h3>
@@ -92,6 +103,11 @@ first install the following tools.
     To quickly install Flutter, then edit and debug your apps,
     [install and set up Visual Studio Code][vscode-install].
 
+    You can instead install and use any other Code OSS-based editor
+    that supports VS Code extensions.
+    If you choose to do so, for the rest of this article,
+    assume VS Code refers to the editor of your choice.
+
 {: .steps .macos-only}
 
  1. <h3>Install Git for Windows</h3>
@@ -105,6 +121,11 @@ first install the following tools.
 
     To quickly install Flutter, then edit and debug your apps,
     [install and set up Visual Studio Code][vscode-install].
+
+    You can instead install and use any other Code OSS-based editor
+    that supports VS Code extensions.
+    If you choose to do so, for the rest of this article,
+    assume VS Code refers to the editor of your choice.
 
 {: .steps .windows-only}
 
@@ -132,6 +153,11 @@ first install the following tools.
 
     To quickly install Flutter, then edit and debug your apps,
     [install and set up Visual Studio Code][vscode-install].
+
+    You can instead install and use any other Code OSS-based editor
+    that supports VS Code extensions.
+    If you choose to do so, for the rest of this article,
+    assume VS Code refers to the editor of your choice.
 
 {: .steps .linux-only}
 
@@ -393,93 +419,11 @@ it's time to create an app and try out Flutter development!
 
 **Congratulations!**
 Now that you've installed and tried out Flutter,
-explore some of the following docs to continue your Flutter learning journey.
+follow the codelab on [Building your first app][],
+set up development for an [additional target platform][], or
+explore some of these resources to continue your Flutter learning journey.
 
-<div class="card-grid link-cards">
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Build for other platforms</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/platform-integration/android/setup">Target Android</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/ios/setup">Target iOS</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/macos/setup">Target macOS</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/windows/setup">Target Windows</a>
-        </li>
-        <li>
-          <a class="text-button" href="/platform-integration/linux/setup">Target Linux</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+{% render docs/get-started/setup-next-steps.html, site:site %}
 
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Learn Flutter development</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
-        <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Discover Flutter widgets</a>
-        </li>
-        <li>
-           <a class="text-button" href="/reference/learning-resources">Explore samples & tutorials</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.dart-site}}/overview">
-            <span>Learn about Dart</span>
-            <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card filled-card list-card">
-    <div class="card-leading">
-      <img src="/assets/images/decorative/up-to-date.png" height="160" aria-hidden="true" alt="Keep up to date with Flutter">
-    </div>
-    <div class="card-header">
-      <span class="card-title">Stay up to date with Flutter</span>
-    </div>
-    <div class="card-content">
-      <ul>
-        <li>
-          <a class="text-button" href="/install/upgrade">Update Flutter</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.medium}}/flutter">Check out the blog</a>
-        </li>
-        <li>
-          <a class="text-button" href="/release/release-notes">Find out what's new</a>
-        </li>
-        <li>
-          <a class="text-button" href="{{site.social.youtube}}">Subscribe on YouTube</a>
-        </li>
-        <li>
-          <a class="text-button" href="https://bsky.app/profile/flutter.dev">Follow on Bluesky</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+[Building your first app]: /get-started/codelab
+[additional target platform]: /platform-integration#setup

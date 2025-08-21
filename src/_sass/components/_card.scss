@@ -18,6 +18,13 @@
     --card-min-width: 19rem;
   }
 
+  &.very-wide {
+    --card-min-width: 32rem;
+    .card {
+      min-height: 7.5rem;
+    }
+  }
+
   &.narrow {
     --card-min-width: 10rem;
     grid-auto-rows: 1fr;

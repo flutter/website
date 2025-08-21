@@ -68,14 +68,14 @@ choose your preferred environment and follow the corresponding instructions.
 
 ## VS Code
 
-To create a Flutter app with [VS Code][] and other Code OSS editors,
+To create a Flutter app with [VS Code][] and other Code OSS-based editors,
 you first need to [install Flutter][flutter-setup] and
 [set up VS Code][vscode-setup] for Flutter development.
 Then follow these steps:
 
  1. <h3>Launch VS Code</h3>
 
-    Open VS Code or your preferred Code OSS editor.
+    Open VS Code or your preferred Code OSS-based editor.
 
  1. <h3>Open the command palette</h3>
 
