@@ -1,7 +1,7 @@
 ---
 title: Understanding constraints
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
-toc: false
+showToc: false
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js

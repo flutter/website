@@ -4,7 +4,7 @@ short-title: Set up & test drive
 description: >-
   Set up Flutter on your device with VS Code and
   get started developing your first multi-platform app with Flutter!
-toc: false
+showToc: false
 showBanner: false
 sitemap: false
 ---

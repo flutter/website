@@ -3,7 +3,7 @@ title: Flutter editor support
 short-title: Editors
 description: >-
   Editor support for Dart and Flutter.
-toc: false
+showToc: false
 ---
 
 You can build apps with Flutter using any text editor or
