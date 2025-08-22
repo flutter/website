@@ -448,7 +448,7 @@ explore some of the following docs to continue your Flutter learning journey.
         <li>
           <a class="text-button" href="{{site.dart-site}}/overview">
             <span>Learn about Dart</span>
-            <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+            <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
           </a>
         </li>
       </ul>

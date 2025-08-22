@@ -110,7 +110,7 @@ To undo this migration:
 1. Navigate to **Package Dependencies** for the project.
 
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
@@ -120,7 +120,7 @@ To undo this migration:
    target.
 
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
@@ -134,7 +134,7 @@ To undo this migration:
 
 1. Expand **Run Prepare Flutter Framework Script**.
 
-1. Click **<span class="material-symbols">delete</span>**.
+1. Click **<span class="material-symbols" translate="no">delete</span>**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
