@@ -29,9 +29,9 @@ Google Play from making apps available to incompatible devices.
 The Flutter Gradle Plugin now programmatically sets `abiFilters` for
 non-debuggable builds when the `--splits-per-abi` option is not enabled
 by default to:
-- `armeabi-v7a` (32-bit ARM)
-- `arm64-v8a` (64-bit ARM) 
-- `x86_64` (64-bit x86, primarily for emulators)
+- `armeabi-v7a`
+- `arm64-v8a`
+- `x86_64`
 
 Because this automatic configuration happens after your `build.gradle` files
 are processed, it may override custom `abiFilters` settings.
