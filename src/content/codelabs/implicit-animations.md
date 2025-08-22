@@ -14,7 +14,7 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
-{% include docs/dartpad-troubleshooting.md %}
+{% render docs/dartpad-troubleshooting.md, site: site %}
 
 To get the most out of this codelab, you should have basic knowledge about:
 

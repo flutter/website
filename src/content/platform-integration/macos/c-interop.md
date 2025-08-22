@@ -261,4 +261,4 @@ the symbols are stripped by Xcode.
 
 {% endcomment %}
 
-{% include docs/resource-links/ffi-video-resources.md %}
+{% render docs/resource-links/ffi-video-resources.md, site: site %}

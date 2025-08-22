@@ -27,7 +27,7 @@ Flutter's Swift Package Manager integration has several benefits:
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+{% render docs/swift-package-manager/how-to-enable-disable.md, site: site %}
 
 ## How to add Swift Package Manager integration
 
@@ -36,12 +36,12 @@ Flutter's Swift Package Manager integration has several benefits:
 {% tabs %}
 {% tab "iOS project" %}
 
-{% include docs/swift-package-manager/migrate-ios-project.md %}
+{% render docs/swift-package-manager/migrate-ios-project.md, site: site %}
 
 {% endtab %}
 {% tab "macOS project" %}
 
-{% include docs/swift-package-manager/migrate-macos-project.md %}
+{% render docs/swift-package-manager/migrate-macos-project.md, site: site %}
 
 {% endtab %}
 {% endtabs %}
@@ -51,12 +51,12 @@ Flutter's Swift Package Manager integration has several benefits:
 {% tabs %}
 {% tab "iOS project" %}
 
-{% include docs/swift-package-manager/migrate-ios-project-manually.md %}
+{% render docs/swift-package-manager/migrate-ios-project-manually.md, site: site %}
 
 {% endtab %}
 {% tab "macOS project" %}
 
-{% include docs/swift-package-manager/migrate-macos-project-manually.md %}
+{% render docs/swift-package-manager/migrate-macos-project-manually.md, site: site %}
 
 {% endtab %}
 {% endtabs %}
