@@ -47,6 +47,6 @@ apps on the web, using [Chrome][]. This doesn’t require Xcode or Android Studi
 and thus is the quickest way to start using Flutter.  
 
 [Learn Dart tutorial]: https://dart.dev/
-[installing Flutter on your machine]: /get-started/install
+[installing Flutter on your machine]: /get-started
 [Firebase Studio]: https://firebase.studio/
 [Chrome]: https://www.google.com/chrome/

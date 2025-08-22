@@ -152,7 +152,7 @@ In this section, shell out the basic Flutter app code to start your app.
    }
    ```
 
-[Set up your Flutter environment]: /get-started/install
+[Set up your Flutter environment]: /get-started
 [new-flutter-app]: /reference/create-new-app
 
 ## Add the Title section
