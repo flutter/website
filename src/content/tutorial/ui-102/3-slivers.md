@@ -4,7 +4,7 @@ description: Learn how to implement performant scrolling with slivers.
 permalink: /tutorial/slivers/
 ---
 
-In this chapter, you'll learn about slivers, which are special widgets
+In this lesson, you'll learn about slivers, which are special widgets
 that can take advantage of Flutter's powerful and composable scrolling
 system. Slivers enable you to create sophisticated scroll effects,
 including collapsible headers, search integration, and custom scroll

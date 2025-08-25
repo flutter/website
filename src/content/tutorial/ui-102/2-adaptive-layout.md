@@ -4,9 +4,9 @@ description: Learn how to use the LayoutBuilder widget
 permalink: /tutorial/adaptive-layouts/
 ---
 
-Modern apps need to work well on screens of all sizes. In this
-chapter, you'll learn how to create layouts that adapt to different
-screen widths. This app shows a sidebar on large screens and a
+Modern apps need to work well on screens of all sizes. On this page,
+you'll learn how to create layouts that adapt to different screen
+widths. This app shows a sidebar on large screens and a
 navigation-based UI on small screens. Specifically, this app handles
 two screen sizes:
 
@@ -350,5 +350,5 @@ change:
 
 Both the sidebar and main content area show placeholder text for now.
 
-In the next chapter, you'll implement slivers to fill in the contact
+In the next lesson, you'll implement slivers to fill in the contact
 list content.
