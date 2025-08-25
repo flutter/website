@@ -55,19 +55,19 @@ SDK archive:
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="stable" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
 
 {% endtab %}
 
@@ -80,19 +80,19 @@ SDK archive:
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="beta" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
 
 {% endtab %}
 

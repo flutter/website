@@ -28,7 +28,7 @@ Flutter's Swift Package Manager integration has several benefits:
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+{% render docs/swift-package-manager/how-to-enable-disable.md, site: site %}
 
 ## How to add Swift Package Manager support to an existing Flutter plugin
 
@@ -49,12 +49,12 @@ that have migrated.
 {% tabs %}
 {% tab "Swift plugin" %}
 
-{% include docs/swift-package-manager/migrate-swift-plugin.md %}
+{% render docs/swift-package-manager/migrate-swift-plugin.md, site: site %}
 
 {% endtab %}
 {% tab "Objective-C plugin" %}
 
-{% include docs/swift-package-manager/migrate-objective-c-plugin.md %}
+{% render docs/swift-package-manager/migrate-objective-c-plugin.md, site: site %}
 
 {% endtab %}
 {% endtabs %}

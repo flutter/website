@@ -438,5 +438,5 @@ or one of its parent views.
 
 [Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
-{% include docs/platform-view-perf.md %}
+{% render docs/platform-view-perf.md, site: site %}
 
