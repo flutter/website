@@ -125,7 +125,7 @@ To update your unit tests:
       caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
       If the build phase doesn't exist already, create one.
-      Click the <span class="material-symbols">add</span> and
+      Click the <span class="material-symbols" translate="no">add</span> and
       then click **New Link Binary With Libraries Phase**.
 
       {% render docs/captioned-image.liquid,
@@ -134,7 +134,7 @@ To update your unit tests:
 
    1. Navigate to **Package Dependencies** for the project.
 
-   1. Click <span class="material-symbols">add</span>.
+   1. Click <span class="material-symbols" translate="no">add</span>.
 
    1. In the dialog that opens, click the **Add Local...** button.
 

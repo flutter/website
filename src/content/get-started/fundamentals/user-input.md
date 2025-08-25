@@ -39,7 +39,7 @@ which is covered at the end of this section.
 No matter which design system you choose, the principals on this page apply.
 :::
 
-> <span class="material-symbols" aria-hidden="true">menu_book</span> **Reference**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**: 
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 Next, we'll cover a few of the Material widgets that support common
@@ -83,7 +83,7 @@ but styled differently for various use cases, including:
 - `FloatingActionButton`: An icon button that hovers over
   content to promote a primary action.
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [FloatingActionButton (Widget of the Week)][]
 
 There are usually 3 main aspects to constructing a button:
@@ -138,13 +138,13 @@ Widget build(BuildContext context) {
 
 <br>
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
 > Complete this tutorial that teaches you how to build a
 > "favorite" button: [Add interactivity to your Flutter app][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: [`ElevatedButton`][] • [`FilledButton`][] • [`OutlinedButton`][] • [`TextButton`][] • [`IconButton`][] • [`FloatingActionButton`][]
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: [`ElevatedButton`][] • [`FilledButton`][] • [`OutlinedButton`][] • [`TextButton`][] • [`IconButton`][] • [`FloatingActionButton`][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -183,7 +183,7 @@ From forth the fatal loins of these two foes''');
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [SelectableText (Widget of the Week)][]
 
 [SelectableText (Widget of the Week)]: {{site.youtube-site}}/watch?v=ZSU3ZXOs6hc
@@ -217,13 +217,13 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [Rich Text (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true">flutter</span> **Demo**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
 > [Rich Text Editor][]
 
-> <span class="material-symbols" aria-hidden="true">code</span> **Code**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**: 
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
@@ -276,7 +276,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
 > Complete this 4-part cookbook series that walks
 > you through how to create a text field,
 > retrieve its value, and update your app state:
@@ -346,18 +346,18 @@ Widget build(BuildContext context) {
 }
 ```
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**:
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Complete this tutorial to learn how to [build a form with validation][].
 
-> <span class="material-symbols" aria-hidden="true">flutter</span> **Demo**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
 > [Form app][]
 
-> <span class="material-symbols" aria-hidden="true">code</span> **Code**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**: 
 > [Form app code][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Form app]: https://github.com/flutter/samples/tree/main/form_app/
@@ -602,7 +602,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [DropdownMenu (Widget of the Week)][]
 
 [DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/watch?v=giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -649,12 +649,12 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs:** [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][] • [`Chip`][]
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:** [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][] • [`Chip`][]
 
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: {{site.youtube-site}}/watch?v=ufb4gIPDmEss
 [`SegmentedButton`]: {{site.api}}/flutter/material/SegmentedButton-class.html
@@ -870,15 +870,15 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [CheckboxListTile (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [SwitchListTile (Widget of the Week)][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**: 
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: 
 [`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] • 
 [`Radio`][]
 
@@ -1014,7 +1014,7 @@ on to the `Navigator` stack.
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs:** 
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:** 
 [`showDatePicker`][] • [`showTimePicker`][]
 
 [`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
@@ -1071,16 +1071,16 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [Dismissible (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
 > Complete this tutorial on how to [implement swipe to dismiss][] using the
 > dismissible widget.
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs:**
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:**
 [`Dismissible`][]
 
 [Dismissible (Widget of the Week)]: {{site.youtube-site}}/watch?v=iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
@@ -1094,7 +1094,7 @@ you can use for handling user input in your Flutter app.
 Check out the [Material Widget library][] and
 [Material Library API docs][] for a full list of widgets.
 
-> <span class="material-symbols" aria-hidden="true">flutter</span> **Demo**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
 > See Flutter's [Material 3 Demo][] for a curated sample of user input widgets
 > available in the Material library.
 
@@ -1105,7 +1105,7 @@ For example, the [`flutter_slidable`][] package provides
 a `Slidable` widget that is more customizable than
 the `Dismissible` widget described in the previous section.
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [flutter_slidable (Package of the Week)][]
 
 [Material Widget Library]: /ui/widgets/material
@@ -1123,18 +1123,18 @@ fits the user interaction that you're looking for?
 You can build your own custom widget and
 make it interactive using `GestureDetector`.
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
 > Use this recipe as a starting point to create your own _custom_ button widget
 > that can [handle taps][].
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [GestureDetector (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true">menu_book</span> **Reference**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**: 
 > Check out [Taps, drags, and other gestures][] which explains how to listen
 > for, and respond to, gestures in Flutter.
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Bonus Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Bonus Video**: 
 > Curious how Flutter's `GestureArena` turns raw user interaction data into
 > human recognizable concepts like taps, drags, and pinches?
 > Check out this video: [GestureArena (Decoding Flutter)][]
@@ -1151,13 +1151,13 @@ annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and
 other semantic analysis-based tools.
 
-> <span class="material-symbols" aria-hidden="true">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [Semantics (Flutter Widget of the Week)][]
 
 
 <br>
 
-<span class="material-symbols" aria-hidden="true">menu_book</span> **API Docs**:
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**:
 [`GestureDetector`][] • [`Semantics`][]
 
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -1172,11 +1172,11 @@ ensure that everything works as expected!
 These tutorials walk you through writing tests that
 simulate user interactions in your app:
 
-> <span class="material-symbols" aria-hidden="true">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to
 > use `WidgetTester` to simulate and test user interactions in your app.
 
-> <span class="material-symbols" aria-hidden="true">bookmark</span> **Bonus Tutorial**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">bookmark</span> **Bonus Tutorial**: 
 > The [handle scrolling][] cookbook recipe shows you how to verify that
 > lists of widgets contain the expected content by
 > scrolling through the lists using widget tests.

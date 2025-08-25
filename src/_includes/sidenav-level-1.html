@@ -31,7 +31,7 @@
         <li class="nav-item">
           <button class="nav-link {{class}} collapsible" data-toggle="collapse" data-target="#{{id}}" role="button" aria-expanded="{{expanded}}" aria-controls="{{id}}">
             <span>{{entry.title}}</span>
-            <span class="material-symbols expander" aria-hidden="true">expand_more</span>
+            <span class="material-symbols expander" aria-hidden="true" translate="no">expand_more</span>
           </button>
           <ul class="nav collapse {{show}}" id="{{id}}">
             {% if isActive -%}
@@ -52,7 +52,7 @@
              {%- if isExternal %} target="_blank" rel="noopener" {%- endif -%}>
             <div>
               <span>{{entry.title}}</span>
-              {%- if isExternal %}<span class="material-symbols" aria-hidden="true">open_in_new</span>{%- endif -%}
+              {%- if isExternal %}<span class="material-symbols" aria-hidden="true" translate="no">open_in_new</span>{%- endif -%}
             </div>
           </a>
         </li>
