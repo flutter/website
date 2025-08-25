@@ -99,7 +99,7 @@ class _ContactGroupsView extends StatelessWidget {
 ```
 
 This private widget contains the shared UI for displaying the list of
-contact groups. On small screens, it will be used as a page, and as
+contact groups. On small screens, it will be used as a page, and on
 large screens it will be used to fill the left column.
 
 This widget introduces several slivers:
