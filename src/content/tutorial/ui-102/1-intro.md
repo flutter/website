@@ -472,8 +472,8 @@ class ContactGroupsModel {
 ```
 
 If you aren't familiar with `ValueNotifier`, you should
-[complete the previous tutorial][] before continuing, which is all
-about state.
+[complete the previous tutorial][] before continuing,
+which covers state management.
 
 ## Connect the data to your app
 
