@@ -8,7 +8,7 @@ description: >-
 ## Summary
 
 The default behavior of a [`SnackBar`][] with an action has changed. Previously, a
-`SnackBar` with an action would only not auto-dismiss if talkback was enabled. 
+`SnackBar` with an action would not auto-dismiss if talkback was enabled. 
 Now, all `SnackBar`s with an action default to a non-dismissible state until the
 user interacts with the action button.
 
