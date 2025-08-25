@@ -298,13 +298,14 @@ For more information, refer to the following resources:
 
 ## solidart
 
-A simple but powerful state management solution inspired by SolidJS.
+A simple and performant fine-grained reactivity state management solution for building user interfaces.
+Enjoy the automatic reactivity system with Signal, Computed, Resource and Effect.
 
 * [Official Documentation][]
 * [solidart package][]
 * [flutter_solidart package][]
 
-[Official Documentation]: https://docs.page/nank1ro/solidart
+[Official Documentation]: https://solidart.mariuti.com
 [solidart package]: {{site.pub-pkg}}/solidart
 [flutter_solidart package]: {{site.pub-pkg}}/flutter_solidart
 
