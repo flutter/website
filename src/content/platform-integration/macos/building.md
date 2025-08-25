@@ -1,7 +1,6 @@
 ---
 title: Building macOS apps with Flutter
 description: Platform-specific considerations for building for macOS with Flutter.
-toc: true
 short-title: macOS development
 ---
 

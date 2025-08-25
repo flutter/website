@@ -7,7 +7,7 @@ description: >-
 prev:
   title: Recommendations
   path: /app-architecture/recommendations
-toc: false
+showToc: false
 ---
 
 If you've already read through the [architecture guide][] page,

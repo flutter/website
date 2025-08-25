@@ -2,7 +2,6 @@
 title: Flutter SDK archive
 short-title: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
-toc: true
 ---
 
 {% render docs/china-notice.md %}
