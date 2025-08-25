@@ -138,9 +138,7 @@ class _StaggerDemoState extends State<StaggerDemo>
       appBar: AppBar(title: const Text('Staggered Animation')),
       body: GestureDetector(
         behavior: HitTestBehavior.opaque,
-        onTap: () {
-          _playAnimation();
-        },
+        onTap: _playAnimation,
         child: Center(
           child: Container(
             width: 300,

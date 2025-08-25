@@ -5,19 +5,6 @@ description: >-
   the latest releases of iOS.
 ---
 
-:::warning
-An upcoming change to iOS has caused a temporary break in Flutter's
-debug mode on physical devices running iOS 26 (currently in beta).
-See [flutter#163984][] for details.
-
-In the meantime, we recommend these temporary workarounds:
-
-* When developing with a physical device, use one running iOS 18.5 or lower.
-* Use a simulator for development rather than a physical device.
-* If you must use a device updated to iOS 26,
-  use [Flutter's release or profile build modes][].
-:::
-
 You can develop Flutter on the iOS platform, even on
 the latest release of iOS. The latest Flutter SDK
 already supports a number of the features in the

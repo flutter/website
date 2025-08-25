@@ -116,7 +116,7 @@ use to customize the preview:
 *   **`localizations`**: A function to apply a localization
     configuration.
 
-[`@Preview`]: {{site.api}}/flutter/widgets/Preview-class.html
+[`@Preview`]: {{site.api}}/flutter/widget_previews/Preview-class.html
 
 ## Restrictions and limitations
 

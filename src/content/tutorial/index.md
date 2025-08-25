@@ -1,7 +1,7 @@
 ---
 title: Learn Flutter
 description: Resources to help you learn Flutter.
-toc: false
+showToc: false
 ---
 
 ## Welcome! 
@@ -46,7 +46,42 @@ If you’re running locally, this tutorial assumes that you’re running Flutter
 apps on the web, using [Chrome][]. This doesn’t require Xcode or Android Studio, 
 and thus is the quickest way to start using Flutter.  
 
+## Contents
+
+1. Introdution to Flutter UI
+   1. [Create a Flutter app][]
+   2. [Widget fundamentals][]
+   3. [Layout widgets on a screen][]
+   4. [Handle User input][]
+   5. [Learn about stateful widgets][]
+   6. [Add implicit animations][]
+2. State in Flutter apps
+   1. [Set up a new project][]
+   2. [Make Http Requests][]
+   3. [Use `ChangeNotifier` to update app state][]
+   4. [Use `ListenableBuilder` to update app UI][]
+3. Flutter UI 102
+   1. [Set up your project][]
+   2. [`LayoutBuilder` and adaptive layouts][]
+   3. [Scrolling and slivers][]
+   4. [Stack based navigation][]
+
 [Learn Dart tutorial]: https://dart.dev/
 [installing Flutter on your machine]: /get-started/install
 [Firebase Studio]: https://firebase.studio/
 [Chrome]: https://www.google.com/chrome/
+
+[Create a Flutter app]: /tutorial/create-an-app/
+[Widget fundamentals]: /tutorial/stateless-widgets/
+[Layout widgets on a screen]: /tutorial/layout/
+[Handle user input]: /tutorial/user-input/
+[Learn about stateful widgets]: /tutorial/stateful-widgets/
+[Add implicit animations]: /tutorial/animations/
+[Set up a new project]: /tutorial/set-up-state-app/
+[Make Http Requests]: /tutorial/http/
+[Use `ChangeNotifier` to update app state]:/tutorial/change-notifier/
+[Use `ListenableBuilder` to update app UI]: /tutorial/listenables/
+[Set up your project]: /tutorial/set-up-ui-102/
+[`LayoutBuilder` and adaptive layouts]: /tutorial/adaptive-layouts/
+[Scrolling and slivers]: /tutorial/slivers/
+[Stack based navigation]: /tutorial/stack-based-navigation/

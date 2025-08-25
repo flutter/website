@@ -47,7 +47,7 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
-When running on Android API 34 and below, the screen will not been obscured
+When running on Android API 34 and below, the screen will not be obscured
 during media projection. The widget will exist in the tree but has no other
 effect, and you do not need to avoid usages of `SensitiveContent` on platforms
 that do not support this feature.

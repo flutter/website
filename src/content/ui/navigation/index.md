@@ -25,7 +25,9 @@ as `push()` `or pop()`:
 child: const Text('Open second screen'),
 onPressed: () {
   Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => const SecondScreen()),
+    MaterialPageRoute<void>(
+      builder: (context) => const SecondScreen(),
+    ),
   );
 },
 ```

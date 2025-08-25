@@ -37,7 +37,7 @@ void main() {
           throw Exception('Unknown route: ${settings.name}');
         }
 
-        return MaterialPageRoute<dynamic>(
+        return MaterialPageRoute<void>(
           builder: (context) {
             return page;
           },

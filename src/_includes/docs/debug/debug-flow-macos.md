@@ -18,7 +18,7 @@ Building macOS application...
 
 ##### Start the debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% render docs/debug/debug-flow-vscode-as-start.md %}
 
 ##### Attach to the Flutter process in Xcode
 

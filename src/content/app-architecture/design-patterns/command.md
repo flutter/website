@@ -480,7 +480,7 @@ class HomeViewModel extends ChangeNotifier {
   late final Command0 load;
 
   // Command1 accepts 1 argument
-  late final Command1 edit;
+  late final Command1<String> edit;
 
   Future<void> _load() async {
     // load user
@@ -605,7 +605,7 @@ final class Command0<T> extends Command<T> {
 
   /// Executes the action.
   Future<void> execute() async {
-    await _execute(() => _action());
+    await _execute(_action);
   }
 }
 
