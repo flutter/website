@@ -146,10 +146,10 @@ If you want to create Flutter and Dart rules for an
 AI-driven environment, follow these steps:
 
 1.  Download the attached file,
-    <a href="assets/files/flutter-rules-template.md" download>flutter-rules.md</a>
+    <a href="flutter-rules-template.txt" download>flutter-rules-template.txt</a>
 
 1.  In an LLM like [Gemini][], attach the
-    `flutter-rules-template.md` file that you downloaded in
+    `flutter-rules-template.txt` file that you downloaded in
     the last step.
     
 1.  Provide a prompt to reformat the file for your desired
@@ -158,9 +158,9 @@ AI-driven environment, follow these steps:
     Example prompt:
 
     ```text
-    Convert the following flutter-rules.md file into a
-    guidelines.md file for JetBrains IDE. Make sure to
-    use the styles required for a guidelines.md file:
+    Convert the attached flutter-rules-template.txt file
+    into a guidelines.md file for JetBrains IDE. Make sure
+    to use the styles required for a guidelines.md file.
     ```
 
 1.  Take the results produced by the LLM and edit until
@@ -169,7 +169,7 @@ AI-driven environment, follow these steps:
 1.  Follow the installation instructions that are provided
     by your AI-driven environment to use the rules. You
     might need to add the new rules to an existing file
-    or create a new one in your environment.
+    or create a new one in your environment. 
 
 1.  Test your AI-driven environment to make sure that the
     Flutter and Dart rules are being used.
