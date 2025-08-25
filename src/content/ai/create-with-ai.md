@@ -146,7 +146,7 @@ If you want to create Flutter and Dart rules for an
 AI-driven environment, follow these steps:
 
 1.  Download the attached file,
-    <a href="flutter-rules-template.txt" download>flutter-rules-template.txt</a>
+    [flutter-rules-template.md](/assets/files/flutter-rules-template)
 
 1.  In an LLM like [Gemini][], attach the
     `flutter-rules-template.txt` file that you downloaded in
