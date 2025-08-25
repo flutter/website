@@ -324,7 +324,7 @@ suffixes. This gives you a variety of data to work with as you build the UI.
 
 ### `ContactGroup` data
 
-Now create the contact groups that organize your contacts into lists.
+Now, create the contact groups that organize your contacts into lists.
 Create a new file, `lib/data/contact_group.dart`, and add the `ContactGroup` class:
 
 ```dart
