@@ -105,7 +105,7 @@ on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 [dart-mcp-github]: {{site.github}}/dart-lang/ai/tree/main/pkgs/dart_mcp_server
 [dart-mcp-flutter-docs]: #dart-and-flutter-mcp-server
 
-## Rules
+## Rules for Flutter and Dart
 
 Rules are a key part of the development experience in many
 AI-driven editors. The rules provide instructions to an
@@ -117,16 +117,18 @@ including:
 *   Enforcing best practices
 *   Providing project context
 
-### Editors with rules files
+### Environments that support rules
 
-Several editors, such as Firebase Studio, have rules files
+Several AI-powered environments have rules files
 that are useful for providing critical context to LLMs.
+Here are a few of the environments that support
+rules and the names for their rules files:
 
-| Environment/IDE | Rules File | Installation Instructions |
+| Environment | Rules File | Installation Instructions |
 | :--- | :--- | :--- |
-| Firebase Studio | `airules.md` | [Configure airules.md][] |
 | Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
 | Cursor | `cursor.md` | [Configure cursorrules.md][] |
+| Firebase Studio | `airules.md` | [Configure airules.md][] |
 | JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][] |
 | VS Code | `.instructions.md` | [Configure .instructions.md][] |
 | Windsurf | `guidelines.md` | [Configure guidelines.md][] |
@@ -138,45 +140,38 @@ that are useful for providing critical context to LLMs.
 [Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
 [Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
 
-### Convert rules between editors
+### Create rules for your editor
 
-Firebase Studio has a rules file specifically for Flutter.
-If you create a new project with Firebase Studio, you can
-get the latest rules for Flutter and convert them so that
-they can be used with other editors.
+If you want to create Flutter and Dart rules for an
+AI-driven environment, follow these steps:
 
-1.  Create a Firebase Studio workspace.
-  
-    *   Navigate to the [Firebase Studio dashboard][] in
-        your web browser and sign in.
-    *   In the dashboard, select the Flutter template.
-    *   Name your workspace.
-    *   Create your new workspace. Once the workspace is
-        ready, the Firebase Studio editor will open with
-        your new app.
+1.  Download the attached file,
+    <a href="assets/files/flutter-rules-template.md" download>flutter-rules.md</a>
 
-1.  Review or add to `airules.md`.
+1.  In an LLM like [Gemini][], attach the
+    `flutter-rules-template.md` file that you downloaded in
+    the last step.
+    
+1.  Provide a prompt to reformat the file for your desired
+    editor.
 
-    *   On the left sidebar, click the Explorer icon to
-        open the File Explorer.
-    *   Navigate to `.idx/airules.md` file and open it.
-    *   Review the contents or add to them.
+    Example prompt:
 
-1.  Convert `airules.md` to another format.
+    ```text
+    Convert the following flutter-rules.md file into a
+    guidelines.md file for JetBrains IDE. Make sure to
+    use the styles required for a guidelines.md file:
+    ```
 
-    *   If desired, copy the contents of `airules.md` to an
-        LLM like [Gemini][] and provide a prompt to reformat
-        the file for another editor.
+1.  Take the results produced by the LLM and edit until
+    you have what you need.
 
-        Example prompt:
+1.  Follow the installation instructions that are provided
+    by your AI-driven environment to use the rules. You
+    might need to add the new rules to an existing file
+    or create a new one in your environment.
 
-        ```text
-        Convert the following airules.md file into a
-        guidelines.md file for JetBrains IDE. Make sure to
-        use the styles required for a guidelines.md file:
+1.  Test your AI-driven environment to make sure that the
+    Flutter and Dart rules are being used.
 
-        <<paste airules.md content here>>
-        ```
-
-[Firebase Studio dashboard]: https://studio.firebase.google.com/
 [Gemini]: https://gemini.google.com/
