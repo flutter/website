@@ -1521,8 +1521,7 @@ class _MyFormState extends State<MyForm> {
 ```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+[Retrieve the value of a text field][].
 
 ### Placeholder in a text field
 
@@ -2089,7 +2088,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
-[Flutter cookbook]: /cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
 [internationalization guide]: /ui/accessibility-and-internationalization/internationalization
