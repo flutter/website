@@ -8,7 +8,7 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/typing_indicator"?>
 
-{% include docs/deprecated.md %}
+{% render docs/deprecated.md %}
 
 Modern chat apps display indicators when other users
 are actively typing responses. These indicators help

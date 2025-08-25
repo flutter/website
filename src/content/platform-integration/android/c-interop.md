@@ -206,4 +206,4 @@ in the following way.
 
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
 
-{% include docs/resource-links/ffi-video-resources.md %}
+{% render docs/resource-links/ffi-video-resources.md, site: site %}

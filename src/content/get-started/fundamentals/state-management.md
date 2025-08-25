@@ -30,7 +30,7 @@ For other introductions to state management, check out these resources:
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
 
-<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
+<i class="material-symbols" aria-hidden="true" translate="no">flutter_dash</i> Tutorial:
 [State management][].
 This shows how to use `ChangeNotifer` with the [provider][] package.
 
