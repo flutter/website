@@ -510,7 +510,7 @@ class RolodexApp extends StatelessWidget {
 }
 ```
 
-With all of the extrenuous code out of the way, in the next lesson,
+With all of the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
 [Flutter CLI tool]: /reference/flutter-cli
