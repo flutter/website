@@ -34,7 +34,7 @@ by default to:
 - `x86_64`
 
 Because this automatic configuration happens after your `build.gradle` files
-are processed, it may override custom `abiFilters` settings.
+are processed, it might override custom `abiFilters` settings.
 
 ## Migration guide
 If your app doesn't customize `abiFilters`, no changes are required.
