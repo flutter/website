@@ -79,9 +79,9 @@ Landed in version: 3.35.0<br>
 In stable release: 3.35
 
 Relevant issues:
-* [Issue 174004: Edit the 3.35 blog to warn users that abiFilters is now set in Flutter apps]({{site.repo.flutter}}/issues/174004)
-* [Issue 153476: Flutter needs to declare abiFilters for only supported architectures by default]({{site.repo.flutter}}/issues/153476)
+* [Issue #174004]({{site.repo.flutter}}/issues/174004)
+* [Issue #153476]({{site.repo.flutter}}/issues/153476)
 
 Relevant PRs:
-* [PR 168293: [Android] add abiFilters to Flutter Gradle Plugin]({{site.repo.flutter}}/pull/168293)
+* [PR #168293]({{site.repo.flutter}}/pull/168293)
 
