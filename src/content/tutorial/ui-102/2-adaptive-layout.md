@@ -229,8 +229,8 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 }
 ```
 
-The `selectedListId` variable tracks which contact group is currently
-selected, and `_onContactListSelected` updates this value when the
+The `selectedListId` variable tracks the currently selected contact group,
+and `_onContactListSelected` updates this value when the
 user makes a selection.
 
 ## Build the large screen layout
