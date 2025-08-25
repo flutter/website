@@ -144,26 +144,31 @@ the following steps:
     with developer options enabled.
 
 1.  In the console, navigate to the `flavors_example`
-    directory and enter the following command:
+    directory and use the appropriate command.
 
-    ```console title="console"
-    $ flutter (run | build) --flavor <flavor_name>
-    ```
+    - **To run the app in debug mode on a specific flavor:**
+      ```console title="console"
+      $ flutter run --flavor <flavor_name>
+      ```
+      Example:
+      ```console title="console"
+      $ flutter run --flavor staging
+      ```
 
-    * `(run |  build)`: Replace this with one of the
-      following:
-      * `run`: Run the app in debug mode.
-      * `build`: Run the app in production mode.
+    - **To build a release version for a specific flavor:**
+      ```console title="console"
+      $ flutter build --flavor <flavor_name> --target <path_to_main.dart_file>
+      ```
+      Example (assuming your `staging` flavor has a `main_staging.dart` entry point):
+      ```console title="console"
+      $ flutter build apk --release --flavor staging -t lib/main_staging.dart
+      ```
+      or to build an app bundle:
+      ```console title="console"
+      $ flutter build appbundle --release --flavor staging -t lib/main_staging.dart
+      ```
 
-    * `<flavor_name>`: Replace this with the name of your
-      Android product flavor (for example, `staging` or
-      `production`).
-
-    Example:
-
-    ```console title="console"
-    $ flutter run --flavor staging
-    ```
+      The `--target` flag is used to specify the entry point file for the flavor.
 
 ## Customize configurations
 
@@ -224,7 +229,7 @@ names for two product flavors called `staging` and
       `@string/app_name`.
 
       ```xml title="AndroidManifest.xml"
-      <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+      <manifest xmlns:android="[http://schemas.android.com/apk/res/android](http://schemas.android.com/apk/res/android)">
           <application
             android:label="@string/app_name"
             ...
