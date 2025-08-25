@@ -2,7 +2,7 @@
 title: Flutter now sets default `abiFilters` in Android builds
 description: >-
   The Flutter Gradle Plugin now automatically configures abiFilters
-  for Android builds, which may override custom abiFilters settings.
+  for Android builds, which might override custom abiFilters settings.
 ---
 
 ## Summary
