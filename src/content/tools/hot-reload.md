@@ -13,6 +13,9 @@ After the VM updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
+![Hot reload GIF](/assets/images/docs/tools/hot-reload.gif){:width="100%"}<br>
+A demo of hot reload in DartPad
+
 ## How to perform a hot reload
 
 To hot reload a Flutter app:

@@ -1,7 +1,7 @@
 ---
 title: DevTools release notes
 description: Learn about the latest changes in Dart and Flutter DevTools.
-toc: false
+showToc: false
 ---
 
 This page summarizes the changes in official stable releases of DevTools.

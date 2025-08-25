@@ -5,15 +5,15 @@ import '../../business/model/todo.dart';
 import '../../utils/result.dart';
 
 class DatabaseService {
+  // #docregion Table
+  static const String _todoTableName = 'todo';
+  static const String _idColumnName = '_id';
+  static const String _taskColumnName = 'task';
+  // #enddocregion Table
+
   DatabaseService({required this.databaseFactory});
 
   final DatabaseFactory databaseFactory;
-
-  // #docregion Table
-  static const _kTableTodo = 'todo';
-  static const _kColumnId = '_id';
-  static const _kColumnTask = 'task';
-  // #enddocregion Table
 
   Database? _database;
 
@@ -26,7 +26,7 @@ class DatabaseService {
       options: OpenDatabaseOptions(
         onCreate: (db, version) {
           return db.execute(
-            'CREATE TABLE $_kTableTodo($_kColumnId INTEGER PRIMARY KEY AUTOINCREMENT, $_kColumnTask TEXT)',
+            'CREATE TABLE $_todoTableName($_idColumnName INTEGER PRIMARY KEY AUTOINCREMENT, $_taskColumnName TEXT)',
           );
         },
         version: 1,
@@ -38,7 +38,9 @@ class DatabaseService {
   // #docregion Insert
   Future<Result<Todo>> insert(String task) async {
     try {
-      final id = await _database!.insert(_kTableTodo, {_kColumnTask: task});
+      final id = await _database!.insert(_todoTableName, {
+        _taskColumnName: task,
+      });
       return Result.ok(Todo(id: id, task: task));
     } on Exception catch (e) {
       return Result.error(e);
@@ -50,14 +52,14 @@ class DatabaseService {
   Future<Result<List<Todo>>> getAll() async {
     try {
       final entries = await _database!.query(
-        _kTableTodo,
-        columns: [_kColumnId, _kColumnTask],
+        _todoTableName,
+        columns: [_idColumnName, _taskColumnName],
       );
       final list = entries
           .map(
             (element) => Todo(
-              id: element[_kColumnId] as int,
-              task: element[_kColumnTask] as String,
+              id: element[_idColumnName] as int,
+              task: element[_taskColumnName] as String,
             ),
           )
           .toList();
@@ -72,8 +74,8 @@ class DatabaseService {
   Future<Result<void>> delete(int id) async {
     try {
       final rowsDeleted = await _database!.delete(
-        _kTableTodo,
-        where: '$_kColumnId = ?',
+        _todoTableName,
+        where: '$_idColumnName = ?',
         whereArgs: [id],
       );
       if (rowsDeleted == 0) {
