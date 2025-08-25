@@ -9,7 +9,7 @@ description: >-
 
 Starting in Flutter 3.35, the Flutter Gradle Plugin automatically sets
 `abiFilters` for Android builds to prevent the inclusion of unsupported
-architectures in release APKs. This change may override custom
+architectures in release APKs. This change can override custom
 `abiFilters` specified in your app's `build.gradle` file.
 
 ## Context
