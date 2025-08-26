@@ -2,14 +2,14 @@
 title: Flutter now sets default `abiFilters` in Android builds
 description: >-
   The Flutter Gradle Plugin now automatically configures abiFilters
-  for Android builds, which might override custom abiFilters settings.
+  for Android builds, which might break custom abiFilters settings.
 ---
 
 ## Summary
 
 Starting in Flutter 3.35, the Flutter Gradle Plugin automatically sets
 [`abiFilters`][] for Android builds to prevent the inclusion of unsupported
-architectures in release APKs. This change can override custom
+architectures in release APKs. This change can break custom
 `abiFilters` specified in your app's `build.gradle` file.
 
 ## Context
@@ -34,7 +34,8 @@ by default to:
 - `x86_64`
 
 Because this automatic configuration happens before your `build.gradle` files
-are processed, it might override custom `abiFilters` settings.
+are processed, it might break custom `abiFilters` settings that depend on the
+set being empty.
 
 ## Migration guide
 If your app doesn't customize `abiFilters`, no changes are required.
