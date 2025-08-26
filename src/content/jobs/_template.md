@@ -1,6 +1,6 @@
 ---
 title: <Job Title>
-toc: false
+showToc: false
 ---
 
 {% comment %}

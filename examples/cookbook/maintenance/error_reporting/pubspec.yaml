@@ -4,12 +4,12 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
-  sentry_flutter: ^9.5.0
+  sentry_flutter: ^9.6.0
 
 dev_dependencies:
   flutter_test:
