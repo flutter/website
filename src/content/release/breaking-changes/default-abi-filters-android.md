@@ -8,7 +8,7 @@ description: >-
 ## Summary
 
 Starting in Flutter 3.35, the Flutter Gradle Plugin automatically sets
-[`abiFilters`](https://developer.android.com/reference/tools/gradle-api/8.7/com/android/build/api/dsl/Ndk#abiFilters()) for Android builds to prevent the inclusion of unsupported
+[`abiFilters`][] for Android builds to prevent the inclusion of unsupported
 architectures in release APKs. This change can override custom
 `abiFilters` specified in your app's `build.gradle` file.
 
@@ -33,7 +33,7 @@ by default to:
 - `arm64-v8a`
 - `x86_64`
 
-Because this automatic configuration happens after your `build.gradle` files
+Because this automatic configuration happens before your `build.gradle` files
 are processed, it might override custom `abiFilters` settings.
 
 ## Migration guide
@@ -85,3 +85,4 @@ Relevant issues:
 Relevant PRs:
 * [PR #168293]({{site.repo.flutter}}/pull/168293)
 
+[`abiFilters`](https://developer.android.com/reference/tools/gradle-api/8.7/com/android/build/api/dsl/Ndk#abiFilters())
