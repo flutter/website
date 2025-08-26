@@ -1,7 +1,7 @@
 ---
 title: Learn Flutter
 description: Resources to help you learn Flutter.
-toc: false
+showToc: false
 ---
 
 {% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}

@@ -66,7 +66,7 @@ function _registerAside(markdown: MarkdownIt, id: string, defaultTitle: string |
         const title = parsedArgs?.[1] ?? defaultTitle;
         return `<aside class="alert ${style}">
 ${title !== null ? `<div class="alert-header">
-${icon !== null ? `<i class="material-symbols" aria-hidden="true">${icon}</i>` : ''}
+${icon !== null ? `<i class="material-symbols" aria-hidden="true" translate="no">${icon}</i>` : ''}
 <span>${markdown.renderInline(title)}</span></div>` : ''}
 <div class="alert-content">
 `;

@@ -44,7 +44,7 @@ Download and install the Windows version of the following packages:
 The developers of the preceding software provide support for those products.
 To troubleshoot installation issues, consult that product's documentation.
 
-[Android Studio]: https://developer.android.com/studio/install#windows
+[Android Studio]: https://developer.android.com/studio/
 [Visual Studio 2022]: https://learn.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2022
 [Build Tools for Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022
 [Google Chrome]: https://www.google.com/chrome/dr/download/
@@ -71,7 +71,6 @@ The Flutter team recommends installing
 This combination simplifies installing the Flutter SDK.
 :::
 
-[Android Studio]: https://developer.android.com/studio/install
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html
 [Visual Studio Code]: https://code.visualstudio.com/docs/setup/windows
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

@@ -451,7 +451,7 @@ void main() {
 The following images show the Android and iOS UI for the basic Flutter
 "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world-basic.png", alt: "Hello world app", class: "border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
@@ -505,7 +505,7 @@ class MyApp extends StatelessWidget {
 The following images show "Hello world!" built from Material Design widgets.
 You get more functionality for free than in the basic "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world.png", alt: "Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [`StatelessWidget`][] or [`StatefulWidget`][].
@@ -606,7 +606,7 @@ the constructor, or add `required` to the constructor.
 The following screenshots show an example of the reusable
 `CustomCard` class.
 
-{% include docs/android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/custom-cards.png", alt: "Custom cards", class: "border" %}
 
 ## Project structure and resources
 
@@ -837,7 +837,7 @@ return ListView.builder(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flatlist.webp" alt="Flat list" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flatlist.webp", alt: "Flat list", class: "border" %}
 
 To learn how to implement an infinite scrolling list, see the official
 [`infinite_list`][infinite_list] sample.
@@ -907,7 +907,7 @@ class MyCanvasWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/canvas.png" alt="Canvas" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/canvas.png", alt: "Canvas", class: "border" %}
 
 ## Layouts
 
@@ -963,7 +963,7 @@ For example, [`Padding`][], [`Align`][], and [`Stack`][].
 
 For a complete list, see [Layout Widgets][].
 
-{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.webp" alt="Layout" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/basic-layout.webp", alt: "Layout", class: "border" %}
 
 ### How do I layer widgets?
 
@@ -999,7 +999,7 @@ on top of a `CircleAvatar`.
 The Stack offsets the text using the alignment property
 and `Alignment` coordinates.
 
-{% include docs/android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/stack.png", alt: "Stack", class: "border" %}
 
 For more information, see the [`Stack`][] class documentation.
 
@@ -1058,7 +1058,7 @@ return const Center(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.webp" alt="Styling" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutterstyling.webp", alt: "Styling", class: "border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -1406,7 +1406,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/state-change.webp" alt="State change" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/state-change.webp", alt: "State change", class: "border" %}
 
 ## Props
 
@@ -1489,7 +1489,7 @@ class UseCard extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/modular.png", alt: "Cards", class: "border" %}
 
 ## Local storage
 
@@ -1853,7 +1853,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/navigation.webp" alt="Navigation" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/navigation.webp", alt: "Navigation", class: "border" %}
 
 ## Gesture detection and touch event handling
 
@@ -1959,7 +1959,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.webp" alt="Gestures" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-gestures.webp", alt: "Gestures", class: "border" %}
 
 ## Making HTTP network requests
 
@@ -2022,7 +2022,7 @@ Future<void> getIPAddress() async {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/api-calls.webp" alt="API calls" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/api-calls.webp", alt: "API calls", class: "border" %}
 
 ## Form input
 
@@ -2165,7 +2165,7 @@ void _submit() {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/input-fields.webp" alt="Input" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/input-fields.webp", alt: "Input", class: "border" %}
 
 ## Platform-specific code
 
@@ -2428,7 +2428,7 @@ class _LogoFadeState extends State<LogoFade>
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.webp" alt="Flutter fade" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-fade.webp", alt: "Flutter fade", class: "border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -2451,7 +2451,7 @@ return Dismissible(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.webp" alt="Card swipe" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/card-swipe.webp", alt: "Card swipe", class: "border" %}
 
 ## React Native and Flutter widget equivalent components
 

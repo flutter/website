@@ -20,11 +20,11 @@ Running Gradle task 'bundleDebug'...                               27.1s
 
 If you use VS Code to debug most of your code, start with this section.
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% render docs/debug/debug-flow-vscode-as-start.md %}
 
 #### Attach to the Flutter process in Android Studio
 
-{% include docs/debug/debug-android-attach-process.md %}
+{% render docs/debug/debug-android-attach-process.md %}
 
 {% endtab %}
 {% tab "Start from Android Studio" %}
@@ -33,9 +33,9 @@ If you use VS Code to debug most of your code, start with this section.
 
 If you use Android Studio to debug most of your code, start with this section.
 
-{% include docs/debug/debug-flow-androidstudio-as-start.md %}
+{% render docs/debug/debug-flow-androidstudio-as-start.md %}
 
-{% include docs/debug/debug-android-attach-process.md %}
+{% render docs/debug/debug-android-attach-process.md %}
 
 {% endtab %}
 {% endtabs %}
