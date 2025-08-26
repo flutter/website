@@ -40,7 +40,7 @@ class MyWidget extends StatelessWidget {
   ...
   Widget build(BuildContext context) {
     return SensitiveContent(
-      sensitivivity: ContentSensitivity.sensitive,
+      sensitivity: ContentSensitivity.sensitive,
       child: MySensitiveContent(),
     );
   }
