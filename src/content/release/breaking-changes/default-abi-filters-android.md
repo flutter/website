@@ -85,4 +85,4 @@ Relevant issues:
 Relevant PRs:
 * [PR #168293]({{site.repo.flutter}}/pull/168293)
 
-[`abiFilters`](https://developer.android.com/reference/tools/gradle-api/8.7/com/android/build/api/dsl/Ndk#abiFilters())
+[`abiFilters`]: https://developer.android.com/reference/tools/gradle-api/8.7/com/android/build/api/dsl/Ndk#abiFilters()
