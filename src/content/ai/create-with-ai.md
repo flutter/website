@@ -107,22 +107,25 @@ on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 
 ## Rules for Flutter and Dart
 
-Rules are a key part of the development experience in many
-AI-driven editors. The rules provide instructions to an
-underlying LLM model, which powers the
-AI assistance features. Rules can be used to do many things,
-including:
+<a href="/assets/files/flutter-rules-template.txt" download>`-> Download the Flutter and Dart Rules template <-`</a>
 
-*   Customizing AI behavior
-*   Enforcing best practices
-*   Providing project context
+AI-powered editors use rules files to provide context and
+instructions to an underlying LLM. These files help you:
+
+*   Customize AI behavior to your team's needs.
+*   Enforce project best practices for code style and
+    design.
+*   Provide critical project context to the AI.
+
+You can use the following template to get you
+started with rules for Flutter and Dart:
+<a href="/assets/files/flutter-rules-template.txt" download>`flutter-rules-template.txt`</a>.
 
 ### Environments that support rules
 
-Several AI-powered environments have rules files
-that are useful for providing critical context to LLMs.
-Here are a few of the environments that support
-rules and the names for their rules files:
+Many AI environments support rules files to guide
+LLM behavior. Here are some common examples and their
+corresponding rule file names:
 
 | Environment | Rules File | Installation Instructions |
 | :--- | :--- | :--- |
@@ -142,10 +145,10 @@ rules and the names for their rules files:
 
 ### Create rules for your editor
 
-If you want to create Flutter and Dart rules for an
-AI-driven environment, follow these steps:
+You can adapt our Flutter and Dart rules template for your
+specific environment. To do so, follow these steps:
 
-1.  Download the attached file,
+1.  Download the Flutter and Dart rules template:
     <a href="/assets/files/flutter-rules-template.txt" download>flutter-rules-template.txt</a>
 
 1.  In an LLM like [Gemini][], attach the
@@ -163,15 +166,14 @@ AI-driven environment, follow these steps:
     to use the styles required for a guidelines.md file.
     ```
 
-1.  Take the results produced by the LLM and edit until
-    you have what you need.
+1.  Review the LLM's output and make any necessary
+    adjustments.
 
-1.  Follow the installation instructions that are provided
-    by your AI-driven environment to use the rules. You
-    might need to add the new rules to an existing file
-    or create a new one in your environment. 
+1.  Follow your environment's instructions to add the new
+    rules file. This may involve adding to an existing file
+    or creating a new one.
 
-1.  Test your AI-driven environment to make sure that the
-    Flutter and Dart rules are being used.
+1.  Verify that your AI assistant is using the new rules to
+    guide its responses.
 
 [Gemini]: https://gemini.google.com/
