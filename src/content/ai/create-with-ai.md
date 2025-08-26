@@ -107,7 +107,10 @@ on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 
 ## Rules for Flutter and Dart
 
-<a href="/assets/files/flutter-rules-template.txt" download>`-> Download the Flutter and Dart Rules template <-`</a>
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="/assets/files/flutter-rules-template.txt" download>
+  <span aria-hidden="true" class="material-symbols" translate="no">download</span>
+  <span>Download the Flutter and Dart rules template</span>
+</a>
 
 AI-powered editors use rules files to provide context and
 instructions to an underlying LLM. These files help you:
