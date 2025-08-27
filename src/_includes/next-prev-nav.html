@@ -2,7 +2,7 @@
   <nav id="site-prev-next">
     {% if prev.path -%}
     <a class="prev" href="{{ prev.path }}">
-      <span class="material-symbols" aria-hidden="true">chevron_left</span>
+      <span class="material-symbols" aria-hidden="true" translate="no">chevron_left</span>
       <div>
         <span class="prev-next-subtitle" aria-label="Previous page:">Previous</span>
         <span class="prev-next-title">{{ prev.title}}</span>
@@ -15,7 +15,7 @@
         <span class="prev-next-subtitle" aria-label="Next page:">Next</span>
         <span class="prev-next-title">{{ next.title}}</span>
       </div>
-      <span class="material-symbols" aria-hidden="true">chevron_right</span>
+      <span class="material-symbols" aria-hidden="true" translate="no">chevron_right</span>
     </a>
     {% endif -%}
   </nav>

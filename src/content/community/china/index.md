@@ -1,7 +1,6 @@
 ---
 title: Using Flutter in China
 description: How to use, access, and learn about Flutter in China.
-toc: true
 os-list: [Windows, macOS, Linux, ChromeOS]
 ---
 
