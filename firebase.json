@@ -471,6 +471,7 @@
       { "source": "/go/go-router-v7-breaking-changes", "destination": "https://docs.google.com/document/d/10Xbpifbs4E-zh6YE5akIO8raJq_m3FIXs6nUGdOspOg/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v8-breaking-changes", "destination": "https://docs.google.com/document/d/1VCuB85D5kYxPR3qYOjVmw8boAGKb7k62heFyfFHTOvw/edit?usp=sharing", "type": 301 },
       { "source": "/go/go-router-v9-breaking-changes", "destination": "https://docs.google.com/document/d/16plvWc9ablQsUs7w6bWDpTZ7PwMP4YUhV-qMQ3iljE0/edit?usp=sharing", "type": 301 },
+      { "source": "/go/go-router-builder-v4-breaking-changes", "destination": "https://docs.google.com/document/d/1nfwkcmW06ZJsnHr_CvIX-pZcO_5DRMnUb4R6ZAYP3Mo/edit?usp=sharing", "type": 301 },
       { "source": "/go/golden-workflow", "destination": "https://docs.google.com/document/d/1MuIUz9pyE_bBZPbtMCj3pYgkdgG4s4Egh6FMknTngKw", "type": 301 },
       { "source": "/go/google-apis", "destination": "/data-and-backend/google-apis?utm_source=go-link&utm_medium=referral&utm_campaign=go-google-apis", "type": 301 },
       { "source": "/go/google-sign-in-authn-authz-updates", "destination": "https://docs.google.com/document/d/1m-VWG9L0o5GL2oiKWZf7bjyGbFykVYidd9HuML-IEl4/edit?usp=sharing", "type": 301 },
