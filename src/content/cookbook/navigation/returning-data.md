@@ -76,7 +76,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     final result = await Navigator.push(
       context,
       // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
   }
 }
@@ -182,7 +182,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
   // Navigator.pop on the Selection Screen.
   final result = await Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const SelectionScreen()),
+    MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
   );
 
   // When a BuildContext is used from a StatefulWidget, the mounted property
@@ -244,7 +244,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
 
     // When a BuildContext is used from a StatefulWidget, the mounted property

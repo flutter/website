@@ -1,7 +1,6 @@
 ---
 title: Build Linux apps with Flutter
 description: Platform-specific considerations when building for Linux with Flutter.
-toc: true
 short-title: Linux development
 ---
 

@@ -217,4 +217,4 @@ the symbols are stripped by Xcode.
 1. In Xcode, go to **Target Runner > Build Settings > Strip Style**.
 2. Change from **All Symbols** to **Non-Global Symbols**.
 
-{% include docs/resource-links/ffi-video-resources.md %}
+{% render docs/resource-links/ffi-video-resources.md, site: site %}

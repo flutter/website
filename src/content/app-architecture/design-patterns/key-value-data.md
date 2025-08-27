@@ -142,9 +142,9 @@ class ThemeSwitchViewModel extends ChangeNotifier {
   /// If true show dark mode
   bool get isDarkMode => _isDarkMode;
 
-  late Command0 load;
+  late final Command0<void> load;
 
-  late Command0 toggle;
+  late final Command0<void> toggle;
 
   /// Load the current theme setting from the repository
   Future<Result<void>> _load() async {

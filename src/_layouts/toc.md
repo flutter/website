@@ -1,6 +1,6 @@
 ---
 layout: default
-toc: false
+showToc: false
 sitemap: false
 ---
 

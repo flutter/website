@@ -22,7 +22,7 @@ class MainScreen extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
+            MaterialPageRoute<void>(
               builder: (context) {
                 return const DetailScreen();
               },
