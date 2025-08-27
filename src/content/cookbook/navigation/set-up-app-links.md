@@ -213,9 +213,8 @@ directly through web browser or another app.
 One way is to create a Google Doc, add the link, and tap on it.
 
 :::note
-You may need to enable the toggle for "Supported web addresses" manually
-in your Android app's settings if you are debugging locally, and not
-downloading the app from the Play Store.
+If you are debugging locally (and not downloading the app from the Play Store),
+you might need to enable the toggle for **Supported web addresses** manually.
 :::
 
 If everything is set up correctly, the Flutter application
