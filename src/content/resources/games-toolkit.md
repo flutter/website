@@ -163,14 +163,14 @@ and Very Good Ventures created new games.
 Once you feel ready to go beyond these games templates,
 investigate other resources that our community recommended.
 
-{% assign pkgIcon = '<span class="material-symbols" aria-label="Package">package_2</span>' %}
-{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation">api</span>' %}
-{% assign docIcon = '<span class="material-symbols" aria-label="Guide">quick_reference_all</span>' %}
-{% assign codelab = '<span class="material-symbols" aria-label="Codelab">science</span>' %}
-{% assign engine = '<span class="material-symbols" aria-label="Game engine">manufacturing</span>' %}
-{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application">handyman</span>' %}
-{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe">book_5</span>' %}
-{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets">photo_album</span>' %}
+{% assign pkgIcon = '<span class="material-symbols" aria-label="Package" translate="no">package_2</span>' %}
+{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation" translate="no">api</span>' %}
+{% assign docIcon = '<span class="material-symbols" aria-label="Guide" translate="no">quick_reference_all</span>' %}
+{% assign codelab = '<span class="material-symbols" aria-label="Codelab" translate="no">science</span>' %}
+{% assign engine = '<span class="material-symbols" aria-label="Game engine" translate="no">manufacturing</span>' %}
+{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application" translate="no">handyman</span>' %}
+{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe" translate="no">book_5</span>' %}
+{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets" translate="no">photo_album</span>' %}
 
 :::secondary
 {{pkgIcon}} Flutter package<br>

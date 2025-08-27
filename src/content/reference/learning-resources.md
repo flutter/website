@@ -4,7 +4,7 @@ description: A catalog of Flutter sample applications, codelabs, and tutorials.
 short-title: Learning resources
 showBreadcrumbs: false
 extraBodyClass: wide-site-content
-toc: false
+showToc: false
 js: [ { url: '/assets/js/learning-resources-index.js', defer: true } ]
 ---
 
@@ -25,13 +25,13 @@ This page lists all of our additional learning resources:
         <div id="resource-search-group" class="chip-filters-group">
             <div class="top-row">
                 <div class="search-wrapper" id="resource-search">
-                    <span class="material-symbols leading-icon" aria-hidden="true">search</span>
+                    <span class="material-symbols leading-icon" aria-hidden="true" translate="no">search</span>
                     <input type="search" placeholder='Try "button" or "networking"...'
                         aria-label="Search learning resources by name and category">
                 </div>
                 {% comment -%}This dropdown is shown on narrow screens{% endcomment -%}
                 <button class="icon-button show-filters-button">
-                    <span class="material-symbols" aria-hidden="true">filter_list</span>
+                    <span class="material-symbols" aria-hidden="true" translate="no">filter_list</span>
                 </button>
             </div>
             <div class="label-row">
@@ -39,7 +39,7 @@ This page lists all of our additional learning resources:
                     Showing <span id="displayed-resource-card-count">0</span> / <span id="total-resource-card-count">0</span>
                 </label>
                 <button id="clear-resource-index-filters" disabled>
-                    <span class="material-symbols" aria-hidden="true">close_small</span>
+                    <span class="material-symbols" aria-hidden="true" translate="no">close_small</span>
                     <span>Clear filters</span>
                 </button>
             </div>

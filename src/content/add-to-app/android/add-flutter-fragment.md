@@ -354,7 +354,7 @@ first Flutter frame as quickly as possible.
 
 #### Initial route with a cached engine
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render docs/add-to-app/android-initial-route-cached-engine.md %}
 
 ## Display a splash screen
 

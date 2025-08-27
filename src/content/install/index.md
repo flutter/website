@@ -25,7 +25,7 @@ You can quickly try Flutter online without any local setup.
     <div class="card-header">
       <span class="card-title">
         <span>DartPad</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">
@@ -36,7 +36,7 @@ You can quickly try Flutter online without any local setup.
     <div class="card-header">
       <span class="card-title">
         <span>Firebase Studio</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">

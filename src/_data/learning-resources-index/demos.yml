@@ -44,13 +44,3 @@
   link:
     url: https://github.com/flutter/samples/tree/main/simplistic_editor
     label: Flutter Github
-
-- name: Veggie Seasons demo
-  description: An iOS sample app that shows which fruits and vegetables are currently in season. It showcases Flutter's Cupertino package.
-  tags:
-    - cupertion
-    - ios
-  type: demo
-  link:
-    url: https://github.com/flutter/samples/tree/main/veggieseasons
-    label: Flutter Github

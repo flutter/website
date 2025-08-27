@@ -57,7 +57,7 @@ choose your preferred environment and follow the corresponding instructions.
     <div class="card-header">
       <span class="card-title">
         <span>Add to app</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">

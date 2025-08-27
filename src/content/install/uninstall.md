@@ -3,7 +3,7 @@ title: Uninstall Flutter
 short-title: Uninstall
 description: >-
     How to remove the Flutter SDK and clean up its configuration files.
-toc: false
+showToc: false
 ---
 
 To remove the Flutter SDK from your development machine,
