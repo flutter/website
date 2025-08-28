@@ -2184,8 +2184,7 @@ class _MyFormState extends State<MyForm> {
 ```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+[Retrieve the value of a text field][].
 
 ### What is the equivalent of a Placeholder on an Entry?
 
@@ -2490,7 +2489,6 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[Flutter cookbook]: /cookbook
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [`geolocator`]: {{site.pub}}/packages/geolocator
