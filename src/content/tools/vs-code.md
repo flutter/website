@@ -402,7 +402,7 @@ visual interface.
 
 ### How to open the Flutter Property Editor in VS Code
 
-1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:.theme-icon width="20px"} in the VS Code sidebar.
+1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:width="20px"} in the VS Code sidebar.
 2. The Flutter Property Editor will load in the side panel.
 3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
 

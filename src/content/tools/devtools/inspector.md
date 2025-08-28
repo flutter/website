@@ -41,13 +41,13 @@ The following is a guide to the features available in the
 inspector's toolbar. When space is limited, the icon is
 used as the visual version of the label.
 
-![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png){:width="20px"}
+![Select widget mode button](/assets/images/docs/tools/devtools/select-widget-mode-button.png)
 **Select widget mode**
 : Enable this button in order to select
   a widget on the device to inspect it. To learn more,
   check out [Inspecting a widget](#inspecting-a-widget).
 
-![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png){:width="20px"}
+![Show implementation widgets button](/assets/images/docs/tools/devtools/show-implementation-widgets-button.png)
 **Show implementation widgets**
 : Enable this button in to show implementation widgets in the widget tree. To learn more,
   check out [Use the Widget Tree](#use-the-widget-tree).
