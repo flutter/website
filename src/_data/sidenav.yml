@@ -208,11 +208,13 @@
     - title: Build a news app
       permalink: /resources/news-toolkit
 
-- title: Create with AI
+- title: AI solutions
   permalink: /ai
   children:
-    - title: Overview
+    - title: Create with AI
       permalink: /ai/create-with-ai
+    - title: AI Rules
+      permalink: /ai/ai-rules
     - title: AI Toolkit
       permalink: /ai-toolkit
       expanded: false
