@@ -51,7 +51,7 @@ one of the following codelabs:
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Dart null safety in Action]: {{site.yt.watch}}?v=HdKwuHQvArY
 [inherited-widget-ws]: {{site.yt.watch}}?v=LFcGPS6cGrY
-[low-level state management]: /data-and-backend/state-mgmt/options#inheritedwidget-inheritedmodel
+[low-level state management]: /data-and-backend/state-mgmt/options#inheritedwidget-and-inheritedmodel
 
 ## Designing a Flutter UI
 
