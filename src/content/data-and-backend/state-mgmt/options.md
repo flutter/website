@@ -88,8 +88,8 @@ Other useful docs include:
 ## Community-provided packages
 
 Depending on the complexity of your app and preferences of your team,
-you might find adopting a statement management package useful.
-Statement management packages often help reduce boilerplate code,
+you might find adopting a state management package useful.
+State management packages often help reduce boilerplate code,
 provide specialized debugging tools, and can help
 enable a clearer and consistent application architecture.
 
