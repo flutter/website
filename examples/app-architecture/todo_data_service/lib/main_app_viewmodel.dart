@@ -24,16 +24,11 @@ class MainAppViewModel extends ChangeNotifier {
   bool get isDarkMode => _isDarkMode;
 
   Future<void> _load() async {
-    try {
-      final result = await _themeRepository.isDarkMode();
-      if (result is Ok<bool>) {
-        _isDarkMode = result.value;
-      }
-    } on Exception catch (_) {
-      // handle error
-    } finally {
-      notifyListeners();
+    final result = await _themeRepository.isDarkMode();
+    if (result is Ok<bool>) {
+      _isDarkMode = result.value;
     }
+    notifyListeners();
   }
 
   @override
