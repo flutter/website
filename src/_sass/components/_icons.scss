@@ -1,0 +1,5 @@
+.theme-icon {
+  @at-root body.dark-mode & {
+    filter: invert(1) brightness(0.8);
+  }
+}
