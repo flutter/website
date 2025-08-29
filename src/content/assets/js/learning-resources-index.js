@@ -185,11 +185,13 @@ function _setUpCollapsibleFilterLists() {
         });
     });
 
-    // Show the first two items to start
+    // Show the first few items to start.
     filterGroups.forEach(ul => {
         const allFiltersForGroup = ul.querySelectorAll('li');
-        if (allFiltersForGroup.length >= 1) allFiltersForGroup[0].classList.remove('hidden');
-        if (allFiltersForGroup.length >= 2) allFiltersForGroup[1].classList.remove('hidden');
+        const initialAmountToShow = 4;
+        for (let filterIndex = 0; filterIndex < initialAmountToShow && filterIndex < allFiltersForGroup.length; filterIndex += 1) {
+            allFiltersForGroup[filterIndex].classList.remove('hidden');
+        }
     });
 }
 

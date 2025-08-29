@@ -13,23 +13,53 @@ After the VM updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
+![Hot reload GIF](/assets/images/docs/tools/hot-reload.gif){:width="100%"}<br>
+A demo of hot reload in DartPad
+
 ## How to perform a hot reload
 
 To hot reload a Flutter app:
 
-1. Run the app from a supported [Flutter editor][] or a terminal window.
-   Either a physical or virtual device can be the target.
-   **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
-1. Modify one of the Dart files in your project.
-   Most types of code changes can be hot reloaded;
-   for a list of changes that require a hot restart,
-   see [Special cases](#special-cases).
-1. If you're working in an IDE/editor that supports Flutter's IDE tools,
-   select **Save All** (`cmd-s`/`ctrl-s`),
-   or click the hot reload button on the toolbar.
+ 1. Run the app from a supported [Flutter editor][] or a terminal window.
+    Either a physical or virtual device can be the target.
+    **Only Flutter apps in debug mode can be hot reloaded or hot restarted.**
+ 1. Modify one of the Dart files in your project.
+    Most types of code changes can be hot reloaded;
+    for a list of changes that require a hot restart,
+    see [Special cases](#special-cases).
+ 1. If you're working in an IDE/editor that supports Flutter's IDE tools
+    and hot reload on save is enabled,
+    select **Save All** (`cmd-s`/`ctrl-s`),
+    or click the hot reload button on the toolbar.
 
-   If you're running the app at the command line using `flutter run`,
-   enter `r` in the terminal window.
+    <a id="hot-reload-on-save" aria-hidden="true"></a>
+
+    :::tip To enable hot reload on save
+    From your preferred IDE,
+    enable autosave and hot reloads on save.
+
+    **VS Code**
+
+    Add the following to your `.vscode/settings.json` file:
+
+    ```json
+    "files.autoSave": "afterDelay",
+    "dart.flutterHotReloadOnSave": "all",
+    ```
+
+    **Android Studio and IntelliJ**
+
+    * Open `Settings > Tools > Actions on Save` and select
+      `Configure autosave options`.
+        - Check the option to `Save files if the IDE is idle for X seconds`.
+        - **Recommended:** Set a small delay duration. For example, 2 seconds.
+
+    * Open `Settings > Languages & Frameworks > Flutter`.
+        - Check the option to `Perform hot reload on save`.
+    :::
+
+    If you're running the app at the command line using `flutter run`,
+    enter `r` in the terminal window.
 
 After a successful hot reload operation,
 you'll see a message in the console similar to:
@@ -49,23 +79,25 @@ The code updates and execution continues.
 **What is the difference between hot reload, hot restart,
 and full restart?**
 
-* **Hot reload** loads code changes into the VM and re-builds
-  the widget tree, preserving the app state;
+* **Hot reload** loads code changes into the VM or the browser,
+  and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
   (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
-* **Hot restart** loads code changes into the VM,
+* **Hot restart** loads code changes into the VM or the browser,
   and restarts the Flutter app, losing the app state.
+  On the web, this can restart the app without a full page refresh.
   (`⇧⌘\` in IntelliJ and Android Studio, `⇧⌘F5` in VSCode)
 * **Full restart** restarts the iOS, Android, or web app.
   This takes longer because it also recompiles the
-  Java / Kotlin / Objective-C / Swift code. On the web,
-  it also restarts the Dart Development Compiler.
+  Java / Kotlin / Objective-C / Swift / JavaScript code.
+  On the web, it also restarts the Dart Development Compiler.
   There is no specific keyboard shortcut for this;
   you need to stop and start the run configuration.
 
-Flutter web currently supports hot restart but not
-hot reload.
+Flutter web now supports hot restart and [hot reload][].
 :::
+
+[hot reload]: /platform-integration/web/building#hot-reload-web
 
 ![Android Studio UI](/assets/images/docs/development/tools/android-studio-run-controls.png){:width="100%"}<br>
 Controls for run, run debug, hot reload, and hot restart in Android Studio

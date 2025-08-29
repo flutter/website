@@ -13,14 +13,13 @@ class ChildUsingDescendant extends StatelessWidget {
   Widget build(BuildContext context) {
     // #docregion child
     return Consumer<CartModel>(
-      builder:
-          (context, cart, child) => Stack(
-            children: [
-              // Use SomeExpensiveWidget here, without rebuilding every time.
-              if (child != null) child,
-              Text('Total price: ${cart.totalPrice}'),
-            ],
-          ),
+      builder: (context, cart, child) => Stack(
+        children: [
+          // Use SomeExpensiveWidget here, without rebuilding every time.
+          ?child,
+          Text('Total price: ${cart.totalPrice}'),
+        ],
+      ),
       // Build the expensive widget here.
       child: const SomeExpensiveWidget(),
     );

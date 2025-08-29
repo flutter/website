@@ -205,10 +205,9 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
           child: IconButton(
             padding: const EdgeInsets.all(0),
             alignment: Alignment.center,
-            [!icon:!]
-                (_isFavorited
-                    ? const Icon(Icons.star)
-                    : const Icon(Icons.star_border)),
+            [!icon: (_isFavorited!]
+                ? const Icon(Icons.star)
+                : const Icon(Icons.star_border)),
             color: Colors.red[500],
             [!onPressed: _toggleFavorite,!]
           ),
@@ -658,10 +657,9 @@ class _TapboxCState extends State<TapboxC> {
         height: 200,
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
-          border:
-              _highlight
-                  ? Border.all(color: Colors.teal[700]!, width: 10)
-                  : null,
+          border: _highlight
+              ? Border.all(color: Colors.teal[700]!, width: 10)
+              : null,
         ),
         child: Center(
           child: Text(

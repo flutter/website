@@ -165,7 +165,10 @@ Widget richTextSpan() {
     TextSpan(
       children: [
         TextSpan(text: 'Hello'),
-        TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+        TextSpan(
+          text: 'Bold',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ],
     ),
   );

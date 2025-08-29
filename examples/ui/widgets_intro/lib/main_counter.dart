@@ -49,5 +49,9 @@ class _CounterState extends State<Counter> {
 }
 
 void main() {
-  runApp(const MaterialApp(home: Scaffold(body: Center(child: Counter()))));
+  runApp(
+    const MaterialApp(
+      home: Scaffold(body: Center(child: Counter())),
+    ),
+  );
 }

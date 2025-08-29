@@ -2,7 +2,7 @@
 title: Integration test default golden-file comparators changed on Android and iOS.
 description: >-
   When using `package:integration_test` to run a test _on_ an Android device or
-  emualtor, or an iOS device or simulator, the default `goldenFileComparator`
+  emulator, or an iOS device or simulator, the default `goldenFileComparator`
   has changed, and correctly uses the host filesystem.
 ---
 
@@ -42,13 +42,13 @@ if (goldenFileComparator is ...) {
 }
 ```
 
-## Migration Guide
+## Migration guide
 
 In most cases, we expect users to have to do nothing - this will be in a sense
 _new_ functionality that replaced functionality that did not work and caused
 an unhandled exception which would fail a test.
 
-In cases where users wrote custom test infrastructure and compartors, consider
+In cases where users wrote custom test infrastructure and comparators, consider
 instead removing the [`goldenFileComparator`][] overrides, and instead rely on
 the (new) default which should work as expected:
 
@@ -63,12 +63,13 @@ void main() {
 }
 ```
 
-_Fun fact_: The existing code that was used for the _web_ platform was [reused][PR 160484].
+_Fun fact_: The existing code that was used for
+the _web_ platform was [reused][PR 160484].
 
 ## Timeline
 
-Landed in version: Not yet<br>
-Stable release: Not yet
+Landed in version: 3.29.0-0.0.pre<br>
+Stable release: 3.32
 
 ## References
 

@@ -446,11 +446,10 @@ class SignaturePainter extends CustomPainter {
   final List<Offset?> points;
   @override
   void paint(Canvas canvas, Size size) {
-    var paint =
-        Paint()
-          ..color = Colors.black
-          ..strokeCap = StrokeCap.round
-          ..strokeWidth = 5;
+    var paint = Paint()
+      ..color = Colors.black
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = 5;
     for (int i = 0; i < points.length - 1; i++) {
       if (points[i] != null && points[i + 1] != null) {
         canvas.drawLine(points[i]!, points[i + 1]!, paint);
@@ -766,8 +765,8 @@ Future<void> loadData() async {
   final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final response = await http.get(dataURL);
   setState(() {
-    widgets =
-        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -842,8 +841,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final response = await http.get(dataURL);
     setState(() {
-      widgets =
-          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 
@@ -878,8 +877,8 @@ Future<void> loadData() async {
   final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final response = await http.get(dataURL);
   setState(() {
-    widgets =
-        (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -921,9 +920,10 @@ Future<void> loadData() async {
             'https://jsonplaceholder.typicode.com/posts',
           )
           as List<Object?>;
+  final posts = msg.cast<Map<String, Object?>>();
 
   setState(() {
-    widgets = msg;
+    widgets = posts;
   });
 }
 
@@ -936,11 +936,10 @@ static Future<void> dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-    String data = msg[0] as String;
+    String dataUrl = msg[0] as String;
     SendPort replyTo = msg[1] as SendPort;
 
-    String dataURL = data;
-    http.Response response = await http.get(Uri.parse(dataURL));
+    http.Response response = await http.get(Uri.parse(dataUrl));
     // Lots of JSON to parse
     replyTo.send(jsonDecode(response.body));
   }
@@ -997,7 +996,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1055,9 +1054,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
               'https://jsonplaceholder.typicode.com/posts',
             )
             as List<Object?>;
+    final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
-      widgets = msg;
+      widgets = posts;
     });
   }
 
@@ -1070,11 +1070,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0] as String;
+      String dataUrl = msg[0] as String;
       SendPort replyTo = msg[1] as SendPort;
 
-      String dataURL = data;
-      http.Response response = await http.get(Uri.parse(dataURL));
+      http.Response response = await http.get(Uri.parse(dataUrl));
       // Lots of JSON to parse
       replyTo.send(jsonDecode(response.body));
     }
@@ -1216,8 +1215,8 @@ class _SampleAppPageState extends State<SampleAppPage> {
     final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final response = await http.get(dataURL);
     setState(() {
-      widgets =
-          (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 }
@@ -2267,6 +2266,15 @@ class SampleApp extends StatelessWidget {
 }
 ```
 
+## Homescreen widgets
+
+### How do I create a homescreen widget? 
+
+Android homescreen widgets cannot be created fully using Flutter. They must 
+use either Jetpack Glance(preferred method) or XML layout code. Using
+the third-party package, [home_widget][], you can wire a homescreen widget 
+to Dart code, embed a Flutter component (as an image) in a host widget, and
+share data to/from Flutter to the homescreen widget.
 
 ## Databases and local storage
 
@@ -2386,3 +2394,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: /ui/widgets/layout
 [Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[home_widget]: https://pub.dev/packages/home_widget

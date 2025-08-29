@@ -3,7 +3,7 @@ title: Contribute to Flutter
 short-title: Contribute
 description: >-
   Learn about contributing to the Flutter project and its surrounding ecosystem.
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 ![Dash and her friends excited for your contribution](/assets/images/dash/dash-contribute.png){:height="160px" style="float: right;"}
@@ -185,7 +185,7 @@ that underlay Flutter or have a knack for graphics programming?
 Consider contributing to the Flutter engine and
 making Flutter even more portable, performant, and powerful.
 
-To learn about contributing to the Flutter framework,
+To learn about contributing to the Flutter engine,
 check out the Flutter [contribution guide][framework-contribute]
 and how to [Set up the engine development environment][engine-setup].
 

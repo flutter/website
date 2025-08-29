@@ -480,7 +480,7 @@ class HomeViewModel extends ChangeNotifier {
   late final Command0 load;
 
   // Command1 accepts 1 argument
-  late final Command1 edit;
+  late final Command1<String> edit;
 
   Future<void> _load() async {
     // load user
@@ -503,7 +503,7 @@ Below, you can find the full `Command` class
 as implemented in the [Compass App example][]
 for the Flutter architecture guidelines. 
 It also uses the [`Result` class][] 
-to determine if the action completed successfuly or with an error.
+to determine if the action completed successfully or with an error.
 
 This implementation also includes two types of commands,
 a `Command0`, for actions without parameters, 
@@ -605,7 +605,7 @@ final class Command0<T> extends Command<T> {
 
   /// Executes the action.
   Future<void> execute() async {
-    await _execute(() => _action());
+    await _execute(_action);
   }
 }
 

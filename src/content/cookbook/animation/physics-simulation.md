@@ -199,7 +199,10 @@ Next, make the `Align` widget use the `_dragAlignment` field:
 
 <?code-excerpt "lib/step3.dart (align)"?>
 ```dart
-child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+child: Align(
+  alignment: _dragAlignment,
+  child: Card(child: widget.child),
+),
 ```
 
 Finally, update the `GestureDetector` to manage the animation controller:
@@ -258,7 +261,7 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
   final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
   final unitVelocity = unitsPerSecond.distance;
 
-  const spring = SpringDescription(mass: 30, stiffness: 1, damping: 1);
+  const spring = SpringDescription(mass: 1, stiffness: 1, damping: 1);
 
   final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
@@ -276,7 +279,7 @@ onPanEnd: (details) {
 ```
 
 :::note
-Now that the animation controller uses a simulation it's `duration` argument
+Now that the animation controller uses a simulation, its `duration` argument
 is no longer required.
 :::
 
@@ -339,7 +342,7 @@ class _DraggableCardState extends State<DraggableCard>
     final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
     final unitVelocity = unitsPerSecond.distance;
 
-    const spring = SpringDescription(mass: 30, stiffness: 1, damping: 1);
+    const spring = SpringDescription(mass: 1, stiffness: 1, damping: 1);
 
     final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
@@ -382,7 +385,10 @@ class _DraggableCardState extends State<DraggableCard>
       onPanEnd: (details) {
         _runAnimation(details.velocity.pixelsPerSecond, size);
       },
-      child: Align(alignment: _dragAlignment, child: Card(child: widget.child)),
+      child: Align(
+        alignment: _dragAlignment,
+        child: Card(child: widget.child),
+      ),
     );
   }
 }

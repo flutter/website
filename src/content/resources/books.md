@@ -1,7 +1,7 @@
 ---
 title: Books about Flutter
 description: Extra, extra! Here's a collection of books about Flutter.
-toc: false
+showToc: false
 ---
 
 Here's a collection of books about Flutter,
@@ -36,15 +36,15 @@ The following sections have more information about each book.
 {% for book in books %}
 <div class="book-img-with-details">
 <a href="{{book.link}}" title="{{book.title}}">
-  <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}">
+  <img src="/assets/images/docs/cover/{{book.cover}}" alt="{{book.title}}" />
 </a>
 <div class="details">
 
-<h3 class="title" id="{{book.title}} | slugify">
+<h3 class="title" id="{{book.title | slugify}}">
 <a href="{{book.link}}">{{book.title}}</a>
 </h3>
 
-by {{book.authors | array_to_sentence_string}}
+by {{book.authors | arrayToSentenceString}}
 {:.authors}
 
 {{book.desc}}

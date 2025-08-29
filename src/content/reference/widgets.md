@@ -2,7 +2,7 @@
 title: Flutter widget index
 description: An alphabetical list of Flutter widgets.
 short-title: Widgets
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 {% assign sorted = catalog.widgets | sort:'name' -%}

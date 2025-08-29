@@ -22,26 +22,26 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildRow() =>
-  // #docregion row
-  Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      Image.asset('images/pic1.jpg'),
-      Image.asset('images/pic2.jpg'),
-      Image.asset('images/pic3.jpg'),
-    ],
-  );
+      // #docregion row
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset('images/pic1.jpg'),
+          Image.asset('images/pic2.jpg'),
+          Image.asset('images/pic3.jpg'),
+        ],
+      );
   // #enddocregion row
 
   Widget buildColumn() =>
-  // #docregion column
-  Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: [
-      Image.asset('images/pic1.jpg'),
-      Image.asset('images/pic2.jpg'),
-      Image.asset('images/pic3.jpg'),
-    ],
-  );
+      // #docregion column
+      Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset('images/pic1.jpg'),
+          Image.asset('images/pic2.jpg'),
+          Image.asset('images/pic3.jpg'),
+        ],
+      );
   // #enddocregion column
 }

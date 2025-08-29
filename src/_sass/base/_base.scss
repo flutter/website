@@ -29,7 +29,7 @@ body {
   justify-content: space-between;
 
   &.no-toc {
-    --site-subheader-height: 0;
+    --site-subheader-height: 0rem;
   }
 }
 
@@ -333,8 +333,9 @@ ol.steps {
     position: relative;
     counter-increment: steps;
 
-    ol {
+    ol, ul {
       padding-inline-start: 2rem;
+      margin-block-end: 0.75rem;
     }
 
     > h3:first-child {

@@ -157,7 +157,10 @@ In Dart, only the boolean value `true` is treated as true.
 <?code-excerpt "lib/main.dart (true)"?>
 ```dart
 /// Dart
-var myNull;
+var myNull = potentiallyNull();
+if (myNull == null) {
+  print('use "== null" to check null');
+}
 var zero = 0;
 if (zero == 0) {
   print('use "== 0" to check zero');
@@ -448,7 +451,7 @@ void main() {
 The following images show the Android and iOS UI for the basic Flutter
 "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world-basic.png", alt: "Hello world app", class: "border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
@@ -502,7 +505,7 @@ class MyApp extends StatelessWidget {
 The following images show "Hello world!" built from Material Design widgets.
 You get more functionality for free than in the basic "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world.png", alt: "Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [`StatelessWidget`][] or [`StatefulWidget`][].
@@ -603,7 +606,7 @@ the constructor, or add `required` to the constructor.
 The following screenshots show an example of the reusable
 `CustomCard` class.
 
-{% include docs/android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/custom-cards.png", alt: "Custom cards", class: "border" %}
 
 ## Project structure and resources
 
@@ -834,7 +837,7 @@ return ListView.builder(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flatlist.webp" alt="Flat list" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flatlist.webp", alt: "Flat list", class: "border" %}
 
 To learn how to implement an infinite scrolling list, see the official
 [`infinite_list`][infinite_list] sample.
@@ -904,7 +907,7 @@ class MyCanvasWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/canvas.png" alt="Canvas" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/canvas.png", alt: "Canvas", class: "border" %}
 
 ## Layouts
 
@@ -960,7 +963,7 @@ For example, [`Padding`][], [`Align`][], and [`Stack`][].
 
 For a complete list, see [Layout Widgets][].
 
-{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.webp" alt="Layout" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/basic-layout.webp", alt: "Layout", class: "border" %}
 
 ### How do I layer widgets?
 
@@ -996,7 +999,7 @@ on top of a `CircleAvatar`.
 The Stack offsets the text using the alignment property
 and `Alignment` coordinates.
 
-{% include docs/android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/stack.png", alt: "Stack", class: "border" %}
 
 For more information, see the [`Stack`][] class documentation.
 
@@ -1055,7 +1058,7 @@ return const Center(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.webp" alt="Styling" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutterstyling.webp", alt: "Styling", class: "border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -1309,10 +1312,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               padding: const EdgeInsets.only(top: 70),
               child: ElevatedButton(
                 onPressed: toggleBlinkState,
-                child:
-                    toggleState
-                        ? const Text('Blink')
-                        : const Text('Stop Blinking'),
+                child: toggleState
+                    ? const Text('Blink')
+                    : const Text('Stop Blinking'),
               ),
             ),
           ],
@@ -1404,7 +1406,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/state-change.webp" alt="State change" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/state-change.webp", alt: "State change", class: "border" %}
 
 ## Props
 
@@ -1487,7 +1489,7 @@ class UseCard extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/modular.png", alt: "Cards", class: "border" %}
 
 ## Local storage
 
@@ -1657,7 +1659,7 @@ transition. It takes a [`WidgetBuilder`][] as a required parameter.
 ```dart
 Navigator.push(
   context,
-  MaterialPageRoute(builder: (context) => const UsualNavScreen()),
+  MaterialPageRoute<void>(builder: (context) => const UsualNavScreen()),
 );
 ```
 
@@ -1851,7 +1853,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/navigation.webp" alt="Navigation" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/navigation.webp", alt: "Navigation", class: "border" %}
 
 ## Gesture detection and touch event handling
 
@@ -1957,7 +1959,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.webp" alt="Gestures" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-gestures.webp", alt: "Gestures", class: "border" %}
 
 ## Making HTTP network requests
 
@@ -2020,7 +2022,7 @@ Future<void> getIPAddress() async {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/api-calls.webp" alt="API calls" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/api-calls.webp", alt: "API calls", class: "border" %}
 
 ## Form input
 
@@ -2163,7 +2165,7 @@ void _submit() {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/input-fields.webp" alt="Input" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/input-fields.webp", alt: "Input", class: "border" %}
 
 ## Platform-specific code
 
@@ -2225,11 +2227,33 @@ every time you make a change, you can hot reload your app instantly.
 The app is updated to reflect your change,
 and the current state of the app is preserved.
 
+First, from your preferred IDE,
+enable autosave and hot reloads on save.
+
+    **VS Code**
+
+    Add the following to your `.vscode/settings.json` file:
+
+    ```json
+    "files.autoSave": "afterDelay",
+    "dart.flutterHotReloadOnSave": "all",
+    ```
+    **Android Studio and IntelliJ**
+
+    * Open `Settings > Tools > Actions on Save` and select
+     `Configure autosave options`.
+        - Check the option to `Save files if the IDE is idle for X seconds`.
+        - **Recommended:** Set a small delay duration. For example, 2 seconds.
+   
+    * Open `Settings > Languages & Frameworks > Flutter`.
+        - Check the option to `Perform hot reload on save`.
+
+
 In React Native,
 the shortcut is ⌘R for the iOS Simulator and tapping R twice on
 Android emulators.
 
-In Flutter, If you are using IntelliJ IDE or Android Studio,
+In Flutter, if you are using IntelliJ IDE or Android Studio,
 you can select Save All (⌘s/ctrl-s), or you can click the
 Hot Reload button on the toolbar. If you
 are running the app at the command line using `flutter run`,
@@ -2404,7 +2428,7 @@ class _LogoFadeState extends State<LogoFade>
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.webp" alt="Flutter fade" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-fade.webp", alt: "Flutter fade", class: "border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -2427,7 +2451,7 @@ return Dismissible(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.webp" alt="Card swipe" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/card-swipe.webp", alt: "Card swipe", class: "border" %}
 
 ## React Native and Flutter widget equivalent components
 

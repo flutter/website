@@ -51,7 +51,7 @@ class="site-mobile-screenshot" alt="ToDo application in dark mode" >
 
 :::note
 The full, runnable source-code for this example is
-available in [`/examples/cookbook/architecture/todo_data_service/`][].
+available in [`/examples/app-architecture/todo_data_service/`][].
 :::
 
 ## Storing theme selection key-value data
@@ -142,9 +142,9 @@ class ThemeSwitchViewModel extends ChangeNotifier {
   /// If true show dark mode
   bool get isDarkMode => _isDarkMode;
 
-  late Command0 load;
+  late final Command0<void> load;
 
-  late Command0 toggle;
+  late final Command0<void> toggle;
 
   /// Load the current theme setting from the repository
   Future<Result<void>> _load() async {
@@ -243,7 +243,7 @@ hiding this third-party dependency from the rest of the application
 
 :::note
 A third-party dependency is a way to refer to packages and plugins 
-eveloped by other developers outside your organization.
+developed by other programmers outside of your organization.
 :::
 
 <?code-excerpt "lib/data/services/shared_preferences_service.dart (SharedPreferencesService)"?>
@@ -354,4 +354,4 @@ ListenableBuilder(
 [Flutter architecture design]: /app-architecture
 [Store key-value data on disk]: /cookbook/persistence/key-value
 [Persistent Storage Architecture: SQL]: /app-architecture/design-patterns/sql
-[`/examples/cookbook/architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/cookbook/architecture/todo_data_service/
+[`/examples/app-architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/app-architecture/todo_data_service/

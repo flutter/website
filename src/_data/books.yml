@@ -42,7 +42,7 @@
   publisher: Editions ENI
   cover: flutter-ENI.jpg
   link: "https://www.editions-eni.fr/livre/flutter-developpez-vos-applications-mobiles-multiplateformes-avec-dart-9782409025273"
-  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google"
+  desc: "Ce livre sur Flutter s'adresse aux développeurs, initiés comme plus aguerris, qui souhaitent disposer des connaissances nécessaires pour créer de A à Z des applications mobiles multiplateformes avec le framework de Google."
 - title: 'Flutter for Beginners'
   authors:
     - Thomas Bailey

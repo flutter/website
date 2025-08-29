@@ -2,7 +2,7 @@
 
 {{category.description}}
 
-{% assign components = catalog.widgets | widget_filter: "categories", categoryName %}
+{% assign components = catalog.widgets | filterByProperty: "categories", categoryName, true %}
 {% if components.size != 0 -%}
 <div class="card-grid">
 {% for comp in components -%}
@@ -29,7 +29,7 @@
 
 {% if category.subcategories and category.subcategories.size != 0 -%}
 {% for sub in category.subcategories -%}
-  {% assign components = catalog.widgets | widget_filter: "subcategories", sub.name %}
+  {% assign components = catalog.widgets | filterByProperty: "subcategories", sub.name, true %}
   {% if components.size != 0 -%}
   
   ## {{sub.name}}

@@ -29,42 +29,71 @@ but many are.
 To avoid being broken by future versions of Flutter,
 consider submitting your tests to the framework's [test registry][].
 
-## Breaking changes by release
-
-The following guides are available.
-They're sorted by release and listed in alphabetical order:
-
 [breaking change policy]: /release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [Dart announce]: {{site.groups}}/a/dartlang.org/g/announce
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
+## Breaking changes by release
+
+The following guides are available.
+They're sorted by release and listed in alphabetical order:
+
 ### Not yet released to stable
 
+* [Deprecate `TextField.canRequestFocus`][]
+* [Stop generating `AssetManifest.json`][]
+* [UISceneDelegate adoption][]
+* [`CupertinoDynamicColor` wide gamut support][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [SnackBar with action no longer auto-dismisses][]
+
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+
+<a id="released-in-flutter-335" aria-hidden="true"></a>
+### Released in Flutter 3.35
+
+* [Component theme normalization updates][]
+* [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Redesigned the `Radio` widget][]
 * [Removed semantics elevation and thickness][]
+* [The `Form` widget no longer supports being a sliver][]
+* [Flutter now sets default `abiFilters` in Android builds][]
+
+[Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
+[Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
+[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
+[The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
+[Changed how to add ABI filters on Android]: /release/breaking-changes/default-abi-filters-android
+
+<a id="released-in-flutter-332" aria-hidden="true"></a>
+### Released in Flutter 3.32
+
+* [Deprecate `SystemContextMenuController.show`][]
 * [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
 * [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
-   in favor of `RouteTransitionRecord.markForComplete`
-* [Deprecate `TextField.canRequestFocus`][]
+  in favor of `RouteTransitionRecord.markForComplete`
 * [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
-* [Localized messages are generated into source, not a synthetic package][]
 * [Material Theme System Updates][]
-* [Stop generating `AssetManifest.json`][]
 * [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Localized messages are generated into source, not a synthetic package][]
 * [Changing the default `goldenFileComparator` for `integration_test`s][]
 * [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
 * [Underdamped spring formula changed][]
 
-[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
-[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: {{site.url}}/release/breaking-changes/expansion-tile-controller
+[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: /release/breaking-changes/expansion-tile-controller
 [deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
 [Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
 [Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
 [Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
 [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight

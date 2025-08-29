@@ -368,8 +368,6 @@ API documentation:
 
 * [`PopScope`][]
 * [`NavigatorPopHandler`][]
-* [`PopScope`][]
-* [`NavigatorPopHandler`][]
 * [`PopEntry`][]
 * [`Form.canPop`][]
 * [`Form.onPopInvoked`][]

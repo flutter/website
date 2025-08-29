@@ -77,10 +77,9 @@ class _TapboxCState extends State<TapboxC> {
         height: 200,
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
-          border:
-              _highlight
-                  ? Border.all(color: Colors.teal[700]!, width: 10)
-                  : null,
+          border: _highlight
+              ? Border.all(color: Colors.teal[700]!, width: 10)
+              : null,
         ),
         child: Center(
           child: Text(

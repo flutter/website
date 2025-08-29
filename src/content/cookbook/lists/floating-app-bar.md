@@ -138,8 +138,7 @@ Play around with the
 [various properties you can pass to the `SliverAppBar` widget][],
 and use hot reload to see the results. For example, use an
 `Image` widget for the `flexibleSpace` property to create a
-background image that shrinks in size as it's scrolled
-offscreen.
+background image that shrinks in size as it's scrolled offscreen.
 :::
 
 {% endtab %}
@@ -192,8 +191,8 @@ the `SliverGrid` widget.
 SliverList.builder(
   // The builder function returns a ListTile with a title that
   // displays the index of the current item.
-  itemBuilder:
-      (context, index) => ListTile(title: Text('Item #$index')),
+  itemBuilder: (context, index) =>
+      ListTile(title: Text('Item #$index')),
   // Builds 50 ListTiles
   itemCount: 50,
 )
@@ -209,9 +208,8 @@ SliverList.builder(
 SliverList.builder(
   // The builder function returns a CupertinoListTile with a title
   // that displays the index of the current item.
-  itemBuilder:
-      (context, index) =>
-          CupertinoListTile(title: Text('Item #$index')),
+  itemBuilder: (context, index) =>
+      CupertinoListTile(title: Text('Item #$index')),
   // Builds 50 CupertinoListTile
   itemCount: 50,
 )
@@ -262,8 +260,8 @@ class MyApp extends StatelessWidget {
             SliverList.builder(
               // The builder function returns a ListTile with a title that
               // displays the index of the current item.
-              itemBuilder:
-                  (context, index) => ListTile(title: Text('Item #$index')),
+              itemBuilder: (context, index) =>
+                  ListTile(title: Text('Item #$index')),
               // Builds 50 ListTiles
               itemCount: 50,
             ),
@@ -312,9 +310,8 @@ class MyApp extends StatelessWidget {
             SliverList.builder(
               // The builder function returns a CupertinoListTile with a title
               // that displays the index of the current item.
-              itemBuilder:
-                  (context, index) =>
-                      CupertinoListTile(title: Text('Item #$index')),
+              itemBuilder: (context, index) =>
+                  CupertinoListTile(title: Text('Item #$index')),
               // Builds 50 CupertinoListTile
               itemCount: 50,
             ),

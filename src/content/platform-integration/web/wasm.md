@@ -13,7 +13,7 @@ applications for the web.
 
 [`stable`]: {{site.github}}/flutter/flutter/blob/master/docs/releases/Flutter-build-release-channels.md#stable
 [`package:web`]: {{site.pub-pkg}}/web
-[`dart:js_interop`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-js_interop/dart-js_interop-library.html
+[`dart:js_interop`]: {{site.dart.api}}/dart-js_interop/dart-js_interop-library.html
 
 ## Get started
 
@@ -83,7 +83,7 @@ const isRunningWithWasm = bool.fromEnvironment('dart.tool.dart2wasm');
 ```
 
 Alternatively, you can use differences in number representations
-to test whether the native (Wasm) number representaton is used.
+to test whether the native (Wasm) number representation is used.
 
 ```dart
 final isRunningWithWasm = identical(double.nan, double.nan);

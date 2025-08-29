@@ -24,7 +24,7 @@ This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:
 
   1. Create the button.
-  2. Wrap it in a `GestureDetector` that an `onTap()` callback.
+  2. Wrap it in a `GestureDetector` and provide an `onTap()` callback.
 
 <?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/^\);$/)/g"?>
 ```dart
@@ -72,7 +72,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     const title = 'Gesture Demo';
 
-    return const MaterialApp(title: title, home: MyHomePage(title: title));
+    return const MaterialApp(
+      title: title,
+      home: MyHomePage(title: title),
+    );
   }
 }
 

@@ -17,7 +17,9 @@ class FirstRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => const SecondRoute()),
+              CupertinoPageRoute<void>(
+                builder: (context) => const SecondRoute(),
+              ),
             );
           },
         ),

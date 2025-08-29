@@ -5,8 +5,6 @@ description: Learn how to apply SwiftUI developer knowledge when building Flutte
 
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
-{% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
-
 SwiftUI developers who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing SwiftUI knowledge to Flutter.
@@ -507,8 +505,9 @@ of the `Person` class to create the custom `PersonView` widget.
 ```dart dartpad="a75740320989ed04020d95502a0de34e"
 SingleChildScrollView(
   child: Column(
-    children:
-        mockPersons.map((person) => PersonView(person: person)).toList(),
+    children: mockPersons
+        .map((person) => PersonView(person: person))
+        .toList(),
   ),
 ),
 ```
@@ -584,10 +583,9 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text('$_counter'),
             TextButton(
-              onPressed:
-                  () => setState(() {
-                    _counter++;
-                  }),
+              onPressed: () => setState(() {
+                _counter++;
+              }),
               child: const Text('+'),
             ),
           ],
@@ -692,11 +690,10 @@ with two classes that help you draw:
     
       @override
       void paint(Canvas canvas, Size size) {
-        final Paint paint =
-            Paint()
-              ..color = Colors.black
-              ..strokeCap = StrokeCap.round
-              ..strokeWidth = 5;
+        final Paint paint = Paint()
+          ..color = Colors.black
+          ..strokeCap = StrokeCap.round
+          ..strokeWidth = 5;
         for (int i = 0; i < points.length - 1; i++) {
           if (points[i] != null && points[i + 1] != null) {
             canvas.drawLine(points[i]!, points[i + 1]!, paint);

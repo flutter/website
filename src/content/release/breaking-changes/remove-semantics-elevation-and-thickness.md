@@ -1,6 +1,6 @@
 ---
 title: Removed semantics elevation and thickness
-description: >
+description: >-
   Removed elevation and thickness from semantics properties.
 ---
 
@@ -44,8 +44,8 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 
 ## Timeline
 
-Landed in version: 3.32.0
-In stable release: TBD
+Landed in version: 3.34.0-0.0.pre<br>
+In stable release: 3.35
 
 ## References
 
@@ -60,9 +60,9 @@ Relevant issue:
 
 Relevant PR:
 
-* [PR 168703][]
+* [PR 169382][]
 
 [`SemanticsConfiguration`]: {{site.api}}/flutter/semantics/SemanticsConfiguration-class.html
 [`SemanticsNode`]: {{site.api}}/flutter/semantics/SemanticsNode-class.html
 [Issue 166092]: {{site.repo.flutter}}/issues/166092
-[PR 168703]: {{site.repo.flutter}}/pull/168703
+[PR 169382]: {{site.repo.flutter}}/pull/169382

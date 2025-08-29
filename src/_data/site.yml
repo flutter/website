@@ -6,16 +6,16 @@ email: flutter-dev@googlegroups.com
 google_analytics_id: UA-67589403-1
 google_site_verification: HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4
 google_tag_manager_id: GTM-ND4LWWZ
-default_share_image: /assets/images/flutter-logo-sharing.png
+defaultShareImage: /assets/images/flutter-logo-sharing.png
 
 showBanner: true
 
-github_username: flutter
 branch: main
 repo:
   organization: https://github.com/flutter
   this: https://github.com/flutter/website
   flutter: https://github.com/flutter/flutter
+  games: https://github.com/flutter/games
   samples: https://github.com/flutter/samples
   packages: https://github.com/flutter/packages
   gallery-archive: https://github.com/flutter/gallery
@@ -24,8 +24,6 @@ repo:
   wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
   api: https://api.dart.dev
-  sdk:
-    channel: stable
 sdk:
   channel: stable # When changing this value also update it in src/_assets/js/archive.js
 social:
@@ -61,46 +59,4 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-## Software minimum versions
-
-appmin:
-  git_win: 2.27
-  git_mac: 2.27
-  vscode: 1.86
-  android_studio: '2024.1.1 (Koala)'
-  intellij_idea: '2024.1'
-  android_sdk: 21
-  powershell: 5.0
-  xcode: '15'
-  cocoapods: '1.16'
-devmin:
-  windows: '64-bit version of Microsoft Windows 10'
-  macos: '11 (Big Sur)'
-  linux:
-    debian: 11
-    ubuntu: '20.04 LTS'
-targetmin:
-  windows: 'Microsoft Windows 10'
-  macos: '10.14 (Mojave)'
-  linux:
-    debian: 10
-    ubuntu: '20.04 LTS'
-  ios: 12
-  android: 'Android API level 21'
-
-## Software current versions
-
-appnow:
-  flutter: '3.29.3'
-  vscode: '1.96'
-  android_studio: '2024.2'
-  android_sdk: '35.0.2'
-  intellij: '2024.3'
-  powershell: 5.1
-  xcode: '16'
-  ios: '17'
-  cocoapods: '1.16'
-
-platform:
-  androidApiLevel: '35'
-  minimumAndroidVersion: ''
+currentFlutterVersion: '3.35.1'

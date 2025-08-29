@@ -59,11 +59,11 @@ widget with a demo about how it works.
 The following Widget of the Week videos cover
 implicitly animated widgets:
 
-{% assign animated-widgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
-{% assign animated-urls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
+{% assign animatedWidgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
+{% assign animatedUrls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
 
-{% for widget in animated-widgets %}
-{% assign videoUrl = animated-urls[forloop.index0] %}
+{% for widget in animatedWidgets %}
+{% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
 
 {% ytEmbed videoUrl, videoDescription %}

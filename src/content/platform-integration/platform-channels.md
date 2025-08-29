@@ -11,7 +11,7 @@ code with Flutter.
 
 ## Overview
 
-You can use platform-specific code in your Flutter app. 
+You can use platform-specific code in your Flutter app.
 A few common ways to do this include:
 
 * Use Flutter's platform channel APIs to pass messages
@@ -769,7 +769,7 @@ You should now be able to run the app on iOS.
 If using the iOS Simulator,
 note that it doesn't support battery APIs,
 and the app displays 'Battery level not available'.
-  
+
 ### Step 5: Add a Windows platform-specific implementation
 
 Start by opening the Windows host portion of your Flutter app in Visual Studio:
@@ -790,7 +790,7 @@ Add the C++ implementation of the platform channel method:
 1. Expand **batterylevel > Source Files** in the Solution Explorer.
 
 1. Open the file `flutter_window.cpp`.
-  
+
 First, add the necessary includes to the top of the file, just
 after `#include "flutter_window.h"`:
 
@@ -851,7 +851,7 @@ so test for that in the `call` argument.
 The implementation of this platform method calls
 the Windows code written in the previous step. If an unknown method
 is called, report that instead.
-  
+
 Remove the following code:
 
 ```cpp title="flutter_window.cpp"
@@ -884,7 +884,7 @@ And replace with the following:
 You should now be able to run the application on Windows.
 If your device doesn't have a battery,
 it displays 'Battery level not available'.
-  
+
 ### Step 6: Add a macOS platform-specific implementation
 
 Start by opening the macOS host portion of your Flutter app in Xcode:
@@ -917,7 +917,7 @@ Create a `FlutterMethodChannel` tied to the channel name
   override func awakeFromNib() {
     // ...
     self.setFrame(windowFrame, display: true)
-  
+
     let batteryChannel = FlutterMethodChannel(
       name: "samples.flutter.dev/battery",
       binaryMessenger: flutterViewController.engine.binaryMessenger)
@@ -985,7 +985,7 @@ If your device doesn't have a battery,
 it displays 'Battery level not available'.
 
 ### Step 7: Add a Linux platform-specific implementation
-  
+
 For this example you need to install the `upower` developer headers.
 This is likely available from your distribution, for example with:
 
@@ -1005,7 +1005,7 @@ of your choice. The instructions below are for Visual Studio Code with the
    This enables C++ autocomplete.
 
 1. Open the file `runner/my_application.cc`.
-  
+
 First, add the necessary includes to the top of the file, just
 after `#include <flutter_linux/flutter_linux.h>`:
 
@@ -1090,7 +1090,7 @@ so test for that in the `method_call` argument.
 The implementation of this function calls
 the Linux code written in the previous step. If an unknown method
 is called, report that instead.
-  
+
 Add the following code after the `get_battery_level` function:
 
 ```cpp title="runner/my_application.cpp"

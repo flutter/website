@@ -16,7 +16,8 @@ for details.
 
 ## Set up a Flutter project
 
-To set up your project, you can create a new Flutter project or add web support
+To set up your project, you can create a
+new Flutter project or add web support
 to an existing project.
 
 ### Create a new project
@@ -24,23 +25,29 @@ to an existing project.
 To create a new app that includes web support, run the following command:
 
 ```console
-$ flutter create my_app 
+$ flutter create my_app
 ```
 
 ### Add web support to an existing project
 
-If you already have a project, run the `flutter create` command in your project directory:
+If you already have a project,
+run the `flutter create` command in your project directory:
 
 ```console
 $ flutter create . --platforms web
 ```
 
 This creates a `web/` directory containing the web assets used to bootstrap
-and run your Flutter app. 
+and run your Flutter app.
 
 ## Run your app
 
-Select [Chrome][] as your app's target device to run and debug a Flutter web app:
+See the following sections to run your app.
+
+### Run your app from the command line
+
+Select [Chrome][] as your app's target device to run and debug
+a Flutter web app:
 
 ```console
 $ flutter run -d chrome
@@ -48,13 +55,22 @@ $ flutter run -d chrome
 
 You can also choose Chrome as a target device in your IDE.
 
-If you prefer, you can use the `edge` device type on Windows, or use `web-server` to
+If you prefer, you can use the `edge` device type on Windows,
+or use `web-server` to
 navigate to a local URL in the browser of your choice.
 
-:::warning
-**Hot reload is not supported in a web browser**.
-Currently, Flutter only supports **hot restart**, which restarts your app
-without refreshing the web page.
+<a id="hot-reload-web" aria-hidden="true" ></a>
+
+:::note Hot reload on the web
+As of the Flutter 3.35 release,
+hot reload is enabled by default on the web.
+[Hot restart][] is still available as well.
+
+If you discover any issues we ask that you file a bug
+using our [Web Hot Reload issue template][].
+Note this is in the Dart SDK repository where it's easier
+for us to track issues. Known issues can be seen in the
+associated [GitHub project][].
 :::
 
 ### Run your app using WebAssembly
@@ -65,10 +81,60 @@ You can pass the `--wasm` flag to run your app using WebAssembly:
 $ flutter run -d chrome --wasm
 ```
 
-Flutter web offers multiple build modes and renderers. For more information,
-see [Web renderers][].
+Flutter web offers multiple build modes and renderers.
+For more information, see [Web renderers][].
+
+### Disable hot reload in VS Code
+
+To temporarily disable hot reload support from VS Code,
+update your [`launch.json` file][] file with
+the flag `--no-web-experimental-hot-reload`.
+
+```plaintext
+"configurations": [
+    ...
+    {
+      "name": "Flutter for web (hot reload disabled)",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "args": [
+        "-d",
+        "chrome",
+        "--no-web-experimental-hot-reload",
+      ]
+    }
+  ]
+```
+
+### Disable hot reload from the command line
+
+If you use `flutter run` from the command line,
+you can temporarily disable hot reload on the web with the
+following command:
+
+```console
+flutter run -d chrome --no-web-experimental-hot-reload
+```
+
+### Use hot reload in DartPad
+
+Hot reload is also enabled in DartPad with a new "Reload" button.
+The feature is only available if Flutter is detected
+in the running application. You can begin a hot reloadable
+session by selecting a sample app provided by DartPad.
+
+[Hot restart]: /tools/hot-reload
+[How to switch channels]: /install/upgrade#switching-flutter-channels
+[`launch.json` file]: https://code.visualstudio.com/docs/debugtest/debugging-configuration
+[Web Hot Reload issue template]: {{site.github}}/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml
+[GitHub project]: {{site.github}}/orgs/dart-lang/projects/107/views/1
 
 ## Build your app
+
+See the following sections to build your app.
+
+### Build your app from the command line
 
 Run the following command to generate a release build:
 

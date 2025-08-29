@@ -124,7 +124,7 @@ To smoke test whether your build relies on a `.flutter-plugins` file,
 you can use the feature flag `explicit-package-dependencies`:
 
 ```console
-$ flutter config explicit-package-dependencies
+$ flutter config --explicit-package-dependencies
 ```
 
 Any build tools or scripts that might rely on the `.flutter-plugins` file
@@ -132,8 +132,8 @@ being output will now fail.
 
 ## Timeline
 
-Landed in version: Not yet<br>
-Stable release: Not yet
+Landed in version: 3.28.0-0.0.pre<br>
+Stable release: 3.32
 
 One stable release after this change lands,
 `.flutter-plugins` will no longer be generated.

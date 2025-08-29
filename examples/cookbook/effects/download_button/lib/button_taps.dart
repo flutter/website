@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, prefer_const_literals_to_create_immutables
+// ignore_for_file: unused_element
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -80,10 +80,9 @@ class ProgressIndicatorWidget extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor:
-                isDownloading
-                    ? CupertinoColors.lightBackgroundGray
-                    : Colors.transparent,
+            backgroundColor: isDownloading
+                ? CupertinoColors.lightBackgroundGray
+                : Colors.transparent,
             valueColor: AlwaysStoppedAnimation(
               isFetching
                   ? CupertinoColors.lightBackgroundGray

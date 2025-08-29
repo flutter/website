@@ -2,7 +2,7 @@
 title: Widget catalog
 description: A catalog of some of Flutter's rich set of widgets.
 short-title: Widgets
-toc: false
+showToc: false
 ---
 
 Create beautiful apps faster with Flutter's collection of visual, structural,
@@ -64,32 +64,32 @@ help you quickly get started with Flutter widgets.
 <div class="card-grid wide">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '1z6YP7YmvwA', 'TextStyle - Flutter widget of the week', true %}
+      {% ytEmbed 'D0xwcz2IqAY', 'CupertinoRadio - Flutter widget of the week', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'VdkRy3yZiPo', 'flutter_rating_bar - Flutter package of the week', true %}
+      {% ytEmbed '5H-WvH5O29I', 'CupertinoSheetRoute - Flutter widget of the week', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'gYNTcgZVcWw', 'LinearGradient - Flutter widget of the week', true %}
+      {% ytEmbed 'esnBf6V4C34', 'CupertinoSlidingSegmentedControl - Flutter widget of the week', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '-Nny8kzW380', 'AutoComplete - Flutter widget of the week', true %}
+      {% ytEmbed 'ua54JU7k1Us', 'CupertinoCheckbox - Flutter widget of the week', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'y9xchtVTtqQ', 'NavigationRail - Flutter widget of the week', true %}
+      {% ytEmbed '24tg_N4sdMQ', 'CupertinoSwitch - Flutter widget of the week', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'qjA0JFiPMnQ', 'mason - Flutter package of the week', true %}
+      {% ytEmbed 'GQ8ajYVF0bo', 'CarouselView - Flutter widget of the week', true %}
     </div>
   </div>
 </div>

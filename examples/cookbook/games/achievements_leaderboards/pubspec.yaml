@@ -3,14 +3,14 @@ description: Games services
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  games_services: ^4.0.0
-  logging: ^1.2.0
+  games_services: ^4.1.1
+  logging: ^1.3.0
 
 flutter:
   uses-material-design: true

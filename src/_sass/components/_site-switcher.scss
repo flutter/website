@@ -2,86 +2,55 @@
 
 #site-switcher {
   position: relative;
-  display: inline-flex;
-  justify-content: center;
 
   .dropdown-content {
-    z-index: var(--site-z-dropdown);
     transform: scale(0.9);
-    top: 2.25rem;
-    left: -0.75rem;
+    top: 1.25rem;
+    right: -0.75rem;
 
     @media (min-width: 420px) {
-      left: unset;
+      right: 0;
     }
   }
 
+  display: none;
+  @media (min-width: 320px) {
+    display: block;
+  }
+}
 
-  button.dropdown-button {
-    padding: 0.4rem 0.6rem;
-    border-radius: 0.25rem;
+#site-primary-logo, #site-switcher .site-wordmark {
+  padding: 0.4rem 0.6rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 0;
 
-    .material-symbols:last-child {
-      margin-left: 0.4rem;
-      color: rgba(85, 85, 85, 0.6);
-      font-size: 1rem;
-      width: 0.7rem;
-    }
+  font-variant-ligatures: none;
+  font-size: 1.75rem;
+  line-height: 1.25em;
+  letter-spacing: 0.015em;
+  font-family: 'Google Sans', sans-serif;
+  user-select: none;
 
-    &:hover {
-      .material-symbols {
-        color: rgba(85, 85, 85, 0.8);
-      }
-    }
-
-    > span {
-      &.name {
-        display: none;
-
-        @media (min-width: 420px) {
-          display: unset;
-        }
-      }
-
-      &.subtype {
-        margin-left: 0;
-
-        @media (min-width: 420px) {
-          margin-left: 0.4rem;
-        }
-      }
-    }
+  > img {
+    width: 28px;
+    margin-right: 0.25rem;
   }
 
-  .site-wordmark {
-    padding: 0.4rem 0.6rem;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    gap: 0;
+  &.current-site {
+    background-color: var(--site-primary-color-highlight);
+  }
 
-    font-variant-ligatures: none;
-    font-size: 1.75rem;
-    line-height: 1.25em;
-    letter-spacing: 0.015em;
-    font-family: 'Google Sans', sans-serif;
-    user-select: none;
+  span {
+    color: var(--site-wordmark-fgColor);
 
-    > img {
-      width: 28px;
-      margin-right: 0.75rem;
+    &.name {
+      margin-left: 0.5rem;
     }
 
-    &.current-site {
-      background-color: var(--site-primary-color-highlight);
-    }
-
-    span {
-      color: var(--site-wordmark-fgColor);
-    }
-
-    span.subtype {
+    &.subtype {
       padding: 0 0.3rem;
       font-size: 1.25rem;
       font-weight: 500;

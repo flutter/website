@@ -2,20 +2,20 @@
 layout: base
 ---
 
-{% if toc != false -%}
-{% assign tocContents = content | generate_toc %}
+{% if showToc != false -%}
+{% assign tocContents = content | generateToc %}
 {% if tocContents == null or tocContents == '' or tocContents.count < 2 -%}
-{% assign toc = false %}
+{% assign showToc = false %}
 {% endif -%}
 {% endif -%}
 
-<div id="site-main-row" class="{% if toc == false %}no-toc{% endif %}">
+<div id="site-main-row" class="{% if showToc == false %}no-toc{% endif %}">
   <div id="sidenav" class="site-sidebar">
     {% render sidenav-level-1.html, url:page.url, nav:sidenav, activeNav:activeNav %}
   </div>
 
   <main class="site-content">
-    {% if toc != false -%}
+    {% if showToc != false -%}
       {% render top-toc.html, tocContents:tocContents, title:title %}
     {% endif -%}
     {%- if site.showBanner and showBanner != false -%}
@@ -24,7 +24,7 @@ layout: base
     </div>
     {% endif -%}
     <div class="after-leading-content">
-      {% if toc != false -%}
+      {% if showToc != false -%}
       <aside id="side-menu">
         {% render side-toc.html, tocContents:tocContents %}
       </aside>
@@ -32,7 +32,7 @@ layout: base
       <article>
         <header id="site-header-wrapper">
           <h1 id="document-title">{{ title }}</h1>
-          {% if show_breadcrumbs != false -%}
+          {% if showBreadcrumbs != false -%}
           {% include breadcrumbs.html %}
           {% endif -%}
         </header>

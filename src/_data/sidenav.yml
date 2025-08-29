@@ -69,6 +69,8 @@
       permalink: /install/add-to-path
     - title: Troubleshoot
       permalink: /install/troubleshoot
+    - title: Uninstall SDK
+      permalink: /install/uninstall
 
 - title: Learn Flutter
   children:
@@ -139,24 +141,6 @@
 
 - title: App solutions
   children:
-    - title: Create with AI
-      children:
-        - title: AI Toolkit
-          permalink: /ai-toolkit
-          expanded: true
-          children:
-            - title: Overview
-              permalink: /ai-toolkit
-            - title: User experience
-              permalink: /ai-toolkit/user-experience
-            - title: Feature integration
-              permalink: /ai-toolkit/feature-integration
-            - title: Custom LLM providers
-              permalink: /ai-toolkit/custom-llm-providers
-            - title: Chat client sample
-              permalink: /ai-toolkit/chat-client-sample
-        - title: Vertex AI in Firebase
-          permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
     - title: Develop with Firebase
       children:
         - title: Overview
@@ -223,6 +207,28 @@
           permalink: https://developers.google.com/maps/flutter-package
     - title: Build a news app
       permalink: /resources/news-toolkit
+
+- title: Create with AI
+  permalink: /ai
+  children:
+    - title: Overview
+      permalink: /ai/create-with-ai
+    - title: AI Toolkit
+      permalink: /ai-toolkit
+      expanded: false
+      children:
+        - title: Overview
+          permalink: /ai-toolkit
+        - title: User experience
+          permalink: /ai-toolkit/user-experience
+        - title: Feature integration
+          permalink: /ai-toolkit/feature-integration
+        - title: Custom LLM providers
+          permalink: /ai-toolkit/custom-llm-providers
+        - title: Chat client sample
+          permalink: /ai-toolkit/chat-client-sample
+    - title: Vertex AI in Firebase
+      permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
 
 - divider
 - header: User interface
@@ -544,6 +550,8 @@
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
           permalink:  /platform-integration/android/chromeos
+        - title: Protect your app's sensitive content
+          permalink: /platform-integration/android/sensitive-content
     - title: iOS
       permalink: /platform-integration/ios
       children:
@@ -820,6 +828,8 @@
           permalink: /tools/devtools/deep-links
         - title: Release notes
           permalink: /tools/devtools/release-notes
+    - title: Flutter Widget Previewer
+      permalink: /tools/widget-previewer  
     - title: Flutter Property Editor
       permalink: /tools/property-editor    
     - title: SDK overview

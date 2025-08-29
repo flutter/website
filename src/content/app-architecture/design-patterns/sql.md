@@ -147,8 +147,8 @@ and passes in the text controller value.
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (FilledButton)" replace="/^\),$/)/g"?>
 ```dart
 FilledButton.icon(
-  onPressed:
-      () => widget.viewModel.add.execute(_controller.text),
+  onPressed: () =>
+      widget.viewModel.add.execute(_controller.text),
   label: const Text('Add'),
   icon: const Icon(Icons.add),
 )
@@ -315,9 +315,9 @@ to avoid typos when writing SQL code.
 
 <?code-excerpt "lib/data/services/database_service.dart (Table)"?>
 ```dart
-static const _kTableTodo = 'todo';
-static const _kColumnId = '_id';
-static const _kColumnTask = 'task';
+static const String _todoTableName = 'todo';
+static const String _idColumnName = '_id';
+static const String _taskColumnName = 'task';
 ```
 
 The `open()` method opens the existing database, 
@@ -331,7 +331,7 @@ Future<void> open() async {
     options: OpenDatabaseOptions(
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE $_kTableTodo($_kColumnId INTEGER PRIMARY KEY AUTOINCREMENT, $_kColumnTask TEXT)',
+          'CREATE TABLE $_todoTableName($_idColumnName INTEGER PRIMARY KEY AUTOINCREMENT, $_taskColumnName TEXT)',
         );
       },
       version: 1,
@@ -352,7 +352,9 @@ The `id` is generated as mentioned before.
 ```dart
 Future<Result<Todo>> insert(String task) async {
   try {
-    final id = await _database!.insert(_kTableTodo, {_kColumnTask: task});
+    final id = await _database!.insert(_todoTableName, {
+      _taskColumnName: task,
+    });
     return Result.ok(Todo(id: id, task: task));
   } on Exception catch (e) {
     return Result.error(e);
@@ -373,18 +375,17 @@ For each entry, it creates a `Todo` class instance.
 Future<Result<List<Todo>>> getAll() async {
   try {
     final entries = await _database!.query(
-      _kTableTodo,
-      columns: [_kColumnId, _kColumnTask],
+      _todoTableName,
+      columns: [_idColumnName, _taskColumnName],
     );
-    final list =
-        entries
-            .map(
-              (element) => Todo(
-                id: element[_kColumnId] as int,
-                task: element[_kColumnTask] as String,
-              ),
-            )
-            .toList();
+    final list = entries
+        .map(
+          (element) => Todo(
+            id: element[_idColumnName] as int,
+            task: element[_taskColumnName] as String,
+          ),
+        )
+        .toList();
     return Result.ok(list);
   } on Exception catch (e) {
     return Result.error(e);
@@ -403,8 +404,8 @@ indicating that something went wrong.
 Future<Result<void>> delete(int id) async {
   try {
     final rowsDeleted = await _database!.delete(
-      _kTableTodo,
-      where: '$_kColumnId = ?',
+      _todoTableName,
+      where: '$_idColumnName = ?',
       whereArgs: [id],
     );
     if (rowsDeleted == 0) {

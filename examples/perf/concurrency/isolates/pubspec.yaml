@@ -6,9 +6,9 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: any
+  shared_preferences: ^2.5.3

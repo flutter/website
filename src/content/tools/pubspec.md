@@ -63,7 +63,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.9.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -77,7 +77,7 @@ dev_dependencies:
   [!flutter_test:!]
     [!sdk: flutter!] # Required for a Flutter project that includes tests
 
-  [!flutter_lints: ^5.0.0!] # Contains a set of recommended lints for Flutter code
+  [!flutter_lints: ^6.0.0!] # Contains a set of recommended lints for Flutter code
 
 [!flutter:!]
 
@@ -85,12 +85,15 @@ dev_dependencies:
 
   [!generate: true!] # Enables generation of localized strings from arb files
 
-  [!config:!] # App-specific configuration flags that mirror flutter config
+  [!config:!] # App-specific configuration flags that mirror `flutter config`
     [!enable-swift-package-manager: true!]
 
   [!assets:!]  # Lists assets, such as image files
     [!- images/a_dot_burr.png!]
     [!- images/a_dot_ham.png!]
+
+  [!licenses:!] # Lists additional license files to be bundled with the app
+    [!- assets/my_license.txt!]
 
   [!fonts:!]              # Required if your app uses custom fonts
     [!- family: Schyler!]
@@ -156,6 +159,7 @@ flutter:
 # path_to_directory structure
 - path/to/directory/
 ```
+
 ```yaml
 # flavor_path_field strucure
 - path: path/to/directory
@@ -222,7 +226,7 @@ A map of keys to flags (`true` or `false`) that influences how the `flutter` CLI
 is executed.
 
 > NOTE: This feature is only available as of
-> [#167953]({{site.github}}flutter/flutter/pull/167953) on the `main`
+> [#167953]({{site.github}}/flutter/flutter/pull/167953) on the `main`
 > channel.
 
 The available keys mirror those available in `flutter config --list`.
@@ -230,8 +234,11 @@ The available keys mirror those available in `flutter config --list`.
 ```yaml title="pubspec.yaml"
 flutter:
   config:
+    cli-animations: false
     enable-swift-package-manager: true
 ```
+
+Use `flutter config --help` for a description of each flag.
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
@@ -244,7 +251,7 @@ flavor in Flutter launch command.
 
 ```yaml title="pubspec.yaml"
 flutter:
-  default-flavor: flavor_name # Android-only field
+  default-flavor: flavor_name
 ```
 
 In the following example, an Android Flutter app has a
@@ -335,7 +342,7 @@ flutter:
 ```
 
 > NOTE: As of [#168433]({{site.github}}/flutter/flutter/pull/168433) on the
-> `main` channel, this propery has moved to the [`config`](#config) section:
+> `main` channel, this property has moved to the [`config`](#config) section:
 >
 > ```yaml title="pubspec.yaml"
 > flutter:
@@ -446,6 +453,20 @@ Enable general localization:
 ```yaml title="pubspec.yaml"
 flutter:
   generate: true
+```
+
+### licenses field {: #licenses}
+
+A list of additional license file paths that should be bundled with your
+application. These files are typically found within your project's `assets`
+directory.
+
+The `licenses` field has this structure:
+
+```yaml title="pubspec.yaml"
+flutter:
+  licenses:
+    - [path_to_file]
 ```
 
 ### plugin field
@@ -626,7 +647,7 @@ the `intl` package.
 dependencies:
   flutter_localizations:
     sdk: flutter
-  intl: ^0.18.0
+  intl: any
 ```
 
 ### flutter_test package
@@ -650,7 +671,7 @@ Flutter projects. This package can be added to the
 
 ```yaml title="pubspec.yaml"
 dev_dependencies:
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 ```
 
 ### cupertino_icons

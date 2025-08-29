@@ -27,7 +27,7 @@ Flutter's Swift Package Manager integration has several benefits:
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+{% render docs/swift-package-manager/how-to-enable-disable.md, site: site %}
 
 ## How to add Swift Package Manager integration
 
@@ -36,12 +36,12 @@ Flutter's Swift Package Manager integration has several benefits:
 {% tabs %}
 {% tab "iOS project" %}
 
-{% include docs/swift-package-manager/migrate-ios-project.md %}
+{% render docs/swift-package-manager/migrate-ios-project.md, site: site %}
 
 {% endtab %}
 {% tab "macOS project" %}
 
-{% include docs/swift-package-manager/migrate-macos-project.md %}
+{% render docs/swift-package-manager/migrate-macos-project.md, site: site %}
 
 {% endtab %}
 {% endtabs %}
@@ -51,12 +51,12 @@ Flutter's Swift Package Manager integration has several benefits:
 {% tabs %}
 {% tab "iOS project" %}
 
-{% include docs/swift-package-manager/migrate-ios-project-manually.md %}
+{% render docs/swift-package-manager/migrate-ios-project-manually.md, site: site %}
 
 {% endtab %}
 {% tab "macOS project" %}
 
-{% include docs/swift-package-manager/migrate-macos-project-manually.md %}
+{% render docs/swift-package-manager/migrate-macos-project-manually.md, site: site %}
 
 {% endtab %}
 {% endtabs %}
@@ -110,7 +110,7 @@ To undo this migration:
 1. Navigate to **Package Dependencies** for the project.
 
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
@@ -120,7 +120,7 @@ To undo this migration:
    target.
 
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
@@ -134,7 +134,7 @@ To undo this migration:
 
 1. Expand **Run Prepare Flutter Framework Script**.
 
-1. Click **<span class="material-symbols">delete</span>**.
+1. Click **<span class="material-symbols" translate="no">delete</span>**.
 
    {% render docs/captioned-image.liquid,
    image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",

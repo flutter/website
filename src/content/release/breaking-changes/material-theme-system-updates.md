@@ -25,7 +25,7 @@ type of `ThemeData.cardTheme` has been changed to `CardThemeData?`; the type of
 
 ## Migration guide
 
-Previously, the type of `ThemeData.cardTheme` was `Object?` to accpet both
+Previously, the type of `ThemeData.cardTheme` was `Object?` to accept both
 `CardTheme` and `CardThemeData`. Now that the type has been changed to
 `CardThemeData?`, a migration is required if `ThemeData.cardTheme` is used.
 Similarly, the types of `ThemeData.dialogTheme` and `ThemeData.tabBarTheme` 
@@ -53,8 +53,8 @@ final ThemeData theme = ThemeData(
 
 ## Timeline
 
-Landed in version: TBD
-Stable release: TBD
+Landed in version: 3.31.0-0.0.pre<br>
+In stable release: 3.32
 
 ## References
 

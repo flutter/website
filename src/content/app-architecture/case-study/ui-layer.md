@@ -81,7 +81,7 @@ The view model exposes state as public members.
 On the view model in the following code example,
 the exposed data is a `User` object,
 as well as the user's saved itineraries which
-are exposed as an object of type `List<TripSummary>`.
+are exposed as an object of type `List<BookingSummary>`.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel {
@@ -254,8 +254,8 @@ would take up the full screen on mobile.
 :::note
 "View" is an abstract term, and one view doesn't equal one widget.
 Widgets are composable, and several can be combined to create one view.
-Therefore, view models don't have a 1-to-1 relationship with widgets,
-but rather a 1-to-1 relation with a *collection* of widgets.
+Therefore, view models don't have a one-to-one relationship with widgets,
+but rather a one-to-one relation with a *collection* of widgets.
 :::
 
 The widgets within a view have three responsibilities:
@@ -636,7 +636,7 @@ the Command pattern. [Read about it on GitHub][].
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`notifyListeners`]: {{site.api}}/flutter/foundation/ChangeNotifier/notifyListeners.html
 [state-management documentation]: /get-started/fundamentals/state-management
-[`Scaffold`]: {{site.api}}/flutter/widgets/Scaffold-class.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
 [`flutter_command`]: {{site.pub-pkg}}/flutter_command

@@ -56,13 +56,13 @@ It provides a simple API to handle complex routing scenarios.
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),
@@ -211,6 +211,11 @@ if web files are not presented.
 To test **both** web and app setup, you must click a link
 directly through web browser or another app.
 One way is to create a Google Doc, add the link, and tap on it.
+
+:::note
+If you are debugging locally (and not downloading the app from the Play Store),
+you might need to enable the toggle for **Supported web addresses** manually.
+:::
 
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:

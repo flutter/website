@@ -4,7 +4,7 @@ analyzer:
   language:
     strict-casts: true
     # strict-inference: true
-    # strict-raw-types: true
+    strict-raw-types: true
   errors:
     avoid_print: ignore
   exclude:
@@ -13,30 +13,45 @@ analyzer:
 linter:
   rules:
     - always_declare_return_types
+    - avoid_catching_errors
     - avoid_types_on_closure_parameters
     - avoid_void_async
     - cancel_subscriptions
     - close_sinks
     - combinators_ordering
     - comment_references
+    - conditional_uri_does_not_exist
     - directives_ordering
+    - eol_at_end_of_file
     - invalid_case_patterns
     - matching_super_parameters
+    - missing_code_block_language_in_doc_comment
     - no_self_assignments
     - no_wildcard_variable_uses
     - one_member_abstracts
     - only_throw_errors
+    - prefer_asserts_in_initializer_lists
     - prefer_const_constructors
     - prefer_const_declarations
     - prefer_const_literals_to_create_immutables
+    - prefer_final_fields
     - prefer_relative_imports
     - prefer_single_quotes
     - sort_unnamed_constructors_first
+    - strict_top_level_inference
+    - switch_on_type
     - test_types_in_equals
     - throw_in_finally
     - type_annotate_public_apis
     - unawaited_futures
     - unnecessary_breaks
     - unnecessary_library_directive
+    - unnecessary_null_aware_operator_on_extension_on_nullable
+    - unnecessary_parenthesis
     - unnecessary_statements
+    - unnecessary_unawaited
+    - unnecessary_underscores
+    - use_enums
     - use_is_even_rather_than_modulo
+    - use_null_aware_elements
+    - use_truncating_division

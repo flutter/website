@@ -2,7 +2,7 @@
 title: Flutter Brand Guidelines
 description: >
   The guidelines governing the usage of the Flutter trademarks and assets.
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 The "Flutter" name and logo are trademarks owned by Google.

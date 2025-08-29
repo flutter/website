@@ -27,6 +27,8 @@ overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 :::
 
+{% ytEmbed 'ngsxzZt5DoY', 'dart:convert (Technique of the Week)' %}
+
 ## Which JSON serialization method is right for me?
 
 This article covers two general strategies for working with JSON:
@@ -527,11 +529,11 @@ For more information, see the following resources:
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
-[`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[`dart:convert`]: {{site.dart.api}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /packages-and-plugins/favorites
 [json background parsing]: /cookbook/networking/background-parsing
-[`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[`JsonCodec`]: {{site.dart.api}}/dart-convert/JsonCodec-class.html
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
 [`json_annotation`]: {{site.pub}}/packages/json_annotation
 [`json_serializable`]: {{site.pub}}/packages/json_serializable

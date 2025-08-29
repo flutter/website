@@ -1,5 +1,5 @@
-{% assign cache_bust = '?v=7' %}
-{% assign page_url = page.url | regex_replace: '/index$|/index.html$|\.html$|/$' -%}
+{% assign cacheBust = '?v=7' %}
+{% assign pageUrl = page.url | regexReplace: '/index$|/index.html$|\.html$|/$' -%}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,20 +43,20 @@
 
     {% assign desc = description | default: site.description | strip_html | strip_newlines | truncate: 160 -%}
     {% unless desc and desc != '' -%}
-      {% assign error = page.url | append: ' must have a description specified!' -%}
-      {{ error | throw_error }}
+      {% assign error = pageUrl | append: ' must have a description specified!' -%}
+      {{ error | throwError }}
     {% endunless %}
 
-    {% assign og_image_path = image.path | default: layout.image.path | default: site.default_share_image -%}
+    {% assign ogImagePath = image.path | default: layout.image.path | default: site.defaultShareImage -%}
 
     <meta name="description" content="{{desc | escape}}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@flutterdev">
 
     <meta property="og:title" content="{{title | escape}}">
-    <meta property="og:url" content="{{site.url | append: page_url}}">
+    <meta property="og:url" content="{{site.url | append: pageUrl}}">
     <meta property="og:description" content="{{desc | escape}}">
-    <meta property="og:image" content="{{site.url | append: og_image_path}}">
+    <meta property="og:image" content="{{site.url | append: ogImagePath}}">
 
     {% unless strip_fonts == true -%}
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -69,15 +69,14 @@
       window.__CALLBACKS = [];
     </script>
 
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | append: cache_bust }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | append: cacheBust }}">
     {% if css -%}
     {% for cssFile in css -%}
-      {% assign asset_path = '/assets/css/{{cssFile}}' -%}
-      <link rel="stylesheet" href="{{ asset_path | append: cache_bust }}">
+      <link rel="stylesheet" href="{{ '/assets/css/{{cssFile}}' | append: cacheBust }}">
     {% endfor -%}
     {% endif -%}
   </head>
-  <body class="show-windows {% if body_class %}{{ body_class }}{% endif %}">
+  <body class="show-windows {% if extraBodyClass %}{{ extraBodyClass }}{% endif %}">
 
     {% render cookie-notice.html %}
 
@@ -118,9 +117,9 @@
         document.body.classList.add(storedTheme);
       }
     </script>
-    <script src="{{ '/assets/js/tabs.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/archive.js' | append: cache_bust }}"></script>
-    <script src="{{ '/assets/js/main.js' | append: cache_bust }}"></script>
+    <script src="{{ '/assets/js/tabs.js' | append: cacheBust }}"></script>
+    <script src="{{ '/assets/js/archive.js' | append: cacheBust }}"></script>
+    <script src="{{ '/assets/js/main.js' | append: cacheBust }}"></script>
 
     {% if js -%}
     {% for jsFile in js -%}

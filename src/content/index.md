@@ -1,11 +1,13 @@
 ---
 title: Flutter documentation
 short-title: Docs
-description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+description: >-
+  Get started with Flutter. Widgets, examples, updates, and API docs to
+  help you write your first Flutter app.
 ---
 
 <div class="card-grid">
-{% for card in docs_cards -%}
+{% for card in docsCards -%}
   <a class="card filled-card outlined-card" href="{{card.url}}">
     <div class="card-header">
       <span class="card-title">{{card.name}}</span>
@@ -23,6 +25,9 @@ see [What's new][].**
 [What's new]: /release/whats-new
 
 ## New to Flutter?
+
+Ready to build beautiful, multiplatform apps from a single codebase?
+This video walks you through the fundamentals of Flutter and shows you how to get started.
 
 Once you've [Set up Flutter][],
 you should follow the 
@@ -70,61 +75,35 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-Check out the Introducing Flutter series.
-Learn Flutter basics like
-[how do I make my first Flutter app?][first-app]
-In Flutter, "everything is a widget"!
-Learn more about `Stateless` and `Stateful`
-widgets in [What is State?][]
-
-<div class="card-grid">
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true %}
-    </div>
-  </div>
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content">
-      {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true %}
-    </div>
-  </div>
-</div>
-
-[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
-[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
-
-{% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
-{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!' %}
+{% videoWrapper 'Check out what\'s new in Flutter at Google I/O 2025!' %}
+{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
 {% endvideoWrapper %}
+<br>
 
-## Want to skill up?
-
-Dive deeper into how Flutter works under the hood!
-Learn [why you write standalone widgets instead of
-using helper methods][standalone-widgets] or
-[what is "BuildContext" and how is it used][buildcontext]?
+For more Flutter at Google I/O 2025, check out
+[How to build agentic apps with Flutter and Firebase AI Logic][] 
+and [How Flutter makes the most of your platforms][].
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true %}
+      {% ytEmbed 'xo271p-Fl_4', 'How to build agentic apps with Flutter and Firebase AI Logic', true %}
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true %}
+      {% ytEmbed 'flwULzNYRac', 'How Flutter makes the most of your platforms', true %}
     </div>
   </div>
 </div>
 
-[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
+[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
+[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
 
-To learn about all of the Flutter video series,
-see our [videos][] page.
+To learn about all of the Flutter video series, see our [videos][] page.
 
-We release new videos almost every week on the Flutter YouTube channel:
+We release new videos almost every week!
 
-<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Check out the Flutter YouTube channel</a>
 
 [videos]: /resources/videos

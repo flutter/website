@@ -261,7 +261,7 @@ Future<void> load() async {
           // handle error
         },
       )
-      .asFuture();
+      .asFuture<void>();
 }
 ```
 ### Using only local data
@@ -444,7 +444,7 @@ This allows your application to run the synchronization process
 in the background even when the application is not running.
 
 :::note
-Running background operations continuosly 
+Running background operations continuously 
 can drain the device battery dramatically, 
 and some devices limit the background processing capabilities, 
 so this approach needs to be tuned 

@@ -15,7 +15,7 @@
 
     1. Click **Advanced System Settings**
        <span aria-label="and then">></span> **Advanced**
-       <span aria-label="and then">></span> **Environment Variables...**
+       <span aria-label="and then">></span> **Environment Variables...**.
 
        The **Environment Variables** dialog opens.
 
@@ -34,11 +34,11 @@
        1. Type the path to the `bin` directory of your Flutter installation.
 
           For example, if you downloaded Flutter into a
-          `dev\flutter` folder inside your user directory,
+          `develop\flutter` folder inside your user directory,
           you'd type the following:
 
           ```plaintext
-          %USERPROFILE%\dev\flutter\bin
+          %USERPROFILE%\develop\flutter\bin
           ```
 
        1. Click the Flutter entry you added to select it.
@@ -59,11 +59,11 @@
           type the path to the `bin` directory of your Flutter installation.
 
           For example, if you downloaded Flutter into a
-          `dev\flutter` folder inside your user directory,
+          `develop\flutter` folder inside your user directory,
           you'd type the following:
 
           ```plaintext
-          %USERPROFILE%\dev\flutter\bin
+          %USERPROFILE%\develop\flutter\bin
           ```
 
        1. To confirm your changes, click **OK** three times.

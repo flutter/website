@@ -8,7 +8,7 @@ js:
 
 <?code-excerpt path-base="cookbook/effects/typing_indicator"?>
 
-{% include docs/deprecated.md %}
+{% render docs/deprecated.md %}
 
 Modern chat apps display indicators when other users
 are actively typing responses. These indicators help
@@ -219,9 +219,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(vsync: this)..addListener(() {
-      setState(() {});
-    });
+    _appearanceController = AnimationController(vsync: this)
+      ..addListener(() {
+        setState(() {});
+      });
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,
@@ -743,9 +744,10 @@ class _TypingIndicatorState extends State<TypingIndicator>
   void initState() {
     super.initState();
 
-    _appearanceController = AnimationController(vsync: this)..addListener(() {
-      setState(() {});
-    });
+    _appearanceController = AnimationController(vsync: this)
+      ..addListener(() {
+        setState(() {});
+      });
 
     _indicatorSpaceAnimation = CurvedAnimation(
       parent: _appearanceController,

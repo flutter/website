@@ -229,7 +229,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
 
     final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+        Duration(milliseconds: _menuTitles.length * 50) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
@@ -437,10 +437,9 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
           builder: (context, child) {
             return IconButton(
               onPressed: _toggleDrawer,
-              icon:
-                  _isDrawerOpen() || _isDrawerOpening()
-                      ? const Icon(Icons.clear, color: Colors.black)
-                      : const Icon(Icons.menu, color: Colors.black),
+              icon: _isDrawerOpen() || _isDrawerOpening()
+                  ? const Icon(Icons.clear, color: Colors.black)
+                  : const Icon(Icons.menu, color: Colors.black),
             );
           },
         ),
@@ -522,7 +521,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
 
     final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+        Duration(milliseconds: _menuTitles.length * 50) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,

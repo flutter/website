@@ -331,8 +331,8 @@ for example:
 ```ruby
   s.ios.dependency 'Flutter'
   s.osx.dependency 'FlutterMacOS'
-  s.ios.deployment_target = '11.0'
-  s.osx.deployment_target = '10.14'
+  s.ios.deployment_target = '13.0'
+  s.osx.deployment_target = '10.15'
 ```
 
 ### Step 1: Create the package
@@ -989,7 +989,7 @@ of the `url_launcher` plugin available to `hello`:
 
 ```yaml
 dependencies:
-  url_launcher: ^5.0.0
+  url_launcher: ^6.3.2
 ```
 
 You can now `import 'package:url_launcher/url_launcher.dart'`

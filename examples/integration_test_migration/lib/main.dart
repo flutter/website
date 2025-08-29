@@ -105,7 +105,7 @@ class ListOfPlantsWidget extends StatefulWidget {
 
   final List<Plant> plants;
   final Plant? selectedPlant;
-  final Function(Plant selected) onSelectPlant;
+  final void Function(Plant selected) onSelectPlant;
 
   @override
   State<ListOfPlantsWidget> createState() => _ListOfPlantsWidgetState();
@@ -124,10 +124,9 @@ class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
           return ListTile(
             key: Key(plant.name),
             title: Text(plant.name),
-            tileColor:
-                widget.selectedPlant?.name == plant.name
-                    ? Colors.black12
-                    : Colors.white,
+            tileColor: widget.selectedPlant?.name == plant.name
+                ? Colors.black12
+                : Colors.white,
             onTap: () {
               widget.onSelectPlant(plant);
             },

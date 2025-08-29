@@ -54,7 +54,8 @@ UI development and iteration.
 
 #### Integration with the Flutter inspector
 
-The Flutter Property Editor can be used in conjunction with the [Flutter inspector][] to inspect your widgets simultaneously in both tools.
+The Flutter Property Editor can be used in conjunction with the
+[Flutter inspector][] to inspect your widgets simultaneously in both tools.
 
 1.  From your preferred IDE, run and debug your Flutter application.
     * [VS Code instructions][]
@@ -83,7 +84,8 @@ Both actions will automatically:
 
 #### Integration with hot reload
 
-The Flutter Property Editor can be used in conjunction with hot reload to view changes in real time.
+The Flutter Property Editor can be used in conjunction
+with hot reload to view changes in real time.
 
 1. From your preferred IDE, enable autosave and hot reloads on save.
 
@@ -98,7 +100,8 @@ The Flutter Property Editor can be used in conjunction with hot reload to view c
 
     **Android Studio and IntelliJ**
 
-    * Open `Settings > Tools > Actions on Save` and select `Configure autosave options`.
+    * Open `Settings > Tools > Actions on Save` and select
+     `Configure autosave options`.
         - Check the option to `Save files if the IDE is idle for X seconds`.
         - **Recommended:** Set a small delay duration. For example, 2 seconds. 
     
@@ -214,7 +217,7 @@ properties of interest.
     * Use the filter menu button to open the filter options. Check "Only
       include properties that are set in the code."
     * This hides all properties that have not been explicitly set in your
-      code, allowing you to focus only on the properties you have explictly set.
+      code, allowing you to focus only on the properties you have explicitly set.
 
     ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}   
 

@@ -68,7 +68,7 @@ install and set up the latest stable version of [Android Studio][].
     1. If the **SDK Platforms** tab is not open, switch to it.
 
     1. Verify that the first entry with an **API Level** of
-       **{{ site.platform.androidApiLevel }}** has been selected.
+       **35** has been selected.
 
        If the **Status** column displays
        **Update available** or **Not installed**:
@@ -165,7 +165,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Start **Android Studio**.
 
-    1. Go to the **Settings** dialog to view the **SDK Manager**.
+    1. Go to the **Settings** dialog to view the **Device Manager**.
 
        1. If you have a project open,
           go to **Tools** <span aria-label="and then">></span>

@@ -425,7 +425,7 @@ with the Xcode and Visual Studio guides.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-android.md %}
+{% render docs/debug/debug-flow-android.md %}
 
 ### Debug Dart and iOS code using Xcode
 
@@ -436,7 +436,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-ios.md %}
+{% render docs/debug/debug-flow-ios.md %}
 
 ### Debug Dart and macOS code using Xcode
 
@@ -447,7 +447,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-macos.md %}
+{% render docs/debug/debug-flow-macos.md %}
 
 ### Debug Dart and C++ code using Visual Studio
 
@@ -459,7 +459,7 @@ You need to run both VS Code and Visual Studio.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-windows.md %}
+{% render docs/debug/debug-flow-windows.md %}
 
 ## Resources
 
