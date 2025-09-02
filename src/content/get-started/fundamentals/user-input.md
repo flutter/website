@@ -560,7 +560,7 @@ enum ColorLabel {
   blue('Blue', Colors.blue),
   pink('Pink', Colors.pink),
   green('Green', Colors.green),
-  yellow('Orange', Colors.orange),
+  orange('Orange', Colors.orange),
   grey('Grey', Colors.grey);
 
   const ColorLabel(this.label, this.color);
