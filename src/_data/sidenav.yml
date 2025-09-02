@@ -186,8 +186,11 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai-toolkit/chat-client-sample
-    - title: Vertex AI in Firebase
-      permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
+    - divider
+    - title: Dart & Flutter MCP server
+      permalink: https://dart.dev/tools/mcp-server
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
 - divider
 - header: User interface

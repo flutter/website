@@ -745,7 +745,7 @@ to reflect the latest available codelabs.
 
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
-[codelabs & workshops]: /codelabs
+[codelabs & workshops]: /reference/learning-resources
 [Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
 [Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
@@ -1323,7 +1323,7 @@ publication since the last stable release:
 [Announcing Adobe XD Support for Flutter]: {{site.flutter-medium}}/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
 [Announcing Flutter 1.20]: {{site.flutter-medium}}/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
-[codelabs landing]: /codelabs
+[codelabs landing]: /reference/learning-resources
 [Desktop support]: /platform-integration/desktop
 [dev-tools]: {{site.flutter-medium}}/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: /platform-integration/ios/ios-debugging
@@ -1331,7 +1331,7 @@ publication since the last stable release:
 [Flutter and Desktop apps]: {{site.flutter-medium}}/flutter-and-desktop-3a0dd0f8353e
 [Flutter architectural overview]: /resources/architectural-overview
 [Flutter books]: /resources/books
-[Flutter codelabs]: /codelabs
+[Flutter codelabs]: /reference/learning-resources
 [Flutter Day]: https://events.withgoogle.com/flutter-day/
 [Flutter Package Ecosystem Update]: {{site.flutter-medium}}/flutter-package-ecosystem-update-d50645f2d7bc
 [Flutter Performance Updates in 2019]: {{site.flutter-medium}}/going-deeper-with-flutters-web-support-66d7ad95eb5224
@@ -1596,7 +1596,7 @@ New and updated docs on the site include:
   The example code in the page now uses the 3.0
   release of the Provider package.
 * A new animation recipe, [Animate a page route transition][]
-  has been added to the [Cookbook][].
+  has been added to the Flutter Cookbook.
 * The [Debugging][], [Flutter's build modes][],
   [Performance best practices][], and [Performance profiling][]
   pages are updated to reflect DevTools. A
@@ -1611,7 +1611,6 @@ component and how to customize it, see
 [1.7.8 release notes]: /release/release-notes/release-notes-1.7.8
 [Animate a page route transition]: /cookbook/animation/page-route-animation
 [Announcing Flutter 1.7]: {{site.flutter-medium}}/announcing-flutter-1-7-9cab4f34eacf
-[Cookbook]: /cookbook
 [Debugging]: /testing/debugging
 [Debugging apps programmatically]: /testing/code-debugging
 [Flutter's build modes]: /testing/build-modes
