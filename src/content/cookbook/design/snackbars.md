@@ -150,7 +150,7 @@ class SnackBarPage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
