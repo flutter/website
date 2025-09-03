@@ -50,15 +50,15 @@
   right: 1rem;
   top: 75%;
   transform: translateY(-50%);
-}
-
-.close-icon:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: var(--site-primary-color);
-}
-
-.close-icon .material-symbols {
-  font-size: 20px;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--site-primary-color);
+  }
+  
+  .material-symbols {
+    font-size: 20px;
+  }
 }
 
 //Mobile screens
