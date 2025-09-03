@@ -16,12 +16,12 @@ control where the overlay child renders on. As the result, the constructor
 
 ## Description of change
 
-The `OverlayPortal.targetsRootOverlay` was deprecated
+The `OverlayPortal.targetsRootOverlay` was deprecated.
 
 ## Migration guide
 
 If you are using `OverlayPortal.targetsRootOverlay`, you can use `OverlayPortal` with
-`overlayLocation` instead;
+`overlayLocation` instead.
 
 ### Case 1: trivial case
 
