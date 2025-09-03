@@ -273,10 +273,10 @@ function _setupDropdownMenu() {
     function _closeMenu() {
         if (closeToggleCheckbox) {
             closeToggleCheckbox.checked = true; 
-          } else {
+        } else {
             filtersEl.classList.remove('show');
-          }
-          filtersButton.ariaExpanded = 'false';
+        }
+        filtersButton.ariaExpanded = 'false';
     }
     
     function _openMenu() {
