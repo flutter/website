@@ -1,5 +1,5 @@
 ---
-title: `Deprecate `OverlayPortal.targetsRootOverlay`
+title: Deprecate `OverlayPortal.targetsRootOverlay`
 description: >-
   Learn about changes to the OverlayPortal in Flutter.
 ---
