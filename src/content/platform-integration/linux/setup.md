@@ -16,7 +16,7 @@ If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Get started with Flutter]: /get-started/install
+[Get started with Flutter]: /get-started
 [up to date]: /install/upgrade
 
 ## Set up tooling {: #set-up-tooling}
