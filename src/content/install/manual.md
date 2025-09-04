@@ -191,7 +191,7 @@ then extract the SDK to where you want it stored.
 
     ```console
     $ Expand-Archive `
-      –Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
+      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
       -Destination $env:USERPROFILE\develop\
     ```
 

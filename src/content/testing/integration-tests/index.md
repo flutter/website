@@ -621,7 +621,7 @@ Firebase Test Lab Console, consult the [iOS Device Testing instructions][].
 [ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
-[Firebase Console]: http://console.firebase.google.com/
+[Firebase Console]: https://console.firebase.google.com/
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase Test Lab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console

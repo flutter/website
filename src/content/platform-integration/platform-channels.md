@@ -613,7 +613,7 @@ a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
 ```swift title="AppDelegate.swift"
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,
