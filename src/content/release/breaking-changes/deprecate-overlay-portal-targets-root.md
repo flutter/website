@@ -12,7 +12,7 @@ replaced with `overlayLocation`.
 ## Context
 
 A parameter `overlayLocation` was added to the OverlayPortal default constructor to
-control where the overlay child renders on. As the result, the constructor
+control where the overlay child renders. As the result, the constructor
 `OverlayPortal.targetsRootOverlay` was no longer useful.
 
 ## Description of change
