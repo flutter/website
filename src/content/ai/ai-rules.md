@@ -34,6 +34,7 @@ corresponding rule file names:
 | Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
 | Cursor | `cursor.md` | [Configure cursorrules.md][] |
 | Firebase Studio | `airules.md` | [Configure airules.md][] |
+| Gemini CLI | `GEMINI.md` | [Configure gemini.md][] |
 | JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][] |
 | VS Code | `.instructions.md` | [Configure .instructions.md][] |
 | Windsurf | `guidelines.md` | [Configure guidelines.md][] |
@@ -44,6 +45,7 @@ corresponding rule file names:
 [Configure guidelines.md]: https://www.jetbrains.com/help/junie/customize-guidelines.html
 [Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
 [Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
+[Configure GEMINI.md]: https://codelabs.developers.google.com/gemini-cli-hands-on
 
 ## Create rules for your editor
 
