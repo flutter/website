@@ -1,6 +1,6 @@
 ---
 title: Architecture recommendations and resources
-short-title: Architecture recommendations
+shortTitle: Architecture recommendations
 description: >
   Recommendations for building scalable Flutter applications.
 prev:

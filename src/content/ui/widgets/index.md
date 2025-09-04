@@ -1,7 +1,7 @@
 ---
 title: Widget catalog
 description: A catalog of some of Flutter's rich set of widgets.
-short-title: Widgets
+shortTitle: Widgets
 showToc: false
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Archived release notes
-short-title: Archived release notes
+shortTitle: Archived release notes
 description: Archived release notes for Flutter for prior releases.
 ---
 

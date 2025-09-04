@@ -1,6 +1,6 @@
 ---
 title: Input widgets
-short-title: Input
+shortTitle: Input
 description: A catalog of Flutter's input widgets.
 ---
 

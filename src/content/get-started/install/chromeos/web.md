@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter web apps on ChromeOS
 description: Configure your system to develop Flutter web apps on ChromeOS.
-short-title: Web app
+shortTitle: Web app
 target: Web
 devos: ChromeOS
 next:

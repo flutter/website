@@ -1,7 +1,7 @@
 ---
 title: Build and release a web app
 description: How to prepare for and release a web app.
-short-title: Web
+shortTitle: Web
 ---
 
 During a typical development cycle,

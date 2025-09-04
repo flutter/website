@@ -1,7 +1,7 @@
 ---
 title: Staggered animations
 description: How to write a staggered animation in Flutter.
-short-title: Staggered
+shortTitle: Staggered
 ---
 
 :::secondary What you'll learn

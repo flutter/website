@@ -1,6 +1,6 @@
 ---
 title: Performance best practices
-short-title: Best practices
+shortTitle: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
