@@ -18,7 +18,7 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-<a class="filled-button" style="margin-bottom: 0.5rem;" href="/assets/files/flutter-rules-template.txt" download>
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="/assets/files/flutter-rules-template.md" download>
   <span aria-hidden="true" class="material-symbols" translate="no">download</span>
   <span>Download the Flutter and Dart rules template</span>
 </a>
@@ -51,10 +51,10 @@ You can adapt our Flutter and Dart rules template for your
 specific environment. To do so, follow these steps:
 
 1.  Download the Flutter and Dart rules template:
-    <a href="/assets/files/flutter-rules-template.txt" download>flutter-rules-template.txt</a>
+    <a href="/assets/files/flutter-rules-template.md" download>flutter-rules-template.md</a>
 
 1.  In an LLM like [Gemini][], attach the
-    `flutter-rules-template.txt` file that you downloaded in
+    `flutter-rules-template.md` file that you downloaded in
     the last step.
     
 1.  Provide a prompt to reformat the file for your desired

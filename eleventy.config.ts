@@ -86,6 +86,7 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('src/content/tools/devtools/release-notes', {
     filter: (path: string) => path.includes('src') || path.includes('images'),
   });
+  eleventyConfig.ignores.add("src/content/assets/files/**/*.md");
 
   if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.
