@@ -469,7 +469,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FlutterAppLifeCycleProvid
 
   let flutterEngine = FlutterEngine(name: "my flutter engine")
 
-  override func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     flutterEngine.run()
     return lifecycleDelegate.application(application, didFinishLaunchingWithOptions: launchOptions ?? [:])
