@@ -1,6 +1,6 @@
 ---
 title: Communicating between layers
-short-title: Dependency injection
+shortTitle: Dependency injection
 description: >-
   How to implement dependency injection to communicate between MVVM layers.
 prev:

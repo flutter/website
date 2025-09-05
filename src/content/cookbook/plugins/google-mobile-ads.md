@@ -1,6 +1,6 @@
 ---
 title: Add ads to your mobile Flutter app or game
-short-title: Show ads
+shortTitle: Show ads
 description: How to use the google_mobile_ads package to show ads in Flutter.
 ---
 

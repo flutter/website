@@ -3,7 +3,7 @@ title: Additional resources
 description: >-
   Other resources that you might find useful
   when writing adaptive apps.
-short-title: Learn
+shortTitle: Learn
 ---
 
 ## Examples

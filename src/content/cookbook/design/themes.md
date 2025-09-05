@@ -1,6 +1,6 @@
 ---
 title: Use themes to share colors and font styles
-short-title: Themes
+shortTitle: Themes
 description: How to share colors and font styles throughout an app using Themes.
 js:
   - defer: true

@@ -52,8 +52,6 @@ Future<int> _refreshExcerpts({
   bool dryRun = false,
   bool failOnUpdate = false,
 }) async {
-  final repositoryRoot = Directory.current.path;
-
   final updater = Updater(
     baseSourcePath: path.join(repositoryRoot, 'examples'),
     defaultPlasterContent: '···',

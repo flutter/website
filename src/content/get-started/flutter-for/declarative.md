@@ -1,6 +1,6 @@
 ---
 title: Introduction to declarative UI
-short-title: Declarative UI
+shortTitle: Declarative UI
 description: Explains the difference between a declarative and imperative programming style.
 ---
 

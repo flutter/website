@@ -1,6 +1,6 @@
 ---
 title: Architecture design patterns
-short-title: Design patterns
+shortTitle: Design patterns
 description: >-
   A collection of articles about useful design patterns for
   building Flutter applications.

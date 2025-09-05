@@ -1,6 +1,6 @@
 ---
 title: Change log for Flutter 1.12.13
-short-title: 1.12.13 change log
+shortTitle: 1.12.13 change log
 description: Change log for Flutter 1.12.13 containing a list of all PRs merged for this release.
 ---
 

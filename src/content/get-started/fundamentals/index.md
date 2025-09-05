@@ -1,6 +1,6 @@
 ---
 title: Learn the fundamentals
-short-title: Fundamentals
+shortTitle: Fundamentals
 description: >
   You've gotten a taste of using the Flutter framework;
   now go beyond to learn the basics of Flutter.

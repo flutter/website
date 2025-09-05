@@ -1,7 +1,7 @@
 ---
 title: Build and release an Android app
 description: How to prepare for and release an Android app to the Play store.
-short-title: Android
+shortTitle: Android
 ---
 
 To test an app, you can use `flutter run` at the command line,

@@ -1,7 +1,7 @@
 ---
 title: Build and release a Linux app to the Snap Store
 description: How to prepare for and release a Linux app to the Snap store.
-short-title: Linux
+shortTitle: Linux
 ---
 
 During a typical development cycle,

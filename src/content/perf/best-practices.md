@@ -1,6 +1,6 @@
 ---
 title: Performance best practices
-short-title: Best practices
+shortTitle: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
@@ -264,12 +264,11 @@ screen is built at startup time.
 
 For more information and examples, check out:
 
-* [Working with long lists][] in the [Cookbook][]
+* [Working with long lists][]
 * [Creating a `ListView` that loads one page at a time][]
   a community article by AbdulRahman AlHamali
 * [`Listview.builder`][] API
 
-[Cookbook]: /cookbook
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists

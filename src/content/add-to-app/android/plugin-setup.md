@@ -1,6 +1,6 @@
 ---
 title: Manage plugins and dependencies in add-to-app
-short-title: Plugin setup
+shortTitle: Plugin setup
 description: >
   Learn how to use plugins and share your 
   plugin's library dependencies with your existing app.

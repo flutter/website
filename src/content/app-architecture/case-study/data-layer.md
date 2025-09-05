@@ -1,6 +1,6 @@
 ---
 title: Data layer
-short-title: Data layer
+shortTitle: Data layer
 description: >-
   A walk-through of the data layer of an app that implements MVVM architecture.
 prev:

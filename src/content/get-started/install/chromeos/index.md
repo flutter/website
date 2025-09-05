@@ -1,7 +1,7 @@
 ---
 title: Choose your first type of app
 description: Configure your system to develop Flutter on ChromeOS.
-short-title: ChromeOS
+shortTitle: ChromeOS
 target-list: [Android, Web]
 js: [{url: '/assets/js/temp/chromeos-install-redirector.js'}]
 ---

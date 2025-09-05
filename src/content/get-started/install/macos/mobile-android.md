@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter Android apps on macOS
 description: Configure your system to develop Flutter mobile apps on macOS and Android.
-short-title: Make Android apps
+shortTitle: Make Android apps
 target: Android
 devos: macOS
 next:

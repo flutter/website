@@ -1,6 +1,6 @@
 ---
 title: Install Flutter
-short-title: Install
+shortTitle: Install
 description: Learn how to install and set up Flutter.
 ---
 

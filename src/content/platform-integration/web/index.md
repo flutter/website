@@ -1,6 +1,6 @@
 ---
 title: Web support for Flutter
-short-title: Web
+shortTitle: Web
 description: Details of how Flutter supports the creation of web experiences.
 ---
 

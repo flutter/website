@@ -2,7 +2,7 @@
 title: Mock dependencies using Mockito
 description: >
   Use the Mockito package to mimic the behavior of services for testing.
-short-title: Mocking
+shortTitle: Mocking
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>

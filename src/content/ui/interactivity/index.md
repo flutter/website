@@ -1,7 +1,7 @@
 ---
 title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
-short-title: Interactivity
+shortTitle: Interactivity
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
@@ -694,7 +694,7 @@ If you prefer, you can use [`GestureDetector`][] to build
 interactivity into any custom widget.
 You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
-in [Handle taps][], a recipe in the [Flutter cookbook][].
+in [Handle taps][], a recipe in the Flutter cookbook.
 
 :::tip
 Flutter also provides a set of iOS-style widgets called
@@ -727,7 +727,7 @@ the prefabricated widgets. Here's a partial list:
 The following resources might help when adding interactivity
 to your app.
 
-[Gestures][], a section in the [Flutter cookbook][].
+[Gestures][], a section in the Flutter cookbook.
 
 [Handling gestures][]
 : How to create a button and make it respond to input.
@@ -754,7 +754,6 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: /cookbook
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html

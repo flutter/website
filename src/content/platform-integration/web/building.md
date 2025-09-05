@@ -1,7 +1,7 @@
 ---
 title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
-short-title: Web development
+shortTitle: Web development
 ---
 
 This page provides an overview of how to configure, run, and build a web

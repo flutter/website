@@ -1,6 +1,6 @@
 ---
 title: Contribute to Flutter
-short-title: Contribute
+shortTitle: Contribute
 description: >-
   Learn about contributing to the Flutter project and its surrounding ecosystem.
 showBreadcrumbs: false

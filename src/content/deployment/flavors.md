@@ -1,6 +1,6 @@
 ---
 title: Set up Flutter flavors for Android
-short-title: Flavors (Android)
+shortTitle: Flavors (Android)
 description: >
   How to create build flavors specific to different
   release types or development environments.

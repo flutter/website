@@ -1,6 +1,6 @@
 ---
 title: UI layer case study
-short-title: UI layer
+shortTitle: UI layer
 description: >-
   A walk-through of the UI layer of an app that implements MVVM architecture.
 prev:

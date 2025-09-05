@@ -1,6 +1,6 @@
 ---
 title: Set up and test drive Flutter
-short-title: Set up & test drive
+shortTitle: Set up & test drive
 description: >-
   Set up Flutter on your device with VS Code and
   get started developing your first multi-platform app with Flutter!

@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter native desktop apps on Linux
 description: Configure your system to develop Flutter desktop apps on Linux.
-short-title: Make Linux desktop apps
+shortTitle: Make Linux desktop apps
 target: desktop
 devos: Linux
 next:

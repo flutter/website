@@ -1,6 +1,6 @@
 ---
 title: Flutter editor support
-short-title: Editors
+shortTitle: Editors
 description: >-
   Editor support for Dart and Flutter.
 showToc: false

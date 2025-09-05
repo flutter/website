@@ -1,7 +1,7 @@
 ---
 title: Build and release a macOS app
 description: How to release a Flutter app to the macOS App Store.
-short-title: macOS
+shortTitle: macOS
 ---
 
 This guide provides a step-by-step walkthrough of releasing a

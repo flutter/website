@@ -1,6 +1,6 @@
 ---
 title: Display images on the web
-short-title: Web images
+shortTitle: Web images
 description: Learn how to load and display images on the web.
 ---
 

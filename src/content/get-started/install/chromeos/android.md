@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter Android apps on ChromeOS
 description: Configure your system to develop Flutter mobile apps on ChromeOS and Android.
-short-title: ChromeOS Android development
+shortTitle: ChromeOS Android development
 target: Android
 devos: ChromeOS
 next:

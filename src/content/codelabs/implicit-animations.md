@@ -417,13 +417,13 @@ To learn more, check out these suggestions:
 - Try the [animations tutorial][].
 - Learn about [hero animations][] and [staggered animations][].
 - Checkout the [animation library][].
-- Try another [codelab][].
+- Explore other [Flutter learning resources][].
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: /ui/animations/tutorial
-[codelab]: /codelabs
+[Flutter learning resources]: /reference/learning-resources
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html

@@ -3,9 +3,24 @@
 // found in the LICENSE file.
 
 import 'dart:io';
+import 'dart:isolate';
 
 import 'package:args/args.dart';
 import 'package:path/path.dart' as path;
+
+/// The root path of the website repository.
+String get repositoryRoot {
+  final packageConfigPath = path.fromUri(Isolate.packageConfigSync);
+  final maybeRoot = path.dirname(path.dirname(packageConfigPath));
+  if (!File(path.join(maybeRoot, 'dash_site')).existsSync()) {
+    throw StateError('Try calling dash_site from the root directory.');
+  }
+
+  return maybeRoot;
+}
+
+/// The path of the site output directory.
+final String siteOutputDirectoryPath = path.join(repositoryRoot, '_site');
 
 final bool _runningInCi = Platform.environment['CI'] == 'true';
 

@@ -1,6 +1,6 @@
 ---
 title: Hosting native macOS views in your Flutter app with Platform Views
-short-title: macOS platform-views
+shortTitle: macOS platform-views
 description: Learn how to host native macOS views in your Flutter app with Platform Views.
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Text widgets
-short-title: Text
+shortTitle: Text
 description: A catalog of Flutter's widgets for displaying and styling text.
 ---
 

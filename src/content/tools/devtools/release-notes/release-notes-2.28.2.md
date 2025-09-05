@@ -1,5 +1,5 @@
 ---
-short-title: 2.28.2 release notes
+shortTitle: 2.28.2 release notes
 description: Release notes for Dart and Flutter DevTools version 2.28.2.
 showToc: false
 ---

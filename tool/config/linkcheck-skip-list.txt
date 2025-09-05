@@ -46,6 +46,8 @@ fonts.googleapis.com
 
 # All redirects via firebase.json, which will be picked up via Firebase emulator
 /go/.*?
+/to/.*?
+/resources/design-docs
 
 # FIXME Not sure here, "connection failed" on every go
 /tools/devtools/vscode

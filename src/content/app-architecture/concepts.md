@@ -1,6 +1,6 @@
 ---
 title: Common architecture concepts
-short-title: Architecture concepts
+shortTitle: Architecture concepts
 description: >
   Learn about common architecture concepts in application design,
   and how they apply to Flutter.

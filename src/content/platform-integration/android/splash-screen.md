@@ -1,6 +1,6 @@
 ---
 title: Adding a splash screen to your Android app
-short-title: Splash screen
+shortTitle: Splash screen
 description: Learn how to add a splash screen to your Android app.
 ---
 

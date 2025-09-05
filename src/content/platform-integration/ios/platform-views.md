@@ -1,6 +1,6 @@
 ---
 title: Host native iOS views in your Flutter app with platform views
-short-title: iOS platform views
+shortTitle: iOS platform views
 description: >-
   Learn how to host native iOS views in your Flutter app with platform views.
 ---

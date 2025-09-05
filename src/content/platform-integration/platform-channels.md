@@ -1,6 +1,6 @@
 ---
 title: Writing custom platform-specific code
-short-title: Platform-specific code
+shortTitle: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 
@@ -613,7 +613,7 @@ a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
 ```swift title="AppDelegate.swift"
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,

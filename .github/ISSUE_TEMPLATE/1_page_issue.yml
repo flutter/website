@@ -7,7 +7,7 @@ body:
       value: |
           Found a typo? You can fix it yourself!
 
-          1. Click the page icon to the left of the bug icon you clicked
+          1. Click the _View source_ link to the left of the _report an issue_ link you clicked
              to come to this form. The GitHub page source should display.
           1. Click the pencil icon displayed above the source code.
           1. Fix the typo.

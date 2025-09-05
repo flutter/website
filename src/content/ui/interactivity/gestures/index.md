@@ -1,6 +1,6 @@
 ---
 title: Taps, drags, and other gestures
-short-title: Gestures
+shortTitle: Gestures
 description: How gestures, such as taps and drags, work in Flutter.
 ---
 

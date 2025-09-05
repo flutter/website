@@ -1,6 +1,6 @@
 ---
 title: Scrolling widgets
-short-title: Scrolling
+shortTitle: Scrolling
 description: A catalog of Flutter's widgets that enable or support scrolling.
 ---
 

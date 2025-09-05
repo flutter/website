@@ -1,6 +1,6 @@
 ---
 title: Docs command-line tool
-short-title: Tool
+shortTitle: Tool
 description: >-
   Learn about the dash_site CLI tool that is used to
   develop, test, and serve the Dart and Flutter documentation sites.

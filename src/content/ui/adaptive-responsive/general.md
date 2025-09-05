@@ -2,7 +2,7 @@
 title: General approach to adaptive apps
 description: >-
   General advice on how to approach making your Flutter app adaptive.
-short-title: General approach
+shortTitle: General approach
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>

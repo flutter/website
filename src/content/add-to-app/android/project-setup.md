@@ -1,6 +1,6 @@
 ---
 title: Integrate a Flutter module into your Android project
-short-title: Integrate Flutter
+shortTitle: Integrate Flutter
 description: Learn how to integrate a Flutter module into your existing Android project.
 ---
 

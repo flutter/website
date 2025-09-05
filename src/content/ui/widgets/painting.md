@@ -1,6 +1,6 @@
 ---
 title: Painting and effect widgets
-short-title: Painting
+shortTitle: Painting
 description: >
   A catalog of Flutter's widgets that provide effects and custom painting.
 ---

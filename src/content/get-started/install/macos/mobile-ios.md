@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter iOS apps on macOS
 description: Configure your system to develop Flutter mobile apps on macOS and iOS.
-short-title: Make iOS apps
+shortTitle: Make iOS apps
 target: iOS
 devos: macOS
 next:

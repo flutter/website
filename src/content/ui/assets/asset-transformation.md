@@ -1,7 +1,7 @@
 ---
 title: Transforming assets at build time
 description: How to set up automatic transformation of images (and other assets) in your Flutter app.
-short-title: Asset transformation
+shortTitle: Asset transformation
 ---
 
 You can configure your project to automatically transform assets

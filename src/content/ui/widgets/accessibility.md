@@ -1,6 +1,6 @@
 ---
 title: Accessibility widgets
-short-title: Accessibility
+shortTitle: Accessibility
 description: A catalog of Flutter's accessibility widgets.
 ---
 

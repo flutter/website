@@ -1,6 +1,6 @@
 ---
 title: Embedding web content into a Flutter web app
-short-title: Web content in Flutter
+shortTitle: Web content in Flutter
 description: Learn how to load and display images on the web.
 ---
 

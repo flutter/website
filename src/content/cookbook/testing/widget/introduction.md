@@ -1,7 +1,7 @@
 ---
 title: An introduction to widget testing
 description: Learn more about widget testing in Flutter.
-short-title: Introduction
+shortTitle: Introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/introduction/"?>

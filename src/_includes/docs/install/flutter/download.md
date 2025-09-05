@@ -16,7 +16,7 @@
    {% assign ps-dir-target='$env:USERPROFILE\\dev\\' %}
    {% capture uz -%}
      {{prompt}} Expand-Archive `
-         –Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
+         -Path {{ps-dir-dl}}flutter_sdk_v1.0.0.zip `
          -Destination {{ps-dir-target}}
    {%- endcapture %}
 {% when "macOS" -%}

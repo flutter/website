@@ -1,6 +1,6 @@
 ---
 title: Handling releases
-short-title: Releases
+shortTitle: Releases
 description: >-
   Learn how to prepare for and handle new releases of
   Dart and Flutter on the documentation sites.

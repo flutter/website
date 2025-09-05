@@ -3,7 +3,7 @@ title: Platform idioms
 description: >-
   Learn how to create a responsive app
   that responds to changes in the screen size. 
-short-title: Idioms
+shortTitle: Idioms
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>

@@ -1,6 +1,6 @@
 ---
 title: Install Flutter manually
-short-title: Install manually
+shortTitle: Install manually
 breadcrumb: Manually
 description: >-
   Learn how to install and set up the Flutter SDK manually.

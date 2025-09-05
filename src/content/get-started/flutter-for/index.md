@@ -1,6 +1,6 @@
 ---
 title: Learn Flutter when coming from another platform
-short-title: Flutter for
+shortTitle: Flutter for
 sitemap: false
 description: >-
   Utilize your background developing for another platform

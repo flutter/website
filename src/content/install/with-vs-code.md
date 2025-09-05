@@ -1,6 +1,6 @@
 ---
 title: Install Flutter using VS Code
-short-title: Install with VS Code
+shortTitle: Install with VS Code
 breadcrumb: With VS Code
 description: >-
   Learn how to use VS Code to quickly install and set up the Flutter SDK.

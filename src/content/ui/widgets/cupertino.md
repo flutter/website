@@ -1,6 +1,6 @@
 ---
 title: Cupertino widgets
-short-title: Cupertino
+shortTitle: Cupertino
 description: >
   A catalog of Flutter's cupertino widgets that align with
   Apple's Human Interface Guidelines for iOS and macOS.

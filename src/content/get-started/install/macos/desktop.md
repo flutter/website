@@ -1,7 +1,7 @@
 ---
 title: Start building Flutter native desktop apps on macOS
 description: Configure your system to develop Flutter desktop apps on macOS.
-short-title: Make macOS desktop apps
+shortTitle: Make macOS desktop apps
 target: desktop
 devos: macOS
 next:

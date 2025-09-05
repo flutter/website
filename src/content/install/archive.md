@@ -1,6 +1,6 @@
 ---
 title: Flutter SDK archive
-short-title: Archive
+shortTitle: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
 ---
 
