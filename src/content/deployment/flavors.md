@@ -143,7 +143,7 @@ the following steps:
 1.  Start an Android emulator or connect a physical device
     with developer options enabled.
 
-1.  In the console,navigate to the `flavors_example`
+1.  In the console, navigate to the `flavors_example`
     directory and enter the following command:
 
     ```console title="console"
@@ -153,6 +153,8 @@ the following steps:
     - `run`: Runs the app in debug mode.  
     - `build`: Builds either an APK or an appbundle.  
       - `<subcommand>`: Either `apk` or `appbundle`.  
+      - `<flavor_name>`: Replace this with the name of your Android product flavor (for example: `staging`, `production`).
+
 
     Example:
     ```console title="console"
