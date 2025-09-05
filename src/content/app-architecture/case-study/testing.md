@@ -1,6 +1,6 @@
 ---
 title: Testing each layer
-short-title: Testing
+shortTitle: Testing
 description: >-
   How to test an app that implements MVVM architecture.
 prev:

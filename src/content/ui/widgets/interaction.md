@@ -1,6 +1,6 @@
 ---
 title: Interaction model widgets
-short-title: Interaction
+shortTitle: Interaction
 description: > 
   A catalog of Flutter's widgets supporting user interaction and navigation.
 ---

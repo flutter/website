@@ -1,6 +1,6 @@
 ---
 title: Guide to app architecture
-short-title: Architecture guide
+shortTitle: Architecture guide
 description: >
   The recommended way to architect a Flutter app.
 prev:

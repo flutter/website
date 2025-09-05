@@ -1,6 +1,6 @@
 ---
 title: Add a Flutter screen to an iOS app
-short-title: Add a Flutter screen
+shortTitle: Add a Flutter screen
 description: Learn how to add a single Flutter screen to your existing iOS app.
 ---
 

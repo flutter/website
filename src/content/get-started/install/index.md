@@ -1,6 +1,6 @@
 ---
 title: Choose your development platform to get started
-short-title: Install
+shortTitle: Install
 description: >-
   Install Flutter and get started developing!
   Downloads available for Windows, macOS, Linux, and ChromeOS operating systems.

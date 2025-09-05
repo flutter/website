@@ -1,6 +1,6 @@
 ---
 title: Basic widgets
-short-title: Basics
+shortTitle: Basics
 description: A catalog of Flutter's basic widgets.
 ---
 

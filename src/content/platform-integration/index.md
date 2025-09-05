@@ -1,6 +1,6 @@
 ---
 title: Build for and integrate with multiple platforms
-short-title: Platform integration
+shortTitle: Platform integration
 description: >-
   Learn how to develop for different platforms and
   integrate with platform-specific features in Flutter apps.

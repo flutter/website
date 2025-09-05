@@ -1,6 +1,6 @@
 ---
 title: Use a native language debugger
-short-title: debuggers
+shortTitle: debuggers
 description: How to connect a native debugger to your running Flutter app.
 ---
 

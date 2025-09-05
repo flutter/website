@@ -1,6 +1,6 @@
 ---
 title: Flutter SDK overview
-short-title: Flutter SDK
+shortTitle: Flutter SDK
 description: Flutter libraries and command-line tools.
 ---
 

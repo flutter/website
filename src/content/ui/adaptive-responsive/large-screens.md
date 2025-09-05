@@ -3,7 +3,7 @@ title: Large screen devices
 description: >-
   Things to keep in mind when adapting apps
   to large screens.
-short-title: Large screens
+shortTitle: Large screens
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>

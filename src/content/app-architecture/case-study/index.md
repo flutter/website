@@ -1,6 +1,6 @@
 ---
 title: Architecture case study
-short-title: Architecture case study
+shortTitle: Architecture case study
 description: >-
   A walk-through of a Flutter app that implements the MVVM architectural pattern.
 prev:

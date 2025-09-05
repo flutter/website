@@ -61,7 +61,7 @@ to customize page generation.
 
 ### `description`
 
-### `short-title`
+### `shortTitle`
 
 ### `js`
 

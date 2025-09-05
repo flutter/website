@@ -1,6 +1,6 @@
 ---
 title: Architecting Flutter apps
-short-title: Architecture
+shortTitle: Architecture
 description: >
   Learn how to structure Flutter apps.
 showToc: false

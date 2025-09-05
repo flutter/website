@@ -1,6 +1,6 @@
 ---
 title: Introduction to animations
-short-title: Animations
+shortTitle: Animations
 description: How to perform animations in Flutter.
 ---
 

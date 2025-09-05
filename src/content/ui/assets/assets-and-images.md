@@ -1,7 +1,7 @@
 ---
 title: Adding assets and images
 description: How to use images (and other assets) in your Flutter app.
-short-title: Assets and images
+shortTitle: Assets and images
 ---
 
 <?code-excerpt path-base="ui/assets_and_images/lib"?>
