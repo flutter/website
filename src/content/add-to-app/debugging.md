@@ -1,6 +1,6 @@
 ---
 title: Debug your add-to-app module
-short-title: Debugging
+shortTitle: Debugging
 description: How to run, debug, and hot reload your add-to-app Flutter module.
 ---
 

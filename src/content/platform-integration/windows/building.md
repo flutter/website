@@ -1,7 +1,7 @@
 ---
 title: Building Windows apps with Flutter
 description: Platform-specific considerations for building for Windows with Flutter.
-short-title: Windows development
+shortTitle: Windows development
 ---
 
 This page discusses considerations unique to building

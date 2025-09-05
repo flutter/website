@@ -1,7 +1,7 @@
 ---
 title: Build and release an iOS app
 description: How to release a Flutter app to the App Store.
-short-title: iOS
+shortTitle: iOS
 ---
 
 This guide provides a step-by-step walkthrough of releasing a

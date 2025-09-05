@@ -1,6 +1,6 @@
 ---
 title: Add Flutter to your PATH
-short-title: Add to PATH
+shortTitle: Add to PATH
 description: >-
   Learn how to add Flutter to your PATH after downloading the Flutter SDK.
 ---

@@ -1,6 +1,6 @@
 ---
 title: Animation and motion widgets
-short-title: Animation
+shortTitle: Animation
 description: A catalog of Flutter's animation widgets.
 ---
 

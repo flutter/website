@@ -1,7 +1,7 @@
 ---
 title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
-short-title: Interactivity
+shortTitle: Interactivity
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}

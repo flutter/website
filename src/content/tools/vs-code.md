@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code
-short-title: VS Code
+shortTitle: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
 ---
 

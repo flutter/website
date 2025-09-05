@@ -1,6 +1,6 @@
 ---
 title: Launching a Jetpack Compose activity from your Flutter application
-short-title: Native Android activities
+shortTitle: Native Android activities
 description: >-
   Learn how to launch native Android activities in your Flutter app.
 ---

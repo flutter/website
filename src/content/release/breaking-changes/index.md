@@ -1,6 +1,6 @@
 ---
 title: Breaking changes and migration guides
-short-title: Breaking changes
+shortTitle: Breaking changes
 description: >-
    A collection of notices and migration guides for breaking changes in Flutter.
 ---
@@ -42,6 +42,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
@@ -49,6 +50,7 @@ They're sorted by release and listed in alphabetical order:
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [SnackBar with action no longer auto-dismisses][]
 
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
