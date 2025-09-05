@@ -143,37 +143,27 @@ the following steps:
 1.  Start an Android emulator or connect a physical device
     with developer options enabled.
 
-1.  In the console, navigate to the `flavors_example`
-    directory and use the appropriate command.
+1.  In the console,navigate to the `flavors_example`
+    directory and enter the following command:
 
-    - **To run the app in debug mode on a specific flavor:**
-      ```console title="console"
-      $ flutter run --flavor <flavor_name>
-      ```
-      Example:
-      ```console title="console"
-      $ flutter run --flavor staging
-      ```
+    ```console title="console"
+    $ flutter (run | build <subcommand>) --flavor <flavor_name>
+    ```
+- `(run | build <subcommand>)`: Replace this with one of the following:
+    - `run`: Runs the app in debug mode.  
+    - `build`: Builds either an APK or an appbundle.  
+      - `<subcommand>`: Either `apk` or `appbundle`.  
 
-    - **To build a release version for a specific flavor:**
-      ```console title="console"
-      $ flutter build --flavor <flavor_name> --target <path_to_main.dart_file>
-      ```
-      Example (assuming your `staging` flavor has a `main_staging.dart` entry point):
-      ```console title="console"
-      $ flutter build apk --release --flavor staging -t lib/main_staging.dart
-      ```
-      or to build an app bundle:
-      ```console title="console"
-      $ flutter build appbundle --release --flavor staging -t lib/main_staging.dart
-      ```
-
-      The `--target` flag is used to specify the entry point file for the flavor.
+    Example:
+    ```console title="console"
+    $ flutter build apk --flavor staging
+    ```
 
 ## Customize configurations
 
 After you've added product flavors, you can customize them
 for your Android app.
+
 
 ### Create a distinct app display name
 
