@@ -10,7 +10,7 @@
 }
 
 .filter-header {
-  display: none; 
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -30,28 +30,28 @@
   right: 1rem;
   top: 75%;
   transform: translateY(-50%);
-  
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
     color: var(--site-primary-color);
   }
-  
+
   .material-symbols {
     font-size: 20px;
   }
 }
 
-//Mobile screens
+// Mobile screen customizations.
 @media (max-width: 839px) {
   .filter-header {
-    display: block; 
+    display: block;
   }
 
   #resource-filter-group-wrapper {
     position: fixed;
     top: var(--site-header-height);
     bottom: 0;
-    right: -220px;            
+    right: -220px;
     width: 220px;
     border-bottom: none;
     height: 100%;
@@ -60,8 +60,8 @@
     z-index: 1000;
   }
 
-  #close-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220; }
-  #close-filter-toggle:checked + #resource-filter-group-wrapper { right: 0px; }
+  #close-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220px; }
+  #close-filter-toggle:checked + #resource-filter-group-wrapper { right: 0; }
 }
 
 //Desktop screens 

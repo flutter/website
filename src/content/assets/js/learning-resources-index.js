@@ -278,30 +278,30 @@ function _setupDropdownMenu() {
         }
         filtersButton.ariaExpanded = 'false';
     }
-    
+
     function _openMenu() {
         if (closeToggleCheckbox) {
-          closeToggleCheckbox.checked = false; 
+            closeToggleCheckbox.checked = false;
         } else {
-          filtersEl.classList.add('show');
+            filtersEl.classList.add('show');
         }
         filtersButton.ariaExpanded = 'true';
-      }
+    }
 
-      function _isMenuOpen() {
+    function _isMenuOpen() {
         if (closeToggleCheckbox) {
-          return !closeToggleCheckbox.checked;
+            return !closeToggleCheckbox.checked;
         } else {
-          return filtersEl.classList.contains('show');
+            return filtersEl.classList.contains('show');
         }
-      }
+    }
 
     filtersButton.addEventListener('click', (_) => {
         if (_isMenuOpen()) {
             _closeMenu();
-          } else {
+        } else {
             _openMenu();
-          }
+        }
     });
 
     document.addEventListener('keydown', (event) => {
@@ -314,9 +314,9 @@ function _setupDropdownMenu() {
     const content = document.getElementById('all-resources-grid');
     if (content) {
         content.addEventListener('click', () => {
-          if (_isMenuOpen()) {
-            _closeMenu();
-          }
+            if (_isMenuOpen()) {
+                _closeMenu();
+            }
         });
     }
 }
