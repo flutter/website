@@ -382,6 +382,7 @@ function setUpCodeBlockButtons() {
       innerIcon.textContent = 'content_copy';
       innerIcon.ariaHidden = 'true';
       innerIcon.classList.add('material-symbols');
+      innerIcon.setAttribute('translate', 'no');
 
       copyButton.addEventListener('click', async (e) => {
         const codeBlockBody = e.currentTarget.parentElement;

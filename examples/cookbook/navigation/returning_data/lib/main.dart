@@ -42,7 +42,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
 
     // When a BuildContext is used from a StatefulWidget, the mounted property

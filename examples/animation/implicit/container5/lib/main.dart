@@ -64,10 +64,7 @@ class _AnimatedContainerDemoState extends State<AnimatedContainerDemo> {
                 duration: const Duration(milliseconds: 400),
               ),
             ),
-            ElevatedButton(
-              child: const Text('Change'),
-              onPressed: () => change(),
-            ),
+            ElevatedButton(onPressed: change, child: const Text('Change')),
           ],
         ),
       ),

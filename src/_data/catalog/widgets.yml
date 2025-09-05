@@ -280,17 +280,6 @@
   link: https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html
   image:
     src: /assets/images/docs/widget-catalog/material-bottom-navigation-bar.png
-- name: BottomSheet
-  description: >-
-    Bottom sheets slide up from the bottom of the screen to reveal more content.
-    You can call showBottomSheet() to implement a persistent bottom sheet or
-    showModalBottomSheet() to implement a modal bottom sheet.
-  categories: []
-  subcategories:
-    - 'Dialogs, alerts, and panels'
-  link: https://api.flutter.dev/flutter/material/BottomSheet-class.html
-  image:
-    src: /assets/images/docs/widget-catalog/material-bottom-sheets.png
 - name: Card
   description: >-
     Container for short, related pieces of content displayed in a box with

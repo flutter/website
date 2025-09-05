@@ -80,6 +80,23 @@ an existing project.
     *   Drag **Embed Foundation Extensions** above
         **Run Script**.
 
+
+1.  Make sure your **Minimum Deployments** iOS value is properly
+    set and matches in both **Runner** and **ShareExtension**
+
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+    
+    *   In the **project navigator**, at the top, select
+        **Runner**.
+
+    *   In the main window under **TARGETS**, select
+        **Runner**.
+
+    *   On the **General** tab check your **Minimum Deployments**
+        dropdown value to match the one you have on
+        **ShareExtension** > **General** tab.
+
 1.  In the console, run the following command to rebuild your
     iOS app:
 
