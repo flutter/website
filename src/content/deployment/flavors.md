@@ -147,28 +147,25 @@ the following steps:
     directory and enter the following command:
 
     ```console title="console"
-    $ flutter (run | build) --flavor <flavor_name>
+    $ flutter (run | build <subcommand>) --flavor <flavor_name>
     ```
+- `(run | build <subcommand>)`: Replace this with one of the following:
+    - `run`: Runs the app in debug mode.  
+    - `build`: Builds either an APK or an appbundle.  
+      - `<subcommand>`: Either `apk` or `appbundle`.  
+      - `<flavor_name>`: Replace this with the name of your Android product flavor (for example: `staging`, `production`).
 
-    * `(run |  build)`: Replace this with one of the
-      following:
-      * `run`: Run the app in debug mode.
-      * `build`: Run the app in production mode.
-
-    * `<flavor_name>`: Replace this with the name of your
-      Android product flavor (for example, `staging` or
-      `production`).
 
     Example:
-
     ```console title="console"
-    $ flutter run --flavor staging
+    $ flutter build apk --flavor staging
     ```
 
 ## Customize configurations
 
 After you've added product flavors, you can customize them
 for your Android app.
+
 
 ### Create a distinct app display name
 
@@ -224,7 +221,7 @@ names for two product flavors called `staging` and
       `@string/app_name`.
 
       ```xml title="AndroidManifest.xml"
-      <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+      <manifest xmlns:android="[http://schemas.android.com/apk/res/android](http://schemas.android.com/apk/res/android)">
           <application
             android:label="@string/app_name"
             ...
