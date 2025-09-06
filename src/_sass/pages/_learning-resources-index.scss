@@ -1,5 +1,81 @@
 @use '../base/mixins';
 
+#resource-filter-group-wrapper {
+  border: 1px solid var(--site-inset-borderColor);
+  background-color: var(--site-inset-bgColor);
+  border-radius: var(--site-radius);
+  overflow: hidden;
+  position: sticky;
+  top: calc(var(--site-header-height) + 1rem);
+}
+
+.filter-header {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1rem;
+  z-index: 10;
+}
+
+.close-icon {
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  color: var(--site-base-fgColor-alt);
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1rem;
+  top: 75%;
+  transform: translateY(-50%);
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--site-primary-color);
+  }
+
+  .material-symbols {
+    font-size: 20px;
+  }
+}
+
+// Mobile screen customizations.
+@media (max-width: 839px) {
+  .filter-header {
+    display: block;
+  }
+
+  #resource-filter-group-wrapper {
+    position: fixed;
+    top: var(--site-header-height);
+    bottom: 0;
+    right: -220px;
+    width: 220px;
+    border-bottom: none;
+    height: 100%;
+    border-radius: 0;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  #open-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220px; }
+  #open-filter-toggle:checked + #resource-filter-group-wrapper { right: 0; }
+}
+
+//Desktop screens 
+@media (min-width: 840px) {
+  #resource-filter-group {
+    position: static !important;
+    right: auto !important;
+  }
+
+  .filter-header {
+    display: none !important; 
+  }
+}
+
 #resource-index-content {
   display: flex;
   flex-direction: row;
@@ -43,13 +119,6 @@
 }
 
 #resource-filter-group {
-  border: 1px solid var(--site-inset-borderColor);
-  background-color: var(--site-inset-bgColor);
-  border-radius: var(--site-radius);
-  overflow: hidden;
-  position: sticky;
-  top: calc(var(--site-header-height) + 1rem);
-
   .table-title {
     text-align: center;
     color: var(--site-base-fgColor-alt);
