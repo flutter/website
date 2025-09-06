@@ -266,13 +266,13 @@ function _setupDropdownMenu() {
 
     const filtersButton = pageContent.querySelector('.show-filters-button');
     const filtersEl = document.getElementById('resource-filter-group-wrapper') || pageContent.querySelector('.right-col');
-    const closeToggleCheckbox = document.getElementById('close-filter-toggle');
+    const openToggleCheckbox = document.getElementById('open-filter-toggle');
 
     if (!filtersButton || !filtersEl) return;
 
     function _closeMenu() {
-        if (closeToggleCheckbox) {
-            closeToggleCheckbox.checked = true; 
+        if (openToggleCheckbox) {
+            openToggleCheckbox.checked = false;
         } else {
             filtersEl.classList.remove('show');
         }
@@ -280,8 +280,8 @@ function _setupDropdownMenu() {
     }
 
     function _openMenu() {
-        if (closeToggleCheckbox) {
-            closeToggleCheckbox.checked = false;
+        if (openToggleCheckbox) {
+            openToggleCheckbox.checked = true;
         } else {
             filtersEl.classList.add('show');
         }
@@ -289,8 +289,8 @@ function _setupDropdownMenu() {
     }
 
     function _isMenuOpen() {
-        if (closeToggleCheckbox) {
-            return !closeToggleCheckbox.checked;
+        if (openToggleCheckbox) {
+            return openToggleCheckbox.checked;
         } else {
             return filtersEl.classList.contains('show');
         }

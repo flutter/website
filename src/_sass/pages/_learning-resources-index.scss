@@ -60,8 +60,8 @@
     z-index: 1000;
   }
 
-  #close-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220px; }
-  #close-filter-toggle:checked + #resource-filter-group-wrapper { right: 0; }
+  #open-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220px; }
+  #open-filter-toggle:checked + #resource-filter-group-wrapper { right: 0; }
 }
 
 //Desktop screens 
