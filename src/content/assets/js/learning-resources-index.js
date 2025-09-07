@@ -265,20 +265,42 @@ function _setupDropdownMenu() {
     if (!pageContent) return;
 
     const filtersButton = pageContent.querySelector('.show-filters-button');
-    const filtersEl = pageContent.querySelector('.right-col');
+    const filtersEl = document.getElementById('resource-filter-group-wrapper') || pageContent.querySelector('.right-col');
+    const openToggleCheckbox = document.getElementById('open-filter-toggle');
+
     if (!filtersButton || !filtersEl) return;
 
     function _closeMenu() {
-        filtersEl.classList.remove('show');
+        if (openToggleCheckbox) {
+            openToggleCheckbox.checked = false;
+        } else {
+            filtersEl.classList.remove('show');
+        }
         filtersButton.ariaExpanded = 'false';
     }
 
-    filtersButton.addEventListener('click', (_) => {
-        if (filtersEl.classList.contains('show')) {
-            _closeMenu();
+    function _openMenu() {
+        if (openToggleCheckbox) {
+            openToggleCheckbox.checked = true;
         } else {
             filtersEl.classList.add('show');
-            filtersButton.ariaExpanded = 'true';
+        }
+        filtersButton.ariaExpanded = 'true';
+    }
+
+    function _isMenuOpen() {
+        if (openToggleCheckbox) {
+            return openToggleCheckbox.checked;
+        } else {
+            return filtersEl.classList.contains('show');
+        }
+    }
+
+    filtersButton.addEventListener('click', (_) => {
+        if (_isMenuOpen()) {
+            _closeMenu();
+        } else {
+            _openMenu();
         }
     });
 
@@ -290,12 +312,13 @@ function _setupDropdownMenu() {
 
     // Close the dropdown if anywhere not in the filters menu is.
     const content = document.getElementById('all-resources-grid');
-    content.addEventListener('click', (_) => {
-        if (!filtersEl.classList.contains('show')) {
-            return;
-        }
-        _closeMenu();
-    });
+    if (content) {
+        content.addEventListener('click', () => {
+            if (_isMenuOpen()) {
+                _closeMenu();
+            }
+        });
+    }
 }
 
 function shuffleElements(container) {
