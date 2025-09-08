@@ -229,9 +229,10 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai-toolkit/chat-client-sample
-    - divider
     - title: Dart & Flutter MCP server
       permalink: https://dart.dev/tools/mcp-server
+    - title: GenUI SDK for Flutter
+      permalink: https://github.com/flutter/genui
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
