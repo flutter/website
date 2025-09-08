@@ -475,7 +475,7 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
                     child: TextField(
                       controller: controller,
                       focusNode: focusNode,
-                    )
+                    ),
                   ),
                   IconButton(
                     icon: const Icon(Icons.copy),
