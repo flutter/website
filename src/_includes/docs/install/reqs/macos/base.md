@@ -14,7 +14,7 @@ install the following packages.
 
 ### Operating system
 
-Flutter supports developing on macOS 12 (Monterey) or later.
+Flutter supports developing on macOS 13 (Ventura) or later.
 This guide presumes your Mac runs the `zsh` as your [default shell][zsh-mac].
 
 Some Flutter components require the
