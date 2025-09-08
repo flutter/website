@@ -232,7 +232,6 @@
     - divider
     - title: Dart & Flutter MCP server
       permalink: https://dart.dev/tools/mcp-server
-    - divider
     - title: GenUI SDK for Flutter
       permalink: https://github.com/flutter/genui
     - title: Firebase AI Logic
