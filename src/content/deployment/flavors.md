@@ -162,7 +162,7 @@ the following steps:
     Example:
 
     ```console title="console"
-    $ flutter build apk --flavor staging
+    $ flutter run apk --flavor staging
     ```
 
 ## Customize configurations
