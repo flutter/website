@@ -1,6 +1,6 @@
 ---
 title: Adding Flutter to any web application
-short-title: Add Flutter to any web app
+shortTitle: Add Flutter to any web app
 description: Learn the different ways to embed Flutter views into web content.
 ---
 

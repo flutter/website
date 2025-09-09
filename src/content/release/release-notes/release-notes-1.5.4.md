@@ -1,6 +1,6 @@
 ---
 title: Flutter 1.5.4 release notes
-short-title: 1.5.4 release notes
+shortTitle: 1.5.4 release notes
 description: Release notes for Flutter 1.5.4.
 ---
 

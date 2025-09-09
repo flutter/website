@@ -1,7 +1,7 @@
 ---
 title: Flutter learning resources
 description: A catalog of Flutter sample applications, codelabs, and tutorials.
-short-title: Learning resources
+shortTitle: Learning resources
 showBreadcrumbs: false
 extraBodyClass: wide-site-content
 showToc: false

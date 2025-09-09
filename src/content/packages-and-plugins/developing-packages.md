@@ -1,6 +1,6 @@
 ---
 title: Developing packages & plugins
-short-title: Developing
+shortTitle: Developing
 description: How to write packages and plugins for Flutter.
 ---
 

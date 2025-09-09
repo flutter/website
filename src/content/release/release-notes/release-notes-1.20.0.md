@@ -1,6 +1,6 @@
 ---
 title: Flutter 1.20.0 release notes
-short-title: 1.20.0 release notes
+shortTitle: 1.20.0 release notes
 description: Release notes for Flutter 1.20.0.
 ---
 

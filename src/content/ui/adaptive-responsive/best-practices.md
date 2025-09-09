@@ -2,7 +2,7 @@
 title: Best practices for adaptive design
 description: >-
   Summary of some of the best practices for adaptive design.
-short-title: Best practices
+shortTitle: Best practices
 ---
 
 Recommended best practices for adaptive design include:

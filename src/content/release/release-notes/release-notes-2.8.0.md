@@ -1,6 +1,6 @@
 ---
 title: Flutter 2.8.0 release notes
-short-title: 2.8.0 release notes
+shortTitle: 2.8.0 release notes
 description: Release notes for Flutter 2.8.0.
 ---
 This page has release notes for 2.8.0.

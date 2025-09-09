@@ -1,6 +1,6 @@
 ---
 title: Layouts in Flutter
-short-title: Layout
+shortTitle: Layout
 description: >-
   Learn how Flutter's layout mechanism works and how to build your app's layout.
 ---

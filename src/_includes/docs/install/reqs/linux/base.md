@@ -90,7 +90,7 @@ To troubleshoot installation issues, consult that product's documentation.
 [curl]: https://curl.se/
 [git]: https://git-scm.com/
 [unzip]: https://linux.die.net/man/1/unzip
-[xz]: https://xz.tukaani.org/xz-utils/
+[xz]: https://tukaani.org/xz/
 [zip]: https://linux.die.net/man/1/zip
 [Android Studio]: https://developer.android.com/studio/
 [Google Chrome]: https://www.google.com/chrome/dr/download/
