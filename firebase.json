@@ -213,8 +213,8 @@
 
       { "source": "/adoptawidget", "destination": "https://github.com/flutter/flutter/blob/main/CONTRIBUTING.md", "type": 301 },
       { "source": "/apprentice-giveaway", "destination": "https://www.youtube.com/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2", "type": 301 },
-      { "source": "/clock", "destination": "https://medium.com/flutter/its-time-the-flutter-clock-contest-results-dcebe2eb3957", "type": 301 },
-      { "source": "/create", "destination": "https://medium.com/flutter/the-flutter-create-winners-are-40980f2d20b3", "type": 301 },
+      { "source": "/clock", "destination": "https://blog.flutter.dev/its-time-the-flutter-clock-contest-results-dcebe2eb3957", "type": 301 },
+      { "source": "/create", "destination": "https://blog.flutter.dev/the-flutter-create-winners-are-40980f2d20b3", "type": 301 },
       { "source": "/assets/images/docs/intellij/hot-reload.gif", "destination": "https://raw.githubusercontent.com/flutter/website/main/src/assets/images/docs/tools/android-studio/hot-reload.gif", "type": 301 },
       { "source": "/brick-breaker", "destination": "https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker", "type": 301 },
       { "source": "/catalog/samples", "destination": "https://flutter.github.io/samples/#", "type": 301 },
