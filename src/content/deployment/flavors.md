@@ -143,27 +143,29 @@ the following steps:
 1.  Start an Android emulator or connect a physical device
     with developer options enabled.
 
-1.  In the console, navigate to the `flavors_example`
-    directory and enter the following command:
+1. In the console, navigate to the `flavors_example`
+directory and enter the following command:
 
-    ```console title="console"
-    $ flutter (run | build) --flavor <flavor_name>
-    ```
+```console title="console"
+$ flutter (run | build | build apk) --flavor <flavor_name>
+```
 
-    * `(run |  build)`: Replace this with one of the
-      following:
-      * `run`: Run the app in debug mode.
-      * `build`: Run the app in production mode.
+* `(run | build | build apk)`: Replace this with one of the
+  following:
+  * `run`: Run the app in debug mode.
+  * `build`: Build the app in release mode.
+  * `build apk`: Build an APK file for the specified flavor.
 
-    * `<flavor_name>`: Replace this with the name of your
-      Android product flavor (for example, `staging` or
-      `production`).
+* `<flavor_name>`: Replace this with the name of your
+  Android product flavor (for example, `staging` or
+  `production`).
 
-    Example:
+Example:
 
-    ```console title="console"
-    $ flutter run apk --flavor staging
-    ```
+```console title="console"
+$ flutter run --flavor staging
+$ flutter build apk --flavor staging
+```
 
 ## Customize configurations
 
