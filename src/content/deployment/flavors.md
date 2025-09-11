@@ -147,23 +147,20 @@ the following steps:
 directory and enter the following command:
 
 ```console title="console"
-$ flutter (run | build | build apk) --flavor <flavor_name>
+$ flutter (run | build <subcommand>) --flavor <flavor_name>
 ```
 
-* `(run | build | build apk)`: Replace this with one of the
-  following:
-  * `run`: Run the app in debug mode.
-  * `build`: Build the app in release mode.
-  * `build apk`: Build an APK file for the specified flavor.
+* `(run | build <subcommand>)`: Replace this with one of the following:
+  * `run`: Runs the app in debug mode.
+  * `build`: Builds either an APK or an appbundle.
+    * `<subcommand>`: Either `apk` or `appbundle`.
 
-* `<flavor_name>`: Replace this with the name of your
-  Android product flavor (for example, `staging` or
-  `production`).
+* `<flavor_name>`: Replace this with the name of your Android
+  product flavor (for example: `staging`, `production`).
 
 Example:
 
 ```console title="console"
-$ flutter run --flavor staging
 $ flutter build apk --flavor staging
 ```
 
