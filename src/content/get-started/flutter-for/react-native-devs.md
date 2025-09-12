@@ -529,11 +529,11 @@ and widgets allows you to reuse the components within the app.
 
 ### How do I create reusable components?
 
-In React Native, you would define a class to create a
+In React Native, you would define a function (or a class) to create a
 reusable component and then use `props` methods to set
 or return properties and values of the selected elements.
-In the example below, the `CustomCard` class is defined
-and then used inside a parent class.
+In the example below, the `CustomCard` function is defined
+and then used inside a parent component.
 
 ```js
 // React Native
