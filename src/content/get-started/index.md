@@ -1,6 +1,6 @@
 ---
 title: Get started with Flutter
-short-title: Get started
+shortTitle: Get started
 description: >-
   Get started developing your first app with Flutter!
 toc: false
