@@ -1,7 +1,7 @@
 ---
 title: An introduction to unit testing
 description: How to write unit tests.
-short-title: Introduction
+shortTitle: Introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/counter_app"?>

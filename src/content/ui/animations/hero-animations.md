@@ -1,7 +1,7 @@
 ---
 title: Hero animations
 description: How to animate a widget to fly between two screens.
-short-title: Hero
+shortTitle: Hero
 ---
 
 :::secondary What you'll learn

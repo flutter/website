@@ -1,6 +1,6 @@
 ---
 title: Contribute to the docs
-short-title: Docs
+shortTitle: Docs
 description: >-
   Learn about contributing to the Dart and Flutter documentation sites.
 ---

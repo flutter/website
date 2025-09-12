@@ -1,6 +1,6 @@
 ---
 title: Build a Flutter layout
-short-title: Layout tutorial
+shortTitle: Layout tutorial
 description: Learn how to build a layout in Flutter.
 ---
 

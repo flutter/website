@@ -1,6 +1,6 @@
 ---
 title: Flutter documentation
-short-title: Docs
+shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.

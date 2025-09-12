@@ -1,6 +1,6 @@
 ---
 title: Multiple Flutter screens or views
-short-title: Add multiple Flutters
+shortTitle: Add multiple Flutters
 description: >
   How to integrate multiple instances of 
   Flutter engine, screens, or views to your application.

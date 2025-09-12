@@ -1,7 +1,7 @@
 ---
 title: Write your first Flutter app
 description: How to write an app in Flutter.
-short-title: Write your first app
+shortTitle: Write your first app
 prev:
   title: Set up Flutter
   path: /get-started

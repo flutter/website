@@ -1,6 +1,6 @@
 ---
 title: Assets, images, and icon widgets
-short-title: Assets
+shortTitle: Assets
 description: A catalog of Flutter's asset widgets.
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Flutter widget index
 description: An alphabetical list of Flutter widgets.
-short-title: Widgets
+shortTitle: Widgets
 showBreadcrumbs: false
 ---
 

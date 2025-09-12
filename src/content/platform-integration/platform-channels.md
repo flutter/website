@@ -1,6 +1,6 @@
 ---
 title: Writing custom platform-specific code
-short-title: Platform-specific code
+shortTitle: Platform-specific code
 description: Learn how to write custom platform-specific code in your app.
 ---
 

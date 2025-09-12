@@ -246,7 +246,7 @@ function _breadcrumbsForPage(page: any): {title: string, url: string}[] {
         .filter((segment) => segment.length > 0);
 
     breadcrumbs.push({
-      title: data['breadcrumb'] ?? data['short-title'] ?? data.title,
+      title: data['breadcrumb'] ?? data['shortTitle'] ?? data['short-title'] ?? data.title,
       url: page.url,
     });
 
