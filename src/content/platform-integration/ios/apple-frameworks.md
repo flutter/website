@@ -75,6 +75,7 @@ should provide details.
 | Expose quick actions on the home screen        | `UIApplicationShortcutItem`                                                           | [`quick_actions`][]          |
 | Index items in Spotlight search                | `CoreSpotlight`                                                                       | [`flutter_core_spotlight`][] |
 | Configure, update and communicate with Widgets | `WidgetKit`                                                                           | [`home_widget`][]            |
+| Automate app actions with Siri/Shortcuts       | `AppIntents`                                                                          | [`intelligence`][]            |
 
 {:.table .table-striped .nowrap}
 
@@ -111,3 +112,4 @@ should provide details.
 [`camera`]: {{site.pub-pkg}}/camera
 [`flutter_core_spotlight`]: {{site.pub-pkg}}/flutter_core_spotlight
 [`home_widget`]: {{site.pub-pkg}}/home_widget
+[`intelligence`]: {{site.pub-pkg}}/intelligence
