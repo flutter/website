@@ -18,7 +18,7 @@ consider [installing Flutter with VS Code][with-vs-code] for
 a streamlined setup experience.
 :::
 
-[Get started with Flutter]: /get-started/install
+[Get started with Flutter]: /get-started
 [with-vs-code]: /install/with-vs-code
 
 ## Choose your development platform {: #dev-platform}
@@ -191,7 +191,7 @@ then extract the SDK to where you want it stored.
 
     ```console
     $ Expand-Archive `
-      –Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
+      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
       -Destination $env:USERPROFILE\develop\
     ```
 
