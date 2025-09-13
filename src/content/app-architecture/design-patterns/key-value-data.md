@@ -148,29 +148,20 @@ class ThemeSwitchViewModel extends ChangeNotifier {
 
   /// Load the current theme setting from the repository
   Future<Result<void>> _load() async {
-    try {
-      final result = await _themeRepository.isDarkMode();
-      if (result is Ok<bool>) {
-        _isDarkMode = result.value;
-      }
-      return result;
-    } on Exception catch (e) {
-      return Result.error(e);
-    } finally {
-      notifyListeners();
+    final result = await _themeRepository.isDarkMode();
+    if (result is Ok<bool>) {
+      _isDarkMode = result.value;
     }
+    notifyListeners();
+    return result;
   }
 
   /// Toggle the theme setting
   Future<Result<void>> _toggle() async {
-    try {
-      _isDarkMode = !_isDarkMode;
-      return await _themeRepository.setDarkMode(_isDarkMode);
-    } on Exception catch (e) {
-      return Result.error(e);
-    } finally {
-      notifyListeners();
-    }
+    _isDarkMode = !_isDarkMode;
+    final result = await _themeRepository.setDarkMode(_isDarkMode);
+    notifyListeners();
+    return result;
   }
 }
 ```
@@ -317,16 +308,11 @@ class MainAppViewModel extends ChangeNotifier {
   bool get isDarkMode => _isDarkMode;
 
   Future<void> _load() async {
-    try {
-      final result = await _themeRepository.isDarkMode();
-      if (result is Ok<bool>) {
-        _isDarkMode = result.value;
-      }
-    } on Exception catch (_) {
-      // handle error
-    } finally {
-      notifyListeners();
+    final result = await _themeRepository.isDarkMode();
+    if (result is Ok<bool>) {
+      _isDarkMode = result.value;
     }
+    notifyListeners();
   }
 
   @override
