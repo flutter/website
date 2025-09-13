@@ -18,7 +18,7 @@ This file provides a curated list of resources to help Large Language Models und
 ## Latest release
 
 - [Announcing Flutter 3.35](https://medium.com/flutter/whats-new-in-flutter-3-35-c58ef72e3766): The official announcement for the 3.35 release.
-- [Announcing Dart 3.9](https://medium.com/dartlang/announcing-dart-3-9-ba49e8f38298): The official announcement for the 3.9 release.
+- [Announcing Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298): The official announcement for the 3.9 release.
 
 ## Learning resources
 
@@ -173,7 +173,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Flutter blog](https://medium.com/flutter): The official blog for the Flutter project.
 - [Flutter release notes](https://docs.flutter.dev/release/release-notes): Detailed notes on what's new in each release.
 - [Flutter breaking changes and migration guides](https://docs.flutter.dev/release/breaking-changes): Documentation for breaking changes with each release along with guides for migrating code across a breaking change.
-- [Dart blog](https://medium.com/dartlang): The official blog for the Dart language.
+- [Dart blog](https://blog.dart.dev): The official blog for the Dart language.
 - [Dart breaking changes](https://dart.dev/resources/breaking-changes): A list of breaking changes for each Dart release.
 
 ## API reference
