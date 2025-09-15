@@ -1863,9 +1863,9 @@ The gesture system in Flutter has two separate layers.
 The first layer includes raw pointer events,
 which describe the location and movement of pointers,
 (such as touches, mice, and styli movements), across the screen.
-The second layer includes gestures,
-which describe semantic actions
-that consist of one or more pointer movements.
+The second layer includes gestures
+that describe semantic actions
+and consist of one or more pointer movements.
 
 ### How do I add a click or press listeners to a widget?
 
