@@ -18,7 +18,7 @@ You have a couple options for implementing a splash screen:
 
 1. You can use one of the packages available on [pub.dev][].
 
-2. You can do it manually, as shown in the
+2. You can implement it manually, as shown in the
    [splash screen sample app][]. The rest of this page
    assumes the manual approach.
 
@@ -103,14 +103,30 @@ to the normal theme at the appropriate time.
 The Android app now displays the desired launch screen
 while the app initializes.
 
-## Other Android APIs
+## SplashScreen API
 
-Some apps might want to continue showing the last frame of
-the Android launch screen in Flutter. For example,
-this preserves the illusion of a single frame
-while additional loading continues in Dart.
-To achieve this, the following
-Android APIs might be helpful:
+Android 12 introduced the [`SplashScreen`][] API.
+Use the `SplashScreen` API in your `styles.xml`file.
+For example:
+
+```xml
+<style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    <item name="android:windowSplashScreenBackground">@color/bgColor</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/launch_background</item>
+</style>
+```
+
+:::note
+If your Android app supports releases earlier than Android 12
+_and_ post-Android 12 releases, consider using
+two different resources in your `styles.xml` file.
+Also, make sure that your background image is in line with
+the icon guidelines. For more information, 
+visit [Android Splash Screens][].
+:::
+
+[Android Splash Screens]: https://developer.android.com/develop/ui/views/launch/splash-screen
+[`SplashScreen`]: https://developer.android.com/reference/android/window/SplashScreen
 
 {% tabs "android-language" %}
 {% tab "Kotlin" %}
