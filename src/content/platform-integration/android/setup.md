@@ -58,13 +58,15 @@ install and set up the latest stable version of [Android Studio][].
 
     1. Go to the **Settings** page to view the **SDK Manager**.
 
-      1. If you have a project open,
-         go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
+       1. If the **Welcome to Android Studio** dialog is open,
+          click the **More Actions** button that follows the
+          **New Project** and **Open** buttons,
+          then click **SDK Manager** from the dropdown menu.
 
-      1. If the **Welcome to Android Studio** dialog is open,
-         click the **More Actions** button that follows the
-         **New Project** and **Open** buttons,
-         then click **SDK Manager** from the dropdown menu.
+       1. If you have a project open,
+          go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
+
+       {: type="a"}
 
     1. If the **SDK Platforms** tab is not open, switch to it.
 
@@ -168,14 +170,16 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Open the **Device Manager** settings dialog.
 
-       1. If you have a project open,
-          go to **Tools** <span aria-label="and then">></span>
-          **Device Manager**.
-
        1. If the **Welcome to Android Studio** dialog is open,
           click the **More Actions** button that follows the
           **New Project** and **Open** buttons,
           then select **Virtual Device Manager** from the dropdown menu.
+
+       1. If you have a project open,
+          go to **Tools** <span aria-label="and then">></span>
+          **Device Manager**.
+
+       {: type="a"}
 
     1. Click the **Create Virtual Device** button that appears as a `+` icon.
 
@@ -224,18 +228,6 @@ run a Flutter app on an Android emulator, follow these steps:
 
     The emulator should start up and display the default canvas for
     your selected Android OS version and device.
-
- 1. <h3>Verify the emulator setup</h3>
-
-    To verify that Flutter can connect to the emulator you set up,
-    run `flutter emulators` in your preferred terminal:
-
-    ```console
-    $ flutter emulators
-    ```
-
-    The emulator you set up should be found and
-    show up as one of the available emulators.
 
 {: .steps}
 
