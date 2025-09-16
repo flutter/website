@@ -62,13 +62,14 @@ install and set up the latest stable version of [Android Studio][].
          go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
 
       1. If the **Welcome to Android Studio** dialog is open,
-         click the **More Options** icon that follows the **Open** button,
+         click the **More Actions** button that follows the
+         **New Project** and **Open** buttons,
          then click **SDK Manager** from the dropdown menu.
 
     1. If the **SDK Platforms** tab is not open, switch to it.
 
     1. Verify that the first entry with an **API Level** of
-       **35** has been selected.
+       **36** has been selected.
 
        If the **Status** column displays
        **Update available** or **Not installed**:
@@ -165,66 +166,61 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Start **Android Studio**.
 
-    1. Go to the **Settings** dialog to view the **Device Manager**.
+    1. Open the **Device Manager** settings dialog.
 
        1. If you have a project open,
           go to **Tools** <span aria-label="and then">></span>
           **Device Manager**.
 
        1. If the **Welcome to Android Studio** dialog is open,
-          click the **More Options** icon that follows the **Open** button,
-          then select **Device Manager** from the dropdown menu.
+          click the **More Actions** button that follows the
+          **New Project** and **Open** buttons,
+          then select **Virtual Device Manager** from the dropdown menu.
 
-    1. Click **Virtual**.
-
-    1. Click **Create Device**.
+    1. Click the **Create Virtual Device** button that appears as a `+` icon.
 
        The **Virtual Device Configuration** dialog displays.
 
-    1. Select either **Phone** or **Tablet** under **Category**.
+    1. Select either **Phone** or **Tablet** under **Form Factor**.
 
     1. Select a device definition. You can browse or search for the device.
 
     1. Click **Next**.
 
-    1. Click either **x86 Images** or **ARM Images** depending on
+    1. If the option is provided,
+       select either **x86 Images** or **ARM Images** depending on
        if your development computer is an x64 or Arm64 device.
 
-    1. Click one system image for the Android version you want to emulate.
+    1. Select one system image for the Android version you want to emulate.
 
-       1. If the desired image has a **Download** icon to the right
-          of the **Release Name**, click it.
+       1. If the desired image has a **Download** icon to the left
+          of the system image name, click it.
 
-          The **SDK Quickfix Installation** dialog displays with a
+          The **SDK Component Installer** dialog displays with a
           progress indicator.
 
        1. When the download completes, click **Finish**.
 
        {: type="a"}
 
-    1. Click **Next**.
+    1. Click **Additional settings** in the top tab bar and
+       scroll to **Emulated Performance**.
 
-       The **Virtual Device Configuration** displays its
-       **Verify Configuration** step.
-
-    1. To rename the Android Virtual Device (AVD),
-       change the value in the **AVD Name** box.
-
-    1. Click **Show Advanced Settings** and scroll to **Emulated Performance**.
-
-    1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
+    1. From the **Graphics acceleration** dropdown menu,
+       select an option that mentions **Hardware**.
 
        This enables [hardware acceleration][], improving render performance.
 
-    1. Verify your AVD configuration.
+    1. Verify your virtual device configuration.
        If it is correct, click **Finish**.
 
-       To learn more about AVDs, check out [Managing AVDs][].
+       To learn more about virtual devices,
+       check out [Create and manage virtual devices][].
 
  1. <h3>Try running the emulator</h3>
 
     In the **Device Manager** dialog,
-    click the **Run** icon to the right of your desired AVD.
+    click the **Run** icon to the right of your desired virtual device.
 
     The emulator should start up and display the default canvas for
     your selected Android OS version and device.
@@ -245,7 +241,7 @@ run a Flutter app on an Android emulator, follow these steps:
 
 [VM acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration#accel-vm
 [hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Create and manage virtual devices]: {{site.android-dev}}/studio/run/managing-avds
 
 {% endtab %}
 {% tab "Physical device" %}
