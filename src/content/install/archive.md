@@ -51,8 +51,7 @@ SDK archive:
     build systems used. Results are returned as JSON.
 
 [calendar versioning]: https://calver.org/
-[Flutter SDK versioning]: 
-{{site.repo.flutter}}/flutter/blob/main/docs/releases/Release-versioning.md
+[Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
 
 ## Stable channel
 
