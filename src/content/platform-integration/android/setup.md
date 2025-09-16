@@ -56,7 +56,7 @@ install and set up the latest stable version of [Android Studio][].
 
     1. Launch **Android Studio**.
 
-    1. Go to the **Settings** page to view the **SDK Manager**.
+    1. Open the **SDK Manager** settings dialog.
 
        1. If the **Welcome to Android Studio** dialog is open,
           click the **More Actions** button that follows the
