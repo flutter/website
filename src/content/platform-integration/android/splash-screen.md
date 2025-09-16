@@ -128,6 +128,13 @@ visit [Android Splash Screens][].
 [Android Splash Screens]: https://developer.android.com/develop/ui/views/launch/splash-screen
 [`SplashScreen`]: https://developer.android.com/reference/android/window/SplashScreen
 
+Some apps might want to continue showing the last frame of
+the Android launch screen in Flutter. For example,
+this preserves the illusion of a single frame
+while additional loading continues in Dart.
+To achieve this, the following
+Android APIs might be helpful:
+
 {% tabs "android-language" %}
 {% tab "Kotlin" %}
 
