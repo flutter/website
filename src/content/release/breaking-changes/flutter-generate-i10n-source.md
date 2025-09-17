@@ -37,7 +37,7 @@ flutter:
   generate: true
 ```
 
-If your app previously used `gen-i10n` without this property, it is now
+If your app previously used `gen-l10n` without this property, it is now
 required.
 
 A synthetic package (`package:flutter_gen`) is
