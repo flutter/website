@@ -10,21 +10,30 @@ The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`
 parameters were deprecated in favor of the `SemanticsProperties.focused` and
 `SemanticsConfiguration.isFocused` parameters.
 
+The `focused` parameter is now nullable. Setting it to `true` or `false`
+automatically sets `isFocusable` to `true`, while setting it to `null`
+sets `isFocusable` to `false`.
+
 ## Context
 
-The `SemanticsConfiguration.isFocusable` is a boolean to describe
+The `SemanticsConfiguration.isFocusable` property is a boolean that indicates
 whether the semantics node can have input focus, and
-`SemanticsConfiguration.isFocused` is a boolean to describe if the
+
+`SemanticsConfiguration.isFocused` is a boolean that indicates if the
 semantics node has input focus.
 
-The fix is the same with `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
+This change also applies to `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
+
+We deprecated `isFocusable` because its functionality is covered by `isFocused`.
+The `isFocused` property is now stored as a tristate flag in the engine,
+and this change makes the framework consistent with the engine.
 
 ## Description of change
 
-The `SemanticsConfiguration.isFocusable` is deprecated in
-favor of `SemanticsConfiguration.isFocused`, which is a nullable boolean;
-setting it to true/false automatically sets `isFocusable` to `true`,
-and setting it to null sets `isFocusable` to `false`.
+The `SemanticsConfiguration.isFocusable` property is deprecated in
+favor of `SemanticsConfiguration.isFocused`. This property is a nullable
+boolean; setting it to `true` or `false` automatically sets `isFocusable` to
+`true`, and setting it to `null` sets `isFocusable` to `false`.
 
 ## Migration guide
 
@@ -71,7 +80,7 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 
 ## Timeline
 
-Landed in version: Not yet<br>
+Landed in version: 3.37.0-0.0.pre
 In stable release: Not yet
 
 
@@ -94,5 +103,5 @@ Relevant PR:
 [`SemanticsConfiguration`]: {{site.api}}/flutter/semantics/SemanticsConfiguration-class.html
 [`SemanticsProperties`]: {{site.api}}/flutter/semantics/SemanticsProperties-class.html
 [`SemanticsNode`]: {{site.api}}/flutter/semantics/SemanticsNode-class.html
-[Issue 166101]: {{site.repo.flutter}}/issues/166101
-[PR 168703]: {{site.repo.flutter}}/pull/170935
+[Issue 166092]: {{site.repo.flutter}}/issues/166092
+[PR 170935]: {{site.repo.flutter}}/pull/170935
