@@ -37,14 +37,14 @@ corresponding rule file names:
 | Gemini CLI | `GEMINI.md` | [Configure gemini.md][] |
 | JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][] |
 | VS Code | `.instructions.md` | [Configure .instructions.md][] |
-| Windsurf | `guidelines.md` | [Configure guidelines.md][] |
+| Windsurf | `global_rules.md` | [Configure global_rules.md][] |
 
 [Configure airules.md]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
 [Configure .github/copilot-instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
 [Configure cursorrules.md]: https://docs.cursor.com/en/context/rules
 [Configure guidelines.md]: https://www.jetbrains.com/help/junie/customize-guidelines.html
 [Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
+[Configure global_rules.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
 [Configure GEMINI.md]: https://codelabs.developers.google.com/gemini-cli-hands-on
 
 ## Create rules for your editor
