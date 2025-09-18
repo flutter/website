@@ -2275,6 +2275,15 @@ the third-party package, [home_widget][], you can wire a homescreen widget
 to Dart code, embed a Flutter component (as an image) in a host widget, and
 share data to/from Flutter to the homescreen widget.
 
+To provide a richer and more engaging experience, it's recommended to add 
+widget previews to include in the widget picker. For devices running 
+Android 15 and above, generated widget previews allowing the user to see 
+a dynamic and personalized version of the target widget, giving them a 
+glimpse of how it will accurately on their home screen. For more information 
+about the Generated Widget Previews and the fallback options for older devices,
+check the [Add generated previews to your widget picker][] documentation page.
+
+
 ## Databases and local storage
 
 ### How do I access Shared Preferences?
@@ -2393,3 +2402,4 @@ see the [`firebase_messaging`][] plugin documentation.
 [widget catalog]: /ui/widgets/layout
 [Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
 [home_widget]: https://pub.dev/packages/home_widget
+[Add generated previews to your widget picker]: https://developer.android.com/develop/ui/compose/glance/generated-previews
