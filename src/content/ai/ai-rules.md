@@ -18,7 +18,7 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-<a class="filled-button" style="margin-bottom: 0.5rem;" href="/assets/files/flutter-rules-template.md" download>
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>
   <span aria-hidden="true" class="material-symbols" translate="no">download</span>
   <span>Download the Flutter and Dart rules template</span>
 </a>
