@@ -1,6 +1,6 @@
 ---
 title: Flutter 1.9.1 release notes
-short-title: 1.9.1 release notes
+shortTitle: 1.9.1 release notes
 description: Release notes for Flutter 1.9.1.
 ---
 

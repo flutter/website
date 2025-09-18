@@ -1,6 +1,6 @@
 ---
 title: Protect your app's sensitive content
-short-title: Sensitive content
+shortTitle: Sensitive content
 description: >-
   Learn how to protect sensitive content in your Flutter app.
 ---
@@ -40,7 +40,7 @@ class MyWidget extends StatelessWidget {
   ...
   Widget build(BuildContext context) {
     return SensitiveContent(
-      sensitivivity: ContentSensitivity.sensitive,
+      sensitivity: ContentSensitivity.sensitive,
       child: MySensitiveContent(),
     );
   }

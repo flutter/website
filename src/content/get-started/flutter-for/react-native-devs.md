@@ -451,7 +451,7 @@ void main() {
 The following images show the Android and iOS UI for the basic Flutter
 "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world-basic.png" alt="Hello world app" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world-basic.png", alt: "Hello world app", class: "border" %}
 
 Now that you've seen the most basic Flutter app, the next section shows how to
 take advantage of Flutter's rich widget libraries to create a modern, polished
@@ -505,7 +505,7 @@ class MyApp extends StatelessWidget {
 The following images show "Hello world!" built from Material Design widgets.
 You get more functionality for free than in the basic "Hello world!" app.
 
-{% include docs/android-ios-figure-pair.md image="react-native/hello-world.png" alt="Hello world app" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/hello-world.png", alt: "Hello world app" %}
 
 When writing an app, you'll use two types of widgets:
 [`StatelessWidget`][] or [`StatefulWidget`][].
@@ -529,11 +529,11 @@ and widgets allows you to reuse the components within the app.
 
 ### How do I create reusable components?
 
-In React Native, you would define a class to create a
+In React Native, you would define a function (or a class) to create a
 reusable component and then use `props` methods to set
 or return properties and values of the selected elements.
-In the example below, the `CustomCard` class is defined
-and then used inside a parent class.
+In the example below, the `CustomCard` function is defined
+and then used inside a parent component.
 
 ```js
 // React Native
@@ -606,7 +606,7 @@ the constructor, or add `required` to the constructor.
 The following screenshots show an example of the reusable
 `CustomCard` class.
 
-{% include docs/android-ios-figure-pair.md image="react-native/custom-cards.png" alt="Custom cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/custom-cards.png", alt: "Custom cards", class: "border" %}
 
 ## Project structure and resources
 
@@ -837,7 +837,7 @@ return ListView.builder(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flatlist.webp" alt="Flat list" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flatlist.webp", alt: "Flat list", class: "border" %}
 
 To learn how to implement an infinite scrolling list, see the official
 [`infinite_list`][infinite_list] sample.
@@ -907,7 +907,7 @@ class MyCanvasWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/canvas.png" alt="Canvas" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/canvas.png", alt: "Canvas", class: "border" %}
 
 ## Layouts
 
@@ -963,7 +963,7 @@ For example, [`Padding`][], [`Align`][], and [`Stack`][].
 
 For a complete list, see [Layout Widgets][].
 
-{% include docs/android-ios-figure-pair.md image="react-native/basic-layout.webp" alt="Layout" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/basic-layout.webp", alt: "Layout", class: "border" %}
 
 ### How do I layer widgets?
 
@@ -999,7 +999,7 @@ on top of a `CircleAvatar`.
 The Stack offsets the text using the alignment property
 and `Alignment` coordinates.
 
-{% include docs/android-ios-figure-pair.md image="react-native/stack.png" alt="Stack" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/stack.png", alt: "Stack", class: "border" %}
 
 For more information, see the [`Stack`][] class documentation.
 
@@ -1058,7 +1058,7 @@ return const Center(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutterstyling.webp" alt="Styling" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutterstyling.webp", alt: "Styling", class: "border" %}
 
 ### How do I use `Icons` and `Colors`?
 
@@ -1406,7 +1406,7 @@ class MyStatelessWidget extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/state-change.webp" alt="State change" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/state-change.webp", alt: "State change", class: "border" %}
 
 ## Props
 
@@ -1489,7 +1489,7 @@ class UseCard extends StatelessWidget {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/modular.png" alt="Cards" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/modular.png", alt: "Cards", class: "border" %}
 
 ## Local storage
 
@@ -1853,7 +1853,7 @@ Widget build(BuildContext context) {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/navigation.webp" alt="Navigation" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/navigation.webp", alt: "Navigation", class: "border" %}
 
 ## Gesture detection and touch event handling
 
@@ -1863,9 +1863,9 @@ The gesture system in Flutter has two separate layers.
 The first layer includes raw pointer events,
 which describe the location and movement of pointers,
 (such as touches, mice, and styli movements), across the screen.
-The second layer includes gestures,
-which describe semantic actions
-that consist of one or more pointer movements.
+The second layer includes gestures
+that describe semantic actions
+and consist of one or more pointer movements.
 
 ### How do I add a click or press listeners to a widget?
 
@@ -1959,7 +1959,7 @@ see the [GestureDetector class][].
 
 [GestureDetector class]: {{site.api}}/flutter/widgets/GestureDetector-class.html#instance-properties
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-gestures.webp" alt="Gestures" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-gestures.webp", alt: "Gestures", class: "border" %}
 
 ## Making HTTP network requests
 
@@ -2022,7 +2022,7 @@ Future<void> getIPAddress() async {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/api-calls.webp" alt="API calls" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/api-calls.webp", alt: "API calls", class: "border" %}
 
 ## Form input
 
@@ -2165,7 +2165,7 @@ void _submit() {
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/input-fields.webp" alt="Input" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/input-fields.webp", alt: "Input", class: "border" %}
 
 ## Platform-specific code
 
@@ -2428,7 +2428,7 @@ class _LogoFadeState extends State<LogoFade>
 }
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/flutter-fade.webp" alt="Flutter fade" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/flutter-fade.webp", alt: "Flutter fade", class: "border" %}
 
 ### How do I add swipe animation to cards?
 
@@ -2451,7 +2451,7 @@ return Dismissible(
 );
 ```
 
-{% include docs/android-ios-figure-pair.md image="react-native/card-swipe.webp" alt="Card swipe" class="border" %}
+{% render docs/android-ios-figure-pair.md, image: "react-native/card-swipe.webp", alt: "Card swipe", class: "border" %}
 
 ## React Native and Flutter widget equivalent components
 
@@ -2461,73 +2461,69 @@ and common widget properties.
 
 | React Native Component                                                                    | Flutter Widget                                                                                             | Description                                                                                                                            |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`ElevatedButton`][]                           | A basic raised button.                                                                              |
+| [`Button`](https://reactnative.dev/docs/button)                        | [`ElevatedButton`][]                           | A basic raised button.                                                                              |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                          |
 |                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`Button`](https://facebook.github.io/react-native/docs/button.html)                        | [`TextButton`][]                               | A basic flat button.                                                                                                         |
+| [`Button`](https://reactnative.dev/docs/button)                        | [`TextButton`][]                               | A basic flat button.                                                                                                         |
 |                                                                                           |  onPressed [required]                                                                                        | The callback when the button is tapped or otherwise activated.                                                            |
 |                                                                                           | Child                                                                              | The button's label.                                                                                                      |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`ScrollView`](https://facebook.github.io/react-native/docs/scrollview.html)                | [`ListView`][]                                    | A scrollable list of widgets arranged linearly.|
+| [`ScrollView`](https://reactnative.dev/docs/scrollview)                | [`ListView`][]                                    | A scrollable list of widgets arranged linearly.|
 ||        children                                                                              | 	( <Widget\> [ ])  List of child widgets to display.
 ||controller |[ [`ScrollController`][] ] An object that can be used to control a scrollable widget.
 ||itemExtent|[ double ] If non-null, forces the children to have the given extent in the scroll direction.
 ||scroll Direction|[ [`Axis`][] ] The axis along which the scroll view scrolls.
 ||                                                                                                            |                                                                                                                                        |
-| [`FlatList`](https://facebook.github.io/react-native/docs/flatlist.html)                    | [`ListView.builder`][]               | The constructor for a linear array of widgets that are created on demand.
+| [`FlatList`](https://reactnative.dev/docs/flatlist)                    | [`ListView.builder`][]               | The constructor for a linear array of widgets that are created on demand.
 ||itemBuilder [required] |[[`IndexedWidgetBuilder`][]] helps in building the children on demand. This callback is called only with indices greater than or equal to zero and less than the itemCount.
 ||itemCount |[ int ] improves the ability of the `ListView` to estimate the maximum scroll extent.
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`Image`](https://facebook.github.io/react-native/docs/image.html)                         | [`Image`][]                                           | A widget that displays an image.                                                                                                       |
+| [`Image`](https://reactnative.dev/docs/image)                         | [`Image`][]                                           | A widget that displays an image.                                                                                                       |
 |                                                                                           |  image [required]                                                                                          | The image to display.                                                                                                                  |
 |                                                                                           | Image. asset                                                                                                | Several constructors are provided for the various ways that an image can be specified.                                                 |
 |                                                                                           | width, height, color, alignment                                                                            | The style and layout for the image.                                                                                                         |
 |                                                                                           | fit                                                                                                        | Inscribing the image into the space allocated during layout.                                                                           |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`Modal`](https://facebook.github.io/react-native/docs/modal.html)                          | [`ModalRoute`][]                                | A route that blocks interaction with previous routes.                                                                                  |
+| [`Modal`](https://reactnative.dev/docs/modal)                          | [`ModalRoute`][]                                | A route that blocks interaction with previous routes.                                                                                  |
 |                                                                                           | animation                                                                                                  | The animation that drives the route's transition and the previous route's forward transition.                                          |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`CircularProgressIndicator`][] | A widget that shows progress along a circle.                                                                                           |
+|  [`ActivityIndicator`](https://reactnative.dev/docs/activityindicator) | [`CircularProgressIndicator`][] | A widget that shows progress along a circle.                                                                                           |
 |                                                                                           | strokeWidth                                                                                                | The width of the line used to draw the circle.                                                                                         |
 |                                                                                           | backgroundColor                                                                                            | The progress indicator's background color. The current theme's `ThemeData.backgroundColor` by default.                                   |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-|  [`ActivityIndicator`](https://facebook.github.io/react-native/docs/activityindicator.html) | [`LinearProgressIndicator`][]     | A widget that shows progress along a line.                                                                                           |
+|  [`ActivityIndicator`](https://reactnative.dev/docs/activityindicator) | [`LinearProgressIndicator`][]     | A widget that shows progress along a line.                                                                                           |
 |                                                                                           | value                                                                                                      | The value of this progress indicator.                                                                                                   |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`RefreshControl`](https://facebook.github.io/react-native/docs/refreshcontrol.html)        | [`RefreshIndicator`][]                   | A widget that supports the Material "swipe to refresh" idiom.                                                                          |
+| [`RefreshControl`](https://reactnative.dev/docs/refreshcontrol)        | [`RefreshIndicator`][]                   | A widget that supports the Material "swipe to refresh" idiom.                                                                          |
 |                                                                                           | color                                                                                                      | The progress indicator's foreground color.                                                                                             |
 |                                                                                           | onRefresh                                                                                                  | A function that's called when a user drags the refresh indicator far enough to demonstrate that they want the app to refresh.  |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Container`][]                                  | A widget that surrounds a child widget.                                                                                                                |
+| [`View`](https://reactnative.dev/docs/view)                            | [`Container`][]                                  | A widget that surrounds a child widget.                                                                                                                |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Column`][]                                        | A widget that displays its children in a vertical array.                                                                                              |
+| [`View`](https://reactnative.dev/docs/view)                            | [`Column`][]                                        | A widget that displays its children in a vertical array.                                                                                              |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Row`][]                                              | A widget that displays its children in a horizontal array.                                                                                            |
+| [`View`](https://reactnative.dev/docs/view)                            | [`Row`][]                                              | A widget that displays its children in a horizontal array.                                                                                            |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Center`][]                                        | A widget that centers its child within itself.                                                                                                       |
+| [`View`](https://reactnative.dev/docs/view)                            | [`Center`][]                                        | A widget that centers its child within itself.                                                                                                       |
 |                                                                                           |                                                                                                            |                                                                                                                                        |
-| [`View`](https://facebook.github.io/react-native/docs/view.html)                            | [`Padding`][]                                      | A widget that insets its child by the given padding.                                                                                                 |
+| [`View`](https://reactnative.dev/docs/view)                            | [`Padding`][]                                      | A widget that insets its child by the given padding.                                                                                                 |
 |                                                                                           | padding [required]                                                                                         | [ EdgeInsets ] The amount of space to inset the child.
 |||
-| [`TouchableOpacity`](https://facebook.github.io/react-native/docs/touchableopacity.html)    | [`GestureDetector`][]                      | A widget that detects gestures.                                                                                                                       |
+| [`TouchableOpacity`](https://reactnative.dev/docs/touchableopacity)    | [`GestureDetector`][]                      | A widget that detects gestures.                                                                                                                       |
 |                                                                                           | onTap                                                                                                      | A callback when a tap occurs.                                                                                                               |
 |                                                                                           | onDoubleTap                                                                                                | A callback when a tap occurs at the same location twice in quick succession.
 |||
-| [`TextInput`](https://facebook.github.io/react-native/docs/textinput.html)                | [`TextInput`][]                                   | The interface to the system's text input control.                                                                                           |
+| [`TextInput`](https://reactnative.dev/docs/textinput)                | [`TextInput`][]                                   | The interface to the system's text input control.                                                                                           |
 |                                                                                           | controller                                                                                                 | [ [`TextEditingController`][] ] used to access and modify text.
 |||
-| [`Text`](https://facebook.github.io/react-native/docs/text.html)                          | [`Text`][]                                            | The Text widget that displays a string of text with a single style.                                                                                                                                                                           |
+| [`Text`](https://reactnative.dev/docs/text)                          | [`Text`][]                                            | The Text widget that displays a string of text with a single style.                                                                                                                                                                           |
 |                                                                                         | data                                                                                                      | [ String ] The text to display.                                                                                                                                                                              |
 |                                                                                         | textDirection                                                                                             | [ [`TextAlign`][] ] The direction in which the text flows.                                                                                     |
 |                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
-| [`Switch`](https://facebook.github.io/react-native/docs/switch.html)                      | [`Switch`][]                                      | A material design switch.                                                                                                                                                                                    |
+| [`Switch`](https://reactnative.dev/docs/switch)                      | [`Switch`][]                                      | A material design switch.                                                                                                                                                                                    |
 |                                                                                         | value [required]                                                                                          | [ boolean ] Whether this switch is on or off.                                                                                                                                                                 |
 |                                                                                         | onChanged [required]                                                                                      | [ callback ] Called when the user toggles the switch on or off.                                                                                                                                               |
-|                                                                                         |                                                                                                           |                                                                                                                                                                                                              |
-| [`Slider`](https://facebook.github.io/react-native/docs/slider.html)                      | [`Slider`][]                                      | Used to select from a range of values.                                                                                                                                                                       |
-|                                                                                         | value [required]                                                                                          | [ double ] The current value of the slider.                                                                                                                                                                           |
-|                                                                                         | onChanged [required]                                                                                      | Called when the user selects a new value for the slider.                                                                                                                                                      |
 
 {:.table .table-striped}
 
@@ -2601,7 +2597,7 @@ and common widget properties.
 [`onSaved`]: {{site.api}}/flutter/widgets/FormField/onSaved.html
 [named parameters]: {{site.dart-site}}/language/functions#named-parameters
 [`Padding`]: {{site.api}}/flutter/widgets/Padding-class.html
-[`PanResponder`]: https://facebook.github.io/react-native/docs/panresponder.html
+[`PanResponder`]: https://reactnative.dev/docs/panresponder
 [pub.dev]: {{site.pub}}
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html

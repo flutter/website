@@ -90,9 +90,9 @@ To troubleshoot installation issues, consult that product's documentation.
 [curl]: https://curl.se/
 [git]: https://git-scm.com/
 [unzip]: https://linux.die.net/man/1/unzip
-[xz]: https://xz.tukaani.org/xz-utils/
+[xz]: https://tukaani.org/xz/
 [zip]: https://linux.die.net/man/1/zip
-[Android Studio]: https://developer.android.com/studio/install#linux
+[Android Studio]: https://developer.android.com/studio/
 [Google Chrome]: https://www.google.com/chrome/dr/download/
 
 ## Configure a text editor or IDE
@@ -116,7 +116,6 @@ The Flutter team recommends installing
 This combination simplifies installing the Flutter SDK.
 :::
 
-[Android Studio]: https://developer.android.com/studio/install#linux
 [IntelliJ IDEA]: https://www.jetbrains.com/help/idea/installation-guide.html
 [vscode]: https://code.visualstudio.com/docs/setup/linux
 [Flutter extension for VS Code]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter

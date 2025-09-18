@@ -1,7 +1,7 @@
 ---
 title: Choose your first type of app
 description: Configure your system to develop Flutter on ChromeOS.
-short-title: ChromeOS
+shortTitle: ChromeOS
 target-list: [Android, Web]
 js: [{url: '/assets/js/temp/chromeos-install-redirector.js'}]
 ---
@@ -18,9 +18,9 @@ js: [{url: '/assets/js/temp/chromeos-install-redirector.js'}]
     {% assign icon = target | downcase -%}
     <div class="card-leading">
       {% if icon == 'android' -%}
-        <span class="material-symbols" aria-hidden="true">phone_android</span>
+        <span class="material-symbols" aria-hidden="true" translate="no">phone_android</span>
       {% else -%}
-        <span class="material-symbols" aria-hidden="true">web</span>
+        <span class="material-symbols" aria-hidden="true" translate="no">web</span>
       {% endif -%}
     </div>
     <div class="card-header text-center">

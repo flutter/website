@@ -29,7 +29,7 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.setLibrary('md', markdown);
 
   eleventyConfig.addDataExtension('yml,yaml', (contents: string) =>
-      yaml.load(contents),
+    yaml.load(contents),
   );
 
   eleventyConfig.setLiquidOptions({
@@ -61,11 +61,11 @@ export default function (eleventyConfig: UserConfig) {
       });
 
       const dependencies = result.loadedUrls
-          .filter(
-              (loadedUrl) =>
-                  loadedUrl.protocol === 'file:' && loadedUrl.pathname !== '',
-          )
-          .map((url) => path.relative('.', url.pathname));
+        .filter(
+          (loadedUrl) =>
+            loadedUrl.protocol === 'file:' && loadedUrl.pathname !== '',
+        )
+        .map((url) => path.relative('.', url.pathname));
 
       this.addDependencies(inputPath, dependencies);
 
@@ -74,7 +74,9 @@ export default function (eleventyConfig: UserConfig) {
   });
 
   eleventyConfig.addPassthroughCopy('src/content/assets/js');
-  eleventyConfig.addPassthroughCopy({'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js'});
+  eleventyConfig.addPassthroughCopy('src/content/llms.txt');
+  eleventyConfig.addPassthroughCopy({ 'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js' });
+  eleventyConfig.addPassthroughCopy('src/content/assets/files', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/cookbook/img-files', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/f', {
@@ -84,6 +86,7 @@ export default function (eleventyConfig: UserConfig) {
   eleventyConfig.addPassthroughCopy('src/content/tools/devtools/release-notes', {
     filter: (path: string) => path.includes('src') || path.includes('images'),
   });
+  eleventyConfig.ignores.add("src/content/assets/files/**/*.md");
 
   if (shouldOptimize) {
     // If building for production, minify/optimize the HTML output.

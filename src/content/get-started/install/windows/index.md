@@ -1,7 +1,7 @@
 ---
 title: Choose your first type of app
 description: Configure your system to develop Flutter on Windows.
-short-title: Windows
+shortTitle: Windows
 target-list: [Android, Web, Desktop]
 js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
 ---
@@ -25,11 +25,11 @@ js: [{url: '/assets/js/temp/windows-install-redirector.js'}]
     <div class="card-leading">
       {% case icon %}
       {% when 'desktop' -%}
-        <span class="material-symbols" aria-hidden="true">desktop_windows</span>
+        <span class="material-symbols" aria-hidden="true" translate="no">desktop_windows</span>
       {% when 'android' -%}
-        <span class="material-symbols" aria-hidden="true">phone_android</span>
+        <span class="material-symbols" aria-hidden="true" translate="no">phone_android</span>
       {% when 'web' -%}
-        <span class="material-symbols" aria-hidden="true">web</span>
+        <span class="material-symbols" aria-hidden="true" translate="no">web</span>
       {% endcase -%}
     </div>
     <div class="card-header text-center">

@@ -1,7 +1,7 @@
 ---
 title: Integration testing concepts
 description: Learn about integration testing in Flutter.
-short-title: Introduction
+shortTitle: Introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>

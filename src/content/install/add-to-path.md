@@ -1,5 +1,6 @@
 ---
 title: Add Flutter to your PATH
+shortTitle: Add to PATH
 description: >-
   Learn how to add Flutter to your PATH after downloading the Flutter SDK.
 ---
@@ -11,7 +12,7 @@ Adding Flutter to your `PATH` allows you to use the
 
 :::tip
 If you haven't downloaded Flutter yet,
-follow [Get started with Flutter][] instead.
+follow [Set up and test drive Flutter][] instead.
 :::
 
 <div class="card-grid">
@@ -49,7 +50,7 @@ follow [Get started with Flutter][] instead.
   </a>
 </div>
 
-[Get started with Flutter]: /get-started/install
+[Set up and test drive Flutter]: /get-started/quick
 
 ## Windows
 

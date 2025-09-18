@@ -1,6 +1,6 @@
 ---
 title: Add a Flutter View to an Android app
-short-title: Integrate via FlutterView
+shortTitle: Integrate via FlutterView
 description: Learn how to perform advanced integrations via Flutter Views.
 ---
 

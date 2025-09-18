@@ -1,8 +1,7 @@
 ---
 title: Flutter SDK archive
-short-title: Archive
+shortTitle: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
-toc: true
 ---
 
 {% render docs/china-notice.md %}
@@ -35,8 +34,9 @@ The following information is available for each Flutter release in the
 SDK archive:
 
 *   **Flutter version**: The version number of the Flutter SDK
-    (for example, 3.0.0, 2.10.5). This follows semantic versioning, indicating
-    the significance of changes between releases.
+    (for example, 3.35.0, 2.10.5) follows a modified
+    [calendar versioning][] scheme called _CalVer_.
+    For more information, visit the [Flutter SDK versioning][] page.
 *   **Architecture**: The processor architecture the SDK is built for
     (for example, x64, arm64). This specifies the type of processor the SDK is
     compatible with.
@@ -50,25 +50,28 @@ SDK archive:
     SDK, potentially including information about security attestations or
     build systems used. Results are returned as JSON.
 
+[calendar versioning]: https://calver.org/
+[Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
+
 ## Stable channel
 
 {% tabs "os-archive-tabs" %}
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="stable" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="stable" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
 
 {% endtab %}
 
@@ -81,19 +84,19 @@ SDK archive:
 
 {% tab "Windows" %}
 
-{% include docs/release/archive-release.md os="Windows" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "macOS" %}
 
-{% include docs/release/archive-release.md os="macOS" channel="beta" %}
+{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
 
 {% endtab %}
 
 {% tab "Linux" %}
 
-{% include docs/release/archive-release.md os="Linux" channel="beta" %}
+{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
 
 {% endtab %}
 

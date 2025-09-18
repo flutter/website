@@ -208,11 +208,13 @@
     - title: Build a news app
       permalink: /resources/news-toolkit
 
-- title: Create with AI
+- title: AI solutions
   permalink: /ai
   children:
-    - title: Overview
+    - title: Create with AI
       permalink: /ai/create-with-ai
+    - title: AI Rules
+      permalink: /ai/ai-rules
     - title: AI Toolkit
       permalink: /ai-toolkit
       expanded: false
@@ -227,8 +229,12 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai-toolkit/chat-client-sample
-    - title: Vertex AI in Firebase
-      permalink: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
+    - title: Dart & Flutter MCP server
+      permalink: https://dart.dev/tools/mcp-server
+    - title: GenUI SDK for Flutter
+      permalink: https://github.com/flutter/genui
+    - title: Firebase AI Logic
+      permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
 - divider
 - header: User interface
@@ -236,6 +242,43 @@
   permalink: /ui
 - title: Widget catalog
   permalink: /ui/widgets
+  children:
+    - title: Overview
+      permalink: /ui/widgets
+    - title: Design systems
+      expanded: false
+      children:
+        - title: Cupertino
+          permalink: /ui/widgets/cupertino
+        - title: Material components
+          permalink: /ui/widgets/material
+    - title: Base widgets
+      expanded: false
+      children:
+        - title: Accessibility
+          permalink: /ui/widgets/accessibility
+        - title: Animation
+          permalink: /ui/widgets/animation
+        - title: Assets
+          permalink: /ui/widgets/assets
+        - title: Async
+          permalink: /ui/widgets/async
+        - title: Basics
+          permalink: /ui/widgets/basics
+        - title: Input
+          permalink: /ui/widgets/input
+        - title: Interaction
+          permalink: /ui/widgets/interaction
+        - title: Layout
+          permalink: /ui/widgets/layout
+        - title: Painting
+          permalink: /ui/widgets/painting
+        - title: Scrolling
+          permalink: /ui/widgets/scrolling
+        - title: Styling
+          permalink: /ui/widgets/styling
+        - title: Text
+          permalink: /ui/widgets/text
 - title: Layout
   permalink: /ui/layout
   children:
@@ -549,7 +592,7 @@
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
-          permalink:  /platform-integration/android/chromeos
+          permalink: /platform-integration/android/chromeos
         - title: Protect your app's sensitive content
           permalink: /platform-integration/android/sensitive-content
     - title: iOS
@@ -705,10 +748,10 @@
       permalink: /perf/app-size
     - title: Deferred components
       permalink: /perf/deferred-components
-#    - title: Memory
-#      permalink: /perf/memory
-#    - title: Power usage
-#      permalink: /perf/power
+    #    - title: Memory
+    #      permalink: /perf/memory
+    #    - title: Power usage
+    #      permalink: /perf/power
     - title: Rendering performance
       permalink: /perf/rendering-performance
     - title: Performance profiling
@@ -829,9 +872,9 @@
         - title: Release notes
           permalink: /tools/devtools/release-notes
     - title: Flutter Widget Previewer
-      permalink: /tools/widget-previewer  
+      permalink: /tools/widget-previewer
     - title: Flutter Property Editor
-      permalink: /tools/property-editor    
+      permalink: /tools/property-editor
     - title: SDK overview
       permalink: /tools/sdk
     - title: Flutter's pubspec options
@@ -857,7 +900,7 @@
 - title: Resources
   permalink: /resources
   children:
-#    - header: Learn
+    #    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Books

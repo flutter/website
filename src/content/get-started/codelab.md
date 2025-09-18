@@ -1,14 +1,14 @@
 ---
 title: Write your first Flutter app
 description: How to write an app in Flutter.
-short-title: Write your first app
+shortTitle: Write your first app
 prev:
   title: Set up Flutter
   path: /get-started/install
 next:
   title: Learn more
   path: /get-started/learn-flutter
-toc: false
+showToc: false
 ---
 
 You are now ready to start the "First Flutter app" codelab.

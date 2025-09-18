@@ -1,6 +1,6 @@
 ---
 title: Debug your add-to-app module
-short-title: Debugging
+shortTitle: Debugging
 description: How to run, debug, and hot reload your add-to-app Flutter module.
 ---
 
@@ -51,11 +51,11 @@ To hot restart (and rebuild state). press "R".
 
 ## Debug iOS extension in Xcode and VS Code
 
-{% include docs/debug/debug-flow-ios.md add='launch' %}
+{% render docs/debug/debug-flow-ios.md, add:'launch' %}
 
 ## Debug Android extension in Android Studio
 
-{% include docs/debug/debug-flow-androidstudio-as-start.md %}
+{% render docs/debug/debug-flow-androidstudio-as-start.md %}
 
 [debugging functionalities]: /testing/debugging
 

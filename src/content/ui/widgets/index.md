@@ -1,8 +1,8 @@
 ---
 title: Widget catalog
 description: A catalog of some of Flutter's rich set of widgets.
-short-title: Widgets
-toc: false
+shortTitle: Widgets
+showToc: false
 ---
 
 Create beautiful apps faster with Flutter's collection of visual, structural,

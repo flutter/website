@@ -1,6 +1,6 @@
 ---
 title: Breaking changes and migration guides
-short-title: Breaking changes
+shortTitle: Breaking changes
 description: >-
    A collection of notices and migration guides for breaking changes in Flutter.
 ---
@@ -42,17 +42,21 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [`CupertinoDynamicColor` wide gamut support][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [SnackBar with action no longer auto-dismisses][]
 
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
@@ -62,12 +66,14 @@ They're sorted by release and listed in alphabetical order:
 * [Redesigned the `Radio` widget][]
 * [Removed semantics elevation and thickness][]
 * [The `Form` widget no longer supports being a sliver][]
+* [Flutter now sets default `abiFilters` in Android builds][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
 [Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
+[Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32

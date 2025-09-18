@@ -86,8 +86,8 @@ and C++ for Windows and Linux. Using the embedder, Flutter
 code can be integrated into an existing application as a module,
 or the code might be the entire content of the application.
 Flutter includes a number of embedders
-for common target platforms, but [other embedders also
-exist](https://hover.build/blog/one-year-in/).
+for common target platforms, but other embedders also
+exist.
 
 At the core of Flutter is the **Flutter engine**,
 which is mostly written in C++ and supports

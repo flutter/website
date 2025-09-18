@@ -21,7 +21,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% render docs/debug/debug-flow-vscode-as-start.md %}
 
 {% comment %}
      !['Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app'](/assets/images/docs/testing/debugging/native/url-launcher-app/windows.png){:width="50%"}

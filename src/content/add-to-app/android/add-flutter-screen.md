@@ -1,6 +1,6 @@
 ---
 title: Add a Flutter screen to an Android app
-short-title: Add a Flutter screen
+shortTitle: Add a Flutter screen
 description: >
   Learn how to add a single Flutter screen to your existing Android app.
 ---
@@ -341,7 +341,7 @@ of Flutter, use a release build.
 
 #### Initial route with a cached engine
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render docs/add-to-app/android-initial-route-cached-engine.md %}
 
 ## Add a translucent Flutter screen
 

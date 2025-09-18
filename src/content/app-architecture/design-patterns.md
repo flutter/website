@@ -1,13 +1,13 @@
 ---
 title: Architecture design patterns
-short-title: Design patterns
+shortTitle: Design patterns
 description: >-
   A collection of articles about useful design patterns for
   building Flutter applications.
 prev:
   title: Recommendations
   path: /app-architecture/recommendations
-toc: false
+showToc: false
 ---
 
 If you've already read through the [architecture guide][] page,

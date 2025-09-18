@@ -1,6 +1,6 @@
 ---
 title: UI layer case study
-short-title: UI layer
+shortTitle: UI layer
 description: >-
   A walk-through of the UI layer of an app that implements MVVM architecture.
 prev:
@@ -254,8 +254,8 @@ would take up the full screen on mobile.
 :::note
 "View" is an abstract term, and one view doesn't equal one widget.
 Widgets are composable, and several can be combined to create one view.
-Therefore, view models don't have a 1-to-1 relationship with widgets,
-but rather a 1-to-1 relation with a *collection* of widgets.
+Therefore, view models don't have a one-to-one relationship with widgets,
+but rather a one-to-one relation with a *collection* of widgets.
 :::
 
 The widgets within a view have three responsibilities:

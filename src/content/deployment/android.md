@@ -1,7 +1,7 @@
 ---
 title: Build and release an Android app
 description: How to prepare for and release an Android app to the Play store.
-short-title: Android
+shortTitle: Android
 ---
 
 To test an app, you can use `flutter run` at the command line,
@@ -187,6 +187,10 @@ storeFile=<keystore-file-location>
 The `storeFile` might be located at
 `/Users/<user name>/upload-keystore.jks` on macOS
 or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
+
+:::note
+The Windows path to `keystore.jks` must be specified with double backslashes: `\\`.
+:::
 
 :::warning
 Keep the `key.properties` file private;

@@ -15,7 +15,7 @@ Applications or tools that referenced `package:flutter_gen` should instead
 reference source files generated into the app's source directory directly.
 
 In addition, the property `generate: true` is now required when using generated
-i10n source.
+l10n source.
 
 ## Background
 
@@ -37,7 +37,7 @@ flutter:
   generate: true
 ```
 
-If your app previously used `gen-i10n` without this property, it is now
+If your app previously used `gen-l10n` without this property, it is now
 required.
 
 A synthetic package (`package:flutter_gen`) is

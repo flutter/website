@@ -3,7 +3,6 @@ title: "Implicit animations"
 description: >
   Learn how to use Flutter's implicitly animated widgets
   through interactive examples and exercises.
-toc: true
 js:
   - defer: true
     url: /assets/js/inject_dartpad.js
@@ -14,7 +13,7 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
-{% include docs/dartpad-troubleshooting.md %}
+{% render docs/dartpad-troubleshooting.md, site: site %}
 
 To get the most out of this codelab, you should have basic knowledge about:
 
@@ -418,13 +417,13 @@ To learn more, check out these suggestions:
 - Try the [animations tutorial][].
 - Learn about [hero animations][] and [staggered animations][].
 - Checkout the [animation library][].
-- Try another [codelab][].
+- Explore other [Flutter learning resources][].
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: /ui/animations/tutorial
-[codelab]: /codelabs
+[Flutter learning resources]: /reference/learning-resources
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html

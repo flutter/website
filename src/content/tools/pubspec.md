@@ -85,7 +85,7 @@ dev_dependencies:
 
   [!generate: true!] # Enables generation of localized strings from arb files
 
-  [!config:!] # App-specific configuration flags that mirror flutter config
+  [!config:!] # App-specific configuration flags that mirror `flutter config`
     [!enable-swift-package-manager: true!]
 
   [!assets:!]  # Lists assets, such as image files
@@ -234,8 +234,11 @@ The available keys mirror those available in `flutter config --list`.
 ```yaml title="pubspec.yaml"
 flutter:
   config:
+    cli-animations: false
     enable-swift-package-manager: true
 ```
+
+Use `flutter config --help` for a description of each flag.
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
@@ -366,7 +369,7 @@ application.
 For examples of using fonts
 see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
-[Flutter cookbook][].
+Flutter cookbook.
 
 The `fonts` field has this structure:
 
@@ -437,7 +440,6 @@ flutter:
 ```
 
 [Export fonts from a package]: /cookbook/design/package-fonts
-[Flutter cookbook]: /cookbook
 [Use a custom font]: /cookbook/design/fonts
 
 ### generate field

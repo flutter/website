@@ -1,4 +1,11 @@
+<input type="checkbox" id="open-filter-toggle" hidden>
+<div id="resource-filter-group-wrapper">
 <div id="resource-filter-group">
+    <div class="filter-header">
+        <label for="open-filter-toggle" class="close-icon" aria-hidden="true">
+            <span class="material-symbols">close</span>
+        </label>
+    </div>
     <div class="table-title">Filter by</div>
     <div class="table-content">
         <h4>Subject</h4>
@@ -16,7 +23,7 @@
         </ul>
         <button id="filters-tags-show-button">
             <span class="label">More</span>
-            <span class="material-symbols" aria-hidden="true">expand_more</span>
+            <span class="material-symbols" aria-hidden="true" translate="no">expand_more</span>
         </button>
         <h4>Type</h4>
         <ul id="filters-type">
@@ -32,4 +39,5 @@
             {% endfor -%}
         </ul>
     </div>
+</div>
 </div>

@@ -1,6 +1,6 @@
 ---
 title: Add a Flutter Fragment to an Android app
-short-title: Add a Flutter Fragment
+shortTitle: Add a Flutter Fragment
 description: Learn how to add a Flutter Fragment to your existing Android app.
 ---
 
@@ -354,7 +354,7 @@ first Flutter frame as quickly as possible.
 
 #### Initial route with a cached engine
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render docs/add-to-app/android-initial-route-cached-engine.md %}
 
 ## Display a splash screen
 

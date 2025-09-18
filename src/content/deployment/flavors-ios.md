@@ -1,6 +1,6 @@
 ---
 title: Set up Flutter flavors for iOS and macOS
-short-title: Flavors (iOS and macOS)
+shortTitle: Flavors (iOS and macOS)
 description: >
   How to create Flutter flavors for an iOS or macOS app.
 ---

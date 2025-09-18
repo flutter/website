@@ -1,6 +1,6 @@
 ---
 title: Layout widgets
-short-title: Layout
+shortTitle: Layout
 description: A catalog of Flutter's widgets for building layouts.
 ---
 

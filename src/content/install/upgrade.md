@@ -1,6 +1,6 @@
 ---
 title: Upgrade Flutter
-short-title: Upgrade
+shortTitle: Upgrade
 description: Learn how to upgrade Flutter and switch to another channel.
 ---
 
