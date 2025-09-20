@@ -59,9 +59,7 @@ This answer to this question involves a
 pattern known as [dependency injection][].
 
 In the Compass app, *dependency injection* is handled using
-[`package:provider`][]. Based on their experience building Flutter apps,
-teams at Google recommend using `package:provider` to implement
-dependency injection.
+[`package:provider`][]. which teams at Google recommend based on their experience building Flutter apps.
 
 Services and repositories are exposed to the top level of the widget tree of
 the Flutter application as `Provider` objects.
