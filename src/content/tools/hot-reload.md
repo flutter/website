@@ -9,7 +9,7 @@ Flutter's hot reload feature helps you quickly and
 easily experiment, build UIs, add features, and fix bugs.
 Hot reload works by injecting updated source code files
 into the [Dart runtime][].
-After the VM updates classes with the new versions of fields and functions,
+After the Dart runtime updates classes with the new versions of fields and functions,
 the Flutter framework automatically rebuilds the widget tree,
 allowing you to quickly view the effects of your changes.
 
