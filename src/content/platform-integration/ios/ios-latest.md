@@ -7,44 +7,38 @@ description: >-
 
 You can develop Flutter on the iOS platform, even on
 the latest release of iOS. The latest Flutter SDK
-already supports a number of the features in the
-latest release of iOS.
+already supports some features in the latest release of iOS.
 
 Of course, if you find a bug on Flutter,
 please [file an issue][].
 
-[flutter#163984]: {{site.github}}/flutter/flutter/issues/163984
-[Flutter's release or profile build modes]: /testing/build-modes
 [file an issue]: {{site.github}}/flutter/flutter/issues
 
-## iOS 18 release
+For information on the status of Flutter's implementation
+of iOS features,
+visit the following issues in the flutter/flutter repo.
 
-The following table shows the status of support for
-the iOS 18 release as of the Flutter 3.24.3 release.
+* Eye tracking of a Flutter app: [Issue 153573][]
+* Flutter support for liquid glass: [Issue 170310][]
+* Hover typing feature: [Issue 152715][]
+* iOS formatting menu: [Issue 150068][]
+* iOS-style zoom page transition: [Issue 150588][]
+* iPad-style tab bar: [Issue 150950][]
+* iPhone mirroring when viewing a Flutter app: [Issue 152711][]
+* Large content viewer: [Issue 152715][]
+* Material 3 expressive: [Issue 168813][]
+* Showing Translate option for the context edit menu: [Issue 107603][] ???
+* Virtual trackpad feature: [Issue 152715][]
+* Writing tools text input feature: [Issue 150965][], [Issue 150452][]
 
-| Feature | Status |
-|---------|--------|
-| Target and build for iOS 18 | Delivered, supported |
-| Control Center (CC) widgets | Delivered, [supported][cc] Requires writing some Swift code to create a toggle for the CC |
-| Light/dark/tinted icon colors | Delivered, [supported][icon] | 
-| Password apps work/integrate work with Flutter | Delivered, supported |
-| Eye tracking of a Flutter app | Partially works; [known issues][eye] |
-| iPhone mirroring (when viewing a Flutter app) | Partially works; [known issues][mirror] |
-| iOS formatting menu | Not yet available; on roadmap |
-| Showing Translate option for the context edit menu | Not yet available; on roadmap |
-| Apple Intelligence (AI), such as New Writing Tools | Not yet available; on roadmap |
-| iOS-style zoom page transition | Not yet available; on roadmap |
-| Hover typing feature | Not available |
-| [iPad-style tab bar][] | Not available |
-| Large content viewer | Not available |
-| Virtual trackpad feature | Not available |
-{% comment %}
-{% endcomment %}
-{:.table .table-striped}
-
-[icon]: /deployment/ios#add-an-app-icon
-[cc]: /platform-integration/ios/app-extensions
-[eye]: {{site.github}}/flutter/flutter/issues/153573
-[iPad-style tab bar]: {{site.apple-dev}}/documentation/uikit/app_and_environment/elevating_your_ipad_app_with_a_tab_bar_and_sidebar
-[mirror]: {{site.github}}/flutter/flutter/issues/152711
-
+[Issue 107603]: {{site.github}}/flutter/flutter/issues/107603
+[Issue 150068]: {{site.github}}/flutter/flutter/issues/150068
+[Issue 150452]: {{site.github}}/flutter/flutter/issues/150452
+[Issue 150588]: {{site.github}}/flutter/flutter/issues/150588
+[Issue 150950]: {{site.github}}/flutter/flutter/issues/150590
+[Issue 150965]: {{site.github}}/flutter/flutter/issues/150965
+[Issue 152711]: {{site.github}}/flutter/flutter/issues/152711
+[Issue 152715]: {{site.github}}/flutter/flutter/issues/152715
+[Issue 153573]: {{site.github}}/flutter/flutter/issues/153573
+[Issue 168813]: {{site.github}}/flutter/flutter/issues/168813
+[Issue 170310]: {{site.github}}/flutter/flutter/issues/170310
