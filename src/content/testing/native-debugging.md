@@ -85,9 +85,9 @@ debugging your own Flutter project as well.
 
    The first time you run the debugger takes the longest.
 
-{% comment %}
+   {% comment %}
    ![VS Code window with debug panes opened](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger.png){:width="100%"}
-{% endcomment %}
+   {% endcomment %}
 
 1. Test the debugger.
 
@@ -104,14 +104,14 @@ debugging your own Flutter project as well.
    c. In the app, click the **+** button
       to increment the counter. The app pauses.
 
-{% comment %}
+      {% comment %}
       ![Flutter test app paused](/assets/images/docs/testing/debugging/native/macos/basic-app.png){:width="50%"}
       <div class="figure-caption">
 
       Default Flutter app as rendered on macOS.
 
       </div>
-{% endcomment %}
+      {% endcomment %}
 
     d. At this point, VS Code displays:
 
@@ -125,9 +125,9 @@ debugging your own Flutter project as well.
       - In the **panel**:
         - The log of the Flutter app in the **Debug console**
 
-{% comment %}
+      {% comment %}
       ![VS Code window with Flutter app paused](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger-paused.png){:width="100%"}
-{% endcomment %}
+      {% endcomment %}
 
 ### VS Code Flutter debugger
 

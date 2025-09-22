@@ -191,10 +191,6 @@ check out [User input & accessibility][].
 
 ### Restore List state
 
-{% comment %}
-<b>PENDING: Reid, I think you suggested renaming/removing this item? I can't, for the life of me, find that comment in the PR</b>
-{% endcomment %}
-
 To maintain the scroll position in a list
 that doesn't change its layout when the
 device's orientation changes,

@@ -7,11 +7,11 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    directories.
    Name this new directory the name of the platform package.
 
-   <pre>
+   ```plaintext highlightLines=3
    plugin_name/ios/
    ├── ...
-   └── <b>plugin_name/</b>
-   </pre>
+   └── plugin_name/
+   ```
 
 1. Within this new directory, create the following files/directories:
 
@@ -21,13 +21,13 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    Your plugin should look like:
 
-   <pre>
+   ```plaintext highlightLines=4-5
    plugin_name/ios/
    ├── ...
    └── plugin_name/
-      ├── <b>Package.swift</b>
-      └── <b>Sources/plugin_name/</b>
-   </pre>
+      ├── Package.swift
+      └── Sources/plugin_name/
+   ```
 
 1. Use the following template in the `Package.swift` file:
 

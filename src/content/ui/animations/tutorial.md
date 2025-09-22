@@ -4,9 +4,6 @@ shortTitle: Tutorial
 description: A tutorial showing how to build explicit animations in Flutter.
 ---
 
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-
 <?code-excerpt path-base="animation"?>
 
 :::secondary What you'll learn
@@ -668,12 +665,12 @@ animations specific to your design system type, `ReverseAnimation`,
 shared element transitions (also known as Hero animations),
 physics simulations and `fling()` methods.
 
-[animate0]: {{examples}}/animation/animate0
-[animate1]: {{examples}}/animation/animate1
-[animate2]: {{examples}}/animation/animate2
-[animate3]: {{examples}}/animation/animate3
-[animate4]: {{examples}}/animation/animate4
-[animate5]: {{examples}}/animation/animate5
+[animate0]: {{site.repo.this}}/tree/main/examples/animation/animate0
+[animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
+[animate2]: {{site.repo.this}}/tree/main/examples/animation/animate2
+[animate3]: {{site.repo.this}}/tree/main/examples/animation/animate3
+[animate4]: {{site.repo.this}}/tree/main/examples/animation/animate4
+[animate5]: {{site.repo.this}}/tree/main/examples/animation/animate5
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Introduction to animations]: /ui/animations
