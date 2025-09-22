@@ -7,11 +7,11 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    directories.
    Name this new directory the name of the platform package.
 
-   <pre>
+   ```plaintext highlightLines=3
    plugin_name/ios/
    ├── ...
-   └── <b>plugin_name/</b>
-   </pre>
+   └── plugin_name/
+   ```
 
 1. Within this new directory, create the following files/directories:
 
@@ -27,14 +27,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    Your plugin should look like:
 
-   <pre>
+   ```plaintext highlightLines=4-6
    plugin_name/ios/
    ├── ...
    └── plugin_name/
-      ├── <b>Package.swift</b>
-      └── <b>Sources/plugin_name/include/plugin_name/</b>
-         └── <b>.gitkeep</b>
-   </pre>
+      ├── Package.swift
+      └── Sources/plugin_name/include/plugin_name/
+         └── .gitkeep
+   ```
 
 1. Use the following template in the `Package.swift` file:
 
@@ -232,20 +232,20 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Before:
 
-     <pre>
+     ```plaintext
      ios/Classes/
      ├── PublicHeaderFile.h
      └── ImplementationFile.m
-     </pre>
+     ```
 
    * After:
 
-     <pre>
+     ```plaintext highlightLines=2
      ios/plugin_name/Sources/plugin_name/
-     └── <b>include/plugin_name/</b>
+     └── include/plugin_name/
         └── PublicHeaderFile.h
      └── ImplementationFile.m
-     </pre>
+     ```
 
    In this example, the import statements in `ImplementationFile.m`
    should be updated:
