@@ -6,12 +6,6 @@ description: How to internationalize your Flutter app.
 
 <?code-excerpt path-base="internationalization"?>
 
-{% comment %}
-Consider updating the number of languages when touching this page.
-{% endcomment %}
-
-{% assign languageCount = '115' -%}
-
 :::secondary What you'll learn
 * How to track the device's locale (the user's preferred language).
 * How to enable locale-specific Material or Cupertino widgets.
@@ -55,8 +49,6 @@ To add support for other languages,
 an application must specify additional
 `MaterialApp` (or `CupertinoApp`) properties,
 and include a package called `flutter_localizations`.
-As of December 2023, this package supports [{{languageCount}} languages][language-count]
-and language variants.
 
 To begin, start by creating a new Flutter application
 in a directory of your choice with the `flutter create` command.
@@ -116,7 +108,7 @@ After introducing the `flutter_localizations` package
 and adding the previous code,
 the `Material` and `Cupertino`
 packages should now be correctly localized in
-one of the {{languageCount}} supported locales.
+one of the supported locales.
 Widgets should be adapted to the localized messages,
 along with correct left-to-right or right-to-left layout.
 
@@ -777,13 +769,14 @@ Locale myLocale = Localizations.localeOf(context);
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [widgets-global]: {{site.api}}/flutter/flutter_localizations/GlobalWidgetsLocalizations-class.html
 
-<a id="specifying-supportedlocales"></a>
+<a id="specifying-supportedlocales" aria-hidden="true"></a>
+
 ### Specifying the app's supported&shy;Locales parameter
 
-Although the `flutter_localizations` library currently supports
-{{languageCount}} languages and language variants, only English language translations
-are available by default. It's up to the developer to decide exactly
-which languages to support.
+Although the `flutter_localizations` library
+supports many languages and language variants,
+only English language translations are available by default.
+It's up to the developer to decide exactly which languages to support.
 
 The `MaterialApp` [`supportedLocales`][]
 parameter limits locale changes. When the user changes the locale
