@@ -141,9 +141,11 @@ check out the following resources.
   perform state restoration, such as [`statePersistence`][].
 
 * For more information on navigation and the
-  `go_router` package, check out [Navigation and routing][].
+  `go_router` package, check out [Navigation and routing][]
+  and the [`go_router` doc on pub.dev][].
 
 [`go_router`]: {{site.pub}}/packages/go_router
+[`go_router` doc on pub.dev]: {{site.pub-api}}/go_router/latest/topics/State%20restoration-topic.html
 [Navigation and routing]: /ui/navigation
 [`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
 [`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
