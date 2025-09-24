@@ -16,7 +16,7 @@ js:
 
 [Model-View-ViewModel (MVVM)][] is a design pattern 
 that separates a feature of an application into three parts: 
-the model, the view model and the view.
+the model, the view model, and the view.
 Views and view models make up the UI layer of an application.
 Repositories and services represent the data layer of an application, 
 or the model layer of MVVM.
@@ -26,9 +26,9 @@ and helps to handle the different states of that method,
 such as running, complete, and error.
 
 [View models][] can use commands to handle interaction and run actions.
-As well, they can be used to display different UI states,
+You can also use them to display different UI states,
 like loading indicators when an action is running,
-or an error dialog when an action failed.
+or display an error dialog when an action failed.
 
 View models can become very complex 
 as an application grows 
@@ -67,8 +67,8 @@ class HomeViewModel extends ChangeNotifier {
 }
 ```
 
-View models also contain actions typically triggered by the view;
-for example, a `load` action in charge of loading the `user`.
+View models also contain actions typically triggered by the view,
+such as a `load` action in charge of loading the `user`.
 
 <?code-excerpt "lib/no_command.dart (load1)" replace="/null;/\/\/ .../g;/2//g"?>
 ```dart
@@ -164,8 +164,8 @@ class HomeViewModel extends ChangeNotifier {
 Sharing the running state 
 between the `load()` and `edit()` actions might not always work, 
 because you might want to show a different UI component 
-when the `load()` action runs than when the `edit()` action runs,
-and you'll have the same problem with the `error` state.
+when the `load()` action runs than when the `edit()` action runs;
+you'll have the same problem with the `error` state.
 
 ### Triggering UI actions from view models
 
@@ -222,7 +222,7 @@ You might find yourself repeating the above code over and over,
 implementing a different running state 
 for each action in every view model. 
 At that point, it makes sense to extract this code 
-into a reusable pattern: a command.
+into a reusable pattern called a _command_.
 
 A command is a class that encapsulates a view model action, 
 and exposes the different states that an action can have.
@@ -272,7 +272,7 @@ class HomeViewModel extends ChangeNotifier {
 ```
 
 The previous `load()` method becomes `_load()`, 
-and instead the command `load` gets exposed to the View. 
+and instead the command `load` gets exposed to the `View`. 
 The previous `running` and `error` states can be removed, 
 as they are now part of the command.
 
@@ -298,8 +298,10 @@ When the action finishes,
 the `running` state changes to `false` 
 and the `completed` state to `true`.
 
-If the `running` state is `true`, the command cannot begin executing again. 
-This prevents users from triggering a command multiple times by pressing a button rapidly.
+If the `running` state is `true`,
+the command cannot begin executing again. 
+This prevents users from triggering a command
+multiple times by pressing a button rapidly.
 
 The command’s `execute()` method captures any thrown `Exceptions`
 automatically and exposes them in the `error` state.
@@ -512,7 +514,7 @@ and a `Command1`, for actions that take one parameter.
 :::note
 Check [pub.dev][] for other ready-to-use
 implementations of the command pattern,
-such as the [`flutter_command`][] package.
+such as the [`command_it`][] package.
 :::
 
 <?code-excerpt "lib/command.dart"?>
@@ -626,7 +628,7 @@ final class Command1<T, A> extends Command<T> {
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
 [`Result` class]: /app-architecture/design-patterns/result
 [pub.dev]: {{site.pub}}
-[`flutter_command`]: {{site.pub-pkg}}/flutter_command
+[`command_it`]: {{site.pub-pkg}}/command_it
 [`ChangeNotifier`]: /get-started/fundamentals/state-management
 [Model-View-ViewModel (MVVM)]: /app-architecture/guide#view-models
 [View models]: /app-architecture/guide#view-models
