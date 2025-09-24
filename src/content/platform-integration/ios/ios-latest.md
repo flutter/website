@@ -7,7 +7,8 @@ description: >-
 
 Flutter supports iOS 26.
 
-For information on the status of specific iOS features,
+For information on the status of specific iOS features
+that Flutter hasn't yet fully implemented,
 visit the following issues in the flutter/flutter repo.
 
 * Eye tracking of a Flutter app: [Issue 153573][]
@@ -18,17 +19,17 @@ visit the following issues in the flutter/flutter repo.
 * iPad-style tab bar: [Issue 150950][]
 * iPhone mirroring when viewing a Flutter app: [Issue 152711][]
 * Large content viewer: [Issue 152715][]
-* Adding Translate button to the context edit menu: [Issue 150392][]
+* Add "Translate" button to the context edit menu: [Issue 150392][]
 * Virtual trackpad feature: [Issue 152715][]
 * Writing tools text input feature: [Issue 150965][], [Issue 150452][]
 
-[Issue 150068]: {{site.github}}/flutter/flutter/issues/150068
-[Issue 105392]: {{site.github}}/flutter/flutter/issues/105392
-[Issue 150452]: {{site.github}}/flutter/flutter/issues/150452
-[Issue 150588]: {{site.github}}/flutter/flutter/issues/150588
-[Issue 150950]: {{site.github}}/flutter/flutter/issues/150590
-[Issue 150965]: {{site.github}}/flutter/flutter/issues/150965
-[Issue 152711]: {{site.github}}/flutter/flutter/issues/152711
-[Issue 152715]: {{site.github}}/flutter/flutter/issues/152715
-[Issue 153573]: {{site.github}}/flutter/flutter/issues/153573
-[Issue 170310]: {{site.github}}/flutter/flutter/issues/170310
+[Issue 150068]: {{site.repo.flutter}}/flutter/flutter/issues/150068
+[Issue 105392]: {{site.repo.flutter}}/flutter/flutter/issues/105392
+[Issue 150452]: {{site.repo.flutter}}/flutter/flutter/issues/150452
+[Issue 150588]: {{site.repo.flutter}}/flutter/flutter/issues/150588
+[Issue 150950]: {{site.repo.flutter}}/flutter/flutter/issues/150590
+[Issue 150965]: {{site.repo.flutter}}/flutter/flutter/issues/150965
+[Issue 152711]: {{site.repo.flutter}}/flutter/flutter/issues/152711
+[Issue 152715]: {{site.repo.flutter}}/flutter/flutter/issues/152715
+[Issue 153573]: {{site.repo.flutter}}/flutter/flutter/issues/153573
+[Issue 170310]: {{site.repo.flutter}}/flutter/flutter/issues/170310
