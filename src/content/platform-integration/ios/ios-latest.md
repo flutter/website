@@ -24,7 +24,7 @@ visit the following issues in the flutter/flutter repo.
 * Writing tools text input feature: [Issue 150965][], [Issue 150452][]
 
 [Issue 150068]: {{site.repo.flutter}}/flutter/flutter/issues/150068
-[Issue 105392]: {{site.repo.flutter}}/flutter/flutter/issues/105392
+[Issue 150392]: {{site.repo.flutter}}/flutter/flutter/issues/150392
 [Issue 150452]: {{site.repo.flutter}}/flutter/flutter/issues/150452
 [Issue 150588]: {{site.repo.flutter}}/flutter/flutter/issues/150588
 [Issue 150950]: {{site.repo.flutter}}/flutter/flutter/issues/150590
