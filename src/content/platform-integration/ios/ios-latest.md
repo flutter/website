@@ -11,8 +11,8 @@ For information on the status of specific iOS features
 that Flutter hasn't yet fully implemented,
 visit the following issues in the flutter/flutter repo.
 
-* Eye tracking of a Flutter app: [Issue 153573][]
 * Flutter support for liquid glass: [Issue 170310][]
+* Eye tracking of a Flutter app: [Issue 153573][]
 * Hover typing feature: [Issue 152715][]
 * iOS formatting menu: [Issue 150068][]
 * iOS-style zoom page transition: [Issue 150588][]
