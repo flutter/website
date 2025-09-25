@@ -384,11 +384,6 @@ it's time to create an app and try out Flutter development!
        the VS Code sidebar or open it from the command palette by
        running the **Flutter: Focus on Flutter Sidebar View** command.
 
-    1. If your app isn't running, start debugging it again.
-
-       Go to **Run** <span aria-label="and then">></span>
-       **Start Debugging** or press <kbd>F5</kbd>.
-
     1. In the Flutter sidebar, under **DevTools**,
        click the **Flutter Inspector** button.
 
