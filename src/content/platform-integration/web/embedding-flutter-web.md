@@ -110,8 +110,8 @@ View additions and removals are surfaced to Flutter through the
 [`didChangeMetrics` method][] of the `WidgetsBinding` class.
 
 The complete list of views attached to your Flutter app is available
-through the `WidgetsBinding.instance.platformDispatcher.views` iterable. These
-views are of [type `FlutterView`][].
+through the `WidgetsBinding.instance.platformDispatcher.views` iterable.
+These views are of [type `FlutterView`][].
 
 To render content into each `FlutterView`, your Flutter app needs to create a
 [`View` widget][]. `View` widgets can be grouped together under a
@@ -233,8 +233,8 @@ void main() {
 ### Identifying views
 
 Each `FlutterView` has an identifier assigned by Flutter when
-attached. This `viewId` can be used to uniquely identify each view, retrieve
-its initial configuration, or decide what to render in it.
+attached. This `viewId` can be used to uniquely identify each view,
+retrieve its initial configuration, or decide what to render in it.
 
 The `viewId` of the rendered `FlutterView` can be retrieved from
 its `BuildContext` like this:
@@ -248,8 +248,8 @@ class SomeWidget extends StatelessWidget {
     // ...
 ```
 
-Similarly, from the `viewBuilder` method of the `MultiViewApp`, the `viewId`
-can be retrieved like this:
+Similarly, from the `viewBuilder` method of the `MultiViewApp`,
+the `viewId` can be retrieved like this:
 
 ```dart highlightLines=4
 MultiViewApp(
@@ -334,13 +334,13 @@ and [Understanding constraints][].
 
 ## Custom element (`hostElement`)
 
-_Between Flutter 3.10 and 3.24_<br />
-You can embed a single-view Flutter web app into any HTML element of your web
-page.
+As of the Flutter 3.10 release,
+you can embed a single-view Flutter web app
+into any HTML element of your web page.
 
-To tell Flutter web which element to render into, pass an object with a `config`
-field to the `_flutter.loader.load` function that specifies a `HTMLElement` as
-the `hostElement`.
+To tell Flutter web which element to render into,
+pass an object with a `config` field to the `_flutter.loader.load` function
+that specifies a `HTMLElement` as the `hostElement`.
 
 ```js highlightLines=3
 _flutter.loader.load({
@@ -349,6 +349,13 @@ _flutter.loader.load({
   }
 });
 ```
+
+:::note
+Multi-view embedding also works with a single view.
+An advantage of embedding a single-view by using multi-view support,
+is that you can create and remove views dynamically. Also,
+if single view support is ever deprecated, it won't affect your app.
+:::
 
 To learn more about other configuration options,
 check out [Customizing web app initialization][].
