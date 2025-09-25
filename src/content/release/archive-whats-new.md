@@ -270,7 +270,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
 [Flutter fundamentals docs]: /get-started/fundamentals
-[Flutter install]: /get-started/install
+[Flutter install]: /get-started
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
@@ -302,7 +302,7 @@ You might also check out the [Dart 3.3 release][] blog post.
 
 [@TahaTesser]: {{site.github}}/TahaTesser
 [Concurrency and isolates]: /perf/isolates
-[Flutter install]: /get-started/install
+[Flutter install]: /get-started
 [let us know]: {{site.github}}/flutter/website/issues/new/choose
 [migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: /cookbook/design/themes
@@ -806,7 +806,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
   [Build and release a Windows desktop app][].
 * If you are developing software for iOS 16 and higher,
   you must enable [Developer mode][].
-  The [macOS install][] page is updated
+  The macOS [install page][] is updated
   with this information.
 * As described in the [3.3 release notes][],
   you should catch all errors and exceptions
@@ -819,7 +819,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [Build and release a Windows desktop app]: /deployment/windows
 [Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: /testing/errors
-[macOS install]: /get-started/install/macos/mobile-ios#install-and-configure-xcode
+[install page]: /get-started
 [navigation and routing overview]: /ui/navigation
 [URL strategies]: /ui/navigation/url-strategies
 
@@ -856,7 +856,7 @@ and the [Flutter 3 release notes][].
   and collected web docs under
   `/platform-integration/web`.
 * Flutter 3 supports Apple Silicon processors.
-  We've updated the [macOS install page][]
+  We've updated the macOS [install page][]
   to offer an Apple Silicon download button.
 * In Flutter 3, the macOS and Linux platforms
   have reached stable, in addition to Windows.
@@ -884,7 +884,7 @@ and the [Flutter 3 release notes][].
 [Games page]: {{site.main-url}}/games
 [Games doc page]: /resources/games-toolkit
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
-[macOS install page]: /get-started/install/macos
+[install page]: /get-started
 
 **Codelabs and workshops**
 
@@ -1265,8 +1265,7 @@ see [Announcing Flutter 1.20][].
   performance docs.
 * [Developing for iOS 14 beta][] outlines some issues you might
   run into if developing for devices running iOS 14 beta.
-* New instructions for [installing Flutter on Linux using
-  snapd.][]
+* New instructions for installing Flutter on Linux using snapd.
 * Updated the [Desktop support][] page to reflect that Linux
   desktop apps (as well as macOS) are available as alpha.
 * Several new Flutter books have been published. The
@@ -1339,7 +1338,6 @@ publication since the last stable release:
 [Going deeper with Flutter's web support]: {{site.flutter-medium}}/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.flutter-medium}}/handling-404-page-not-found-error-in-flutter-731f5a9fba29
 [How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
-[installing Flutter on Linux using snapd.]: /get-started/install/linux
 [Managing issues in a large-scale open source project]: {{site.flutter-medium}}/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
@@ -1500,7 +1498,7 @@ Happy Fluttering!
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [implicit animations]: /codelabs/implicit-animations
 [Web support for Flutter goes beta]: {{site.flutter-medium}}/web-support-for-flutter-goes-beta-35b64a1217c0
-[Get started]: /get-started/install
+[Get started]: /get-started
 
 ## 10 Sep 2019: 1.9 release
 

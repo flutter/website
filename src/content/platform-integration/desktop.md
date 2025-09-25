@@ -36,9 +36,9 @@ Consult the guide for your target desktop environment:
 * [Install macOS desktop devtools][macOS-devtools]
 * [Install Windows desktop devtools][Windows-devtools]
 
-[Linux-devtools]: /get-started/install/linux/desktop
-[macOS-devtools]: /get-started/install/macos/desktop
-[Windows-devtools]: /get-started/install/windows/desktop
+[Linux-devtools]: /platform-integration/linux/setup#set-up-tooling
+[macOS-devtools]: /platform-integration/macos/setup#set-up-tooling
+[Windows-devtools]: /platform-integration/windows/setup#set-up-tooling
 
 If `flutter doctor` finds problems or missing components
 for a platform that you don't want to develop for,
