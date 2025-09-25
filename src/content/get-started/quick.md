@@ -238,12 +238,9 @@ follow the instructions in [Install Flutter manually][].
 
        {:type="a"}
 
- 1. <h3>Validate your setup</h3>
+ 1. <h3>Troubleshoot installation issues</h3>
 
-    To ensure you installed Flutter correctly,
-    run `flutter doctor -v` in your preferred terminal.
-
-    If the command isn't found or there's an error,
+    If you encounter any issues during installation,
     check out [Flutter installation troubleshooting][troubleshoot].
 
 {:.steps}
