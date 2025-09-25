@@ -52,4 +52,4 @@ check out:
 
 [Material.io developer documentation]: {{site.material}}/develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
-[Umbrella issue on GitHub]: {{site.github}}//flutter/flutter/issues/91605
+[Umbrella issue on GitHub]: {{site.github}}/flutter/flutter/issues/91605

@@ -18,7 +18,7 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-<a class="filled-button" style="margin-bottom: 0.5rem;" href="/assets/files/flutter-rules-template.md" download>
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>
   <span aria-hidden="true" class="material-symbols" translate="no">download</span>
   <span>Download the Flutter and Dart rules template</span>
 </a>
@@ -29,15 +29,15 @@ Many AI environments support rules files to guide
 LLM behavior. Here are some common examples and their
 corresponding rule file names:
 
-| Environment | Rules File | Installation Instructions |
-| :--- | :--- | :--- |
+| Environment | Rules File | Installation Instructions                     |
+| :--- | :--- |:----------------------------------------------|
 | Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
-| Cursor | `cursor.md` | [Configure cursorrules.md][] |
-| Firebase Studio | `airules.md` | [Configure airules.md][] |
-| Gemini CLI | `GEMINI.md` | [Configure gemini.md][] |
-| JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][] |
-| VS Code | `.instructions.md` | [Configure .instructions.md][] |
-| Windsurf | `guidelines.md` | [Configure guidelines.md][] |
+| Cursor | `cursor.md` | [Configure cursorrules.md][]                  |
+| Firebase Studio | `airules.md` | [Configure airules.md][]                      |
+| Gemini CLI | `GEMINI.md` | [Configure GEMINI.md][]                       |
+| JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][]                   |
+| VS Code | `.instructions.md` | [Configure .instructions.md][]                |
+| Windsurf | `guidelines.md` | [Configure guidelines.md][]                   |
 
 [Configure airules.md]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
 [Configure .github/copilot-instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
@@ -53,10 +53,10 @@ You can adapt our Flutter and Dart rules template for your
 specific environment. To do so, follow these steps:
 
 1.  Download the Flutter and Dart rules template:
-    <a href="/assets/files/flutter-rules-template.md" download>flutter-rules-template.md</a>
+    <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>rules.md</a>
 
 1.  In an LLM like [Gemini][], attach the
-    `flutter-rules-template.md` file that you downloaded in
+    `rules.md` file that you downloaded in
     the last step.
     
 1.  Provide a prompt to reformat the file for your desired
@@ -65,8 +65,8 @@ specific environment. To do so, follow these steps:
     Example prompt:
 
     ```text
-    Convert the attached flutter-rules-template.txt file
-    into a guidelines.md file for JetBrains IDE. Make sure
+    Convert the attached rules.md file
+    into a guidelines.md file for Gemini CLI. Make sure
     to use the styles required for a guidelines.md file.
     ```
 

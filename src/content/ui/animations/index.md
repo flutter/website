@@ -4,8 +4,6 @@ shortTitle: Animations
 description: How to perform animations in Flutter.
 ---
 
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-
 Well-designed animations make a UI feel more intuitive,
 contribute to the slick look and feel of a polished app,
 and improve the user experience.
@@ -422,7 +420,7 @@ Learn more about Flutter animations at the following links:
   The animation API for the Flutter framework. This link
   takes you to a technical overview page for the library.
 
-[animate1]: {{examples}}/animation/animate1
+[animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
 [Animate a widget using a physics simulation]: /cookbook/animation/physics-simulation
 [`Animatable`]: {{site.api}}/flutter/animation/Animatable-class.html
 [`AnimatedList` example]: {{site.github}}/flutter/samples/blob/main/animations

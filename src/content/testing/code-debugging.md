@@ -615,26 +615,18 @@ to help you debug your app at various points along the
 development cycle.
 To use these features, compile your app in debug mode.
 
-The following list highlights some of flags and one function from the
+The following list highlights some flags and one function from the
 [rendering library][] for debugging performance issues.
 
 [`debugDumpRenderTree()`][]
 : To dump the rendering tree to the console,
   call this function when not in a layout or repaint phase.
 
-  {% comment %}
-    Feature is not yet added to DevTools:
-    Rather than using this flag to dump the render tree
-    to a file, view the render tree in the Flutter inspector.
-    To do so, bring up the Flutter inspector and select the
-    **Render Tree** tab.
-  {% endcomment %}
-
   To set these flags either:
 
-* edit the framework code
-* import the module, set the value in your `main()` function,
-  then hot restart.
+  * Edit the framework code.
+  * Import the module, set the value in your `main()` function,
+    then hot restart.
 
 [`debugPaintLayerBordersEnabled`][]
 : To display the boundaries of each layer, set this property to `true`.
