@@ -9,7 +9,7 @@ description: >-
 
 The `color` parameter in `AppBarTheme` and `AppBarThemeData` constructors
 and their `copyWith` methods hasve been deprecated. Use `backgroundColor`
-instead. This change affects how AppBar themes are configured and may
+instead. This change affects how AppBar themes are configured and might
 cause deprecation warnings in existing code.
 
 ## Background
