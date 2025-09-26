@@ -113,6 +113,38 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 ```
 
+### ImageFilter API
+
+Fragment shaders can also be used with the [`ImageFilter`][] API. This allows
+using custom fragment shaders with the [`BackdropFilter`][] class to apply
+shaders to already rendered content. [`ImageFilter`][] provides a constructor,
+[`ImageFilter.shader`][], for creating an [`ImageFilter`][] with a custom
+fragment shader.
+
+[`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
+[`BackdropFilter`]: {{site.api}}/flutter/dart-ui/BackdropFilter-class.html
+[`ImageFilter.shader`]: {{site.api}}/flutter/dart-ui/ImageFilter/ImageFilter.shader.html
+
+```dart
+Widget build(BuildContext context, FragmentShader shader) {
+  final screenSize = MediaQuery.of(context).size;
+  shader.setFloat(0, screenSize.width);
+  shader.setFloat(1, screenSize.height);
+  return ClipRect(
+    child: SizedBox(
+      width: 300,
+      height: 300,
+      child: BackdropFilter(
+        filter: ImageFilter.shader(shader),
+        child: Container(
+          color: Colors.transparent,
+        ),
+      ),
+    ),
+  );
+}
+```
+
 ## Authoring shaders
 
 Fragment shaders are authored as GLSL source files.
