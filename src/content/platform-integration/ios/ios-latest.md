@@ -23,13 +23,13 @@ visit the following issues in the flutter/flutter repo.
 * Virtual trackpad feature: [Issue 152715][]
 * Writing tools text input feature: [Issue 150965][], [Issue 150452][]
 
-[Issue 150068]: {{site.repo.flutter}}/flutter/flutter/issues/150068
-[Issue 150392]: {{site.repo.flutter}}/flutter/flutter/issues/150392
-[Issue 150452]: {{site.repo.flutter}}/flutter/flutter/issues/150452
-[Issue 150588]: {{site.repo.flutter}}/flutter/flutter/issues/150588
-[Issue 150950]: {{site.repo.flutter}}/flutter/flutter/issues/150590
-[Issue 150965]: {{site.repo.flutter}}/flutter/flutter/issues/150965
-[Issue 152711]: {{site.repo.flutter}}/flutter/flutter/issues/152711
-[Issue 152715]: {{site.repo.flutter}}/flutter/flutter/issues/152715
-[Issue 153573]: {{site.repo.flutter}}/flutter/flutter/issues/153573
-[Issue 170310]: {{site.repo.flutter}}/flutter/flutter/issues/170310
+[Issue 150068]: {{site.repo.flutter}}/issues/150068
+[Issue 150392]: {{site.repo.flutter}}/issues/150392
+[Issue 150452]: {{site.repo.flutter}}/issues/150452
+[Issue 150588]: {{site.repo.flutter}}/issues/150588
+[Issue 150950]: {{site.repo.flutter}}/issues/150590
+[Issue 150965]: {{site.repo.flutter}}/issues/150965
+[Issue 152711]: {{site.repo.flutter}}/issues/152711
+[Issue 152715]: {{site.repo.flutter}}/issues/152715
+[Issue 153573]: {{site.repo.flutter}}/issues/153573
+[Issue 170310]: {{site.repo.flutter}}/issues/170310
