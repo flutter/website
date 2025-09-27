@@ -36,7 +36,7 @@
 - platform: 'Firefox (Web)'
   target-arch: 'JavaScript'
   supported: '[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)'
-  ci-tested: '132'
+  ci-tested: '143'
   unsupported: '98 and earlier'
 - platform: 'Safari (Web)'
   target-arch: 'JavaScript'
