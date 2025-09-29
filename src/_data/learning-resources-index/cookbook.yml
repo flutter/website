@@ -424,7 +424,7 @@
     url: /cookbook/navigation/set-up-app-links
 
 - name: iOS universal links
-  description: Set up deep linking on Android
+  description: Set up universal links for iOS
   tags:
     - navigation
     - iOS
