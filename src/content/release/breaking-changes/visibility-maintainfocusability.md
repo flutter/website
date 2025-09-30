@@ -1,5 +1,5 @@
 ---
-title: The Visibility widget is no longer focusable by default when maintainState is enabled.
+title: The Visibility widget is no longer focusable by default when maintainState is enabled
 description: The Visibility widget by default no longer implicitly retains focusability for its child when maintainState is enabled.
 ---
 
