@@ -6,7 +6,7 @@ description: The Visibility widget by default no longer implicitly retains focus
 ## Summary
 This change was introduced to fix an issue
 where an `IndexedStack`s hidden children would be focusable with keyboard events
-(see https://github.com/flutter/flutter/issues/114213)
+(see [issue](https://github.com/flutter/flutter/issues/114213))
 due to the underlying `Visibility` widgets default behavior.
 
 ## Description of change
@@ -60,4 +60,4 @@ Relevant issues:
 
 Relevant PRs:
 
-* [PR 159133: Add flag to exclude focus for hidden children in Visibility, maintainFocusability. Set maintainFocusability to false in IndexedStack]({{site.github}}/flutter/pull/159133)
+* [PR 159133: Add flag to exclude focus for hidden children in Visibility, maintainFocusability. Set maintainFocusability to false in IndexedStack]({{site.repo.flutter}}/pull/159133)
