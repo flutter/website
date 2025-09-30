@@ -1,6 +1,8 @@
 ---
 title: The Visibility widget is no longer focusable by default when maintainState is enabled
-description: The Visibility widget by default no longer implicitly retains focusability for its child when maintainState is enabled.
+description: >-
+  The Visibility widget by default no longer implicitly retains focusability
+  for its child when maintainState is enabled.
 ---
 
 ## Summary
@@ -27,25 +29,25 @@ you will need to set `maintainFocusability` to true.
 Code before migration:
 
 ```dart
-    child: Visibility(
-        maintainState: true,
-        child: SomeWidget(),
-    )
+child: Visibility(
+    maintainState: true,
+    child: SomeWidget(),
+)
 ```
 
 Code after migration:
 
 ```dart
-    child: Visibility(
-        maintainState: true,
-        maintainFocusability: true,
-        child: SomeWidget(),
-    )
+child: Visibility(
+    maintainState: true,
+    maintainFocusability: true,
+    child: SomeWidget(),
+)
 ```
 
 ## Timeline
 
-Landed in version: 3.34.0-pre
+Landed in version: 3.34.0-pre<br>
 In stable release: 3.35
 
 ## References
