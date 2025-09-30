@@ -11,7 +11,7 @@
 - platform: 'macOS'
   target-arch: 'x64, Arm64'
   supported: 'Catalina (10.15) to Tahoe (26)'
-  ci-tested: 'Sonoma (14)'
+  ci-tested: 'Sonoma (14), Sequoia (15)'
   unsupported: 'Mojave (10.14) and earlier'
 - platform: 'Windows'
   target-arch: 'x64, Arm64'
