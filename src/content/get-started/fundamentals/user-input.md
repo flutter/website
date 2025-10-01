@@ -220,14 +220,10 @@ Widget build(BuildContext context) {
 > <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
 > [Rich Text (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
-> [Rich Text Editor][]
-
 > <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**: 
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
-[Rich Text Editor]: https://github.com/flutter/samples/tree/main/rich_text_editor
 [Rich Text Editor code]: {{site.github}}/flutter/samples/tree/main/simplistic_editor
 
 ### `TextField`
