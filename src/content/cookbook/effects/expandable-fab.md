@@ -3,7 +3,7 @@ title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/expandable_fab"?>

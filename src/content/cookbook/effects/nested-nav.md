@@ -3,7 +3,7 @@ title: Create a nested navigation flow
 description: How to implement a flow with nested navigation.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/nested_nav"?>

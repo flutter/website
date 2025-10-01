@@ -75,7 +75,6 @@ export default function (eleventyConfig: UserConfig) {
 
   eleventyConfig.addPassthroughCopy('src/content/assets/js');
   eleventyConfig.addPassthroughCopy('src/content/llms.txt');
-  eleventyConfig.addPassthroughCopy({ 'site-shared/pkgs/inject_dartpad/lib/inject_dartpad.js': 'assets/js/inject_dartpad.js' });
   eleventyConfig.addPassthroughCopy('src/content/assets/files', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/assets/images', { expand: true });
   eleventyConfig.addPassthroughCopy('src/content/cookbook/img-files', { expand: true });

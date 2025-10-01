@@ -3,7 +3,7 @@ title: Create a grid list
 description: How to implement a grid list.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/grid_lists"?>

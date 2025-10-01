@@ -75,10 +75,6 @@ you probably don't need to build this site.
 Often you can make changes using the GitHub UI.
 If needed, we can stage the changes automatically in your pull request.
 
-> [!IMPORTANT] 
-> If you are cloning this repository locally,
-> follow the below instruction on cloning with its submodule.
-
 If your change involves code samples, adds/removes pages, or affects navigation,
 do consider building and testing your work before submitting.
 
@@ -133,44 +129,20 @@ follow the update instructions for how you originally installed it.
 [Node.js download archive]: https://nodejs.org/en/download/
 [nvm]: https://github.com/nvm-sh/nvm
 
-### Clone this repo and its submodules
-
-> [!NOTE]
-> This repository has git _submodules_, which affects how you clone it.
-> The GitHub documentation has general help on
-> [forking][] and [cloning][] repos.
+### Clone this repo
 
 If you're not a member of the Flutter organization,
-we recommend you **create a fork** of this repo under your own account,
+we recommend you [create a fork][] of this repo under your own account,
 and then submit a PR from that fork.
 
 Once you have a fork (or you're a Flutter org member),
-_choose one_ of the following submodule-cloning techniques:
+clone the repository with `git clone`:
 
-1. Clone the repo and its submodule at the same time
-   using the `--recurse-submodules` option:
+```bash
+git clone https://github.com/flutter/website.git
+```
 
-   ```console
-   git clone --recurse-submodules https://github.com/flutter/website.git
-   ```
-
-2. If you've already cloned the repo without its submodule,
-   then run this command from the root of the repository:
-
-   ```console
-   git submodule update --init --recursive
-   ```
-
-> [!NOTE]
-> At any time during development
-> you can use the `git submodule` command to refresh submodules:
->
-> ```console
-> git pull && git submodule update --init --recursive
-> ```
-
-[cloning]: https://docs.github.com/repositories/creating-and-managing-repositories/cloning-a-repository
-[forking]: https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
+[create a fork]: https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
 
 ## Set up your local environment and serve changes
 
@@ -178,7 +150,7 @@ Before you continue setting up the site infrastructure,
 verify the correct versions of Flutter and Node.js are set up and available by
 following the instructions in [Get the prerequisites](#get-the-prerequisites).
 
-1. _Optional:_ After cloning the repo and its submodules,
+1. _Optional:_ After cloning the repo,
    create a branch for your changes:
 
    ```console

@@ -4,7 +4,7 @@ shortTitle: UI
 description: Introduction to user interface development in Flutter.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="ui/widgets_intro/"?>

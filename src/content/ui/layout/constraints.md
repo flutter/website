@@ -4,7 +4,7 @@ description: Flutter's model for widget constraints, sizing, positioning, and ho
 showToc: false
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="layout/constraints/"?>

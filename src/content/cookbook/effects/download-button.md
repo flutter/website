@@ -3,7 +3,7 @@ title: Create a download button
 description: How to implement a download button.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/download_button"?>
