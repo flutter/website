@@ -91,7 +91,7 @@ first install the following tools.
     There are a few ways to install git on your Mac,
     but the way we recommend is by using XCode. 
     This will be important when you target your
-    builds for iOS.
+    builds for iOS or macOS.
 
     ```console
     $ xcode-select --install
