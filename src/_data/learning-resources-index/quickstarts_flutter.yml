@@ -1,5 +1,6 @@
 - name: Asset transformation
-  description: Demonstrates how to transform images' color scales and formats.
+  description: >-
+    Demonstrates how to transform images' color scales and formats.
   tags:
     - images
     - UI
@@ -9,7 +10,8 @@
     label: Flutter Github
 
 - name: Background isolate channels
-  description: Demonstrates how to use long-lived isolates.
+  description: >-
+    Demonstrates how to use long-lived isolates.
   tags:
     - performance
   type: quickstart
@@ -18,15 +20,21 @@
     label: Flutter Github
 
 - name: Code sharing
-  description: Demonstrates how to share business logic between Flutter client and Dart server using `package:shelf`.
+  description: >-
+    Demonstrates how to share business logic between a
+    Flutter client and Dart server using `package:shelf`.
   tags:
+    - Dart
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/code_sharing
     label: Flutter Github
-    
+
 - name: Context menus
-  description: This sample shows how to create and customize cross-platform context menus, such as the text selection toolbar on mobile or the right click menu on desktop.
+  description: >-
+    This sample shows how to create and customize cross-platform context menus,
+    such as the text selection toolbar on mobile or
+    the right click menu on desktop.
   tags:
     - macos
     - windows
@@ -36,7 +44,8 @@
     label: Flutter Github
 
 - name: Desktop UI
-  description: Demonstrates desktop features in both Material and FluentUI design systems.
+  description: >-
+    Demonstrates desktop features in both Material and FluentUI design systems.
   tags:
     - material
     - macos
@@ -47,7 +56,9 @@
     label: Flutter Github
 
 - name: AI generated dynamic theme
-  description: Demonstrates how to call on-device Flutter APIs based on output from the Gemini API.
+  description: >-
+    Demonstrates how to call on-device Flutter APIs based on
+    output from the Gemini API.
   tags:
     - AI
     - google
@@ -57,7 +68,8 @@
     label: Flutter Github
 
 - name: Form app
-  description: A sample demonstrating different types of forms and best practices.
+  description: >-
+    A sample demonstrating different types of forms and best practices.
   tags:
     - input
     - layout
@@ -67,7 +79,9 @@
     label: Flutter Github
 
 - name: AI todo list
-  description: A developer sample written in Flutter demonstrating how to interact with a to-do list in natural language using the Gemini API.
+  description: >-
+    A developer sample written in Flutter demonstrating how to
+    interact with a to-do list in natural language using the Gemini API.
   tags:
     - AI
     - google
@@ -77,7 +91,8 @@
     label: Flutter Github
 
 - name: Google Maps plugin
-  description: Demonstrates the Google Maps for Flutter plugin.
+  description: >-
+    Demonstrates the Google Maps for Flutter plugin.
   tags:
     - google
     - maps
@@ -87,7 +102,9 @@
     label: Flutter Github
 
 - name: Infinite list
-  description: A Flutter sample app that shows an implementation of the 'infinite list' UX pattern.
+  description: >-
+    A Flutter sample app that shows an implementation of
+    the 'infinite list' UX pattern.
   tags:
     - lists
     - layout
@@ -98,7 +115,9 @@
     label: Flutter Github
 
 - name: Isolates
-  description: A sample application that demonstrate best practices when using isolates.
+  description: >-
+    A sample application that
+    demonstrate best practices when using isolates.
   tags:
     - isolates
     - perf
@@ -109,7 +128,9 @@
     label: Flutter Github
 
 - name: Navigation and routing
-  description: A sample that shows how to use `go_router` API to handle common navigation scenarios.
+  description: >-
+    A sample that shows how to use `go_router` API to
+    handle common navigation scenarios.
   tags:
     - navigation
     - routing
@@ -119,7 +140,8 @@
     label: Flutter Github
 
 - name: Google Maps Flutter plugin
-  description: A sample place tracking app that uses the google_apps_flutter plugin.
+  description: >-
+    A sample place tracking app that uses the google_apps_flutter plugin.
   tags:
     - maps
     - google
@@ -130,7 +152,10 @@
     label: Flutter Github
 
 - name: Platform adaptive design
-  description: This sample project shows a Flutter app that maximizes application code reuse while adhering to different design patterns on Android and iOS.
+  description: >-
+    This sample project shows a Flutter app that
+    maximizes application code reuse while adhering to
+    different design patterns on Android and iOS.
   tags:
     - adaptive
     - design
@@ -140,7 +165,9 @@
     label: Flutter Github
 
 - name: Counter app with Provider
-  description: The starter Flutter application, but using the Provider package to manage state.
+  description: >-
+    The starter Flutter application, but
+    using the Provider package to manage state.
   tags:
     - state management
     - architecture
@@ -150,7 +177,9 @@
     label: Flutter Github
 
 - name: Shopping app with Provider
-  description: A Flutter sample app that shows a state management approach using the Provider package.
+  description: >-
+    A Flutter sample app that shows a
+    state management approach using the Provider package.
   tags:
     - state management
     - architecture
@@ -160,7 +189,8 @@
     label: Flutter Github
 
 - name: Simple shaders
-  description: A simple Flutter fragment shaders project.
+  description: >-
+    A simple Flutter fragment shaders project.
   tags:
     - shaders
     - gpu
@@ -170,7 +200,8 @@
     label: Flutter Github
 
 - name: Desktop calculator
-  description: A calculator sample to demonstrate a simple start for a desktop Flutter app.
+  description: >-
+    A calculator sample to demonstrate a simple start for a desktop Flutter app.
   tags:
     - desktop
   type: quickstart
@@ -179,7 +210,8 @@
     label: Flutter Github
 
 - name: Testing app
-  description: A sample app that shows different types of testing in Flutter.
+  description: >-
+    A sample app that shows different types of testing in Flutter.
   tags:
     - testing
   type: quickstart
@@ -188,7 +220,10 @@
     label: Flutter Github
 
 - name: Web element embedding
-  description: Modifies the index.html of a flutter app so it is launched in a custom hostElement. This is the most basic embedding example.
+  description: >-
+    Modifies the index.html of a flutter app so it
+    is launched in a custom hostElement.
+    This is the most basic embedding example.
   tags:
     - web
   type: quickstart
@@ -197,7 +232,9 @@
     label: Flutter Github
 
 - name: ng-flutter
-  description: A simple Angular app (and component) that replicates the above example, but in an Angular style.
+  description: >-
+    A simple Angular app (and component) that
+    replicates the element embedding example, but in an Angular app.
   tags:
     - web
     - google
@@ -207,7 +244,9 @@
     label: Flutter Github
 
 - name: Platform channels
-  description: A sample Flutter app which demonstrates how to use `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec`.
+  description: >-
+    A sample Flutter app which demonstrates how to use
+    `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec`.
   tags:
     - platforms
     - android

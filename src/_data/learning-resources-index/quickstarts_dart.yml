@@ -1,5 +1,6 @@
-- name: Command line app
-  description: A command line app that parses command-line options and fetches from GitHub.
+- name: Command-line app
+  description: >-
+    A command line app that parses command-line options and fetches from GitHub.
   tags:
     - cli
     - Dart
@@ -9,7 +10,8 @@
     label: Dart Github
 
 - name: Extension methods
-  description: Demonstrates Dart's extensions method syntax.
+  description: >-
+    Demonstrates Dart's extensions method syntax.
   tags:
     - syntax
     - Dart
@@ -19,7 +21,8 @@
     label: Dart Github
 
 - name: FFI
-  description: A series of simple examples demonstrating how to call C libraries from Dart.
+  description: >-
+    A series of simple examples demonstrating how to call C libraries from Dart.
   tags:
     - platforms
     - Dart
@@ -29,7 +32,9 @@
     label: Dart Github
 
 - name: Isolates (in a CLI)
-  description: Command line applications that demonstrate how to work with Concurrency in Dart using isolates.
+  description: >-
+    Command line applications that demonstrate how to
+    work with Concurrency in Dart using isolates.
   tags:
     - cli
     - Dart
@@ -39,7 +44,9 @@
     label: Dart Github
 
 - name: Native Dart app
-  description: A command line application that can be compiled to native code using `dart compile exe`.
+  description: >-
+    A command line application that can be compiled to
+    native code using `dart compile exe`.
   tags:
     - cli
     - Dart
@@ -49,7 +56,8 @@
     label: Dart Github
 
 - name: Server side Dart
-  description: Examples of running Dart on the server.
+  description: >-
+    Examples of running Dart on the server.
   tags:
     - cli
     - Dart
@@ -59,7 +67,8 @@
     label: Dart Github
 
 - name: Package constraint solver
-  description: Demonstrates best-practices for publishing packages on pub.dev.
+  description: >-
+    Demonstrates best-practices for publishing packages on pub.dev.
   tags:
     - pub
     - Dart
