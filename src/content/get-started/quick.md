@@ -83,12 +83,15 @@ first install the following tools.
 
 {: .steps .chromeos-only}
 
- 1. <h3>Install the Xcode command-line tools</h3>
+ 1. <h3>Install git</h3>
 
-    Download the Xcode command-line tools to get access to
-    the command-line tools that Flutter relies on, including Git.
+    **If you already have git installed, skip to the next
+    step: Download and install Visual Studio Code.**
 
-    To download the tools, run the following command in your preferred terminal:
+    There are a few ways to install git on your Mac,
+    but the way we recommend is by using XCode. 
+    This will be important when you target your
+    builds for iOS.
 
     ```console
     $ xcode-select --install
