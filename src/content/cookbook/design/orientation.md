@@ -3,7 +3,7 @@ title: Update the UI based on orientation
 description: Respond to a change in the screen's orientation.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/orientation"?>

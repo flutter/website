@@ -3,7 +3,7 @@ title: Animate a widget across screens
 description: How to animate a widget from one screen to another
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/hero_animations"?>

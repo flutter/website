@@ -3,7 +3,7 @@ title: Create a scrolling parallax effect
 description: How to implement a scrolling parallax effect.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/parallax_scrolling"?>

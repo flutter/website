@@ -9,7 +9,7 @@ iconPath: /assets/images/docs/app-architecture/design-patterns/offline-first-ico
 order: 3
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/offline_first"?>

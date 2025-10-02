@@ -8,7 +8,7 @@ iconPath: /assets/images/docs/app-architecture/design-patterns/optimistic-state-
 order: 0
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/optimistic_state"?>

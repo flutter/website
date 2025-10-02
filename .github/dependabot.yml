@@ -21,14 +21,6 @@ updates:
       - "auto.dependencies"
       - "auto.npm"
       - "lang.javascript"
-  # Automatically update submodules
-  - package-ecosystem: 'gitsubmodule'
-    directory: '/'
-    schedule:
-      interval: 'daily'
-    labels:
-      - "auto.dependencies"
-      - "auto.submodules"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
     directories:

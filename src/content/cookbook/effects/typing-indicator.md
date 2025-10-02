@@ -3,7 +3,7 @@ title: Create a typing indicator
 description: How to implement a typing indicator.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/typing_indicator"?>

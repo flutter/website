@@ -3,7 +3,7 @@ title: Animate the properties of a container
 description: How to animate properties of a container using implicit animations.
 js:
   - defer: true
-    url: /assets/js/inject_dartpad.js
+    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/animated_container/"?>
