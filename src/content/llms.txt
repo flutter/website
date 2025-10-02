@@ -17,7 +17,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Latest release
 
-- [Announcing Flutter 3.35](https://medium.com/flutter/whats-new-in-flutter-3-35-c58ef72e3766): The official announcement for the 3.35 release.
+- [Announcing Flutter 3.35](https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766): The official announcement for the 3.35 release.
 - [Announcing Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298): The official announcement for the 3.9 release.
 
 ## Learning resources
@@ -62,7 +62,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Advanced UI
 
-- [Slivers, Demystified](https://medium.com/flutter/slivers-demystified-6ff68ab0296f): What’s a Sliver and Why do I want it? How do I use it? SliverList, SliverGrid, SliverAppBar. Putting it all together: a collapsible scrolling list with SliverPersistentHeader
+- [Slivers, Demystified](https://blog.flutter.dev/slivers-demystified-6ff68ab0296f): What’s a Sliver and Why do I want it? How do I use it? SliverList, SliverGrid, SliverAppBar. Putting it all together: a collapsible scrolling list with SliverPersistentHeader
 - [Creating custom scrolling effects with Slivers](Using slivers to achieve fancy scrolling): Go beyond ListView to create custom scrollable layouts.
 - [Painting and effect widgets](https://docs.flutter.dev/ui/widgets/painting): These widgets apply visual effects to the children without changing their layout, size, or position.
 - [Adaptive and responsive design in Flutter](https://docs.flutter.dev/ui/adaptive-responsive): Build UIs that that look and feel great on any platform and any screen size.
@@ -103,8 +103,8 @@ This file provides a curated list of resources to help Large Language Models und
 ### AI-assisted development
 - [Create with AI](https://docs.flutter.dev/ai/create-with-ai): An overview of how to use AI to supercharge your Flutter development.
 - [The Dart and Flutter MCP Server](https://dart.dev/tools/mcp-server): Technical details on the server that enables AI features in the IDE.
-- [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
-- [Gemini in Android Studio now speaks fluent Flutter](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
+- [Supercharge your Dart & Flutter development experience with the Dart and Flutter MCP server](https://blog.flutter.dev/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49): A blog post explaining the benefits of the MCP server.
+- [Gemini in Android Studio now speaks fluent Flutter](https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274): A blog post about Gemini's Flutter capabilities in Android Studio.
 
 ## Performance & optimization
 
@@ -170,7 +170,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 - [Package development best practices](https://docs.flutter.dev/packages-and-plugins/developing-packages): Learn how to create high-quality, publishable packages.
 - [Contributing to Flutter](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md): The official guide to contributing to the Flutter project.
-- [Flutter blog](https://medium.com/flutter): The official blog for the Flutter project.
+- [Flutter blog](https://blog.flutter.dev): The official blog for the Flutter project.
 - [Flutter release notes](https://docs.flutter.dev/release/release-notes): Detailed notes on what's new in each release.
 - [Flutter breaking changes and migration guides](https://docs.flutter.dev/release/breaking-changes): Documentation for breaking changes with each release along with guides for migrating code across a breaking change.
 - [Dart blog](https://blog.dart.dev): The official blog for the Dart language.
