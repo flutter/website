@@ -71,6 +71,7 @@ They're sorted by release and listed in alphabetical order:
 * [The `Form` widget no longer supports being a sliver][]
 * [Flutter now sets default `abiFilters` in Android builds][]
 * [Merged threads on macOS and Windows][]
+* [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
@@ -80,6 +81,7 @@ They're sorted by release and listed in alphabetical order:
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
 [Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
 [Merged threads on macOS and Windows]: /release/breaking-changes/macos-windows-merged-threads
+[The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
