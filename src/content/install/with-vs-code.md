@@ -6,8 +6,11 @@ description: >-
   Learn how to use VS Code to quickly install and set up the Flutter SDK.
 ---
 
-Learn how to use VS Code to
-quickly set up your Flutter development environment.
+Learn how to install and set up Flutter in a VS Code-based editor.
+This includes (but is not limited to) [Cursor][] and [Windsurf][].
+
+[Cursor]: https://cursor.com/
+[Windsurf]: https://windsurf.com/
 
 :::tip
 If you've never set up or developed an app with Flutter before,

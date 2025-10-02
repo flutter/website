@@ -46,14 +46,18 @@ resources:
 ## AI development tools
 
 AI can not only be a feature in your app, but also a powerful assistant in your
-development workflow. Tools like Gemini Code Assist and the Gemini CLI can help
-you write code faster, understand complex concepts, and reduce boilerplate.
+development workflow. Tools like Gemini Code Assist, Gemini CLI, [Cursor][],
+and [Windsurf][] can help you write code faster,
+understand complex concepts, and reduce boilerplate.
+
+[Cursor]: https://cursor.com/
+[Windsurf]: https://windsurf.com/
 
 ### Gemini Code Assist
 
 [Gemini Code Assist][] is an AI-powered collaborator available in
-Visual Studio Code and JetBrains IDEs (including Android Studio). It has a deep
-understanding of your project's codebase and can help you with:
+Visual Studio Code and JetBrains IDEs (including Android Studio).
+It has a deep understanding of your project's codebase and can help you with:
 
 * **Code completion and generation**: It suggests and generates entire blocks of
   code based on the context of what you're writing.
@@ -83,19 +87,17 @@ To get started, visit the [Gemini CLI][] website, or try this
 
 ## Dart and Flutter MCP Server
 
-To provide assistance during Flutter development, AI tools such as
-Gemini Code Assist and Gemini CLI need to communicate with Dart
-and Flutter's developer tools. The Dart and
-Flutter MCP Server facilitates this communication.
-MCP (model context protocol) is a specification that
-outlines how development tools can share the context of a user's code
-with an AI model, which allows the AI to better understand and interact
-with the code.
+To provide assistance during Flutter development, AI tools
+need to communicate with Dart and Flutter's developer tools.
+The Dart and Flutter MCP Server facilitates this communication.
+The MCP (model context protocol) specification outlines how
+development tools can share the context of a user's code with an AI model,
+which allows the AI to better understand and interact with the code.
 
 The Dart and Flutter MCP server provides a growing list of tools to analyze
-and fix errors, hot reload, get the selected widget, and more. This bridges
-the gap between the AI's natural language understanding, and
-Dart and Flutter's suite of developer tools.
+and fix errors, hot reload, get the selected widget, and more.
+This bridges the gap between the AI's natural language understanding,
+and Dart and Flutter's suite of developer tools.
 
 To get started, check out the official documentation for the
 [Dart and Flutter MCP server][dart-mcp-dart-docs]
