@@ -9,33 +9,27 @@ void main() {
   );
 }
 
+const _urlPrefix =
+    'https://docs.flutter.dev/assets/images/exercise/effects/split-check';
+
 const List<Item> _items = [
   Item(
     name: 'Spinach Pizza',
     totalPriceCents: 1299,
     uid: '1',
-    imageProvider: NetworkImage(
-      'https://docs.flutter.dev'
-      '/cookbook/img-files/effects/split-check/Food1.jpg',
-    ),
+    imageProvider: NetworkImage('$_urlPrefix/Food1.jpg'),
   ),
   Item(
     name: 'Veggie Delight',
     totalPriceCents: 799,
     uid: '2',
-    imageProvider: NetworkImage(
-      'https://docs.flutter.dev'
-      '/cookbook/img-files/effects/split-check/Food2.jpg',
-    ),
+    imageProvider: NetworkImage('$_urlPrefix/Food2.jpg'),
   ),
   Item(
     name: 'Chicken Parmesan',
     totalPriceCents: 1499,
     uid: '3',
-    imageProvider: NetworkImage(
-      'https://docs.flutter.dev'
-      '/cookbook/img-files/effects/split-check/Food3.jpg',
-    ),
+    imageProvider: NetworkImage('$_urlPrefix/Food3.jpg'),
   ),
 ];
 
@@ -52,24 +46,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   final List<Customer> _people = [
     Customer(
       name: 'Makayla',
-      imageProvider: const NetworkImage(
-        'https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Avatar1.jpg',
-      ),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar1.jpg'),
     ),
     Customer(
       name: 'Nathan',
-      imageProvider: const NetworkImage(
-        'https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Avatar2.jpg',
-      ),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar2.jpg'),
     ),
     Customer(
       name: 'Emilio',
-      imageProvider: const NetworkImage(
-        'https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Avatar3.jpg',
-      ),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar3.jpg'),
     ),
   ];
 
