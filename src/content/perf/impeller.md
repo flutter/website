@@ -54,7 +54,7 @@ the [Can I use Impeller?][] page.
 
 ### iOS
 
-Since [Flutter 3.29](https://medium.com/flutter/whats-new-in-flutter-3-29-f90c380c2317), Impeller is the **default on iOS** with no ability to
+Since [Flutter 3.29](https://blog.flutter.dev/whats-new-in-flutter-3-29-f90c380c2317), Impeller is the **default on iOS** with no ability to
 switch to Skia.
 
 ### Android

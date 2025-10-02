@@ -93,8 +93,8 @@
     - title: Compatibility policy
       permalink: /release/compatibility-policy
     - divider
-    - title: Medium publication
-      permalink: https://medium.com/flutter
+    - title: Flutter blog
+      permalink: https://blog.flutter.dev
     - title: What's new in the docs
       permalink: /release/whats-new
 
