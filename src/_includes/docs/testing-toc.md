@@ -1,5 +1,5 @@
 {% comment %}
-  Generates a list of testing recipes for the given type. The type 
+  Generates a list of testing recipes for the given type. The type
   corresponds to the name of the directory under cookbook/testing/*.
 
   Usage: {% include docs/testing_toc.md type='unit' %}

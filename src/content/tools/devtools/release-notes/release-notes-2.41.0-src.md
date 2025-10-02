@@ -43,7 +43,7 @@ search and filter by these metadata values. - [#8473](https://github.com/flutter
 * Added a setting to set the log retention limit. - [#8493](https://github.com/flutter/devtools/pull/8493)
 * Added a button to toggle the log details display between raw text and JSON. -
 [#8445](https://github.com/flutter/devtools/pull/8445)
-* Fixed a bug where logs would get out of order after midnight. - 
+* Fixed a bug where logs would get out of order after midnight. -
 [#8420](https://github.com/flutter/devtools/pull/8420)
 * Automatically scroll logs table to the bottom on the initial load. -
 [#8437](https://github.com/flutter/devtools/pull/8437)

@@ -6,7 +6,7 @@ description: Learn how to use the DevTools CPU profiler view.
 :::note
 The CPU profiler view works with Dart CLI and mobile apps only.
 Use Chrome DevTools to [analyze performance][]
-of a web app.  
+of a web app.
 :::
 
 The CPU profiler view allows you to record and profile a
@@ -209,9 +209,9 @@ This adds vertical guidelines between parent and child in the tree.
 ![Screenshot of display options](/assets/images/docs/tools/devtools/display-options.png)
 
 [analyze performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/
-  
+
 ## Other resources
-  
+
 To learn how to use DevTools to analyze
 the CPU usage of a compute-intensive Mandelbrot app,
 check out a guided [CPU Profiler View tutorial][profiler-tutorial].

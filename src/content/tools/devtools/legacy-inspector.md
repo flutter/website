@@ -10,7 +10,7 @@ Please note that the legacy inspector will be removed in a future release. Let u
 :::
 
 [new inspector]: /tools/devtools/inspector
-[filing a bug]: https://github.com/flutter/devtools/issues/new 
+[filing a bug]: https://github.com/flutter/devtools/issues/new
 
 ## The legacy Flutter inspector
 

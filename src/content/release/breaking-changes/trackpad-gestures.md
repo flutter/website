@@ -2,7 +2,7 @@
 title: Trackpad gestures can trigger GestureRecognizer
 description: >
   Trackpad gestures on most platforms now send `PointerPanZoom` sequences and
-  can trigger pan, drag, and scale `GestureRecognizer` callbacks. 
+  can trigger pan, drag, and scale `GestureRecognizer` callbacks.
 ---
 
 ## Summary

@@ -1,7 +1,7 @@
 ---
 title: Material component widgets
 shortTitle: Material
-description: > 
+description: >
   A catalog of Flutter's widgets implementing Material 3 design guidelines.
 ---
 

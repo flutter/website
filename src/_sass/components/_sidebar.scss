@@ -74,7 +74,8 @@
       margin-top: 0.5rem;
     }
 
-    a.nav-link, button.nav-link {
+    a.nav-link,
+    button.nav-link {
       background: none;
       border: none;
       text-wrap: pretty;
@@ -97,7 +98,7 @@
       font-family: var(--site-ui-fontFamily);
       text-decoration: none;
 
-      > div {
+      >div {
         display: inline-block;
 
         .material-symbols {
@@ -116,7 +117,7 @@
         transition: transform .3s ease-in-out;
       }
 
-      + ul {
+      +ul {
         display: none;
 
         &.show {
@@ -149,9 +150,10 @@
     }
   }
 
-  nav > ul {
+  nav>ul {
+
     // Only apply styles to top-level entries.
-    > li {
+    >li {
       font-size: 1rem;
     }
 
@@ -159,7 +161,7 @@
       margin-left: 0.675rem;
     }
 
-    > .nav-header {
+    >.nav-header {
       font-size: 1.075rem;
     }
   }

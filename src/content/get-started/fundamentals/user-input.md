@@ -39,7 +39,7 @@ which is covered at the end of this section.
 No matter which design system you choose, the principals on this page apply.
 :::
 
-> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**:
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 Next, we'll cover a few of the Material widgets that support common
@@ -83,7 +83,7 @@ but styled differently for various use cases, including:
 - `FloatingActionButton`: An icon button that hovers over
   content to promote a primary action.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [FloatingActionButton (Widget of the Week)][]
 
 There are usually 3 main aspects to constructing a button:
@@ -138,7 +138,7 @@ Widget build(BuildContext context) {
 
 <br>
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Complete this tutorial that teaches you how to build a
 > "favorite" button: [Add interactivity to your Flutter app][]
 
@@ -183,7 +183,7 @@ From forth the fatal loins of these two foes''');
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [SelectableText (Widget of the Week)][]
 
 [SelectableText (Widget of the Week)]: {{site.youtube-site}}/watch?v=ZSU3ZXOs6hc
@@ -217,10 +217,10 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [Rich Text (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**:
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
@@ -272,7 +272,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Complete this 4-part cookbook series that walks
 > you through how to create a text field,
 > retrieve its value, and update your app state:
@@ -345,10 +345,10 @@ Widget build(BuildContext context) {
 > <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Complete this tutorial to learn how to [build a form with validation][].
 
-> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**:
 > [Form app][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**:
 > [Form app code][]
 
 <br>
@@ -598,7 +598,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [DropdownMenu (Widget of the Week)][]
 
 [DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/watch?v=giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -620,9 +620,9 @@ Configuration parameters for the `Slider` widget:
 {% render docs/code-and-image.md,
 image:"fwe/user-input/slider.webp",
 caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0
-broken up into 5 divisions. It shows the current value as a label as the dial 
+broken up into 5 divisions. It shows the current value as a label as the dial
 is dragged."
-alt: "A GIF of a slider that has the dial dragged left to right in increments 
+alt: "A GIF of a slider that has the dial dragged left to right in increments
 of 1, from 0.0 to 5.0"
 code:"
 ```dart
@@ -645,7 +645,7 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 <br>
@@ -687,7 +687,7 @@ The configuration for `Checkbox` and `Switch` contain:
 {% render docs/code-and-image.md,
 image:"fwe/user-input/checkbox.webp",
 caption: "This figure shows a checkbox being checked and unchecked."
-alt: "A GIF that shows a pointer clicking a checkbox 
+alt: "A GIF that shows a pointer clicking a checkbox
 and then clicking again to uncheck it."
 code:"
 ```dart
@@ -714,7 +714,7 @@ Widget build(BuildContext context) {
 image:"fwe/user-input/Switch.webp",
 caption: "This figure shows a Switch widget that is toggled on and off."
 alt: "A GIF of a Switch widget that is toggled on and off. In its off state,
-it is gray with dark gray borders. In its on state, 
+it is gray with dark gray borders. In its on state,
 it is red with a light red border."
 code:"
 ```dart
@@ -866,16 +866,16 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [CheckboxListTile (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [SwitchListTile (Widget of the Week)][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: 
-[`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] • 
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**:
+[`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] •
 [`Radio`][]
 
 [CheckboxListTile (Widget of the Week)]: {{site.youtube-site}}/watch?v=RkSqPAn9szs
@@ -960,10 +960,10 @@ Once again, don't forget to await the function call!
 
 {% render docs/code-and-image.md,
 image:"fwe/user-input/TimePicker.webp",
-caption: "This figure shows a TimePicker that is displayed when the 
+caption: "This figure shows a TimePicker that is displayed when the
 \"Pick a time\" button is clicked."
 alt: "A GIF of a pointer clicking a button that says \"Pick a time\", then shows
- a time picker. The time picker shows a circular clock as the cursor moves the 
+ a time picker. The time picker shows a circular clock as the cursor moves the
  hour hand, then minute hand, selects PM, then the \"OK\" button is clicked."
 code:"
 ```dart
@@ -999,7 +999,7 @@ Widget build(BuildContext context) {
 
 :::tip
 Calling `showDatePicker()` and `showTimePicker()`
-is equivalent to calling `showDialog()` with `DatePickerDialog()` and 
+is equivalent to calling `showDialog()` with `DatePickerDialog()` and
 `TimePickerDialog()`, respectively.
 Internally, both functions use the `showDialog()` function with
 their respective `Dialog` widgets.
@@ -1010,7 +1010,7 @@ on to the `Navigator` stack.
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:** 
+<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:**
 [`showDatePicker`][] • [`showTimePicker`][]
 
 [`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
@@ -1067,10 +1067,10 @@ Widget build(BuildContext context) {
 ```
 " %}
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [Dismissible (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Complete this tutorial on how to [implement swipe to dismiss][] using the
 > dismissible widget.
 
@@ -1090,7 +1090,7 @@ you can use for handling user input in your Flutter app.
 Check out the [Material Widget library][] and
 [Material Library API docs][] for a full list of widgets.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**:
 > See Flutter's [Material 3 Demo][] for a curated sample of user input widgets
 > available in the Material library.
 
@@ -1101,7 +1101,7 @@ For example, the [`flutter_slidable`][] package provides
 a `Slidable` widget that is more customizable than
 the `Dismissible` widget described in the previous section.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [flutter_slidable (Package of the Week)][]
 
 [Material Widget Library]: /ui/widgets/material
@@ -1119,18 +1119,18 @@ fits the user interaction that you're looking for?
 You can build your own custom widget and
 make it interactive using `GestureDetector`.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Use this recipe as a starting point to create your own _custom_ button widget
 > that can [handle taps][].
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [GestureDetector (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**:
 > Check out [Taps, drags, and other gestures][] which explains how to listen
 > for, and respond to, gestures in Flutter.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Bonus Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Bonus Video**:
 > Curious how Flutter's `GestureArena` turns raw user interaction data into
 > human recognizable concepts like taps, drags, and pinches?
 > Check out this video: [GestureArena (Decoding Flutter)][]
@@ -1147,7 +1147,7 @@ annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and
 other semantic analysis-based tools.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
 > [Semantics (Flutter Widget of the Week)][]
 
 
@@ -1168,11 +1168,11 @@ ensure that everything works as expected!
 These tutorials walk you through writing tests that
 simulate user interactions in your app:
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to
 > use `WidgetTester` to simulate and test user interactions in your app.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">bookmark</span> **Bonus Tutorial**: 
+> <span class="material-symbols" aria-hidden="true" translate="no">bookmark</span> **Bonus Tutorial**:
 > The [handle scrolling][] cookbook recipe shows you how to verify that
 > lists of widgets contain the expected content by
 > scrolling through the lists using widget tests.

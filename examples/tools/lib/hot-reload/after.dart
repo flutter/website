@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print, prefer_const_declarations
 
 import 'package:flutter/material.dart';
-
 // #docregion main
 import 'package:flutter/widgets.dart';
 

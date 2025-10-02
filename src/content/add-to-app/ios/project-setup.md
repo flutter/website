@@ -183,7 +183,7 @@ Adjust the names as needed depending on your app's build configurations.
 
    1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
-   1. Select **File** > **Duplicate...**.  
+   1. Select **File** > **Duplicate...**.
       You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.
 
    1. In the dialog box, set the **Save As:** field to
@@ -209,7 +209,7 @@ Adjust the names as needed depending on your app's build configurations.
 
    1. Click **All** and **Combined** sub-tabs.
 
-   1. In the Search box, type `plist`.  
+   1. In the Search box, type `plist`.
       This limits the settings to those that include property lists.
 
    1. Scroll through the list until you see **Packaging**.

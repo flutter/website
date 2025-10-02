@@ -28,8 +28,8 @@ architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
 :::secondary
-Preliminary guides addressing case 2 
-are being added to the UI components section. 
+Preliminary guides addressing case 2
+are being added to the UI components section.
 You can request additional guides by commenting on [issue #8427][8427].
 :::
 
@@ -188,9 +188,9 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
-You might choose to adapt the text styling of Material 
-widgets to match the default text styling on iOS. 
-You can see widget-specific examples in the 
+You might choose to adapt the text styling of Material
+widgets to match the default text styling on iOS.
+You can see widget-specific examples in the
 [UI Component section](#ui-components).
 
 <div class="wrapping-row">
@@ -238,7 +238,7 @@ Scrolling through picker items on iOS triggers a
 Both the Material and Cupertino Text Input fields
 support spellcheck and adapt to use the proper
 spellcheck configuration for the platform,
-and the proper spell check menu and highlight colors. 
+and the proper spell check menu and highlight colors.
 
 Flutter also makes the below adaptations while editing
 the content of text fields to match the current platform.
@@ -335,24 +335,24 @@ double tap and shows the selection toolbar.
 
 ## UI components
 
-This section includes preliminary recommendations on how to adapt 
-Material widgets to deliver a natural and compelling experience on iOS. 
-Your feedback is welcomed on [issue #8427][8427]. 
+This section includes preliminary recommendations on how to adapt
+Material widgets to deliver a natural and compelling experience on iOS.
+Your feedback is welcomed on [issue #8427][8427].
 
 [8427]: {{site.repo.this}}/issues/8427
 
 ### Widgets with .adaptive() constructors
 
-Several widgets support `.adaptive()` constructors. 
+Several widgets support `.adaptive()` constructors.
 The following table lists these widgets.
-Adaptive constructors substitute the corresponding Cupertino components 
-when the app is run on an iOS device. 
+Adaptive constructors substitute the corresponding Cupertino components
+when the app is run on an iOS device.
 
-Widgets in the following table are used primarily for input, 
-selection, and to display system information. 
+Widgets in the following table are used primarily for input,
+selection, and to display system information.
 Because these controls are tightly integrated with the operating system,
 users have been trained to recognize and respond to them.
-Therefore, we recommend that you follow platform conventions. 
+Therefore, we recommend that you follow platform conventions.
 
 
 | Material widget | Cupertino widget | Adaptive constructor |
@@ -375,9 +375,9 @@ Therefore, we recommend that you follow platform conventions.
 
 ### Top app bar and navigation bar
 
-Since Android 12, the default UI for top app 
-bars follows the design guidelines defined in [Material 3][mat-appbar]. 
-On iOS, an equivalent component called "Navigation Bars" 
+Since Android 12, the default UI for top app
+bars follows the design guidelines defined in [Material 3][mat-appbar].
+On iOS, an equivalent component called "Navigation Bars"
 is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG).
 
 <div class="wrapping-row">
@@ -385,12 +385,12 @@ is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG).
   {% render docs/app-figure.md, image:"platform-adaptations/hig-appbar.png", caption:"Navigation Bar in Human Interface Guidelines", alt:"Navigation Bar in Human Interface Guidelines", height: "240px" %}
 </div>
 
-Certain properties of app bars in Flutter apps should be adapted, 
-like system icons and page transitions. 
-These are already automatically adapted when using 
-the Material `AppBar` and `SliverAppBar` widgets. 
-You can also further customize the properties of these widgets to better 
-match iOS platform styles, as shown below. 
+Certain properties of app bars in Flutter apps should be adapted,
+like system icons and page transitions.
+These are already automatically adapted when using
+the Material `AppBar` and `SliverAppBar` widgets.
+You can also further customize the properties of these widgets to better
+match iOS platform styles, as shown below.
 
 ```dart
 // Map the text theme to iOS styles
@@ -420,11 +420,11 @@ AppBar(
       ),
 ```
 
-But, because app bars are displayed alongside 
-other content in your page, it's only recommended to adapt the styling 
-so long as it's cohesive with the rest of your application. You can see 
-additional code samples and a further explanation in 
-[the GitHub discussion on app bar adaptations][appbar-post]. 
+But, because app bars are displayed alongside
+other content in your page, it's only recommended to adapt the styling
+so long as it's cohesive with the rest of your application. You can see
+additional code samples and a further explanation in
+[the GitHub discussion on app bar adaptations][appbar-post].
 
 [mat-appbar]: {{site.material}}/components/top-app-bar/overview
 [hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
@@ -432,9 +432,9 @@ additional code samples and a further explanation in
 
 ### Bottom navigation bars
 
-Since Android 12, the default UI for bottom navigation 
-bars follow the design guidelines defined in [Material 3][mat-navbar]. 
-On iOS, an equivalent component called "Tab Bars" 
+Since Android 12, the default UI for bottom navigation
+bars follow the design guidelines defined in [Material 3][mat-navbar].
+On iOS, an equivalent component called "Tab Bars"
 is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG).
 
 <div class="wrapping-row">
@@ -443,14 +443,14 @@ is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG).
 </div>
 
 Since tab bars are persistent across your app, they should match your
-own branding. However, if you choose to use Material's default 
+own branding. However, if you choose to use Material's default
 styling on Android, you might consider adapting to the default iOS
 tab bars.
 
-To implement platform-specific bottom navigation bars, 
-you can use Flutter's `NavigationBar` widget on Android 
-and the `CupertinoTabBar` widget on iOS. 
-Below is a code snippet you can 
+To implement platform-specific bottom navigation bars,
+you can use Flutter's `NavigationBar` widget on Android
+and the `CupertinoTabBar` widget on iOS.
+Below is a code snippet you can
 adapt to show a platform-specific navigation bars.
 
 ```dart
@@ -499,7 +499,7 @@ Scaffold(
 ### Text fields
 
 Since Android 12, text fields follow the
-[Material 3][m3-text-field] (M3) design guidelines. 
+[Material 3][m3-text-field] (M3) design guidelines.
 On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
 an equivalent component.
 
@@ -508,11 +508,11 @@ an equivalent component.
   {% render docs/app-figure.md, image:"platform-adaptations/hig-text-field.png", caption:"Text Field in HIG", alt:"Text Field in Human Interface Guidelines", width:"320px", height:"100px" %}
 </div>
 
-Since text fields require user input,  
-their design should follow platform conventions. 
+Since text fields require user input,
+their design should follow platform conventions.
 
-To implement a platform-specific `TextField` 
-in Flutter, you can adapt the styling of the 
+To implement a platform-specific `TextField`
+in Flutter, you can adapt the styling of the
 Material `TextField`.
 
 ```dart
@@ -542,7 +542,7 @@ Widget _createAdaptiveTextField() {
 }
 ```
 
-To learn more about adapting text fields, check out 
+To learn more about adapting text fields, check out
 [the GitHub discussion on text fields][text-field-post].
 You can leave feedback or ask questions in the discussion.
 

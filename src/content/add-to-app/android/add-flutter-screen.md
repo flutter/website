@@ -221,7 +221,7 @@ class MyApplication : Application() {
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
   public FlutterEngine flutterEngine;
-  
+
   @Override
   public void onCreate() {
     super.onCreate();

@@ -10,21 +10,24 @@
         <button id="feedback-up-button" class="icon-button" aria-label="Yes, this page was helpful" title="Helpful">
           <span class="material-symbols" aria-hidden="true" translate="no">thumb_up</span>
         </button>
-        <button id="feedback-down-button" class="icon-button" aria-label="No, this page was not helpful or had an issue" title="Not helpful or had issue">
+        <button id="feedback-down-button" class="icon-button" aria-label="No, this page was not helpful or had an issue"
+          title="Not helpful or had issue">
           <span class="material-symbols" aria-hidden="true" translate="no">thumb_down</span>
         </button>
       </div>
     </div>
     <div class="feedback good-feedback">
       <div>Thank you for your feedback!</div>
-      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback" target="_blank" rel="noopener">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}"
+        class="text-button" aria-label="Provide feedback" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true" translate="no">feedback</span>
         <span>Provide details</span>
       </a>
     </div>
     <div class="feedback bad-feedback">
       <div>Thank you for your feedback! Please let us know what we can do to improve.</div>
-      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" class="text-button" aria-label="Provide feedback or report an issue" target="_blank" rel="noopener">
+      <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}"
+        class="text-button" aria-label="Provide feedback or report an issue" target="_blank" rel="noopener">
         <span class="material-symbols" aria-hidden="true" translate="no">bug_report</span>
         <span>Provide details</span>
       </a>
@@ -32,9 +35,11 @@
   </div>
 
   <p id="page-github-links">
-    <span>Unless stated otherwise, the documentation on this site reflects the latest stable version of Flutter. Page last updated on {{page.date | toSimpleDate}}.</span>
+    <span>Unless stated otherwise, the documentation on this site reflects the latest stable version of Flutter. Page
+      last updated on {{page.date | toSimpleDate}}.</span>
     <a href="{{pageSource}}" target="_blank" rel="noopener">View source</a>
     <span> or </span>
-    <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}" title="Report an issue with this page" target="_blank" rel="noopener">report an issue</a>.
+    <a href="{{repo}}/issues/new?template=1_page_issue.yml&&page-url={{url}}&page-source={{pageSource}}"
+      title="Report an issue with this page" target="_blank" rel="noopener">report an issue</a>.
   </p>
 </div>

@@ -17,11 +17,11 @@ To learn more about DevTools, check out the
 ## Performance updates
 
 * Added documentation links to the
-  "Enhance Tracing" and "More debugging options" menus. 
-  Read the 
+  "Enhance Tracing" and "More debugging options" menus.
+  Read the
   [enhance tracing documentation](https://docs.flutter.dev/tools/devtools/performance#enhance-tracing)
   to learn more about these features -
-  [#3934](https://github.com/flutter/devtools/pull/3934), 
+  [#3934](https://github.com/flutter/devtools/pull/3934),
   [#3936](https://github.com/flutter/devtools/pull/3936)
 
   ![enhance tracing documentation links](/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")

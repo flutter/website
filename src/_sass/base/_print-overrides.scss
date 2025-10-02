@@ -1,9 +1,18 @@
 // Overrides for printing so only page content is printed
 @media print {
+
   // Ignore navigation elements and other non-necessary interactive ones
-  .site-header, .subnav, .site-footer, .site-sidebar, .navbar,
-  #site-toc--side, #page-github-links, #cookie-notice, .site-banner,
-  .code-excerpt__copy-btn, .breadcrumb {
+  .site-header,
+  .subnav,
+  .site-footer,
+  .site-sidebar,
+  .navbar,
+  #site-toc--side,
+  #page-github-links,
+  #cookie-notice,
+  .site-banner,
+  .code-excerpt__copy-btn,
+  .breadcrumb {
     display: none !important;
   }
 
@@ -27,7 +36,8 @@
   }
 
   // Show borders around notes and code blocks
-  .alert, pre {
+  .alert,
+  pre {
     border: 1px solid black;
   }
 }

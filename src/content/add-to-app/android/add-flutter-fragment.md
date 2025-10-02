@@ -291,7 +291,7 @@ using an existing, pre-warmed instance of `FlutterEngine`.
 
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
 instantiate a `FlutterFragment` with the `withCachedEngine()`
-factory method.  
+factory method.
 
 {% tabs "android-language" %}
 {% tab "Kotlin" %}

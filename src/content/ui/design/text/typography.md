@@ -6,28 +6,28 @@ description: Learn about Flutter's support for typography.
 [_Typography_][] covers the style and appearance of
 type or fonts: it specifies how heavy the font is,
 the slant of the font, the spacing between
-the letters, and other visual aspects of the text. 
+the letters, and other visual aspects of the text.
 
-All fonts are _not_ created the same. 
+All fonts are _not_ created the same.
 
-A font style is defined by, at minimum, a typeface, representing the set of 
-common character rules describing fonts in the same type family, such as 
-**Roboto** or **Noto**, a font weight (for example, Regular, Bold, or a 
-numeric value), and a style (like Regular, _Italic_, etc). All of these 
-and additional pre-set attributes come together to make up 
+A font style is defined by, at minimum, a typeface, representing the set of
+common character rules describing fonts in the same type family, such as
+**Roboto** or **Noto**, a font weight (for example, Regular, Bold, or a
+numeric value), and a style (like Regular, _Italic_, etc). All of these
+and additional pre-set attributes come together to make up
 what we would call a static font.
 
-Variable fonts allow some of these attributes to be modified at runtime and 
+Variable fonts allow some of these attributes to be modified at runtime and
 store what would normally be multiple static fonts in a single file.
 
 [_Typography_]: https://en.wikipedia.org/wiki/Typography
 
 ## Typographic Scale
 
-A typographical scale is a set of related text styles to provide balance, 
+A typographical scale is a set of related text styles to provide balance,
 cohesion, and visual variety in your apps.
 
-The common type scale in Flutter, provided by [`TextTheme`][], includes five 
+The common type scale in Flutter, provided by [`TextTheme`][], includes five
 categories of text indicating the function:
 
 * Display
@@ -39,16 +39,16 @@ categories of text indicating the function:
 There are also three size variations for each:
 
 * Small
-* Medium 
+* Medium
 * Large
 
-Each of these fifteen combinations of a category and text size are represented 
-by a single [`TextStyle`][]. 
+Each of these fifteen combinations of a category and text size are represented
+by a single [`TextStyle`][].
 
 <img src='/assets/images/docs/development/ui/typography/typographical-scale.png' alt="Listing of typographical scale for Material TextTheme">
 
-All the platform specific typographical scales that Flutter exposes are 
-contained in the [`Typography`][] class. Usually, you will not need to 
+All the platform specific typographical scales that Flutter exposes are
+contained in the [`Typography`][] class. Usually, you will not need to
 reference this class directly as the `TextTheme` will be localized to your target platform.
 
 [`TextTheme`]: https://api.flutter.dev/flutter/material/TextTheme-class.html
@@ -68,8 +68,8 @@ when specifying the type.
 
 ### Using the Google Fonts type tester
 
-A growing number of fonts on Google Fonts offer some variable font capabilities. 
-You can see the range of options by using the Type Tester and see how you 
+A growing number of fonts on Google Fonts offer some variable font capabilities.
+You can see the range of options by using the Type Tester and see how you
 might vary a single font.
 
 <img src='/assets/images/docs/development/ui/typography/google-fonts-type-tester.png' alt="Demonstration of varying aspects for Noto Sans with Lorem ipsum text">
@@ -93,7 +93,7 @@ Once again, the Google Fonts site can help.
 
 ### Using the Google Fonts package
 
-While you can download fonts from the site and install them manually in your apps, 
+While you can download fonts from the site and install them manually in your apps,
 you can elect to use theme directly from the [google_fonts][] package on [pub.dev][].
 
 They can be used as is by referencing simply the font name:
@@ -128,7 +128,7 @@ to support the feature):
 * [`FontFeature`][] to select glyphs
 * [`FontWeight`][] to modify weight
 * [`FontStyle`][] to italicize
-* [`FontVariation`][] to specify a range of values for a specific property. 
+* [`FontVariation`][] to specify a range of values for a specific property.
 
 A `FontFeature` corresponds to an [OpenType feature tag][]
 and can be thought of as a boolean flag to enable or disable

@@ -16,7 +16,7 @@ Flutter continues to support CocoaPods.
 Flutter's Swift Package Manager integration has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]. 
+   Flutter plugins can use the growing ecosystem of [Swift packages][].
 1. **Simplifies Flutter installation**.
    Xcode includes Swift Package Manager.
    You don't need to install Ruby and CocoaPods if your project uses

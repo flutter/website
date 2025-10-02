@@ -6,7 +6,7 @@ description: >-
 
 ## Summary
 
-The `OverlayPortal.targetsRootOverlay` property was deprecated and 
+The `OverlayPortal.targetsRootOverlay` property was deprecated and
 replaced with `overlayLocation`.
 
 ## Context

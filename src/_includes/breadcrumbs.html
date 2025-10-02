@@ -14,9 +14,8 @@ Embeds breadcrumb RDFa, follows ARIA guidelines. References:
 <nav class="breadcrumbs" aria-label="breadcrumb">
   <ol vocab="https://schema.org/" typeof="BreadcrumbList">
     {% for crumb in breadcrumbs -%}
-    <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}"
-        property="itemListElement" typeof="ListItem"
-        {%- if forloop.last %} aria-current="page"{% endif %}>
+    <li class="breadcrumb-item {%- if forloop.last %} active {%- endif %}" property="itemListElement" typeof="ListItem"
+      {%- if forloop.last %} aria-current="page" {% endif %}>
       <a href="{{ crumb.url | regexReplace: '/index$|/index.html$|/$' }}" property="item" typeof="WebPage">
         <span property="name">{{crumb.title}}</span>
       </a>

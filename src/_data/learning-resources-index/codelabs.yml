@@ -107,7 +107,7 @@
 - name: Animations in Flutter
   description: |
     Learn how to build animated effects in Flutter. You'll learn how to build
-    implicit and explicit animations, and customize 
+    implicit and explicit animations, and customize
     navigation transition animations the animations package and predictive back
     on Android.
   tags:
@@ -131,7 +131,7 @@
 
 - name: How to debug layout issues with the Flutter Inspector
   description: |
-    Step-by-step instructions on how to debug 
+    Step-by-step instructions on how to debug
     common layout problems using the Flutter
     Inspector and Layout Explorer.
   tags:
@@ -425,7 +425,7 @@
 - name: Write a Flutter desktop application
   description: |
     Build a Flutter desktop app (Windows, Linux, or macOS)
-    that accesses GitHub APIs, and 
+    that accesses GitHub APIs, and
     create and use plugins to interact with native APIs and desktop applications.
   tags:
     - desktop

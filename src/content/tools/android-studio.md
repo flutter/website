@@ -139,7 +139,7 @@ differs between Android Studio and IntelliJ.
  1. In the IDE, click **New Flutter Project** from the **Welcome** window or
     **File > New > New Flutter Project** from the main IDE window.
  1. Specify the **Flutter SDK path** and click **Next**.
- 1. Enter your desired **Project name**, 
+ 1. Enter your desired **Project name**,
     **Description**, and **Project location**.
  1. If you might publish this app,
     [set the company domain](#set-the-company-domain).
@@ -172,7 +172,7 @@ is released. Your organization name should be unique.
 To open an existing Flutter project:
 
  1. In the IDE, click **Open** from the **Welcome** window, or
-    **File > Open** from the main IDE window. 
+    **File > Open** from the main IDE window.
  1. Browse to the directory holding your existing
     Flutter source code files.
  1. Click **Open**.

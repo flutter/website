@@ -27,7 +27,7 @@ see [Hosting native macOS views][].
 [Hosting native macOS views]: /platform-integration/macos/platform-views
 
 Platform Views on Android have two implementations. They come with tradeoffs
-both in terms of performance and fidelity. 
+both in terms of performance and fidelity.
 Platform views require Android API 23+.
 
 ## [Hybrid Composition](#hybrid-composition)
@@ -67,7 +67,7 @@ In your Dart file,
 for example `native_view_example.dart`,
 use the following instructions:
 
-1. Add the following imports:  
+1. Add the following imports:
 
    <?code-excerpt "lib/native_view_example_1.dart (import)"?>
    ```dart
@@ -76,8 +76,8 @@ use the following instructions:
    import 'package:flutter/material.dart';
    import 'package:flutter/rendering.dart';
    import 'package:flutter/services.dart';
-   ```  
-    
+   ```
+
 2. Implement a `build()` method:
 
    <?code-excerpt "lib/native_view_example_1.dart (hybrid-composition)"?>
@@ -87,7 +87,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      const Map<String, dynamic> creationParams = <String, dynamic>{};
-   
+
      return PlatformViewLink(
        viewType: viewType,
        surfaceFactory: (context, controller) {
@@ -148,7 +148,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      final Map<String, dynamic> creationParams = <String, dynamic>{};
-   
+
      return AndroidView(
        viewType: viewType,
        layoutDirection: TextDirection.ltr,
@@ -245,7 +245,7 @@ class MainActivity : FlutterActivity() {
         flutterEngine
                 .platformViewsController
                 .registry
-                .registerViewFactory("<platform-view-type>", 
+                .registerViewFactory("<platform-view-type>",
                                       NativeViewFactory())
     }
 }
@@ -418,7 +418,7 @@ android {
     }
 }
 ```
-### Surface Views 
+### Surface Views
 
 Handling SurfaceViews is problematic for Flutter and should be avoided when possible.
 
@@ -429,14 +429,13 @@ Some example views include `SurfaceView` and `SurfaceTexture`.
 When your Platform View includes these views you are required to
 manually invalidate the view after they have been drawn to
 (or more specifically: after the swap chain is flipped).
-Manual view invalidation is done by calling `invalidate` on the View 
+Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
-### Issues 
+### Issues
 
 [Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
 {% render docs/platform-view-perf.md, site: site %}
-

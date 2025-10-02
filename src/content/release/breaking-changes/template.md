@@ -1,7 +1,7 @@
 ---
 title: Replace with title of breaking change
 description: >-
-  Brief description similar to the "context" section below. 
+  Brief description similar to the "context" section below.
   Text should break at 80 chars or less.
 ---
 
@@ -16,7 +16,7 @@ description: >-
     Ideally, submit a PR once you have confirmed
     info on the version number where the breaking
     change landed.
-  * One of the most important things to fill out 
+  * One of the most important things to fill out
     in this template is the *Timeline* section.
     For example: `Landed in version: 1.21.0-5.0.pre<br>`.
     Do NOT list the PR in this section. Also, don't

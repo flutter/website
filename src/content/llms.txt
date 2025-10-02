@@ -30,9 +30,9 @@ This file provides a curated list of resources to help Large Language Models und
 - [Building user interfaces with Flutter](https://docs.flutter.dev/widgets-intro): A foundational explanation of how UIs are built with widgets.
 - [Widget catalog](https://docs.flutter.dev/reference/widgets): An A-Z list of all built-in widgets.
 - [Layouts in Flutter](https://docs.flutter.dev/ui/layout): A guide to arranging widgets to create a user interface.
-- [App architecture  and resources](https://docs.flutter.dev/app-architecture/recommendations): This page presents architecture best practices, why they matter, and whether we recommend them for your Flutter application. 
+- [App architecture  and resources](https://docs.flutter.dev/app-architecture/recommendations): This page presents architecture best practices, why they matter, and whether we recommend them for your Flutter application.
 - [State management overview](https://docs.flutter.dev/data-and-backend/state-mgmt/options): A critical guide explaining the different approaches to managing state in a Flutter app.
-- [BuildContext class](https://api.flutter.dev/flutter/widgets/BuildContext-class.html): API reference docs for BuildContext 
+- [BuildContext class](https://api.flutter.dev/flutter/widgets/BuildContext-class.html): API reference docs for BuildContext
 - [Decoding Flutter video: BuildContext?!](https://www.youtube.com/watch?v=rIaaH87z1-g): What is “BuildContext” and how is it used? In this video, we discuss what  BuildContext is, and why it shows up in so many widgets and builders.
 - [Deep dive into Flutter's build modes](https://docs.flutter.dev/testing/build-modes): Understand the difference between debug, profile, and release modes.
 

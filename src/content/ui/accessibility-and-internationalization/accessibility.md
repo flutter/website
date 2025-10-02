@@ -227,7 +227,7 @@ widgets to offer a dramatically more accessible experience.
 Semantic roles define the purpose of a UI element, helping screen readers
 and other assistive tools interpret and present your application effectively
 to users. For example, a role can indicate if a widget is a button, a link,
-a heading, a slider, or part of a table. 
+a heading, a slider, or part of a table.
 
 While Flutter's standard widgets often provide these semantics automatically,
 a custom component without a clearly defined role can be incomprehensible
@@ -274,21 +274,21 @@ class MyCustomListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // This example shows how to explicitly assign list and listitem roles
-    // when building a custom list structure. 
+    // when building a custom list structure.
     return Semantics(
       role: SemanticsRole.list,
       explicitChildNodes: true,
-      child: Column( 
+      child: Column(
         children: <Widget>[
           Semantics(
-            role: SemanticsRole.listItem, 
+            role: SemanticsRole.listItem,
             child: const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text('Content of the first custom list item.'),
             ),
           ),
           Semantics(
-            role: SemanticsRole.listItem, 
+            role: SemanticsRole.listItem,
             child: const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text('Content of the second custom list item.'),

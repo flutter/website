@@ -110,7 +110,7 @@ function updateTable(releases, os) {
 
 /**
  * Create a new individual cell for HTML table.
- * 
+ *
  * @param {string | Node} content - The content to be set in the cell.
  * @param {string | null | undefined} dataClass - The class to be set in the cell.
  * @returns {HTMLElement} The created table cell element.
@@ -158,7 +158,7 @@ let macOSArm64ArchiveFilename = '';
 /**
  * Replaces the placeholder text or the old filename in code blocks
  * with the specified {@link archiveFilename}.
- * 
+ *
  * @param archiveFilename The new filename to replace the
  *   old one in code blocks with
  */
@@ -169,18 +169,18 @@ function replaceFilenameInCodeElements(archiveFilename) {
     // Check if the <code> element itself needs replacement
     const codeElementText = codeElement.innerHTML;
     if (codeElementText.includes(FILE_NAME_PREFIX) &&
-        filenameReplacement.test(codeElementText)) {
+      filenameReplacement.test(codeElementText)) {
       codeElement.innerHTML = codeElementText.replace(
         filenameReplacement,
         `$1${archiveFilename}`
       );
     }
 
-    // Process child nodes as before 
+    // Process child nodes as before
     codeElement.childNodes.forEach((node) => {
       const nodeText = node.textContent;
       if (node.nodeType === Node.TEXT_NODE &&
-          nodeText.includes(FILE_NAME_PREFIX)) {
+        nodeText.includes(FILE_NAME_PREFIX)) {
         node.textContent = nodeText.replace(
           filenameReplacement,
           `$1${archiveFilename}`
@@ -193,7 +193,7 @@ function replaceFilenameInCodeElements(archiveFilename) {
 
 /**
  * Update the download button for the latest release.
- * @param {Array} releases - A list of Flutter releases 
+ * @param {Array} releases - A list of Flutter releases
  * @param {string} base_url - link for sdk download link such as storage.googleapis.com...
  * @param {string} os - macos, windows, or linux
  * @param {string} [arch=''] - Only specify if there's additional architecture, such as arm64
@@ -299,7 +299,7 @@ function getProvenanceLink(os, release, date, channel) {
 
 
 // Send requests to render the tables.
-document.addEventListener("DOMContentLoaded", function(_) {
+document.addEventListener("DOMContentLoaded", function (_) {
   const foundSdkArchivesElement = document.querySelector('.tabs-wrapper[data-tab-save-key="os-archive-tabs"]') !== null;
   if (foundSdkArchivesElement) {
     fetchFlutterReleases('windows', updateTable, updateTableFailed);

@@ -222,7 +222,7 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly
 called on each rebuild causing the app to slow down.
 
 Storing the `fetchAlbum()` result in a state variable ensures that

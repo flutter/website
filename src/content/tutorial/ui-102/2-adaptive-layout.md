@@ -179,7 +179,7 @@ class RolodexApp extends StatelessWidget {
 ```
 
 If you're running in Chrome, you can resize the browser window to see
-layout changes. 
+layout changes.
 
 ## Add list selection functionality
 
@@ -202,7 +202,7 @@ class AdaptiveLayout extends StatefulWidget {
 
 
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
-  // New 
+  // New
   int selectedListId = 0;
 
   // New
@@ -269,7 +269,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         final isLargeScreen = constraints.maxWidth > largeScreenMinWidth;
 
         if (isLargeScreen) {
-          return _buildLargeScreenLayout(); // New 
+          return _buildLargeScreenLayout(); // New
         } else {
           // For small screens, use the original, navigation-style approach
           return const ContactGroupsPage();
@@ -278,7 +278,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     );
   }
 
-  // New 
+  // New
   Widget _buildLargeScreenLayout() {
     return const CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,

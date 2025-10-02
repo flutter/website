@@ -93,7 +93,7 @@ This website release includes several important updates!
   Also, check out the [Video & web app support in Flutter][ad-bp]
   blog post.
 
-* We have new docs for using Flutter with Android, specifically, 
+* We have new docs for using Flutter with Android, specifically,
   [Launching a Jetpack Compose activity from your Flutter application][jc]
   and [Calling JetPack APIs][jetpack-api].
 
@@ -111,7 +111,7 @@ This website release includes several important updates!
   [Swift Package Manager for app authors][app-authors].
 
 * The [Deep linking validator tool][deep-linking-tool], part of DevTools,
-  now works for both iOS and Android. 
+  now works for both iOS and Android.
 
 * Also, don't forget to check out the [breaking changes][bc-3.27]
   page for this release. That's also where you'll find useful
@@ -221,7 +221,7 @@ and the [Flutter 3.22 technical blog post][3.22-tech].
 
 You might also check out the [Dart 3.4 release][] blog post.
 In particular, Dart now provides a "baked in" language macro,
-`JsonCodable`, for serializing and deserializing JSON data. 
+`JsonCodable`, for serializing and deserializing JSON data.
 A future (and unspecified) Dart release will allow
 you to create your own macros.
 To learn more, check out [dart.dev/go/macros][].
@@ -540,7 +540,7 @@ You might also check out [Introducing Dart 3][].
 * Added guide on [fonts and typography][].
 * Added guide on restoring state on [Android][] and [iOS][] Flutter apps.
 * Added a section about [sharing iOS and macOS plugin implementations][].
-* Added a guide on adapting the Material 
+* Added a guide on adapting the Material
   [top app bar and navigation bar][], and [bottom navigation bar][] widgets
   to the current platform as a start of UI component platform adaptation
   guidelines.

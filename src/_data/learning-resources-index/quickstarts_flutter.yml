@@ -24,7 +24,7 @@
   link:
     url: https://github.com/flutter/samples/tree/main/code_sharing
     label: Flutter Github
-    
+
 - name: Context menus
   description: This sample shows how to create and customize cross-platform context menus, such as the text selection toolbar on mobile or the right click menu on desktop.
   tags:

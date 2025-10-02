@@ -13,7 +13,7 @@ to match the Material 3 specification.
 ## Context
 
 The default text style for `MenuItemButton` (a widget used
-in a `MenuBar`, and in a menu created with `MenuAnchor`), 
+in a `MenuBar`, and in a menu created with `MenuAnchor`),
 and `DropdownMenuEntry` (in the `DropdownMenu`) is
 updated to match the Material 3 specification.
 
@@ -23,7 +23,7 @@ to match the Material 3 specification.
 ## Description of change
 
 The default text style for `MenuItemButton` (a widget used
-in a `MenuBar`, and in a menu created with `MenuAnchor`), 
+in a `MenuBar`, and in a menu created with `MenuAnchor`),
 and `DropdownMenuEntry` (in the `DropdownMenu`) is updated from
 `TextTheme.bodyLarge` to `TextTheme.labelLarge` for Material 3.
 
@@ -33,7 +33,7 @@ The default text style for the `DropdownMenu`s `TextField` is updated from
 ## Migration guide
 
 A `MenuItemButton` for Material 3 uses
-`TextTheme.labelLarge` as the default text style. 
+`TextTheme.labelLarge` as the default text style.
 To use the previous default text style, set the `TextTheme.bodyLarge` text style
 in the `MenuItemButton.style` or `MenuButtonThemeData.style` properties.
 
@@ -74,10 +74,10 @@ menuButtonTheme: MenuButtonThemeData(
 ),
 ```
 
-A `DropdownMenu`'s `TextField` for Material 3 
-uses `TextTheme.bodyLarge` as the default text style. 
-To use the previous default text style, 
-set the `TextTheme.labelLarge` text style in 
+A `DropdownMenu`'s `TextField` for Material 3
+uses `TextTheme.bodyLarge` as the default text style.
+To use the previous default text style,
+set the `TextTheme.labelLarge` text style in
 the `DropdownMenu.textStyle` or `DropdownMenuThemeData.textStyle` properties.
 
 Code before migration:
@@ -128,8 +128,8 @@ dropdownMenuTheme: DropdownMenuThemeData(
 ),
 ```
 
-A `DropdownMenu`'s `DropdownMenuEntry` for Material 3 
-uses `TextTheme.labelLarge` as the default text style. 
+A `DropdownMenu`'s `DropdownMenuEntry` for Material 3
+uses `TextTheme.labelLarge` as the default text style.
 To use the previous default text style, set the
 `TextTheme.bodyLarge` text style in
 the `DropdownMenuEntry.style` or `MenuButtonThemeData.style` properties.

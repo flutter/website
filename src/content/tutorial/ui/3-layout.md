@@ -11,13 +11,13 @@ Given that Flutter is a UI toolkit, you'll spend a lot of time creating layouts
 with Flutter widgets. In this section, you'll learn how to build layouts with
 some of the most common layout widgets, including high-level widgets like
 [`Scaffold`][] and [`AppBar`][], which lay out the structure of a screen, to
-lower-level widgets like [`Column`][] or [`Row`][] 
+lower-level widgets like [`Column`][] or [`Row`][]
 that lay out widgets vertically or horizontally.
 
 ## `Scaffold` and `AppBar`
 
 Mobile applications often have a bar at the top called an “app bar” that can
-display a title, navigation controls, and/or actions. 
+display a title, navigation controls, and/or actions.
 
 <img src='/assets/images/docs/tutorial/apppad.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
@@ -98,7 +98,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // Changed from `Tile` 
+        // Changed from `Tile`
         body: Center(child: GamePage()),
       ),
     );
@@ -144,12 +144,12 @@ class GamePage extends StatelessWidget {
 The `spacing` property puts five pixels between each element on the main axis.
 
 Within `Column.children`, add one row *for each* element in the `_game.guesses`
-list. 
+list.
 
-:::note 
+:::note
 This `guesses` list is a **fixed-size** list, starting with five
 elements, one for each *potential* guess. The list will always contain exactly five
-elements, and therefore will always render five rows. 
+elements, and therefore will always render five rows.
 :::
 
 ```dart
@@ -207,8 +207,8 @@ time, and it now looks like the following figure.
 
 :::note Challenge
 
-Add a `Tile` to each row for each letter allowed in the guess. 
-The `guess` variable in the loop is a [record][] with the type 
+Add a `Tile` to each row for each letter allowed in the guess.
+The `guess` variable in the loop is a [record][] with the type
 `({String char, HitType type})`.
 
 **Solution:**
@@ -218,7 +218,7 @@ class GamePage extends StatelessWidget {
   const GamePage({super.key});
   // This manages game logic, and is out of scope for this lesson
   final Game _game = Game();
-    
+
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -229,7 +229,7 @@ class GamePage extends StatelessWidget {
               Row(
                 spacing: 5.0,
                 children: [
-                  for (var letter in guess) 
+                  for (var letter in guess)
                     Tile(letter.char, letter.type),
                 ]
               ),

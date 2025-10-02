@@ -4,19 +4,15 @@ layout: base
 
 {% if showToc != false -%}
 {% assign tocContents = content | generateToc %}
-{% if tocContents == null or tocContents == '' or tocContents.count < 2 -%}
-{% assign showToc = false %}
-{% endif -%}
-{% endif -%}
-
-<div id="site-main-row" class="{% if showToc == false %}no-toc{% endif %}">
+{% if tocContents == null or tocContents == '' or tocContents.count < 2 -%} {% assign showToc=false %} {% endif -%} {%
+  endif -%} <div id="site-main-row" class="{% if showToc == false %}no-toc{% endif %}">
   <div id="sidenav" class="site-sidebar">
     {% render sidenav-level-1.html, url:page.url, nav:sidenav, activeNav:activeNav %}
   </div>
 
   <main class="site-content">
     {% if showToc != false -%}
-      {% render top-toc.html, tocContents:tocContents, title:title %}
+    {% render top-toc.html, tocContents:tocContents, title:title %}
     {% endif -%}
     {%- if site.showBanner and showBanner != false -%}
     <div id="site-banner" role="alert">
@@ -44,4 +40,4 @@ layout: base
       </article>
     </div>
   </main>
-</div>
+  </div>

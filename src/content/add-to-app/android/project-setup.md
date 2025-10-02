@@ -346,7 +346,7 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://storage.googleapis.com/download.flutter.io")
         }
-        // ...to before this line  
+        // ...to before this line
     }
 }
 ```
@@ -361,7 +361,7 @@ dependencyResolutionManagement {
 After an `aar` build of a Kotlin DSL-based Android project,
 follow these steps to add the flutter_module.
 
-Include the flutter module as a dependency in 
+Include the flutter module as a dependency in
 the Android project's `app/build.gradle` file.
 
 ```kotlin title="MyApp/app/build.gradle.kts"
@@ -449,7 +449,7 @@ If you are using Kotlin, apply the following changes:
 
 ```kotlin title="MyApp/settings.gradle.kts"
 // Include the host app project. Assumed existing content.
-include(":app")            
+include(":app")
 // Replace "flutter_module" with whatever package_name you supplied when you ran:
 // `$ flutter create -t module [package_name]
 val filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy"

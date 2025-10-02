@@ -151,7 +151,7 @@ Set up each iOS device on which you want to test.
     1. Click **Trust**.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
- 
+
  1. <h3>Configure your physical iOS device</h3>
 
     Apple requires enabling **[Developer Mode][]**
@@ -292,4 +292,3 @@ or begin improving integration with iOS.
     </div>
   </div>
 </div>
-

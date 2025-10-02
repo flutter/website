@@ -73,7 +73,7 @@ final chip = ChipTheme(
     ),
   ),
   child: ActionChip(
-    label: const Text('action chip'), 
+    label: const Text('action chip'),
     onPressed: () {}
   )
 );

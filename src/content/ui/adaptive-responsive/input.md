@@ -300,9 +300,9 @@ for standard button and text cursors.
 of the Material buttons to set the `overlayColor` to transparent.)
 
 Implement a focus state for any custom buttons or
-gesture detectors in your app. 
+gesture detectors in your app.
 If you change the default Material button styles,
-test for keyboard focus states and 
+test for keyboard focus states and
 implement your own, if needed.
 
 To change the cursor from within your custom widgets,
@@ -420,4 +420,3 @@ see the [Material Design guide][].
 
 [Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
-

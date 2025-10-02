@@ -8,7 +8,7 @@ To learn more about DevTools, check out the
 ## Performance updates
 
 * Replace the DevTools timeline trace viewer with
-  the [Perfetto](https://perfetto.dev/) trace viewer - 
+  the [Perfetto](https://perfetto.dev/) trace viewer -
   [#5142](https://github.com/flutter/devtools/pull/5142)
 
   ![perfetto trace viewer](/tools/devtools/release-notes/images-2.21.1/image1.png "perfetto_trace_viewer")

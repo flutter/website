@@ -11,7 +11,7 @@ js:
 Apps are filled with buttons that execute long-running behaviors.
 For example, a button might trigger a download,
 which starts a download process, receives data over time,
-and then provides access to the downloaded asset. 
+and then provides access to the downloaded asset.
 It's helpful to show the user the progress of a
 long-running process, and the button itself is a good place
 to provide this feedback. In this recipe,
@@ -26,7 +26,7 @@ The following animation shows the app's behavior:
 
 Your button widget needs to change its appearance over time.
 Therefore, you need to implement your button with a custom
-stateless widget. 
+stateless widget.
 
 Define a new stateless widget called `DownloadButton`.
 
@@ -77,20 +77,20 @@ class DownloadButton extends StatelessWidget {
 
 :::note
 Each time you define a custom widget,
-you must decide whether all relevant 
+you must decide whether all relevant
 information is provided to that widget
 from its parent or if that widget orchestrates
 the application behavior within itself.
 For example, `DownloadButton` could receive the
-current `DownloadStatus` from its parent, 
+current `DownloadStatus` from its parent,
 or the `DownloadButton` could orchestrate the
 download process itself within its `State` object.
-For most widgets, the best answer is to pass the relevant 
+For most widgets, the best answer is to pass the relevant
 information into the widget from its parent,
 rather than manage behavior within the widget.
 By passing in all the relevant information,
 you ensure greater reusability for the widget,
-easier testing, and easier changes to application 
+easier testing, and easier changes to application
 behavior in the future.
 :::
 
@@ -100,16 +100,16 @@ The download button changes its shape based on the download
 status. The button displays a grey, rounded rectangle during
 the `notDownloaded` and `downloaded` states.
 The button displays a transparent circle during the
-`fetchingDownload` and `downloading` states. 
+`fetchingDownload` and `downloading` states.
 
 Based on the current `DownloadStatus`,
-build an `AnimatedContainer` with a 
+build an `AnimatedContainer` with a
 `ShapeDecoration` that displays a rounded
 rectangle or a circle.
 
-Consider defining the shape's widget tree in a separated 
+Consider defining the shape's widget tree in a separated
 `Stateless` widget so that the main `build()`
-method remains simple, allowing for the additions 
+method remains simple, allowing for the additions
 that follow. Instead of creating a function to return a widget,
 like `Widget _buildSomething() {}`, always prefer creating a
 `StatelessWidget` or a `StatefulWidget` which is more performant. More
@@ -192,12 +192,12 @@ class ButtonShapeWidget extends StatelessWidget {
 You might wonder why you need a `ShapeDecoration`
 widget for a transparent circle, given that it's invisible.
 The purpose of the invisible circle is to orchestrate
-the desired animation. The `AnimatedContainer` begins with a rounded 
+the desired animation. The `AnimatedContainer` begins with a rounded
 rectangle. When the `DownloadStatus` changes to `fetchingDownload`,
 the `AnimatedContainer` needs to animate from a rounded rectangle
 to a circle, and then fade out as the animation takes place.
 The only way to implement this animation is to define both
-the beginning shape of a rounded rectangle and the 
+the beginning shape of a rounded rectangle and the
 ending shape of a circle. But, you don't want the final
 circle to be visible, so you make it transparent,
 which causes an animated fade-out.
@@ -206,7 +206,7 @@ which causes an animated fade-out.
 
 The `DownloadButton` displays `GET` during the
 `notDownloaded` phase, `OPEN` during the `downloaded`
-phase, and no text in between. 
+phase, and no text in between.
 
 Add widgets to display text during each download phase,
 and animate the text's opacity in between. Add the text
@@ -275,8 +275,8 @@ class ButtonShapeWidget extends StatelessWidget {
 
 During the `fetchingDownload` phase, the `DownloadButton`
 displays a radial spinner. This spinner fades in from
-the `notDownloaded` phase and fades out to 
-the `fetchingDownload` phase. 
+the `notDownloaded` phase and fades out to
+the `fetchingDownload` phase.
 
 Implement a radial spinner that sits on top of the button
 shape and fades in and out at the appropriate times.
@@ -321,12 +321,12 @@ Widget build(BuildContext context) {
 After the `fetchingDownload` phase is the `downloading` phase.
 During the `downloading` phase, the `DownloadButton`
 replaces the radial progress spinner with a growing
-radial progress bar. The `DownloadButton` also displays a stop 
+radial progress bar. The `DownloadButton` also displays a stop
 button icon so that the user can cancel an in-progress download.
 
 Add a progress property to the `DownloadButton` widget,
 and then update the progress display to switch to a radial
-progress bar during the `downloading` phase. 
+progress bar during the `downloading` phase.
 
 Next, add a stop button icon at the center of the
 radial progress bar.
@@ -377,10 +377,10 @@ Widget build(BuildContext context) {
 ## Add button tap callbacks
 
 The last detail that your `DownloadButton` needs is the
-button behavior. The button must do things when the user taps it. 
+button behavior. The button must do things when the user taps it.
 
 Add widget properties for callbacks to start a download,
-cancel a download, and open a download. 
+cancel a download, and open a download.
 
 Finally, wrap `DownloadButton`'s existing widget tree
 with a `GestureDetector` widget, and forward the
@@ -444,7 +444,7 @@ class DownloadButton extends StatelessWidget {
 Congratulations! You have a button that changes its display
 depending on which phase the button is in: not downloaded,
 fetching download, downloading, and downloaded.
-Now, the user can tap to start a download, tap to cancel an 
+Now, the user can tap to start a download, tap to cancel an
 in-progress download, and tap to open a completed download.
 
 ## Interactive example

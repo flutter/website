@@ -14,10 +14,10 @@ To learn more about DevTools, check out the
 
 * Polish the debug mode warning to better describe which data is
   accurate in debug mode and which data may be misleading -
-  [#3537](https://github.com/flutter/devtools/pull/3537) 
+  [#3537](https://github.com/flutter/devtools/pull/3537)
 * Reorder performance tool tabs and only show the CPU profiler
   for the "Timeline Events" tab -
-  [#4629](https://github.com/flutter/devtools/pull/4629) 
+  [#4629](https://github.com/flutter/devtools/pull/4629)
 
 ## Memory updates
 
@@ -28,19 +28,18 @@ To learn more about DevTools, check out the
 
 * Fix an issue with hover cards where they were appearing
   but never disappearing -
-  [#4627](https://github.com/flutter/devtools/pull/4627) 
+  [#4627](https://github.com/flutter/devtools/pull/4627)
 * Fix a bug with the file search autocomplete dialog -
-  [#4409](https://github.com/flutter/devtools/pull/4409) 
+  [#4409](https://github.com/flutter/devtools/pull/4409)
 
 ## Network profiler updates
 
 * Added a "Copy" button in the Network Request view
   (thanks to @netos23) -
-  [#4509](https://github.com/flutter/devtools/pull/4509) 
+  [#4509](https://github.com/flutter/devtools/pull/4509)
 
 ## Full commit history
 
 To find a complete list of changes since the previous release,
 check out
 [the diff on GitHub](https://github.com/flutter/devtools/compare/v2.18.0...v2.19.0).
-

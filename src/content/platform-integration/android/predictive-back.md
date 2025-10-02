@@ -59,4 +59,3 @@ You can find more information at the following link:
 * [Android predictive back][] breaking change
 
 [Android predictive back]: /release/breaking-changes/android-predictive-back
-

@@ -8,7 +8,7 @@ description: >-
 ## Summary
 
 The default behavior of a [`SnackBar`][] with an action has changed. Previously, a
-`SnackBar` with an action would not auto-dismiss if talkback was enabled. 
+`SnackBar` with an action would not auto-dismiss if talkback was enabled.
 Now, all `SnackBar`s with an action default to a non-dismissible state until the
 user interacts with the action button.
 
@@ -24,14 +24,14 @@ until they are acknowledged.
 This change aligns with the Material 3 design specifications for `SnackBar`s:
 * Old behavior: A `SnackBar` with an action button would auto-dismiss after a
   duration unless talkback was enabled.
-* New behavior: A `SnackBar` with an action button won't auto-dismiss; 
+* New behavior: A `SnackBar` with an action button won't auto-dismiss;
    it remains on screen until dismissed by the user.
 
-To override this behavior, an optional `persist` property has 
-been added to `SnackBar`. When `persist` is true, the `SnackBar` won't auto-dismiss  
-and remains on screen until manually dismissed by the user. When false, the 
-`SnackBar` auto-dismisses after its standard duration, regardless of the 
-presence of an action. When null, the `SnackBar` follows the default 
+To override this behavior, an optional `persist` property has
+been added to `SnackBar`. When `persist` is true, the `SnackBar` won't auto-dismiss
+and remains on screen until manually dismissed by the user. When false, the
+`SnackBar` auto-dismisses after its standard duration, regardless of the
+presence of an action. When null, the `SnackBar` follows the default
 behavior, which won't auto-dismiss if an action is present.
 
 ## Migration guide

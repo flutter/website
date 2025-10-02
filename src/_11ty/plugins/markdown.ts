@@ -1,9 +1,9 @@
 import MarkdownIt from 'markdown-it';
+import markdownItAnchor from 'markdown-it-anchor';
+import markdownItAttrs from 'markdown-it-attrs';
 import markdownItContainer from 'markdown-it-container';
 import markdownItDefinitionList from 'markdown-it-deflist';
 import markdownItFootnote from 'markdown-it-footnote';
-import markdownItAttrs from 'markdown-it-attrs';
-import markdownItAnchor from 'markdown-it-anchor';
 import { slugify } from '../utils/slugify.js';
 
 export const markdown = (() => {

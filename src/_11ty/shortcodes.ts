@@ -1,9 +1,9 @@
-import {UserConfig} from '@11ty/eleventy';
-import {slugify} from './utils/slugify.js';
-import {fromHtml} from 'hast-util-from-html';
-import {selectAll} from 'hast-util-select';
-import {toHtml} from 'hast-util-to-html';
-import {escapeHtml} from 'markdown-it/lib/common/utils.mjs';
+import { UserConfig } from '@11ty/eleventy';
+import { fromHtml } from 'hast-util-from-html';
+import { selectAll } from 'hast-util-select';
+import { toHtml } from 'hast-util-to-html';
+import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
+import { slugify } from './utils/slugify.js';
 
 export function registerShortcodes(eleventyConfig: UserConfig): void {
   _setupTabs(eleventyConfig);

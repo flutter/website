@@ -366,7 +366,7 @@ you can use. Here are a few of them:
 [`popUntil`]: {{site.api}}/flutter/widgets/Navigator/popUntil.html
 [`push`]: {{site.api}}/flutter/widgets/Navigator/push.html
 [`pushAndRemoveUntil`]: {{site.api}}/flutter/widgets/Navigator/pushAndRemoveUntil.html
-[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html 
+[`pushReplacement`]: {{site.api}}/flutter/widgets/Navigator/pushReplacement.html
 [`removeRoute`]: {{site.api}}/flutter/widgets/Navigator/removeRoute.html
 [`removeRouteBelow`]: {{site.api}}/flutter/widgets/Navigator/removeRouteBelow.html
 [`replace`]: {{site.api}}/flutter/widgets/Navigator/replace.html

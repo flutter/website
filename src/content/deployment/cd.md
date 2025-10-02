@@ -31,13 +31,13 @@ You can use fastlane with the following tooling:
 * [CircleCI][]
    * [Building and deploying Flutter apps with Fastlane][]
 
-This guide shows how to set up fastlane and then integrate it with 
-your existing testing and continuous integration (CI) workflows. 
+This guide shows how to set up fastlane and then integrate it with
+your existing testing and continuous integration (CI) workflows.
 For more information, see "Integrating fastlane with existing workflow".
 
 ## fastlane
 
-[fastlane][] is an open-source tool suite to automate releases and deployments 
+[fastlane][] is an open-source tool suite to automate releases and deployments
 for your app.
 
 ### Local setup
@@ -93,7 +93,7 @@ Visit the [fastlane docs][fastlane] for more info.
     * ![iOS](/assets/images/docs/cd/ios.png) On iOS, follow the
       [fastlane iOS beta deployment guide][].
       You can specify the archive path to avoid rebuilding the project. For example:
-      
+
       ```ruby
       build_app(
         skip_build_archive: true,
@@ -125,8 +125,8 @@ The main thing to consider is that since cloud instances are ephemeral and
 untrusted, you won't be leaving your credentials like your Play Store service
 account JSON or your iTunes distribution certificate on the server.
 
-Continuous Integration (CI) systems generally support encrypted environment 
-variables to store private data. You can pass these environment variables 
+Continuous Integration (CI) systems generally support encrypted environment
+variables to store private data. You can pass these environment variables
 using `--dart-define MY_VAR=MY_VALUE` while building the app.
 
 **Take precaution not to re-echo those variable values back onto the console in
@@ -138,7 +138,7 @@ secrets in pull requests that you accept and merge.
 1. Make login credentials ephemeral.
     * ![Android](/assets/images/docs/cd/android.png) On Android:
         * Remove the `json_key_file` field from `Appfile` and store the string
-          content of the JSON in your CI system's encrypted variable. 
+          content of the JSON in your CI system's encrypted variable.
           Read the environment variable directly in your `Fastfile`.
           ```plaintext
           upload_to_play_store(
@@ -205,7 +205,7 @@ testing, and distributing apps and frameworks for Apple platforms.
 
 ### Custom build script
 
-Xcode Cloud recognizes [custom build scripts][] that can be 
+Xcode Cloud recognizes [custom build scripts][] that can be
 used to perform additional tasks at a designated time. It also includes a set
 of [predefined environment variables][], such as `$CI_WORKSPACE`, which is the
 location of your cloned repository.
