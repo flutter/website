@@ -3828,4 +3828,3 @@ From Sun Aug 19 17:37:00 2019 -0700 to Mon Nov 25 12:05:00 2019 -0800
 [2296](https://github.com/flutter/plugins/pull/2296) [shared_preferences] Add missing DartDoc (cla: yes)
 
 [2297](https://github.com/flutter/plugins/pull/2297) [share] README update (cla: yes)
-

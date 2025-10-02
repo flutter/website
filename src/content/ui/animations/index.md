@@ -315,9 +315,9 @@ colorTween = ColorTween(begin: Colors.transparent, end: Colors.black54);
 ```
 
 A `Tween` object doesn't store any state. Instead, it provides the
-[`evaluate(Animation<double> animation)`][] method that uses the 
+[`evaluate(Animation<double> animation)`][] method that uses the
 `transform` function to map the current value of the animation
-(between 0.0 and 1.0), to the actual animation value. 
+(between 0.0 and 1.0), to the actual animation value.
 
 The current value of the `Animation` object can be found in the
 `.value` method. The evaluate function also performs some housekeeping,

@@ -27,7 +27,7 @@ manifest (`AndroidManifest.xml`):
 
 ### macOS
 
-macOS apps must allow network access in the relevant `*.entitlements` files. 
+macOS apps must allow network access in the relevant `*.entitlements` files.
 
 ```xml
 <key>com.apple.security.network.client</key>
@@ -41,7 +41,7 @@ Learn more about [setting up entitlements][].
 ## Samples
 
 For a practical sample of various networking tasks (incl. fetching data,
-WebSockets, and parsing data in the background) see the 
+WebSockets, and parsing data in the background) see the
 [networking cookbook recipes](/cookbook/networking).
 
 [declare]: {{site.android-dev}}/training/basics/network-ops/connecting

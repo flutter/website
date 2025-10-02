@@ -108,7 +108,7 @@ This release also brings with it two new Material widgets: the ToggleButtons wid
 
 ## macOS Catalina Support
 
-With the release of macOS Catalina just around the corner, we've made sure that our tooling continues to work smoothly as you migrate to Catalina, iOS 13 and Xcode 11. I should note that **you'll want to upgrade to the Flutter 1.9.1 stable release before upgrading to Catalina**. The other order works, too, but you'll see an error when you do it that way (the [error](https://github.com/flutter/flutter/issues/33890) is benign, but still…). 
+With the release of macOS Catalina just around the corner, we've made sure that our tooling continues to work smoothly as you migrate to Catalina, iOS 13 and Xcode 11. I should note that **you'll want to upgrade to the Flutter 1.9.1 stable release before upgrading to Catalina**. The other order works, too, but you'll see an error when you do it that way (the [error](https://github.com/flutter/flutter/issues/33890) is benign, but still…).
 
 [38325](https://github.com/flutter/flutter/pull/38325) refactor flutter upgrade to be 2 part, with the second part re-entrant
 

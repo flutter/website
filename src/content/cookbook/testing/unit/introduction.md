@@ -30,7 +30,7 @@ see the [test package documentation][].
 
 ## 1. Add the test dependency
 
-The `test` package provides the core functionality for 
+The `test` package provides the core functionality for
 writing tests in Dart. This is the best approach when
 writing packages consumed by web, server, and Flutter apps.
 

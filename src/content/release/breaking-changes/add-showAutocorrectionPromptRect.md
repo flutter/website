@@ -1,7 +1,7 @@
 ---
-title: showAutocorrectionPromptRect method added to TextInputClient 
+title: showAutocorrectionPromptRect method added to TextInputClient
 description: >
-  A new method, void showAutocorrectionPromptRect(int start, int end), 
+  A new method, void showAutocorrectionPromptRect(int start, int end),
   was added to the TextInputClient interface
 ---
 
@@ -28,7 +28,7 @@ highlighted candidate changes.
 
 If your application doesn't implement or subclass `TextInputClient`,
 no migration is needed. If your application doesn't target iOS,
-or the class that implemented the `textInputClient` interface doesn't 
+or the class that implemented the `textInputClient` interface doesn't
 support autocorrect, you only need to add an empty implementation
 for the new method:
 
@@ -40,13 +40,13 @@ class CustomTextInputClient implements TextInputClient {
 
 Otherwise, if your app targets iOS and supports autocorrect on iOS,
 we recommend that you add a sensible implementation of
-`void showAutocorrectionPromptRect(int start, int end)` 
-to your `TextInputClient` subclass. 
+`void showAutocorrectionPromptRect(int start, int end)`
+to your `TextInputClient` subclass.
 
 Code after migration:
 
 ```dart
-// Assume your `TextInputClient` is a `State` subclass, and it has a variable 
+// Assume your `TextInputClient` is a `State` subclass, and it has a variable
 // `_currentPromptRectRange` that controls the autocorrection highlight.
 class CustomTextInputClient extends State<...> implements TextInputClient {
   @override

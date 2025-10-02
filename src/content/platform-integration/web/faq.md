@@ -111,7 +111,7 @@ Not currently.
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You might need to configure the `Cache-Control` header returned by your web server. 
+You might need to configure the `Cache-Control` header returned by your web server.
 For example, if this header is set to 3600, then the browser
 and CDN will cache the asset for 1 hour, and your users might see an out-of-date
 version of your app up to 1 hour after you deploy a new version. For
@@ -119,7 +119,7 @@ more information about caching on the web,
 check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
 It is a good idea to be aware of this behavior to avoid an undesirable user experience.
-After you deploy your app, users might use a 
+After you deploy your app, users might use a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
 This can lead to users using a version of your app that

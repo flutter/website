@@ -20,6 +20,7 @@
 
   &.very-wide {
     --card-min-width: 32rem;
+
     .card {
       min-height: 7.5rem;
     }
@@ -184,7 +185,8 @@
     }
   }
 
-  a.card, button.card {
+  a.card,
+  button.card {
     text-decoration: none;
 
     .card-title {

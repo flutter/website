@@ -125,8 +125,8 @@ Future<void> main() {
 }
 ```
 
-The `integrationDriver` function has a `responseDataCallback` 
-which you can customize. 
+The `integrationDriver` function has a `responseDataCallback`
+which you can customize.
 By default, it writes the results to the `integration_response_data.json` file,
 but you can customize it to generate a summary like in this example.
 
@@ -142,9 +142,9 @@ flutter drive \
   --profile
 ```
 
-The `--profile` option means to compile the app for the "profile mode" 
-rather than the "debug mode", so that the benchmark result is closer to 
-what will be experienced by end users. 
+The `--profile` option means to compile the app for the "profile mode"
+rather than the "debug mode", so that the benchmark result is closer to
+what will be experienced by end users.
 
 :::note
 Run the command with `--no-dds` when running on a mobile device or emulator.

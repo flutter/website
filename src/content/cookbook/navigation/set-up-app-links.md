@@ -48,9 +48,9 @@ It provides a simple API to handle complex routing scenarios.
     ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
+
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
@@ -74,7 +74,7 @@ It provides a simple API to handle complex routing scenarios.
 
 ## 2. Modify AndroidManifest.xml
 
- 1. Open the Flutter project with VS Code or Android Studio. 
+ 1. Open the Flutter project with VS Code or Android Studio.
  2. Navigate to `android/app/src/main/AndroidManifest.xml` file.
  3. Add the following metadata tag and intent filter inside the
    `<activity>` tag with `.MainActivity`.
@@ -179,8 +179,8 @@ The hosted file should look similar to this:
  4. Verify that your browser can access this file.
 
 :::note
-If you have multiple flavors, you can have many sha256_cert_fingerprint 
-values in the sha256_cert_fingerprints field. 
+If you have multiple flavors, you can have many sha256_cert_fingerprint
+values in the sha256_cert_fingerprints field.
 Just add it to the sha256_cert_fingerprints list
 :::
 

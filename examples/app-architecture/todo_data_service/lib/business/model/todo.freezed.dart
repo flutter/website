@@ -81,7 +81,7 @@ as String,
 
 class _Todo implements Todo {
   const _Todo({required this.id, required this.task});
-  
+
 
 /// The unique identifier of the Todo item.
 @override final  int id;

@@ -40,7 +40,7 @@ To learn more about DevTools, check out the
 ## Debugger updates
 
 * Support for inspecting more types of instances in the variables viewer
-  (Expandos, Types, TypeArguments, Parameters, Closures + closure Contexts, 
+  (Expandos, Types, TypeArguments, Parameters, Closures + closure Contexts,
   WeakProperty, Function, FunctionType, ReceivePort, Closure, RegExp) -
   [#4760](https://github.com/flutter/devtools/pull/4760)
 

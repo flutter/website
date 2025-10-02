@@ -59,7 +59,7 @@ defined and explained below.
 
 ## Risks of caching data
 
-An app is said to have a **stale cache** when the data within 
+An app is said to have a **stale cache** when the data within
 the source of truth has changed, which puts the app at risk
 of rendering old, outdated information.
 
@@ -107,7 +107,7 @@ Its implementation might look like this:
 ```dart
 class UserRepository {
   UserRepository(this.api);
-  
+
   final Api api;
   final Map<int, User?> _userCache = {};
 
@@ -233,7 +233,7 @@ pattern is called "state restoration", and is built in to Flutter.
 
 State restoration works by instructing the Flutter framework
 to sync data from its Element tree with the Flutter engine,
-which then caches it in platform-specific storage for future 
+which then caches it in platform-specific storage for future
 sessions. To enable state restoration on Flutter for Android
 and iOS, see the following documentation:
 
@@ -245,7 +245,7 @@ and iOS, see the following documentation:
 
 ## Feedback
 
-As this section of the website is evolving, 
+As this section of the website is evolving,
 we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="local-caching"

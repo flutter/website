@@ -6,7 +6,7 @@ description: Release notes for Flutter 1.20.0.
 
 ##  Merged pull requests by label
 
-### Merged PRs by labels for `flutter/flutter` 
+### Merged PRs by labels for `flutter/flutter`
 
 #### tool - 435 pull request(s)
 
@@ -5601,7 +5601,7 @@ description: Release notes for Flutter 1.20.0.
 
 [57037](https://github.com/flutter/flutter/pull/57037) Making DropdownButtonFormField to re-render if parent widget changes (cla: yes, f: material design, found in release: 1.17, found in release: 1.18, framework, severe: regression, waiting for tree to go green)
 
-### Merged PRs by labels for `flutter/engine` 
+### Merged PRs by labels for `flutter/engine`
 
 #### platform-android - 62 pull request(s)
 
@@ -6105,7 +6105,7 @@ description: Release notes for Flutter 1.20.0.
 
 
 
-### Merged PRs by labels for `flutter/plugins` 
+### Merged PRs by labels for `flutter/plugins`
 
 #### submit queue - 3 pull request(s)
 
@@ -8648,7 +8648,7 @@ There were 1243 pull requests.
 
 [61129](https://github.com/flutter/flutter/pull/61129) [flutter_tools] fix recursive asset variant issue (cla: yes, tool, waiting for tree to go green)
 
-### Merged PRs in `flutter/engine` 
+### Merged PRs in `flutter/engine`
 
 There were 1316 pull requests.
 
@@ -11593,4 +11593,3 @@ There were 153 pull requests.
 [2864](https://github.com/flutter/plugins/pull/2864) [shared_preferences] Shared preferences linux endorsement (cla: yes)
 
 [2865](https://github.com/flutter/plugins/pull/2865) [shared_preferences_linux] Add iOS stub (cla: yes)
-

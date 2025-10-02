@@ -28,9 +28,9 @@ To learn more about DevTools, check out the
   stemming from expensive Build, Layout, and Paint operations.
 
   ![Enhance tracing](/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
-  
+
   The expected workflow is as such:
-  
+
   1. User is investigating UI jank in the performance page
   2. User notices a long Build, Layout, and/or Paint event
   3. User turns on the respective tracking toggle in the "Enhance Tracing" feature
@@ -45,9 +45,9 @@ To learn more about DevTools, check out the
   rendering layers for Clip, Opacity, and Physical Shapes.
 
   ![More debugging options](/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
-  
+
   The expected workflow is as such:
-  
+
   1. User is investigating UI jank in the performance page
   2. User notices a lot of janky frames and suspects it could be due to
      excessive use of clipping, opacity, or physical shapes.
@@ -64,7 +64,7 @@ To learn more about DevTools, check out the
 ## Debugger updates
 
 * Replaced the "Libraries" pane with a "File Explorer" pane -
-  [#3448](https://github.com/flutter/devtools/pull/3448). 
+  [#3448](https://github.com/flutter/devtools/pull/3448).
   The "File Explorer" pane has two components:
 
   1. A tree view of the libraries present in your application.

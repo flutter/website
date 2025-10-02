@@ -51,4 +51,3 @@ by {{book.authors | arrayToSentenceString}}
 </div>
 </div>
 {% endfor -%}
-

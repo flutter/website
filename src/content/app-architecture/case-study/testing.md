@@ -103,7 +103,7 @@ This class doesn't need to be faked.
 :::note
 The code also defines a `MockGoRouter`.
 The router is mocked using [`package:mocktail`][],
-and is outside the scope of this case-study. 
+and is outside the scope of this case-study.
 You can find general testing guidance in [Flutter's testing documentation][].
 :::
 

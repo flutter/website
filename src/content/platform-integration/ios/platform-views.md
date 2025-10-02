@@ -41,7 +41,7 @@ On the Dart side, create a `Widget`
 and add the build implementation,
 as shown in the following steps.
 
-In the Dart widget file, make changes similar to those 
+In the Dart widget file, make changes similar to those
 shown in `native_view_example.dart`:
 
 <ol>
@@ -382,12 +382,12 @@ Widget build(BuildContext context) {
 
 Platform views in Flutter come with performance trade-offs.
 
-For complex cases, there are some techniques that can be used 
+For complex cases, there are some techniques that can be used
 to mitigate performance issues.
 
-For example, you could use a placeholder texture while an 
-animation is happening in Dart. 
-In other words, if an animation is slow while a platform view is rendered, 
+For example, you could use a placeholder texture while an
+animation is happening in Dart.
+In other words, if an animation is slow while a platform view is rendered,
 then consider taking a screenshot of the native view and
 rendering it as a texture.
 
@@ -397,7 +397,7 @@ There are some limitations when composing iOS Platform Views.
 
 - The [`ShaderMask`][] and [`ColorFiltered`][] widgets are not supported.
 - The [`BackdropFilter`][] widget is supported,
-  but there are some limitations on how it can be used. 
+  but there are some limitations on how it can be used.
   For more details, check out the
   [iOS Platform View Backdrop Filter Blur design doc][design-doc].
 

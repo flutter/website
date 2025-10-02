@@ -1,8 +1,8 @@
+import * as hast from 'hast';
+import MarkdownIt from 'markdown-it';
 import { getSingletonHighlighter, Highlighter } from 'shiki';
 import dashDarkTheme from '../syntax/dark-dark.js';
 import dashLightTheme from '../syntax/dash-light.js';
-import MarkdownIt from 'markdown-it';
-import * as hast from 'hast';
 
 const _terminalLanguages = {
   'console': '$',
@@ -157,12 +157,12 @@ function _highlight(
 
   // Find the spans enclosed in `[!` and `!]` that we should mark
   // and remove them from the text.
-  const {updatedText, linesToMarkedRanges} =
-      noHighlight ? {
-            updatedText: content,
-            linesToMarkedRanges: {},
-          } :
-          _findMarkedTextAndUpdate(content);
+  const { updatedText, linesToMarkedRanges } =
+    noHighlight ? {
+      updatedText: content,
+      linesToMarkedRanges: {},
+    } :
+      _findMarkedTextAndUpdate(content);
 
   // Update the content with the markers removed and
   // with any extra whitespace trimmed off the end.
@@ -314,8 +314,8 @@ const _attributesPattern = /([^\s=]+)(?:="([^"]*)"|=(\S+))?/g;
  * @param attributeString The string containing configuration.
  * @return The parsed attributes.
  */
-function _parseAttributes(attributeString: string): {[index: string]: string | null} {
-  const attributes: {[index: string]: string | null} = {};
+function _parseAttributes(attributeString: string): { [index: string]: string | null } {
+  const attributes: { [index: string]: string | null } = {};
   if (attributeString === '') return attributes;
 
   let match: RegExpExecArray | null;
@@ -377,7 +377,7 @@ function _parseNumbersAndRanges(input: string): Set<number> {
  */
 function _wrapMarkedText(
   spans: hast.ElementContent[],
-  ranges: {startIndex: number, endIndex: number}[],
+  ranges: { startIndex: number, endIndex: number }[],
 ): hast.Element[] {
   /**
    * The current index in the text across all spans.
@@ -563,7 +563,7 @@ function _findMarkedTextAndUpdate(text: string): {
 } {
   const lines = text.split('\n');
 
-  const linesToMarkedRanges: {[index: number]: {startIndex: number, endIndex: number}[]} = {};
+  const linesToMarkedRanges: { [index: number]: { startIndex: number, endIndex: number }[] } = {};
   const textWithMarksRemoved: string[] = [];
 
   for (let lineIndex = 0; lineIndex < lines.length; lineIndex++) {
@@ -578,7 +578,7 @@ function _findMarkedTextAndUpdate(text: string): {
     /**
      * The ranges of marked text in the current line.
      */
-    let markedRanges: {startIndex: number, endIndex: number}[] = [];
+    let markedRanges: { startIndex: number, endIndex: number }[] = [];
 
     while (currentIndexInLine < line.length) {
       const startIndex = line.indexOf('[!', currentIndexInLine);
@@ -591,7 +591,7 @@ function _findMarkedTextAndUpdate(text: string): {
 
       const endIndex = line.indexOf('!]', startIndex);
       if (endIndex === -1) {
-        throw new Error(`Invalid syntax in line ${lineIndex + 1}. 
+        throw new Error(`Invalid syntax in line ${lineIndex + 1}.
         An opening marker was found, but no closing marker was found.`);
       }
 

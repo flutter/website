@@ -38,7 +38,7 @@ as a dependency for your Flutter app test file.
 To migrate existing projects that use `flutter_driver`,
 consult the [Migrating from flutter_driver][] guide.
 
-Tests written with the `integration_test` package 
+Tests written with the `integration_test` package
 can perform the following tasks.
 
 * Run on the target device.

@@ -2,7 +2,7 @@
 title: Platform idioms
 description: >-
   Learn how to create a responsive app
-  that responds to changes in the screen size. 
+  that responds to changes in the screen size.
 shortTitle: Idioms
 ---
 
@@ -393,7 +393,7 @@ include the following:
 * Hook into `onPan` gesture events,
   and move an object yourself within a parent `Stack`.
 
-* Use one of the [pre-made list packages][] on pub.dev.  
+* Use one of the [pre-made list packages][] on pub.dev.
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html

@@ -1,7 +1,7 @@
 ---
 title: The window singleton is deprecated
 description: >
-  In preparation for supporting multiple views and 
+  In preparation for supporting multiple views and
   multiple windows the window singleton has been deprecated.
 ---
 

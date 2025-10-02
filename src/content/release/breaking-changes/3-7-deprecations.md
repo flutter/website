@@ -57,7 +57,7 @@ Code before migration:
 
 ```dart
 var myRecognizer = GestureRecognizer(
-  kind: PointerDeviceKind.mouse,  
+  kind: PointerDeviceKind.mouse,
 );
 ```
 

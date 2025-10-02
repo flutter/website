@@ -41,7 +41,7 @@ Code before migration:
 
 ```dart
 var themeData = ThemeData(
-  fixTextFieldOutlineLabel: true,  
+  fixTextFieldOutlineLabel: true,
 );
 ```
 
@@ -136,7 +136,7 @@ in v2.6. The replacements are the `ColorScheme.primaryContainer` and
 `ColorScheme.secondaryContainer`, respectively.
 
 These changes were made to align with the updated Material Design specification
-for `ColorScheme`. The updates to `ColorScheme` are covered more extensively in 
+for `ColorScheme`. The updates to `ColorScheme` are covered more extensively in
 the [ColorScheme for Material 3][] design document.
 
 **Migration guide**

@@ -90,7 +90,7 @@ For more information, check out:
 * [Performance considerations][],
   part of the [`StatefulWidget`][] API doc
 * [Widgets vs helper methods][],
-  a video from the official Flutter YouTube 
+  a video from the official Flutter YouTube
   channel that explains why widgets
   (especially widgets with `const` constructors)
   are more performant than functions.
@@ -108,10 +108,10 @@ For more information, check out:
 
 ### Use StringBuffer for efficient string building
 
-When you need to build a string from multiple parts, especially inside a loop, 
-using the `+` operator can be inefficient because it creates a new `String` 
-object on each concatenation. A better approach is to use `StringBuffer`, 
-which collects all the strings and concatenates them only once, when you call 
+When you need to build a string from multiple parts, especially inside a loop,
+using the `+` operator can be inefficient because it creates a new `String`
+object on each concatenation. A better approach is to use `StringBuffer`,
+which collects all the strings and concatenates them only once, when you call
 `toString()`.
 
 {% ytEmbed 'xSsFtDY-nOw', 'StringBuffer (Technique of the Week)' %}
@@ -171,7 +171,7 @@ create your visual effects:
     in the same way, with the same transparency,
     you can precalculate what this overlapped,
     semi-transparent object looks like, cache it,
-    and use that instead of calling `saveLayer()`. 
+    and use that instead of calling `saveLayer()`.
     This works with any static shape you can precalculate.
   * Can you refactor your painting logic to avoid
     overlaps altogether?
@@ -246,7 +246,7 @@ Here are some tips you might find to be useful:
 
 ---
 
-### Implement grids and lists thoughtfully 
+### Implement grids and lists thoughtfully
 
 How your grids and lists are implemented
 might be causing performance problems for your app.
@@ -313,7 +313,7 @@ that the widget prefers, assuming no constraints.
 With this information,
 the framework determines a uniform cell size,
 and re-visits all grid cells a second time,
-telling each card what size to use. 
+telling each card what size to use.
 
 #### Debugging intrinsic passes
 
@@ -422,7 +422,7 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
-  
+
 * Avoid overriding `operator ==` on `Widget` objects.
   While it might seem like it would help by avoiding unnecessary rebuilds,
   in practice it hurts performance because it results in O(N²) behavior.

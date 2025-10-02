@@ -12,7 +12,7 @@ To learn about the improvements included in DevTools 2.28.2, please read the
 ## General updates
 
 * Added a link to the new "Dive in to DevTools" YouTube
-  [video](https://www.youtube.com/watch?v=_EYk-E29edo) in the bottom status bar. 
+  [video](https://www.youtube.com/watch?v=_EYk-E29edo) in the bottom status bar.
   This video provides a brief tutorial for each DevTools screen.
   [#6554](https://github.com/flutter/devtools/pull/6554)
 

@@ -1,10 +1,10 @@
-import { getPageInfo } from './utils/get-page-info.js';
-import { slugify } from "./utils/slugify.js";
+import { UserConfig } from '@11ty/eleventy';
 import { fromHtml } from 'hast-util-from-html';
 import { selectAll } from 'hast-util-select';
 import { toText } from 'hast-util-to-text';
 import { escapeHtml } from 'markdown-it/lib/common/utils.mjs';
-import { UserConfig } from '@11ty/eleventy';
+import { getPageInfo } from './utils/get-page-info.js';
+import { slugify } from "./utils/slugify.js";
 
 export function registerFilters(eleventyConfig: UserConfig): void {
   eleventyConfig.addFilter('childPagesOf', function (pages: any[], pageUrl: string) {
@@ -59,8 +59,8 @@ function _startsWith(content: string, prefix: string): boolean {
 function _camelCaseBreaker(stringToBreak: string): string {
   // Only consider non-empty text.
   if (!stringToBreak
-      || typeof stringToBreak !== 'string'
-      || stringToBreak.length === 0) {
+    || typeof stringToBreak !== 'string'
+    || stringToBreak.length === 0) {
     return stringToBreak;
   }
 
@@ -69,7 +69,7 @@ function _camelCaseBreaker(stringToBreak: string): string {
 
   // Replace all capital letters in the rest of the string with <wbr> + letter.
   const processedRest =
-      restOfString.replace(/([A-Z])/g, '<wbr>$&');
+    restOfString.replace(/([A-Z])/g, '<wbr>$&');
 
   return firstCharacter + processedRest;
 }
@@ -187,13 +187,13 @@ function _generateToc(contents: string) {
   // TODO(parlough): Speed this up.
   //   Perhaps do the processing before HTML rendering?
   //   Maybe shouldn't be a filter.
-  const dom = fromHtml(contents, {fragment: true});
+  const dom = fromHtml(contents, { fragment: true });
   const headers = selectAll('h2, h3', dom);
   if (headers.length < 1) {
     // If there's only one header, there's no point of a TOC.
     return null;
   }
-  let currentH2: {text: string, id: string, children: {text: string, id: string}[]} | null = null;
+  let currentH2: { text: string, id: string, children: { text: string, id: string }[] } | null = null;
   const builtToc = [];
   let count = 0;
   for (const header of headers) {
@@ -234,7 +234,7 @@ function _generateToc(contents: string) {
   };
 }
 
-function _breadcrumbsForPage(page: any): {title: string, url: string}[] {
+function _breadcrumbsForPage(page: any): { title: string, url: string }[] {
   const breadcrumbs = [];
 
   // Retrieve the liquid data for this page.
@@ -242,8 +242,8 @@ function _breadcrumbsForPage(page: any): {title: string, url: string}[] {
 
   while (page) {
     const urlSegments = (page.url as string)
-        .split('/')
-        .filter((segment) => segment.length > 0);
+      .split('/')
+      .filter((segment) => segment.length > 0);
 
     breadcrumbs.push({
       title: data['breadcrumb'] ?? data['shortTitle'] ?? data['short-title'] ?? data.title,

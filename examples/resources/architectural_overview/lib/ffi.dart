@@ -1,4 +1,5 @@
 import 'dart:ffi';
+
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
 typedef MessageBoxNative =

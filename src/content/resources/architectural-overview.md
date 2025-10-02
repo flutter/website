@@ -592,7 +592,7 @@ such as Windows or macOS.
 :::note
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information, 
+For more information,
 visit [Impeller rendering engine][]
 :::
 

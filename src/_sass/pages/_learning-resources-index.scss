@@ -60,11 +60,16 @@
     z-index: 1000;
   }
 
-  #open-filter-toggle:not(:checked) + #resource-filter-group-wrapper { right: -220px; }
-  #open-filter-toggle:checked + #resource-filter-group-wrapper { right: 0; }
+  #open-filter-toggle:not(:checked)+#resource-filter-group-wrapper {
+    right: -220px;
+  }
+
+  #open-filter-toggle:checked+#resource-filter-group-wrapper {
+    right: 0;
+  }
 }
 
-//Desktop screens 
+//Desktop screens
 @media (min-width: 840px) {
   #resource-filter-group {
     position: static !important;
@@ -72,7 +77,7 @@
   }
 
   .filter-header {
-    display: none !important; 
+    display: none !important;
   }
 }
 
@@ -101,6 +106,7 @@
         0% {
           right: -10rem;
         }
+
         100% {
           right: 0;
         }
@@ -262,7 +268,8 @@
         color: var(--site-onPrimary-color-light);
       }
 
-      &:disabled, &[disabled] {
+      &:disabled,
+      &[disabled] {
         color: var(--site-inset-bgColor-translucent);
         cursor: default;
       }

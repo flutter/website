@@ -24,5 +24,3 @@ the `/src/_data/sidenav.yml` file in [YAML][] format.
 ## Hide pages unless open
 
 ## Infrastructure
-
-

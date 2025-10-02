@@ -84,7 +84,7 @@ $ cd native_add
 
 :::note
 You can exclude platforms from `--platforms` that you don't want
-to build to. However, you need to include the platform of 
+to build to. However, you need to include the platform of
 the device you are testing on.
 :::
 

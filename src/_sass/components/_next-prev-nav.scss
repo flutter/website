@@ -22,7 +22,8 @@
   @media (min-width: 576px) {
     flex-wrap: nowrap;
 
-    .prev, .next {
+    .prev,
+    .next {
       max-width: 50%;
     }
   }
@@ -42,7 +43,7 @@
     padding: 0.5rem;
     min-height: 100%;
 
-    > div {
+    >div {
       display: flex;
       flex-direction: column;
       padding: 0.5rem;

@@ -63,7 +63,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
 
 The `ExpandableFab` displays a blue edit button when collapsed
 and a white close button when expanded. When expanding and collapsing,
-these two buttons scale and fade between one another. 
+these two buttons scale and fade between one another.
 
 Implement the expand and collapse cross-fade between the two different FABs.
 

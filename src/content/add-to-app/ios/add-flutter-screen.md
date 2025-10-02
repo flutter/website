@@ -13,7 +13,7 @@ To launch a Flutter screen from an existing iOS app, you start a
 
 :::note
 The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
-and the `FlutterViewController` attaches to a `FlutterEngine` to pass 
+and the `FlutterViewController` attaches to a `FlutterEngine` to pass
 input events into Flutter and to display frames rendered by the
 `FlutterEngine`.
 :::
@@ -42,10 +42,10 @@ Where you create a `FlutterEngine` depends on your host app.
 {% tabs "darwin-framework" %}
 {% tab "SwiftUI" %}
 
-In this example, we create a `FlutterEngine` object inside a SwiftUI [`Observable`][] 
-object called `FlutterDependencies`. 
-Pre-warm the engine by calling `run()`, and then inject this object 
-into a `ContentView` using the `environment()` view modifier. 
+In this example, we create a `FlutterEngine` object inside a SwiftUI [`Observable`][]
+object called `FlutterDependencies`.
+Pre-warm the engine by calling `run()`, and then inject this object
+into a `ContentView` using the `environment()` view modifier.
 
  ```swift title="MyApp.swift"
 import SwiftUI
@@ -107,7 +107,7 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
 {% endtab %}
 {% tab "UIKit-ObjC" %}
 
-The following example demonstrates creating a `FlutterEngine`, 
+The following example demonstrates creating a `FlutterEngine`,
 exposed as a property, on app startup in the app delegate.
 
 ```objc title="AppDelegate.h"
@@ -148,12 +148,12 @@ exposed as a property, on app startup in the app delegate.
 {% tabs "darwin-framework" %}
 {% tab "SwiftUI" %}
 
-The following example shows a generic `ContentView` with a 
-[`NavigationLink`][] hooked to a flutter screen. 
-First, create a `FlutterViewControllerRepresentable` to represent the 
-`FlutterViewController`. The `FlutterViewController` constructor takes 
+The following example shows a generic `ContentView` with a
+[`NavigationLink`][] hooked to a flutter screen.
+First, create a `FlutterViewControllerRepresentable` to represent the
+`FlutterViewController`. The `FlutterViewController` constructor takes
 the pre-warmed `FlutterEngine` as an argument, which is injected through
-the view environment. 
+the view environment.
 
 ```swift title="ContentView.swift"
 import SwiftUI
@@ -162,14 +162,14 @@ import Flutter
 struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
   // Flutter dependencies are passed in through the view environment.
   @Environment(FlutterDependencies.self) var flutterDependencies
-  
+
   func makeUIViewController(context: Context) -> some UIViewController {
     return FlutterViewController(
       engine: flutterDependencies.flutterEngine,
       nibName: nil,
       bundle: nil)
   }
-  
+
   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
@@ -187,8 +187,8 @@ struct ContentView: View {
 Now, you have a Flutter screen embedded in your iOS app.
 
 :::note
-In this example, your Dart `main()` entrypoint function runs 
-when the `FlutterDependencies` observable is initialized. 
+In this example, your Dart `main()` entrypoint function runs
+when the `FlutterDependencies` observable is initialized.
 :::
 
 {% endtab %}
@@ -318,7 +318,7 @@ struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
       nibName: nil,
       bundle: nil)
   }
-  
+
   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 
@@ -372,13 +372,13 @@ The `FlutterAppDelegate` performs functions such as:
 
 * Forwarding application callbacks such as [`openURL`][]
   to plugins such as [local_auth][].
-* Keeping the Flutter connection open 
+* Keeping the Flutter connection open
   in debug mode when the phone screen locks.
 
 ### Creating a FlutterAppDelegate subclass
-Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown 
-in the [Start a FlutterEngine and FlutterViewController section][]. 
-In a SwiftUI app, you can create a subclass of the 
+Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown
+in the [Start a FlutterEngine and FlutterViewController section][].
+In a SwiftUI app, you can create a subclass of the
 `FlutterAppDelegate` and annotate it with the [`Observable()`][] macro as follows:
 
 ```swift title="MyApp.swift"
@@ -424,14 +424,14 @@ import Flutter
 struct FlutterViewControllerRepresentable: UIViewControllerRepresentable {
   // Access the AppDelegate through the view environment.
   @Environment(AppDelegate.self) var appDelegate
-  
+
   func makeUIViewController(context: Context) -> some UIViewController {
     return FlutterViewController(
       engine: appDelegate.flutterEngine,
       nibName: nil,
       bundle: nil)
   }
-  
+
   func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
 }
 

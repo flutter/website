@@ -83,7 +83,7 @@ function _findAndActivateTabsWithSaveId(saveKey, saveId) {
   const tabsWrappers = document.querySelectorAll(`.tabs-wrapper[data-tab-save-key="${saveKey}"]`);
 
   tabsWrappers.forEach((tabWrapper) =>
-      _activateTabWithSaveId(tabWrapper, saveId));
+    _activateTabWithSaveId(tabWrapper, saveId));
 }
 
 function _activateTabWithSaveId(tabWrapper, saveId) {

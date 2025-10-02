@@ -6,7 +6,7 @@ description: >-
 
 ## Summary
 
-Disposables in pure Dart projects can't use `MemoryAllocations` in Flutter. 
+Disposables in pure Dart projects can't use `MemoryAllocations` in Flutter.
 So, to be leak-trackable they need a Dart-only class.
 `MemoryAllocations` in Flutter is renamed to make the name
 available to a non-Flutter, Dart project.
@@ -15,7 +15,7 @@ available to a non-Flutter, Dart project.
 
 Before:
 
-```dart 
+```dart
 if (kFlutterMemoryAllocationsEnabled) {
   MemoryAllocations.instance.dispatchObjectCreated(
     library: 'package:flutter/gestures.dart',
@@ -27,7 +27,7 @@ if (kFlutterMemoryAllocationsEnabled) {
 
 After:
 
-```dart 
+```dart
 if (kFlutterMemoryAllocationsEnabled) {
   FlutterMemoryAllocations.instance.dispatchObjectCreated(
     library: 'package:flutter/gestures.dart',

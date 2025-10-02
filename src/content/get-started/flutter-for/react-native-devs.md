@@ -1090,7 +1090,7 @@ flutter:
 Flutter's [Cupertino (iOS-style)][] package provides high
 fidelity widgets for the current iOS design language.
 To use the `CupertinoIcons` font,
-add a dependency for `cupertino_icons` in your project's 
+add a dependency for `cupertino_icons` in your project's
 `pubspec.yaml` file.
 
 ```yaml
@@ -1987,7 +1987,7 @@ const _getIPAddress = () => {
 };
 ```
 
-Flutter uses the `http` package. 
+Flutter uses the `http` package.
 
 To add the `http` package as a dependency, run `flutter pub add`:
 
@@ -2244,7 +2244,7 @@ enable autosave and hot reloads on save.
      `Configure autosave options`.
         - Check the option to `Save files if the IDE is idle for X seconds`.
         - **Recommended:** Set a small delay duration. For example, 2 seconds.
-   
+
     * Open `Settings > Languages & Frameworks > Flutter`.
         - Check the option to `Perform hot reload on save`.
 

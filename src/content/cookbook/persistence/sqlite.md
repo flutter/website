@@ -96,7 +96,7 @@ to the database. This involves two steps:
 :::note
 In order to use the keyword `await`, the code must be placed
 inside an `async` function. You should place all the following
-table functions inside `void main() async {}`. 
+table functions inside `void main() async {}`.
 :::
 
 <?code-excerpt "lib/step3.dart (openDatabase)"?>

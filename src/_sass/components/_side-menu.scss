@@ -2,17 +2,18 @@
   margin: 0;
   --toc-indent: 0;
 
-  > li {
+  >li {
     li {
       --toc-indent: 1;
 
-      > li {
+      >li {
         --toc-indent: 2;
       }
     }
   }
 
-  &, ul {
+  &,
+  ul {
     padding: 0;
     font-size: 0.875rem;
     list-style: none;
@@ -75,7 +76,7 @@
     display: flex;
   }
 
-  > nav {
+  >nav {
     header {
       font-size: 1rem;
       margin-block-end: 0.25rem;

@@ -78,7 +78,7 @@ widget to add the following animation feature:
 #### 1. Pick a widget property to animate
 
 To create a fade-in effect, you can animate the
-`opacity` property using the`AnimatedOpacity` widget. 
+`opacity` property using the`AnimatedOpacity` widget.
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
 ```dart diff
@@ -126,7 +126,7 @@ the starting value for `opacity` to zero:
 ```dart diff
   class _FadeInDemoState extends State<FadeInDemo> {
 +   double opacity = 0;
-+ 
++
     @override
     Widget build(BuildContext context) {
       return ListView(children: <Widget>[
@@ -214,7 +214,7 @@ It starts with a [Material App][] home screen that contains:
 
 - A `Container` widget configured with a
  `borderRadius`, `margin`, and `color`.
-  These properties are setup to be regenerated 
+  These properties are setup to be regenerated
   each time you run the example.
 - A **Change** button that does nothing when clicked.
 

@@ -24,7 +24,7 @@ To learn more about DevTools, check out the
 * Fix expression evaluation bug where
   selecting an autocomplete result for a field would clear the current input -
   [#5717](https://github.com/flutter/devtools/pull/5717)
-* Make selection of a stack frame 
+* Make selection of a stack frame
   scroll to the frame location in the source code -
   [#5722](https://github.com/flutter/devtools/pull/5722)
 * Improve performance of searching for a file and searching in a file -

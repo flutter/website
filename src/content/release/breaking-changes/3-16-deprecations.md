@@ -128,7 +128,7 @@ Code before migration:
 ```dart
 ThemeData(
   // ...
-  selectedRowColor: Colors.pink, // Would have no effect.  
+  selectedRowColor: Colors.pink, // Would have no effect.
 );
 ```
 
@@ -137,7 +137,7 @@ Code after migration:
 ```dart
 ThemeData(
   // ...
-  // Remove uses.  
+  // Remove uses.
 );
 ```
 

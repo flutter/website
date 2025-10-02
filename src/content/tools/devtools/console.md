@@ -29,7 +29,7 @@ The console shows the application's standard output (`stdout`):
 ## Explore inspected widgets
 
 If you click a widget on the **Inspector** screen,
-the variable for this widget displays in the **Console**: 
+the variable for this widget displays in the **Console**:
 
 ![Screenshot of inspected widget in Console view](/assets/images/docs/tools/devtools/console-inspect-widget.png){:width="100%"}
 
@@ -65,4 +65,3 @@ The Console screen displays both live and static
 inbound and outbound references, as well as field values:
 
 ![Screenshot showing inbound and outbound references in Console](/assets/images/docs/tools/devtools/console-references.png){:width="100%"}
-

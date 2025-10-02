@@ -26,9 +26,9 @@ This guide explains how to perform the following tasks:
 * [Android release FAQ](#android-release-faq)
 
 :::note
-Throughout this page, `[project]` refers to 
+Throughout this page, `[project]` refers to
 the directory that your application is in. While following
-these instructions, substitute `[project]` with 
+these instructions, substitute `[project]` with
 your app's directory.
 :::
 

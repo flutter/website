@@ -80,7 +80,7 @@ as bool,
 
 class _UserProfile implements UserProfile {
   const _UserProfile({required this.name, required this.photoUrl, this.synchronized = false});
-  
+
 
 @override final  String name;
 @override final  String photoUrl;

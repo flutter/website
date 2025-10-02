@@ -29,7 +29,7 @@ the following files in your issue:
 1. Navigate to `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
    and click **Add Package**.
 1. Ensure that it's added to the `Runner` target and click **Add Package**.
- 
+
    {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/choose-package-products.png", caption:"Ensure that the package is added to the `Runner` target" %}
 
 1. Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks,

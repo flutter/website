@@ -13,47 +13,47 @@ js:
 
 <?code-excerpt path-base="app-architecture/todo_data_service"?>
 
-Most Flutter applications, 
-no matter how small or big they are, 
-might require storing data on the user’s device at some point. 
-For example, API keys, 
+Most Flutter applications,
+no matter how small or big they are,
+might require storing data on the user’s device at some point.
+For example, API keys,
 user preferences or data that should be available offline.
 
-In this recipe, 
-you will learn how to integrate persistent storage for complex data using SQL 
+In this recipe,
+you will learn how to integrate persistent storage for complex data using SQL
 in a Flutter application following the Flutter Architecture design pattern.
 
-To learn how to store simpler key-value data, 
-take a look at the Cookbook recipe: 
+To learn how to store simpler key-value data,
+take a look at the Cookbook recipe:
 [Persistent storage architecture: Key-value data][].
 
-To read this recipe, 
-you should be familiar with SQL and SQLite. 
-If you need help, you can read the [Persist data with SQLite][] recipe 
+To read this recipe,
+you should be familiar with SQL and SQLite.
+If you need help, you can read the [Persist data with SQLite][] recipe
 before reading this one.
 
-This example uses [`sqflite`][] with the [`sqflite_common_ffi`][] plugin, 
-which combined support for mobile and desktop. 
-Support for web is provided in the experimental plugin 
+This example uses [`sqflite`][] with the [`sqflite_common_ffi`][] plugin,
+which combined support for mobile and desktop.
+Support for web is provided in the experimental plugin
 [`sqflite_common_ffi_web`][] but it's not included in this example.
 
 ## Example application: ToDo list application
 
-The example application consists of a single screen with an app bar at the top, 
+The example application consists of a single screen with an app bar at the top,
 a list of items, and a text field input at the bottom.
 
 <img src='/assets/images/docs/cookbook/architecture/todo_app_light.png'
 class="site-mobile-screenshot" alt="ToDo application in light mode" >
 
-The body of the application contains the `TodoListScreen`. 
+The body of the application contains the `TodoListScreen`.
 This screen contains a `ListView` of `ListTile` items,
 each one representing a ToDo item.
-At the bottom, a `TextField` allows users to create new ToDo items 
+At the bottom, a `TextField` allows users to create new ToDo items
 by writing the task description and then tapping on the “Add” `FilledButton`.
 
-Users can tap on the delete `IconButton` to delete the ToDo item. 
+Users can tap on the delete `IconButton` to delete the ToDo item.
 
-The list of ToDo items is stored locally using a database service, 
+The list of ToDo items is stored locally using a database service,
 and restored when the user starts the application.
 
 :::note
@@ -64,7 +64,7 @@ available in [`/examples/app-architecture/todo_data_service/`][].
 ## Storing complex data with SQL
 
 This functionality follows the recommended [Flutter Architecture design][],
-containing a UI layer and a data layer. 
+containing a UI layer and a data layer.
 Additionally, in the domain layer you will find the data model used.
 
 - UI layer with `TodoListScreen` and `TodoListViewModel`
@@ -73,21 +73,21 @@ Additionally, in the domain layer you will find the data model used.
 
 ### ToDo list presentation layer
 
-The `TodoListScreen` is a Widget that contains the UI in charge of displaying 
-and creating the ToDo items. 
-It follows the [MVVM pattern][] 
-and is accompanied by the `TodoListViewModel`, 
-which contains the list of ToDo items 
+The `TodoListScreen` is a Widget that contains the UI in charge of displaying
+and creating the ToDo items.
+It follows the [MVVM pattern][]
+and is accompanied by the `TodoListViewModel`,
+which contains the list of ToDo items
 and three commands to load, add, and delete ToDo items.
 
-This screen is divided into two parts, 
-one containing the list of ToDo items, 
-implemented using a `ListView`, 
-and the other is a `TextField` 
+This screen is divided into two parts,
+one containing the list of ToDo items,
+implemented using a `ListView`,
+and the other is a `TextField`
 and a `Button`, used for creating new ToDo items.
 
-The `ListView` is wrapped by a `ListenableBuilder`, 
-which listens to changes in the `TodoListViewModel`, 
+The `ListView` is wrapped by a `ListenableBuilder`,
+which listens to changes in the `TodoListViewModel`,
 and shows a `ListTile` for each ToDo item.
 
 <?code-excerpt "lib/ui/todo_list/widgets/todo_list_screen.dart (ListenableBuilder)" replace="/child: //g;/^\),$/)/g"?>
@@ -112,8 +112,8 @@ ListenableBuilder(
 )
 ```
 
-The list of ToDo items is defined in the `TodoListViewModel`, 
-and loaded by the `load` command. 
+The list of ToDo items is defined in the `TodoListViewModel`,
+and loaded by the `load` command.
 This method calls the `TodoRepository` and fetches the list of ToDo items.
 
 <?code-excerpt "lib/ui/todo_list/viewmodel/todo_list_viewmodel.dart (TodoListViewModel)"?>
@@ -154,14 +154,14 @@ FilledButton.icon(
 )
 ```
 
-The `add` command then calls the `TodoRepository.createTodo()` method 
+The `add` command then calls the `TodoRepository.createTodo()` method
 with the task description text and it creates a new ToDo item.
 
-The `createTodo()` method returns the newly created ToDo, 
+The `createTodo()` method returns the newly created ToDo,
 which is then added to the `_todo` list in the view model.
 
-ToDo items contain a unique identifier generated by the database. 
-This is why the view model doesn’t create the ToDo item, 
+ToDo items contain a unique identifier generated by the database.
+This is why the view model doesn’t create the ToDo item,
 but rather the `TodoRepository` does.
 
 <?code-excerpt "lib/ui/todo_list/viewmodel/todo_list_viewmodel.dart (Add)"?>
@@ -208,8 +208,8 @@ IconButton(
 )
 ```
 
-Then, the view model calls the `TodoRepository.deleteTodo()` method, 
-passing the unique ToDo item identifier. 
+Then, the view model calls the `TodoRepository.deleteTodo()` method,
+passing the unique ToDo item identifier.
 A correct result removes the ToDo item from the view
 model *and* the screen.
 
@@ -263,16 +263,16 @@ abstract class Todo with _$Todo {
 The data layer of this functionality is composed of two classes,
 the `TodoRepository` and the `DatabaseService`.
 
-The `TodoRepository` acts as the source of truth for all the ToDo items. 
-View models must use this repository to access to the ToDo list, 
+The `TodoRepository` acts as the source of truth for all the ToDo items.
+View models must use this repository to access to the ToDo list,
 and it should not expose any implementation details on how they are stored.
 
-Internally, the `TodoRepository` uses the `DatabaseService`, 
+Internally, the `TodoRepository` uses the `DatabaseService`,
 which implements the access to the SQL database using the `sqflite` package.
-You can implement the same `DatabaseService` using other storage packages 
+You can implement the same `DatabaseService` using other storage packages
 like `sqlite3`, `drift` or even cloud storage solutions like `firebase_database`.
 
-The `TodoRepository` checks if the database is open 
+The `TodoRepository` checks if the database is open
 before every request and opens it if necessary.
 
 It implements the `fetchTodos()`, `createTodo()`, and `deleteTodo()` methods.
@@ -307,10 +307,10 @@ class TodoRepository {
 }
 ```
 
-The `DatabaseService` implements the access to the SQLite database 
+The `DatabaseService` implements the access to the SQLite database
 using the `sqflite` package.
 
-It’s a good idea to define the table and column names as constants 
+It’s a good idea to define the table and column names as constants
 to avoid typos when writing SQL code.
 
 <?code-excerpt "lib/data/services/database_service.dart (Table)"?>
@@ -320,7 +320,7 @@ static const String _idColumnName = '_id';
 static const String _taskColumnName = 'task';
 ```
 
-The `open()` method opens the existing database, 
+The `open()` method opens the existing database,
 or creates a new one if it doesn’t exist.
 
 <?code-excerpt "lib/data/services/database_service.dart (Open)"?>
@@ -341,11 +341,11 @@ Future<void> open() async {
 ```
 
 Note that the column `id` is set as `primary key` and `autoincrement`;
-this means that each newly inserted item 
+this means that each newly inserted item
 is assigned a new value for the `id` column.
 
-The `insert()` method creates a new ToDo item in the database, 
-and returns a newly created Todo instance. 
+The `insert()` method creates a new ToDo item in the database,
+and returns a newly created Todo instance.
 The `id` is generated as mentioned before.
 
 <?code-excerpt "lib/data/services/database_service.dart (Insert)"?>
@@ -363,10 +363,10 @@ Future<Result<Todo>> insert(String task) async {
 ```
 
 All the `DatabaseService` operations use the `Result` class to return a value,
-as recommended by the [Flutter architecture recommendations][]. 
+as recommended by the [Flutter architecture recommendations][].
 This facilitates handling errors in further steps in the application code.
 
-The `getAll()` method performs a database query, 
+The `getAll()` method performs a database query,
 obtaining all the values in the `id` and `task` columns.
 For each entry, it creates a `Todo` class instance.
 
@@ -393,10 +393,10 @@ Future<Result<List<Todo>>> getAll() async {
 }
 ```
 
-The `delete()` method performs a database delete operation 
+The `delete()` method performs a database delete operation
 based on the ToDo item `id`.
 
-In this case, if no items were deleted an error is returned, 
+In this case, if no items were deleted an error is returned,
 indicating that something went wrong.
 
 <?code-excerpt "lib/data/services/database_service.dart (Delete)"?>
@@ -419,22 +419,22 @@ Future<Result<void>> delete(int id) async {
 ```
 
 :::note
-In some cases, you might want to close the database when you are done with it. 
-For example, when the user leaves the screen, 
-or after a certain time has passed. 
+In some cases, you might want to close the database when you are done with it.
+For example, when the user leaves the screen,
+or after a certain time has passed.
 
-This depends on the database implementation 
-as well as your application requirements. 
-It’s recommended that you check with the database package authors 
+This depends on the database implementation
+as well as your application requirements.
+It’s recommended that you check with the database package authors
 for recommendations.
 :::
 
 ## Putting it all together
 
-In the `main()` method of your application, 
-first initialize the `DatabaseService`, 
-which requires different initialization code on different platforms. 
-Then, pass the newly created `DatabaseService` into the `TodoRepository` 
+In the `main()` method of your application,
+first initialize the `DatabaseService`,
+which requires different initialization code on different platforms.
+Then, pass the newly created `DatabaseService` into the `TodoRepository`
 which is itself passed into the `MainApp` as a constructor argument dependency.
 
 <?code-excerpt "lib/main.dart (MainTodo)"?>
@@ -461,8 +461,8 @@ void main() {
 }
 ```
 
-Then, when the `TodoListScreen` is created, 
-also create the `TodoListViewModel` 
+Then, when the `TodoListScreen` is created,
+also create the `TodoListViewModel`
 and pass the `TodoRepository` to it as dependency.
 
 <?code-excerpt "lib/main.dart (TodoListScreen)" replace="/body: //g;/^\),$/)/g"?>

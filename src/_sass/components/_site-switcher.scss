@@ -14,12 +14,14 @@
   }
 
   display: none;
+
   @media (min-width: 320px) {
     display: block;
   }
 }
 
-#site-primary-logo, #site-switcher .site-wordmark {
+#site-primary-logo,
+#site-switcher .site-wordmark {
   padding: 0.4rem 0.6rem;
   align-items: center;
   display: flex;
@@ -34,7 +36,7 @@
   font-family: 'Google Sans', sans-serif;
   user-select: none;
 
-  > img {
+  >img {
     width: 28px;
     margin-right: 0.25rem;
   }

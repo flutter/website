@@ -18,7 +18,7 @@ To learn more about DevTools, check out the
 
 * Removed the "Raster Stats" feature.
   This tool did not work for the Impeller rendering engine, and
-  the information it gave for the SKIA rendering engine was 
+  the information it gave for the SKIA rendering engine was
   often misleading and unactionable. Users should follow the
   official Flutter guidance for [Performance and optimization](/perf) when
   debugging the rendering performance of their Flutter apps. - [#7981](https://github.com/flutter/devtools/pull/7981).

@@ -73,4 +73,3 @@ Developers who would like to use the same `FlutterEngine`
 between different `Activity`s and `Fragment`s and switch
 the route between those displays need to set up a method channel and
 explicitly instruct their Dart code to change `Navigator` routes.
-

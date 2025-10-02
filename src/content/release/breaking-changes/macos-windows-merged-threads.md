@@ -27,7 +27,7 @@ Flutter 3.29.
 
 Merged threads should not affect your app.
 
-If you suspect merged threads has regressed your app, please reach out on 
+If you suspect merged threads has regressed your app, please reach out on
 [Issue 150525][].
 
 ## Timeline
@@ -49,4 +49,3 @@ Relevant PRs:
 [Issue 150525]: {{site.repo.flutter}}/issues/150525
 [PR 166536]: {{site.repo.flutter}}/pull/166536
 [PR 167472]: {{site.repo.flutter}}/pull/167472
-

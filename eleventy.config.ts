@@ -2,15 +2,15 @@
 // It configures the core 11ty behavior and registers
 // plugins and customization that live in `/src/_11ty`.
 
-import { registerFilters } from './src/_11ty/filters.js';
-import { registerShortcodes } from './src/_11ty/shortcodes.js';
-import { markdown } from './src/_11ty/plugins/markdown.js';
-import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
 import { UserConfig } from '@11ty/eleventy';
+import { registerFilters } from './src/_11ty/filters.js';
+import { configureHighlighting } from './src/_11ty/plugins/highlight.js';
+import { markdown } from './src/_11ty/plugins/markdown.js';
+import { registerShortcodes } from './src/_11ty/shortcodes.js';
 
+import { EleventyRenderPlugin } from '@11ty/eleventy';
 import swcHtml from '@swc/html';
 import yaml from 'js-yaml';
-import { EleventyRenderPlugin } from '@11ty/eleventy';
 
 import * as path from 'node:path';
 import * as sass from 'sass';

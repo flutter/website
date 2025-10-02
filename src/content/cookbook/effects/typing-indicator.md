@@ -25,7 +25,7 @@ The following animation shows the app's behavior:
 The typing indicator exists within its own widget so that
 it can be used anywhere in your app. As with any widget
 that controls animations, the typing indicator needs to
-be a stateful widget. The widget accepts a boolean value 
+be a stateful widget. The widget accepts a boolean value
 that determines whether the indicator is visible.
 This speech-bubble-typing indicator accepts a color
 for the bubbles and two colors for the light and dark
@@ -72,11 +72,11 @@ when it disappears.
 The height of the typing indicator could be the natural
 height of the speech bubbles within the typing indicator.
 However, the speech bubbles expand with an elastic curve.
-This elasticity would be too visually jarring if it quickly 
+This elasticity would be too visually jarring if it quickly
 pushed all the conversation messages up or down. Instead,
 the height of the typing indicator animates on its own,
 smoothly expanding before the bubbles appear.
-When the bubbles disappear, the height smoothly contracts to zero. 
+When the bubbles disappear, the height smoothly contracts to zero.
 This behavior requires an [explicit animation][] for the
 height of the typing indicator.
 
@@ -157,12 +157,12 @@ is `true` or `false`, respectively.
 
 The animation that controls the height uses different
 animation curves depending on its direction.
-When the animation moves forward, it needs to quickly make 
+When the animation moves forward, it needs to quickly make
 space for the speech bubbles. For this reason,
 the forward curve runs the entire height animation within
 the first 40% of the overall appearance animation.
 When the animation reverses, it needs to give the speech bubbles
-enough time to disappear before contracting the height. 
+enough time to disappear before contracting the height.
 An ease-out curve that uses all the available time is a
 good way to accomplish this behavior.
 
@@ -170,11 +170,11 @@ good way to accomplish this behavior.
 The `AnimatedBuilder` widget rebuilds the `SizedBox`
 widget as the `_indicatorSpaceAnimation` changes.
 The alternative to using `AnimatedBuilder` is to
-invoke `setState()` every time the animation changes, 
-and then rebuild the entire widget tree within `TypingIndicator`. 
+invoke `setState()` every time the animation changes,
+and then rebuild the entire widget tree within `TypingIndicator`.
 Invoking `setState()` in this manner is acceptable,
 but as other widgets are added to this widget tree,
-rebuilding the entire tree just to change the height 
+rebuilding the entire tree just to change the height
 of the `SizedBox` widget wastes CPU cycles.
 :::
 
@@ -182,7 +182,7 @@ of the `SizedBox` widget wastes CPU cycles.
 
 The typing indicator displays three speech bubbles.
 The first two bubbles are small and round. The third
-bubble is oblong and contains a few flashing circles. 
+bubble is oblong and contains a few flashing circles.
 These bubbles are staggered in position from the lower
 left of the available space.
 
@@ -408,7 +408,7 @@ class StatusBubble extends StatelessWidget {
 Within the large speech bubble, the typing indicator
 displays three small circles that flash repeatedly.
 Each circle flashes at a slightly different time,
-giving the impression that a single light source is 
+giving the impression that a single light source is
 moving behind each circle. This flashing animation
 repeats indefinitely.
 

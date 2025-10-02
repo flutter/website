@@ -3,7 +3,8 @@
     Skip to main content
   </a>
   <nav class="navbar">
-    <a id="site-primary-logo" class="site-wordmark" href="/" aria-label="Go to the Flutter docs homepage" title="Go to the Flutter docs homepage">
+    <a id="site-primary-logo" class="site-wordmark" href="/" aria-label="Go to the Flutter docs homepage"
+      title="Go to the Flutter docs homepage">
       <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
       <span class="name" translate="no">Flutter</span>
       <span class="subtype">Docs</span>
@@ -11,35 +12,38 @@
 
     <div class="navbar-contents">
       <form action="/search/" class="site-header__search">
-        <input
-          class="site-header__searchfield search-field"
-          type="search" name="q" id="q" autocomplete="off"
+        <input class="site-header__searchfield search-field" type="search" name="q" id="q" autocomplete="off"
           placeholder="Search" aria-label="Search">
       </form>
-      <a href="/search" id="fallback-search-button" class="icon-button" aria-label="Navigate to the docs search page." title="Navigate to the docs search page.">
+      <a href="/search" id="fallback-search-button" class="icon-button" aria-label="Navigate to the docs search page."
+        title="Navigate to the docs search page.">
         <span class="material-symbols" aria-hidden="true" translate="no">search</span>
       </a>
       <div id="theme-switcher" class="dropdown">
-        <button class="dropdown-button icon-button" title="Select a theme" aria-label="Select a theme" aria-expanded="false" aria-controls="site-switcher-menu">
+        <button class="dropdown-button icon-button" title="Select a theme" aria-label="Select a theme"
+          aria-expanded="false" aria-controls="site-switcher-menu">
           <span class="material-symbols" aria-hidden="true" translate="no">routine</span>
         </button>
-        <div class="dropdown-content" id="theme-menu" >
+        <div class="dropdown-content" id="theme-menu">
           <div class="dropdown-menu">
             <ul role="listbox">
               <li>
-                <button data-theme="light" title="Switch to light mode" aria-label="Switch to light mode" aria-selected="false">
+                <button data-theme="light" title="Switch to light mode" aria-label="Switch to light mode"
+                  aria-selected="false">
                   <span class="material-symbols" aria-hidden="true" translate="no">light_mode</span>
                   <span>Light</span>
                 </button>
               </li>
               <li>
-                <button data-theme="dark" title="Switch to dark mode" aria-label="Switch to dark mode" aria-selected="false">
+                <button data-theme="dark" title="Switch to dark mode" aria-label="Switch to dark mode"
+                  aria-selected="false">
                   <span class="material-symbols" aria-hidden="true" translate="no">dark_mode</span>
                   <span>Dark</span>
                 </button>
               </li>
               <li>
-                <button data-theme="auto" title="Follow the device theme" aria-label="Follow the device theme" aria-selected="false">
+                <button data-theme="auto" title="Follow the device theme" aria-label="Follow the device theme"
+                  aria-selected="false">
                   <span class="material-symbols" aria-hidden="true" translate="no">night_sight_auto</span>
                   <span>Automatic</span>
                 </button>
@@ -49,51 +53,53 @@
         </div>
       </div>
       <div id="site-switcher" class="dropdown">
-        <button class="dropdown-button icon-button" aria-expanded="false" aria-controls="site-switcher-menu" aria-label="Switch between Flutter and Dart sites">
+        <button class="dropdown-button icon-button" aria-expanded="false" aria-controls="site-switcher-menu"
+          aria-label="Switch between Flutter and Dart sites">
           <span class="material-symbols" aria-hidden="true" translate="no">apps</span>
         </button>
         <div class="dropdown-content" id="site-switcher-menu">
           <nav class="dropdown-menu" role="menu">
             <ul>
-              <li role="presentation"><a href="{{site.main-url}}" class="site-wordmark" role="menuitem" title="Flutter homepage" aria-label="Go to the Flutter homepage">
-                <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
-                <span class="name" translate="no">Flutter</span>
-              </a></li>
-              <li role="presentation"><a href="/" class="site-wordmark current-site" role="menuitem"  aria-current="true" title="Flutter docs homepage" aria-label="Go to the Flutter docs homepage">
-                <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
-                <span class="name" translate="no">Flutter</span>
-                <span class="subtype">Docs</span>
-              </a></li>
-              <li role="presentation"><a href="{{site.api}}" class="site-wordmark" role="menuitem"  title="Flutter API reference" aria-label="Go to the Flutter API reference">
-                <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
-                <span class="name" translate="no">Flutter</span>
-                <span class="subtype">API</span>
-              </a></li>
+              <li role="presentation"><a href="{{site.main-url}}" class="site-wordmark" role="menuitem"
+                  title="Flutter homepage" aria-label="Go to the Flutter homepage">
+                  <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+                  <span class="name" translate="no">Flutter</span>
+                </a></li>
+              <li role="presentation"><a href="/" class="site-wordmark current-site" role="menuitem" aria-current="true"
+                  title="Flutter docs homepage" aria-label="Go to the Flutter docs homepage">
+                  <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+                  <span class="name" translate="no">Flutter</span>
+                  <span class="subtype">Docs</span>
+                </a></li>
+              <li role="presentation"><a href="{{site.api}}" class="site-wordmark" role="menuitem"
+                  title="Flutter API reference" aria-label="Go to the Flutter API reference">
+                  <img src="/assets/images/branding/flutter/logo/default.svg" alt="Flutter logo" width="28">
+                  <span class="name" translate="no">Flutter</span>
+                  <span class="subtype">API</span>
+                </a></li>
               <li aria-hidden="true" class="dropdown-divider" role="separator"></li>
-              <li role="presentation"><a href="{{site.dart-site}}" class="site-wordmark" role="menuitem"  title="Dart homepage" aria-label="Go to the Dart homepage">
-                <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
-                <span class="name">Dart</span>
-              </a></li>
-              <li role="presentation"><a href="{{site.dartpad}}" class="site-wordmark" role="menuitem"  title="DartPad playground" aria-label="Go to the DartPad playground">
-                <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
-                <span class="name">DartPad</span>
-              </a></li>
-              <li role="presentation"><a href="{{site.pub}}" class="site-wordmark" role="menuitem" title="pub.dev homepage" aria-label="Go to the pub.dev homepage">
-                <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
-                <span class="name">pub.dev</span>
-              </a></li>
+              <li role="presentation"><a href="{{site.dart-site}}" class="site-wordmark" role="menuitem"
+                  title="Dart homepage" aria-label="Go to the Dart homepage">
+                  <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+                  <span class="name">Dart</span>
+                </a></li>
+              <li role="presentation"><a href="{{site.dartpad}}" class="site-wordmark" role="menuitem"
+                  title="DartPad playground" aria-label="Go to the DartPad playground">
+                  <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+                  <span class="name">DartPad</span>
+                </a></li>
+              <li role="presentation"><a href="{{site.pub}}" class="site-wordmark" role="menuitem"
+                  title="pub.dev homepage" aria-label="Go to the pub.dev homepage">
+                  <img src="/assets/images/branding/dart/logo.svg" alt="Dart logo" width="28" height="28">
+                  <span class="name">pub.dev</span>
+                </a></li>
             </ul>
           </nav>
         </div>
       </div>
       <a id="call-to-action" class="filled-button" href="/get-started/quick">Get started</a>
-      <button
-          id="menu-toggle"
-          class="icon-button"
-          type="button"
-          aria-controls="sidenav"
-          aria-label="Toggle navigation"
-          title="Toggle navigation">
+      <button id="menu-toggle" class="icon-button" type="button" aria-controls="sidenav" aria-label="Toggle navigation"
+        title="Toggle navigation">
         <span class="material-symbols" aria-hidden="true" translate="no">menu</span>
         <span class="material-symbols" aria-hidden="true" translate="no">close</span>
       </button>

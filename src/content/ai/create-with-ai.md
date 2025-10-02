@@ -27,9 +27,9 @@ project-specific best practices.
 ## Build AI-powered experiences with Flutter
 
 Using AI in your Flutter app unlocks new user experiences that allow your app
-to support natural language understanding and content generation. 
+to support natural language understanding and content generation.
 
-To get started building AI-powered experiences in Flutter, check out these 
+To get started building AI-powered experiences in Flutter, check out these
 resources:
 
 * [Firebase AI Logic][] - The official Firebase SDK for using generative AI

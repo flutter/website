@@ -4,21 +4,21 @@
   recommendations:
     - recommendation: Use clearly defined data and UI layers.
       description: |
-        Separation of concerns is the most important architectural principle. 
+        Separation of concerns is the most important architectural principle.
         The data layer exposes application data to the rest of the app, and contains most of the business logic in your application.
         The UI layer displays application data and listens for user events from users. The UI layer contains separate classes for UI logic and widgets.
       confidence: strong
 
     - recommendation: Use the repository pattern in the data layer.
       description: |
-        The repository pattern is a software design pattern that isolates the data access logic from the rest of the application. 
+        The repository pattern is a software design pattern that isolates the data access logic from the rest of the application.
         It creates an abstraction layer between the application's business logic and the underlying data storage mechanisms (databases, APIs, file systems, etc.).
         In practice, this means creating Repository classes and Service classes.
       confidence: strong
 
     - recommendation: Use ViewModels and Views in the UI layer. (MVVM)
       description: |
-        Separation of concerns is the most important architectural principle. 
+        Separation of concerns is the most important architectural principle.
         This particular separation makes your code much less error prone because your widgets remain "dumb".
       confidence: strong
 
@@ -41,8 +41,8 @@
 
     - recommendation: Use a domain layer.
       description: |
-        A domain layer is only needed if your application has exceeding complex logic that crowds your ViewModels, 
-        or if you find yourself repeating logic in ViewModels. 
+        A domain layer is only needed if your application has exceeding complex logic that crowds your ViewModels,
+        or if you find yourself repeating logic in ViewModels.
         In very large apps, use-cases are useful, but in most apps they add unnecessary overhead.
       confidence: conditional
       confidence-description: |
@@ -55,27 +55,27 @@
   recommendations:
     - recommendation: Use unidirectional data flow.
       description: |
-        Data updates should only flow from the data layer to the UI layer. 
+        Data updates should only flow from the data layer to the UI layer.
         Interactions in the UI layer are sent to the data layer where they're processed.
       confidence: strong
 
     - recommendation: Use `Commands` to handle events from user interaction.
       description: |
-        Commands prevent rendering errors in your app, and standardize how the UI layer sends events to the data layer. 
+        Commands prevent rendering errors in your app, and standardize how the UI layer sends events to the data layer.
         Read about commands in the [architecture case study][].
       confidence: recommend
 
     - recommendation: Use immutable data models.
       description: |
-        Immutable data is crucial in ensuring that any necessary changes occur only in the proper place, usually the data or domain layer. 
-        Because immutable objects can't be modified after creation, you must create a new instance to reflect changes. 
+        Immutable data is crucial in ensuring that any necessary changes occur only in the proper place, usually the data or domain layer.
+        Because immutable objects can't be modified after creation, you must create a new instance to reflect changes.
         This process prevents accidental updates in the UI layer and supports a clear, unidirectional data flow.
       confidence: strong
 
     - recommendation: Use freezed or built_value to generate immutable data models.
       description: |
-        You can use packages to help generate useful functionality in your data models, [freezed][] or [built_value][]. 
-        These can generate common model methods like JSON ser/des, deep equality checking and copy methods. 
+        You can use packages to help generate useful functionality in your data models, [freezed][] or [built_value][].
+        These can generate common model methods like JSON ser/des, deep equality checking and copy methods.
         These code generation packages can add significant build time to your applications if you have a lot of models.
       confidence: recommend
 
@@ -92,43 +92,43 @@
 
     - recommendation: Use dependency injection.
       description: |
-        Dependency injection prevents your app from having globally accessible objects, which makes your code less error prone. 
+        Dependency injection prevents your app from having globally accessible objects, which makes your code less error prone.
         We recommend you use the [provider](https://pub.dev/packages/provider) package to handle dependency injection.
       confidence: strong
 
     - recommendation: Use [go_router](https://pub.dev/packages/go_router) for navigation.
       description: |
-        Go_router is the preferred way to write 90% of Flutter applications. 
-        There are some specific use-cases that go_router doesn't solve, 
+        Go_router is the preferred way to write 90% of Flutter applications.
+        There are some specific use-cases that go_router doesn't solve,
         in which case you can use the [Flutter Navigator API][] directly or try other packages found on [pub.dev][].
       confidence: recommend
 
     - recommendation: Use standardized naming conventions for classes, files and directories.
       description: |
-        We recommend naming classes for the architectural component they represent. 
+        We recommend naming classes for the architectural component they represent.
         For example, you may have the following classes:
-        
+
         * HomeViewModel
         * HomeScreen
         * UserRepository
         * ClientApiService
-  
-        For clarity, we do not recommend using names that can be confused with objects from the Flutter SDK. 
-        For example, you should put your shared widgets in a directory called `ui/core/`, 
+
+        For clarity, we do not recommend using names that can be confused with objects from the Flutter SDK.
+        For example, you should put your shared widgets in a directory called `ui/core/`,
         rather than a directory called `/widgets`.
       confidence: recommend
 
     - recommendation: Use abstract repository classes
       description: |
-        Repository classes are the sources of truth for all data in your app, 
-        and facilitate communication with external APIs. 
-        Creating abstract repository classes allows you to create different implementations, 
+        Repository classes are the sources of truth for all data in your app,
+        and facilitate communication with external APIs.
+        Creating abstract repository classes allows you to create different implementations,
         which can be used for different app environments, such as "development" and "staging".
       confidence: strong
 
 - category: Testing
   description: |
-    Good testing practices makes your app flexible. 
+    Good testing practices makes your app flexible.
     It also makes it straightforward and low risk to add new logic and new UI.
   recommendations:
 
@@ -140,7 +140,7 @@
 
     - recommendation: Make fakes for testing (and write code that takes advantage of fakes.)
       description: |
-       Fakes aren't concerned with the inner workings of any given method as much 
-       as they're concerned with inputs and outputs. If you have this in mind while writing application code, 
+       Fakes aren't concerned with the inner workings of any given method as much
+       as they're concerned with inputs and outputs. If you have this in mind while writing application code,
        you're forced to write modular, lightweight functions and classes with well defined inputs and outputs.
       confidence: strong

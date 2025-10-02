@@ -90,7 +90,7 @@ Future<Album> fetchAlbum(http.Client client) async {
 }
 ```
 
-In your app code, you can provide an `http.Client` to the `fetchAlbum` method 
+In your app code, you can provide an `http.Client` to the `fetchAlbum` method
 directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 `http.Client`.
 

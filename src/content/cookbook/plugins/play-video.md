@@ -36,7 +36,7 @@ the following steps:
 
 ## 1. Add the `video_player` dependency
 
-This recipe depends on one Flutter plugin: `video_player`. 
+This recipe depends on one Flutter plugin: `video_player`.
 First, add this dependency to your project.
 
 To add the `video_player` package as a dependency, run `flutter pub add`:
@@ -87,7 +87,7 @@ You must test network-hosted videos on physical iOS devices.
 
 ### macOS
 
-If you use network-based videos, 
+If you use network-based videos,
 [add the `com.apple.security.network.client` entitlement][mac-entitlement].
 
 ### Web

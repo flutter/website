@@ -114,7 +114,7 @@ void main() {
 }
 ```
 
-In code that needs to use `myKey`, 
+In code that needs to use `myKey`,
 it can be obtained indirectly using `Zone.current['myKey'].value`.
 
 When such a solution does not work

@@ -1,4 +1,4 @@
-If you are deploying to Android, edit your `AndroidManifest.xml` file to 
+If you are deploying to Android, edit your `AndroidManifest.xml` file to
 add the Internet permission.
 
 ```xml
@@ -6,7 +6,7 @@ add the Internet permission.
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-Likewise, if you are deploying to macOS, edit your 
+Likewise, if you are deploying to macOS, edit your
 `macos/Runner/DebugProfile.entitlements` and `macos/Runner/Release.entitlements`
 files to include the network client entitlement.
 

@@ -54,7 +54,7 @@ an existing project.
 
     *   In the Xcode menu bar, select
         **File** > **New** > **Target**.
-    
+
     *   Add **Share Extension**.
 
     *   In the **Name field**, enter **ShareExtension**.
@@ -68,7 +68,7 @@ an existing project.
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
-    
+
     *   In the **project navigator**, at the top, select
         **Runner**.
 
@@ -86,7 +86,7 @@ an existing project.
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
-    
+
     *   In the **project navigator**, at the top, select
         **Runner**.
 
@@ -163,7 +163,7 @@ application and Share extension from
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
-    
+
     *   Select a photo, tap the share button, then tap on
         the share extension icon of your app.
 
@@ -187,7 +187,7 @@ to communicate with each other.
 
 ### Use higher-level APIs {: #using-higher-level-apis }
 
-Some extensions have APIs. For example, 
+Some extensions have APIs. For example,
 the [Core Spotlight][] framework indexes your app,
 allowing users to search from Spotlight and Safari.
 The [WidgetKit][] framework can trigger an update
@@ -302,7 +302,7 @@ called `Runner`, and the Flutter app is called
 
 1.  In the console, navigate to your Flutter project
     directory and then open your project in Xcode
-    with the following command: 
+    with the following command:
 
     ```console
     open ios/Runner.xcworkspace
@@ -365,7 +365,7 @@ called `Runner`, and the Flutter app is called
 
     *   Repeat the previous step for **Profile**, and
         **Release**.
-    
+
     *   When you are finished, make sure that the
         configurations look similar to the following:
 
@@ -501,7 +501,7 @@ called `Runner`, and the Flutter app is called
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   In the main window under **TARGETS**, select 
+    *   In the main window under **TARGETS**, select
         **ShareExtension**.
 
     *   Open the **Build Phases** tab.
@@ -569,7 +569,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 
 {% endtab %}
 
-{% endtabs %}        
+{% endtabs %}
 
 5.  (Xcode) [Test your app with the simulator][].
 
@@ -591,16 +591,16 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
-## Call Dart code / render Flutter content in iOS app extensions 
+## Call Dart code / render Flutter content in iOS app extensions
 
 The [home_widget][] package provides a large amount of functionality,
 which includes allowing the following:
 
-* [Respond to user input][] in app extensions 
+* [Respond to user input][] in app extensions
   using Dart Code.
-  
+
 * [Render Flutter widgets][] in an app extension as an image.
-  
+
 * [Save and retrieve data][] from `UserDefaults` on iOS.
 
 ## Other resources {: #other-resources }

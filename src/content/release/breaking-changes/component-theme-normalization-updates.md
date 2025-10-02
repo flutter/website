@@ -123,4 +123,3 @@ Relevant PRs:
 [`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
 [Normalize InputDecorationTheme]: {{site.repo.flutter}}/pull/168981
 [Apply normalization to TimePickerThemeData.inputDecorationTheme]: {{site.repo.flutter}}/pull/171584
-

@@ -138,4 +138,3 @@ For past releases, check out the
 [What's new archive][] page.
 
 [What's new archive]: /release/archive-whats-new
-

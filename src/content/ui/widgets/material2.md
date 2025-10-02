@@ -1,7 +1,7 @@
 ---
 title: Material 2 component widgets
 shortTitle: Material 2
-description: > 
+description: >
   A catalog of Flutter's widgets implementing the Material 2 design guidelines.
 ---
 

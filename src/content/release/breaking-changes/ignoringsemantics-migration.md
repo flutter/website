@@ -15,7 +15,7 @@ was introduced as a workaround to preserve the semantics tree when using
 `IgnorePointer`s.
 
 The `IgnorePointer` behavior has changed in that it no longer drops
-the entire semantics subtree but merely blocks semantics actions in the 
+the entire semantics subtree but merely blocks semantics actions in the
 subtree. The `ignoringSemantics` workaround is no longer needed and is
 deprecated.
 

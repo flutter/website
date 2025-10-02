@@ -60,7 +60,8 @@
     }
   }
 
-  .gsc-result-info, .gs-spelling {
+  .gsc-result-info,
+  .gs-spelling {
     color: var(--site-base-fgColor-lighter);
   }
 
@@ -71,7 +72,9 @@
   }
 
   .gsc-webResult {
-    .gs-title, .gs-title * {
+
+    .gs-title,
+    .gs-title * {
       color: var(--site-link-fgColor);
     }
 
@@ -102,7 +105,8 @@
     }
   }
 
-  .gcsc-find-more-on-google, .gcsc-find-more-on-google * {
+  .gcsc-find-more-on-google,
+  .gcsc-find-more-on-google * {
     color: var(--site-link-fgColor);
     fill: var(--site-link-fgColor);
   }

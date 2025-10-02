@@ -46,9 +46,9 @@ you must use the [`@Preview`][] annotation defined in
 can be applied to:
 
 *   **Top-level functions** that return a `Widget` or
-    `WidgetBuilder`.  
+    `WidgetBuilder`.
 *   **Static methods** within a class that return a `Widget` or
-    `WidgetBuilder`.  
+    `WidgetBuilder`.
 *   **Public Widget constructors and factories** with no
     required arguments.
 
@@ -100,17 +100,17 @@ use to customize the preview:
 
 *   **`size`**: Artificial size constraints using a
     `Size` object.
-  
+
 *   **`textScaleFactor`**: A custom font scale.
 
 *   **`wrapper`**: A function that wraps your previewed
     widget in a specific widget tree (for example, to inject
     application state into the widget tree with an
     `InheritedWidget`).
-  
+
 *   **`theme`**: A function to provide Material and
     Cupertino theming data.
-  
+
 *   **`brightness`**: The initial theme brightness.
 
 *   **`localizations`**: A function to apply a localization
@@ -129,7 +129,7 @@ should be aware of:
     implementation to work correctly. The requirement for
     public variable names will be relaxed in future
     releases, but function arguments must always have
-    public names.  
+    public names.
 
 *   **Unsupported APIs**: Native plugins and any APIs from
     the `dart:io` library are not supported. This is because
@@ -138,7 +138,7 @@ should be aware of:
     native platform APIs. While web plugins might work when
     using Chrome, there is no guarantee that they will work
     within other environments, such as when embedded in
-    IDEs.  
+    IDEs.
 
 *   **Asset paths**: When using `fromAsset` APIs from
     `dart:ui` to load resources, you must use
@@ -146,12 +146,12 @@ should be aware of:
     This ensures that the assets can be correctly located
     and loaded within the previewer's web environment. For
     example, use `'packages/my_package_name/assets/my_image.png'`
-    instead of `'assets/my_image.png'`.  
+    instead of `'assets/my_image.png'`.
 
 *   **Browser support**: At this time, the previewer is only
     supported on Chrome as it requires hot reload
     support. Web server and IDE support for this feature is
-    planned for a future release.  
+    planned for a future release.
 
 *   **Unconstrained widgets**: Unconstrained widgets are
     automatically constrained to approximately half the

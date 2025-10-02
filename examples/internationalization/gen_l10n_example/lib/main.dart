@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 // #docregion localization-delegates-import
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 // #enddocregion localization-delegates-import
 
 // #docregion app-localizations-import

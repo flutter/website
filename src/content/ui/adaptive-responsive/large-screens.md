@@ -32,7 +32,7 @@ For example, it:
 * Increases your app's visibility in the Play Store.
   Recent [Play Store updates][] show ratings by
   device type and indicates when an app lacks
-  large screen support. 
+  large screen support.
 * Ensures that your app meets iPadOS submission
   guidelines and is [accepted in the App Store][].
 :::
@@ -100,17 +100,17 @@ that you can use, namely:
 [`SliverGridDelegateWithFixedCrossAxisCount`][]
 : Lets you assign a specific number of columns to your grid.
 
-[`SliverGridDelegateWithMaxCrossAxisExtent`][] 
+[`SliverGridDelegateWithMaxCrossAxisExtent`][]
 : Lets you define a max item width.
 
-[`SliverGridDelegateWithFixedCrossAxisCount`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
+[`SliverGridDelegateWithFixedCrossAxisCount`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html
 [`SliverGridDelegateWithMaxCrossAxisExtent`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 
 :::secondary
 Don't use the grid delegate for these classes that lets
 you set the column count directly and then hardcode
 the number of columns based on whether the device
-is a tablet, or whatever. 
+is a tablet, or whatever.
 The number of columns should be based on the size of
 the window and not the size of the physical device.
 
@@ -184,7 +184,7 @@ How to obtain the physical screen dimensions?
 
 You can use the [`Display`][] API, introduced in
 Flutter 3.13, which contains the size,
-pixel ratio, and the refresh rate of the physical device. 
+pixel ratio, and the refresh rate of the physical device.
 
 [`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 
@@ -252,4 +252,3 @@ check out [Problem: Navigation rail][], a section in the
 [`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
 [`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
 [Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
-

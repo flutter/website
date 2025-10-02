@@ -51,7 +51,7 @@ debugging your own Flutter project as well.
 
     ```console
     Creating project my_app...
-    Resolving dependencies in my_app... 
+    Resolving dependencies in my_app...
     Got dependencies in my_app.
     Wrote 129 files.
 
@@ -118,7 +118,7 @@ debugging your own Flutter project as well.
       - In the **Editor Groups**:
         - The highlighted breakpoint in `main.dart`
         - The widget hierarchy for the Flutter app
-          in the **Widget Tree** of the **Widget Inspector** 
+          in the **Widget Tree** of the **Widget Inspector**
       - In the **side bar**:
         - The state of the app in the **Call Stack** section
         - The value of the `this` local variable in the **Variables** section
@@ -312,7 +312,7 @@ test Flutter app. This update adds native code to debug.
     ```
 
     ```console
-    Resolving dependencies... 
+    Resolving dependencies...
       collection 1.17.1 (1.17.2 available)
     + flutter_web_plugins 0.0.0 from sdk flutter
       matcher 0.12.15 (0.12.16 available)
@@ -338,7 +338,7 @@ test Flutter app. This update adds native code to debug.
    1. In Linux or macOS, run this `find` command.
 
       ```console
-      $ find ./ -mmin -120 
+      $ find ./ -mmin -120
       ```
 
       ```console

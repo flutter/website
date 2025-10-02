@@ -51,9 +51,9 @@ http://127.0.0.1:9100?uri=http://127.0.0.1:51830/u37pq71Re0k=/
 Open the DevTools instance connected to your app
 by opening the second link in Chrome.
 
-This URL contains a security token, 
-so it's different for each run of your app. 
-This means that if you stop your application and re-run it, 
+This URL contains a security token,
+so it's different for each run of your app.
+This means that if you stop your application and re-run it,
 you need to connect to DevTools again with the new URL.
 
 ## Connect to a new app instance

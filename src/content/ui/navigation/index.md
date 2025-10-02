@@ -10,7 +10,7 @@ requirements should also use the [`Router`][] to correctly handle deep links on
 Android and iOS, and to stay in sync with the address bar when the app is
 running on the web.
 
-To configure your Android or iOS application to handle deep links, see 
+To configure your Android or iOS application to handle deep links, see
 [Deep linking][].
 
 ## Using the Navigator

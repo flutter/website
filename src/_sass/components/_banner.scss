@@ -22,7 +22,8 @@
     text-wrap: balance;
   }
 
-  a, button {
+  a,
+  button {
     white-space: nowrap;
     color: var(--site-onPrimary-color);
     font-family: var(--site-ui-fontFamily);

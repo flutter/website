@@ -13,7 +13,7 @@ It maps HTML/CSS code snippets to their Flutter/Dart code equivalents.
 Flutter is a framework for building cross-platform applications
 that uses the Dart programming language.
 To understand some differences between programming with Dart
-and programming with Javascript, 
+and programming with Javascript,
 see [Learning Dart as a JavaScript Developer][].
 
 One of the fundamental differences between
@@ -996,4 +996,3 @@ final container = Container(
 [`TextStyle`]: {{site.api}}/flutter/painting/TextStyle-class.html
 [`Transform`]: {{site.api}}/flutter/widgets/Transform-class.html
 [Understanding constraints]: /ui/layout/constraints
-

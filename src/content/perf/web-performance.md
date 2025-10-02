@@ -9,7 +9,7 @@ Profiling Flutter web apps requires Flutter version 3.14 or later.
 
 The Flutter framework emits timeline events as it works to build frames,
 draw scenes, and track other activity such as garbage collections.
-These events are exposed in the 
+These events are exposed in the
 [Chrome DevTools performance panel][] for debugging.
 
 :::note

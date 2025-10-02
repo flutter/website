@@ -40,7 +40,7 @@ To create a platform view on macOS, use the following instructions:
 On the Dart side, create a `Widget` and add the build implementation,
 as shown in the following steps:
 
-In the Dart widget file, make changes similar to those 
+In the Dart widget file, make changes similar to those
 shown in `native_view_example.dart`:
 
  1. Add the following imports:
@@ -60,7 +60,7 @@ shown in `native_view_example.dart`:
       const String viewType = '<platform-view-type>';
       // Pass parameters to the platform side.
       final Map<String, dynamic> creationParams = <String, dynamic>{};
-    
+
       return AppKitView(
         viewType: viewType,
         layoutDirection: TextDirection.ltr,

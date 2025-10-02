@@ -10,7 +10,7 @@ of `describeEnum(Enum.something)` should use
 `Enum.something.name` instead.
 
 The class `EnumProperty` was modified to
-extend `<T extends Enum?>` instead of `<T>`. 
+extend `<T extends Enum?>` instead of `<T>`.
 Existing uses of `EnumProperty<NotAnEnum>` should
 use `DiagnosticsProperty<NotAnEnum>` instead.
 

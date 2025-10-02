@@ -42,7 +42,7 @@ To learn more about DevTools, check out the
   You can also load the app startup profile
   by selecting this user tag filter, when present,
   in the list of available user tags.
-  
+
   ![User tag example](/tools/devtools/release-notes/images-2.7.0/image4.png "User tag example")
 
 * Added multi-isolate support.
@@ -60,5 +60,5 @@ To learn more about DevTools, check out the
 ## Full commit history
 
 To find a complete list of changes since the previous release,
-check out 
+check out
 [the diff on GitHub](https://github.com/flutter/devtools/compare/v2.6.0...v2.7.0).

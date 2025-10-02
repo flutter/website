@@ -258,7 +258,7 @@ flavor your deployed app is using.
 
 The following steps show how to add a distinct icon for two
 product flavors called `staging` and `production` in a
-project called `flavors_example`. 
+project called `flavors_example`.
 
 1.  Prepare your icons:
 

@@ -225,13 +225,13 @@ to the jank you saw in your app.
   is affecting performance.
   If performance improves with this option disabled,
   try to reduce the use of clipping effects in your app.
-  
+
 **Render Opacity layers**
 :  Disable this option to check whether
    excessive use of opacity effects are affecting performance.
    If performance improves with this option disabled,
    try to reduce the use of opacity effects in your app.
-  
+
 **Render Physical Shape layers**
 : Disable this option to check whether excessive
   use of physical modeling effects are affecting performance,

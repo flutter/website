@@ -111,7 +111,7 @@ class ChatPage extends StatelessWidget {
 ```
 
 To see a complete example of setting up suggestions for the user,
-take a look at the [suggestions example][]. 
+take a look at the [suggestions example][].
 
 [suggestions example]: {{site.github}}/flutter/ai/blob/main/example/lib/suggestions/suggestions.dart
 
@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
           apiKey: geminiApiKey,
           ...,
           systemInstruction: Content.system('''
-You are a helpful assistant that generates recipes based on the ingredients and 
+You are a helpful assistant that generates recipes based on the ingredients and
 instructions provided as well as my food preferences, which are as follows:
 ${Settings.foodPreferences.isEmpty ? 'I don\'t have any food preferences' : Settings.foodPreferences}
 
@@ -301,7 +301,7 @@ class _HomePageState extends State<HomePage> {
 }
 ```
 
-The `_createProvider` method 
+The `_createProvider` method
 creates a new provider with the history from
 the previous provider _and_ the new user
 preferences.
@@ -723,4 +723,4 @@ a provider dynamically or Retrieval Augmented Generation (RAG).
 
 To see this in action, check out the [logging example app][].
 
-[logging example app]: {{site.github}}/flutter/ai/blob/main/example/lib/logging/logging.dart 
+[logging example app]: {{site.github}}/flutter/ai/blob/main/example/lib/logging/logging.dart

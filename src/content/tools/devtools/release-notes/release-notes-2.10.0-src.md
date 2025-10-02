@@ -7,7 +7,7 @@ To learn more about DevTools, check out the
 
 ## Flutter inspector updates
 
-* Added search support to the Widget Tree, and 
+* Added search support to the Widget Tree, and
   added a breadcrumb navigator to the Widget Details Tree to
   allow for quickly navigating through the tree hierarchy -
   [#3525](https://github.com/flutter/devtools/pull/3525)
@@ -22,9 +22,9 @@ To learn more about DevTools, check out the
 
 ## Debugger updates
 
-* Added support for multi-token file search, and 
+* Added support for multi-token file search, and
   improved search match prioritization to
-  rank file name matches over full path matches - 
+  rank file name matches over full path matches -
   [#3582](https://github.com/flutter/devtools/pull/3582)
 * Fix some focus-related issues -
   [#3602](https://github.com/flutter/devtools/pull/3602)

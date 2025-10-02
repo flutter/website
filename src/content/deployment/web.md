@@ -21,7 +21,7 @@ of your app and covers the following topics:
 
 ## Building the app for release
 
-Build the app for deployment using the `flutter build web` command. 
+Build the app for deployment using the `flutter build web` command.
 
 ```console
 flutter build web

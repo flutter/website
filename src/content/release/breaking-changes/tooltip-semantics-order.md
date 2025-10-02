@@ -1,5 +1,5 @@
 ---
-title: Accessibility traversal order of tooltip changed 
+title: Accessibility traversal order of tooltip changed
 description: >-
   The Tooltip widget's message now immediately follows the
   Tooltip widget's child during accessibility traversal.
@@ -13,7 +13,7 @@ visited immediately after `Tooltip.child`.
 ## Background
 
 The `Tooltip` widget usually wraps an interactive UI component such as a button,
-and shows a help message when long pressed. 
+and shows a help message when long pressed.
 When the message is visible, assistive technologies should announce it after
 the button.
 

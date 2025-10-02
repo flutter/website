@@ -33,7 +33,7 @@ behavior of your application. You can view your logs in DevTools'
 *   [`log()`][]: Includes greater granularity and more information in the
     logging output. Part of the `dart:developer` library.
 
-*   [`debugPrint()`][]: If too much output results in discarded log lines, use 
+*   [`debugPrint()`][]: If too much output results in discarded log lines, use
     this to keep those lines. Will print messages in release mode unless part
     of a debug mode check or an assert. Part of the `foundations` library.
 
@@ -673,7 +673,7 @@ segments of Dart code, use `dart:developer` [Timeline][] utilities.
     <?code-excerpt "lib/perf_trace.dart"?>
     ```dart
     import 'dart:developer';
-    
+
     void main() {
       Timeline.startSync('interesting function');
       // iWonderHowLongThisTakes();

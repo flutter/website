@@ -146,7 +146,7 @@ to your app initialization:
 ```java
 import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
-... 
+...
 PlayStoreDeferredComponentManager deferredComponentManager = new
   PlayStoreDeferredComponentManager(this, null);
 FlutterInjector.setInstance(new FlutterInjector.Builder()
@@ -154,7 +154,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 ```
 
 </li>
-    
+
 <li>
 
 Opt into deferred components by adding

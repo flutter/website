@@ -2,9 +2,16 @@
   "compilerOptions": {
     "module": "NodeNext",
     "target": "ESNext",
-    "types": ["node", "markdown-it", "hast"],
+    "types": [
+      "node",
+      "markdown-it",
+      "hast"
+    ],
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules", "_site"]
+  "exclude": [
+    "node_modules",
+    "_site"
+  ]
 }

@@ -32,10 +32,10 @@ and display a draggable photo of a menu item.
 Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
 a drag-and-drop interaction. A `LongPressDraggable`
-widget recognizes when a long press occurs and then 
+widget recognizes when a long press occurs and then
 displays a new widget near the user's finger.
 As the user drags, the widget follows the user's finger.
-`LongPressDraggable` gives you full control over the 
+`LongPressDraggable` gives you full control over the
 widget that the user drags.
 
 Each menu list item is displayed with a custom
@@ -73,21 +73,21 @@ In this case, when the user long presses on the
 `MenuListItem` widget, the `LongPressDraggable`
 widget displays a `DraggingListItem`.
 This `DraggingListItem` displays a photo of the
-selected food item, centered beneath 
+selected food item, centered beneath
 the user's finger.
 
 The `dragAnchorStrategy` property is set to
 [`pointerDragAnchorStrategy`][].
 This property value instructs `LongPressDraggable`
-to base the `DraggableListItem`'s position on the 
+to base the `DraggableListItem`'s position on the
 user's finger. As the user moves a finger,
 the `DraggableListItem` moves with it.
 
 Dragging and dropping is of little use if no information
 is transmitted when the item is dropped.
-For this reason, `LongPressDraggable` takes a `data` parameter. 
+For this reason, `LongPressDraggable` takes a `data` parameter.
 In this case, the type of `data` is `Item`,
-which holds information about the 
+which holds information about the
 food menu item that the user pressed on.
 
 The `data` associated with a `LongPressDraggable`
@@ -100,7 +100,7 @@ You'll implement the drop behavior next.
 The user can drop a `LongPressDraggable` wherever they choose,
 but dropping the draggable has no effect unless it's dropped
 on top of a `DragTarget`. When the user drops a draggable on
-top of a `DragTarget` widget, the `DragTarget` widget 
+top of a `DragTarget` widget, the `DragTarget` widget
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
@@ -143,20 +143,20 @@ When the user drags a draggable on the `DragTarget` widget,
 `candidateItems` contains the data items that the user is dragging.
 This draggable allows you to change what your widget looks
 like when the user is dragging over it. In this case,
-the `Customer` widget turns red whenever any items are dragged above the 
-`DragTarget` widget. The red visual appearance is configured with the 
+the `Customer` widget turns red whenever any items are dragged above the
+`DragTarget` widget. The red visual appearance is configured with the
 `highlighted` property within the `CustomerCart` widget.
 
 When the user drops a draggable on the `DragTarget` widget,
 the `onAcceptWithDetails` callback is invoked. This is when you get
 to decide whether or not to accept the data that was dropped.
-In this case, the item is always accepted and processed. 
+In this case, the item is always accepted and processed.
 You might choose to inspect the incoming item to make a
-different decision. 
+different decision.
 
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
-If the types are not compatible, then 
+If the types are not compatible, then
 the `onAcceptWithDetails` method isn't invoked.
 
 With a `DragTarget` widget configured to accept your
@@ -211,7 +211,7 @@ void _itemDroppedOnCustomerCart({
 
 The `_itemDroppedOnCustomerCart` method is invoked in
 `onAcceptWithDetails()` when the user drops a menu item on a
-`CustomerCart` widget. By adding the dropped item to the 
+`CustomerCart` widget. By adding the dropped item to the
 `customer` object, and invoking `setState()` to cause a
 layout update, the UI refreshes with the new customer's
 price total and item count.

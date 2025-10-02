@@ -6,7 +6,7 @@ description: Release notes for Flutter 1.17.0.
 
 ##  Merged pull requests by label
 
-### Merged PRs by labels for `flutter/flutter` 
+### Merged PRs by labels for `flutter/flutter`
 
 #### tool - 435 pull request(s)
 
@@ -5601,7 +5601,7 @@ description: Release notes for Flutter 1.17.0.
 
 [57037](https://github.com/flutter/flutter/pull/57037) Making DropdownButtonFormField to re-render if parent widget changes (cla: yes, f: material design, found in release: 1.17, found in release: 1.18, framework, severe: regression, waiting for tree to go green)
 
-### Merged PRs by labels for `flutter/engine` 
+### Merged PRs by labels for `flutter/engine`
 
 #### platform-android - 62 pull request(s)
 
@@ -6105,7 +6105,7 @@ description: Release notes for Flutter 1.17.0.
 
 
 
-### Merged PRs by labels for `flutter/plugins` 
+### Merged PRs by labels for `flutter/plugins`
 
 #### submit queue - 3 pull request(s)
 
@@ -12491,5 +12491,3 @@ There were 214 pull requests.
 [2627](https://github.com/flutter/plugins/pull/2627) [google_maps_flutter] Rename 'Page' in the example app to avoid type conflict with the Flutter Framework. (cla: yes)
 
 [2628](https://github.com/flutter/plugins/pull/2628) [path_provider] Fix misaligned enum values in StorageDirectoryMapperTest (cla: yes)
-
-

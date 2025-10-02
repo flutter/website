@@ -150,10 +150,10 @@ widget, which lets you have a "floating" navigation
 bar that shrinks when you scroll down and floats when
 you're not at the top of the page.
 
-To create this effect: 
+To create this effect:
 
   1. Add `CupertinoSliverNavigationBar` to
-     `CustomScrollView`. 
+     `CustomScrollView`.
   2. Start with an app bar that displays only a title.
 
 <?code-excerpt "lib/step2_cupertino.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
@@ -274,7 +274,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
 {% endtab %}
@@ -324,7 +324,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
 {% endtab %}

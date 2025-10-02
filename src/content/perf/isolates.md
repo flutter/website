@@ -343,7 +343,7 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter.
 - Dart's Isolates are an implementation of the [Actor model][].
-- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
+- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
 [announcement]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8

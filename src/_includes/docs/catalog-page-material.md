@@ -4,7 +4,7 @@
 {% for sub in category.subcategories -%}
 {% assign components = catalog.widgets | filterByProperty: "subcategories", sub.name, true %}
 {% if components.size != 0 -%}
-  
+
 ## {{sub.name}}
 
 <div class="card-grid material-cards">

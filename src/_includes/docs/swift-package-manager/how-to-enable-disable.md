@@ -71,7 +71,7 @@ flutter config --no-enable-swift-package-manager
 This turns off Swift Package Manager for the current user.
 
 If a project is incompatible with Swift Package Manager, all contributors
-need to run this command. 
+need to run this command.
 
 [addSPM]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration

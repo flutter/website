@@ -65,7 +65,7 @@ of your device's display, such as having a hinge or a fold.
 how much to inset its child `Widget`.
 Specifically, it uses the `MediaQuery` padding property,
 which is basically the amount of the display that's
-partially obscured by system UI, display notches, or status bar. 
+partially obscured by system UI, display notches, or status bar.
 
 So, why not use `MediaQuery` directly?
 
@@ -76,7 +76,7 @@ to `SafeArea`'s children to make it appear as if the
 padding added to `SafeArea` doesn't exist.
 This means that you can nest `SafeArea`s,
 and only the topmost one will apply the padding
-needed to avoid the notches as system UI. 
+needed to avoid the notches as system UI.
 
 As your app grows and you move widgets around,
 you don't have to worry about having too much
@@ -84,12 +84,12 @@ padding applied if you have multiple `SafeArea`s,
 whereas you would have issues if using
 `MediaQueryData.padding` directly.
 
-You _can_ wrap the body of a `Scaffold` widget 
+You _can_ wrap the body of a `Scaffold` widget
 with a `SafeArea`, but you don't _have_ to put it this high
 in the widget tree.
 The `SafeArea` just needs to wrap the contents
 that would cause information loss if cut off by the
-hardware features mentioned earlier. 
+hardware features mentioned earlier.
 
 For example, if you purposefully want your app to stretch
 under the cutouts, you can move the `SafeArea` to wrap

@@ -20,7 +20,7 @@ adapting to the Material Design 3 guidelines.
 
 ## Background
 
-The tone-based surface colors include: 
+The tone-based surface colors include:
 
 - `surfaceBright`
 - `surfaceDim`
@@ -32,7 +32,7 @@ The tone-based surface colors include:
 
 These changes help eliminate the use of widgets' `surfaceTintColor`, and
 replaces the old opacity-based model that applied a tinted overlay
-on top of surfaces based on their elevation.  
+on top of surfaces based on their elevation.
 
 The default `surfaceTintColor` for all widgets is now `null` and
 their default background color is now
