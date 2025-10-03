@@ -1,7 +1,6 @@
 :::note
 The following steps assume you're
 using the [default shell][zsh-mac] on macOS, Zsh.
-Zsh uses the `.zshenv` file for configuring [environment variables][zsh-files].
 
 If you use another shell besides Zsh,
 check out [this tutorial on setting your PATH][other-path].
@@ -14,17 +13,17 @@ check out [this tutorial on setting your PATH][other-path].
 
  1. <h3>Open or create the Zsh environment variable file</h3>
 
-    If it exists, open the Zsh environment variable file `~/.zshenv`
-    in your preferred text editor.
-    If it doesn't exist, create the `~/.zshenv` file.
+    If it exists, open the [Zsh environment variable file][zsh-files]
+    `~/.zprofile` in your preferred text editor.
+    If it doesn't exist, create the `~/.zprofile` file.
 
  1. <h3>Add the Flutter SDK bin to your path</h3>
 
-    At the end of your `~/.zshenv` file,
+    At the end of your `~/.zprofile` file,
     use the built-in `export` command to update the `PATH` variable
     to include the `bin` directory of your Flutter installation.
 
-    Replace `<path-to-sdk>` with the path to your Flutter SDK install.
+    Replace `<path-to-sdk>` with the path to your Flutter SDK installation.
 
     ```bash
     export PATH="<path-to-sdk>/bin:$PATH"
@@ -40,7 +39,7 @@ check out [this tutorial on setting your PATH][other-path].
 
  1. <h3>Save your changes</h3>
 
-    Save, then close, the `~/.zshenv` file you edited.
+    Save, then close, the `~/.zprofile` file you edited.
 
  1. <h3>Apply your changes</h3>
 
