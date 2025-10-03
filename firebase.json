@@ -818,6 +818,7 @@
       { "source": "/to/track-widget-creation", "destination": "/tools/devtools/inspector#track-widget-creation", "type": 301 },
       { "source": "/to/troubleshoot-devices", "destination": "/install/troubleshoot", "type": 301 },
       { "source": "/to/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
+      { "source": "/to/uiscene-migration", "destination": "/release/breaking-changes/uiscenedelegate", "type": 301 },
       { "source": "/to/unit-testing", "destination": "/cookbook/testing/unit/introduction", "type": 301 },
       { "source": "/to/update-linux-path", "destination": "/install/add-to-path#linux", "type": 301 },
       { "source": "/to/update-macos-path", "destination": "/install/add-to-path#macos", "type": 301 },
