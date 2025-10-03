@@ -27,7 +27,7 @@ To learn more about DevTools, check out the
 
 * Fixed an issue where socket statistics were being reported as web sockets. - [#8061](https://github.com/flutter/devtools/pull/8061)
 
-    ![Network profiler correctly displaying socket statistics](/tools/devtools/release-notes/images-2.37.2/socket-profiling.png "Network profiler correctly displaying socket statistics")
+    ![Network profiler correctly displaying socket statistics](/assets/docs/tools/devtools/release-notes/images-2.37.2/socket-profiling.png "Network profiler correctly displaying socket statistics")
 
 * Added query parameters to the request details view. - [#7825](https://github.com/flutter/devtools/pull/7825)
 
@@ -36,7 +36,7 @@ To learn more about DevTools, check out the
 * Added buttons for all DevTools tools in the sidebar by default, even when
   there are no debug sessions available. - [#7947](https://github.com/flutter/devtools/pull/7947)
 
-    ![DevTools tools in the sidebar](/tools/devtools/release-notes/images-2.37.2/devtools_in_sidebar.png)
+    ![DevTools tools in the sidebar](/assets/docs/tools/devtools/release-notes/images-2.37.2/devtools_in_sidebar.png)
 
 ## Full commit history
 

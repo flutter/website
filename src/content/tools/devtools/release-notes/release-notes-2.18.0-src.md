@@ -24,7 +24,7 @@ To learn more about DevTools, check out the
 - Add 'Rendering time' column to Raster Metrics tab -
   [#4474](https://github.com/flutter/devtools/pull/4474)
 
-  ![render-time-column](/tools/devtools/release-notes/images-2.18.0/render-time-column.png "Rendering time column in the Raster Metrics tab")
+  ![render-time-column](/assets/docs/tools/devtools/release-notes/images-2.18.0/render-time-column.png "Rendering time column in the Raster Metrics tab")
 
 ## CPU profiler updates
 
@@ -39,9 +39,9 @@ To learn more about DevTools, check out the
 - Add Profile and Allocation Tracing sub-tabs -
   [#4523](https://github.com/flutter/devtools/pull/4523)
 
-  ![profile](/tools/devtools/release-notes/images-2.18.0/profile.png "Profile in Memory tab")
+  ![profile](/assets/docs/tools/devtools/release-notes/images-2.18.0/profile.png "Profile in Memory tab")
 
-  ![allocation-tracing](/tools/devtools/release-notes/images-2.18.0/allocation-tracing.png "Allocation Tracing in Memory tab")
+  ![allocation-tracing](/assets/docs/tools/devtools/release-notes/images-2.18.0/allocation-tracing.png "Allocation Tracing in Memory tab")
 
 - Implement snapshot visualization -
   [#4473](https://github.com/flutter/devtools/pull/4473)

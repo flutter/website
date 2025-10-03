@@ -20,14 +20,14 @@ To learn more about DevTools, check out the
   If you see this warning,
   be sure to open DevTools via `dart devtools` instead of from pub:
 
-  ![dart devtools warning dialog](/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog")
+  ![dart devtools warning dialog](/assets/docs/tools/devtools/release-notes/images-2.8.0/image1.png "dart devtools warning dialog")
 
 ## Performance updates
 
 * Added a new "Enhance Tracing" feature to help users diagnose UI jank
   stemming from expensive Build, Layout, and Paint operations.
 
-  ![Enhance tracing](/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
+  ![Enhance tracing](/assets/docs/tools/devtools/release-notes/images-2.8.0/image2.png "Enhance tracing")
   
   The expected workflow is as such:
   
@@ -39,12 +39,12 @@ To learn more about DevTools, check out the
      additional child events for widgets built, render objects laid out,
      and/or render objects painted
 
-  ![Timeline events](/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events")
+  ![Timeline events](/assets/docs/tools/devtools/release-notes/images-2.8.0/image3.png "Timeline events")
 
 * Added new "More debugging options" feature to allow for disabling
   rendering layers for Clip, Opacity, and Physical Shapes.
 
-  ![More debugging options](/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
+  ![More debugging options](/assets/docs/tools/devtools/release-notes/images-2.8.0/image4.png "More debugging options")
   
   The expected workflow is as such:
   
@@ -77,7 +77,7 @@ To learn more about DevTools, check out the
      the source view will jump to the respective line of code
      for the selected item.
 
-  ![Outline view selected library](/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library")
+  ![Outline view selected library](/assets/docs/tools/devtools/release-notes/images-2.8.0/image5.png "Outline view selected library")
 
 * Performance improvements to expression evaluation auto complete -
   [#3463](https://github.com/flutter/devtools/pull/3463)

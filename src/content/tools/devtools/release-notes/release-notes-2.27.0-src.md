@@ -10,7 +10,7 @@ To learn more about DevTools, check out the
 - Fix a crash with large text in network requests and responses -
   [#6254](https://github.com/flutter/devtools/pull/6254)
 
-  ![Example truncation of text in the network view](/tools/devtools/release-notes/images-2.27.0/truncation.png "Example truncation of text in the network view")
+  ![Example truncation of text in the network view](/assets/docs/tools/devtools/release-notes/images-2.27.0/truncation.png "Example truncation of text in the network view")
 
 ## Full commit history
 

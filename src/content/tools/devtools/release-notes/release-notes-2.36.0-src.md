@@ -13,11 +13,11 @@ To learn more about DevTools, check out the
   an aggregate summary of these counts in the new "Rebuild Stats" tool. -
   [#7838](https://github.com/flutter/devtools/pull/7838), [#7847](https://github.com/flutter/devtools/pull/7847)
 
-    ![Track widget build counts setting](/tools/devtools/release-notes/images-2.36.0/track_build_counts_setting.png "Track widget build counts setting")
+    ![Track widget build counts setting](/assets/docs/tools/devtools/release-notes/images-2.36.0/track_build_counts_setting.png "Track widget build counts setting")
 
-    ![Widget rebuild counts in the Frame Analysis view](/tools/devtools/release-notes/images-2.36.0/rebuild_counts_frame_analysis.png "Widget rebuilds counts for a flutter frame")
+    ![Widget rebuild counts in the Frame Analysis view](/assets/docs/tools/devtools/release-notes/images-2.36.0/rebuild_counts_frame_analysis.png "Widget rebuilds counts for a flutter frame")
 
-    ![Widget rebuild counts in the Rebuild Stats view](/tools/devtools/release-notes/images-2.36.0/rebuild_stats.png "Widget rebuilds counts aggregate stats")
+    ![Widget rebuild counts in the Rebuild Stats view](/assets/docs/tools/devtools/release-notes/images-2.36.0/rebuild_stats.png "Widget rebuilds counts aggregate stats")
 
 ## Network profiler updates
 

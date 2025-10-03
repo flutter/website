@@ -55,9 +55,9 @@ To learn more about DevTools, check out the
 * Added offline support for the network screen (thanks to @hrajwade96!) -
   [#8332](https://github.com/flutter/devtools/pull/8332)
 
-  ![Network profiler controls](/tools/devtools/release-notes/images-2.44.0/network_controls.png "Network profiler controls")
+  ![Network profiler controls](/assets/docs/tools/devtools/release-notes/images-2.44.0/network_controls.png "Network profiler controls")
 
-  ![Network profiler open / save button](/tools/devtools/release-notes/images-2.44.0/network_open_save_button.png "Network profiler open / save button")
+  ![Network profiler open / save button](/assets/docs/tools/devtools/release-notes/images-2.44.0/network_open_save_button.png "Network profiler open / save button")
 
 * Changed the context menu style to be consistent with other screens
   [#8859](https://github.com/flutter/devtools/pull/8859).

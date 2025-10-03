@@ -16,7 +16,7 @@ To learn more about DevTools, check out the
   check out the getting started guide for
   [package:devtools_extensions](https://pub.dev/packages/devtools_extensions)!
 
-![Example DevTools extension](/tools/devtools/release-notes/images-2.28.1/example_devtools_extension.png "Example DevTools extension for package:foo_package")
+![Example DevTools extension](/assets/docs/tools/devtools/release-notes/images-2.28.1/example_devtools_extension.png "Example DevTools extension for package:foo_package")
 
 * Fixed theming bug in isolate selector -
   [#6403](https://github.com/flutter/devtools/pull/6403)
@@ -42,7 +42,7 @@ To learn more about DevTools, check out the
 * Added the ability to copy filtered logs -
   [#6260](https://github.com/flutter/devtools/pull/6260)
 
-  ![The copy button on the Logging view to the right of the filter tool](/tools/devtools/release-notes/images-2.28.1/logger_copy.png "The Logging view copy button")
+  ![The copy button on the Logging view to the right of the filter tool](/assets/docs/tools/devtools/release-notes/images-2.28.1/logger_copy.png "The Logging view copy button")
 
 ## Full commit history
 

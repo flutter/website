@@ -21,7 +21,7 @@ To learn more about DevTools, check out the
   directories are properly configured -
   [#4306](https://github.com/flutter/devtools/pull/4306)
 
-  ![frame_analysis](/tools/devtools/release-notes/images-2.17.0/package_directories.png "package directories")
+  ![frame_analysis](/assets/docs/tools/devtools/release-notes/images-2.17.0/package_directories.png "package directories")
 
 ## Performance updates
 
@@ -35,7 +35,7 @@ To learn more about DevTools, check out the
   to try to guide you in the right direction -
   [#4339](https://github.com/flutter/devtools/pull/4339)
 
-  ![frame_analysis](/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
+  ![frame_analysis](/assets/docs/tools/devtools/release-notes/images-2.17.0/frame_analysis.png "frame analysis")
 
 ## Full commit history
 

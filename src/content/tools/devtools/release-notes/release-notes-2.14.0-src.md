@@ -12,7 +12,7 @@ To learn more about DevTools, check out the
   in the About DevTools dialog -
   [#4102](https://github.com/flutter/devtools/pull/4102)
 
-  ![about-devtools](/tools/devtools/release-notes/images-2.14.0/image1.png "about devtools")
+  ![about-devtools](/assets/docs/tools/devtools/release-notes/images-2.14.0/image1.png "about devtools")
 
 ## Network updates
 
@@ -21,7 +21,7 @@ To learn more about DevTools, check out the
   (special thanks to [@jankuss](https://github.com/jankuss)!) -
   [#4113](https://github.com/flutter/devtools/pull/4113)
 
-  ![network-request-copy-actions](/tools/devtools/release-notes/images-2.14.0/image2.png "network request copy actions")
+  ![network-request-copy-actions](/assets/docs/tools/devtools/release-notes/images-2.14.0/image2.png "network request copy actions")
 
 ## Flutter inspector updates
 
@@ -35,7 +35,7 @@ To learn more about DevTools, check out the
   (special thanks to [@jankuss](https://github.com/jankuss)!) -
   [#4062](https://github.com/flutter/devtools/pull/4062)
 
-  ![auto-complete-suggestions](/tools/devtools/release-notes/images-2.14.0/image3.png "auto complete suggestions")
+  ![auto-complete-suggestions](/assets/docs/tools/devtools/release-notes/images-2.14.0/image3.png "auto complete suggestions")
 
 * Added the option to copy the full file path for a selected library -
   [#4147](https://github.com/flutter/devtools/pull/4147)

@@ -19,7 +19,7 @@ To learn more about DevTools, check out the
 * Added an option in the "Enhance Tracing" menu for tracking platform channel
   activity. This is useful for apps with plugins. - [#6515](https://github.com/flutter/devtools/pull/6515)
 
-  ![Track platform channels setting](/tools/devtools/release-notes/images-2.29.0/track_platform_channels.png "Track platform channels setting")
+  ![Track platform channels setting](/assets/docs/tools/devtools/release-notes/images-2.29.0/track_platform_channels.png "Track platform channels setting")
 
 * Made the Performance screen available when there is no connected app.
   Performance data that was previously saved from DevTools can be
@@ -28,7 +28,7 @@ To learn more about DevTools, check out the
 * Added an "Open" button to the Performance controls for
   loading data that was previously saved from DevTools. - [#6567](https://github.com/flutter/devtools/pull/6567)
 
-  ![Open file button on the performance screen](/tools/devtools/release-notes/images-2.29.0/open_file_performance_screen.png "Open file button on the performance screen")
+  ![Open file button on the performance screen](/assets/docs/tools/devtools/release-notes/images-2.29.0/open_file_performance_screen.png "Open file button on the performance screen")
 
 ## CPU profiler updates
 

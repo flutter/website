@@ -19,7 +19,7 @@ To learn more about DevTools, check out the
 - Enable sampling for Memory > Profile -
   [#5947](https://github.com/flutter/devtools/pull/5947)
 
-  ![memory sampling](/tools/devtools/release-notes/images-2.25.0/memory.png "memory_sampling")
+  ![memory sampling](/assets/docs/tools/devtools/release-notes/images-2.25.0/memory.png "memory_sampling")
 
 ## Full commit history
 

@@ -10,8 +10,8 @@ To learn more about DevTools, check out the
 * Changed to a single button for starting and stopping
   recording on the Network screen and CPU profiler screen. - [#7573](https://github.com/flutter/devtools/pull/7573)
   
-  ![A screen shot of the CPU profiler tab, with the new recording button.](/tools/devtools/release-notes/images-2.35.0/profiler_recording.png)
-  ![A screen shot of the network tab, with the new recording button.](/tools/devtools/release-notes/images-2.35.0/network_recording.png)
+  ![A screen shot of the CPU profiler tab, with the new recording button.](/assets/docs/tools/devtools/release-notes/images-2.35.0/profiler_recording.png)
+  ![A screen shot of the network tab, with the new recording button.](/assets/docs/tools/devtools/release-notes/images-2.35.0/network_recording.png)
 
 ## Inspector updates
 
@@ -31,7 +31,7 @@ To learn more about DevTools, check out the
 * Added text selection in text viewer for requests and responses. - [#7596](https://github.com/flutter/devtools/pull/7596)
 * Added a JSON copy experience to the JSON viewer. - [#7596](https://github.com/flutter/devtools/pull/7596)
   
-  ![The new JSON copy experience in the JSON viewer](/tools/devtools/release-notes/images-2.35.0/json_viewer_copy.png)
+  ![The new JSON copy experience in the JSON viewer](/assets/docs/tools/devtools/release-notes/images-2.35.0/json_viewer_copy.png)
   
 * Fixed a bug where stopping and starting network recording listed requests that
   happened while not recording. - [#7626](https://github.com/flutter/devtools/pull/7626)
