@@ -14,7 +14,7 @@ To learn more about DevTools, check out the
 * Added the source line number to file uris in CPU profiles -
   [#3718](https://github.com/flutter/devtools/pull/3718)
 
-  ![cpu stack frame line numbers](/tools/devtools/release-notes/images-2.11.2/image1.png "cpu stack frame line numbers")
+  ![cpu stack frame line numbers](/assets/images/docs/tools/devtools/release-notes/images-2.11.2/image1.png "cpu stack frame line numbers")
 
 ## Debugger updates
 
@@ -26,7 +26,7 @@ To learn more about DevTools, check out the
   [#3786](https://github.com/flutter/devtools/pull/3786),
   [#3794](https://github.com/flutter/devtools/pull/3794)
 
-  ![debugger file explorer scrolling](/tools/devtools/release-notes/images-2.11.2/image2.gif "debugger file explorer scrolling")
+  ![debugger file explorer scrolling](/assets/images/docs/tools/devtools/release-notes/images-2.11.2/image2.gif "debugger file explorer scrolling")
 
 ## Full commit history
 

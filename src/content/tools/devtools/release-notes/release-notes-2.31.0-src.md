@@ -19,7 +19,7 @@ To learn more about DevTools, check out the
 * Added link to package directory documentation,
   from the inspect settings dialog - [#6825](https://github.com/flutter/devtools/pull/6825)
 
-  ![Link to documentation](/tools/devtools/release-notes/images-2.31.0/link-to-doc.png "Link to documentation")
+  ![Link to documentation](/assets/images/docs/tools/devtools/release-notes/images-2.31.0/link-to-doc.png "Link to documentation")
 
 * Fix bug where widgets owned by the Flutter framework were
   showing up in the widget tree view - [#6857](https://github.com/flutter/devtools/pull/6857)
@@ -34,7 +34,7 @@ To learn more about DevTools, check out the
 
 * Added hover cards to show sampling rate for the item in drop down. - [#7010](https://github.com/flutter/devtools/pull/7010)
 
-  ![Sampling rate for dropdown](/tools/devtools/release-notes/images-2.31.0/hover-for-dropdown.png "Sampling rate for dropdown")
+  ![Sampling rate for dropdown](/assets/images/docs/tools/devtools/release-notes/images-2.31.0/hover-for-dropdown.png "Sampling rate for dropdown")
 
 ## Debugger updates
 

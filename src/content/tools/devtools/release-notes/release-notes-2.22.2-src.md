@@ -16,7 +16,7 @@ To learn more about DevTools, check out the
   ensure the URI is always visible in deeply nested trees -
   [#5181](https://github.com/flutter/devtools/pull/5181)
 
-  ![inline uri](/tools/devtools/release-notes/images-2.22.2/5181.png "inline uri")
+  ![inline uri](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5181.png "inline uri")
 
 - Add the ability to filter by method name or source URI -
   [#5204](https://github.com/flutter/devtools/pull/5204)
@@ -26,17 +26,17 @@ To learn more about DevTools, check out the
 - Change filter default to show only project and 3rd party dependencies -
   [#5201](https://github.com/flutter/devtools/pull/5201).
 
-  ![filter default](/tools/devtools/release-notes/images-2.22.2/5201.png "filter default")
+  ![filter default](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5201.png "filter default")
 
 - Support expression evaluation in console for running application -
   [#5248](https://github.com/flutter/devtools/pull/5248).
 
-  ![evaluation](/tools/devtools/release-notes/images-2.22.2/5248.png "evaluation")
+  ![evaluation](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5248.png "evaluation")
 
 - Add column `Persisted` for memory diffing -
   [#5290](https://github.com/flutter/devtools/pull/5290)
 
-  ![persisted](/tools/devtools/release-notes/images-2.22.2/5290.png "persisted")
+  ![persisted](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5290.png "persisted")
 
 ## Debugger updates
 
@@ -49,12 +49,12 @@ To learn more about DevTools, check out the
 - Fix variable inspection for `Map` and `List` instances -
   [#5320](https://github.com/flutter/devtools/pull/5320)
 
-  ![map and list](/tools/devtools/release-notes/images-2.22.2/5320.png "map and list")
+  ![map and list](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5320.png "map and list")
 
 - Fix variable inspection for `Set` instances -
   [#5323](https://github.com/flutter/devtools/pull/5323)
 
-  ![set](/tools/devtools/release-notes/images-2.22.2/5323.png "set")
+  ![set](/assets/images/docs/tools/devtools/release-notes/images-2.22.2/5323.png "set")
 
 
 ## Network profiler updates

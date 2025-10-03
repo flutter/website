@@ -20,7 +20,7 @@ To learn more about DevTools, check out the
 
 * Added a filter text field to the top-level Network profiler controls. -
 [#8469](https://github.com/flutter/devtools/pull/8469)
-    ![Network filter field](/tools/devtools/release-notes/images-2.41.0/network_filter.png "Network filter field")
+    ![Network filter field](/assets/images/docs/tools/devtools/release-notes/images-2.41.0/network_filter.png "Network filter field")
 
 ## Logging updates
 
@@ -33,13 +33,13 @@ severity, category, zone, and isolate -
 [#8439](https://github.com/flutter/devtools/pull/8439),
 [#8441](https://github.com/flutter/devtools/pull/8441). It is now also possible to
 search and filter by these metadata values. - [#8473](https://github.com/flutter/devtools/pull/8473)
-    ![Logging metadata display](/tools/devtools/release-notes/images-2.41.0/log_metadata.png "Logging metadata display")
+    ![Logging metadata display](/assets/images/docs/tools/devtools/release-notes/images-2.41.0/log_metadata.png "Logging metadata display")
 * Add a filter text field to the top-level Logging controls. -
 [#8427](https://github.com/flutter/devtools/pull/8427)
-    ![Logging filter](/tools/devtools/release-notes/images-2.41.0/log_filter.png "Logging filter")
+    ![Logging filter](/assets/images/docs/tools/devtools/release-notes/images-2.41.0/log_filter.png "Logging filter")
 * Added support for filtering by log severity / levels. -
 [#8433](https://github.com/flutter/devtools/pull/8433)
-    ![Log level filter](/tools/devtools/release-notes/images-2.41.0/log_level_filter.png "Log level filter")
+    ![Log level filter](/assets/images/docs/tools/devtools/release-notes/images-2.41.0/log_level_filter.png "Log level filter")
 * Added a setting to set the log retention limit. - [#8493](https://github.com/flutter/devtools/pull/8493)
 * Added a button to toggle the log details display between raw text and JSON. -
 [#8445](https://github.com/flutter/devtools/pull/8445)

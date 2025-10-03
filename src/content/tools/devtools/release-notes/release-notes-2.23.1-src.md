@@ -14,7 +14,7 @@ To learn more about DevTools, check out the
 * Added the new verbose logging feature for helping us debug user issues -
   [#5404](https://github.com/flutter/devtools/pull/5404)
 
-  ![verbose logging](/tools/devtools/release-notes/images-2.23.1/verbose-logging.png "verbose_logging")
+  ![verbose logging](/assets/images/docs/tools/devtools/release-notes/images-2.23.1/verbose-logging.png "verbose_logging")
 
 * Fix a bug where some asynchronous errors were not being reported -
   [#5456](https://github.com/flutter/devtools/pull/5456)
@@ -43,7 +43,7 @@ To learn more about DevTools, check out the
 * Add a Method Table to the CPU profiler -
   [#5366](https://github.com/flutter/devtools/pull/5366)
 
-  ![Method table](/tools/devtools/release-notes/images-2.23.1/cpu-method-table.png "method_table")
+  ![Method table](/assets/images/docs/tools/devtools/release-notes/images-2.23.1/cpu-method-table.png "method_table")
 
 * Improve the performance of data processing in the CPU profiler -
   [#5468](https://github.com/flutter/devtools/pull/5468),

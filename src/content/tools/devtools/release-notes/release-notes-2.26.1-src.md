@@ -15,7 +15,7 @@ To learn more about DevTools, check out the
   (tools that don't require a connected app) in DevTools -
   [#6010](https://github.com/flutter/devtools/pull/6010)
 
-  ![home screen](/tools/devtools/release-notes/images-2.26.1/home_screen.png "DevTools home screen")
+  ![home screen](/assets/images/docs/tools/devtools/release-notes/images-2.26.1/home_screen.png "DevTools home screen")
 
 - Fixed overlay notifications so that they
   cover the area that their background blocks -

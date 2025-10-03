@@ -21,12 +21,12 @@ To learn more about DevTools, check out the
   [#3371](https://github.com/flutter/devtools/pull/3371),
   [#3384](https://github.com/flutter/devtools/pull/3384)
 
-  ![Open file dialog](/tools/devtools/release-notes/images-2.7.0/image1.gif "Open file dialog")
+  ![Open file dialog](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image1.gif "Open file dialog")
 
 * Add a copy button to the call stack view -
   [#3334](https://github.com/flutter/devtools/pull/3334)
 
-  ![Call stack view](/tools/devtools/release-notes/images-2.7.0/image2.png "Call stack view")
+  ![Call stack view](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image2.png "Call stack view")
 
 ## CPU profiler updates
 
@@ -35,7 +35,7 @@ To learn more about DevTools, check out the
   of the Dart VM up until the first Flutter frame has been rendered -
   [#3357](https://github.com/flutter/devtools/pull/3357)
 
-  ![Profile button](/tools/devtools/release-notes/images-2.7.0/image3.png "Profile button")
+  ![Profile button](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image3.png "Profile button")
 
   When the app startup profile has been loaded,
   you will see that the "AppStartUp" user tag is selected for the profile.
@@ -43,19 +43,19 @@ To learn more about DevTools, check out the
   by selecting this user tag filter, when present,
   in the list of available user tags.
   
-  ![User tag example](/tools/devtools/release-notes/images-2.7.0/image4.png "User tag example")
+  ![User tag example](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image4.png "User tag example")
 
 * Added multi-isolate support.
   Select which isolate you want to profile
   from the isolate selector at the bottom of the page -
   [#3362](https://github.com/flutter/devtools/pull/3362)
 
-  ![isolate selector](/tools/devtools/release-notes/images-2.7.0/image5.png "isolate selector")
+  ![isolate selector](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image5.png "isolate selector")
 
 * Add class names to CPU stack frames in the profiler -
   [#3385](https://github.com/flutter/devtools/pull/3385)
 
-  ![Class names](/tools/devtools/release-notes/images-2.7.0/image6.png "Class names")
+  ![Class names](/assets/images/docs/tools/devtools/release-notes/images-2.7.0/image6.png "Class names")
 
 ## Full commit history
 
