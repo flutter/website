@@ -55,12 +55,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     return 1;
   }
 
-  final toolVersionOutput = await Process.run('npm', const [
-    'exec',
-    '--',
-    'firebase-tools',
-    '--version',
-  ]);
+  final toolVersionOutput = await Process.run('firebase', const ['--version']);
 
   final firebaseToolsVersion = (toolVersionOutput.stdout as String?)?.trim();
   if (firebaseToolsVersion == null || firebaseToolsVersion.isEmpty) {
@@ -72,10 +67,7 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     'Using firebase-tools $firebaseToolsVersion to start the '
     'Firebase hosting emulator asynchronously...',
   );
-  final emulatorProcess = await Process.start('npm', const [
-    'exec',
-    '--',
-    'firebase-tools',
+  final emulatorProcess = await Process.start('firebase', const [
     'emulators:start',
     '--only',
     'hosting',
