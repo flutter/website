@@ -10,7 +10,7 @@ To learn more about DevTools, check out the
 * Added a button to toggle the visibility of the Flutter Frames chart -
   [#4577](https://github.com/flutter/devtools/pull/4577)
 
-  ![diff](/assets/docs/tools/devtools/release-notes/images-2.19.0/4577.png "Flutter Frames")
+  ![diff](/assets/images/docs/tools/devtools/release-notes/images-2.19.0/4577.png "Flutter Frames")
 
 * Polish the debug mode warning to better describe which data is
   accurate in debug mode and which data may be misleading -

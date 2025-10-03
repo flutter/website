@@ -31,7 +31,7 @@ To learn more about DevTools, check out the
 
 * Added toggle filters to filter out noisy Flutter and Dart logs - [#7026](https://github.com/flutter/devtools/pull/7026)
 
-    ![Logging view filters](/assets/docs/tools/devtools/release-notes/images-2.32.0/logging_toggle_filters.png "Toggle filters for logging screen")
+    ![Logging view filters](/assets/images/docs/tools/devtools/release-notes/images-2.32.0/logging_toggle_filters.png "Toggle filters for logging screen")
 
 * Added a scrollbar to the details pane. - [#6917](https://github.com/flutter/devtools/pull/6917)
 

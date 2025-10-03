@@ -10,7 +10,7 @@ To learn more about DevTools, check out the
 * Add an indicator of the rendering engine to the Flutter Frames chart. -
   [#6771](https://github.com/flutter/devtools/pull/6771)
 
-  ![Flutter rendering engine text](/assets/docs/tools/devtools/release-notes/images-2.30.0/flutter_frames_engine_text.png "Text describing the current flutter rendering engine")
+  ![Flutter rendering engine text](/assets/images/docs/tools/devtools/release-notes/images-2.30.0/flutter_frames_engine_text.png "Text describing the current flutter rendering engine")
 
 * Improve messaging when we do not have analysis data available for a
   Flutter frame. - [#6768](https://github.com/flutter/devtools/pull/6768)

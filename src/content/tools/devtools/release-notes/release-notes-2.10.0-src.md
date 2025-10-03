@@ -12,7 +12,7 @@ To learn more about DevTools, check out the
   allow for quickly navigating through the tree hierarchy -
   [#3525](https://github.com/flutter/devtools/pull/3525)
 
-  ![inspector search](/assets/docs/tools/devtools/release-notes/images-2.10.0/image1.png "inspector_search")
+  ![inspector search](/assets/images/docs/tools/devtools/release-notes/images-2.10.0/image1.png "inspector_search")
 
 ## CPU profiler updates
 

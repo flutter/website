@@ -10,18 +10,18 @@ To learn more about DevTools, check out the
 * Add support for grouping samples by tag -
   [#4693](https://github.com/flutter/devtools/pull/4693)
 
-  ![samples by tag](/assets/docs/tools/devtools/release-notes/images-2.20.0/4693.png "samples by tag")
+  ![samples by tag](/assets/images/docs/tools/devtools/release-notes/images-2.20.0/4693.png "samples by tag")
 
 * Enable guidelines for tree view -
   [#4722](https://github.com/flutter/devtools/pull/4722)
 
-  ![guidelines](/assets/docs/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
+  ![guidelines](/assets/images/docs/tools/devtools/release-notes/images-2.20.0/4722.png "guidelines")
 
 * Rename "Profile granularity" to "CPU sampling rate"
   and move down to the area it relates to -
   [#4803](https://github.com/flutter/devtools/pull/4722)
 
-  ![sampling rate](/assets/docs/tools/devtools/release-notes/images-2.20.0/4803.png "sampling rate")
+  ![sampling rate](/assets/images/docs/tools/devtools/release-notes/images-2.20.0/4803.png "sampling rate")
 
 
 ## Memory updates
@@ -35,7 +35,7 @@ To learn more about DevTools, check out the
   shallow size, retained size, and retaining paths -
   [#4714](https://github.com/flutter/devtools/pull/4714)
 
-  ![diff](/assets/docs/tools/devtools/release-notes/images-2.20.0/4714.png "Diff in Memory tab")
+  ![diff](/assets/images/docs/tools/devtools/release-notes/images-2.20.0/4714.png "Diff in Memory tab")
 
 ## Debugger updates
 
@@ -47,7 +47,7 @@ To learn more about DevTools, check out the
 * Add support for displaying coverage in CodeView -
   [#4700](https://github.com/flutter/devtools/pull/4700)
 
-  ![coverage](/assets/docs/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
+  ![coverage](/assets/images/docs/tools/devtools/release-notes/images-2.20.0/4700.png "coverage in CodeView")
 
 ## Network updates
 

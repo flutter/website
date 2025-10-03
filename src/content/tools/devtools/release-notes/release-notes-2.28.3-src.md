@@ -16,7 +16,7 @@ To learn about the improvements included in DevTools 2.28.2, please read the
   This video provides a brief tutorial for each DevTools screen.
   [#6554](https://github.com/flutter/devtools/pull/6554)
 
-  ![Link to watch a DevTools tutorial video](/assets/docs/tools/devtools/release-notes/images-2.28.3/watch_tutorial_link.png "Link to watch a DevTools tutorial video")
+  ![Link to watch a DevTools tutorial video](/assets/images/docs/tools/devtools/release-notes/images-2.28.3/watch_tutorial_link.png "Link to watch a DevTools tutorial video")
 
 * Added a workaround to fix copy button functionality in VSCode. - [#6598](https://github.com/flutter/devtools/pull/6598)
 

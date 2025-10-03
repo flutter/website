@@ -16,7 +16,7 @@ To learn more about DevTools, check out the
 * Added outlines to each layer displayed in the Raster Metrics tool -
   [#4192](https://github.com/flutter/devtools/pull/4192)
 
-  ![raster-metrics-layer-outlines](/assets/docs/tools/devtools/release-notes/images-2.15.0/image1.png "raster metrics layer outlines")
+  ![raster-metrics-layer-outlines](/assets/images/docs/tools/devtools/release-notes/images-2.15.0/image1.png "raster metrics layer outlines")
 
 * Fix a bug with loading offline data -
   [#4189](https://github.com/flutter/devtools/pull/4189)
@@ -26,7 +26,7 @@ To learn more about DevTools, check out the
 * Added a Json viewer with syntax highlighting for network responses -
   [#4167](https://github.com/flutter/devtools/pull/4167)
 
-  ![network-response-json-viewer](/assets/docs/tools/devtools/release-notes/images-2.15.0/image2.png "network response json viewer")
+  ![network-response-json-viewer](/assets/images/docs/tools/devtools/release-notes/images-2.15.0/image2.png "network response json viewer")
 
 * Added the ability to copy network responses -
   [#4190](https://github.com/flutter/devtools/pull/4190)

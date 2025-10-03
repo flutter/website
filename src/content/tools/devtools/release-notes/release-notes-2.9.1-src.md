@@ -10,9 +10,9 @@ To learn more about DevTools, check out the
 * Improve support for inspecting large lists and maps in
   the Debugger variables pane - [#3497](https://github.com/flutter/devtools/pull/3497)
 
-  ![Inspection before](/assets/docs/tools/devtools/release-notes/images-2.9.1/image1.png "Inspection before")
+  ![Inspection before](/assets/images/docs/tools/devtools/release-notes/images-2.9.1/image1.png "Inspection before")
 
-  ![Inspection after](/assets/docs/tools/devtools/release-notes/images-2.9.1/image2.png "Inspection after")
+  ![Inspection after](/assets/images/docs/tools/devtools/release-notes/images-2.9.1/image2.png "Inspection after")
 
 * Added support for selecting objects in the program explorer outline view.
   Selecting an object will automatically scroll the source code
@@ -26,7 +26,7 @@ To learn more about DevTools, check out the
 * Added an enhanced tooltip for flutter frames -
   [#3493](https://github.com/flutter/devtools/pull/3493)
 
-  ![Flutter frame tooltips](/assets/docs/tools/devtools/release-notes/images-2.9.1/image3.png "Flutter frame tooltips")
+  ![Flutter frame tooltips](/assets/images/docs/tools/devtools/release-notes/images-2.9.1/image3.png "Flutter frame tooltips")
 
 ## Full commit history
 

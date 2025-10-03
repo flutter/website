@@ -21,7 +21,7 @@ To learn more about DevTools, check out the
 * Add a setting to include CPU samples in the Timeline. -
   [#7333](https://github.com/flutter/devtools/pull/7333), [#7369](https://github.com/flutter/devtools/pull/7369)
 
-    ![Timeline settings](/assets/docs/tools/devtools/release-notes/images-2.34.1/7369-timeline-settings.png "Timeline settings")
+    ![Timeline settings](/assets/images/docs/tools/devtools/release-notes/images-2.34.1/7369-timeline-settings.png "Timeline settings")
 
 * Removed the legacy trace viewer.
   The legacy trace viewer was replaced with the
@@ -34,7 +34,7 @@ To learn more about DevTools, check out the
   [#7480](https://github.com/flutter/devtools/pull/7480)
 * Added a loading message to show when refreshing the timeline. - [#7463](https://github.com/flutter/devtools/pull/7463)
 
-    ![Loading message](/assets/docs/tools/devtools/release-notes/images-2.34.1/7463-overlay.png "Loading message")
+    ![Loading message](/assets/images/docs/tools/devtools/release-notes/images-2.34.1/7463-overlay.png "Loading message")
 
 ## Memory updates
 
@@ -43,7 +43,7 @@ To learn more about DevTools, check out the
   [#7439](https://github.com/flutter/devtools/pull/7439),
   [#7449](https://github.com/flutter/devtools/pull/7449)
 
-    ![Export snapshot](/assets/docs/tools/devtools/release-notes/images-2.34.1/7197-export.png "Export snapshot")
+    ![Export snapshot](/assets/images/docs/tools/devtools/release-notes/images-2.34.1/7197-export.png "Export snapshot")
 
 * Fixed failures during disconnect in tracing. - [#7440](https://github.com/flutter/devtools/pull/7440)
 

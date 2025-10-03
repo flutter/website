@@ -24,7 +24,7 @@ To learn more about DevTools, check out the
   [#3934](https://github.com/flutter/devtools/pull/3934), 
   [#3936](https://github.com/flutter/devtools/pull/3936)
 
-  ![enhance tracing documentation links](/assets/docs/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")
+  ![enhance tracing documentation links](/assets/images/docs/tools/devtools/release-notes/images-2.12.1/image1.png "enhance tracing documentation links")
 
 ## Full commit history
 

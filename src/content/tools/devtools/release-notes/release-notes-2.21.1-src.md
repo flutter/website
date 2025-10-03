@@ -11,7 +11,7 @@ To learn more about DevTools, check out the
   the [Perfetto](https://perfetto.dev/) trace viewer - 
   [#5142](https://github.com/flutter/devtools/pull/5142)
 
-  ![perfetto trace viewer](/assets/docs/tools/devtools/release-notes/images-2.21.1/image1.png "perfetto_trace_viewer")
+  ![perfetto trace viewer](/assets/images/docs/tools/devtools/release-notes/images-2.21.1/image1.png "perfetto_trace_viewer")
 
 * Fix several issues with loading a Performance snapshot into DevTools -
   [#5048](https://github.com/flutter/devtools/pull/5048),
