@@ -85,6 +85,8 @@ jobs:
           sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
+      - name: Install firebase-tools
+        run: curl -sL https://firebase.tools | bash
       - name: Build site
         run: dart run flutter_site build
       - name: Check for broken Markdown link references
