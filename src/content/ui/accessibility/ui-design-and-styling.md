@@ -1,12 +1,10 @@
 ---
-title: UI Design & Styling For Accessibility
+title: UI Design & Styling
 description: Information on Flutter's accessibility support.
 ---
 
 To create an accessible app, design your UI with accessibility in mind.
-This page covers two key aspects of accessible UI design and styling:
-ensuring your app respects user-selected font sizes, and providing
-sufficient color contrast.
+This page covers key aspects of accessible UI design and styling.
 
 ## Large fonts
 
@@ -47,8 +45,31 @@ The [W3C recommends][]:
 * At least 3.0:1 for large text (18 point and above regular or 14 point and
   above bold)
 
-
-(TODO hangyujin) Add picturues to show 
-
-
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+
+### Example
+The following screenshot shows good and bad examples for text color contrast.
+
+  {% render docs/app-figure.md, image:"a11y/text-contrast.png", caption:"text contrast", img-class:"simple-border", img-style:"max-height: 480px;" %}
+
+
+## Tap target size
+
+Controls that are too small are hard for many people to interact with and select.
+Ensure that interactive elements have a large enough tap target to be easily
+pressed by users.  
+
+Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and 44x44 pts respectively.
+
+The [W3C] recommends a minimum target size of 44 by 44 CSS pixels,
+
+[Android]: https://developer.android.com/guide/topics/ui/accessibility/apps#large-controls
+[iOS]: https://developer.apple.com/design/human-interface-guidelines/accessibility#Mobility
+[W3C]: https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
+
+
+### Example
+
+The following screenshot shows how to make these widgets to have at least an 48x48 tap target.
+
+  {% render docs/app-figure.md, image:"a11y/tap-target-size.png", caption:"tap target size", img-class:"simple-border", img-style:"max-height: 480px;" %}

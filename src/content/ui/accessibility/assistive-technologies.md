@@ -2,10 +2,9 @@
 title: Accessibility Technologies
 description: Information about accessibility
 ---
+## Summary
 
-[**Screen readers**][]
-: Communicate spoken feedback about UI contents
-
+Assistive technologies are essential for making digital content accessible to individuals with disabilities. This document provides an overview of two key categories of assistive technologies relevant to Flutter development: screen readers for users with visual impairments and mobility support tools for those with motor limitations. By understanding and testing with these technologies, you can ensure your Flutter application provides a more inclusive and user-friendly experience for everyone.
 
 ## Screen readers
 
@@ -122,3 +121,58 @@ except where you explicitly set it with `TextSpan.locale`.
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
 [video demo]: {{site.yt.watch}}?v=A6Sx0lBP8PI
+
+## Mobility support
+
+For users with limited dexterity or hand strength, mobility support features
+can be helpful. Both Android and iOS offer a range of tools designed to make
+navigation and control easier.
+These features allow users to operate their devices through external switches,
+voice commands, or simplified on-screen menus.
+
+Android provides Switch Access, Voice Access and Accessibility Menu,
+while iOS offers Switch Control, Voice Control, and AssistiveTouch.
+Understanding these tools helps in creating
+apps that are usable by people with diverse physical abilities.
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>OS</th>
+      <th>Features </th>
+      <th>Functions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Android</td>
+      <td><strong>Switch Access</strong> </td>
+      <td>As an alternate input method, you can use Switch Access and Camera Switches</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td><strong>Voice Access</strong> </td>
+      <td>Control your device with your voice</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td><strong>Accessibility Menu</strong> </td>
+      <td>A floating, on-screen menu that provides simplified buttons to control essential phone functions.</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td><strong>Switch Control</strong> </td>
+      <td>Use switches as an alternate input methods</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td><strong>Voice Control</strong> </td>
+      <td>Control your device with your voice</td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td><strong>AssistiveTouch</strong> </td>
+      <td>Use AssistiveTouch to replace multi-finger gestures or hardware button actions</td>
+    </tr>
+  </tbody>
+</table>

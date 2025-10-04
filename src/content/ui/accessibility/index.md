@@ -20,23 +20,50 @@ provided by the underlying operating system, including:
 
 [UI Design and styling][]
 
-[Screen Readers supports][]
+[Assistive Technologies (Screen Reader) supports][]
 
-## Laws and Acessibility Standards
+[UI Design and styling]: /ui/accessibility/ui-design-and-styling
+[Assistive Technologies (Screen Reader) supports]:/ui/accessibility/assistive-technologies
 
-(TODO: hangyujin) Add some acessibility standards 
+## Accessibility regulations
 
-Laws such as the Americans with Disabilities Act (ADA) in the US emphasize the importance of accessible websites and web applications. The ADA clarifies:
+Accessibility standards and regulations help ensure that products are
+accessible to people with disabilities. Many of these have been enacted into
+laws and policies, making them requirements for products and services.
 
-Websites and web applications are defined as places of public accommodation, especially those that offer public services such as federal websites. All public sector bodies and commercial facilities need to offer equal access to their web pages in conformity with the WCAG 2.0 requirements.
+*   **WCAG 2**: [Web Content Accessibility Guidelines (WCAG) 2][] is an
+internationally recognized standard for making web content more accessible
+to people with disabilities. It is a stable, technical standard developed
+by the World Wide Web Consortium (W3C).
 
-— ADA.
+*   **EN 301 549**: [EN 301 549][] is the European harmonized standard for
+accessibility requirements for Information and Communication Technology (ICT)
+products and services.
 
-Accordingly, public websites must be designed in accordance with the standards of WCAG 2.0 (Web Content Accessibility Guidelines) to ensure that they are accessible to all users.
+*   **VPAT**: The [Voluntary Product Accessibility Template (VPAT)][] is a
+free template that translates accessibility requirements and standards into
+ actionable testing criteria for products and services.
 
-In Europe, the accessibility of digital applications is also becoming increasingly important. From 2025, for example, the European Accessibility Act (EAA) will require all travel, banking and E-commerce apps to be fully accessible (Source: mobilea11y).
+Laws around the world require digital content and services to be accessible
+to people with disabilities.
+In the U.S., the [Americans with Disabilities Act (ADA)][] prohibits
+discrimination in public accommodations.
+[Section 508 of the Rehabilitation Act ][] requires federal agencies and their
+contractors to meet WCAG standards for all ICT. 
 
-In Germany, the Barrierefreie-Informationstechnik-Verordnung (BITV 2.0) (“Barrier-free Information Technology Ordinance”) regulates the implementation of the WCAG 2.0 standards to ensure accessibility in digital offerings. The test criteria of BITV 2.0 are almost identical to those of WCAG 2.0.
+In the EU, the [European Accessibility Act (EAA)][] requires a wide range of
+public and private sector services to be accessible, primarily using
+the [EN 301 549][] as its technical basis.
+
+
+
+[Web Content Accessibility Guidelines (WCAG) 2]: https://www.w3.org/WAI/standards-guidelines/wcag/
+[EN 301 549]: https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf
+[Voluntary Product Accessibility Template (VPAT)]: https://www.itic.org/policy/accessibility/vpat
+
+[Americans with Disabilities Act (ADA)]: https://www.ada.gov/
+[Section 508 of the Rehabilitation Act]: https://www.section508.gov/
+[European Accessibility Act (EAA)]: https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en 
 
 
 ## Building with accessibility in mind
@@ -94,5 +121,3 @@ the following articles written by community members:
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
 [Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/
-[UI Design and styling]: /ui/accessibility/ui-design-and-styling
-[Screen Readers supports]:/ui/accessibility/assistive-technologies
