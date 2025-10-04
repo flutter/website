@@ -4,7 +4,13 @@ description: Information about accessibility
 ---
 ## Summary
 
-Assistive technologies are essential for making digital content accessible to individuals with disabilities. This document provides an overview of two key categories of assistive technologies relevant to Flutter development: screen readers for users with visual impairments and mobility support tools for those with motor limitations. By understanding and testing with these technologies, you can ensure your Flutter application provides a more inclusive and user-friendly experience for everyone.
+Assistive technologies are essential for making digital content accessible to
+individuals with disabilities. This document provides an overview of two key
+categories of assistive technologies relevant to Flutter development: screen
+readers for users with visual impairments and mobility support tools for
+those with motor limitations. By understanding and testing with these
+technologies, you can ensure your Flutter application provides a more inclusive
+and user-friendly experience for everyone.
 
 ## Screen readers
 
