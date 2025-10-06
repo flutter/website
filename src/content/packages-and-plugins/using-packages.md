@@ -452,7 +452,6 @@ To use this plugin:
     <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:path/path.dart' as p;
     import 'package:url_launcher/url_launcher.dart';
     
     void main() {

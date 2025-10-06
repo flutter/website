@@ -1,6 +1,5 @@
 // #docregion url-launcher
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
