@@ -6,14 +6,14 @@ description: >
 
 :::note
 This is an upcoming breaking change that has not yet been finalized or
-implementated. The current details are provisional and may be altered. Further
+implemented. The current details are provisional and might be altered. Further
 announcements will be made as the change approaches implementation.
 :::
 
 ## Summary
 
-Apple now requires iOS developers to adopt UIScene life cycle.
-This migration has many implications on [app launch
+Apple now requires iOS developers to adopt the UIScene life cycle.
+This migration has implications on the [app launch
 sequence]({{site.apple-dev}}/documentation/uikit/about-the-app-launch-sequence)
 and [app life
 cycle]({{site.apple-dev}}/documentation/uikit/managing-your-app-s-life-cycle).
@@ -26,34 +26,33 @@ the following:
 > In the release following iOS 26, any UIKit app built with the latest SDK will
 > be required to use the UIScene life cycle, otherwise it will not launch.
 
-To use the UIScene lifecycle with Flutter, the following will need to be
-migrated:
-* All Flutter apps that support iOS - See [Migration guide for Flutter
+To use the UIScene lifecycle with Flutter, migrate the following support:
+* All Flutter apps that support iOS - See the [migration guide for Flutter
   apps](http://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
-* Flutter plugins that use iOS application lifecycle events - See [Migration
+* Flutter plugins that use iOS application lifecycle events - See the [migration
   guide for
   plugins](http://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
-* Flutter embedded in iOS native apps - See [Migration guide for adding Flutter
-  to existing
+* Flutter embedded in iOS native apps - See the [migration guide for adding Flutter
+  to an existing
   app](http://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
 
-Migrating to UIScene shifts the AppDelegate's role. It is no longer in charge
-of the UI lifecycle, which is now handled by the UISceneDelegate. The
-AppDelegate remains responsible for process events and the overall application
+Migrating to UIScene shifts the AppDelegate's role—the UI lifecycle is
+now handled by the UISceneDelegate. The AppDelegate
+remains responsible for process events and the overall application
 lifecycle. All UI-related logic should be moved from the AppDelegate to the
-corresponding UISceneDelegate methods. After migrating to UIScene, UIKit will
-stop calling AppDelegate methods that related to UI state.
+corresponding UISceneDelegate methods. After migrating to UIScene,
+UIKit won't call AppDelegate methods related to UI state.
 
 ## Migration guide for Flutter apps
 
 ### Migrate AppDelegate
 
 Previously, Flutter plugins were registered in
-`application:didFinishLaunchingWithOptions:`. To accomodate the new UIScene
-lifecycle, plugin registration must now be done in a new callback called
+`application:didFinishLaunchingWithOptions:`. To accomodate the new app launch
+sequence, plugin registration must now be handled in a new callback called
 `didInitializeImplicitFlutterEngine`.
 
-1. Add `FlutterImplicitEngineDelegate` and move `GeneratedPluginRegistrant`
+1. Add `FlutterImplicitEngineDelegate` and move `GeneratedPluginRegistrant`.
 
 ```swift  title="my_app/ios/Runner/AppDelegate.swift" diff
 - @objc class AppDelegate: FlutterAppDelegate {
@@ -83,18 +82,18 @@ lifecycle, plugin registration must now be done in a new callback called
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
   }
 
-+ - (void)didInitializeImplicitFlutterEngine:(FlutterImplicitEngineBridge*)engineBridge {
++ - (void)didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {
 +   [GeneratedPluginRegistrant registerWithRegistry:engineBridge.pluginRegistry];
 + }
 ```
 
 2. Create method channels and platform views in
-`didInitializeImplicitFlutterEngine` if applicable
+`didInitializeImplicitFlutterEngine`, if applicable.
 
-If you were previously creating [method channels][platform-views-docs] or
+If you previously created [method channels][platform-views-docs] or
 [platform views][platform-views-docs] in
-`application:didFinishLaunchingWithOptions:`, move that logic to
-`didInitializeImplicitFlutterEngine`.
+`application:didFinishLaunchingWithOptions:`,
+move that logic to `didInitializeImplicitFlutterEngine`.
 
 ```swift
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
@@ -113,9 +112,9 @@ If you were previously creating [method channels][platform-views-docs] or
 ```
 
 ```objc
-  func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
+  func didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {
     // Register plugins with `engineBridge.pluginRegistry`
-    GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
+    [GeneratedPluginRegistrant registerWithRegistry:engineBridge.pluginRegistry];
 
     // Create method channels with `engineBridge.applicationRegistrar.messenger`
     FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
@@ -130,18 +129,16 @@ If you were previously creating [method channels][platform-views-docs] or
 
 :::warning
 If you try to access the `FlutterViewController` in
-`application:didFinishLaunchingWithOptions:`, it may result in a crash. Use the
-`FlutterImplicitEngineDelegate` protocol instead.
+`application:didFinishLaunchingWithOptions:`, it might result in a crash.
+Use the `FlutterImplicitEngineDelegate` protocol instead.
 
 ```swift
 // BAD
 let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
 ```
 
-If you need access to the `FlutterViewController` specifically, see [Bespoke
-FlutterViewController
-usage](http://flutter.dev/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage)
-below.
+To access the `FlutterViewController` directly, visit
+[Bespoke FlutterViewController usage](http://flutter.dev/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage).
 :::
 
 3. Migrate any custom logic within application life cycle events.
@@ -156,15 +153,14 @@ events. See [Apple's
 documenation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
 on migrating.
 
-If you implement your own SceneDelegate, you can must subclass it with
+If you implement your own SceneDelegate, you must subclass it with
 `FlutterSceneDelegate` or conform to the `FlutterSceneLifeCycleProvider`
-protocol. See examples
-[below](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
+protocol. See the [following examples](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
 
 ### Migrate Info.plist
 
-To complete the migration to UIScene lifecycle, add a `Application Scene
-Manifest` to your Info.plist with the following:
+To complete the migration to the UIScene lifecycle, add an `Application Scene
+Manifest` to your Info.plist.
 
 As seen in Xcode's editor:
 
@@ -205,7 +201,7 @@ As XML:
 ## Migration guide for Flutter plugins
 
 Not all plugins use lifecycle events. If your plugin does, though, you will
-need to migrate to adopt UIKit scene-based lifecycle.
+need to migrate to UIKit's scene-based lifecycle.
 
 1. Adopt the `FlutterSceneLifeCycleDelegate` protocol
 
@@ -221,8 +217,8 @@ need to migrate to adopt UIKit scene-based lifecycle.
 
 2. Registers the plugin as a receiver of `UISceneDelegate` calls.
 
-To continue supporting apps that have not migrated to UIScene lifecycle yet,
-you may consider remaining registered to the App Delegate and keeping the App
+To continue supporting apps that have not migrated to the UIScene lifecycle yet,
+you might consider remaining registered to the App Delegate and keeping the App
 Delegate events as well.
 
 ```swift diff
@@ -245,7 +241,7 @@ Delegate events as well.
 plugin.
 
 Most App Delegate UI events have a 1-to-1 replacement. To see details on each
-event, please see Apple's documentation on
+event, visit Apple's documentation on
 [UISceneDelegate]({{site.apple-dev}}/documentation/uikit/uiscenedelegate)
 and
 [UIWindowSceneDelegate]({{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate).
@@ -307,15 +303,14 @@ public func windowScene(
                completionHandler:(void (^)(BOOL succeeded))completionHandler { }
 ```
 
-4. Due to changes in app launch sequence, plugins will no longer receive the
-`application:didFinishLaunchingWithOptions:` event, despite it not being
-deprecated. Any logic done here should be moved to the
-`scene:willConnectToSession:options:` event.
+4. Move launch logic from `application:willFinishLaunchingWithOptions:` and `application:didFinishLaunchingWithOptions:` to `scene:willConnectToSession:options:`.
+
+Despite `application:willFinishLaunchingWithOptions:` and `application:didFinishLaunchingWithOptions:` not being deprecated, after migrating to UIScene lifecycle, the launch options will be `nil`. Any logic performed here related to the launch options should be moved to the `scene:willConnectToSession:options:` event.
 
 ## Migration guide for adding Flutter to existing app (Add to App)
 
 Similar to the `FlutterAppDelegate`, the `FlutterSceneDelgate` is recommended
-but not required. The `FlutterSceneDelgate` fowards scene callbacks such as
+but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 [`openURL`][] to plugins such as [local_auth][].
 
 ### Create/Update a SceneDelegate (UIKit)
@@ -333,81 +328,6 @@ but not required. The `FlutterSceneDelgate` fowards scene callbacks such as
 + @interface SceneDelegate : FlutterSceneDelegate
 ```
 
-#### If you can't directly make FlutterSceneDelegate a subclass
-
-If you can't directly make `FlutterSceneDelegate` a subclass, you can use the
-`FlutterSceneLifeCycleProvider` protocol and
-`FlutterPluginSceneLifeCycleDelegate` object to forward scene life cycle events
-to Flutter.
-
-```swift
-import Flutter
-import UIKit
-
-class SceneDelegate: UIResponder, UIWindowSceneDelegate,
-  FlutterSceneLifeCycleProvider
-{
-  var sceneLifeCycleDelegate: FlutterPluginSceneLifeCycleDelegate =
-    FlutterPluginSceneLifeCycleDelegate()
-
-  var window: UIWindow?
-
-  func scene(
-    _ scene: UIScene,
-    willConnectTo session: UISceneSession,
-    options connectionOptions: UIScene.ConnectionOptions
-  ) {
-    sceneLifeCycleDelegate.scene(
-      scene,
-      willConnectTo: session,
-      options: connectionOptions
-    )
-  }
-
-  func sceneDidDisconnect(_ scene: UIScene) {
-    sceneLifeCycleDelegate.sceneDidDisconnect(scene)
-  }
-
-  func sceneWillEnterForeground(_ scene: UIScene) {
-    sceneLifeCycleDelegate.sceneWillEnterForeground(scene)
-  }
-
-  func sceneDidBecomeActive(_ scene: UIScene) {
-    sceneLifeCycleDelegate.sceneDidBecomeActive(scene)
-  }
-
-  func sceneWillResignActive(_ scene: UIScene) {
-    sceneLifeCycleDelegate.sceneWillResignActive(scene)
-  }
-
-  func sceneDidEnterBackground(_ scene: UIScene) {
-    sceneLifeCycleDelegate.sceneDidEnterBackground(scene)
-  }
-
-  func scene(
-    _ scene: UIScene,
-    openURLContexts URLContexts: Set<UIOpenURLContext>
-  ) {
-    sceneLifeCycleDelegate.scene(scene, openURLContexts: URLContexts)
-  }
-
-  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-    sceneLifeCycleDelegate.scene(scene, continue: userActivity)
-  }
-
-  func windowScene(
-    _ windowScene: UIWindowScene,
-    performActionFor shortcutItem: UIApplicationShortcutItem,
-    completionHandler: @escaping (Bool) -> Void
-  ) {
-    sceneLifeCycleDelegate.windowScene(
-      windowScene,
-      performActionFor: shortcutItem,
-      completionHandler: completionHandler
-    )
-  }
-}
-```
 
 ### Create/Update a SceneDelegate (SwiftUI)
 
@@ -418,6 +338,7 @@ make the following changes:
 
 1. Set the Scene Delegate to `FlutterSceneDelegate` in
 `application:configurationForConnecting:options:`.
+
 ```swift diff
   @Observable
   class AppDelegate: FlutterAppDelegate {
@@ -437,15 +358,250 @@ make the following changes:
   }
 ```
 
-2. Set `Enable Multiple Scenes` to `NO` under `Application Scene Manifest` in your target's
-Info properties.
-
-Some event may be lost and may now work properly with multi-scene.
+2. If your app does not support multiple scenes, set `Enable Multiple Scenes` to `NO` under `Application Scene Manifest` in your target's
+Info properties. This is enabled by default for SwiftUI apps.
 
 ![Xcode plist editor for
 UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate-swiftui-info-plist.png)
 
-### Bespoke FlutterViewController usage
+Otherwise, see [If your app supports multiple scenes](http://flutter.devrelease/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes-uiapplicationsupportsmultiplescenes) for further instructions.
+### If you can't directly make FlutterSceneDelegate a subclass
+
+If you can't directly make `FlutterSceneDelegate` a subclass, you can use the
+`FlutterSceneLifeCycleProvider` protocol and
+`FlutterPluginSceneLifeCycleDelegate` object to forward scene life cycle events
+to Flutter.
+
+```swift title="SceneDelegate.swift" diff
+  import Flutter
+  import UIKit
+
+- class SceneDelegate: UIResponder, UIWindowSceneDelegate
++ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FlutterSceneLifeCycleProvider
+  {
++   var sceneLifeCycleDelegate: FlutterPluginSceneLifeCycleDelegate =
++     FlutterPluginSceneLifeCycleDelegate()
+
+    var window: UIWindow?
+
+    func scene(
+      _ scene: UIScene,
+      willConnectTo session: UISceneSession,
+      options connectionOptions: UIScene.ConnectionOptions
+    ) {
++     sceneLifeCycleDelegate.scene(
++       scene,
++       willConnectTo: session,
++       options: connectionOptions
++     )
+    }
+
+    func sceneDidDisconnect(_ scene: UIScene) {
++     sceneLifeCycleDelegate.sceneDidDisconnect(scene)
+    }
+
+    func sceneWillEnterForeground(_ scene: UIScene) {
++     sceneLifeCycleDelegate.sceneWillEnterForeground(scene)
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
++     sceneLifeCycleDelegate.sceneDidBecomeActive(scene)
+    }
+
+    func sceneWillResignActive(_ scene: UIScene) {
++     sceneLifeCycleDelegate.sceneWillResignActive(scene)
+    }
+
+    func sceneDidEnterBackground(_ scene: UIScene) {
++     sceneLifeCycleDelegate.sceneDidEnterBackground(scene)
+    }
+
+    func scene(
+      _ scene: UIScene,
+      openURLContexts URLContexts: Set<UIOpenURLContext>
+    ) {
++     sceneLifeCycleDelegate.scene(scene, openURLContexts: URLContexts)
+    }
+
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
++     sceneLifeCycleDelegate.scene(scene, continue: userActivity)
+    }
+
+    func windowScene(
+      _ windowScene: UIWindowScene,
+      performActionFor shortcutItem: UIApplicationShortcutItem,
+      completionHandler: @escaping (Bool) -> Void
+    ) {
++     sceneLifeCycleDelegate.windowScene(
++       windowScene,
++       performActionFor: shortcutItem,
++       completionHandler: completionHandler
++     )
+    }
+  }
+```
+```objc title="SceneDelegate.h" diff
+- @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
++ @interface SceneDelegate : UIResponder <UIWindowSceneDelegate, FlutterSceneLifeCycleProvider>
+
+  @property(strong, nonatomic) UIWindow* window;
+
++ @property (nonatomic,strong) FlutterPluginSceneLifeCycleDelegate *sceneLifeCycleDelegate;
+
+  @end
+```
+```objc title="SceneDelegate.m" diff
+  @implementation SceneDelegate
+
+  - (instancetype)init {
+      if (self = [super init]) {
++         _sceneLifeCycleDelegate = [[FlutterPluginSceneLifeCycleDelegate alloc] init];
+      }
+      return self;
+  }
+
+  - (void)scene:(UIScene*)scene
+      willConnectToSession:(UISceneSession*)session
+                  options:(UISceneConnectionOptions*)connectionOptions {
++   [self.sceneLifeCycleDelegate scene:scene willConnectToSession:session options:connectionOptions];
+  }
+
+  - (void)sceneDidDisconnect:(UIScene*)scene {
++   [self.sceneLifeCycleDelegate sceneDidDisconnect:scene];
+  }
+
+  - (void)sceneDidBecomeActive:(UIScene*)scene {
++   [self.sceneLifeCycleDelegate sceneDidBecomeActive:scene];
+  }
+
+  - (void)sceneWillResignActive:(UIScene*)scene {
++   [self.sceneLifeCycleDelegate sceneWillResignActive:scene];
+  }
+
+  - (void)sceneWillEnterForeground:(UIScene*)scene {
++   [self.sceneLifeCycleDelegate sceneWillEnterForeground:scene];
+  }
+
+  - (void)sceneDidEnterBackground:(UIScene*)scene {
++   [self.sceneLifeCycleDelegate sceneDidEnterBackground:scene];
+  }
+
+  - (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
++   [self.sceneLifeCycleDelegate scene:scene openURLContexts:URLContexts];
+  }
+
+  - (void)scene:(UIScene *)scene continueUserActivity:(NSUserActivity *)userActivity {
++   [self.sceneLifeCycleDelegate scene:scene continueUserActivity:userActivity];
+  }
+
+  - (void)windowScene:(UIWindowScene *)windowScene performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
++   [self.sceneLifeCycleDelegate windowScene:windowScene performActionForShortcutItem:shortcutItem completionHandler:completionHandler];
+  }
+```
+
+### If your app supports multiple scenes (UIApplicationSupportsMultipleScenes)
+
+When multiple scenes is enabled, Flutter cannot automatically associate a `FlutterEngine` with a scene during the scene connection phase. In order for plugins to receive launch connection information, the `FlutterEngine` must be manually registered with either the `FlutterSceneDelegate` or `FlutterPluginSceneLifeCycleDelegate` during `scene:willConnectToSession:options:`. Otherwise, once the view, created by the `FlutterViewController` and `FlutterEngine`, is added to the view heirarchy, the `FlutterEngine` will automatically register for scene events.
+
+```swift title="SceneDelegate.swift"
+import Flutter
+import FlutterPluginRegistrant
+import UIKit
+
+class SceneDelegate: FlutterSceneDelegate {
+  let flutterEngine = FlutterEngine(name: "my flutter engine")
+
+  override func scene(
+    _ scene: UIScene,
+    willConnectTo session: UISceneSession,
+    options connectionOptions: UIScene.ConnectionOptions
+  ) {
+    guard let windowScene = scene as? UIWindowScene else { return }
+    window = UIWindow(windowScene: windowScene)
+
+    flutterEngine.run()
+    GeneratedPluginRegistrant.register(with: flutterEngine)
+
+    // If using FlutterSceneDelegate:
+    self.registerSceneLifeCycle(with: flutterEngine)
+
+    // If using FlutterSceneLifeCycleProvider:
+    // sceneLifeCycleDelegate.registerSceneLifeCycle(with: flutterEngine)
+
+    let viewController = ViewController(engine: flutterEngine)
+    window?.rootViewController = viewController
+    window?.makeKeyAndVisible()
+    super.scene(scene, willConnectTo: session, options: connectionOptions)
+  }
+}
+```
+```objc title="SceneDelegate.h"
+#import <UIKit/UIKit.h>
+#import <Flutter/Flutter.h>
+#import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h>
+
+@interface SceneDelegate : FlutterSceneDelegate
+@property (nonatomic, strong) FlutterEngine *flutterEngine;
+@end
+```
+```objc title="SceneDelegate.m"
+#import "SceneDelegate.h"
+#import "ViewController.h"
+
+@implementation SceneDelegate
+
+  - (instancetype)init {
+      if (self = [super init]) {
+         _flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+      }
+      return self;
+  }
+
+- (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session
+                                            options:(UISceneConnectionOptions *)connectionOptions {
+    if (![scene isKindOfClass:[UIWindowScene class]]) {
+        return;
+    }
+    UIWindowScene *windowScene = (UIWindowScene *)scene;
+    self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
+
+    [self.flutterEngine run];
+    [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
+
+    // If using FlutterSceneDelegate:
+    [self registerSceneLifeCycleWithFlutterEngine:self.flutterEngine];
+
+    // If using FlutterSceneLifeCycleProvider:
+    // [self.sceneLifeCycleDelegate registerSceneLifeCycleWithFlutterEngine:self.flutterEngine];
+
+    ViewController *viewController = [[ViewController alloc] initWithEngine:self.flutterEngine];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
+    [super scene:scene willConnectToSession:session options:connectionOptions];
+}
+@end
+```
+
+If you manually register a `FlutterEngine` with a scene, you must also unregister it if the view created by the `FlutterEngine` changes scenes.
+
+```swift
+// If using FlutterSceneDelegate:
+self.unregisterSceneLifeCycle(with: flutterEngine)
+
+// If using FlutterSceneLifeCycleProvider:
+sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
+```
+
+```objc
+// If using FlutterSceneDelegate:
+[self unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
+
+// If using FlutterSceneLifeCycleProvider:
+[self.sceneLifeCycleDelegate unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
+```
+
+
+## Bespoke FlutterViewController usage
 
 For apps that use a `FlutterViewController` instantiated from Storyboards in
 `application:didFinishLaunchingWithOptions:` for reasons other than
