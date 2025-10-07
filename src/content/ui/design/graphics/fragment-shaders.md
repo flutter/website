@@ -115,21 +115,28 @@ void paint(Canvas canvas, Size size, FragmentShader shader) {
 
 ### ImageFilter API
 
-Fragment shaders can also be used with the [`ImageFilter`][] API. This allows
-using custom fragment shaders with the [`BackdropFilter`][] class to apply
-shaders to already rendered content. [`ImageFilter`][] provides a constructor,
-[`ImageFilter.shader`][], for creating an [`ImageFilter`][] with a custom
-fragment shader.
+Fragment shaders can also be used with the [`ImageFilter`][] API.
+This allows using custom fragment shaders with the
+[`ImageFiltered`][] class or the [`BackdropFilter`][] class
+to apply shaders to already rendered content.
+[`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
+for creating an [`ImageFilter`][] with a custom fragment shader.
+
+Fragment shaders that use the [`ImageFilter`][] API must have
+at least one sampler2D uniform value and at least one vec2 uniform value.
+The sampler2D uniform value at index 0 and
+the float uniform values at index 0 and 1
+should not be set in Dart.
+These values are automatically set to contain
+the filter input image and the image size.
 
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[`BackdropFilter`]: {{site.api}}/flutter/dart-ui/BackdropFilter-class.html
+[`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
+[`BackdropFilter`]: {{site.api}}/flutter/widgets/BackdropFilter-class.html
 [`ImageFilter.shader`]: {{site.api}}/flutter/dart-ui/ImageFilter/ImageFilter.shader.html
 
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
-  final screenSize = MediaQuery.of(context).size;
-  shader.setFloat(0, screenSize.width);
-  shader.setFloat(1, screenSize.height);
   return ClipRect(
     child: SizedBox(
       width: 300,
