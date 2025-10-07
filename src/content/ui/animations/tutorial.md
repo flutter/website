@@ -654,7 +654,7 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 * An [`AnimationController`][] manages the `Animation`.
 * A [`CurvedAnimation`][] defines progression as a non-linear curve.
 * A [`Tween`][] interpolates between the range of data as used by the
-  object be
+  object being animated.
 
 ## Next steps
 
