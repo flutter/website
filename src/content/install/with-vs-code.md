@@ -9,6 +9,7 @@ description: >-
 Learn how to install and set up Flutter in a VS Code-based editor.
 This includes (but is not limited to) [Cursor][] and [Windsurf][].
 
+[VS Code]: https://code.visualstudio.com
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
 
