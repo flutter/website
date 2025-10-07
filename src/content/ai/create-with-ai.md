@@ -45,11 +45,14 @@ resources:
 
 ## AI development tools
 
-AI can not only be a feature in your app, but also a powerful assistant in your
-development workflow. Tools like Gemini Code Assist, Gemini CLI, [Cursor][],
+AI isn't only a feature in your app,
+but can also be a powerful assistant in your development workflow.
+Tools like [Gemini Code Assist](#gemini-code-assist),
+[Gemini CLI](#gemini-cli), [Claude Code][], [Cursor][],
 and [Windsurf][] can help you write code faster,
 understand complex concepts, and reduce boilerplate.
 
+[Claude Code]: https://www.claude.com/product/claude-code
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
 
