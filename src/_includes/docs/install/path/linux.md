@@ -31,11 +31,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.bash_profile
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.bash_profile
     ```
 
     </details>
@@ -48,11 +48,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.zshenv
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.zshenv
     ```
 
     </details>
@@ -65,11 +65,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ fish_add_path -g -p ~/development/flutter/bin
+    $ fish_add_path -g -p ~/develop/flutter/bin
     ```
 
     </details>
@@ -82,11 +82,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.cshrc
+    $ echo 'setenv PATH "$HOME/develop/flutter/bin:$PATH"' >> ~/.cshrc
     ```
 
     </details>
@@ -99,11 +99,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'setenv PATH "$HOME/development/flutter/bin:$PATH"' >> ~/.tcshrc
+    $ echo 'setenv PATH "$HOME/develop/flutter/bin:$PATH"' >> ~/.tcshrc
     ```
 
     </details>
@@ -116,11 +116,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.profile
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.profile
     ```
 
     </details>
@@ -133,11 +133,11 @@
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.profile
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.profile
     ```
 
     </details>
