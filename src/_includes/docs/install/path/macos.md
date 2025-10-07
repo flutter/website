@@ -30,11 +30,11 @@ check out [this tutorial on setting your PATH][other-path].
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd add the following to the file:
 
     ```bash
-    export PATH="$HOME/development/flutter/bin:$PATH"
+    export PATH="$HOME/develop/flutter/bin:$PATH"
     ```
 
  1. <h3>Save your changes</h3>
