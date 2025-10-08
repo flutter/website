@@ -95,7 +95,7 @@ automatically configures the [Dart and Flutter MCP Server][dart-mcp-dart-docs].
 
 You can install it by running the following command:
 
-```
+```bash
 gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
