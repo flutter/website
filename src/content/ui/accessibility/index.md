@@ -108,6 +108,8 @@ legible in colorblind and grayscale modes.
 * **Scale factors**. The UI should remain legible and usable at very
 large scale factors for text size and display scaling.
 
+[TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
+[VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
 ## Learn more
 
 To learn more about Flutter and accessibility, check out
