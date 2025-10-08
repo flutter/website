@@ -4,7 +4,7 @@ description: Information on Flutter's accessibility support.
 ---
 
 ## Background
-Ensuring apps are accessible to a broad range of users is an essential
+Ensuring that apps are accessible to a broad range of users is an essential
 part of building a high-quality app. Applications that are poorly
 designed create barriers to people of all ages. The [UN Convention on
 the Rights of Persons with Disabilities][CRPD] states the moral and legal
