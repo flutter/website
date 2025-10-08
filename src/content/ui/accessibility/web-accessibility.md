@@ -66,6 +66,7 @@ to allow developers to assign specific roles to their widgets. When your
 Flutter web app is rendered, these Flutter-specific roles are translated into
 corresponding ARIA roles in the web page's HTML structure.
 
+[`Semantics` widget]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`SemanticsRole` enum]: {{site.api}}/flutter/dart-ui/SemanticsRole.html
 
 **1. Automatic Semantics from Standard Widgets:**
