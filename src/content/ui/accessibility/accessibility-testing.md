@@ -16,17 +16,17 @@ We recommend using automated accessibility scanners to test the following:
        icon button to initiate a scan.
 
 * For iOS:
-    1. Open the `iOS` folder of your Flutter app in Xcode
-    1. Select a Simulator as the target, and click **Run** button
+    1. Open the `iOS` folder of your Flutter app in Xcode.
+    1. Select a Simulator as the target, and click **Run** button.
     1. In Xcode, select
-       **Xcode > Open Developer Tools > Accessibility Inspector**
+       **Xcode > Open Developer Tools > Accessibility Inspector**.
     1. In the Accessibility Inspector,
        select **Inspection > Enable Point to Inspect**,
        and then select the various user interface elements in running
-       Flutter app to inspect their accessibility attributes
+       Flutter app to inspect their accessibility attributes.
     1. In the Accessibility Inspector,
        select **Audit** in the toolbar, and then
-       select **Run Audit** to get a report of potential issues
+       select **Run Audit** to get a report of potential issues.
 
 * For web:
     1. Open Chrome DevTools (or similar tools in other browsers)
