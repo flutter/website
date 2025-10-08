@@ -18,7 +18,7 @@ using powerful SDKs, like the Firebase SDK for Generative AI. You can also use
 AI tools, such as Gemini Code Assist and Gemini CLI, to help with code
 generation and scaffolding. These tools are powered by the Dart and Flutter MCP
 Server, which provides AI with a rich context about your codebase. The Flutter
-Extension for Gemini CLI makes it easy leverage official rules, the MCP server,
+Extension for Gemini CLI makes it easy to leverage official rules, the MCP server,
 and custom commands for building your app. Additionally, rules files help
 fine-tune the AI's behavior and enforce project-specific best practices.
 
