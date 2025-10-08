@@ -47,12 +47,6 @@ The [W3C recommends][]:
 
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 
-### Example
-The following screenshot shows good and bad examples for text color contrast.
-
-  {% render docs/app-figure.md, image:"a11y/text-contrast.png", caption:"text contrast", img-class:"simple-border", img-style:"max-height: 480px;" %}
-
-
 ## Tap target size
 
 Controls that are too small are hard for many people to interact with and select.
@@ -66,10 +60,3 @@ The [W3C] recommends a minimum target size of 44 by 44 CSS pixels,
 [Android]: https://developer.android.com/guide/topics/ui/accessibility/apps#large-controls
 [iOS]: https://developer.apple.com/design/human-interface-guidelines/accessibility#Mobility
 [W3C]: https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
-
-
-### Example
-
-The following screenshot shows how to make these widgets to have at least an 48x48 tap target.
-
-  {% render docs/app-figure.md, image:"a11y/tap-target-size.png", caption:"tap target size", img-class:"simple-border", img-style:"max-height: 480px;" %}
