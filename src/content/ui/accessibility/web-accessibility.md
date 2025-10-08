@@ -11,7 +11,7 @@ Since Flutter renders its UI on a single canvas, it needs a special layer
 to expose the UI's meaning and structure to web browsers.
 
 
-## Opt-in Web Accessibility
+## Opt-in web accessibility
 
 ### Invisible button
 
