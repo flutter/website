@@ -11,23 +11,21 @@ your Flutter apps and streamline your Flutter and Dart development.
 
 ## Overview
 
-AI can be used for building AI-powered apps with Flutter and
-for accelerating your development workflow. You can
-integrate AI-powered features like
-natural language understanding and content generation
-directly into your Flutter app using powerful SDKs,
-like the Firebase SDK for Generative AI. You can also use
-AI tools, such as Gemini Code Assist and Gemini CLI, to help
-with code generation and scaffolding. These tools are
-powered by the Dart and Flutter MCP Server, which provides
-AI with a rich context about your codebase. Additionally,
-rules files help fine-tune the AI's behavior and enforce
-project-specific best practices.
+AI can be used for building AI-powered apps with Flutter and for accelerating
+your development workflow. You can integrate AI-powered features like natural
+language understanding and content generation directly into your Flutter app
+using powerful SDKs, like the Firebase SDK for Generative AI. You can also use
+AI tools, such as Gemini Code Assist and Gemini CLI, to help with code
+generation and scaffolding. These tools are powered by the Dart and Flutter MCP
+Server, which provides AI with a rich context about your codebase. The Flutter
+Extension for Gemini CLI makes it easy leverage official rules, the MCP server,
+and custom commands for building your app. Additionally, rules files help
+fine-tune the AI's behavior and enforce project-specific best practices.
 
 ## Build AI-powered experiences with Flutter
 
-Using AI in your Flutter app unlocks new user experiences that allow your app
-to support natural language understanding and content generation. 
+Using AI in your Flutter app unlocks new user experiences that allow your app to
+support natural language understanding and content generation. 
 
 To get started building AI-powered experiences in Flutter, check out these 
 resources:
@@ -45,12 +43,11 @@ resources:
 
 ## AI development tools
 
-AI isn't only a feature in your app,
-but can also be a powerful assistant in your development workflow.
-Tools like [Gemini Code Assist](#gemini-code-assist),
-[Gemini CLI](#gemini-cli), [Claude Code][], [Cursor][],
-and [Windsurf][] can help you write code faster,
-understand complex concepts, and reduce boilerplate.
+AI isn't only a feature in your app, but can also be a powerful assistant in
+your development workflow.  Tools like [Gemini Code
+Assist](#gemini-code-assist), [Gemini CLI](#gemini-cli), [Claude Code][],
+[Cursor][], and [Windsurf][] can help you write code faster, understand complex
+concepts, and reduce boilerplate.
 
 [Claude Code]: https://www.claude.com/product/claude-code
 [Cursor]: https://cursor.com/
@@ -58,9 +55,9 @@ understand complex concepts, and reduce boilerplate.
 
 ### Gemini Code Assist
 
-[Gemini Code Assist][] is an AI-powered collaborator available in
-Visual Studio Code and JetBrains IDEs (including Android Studio).
-It has a deep understanding of your project's codebase and can help you with:
+[Gemini Code Assist][] is an AI-powered collaborator available in Visual Studio
+Code and JetBrains IDEs (including Android Studio).  It has a deep understanding
+of your project's codebase and can help you with:
 
 * **Code completion and generation**: It suggests and generates entire blocks of
   code based on the context of what you're writing.
@@ -90,13 +87,11 @@ To get started, visit the [Gemini CLI][] website, or try this
 
 ## Flutter Extension for Gemini CLI
 
-The [Flutter Extension for Gemini CLI][flutter-extension] combines
-the [Dart and Flutter MCP Server][dart-mcp-dart-docs] with 
-rules and commands. It uses the default set of
-[AI rules for Flutter and Dart][], adds commands
-like `/create-app` and `/modify` to make stuctured changes to
-your app, and automatically configures the [Dart and Flutter
-MCP Server][dart-mcp-dart-docs].
+The [Flutter Extension for Gemini CLI][flutter-extension] combines the [Dart and
+Flutter MCP Server][dart-mcp-dart-docs] with rules and commands. It uses the
+default set of [AI rules for Flutter and Dart][], adds commands like
+`/create-app` and `/modify` to make stuctured changes to your app, and
+automatically configures the [Dart and Flutter MCP Server][dart-mcp-dart-docs].
 
 You can install it by running the following command:
 
