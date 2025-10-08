@@ -28,7 +28,7 @@ In addition to the standard advice for
 info for creating apps that are both
 adaptive _and_ accessible.
 
-[creating accessible apps]: /ui/accessibility-and-internationalization/accessibility
+[creating accessible apps]: /ui/accessibility
 
 ## Scroll wheel for custom widgets
 
