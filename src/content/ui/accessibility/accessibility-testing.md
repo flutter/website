@@ -13,7 +13,7 @@ We recommend using automated accessibility scanners to test the following:
        **Android Settings > Accessibility >
        Accessibility Scanner > On**.
     1. Navigate to the Accessibility Scanner 'checkbox'
-       icon button to initiate a scan
+       icon button to initiate a scan.
 
 * For iOS:
     1. Open the `iOS` folder of your Flutter app in Xcode
