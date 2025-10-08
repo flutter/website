@@ -164,8 +164,6 @@
           permalink: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
         - title: Google Maps package
           permalink: https://developers.google.com/maps/flutter-package
-    - title: Build a news app
-      permalink: /resources/news-toolkit
 
 - title: AI solutions
   permalink: /ai
