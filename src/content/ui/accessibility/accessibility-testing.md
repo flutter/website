@@ -5,7 +5,7 @@ description: Information on Flutter's accessibility testing.
 
 ## Inspecting accessibility support
 
-we recommend using automated accessibility scanners to test:
+We recommend using automated accessibility scanners to test the following:
 
 * For Android:
     1. Install the [Accessibility Scanner][] for Android
