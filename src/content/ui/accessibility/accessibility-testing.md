@@ -11,7 +11,7 @@ We recommend using automated accessibility scanners to test the following:
     1. Install the [Accessibility Scanner][] for Android
     1. Enable the Accessibility Scanner from
        **Android Settings > Accessibility >
-       Accessibility Scanner > On**
+       Accessibility Scanner > On**.
     1. Navigate to the Accessibility Scanner 'checkbox'
        icon button to initiate a scan
 
