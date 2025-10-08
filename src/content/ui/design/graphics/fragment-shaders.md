@@ -122,13 +122,12 @@ to apply shaders to already rendered content.
 [`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
 for creating an [`ImageFilter`][] with a custom fragment shader.
 
-Fragment shaders that use the [`ImageFilter`][] API must have
-at least one sampler2D uniform value and at least one vec2 uniform value.
-The sampler2D uniform value at index 0 and
-the float uniform values at index 0 and 1
-should not be set in Dart.
-These values are automatically set to contain
-the filter input image and the image size.
+Fragment shaders that use the `ImageFilter` API receive some
+values automatically from the engine. The `sampler2D` value at index 0
+is set to the filter input image, and the `float` values at indices 0
+and 1 are set to the image's width and height.
+Your shader must specify this constructor to accept these values (for example,
+a `sampler2D` and a `vec2`), but you should not set them from your Dart code.
 
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
 [`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
