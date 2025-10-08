@@ -90,7 +90,7 @@ To get started, visit the [Gemini CLI][] website, or try this
 The [Flutter Extension for Gemini CLI][flutter-extension] combines the [Dart and
 Flutter MCP Server][dart-mcp-dart-docs] with rules and commands. It uses the
 default set of [AI rules for Flutter and Dart][], adds commands like
-`/create-app` and `/modify` to make stuctured changes to your app, and
+`/create-app` and `/modify` to make structured changes to your app, and
 automatically configures the [Dart and Flutter MCP Server][dart-mcp-dart-docs].
 
 You can install it by running the following command:
