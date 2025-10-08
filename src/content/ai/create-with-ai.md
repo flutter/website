@@ -85,8 +85,30 @@ environment. You can use it to:
 To get started, visit the [Gemini CLI][] website, or try this
 [Gemini CLI codelab][].
 
-[Gemini CLI]: {{site.github}}/google-gemini/gemini-cli
+[Gemini CLI]: https://geminicli.com/
 [Gemini CLI codelab]: https://codelabs.developers.google.com/gemini-cli-hands-on
+
+## Flutter Extension for Gemini CLI
+
+The [Flutter Extension for Gemini CLI][flutter-extension] combines
+the [Dart and Flutter MCP Server][dart-mcp-dart-docs] with 
+rules and commands. It uses the default set of
+[AI rules for Flutter and Dart][], adds commands
+like `/create-app` and `/modify` to make stuctured changes to
+your app, and automatically configures the [Dart and Flutter
+MCP Server][dart-mcp-dart-docs].
+
+You can install it by running the following command:
+
+```
+gemini extensions install https://github.com/gemini-cli-extensions/flutter
+```
+
+To learn more, see the [blog post][flutter-extension-blog] or 
+the [README][flutter-extension].
+
+[flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
+[flutter-extension-blog]: https://blog.flutter.dev/meet-the-flutter-extension-for-gemini-cli-f8be3643eaad
 
 ## Dart and Flutter MCP Server
 
