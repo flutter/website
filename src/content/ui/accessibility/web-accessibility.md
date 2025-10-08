@@ -69,7 +69,7 @@ corresponding ARIA roles in the web page's HTML structure.
 [`Semantics` widget]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`SemanticsRole` enum]: {{site.api}}/flutter/dart-ui/SemanticsRole.html
 
-**1. Automatic Semantics from Standard Widgets:**
+**1. Automatic Semantics from Standard Widgets**
 
 Many standard Flutter widgets, like `TabBar`, `MenuAnchor`, and `Table`,
 automatically include semantic information along with their roles.
