@@ -1328,9 +1328,6 @@ Then in your code, you can access your strings as such:
 Text(AppLocalizations.of(context)!.hello('John'));
 ```
 
-Flutter has basic support for accessibility on Android,
-though this feature is a work in progress.
-
 See [Internationalizing Flutter apps][] for more information on this.
 
 ### What is the equivalent of a Gradle file? How do I add dependencies?
@@ -2400,6 +2397,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: /ui/widgets/layout
-[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter apps]: /ui/internationalization
 [home_widget]: https://pub.dev/packages/home_widget
 [Add generated previews to your widget picker]: https://developer.android.com/develop/ui/compose/glance/generated-previews

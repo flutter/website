@@ -2090,7 +2090,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: /ui/accessibility-and-internationalization/internationalization
+[internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative

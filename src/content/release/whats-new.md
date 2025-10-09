@@ -125,7 +125,7 @@ so you might have already noticed some of them:
 [floating-app-bar]: /cookbook/lists/floating-app-bar
 [Flutter on iOS]: https://flutter.dev/multi-platform/ios
 [Flutter Property Editor]: /tools/property-editor
-[semantic-roles]: /ui/accessibility-and-internationalization/accessibility#enhancing-accessibility-with-semantic-roles
+[semantic-roles]: /ui/accessibility/web-accessibility#enhancing-accessibility-with-semantic-roles
 [setting up Flutter flavors for Android]: /deployment/flavors
 [setting up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
 [use hot reload on web]: /platform-integration/web/building#hot-reload-web
