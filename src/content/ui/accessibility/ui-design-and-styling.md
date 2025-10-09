@@ -18,6 +18,10 @@ render all its contents when the font sizes are increased.
 For example, you can test all parts of your app on a small-screen
 device configured to use the largest font setting.
 
+To adjust font sizes: on iOS, go to
+Settings > Accessibility > Display & Text Size;
+on Android, go to Settings > Font size.
+
 ### Example
 
 The following two screenshots show the standard Flutter app
@@ -55,8 +59,16 @@ pressed by users.
 
 Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and 44x44 pts respectively.
 
-The [W3C] recommends a minimum target size of 44 by 44 CSS pixels,
+The [W3C] recommends a minimum target size of 44 by 44 CSS pixels.
 
 [Android]: https://developer.android.com/guide/topics/ui/accessibility/apps#large-controls
 [iOS]: https://developer.apple.com/design/human-interface-guidelines/accessibility#Mobility
 [W3C]: https://www.w3.org/WAI/WCAG21/Understanding/target-size.html
+
+## Other Accessibility features
+
+You can check the [AccessibilityFeatures] class for additional
+accessibility features that may be enabled by the platform,
+such as bold text, high contrast, and inverted colors.
+
+[AccessibilityFeatures]: https://api.flutter.dev/flutter/dart-ui/AccessibilityFeatures-class.html

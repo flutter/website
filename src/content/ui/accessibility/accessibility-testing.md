@@ -3,8 +3,21 @@ title: Accessibility Testing
 description: Information on Flutter's accessibility testing.
 ---
 
-## Inspecting accessibility support
+## Accessibility regulations
 
+To ensure your app is accessible, check it against public standards like the
+[Web Content Accessibility Guidelines (WCAG) 2][], the [EN 301 549][],
+and use resources like the [Voluntary Product Accessibility Template (VPAT)][]
+to self-assess your product. For more details on these
+regulations, check out the main [accessibility page](/ui/accessibility).
+
+
+[Web Content Accessibility Guidelines (WCAG) 2]: https://www.w3.org/WAI/standards-guidelines/wcag/
+[EN 301 549]: https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf
+[Voluntary Product Accessibility Template (VPAT)]: https://www.itic.org/policy/accessibility/vpat
+
+
+## Inspecting accessibility support
 We recommend using automated accessibility scanners to test the following:
 
 * For Android:

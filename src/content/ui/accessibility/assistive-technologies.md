@@ -106,8 +106,8 @@ To learn about using Orca, check out
 
 <br/>
 
-Check out the following [video demo][] to see Victor Tsaran,
-using VoiceOver with the now-archived [Flutter Gallery][] web app.
+Check out the following [video demo][] to see how to
+use VoiceOver with the now-archived [Flutter Gallery][] web app.
 
 Flutter's standard widgets generate an accessibility tree automatically.
 However, if your app needs something different,
@@ -116,8 +116,8 @@ it can be customized using the [`Semantics` widget][].
 When there is text in your app that should be voiced
 with a specific voice, inform the screen reader
 which voice to use by calling [`TextSpan.locale`][].
-Note that `MaterialApp.locale` and `Localizations.override`
-don't affect which voice the screen reader uses.
+`MaterialApp.locale` and `Localizations.override`
+will affect screen reader voices starting from flutter 3.38 release.
 Usually, the screen reader uses the system voice
 except where you explicitly set it with `TextSpan.locale`.
 
