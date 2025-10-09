@@ -9,7 +9,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
