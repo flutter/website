@@ -50,7 +50,7 @@ The [W3C recommends][]:
   above bold)
 
 You can test contrast using Flutter's [Accessibility Guideline API][].
-For more details on testing, check out the [accessibility testing page](/ui/accessibility-testing).
+For more details on testing, check out the [accessibility testing page](/ui/accessibility/accessibility-testing/).
 
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
 ## Tap target size
@@ -64,7 +64,7 @@ Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and
 The [W3C] recommends a minimum target size of 44 by 44 CSS pixels.
 
 You can test tap target size using Flutter's [Accessibility Guideline API][].
-For more details on testing, check out the [accessibility testing page](/ui/accessibility-testing).
+For more details on testing, check out the [accessibility testing page](/ui/accessibility/accessibility-testing/).
 
 [Android]: https://developer.android.com/guide/topics/ui/accessibility/apps#large-controls
 [iOS]: https://developer.apple.com/design/human-interface-guidelines/accessibility#Mobility
