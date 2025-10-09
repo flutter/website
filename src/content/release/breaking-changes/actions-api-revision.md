@@ -4,7 +4,7 @@ description: >
   Removes need for FocusNode in invocations, map Intent types to Actions.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 
