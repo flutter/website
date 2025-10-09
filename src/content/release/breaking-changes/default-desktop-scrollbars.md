@@ -4,7 +4,7 @@ description: >
   ScrollBehaviors will now automatically build Scrollbars on Desktop platforms.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

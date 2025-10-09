@@ -6,7 +6,7 @@ description: >-
   must also be updated.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

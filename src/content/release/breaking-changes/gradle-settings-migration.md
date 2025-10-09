@@ -5,7 +5,7 @@ description: >
   completion in Android Studio.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

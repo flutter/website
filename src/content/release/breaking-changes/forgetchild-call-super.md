@@ -4,7 +4,7 @@ description: >
     Any element subclasses that override forgetChild are required to call super.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

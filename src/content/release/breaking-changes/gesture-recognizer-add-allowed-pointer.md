@@ -5,7 +5,7 @@ description: >
   override `addAllowedPointer` to take a `PointerDownEvent`
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

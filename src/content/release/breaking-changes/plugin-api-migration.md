@@ -3,7 +3,7 @@ title: Supporting the new Android plugins APIs
 description: How to update a plugin using the old APIs to support the new APIs.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 <?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 

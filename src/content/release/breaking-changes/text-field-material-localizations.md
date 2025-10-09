@@ -5,7 +5,7 @@ description: >
   no MaterialLocalizations widget in the widget tree.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

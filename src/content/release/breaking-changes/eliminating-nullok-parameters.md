@@ -5,7 +5,7 @@ description: >
     API sanity in the face of null safety.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

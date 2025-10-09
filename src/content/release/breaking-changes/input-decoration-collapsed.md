@@ -6,7 +6,7 @@ description: >
   replacement because they have no effect.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

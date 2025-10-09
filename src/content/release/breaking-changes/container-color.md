@@ -5,7 +5,7 @@ description: >
   no longer builds the same child widgets.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

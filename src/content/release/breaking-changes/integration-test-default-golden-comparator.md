@@ -6,7 +6,7 @@ description: >-
   has changed, and correctly uses the host filesystem.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

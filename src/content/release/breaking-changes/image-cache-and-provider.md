@@ -5,7 +5,7 @@ description: >
   ImageProvider has marked resolve as @nonVirtual.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

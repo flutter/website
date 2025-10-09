@@ -4,7 +4,7 @@ description: >
   LayoutBuilder and SliverLayoutBuilder call the builder function less often.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

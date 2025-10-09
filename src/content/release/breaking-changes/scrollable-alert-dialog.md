@@ -3,7 +3,7 @@ title: Scrollable AlertDialog (No longer deprecated)
 description: AlertDialog should scroll automatically when it overflows.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

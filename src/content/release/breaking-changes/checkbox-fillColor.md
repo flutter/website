@@ -5,7 +5,7 @@ description: >
   background when the checkbox is unselected.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

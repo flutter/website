@@ -6,7 +6,7 @@ description: >-
   WidgetState.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

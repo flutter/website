@@ -3,7 +3,7 @@ title: Notable rendering and layout changes after v3.7
 description: Non-API related breaking changes made after Flutter v3.7.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Changes
 

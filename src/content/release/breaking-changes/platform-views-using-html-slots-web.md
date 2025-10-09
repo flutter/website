@@ -8,7 +8,7 @@ description: >
   with video tags or forms potentially losing their state).
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

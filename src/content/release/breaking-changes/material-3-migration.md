@@ -4,7 +4,7 @@ description: >-
   Learn how to migrate your Flutter app's UI from Material 2 to Material 3.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

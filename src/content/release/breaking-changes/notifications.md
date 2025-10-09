@@ -4,7 +4,7 @@ description: >
   Notifications only traverse ancestors that are notification listeners.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

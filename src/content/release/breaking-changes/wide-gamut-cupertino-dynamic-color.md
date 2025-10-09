@@ -5,7 +5,7 @@ description: >-
   align with wide gamut Color API.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

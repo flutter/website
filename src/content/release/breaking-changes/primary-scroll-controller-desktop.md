@@ -5,7 +5,7 @@ description: >
   vertical `ScrollView`s automatically on Desktop.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

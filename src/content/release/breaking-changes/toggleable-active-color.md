@@ -5,7 +5,7 @@ description: >
   are migrated to use Material ColorScheme.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

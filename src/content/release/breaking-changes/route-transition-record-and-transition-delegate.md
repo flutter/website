@@ -4,7 +4,7 @@ description: >
   Changes to the rule on how transition delegate resolve route transition.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

@@ -3,7 +3,7 @@ title: Material Chip button semantics
 description: Interactive Material Chips are now semantically marked as buttons.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

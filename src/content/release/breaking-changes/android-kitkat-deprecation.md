@@ -5,7 +5,7 @@ description: >-
   KitKat (API 19) to Lollipop (API 21).
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

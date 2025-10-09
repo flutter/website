@@ -5,7 +5,7 @@ description: >
   a delete button in favor of deleteButtonTooltipMessage.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

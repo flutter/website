@@ -4,7 +4,7 @@ description: >-
   Learn about threading changes on macOS and Windows in Flutter 3.35.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

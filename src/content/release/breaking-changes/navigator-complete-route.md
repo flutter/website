@@ -5,7 +5,7 @@ description: >
   results could never complete if the route was removed instead of popped.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

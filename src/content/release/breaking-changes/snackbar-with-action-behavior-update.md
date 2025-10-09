@@ -5,7 +5,7 @@ description: >-
   manually dismissed by the user.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

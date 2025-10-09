@@ -3,7 +3,7 @@ title: TestWidgetsFlutterBinding.clock change
 description: The Clock implementation now comes from package:clock.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

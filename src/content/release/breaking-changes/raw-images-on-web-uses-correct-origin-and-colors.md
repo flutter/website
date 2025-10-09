@@ -5,7 +5,7 @@ description: >
   uses the correct pixel format and starts from the top left corner.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

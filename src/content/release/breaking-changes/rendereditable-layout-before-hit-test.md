@@ -5,7 +5,7 @@ description: >
   that is only available after the layout.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

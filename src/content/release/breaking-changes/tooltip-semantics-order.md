@@ -5,7 +5,7 @@ description: >-
   Tooltip widget's child during accessibility traversal.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

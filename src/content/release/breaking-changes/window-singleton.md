@@ -5,7 +5,7 @@ description: >
   multiple windows the window singleton has been deprecated.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

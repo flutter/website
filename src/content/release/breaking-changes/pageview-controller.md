@@ -4,7 +4,7 @@ description: >-
   PageView.controller is now nullable.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

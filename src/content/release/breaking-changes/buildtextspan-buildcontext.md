@@ -5,7 +5,7 @@ description: >
   inheritors that override buildTextSpan can access inherited widgets.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

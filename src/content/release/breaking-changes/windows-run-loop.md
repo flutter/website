@@ -3,7 +3,7 @@ title: Migrate a Windows project to the idiomatic run loop
 description: How to update a Windows project to use the idiomatic run loop
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 Flutter 2.5 replaced Windows apps' run loop with an idiomatic
 Windows message pump to reduce CPU usage.

@@ -4,7 +4,7 @@ description: >
   Provide annotation searches with reliable and meaningful local positions.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

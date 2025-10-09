@@ -5,7 +5,7 @@ description: >
     Android engine is consolidated into the FlutterInjector.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

@@ -5,7 +5,7 @@ description: >
   new loadBuffer API instead of the existing load API.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

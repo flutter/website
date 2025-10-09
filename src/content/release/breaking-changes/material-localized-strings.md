@@ -5,7 +5,7 @@ description: >
   material localizations to widgets localizations.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

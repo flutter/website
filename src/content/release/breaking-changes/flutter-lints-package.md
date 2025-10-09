@@ -5,7 +5,7 @@ description: >
   recommended lints, which encourage good coding practices.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

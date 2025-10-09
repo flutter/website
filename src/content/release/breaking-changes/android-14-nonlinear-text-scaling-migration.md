@@ -5,7 +5,7 @@ description: >-
   enabled in Flutter after v3.14.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

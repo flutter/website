@@ -4,7 +4,7 @@ description: >-
   Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 <?code-excerpt path-base="integration_test_migration/"?>
 

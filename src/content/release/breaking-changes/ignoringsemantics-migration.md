@@ -3,7 +3,7 @@ title: Migration guide for ignoringSemantics in IgnorePointer and related classe
 description: Removal of ignoringSemantics in IgnorePointer and related classes.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

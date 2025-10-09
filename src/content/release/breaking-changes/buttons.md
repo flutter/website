@@ -3,7 +3,7 @@ title: New Buttons and Button themes
 description: The basic material button classes have been replaced.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

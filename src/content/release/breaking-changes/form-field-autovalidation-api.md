@@ -3,7 +3,7 @@ title: The new Form, FormField auto-validation API
 description: Gives more control in how to auto validate a Form and a FormField.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

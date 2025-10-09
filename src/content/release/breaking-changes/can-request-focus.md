@@ -5,7 +5,7 @@ description: >-
   canRequestFocus parameter of its FocusNode.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

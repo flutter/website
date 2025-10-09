@@ -5,7 +5,7 @@ description: >-
   preparation for Android 14 nonlinear text scaling support.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

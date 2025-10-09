@@ -5,7 +5,7 @@ description: >-
   Material 3 Design specifications.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

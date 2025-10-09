@@ -5,7 +5,7 @@ description: >
   than the Zone used for `runApp`, a warning is printed to the console.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

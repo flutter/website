@@ -4,7 +4,7 @@ description: >-
   Changes to support wide gamut color and migration instructions.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

@@ -5,7 +5,7 @@ description: >
   correctly calculate its intrinsic size in certain situations.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 

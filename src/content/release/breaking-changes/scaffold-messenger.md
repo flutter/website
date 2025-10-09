@@ -4,7 +4,7 @@ description: >
   SnackBars are now managed by the ScaffoldMessenger, and persist across routes.
 ---
 
-{% render docs/docs/breaking-changes.md %}
+{% render docs/breaking-changes.md %}
 
 ## Summary
 
