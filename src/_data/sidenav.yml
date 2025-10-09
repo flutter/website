@@ -422,13 +422,22 @@
     - title: API overview
       permalink: /ui/animations/overview
 
-- title: Accessibility & internationalization
-  permalink: /ui/accessibility-and-internationalization
+- title: Accessibility 
+  permalink: /ui/accessibility
   children:
-    - title: Accessibility
-      permalink: /ui/accessibility-and-internationalization/accessibility
-    - title: Internationalization
-      permalink: /ui/accessibility-and-internationalization/internationalization
+    - title: Introduction
+      permalink: /ui/accessibility
+    - title: UI Design & Styling
+      permalink: /ui/accessibility/ui-design-and-styling
+    - title: Assistive technologies
+      permalink: /ui/accessibility/assistive-technologies
+    - title: Accessibility testing
+      permalink: /ui/accessibility/accessibility-testing
+    - title: Web accessibility
+      permalink: /ui/accessibility/web-accessibility
+
+- title: Internationalization
+  permalink: /ui/internationalization
 
 - divider
 - header: Beyond UI

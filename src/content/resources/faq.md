@@ -738,7 +738,7 @@ Yes, Flutte`r supports internationalization (i18n) and localization (l10n) so
 that your apps are adaptable to different languages and cultures. You can
 learn more in the [internationalization documentation][].
 
-[internationalization documentation]: /ui/accessibility-and-internationalization/internationalization
+[internationalization documentation]: /ui/internationalization
 
 ### What accessibility is supported?
 
@@ -746,7 +746,7 @@ Flutter supports strict accessibility requirements (a11y). For example,
 screen readers, large text, color contrast, and hardware switch control are
 all supported. To learn more, see the [accessibility documentation][].
 
-[accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
+[accessibility documentation]: /ui/accessibility
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 

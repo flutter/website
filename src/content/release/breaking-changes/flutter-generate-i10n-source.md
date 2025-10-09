@@ -94,8 +94,8 @@ Relevant Articles:
 - [Internationalizing Flutter apps][internationalization],
   the canonical documentation for the feature.
 
-[`l10n.yaml`]: /ui/accessibility-and-internationalization/internationalization#configuring-the-l10n-yaml-file
+[`l10n.yaml`]: /ui/internationalization#configuring-the-l10n-yaml-file
 [Issue 73870]: {{site.repo.flutter}}/issues/73870
 [Issue 102983]: {{site.repo.flutter}}/issues/102983
 [Issue 157819]: {{site.repo.flutter}}/issues/157819
-[internationalization]: /ui/accessibility-and-internationalization/internationalization#adding-your-own-localized-messages
+[internationalization]: /ui/internationalization#adding-your-own-localized-messages

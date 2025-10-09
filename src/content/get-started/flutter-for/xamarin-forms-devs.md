@@ -2494,7 +2494,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: /ui/accessibility-and-internationalization/internationalization
+[internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative
