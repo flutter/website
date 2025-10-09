@@ -4,6 +4,8 @@ description: >
   Notifications only traverse ancestors that are notification listeners.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Notifications are more efficient by traversing only ancestors that

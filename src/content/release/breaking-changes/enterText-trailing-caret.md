@@ -5,6 +5,8 @@ description: >
   move the caret to the end of the input text.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `WidgetTester.enterText` and `TestTextInput.enterText` methods

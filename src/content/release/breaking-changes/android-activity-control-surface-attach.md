@@ -5,6 +5,8 @@ description: >
   ExclusiveAppComponent instead of Activity.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 :::note

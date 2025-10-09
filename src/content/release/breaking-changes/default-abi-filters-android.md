@@ -5,6 +5,8 @@ description: >-
   for Android builds, which might break custom abiFilters settings.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Starting in Flutter 3.35, the Flutter Gradle Plugin automatically sets

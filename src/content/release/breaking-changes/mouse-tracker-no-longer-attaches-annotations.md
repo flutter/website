@@ -6,6 +6,8 @@ description: >
   all three related methods are removed.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Removed `MouseTracker`'s methods `attachAnnotation`,

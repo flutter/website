@@ -6,6 +6,8 @@ description: >-
   `ThemeData`, the type of these properties have also changed accordingly.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to 

@@ -5,6 +5,8 @@ description: >
   inheritors that override buildTextSpan can access inherited widgets.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 A `BuildContext` parameter was added to `TextEditingController.buildTextSpan`.

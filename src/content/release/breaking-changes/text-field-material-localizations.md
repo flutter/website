@@ -5,6 +5,8 @@ description: >
   no MaterialLocalizations widget in the widget tree.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Instances of `TextField` must have a

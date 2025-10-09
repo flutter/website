@@ -6,6 +6,8 @@ description: >
   its unnecessary use of accentIconTheme.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Removed Flutter's `FloatingActionButton` (FAB) dependency on

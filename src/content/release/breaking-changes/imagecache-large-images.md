@@ -4,6 +4,8 @@ description: >
   Stop increasing the ImageCache maxByteSize to accommodate large images.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `maxByteSize` of the `ImageCache` is no longer

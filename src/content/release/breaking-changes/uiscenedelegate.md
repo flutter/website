@@ -4,6 +4,8 @@ description: >
   A guide for Flutter iOS developers to adopt Apple's UISceneDelegate protocol.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 :::note
 This is an upcoming breaking change that has not yet been finalized or
 implemented. The current details are provisional and might be altered. Further

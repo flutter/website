@@ -7,6 +7,8 @@ description: >-
   support the newly added colors.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 New color roles in `ColorScheme` include

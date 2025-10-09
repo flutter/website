@@ -3,6 +3,8 @@ title: Migrate a Windows project to set version information
 description: How to update a Windows project to set version information
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 Flutter 3.3 added support for setting the Windows app's version from
 the `pubspec.yaml` file or through the `--build-name` and `--build-number`
 build arguments. For more information, refer to the

@@ -4,6 +4,8 @@ description: >
   The default properties for text selection are migrating to TextSelectionTheme.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `ThemeData` properties that controlled the look of

@@ -5,6 +5,8 @@ description: >
   background when the checkbox is unselected.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `Checkbox.fillColor` is now applied to the checkbox's background when

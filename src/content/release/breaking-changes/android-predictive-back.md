@@ -6,6 +6,8 @@ description: >-
   support Android 14's Predictive Back feature.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 To support Android 14's Predictive Back feature,

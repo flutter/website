@@ -4,6 +4,8 @@ description: >
   LayoutBuilder and SliverLayoutBuilder call the builder function less often.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 This guide explains how to migrate Flutter applications after

@@ -4,6 +4,8 @@ description: >-
   Changes to support wide gamut color and migration instructions.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The API for the [`Color`][] class in `dart:ui` is changing to

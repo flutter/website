@@ -3,6 +3,8 @@ title: AndroidX migration
 description: How to migrate existing Flutter projects to AndroidX.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 :::note
 You might be directed to this page if Flutter detects
 that your project doesn't use AndroidX.

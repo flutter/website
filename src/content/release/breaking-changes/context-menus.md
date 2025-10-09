@@ -5,6 +5,8 @@ description: >
   now been replaced by a generic widget builder.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Context menus, or text selection toolbars, are the menus that show up when long

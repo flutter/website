@@ -3,6 +3,8 @@ title: Reversing the dependency between the scheduler and services layer
 description: The services layer now depends on the scheduler layer.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The services layer now depends on the scheduler layer.

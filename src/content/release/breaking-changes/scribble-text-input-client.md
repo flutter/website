@@ -5,6 +5,8 @@ description: >
   to insert or remove text placeholders and show the toolbar.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Adds three methods, `showToolbar`, `insertTextPlaceholder`, and

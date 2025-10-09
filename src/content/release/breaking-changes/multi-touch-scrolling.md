@@ -5,6 +5,8 @@ description: >
   multitouch gestures.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `ScrollBehavior`s now allow or disallow scrolling speeds to be affected by the 

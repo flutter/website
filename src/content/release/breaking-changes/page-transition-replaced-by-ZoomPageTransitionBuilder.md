@@ -3,6 +3,8 @@ title: Page transitions replaced by ZoomPageTransitionsBuilder
 description: Using the latest page transition instead of the old one.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 In order to ensure that libraries follow the latest OEM behavior,

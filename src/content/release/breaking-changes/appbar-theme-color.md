@@ -5,6 +5,8 @@ description: >-
   deprecated in favor of backgroundColor for better API consistency.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `color` parameter in `AppBarTheme` and `AppBarThemeData` constructors

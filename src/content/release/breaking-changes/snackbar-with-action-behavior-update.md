@@ -5,6 +5,8 @@ description: >-
   manually dismissed by the user.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The default behavior of a [`SnackBar`][] with an action has changed. Previously, a

@@ -5,6 +5,8 @@ description: >
   correctly calculate its intrinsic size in certain situations.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 A new method named `computeDryLayout` was added to the `RenderBox` protocol.

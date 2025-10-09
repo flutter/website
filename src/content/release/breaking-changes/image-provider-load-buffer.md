@@ -5,6 +5,8 @@ description: >
   new loadBuffer API instead of the existing load API.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 * `ImageProvider` now has a method called `loadBuffer` that functions

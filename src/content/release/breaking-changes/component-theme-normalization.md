@@ -5,6 +5,8 @@ description: >-
   Flutter's convention for component themes in the Material library.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to 

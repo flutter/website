@@ -4,6 +4,8 @@ description: >-
   Removed elevation and thickness from semantics properties.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Both elevation and thickness semantics properties and their related APIs were removed.

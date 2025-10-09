@@ -3,6 +3,8 @@ title: Use maxLengthEnforcement instead of maxLengthEnforced
 description: Introducing the MaxLengthEnforcement enum.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 To control the behavior of `maxLength` in the

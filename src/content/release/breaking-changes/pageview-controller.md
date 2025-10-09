@@ -4,6 +4,8 @@ description: >-
   PageView.controller is now nullable.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 If a controller isn't provided in the constructor,

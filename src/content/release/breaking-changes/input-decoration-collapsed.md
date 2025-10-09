@@ -6,6 +6,8 @@ description: >
   replacement because they have no effect.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `InputDecoration.collapsed` invalid parameters `floatingLabelBehavior` and

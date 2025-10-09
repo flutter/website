@@ -5,6 +5,8 @@ description: >-
   affecting underdamped springs (damping ratio less than 1).
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The formula for `SpringDescription` changed to correct an earlier error,

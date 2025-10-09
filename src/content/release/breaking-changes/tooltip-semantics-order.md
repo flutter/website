@@ -5,6 +5,8 @@ description: >-
   Tooltip widget's child during accessibility traversal.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 During accessibility focus traversal, `Tooltip.message` is

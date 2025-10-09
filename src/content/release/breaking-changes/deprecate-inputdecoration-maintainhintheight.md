@@ -6,6 +6,8 @@ description: >-
   `InputDecoration.maintainHintSize`.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The [`InputDecoration.maintainHintHeight`][] parameter was deprecated

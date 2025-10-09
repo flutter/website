@@ -5,6 +5,8 @@ description: >-
   the onPopInvoked function signature.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Added a generic type to the [`PopScope`][] class and replaced

@@ -5,6 +5,8 @@ description: >-
   KitKat (API 19) to Lollipop (API 21).
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Flutter's minimum supported Android version is now Lollipop (API 21).

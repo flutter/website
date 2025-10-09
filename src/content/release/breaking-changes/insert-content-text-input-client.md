@@ -5,6 +5,8 @@ description: >
   Android virtual keyboards to insert rich content into Flutter TextFields. 
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Added an `insertContent` method to the `TextInputClient` interface to

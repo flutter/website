@@ -6,6 +6,8 @@ description: >-
   HardwareKeyboard.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 For some time now (years), Flutter has had two key event systems implemented.

@@ -5,6 +5,8 @@ description: >
   override `addAllowedPointer` to take a `PointerDownEvent`
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `OneSequenceGestureRecognizer.addAllowedPointer()` was changed to take a

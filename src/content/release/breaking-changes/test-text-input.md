@@ -3,6 +3,8 @@ title: TestTextInput state reset
 description: TestTextInput state is now reset between tests.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The state of a `TestTextInput` instance,

@@ -5,6 +5,8 @@ description: >
   multiple windows the window singleton has been deprecated.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 In preparation for supporting multiple views and multiple windows, the `window`

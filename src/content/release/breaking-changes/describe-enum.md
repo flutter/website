@@ -3,6 +3,8 @@ title: Migration guide for describeEnum and EnumProperty
 description: Learn about the removal of describeEnum and how to migrate.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The global method `describeEnum` has been deprecated. Previous uses

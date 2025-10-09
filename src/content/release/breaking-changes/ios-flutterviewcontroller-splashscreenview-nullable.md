@@ -4,6 +4,8 @@ description: >
   FlutterViewController splashScreenView changed from nonnull to nullable.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `FlutterViewController` property `splashScreenView` has

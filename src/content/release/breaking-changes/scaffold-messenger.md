@@ -4,6 +4,8 @@ description: >
   SnackBars are now managed by the ScaffoldMessenger, and persist across routes.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The `SnackBar` API within the `Scaffold` is now handled by the

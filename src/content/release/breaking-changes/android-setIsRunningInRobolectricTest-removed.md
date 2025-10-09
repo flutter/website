@@ -5,6 +5,8 @@ description: >
     Android engine is consolidated into the FlutterInjector.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 If you write Java JUnit tests (such as Robolectric tests)

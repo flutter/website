@@ -5,6 +5,8 @@ description: >-
   the Flutter Material library.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The Material Design tokens updated the mapping of

@@ -5,6 +5,8 @@ description: >
   PointerDeviceKinds can drag Scrollables.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `ScrollBehavior`s now allow or disallow drag scrolling from specified

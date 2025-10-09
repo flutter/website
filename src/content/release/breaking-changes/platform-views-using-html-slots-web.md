@@ -8,6 +8,8 @@ description: >
   with video tags or forms potentially losing their state).
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 Flutter now renders all web platform views in a consistent location of the DOM,

@@ -5,6 +5,8 @@ description: >
   EditableTextState's BuildContext.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 `EditableText.focusNode` is now attached to

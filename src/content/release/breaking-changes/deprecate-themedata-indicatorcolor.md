@@ -6,6 +6,8 @@ description: >-
   `TabBarThemeData.indicatorColor`.
 ---
 
+{% render docs/docs/breaking-changes.md %}
+
 ## Summary
 
 The [`ThemeData.indicatorColor`][] parameter was deprecated in favor of
