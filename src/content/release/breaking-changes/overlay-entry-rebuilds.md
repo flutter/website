@@ -3,6 +3,8 @@ title: Rebuild optimization for OverlayEntries and Routes
 description: OverlayEntries only rebuild on explicit state changes.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 This optimization improves performance for route transitions,

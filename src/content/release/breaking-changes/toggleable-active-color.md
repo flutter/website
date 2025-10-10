@@ -5,6 +5,8 @@ description: >
   are migrated to use Material ColorScheme.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The Material widgets `Switch`, `SwitchListTile`, `Checkbox`,

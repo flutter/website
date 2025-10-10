@@ -5,6 +5,8 @@ description: >
   are deprecated in favor of collate.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `AnimationSheetBuilder.display` and `sheetSize`

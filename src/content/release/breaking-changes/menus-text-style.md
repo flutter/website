@@ -5,6 +5,8 @@ description: >-
   match the Material 3 specification.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The default text styles used for menus are updated

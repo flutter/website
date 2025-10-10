@@ -3,6 +3,8 @@ title: MouseTracker moved to rendering
 description: MouseTracker and related symbols moved to the rendering package.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 [`MouseTracker`][] and related symbols are moved from the

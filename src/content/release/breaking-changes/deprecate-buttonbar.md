@@ -5,6 +5,8 @@ description: >-
   a more efficient widget, OverflowBar.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `ButtonBar` widget was deprecated in favor of

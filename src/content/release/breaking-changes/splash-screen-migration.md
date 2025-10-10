@@ -3,6 +3,8 @@ title: Deprecated Splash Screen API Migration
 description: How to migrate from Manifest/Activity defined splash screen.
 ---
 
+{% render docs/breaking-changes.md %}
+
 Prior to Flutter 2.5, Flutter apps could add a splash
 screen by defining it within the metadata of their application manifest file
 (`AndroidManifest.xml`), by implementing [`provideSplashScreen`][] within

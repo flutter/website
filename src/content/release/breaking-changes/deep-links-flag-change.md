@@ -5,6 +5,8 @@ description: >-
   set Flutter's deep linking flag to false.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 **This breaking change only affects mobile apps that

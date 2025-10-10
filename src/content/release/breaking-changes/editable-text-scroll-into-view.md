@@ -5,6 +5,8 @@ description: >
   use the current selection extent.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `Editable.onCaretChanged` callback is removed. With this change,

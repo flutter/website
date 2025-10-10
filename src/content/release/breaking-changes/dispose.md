@@ -4,6 +4,8 @@ description: >
   'dispose()' might fail because of double disposal.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Missing calls to 'dispose()' are added for some disposable objects.

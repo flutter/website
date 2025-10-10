@@ -5,6 +5,8 @@ description: >
   favor of label (a String). 
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `BottomNavigationBarItem.title` gives a deprecation warning,

@@ -5,6 +5,8 @@ description: >-
   be considered for application lifecycle events.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 When you add any external windows to your Flutter app,

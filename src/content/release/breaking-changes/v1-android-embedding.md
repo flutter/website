@@ -4,6 +4,8 @@ description: >-
   Learn how to account for the removal of the Android v1 embedding APIs.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Android's v1 embedding has been removed in Flutter 3.29.0.

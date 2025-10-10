@@ -6,6 +6,8 @@ description: >-
   `DialogThemeData.backgroundColor`.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The [`ThemeData.dialogBackgroundColor`][] parameter was deprecated in favor of

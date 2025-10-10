@@ -6,6 +6,8 @@ description: >-
   references to it must also be updated.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `flutter` tool will no longer

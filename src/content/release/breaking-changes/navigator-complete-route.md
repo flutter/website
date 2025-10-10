@@ -5,6 +5,8 @@ description: >
   results could never complete if the route was removed instead of popped.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 When routes are pushed, developers can await them to be notified when they are

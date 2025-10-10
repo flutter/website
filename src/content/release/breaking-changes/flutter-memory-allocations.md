@@ -4,6 +4,8 @@ description: >-
   MemoryAllocations is renamed to FlutterMemoryAllocations.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Disposables in pure Dart projects can't use `MemoryAllocations` in Flutter. 

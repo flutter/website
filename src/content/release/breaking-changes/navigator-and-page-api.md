@@ -4,6 +4,8 @@ description: >-
   Replace Navigator's 'onPopPage' property with the 'onDidRemovePage' property.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The [`Navigator`][] page APIs are refactored so that

@@ -3,6 +3,8 @@ title: Migration guide for ignoringSemantics in IgnorePointer and related classe
 description: Removal of ignoringSemantics in IgnorePointer and related classes.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `IgnoringPointer` widget allows you to designate an area of the UI

@@ -5,6 +5,8 @@ description: >-
   canRequestFocus parameter of its FocusNode.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `TextField.canRequestFocus` is deprecated.

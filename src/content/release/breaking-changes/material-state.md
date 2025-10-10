@@ -6,6 +6,8 @@ description: >-
   WidgetState.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `MaterialState`, and its related APIs, have been moved out

@@ -5,6 +5,8 @@ description: >-
   select one based on the rendering context.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `ui.ImageFilter.blur`'s default tile mode is

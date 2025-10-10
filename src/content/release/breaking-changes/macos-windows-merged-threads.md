@@ -4,6 +4,8 @@ description: >-
   Learn about threading changes on macOS and Windows in Flutter 3.35.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Flutter 3.35 merges the UI and platform threads by default on macOS and Windows.

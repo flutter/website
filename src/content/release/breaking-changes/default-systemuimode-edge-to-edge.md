@@ -5,11 +5,13 @@ description: >-
     in to edge-to-edge mode.
 ---
 
+{% render docs/breaking-changes.md %}
+
 :::note
 You might have found this page because you see a warning in the Google Play
 Console concerning "Edge-to-edge may not display for all users" or "Your app
-uses deprecated APIs or parameters for edge-to-edge". These warnings **will
-not** impact users.
+uses deprecated APIs or parameters for edge-to-edge".
+These warnings **will not** impact users.
 
 This warning references deprecated code used in the Flutter engine to implement
 edge-to-edge mode. The engine relies on this deprecated code to avoid breaking

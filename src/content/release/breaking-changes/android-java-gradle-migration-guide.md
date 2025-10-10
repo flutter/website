@@ -5,6 +5,8 @@ description: >
   a run or build error from Gradle.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 If you've recently upgraded Android Studio to the Flamingo

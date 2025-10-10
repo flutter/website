@@ -4,6 +4,8 @@ description: >-
   Learn how to migrate your Flutter app's UI from Material 2 to Material 3.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The Material library has been updated to match the Material 3 Design spec.

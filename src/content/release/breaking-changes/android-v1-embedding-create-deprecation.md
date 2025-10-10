@@ -3,6 +3,8 @@ title: Android v1 embedding app and plugin creation deprecation
 description: Gradual deprecation of the Android v1 embedding.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `flutter create` templates for apps and plugins

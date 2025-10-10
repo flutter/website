@@ -5,15 +5,18 @@ description: >
   completion in Android Studio.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
-A change to enable the developer to edit Kotlin and Dart files with syntax highlighting and auto
-completion in Android Studio.
+A change to enable the developer to edit Kotlin and Dart files
+with syntax highlighting and auto completion in Android Studio.
 
 ## Context
 
-In order to detect Flutter and Gradle modules in the same IDE instance, the Gradle settings need to be
-moved so that the IDE can see both project types at once.
+In order to detect Flutter and Gradle modules in the same IDE instance,
+the Gradle settings need to be moved so that the IDE can see both
+project types at once.
 
 ## Migration guide
 

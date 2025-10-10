@@ -5,6 +5,8 @@ description: >-
   new, declarative format.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 To build a Flutter app for Android, Flutter's Gradle plugins must be applied.

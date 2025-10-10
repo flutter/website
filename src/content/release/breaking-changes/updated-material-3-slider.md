@@ -5,6 +5,8 @@ description: >-
   Material 3 Design specifications.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `Slider` has been updated to match the Material 3 Design specifications.

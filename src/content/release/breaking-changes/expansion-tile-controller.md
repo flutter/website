@@ -5,6 +5,8 @@ description: >
   `ExpansibleController`.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `ExpansionTileController` is deprecated. The same functionality can be

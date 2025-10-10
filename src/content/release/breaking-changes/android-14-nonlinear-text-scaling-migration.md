@@ -5,6 +5,8 @@ description: >-
   enabled in Flutter after v3.14.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Android 14 introduced nonlinear font scaling up to 200%.

@@ -5,6 +5,8 @@ description: >-
   align with wide gamut Color API.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Certain properties and methods in [`CupertinoDynamicColor`][] were deprecated

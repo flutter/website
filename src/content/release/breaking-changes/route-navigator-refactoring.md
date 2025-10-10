@@ -5,6 +5,8 @@ description: >
   Route and Navigator classes have changed.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `Route` class no longer manages its overlay entries in overlay,

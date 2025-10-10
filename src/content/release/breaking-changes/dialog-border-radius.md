@@ -3,6 +3,8 @@ title: Dialogs' Default BorderRadius
 description: The default BorderRadius of Dialog widgets is changing.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Instances of `Dialog`, as well as

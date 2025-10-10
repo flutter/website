@@ -4,6 +4,8 @@ description: >-
    The ThemeData.useMaterial3 flag is now set to true by default.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The Material library has been updated to match

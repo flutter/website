@@ -3,6 +3,8 @@ title: Customizing tabs alignment using the new TabBar.tabAlignment property
 description: Introducing the TabBar.tabAlignment property.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Using `TabBar.tabAlignment` to customize the alignment of tabs in a `TabBar`.

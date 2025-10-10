@@ -5,6 +5,8 @@ description: >-
   for its child when maintainState is enabled.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 This change was introduced to fix an issue
 where an `IndexedStack`s hidden children would be focusable with keyboard events

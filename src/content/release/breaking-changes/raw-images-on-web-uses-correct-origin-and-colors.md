@@ -5,6 +5,8 @@ description: >
   uses the correct pixel format and starts from the top left corner.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 How raw images are rendered on Web has been corrected

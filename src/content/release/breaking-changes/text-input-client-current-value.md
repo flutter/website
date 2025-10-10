@@ -5,6 +5,8 @@ description: >
   get the current TextEditingValue from a client.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Add a field, `currentTextEditingValue`, to the `TextInputClient`

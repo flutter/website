@@ -5,6 +5,8 @@ description: >
   that is only available after the layout.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Instances of `RenderEditable` must be laid out before processing hit

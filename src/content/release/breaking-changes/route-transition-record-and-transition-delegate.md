@@ -4,6 +4,8 @@ description: >
   Changes to the rule on how transition delegate resolve route transition.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 A new boolean getter `isWaitingForExitingDecision` was added

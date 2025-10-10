@@ -4,6 +4,8 @@ description: >
   The `focusable` parameter has been replaced by `isFocused`.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`

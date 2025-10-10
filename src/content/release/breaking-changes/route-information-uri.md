@@ -3,6 +3,8 @@ title: Migration guide for `RouteInformation.location`
 description: Deprecation of `RouteInformation.location` and its related APIs.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `RouteInformation.location` and related APIs were deprecated

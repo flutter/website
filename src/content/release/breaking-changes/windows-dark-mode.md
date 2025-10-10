@@ -3,6 +3,8 @@ title: Migrate a Windows project to support dark title bars
 description: How to update a Windows project to support dark title bars
 ---
 
+{% render docs/breaking-changes.md %}
+
 Projects created before Flutter 3.7 have light title bars even
 when the Windows theme is dark mode. Projects created before
 Flutter 3.7 need to be migrated to support dark title bars.

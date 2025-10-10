@@ -5,6 +5,8 @@ description: >
    moved from package:flutter to package:flutter_test
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The following methods have been replaced by APIs

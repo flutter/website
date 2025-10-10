@@ -6,6 +6,8 @@ description: >-
   Material library.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 `AppBarTheme`, `BottomAppBarTheme` and `InputDecorationTheme` were refactored

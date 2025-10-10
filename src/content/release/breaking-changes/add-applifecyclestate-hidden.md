@@ -3,6 +3,8 @@ title: Migration guide for adding AppLifecycleState.hidden
 description: AppLifecycleState had an additional hidden state added.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 A new `hidden` state was added to the [`AppLifecycleState`][] enum to denote

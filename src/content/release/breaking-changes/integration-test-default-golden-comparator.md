@@ -6,6 +6,8 @@ description: >-
   has changed, and correctly uses the host filesystem.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 Unless a user-defined [`goldenFileComparator`][] is set, either manually in a

@@ -5,6 +5,8 @@ description: >
   vertical `ScrollView`s automatically on Desktop.
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 The `PrimaryScrollController` API has been updated to no longer automatically

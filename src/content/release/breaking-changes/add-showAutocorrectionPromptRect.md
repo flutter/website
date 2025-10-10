@@ -5,6 +5,8 @@ description: >
   was added to the TextInputClient interface
 ---
 
+{% render docs/breaking-changes.md %}
+
 ## Summary
 
 A new method,`void showAutocorrectionPromptRect(int start, int end)`,
