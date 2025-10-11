@@ -1268,8 +1268,8 @@ see [Announcing Flutter 1.20][].
 * New instructions for installing Flutter on Linux using snapd.
 * Updated the [Desktop support][] page to reflect that Linux
   desktop apps (as well as macOS) are available as alpha.
-* Several new Flutter books have been published. The
-  [Flutter books][] page is updated.
+* Several new Flutter books have been published.
+  The Flutter books page has been updated with them.
 * The [codelabs landing][] page has been updated.
 
 A deep dive into null safety has been added to dart.dev:
@@ -1330,7 +1330,6 @@ publication since the last stable release:
 [Enums with Extensions in Dart]: {{site.flutter-medium}}/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.flutter-medium}}/flutter-and-desktop-3a0dd0f8353e
 [Flutter architectural overview]: /resources/architectural-overview
-[Flutter books]: /resources/books
 [Flutter codelabs]: /reference/learning-resources
 [Flutter Day]: https://events.withgoogle.com/flutter-day/
 [Flutter Package Ecosystem Update]: {{site.flutter-medium}}/flutter-package-ecosystem-update-d50645f2d7bc

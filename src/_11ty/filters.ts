@@ -1,5 +1,4 @@
 import { getPageInfo } from './utils/get-page-info.js';
-import { slugify } from "./utils/slugify.js";
 import { fromHtml } from 'hast-util-from-html';
 import { selectAll } from 'hast-util-select';
 import { toText } from 'hast-util-to-text';
@@ -22,10 +21,8 @@ export function registerFilters(eleventyConfig: UserConfig): void {
   eleventyConfig.addFilter('toISOString', _toISOString);
   eleventyConfig.addFilter('toSimpleDate', _toSimpleDate);
   eleventyConfig.addFilter('activeNavForPage', _activeNavForPage);
-  eleventyConfig.addFilter('arrayToSentenceString', _arrayToSentenceString);
   eleventyConfig.addFilter('generateToc', _generateToc);
   eleventyConfig.addFilter('breadcrumbsForPage', _breadcrumbsForPage);
-  eleventyConfig.addFilter('slugify', slugify);
   eleventyConfig.addFilter('camelCaseBreaker', _camelCaseBreaker);
   eleventyConfig.addFilter('startsWith', _startsWith);
 }
@@ -158,29 +155,6 @@ function _activeNavForPage(pageUrlPath: string, activeNav: any) {
   }
 
   return activeEntries;
-}
-
-function _arrayToSentenceString(list: string[], joiner = 'and'): string {
-  if (!list || list.length === 0) {
-    return '';
-  }
-
-  if (list.length === 1) {
-    return list[0];
-  }
-
-  let result = '';
-
-  for (let i = 0; i < list.length; i++) {
-    const item = list[i];
-    if (i === list.length - 1) {
-      result += `${joiner} ${item}`;
-    } else {
-      result += `${item}, `;
-    }
-  }
-
-  return result;
 }
 
 function _generateToc(contents: string) {
