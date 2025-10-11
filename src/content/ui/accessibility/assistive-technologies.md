@@ -1,7 +1,9 @@
 ---
-title: Accessibility Technologies
-description: Information about accessibility
+title: Accessibility technologies
+description: >-
+  Information about accessibility technologies for Flutter developers.
 ---
+
 ## Summary
 
 Assistive technologies are essential for making digital content accessible to
