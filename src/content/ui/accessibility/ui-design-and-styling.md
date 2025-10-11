@@ -1,5 +1,5 @@
 ---
-title: UI Design & Styling
+title: UI design & styling
 description: Information on Flutter's accessibility support.
 ---
 
@@ -53,6 +53,7 @@ You can test contrast using Flutter's [Accessibility Guideline API][].
 For more details on testing, check out the [accessibility testing page](/ui/accessibility/accessibility-testing/).
 
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+
 ## Tap target size
 
 Controls that are too small are hard for many people to interact with and select.
@@ -72,7 +73,7 @@ For more details on testing, check out the [accessibility testing page](/ui/acce
 
 [Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
 
-## Other Accessibility features
+## Other accessibility features
 
 You can check the [AccessibilityFeatures] class for additional
 accessibility features that may be enabled by the platform,

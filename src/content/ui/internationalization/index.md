@@ -134,7 +134,7 @@ either left-to-right or right-to-left, for the widgets library.
 
 More information about these app properties, the types they
 depend on, and how internationalized Flutter apps are typically
-structured, is covered in this page.
+structured, is covered on this page.
 
 [language-count]: {{site.api}}/flutter/flutter_localizations/GlobalMaterialLocalizations-class.html
 
@@ -214,7 +214,7 @@ complete the following instructions:
    ```
 
 3. Add a new yaml file to the root directory of the Flutter project.
-   Name this file `l10n.yaml` and include following content:
+   Name this file `l10n.yaml` and include the following content:
 
    <?code-excerpt "gen_l10n_example/l10n.yaml"?>
    ```yaml
@@ -417,7 +417,7 @@ The `message0` plural might be "no people" or "zero people".
 The `messageFew` plural might be
 "several people", "some people", or "a few people". 
 The `messageMany` plural might
-be  "most people" or "many people", or "a crowd". 
+be "most people" or "many people", or "a crowd". 
 Only the more general `messageOther` field is required.
 The following example shows what options are available:
 
@@ -634,7 +634,7 @@ formatted with `DateFormat.yMd`:
 ```
 
 In an app where the locale is US English,
-the following expression would produce  "7/9/1959".
+the following expression would produce "7/9/1959".
 In a Russian locale, it would produce "9.07.1959".
 
 ```dart
