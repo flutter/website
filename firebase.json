@@ -558,6 +558,7 @@
       { "source": "/go/move-flutter-agnostic-types", "destination": "https://docs.google.com/document/d/1qQokfeExIx3E7X_2ogFfZ4U5viBQflwVSKtlazPjgOY/edit?usp=sharing&resourcekey=0-XFum7OfSG2Nkvvq8w5QxdA", "type": 301 },
       { "source": "/go/move-mouse-tracker-to-rendering", "destination": "https://docs.google.com/document/d/1dYNOTZ4kdq6ndNHopjUlrGlGBw3W-3jMbnoNJouIYtE/edit", "type": 301 },
       { "source": "/go/multi-view-embedder-apis", "destination": "https://docs.google.com/document/d/1kegGJ235y1778-vzyyv90MgSHmYQcROTupMuLtEDBq0/edit?usp=sharing", "type": 301 },
+      { "source": "/go/multi-view-on-android-ios", "destination": "https://docs.google.com/document/d/1B0YT06IRIv0mnxOkXbEgA6lG5LGuZTtI5H6l1XAkLVY/edit?usp=sharing", "type": 301 },
       { "source": "/go/multi-view-pipeline-and-rasterizer", "destination": "https://docs.google.com/document/d/1xoD02qOxt2OSe3eN1ARsBUUWNFawdrxC2JXUURx7218/edit?usp=sharing", "type": 301 },
       { "source": "/go/multi-view-sync-embedder-apis", "destination": "https://docs.google.com/document/d/14z-e-x6M3P53ZMD6qBh4UaJ3nJdG_VdMNqGKERv31hw/edit?usp=sharing", "type": 301 },
       { "source": "/go/multi-view-sync-over-async", "destination": "https://docs.google.com/document/d/14z-e-x6M3P53ZMD6qBh4UaJ3nJdG_VdMNqGKERv31hw/edit?usp=sharing", "type": 301 },
