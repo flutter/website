@@ -1,9 +1,10 @@
 ---
-title: Web Accessibility
+title: Web accessibility
 description: Information about web accessibility
 ---
 
 ## Background
+
 Flutter supports web accessibility by translating its internal
 Semantics tree into an accessible HTML DOM structure that
 screen readers can understand.
@@ -25,6 +26,7 @@ information for the widgets.
 
 An alternative approach is to turn on accessibility mode
 by adding the following code when running an app.
+
 ```dart
 import 'package:flutter/semantics.dart';
 
@@ -119,6 +121,4 @@ class MyCustomListWidget extends StatelessWidget {
     );
   }
 }
-
 ```
-

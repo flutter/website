@@ -427,7 +427,7 @@
   children:
     - title: Introduction
       permalink: /ui/accessibility
-    - title: UI Design & Styling
+    - title: UI design & styling
       permalink: /ui/accessibility/ui-design-and-styling
     - title: Assistive technologies
       permalink: /ui/accessibility/assistive-technologies
