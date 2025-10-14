@@ -2,6 +2,7 @@
 title: Layout
 description: Learn about common layout widgets in Flutter.
 permalink: /tutorial/layout/
+sitemap: false
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}

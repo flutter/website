@@ -4,7 +4,7 @@ shortTitle: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
 ---
 
-{% render docs/china-notice.md %}
+{% render "docs/china-notice.md" %}
 
 ## Overview
 
@@ -23,7 +23,7 @@ following [channels][]:
 *   **Beta channel**: This channel is the most recent version of Flutter that is
     available, but it is not yet stable. The beta branch is usually released
     on the first Wednesday of the month. A fix will typically end up in the
-    beta channel about two weeks after it lands in the main channel. 
+    beta channel about two weeks after it lands in the main channel.
     Releases are distributed as [installation bundles][].
 
 *   **Main channel**: This channel has the newest features, but it hasn't been fully
@@ -55,52 +55,52 @@ SDK archive:
 
 ## Stable channel
 
-{% tabs "os-archive-tabs" %}
+<Tabs key="os-archive-tabs">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
-{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
+{% render "docs/release/archive-release.md", os: "Windows", channel: "stable" %}
 
-{% endtab %}
+</Tab>
 
-{% tab "macOS" %}
+<Tab name="macOS">
 
-{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
+{% render "docs/release/archive-release.md", os: "macOS", channel: "stable" %}
 
-{% endtab %}
+</Tab>
 
-{% tab "Linux" %}
+<Tab name="Linux">
 
-{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
+{% render "docs/release/archive-release.md", os: "Linux", channel: "stable" %}
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 ## Beta channel
 
-{% tabs "os-archive-tabs" %}
+<Tabs key="os-archive-tabs">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
-{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
+{% render "docs/release/archive-release.md", os: "Windows", channel: "beta" %}
 
-{% endtab %}
+</Tab>
 
-{% tab "macOS" %}
+<Tab name="macOS">
 
-{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
+{% render "docs/release/archive-release.md", os: "macOS", channel: "beta" %}
 
-{% endtab %}
+</Tab>
 
-{% tab "Linux" %}
+<Tab name="Linux">
 
-{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
+{% render "docs/release/archive-release.md", os: "Linux", channel: "beta" %}
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 <a id="master-channel" aria-hidden="true"></a>

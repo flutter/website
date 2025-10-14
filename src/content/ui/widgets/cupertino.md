@@ -8,4 +8,4 @@ description: >
 
 {{< youtube D0xwcz2IqAY >}}
 
-{% render docs/catalog-page.md, categoryName:"Cupertino", catalog:catalog %}
+{% render "docs/catalog-page.md", categoryName:"Cupertino", catalog:catalog %}

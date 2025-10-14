@@ -33,7 +33,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-{% ytEmbed 'Y9WifT8aN6o', 'Packages versus plugins | Decoding Flutter' %}
+<YouTubeEmbed id="Y9WifT8aN6o" title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
 :::
 
 Existing packages enable many use cases—for example,

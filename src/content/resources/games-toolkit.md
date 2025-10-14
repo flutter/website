@@ -2,6 +2,7 @@
 title: Casual Games Toolkit
 description: >-
   Learn about free & open source multiplatform 2D game development in Flutter.
+showBreadcrumbs: false
 ---
 
 The Flutter Casual Games Toolkit pulls together new and existing resources

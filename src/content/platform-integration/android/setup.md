@@ -154,8 +154,8 @@ install and set up the latest stable version of [Android Studio][].
 You can debug Flutter apps on physical Android devices or
 by running them on an Android emulator.
 
-{% tabs "android-emulator-or-not" %}
-{% tab "Android emulator" %}
+<Tabs key="android-emulator-or-not">
+<Tab name="Android emulator">
 
 To set up your development environment to
 run a Flutter app on an Android emulator, follow these steps:
@@ -235,8 +235,8 @@ run a Flutter app on an Android emulator, follow these steps:
 [hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
 [Create and manage virtual devices]: {{site.android-dev}}/studio/run/managing-avds
 
-{% endtab %}
-{% tab "Physical device" %}
+</Tab>
+<Tab name="Physical device">
 
 To set up your development environment to
 run a Flutter app on a physical Android device, follow these steps:
@@ -282,8 +282,8 @@ run a Flutter app on a physical Android device, follow these steps:
 [Connect to your device using Wi-Fi]: {{site.android-dev}}/studio/run/device#wireless
 [Install OEM USB drivers]: {{site.android-dev}}/studio/run/oem-usb
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## Validate your setup {: #validate-setup}
 

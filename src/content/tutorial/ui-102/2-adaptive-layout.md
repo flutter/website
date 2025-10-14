@@ -1,7 +1,8 @@
 ---
-title: LayoutBuilder and adaptive layours
+title: LayoutBuilder and adaptive layouts
 description: Learn how to use the LayoutBuilder widget
 permalink: /tutorial/adaptive-layouts/
+sitemap: false
 ---
 
 Modern apps need to work well on screens of all sizes. On this page,

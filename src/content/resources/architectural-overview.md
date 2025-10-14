@@ -3,6 +3,7 @@ title: Flutter architectural overview
 description: >
   A high-level overview of the architecture of Flutter,
   including the core principles and concepts that form its design.
+showBreadcrumbs: false
 ---
 
 <?code-excerpt path-base="resources/architectural_overview/"?>

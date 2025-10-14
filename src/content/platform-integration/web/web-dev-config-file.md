@@ -1,6 +1,6 @@
 ---
 title: Set up a web development configuration file
-short-title: Web development configuration
+shortTitle: Web development configuration
 description: >-
   Centralize web development settings including a development proxy
 ---

@@ -283,25 +283,25 @@ Adding Flutter to your `PATH` allows you to use the
 
 <div class="windows-only">
 
-{% render docs/install/path/windows.md %}
+{% render "docs/install/path/windows.md" %}
 
 </div>
 
 <div class="macos-only">
 
-{% render docs/install/path/macos.md %}
+{% render "docs/install/path/macos.md" %}
 
 </div>
 
 <div class="linux-only">
 
-{% render docs/install/path/linux.md %}
+{% render "docs/install/path/linux.md" %}
 
 </div>
 
 <div class="chromeos-only">
 
-{% render docs/install/path/chromeos.md %}
+{% render "docs/install/path/chromeos.md" %}
 
 </div>
 

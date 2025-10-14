@@ -64,32 +64,32 @@ help you quickly get started with Flutter widgets.
 <div class="card-grid wide">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'D0xwcz2IqAY', 'CupertinoRadio - Flutter widget of the week', true %}
+      <YouTubeEmbed id="D0xwcz2IqAY" title="CupertinoRadio - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '5H-WvH5O29I', 'CupertinoSheetRoute - Flutter widget of the week', true %}
+      <YouTubeEmbed id="5H-WvH5O29I" title="CupertinoSheetRoute - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'esnBf6V4C34', 'CupertinoSlidingSegmentedControl - Flutter widget of the week', true %}
+      <YouTubeEmbed id="esnBf6V4C34" title="CupertinoSlidingSegmentedControl - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'ua54JU7k1Us', 'CupertinoCheckbox - Flutter widget of the week', true %}
+      <YouTubeEmbed id="ua54JU7k1Us" title="CupertinoCheckbox - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed '24tg_N4sdMQ', 'CupertinoSwitch - Flutter widget of the week', true %}
+      <YouTubeEmbed id="24tg_N4sdMQ" title="CupertinoSwitch - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'GQ8ajYVF0bo', 'CarouselView - Flutter widget of the week', true %}
+      <YouTubeEmbed id="GQ8ajYVF0bo" title="CarouselView - Flutter widget of the week"></YouTubeEmbed>
     </div>
   </div>
 </div>

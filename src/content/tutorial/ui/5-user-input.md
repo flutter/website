@@ -2,6 +2,7 @@
 title: User input
 description: Accept input from the user with buttons and text fields
 permalink: /tutorial/user-input/
+sitemap: false
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}

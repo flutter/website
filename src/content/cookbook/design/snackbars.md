@@ -61,7 +61,7 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 To learn more, watch this short Widget of the Week video on
 the `ScaffoldMessenger` widget:
 
-{% ytEmbed 'lytQi-slT5Y', 'ScaffoldMessenger | Flutter widget of the week' %}
+<YouTubeEmbed id="lytQi-slT5Y" title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## 3. Provide an optional action

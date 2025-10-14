@@ -6,8 +6,7 @@
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
-    pkgs.nodejs_22
-    pkgs.pnpm
+    pkgs.nodejs_24
   ];
 
   # Sets environment variables in the workspace
@@ -38,12 +37,11 @@
     workspace = {
       # Runs when a workspace is first created
       onCreate = {
-        pnpm-install = "pnpm install";
+        dart-pub-get = "dart pub get";
       };
       # Runs when the workspace is (re)started
       onStart = {
-        # Example: start a background task to watch and re-build backend code
-        # watch-backend = "npm run watch-backend";
+        dart-pub-get = "dart pub get";
       };
     };
   };

@@ -164,7 +164,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-{% ytEmbed 'oTvQDJOBXmM', 'Theme | Flutter widget of the week' %}
+<YouTubeEmbed id="oTvQDJOBXmM" title="Theme | Flutter widget of the week"></YouTubeEmbed>
 
 ## Try an interactive example
 

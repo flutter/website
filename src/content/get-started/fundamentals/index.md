@@ -26,7 +26,7 @@ how Flutter works.
 
 </div>
 <div class="centered-rows">
-  {% render docs/app-figure.md, image:"fwe/dash-search.png", alt:"Dash with magnifying glass", img-style: "max-height: 320px;"%}
+  {% render "docs/app-figure.md", image:"fwe/dash-search.png", alt:"Dash with magnifying glass", img-style: "max-height: 320px;"%}
 </div>
 </div>
 
@@ -77,7 +77,7 @@ following subjects in the listed order.
     functionality, such as how to retrieve
     or submit data using HTTP,
     how to convert to and from JSON,
-    how to use authentication, 
+    how to use authentication,
     how to implement asynchronicity, and more.
  7. [Local data and caching][]
     Learn about different techniques for caching

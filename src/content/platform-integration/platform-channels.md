@@ -90,8 +90,8 @@ automatically when you send and receive values.
 The following table shows how Dart values are received on the
 platform side and vice versa:
 
-{% tabs "platform-channel-language" %}
-{% tab "Kotlin" %}
+<Tabs key="platform-channel-language">
+<Tab name="Kotlin">
 
 | Dart              | Kotlin        |
 | ----------------- | ------------- |
@@ -111,8 +111,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 | Dart              | Java                  |
 | ----------------- | --------------------- |
@@ -132,8 +132,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Swift" %}
+</Tab>
+<Tab name="Swift">
 
 | Dart              | Swift                                     |
 | ----------------- | ----------------------------------------- |
@@ -153,8 +153,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "Obj-C" %}
+</Tab>
+<Tab name="Obj-C">
 
 | Dart              | Objective-C                                      |
 | ----------------- | ------------------------------------------------ |
@@ -174,8 +174,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "C++" %}
+</Tab>
+<Tab name="C++">
 
 | Dart               | C++                                                        |
 | ------------------ | ---------------------------------------------------------- |
@@ -195,8 +195,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% tab "C" %}
+</Tab>
+<Tab name="C">
 
 | Dart               | C (GObject)                 |
 | ------------------ | --------------------------- |
@@ -215,8 +215,8 @@ platform side and vice versa:
 
 {:.table .table-striped}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 [MessageCodec]: https://api.flutter.dev/flutter/services/MessageCodec-class.html
 
@@ -346,8 +346,8 @@ Widget build(BuildContext context) {
 
 ### Step 3: Add an Android platform-specific implementation
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -458,8 +458,8 @@ And replace with the following:
     }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 Start by opening the Android host portion of your Flutter app
 in Android Studio:
@@ -580,8 +580,8 @@ And replace with the following:
       );
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You should now be able to run the app on Android. If using the Android
 Emulator, set the battery level in the Extended Controls panel
@@ -589,8 +589,8 @@ accessible from the **...** button in the toolbar.
 
 ### Step 4: Add an iOS platform-specific implementation
 
-{% tabs "darwin-language" %}
-{% tab "Swift" %}
+<Tabs key="darwin-language">
+<Tab name="Swift">
 
 Start by opening the iOS host portion of your Flutter app in Xcode:
 
@@ -673,8 +673,8 @@ batteryChannel.setMethodCallHandler({
 })
 ```
 
-{% endtab %}
-{% tab "Objective-C" %}
+</Tab>
+<Tab name="Objective-C">
 
 Start by opening the iOS host portion of the Flutter app in Xcode:
 
@@ -762,8 +762,8 @@ __weak typeof(self) weakSelf = self;
 }];
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You should now be able to run the app on iOS.
 If using the iOS Simulator,
@@ -1235,9 +1235,9 @@ In order for a channel's platform side handler to
 execute on a background thread on an Android app, you must
 use the Task Queue API.
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Kotlin" %}
+<Tab name="Kotlin">
 
 ```kotlin
 override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
@@ -1251,9 +1251,9 @@ override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.Flu
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Java" %}
+<Tab name="Java">
 
 ```java
 @Override
@@ -1271,9 +1271,9 @@ public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Execute channel handlers on a background thread (iOS)
 
@@ -1281,9 +1281,9 @@ In order for a channel's platform side handler to
 execute on a background thread on an iOS app, you must use
 the Task Queue API.
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Swift" %}
+<Tab name="Swift">
 
 ```swift
 public static func register(with registrar: FlutterPluginRegistrar) {
@@ -1297,9 +1297,9 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Objective-C" %}
+<Tab name="Objective-C">
 
 ```objc
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
@@ -1315,9 +1315,9 @@ public static func register(with registrar: FlutterPluginRegistrar) {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Jump to the UI thread (Android) {: #jumping-to-the-ui-thread-in-android }
 
@@ -1329,9 +1329,9 @@ In Android, you can accomplish this by `post()`ing a
 which causes the `Runnable` to execute on the
 main thread at the next opportunity.
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Kotlin" %}
+<Tab name="Kotlin">
 
 ```kotlin
 Handler(Looper.getMainLooper()).post {
@@ -1339,9 +1339,9 @@ Handler(Looper.getMainLooper()).post {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Java" %}
+<Tab name="Java">
 
 ```java
 new Handler(Looper.getMainLooper()).post(new Runnable() {
@@ -1352,9 +1352,9 @@ new Handler(Looper.getMainLooper()).post(new Runnable() {
 });
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ### Jump to the main thread (iOS) {: #jumping-to-the-main-thread-in-ios }
 
@@ -1364,9 +1364,9 @@ iOS's main thread to execute a channel method.
 You can accomplish this in iOS by executing a
 [block][] on the main [dispatch queue][]:
 
-{% tabs "lang-tabs" %}
+<Tabs key="lang-tabs">
 
-{% tab "Objective-C" %}
+<Tab name="Objective-C">
 
 ```objc
 dispatch_async(dispatch_get_main_queue(), ^{
@@ -1374,9 +1374,9 @@ dispatch_async(dispatch_get_main_queue(), ^{
 });
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Swift" %}
+<Tab name="Swift">
 
 ```swift
 DispatchQueue.main.async {
@@ -1384,9 +1384,9 @@ DispatchQueue.main.async {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## Supplementals
 

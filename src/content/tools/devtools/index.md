@@ -1,5 +1,6 @@
 ---
 title: Flutter and Dart DevTools
+breadcrumb: DevTools
 description: How to use Flutter DevTools with Flutter.
 ---
 
@@ -15,7 +16,7 @@ same set of tools.
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:
 
-{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
+<YouTubeEmbed id="_EYk-E29edo" title="Dive in to Flutter and Dart DevTools"></YouTubeEmbed>
 
 ## What can I do with DevTools?
 

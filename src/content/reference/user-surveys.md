@@ -1,9 +1,12 @@
 ---
 title: User surveys
-description: Why users see a survey announcement, how the data is used, and how to disable.
+description: >-
+  Why users see a survey announcement, how the data is used, and how to disable.
+showBreadcrumbs: false
 ---
 
 ## Why do I see a survey announcement?
+
 If you have not opted-out of Flutter's 
 [analytics and crash reporting](/reference/crash-reporting), 
 you may receive a survey announcement in your IDE. 

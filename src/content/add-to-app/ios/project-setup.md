@@ -115,23 +115,23 @@ To use Flutter debugging features such as hot reload,
 consult [Debugging your add-to-app module][].
 :::
 
-{% tabs %}
-{% tab "Use CocoaPods" %}
+<Tabs key="darwin-deps">
+<Tab name="Use CocoaPods">
 
-{% render docs/add-to-app/ios-project/embed-cocoapods.md %}
+{% render "docs/add-to-app/ios-project/embed-cocoapods.md" %}
 
-{% endtab %}
-{% tab "Use frameworks" %}
+</Tab>
+<Tab name="Use frameworks">
 
-{% render docs/add-to-app/ios-project/embed-frameworks.md %}
+{% render "docs/add-to-app/ios-project/embed-frameworks.md" %}
 
-{% endtab %}
-{% tab "Use frameworks and CocoaPods" %}
+</Tab>
+<Tab name="Use frameworks and CocoaPods">
 
-{% render docs/add-to-app/ios-project/embed-split.md %}
+{% render "docs/add-to-app/ios-project/embed-split.md" %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 
 ## Set local network privacy permissions
@@ -183,7 +183,7 @@ Adjust the names as needed depending on your app's build configurations.
 
    1. In the **Project Navigator**, click on `Info-Debug.plist`.
 
-   1. Select **File** > **Duplicate...**.  
+   1. Select **File** > **Duplicate...**.
       You can also press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd>.
 
    1. In the dialog box, set the **Save As:** field to
@@ -199,7 +199,7 @@ Adjust the names as needed depending on your app's build configurations.
    1. _(Optional)_ To set your desired customized permission dialog text,
       add the key **Privacy - Local Network Usage Description**.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/debug-plist.png", caption:"The `Info-Debug` property list with the **Bonjour Services** and **Privacy - Local Network Usage Description** keys added" %}
+      {% render "docs/md", image:"development/add-to-app/ios/project-setup/debug-plist.png", caption:"The `Info-Debug` property list with the **Bonjour Services** and **Privacy - Local Network Usage Description** keys added" %}
 
 1. Set the target to use different property lists for different build modes.
 
@@ -209,7 +209,7 @@ Adjust the names as needed depending on your app's build configurations.
 
    1. Click **All** and **Combined** sub-tabs.
 
-   1. In the Search box, type `plist`.  
+   1. In the Search box, type `plist`.
       This limits the settings to those that include property lists.
 
    1. Scroll through the list until you see **Packaging**.
@@ -219,12 +219,12 @@ Adjust the names as needed depending on your app's build configurations.
    1. Change the **Info.plist File** value
       from `path/to/Info.plist` to `path/to/Info-$(CONFIGURATION).plist`.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", caption:"Updating the `Info.plist` build setting to use build mode-specific property lists" %}
+      {% render "docs/md", image:"development/add-to-app/ios/project-setup/set-plist-build-setting.png", caption:"Updating the `Info.plist` build setting to use build mode-specific property lists" %}
 
       This resolves to the path **Info-Debug.plist** in **Debug** and
       **Info-Release.plist** in **Release**.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/plist-build-setting.png", caption:"The updated **Info.plist File** build setting displaying the configuration variations" %}
+      {% render "docs/md", image:"development/add-to-app/ios/project-setup/plist-build-setting.png", caption:"The updated **Info.plist File** build setting displaying the configuration variations" %}
 
 1. Remove the **Release** property list from the **Build Phases**.
 
@@ -238,7 +238,7 @@ Adjust the names as needed depending on your app's build configurations.
       click on it and then click the **-** (minus sign) under it
       to remove the property list from the resources list.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/copy-bundle.png", caption:"The **Copy Bundle** build phase displaying the **Info-Release.plist** setting. Remove this setting." %}
+      {% render "docs/md", image:"development/add-to-app/ios/project-setup/copy-bundle.png", caption:"The **Copy Bundle** build phase displaying the **Info-Release.plist** setting. Remove this setting." %}
 
 1. The first Flutter screen your Debug app loads prompts
    for local network permission.
@@ -280,7 +280,7 @@ exclude `arm64` from the simulator architectures in your host app.
 
 1. Type `arm64` in the **Debug > Any iOS Simulator SDK** dialog box.
 
-   {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/excluded-archs.png", caption:"Add `arm64` as an excluded architecture for your app" %}
+   {% render "docs/md", image:"development/add-to-app/ios/project-setup/excluded-archs.png", caption:"Add `arm64` as an excluded architecture for your app" %}
 
 1. Press <kbd>Esc</kbd> to close this dialog box.
 

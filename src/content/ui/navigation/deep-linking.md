@@ -33,7 +33,7 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 
 If you are a visual learner, check out the following video:
 
-{% ytEmbed 'KNAb2XL7k2g', 'Deep linking in Flutter' %}
+<YouTubeEmbed id="KNAb2XL7k2g" title="Deep linking in Flutter"></YouTubeEmbed>
 
 ## Get started
 

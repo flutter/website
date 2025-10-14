@@ -205,7 +205,7 @@ to reposition your child widgets however you want.
 To learn more, check out this short
 Widget of the Week video on the `Flow` widget:
 
-{% ytEmbed 'NG6pvXpnIso', 'Flow | Flutter widget of the week' %}
+<YouTubeEmbed id="NG6pvXpnIso" title="Flow | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 :::note

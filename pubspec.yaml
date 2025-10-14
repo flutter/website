@@ -5,4 +5,5 @@ environment:
   sdk: ^3.9.0
 
 workspace:
-  - tool/flutter_site
+  - site
+  - tool/dash_site

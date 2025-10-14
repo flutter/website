@@ -16,7 +16,7 @@ Flutter continues to support CocoaPods.
 Flutter's Swift Package Manager integration has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]. 
+   Flutter plugins can use the growing ecosystem of [Swift packages][].
 1. **Simplifies Flutter installation**.
    Xcode includes Swift Package Manager.
    You don't need to install Ruby and CocoaPods if your project uses
@@ -27,39 +27,39 @@ Flutter's Swift Package Manager integration has several benefits:
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% render docs/swift-package-manager/how-to-enable-disable.md, site: site %}
+{% render "docs/swift-package-manager/how-to-enable-disable.md", site: site %}
 
 ## How to add Swift Package Manager integration
 
 ### Add to a Flutter app
 
-{% tabs %}
-{% tab "iOS project" %}
+<Tabs key="darwin-platform">
+<Tab name="iOS project">
 
-{% render docs/swift-package-manager/migrate-ios-project.md, site: site %}
+{% render "docs/swift-package-manager/migrate-ios-project.md", site: site %}
 
-{% endtab %}
-{% tab "macOS project" %}
+</Tab>
+<Tab name="macOS project">
 
-{% render docs/swift-package-manager/migrate-macos-project.md, site: site %}
+{% render "docs/swift-package-manager/migrate-macos-project.md", site: site %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ### Add to a Flutter app _manually_
 
-{% tabs %}
-{% tab "iOS project" %}
+<Tabs key="darwin-platform">
+<Tab name="iOS project">
 
-{% render docs/swift-package-manager/migrate-ios-project-manually.md, site: site %}
+{% render "docs/swift-package-manager/migrate-ios-project-manually.md", site: site %}
 
-{% endtab %}
-{% tab "macOS project" %}
+</Tab>
+<Tab name="macOS project">
 
-{% render docs/swift-package-manager/migrate-macos-project-manually.md, site: site %}
+{% render "docs/swift-package-manager/migrate-macos-project-manually.md", site: site %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ### Add to an existing app (add-to-app)
 
@@ -112,7 +112,7 @@ To undo this migration:
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
    <span class="material-symbols" translate="no">remove</span>.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
 1. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
@@ -120,7 +120,7 @@ To undo this migration:
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
    <span class="material-symbols" translate="no">remove</span>.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
@@ -132,7 +132,7 @@ To undo this migration:
 
 1. Click **<span class="material-symbols" translate="no">delete</span>**.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png", caption:"The build pre-action to remove" %}
+   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png", caption:"The build pre-action to remove" %}
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
 
@@ -152,7 +152,7 @@ To use the plugin:
 
 1. Increase your app's target **Minimum Deployments**.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png", caption:"The target's **Minimum Deployments** setting" %}
+   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png", caption:"The target's **Minimum Deployments** setting" %}
 
 1. If you updated your iOS app's **Minimum Deployments**,
    regenerate the iOS project's configuration files:

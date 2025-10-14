@@ -7,7 +7,7 @@ os-list: [Windows, macOS, Linux, ChromeOS]
 {% assign flutter-sdk = 'flutter_opsys_3.13.0-stable.' %}
 {% capture sdk-path -%}flutter_infra_release/releases/stable/opsys/{{flutter-sdk}}{%- endcapture %}
 
-{% render docs/china-notice-cn.md %}
+{% render "docs/china-notice-cn.md" %}
 
 To speed the download and installation of Flutter in China,
 consider using a [mirror site][] or _mirror_.
@@ -34,17 +34,17 @@ _All examples that follow presume that you are using the CFUG mirror._
 
 To set your machine to use a mirror site:
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
 {% for os in os-list %}
-{% tab os %}
+<Tab name="{{os}}">
 
 {% include docs/community/china/os-settings.md ref-os=os sdk=flutter-sdk %}
 
-{% endtab %}
+</Tab>
 {% endfor -%}
 
-{% endtabs %}
+</Tabs>
 
 ### Download Flutter archives based on a mirror site
 
@@ -59,17 +59,17 @@ This should improve download speed.
 The following example shows how to change the URL for Flutter's download site
 from Google's archive to CFUG's mirror.
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
 {% for os in os-list %}
-{% tab os %}
+<Tab name="{{os}}">
 
 {% include docs/community/china/download-urls.md ref-os=os filepath=sdk-path %}
 
-{% endtab %}
+</Tab>
 {% endfor -%}
 
-{% endtabs %}
+</Tabs>
 
 :::note
 Not every mirror supports downloading artifacts using their direct URL.
@@ -86,17 +86,17 @@ From <https://github.com/flutter/website/pull/9338#discussion_r1328077020>
 
 To enable access to `pub.dev`:
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
 {% for os in os-list %}
-{% tab os %}
+<Tab name="{{os}}">
 
 {% include docs/community/china/pub-settings.md os=os filepath=path %}
 
-{% endtab %}
+</Tab>
 {% endfor -%}
 
-{% endtabs %}
+</Tabs>
 
 To learn more about publishing packages, check out the
 [Dart documentation on publishing packages][].
@@ -152,4 +152,3 @@ using the `{{mirror.mirror}}` mirror, report the issue to their
 If you're interested in setting up your own mirror,
 contact [flutter-dev@googlegroups.com](mailto:flutter-dev@googlegroups.com)
 for assistance.
-

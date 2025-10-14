@@ -27,7 +27,7 @@ overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 :::
 
-{% ytEmbed 'ngsxzZt5DoY', 'dart:convert (Technique of the Week)' %}
+<YouTubeEmbed id="ngsxzZt5DoY" title="dart:convert (Technique of the Week)"></YouTubeEmbed>
 
 ## Which JSON serialization method is right for me?
 
