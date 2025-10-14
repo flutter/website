@@ -174,6 +174,7 @@
       { "source": "/release/breaking-changes/win_lifecycle_process_function", "destination": "/release/breaking-changes/win-lifecycle-process-function", "type": 301 },
       { "source": "/release/archive", "destination": "/install/archive", "type": 301 },
       { "source": "/release/upgrade", "destination": "/install/upgrade", "type": 301 },
+      { "source": "/resources/books", "destination": "https://docs.flutter.dev/reference/learning-resources", "type": 301 },
       { "source": "/resources/compatibility", "destination": "/release/compatibility-policy", "type": 301 },
       { "source": "/resources/dart-swift-concurrency", "destination": "/get-started/flutter-for/dart-swift-concurrency", "type": 301 },
       { "source": "/resources/platform-adaptations", "destination": "/platform-integration/platform-adaptations", "type": 301 },
