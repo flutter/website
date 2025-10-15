@@ -90,10 +90,11 @@ List<CustomComponent> get _embeddableComponents => [
       final String videoId;
       final int startTime;
       if (rawVideoId.contains('?')) {
-        videoId = rawVideoId.split('?')[0];
+        final idAndStartTime = rawVideoId.split('?');
+        videoId = idAndStartTime[0];
 
-        final idAndStartTime = videoId.split('start=');
-        startTime = int.tryParse(idAndStartTime[1]) ?? 0;
+        final rawStartTime = idAndStartTime[1].split('start=')[1];
+        startTime = int.tryParse(rawStartTime) ?? 0;
       } else {
         startTime = 0;
         videoId = rawVideoId;
