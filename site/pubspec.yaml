@@ -20,8 +20,6 @@ dependencies:
   # Used for syntax highlighting.
   opal: ^0.0.1
   path: ^1.9.1
-  # Used in the SDK archive.
-  pub_semver: ^2.2.0
   universal_web: ^1.1.1
 
 dev_dependencies:
