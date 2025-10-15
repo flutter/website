@@ -34,8 +34,7 @@ MemoryPage get _devtoolsReleasesIndex => MemoryPage.builder(
       'latest': devToolsReleases.first,
       'releases': {
         for (final release in devToolsReleases)
-          release:
-              '/tools/devtools/release-notes/release-notes-$release-src.md',
+          release: '/tools/devtools/release-notes/release-notes-$release.md',
       },
     };
 
