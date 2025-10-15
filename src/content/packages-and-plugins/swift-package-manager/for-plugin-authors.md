@@ -87,12 +87,12 @@ To update your unit tests:
 
 1. Navigate to **Package Dependencies** for the project.
 
-   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png", caption:"The project's package dependencies" %}
+   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png", caption:"The project's package dependencies" %}
 
 1. Click the **+** button and add any test-only dependencies by searching for
    them in the top right search bar.
 
-   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/search-for-ocmock.png", caption:"Search for test-only dependencies" %}
+   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/search-for-ocmock.png", caption:"Search for test-only dependencies" %}
 
    :::note
    OCMock uses unsafe build flags and can only be used if targeted by commit.
@@ -102,7 +102,7 @@ To update your unit tests:
 
 1. Ensure the dependency is added to the `RunnerTests` Target.
 
-   {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png", caption:"Ensure the dependency is added to the `RunnerTests` target" %}
+   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png", caption:"Ensure the dependency is added to the `RunnerTests` target" %}
 
 1. Click the **Add Package** button.
 
@@ -114,13 +114,13 @@ To update your unit tests:
    1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
       build phase:
 
-      {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png", caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
+      {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png", caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
 
       If the build phase doesn't exist already, create one.
       Click the <span class="material-symbols" translate="no">add</span> and
       then click **New Link Binary With Libraries Phase**.
 
-      {% render "docs/md", image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png", caption:"Add `Link Binary With Libraries` Build Phase" %}
+      {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png", caption:"Add `Link Binary With Libraries` Build Phase" %}
 
    1. Navigate to **Package Dependencies** for the project.
 
