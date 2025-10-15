@@ -88,6 +88,8 @@ final class CodeBlockProcessor implements PageExtension {
             final rawShowLineNumbers = metadata['showLineNumbers'];
             if (rawShowLineNumbers != null) {
               initialLineNumber = int.tryParse(rawShowLineNumbers);
+            } else {
+              initialLineNumber = 1;
             }
           }
 
@@ -453,9 +455,9 @@ Set<int> _parseNumbersAndRanges(String? input) {
 /// Matches a key-value attribute pair, similar to HTML elements.
 ///
 /// Group 1: The attribute key.
-/// Group 2: The value if quoted.
-/// Group 3: The value if unquoted.
-final RegExp _attributeRegex = RegExp(r'(\w+)=(?:"([^"]*)"|(\S+))');
+/// Group 2: The value if quoted and present.
+/// Group 3: The value if unquoted and present.
+final RegExp _attributeRegex = RegExp(r'(\w+)(?:=(?:"([^"]*)"|(\S+)))?');
 
 Map<String, String?> _parseAttributes(String input) {
   final matches = _attributeRegex.allMatches(input);
