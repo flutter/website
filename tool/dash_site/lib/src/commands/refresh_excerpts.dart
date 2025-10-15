@@ -101,7 +101,7 @@ Future<int> _refreshExcerpts({
     return 1;
   } else if (failOnUpdate && updateResult.excerptsNeedingUpdates > 0) {
     stderr.writeln('Error: Some code excerpts needed to be updated!');
-    stderr.writeln('  Run `./dash_site refresh-excerpts` to update.');
+    stderr.writeln('  Run `dart run dash_site refresh-excerpts` to update.');
     return 1;
   }
 

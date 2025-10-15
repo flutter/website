@@ -23,7 +23,7 @@
       enable = true;
       previews = {
         web = {
-          command = ["./dash_site" "serve"];
+          command = ["dart" "run" "dash_site" "serve"];
           manager = "web";
           env = {
             # Environment variables to set for your server

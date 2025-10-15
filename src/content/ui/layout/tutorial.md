@@ -130,12 +130,12 @@ In this section, shell out the basic Flutter app code to start your app.
    <?code-excerpt "lib/main.dart (all)"?>
    ```dart
    import 'package:flutter/material.dart';
-
+   
    void main() => runApp(const MyApp());
-
+   
    class MyApp extends StatelessWidget {
      const MyApp({super.key});
-
+   
      @override
      Widget build(BuildContext context) {
        const String appTitle = 'Flutter layout demo';
