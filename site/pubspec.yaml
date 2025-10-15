@@ -8,14 +8,10 @@ environment:
 
 dependencies:
   collection: ^1.19.1
-  # Used for accessing the SDK archive storage buckets.
-  googleapis: ^15.0.0
   html: ^0.15.6
   http: ^1.4.0
-  # Used for formatting dates in the SDK archive.
-  intl: ^0.20.2
-  jaspr: ^0.21.3
-  jaspr_content: ^0.4.1
+  jaspr: ^0.21.5
+  jaspr_content: ^0.4.2
   # Used as our template engine.
   liquify: ^1.3.0
   markdown: ^7.3.0
@@ -36,7 +32,7 @@ dev_dependencies:
       ref: 88aa84df953e67b7595b1e214b717f26d81ed538
   build_runner: ^2.8.0
   build_web_compilers: ^4.2.4
-  jaspr_builder: ^0.21.3
+  jaspr_builder: ^0.21.5
   sass: ^1.93.2
   sass_builder: ^2.3.1
 
