@@ -78,7 +78,7 @@ final class CodeBlockProcessor implements PageExtension {
           final tag = metadata['tag'];
 
           final rawHighlightLines = metadata['highlightLines'];
-          final skipSyntaxHighlighting = metadata.containsKey('noHighlight');
+          final skipHighlighting = metadata.containsKey('noHighlight');
 
           var showLineNumbers = false;
           int? initialLineNumber;
@@ -91,11 +91,11 @@ final class CodeBlockProcessor implements PageExtension {
             }
           }
 
-          final codeLines = _removeHighlights(lines);
+          final codeLines = _removeHighlights(lines, skipHighlighting);
           final processedContent = _highlightCode(
             codeLines,
             language: language,
-            skipSyntaxHighlighting: skipSyntaxHighlighting,
+            skipSyntaxHighlighting: skipHighlighting,
           );
 
           return ComponentNode(
@@ -274,7 +274,16 @@ final class CodeBlockProcessor implements PageExtension {
         .toList(growable: false);
   }
 
-  List<_CodeLine> _removeHighlights(List<String> lines) {
+  List<_CodeLine> _removeHighlights(
+    List<String> lines, [
+    bool skipHighlighting = false,
+  ]) {
+    if (skipHighlighting) {
+      return lines
+          .map((line) => _CodeLine(content: line, highlights: const []))
+          .toList(growable: false);
+    }
+
     final lineHighlights = <int, List<({int startColumn, int length})>>{};
     ({int startLine, int startColumn})? currentHighlight;
 
