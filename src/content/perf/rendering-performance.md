@@ -3,7 +3,7 @@ title: Improving rendering performance
 description: How to measure and evaluate your app's rendering performance.
 ---
 
-{% render docs/performance.md %}
+{% render "docs/performance.md" %}
 
 Rendering animations in your app is one of the most cited
 topics of interest when it comes to measuring performance.

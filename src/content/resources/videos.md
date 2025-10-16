@@ -2,6 +2,7 @@
 title: Videos
 description: >
   Available videos on various aspects of developing in Flutter.
+showBreadcrumbs: false
 ---
 
 These Flutter videos, produced both internally
@@ -22,7 +23,7 @@ some in different languages.
 Even if you couldn't make it to Nairobi for the in-person
 event, you can enjoy the content created for Flutter Forward!
 
-{% ytEmbed 'zKQYGKAe5W8?start=2778', 'Flutter Forward 2023 Livestream' %}
+<YouTubeEmbed id="zKQYGKAe5W8?start=2778" title="Flutter Forward 2023 Livestream"></YouTubeEmbed>
 
 [Flutter Forward playlist][]
 
@@ -36,7 +37,7 @@ featuring new content and activities leading up to the event.
 This playlist contains these and other pre-event videos relating to
 Flutter Forward.
 
-{% ytEmbed 'hpgkrUPRBjc?start=6', 'Prepare for Flutter Forward 2023 - 17 days of Flutter' %}
+<YouTubeEmbed id="hpgkrUPRBjc?start=6" title="Prepare for Flutter Forward 2023 - 17 days of Flutter"></YouTubeEmbed>
 
 **17 Days of Flutter!**
 
@@ -61,7 +62,7 @@ learn alongside her as she asks important questions like:
 "What is the best way to build out a theme? How to approach using fonts?"
 And more!
 
-{% ytEmbed 'CkcvVZZEsJE', 'Building my first Flutter app | Learning to Fly' %}
+<YouTubeEmbed id="CkcvVZZEsJE" title="Building my first Flutter app | Learning to Fly"></YouTubeEmbed>
 
 [Learning to Fly playlist][]
 
@@ -82,7 +83,7 @@ and general advice on getting the most out of Flutter.
 In the comments section for this series,
 you can submit suggestions future episodes.
 
-{% ytEmbed 'QIW35-vcA2o', 'Introducing Decoding Flutter - Flutter best practices' %}
+<YouTubeEmbed id="QIW35-vcA2o" title="Introducing Decoding Flutter - Flutter best practices"></YouTubeEmbed>
 
 [Decoding Flutter playlist][]
 
@@ -93,7 +94,7 @@ you can submit suggestions future episodes.
 Do you have 60 seconds?
 Each one-minute video highlights a Flutter widget.
 
-{% ytEmbed 'b_sQ9bMltGU', 'Introducing Flutter widget of the week' %}
+<YouTubeEmbed id="b_sQ9bMltGU" title="Introducing Flutter widget of the week"></YouTubeEmbed>
 
 [Flutter widget of the week playlist][]
 
@@ -104,7 +105,7 @@ Each one-minute video highlights a Flutter widget.
 If you have another minute (or two),
 each of these videos highlights a Flutter package.
 
-{% ytEmbed 'QFcFEpFmNJ8', 'Introducing Flutter package of the week' %}
+<YouTubeEmbed id="QFcFEpFmNJ8" title="Introducing Flutter package of the week"></YouTubeEmbed>
 
 [Flutter package of the week playlist][]
 
@@ -116,7 +117,7 @@ This series features Flutter programmers coding,
 unscripted and in real time. Mistakes, solutions
 (some of them correct), and snazzy intro music included.
 
-{% ytEmbed 'vqPG1tU6-c0', 'Introducing The Boring Show - Flutter live coding' %}
+<YouTubeEmbed id="vqPG1tU6-c0" title="Introducing The Boring Show - Flutter live coding"></YouTubeEmbed>
 
 [The Boring Flutter show playlist][]
 
@@ -127,7 +128,7 @@ unscripted and in real time. Mistakes, solutions
 Google I/O 2022 is over, but you can still catch
 the great Flutter content!
 
-{% ytEmbed 'w_ezWG1yKQQ', 'What\'s new in Flutter at Google I/O 2022' %}
+<YouTubeEmbed id="w_ezWG1yKQQ" title="What's new in Flutter at Google I/O 2022"></YouTubeEmbed>
 
 [Flutter at Google I/O playlist][]
 
@@ -142,17 +143,17 @@ officially launched Flutter 2.
 
 Check out the Flutter Engage 2021 highlights reel.
 
-{% ytEmbed 'IdrCyS7EF8M', 'Top 10 highlights from Flutter Engage 2021' %}
+<YouTubeEmbed id="IdrCyS7EF8M" title="Top 10 highlights from Flutter Engage 2021"></YouTubeEmbed>
 
 Watch recordings of the sessions on the Flutter YouTube channel.
 
-{% ytEmbed 'zSbsIiluixw', 'Flutter Engage 2021 keynote' %}
+<YouTubeEmbed id="zSbsIiluixw" title="Flutter Engage 2021 keynote"></YouTubeEmbed>
 
 [Flutter Engage 2021 playlist][]
 
 Watch recordings of the sessions offered by the Flutter community.
 
-{% ytEmbed '-_de6IfY2RU', 'Choreographing transitions with Flutter\'s animation framework' %}
+<YouTubeEmbed id="-_de6IfY2RU" title="Choreographing transitions with Flutter's animation framework"></YouTubeEmbed>
 
 [Flutter Engage community talks playlist][]
 
@@ -163,7 +164,7 @@ Watch recordings of the sessions offered by the Flutter community.
 
 Five-to-ten minute tutorials (more or less) on using Flutter.
 
-{% ytEmbed 'wgTBLj7rMPM', 'Introducing Flutter in Focus - Flutter tutorials' %}
+<YouTubeEmbed id="wgTBLj7rMPM" title="Introducing Flutter in Focus - Flutter tutorials"></YouTubeEmbed>
 
 [Flutter in focus playlist][]
 
@@ -173,7 +174,7 @@ Five-to-ten minute tutorials (more or less) on using Flutter.
 
 Here are a some Flutter talks given at various conferences.
 
-{% ytEmbed 'd_m5csmrf7I', 'Pragmatic state management in Flutter' %}
+<YouTubeEmbed id="d_m5csmrf7I" title="Pragmatic state management in Flutter"></YouTubeEmbed>
 
 [Conference talks playlist][]
 
@@ -185,7 +186,7 @@ Videos showing how various customers, such as Abbey Road Studio, Hamilton,
 and Alibaba, have used Flutter to create beautiful compelling apps with
 millions of downloads.
 
-{% ytEmbed '_ACWeGGBP4E', 'Flutter developer stories' %}
+<YouTubeEmbed id="_ACWeGGBP4E" title="Flutter developer stories"></YouTubeEmbed>
 
 [Flutter developer stories playlist][]
 

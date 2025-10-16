@@ -2,7 +2,9 @@
 title: Flutter 3.13.0 release notes
 shortTitle: 3.13.0 release notes
 description: Release notes for Flutter 3.13.0.
+skipTemplateRendering: true
 ---
+
 This page has release notes for 3.13.0.
 For information about subsequent bug-fix releases,
 see our [CHANGELOG][].

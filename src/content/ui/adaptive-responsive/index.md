@@ -70,5 +70,5 @@ responsive design:
 You might also check out the Google I/O 2024 talk about
 this subject.
 
-{% ytEmbed 'LeKLGzpsz9I', 'How to build adaptive UI with Flutter' %}
+<YouTubeEmbed id="LeKLGzpsz9I" title="How to build adaptive UI with Flutter"></YouTubeEmbed>
 :::

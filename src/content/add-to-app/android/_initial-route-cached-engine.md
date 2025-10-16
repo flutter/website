@@ -12,8 +12,8 @@ with a custom initial route can configure their cached
 executing the Dart entrypoint. The following example
 demonstrates the use of an initial route with a cached engine:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -36,8 +36,8 @@ class MyApplication : Application() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
@@ -60,8 +60,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 By setting the initial route of the navigation channel, the associated
 `FlutterEngine` displays the desired route upon initial execution of the
@@ -73,4 +73,3 @@ Developers who would like to use the same `FlutterEngine`
 between different `Activity`s and `Fragment`s and switch
 the route between those displays need to set up a method channel and
 explicitly instruct their Dart code to change `Navigator` routes.
-

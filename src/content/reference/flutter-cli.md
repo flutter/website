@@ -1,6 +1,7 @@
 ---
 title: "flutter: The Flutter command-line tool"
 description: "The reference page for using 'flutter' in a terminal window."
+showBreadcrumbs: false
 ---
 
 The `flutter` command-line tool is how developers (or IDEs on behalf of

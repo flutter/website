@@ -20,7 +20,7 @@ consult the [CocoaPods getting started guide][].
 If watching a video helps you learn,
 this video covers adding Flutter to an iOS app:
 
-{% ytEmbed 'IIcrfrTshTs', 'Step by step on how to add Flutter to an existing iOS app' %}
+<YouTubeEmbed id="IIcrfrTshTs" title="Step by step on how to add Flutter to an existing iOS app"></YouTubeEmbed>
 
 #### Requirements {:#method-a-reqs}
 

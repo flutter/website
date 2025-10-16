@@ -2,6 +2,7 @@
 title: Create an app
 description: Instructions on how to create a new Flutter app.
 permalink: /tutorial/create-an-app/
+sitemap: false
 ---
 
 {%- comment %}

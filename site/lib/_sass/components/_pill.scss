@@ -1,0 +1,55 @@
+@use 'sass:color';
+
+.rrec-pill {
+  border-radius: 8px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+
+  // Grey by default
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
+
+  // Green
+  &.success {
+    background: color.scale(#f1fbf9, $lightness: -10%);
+    color: #155723;
+  }
+
+  // Blue
+  &.info {
+    $info-bg: #e7f8ff;
+    background: color.scale($info-bg, $lightness: -10%);
+    color: color.scale($info-bg, $lightness: -60%);
+  }
+}
+
+.pill-sm {
+  border-radius: 20px;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+  font-size: .8rem;
+
+
+  // Grey by default
+  background: var(--site-inset-borderColor);
+  color: var(--site-base-fgColor-lighter);
+
+  // TODO(parlough): Consider if these colors can be shared and if
+  // compatible with dark mode.
+
+  &.flutter-blue {
+    color: color.scale(#E7F8FF, $lightness: 10%);
+    background: #0468D7;
+  }
+
+  &.teal {
+    color: color.scale(#B8EDE1, $lightness: 10%);
+    background: #158477;
+  }
+
+  &.purple {
+    color: color.scale(#C6BAFA, $lightness: 10%);
+    background: #6200EE;
+  }
+}

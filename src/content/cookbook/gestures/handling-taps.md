@@ -17,7 +17,7 @@ to fundamental actions, such as tapping and dragging.
 To learn more, watch this short Widget of the Week video on
 the `GestureDetector` widget:
 
-{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector | Flutter widget of the week' %}
+<YouTubeEmbed id="WhVXkCFPmK4" title="GestureDetector | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 This recipe shows how to make a custom button that shows

@@ -2,6 +2,7 @@
 title: DevTools
 description: Learn to use the Dart DevTools when developing Flutter apps.
 permalink: /tutorial/devtools/
+sitemap: false
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
@@ -116,7 +117,7 @@ referred to as the "unbounded constraints" error.
 Watch the following video to get an understanding of how to spot and
 resolve this issue.
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 ## The property editor
 

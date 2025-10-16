@@ -154,9 +154,9 @@ displays the widget.
 <a id="material-apps" aria-hidden="true"></a>
 <a id="cupertino-apps" aria-hidden="true"></a>
 
-{% tabs "app-type-tabs", true %}
+<Tabs key="app-type-tabs" wrapped="true">
 
-{% tab "Standard apps" %}
+<Tab name="Standard apps">
 
 For a general app, you can add the `Container` widget to
 the app's `build()` method:
@@ -189,9 +189,9 @@ general app, you have to build them yourself. This app
 changes the background color to white and the text to
 dark grey to mimic a Material app.
 
-{% endtab %}
+</Tab>
 
-{% tab "Material apps" %}
+<Tab name="Material apps">
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
@@ -230,9 +230,9 @@ libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino apps" %}
+<Tab name="Cupertino apps">
 
 To create a `Cupertino` app,
 use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
@@ -293,9 +293,9 @@ You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`CupertinoColors`]: {{site.api}}/flutter/cupertino/CupertinoColors-class.html
 [`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
@@ -322,7 +322,7 @@ App source code:
 * [Non-Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
 </div>
-{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
+{% render "docs/app-figure.md", image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
 </div>
 <hr>
 
@@ -770,9 +770,9 @@ only Material apps can use the Material Components library.
 <a id="standard-widgets" aria-hidden="true"></a>
 <a id="materials-widgets" aria-hidden="true"></a>
 
-{% tabs "widget-types-tabs", true %}
+<Tabs key="widget-types-tabs" wrapped="true">
 
-{% tab "Standard widgets" %}
+<Tab name="Standard widgets">
 
 [`Container`](#container)
 : Adds padding, margins, borders,
@@ -787,9 +787,9 @@ only Material apps can use the Material Components library.
 [`Stack`](#stack)
 : Overlaps a widget on top of another.
 
-{% endtab %}
+</Tab>
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 [`Scaffold`][]
 : Provides a structured layout framework
@@ -807,9 +807,9 @@ only Material apps can use the Material Components library.
 : Organizes up to 3 lines of text,
   and optional leading and trailing icons, into a row.
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 [`CupertinoPageScaffold`][]
 : Provides the basic layout structure for an iOS-style page.
@@ -823,9 +823,9 @@ only Material apps can use the Material Components library.
 [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]
 : Creates the characteristic iOS bottom tab bar.
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
@@ -1315,9 +1315,9 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-{% ytEmbed 'wE7khGHVkYY', 'How to create stateless widgets' %}
+<YouTubeEmbed id="wE7khGHVkYY" title="How to create stateless widgets"></YouTubeEmbed>
 
-{% ytEmbed 'AqCMFXEmf3w', 'How and when stateful widgets are best used' %}
+<YouTubeEmbed id="AqCMFXEmf3w" title="How and when stateful widgets are best used"></YouTubeEmbed>
 
 [Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
@@ -1326,7 +1326,7 @@ explain `Stateless` and `Stateful` widgets.
 Each episode of the [Widget of the Week series][] focuses on a widget.
 Several of them include layout widgets.
 
-{% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week' %}
+<YouTubeEmbed id="b_sQ9bMltGU" title="Introducing widget of the week"></YouTubeEmbed>
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 

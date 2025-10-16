@@ -4,6 +4,7 @@ shortTitle: Create a new app
 description: >-
   Learn how to bootstrap a new Flutter application from
   your command-line, different editors, and even in the cloud.
+showBreadcrumbs: false
 ---
 
 This page provides step-by-step instructions on how to

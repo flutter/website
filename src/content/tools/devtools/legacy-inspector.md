@@ -80,7 +80,7 @@ Flutter layouts.
 For an overview of what you can do with this tool, see
 the Flutter Explorer video:
 
-{% ytEmbed 'Jakrc3Tn_y4', 'DevTools Layout Explorer' %}
+<YouTubeEmbed id="Jakrc3Tn_y4" title="DevTools Layout Explorer"></YouTubeEmbed>
 
 You might also find the following step-by-step article useful:
 

@@ -420,7 +420,7 @@ your custom controls.
 To learn more, watch this short Widget of the Week video on
 the `FocusableActionDetector` widget:
 
-{% ytEmbed 'R84AGg0lKs8', 'FocusableActionDetector - Flutter widget of the week' %}
+<YouTubeEmbed id="R84AGg0lKs8" title="FocusableActionDetector - Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## Controlling focus traversal

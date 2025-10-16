@@ -64,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-{% ytEmbed 'vl_AaCgudcY', 'Isolates and the event loop | Flutter in Focus' %}
+<YouTubeEmbed id="vl_AaCgudcY" title="Isolates and the event loop | Flutter in Focus"></YouTubeEmbed>
 
 ## Common use cases for isolates
 

@@ -28,8 +28,8 @@ architecture structures on Android and iOS but sharing
 the same content code, see the [platform_design code samples][].
 
 :::secondary
-Preliminary guides addressing case 2 
-are being added to the UI components section. 
+Preliminary guides addressing case 2
+are being added to the UI components section.
 You can request additional guides by commenting on [issue #8427][8427].
 :::
 
@@ -63,9 +63,9 @@ On **iOS**:
   transition and is typically used on fullscreen modal pages.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android.webp", img-style:"border-radius: 12px;", caption:"Android page transition", alt:"An animation of the bottom-up page transition on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios.webp", img-style:"border-radius: 22px;", caption:"iOS push transition", alt:"An animation of the end-start style push page transition on iOS" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-modal.webp", img-style:"border-radius: 22px;", caption:"iOS present transition", alt:"An animation of the bottom-up style present page transition on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-android.webp", img-style:"border-radius: 12px;", caption:"Android page transition", alt:"An animation of the bottom-up page transition on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-ios.webp", img-style:"border-radius: 22px;", caption:"iOS push transition", alt:"An animation of the end-start style push page transition on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-ios-modal.webp", img-style:"border-radius: 22px;", caption:"iOS present transition", alt:"An animation of the bottom-up style present page transition on iOS" %}
 </div>
 
 [`Navigator.push()`]: {{site.api}}/flutter/widgets/Navigator/push.html
@@ -86,8 +86,8 @@ subcomponent on the next or previous page's
 `CupertinoNavigationBar` or `CupertinoSliverNavigationBar`.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/android-zoom-animation.png", img-style:"border-radius: 12px;", caption:"Android", alt:"An animation of the page transition on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-nav-bar.webp", img-style:"border-radius: 22px;", caption:"iOS Nav Bar", alt:"An animation of the nav bar transitions during a page transition on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/android-zoom-animation.png", img-style:"border-radius: 12px;", caption:"Android", alt:"An animation of the page transition on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-ios-nav-bar.webp", img-style:"border-radius: 22px;", caption:"iOS Nav Bar", alt:"An animation of the nav bar transitions during a page transition on iOS" %}
 </div>
 
 [`ZoomPageTransitionsBuilder`]: {{site.api}}/flutter/material/ZoomPageTransitionsBuilder-class.html
@@ -104,8 +104,8 @@ On **iOS**,
 an edge swipe gesture can be used to pop the top route.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-android-back.webp", img-style:"border-radius: 12px;", caption:"Android back button", alt:"A page transition triggered by the Android back button" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/navigation-ios-back.webp", img-style:"border-radius: 22px;", caption:"iOS back swipe gesture", alt:"A page transition triggered by an iOS back swipe gesture" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-android-back.webp", img-style:"border-radius: 12px;", caption:"Android back button", alt:"A page transition triggered by the Android back button" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/navigation-ios-back.webp", img-style:"border-radius: 22px;", caption:"iOS back swipe gesture", alt:"A page transition triggered by an iOS back swipe gesture" %}
 </div>
 
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
@@ -126,9 +126,9 @@ Therefore iOS gains high speed more gradually but stops
 less abruptly and is more slippery at slow speeds.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-soft.webp", caption:"Soft fling comparison", alt:"A soft fling where the iOS scrollable slid longer at lower speed than Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-medium.webp", caption:"Medium fling comparison", alt:"A medium force fling where the Android scrollable reaches speed faster and stopped more abruptly after reaching a longer distance" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-strong.webp", caption:"Strong fling comparison", alt:"A strong fling where the Android scrollable reaches speed faster and covered significantly more distance" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-soft.webp", caption:"Soft fling comparison", alt:"A soft fling where the iOS scrollable slid longer at lower speed than Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-medium.webp", caption:"Medium fling comparison", alt:"A medium force fling where the Android scrollable reaches speed faster and stopped more abruptly after reaching a longer distance" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-strong.webp", caption:"Strong fling comparison", alt:"A strong fling where the Android scrollable reaches speed faster and covered significantly more distance" %}
 </div>
 
 ### Overscroll behavior
@@ -142,8 +142,8 @@ On **iOS**, scrolling past the edge of a scrollable
 [overscrolls][] with increasing resistance and snaps back.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-overscroll.webp", caption:"Dynamic overscroll comparison", alt:"Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-static-overscroll.webp", caption:"Static overscroll comparison", alt:"Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-overscroll.webp", caption:"Dynamic overscroll comparison", alt:"Android and iOS scrollables being flung past their edge and exhibiting platform specific overscroll behavior" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-static-overscroll.webp", caption:"Static overscroll comparison", alt:"Android and iOS scrollables being overscrolled from a resting position and exhibiting platform specific overscroll behavior" %}
 </div>
 
 [overscroll glow indicator]: {{site.api}}/flutter/widgets/GlowingOverscrollIndicator-class.html
@@ -157,7 +157,7 @@ and builds more speed with each successive fling.
 There is no equivalent behavior on Android.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-momentum-ios.webp", caption:"iOS scroll momentum", alt:"Repeated scroll flings building momentum on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-momentum-ios.webp", caption:"iOS scroll momentum", alt:"Repeated scroll flings building momentum on iOS" %}
 </div>
 
 ### Return to top
@@ -168,7 +168,7 @@ scroll controller to the top position.
 There is no equivalent behavior on Android.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/scroll-tap-to-top-ios.webp", img-style:"border-radius: 22px;", caption:"iOS status bar tap to top", alt:"Tapping the status bar scrolls the primary scrollable back to the top" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/scroll-tap-to-top-ios.webp", img-style:"border-radius: 22px;", caption:"iOS status bar tap to top", alt:"Tapping the status bar scrolls the primary scrollable back to the top" %}
 </div>
 
 ## Typography
@@ -188,14 +188,14 @@ Therefore a fallback font is used when running on Android
 if the platform is debug-overridden to iOS or the
 default Cupertino theme is used.
 
-You might choose to adapt the text styling of Material 
-widgets to match the default text styling on iOS. 
-You can see widget-specific examples in the 
+You might choose to adapt the text styling of Material
+widgets to match the default text styling on iOS.
+You can see widget-specific examples in the
 [UI Component section](#ui-components).
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/typography-android.png", img-style:"border-radius: 12px;", caption:"Roboto on Android", alt:"Roboto font typography scale on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/typography-ios.png", img-style:"border-radius: 22px;", caption:"San Francisco on iOS", alt:"San Francisco typography scale on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/typography-android.png", img-style:"border-radius: 12px;", caption:"Roboto on Android", alt:"Roboto font typography scale on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/typography-ios.png", img-style:"border-radius: 22px;", caption:"San Francisco on iOS", alt:"San Francisco typography scale on iOS" %}
 </div>
 
 [default theme]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/cupertino/text_theme.dart
@@ -211,8 +211,8 @@ The back button is a simple chevron on iOS and
 has a stem/shaft on Android.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/iconography-android.png", caption:"Icons on Android", alt:"Android appropriate icons" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/iconography-ios.png", caption:"Icons on iOS", alt:"iOS appropriate icons" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/iconography-android.png", caption:"Icons on Android", alt:"Android appropriate icons" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/iconography-ios.png", caption:"Icons on iOS", alt:"iOS appropriate icons" %}
 </div>
 
 The material library also provides a set of
@@ -238,7 +238,7 @@ Scrolling through picker items on iOS triggers a
 Both the Material and Cupertino Text Input fields
 support spellcheck and adapt to use the proper
 spellcheck configuration for the platform,
-and the proper spell check menu and highlight colors. 
+and the proper spell check menu and highlight colors.
 
 Flutter also makes the below adaptations while editing
 the content of text fields to match the current platform.
@@ -255,8 +255,8 @@ keyboard to move the cursor in 2D via a floating cursor.
 This works on both Material and Cupertino text fields.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-android.webp", caption:"Android space key cursor move", alt:"Moving the cursor via the space key on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-keyboard-move-ios.webp", caption:"iOS 3D Touch drag cursor move", alt:"Moving the cursor via 3D Touch drag on the keyboard on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-keyboard-move-android.webp", caption:"Android space key cursor move", alt:"Moving the cursor via the space key on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-keyboard-move-ios.webp", caption:"iOS 3D Touch drag cursor move", alt:"Moving the cursor via 3D Touch drag on the keyboard on iOS" %}
 </div>
 
 ### Text selection toolbar
@@ -270,8 +270,8 @@ the iOS style selection toolbar is shown when a text
 selection is made in a text field.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-toolbar-android.png", caption:"Android text selection toolbar", alt:"Android appropriate text toolbar" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-toolbar-ios.png", caption:"iOS text selection toolbar", alt:"iOS appropriate text toolbar" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-toolbar-android.png", caption:"Android text selection toolbar", alt:"Android appropriate text toolbar" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-toolbar-ios.png", caption:"iOS text selection toolbar", alt:"iOS appropriate text toolbar" %}
 </div>
 
 ### Single tap gesture
@@ -290,8 +290,8 @@ nearest edge of the word tapped.
 Collapsed text selections don't have draggable handles on iOS.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-android.webp", caption:"Android tap", alt:"Moving the cursor to the tapped position on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-single-tap-ios.webp", caption:"iOS tap", alt:"Moving the cursor to the nearest edge of the tapped word on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-single-tap-android.webp", caption:"Android tap", alt:"Moving the cursor to the tapped position on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-single-tap-ios.webp", caption:"iOS tap", alt:"Moving the cursor to the nearest edge of the tapped word on iOS" %}
 </div>
 
 ### Long-press gesture
@@ -305,8 +305,8 @@ a long press places the cursor at the location of the
 long press. The selection toolbar is shown upon release.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-android.webp", caption:"Android long press", alt:"Selecting a word with long press on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-ios.webp", caption:"iOS long press", alt:"Selecting a position with long press on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-long-press-android.webp", caption:"Android long press", alt:"Selecting a word with long press on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-long-press-ios.webp", caption:"iOS long press", alt:"Selecting a position with long press on iOS" %}
 </div>
 
 ### Long-press drag gesture
@@ -318,8 +318,8 @@ With **Material on iOS** or when using **Cupertino**,
 dragging while holding the long press moves the cursor.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-android.webp", caption:"Android long-press drag", alt:"Expanding word selection with a long-press drag on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-long-press-drag-ios.webp", caption:"iOS long-press drag", alt:"Moving the cursor with a long-press drag on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-long-press-drag-android.webp", caption:"Android long-press drag", alt:"Expanding word selection with a long-press drag on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-long-press-drag-ios.webp", caption:"iOS long-press drag", alt:"Moving the cursor with a long-press drag on iOS" %}
 </div>
 
 ### Double tap gesture
@@ -329,30 +329,30 @@ a double tap selects the word receiving the
 double tap and shows the selection toolbar.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-android.webp", caption:"Android double tap", alt:"Selecting a word via double tap on Android" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/text-double-tap-ios.webp", caption:"iOS double tap", alt:"Selecting a word via double tap on iOS" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-double-tap-android.webp", caption:"Android double tap", alt:"Selecting a word via double tap on Android" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/text-double-tap-ios.webp", caption:"iOS double tap", alt:"Selecting a word via double tap on iOS" %}
 </div>
 
 ## UI components
 
-This section includes preliminary recommendations on how to adapt 
-Material widgets to deliver a natural and compelling experience on iOS. 
-Your feedback is welcomed on [issue #8427][8427]. 
+This section includes preliminary recommendations on how to adapt
+Material widgets to deliver a natural and compelling experience on iOS.
+Your feedback is welcomed on [issue #8427][8427].
 
 [8427]: {{site.repo.this}}/issues/8427
 
 ### Widgets with .adaptive() constructors
 
-Several widgets support `.adaptive()` constructors. 
+Several widgets support `.adaptive()` constructors.
 The following table lists these widgets.
-Adaptive constructors substitute the corresponding Cupertino components 
-when the app is run on an iOS device. 
+Adaptive constructors substitute the corresponding Cupertino components
+when the app is run on an iOS device.
 
-Widgets in the following table are used primarily for input, 
-selection, and to display system information. 
+Widgets in the following table are used primarily for input,
+selection, and to display system information.
 Because these controls are tightly integrated with the operating system,
 users have been trained to recognize and respond to them.
-Therefore, we recommend that you follow platform conventions. 
+Therefore, we recommend that you follow platform conventions.
 
 
 | Material widget | Cupertino widget | Adaptive constructor |
@@ -375,22 +375,22 @@ Therefore, we recommend that you follow platform conventions.
 
 ### Top app bar and navigation bar
 
-Since Android 12, the default UI for top app 
-bars follows the design guidelines defined in [Material 3][mat-appbar]. 
-On iOS, an equivalent component called "Navigation Bars" 
+Since Android 12, the default UI for top app
+bars follows the design guidelines defined in [Material 3][mat-appbar].
+On iOS, an equivalent component called "Navigation Bars"
 is defined in [Apple's Human Interface Guidelines][hig-appbar] (HIG).
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/mat-appbar.png", caption:"Top App Bar in Material 3", alt:"Top App Bar in Material 3", height: "240px" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/hig-appbar.png", caption:"Navigation Bar in Human Interface Guidelines", alt:"Navigation Bar in Human Interface Guidelines", height: "240px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/mat-appbar.png", caption:"Top App Bar in Material 3", alt:"Top App Bar in Material 3", height: "240px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/hig-appbar.png", caption:"Navigation Bar in Human Interface Guidelines", alt:"Navigation Bar in Human Interface Guidelines", height: "240px" %}
 </div>
 
-Certain properties of app bars in Flutter apps should be adapted, 
-like system icons and page transitions. 
-These are already automatically adapted when using 
-the Material `AppBar` and `SliverAppBar` widgets. 
-You can also further customize the properties of these widgets to better 
-match iOS platform styles, as shown below. 
+Certain properties of app bars in Flutter apps should be adapted,
+like system icons and page transitions.
+These are already automatically adapted when using
+the Material `AppBar` and `SliverAppBar` widgets.
+You can also further customize the properties of these widgets to better
+match iOS platform styles, as shown below.
 
 ```dart
 // Map the text theme to iOS styles
@@ -420,11 +420,11 @@ AppBar(
       ),
 ```
 
-But, because app bars are displayed alongside 
-other content in your page, it's only recommended to adapt the styling 
-so long as it's cohesive with the rest of your application. You can see 
-additional code samples and a further explanation in 
-[the GitHub discussion on app bar adaptations][appbar-post]. 
+But, because app bars are displayed alongside
+other content in your page, it's only recommended to adapt the styling
+so long as it's cohesive with the rest of your application. You can see
+additional code samples and a further explanation in
+[the GitHub discussion on app bar adaptations][appbar-post].
 
 [mat-appbar]: {{site.material}}/components/top-app-bar/overview
 [hig-appbar]: {{site.apple-dev}}/design/human-interface-guidelines/components/navigation-and-search/navigation-bars/
@@ -432,25 +432,25 @@ additional code samples and a further explanation in
 
 ### Bottom navigation bars
 
-Since Android 12, the default UI for bottom navigation 
-bars follow the design guidelines defined in [Material 3][mat-navbar]. 
-On iOS, an equivalent component called "Tab Bars" 
+Since Android 12, the default UI for bottom navigation
+bars follow the design guidelines defined in [Material 3][mat-navbar].
+On iOS, an equivalent component called "Tab Bars"
 is defined in [Apple's Human Interface Guidelines][hig-tabbar] (HIG).
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/mat-navbar.png", caption:"Bottom Navigation Bar in Material 3", alt:"Bottom Navigation Bar in Material 3", height: "160px" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/hig-tabbar.png", caption:"Tab Bar in Human Interface Guidelines", alt:"Tab Bar in Human Interface Guidelines", height: "160px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/mat-navbar.png", caption:"Bottom Navigation Bar in Material 3", alt:"Bottom Navigation Bar in Material 3", height: "160px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/hig-tabbar.png", caption:"Tab Bar in Human Interface Guidelines", alt:"Tab Bar in Human Interface Guidelines", height: "160px" %}
 </div>
 
 Since tab bars are persistent across your app, they should match your
-own branding. However, if you choose to use Material's default 
+own branding. However, if you choose to use Material's default
 styling on Android, you might consider adapting to the default iOS
 tab bars.
 
-To implement platform-specific bottom navigation bars, 
-you can use Flutter's `NavigationBar` widget on Android 
-and the `CupertinoTabBar` widget on iOS. 
-Below is a code snippet you can 
+To implement platform-specific bottom navigation bars,
+you can use Flutter's `NavigationBar` widget on Android
+and the `CupertinoTabBar` widget on iOS.
+Below is a code snippet you can
 adapt to show a platform-specific navigation bars.
 
 ```dart
@@ -499,20 +499,20 @@ Scaffold(
 ### Text fields
 
 Since Android 12, text fields follow the
-[Material 3][m3-text-field] (M3) design guidelines. 
+[Material 3][m3-text-field] (M3) design guidelines.
 On iOS, Apple's [Human Interface Guidelines][hig-text-field] (HIG) define
 an equivalent component.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"platform-adaptations/m3-text-field.png", caption:"Text Field in Material 3", alt:"Text Field in Material 3", width:"320px", height:"100px" %}
-  {% render docs/app-figure.md, image:"platform-adaptations/hig-text-field.png", caption:"Text Field in HIG", alt:"Text Field in Human Interface Guidelines", width:"320px", height:"100px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/m3-text-field.png", caption:"Text Field in Material 3", alt:"Text Field in Material 3", width:"320px", height:"100px" %}
+  {% render "docs/app-figure.md", image:"platform-adaptations/hig-text-field.png", caption:"Text Field in HIG", alt:"Text Field in Human Interface Guidelines", width:"320px", height:"100px" %}
 </div>
 
-Since text fields require user input,  
-their design should follow platform conventions. 
+Since text fields require user input,
+their design should follow platform conventions.
 
-To implement a platform-specific `TextField` 
-in Flutter, you can adapt the styling of the 
+To implement a platform-specific `TextField`
+in Flutter, you can adapt the styling of the
 Material `TextField`.
 
 ```dart
@@ -542,7 +542,7 @@ Widget _createAdaptiveTextField() {
 }
 ```
 
-To learn more about adapting text fields, check out 
+To learn more about adapting text fields, check out
 [the GitHub discussion on text fields][text-field-post].
 You can leave feedback or ask questions in the discussion.
 

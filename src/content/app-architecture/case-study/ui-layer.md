@@ -90,7 +90,7 @@ class HomeViewModel {
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository;
- 
+
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
 
@@ -98,7 +98,7 @@ class HomeViewModel {
   User? get user => _user;
 
   List<BookingSummary> _bookings = [];
- 
+
   /// Items in an [UnmodifiableListView] can't be directly modified,
   /// but changes in the source list can be modified. Since _bookings
   /// is private and bookings is not, the view has no way to modify the
@@ -404,7 +404,7 @@ a [`Dismissible`][] widget.
 
 Recall this code from the previous snippet:
 
-{% render docs/code-and-image.md,
+{% render "docs/code-and-image.md",
 image:"app-architecture/case-study/dismissible.webp",
 img-style:"max-height: 480px; border-radius: 12px; border: black 2px solid;",
 alt: "A clip that demonstrates the 'dismissible' functionality of the Compass app."

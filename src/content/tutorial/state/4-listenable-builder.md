@@ -2,6 +2,7 @@
 title: Rebuild UI when state changes
 description: Instructions on how to manage state with ChangeNotifiers.
 permalink: /tutorial/listenables/
+sitemap: false
 ---
 
 The view layer is your UI, and in Flutter, that refers to your app's
