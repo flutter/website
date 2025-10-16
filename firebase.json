@@ -882,7 +882,7 @@
   },
   "emulators": {
     "hosting": {
-      "port": 5500
+      "port": 5502
     }
   }
 }
