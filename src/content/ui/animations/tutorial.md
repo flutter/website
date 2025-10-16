@@ -172,7 +172,7 @@ check out [Cascade notation][]
 in the [Dart language documentation][].
 :::
 
-##  Simplifying with Animated&shy;Widget
+## Simplifying with AnimatedWidget
 
 :::secondary What's the point?
 * How to use the [`AnimatedWidget`][] helper class

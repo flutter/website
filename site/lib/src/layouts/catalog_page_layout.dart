@@ -110,7 +110,7 @@ final class CatalogPageLayout extends DocLayout {
     if (widgets.isEmpty) return const [];
 
     return [
-      h2([text(subName)]),
+      h2(id: slugify(subName), [text(subName)]),
       _buildCardGrid(
         widgets,
         isMaterialCatalog: isMaterialCatalog,

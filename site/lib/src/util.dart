@@ -44,9 +44,9 @@ String slugify(String text) => text
     .replaceAll(_slugifyCharsToCombine, '-')
     .replaceAll(_slugifyHyphenTrim, '');
 
-final RegExp _slugifyPunctuationToReplace = RegExp(r'[:.]');
+final RegExp _slugifyPunctuationToReplace = RegExp(r'[:._]');
 final RegExp _slugifyUnsupportedToRemove = RegExp(
-  r'[^\p{L}\p{N}\s:._-]',
+  r'[^\p{L}\p{N}\s:.-]',
   unicode: true,
 );
 final RegExp _slugifyCharsToCombine = RegExp(r'[\s-]+');
