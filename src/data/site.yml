@@ -55,3 +55,9 @@ yt:
   playlist: 'https://www.youtube.com/playlist?list='
 
 currentFlutterVersion: '3.35.5'
+
+# Settings for Jaspr.
+
+# Specify Jaspr as not setting a base href for each document,
+# so that links to fragments still work as expected.
+base: false
