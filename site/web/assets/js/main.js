@@ -235,8 +235,6 @@ function setupOsSelectors() {
 function setupSite() {
   setupOsSelectors();
 
-  setupTabs();
-
   setupToc();
   setupPlatformKeys();
   setupCollapsibleElements();

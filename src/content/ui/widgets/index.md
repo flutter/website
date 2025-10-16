@@ -14,10 +14,10 @@ you can also see all the widgets in the [widget index][].
 Flutter ships with two design systems as part of the SDK.
 
 <div class="card-grid">
-{% assign categories = catalog.index | sort: 'name' -%}
+{% assign categories = catalog.index | sortBy: 'name' -%}
 {% for section in categories %}
   {%- if section.name == "Cupertino" or section.name == "Material components" -%}
-    <a class="card outlined-card" href="{{page.url}}{{section.id}}">
+    <a class="card outlined-card" href="{{page.url}}/{{section.id}}">
       <div class="card-header">
         <span class="card-title">{{section.name}}</span>
       </div>
@@ -41,10 +41,10 @@ Base widgets support a range of common rendering options
 like input, layout, and text.
 
 <div class="card-grid">
-{% assign categories = catalog.index | sort: 'name' -%}
+{% assign categories = catalog.index | sortBy: 'name' -%}
 {% for section in categories %}
   {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
-    <a class="card outlined-card" href="{{page.url}}{{section.id}}">
+    <a class="card outlined-card" href="{{page.url}}/{{section.id}}">
       <div class="card-header">
         <span class="card-title">{{section.name}}</span>
       </div>

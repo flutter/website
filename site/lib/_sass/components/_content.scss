@@ -15,6 +15,7 @@
   }
 
   article {
+    flex-grow: 1;
     min-width: 8rem;
     max-width: 960px;
     min-height: calc(100vh - var(--site-header-height) - var(--site-subheader-height));

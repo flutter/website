@@ -45,26 +45,24 @@ class DocLayout extends FlutterDocsLayout {
                 WideTableOfContents(tocData),
               ]),
             article([
-              div(classes: 'content', [
-                div(id: 'site-content-title', [
-                  h1(id: 'document-title', [
-                    if (pageData['underscore_breaker_titles'] == true)
-                      ...splitByUnderscore(pageTitle)
-                    else
-                      text(pageTitle),
-                  ]),
-                  if (pageData['showBreadcrumbs'] != false)
-                    const PageBreadcrumbs(),
+              div(id: 'site-content-title', [
+                h1(id: 'document-title', [
+                  if (pageData['underscore_breaker_titles'] == true)
+                    ...splitByUnderscore(pageTitle)
+                  else
+                    text(pageTitle),
                 ]),
-
-                child,
-
-                PrevNext(
-                  previousPage: _pageInfoFromObject(pageData['prevpage']),
-                  nextPage: _pageInfoFromObject(pageData['nextpage']),
-                ),
-                const TrailingContent(),
+                if (pageData['showBreadcrumbs'] != false)
+                  const PageBreadcrumbs(),
               ]),
+
+              child,
+
+              PrevNext(
+                previousPage: _pageInfoFromObject(pageData['prevpage']),
+                nextPage: _pageInfoFromObject(pageData['nextpage']),
+              ),
+              const TrailingContent(),
             ]),
           ]),
         ],

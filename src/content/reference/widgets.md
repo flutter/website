@@ -5,8 +5,6 @@ shortTitle: Widgets
 showBreadcrumbs: false
 ---
 
-{% assign sorted = catalog.widgets | sort:'name' -%}
-
 This is an alphabetical list of many of the widgets that
 are bundled with Flutter.
 You can also [browse widgets by category][catalog].
@@ -21,7 +19,7 @@ our [videos](/resources/videos) page.
 [Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-grid">
-{% for comp in sorted -%}
+{% for comp in catalog.widgets | sortBy: 'name' -%}
   <a class="card outlined-card" href="{{comp.link}}">
     <div class="card-image-holder">
       {% if comp.vector -%}

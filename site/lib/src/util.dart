@@ -90,6 +90,20 @@ Map<String, String> parseAttributes(String attributeString) {
   return attributes;
 }
 
+String truncateWords(String text, int maxWords) {
+  if (maxWords <= 0) {
+    return '';
+  }
+
+  final words = text.trim().split(_whitespacePattern);
+  if (words.length <= maxWords) {
+    return text;
+  }
+
+  final truncated = words.take(maxWords).join(' ');
+  return '$truncated...';
+}
+
 extension ListToClasses on List<String> {
   /// Convert a list of classes into a single class string
   /// that can be added to an HTML element.

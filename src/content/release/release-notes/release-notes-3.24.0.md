@@ -2,6 +2,7 @@
 title: Flutter 3.24.0 release notes
 shortTitle: 3.24.0 release notes
 description: Release notes for Flutter 3.24.0.
+skipTemplateRendering: true
 ---
 
 This page has release notes for 3.24.0.

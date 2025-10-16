@@ -2,7 +2,9 @@
 title: Flutter 2.2.0 release notes
 shortTitle: 2.2.0 release notes
 description: Release notes for Flutter 2.2.0.
+skipTemplateRendering: true
 ---
+
 This page has release notes for 2.2.0.
 For information about subsequent bug-fix releases, see our [CHANGELOG][]
 

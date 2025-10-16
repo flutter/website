@@ -2,6 +2,7 @@
 title: Flutter 3.35.0 release notes
 shortTitle: 3.35.0 release notes
 description: Release notes for Flutter 3.35.0.
+skipTemplateRendering: true
 ---
 
 This page has release notes for 3.35.0.
