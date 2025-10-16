@@ -33,7 +33,10 @@ void main() {
 Component get _docsFlutterDevSite => ContentApp.custom(
   eagerlyLoadAllPages: true,
   loaders: [
-    FilesystemLoader(path.join(siteSrcDirectoryPath, 'content')),
+    FilesystemLoader(
+      path.join(siteSrcDirectoryPath, 'content'),
+      keepSuffixPattern: _passThroughPattern,
+    ),
     MemoryLoader(pages: allMemoryPages),
   ],
   configResolver: PageConfig.all(
@@ -50,7 +53,7 @@ Component get _docsFlutterDevSite => ContentApp.custom(
       DashMarkdownParser(),
       HtmlParser(),
     ],
-    rawOutputPattern: RegExp(r'.*\.(txt|json|pdf)$'),
+    rawOutputPattern: _passThroughPattern,
     extensions: allNodeProcessingExtensions,
     components: _embeddableComponents,
     layouts: const [DocLayout(), TocLayout(), CatalogPageLayout()],
@@ -58,6 +61,8 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     secondaryOutputs: [const RobotsTxtOutput(), MarkdownOutput()],
   ),
 );
+
+final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 
 /// Custom "components" that can be used from Markdown files.
 List<CustomComponent> get _embeddableComponents => [
