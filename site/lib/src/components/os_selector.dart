@@ -42,11 +42,11 @@ class _OsSelectorState extends State<OsSelector> {
       span.textContent = os.label;
     }
 
-    web.document.body!.classList.remove('show-macos');
-    web.document.body!.classList.remove('show-linux');
-    web.document.body!.classList.remove('show-windows');
-    web.document.body!.classList.remove('show-chromeos');
-    web.document.body!.classList.add('show-${os.name}');
+    final bodyClasses = web.document.body!.classList;  
+    for (final os in OperatingSystem.values) {  
+      bodyClasses.remove('show-${os.name}');  
+    }  
+    bodyClasses.add('show-${os.name}'); 
   }
 
   @override
