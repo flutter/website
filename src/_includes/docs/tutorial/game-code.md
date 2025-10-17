@@ -60,7 +60,8 @@ class Game {
   UnmodifiableListView<Word> get guesses => UnmodifiableListView(_guesses);
 
   Word get previousGuess {
-    return _guesses.lastWhere((word) => word.isNotEmpty);
+    final index = _guesses.lastIndexWhere((word) => word.isNotEmpty);
+    return index == -1 ? Word.empty() : _guesses[index];
   }
 
   int get activeIndex {
@@ -144,8 +145,6 @@ class Word with IterableMixin<Letter> {
 
   final List<Letter> _letters;
 
-  final List<HitType> _hits = List.filled(5, HitType.none);
-
   /// Loop over the Letters in this word
   @override
   Iterator<Letter> get iterator => _letters.iterator;
@@ -168,13 +167,8 @@ class Word with IterableMixin<Letter> {
 
   // Used to play game in the CLI implementation
   String toStringVerbose() {
-    var output = '';
-    for (var letter in _letters) {
-      output += '${letter.char} - ${letter.type.name} \n';
-    }
-    return output;
+    return _letters.map((l) => '${l.char} - ${l.type.name}').join('\n');
   }
-}
 
 // Domain specific methods that contain word related logic.
 extension WordUtils on Word {
@@ -193,7 +187,6 @@ extension WordUtils on Word {
   Word evaluateGuess(Word other) {
     assert(isLegalGuess);
 
-    print(other.toString());
     // Find exact hits. Mark them as hits, and mark letters in the hidden word
     // as removed.
     for (var i = 0; i < length; i++) {
@@ -216,15 +209,14 @@ extension WordUtils on Word {
         Letter guessedLetter = this[j];
         // skip letters that have already been marked as exact matches
         if (guessedLetter.type != HitType.none) continue;
-
         // If this letter, which must not be in the same position, is the same,
         // it's a partial match
         if (guessedLetter.char == targetLetter.char) {
           this[j] = (char: guessedLetter.char, type: HitType.partial);
           other[i] = (char: targetLetter.char, type: HitType.removed);
+          break;
         }
       }
-    }
 
     // Mark remaining letters in guessed word as misses
     for (var i = 0; i < length; i++) {
