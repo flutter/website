@@ -7,7 +7,7 @@ function setupTheme() {
 
     function updateButtonSelectedState() {
       const theme =
-        document.body.classList.contains('auto-mode') ? 'auto' :
+          document.body.classList.contains('auto-mode') ? 'auto' :
           document.body.classList.contains('dark-mode') ? 'dark' : 'light';
 
       themeButtons.forEach((button) => {
@@ -52,13 +52,13 @@ function setupSidenavInteractivity() {
     document.body.classList.toggle('open_menu');
   });
 
-  window.addEventListener('resize', function () {
+  window.addEventListener('resize', function() {
     if (window.innerWidth >= 1024) {
       document.body.classList.remove('open_menu');
     }
   });
 
-  document.addEventListener('keydown', function (event) {
+  document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
       const activeElement = document.activeElement;
       if (activeElement && (activeElement.id === 'menu-toggle' || activeElement.closest('#sidenav'))) {
@@ -267,7 +267,7 @@ function _setupTocActiveObserver() {
           }
         });
       }
-    }, { rootMargin: '-80px 0px -25% 0px' });
+    },{ rootMargin: '-80px 0px -25% 0px' });
 
   headings.forEach(heading => observer.observe(heading));
 }
@@ -279,8 +279,8 @@ function setupSearch() {
 function handleSearchShortcut(event) {
   const activeElement = document.activeElement;
   if (activeElement instanceof HTMLInputElement ||
-    activeElement instanceof HTMLTextAreaElement ||
-    event.code !== 'Slash'
+      activeElement instanceof HTMLTextAreaElement ||
+      event.code !== 'Slash'
   ) {
     return;
   }
@@ -289,7 +289,7 @@ function handleSearchShortcut(event) {
   const bodySearch = document.querySelector('input.gsc-input');
   // Otherwise, focus the search field in the navbar.
   const searchElement = bodySearch ? bodySearch : document
-    .querySelector('input.search-field');
+      .querySelector('input.search-field');
 
   // If we successfully found a search field, focus that.
   if (searchElement) {
@@ -335,7 +335,7 @@ const terminalReplacementPattern = /^(\s*\$\s*)|(C:\\(.*)>\s*)/gm;
 
 function setUpCodeBlockButtons() {
   const codeBlocks =
-    document.querySelectorAll('.code-block-body');
+      document.querySelectorAll('.code-block-body');
 
   const canUseClipboard = !!navigator.clipboard;
 
@@ -359,7 +359,7 @@ function setUpCodeBlockButtons() {
       innerIcon.ariaHidden = 'true';
       innerIcon.classList.add('material-symbols');
 
-      dartPadButton.addEventListener('click', (e) => {
+      dartPadButton.addEventListener('click',  (e) => {
         const codeBlockBody = e.currentTarget.parentElement;
         if (codeBlockBody) {
           const codePre = codeBlock.querySelector('pre');
@@ -390,7 +390,7 @@ function setUpCodeBlockButtons() {
           const codePre = codeBlock.querySelector('pre');
           if (codePre) {
             const contentToCopy = codePre.textContent
-              .replace(terminalReplacementPattern, '');
+                .replace(terminalReplacementPattern, '');
             if (contentToCopy && contentToCopy.length !== 0) {
               await navigator.clipboard.writeText(contentToCopy);
             }
@@ -506,7 +506,7 @@ function setupSiteSwitcher() {
 
 function setupFeedback() {
   const feedbackContainer =
-    document.getElementById('page-feedback');
+      document.getElementById('page-feedback');
   if (!feedbackContainer) return;
 
   const feedbackUpButton = feedbackContainer.querySelector('#feedback-up-button');
@@ -514,13 +514,13 @@ function setupFeedback() {
   if (!feedbackUpButton || !feedbackDownButton) return;
 
   feedbackUpButton.addEventListener('click', (_) => {
-    window.dataLayer?.push({ 'event': 'inline_feedback', 'feedback_type': 'up' });
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'up'});
 
     feedbackContainer.classList.add('feedback-up');
   }, { once: true });
 
   feedbackDownButton.addEventListener('click', (_) => {
-    window.dataLayer?.push({ 'event': 'inline_feedback', 'feedback_type': 'down' });
+    window.dataLayer?.push({'event': 'inline_feedback', 'feedback_type': 'down'});
 
     feedbackContainer.classList.add('feedback-down');
   }, { once: true });
@@ -530,9 +530,9 @@ function setupPlatformKeys() {
   const os = getOS();
   const specialKey = os === 'macos' ? 'Command' : 'Control';
   document.querySelectorAll('kbd.special-key')
-    .forEach(function (element) {
-      element.textContent = specialKey;
-    });
+      .forEach(function (element) {
+        element.textContent = specialKey;
+      });
 }
 
 function _osNameFromId(osId) {
