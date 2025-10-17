@@ -75,7 +75,8 @@ itself.
 ```dart
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
-  // This manages game logic, and 
+  // This object is part of the game.dart file.
+  // It manages wordle logic, and is outside the scope of this tutorial.
   final Game _game = Game();
 
   @override
