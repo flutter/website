@@ -1,9 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>
