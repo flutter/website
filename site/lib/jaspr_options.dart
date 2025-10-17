@@ -20,6 +20,8 @@ import 'package:docs_flutter_dev_site/src/components/cookie_notice.dart'
 import 'package:docs_flutter_dev_site/src/components/copy_button.dart'
     as prefix6;
 import 'package:docs_flutter_dev_site/src/components/feedback.dart' as prefix7;
+import 'package:docs_flutter_dev_site/src/components/os_selector.dart'
+    as prefix8;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -71,6 +73,10 @@ JasprOptions get defaultJasprOptions => JasprOptions(
 
     prefix4.ThemeSwitcher: ClientTarget<prefix4.ThemeSwitcher>(
       'src/components/header/theme_switcher',
+    ),
+
+    prefix8.OsSelector: ClientTarget<prefix8.OsSelector>(
+      'src/components/os_selector',
     ),
   },
   styles: () => [],

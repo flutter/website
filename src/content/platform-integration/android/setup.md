@@ -27,7 +27,7 @@ setting up Android development on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Set up Android tooling {: #set-up-tooling}
 
