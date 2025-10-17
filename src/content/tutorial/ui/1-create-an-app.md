@@ -32,20 +32,6 @@ $ flutter create birdle --empty
 
 This creates a new Flutter project using the minimal “empty” template.
 
-## Import the game logic
-
-The game logic of this application isn’t concerned with Flutter and is outside
-the scope of this tutorial. Instead, import the [`flutter_gse`][]
-package, which contains the logic. 
-
-Importing packages is done via `pub`, Dart's package manager. You can
-[read more about using pub packages][] if you're curious, but it isn't
-required knowledge for this tutorial.
-
-```shell
-$ flutter pub add flutter_gse
-```
-
 ## Examine the code
 
 In your IDE, open the file at `lib/main.dart`. Starting from the top, you’ll see
