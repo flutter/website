@@ -75,6 +75,26 @@
     }
   }
 
+  .footer-technology {
+    margin-top: 1rem;
+
+    .jaspr-badge-link {
+      span:last-child {
+        display: none;
+      }
+
+      &:hover {
+        span:first-child {
+          display: none;
+        }
+
+        span:last-child {
+          display: initial;
+        }
+      }
+    }
+  }
+
   .footer-utility-links {
     @media (min-width: 768px) {
       text-align: right;
