@@ -75,7 +75,7 @@ itself.
 ```dart
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
-  // This manages game logic, and is out of scope for this lesson
+  // This manages game logic, and 
   final Game _game = Game();
 
   @override
