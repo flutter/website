@@ -101,11 +101,12 @@ Next, create a test file.
 Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_album_test.dart` in the root `test` folder.
 
-Add the annotation `@GenerateMocks([http.Client])` to the main
-function to generate a `MockClient` class with `mockito`.
+Add the annotation
+`@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])`
+to the main function to generate a `MockHttpClient` class with `mockito`.
 
-The generated `MockClient` class implements the `http.Client` class.
-This allows you to pass the `MockClient` to the `fetchAlbum` function,
+The generated `MockHttpClient` class implements the `http.Client` class.
+This allows you to pass the `MockHttpClient` to the `fetchAlbum` function,
 and return different http responses in each test.
 
 The generated mocks will be located in `fetch_album_test.mocks.dart`.
@@ -119,7 +120,9 @@ import 'package:mockito/annotations.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
 }
 ```
@@ -138,7 +141,7 @@ The `fetchAlbum()` function does one of two things:
   2. Throws an `Exception` if the http call fails
 
 Therefore, you want to test these two conditions.
-Use the `MockClient` class to return an "Ok" response
+Use the `MockHttpClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
 Test these conditions using the `when()` function provided by
 Mockito:
@@ -155,11 +158,13 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
@@ -174,7 +179,7 @@ void main() {
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
@@ -306,11 +311,13 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
@@ -325,7 +332,7 @@ void main() {
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
