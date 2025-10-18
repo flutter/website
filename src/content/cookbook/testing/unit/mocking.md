@@ -101,8 +101,9 @@ Next, create a test file.
 Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_album_test.dart` in the root `test` folder.
 
-Add the annotation `@GenerateMocks([http.Client])` to the main
-function to generate a `MockHttpClient` class with `mockito`.
+Add the annotation
+`@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])`
+to the main function to generate a `MockHttpClient` class with `mockito`.
 
 The generated `MockHttpClient` class implements the `http.Client` class.
 This allows you to pass the `MockHttpClient` to the `fetchAlbum` function,
@@ -119,8 +120,8 @@ import 'package:mockito/annotations.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-// Note: Renaming the generated mock to avoid confusion with `MockClient`
-// from `package:http/testing.dart`.
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
 @GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
 }
@@ -157,8 +158,8 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-// Note: Renaming the generated mock to avoid confusion with `MockClient`
-// from `package:http/testing.dart`.
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
 @GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
@@ -310,8 +311,8 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-// Note: Renaming the generated mock to avoid confusion with `MockClient`
-// from `package:http/testing.dart`.
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
 @GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
