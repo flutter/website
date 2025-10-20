@@ -271,8 +271,8 @@ enum _ClientOperatingSystem {
 
 void _setUpCollapsibleElements() {
   final toggles = web.document.querySelectorAll('[data-toggle="collapse"]');
-  for (int i = 0; i < toggles.length; i++) {
-    final toggle = toggles.item(i) as web.Element;
+  for (var toggleIndex = 0; toggleIndex < toggles.length; toggleIndex += 1) {
+    final toggle = toggles.item(toggleIndex) as web.Element;
 
     final targetSelector = toggle.getAttribute('data-target');
     if (targetSelector == null) return;
