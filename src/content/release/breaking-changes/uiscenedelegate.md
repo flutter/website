@@ -30,13 +30,13 @@ the following:
 
 To use the UIScene lifecycle with Flutter, migrate the following support:
 * All Flutter apps that support iOS - See the [migration guide for Flutter
-  apps](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
+  apps](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
 * Flutter plugins that use iOS application lifecycle events - See the [migration
   guide for
-  plugins](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
+  plugins](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
 * Flutter embedded in iOS native apps - See the [migration guide for adding
   Flutter to an existing
-  app](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
+  app](/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
 
 Migrating to UIScene shifts the AppDelegate's role—the UI lifecycle is
 now handled by the UISceneDelegate. The AppDelegate
@@ -145,7 +145,7 @@ let controller : FlutterViewController = window?.rootViewController as! FlutterV
 
 To access the `FlutterViewController` directly, visit
 [Bespoke FlutterViewController
-usage](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage).
+usage](/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage).
 :::
 
 3. Migrate any custom logic within application life cycle events.
@@ -163,7 +163,7 @@ on migrating.
 If you implement your own SceneDelegate, you must subclass it with
 `FlutterSceneDelegate` or conform to the `FlutterSceneLifeCycleProvider`
 protocol. See the [following
-examples](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
+examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
 
 ### Migrate Info.plist
 
@@ -346,7 +346,7 @@ but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 ### Create/Update a SceneDelegate (SwiftUI)
 
 When using Flutter in a SwifUI app, you can [optionally use a
-FlutterAppDelegate](https://docs.flutter.dev/add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate)
+FlutterAppDelegate](/add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate)
 to receive application events. To migrate that to use UIScene events, you can
 make the following changes:
 
@@ -380,7 +380,7 @@ This is enabled by default for SwiftUI apps.
 UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate-swiftui-info-plist.png)
 
 Otherwise, see [If your app supports multiple
-scenes](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
+scenes](/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
 for further instructions.
 ### If you can't directly make FlutterSceneDelegate a subclass
 
@@ -680,7 +680,7 @@ to your pubspec.yaml:
 
 [Issue 167267]: {{site.github}}/flutter/flutter/issues/167267
 [apple-delegate-docs]: {{site.apple-dev}}/documentation/uikit/specifying-the-scenes-your-app-supports
-[method-channels-docs]: https://docs.flutter.dev/platform-integration/platform-channels
-[platform-views-docs]: https://docs.flutter.dev/platform-integration/ios/platform-views
+[method-channels-docs]: /platform-integration/platform-channels
+[platform-views-docs]: /platform-integration/ios/platform-views
 [`openURL`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623112-application
 [local_auth]: {{site.pub}}/packages/local_auth
