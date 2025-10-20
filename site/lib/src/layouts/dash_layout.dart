@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert' show htmlEscape;
+
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -11,6 +13,7 @@ import '../components/footer.dart';
 import '../components/header.dart';
 import '../components/sidenav.dart';
 import '../models/sidenav_model.dart';
+import '../style_hash.dart';
 import '../util.dart';
 
 /// The base Jaspr Content layout for wrapping site content.
@@ -97,7 +100,12 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
         href:
             'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0',
       ),
-      link(rel: 'stylesheet', href: '/assets/css/main.css?v=3'),
+      link(
+        rel: 'stylesheet',
+        href:
+            '/assets/css/main.css?'
+            'hash=${htmlEscape.convert(generatedStylesHash)}',
+      ),
 
       script(src: '/assets/js/archive.js?v=2'),
       script(src: '/assets/js/main.js?v=5'),
