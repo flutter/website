@@ -59,7 +59,6 @@ class _DownloadLatestButtonState extends State<DownloadLatestButton> {
     }
   }
 
-
   @override
   Component build(BuildContext context) {
     if (!isLoading && error == null && latestRelease == null) {
@@ -68,7 +67,6 @@ class _DownloadLatestButtonState extends State<DownloadLatestButton> {
     return a(
       href: latestRelease?.url ?? '#',
       classes: 'filled-button',
-      events: {'click': (_) {}},
       [
         if (isLoading)
           text('(loading...)')

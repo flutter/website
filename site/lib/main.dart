@@ -142,7 +142,10 @@ List<CustomComponent> get _embeddableComponents => [
     builder: (_, attributes, _) {
       final os = attributes['os'] as String;
       final arch = attributes['arch'];
-      return DownloadLatestButton(os: os.toLowerCase(), arch: arch?.toLowerCase());
+      return DownloadLatestButton(
+        os: os.toLowerCase(),
+        arch: arch?.toLowerCase(),
+      );
     },
   ),
   CustomComponent(

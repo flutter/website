@@ -20,7 +20,7 @@ class Release {
     required this.releaseDate,
   });
 
-  factory Release.fromJson(Map<String, dynamic> json, String baseUrl) {
+  factory Release.fromJson(Map<String, Object?> json, String baseUrl) {
     return Release(
       url: '$baseUrl/${json['archive'] as String}',
       version: json['version'] as String,
@@ -42,6 +42,9 @@ class Release {
   final Date releaseDate;
 }
 
+const _baseReleasesUrl =
+    'https://storage.googleapis.com/flutter_infra_release/releases/';
+
 @client
 class ArchiveTable extends StatefulComponent {
   const ArchiveTable({required this.os, required this.channel, super.key});
@@ -56,26 +59,20 @@ class ArchiveTable extends StatefulComponent {
 
   /// Fetches Flutter release JSON for the given OS and caches the result.
   static Future<List<Release>> fetchFlutterReleases(String os) {
-    if (!_flutterReleasesFutures.containsKey(os)) {
-      final url = Uri.parse(
-        'https://storage.googleapis.com/flutter_infra_release/releases/releases_$os.json',
-      );
-      _flutterReleasesFutures[os] = http.get(url).then((response) {
-        if (response.statusCode == 200) {
-          final releases = jsonDecode(response.body) as Map<String, dynamic>;
-          final baseUrl = releases['base_url'] as String;
-          final releasesList = releases['releases'] as List<dynamic>;
-          return releasesList.map(
-            (release) {
+    return _flutterReleasesFutures[os] ??= http
+        .get(Uri.parse('${_baseReleasesUrl}releases_$os.json'))
+        .then((response) {
+          if (response.statusCode == 200) {
+            final releases = jsonDecode(response.body) as Map<String, dynamic>;
+            final baseUrl = releases['base_url'] as String;
+            final releasesList = releases['releases'] as List<dynamic>;
+            return releasesList.map((release) {
               return Release.fromJson(release as Map<String, dynamic>, baseUrl);
-            },
-          ).toList();
-        } else {
-          throw Exception('Failed to load Flutter releases');
-        }
-      });
-    }
-    return _flutterReleasesFutures[os]!;
+            }).toList();
+          } else {
+            throw Exception('Failed to load Flutter releases');
+          }
+        });
   }
 }
 
@@ -188,9 +185,6 @@ class _ArchiveTableState extends State<ArchiveTable> {
     ]);
   }
 
-  static const baseUrl =
-      'https://storage.googleapis.com/flutter_infra_release/releases/';
-
   static final windowsCutoff = Date.parse('4/3/2023');
   static final otherOsCutoff = Date.parse('12/15/2022');
 
@@ -205,10 +199,10 @@ class _ArchiveTableState extends State<ArchiveTable> {
       return span([text('-')]);
     }
 
-    final extension = os == 'linux' ? 'tar.xz' : 'zip';
+    final archiveExtension = os == 'linux' ? 'tar.xz' : 'zip';
     return a(
       href:
-          '$baseUrl$channel/$os/flutter_${os}_${release.version}-$channel.$extension.intoto.jsonl',
+          '$_baseReleasesUrl$channel/$os/flutter_${os}_${release.version}-$channel.$archiveExtension.intoto.jsonl',
       target: Target.blank,
       [text('Attestation bundle')],
     );
