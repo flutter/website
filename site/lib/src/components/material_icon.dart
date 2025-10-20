@@ -26,7 +26,10 @@ class MaterialIcon extends StatelessComponent {
       classes: ['material-symbols', ...classes].toClasses,
       attributes: {
         'title': ?title,
-        'aria-label': ?(label ?? title),
+        if (label ?? title case final labelToUse?)
+          'aria-label': labelToUse
+        else
+          'aria-hidden': 'true',
         'translate': 'no',
       },
       [text(id)],
