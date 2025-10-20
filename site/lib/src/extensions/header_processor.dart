@@ -46,6 +46,9 @@ final class HeaderWrapperExtension implements PageExtension {
     }
     usedIds.add(headerId);
 
+    // Update header ID to be the unique one as well.
+    node.attributes['id'] = headerId;
+
     final headerText = node.innerText;
 
     return ElementNode(
