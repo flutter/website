@@ -130,8 +130,16 @@ List<CustomComponent> get _embeddableComponents => [
   CustomComponent(
     pattern: RegExp('ExpansionList', caseSensitive: false),
     builder: (_, attributes, _) {
-      final listName = attributes['list']!;
-      final baseId = attributes['baseid']!;
+      final listName =
+          attributes['list'] ??
+          (throw Exception(
+            'ExpansionList component requires a "list" attribute.',
+          ));
+      final baseId =
+          attributes['baseid'] ??
+          (throw Exception(
+            'ExpansionList component requires a "baseId" attribute.',
+          ));
 
       return ExpansionList.load(listName, baseId: baseId);
     },

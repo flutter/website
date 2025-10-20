@@ -125,7 +125,7 @@ String truncateWordsMarkdown(String text, int maxWords) {
 
   final matches = _wordPattern.allMatches(text);
   if (matches.length <= maxWords) {
-    return text;
+    return text + endContent;
   }
 
   final truncated = matches.map((m) => m.group(0)!).take(maxWords).join('');

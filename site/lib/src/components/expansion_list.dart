@@ -1,3 +1,7 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -17,19 +21,26 @@ class ExpansionListItem {
   factory ExpansionListItem.fromPage(Page page) {
     final data = page.data.page;
     final content = truncateWordsMarkdown(page.content, 100);
-
-    return ExpansionListItem(
-      data: ExpansionListItemData(
-        title: data['title'] as String,
-        description: data['description'] as String,
-        contentTags: List<String>.from(data['contentTags'] as List<dynamic>),
-        iconPath: data['iconPath'] as String?,
-      ),
-      content: content,
-      url: page.url,
-      expanded: data['expanded'] as bool? ?? false,
-      order: data['order'] as int? ?? 0,
-    );
+    try {
+      return ExpansionListItem(
+        data: ExpansionListItemData(
+          title: data['title'] as String,
+          description: data['description'] as String,
+          contentTags: List<String>.from(data['contentTags'] as List<dynamic>),
+          iconPath: data['iconPath'] as String?,
+        ),
+        content: content,
+        url: page.url,
+        expanded: data['expanded'] as bool? ?? false,
+        order: data['order'] as int? ?? 0,
+      );
+    } catch (e) {
+      throw Exception(
+        'Error parsing ExpansionListItem from page ${page.path}.\n'
+        'Ensure that all required frontmatter fields are present and '
+        'of the correct type.\nError details: $e',
+      );
+    }
   }
 
   final ExpansionListItemData data;
@@ -118,7 +129,7 @@ class _ExpansionListState extends State<ExpansionList> {
                     img(
                       src:
                           '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
-                      alt: 'A icon showing a generic application.',
+                      alt: 'An icon showing a generic application.',
                     ),
                 ]),
                 div(classes: 'expansion-panel-title-content', [
