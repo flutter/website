@@ -1,4 +1,6 @@
-// ignore_for_file: constant_identifier_names
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
@@ -14,7 +16,7 @@ class OsSelector extends StatefulComponent {
 }
 
 class _OsSelectorState extends State<OsSelector> {
-  // This value is currently not synced across potential multiple instances 
+  // This value is currently not synced across potential multiple instances
   // of the OS selector on the page. In practice, this currently does not
   // happen, but would need to be addressed if changed.
   OperatingSystem selectedOs = OperatingSystem.windows;
@@ -42,11 +44,11 @@ class _OsSelectorState extends State<OsSelector> {
       span.textContent = os.label;
     }
 
-    final bodyClasses = web.document.body!.classList;  
-    for (final os in OperatingSystem.values) {  
-      bodyClasses.remove('show-${os.name}');  
-    }  
-    bodyClasses.add('show-${os.name}'); 
+    final bodyClasses = web.document.body!.classList;
+    for (final os in OperatingSystem.values) {
+      bodyClasses.remove('show-${os.name}');
+    }
+    bodyClasses.add('show-${os.name}');
   }
 
   @override

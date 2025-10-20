@@ -135,8 +135,8 @@ OperatingSystem? getOS() {
     return OperatingSystem.windows;
   }
 
-  if ((userAgent.contains('Linux') || userAgent.contains('X11'))
-    && !userAgent.contains('Android')) {
+  if ((userAgent.contains('Linux') || userAgent.contains('X11')) &&
+      !userAgent.contains('Android')) {
     // Linux, but not Android
     return OperatingSystem.linux;
   }
