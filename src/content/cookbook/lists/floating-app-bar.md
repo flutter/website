@@ -1,9 +1,6 @@
 ---
 title: Place a floating app bar above a list
 description: How to place a floating app bar or navigation bar above a list.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/floating_app_bar/"?>

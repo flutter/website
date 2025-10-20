@@ -3,9 +3,6 @@ title: "Implicit animations"
 description: >
   Learn how to use Flutter's implicitly animated widgets
   through interactive examples and exercises.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>

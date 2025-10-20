@@ -10,7 +10,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:meta/meta.dart';
 import 'package:opal/opal.dart' as opal;
 
-import '../components/dartpad_injector.dart';
+import '../components/client/dartpad_injector.dart';
 import '../components/wrapped_code_block.dart';
 import '../highlight/theme/dark.dart';
 import '../highlight/theme/light.dart';
@@ -65,9 +65,9 @@ final class CodeBlockProcessor implements PageExtension {
 
           if (language == 'dartpad') {
             return ComponentNode(
-              DartPadInjector(
-                content: lines,
-                title: title,
+              DartPadWrapper(
+                content: lines.join('\n'),
+                title: title ?? 'Runnable Flutter example',
                 theme: metadata['theme'],
                 height: metadata['height'],
                 runAutomatically: metadata['run'] == 'true',
