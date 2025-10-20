@@ -8,6 +8,7 @@
 /// make sure to add the version number as the first entry in this list.
 /// This step might be eliminated in the future.
 final List<String> devToolsReleases = [
+  '2.51.0',
   '2.50.0',
   '2.49.0',
   '2.48.0',
