@@ -4,6 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 import 'package:path/path.dart' as path;
+import 'package:universal_web/web.dart' as web;
 
 /// Whether this build of the site will be deployed to production.
 const productionBuild = bool.fromEnvironment('PRODUCTION');
@@ -108,4 +109,43 @@ extension ListToClasses on List<String> {
   /// Convert a list of classes into a single class string
   /// that can be added to an HTML element.
   String get toClasses => join(' ');
+}
+
+enum OperatingSystem {
+  windows('Windows'),
+  macos('macOS'),
+  linux('Linux'),
+  chromeos('ChromeOS');
+
+  const OperatingSystem(this.label);
+  final String label;
+}
+
+/// Get the user's current operating system, or
+/// `null` if not of one "macos", "windows", "linux", or "chromeos".
+OperatingSystem? getOS() {
+  final userAgent = web.window.navigator.userAgent;
+  if (userAgent.contains('Mac')) {
+    // macOS or iPhone
+    return OperatingSystem.macos;
+  }
+
+  if (userAgent.contains('Win')) {
+    // Windows
+    return OperatingSystem.windows;
+  }
+
+  if ((userAgent.contains('Linux') || userAgent.contains('X11')) &&
+      !userAgent.contains('Android')) {
+    // Linux, but not Android
+    return OperatingSystem.linux;
+  }
+
+  if (userAgent.contains('CrOS')) {
+    // ChromeOS
+    return OperatingSystem.chromeos;
+  }
+
+  // Anything else
+  return null;
 }
