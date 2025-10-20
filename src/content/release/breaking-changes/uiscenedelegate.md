@@ -30,13 +30,13 @@ the following:
 
 To use the UIScene lifecycle with Flutter, migrate the following support:
 * All Flutter apps that support iOS - See the [migration guide for Flutter
-  apps](https://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
+  apps](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
 * Flutter plugins that use iOS application lifecycle events - See the [migration
   guide for
-  plugins](https://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
+  plugins](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
 * Flutter embedded in iOS native apps - See the [migration guide for adding
   Flutter to an existing
-  app](https://flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
+  app](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
 
 Migrating to UIScene shifts the AppDelegate's role—the UI lifecycle is
 now handled by the UISceneDelegate. The AppDelegate
@@ -380,7 +380,7 @@ This is enabled by default for SwiftUI apps.
 UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate-swiftui-info-plist.png)
 
 Otherwise, see [If your app supports multiple
-scenes](https://flutter.dev/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
+scenes](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
 for further instructions.
 ### If you can't directly make FlutterSceneDelegate a subclass
 
