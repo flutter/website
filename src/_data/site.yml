@@ -24,8 +24,6 @@ repo:
   wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
 dart:
   api: https://api.dart.dev
-sdk:
-  channel: stable # When changing this value also update it in src/_assets/js/archive.js
 social:
   twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/@flutterdev
