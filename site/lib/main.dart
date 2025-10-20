@@ -9,6 +9,7 @@ import 'package:path/path.dart' as path;
 
 import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/card.dart';
+import 'src/components/expansion_list.dart';
 import 'src/components/os_selector.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tabs.dart';
@@ -125,5 +126,22 @@ List<CustomComponent> get _embeddableComponents => [
   CustomComponent(
     pattern: RegExp('LearningResourceIndex', caseSensitive: false),
     builder: (_, _, _) => LearningResourceIndex(allLearningResources),
+  ),
+  CustomComponent(
+    pattern: RegExp('ExpansionList', caseSensitive: false),
+    builder: (_, attributes, _) {
+      final listName =
+          attributes['list'] ??
+          (throw Exception(
+            'ExpansionList component requires a "list" attribute.',
+          ));
+      final baseId =
+          attributes['baseid'] ??
+          (throw Exception(
+            'ExpansionList component requires a "baseId" attribute.',
+          ));
+
+      return ExpansionList.load(listName, baseId: baseId);
+    },
   ),
 ];
