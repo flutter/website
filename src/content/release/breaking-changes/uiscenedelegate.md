@@ -145,7 +145,7 @@ let controller : FlutterViewController = window?.rootViewController as! FlutterV
 
 To access the `FlutterViewController` directly, visit
 [Bespoke FlutterViewController
-usage](https://flutter.dev/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage).
+usage](https://docs.flutter.dev/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-usage).
 :::
 
 3. Migrate any custom logic within application life cycle events.
