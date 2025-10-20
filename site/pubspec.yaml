@@ -9,7 +9,7 @@ environment:
 dependencies:
   collection: ^1.19.1
   html: ^0.15.6
-  http: ^1.4.0
+  http: ^1.5.0
   jaspr: ^0.21.5
   jaspr_content: ^0.4.2
   # Used as our template engine.
@@ -20,7 +20,7 @@ dependencies:
   # Used for syntax highlighting.
   opal: ^0.0.1
   path: ^1.9.1
-  universal_web: ^1.1.1
+  universal_web: ^1.1.1+1
 
 dev_dependencies:
   analysis_defaults:
@@ -28,11 +28,11 @@ dev_dependencies:
       url: https://github.com/dart-lang/site-shared
       path: pkgs/analysis_defaults
       ref: 88aa84df953e67b7595b1e214b717f26d81ed538
-  build_runner: ^2.8.0
-  build_web_compilers: ^4.2.4
+  build_runner: ^2.9.0
+  build_web_compilers: ^4.3.0
   jaspr_builder: ^0.21.5
   sass: ^1.93.2
-  sass_builder: ^2.3.1
+  sass_builder: ^2.4.0
 
 jaspr:
   mode: static

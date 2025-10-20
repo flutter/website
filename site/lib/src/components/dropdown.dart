@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 
 import 'package:universal_web/web.dart' as web;
 
-import 'util/global_click.dart';
+import 'util/global_event_listener.dart';
 
 /// The root component of a dropdown in a client component.
 ///
@@ -33,7 +33,7 @@ final class _DropdownState extends State<Dropdown> {
 
   @override
   Component build(BuildContext _) {
-    return GlobalClickListener(
+    return GlobalEventListener(
       onClick: (event) {
         if (!_expanded) return;
         final target = event.target as web.HTMLElement?;

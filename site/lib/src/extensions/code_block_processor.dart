@@ -405,14 +405,15 @@ final class _CodeLine {
 
 extension on List<_CodeLine> {
   static final RegExp _terminalReplacementPattern = RegExp(
-    r'^(\s*\$\s*)|(C:\\(.*)>\s*)',
+    r'^(\s*\$\s*)|(PS\s+)?(C:\\(.*)>\s*)',
     multiLine: true,
   );
   static final RegExp _zeroWidthSpaceReplacementPattern = RegExp(r'\u200B');
 
-  String get copyContent => map((line) => line.content).join('\n')
-    ..replaceAll(_terminalReplacementPattern, '')
-    ..replaceAll(_zeroWidthSpaceReplacementPattern, '');
+  String get copyContent => map((line) => line.content)
+      .join('\n')
+      .replaceAll(_terminalReplacementPattern, '')
+      .replaceAll(_zeroWidthSpaceReplacementPattern, '');
 }
 
 /// Parses a comma-separated list of numbers and ranges into a set of numbers.
