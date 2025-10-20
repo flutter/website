@@ -57,6 +57,8 @@ final RegExp _slugifyHyphenTrim = RegExp(r'^-+|-+$');
 
 final RegExp _attributePattern = RegExp(r'(\w+)="([^"]*)"');
 final RegExp _whitespacePattern = RegExp(r'\s+');
+final RegExp _wordPattern = RegExp(r'\S+(?:\s*|$)');
+final RegExp _trailingMarkdownLinkPattern = RegExp(r'(\[.+\]:\s*\S+\s*)+$');
 
 Map<String, String> parseAttributes(String attributeString) {
   final attributes = <String, String>{};
@@ -105,6 +107,31 @@ String truncateWords(String text, int maxWords) {
 
   final truncated = words.take(maxWords).join(' ');
   return '$truncated...';
+}
+
+/// Truncates the given [text] to the specified number of words [maxWords],
+/// preserving all whitespace and line breaks, as well as any trailing Markdown
+/// link definitions at the end of the text.
+String truncateWordsMarkdown(String text, int maxWords) {
+  if (maxWords <= 0) {
+    return '';
+  }
+
+  final trailingLinks = _trailingMarkdownLinkPattern.firstMatch(text);
+  var endContent = '';
+
+  if (trailingLinks != null) {
+    text = text.substring(0, trailingLinks.start);
+    endContent = '\n${trailingLinks.group(0)!}';
+  }
+
+  final matches = _wordPattern.allMatches(text);
+  if (matches.length <= maxWords) {
+    return text + endContent;
+  }
+
+  final truncated = matches.map((m) => m.group(0)!).take(maxWords).join('');
+  return '$truncated...\n$endContent';
 }
 
 extension ListToClasses on List<String> {

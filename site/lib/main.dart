@@ -11,6 +11,7 @@ import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/card.dart';
 import 'src/components/client/archive_table.dart';
 import 'src/components/client/download_latest_button.dart';
+import 'src/components/expansion_list.dart';
 import 'src/components/os_selector.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tabs.dart';
@@ -142,6 +143,23 @@ List<CustomComponent> get _embeddableComponents => [
       final os = attributes['os'] as String;
       final arch = attributes['arch'];
       return DownloadLatestButton(os: os.toLowerCase(), arch: arch?.toLowerCase());
+    },
+  ),
+  CustomComponent(
+    pattern: RegExp('ExpansionList', caseSensitive: false),
+    builder: (_, attributes, _) {
+      final listName =
+          attributes['list'] ??
+          (throw Exception(
+            'ExpansionList component requires a "list" attribute.',
+          ));
+      final baseId =
+          attributes['baseid'] ??
+          (throw Exception(
+            'ExpansionList component requires a "baseId" attribute.',
+          ));
+
+      return ExpansionList.load(listName, baseId: baseId);
     },
   ),
 ];

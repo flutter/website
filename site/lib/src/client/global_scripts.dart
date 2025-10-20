@@ -39,6 +39,7 @@ void _setUpSite() {
   _setUpSidenav();
   _setUpSearchKeybindings();
   _setUpTabs();
+  _setUpCollapsibleElements();
 }
 
 void _setUpSidenav() {
@@ -265,5 +266,35 @@ enum _ClientOperatingSystem {
     }
 
     return fallback;
+  }
+}
+
+void _setUpCollapsibleElements() {
+  final toggles = web.document.querySelectorAll('[data-toggle="collapse"]');
+  for (var toggleIndex = 0; toggleIndex < toggles.length; toggleIndex += 1) {
+    final toggle = toggles.item(toggleIndex) as web.Element;
+
+    final targetSelector = toggle.getAttribute('data-target');
+    if (targetSelector == null) return;
+    final target = web.document.querySelector(targetSelector);
+    if (target == null) return;
+
+    void handleClick(web.Event e) {
+      if (toggle.classList.contains('collapsed')) {
+        toggle.classList.remove('collapsed');
+        toggle.ariaExpanded = 'true';
+
+        target.classList.add('show');
+      } else {
+        toggle.classList.add('collapsed');
+        toggle.ariaExpanded = 'false';
+
+        target.classList.remove('show');
+      }
+
+      e.preventDefault();
+    }
+
+    toggle.addEventListener('click', handleClick.toJS);
   }
 }

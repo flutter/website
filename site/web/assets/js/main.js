@@ -1,29 +1,3 @@
-function setupCollapsibleElements() {
-  const toggles = document.querySelectorAll('[data-toggle="collapse"]');
-  toggles.forEach(function (toggle) {
-    const targetSelector = toggle.getAttribute('data-target');
-    if (!targetSelector) return;
-    const target = document.querySelector(targetSelector);
-    if (!target) return;
-
-    toggle.addEventListener('click', (e) => {
-      if (toggle.classList.contains('collapsed')) {
-        toggle.classList.remove('collapsed');
-        toggle.ariaExpanded = 'true';
-
-        target.classList.add('show');
-      } else {
-        toggle.classList.add('collapsed');
-        toggle.ariaExpanded = 'false';
-
-        target.classList.remove('show');
-      }
-
-      e.preventDefault();
-    });
-  });
-}
-
 /**
  * Get the user's current operating system, or
  * `null` if not of one "macos", "windows", "linux", or "chromeos".
@@ -184,7 +158,6 @@ function setupPlatformKeys() {
 function setupSite() {
   setupToc();
   setupPlatformKeys();
-  setupCollapsibleElements();
 }
 
 if (document.readyState === 'loading') {
