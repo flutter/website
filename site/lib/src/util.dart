@@ -12,8 +12,6 @@ const productionBuild = bool.fromEnvironment('PRODUCTION');
 /// Path to the `/src` directory where site content is located.
 final siteSrcDirectoryPath = path.join('..', 'src');
 
-const globalSdkChannel = 'stable';
-
 /// Split the specific [sourceString] into a list of Jaspr [Component]
 /// by adding a `<wbr>`  element after each underscore.
 ///

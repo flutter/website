@@ -41,7 +41,7 @@ class _DownloadLatestButtonState extends State<DownloadLatestButton> {
       );
       final filteredReleases = releasesData.where(
         (release) {
-          return release.channel == globalSdkChannel &&
+          return release.channel == 'stable' &&
               (component.arch == null ||
                   release.architecture == component.arch);
         },
