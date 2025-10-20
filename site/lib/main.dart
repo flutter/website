@@ -9,6 +9,8 @@ import 'package:path/path.dart' as path;
 
 import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/card.dart';
+import 'src/components/client/archive_table.dart';
+import 'src/components/client/download_latest_button.dart';
 import 'src/components/os_selector.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tabs.dart';
@@ -125,5 +127,21 @@ List<CustomComponent> get _embeddableComponents => [
   CustomComponent(
     pattern: RegExp('LearningResourceIndex', caseSensitive: false),
     builder: (_, _, _) => LearningResourceIndex(allLearningResources),
+  ),
+  CustomComponent(
+    pattern: RegExp('ArchiveTable'),
+    builder: (_, attributes, _) {
+      final os = attributes['os'] as String;
+      final channel = attributes['channel'] as String;
+      return ArchiveTable(os: os.toLowerCase(), channel: channel.toLowerCase());
+    },
+  ),
+  CustomComponent(
+    pattern: RegExp('DownloadLatestButton', caseSensitive: false),
+    builder: (_, attributes, _) {
+      final os = attributes['os'] as String;
+      final arch = attributes['arch'];
+      return DownloadLatestButton(os: os.toLowerCase(), arch: arch?.toLowerCase());
+    },
   ),
 ];

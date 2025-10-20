@@ -20,7 +20,7 @@ repo:
 dart:
   api: https://api.dart.dev
 sdk:
-  channel: stable # When changing this value also update it in src/_assets/js/archive.js
+  channel: stable # When changing this value also update it in site/lib/src/util.dart
 social:
   twitter: https://twitter.com/FlutterDev
   youtube: https://www.youtube.com/@flutterdev
