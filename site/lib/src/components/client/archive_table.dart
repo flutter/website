@@ -63,11 +63,11 @@ class ArchiveTable extends StatefulComponent {
         .get(Uri.parse('${_baseReleasesUrl}releases_$os.json'))
         .then((response) {
           if (response.statusCode == 200) {
-            final releases = jsonDecode(response.body) as Map<String, dynamic>;
+            final releases = jsonDecode(response.body) as Map<String, Object?>;
             final baseUrl = releases['base_url'] as String;
-            final releasesList = releases['releases'] as List<dynamic>;
+            final releasesList = releases['releases'] as List<Object?>;
             return releasesList.map((release) {
-              return Release.fromJson(release as Map<String, dynamic>, baseUrl);
+              return Release.fromJson(release as Map<String, Object?>, baseUrl);
             }).toList();
           } else {
             throw Exception('Failed to load Flutter releases');

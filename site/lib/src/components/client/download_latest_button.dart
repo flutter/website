@@ -5,7 +5,6 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
 
-import '../../util.dart';
 import 'archive_table.dart';
 
 @client
