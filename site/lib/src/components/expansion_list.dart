@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -26,7 +27,7 @@ class ExpansionListItem {
         data: ExpansionListItemData(
           title: data['title'] as String,
           description: data['description'] as String,
-          contentTags: List<String>.from(data['contentTags'] as List<dynamic>),
+          contentTags: (data['contentTags'] as List<Object?>).cast<String>(),
           iconPath: data['iconPath'] as String?,
         ),
         content: content,
@@ -86,7 +87,7 @@ class ExpansionList extends StatefulComponent {
           for (final page in context.pages)
             if (page.path.startsWith(listPath) && page.path.endsWith('.md'))
               ExpansionListItem.fromPage(page),
-        ]..sort((a, b) => a.order.compareTo(b.order));
+        ].sorted((a, b) => a.order.compareTo(b.order));
 
         return ExpansionList(
           key: ValueKey(listName),
@@ -162,7 +163,7 @@ class _ExpansionListState extends State<ExpansionList> {
                   text('Read full article'),
                 ]),
               ]),
-              // Required to add "margin" that doesn't cause expansion jank
+              // Required to add "margin" that doesn't cause expansion jank.
               div(
                 classes: 'separator',
                 attributes: {'aria-hidden': 'true'},

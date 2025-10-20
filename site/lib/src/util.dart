@@ -113,7 +113,7 @@ String truncateWords(String text, int maxWords) {
 String truncateWordsMarkdown(String text, int maxWords) {
   if (maxWords <= 0) {
     return '';
-  } 
+  }
 
   final trailingLinks = _trailingMarkdownLinkPattern.firstMatch(text);
   var endContent = '';
