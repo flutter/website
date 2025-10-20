@@ -15,9 +15,9 @@ version of Flutter for compatibility reasons or to investigate bugs.
 The archive includes Flutter SDKs for Windows, macOS, and Linux on the
 following [channels][]:
 
-*   **{{site.sdk.channel | capitalize }} channel**: This channel contains the
-    most stable Flutter builds. Roughly every third beta version is promoted
-    to the stable version. The stable channel is the recommended channel for
+*   **Stable channel**: This channel contains the most stable Flutter builds.
+    Roughly every third beta version is promoted to the stable version.
+    The stable channel is the recommended channel for
     new users and for production app releases.
 
 *   **Beta channel**: This channel is the most recent version of Flutter that is
