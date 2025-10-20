@@ -188,4 +188,4 @@ either an article title or an error message, which confirms that your
 Model and ViewModel are wired up correctly.
 
 [ChangeNotifier]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
-[try-catch block]: {{site.dart-site}}/language/error-handling
+[try-catch block]: https://dart.dev/language/error-handling
