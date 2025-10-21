@@ -59,7 +59,7 @@ Register your app on App Store Connect:
 
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
 1. On the App Store Connect landing page, click **Apps**.
-1. Click **+** in the top-left corner of the Apps page,
+1. Click **+** in the top-left corner,
    then select **New App**.
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.
