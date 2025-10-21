@@ -144,8 +144,9 @@ class _ArchiveTableState extends State<ArchiveTable> {
     final archiveExtension = os == 'linux' ? 'tar.xz' : 'zip';
     return a(
       href:
-          '${FlutterRelease.baseReleasesUrl}$channel/$os/flutter_${os}_'
-          '${release.version}-$channel.$archiveExtension.intoto.jsonl',
+          '${FlutterRelease.baseReleasesUrl}$channel/$os/'
+          'flutter_${os}_${release.version}-$channel.'
+          '$archiveExtension.intoto.jsonl',
       target: Target.blank,
       [text('Attestation bundle')],
     );
