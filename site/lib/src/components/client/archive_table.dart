@@ -145,7 +145,8 @@ class _ArchiveTableState extends State<ArchiveTable> {
     return a(
       href:
           '${FlutterRelease.baseReleasesUrl}$channel/$os/'
-          'flutter_${os}_${release.version}-$channel.$archiveExtension.intoto.jsonl',
+          'flutter_${os}_${release.version}-$channel.'
+          '$archiveExtension.intoto.jsonl',
       target: Target.blank,
       [text('Attestation bundle')],
     );
