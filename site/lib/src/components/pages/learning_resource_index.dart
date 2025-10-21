@@ -15,14 +15,25 @@ final class LearningResourceIndex extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final resources =
-        context.page.data['learningResources'] as List<LearningResource>? ?? [];
+    final resourcesData =
+        context.page.data['learning-resources-index'] as Map<String, Object?>?;
+
+    final learningResources = <LearningResource>[];
+    if (resourcesData != null) {
+      for (final group in resourcesData.values) {
+        for (final resource in group as List<Object?>) {
+          learningResources.add(
+            LearningResource.fromMap(resource as Map<String, Object?>),
+          );
+        }
+      }
+    }
 
     return div(id: 'resource-index-content', [
       div(classes: 'left-col', id: 'resource-index-main-content', [
         const LearningResourceFilters(),
         section(classes: 'card-grid', id: 'all-resources-grid', [
-          for (final item in resources) _ResourceCard(item),
+          for (final item in learningResources) _ResourceCard(item),
         ]),
       ]),
       const LearningResourceFiltersSidebar(),

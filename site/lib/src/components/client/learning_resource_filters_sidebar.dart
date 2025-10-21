@@ -183,8 +183,7 @@ class FiltersNotifier extends ChangeNotifier {
 
     for (final info in resources) {
       final matchesTags =
-          selectedTags.isEmpty ||
-          info.tags.any(filterTags.contains);
+          selectedTags.isEmpty || info.tags.any(filterTags.contains);
       if (!matchesTags) {
         continue;
       }

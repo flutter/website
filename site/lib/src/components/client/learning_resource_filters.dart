@@ -13,7 +13,6 @@ import '../../models/learning_resource_model.dart';
 import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
-
 @client
 class LearningResourceFilters extends StatefulComponent {
   const LearningResourceFilters({super.key});

@@ -14,7 +14,7 @@ final class LearningResource {
     this.imageUrl,
   });
 
-  /// Creates a [LearningResource] from a Map, used on the server 
+  /// Creates a [LearningResource] from a Map, used on the server
   /// when parsing the yaml data files.
   factory LearningResource.fromMap(Map<String, Object?> map) {
     return LearningResource(
