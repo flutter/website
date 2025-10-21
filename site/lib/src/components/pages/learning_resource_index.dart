@@ -6,7 +6,8 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../models/learning_resource_model.dart';
 import '../../util.dart';
-import '../material_icon.dart';
+import '../client/learning_resource_filters.dart';
+import '../client/learning_resource_filters_sidebar.dart';
 
 final class LearningResourceIndex extends StatelessComponent {
   LearningResourceIndex(this.resources);
@@ -14,214 +15,17 @@ final class LearningResourceIndex extends StatelessComponent {
   final List<LearningResource> resources;
 
   @override
-  Component build(BuildContext _) => div(
-    id: 'resource-index-content',
-    [
-      _buildMainContent(),
-      _buildFilterSidebar(),
-    ],
-  );
-
-  Component _buildMainContent() => div(
-    classes: 'left-col',
-    id: 'resource-index-main-content',
-    [
-      div(
-        id: 'resource-search-group',
-        classes: 'chip-filters-group',
-        [
-          div(
-            classes: 'top-row',
-            [
-              div(
-                classes: 'search-wrapper',
-                id: 'resource-search',
-                [
-                  span(
-                    classes: 'material-symbols leading-icon',
-                    attributes: {
-                      'aria-hidden': 'true',
-                      'translate': 'no',
-                    },
-                    [text('search')],
-                  ),
-                  input(
-                    type: InputType.search,
-                    attributes: {
-                      'placeholder': 'Try "button" or "networking"...',
-                      'aria-label':
-                          'Search learning resources by name and category',
-                    },
-                  ),
-                ],
-              ),
-              button(
-                classes: 'icon-button show-filters-button',
-                [
-                  span(
-                    classes: 'material-symbols',
-                    attributes: {
-                      'aria-hidden': 'true',
-                      'translate': 'no',
-                    },
-                    [text('filter_list')],
-                  ),
-                ],
-              ),
-            ],
-          ),
-          div(
-            classes: 'label-row',
-            [
-              label(
-                attributes: {'for': 'resource-search'},
-                [
-                  text('Showing '),
-                  span(id: 'displayed-resource-card-count', [text('0')]),
-                  text(' / '),
-                  span(id: 'total-resource-card-count', [text('0')]),
-                ],
-              ),
-              button(
-                id: 'clear-resource-index-filters',
-                attributes: {'disabled': 'true'},
-                [
-                  span(
-                    classes: 'material-symbols',
-                    attributes: {
-                      'aria-hidden': 'true',
-                      'translate': 'no',
-                    },
-                    [text('close_small')],
-                  ),
-                  span([text('Clear filters')]),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-      section(
-        classes: 'card-grid',
-        id: 'all-resources-grid',
-        [
+  Component build(BuildContext _) {
+    return div(id: 'resource-index-content', [
+      div(classes: 'left-col', id: 'resource-index-main-content', [
+        const LearningResourceFilters(),
+        section(classes: 'card-grid', id: 'all-resources-grid', [
           for (final item in resources) _ResourceCard(item),
-        ],
-      ),
-    ],
-  );
-
-  Component _buildFilterSidebar() => div(
-    classes: 'right-col',
-    [
-      input(
-        type: InputType.checkbox,
-        id: 'open-filter-toggle',
-        attributes: {'hidden': 'true'},
-      ),
-      div(
-        id: 'resource-filter-group-wrapper',
-        [
-          div(
-            id: 'resource-filter-group',
-            [
-              div(
-                classes: 'filter-header',
-                [
-                  label(
-                    attributes: {
-                      'for': 'open-filter-toggle',
-                      'aria-hidden': 'true',
-                    },
-                    classes: 'close-icon',
-                    [
-                      const MaterialIcon('close'),
-                    ],
-                  ),
-                ],
-              ),
-              div(
-                classes: 'table-title',
-                [text('Filter by')],
-              ),
-              div(
-                classes: 'table-content',
-                [
-                  h4([text('Subject')]),
-                  ul(
-                    id: 'filters-tags',
-                    classes: 'collapsed',
-                    [
-                      for (final tag in LearningResourceTag.values)
-                        li(
-                          classes: 'hidden',
-                          [
-                            input(
-                              type: InputType.checkbox,
-                              attributes: {
-                                'role': 'checkbox',
-                                'name': 'filter-${tag.id}',
-                                'data-category': 'tags',
-                              },
-                              id: 'filter-${tag.id}',
-                            ),
-                            label(
-                              attributes: {'for': 'filter-${tag.id}'},
-                              [text(tag.formattedName)],
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
-                  button(
-                    id: 'filters-tags-show-button',
-                    [
-                      span(
-                        classes: 'label',
-                        [text('More')],
-                      ),
-                      span(
-                        classes: 'material-symbols',
-                        attributes: {
-                          'aria-hidden': 'true',
-                          'translate': 'no',
-                        },
-                        [text('expand_more')],
-                      ),
-                    ],
-                  ),
-                  h4([text('Type')]),
-                  ul(
-                    id: 'filters-type',
-                    [
-                      for (final type in LearningResourceType.values)
-                        li(
-                          [
-                            input(
-                              type: InputType.checkbox,
-                              attributes: {
-                                'role': 'checkbox',
-                                'data-category': 'type',
-                                'name': 'filter-${type.id}',
-                              },
-                              id: 'filter-${type.id}',
-                            ),
-                            label(
-                              attributes: {'for': 'filter-${type.id}'},
-                              [text(type.formattedName)],
-                            ),
-                          ],
-                        ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
-      ),
-    ],
-  );
+        ]),
+      ]),
+      const LearningResourceFiltersSidebar(),
+    ]);
+  }
 }
 
 final class _ResourceCard extends StatelessComponent {
@@ -243,43 +47,32 @@ final class _ResourceCard extends StatelessComponent {
       },
       [
         if (resource.imageUrl case final imageUrl?)
-          div(
-            classes: 'card-image-holder-material-3',
-            [
-              img(src: imageUrl, alt: ''),
-            ],
+          div(classes: 'card-image-holder-material-3', [
+            img(src: imageUrl, alt: ''),
+          ]),
+        div(classes: 'card-leading', [
+          span(
+            classes: [
+              'pill-sm',
+              switch (resource.type) {
+                LearningResourceType.recipe => 'teal',
+                LearningResourceType.sample => 'purple',
+                LearningResourceType.tutorial => 'flutter-blue',
+                LearningResourceType.workshop => 'flutter-blue',
+              },
+            ].toClasses,
+            [text(resource.type.formattedName)],
           ),
-        div(
-          classes: 'card-leading',
-          [
-            span(
-              classes: [
-                'pill-sm',
-                switch (resource.type) {
-                  LearningResourceType.recipe => 'teal',
-                  LearningResourceType.sample => 'purple',
-                  LearningResourceType.tutorial => 'flutter-blue',
-                  LearningResourceType.workshop => 'flutter-blue',
-                },
-              ].toClasses,
-              [text(resource.type.formattedName)],
-            ),
-            _iconForSource(resource.link.source),
-          ],
-        ),
-        div(
-          classes: 'card-header',
-          [
-            span(
-              classes: 'card-title',
-              [text(resource.name)],
-            ),
-          ],
-        ),
-        div(
-          classes: 'card-content',
-          [text(resource.description)],
-        ),
+          _iconForSource(resource.link.source),
+        ]),
+        div(classes: 'card-header', [
+          span(classes: 'card-title', [
+            text(resource.name),
+          ]),
+        ]),
+        div(classes: 'card-content', [
+          text(resource.description),
+        ]),
       ],
     );
   }
