@@ -107,7 +107,6 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
             'hash=${htmlEscape.convert(generatedStylesHash)}',
       ),
 
-      script(src: '/assets/js/archive.js?v=2'),
       script(src: '/assets/js/main.js?v=5'),
       if (pageData['js'] case final List<Object?> jsList)
         for (final js in jsList)

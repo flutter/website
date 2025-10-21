@@ -56,52 +56,30 @@ SDK archive:
 ## Stable channel
 
 <Tabs key="os-archive-tabs">
-
-<Tab name="Windows">
-
-{% render "docs/release/archive-release.md", os: "Windows", channel: "stable" %}
-
-</Tab>
-
-<Tab name="macOS">
-
-{% render "docs/release/archive-release.md", os: "macOS", channel: "stable" %}
-
-</Tab>
-
-<Tab name="Linux">
-
-{% render "docs/release/archive-release.md", os: "Linux", channel: "stable" %}
-
-</Tab>
-
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="stable" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="stable" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="stable" />
+    </Tab>
 </Tabs>
-
 
 ## Beta channel
 
 <Tabs key="os-archive-tabs">
-
-<Tab name="Windows">
-
-{% render "docs/release/archive-release.md", os: "Windows", channel: "beta" %}
-
-</Tab>
-
-<Tab name="macOS">
-
-{% render "docs/release/archive-release.md", os: "macOS", channel: "beta" %}
-
-</Tab>
-
-<Tab name="Linux">
-
-{% render "docs/release/archive-release.md", os: "Linux", channel: "beta" %}
-
-</Tab>
-
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="beta" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="beta" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="beta" />
+    </Tab>
 </Tabs>
-
 
 <a id="master-channel" aria-hidden="true"></a>
 
