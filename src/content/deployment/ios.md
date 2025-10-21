@@ -58,8 +58,8 @@ To register a Bundle ID for your app, follow these steps:
 Register your app on App Store Connect:
 
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
-1. On the App Store Connect landing page, click **My Apps**.
-1. Click **+** in the top-left corner of the My Apps page,
+1. On the App Store Connect landing page, click **Apps**.
+1. Click **+** in the top-left corner,
    then select **New App**.
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.
