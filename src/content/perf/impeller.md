@@ -150,3 +150,12 @@ check out the [README.md][] file in the source tree.
 * [How Impeller works around the lack of uniform buffers in Open GL ES 2.0][impeller-ubo-gles2]
 * [Guidance for writing efficient shaders][impeller-shader-optimization]
 * [How color blending works in Impeller][impeller-blending]
+
+[impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
+[impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md
+[impeller-xcode-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md
+[impeller-read-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/read_frame_captures.md
+[impeller-metal-validation]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/metal_validation.md
+[impeller-ubo-gles2]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/ubo_gles2.md
+[impeller-shader-optimization]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
+[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md  
