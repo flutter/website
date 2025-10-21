@@ -129,11 +129,6 @@ and 1 are set to the image's width and height.
 Your shader must specify this constructor to accept these values (for example,
 a `sampler2D` and a `vec2`), but you should not set them from your Dart code.
 
-[`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
-[`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
-[`BackdropFilter`]: {{site.api}}/flutter/widgets/BackdropFilter-class.html
-[`ImageFilter.shader`]: {{site.api}}/flutter/dart-ui/ImageFilter/ImageFilter.shader.html
-
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
   return ClipRect(
@@ -150,6 +145,16 @@ Widget build(BuildContext context, FragmentShader shader) {
   );
 }
 ```
+
+When using [`ImageFilter`][] with [`BackdropFilter`][], a [`ClipRect`][] can be
+used to limit the area that is affected by the [`ImageFilter`][]. Without a
+[`ClipRect`][] the [`BackdropFilter`][] will be applied to the whole screen.
+
+[`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
+[`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
+[`BackdropFilter`]: {{site.api}}/flutter/widgets/BackdropFilter-class.html
+[`ImageFilter.shader`]: {{site.api}}/flutter/dart-ui/ImageFilter/ImageFilter.shader.html
+[`ClipRect`]: {{site.api}}/flutter/widgets/ClipRect-class.html
 
 ## Authoring shaders
 
