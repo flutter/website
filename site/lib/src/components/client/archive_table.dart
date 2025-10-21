@@ -2,48 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:convert';
-
-import 'package:http/http.dart' as http;
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
-import 'package:universal_web/js_interop.dart';
 
-class Release {
-  Release({
-    required this.url,
-    required this.version,
-    required this.channel,
-    required this.dartSdkVersion,
-    required this.architecture,
-    required this.hash,
-    required this.releaseDate,
-  });
-
-  factory Release.fromJson(Map<String, Object?> json, String baseUrl) {
-    return Release(
-      url: '$baseUrl/${json['archive'] as String}',
-      version: json['version'] as String,
-      channel: json['channel'] as String,
-      dartSdkVersion:
-          (json['dart_sdk_version'] as String?)?.split(' ')[0] ?? '-',
-      architecture: (json['dart_sdk_arch'] as String?) ?? 'x64',
-      hash: (json['hash'] as String).substring(0, 7),
-      releaseDate: Date(Date.parse(json['release_date'] as String)),
-    );
-  }
-
-  final String url;
-  final String version;
-  final String channel;
-  final String dartSdkVersion;
-  final String architecture;
-  final String hash;
-  final Date releaseDate;
-}
-
-const _baseReleasesUrl =
-    'https://storage.googleapis.com/flutter_infra_release/releases/';
+import '../../models/flutter_release_model.dart';
 
 @client
 class ArchiveTable extends StatefulComponent {
@@ -54,26 +16,6 @@ class ArchiveTable extends StatefulComponent {
 
   @override
   State<ArchiveTable> createState() => _ArchiveTableState();
-
-  static final Map<String, Future<List<Release>>> _flutterReleasesFutures = {};
-
-  /// Fetches Flutter release JSON for the given OS and caches the result.
-  static Future<List<Release>> fetchFlutterReleases(String os) {
-    return _flutterReleasesFutures[os] ??= http
-        .get(Uri.parse('${_baseReleasesUrl}releases_$os.json'))
-        .then((response) {
-          if (response.statusCode == 200) {
-            final releases = jsonDecode(response.body) as Map<String, Object?>;
-            final baseUrl = releases['base_url'] as String;
-            final releasesList = releases['releases'] as List<Object?>;
-            return releasesList.map((release) {
-              return Release.fromJson(release as Map<String, Object?>, baseUrl);
-            }).toList();
-          } else {
-            throw Exception('Failed to load Flutter releases');
-          }
-        });
-  }
 }
 
 class _ArchiveTableState extends State<ArchiveTable> {
@@ -82,7 +24,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
 
   bool isLoading = true;
   String? error;
-  List<Release> releases = [];
+  List<FlutterRelease> releases = [];
 
   @override
   void initState() {
@@ -96,7 +38,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
   @awaitNotRequired
   Future<void> loadReleases() async {
     try {
-      final releasesData = await ArchiveTable.fetchFlutterReleases(
+      final releasesData = await FlutterRelease.fetchFlutterReleases(
         component.os,
       );
       final filteredReleases = releasesData
@@ -188,7 +130,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
   static final windowsCutoff = Date.parse('4/3/2023');
   static final otherOsCutoff = Date.parse('12/15/2022');
 
-  Component buildProvenanceLink(Release release) {
+  Component buildProvenanceLink(FlutterRelease release) {
     final dateValue = release.releaseDate.valueOf();
 
     if (os == 'windows' && dateValue < windowsCutoff) {
@@ -202,22 +144,10 @@ class _ArchiveTableState extends State<ArchiveTable> {
     final archiveExtension = os == 'linux' ? 'tar.xz' : 'zip';
     return a(
       href:
-          '$_baseReleasesUrl$channel/$os/flutter_${os}_${release.version}-$channel.$archiveExtension.intoto.jsonl',
+          '${FlutterRelease.baseReleasesUrl}$channel/$os/'
+          'flutter_${os}_${release.version}-$channel.$archiveExtension.intoto.jsonl',
       target: Target.blank,
       [text('Attestation bundle')],
     );
   }
-}
-
-/// The JavaScript Date object.
-///
-/// Used for formatting dates on the client side, as a
-/// lightweight alternative to depending on the 'intl' package.
-extension type Date._(JSObject date) implements JSObject {
-  external Date(int date);
-
-  external static int parse(String dateString);
-
-  external String toLocaleDateString();
-  external int valueOf();
 }

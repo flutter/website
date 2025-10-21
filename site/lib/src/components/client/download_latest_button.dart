@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
 
-import 'archive_table.dart';
+import '../../models/flutter_release_model.dart';
 
 @client
 class DownloadLatestButton extends StatefulComponent {
@@ -30,12 +30,12 @@ class _DownloadLatestButtonState extends State<DownloadLatestButton> {
 
   bool isLoading = true;
   String? error;
-  Release? latestRelease;
+  FlutterRelease? latestRelease;
 
   @awaitNotRequired
   Future<void> loadLatestRelease() async {
     try {
-      final releasesData = await ArchiveTable.fetchFlutterReleases(
+      final releasesData = await FlutterRelease.fetchFlutterReleases(
         component.os,
       );
       final filteredReleases = releasesData.where(
