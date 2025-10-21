@@ -12,8 +12,8 @@ a quick way to modify the server's behavior,
 this document focuses on a more structured approach:
 defining your server's behavior through a centralized `web_dev_config.yaml` file.
 This configuration file allows you to
-customize server settings-host, port, HTTPS settings, and
-proxy rules-ensuring a consistent development environment.
+customize server settings—host, port, HTTPS settings, and
+proxy rules—ensuring a consistent development environment.
 
 ## Create a configuration file
 
