@@ -15,7 +15,6 @@ import 'src/components/expansion_list.dart';
 import 'src/components/os_selector.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tabs.dart';
-import 'src/data/learning_resources.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
@@ -127,7 +126,7 @@ List<CustomComponent> get _embeddableComponents => [
   ),
   CustomComponent(
     pattern: RegExp('LearningResourceIndex', caseSensitive: false),
-    builder: (_, _, _) => LearningResourceIndex(allLearningResources),
+    builder: (_, _, _) => LearningResourceIndex(),
   ),
   CustomComponent(
     pattern: RegExp('ArchiveTable'),

@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../models/learning_resource_model.dart';
 import '../../util.dart';
@@ -10,12 +11,13 @@ import '../client/learning_resource_filters.dart';
 import '../client/learning_resource_filters_sidebar.dart';
 
 final class LearningResourceIndex extends StatelessComponent {
-  LearningResourceIndex(this.resources);
-
-  final List<LearningResource> resources;
+  LearningResourceIndex({super.key});
 
   @override
-  Component build(BuildContext _) {
+  Component build(BuildContext context) {
+    final resources =
+        context.page.data['learningResources'] as List<LearningResource>? ?? [];
+
     return div(id: 'resource-index-content', [
       div(classes: 'left-col', id: 'resource-index-main-content', [
         const LearningResourceFilters(),
@@ -38,11 +40,11 @@ final class _ResourceCard extends StatelessComponent {
     return a(
       id: resource.name,
       classes: 'card outlined-card',
-      href: resource.link.url,
+      href: resource.link?.url ?? '#',
       target: Target.blank,
       attributes: {
-        'data-type': resource.type.id,
-        'data-tags': resource.tags.map((tag) => tag.id).join(', '),
+        'data-type': resource.type,
+        'data-tags': resource.tags.join(', '),
         'data-description': resource.description,
       },
       [
@@ -55,15 +57,19 @@ final class _ResourceCard extends StatelessComponent {
             classes: [
               'pill-sm',
               switch (resource.type) {
-                LearningResourceType.recipe => 'teal',
-                LearningResourceType.sample => 'purple',
-                LearningResourceType.tutorial => 'flutter-blue',
-                LearningResourceType.workshop => 'flutter-blue',
+                'codelab' || 'workshop' => 'flutter-blue',
+                'quickstart' || 'demo' => 'purple',
+                _ => 'teal',
               },
             ].toClasses,
-            [text(resource.type.formattedName)],
+            [
+              text(
+                resource.type.substring(0, 1).toUpperCase() +
+                    resource.type.substring(1),
+              ),
+            ],
           ),
-          _iconForSource(resource.link.source),
+          _iconForLabel(resource.link?.label ?? ''),
         ]),
         div(classes: 'card-header', [
           span(classes: 'card-title', [
@@ -77,68 +83,53 @@ final class _ResourceCard extends StatelessComponent {
     );
   }
 
-  Component _iconForSource(LearningResourceSource source) => switch (source) {
-    LearningResourceSource.gitHub => svg(
+  Component _iconForLabel(String label) => switch (label) {
+    'Flutter Github' => svg(
       classes: 'monochrome-icon',
       width: 24.px,
       height: 24.px,
       [
         const Component.element(
           tag: 'use',
-          attributes: {
-            'href': '/assets/images/social/github.svg#github',
-          },
+          attributes: {'href': '/assets/images/social/github.svg#github'},
         ),
       ],
     ),
-    LearningResourceSource.dartDocs => img(
+    'Dart Github' || 'Dart docs' => img(
       src: '/assets/images/branding/dart/logo.svg',
       width: 24,
       alt: 'Dart logo',
     ),
-    LearningResourceSource.flutterDocs => img(
-      src: '/assets/images/branding/flutter/icon/1080.png',
-      alt: 'Flutter logo',
-      width: 24,
-    ),
-    LearningResourceSource.googleCodelab => svg(
-      width: 24.px,
-      height: 24.px,
-      [
-        const Component.element(
-          tag: 'use',
-          attributes: {
-            'href':
-                '/assets/images/social/google-developers.svg#google-developers',
-          },
-        ),
-      ],
-    ),
-    LearningResourceSource.youTube => svg(
+    'Google Codelab' => svg(width: 24.px, height: 24.px, [
+      const Component.element(
+        tag: 'use',
+        attributes: {
+          'href':
+              '/assets/images/social/google-developers.svg#google-developers',
+        },
+      ),
+    ]),
+    'YouTube' => svg(
       attributes: {'style': 'color: red'},
       width: 24.px,
       height: 24.px,
       [
         const Component.element(
           tag: 'use',
-          attributes: {
-            'href': '/assets/images/social/youtube.svg#youtube',
-          },
+          attributes: {'href': '/assets/images/social/youtube.svg#youtube'},
         ),
       ],
     ),
-    LearningResourceSource.medium => svg(
-      classes: 'monochrome-icon',
-      width: 24.px,
-      height: 24.px,
-      [
-        const Component.element(
-          tag: 'use',
-          attributes: {
-            'href': '/assets/images/social/medium.svg#medium',
-          },
-        ),
-      ],
+    'Medium' => svg(classes: 'monochrome-icon', width: 24.px, height: 24.px, [
+      const Component.element(
+        tag: 'use',
+        attributes: {'href': '/assets/images/social/medium.svg#medium'},
+      ),
+    ]),
+    'Flutter docs' || _ => img(
+      src: '/assets/images/branding/flutter/icon/1080.png',
+      alt: 'Flutter logo',
+      width: 24,
     ),
   };
 }

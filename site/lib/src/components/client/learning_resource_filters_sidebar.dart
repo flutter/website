@@ -3,8 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-import 'package:universal_web/web.dart';
-import 'package:universal_web/web.dart' as web;
 
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
@@ -56,16 +54,17 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
                           type: InputType.checkbox,
                           attributes: {
                             'role': 'checkbox',
-                            'name': 'filter-${tag.id}',
+                            'name': 'filter-${tag.name}',
                           },
-                          id: 'filter-${tag.id}',
+                          id: 'filter-${tag.name}',
+                          checked: filters.selectedTags.contains(tag),
                           onChange: (checked) {
                             filters.setTag(tag, checked as bool);
                           },
                         ),
                         label(
-                          attributes: {'for': 'filter-${tag.id}'},
-                          [text(tag.formattedName)],
+                          attributes: {'for': 'filter-${tag.name}'},
+                          [text(tag.label)],
                         ),
                       ],
                     ),
@@ -92,16 +91,17 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
                         type: InputType.checkbox,
                         attributes: {
                           'role': 'checkbox',
-                          'name': 'filter-${type.id}',
+                          'name': 'filter-${type.name}',
                         },
-                        id: 'filter-${type.id}',
+                        id: 'filter-${type.name}',
+                        checked: filters.selectedTypes.contains(type),
                         onChange: (checked) {
                           filters.setType(type, checked as bool);
                         },
                       ),
                       label(
-                        attributes: {'for': 'filter-${type.id}'},
-                        [text(type.formattedName)],
+                        attributes: {'for': 'filter-${type.name}'},
+                        [text(type.label)],
                       ),
                     ]),
                 ]),
@@ -128,7 +128,7 @@ class FiltersNotifier extends ChangeNotifier {
       analytics.sendEvent(
         'learning_resource_index_filter_selected',
         {
-          'learning_resource_filter_name': tag.id,
+          'learning_resource_filter_name': tag.label.toLowerCase(),
           'learning_resource_filter_type': 'tags',
         },
       );
@@ -145,7 +145,7 @@ class FiltersNotifier extends ChangeNotifier {
       analytics.sendEvent(
         'learning_resource_index_filter_selected',
         {
-          'learning_resource_filter_name': type.id,
+          'learning_resource_filter_name': type.label.toLowerCase(),
           'learning_resource_filter_type': 'type',
         },
       );
@@ -164,41 +164,33 @@ class FiltersNotifier extends ChangeNotifier {
     selectedTags.clear();
     selectedTypes.clear();
     notifyListeners();
-
-    for (final tag in LearningResourceTag.values) {
-      final element =
-          web.document.getElementById('filter-${tag.id}') as HTMLInputElement?;
-      element?.checked = false;
-    }
-    for (final type in LearningResourceType.values) {
-      final element =
-          web.document.getElementById('filter-${type.id}') as HTMLInputElement?;
-      element?.checked = false;
-    }
   }
 
-  Set<ResourceInfo> filterResources(
-    List<ResourceInfo> resourceInfos,
+  Set<LearningResource> filterResources(
+    List<LearningResource> resources,
     String searchQuery,
   ) {
     if (searchQuery.isEmpty && selectedTags.isEmpty && selectedTypes.isEmpty) {
       // No filters applied, return all resources.
-      return resourceInfos.toSet();
+      return resources.toSet();
     }
 
-    final resourcesToShow = <ResourceInfo>{};
+    final resourcesToShow = <LearningResource>{};
     searchQuery = searchQuery.trim().toLowerCase();
 
-    for (final info in resourceInfos) {
+    final filterTags = selectedTags.expand((e) => e.tags).toSet();
+    final filterTypes = selectedTypes.expand((e) => e.tags).toSet();
+
+    for (final info in resources) {
       final matchesTags =
           selectedTags.isEmpty ||
-          info.tags.any((tag) => selectedTags.contains(tag));
+          info.tags.any(filterTags.contains);
       if (!matchesTags) {
         continue;
       }
 
       final matchesTypes =
-          selectedTypes.isEmpty || selectedTypes.contains(info.type);
+          selectedTypes.isEmpty || filterTypes.contains(info.type);
       if (!matchesTypes) {
         continue;
       }
@@ -206,8 +198,8 @@ class FiltersNotifier extends ChangeNotifier {
       final matchesSearchQuery =
           searchQuery.isEmpty ||
           info.name.toLowerCase().contains(searchQuery) ||
-          info.tags.any((t) => t.id.contains(searchQuery)) ||
-          info.type.id.contains(searchQuery) ||
+          info.tags.any((t) => t.contains(searchQuery)) ||
+          info.type.contains(searchQuery) ||
           info.description.toLowerCase().contains(searchQuery);
       if (!matchesSearchQuery) {
         continue;

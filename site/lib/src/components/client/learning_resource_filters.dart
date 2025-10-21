@@ -13,44 +13,6 @@ import '../../models/learning_resource_model.dart';
 import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
-class ResourceInfo {
-  ResourceInfo({
-    required this.name,
-    required this.type,
-    required this.tags,
-    required this.description,
-  });
-
-  factory ResourceInfo.fromElement(web.Element element) {
-    final dataType = element.getAttribute('data-type') ?? '';
-    final dataTags = element.getAttribute('data-tags') ?? '';
-    final dataDescription = element.getAttribute('data-description') ?? '';
-
-    return ResourceInfo(
-      name: element.id,
-      type: LearningResourceType.values.firstWhere(
-        (type) => type.id == dataType,
-        orElse: () => LearningResourceType.sample,
-      ),
-      tags: dataTags
-          .split(',')
-          .map((t) => t.trim().toLowerCase())
-          .map((tagId) {
-            return LearningResourceTag.values
-                .where((tag) => tag.id == tagId)
-                .firstOrNull;
-          })
-          .nonNulls
-          .toList(),
-      description: dataDescription,
-    );
-  }
-
-  final String name;
-  final LearningResourceType type;
-  final List<LearningResourceTag> tags;
-  final String description;
-}
 
 @client
 class LearningResourceFilters extends StatefulComponent {
@@ -66,7 +28,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
 
   FiltersNotifier get filters => LearningResourceFiltersSidebar.filters;
 
-  final List<ResourceInfo> resourceInfos = [];
+  final List<LearningResource> resources = [];
   int filteredResourcesCount = 0;
 
   @override
@@ -90,14 +52,14 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   void loadResourceInfos(web.NodeList resourceCards) {
     for (var i = 0; i < resourceCards.length; i++) {
       final element = resourceCards.item(i) as web.Element;
-      final info = ResourceInfo.fromElement(element);
-      resourceInfos.add(info);
+      final info = LearningResource.fromElement(element);
+      resources.add(info);
 
       element.addEventListener(
         'click',
         ((web.Event event) {
           analytics.sendEvent('learning_resource_index_click', {
-            'learning_resource_type': info.type.id,
+            'learning_resource_type': info.type,
             'learning_resource_title': info.name,
           });
         }).toJS,
@@ -129,9 +91,9 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   void setFilters([void Function()? callback]) {
     setState(callback ?? () {});
 
-    final resourcesToShow = filters.filterResources(resourceInfos, searchQuery);
+    final resourcesToShow = filters.filterResources(resources, searchQuery);
     filteredResourcesCount = resourcesToShow.length;
-    for (final info in resourceInfos) {
+    for (final info in resources) {
       final element =
           web.document.getElementById(info.name) as web.HTMLElement?;
       if (element == null) {
@@ -215,7 +177,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
             text('Showing '),
             span([text('$filteredResourcesCount')]),
             text(' / '),
-            span([text('${resourceInfos.length}')]),
+            span([text('${resources.length}')]),
           ],
         ),
         button(

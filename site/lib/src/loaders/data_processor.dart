@@ -9,6 +9,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
 
 import '../data/devtools_releases.dart';
+import '../models/learning_resource_model.dart';
 
 /// A shared data loader to add data to each loaded page.
 final class DataProcessor implements DataLoader {
@@ -16,6 +17,7 @@ final class DataProcessor implements DataLoader {
   Future<void> loadData(Page page) async {
     _loadDevToolsReleases(page);
     _loadLastModified(page);
+    _processLearningResources(page);
   }
 
   static void _loadDevToolsReleases(Page page) {
@@ -46,6 +48,36 @@ final class DataProcessor implements DataLoader {
               'lastmod': _lastModifiedDateForPath(inputPath),
             },
         },
+      },
+    );
+  }
+
+  static List<LearningResource>? _cachedLearningResources;
+
+  static void _processLearningResources(Page page) {
+    if (_cachedLearningResources != null) {
+      page.apply(
+        data: {'learningResources': _cachedLearningResources!},
+      );
+      return;
+    }
+
+    final resourceGroups =
+        page.data['learning-resources-index'] as Map<String, Object?>?;
+    if (resourceGroups == null) return;
+
+    final learningResources = _cachedLearningResources = <LearningResource>[];
+    for (final group in resourceGroups.values) {
+      for (final resource in group as List<Object?>) {
+        learningResources.add(
+          LearningResource.fromMap(resource as Map<String, Object?>),
+        );
+      }
+    }
+
+    page.apply(
+      data: {
+        'learningResources': learningResources,
       },
     );
   }

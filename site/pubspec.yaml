@@ -12,7 +12,7 @@ dependencies:
   crypto: ^3.0.6
   html: ^0.15.6
   http: ^1.5.0
-  jaspr: ^0.21.5
+  jaspr: ^0.21.6
   jaspr_content: ^0.4.2
   # Used as our template engine.
   liquify: ^1.3.0
@@ -32,7 +32,7 @@ dev_dependencies:
       ref: 88aa84df953e67b7595b1e214b717f26d81ed538
   build_runner: ^2.9.0
   build_web_compilers: ^4.3.0
-  jaspr_builder: ^0.21.5
+  jaspr_builder: ^0.21.6
   sass: ^1.93.2
   sass_builder: ^2.4.0
 
