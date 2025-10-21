@@ -346,6 +346,7 @@
       { "source": "/go/custom-colors-m3", "destination": "https://docs.google.com/document/d/1LbD4JqBgAfHex02oR3r2jyu9lTBBNBmyec2ovT59Kr8/edit?usp=sharing", "type": 301 },
       { "source": "/go/custom-tabs-support", "destination": "https://docs.google.com/document/d/1GvsmPQz6aKixNUphL10XmSOL7M6nOH7W1jYwNp0LwnA", "type": 301 },
       { "source": "/go/dart-flutterbuffers", "destination": "https://docs.google.com/document/d/1rqKq6DwqaeBfTLTixxurrdT9HwZ02DyRjFigO9SiB1Q/edit#", "type": 301 },
+      { "source": "/go/dart-oriented-flutter-plugin", "destination": "https://docs.google.com/document/d/1oT86S2SZClfJQ5GDQ9I8ZI_VzvKnquSbABuoNdPbQW8/edit?usp=sharing", "type": 301 },
       { "source": "/go/dart-patterns", "destination": "https://docs.google.com/document/d/1p6JV-pvr8_45qI5fumv6Ir60wEeagKCceTngYOXt_U4/edit?usp=sharing&resourcekey=0-jGJyRsTPSIpGPN0xgvzSwg", "type": 301 },
       { "source": "/go/dart-io-as-package", "destination": "https://docs.google.com/document/d/1XIDcawCBVqpsunm1MdeBYggNJ8qnFqqB9WEi7lgnthc", "type": 301 },
       { "source": "/go/dart-static-analysis-ir", "destination": "https://docs.google.com/document/d/1xJYGBSoXL7h1z43NnjFsXxauQGXvUnacef4XR1zmeGA/edit#", "type": 301 },
