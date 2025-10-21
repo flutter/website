@@ -43,12 +43,12 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
       }
 
       final resourceCards = resourceGrid.querySelectorAll('.card');
-      loadResourceInfos(resourceCards);
+      recreateResources(resourceCards);
       shuffleCards(resourceGrid);
     }
   }
 
-  void loadResourceInfos(web.NodeList resourceCards) {
+  void recreateResources(web.NodeList resourceCards) {
     for (var i = 0; i < resourceCards.length; i++) {
       final element = resourceCards.item(i) as web.Element;
       final info = LearningResource.fromElement(element);
@@ -64,6 +64,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
         }).toJS,
       );
     }
+    filteredResourcesCount = resources.length;
   }
 
   void shuffleCards(web.Element container) {
