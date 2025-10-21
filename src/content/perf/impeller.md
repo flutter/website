@@ -142,11 +142,11 @@ check out the [README.md][] file in the source tree.
 
 ## Additional information
 
-* [Frequently asked questions]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md)
-* [Impeller's coordinate system]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md)
-* [How to set up Xcode for GPU frame captures with metal]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md)
-* [Learning to read GPU frame captures]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/read_frame_captures.md)
-* [How to enable metal validation for command line apps]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/metal_validation.md)
-* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/ubo_gles2.md)
-* [Guidance for writing efficient shaders]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md)
-* [How color blending works in Impeller]({{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md)
+* [Frequently asked questions][impeller-faq]
+* [Impeller's coordinate system][impeller-coords]
+* [How to set up Xcode for GPU frame captures with metal][impeller-xcode-capture]
+* [Learning to read GPU frame captures][impeller-read-capture]
+* [How to enable metal validation for command line apps][impeller-metal-validation]
+* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0][impeller-ubo-gles2]
+* [Guidance for writing efficient shaders][impeller-shader-optimization]
+* [How color blending works in Impeller][impeller-blending]
