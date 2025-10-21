@@ -18,20 +18,7 @@ import '../highlight/token_renderer.dart' as highlighter;
 
 final class CodeBlockProcessor implements PageExtension {
   static final opal.LanguageRegistry _languageRegistry =
-      opal.LanguageRegistry.of(
-        [
-          opal.BuiltInLanguages.dart,
-          opal.BuiltInLanguages.xml,
-          opal.BuiltInLanguages.html,
-          opal.BuiltInLanguages.kotlin,
-          opal.BuiltInLanguages.markdown,
-          opal.BuiltInLanguages.java,
-          opal.BuiltInLanguages.js,
-          opal.BuiltInLanguages.yaml,
-          opal.BuiltInLanguages.json,
-        ],
-        fallbackLanguageNames: {'md': 'markdown', 'yml': 'yaml'},
-      );
+      opal.LanguageRegistry.withDefaults();
 
   const CodeBlockProcessor();
 
