@@ -226,9 +226,8 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
               'disabled': 'true',
           },
           onClick: () {
-            setState(() {
-              searchQuery = '';
-            });
+            // No setState needed, since resetting filters will trigger it.
+            searchQuery = '';
             filters.reset();
           },
           [
