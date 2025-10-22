@@ -1,0 +1,731 @@
+# Animations
+
+- name: Animate a page route transition
+  description: Transition between routes by animating the new route into view from the bottom of the screen.
+  tags:
+    - animation
+    - route
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/animation/page-route-animation
+
+- name: Animate a widget using a physics simulation
+  description: Learn how to move a widget from a dragged point back to the center using a spring simulation.
+  tags:
+    - animation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/animation/physics-simulation
+
+- name: Animate the properties of a container
+  description: Use AnimatedContainer to animate the size, background color, and border radius of a Container.
+  tags:
+    - animation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/animation/animated-container
+
+- name: Fade a widget in and out
+  description: The AnimatedOpacity widget makes it easy to perform opacity animations.
+  tags:
+    - animation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/animation/opacity-animation
+
+# Design
+
+- name: Add a drawer to a screen
+  description: Use the Drawer widget in combination with a Scaffold to create a layout with a Material Design drawer.
+  tags:
+    - widget
+    - material
+    - drawer
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/drawer
+
+- name: Display a snackbar
+  description: Use the Snackbar widget to display messages to your users.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/snackbars
+
+- name: Export fonts from a package
+  description: Use a font across multiple apps.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/package-fonts
+
+- name: Update the UI based on orientation
+  description: Build a list that displays two columns in portrait mode and three columns in landscape mode.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/orientation
+
+- name: Use a custom font
+  description: Apply fonts to your entire app or individual widgets.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/fonts
+
+- name: Use themes to share colors and font styles
+  description: To share styles across your app, use Themes.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/themes
+
+- name: Work with tabs
+  description: Working with tabs is a common pattern in mobile apps that follow the Material Design or Cupertino guidelines.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/design/tabs
+
+# Effects
+
+- name: Create a download button
+  description: Build a download button that transitions through multiple visual states, based on the status of an app download.
+  tags:
+    - ui
+    - effects
+    - animations
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/download-button
+
+- name: Create a nested navigation flow
+  description: Create top level routes, and routes nested below specific widgets.
+  tags:
+    - navigation
+    - routing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/nested-nav
+
+- name: Create a scrolling parallax effect
+  description: Create the parallax effect by building a list of cards with images that 'move'.
+  type: recipe
+  tags:
+    - design
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/parallax-scrolling
+
+- name: Create a shimmer loading effect
+  description: Communicate that data is loading with a chrome color shimmer on the screen.
+  type: recipe
+  tags:
+    - animation
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/shimmer-loading
+
+- name: Create a staggered menu animation
+  description: Build a drawer menu with animated content that is staggered and has a button that pops in at the bottom
+  type: recipe
+  tags:
+    - animation
+    - design
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/staggered-menu-animation
+
+- name: Create a typing indicator
+  description: Build a speech bubble typing indicator that animates in and out of view.
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/typing-indicator
+
+- name: Create an expandable FAB
+  description: Create a floating action button that spawns other action buttons.
+  tags:
+    - ui
+    - effects
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/expandable-fab
+
+- name: Drag a UI element
+  description: Build a drag-and-drop interaction when the user long presses.
+  tags:
+    - interaction
+    - design
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/effects/drag-a-widget
+
+# Forms
+- name: Build a form with validation
+  description: Learn how to add validation to a form.
+  tags:
+    - input
+    - interaction
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/forms/validation
+
+- name: Create and style a text field
+  description:  In this recipe, explore how to create and style text fields.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/forms/text-input
+
+- name: Focus and text fields
+  description: Shift focus to a text field programmatically.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/forms/focus
+
+- name: Handle changes to a text field
+  description: Listen for changes to a TextField using a callback.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/forms/text-field-changes
+
+- name: Retrieve the value of a text field
+  description: Learn how to retrieve the text a user has entered into a text field.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/forms/retrieve-input
+
+# Games
+
+- name: Add achievements and leaderboards to your game
+  description: Use the games_services package to add leaderboard functionality to your mobile game.
+  tags:
+    - games
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/games/achievements-leaderboard
+
+- name: Add multiplayer support to your Flutter game
+  description: Use the cloud_firestore package to implement multiplayer capabilities in your game.
+  tags:
+    - games
+    - ads
+    - firebase
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/games/firestore-multiplayer
+
+- name: Add ads to your Flutter game
+  description: Use the google_mobile_ads package to add a banner ad to your app or game.
+  tags:
+    - games
+    - ads
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/plugins/google-mobile-ads
+
+# Gestures
+
+- name: Add Material touch ripples
+  description: Use the Inkwell widget to display a ripple animation.
+  tags:
+    - input
+    - material
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/gestures/ripples
+
+- name: Handle taps
+  description: Use the GestureDetector widget to respond to fundamental actions, such as tapping and dragging.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/gestures/handling-taps
+
+- name: Implement swipe to dismiss
+  description: Learn how to use the Dismissible widget.
+  tags:
+    - input
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/gestures/dismissible
+
+# Images
+
+- name: Display images from the internet
+  description: To work with images from a URL, use the Image.network() constructor.
+  tags:
+    - image
+    - beginner
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/images/network-image
+
+- name: Fade in images with a placeholder
+  description: Use the FadeInImage widget to show a visual placeholder before an image loads.
+  tags:
+    - image
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/images/fading-in-images
+
+# Lists
+
+- name: Grid lists
+  description: Learn to use a GridView widget.
+  tags:
+    - list
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/grid-lists
+
+- name: Horizontal lists
+  description: Learn to display items horizontally in a scrollable list.
+  tags:
+    - list
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/horizontal-list
+
+- name: Lists with different types of items
+  description: Create a list with headers followed by a few list items.
+  tags:
+    - list
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/mixed-list
+
+- name: Lists and floating app bars
+  description: Place a floating app bar or navigation bar above a list.
+  tags:
+    - list
+    - layout
+    - scrolling
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/floating-app-bar
+
+- name: Basic lists
+  description: Learn to display items with the ListView widget.
+  tags:
+    - list
+    - layout
+    - scrolling
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/basic-list
+
+- name: Long lists
+  description: Work with longer lists with the Listview.builder constructor.
+  tags:
+    - list
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/long-lists
+
+- name: Lists with spaced items
+  description: Create a list with padding between items.
+  tags:
+    - list
+    - layout
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/lists/spaced-items
+
+- name: Animate a widget across screens
+  description: Use the Hero widget to animate a widget from one screen to the next.
+  tags:
+    - navigation
+    - animation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/hero-animations
+
+- name: Navigate to a new screen and back
+  description: This recipe uses the Navigator to navigate to a new route.
+  tags:
+    - navigation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/navigation-basics
+
+- name: Named routes
+  description: Create named routes and navigate to them.
+  tags:
+    - navigation
+    - routing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/named-routes
+
+- name: Arguments and named routes
+  description: Pass arguments to a named route and read the arguments on that route.
+  tags:
+    - navigation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/navigate-with-arguments
+
+- name: Android app links
+  description: Set up deep linking on Android
+  tags:
+    - navigation
+    - android
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/set-up-app-links
+
+- name: iOS universal links
+  description: Set up universal links for iOS
+  tags:
+    - navigation
+    - iOS
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/set-up-universal-links
+
+- name: Return data from a screen
+  description: Return data from one screen to another with the Navigator.pop method.
+  tags:
+    - navigation
+    - routing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/returning-data
+
+- name: Send data to a new screen
+  description: Send data from one screen to new one.
+  tags:
+    - navigation
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/navigation/passing-data
+
+# Networking
+
+- name: Fetch data from the internet
+  description: Learn to use HTTP in your app.
+  tags:
+    - networking
+    - http
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/fetch-data
+
+- name: Make authenticated requests
+  description: Authorization headers in HTTP
+  tags:
+    - networking
+    - http
+    - auth
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/authenticated-requests
+
+- name: Send data to the internet
+  description: Send HTTP POST requests in your app.
+  tags:
+    - networking
+    - http
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/send-data
+
+- name: Update data over the internet
+  description: Send an HTTP put request.
+  tags:
+    - networking
+    - http
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/update-data
+
+- name: Delete data on the internet
+  description: Send an HTTP delete request.
+  tags:
+    - networking
+    - http
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/delete-data
+
+- name: WebSockets
+  description: Connect to and communicate with a websocket.
+  tags:
+    - networking
+    - websocket
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/web-sockets
+
+- name: Parse JSON in the background
+  description: Learn to use Dart's Isolate objects
+  tags:
+    - networking
+    - isolates
+    - threading
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/networking/background-parsing
+
+- name: Persist data with SQLite
+  description: Use the sqflite package.
+  tags:
+    - data
+    - persistence
+    - SQL
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/persistence/sqlite
+
+- name: Read and write files
+  description: Use the dart:io library and path_provider plugin to save files to disk.
+  tags:
+    - data
+    - persistence
+    - io
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/persistence/reading-writing-files
+
+- name: Store key-value data on disk
+  description: Persist data with shared_preferences
+  tags:
+    - data
+    - persistence
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/persistence/key-value
+
+- name: Play and pause a video
+  description: Play videos stored on the file system, as an asset, or from the internet.
+  tags:
+    - plugins
+    - video
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/plugins/play-video
+
+- name: Use the camera
+  description: Learn to use a devices camera.
+  tags:
+    - plugins
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/plugins/picture-using-camera
+
+- name: Report errors to a service
+  description: Report errors to Sentry crash reporting.
+  tags:
+    - testing
+    - reporting
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/maintenance/error-reporting
+
+- name: Performance profiling
+  description: Write a test that records a performance timeline.
+  tags:
+    - testing
+    - performance
+    - perf
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/integration/profiling
+
+- name: Write unit tests
+  description: An introduction to writing unit tests.
+  tags:
+    - testing
+    - unit testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/unit/introduction
+
+- name: Write widget tests
+  description: An introduction to writing widget tests.
+  tags:
+    - testing
+    - unit testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/introduction
+
+- name: Mock dependencies in tests
+  description: The basics of mocking with the Mockito package.
+  tags:
+    - testing
+    - unit testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/unit/mocking
+
+- name: Find widgets in tests
+  description: This recipe looks at the 'find' constant provided by the flutter_test package.
+  tags:
+    - testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/finders
+
+- name: Handle scrolling
+  description: Learn how to scroll in widget tests.
+  tags:
+    - testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/scrolling
+
+- name: App orientation
+  description: Learn how to check app orientation in widget tests.
+  tags:
+    - testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/orientation
+
+- name: Tap, drag, and enter text
+  description: Interact with widgets in widget tests.
+  tags:
+    - testing
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /cookbook/testing/widget/tap-drag
+
+- name: Persistent storage architecture - SQL
+  description: Save complex application data to a user's device with SQL.
+  tags:
+    - data
+    - SQL
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/sql
+
+- name: Error handling with Result objects
+  description: Improve error handling across classes with Result objects.
+  tags:
+    - error handling
+    - testing
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/result
+
+- name: Optimistic state
+  description: Improve the perception of responsiveness of an application by implementing optimistic state.
+  tags:
+    - user experience
+    - asynchronous dart
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/optimistic-state
+
+- name: Offline First
+  description: Implement offline-first support for one feature in an application.
+  tags:
+    - user experience
+    - network
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/offline-first
+
+- name: Persistent storage architecture - Key-value data
+  description: Save application data to a user's on-device key-value store.
+  tags:
+    - data
+    - network
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/key-value-data
+
+- name: Command pattern
+  description: Simplify view model logic by implementing a Command class.
+  tags:
+    - mvvm
+    - asynchronous dart
+    - architecture
+  type: recipe
+  link:
+    label: Flutter docs
+    url: /app-architecture/design-patterns/command

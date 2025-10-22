@@ -5,7 +5,6 @@ shortTitle: Learning resources
 showBreadcrumbs: false
 bodyClass: wide-site-content
 showToc: false
-js: [ { url: '/assets/js/learning-resources-index.js', defer: true } ]
 ---
 
 :::secondary

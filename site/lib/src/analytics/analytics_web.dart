@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
+import '../util.dart';
 import 'analytics.dart';
 
 /// Web implementation of [Analytics].
@@ -15,6 +16,9 @@ import 'analytics.dart';
 final class AnalyticsImplementation extends Analytics {
   @override
   void sendEvent(String eventName, Map<String, Object?> parameters) {
+    if (!productionBuild) {
+      return;
+    }
     final dataLayer = web.window['dataLayer'];
     if (dataLayer.isA<JSArray>()) {
       (dataLayer as JSArray).toDart.add(

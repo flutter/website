@@ -13,21 +13,25 @@ import 'package:docs_flutter_dev_site/src/components/client/dartpad_injector.dar
     as prefix2;
 import 'package:docs_flutter_dev_site/src/components/client/download_latest_button.dart'
     as prefix3;
-import 'package:docs_flutter_dev_site/src/components/client/on_this_page_button.dart'
+import 'package:docs_flutter_dev_site/src/components/client/learning_resource_filters.dart'
     as prefix4;
-import 'package:docs_flutter_dev_site/src/components/header/menu_toggle.dart'
+import 'package:docs_flutter_dev_site/src/components/client/learning_resource_filters_sidebar.dart'
     as prefix5;
-import 'package:docs_flutter_dev_site/src/components/header/site_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/client/on_this_page_button.dart'
     as prefix6;
-import 'package:docs_flutter_dev_site/src/components/header/theme_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/header/menu_toggle.dart'
     as prefix7;
-import 'package:docs_flutter_dev_site/src/components/cookie_notice.dart'
+import 'package:docs_flutter_dev_site/src/components/header/site_switcher.dart'
     as prefix8;
-import 'package:docs_flutter_dev_site/src/components/copy_button.dart'
+import 'package:docs_flutter_dev_site/src/components/header/theme_switcher.dart'
     as prefix9;
-import 'package:docs_flutter_dev_site/src/components/feedback.dart' as prefix10;
-import 'package:docs_flutter_dev_site/src/components/os_selector.dart'
+import 'package:docs_flutter_dev_site/src/components/cookie_notice.dart'
+    as prefix10;
+import 'package:docs_flutter_dev_site/src/components/copy_button.dart'
     as prefix11;
+import 'package:docs_flutter_dev_site/src/components/feedback.dart' as prefix12;
+import 'package:docs_flutter_dev_site/src/components/os_selector.dart'
+    as prefix13;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -66,37 +70,47 @@ JasprOptions get defaultJasprOptions => JasprOptions(
       params: _prefix3DownloadLatestButton,
     ),
 
-    prefix4.OnThisPageButton: ClientTarget<prefix4.OnThisPageButton>(
+    prefix4.LearningResourceFilters:
+        ClientTarget<prefix4.LearningResourceFilters>(
+          'src/components/client/learning_resource_filters',
+        ),
+
+    prefix5.LearningResourceFiltersSidebar:
+        ClientTarget<prefix5.LearningResourceFiltersSidebar>(
+          'src/components/client/learning_resource_filters_sidebar',
+        ),
+
+    prefix6.OnThisPageButton: ClientTarget<prefix6.OnThisPageButton>(
       'src/components/client/on_this_page_button',
     ),
 
-    prefix8.CookieNotice: ClientTarget<prefix8.CookieNotice>(
+    prefix10.CookieNotice: ClientTarget<prefix10.CookieNotice>(
       'src/components/cookie_notice',
     ),
 
-    prefix9.CopyButton: ClientTarget<prefix9.CopyButton>(
+    prefix11.CopyButton: ClientTarget<prefix11.CopyButton>(
       'src/components/copy_button',
-      params: _prefix9CopyButton,
+      params: _prefix11CopyButton,
     ),
 
-    prefix10.FeedbackComponent: ClientTarget<prefix10.FeedbackComponent>(
+    prefix12.FeedbackComponent: ClientTarget<prefix12.FeedbackComponent>(
       'src/components/feedback',
-      params: _prefix10FeedbackComponent,
+      params: _prefix12FeedbackComponent,
     ),
 
-    prefix5.MenuToggle: ClientTarget<prefix5.MenuToggle>(
+    prefix7.MenuToggle: ClientTarget<prefix7.MenuToggle>(
       'src/components/header/menu_toggle',
     ),
 
-    prefix6.SiteSwitcher: ClientTarget<prefix6.SiteSwitcher>(
+    prefix8.SiteSwitcher: ClientTarget<prefix8.SiteSwitcher>(
       'src/components/header/site_switcher',
     ),
 
-    prefix7.ThemeSwitcher: ClientTarget<prefix7.ThemeSwitcher>(
+    prefix9.ThemeSwitcher: ClientTarget<prefix9.ThemeSwitcher>(
       'src/components/header/theme_switcher',
     ),
 
-    prefix11.OsSelector: ClientTarget<prefix11.OsSelector>(
+    prefix13.OsSelector: ClientTarget<prefix13.OsSelector>(
       'src/components/os_selector',
     ),
   },
@@ -116,11 +130,11 @@ Map<String, dynamic> _prefix2DartPadInjector(prefix2.DartPadInjector c) => {
 Map<String, dynamic> _prefix3DownloadLatestButton(
   prefix3.DownloadLatestButton c,
 ) => {'os': c.os, 'arch': c.arch};
-Map<String, dynamic> _prefix9CopyButton(prefix9.CopyButton c) => {
+Map<String, dynamic> _prefix11CopyButton(prefix11.CopyButton c) => {
   'toCopy': c.toCopy,
   'buttonText': c.buttonText,
   'classes': c.classes,
   'title': c.title,
 };
-Map<String, dynamic> _prefix10FeedbackComponent(prefix10.FeedbackComponent c) =>
+Map<String, dynamic> _prefix12FeedbackComponent(prefix12.FeedbackComponent c) =>
     {'issueUrl': c.issueUrl};
