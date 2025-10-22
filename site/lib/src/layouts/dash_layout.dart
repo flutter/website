@@ -179,7 +179,6 @@ ga('send', 'pageview');
           id: 'skip-to-main',
           classes: 'filled-button',
           href: '#site-content-title',
-          attributes: {'tabindex': '1'},
           [text('Skip to main content')],
         ),
         const CookieNotice(),
