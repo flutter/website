@@ -7,7 +7,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/command_line
-    label: Dart Github
+    label: Dart GitHub
 
 - name: Extension methods
   description: >-
@@ -18,7 +18,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/extension_methods
-    label: Dart Github
+    label: Dart GitHub
 
 - name: FFI
   description: >-
@@ -29,7 +29,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/ffi
-    label: Dart Github
+    label: Dart GitHub
 
 - name: Isolates (in a CLI)
   description: >-
@@ -41,7 +41,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/ffi
-    label: Dart Github
+    label: Dart GitHub
 
 - name: Native Dart app
   description: >-
@@ -53,7 +53,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/native_app
-    label: Dart Github
+    label: Dart GitHub
 
 - name: Server side Dart
   description: >-
@@ -64,7 +64,7 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/server
-    label: Dart Github
+    label: Dart GitHub
 
 - name: Package constraint solver
   description: >-
@@ -75,4 +75,4 @@
   type: quickstart
   link:
     url: https://github.com/dart-lang/samples/tree/main/server
-    label: Dart Github
+    label: Dart GitHub

@@ -8,7 +8,7 @@
   type: demo
   link:
     url: https://github.com/flutter/samples/tree/main/add_to_app
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Android splash screen
   description: >-
@@ -19,7 +19,7 @@
   type: demo
   link:
     url: https://github.com/flutter/samples/tree/main/android_splash_screen
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: iOS app clip
   description: >-
@@ -29,7 +29,7 @@
   type: demo
   link:
     url: https://github.com/flutter/samples/tree/main/ios_app_clip
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Swift platform view
   description: >-
@@ -41,7 +41,7 @@
   type: demo
   link:
     url: https://github.com/flutter/samples/tree/main/platform_view_swift
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Simplistic editor
   description: >-
@@ -52,4 +52,4 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/simplistic_editor
-    label: Flutter Github
+    label: Flutter GitHub

@@ -7,7 +7,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/asset_transformation
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Background isolate channels
   description: >-
@@ -17,7 +17,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/background_isolate_channels
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Code sharing
   description: >-
@@ -28,7 +28,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/code_sharing
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Context menus
   description: >-
@@ -41,7 +41,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/context_menus
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Desktop UI
   description: >-
@@ -53,7 +53,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/desktop_photo_search
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: AI generated dynamic theme
   description: >-
@@ -65,7 +65,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/dynamic_theme
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Form app
   description: >-
@@ -76,7 +76,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/form_app
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: AI todo list
   description: >-
@@ -88,7 +88,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/gemini_tasks
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Google Maps plugin
   description: >-
@@ -99,7 +99,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/google_maps
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Infinite list
   description: >-
@@ -112,7 +112,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/infinite_list
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Isolates
   description: >-
@@ -125,7 +125,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/isolate_example
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Navigation and routing
   description: >-
@@ -137,7 +137,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/navigation_and_routing
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Google Maps Flutter plugin
   description: >-
@@ -149,7 +149,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/place_tracker
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Platform adaptive design
   description: >-
@@ -162,7 +162,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/platform_design
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Counter app with Provider
   description: >-
@@ -174,7 +174,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/provider_counter
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Shopping app with Provider
   description: >-
@@ -186,7 +186,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/provider_shopper
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Simple shaders
   description: >-
@@ -197,7 +197,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/simple_shader
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Desktop calculator
   description: >-
@@ -207,7 +207,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/simplistic_calculator
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Testing app
   description: >-
@@ -217,7 +217,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/testing_app
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Web element embedding
   description: >-
@@ -229,7 +229,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/web_embedding/element_embedding_demo
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: ng-flutter
   description: >-
@@ -241,7 +241,7 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/web_embedding/ng-flutter
-    label: Flutter Github
+    label: Flutter GitHub
 
 - name: Platform channels
   description: >-
@@ -254,4 +254,4 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/platform_channels
-    label: Flutter Github
+    label: Flutter GitHub

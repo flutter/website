@@ -95,7 +95,7 @@ final class _ResourceCard extends StatelessComponent {
   }
 
   Component _iconForLabel(String label) => switch (label) {
-    'Flutter Github' => svg(
+    'Flutter GitHub' => svg(
       classes: 'monochrome-icon',
       width: 24.px,
       height: 24.px,
@@ -106,7 +106,7 @@ final class _ResourceCard extends StatelessComponent {
         ),
       ],
     ),
-    'Dart Github' || 'Dart docs' => img(
+    'Dart GitHub' || 'Dart docs' => img(
       src: '/assets/images/branding/dart/logo.svg',
       width: 24,
       alt: 'Dart logo',
