@@ -92,6 +92,13 @@ final class CodeBlockProcessor implements PageExtension {
               content: processedContent,
               textToCopy: codeLines.copyContent,
               language: language,
+              languagesToHide: {
+                'plaintext',
+                'text',
+                'console',
+                'ps',
+                'diff',
+              },
               title: title,
               highlightLines: _parseNumbersAndRanges(rawHighlightLines),
               tag: tag != null ? CodeBlockTag.parse(tag) : null,

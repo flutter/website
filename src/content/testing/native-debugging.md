@@ -356,11 +356,11 @@ test Flutter app. This update adds native code to debug.
       ```
    1. In Windows, run this command in the command prompt.
 
-      ```powershell
+      ```ps
       Get-ChildItem C:\dev\example\ -Rescurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}
       ```
 
-      ```powershell
+      ```ps
       C:\dev\example\ios\Flutter\
 
 
