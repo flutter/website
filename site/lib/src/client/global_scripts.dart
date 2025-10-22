@@ -6,6 +6,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
+import '../util.dart';
+
 /// Global scripts converted from JS.
 ///
 /// These are temporary until they can be integrated with their
@@ -40,6 +42,8 @@ void _setUpSite() {
   _setUpSearchKeybindings();
   _setUpTabs();
   _setUpCollapsibleElements();
+  _setUpPlatformKeys();
+  _setUpToc();
 }
 
 void _setUpSidenav() {
@@ -158,7 +162,13 @@ void _setUpTabs() {
       // If this tab wrapper is for the archive page,
       // and no tab was retrieved from local storage,
       // switch to the tab for the current OS.
-      final currentOperatingSystem = _ClientOperatingSystem.fromUserAgent();
+      var currentOperatingSystem = getOS();
+      if (currentOperatingSystem == null) {
+        currentOperatingSystem = OperatingSystem.windows;
+      } else if (currentOperatingSystem == OperatingSystem.chromeos) {
+        // ChromeOS uses the Linux tab.
+        currentOperatingSystem = OperatingSystem.linux;
+      }
 
       _activateTabWithSaveId(element, currentOperatingSystem.name);
     }
@@ -235,40 +245,6 @@ void _activateTabWithSaveId(web.HTMLElement tabWrapper, String saveId) {
   }
 }
 
-enum _ClientOperatingSystem {
-  macos,
-  windows,
-  linux;
-
-  static _ClientOperatingSystem fromUserAgent({
-    _ClientOperatingSystem fallback = _ClientOperatingSystem.windows,
-  }) {
-    final userAgent = web.window.navigator.userAgent;
-    if (userAgent.contains('Mac')) {
-      // macOS, iOS, or iPadOS.
-      return _ClientOperatingSystem.macos;
-    }
-
-    if (userAgent.contains('Win')) {
-      // Windows.
-      return _ClientOperatingSystem.windows;
-    }
-
-    if ((userAgent.contains('Linux') || userAgent.contains('X11')) &&
-        !userAgent.contains('Android')) {
-      // Linux, but not Android.
-      return _ClientOperatingSystem.linux;
-    }
-
-    if (userAgent.contains('CrOS')) {
-      // ChromeOS, but fall back to Linux.
-      return _ClientOperatingSystem.linux;
-    }
-
-    return fallback;
-  }
-}
-
 void _setUpCollapsibleElements() {
   final toggles = web.document.querySelectorAll('[data-toggle="collapse"]');
   for (var toggleIndex = 0; toggleIndex < toggles.length; toggleIndex += 1) {
@@ -296,5 +272,156 @@ void _setUpCollapsibleElements() {
     }
 
     toggle.addEventListener('click', handleClick.toJS);
+  }
+}
+
+void _setUpPlatformKeys() {
+  final os = getOS();
+  final specialKey = switch (os) {
+    OperatingSystem.macos => 'Command',
+    _ => 'Control',
+  };
+  final keys = web.document.querySelectorAll('kbd.special-key');
+  for (var i = 0; i < keys.length; i += 1) {
+    final element = keys.item(i) as web.Element;
+    element.textContent = specialKey;
+  }
+}
+
+/// Adjusts the behavior of the table of contents (TOC) on the page.
+///
+/// This function enables a "scrollspy" feature on the TOC,
+/// where the active link in the TOC is updated
+/// based on the currently visible section in the page.
+///
+/// Enables a "back to top" button in the TOC header.
+void _setUpToc() {
+  _setUpTocActiveObserver();
+  _setUpInlineTocDropdown();
+}
+
+void _setUpInlineTocDropdown() {
+  final inlineToc = web.document.getElementById('toc-top');
+  if (inlineToc == null) return;
+
+  final dropdownButton = inlineToc.querySelector('.dropdown-button');
+  final dropdownMenu = inlineToc.querySelector('.dropdown-content');
+  if (dropdownButton == null || dropdownMenu == null) return;
+
+  void closeMenu() {
+    inlineToc.setAttribute('data-expanded', 'false');
+    dropdownButton.ariaExpanded = 'false';
+  }
+
+  dropdownButton.addEventListener(
+    'click',
+    ((web.Event _) {
+      print(inlineToc.getAttribute('data-expanded'));
+      if (inlineToc.getAttribute('data-expanded') == 'true') {
+        closeMenu();
+      } else {
+        inlineToc.setAttribute('data-expanded', 'true');
+        dropdownButton.ariaExpanded = 'true';
+      }
+    }).toJS,
+  );
+
+  web.document.addEventListener(
+    'keydown',
+    ((web.KeyboardEvent event) {
+      if (event.key == 'Escape') {
+        closeMenu();
+      }
+    }).toJS,
+  );
+
+  // Close the dropdown if any link in the TOC is navigated to.
+  final inlineTocLinks = inlineToc.querySelectorAll('a');
+  for (var i = 0; i < inlineTocLinks.length; i++) {
+    final tocLink = inlineTocLinks.item(i) as web.Element;
+    tocLink.addEventListener(
+      'click',
+      ((web.Event _) {
+        closeMenu();
+      }).toJS,
+    );
+  }
+
+  // Close the dropdown if anywhere not in the inline TOC is clicked.
+  web.document.addEventListener(
+    'click',
+    ((web.Event event) {
+      if ((event.target as web.Element).closest('#toc-top') != null) {
+        return;
+      }
+      closeMenu();
+    }).toJS,
+  );
+}
+
+void _setUpTocActiveObserver() {
+  final headings = web.document.querySelectorAll(
+    'article .header-wrapper, #site-content-title',
+  );
+  final currentHeaderText = web.document.getElementById('current-header');
+
+  // No need to have toc scrollspy if there is only one non-title heading.
+  if (headings.length < 2 || currentHeaderText == null) return;
+
+  final visibleAnchors = <String>{};
+  final initialHeaderText = currentHeaderText.textContent;
+
+  final observer = web.IntersectionObserver(
+    ((JSArray<web.IntersectionObserverEntry> entries) {
+      for (var i = 0; i < entries.length; i++) {
+        final entry = entries[i];
+        final headingId = entry.target.querySelector('h1, h2, h3')?.id;
+        if (headingId == null) return;
+
+        if (entry.isIntersecting) {
+          visibleAnchors.add(headingId);
+        } else {
+          visibleAnchors.remove(headingId);
+        }
+      }
+
+      if (visibleAnchors.isNotEmpty) {
+        var isFirst = true;
+
+        // If the page title is visible, set the current header to its contents.
+        if (visibleAnchors.contains('document-title')) {
+          currentHeaderText.textContent = initialHeaderText;
+          isFirst = false;
+        }
+
+        final tocLinks = web.document.querySelectorAll(
+          '.site-toc .sidenav-item a',
+        );
+        for (var i = 0; i < tocLinks.length; i++) {
+          final tocLink = tocLinks.item(i) as web.Element;
+          final headingId = tocLink.getAttribute('href')?.substring(1);
+          if (headingId == null) continue;
+
+          final sidenavItem = tocLink.closest('.sidenav-item');
+          if (sidenavItem == null) continue;
+
+          if (visibleAnchors.contains(headingId)) {
+            sidenavItem.classList.add('active');
+
+            if (isFirst) {
+              currentHeaderText.textContent = tocLink.textContent;
+              isFirst = false;
+            }
+          } else {
+            sidenavItem.classList.remove('active');
+          }
+        }
+      }
+    }).toJS,
+    web.IntersectionObserverInit(rootMargin: '-80px 0px -25% 0px'),
+  );
+
+  for (var i = 0; i < headings.length; i++) {
+    observer.observe(headings.item(i) as web.Element);
   }
 }
