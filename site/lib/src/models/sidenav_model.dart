@@ -25,7 +25,9 @@ sealed class NavEntry {
   const factory NavEntry.section(
     String title,
     List<NavEntry> children, {
+    String? permalink,
     bool expanded,
+    bool hiddenChildren,
   }) = NavSection;
 
   factory NavEntry._fromMap(Map<String, Object?> item) {
@@ -48,8 +50,16 @@ sealed class NavEntry {
       // If specified, build children recursively.
       final children = navEntriesFromData(childrenData);
       if (children.isNotEmpty) {
+        final permalink = item['permalink'] as String?;
         final expanded = item['expanded'] as bool? ?? false;
-        return NavEntry.section(title, children, expanded: expanded);
+        final hiddenChildren = item['hiddenChildren'] as bool? ?? false;
+        return NavEntry.section(
+          title,
+          children,
+          permalink: permalink,
+          expanded: expanded,
+          hiddenChildren: hiddenChildren,
+        );
       }
     } else {
       final permalink = item['permalink'] as String?;
@@ -82,11 +92,15 @@ final class NavLink extends NavEntry {
 final class NavSection extends NavEntry {
   final String title;
   final List<NavEntry> children;
+  final String? permalink;
   final bool expanded;
+  final bool hiddenChildren;
 
   const NavSection(
     this.title,
     this.children, {
+    this.permalink,
     this.expanded = false,
+    this.hiddenChildren = false,
   });
 }

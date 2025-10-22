@@ -3,8 +3,10 @@
 
 - title: Set up Flutter
   permalink: /get-started
-  expanded: true
+  hiddenChildren: true
   children:
+    - title: Overview
+      permalink: /get-started
     - title: Quick start
       permalink: /get-started/quick
     - title: Custom setup

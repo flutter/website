@@ -30,6 +30,7 @@ final class DashSideNav extends StatelessComponent {
         parentId: 'sidenav',
         currentLevel: 0,
         possiblyActive: true,
+        currentPageUrl: currentPageUrl,
         activePath: _ActiveNavigationPath.findActive(
           entries: navEntries,
           currentPageUrl: currentPageUrl,
@@ -45,6 +46,7 @@ class _SideNavLevel extends StatelessComponent {
     required this.parentId,
     required this.currentLevel,
     required this.possiblyActive,
+    required this.currentPageUrl,
     required this.activePath,
     this.classes,
     this.id,
@@ -54,6 +56,7 @@ class _SideNavLevel extends StatelessComponent {
   final String parentId;
   final int currentLevel;
   final bool possiblyActive;
+  final String currentPageUrl;
   final _ActiveNavigationPath activePath;
   final String? classes;
   final String? id;
@@ -85,6 +88,7 @@ class _SideNavLevel extends StatelessComponent {
         id: _generateChildId(entryIndex),
         isInActivePath: isInActivePath,
         currentLevel: currentLevel,
+        currentPageUrl: currentPageUrl,
         activePath: activePath,
       ),
       NavLink() => _SideNavLink(
@@ -122,6 +126,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
     required this.id,
     required this.isInActivePath,
     required this.currentLevel,
+    required this.currentPageUrl,
     required this.activePath,
   });
 
@@ -129,10 +134,27 @@ class _SideNavCollapsibleSection extends StatelessComponent {
   final String id;
   final bool isInActivePath;
   final int currentLevel;
+  final String currentPageUrl;
   final _ActiveNavigationPath activePath;
 
   @override
   Component build(BuildContext _) {
+    // Determine if children should be shown based on hiddenChildren setting.
+    final shouldShowChildren = _shouldShowChildren();
+
+    if (!shouldShowChildren) {
+      // When hiddenChildren is true and path doesn't match,
+      // render as a sidenav link if a permalink exists, otherwise as text.
+      return section.permalink != null
+          ? _SideNavLink(
+              NavLink(section.title, section.permalink!),
+              isActive: isInActivePath,
+            )
+          : li(classes: 'nav-item', [
+              span(classes: 'nav-link', [text(section.title)]),
+            ]);
+    }
+
     final expanded = isInActivePath || section.expanded;
     return li(classes: 'nav-item', [
       button(
@@ -159,6 +181,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         parentId: id,
         currentLevel: currentLevel + 1,
         possiblyActive: isInActivePath,
+        currentPageUrl: currentPageUrl,
         activePath: activePath,
         classes: [
           'nav',
@@ -168,6 +191,29 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         id: id,
       ),
     ]);
+  }
+
+  /// Determines whether children should be shown for this section.
+  ///
+  /// If [NavSection.hiddenChildren] is true, children are only shown
+  /// when the current page URL matches or is under the section's permalink.
+  bool _shouldShowChildren() {
+    if (!section.hiddenChildren) {
+      return true;
+    }
+
+    final permalink = section.permalink;
+    if (permalink == null) {
+      // No permalink to match against, show children.
+      return true;
+    }
+
+    // Normalize the permalink to ensure it starts with '/'.
+    final normalizedPermalink = _normalizePermalink(permalink);
+
+    // Show children if the current URL matches or is under this section.
+    return currentPageUrl == normalizedPermalink ||
+        currentPageUrl.startsWith('$normalizedPermalink/');
   }
 }
 
@@ -283,10 +329,10 @@ final class _ActiveNavigationPath {
   static bool _urlMatchesPermalink(String url, String permalink) =>
       url == permalink || url.startsWith('$permalink/');
 
-  /// Normalizes a permalink to ensure it starts with '/'.
-  static String _normalizePermalink(String permalink) =>
-      permalink.startsWith('/') ? permalink : '/$permalink';
-
   /// Returns whether the specified [permalink] is an external link.
   static bool _isExternalLink(String permalink) => permalink.contains('://');
 }
+
+/// Normalizes a permalink to ensure it starts with '/'.
+String _normalizePermalink(String permalink) =>
+    permalink.startsWith('/') ? permalink : '/$permalink';
