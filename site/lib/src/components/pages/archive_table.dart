@@ -13,8 +13,14 @@ class ArchiveTable extends StatefulComponent {
 
   /// Creates an [ArchiveTable] from a set of attributes parsed from markdown.
   factory ArchiveTable.fromAttributes(Map<String, String> attributes) {
-    final os = attributes['os'] as String;
-    final channel = attributes['channel'] as String;
+    final os =
+        attributes['os'] ??
+        (throw Exception('ArchiveTable component requires an "os" attribute.'));
+    final channel =
+        attributes['channel'] ??
+        (throw Exception(
+          'ArchiveTable component requires a "channel" attribute.',
+        ));
     return ArchiveTable(os: os.toLowerCase(), channel: channel.toLowerCase());
   }
 

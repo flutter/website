@@ -17,8 +17,14 @@ class YoutubeEmbed with CustomComponentBase {
     Map<String, String> attributes,
     Component? child,
   ) {
-    final rawVideoId = attributes['id'] as String;
-    final videoTitle = attributes['title'] as String;
+    final rawVideoId =
+        attributes['id'] ??
+        (throw Exception('YouTubeEmbed component requires an "id" attribute.'));
+    final videoTitle =
+        attributes['title'] ??
+        (throw Exception(
+          'YouTubeEmbed component requires a "title" attribute.',
+        ));
     final playlistId = attributes['playlist'];
 
     final String videoId;

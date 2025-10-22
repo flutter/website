@@ -14,7 +14,11 @@ class DownloadLatestButton extends StatefulComponent {
   /// Creates a [DownloadLatestButton] from a set of attributes parsed
   /// from markdown.
   factory DownloadLatestButton.fromAttributes(Map<String, String> attributes) {
-    final os = attributes['os'] as String;
+    final os =
+        attributes['os'] ??
+        (throw Exception(
+          'DownloadLatestButton component requires an "os" attribute.',
+        ));
     final arch = attributes['arch'];
     return DownloadLatestButton(
       os: os.toLowerCase(),

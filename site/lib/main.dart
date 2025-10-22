@@ -11,9 +11,9 @@ import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
+import 'src/components/common/dash_image.dart';
 import 'src/components/common/tabs.dart';
 import 'src/components/common/youtube_embed.dart';
-import 'src/components/common/dash_image.dart';
 import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';

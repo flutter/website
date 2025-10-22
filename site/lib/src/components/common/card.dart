@@ -48,7 +48,9 @@ class Card extends StatelessComponent {
     Component? child,
   ) {
     final link = attributes['link'];
-    final title = attributes['title']!;
+    final title =
+        attributes['title'] ??
+        (throw Exception('Card component requires a "title" attribute.'));
     final outlined = attributes['outlined'] == 'true';
     return Card(
       header: [

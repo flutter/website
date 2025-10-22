@@ -5,8 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'embedded_dartpad.dart';
 
-import 'extract_content.dart'
-    if (dart.library.io) '../dartpad/extract_content_vm.dart';
+import 'extract_content.dart' if (dart.library.io) 'extract_content_vm.dart';
 
 /// Prepares a code block that will be replaced with an embedded
 /// DartPad when the site is loaded.
