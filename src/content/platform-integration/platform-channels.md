@@ -34,7 +34,7 @@ platform-specific languages:
 :::note
 * The information in this page is valid for most platforms,
   but platform-specific code for the web generally uses
-  [JS interoperability][] or the [`dart:html` library][] instead.
+  [JS interoperability][] instead.
 
 * This guide addresses using the platform channel mechanism
   if you need to use the platform's APIs in a non-Dart language.
@@ -1459,7 +1459,6 @@ in the Flutter ecosystem, see [publishing packages][].
 [`BinaryCodec`]: {{site.api}}/flutter/services/BinaryCodec-class.html
 [block]: {{site.apple-dev}}/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithBlocks/WorkingwithBlocks.html
 [`FirestoreMessageCodec`]: {{site.github}}/firebase/flutterfire/blob/master/packages/cloud_firestore/cloud_firestore_platform_interface/lib/src/method_channel/utils/firestore_message_codec.dart
-[`dart:html` library]: {{site.dart.api}}/dart-html/dart-html-library.html
 [developing packages]: /packages-and-plugins/developing-packages
 [Engine Embedder APIs]: {{site.dart.api}}/index.html#more-documentation
 [`Pigeon`]: {{site.pub-pkg}}/pigeon
