@@ -322,7 +322,7 @@ App source code:
 * [Non-Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
 </div>
-{% render "docs/app-figure.md", image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
+<DashImage figure image="ui/layout/hello-world.png" alt="Screenshot of app displaying Hello World" img-style="max-height: 400px;"  />
 </div>
 <hr>
 

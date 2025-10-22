@@ -226,7 +226,7 @@ To add a target to an App Group:
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
 
-{% render "docs/app-figure.md", image:"development/platform-integration/app-extensions/xcode-app-groups.png", alt:"Selecting an App Group within an Xcode Runner target configuration." %}
+<DashImage figure image="development/platform-integration/app-extensions/xcode-app-groups.png" alt="Selecting an App Group within an Xcode Runner target configuration." />
 
 When two targets belong to the same App Group,
 they can read from and write to the same source.

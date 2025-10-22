@@ -21,10 +21,10 @@ In these ways and more, it simulates a real-world,
 feature-rich Flutter application.
 
 <div class="wrapping-row" style="margin-block-end: 2rem">
-  {% render "docs/app-figure.md", image:"app-architecture/case-study/splash_screen.png", alt:"A screenshot of the splash screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render "docs/app-figure.md", image:"app-architecture/case-study/home_screen.png", alt:"A screenshot of the home screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render "docs/app-figure.md", image:"app-architecture/case-study/search_form_screen.png", alt:"A screenshot of the search form screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render "docs/app-figure.md", image:"app-architecture/case-study/booking_screen.png", alt:"A screenshot of the booking screen of the compass app.", img-style:"max-height: 400px;" %}
+  <DashImage figure image="app-architecture/case-study/splash_screen.png" alt="A screenshot of the splash screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/home_screen.png" alt="A screenshot of the home screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/search_form_screen.png" alt="A screenshot of the search form screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/booking_screen.png" alt="A screenshot of the booking screen of the compass app." img-style="max-height: 400px;" />
 </div>
 
 The Compass app's architecture most resembles the [MVVM architectural pattern][]

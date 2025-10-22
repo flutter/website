@@ -112,7 +112,7 @@ To undo this migration:
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
    <span class="material-symbols" translate="no">remove</span>.
 
-   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-generated-package.png" caption="The `FlutterGeneratedPluginSwiftPackage` to remove" />
 
 1. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
@@ -120,7 +120,7 @@ To undo this migration:
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
    <span class="material-symbols" translate="no">remove</span>.
 
-   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png", caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-generated-framework.png" caption="The `FlutterGeneratedPluginSwiftPackage` to remove" />
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
@@ -132,7 +132,7 @@ To undo this migration:
 
 1. Click **<span class="material-symbols" translate="no">delete</span>**.
 
-   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png", caption:"The build pre-action to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png" caption="The build pre-action to remove" />
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
 
@@ -152,7 +152,7 @@ To use the plugin:
 
 1. Increase your app's target **Minimum Deployments**.
 
-   {% render "docs/captioned-image.md", image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png", caption:"The target's **Minimum Deployments** setting" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/minimum-deployments.png" caption="The target's **Minimum Deployments** setting" />
 
 1. If you updated your iOS app's **Minimum Deployments**,
    regenerate the iOS project's configuration files:
