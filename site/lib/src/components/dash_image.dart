@@ -16,27 +16,23 @@ class DashImage with CustomComponentBase {
   @override
   Component apply(_, Map<String, String> attributes, _) {
     final isFigure = attributes.containsKey('figure');
-    final imgSrc = attributes['image']!;
+    final imgSrc =
+        attributes['image'] ??
+        (throw Exception(
+          '<DashImage> component requires an "image" attribute.',
+        ));
+
     final caption = attributes['caption'] ?? '';
     final alt = attributes['alt'] ?? caption;
 
     final figureClass = isFigure ? attributes['class'] : null;
     final imgClass = attributes[isFigure ? 'img-class' : 'class'];
 
-    var style = attributes['img-style'] ?? '';
-
-    if (attributes['width'] case final width?) {
-      if (style.isNotEmpty && !style.trim().endsWith(';')) {
-        style += '; ';
-      }
-      style += 'width: $width;';
-    }
-    if (attributes['height'] case final height?) {
-      if (style.isNotEmpty && !style.trim().endsWith(';')) {
-        style += '; ';
-      }
-      style += 'height: $height;';
-    }
+    final style = [
+      if (attributes['img-style'] case final s?) s,
+      if (attributes['width'] case final w?) 'width: $w',
+      if (attributes['height'] case final h?) 'height: $h',
+    ].map((s) => s.trim()).map((s) => s.endsWith(';') ? s : '$s;').join(' ');
 
     final child = Component.fragment([
       img(
@@ -49,7 +45,7 @@ class DashImage with CustomComponentBase {
       ),
       if (caption.isNotEmpty)
         figcaption(classes: 'figure-caption', [
-          if (caption.isNotEmpty) DashMarkdown(content: caption),
+          DashMarkdown(content: caption),
         ]),
     ]);
 
