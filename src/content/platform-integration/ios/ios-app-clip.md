@@ -103,7 +103,7 @@ Open the `Info.plist` file in the App Clip group.
 Delete the entire dictionary entry for
 **Application Scene Manifest**.
 
-<DashImage figure image="development/platform-integration/ios-app-clip/delete-scene-manifest.png" />
+<DashImage figure image="development/platform-integration/ios-app-clip/scene-manifest.png" />
 
 ## Step 4 - Share build configurations
 
