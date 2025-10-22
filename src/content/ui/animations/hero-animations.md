@@ -286,7 +286,7 @@ The custom PhotoHero class maintains the hero,
 and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
-{% render "docs/app-figure.md", image:"ui/animations/photohero-class.png", alt:"PhotoHero class widget tree %}
+<DashImage figure image="ui/animations/photohero-class.png" alt="PhotoHero class widget tree" />
 
 Here's the code:
 
@@ -548,7 +548,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-{% render "docs/app-figure.md", image:"ui/animations/radial-expansion-class.png", alt:"RadialExpansion widget tree" %}
+<DashImage figure image="ui/animations/radial-expansion-class.png" alt="RadialExpansion widget tree" />
 
 Here's the code:
 

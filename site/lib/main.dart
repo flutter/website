@@ -11,6 +11,7 @@ import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/card.dart';
 import 'src/components/client/archive_table.dart';
 import 'src/components/client/download_latest_button.dart';
+import 'src/components/dash_image.dart';
 import 'src/components/expansion_list.dart';
 import 'src/components/os_selector.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
@@ -71,6 +72,7 @@ final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 /// Custom "components" that can be used from Markdown files.
 List<CustomComponent> get _embeddableComponents => [
   const DashTabs(),
+  const DashImage(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (name, attributes, child) {

@@ -278,7 +278,7 @@ flutter build aar
 
 Then, follow the on-screen instructions to integrate.
 
-{% render "docs/app-figure.md", image:"development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+<DashImage figure image="development/add-to-app/android/project-setup/build-aar-instructions.png" />
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
@@ -417,7 +417,7 @@ check out [Using Flutter in China][] page.
 You can also build an AAR for your Flutter module in Android Studio using
 the `Build > Flutter > Build AAR` menu.
 
-{% render "docs/app-figure.md", image:"development/add-to-app/android/project-setup/ide-build-aar.png" %}
+<DashImage figure image="development/add-to-app/android/project-setup/ide-build-aar.png"/>
 :::
 
 </Tab>
