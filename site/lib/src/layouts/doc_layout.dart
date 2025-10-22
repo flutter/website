@@ -5,6 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
+import '../components/banner.dart';
 import '../components/breadcrumbs.dart';
 import '../components/prev_next.dart';
 import '../components/toc.dart';
@@ -25,7 +26,13 @@ class DocLayout extends FlutterDocsLayout {
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
+    final siteData = page.data.site;
+
     final pageTitle = pageData['title'] as String;
+    final showBanner =
+        (pageData['showBanner'] as bool?) ??
+        (siteData['showBanner'] as bool?) ??
+        false;
     final tocData = _tocForPage(page);
 
     return super.buildBody(
@@ -39,6 +46,9 @@ class DocLayout extends FlutterDocsLayout {
               tocData,
               currentTitle: pageTitle,
             ),
+          if (showBanner)
+            if (page.data['banner'] case final Map<String, Object?> bannerData)
+              DashBanner(BannerContent.fromMap(bannerData)),
           div(classes: 'after-leading-content', [
             if (tocData != null)
               aside(id: 'side-menu', [

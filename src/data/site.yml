@@ -3,7 +3,7 @@ url: https://docs.flutter.dev
 main-url: https://flutter.dev
 email: flutter-dev@googlegroups.com
 
-showBanner: false
+showBanner: true
 
 branch: main
 repo:
