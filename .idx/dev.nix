@@ -6,6 +6,7 @@
 
   # Use https://search.nixos.org/packages to find packages
   packages = [
+  # Node is included for deploying to Firebase.
     pkgs.nodejs_24
   ];
 
