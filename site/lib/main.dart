@@ -13,6 +13,7 @@ import 'src/components/client/archive_table.dart';
 import 'src/components/client/download_latest_button.dart';
 import 'src/components/expansion_list.dart';
 import 'src/components/os_selector.dart';
+import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tabs.dart';
 import 'src/extensions/registry.dart';
@@ -163,5 +164,9 @@ List<CustomComponent> get _embeddableComponents => [
 
       return ExpansionList.load(listName, baseId: baseId);
     },
+  ),
+  CustomComponent(
+    pattern: RegExp('DevToolsReleaseNotesIndex', caseSensitive: false),
+    builder: (_, _, _) => const DevToolsReleaseNotesIndex(),
   ),
 ];
