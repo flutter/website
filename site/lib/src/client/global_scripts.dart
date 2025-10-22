@@ -277,6 +277,7 @@ void _setUpCollapsibleElements() {
 
 void _setUpPlatformKeys() {
   final os = getOS();
+  // Use Command key for macOS, Control key for other OS.
   final specialKey = switch (os) {
     OperatingSystem.macos => 'Command',
     _ => 'Control',
@@ -316,7 +317,6 @@ void _setUpInlineTocDropdown() {
   dropdownButton.addEventListener(
     'click',
     ((web.Event _) {
-      print(inlineToc.getAttribute('data-expanded'));
       if (inlineToc.getAttribute('data-expanded') == 'true') {
         closeMenu();
       } else {
