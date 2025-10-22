@@ -44,10 +44,25 @@ class YoutubeEmbed with CustomComponentBase {
     // we use https://github.com/justinribeiro/lite-youtube which
     // lazily loads the video, significantly reduces page load times,
     // and enables configurability through element attributes.
-    return raw('''
-<lite-youtube videoid="$videoId" videotitle="$videoTitle" videoStartAt="$startTime" ${playlistId != null ? 'playlistid="$playlistId"' : ''}>
-  <a class="lite-youtube-fallback" href="https://www.youtube.com/watch/$videoId" target="_blank" rel="noopener">Watch on YouTube in a new tab: "$videoTitle"</a>
-</lite-youtube>
-''');
+    return Component.element(
+      tag: 'lite-youtube',
+      attributes: {
+        'videoid': videoId,
+        'videotitle': videoTitle,
+        'videoStartAt': '$startTime',
+        if (playlistId != null) 'playlistid': playlistId,
+      },
+      children: [
+        a(
+          classes: 'lite-youtube-fallback',
+          href: 'https://www.youtube.com/watch/$videoId',
+          target: Target.blank,
+          attributes: {'rel': 'noopener'},
+          [
+            text('Watch on YouTube in a new tab: "$videoTitle"'),
+          ],
+        ),
+      ],
+    );
   }
 }
