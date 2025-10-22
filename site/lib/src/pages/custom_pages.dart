@@ -7,7 +7,7 @@ import 'dart:convert';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../data/devtools_releases.dart';
+import '../components/pages/devtools_release_notes_index.dart';
 
 /// All pages that should be loaded from memory rather than
 /// from content loaded from the file system.
@@ -30,11 +30,12 @@ MemoryPage get _devtoolsReleasesIndex => MemoryPage.builder(
   builder: (context) {
     context.setHeader('Content-Type', 'application/json; charset=utf-8');
 
+    final releases = DevToolsReleaseNotesIndex.findDevToolsReleases(context);
     final releaseData = {
-      'latest': devToolsReleases.first,
+      'latest': releases.first.version.toString(),
       'releases': {
-        for (final release in devToolsReleases)
-          release: '/tools/devtools/release-notes/release-notes-$release.md',
+        for (final release in releases)
+          release.version.toString(): '/${release.page.path}',
       },
     };
 

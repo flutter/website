@@ -24,6 +24,4 @@ make sure to add the version number as the first entry in the list
 found at `/site/src/data/devtools_releases.dart`.
 {% endcomment -%}
 
-{% for release in devToolsReleases -%}
-* [{{release}} release notes](/tools/devtools/release-notes/release-notes-{{release}})
-{% endfor -%}
+<DevToolsReleaseNotesIndex />

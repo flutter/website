@@ -8,22 +8,11 @@ import 'dart:io' show FileSystemException, Process;
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
 
-import '../data/devtools_releases.dart';
-
 /// A shared data loader to add data to each loaded page.
 final class DataProcessor implements DataLoader {
   @override
   Future<void> loadData(Page page) async {
-    _loadDevToolsReleases(page);
     _loadLastModified(page);
-  }
-
-  static void _loadDevToolsReleases(Page page) {
-    page.apply(
-      data: {
-        'devToolsReleases': devToolsReleases,
-      },
-    );
   }
 
   /// Adds data about the last modified date of the page.
