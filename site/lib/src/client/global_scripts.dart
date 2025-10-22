@@ -38,31 +38,11 @@ final class _GlobalScriptsState extends State<GlobalScripts> {
 }
 
 void _setUpSite() {
-  _setUpSidenav();
   _setUpSearchKeybindings();
   _setUpTabs();
   _setUpCollapsibleElements();
   _setUpPlatformKeys();
   _setUpToc();
-}
-
-void _setUpSidenav() {
-  final sidenav = web.document.getElementById('sidenav');
-  if (sidenav == null) return;
-  final activeEntries = sidenav.querySelectorAll('a.nav-link.active');
-
-  if (activeEntries.length > 0) {
-    // Scroll the last active entry into view.
-    // This is usually the most specific active entry.
-    final lastActiveEntry = activeEntries.item(activeEntries.length - 1);
-    if (lastActiveEntry case final web.HTMLElement lastActiveEntry) {
-      sidenav.scrollTo(
-        web.ScrollToOptions(
-          top: lastActiveEntry.offsetTop - (web.window.innerHeight / 3),
-        ),
-      );
-    }
-  }
 }
 
 void _setUpSearchKeybindings() {

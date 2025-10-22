@@ -218,6 +218,23 @@ if (storedTheme === 'auto-mode') {
 }
 </script>
       '''),
+        // Scroll the sidenav to the active item before other logic
+        // to avoid it jumping after page load.
+        raw('''
+<script>
+const sidenav = document.getElementById('sidenav');
+if (sidenav) {
+  const activeEntries = sidenav.querySelectorAll('.nav-link.active');
+  if (activeEntries.length > 0) {
+    const activeEntry = activeEntries[activeEntries.length - 1];
+    
+    sidenav.scrollTo({
+      top: activeEntry.offsetTop - window.innerHeight / 3,
+    });
+  }
+}
+</script>
+      '''),
         GlobalScripts(),
       ],
     );
