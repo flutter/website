@@ -1,5 +1,6 @@
 ---
 title: DevTools release notes
+breadcrumb: Release notes
 description: Learn about the latest changes in Dart and Flutter DevTools.
 showToc: false
 ---
