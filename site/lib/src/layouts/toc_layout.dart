@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/card.dart';
+import '../components/common/card.dart';
 import 'doc_layout.dart';
 
 class TocLayout extends DocLayout {

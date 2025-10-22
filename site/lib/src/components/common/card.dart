@@ -4,7 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../util.dart';
+import '../../util.dart';
 
 class Card extends StatelessComponent {
   /// Creates a card that can have a [header], [content], and [actions].
@@ -41,6 +41,31 @@ class Card extends StatelessComponent {
   }) : content = expandedContent,
        link = null,
        expandable = true;
+
+  /// Creates a [Card] from a set of attributes parsed from markdown.
+  factory Card.fromAttributes(
+    Map<String, String> attributes,
+    Component? child,
+  ) {
+    final link = attributes['link'];
+    final title =
+        attributes['title'] ??
+        (throw Exception('Card component requires a "title" attribute.'));
+    final outlined = attributes['outlined'] == 'true';
+    return Card(
+      header: [
+        Component.element(
+          tag: 'header',
+          classes: 'card-title',
+          children: [text(title)],
+        ),
+      ],
+      content: [?child],
+      link: link,
+      filled: link != null,
+      outlined: outlined,
+    );
+  }
 
   final List<Component> header;
   final List<Component> content;

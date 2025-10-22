@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../util.dart';
+import '../../../util.dart';
 
 @client
 class OsSelector extends StatefulComponent {

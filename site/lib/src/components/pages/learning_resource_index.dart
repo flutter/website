@@ -7,8 +7,8 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../models/learning_resource_model.dart';
 import '../../util.dart';
-import '../client/learning_resource_filters.dart';
-import '../client/learning_resource_filters_sidebar.dart';
+import 'learning_resource_filters.dart';
+import 'learning_resource_filters_sidebar.dart';
 
 final class LearningResourceIndex extends StatelessComponent {
   LearningResourceIndex({super.key});

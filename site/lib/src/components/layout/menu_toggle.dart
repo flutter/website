@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../material_icon.dart';
+import '../common/material_icon.dart';
 
 @client
 final class MenuToggle extends StatefulComponent {

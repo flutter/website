@@ -3,10 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-import '../dartpad/embedded_dartpad.dart';
+import 'embedded_dartpad.dart';
 
-import '../dartpad/extract_content.dart'
-    if (dart.library.io) '../dartpad/extract_content_vm.dart';
+import 'extract_content.dart' if (dart.library.io) 'extract_content_vm.dart';
 
 /// Prepares a code block that will be replaced with an embedded
 /// DartPad when the site is loaded.

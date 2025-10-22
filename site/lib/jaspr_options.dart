@@ -7,30 +7,31 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:docs_flutter_dev_site/src/client/global_scripts.dart'
     as prefix0;
-import 'package:docs_flutter_dev_site/src/components/client/archive_table.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
     as prefix1;
-import 'package:docs_flutter_dev_site/src/components/client/dartpad_injector.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
     as prefix2;
-import 'package:docs_flutter_dev_site/src/components/client/download_latest_button.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/download_latest_button.dart'
     as prefix3;
-import 'package:docs_flutter_dev_site/src/components/client/learning_resource_filters.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/feedback.dart'
     as prefix4;
-import 'package:docs_flutter_dev_site/src/components/client/learning_resource_filters_sidebar.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_button.dart'
     as prefix5;
-import 'package:docs_flutter_dev_site/src/components/client/on_this_page_button.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
     as prefix6;
-import 'package:docs_flutter_dev_site/src/components/header/menu_toggle.dart'
+import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
     as prefix7;
-import 'package:docs_flutter_dev_site/src/components/header/site_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
     as prefix8;
-import 'package:docs_flutter_dev_site/src/components/header/theme_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
     as prefix9;
-import 'package:docs_flutter_dev_site/src/components/cookie_notice.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
     as prefix10;
-import 'package:docs_flutter_dev_site/src/components/copy_button.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as prefix11;
-import 'package:docs_flutter_dev_site/src/components/feedback.dart' as prefix12;
-import 'package:docs_flutter_dev_site/src/components/os_selector.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
+    as prefix12;
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     as prefix13;
 
 /// Default [JasprOptions] for use with your jaspr project.
@@ -55,86 +56,87 @@ JasprOptions get defaultJasprOptions => JasprOptions(
       'src/client/global_scripts',
     ),
 
-    prefix1.ArchiveTable: ClientTarget<prefix1.ArchiveTable>(
-      'src/components/client/archive_table',
-      params: _prefix1ArchiveTable,
+    prefix1.CookieNotice: ClientTarget<prefix1.CookieNotice>(
+      'src/components/common/client/cookie_notice',
     ),
 
-    prefix2.DartPadInjector: ClientTarget<prefix2.DartPadInjector>(
-      'src/components/client/dartpad_injector',
-      params: _prefix2DartPadInjector,
+    prefix2.CopyButton: ClientTarget<prefix2.CopyButton>(
+      'src/components/common/client/copy_button',
+      params: _prefix2CopyButton,
     ),
 
     prefix3.DownloadLatestButton: ClientTarget<prefix3.DownloadLatestButton>(
-      'src/components/client/download_latest_button',
+      'src/components/common/client/download_latest_button',
       params: _prefix3DownloadLatestButton,
     ),
 
-    prefix4.LearningResourceFilters:
-        ClientTarget<prefix4.LearningResourceFilters>(
-          'src/components/client/learning_resource_filters',
+    prefix4.FeedbackComponent: ClientTarget<prefix4.FeedbackComponent>(
+      'src/components/common/client/feedback',
+      params: _prefix4FeedbackComponent,
+    ),
+
+    prefix5.OnThisPageButton: ClientTarget<prefix5.OnThisPageButton>(
+      'src/components/common/client/on_this_page_button',
+    ),
+
+    prefix6.OsSelector: ClientTarget<prefix6.OsSelector>(
+      'src/components/common/client/os_selector',
+    ),
+
+    prefix7.DartPadInjector: ClientTarget<prefix7.DartPadInjector>(
+      'src/components/dartpad/dartpad_injector',
+      params: _prefix7DartPadInjector,
+    ),
+
+    prefix8.MenuToggle: ClientTarget<prefix8.MenuToggle>(
+      'src/components/layout/menu_toggle',
+    ),
+
+    prefix9.SiteSwitcher: ClientTarget<prefix9.SiteSwitcher>(
+      'src/components/layout/site_switcher',
+    ),
+
+    prefix10.ThemeSwitcher: ClientTarget<prefix10.ThemeSwitcher>(
+      'src/components/layout/theme_switcher',
+    ),
+
+    prefix11.ArchiveTable: ClientTarget<prefix11.ArchiveTable>(
+      'src/components/pages/archive_table',
+      params: _prefix11ArchiveTable,
+    ),
+
+    prefix12.LearningResourceFilters:
+        ClientTarget<prefix12.LearningResourceFilters>(
+          'src/components/pages/learning_resource_filters',
         ),
 
-    prefix5.LearningResourceFiltersSidebar:
-        ClientTarget<prefix5.LearningResourceFiltersSidebar>(
-          'src/components/client/learning_resource_filters_sidebar',
+    prefix13.LearningResourceFiltersSidebar:
+        ClientTarget<prefix13.LearningResourceFiltersSidebar>(
+          'src/components/pages/learning_resource_filters_sidebar',
         ),
-
-    prefix6.OnThisPageButton: ClientTarget<prefix6.OnThisPageButton>(
-      'src/components/client/on_this_page_button',
-    ),
-
-    prefix10.CookieNotice: ClientTarget<prefix10.CookieNotice>(
-      'src/components/cookie_notice',
-    ),
-
-    prefix11.CopyButton: ClientTarget<prefix11.CopyButton>(
-      'src/components/copy_button',
-      params: _prefix11CopyButton,
-    ),
-
-    prefix12.FeedbackComponent: ClientTarget<prefix12.FeedbackComponent>(
-      'src/components/feedback',
-      params: _prefix12FeedbackComponent,
-    ),
-
-    prefix7.MenuToggle: ClientTarget<prefix7.MenuToggle>(
-      'src/components/header/menu_toggle',
-    ),
-
-    prefix8.SiteSwitcher: ClientTarget<prefix8.SiteSwitcher>(
-      'src/components/header/site_switcher',
-    ),
-
-    prefix9.ThemeSwitcher: ClientTarget<prefix9.ThemeSwitcher>(
-      'src/components/header/theme_switcher',
-    ),
-
-    prefix13.OsSelector: ClientTarget<prefix13.OsSelector>(
-      'src/components/os_selector',
-    ),
   },
   styles: () => [],
 );
 
-Map<String, dynamic> _prefix1ArchiveTable(prefix1.ArchiveTable c) => {
-  'os': c.os,
-  'channel': c.channel,
-};
-Map<String, dynamic> _prefix2DartPadInjector(prefix2.DartPadInjector c) => {
-  'title': c.title,
-  'theme': c.theme,
-  'height': c.height,
-  'runAutomatically': c.runAutomatically,
-};
-Map<String, dynamic> _prefix3DownloadLatestButton(
-  prefix3.DownloadLatestButton c,
-) => {'os': c.os, 'arch': c.arch};
-Map<String, dynamic> _prefix11CopyButton(prefix11.CopyButton c) => {
+Map<String, dynamic> _prefix2CopyButton(prefix2.CopyButton c) => {
   'toCopy': c.toCopy,
   'buttonText': c.buttonText,
   'classes': c.classes,
   'title': c.title,
 };
-Map<String, dynamic> _prefix12FeedbackComponent(prefix12.FeedbackComponent c) =>
-    {'issueUrl': c.issueUrl};
+Map<String, dynamic> _prefix3DownloadLatestButton(
+  prefix3.DownloadLatestButton c,
+) => {'os': c.os, 'arch': c.arch};
+Map<String, dynamic> _prefix4FeedbackComponent(prefix4.FeedbackComponent c) => {
+  'issueUrl': c.issueUrl,
+};
+Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
+  'title': c.title,
+  'theme': c.theme,
+  'height': c.height,
+  'runAutomatically': c.runAutomatically,
+};
+Map<String, dynamic> _prefix11ArchiveTable(prefix11.ArchiveTable c) => {
+  'os': c.os,
+  'channel': c.channel,
+};

@@ -4,8 +4,8 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../analytics/analytics.dart';
-import 'button.dart';
+import '../../../analytics/analytics.dart';
+import '../button.dart';
 
 /// Provides the user options to provide feedback on the specified page.
 @client

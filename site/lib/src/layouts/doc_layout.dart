@@ -5,11 +5,11 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/banner.dart';
-import '../components/breadcrumbs.dart';
-import '../components/prev_next.dart';
-import '../components/toc.dart';
-import '../components/trailing_content.dart';
+import '../components/common/breadcrumbs.dart';
+import '../components/common/prev_next.dart';
+import '../components/layout/banner.dart';
+import '../components/layout/toc.dart';
+import '../components/layout/trailing_content.dart';
 import '../extensions/header_extractor.dart';
 import '../models/on_this_page_model.dart';
 import '../util.dart';

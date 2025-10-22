@@ -8,10 +8,10 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../client/global_scripts.dart';
-import '../components/cookie_notice.dart';
-import '../components/footer.dart';
-import '../components/header.dart';
-import '../components/sidenav.dart';
+import '../components/common/client/cookie_notice.dart';
+import '../components/layout/footer.dart';
+import '../components/layout/header.dart';
+import '../components/layout/sidenav.dart';
 import '../models/sidenav_model.dart';
 import '../style_hash.dart';
 import '../util.dart';

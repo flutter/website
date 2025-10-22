@@ -6,7 +6,7 @@ import 'package:collection/collection.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../util.dart';
+import '../../util.dart';
 import 'material_icon.dart';
 
 /// Breadcrumbs navigation component that

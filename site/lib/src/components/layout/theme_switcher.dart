@@ -5,9 +5,9 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../button.dart';
-import '../dropdown.dart';
-import '../material_icon.dart';
+import '../common/button.dart';
+import '../common/dropdown.dart';
+import '../common/material_icon.dart';
 
 @client
 final class ThemeSwitcher extends StatefulComponent {

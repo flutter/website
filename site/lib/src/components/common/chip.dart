@@ -5,9 +5,9 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../util.dart';
+import '../../util.dart';
+import '../util/global_event_listener.dart';
 import 'material_icon.dart';
-import 'util/global_event_listener.dart';
 
 /// A set of Material Design-like chips for configuration.
 class ChipSet extends StatelessComponent {

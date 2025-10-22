@@ -8,15 +8,16 @@ import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 
 import 'jaspr_options.dart'; // Generated. Do not remove or edit.
-import 'src/components/card.dart';
-import 'src/components/client/archive_table.dart';
-import 'src/components/client/download_latest_button.dart';
-import 'src/components/dash_image.dart';
-import 'src/components/expansion_list.dart';
-import 'src/components/os_selector.dart';
+import 'src/components/common/card.dart';
+import 'src/components/common/client/download_latest_button.dart';
+import 'src/components/common/client/os_selector.dart';
+import 'src/components/common/dash_image.dart';
+import 'src/components/common/tabs.dart';
+import 'src/components/common/youtube_embed.dart';
+import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
+import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
-import 'src/components/tabs.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
@@ -73,59 +74,14 @@ final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 List<CustomComponent> get _embeddableComponents => [
   const DashTabs(),
   const DashImage(),
+  const YoutubeEmbed(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
-    builder: (name, attributes, child) {
-      return const OsSelector();
-    },
+    builder: (_, _, _) => const OsSelector(),
   ),
   CustomComponent(
     pattern: RegExp('Card', caseSensitive: false),
-    builder: (name, attributes, child) {
-      final link = attributes['link'];
-      final title = attributes['title']!;
-      final outlined = attributes['outlined'] == 'true';
-      return Card(
-        header: [
-          header(classes: 'card-title', [text(title)]),
-        ],
-        content: [?child],
-        link: link,
-        filled: link != null,
-        outlined: outlined,
-      );
-    },
-  ),
-  CustomComponent(
-    pattern: RegExp('YouTubeEmbed', caseSensitive: false),
-    builder: (name, attributes, child) {
-      final rawVideoId = attributes['id'] as String;
-      final videoTitle = attributes['title'] as String;
-      final playlistId = attributes['playlist'];
-
-      final String videoId;
-      final int startTime;
-      if (rawVideoId.contains('?')) {
-        final idAndStartTime = rawVideoId.split('?');
-        videoId = idAndStartTime[0];
-
-        final rawStartTime = idAndStartTime[1].split('start=')[1];
-        startTime = int.tryParse(rawStartTime) ?? 0;
-      } else {
-        startTime = 0;
-        videoId = rawVideoId;
-      }
-
-      // Instead of directly including a YouTube embed iframe,
-      // we use https://github.com/justinribeiro/lite-youtube which
-      // lazily loads the video, significantly reduces page load times,
-      // and enables configurability through element attributes.
-      return raw('''
-<lite-youtube videoid="$videoId" videotitle="$videoTitle" videoStartAt="$startTime" ${playlistId != null ? 'playlistid="$playlistId"' : ''}>
-  <a class="lite-youtube-fallback" href="https://www.youtube.com/watch/$videoId" target="_blank" rel="noopener">Watch on YouTube in a new tab: "$videoTitle"</a>
-</lite-youtube>
-''');
-    },
+    builder: (_, attrs, child) => Card.fromAttributes(attrs, child),
   ),
   CustomComponent(
     pattern: RegExp('LearningResourceIndex', caseSensitive: false),
@@ -133,39 +89,15 @@ List<CustomComponent> get _embeddableComponents => [
   ),
   CustomComponent(
     pattern: RegExp('ArchiveTable'),
-    builder: (_, attributes, _) {
-      final os = attributes['os'] as String;
-      final channel = attributes['channel'] as String;
-      return ArchiveTable(os: os.toLowerCase(), channel: channel.toLowerCase());
-    },
+    builder: (_, attrs, _) => ArchiveTable.fromAttributes(attrs),
   ),
   CustomComponent(
     pattern: RegExp('DownloadLatestButton', caseSensitive: false),
-    builder: (_, attributes, _) {
-      final os = attributes['os'] as String;
-      final arch = attributes['arch'];
-      return DownloadLatestButton(
-        os: os.toLowerCase(),
-        arch: arch?.toLowerCase(),
-      );
-    },
+    builder: (_, attrs, _) => DownloadLatestButton.fromAttributes(attrs),
   ),
   CustomComponent(
     pattern: RegExp('ExpansionList', caseSensitive: false),
-    builder: (_, attributes, _) {
-      final listName =
-          attributes['list'] ??
-          (throw Exception(
-            'ExpansionList component requires a "list" attribute.',
-          ));
-      final baseId =
-          attributes['baseid'] ??
-          (throw Exception(
-            'ExpansionList component requires a "baseId" attribute.',
-          ));
-
-      return ExpansionList.load(listName, baseId: baseId);
-    },
+    builder: (_, attrs, _) => ExpansionList.fromAttributes(attrs),
   ),
   CustomComponent(
     pattern: RegExp('DevToolsReleaseNotesIndex', caseSensitive: false),
