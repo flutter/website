@@ -164,6 +164,12 @@ ga('send', 'pageview');
 
     return Component.fragment(
       [
+        const Document.html(
+          attributes: {
+            'lang': 'en',
+            'dir': 'ltr',
+          },
+        ),
         if (bodyClass != null) Document.body(attributes: {'class': bodyClass}),
         if (productionBuild)
           raw(
