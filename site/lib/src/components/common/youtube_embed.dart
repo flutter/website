@@ -5,6 +5,8 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
+import '../../util.dart';
+
 class YoutubeEmbed with CustomComponentBase {
   const YoutubeEmbed();
 
@@ -25,6 +27,7 @@ class YoutubeEmbed with CustomComponentBase {
         (throw Exception(
           'YouTubeEmbed component requires a "title" attribute.',
         ));
+    final fullWidth = attributes.containsKey('fullwidth');
     final playlistId = attributes['playlist'];
 
     final String videoId;
@@ -52,6 +55,7 @@ class YoutubeEmbed with CustomComponentBase {
         'videoStartAt': '$startTime',
         if (playlistId != null) 'playlistid': playlistId,
       },
+      classes: [if (fullWidth) 'full-width'].toClasses,
       children: [
         a(
           classes: 'lite-youtube-fallback',

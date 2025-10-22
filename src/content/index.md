@@ -72,7 +72,7 @@ Coming from another platform? Check out Flutter for:
 
 <div class="video-wrapper">
   <span class="video-intro">Check out what's new in Flutter at Google I/O 2025!</span>
-  <YouTubeEmbed id="v6Rzo5khNE8" title="What's new in Flutter"></YouTubeEmbed>
+  <YouTubeEmbed id="v6Rzo5khNE8" title="What's new in Flutter" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
