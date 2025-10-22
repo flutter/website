@@ -10,6 +10,7 @@ import 'package:universal_web/web.dart' as web;
 
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
+import '../material_icon.dart';
 import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
@@ -121,11 +122,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
     return div(id: 'resource-search-group', classes: 'chip-filters-group', [
       div(classes: 'top-row', [
         div(classes: 'search-wrapper', id: 'resource-search', [
-          span(
-            classes: 'material-symbols leading-icon',
-            attributes: {'aria-hidden': 'true', 'translate': 'no'},
-            [text('search')],
-          ),
+          const MaterialIcon('search', classes: ['leading-icon']),
           input(
             type: InputType.search,
             attributes: {
@@ -161,11 +158,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
               toggle?.checked = !toggle.checked;
             },
             [
-              span(
-                classes: 'material-symbols',
-                attributes: {'aria-hidden': 'true', 'translate': 'no'},
-                [text('filter_list')],
-              ),
+              const MaterialIcon('filter_list'),
             ],
           ),
         ),
@@ -193,11 +186,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
             filters.reset();
           },
           [
-            span(
-              classes: 'material-symbols',
-              attributes: {'aria-hidden': 'true', 'translate': 'no'},
-              [text('close_small')],
-            ),
+            const MaterialIcon('close_small'),
             span([text('Clear filters')]),
           ],
         ),

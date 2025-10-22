@@ -73,14 +73,8 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
                   span(classes: 'label', [
                     text(filters.tagsExpanded ? 'Less' : 'More'),
                   ]),
-                  span(
-                    classes: 'material-symbols',
-                    attributes: {'aria-hidden': 'true', 'translate': 'no'},
-                    [
-                      text(
-                        filters.tagsExpanded ? 'expand_less' : 'expand_more',
-                      ),
-                    ],
+                  MaterialIcon(
+                    filters.tagsExpanded ? 'expand_less' : 'expand_more',
                   ),
                 ]),
                 h4([text('Type')]),
