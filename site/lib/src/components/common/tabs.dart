@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../util.dart';
+import '../../util.dart';
 
 /// A tabs component where children tabs can be switched between by the user.
 class DashTabs implements CustomComponent {

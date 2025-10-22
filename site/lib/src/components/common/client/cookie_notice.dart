@@ -5,8 +5,8 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../util.dart';
-import 'button.dart';
+import '../../../util.dart';
+import '../button.dart';
 
 /// The cookie banner to show on a user's first time visiting the site.
 @client

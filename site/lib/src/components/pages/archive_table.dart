@@ -11,6 +11,13 @@ import '../../models/flutter_release_model.dart';
 class ArchiveTable extends StatefulComponent {
   const ArchiveTable({required this.os, required this.channel, super.key});
 
+  /// Creates an [ArchiveTable] from a set of attributes parsed from markdown.
+  factory ArchiveTable.fromAttributes(Map<String, String> attributes) {
+    final os = attributes['os'] as String;
+    final channel = attributes['channel'] as String;
+    return ArchiveTable(os: os.toLowerCase(), channel: channel.toLowerCase());
+  }
+
   final String os;
   final String channel;
 

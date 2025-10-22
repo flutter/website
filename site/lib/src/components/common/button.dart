@@ -4,7 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../util.dart';
+import '../../util.dart';
 import 'material_icon.dart';
 
 /// A generic button component with different style variants.

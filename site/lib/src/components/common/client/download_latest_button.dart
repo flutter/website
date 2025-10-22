@@ -5,11 +5,22 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
 
-import '../../models/flutter_release_model.dart';
+import '../../../models/flutter_release_model.dart';
 
 @client
 class DownloadLatestButton extends StatefulComponent {
   const DownloadLatestButton({required this.os, this.arch, super.key});
+
+  /// Creates a [DownloadLatestButton] from a set of attributes parsed
+  /// from markdown.
+  factory DownloadLatestButton.fromAttributes(Map<String, String> attributes) {
+    final os = attributes['os'] as String;
+    final arch = attributes['arch'];
+    return DownloadLatestButton(
+      os: os.toLowerCase(),
+      arch: arch?.toLowerCase(),
+    );
+  }
 
   final String os;
   final String? arch;

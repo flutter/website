@@ -7,7 +7,7 @@ import 'package:jaspr/jaspr.dart';
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
 import '../../util.dart';
-import '../material_icon.dart';
+import '../common/material_icon.dart';
 import 'learning_resource_filters.dart';
 
 @client

@@ -4,8 +4,8 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../util.dart';
-import 'copy_button.dart';
+import '../../util.dart';
+import 'client/copy_button.dart';
 
 /// A rendered code block with support for syntax highlighting,
 /// line highlighting, filenames, language specifying,

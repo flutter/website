@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 
 import 'package:universal_web/web.dart' as web;
 
-import 'util/global_event_listener.dart';
+import '../util/global_event_listener.dart';
 
 /// The root component of a dropdown in a client component.
 ///

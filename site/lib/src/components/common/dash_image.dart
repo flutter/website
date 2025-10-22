@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../markdown/markdown_parser.dart';
+import '../../markdown/markdown_parser.dart';
 
 class DashImage with CustomComponentBase {
   const DashImage();

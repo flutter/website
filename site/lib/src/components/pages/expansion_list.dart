@@ -7,8 +7,8 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
 
-import '../markdown/markdown_parser.dart';
-import '../util.dart';
+import '../../markdown/markdown_parser.dart';
+import '../../util.dart';
 
 class ExpansionListItem {
   ExpansionListItem({
@@ -71,12 +71,24 @@ class ExpansionList extends StatefulComponent {
   final String baseId;
   final List<ExpansionListItem> items;
 
-  /// Loads an [ExpansionList] by finding all pages in the current context that
-  /// are located in the specified [listName] directory (relative to the current
-  /// page's path).
+  /// Creates an [ExpansionList] from a set of attributes parsed from markdown.
+  ///
+  /// The items are found by locating all pages under the path specified by the
+  /// 'list' attribute, which is relative to the current page's path.
   ///
   /// Pages are sorted by their `order` frontmatter value.
-  static Component load(String listName, {required String baseId}) {
+  static Component fromAttributes(Map<String, String> attributes) {
+    final listName =
+        attributes['list'] ??
+        (throw Exception(
+          'ExpansionList component requires a "list" attribute.',
+        ));
+    final baseId =
+        attributes['baseid'] ??
+        (throw Exception(
+          'ExpansionList component requires a "baseId" attribute.',
+        ));
+
     return Builder(
       builder: (context) {
         final listPath = path.join(

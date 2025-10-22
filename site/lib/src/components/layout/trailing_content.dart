@@ -5,7 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import 'feedback.dart';
+import '../common/client/feedback.dart';
 
 /// The trailing content of a content documentation page, such as
 /// its last updated information, report an issue links, and similar.

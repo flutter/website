@@ -10,7 +10,7 @@ import 'package:universal_web/web.dart' as web;
 
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
-import '../material_icon.dart';
+import '../common/material_icon.dart';
 import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
