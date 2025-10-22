@@ -54,15 +54,15 @@ In cases where users wrote custom test infrastructure and comparators, consider
 instead removing the [`goldenFileComparator`][] overrides, and instead rely on
 the (new) default which should work as expected:
 
-```diff
-import 'package:integration_test/integration_test.dart';
--import 'package:my_integration_test/custom_golden_file_comparator.dart';
+```dart diff
+  import 'package:integration_test/integration_test.dart';
+- import 'package:my_integration_test/custom_golden_file_comparator.dart';
 
-void main() {
--  goldenFileComparator = CustomGoldenFileComparatorThatWorks();
+  void main() {
+-   goldenFileComparator = CustomGoldenFileComparatorThatWorks();
 
-  // ...
-}
+    // ...
+  }
 ```
 
 _Fun fact_: The existing code that was used for

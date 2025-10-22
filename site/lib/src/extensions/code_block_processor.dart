@@ -80,7 +80,23 @@ final class CodeBlockProcessor implements PageExtension {
             }
           }
 
-          final codeLines = _removeHighlights(lines, skipHighlighting);
+          final isDiff = metadata.containsKey('diff');
+          if (isDiff && showLineNumbers) {
+            throw ArgumentError(
+              'showLineNumbers and diff are not supported on the same '
+              'code block yet.',
+            );
+          }
+
+          final diffResult = isDiff ? _processDiffLines(lines) : null;
+          final linesWithDiffRemoved = diffResult?.lines ?? lines;
+          final addedLines = diffResult?.addedLines ?? const <int>{};
+          final removedLines = diffResult?.removedLines ?? const <int>{};
+
+          final codeLines = _removeHighlights(
+            linesWithDiffRemoved,
+            skipHighlighting,
+          );
           final processedContent = _highlightCode(
             codeLines,
             language: language,
@@ -101,6 +117,8 @@ final class CodeBlockProcessor implements PageExtension {
               },
               title: title,
               highlightLines: _parseNumbersAndRanges(rawHighlightLines),
+              addedLines: addedLines,
+              removedLines: removedLines,
               tag: tag != null ? CodeBlockTag.parse(tag) : null,
               initialLineNumber: initialLineNumber ?? 1,
               showLineNumbers: showLineNumbers,
@@ -386,6 +404,42 @@ final class CodeBlockProcessor implements PageExtension {
           highlights: lineHighlights[i] ?? [],
         ),
     ];
+  }
+
+  /// Processes lines for diff mode, extracting added/removed line markers.
+  ///
+  /// Lines starting with '+' are marked as added lines.
+  /// Lines starting with '-' are marked as removed lines.
+  /// The first two characters (marker and space) are removed from each line.
+  ({
+    List<String> lines,
+    Set<int> addedLines,
+    Set<int> removedLines,
+  })
+  _processDiffLines(List<String> lines) {
+    final addedLines = <int>{};
+    final removedLines = <int>{};
+    final processedLines = <String>[];
+
+    for (var lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
+      final line = lines[lineIndex];
+
+      switch (line.isNotEmpty ? line[0] : '') {
+        case '+':
+          addedLines.add(lineIndex + 1);
+        case '-':
+          removedLines.add(lineIndex + 1);
+      }
+
+      // Remove the first 2 characters (marker and space).
+      processedLines.add(line.length >= 2 ? line.substring(2) : '');
+    }
+
+    return (
+      lines: processedLines,
+      addedLines: addedLines,
+      removedLines: removedLines,
+    );
   }
 }
 
