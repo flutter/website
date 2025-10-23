@@ -230,7 +230,7 @@ As XML:
 If you need access to the SceneDelegate, you can create your own that
 subclasses the `FlutterSceneDelegate`.
 
-1. Open you app in Xcode
+1. Open your app in Xcode
 2. Right click the Runner folder and select "New Empty File"
 
 ![New Empty File option in
