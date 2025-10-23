@@ -67,8 +67,8 @@ flutter build ios
 ```
 
 If the migration succeeds, you will see a log that says "Finished migration to
-UIScene lifecycle". Otherwise, it will warn you to migrate manually using the
-below instructions. If the migration succeeds, no further action is required!
+UIScene lifecycle". Otherwise, it warns you to migrate manually using the
+included instructions. If the migration succeeds, no further action is required!
 
 ### Migrate AppDelegate
 
