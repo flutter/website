@@ -583,7 +583,7 @@ need to migrate to UIKit's scene-based lifecycle.
 
 :::warning
 The below Flutter APIs are available in the 3.38.0-0.1.pre beta, but are not
-yet available on stable. You may consider publishing a [prerelease
+yet available on stable. You might consider publishing a [prerelease
 version](https://dart.dev/tools/pub/publishing#publishing-prereleases)
 of your plugin to migrate early.
 :::
