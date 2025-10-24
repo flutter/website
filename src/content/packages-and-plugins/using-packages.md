@@ -416,9 +416,9 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-
 1. Run the app. The app's background should now be orange.
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 
