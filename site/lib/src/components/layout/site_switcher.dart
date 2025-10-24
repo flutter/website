@@ -25,38 +25,43 @@ final class SiteSwitcher extends StatelessComponent {
           },
           [
             ul(
-              [
-                const _SiteWordMarkListEntry(
+              const [
+                _SiteWordMarkListEntry(
                   name: 'Flutter',
                   href: 'https://flutter.dev',
                 ),
-                const _SiteWordMarkListEntry(
+                _SiteWordMarkListEntry(
                   name: 'Flutter',
                   subtype: 'Docs',
                   href: '/',
                   current: true,
                 ),
-                const _SiteWordMarkListEntry(
+                _SiteWordMarkListEntry(
                   name: 'Flutter',
                   subtype: 'API',
                   href: 'https://api.flutter.dev',
                 ),
-                li(
+                _SiteWordMarkListEntry(
+                  name: 'Flutter',
+                  subtype: 'Blog',
+                  href: 'https://blog.flutter.dev',
+                ),
+                Component.element(
+                  tag: 'li',
                   classes: 'dropdown-divider',
                   attributes: {'aria-hidden': 'true', 'role': 'separator'},
-                  [],
                 ),
-                const _SiteWordMarkListEntry(
+                _SiteWordMarkListEntry(
                   name: 'Dart',
                   href: 'https://dart.dev',
                   dart: true,
                 ),
-                const _SiteWordMarkListEntry(
+                _SiteWordMarkListEntry(
                   name: 'DartPad',
                   href: 'https://dartpad.dev',
                   dart: true,
                 ),
-                const _SiteWordMarkListEntry(
+                _SiteWordMarkListEntry(
                   name: 'pub.dev',
                   href: 'https://pub.dev',
                   dart: true,
