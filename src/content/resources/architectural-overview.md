@@ -1000,7 +1000,8 @@ if (defaultTargetPlatform == TargetPlatform.android) {
   );
 }
 return Text(
-    '$defaultTargetPlatform is not yet supported by the maps plugin');
+  '$defaultTargetPlatform is not yet supported by the maps plugin',
+);
 ```
 
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
