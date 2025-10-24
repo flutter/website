@@ -694,7 +694,7 @@ public func windowScene(
 
 Despite `application:willFinishLaunchingWithOptions:` and
 `application:didFinishLaunchingWithOptions:` not being deprecated, after
-migrating to UIScene lifecycle, the launch options will be `nil`. Any logic
+migrating to the `UIScene` lifecycle, the launch options will be `nil`. Any logic
 performed here related to the launch options should be moved to the
 `scene:willConnectToSession:options:` event.
 
