@@ -625,7 +625,7 @@ Delegate events as well.
 4. Add one or more of the following scene events that are needed for your
 plugin.
 
-Most App Delegate UI events have a 1-to-1 replacement. To see details on each
+Most App Delegate UI events have a 1-to-1 replacement. To see details for each
 event, visit Apple's documentation on
 [UISceneDelegate]({{site.apple-dev}}/documentation/uikit/uiscenedelegate)
 and
