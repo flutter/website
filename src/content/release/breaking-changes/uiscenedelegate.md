@@ -627,9 +627,10 @@ plugin.
 
 Most App Delegate UI events have a 1-to-1 replacement. To see details for each
 event, visit Apple's documentation on
-[UISceneDelegate]({{site.apple-dev}}/documentation/uikit/uiscenedelegate)
-and
-[UIWindowSceneDelegate]({{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate).
+[`UISceneDelegate`][] and [`UIWindowSceneDelegate`][].
+
+[`UISceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate
+[UIWindowSceneDelegate]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate
 
 
 ```swift
