@@ -2,6 +2,7 @@
 title: State management in Flutter
 description: Instructions on how to manage state with ChangeNotifiers.
 permalink: /tutorial/change-notifier/
+sitemap: false
 ---
 
 When developers talk about state-management in Flutter, they're
@@ -187,4 +188,4 @@ either an article title or an error message, which confirms that your
 Model and ViewModel are wired up correctly.
 
 [ChangeNotifier]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
-[try-catch block]: {{site.dart-site}}/language/error-handling
+[try-catch block]: https://dart.dev/language/error-handling

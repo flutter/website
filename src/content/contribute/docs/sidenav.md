@@ -3,6 +3,9 @@ title: Sidenav
 description: >-
   Learn about adding to and configuring the sidenav of the
   Dart and Flutter documentation site.
+sitemap: false
+noindex: true
+showBreadcrumbs: true
 ---
 
 :::warning

@@ -14,7 +14,7 @@ such as elastic scrolling.
 For a free, instructor-led video workshop that uses DartPad,
 check out the following video about using slivers.
 
-{% ytEmbed 'YY-_yrZdjGc', 'Building scrolling experiences in Flutter' %}
+<YouTubeEmbed id="YY-_yrZdjGc" title="Building scrolling experiences in Flutter"></YouTubeEmbed>
 
 ## Resources
 
@@ -31,21 +31,21 @@ in Flutter, see the following resources:
   video that gives an overview of the
   `SliverAppBar` widget.
 
-  {% ytEmbed 'R9C5KMJKluE', 'SliverAppBar | Flutter widget of the week' %}
+  <YouTubeEmbed id="R9C5KMJKluE" title="SliverAppBar | Flutter widget of the week"></YouTubeEmbed>
 
 **[SliverList and SliverGrid][]**
 : A one-minute Widget-of-the-week
   video that gives an overview of the `SliverList`
   and `SliverGrid` widgets.
 
-  {% ytEmbed 'ORiTTaVY6mM', 'SliverList & SliverGrid | Flutter widget of the week' %}
+  <YouTubeEmbed id="ORiTTaVY6mM" title="SliverList & SliverGrid | Flutter widget of the week"></YouTubeEmbed>
 
 **[Slivers explained - Making dynamic layouts][]**
 : A 50-minute episode of [The Boring Show][]
   where Ian Hickson, Flutter's Tech Lead, and Filip Hracek
   discuss the power of slivers.
 
-  {% ytEmbed 'Mz3kHQxBjGg', 'Slivers explained - Making dynamic layouts' %}
+  <YouTubeEmbed id="Mz3kHQxBjGg" title="Slivers explained - Making dynamic layouts"></YouTubeEmbed>
 
 ## API docs
 

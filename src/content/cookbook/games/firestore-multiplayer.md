@@ -95,7 +95,7 @@ so every player sees the same state.
 If you want a quick, 15-minute primer on Cloud Firestore,
 check out the following video:
 
-{% ytEmbed 'v_hR4K4auoQ', 'What is a NoSQL Database? Learn about Cloud Firestore' %}
+<YouTubeEmbed id="v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore"></YouTubeEmbed>
 
 To add Firestore to your Flutter project,
 follow the first two steps of the

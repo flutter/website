@@ -2,6 +2,8 @@
 title: Stateful widgets
 description: Learn about StatefulWidgets and rebuilding Flutter UI.
 permalink: /tutorial/stateful-widget/
+sitemap: false
+
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}

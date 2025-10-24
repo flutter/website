@@ -1,9 +1,6 @@
 ---
 title: Return data from a screen
 description: How to return data from a new screen.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/returning_data/"?>

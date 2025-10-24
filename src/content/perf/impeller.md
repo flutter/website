@@ -23,7 +23,7 @@ at engine-build time so they don't compile at runtime.
 For a video introduction to Impeller, check out the following
 talk from Google I/O 2023.
 
-{% ytEmbed 'vd5NqS01rlA', 'Introducing Impeller, Flutter\'s new rendering engine' %}
+<YouTubeEmbed id="vd5NqS01rlA" title="Introducing Impeller, Flutter's new rendering engine"></YouTubeEmbed>
 
 Impeller has the following objectives:
 

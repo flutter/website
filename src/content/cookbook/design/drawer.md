@@ -1,9 +1,6 @@
 ---
 title: Add a drawer to a screen
 description: How to implement a Material Drawer.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/drawer"?>

@@ -5,8 +5,6 @@ shortTitle: Widgets
 showBreadcrumbs: false
 ---
 
-{% assign sorted = catalog.widgets | sort:'name' -%}
-
 This is an alphabetical list of many of the widgets that
 are bundled with Flutter.
 You can also [browse widgets by category][catalog].
@@ -16,12 +14,12 @@ on the [Flutter YouTube channel]({{site.social.youtube}}). Each short
 episode features a different Flutter widget. For more video series, see
 our [videos](/resources/videos) page.
 
-{% ytEmbed 'b_sQ9bMltGU', 'Introducing the Flutter Widget of the Week' %}
+<YouTubeEmbed id="b_sQ9bMltGU" title="Introducing the Flutter Widget of the Week"></YouTubeEmbed>
 
 [Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
 <div class="card-grid">
-{% for comp in sorted -%}
+{% for comp in catalog.widgets | sortBy: 'name' -%}
   <a class="card outlined-card" href="{{comp.link}}">
     <div class="card-image-holder">
       {% if comp.vector -%}

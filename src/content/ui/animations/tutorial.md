@@ -92,7 +92,7 @@ The changes from the non-animated example are highlighted:
 + class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 +   late Animation<double> animation;
 +   late AnimationController controller;
-+ 
++
 +   @override
 +   void initState() {
 +     super.initState();
@@ -106,7 +106,7 @@ The changes from the non-animated example are highlighted:
 +       });
 +     controller.forward();
 +   }
-+ 
++
     @override
     Widget build(BuildContext context) {
       return Center(
@@ -120,7 +120,7 @@ The changes from the non-animated example are highlighted:
         ),
       );
     }
-+ 
++
 +   @override
 +   void dispose() {
 +     controller.dispose();
@@ -172,7 +172,7 @@ check out [Cascade notation][]
 in the [Dart language documentation][].
 :::
 
-##  Simplifying with Animated&shy;Widget
+## Simplifying with AnimatedWidget
 
 :::secondary What's the point?
 * How to use the [`AnimatedWidget`][] helper class
@@ -231,7 +231,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 + class AnimatedLogo extends AnimatedWidget {
 +   const AnimatedLogo({super.key, required Animation<double> animation})
 +       : super(listenable: animation);
-+ 
++
 +   @override
 +   Widget build(BuildContext context) {
 +     final animation = listenable as Animation<double>;
@@ -245,7 +245,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +     );
 +   }
 + }
-+ 
++
   class LogoApp extends StatefulWidget {
     // ...
 
@@ -276,7 +276,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -     );
 -   }
 +   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-    
+
     // ...
   }
 ```
@@ -390,7 +390,7 @@ dirty as necessary, so you don't need to call `addListener()`.
 The widget tree for the [animate4][]
 example looks like this:
 
-{% render docs/app-figure.md, image:"ui/AnimatedBuilder-WidgetTree.png", alt:"AnimatedBuilder widget tree" %}
+<DashImage figure image="ui/AnimatedBuilder-WidgetTree.png" alt="AnimatedBuilder widget tree" />
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
@@ -472,10 +472,10 @@ in the bullet points above.
 
 ```dart diff
   void main() => runApp(const LogoApp());
-  
+
 + class LogoWidget extends StatelessWidget {
 +   const LogoWidget({super.key});
-+ 
++
 +   // Leave out the height and width so it fills the animating parent.
 +   @override
 +   Widget build(BuildContext context) {
@@ -485,17 +485,17 @@ in the bullet points above.
 +     );
 +   }
 + }
-+ 
++
 + class GrowTransition extends StatelessWidget {
 +   const GrowTransition({
 +     required this.child,
 +     required this.animation,
 +     super.key,
 +   });
-+ 
++
 +   final Widget child;
 +   final Animation<double> animation;
-+ 
++
 +   @override
 +   Widget build(BuildContext context) {
 +     return Center(

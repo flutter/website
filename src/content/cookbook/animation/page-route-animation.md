@@ -1,9 +1,6 @@
 ---
 title: Animate a page route transition
 description: How to animate from one page to another.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/page_route_animation/"?>

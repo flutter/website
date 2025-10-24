@@ -3,6 +3,7 @@ title: Ads overview
 description: >
   Learn about the resources available for adding
   ads to your Flutter app.
+showBreadcrumbs: false
 ---
 
 ![adding ads](/assets/images/docs/add-ads.png)

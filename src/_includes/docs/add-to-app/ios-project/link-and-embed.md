@@ -18,7 +18,7 @@ To link the necessary frameworks, follow this procedure.
 
    1. Expand **Link Binary With Libraries**.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/linked-libraries.png", caption:"Expand the **Link Binary With Libraries** build phase in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/linked-libraries.png" caption="Expand the **Link Binary With Libraries** build phase in Xcode" />
 
    1. Click **+** (plus sign).
 
@@ -29,7 +29,7 @@ To link the necessary frameworks, follow this procedure.
 
    1. Command-click the frameworks in that directory then click **Open**.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/choose-libraries.png", caption:"Choose frameworks to link from the **Choose frameworks and libraries to add:** dialog box in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/choose-libraries.png" caption="Choose frameworks to link from the **Choose frameworks and libraries to add:** dialog box in Xcode" />
 
 1. Update the paths to the libraries to account for build modes.
 
@@ -43,7 +43,7 @@ To link the necessary frameworks, follow this procedure.
    1. Open `project.pbxproj` with Xcode. The file opens in Xcode's text
       editor. This also locks **Project Navigator** until you close the text editor.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/project-pbxproj.png", caption:"The `project-pbxproj` file open in the Xcode text editor" %}
+      <DashImage image="development/add-to-app/ios/project-setup/project-pbxproj.png" caption="The `project-pbxproj` file open in the Xcode text editor" />
 
    1. Find the lines that resemble the following text in the
       `/* Begin PBXFileReference section */`.
@@ -106,7 +106,7 @@ To link the necessary frameworks, follow this procedure.
    1. Type `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)/`
       and press <kbd>Enter</kbd>.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/framework-search-paths.png", caption:"Update **Framework Search Paths** in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/framework-search-paths.png" caption="Update **Framework Search Paths** in Xcode" />
 
 After linking the frameworks, they should display in the
 **Frameworks, Libraries, and Embedded Content**
@@ -121,7 +121,7 @@ To embed your dynamic frameworks, complete the following procedure.
 
 1. Click on each of your dynamic frameworks and select **Embed & Sign**.
 
-   {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/choose-to-embed.png", caption:"Select **Embed & Sign** for each of your frameworks in Xcode" %}
+   <DashImage image="development/add-to-app/ios/project-setup/choose-to-embed.png" caption="Select **Embed & Sign** for each of your frameworks in Xcode" />
 
    Don't include any static frameworks,
    including `FlutterPluginRegistrant.xcframework`.
@@ -131,7 +131,7 @@ To embed your dynamic frameworks, complete the following procedure.
 1. Expand **Embed Frameworks**.
    Your dynamic frameworks should display in that section.
 
-   {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/embed-xcode.png", caption:"The expanded **Embed Frameworks** build phase in Xcode" %}
+   <DashImage image="development/add-to-app/ios/project-setup/embed-xcode.png" caption="The expanded **Embed Frameworks** build phase in Xcode" />
 
 1. Build the project.
 

@@ -1,6 +1,7 @@
 ---
 title: Flutter News Toolkit
 description: Learn more about creating a newsfeed app in Flutter.
+showBreadcrumbs: false
 ---
 
 The Flutter News Toolkit is now maintained by Very Good Ventures (VGV).

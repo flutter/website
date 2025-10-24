@@ -1,6 +1,7 @@
 ---
 title: FAQ
 description: Frequently asked questions and answers about Flutter.
+showBreadcrumbs: false
 ---
 
 ## Introduction

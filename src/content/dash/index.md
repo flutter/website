@@ -84,7 +84,7 @@ manufacturers who returned the prototypes some weeks later.
 
 ![The first Dash prototypes](/assets/images/dash/dash-prototypes.jpg){:width="35%"} ![The first Dash prototypes](/assets/images/dash/dash-prototypes2.jpg){:width="35%"}<br>
 
-{% ytEmbed 'R5vIUjRZaZA', 'Introducing Dash at the January 2018 Dart Conference' %}
+<YouTubeEmbed id="R5vIUjRZaZA" title="Introducing Dash at the January 2018 Dart Conference"></YouTubeEmbed>
 
 While the manufacturing process was proceeding,
 Shams chose a name for the plushy: Dash,
@@ -133,7 +133,7 @@ Dash 2.0 and 2.1
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
 
-  {% ytEmbed 'EgBMGDtHZhE', 'Flutter Interact 2019 highlights' %}
+  <YouTubeEmbed id="EgBMGDtHZhE" title="Flutter Interact 2019 highlights"></YouTubeEmbed>
   
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
@@ -144,9 +144,9 @@ Dash 2.0 and 2.1
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.
 
-  {% ytEmbed 'oyy_1CjNdBU', 'Building DashCast, a Flutter-based podcast app' %}
+  <YouTubeEmbed id="oyy_1CjNdBU" title="Building DashCast, a Flutter-based podcast app"></YouTubeEmbed>
 
-  {% ytEmbed 'dsiLVNDJ3t0', 'Revisiting DashCast, a Flutter-based podcast app' %}
+  <YouTubeEmbed id="dsiLVNDJ3t0" title="Revisiting DashCast, a Flutter-based podcast app"></YouTubeEmbed>
 
   ![Born to Hot Reload jacket](/assets/images/dash/ShamsDashJacket.png){:width="35%"}
 

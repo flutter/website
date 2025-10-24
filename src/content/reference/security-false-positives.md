@@ -1,6 +1,9 @@
 ---
 title: Security false positives
-description: Security vulnerabilities incorrectly reported by automated static analysis tools
+description: >-
+  Security vulnerabilities incorrectly reported by
+  automated static analysis tools.
+showBreadcrumbs: false
 ---
 
 ## Introduction

@@ -2,7 +2,9 @@
 title: Stack-based navigation
 description: Learn how to navigate from one page to another in a Flutter app
 permalink: /tutorial/stack-based-navigation/
+sitemap: false
 ---
+
 Now that you understand slivers and scrolling, you can implement
 navigation between screens. In this lesson, you'll update the
 small-screen view such that when a contact group is tapped, it

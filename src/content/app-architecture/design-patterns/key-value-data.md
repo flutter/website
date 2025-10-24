@@ -7,9 +7,6 @@ contentTags:
   - dark mode
 iconPath: /assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg
 order: 1
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/todo_data_service"?>

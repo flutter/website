@@ -500,7 +500,7 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-{% ytEmbed '33_0ABjFJUU', 'PrimaryScrollController | Decoding Flutter' %}
+<YouTubeEmbed id="33_0ABjFJUU" title="PrimaryScrollController | Decoding Flutter"></YouTubeEmbed>
 
 [controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 

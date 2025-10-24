@@ -1,6 +1,7 @@
 ---
 title: Flutter support
 description: Where can you get support when developing with Flutter.
+showBreadcrumbs: false
 ---
 
 Welcome!

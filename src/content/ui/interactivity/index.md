@@ -22,7 +22,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/lakes.jpg" caption="The layout tutorial app" />
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -33,7 +33,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
+<DashImage figure image="ui/favorited-not-favorited.png" alt="The custom widget you'll create" img-class="diagram-wrap" />
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,

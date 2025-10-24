@@ -233,8 +233,7 @@ subclassing `FlutterSceneDelegate`.
 1. Open your app in Xcode
 2. Right click the **Runner** folder and select **New Empty File**
 
-![New Empty File option in
-Xcode](/assets/images/docs/breaking-changes/uiscene-new-file.png)
+![New Empty File option in Xcode](/assets/images/docs/breaking-changes/uiscene-new-file.png)
 
 For Swift projects, create a `SceneDelegate.swift`:
 

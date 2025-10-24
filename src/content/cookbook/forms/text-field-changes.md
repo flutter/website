@@ -1,9 +1,6 @@
 ---
 title: Handle changes to a text field
 description: How to detect changes to a text field.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_field_changes/"?>

@@ -1,0 +1,55 @@
+- name: Add-to-app
+  description: >-
+    Recommended approaches for adding Flutter to existing apps.
+  tags:
+    - platforms
+    - iOS
+    - Android
+  type: demo
+  link:
+    url: https://github.com/flutter/samples/tree/main/add_to_app
+    label: Flutter GitHub
+
+- name: Android splash screen
+  description: >-
+    A Flutter sample app that exemplifies how to implement an
+    animated splash screen for Android devices.
+  tags:
+    - Android
+  type: demo
+  link:
+    url: https://github.com/flutter/samples/tree/main/android_splash_screen
+    label: Flutter GitHub
+
+- name: iOS app clip
+  description: >-
+    A sample project demonstrating integration with iOS App Clip.
+  tags:
+    - iOS
+  type: demo
+  link:
+    url: https://github.com/flutter/samples/tree/main/ios_app_clip
+    label: Flutter GitHub
+
+- name: Swift platform view
+  description: >-
+    A Flutter sample app that combines a native iOS UIViewController with
+    a full-screen Flutter view.
+  tags:
+    - swift
+    - ios
+  type: demo
+  link:
+    url: https://github.com/flutter/samples/tree/main/platform_view_swift
+    label: Flutter GitHub
+
+- name: Simplistic editor
+  description: >-
+    This sample text editor showcases the use of TextEditingDeltas and
+    a DeltaTextInputClient to expand and contract styled ranges of text.
+  tags:
+    - text
+  type: quickstart
+  link:
+    url: https://github.com/flutter/samples/tree/main/simplistic_editor
+    label: Flutter GitHub

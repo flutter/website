@@ -24,8 +24,8 @@ The Flutter SDK includes the [integration_test][] package.
 : The system on which you develop your app, like a desktop computer.
 
 **target device**
-: The mobile device, browser, or desktop application that runs
-your Flutter app.
+: The mobile device, browser, or desktop application that
+  runs your Flutter app.
 
   If you run your app in a web browser or as a desktop application,
   the host machine and the target device are the same.
@@ -55,6 +55,5 @@ The other guides in this section explain how to use integration tests to validat
 [functionality]: /testing/integration-tests/
 [performance]: /cookbook/testing/integration/profiling/
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
-[Migrating from flutter_driver]:
-    /release/breaking-changes/flutter-driver-migration
+[Migrating from flutter_driver]: /release/breaking-changes/flutter-driver-migration
 [widget tests]: /testing/overview#widget-tests

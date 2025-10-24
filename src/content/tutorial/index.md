@@ -2,6 +2,7 @@
 title: Learn Flutter
 description: Resources to help you learn Flutter.
 showToc: false
+sitemap: false
 ---
 
 ## Welcome! 

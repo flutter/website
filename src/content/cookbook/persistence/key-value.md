@@ -25,7 +25,7 @@ This recipe uses the following steps:
 To learn more, watch this short Package of the Week video
 on the `shared_preferences` package:
 
-{% ytEmbed 'sa_U0jffQII', 'shared_preferences | Flutter package of the week' %}
+<YouTubeEmbed id="sa_U0jffQII" title="shared_preferences | Flutter package of the week"></YouTubeEmbed>
 :::
 
 ## 1. Add the dependency

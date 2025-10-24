@@ -2,7 +2,7 @@
 title: Multiple Flutter screens or views
 shortTitle: Add multiple Flutters
 description: >
-  How to integrate multiple instances of 
+  How to integrate multiple instances of
   Flutter engine, screens, or views to your application.
 ---
 
@@ -80,7 +80,7 @@ or other planned work on enhancing multiple Flutter instances, check out
 You can find a sample demonstrating how to use `FlutterEngineGroup`
 on both Android and iOS on [GitHub][].
 
-{% render docs/app-figure.md, image:"development/add-to-app/multiple-flutters-sample.webp", alt:"A sample demonstrating multiple-Flutters" %}
+<DashImage figure image="development/add-to-app/multiple-flutters-sample.webp" alt="A sample demonstrating multiple-Flutters" />
 
 [GitHub]: {{site.repo.samples}}/tree/main/add_to_app/multiple_flutters
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html

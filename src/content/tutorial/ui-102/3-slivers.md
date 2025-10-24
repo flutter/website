@@ -2,6 +2,7 @@
 title: Advanced scrolling and slivers
 description: Learn how to implement performant scrolling with slivers.
 permalink: /tutorial/slivers/
+sitemap: false
 ---
 
 In this lesson, you'll learn about slivers, which are special widgets

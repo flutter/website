@@ -1,9 +1,6 @@
 ---
 title: List with spaced items
 description: How to create a list with spaced or expanded items 
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>

@@ -2,9 +2,6 @@
 title: Understanding constraints
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
 showToc: false
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="layout/constraints/"?>
@@ -2205,5 +2202,5 @@ header image at the top of the article.
 To better understand how Flutter implements layout
 constraints, check out the following 5-minute video:
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 :::
