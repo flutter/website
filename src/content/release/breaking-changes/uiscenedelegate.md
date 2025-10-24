@@ -579,13 +579,20 @@ sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 Not all plugins use lifecycle events. If your plugin does, though, you will
 need to migrate to UIKit's scene-based lifecycle.
 
-1. Update Flutter SDK version in your pubspec.yaml
+1. Update the Dart and Flutter SDK versions in your pubspec.yaml
+
+```yaml
+environment:
+  sdk: ^3.10.0-290.1.beta
+  flutter: ">=3.38.0-0.1.pre"
+```
 
 :::warning
 The below Flutter APIs are available in the 3.38.0-0.1.pre beta, but are not
-yet available on stable. You might consider publishing a [prerelease
-version](https://dart.dev/tools/pub/publishing#publishing-prereleases)
-of your plugin to migrate early.
+yet available on stable. You might consider publishing a
+[prerelease](https://dart.dev/tools/pub/publishing#publishing-prereleases) or
+[preview](https://dart.dev/tools/pub/publishing#publish-preview-versions)
+version of your plugin to migrate early.
 :::
 
 2. Adopt the `FlutterSceneLifeCycleDelegate` protocol
@@ -630,7 +637,7 @@ event, visit Apple's documentation on
 [`UISceneDelegate`][] and [`UIWindowSceneDelegate`][].
 
 [`UISceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate
-[UIWindowSceneDelegate]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate
+[`UIWindowSceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate
 
 
 ```swift
