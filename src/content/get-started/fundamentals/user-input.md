@@ -113,7 +113,7 @@ You can style a button based on its state using `WidgetStateProperty`.
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/ElevatedButton.webp",
 caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
-alt: "A GIF of an elevated button with the text \"Enabled\""
+alt: "A GIF of an elevated button with the text 'Enabled'"
 code:"
 ```dart
 int count = 0;
@@ -254,7 +254,7 @@ The class supports other configurable properties, such as
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/TextField.webp",
 caption: "This figure shows text being typed into a TextField with a selected border and label."
-alt: "A GIF of a text field with the label \"Mascot Name\", purple focus border and the phrase \"Dash the hummingbird\" being typed in."
+alt: "A GIF of a text field with the label 'Mascot Name', purple focus border and the phrase 'Dash the hummingbird' being typed in."
 code:"
 ```dart
 final TextEditingController _controller = TextEditingController();
@@ -910,9 +910,9 @@ so don't forget to await the asynchronous function call!
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/DatePicker.webp",
 caption: "This figure shows a DatePicker that is displayed when the
-\"Pick a date\" button is clicked."
-alt: "A GIF of a pointer clicking a button that says \"Pick a date\",
-then shows a date picker. The date Friday, August 30 is selected and the \"OK\"
+'Pick a date' button is clicked."
+alt: "A GIF of a pointer clicking a button that says 'Pick a date',
+then shows a date picker. The date Friday, August 30 is selected and the 'OK'
 button is clicked."
 code:"
 ```dart
@@ -925,7 +925,7 @@ Widget build(BuildContext context) {
   return Column(children: [
     Text(
       date == null
-          ? \"You haven\'t picked a date yet.\"
+          ? 'You haven\'t picked a date yet.'
           : DateFormat('MM-dd-yyyy').format(date),
     ),
     ElevatedButton.icon(
@@ -961,10 +961,10 @@ Once again, don't forget to await the function call!
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/TimePicker.webp",
 caption: "This figure shows a TimePicker that is displayed when the
-\"Pick a time\" button is clicked."
-alt: "A GIF of a pointer clicking a button that says \"Pick a time\", then shows
+'Pick a time' button is clicked."
+alt: "A GIF of a pointer clicking a button that says 'Pick a time', then shows
  a time picker. The time picker shows a circular clock as the cursor moves the
- hour hand, then minute hand, selects PM, then the \"OK\" button is clicked."
+ hour hand, then minute hand, selects PM, then the 'OK' button is clicked."
 code:"
 ```dart
 TimeOfDay? selectedTime;
@@ -975,7 +975,7 @@ Widget build(BuildContext context) {
 
   return Column(children: [
     Text(
-      time == null ? \"You haven't picked a time yet.\" : time.format(context),
+      time == null ? 'You haven\'t picked a time yet.' : time.format(context),
     ),
     ElevatedButton.icon(
       icon: const Icon(Icons.calendar_today),
