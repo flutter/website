@@ -15,17 +15,13 @@ The [`ListView`][] widget supports horizontal lists.
 Use the standard `ListView` constructor, passing in a horizontal
 `scrollDirection`, which overrides the default vertical direction.
 
-<?code-excerpt "lib/main.dart (ListView)" replace="/^child\: //g"?>
-```dart
+<?code-excerpt "lib/main.dart (list-view)" replace="/^child\: //g"?>
+```dart highlightLines=2
 ListView(
-  // This next line does the trick.
   scrollDirection: Axis.horizontal,
-  children: <Widget>[
-    Container(width: 160, color: Colors.red),
-    Container(width: 160, color: Colors.blue),
-    Container(width: 160, color: Colors.green),
-    Container(width: 160, color: Colors.yellow),
-    Container(width: 160, color: Colors.orange),
+  children: [
+    for (final color in Colors.primaries)
+      Container(width: 160, color: color),
   ],
 ),
 ```
@@ -44,6 +40,8 @@ default drag for scrolling devices.
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter horizontal list hands-on example in DartPad" run="true"
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -53,7 +51,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const title = 'Horizontal List';
+    const title = 'Horizontal list';
 
     return MaterialApp(
       title: title,
@@ -62,16 +60,19 @@ class MyApp extends StatelessWidget {
         body: Container(
           margin: const EdgeInsets.symmetric(vertical: 20),
           height: 200,
-          child: ListView(
-            // This next line does the trick.
-            scrollDirection: Axis.horizontal,
-            children: <Widget>[
-              Container(width: 160, color: Colors.red),
-              Container(width: 160, color: Colors.blue),
-              Container(width: 160, color: Colors.green),
-              Container(width: 160, color: Colors.yellow),
-              Container(width: 160, color: Colors.orange),
-            ],
+          child: ScrollConfiguration(
+            // Add a custom scroll behavior that
+            // allows all devices to drag the list.
+            behavior: const MaterialScrollBehavior().copyWith(
+              dragDevices: {...PointerDeviceKind.values},
+            ),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                for (final color in Colors.primaries)
+                  Container(width: 160, color: color),
+              ],
+            ),
           ),
         ),
       ),
