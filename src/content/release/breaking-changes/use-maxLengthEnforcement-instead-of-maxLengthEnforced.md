@@ -3,7 +3,7 @@ title: Use maxLengthEnforcement instead of maxLengthEnforced
 description: Introducing the MaxLengthEnforcement enum.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

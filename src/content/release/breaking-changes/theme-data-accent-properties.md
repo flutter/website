@@ -5,7 +5,7 @@ description: >
   accentTextTheme properties have been deprecated.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

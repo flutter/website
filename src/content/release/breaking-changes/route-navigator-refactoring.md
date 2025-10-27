@@ -5,7 +5,7 @@ description: >
   Route and Navigator classes have changed.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

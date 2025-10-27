@@ -5,7 +5,7 @@ description: >
   move the caret to the end of the input text.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

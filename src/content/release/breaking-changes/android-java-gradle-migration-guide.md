@@ -5,7 +5,7 @@ description: >
   a run or build error from Gradle.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

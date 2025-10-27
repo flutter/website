@@ -4,7 +4,7 @@ description: >-
   Learn how to account for the removal of the Android v1 embedding APIs.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

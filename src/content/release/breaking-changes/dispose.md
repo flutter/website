@@ -4,7 +4,7 @@ description: >
   'dispose()' might fail because of double disposal.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

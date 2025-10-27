@@ -4,7 +4,7 @@ description: >-
   Removed elevation and thickness from semantics properties.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

@@ -4,7 +4,7 @@ description: >-
   MemoryAllocations is renamed to FlutterMemoryAllocations.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

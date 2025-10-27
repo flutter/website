@@ -6,7 +6,7 @@ description: >
   all three related methods are removed.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

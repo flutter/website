@@ -5,7 +5,7 @@ description: >
   one hero controller scope can only subscribe to one navigator at a time.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

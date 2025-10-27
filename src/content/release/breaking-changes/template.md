@@ -5,7 +5,7 @@ description: >-
   Text should break at 80 chars or less.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 {% comment %}
   PLEASE READ THESE GENERAL INSTRUCTIONS:

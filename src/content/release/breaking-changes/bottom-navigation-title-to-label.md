@@ -5,7 +5,7 @@ description: >
   favor of label (a String). 
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

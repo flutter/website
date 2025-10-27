@@ -6,7 +6,7 @@ description: >-
   directory, and not the synthetic package `package:flutter_gen`.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
