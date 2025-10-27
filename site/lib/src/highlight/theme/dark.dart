@@ -65,6 +65,13 @@ final Map<Tag, TextStyle> dashDarkTheme = {
       blue: 0x7E,
     ),
   ),
+  const Tag('name', parent: Tags.preprocessorDirective): const TextStyle(
+    foregroundColor: Color.fromArgb(
+      red: 0xFF,
+      green: 0x89,
+      blue: 0x7E,
+    ),
+  ),
 
   Tags.operator: const TextStyle(
     foregroundColor: Color.fromArgb(

@@ -20,7 +20,7 @@ dependencies:
   markdown_description_list: ^0.1.1
   meta: ^1.17.0
   # Used for syntax highlighting.
-  opal: ^0.1.0
+  opal: ^0.2.0
   path: ^1.9.1
   pub_semver: ^2.2.0
   universal_web: ^1.1.1+1
