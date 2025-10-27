@@ -220,6 +220,7 @@ Alternatively, you can configure the server manually:
           "command": "dart",
           "args": [
             "mcp-server",
+            "--experimental-mcp-server",
             "--force-roots-fallback"
           ]
         }
