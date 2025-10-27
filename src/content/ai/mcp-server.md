@@ -67,7 +67,7 @@ Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 To configure the [Gemini CLI][] to use the Dart and Flutter MCP server,
 add a Dart entry to the `mcpServers` section of the Gemini config.
 
--  To enable server for all projects on your device,
+-  To enable the server for all projects on your device,
    edit the `~/.gemini/settings.json` file in your home directory.
 -  To enable the server for a specific project,
    edit the `.gemini/settings.json` file in the project's root directory.
