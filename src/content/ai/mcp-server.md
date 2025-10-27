@@ -51,7 +51,6 @@ Here is an overview of a few things it can do:
 [Resources]: https://modelcontextprotocol.io/docs/concepts/resources
 [Roots]: https://modelcontextprotocol.io/docs/concepts/roots
 [Dart and Flutter MCP server]: https://github.com/dart-lang/ai/tree/main/pkgs/dart_mcp_server
-(https://github.com/dart-lang/ai/tree/main/pkgs/dart_mcp_server)
 [`dart format`]: {{site.dart-site}}/tools/dart-format
 
 ## Set up your MCP client
