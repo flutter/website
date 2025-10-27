@@ -36,13 +36,13 @@ a, button {
     padding: 0.5rem 1rem;
     text-decoration: none;
     cursor: pointer;
-    user-select: none;
   }
 
   &.filled-button {
     background-color: var(--site-filledButton-bgColor);
     color: var(--site-filledButton-fgColor);
     outline-offset: 2px;
+    user-select: none;
 
     &:hover {
       @include mixins.interaction-style(8%);
