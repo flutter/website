@@ -55,8 +55,8 @@ Here is an overview of a few things it can do:
 
 ## Set up your MCP client
 
-The server is run with the `dart mcp-server` command, which will
-have to be configured in your preferred client.
+Run the server with the `dart mcp-server` command,
+which must be configured in your preferred client.
 
 This section provides instructions for setting up the
 Dart and Flutter MCP server with popular tools like Firebase Studio,
