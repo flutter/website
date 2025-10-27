@@ -397,23 +397,20 @@ ol.steps {
 }
 
 main {
-  ol + img, ul + img, ol + p, ul + p, p + p + img,
-  ul + p:last-child {
+  ol + img, ul + img, ol + p, ul + p, p + p + img {
     margin-bottom: 1rem;
   }
-}
 
-td ol, td ul, td dl, td p {
-  margin-bottom: 0;
+  td {
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 p + ul, p + ol, p + dl {
   margin-block-start: 0.75rem;
   margin-block-end: 0.75rem;
-}
-
-td ol, td ul, td dl, td p {
-  margin-bottom: 0;
 }
 
 .figure-caption {
