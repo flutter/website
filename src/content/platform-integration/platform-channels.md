@@ -175,7 +175,7 @@ platform side and vice versa:
 {:.table .table-striped}
 
 </Tab>
-<Tab name="C++">
+<Tab name="C++" id="cpp">
 
 | Dart               | C++                                                        |
 | ------------------ | ---------------------------------------------------------- |

@@ -43,6 +43,7 @@ class DashTabs implements CustomComponent {
             isActive: tabIndex == 0,
             wrapperId: wrapperId,
             child: builder.build(tab.children),
+            saveId: tab.attributes['id'],
           ),
       ],
     );
@@ -115,9 +116,10 @@ class _DashTabPane extends StatelessComponent {
     required this.isActive,
     required this.wrapperId,
     required this.child,
+    String? saveId,
   }) : tabId = '$baseId-tab',
        panelId = '$baseId-tab-panel',
-       saveId = slugify(tabName);
+       saveId = saveId ?? slugify(tabName);
 
   final String tabName;
   final String tabId;
