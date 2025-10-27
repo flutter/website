@@ -69,8 +69,8 @@ class DocLayout extends FlutterDocsLayout {
               child,
 
               PrevNext(
-                previousPage: _pageInfoFromObject(pageData['prevpage']),
-                nextPage: _pageInfoFromObject(pageData['nextpage']),
+                previousPage: _pageInfoFromObject(pageData['prev']),
+                nextPage: _pageInfoFromObject(pageData['next']),
               ),
               const TrailingContent(),
             ]),
@@ -102,7 +102,7 @@ class DocLayout extends FlutterDocsLayout {
 
 ({String url, String title})? _pageInfoFromObject(Object? data) {
   if (data case {
-    'url': final String pageUrl,
+    'path': final String pageUrl,
     'title': final String pageTitle,
   }) {
     return (url: pageUrl, title: pageTitle);
