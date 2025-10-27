@@ -225,7 +225,7 @@ pre {
     margin: 0;
     padding-right: 0;
     padding-left: 0;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     &:not([lang="console"]) {
       line-height: 1.8;

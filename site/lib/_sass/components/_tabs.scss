@@ -22,7 +22,7 @@ ul.nav-tabs {
   border-radius: $wrapper-radius;
   background-color: var(--site-raised-bgColor);
   gap: 0.5rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   scrollbar-width: thin;
 
   li {
