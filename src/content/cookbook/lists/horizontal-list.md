@@ -26,17 +26,9 @@ ListView(
 ),
 ```
 
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+
 ## Interactive example
-
-:::note Desktop and web note
-This example works in the browser and on the desktop.
-However, as this list scrolls on the horizontal axis
-(left to right or right to left),
-hold <kbd>Shift</kbd> while using the mouse scroll wheel to scroll the list.
-
-To learn more, read the [breaking change][] page on the
-default drag for scrolling devices.
-:::
 
 <?code-excerpt "lib/main.dart"?>
 ```dartpad title="Flutter horizontal list hands-on example in DartPad" run="true"
@@ -84,6 +76,3 @@ class MyApp extends StatelessWidget {
 <noscript>
   <img src="/assets/images/docs/cookbook/horizontal-list.webp" alt="Horizontal List Demo" class="site-mobile-screenshot" />
 </noscript>
-
-[breaking change]: /release/breaking-changes/default-scroll-behavior-drag
-[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
