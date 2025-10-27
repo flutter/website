@@ -131,7 +131,7 @@ class _DashTabPane extends StatelessComponent {
   Component build(BuildContext context) {
     return div(
       id: panelId,
-      classes: 'tab-pane',
+      classes: ['tab-pane', if (isActive) 'active'].toClasses,
       attributes: {
         'role': 'tabpanel',
         'aria-labelledby': tabId,
