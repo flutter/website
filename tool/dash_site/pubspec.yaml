@@ -4,7 +4,7 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.9.2
 
 dependencies:
   args: ^2.7.0
@@ -12,7 +12,7 @@ dependencies:
     git:
       url: https://github.com/dart-lang/site-shared
       path: pkgs/excerpter
-      ref: 88aa84df953e67b7595b1e214b717f26d81ed538
+      ref: f91ed8ecef6a0b31685804fe4102b25fda021460
   io: ^1.0.5
   linkcheck: ^3.1.0
   path: ^1.9.1
@@ -22,4 +22,4 @@ dev_dependencies:
     git:
       url: https://github.com/dart-lang/site-shared
       path: pkgs/analysis_defaults
-      ref: 88aa84df953e67b7595b1e214b717f26d81ed538
+      ref: f91ed8ecef6a0b31685804fe4102b25fda021460
