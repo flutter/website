@@ -9,6 +9,8 @@ import 'package:universal_web/js_interop.dart';
 
 /// Represents a Flutter release loaded from the Flutter releases endpoint.
 class FlutterRelease {
+  static final RegExp _dartSdkBuildPattern = RegExp(r'\(build\s(.*?)\)');
+
   FlutterRelease({
     required this.url,
     required this.version,
@@ -20,12 +22,18 @@ class FlutterRelease {
   });
 
   factory FlutterRelease.fromJson(Map<String, Object?> json, String baseUrl) {
+    final dartSdkVersion = switch (json['dart_sdk_version']) {
+      final String rawDartSdkVersion when rawDartSdkVersion.isNotEmpty =>
+        _dartSdkBuildPattern.firstMatch(rawDartSdkVersion)?.group(1) ??
+            rawDartSdkVersion.trim(),
+      _ => '-',
+    };
+
     return FlutterRelease(
       url: '$baseUrl/${json['archive'] as String}',
       version: json['version'] as String,
       channel: json['channel'] as String,
-      dartSdkVersion:
-          (json['dart_sdk_version'] as String?)?.split(' ')[0] ?? '-',
+      dartSdkVersion: dartSdkVersion,
       architecture: (json['dart_sdk_arch'] as String?) ?? 'x64',
       hash: (json['hash'] as String).substring(0, 7),
       releaseDate: Date(Date.parse(json['release_date'] as String)),

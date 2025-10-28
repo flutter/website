@@ -86,7 +86,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
                 th([text('Flutter version')]),
                 th([text('Architecture')]),
                 th([text('Ref')]),
-                th(classes: 'date', [text('Release Date')]),
+                th(classes: 'date', [text('Release date')]),
                 th([text('Dart version')]),
                 th([text('Provenance')]),
               ]),
