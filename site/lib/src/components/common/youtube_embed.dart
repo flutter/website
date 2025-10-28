@@ -53,7 +53,7 @@ class YoutubeEmbed with CustomComponentBase {
         'videoid': videoId,
         'videotitle': videoTitle,
         'videoStartAt': '$startTime',
-        if (playlistId != null) 'playlistid': playlistId,
+        'playlistid': ?playlistId,
       },
       classes: [if (fullWidth) 'full-width'].toClasses,
       children: [

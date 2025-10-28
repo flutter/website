@@ -58,7 +58,7 @@ final class _FeedbackComponentState extends State<FeedbackComponent> {
               icon: 'feedback',
               title: 'Provide detailed feedback.',
               href: component.issueUrl,
-              attributes: {'target': '_blank', 'rel': 'noopener'},
+              attributes: const {'target': '_blank', 'rel': 'noopener'},
             ),
           ],
           _FeedbackState.unhelpful => [
@@ -67,7 +67,7 @@ final class _FeedbackComponentState extends State<FeedbackComponent> {
               icon: 'bug_report',
               title: 'Provide feedback or report an issue.',
               href: component.issueUrl,
-              attributes: {'target': '_blank', 'rel': 'noopener'},
+              attributes: const {'target': '_blank', 'rel': 'noopener'},
             ),
           ],
         },

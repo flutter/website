@@ -108,7 +108,7 @@ final class CodeBlockProcessor implements PageExtension {
               content: processedContent,
               textToCopy: codeLines.copyContent,
               language: language,
-              languagesToHide: {
+              languagesToHide: const {
                 'plaintext',
                 'text',
                 'console',

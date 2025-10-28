@@ -195,7 +195,7 @@ final class CatalogPageLayout extends DocLayout {
         ? 'Rendered example of the $name Material widget.'
         : 'Rendered image or visualization of the $name widget.';
 
-    final placeholderAlt =
+    const placeholderAlt =
         'Placeholder Flutter logo in place of '
         'missing widget image or visualization.';
 
