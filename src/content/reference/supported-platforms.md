@@ -2,6 +2,7 @@
 title: Supported deployment platforms
 shortTitle: Supported platforms
 description: The platforms that Flutter supports by platform version.
+showBreadcrumbs: false
 ---
 
 As of Flutter {{site.currentFlutterVersion}},

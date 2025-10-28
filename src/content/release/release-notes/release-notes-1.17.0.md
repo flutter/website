@@ -2,6 +2,7 @@
 title: Flutter 1.17.0 release notes
 shortTitle: 1.17.0 release notes
 description: Release notes for Flutter 1.17.0.
+skipTemplateRendering: true
 ---
 
 ##  Merged pull requests by label

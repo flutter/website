@@ -41,4 +41,4 @@ app for all platforms &mdash; mobile, desktop, and web.
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-{% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}
+<YouTubeEmbed id="8sAyPDLorek" title="Building your first Flutter app - with a Codelab!"></YouTubeEmbed>

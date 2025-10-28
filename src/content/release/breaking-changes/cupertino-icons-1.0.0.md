@@ -5,7 +5,7 @@ description: >
   automapped to the new glyphs. Consider double-checking visually.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

@@ -3,7 +3,7 @@ title: The generic type of ParentDataWidget changed to ParentData
 description: The ParentDataWidget is now bound to the ParentData type.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

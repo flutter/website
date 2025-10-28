@@ -7,9 +7,6 @@ contentTags:
   - state
 iconPath: /assets/images/docs/app-architecture/design-patterns/command-icon.svg
 order: 4
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/command"?>

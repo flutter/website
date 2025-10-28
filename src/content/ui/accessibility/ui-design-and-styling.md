@@ -29,8 +29,8 @@ template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"a11y/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
-  {% render docs/app-figure.md, image:"a11y/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  <DashImage figure image="a11y/app-regular-fonts.png" caption="Default font setting" img-class="simple-border" img-style="max-height: 480px;" />
+  <DashImage figure image="a11y/app-large-fonts.png" caption="Largest accessibility font setting" img-class="simple-border" img-style="max-height: 480px;" />
 </div>
 
 

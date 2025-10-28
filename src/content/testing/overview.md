@@ -1,6 +1,6 @@
 ---
 title: Testing Flutter apps
-description: 
+description: >-
   Learn more about the different types of testing and how to write them.
 ---
 
@@ -63,7 +63,8 @@ check out [Testing plugins][].
 
 ### Recipes {:.no_toc}
 
-{% include docs/testing-toc.md type='unit' %}
+- [Introduction to unit testing](/cookbook/testing/unit/introduction)
+- [Mock dependencies using Mockito](/cookbook/testing/unit/mocking)
 
 ## Widget tests
 
@@ -81,7 +82,11 @@ an implementation much simpler than a full-blown UI system.
 
 ### Recipes {:.no_toc}
 
-{% include docs/testing-toc.md type='widget' %}
+- [Introduction to widget testing](/cookbook/testing/widget/introduction)
+- [Find widgets using finders](/cookbook/testing/widget/finders)
+- [Handling scrolling in widget tests](/cookbook/testing/widget/scrolling)
+- [Tap, drag, and enter text in widget tests](/cookbook/testing/widget/tap-drag)
+- [Test different orientations](/cookbook/testing/widget/orientation)
 
 ## Integration tests
 
@@ -101,7 +106,8 @@ testing page][].
 
 ### Recipes {:.no_toc}
 
-{% include docs/testing-toc.md type='integration' %}
+- [Integration testing concepts](/cookbook/testing/integration/introduction)
+- [Measure performance with an integration test](/cookbook/testing/integration/profiling)
 
 ## Continuous integration services
 

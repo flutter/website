@@ -5,7 +5,7 @@ description: >
     now require Kotlin 1.5.31 or greater.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 :::important
 As of Flutter 3.16, the default Gradle build scripts differ across

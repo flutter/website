@@ -5,7 +5,7 @@ description: >-
   which prevents it from being used directly as a sliver.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

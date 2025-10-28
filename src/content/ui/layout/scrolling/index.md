@@ -18,9 +18,9 @@ child when necessary. Other useful widgets include
 You can check out more of these widgets on the
 [scrolling page][] of the Widget catalog.
 
-{% ytEmbed 'DbkIQSvwnZc', 'Scrollbar | Flutter widget of the week' %}
+<YouTubeEmbed id="DbkIQSvwnZc" title="Scrollbar | Flutter widget of the week"></YouTubeEmbed>
 
-{% ytEmbed 'KJpkjHGiI5A', 'ListView | Flutter widget of the week' %}
+<YouTubeEmbed id="KJpkjHGiI5A" title="ListView | Flutter widget of the week"></YouTubeEmbed>
 
 ### Infinite scrolling
 
@@ -42,11 +42,11 @@ specific scrolling behavior.
 
 A video on using [`DraggableScrollableSheet`][]:
 
-{% ytEmbed 'Hgw819mL_78', 'DraggableScrollableSheet | Flutter widget of the week' %}
+<YouTubeEmbed id="Hgw819mL_78" title="DraggableScrollableSheet | Flutter widget of the week"></YouTubeEmbed>
 
 Turn the scrollable area into a wheel with [`ListWheelScrollView`][]!
 
-{% ytEmbed 'dUhmWAz4C7Y', 'ListWheelScrollView | Flutter widget of the week' %}
+<YouTubeEmbed id="dUhmWAz4C7Y" title="ListWheelScrollView | Flutter widget of the week"></YouTubeEmbed>
 
 [`DraggableScrollableSheet`]: {{site.api}}/flutter/widgets/DraggableScrollableSheet-class.html
 [`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
@@ -93,4 +93,4 @@ or do you use a sliver?
 
 Check out the "ShrinkWrap vs Slivers" video:
 
-{% ytEmbed 'LUqDNnv_dh0', 'ShrinkWrap vs Slivers | Decoding Flutter' %}
+<YouTubeEmbed id="LUqDNnv_dh0" title="ShrinkWrap vs Slivers | Decoding Flutter"></YouTubeEmbed>

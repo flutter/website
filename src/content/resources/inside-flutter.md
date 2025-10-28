@@ -1,6 +1,8 @@
 ---
 title: Inside Flutter
-description: Learn about Flutter's inner workings from one of the founding engineers.
+description: >-
+  Learn about Flutter's inner workings from one of the founding engineers.
+showBreadcrumbs: false
 ---
 
 This document describes the inner workings of the Flutter toolkit that make

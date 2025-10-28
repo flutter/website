@@ -4,7 +4,7 @@ description: >-
   Deprecation of user-configurable `Paint.enableDithering`.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

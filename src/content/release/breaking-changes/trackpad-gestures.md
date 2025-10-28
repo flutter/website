@@ -5,7 +5,7 @@ description: >
   can trigger pan, drag, and scale `GestureRecognizer` callbacks. 
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

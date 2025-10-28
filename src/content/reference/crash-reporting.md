@@ -2,6 +2,7 @@
 title: Flutter crash reporting
 description: >-
   How Google uses crash reporting, what is collected, and how to opt out.
+showBreadcrumbs: false
 ---
 
 If you have not opted-out of Flutter's analytics and crash reporting,

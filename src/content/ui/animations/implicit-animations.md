@@ -37,9 +37,9 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter implicit animation basics"></YouTubeEmbed>
 
-{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
+<YouTubeEmbed id="6KiPEqzJIKQ" title="Create custom implicit animations with TweenAnimationBuilder"></YouTubeEmbed>
 
 ## The Boring Show
 
@@ -47,7 +47,7 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-{% ytEmbed '8ehlWchLVlQ', 'Adding implicit animations to a news application' %}
+<YouTubeEmbed id="8ehlWchLVlQ" title="Adding implicit animations to a news application"></YouTubeEmbed>
 
 ## Widget of the Week videos
 
@@ -65,7 +65,7 @@ implicitly animated widgets:
 {% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
 
-{% ytEmbed videoUrl, videoDescription %}
+<YouTubeEmbed id="{{ videoUrl }}" title="{{ videoDescription }}"></YouTubeEmbed>
 
 {% endfor -%}
 

@@ -1,6 +1,7 @@
 ---
 title: Online courses
 description: An index of online courses teaching Flutter development.
+showBreadcrumbs: false
 ---
 
 Learn how to build Flutter apps with these video courses.

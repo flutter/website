@@ -68,7 +68,7 @@ This is what `package:provider` and many other approaches use under the hood.
 The following instructor-led video workshop covers how to
 use `InheritedWidget`:
 
-{% ytEmbed 'LFcGPS6cGrY', 'How to manage application state using inherited widgets' %}
+<YouTubeEmbed id="LFcGPS6cGrY" title="How to manage application state using inherited widgets"></YouTubeEmbed>
 
 Other useful docs include:
 

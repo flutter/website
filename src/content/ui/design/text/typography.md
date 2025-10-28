@@ -148,7 +148,7 @@ of Flutter's typography and combines it with the Material
 _and_ Cupertino look and feel (depending on the platform
 the app runs on), animation, and custom fragment shaders:
 
-{% ytEmbed 'sA5MRFFUuOU', 'Prototyping beautiful designs with Flutter' %}
+<YouTubeEmbed id="sA5MRFFUuOU" title="Prototyping beautiful designs with Flutter"></YouTubeEmbed>
 
 To read one engineer's experience
 customizing variable fonts and animating them as they

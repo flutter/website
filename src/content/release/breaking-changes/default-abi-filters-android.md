@@ -5,7 +5,7 @@ description: >-
   for Android builds, which might break custom abiFilters settings.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

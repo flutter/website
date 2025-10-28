@@ -1,9 +1,6 @@
 ---
 title: Drag a UI element
 description: How to implement a draggable UI element.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/drag_a_widget"?>

@@ -5,7 +5,7 @@ description: >
   at least one clipboard data variant must be provided.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

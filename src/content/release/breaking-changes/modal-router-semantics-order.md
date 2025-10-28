@@ -5,7 +5,7 @@ description: >
   traverse order than its modal barrier.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

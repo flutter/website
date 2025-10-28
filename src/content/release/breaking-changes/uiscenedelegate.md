@@ -4,7 +4,7 @@ description: >
   A guide for Flutter iOS developers to adopt Apple's UISceneDelegate protocol.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 :::note
 This is an upcoming breaking change that has not yet been finalized or
@@ -233,8 +233,7 @@ subclassing `FlutterSceneDelegate`.
 1. Open your app in Xcode
 2. Right click the **Runner** folder and select **New Empty File**
 
-![New Empty File option in
-Xcode](/assets/images/docs/breaking-changes/uiscene-new-file.png)
+![New Empty File option in Xcode](/assets/images/docs/breaking-changes/uiscene-new-file.png)
 
 For Swift projects, create a `SceneDelegate.swift`:
 

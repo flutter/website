@@ -5,7 +5,7 @@ description: >-
     in to edge-to-edge mode.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 :::note
 You might have found this page because you see a warning in the Google Play

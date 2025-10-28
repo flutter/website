@@ -6,7 +6,7 @@ description: >-
   `DialogThemeData.backgroundColor`.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

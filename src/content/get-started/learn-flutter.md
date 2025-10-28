@@ -4,7 +4,7 @@ description: Resources to help you learn Flutter.
 showToc: false
 ---
 
-{% ytEmbed 'W4JWeQolJsU', 'Build and ship amazing multiplatform iOS and Android apps with one codebase', true %}
+<YouTubeEmbed id="W4JWeQolJsU" title="Build and ship amazing multiplatform iOS and Android apps with one codebase"></YouTubeEmbed>
 
 ## For new Flutter developers
 

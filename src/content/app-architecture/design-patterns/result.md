@@ -6,9 +6,6 @@ contentTags:
   - services
 iconPath: /assets/images/docs/app-architecture/design-patterns/result-icon.svg
 order: 5
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="app-architecture/result"?>
@@ -463,7 +460,7 @@ final class Error<T> extends Result<T> {
 }
 ```
 
-[Error handling documentation]: {{site.dart-site}}/language/error-handling
+[Error handling documentation]: https://dart.dev/language/error-handling
 [Flutter architecture guidelines]: /app-architecture
 [Compass App example]: {{site.repo.samples}}/tree/main/compass_app
 [pub.dev]: {{site.pub}}

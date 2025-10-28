@@ -1,0 +1,25 @@
+name: dash_site
+description: Dart-based tools for building docs.flutter.dev.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  args: ^2.7.0
+  excerpter:
+    git:
+      url: https://github.com/dart-lang/site-shared
+      path: pkgs/excerpter
+      ref: f91ed8ecef6a0b31685804fe4102b25fda021460
+  io: ^1.0.5
+  linkcheck: ^3.1.0
+  path: ^1.9.1
+
+dev_dependencies:
+  analysis_defaults:
+    git:
+      url: https://github.com/dart-lang/site-shared
+      path: pkgs/analysis_defaults
+      ref: f91ed8ecef6a0b31685804fe4102b25fda021460

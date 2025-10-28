@@ -39,4 +39,4 @@ your Flutter development environment.
   </a>
 </div>
 
-{% render docs/china-notice.md %}
+{% render "docs/china-notice.md" %}

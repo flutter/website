@@ -20,7 +20,7 @@ To help you decide, check out the video,
 [How to choose which Flutter Animation Widget is right for you?][]
 (Also published as a [_companion article_][article1].)
 
-{% ytEmbed 'GXIJJkq_H8g', 'How to choose which Flutter animation widget is right for your use case' %}
+<YouTubeEmbed id="GXIJJkq_H8g" title="How to choose which Flutter animation widget is right for your use case"></YouTubeEmbed>
 
 (To dive deeper into the decision process,
 watch the [Animations in Flutter done right][] video,
@@ -38,7 +38,7 @@ For a deeper understanding of just how animations work in Flutter, watch
 [Animation deep dive][].
 (Also published as a [_companion article_][article6].)
 
-{% ytEmbed 'PbcILiN8rbo', 'Take a deep dive into Flutter animation' %}
+<YouTubeEmbed id="PbcILiN8rbo" title="Take a deep dive into Flutter animation"></YouTubeEmbed>
 
 ## Implicit and explicit animations
 
@@ -49,7 +49,7 @@ to implement) suits your needs, watch
 [Animation basics with implicit animations][].
 (Also published as a [_companion article_][article2].)
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter implicit animation basics"></YouTubeEmbed>
 
 ### Custom implicit animations
 
@@ -57,7 +57,7 @@ To create a custom implicit animation, watch
 [Creating your own custom implicit animations with TweenAnimationBuilder][].
 (Also published as a [_companion article_][article3].)
 
-{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
+<YouTubeEmbed id="6KiPEqzJIKQ" title="Create custom implicit animations with TweenAnimationBuilder"></YouTubeEmbed>
 
 ### Built-in implicit animations
 
@@ -69,7 +69,7 @@ For more information, watch
 built-in explicit animations][].
 (Also published as a [_companion article_][article4].)
 
-{% ytEmbed 'CunyH6unILQ', 'Making your first directional animations with built-in explicit animations' %}
+<YouTubeEmbed id="CunyH6unILQ" title="Making your first directional animations with built-in explicit animations"></YouTubeEmbed>
 
 ### Explicit animations
 
@@ -78,7 +78,7 @@ If you need to build an explicit animation from scratch, watch
 AnimatedBuilder and AnimatedWidget][].
 (Also published as a [_companion article_][article5].)
 
-{% ytEmbed 'fneC7t4R_B0', 'Creating custom explicit animations with AnimatedBuilder and AnimatedWidget' %}
+<YouTubeEmbed id="fneC7t4R_B0" title="Creating custom explicit animations with AnimatedBuilder and AnimatedWidget"></YouTubeEmbed>
 
 ## Animation types
 

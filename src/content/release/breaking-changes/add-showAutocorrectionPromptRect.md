@@ -5,7 +5,7 @@ description: >
   was added to the TextInputClient interface
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

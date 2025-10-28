@@ -5,7 +5,7 @@ description: >
   to insert or remove text placeholders and show the toolbar.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

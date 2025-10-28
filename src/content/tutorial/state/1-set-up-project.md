@@ -2,6 +2,7 @@
 title: Set up your project
 description: Instructions on how to create a new Flutter app.
 permalink: /tutorial/set-up-state-app/
+sitemap: false
 ---
 
 In this tutorial, you'll learn how to work with data in a Flutter app.
