@@ -15,8 +15,18 @@ final class ServeSiteCommand extends Command<int> {
   @override
   String get name => 'serve';
 
+  ServeSiteCommand() {
+    argParser.addFlag(
+      'release',
+      defaultsTo: false,
+      help: 'Build with compilers used for release builds instead of dartdevc.',
+    );
+  }
+
   @override
   Future<int> run() async {
+    final release = argResults!.flag('release');
+
     installJasprCliIfNecessary();
 
     final process = await Process.start(
@@ -27,7 +37,11 @@ final class ServeSiteCommand extends Command<int> {
         'run',
         'jaspr_cli:jaspr',
         'serve',
+        // Use build_web_compiler options specified in build.yaml instead of
+        // those specified by jaspr_cli.
+        '--no-managed-build-options',
         '--dart-define=PRODUCTION=false',
+        if (release) '--release',
       ],
       workingDirectory: 'site',
       runInShell: true,
