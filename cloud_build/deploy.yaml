@@ -12,6 +12,6 @@ steps:
         dart pub get
         dart run dash_site build --release
 
-        firebase deploy --project=dart-dev --only=hosting
+        firebase deploy --project=flutter-docs-prod --only=hosting
 options:
   logging: CLOUD_LOGGING_ONLY
