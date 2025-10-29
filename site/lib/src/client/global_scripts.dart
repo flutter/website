@@ -41,6 +41,7 @@ void _setUpSite() {
   _setUpSearchKeybindings();
   _setUpTabs();
   _setUpCollapsibleElements();
+  _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
 }
@@ -252,6 +253,40 @@ void _setUpCollapsibleElements() {
     }
 
     toggle.addEventListener('click', handleClick.toJS);
+  }
+}
+
+void _setUpExpandableCards() {
+  var currentFragment = web.window.location.hash.trim().toLowerCase();
+  if (currentFragment.startsWith('#')) {
+    // Remove the leading '#' from the fragment.
+    currentFragment = currentFragment.substring(1);
+  }
+  final expandableCards = web.document.querySelectorAll('.expandable-card');
+
+  for (var i = 0; i < expandableCards.length; i++) {
+    final card = expandableCards.item(i) as web.Element;
+    final expandButton = card.querySelector('.expand-button');
+    if (expandButton == null) continue;
+
+    expandButton.addEventListener(
+      'click',
+      ((web.Event e) {
+        if (card.classList.contains('collapsed')) {
+          card.classList.remove('collapsed');
+          expandButton.ariaExpanded = 'true';
+        } else {
+          card.classList.add('collapsed');
+          expandButton.ariaExpanded = 'false';
+        }
+        e.preventDefault();
+      }).toJS,
+    );
+
+    if (card.id != currentFragment) {
+      card.classList.add('collapsed');
+      expandButton.ariaExpanded = 'false';
+    }
   }
 }
 
