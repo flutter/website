@@ -14,16 +14,18 @@ a {
   }
 
   &:visited {
-    color:var(--site-link-fgColor);
+    color: var(--site-link-fgColor);
   }
 }
 
-a, button {
+a,
+button {
   text-decoration: none;
   background: none;
   cursor: pointer;
 
-  &.filled-button, &.text-button {
+  &.filled-button,
+  &.text-button {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -78,7 +80,7 @@ a, button {
     -webkit-user-select: none;
     background: none;
 
-    > span {
+    >span {
       font-size: 1.75rem;
     }
 
