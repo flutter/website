@@ -766,7 +766,7 @@ Yes, you can run Dart code in a background process on both
 iOS and Android. For more information, see the free Medium article
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
-[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
 ### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 

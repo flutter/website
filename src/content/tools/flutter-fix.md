@@ -83,6 +83,6 @@ For more information on Flutter deprecations, see
 on Flutter's Medium publication.
 
 
-[Deprecation lifetime in Flutter]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[Deprecation lifetime in Flutter]: {{site.flutter-blog}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 [`dart fix`]: {{site.dart-site}}/tools/dart-fix
 [dart fix Decoding Flutter]: {{site.yt.watch}}?v=OBIuSrg_Quo

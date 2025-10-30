@@ -269,7 +269,7 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 ## Widgets
 

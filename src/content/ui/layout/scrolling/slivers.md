@@ -63,6 +63,6 @@ check out these related API docs:
 [`SliverGrid`]: {{site.api}}/flutter/widgets/SliverGrid-class.html
 [SliverList and SliverGrid]: {{site.yt.watch}}?v=ORiTTaVY6mM
 [`SliverList`]: {{site.api}}/flutter/widgets/SliverList-class.html
-[Slivers, DeMystified]: {{site.flutter-medium}}/slivers-demystified-6ff68ab0296f
+[Slivers, DeMystified]: {{site.flutter-blog}}/slivers-demystified-6ff68ab0296f
 [Slivers explained - Making dynamic layouts]: {{site.yt.watch}}?v=Mz3kHQxBjGg
 [The Boring Show]: {{site.yt.playlist}}PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK

@@ -438,12 +438,12 @@ Learn more about Flutter animations at the following links:
 [Animations tutorial]: /ui/animations/tutorial
 [`AnimationController`]: {{site.api}}/flutter/animation/AnimationController-class.html
 [`AnimationController.animateWith`]: {{site.api}}/flutter/animation/AnimationController/animateWith.html
-[article1]: {{site.flutter-medium}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
-[article2]: {{site.flutter-medium}}/flutter-animation-basics-with-implicit-animations-95db481c5916
-[article3]: {{site.flutter-medium}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
-[article4]: {{site.flutter-medium}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
-[article5]: {{site.flutter-medium}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
-[article6]: {{site.flutter-medium}}/animation-deep-dive-39d3ffea111f
+[article1]: {{site.flutter-blog}}/how-to-choose-which-flutter-animation-widget-is-right-for-you-79ecfb7e72b5
+[article2]: {{site.flutter-blog}}/flutter-animation-basics-with-implicit-animations-95db481c5916
+[article3]: {{site.flutter-blog}}/custom-implicit-animations-in-flutter-with-tweenanimationbuilder-c76540b47185
+[article4]: {{site.flutter-blog}}/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7
+[article5]: {{site.flutter-blog}}/when-should-i-useanimatedbuilder-or-animatedwidget-57ecae0959e8
+[article6]: {{site.flutter-blog}}/animation-deep-dive-39d3ffea111f
 [Casual games toolkit]: /resources/games-toolkit/
 [Creating your own custom implicit animations with TweenAnimationBuilder]: {{site.yt.watch}}?v=6KiPEqzJIKQ&feature=youtu.be
 [Creating custom explicit animations with AnimatedBuilder and AnimatedWidget]: {{site.yt.watch}}?v=fneC7t4R_B0&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=4
