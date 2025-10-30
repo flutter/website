@@ -735,7 +735,7 @@ that offer a better trade-off, such as code generation.
 
 ### Are internationalization and localization supported?
 
-Yes, Flutte`r supports internationalization (i18n) and localization (l10n) so
+Yes, Flutter supports internationalization (i18n) and localization (l10n) so
 that your apps are adaptable to different languages and cultures. You can
 learn more in the [internationalization documentation][].
 
