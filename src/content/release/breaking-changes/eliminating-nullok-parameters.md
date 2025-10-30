@@ -2,7 +2,7 @@
 title: Eliminating nullOk Parameters
 description: >
     To eliminate nullOk parameters to help with
-    API clarify in the face of null safety.
+    API clarity in the face of null safety.
 ---
 
 {% render "docs/breaking-changes.md" %}
