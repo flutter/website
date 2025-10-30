@@ -61,12 +61,12 @@ class MyCustomTextInputClient implements TextInputClient {
   void showToolbar() {
     ...
   }
-  
+
   @override
   void insertTextPlaceholder(Size size) {
     ...
   }
-  
+
   @override
   void removeTextPlaceholder() {
     ...

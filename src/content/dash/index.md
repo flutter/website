@@ -126,20 +126,20 @@ Dash 2.0 and 2.1
   **Please, don't depict Dash with a curved beak.**
 * We also have Mega-Dash, a life-sized mascot
   who is currently resting in a Google office.
-  
+
   ![Mega-Dash in the office](/assets/images/dash/MegaDashChilling.png){:width="50%"}
-  
+
   Mega-Dash made her
   first appearance at the [Flutter Interact][] event
   in Brooklyn, New York, on December 11, 2019.
 
   <YouTubeEmbed id="EgBMGDtHZhE" title="Flutter Interact 2019 highlights"></YouTubeEmbed>
-  
+
 * We also have a Dash puppet that Shams made from
   one of the first plushies.
-  
+
   ![Nilay and the Dash puppet](/assets/images/dash/NilayDashPuppet.png){:width="50%"}
-  
+
   A number of our YouTube videos feature the Dash puppet,
   voiced by Emily Fortuna, one of the early (and much loved)
   Flutter Developer Advocates.

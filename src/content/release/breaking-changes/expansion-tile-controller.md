@@ -28,7 +28,7 @@ Code before migration:
 ```dart
 class _MyWidgetState extends State<MyWidget> {
   final ExpansionTileController controller = ExpansionTileController();
-  
+
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
@@ -43,13 +43,13 @@ Code after migration:
 ```dart
 class _MyWidgetState extends State<MyWidget> {
   final ExpansibleController controller = ExpansibleController();
-  
+
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(

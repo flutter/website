@@ -39,7 +39,7 @@ The following two tutorials show you all of the details
 involved in adding the [`http`][] package to your app,
 whether you are running on Android,
 iOS, inside a web browser, or natively on Windows,
-macOS, or Linux. 
+macOS, or Linux.
 The first tutorial shows you how to make an
 unauthenticated `GET` request to a website,
 parse the retrieved data as `JSON` and then
@@ -59,13 +59,13 @@ Once you retrieve data from the network,
 you need a way to convert the data from the network
 into something that you can easily work with in Dart.
 The tutorials in the previous section used hand rolled Dart
-to convert network data into an in-memory representation. 
+to convert network data into an in-memory representation.
 In this section,
 you'll see other options for handling this conversion.
 The first links to a YouTube video showing an overview
-of the [`freezed` package][]. 
+of the [`freezed` package][].
 The second links to a codelab that covers patterns
-and records using a case study of parsing JSON. 
+and records using a case study of parsing JSON.
 
 * YouTube video: [Freezed (Package of the Week)][]
 * Codelab: [Dive into Dart's patterns and records][]

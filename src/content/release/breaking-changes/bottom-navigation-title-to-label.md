@@ -2,7 +2,7 @@
 title: Bottom Navigation Title To Label
 description: >
   Deprecated BottomNavigationBarItem's title (a Widget) in
-  favor of label (a String). 
+  favor of label (a String).
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -18,7 +18,7 @@ or no longer exists when referenced in code.
 in favor of `label`. This change was necessary to improve
 the user experience of `BottomNavigationBar`s when the text
 scale factor is increased. Items in a `BottomNavigationBar`
-now show tooltips on long press. Accomplishing this 
+now show tooltips on long press. Accomplishing this
 requires a `String` parameter on `BottomNavigationBarItem`s.
 
 ## Description of change
@@ -26,8 +26,8 @@ requires a `String` parameter on `BottomNavigationBarItem`s.
 The `BottomNavigationBarItem` class has a `title` parameter,
 which is a `Widget`. This made it impossible for the
 `BottomNavigationBar` to show `Tooltip` widgets,
-a change that was necessary to improve the accessibility experience. 
-Now, instead of building the `BottomNavigationBarItem.title` 
+a change that was necessary to improve the accessibility experience.
+Now, instead of building the `BottomNavigationBarItem.title`
 widget, the BottomNavigationBar wraps the
 `BottomNavigationBarItem.label` in a Text widget and builds that.
 

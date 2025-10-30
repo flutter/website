@@ -109,7 +109,7 @@ To summarize:
   * Android large format tiers require portrait and landscape
     support at the [lowest level][].
   * Android devices can [override a locked screen][]
-  * Apple guidelines say [aim to support both orientations][] 
+  * Apple guidelines say [aim to support both orientations][]
 
 [an accessibility issue]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
 [aim to support both orientations]: https://www.w3.org/WAI/WCAG21/Understanding/orientation.html
@@ -168,7 +168,7 @@ To learn how abstracting out device
 capabilities can help your business logic code,
 check out the 2022 Google I/O talk,
 [Flutter lessons for federated plugin development][].
- 
+
 [Flutter lessons for federated plugin development]: {{site.youtube-site}}/watch?v=GAnSNplNpCA
 
 ### Support a variety of input devices
@@ -216,7 +216,7 @@ to change the scroll position on screen rotation.
 
 Apps should retain or restore [app state][]
 as the device rotates, changes window size,
-or folds and unfolds. 
+or folds and unfolds.
 By default, an app should maintain state.
 
 If your app loses state during device configuration,
@@ -227,7 +227,7 @@ Some native extensions might lose state when the
 device changes position.
 
 For more information on a real-world case
-where this occurred, check out 
+where this occurred, check out
 [Problem: Folding/unfolding causes state loss][state-loss]
 in [Developing Flutter apps for Large screens][article],
 a free article on Medium.

@@ -1,4 +1,4 @@
---- 
+---
 title: "Restore state on Android"
 description: "How to restore the state of your Android app after it's been killed by the OS."
 ---
@@ -63,7 +63,7 @@ You can enable state restoration with just a few tasks:
    and hold that state in a [`RestorableProperty`][].
    (The Flutter API provides various subclasses for
    different data types.)
-   Define those `RestorableProperty` widgets 
+   Define those `RestorableProperty` widgets
    in a `State` class that uses the [`RestorationMixin`][].
    Register those widgets with the mixin in a
    `restoreState` method.

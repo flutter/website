@@ -1,5 +1,9 @@
 body {
-  .windows-only, .macos-only, .linux-only, .chromeos-only {
+
+  .windows-only,
+  .macos-only,
+  .linux-only,
+  .chromeos-only {
     display: none;
   }
 

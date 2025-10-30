@@ -79,7 +79,7 @@ The Casual Games Toolkit provides the following free resources.
 
   1. A sample game built on top of the endless runner template,
      called SuperDash. You can play the game on iOS, Android,
-     or [web][], [view the open source code repo][], or 
+     or [web][], [view the open source code repo][], or
      [read how the game was created in 6 weeks][].
 
 * Developer guides for integrating needed services.
