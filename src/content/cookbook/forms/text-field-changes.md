@@ -22,7 +22,7 @@ The simplest approach is to supply an [`onChanged()`][] callback to a
 [`TextField`][] or a [`TextFormField`][].
 Whenever the text changes, the callback is invoked.
 
-In this example, print the current value and length of the text field 
+In this example, print the current value and length of the text field
 to the console every time the text changes.
 
 It's important to use [characters][] when dealing with user input,

@@ -26,7 +26,7 @@ the new method `onPopInvokedWithResult` can access the type-safe result.
 ## Description of change
 
 Added a generic type (`<T>`) to the `PopScope` class and
-a new method `onPopInvokedWithResult`. 
+a new method `onPopInvokedWithResult`.
 The `onPopInvoked` property was deprecated in favor of `onPopInvokedWithResult`.
 
 Also added a new method `onPopInvokedWithResult`

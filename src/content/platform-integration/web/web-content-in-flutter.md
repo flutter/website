@@ -58,7 +58,7 @@ content that needs to be added to your app.
 The resulting code is more verbose, and has two steps per platform view type:
 
 1. Register the HTML Element Factory using
-`platformViewRegistry.registerViewFactory` provided by `dart:ui_web.`  
+`platformViewRegistry.registerViewFactory` provided by `dart:ui_web.`
 2. Place the widget with the desired `viewType`  with
 `HtmlElementView('viewType')` in your app's widget tree.
 

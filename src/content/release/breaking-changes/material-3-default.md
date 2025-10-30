@@ -96,4 +96,3 @@ Relevant PRs:
 [Add support for M3 motion]: {{site.repo.flutter}}/issues/129942
 [Change the default for `ThemeData.useMaterial3` to true]: {{site.repo.flutter}}/pull/129724
 [Updated `ThemeData.useMaterial3` API doc, default is true]: {{site.repo.flutter}}/pull/130764
-

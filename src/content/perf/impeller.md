@@ -158,4 +158,4 @@ check out the [README.md][] file in the source tree.
 [impeller-metal-validation]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/metal_validation.md
 [impeller-ubo-gles2]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/ubo_gles2.md
 [impeller-shader-optimization]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
-[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md  
+[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md

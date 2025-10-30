@@ -65,7 +65,7 @@ dev_dependencies:
 ```
 
 Next, in your project, create a new directory
-`integration_test/`, create your tests files there 
+`integration_test/`, create your tests files there
 with the format: `<name>_test.dart`.
 
 ## Test migration
@@ -75,7 +75,7 @@ This section contains different examples on how to migrate existing
 
 ### Example: Verifying a widget is displayed
 
-When the app starts the screen on the right displays 
+When the app starts the screen on the right displays
 a text asking the user to select one of the plants on the list.
 
 This test verifies that the text is displayed.
@@ -219,7 +219,7 @@ use the `driver.scroll` method.
 You must provide the widget to perform the scrolling action,
 as well as a duration for the scroll.
 
-You also have to provide the total offset for the scrolling action. 
+You also have to provide the total offset for the scrolling action.
 
 <?code-excerpt "test_driver/main_test.dart (scroll)"?>
 ```dart

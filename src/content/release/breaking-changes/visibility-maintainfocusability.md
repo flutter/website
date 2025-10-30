@@ -20,11 +20,11 @@ A new flag, `maintainFocusability`, must be set to true with `maintainState`
 for a hidden widget to remain focusable.
 
 ## Migration guide
-If your app has a `Visibility` widget that does not set `maintainState` to true, 
+If your app has a `Visibility` widget that does not set `maintainState` to true,
 then no changes are required.
 
 If your app has a `Visibility` widget that sets `maintainState` to true
-and you relied on the previous default behavior 
+and you relied on the previous default behavior
 that allowed you to focus your hidden widget,
 you will need to set `maintainFocusability` to true.
 

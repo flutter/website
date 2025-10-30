@@ -91,13 +91,13 @@ class ArticleView extends StatelessWidget {
 `ListenableBuilder` uses the *builder* pattern, which requires a
 callback rather than a `child` widget to build the widget tree below
 it. These widgets are flexible because you can perform operations
-within the callback. 
+within the callback.
 
 
 ## Handle all states with switch expression
 
 Recall the `ArticleViewModel`, which has three properties that the UI
-is interested in: 
+is interested in:
 * `Summary? summary`
 * `bool loading`
 * `String? errorMessage`

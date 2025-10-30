@@ -481,7 +481,7 @@ On ARM32, the core engine is approximately 3.4 MB
 (compressed), and necessary Java code (`classes.dex`)
 is 120 KB (compressed).
 
-In ARM64, the core engine is approximately 4.0 MB 
+In ARM64, the core engine is approximately 4.0 MB
 (compressed), the framework + app code is approximately
 659 KB (compressed), the LICENSE file is 58 KB
 (compressed), and necessary Java code (`classes.dex`)
@@ -521,7 +521,7 @@ To do that, see [Measuring your app's size][].
 Flutter uses logical pixels,
 and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
-between physical pixels and logical CSS pixels. 
+between physical pixels and logical CSS pixels.
 
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
@@ -581,7 +581,7 @@ You can compile and deploy your Flutter app to iOS, Android,
 
 * We support and test running Flutter on a variety
   of low-end to high-end platforms.  For a detailed list
-  of the platforms on which we test, see 
+  of the platforms on which we test, see
   the list of [supported platforms][].
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries

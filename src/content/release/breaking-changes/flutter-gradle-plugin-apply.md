@@ -37,9 +37,9 @@ buildscripts.
 First, find the values of the Android Gradle Plugin (AGP)
 and Kotlin that the project currently uses.
 Unless they have been moved,
-they are likely defined in the buildscript block of the 
+they are likely defined in the buildscript block of the
 `<app-src>/android/build.gradle` file.
-As an example, consider the `build.gradle` file from 
+As an example, consider the `build.gradle` file from
 a new Flutter app created before this change:
 
 ```groovy
@@ -76,8 +76,8 @@ tasks.register("clean", Delete) {
 }
 ```
 
-The AGP version is the number that comes at the end of the line 
-`classpath 'com.android.tools.build:gradle:7.3.0'`, so `7.3.0` 
+The AGP version is the number that comes at the end of the line
+`classpath 'com.android.tools.build:gradle:7.3.0'`, so `7.3.0`
 in this case. Similarly, the Kotlin version comes at the end of the line
 `ext.kotlin_version = '1.7.10'`, in this case `1.7.10`.
 
@@ -195,12 +195,12 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 ```
-`"dev.flutter.flutter-gradle-plugin"` is the project Flutter 
-Gradle Plugin, which is a different string than the value applied 
-in settings.gradle(.kts) (`"dev.flutter.flutter-plugin-loader"`). 
+`"dev.flutter.flutter-gradle-plugin"` is the project Flutter
+Gradle Plugin, which is a different string than the value applied
+in settings.gradle(.kts) (`"dev.flutter.flutter-plugin-loader"`).
 
 Finally, if your `dependencies` block contains a dependency
-on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`, 
+on `"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"`,
 then remove that dependency.
 
 ```groovy diff

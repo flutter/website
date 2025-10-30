@@ -87,7 +87,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      const Map<String, dynamic> creationParams = <String, dynamic>{};
-   
+
      return PlatformViewLink(
        viewType: viewType,
        surfaceFactory: (context, controller) {
@@ -148,7 +148,7 @@ use the following instructions:
      const String viewType = '<platform-view-type>';
      // Pass parameters to the platform side.
      final Map<String, dynamic> creationParams = <String, dynamic>{};
-   
+
      return AndroidView(
        viewType: viewType,
        layoutDirection: TextDirection.ltr,

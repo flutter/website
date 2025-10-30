@@ -64,4 +64,3 @@ state of the layout) behind the scenes with RenderObjects.
 RenderObjects persist between frames and Flutter's lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
-

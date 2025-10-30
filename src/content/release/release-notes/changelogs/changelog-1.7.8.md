@@ -1,5 +1,5 @@
 ---
-title: Change log for Flutter 1.7.8 
+title: Change log for Flutter 1.7.8
 shortTitle: 1.7.8 change log
 description: Change log for Flutter 1.7.8 containing a list of all PRs merged for this release.
 skipTemplateRendering: true

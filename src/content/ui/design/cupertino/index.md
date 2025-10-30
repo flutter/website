@@ -69,4 +69,3 @@ flutter run lib/cupertino/switch/cupertino_switch.0.dart
 [Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Cupertino widget catalog]: /ui/widgets/cupertino
 [Instructions]: {{site.github}}/flutter/flutter/tree/main/examples/api#api-example-code
-

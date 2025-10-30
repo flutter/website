@@ -45,7 +45,7 @@ In addition to the iOS Cupertino theme support, this release continues to enhanc
 
 [#25339](https://github.com/flutter/flutter/pull/25339) [Material] Theme-able TextStyles for AlertDialog
 
-To integrate more fully with desktop form-factors like Android tablets and ChromeOS as well as desktop web and desktop OS support, this release builds more support for keyboard and mouse as first class input devices: 
+To integrate more fully with desktop form-factors like Android tablets and ChromeOS as well as desktop web and desktop OS support, this release builds more support for keyboard and mouse as first class input devices:
 
 [#7758](https://github.com/flutter/engine/pull/7758) Recommended implementation of combining characters implementation
 
@@ -185,19 +185,19 @@ Flutter assets for iOS applications are now found in Frameworks/App.framework/fl
 
 ### [#27697](https://github.com/flutter/flutter/pull/27697) Cupertino TextField Cursor Fix
 
-CupertinoTextField's cursorColor default now matches the app's theme. If this is undesirable, developers can use the cupertinoOverrideTheme property of ThemeData to provide a Cupertino-specific override using a CupertinoThemeData object, e.g: 
- 
+CupertinoTextField's cursorColor default now matches the app's theme. If this is undesirable, developers can use the cupertinoOverrideTheme property of ThemeData to provide a Cupertino-specific override using a CupertinoThemeData object, e.g:
+
 ```dart
-Widget build(BuildContext context) { 
-  // Set theme data for override in the CupertinoThemeData's constructor 
-  Theme.of(context).cupertinoOverrideTheme = CupertinoThemeData(  
-    brightness: Brightness.dark,  
-    primaryColor: Color(0xFF42A5F5) 
-  ); 
-  return Text( 
-    'Example', 
-    style: Theme.of(context).textTheme.title, 
-  ); 
+Widget build(BuildContext context) {
+  // Set theme data for override in the CupertinoThemeData's constructor
+  Theme.of(context).cupertinoOverrideTheme = CupertinoThemeData(
+    brightness: Brightness.dark,
+    primaryColor: Color(0xFF42A5F5)
+  );
+  return Text(
+    'Example',
+    style: Theme.of(context).textTheme.title,
+  );
 }
 ```
 
@@ -207,19 +207,19 @@ Widget build(BuildContext context) {
 By default, a drag gesture detector's onStart callback will be called with the location of where a drag gesture is detected (i.e. after dragging a certain number of pixels) instead of at the touch down location. To use the old functionality with a given drag gesture recognizer, the dragStartBehavior variable of the recognizer should be set DragStartBehavior.down, e.g., include the bolded line below when declaring your GestureDecorator:
 
 ```dart
-GestureDectector( 
+GestureDectector(
   dragStartBehavior: DragStartBehavior.down,
-  onVerticalDragDown: myDragDown 
-  onVerticalDragEnd: myDragEnd, 
-  onVerticalDragStart: myDragStart, 
-  onVerticalDragUpdate: myDragUpdate, 
-  onVerticalDragCancel: myDragCancel, 
-  onHorizontalDragDown: myDragDown 
-  onHorizontalDragEnd: myDragEnd, 
-  onHorizontalDragStart: myDragStart, 
-  onHorizontalDragUpdate: myDragUpdate, 
-  onHorizontalDragCancel: myDragCancel, 
-// Other fields… 
+  onVerticalDragDown: myDragDown
+  onVerticalDragEnd: myDragEnd,
+  onVerticalDragStart: myDragStart,
+  onVerticalDragUpdate: myDragUpdate,
+  onVerticalDragCancel: myDragCancel,
+  onHorizontalDragDown: myDragDown
+  onHorizontalDragEnd: myDragEnd,
+  onHorizontalDragStart: myDragStart,
+  onHorizontalDragUpdate: myDragUpdate,
+  onHorizontalDragCancel: myDragCancel,
+// Other fields…
 ```
 
 
@@ -233,9 +233,9 @@ Removed the long-deprecated TwoLevelList widget; use ListView with ExpansionTile
 Picture.toImage now returns a `Future<Image>` instead. This permits image rasterization to occur on the GPU thread, improving performance in many cases and ensuring correct results. At a minimum, you'll need to declare methods invoking on Picture instances as async, and use await, like this:
 
 ```dart
-void usePictureImage(Picture p) async { 
-  var image = await p.toImage(); 
-  // Do something with the pixels in image…. 
+void usePictureImage(Picture p) async {
+  var image = await p.toImage();
+  // Do something with the pixels in image….
 }
 ```
 

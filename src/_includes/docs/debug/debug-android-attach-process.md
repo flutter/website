@@ -50,9 +50,9 @@
 {% comment %}
    !['The Android Project view highlighting the GeneratedPluginRegistrant.java file.'](/assets/images/docs/testing/debugging/native/android-studio/debug-open-java-code.png){:width="100%"}
    <div class="figure-caption">
-   
+
    The Android Project view highlighting the `GeneratedPluginRegistrant.java` file.
-   
+
    </div>
 {% endcomment %}
 

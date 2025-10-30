@@ -42,7 +42,7 @@ same result as setting the original property `useDeleteButtonTooltip` to false.
 When `deleteButtonTooltipMessage` is unset, the
 `MaterialLocalizations.deleteButtonTooltip` is used by default.
 
-The [Deprecate `useDeleteButtonTooltip` for Chips][] design document 
+The [Deprecate `useDeleteButtonTooltip` for Chips][] design document
 covers this update to chips and tooltips in greater depth.
 To learn more, check out the [chips and tooltips migration guide][].
 

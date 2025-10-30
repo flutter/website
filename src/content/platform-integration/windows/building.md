@@ -280,11 +280,11 @@ In addition to that executable, you need the following:
   * `msvcp140.dll`
   * `vcruntime140.dll`
   * `vcruntime140_1.dll`
-  
+
   Place the DLL files in the directory next to the executable
   and the other DLLs, and bundle them together in a zip file.
   The resulting structure looks something like this:
-  
+
   ```plaintext
   Release
   │   flutter_windows.dll
@@ -305,8 +305,8 @@ add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
 ## Additional resources
 
-To learn how to build an `.exe` using Inno Setup to distribute 
-your Flutter desktop app for Windows, check out the step-by-step 
+To learn how to build an `.exe` using Inno Setup to distribute
+your Flutter desktop app for Windows, check out the step-by-step
 [Windows packaging guide][windows_packaging_guide].
 
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples

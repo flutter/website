@@ -10,7 +10,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 
 
@@ -9961,7 +9961,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/engine` 
+## Merged PRs by labels for `flutter/engine`
 
 
 
@@ -17530,7 +17530,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/plugins` 
+## Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -19740,6 +19740,3 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 #### bugfix - 1 pull request(s)
 
 [4301](https://github.com/flutter/plugins/pull/4301) [camera] Ensure setExposureOffset returns new value on Android (bugfix, cla: yes, waiting for tree to go green, p: camera, platform-android)
-
-
-

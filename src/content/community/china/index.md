@@ -43,7 +43,7 @@ These steps require using PowerShell.
     ```ps
     $ $env:PUB_HOSTED_URL="https://pub.flutter-io.cn"
     ```
- 
+
  1. Set `FLUTTER_STORAGE_BASE_URL` to your mirror site.
 
     ```ps
@@ -54,7 +54,7 @@ These steps require using PowerShell.
 
     For CFUG, visit their [Flutter SDK archive][],
     and download the SDK for your platform and architecture.
- 
+
  1. Create a folder where you can install Flutter. Then change into it.
     Consider a path like `$env:USERPROFILE\dev`.
 
@@ -307,16 +307,16 @@ To enable access to `pub.dev`:
  1. Configure a proxy.
     To configure a proxy, check out the
     [Dart documentation on proxies][].
- 
+
  1. Verify that your `PUB_HOSTED_URL` environment variable is either unset
     or empty.
- 
+
     ```ps
     $ echo $env:PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```ps
     $ Remove-Item $env:PUB_HOSTED_URL
     ```
@@ -330,13 +330,13 @@ To enable access to `pub.dev`:
 
  1. Verify that your `PUB_HOSTED_URL` environment variable is
     either unset or empty.
- 
+
     ```console
     $ echo $PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```console
     $ unset $PUB_HOSTED_URL
     ```
@@ -347,16 +347,16 @@ To enable access to `pub.dev`:
  1. Configure a proxy.
     To configure a proxy, check out the
     [Dart documentation on proxies][].
- 
+
  1. Verify that your `PUB_HOSTED_URL` environment variable is
     either unset or empty.
- 
+
     ```console
     $ echo $PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```console
     $ unset $PUB_HOSTED_URL
     ```

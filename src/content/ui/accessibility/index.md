@@ -50,7 +50,7 @@ to people with disabilities.
 In the U.S., the [Americans with Disabilities Act (ADA)][] prohibits
 discrimination in public accommodations.
 [Section 508 of the Rehabilitation Act ][] requires federal agencies and their
-contractors to meet WCAG standards for all ICT. 
+contractors to meet WCAG standards for all ICT.
 
 In the EU, the [European Accessibility Act (EAA)][] requires a wide range of
 public and private sector services to be accessible, primarily using
@@ -64,7 +64,7 @@ the [EN 301 549][] as its technical basis.
 
 [Americans with Disabilities Act (ADA)]: https://www.ada.gov/
 [Section 508 of the Rehabilitation Act]: https://www.section508.gov/
-[European Accessibility Act (EAA)]: https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en 
+[European Accessibility Act (EAA)]: https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en
 
 
 ## Building with accessibility in mind

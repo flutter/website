@@ -58,7 +58,7 @@ For more details on testing, check out the [accessibility testing page](/ui/acce
 
 Controls that are too small are hard for many people to interact with and select.
 Ensure that interactive elements have a large enough tap target to be easily
-pressed by users.  
+pressed by users.
 
 Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and 44x44 pts respectively.
 
