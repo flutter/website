@@ -51,8 +51,8 @@ were specifying `FontWeight` in text styles without a matching
 `FontVariation('wght')` value.
 
 If these changes are undesirable, then the application should change the
-`FontWeight` to a value that achieves the intended rendering with the variable
-font.
+`FontWeight` to a value that achieves the intended rendering. For example,
+to restore the font's default weight, set `fontWeight` to `FontWeight.normal`.
 
 ## Timeline
 
