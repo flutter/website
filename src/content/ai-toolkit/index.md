@@ -10,6 +10,15 @@ next:
 
 Hello and welcome to the Flutter AI Toolkit!
 
+:::note
+These pages are now out of date. They will be
+updated soon but, in the meantime, be aware that the
+`google_generative_ai` and `vertexai_firebase` packages
+are deprecated and replaced with [`flutter_ai_toolkit`][].
+:::
+
+[`firebase-ai`]: {{site-pub-pkg}}/flutter_ai_toolkit
+
 The AI Toolkit is a set of AI chat-related widgets that make
 it easy to add an AI chat window to your Flutter app.
 The AI Toolkit is organized around an abstract
