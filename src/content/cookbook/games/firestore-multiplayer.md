@@ -136,7 +136,7 @@ Dart code in that guide, return to this recipe.
     ```dart
     import 'package:cloud_firestore/cloud_firestore.dart';
     import 'package:firebase_core/firebase_core.dart';
-
+    
     import 'firebase_options.dart';
     ```
 
@@ -146,7 +146,7 @@ Dart code in that guide, return to this recipe.
     <?code-excerpt "lib/main.dart (initializeApp)"?>
     ```dart
     WidgetsFlutterBinding.ensureInitialized();
-
+    
     await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     ```
 

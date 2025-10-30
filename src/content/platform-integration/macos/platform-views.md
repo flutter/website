@@ -60,7 +60,7 @@ shown in `native_view_example.dart`:
       const String viewType = '<platform-view-type>';
       // Pass parameters to the platform side.
       final Map<String, dynamic> creationParams = <String, dynamic>{};
-
+    
       return AppKitView(
         viewType: viewType,
         layoutDirection: TextDirection.ltr,
