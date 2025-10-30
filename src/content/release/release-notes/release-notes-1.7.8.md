@@ -236,7 +236,7 @@ In this release, we continue to polish animations, scrolling and image support.
 *   [#33627](https://github.com/flutter/flutter/pull/33627) SliverFillRemaining flag for different use cases
 *   [#32853](https://github.com/flutter/flutter/pull/32853) Add onBytesReceived callback to consolidateHttpClientResponseBytes()
 *   [#32857](https://github.com/flutter/flutter/pull/32857) Add debugNetworkImageHttpClientProvider
-*   [#32936](https://github.com/flutter/flutter/pull/32936) Add some sanity to the ImageStream listener API
+*   [#32936](https://github.com/flutter/flutter/pull/32936) Add clarity to the ImageStream listener API
 *   [#33729](https://github.com/flutter/flutter/pull/33729) Update consolidateHttpClientResponseBytes() to use compressionState
 *   [#33369](https://github.com/flutter/flutter/pull/33369) Add loading support to Image
 
