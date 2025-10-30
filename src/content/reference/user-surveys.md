@@ -37,4 +37,4 @@ To mute survey announcements, you might do one of the following:
   [Disabling
 analytics reporting](/reference/crash-reporting#disabling-analytics-reporting).
 
-[Medium]: {{site.flutter-medium}}/search?q=survey
+[Medium]: {{site.flutter-blog}}/search?q=survey
