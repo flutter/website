@@ -122,13 +122,6 @@ to apply shaders to already rendered content.
 [`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
 for creating an [`ImageFilter`][] with a custom fragment shader.
 
-Fragment shaders that use the `ImageFilter` API receive some
-values automatically from the engine. The `sampler2D` value at index 0
-is set to the filter input image, and the `float` values at indices 0
-and 1 are set to the image's width and height.
-Your shader must specify this constructor to accept these values (for example,
-a `sampler2D` and a `vec2`), but you should not set them from your Dart code.
-
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
   return ClipRect(
@@ -149,6 +142,38 @@ Widget build(BuildContext context, FragmentShader shader) {
 When using [`ImageFilter`][] with [`BackdropFilter`][], a [`ClipRect`][] can be
 used to limit the area that is affected by the [`ImageFilter`][]. Without a
 [`ClipRect`][] the [`BackdropFilter`][] will be applied to the whole screen.
+
+`ImageFilter` fragment shaders receive some uniforms automatically from the
+engine. The `sampler2D` value at index 0 is set to the filter input image, and
+the `float` values at indices 0 and 1 are set to the image's width and height.
+Your shader must specify this constructor to accept these values (for example, a
+`sampler2D` and a `vec2`), but you should not set them from your Dart code.
+
+When targeting OpenGLES the y-coordinates of the texture will be flipped so the
+fragment shader should un-flip the UVs when sampling from textures provided by
+the engine.
+
+```glsl
+#version 460 core
+#include <flutter/runtime_effect.glsl>
+
+out vec4 fragColor;
+
+// These uniforms are automatically set by the engine.
+uniform vec2 u_size;
+uniform sampler2D u_texture;
+
+void main() {
+  vec2 uv = FlutterFragCoord().xy / u_size;
+#ifdef IMPELLER_TARGET_OPENGLES
+  // When sampling from u_texture on OpenGLES the y-coordinates will be flipped.
+  uv.y = 1.0 - uv.y;
+#endif
+  vec4 color = texture(u_texture, uv);
+  float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+  fragColor = vec4(vec3(gray), color.a);
+}
+```
 
 [`ImageFilter`]: {{site.api}}/flutter/dart-ui/ImageFilter-class.html
 [`ImageFiltered`]: {{site.api}}/flutter/widgets/ImageFiltered-class.html
