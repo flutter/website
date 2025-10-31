@@ -17,7 +17,7 @@ updated soon but, in the meantime, be aware that the
 are deprecated and replaced with [`package:firebase_ai`][].
 :::
 
-[`package:firebase_ai`]: {{site-pub-pkg}}/firebase_ai
+[`package:firebase_ai`]: {{site.pub-pkg}}/firebase_ai
 
 The AI Toolkit is a set of AI chat-related widgets that make
 it easy to add an AI chat window to your Flutter app.
