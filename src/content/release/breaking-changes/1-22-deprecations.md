@@ -1,7 +1,7 @@
 ---
 title: Deprecated API removed after v1.22
 description: >
-  After reaching end of life, 
+  After reaching end of life,
   the following deprecated APIs were removed from Flutter.
 ---
 
@@ -22,10 +22,10 @@ primary source to aid in migration. A
 A [design document][] and [article][] are available
 for more context on Flutter's deprecation policy.
 
-[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
+[Deprecation Policy]: {{site.repo.flutter}}/blob/main/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-1-22
 [design document]: /go/deprecation-lifetime
-[article]: {{site.flutter-medium}}/deprecation-lifetime-in-flutter-e4d76ee738ad
+[article]: {{site.flutter-blog}}/deprecation-lifetime-in-flutter-e4d76ee738ad
 
 ## Changes
 
@@ -288,7 +288,7 @@ Relevant PRs:
 
 * Deprecated in [#15303][]
 * Removed in [#72532][]
- 
+
 [`showDialog`]: {{site.api}}/flutter/material/showDialog.html
 [showDialog should take a builder rather than a child]: {{site.repo.flutter}}/issues/14341
 [#15303]: {{site.repo.flutter}}/pull/15303
@@ -304,7 +304,7 @@ The `resizeToAvoidBottomPadding` parameter of `Scaffold` was deprecated in v1.1.
 The `resizeToAvoidBottomInset` parameter should be used instead.
 
 **Migration guide**
- 
+
 Code before migration:
 
 ```dart
@@ -500,7 +500,7 @@ The `RenderView.scheduleInitialFrame` method was deprecated and removed in
 order to prevent splash screens from being taken down too early,
 resulting in a black screen.
 This would happen when `WidgetsFlutterBinding.ensureInitialized` was called.
-Instead, replace calls to this method with `RenderView.prepareInitialFrame`, 
+Instead, replace calls to this method with `RenderView.prepareInitialFrame`,
 followed by `RenderView.owner.requestVisualUpdate`.
 
 **Migration guide**

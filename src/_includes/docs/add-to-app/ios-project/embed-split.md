@@ -19,15 +19,15 @@ Use this method in the following use cases:
 
 #### Limitations {:#method-c-limits}
 
-{% render docs/add-to-app/ios-project/limits-common-deps.md %}
+{% render "docs/add-to-app/ios-project/limits-common-deps.md" %}
 
 This method only works with the `beta` or `stable` [release channels][].
 
-[release channels]: /release/upgrade#switching-flutter-channels
+[release channels]: /install/upgrade#switching-flutter-channels
 
 #### Example project structure {:#method-c-structure}
 
-{% render docs/add-to-app/ios-project/embed-framework-directory-tree.md %}
+{% render "docs/add-to-app/ios-project/embed-framework-directory-tree.md" %}
 
 #### Add Flutter engine to your Podfile
 
@@ -45,4 +45,4 @@ and `Release` when you're ready to ship.
 
 #### Link and embed app and plugin frameworks
 
-{% render docs/add-to-app/ios-project/link-and-embed.md %}
+{% render "docs/add-to-app/ios-project/link-and-embed.md" %}

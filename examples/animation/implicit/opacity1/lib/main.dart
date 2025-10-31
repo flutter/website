@@ -17,23 +17,25 @@ class FadeInDemo extends StatefulWidget {
 class _FadeInDemoState extends State<FadeInDemo> {
   @override
   Widget build(BuildContext context) {
-    return ListView(children: <Widget>[
-      Image.network(owlUrl),
-      TextButton(
-        child: const Text(
-          'Show Details',
-          style: TextStyle(color: Colors.blueAccent),
+    return ListView(
+      children: <Widget>[
+        Image.network(owlUrl),
+        TextButton(
+          child: const Text(
+            'Show Details',
+            style: TextStyle(color: Colors.blueAccent),
+          ),
+          onPressed: () => {},
         ),
-        onPressed: () => {},
-      ),
-      const Column(
-        children: [
-          Text('Type: Owl'),
-          Text('Age: 39'),
-          Text('Employment: None'),
-        ],
-      )
-    ]);
+        const Column(
+          children: [
+            Text('Type: Owl'),
+            Text('Age: 39'),
+            Text('Employment: None'),
+          ],
+        ),
+      ],
+    );
   }
 }
 
@@ -43,17 +45,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: FadeInDemo(),
-        ),
-      ),
+      home: Scaffold(body: Center(child: FadeInDemo())),
     );
   }
 }
 
 void main() {
-  runApp(
-    const MyApp(),
-  );
+  runApp(const MyApp());
 }

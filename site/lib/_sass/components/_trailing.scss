@@ -1,0 +1,48 @@
+#trailing-content {
+  font-size: 0.875rem;
+  margin: 0;
+  margin-block-start: 1rem;
+  font-family: var(--site-ui-fontFamily);
+
+  border-top: 0.05rem solid var(--site-outline);
+}
+
+#page-feedback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: 0.25rem 0;
+  padding: 0.25rem;
+  height: 4.25rem;
+
+  >.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+
+    .text-button {
+      padding: 0.25rem 0.5rem;
+
+      span.material-symbols {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .feedback-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    span.material-symbols {
+      font-size: 20px;
+    }
+  }
+}
+
+#page-github-links {
+  font-style: italic;
+  font-size: 0.75rem;
+  margin: 0;
+}

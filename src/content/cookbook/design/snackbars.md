@@ -1,9 +1,6 @@
 ---
 title: Display a snackbar
 description: How to implement a snackbar to display messages.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/design/snackbars/"?>
@@ -37,9 +34,7 @@ widgets don't overlap.
 return MaterialApp(
   title: 'SnackBar Demo',
   home: Scaffold(
-    appBar: AppBar(
-      title: const Text('SnackBar Demo'),
-    ),
+    appBar: AppBar(title: const Text('SnackBar Demo')),
     body: const SnackBarPage(),
   ),
 );
@@ -52,9 +47,7 @@ First, create a `SnackBar`, then display it using `ScaffoldMessenger`.
 
 <?code-excerpt "lib/partial.dart (DisplaySnackBar)"?>
 ```dart
-const snackBar = SnackBar(
-  content: Text('Yay! A SnackBar!'),
-);
+const snackBar = SnackBar(content: Text('Yay! A SnackBar!'));
 
 // Find the ScaffoldMessenger in the widget tree
 // and use it to show a SnackBar.
@@ -65,7 +58,7 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 To learn more, watch this short Widget of the Week video on
 the `ScaffoldMessenger` widget:
 
-{% ytEmbed 'lytQi-slT5Y', 'ScaffoldMessenger | Flutter widget of the week' %}
+<YouTubeEmbed id="lytQi-slT5Y" title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## 3. Provide an optional action
@@ -114,9 +107,7 @@ class SnackBarDemo extends StatelessWidget {
     return MaterialApp(
       title: 'SnackBar Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('SnackBar Demo'),
-        ),
+        appBar: AppBar(title: const Text('SnackBar Demo')),
         body: const SnackBarPage(),
       ),
     );
@@ -153,10 +144,10 @@ class SnackBarPage extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/snackbar.gif" alt="SnackBar Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

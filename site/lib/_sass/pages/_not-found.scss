@@ -1,0 +1,46 @@
+body.site-not-found main {
+  align-items: center;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 40rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin: 0 1rem 1rem;
+    max-width: 32rem;
+    text-align: center;
+  }
+
+  ul.not-found-alternatives {
+    font-size: 1.25rem;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    text-align: left;
+    white-space: nowrap;
+    padding: 0.5rem;
+    margin-bottom: 0;
+
+    @media(max-width: 576px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #trailing-content {
+    display: none;
+  }
+}

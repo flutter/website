@@ -4,11 +4,7 @@ import 'package:flutter/material.dart';
 
 @immutable
 class BubbleBackground extends StatelessWidget {
-  const BubbleBackground({
-    super.key,
-    required this.colors,
-    this.child,
-  });
+  const BubbleBackground({super.key, required this.colors, this.child});
 
   final List<Color> colors;
   final Widget? child;
@@ -32,9 +28,9 @@ class BubblePainter extends CustomPainter {
     required ScrollableState scrollable,
     required BuildContext bubbleContext,
     required List<Color> colors,
-  })  : _scrollable = scrollable,
-        _bubbleContext = bubbleContext,
-        _colors = colors;
+  }) : _scrollable = scrollable,
+       _bubbleContext = bubbleContext,
+       _colors = colors;
 
   final ScrollableState _scrollable;
   final BuildContext _bubbleContext;
@@ -53,8 +49,10 @@ class BubblePainter extends CustomPainter {
     final scrollableRect = Offset.zero & scrollableBox.size;
     final bubbleBox = _bubbleContext.findRenderObject() as RenderBox;
 
-    final origin =
-        bubbleBox.localToGlobal(Offset.zero, ancestor: scrollableBox);
+    final origin = bubbleBox.localToGlobal(
+      Offset.zero,
+      ancestor: scrollableBox,
+    );
     final paint = Paint()
       ..shader = ui.Gradient.linear(
         scrollableRect.topCenter,
@@ -98,10 +96,7 @@ class _MyChatState extends State<MyChat> {
           : const [Color(0xFF19B7FF), Color(0xFF491CCB)],
       // The content within the bubble.
       child: DefaultTextStyle.merge(
-        style: const TextStyle(
-          fontSize: 18.0,
-          color: Colors.white,
-        ),
+        style: const TextStyle(fontSize: 18.0, color: Colors.white),
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Text(message.text),

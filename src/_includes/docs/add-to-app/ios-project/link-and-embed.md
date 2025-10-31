@@ -18,9 +18,7 @@ To link the necessary frameworks, follow this procedure.
 
    1. Expand **Link Binary With Libraries**.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/linked-libraries.png",
-      caption:"Expand the **Link Binary With Libraries** build phase in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/linked-libraries.png" caption="Expand the **Link Binary With Libraries** build phase in Xcode" />
 
    1. Click **+** (plus sign).
 
@@ -31,10 +29,7 @@ To link the necessary frameworks, follow this procedure.
 
    1. Command-click the frameworks in that directory then click **Open**.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/choose-libraries.png",
-      caption:"Choose frameworks to link from the **Choose frameworks and
-      libraries to add:** dialog box in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/choose-libraries.png" caption="Choose frameworks to link from the **Choose frameworks and libraries to add:** dialog box in Xcode" />
 
 1. Update the paths to the libraries to account for build modes.
 
@@ -48,9 +43,7 @@ To link the necessary frameworks, follow this procedure.
    1. Open `project.pbxproj` with Xcode. The file opens in Xcode's text
       editor. This also locks **Project Navigator** until you close the text editor.
 
-      {% render docs/captioned-image.liquid,
-      image:"development/add-to-app/ios/project-setup/project-pbxproj.png",
-      caption:"The `project-pbxproj` file open in the Xcode text editor" %}
+      <DashImage image="development/add-to-app/ios/project-setup/project-pbxproj.png" caption="The `project-pbxproj` file open in the Xcode text editor" />
 
    1. Find the lines that resemble the following text in the
       `/* Begin PBXFileReference section */`.
@@ -113,7 +106,7 @@ To link the necessary frameworks, follow this procedure.
    1. Type `$(PROJECT_DIR)/Flutter/$(CONFIGURATION)/`
       and press <kbd>Enter</kbd>.
 
-      {% render docs/captioned-image.liquid, image:"development/add-to-app/ios/project-setup/framework-search-paths.png", caption:"Update **Framework Search Paths** in Xcode" %}
+      <DashImage image="development/add-to-app/ios/project-setup/framework-search-paths.png" caption="Update **Framework Search Paths** in Xcode" />
 
 After linking the frameworks, they should display in the
 **Frameworks, Libraries, and Embedded Content**
@@ -128,9 +121,7 @@ To embed your dynamic frameworks, complete the following procedure.
 
 1. Click on each of your dynamic frameworks and select **Embed & Sign**.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/add-to-app/ios/project-setup/choose-to-embed.png",
-   caption:"Select **Embed & Sign** for each of your frameworks in Xcode" %}
+   <DashImage image="development/add-to-app/ios/project-setup/choose-to-embed.png" caption="Select **Embed & Sign** for each of your frameworks in Xcode" />
 
    Don't include any static frameworks,
    including `FlutterPluginRegistrant.xcframework`.
@@ -140,9 +131,7 @@ To embed your dynamic frameworks, complete the following procedure.
 1. Expand **Embed Frameworks**.
    Your dynamic frameworks should display in that section.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/add-to-app/ios/project-setup/embed-xcode.png",
-   caption:"The expanded **Embed Frameworks** build phase in Xcode" %}
+   <DashImage image="development/add-to-app/ios/project-setup/embed-xcode.png" caption="The expanded **Embed Frameworks** build phase in Xcode" />
 
 1. Build the project.
 
@@ -155,6 +144,47 @@ To embed your dynamic frameworks, complete the following procedure.
 
    1. Select **Product** <span aria-label="and then">></span>
       **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
+
+#### Set LLDB Init File
+
+:::warning
+Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
+on an iOS 26 or later device may crash.
+:::
+
+1. Generate Flutter LLDB files.
+
+   1. Within your flutter application, re-run `flutter build ios-framework` if
+      you haven't already:
+
+   ```console
+   $ flutter build ios-framework --output=/path/to/MyApp/Flutter/
+   ```
+
+   This will generate the LLDB files in the `/path/to/MyApp/Flutter/` directory.
+
+1. Set the LLDB Init File.
+
+   1. Go to **Product > Scheme > Edit Scheme**.
+
+   1. Select the **Run** section in the left side bar.
+
+   1. Set the **LLDB Init File** to the following:
+
+      ```console
+      $(PROJECT_DIR)/Flutter/flutter_lldbinit
+      ```
+
+      If your scheme already has an **LLDB Init File**, you can add Flutter's
+      LLDB file to it. The path to Flutter's LLDB Init File must be relative
+      to the location of your project's LLDB Init File.
+
+      For example, if your LLDB file is located at `/path/to/MyApp/.lldbinit`,
+      you would add the following:
+
+      ```console
+      command source --relative-to-command-file "Flutter/flutter_lldbinit"
+      ```
 
 [static or dynamic frameworks]: https://stackoverflow.com/questions/32591878/ios-is-it-a-static-or-a-dynamic-framework
 [static-framework]: https://developer.apple.com/library/archive/technotes/tn2435/_index.html

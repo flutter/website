@@ -1,6 +1,6 @@
 ---
 title: Developing packages & plugins
-short-title: Developing
+shortTitle: Developing
 description: How to write packages and plugins for Flutter.
 ---
 
@@ -186,10 +186,16 @@ If you can't, for whatever reason, get your implementation
 added by the original plugin author, then your plugin
 is _not_ endorsed. A developer can still use your
 implementation, but must manually add the plugin
-to the app's pubspec file. So, the developer
-must include both the `foobar` dependency _and_
-the `foobar_windows` dependency in order to achieve
-full functionality.
+to the app's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  foobar: ^1.0.0
+  foobar_windows: ^1.0.0 # Non-endorsed plugin implementation
+```
+
+This approach also works for overriding an already
+endorsed plugin implementation of `foobar`.
 
 For more information on federated plugins,
 why they are useful, and how they are
@@ -325,8 +331,8 @@ for example:
 ```ruby
   s.ios.dependency 'Flutter'
   s.osx.dependency 'FlutterMacOS'
-  s.ios.deployment_target = '11.0'
-  s.osx.deployment_target = '10.14'
+  s.ios.deployment_target = '13.0'
+  s.osx.deployment_target = '10.15'
 ```
 
 ### Step 1: Create the package
@@ -458,7 +464,7 @@ Flutter continues to support CocoaPods.
 :::
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /release/upgrade#switching-flutter-channels
+[`main` channel]: /install/upgrade#switching-flutter-channels
 
 Use the following instructions to add `HelloPod` with the version `0.0.1`:
 
@@ -983,7 +989,7 @@ of the `url_launcher` plugin available to `hello`:
 
 ```yaml
 dependencies:
-  url_launcher: ^5.0.0
+  url_launcher: ^6.3.2
 ```
 
 You can now `import 'package:url_launcher/url_launcher.dart'`
@@ -1059,13 +1065,13 @@ PENDING
 [iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
-[Flutter editor]: /get-started/editor
+[Flutter editor]: /tools/editors
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
 [Flutter Favorites program]: /packages-and-plugins/favorites
 [Gradle Documentation]: https://docs.gradle.org/current/userguide/tutorial_using_tasks.html
 [helper isolate]: {{site.dart-site}}/guides/language/concurrency#background-workers
-[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
-[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[How to Write a Flutter Web Plugin, Part 1]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-5e26c689ea1
+[How To Write a Flutter Web Plugin, Part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [issue #33302]: {{site.repo.flutter}}/issues/33302
 [`LICENSE`]: #adding-licenses-to-the-license-file
 [`path`]: {{site.pub}}/packages/path
@@ -1078,4 +1084,4 @@ PENDING
 [test your plugin]: #testing-your-plugin
 [unit tests]: /testing/overview#unit-tests
 [`url_launcher`]: {{site.pub}}/packages/url_launcher
-[Writing a good plugin]: {{site.flutter-medium}}/writing-a-good-flutter-plugin-1a561b986c9c
+[Writing a good plugin]: {{site.flutter-blog}}/writing-a-good-flutter-plugin-1a561b986c9c

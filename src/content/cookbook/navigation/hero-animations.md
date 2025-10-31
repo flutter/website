@@ -1,9 +1,6 @@
 ---
 title: Animate a widget across screens
 description: How to animate a widget from one screen to another
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/hero_animations"?>
@@ -44,18 +41,19 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main Screen'),
-      ),
+      appBar: AppBar(title: const Text('Main Screen')),
       body: GestureDetector(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const DetailScreen();
-          }));
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (context) {
+                return const DetailScreen();
+              },
+            ),
+          );
         },
-        child: Image.network(
-          'https://picsum.photos/250?image=9',
-        ),
+        child: Image.network('https://picsum.photos/250?image=9'),
       ),
     );
   }
@@ -72,9 +70,7 @@ class DetailScreen extends StatelessWidget {
           Navigator.pop(context);
         },
         child: Center(
-          child: Image.network(
-            'https://picsum.photos/250?image=9',
-          ),
+          child: Image.network('https://picsum.photos/250?image=9'),
         ),
       ),
     );
@@ -102,9 +98,7 @@ RegEx removes the first "child" property name and removed the trailing comma at 
 ```dart
 Hero(
   tag: 'imageHero',
-  child: Image.network(
-    'https://picsum.photos/250?image=9',
-  ),
+  child: Image.network('https://picsum.photos/250?image=9'),
 )
 ```
 
@@ -124,9 +118,7 @@ RegEx removes the first "child" property name and removed the trailing comma at 
 ```dart
 Hero(
   tag: 'imageHero',
-  child: Image.network(
-    'https://picsum.photos/250?image=9',
-  ),
+  child: Image.network('https://picsum.photos/250?image=9'),
 )
 ```
 
@@ -151,10 +143,7 @@ class HeroApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Transition Demo',
-      home: MainScreen(),
-    );
+    return const MaterialApp(title: 'Transition Demo', home: MainScreen());
   }
 }
 
@@ -164,20 +153,21 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Main Screen'),
-      ),
+      appBar: AppBar(title: const Text('Main Screen')),
       body: GestureDetector(
         onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) {
-            return const DetailScreen();
-          }));
+          Navigator.push(
+            context,
+            MaterialPageRoute<void>(
+              builder: (context) {
+                return const DetailScreen();
+              },
+            ),
+          );
         },
         child: Hero(
           tag: 'imageHero',
-          child: Image.network(
-            'https://picsum.photos/250?image=9',
-          ),
+          child: Image.network('https://picsum.photos/250?image=9'),
         ),
       ),
     );
@@ -197,9 +187,7 @@ class DetailScreen extends StatelessWidget {
         child: Center(
           child: Hero(
             tag: 'imageHero',
-            child: Image.network(
-              'https://picsum.photos/250?image=9',
-            ),
+            child: Image.network('https://picsum.photos/250?image=9'),
           ),
         ),
       ),
@@ -209,7 +197,7 @@ class DetailScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/hero.webp" alt="Hero demo" class="site-mobile-screenshot" />
 </noscript>
 
 

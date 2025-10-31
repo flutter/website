@@ -3,10 +3,6 @@ title: "Implicit animations"
 description: >
   Learn how to use Flutter's implicitly animated widgets
   through interactive examples and exercises.
-toc: true
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -14,7 +10,7 @@ js:
 Welcome to the implicit animations codelab, where you learn how to use Flutter
 widgets that make it easy to create animations for a specific set of properties.
 
-{% include docs/dartpad-troubleshooting.md %}
+{% render "docs/dartpad-troubleshooting.md", site: site %}
 
 To get the most out of this codelab, you should have basic knowledge about:
 
@@ -60,7 +56,7 @@ consists of a [Material App][] home screen containing:
 
 To view the example, Click **Run**:
 
-{% render docs/implicit-animations/fade-in-starter-code.md %}
+{% render "docs/implicit-animations/fade-in-starter-code.md" %}
 
 ### Animate opacity with AnimatedOpacity widget
 
@@ -79,7 +75,7 @@ widget to add the following animation feature:
 #### 1. Pick a widget property to animate
 
 To create a fade-in effect, you can animate the
-`opacity` property using the`AnimatedOpacity` widget. 
+`opacity` property using the`AnimatedOpacity` widget.
 Wrap the `Column` widget in an `AnimatedOpacity` widget:
 
 ```dart diff
@@ -127,7 +123,7 @@ the starting value for `opacity` to zero:
 ```dart diff
   class _FadeInDemoState extends State<FadeInDemo> {
 +   double opacity = 0;
-+ 
++
     @override
     Widget build(BuildContext context) {
       return ListView(children: <Widget>[
@@ -181,7 +177,7 @@ The `AnimatedOpacity` widget manages everything in between.
 Here's the example with the completed changes you've made.
 Run this example then click **Show details** to trigger the animation.
 
-{% render docs/implicit-animations/fade-in-complete.md %}
+{% render "docs/implicit-animations/fade-in-complete.md" %}
 
 ### Putting it all together
 
@@ -215,7 +211,7 @@ It starts with a [Material App][] home screen that contains:
 
 - A `Container` widget configured with a
  `borderRadius`, `margin`, and `color`.
-  These properties are setup to be regenerated 
+  These properties are setup to be regenerated
   each time you run the example.
 - A **Change** button that does nothing when clicked.
 
@@ -223,7 +219,7 @@ It starts with a [Material App][] home screen that contains:
 
 To start the example, click **Run**.
 
-{% render docs/implicit-animations/shape-shifting-starter-code.md %}
+{% render "docs/implicit-animations/shape-shifting-starter-code.md" %}
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -337,7 +333,7 @@ Run the code and click **Change** to trigger the animation.
 Each time you click **Change**, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-{% render docs/implicit-animations/shape-shifting-complete.md %}
+{% render "docs/implicit-animations/shape-shifting-complete.md" %}
 
 ### Using animation curves
 
@@ -418,13 +414,13 @@ To learn more, check out these suggestions:
 - Try the [animations tutorial][].
 - Learn about [hero animations][] and [staggered animations][].
 - Checkout the [animation library][].
-- Try another [codelab][].
+- Explore other [Flutter learning resources][].
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [AnimatedOpacity]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
 [animations tutorial]: /ui/animations/tutorial
-[codelab]: /codelabs
+[Flutter learning resources]: /reference/learning-resources
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [duration]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget/duration.html

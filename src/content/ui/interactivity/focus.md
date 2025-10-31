@@ -177,7 +177,7 @@ Here is an example showing how to use the `Focus` widget to make a custom
 control focusable. It creates a container with text that reacts to receiving the
 focus.
 
-<?code-excerpt "ui/advanced/focus/lib/custom_control_example.dart"?>
+<?code-excerpt "ui/focus/lib/custom_control_example.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
@@ -258,7 +258,7 @@ and they are also not propagated to native widgets.
 Here's an example of a `Focus` widget that absorbs every key that
 its subtree doesn't handle, without being able to be the primary focus:
 
-<?code-excerpt "ui/advanced/focus/lib/samples.dart (absorb-keys)"?>
+<?code-excerpt "ui/focus/lib/samples.dart (absorb-keys)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -277,7 +277,7 @@ entered into the text field.
 Here's an example of a widget that won't allow the letter "a" to be typed into
 the text field:
 
-<?code-excerpt "ui/advanced/focus/lib/samples.dart (no-letter-a)"?>
+<?code-excerpt "ui/focus/lib/samples.dart (no-letter-a)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -358,7 +358,7 @@ you can call `Focus.of(context)` to obtain the focus node of the nearest `Focus
 widget within the same build function, use a [`Builder`][] to make sure you have
 the correct context. This is shown in the following example:
 
-<?code-excerpt "ui/advanced/focus/lib/samples.dart (builder)"?>
+<?code-excerpt "ui/focus/lib/samples.dart (builder)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -420,7 +420,7 @@ your custom controls.
 To learn more, watch this short Widget of the Week video on
 the `FocusableActionDetector` widget:
 
-{% ytEmbed 'R84AGg0lKs8', 'FocusableActionDetector - Flutter widget of the week' %}
+<YouTubeEmbed id="R84AGg0lKs8" title="FocusableActionDetector - Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## Controlling focus traversal
@@ -467,7 +467,7 @@ custom ordering you want.
 Here's an example of how to use the `FocusTraversalOrder` widget to traverse a
 row of buttons in the order TWO, ONE, THREE using `NumericFocusOrder`.
 
-<?code-excerpt "ui/advanced/focus/lib/samples.dart (ordered-button-row)"?>
+<?code-excerpt "ui/focus/lib/samples.dart (ordered-button-row)"?>
 ```dart
 class OrderedButtonRow extends StatelessWidget {
   const OrderedButtonRow({super.key});
@@ -481,26 +481,17 @@ class OrderedButtonRow extends StatelessWidget {
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(2),
-            child: TextButton(
-              child: const Text('ONE'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('ONE'), onPressed: () {}),
           ),
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(1),
-            child: TextButton(
-              child: const Text('TWO'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('TWO'), onPressed: () {}),
           ),
           const Spacer(),
           FocusTraversalOrder(
             order: const NumericFocusOrder(3),
-            child: TextButton(
-              child: const Text('THREE'),
-              onPressed: () {},
-            ),
+            child: TextButton(child: const Text('THREE'), onPressed: () {}),
           ),
           const Spacer(),
         ],

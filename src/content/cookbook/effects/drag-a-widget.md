@@ -1,9 +1,6 @@
 ---
 title: Drag a UI element
 description: How to implement a draggable UI element.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/drag_a_widget"?>
@@ -20,7 +17,7 @@ is paying for it.
 
 The following animation shows the app's behavior:
 
-![Ordering the food by dragging it to the person](/assets/images/docs/cookbook/effects/DragAUIElement.gif){:.site-mobile-screenshot}
+![Ordering the food by dragging it to the person](/assets/images/docs/cookbook/effects/DragAUIElement.webp){:.site-mobile-screenshot}
 
 This recipe begins with a prebuilt list of menu items and
 a row of customers.
@@ -32,10 +29,10 @@ and display a draggable photo of a menu item.
 Flutter provides a widget called [`LongPressDraggable`][]
 that provides the exact behavior that you need to begin
 a drag-and-drop interaction. A `LongPressDraggable`
-widget recognizes when a long press occurs and then 
+widget recognizes when a long press occurs and then
 displays a new widget near the user's finger.
 As the user drags, the widget follows the user's finger.
-`LongPressDraggable` gives you full control over the 
+`LongPressDraggable` gives you full control over the
 widget that the user drags.
 
 Each menu list item is displayed with a custom
@@ -73,21 +70,21 @@ In this case, when the user long presses on the
 `MenuListItem` widget, the `LongPressDraggable`
 widget displays a `DraggingListItem`.
 This `DraggingListItem` displays a photo of the
-selected food item, centered beneath 
+selected food item, centered beneath
 the user's finger.
 
 The `dragAnchorStrategy` property is set to
 [`pointerDragAnchorStrategy`][].
 This property value instructs `LongPressDraggable`
-to base the `DraggableListItem`'s position on the 
+to base the `DraggableListItem`'s position on the
 user's finger. As the user moves a finger,
 the `DraggableListItem` moves with it.
 
 Dragging and dropping is of little use if no information
 is transmitted when the item is dropped.
-For this reason, `LongPressDraggable` takes a `data` parameter. 
+For this reason, `LongPressDraggable` takes a `data` parameter.
 In this case, the type of `data` is `Item`,
-which holds information about the 
+which holds information about the
 food menu item that the user pressed on.
 
 The `data` associated with a `LongPressDraggable`
@@ -100,7 +97,7 @@ You'll implement the drop behavior next.
 The user can drop a `LongPressDraggable` wherever they choose,
 but dropping the draggable has no effect unless it's dropped
 on top of a `DragTarget`. When the user drops a draggable on
-top of a `DragTarget` widget, the `DragTarget` widget 
+top of a `DragTarget` widget, the `DragTarget` widget
 can either accept or reject the data from the draggable.
 
 In this recipe, the user should drop a menu item on a
@@ -128,10 +125,7 @@ DragTarget<Item>(
     );
   },
   onAcceptWithDetails: (details) {
-    _itemDroppedOnCustomerCart(
-      item: details.data,
-      customer: customer,
-    );
+    _itemDroppedOnCustomerCart(item: details.data, customer: customer);
   },
 )
 ```
@@ -146,20 +140,20 @@ When the user drags a draggable on the `DragTarget` widget,
 `candidateItems` contains the data items that the user is dragging.
 This draggable allows you to change what your widget looks
 like when the user is dragging over it. In this case,
-the `Customer` widget turns red whenever any items are dragged above the 
-`DragTarget` widget. The red visual appearance is configured with the 
+the `Customer` widget turns red whenever any items are dragged above the
+`DragTarget` widget. The red visual appearance is configured with the
 `highlighted` property within the `CustomerCart` widget.
 
 When the user drops a draggable on the `DragTarget` widget,
 the `onAcceptWithDetails` callback is invoked. This is when you get
 to decide whether or not to accept the data that was dropped.
-In this case, the item is always accepted and processed. 
+In this case, the item is always accepted and processed.
 You might choose to inspect the incoming item to make a
-different decision. 
+different decision.
 
 Notice that the type of item dropped on `DragTarget`
 must match the type of the item dragged from `LongPressDraggable`.
-If the types are not compatible, then 
+If the types are not compatible, then
 the `onAcceptWithDetails` method isn't invoked.
 
 With a `DragTarget` widget configured to accept your
@@ -177,19 +171,18 @@ which maintains a cart of items and a price total.
 <?code-excerpt "lib/main.dart (CustomerClass)"?>
 ```dart
 class Customer {
-  Customer({
-    required this.name,
-    required this.imageProvider,
-    List<Item>? items,
-  }) : items = items ?? [];
+  Customer({required this.name, required this.imageProvider, List<Item>? items})
+    : items = items ?? [];
 
   final String name;
   final ImageProvider imageProvider;
   final List<Item> items;
 
   String get formattedTotalItemPrice {
-    final totalPriceCents =
-        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
+    final totalPriceCents = items.fold<int>(
+      0,
+      (prev, item) => prev + item.totalPriceCents,
+    );
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }
@@ -215,7 +208,7 @@ void _itemDroppedOnCustomerCart({
 
 The `_itemDroppedOnCustomerCart` method is invoked in
 `onAcceptWithDetails()` when the user drops a menu item on a
-`CustomerCart` widget. By adding the dropped item to the 
+`CustomerCart` widget. By adding the dropped item to the
 `customer` object, and invoking `setState()` to cause a
 layout update, the UI refreshes with the new customer's
 price total and item count.
@@ -255,27 +248,27 @@ void main() {
   );
 }
 
+const _urlPrefix =
+    'https://docs.flutter.dev/assets/images/exercise/effects/split-check';
+
 const List<Item> _items = [
   Item(
     name: 'Spinach Pizza',
     totalPriceCents: 1299,
     uid: '1',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food1.jpg'),
+    imageProvider: NetworkImage('$_urlPrefix/Food1.jpg'),
   ),
   Item(
     name: 'Veggie Delight',
     totalPriceCents: 799,
     uid: '2',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food2.jpg'),
+    imageProvider: NetworkImage('$_urlPrefix/Food2.jpg'),
   ),
   Item(
     name: 'Chicken Parmesan',
     totalPriceCents: 1499,
     uid: '3',
-    imageProvider: NetworkImage('https://docs.flutter.dev'
-        '/cookbook/img-files/effects/split-check/Food3.jpg'),
+    imageProvider: NetworkImage('$_urlPrefix/Food3.jpg'),
   ),
 ];
 
@@ -292,18 +285,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
   final List<Customer> _people = [
     Customer(
       name: 'Makayla',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar1.jpg'),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar1.jpg'),
     ),
     Customer(
       name: 'Nathan',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar2.jpg'),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar2.jpg'),
     ),
     Customer(
       name: 'Emilio',
-      imageProvider: const NetworkImage('https://docs.flutter.dev'
-          '/cookbook/img-files/effects/split-check/Avatar3.jpg'),
+      imageProvider: const NetworkImage('$_urlPrefix/Avatar3.jpg'),
     ),
   ];
 
@@ -333,10 +323,10 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       title: Text(
         'Order Food',
         style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontSize: 36,
-              color: const Color(0xFFF64209),
-              fontWeight: FontWeight.bold,
-            ),
+          fontSize: 36,
+          color: const Color(0xFFF64209),
+          fontWeight: FontWeight.bold,
+        ),
       ),
       backgroundColor: const Color(0xFFF7F7F7),
       elevation: 0,
@@ -349,9 +339,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
         SafeArea(
           child: Column(
             children: [
-              Expanded(
-                child: _buildMenuList(),
-              ),
+              Expanded(child: _buildMenuList()),
               _buildPeopleRow(),
             ],
           ),
@@ -365,22 +353,16 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
       padding: const EdgeInsets.all(16),
       itemCount: _items.length,
       separatorBuilder: (context, index) {
-        return const SizedBox(
-          height: 12,
-        );
+        return const SizedBox(height: 12);
       },
       itemBuilder: (context, index) {
         final item = _items[index];
-        return _buildMenuItem(
-          item: item,
-        );
+        return _buildMenuItem(item: item);
       },
     );
   }
 
-  Widget _buildMenuItem({
-    required Item item,
-  }) {
+  Widget _buildMenuItem({required Item item}) {
     return LongPressDraggable<Item>(
       data: item,
       dragAnchorStrategy: pointerDragAnchorStrategy,
@@ -398,22 +380,15 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
 
   Widget _buildPeopleRow() {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8,
-        vertical: 20,
-      ),
-      child: Row(
-        children: _people.map(_buildPersonWithDropZone).toList(),
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 20),
+      child: Row(children: _people.map(_buildPersonWithDropZone).toList()),
     );
   }
 
   Widget _buildPersonWithDropZone(Customer customer) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 6,
-        ),
+        padding: const EdgeInsets.symmetric(horizontal: 6),
         child: DragTarget<Item>(
           builder: (context, candidateItems, rejectedItems) {
             return CustomerCart(
@@ -423,10 +398,7 @@ class _ExampleDragAndDropState extends State<ExampleDragAndDrop>
             );
           },
           onAcceptWithDetails: (details) {
-            _itemDroppedOnCustomerCart(
-              item: details.data,
-              customer: customer,
-            );
+            _itemDroppedOnCustomerCart(item: details.data, customer: customer);
           },
         ),
       ),
@@ -457,10 +429,7 @@ class CustomerCart extends StatelessWidget {
         borderRadius: BorderRadius.circular(22),
         color: highlighted ? const Color(0xFFF64209) : Colors.white,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 12,
-            vertical: 24,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 24),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -478,10 +447,9 @@ class CustomerCart extends StatelessWidget {
               Text(
                 customer.name,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: textColor,
-                      fontWeight:
-                          hasItems ? FontWeight.normal : FontWeight.bold,
-                    ),
+                  color: textColor,
+                  fontWeight: hasItems ? FontWeight.normal : FontWeight.bold,
+                ),
               ),
               Visibility(
                 visible: hasItems,
@@ -494,22 +462,22 @@ class CustomerCart extends StatelessWidget {
                     Text(
                       customer.formattedTotalItemPrice,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: textColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 4),
                     Text(
                       '${customer.items.length} item${customer.items.length != 1 ? 's' : ''}',
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                            color: textColor,
-                            fontSize: 12,
-                          ),
+                        color: textColor,
+                        fontSize: 12,
+                      ),
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
@@ -553,10 +521,7 @@ class MenuListItem extends StatelessWidget {
                     curve: Curves.easeInOut,
                     height: isDepressed ? 115 : 120,
                     width: isDepressed ? 115 : 120,
-                    child: Image(
-                      image: photoProvider,
-                      fit: BoxFit.cover,
-                    ),
+                    child: Image(image: photoProvider, fit: BoxFit.cover),
                   ),
                 ),
               ),
@@ -568,17 +533,17 @@ class MenuListItem extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontSize: 18,
-                        ),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.titleMedium?.copyWith(fontSize: 18),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     price,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ],
               ),
@@ -612,10 +577,7 @@ class DraggingListItem extends StatelessWidget {
           width: 150,
           child: Opacity(
             opacity: 0.85,
-            child: Image(
-              image: photoProvider,
-              fit: BoxFit.cover,
-            ),
+            child: Image(image: photoProvider, fit: BoxFit.cover),
           ),
         ),
       ),
@@ -640,19 +602,18 @@ class Item {
 }
 
 class Customer {
-  Customer({
-    required this.name,
-    required this.imageProvider,
-    List<Item>? items,
-  }) : items = items ?? [];
+  Customer({required this.name, required this.imageProvider, List<Item>? items})
+    : items = items ?? [];
 
   final String name;
   final ImageProvider imageProvider;
   final List<Item> items;
 
   String get formattedTotalItemPrice {
-    final totalPriceCents =
-        items.fold<int>(0, (prev, item) => prev + item.totalPriceCents);
+    final totalPriceCents = items.fold<int>(
+      0,
+      (prev, item) => prev + item.totalPriceCents,
+    );
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }

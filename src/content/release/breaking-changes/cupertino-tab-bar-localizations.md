@@ -5,6 +5,8 @@ description: >
   CupertinoTabBar requires a Localizations parent.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Instances of `CupertinoTabBar` must have a
@@ -171,6 +173,6 @@ Relevant PR:
 [`DefaultCupertinoLocalizations`]: {{site.api}}/flutter/cupertino/DefaultCupertinoLocalizations-class.html
 [`Semantics`]: {{site.api}}/flutter/widgets/Semantics-class.html
 [`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
-[Internationalizing Flutter Apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter Apps]: /ui/internationalization
 [PR 55336: Adding tabSemanticsLabel to CupertinoLocalizations]: {{site.repo.flutter}}/pull/55336
 [PR 56582: Update Tab semantics in Cupertino to be the same as Material]: {{site.repo.flutter}}/pull/56582#issuecomment-625497951

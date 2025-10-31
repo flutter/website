@@ -3,16 +3,15 @@ description: A Flutter project to contain accessibility-related code excerpts.
 version: 1.0.0
 publish_to: none
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../example_utils
   flutter_test:
     sdk: flutter
 

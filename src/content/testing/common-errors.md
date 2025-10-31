@@ -65,8 +65,8 @@ The relevant error-causing widget was
     Row      lib/errors/renderflex_overflow_column.dart:23
 
 The overflowing RenderFlex has an orientation of Axis.horizontal.
-The edge of the RenderFlex that is overflowing has been marked in the rendering 
-with a yellow and black striped pattern. This is usually caused by the contents 
+The edge of the RenderFlex that is overflowing has been marked in the rendering
+with a yellow and black striped pattern. This is usually caused by the contents
 being too big for the RenderFlex.
 (Additional lines of this message omitted)
 ```
@@ -140,8 +140,8 @@ return const Row(
     Icon(Icons.message),
     Expanded(
       child: Column(
-          // code omitted
-          ),
+        // code omitted
+      ),
     ),
   ],
 );
@@ -165,7 +165,7 @@ The resources linked below provide further information about this error.
 
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
 [flexible-video]: {{site.yt.watch}}?v=CI7x0mAZiY0
-[medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
+[medium-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
 [Understanding constraints]: /ui/layout/constraints
 
 ## 'RenderBox was not laid out'
@@ -179,7 +179,7 @@ occurring earlier in the rendering pipeline.
 The message shown by the error looks like this:
 
 ```plaintext
-RenderBox was not laid out: 
+RenderBox was not laid out:
 RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
 
@@ -212,9 +212,9 @@ The message shown by the error looks like this:
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
 
-Viewports expand in the scrolling direction to fill their container. 
-In this case, a vertical viewport was given an unlimited amount of 
-vertical space in which to expand. This situation typically happens when a 
+Viewports expand in the scrolling direction to fill their container.
+In this case, a vertical viewport was given an unlimited amount of
+vertical space in which to expand. This situation typically happens when a
 scrollable widget is nested inside another scrollable widget.
 (Additional lines of this message omitted)
 ```
@@ -240,14 +240,8 @@ Widget build(BuildContext context) {
         const Text('Header'),
         ListView(
           children: const <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.subway),
-              title: Text('Subway'),
-            ),
+            ListTile(leading: Icon(Icons.map), title: Text('Map')),
+            ListTile(leading: Icon(Icons.subway), title: Text('Subway')),
           ],
         ),
       ],
@@ -274,14 +268,8 @@ Widget build(BuildContext context) {
         Expanded(
           child: ListView(
             children: const <Widget>[
-              ListTile(
-                leading: Icon(Icons.map),
-                title: Text('Map'),
-              ),
-              ListTile(
-                leading: Icon(Icons.subway),
-                title: Text('Subway'),
-              ),
+              ListTile(leading: Icon(Icons.map), title: Text('Map')),
+              ListTile(leading: Icon(Icons.subway), title: Text('Subway')),
             ],
           ),
         ),
@@ -311,11 +299,11 @@ The message shown by the error looks like this:
 
 ```plaintext
 The following assertion was thrown during performLayout():
-An InputDecorator, which is typically created by a TextField, cannot have an 
+An InputDecorator, which is typically created by a TextField, cannot have an
 unbounded width.
-This happens when the parent widget does not provide a finite width constraint. 
-For example, if the InputDecorator is contained by a `Row`, then its width must 
-be constrained. An `Expanded` widget or a SizedBox can be used to constrain the 
+This happens when the parent widget does not provide a finite width constraint.
+For example, if the InputDecorator is contained by a `Row`, then its width must
+be constrained. An `Expanded` widget or a SizedBox can be used to constrain the
 width of the InputDecorator or the TextField that contains it.
 (Additional lines of this message omitted)
 ```
@@ -331,14 +319,8 @@ no width constraint.
 Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Unbounded Width of the TextField'),
-      ),
-      body: const Row(
-        children: [
-          TextField(),
-        ],
-      ),
+      appBar: AppBar(title: const Text('Unbounded Width of the TextField')),
+      body: const Row(children: [TextField()]),
     ),
   );
 }
@@ -356,14 +338,8 @@ The following example demonstrates using an `Expanded` widget:
 Widget build(BuildContext context) {
   return MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: const Text('Unbounded Width of the TextField'),
-      ),
-      body: Row(
-        children: [
-          Expanded(child: TextFormField()),
-        ],
-      ),
+      appBar: AppBar(title: const Text('Unbounded Width of the TextField')),
+      body: Row(children: [Expanded(child: TextFormField())]),
     ),
   );
 }
@@ -381,7 +357,7 @@ The message shown by the error looks like this:
 The following assertion was thrown while looking for parent data:
 Incorrect use of ParentDataWidget.
 (Some lines of this message omitted)
-Usually, this indicates that at least one of the offending ParentDataWidgets 
+Usually, this indicates that at least one of the offending ParentDataWidgets
 listed above is not placed directly inside a compatible ancestor widget.
 ```
 
@@ -422,12 +398,12 @@ When the error occurs,
 the following message is displayed in the console:
 
 ```plaintext
-The following assertion was thrown building DialogPage(dirty, dependencies: 
-[_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], 
+The following assertion was thrown building DialogPage(dirty, dependencies:
+[_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]],
 state: _DialogPageState#f121e):
 setState() or markNeedsBuild() called during build.
 
-This Overlay widget cannot be marked as needing to build because the framework 
+This Overlay widget cannot be marked as needing to build because the framework
 is already in the process of building widgets.
 (Additional lines of this message omitted)
 ```
@@ -450,19 +426,14 @@ The following snippet seems to be a common culprit of this error:
 Widget build(BuildContext context) {
   // Don't do this.
   showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          title: Text('Alert Dialog'),
-        );
-      });
+    context: context,
+    builder: (context) {
+      return const AlertDialog(title: Text('Alert Dialog'));
+    },
+  );
 
   return const Center(
-    child: Column(
-      children: <Widget>[
-        Text('Show Material Dialog'),
-      ],
-    ),
+    child: Column(children: <Widget>[Text('Show Material Dialog')]),
   );
 }
 ```
@@ -492,9 +463,7 @@ class FirstScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Screen'),
-      ),
+      appBar: AppBar(title: const Text('First Screen')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Launch screen'),
@@ -531,7 +500,7 @@ For more information and to learn how to fix,
 check out the following video on
 [`PrimaryScrollController`][controller-video]:
 
-{% ytEmbed '33_0ABjFJUU', 'PrimaryScrollController | Decoding Flutter', true %}
+<YouTubeEmbed id="33_0ABjFJUU" title="PrimaryScrollController | Decoding Flutter"></YouTubeEmbed>
 
 [controller-video]: {{site.api}}/flutter/widgets/PrimaryScrollController-class.html
 

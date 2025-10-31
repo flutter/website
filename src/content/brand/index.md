@@ -2,7 +2,7 @@
 title: Flutter Brand Guidelines
 description: >
   The guidelines governing the usage of the Flutter trademarks and assets.
-show_breadcrumbs: false
+showBreadcrumbs: false
 ---
 
 The "Flutter" name and logo are trademarks owned by Google.
@@ -123,4 +123,3 @@ below are specific exceptions to the rules described above:
    of a community event (e.g. conference), but please make sure to include the following disclaimer
    on the event website in a prominent and easy-to-see spot:  "Flutter and the related logo are trademarks of Google LLC.
    [Title of event] is not affiliated with or otherwise sponsored by Google LLC."
-

@@ -3,6 +3,8 @@ title: Page transitions replaced by ZoomPageTransitionsBuilder
 description: Using the latest page transition instead of the old one.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 In order to ensure that libraries follow the latest OEM behavior,
@@ -30,7 +32,7 @@ When the current `TargetPlatform` doesn't have
 `PageTransitionsBuilder` defined in the `ThemeData.pageTransitionsTheme`,
 `ZoomPageTransitionsBuilder` is used as the default.
 
-[Style guide for Flutter repo]: {{site.repo.flutter}}/blob/master/docs/contributing/Style-guide-for-Flutter-repo.md
+[Style guide for Flutter repo]: {{site.repo.flutter}}/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md
 ## Description of change
 
 `PageTransitionsBuilder`s defined in

@@ -1,14 +1,15 @@
 ---
 title: Flutter 3.0.0 release notes
-short-title: 3.0.0 release notes
+shortTitle: 3.0.0 release notes
 description: Release notes for Flutter 3.0.0.
+skipTemplateRendering: true
 ---
 
 This page has release notes for 3.0.0.
 For information about subsequent bug-fix releases,
 see our [CHANGELOG][].
 
-[CHANGELOG]: {{site.repo.flutter}}/blob/master/CHANGELOG.md
+[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
 
 ## If you see warnings about bindings
 

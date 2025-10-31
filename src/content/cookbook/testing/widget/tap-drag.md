@@ -5,8 +5,6 @@ description: How to test widgets for user interaction.
 
 <?code-excerpt path-base="cookbook/testing/widget/tap_drag/"?>
 
-{% assign api = site.api | append: '/flutter' -%}
-
 Many widgets not only display information, but also respond
 to user interaction. This includes buttons that can be tapped,
 and [`TextField`][] for entering text.
@@ -72,14 +70,10 @@ class _TodoListState extends State<TodoList> {
     return MaterialApp(
       title: _appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(_appTitle),
-        ),
+        appBar: AppBar(title: const Text(_appTitle)),
         body: Column(
           children: [
-            TextField(
-              controller: controller,
-            ),
+            TextField(controller: controller),
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
@@ -251,14 +245,10 @@ class _TodoListState extends State<TodoList> {
     return MaterialApp(
       title: _appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(_appTitle),
-        ),
+        appBar: AppBar(title: const Text(_appTitle)),
         body: Column(
           children: [
-            TextField(
-              controller: controller,
-            ),
+            TextField(controller: controller),
             Expanded(
               child: ListView.builder(
                 itemCount: todos.length,
@@ -293,15 +283,14 @@ class _TodoListState extends State<TodoList> {
 
 [Create a basic list]: /cookbook/lists/basic-list
 [Create and style a text field]: /cookbook/forms/text-input
-[`drag()`]: {{api}}/flutter_test/WidgetController/drag.html
-[`enterText()`]: {{api}}/flutter_test/WidgetTester/enterText.html
+[`drag()`]: {{site.api}}/flutter/flutter_test/WidgetController/drag.html
+[`enterText()`]: {{site.api}}/flutter/flutter_test/WidgetTester/enterText.html
 [Finding widgets in a widget test]: /cookbook/testing/widget/finders
 [Handle taps]: /cookbook/gestures/handling-taps
 [Implement swipe to dismiss]: /cookbook/gestures/dismissible
 [Introduction to widget testing]: /cookbook/testing/widget/introduction
-[`pump()`]: {{api}}/flutter_test/WidgetTester/pump.html
-[`pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
-[`tap()`]: {{api}}/flutter_test/WidgetController/tap.html
-[`TextField`]: {{api}}/material/TextField-class.html
-[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html
-
+[`pump()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pump.html
+[`pumpAndSettle()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pumpAndSettle.html
+[`tap()`]: {{site.api}}/flutter/flutter_test/WidgetController/tap.html
+[`TextField`]: {{site.api}}/flutter/material/TextField-class.html
+[`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html

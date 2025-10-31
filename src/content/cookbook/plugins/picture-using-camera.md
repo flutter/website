@@ -107,10 +107,7 @@ and display a preview of the camera's feed.
 ```dart
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
-  const TakePictureScreen({
-    super.key,
-    required this.camera,
-  });
+  const TakePictureScreen({super.key, required this.camera});
 
   final CameraDescription camera;
 
@@ -283,10 +280,7 @@ Future<void> main() async {
 
 // A screen that allows users to take a picture using a given camera.
 class TakePictureScreen extends StatefulWidget {
-  const TakePictureScreen({
-    super.key,
-    required this.camera,
-  });
+  const TakePictureScreen({super.key, required this.camera});
 
   final CameraDescription camera;
 
@@ -357,7 +351,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
 
             // If the picture was taken, display it on a new screen.
             await Navigator.of(context).push(
-              MaterialPageRoute(
+              MaterialPageRoute<void>(
                 builder: (context) => DisplayPictureScreen(
                   // Pass the automatically generated path to
                   // the DisplayPictureScreen widget.

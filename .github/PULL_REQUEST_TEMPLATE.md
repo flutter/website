@@ -6,7 +6,8 @@ _PRs or commits this PR depends on (if any):_
 
 ## Presubmit checklist
 
-- [ ] This PR is marked as draft with an explanation if not meant to land until a future stable release.
-- [ ] This PR doesn’t contain automatically generated corrections (Grammarly or similar).
-- [ ] This PR follows the [Google Developer Documentation Style Guidelines](https://developers.google.com/style) — for example, it doesn’t use _i.e._ or _e.g._, and it avoids _I_ and _we_ (first person).
-- [ ] This PR uses [semantic line breaks](https://github.com/dart-lang/site-shared/blob/main/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks) of 80 characters or fewer.
+- [ ] If you are unwilling, or unable, to sign the CLA, even for a _tiny_, one-word PR, please file an issue instead of a PR.
+- [ ] If this PR is not meant to land until a future stable release, mark it as draft with an explanation.
+- [ ] This PR follows the [Google Developer Documentation Style Guidelines](https://developers.google.com/style)—for example, it doesn't use _i.e._ or _e.g._, and it avoids _I_ and _we_ (first-person pronouns).
+- [ ] This PR uses [semantic line breaks](https://github.com/dart-lang/site-shared/blob/main/doc/writing-for-dart-and-flutter-websites.md#semantic-line-breaks)
+  of 80 characters or fewer.

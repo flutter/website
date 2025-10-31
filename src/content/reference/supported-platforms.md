@@ -1,10 +1,11 @@
 ---
 title: Supported deployment platforms
-short-title: Supported platforms
+shortTitle: Supported platforms
 description: The platforms that Flutter supports by platform version.
+showBreadcrumbs: false
 ---
 
-As of Flutter {{site.appnow.flutter}},
+As of Flutter {{site.currentFlutterVersion}},
 Flutter supports deploying apps on the following combinations of
 hardware architectures and operating system versions.
 These combinations are called _platforms_.

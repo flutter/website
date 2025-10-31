@@ -5,6 +5,8 @@ description: >
   automapped to the new glyphs. Consider double-checking visually.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The existing cupertino_icons [0.1.3 icons][]

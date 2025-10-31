@@ -17,8 +17,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -30,10 +30,7 @@ class CircleListItem extends StatelessWidget {
 
 // #docregion CardListItem
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -43,11 +40,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }
@@ -64,8 +57,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -112,16 +105,8 @@ class CardListItem extends StatelessWidget {
 
 // #docregion shimmerGradient
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
@@ -167,11 +152,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -189,9 +170,7 @@ class ShimmerState extends State<Shimmer> {
 // #enddocregion Shimmer
 
 class ExampleUiLoadingAnimation extends StatefulWidget {
-  const ExampleUiLoadingAnimation({
-    super.key,
-  });
+  const ExampleUiLoadingAnimation({super.key});
 
   @override
   State<ExampleUiLoadingAnimation> createState() =>
@@ -206,10 +185,11 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       body: Shimmer(
         linearGradient: _shimmerGradient,
         child: ListView(
-            // ListView Contents
-            ),
+          // ListView Contents
+        ),
       ),
     );
   }
 }
+
 // #enddocregion ExampleUiAnimationState

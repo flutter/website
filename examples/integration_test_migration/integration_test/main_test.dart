@@ -3,20 +3,22 @@ import 'package:integration_test_migration/main.dart';
 
 void main() {
   // #docregion finds-one
-  testWidgets('do not select any item, verify please select text is displayed',
-      (tester) async {
-    // load the PlantsApp widget
-    await tester.pumpWidget(const PlantsApp());
+  testWidgets(
+    'do not select any item, verify please select text is displayed',
+    (tester) async {
+      // load the PlantsApp widget
+      await tester.pumpWidget(const PlantsApp());
 
-    // wait for data to load
-    await tester.pumpAndSettle();
+      // wait for data to load
+      await tester.pumpAndSettle();
 
-    // Find widget with 'please select'
-    final finder = find.text('Please select a plant from the list.');
+      // Find widget with 'please select'
+      final finder = find.text('Please select a plant from the list.');
 
-    // Check if widget is displayed
-    expect(finder, findsOneWidget);
-  });
+      // Check if widget is displayed
+      expect(finder, findsOneWidget);
+    },
+  );
   // #enddocregion finds-one
 
   // #docregion finds-nothing
@@ -45,8 +47,9 @@ void main() {
   // #enddocregion finds-nothing
 
   // #docregion scroll
-  testWidgets('scroll, tap on the last item (Zedoary), verify selected',
-      (tester) async {
+  testWidgets('scroll, tap on the last item (Zedoary), verify selected', (
+    tester,
+  ) async {
     await tester.pumpWidget(const PlantsApp());
 
     // wait for data to load
@@ -57,10 +60,7 @@ void main() {
 
     // finds Scrollable widget and scrolls until item is visible
     // a 100,000 pixels is enough to reach the bottom of the list
-    await tester.scrollUntilVisible(
-      item,
-      100000,
-    );
+    await tester.scrollUntilVisible(item, 100000);
 
     // assert item is found
     expect(item, findsOneWidget);

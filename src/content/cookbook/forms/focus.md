@@ -1,9 +1,6 @@
 ---
 title: Focus and text fields
 description: How focus works with text fields.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/focus/"?>
@@ -113,9 +110,7 @@ pass it to a specific `TextField` in the `build()` method.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return TextField(
-    focusNode: myFocusNode,
-  );
+  return TextField(focusNode: myFocusNode);
 }
 ```
 
@@ -147,10 +142,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Text Field Focus',
-      home: MyCustomForm(),
-    );
+    return const MaterialApp(title: 'Text Field Focus', home: MyCustomForm());
   }
 }
 
@@ -187,22 +179,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Text Field Focus'),
-      ),
+      appBar: AppBar(title: const Text('Text Field Focus')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
             // The first text field is focused on as soon as the app starts.
-            const TextField(
-              autofocus: true,
-            ),
+            const TextField(autofocus: true),
             // The second text field is focused on when a user taps the
             // FloatingActionButton.
-            TextField(
-              focusNode: myFocusNode,
-            ),
+            TextField(focusNode: myFocusNode),
           ],
         ),
       ),
@@ -219,13 +205,13 @@ class _MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/focus.gif" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/focus.webp" alt="Text Field Focus Demo" class="site-mobile-screenshot" />
 </noscript>
 
 
 [fix has landed]: {{site.repo.flutter}}/pull/50372
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
-[Forms]: /cookbook#forms
+[Forms]: /cookbook/forms
 [flutter/flutter@bf551a3]: {{site.repo.flutter}}/commit/bf551a31fe7ef45c854a219686b6837400bfd94c
 [Issue 52221]: {{site.repo.flutter}}/issues/52221
 [`requestFocus()`]: {{site.api}}/flutter/widgets/FocusNode/requestFocus.html

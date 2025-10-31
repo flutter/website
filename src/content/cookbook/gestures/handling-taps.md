@@ -1,9 +1,6 @@
 ---
 title: Handle taps
 description: How to handle tapping and dragging.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/handling_taps/"?>
@@ -17,14 +14,14 @@ to fundamental actions, such as tapping and dragging.
 To learn more, watch this short Widget of the Week video on
 the `GestureDetector` widget:
 
-{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector | Flutter widget of the week' %}
+<YouTubeEmbed id="WhVXkCFPmK4" title="GestureDetector | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 This recipe shows how to make a custom button that shows
 a snackbar when tapped with the following steps:
 
   1. Create the button.
-  2. Wrap it in a `GestureDetector` that an `onTap()` callback.
+  2. Wrap it in a `GestureDetector` and provide an `onTap()` callback.
 
 <?code-excerpt "lib/main.dart (GestureDetector)" replace="/return //g;/^\);$/)/g"?>
 ```dart
@@ -87,12 +84,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: MyButton(),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: const Center(child: MyButton()),
     );
   }
 }
@@ -125,7 +118,7 @@ class MyButton extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/handling-taps.gif" alt="Handle taps demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/handling-taps.webp" alt="Handle taps demo" class="site-mobile-screenshot" />
 </noscript>
 
 [Add Material touch ripples]: /cookbook/gestures/ripples

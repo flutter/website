@@ -18,14 +18,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Isolates demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Isolates demo'),
-        ),
-        body: Center(
+        appBar: AppBar(title: const Text('Isolates demo')),
+        body: const Center(
           child: ElevatedButton(
-            onPressed: () {
-              getPhotos();
-            },
+            onPressed: getPhotos,
             child: Text('Fetch photos'),
           ),
         ),

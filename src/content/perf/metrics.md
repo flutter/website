@@ -5,7 +5,7 @@ description: Flutter metrics, and which tools and APIs are used to get them
 
 * Startup time to the first frame
   * Check the time when
-    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] 
+    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized]
     is true.
   * See the
     [perf dashboard](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros).
@@ -17,13 +17,13 @@ description: Flutter metrics, and which tools and APIs are used to get them
 * Statistics of frame `buildDuration` (`*_frame_build_time_millis`)
   * We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  * See, for example, [metrics][transition_build] for the 
+  * See, for example, [metrics][transition_build] for the
     `flutter_gallery__transition_perf` test.
 
 * Statistics of frame `rasterDuration` (`*_frame_build_time_millis`)
   * We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  * See, for example, [metrics][transition_raster] for the 
+  * See, for example, [metrics][transition_raster] for the
     `flutter_gallery__transition_perf` test.
 
 * CPU/GPU usage (a good approximation for energy use)
@@ -39,8 +39,8 @@ description: Flutter metrics, and which tools and APIs are used to get them
   * For info on how to measure the size more accurately,
     see the [app size](/perf/app-size) page.
 
-For a complete list of performance metrics Flutter measures per commit, visit 
-the following sites, click **Query**, and filter the **test** and 
+For a complete list of performance metrics Flutter measures per commit, visit
+the following sites, click **Query**, and filter the **test** and
 **sub_result** fields:
 
   * [https://flutter-flutter-perf.skia.org/e/](https://flutter-flutter-perf.skia.org/e/)
@@ -52,20 +52,20 @@ the following sites, click **Query**, and filter the **test** and
 
 [transition_raster]: https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3D90th_percentile_frame_rasterizer_time_millis%26sub_result%3D99th_percentile_frame_rasterizer_time_millis%26sub_result%3Daverage_frame_rasterizer_time_millis%26sub_result%3Dworst_frame_rasterizer_time_millis%26test%3Dflutter_gallery__transition_perf
 
-[profiling_summarizer]: {{site.repo.flutter}}/blob/master/packages/flutter_driver/lib/src/driver/profiling_summarizer.dart
+[profiling_summarizer]: {{site.repo.flutter}}/blob/main/packages/flutter_driver/lib/src/driver/profiling_summarizer.dart
 
 [cpu_gpu]: https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3Daverage_cpu_usage%26sub_result%3Daverage_gpu_usage%26test%3Dsimple_animation_perf_ios
 
-[basic_material_app_android]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/basic_material_app_android__compile.dart
+[basic_material_app_android]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/basic_material_app_android__compile.dart
 
-[basic_material_app_ios]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/basic_material_app_ios__compile.dart
+[basic_material_app_ios]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/basic_material_app_ios__compile.dart
 
-[hello_world_android]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/hello_world_android__compile.dart
+[hello_world_android]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/hello_world_android__compile.dart
 
-[hello_world_ios]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/hello_world_ios__compile.dart
+[hello_world_ios]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/hello_world_ios__compile.dart
 
-[flutter_gallery_android]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_android__compile.dart
+[flutter_gallery_android]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/flutter_gallery_android__compile.dart
 
-[flutter_gallery_ios]: {{site.repo.flutter}}/blob/master/dev/devicelab/bin/tasks/flutter_gallery_ios__compile.dart
+[flutter_gallery_ios]: {{site.repo.flutter}}/blob/main/dev/devicelab/bin/tasks/flutter_gallery_ios__compile.dart
 
 [size_perf]: https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3Drelease_size_bytes%26test%3Dbasic_material_app_android__compile%26test%3Dbasic_material_app_ios__compile%26test%3Dhello_world_android__compile%26test%3Dhello_world_ios__compile%26test%3Dflutter_gallery_ios__compile%26test%3Dflutter_gallery_android__compile

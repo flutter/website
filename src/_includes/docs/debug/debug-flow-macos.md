@@ -11,14 +11,14 @@ flutter build macos --debug
 Building macOS application...
 ```
 
-{% tabs "darwin-debug-flow" %}
-{% tab "Start from VS Code" %}
+<Tabs key="darwin-debug-flow">
+<Tab name="Start from VS Code">
 
 #### Start debugging with VS Code first {:#vscode-macos}
 
 ##### Start the debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% render "docs/debug/debug-flow-vscode-as-start.md" %}
 
 ##### Attach to the Flutter process in Xcode
 
@@ -30,8 +30,8 @@ Building macOS application...
    **Runner** should be at the top of the **Attach to Process** menu
    under the **Likely Targets** heading.
 
-{% endtab %}
-{% tab "Start from Xcode" %}
+</Tab>
+<Tab name="Start from XCode">
 
 #### Start debugging with Xcode first {:#xcode-macos}
 
@@ -82,5 +82,5 @@ Building macOS application...
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>

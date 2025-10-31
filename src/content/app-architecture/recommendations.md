@@ -1,11 +1,14 @@
 ---
 title: Architecture recommendations and resources
-short-title: Architecture recommendations
+shortTitle: Architecture recommendations
 description: >
   Recommendations for building scalable Flutter applications.
 prev:
   title: Architecture case study
   path: /app-architecture/case-study
+next:
+  title: Design patterns
+  path: /app-architecture/design-patterns
 ---
 
 This page presents architecture best practices, why they matter, and
@@ -23,45 +26,59 @@ which reflects how strongly the Flutter team recommends it.
   fundamentally clash with your current approach.
 * **Recommend**: This practice will likely improve your app.
 * **Conditional**: This practice can improve your app in certain circumstances.
-<br /><br />
 
-{% for section in architecture_recommendations %}
-<h2>{{section.category}}</h2>
-<p>{{section.description}}</p>
-<table class="table table-striped" style="border-bottom:1px #DADCE0 solid">
-    <tr class="tr-main-head">
-      <th style="width: 30%">Recommendation</th>
-      <th style="width: 70%">Description</th>
-    </tr>
-    {% for rec in section.recommendations %}
-    <tr>
-      <td>
-        <p>{{rec.recommendation}}</p>
-        {% if rec.confidence == "strong" %}
-            <div class="rrec-pill success">Strongly recommend</div>
-        {% elsif rec.confidence == "recommend" %}
-            <div class="rrec-pill info">Recommend</div>
-        {% else %}
-            <div class="rrec-pill">Conditional</div>
-        {% endif %}
-      </td>
-      <td>
-        {{rec.description}}
-        <br />
-        {{rec.confidence-description}}</td>
-    </tr>    {% endfor %}
+{% for section in architectureRecommendations %}
+## {{section.category}}
+
+{{section.description}}
+
+{% if section.recommendations.size > 0 %}
+
+<table class="table table-striped" style="border-bottom:1px #DADCE0 solid;">
+<thead>
+  <tr>
+    <th style="width: 30%;">Recommendation</th>
+    <th style="width: 70%;">Description</th>
+  </tr>
+</thead>
+<tbody>
+{% for rec in section.recommendations %}
+<tr>
+<td>
+
+  {{rec.recommendation}}
+
+{% if rec.confidence == "strong" %}
+  <div class="rrec-pill success">Strongly recommend</div>
+{% elsif rec.confidence == "recommend" %}
+  <div class="rrec-pill info">Recommend</div>
+{% else %}
+  <div class="rrec-pill">Conditional</div>
+{% endif %}
+
+</td>
+<td>
+
+  {{rec.description}}
+  {{rec.confidence-description}}
+
+</td>
+</tr>
+{% endfor %}
+</tbody>
 </table>
-<br />
+
+{% endif %}
 {% endfor %}
 
-## Recommended resources
+<a id="recommended-resources" aria-hidden="true"></a>
+
+## Recommended resources {:#resources}
 
 * Code and templates
   * [Compass app source code][] -
     Source code of a full-featured, robust Flutter application that
     implements many of these recommendations.
-  * [Flutter skeleton][] -
-    A Flutter application template that includes many of these recommendations.
   * [very_good_cli][] -
     A Flutter application template made by
     the Flutter experts Very Good Ventures.
@@ -92,7 +109,6 @@ which reflects how strongly the Flutter team recommends it.
 [Flutter Navigator API]: https://docs.flutter.dev/ui/navigation
 [pub.dev]: https://pub.dev
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
-[Flutter skeleton]: https://github.com/flutter/flutter/blob/master/packages/flutter_tools/templates/skeleton/README.md.tmpl
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
 [State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management

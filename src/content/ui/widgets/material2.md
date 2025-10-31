@@ -1,8 +1,10 @@
 ---
 title: Material 2 component widgets
-short-title: Material 2
-description: > 
+shortTitle: Material 2
+description: >
   A catalog of Flutter's widgets implementing the Material 2 design guidelines.
+widgetCategory: Material 2 components
+layout: widget-catalog-page
 ---
 
 Flutter provides a variety of widgets
@@ -24,5 +26,3 @@ Also check out the [Material 3 widget catalog][].
 [Material 2]: https://m2.material.io/design
 [Migrate to Material 3]: /release/breaking-changes/material-3-migration
 [Material 3 widget catalog]: /ui/widgets/material
-
-{% render docs/catalog-page.md, categoryName:"Material 2 components", catalog:catalog %}

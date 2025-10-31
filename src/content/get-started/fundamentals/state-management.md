@@ -30,7 +30,7 @@ For other introductions to state management, check out these resources:
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
 
-<i class="material-symbols" aria-hidden="true">flutter_dash</i> Tutorial:
+<i class="material-symbols" aria-hidden="true" translate="no">flutter_dash</i> Tutorial:
 [State management][].
 This shows how to use `ChangeNotifer` with the [provider][] package.
 
@@ -354,7 +354,7 @@ Column(
   children: [
     ValueListenableBuilder(
       valueListenable: counterNotifier,
-      builder: (context, child, value) {
+      builder: (context, value, child) {
         return Text('counter: $value');
       },
     ),
@@ -474,15 +474,16 @@ class CounterViewModel extends ChangeNotifier {
   }
 
   Future<void> increment() async {
-    var count = this.count;
-    if (count == null) {
+    final currentCount = count;
+    if (currentCount == null) {
       throw('Not initialized');
     }
     try {
-      await model.updateCountOnServer(count + 1);
-      count++;
+      final incrementedCount = currentCount + 1;
+      await model.updateCountOnServer(incrementedCount);
+      count = incrementedCount;
     } catch(e) {
-      errorMessage = 'Count not update count';
+      errorMessage = 'Could not update count';
     }
     notifyListeners();
   }
@@ -552,7 +553,7 @@ If you would like to learn more, check out the following resources:
 [List of state management approaches]: /data-and-backend/state-mgmt/options
 [Pragmatic state management]: {{site.youtube-site}}/watch?v=d_m5csmrf7I
 [Provider counter]: https://github.com/flutter/samples/tree/main/provider_counter
-[Provider shopper]: https://flutter.github.io/samples/provider_shopper.html
+[Provider shopper]: https://github.com/flutter/samples/tree/main/provider_shopper
 [State management]: /data-and-backend/state-mgmt/intro
 [StatefulWidget]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html

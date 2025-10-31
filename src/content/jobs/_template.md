@@ -1,6 +1,6 @@
 ---
 title: <Job Title>
-toc: false
+showToc: false
 ---
 
 {% comment %}
@@ -14,11 +14,11 @@ toc: false
 
 ## About the team
 
-<TODO: Area Description>
+<TODO: Area description>
 
 ## About the position
 
-<TODO: Role Description>
+<TODO: Role description>
 
 ## Our values
 
@@ -39,10 +39,10 @@ and are [committed to furthering our culture of inclusion](https://flutter.dev/c
 In addition to groups like the [Flutteristas](https://flutteristas.org/),
 [Employee Resource Groups (ERGs)](https://diversity.google/commitments/)
 are employee-initiated networks for supporting underrepresented employees
-and their allies with shared values of creating belonging 
+and their allies with shared values of creating belonging
 across their communities and Google.
 
-### Work-Life Balance
+### Work-life balance
 
 Our team also puts a high value on work-life balance.
 Striking a healthy balance between your personal and professional life
@@ -63,11 +63,11 @@ well-balanced life—both in and outside of work.
 
 ### Minimum qualifications
 
-<TODO: Minimum Qualifications>
+<TODO: Minimum qualifications>
 
 ### Preferred qualifications
 
-<TODO: Preferred Qualifications>
+<TODO: Preferred qualifications>
 
 ## To apply
 

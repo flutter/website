@@ -21,10 +21,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxC(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxC(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -32,11 +29,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  const TapboxC({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxC({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -85,15 +78,14 @@ class _TapboxCState extends State<TapboxC> {
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
-              ? Border.all(
-                  color: Colors.teal[700]!,
-                  width: 10,
-                )
+              ? Border.all(color: Colors.teal[700]!, width: 10)
               : null,
         ),
         child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32, color: Colors.white)),
+          child: Text(
+            widget.active ? 'Active' : 'Inactive',
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
         ),
       ),
     );

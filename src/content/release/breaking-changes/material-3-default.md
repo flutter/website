@@ -4,6 +4,8 @@ description: >-
    The ThemeData.useMaterial3 flag is now set to true by default.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The Material library has been updated to match
@@ -87,11 +89,10 @@ Relevant PRs:
 * [Updated `ThemeData.useMaterial3` API doc, default is true][]
 
 
-[Material 3 gallery]: https://flutter.github.io/samples/web/material_3_demo/
+[Material 3 gallery]: https://github.com/flutter/samples/tree/main/material_3_demo
 [Material 3 umbrella issue]: {{site.repo.flutter}}/issues/91605
 [Material Design for Flutter]: /ui/design/material
 [`ThemeData.useMaterial3`]: {{site.api}}/flutter/material/ThemeData/useMaterial3.html
 [Add support for M3 motion]: {{site.repo.flutter}}/issues/129942
 [Change the default for `ThemeData.useMaterial3` to true]: {{site.repo.flutter}}/pull/129724
 [Updated `ThemeData.useMaterial3` API doc, default is true]: {{site.repo.flutter}}/pull/130764
-

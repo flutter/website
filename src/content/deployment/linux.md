@@ -1,7 +1,7 @@
 ---
 title: Build and release a Linux app to the Snap Store
 description: How to prepare for and release a Linux app to the Snap store.
-short-title: Linux
+shortTitle: Linux
 ---
 
 During a typical development cycle,
@@ -11,7 +11,8 @@ options in your IDE. By default,
 Flutter builds a _debug_ version of your app.
 
 When you're ready to prepare a _release_ version of your app,
-for example to [publish to the Snap Store][snap],
+for example to [publish to the Snap Store][snap] or an
+[alternative channel](#additional-deployment-resources),
 this page can help.
 
 ## Prerequisites
@@ -43,8 +44,9 @@ To install LXD, use the following command:
 $ sudo snap install lxd
 ```
 
-LXD is required during the snap build process. Once installed, LXD needs to be
-configured for use. The default answers are suitable for most use cases.
+LXD is required during the snap build process.
+Once installed, LXD needs to be configured for use.
+The default answers are suitable for most use cases.
 
 ```console
 $ sudo lxd init
@@ -112,7 +114,7 @@ slots:
     interface: dbus
     bus: session
     name: org.bar.super_cool_app # adjust accordingly to your app name and
-    
+
 apps:
   super-cool-app:
     command: super_cool_app
@@ -149,7 +151,7 @@ This section defines how the snap is built.
 
 ```yaml
 confinement: strict
-base: core18
+base: core22
 grade: stable
 ```
 
@@ -174,7 +176,7 @@ grade: stable
 
 This section defines the application(s) that exist inside the snap.
 There can be one or more applications per snap. This example
-has a single application&mdash;super_cool_app. 
+has a single application&mdash;super_cool_app.
 
 ```yaml
 apps:
@@ -204,34 +206,34 @@ apps:
   access to the network.
 
 **DBus interface**
-: The [DBus interface][] provides a way for snaps to 
-  communicate over DBus. The snap providing the DBus 
-  service declares a slot with the well-known DBus name 
-  and which bus it uses. Snaps wanting to communicate 
-  with the providing snap's service declare a plug for 
-  the providing snap. Note that a snap declaration is 
-  needed for your snap to be delivered via the snap store 
-  and claim this well-known DBus name (simply upload the 
-  snap to the store and request a manual review and 
+: The [DBus interface][] provides a way for snaps to
+  communicate over DBus. The snap providing the DBus
+  service declares a slot with the well-known DBus name
+  and which bus it uses. Snaps wanting to communicate
+  with the providing snap's service declare a plug for
+  the providing snap. Note that a snap declaration is
+  needed for your snap to be delivered via the snap store
+  and claim this well-known DBus name (simply upload the
+  snap to the store and request a manual review and
   a reviewer will take a look).
 
-  When a providing snap is installed, snapd will 
-  generate security policy that will allow it to 
-  listen on the well-known DBus name on the specified 
-  bus. If the system bus is specified, snapd will also 
-  generate DBus bus policy that allows 'root' to own 
-  the name and any user to communicate with the 
-  service. Non-snap processes are allowed to 
-  communicate with the providing snap following 
-  traditional permissions checks. Other (consuming) 
-  snaps might only communicate with the providing 
+  When a providing snap is installed, snapd will
+  generate security policy that will allow it to
+  listen on the well-known DBus name on the specified
+  bus. If the system bus is specified, snapd will also
+  generate DBus bus policy that allows 'root' to own
+  the name and any user to communicate with the
+  service. Non-snap processes are allowed to
+  communicate with the providing snap following
+  traditional permissions checks. Other (consuming)
+  snaps might only communicate with the providing
   snap by connecting the snaps' interface.
-  
+
 ```plaintext
 dbus-super-cool-app: # adjust accordingly to your app name
   interface: dbus
   bus: session
-  name: dev.site.super_cool_app 
+  name: dev.site.super_cool_app
 ```
 
 ### Parts
@@ -265,16 +267,16 @@ parts:
 ## Desktop file and icon
 
 
-Desktop entry files are used to add an application 
-to the desktop menu. These files specify the name and 
+Desktop entry files are used to add an application
+to the desktop menu. These files specify the name and
 icon of your application, the categories it belongs to,
-related search keywords and more. These files have the 
-extension .desktop and follow the XDG Desktop Entry 
+related search keywords and more. These files have the
+extension .desktop and follow the XDG Desktop Entry
 Specification version 1.1.
-  
+
 ### Flutter super-cool-app.desktop example
 
-Place the .desktop file in your Flutter project 
+Place the .desktop file in your Flutter project
 under `<project root>/snap/gui/super-cool-app.desktop`.
 
 **Notice**: icon and .desktop file name must be the same as your app name in
@@ -286,14 +288,14 @@ For example:
 [Desktop Entry]
 Name=Super Cool App
 Comment=Super Cool App that does everything
-Exec=super-cool-app 
+Exec=super-cool-app
 Icon=${SNAP}/meta/gui/super-cool-app.png # Replace name with your app name.
 Terminal=false
 Type=Application
 Categories=Education; # Adjust accordingly your snap category.
 ```
 
-Place your icon with .png extension in your Flutter 
+Place your icon with .png extension in your Flutter
 project under `<project root>/snap/gui/super-cool-app.png`.
 
 
@@ -307,7 +309,7 @@ To use the Multipass VM backend:
 
 ```console
 $ snapcraft
-``` 
+```
 
 To use the LXD container backend:
 
@@ -374,7 +376,7 @@ depending on how the snap was built, and if there are
 any specific security concerns. If the checks pass
 without errors, the snap becomes available in the store.
 
-## Additional resources
+## Additional snapcraft resources
 
 You can learn more from the following links on the
 [snapcraft.io][] site:
@@ -387,10 +389,24 @@ You can learn more from the following links on the
 * [Snapcraft extensions][]
 * [Supported plugins][]
 
+## Additional deployment resources
+
+### [fastforge][]
+
+> An all-in-one Flutter application packaging and distribution tool,
+providing you with a one-stop solution to meet various distribution needs.
+
+Supports popular packaging formats like, appimage, deb, pacman, rpm, and more.
+
+### [flatpak-flutter][]
+
+> Flatpak manifest tooling for the offline build of Flutter apps.
+
+Supports Flatpak preparation for publishing on [Flathub][].
 
 
 [Environment variables]: https://snapcraft.io/docs/environment-variables
-[Flutter wiki]: {{site.repo.flutter}}/tree/master/docs
+[Flutter wiki]: {{site.repo.flutter}}/tree/main/docs
 [Interface management]: https://snapcraft.io/docs/interface-management
 [DBus interface]: https://snapcraft.io/docs/dbus-interface
 [Introduction to snapcraft]: https://snapcraft.io/blog/introduction-to-snapcraft
@@ -406,3 +422,6 @@ You can learn more from the following links on the
 [Snapcraft extensions]: https://snapcraft.io/docs/snapcraft-extensions
 [Supported plugins]: https://snapcraft.io/docs/supported-plugins
 [Ubuntu]: https://ubuntu.com/download/desktop
+[fastforge]: {{site.github}}/fastforgedev/fastforge
+[flatpak-flutter]: {{site.github}}/TheAppgineer/flatpak-flutter
+[Flathub]: https://flathub.org

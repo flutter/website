@@ -1,0 +1,13 @@
+name: command
+description: Example for command cookbook recipe
+
+resolution: workspace
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

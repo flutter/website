@@ -35,12 +35,7 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Positioned.fill(
-      child: Image.network(
-        imageUrl,
-        fit: BoxFit.cover,
-      ),
-    );
+    return Positioned.fill(child: Image.network(imageUrl, fit: BoxFit.cover));
   }
 
   Widget _buildGradient() {
@@ -48,7 +43,7 @@ class LocationListItem extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+            colors: [Colors.transparent, Colors.black.withValues(alpha: 0.7)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const [0.6, 0.95],
@@ -76,14 +71,12 @@ class LocationListItem extends StatelessWidget {
           ),
           Text(
             country,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),
     );
   }
 }
+
 // #enddocregion LocationListItem

@@ -1,7 +1,7 @@
 ---
 title: Staggered animations
 description: How to write a staggered animation in Flutter.
-short-title: Staggered
+shortTitle: Staggered
 ---
 
 :::secondary What you'll learn
@@ -56,7 +56,7 @@ staggered_pic_selection.
 The following video demonstrates the animation performed by
 basic_staggered_animation:
 
-{% ytEmbed '0fFvnZemmh8', 'Staggered animation example', true %}
+<YouTubeEmbed id="0fFvnZemmh8" title="Staggered animation example"></YouTubeEmbed>
 
 In the video, you see the following animation of a single widget,
 which begins as a bordered blue square with slightly rounded corners.
@@ -325,9 +325,9 @@ class _StaggerDemoState extends State<StaggerDemo>
             width: 300,
             height: 300,
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.1),
+              color: Colors.black.withValues(alpha: 0.1),
               border: Border.all(
-                color:  Colors.black.withOpacity(0.5),
+                color: Colors.black.withValues(alpha: 0.5),
               ),
             ),
             child: StaggerAnimation(controller:_controller.view),

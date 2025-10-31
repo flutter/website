@@ -1,0 +1,16 @@
+name: navigation_samples
+description: Sample navigation code.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  go_router: ^16.1.0
+
+flutter:
+  uses-material-design: true

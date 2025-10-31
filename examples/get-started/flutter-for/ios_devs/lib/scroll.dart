@@ -2,21 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const App(),
-  );
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
-  const App({
-    super.key,
-  });
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 
@@ -25,37 +19,21 @@ class App extends StatelessWidget {
 class Person {
   final String name;
   final int age;
-  const Person({
-    required this.name,
-    required this.age,
-  });
+  const Person({required this.name, required this.age});
 }
 
 // As in SwiftUI, create a widget (a view in SwiftUI),
 // that represents each person visually on the screen.
 class PersonView extends StatelessWidget {
   final Person person;
-  const PersonView({
-    super.key,
-    required this.person,
-  });
+  const PersonView({super.key, required this.person});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            const Text('Name:'),
-            Text(person.name),
-          ],
-        ),
-        Row(
-          children: [
-            const Text('Age:'),
-            Text(person.age.toString()),
-          ],
-        ),
+        Row(children: [const Text('Name:'), Text(person.name)]),
+        Row(children: [const Text('Age:'), Text(person.age.toString())]),
         const Divider(),
       ],
     );
@@ -65,10 +43,7 @@ class PersonView extends StatelessWidget {
 // then we create a list of people
 final mockPersons = Iterable.generate(
   100,
-  (index) => Person(
-    name: 'Person #${index + 1}',
-    age: 10 + index,
-  ),
+  (index) => Person(name: 'Person #${index + 1}', age: 10 + index),
 );
 
 class HomePage extends StatelessWidget {
@@ -84,11 +59,7 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: mockPersons
-              .map(
-                (person) => PersonView(
-                  person: person,
-                ),
-              )
+              .map((person) => PersonView(person: person))
               .toList(),
         ),
       ),

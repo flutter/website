@@ -1,9 +1,6 @@
 ---
 title: Build a form with validation
 description: How to build a form that validates input.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/validation"?>
@@ -178,9 +175,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
+        appBar: AppBar(title: const Text(appTitle)),
         body: const MyCustomForm(),
       ),
     );
@@ -248,7 +243,7 @@ class MyCustomFormState extends State<MyCustomForm> {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/form-validation.gif" alt="Form Validation Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/form-validation.webp" alt="Form Validation Demo" class="site-mobile-screenshot" />
 </noscript>
 
 To learn how to retrieve these values, check out the

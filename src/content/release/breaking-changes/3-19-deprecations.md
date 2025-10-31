@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
+[Deprecation Policy]: {{site.repo.flutter}}/blob/main/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-3-19
 
 ## Changes
@@ -715,12 +715,12 @@ Relevant PRs:
 
 Supported by Flutter Fix: no
 
-As of Flutter 3.0 platform views require api 23 or higher. In Flutter 3.19 we now throw UnsupportedOperationException 
-when using platform views on android devices running api level 22 and below. 
+As of Flutter 3.0 platform views require api 23 or higher. In Flutter 3.19 we now throw UnsupportedOperationException
+when using platform views on android devices running api level 22 and below.
 
 **Migration guide**
 
-Set minimum api level to 23 (or higher) or check the android api level before displaying a platform view. 
+Set minimum api level to 23 (or higher) or check the android api level before displaying a platform view.
 
 ---
 

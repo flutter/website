@@ -44,7 +44,7 @@ support you need. The next sections describe two different
 ways to call native code from Dart.
 
 :::note
-Neither solution below is inherently better or worse than 
+Neither solution below is inherently better or worse than
 existing plugins, because all plugins use one of the following
 two options.
 :::
@@ -53,7 +53,7 @@ two options.
 
 The most direct and efficient way to invoke native APIs is by
 calling the API directly, via FFI. This links your Dart executable
-to any specified native code at compile-time, allowing you to 
+to any specified native code at compile-time, allowing you to
 call it directly from the UI thread through a small amount of glue
 code. In most cases, [ffigen][ffigen] or [jnigen][jnigen] are
 helpful in writing this glue code.
@@ -76,11 +76,11 @@ glue code.
 [`MethodChannel`][methodchannels-api-docs]s are an alternate
 way Flutter apps can invoke arbitrary native code.
 Unlike the FFI solution described in the previous step,
-MethodChannels are always asychronous, which
+MethodChannels are always asynchronous, which
 might or might not matter to you, depending on your use case. As
 with FFI and direct calls to native code, using a `MethodChannel`
 requires a small amount of glue code to translate your Dart objects
-into native objects, and then back again. In most cases, 
+into native objects, and then back again. In most cases,
 [`pkg:pigeon`][pigeon] is helpful in writing this glue code.
 
 For complete guidance on adding MethodChannels to your Flutter

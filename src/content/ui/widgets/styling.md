@@ -1,7 +1,7 @@
 ---
 title: Styling widgets
-short-title: Styling
+shortTitle: Styling
 description: A catalog of Flutter's theming and responsiveness widgets.
+widgetCategory: Styling
+layout: widget-catalog-page
 ---
-
-{% render docs/catalog-page.md, categoryName:"Styling", catalog:catalog %}

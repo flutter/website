@@ -1,9 +1,6 @@
 ---
 title: Play and pause a video
 description: How to use the video_player plugin.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/plugins/play_video/"?>
@@ -36,7 +33,7 @@ the following steps:
 
 ## 1. Add the `video_player` dependency
 
-This recipe depends on one Flutter plugin: `video_player`. 
+This recipe depends on one Flutter plugin: `video_player`.
 First, add this dependency to your project.
 
 To add the `video_player` package as a dependency, run `flutter pub add`:
@@ -87,7 +84,7 @@ You must test network-hosted videos on physical iOS devices.
 
 ### macOS
 
-If you use network-based videos, 
+If you use network-based videos,
 [add the `com.apple.security.network.client` entitlement][mac-entitlement].
 
 ### Web
@@ -204,9 +201,7 @@ FutureBuilder(
     } else {
       // If the VideoPlayerController is still initializing, show a
       // loading spinner.
-      return const Center(
-        child: CircularProgressIndicator(),
-      );
+      return const Center(child: CircularProgressIndicator());
     }
   },
 )
@@ -313,9 +308,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Butterfly Video'),
-      ),
+      appBar: AppBar(title: const Text('Butterfly Video')),
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
       body: FutureBuilder(
@@ -332,9 +325,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           } else {
             // If the VideoPlayerController is still initializing, show a
             // loading spinner.
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

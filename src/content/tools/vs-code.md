@@ -1,6 +1,6 @@
 ---
 title: Visual Studio Code
-short-title: VS Code
+shortTitle: VS Code
 description: How to develop Flutter apps in Visual Studio Code.
 ---
 
@@ -13,11 +13,56 @@ description: How to develop Flutter apps in Visual Studio Code.
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
 
-Follow the [Set up an editor][] instructions to
-install the Dart and Flutter extensions
-(also called plugins).
+## Installation and setup {: #setup}
+
+[VS Code][] is a code editor to build and debug apps.
+With the Flutter extension installed, you can compile, deploy, and debug
+Flutter apps.
+
+To install the latest version of VS Code,
+follow Microsoft's instructions for the relevant platform:
+
+- [Install on macOS][]
+- [Install on Windows][]
+- [Install on Linux][]
+
+[VS Code]: https://code.visualstudio.com/
+[Install on macOS]: https://code.visualstudio.com/docs/setup/mac
+[Install on Windows]: https://code.visualstudio.com/docs/setup/windows
+[Install on Linux]: https://code.visualstudio.com/docs/setup/linux
+
+### Install the Flutter extension {: #install-extension}
+
+1. Start **VS Code**.
+
+1. Open a browser and go to the [Flutter extension][] page
+   on the Visual Studio Marketplace.
+
+1. Click **Install**.
+   Installing the Flutter extension also installs the Dart extension.
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+
+### Validate your VS Code setup {: #validate-setup}
+
+1. Go to **View** <span aria-label="and then">></span>
+   **Command Palette...**.
+
+   You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
+   <kbd>Shift</kbd> + <kbd>P</kbd>.
+
+1. Type `doctor`.
+
+1. Select **Flutter: Run Flutter Doctor**.
+
+   Once you select this command, VS Code does the following:
+
+   - Opens the **Output** panel.
+   - Displays **flutter (flutter)** in the dropdown on the upper right
+     of this panel.
+   - Displays the output of `flutter doctor` command.
 
 ### Updating the extension {:#updating}
 
@@ -89,7 +134,7 @@ The code analysis can:
   - You can also press <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> +
     <kbd>Shift</kbd> + <kbd>M</kbd>.
   - The Problems pane displays any analysis issues:<br>
-    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png){:.mw-100 .pt-1}
+    ![Problems pane](/assets/images/docs/tools/vs-code/problems.png)
 
 ## Running and debugging
 
@@ -115,7 +160,7 @@ When a Flutter project is open in VS Code,
 you should see a set of Flutter specific entries in the status bar,
 including a Flutter SDK version and a
 device name (or the message **No Devices**):<br>
-![VS Code status bar][]{:.mw-100 .pt-1}
+![VS Code status bar][]
 
 :::note
 - If you do not see a Flutter version number or device info,
@@ -155,7 +200,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 1. Click **Run** <span aria-label="and then">></span> **Start Debugging**.
    You can also press <kbd>F5</kbd>.
    The status bar turns orange to show you are in a debug session.<br>
-   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png){:.mw-100 .pt-1}
+   ![Debug console](/assets/images/docs/tools/vs-code/debug_console.png)
 
    - The left **Debug Sidebar** shows stack frames and variables.
    - The bottom **Debug Console** pane shows detailed logging output.
@@ -166,7 +211,7 @@ You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>.
 
 ### Run app in debug, profile, or release mode
 
-Flutter offers many different build modes to run your app in. 
+Flutter offers many different build modes to run your app in.
 You can read more about them in [Flutter's build modes][].
 
 1. Open the `launch.json` file in VS Code.
@@ -222,13 +267,13 @@ several additional debugging commands are added to the
 When space is limited, the icon is used as the visual
 version of the label.
 
-**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:width="20px"}
+**Toggle Baseline Painting** ![Baseline painting icon](/assets/images/docs/tools/devtools/paint-baselines-icon.png){:.theme-icon width="20px"}
 : Causes each RenderBox to paint a line at each of its baselines.
 
-**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:width="20px"}
+**Toggle Repaint Rainbow** ![Repaint rainbow icon](/assets/images/docs/tools/devtools/repaint-rainbow-icon.png){:.theme-icon width="20px"}
 : Shows rotating colors on layers when repainting.
 
-**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:width="20px"}
+**Toggle Slow Animations** ![Slow animations icon](/assets/images/docs/tools/devtools/slow-animations-icon.png){:.theme-icon width="20px"}
 : Slows down animations to enable visual inspection.
 
 **Toggle Debug Mode Banner** ![Debug mode banner icon](/assets/images/docs/tools/devtools/debug-mode-banner-icon.png){:width="20px"}
@@ -322,7 +367,7 @@ You can also define custom snippets by executing
 **Hot reload**
 : To perform a hot reload during a debug session,
   click **Hot Reload** on the **Debug Toolbar**.
-  
+
   You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>
   (<kbd>Cmd</kbd> + <kbd>F5</kbd>  on macOS).
 
@@ -348,6 +393,23 @@ run the **Flutter: Hot Restart** command from the [Command Palette][].
 You can also press
 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd>
 or <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>F5</kbd> on macOS.
+
+## Flutter Property Editor {: #property-editor}
+
+The Flutter Property Editor is a powerful tool provided by the [Flutter
+extension][] that lets you view and modify widget properties directly from its
+visual interface.
+
+### How to open the Flutter Property Editor in VS Code
+
+1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor VS Code icon](/assets/images/docs/tools/devtools/property-editor-icon-vscode.png){:width="20px"} in the VS Code sidebar.
+2. The Flutter Property Editor will load in the side panel.
+3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+![Flutter Property Editor side panel in VS Code](/assets/images/docs/tools/devtools/property-editor-vscode.png){:width="600px"}
+
+[Flutter extension]: https://marketplace.visualstudio.com/items?itemName=Dart-Code.flutter
+[documentation]: /tools/property-editor
 
 ## Troubleshooting
 
@@ -376,5 +438,4 @@ When filing new issues, include [flutter doctor][] output.
 [let us know]: {{site.repo.this}}/issues/new
 [issue tracker]: {{site.github}}/Dart-Code/Dart-Code/issues
 [Running DevTools from VS Code]: /tools/devtools/vscode
-[Set up an editor]: /get-started/editor?tab=vscode
 [VS Code status bar]: /assets/images/docs/tools/vs-code/device_status_bar.png

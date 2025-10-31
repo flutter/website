@@ -12,8 +12,8 @@ Building Windows application...                                    31.4s
 √  Built build\windows\runner\Debug\my_app.exe.
 ```
 
-{% tabs %}
-{% tab "Start from VS Code" %}
+<Tabs key="windows-debug-flow">
+<Tab name="Start from VS Code">
 
 #### Start debugging with VS Code first {:#vscode-windows}
 
@@ -21,12 +21,12 @@ If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md %}
+{% render "docs/debug/debug-flow-vscode-as-start.md" %}
 
 {% comment %}
      !['Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app'](/assets/images/docs/testing/debugging/native/url-launcher-app/windows.png){:width="50%"}
      <div class="figure-caption">
-     
+
      Flutter app generated as a Windows app. The app displays two buttons to open this page in a browser or in the app.
 
      </div>
@@ -69,8 +69,8 @@ If you use VS Code to debug most of your code, start with this section.
    ![Visual Studio debugger running and monitoring the Flutter app](/assets/images/docs/testing/debugging/native/visual-studio/debugger-active.png){:width="100%"}
 {% endcomment %}
 
-{% endtab %}
-{% tab "Start from Visual Studio" %}
+</Tab>
+<Tab name="Start from Visual Studio">
 
 #### Start debugging with Visual Studio first
 
@@ -137,5 +137,5 @@ If you use Visual Studio to debug most of your code, start with this section.
    ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>

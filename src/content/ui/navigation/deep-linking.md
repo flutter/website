@@ -2,6 +2,7 @@
 title: Deep linking
 description: Navigate to routes when the app receives a new URL.
 ---
+
 Deep links are links that not only open an app, but also take the
 user to a specific location "deep" inside the app. For example,
 a deep link from an advertisement for a pair of sneakers might open
@@ -32,25 +33,21 @@ the pattern: `/#/path/to/app/screen`, but this can be changed by
 
 If you are a visual learner, check out the following video:
 
-{% ytEmbed 'KNAb2XL7k2g', 'Deep linking in Flutter' %}
+<YouTubeEmbed id="KNAb2XL7k2g" title="Deep linking in Flutter"></YouTubeEmbed>
 
 ## Get started
 
 To get started, see our cookbooks for Android and iOS:
 
 <div class="card-grid">
-  <a class="card" href="/cookbook/navigation/set-up-app-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-app-links">
+    <div class="card-header text-center">
+      <span class="card-title">Android</span>
     </div>
   </a>
-  <a class="card" href="/cookbook/navigation/set-up-universal-links">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/cookbook/navigation/set-up-universal-links">
+    <div class="card-header text-center">
+      <span class="card-title">iOS</span>
     </div>
   </a>
 </div>
@@ -92,7 +89,7 @@ introduction to the Router system.
    a step-by-step tutorial showing how to implement deep links in Flutter.
 
 [io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
-[Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: {{site.flutter-blog}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html

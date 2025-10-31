@@ -3,10 +3,13 @@ title: Supporting the new Android plugins APIs
 description: How to update a plugin using the old APIs to support the new APIs.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 <?code-excerpt path-base="platform_integration/plugin_api_migration"?>
 
 :::note
-New plugins and all plugins that are compatible with Flutter 2 (March 2021) can ignore this page.
+New plugins and all plugins that are compatible with Flutter 2
+(March 2021) can ignore this page.
 :::
 
 :::note
@@ -367,5 +370,5 @@ a non-UI configuration.
 [`PluginRegistry.Registrar`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
 [`PluginRegistry.Registrar.activity()`]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html#activity--
 [`ServiceAware`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/service/ServiceAware.html
-[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Upgrading-pre-1.12-Android-projects.md
+[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/blob/main/docs/platforms/android/Upgrading-pre-1.12-Android-projects.md
 [verified publisher]: {{site.dart-site}}/tools/pub/verified-publishers

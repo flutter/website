@@ -5,8 +5,6 @@ description: Learn how to apply SwiftUI developer knowledge when building Flutte
 
 <?code-excerpt path-base="get-started/flutter-for/ios_devs"?>
 
-{% assign sample_path = "blob/main/examples/get-started/flutter-for/ios_devs" %}
-
 SwiftUI developers who want to write mobile apps using Flutter
 should review this guide.
 It explains how to apply existing SwiftUI knowledge to Flutter.
@@ -49,7 +47,7 @@ you can open and run some of the examples on DartPad.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', false, true %}
+<YouTubeEmbed id="ceMsPBbcEGg" title="Flutter for iOS developers"></YouTubeEmbed>
 
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
@@ -159,7 +157,7 @@ your Flutter app can use many different design systems:
 - Your own custom widgets
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
-{% ytEmbed '3PdUaidHc-E', 'Flutter\'s cupertino library for iOS developers' %}
+<YouTubeEmbed id="3PdUaidHc-E" title="Flutter's cupertino library for iOS developers"></YouTubeEmbed>
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].
@@ -221,9 +219,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Returns a CupertinoApp that, by default,
     // has the look and feel of an iOS app.
-    return const CupertinoApp(
-      home: HomePage(),
-    );
+    return const CupertinoApp(home: HomePage());
   }
 }
 ```
@@ -238,13 +234,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
+    return const Scaffold(body: Center(child: Text('Hello, World!')));
   }
 }
 ```
@@ -310,10 +300,7 @@ HStack {
 ```dart dartpad="0365338f938427b01d72e37cea554f75"
 Row(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -344,10 +331,7 @@ except it swaps [`Column`][] for `Row`:
 ```dart dartpad="d9a288be0c2a353296fc8825680b84b8"
 Column(
   mainAxisAlignment: MainAxisAlignment.center,
-  children: [
-    Icon(CupertinoIcons.globe),
-    Text('Hello, world!'),
-  ],
+  children: [Icon(CupertinoIcons.globe), Text('Hello, world!')],
 ),
 ```
 
@@ -408,9 +392,7 @@ class HomePage extends StatelessWidget {
       body: ListView.builder(
         itemCount: items.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(items[index].name),
-          );
+          return ListTile(title: Text(items[index].name));
         },
       ),
     );
@@ -524,11 +506,7 @@ of the `Person` class to create the custom `PersonView` widget.
 SingleChildScrollView(
   child: Column(
     children: mockPersons
-        .map(
-          (person) => PersonView(
-            person: person,
-          ),
-        )
+        .map((person) => PersonView(person: person))
         .toList(),
   ),
 ),
@@ -657,12 +635,13 @@ AnimatedRotation(
   turns: turns,
   curve: Curves.easeIn,
   TextButton(
-      onPressed: () {
-        setState(() {
-          turns += .125;
-        });
-      },
-      const Text('Tap me!')),
+    onPressed: () {
+      setState(() {
+        turns += .125;
+      });
+    },
+    const Text('Tap me!'),
+  ),
 ),
 ```
 
@@ -775,9 +754,7 @@ call your navigation routes using their names.
     const detailsPageRouteName = '/details';
     
     class App extends StatelessWidget {
-      const App({
-        super.key,
-      });
+      const App({super.key});
     
       @override
       Widget build(BuildContext context) {
@@ -785,9 +762,7 @@ call your navigation routes using their names.
           home: const HomePage(),
           // The [routes] property defines the available named routes
           // and the widgets to build when navigating to those routes.
-          routes: {
-            detailsPageRouteName: (context) => const DetailsPage(),
-          },
+          routes: {detailsPageRouteName: (context) => const DetailsPage()},
         );
       }
     }
@@ -807,18 +782,15 @@ call your navigation routes using their names.
         return ListTile(
           title: Text(person.name),
           subtitle: Text(age),
-          trailing: const Icon(
-            Icons.arrow_forward_ios,
-          ),
+          trailing: const Icon(Icons.arrow_forward_ios),
           onTap: () {
             // When a [ListTile] that represents a person is
             // tapped, push the detailsPageRouteName route
             // to the Navigator and pass the person's instance
             // to the route.
-            Navigator.of(context).pushNamed(
-              detailsPageRouteName,
-              arguments: person,
-            );
+            Navigator.of(
+              context,
+            ).pushNamed(detailsPageRouteName, arguments: person);
           },
         );
       },
@@ -838,9 +810,7 @@ call your navigation routes using their names.
       @override
       Widget build(BuildContext context) {
         // Read the person instance from the arguments.
-        final Person person = ModalRoute.of(
-          context,
-        )?.settings.arguments as Person;
+        final Person person = ModalRoute.of(context)?.settings.arguments as Person;
         // Extract the age.
         final age = '${person.age} years old';
         return Scaffold(
@@ -906,13 +876,9 @@ In **Flutter**, use the [`url_launcher`][] plugin.
 ```dart dartpad="695beba25fa8120d89c9960cb222e276"
 CupertinoButton(
   onPressed: () async {
-    await launchUrl(
-      Uri.parse('https://google.com'),
-    );
+    await launchUrl(Uri.parse('https://google.com'));
   },
-  const Text(
-    'Open website',
-  ),
+  const Text('Open website'),
 ),
 ```
 
@@ -935,9 +901,7 @@ of the `App` class:
 <?code-excerpt "lib/cupertino_themes.dart (theme)" replace="/return //g;"?>
 ```dart dartpad="18790cfaa8441085994373a4bc4f46b0"
 const CupertinoApp(
-  theme: CupertinoThemeData(
-    brightness: Brightness.dark,
-  ),
+  theme: CupertinoThemeData(brightness: Brightness.dark),
   home: HomePage(),
 );
 ```
@@ -1051,10 +1015,7 @@ following example:
 ```dart
 Text(
   'Cupertino',
-  style: TextStyle(
-    fontSize: 40,
-    fontFamily: 'BungeeSpice',
-  ),
+  style: TextStyle(fontSize: 40, fontFamily: 'BungeeSpice'),
 ),
 ```
 

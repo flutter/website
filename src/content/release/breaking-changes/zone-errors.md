@@ -5,6 +5,8 @@ description: >
   than the Zone used for `runApp`, a warning is printed to the console.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Starting with Flutter 3.10, the framework detects mismatches
@@ -114,7 +116,7 @@ void main() {
 }
 ```
 
-In code that needs to use `myKey`, 
+In code that needs to use `myKey`,
 it can be obtained indirectly using `Zone.current['myKey'].value`.
 
 When such a solution does not work

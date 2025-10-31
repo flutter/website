@@ -36,9 +36,7 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       // #docregion builder
       body: ListView.builder(
         itemCount: todos.length,
@@ -51,7 +49,7 @@ class TodosScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
@@ -76,9 +74,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -86,4 +82,5 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion detail

@@ -5,8 +5,6 @@ description: How to use the Finder classes for testing widgets.
 
 <?code-excerpt path-base="cookbook/testing/widget/finders/"?>
 
-{% assign api = site.api | append: '/flutter' -%}
-
 To locate widgets in a test environment, use the [`Finder`][]
 classes. While it's possible to write your own `Finder` classes,
 it's generally more convenient to locate widgets using the tools
@@ -42,11 +40,7 @@ This is exactly what the `find.text()` method is for. It creates a
 ```dart
 testWidgets('finds a Text widget', (tester) async {
   // Build an App with a Text widget that displays the letter 'H'.
-  await tester.pumpWidget(const MaterialApp(
-    home: Scaffold(
-      body: Text('H'),
-    ),
-  ));
+  await tester.pumpWidget(const MaterialApp(home: Scaffold(body: Text('H'))));
 
   // Find a widget that displays the letter 'H'.
   expect(find.text('H'), findsOneWidget);
@@ -118,11 +112,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('finds a Text widget', (tester) async {
     // Build an App with a Text widget that displays the letter 'H'.
-    await tester.pumpWidget(const MaterialApp(
-      home: Scaffold(
-        body: Text('H'),
-      ),
-    ));
+    await tester.pumpWidget(const MaterialApp(home: Scaffold(body: Text('H'))));
 
     // Find a widget that displays the letter 'H'.
     expect(find.text('H'), findsOneWidget);
@@ -151,8 +141,8 @@ void main() {
 }
 ```
 
-[`Finder`]: {{api}}/flutter_test/Finder-class.html
-[`CommonFinders` documentation]: {{api}}/flutter_test/CommonFinders-class.html
-[`find`]: {{api}}/flutter_test/find-constant.html
-[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[`Finder`]: {{site.api}}/flutter/flutter_test/Finder-class.html
+[`CommonFinders` documentation]: {{site.api}}/flutter/flutter_test/CommonFinders-class.html
+[`find`]: {{site.api}}/flutter/flutter_test/find-constant.html
+[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [Introduction to widget testing]: /cookbook/testing/widget/introduction

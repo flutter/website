@@ -3,9 +3,10 @@ title: AI
 description: >
   Learn about the resources available for adding
   generative AI to your Flutter application.
+showBreadcrumbs: false
 ---
 
-{% ytEmbed '1AuzJEiHjO4', 'Quick overview of the Google AI Dart SDK' %}
+<YouTubeEmbed id="1AuzJEiHjO4" title="Quick overview of the Google AI Dart SDK"></YouTubeEmbed>
 
 The Google AI Dart SDK enables you to use Google's
 state-of-the-art generative AI models (like Gemini)
@@ -15,7 +16,13 @@ Integrate features like advanced text generation,
 summarization, chat, and more to your Dart or Flutter
 apps with minimal setup, and deploy across multiple platforms.
 
-The following resources can help you get started:
+The **NEW** [Flutter AI Toolkit][] shows you how to integrate
+an AI generated chatbot into your Flutter app.
+**Check it out!**
+
+[Flutter AI Toolkit]: /ai-toolkit
+
+Other resources include:
 
 * [Get started with the Gemini API in Dart or Flutter apps][tutorial]
 * [Google Generative AI SDK for Dart and Flutter][pkg]

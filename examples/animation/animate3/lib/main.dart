@@ -4,7 +4,7 @@ void main() => runApp(const LogoApp());
 
 class AnimatedLogo extends AnimatedWidget {
   const AnimatedLogo({super.key, required Animation<double> animation})
-      : super(listenable: animation);
+    : super(listenable: animation);
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,10 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    controller =
-        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
     animation = Tween<double>(begin: 0, end: 300).animate(controller)
       // #enddocregion print-state
       ..addStatusListener((status) {
@@ -60,6 +62,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
     controller.dispose();
     super.dispose();
   }
+
   // #docregion print-state
 }
+
 // #enddocregion print-state

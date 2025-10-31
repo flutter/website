@@ -26,11 +26,34 @@ You need to manually enable the extension before it loads
 for the first time. Make sure the extension is provided by
 a source you trust before enabling it.
 
+When you open the extension for the first time, you'll see a prompt to enable
+the extension:
+
 ![Screenshot of extension enablement prompt](/assets/images/docs/tools/devtools/extension_enable_prompt.png)
+
+You can modify the setting at any time from the DevTools Extensions dialog:
+
+![Screenshot of DevTools Extensions dialog button](/assets/images/docs/tools/devtools/extension_dialog_button.png)
+
+![Screenshot of extension enablement dialog](/assets/images/docs/tools/devtools/extension_dialog.png)
+
+> Note: if the extension requires a running a connection to a running
+application, you will not see the enablement prompt or enablement settings until
+DevTools is connected to a running app.
 
 Extension enablement states are stored in a `devtools_options.yaml`
 file in the root of the user's project
 (similar to `analysis_options.yaml`).
+
+```yaml
+description: This file stores settings for Dart & Flutter DevTools.
+documentation: https://docs.flutter.dev/tools/devtools/extensions#configure-extension-enablement-states
+extensions:
+  - provider: true
+  - shared_preferences: true
+  - foo: false
+```
+
 This file stores per-project
 (or optionally, per user) settings for DevTools.
 
@@ -57,6 +80,6 @@ a free article on Medium.
 To learn more about writing and using DevTools extensions,
 check out the following video:
 
-{% ytEmbed 'gOrSc4s4RWY', 'Building DevTools extensions | Flutter Build Show' %}
+<YouTubeEmbed id="gOrSc4s4RWY" title="Building DevTools extensions | Flutter Build Show"></YouTubeEmbed>
 
-[article]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[article]: {{site.flutter-blog}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f

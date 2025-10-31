@@ -16,8 +16,7 @@ features like Android instant apps.
 
 By default, launching your app with `flutter run`,
 or by clicking the **Play** button in your IDE
-(as used in [Test drive][] and
-[Write your first Flutter app][]),
+(as used in [Write your first Flutter app][]),
 generates a _debug_ build of the Flutter app.
 The app size of a debug build is large due to
 the debugging overhead that allows for hot reload
@@ -56,7 +55,7 @@ dropping the .aab file.
 View the application's download and install size in the **Android vitals** ->
 **App size** tab.
 
-{% render docs/app-figure.md, image:"perf/vital-size.png", alt:"App size tab in Google Play Console" %}
+<DashImage figure image="perf/vital-size.png" alt="App size tab in Google Play Console" />
 
 The download size is calculated based on an XXXHDPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes might vary depending on
@@ -145,7 +144,7 @@ In addition to analyzing a single build, two builds can also be diffed by
 loading two `*-code-size-analysis_*.json` files into DevTools.
 Check out the [DevTools documentation][] for details.
 
-{% render docs/app-figure.md, image:"perf/size-summary.png", alt:"Size summary of an Android application in terminal" %}
+<DashImage figure image="perf/size-summary.png" alt="Size summary of an Android application in terminal" />
 
 Through the summary, you can get a quick idea of the size usage per category
 (such as asset, native code, Flutter libraries, etc). The compiled Dart
@@ -168,7 +167,7 @@ up to function level for the Dart AOT artifact.
 This can be done by `dart devtools`, selecting
 `Open app size tool` and uploading the JSON file.
 
-{% render docs/app-figure.md, image:"perf/devtools-size.png", alt:"Example breakdown of app in DevTools" %}
+<DashImage figure image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" />
 
 For further information on using the DevTools app size tool,
 check out the [DevTools documentation][].
@@ -194,7 +193,6 @@ Some other things you can do to make your app smaller are:
 [iOS create build archive instructions]: /deployment/ios#update-the-apps-build-and-version-numbers
 [Model ID / Hardware number]: https://en.wikipedia.org/wiki/List_of_iOS_devices#Models
 [Obfuscating Dart code]: /deployment/obfuscate
-[Test drive]: /get-started/test-drive
 [Write your first Flutter app]: /get-started/codelab
 [Play Console's instructions]: https://support.google.com/googleplay/android-developer/answer/9302563?hl=en
 [Google Play Console]: https://play.google.com/apps/publish/

@@ -3,7 +3,7 @@ title: Large screen devices
 description: >-
   Things to keep in mind when adapting apps
   to large screens.
-short-title: Large screens
+shortTitle: Large screens
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
@@ -32,7 +32,7 @@ For example, it:
 * Increases your app's visibility in the Play Store.
   Recent [Play Store updates][] show ratings by
   device type and indicates when an app lacks
-  large screen support. 
+  large screen support.
 * Ensures that your app meets iPadOS submission
   guidelines and is [accepted in the App Store][].
 :::
@@ -97,20 +97,20 @@ However, you need to figure out what to set for the `gridDelegate`.
 Flutter provides powerful premade `gridDelegates`
 that you can use, namely:
 
-[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`][]
+[`SliverGridDelegateWithFixedCrossAxisCount`][]
 : Lets you assign a specific number of columns to your grid.
 
-[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`][] 
+[`SliverGridDelegateWithMaxCrossAxisExtent`][]
 : Lets you define a max item width.
 
-[`SliverGridDelegateWith<b>FixedCrossAxisCount</b>`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html 
-[`SliverGridDelegateWith<b>MaxCrossAxisExtent</b>`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
+[`SliverGridDelegateWithFixedCrossAxisCount`]: {{site.api}}/flutter/rendering/SliverGridDelegateWithFixedCrossAxisCount-class.html
+[`SliverGridDelegateWithMaxCrossAxisExtent`]:  {{site.api}}/flutter/rendering/SliverGridDelegateWithMaxCrossAxisExtent-class.html
 
 :::secondary
 Don't use the grid delegate for these classes that lets
 you set the column count directly and then hardcode
 the number of columns based on whether the device
-is a tablet, or whatever. 
+is a tablet, or whatever.
 The number of columns should be based on the size of
 the window and not the size of the physical device.
 
@@ -184,7 +184,7 @@ How to obtain the physical screen dimensions?
 
 You can use the [`Display`][] API, introduced in
 Flutter 3.13, which contains the size,
-pixel ratio, and the refresh rate of the physical device. 
+pixel ratio, and the refresh rate of the physical device.
 
 [`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 
@@ -248,8 +248,7 @@ For more information (and corresponding example code),
 check out [Problem: Navigation rail][], a section in the
 [Developing Flutter apps for Large screens][article] article.
 
-[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
 [`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
 [`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
-[Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
-
+[Problem: Navigation rail]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1

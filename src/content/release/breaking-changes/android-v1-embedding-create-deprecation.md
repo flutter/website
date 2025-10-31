@@ -3,6 +3,8 @@ title: Android v1 embedding app and plugin creation deprecation
 description: Gradual deprecation of the Android v1 embedding.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `flutter create` templates for apps and plugins
@@ -20,7 +22,7 @@ to migrate following the instructions in
 [Supporting the new Android plugins APIs][].
 
 [Android Migration Summary]: /go/android-migration-summary
-[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/blob/master/docs/platforms/android/Upgrading-pre-1.12-Android-projects.md
+[Upgrading pre 1.12 Android projects]: {{site.repo.flutter}}/blob/main/docs/platforms/android/Upgrading-pre-1.12-Android-projects.md
 [Supporting the new Android plugins APIs]: /release/breaking-changes/plugin-api-migration
 
 ## Context

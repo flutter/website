@@ -27,9 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         // #docregion builder
         body: ListView.builder(
           // Let the ListView know how many items it needs to build.
@@ -69,10 +67,7 @@ class HeadingItem implements ListItem {
 
   @override
   Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: Theme.of(context).textTheme.headlineSmall,
-    );
+    return Text(heading, style: Theme.of(context).textTheme.headlineSmall);
   }
 
   @override
@@ -92,4 +87,5 @@ class MessageItem implements ListItem {
   @override
   Widget buildSubtitle(BuildContext context) => Text(body);
 }
+
 // #enddocregion ListItem

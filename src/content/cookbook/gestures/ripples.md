@@ -1,9 +1,6 @@
 ---
 title: Add Material touch ripples
 description: How to implement ripple animations.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/ripples/"?>
@@ -25,9 +22,9 @@ Create a ripple effect using the following steps:
 InkWell(
   // When the user taps the button, show a snackbar.
   onTap: () {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-      content: Text('Tap'),
-    ));
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Tap')));
   },
   child: const Padding(
     padding: EdgeInsets.all(12),
@@ -66,12 +63,8 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: const Center(
-        child: MyButton(),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: const Center(child: MyButton()),
     );
   }
 }
@@ -85,9 +78,9 @@ class MyButton extends StatelessWidget {
     return InkWell(
       // When the user taps the button, show a snackbar.
       onTap: () {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text('Tap'),
-        ));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('Tap')));
       },
       child: const Padding(
         padding: EdgeInsets.all(12),
@@ -99,7 +92,7 @@ class MyButton extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/ripples.gif" alt="Ripples Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/ripples.webp" alt="Ripples Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

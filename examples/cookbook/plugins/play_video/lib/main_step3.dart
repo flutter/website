@@ -45,4 +45,5 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     return Container();
   }
 }
+
 // #enddocregion VideoPlayerScreen

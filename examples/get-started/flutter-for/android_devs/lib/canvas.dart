@@ -24,8 +24,9 @@ class SignatureState extends State<Signature> {
       onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition = referenceBox.globalToLocal(
+            details.globalPosition,
+          );
           _points = List.from(_points)..add(localPosition);
         });
       },

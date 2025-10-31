@@ -1,0 +1,13 @@
+name: optimistic_state
+description: Example for optimistic_state cookbook recipe
+
+resolution: workspace
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

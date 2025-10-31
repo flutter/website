@@ -88,10 +88,7 @@ class GridListDemo extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           childAspectRatio: 1,
           children: _photos.map<Widget>((photo) {
-            return _GridDemoPhotoItem(
-              photo: photo,
-              tileStyle: type,
-            );
+            return _GridDemoPhotoItem(photo: photo, tileStyle: type);
           }).toList(),
         ),
       ),
@@ -128,10 +125,7 @@ class _GridTitleText extends StatelessWidget {
 }
 
 class _GridDemoPhotoItem extends StatelessWidget {
-  const _GridDemoPhotoItem({
-    required this.photo,
-    required this.tileStyle,
-  });
+  const _GridDemoPhotoItem({required this.photo, required this.tileStyle});
 
   final _Photo photo;
   final GridListDemoType tileStyle;
@@ -143,53 +137,46 @@ class _GridDemoPhotoItem extends StatelessWidget {
       child: Material(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         clipBehavior: Clip.antiAlias,
-        child: Image.asset(
-          photo.assetName,
-          fit: BoxFit.cover,
-        ),
+        child: Image.asset(photo.assetName, fit: BoxFit.cover),
       ),
     );
 
     return switch (tileStyle) {
       GridListDemoType.imageOnly => image,
       GridListDemoType.header => GridTile(
-          header: Material(
-            color: Colors.transparent,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(4)),
-            ),
-            clipBehavior: Clip.antiAlias,
-            child: GridTileBar(
-              title: _GridTitleText(photo.title),
-              backgroundColor: Colors.black45,
-            ),
+        header: Material(
+          color: Colors.transparent,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(4)),
           ),
-          child: image,
+          clipBehavior: Clip.antiAlias,
+          child: GridTileBar(
+            title: _GridTitleText(photo.title),
+            backgroundColor: Colors.black45,
+          ),
         ),
+        child: image,
+      ),
       GridListDemoType.footer => GridTile(
-          footer: Material(
-            color: Colors.transparent,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(4)),
-            ),
-            clipBehavior: Clip.antiAlias,
-            child: GridTileBar(
-              backgroundColor: Colors.black45,
-              title: _GridTitleText(photo.title),
-              subtitle: _GridTitleText(photo.subtitle),
-            ),
+        footer: Material(
+          color: Colors.transparent,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(bottom: Radius.circular(4)),
           ),
-          child: image,
-        )
+          clipBehavior: Clip.antiAlias,
+          child: GridTileBar(
+            backgroundColor: Colors.black45,
+            title: _GridTitleText(photo.title),
+            subtitle: _GridTitleText(photo.subtitle),
+          ),
+        ),
+        child: image,
+      ),
     };
   }
 }
 
-enum GridListDemoType {
-  imageOnly,
-  header,
-  footer,
-}
+enum GridListDemoType { imageOnly, header, footer }
 
 void main() {
   runApp(const GridListDemo(type: GridListDemoType.footer));

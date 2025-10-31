@@ -1,6 +1,6 @@
 ---
 title: Add a Flutter screen to an Android app
-short-title: Add a Flutter screen
+shortTitle: Add a Flutter screen
 description: >
   Learn how to add a single Flutter screen to your existing Android app.
 ---
@@ -12,8 +12,7 @@ Both options are described in this guide.
 
 ## Add a normal Flutter screen
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png'
-class="mw-100" alt="Add Flutter Screen Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen_header.png' alt="Add Flutter Screen Header">
 
 ### Step 1: Add FlutterActivity to AndroidManifest.xml
 
@@ -55,8 +54,8 @@ import io.flutter.embedding.android.FlutterActivity;
 ```
 :::
 
-{% tabs "android-language" %}
-{% tab "Jetpack Compose" %}
+<Tabs key="android-framework">
+<Tab name="Jetpack Compose">
 
 ```kotlin title="ExistingActivity.kt"
 MyButton(onClick = {
@@ -73,8 +72,8 @@ fun MyButton(onClick: () -> Unit) {
 }
 ```
 
-{% endtab %}
-{% tab "Kotlin" %}
+</Tab>
+<Tab name="Kotlin">
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -84,8 +83,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="ExistingActivity.java"
 myButton.setOnClickListener(new OnClickListener() {
@@ -98,8 +97,8 @@ myButton.setOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The previous example assumes that your Dart entrypoint
 is called `main()`, and your initial Flutter route is '/'.
@@ -109,8 +108,8 @@ The following example demonstrates how to launch a
 `FlutterActivity` that initially renders a custom
 route in Flutter.
 
-{% tabs "android-language" %}
-{% tab "Jetpack Compose" %}
+<Tabs key="android-framework">
+<Tab name="Jetpack Compose">
 
 ```kotlin title="ExistingActivity.kt"
 MyButton(onClick = {
@@ -130,8 +129,8 @@ fun MyButton(onClick: () -> Unit) {
 }
 ```
 
-{% endtab %}
-{% tab "Kotlin" %}
+</Tab>
+<Tab name="Kotlin">
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -144,8 +143,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -161,8 +160,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Replace `"/my_route"` with your desired initial route.
 
@@ -190,8 +189,8 @@ location in your app to instantiate a `FlutterEngine`.
 The following example arbitrarily pre-warms a
 `FlutterEngine` in the `Application` class:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApplication.kt"
 class MyApplication : Application() {
@@ -216,13 +215,13 @@ class MyApplication : Application() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyApplication.java"
 public class MyApplication extends Application {
   public FlutterEngine flutterEngine;
-  
+
   @Override
   public void onCreate() {
     super.onCreate();
@@ -242,8 +241,8 @@ public class MyApplication extends Application {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The ID passed to the [`FlutterEngineCache`][] can be whatever you want.
 Make sure that you pass the same ID to any `FlutterActivity`
@@ -271,8 +270,8 @@ to instruct your `FlutterActivity` to use the cached
 To accomplish this, use `FlutterActivity`'s `withCachedEngine()`
 builder:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="ExistingActivity.kt"
 myButton.setOnClickListener {
@@ -284,8 +283,8 @@ myButton.setOnClickListener {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="ExistingActivity.java"
 myButton.addOnClickListener(new OnClickListener() {
@@ -300,8 +299,8 @@ myButton.addOnClickListener(new OnClickListener() {
 });
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 When using the `withCachedEngine()` factory method,
 pass the same ID that you used when caching the desired
@@ -342,12 +341,11 @@ of Flutter, use a release build.
 
 #### Initial route with a cached engine
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render "docs/add-to-app/android-initial-route-cached-engine.md" %}
 
 ## Add a translucent Flutter screen
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png'
-class="mw-100" alt="Add Flutter Screen With Translucency Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-screen/add-single-flutter-screen-transparent_header.png' alt="Add Flutter Screen With Translucency Header">
 
 Most full-screen Flutter experiences are opaque.
 However, some apps would like to deploy a Flutter
@@ -392,8 +390,8 @@ with explicit transparency support.
 To launch your `FlutterActivity` with a transparent background,
 pass the appropriate `BackgroundMode` to the `IntentBuilder`:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="ExistingActivity.kt"
 // Using a new FlutterEngine.
@@ -413,8 +411,8 @@ startActivity(
 );
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="ExistingActivity.java"
 // Using a new FlutterEngine.
@@ -434,8 +432,8 @@ startActivity(
 );
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You now have a `FlutterActivity` with a transparent background.
 

@@ -29,10 +29,15 @@ void nullCode() {
   // #enddocregion null
 }
 
+int? potentiallyNull() => null;
+
 void trueExample() {
   // #docregion true
   /// Dart
-  var myNull;
+  var myNull = potentiallyNull();
+  if (myNull == null) {
+    print('use "== null" to check null');
+  }
   var zero = 0;
   if (zero == 0) {
     print('use "== 0" to check zero');
@@ -46,4 +51,5 @@ void trueExample() {
 bool fn() {
   return true;
 }
+
 // #enddocregion function

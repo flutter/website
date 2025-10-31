@@ -1,9 +1,6 @@
 ---
 title: Create and style a text field
 description: How to implement a text field.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_input/"?>
@@ -76,9 +73,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: appTitle,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
+        appBar: AppBar(title: const Text(appTitle)),
         body: const MyCustomForm(),
       ),
     );

@@ -2,8 +2,8 @@ name: docs_flutter_dev
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.9.2
 
-dev_dependencies:
-  flutter_site:
-    path: tool/flutter_site
+workspace:
+  - site
+  - tool/dash_site

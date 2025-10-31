@@ -3,6 +3,8 @@ title: Migration guide for describeEnum and EnumProperty
 description: Learn about the removal of describeEnum and how to migrate.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The global method `describeEnum` has been deprecated. Previous uses
@@ -10,7 +12,7 @@ of `describeEnum(Enum.something)` should use
 `Enum.something.name` instead.
 
 The class `EnumProperty` was modified to
-extend `<T extends Enum?>` instead of `<T>`. 
+extend `<T extends Enum?>` instead of `<T>`.
 Existing uses of `EnumProperty<NotAnEnum>` should
 use `DiagnosticsProperty<NotAnEnum>` instead.
 
@@ -89,8 +91,8 @@ Relevant PRs:
 
 * [Deprecate `describeEnum` PR][]
 
-[`describeEnum`]: {{site.api}}/flutter/lib/src/foundation/describeEnum.html
-[`EnumProperty`]: {{site.api}}/flutter/lib/src/foundation/EnumProperty.html
+[`describeEnum`]: {{site.api}}/flutter/foundation/describeEnum.html
+[`EnumProperty`]: {{site.api}}/flutter/foundation/EnumProperty-class.html
 
 [Cleanup SemanticsFlag and SemanticsAction issue]: {{site.repo.flutter}}/issues/123346
 [Deprecate `describeEnum` PR]: {{site.repo.flutter}}/pull/125016

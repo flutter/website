@@ -23,10 +23,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxB(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxB(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -34,11 +31,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  const TapboxB({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxB({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;

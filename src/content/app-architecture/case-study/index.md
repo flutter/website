@@ -1,8 +1,8 @@
 ---
 title: Architecture case study
-short-title: Architecture case study
+shortTitle: Architecture case study
 description: >-
-  A walk-through of a Flutter app that implements the MVVM design pattern.
+  A walk-through of a Flutter app that implements the MVVM architectural pattern.
 prev:
   title: Guide to app architecture
   path: /app-architecture/guide
@@ -20,27 +20,14 @@ includes brand-specific styling, and contains high test coverage.
 In these ways and more, it simulates a real-world,
 feature-rich Flutter application.
 
-<div class="row" style="padding-bottom:30px;">
-
-    <div class="col-sm" style="padding-right:5px">
-
-![A screenshot of the splash screen of the compass app.](/assets/images/docs/app-architecture/case-study/splash_screen.png)
-    </div>
-    <div class="col-sm" style="padding-left:0;padding-right:5px;">
-
-![A screenshot of the home screen of the compass app.](/assets/images/docs/app-architecture/case-study/home_screen.png)
-    </div>
-    <div class="col-sm" style="padding-left:0;padding-right:5px;">
-
-![A screenshot of the search form screen of the compass app.](/assets/images/docs/app-architecture/case-study/search_form_screen.png)
-    </div>
-    <div class="col-sm" style="padding-left:0;">
-
-![A screenshot of the booking screen of the compass app.](/assets/images/docs/app-architecture/case-study/booking_screen.png)
-    </div>
+<div class="wrapping-row" style="margin-block-end: 2rem">
+  <DashImage figure image="app-architecture/case-study/splash_screen.png" alt="A screenshot of the splash screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/home_screen.png" alt="A screenshot of the home screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/search_form_screen.png" alt="A screenshot of the search form screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/booking_screen.png" alt="A screenshot of the booking screen of the compass app." img-style="max-height: 400px;" />
 </div>
 
-The Compass app's architecture most resembles the [MVVM design pattern][]
+The Compass app's architecture most resembles the [MVVM architectural pattern][]
 as described in Flutter's [app architecture guidelines][].
 This architecture case study demonstrates how to
 implement those guidelines by walking through
@@ -57,7 +44,7 @@ In this case study, you'll learn the following:
 
 * How to implement Flutter's [app architecture guidelines][]
   using repositories and services in the [data layer][] and
-  the MVVM design pattern in the [UI layer][]
+  the MVVM architectural pattern in the [UI layer][]
 * How to use the [Command pattern][] to safely render UI as data changes
 * How to use [`ChangeNotifier`][] and [`Listenable`][] objects to manage state
 * How to implement [Dependency Injection][] using `package:provider`
@@ -83,7 +70,7 @@ There are two popular means of organizing code:
 
 1. By feature - The classes needed for each feature are grouped together. For
    example, you might have an `auth` directory, which would contain files
-   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart,
+   like `auth_viewmodel.dart`, `login_usecase.dart`, `logout_usecase.dart`,
    `login_screen.dart`, `logout_button.dart`, etc.
 2. By type - Each "type" of architecture is grouped together.
    For example, you might have directories such as
@@ -97,45 +84,45 @@ The following is how the code is organized within the Compass application.
 
 ```plaintext
 lib
-|____ui
-| |____core
-| | |____ui
-| | | |____<shared widgets>
-| | |____themes
-| |____<FEATURE NAME>
-| | |____view_model
-| | | |_____<view_model class>.dart
-| | |____widgets
-| | | |____<feature name>_screen.dart
-| | | |____<other widgets>
-|____domain
-| |____models
-| | |____<model name>.dart
-|____data
-| |____repositories
-| | |____<repository class>.dart
-| |____services
-| | |____<service class>.dart
-| |____model
-| | |____<api model class>.dart
-|____config
-|____utils
-|____routing
-|____main_staging.dart
-|____main_development.dart
-|____main.dart
+├─┬─ ui
+│ ├─┬─ core
+│ │ ├─┬─ ui
+│ │ │ └─── <shared widgets>
+│ │ └─── themes
+│ └─┬─ <FEATURE NAME>
+│   ├─┬─ view_model
+│   │ └─── <view_model class>.dart
+│   └─┬─ widgets
+│     ├── <feature name>_screen.dart
+│     └── <other widgets>
+├─┬─ domain
+│ └─┬─ models
+│   └─── <model name>.dart
+├─┬─ data
+│ ├─┬─ repositories
+│ │ └─── <repository class>.dart
+│ ├─┬─ services
+│ │ └─── <service class>.dart
+│ └─┬─ model
+│   └─── <api model class>.dart
+├─── config
+├─── utils
+├─── routing
+├─── main_staging.dart
+├─── main_development.dart
+└─── main.dart
 
 // The test folder contains unit and widget tests
 test
-|____data
-|____domain
-|____ui
-|____utils
+├─── data
+├─── domain
+├─── ui
+└─── utils
 
 // The testing folder contains mocks other classes need to execute tests
 testing
-|____fakes
-|____models
+├─── fakes
+└─── models
 ```
 
 Most of the application code lives in the
@@ -189,7 +176,7 @@ the principles in this guide will help you write scalable Flutter apps.
 And if you squint, aren't all architectures MVVM anyway?
 
 [Compass sample application]: https://github.com/flutter/samples/tree/main/compass_app
-[MVVM design pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
+[MVVM architectural pattern]: https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel
 [app architecture guidelines]: /app-architecture/guide
 [data layer]: /app-architecture/case-study/data-layer
 [UI layer]: /app-architecture/case-study/ui-layer

@@ -1,16 +1,16 @@
 ---
 title: Learn the fundamentals
-short-title: Fundamentals
+shortTitle: Fundamentals
 description: >
   You've gotten a taste of using the Flutter framework;
   now go beyond to learn the basics of Flutter.
-toc: false
+showToc: false
 ---
 
 
 
-<div class="row">
-<div class="col-md-6">
+<div class="side-by-side">
+<div>
 
 ## Find your way with Flutter!
 
@@ -25,8 +25,8 @@ how Flutter works.
 
 
 </div>
-<div class="col-md-6">
-  {% render docs/app-figure.md, img-class:"w-75", image:"fwe/dash-search.png", alt:"Dash with magnifying glass" %}
+<div class="centered-rows">
+  <DashImage figure image="fwe/dash-search.png" alt="Dash with magnifying glass" img-style="max-height: 320px;" />
 </div>
 </div>
 
@@ -62,7 +62,7 @@ following subjects in the listed order.
     It also facilitates designing a UI to
     optimize any screen where your app might be used.
  4. [State management][]
-    Learn how share state between widgets and notify other parts of your app
+    Learn how to share state between widgets and notify other parts of your app
     when the state changes.
     See how to implement MVVM in Flutter to manage state effectively
     for small to medium-sized apps.
@@ -77,7 +77,7 @@ following subjects in the listed order.
     functionality, such as how to retrieve
     or submit data using HTTP,
     how to convert to and from JSON,
-    how to use authentication, 
+    how to use authentication,
     how to implement asynchronicity, and more.
  7. [Local data and caching][]
     Learn about different techniques for caching

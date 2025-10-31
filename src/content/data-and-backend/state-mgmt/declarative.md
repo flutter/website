@@ -3,10 +3,10 @@ title: Start thinking declaratively
 description: How to think about declarative programming.
 prev:
   title: Intro
-  path: /development/data-and-backend/state-mgmt
+  path: /data-and-backend/state-mgmt
 next:
   title: Ephemeral versus app state
-  path: /development/data-and-backend/state-mgmt/ephemeral-vs-app
+  path: /data-and-backend/state-mgmt/ephemeral-vs-app
 ---
 
 If you're coming to Flutter from an imperative framework
@@ -20,7 +20,7 @@ it. Flutter is fast enough to do that, even on every frame if needed.
 Flutter is _declarative_. This means that Flutter builds its user interface to
 reflect the current state of your app:
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/ui-equals-function-of-state.png' width="100%" alt="A mathematical formula of UI = f(state). 'UI' is the layout on the screen. 'f' is your build methods. 'state' is the application state.">
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/ui-equals-function-of-state.png' width="100%" class="diagram-wrap" alt="A mathematical formula of UI = f(state). 'UI' is the layout on the screen. 'f' is your build methods. 'state' is the application state.">
 
 {% comment %}
 Source drawing for the png above: : https://docs.google.com/drawings/d/1RDcR5LyFtzhpmiT5-UupXBeos2Ban5cUTU0-JujS3Os/edit?usp=sharing

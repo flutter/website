@@ -23,9 +23,8 @@ about implicit animations in Flutter.
   how to use implicit animations.
 
 [`AnimatedContainer` sample][]
-: A step-by-step recipe from the [Flutter cookbook][]
-  for using the [`AnimatedContainer`][]
-  implicitly animated widget.
+: A step-by-step recipe for using the
+  [`AnimatedContainer`][] implicitly animated widget.
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
@@ -38,9 +37,9 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter implicit animation basics"></YouTubeEmbed>
 
-{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
+<YouTubeEmbed id="6KiPEqzJIKQ" title="Create custom implicit animations with TweenAnimationBuilder"></YouTubeEmbed>
 
 ## The Boring Show
 
@@ -48,7 +47,7 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-{% ytEmbed '8ehlWchLVlQ', 'Adding implicit animations to a news application' %}
+<YouTubeEmbed id="8ehlWchLVlQ" title="Adding implicit animations to a news application"></YouTubeEmbed>
 
 ## Widget of the Week videos
 
@@ -59,20 +58,19 @@ widget with a demo about how it works.
 The following Widget of the Week videos cover
 implicitly animated widgets:
 
-{% assign animated-widgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
-{% assign animated-urls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
+{% assign animatedWidgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
+{% assign animatedUrls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
 
-{% for widget in animated-widgets %}
-{% assign videoUrl = animated-urls[forloop.index0] %}
+{% for widget in animatedWidgets %}
+{% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
 
-{% ytEmbed videoUrl, videoDescription %}
+<YouTubeEmbed id="{{ videoUrl }}" title="{{ videoDescription }}"></YouTubeEmbed>
 
 {% endfor -%}
 
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: /cookbook
 [Implicit animations codelab]: /codelabs/implicit-animations
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

@@ -59,7 +59,7 @@ defined and explained below.
 
 ## Risks of caching data
 
-An app is said to have a **stale cache** when the data within 
+An app is said to have a **stale cache** when the data within
 the source of truth has changed, which puts the app at risk
 of rendering old, outdated information.
 
@@ -107,7 +107,7 @@ Its implementation might look like this:
 ```dart
 class UserRepository {
   UserRepository(this.api);
-  
+
   final Api api;
   final Map<int, User?> _userCache = {};
 
@@ -150,7 +150,7 @@ choose from one of the persistent caching strategies found below.
 ## Persistent caches
 
 Caching data in memory will never see your precious cache
-outlive a user single session.
+outlive a single user session.
 To enjoy the performance benefits of cache hits on fresh
 launches of your application, you need to cache data somewhere
 on the device's hard drive.
@@ -198,12 +198,13 @@ For a more thorough guide, see the following resources:
 * Cookbook: [Persist data with SQLite][]
 * SQLite alternate: [`sqlite3` package][]
 * Drift, a relational database: [`drift` package][]
-* Hive, a non-relational database: [`hive` package][]
-* Isar, a non-relational database: [`isar` package][]
+* Hive CE, a non-relational database: [`hive_ce` package][]
+* Remote Caching, a lightweight caching system for API responses: [`remote_caching` package][]
 
 [`drift` package]: {{site.pub-pkg}}/drift
-[`hive` package]: {{site.pub-pkg}}/hive
-[`isar` package]: {{site.pub-pkg}}/isar
+[`hive_ce` package]: {{site.pub-pkg}}/hive_ce
+[`remote_caching` package]: {{site.pub-pkg}}/remote_caching
+
 [Persist data with SQLite]: /cookbook/persistence/sqlite
 [`sqlite3` package]: {{site.pub-pkg}}/sqlite3
 
@@ -232,7 +233,7 @@ pattern is called "state restoration", and is built in to Flutter.
 
 State restoration works by instructing the Flutter framework
 to sync data from its Element tree with the Flutter engine,
-which then caches it in platform-specific storage for future 
+which then caches it in platform-specific storage for future
 sessions. To enable state restoration on Flutter for Android
 and iOS, see the following documentation:
 
@@ -244,7 +245,7 @@ and iOS, see the following documentation:
 
 ## Feedback
 
-As this section of the website is evolving, 
+As this section of the website is evolving,
 we [welcome your feedback][]!
 
 [welcome your feedback]: https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page="local-caching"

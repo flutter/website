@@ -5,6 +5,8 @@ description: >
   recommended lints, which encourage good coding practices.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The [`package:flutter_lints`][] defines the latest set of recommended lints
@@ -122,7 +124,7 @@ Relevant PRs:
 * [Integrate package:flutter_lints into templates][]
 
 [Add flutter_lints package]: {{site.repo.packages}}/pull/343
-[`analysis_options_user.yaml`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/analysis_options_user.yaml
+[`analysis_options_user.yaml`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/analysis_options_user.yaml
 [Customizing static analysis]: {{site.dart-site}}/guides/language/analysis-options
 [dart analyzer]: {{site.dart-site}}/guides/language/analysis-options
 [IDE with Dart support]: {{site.dart-site}}/tools#ides-and-editors

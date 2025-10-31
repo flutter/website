@@ -3,10 +3,7 @@ import 'package:provider/provider.dart';
 import 'provider.dart';
 
 class AnotherMonstrousWidget extends SomeExpensiveWidget {
-  const AnotherMonstrousWidget({
-    super.child,
-    super.key,
-  });
+  const AnotherMonstrousWidget({super.child, super.key});
 }
 
 class ChildUsingDescendant extends StatelessWidget {
@@ -19,7 +16,7 @@ class ChildUsingDescendant extends StatelessWidget {
       builder: (context, cart, child) => Stack(
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
-          if (child != null) child,
+          ?child,
           Text('Total price: ${cart.totalPrice}'),
         ],
       ),
@@ -30,8 +27,8 @@ class ChildUsingDescendant extends StatelessWidget {
   }
 }
 
-class DescendantInLeafNode_Good extends StatelessWidget {
-  const DescendantInLeafNode_Good({super.key});
+class DescendantInLeafNodeGood extends StatelessWidget {
+  const DescendantInLeafNodeGood({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +49,8 @@ class DescendantInLeafNode_Good extends StatelessWidget {
   }
 }
 
-class DescendantNotInLeafNode_Bad extends StatelessWidget {
-  const DescendantNotInLeafNode_Bad({super.key});
+class DescendantNotInLeafNodeBad extends StatelessWidget {
+  const DescendantNotInLeafNodeBad({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +72,7 @@ class DescendantNotInLeafNode_Bad extends StatelessWidget {
 }
 
 class HumongousWidget extends SomeExpensiveWidget {
-  const HumongousWidget({
-    super.child,
-    super.key,
-  });
+  const HumongousWidget({super.child, super.key});
 }
 
 class MyHomepage extends StatelessWidget {
@@ -91,17 +85,17 @@ class MyHomepage extends StatelessWidget {
       body: const Column(
         children: [
           ChildUsingDescendant(),
-          DescendantNotInLeafNode_Bad(),
-          DescendantInLeafNode_Good(),
-          NonRebuilding_Good(),
+          DescendantNotInLeafNodeBad(),
+          DescendantInLeafNodeGood(),
+          NonRebuildingGood(),
         ],
       ),
     );
   }
 }
 
-class NonRebuilding_Good extends StatelessWidget {
-  const NonRebuilding_Good({super.key});
+class NonRebuildingGood extends StatelessWidget {
+  const NonRebuildingGood({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +121,6 @@ class SomeExpensiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     // Imagine this is a huge build method. You don't want to rebuild it
     // every time that total price changes.
-    return Container(
-      color: Colors.yellow,
-      child: child,
-    );
+    return Container(color: Colors.yellow, child: child);
   }
 }

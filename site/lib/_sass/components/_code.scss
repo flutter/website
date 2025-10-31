@@ -1,0 +1,256 @@
+@use 'sass:color';
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--site-code-fontFamily);
+}
+
+// Inline code spans found within the primary contents of the page.
+// Targets all <code> elements, but <pre><code> shouldn't have many of these.
+main code,
+main kbd {
+  font-size: 0.9em;
+  line-height: 1.25em;
+  padding: 0.05rem 0.2rem;
+  background-color: var(--site-inset-bgColor-translucent);
+  border: 1px solid var(--site-inset-borderColor);
+  border-radius: 0.2rem;
+  word-wrap: break-word;
+  white-space: nowrap;
+}
+
+main kbd {
+  font-weight: 500;
+  padding: 0.05rem 0.35rem;
+
+  border-width: 1.5px;
+  border-bottom-width: 3px;
+  border-radius: 0.35rem;
+  box-shadow: inset 0 1px 1px rgb(var(--site-interaction-base-values) / 5%);
+
+  // Reduce word spacing so the + combinator is closer.
+  word-spacing: -0.25em;
+}
+
+pre {
+  margin: 0 0 1rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  padding: 1.25rem;
+
+  >code {
+    // Undo the core `code` styles.
+    font-size: 0.9125rem;
+    line-height: 1.75em;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: unset;
+    word-break: normal;
+    white-space: pre;
+    font-family: var(--site-code-fontFamily);
+    color: var(--site-base-fgColor);
+    --opal-dark-color: var(--site-base-fgColor);
+  }
+
+  a {
+    font-family: inherit;
+    font-weight: inherit;
+  }
+
+  .highlight {
+    background: var(--site-code-highlight-bgColor);
+    padding: 0.1em;
+  }
+
+  .highlight-diagnostics & {
+    .highlight {
+      border-bottom: 2px #E64637 dashed;
+      background: inherit;
+      padding: 0;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  span.line {
+    display: inline-block;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    width: 100%;
+    display: block;
+    min-width: 100%;
+    border-left: 2px solid rgba(0, 0, 0, 0);
+
+    &.highlighted-line {
+      background: var(--site-primary-color-highlight);
+      border-left-color: var(--site-primary-color);
+    }
+
+    &.added-line,
+    &.removed-line {
+      padding-left: 0.25rem;
+
+      &::before {
+        display: inline-block;
+        user-select: none;
+        width: 0.75rem;
+        margin-right: 0.25rem;
+        text-align: right;
+      }
+    }
+
+    $margin-fgColor: #6a6f71;
+
+    &.added-line {
+      $added-color: #158477;
+
+      background: color.change($added-color, $alpha: 0.03);
+      border-left-color: $added-color;
+
+      &::before {
+        content: '+';
+        color: color.mix($margin-fgColor, $added-color);
+      }
+    }
+
+    &.removed-line {
+      $removed-color: #cb1425;
+
+      background: color.change($removed-color, $alpha: 0.03);
+      border-left-color: $removed-color;
+
+      &::before {
+        content: '-';
+        color: color.mix($margin-fgColor, $removed-color);
+      }
+    }
+
+    .terminal-command::before {
+      color: $margin-fgColor;
+      content: "$";
+      content: "$" / "";
+      padding-right: 0.5rem;
+    }
+  }
+
+  &.show-line-numbers code {
+    span.line {
+      padding-left: 0.5rem;
+
+      &[data-line]::before {
+        display: inline-block;
+        content: attr(data-line) "";
+        width: 2em;
+        margin-right: 0.5rem;
+        text-align: right;
+        color: var(--site-base-fgColor-alt);
+      }
+    }
+  }
+}
+
+.code-block-language {
+  font-family: var(--site-code-fontFamily);
+  user-select: none;
+  font-size: 0.8125rem;
+  color: var(--site-base-fgColor-alt);
+  opacity: 1;
+  transition: opacity 0.25s;
+
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  z-index: var(--site-z-floating);
+}
+
+.code-block-tag {
+  font-family: var(--site-code-fontFamily);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  position: absolute;
+  top: 3px;
+  left: 6px;
+}
+
+.code-block-wrapper {
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  border: 1px solid var(--site-inset-borderColor);
+  background-color: var(--site-inset-bgColor);
+
+  .code-block-header {
+    background-color: var(--site-raised-bgColor);
+    border-bottom: 1px solid var(--site-inset-borderColor);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding: 0.75rem 0.5rem 0.67rem 1rem;
+  }
+
+  .code-block-body {
+    position: relative;
+    background: none;
+
+    .copy-button {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      z-index: 10;
+
+      opacity: 0;
+      transition: opacity 0.4s;
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 1;
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      .code-block-language {
+        opacity: 0;
+      }
+
+      .copy-button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:has(:focus-visible) {
+    border-color: var(--site-primary-color);
+  }
+
+  pre {
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
+    overflow-x: auto;
+
+    &:not([lang="console"]) {
+      line-height: 1.8;
+    }
+
+    code {
+      display: block;
+      min-width: fit-content;
+      width: 100%;
+    }
+  }
+}
+
+// Border and resizability for dartpad
+iframe[src^="https://dartpad"] {
+  margin-bottom: 1rem;
+  min-height: 400px;
+  resize: vertical;
+  width: 100%;
+}

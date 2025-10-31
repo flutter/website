@@ -1,12 +1,15 @@
 ---
 title: Breaking changes and migration guides
-short-title: Breaking changes
-description: A list of migration guides for breaking changes in Flutter.
+shortTitle: Breaking changes
+description: >-
+   A collection of notices and migration guides for breaking changes in Flutter.
 ---
 
 As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
+
+{% render "docs/breaking-changes.md" %}
 
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
@@ -18,12 +21,7 @@ Not every breaking change is supported in this way,
 but many are.
 
 To avoid being broken by future versions of Flutter,
-consider submitting your tests to our [test registry].
-
-## Breaking changes by release
-
-The following guides are available. They are sorted by
-release, and listed in alphabetical order:
+consider submitting your tests to the framework's [test registry][].
 
 [breaking change policy]: /release/compatibility-policy
 [Flutter announce]: {{site.groups}}/forum/#!forum/flutter-announce
@@ -31,31 +29,115 @@ release, and listed in alphabetical order:
 [`dart fix`]: /tools/flutter-fix
 [test registry]: {{site.github}}/flutter/tests
 
+## Breaking changes by release
+
+The following guides are available.
+They're sorted by release and listed in alphabetical order:
+
 ### Not yet released to stable
 
-* [`ImageFilter.blur` default tile mode automatic selection][]
-* [Localized messages are generated into source, not a synthetic package][]
-* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][] <!-- Branch cut starts here, below will be in next stable -->
-* [`Color` wide gamut support][]
-* [Remove invalid parameters for `InputDecoration.collapsed`][]
-* [Stop generating `AssetManifest.json`][]
+* [`CupertinoDynamicColor` wide gamut support][]
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 * [Deprecate `TextField.canRequestFocus`][]
-* [Set default for SystemUiMode to Edge-to-Edge][]
-* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
-* [Updated Material 3 `Slider`][]
-* [Updated Material 3 Progress Indicators][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
+* [SnackBar with action no longer auto-dismisses][]
+* [Stop generating `AssetManifest.json`][]
+* [UISceneDelegate adoption][]
 
-[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
-[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
-[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
-[`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
-[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
+[Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
+[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+
+<a id="released-in-flutter-335" aria-hidden="true"></a>
+### Released in Flutter 3.35
+
+* [Component theme normalization updates][]
+* [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Deprecate app bar color][]
+* [Redesigned the `Radio` widget][]
+* [Removed semantics elevation and thickness][]
+* [The `Form` widget no longer supports being a sliver][]
+* [Flutter now sets default `abiFilters` in Android builds][]
+* [Merged threads on macOS and Windows][]
+* [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
+
+[Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
+[Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[Deprecate app bar color]: /release/breaking-changes/appbar-theme-color
+[Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
+[Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
+[The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
+[Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
+[Merged threads on macOS and Windows]: /release/breaking-changes/macos-windows-merged-threads
+[The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
+
+<a id="released-in-flutter-332" aria-hidden="true"></a>
+### Released in Flutter 3.32
+
+* [Deprecate `SystemContextMenuController.show`][]
+* [Deprecate `ExpansionTileController` in favor of `ExpansibleController`][]
+* [Deprecate `RouteTransitionRecord.markForRemove`][deprecate-markForRemove]
+  in favor of `RouteTransitionRecord.markForComplete`
+* [Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`][]
+* [Material Theme System Updates][]
+* [`.flutter-plugins-dependencies` replaces `.flutter-plugins`][]
+* [Localized messages are generated into source, not a synthetic package][]
+* [Changing the default `goldenFileComparator` for `integration_test`s][]
+* [Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`][]
+* [Underdamped spring formula changed][]
+
+[Deprecate `SystemContextMenuController.show`]: /release/breaking-changes/system_context_menu_controller_show
+[Deprecate `ExpansionTileController` in favor of `ExpansibleController`]: /release/breaking-changes/expansion-tile-controller
+[deprecate-markForRemove]: /release/breaking-changes/navigator-complete-route
+[Deprecate `ThemeData.indicatorColor` in favor of `TabBarThemeData.indicatorColor`]: /release/breaking-changes/deprecate-themedata-indicatorcolor
+[Localized messages are generated into source, not a synthetic package]: /release/breaking-changes/flutter-generate-i10n-source
+[Material Theme System Updates]: /release/breaking-changes/material-theme-system-updates
+[`.flutter-plugins-dependencies` replaces `.flutter-plugins`]: /release/breaking-changes/flutter-plugins-configuration
+[Changing the default `goldenFileComparator` for `integration_test`s]: /release/breaking-changes/integration-test-default-golden-comparator
+[Deprecate `InputDecoration.maintainHintHeight` in favor of `InputDecoration.maintainHintSize`]: /release/breaking-changes/deprecate-inputdecoration-maintainhintheight
+[Underdamped spring formula changed]: /release/breaking-changes/spring-description-underdamped
+
+<a id="released-in-flutter-329" aria-hidden="true"></a>
+### Released in Flutter 3.29
+
+* [Removal of v1 Android embedding Java APIs][]
+* [Deprecate `WebGoldenComparator`][]
+* [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`][]
+* [`ImageFilter.blur` default tile mode automatic selection][]
+* [Updated Material 3 `Slider`][]
+* [Updated Material 3 progress indicators][]
+
+[Removal of v1 Android embedding Java APIs]: /release/breaking-changes/v1-android-embedding
+[Deprecate `WebGoldenComparator`]: /release/breaking-changes/web-golden-comparator
 [Deprecate `ThemeData.dialogBackgroundColor` in favor of `DialogThemeData.backgroundColor`]: /release/breaking-changes/deprecate-themedata-dialogbackgroundcolor
+[`ImageFilter.blur` default tile mode automatic selection]: /release/breaking-changes/image-filter-blur-tilemode
+[Updated Material 3 progress indicators]: /release/breaking-changes/updated-material-3-progress-indicators
 [Updated Material 3 `Slider`]: /release/breaking-changes/updated-material-3-slider
-[Updated Material 3 Progress Indicators]: /release/breaking-changes/updated-material-3-progress-indicators
+
+<a id="released-in-flutter-327" aria-hidden="true"></a>
+### Released in Flutter 3.27
+
+* [`Color` wide gamut support][]
+* [Component theme normalization][]
+* [Deep links flag change][]
+* [Material 3 Tokens Update in Flutter][]
+* [Remove invalid parameters for `InputDecoration.collapsed`][]
+* [Set default for SystemUiMode to Edge-to-Edge][]
+
+[`Color` wide gamut support]: /release/breaking-changes/wide-gamut-framework
+[Component theme normalization]: /release/breaking-changes/component-theme-normalization
+[Deep links flag change]: /release/breaking-changes/deep-links-flag-change
+[Material 3 Tokens Update in Flutter]: /release/breaking-changes/material-design-3-token-update
+[Remove invalid parameters for `InputDecoration.collapsed`]: /release/breaking-changes/input-decoration-collapsed
+[Set default for SystemUiMode to Edge-to-Edge]: /release/breaking-changes/default-systemuimode-edge-to-edge
 
 <a id="released-in-flutter-324" aria-hidden="true"></a>
 ### Released in Flutter 3.24

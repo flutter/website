@@ -5,6 +5,8 @@ description: >
   ImageProvider has marked resolve as @nonVirtual.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `ImageCache` now has a method called `containsKey`.

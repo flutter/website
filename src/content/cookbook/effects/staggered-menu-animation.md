@@ -1,9 +1,6 @@
 ---
 title: Create a staggered menu animation
 description: How to implement a staggered menu animation.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/staggered_menu_animation"?>
@@ -11,25 +8,25 @@ js:
 A single app screen might contain multiple animations.
 Playing all of the animations at the same time can be
 overwhelming. Playing the animations one after the other
-can take too long. A better option is to stagger the animations. 
+can take too long. A better option is to stagger the animations.
 Each animation begins at a different time,
 but the animations overlap to create a shorter duration.
-In this recipe, you build a drawer menu with animated 
+In this recipe, you build a drawer menu with animated
 content that is staggered and has a button that pops
 in at the bottom.
 
 The following animation shows the app's behavior:
 
-![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.gif){:.site-mobile-screenshot}
+![Staggered Menu Animation Example](/assets/images/docs/cookbook/effects/StaggeredMenuAnimation.webp){:.site-mobile-screenshot}
 
 ## Create the menu without animations
 
 The drawer menu displays a list of titles,
-followed by a Get started button at 
+followed by a Get started button at
 the bottom of the menu.
 
 Define a stateful widget called `Menu`
-that displays the list and button 
+that displays the list and button
 in static locations.
 
 <?code-excerpt "lib/step1.dart (step1)"?>
@@ -56,10 +53,7 @@ class _MenuState extends State<Menu> {
       color: Colors.white,
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          _buildFlutterLogo(),
-          _buildContent(),
-        ],
+        children: [_buildFlutterLogo(), _buildContent()],
       ),
     );
   }
@@ -90,10 +84,7 @@ class _MenuState extends State<Menu> {
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
       );
@@ -115,10 +106,7 @@ class _MenuState extends State<Menu> {
           onPressed: () {},
           child: const Text(
             'Get Started',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 22),
           ),
         ),
       ),
@@ -145,9 +133,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _staggeredController = AnimationController(
-      vsync: this,
-    );
+    _staggeredController = AnimationController(vsync: this);
   }
 
   @override
@@ -160,7 +146,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 The length of the delay before every animation is
 up to you. Define the animation delays,
-individual animation durations, and the total 
+individual animation durations, and the total
 animation duration.
 
 <?code-excerpt "lib/animation_delays.dart (delays)" plaster="none"?>
@@ -171,7 +157,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
+  final _animationDuration =
+      _initialDelayTime +
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
@@ -180,7 +167,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
 
 In this case, all the animations are delayed by 50 ms.
 After that, list items begin to appear.
-Each list item's appearance is delayed by 50 ms after the 
+Each list item's appearance is delayed by 50 ms after the
 previous list item begins to slide in.
 Each list item takes 250 ms to slide from right to left.
 After the last list item begins to slide in,
@@ -197,15 +184,15 @@ The desired animation times are shown in the following diagram:
 
 To animate a value during a subsection of a larger animation,
 Flutter provides the `Interval` class.
-An `Interval` takes a start time percentage and an end 
+An `Interval` takes a start time percentage and an end
 time percentage. That `Interval` can then be used to
 animate a value between those start and end times,
-instead of using the entire animation's start and 
-end times. For example, given an animation that takes 1 second, 
+instead of using the entire animation's start and
+end times. For example, given an animation that takes 1 second,
 an interval from 0.2 to 0.5 would start at 200 ms
-(20%) and end at 500 ms (50%). 
+(20%) and end at 500 ms (50%).
 
-Declare and calculate each list item's `Interval` and the 
+Declare and calculate each list item's `Interval` and the
 bottom button `Interval`.
 
 <?code-excerpt "lib/step3.dart (step3)" plaster="none"?>
@@ -239,7 +226,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
 
     final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+        Duration(milliseconds: _menuTitles.length * 50) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
@@ -305,10 +292,7 @@ List<Widget> _buildListItems() {
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
       ),
@@ -333,16 +317,14 @@ Widget _buildGetStartedButton() {
         animation: _staggeredController,
         builder: (context, child) {
           final animationPercent = Curves.elasticOut.transform(
-              _buttonInterval.transform(_staggeredController.value));
+            _buttonInterval.transform(_staggeredController.value),
+          );
           final opacity = animationPercent.clamp(0.0, 1.0);
           final scale = (animationPercent * 0.5) + 0.5;
 
           return Opacity(
             opacity: opacity,
-            child: Transform.scale(
-              scale: scale,
-              child: child,
-            ),
+            child: Transform.scale(scale: scale, child: child),
           );
         },
         child: ElevatedButton(
@@ -354,10 +336,7 @@ Widget _buildGetStartedButton() {
           onPressed: () {},
           child: const Text(
             'Get Started',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 22),
           ),
         ),
       ),
@@ -367,7 +346,7 @@ Widget _buildGetStartedButton() {
 ```
 
 Congratulations!
-You have an animated menu where the appearance of each 
+You have an animated menu where the appearance of each
 list item is staggered, followed by a bottom button that
 pops into place.
 
@@ -387,9 +366,7 @@ void main() {
 }
 
 class ExampleStaggeredAnimations extends StatefulWidget {
-  const ExampleStaggeredAnimations({
-    super.key,
-  });
+  const ExampleStaggeredAnimations({super.key});
 
   @override
   State<ExampleStaggeredAnimations> createState() =>
@@ -441,23 +418,13 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _buildAppBar(),
-      body: Stack(
-        children: [
-          _buildContent(),
-          _buildDrawer(),
-        ],
-      ),
+      body: Stack(children: [_buildContent(), _buildDrawer()]),
     );
   }
 
   PreferredSizeWidget _buildAppBar() {
     return AppBar(
-      title: const Text(
-        'Flutter Menu',
-        style: TextStyle(
-          color: Colors.black,
-        ),
-      ),
+      title: const Text('Flutter Menu', style: TextStyle(color: Colors.black)),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
       automaticallyImplyLeading: false,
@@ -468,14 +435,8 @@ class _ExampleStaggeredAnimationsState extends State<ExampleStaggeredAnimations>
             return IconButton(
               onPressed: _toggleDrawer,
               icon: _isDrawerOpen() || _isDrawerOpening()
-                  ? const Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    )
-                  : const Icon(
-                      Icons.menu,
-                      color: Colors.black,
-                    ),
+                  ? const Icon(Icons.clear, color: Colors.black)
+                  : const Icon(Icons.menu, color: Colors.black),
             );
           },
         ),
@@ -522,7 +483,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
+  final _animationDuration =
+      _initialDelayTime +
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
@@ -556,7 +518,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
 
     final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+        Duration(milliseconds: _menuTitles.length * 50) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
@@ -576,10 +538,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       color: Colors.white,
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          _buildFlutterLogo(),
-          _buildContent(),
-        ],
+        children: [_buildFlutterLogo(), _buildContent()],
       ),
     );
   }
@@ -588,12 +547,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     return const Positioned(
       right: -100,
       bottom: -30,
-      child: Opacity(
-        opacity: 0.2,
-        child: FlutterLogo(
-          size: 400,
-        ),
-      ),
+      child: Opacity(opacity: 0.2, child: FlutterLogo(size: 400)),
     );
   }
 
@@ -635,10 +589,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
             ),
           ),
         ),
@@ -656,16 +607,14 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           animation: _staggeredController,
           builder: (context, child) {
             final animationPercent = Curves.elasticOut.transform(
-                _buttonInterval.transform(_staggeredController.value));
+              _buttonInterval.transform(_staggeredController.value),
+            );
             final opacity = animationPercent.clamp(0.0, 1.0);
             final scale = (animationPercent * 0.5) + 0.5;
 
             return Opacity(
               opacity: opacity,
-              child: Transform.scale(
-                scale: scale,
-                child: child,
-              ),
+              child: Transform.scale(scale: scale, child: child),
             );
           },
           child: ElevatedButton(
@@ -677,10 +626,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             onPressed: () {},
             child: const Text(
               'Get started',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 22),
             ),
           ),
         ),

@@ -364,7 +364,7 @@ The quantities plotted on the y-axis are as follows:
   and [DevTools Performance view][].
 
 **Allocated**
-: The current capacity of the heap is typically
+: The current total capacity of all Dart heaps. This is typically
   slightly larger than the total size of all heap objects.
 
 **RSS - Resident Set Size**
@@ -376,7 +376,7 @@ The quantities plotted on the y-axis are as follows:
   For more information, see [Dart VM internals][].
 
 [Command-line and server apps]: {{site.dart-site}}/server
-[Custom Flutter engine embedders]: {{site.repo.engine}}/blob/main/docs/Custom-Flutter-Engine-Embedders.md
+[Custom Flutter engine embedders]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/Custom-Flutter-Engine-Embedders.md
 [Dart VM internals]: https://mrale.ph/dartvm/
 [DevTools Performance view]: /tools/devtools/performance
 [Flutter architectural overview]: /resources/architectural-overview
@@ -393,7 +393,7 @@ deeper analysis in Google Sheets or other tools,
 download the data in CSV format.
 Toggle **Refresh on GC**, to see allocation in real time.
 
-![Screenshot of the profile tab page](/assets/images/docs/tools/devtools/profile-tab-2.png){:width="100%"}
+![Screenshot of the profile tab page](/assets/images/docs/tools/devtools/profile-tab.png){:width="100%"}
 
 ### Diff Snapshots tab
 

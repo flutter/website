@@ -1,6 +1,6 @@
 ---
 title: Data layer
-short-title: Data layer
+shortTitle: Data layer
 description: >-
   A walk-through of the data layer of an app that implements MVVM architecture.
 prev:
@@ -84,7 +84,7 @@ Some methods return data classes that are
 specifically for raw data from the API,
 such as the `BookingApiModel` class.
 As you'll soon see, repositories extract data and
-expose it to s in a different format.
+expose it in a different format.
 :::
 
 
@@ -160,7 +160,7 @@ All repositories output corresponding domain models.
 These data models differ from API models in that they only contain the data
 needed by the rest of the app.
 API models contain raw data that often needs to be filtered,
-combined, or deleted to be useful to the app's s.
+combined, or deleted to be useful to the app's view models.
 The repo refines the raw data and outputs it as domain models.
 
 In the example app, domain models are exposed through
@@ -229,19 +229,16 @@ Future<Result<void>> delete(int id) async {
 ```
 
 The repository sends a `POST` request to the API client with
-the `_apiClient.deleteBooking` method,
-and returns a `Result`. The `HomeViewModel` consumes the `Result,
-and the data it contains, and ultimately calls `notifyListeners`,
-completing the cycle.
+the `_apiClient.deleteBooking` method, and returns a `Result`.
+The `HomeViewModel` consumes the `Result` and the data it contains,
+then ultimately calls `notifyListeners`, completing the cycle.
 
 [repositories]: /app-architecture/guide#repositories
 [services]:  /app-architecture/guide#services
 [`APIClient`]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/data/services/api/api_client.dart
 [`sealed`]: {{site.dart-site}}/language/class-modifiers#sealed
 [`BookingRepository` classes on GitHub]: https://github.com/flutter/samples/tree/main/compass_app/app/lib/data/repositories/booking
-[Result cookbook recipe]: /cookbook/architecture
-
-[//]: # (todo ewindmill@ - update Result link after #11444 lands)
+[Result cookbook recipe]: /app-architecture/design-patterns/result
 
 ## Feedback
 

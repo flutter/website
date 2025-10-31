@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Returning Data',
-      home: HomeScreen(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Returning Data', home: HomeScreen()));
 }
 
 class HomeScreen extends StatelessWidget {
@@ -15,12 +10,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Returning Data Demo'),
-      ),
-      body: const Center(
-        child: SelectionButton(),
-      ),
+      appBar: AppBar(title: const Text('Returning Data Demo')),
+      body: const Center(child: SelectionButton()),
     );
   }
 }
@@ -51,7 +42,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
 
     // When a BuildContext is used from a StatefulWidget, the mounted property
@@ -64,6 +55,7 @@ class _SelectionButtonState extends State<SelectionButton> {
       ..removeCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text('$result')));
   }
+
   // #enddocregion navigateAndDisplay
 }
 
@@ -73,9 +65,7 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pick an option'),
-      ),
+      appBar: AppBar(title: const Text('Pick an option')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -103,7 +93,7 @@ class SelectionScreen extends StatelessWidget {
                 child: const Text('Nope.'),
               ),
               // #enddocregion Nope
-            )
+            ),
           ],
         ),
       ),

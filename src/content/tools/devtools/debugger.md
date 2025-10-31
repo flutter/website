@@ -13,15 +13,6 @@ from VS Code because VS Code has a built-in debugger.
 DevTools includes a full source-level debugger,
 supporting breakpoints, stepping, and variable inspection.
 
-:::note
-The debugger works with all Flutter and Dart applications.
-If you are looking for a way to use GDB to remotely debug the
-Flutter engine running within an Android app process,
-check out [`flutter_gdb`][].
-:::
-
-[`flutter_gdb`]: {{site.repo.engine}}/blob/main/sky/tools/flutter_gdb
-
 When you open the debugger tab, you should see the source for the main
 entry-point for your app loaded in the debugger.
 

@@ -17,7 +17,7 @@ which is included in the [`flutter_test`][] package:
 
 In this recipe, learn how to scroll through a list of items to
 verify a specific widget is being displayed,
-and the pros and cons of different approaches. 
+and the pros and cons of different approaches.
 
 This recipe uses the following steps:
 
@@ -41,9 +41,7 @@ inside the integration tests.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp(
-    items: List<String>.generate(10000, (i) => 'Item $i'),
-  ));
+  runApp(MyApp(items: List<String>.generate(10000, (i) => 'Item $i')));
 }
 
 class MyApp extends StatelessWidget {
@@ -58,9 +56,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           // Add a key to the ListView. This makes it possible to
           // find the list and scroll through it in the tests.
@@ -120,19 +116,15 @@ import 'package:scrolling/main.dart';
 void main() {
   testWidgets('finds a deep item in a long list', (tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp(
-      items: List<String>.generate(10000, (i) => 'Item $i'),
-    ));
+    await tester.pumpWidget(
+      MyApp(items: List<String>.generate(10000, (i) => 'Item $i')),
+    );
 
     final listFinder = find.byType(Scrollable);
     final itemFinder = find.byKey(const ValueKey('item_50_text'));
 
     // Scroll until the item to be found appears.
-    await tester.scrollUntilVisible(
-      itemFinder,
-      500.0,
-      scrollable: listFinder,
-    );
+    await tester.scrollUntilVisible(itemFinder, 500.0, scrollable: listFinder);
 
     // Verify that the item contains the correct text.
     expect(itemFinder, findsOneWidget);

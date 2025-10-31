@@ -1,7 +1,8 @@
 ---
 title: Android Studio and IntelliJ
-description: >
-  How to develop Flutter apps in Android Studio or other IntelliJ products.
+description: >-
+  Learn how to develop Flutter apps in
+  Android Studio and other IntelliJ products.
 ---
 
 <ul class="nav nav-tabs" id="ide" role="tablist">
@@ -13,10 +14,105 @@ description: >
   </li>
 </ul>
 
-## Installation and setup
+<a id="installation-and-setup" aria-hidden="true"></a>
 
-Follow the [Set up an editor](/get-started/editor?tab=androidstudio)
-instructions to install the Dart and Flutter plugins.
+## Installation and setup {: #setup}
+
+Android Studio and IntelliJ IDEA offer a complete,
+IDE experience once you install the Flutter plugin.
+
+To install the latest version of the following IDEs, follow their instructions:
+
+- [Android Studio][]
+- [IntelliJ IDEA Community][]
+- [IntelliJ IDEA Ultimate][]
+
+[Android Studio]: {{site.android-dev}}/studio/install
+[IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
+[IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
+
+### Install the Flutter plugin {: #install-plugin}
+
+<Tabs key="dev-os">
+
+<Tab name="Windows">
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+</Tab>
+<Tab name="macOS">
+
+1. Start Android Studio or IntelliJ.
+
+1. From the macOS menu bar, go to **Android Studio** (or **IntelliJ**)
+   <span aria-label="and then">></span> **Settings...**.
+
+   You can also press <kbd>Cmd</kbd> + <kbd>,</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+</Tab>
+<Tab name="Linux">
+
+1. Go to **File** <span aria-label="and then">></span>
+   **Settings**.
+
+   You can also press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> +
+   <kbd>S</kbd>.
+
+   The **Preferences** dialog opens.
+
+1. From the list at the left, select **Plugins**.
+
+1. From the top of this panel, select **Marketplace**.
+
+1. Type `flutter` in the plugin search field.
+
+1. Select the **Flutter** plugin.
+
+1. Click **Install**.
+
+1. Click **Yes** when prompted to install the plugin.
+
+1. Click **Restart** when prompted.
+
+</Tab>
+
+</Tabs>
 
 ### Updating the plugins {:#updating}
 
@@ -43,7 +139,7 @@ differs between Android Studio and IntelliJ.
  1. In the IDE, click **New Flutter Project** from the **Welcome** window or
     **File > New > New Flutter Project** from the main IDE window.
  1. Specify the **Flutter SDK path** and click **Next**.
- 1. Enter your desired **Project name**, 
+ 1. Enter your desired **Project name**,
     **Description**, and **Project location**.
  1. If you might publish this app,
     [set the company domain](#set-the-company-domain).
@@ -76,7 +172,7 @@ is released. Your organization name should be unique.
 To open an existing Flutter project:
 
  1. In the IDE, click **Open** from the **Welcome** window, or
-    **File > Open** from the main IDE window. 
+    **File > Open** from the main IDE window.
  1. Browse to the directory holding your existing
     Flutter source code files.
  1. Click **Open**.
@@ -246,7 +342,7 @@ The assist can be invoked by clicking the lightbulb, or by using the
 keyboard shortcut (`Alt`+`Enter` on Linux and Windows,
 `Option`+`Return` on macOS), as illustrated here:
 
-![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.gif){:width="100%"}
+![IntelliJ editing assists](/assets/images/docs/tools/android-studio/assists.webp){:width="100%"}
 
 Quick Fixes are similar, only they are shown with a piece of code has an error
 and they can assist in correcting it. They are indicated with a red lightbulb.
@@ -272,7 +368,7 @@ Live templates can be used to speed up entering typical code structures.
 They are invoked by typing their prefix, and then selecting it in the code
 completion window:
 
-![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.gif){:width="100%"}
+![IntelliJ live templates](/assets/images/docs/tools/android-studio/templates.webp){:width="100%"}
 
 The Flutter plugin includes the following templates:
 
@@ -375,6 +471,23 @@ location of the Android SDK:
     Make sure to select an Android SDK matching the one used by
     Flutter (as reported by `flutter doctor`).
  1. Click **OK**.
+
+## Flutter Property Editor {: #property-editor}
+
+The Flutter Property Editor is a powerful tool provided by the [Flutter
+plugin][] that lets you view and modify widget properties directly from its
+visual interface.
+
+### How to open the Flutter Property Editor in Android Studio and IntelliJ
+
+1. Click on the Flutter Property Editor **icon** ![Flutter Property Editor Android Studio/IntelliJ icon](/assets/images/docs/tools/devtools/property-editor-icon-android-studio.png){:width="20px"} in the Android Studio or IntelliJ sidebar.
+2. The Flutter Property Editor will load in the side panel.
+3. Please refer to the Flutter Property Editor [documentation][] for a detailed usage guide.
+
+![Flutter Property Editor side panel in Android Studio/IntelliJ](/assets/images/docs/tools/devtools/property-editor-android-studio.png){:width="600px"}
+
+[Flutter plugin]: https://plugins.jetbrains.com/plugin/9212-flutter
+[documentation]: /tools/property-editor
 
 ## Troubleshooting
 

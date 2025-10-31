@@ -1,9 +1,6 @@
 ---
 title: Create an expandable FAB
 description: How to implement a FAB that expands to multiple buttons when tapped.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/expandable_fab"?>
@@ -20,7 +17,7 @@ those critical actions.
 
 The following animation shows the app's behavior:
 
-![Expanding and collapsing the FAB](/assets/images/docs/cookbook/effects/ExpandingFAB.gif){:.site-mobile-screenshot}
+![Expanding and collapsing the FAB](/assets/images/docs/cookbook/effects/ExpandingFAB.webp){:.site-mobile-screenshot}
 
 ## Create an ExpandableFab widget
 
@@ -63,7 +60,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
 
 The `ExpandableFab` displays a blue edit button when collapsed
 and a white close button when expanded. When expanding and collapsing,
-these two buttons scale and fade between one another. 
+these two buttons scale and fade between one another.
 
 Implement the expand and collapse cross-fade between the two different FABs.
 
@@ -90,10 +87,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
       child: Stack(
         alignment: Alignment.bottomRight,
         clipBehavior: Clip.none,
-        children: [
-          _buildTapToCloseFab(),
-          _buildTapToOpenFab(),
-        ],
+        children: [_buildTapToCloseFab(), _buildTapToOpenFab()],
       ),
     );
   }
@@ -111,10 +105,7 @@ class _ExpandableFabState extends State<ExpandableFab> {
             onTap: _toggle,
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.close,
-                color: Theme.of(context).primaryColor,
-              ),
+              child: Icon(Icons.close, color: Theme.of(context).primaryColor),
             ),
           ),
         ),
@@ -179,11 +170,7 @@ these round buttons.
 ```dart
 @immutable
 class ActionButton extends StatelessWidget {
-  const ActionButton({
-    super.key,
-    this.onPressed,
-    required this.icon,
-  });
+  const ActionButton({super.key, this.onPressed, required this.icon});
 
   final VoidCallback? onPressed;
   final Widget icon;
@@ -282,7 +269,7 @@ class _ExpandableFabState extends State<ExpandableFab>
       }
     });
   }
-}
+  }
 ```
 
 Next, introduce a new stateless widget called `_ExpandingActionButton`,
@@ -322,10 +309,7 @@ class _ExpandingActionButton extends StatelessWidget {
           ),
         );
       },
-      child: FadeTransition(
-        opacity: progress,
-        child: child,
-      ),
+      child: FadeTransition(opacity: progress, child: child),
     );
   }
 }
@@ -372,9 +356,11 @@ class _ExpandableFabState extends State<ExpandableFab>
     final children = <Widget>[];
     final count = widget.children.length;
     final step = 90.0 / (count - 1);
-    for (var i = 0, angleInDegrees = 0.0;
-        i < count;
-        i++, angleInDegrees += step) {
+    for (
+      var i = 0, angleInDegrees = 0.0;
+      i < count;
+      i++, angleInDegrees += step
+    ) {
       children.add(
         _ExpandingActionButton(
           directionInDegrees: angleInDegrees,
@@ -386,7 +372,7 @@ class _ExpandableFabState extends State<ExpandableFab>
     }
     return children;
   }
-}
+  }
 ```
 
 Congratulations! You now have an expandable FAB.
@@ -450,9 +436,7 @@ class ExampleExpandableFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Expandable Fab'),
-      ),
+      appBar: AppBar(title: const Text('Expandable Fab')),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 8),
         itemCount: 25,
@@ -565,10 +549,7 @@ class _ExpandableFabState extends State<ExpandableFab>
             onTap: _toggle,
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Icon(
-                Icons.close,
-                color: Theme.of(context).primaryColor,
-              ),
+              child: Icon(Icons.close, color: Theme.of(context).primaryColor),
             ),
           ),
         ),
@@ -580,9 +561,11 @@ class _ExpandableFabState extends State<ExpandableFab>
     final children = <Widget>[];
     final count = widget.children.length;
     final step = 90.0 / (count - 1);
-    for (var i = 0, angleInDegrees = 0.0;
-        i < count;
-        i++, angleInDegrees += step) {
+    for (
+      var i = 0, angleInDegrees = 0.0;
+      i < count;
+      i++, angleInDegrees += step
+    ) {
       children.add(
         _ExpandingActionButton(
           directionInDegrees: angleInDegrees,
@@ -653,21 +636,14 @@ class _ExpandingActionButton extends StatelessWidget {
           ),
         );
       },
-      child: FadeTransition(
-        opacity: progress,
-        child: child,
-      ),
+      child: FadeTransition(opacity: progress, child: child),
     );
   }
 }
 
 @immutable
 class ActionButton extends StatelessWidget {
-  const ActionButton({
-    super.key,
-    this.onPressed,
-    required this.icon,
-  });
+  const ActionButton({super.key, this.onPressed, required this.icon});
 
   final VoidCallback? onPressed;
   final Widget icon;
@@ -691,10 +667,7 @@ class ActionButton extends StatelessWidget {
 
 @immutable
 class FakeItem extends StatelessWidget {
-  const FakeItem({
-    super.key,
-    required this.isBig,
-  });
+  const FakeItem({super.key, required this.isBig});
 
   final bool isBig;
 

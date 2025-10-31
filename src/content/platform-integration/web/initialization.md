@@ -73,7 +73,7 @@ substitute in either the `flutter_bootstrap.js` or `index.html` files:
 |---|---|
 | `{% raw %}{{flutter_js}}{% endraw %}` | The JavaScript code that makes the `FlutterLoader` object available in the `_flutter.loader` global variable. (See the `_flutter.loader.load() API` section below for more details.) |
 | `{% raw %}{{flutter_build_config}}{% endraw %}` | A JavaScript statement that sets metadata produced by the build process which gives the `FlutterLoader` information needed to properly bootstrap your application. |
-| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Service Worker Settings" table below). |
+| `{% raw %}{{flutter_service_worker_version}}{% endraw %}` | A unique number representing the build version of the service worker, which can be passed as part of the service worker configuration (see the "Common warning" info below). |
 | `{% raw %}{{flutter_bootstrap_js}}{% endraw %}` | As mentioned above, this inlines the contents of the `flutter_bootstrap.js` file directly into the `index.html` file. Note that this token can only be used in the `index.html` and not the `flutter_bootstrap.js` file itself. |
 
 {:.table}
@@ -101,7 +101,7 @@ The most basic `flutter_bootstrap.js` file would look something like this:
 _flutter.loader.load();
 ```
 
-## Customize the Flutter Loader
+## Customize the Flutter loader
 
 The `_flutter.loader.load()` JavaScript API can be invoked with optional
 arguments to customize initialization behavior:
@@ -123,7 +123,7 @@ The `config` argument is an object that can have the following optional fields:
 |`canvasKitForceCpuOnly`| When `true`, forces CPU-only rendering in CanvasKit (the engine won't use WebGL). |`bool`|
 |`canvasKitMaximumSurfaces`| The maximum number of overlay surfaces that the CanvasKit renderer can use. |`double`|
 |`debugShowSemanticNodes`| If `true`, Flutter visibly renders the semantics tree onscreen (for debugging).  |`bool`|
-|`entryPointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/".  |`String`|
+|`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/".  |`String`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
 
@@ -152,8 +152,6 @@ _flutter.loader.load({
 This script evaluates the `URLSearchParams` of the page to determine whether
 the user passed a `renderer` query parameter and then
 changes the user configuration of the Flutter app.
-It also passes the service worker settings to use the flutter service worker,
-along with the service worker version.
 
 ## The onEntrypointLoaded callback
 
@@ -211,4 +209,19 @@ _flutter.loader.load({
     await appRunner.runApp();
   }
 });
+```
+
+## Common warning
+
+If you experience a warning similar to the following:
+
+```text
+Warning: In index.html:37: Local variable for "serviceWorkerVersion" is deprecated.
+Use "{{flutter_service_worker_version}}" template token instead.
+```
+
+You can fix this by deleting the following line in the `web/index.html` file:
+
+```html title="web/index.html"
+var serviceWorkerVersion = null;
 ```

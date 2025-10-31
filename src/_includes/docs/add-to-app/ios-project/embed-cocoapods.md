@@ -20,7 +20,7 @@ consult the [CocoaPods getting started guide][].
 If watching a video helps you learn,
 this video covers adding Flutter to an iOS app:
 
-{% ytEmbed 'IIcrfrTshTs', 'Step by step on how to add Flutter to an existing iOS app' %}
+<YouTubeEmbed id="IIcrfrTshTs" title="Step by step on how to add Flutter to an existing iOS app"></YouTubeEmbed>
 
 #### Requirements {:#method-a-reqs}
 
@@ -138,6 +138,48 @@ into your iOS app, complete the following procedure.
       the `.xcodeproj` doesn't.
 
    1. Select **Product** > **Build** or press <kbd>Cmd</kbd> + <kbd>B</kbd>.
+
+#### Set LLDB Init File
+
+:::warning
+Set your scheme to use Flutter's LLDB Init File. Without this file, debugging
+on an iOS 26 or later device may crash.
+:::
+
+1. Generate Flutter LLDB files.
+
+   1. Within your flutter application, run the following:
+
+   ```console
+   flutter build ios --config-only
+   ```
+
+   This will generate the LLDB files in the `.ios/Flutter/ephemeral` directory.
+
+1. Set the LLDB Init File.
+
+   1. Go to **Product > Scheme > Edit Scheme**.
+
+   1. Select the **Run** section in the left side bar.
+
+   1. Set the **LLDB Init File** using the same relative path to your Flutter
+      application as you put in your Podfile in the **Update your Podfile**
+      section.
+
+      ```console
+      $(SRCROOT)/../my_flutter/.ios/Flutter/ephemeral/flutter_lldbinit
+      ```
+
+      If your scheme already has an **LLDB Init File**, you can add Flutter's
+      LLDB file to it. The path to Flutter's LLDB Init File must be relative
+      to the location of your project's LLDB Init File.
+
+      For example, if your LLDB file is located at `/path/to/MyApp/.lldbinit`,
+      you would add the following:
+
+      ```console
+      command source --relative-to-command-file "../my_flutter/.ios/Flutter/ephemeral/flutter_lldbinit"
+      ```
 
 [build-modes]: /testing/build-modes
 [CocoaPods getting started guide]: https://guides.cocoapods.org/using/using-cocoapods.html

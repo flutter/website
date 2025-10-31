@@ -11,11 +11,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
-      ),
+      body: const DraggableCard(child: FlutterLogo(size: 128)),
     );
   }
 }
@@ -42,10 +38,6 @@ class _DraggableCardState extends State<DraggableCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      child: Card(
-        child: widget.child,
-      ),
-    );
+    return Align(child: Card(child: widget.child));
   }
 }

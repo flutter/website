@@ -12,10 +12,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -41,21 +38,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
       return const Text('Toggle One');
     }
 
-    return CupertinoButton(
-      onPressed: () {},
-      child: const Text('Toggle Two'),
-    );
+    return CupertinoButton(onPressed: () {}, child: const Text('Toggle Two'));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
@@ -83,6 +73,7 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
+
   // #enddocregion simple-widget
 }
 
@@ -102,6 +93,7 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion row
 }
 
@@ -121,6 +113,7 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion column
 }
 
@@ -139,5 +132,6 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
+
   // #enddocregion list-view
 }

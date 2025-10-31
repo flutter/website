@@ -1,9 +1,6 @@
 ---
 title: Using Actions and Shortcuts
 description: How to use Actions and Shortcuts in your Flutter app.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 This page describes how to bind physical keyboard events to actions in the user
@@ -29,7 +26,7 @@ contexts. An [`Action`][] can be a simple callback (as in the case of
 the [`CallbackAction`][]) or something more complex that integrates with entire
 undo/redo architectures (for example) or other logic.
 
-![Using Shortcuts Diagram][]{:width="100%"}
+![Using Shortcuts Diagram][]{:width="100%" .diagram-wrap}
 
 [`Shortcuts`][] are key bindings that activate by pressing a key or combination
 of keys. The key combinations reside in a table with their bound intent. When
@@ -79,7 +76,7 @@ bindings, and the implementation of those bindings, are in different places.
 If all you need are callbacks without the flexibility of `Actions` and
 `Shortcuts`, you can use the [`CallbackShortcuts`][] widget:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (callback-shortcuts)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (callback-shortcuts)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -121,7 +118,7 @@ define a `SelectAllIntent`, and bind it to your own `SelectAllAction` or to your
 either one, depending on which part of your application has focus. Let's see how
 the key binding part works:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (shortcuts)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (shortcuts)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
@@ -181,7 +178,7 @@ its functionality.
 For example, if you wanted to log each key that a `Shortcuts` widget handled,
 you could make a `LoggingShortcutManager`:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-shortcut-manager)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-shortcut-manager)"?>
 ```dart
 class LoggingShortcutManager extends ShortcutManager {
   @override
@@ -211,7 +208,7 @@ Actions, in their simplest form, are just subclasses of `Action<Intent>` with an
 `invoke()` method. Here's a simple action that simply invokes a function on the
 provided model:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (select-all-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (select-all-action)"?>
 ```dart
 class SelectAllAction extends Action<SelectAllIntent> {
   SelectAllAction(this.model);
@@ -225,7 +222,7 @@ class SelectAllAction extends Action<SelectAllIntent> {
 
 Or, if it's too much of a bother to create a new class, use a `CallbackAction`:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (callback-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (callback-action)"?>
 ```dart
 CallbackAction(onInvoke: (intent) => model.selectAll());
 ```
@@ -233,14 +230,12 @@ CallbackAction(onInvoke: (intent) => model.selectAll());
 Once you have an action, you add it to your application using the [`Actions`][]
 widget, which takes a map of `Intent` types to `Action`s:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (select-all-usage)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (select-all-usage)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Actions(
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: child,
   );
 }
@@ -261,10 +256,11 @@ action. It's possible to invoke actions that are not bound to keys.
 
 For instance, to find an action associated with an intent, you can use:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (maybe-find)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-find)"?>
 ```dart
-Action<SelectAllIntent>? selectAll =
-    Actions.maybeFind<SelectAllIntent>(context);
+Action<SelectAllIntent>? selectAll = Actions.maybeFind<SelectAllIntent>(
+  context,
+);
 ```
 
 This returns an `Action` associated with the `SelectAllIntent` type if one is
@@ -275,21 +271,24 @@ type.
 
 To invoke the action (if it exists), call:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (invoke-action)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (invoke-action)"?>
 ```dart
 Object? result;
 if (selectAll != null) {
-  result =
-      Actions.of(context).invokeAction(selectAll, const SelectAllIntent());
+  result = Actions.of(
+    context,
+  ).invokeAction(selectAll, const SelectAllIntent());
 }
 ```
 
 Combine that into one call with the following:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (maybe-invoke)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (maybe-invoke)"?>
 ```dart
-Object? result =
-    Actions.maybeInvoke<SelectAllIntent>(context, const SelectAllIntent());
+Object? result = Actions.maybeInvoke<SelectAllIntent>(
+  context,
+  const SelectAllIntent(),
+);
 ```
 
 Sometimes you want to invoke an action as a
@@ -301,14 +300,12 @@ However, if it doesn't have a mapping, it returns `null`.
 This allows the button to be disabled if
 there is no enabled action that matches in the context.
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (handler)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (handler)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Actions(
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
       builder: (context) => TextButton(
         onPressed: Actions.handler<SelectAllIntent>(
@@ -364,7 +361,7 @@ it creates a default `ActionDispatcher` that simply invokes the action.
 If you want a log of all the actions invoked, however, you can create your own
 `LoggingActionDispatcher` to do the job:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher)"?>
 ```dart
 class LoggingActionDispatcher extends ActionDispatcher {
   @override
@@ -393,15 +390,13 @@ class LoggingActionDispatcher extends ActionDispatcher {
 
 Then you pass that to your top-level `Actions` widget:
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher-usage)"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/samples.dart (logging-action-dispatcher-usage)"?>
 ```dart
 @override
 Widget build(BuildContext context) {
   return Actions(
     dispatcher: LoggingActionDispatcher(),
-    actions: <Type, Action<Intent>>{
-      SelectAllIntent: SelectAllAction(model),
-    },
+    actions: <Type, Action<Intent>>{SelectAllIntent: SelectAllAction(model)},
     child: Builder(
       builder: (context) => TextButton(
         onPressed: Actions.handler<SelectAllIntent>(
@@ -430,7 +425,7 @@ also has "select all" and "copy to clipboard" buttons next to it. The buttons
 invoke actions to accomplish their work. All the invoked actions and
 shortcuts are logged.
 
-<?code-excerpt "ui/advanced/actions_and_shortcuts/lib/copyable_text.dart"?>
+<?code-excerpt "ui/actions_and_shortcuts/lib/copyable_text.dart"?>
 ```dartpad title="Copyable text DartPad hands-on example" run="true"
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -448,10 +443,12 @@ class CopyableTextField extends StatefulWidget {
 
 class _CopyableTextFieldState extends State<CopyableTextField> {
   late final TextEditingController controller = TextEditingController();
+  late final FocusNode focusNode = FocusNode();
 
   @override
   void dispose() {
     controller.dispose();
+    focusNode.dispose();
     super.dispose();
   }
 
@@ -462,33 +459,42 @@ class _CopyableTextFieldState extends State<CopyableTextField> {
       actions: <Type, Action<Intent>>{
         ClearIntent: ClearAction(controller),
         CopyIntent: CopyAction(controller),
-        SelectAllIntent: SelectAllAction(controller),
+        SelectAllIntent: SelectAllAction(controller, focusNode),
       },
-      child: Builder(builder: (context) {
-        return Scaffold(
-          body: Center(
-            child: Row(
-              children: <Widget>[
-                const Spacer(),
-                Expanded(
-                  child: TextField(controller: controller),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.copy),
-                  onPressed:
-                      Actions.handler<CopyIntent>(context, const CopyIntent()),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.select_all),
-                  onPressed: Actions.handler<SelectAllIntent>(
-                      context, const SelectAllIntent()),
-                ),
-                const Spacer(),
-              ],
+      child: Builder(
+        builder: (context) {
+          return Scaffold(
+            body: Center(
+              child: Row(
+                children: <Widget>[
+                  const Spacer(),
+                  Expanded(
+                    child: TextField(
+                      controller: controller,
+                      focusNode: focusNode,
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.copy),
+                    onPressed: Actions.handler<CopyIntent>(
+                      context,
+                      const CopyIntent(),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.select_all),
+                    onPressed: Actions.handler<SelectAllIntent>(
+                      context,
+                      const SelectAllIntent(),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
             ),
-          ),
-        );
-      }),
+          );
+        },
+      ),
     );
   }
 }
@@ -575,9 +581,10 @@ class SelectAllIntent extends Intent {
 /// An action that is bound to SelectAllAction that selects all text in its
 /// TextEditingController.
 class SelectAllAction extends Action<SelectAllIntent> {
-  SelectAllAction(this.controller);
+  SelectAllAction(this.controller, this.focusNode);
 
   final TextEditingController controller;
+  final FocusNode focusNode;
 
   @override
   Object? invoke(covariant SelectAllIntent intent) {
@@ -586,6 +593,8 @@ class SelectAllAction extends Action<SelectAllIntent> {
       extentOffset: controller.text.length,
       affinity: controller.selection.affinity,
     );
+
+    focusNode.requestFocus();
 
     return null;
   }

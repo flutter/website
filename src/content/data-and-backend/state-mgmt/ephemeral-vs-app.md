@@ -3,10 +3,10 @@ title: Differentiate between ephemeral state and app state
 description: How to tell the difference between ephemeral and app state.
 prev:
   title: Start thinking declaratively
-  path: /development/data-and-backend/state-mgmt/declarative
+  path: /data-and-backend/state-mgmt/declarative
 next:
   title: Simple app state management
-  path: /development/data-and-backend/state-mgmt/simple
+  path: /data-and-backend/state-mgmt/simple
 ---
 
 _This doc introduces app state, ephemeral state,
@@ -122,7 +122,7 @@ it might need to be moved to app state.
 
 For that reason, take the following diagram with a large grain of salt:
 
-<img src='/assets/images/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app-state.png' width="100%" alt="A flow chart. Start with 'Data'. 'Who needs it?'. Three options: 'Most widgets', 'Some widgets' and 'Single widget'. The first two options both lead to 'App state'. The 'Single widget' option leads to 'Ephemeral state'.">
+<img src='/assets/images/docs/development/data-and-backend/state-mgmt/ephemeral-vs-app-state.png' width="100%" class="diagram-wrap" alt="A flow chart. Start with 'Data'. 'Who needs it?'. Three options: 'Most widgets', 'Some widgets' and 'Single widget'. The first two options both lead to 'App state'. The 'Single widget' option leads to 'Ephemeral state'.">
 
 {% comment %}
 Source drawing for the png above: : https://docs.google.com/drawings/d/1p5Bvuagin9DZH8bNrpGfpQQvKwLartYhIvD0WKGa64k/edit?usp=sharing

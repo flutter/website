@@ -1,12 +1,10 @@
 ---
 title: An introduction to widget testing
 description: Learn more about widget testing in Flutter.
-short-title: Introduction
+shortTitle: Introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/widget/introduction/"?>
-
-{% assign api = site.api | append: '/flutter' -%}
 
 In the [introduction to unit testing][] recipe,
 you learned how to test Dart classes using the `test` package.
@@ -58,11 +56,7 @@ create a widget that displays a `title` and `message`.
 <?code-excerpt "test/main_test.dart (widget)"?>
 ```dart
 class MyWidget extends StatelessWidget {
-  const MyWidget({
-    super.key,
-    required this.title,
-    required this.message,
-  });
+  const MyWidget({super.key, required this.title, required this.message});
 
   final String title;
   final String message;
@@ -72,12 +66,8 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: Center(
-          child: Text(message),
-        ),
+        appBar: AppBar(title: Text(title)),
+        body: Center(child: Text(message)),
       ),
     );
   }
@@ -256,11 +246,7 @@ void main() {
 }
 
 class MyWidget extends StatelessWidget {
-  const MyWidget({
-    super.key,
-    required this.title,
-    required this.message,
-  });
+  const MyWidget({super.key, required this.title, required this.message});
 
   final String title;
   final String message;
@@ -270,12 +256,8 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: Center(
-          child: Text(message),
-        ),
+        appBar: AppBar(title: Text(title)),
+        body: Center(child: Text(message)),
       ),
     );
   }
@@ -283,20 +265,20 @@ class MyWidget extends StatelessWidget {
 ```
 
 
-[`find()`]: {{api}}/flutter_test/find-constant.html
-[`find.text()`]: {{api}}/flutter_test/CommonFinders/text.html
-[`findsNothing`]: {{api}}/flutter_test/findsNothing-constant.html
-[`findsOneWidget`]: {{api}}/flutter_test/findsOneWidget-constant.html
-[`findsNWidgets`]: {{api}}/flutter_test/findsNWidgets.html
-[`findsWidgets`]: {{api}}/flutter_test/findsWidgets-constant.html
-[`matchesGoldenFile`]: {{api}}/flutter_test/matchesGoldenFile.html
-[`Finder`]: {{api}}/flutter_test/Finder-class.html
+[`find()`]: {{site.api}}/flutter/flutter_test/find-constant.html
+[`find.text()`]: {{site.api}}/flutter/flutter_test/CommonFinders/text.html
+[`findsNothing`]: {{site.api}}/flutter/flutter_test/findsNothing-constant.html
+[`findsOneWidget`]: {{site.api}}/flutter/flutter_test/findsOneWidget-constant.html
+[`findsNWidgets`]: {{site.api}}/flutter/flutter_test/findsNWidgets.html
+[`findsWidgets`]: {{site.api}}/flutter/flutter_test/findsWidgets-constant.html
+[`matchesGoldenFile`]: {{site.api}}/flutter/flutter_test/matchesGoldenFile.html
+[`Finder`]: {{site.api}}/flutter/flutter_test/Finder-class.html
 [Finding widgets in a widget test]: /cookbook/testing/widget/finders
-[`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
+[`flutter_test`]: {{site.api}}/flutter/flutter_test/flutter_test-library.html
 [introduction to unit testing]: /cookbook/testing/unit/introduction
-[`Matcher`]: {{api}}/package-matcher_matcher/Matcher-class.html
-[`pumpWidget()`]: {{api}}/flutter_test/WidgetTester/pumpWidget.html
-[`tester.pump(Duration duration)`]: {{api}}/flutter_test/TestWidgetsFlutterBinding/pump.html
-[`tester.pumpAndSettle()`]: {{api}}/flutter_test/WidgetTester/pumpAndSettle.html
-[`testWidgets()`]: {{api}}/flutter_test/testWidgets.html
-[`WidgetTester`]: {{api}}/flutter_test/WidgetTester-class.html
+[`Matcher`]: {{site.api}}/flutter/package-matcher_matcher/Matcher-class.html
+[`pumpWidget()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pumpWidget.html
+[`tester.pump(Duration duration)`]: {{site.api}}/flutter/flutter_test/TestWidgetsFlutterBinding/pump.html
+[`tester.pumpAndSettle()`]: {{site.api}}/flutter/flutter_test/WidgetTester/pumpAndSettle.html
+[`testWidgets()`]: {{site.api}}/flutter/flutter_test/testWidgets.html
+[`WidgetTester`]: {{site.api}}/flutter/flutter_test/WidgetTester-class.html

@@ -2,8 +2,10 @@
 title: Insert content text input client
 description: >
   Add a new method to the TextInputClient interface to allow
-  Android virtual keyboards to insert rich content into Flutter TextFields. 
+  Android virtual keyboards to insert rich content into Flutter TextFields.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

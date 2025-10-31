@@ -11,7 +11,7 @@ Flutter chooses the build mode when building the app,
 and determines which renderers are available at runtime.
 
 For a default build,
-Flutter chooses the`canvaskit` renderer at runtime.
+Flutter chooses the `canvaskit` renderer at runtime.
 For a WebAssembly build,
 Flutter chooses the `skwasm` renderer at runtime,
 and falls back to `canvaskit` if the browser doesn't support `skwasm`.
@@ -66,13 +66,13 @@ flutter build web --wasm
 ## Renderers
 
 Flutter has two renderers (`canvaskit` and `skwasm`)
-that re-implement the Flutter engine to run the browser. 
+that re-implement the Flutter engine to run the browser.
 The renderer converts UI primitives (stored as `Scene` objects) into
 pixels.
 
 ### canvaskit
 
-The `canvaskit` renderer is compatible with all modern browsers, and is the 
+The `canvaskit` renderer is compatible with all modern browsers, and is the
 renderer that is used in the _default_ build mode.
 
 It includes a copy of Skia compiled to WebAssembly, which adds
@@ -147,7 +147,7 @@ any decisions about which renderer to use, must be made prior to calling
 To compile Dart to WebAssembly,
 your app and its plugins / packages must meet the following requirements:
 
-- **Use new JS Interop** - 
+- **Use new JS Interop** -
   The code must only use the new JS interop library `dart:js_interop`. Old-style
   `dart:js`, `dart:js_util`, and `package:js` are no longer supported.
 - **Use new Web APIs** -

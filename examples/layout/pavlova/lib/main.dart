@@ -35,10 +35,7 @@ class MyApp extends StatelessWidget {
       'Anna Pavlova. Pavlova features a crisp crust and soft, light inside, '
       'topped with fruit and whipped cream.',
       textAlign: TextAlign.center,
-      style: TextStyle(
-        fontFamily: 'Georgia',
-        fontSize: 25,
-      ),
+      style: TextStyle(fontFamily: 'Georgia', fontSize: 25),
     );
 
     // #docregion ratings, stars
@@ -124,26 +121,14 @@ class MyApp extends StatelessWidget {
     // #docregion left-column
     final leftColumn = Container(
       padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
-      child: Column(
-        children: [
-          titleText,
-          subTitle,
-          ratings,
-          iconList,
-        ],
-      ),
+      child: Column(children: [titleText, subTitle, ratings, iconList]),
     );
     // #enddocregion left-column
 
-    final mainImage = Image.asset(
-      'images/pavlova.jpg',
-      fit: BoxFit.cover,
-    );
+    final mainImage = Image.asset('images/pavlova.jpg', fit: BoxFit.cover);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
+      appBar: AppBar(title: Text(title)),
       // #docregion body
       body: Center(
         child: Container(
@@ -153,10 +138,7 @@ class MyApp extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: 440,
-                  child: leftColumn,
-                ),
+                SizedBox(width: 440, child: leftColumn),
                 mainImage,
               ],
             ),

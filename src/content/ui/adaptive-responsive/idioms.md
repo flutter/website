@@ -2,15 +2,11 @@
 title: Platform idioms
 description: >-
   Learn how to create a responsive app
-  that responds to changes in the screen size. 
-short-title: Idioms
+  that responds to changes in the screen size.
+shortTitle: Idioms
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
-
-{% comment %}
-<b>PENDING: Leave this page out for now... In V2, I'd like to include it. Mariam suggested splitting it up by platform and I like that idea</b>
-{% endcomment %}
 
 The final area to consider for adaptive apps is platform standards.
 Each platform has its own idioms and norms;
@@ -150,13 +146,15 @@ you can write something like this:
 static bool get isMultiSelectModifierDown {
   bool isDown = false;
   if (Platform.isMacOS) {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
-    );
+    isDown = isKeyDown({
+      LogicalKeyboardKey.metaLeft,
+      LogicalKeyboardKey.metaRight,
+    });
   } else {
-    isDown = isKeyDown(
-      {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
-    );
+    isDown = isKeyDown({
+      LogicalKeyboardKey.controlLeft,
+      LogicalKeyboardKey.controlRight,
+    });
   }
   return isDown;
 }
@@ -203,7 +201,10 @@ return const SelectableText.rich(
   TextSpan(
     children: [
       TextSpan(text: 'Hello'),
-      TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+      TextSpan(
+        text: 'Bold',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
     ],
   ),
 );
@@ -314,8 +315,9 @@ This can be easily handled in Flutter using the
 
 <?code-excerpt "lib/widgets/ok_cancel_dialog.dart (row-text-direction)"?>
 ```dart
-TextDirection btnDirection =
-    DeviceType.isWindows ? TextDirection.rtl : TextDirection.ltr;
+TextDirection btnDirection = DeviceType.isWindows
+    ? TextDirection.rtl
+    : TextDirection.ltr;
 return Row(
   children: [
     const Spacer(),
@@ -391,7 +393,7 @@ include the following:
 * Hook into `onPan` gesture events,
   and move an object yourself within a parent `Stack`.
 
-* Use one of the [pre-made list packages][] on pub.dev.  
+* Use one of the [pre-made list packages][] on pub.dev.
 
 [`Draggable`]: {{site.api}}/flutter/widgets/Draggable-class.html
 [`DragTarget`]: {{site.api}}/flutter/widgets/DragTarget-class.html

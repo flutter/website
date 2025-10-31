@@ -1,14 +1,14 @@
 ---
 title: Write your first Flutter app
 description: How to write an app in Flutter.
-short-title: Write your first app
+shortTitle: Write your first app
 prev:
   title: Set up Flutter
-  path: /get-started/install
+  path: /get-started
 next:
   title: Learn more
   path: /get-started/learn-flutter
-toc: false
+showToc: false
 ---
 
 You are now ready to start the "First Flutter app" codelab.
@@ -25,7 +25,7 @@ that works on mobile, desktop, and web.
     Unicode character.
     The non-breaking space after it makes the button look nicer.
   {% endcomment -%}
-  <a class="btn btn-primary"
+  <a class="filled-button"
      target="_blank"
      href="https://codelabs.developers.google.com/codelabs/flutter-codelab-first">
     &#9654;&nbsp; Start codelab
@@ -35,14 +35,10 @@ that works on mobile, desktop, and web.
 
 :::tip
 The codelab above walks you through writing your first Flutter
-app for all platforms &mdash; mobile, desktop and web.
-You might prefer to take
-[another codelab written specifically for the web][codelab-web].
+app for all platforms &mdash; mobile, desktop, and web.
 :::
-
-[codelab-web]: /get-started/codelab-web
 
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-{% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}
+<YouTubeEmbed id="8sAyPDLorek" title="Building your first Flutter app - with a Codelab!"></YouTubeEmbed>

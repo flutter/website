@@ -28,9 +28,7 @@ class MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           itemCount: items.length,
           // #docregion Dismissible
@@ -49,12 +47,11 @@ class MyAppState extends State<MyApp> {
                 });
 
                 // Then show a snackbar.
-                ScaffoldMessenger.of(context)
-                    .showSnackBar(SnackBar(content: Text('$item dismissed')));
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text('$item dismissed')));
               },
-              child: ListTile(
-                title: Text(item),
-              ),
+              child: ListTile(title: Text(item)),
             );
           },
           // #enddocregion Dismissible

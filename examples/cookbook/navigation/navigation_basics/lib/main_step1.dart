@@ -7,9 +7,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -28,9 +26,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
@@ -42,4 +38,5 @@ class SecondRoute extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion first-second-routes

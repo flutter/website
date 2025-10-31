@@ -1,9 +1,6 @@
 ---
 title: Work with tabs
 description: How to implement tabs in a layout.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/design/tabs/"?>
@@ -34,10 +31,7 @@ creates a `TabController` and makes it available to all descendant widgets.
 <?code-excerpt "lib/partials.dart (TabController)"?>
 ```dart
 return MaterialApp(
-  home: DefaultTabController(
-    length: 3,
-    child: Scaffold(),
-  ),
+  home: DefaultTabController(length: 3, child: Scaffold()),
 );
 ```
 
@@ -137,7 +131,7 @@ class TabBarDemo extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/tabs.gif" alt="Tabs Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/tabs.webp" alt="Tabs Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

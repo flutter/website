@@ -7,61 +7,59 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
 Flutter's support of Swift Package Manager is under development.
-The implementation might change in the future.
-Swift Package Manager support is only available on the [`main` channel][].
+If you find a bug in Flutter's Swift Package Manager support,
+[open an issue][].
+Swift Package Manager support is [off by default][].
 Flutter continues to support CocoaPods.
 :::
 
 Flutter's Swift Package Manager integration has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]. 
+   Flutter plugins can use the growing ecosystem of [Swift packages][].
 1. **Simplifies Flutter installation**.
    Xcode includes Swift Package Manager.
    You don't need to install Ruby and CocoaPods if your project uses
    Swift Package Manager.
 
-If you find a bug in Flutter's Swift Package Manager support,
-[open an issue][].
-
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /release/upgrade#switching-flutter-channels
+[off by default]: #how-to-turn-on-swift-package-manager
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% include docs/swift-package-manager/how-to-enable-disable.md %}
+{% render "docs/swift-package-manager/how-to-enable-disable.md", site: site %}
 
 ## How to add Swift Package Manager integration
 
 ### Add to a Flutter app
 
-{% tabs %}
-{% tab "iOS project" %}
+<Tabs key="darwin-platform">
+<Tab name="iOS project">
 
-{% include docs/swift-package-manager/migrate-ios-project.md %}
+{% render "docs/swift-package-manager/migrate-ios-project.md", site: site %}
 
-{% endtab %}
-{% tab "macOS project" %}
+</Tab>
+<Tab name="macOS project">
 
-{% include docs/swift-package-manager/migrate-macos-project.md %}
+{% render "docs/swift-package-manager/migrate-macos-project.md", site: site %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ### Add to a Flutter app _manually_
 
-{% tabs %}
-{% tab "iOS project" %}
+<Tabs key="darwin-platform">
+<Tab name="iOS project">
 
-{% include docs/swift-package-manager/migrate-ios-project-manually.md %}
+{% render "docs/swift-package-manager/migrate-ios-project-manually.md", site: site %}
 
-{% endtab %}
-{% tab "macOS project" %}
+</Tab>
+<Tab name="macOS project">
 
-{% include docs/swift-package-manager/migrate-macos-project-manually.md %}
+{% render "docs/swift-package-manager/migrate-macos-project-manually.md", site: site %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ### Add to an existing app (add-to-app)
 
@@ -112,21 +110,17 @@ To undo this migration:
 1. Navigate to **Package Dependencies** for the project.
 
 1. Click the `FlutterGeneratedPluginSwiftPackage` package, then click
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/packages-and-plugins/swift-package-manager/remove-generated-package.png",
-   caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-generated-package.png" caption="The `FlutterGeneratedPluginSwiftPackage` to remove" />
 
 1. Navigate to **Frameworks, Libraries, and Embedded Content** for the `Runner`
    target.
 
 1. Click `FlutterGeneratedPluginSwiftPackage`, then click the
-   <span class="material-symbols">remove</span>.
+   <span class="material-symbols" translate="no">remove</span>.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/packages-and-plugins/swift-package-manager/remove-generated-framework.png",
-   caption:"The `FlutterGeneratedPluginSwiftPackage` to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-generated-framework.png" caption="The `FlutterGeneratedPluginSwiftPackage` to remove" />
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
@@ -136,11 +130,9 @@ To undo this migration:
 
 1. Expand **Run Prepare Flutter Framework Script**.
 
-1. Click **<span class="material-symbols">delete</span>**.
+1. Click **<span class="material-symbols" translate="no">delete</span>**.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png",
-   caption:"The build pre-action to remove" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png" caption="The build pre-action to remove" />
 
 [Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
 
@@ -153,8 +145,25 @@ the project, you might get an error like this:
 Target Integrity (Xcode): The package product 'plugin_name_ios' requires minimum platform version 14.0 for the iOS platform, but this target supports 12.0
 ```
 
-To use the plugin, increase the **Minimum Deployments** of your app's target.
+To use the plugin:
 
-{% render docs/captioned-image.liquid,
-image:"development/packages-and-plugins/swift-package-manager/minimum-deployments.png",
-caption:"The target's **Minimum Deployments** setting" %}
+1. Open your app (`ios/Runner.xcworkspace` or `macos/Runner.xcworkspace`) in
+   Xcode.
+
+1. Increase your app's target **Minimum Deployments**.
+
+   <DashImage image="development/packages-and-plugins/swift-package-manager/minimum-deployments.png" caption="The target's **Minimum Deployments** setting" />
+
+1. If you updated your iOS app's **Minimum Deployments**,
+   regenerate the iOS project's configuration files:
+
+   ```sh
+   flutter build ios --config-only
+   ```
+
+1. If you updated your macOS app's **Minimum Deployments**,
+   regenerate the macOS project's configuration files:
+
+   ```sh
+   flutter build macos --config-only
+   ```

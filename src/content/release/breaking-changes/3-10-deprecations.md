@@ -15,7 +15,7 @@ All affected APIs have been compiled into this
 primary source to aid in migration. A
 [quick reference sheet][] is available as well.
 
-[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
+[Deprecation Policy]: {{site.repo.flutter}}/blob/main/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-3-10
 
 ## Changes
@@ -41,7 +41,7 @@ Code before migration:
 
 ```dart
 var themeData = ThemeData(
-  fixTextFieldOutlineLabel: true,  
+  fixTextFieldOutlineLabel: true,
 );
 ```
 
@@ -136,7 +136,7 @@ in v2.6. The replacements are the `ColorScheme.primaryContainer` and
 `ColorScheme.secondaryContainer`, respectively.
 
 These changes were made to align with the updated Material Design specification
-for `ColorScheme`. The updates to `ColorScheme` are covered more extensively in 
+for `ColorScheme`. The updates to `ColorScheme` are covered more extensively in
 the [ColorScheme for Material 3][] design document.
 
 **Migration guide**

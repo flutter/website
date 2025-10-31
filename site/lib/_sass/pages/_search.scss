@@ -1,0 +1,113 @@
+@use '../base/mixins';
+
+#search-body {
+  margin-block-start: 1.5rem;
+  margin-block-end: 1.5rem;
+
+  .gsc-control-cse {
+    border-radius: var(--site-radius);
+    background-color: var(--site-inset-bgColor);
+    border: none;
+    color: var(--site-base-fgColor);
+  }
+
+  .gsc-above-wrapper-area {
+    border-color: var(--site-outline);
+  }
+
+  .gsc-orderby-container {
+    display: none;
+  }
+
+  .gsc-input-box {
+    border: none;
+    border-radius: var(--site-radius);
+    background-color: var(--site-raised-bgColor);
+
+    input.gsc-input {
+      background-color: transparent !important;
+      height: 2rem !important;
+    }
+  }
+
+  @at-root body .gsc-completion-container {
+    background-color: var(--site-raised-bgColor);
+    color: var(--site-base-fgColor);
+    border: none;
+    border-radius: var(--site-radius);
+    padding-top: 0.5rem;
+
+    .gsc-completion-selected {
+      background-color: var(--site-primary-color-highlight);
+    }
+  }
+
+  .gsc-search-button-v2 {
+    background-color: var(--site-filledButton-bgColor);
+    color: var(--site-filledButton-fgColor);
+    border: none;
+    border-radius: var(--site-radius);
+    font-weight: 500;
+    gap: 0.3rem;
+    padding: 0.6rem 1.4rem;
+
+    &:hover {
+      @include mixins.interaction-style(8%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(16%);
+    }
+  }
+
+  .gsc-result-info,
+  .gs-spelling {
+    color: var(--site-base-fgColor-lighter);
+  }
+
+  .gs-no-results-result .gs-snippet {
+    border: none;
+    background-color: var(--site-raised-bgColor);
+    border-radius: var(--site-radius);
+  }
+
+  .gsc-webResult {
+
+    .gs-title,
+    .gs-title * {
+      color: var(--site-link-fgColor);
+    }
+
+    .gs-visibleUrl {
+      color: var(--site-accent-color);
+    }
+
+    .gs-image-box {
+      display: none;
+    }
+
+    .gs-snippet {
+      color: var(--site-base-fgColor);
+    }
+
+    .gsc-result {
+      border: none;
+    }
+  }
+
+  .gsc-cursor-box {
+    .gsc-cursor-page {
+      color: var(--site-base-fgColor-lighter);
+    }
+
+    .gsc-cursor-current-page {
+      color: var(--site-link-fgColor);
+    }
+  }
+
+  .gcsc-find-more-on-google,
+  .gcsc-find-more-on-google * {
+    color: var(--site-link-fgColor);
+    fill: var(--site-link-fgColor);
+  }
+}

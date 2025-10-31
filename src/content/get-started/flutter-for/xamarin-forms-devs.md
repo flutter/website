@@ -76,10 +76,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-        'Hello World!',
-        textDirection: TextDirection.ltr,
-      ),
+      child: Text('Hello World!', textDirection: TextDirection.ltr),
     );
   }
 }
@@ -176,9 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+            const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -312,10 +307,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -403,10 +395,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -430,10 +419,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return const Text('Toggle One');
     }
-    return CupertinoButton(
-      onPressed: () {},
-      child: const Text('Toggle Two'),
-    );
+    return CupertinoButton(onPressed: () {}, child: const Text('Toggle Two'));
   }
 
   @override
@@ -534,10 +520,7 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -686,10 +669,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(label),
-    );
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -700,9 +680,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const Center(
-    child: CustomButton('Hello'),
-  );
+  return const Center(child: CustomButton('Hello'));
 }
 ```
 
@@ -817,12 +795,10 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse(
-    'https://jsonplaceholder.typicode.com/posts',
-  );
+  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -850,10 +826,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -865,7 +838,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -874,12 +847,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    final Uri dataURL = Uri.parse(
-      'https://jsonplaceholder.typicode.com/posts',
-    );
+    final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
-      data = jsonDecode(response.body);
+      data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 
@@ -931,12 +902,10 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse(
-    'https://jsonplaceholder.typicode.com/posts',
-  );
+  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1027,10 +996,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1042,7 +1008,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -1141,7 +1107,7 @@ To use the `http` package, add it to your dependencies in `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  http: ^1.1.0
+  http: ^1.4.0
 ```
 
 To make a network request,
@@ -1150,12 +1116,10 @@ call `await` on the `async` function `http.get()`:
 <?code-excerpt "lib/data.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  final Uri dataURL = Uri.parse(
-    'https://jsonplaceholder.typicode.com/posts',
-  );
+  final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
   final http.Response response = await http.get(dataURL);
   setState(() {
-    data = jsonDecode(response.body);
+    data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
   });
 }
 ```
@@ -1193,10 +1157,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1208,7 +1169,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List<Map<String, dynamic>> data = <Map<String, dynamic>>[];
+  List<Map<String, Object?>> data = [];
 
   @override
   void initState() {
@@ -1219,12 +1180,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
   bool get showLoadingDialog => data.isEmpty;
 
   Future<void> loadData() async {
-    final Uri dataURL = Uri.parse(
-      'https://jsonplaceholder.typicode.com/posts',
-    );
+    final Uri dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
     final http.Response response = await http.get(dataURL);
     setState(() {
-      data = jsonDecode(response.body);
+      data = (jsonDecode(response.body) as List).cast<Map<String, Object?>>();
     });
   }
 
@@ -1318,7 +1277,7 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can directly access your images in an `Image.asset` widget:
@@ -1337,9 +1296,7 @@ or using `AssetImage`:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const Image(
-    image: AssetImage('images/my_image.png'),
-  );
+  return const Image(image: AssetImage('images/my_image.png'));
 }
 ```
 
@@ -1556,17 +1513,14 @@ Widget build(BuildContext context) {
     // horizontal, this would produce 2 rows.
     crossAxisCount: 2,
     // Generate 100 widgets that display their index in the list.
-    children: List<Widget>.generate(
-      100,
-      (index) {
-        return Center(
-          child: Text(
-            'Item $index',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        );
-      },
-    ),
+    children: List<Widget>.generate(100, (index) {
+      return Center(
+        child: Text(
+          'Item $index',
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
+      );
+    }),
   );
 }
 ```
@@ -1583,18 +1537,10 @@ This sample creates two icons that overlap each other.
 Widget build(BuildContext context) {
   return const Stack(
     children: <Widget>[
-      Icon(
-        Icons.add_box,
-        size: 24,
-        color: Colors.black,
-      ),
+      Icon(Icons.add_box, size: 24, color: Colors.black),
       Positioned(
         left: 10,
-        child: Icon(
-          Icons.add_circle,
-          size: 24,
-          color: Colors.black,
-        ),
+        child: Icon(Icons.add_circle, size: 24, color: Colors.black),
       ),
     ],
   );
@@ -1613,9 +1559,7 @@ You simply fill the Widget with the content that you want to be scrollable.
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const SingleChildScrollView(
-    child: Text('Long Content'),
-  );
+  return const SingleChildScrollView(child: Text('Long Content'));
 }
 ```
 
@@ -1851,10 +1795,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1864,10 +1805,8 @@ class SampleAppPage extends StatelessWidget {
   List<Widget> _getListData() {
     return List<Widget>.generate(
       100,
-      (index) => Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $index'),
-      ),
+      (index) =>
+          Padding(padding: const EdgeInsets.all(10), child: Text('Row $index')),
     );
   }
 
@@ -1906,10 +1845,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -1984,10 +1920,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -2057,10 +1990,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -2254,8 +2184,7 @@ class _MyFormState extends State<MyForm> {
 ```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+[Retrieve the value of a text field][].
 
 ### What is the equivalent of a Placeholder on an Entry?
 
@@ -2272,9 +2201,7 @@ to the `decoration` constructor parameter for the text widget.
 
 <?code-excerpt "lib/input_decoration.dart (hint-text)" replace="/child: //g"?>
 ```dart
-TextField(
-  decoration: InputDecoration(hintText: 'This is a hint'),
-),
+TextField(decoration: InputDecoration(hintText: 'This is a hint')),
 ```
 
 ### How do I show validation errors?
@@ -2304,10 +2231,7 @@ class SampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -2488,8 +2412,9 @@ class SampleApp extends StatelessWidget {
       title: 'Sample App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textSelectionTheme:
-            const TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Colors.red,
+        ),
       ),
       home: const SampleAppPage(),
     );
@@ -2564,13 +2489,12 @@ For more information on using the Firebase Cloud Messaging API, see the
 [`firebase_messaging`]: {{site.pub}}/packages/firebase_messaging
 [`firebase_storage`]: {{site.pub}}/packages/firebase_storage
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[Flutter cookbook]: /cookbook
 [`flutter_facebook_login`]: {{site.pub}}/packages/flutter_facebook_login
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`camera`]: {{site.pub-pkg}}/camera
 [`http` package]: {{site.pub}}/packages/http
-[internationalization guide]: /ui/accessibility-and-internationalization/internationalization
+[internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative

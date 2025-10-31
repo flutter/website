@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-// #docregion app-localizations-import
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-// #enddocregion app-localizations-import
-
 // #docregion localization-delegates-import
 import 'package:flutter_localizations/flutter_localizations.dart';
 // #enddocregion localization-delegates-import
+
+// #docregion app-localizations-import
+import 'l10n/app_localizations.dart';
+// #enddocregion app-localizations-import
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

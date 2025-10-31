@@ -8,8 +8,9 @@ import 'package:http/http.dart' as http;
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum() async {
-  final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -29,24 +30,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -81,9 +73,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fetch Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Fetch Data Example')),
         body: Center(
           // #docregion FutureBuilder
           child: FutureBuilder<Album>(
@@ -104,6 +94,8 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
   // #docregion State
 }
+
 // #enddocregion State

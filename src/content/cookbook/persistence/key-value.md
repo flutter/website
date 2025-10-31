@@ -25,7 +25,7 @@ This recipe uses the following steps:
 To learn more, watch this short Package of the Week video
 on the `shared_preferences` package:
 
-{% ytEmbed 'sa_U0jffQII', 'shared_preferences | Flutter package of the week' %}
+<YouTubeEmbed id="sa_U0jffQII" title="shared_preferences | Flutter package of the week"></YouTubeEmbed>
 :::
 
 ## 1. Add the dependency
@@ -110,9 +110,7 @@ Pass in a map of key-value pairs to use as the initial values.
 
 <?code-excerpt "test/prefs_test.dart (setup)"?>
 ```dart
-SharedPreferences.setMockInitialValues(<String, Object>{
-  'counter': 2,
-});
+SharedPreferences.setMockInitialValues(<String, Object>{'counter': 2});
 ```
 
 ## Complete example
@@ -176,16 +174,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'You have pushed the button this many times: ',
-            ),
+            const Text('You have pushed the button this many times: '),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,

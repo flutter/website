@@ -8,9 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoApp(
-      home: MyHomePage(),
-    );
+    return const CupertinoApp(home: MyHomePage());
   }
 }
 
@@ -33,12 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
           turns: turns,
           curve: Curves.easeIn,
           child: TextButton(
-              onPressed: () {
-                setState(() {
-                  turns += .125;
-                });
-              },
-              child: const Text('Tap me!')),
+            onPressed: () {
+              setState(() {
+                turns += .125;
+              });
+            },
+            child: const Text('Tap me!'),
+          ),
         ),
         // #enddocregion animated-button
       ),

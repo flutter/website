@@ -1,0 +1,26 @@
+name: todo_data_service
+description: Example for key_value_data cookbook recipe
+
+resolution: workspace
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  path: ^1.9.1
+  shared_preferences: ^2.5.3
+  sqflite: ^2.4.2
+  sqflite_common_ffi: ^2.3.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.6.0
+  freezed: ^3.2.0
+  json_serializable: ^6.10.0
+
+flutter:
+  uses-material-design: true

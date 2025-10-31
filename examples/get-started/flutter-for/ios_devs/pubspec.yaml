@@ -4,8 +4,9 @@ description: A new Flutter project.
 publish_to: none
 version: 1.0.0+1
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.9.0
 
 dependencies:
   flutter:
@@ -13,13 +14,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  http: ^1.2.0
-  shared_preferences: ^2.3.0
-  url_launcher: ^6.3.0
+  http: ^1.5.0
+  shared_preferences: ^2.5.3
+  url_launcher: ^6.3.2
 
 dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
   flutter_test:
     sdk: flutter
 

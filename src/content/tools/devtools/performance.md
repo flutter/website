@@ -225,13 +225,13 @@ to the jank you saw in your app.
   is affecting performance.
   If performance improves with this option disabled,
   try to reduce the use of clipping effects in your app.
-  
+
 **Render Opacity layers**
 :  Disable this option to check whether
    excessive use of opacity effects are affecting performance.
    If performance improves with this option disabled,
    try to reduce the use of opacity effects in your app.
-  
+
 **Render Physical Shape layers**
 : Disable this option to check whether excessive
   use of physical modeling effects are affecting performance,
@@ -258,7 +258,7 @@ detect jank using DevTools, check out a guided
 
 [GPU graph]: /perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /perf/ui-performance
-[Reduce shader compilation jank on mobile]: /perf/shader
+[Reduce shader compilation jank on mobile]: /perf/rendering-performance
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
 [track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623

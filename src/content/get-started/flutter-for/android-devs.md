@@ -11,6 +11,12 @@ If you understand the fundamentals of the Android framework then you
 can use this document as a jump start to Flutter development.
 
 :::note
+Android has two native user interface systems, Views (XML based) and Jetpack Compose.
+Some fundamentals are shared so this document will provide value no matter what.
+However, if you are coming from Jetpack Compose,
+check out [Flutter for Jetpack Compose devs][] for detailed information about Jetpack Compose
+and how samples match up to Flutter examples.
+
 To integrate Flutter code into your Android app, see
 [Add Flutter to existing app][].
 :::
@@ -163,9 +169,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(child: Text(textToShow)),
       floatingActionButton: FloatingActionButton(
         onPressed: _updateText,
@@ -189,9 +193,7 @@ The following example shows how to display a simple widget with padding:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text('Sample App'),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: Center(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
@@ -264,22 +266,15 @@ class _SampleAppPageState extends State<SampleAppPage> {
     if (toggle) {
       return const Text('Toggle One');
     } else {
-      return ElevatedButton(
-        onPressed: () {},
-        child: const Text('Toggle Two'),
-      );
+      return ElevatedButton(onPressed: () {}, child: const Text('Toggle Two'));
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
-      body: Center(
-        child: _getToggleChild(),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
+      body: Center(child: _getToggleChild()),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggle,
         tooltip: 'Update Text',
@@ -357,24 +352,17 @@ class _MyFadeTest extends State<MyFadeTest> with TickerProviderStateMixin {
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Center(
         child: FadeTransition(
           opacity: curve,
-          child: const FlutterLogo(
-            size: 100,
-          ),
+          child: const FlutterLogo(size: 100),
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -438,8 +426,9 @@ class SignatureState extends State<Signature> {
       onPanUpdate: (details) {
         setState(() {
           RenderBox? referenceBox = context.findRenderObject() as RenderBox;
-          Offset localPosition =
-              referenceBox.globalToLocal(details.globalPosition);
+          Offset localPosition = referenceBox.globalToLocal(
+            details.globalPosition,
+          );
           _points = List.from(_points)..add(localPosition);
         });
       },
@@ -501,10 +490,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text(label),
-    );
+    return ElevatedButton(onPressed: () {}, child: Text(label));
   }
 }
 ```
@@ -515,9 +501,7 @@ Then use `CustomButton`, just as you'd use any other Flutter widget:
 ```dart
 @override
 Widget build(BuildContext context) {
-  return const Center(
-    child: CustomButton('Hello'),
-  );
+  return const Center(child: CustomButton('Hello'));
 }
 ```
 
@@ -553,14 +537,16 @@ The following example builds a Map.
 <?code-excerpt "lib/intent.dart (map)"?>
 ```dart
 void main() {
-  runApp(MaterialApp(
-    home: const MyAppHome(), // Becomes the route named '/'.
-    routes: <String, WidgetBuilder>{
-      '/a': (context) => const MyPage(title: 'page A'),
-      '/b': (context) => const MyPage(title: 'page B'),
-      '/c': (context) => const MyPage(title: 'page C'),
-    },
-  ));
+  runApp(
+    MaterialApp(
+      home: const MyAppHome(), // Becomes the route named '/'.
+      routes: <String, WidgetBuilder>{
+        '/a': (context) => const MyPage(title: 'page A'),
+        '/b': (context) => const MyPage(title: 'page B'),
+        '/c': (context) => const MyPage(title: 'page C'),
+      },
+    ),
+  );
 }
 ```
 
@@ -722,7 +708,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     var sharedData = await platform.invokeMethod('getSharedText');
     if (sharedData != null) {
       setState(() {
-        dataShared = sharedData;
+        dataShared = sharedData as String;
       });
     }
   }
@@ -776,10 +762,11 @@ using `async`/`await` and letting Dart do the heavy lifting:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -822,7 +809,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -833,9 +820,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -853,12 +838,14 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
+
 }
 ```
 
@@ -887,10 +874,11 @@ and `await` on long-running tasks inside the function:
 <?code-excerpt "lib/async.dart (load-data)"?>
 ```dart
 Future<void> loadData() async {
-  var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-  http.Response response = await http.get(dataURL);
+  final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+  final response = await http.get(dataURL);
   setState(() {
-    widgets = jsonDecode(response.body);
+    widgets = (jsonDecode(response.body) as List)
+        .cast<Map<String, Object?>>();
   });
 }
 ```
@@ -924,15 +912,18 @@ Future<void> loadData() async {
   await Isolate.spawn(dataLoader, receivePort.sendPort);
 
   // The 'echo' isolate sends its SendPort as the first message.
-  SendPort sendPort = await receivePort.first;
+  SendPort sendPort = await receivePort.first as SendPort;
 
-  final msg = await sendReceive(
-    sendPort,
-    'https://jsonplaceholder.typicode.com/posts',
-  ) as List<Object?>;
+  final msg =
+      await sendReceive(
+            sendPort,
+            'https://jsonplaceholder.typicode.com/posts',
+          )
+          as List<Object?>;
+  final posts = msg.cast<Map<String, Object?>>();
 
   setState(() {
-    widgets = msg;
+    widgets = posts;
   });
 }
 
@@ -945,11 +936,10 @@ static Future<void> dataLoader(SendPort sendPort) async {
   sendPort.send(port.sendPort);
 
   await for (var msg in port) {
-    String data = msg[0];
-    SendPort replyTo = msg[1];
+    String dataUrl = msg[0] as String;
+    SendPort replyTo = msg[1] as SendPort;
 
-    String dataURL = data;
-    http.Response response = await http.get(Uri.parse(dataURL));
+    http.Response response = await http.get(Uri.parse(dataUrl));
     // Lots of JSON to parse
     replyTo.send(jsonDecode(response.body));
   }
@@ -1006,7 +996,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1030,9 +1020,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -1058,15 +1046,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
-    final msg = await sendReceive(
-      sendPort,
-      'https://jsonplaceholder.typicode.com/posts',
-    ) as List<Object?>;
+    final msg =
+        await sendReceive(
+              sendPort,
+              'https://jsonplaceholder.typicode.com/posts',
+            )
+            as List<Object?>;
+    final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
-      widgets = msg;
+      widgets = posts;
     });
   }
 
@@ -1079,11 +1070,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String dataUrl = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
-      String dataURL = data;
-      http.Response response = await http.get(Uri.parse(dataURL));
+      http.Response response = await http.get(Uri.parse(dataUrl));
       // Lots of JSON to parse
       replyTo.send(jsonDecode(response.body));
     }
@@ -1094,6 +1084,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
+
 }
 ```
 
@@ -1175,7 +1166,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -1199,9 +1190,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -1223,10 +1212,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 }
@@ -1289,14 +1279,14 @@ Next, you'll need to declare these images in your `pubspec.yaml` file:
 
 ```yaml
 assets:
- - images/my_icon.jpeg
+ - images/my_icon.png
 ```
 
 You can then access your images using `AssetImage`:
 
 <?code-excerpt "lib/images.dart (asset-image)"?>
 ```dart
-AssetImage('images/my_icon.jpeg')
+AssetImage('images/my_icon.png'),
 ```
 
 or directly in an `Image` widget:
@@ -1337,9 +1327,6 @@ Then in your code, you can access your strings as such:
 ```dart
 Text(AppLocalizations.of(context)!.hello('John'));
 ```
-
-Flutter has basic support for accessibility on Android,
-though this feature is a work in progress.
 
 See [Internationalizing Flutter apps][] for more information on this.
 
@@ -1604,9 +1591,7 @@ In Flutter there are two ways of adding touch listeners:
             onTap: () {
               developer.log('tap');
             },
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       );
@@ -1683,10 +1668,7 @@ class _SampleAppState extends State<SampleApp>
       vsync: this,
       duration: const Duration(milliseconds: 2000),
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override
@@ -1703,9 +1685,7 @@ class _SampleAppState extends State<SampleApp>
           },
           child: RotationTransition(
             turns: curve,
-            child: const FlutterLogo(
-              size: 200,
-            ),
+            child: const FlutterLogo(size: 200),
           ),
         ),
       ),
@@ -1763,9 +1743,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -1773,10 +1751,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   List<Widget> _getListData() {
     List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ));
+      widgets.add(
+        Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
+      );
     }
     return widgets;
   }
@@ -1825,9 +1802,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }
@@ -1914,9 +1889,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: widgets),
     );
   }
@@ -1930,10 +1903,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 }
@@ -1991,9 +1961,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView.builder(
         itemCount: widgets.length,
         itemBuilder: (context, position) {
@@ -2011,10 +1979,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
           developer.log('row $i');
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ),
+      child: Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
     );
   }
 }
@@ -2056,9 +2021,7 @@ Then assign the font to your `Text` widget:
 @override
 Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text('Sample App'),
-    ),
+    appBar: AppBar(title: const Text('Sample App')),
     body: const Center(
       child: Text(
         'This is a custom font text',
@@ -2093,8 +2056,7 @@ customize many parameters, such as:
 ## Form input
 
 For more information on using Forms,
-see [Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+see [Retrieve the value of a text field][].
 
 ### What is the equivalent of a "hint" on an Input?
 
@@ -2105,9 +2067,7 @@ the Text Widget.
 <?code-excerpt "lib/form.dart (input-hint)" replace="/return const //g;/;//g"?>
 ```dart
 Center(
-  child: TextField(
-    decoration: InputDecoration(hintText: 'This is a hint'),
-  ),
+  child: TextField(decoration: InputDecoration(hintText: 'This is a hint')),
 )
 ```
 
@@ -2156,9 +2116,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: Center(
         child: TextField(
           onSubmitted: (text) {
@@ -2294,14 +2252,33 @@ class SampleApp extends StatelessWidget {
       title: 'Sample App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        textSelectionTheme:
-            const TextSelectionThemeData(selectionColor: Colors.red),
+        textSelectionTheme: const TextSelectionThemeData(
+          selectionColor: Colors.red,
+        ),
       ),
       home: const SampleAppPage(),
     );
   }
 }
 ```
+
+## Homescreen widgets
+
+### How do I create a homescreen widget?
+
+Android homescreen widgets cannot be created fully using Flutter. They must
+use either Jetpack Glance(preferred method) or XML layout code. Using
+the third-party package, [home_widget][], you can wire a homescreen widget
+to Dart code, embed a Flutter component (as an image) in a host widget, and
+share data to/from Flutter to the homescreen widget.
+
+To provide a richer and more engaging experience, it's recommended to add
+widget previews to include in the widget picker. For devices running
+Android 15 and above, generated widget previews allowing the user to see
+a dynamic and personalized version of the target widget, giving them a
+glimpse of how it will accurately on their home screen. For more information
+about the Generated Widget Previews and the fallback options for older devices,
+check the [Add generated previews to your widget picker][] documentation page.
 
 
 ## Databases and local storage
@@ -2378,7 +2355,7 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
-
+[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial
@@ -2402,7 +2379,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [`flutter_firebase_ui`]: {{site.pub}}/packages/flutter_firebase_ui
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
-[Flutter cookbook]: /cookbook
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
 [Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
 [`geolocator`]: {{site.pub}}/packages/geolocator
@@ -2421,4 +2397,6 @@ see the [`firebase_messaging`][] plugin documentation.
 [SQFlite]: {{site.pub}}/packages/sqflite
 [StackOverflow]: {{site.so}}/questions/44396075/equivalent-of-relativelayout-in-flutter
 [widget catalog]: /ui/widgets/layout
-[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter apps]: /ui/internationalization
+[home_widget]: https://pub.dev/packages/home_widget
+[Add generated previews to your widget picker]: https://developer.android.com/develop/ui/compose/glance/generated-previews

@@ -34,10 +34,7 @@ class LocationListItem extends StatelessWidget {
   }
 
   Widget _buildParallaxBackground(BuildContext context) {
-    return Image.network(
-      imageUrl,
-      fit: BoxFit.cover,
-    );
+    return Image.network(imageUrl, fit: BoxFit.cover);
   }
 
   Widget _buildGradient() {
@@ -45,7 +42,7 @@ class LocationListItem extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+            colors: [Colors.transparent, Colors.black.withValues(alpha: 0.7)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const [0.6, 0.95],
@@ -73,10 +70,7 @@ class LocationListItem extends StatelessWidget {
           ),
           Text(
             country,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),
@@ -119,7 +113,7 @@ class Location {
 }
 
 const urlPrefix =
-    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/assets/images/exercise/effects/parallax';
 
 const locations = [
   Location(
@@ -152,9 +146,5 @@ const locations = [
     place: 'Mexico',
     imageUrl: '$urlPrefix/06-mexico-city.jpg',
   ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: '$urlPrefix/07-cairo.jpg',
-  ),
+  Location(name: 'Cairo', place: 'Egypt', imageUrl: '$urlPrefix/07-cairo.jpg'),
 ];

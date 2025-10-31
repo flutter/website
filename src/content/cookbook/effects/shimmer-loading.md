@@ -1,24 +1,21 @@
 ---
 title: Create a shimmer loading effect
 description: How to implement a shimmer loading effect.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/shimmer_loading"?>
 
 Loading times are unavoidable in application development.
 From a user experience (UX) perspective,
-the most important thing is to show your users 
+the most important thing is to show your users
 that loading is taking place. One popular approach
 to communicate to users that data is loading is to
-display a chrome color with a shimmer animation over 
+display a chrome color with a shimmer animation over
 the shapes that approximate the type of content that is loading.
 
 The following animation shows the app's behavior:
 
-![Gif showing the UI loading](/assets/images/docs/cookbook/effects/UILoadingAnimation.gif){:.site-mobile-screenshot}
+![Gif showing the UI loading](/assets/images/docs/cookbook/effects/UILoadingAnimation.webp){:.site-mobile-screenshot}
 
 This recipe begins with the content widgets defined and positioned.
 There is also a Floating Action Button (FAB) in the bottom-right
@@ -30,22 +27,22 @@ so that you can easily validate your implementation.
 The shapes that shimmer in this effect are independent
 from the actual content that eventually loads.
 
-Therefore, the goal is to display shapes that represent 
-the eventual content as accurately as possible. 
+Therefore, the goal is to display shapes that represent
+the eventual content as accurately as possible.
 
 Displaying accurate shapes is easy in situations where the
 content has a clear boundary. For example, in this recipe,
 there are some circular images and some rounded rectangle images.
-You can draw shapes that precisely match the outlines 
+You can draw shapes that precisely match the outlines
 of those images.
 
 On the other hand, consider the text that appears beneath the
 rounded rectangle images. You won't know how many lines of
-text exist until the text loads. 
+text exist until the text loads.
 Therefore, there is no point in trying to draw a rectangle
 for every line of text. Instead, while the data is loading,
 you draw a couple of very thin rounded rectangles that
-represent the text that will appear. The shape and size 
+represent the text that will appear. The shape and size
 doesn't quite match, but that is OK.
 
 Start with the circular list items at the top of the screen.
@@ -70,8 +67,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -85,19 +82,16 @@ As long as your widgets display some kind of shape,
 you can apply the shimmer effect in this recipe.
 
 Similar to the `CircleListItem` widgets,
-ensure that the `CardListItem` widgets 
+ensure that the `CardListItem` widgets
 display a color where the image will appear.
-Also, in the `CardListItem` widget, 
+Also, in the `CardListItem` widget,
 switch between the display of the text and
 the rectangles based on the current loading status.
 
 <?code-excerpt "lib/main.dart (CardListItem)"?>
 ```dart
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -107,11 +101,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }
@@ -128,8 +118,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -180,36 +170,28 @@ By temporarily commenting out the image URLs,
 you can see the two ways your UI renders.
 
 
-![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.gif){:.site-mobile-screenshot}
+![Gif showing the shimmer animation](/assets/images/docs/cookbook/effects/LoadingShimmer.webp){:.site-mobile-screenshot}
 
 The next goal is to paint all of the colored areas
 with a single gradient that looks like a shimmer.
 
 ## Paint the shimmer gradient
 
-The key to the effect achieved in this recipe is to use a widget 
+The key to the effect achieved in this recipe is to use a widget
 called [`ShaderMask`][]. The `ShaderMask` widget, as the name suggests,
 applies a shader to its child, but only in the areas where
 the child already painted something. For example,
-you'll apply a shader to only the black shapes that you 
+you'll apply a shader to only the black shapes that you
 configured earlier.
 
-Define a chrome-colored, linear gradient that gets applied to the 
+Define a chrome-colored, linear gradient that gets applied to the
 shimmer shapes.
 
 <?code-excerpt "lib/main.dart (shimmerGradient)"?>
 ```dart
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
@@ -262,10 +244,7 @@ Wrap your `CircleListItem` widgets with a `ShimmerLoading` widget.
 <?code-excerpt "lib/shimmer_loading_items.dart (buildTopRowItem)"?>
 ```dart
 Widget _buildTopRowItem() {
-  return ShimmerLoading(
-    isLoading: _isLoading,
-    child: const CircleListItem(),
-  );
+  return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
 }
 ```
 
@@ -276,41 +255,39 @@ Wrap your `CardListItem` widgets with a `ShimmerLoading` widget.
 Widget _buildListItem() {
   return ShimmerLoading(
     isLoading: _isLoading,
-    child: CardListItem(
-      isLoading: _isLoading,
-    ),
+    child: CardListItem(isLoading: _isLoading),
   );
 }
 ```
 
 When your shapes are loading, they now display
-the shimmer gradient that is 
+the shimmer gradient that is
 returned from the `shaderCallback`.
 
 This is a big step in the right direction,
 but there's a problem with this gradient display.
-Each `CircleListItem` widget and each `CardListItem` widget 
+Each `CircleListItem` widget and each `CardListItem` widget
 displays a new version of the gradient.
-For this recipe, the entire screen should 
+For this recipe, the entire screen should
 look like one, big shimmering surface.
 You solve this problem in the next step.
 
 ## Paint one big shimmer
 
 To paint one big shimmer across the screen,
-each `ShimmerLoading` widget needs 
+each `ShimmerLoading` widget needs
 to paint the same full-screen gradient based
 on the position of that `ShimmerLoading`
-widget on the screen. 
+widget on the screen.
 
 To be more precise, rather than assume that the shimmer
 should take up the entire screen,
 there should be some area that shares the shimmer.
 Maybe that area takes up the entire screen,
-or maybe it doesn't. The way to solve this 
+or maybe it doesn't. The way to solve this
 kind of problem in Flutter is to define another widget
 that sits above all of the `ShimmerLoading` widgets
-in the widget tree, and call it `Shimmer`. 
+in the widget tree, and call it `Shimmer`.
 Then, each `ShimmerLoading` widget gets a reference
 to the `Shimmer` ancestor
 and requests the desired size and gradient to display.
@@ -326,11 +303,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -357,11 +330,11 @@ and look up the position of a descendant within the
 ```dart
 class ShimmerState extends State<Shimmer> {
   Gradient get gradient => LinearGradient(
-        colors: widget.linearGradient.colors,
-        stops: widget.linearGradient.stops,
-        begin: widget.linearGradient.begin,
-        end: widget.linearGradient.end,
-      );
+    colors: widget.linearGradient.colors,
+    stops: widget.linearGradient.stops,
+    begin: widget.linearGradient.begin,
+    end: widget.linearGradient.end,
+  );
 
   bool get isSized =>
       (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
@@ -394,8 +367,8 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       body: Shimmer(
         linearGradient: _shimmerGradient,
         child: ListView(
-            // ListView Contents
-            ),
+          // ListView Contents
+        ),
       ),
     );
   }
@@ -456,18 +429,16 @@ give the appearance of a shimmering shine.
 
 The `LinearGradient` has a property called `transform`
 that can be used to transform the appearance of the gradient,
-for example, to move it horizontally. 
+for example, to move it horizontally.
 The `transform` property accepts a `GradientTransform` instance.
 
-Define a class called `_SlidingGradientTransform` that implements 
+Define a class called `_SlidingGradientTransform` that implements
 `GradientTransform` to achieve the appearance of horizontal sliding.
 
 <?code-excerpt "lib/original_example.dart (sliding-gradient-transform)"?>
 ```dart
 class _SlidingGradientTransform extends GradientTransform {
-  const _SlidingGradientTransform({
-    required this.slidePercent,
-  });
+  const _SlidingGradientTransform({required this.slidePercent});
 
   final double slidePercent;
 
@@ -501,7 +472,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
     _shimmerController.dispose();
     super.dispose();
   }
-}
+  }
 ```
 
 Apply the `_SlidingGradientTransform` to the `gradient`
@@ -510,18 +481,19 @@ by using the `_shimmerController`'s `value` as the `slidePercent`.
 <?code-excerpt "lib/original_example.dart (linear-gradient)"?>
 ```dart
 LinearGradient get gradient => LinearGradient(
-      colors: widget.linearGradient.colors,
-      stops: widget.linearGradient.stops,
-      begin: widget.linearGradient.begin,
-      end: widget.linearGradient.end,
-      transform:
-          _SlidingGradientTransform(slidePercent: _shimmerController.value),
-    );
+  colors: widget.linearGradient.colors,
+  stops: widget.linearGradient.stops,
+  begin: widget.linearGradient.begin,
+  end: widget.linearGradient.end,
+  transform: _SlidingGradientTransform(
+    slidePercent: _shimmerController.value,
+  ),
+);
 ```
 
 The gradient now animates, but your individual
 `ShimmerLoading` widgets don't repaint themselves
-as the gradient changes. Therefore, it looks like nothing 
+as the gradient changes. Therefore, it looks like nothing
 is happening.
 
 Expose the `_shimmerController` from `ShimmerState`
@@ -566,12 +538,12 @@ class _ShimmerLoadingState extends State<ShimmerLoading> {
       });
     }
   }
-}
+  }
 ```
 
 Congratulations!
 You now have a full-screen,
-animated shimmer effect that turns 
+animated shimmer effect that turns
 on and off as the content loads.
 
 ## Interactive example
@@ -590,25 +562,15 @@ void main() {
 }
 
 const _shimmerGradient = LinearGradient(
-  colors: [
-    Color(0xFFEBEBF4),
-    Color(0xFFF4F4F4),
-    Color(0xFFEBEBF4),
-  ],
-  stops: [
-    0.1,
-    0.3,
-    0.4,
-  ],
+  colors: [Color(0xFFEBEBF4), Color(0xFFF4F4F4), Color(0xFFEBEBF4)],
+  stops: [0.1, 0.3, 0.4],
   begin: Alignment(-1.0, -0.3),
   end: Alignment(1.0, 0.3),
   tileMode: TileMode.clamp,
 );
 
 class ExampleUiLoadingAnimation extends StatefulWidget {
-  const ExampleUiLoadingAnimation({
-    super.key,
-  });
+  const ExampleUiLoadingAnimation({super.key});
 
   @override
   State<ExampleUiLoadingAnimation> createState() =>
@@ -643,9 +605,7 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _toggleLoading,
-        child: Icon(
-          _isLoading ? Icons.hourglass_full : Icons.hourglass_bottom,
-        ),
+        child: Icon(_isLoading ? Icons.hourglass_full : Icons.hourglass_bottom),
       ),
     );
   }
@@ -671,18 +631,13 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
   }
 
   Widget _buildTopRowItem() {
-    return ShimmerLoading(
-      isLoading: _isLoading,
-      child: const CircleListItem(),
-    );
+    return ShimmerLoading(isLoading: _isLoading, child: const CircleListItem());
   }
 
   Widget _buildListItem() {
     return ShimmerLoading(
       isLoading: _isLoading,
-      child: CardListItem(
-        isLoading: _isLoading,
-      ),
+      child: CardListItem(isLoading: _isLoading),
     );
   }
 }
@@ -692,11 +647,7 @@ class Shimmer extends StatefulWidget {
     return context.findAncestorStateOfType<ShimmerState>();
   }
 
-  const Shimmer({
-    super.key,
-    required this.linearGradient,
-    this.child,
-  });
+  const Shimmer({super.key, required this.linearGradient, this.child});
 
   final LinearGradient linearGradient;
   final Widget? child;
@@ -723,13 +674,14 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
   }
 
   LinearGradient get gradient => LinearGradient(
-        colors: widget.linearGradient.colors,
-        stops: widget.linearGradient.stops,
-        begin: widget.linearGradient.begin,
-        end: widget.linearGradient.end,
-        transform:
-            _SlidingGradientTransform(slidePercent: _shimmerController.value),
-      );
+    colors: widget.linearGradient.colors,
+    stops: widget.linearGradient.stops,
+    begin: widget.linearGradient.begin,
+    end: widget.linearGradient.end,
+    transform: _SlidingGradientTransform(
+      slidePercent: _shimmerController.value,
+    ),
+  );
 
   bool get isSized =>
       (context.findRenderObject() as RenderBox?)?.hasSize ?? false;
@@ -753,9 +705,7 @@ class ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
 }
 
 class _SlidingGradientTransform extends GradientTransform {
-  const _SlidingGradientTransform({
-    required this.slidePercent,
-  });
+  const _SlidingGradientTransform({required this.slidePercent});
 
   final double slidePercent;
 
@@ -860,8 +810,8 @@ class CircleListItem extends StatelessWidget {
         ),
         child: ClipOval(
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Avatar1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Avatar1.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -871,10 +821,7 @@ class CircleListItem extends StatelessWidget {
 }
 
 class CardListItem extends StatelessWidget {
-  const CardListItem({
-    super.key,
-    required this.isLoading,
-  });
+  const CardListItem({super.key, required this.isLoading});
 
   final bool isLoading;
 
@@ -884,11 +831,7 @@ class CardListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _buildImage(),
-          const SizedBox(height: 16),
-          _buildText(),
-        ],
+        children: [_buildImage(), const SizedBox(height: 16), _buildText()],
       ),
     );
   }
@@ -905,8 +848,8 @@ class CardListItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: Image.network(
-            'https://docs.flutter.dev/cookbook'
-            '/img-files/effects/split-check/Food1.jpg',
+            'https://docs.flutter.dev/assets/images/'
+            'exercise/split-check/Food1.jpg',
             fit: BoxFit.cover,
           ),
         ),

@@ -42,7 +42,7 @@ Import the http package.
 import 'package:http/http.dart' as http;
 ```
 
-{% render docs/cookbook/networking/internet-permission.md %}
+{% render "docs/cookbook/networking/internet-permission.md" %}
 
 ## 2. Make a network request
 
@@ -88,24 +88,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -132,8 +123,9 @@ function to return a `Future<Album>`:
 <?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum() async {
-  final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -230,7 +222,7 @@ it's not recommended to put an API call in a `build()` method.
 Flutter calls the `build()` method every time it needs
 to change anything in the view,
 and this happens surprisingly often.
-The `fetchAlbum()` method, if placed inside `build()`, is repeatedly 
+The `fetchAlbum()` method, if placed inside `build()`, is repeatedly
 called on each rebuild causing the app to slow down.
 
 Storing the `fetchAlbum()` result in a state variable ensures that
@@ -256,8 +248,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum() async {
-  final response = await http
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await http.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -275,24 +268,15 @@ class Album {
   final int id;
   final String title;
 
-  const Album({
-    required this.userId,
-    required this.id,
-    required this.title,
-  });
+  const Album({required this.userId, required this.id, required this.title});
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'userId': int userId,
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          userId: userId,
-          id: id,
-          title: title,
-        ),
+      {'userId': int userId, 'id': int id, 'title': String title} => Album(
+        userId: userId,
+        id: id,
+        title: title,
+      ),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -324,9 +308,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fetch Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Fetch Data Example')),
         body: Center(
           child: FutureBuilder<Album>(
             future: futureAlbum,
@@ -345,6 +327,7 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
+
 }
 ```
 

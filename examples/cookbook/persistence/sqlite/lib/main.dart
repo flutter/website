@@ -59,11 +59,8 @@ void main() async {
 
     // Convert the list of each dog's fields into a list of `Dog` objects.
     return [
-      for (final {
-            'id': id as int,
-            'name': name as String,
-            'age': age as int,
-          } in dogMaps)
+      for (final {'id': id as int, 'name': name as String, 'age': age as int}
+          in dogMaps)
         Dog(id: id, name: name, age: age),
     ];
   }
@@ -104,11 +101,7 @@ void main() async {
 
   // #docregion fido
   // Create a Dog and add it to the dogs table
-  var fido = Dog(
-    id: 0,
-    name: 'Fido',
-    age: 35,
-  );
+  var fido = Dog(id: 0, name: 'Fido', age: 35);
 
   await insertDog(fido);
   // #enddocregion fido
@@ -120,11 +113,7 @@ void main() async {
 
   // #docregion update2
   // Update Fido's age and save it to the database.
-  fido = Dog(
-    id: fido.id,
-    name: fido.name,
-    age: fido.age + 7,
-  );
+  fido = Dog(id: fido.id, name: fido.name, age: fido.age + 7);
   await updateDog(fido);
 
   // Print the updated results.
@@ -144,20 +133,12 @@ class Dog {
   final String name;
   final int age;
 
-  Dog({
-    required this.id,
-    required this.name,
-    required this.age,
-  });
+  Dog({required this.id, required this.name, required this.age});
 
   // Convert a Dog into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, Object?> toMap() {
-    return {
-      'id': id,
-      'name': name,
-      'age': age,
-    };
+    return {'id': id, 'name': name, 'age': age};
   }
 
   // Implement toString to make it easier to see information about
@@ -167,4 +148,5 @@ class Dog {
     return 'Dog{id: $id, name: $name, age: $age}';
   }
 }
+
 // #enddocregion Dog
