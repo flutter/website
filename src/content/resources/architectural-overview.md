@@ -821,7 +821,7 @@ Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
 
-- As of Flutter 3.38, the UI and raster threads are merged on
+- As of Flutter 3.29, the UI and platform threads are merged on
   iOS and Android. Specifically, the UI thread
   is removed and the Dart code runs on the native platform thread.
   For more information, see [The great thread merge][] video. 
