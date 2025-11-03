@@ -56,7 +56,7 @@ to restore the font's default weight, set `fontWeight` to `FontWeight.normal`.
 
 ## Timeline
 
-Landed in version: 3.38.0-0.0.pre
+Landed in version: 3.39.0-0.0.pre<br>
 In stable release: Not yet
 
 ## References
