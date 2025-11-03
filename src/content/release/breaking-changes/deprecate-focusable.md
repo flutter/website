@@ -12,19 +12,20 @@ The `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`
 parameters were deprecated in favor of the `SemanticsProperties.focused` and
 `SemanticsConfiguration.isFocused` parameters.
 
-The `focused` parameter is now nullable. Setting it to `true` or `false`
-automatically sets `isFocusable` to `true`, while setting it to `null`
-sets `isFocusable` to `false`.
+The `focused` parameter is now nullable.
+Setting it to `true` or `false` automatically
+sets `isFocusable` to `true`, while
+setting it to `null` sets `isFocusable` to `false`.
 
 ## Context
 
-The `SemanticsConfiguration.isFocusable` property is a boolean that indicates
-whether the semantics node can have input focus, and
-
+The `SemanticsConfiguration.isFocusable` property is a boolean that
+indicates whether the semantics node can have input focus.
 `SemanticsConfiguration.isFocused` is a boolean that indicates if the
 semantics node has input focus.
 
-This change also applies to `SemanticsProperties.focusable` and `SemanticsProperties.focused`.
+This change also applies to
+`SemanticsProperties.focusable` and `SemanticsProperties.focused`.
 
 We deprecated `isFocusable` because its functionality is covered by `isFocused`.
 The `isFocused` property is now stored as a tristate flag in the engine,
@@ -32,16 +33,18 @@ and this change makes the framework consistent with the engine.
 
 ## Description of change
 
-The `SemanticsConfiguration.isFocusable` property is deprecated in
-favor of `SemanticsConfiguration.isFocused`. This property is a nullable
-boolean; setting it to `true` or `false` automatically sets `isFocusable` to
-`true`, and setting it to `null` sets `isFocusable` to `false`.
+The `SemanticsConfiguration.isFocusable` property is
+deprecated in favor of `SemanticsConfiguration.isFocused`.
+This property is a nullable boolean; setting it to `true` or `false`
+automatically sets `isFocusable` to `true`, and
+setting it to `null` sets `isFocusable` to `false`.
 
 ## Migration guide
 
-Replace `SemanticsConfiguration.isFocusable` with `SemanticsConfiguration.isFocused`.
+Replace `SemanticsConfiguration.isFocusable` with
+`SemanticsConfiguration.isFocused`.
 
-### Example 1: setting `isFocused` to `true` automatically sets `isFocusable` to `true`.
+### Example 1: Setting `isFocused` to `true` automatically sets `isFocusable` to `true`
 
 Code before migration:
 
@@ -60,7 +63,7 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 }
 ```
 
-### Example 2: setting `isFocused` to null automatically sets `isFocusable` to `false`.
+### Example 2: Setting `isFocused` to `null` automatically sets `isFocusable` to `false`
 
 Code before migration:
 
@@ -82,8 +85,8 @@ void describeSemanticsConfiguration(SemanticsConfiguration config) {
 
 ## Timeline
 
-Landed in version: 3.37.0-0.0.pre
-In stable release: Not yet
+Landed in version: 3.37.0-0.0.pre<br>
+In stable release: 3.38
 
 
 ## References
