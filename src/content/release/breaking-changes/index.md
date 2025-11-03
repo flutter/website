@@ -36,25 +36,30 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [`FontWeight` also controls the weight attribute of variable fonts][]
+* [UISceneDelegate adoption][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [Stop generating `AssetManifest.json`][]
+* [Deprecate `TextField.canRequestFocus`][]
+
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+
+<a id="released-in-flutter-338" aria-hidden="true"></a>
+### Released in Flutter 3.38
+
 * [`CupertinoDynamicColor` wide gamut support][]
 * [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
-* [Deprecate `TextField.canRequestFocus`][]
-* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
-* [`FontWeight` also controls the weight attribute of variable fonts][]
 * [SnackBar with action no longer auto-dismisses][]
-* [Stop generating `AssetManifest.json`][]
-* [UISceneDelegate adoption][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
-[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35

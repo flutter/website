@@ -15,10 +15,10 @@ added in [Flutter 3.27][Migration guide for wide gamut Color].
 
 ## Context
 
-The `Color` class was updated to support wide gamut color spaces, but some
-corresponding deprecations were not initially applied to
-`CupertinoDynamicColor` due to its implementation rather than due to
-the extension of `Color`.
+The `Color` class was updated to support wide gamut color spaces,
+but some corresponding deprecations were not initially applied to
+`CupertinoDynamicColor` due to its implementation rather than
+due to the extension of `Color`.
 
 ## Description of change
 
@@ -55,12 +55,12 @@ final intBlue = _floatToInt8(color.b);
 
 ### Opacity
 
-Before Flutter 3.27, `Color` had the concept of "opacity", which showed up in the
-methods `opacity` and `withOpacity()`. Since Flutter 3.27, alpha is stored as a
-floating-point value. Using `.a` and `.withValues()` will give the full
-expression of a floating-point value and won't be quantized (restricted to a
-limited range). That means "alpha" expresses the intent of "opacity" more
-correctly.
+Before Flutter 3.27, `Color` had the concept of "opacity", which
+showed up in the methods `opacity` and `withOpacity()`.
+Since Flutter 3.27, the alpha channel has been stored as a floating-point value.
+Using `.a` and `.withValues()` will give the full expression of
+a floating-point value and won't be quantized (restricted to a limited range).
+That means "alpha" expresses the intent of "opacity" more correctly.
 
 #### Migrate `opacity`
 
@@ -85,8 +85,8 @@ final x = color.withValues(alpha: 0.5);
 
 ## Timeline
 
-Landed in version: Not yet<br>
-Stable release: Not yet
+Landed in version: 3.36.0-0.1.pre<br>
+Stable release: 3.38
 
 ## References
 
