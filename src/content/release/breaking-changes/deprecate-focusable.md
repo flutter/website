@@ -15,7 +15,7 @@ parameters were deprecated in favor of the `SemanticsProperties.focused` and
 The `focused` parameter is now nullable.
 Setting it to `true` or `false` automatically
 sets `isFocusable` to `true`, while
-setting it to `null`sets `isFocusable` to `false`.
+setting it to `null` sets `isFocusable` to `false`.
 
 ## Context
 
