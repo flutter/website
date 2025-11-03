@@ -633,24 +633,19 @@ When you create a new Flutter project,
 it builds the following directory structure.
 You can customize it later, but this is where you start.
 
-```plaintext
-┬
-└ project_name
-  ┬
-  ├ android      - Contains Android-specific files.
-  ├ build        - Stores iOS and Android build files.
-  ├ ios          - Contains iOS-specific files.
-  ├ lib          - Contains externally accessible Dart source files.
-    ┬
-    └ src        - Contains additional source files.
-    └ main.dart  - The Flutter entry point and the start of a new app.
-                   This is generated automatically when you create a Flutter
-                    project.
-                   It's where you start writing your Dart code.
-  ├ test         - Contains automated test files.
-  └ pubspec.yaml - Contains the metadata for the Flutter app.
-                   This is equivalent to the package.json file in React Native.
-```
+<FileTree>
+
+- <project_name>/
+  - android/ // Contains Android-specific files.
+  - build/ // Stores iOS and Android build files.
+  - ios/ // Contains iOS-specific files.
+  - lib/ // Contains externally accessible Dart source files.
+    - src/ // Contains additional source files.
+    - main.dart // The Flutter entry point and the start of a new app. This is generated automatically when you create a Flutter                    project. It's where you start writing your Dart code.
+  - test/ // Contains automated test files.
+  - pubspec.yaml // Contains the metadata for the Flutter app. This is equivalent to the package.json file in React Native.
+
+</FileTree>
 
 ### Where do I put my resources and assets and how do I use them?
 

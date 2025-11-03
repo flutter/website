@@ -35,15 +35,16 @@ If you have a different directory structure,
 adjust the relative paths.
 The example directory structure resembles the following:
 
-```plaintext
-/path/to/MyApp
-├── my_flutter/
-│   └── .ios/
-│       └── Flutter/
-│         └── podhelper.rb
-└── MyApp/
-    └── Podfile
-```
+<FileTree>
+
+- my_flutter/
+   - .ios/
+   - Flutter/
+      - podhelper.rb
+- MyApp/
+   - Podfile
+
+</FileTree>
 
 #### Update your Podfile
 
