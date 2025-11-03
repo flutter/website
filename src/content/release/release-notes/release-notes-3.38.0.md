@@ -5,9 +5,9 @@ description: Release notes for Flutter 3.38.0.
 skipTemplateRendering: true
 ---
 
-This page has release notes for 3.38
+This page has release notes for Flutter 3.38.
 
-## What's Changed
+## What's changed
 
 ### Framework
 
@@ -133,7 +133,9 @@ This page has release notes for 3.38
 * Fix: Update anchorRect for overlayBuilder when anchor moves by @rkishan516 in [169814](https://github.com/flutter/flutter/pull/169814)
 * Fix typo in pages.dart by @TDuffinNTU in [176438](https://github.com/flutter/flutter/pull/176438)
 * Selecting an implementation widget with the on-device inspector opens the code location for the nearest project widget by @elliette in [176530](https://github.com/flutter/flutter/pull/176530)
+
 ### Material
+
 * No SystemContextMenu when readOnly is true by @justinmc in [171242](https://github.com/flutter/flutter/pull/171242)
 * Fix mutating Paint bug by @justinmc in [171180](https://github.com/flutter/flutter/pull/171180)
 * feat: Add `maxCount` parameter to `Badge.count` constructor. by @iamtoricool in [171054](https://github.com/flutter/flutter/pull/171054)
@@ -278,7 +280,9 @@ This page has release notes for 3.38
 * Migrate to `WidgetStateInputBorder` by @ValentinVignal in [176386](https://github.com/flutter/flutter/pull/176386)
 * Fix PopupMenu does not update when PopupMenuTheme in Theme changes. by @ksokolovskyi in [175513](https://github.com/flutter/flutter/pull/175513)
 * Fix InputDecoration helper/error padding is not compliant by @bleroux in [176353](https://github.com/flutter/flutter/pull/176353)
+
 ### iOS
+
 * Fix a race in FlutterEngineTest.CanLogToStdout by @jason-simmons in [172025](https://github.com/flutter/flutter/pull/172025)
 * Revert #160653 Fix view removal process for AutofillContextAction.cancel by @LongCatIsLooong in [172490](https://github.com/flutter/flutter/pull/172490)
 * Adapt xcresult parser for Xcode 16 changes by @okorohelijah in [172596](https://github.com/flutter/flutter/pull/172596)
@@ -314,7 +318,9 @@ This page has release notes for 3.38
 * Add fallback for 'scene:willConnectToSession:options' by @vashworth in [176580](https://github.com/flutter/flutter/pull/176580)
 * [CP-beta]Add structured warning event for slow wireless debugging on iOS 26+ d… by @flutteractionsbot in [176976](https://github.com/flutter/flutter/pull/176976)
 * [CP-beta]Add guided error for precompiled cache error by @flutteractionsbot in [177607](https://github.com/flutter/flutter/pull/177607)
+
 ### Android
+
 * fix: produce pom/jar files with content_hash by @jtmcdole in [172378](https://github.com/flutter/flutter/pull/172378)
 * Update warnGradleVersion to `8.7.0` by @jesswrd in [172576](https://github.com/flutter/flutter/pull/172576)
 * [FGP] Small restructuring of Android Studio native flutter dependency support by @gmackall in [172651](https://github.com/flutter/flutter/pull/172651)
@@ -379,14 +385,18 @@ This page has release notes for 3.38
 * [CP-beta][Android] Refactor `ImageReaderSurfaceProducer` restoration after app resumes by @camsim99 in [177121](https://github.com/flutter/flutter/pull/177121)
 * [CP-Beta] Bump Templates To Correct Versions (#177416) by @jesswrd in [177608](https://github.com/flutter/flutter/pull/177608)
 * Revert "Resolve resolve native Flutter dependencies in Android Studio… by @reidbaker in [177605](https://github.com/flutter/flutter/pull/177605)
+
 ### Windows
+
 * Using a shared message-only HWND for clip board data on win32 instead of the implicit view by @mattkae in [173076](https://github.com/flutter/flutter/pull/173076)
 * Provide monitor list, display size, refresh rate, and more for Windows by @9AZX in [164460](https://github.com/flutter/flutter/pull/164460)
 * Regular windows win32 engine by @mattkae in [173424](https://github.com/flutter/flutter/pull/173424)
 * Report a correct display ID in the window metrics event on win32 by @mattkae in [174156](https://github.com/flutter/flutter/pull/174156)
 * Rename DisplayMonitor to DisplayManager on Win32 by @mattkae in [175619](https://github.com/flutter/flutter/pull/175619)
 * [win32] Runloop should use high resolution timer and avoid deadlock by @knopp in [176023](https://github.com/flutter/flutter/pull/176023)
+
 ### Linux
+
 * Perform OpenGL compositing in the Flutter thread and write to a framebuffer. by @robert-ancell in [172090](https://github.com/flutter/flutter/pull/172090)
 * Refactor handling of frame waiting. by @robert-ancell in [172277](https://github.com/flutter/flutter/pull/172277)
 * Render Flutter in its own EGL context by @robert-ancell in [172330](https://github.com/flutter/flutter/pull/172330)
@@ -401,7 +411,9 @@ This page has release notes for 3.38
 * Check GTK calls are done on the same thread. (#174488) by @robert-ancell in [174624](https://github.com/flutter/flutter/pull/174624)
 * Warn if embedder API calls don't return success by @robert-ancell in [176184](https://github.com/flutter/flutter/pull/176184)
 * [CP-beta]Fix accessibility events not being correctly translated to ATK by @flutteractionsbot in [177427](https://github.com/flutter/flutter/pull/177427)
+
 ### Web
+
 * [skwasm] Decrease reliance on finalizers/GC by @eyebrowsoffire in [172187](https://github.com/flutter/flutter/pull/172187)
 * [web] Add tests for unified platform view embedding behavior by @harryterkelsen in [172313](https://github.com/flutter/flutter/pull/172313)
 * [web] Fix empty first frame in multiview mode by @mdebbar in [172493](https://github.com/flutter/flutter/pull/172493)
@@ -434,7 +446,9 @@ This page has release notes for 3.38
 * Update the test package for the web engine unit test bits. by @eyebrowsoffire in [176241](https://github.com/flutter/flutter/pull/176241)
 * [web] Bump Firefox to 143.0 by @mdebbar in [176110](https://github.com/flutter/flutter/pull/176110)
 * Remove references to dart:js_util by @fishythefish in [176323](https://github.com/flutter/flutter/pull/176323)
+
 ### Tooling
+
 * Roll pub packages by @flutter-pub-roller-bot in [172193](https://github.com/flutter/flutter/pull/172193)
 * Refactor and forbid `base/exit.dart` outside of `lib/runner.dart` by @matanlurey in [171923](https://github.com/flutter/flutter/pull/171923)
 * Roll pub packages by @flutter-pub-roller-bot in [172332](https://github.com/flutter/flutter/pull/172332)
@@ -575,9 +589,13 @@ This page has release notes for 3.38
 * [beta] CP: Fixes hot reload/restart crashes after closing browser tab on web-server device by @jyameo in [177456](https://github.com/flutter/flutter/pull/177456)
 * [CP-beta][tool/dap] Forward app.warning events from Flutter to DAP client by @flutteractionsbot in [176997](https://github.com/flutter/flutter/pull/176997)
 * [CP-beta][ Tool ] Output DTD URI for Flutter web applications by @flutteractionsbot in [177321](https://github.com/flutter/flutter/pull/177321)
+
 ### Documentation
+
 * Remove jetifier usages  by @reidbaker in [173548](https://github.com/flutter/flutter/pull/173548)
-### Other Changes
+
+### Other changes
+
 * Licenses_cpp: Parses NOTICES and DEPS by @gaaclarke in [172044](https://github.com/flutter/flutter/pull/172044)
 * Use `release-*.version` to simplify `last_engine_commit.sh` (no branch operations) by @matanlurey in [172236](https://github.com/flutter/flutter/pull/172236)
 * Fix use of `Join-Path` in `last_engine_commit.ps1`(poweshell) by @matanlurey in [172242](https://github.com/flutter/flutter/pull/172242)
@@ -792,7 +810,8 @@ This page has release notes for 3.38
 * [CP-beta] Fix crash when NSAttributedString is passed to insertText on macOS by @flutteractionsbot in [177401](https://github.com/flutter/flutter/pull/177401)
 * Update `engine.version` for 3.38.1 hotfix release by @camsim99 in [177675](https://github.com/flutter/flutter/pull/177675)
 
-## New Contributors
+## New contributors
+
 * @MohiuddinM made their first contribution in [170223](https://github.com/flutter/flutter/pull/170223)
 * @iamtoricool made their first contribution in [171054](https://github.com/flutter/flutter/pull/171054)
 * @0xharkirat made their first contribution in [172285](https://github.com/flutter/flutter/pull/172285)
