@@ -375,9 +375,9 @@ The following resources are a good place to start learning
 the Flutter animation framework. Each of these documents
 shows how to write animation code.
 
-* [Implicit animations codelab][]<br>
-  Covers how to use implicit animations
-  using step-by-step instructions and interactive examples.
+* [Animations in Flutter codelab][]<br>
+  Learn about implicit and explicit animations
+  while building a multiple-choice quiz game.
 
 * [Animations tutorial][]<br>
   Explains the fundamental classes in the Flutter animation package
@@ -455,7 +455,7 @@ Learn more about Flutter animations at the following links:
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html
 [Hero animations]: /ui/animations/hero-animations
 [How to choose which Flutter Animation Widget is right for you?]: {{site.yt.watch}}?v=GXIJJkq_H8g
-[Implicit animations codelab]: /codelabs/implicit-animations
+[Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
 [Making your first directional animations with built-in explicit animations]: {{site.yt.watch}}?v=CunyH6unILQ&list=PLjxrf2q8roU2v6UqYlt_KPaXlnjbYySua&index=3
 [Material widgets]: /ui/widgets/material
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html

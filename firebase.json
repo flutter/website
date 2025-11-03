@@ -107,6 +107,7 @@
       { "source": "/codelabs", "destination": "/reference/learning-resources", "type": 301 },
       { "source": "/codelabs/layout-basics", "destination": "/ui/layout", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
+      { "source": "/codelabs/implicit-animations", "destination": "https://codelabs.developers.google.com/advanced-flutter-animations", "type": 301 },
       { "source": "/cookbook", "destination": "/reference/learning-resources", "type": 301 },
       { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
       { "source": "/cookbook/images/cached-images", "destination": "/cookbook/images/network-image", "type": 301 },
