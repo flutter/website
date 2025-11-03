@@ -801,7 +801,7 @@ unique concerns of that platform. The engine is platform-agnostic,
 presenting a [stable ABI (Application Binary Interface)][ABI].
 that provides a _platform embedder_ with a way to set up and use Flutter.
 
-ABI: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
+[ABI]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
