@@ -89,7 +89,7 @@ introduction to the Router system.
    a step-by-step tutorial showing how to implement deep links in Flutter.
 
 [io-dl]: {{site.yt.watch}}?v=6RxuDcs6jVw&t=3s
-[Learning Flutter's new navigation and routing system]: {{site.flutter-medium}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
+[Learning Flutter's new navigation and routing system]: {{site.flutter-blog}}/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [routes]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [onGenerateRoute]: {{site.api}}/flutter/material/MaterialApp/onGenerateRoute.html
 [Router]: {{site.api}}/flutter/widgets/Router-class.html

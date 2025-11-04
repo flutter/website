@@ -269,7 +269,7 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 ## Widgets
 
@@ -593,7 +593,7 @@ such as Windows or macOS.
 :::note
 If you want to know which devices Impeller supports,
 check out [Can I use Impeller?][].
-For more information, 
+For more information,
 visit [Impeller rendering engine][]
 :::
 
@@ -797,19 +797,22 @@ As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
-unique concerns of that platform. The engine is platform-agnostic, presenting a
-[stable ABI (Application Binary
-Interface)]({{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h)
+unique concerns of that platform. The engine is platform-agnostic,
+presenting a [stable ABI (Application Binary Interface)][ABI].
 that provides a _platform embedder_ with a way to set up and use Flutter.
+
+[ABI]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
-When you start a Flutter app, the embedder provides the entrypoint, initializes
-the Flutter engine, obtains threads for UI and rastering, and creates a texture
-that Flutter can write to. The embedder is also responsible for the app
-lifecycle, including input gestures (such as mouse, keyboard, touch), window
-sizing, thread management, and platform messages. Flutter includes platform
-embedders for Android, iOS, Windows, macOS, and Linux; you can also create a
+When you start a Flutter app, the embedder provides the entrypoint,
+initializes the Flutter engine, obtains threads for UI and rastering,
+and creates a texture that Flutter can write to.
+The embedder is also responsible for the app lifecycle,
+including input gestures (such as mouse, keyboard, touch), window
+sizing, thread management, and platform messages.
+Flutter includes platform embedders for Android, iOS, Windows,
+macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
 example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
@@ -818,6 +821,10 @@ Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
 
+- As of Flutter 3.29, the UI and platform threads are merged on
+  iOS and Android. Specifically, the UI thread
+  is removed and the Dart code runs on the native platform thread.
+  For more information, see [The great thread merge][] video. 
 - On iOS and macOS, Flutter is loaded into the embedder as a `UIViewController`
   or `NSViewController`, respectively. The platform embedder creates a
   `FlutterEngine`, which serves as a host to the Dart VM and your Flutter
@@ -833,6 +840,8 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
+
+[The great thread merge]: https://youtu.be/miW7vCmQwnw?si=9EYvRDxtkpkPrcSO
 
 ## Integrating with other code
 

@@ -14,7 +14,8 @@ body {
 
   // If the TOC is disabled, reduce the subheader height to
   // ensure offset calculations are still correct.
-  &[data-toc="false"], &.no-toc {
+  &[data-toc="false"],
+  &.no-toc {
     --site-subheader-height: 0rem;
   }
 }
@@ -65,10 +66,10 @@ picture {
 .material-symbols {
   font-family: var(--site-icon-fontFamily);
   font-variation-settings:
-          'FILL' 0,
-          'wght' 400,
-          'GRAD' 0,
-          'opsz' 24;
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
 
   font-weight: normal;
   font-style: normal;
@@ -100,7 +101,9 @@ picture {
     max-width: 320px;
   }
 
-  &--border { border: 1px solid var(--site-inset-borderColor); }
+  &--border {
+    border: 1px solid var(--site-inset-borderColor);
+  }
 }
 
 .site-image-right {
@@ -157,8 +160,8 @@ main figure {
     flex-direction: row;
     flex-wrap: wrap;
 
-    > div {
-     width: 100%;
+    >div {
+      width: 100%;
 
       &:last-child {
         text-align: center;
@@ -166,7 +169,7 @@ main figure {
     }
 
     @media(min-width: 769px) {
-      > div {
+      >div {
         &:first-child {
           flex: 0 0 58%;
           max-width: 58%;
@@ -203,7 +206,9 @@ main figure {
 }
 
 table {
-  td, th {
+
+  td,
+  th {
     padding: .25rem;
   }
 }
@@ -232,7 +237,8 @@ table {
     }
   }
 
-  td, th {
+  td,
+  th {
     border-top: 1px solid var(--site-inset-borderColor);
     padding: .75rem;
   }
@@ -244,7 +250,8 @@ thead:has(th:empty) {
   display: none;
 }
 
-.table-wrapper, .scrollable-table {
+.table-wrapper,
+.scrollable-table {
   overflow-x: auto;
   margin-block-start: 1rem;
   margin-block-end: 1rem;
@@ -274,7 +281,7 @@ blockquote {
 details {
   margin-bottom: 0.75rem;
 
-  > summary {
+  >summary {
     font-weight: 500;
     user-select: none;
     border-radius: 0.125rem;
@@ -288,7 +295,7 @@ details {
   &[open] {
     margin-bottom: unset;
 
-    > summary {
+    >summary {
       margin-bottom: 0.75rem;
     }
   }
@@ -315,7 +322,7 @@ ol.steps {
   $step-indicator-height: 1.75rem;
 
   li {
-    > * {
+    >* {
       &:first-child {
         margin-block-start: 0;
       }
@@ -330,22 +337,23 @@ ol.steps {
     }
   }
 
-  ul > li {
+  ul>li {
     &:not(:last-child) {
       padding-block-end: .5rem;
     }
   }
 
-  > li {
+  >li {
     position: relative;
     counter-increment: steps;
 
-    ol, ul {
+    ol,
+    ul {
       padding-inline-start: 2rem;
       margin-block-end: 0.75rem;
     }
 
-    > h3:first-child {
+    >h3:first-child {
       display: flex;
       align-items: center;
       height: $step-indicator-height;
@@ -397,18 +405,25 @@ ol.steps {
 }
 
 main {
-  ol + img, ul + img, ol + p, ul + p, p + p + img {
+
+  ol+img,
+  ul+img,
+  ol+p,
+  ul+p,
+  p+p+img {
     margin-bottom: 1rem;
   }
 
   td {
-    > *:last-child {
+    >*:last-child {
       margin-bottom: 0;
     }
   }
 }
 
-p + ul, p + ol, p + dl {
+p+ul,
+p+ol,
+p+dl {
   margin-block-start: 0.75rem;
   margin-block-end: 0.75rem;
 }
@@ -421,6 +436,7 @@ p + ul, p + ol, p + dl {
 
 .card-os-bug {
   position: relative;
+
   &::before {
     content: "";
     position: absolute;
@@ -432,12 +448,14 @@ p + ul, p + ol, p + dl {
     background-size: contain;
     background-color: transparent;
     background-repeat: no-repeat;
-    z-index: var(--site-z-floating); /* Place in front of card */
+    z-index: var(--site-z-floating);
+    /* Place in front of card */
   }
 }
 
 .card-macos {
   @extend .card-os-bug;
+
   &::before {
     background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
   }
@@ -445,6 +463,7 @@ p + ul, p + ol, p + dl {
 
 .card-windows {
   @extend .card-os-bug;
+
   &::before {
     background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
   }
@@ -452,6 +471,7 @@ p + ul, p + ol, p + dl {
 
 .card-linux {
   @extend .card-os-bug;
+
   &::before {
     background-image: url("/assets/images/docs/brand-svg/linux.svg");
   }
@@ -459,6 +479,7 @@ p + ul, p + ol, p + dl {
 
 .card-chromeos {
   @extend .card-os-bug;
+
   &::before {
     background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
   }

@@ -481,7 +481,7 @@ On ARM32, the core engine is approximately 3.4 MB
 (compressed), and necessary Java code (`classes.dex`)
 is 120 KB (compressed).
 
-In ARM64, the core engine is approximately 4.0 MB 
+In ARM64, the core engine is approximately 4.0 MB
 (compressed), the framework + app code is approximately
 659 KB (compressed), the LICENSE file is 58 KB
 (compressed), and necessary Java code (`classes.dex`)
@@ -521,7 +521,7 @@ To do that, see [Measuring your app's size][].
 Flutter uses logical pixels,
 and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
-between physical pixels and logical CSS pixels. 
+between physical pixels and logical CSS pixels.
 
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
@@ -581,7 +581,7 @@ You can compile and deploy your Flutter app to iOS, Android,
 
 * We support and test running Flutter on a variety
   of low-end to high-end platforms.  For a detailed list
-  of the platforms on which we test, see 
+  of the platforms on which we test, see
   the list of [supported platforms][].
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
@@ -735,7 +735,7 @@ that offer a better trade-off, such as code generation.
 
 ### Are internationalization and localization supported?
 
-Yes, Flutte`r supports internationalization (i18n) and localization (l10n) so
+Yes, Flutter supports internationalization (i18n) and localization (l10n) so
 that your apps are adaptable to different languages and cultures. You can
 learn more in the [internationalization documentation][].
 
@@ -766,7 +766,7 @@ Yes, you can run Dart code in a background process on both
 iOS and Android. For more information, see the free Medium article
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
-[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
 ### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 

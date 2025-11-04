@@ -128,7 +128,9 @@
     color: var(--site-footer-fgColor);
     font-family: var(--site-ui-fontFamily);
 
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
       color: var(--site-filledButton-fgColor);
     }
   }

@@ -65,8 +65,8 @@ The relevant error-causing widget was
     Row      lib/errors/renderflex_overflow_column.dart:23
 
 The overflowing RenderFlex has an orientation of Axis.horizontal.
-The edge of the RenderFlex that is overflowing has been marked in the rendering 
-with a yellow and black striped pattern. This is usually caused by the contents 
+The edge of the RenderFlex that is overflowing has been marked in the rendering
+with a yellow and black striped pattern. This is usually caused by the contents
 being too big for the RenderFlex.
 (Additional lines of this message omitted)
 ```
@@ -165,7 +165,7 @@ The resources linked below provide further information about this error.
 
 [its source code]: {{site.repo.flutter}}/blob/c8e42b47f5ea8b5ff7bf2f2b0a2a8e765f1aa51d/packages/flutter/lib/src/widgets/basic.dart#L5166-L5174
 [flexible-video]: {{site.yt.watch}}?v=CI7x0mAZiY0
-[medium-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
+[medium-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db#738b
 [Understanding constraints]: /ui/layout/constraints
 
 ## 'RenderBox was not laid out'
@@ -179,7 +179,7 @@ occurring earlier in the rendering pipeline.
 The message shown by the error looks like this:
 
 ```plaintext
-RenderBox was not laid out: 
+RenderBox was not laid out:
 RenderViewport#5a477 NEEDS-LAYOUT NEEDS-PAINT NEEDS-COMPOSITING-BITS-UPDATE
 ```
 
@@ -212,9 +212,9 @@ The message shown by the error looks like this:
 The following assertion was thrown during performResize():
 Vertical viewport was given unbounded height.
 
-Viewports expand in the scrolling direction to fill their container. 
-In this case, a vertical viewport was given an unlimited amount of 
-vertical space in which to expand. This situation typically happens when a 
+Viewports expand in the scrolling direction to fill their container.
+In this case, a vertical viewport was given an unlimited amount of
+vertical space in which to expand. This situation typically happens when a
 scrollable widget is nested inside another scrollable widget.
 (Additional lines of this message omitted)
 ```
@@ -299,11 +299,11 @@ The message shown by the error looks like this:
 
 ```plaintext
 The following assertion was thrown during performLayout():
-An InputDecorator, which is typically created by a TextField, cannot have an 
+An InputDecorator, which is typically created by a TextField, cannot have an
 unbounded width.
-This happens when the parent widget does not provide a finite width constraint. 
-For example, if the InputDecorator is contained by a `Row`, then its width must 
-be constrained. An `Expanded` widget or a SizedBox can be used to constrain the 
+This happens when the parent widget does not provide a finite width constraint.
+For example, if the InputDecorator is contained by a `Row`, then its width must
+be constrained. An `Expanded` widget or a SizedBox can be used to constrain the
 width of the InputDecorator or the TextField that contains it.
 (Additional lines of this message omitted)
 ```
@@ -357,7 +357,7 @@ The message shown by the error looks like this:
 The following assertion was thrown while looking for parent data:
 Incorrect use of ParentDataWidget.
 (Some lines of this message omitted)
-Usually, this indicates that at least one of the offending ParentDataWidgets 
+Usually, this indicates that at least one of the offending ParentDataWidgets
 listed above is not placed directly inside a compatible ancestor widget.
 ```
 
@@ -398,12 +398,12 @@ When the error occurs,
 the following message is displayed in the console:
 
 ```plaintext
-The following assertion was thrown building DialogPage(dirty, dependencies: 
-[_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]], 
+The following assertion was thrown building DialogPage(dirty, dependencies:
+[_InheritedTheme, _LocalizationsScope-[GlobalKey#59a8e]],
 state: _DialogPageState#f121e):
 setState() or markNeedsBuild() called during build.
 
-This Overlay widget cannot be marked as needing to build because the framework 
+This Overlay widget cannot be marked as needing to build because the framework
 is already in the process of building widgets.
 (Additional lines of this message omitted)
 ```

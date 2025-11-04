@@ -36,23 +36,30 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `OverlayPortal.targetsRootOverlay`][]
-* [Deprecate `TextField.canRequestFocus`][]
-* [Stop generating `AssetManifest.json`][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
 * [UISceneDelegate adoption][]
-* [`CupertinoDynamicColor` wide gamut support][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
-* [SnackBar with action no longer auto-dismisses][]
-* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [Stop generating `AssetManifest.json`][]
+* [Deprecate `TextField.canRequestFocus`][]
 
-[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
-[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
-[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+
+<a id="released-in-flutter-338" aria-hidden="true"></a>
+### Released in Flutter 3.38
+
+* [`CupertinoDynamicColor` wide gamut support][]
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [SnackBar with action no longer auto-dismisses][]
+
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35

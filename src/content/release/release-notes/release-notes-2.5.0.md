@@ -10,7 +10,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 ### framework - 530 pull request(s)
 
@@ -7569,7 +7569,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-### Merged PRs by labels for `flutter/engine` 
+### Merged PRs by labels for `flutter/engine`
 
 
 
@@ -18498,7 +18498,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-### Merged PRs by labels for `flutter/plugins` 
+### Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -22207,6 +22207,3 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 ### in review - 1 pull request(s)
 
 [3780](https://github.com/flutter/plugins/pull/3780) [local_auth] Fix iOS crash when no localizedReason (cla: yes, in review, waiting for tree to go green, p: local_auth)
-
-
-

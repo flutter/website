@@ -105,7 +105,7 @@ class TodosScreen extends StatelessWidget {
 }
 ```
 
-With Flutter's default styling, you're good to go without sweating about 
+With Flutter's default styling, you're good to go without sweating about
 things that you'd like to do later on!
 
 ## 4. Create a detail screen to display information about a todo

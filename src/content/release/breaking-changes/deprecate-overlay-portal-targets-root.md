@@ -8,23 +8,25 @@ description: >-
 
 ## Summary
 
-The `OverlayPortal.targetsRootOverlay` property was deprecated and 
+The `OverlayPortal.targetsRootOverlay` property was deprecated and
 replaced with `overlayLocation`.
 
 ## Context
 
-A parameter `overlayLocation` was added to the OverlayPortal default constructor to
-control where the overlay child renders. As the result, the constructor
-`OverlayPortal.targetsRootOverlay` was no longer useful.
+A `overlayLocation` parameter was added to
+the `OverlayPortal` default constructor to
+control where the overlay child renders.
+As a result, the `OverlayPortal.targetsRootOverlay` constructor is
+no longer useful.
 
 ## Description of change
 
-The `OverlayPortal.targetsRootOverlay` was deprecated.
+The `OverlayPortal.targetsRootOverlay` constructor is deprecated.
 
 ## Migration guide
 
-If you are using `OverlayPortal.targetsRootOverlay`, you can use `OverlayPortal` with
-`overlayLocation` instead.
+If you are using `OverlayPortal.targetsRootOverlay`,
+use `OverlayPortal` with `overlayLocation` instead.
 
 ### Case 1: trivial case
 
@@ -42,7 +44,7 @@ Widget build(BuildContext context) {
 
 Code after migration:
 
-```dart
+```dart highlightLines=3
 Widget build(BuildContext context) {
   return OverlayPortal(
     overlayLocation: OverlayChildLocation.rootOverlay,
@@ -55,8 +57,8 @@ Widget build(BuildContext context) {
 
 ## Timeline
 
-Landed in version: 3.35.0-0.0.pre<br>
-In stable release: TBD
+Landed in version: 3.38.0-0.1.pre<br>
+In stable release: 3.38
 
 ## References
 

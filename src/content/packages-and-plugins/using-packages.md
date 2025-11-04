@@ -313,7 +313,7 @@ additional dependency options are available:
     dependencies:
     packageA:
       path: ../packageA/
-  
+
   ```
 
 **Git dependency**

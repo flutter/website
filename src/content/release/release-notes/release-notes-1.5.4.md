@@ -55,7 +55,7 @@ In this release, we fixed several severe performance and crash issues.
 
 ## iOS Changes
 
-Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we've made in this release to make the iOS experience even better.  
+Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we've made in this release to make the iOS experience even better.
 
 
 

@@ -25,9 +25,9 @@ fine-tune the AI's behavior and enforce project-specific best practices.
 ## Build AI-powered experiences with Flutter
 
 Using AI in your Flutter app unlocks new user experiences that allow your app to
-support natural language understanding and content generation. 
+support natural language understanding and content generation.
 
-To get started building AI-powered experiences in Flutter, check out these 
+To get started building AI-powered experiences in Flutter, check out these
 resources:
 
 * [Firebase AI Logic][] - The official Firebase SDK for using generative AI
@@ -99,7 +99,7 @@ You can install it by running the following command:
 gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
-To learn more, see the [blog post][flutter-extension-blog] or 
+To learn more, see the [blog post][flutter-extension-blog] or
 the [README][flutter-extension].
 
 [flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter

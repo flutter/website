@@ -61,8 +61,8 @@ class ArticleViewModel extends ChangeNotifier {
 }
 ```
 
-This constructor initialization provides immediate content when the 
-ViewModel is created. Because constructors can't be asynchronous, 
+This constructor initialization provides immediate content when the
+ViewModel is created. Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
 ## Create the getRandomArticleSummary method
@@ -83,9 +83,9 @@ class ArticleViewModel extends ChangeNotifier {
   Future<void> getRandomArticleSummary() async {
     loading = true;
     notifyListeners();
-    
+
     // TODO: Add data fetching logic
-    
+
     loading = false;
     notifyListeners();
   }
@@ -145,10 +145,10 @@ Future<void> getRandomArticleSummary() async {
   notifyListeners();
   try {
     summary = await model.getRandomArticleSummary();
-    print('Article loaded: ${summary!.titles.normalized}'); // Temporary 
+    print('Article loaded: ${summary!.titles.normalized}'); // Temporary
     errorMessage = null;
   } on HttpException catch (error) {
-    print('Error loading article: ${error.message}'); // Temporary 
+    print('Error loading article: ${error.message}'); // Temporary
     errorMessage = error.message;
     summary = null;
   }
@@ -168,7 +168,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Create ViewModel to test HTTP requests
     final viewModel = ArticleViewModel(ArticleModel());
-    
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(

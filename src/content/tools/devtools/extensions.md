@@ -24,7 +24,7 @@ shows up in a new tab when you open DevTools.
 
 You need to manually enable the extension before it loads
 for the first time. Make sure the extension is provided by
-a source you trust before enabling it. 
+a source you trust before enabling it.
 
 When you open the extension for the first time, you'll see a prompt to enable
 the extension:
@@ -82,4 +82,4 @@ check out the following video:
 
 <YouTubeEmbed id="gOrSc4s4RWY" title="Building DevTools extensions | Flutter Build Show"></YouTubeEmbed>
 
-[article]: {{site.flutter-medium}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[article]: {{site.flutter-blog}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f

@@ -36,17 +36,17 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-The line `final void Function(String) onSubmitGuess;` 
-declares a `final` member of the class called `onSubmitGuess` 
+The line `final void Function(String) onSubmitGuess;`
+declares a `final` member of the class called `onSubmitGuess`
 that has the type `void Function(String)`. This function takes a
 single `String` argument (the user's guess) and doesn't return any
-value (denoted by `void`). 
+value (denoted by `void`).
 
 This callback tells us that the logic that actually handles the user's
 guess will be written elsewhere.  It's good practice for interactive
 widgets to use callback functions to keep the widget
 that handles interactions reusable and decoupled from any
-specific functionality. 
+specific functionality.
 
 By the end of this lesson, the passed-in `onGuessSubmitted` function
 is called when a user enters a guess. First, you'll need to build
@@ -95,26 +95,26 @@ a `Row` (or `Column`) is wrapped in `Expanded`, it tells that child to
 fill all the available space along the main axis (horizontal for
 `Row`, vertical for `Column`) that hasn't been taken by other
 children. This makes the `TextField` stretch to take up all the space
-*except* what’s taken by other widgets in the row. 
+*except* what’s taken by other widgets in the row.
 
 :::tip Tip
-`Expanded` is often the solution to "[unbounded width/height][]" exceptions. 
+`Expanded` is often the solution to "[unbounded width/height][]" exceptions.
 :::
 
 The `TextField` widget is also new in this lesson and is the star of the show.
-This is the basic Flutter widget for text input. 
+This is the basic Flutter widget for text input.
 
 Thus far, `TextField` has the following configuration.
 
 * It’s decorated with a rounded border. Notice that the decoration
-  configuration is very similar to how a `Container` and boxes are decorated.  
+  configuration is very similar to how a `Container` and boxes are decorated.
 * Its `maxLength` property is set to 5 because the game only
   allows guesses of 5-letter words.
 
 ## Handle text with `TextEditingController`
 
 Next, you need a way to manage the text that the user types into the
-input field. For this, use a [`TextEditingController`][]. 
+input field. For this, use a [`TextEditingController`][].
 
 ```dart
 class GuessInput extends StatelessWidget {
@@ -124,7 +124,7 @@ class GuessInput extends StatelessWidget {
 
   // NEW
   final TextEditingController _textEditingController = TextEditingController();
-    
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -142,7 +142,7 @@ class GuessInput extends StatelessWidget {
             ),
           ),
         ),
-        // 
+        //
       ],
     );
   }
@@ -190,7 +190,7 @@ it. The simplest way to react to input is by using the
 `TextField.onSubmitted` argument. This argument accepts a callback,
 and the callback is triggered whenever the user presses the
 "Enter" key on the keyboard while the text field has focus.
- 
+
 For now, ensure that this works by adding the following callback to
 `TextField.onSubmitted`.
 
@@ -248,7 +248,7 @@ class GuessInput extends StatelessWidget {
   final void Function(String) onSubmitGuess;
 
   final TextEditingController _textEditingController = TextEditingController();
-  
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -267,7 +267,7 @@ class GuessInput extends StatelessWidget {
               onSubmitted: (_) { // UPDATED
                 print(_textEditingController.text); // Temporary
                 _textEditingController.clear(); // NEW
-              } 
+              }
             ),
           ),
         ),
@@ -284,7 +284,7 @@ without the user taking action. In this app, for example, the only
 thing a user can do is enter a guess, so the `TextField` should be
 focused automatically when the app launches.  And after the user
 enters a guess, the focus should stay in the `TextField` so they can
-enter their next guess. 
+enter their next guess.
 
 To resolve the first focus issue, set up the `autoFocus` property on the `TextField`.
 
@@ -314,7 +314,7 @@ class GuessInput extends StatelessWidget {
 		          onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
-              } 
+              }
  		        ),
           ),
         ),
@@ -327,7 +327,7 @@ class GuessInput extends StatelessWidget {
 The second issue requires you to use a [`FocusNode`][] to
 manage the keyboard focus. You can use `FocusNode` to request
 that a `TextField` gain focus (making the keyboard appear on mobile),
-or to know when a field has focus. 
+or to know when a field has focus.
 
 First, create a `FocusNode` in the `GuessInput` class:
 
@@ -382,7 +382,7 @@ class GuessInput extends StatelessWidget {
                 print(input); // Temporary
                 _textEditingController.clear();
                 _focusNode.requestFocus(); // NEW
-              } 
+              }
             ),
           ),
         ),
@@ -432,7 +432,7 @@ class GuessInput extends StatelessWidget {
                 onSubmitGuess(_textEditionController.text.trim())
                 _textEditingController.clear();
                 _focusNode.requestFocus();
-              } 
+              }
             ),
           ),
         ),
@@ -442,7 +442,7 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-:::note 
+:::note
 The `trim` function prevents whitespace from being entered;
 otherwise, the user could enter a four letter word plus a whitespace.
 :::
@@ -495,9 +495,9 @@ also be a button that can submit the guess.
 There are many button widgets built into Flutter, like [`TextButton`][],
 [`ElevatedButton`][], and the button you’ll use now: [`IconButton`][].  All of
 these buttons (and many other interaction widgets) require two
-arguments (in addition to their optional arguments): 
+arguments (in addition to their optional arguments):
 
-* A callback function passed to `onPressed`.   
+* A callback function passed to `onPressed`.
 * A widget that makes up the content of the button (often `Text` or an `Icon`).
 
 Add an icon button to the row widget’s children list in the
@@ -523,7 +523,7 @@ class GuessInput extends StatelessWidget {
         Expanded(...),
         IconButton(
           padding: EdgeInsets.zero,
-          icon: Icon(Icons.arrow_circle_up),  
+          icon: Icon(Icons.arrow_circle_up),
         ),
       ],
     );
@@ -562,7 +562,7 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-This method does the same as the `onSubmitted` callback on the `TextField`. 
+This method does the same as the `onSubmitted` callback on the `TextField`.
 
 :::note Challenge - Share "on submitted" logic.
 
@@ -626,7 +626,7 @@ class GuessInput extends StatelessWidget {
 }
 ```
 
-::: 
+:::
 
 
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html

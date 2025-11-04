@@ -1,12 +1,16 @@
 @use 'sass:color';
 
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
   font-family: var(--site-code-fontFamily);
 }
 
 // Inline code spans found within the primary contents of the page.
 // Targets all <code> elements, but <pre><code> shouldn't have many of these.
-main code, main kbd {
+main code,
+main kbd {
   font-size: 0.9em;
   line-height: 1.25em;
   padding: 0.05rem 0.2rem;
@@ -36,7 +40,7 @@ pre {
   font-weight: 400;
   padding: 1.25rem;
 
-  > code {
+  >code {
     // Undo the core `code` styles.
     font-size: 0.9125rem;
     line-height: 1.75em;
@@ -87,7 +91,8 @@ pre {
       border-left-color: var(--site-primary-color);
     }
 
-    &.added-line, &.removed-line {
+    &.added-line,
+    &.removed-line {
       padding-left: 0.25rem;
 
       &::before {
@@ -201,12 +206,15 @@ pre {
       opacity: 0;
       transition: opacity 0.4s;
 
-      &:hover, &:focus, &:active {
+      &:hover,
+      &:focus,
+      &:active {
         opacity: 1;
       }
     }
 
-    &:hover, &:focus-within {
+    &:hover,
+    &:focus-within {
       .code-block-language {
         opacity: 0;
       }

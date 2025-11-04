@@ -2795,4 +2795,3 @@ see our [CHANGELOG][].
 * @thomasgales made their first contribution in [40736](https://github.com/flutter/engine/pull/40736)
 
 **Full Changelog**: https://github.com/flutter/engine/compare/3.7.4...3.10.0-1.5.pre
-

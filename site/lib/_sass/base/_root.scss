@@ -161,7 +161,8 @@ body {
     --site-alert-warning-color: #cea11f;
     --site-alert-error-color: #ff5d5d;
 
-    .opal, .opal span {
+    .opal,
+    .opal span {
       color: var(--opal-dark-color) !important;
       font-style: var(--opal-dark-font-style) !important;
       font-weight: var(--opal-dark-font-weight) !important;

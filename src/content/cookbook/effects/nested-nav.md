@@ -8,15 +8,15 @@ description: How to implement a flow with nested navigation.
 Apps accumulate dozens and then hundreds of routes over time.
 Some of your routes make sense as top-level (global) routes.
 For example, "/", "profile", "contact", "social_feed" are all
-possible top-level routes within your app. 
+possible top-level routes within your app.
 But, imagine that you defined every possible route in your
 top-level `Navigator` widget. The list would be very long,
-and many of these routes would 
+and many of these routes would
 be better handled nested within another widget.
 
 Consider an Internet of Things (IoT) setup flow for a wireless
 light bulb that you control with your app.
-This setup flow consists of four pages: 
+This setup flow consists of four pages:
 
 * `find_devices` page: Find nearby bulbs.
 * `select_device` page: Select the bulb that you want to
@@ -24,12 +24,12 @@ This setup flow consists of four pages:
 * `connecting` page: Add the bulb.
 * `finished` page: Complete the setup.
 
-You could orchestrate this behavior from your top-level 
-`Navigator` widget. However, it makes more sense to define a second, 
+You could orchestrate this behavior from your top-level
+`Navigator` widget. However, it makes more sense to define a second,
 nested `Navigator` widget within your `SetupFlow` widget,
 and let the nested `Navigator` take ownership over the four pages
 in the setup flow. This delegation of navigation facilitates
-greater local control, which is 
+greater local control, which is
 generally preferable when developing software.
 
 The following animation shows the app's behavior:
@@ -43,7 +43,7 @@ the top-level `Navigator` widget.
 ## Prepare for navigation
 
 This IoT app has two top-level screens,
-along with the setup flow. Define these 
+along with the setup flow. Define these
 route names as constants so that they can
 be referenced within code.
 
@@ -61,17 +61,17 @@ const routeDeviceSetupFinishedPage = 'finished';
 
 The home and settings screens are referenced with
 static names. The setup flow pages, however,
-use two paths to create their route names: 
+use two paths to create their route names:
 a `/setup/` prefix followed by the name of the specific page.
 By combining the two paths, your `Navigator` can determine
 that a route name is intended for the setup flow without
-recognizing all the individual pages associated with 
+recognizing all the individual pages associated with
 the setup flow.
 
 The top-level `Navigator` isn't responsible for identifying
 individual setup flow pages. Therefore, your top-level
 `Navigator` needs to parse the incoming route name to
-identify the setup flow prefix. Needing to parse the route name 
+identify the setup flow prefix. Needing to parse the route name
 means that you can't use the `routes` property of your top-level
 `Navigator`. Instead, you must provide a function for the
 `onGenerateRoute` property.
@@ -105,11 +105,11 @@ onGenerateRoute: (settings) {
 },
 ```
 
-Notice that the home and settings routes are matched with exact 
+Notice that the home and settings routes are matched with exact
 route names. However, the setup flow route condition only
 checks for a prefix. If the route name contains the setup
 flow prefix, then the rest of the route name is ignored
-and passed on to the `SetupFlow` widget to process. 
+and passed on to the `SetupFlow` widget to process.
 This splitting of the route name is what allows the top-level
 `Navigator` to be agnostic toward the various subroutes
 within the setup flow.
@@ -139,7 +139,7 @@ The setup flow displays a persistent app bar
 that appears across all pages.
 
 Return a `Scaffold` widget from your `SetupFlow`
-widget's `build()` method, 
+widget's `build()` method,
 and include the desired `AppBar` widget.
 
 <?code-excerpt "lib/setupflow2.dart (SetupFlow2)"?>
@@ -156,7 +156,7 @@ PreferredSizeWidget _buildFlowAppBar() {
 
 The app bar displays a back arrow and exits the setup
 flow when the back arrow is pressed. However,
-exiting the flow causes the user to lose all progress. 
+exiting the flow causes the user to lose all progress.
 Therefore, the user is prompted to confirm whether they
 want to exit the setup flow.
 
@@ -237,14 +237,14 @@ When the user taps the back arrow in the app bar,
 or presses the back button on their device,
 an alert dialog pops up to confirm that the
 user wants to leave the setup flow.
-If the user presses **Leave**, then the setup flow pops itself 
+If the user presses **Leave**, then the setup flow pops itself
 from the top-level navigation stack.
 If the user presses **Stay**, then the action is ignored.
 
 You might notice that the `Navigator.pop()`
-is invoked by both the **Leave** and 
+is invoked by both the **Leave** and
 **Stay** buttons. To be clear,
-this `pop()` action pops the alert dialog off 
+this `pop()` action pops the alert dialog off
 the navigation stack, not the setup flow.
 
 ## Generate nested routes
@@ -328,37 +328,37 @@ one of four flow pages is returned.
 
 The first page, called `find_devices`,
 waits a few seconds to simulate network scanning.
-After the wait period, the page invokes its callback. 
+After the wait period, the page invokes its callback.
 In this case, that callback is `_onDiscoveryComplete`.
 The setup flow recognizes that, when device discovery
 is complete, the device selection page should be shown.
-Therefore, in `_onDiscoveryComplete`, the `_navigatorKey` 
+Therefore, in `_onDiscoveryComplete`, the `_navigatorKey`
 instructs the nested `Navigator` to navigate to the
 `select_device` page.
 
 The `select_device` page asks the user to select a
 device from a list of available devices. In this recipe,
-only one device is presented to the user. 
+only one device is presented to the user.
 When the user taps a device, the `onDeviceSelected`
 callback is invoked. The setup flow recognizes that,
-when a device is selected, the connecting page 
+when a device is selected, the connecting page
 should be shown. Therefore, in `_onDeviceSelected`,
 the `_navigatorKey` instructs the nested `Navigator`
 to navigate to the `"connecting"` page.
 
 The `connecting` page works the same way as the
 `find_devices` page. The `connecting` page waits
-for a few seconds and then invokes its callback. 
+for a few seconds and then invokes its callback.
 In this case, the callback is `_onConnectionEstablished`.
 The setup flow recognizes that, when a connection is established,
 the final page should be shown. Therefore,
-in `_onConnectionEstablished`, the `_navigatorKey` 
+in `_onConnectionEstablished`, the `_navigatorKey`
 instructs the nested `Navigator` to navigate to the
 `finished` page.
 
 The `finished` page provides the user with a **Finish**
 button. When the user taps **Finish**,
-the `_exitSetup` callback is invoked, which pops the entire 
+the `_exitSetup` callback is invoked, which pops the entire
 setup flow off the top-level `Navigator` stack,
 taking the user back to the home screen.
 

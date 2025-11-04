@@ -124,7 +124,7 @@ pass their constraint on to their children.
 
 Generally, there are three kinds of boxes,
 in terms of how they handle their constraints:
-  
+
 * Those that try to be as big as possible.
   For example, the boxes used by [`Center`][] and
   [`ListView`][].
@@ -144,7 +144,7 @@ for instance, it tries to honor that and be that particular size.
 Others, for example [`Row`][] and [`Column`][] (flex boxes)
 vary based on the constraints they are given,
 as described in the [Flex](#flex) section.
-  
+
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html

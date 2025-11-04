@@ -7,11 +7,11 @@ sitemap: false
 
 In this tutorial, you'll learn how to work with data in a Flutter app.
 You'll build an app that fetches and displays article summaries from
-the [Wikipedia API][]. 
+the [Wikipedia API][].
 
-<img src="/assets/images/docs/tutorial/wikipedia_app.png" height="500px" 
-style="border:1px solid black" alt="A screenshot of the completed 
-Wikipedia reader app showing an article with image, title, 
+<img src="/assets/images/docs/tutorial/wikipedia_app.png" height="500px"
+style="border:1px solid black" alt="A screenshot of the completed
+Wikipedia reader app showing an article with image, title,
 description, and extract text.">
 
 This tutorial explores:
@@ -20,7 +20,7 @@ This tutorial explores:
 * Managing application state with `ChangeNotifier`
 * Using the MVVM architecture pattern
 * Creating responsive user interfaces that update automatically when
-  data changes 
+  data changes
 
 
 This tutorial assumes you've completed the [Dart Getting Started

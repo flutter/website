@@ -1,14 +1,14 @@
 <div class='collapsible-section'>
   <button
-    type="button" 
+    type="button"
     class="collapsible-button collapsible collapsed"
-    data-toggle="collapse" 
-    role="button" 
+    data-toggle="collapse"
+    role="button"
     data-target="#game-code-collapsible-content"
     aria-expanded="false" aria-controls="game-code-collapsible-content">
     Reveal code
   </button>
-  
+
 <div class="collapsible-content" id="game-code-collapsible-content">
 
 ```dart

@@ -1,5 +1,5 @@
 ---
-title: Change log for Flutter 1.2.2 
+title: Change log for Flutter 1.2.2
 shortTitle: 1.2.2 change log
 description: Change log for Flutter 1.2.2 containing a list of all PRs merged for this release.
 skipTemplateRendering: true
