@@ -58,6 +58,8 @@
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/ui/advanced/gestures", "type": 301 },
+      { "source": "/glossary", "destination": "/resources/glossary", "type": 301 },
+      { "source": "/glossary/:entry", "destination": "/resources/glossary#:entry", "type": 301 },
       { "source": "/hot-reload", "destination": "/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/tools/editors", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
