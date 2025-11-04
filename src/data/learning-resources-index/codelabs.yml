@@ -143,18 +143,6 @@
     label: Medium
     url: https://blog.flutter.dev/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
-- name: Implicit animations
-  description: |
-    Use DartPad (no downloads required!) to learn how to use
-    implicit animations to add motion and create
-    visual effects for the widgets in your UI.
-  tags:
-    - animations
-  type: codelab
-  link:
-    label: Flutter docs
-    url: /codelabs/implicit-animations
-
 - name: MDC-101 - Material Components (MDC) Basics
   description: |
     Learn the basics of using Material Components by building
