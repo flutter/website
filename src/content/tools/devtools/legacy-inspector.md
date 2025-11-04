@@ -86,7 +86,7 @@ You might also find the following step-by-step article useful:
 
 * [How to debug layout issues with the Flutter Inspector][debug-article]
 
-[debug-article]: {{site.flutter-medium}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+[debug-article]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 
 ### Use the Layout Explorer
 

@@ -248,7 +248,7 @@ For more information (and corresponding example code),
 check out [Problem: Navigation rail][], a section in the
 [Developing Flutter apps for Large screens][article] article.
 
-[article]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
+[article]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10
 [`BottomNavigationBar`]: {{site.api}}/flutter/material/BottomNavigationBar-class.html
 [`NavigationRail`]: {{site.api}}/flutter/material/NavigationRail-class.html
-[Problem: Navigation rail]: {{site.flutter-medium}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1
+[Problem: Navigation rail]: {{site.flutter-blog}}/developing-flutter-apps-for-large-screens-53b7b0e17f10#:~:text=Problem%3A%20Navigation%20rail1

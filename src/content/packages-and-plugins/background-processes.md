@@ -26,5 +26,5 @@ Geofencing][background-processes].  At the end of this article,
 you'll find links to example code, and relevant documentation for Dart,
 iOS, and Android.
 
-[background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[background-processes]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 [WorkManager]: {{site.pub-pkg}}/workmanager

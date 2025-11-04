@@ -25,9 +25,9 @@ performant on the web:
 :::
 
 [Flutter Gallery]: {{site.gallery-archive}}
-[web-perf-1]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[web-perf-2]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[web-perf-3]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
+[web-perf-1]: {{site.flutter-blog}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-2]: {{site.flutter-blog}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[web-perf-3]: {{site.flutter-blog}}/building-performant-flutter-widgets-3b2558aa08fa
 
 How do you design a Flutter app to most efficiently
 render your scenes? In particular, how do you ensure
