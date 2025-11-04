@@ -263,6 +263,7 @@ void _setUpExpandableCards() {
     currentFragment = currentFragment.substring(1);
   }
   final expandableCards = web.document.querySelectorAll('.expandable-card');
+  web.Element? targetCard;
 
   for (var i = 0; i < expandableCards.length; i++) {
     final card = expandableCards.item(i) as web.Element;
@@ -286,7 +287,14 @@ void _setUpExpandableCards() {
     if (card.id != currentFragment) {
       card.classList.add('collapsed');
       expandButton.ariaExpanded = 'false';
+    } else {
+      targetCard = card;
     }
+  }
+
+  if (targetCard != null) {
+    // Scroll the expanded card into view.
+    targetCard.scrollIntoView();
   }
 }
 
