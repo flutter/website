@@ -218,9 +218,7 @@ Alternatively, you can configure the server manually:
         "dart": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--experimental-mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ]
         }
       }
