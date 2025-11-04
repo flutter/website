@@ -15,6 +15,8 @@ import 'glossary.dart';
 List<MemoryPage> get allMemoryPages => [
   _glossaryPage,
   _devtoolsReleasesIndex,
+  // TODO(schultek): Remove this test page when FWE lands.
+  if (kDebugMode) _fweTestingPage,
 ];
 
 /// The `/resources/glossary` page which hosts the [GlossaryIndex].
@@ -65,4 +67,33 @@ MemoryPage get _devtoolsReleasesIndex => MemoryPage.builder(
 
     return const Component.empty();
   },
+);
+
+MemoryPage get _fweTestingPage => const MemoryPage(
+  path: 'fwe.md',
+  content: '''
+---
+title: FWE Testing Page
+description: This is a test page for experimenting with First Week Experience (FWE) features.
+sitemap: false
+---
+
+<Quiz>
+- question: What is the Effective Dart guideline for the first sentence of a documentation comment?
+  options:
+    - text: It should be a complete paragraph with at least two sentences to provide sufficient context.
+      correct: false
+      explanation: The guideline recommends a short summary sentence, not a full paragraph.
+    - text: It must include the names of all parameters using square brackets.
+      correct: false
+      explanation: Parameter names can be included elsewhere, but the first sentence is a summary.
+    - text: It should be a single-sentence summary, separated from the rest of the comment by a blank line.
+      correct: true
+      explanation: Effective Dart recommends starting with a single-sentence summary, followed by a blank line before details.
+    - text: It should always begin with the name of the member being documented.
+      correct: false
+      explanation: Starting with the member name is not required; a concise summary is preferred.
+
+</Quiz>
+''',
 );

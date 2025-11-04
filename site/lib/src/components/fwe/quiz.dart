@@ -1,0 +1,36 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
+import 'package:yaml/yaml.dart';
+
+import 'client/quiz.dart';
+
+class Quiz extends CustomComponent {
+  const Quiz() : super.base();
+
+  @override
+  Component? create(Node node, NodesBuilder builder) {
+    if (node is ElementNode && node.tag.toLowerCase() == 'quiz') {
+      if (node.children?.whereType<ElementNode>().isNotEmpty ?? false) {
+        throw Exception(
+          'Invalid Quiz content. Remove any leading empty lines to '
+          'avoid parsing as markdown.',
+        );
+      }
+
+      final content = node.children?.map((n) => n.innerText).join('\n') ?? '';
+      final data = loadYamlNode(content);
+      assert(data is YamlList, 'Invalid Quiz content. Expected a YAML list.');
+      final questions = (data as YamlList).nodes
+          .map((n) => Question.fromMap(n as YamlMap))
+          .toList();
+      return div(classes: 'quiz not-content', [
+        for (final question in questions) InteractiveQuiz(question: question),
+      ]);
+    }
+    return null;
+  }
+}
