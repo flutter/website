@@ -41,12 +41,14 @@ They're sorted by release and listed in alphabetical order:
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
+* [Deprecated findChildIndexCallback for separated constructors][]
 
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Deprecated findChildIndexCallback for separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
