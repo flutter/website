@@ -297,13 +297,14 @@ final class MultiBrightnessPreview extends MultiPreview {
   List<Preview> transform() {
     final previews = super.transform();
     return previews.map((preview) {
-      final PreviewBuilder builder = preview.toBuilder()
+      final builder = preview.toBuilder()
         ..group = 'Brightness'
         // Building names based on values provided to the annotation
         // isn't possible within a constant constructor. However,
         // there's no such restriction when building a Preview at
         // runtime.
         ..name = '$name - ${preview.brightness!.name}';
+      return builder.toPreview();
     }).toList();
   }
 }
