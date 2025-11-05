@@ -8,12 +8,33 @@ import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../components/pages/devtools_release_notes_index.dart';
+import 'glossary.dart';
 
 /// All pages that should be loaded from memory rather than
 /// from content loaded from the file system.
 List<MemoryPage> get allMemoryPages => [
+  _glossaryPage,
   _devtoolsReleasesIndex,
 ];
+
+/// The `/resources/glossary` page which hosts the [GlossaryIndex].
+MemoryPage get _glossaryPage => MemoryPage.builder(
+  path: 'resources/glossary.md',
+  initialData: {
+    'page': <String, Object?>{
+      'title': 'Glossary',
+      'showBreadcrumbs': false,
+      'description':
+          'A glossary reference for terminology '
+          'used across docs.flutter.dev.',
+      'showToc': false,
+      'bodyClass': 'glossary-page',
+    },
+  },
+  builder: (_) {
+    return const GlossaryIndex();
+  },
+);
 
 /// The `/f/devtools-releases.json` file that DevTools consumes.
 MemoryPage get _devtoolsReleasesIndex => MemoryPage.builder(

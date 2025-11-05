@@ -1,5 +1,13 @@
 @use '../base/mixins';
 
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-grid-gap, 1rem);
+  margin: 0;
+  justify-content: center;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--card-min-width, 15rem)), 1fr));
@@ -30,7 +38,9 @@
     --card-min-width: 10rem;
     grid-auto-rows: 1fr;
   }
+}
 
+.card-grid, .card-list {
   .card {
     display: flex;
     flex-direction: column;
@@ -101,7 +111,7 @@
       }
     }
 
-    .card-content {
+    &:not(.glossary-card) .card-content {
       display: flex;
       align-items: center;
       gap: 0.75rem;
@@ -224,7 +234,6 @@
     }
   }
 }
-
 
 .card-image-holder-material-3 {
   position: relative;

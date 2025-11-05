@@ -1465,7 +1465,7 @@ Docs added and updated since the last announcement include:
 * We've introduced a program for recommending particular Dart and
   Flutter plugins and packages. Learn more about the
   [Flutter Favorite program][].
-* A new [implicit animations][] codelab is available
+* A new implicit animations codelab is available
   featuring DartPad.
   (To run it, you don't need to download any software!)
 * Alpha support for macOS (desktop) is now available in
@@ -1495,7 +1495,6 @@ Happy Fluttering!
 [Flutter Layout Explorer]: /tools/devtools/legacy-inspector#flutter-layout-explorer
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
-[implicit animations]: /codelabs/implicit-animations
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
 [Get started]: /get-started
 

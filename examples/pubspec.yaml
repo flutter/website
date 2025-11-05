@@ -19,7 +19,6 @@ workspace:
   - animation/animate3
   - animation/animate4
   - animation/animate5
-  - animation/implicit
   - app-architecture/command
   - app-architecture/offline_first
   - app-architecture/optimistic_state
