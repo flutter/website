@@ -112,12 +112,12 @@ The following is how the code is organized within the Compass application.
   - main_staging.dart
   - main_development.dart
   - main.dart
-- test/ // The test folder contains unit and widget tests
+- test/ // Contains unit and widget tests.
   - data/
   - domain/
   - ui/
   - utils/
-- testing/ // The testing folder contains mocks other classes need to execute tests
+- testing/ // Contains mocks that other classes need to execute tests.
   - fakes/
   - models/
 
