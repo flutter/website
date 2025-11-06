@@ -81,8 +81,9 @@ ListView.separated(
   itemCount: items.length,
   findItemIndexCallback: (Key key) {
     final ValueKey<String> valueKey = key as ValueKey<String>;
+    final int itemIndex = items.indexOf(valueKey.value);
     // Return item index directly - no need to multiply by 2
-    return items.indexOf(valueKey.value);
+    return itemIndex == -1 ? null : itemIndex;
   },
   itemBuilder: (BuildContext context, int index) {
     return ListTile(
@@ -123,7 +124,8 @@ SliverList.separated(
   itemCount: items.length,
   findItemIndexCallback: (Key key) {
     final ValueKey<String> valueKey = key as ValueKey<String>;
-    return items.indexOf(valueKey.value);
+    final int itemIndex = items.indexOf(valueKey.value);
+    return itemIndex == -1 ? null : itemIndex;
   },
   itemBuilder: (BuildContext context, int index) {
     return Container(
