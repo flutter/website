@@ -1,7 +1,8 @@
 ---
-short-title: 2.52.0 release notes
+title: DevTools 2.52.0 release notes
+shortTitle: 2.52.0 release notes
+breadcrumb: 2.52.0
 description: Release notes for Dart and Flutter DevTools version 2.52.0.
-breadcrumb: 2.51.0
 showToc: false
 ---
 
