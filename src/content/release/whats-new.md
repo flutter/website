@@ -29,6 +29,17 @@ check out the [Flutter 3.38 technical blog post][3.38-tech].
 
 [3.38-tech]: xxx
 
+**Website update**
+
+A significant update to the website has recently landed!
+As with the update to the dart.dev website that was released
+earlier this year, the docs.flutter.dev website has been
+reimplemented to use [Jaspr][], a Dart web framework.
+
+Let us know what you think!
+
+[Jaspr]: https://pub.dev/packages/jaspr
+
 **Docs updated or added since the 3.35 release**
 
 * The Dart language now supports _dot shortshands_ syntax
