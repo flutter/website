@@ -12,6 +12,73 @@ check out the [current what's new][] page.
 
 [current what's new]: /release/whats-new
 
+---
+
+## 20 May 2025: Google I/O release 3.32
+
+Flutter 3.32 is live! For more information,
+check out the [Flutter 3.32 technical blog post][3.32-tech].
+You might also check out the [Dart 3.8 release][] blog post.
+
+[3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-32-40c1086bab6e
+[Dart 3.8 release]: {{site.medium}}/dartlang/announcing-dart-3-8-724eaaec9f47
+
+**Website update**
+
+First of all, a behind-the-scenes rewrite of the website has
+been in the works. These changes have been published incrementally,
+so you might have already noticed some of them:
+
+* Dark mode is now available
+* You can now rate each page on the site with a thumbs up
+  or thumbs down
+* The sidenav has changed and it's (hopefully) easier to find content
+* The website has been made more accessible
+* Files have been moved around (we always provide redirects)
+
+**Docs updated or added since the 3.29 release**
+
+* An updated [Flutter on iOS][] page.
+* We have a new [workflow for installing Flutter][] on the various
+  development platforms. This continues to be a work in progress,
+  so stay tuned.
+* A new page on how you can use the new DevTools feature,
+  [Flutter Property Editor][].
+  The [VS Code][] and [Android Studio/IntelliJ][] instructions
+  are also updated on how to use this feature.
+* The website is updated to explain how
+  you can [use hot reload on web][] behind a flag.
+  For this release, hot reload on web is an experimental feature.
+* A new page on [adding iOS app extensions][].
+* A completely rewritten page for
+  [setting up Flutter flavors for iOS and macOS][].
+* A new page for [setting up Flutter flavors for Android][].
+* The Cupertino instructions were updated for the
+  [Place a floating app bar above a list][floating-app-bar]
+  cookbook recipe.
+* You can now
+  [improve accessibility of your apps with SemanticRoles][semantic-roles].
+* Also, don't forget to check out the [breaking changes][bc-3.32]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[Architectural overview page]: /resources/architectural-overview
+[bc-3.32]: /release/breaking-changes#released-in-flutter-3-32
+
+[adding iOS app extensions]: /platform-integration/ios/app-extensions
+[Android Studio/IntelliJ]: /tools/android-studio#property-editor
+[floating-app-bar]: /cookbook/lists/floating-app-bar
+[Flutter on iOS]: https://flutter.dev/multi-platform/ios
+[Flutter Property Editor]: /tools/property-editor
+[semantic-roles]: /ui/accessibility/web-accessibility#enhancing-accessibility-with-semantic-roles
+[setting up Flutter flavors for Android]: /deployment/flavors
+[setting up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[use hot reload on web]: /platform-integration/web/building#hot-reload-web
+[VS Code]: /tools/vs-code#property-editor
+[workflow for installing Flutter]: /install
+
+---
+
 ## 12 February 2025: 3.29 release
 
 Flutter 3.29 is live! For more information,
