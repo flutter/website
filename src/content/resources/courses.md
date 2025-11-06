@@ -10,9 +10,9 @@ up-to-date information, such as null-safe Dart code.
 These courses are listed alphabetically.
 To include your course, [submit a PR][]:
 
+* [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
 * [Best Dart Course][] by Tadas Petra & Robert Brunhage
 * [Best Flutter Course][] by Tadas Petra & Robert Brunhage
-* [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
 * [Flutter in Production][] by Andrea Bizzotto
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
