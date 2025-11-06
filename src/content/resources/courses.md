@@ -30,9 +30,9 @@ To include your course, [submit a PR][]:
 * [Flutter University - From Zero to Mastery][] by Fudeo (Italian)
 * [Tech Idara - Flutter from Basic to Advanced][] by Ishaq Hassan (Urdu)
 
+[20 Hour Dart & Flutter YT Course For Beginners]: https://youtu.be/CzRQ9mnmh44
 [Best Dart Course]: https://www.hungrimind.com/learn/dart
 [Best Flutter Course]: https://www.hungrimind.com/learn/flutter
-[20 Hour Dart & Flutter YT Course For Beginners]: https://youtu.be/CzRQ9mnmh44
 [Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/
