@@ -1171,5 +1171,3 @@ provides a useful guide to the framework's design philosophy.
 [^3]: There are some limitations with this approach, for example,
   transparency doesn't composite the same way for a platform view as
   it would for other Flutter widgets.
-[^4]: One example is shadows, which have to be approximated with
-  DOM-equivalent primitives at the cost of some fidelity.
