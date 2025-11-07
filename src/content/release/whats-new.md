@@ -32,7 +32,7 @@ check out the [Flutter 3.38 technical blog post][3.38-tech].
 **Website update**
 
 A significant update to the website has recently landed!
-As with the update to the dart.dev website that was released
+As with the update to the dart.dev website that landed
 earlier this year, the docs.flutter.dev website has been
 reimplemented to use [Jaspr][], a Dart web framework.
 
@@ -45,7 +45,7 @@ Let us know what you think!
 * The Dart language now supports _dot shortshands_ syntax
   (aka _shorthands_), which allows you to write more
   concise code. For more information, visit the
-  [Dart dot shorthands][] page on dart.dev. In the fullness of time,
+  [Dart dot shorthands][] page on dart.dev. Over time,
   the samples on this website will be updated
   to take advantage of this new feature.
 
@@ -61,8 +61,8 @@ Let us know what you think!
 
 * Development continues on the Flutter Widget Previewer tool,
   introduced as an experimental feature in the 3.35 release.
-  The previewer now better integrates with the VS Code and
-  IntelliJ IDEs (including Android Studio).
+  For this release, the previewer better integrates with the VS Code
+  and IntelliJ IDEs (including Android Studio).
   It's still an experimental feature.
   For more info about the latest version, 
   check out the [Widget Previewer tool page][].
@@ -72,7 +72,7 @@ Let us know what you think!
   For the most recent info on Flutter's support for iOS,
   visit [Flutter on latest iOS][].
 
-* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycl][].
+* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
   To support this, code migration is required.
   For more information, visit the [UIScene migration guide][].
 
@@ -81,12 +81,12 @@ Let us know what you think!
 
 * Also, don't forget to check out the [breaking changes][bc-3.38]
   page for this release. That's where you'll find information
-  about code deprecations and migrations.
+  about breaking changes, code deprecations, and migration guides.
 
 Other relevant resources:
 
 * [3.38 release notes and changelog][]
-* [DevTools release notes][]
+* [DevTools 2.52 release notes][]
 * [Dart 3.10 release][] blog post
 
 [3.38 release notes and change log]: xxx
@@ -94,7 +94,7 @@ Other relevant resources:
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
 [Dart 3.10 release]: xxx
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
-[DevTools release notes]: xxx
+[DevTools 2.52 release notes]: /release-notes/release-notes-2.52.0
 [Flutter on latest iOS]: /ios/ios-latest
 [UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
 [UIScene migration guide]: /release/breaking-changes/uiscenedelegate
