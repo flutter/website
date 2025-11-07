@@ -42,7 +42,6 @@ updates:
       - "/examples/animation/animate3"
       - "/examples/animation/animate4"
       - "/examples/animation/animate5"
-      - "/examples/animation/implicit"
       - "/examples/cookbook/animation/animated_container"
       - "/examples/cookbook/animation/opacity_animation"
       - "/examples/cookbook/animation/page_route_animation"

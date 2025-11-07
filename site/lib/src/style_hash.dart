@@ -2,4 +2,4 @@
 // dart format off
 
 /// The generated hash of the `main.css` file.
-const generatedStylesHash = 'cD6c4zCH9whz';
+const generatedStylesHash = 'mW0BCRz4bRll';
