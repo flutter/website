@@ -37,8 +37,8 @@ To learn more about DevTools, check out the
 
 ## VS Code updates
 
-- On macOS, shortcuts like `Cmd`+`C` and `Cmd`+`V` now work when DevTools is
-  embedded inside VS Code -
+- Fixed issue preventing shortcuts like `Cmd`+`C` and `Cmd`+`V` from working when DevTools was
+  embedded inside VS Code on macOS. -
   [#9472](https://github.com/flutter/devtools/pull/9472)
 
 ## Full commit history
