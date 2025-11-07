@@ -34,20 +34,19 @@ As of Flutter 3.38, Android Studio, Intellij, and Visual
 Studio Code automatically start the Flutter Widget Previewer
 on launch.
 
-#### Android Studio
+#### Android Studio and Intellij
 
-// TODO
+To open the Widget Previewer in Android Studio or Intellij, open
+the "Flutter Widget Preview" tab in the sidebar:
 
-#### Intellij
-
-// TODO
+![Flutter Widget Previewer in Android Studio](/assets/images/docs/tools/widget-previewer/android-studio.png "Android Studio")
 
 #### Visual Studio Code
 
 To open the Widget Previewer in Visual Studio Code, open the
 "Flutter Widget Preview" tab in the sidebar:
 
-![Flutter Widget Previewer in Visual Studio Code](/assets/images/docs/tools/widget-previewer/vscode.png "Visual Studio Code"){:width="50%"}
+![Flutter Widget Previewer in Visual Studio Code](/assets/images/docs/tools/widget-previewer/vscode.png "Visual Studio Code")
 
 ### Command line
 
@@ -88,8 +87,7 @@ Widget mySampleText() {
 }
 ```
 
-![Sample widget in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/widget-previewer.png "Example widget"){:width="50%"}
-
+![Sample widget in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/widget-previewer.png "Example widget")
 Each preview instance provides various controls for
 interacting with the previewed widget. From left to right:
 
@@ -120,7 +118,7 @@ When viewing previews within an IDE, the widget previewer is
 configured to filter the set of previews based on the currently
 selected file:
 
-![Filter by previews selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file"){:width="50%"}
+![Filter by previews selected file in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/filter-by-file.gif "Filter previews by selected file")
 
 To disable this behavior, toggle the "Filter previews by selected file"
 option at the bottom left of the environment.
@@ -245,7 +243,7 @@ function or constructor:
 Widget buttonPreview() => const ButtonShowcase();
 ```
 
-![Multiple previews in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/multi-preview.png "Multiple preview example"){:width="50%"}
+![Multiple previews in Flutter Widget Previewer](/assets/images/docs/tools/widget-previewer/multi-preview.png "Multiple preview example")
 
 To simplify creating multiple previews with common configurations, you
 can extend the [`MultiPreview`][] to create a custom annotation that creates
@@ -323,13 +321,22 @@ should be aware of:
   implementation to work correctly.
 
 - **Unsupported APIs**: Native plugins and any APIs from
-  the `dart:io` library are not supported. This is because
-  the widget previewer is built with
+  the `dart:io` or `dart:ffi` libraries are not supported.
+  This is because the widget previewer is built with
   Flutter Web, which doesn't have access to the underlying
   native platform APIs. While web plugins might work when
   using Chrome, there is no guarantee that they will work
   within other environments, such as when embedded in
   IDEs.
+
+  Widgets with transitive dependencies on `dart:io` will
+  load correctly, but all APIs from `dart:io` will throw an
+  exception when invoked. Widgets with transitive dependencies
+  on `dart:ffi` will fail to load completely ([#166431]).
+
+  See the [Dart documentation on conditional imports] for details
+  on how to structure your application to cleanly support
+  platform-specific libraries when targeting multiple platforms.
 
 - **Asset paths**: When using `fromAsset` APIs from
   `dart:ui` to load resources, you must use
@@ -356,4 +363,6 @@ should be aware of:
 [`Preview.transform()`]: {{site.api}}/flutter/widget_previews/Preview/transform.html
 [`MultiPreview`]: {{site.api}}/flutter/widget_previews/MultiPreview-class.html
 [`MultiPreview.transform()`]: {{site.api}}/flutter/widget_previews/MultiPreview/transform.html
+[Dart documentation on conditional imports]: {{site.dart-site}}/tools/pub/create-packages#conditionally-importing-and-exporting-library-files
+[#166431]: https://github.com/flutter/flutter/issues/166431
 [#173550]: https://github.com/flutter/flutter/issues/173550
