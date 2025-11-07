@@ -1,5 +1,5 @@
 ---
-title: Deprecated findChildIndexCallback for separated constructors
+title: Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors
 description: >-
   The findChildIndexCallback parameter in ListView.separated and
   SliverList.separated has been deprecated in favor of findItemIndexCallback.
