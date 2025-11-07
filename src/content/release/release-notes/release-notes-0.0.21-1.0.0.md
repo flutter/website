@@ -2,7 +2,6 @@
 title: Flutter Changelog 0.0.21 - 1.0.0
 shortTitle: Flutter Changelog up to 1.0.0
 description: Archived Changelog wiki page, containing release information between Flutter 0.0.21 and 1.0.0.
-skipTemplateRendering: true
 ---
 
 _This page is a dump of the old Changelog page from the Flutter wiki up until

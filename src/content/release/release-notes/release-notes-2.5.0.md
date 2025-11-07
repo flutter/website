@@ -2,7 +2,6 @@
 title: Flutter 2.5.0 release notes
 shortTitle: 2.5.0 release notes
 description: Release notes for Flutter 2.5.0.
-skipTemplateRendering: true
 ---
 
 This page has release notes for 2.5.0.

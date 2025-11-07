@@ -2,7 +2,6 @@
 title: Flutter 1.12.13 release notes
 shortTitle: 1.12.13 release notes
 description: Release notes for Flutter 1.12.13.
-skipTemplateRendering: true
 ---
 
 Welcome to Flutter 1.12, our biggest stable release so far!

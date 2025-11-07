@@ -2,7 +2,6 @@
 title: Change log for Flutter 1.5.4
 shortTitle: 1.5.4 change log
 description: Change log for Flutter 1.5.4 containing a list of all PRs merged for this release.
-skipTemplateRendering: true
 ---
 
 ## PRs closed in this release of flutter/flutter

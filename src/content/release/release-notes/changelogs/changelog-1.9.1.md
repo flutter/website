@@ -2,7 +2,6 @@
 title: Change log for Flutter 1.9.1
 shortTitle: 1.9.1 change log
 description: Change log for Flutter 1.9.1 containing a list of all PRs merged for this release.
-skipTemplateRendering: true
 ---
 
 

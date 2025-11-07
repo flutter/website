@@ -2,7 +2,6 @@
 title: Flutter 1.2.1 release notes
 shortTitle: 1.2.1 release notes
 description: Release notes for Flutter 1.2.1.
-skipTemplateRendering: true
 ---
 
 Our #1 priority since the Flutter v1.0 release has been to
