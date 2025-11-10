@@ -9,67 +9,137 @@ import '../../common/button.dart';
 
 @client
 class InteractiveQuiz extends StatefulComponent {
-  const InteractiveQuiz({required this.question, super.key});
+  const InteractiveQuiz({
+    required this.title,
+    required this.questions,
+    super.key,
+  });
 
-  final Question question;
+  final String? title;
+  final List<Question> questions;
 
   @override
   State<InteractiveQuiz> createState() => _InteractiveQuizState();
 }
 
 class _InteractiveQuizState extends State<InteractiveQuiz> {
-  int? selectedOption;
+  int currentQuestionIndex = 0;
+  int? selectedOptionIndex;
+
+  Question? get currentQuestion {
+    if (currentQuestionIndex >= component.questions.length) {
+      return null;
+    }
+    return component.questions[currentQuestionIndex];
+  }
+
+  AnswerOption? get selectedOption {
+    final question = currentQuestion;
+    if (question == null || selectedOptionIndex == null) {
+      return null;
+    }
+    return question.options[selectedOptionIndex!];
+  }
 
   @override
   Component build(BuildContext context) {
-    return div([
-      strong([text(component.question.question)]),
-      ol([
-        for (final (index, option) in component.question.options.indexed)
-          li(
-            classes: [
-              if (selectedOption != null)
-                if (selectedOption == index) 'selected' else 'disabled',
-            ].toClasses,
-            events: {
-              'click': (_) {
-                if (selectedOption != null) {
-                  return;
-                }
-                setState(() {
-                  selectedOption = index;
-                });
-              },
-            },
-            [
-              div(classes: 'question-wrapper', [
-                div(classes: 'question', [
-                  p([text(option.text)]),
-                ]),
-                div(classes: 'solution', [
-                  if (option.correct)
-                    p(classes: 'correct', [text('That\'s right!')])
-                  else
-                    p(classes: 'incorrect', [text('Not quite')]),
-                  p([text(option.explanation)]),
-                ]),
-              ]),
-            ],
-          ),
+    return div(classes: 'quiz not-content', [
+      if (component.title case final title?)
+        h3(classes: 'quiz-title', [
+          text(title),
+        ]),
+      span(classes: 'quiz-progress', [
+        text(
+          currentQuestion != null
+              ? '${currentQuestionIndex + 1} / ${component.questions.length}'
+              : 'Complete',
+        ),
       ]),
+      for (final question in component.questions)
+        div(
+          classes: [
+            'quiz-question',
+            if (question == currentQuestion) 'active',
+          ].toClasses,
+          [
+            strong([text(question.question)]),
+            ol([
+              for (final (index, option) in question.options.indexed)
+                li(
+                  classes: [
+                    if (option == selectedOption)
+                      'selected'
+                    else if (selectedOption != null)
+                      'disabled',
+                  ].toClasses,
+                  events: {
+                    'click': (_) {
+                      if (selectedOption != null) {
+                        return;
+                      }
+                      setState(() {
+                        selectedOptionIndex = index;
+                      });
+                    },
+                  },
+                  [
+                    div(classes: 'question-wrapper', [
+                      div(classes: 'question', [
+                        p([text(option.text)]),
+                      ]),
+                      div(classes: 'solution', [
+                        if (option.correct)
+                          p(classes: 'correct', [text('That\'s right!')])
+                        else
+                          p(classes: 'incorrect', [text('Not quite')]),
+                        p([text(option.explanation)]),
+                      ]),
+                    ]),
+                  ],
+                ),
+            ]),
+          ],
+        ),
+
+      if (currentQuestion == null)
+        div(classes: 'quiz-complete', [
+          strong([text('Great job!')]),
+          p([text('You completed the quiz.')]),
+        ]),
 
       Button(
         classes: ['quiz-button'],
         style: ButtonStyle.filled,
-        disabled: selectedOption == null,
+        disabled: currentQuestion != null && selectedOption == null,
         onClick: () {
+          if (currentQuestion == null) {
+            // Restart the quiz.
+            setState(() {
+              currentQuestionIndex = 0;
+              selectedOptionIndex = null;
+            });
+            return;
+          }
+          if (selectedOption == null) return;
+          final correct = selectedOption!.correct;
           setState(() {
-            selectedOption = null;
+            selectedOptionIndex = null;
+            if (correct) {
+              currentQuestionIndex++;
+            }
           });
         },
-        content: selectedOption == null || component.question.options[selectedOption!].correct
-            ? 'Next question'
-            : 'Try again',
+        content: switch ((
+          currentQuestion == null,
+          currentQuestionIndex == component.questions.length - 1,
+          selectedOption?.correct,
+        )) {
+          // (isComplete, isLast, isCorrect)
+          (true, _, _) => 'Restart',
+          (false, _, false) => 'Try again',
+          (false, false, _) => 'Next question',
+          (false, true, _) => 'Finish',
+        },
       ),
     ]);
   }

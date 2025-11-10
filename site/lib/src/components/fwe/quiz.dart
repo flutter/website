@@ -21,15 +21,15 @@ class Quiz extends CustomComponent {
         );
       }
 
+      final title = node.attributes['title'];
+
       final content = node.children?.map((n) => n.innerText).join('\n') ?? '';
       final data = loadYamlNode(content);
       assert(data is YamlList, 'Invalid Quiz content. Expected a YAML list.');
       final questions = (data as YamlList).nodes
           .map((n) => Question.fromMap(n as YamlMap))
           .toList();
-      return div(classes: 'quiz not-content', [
-        for (final question in questions) InteractiveQuiz(question: question),
-      ]);
+      return InteractiveQuiz(title: title, questions: questions);
     }
     return null;
   }

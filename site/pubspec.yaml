@@ -32,7 +32,7 @@ dev_dependencies:
       url: https://github.com/dart-lang/site-shared
       path: pkgs/analysis_defaults
       ref: f91ed8ecef6a0b31685804fe4102b25fda021460
-  build_runner: ^2.10.1
+  build_runner: ^2.10.2
   build_web_compilers: ^4.4.0
   jaspr_builder: ^0.21.6
   sass: ^1.93.3

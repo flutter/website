@@ -152,7 +152,8 @@ Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
   'runAutomatically': c.runAutomatically,
 };
 Map<String, dynamic> _prefix8InteractiveQuiz(prefix8.InteractiveQuiz c) => {
-  'question': c.question.toJson(),
+  'title': c.title,
+  'questions': c.questions.map((i) => i.toJson()).toList(),
 };
 Map<String, dynamic> _prefix12ArchiveTable(prefix12.ArchiveTable c) => {
   'os': c.os,

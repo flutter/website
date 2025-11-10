@@ -78,7 +78,7 @@ description: This is a test page for experimenting with First Week Experience (F
 sitemap: false
 ---
 
-<Quiz>
+<Quiz title="Flutter and Dart Basics Quiz">
 - question: What is the Effective Dart guideline for the first sentence of a documentation comment?
   options:
     - text: It should be a complete paragraph with at least two sentences to provide sufficient context.
@@ -93,7 +93,20 @@ sitemap: false
     - text: It should always begin with the name of the member being documented.
       correct: false
       explanation: Starting with the member name is not required; a concise summary is preferred.
-
+- question: In Flutter, which widget is typically used to create a scrollable list of items?
+  options:
+    - text: Column
+      correct: false
+      explanation: A Column is not scrollable by default; use ListView for scrollable lists.
+    - text: ListView
+      correct: true
+      explanation: ListView is the standard widget for creating scrollable lists in Flutter.
+    - text: Row
+      correct: false
+      explanation: A Row arranges items horizontally and is not scrollable by default.
+    - text: Stack
+      correct: false
+      explanation: Stack is used for overlapping widgets, not for scrollable lists.
 </Quiz>
 ''',
 );
