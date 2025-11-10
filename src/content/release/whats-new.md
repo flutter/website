@@ -92,7 +92,7 @@ Other relevant resources:
 [3.38 release notes and changelog]: xxx
 [accessibility docs]: /ui/accessibility
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
-[Dart 3.10 release]: xxx
+[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.52 release notes]: /release-notes/release-notes-2.52.0
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
