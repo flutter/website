@@ -15,6 +15,10 @@ This configuration file allows you to
 customize server settings—host, port, HTTPS settings, and
 proxy rules—ensuring a consistent development environment.
 
+:::version-note
+Support for the `web_dev_config.yaml` file was added in Flutter 3.38.
+:::
+
 ## Create a configuration file
 
 Add a `web_dev_config.yaml` file to the root directory of your Flutter project.
