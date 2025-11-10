@@ -9,7 +9,7 @@ This page has release notes for 3.27.0.
 For information about subsequent bug-fix releases,
 check out the Flutter [CHANGELOG][].
 
-[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
+[CHANGELOG]: https://github.com/flutter/flutter/blob/main/CHANGELOG.md
 
 ## Flutter framework
 

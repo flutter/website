@@ -43,7 +43,7 @@ Coming from another platform? Check out Flutter for:
 
 [Building layouts][]
 : Learn how to create layouts in Flutter,
-  where everything is a widget.
+  where everything is a [widget](/resources/glossary#widget).
 
 [Understanding constraints][]
 : Once you understand that "Constraints
