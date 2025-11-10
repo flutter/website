@@ -33,7 +33,7 @@ As part of Flutter 3.29, the new Flutter inspector is enabled by default. Howeve
 
 [inspector settings dialog]: #inspector-settings
 [legacy inspector]: /tools/devtools/legacy-inspector
-[filing a bug]: https://github.com/flutter/devtools/issues/new 
+[filing a bug]: https://github.com/flutter/devtools/issues/new
 
 ### Debugging layout issues visually
 
@@ -99,7 +99,7 @@ see [Understanding constraints][].
 
 ## Flutter Widget Tree
 
-The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree. 
+The Flutter Widget Tree allows you to visualize, understand and navigate your app's Widget tree.
 
 ![Image of Flutter inspector with Widget Tree highlighted](/assets/images/docs/tools/devtools/inspector-widget-tree.png){:width="100%"}
 
@@ -110,7 +110,7 @@ The Flutter Widget Tree allows you to visualize, understand and navigate your ap
 By default, the Flutter Widget Tree includes all the widgets created in your root
 project's directory.
 
-The parent-children relationships of the widgets are represented by a single vertical line (if the parent widget only has a single child) or through 
+The parent-children relationships of the widgets are represented by a single vertical line (if the parent widget only has a single child) or through
 indentation (if the parent widget has multiple children.)
 
 For example, for the following section of a widget tree:
@@ -125,7 +125,7 @@ For example, for the following section of a widget tree:
 #### Viewing all widgets
 
 To instead view all the widgets in your widget tree, including
-those that were created outside of your project, toggle on "Show implementation widgets". 
+those that were created outside of your project, toggle on "Show implementation widgets".
 
 The implementation widgets are shown in a lighter font than the widgets created in your project,
 thereby visually distinguishing them. They are also hidden behind collapsible groups
@@ -520,7 +520,7 @@ void showOversizedImages() {
 
 You can learn more at the following link:
 
-- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/painting/debugInvertOversizedImages.html)
+- [Flutter documentation: debugInvertOversizedImages]({{site.api}}/flutter/rendering/debugInvertOversizedImages.html)
 
 [render box]: {{site.api}}/flutter/rendering/RenderBox-class.html
 
@@ -567,11 +567,11 @@ Toggling this value enables or disables the hover inspection functionality.
 ### Enable widget tree auto-refreshing
 
 When enabled, the widget tree automatically refreshes after
-a hot-reload or a navigation event. 
+a hot-reload or a navigation event.
 
 ### Use legacy inspector
 
-When enabled, use the [legacy inspector][] instead of the new inspector. 
+When enabled, use the [legacy inspector][] instead of the new inspector.
 
 :::note
 The [legacy inspector][] will be removed in a future release.
@@ -582,7 +582,7 @@ Let us know if there are issues preventing you from using the new inspector by [
 
 ### Package directories
 
-By default, DevTools limits the widgets displayed in the widget tree to those created 
+By default, DevTools limits the widgets displayed in the widget tree to those created
 in the project's root directory. To see all widgets, including those created outside
 of a the project's root directory, toggle on [Show implementation widgets][]
 

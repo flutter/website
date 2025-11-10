@@ -2,6 +2,7 @@
 title: Simple animations
 description: Learn the simplest way to implement animations in Flutter.
 permalink: /tutorial/animations/
+sitemap: false
 ---
 
 Flutter provides a rich set of animation APIs, and the simplest way to
@@ -114,7 +115,7 @@ specified duration.
 
 You can add a bit of customization to an implicit animation by passing
 it a [`Curve`][].  Different curves will change the speed of the animation
-at different points throughout the animation. 
+at different points throughout the animation.
 
 {%- comment %} TODO(ewindmill) diagram {%- endcomment %}
 
@@ -162,7 +163,7 @@ free to try them out by passing different types to the
 Implicit animations like `AnimatedContainer` are powerful because you
 just tell the widget what the new state should be, and it handles the
 "how" of the animation. For complex, custom animations, you can write
-your own animated widgets. If you’re curious, read the 
+your own animated widgets. If you’re curious, read the
 [animations tutorial](https://docs.flutter.dev/ui/animations/tutorial).
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html

@@ -1,0 +1,61 @@
+title: Flutter
+url: https://docs.flutter.dev
+main-url: https://flutter.dev
+email: flutter-dev@googlegroups.com
+
+showBanner: true
+
+branch: main
+repo:
+  organization: https://github.com/flutter
+  this: https://github.com/flutter/website
+  flutter: https://github.com/flutter/flutter
+  games: https://github.com/flutter/games
+  samples: https://github.com/flutter/samples
+  packages: https://github.com/flutter/packages
+  gallery-archive: https://github.com/flutter/gallery
+  engine: https://github.com/flutter/engine
+  uxr: https://github.com/flutter/uxr
+  wonderous: https://github.com/gskinnerTeam/flutter-wonderous-app
+dart:
+  api: https://api.dart.dev
+social:
+  twitter: https://twitter.com/FlutterDev
+  youtube: https://www.youtube.com/@flutterdev
+dart-site: https://dart.dev
+news: https://news.dartlang.org
+api: https://api.flutter.dev
+main-api: https://main-api.flutter.dev
+pub: https://pub.dev
+pub-api: https://pub.dev/documentation
+pub-pkg: https://pub.dev/packages
+flutter-blog: https://blog.flutter.dev
+medium: https://medium.com
+dartpad: https://dartpad.dev
+gallery-archive: https://flutter-gallery-archive.web.app
+material: https://m3.material.io
+material2: https://m2.material.io
+so: https://stackoverflow.com
+github: https://github.com
+flutter-assets: https://flutter.github.io/assets-for-api-docs/assets
+android-dev: https://developer.android.com
+apple-dev: https://developer.apple.com
+google-blog: https://developers.googleblog.com
+developers: https://developers.google.com
+codelabs: https://codelabs.developers.google.com
+groups: https://groups.google.com
+firebase: https://firebase.google.com
+wonderous: https://wonderous.app/
+youtube-site: https://youtube.com
+
+yt:
+  watch: 'https://www.youtube.com/watch'
+  playlist: 'https://www.youtube.com/playlist?list='
+
+currentFlutterVersion: '3.35.5'
+
+# Settings for Jaspr.
+
+# Specify Jaspr as not setting a base href for each document,
+# so that links to fragments still work as expected.
+base: false

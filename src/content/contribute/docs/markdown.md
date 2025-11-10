@@ -4,6 +4,9 @@ shortTitle: Markdown
 description: >-
   Learn about the Markdown syntaxes the Dart and Flutter documentation sites
   support and their guidelines for using them.
+sitemap: false
+noindex: true
+showBreadcrumbs: true
 ---
 
 :::warning

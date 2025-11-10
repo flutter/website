@@ -4,7 +4,7 @@ description: >
   FlutterViewController splashScreenView changed from nonnull to nullable.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -28,7 +28,7 @@ New declaration of `splashScreenView`:
 Prior to this change, on iOS the `splashScreenView` property returned `nil`
 when no splash screen view was set, and
 setting the property to `nil` removed the splash screen view.
-However, the `splashScreenView` API was incorrectly marked `nonnull`. 
+However, the `splashScreenView` API was incorrectly marked `nonnull`.
 This property is most often used when transitioning to
 Flutter views in iOS add-to-app scenarios.
 

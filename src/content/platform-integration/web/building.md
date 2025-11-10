@@ -191,4 +191,3 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Web FAQ]: /platform-integration/web/faq
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests
-

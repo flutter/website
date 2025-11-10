@@ -1,9 +1,6 @@
 ---
 title: Place a floating app bar above a list
 description: How to place a floating app bar or navigation bar above a list.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/floating_app_bar/"?>
@@ -51,9 +48,9 @@ For this example, create a `CustomScrollView` that contains
 a `SliverList`. Also, remove the app bar property from your
 code if it exists.
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 <?code-excerpt "lib/starter_material.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
@@ -69,9 +66,9 @@ MaterialApp(
 );
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 <?code-excerpt "lib/starter_cupertino.dart (CustomScrollView)" replace="/^return const //g"?>
 ```dart
@@ -87,18 +84,18 @@ CupertinoApp(
 );
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 ## 2. Add a floating app bar
 
 Next, add an app bar to the [`CustomScrollView`][].
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 Flutter provides the [`SliverAppBar`][] widget which,
 much like the normal `AppBar` widget,
@@ -141,19 +138,19 @@ and use hot reload to see the results. For example, use an
 background image that shrinks in size as it's scrolled offscreen.
 :::
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 Flutter provides the [`CupertinoSliverNavigationBar`][]
 widget, which lets you have a "floating" navigation
 bar that shrinks when you scroll down and floats when
 you're not at the top of the page.
 
-To create this effect: 
+To create this effect:
 
   1. Add `CupertinoSliverNavigationBar` to
-     `CustomScrollView`. 
+     `CustomScrollView`.
   2. Start with an app bar that displays only a title.
 
 <?code-excerpt "lib/step2_cupertino.dart (SliverAppBar)" replace="/^body: //g;/^\),$/)/g"?>
@@ -167,9 +164,9 @@ slivers: [
 ],
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 
 ## 3. Add a list of items
@@ -181,9 +178,9 @@ display a list of items one after the other, use the
 `SliverList` widget. If you need to display a grid list, use
 the `SliverGrid` widget.
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 <?code-excerpt "lib/main_material.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
@@ -198,9 +195,9 @@ SliverList.builder(
 )
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 <?code-excerpt "lib/main_cupertino.dart (SliverList)" replace="/^\),$/)/g"?>
 ```dart
@@ -215,15 +212,15 @@ SliverList.builder(
 )
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 ## Interactive example
 
-{% tabs "device-type-tabs" %}
+<Tabs key="device-type-tabs">
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 <?code-excerpt "lib/main_material.dart"?>
 ```dartpad title="Flutter floating app bar hands-on example in DartPad" run="false"
@@ -274,12 +271,12 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating app bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 <?code-excerpt "lib/main_cupertino.dart"?>
 ```dartpad title="Flutter floating navigation bar hands-on example in DartPad" run="false"
@@ -324,12 +321,12 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/> 
+  <img src="/assets/images/docs/cookbook/floating-app-bar.webp" alt="Use floating nav bar demo" class="site-mobile-screenshot"/>
 </noscript>
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [`CupertinoSliverNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoSliverNavigationBar-class.html
 [`CustomScrollView`]: {{site.api}}/flutter/widgets/CustomScrollView-class.html

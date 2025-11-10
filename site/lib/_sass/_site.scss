@@ -1,0 +1,50 @@
+// Must be imported first to ensure that
+// the reset is applied before any other styles are applied.
+@use 'base/reset';
+
+// Must be imported second to ensure that our defined CSS variables are defined
+// before any other styles are applied and they are used.
+@use 'base/root';
+
+// Base site styles.
+@use 'base/base';
+@use 'base/utils';
+
+// Styles for individual components or content types, alphabetically ordered.
+@use 'components/alert';
+@use 'components/banner';
+@use 'components/books';
+@use 'components/button';
+@use 'components/card';
+@use 'components/code';
+@use 'components/content';
+@use 'components/collapsible';
+@use 'components/cookie-notice';
+@use 'components/dropdown';
+@use 'components/expansion-list';
+@use 'components/filter-search';
+@use 'components/footer';
+@use 'components/header';
+@use 'components/icons';
+@use 'components/misc';
+@use 'components/next-prev-nav';
+@use 'components/os-selector';
+@use 'components/pill';
+@use 'components/sidebar';
+@use 'components/side-menu';
+@use 'components/site-switcher';
+@use 'components/tabs';
+@use 'components/theming';
+@use 'components/toc';
+@use 'components/tooltip';
+@use 'components/trailing';
+
+// Styles for specific pages, alphabetically ordered.
+@use 'pages/glossary';
+@use 'pages/learning-resources-index';
+@use 'pages/not-found';
+@use 'pages/search';
+
+// Must be imported last to ensure that
+// the print overrides take priority over earlier defined styles.
+@use 'base/print-overrides';

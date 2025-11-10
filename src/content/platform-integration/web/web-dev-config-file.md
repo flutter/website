@@ -1,6 +1,6 @@
 ---
 title: Set up a web development configuration file
-short-title: Web development configuration
+shortTitle: Web development configuration
 description: >-
   Centralize web development settings including a development proxy
 ---
@@ -33,7 +33,7 @@ You can define the host, port, and HTTPS settings for your development server.
 server:
   host: "0.0.0.0" # Defines the binding address <string>
   port: 8080 # Specifies the port <int> for the development server
-  https: 
+  https:
     cert-path: "/path/to/cert.pem" # Path <string> to your TLS certificate
     cert-key-path: "/path/to/key.pem" # Path <string> to TLS certificate key
 ```

@@ -2,6 +2,7 @@
 title: Create widgets
 description: Learn about stateless widgets and how to build your own.
 permalink: /tutorial/stateless-widgets/
+sitemap: false
 ---
 
 {%- comment %}
@@ -19,7 +20,7 @@ widget.
 
 ## Before you start
 
-This app relies on a bit of game logic that isn't UI-related, and thus is outside the scope of this tutorial. Before you move on, you need to add this logic to your app. 
+This app relies on a bit of game logic that isn't UI-related, and thus is outside the scope of this tutorial. Before you move on, you need to add this logic to your app.
 
 1. Create a new file in the `lib` directory called `game.dart`.
 2. Copy the following code into it and import that code into your `main.dart` file.
@@ -46,7 +47,7 @@ class Tile extends StatelessWidget {
   final String letter;
   final HitType hitType;
 
-  // ... 
+  // ...
 }
 ```
 
@@ -63,7 +64,7 @@ tile).  Passing data into the widget is at the core of making widgets reusable.
 ### `Build` method
 
 Finally, there’s the all important `build` method, which must be defined on
-every widget, and will always return another widget. 
+every widget, and will always return another widget.
 
 ```dart
 class Tile extends StatelessWidget {
@@ -104,7 +105,7 @@ class MainApp extends StatelessWidget {
 ```
 
 At the moment, your app will be blank, because the `Tile` widget returns an
-empty `Container`, which doesn’t display anything by default. 
+empty `Container`, which doesn’t display anything by default.
 
 ## The `Container` widget
 
@@ -112,12 +113,12 @@ The `Tile` widget consists of three of the most common basic widgets:
 `Container`, `Center`, and `Text`.
 [`Container`][] is a
 convenience widget that wraps several basic styling widgets, like `Padding`,
-[`ColoredBox`][], [`SizedBox`][], [`DecoratedBox`][], and many more.  
+[`ColoredBox`][], [`SizedBox`][], [`DecoratedBox`][], and many more.
 
 Because the finished UI contains 25 `Tile` widgets in neat columns and rows, it
 should have an explicit size. Set the width and height properties on the
 `Container`. (You could also do this with a `SizedBox` widget, but you’ll use
-more properties of the `Container` next.) 
+more properties of the `Container` next.)
 
 ```dart
 class Tile extends StatelessWidget {
@@ -172,7 +173,7 @@ colored border around the white square.
 When this game is complete, the color of the tile will depend on the user’s
 guess. The tile will be green when the user has guessed correctly, yellow when
 the letter is correct but the position is incorrect, and gray if the guess is
-wrong on both axes. 
+wrong on both axes.
 
 The following figure shows all three possibilities.
 
@@ -201,7 +202,7 @@ class Tile extends StatelessWidget {
            HitType.partial => Colors.yellow,
            HitType.miss => Colors.grey,
            _ => Colors.white,
-        },         
+        },
         // TODO: add children
       ),
     );
@@ -211,7 +212,7 @@ class Tile extends StatelessWidget {
 
 ## Child widgets
 
-Finally, add the `Center` and `Text` widgets to the `Container.child` property. 
+Finally, add the `Center` and `Text` widgets to the `Container.child` property.
 
 Most widgets in the Flutter SDK have a `child` or `children` property that’s
 meant to be passed a widget or a list of widgets, respectively. It's best
@@ -263,7 +264,7 @@ child: Tile('A', HitType.partial)
 ```
 
 Soon, this small box will be one of many widgets on the screen. In the next
-lesson, you’ll start building the game grid itself. 
+lesson, you’ll start building the game grid itself.
 
 
 

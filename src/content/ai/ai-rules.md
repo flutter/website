@@ -58,7 +58,7 @@ specific environment. To do so, follow these steps:
 1.  In an LLM like [Gemini][], attach the
     `rules.md` file that you downloaded in
     the last step.
-    
+
 1.  Provide a prompt to reformat the file for your desired
     editor.
 

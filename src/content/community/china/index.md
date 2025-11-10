@@ -3,7 +3,7 @@ title: Using Flutter in China
 description: How to use, access, and learn about Flutter in China.
 ---
 
-{% render docs/china-notice-cn.md %}
+{% render "docs/china-notice-cn.md" %}
 
 To speed the download and installation of Flutter in China,
 consider using a [mirror site][] or _mirror_.
@@ -30,9 +30,9 @@ _All examples that follow presume that you are using the CFUG mirror._
 
 To set your machine to use a mirror site:
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
 These steps require using PowerShell.
 
@@ -43,7 +43,7 @@ These steps require using PowerShell.
     ```ps
     $ $env:PUB_HOSTED_URL="https://pub.flutter-io.cn"
     ```
- 
+
  1. Set `FLUTTER_STORAGE_BASE_URL` to your mirror site.
 
     ```ps
@@ -54,7 +54,7 @@ These steps require using PowerShell.
 
     For CFUG, visit their [Flutter SDK archive][],
     and download the SDK for your platform and architecture.
- 
+
  1. Create a folder where you can install Flutter. Then change into it.
     Consider a path like `$env:USERPROFILE\dev`.
 
@@ -91,9 +91,9 @@ These steps require using PowerShell.
 
 [windows-path]: /install/add-to-path#windows
 
-{% endtab %}
+</Tab>
 
-{% tab "macOS" %}
+<Tab name="macOS">
 
  1. Open a new window in your terminal to prepare to run shell commands.
 
@@ -151,9 +151,9 @@ These steps require using PowerShell.
 
 [macos-path]: /install/add-to-path#macos
 
-{% endtab %}
+</Tab>
 
-{% tab "Linux" %}
+<Tab name="Linux">
 
  1. Open a new window in your terminal to prepare to run shell commands.
 
@@ -211,9 +211,9 @@ These steps require using PowerShell.
 
 [linux-path]: /install/add-to-path#linux
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [Flutter SDK archive]: https://docs.flutter.cn/install/archive/
 
@@ -230,9 +230,9 @@ This should improve download speed.
 The following example shows how to change the URL for Flutter's download site
 from Google's archive to CFUG's mirror.
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
 To download the x64, Windows version of the Flutter SDK,
 you would change the original URL from:
@@ -247,9 +247,9 @@ to the mirror URL:
 [!https://storage.flutter-io.cn!]/flutter_infra_release/releases/stable/windows/flutter_windows_3.35.5-stable.zip
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "macOS" %}
+<Tab name="macOS">
 
 To download the arm64, macOS version of the Flutter SDK,
 you would change the original URL from:
@@ -264,9 +264,9 @@ to the mirror URL:
 [!https://storage.flutter-io.cn!]/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.35.5-stable.zip
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "Linux" %}
+<Tab name="Linux">
 
 To download the Linux version of the Flutter SDK,
 you would change the original URL from:
@@ -281,9 +281,9 @@ to the mirror URL:
 [!https://storage.flutter-io.cn!]/flutter_infra_release/releases/stable/linux/flutter_linux_3.35.5-stable.tar.xz
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 :::note
 Not every mirror supports downloading artifacts using their direct URL.
@@ -300,29 +300,29 @@ From <https://github.com/flutter/website/pull/9338#discussion_r1328077020>
 
 To enable access to `pub.dev`:
 
-{% tabs "china-setup-os" %}
+<Tabs key="china-setup-os">
 
-{% tab "Windows" %}
+<Tab name="Windows">
 
  1. Configure a proxy.
     To configure a proxy, check out the
     [Dart documentation on proxies][].
- 
+
  1. Verify that your `PUB_HOSTED_URL` environment variable is either unset
     or empty.
- 
+
     ```ps
     $ echo $env:PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```ps
     $ Remove-Item $env:PUB_HOSTED_URL
     ```
 
-{% endtab %}
-{% tab "macOS" %}
+</Tab>
+<Tab name="macOS">
 
  1. Configure a proxy.
     To configure a proxy, check out the
@@ -330,40 +330,40 @@ To enable access to `pub.dev`:
 
  1. Verify that your `PUB_HOSTED_URL` environment variable is
     either unset or empty.
- 
+
     ```console
     $ echo $PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```console
     $ unset $PUB_HOSTED_URL
     ```
 
-{% endtab %}
-{% tab "Linux" %}
+</Tab>
+<Tab name="Linux">
 
  1. Configure a proxy.
     To configure a proxy, check out the
     [Dart documentation on proxies][].
- 
+
  1. Verify that your `PUB_HOSTED_URL` environment variable is
     either unset or empty.
- 
+
     ```console
     $ echo $PUB_HOSTED_URL
     ```
- 
+
     If this command returns any value, unset it.
- 
+
     ```console
     $ unset $PUB_HOSTED_URL
     ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 To learn more about publishing packages, check out the
 [Dart documentation on publishing packages][].

@@ -1,7 +1,8 @@
 ---
-title: Change log for Flutter 1.7.8 
+title: Change log for Flutter 1.7.8
 shortTitle: 1.7.8 change log
 description: Change log for Flutter 1.7.8 containing a list of all PRs merged for this release.
+skipTemplateRendering: true
 ---
 
 
@@ -340,7 +341,7 @@ From Wed May 1 16:56:00 2019 -0700 to Thu Jul 18 08:04:00 2019 -0700
 
 [32914](https://github.com/flutter/flutter/pull/32914) Make hover and focus not respond when buttons and fields are disabled. (cla: yes, f: material design, framework)
 
-[32936](https://github.com/flutter/flutter/pull/32936) Add some sanity to the ImageStream listener API (a: images, cla: yes, framework)
+[32936](https://github.com/flutter/flutter/pull/32936) Add clarity to the ImageStream listener API (a: images, cla: yes, framework)
 
 [32950](https://github.com/flutter/flutter/pull/32950) Material allows "select all" when not collapsed (cla: yes, f: material design, ▣ platform-android)
 

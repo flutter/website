@@ -4,19 +4,19 @@ description: >
   'dispose()' might fail because of double disposal.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
 Missing calls to 'dispose()' are added for some disposable objects.
-For example, ContextMenuController did not dispose OverlayEntry, 
+For example, ContextMenuController did not dispose OverlayEntry,
 and EditableTextState did not dispose TextSelectionOverlay.
 
 If some other code also invokes 'dispose()' for the object,
 and the object is protected from double disposal,
 the second 'dispose()' fails with the following error message:
 
-`Once you have called dispose() on a <class name>, it can no longer be used.` 
+`Once you have called dispose() on a <class name>, it can no longer be used.`
 
 ## Background
 

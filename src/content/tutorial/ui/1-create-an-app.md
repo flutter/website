@@ -2,6 +2,7 @@
 title: Create an app
 description: Instructions on how to create a new Flutter app.
 permalink: /tutorial/create-an-app/
+sitemap: false
 ---
 
 {%- comment %}
@@ -21,7 +22,7 @@ even mostly work 😀).
 ## Create a new Flutter project
 
 The first step to building Flutter apps is to create a new project. You create
-new apps with the [Flutter CLI tool][], installed as part of the Flutter SDK. 
+new apps with the [Flutter CLI tool][], installed as part of the Flutter SDK.
 
 Open your terminal or command prompt and run the following command to create a
 new Flutter project:
@@ -50,7 +51,7 @@ The `main` function is the entry point to any Dart program, and a Flutter app is
 just a **Dart** program. The `runApp` method is part of the Flutter SDK, and it
 takes a **widget** as an argument. (Most of this tutorial is about widgets, but
 in the simplest terms a widget is a Dart object that describes a piece of UI.)
-In this case, an instance of the `MainApp` widget is being passed in. 
+In this case, an instance of the `MainApp` widget is being passed in.
 
 Just below the `main` function, you’ll find the `MainApp` class declaration.
 
@@ -92,7 +93,7 @@ $ cd birdle
 $ flutter run -d chrome
 ```
 
-The app will build and launch in a new instance of Chrome. 
+The app will build and launch in a new instance of Chrome.
 
 <img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
 
@@ -111,10 +112,10 @@ child: Text('Hello World!'),
 
 Change the text inside the string to anything you want. Then, hot-reload your
 app by pressing `r` in your terminal where the app is running. The running app
-should instantly show your updated text. 
+should instantly show your updated text.
 
 
 [Flutter CLI tool]: /reference/flutter-cli
-[Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html 
+[Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html
 [read more about using pub packages]: {{site.dart-site}}/tools/pub/packages
 [`flutter_gse`]: {{site.pub}}/packages/flutter_gse

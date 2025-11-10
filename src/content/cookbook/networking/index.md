@@ -1,6 +1,6 @@
 ---
-title: Networking
+title: Flutter networking cookbook
+shortTitle: Networking
 description: A catalog of recipes for networking in your Flutter app.
+layout: toc
 ---
-
-{% include docs/cookbook-group-index.md %}

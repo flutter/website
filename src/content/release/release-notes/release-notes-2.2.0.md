@@ -2,13 +2,15 @@
 title: Flutter 2.2.0 release notes
 shortTitle: 2.2.0 release notes
 description: Release notes for Flutter 2.2.0.
+skipTemplateRendering: true
 ---
+
 This page has release notes for 2.2.0.
 For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 ### framework - 397 pull request(s)
 
@@ -5322,7 +5324,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/engine` 
+## Merged PRs by labels for `flutter/engine`
 
 
 
@@ -11179,7 +11181,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/plugins` 
+## Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -17600,4 +17602,3 @@ There were 274 pull requests.
 [3790](https://github.com/flutter/plugins/pull/3790) [google_map_flutter] fix version (cla: yes, p: google_maps_flutter)
 
 [3791](https://github.com/flutter/plugins/pull/3791) [flutter_webview] Fix `allowsInlineMediaPlayback` ignored on iOS (cla: yes, p: webview_flutter, platform-ios, waiting for tree to go green)
-

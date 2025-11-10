@@ -23,7 +23,7 @@ at engine-build time so they don't compile at runtime.
 For a video introduction to Impeller, check out the following
 talk from Google I/O 2023.
 
-{% ytEmbed 'vd5NqS01rlA', 'Introducing Impeller, Flutter\'s new rendering engine' %}
+<YouTubeEmbed id="vd5NqS01rlA" title="Introducing Impeller, Flutter's new rendering engine"></YouTubeEmbed>
 
 Impeller has the following objectives:
 
@@ -158,4 +158,4 @@ check out the [README.md][] file in the source tree.
 [impeller-metal-validation]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/metal_validation.md
 [impeller-ubo-gles2]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/ubo_gles2.md
 [impeller-shader-optimization]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
-[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md  
+[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md

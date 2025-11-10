@@ -26,38 +26,54 @@ which reflects how strongly the Flutter team recommends it.
   fundamentally clash with your current approach.
 * **Recommend**: This practice will likely improve your app.
 * **Conditional**: This practice can improve your app in certain circumstances.
-<br /><br />
 
 {% for section in architectureRecommendations %}
-<h2>{{section.category}}</h2>
-<p>{{section.description}}</p>
-<table class="table table-striped" style="border-bottom:1px #DADCE0 solid">
-    <tr class="tr-main-head">
-      <th style="width: 30%">Recommendation</th>
-      <th style="width: 70%">Description</th>
-    </tr>
-    {% for rec in section.recommendations %}
-    <tr>
-      <td>
-        <p>{{rec.recommendation}}</p>
-        {% if rec.confidence == "strong" %}
-            <div class="rrec-pill success">Strongly recommend</div>
-        {% elsif rec.confidence == "recommend" %}
-            <div class="rrec-pill info">Recommend</div>
-        {% else %}
-            <div class="rrec-pill">Conditional</div>
-        {% endif %}
-      </td>
-      <td>
-        {{rec.description}}
-        <br />
-        {{rec.confidence-description}}</td>
-    </tr>    {% endfor %}
+## {{section.category}}
+
+{{section.description}}
+
+{% if section.recommendations.size > 0 %}
+
+<table class="table table-striped" style="border-bottom:1px #DADCE0 solid;">
+<thead>
+  <tr>
+    <th style="width: 30%;">Recommendation</th>
+    <th style="width: 70%;">Description</th>
+  </tr>
+</thead>
+<tbody>
+{% for rec in section.recommendations %}
+<tr>
+<td>
+
+  {{rec.recommendation}}
+
+{% if rec.confidence == "strong" %}
+  <div class="rrec-pill success">Strongly recommend</div>
+{% elsif rec.confidence == "recommend" %}
+  <div class="rrec-pill info">Recommend</div>
+{% else %}
+  <div class="rrec-pill">Conditional</div>
+{% endif %}
+
+</td>
+<td>
+
+  {{rec.description}}
+  {{rec.confidence-description}}
+
+</td>
+</tr>
+{% endfor %}
+</tbody>
 </table>
-<br />
+
+{% endif %}
 {% endfor %}
 
-## Recommended resources
+<a id="recommended-resources" aria-hidden="true"></a>
+
+## Recommended resources {:#resources}
 
 * Code and templates
   * [Compass app source code][] -

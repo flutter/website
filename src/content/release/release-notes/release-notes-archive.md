@@ -6,7 +6,7 @@ description: Archived release notes for Flutter for prior releases.
 
 This page preserves the links to older release notes for
 releases to the stable channel and
-the old GitHub _Changelog_ wiki page before that, 
+the old GitHub _Changelog_ wiki page before that,
 which documented changes up through and including 1.0.0.
 
 ## Archived release notes

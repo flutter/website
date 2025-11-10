@@ -58,6 +58,8 @@
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/tools/formatting", "type": 301 },
       { "source": "/gestures", "destination": "/ui/advanced/gestures", "type": 301 },
+      { "source": "/glossary", "destination": "/resources/glossary", "type": 301 },
+      { "source": "/glossary/:entry", "destination": "/resources/glossary#:entry", "type": 301 },
       { "source": "/hot-reload", "destination": "/tools/hot-reload", "type": 301 },
       { "source": "/ide-setup", "destination": "/tools/editors", "type": 301 },
       { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
@@ -107,6 +109,7 @@
       { "source": "/codelabs", "destination": "/reference/learning-resources", "type": 301 },
       { "source": "/codelabs/layout-basics", "destination": "/ui/layout", "type": 301 },
       { "source": "/codelabs/explicit-animations", "destination": "/ui/animations/tutorial", "type": 301 },
+      { "source": "/codelabs/implicit-animations", "destination": "https://codelabs.developers.google.com/advanced-flutter-animations", "type": 301 },
       { "source": "/cookbook", "destination": "/reference/learning-resources", "type": 301 },
       { "source": "/cookbook/games/google-mobile-ads", "destination": "/cookbook/plugins/google-mobile-ads", "type": 301 },
       { "source": "/cookbook/images/cached-images", "destination": "/cookbook/images/network-image", "type": 301 },
@@ -330,6 +333,7 @@
       { "source": "/go/clean-up-not-disposed-disposables-in-ff", "destination": "https://docs.google.com/document/d/1bXannXQ8rEtfwxEVd7LDo7xiVu5-QxRoall28MIIFss", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
       { "source": "/go/codeshare-expansion-tile", "destination": "https://docs.google.com/document/d/1GTyEZjjTpx6fcrzOX-6kQ3phwu5UhUGLOWXJoy0yto0/edit?usp=sharing", "type": 301 },
+      { "source": "/go/codeshare-tooltip", "destination": "https://docs.google.com/document/d/1K3msJRq_Rru5hMhUYl34U0CTjM889J_xekRSGj1gSJo/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-enhancements", "destination": "https://docs.google.com/document/d/1cIBW0jMRrtWVA5E0TB0qmwqSgLoVDIVPOysKYJOvH7U/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-generation", "destination": "https://docs.google.com/document/d/1P7f-DGPWz6HCbwLoAruRuWtakPx4VY-e8nT_yuQ71sc/edit?usp=sharing&resourcekey=0-qxeub7yCKa_No0HlrzEk-g", "type": 301 },
       { "source": "/go/colorscheme-m3", "destination": "https://docs.google.com/document/d/1mY1ahBQEMAfsawGJMX5S34pXb7c8dHGatyotClReeas/edit#heading=h.cnnhzna3pz6d", "type": 301 },
@@ -357,6 +361,7 @@
       { "source": "/go/data-sync", "destination": "https://docs.google.com/document/d/1yH96-p-SkMmt6hL5xHHDtMvCKRz2XGrMuw9ZY_nE954", "type": 301 },
       { "source": "/go/decouple-design", "destination": "https://docs.google.com/document/d/189AbzVGpxhQczTcdfJd13o_EL36t-M5jOEt1hgBIh7w/edit?usp=sharing", "type": 301 },
       { "source": "/go/dds-daemon", "destination": "https://docs.google.com/document/d/18IgFakijiv9CLFGT5BckbwZuf2pqhOUeN27mB9XqvpQ/edit?usp=sharing&resourcekey=0-rBHvH9gLXLjGPWt5WE-XFg", "type": 301 },
+      { "source": "/go/decoupling-framework-tests", "destination": "https://docs.google.com/document/d/1UHxALQqCbmgjnM1RNV9xE2pK3IGyx-UktGX1D7hYCjs/edit?pli=1&tab=t.0", "type": 301 },
       { "source": "/go/deep-link-flag-migration", "destination": "https://docs.google.com/document/d/1TUhaEhNdi2BUgKWQFEbOzJgmUAlLJwIAhnFfZraKgQs/edit?usp=sharing", "type": 301 },
       { "source": "/go/default-animation-style", "destination": "https://docs.google.com/document/d/18c28hbe1mRBZLcnaip5LM9zlshIOEpuvBLWKZiXGe9g/", "type": 301 },
       { "source": "/go/default-scroll-action", "destination": "https://docs.google.com/document/d/1SJvom6k4YW4EtFIY4VpAhAOH-jWhRkHVfpVsOBB56KM/edit?usp=sharing", "type": 301 },
@@ -663,6 +668,7 @@
       { "source": "/go/swift-package-manager-plugins-v3", "destination": "https://docs.google.com/document/d/1aoa-t6zZBc6TosCa8N41w8aA8O4Z5yqdV4DvSRjWC54/edit?usp=sharing", "type": 301 },
       { "source": "/go/synchronized-widgettester", "destination": "https://docs.google.com/document/d/1VumsuG6dEFUVpPQLqqKJnhI0CoIS9fCAMN-NFHIPmo0/edit", "type": 301 },
       { "source": "/go/system-mouse-cursor", "destination": "https://docs.google.com/document/d/1bJLRy6flZ0wDCbpl2QA8SURUWXIvRJKMRRemxlOo1cA/edit", "type": 301 },
+      { "source": "/go/table-cell-span", "destination": "https://docs.google.com/document/d/1OXTnWhI1bjZEfUsE3Cy8tm32ewMIwqKLXBKZPgTwGTM/edit?usp=sharing", "type": 301 },
       { "source": "/go/table-development", "destination": "https://docs.google.com/document/d/1fCE-zQNql0nnqJXhycpg902lhL7jrOOz-6sT8s8tv5c/edit?usp=sharing", "type": 301 },
       { "source": "/go/table-view", "destination": "https://docs.google.com/document/d/15ecTZE1g3WeswLGFWrnEgMP6SyL6jDRdxOgPsczOcV0/edit?usp=sharing&resourcekey=0-yNd_qFhiPjz6z2TgezWc0A", "type": 301 },
       { "source": "/go/table-view-merged-cells", "destination": "https://docs.google.com/document/d/1UekXjG_VKmWYbsxDEzMqTb7F-6oUr05v998n5IqtVWs/edit?usp=sharing", "type": 301 },
@@ -822,6 +828,7 @@
       { "source": "/to/state-management-sample", "destination": "/data-and-backend/state-mgmt/simple", "type": 301 },
       { "source": "/to/switch-flutter-version", "destination": "/install/upgrade#switch-to-a-specific-flutter-version", "type": 301 },
       { "source": "/to/team-infra", "destination": "https://github.com/flutter/flutter/blob/main/docs/triage/Infra-Triage.md", "type": 301 },
+      { "source": "/to/template", "destination": "https://flutter.dev/go/template", "type": 301 },
       { "source": "/to/test-drive", "destination": "/get-started/quick", "type": 301 },
       { "source": "/to/track-widget-creation", "destination": "/tools/devtools/inspector#track-widget-creation", "type": 301 },
       { "source": "/to/troubleshoot-devices", "destination": "/install/troubleshoot", "type": 301 },
@@ -884,7 +891,7 @@
   },
   "emulators": {
     "hosting": {
-      "port": 5500
+      "port": 5502
     }
   }
 }

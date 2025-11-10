@@ -1,0 +1,142 @@
+.expansion-panel-list {
+  background-color: var(--site-filledCard-bgColor);
+  color: var(--site-filledCard-fgColor);
+  border: 1px solid var(--site-card-borderColor);
+  border-radius: 12px;
+  margin-block-start: 1.5rem;
+  margin-block-end: 1.5rem;
+
+  .expansion-panel {
+    >a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+
+      &::after {
+        // Duplicated since Firefox doesn't support content alt text.
+        content: 'keyboard_arrow_down';
+        content: 'keyboard_arrow_down' / '';
+        font-family: var(--site-icon-fontFamily);
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+
+        transition: transform .25s ease-in-out;
+        color: var(--site-base-fgColor-lighter);
+      }
+
+      .collapsing {
+        transition-duration: .2s;
+      }
+
+      &:not(.collapsed) {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .expansion-panel-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+      margin: 0.5rem;
+    }
+
+    .expansion-panel-title-leading {
+      height: 6rem;
+      width: 6rem;
+      flex-shrink: 0;
+      display: none;
+
+      @media (min-width: 768px) {
+        display: flex;
+      }
+    }
+
+    .expansion-panel-title-content {
+      .content-title {
+        color: var(--site-base-fgColor);
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: .25rem;
+
+        @media (min-width: 768px) {
+          font-size: 1.25rem;
+        }
+      }
+
+      .content-description {
+        color: var(--site-base-fgColor);
+        margin-bottom: 0.5rem;
+      }
+
+      .content-tags {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: .75rem;
+        margin-top: 0;
+
+        .tag {
+          color: var(--site-base-fgColor-lighter);
+          font-size: .8rem;
+          line-height: 1;
+          margin-bottom: 0;
+
+          &::after {
+            // Duplicated since Firefox doesn't support content alt text.
+            content: ' |\00a0';
+            content: ' |\00a0' / '';
+          }
+
+          &:last-child::after {
+            content: '';
+          }
+        }
+      }
+    }
+  }
+
+  .expansion-panel-body {
+    display: none;
+    margin: auto;
+    padding-top: .75rem;
+    width: 90%;
+    border-top: .05rem solid var(--site-card-borderColor);
+
+    p {
+      margin-top: 1.5rem;
+    }
+
+    .separator {
+      margin-bottom: 1rem;
+      margin-top: 1.5rem;
+      border-top: .05rem solid rgba(0, 0, 0, 0.125);
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  > :last-child {
+    .separator {
+      border-top: none;
+      margin-top: 2.5rem;
+    }
+  }
+}

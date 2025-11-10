@@ -5,7 +5,7 @@ description: >-
   have been updated to match the Material 3 Design specifications.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

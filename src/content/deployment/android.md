@@ -26,9 +26,9 @@ This guide explains how to perform the following tasks:
 * [Android release FAQ](#android-release-faq)
 
 :::note
-Throughout this page, `[project]` refers to 
+Throughout this page, `[project]` refers to
 the directory that your application is in. While following
-these instructions, substitute `[project]` with 
+these instructions, substitute `[project]` with
 your app's directory.
 :::
 
@@ -139,7 +139,7 @@ If not, create one using one of the following methods:
 
    On Windows, use the following command in PowerShell:
 
-   ```powershell
+   ```ps
    keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `
            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `
            -alias upload

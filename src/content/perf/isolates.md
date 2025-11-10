@@ -64,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-{% ytEmbed 'vl_AaCgudcY', 'Isolates and the event loop | Flutter in Focus' %}
+<YouTubeEmbed id="vl_AaCgudcY" title="Isolates and the event loop | Flutter in Focus"></YouTubeEmbed>
 
 ## Common use cases for isolates
 
@@ -343,10 +343,10 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter.
 - Dart's Isolates are an implementation of the [Actor model][].
-- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
+- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
-[announcement]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
+[announcement]: {{site.flutter-blog}}/introducing-background-isolate-channels-7a299609cad8
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
 [isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)

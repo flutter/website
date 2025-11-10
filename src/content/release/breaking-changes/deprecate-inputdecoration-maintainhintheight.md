@@ -6,7 +6,7 @@ description: >-
   `InputDecoration.maintainHintSize`.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

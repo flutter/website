@@ -5,7 +5,7 @@ description: >
   PointerDeviceKinds can drag Scrollables.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -34,13 +34,13 @@ control and configure this feature.
 
 - Extend `ScrollBehavior`, `MaterialScrollBehavior`, or `CupertinoScrollBehavior`
 to modify the default behavior, overriding `ScrollBehavior.dragDevices`.
-  
+
   - With your own `ScrollBehavior`, you can apply it app-wide by setting
     `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
   - Or, if you wish to only apply it to specific widgets, add a
     `ScrollConfiguration` above the widget in question with your
     custom `ScrollBehavior`.
- 
+
 Your scrollable widgets then inherit and reflect this behavior.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
@@ -77,7 +77,7 @@ Code after migration:
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
-  Set<PointerDeviceKind> get dragDevices => { 
+  Set<PointerDeviceKind> get dragDevices => {
     PointerDeviceKind.touch,
     PointerDeviceKind.mouse,
     // etc.
@@ -111,7 +111,7 @@ Code after migration:
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
   // Override behavior methods and getters like dragDevices
   @override
-  Set<PointerDeviceKind> get dragDevices => { 
+  Set<PointerDeviceKind> get dragDevices => {
     PointerDeviceKind.touch,
     PointerDeviceKind.mouse,
     // etc.

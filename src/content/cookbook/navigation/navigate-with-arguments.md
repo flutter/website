@@ -1,9 +1,6 @@
 ---
 title: Pass arguments to a named route
 description: How to pass arguments to a named route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/navigate_with_arguments"?>

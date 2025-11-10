@@ -367,7 +367,7 @@ You can also define custom snippets by executing
 **Hot reload**
 : To perform a hot reload during a debug session,
   click **Hot Reload** on the **Debug Toolbar**.
-  
+
   You can also press <kbd>Ctrl</kbd> + <kbd>F5</kbd>
   (<kbd>Cmd</kbd> + <kbd>F5</kbd>  on macOS).
 

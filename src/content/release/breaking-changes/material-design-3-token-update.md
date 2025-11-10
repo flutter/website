@@ -5,7 +5,7 @@ description: >-
   the Flutter Material library.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -75,7 +75,7 @@ final chip = ChipTheme(
     ),
   ),
   child: ActionChip(
-    label: const Text('action chip'), 
+    label: const Text('action chip'),
     onPressed: () {}
   )
 );

@@ -22,7 +22,7 @@ This recipe uses the following steps:
 To learn more, watch this Package of the Week video
 on the `path_provider` package:
 
-{% ytEmbed 'Ci4t-NkOY3I', 'path_provider | Flutter package of the week' %}
+<YouTubeEmbed id="Ci4t-NkOY3I" title="path_provider | Flutter package of the week"></YouTubeEmbed>
 
 :::note
 This recipe doesn't work with web apps at this time.

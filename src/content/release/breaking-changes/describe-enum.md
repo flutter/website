@@ -3,7 +3,7 @@ title: Migration guide for describeEnum and EnumProperty
 description: Learn about the removal of describeEnum and how to migrate.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -12,7 +12,7 @@ of `describeEnum(Enum.something)` should use
 `Enum.something.name` instead.
 
 The class `EnumProperty` was modified to
-extend `<T extends Enum?>` instead of `<T>`. 
+extend `<T extends Enum?>` instead of `<T>`.
 Existing uses of `EnumProperty<NotAnEnum>` should
 use `DiagnosticsProperty<NotAnEnum>` instead.
 

@@ -111,8 +111,8 @@ it's easier to get set up than a physical iOS device.
 However, you should also test your app on an actual
 physical device.
 
-{% tabs "ios-simulator-or-physical-device" %}
-{% tab "Simulator" %}
+<Tabs key="ios-simulator-or-physical-device">
+<Tab name="Simulator">
 
 Start the iOS Simulator with the following command:
 
@@ -126,8 +126,8 @@ on the Apple Developer site.
 
 [Downloading and installing additional Xcode components]: {{site.apple-dev}}/documentation/xcode/downloading-and-installing-additional-xcode-components
 
-{% endtab %}
-{% tab "Physical device" %}
+</Tab>
+<Tab name="Physical device">
 
 :::warning
 An upcoming change to iOS has caused a temporary break in Flutter's debug mode
@@ -151,7 +151,7 @@ Set up each iOS device on which you want to test.
     1. Click **Trust**.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
- 
+
  1. <h3>Configure your physical iOS device</h3>
 
     Apple requires enabling **[Developer Mode][]**
@@ -224,8 +224,8 @@ Set up each iOS device on which you want to test.
 [Apple Developer program]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ---
 
@@ -292,4 +292,3 @@ or begin improving integration with iOS.
     </div>
   </div>
 </div>
-

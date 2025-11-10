@@ -5,7 +5,7 @@ description: >
   require additional cases in switch statements that switch on a TargetPlatform.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

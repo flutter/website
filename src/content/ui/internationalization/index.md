@@ -58,7 +58,7 @@ $ flutter create <name_of_flutter_app>
 ```
 
 To use `flutter_localizations`,
-add the package as a dependency to your `pubspec.yaml` file, 
+add the package as a dependency to your `pubspec.yaml` file,
 as well as the `intl` package:
 
 ```console
@@ -145,7 +145,7 @@ structured, is covered on this page.
 for the `Localizations` widget that allows for
 (the typically rare) situation where a section of your application
 needs to be localized to a different locale than the locale
-configured for your device. 
+configured for your device.
 
 To observe this behavior, add a call to `Localizations.override`
 and a simple `CalendarDatePicker`:
@@ -203,7 +203,7 @@ complete the following instructions:
    $ flutter pub add intl:any
    ```
 
-2. Open the `pubspec.yaml` file and enable the `generate` flag. 
+2. Open the `pubspec.yaml` file and enable the `generate` flag.
    This flag is found in the `flutter` section in the pubspec file.
 
    <?code-excerpt "gen_l10n_example/pubspec.yaml (generate)"?>
@@ -225,10 +225,10 @@ complete the following instructions:
 
    This file configures the localization tool.
    In this example, you've done the following:
-   
+
    * Put the [App Resource Bundle][] (`.arb`) input files in
      `${FLUTTER_PROJECT}/lib/l10n`.
-     The `.arb` provide localization resources for your app. 
+     The `.arb` provide localization resources for your app.
    * Set the English template as `app_en.arb`.
    * Told Flutter to generate localizations in the
      `app_localizations.dart` file.
@@ -350,7 +350,7 @@ return MaterialApp(
 
 :::tip
 When using VS Code, add the [arb-editor extension][].
-This extension adds syntax highlighting, snippets, 
+This extension adds syntax highlighting, snippets,
 diagnostics, and quick fixes to help edit `.arb` template files.
 :::
 
@@ -415,9 +415,9 @@ English, for example, pluralizes "person" to "people",
 but that doesn't go far enough.
 The `message0` plural might be "no people" or "zero people".
 The `messageFew` plural might be
-"several people", "some people", or "a few people". 
+"several people", "some people", or "a few people".
 The `messageMany` plural might
-be "most people" or "many people", or "a crowd". 
+be "most people" or "many people", or "a crowd".
 Only the more general `messageOther` field is required.
 The following example shows what options are available:
 
@@ -553,7 +553,7 @@ The resulting string is as follows:
 ### Messages with numbers and currencies
 
 Numbers, including those that represent currency values,
-are displayed very differently in different locales. 
+are displayed very differently in different locales.
 The localizations generation tool in
 `flutter_localizations` uses the
 [`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html)
@@ -609,7 +609,7 @@ make the following changes to the `lib/l10n/app_en.arb` file:
 ### Messages with dates
 
 Dates strings are formatted in many different ways
-depending both the locale and the app's needs.  
+depending both the locale and the app's needs.
 
 Placeholder values with type `DateTime` are formatted with
 [`DateFormat`][] in the `intl` package.
@@ -1175,7 +1175,7 @@ with a different i18n framework.
 
 Complete source code for the [`minimal`][] app.
 
-In the following example, the `DemoLocalizations` class 
+In the following example, the `DemoLocalizations` class
 includes all of its translations directly in per language Maps:
 
 
@@ -1302,4 +1302,3 @@ check out [Using the Dart intl tools](#dart-tools).
 
 [`intl_example`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/intl_example
 [`minimal`]: {{site.repo.this}}/tree/{{site.branch}}/examples/internationalization/minimal
-

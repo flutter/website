@@ -1,7 +1,8 @@
 ---
-title: LayoutBuilder and adaptive layours
+title: LayoutBuilder and adaptive layouts
 description: Learn how to use the LayoutBuilder widget
 permalink: /tutorial/adaptive-layouts/
+sitemap: false
 ---
 
 Modern apps need to work well on screens of all sizes. On this page,
@@ -179,7 +180,7 @@ class RolodexApp extends StatelessWidget {
 ```
 
 If you're running in Chrome, you can resize the browser window to see
-layout changes. 
+layout changes.
 
 ## Add list selection functionality
 
@@ -202,7 +203,7 @@ class AdaptiveLayout extends StatefulWidget {
 
 
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
-  // New 
+  // New
   int selectedListId = 0;
 
   // New
@@ -269,7 +270,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         final isLargeScreen = constraints.maxWidth > largeScreenMinWidth;
 
         if (isLargeScreen) {
-          return _buildLargeScreenLayout(); // New 
+          return _buildLargeScreenLayout(); // New
         } else {
           // For small screens, use the original, navigation-style approach
           return const ContactGroupsPage();
@@ -278,7 +279,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     );
   }
 
-  // New 
+  // New
   Widget _buildLargeScreenLayout() {
     return const CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,

@@ -88,7 +88,7 @@ In the **Identity** section:
 `App Category`
 : The app category under which your app will be listed on the Mac App Store. This cannot be none.
 
-`Bundle Identifier` 
+`Bundle Identifier`
 : The App ID you registered on App Store Connect.
 
 In the **Deployment info** section:
@@ -123,7 +123,7 @@ For a detailed overview of app signing, see
 
 ## Configuring the app's name, bundle identifier and copyright
 
-The configuration for the product identifiers are centralized 
+The configuration for the product identifiers are centralized
 in `macos/Runner/Configs/AppInfo.xcconfig`. For the app's name,
 set `PRODUCT_NAME`, for the copyright set `PRODUCT_COPYRIGHT`,
 and finally set `PRODUCT_BUNDLE_IDENTIFIER` for the app's
@@ -218,7 +218,7 @@ For more details, see
 ## Create a build archive with Codemagic CLI tools
 
 This step covers creating a build archive and uploading
-your build to App Store Connect using Flutter build commands 
+your build to App Store Connect using Flutter build commands
 and [Codemagic CLI Tools][codemagic_cli_tools] executed in a terminal
 in the Flutter project directory.
 
@@ -282,7 +282,7 @@ app-store-connect fetch-signing-files YOUR.APP.BUNDLE_ID \
 ```
 
 Where `cert_key` is either your exported Mac App Distribution certificate private key
-or a new private key which automatically generates a new certificate. 
+or a new private key which automatically generates a new certificate.
 
 </li>
 <li>
@@ -341,7 +341,7 @@ keychain add-certificates
 </li>
 <li>
 
-Update the Xcode project settings to use fetched code signing profiles: 
+Update the Xcode project settings to use fetched code signing profiles:
 
 ```bash
 xcode-project use-profiles
@@ -392,7 +392,7 @@ INSTALLER_CERT_NAME=$(keychain list-certificates \
             | .common_name][0]' \
           | xargs)
 xcrun productsign --sign "$INSTALLER_CERT_NAME" unsigned.pkg "$PACKAGE_NAME"
-rm -f unsigned.pkg 
+rm -f unsigned.pkg
 ```
 
 </li>
@@ -436,7 +436,7 @@ covers releasing your build on TestFlight.
 
 ## Distribute to registered devices
 
-See [distribution guide][distributionguide_macos] 
+See [distribution guide][distributionguide_macos]
 to prepare an archive for distribution to designated Mac computers.
 
 ## Release your app to the App Store
@@ -468,9 +468,9 @@ detailed overview of the process of releasing an app to the App Store.
 
 ## Additional resources
 
-To learn how to package and distribute your Flutter desktop app 
-for macOS the open source way, without using a paid Apple developer 
-account, check out the step-by-step 
+To learn how to package and distribute your Flutter desktop app
+for macOS the open source way, without using a paid Apple developer
+account, check out the step-by-step
 [macOS packaging guide][macos_packaging_guide].
 
 [appicon]: {{site.apple-dev}}/design/human-interface-guidelines/macos/icons-and-images/app-icon/
