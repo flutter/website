@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'dart:convert' show htmlEscape;
-
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -102,9 +100,7 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
       ),
       link(
         rel: 'stylesheet',
-        href:
-            '/assets/css/main.css?'
-            'hash=${htmlEscape.convert(generatedStylesHash)}',
+        href: '/assets/css/main.css?hash=$generatedStylesHash',
       ),
 
       if (pageData['js'] case final List<Object?> jsList)
