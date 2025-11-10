@@ -191,7 +191,21 @@
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: GenUI SDK for Flutter
-      permalink: https://github.com/flutter/genui
+      permalink: /ai/genui
+      expanded: false
+      children:
+        - title: GenUI overview
+          permalink: /ai/genui
+        - title: Get started
+          permalink: /ai/genui/get-started
+        - title: How to build an agent
+          permalink: /ai/genui/agent
+        - title: Connect GenUI
+          permalink: /ai/genui/connect
+        - title: Add your own widgets
+          permalink: /ai/genui/add-widgets
+        - title: Testing GenUI features
+          permalink: /ai/genui/testing
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 

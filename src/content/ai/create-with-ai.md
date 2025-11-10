@@ -6,8 +6,9 @@ description: >
   workflow.
 ---
 
-This guide covers how you can leverage AI tools to build AI-powered features for
-your Flutter apps and streamline your Flutter and Dart development.
+This guide covers how you can leverage AI tools to build AI-powered
+features for your Flutter apps and streamline your
+Flutter and Dart development.
 
 ## Overview
 
