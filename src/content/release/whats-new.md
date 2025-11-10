@@ -22,12 +22,12 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
-## xx November 2025: Release 3.38
+## 12 November 2025: Release 3.38
 
 Flutter 3.38 is live! For details,
 check out the [Flutter 3.38 technical blog post][3.38-tech].
 
-[3.38-tech]: xxx
+[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 
 **Website update**
 
@@ -38,11 +38,11 @@ reimplemented to use [Jaspr][], a Dart web framework.
 
 Let us know what you think!
 
-[Jaspr]: https://pub.dev/packages/jaspr
+[Jaspr]: https://jaspr.site/
 
 **Docs updated or added since the 3.35 release**
 
-* The Dart language now supports _dot shortshands_ syntax
+* The Dart language now supports _dot shorthands_ syntax
   (aka _shorthands_), which allows you to write more
   concise code. For more information, visit the
   [Dart dot shorthands][] page on dart.dev. Over time,
@@ -57,7 +57,7 @@ Let us know what you think!
   to another server. This makes it easier to develop a
   web client that connects to dynamic endpoints on the same host. 
   For more information, visit
-  [setting up a web development configuration file][web-config-file]
+  [setting up a web development configuration file][web-config-file].
 
 * Development continues on the Flutter Widget Previewer tool,
   introduced as an experimental feature in the 3.35 release.
@@ -84,9 +84,9 @@ Let us know what you think!
   about breaking changes, code deprecations, and migration guides.
 
 Other relevant resources:
-
+75600050645551
 * [3.38 release notes and changelog][]
-* [DevTools 2.52 release notes][]
+* [DevTools 2.25.1 release notes][]
 * [Dart 3.10 release][] blog post
 
 [3.38 release notes and changelog]: xxx
@@ -95,7 +95,7 @@ Other relevant resources:
 [Dart 3.10 release]: xxx
 [Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
 [DevTools 2.52 release notes]: /release-notes/release-notes-2.52.0
-[Flutter on latest iOS]: /ios/ios-latest
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
 [UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
 [UIScene migration guide]: /release/breaking-changes/uiscenedelegate
 [Widget Previewer tool page]: /tools/widget-previewer
