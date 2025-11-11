@@ -24,7 +24,7 @@ class InteractiveQuiz extends StatefulComponent {
 
 class _InteractiveQuizState extends State<InteractiveQuiz> {
   int currentQuestionIndex = 0;
-  int? selectedOptionIndex;
+  List<int> selectedOptionIndices = [];
 
   Question? get currentQuestion {
     if (currentQuestionIndex >= component.questions.length) {
@@ -35,10 +35,11 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
 
   AnswerOption? get selectedOption {
     final question = currentQuestion;
-    if (question == null || selectedOptionIndex == null) {
+    if (question == null ||
+        selectedOptionIndices.length <= currentQuestionIndex) {
       return null;
     }
-    return question.options[selectedOptionIndex!];
+    return question.options[selectedOptionIndices[currentQuestionIndex]];
   }
 
   @override
@@ -78,7 +79,12 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
                         return;
                       }
                       setState(() {
-                        selectedOptionIndex = index;
+                        if (selectedOptionIndices.length <=
+                            currentQuestionIndex) {
+                          selectedOptionIndices.add(index);
+                        } else {
+                          selectedOptionIndices[currentQuestionIndex] = index;
+                        }
                       });
                     },
                   },
@@ -106,41 +112,55 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
           strong([text('Great job!')]),
           p([text('You completed the quiz.')]),
         ]),
-
-      Button(
-        classes: ['quiz-button'],
-        style: ButtonStyle.filled,
-        disabled: currentQuestion != null && selectedOption == null,
-        onClick: () {
-          if (currentQuestion == null) {
-            // Restart the quiz.
+      div(classes: 'quiz-actions', [
+        Button(
+          classes: ['quiz-button', 'secondary'],
+          style: ButtonStyle.filled,
+          disabled: currentQuestionIndex == 0,
+          onClick: () {
             setState(() {
-              currentQuestionIndex = 0;
-              selectedOptionIndex = null;
+              currentQuestionIndex--;
             });
-            return;
-          }
-          if (selectedOption == null) return;
-          final correct = selectedOption!.correct;
-          setState(() {
-            selectedOptionIndex = null;
-            if (correct) {
-              currentQuestionIndex++;
+          },
+          content: 'Previous',
+        ),
+        Button(
+          classes: ['quiz-button'],
+          style: ButtonStyle.filled,
+          disabled: currentQuestion != null && selectedOption == null,
+          onClick: () {
+            if (currentQuestion == null) {
+              // Restart the quiz.
+              setState(() {
+                currentQuestionIndex = 0;
+                selectedOptionIndices = [];
+              });
+              return;
             }
-          });
-        },
-        content: switch ((
-          currentQuestion == null,
-          currentQuestionIndex == component.questions.length - 1,
-          selectedOption?.correct,
-        )) {
-          // (isComplete, isLast, isCorrect)
-          (true, _, _) => 'Restart',
-          (false, _, false) => 'Try again',
-          (false, false, _) => 'Next question',
-          (false, true, _) => 'Finish',
-        },
-      ),
+            if (selectedOption == null) return;
+            final correct = selectedOption!.correct;
+            setState(() {
+              if (correct) {
+                currentQuestionIndex++;
+              } else {
+                // Clear the selected option to allow retry.
+                selectedOptionIndices.removeLast();
+              }
+            });
+          },
+          content: switch ((
+            currentQuestion == null,
+            currentQuestionIndex == component.questions.length - 1,
+            selectedOption?.correct,
+          )) {
+            // (isComplete, isLast, isCorrect)
+            (true, _, _) => 'Restart',
+            (false, _, false) => 'Try again',
+            (false, false, _) => 'Next question',
+            (false, true, _) => 'Finish',
+          },
+        ),
+      ]),
     ]);
   }
 }

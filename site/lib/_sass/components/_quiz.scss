@@ -130,13 +130,22 @@
     }
   }
 
-  .quiz-button {
-    align-self: flex-end;
+  .quiz-actions {
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
 
-    &[disabled] {
-      opacity: 0.4;
-      pointer-events: none;
+
+    .quiz-button {
+      &.secondary {
+        background-color: var(--site-inset-bgColor);
+        color: var(--site-base-fgColor);
+      }
+
+      &[disabled] {
+        opacity: 0.4;
+        pointer-events: none;
+      }
     }
   }
 }
