@@ -35,6 +35,7 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     as prefix13;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     as prefix14;
+import 'package:jaspr_content/components/file_tree.dart' as prefix15;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -122,7 +123,7 @@ JasprOptions get defaultJasprOptions => JasprOptions(
           'src/components/pages/learning_resource_filters_sidebar',
         ),
   },
-  styles: () => [],
+  styles: () => [...prefix15.FileTree.styles],
 );
 
 Map<String, dynamic> _prefix2CopyButton(prefix2.CopyButton c) => {

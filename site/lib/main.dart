@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/server.dart';
+import 'package:jaspr_content/components/file_tree.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
@@ -94,6 +95,7 @@ List<CustomComponent> get _embeddableComponents => [
   const DashTabs(),
   const DashImage(),
   const YoutubeEmbed(),
+  const FileTree(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),
