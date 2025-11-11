@@ -636,7 +636,7 @@ panel (debug is the default):
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
 
-### How to tell if an apk is using flutter?
+### How to tell if an apk uses Flutter?
 
 Recommended: Using APK files
 [apkanalyzer](https://developer.android.com/tools/apkanalyzer) files list --files-only <SOME-APK>
