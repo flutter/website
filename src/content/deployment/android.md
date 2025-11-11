@@ -636,6 +636,50 @@ panel (debug is the default):
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
 
+### How can I tell if an apk is using flutter?
+
+Recommended: Using apk files
+apkanalyzer files list --files-only <SOME-APK>
+Then looking for a file in /lib/<ARCH>/libflutter.so
+
+Example:
+`apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l`
+returns any number greater than 1.
+
+Why this works: 
+Flutter depends on c++ code that we call the flutter engine. That code in android is bundled as an “.so” native library.
+For the life of flutter that file has been named libflutter.so with the flutter framework and developers dart code being
+combined into libapp.so. Flutter code names this library flutter and java/android tooling renames it with the lib prefix
+and handles library location across architectures. This is what many reverse engineers use to identify flutter apps.
+
+Secondary Evaluation:
+Using android manifest contents
+apkanalyzer manifest print  <SOME-APK>
+Then look for a `<meta-data android:name="flutterEmbedding"  android:value="2"` or `<meta-data android:name="flutterEmbedding"  android:value="1"`
+
+Example:
+apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2 outputs
+ <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+
+Why this works:  
+Flutter has had 2 different embedders and this flag was read to determine which embeder was used.
+Flutter 3.22 removed the abilty of v1 embedder apps to build.
+https://blog.flutter.dev/whats-new-in-flutter-3-22-fbde6c164fe3.
+This mechanism is not recommended because it is unclear how long the `flutterEmbedding` value will
+continue to be included in all flutter apps. Additionally this will not work for all libraries written
+in Flutter than are imported into android apps as aar dependencies.
+
+Not technical evaluation:
+* Download flutter shark on device and let it scan local apps
+https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1
+* Flutter hunt website
+https://flutterhunt.com/
+
+
+
 {% comment %}
 ### Are there any special considerations with add-to-app?
 {% endcomment %}
