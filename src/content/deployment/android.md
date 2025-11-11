@@ -638,48 +638,45 @@ The resulting app bundle or APK files are located in
 
 ### How to tell if an apk is using flutter?
 
-Recommended: Using apk files
+Recommended: Using APK files
 [apkanalyzer](https://developer.android.com/tools/apkanalyzer) files list --files-only <SOME-APK>
-Then looking for a file in /lib/<ARCH>/libflutter.so
+Then looking for a file in `/lib/<ARCH>/libflutter.so`
 
 Example:
 `apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l`
-returns any number greater than 1.
+returns any number greater than 0.
 
-Why this works: 
-Flutter depends on c++ code that we call the flutter engine. That code in android is bundled as an “.so” native library.
-For the life of flutter that file has been named libflutter.so with the flutter framework and developers dart code being
-combined into libapp.so. Flutter code names this library flutter and java/android tooling renames it with the lib prefix
-and handles library location across architectures. This is what many reverse engineers use to identify flutter apps.
+**Why this works**
+Flutter depends on C++ code called the Flutter engine. On Android, this engine is bundled as an `.so` native library.
+Historically, this file has been named `libflutter.so`. The Flutter framework and the developer's Dart code are combined into `libapp.so`.
+The Flutter codebase names this library `flutter`; Java/Android tooling adds the `lib` prefix and handles library location across architectures.
+Many reverse engineers use this method to identify Flutter apps.
 
-Secondary Evaluation:
-Using android manifest contents
-`apkanalyzer manifest print  <SOME-APK>`
-Then look for a `<meta-data android:name="flutterEmbedding"  android:value="2"` or `<meta-data android:name="flutterEmbedding"  android:value="1"`
+#### Secondary Evaluation:
+Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>` tag with `android:name="flutterEmbedding"`.
+The value can be `1` or `2`.
 
 Example:
 `apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`
 returns the following style string.
- <meta-data
-            android:name="flutterEmbedding"
-            android:value="2" />
+```
+<meta-data
+   android:name="flutterEmbedding"
+   android:value="2" />
+```
 
 
-Why this works:  
-Flutter has had 2 different embedders and this flag was read to determine which embeder was used.
-Flutter 3.22 removed the abilty of v1 embedder apps to build.
-https://blog.flutter.dev/whats-new-in-flutter-3-22-fbde6c164fe3.
+**Why this works**
+Flutter has had two different embedders, and this flag was read to determine which embedder was used.
+Flutter 3.22 removed the ability of v1 embedder apps to build.
+https://blog.flutter.dev/whats-new-in-flutter-3-22-fbde6c164fe3
 This mechanism is not recommended because it is unclear how long the `flutterEmbedding` value will
-continue to be included in all flutter apps. Additionally this will not work for all libraries written
-in Flutter than are imported into android apps as aar dependencies.
+continue to be included in all Flutter apps. Additionally, this will not work for all libraries written
+in Flutter that are imported into Android apps as AAR dependencies.
 
-Non technical evaluation:
-* Download flutter shark on device and let it scan local apps
-https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1
-* Flutter hunt website
-https://flutterhunt.com/
-
-
+#### Non-technical evaluation
+*   Download [Flutter Shark](https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1) on a device and let it scan local apps.
+*   Visit the [Flutter Hunt](https://flutterhunt.com/) website.
 
 {% comment %}
 ### Are there any special considerations with add-to-app?
