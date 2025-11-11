@@ -636,10 +636,10 @@ panel (debug is the default):
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
 
-### How can I tell if an apk is using flutter?
+### How to tell if an apk is using flutter?
 
 Recommended: Using apk files
-apkanalyzer files list --files-only <SOME-APK>
+[apkanalyzer](https://developer.android.com/tools/apkanalyzer) files list --files-only <SOME-APK>
 Then looking for a file in /lib/<ARCH>/libflutter.so
 
 Example:
@@ -654,11 +654,12 @@ and handles library location across architectures. This is what many reverse eng
 
 Secondary Evaluation:
 Using android manifest contents
-apkanalyzer manifest print  <SOME-APK>
+`apkanalyzer manifest print  <SOME-APK>`
 Then look for a `<meta-data android:name="flutterEmbedding"  android:value="2"` or `<meta-data android:name="flutterEmbedding"  android:value="1"`
 
 Example:
-apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2 outputs
+`apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`
+returns the following style string.
  <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
@@ -672,7 +673,7 @@ This mechanism is not recommended because it is unclear how long the `flutterEmb
 continue to be included in all flutter apps. Additionally this will not work for all libraries written
 in Flutter than are imported into android apps as aar dependencies.
 
-Not technical evaluation:
+Non technical evaluation:
 * Download flutter shark on device and let it scan local apps
 https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1
 * Flutter hunt website
