@@ -77,8 +77,7 @@ android {
 ```
 
 ### Disabling abiFIlters ###
-It is possible, but not recommended, to disable this abi filtering. By
-passing the `-Pdisable-abi-filtering`flag when running `flutter build`
+It is possible, but not recommended, to disable this abi filtering. Pass the `-Pdisable-abi-filtering`flag when running `flutter build`
 or `flutter run`.
 
 ## Timeline
