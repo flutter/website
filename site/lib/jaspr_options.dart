@@ -21,21 +21,21 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     as prefix6;
 import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
     as prefix7;
-import 'package:docs_flutter_dev_site/src/components/fwe/client/quiz.dart'
-    as prefix8;
 import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
-    as prefix9;
+    as prefix8;
 import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
-    as prefix10;
+    as prefix9;
 import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
-    as prefix11;
+    as prefix10;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
-    as prefix12;
+    as prefix11;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
-    as prefix13;
+    as prefix12;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
-    as prefix14;
+    as prefix13;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
+    as prefix14;
+import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
     as prefix15;
 import 'package:jaspr_content/components/file_tree.dart' as prefix16;
 
@@ -93,42 +93,42 @@ JasprOptions get defaultJasprOptions => JasprOptions(
       params: _prefix7DartPadInjector,
     ),
 
-    prefix8.InteractiveQuiz: ClientTarget<prefix8.InteractiveQuiz>(
-      'src/components/fwe/client/quiz',
-      params: _prefix8InteractiveQuiz,
-    ),
-
-    prefix9.MenuToggle: ClientTarget<prefix9.MenuToggle>(
+    prefix8.MenuToggle: ClientTarget<prefix8.MenuToggle>(
       'src/components/layout/menu_toggle',
     ),
 
-    prefix10.SiteSwitcher: ClientTarget<prefix10.SiteSwitcher>(
+    prefix9.SiteSwitcher: ClientTarget<prefix9.SiteSwitcher>(
       'src/components/layout/site_switcher',
     ),
 
-    prefix11.ThemeSwitcher: ClientTarget<prefix11.ThemeSwitcher>(
+    prefix10.ThemeSwitcher: ClientTarget<prefix10.ThemeSwitcher>(
       'src/components/layout/theme_switcher',
     ),
 
-    prefix12.ArchiveTable: ClientTarget<prefix12.ArchiveTable>(
+    prefix11.ArchiveTable: ClientTarget<prefix11.ArchiveTable>(
       'src/components/pages/archive_table',
-      params: _prefix12ArchiveTable,
+      params: _prefix11ArchiveTable,
     ),
 
-    prefix13.GlossarySearchSection:
-        ClientTarget<prefix13.GlossarySearchSection>(
+    prefix12.GlossarySearchSection:
+        ClientTarget<prefix12.GlossarySearchSection>(
           'src/components/pages/glossary_search_section',
         ),
 
-    prefix14.LearningResourceFilters:
-        ClientTarget<prefix14.LearningResourceFilters>(
+    prefix13.LearningResourceFilters:
+        ClientTarget<prefix13.LearningResourceFilters>(
           'src/components/pages/learning_resource_filters',
         ),
 
-    prefix15.LearningResourceFiltersSidebar:
-        ClientTarget<prefix15.LearningResourceFiltersSidebar>(
+    prefix14.LearningResourceFiltersSidebar:
+        ClientTarget<prefix14.LearningResourceFiltersSidebar>(
           'src/components/pages/learning_resource_filters_sidebar',
         ),
+
+    prefix15.InteractiveQuiz: ClientTarget<prefix15.InteractiveQuiz>(
+      'src/components/tutorial/client/quiz',
+      params: _prefix15InteractiveQuiz,
+    ),
   },
   styles: () => [...prefix16.FileTree.styles],
 );
@@ -151,11 +151,11 @@ Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
   'height': c.height,
   'runAutomatically': c.runAutomatically,
 };
-Map<String, dynamic> _prefix8InteractiveQuiz(prefix8.InteractiveQuiz c) => {
-  'title': c.title,
-  'questions': c.questions.map((i) => i.toJson()).toList(),
-};
-Map<String, dynamic> _prefix12ArchiveTable(prefix12.ArchiveTable c) => {
+Map<String, dynamic> _prefix11ArchiveTable(prefix11.ArchiveTable c) => {
   'os': c.os,
   'channel': c.channel,
+};
+Map<String, dynamic> _prefix15InteractiveQuiz(prefix15.InteractiveQuiz c) => {
+  'title': c.title,
+  'questions': c.questions.map((i) => i.toJson()).toList(),
 };

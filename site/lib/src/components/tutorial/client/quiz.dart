@@ -3,7 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:universal_web/web.dart' as web;
 
+import '../../../models/quiz_model.dart';
 import '../../../util.dart';
 import '../../common/button.dart';
 
@@ -23,6 +25,9 @@ class InteractiveQuiz extends StatefulComponent {
 }
 
 class _InteractiveQuizState extends State<InteractiveQuiz> {
+  final quizKey = GlobalNodeKey<web.HTMLElement>();
+  final nextButtonKey = GlobalNodeKey<web.HTMLElement>();
+
   int currentQuestionIndex = 0;
   List<int> selectedOptionIndices = [];
 
@@ -42,9 +47,29 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
     return question.options[selectedOptionIndices[currentQuestionIndex]];
   }
 
+  void toggleOption(int index, [bool fromKeyboard = false]) {
+    if (selectedOption != null) {
+      return;
+    }
+    setState(() {
+      if (selectedOptionIndices.length <= currentQuestionIndex) {
+        selectedOptionIndices.add(index);
+      } else {
+        selectedOptionIndices[currentQuestionIndex] = index;
+      }
+    });
+    if (fromKeyboard) {
+      context.binding.addPostFrameCallback(() {
+        // Move focus to the next button.
+        final nextButton = nextButtonKey.currentNode;
+        nextButton?.focus();
+      });
+    }
+  }
+
   @override
   Component build(BuildContext context) {
-    return div(classes: 'quiz not-content', [
+    return div(key: quizKey, classes: 'quiz not-content', [
       if (component.title case final title?)
         h3(classes: 'quiz-title', [
           text(title),
@@ -67,25 +92,21 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
             ol([
               for (final (index, option) in question.options.indexed)
                 li(
-                  classes: [
-                    if (option == selectedOption)
-                      'selected'
-                    else if (selectedOption != null)
-                      'disabled',
-                  ].toClasses,
+                  attributes: {
+                    'role': 'button',
+                    if (selectedOption == null) 'tabindex': '0',
+                    if (option == selectedOption) 'aria-pressed': 'true',
+                    if (selectedOption != null) 'aria-disabled': 'true',
+                  },
                   events: {
                     'click': (_) {
-                      if (selectedOption != null) {
-                        return;
+                      toggleOption(index);
+                    },
+                    'keyup': (event) {
+                      if ((event as web.KeyboardEvent).key == 'Enter' ||
+                          event.key == ' ') {
+                        toggleOption(index, true);
                       }
-                      setState(() {
-                        if (selectedOptionIndices.length <=
-                            currentQuestionIndex) {
-                          selectedOptionIndices.add(index);
-                        } else {
-                          selectedOptionIndices[currentQuestionIndex] = index;
-                        }
-                      });
                     },
                   },
                   [
@@ -125,6 +146,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
           content: 'Previous',
         ),
         Button(
+          ref: nextButtonKey,
           classes: ['quiz-button'],
           style: ButtonStyle.filled,
           disabled: currentQuestion != null && selectedOption == null,
@@ -157,57 +179,10 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
             (true, _, _) => 'Restart',
             (false, _, false) => 'Try again',
             (false, false, _) => 'Next question',
-            (false, true, _) => 'Finish',
+            (false, true, _) => 'Finish quiz',
           },
         ),
       ]),
     ]);
   }
-}
-
-class Question {
-  const Question(this.question, this.options);
-
-  final String question;
-  final List<AnswerOption> options;
-
-  @decoder
-  factory Question.fromMap(Map<Object?, Object?> json) {
-    return Question(
-      json['question'] as String,
-      (json['options'] as List<Object?>)
-          .map((e) => AnswerOption.fromJson(e as Map<Object?, Object?>))
-          .toList(),
-    );
-  }
-
-  @encoder
-  Map<Object?, Object?> toJson() => {
-    'question': question,
-    'options': options.map((e) => e.toJson()).toList(),
-  };
-}
-
-class AnswerOption {
-  const AnswerOption(this.text, this.correct, this.explanation);
-
-  final String text;
-  final bool correct;
-  final String explanation;
-
-  @decoder
-  factory AnswerOption.fromJson(Map<Object?, Object?> json) {
-    return AnswerOption(
-      json['text'] as String,
-      json['correct'] as bool? ?? false,
-      json['explanation'] as String,
-    );
-  }
-
-  @encoder
-  Map<Object?, Object?> toJson() => {
-    'text': text,
-    'correct': correct,
-    'explanation': explanation,
-  };
 }

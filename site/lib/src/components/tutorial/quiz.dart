@@ -6,6 +6,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:yaml/yaml.dart';
 
+import '../../models/quiz_model.dart';
 import 'client/quiz.dart';
 
 class Quiz extends CustomComponent {
@@ -29,6 +30,7 @@ class Quiz extends CustomComponent {
       final questions = (data as YamlList).nodes
           .map((n) => Question.fromMap(n as YamlMap))
           .toList();
+      assert(questions.isNotEmpty, 'Quiz must contain at least one question.');
       return InteractiveQuiz(title: title, questions: questions);
     }
     return null;

@@ -43,20 +43,20 @@
         margin-bottom: 0.2rem;
         transition: background-color 500ms;
 
-        &:not(:where(.selected, .disabled)):hover {
+        &:not(:where([aria-pressed="true"], [aria-disabled="true"])):hover {
           background-color: var(--site-inset-bgColor);
           cursor: pointer;
         }
 
-        &.selected:has(.correct) {
+        &[aria-pressed="true"]:has(.correct) {
           background-color: oklch(from var(--site-alert-tip-color) l c h / 0.2);
         }
 
-        &.selected:has(.incorrect) {
+        &[aria-pressed="true"]:has(.incorrect) {
           background-color: oklch(from var(--site-alert-error-color) l c h / 0.2);
         }
 
-        &.disabled {
+        &:not([aria-pressed="true"])[aria-disabled="true"] {
           opacity: 0.6;
         }
 
@@ -70,7 +70,7 @@
           transition: grid-template-rows 500ms;
         }
 
-        &.selected .question-wrapper {
+        &[aria-pressed="true"] .question-wrapper {
           grid-template-rows: min-content 1fr;
         }
 
