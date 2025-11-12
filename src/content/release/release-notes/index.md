@@ -13,6 +13,7 @@ check out the Flutter [CHANGELOG][].
 :::
 
 * 3.38.0
+  * [3.38.0 announcement][]
   * [3.38.0 release notes & change log][]
   * [3.38.0 breaking changes & migrations][]
 * 3.35.0
@@ -104,6 +105,7 @@ check out the Flutter [CHANGELOG][].
 * Earlier
   * [Archived release notes][]
 
+[3.38.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 [3.38.0 release notes & change log]: /release/release-notes/release-notes-3.38.0
 [3.38.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-38
 [3.35.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766

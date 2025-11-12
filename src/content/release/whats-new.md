@@ -89,7 +89,7 @@ Other relevant resources:
 * [DevTools 2.25.1 release notes][]
 * [Dart 3.10 release][] blog post
 
-[3.38 release notes and changelog]: xxx
+[3.38 release notes and changelog]: /release/breaking-changes#released-in-flutter-3-38
 [accessibility docs]: /ui/accessibility
 [bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
 [Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
