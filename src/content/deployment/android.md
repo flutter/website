@@ -647,10 +647,12 @@ Example:
 returns any number greater than 0.
 
 **Why this works**
-Flutter depends on C++ code called the Flutter engine. On Android, this engine is bundled as an `.so` native library.
-Historically, this file has been named `libflutter.so`. The Flutter framework and the developer's Dart code are combined into `libapp.so`.
-The Flutter codebase names this library `flutter`; Java/Android tooling adds the `lib` prefix and handles library location across architectures.
-Many reverse engineers use this method to identify Flutter apps.
+Flutter depends on C++ code used by the Flutter engine. In Android,
+this code is bundled with the Flutter framework and the developer's
+Dart code as a native library called `libflutter.so`.
+The Java/Android tooling renames the `flutter` library with the `lib` prefix
+and handles library location across architectures.
+This is how some reverse engineer an APK to identify it as a Flutter app.
 
 #### Secondary Evaluation:
 Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>` tag with `android:name="flutterEmbedding"`.
