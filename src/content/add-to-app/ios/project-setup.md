@@ -60,16 +60,19 @@ This helps when testing the Flutter-only parts of your code.
 
 The `my_flutter` module directory structure resembles a typical Flutter app.
 
-```plaintext
-my_flutter/
-├── .ios/
-│   ├── Runner.xcworkspace
-│   └── Flutter/podhelper.rb
-├── lib/
-│   └── main.dart
-├── test/
-└── pubspec.yaml
-```
+<FileTree>
+
+- my_flutter/
+  - .ios/
+    - Runner.xcworkspace
+    - Flutter/
+      - podhelper.rb
+  - lib/
+    - main.dart
+  - test/
+  - pubspec.yaml
+
+</FileTree>
 
 Your Dart code should be added to the `lib/` directory.
 Your Flutter dependencies, packages, and plugins must be added to the
