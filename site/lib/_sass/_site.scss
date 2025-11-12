@@ -22,6 +22,7 @@
 @use 'components/cookie-notice';
 @use 'components/dropdown';
 @use 'components/expansion-list';
+@use 'components/filter-search';
 @use 'components/footer';
 @use 'components/header';
 @use 'components/icons';
@@ -35,9 +36,11 @@
 @use 'components/tabs';
 @use 'components/theming';
 @use 'components/toc';
+@use 'components/tooltip';
 @use 'components/trailing';
 
 // Styles for specific pages, alphabetically ordered.
+@use 'pages/glossary';
 @use 'pages/learning-resources-index';
 @use 'pages/not-found';
 @use 'pages/search';

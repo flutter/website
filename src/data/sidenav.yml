@@ -611,6 +611,8 @@
           permalink: /platform-integration/web
         - title: Set up web development
           permalink: /platform-integration/web/setup
+        - title: Set up a configuration file
+          permalink: /platform-integration/web/web-dev-config-file
         - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Compile to WebAssembly

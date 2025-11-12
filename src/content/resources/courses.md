@@ -11,7 +11,8 @@ These courses are listed alphabetically.
 To include your course, [submit a PR][]:
 
 * [20 Hour Dart & Flutter YT Course For Beginners][] by Rivaan Ranawat
-* [The Best Flutter Course on the Internet][] by Tadas Petra & Robert Brunhage
+* [Best Dart Course][] by Tadas Petra & Robert Brunhage
+* [Best Flutter Course][] by Tadas Petra & Robert Brunhage
 * [Flutter in Production][] by Andrea Bizzotto
 * [Flutter Foundations][] by Andrea Bizzotto
 * [Flutter & Firebase Masterclass][] by Andrea Bizzotto
@@ -30,7 +31,8 @@ To include your course, [submit a PR][]:
 * [Tech Idara - Flutter from Basic to Advanced][] by Ishaq Hassan (Urdu)
 
 [20 Hour Dart & Flutter YT Course For Beginners]: https://youtu.be/CzRQ9mnmh44
-[The Best Flutter Course on the Internet]: https://www.hungrimind.com/learn/flutter
+[Best Dart Course]: https://www.hungrimind.com/learn/dart
+[Best Flutter Course]: https://www.hungrimind.com/learn/flutter
 [Flutter in Production]: https://codewithandrea.com/courses/flutter-in-production/
 [Flutter Foundations]: https://codewithandrea.com/courses/flutter-foundations/
 [Flutter & Firebase Masterclass]: https://codewithandrea.com/courses/flutter-firebase-masterclass/

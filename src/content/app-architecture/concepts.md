@@ -30,7 +30,7 @@ Within each layer, you should further separate your application by
 feature or functionality. For example, your application's authentication logic
 should be in a different class than the search logic.
 
-In Flutter, this applies to widgets in the UI layer as well. You should write
+In Flutter, this applies to [widgets](/resources/glossary#widget) in the UI layer as well. You should write
 reusable, lean widgets that hold as little logic as possible.
 
 ## Layered architecture

@@ -1,0 +1,62 @@
+- term: "Impeller"
+  short_description: |-
+    Flutter's modern graphics rendering engine,
+    designed for smooth, predictable performance.
+  long_description: |-
+    _Impeller_ is Flutter's high-performance rendering engine,
+    built from the ground up for Flutter's needs and modern graphics APIs.
+
+    Its primary goal is to provide consistently smooth performance and
+    eliminate stuttering while rendering, particularly that
+    caused by shader compilation during animations and interactions.
+
+    Impeller achieves this by pre-compiling a specific, smaller set of
+    shaders at application build time, rather than compiling at runtime.
+  related_links:
+    - text: "Impeller documentation"
+      link: "/perf/impeller"
+      type: "doc"
+    - text: "Impeller FAQ"
+      link: "https://github.com/flutter/flutter/blob/main/docs/engine/impeller/docs/faq.md"
+      type: "external"
+  labels:
+    - "rendering"
+    - "performance"
+    - "engine"
+
+- term: "Widget"
+  short_description: |-
+    The basic building block of a Flutter user interface.
+  long_description: |-
+    An immutable description of part of a user interface.
+
+    In Flutter, almost everything is a _widget_.
+    Widgets are the fundamental building blocks you use to
+    create your application's UI with Flutter.
+    Each widget is an immutable declaration of _what the UI should
+    look like based on its current configuration and state.
+
+    Widgets are composed together in a hierarchy to form the widget tree.
+    When a widget's state changes, the Flutter framework
+    rebuilds the necessary parts of the tree to update the UI.
+    
+    There are two primary types of widgets,
+    including [`StatelessWidget`][], which have no mutable state, and
+    [`StatefulWidget`][], which have a persistent [state][] that can be updated.
+
+    [`StatelessWidget`]: https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html
+    [`StatefulWidget`]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
+    [state]: https://api.flutter.dev/flutter/widgets/State-class.html
+  related_links:
+    - text: "Fundamentals: Widgets"
+      link: "/get-started/fundamentals/widgets"
+      type: "doc"
+    - text: "Widget catalog"
+      link: "/ui/widgets"
+      type: "doc"
+    - text: "Widget class"
+      link: "https://api.flutter.dev/flutter/widgets/Widget-class.html"
+      type: "api"
+  labels:
+    - "ui"
+    - "widgets"

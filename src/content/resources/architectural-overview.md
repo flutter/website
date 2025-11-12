@@ -26,16 +26,12 @@ much code as possible.
 
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
-(On web, Flutter supports hot restart and
-[hot reload behind a flag][].)
 For release, Flutter apps are compiled directly to machine code,
 whether Intel x64 or ARM instructions,
 or to JavaScript if targeting the web.
 The framework is open source, with a permissive BSD license,
 and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
-
-[hot reload behind a flag]: /platform-integration/web/building#hot-reload-web
 
 This overview is divided into a number of sections:
 
@@ -1171,5 +1167,3 @@ provides a useful guide to the framework's design philosophy.
 [^3]: There are some limitations with this approach, for example,
   transparency doesn't composite the same way for a platform view as
   it would for other Flutter widgets.
-[^4]: One example is shadows, which have to be approximated with
-  DOM-equivalent primitives at the cost of some fidelity.

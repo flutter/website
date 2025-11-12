@@ -35,7 +35,7 @@ button {
     font-weight: 500;
     font-family: var(--site-ui-fontFamily);
     gap: 0.3rem;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.9rem;
     text-decoration: none;
     cursor: pointer;
   }
@@ -45,6 +45,11 @@ button {
     color: var(--site-filledButton-fgColor);
     outline-offset: 2px;
     user-select: none;
+
+    span.material-symbols {
+      font-variation-settings: 'FILL' 1;
+      font-size: 20px;
+    }
 
     &:hover {
       @include mixins.interaction-style(8%);

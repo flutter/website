@@ -1,0 +1,97 @@
+@use '../base/mixins';
+
+body.glossary-page main {
+  .glossary-card {
+    height: auto;
+    padding: 0.75rem;
+
+    .expandable-content {
+      border-top: 0.05rem solid var(--site-inset-borderColor);
+      padding-top: 0.5rem;
+    }
+
+    &.collapsed {
+      min-height: 8rem;
+
+      .initial-content {
+        // Only show the first paragraph if collapsed.
+        > :not(:first-child) {
+          display: none;
+        }
+      }
+
+      .expandable-content {
+        display: none;
+      }
+
+      .expand-button {
+        transform: rotate(180deg);
+      }
+    }
+
+    .expand-button {
+      &:hover, &:focus-within {
+        transition: transform .25s ease-out;
+      }
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .details-header {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+  .resources-list {
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    li {
+      display: flex;
+
+      .filled-button {
+        text-wrap: pretty;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+  }
+
+  .initial-content, .expandable-content {
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-header-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.25rem;
+
+    .icon-button {
+      border-radius: 1.5rem;
+
+      > span {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

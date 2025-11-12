@@ -41,8 +41,10 @@ void _setUpSite() {
   _setUpSearchKeybindings();
   _setUpTabs();
   _setUpCollapsibleElements();
+  _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
+  _setUpTooltips();
 }
 
 void _setUpSearchKeybindings() {
@@ -255,6 +257,48 @@ void _setUpCollapsibleElements() {
   }
 }
 
+void _setUpExpandableCards() {
+  var currentFragment = web.window.location.hash.trim().toLowerCase();
+  if (currentFragment.startsWith('#')) {
+    // Remove the leading '#' from the fragment.
+    currentFragment = currentFragment.substring(1);
+  }
+  final expandableCards = web.document.querySelectorAll('.expandable-card');
+  web.Element? targetCard;
+
+  for (var i = 0; i < expandableCards.length; i++) {
+    final card = expandableCards.item(i) as web.Element;
+    final expandButton = card.querySelector('.expand-button');
+    if (expandButton == null) continue;
+
+    expandButton.addEventListener(
+      'click',
+      ((web.Event e) {
+        if (card.classList.contains('collapsed')) {
+          card.classList.remove('collapsed');
+          expandButton.ariaExpanded = 'true';
+        } else {
+          card.classList.add('collapsed');
+          expandButton.ariaExpanded = 'false';
+        }
+        e.preventDefault();
+      }).toJS,
+    );
+
+    if (card.id != currentFragment) {
+      card.classList.add('collapsed');
+      expandButton.ariaExpanded = 'false';
+    } else {
+      targetCard = card;
+    }
+  }
+
+  if (targetCard != null) {
+    // Scroll the expanded card into view.
+    targetCard.scrollIntoView();
+  }
+}
+
 void _setUpPlatformKeys() {
   final os = getOS();
   // Use Command key for macOS, Control key for other OS.
@@ -403,5 +447,95 @@ void _setUpTocActiveObserver() {
 
   for (var i = 0; i < headings.length; i++) {
     observer.observe(headings.item(i) as web.Element);
+  }
+}
+
+void _setUpTooltips() {
+  final tooltipWrappers = web.document.querySelectorAll('.tooltip-wrapper');
+
+  final isTouchscreen = web.window.matchMedia('(pointer: coarse)').matches;
+
+  void setup({required bool setUpClickListener}) {
+    for (var i = 0; i < tooltipWrappers.length; i++) {
+      final linkWrapper = tooltipWrappers.item(i) as web.HTMLElement;
+      final target = linkWrapper.querySelector('.tooltip-target');
+      final tooltip = linkWrapper.querySelector('.tooltip') as web.HTMLElement?;
+
+      if (target == null || tooltip == null) {
+        continue;
+      }
+      _ensureVisible(tooltip);
+
+      if (setUpClickListener && isTouchscreen) {
+        // On touchscreen devices, toggle tooltip visibility on tap.
+        target.addEventListener(
+          'click',
+          ((web.Event e) {
+            final isVisible = tooltip.classList.contains('visible');
+            if (!isVisible) {
+              tooltip.classList.add('visible');
+              e.preventDefault();
+            }
+          }).toJS,
+        );
+      }
+    }
+  }
+
+  void closeAll() {
+    final visibleTooltips = web.document.querySelectorAll(
+      '.tooltip.visible',
+    );
+    for (var i = 0; i < visibleTooltips.length; i++) {
+      final tooltip = visibleTooltips.item(i) as web.HTMLElement;
+      tooltip.classList.remove('visible');
+    }
+  }
+
+  setup(setUpClickListener: true);
+
+  // Reposition tooltips on window resize.
+  web.EventStreamProviders.resizeEvent.forTarget(web.window).listen((_) {
+    setup(setUpClickListener: false);
+  });
+
+  // Close tooltips when clicking outside of any tooltip wrapper.
+  web.EventStreamProviders.clickEvent.forTarget(web.document).listen((e) {
+    if ((e.target as web.Element).closest('.tooltip-wrapper') == null) {
+      closeAll();
+    }
+  });
+
+  // On touchscreen devices, close tooltips when scrolling.
+  if (isTouchscreen) {
+    web.EventStreamProviders.scrollEvent.forTarget(web.window).listen((_) {
+      closeAll();
+    });
+  }
+}
+
+/// Adjust the tooltip position to ensure it is fully inside the
+/// ancestor .content element.
+void _ensureVisible(web.HTMLElement tooltip) {
+  final containerRect = tooltip.closest('.content')?.getBoundingClientRect();
+  final tooltipRect = tooltip.getBoundingClientRect();
+  final offset = double.parse(tooltip.getAttribute('data-adjusted') ?? '0');
+
+  final tooltipLeft = tooltipRect.left - offset;
+  final tooltipRight = tooltipRect.right - offset;
+  final containerLeft = containerRect?.left ?? 0.0;
+  final containerRight = containerRect?.right ?? web.window.innerWidth;
+
+  if (tooltipLeft < containerLeft) {
+    final offset = containerLeft - tooltipLeft;
+    tooltip.style.left = 'calc(50% + ${offset}px)';
+    tooltip.dataset['adjusted'] = offset.toString();
+  } else if (tooltipRight > containerRight) {
+    final offset = tooltipRight - containerRight;
+    tooltip.style.left = 'calc(50% - ${offset}px)';
+    tooltip.dataset['adjusted'] = (-offset).toString();
+  } else {
+    tooltip.style.left = '50%';
+    tooltip.dataset['adjusted'] = '0';
   }
 }
