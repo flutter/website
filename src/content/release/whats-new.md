@@ -84,7 +84,7 @@ Let us know what you think!
   about breaking changes, code deprecations, and migration guides.
 
 Other relevant resources:
-75600050645551
+
 * [3.38 release notes and changelog][]
 * [DevTools 2.25.1 release notes][]
 * [Dart 3.10 release][] blog post
