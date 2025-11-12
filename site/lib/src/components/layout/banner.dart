@@ -8,6 +8,10 @@ import 'package:jaspr/jaspr.dart';
 class DashBanner extends StatelessComponent {
   const DashBanner(this.inlineHtmlContent, {super.key});
 
+  /// The raw, inline HTML content to render in the banner.
+  ///
+  /// This should only be sourced from managed content,
+  /// such as our checked-in data files.
   final String inlineHtmlContent;
 
   @override
