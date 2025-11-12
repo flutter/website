@@ -82,7 +82,7 @@ MaterialApp(
 ```
 
 One side effect of changing the default transition is that the duration that it
-takes to transition between pages has increased from 300ms to 450ms. This may
+takes to transition between pages has increased from 300ms to 450ms. This might
 cause breakages in tests that depend on the previous transition duration.
 Fortunately, it's possible to use [`TransitionDurationObserver`][] to keep tests
 independent of whatever page transition is used.
