@@ -47,8 +47,9 @@ class DocLayout extends FlutterDocsLayout {
               currentTitle: pageTitle,
             ),
           if (showBanner)
-            if (page.data['banner'] case final Map<String, Object?> bannerData)
-              DashBanner(BannerContent.fromMap(bannerData)),
+            if (siteData['bannerHtml'] case final String bannerHtml
+                when bannerHtml.trim().isNotEmpty)
+              DashBanner(bannerHtml),
           div(classes: 'after-leading-content', [
             if (tocData != null)
               aside(id: 'side-menu', [
