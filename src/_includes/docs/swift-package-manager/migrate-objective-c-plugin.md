@@ -7,11 +7,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    directories.
    Name this new directory the name of the platform package.
 
-   <pre>
-   plugin_name/ios/
-   ├── ...
-   └── <b>plugin_name/</b>
-   </pre>
+   <FileTree>
+
+   - plugin_name/
+     - ios/
+       - ...
+       - **plugin_name/**
+   
+   </FileTree>
 
 1. Within this new directory, create the following files/directories:
 
@@ -27,23 +30,26 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    Your plugin should look like:
 
-   <pre>
-   plugin_name/ios/
-   ├── ...
-   └── plugin_name/
-      ├── <b>Package.swift</b>
-      └── <b>Sources/plugin_name/include/plugin_name/</b>
-         └── <b>.gitkeep</b>
-   </pre>
+   <FileTree>
+
+   - plugin_name/
+     - ios/
+       - ...
+       - plugin_name/
+         - **Package.swift**
+         - **Sources/plugin_name/include/plugin_name/**
+           - **.gitkeep/**
+
+   </FileTree>
 
 1. Use the following template in the `Package.swift` file:
 
    ```swift title="Package.swift"
    // swift-tools-version: 5.9
    // The swift-tools-version declares the minimum version of Swift required to build this package.
-   
+
    import PackageDescription
-   
+
    let package = Package(
        // TODO: Update your plugin name.
        name: "plugin_name",
@@ -72,7 +78,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
@@ -128,7 +134,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
@@ -159,7 +165,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    [!.process("PrivacyInfo.xcprivacy"),!]
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
@@ -194,7 +200,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    To remove the `modulemap` for Swift Package Manager but keep it for
    CocoaPods, exclude the `modulemap` and umbrella header in the plugin's
    `Package.swift` file.
-  
+
    The example below assumes the `modulemap` and umbrella header are located
    in the `ios/plugin_name/Sources/plugin_name/include` directory.
 
@@ -232,20 +238,20 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Before:
 
-     <pre>
+     ```plaintext
      ios/Classes/
      ├── PublicHeaderFile.h
      └── ImplementationFile.m
-     </pre>
+     ```
 
    * After:
 
-     <pre>
+     ```plaintext highlightLines=2
      ios/plugin_name/Sources/plugin_name/
-     └── <b>include/plugin_name/</b>
+     └── include/plugin_name/
         └── PublicHeaderFile.h
      └── ImplementationFile.m
-     </pre>
+     ```
 
    In this example, the import statements in `ImplementationFile.m`
    should be updated:

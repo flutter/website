@@ -5,6 +5,8 @@ description: >-
   enabled in Flutter after v3.14.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Android 14 introduced nonlinear font scaling up to 200%.
@@ -36,7 +38,7 @@ check out the
 To opt-out of nonlinear text scaling on Android 14 until you migrate your app,
 add a modified `MediaQuery` at the top of your app's widget tree:
 
-```dart 
+```dart
 runApp(
   Builder(builder: (context) {
     final mediaQueryData = MediaQuery.of(context);
@@ -69,7 +71,7 @@ Relevant PRs:
 
 * [Implementing TextScaler for nonlinear text scaling][]
 
-See also: 
+See also:
 
 * [Deprecate `textScaleFactor` in favor of `TextScaler`][]
 

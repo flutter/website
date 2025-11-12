@@ -1,6 +1,5 @@
 // #docregion url-launcher
 import 'package:flutter/material.dart';
-import 'package:path/path.dart' as p;
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class DemoPage extends StatelessWidget {
   const DemoPage({super.key});
 
   void launchURL() {
-    launchUrl(p.toUri('https://flutter.dev'));
+    launchUrl(Uri.parse('https://flutter.dev'));
   }
 
   @override

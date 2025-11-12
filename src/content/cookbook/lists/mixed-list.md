@@ -1,9 +1,6 @@
 ---
 title: Create lists with different types of items
 description: How to implement a list that contains different types of assets.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/mixed_list/"?>

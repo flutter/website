@@ -1,7 +1,7 @@
 ---
 title: Integration testing concepts
 description: Learn about integration testing in Flutter.
-short-title: Introduction
+shortTitle: Introduction
 ---
 
 <?code-excerpt path-base="cookbook/testing/integration/introduction/"?>
@@ -24,8 +24,8 @@ The Flutter SDK includes the [integration_test][] package.
 : The system on which you develop your app, like a desktop computer.
 
 **target device**
-: The mobile device, browser, or desktop application that runs
-your Flutter app.
+: The mobile device, browser, or desktop application that
+  runs your Flutter app.
 
   If you run your app in a web browser or as a desktop application,
   the host machine and the target device are the same.
@@ -38,7 +38,7 @@ as a dependency for your Flutter app test file.
 To migrate existing projects that use `flutter_driver`,
 consult the [Migrating from flutter_driver][] guide.
 
-Tests written with the `integration_test` package 
+Tests written with the `integration_test` package
 can perform the following tasks.
 
 * Run on the target device.
@@ -55,6 +55,5 @@ The other guides in this section explain how to use integration tests to validat
 [functionality]: /testing/integration-tests/
 [performance]: /cookbook/testing/integration/profiling/
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
-[Migrating from flutter_driver]:
-    /release/breaking-changes/flutter-driver-migration
+[Migrating from flutter_driver]: /release/breaking-changes/flutter-driver-migration
 [widget tests]: /testing/overview#widget-tests

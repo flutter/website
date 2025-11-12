@@ -19,12 +19,10 @@ class MyApp extends StatelessWidget {
       title: 'Isolates demo',
       home: Scaffold(
         appBar: AppBar(title: const Text('Isolates demo')),
-        body: Center(
+        body: const Center(
           child: ElevatedButton(
-            onPressed: () {
-              getPhotos();
-            },
-            child: const Text('Fetch photos'),
+            onPressed: getPhotos,
+            child: Text('Fetch photos'),
           ),
         ),
       ),

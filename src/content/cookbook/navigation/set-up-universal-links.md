@@ -45,21 +45,21 @@ It provides a simple API to handle complex routing scenarios.
     ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
+
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),
@@ -83,7 +83,7 @@ It provides a simple API to handle complex routing scenarios.
    :::
 
    :::note
-   If you're using third-party plugins to handle deep links, 
+   If you're using third-party plugins to handle deep links,
    such as [app_links][],
    Flutter's default deeplink handler will
    break these plugins.
@@ -99,8 +99,8 @@ Personal development teams don't support the Associated Domains
 capability. To add associated domains, choose the IDE tab.
 :::
 
-{% tabs %}
-{% tab "Xcode" %}
+<Tabs key="darwin-editors">
+<Tab name="Xcode">
 
 1. Launch Xcode if necessary.
 
@@ -129,8 +129,8 @@ capability. To add associated domains, choose the IDE tab.
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-{% endtab %}
-{% tab "Other editors" %}
+</Tab>
+<Tab name="Other editors">
 
 1. Open the `ios/Runner/Runner.entitlements` XML file in your preferred editor.
 
@@ -169,8 +169,8 @@ perform the following steps:
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You have finished configuring the application for deep linking.
 
@@ -270,7 +270,7 @@ To bypass Apple's CDN, check out the [alternate mode section][].
        width="50%" />
 
    When complete,
-   the Flutter app displays on the home screen of the 
+   the Flutter app displays on the home screen of the
    iOS device or Simulator.
 
 1. If you test using the Simulator, use the Xcode CLI:
@@ -286,7 +286,7 @@ To bypass Apple's CDN, check out the [alternate mode section][].
    1. Click the resulting link.
 
    If successful, the Flutter app launches and displays its details screen.
- 
+
    <img
       src="/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png"
       alt="Deeplinked Simulator screenshot"

@@ -1,6 +1,6 @@
 ---
 title: Introduction to declarative UI
-short-title: Declarative UI
+shortTitle: Declarative UI
 description: Explains the difference between a declarative and imperative programming style.
 ---
 
@@ -64,4 +64,3 @@ state of the layout) behind the scenes with RenderObjects.
 RenderObjects persist between frames and Flutter's lightweight Widgets
 tell the framework to mutate the RenderObjects between states.
 The Flutter framework handles the rest.
-

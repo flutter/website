@@ -1,9 +1,6 @@
 ---
 title: Animate a widget across screens
 description: How to animate a widget from one screen to another
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/hero_animations"?>
@@ -49,7 +46,7 @@ class MainScreen extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
+            MaterialPageRoute<void>(
               builder: (context) {
                 return const DetailScreen();
               },
@@ -161,7 +158,7 @@ class MainScreen extends StatelessWidget {
         onTap: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
+            MaterialPageRoute<void>(
               builder: (context) {
                 return const DetailScreen();
               },

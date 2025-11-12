@@ -1,0 +1,426 @@
+# Good for beginners
+- name: Your first Flutter app workshop
+  description: |
+    An instructor-led version of our very popular
+    'Write your first Flutter app' codelab.
+  tags:
+    - beginner
+    - intro
+  type: workshop
+  link:
+    label: YouTube
+    url: https://www.youtube.com/watch?v=8sAyPDLorek
+
+- name: Your first Flutter app
+  description: |
+    Create a simple random-name generator app.
+    This app is responsive and runs on mobile, desktop, and web.
+  tags:
+    - beginner
+    - intro
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-first
+
+# Next steps
+
+- name: Records and Patterns in Dart
+  description: |
+    Discover Dart 3's new records and patterns features.
+    Learn how you can use them in a Flutter app to help you
+    write more readable and maintainable Dart code.
+  tags:
+    - dart
+    - records
+    - pattern matching
+  sdk: dart
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/dart-patterns-records
+
+- name: Scrolling experiences in Flutter
+  description: |
+    Start with an app that performs simple, straightforward scrolling
+      and enhance it to create fancy and custom scrolling effects
+      by using slivers.
+  tags:
+    - scrolling
+    - scroll
+  type: codelab
+  link:
+    label: YouTube
+    url: https://www.youtube.com/watch?v=YY-_yrZdjGc
+
+#Design
+
+- name: Take your Flutter app from boring to beautiful
+  description: |
+    Learn how to use some of the features in Material 3
+    to make your app beautiful and responsive.
+  tags:
+    - design
+    - material
+    - responsive
+    - adaptive
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
+
+- name: Building next generation UIs in Flutter
+  description: |
+    Learn how to build a Flutter app that uses the power of `flutter_animate`,
+    fragment shaders, and particle fields.
+  tags:
+    - animation
+    - flutter animate
+    - ui
+    - shaders
+
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
+
+- name: Adaptive Apps in Flutter
+  description: |
+    Learn how to build a Flutter app that adapts to the
+      platform that it's running on, be that Android, iOS,
+      the web, Windows, macOS, or Linux.
+  tags:
+    - adaptive
+    - linux
+    - macos
+    - desktop
+    - windows
+    - android
+    - ios
+    - web
+
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
+
+- name: Animations in Flutter
+  description: |
+    Learn how to build animated effects in Flutter. You'll learn how to build
+    implicit and explicit animations, and customize 
+    navigation transition animations the animations package and predictive back
+    on Android.
+  tags:
+    - animations
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/advanced-flutter-animations
+
+- name: Building Beautiful Transitions with Material Motion for Flutter
+  description: |
+    Learn how to use the Material animations package to
+    add pre-built transitions to a Material app called Reply.
+  tags:
+    - animations
+    - material
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/material-motion-flutter
+
+- name: How to debug layout issues with the Flutter Inspector
+  description: |
+    Step-by-step instructions on how to debug 
+    common layout problems using the Flutter
+    Inspector and Layout Explorer.
+  tags:
+    - debug
+    - tooling
+    - developer tools
+  type: codelab
+  link:
+    label: Medium
+    url: https://blog.flutter.dev/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
+
+- name: MDC-101 - Material Components (MDC) Basics
+  description: |
+    Learn the basics of using Material Components by building
+    a simple app with core components.
+  tags:
+    - material
+    - design
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-101-flutter
+
+- name: MDC-102 - Material Structure and Layout
+  description: |
+    Learn how to use Material for structure and layout in Flutter.
+    Continue building the e-commerce app, introduced in MDC-101,
+    by adding navigation, structure, and data.
+  tags:
+    - material
+    - design
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-102-flutter
+
+- name: MDC-103 - Material Theming with Color, Shape, Elevation, and Type
+  description: |
+    Discover how Material Components for Flutter make it
+    easy to differentiate your product, and express your
+    brand through design.
+  tags:
+    - material
+    - design
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-103-flutter
+
+- name: MDC-104 - Material Advanced Components
+  description: |
+    Improve your design and learn to use our advanced
+    component backdrop menu.
+  tags:
+    - material
+    - design
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/mdc-104-flutter
+
+#Flutter with
+
+## Monetizing Flutter
+- name: Adding AdMob Ads to a Flutter app
+  description: |
+    Learn how to add an AdMob banner, an interstitial ad,
+    and a rewarded ad to an app called Awesome Drawing Quiz,
+    a game that lets players guess the name of the drawing.
+  tags:
+    - ads
+    - admob
+    - monetization
+
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter
+
+- name: Adding an AdMob banner and native inline ads to a Flutter app
+  description: |
+    Learn how to implement inline banner and native ads
+    to a travel booking app that lists possible
+    flight destinations.
+  tags:
+    - ads
+    - admob
+    - monetization
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter
+
+- name: Adding in-app purchases to your Flutter app
+  description: |
+    Extend a simple gaming app that uses the Dash mascot as
+    currency to offer three types of in-app purchases:
+    consumable, non-consumable, and subscription.
+  tags:
+    - in app purchases
+    - monetization
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases
+
+## Firebase
+
+- name: Add a user authentication flow using FirebaseUI
+  description: |
+    Learn how to add Firebase authentication to a Flutter app
+    with only a few lines of code.
+  tags:
+    - firebase
+    - authentication
+    - firebase UI
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps
+
+- name: Get to know Firebase for Flutter
+  description: |
+    Build an event RSVP and guestbook chat app on both Android
+    and iOS using Flutter, authenticating users with Firebase
+    Authentication, and sync data using Cloud Firestore.
+  tags:
+    - firebase
+    - android
+    - ios
+    - firestore
+    - real time database
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-get-to-know-flutter
+
+- name: Notifications with Firebase Cloud Messaging
+  description: |
+    Learn how to develop a multi-platform app with Flutter
+    and Firebase Cloud Messaging, integrating FCM to send and
+    receive messages on Android, iOS, and web.
+  tags:
+    - firebase
+    - cloud messaging
+    - multi platform
+    - web
+    - android
+    - ios
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://firebase.google.com/codelabs/firebase-fcm-flutter
+
+## Games
+
+- name: Add sound and music to your Flutter game with SoLoud
+  description: |
+    The SoLoud package, a free and portable engine,
+    delivers the low-latency and high-performance sound that's
+    essential for many games.
+  tags:
+    - game
+    - audio
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-soloud
+
+- name: Build a 2D physics game with Flutter and Flame
+  description: |
+    This codelab guides you through crafting game mechanics in a
+    Flutter and Flame game using a 2D physics simulation called Forge2D.
+  tags:
+    - game
+    - physics
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-flame-forge2d
+
+- name: Build a word puzzle with Flutter
+  description: |
+    This codelab focuses on building word puzzle games,
+    and dives into using Flutter's background processing
+    to generate expansive crossword-style grids of interlocking words.
+  tags:
+    - game
+    - isolate
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-word-puzzle
+
+- name: Introduction to Flame with Flutter
+  description: |
+    Build a Breakout clone using the Flame 2D game engine and
+    embed it in a Flutter wrapper.
+  tags:
+    - game
+    - intro
+    - beginner
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-flame-brick-breaker
+
+## Other techs
+
+- name: Adding Google Maps to a Flutter app
+  description: |
+    Display a Google map in an app, retrieve data from a
+    web service, and display the data as markers on the map.
+  tags:
+    - google maps
+    - maps
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/google-maps-in-flutter
+
+- name: Adding WebView to your Flutter app
+  description: |
+    With the WebView Flutter plugin you can add a WebView
+    widget to your Android or iOS Flutter app.
+  tags:
+    - android
+    - ios
+    - webview
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-webview
+
+- name: Using FFI in a Flutter plugin
+  description: |
+    Learn how to use Dart's FFI (foreign function interface)
+    library, ffigen, allowing you to leverage
+    existing native libraries that provide a
+    C interface.
+  tags:
+    - FFI
+    - interop
+    - plugin
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-ffigen
+
+# Testing
+
+- name: How to test a Flutter app
+  description: |
+    Start with a simple app that manages state with the Provider package.
+    Unit test the provider package. Write widget tests for two of the
+    widgets. Use Flutter Driver to create an integration test.
+  tags:
+    - testing
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-app-testing/
+
+# Platform
+
+- name: Adding a Home Screen widget to your Flutter app
+  description: |
+    Learn how to add a Home Screen widget to your Flutter app
+    on iOS. This applies to your home screen, lock screen, or the
+    today view.
+  tags:
+    - ios
+    - home screen widget
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/flutter-home-screen-widgets
+
+- name: Write a Flutter desktop application
+  description: |
+    Build a Flutter desktop app (Windows, Linux, or macOS)
+    that accesses GitHub APIs, and 
+    create and use plugins to interact with native APIs and desktop applications.
+  tags:
+    - desktop
+    - windows
+    - linux
+    - macos
+  type: codelab
+  link:
+    label: Google Codelab
+    url: https://codelabs.developers.google.com/codelabs/flutter-github-client

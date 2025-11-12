@@ -16,7 +16,9 @@ class FirstScreen extends StatelessWidget {
           child: const Text('Open second screen'),
           onPressed: () {
             Navigator.of(context).push(
-              MaterialPageRoute(builder: (context) => const SecondScreen()),
+              MaterialPageRoute<void>(
+                builder: (context) => const SecondScreen(),
+              ),
             );
           },
           // #enddocregion push-route

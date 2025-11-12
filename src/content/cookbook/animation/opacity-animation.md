@@ -1,9 +1,6 @@
 ---
 title: Fade a widget in and out
 description: How to fade a widget in and out.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/opacity_animation/"?>
@@ -205,6 +202,6 @@ class _MyHomePageState extends State<MyHomePage> {
 </noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState()`]: {{site.api}}/flutter/widgets/State/setState.html

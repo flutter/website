@@ -1,8 +1,8 @@
 ---
 title: Painting and effect widgets
-short-title: Painting
+shortTitle: Painting
 description: >
   A catalog of Flutter's widgets that provide effects and custom painting.
+widgetCategory: Painting and effects
+layout: widget-catalog-page
 ---
-
-{% render docs/catalog-page.md, categoryName:"Painting and effects", catalog:catalog %}

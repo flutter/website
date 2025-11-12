@@ -1,7 +1,7 @@
 ---
 title: Basic widgets
-short-title: Basics
+shortTitle: Basics
 description: A catalog of Flutter's basic widgets.
+widgetCategory: Basics
+layout: widget-catalog-page
 ---
-
-{% render docs/catalog-page.md, categoryName:"Basics", catalog:catalog %}

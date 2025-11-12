@@ -1,7 +1,8 @@
 ---
 title: Flutter 1.7.8 release notes
-short-title: 1.7.8 release notes
+shortTitle: 1.7.8 release notes
 description: Release notes for Flutter 1.7.8.
+skipTemplateRendering: true
 ---
 
 The 1.7.8 release is a follow-on to the 1.5.4 stable release in May,
@@ -235,7 +236,7 @@ In this release, we continue to polish animations, scrolling and image support.
 *   [#33627](https://github.com/flutter/flutter/pull/33627) SliverFillRemaining flag for different use cases
 *   [#32853](https://github.com/flutter/flutter/pull/32853) Add onBytesReceived callback to consolidateHttpClientResponseBytes()
 *   [#32857](https://github.com/flutter/flutter/pull/32857) Add debugNetworkImageHttpClientProvider
-*   [#32936](https://github.com/flutter/flutter/pull/32936) Add some sanity to the ImageStream listener API
+*   [#32936](https://github.com/flutter/flutter/pull/32936) Add clarity to the ImageStream listener API
 *   [#33729](https://github.com/flutter/flutter/pull/33729) Update consolidateHttpClientResponseBytes() to use compressionState
 *   [#33369](https://github.com/flutter/flutter/pull/33369) Add loading support to Image
 

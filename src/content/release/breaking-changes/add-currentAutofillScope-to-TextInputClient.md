@@ -5,6 +5,8 @@ description: >
   added to the TextInputClient interface for autofill support.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 A new getter, `TextInputClient.currentAutofillScope`, was added to the

@@ -33,7 +33,7 @@ behavior of your application. You can view your logs in DevTools'
 *   [`log()`][]: Includes greater granularity and more information in the
     logging output. Part of the `dart:developer` library.
 
-*   [`debugPrint()`][]: If too much output results in discarded log lines, use 
+*   [`debugPrint()`][]: If too much output results in discarded log lines, use
     this to keep those lines. Will print messages in release mode unless part
     of a debug mode check or an assert. Part of the `foundations` library.
 
@@ -184,7 +184,7 @@ the root of the widget tree. It returns a "flattened" tree.
 <details>
 <summary><strong>Expand to view the widget tree for Example 4</strong></summary>
 
-{% render docs/testing/trees/widget-tree.md -%}
+{% render "docs/testing/trees/widget-tree.md" -%}
 
 </details>
 
@@ -254,7 +254,7 @@ The constraints flow down the tree and the sizes flow back up.
 <details>
 <summary><strong>Expand to view the render tree for Example 5</strong></summary>
 
-{% render docs/testing/trees/render-tree.md -%}
+{% render "docs/testing/trees/render-tree.md" -%}
 
 </details>
 
@@ -352,7 +352,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the output of layer tree for Example 6</strong></summary>
 
-{% render docs/testing/trees/layer-tree.md -%}
+{% render "docs/testing/trees/layer-tree.md" -%}
 
 </details>
 
@@ -443,7 +443,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the focus tree for Example 7</strong></summary>
 
-{% render docs/testing/trees/focus-tree.md -%}
+{% render "docs/testing/trees/focus-tree.md" -%}
 
 </details>
 
@@ -500,7 +500,7 @@ class AppHome extends StatelessWidget {
 <details>
 <summary><strong>Expand to view the semantic tree for Example 8</strong></summary>
 
-{% render docs/testing/trees/semantic-tree.md -%}
+{% render "docs/testing/trees/semantic-tree.md" -%}
 
 </details>
 
@@ -615,26 +615,18 @@ to help you debug your app at various points along the
 development cycle.
 To use these features, compile your app in debug mode.
 
-The following list highlights some of flags and one function from the
+The following list highlights some flags and one function from the
 [rendering library][] for debugging performance issues.
 
 [`debugDumpRenderTree()`][]
 : To dump the rendering tree to the console,
   call this function when not in a layout or repaint phase.
 
-  {% comment %}
-    Feature is not yet added to DevTools:
-    Rather than using this flag to dump the render tree
-    to a file, view the render tree in the Flutter inspector.
-    To do so, bring up the Flutter inspector and select the
-    **Render Tree** tab.
-  {% endcomment %}
-
   To set these flags either:
 
-* edit the framework code
-* import the module, set the value in your `main()` function,
-  then hot restart.
+  * Edit the framework code.
+  * Import the module, set the value in your `main()` function,
+    then hot restart.
 
 [`debugPaintLayerBordersEnabled`][]
 : To display the boundaries of each layer, set this property to `true`.

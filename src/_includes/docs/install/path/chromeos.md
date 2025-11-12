@@ -25,11 +25,11 @@ If you're using a different shell besides the default or Bash, follow the
     ```
 
     For example, if you downloaded Flutter into a
-    `development/flutter` folder inside your user directory,
+    `develop/flutter` folder inside your user directory,
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/development/flutter/bin:$PATH"' >> ~/.bash_profile
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.bash_profile
     ```
 
  1. <h3>Apply your changes</h3>

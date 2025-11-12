@@ -16,7 +16,7 @@ If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Get started with Flutter]: /get-started/install
+[Get started with Flutter]: /get-started
 [up to date]: /install/upgrade
 
 ## Choose your development platform {: #dev-platform}
@@ -27,7 +27,7 @@ setting up Android development on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Set up Android tooling {: #set-up-tooling}
 
@@ -56,19 +56,22 @@ install and set up the latest stable version of [Android Studio][].
 
     1. Launch **Android Studio**.
 
-    1. Go to the **Settings** page to view the **SDK Manager**.
+    1. Open the **SDK Manager** settings dialog.
 
-      1. If you have a project open,
-         go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
+       1. If the **Welcome to Android Studio** dialog is open,
+          click the **More Actions** button that follows the
+          **New Project** and **Open** buttons,
+          then click **SDK Manager** from the dropdown menu.
 
-      1. If the **Welcome to Android Studio** dialog is open,
-         click the **More Options** icon that follows the **Open** button,
-         then click **SDK Manager** from the dropdown menu.
+       1. If you have a project open,
+          go to **Tools** <span aria-label="and then">></span> **SDK Manager**.
+
+       {: type="a"}
 
     1. If the **SDK Platforms** tab is not open, switch to it.
 
     1. Verify that the first entry with an **API Level** of
-       **35** has been selected.
+       **36** has been selected.
 
        If the **Status** column displays
        **Update available** or **Not installed**:
@@ -151,8 +154,8 @@ install and set up the latest stable version of [Android Studio][].
 You can debug Flutter apps on physical Android devices or
 by running them on an Android emulator.
 
-{% tabs "android-emulator-or-not" %}
-{% tab "Android emulator" %}
+<Tabs key="android-emulator-or-not">
+<Tab name="Android emulator">
 
 To set up your development environment to
 run a Flutter app on an Android emulator, follow these steps:
@@ -165,90 +168,75 @@ run a Flutter app on an Android emulator, follow these steps:
 
     1. Start **Android Studio**.
 
-    1. Go to the **Settings** dialog to view the **Device Manager**.
+    1. Open the **Device Manager** settings dialog.
+
+       1. If the **Welcome to Android Studio** dialog is open,
+          click the **More Actions** button that follows the
+          **New Project** and **Open** buttons,
+          then select **Virtual Device Manager** from the dropdown menu.
 
        1. If you have a project open,
           go to **Tools** <span aria-label="and then">></span>
           **Device Manager**.
 
-       1. If the **Welcome to Android Studio** dialog is open,
-          click the **More Options** icon that follows the **Open** button,
-          then select **Device Manager** from the dropdown menu.
+       {: type="a"}
 
-    1. Click **Virtual**.
-
-    1. Click **Create Device**.
+    1. Click the **Create Virtual Device** button that appears as a `+` icon.
 
        The **Virtual Device Configuration** dialog displays.
 
-    1. Select either **Phone** or **Tablet** under **Category**.
+    1. Select either **Phone** or **Tablet** under **Form Factor**.
 
     1. Select a device definition. You can browse or search for the device.
 
     1. Click **Next**.
 
-    1. Click either **x86 Images** or **ARM Images** depending on
+    1. If the option is provided,
+       select either **x86 Images** or **ARM Images** depending on
        if your development computer is an x64 or Arm64 device.
 
-    1. Click one system image for the Android version you want to emulate.
+    1. Select one system image for the Android version you want to emulate.
 
-       1. If the desired image has a **Download** icon to the right
-          of the **Release Name**, click it.
+       1. If the desired image has a **Download** icon to the left
+          of the system image name, click it.
 
-          The **SDK Quickfix Installation** dialog displays with a
+          The **SDK Component Installer** dialog displays with a
           progress indicator.
 
        1. When the download completes, click **Finish**.
 
        {: type="a"}
 
-    1. Click **Next**.
+    1. Click **Additional settings** in the top tab bar and
+       scroll to **Emulated Performance**.
 
-       The **Virtual Device Configuration** displays its
-       **Verify Configuration** step.
-
-    1. To rename the Android Virtual Device (AVD),
-       change the value in the **AVD Name** box.
-
-    1. Click **Show Advanced Settings** and scroll to **Emulated Performance**.
-
-    1. From the **Graphics** dropdown menu, select **Hardware - GLES 2.0**.
+    1. From the **Graphics acceleration** dropdown menu,
+       select an option that mentions **Hardware**.
 
        This enables [hardware acceleration][], improving render performance.
 
-    1. Verify your AVD configuration.
+    1. Verify your virtual device configuration.
        If it is correct, click **Finish**.
 
-       To learn more about AVDs, check out [Managing AVDs][].
+       To learn more about virtual devices,
+       check out [Create and manage virtual devices][].
 
  1. <h3>Try running the emulator</h3>
 
     In the **Device Manager** dialog,
-    click the **Run** icon to the right of your desired AVD.
+    click the **Run** icon to the right of your desired virtual device.
 
     The emulator should start up and display the default canvas for
     your selected Android OS version and device.
-
- 1. <h3>Verify the emulator setup</h3>
-
-    To verify that Flutter can connect to the emulator you set up,
-    run `flutter emulators` in your preferred terminal:
-
-    ```console
-    $ flutter emulators
-    ```
-
-    The emulator you set up should be found and
-    show up as one of the available emulators.
 
 {: .steps}
 
 [VM acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration#accel-vm
 [hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
+[Create and manage virtual devices]: {{site.android-dev}}/studio/run/managing-avds
 
-{% endtab %}
-{% tab "Physical device" %}
+</Tab>
+<Tab name="Physical device">
 
 To set up your development environment to
 run a Flutter app on a physical Android device, follow these steps:
@@ -294,8 +282,8 @@ run a Flutter app on a physical Android device, follow these steps:
 [Connect to your device using Wi-Fi]: {{site.android-dev}}/studio/run/device#wireless
 [Install OEM USB drivers]: {{site.android-dev}}/studio/run/oem-usb
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## Validate your setup {: #validate-setup}
 

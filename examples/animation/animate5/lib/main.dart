@@ -79,8 +79,11 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
 class UsedInTutorialTextOnly extends _LogoAppState {
   UsedInTutorialTextOnly() {
-    // ignore: prefer_typing_uninitialized_variables
-    var animation, sizeAnimation, opacityAnimation, tween, colorTween;
+    Animation<double>? animation;
+    Animation<double>? sizeAnimation;
+    Animation<double>? opacityAnimation;
+    Tween? tween;
+    Tween? colorTween;
 
     // #docregion CurvedAnimation
     animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);

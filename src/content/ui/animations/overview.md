@@ -1,6 +1,6 @@
 ---
 title: Animations API overview
-short-title: API overview
+shortTitle: API overview
 description: An overview of animation concepts.
 ---
 
@@ -139,7 +139,7 @@ A `Ticker` can be started and stopped. When started,
 it returns a `Future` that will resolve when it is stopped.
 
 Each tick, the `Ticker` provides the callback with the
-duration since the first tick after it was started. 
+duration since the first tick after it was started.
 
 Because tickers always give their elapsed time relative to the first
 tick after they were started; tickers are all synchronised. If you

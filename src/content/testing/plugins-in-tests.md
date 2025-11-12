@@ -1,6 +1,6 @@
 ---
 title: Plugins in Flutter tests
-short-title: Plugin tests
+shortTitle: Plugin tests
 description: Adding plugin as part of your Flutter tests.
 ---
 

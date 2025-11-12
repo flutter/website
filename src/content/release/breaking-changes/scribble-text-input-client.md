@@ -5,6 +5,8 @@ description: >
   to insert or remove text placeholders and show the toolbar.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Adds three methods, `showToolbar`, `insertTextPlaceholder`, and
@@ -59,12 +61,12 @@ class MyCustomTextInputClient implements TextInputClient {
   void showToolbar() {
     ...
   }
-  
+
   @override
   void insertTextPlaceholder(Size size) {
     ...
   }
-  
+
   @override
   void removeTextPlaceholder() {
     ...

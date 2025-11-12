@@ -35,7 +35,7 @@ class UserProfileViewModel extends ChangeNotifier {
             // handle error
           },
         )
-        .asFuture();
+        .asFuture<void>();
     // #docregion UserProfileViewModel
   }
   // #enddocregion load

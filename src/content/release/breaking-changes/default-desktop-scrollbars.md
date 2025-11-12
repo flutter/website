@@ -4,6 +4,8 @@ description: >
   ScrollBehaviors will now automatically build Scrollbars on Desktop platforms.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `ScrollBehavior`s now automatically apply `Scrollbar`s to
@@ -30,7 +32,7 @@ what is built around the scrollable.
 Furthermore, `ScrollBehavior` subclasses `MaterialScrollBehavior` and
 `CupertinoScrollBehavior` have been made public, allowing developers to extend
 and build upon the other existing `ScrollBehavior`s in the framework. These
-subclasses were previously private. 
+subclasses were previously private.
 
 
 ## Description of change
@@ -92,7 +94,7 @@ control and configure this feature.
 
 - Extend `ScrollBehavior`, `MaterialScrollBehavior`,
   or `CupertinoScrollBehavior` to modify the default behavior.
-  
+
   - With your own `ScrollBehavior`, you can apply it app-wide by setting
     `MaterialApp.scrollBehavior` or `CupertinoApp.scrollBehavior`.
   - Or, if you wish to only apply it to specific widgets, add a

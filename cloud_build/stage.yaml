@@ -1,16 +1,14 @@
 steps:
-  - name: gcr.io/cloud-builders/git
-    args: ['submodule', 'update', '--init', '--recursive']
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
-    # Set up, build, deploy site to staging, then comment link on PR
+    # Build the site, deploy it to staging, then comment the link on the PR.
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
         set -e
 
-        npm install
-        npm run build-site-for-staging
+        dart pub get
+        dart run dash_site build
 
         cloud_build/scripts/stage_site_and_comment_on_github.sh
     secretEnv: ['GH_PAT_TOKEN']

@@ -13,7 +13,7 @@ class HomeViewModel extends ChangeNotifier {
   late final Command0 load;
 
   // Command1 accepts 1 argument
-  late final Command1 edit;
+  late final Command1<String> edit;
 
   Future<void> _load() async {
     // load user

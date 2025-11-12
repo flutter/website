@@ -1,11 +1,10 @@
 ---
 title: Flutter SDK archive
-short-title: Archive
+shortTitle: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
-toc: true
 ---
 
-{% render docs/china-notice.md %}
+{% render "docs/china-notice.md" %}
 
 ## Overview
 
@@ -16,15 +15,15 @@ version of Flutter for compatibility reasons or to investigate bugs.
 The archive includes Flutter SDKs for Windows, macOS, and Linux on the
 following [channels][]:
 
-*   **{{site.sdk.channel | capitalize }} channel**: This channel contains the
-    most stable Flutter builds. Roughly every third beta version is promoted
-    to the stable version. The stable channel is the recommended channel for
+*   **Stable channel**: This channel contains the most stable Flutter builds.
+    Roughly every third beta version is promoted to the stable version.
+    The stable channel is the recommended channel for
     new users and for production app releases.
 
 *   **Beta channel**: This channel is the most recent version of Flutter that is
     available, but it is not yet stable. The beta branch is usually released
     on the first Wednesday of the month. A fix will typically end up in the
-    beta channel about two weeks after it lands in the main channel. 
+    beta channel about two weeks after it lands in the main channel.
     Releases are distributed as [installation bundles][].
 
 *   **Main channel**: This channel has the newest features, but it hasn't been fully
@@ -35,8 +34,9 @@ The following information is available for each Flutter release in the
 SDK archive:
 
 *   **Flutter version**: The version number of the Flutter SDK
-    (for example, 3.0.0, 2.10.5). This follows semantic versioning, indicating
-    the significance of changes between releases.
+    (for example, 3.35.0, 2.10.5) follows a modified
+    [calendar versioning][] scheme called _CalVer_.
+    For more information, visit the [Flutter SDK versioning][] page.
 *   **Architecture**: The processor architecture the SDK is built for
     (for example, x64, arm64). This specifies the type of processor the SDK is
     compatible with.
@@ -50,55 +50,36 @@ SDK archive:
     SDK, potentially including information about security attestations or
     build systems used. Results are returned as JSON.
 
+[calendar versioning]: https://calver.org/
+[Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
+
 ## Stable channel
 
-{% tabs "os-archive-tabs" %}
-
-{% tab "Windows" %}
-
-{% include docs/release/archive-release.md os="Windows" channel="stable" %}
-
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% include docs/release/archive-release.md os="macOS" channel="stable" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% include docs/release/archive-release.md os="Linux" channel="stable" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="stable" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="stable" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="stable" />
+    </Tab>
+</Tabs>
 
 ## Beta channel
 
-{% tabs "os-archive-tabs" %}
-
-{% tab "Windows" %}
-
-{% include docs/release/archive-release.md os="Windows" channel="beta" %}
-
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% include docs/release/archive-release.md os="macOS" channel="beta" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% include docs/release/archive-release.md os="Linux" channel="beta" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="beta" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="beta" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="beta" />
+    </Tab>
+</Tabs>
 
 <a id="master-channel" aria-hidden="true"></a>
 

@@ -1,6 +1,6 @@
 ---
 title: Add ads to your mobile Flutter app or game
-short-title: Show ads
+shortTitle: Show ads
 description: How to use the google_mobile_ads package to show ads in Flutter.
 ---
 
@@ -9,24 +9,24 @@ description: How to use the google_mobile_ads package to show ads in Flutter.
 {% comment %}
   This partly duplicates the AdMob documentation
   here: https://developers.google.com/admob/flutter/quick-start
-  
+
   The added value of this page is that it's more straightforward for
   someone who just has a Flutter app or game and wants to add
   monetization to it.
-  
+
   In short, this is a friendlier --- though not as comprehensive ---
   introduction to ads in Flutter.
 {% endcomment %}
 
 
 Many developers use advertising to monetize their mobile apps and games.
-This allows their app to be downloaded free of charge, 
+This allows their app to be downloaded free of charge,
 which improves the app's popularity.
 
 ![An illustration of a smartphone showing an ad](/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
 
 To add ads to your Flutter project, use
-[AdMob](https://admob.google.com/home/), 
+[AdMob](https://admob.google.com/home/),
 Google's mobile advertising platform.
 This recipe demonstrates how to use the
 [`google_mobile_ads`]({{site.pub-pkg}}/google_mobile_ads)
@@ -63,7 +63,7 @@ cookbook recipe. To use Ad Manager, follow the
 Update your Android and iOS configurations to include your App IDs.
 
 {% comment %}
-    Content below is more or less a copypaste from devsite: 
+    Content below is more or less a copypaste from devsite:
     https://developers.google.com/admob/flutter/quick-start#platform_specific_setup
 {% endcomment %}
 
@@ -79,14 +79,14 @@ Add your AdMob app ID to your Android app.
     `com.google.android.gms.ads.APPLICATION_ID`.
 
 4.  Set the `android:value` element with the value to your own AdMob app
-    ID that you got in the previous step. 
+    ID that you got in the previous step.
     Include them in quotes as shown:
 
     ```xml
     <manifest>
         <application>
             ...
-    
+
             <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
             <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -154,13 +154,13 @@ You need to initialize the Mobile Ads SDK before loading ads.
     }
     ```
 
-Run the initialization step at startup, as shown above, 
+Run the initialization step at startup, as shown above,
 so that the AdMob SDK has enough time to initialize before it is needed.
 
 :::note
 `MobileAds.instance.initialize()` returns a `Future` but, the
 way the SDK is built, you don't need to `await` it.
-If you try to load an ad before that `Future` is completed, 
+If you try to load an ad before that `Future` is completed,
 the SDK will gracefully wait until the initialization, and _then_ load the ad.
 You can await the `Future`
 if you want to know the exact time when the AdMob SDK is ready.
@@ -266,10 +266,10 @@ To show anything beyond test ads, you have to register ad units.
 
     This asks for the Ad unit's format. AdMob provides many formats
     beyond banner ads --- interstitials, rewarded ads, app open ads, and
-    so on. 
-    The API for those is similar, and documented in the 
+    so on.
+    The API for those is similar, and documented in the
     [AdMob documentation]({{site.developers}}/admob/flutter/quick-start)
-    and through 
+    and through
     [official samples](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob).
 
 3.  Choose banner ads.
@@ -310,7 +310,7 @@ testing scenarios), your app must meet additional requirements:
 
 ![An illustration of a smartphone showing an ad](/assets/images/docs/cookbook/ads-device.jpg){:.site-illustration}
 
-To learn more about app and game monetization, 
+To learn more about app and game monetization,
 visit the official sites
 of [AdMob](https://admob.google.com/)
 and [Ad Manager](https://admanager.google.com/).

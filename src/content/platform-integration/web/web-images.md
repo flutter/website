@@ -1,11 +1,11 @@
 ---
 title: Display images on the web
-short-title: Web images
+shortTitle: Web images
 description: Learn how to load and display images on the web.
 ---
 
-The web supports the standard [`Image`][] widget and the more 
-advanced [`dart:ui/Image`][] class (where more fine-grained control 
+The web supports the standard [`Image`][] widget and the more
+advanced [`dart:ui/Image`][] class (where more fine-grained control
 is needed to display images).
 However, because web browsers are built to run untrusted code safely,
 there are certain limitations in what you can do with images compared
@@ -20,7 +20,7 @@ For information on how to optimize web loading speed,
 check out the (free) article on Medium,
 [Best practices for optimizing Flutter web loading speed][article].
 
-[article]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[article]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 :::
 
 ## Background
@@ -59,7 +59,7 @@ hardware-acceleration.
 one site accesses the resources of another site. It is
 designed such that, by default, one web-site is not
 allowed to make HTTP requests to another site using
-[XHR][] or [`fetch`][].  
+[XHR][] or [`fetch`][].
 This prevents scripts on another site from acting on
 behalf of the user and from gaining access to another
 site's resources without permission.
@@ -72,7 +72,7 @@ Therefore, images must only come from servers that
 have a CORS policy configured to work with the domain
 that serves your application.
 
-:::note   
+:::note
 For more information about web renderers, see
 [Web renderers][].
 :::

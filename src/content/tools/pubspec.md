@@ -4,7 +4,7 @@ description: "Describes the Flutter-only fields in the pubspec file."
 ---
 
 This page is primarily aimed at folks who write
-Flutter apps. If you write packages or plugins, 
+Flutter apps. If you write packages or plugins,
 (perhaps you want to create a federated plugin),
 you should check out the
 [Developing packages and plugins][] page.
@@ -63,7 +63,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -85,7 +85,7 @@ dev_dependencies:
 
   [!generate: true!] # Enables generation of localized strings from arb files
 
-  [!config:!] # App-specific configuration flags that mirror flutter config
+  [!config:!] # App-specific configuration flags that mirror `flutter config`
     [!enable-swift-package-manager: true!]
 
   [!assets:!]  # Lists assets, such as image files
@@ -113,7 +113,7 @@ dev_dependencies:
 Flutter-specific and Dart-specific fields can be added to
 the Flutter pubspec. To learn more about Flutter-specific
 fields, see the following sections. To learn more about
-Dart-specific fields, see [Dart's pubspec supported fields][]. 
+Dart-specific fields, see [Dart's pubspec supported fields][].
 
 :::note
 The pubspec can have additional auto-generated Flutter
@@ -234,8 +234,11 @@ The available keys mirror those available in `flutter config --list`.
 ```yaml title="pubspec.yaml"
 flutter:
   config:
+    cli-animations: false
     enable-swift-package-manager: true
 ```
+
+Use `flutter config --help` for a description of each flag.
 
 Flags are only read from the current _application_ package, and have no effect
 in the context of a package or dependency.
@@ -323,7 +326,7 @@ flutter:
 
 To learn more about how you can use deferred components with
 a Flutter Android app, see
-[Deferred components for Android]. 
+[Deferred components for Android].
 
 [Deferred components for Android]: /perf/deferred-components
 
@@ -366,7 +369,7 @@ application.
 For examples of using fonts
 see the [Use a custom font][] and
 [Export fonts from a package][] recipes in the
-[Flutter cookbook][].
+Flutter cookbook.
 
 The `fonts` field has this structure:
 
@@ -410,7 +413,7 @@ flutter:
   fonts:
     - asset: fonts/Roboto-Regular.ttf
       weight: 900 # Optional
-      style: italic # Optional  
+      style: italic # Optional
 ```
 
 Use a font family:
@@ -437,7 +440,6 @@ flutter:
 ```
 
 [Export fonts from a package]: /cookbook/design/package-fonts
-[Flutter cookbook]: /cookbook
 [Use a custom font]: /cookbook/design/fonts
 
 ### generate field

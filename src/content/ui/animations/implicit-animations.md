@@ -16,19 +16,21 @@ about implicit animations in Flutter.
 
 ## Documentation
 
-[Implicit animations codelab][]
-: Jump right into the code!
-  This codelab uses interactive examples
-  and step-by-step instructions to teach you
-  how to use implicit animations.
+[Animations in Flutter codelab][]
+: Learn about implicit and explicit animations 
+  and get hands-on experience adding implicit animations
+  to a complete Flutter app.
 
 [`AnimatedContainer` sample][]
-: A step-by-step recipe from the [Flutter cookbook][]
-  for using the [`AnimatedContainer`][]
-  implicitly animated widget.
+: A step-by-step recipe for using the
+  [`AnimatedContainer`][] implicitly animated widget.
 
 [`ImplicitlyAnimatedWidget`][] API page
 : All implicit animations extend the `ImplicitlyAnimatedWidget` class.
+
+[Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
+[`AnimatedContainer` sample]: /cookbook/animation/animated-container
+[`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 
 ## Flutter in Focus videos
 
@@ -38,9 +40,9 @@ that every Flutter dev needs to know from top to bottom.
 The following videos cover topics
 that are relevant to implicit animations.
 
-{% ytEmbed 'IVTjpW3W33s', 'Flutter implicit animation basics' %}
+<YouTubeEmbed id="IVTjpW3W33s" title="Flutter implicit animation basics"></YouTubeEmbed>
 
-{% ytEmbed '6KiPEqzJIKQ', 'Create custom implicit animations with TweenAnimationBuilder' %}
+<YouTubeEmbed id="6KiPEqzJIKQ" title="Create custom implicit animations with TweenAnimationBuilder"></YouTubeEmbed>
 
 ## The Boring Show
 
@@ -48,7 +50,7 @@ Watch the Boring Show to follow Google Engineers build apps
 from scratch in Flutter. The following episode covers
 using implicit animations in a news aggregator app.
 
-{% ytEmbed '8ehlWchLVlQ', 'Adding implicit animations to a news application' %}
+<YouTubeEmbed id="8ehlWchLVlQ" title="Adding implicit animations to a news application"></YouTubeEmbed>
 
 ## Widget of the Week videos
 
@@ -66,13 +68,9 @@ implicitly animated widgets:
 {% assign videoUrl = animatedUrls[forloop.index0] %}
 {% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
 
-{% ytEmbed videoUrl, videoDescription %}
+<YouTubeEmbed id="{{ videoUrl }}" title="{{ videoDescription }}"></YouTubeEmbed>
 
 {% endfor -%}
 
-[`AnimatedContainer` sample]: /cookbook/animation/animated-container
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [animation library]: {{site.api}}/flutter/animation/animation-library.html
-[Flutter cookbook]: /cookbook
-[Implicit animations codelab]: /codelabs/implicit-animations
-[`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html

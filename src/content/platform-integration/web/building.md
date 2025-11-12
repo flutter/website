@@ -1,7 +1,7 @@
 ---
 title: Building a web application with Flutter
 description: Instructions for creating a Flutter app for the web.
-short-title: Web development
+shortTitle: Web development
 ---
 
 This page provides an overview of how to configure, run, and build a web
@@ -182,7 +182,7 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Chrome]: https://www.google.com/chrome/
 [Debugging]: /tools/devtools/debugger
 [Flutter DevTools]: /tools/devtools
-[Flutter SDK]: /get-started/install
+[Flutter SDK]: /get-started
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging
@@ -191,4 +191,3 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Web FAQ]: /platform-integration/web/faq
 [Web renderers]: /platform-integration/web/renderers
 [Widget tests]: /testing/overview#widget-tests
-

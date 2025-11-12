@@ -1,6 +1,6 @@
 ---
 title: Hosting native macOS views in your Flutter app with Platform Views
-short-title: macOS platform-views
+shortTitle: macOS platform-views
 description: Learn how to host native macOS views in your Flutter app with Platform Views.
 ---
 
@@ -40,7 +40,7 @@ To create a platform view on macOS, use the following instructions:
 On the Dart side, create a `Widget` and add the build implementation,
 as shown in the following steps:
 
-In the Dart widget file, make changes similar to those 
+In the Dart widget file, make changes similar to those
 shown in `native_view_example.dart`:
 
  1. Add the following imports:

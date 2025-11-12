@@ -1,6 +1,7 @@
 ---
 title: Install Flutter manually
-short-title: Install manually
+shortTitle: Install manually
+breadcrumb: Manually
 description: >-
   Learn how to install and set up the Flutter SDK manually.
 ---
@@ -17,7 +18,7 @@ consider [installing Flutter with VS Code][with-vs-code] for
 a streamlined setup experience.
 :::
 
-[Get started with Flutter]: /get-started/install
+[Get started with Flutter]: /get-started
 [with-vs-code]: /install/with-vs-code
 
 ## Choose your development platform {: #dev-platform}
@@ -28,7 +29,7 @@ installing Flutter on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Download prerequisite software {: #download-prerequisites}
 
@@ -155,7 +156,7 @@ then extract the SDK to where you want it stored.
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    [(loading...)](#){:.download-latest-link-windows .filled-button}
+    <DownloadLatestButton os="windows" />
 
  1. <h3>Create a folder to store the SDK</h3>
 
@@ -190,7 +191,7 @@ then extract the SDK to where you want it stored.
 
     ```console
     $ Expand-Archive `
-      –Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
+      -Path $env:USERPROFILE\Downloads\flutter_windows_3.29.3-stable.zip `
       -Destination $env:USERPROFILE\develop\
     ```
 
@@ -202,9 +203,9 @@ then extract the SDK to where you want it stored.
     download one of the following installation bundles to get the
     latest stable release of the Flutter SDK.
 
-    | Apple Silicon (ARM64)                                                               | Intel (x64)                                                    |
-    |-------------------------------------------------------------------------------------|----------------------------------------------------------------|
-    | [(loading...)](#){:.download-latest-link-macos-arm64 .apple-silicon .filled-button} | [(loading...)](#){:.download-latest-link-macos .filled-button} |
+    | Apple Silicon (ARM64)                            | Intel                                          |
+    |--------------------------------------------------|------------------------------------------------|
+    | <DownloadLatestButton os="macos" arch="arm64" /> | <DownloadLatestButton os="macos" arch="x64" /> |
 
  1. <h3>Create a folder to store the SDK</h3>
 
@@ -241,7 +242,7 @@ then extract the SDK to where you want it stored.
     Download the following installation bundle to get the
     latest stable release of the Flutter SDK.
 
-    [(loading...)](#){:.download-latest-link-linux .filled-button}
+    <DownloadLatestButton os="linux" />
 
  1. <h3>Create a folder to store the SDK</h3>
 
@@ -282,25 +283,25 @@ Adding Flutter to your `PATH` allows you to use the
 
 <div class="windows-only">
 
-{% render docs/install/path/windows.md %}
+{% render "docs/install/path/windows.md" %}
 
 </div>
 
 <div class="macos-only">
 
-{% render docs/install/path/macos.md %}
+{% render "docs/install/path/macos.md" %}
 
 </div>
 
 <div class="linux-only">
 
-{% render docs/install/path/linux.md %}
+{% render "docs/install/path/linux.md" %}
 
 </div>
 
 <div class="chromeos-only">
 
-{% render docs/install/path/chromeos.md %}
+{% render "docs/install/path/chromeos.md" %}
 
 </div>
 

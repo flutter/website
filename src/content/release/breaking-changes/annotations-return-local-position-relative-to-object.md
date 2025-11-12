@@ -4,6 +4,8 @@ description: >
   Provide annotation searches with reliable and meaningful local positions.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The local position returned by `AnnotatedRegionLayers` in an

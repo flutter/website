@@ -5,6 +5,8 @@ description: >-
   the Windows build path was updated to include the target architecture.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Built executables for Flutter Windows apps are now located in architecture

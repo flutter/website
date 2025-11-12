@@ -4,6 +4,8 @@ description: >-
   Deprecation of user-configurable `Paint.enableDithering`.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 [`Paint.enableDithering`][] is now `true` by default (previously, `false`),

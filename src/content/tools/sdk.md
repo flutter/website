@@ -1,6 +1,6 @@
 ---
 title: Flutter SDK overview
-short-title: Flutter SDK
+shortTitle: Flutter SDK
 description: Flutter libraries and command-line tools.
 ---
 
@@ -39,12 +39,12 @@ The [`dart` CLI tool][] is available with the Flutter SDK at `flutter/bin/dart`.
 [Dart SDK]: {{site.dart-site}}/tools/sdk
 [`dart` CLI tool]: {{site.dart-site}}/tools/dart-tool
 [`flutter` CLI tool]: /reference/flutter-cli
-[Install]: /get-started/install
+[Install]: /get-started
 [README file]: {{site.repo.flutter}}/blob/main/README.md
 
 ## SDK support for Flutter developer tools
 
-The IDE tooling for Flutter (Android Studio and Intellij plugins, VS Code 
+The IDE tooling for Flutter (Android Studio and Intellij plugins, VS Code
 extensions) supports Flutter SDK versions going back two years. This means that
 while the tools might still function with SDKs older than two years, they will
 no longer provide fixes for issues specific to these older versions.

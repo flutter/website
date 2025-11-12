@@ -1,9 +1,6 @@
 ---
 title: Add Material touch ripples
 description: How to implement ripple animations.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/ripples/"?>

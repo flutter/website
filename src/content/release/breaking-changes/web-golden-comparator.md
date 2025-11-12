@@ -7,6 +7,8 @@ description: >-
   `goldenFileComparator` directly.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `flutter_test` package and `flutter` tool will no longer use the

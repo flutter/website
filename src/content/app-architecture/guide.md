@@ -1,6 +1,6 @@
 ---
 title: Guide to app architecture
-short-title: Architecture guide
+shortTitle: Architecture guide
 description: >
   The recommended way to architect a Flutter app.
 prev:
@@ -107,7 +107,7 @@ based on the MVVM design pattern:
   For example, you might need to combine data from multiple repositories,
   or you might want to filter a list of data records.
 
-Views and view models should have a 1:1 relationship.
+Views and view models should have a one-to-one relationship.
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png' alt="A simplified diagram of the architecture described on this page with the view and view model objects highlighted.">
 
@@ -120,8 +120,8 @@ and you can test the logic of your UI independently of Flutter widgets.
 :::note
 'View' is an abstract term, and one view doesn't equal one widget.
 Widgets are composable, and several can be combined to create one view.
-Therefore, view models don't have a 1-to-1 relationship with widgets,
-but rather a 1-to-1 relationship with a *collection* of widgets.
+Therefore, view models don't have a one-to-one relationship with widgets,
+but rather a one-to-one relationship with a *collection* of widgets.
 :::
 
 A feature of an application is user centric,

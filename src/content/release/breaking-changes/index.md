@@ -1,6 +1,6 @@
 ---
 title: Breaking changes and migration guides
-short-title: Breaking changes
+shortTitle: Breaking changes
 description: >-
    A collection of notices and migration guides for breaking changes in Flutter.
 ---
@@ -9,13 +9,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-:::important
-These breaking change docs are accurate, as of the release
-under which they are published. Over time, the
-workarounds described here might become inaccurate.
-We don't, in general, keep these breaking change docs up
-to date as of each release.
-:::
+{% render "docs/breaking-changes.md" %}
 
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
@@ -42,32 +36,55 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `TextField.canRequestFocus`][]
-* [Stop generating `AssetManifest.json`][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
 * [UISceneDelegate adoption][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [Stop generating `AssetManifest.json`][]
+* [Deprecate `TextField.canRequestFocus`][]
+
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+
+<a id="released-in-flutter-338" aria-hidden="true"></a>
+### Released in Flutter 3.38
+
 * [`CupertinoDynamicColor` wide gamut support][]
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [SnackBar with action no longer auto-dismisses][]
 * [The default page transition on Android is now PredictiveBackPageTransitionBuilder][]
 
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
+[Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[The default page transition on Android is now PredictiveBackPageTransitionBuilder]:/release/breaking-changes/default-android-page-transition
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
 
 * [Component theme normalization updates][]
 * [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`][]
+* [Deprecate app bar color][]
 * [Redesigned the `Radio` widget][]
 * [Removed semantics elevation and thickness][]
 * [The `Form` widget no longer supports being a sliver][]
+* [Flutter now sets default `abiFilters` in Android builds][]
+* [Merged threads on macOS and Windows][]
+* [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
+[Deprecate app bar color]: /release/breaking-changes/appbar-theme-color
 [Redesigned the `Radio` Widget]: /release/breaking-changes/radio-api-redesign
 [Removed semantics elevation and thickness]: /release/breaking-changes/remove-semantics-elevation-and-thickness
 [The `Form` widget no longer supports being a sliver]: /release/breaking-changes/form-semantics
-[The default page transition on Android is now PredictiveBackPageTransitionBuilder]:/release/breaking-changes/default-android-page-transition
+[Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
+[Merged threads on macOS and Windows]: /release/breaking-changes/macos-windows-merged-threads
+[The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32

@@ -1,9 +1,6 @@
 ---
 title: Display a snackbar
 description: How to implement a snackbar to display messages.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/design/snackbars/"?>
@@ -61,7 +58,7 @@ ScaffoldMessenger.of(context).showSnackBar(snackBar);
 To learn more, watch this short Widget of the Week video on
 the `ScaffoldMessenger` widget:
 
-{% ytEmbed 'lytQi-slT5Y', 'ScaffoldMessenger | Flutter widget of the week' %}
+<YouTubeEmbed id="lytQi-slT5Y" title="ScaffoldMessenger | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 ## 3. Provide an optional action
@@ -150,7 +147,7 @@ class SnackBarPage extends StatelessWidget {
   <img src="/assets/images/docs/cookbook/snackbar.webp" alt="SnackBar Demo" class="site-mobile-screenshot" />
 </noscript>
 
-[Gestures]: /cookbook#gestures
+[Gestures]: /cookbook/gestures
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`SnackBar`]: {{site.api}}/flutter/material/SnackBar-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html

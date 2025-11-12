@@ -5,7 +5,7 @@ description: Flutter metrics, and which tools and APIs are used to get them
 
 * Startup time to the first frame
   * Check the time when
-    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized] 
+    [WidgetsBinding.instance.firstFrameRasterized][firstFrameRasterized]
     is true.
   * See the
     [perf dashboard](https://flutter-flutter-perf.skia.org/e/?queries=sub_result%3DtimeToFirstFrameRasterizedMicros).
@@ -17,13 +17,13 @@ description: Flutter metrics, and which tools and APIs are used to get them
 * Statistics of frame `buildDuration` (`*_frame_build_time_millis`)
   * We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  * See, for example, [metrics][transition_build] for the 
+  * See, for example, [metrics][transition_build] for the
     `flutter_gallery__transition_perf` test.
 
 * Statistics of frame `rasterDuration` (`*_frame_build_time_millis`)
   * We recommend monitoring four stats: average, 90th percentile, 99th
     percentile, and worst frame build time.
-  * See, for example, [metrics][transition_raster] for the 
+  * See, for example, [metrics][transition_raster] for the
     `flutter_gallery__transition_perf` test.
 
 * CPU/GPU usage (a good approximation for energy use)
@@ -39,8 +39,8 @@ description: Flutter metrics, and which tools and APIs are used to get them
   * For info on how to measure the size more accurately,
     see the [app size](/perf/app-size) page.
 
-For a complete list of performance metrics Flutter measures per commit, visit 
-the following sites, click **Query**, and filter the **test** and 
+For a complete list of performance metrics Flutter measures per commit, visit
+the following sites, click **Query**, and filter the **test** and
 **sub_result** fields:
 
   * [https://flutter-flutter-perf.skia.org/e/](https://flutter-flutter-perf.skia.org/e/)

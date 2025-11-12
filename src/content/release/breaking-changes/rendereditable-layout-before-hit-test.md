@@ -5,6 +5,8 @@ description: >
   that is only available after the layout.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Instances of `RenderEditable` must be laid out before processing hit
@@ -20,7 +22,7 @@ Failed assertion: line 123 pos 45: '!debugNeedsLayout': is not true.
 To support gesture recognizers in selectable text, the
 `RenderEditable` requires the layout information for its
 text spans to determine which text span receives the
-pointer event. (Before this change, `RenderEditable` objects 
+pointer event. (Before this change, `RenderEditable` objects
 didn't take their text into account when evaluating hit tests.)
 To implement this, layout was made a prerequisite for performing
 hit testing on a `RenderEditable` object.

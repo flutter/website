@@ -5,6 +5,8 @@ description: >-
   the Flutter Material library.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The Material Design tokens updated the mapping of
@@ -73,7 +75,7 @@ final chip = ChipTheme(
     ),
   ),
   child: ActionChip(
-    label: const Text('action chip'), 
+    label: const Text('action chip'),
     onPressed: () {}
   )
 );

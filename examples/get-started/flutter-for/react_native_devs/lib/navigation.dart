@@ -41,7 +41,7 @@ class DrawerNavScreen extends StatelessWidget {
     // #docregion navigator-push
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const UsualNavScreen()),
+      MaterialPageRoute<void>(builder: (context) => const UsualNavScreen()),
     );
     // #enddocregion navigator-push
   }

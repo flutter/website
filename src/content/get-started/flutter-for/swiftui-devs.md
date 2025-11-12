@@ -47,7 +47,7 @@ you can open and run some of the examples on DartPad.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', true %}
+<YouTubeEmbed id="ceMsPBbcEGg" title="Flutter for iOS developers"></YouTubeEmbed>
 
 Flutter and SwiftUI code describes how the UI looks and works.
 Developers call this type of code a _declarative framework_.
@@ -157,7 +157,7 @@ your Flutter app can use many different design systems:
 - Your own custom widgets
 - [Cupertino widgets][] that follow Apple's Human Interface Guidelines
 
-{% ytEmbed '3PdUaidHc-E', 'Flutter\'s cupertino library for iOS developers' %}
+<YouTubeEmbed id="3PdUaidHc-E" title="Flutter's cupertino library for iOS developers"></YouTubeEmbed>
 
 If you're looking for a great reference app that features a
 custom design system, check out [Wonderous][].

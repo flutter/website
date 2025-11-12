@@ -1,6 +1,6 @@
 ---
 title: Technical Writer, Languages
-toc: false
+showToc: false
 description: Learn about and apply to this technical writer role!
 ---
 
@@ -55,7 +55,7 @@ and are [committed to furthering our culture of inclusion](https://flutter.dev/c
 In addition to groups like the [Flutteristas](https://flutteristas.org/),
 [Employee Resource Groups (ERGs)](https://diversity.google/commitments/)
 are employee-initiated networks for supporting underrepresented employees
-and their allies with shared values of creating belonging 
+and their allies with shared values of creating belonging
 across their communities and Google.
 
 ### Work-Life balance

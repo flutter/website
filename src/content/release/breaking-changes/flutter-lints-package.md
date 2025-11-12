@@ -5,6 +5,8 @@ description: >
   recommended lints, which encourage good coding practices.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The [`package:flutter_lints`][] defines the latest set of recommended lints
