@@ -167,6 +167,23 @@ ga('send', 'pageview');
           },
         ),
         if (bodyClass != null) Document.body(attributes: {'class': bodyClass}),
+        // The theme setting logic should remain before other scripts to
+        // avoid a flash of the initial theme on load.
+        raw('''
+<script>
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
+const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+if (storedTheme === 'auto-mode') {
+  document.body.classList.add(
+      'auto-mode',
+      prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
+  );
+} else {
+  document.body.classList.add(storedTheme);
+}
+</script>
+      '''),
         if (productionBuild)
           raw(
             '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>',
@@ -202,23 +219,6 @@ ga('send', 'pageview');
           ]),
           const DashFooter(),
         ]),
-        // The theme setting logic should remain before other scripts to
-        // avoid a flash of the initial theme on load.
-        raw('''
-<script>
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-
-const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-if (storedTheme === 'auto-mode') {
-  document.body.classList.add(
-      'auto-mode',
-      prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
-  );
-} else {
-  document.body.classList.add(storedTheme);
-}
-</script>
-      '''),
         // Scroll the sidenav to the active item before other logic
         // to avoid it jumping after page load.
         raw('''

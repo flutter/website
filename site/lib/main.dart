@@ -19,6 +19,7 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
+import 'src/components/tutorial/quiz.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
@@ -96,6 +97,7 @@ List<CustomComponent> get _embeddableComponents => [
   const DashImage(),
   const YoutubeEmbed(),
   const FileTree(),
+  const Quiz(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),

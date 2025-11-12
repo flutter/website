@@ -35,7 +35,9 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     as prefix13;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     as prefix14;
-import 'package:jaspr_content/components/file_tree.dart' as prefix15;
+import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
+    as prefix15;
+import 'package:jaspr_content/components/file_tree.dart' as prefix16;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -122,8 +124,13 @@ JasprOptions get defaultJasprOptions => JasprOptions(
         ClientTarget<prefix14.LearningResourceFiltersSidebar>(
           'src/components/pages/learning_resource_filters_sidebar',
         ),
+
+    prefix15.InteractiveQuiz: ClientTarget<prefix15.InteractiveQuiz>(
+      'src/components/tutorial/client/quiz',
+      params: _prefix15InteractiveQuiz,
+    ),
   },
-  styles: () => [...prefix15.FileTree.styles],
+  styles: () => [...prefix16.FileTree.styles],
 );
 
 Map<String, dynamic> _prefix2CopyButton(prefix2.CopyButton c) => {
@@ -147,4 +154,8 @@ Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
 Map<String, dynamic> _prefix11ArchiveTable(prefix11.ArchiveTable c) => {
   'os': c.os,
   'channel': c.channel,
+};
+Map<String, dynamic> _prefix15InteractiveQuiz(prefix15.InteractiveQuiz c) => {
+  'title': c.title,
+  'questions': c.questions.map((i) => i.toJson()).toList(),
 };

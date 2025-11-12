@@ -32,7 +32,7 @@ corresponding rule file names:
 | Environment | Rules File | Installation Instructions                     |
 | :--- | :--- |:----------------------------------------------|
 | Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
-| Cursor | `cursor.md` | [Configure cursorrules.md][]                  |
+| Cursor | `AGENTS.md` | [Configure AGENTS.md][]                  |
 | Firebase Studio | `airules.md` | [Configure airules.md][]                      |
 | Gemini CLI | `GEMINI.md` | [Configure GEMINI.md][]                       |
 | JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][]                   |
@@ -41,7 +41,7 @@ corresponding rule file names:
 
 [Configure airules.md]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
 [Configure .github/copilot-instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure cursorrules.md]: https://docs.cursor.com/en/context/rules
+[Configure AGENTS.md]: https://cursor.com/docs/context/rules
 [Configure guidelines.md]: https://www.jetbrains.com/help/junie/customize-guidelines.html
 [Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
 [Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
