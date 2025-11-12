@@ -10,7 +10,7 @@ showBanner: true
 bannerHtml: >-
   Don't miss the live Flutter and Dart Q&A happening
   today, November 12 at 11am PST.
-  <a href="https://www.youtube.com/watch?v=RTb3gP4p5bw" target="_blank">Join us!</a>
+  <a href="https://www.youtube.com/watch?v=RTb3gP4p5bw" target="_blank" rel="noopener">Join us!</a>
 
 branch: main
 repo:
