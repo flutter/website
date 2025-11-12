@@ -1,7 +1,8 @@
 ---
 title: The default page transition on Android is now PredictiveBackPageTransitionsBuilder
-description: Android's default page transition has been updated to match the
-platform and to support predictive back.
+description: >-
+  Android's default page transition has been updated to match the
+  platform and to support predictive back.
 ---
 
 ## Summary
@@ -28,13 +29,12 @@ With this change, [`PredictiveBackPageTransitionsBuilder`][] has replaced
 During a normal page transition without a predictive back gesture, users
 see the new [`FadeForwardsPageTransitionsBuilder`][] as the default page
 transition. When using a predictive back gesture, the page animates along
-with the gesture and allow canceling or committing to the back navigation.
+with the gesture and allows canceling or committing to the back navigation.
 
 In this example, no page transition is explicitly given, so the
 [default]({{site.github}}/flutter/flutter/blob/e983e4bd81f29b17215057fa5c9f46f96cbaf183/packages/flutter/lib/src/material/page_transitions_theme.dart#L806-L813)
 is set to [`PredictiveBackPageTransitionsBuilder`][] in the theme on Android.
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(
@@ -53,7 +53,6 @@ support predictive back route transitions.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 return MaterialApp(
   theme: ThemeData(
@@ -66,7 +65,6 @@ return MaterialApp(
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 MaterialApp(
   theme: ThemeData(
@@ -89,7 +87,6 @@ independent of whatever page transition is used.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('example', (WidgetTester tester) async {
   await tester.pumpWidget(
@@ -112,7 +109,6 @@ testWidgets('example', (WidgetTester tester) async {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('example', (WidgetTester tester) async {
   final TransitionDurationObserver observer = TransitionDurationObserver();
@@ -141,7 +137,6 @@ page transition without depending on the exact duration.
 
 Code before migration:
 
-<!-- skip -->
 ```dart
 testWidgets('example', (WidgetTester tester) async {
   await tester.pumpWidget(
@@ -164,7 +159,6 @@ testWidgets('example', (WidgetTester tester) async {
 
 Code after migration:
 
-<!-- skip -->
 ```dart
 testWidgets('example', (WidgetTester tester) async {
   final TransitionDurationObserver observer = TransitionDurationObserver();
