@@ -1,5 +1,4 @@
 .quiz {
-
   display: flex;
   flex-direction: column;
 
@@ -34,7 +33,6 @@
       margin-top: 1rem;
       list-style: upper-alpha;
       list-style-position: inside;
-
 
       li {
         padding: 1rem;
@@ -134,7 +132,6 @@
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-
 
     .quiz-button {
       &.secondary {
