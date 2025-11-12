@@ -78,6 +78,8 @@ description: This is a test page for experimenting with First Week Experience (F
 sitemap: false
 ---
 
+## Quiz
+
 <Quiz title="Flutter and Dart Basics Quiz">
 - question: What is the Effective Dart guideline for the first sentence of a documentation comment?
   options:
@@ -108,5 +110,21 @@ sitemap: false
       correct: false
       explanation: Stack is used for overlapping widgets, not for scrollable lists.
 </Quiz>
+
+## Progress Ring
+
+<ProgressRing progress="0.0" />
+<ProgressRing progress="0.25" />
+<ProgressRing progress="0.5" />
+<ProgressRing progress="0.75" />
+<ProgressRing progress="1.0" />
+
+---
+
+<ProgressRing progress="0.1" small />
+<ProgressRing progress="0.6" small />
+<ProgressRing progress="0.3" large />
+<ProgressRing progress="0.95" large />
+
 ''',
 );
