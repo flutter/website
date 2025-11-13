@@ -327,6 +327,8 @@ or from part of the application using
 [`Picture.toImageSync`]: {{site.api}}/flutter/dart-ui/Picture/toImageSync.html
 [`Scene.toImageSync`]: {{site.api}}/flutter/dart-ui/Scene/toImageSync.html
 
+##### Sampler usage in GLSL example
+
 ```glsl
 #include <flutter/runtime_effect.glsl>
 
@@ -349,7 +351,54 @@ supported and needs to be emulated in the shader.
 
 [`TileMode.clamp`]: {{site.api}}/flutter/dart-ui/TileMode.html
 
-### Performance considerations
+##### `toImageSync` example
+
+```dart
+class Painter extends CustomPainter {
+  Painter(this._sdfShader, this._renderShader);
+
+  final FragmentShader _sdfShader;
+  final FragmentShader _renderShader;
+  ui.Image? _sdf;
+  bool _isDirty = false;
+  double _radius = 0.5;
+
+  set radius(double val) {
+    _radius = val;
+    _isDirty = true;
+  }
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (_sdf == null || _isDirty) {
+      final recorder = PictureRecorder();
+      final subCanvas = Canvas(recorder);
+      final paint = Paint()..shader = _sdfShader;
+      _sdfShader.setFloat(0, size.width);
+      _sdfShader.setFloat(1, size.height);
+      _sdfShader.setFloat(2, _radius);
+      subCanvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
+      final picture = recorder.endRecording();
+      _sdf = picture.toImageSync(size.width.toInt(), size.height.toInt());
+      _isDirty = false;
+    }
+
+    _renderShader.setFloat(0, size.width);
+    _renderShader.setFloat(1, size.height);
+    _renderShader.setImageSampler(0, _sdf!);
+
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Paint()..shader = _renderShader,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+```
+
+## Performance considerations
 
 When targeting the Skia backend,
 loading the shader might be expensive since it
@@ -368,7 +417,7 @@ check out [Writing efficient shaders][] on GitHub.
 
 [Writing efficient shaders]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
 
-### Other resources
+## Other resources
 
 For more information, here are a few resources.
 
