@@ -7,32 +7,6 @@ description: >-
 
 {% render "docs/breaking-changes.md" %}
 
-# Flutter 3.33+
-
-This release updates `package:material_color_utilities` from
-`v0.11.1` to `0.13.0`. This updated package includes algorithm changes that align
-with the colors changes shipped in Flutter 3.27 (see below).
-
-The algorithm changes affect the same properties:
-
-* `onPrimaryContainer`
-* `onSecondaryContainer`
-* `onTertiaryContainer`
-* `onErrorContainer`
-
-The changes will be reflected when generating a scheme using
-
-* `ColorScheme.fromSeed`
-* `ColorScheme.fromImageProvider`
-* `ThemeData(colorScheme:..)`
-
-In general, we believe the colors generated will be more legible and visually
-appealing, but if you want to maintain the previous colors when upgrading
-you will have to manually set those properties to their desired color after
-generating.
-
-# Flutter 3.27
-
 ## Summary
 
 The Material Design tokens updated the mapping of
