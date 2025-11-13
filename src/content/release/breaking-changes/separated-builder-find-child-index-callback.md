@@ -8,7 +8,7 @@ description: >-
 ## Summary
 
 The `findChildIndexCallback` parameter in `ListView.separated` and
-`SliverList.separated` constructors has been deprecated in favor of
+`SliverList.separated` constructors have been deprecated in favor of
 `findItemIndexCallback`. The new callback returns item indices directly,
 eliminating the need for manual index calculations to account for separators.
 
