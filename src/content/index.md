@@ -71,7 +71,7 @@ Coming from another platform? Check out Flutter for:
 ### Videos
 
 <div class="video-wrapper">
-  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!!</span>
+  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
   <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
 </div>
 <br>
