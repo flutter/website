@@ -17,7 +17,7 @@ eliminating the need for manual index calculations to account for separators.
 In `ListView.separated` and `SliverList.separated` constructors,
 the `findChildIndexCallback` was used to locate widgets by their key.
 However, this callback returned child indices, which include both items
-and separators in the internal widget tree. This meant developers had to
+and separators in the internal widget tree. This meant that developers had to
 multiply item indices by 2 to get the correct child index, creating
 confusion and error-prone code.
 
