@@ -1,6 +1,6 @@
 ---
 title: Hosting native Android views in your Flutter app with Platform Views
-short-title: Android platform-views
+shortTitle: Android platform-views
 description: Learn how to host native Android views in your Flutter app with Platform Views.
 ---
 
@@ -27,7 +27,7 @@ see [Hosting native macOS views][].
 [Hosting native macOS views]: /platform-integration/macos/platform-views
 
 Platform Views on Android have two implementations. They come with tradeoffs
-both in terms of performance and fidelity. 
+both in terms of performance and fidelity.
 Platform views require Android API 23+.
 
 ## [Hybrid Composition](#hybrid-composition)
@@ -67,7 +67,7 @@ In your Dart file,
 for example `native_view_example.dart`,
 use the following instructions:
 
-1. Add the following imports:  
+1. Add the following imports:
 
    <?code-excerpt "lib/native_view_example_1.dart (import)"?>
    ```dart
@@ -76,8 +76,8 @@ use the following instructions:
    import 'package:flutter/material.dart';
    import 'package:flutter/rendering.dart';
    import 'package:flutter/services.dart';
-   ```  
-    
+   ```
+
 2. Implement a `build()` method:
 
    <?code-excerpt "lib/native_view_example_1.dart (hybrid-composition)"?>
@@ -170,8 +170,8 @@ On the platform side, use the standard
 `io.flutter.plugin.platform` package
 in either Kotlin or Java:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 In your native code, implement the following:
 
@@ -245,7 +245,7 @@ class MainActivity : FlutterActivity() {
         flutterEngine
                 .platformViewsController
                 .registry
-                .registerViewFactory("<platform-view-type>", 
+                .registerViewFactory("<platform-view-type>",
                                       NativeViewFactory())
     }
 }
@@ -272,8 +272,8 @@ class PlatformViewPlugin : FlutterPlugin {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 In your native code, implement the following:
 
@@ -392,8 +392,8 @@ public class PlatformViewPlugin implements FlutterPlugin {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 For more information, see the API docs for:
 
@@ -418,7 +418,7 @@ android {
     }
 }
 ```
-### Surface Views 
+### Surface Views
 
 Handling SurfaceViews is problematic for Flutter and should be avoided when possible.
 
@@ -429,14 +429,13 @@ Some example views include `SurfaceView` and `SurfaceTexture`.
 When your Platform View includes these views you are required to
 manually invalidate the view after they have been drawn to
 (or more specifically: after the swap chain is flipped).
-Manual view invalidation is done by calling `invalidate` on the View 
+Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
-### Issues 
+### Issues
 
 [Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
 
-{% include docs/platform-view-perf.md %}
-
+{% render "docs/platform-view-perf.md", site: site %}

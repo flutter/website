@@ -22,5 +22,5 @@ package-lock.json
 pubspec.lock
 tmp/
 
-# Temporary as codelabs used to be a submodule
-examples/codelabs
+# Temporary as site-shared used to be a submodule.
+site-shared/

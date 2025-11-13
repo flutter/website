@@ -1,9 +1,9 @@
 ---
 title: Architecting Flutter apps
-short-title: Architecture
+shortTitle: Architecture
 description: >
   Learn how to structure Flutter apps.
-toc: false
+showToc: false
 next:
   title: Architecture concepts
   path: /app-architecture/concepts

@@ -180,8 +180,8 @@ represent the current frame.
 
 ### Review the graphs {:#interpreting-the-graphs}
 
-The top graph (marked "GPU") shows the time spent by 
-the raster thread, the bottom one graph shows the time 
+The top graph (marked "GPU") shows the time spent by
+the raster thread, the bottom one graph shows the time
 spent by the UI thread.
 The white lines across the graphs show 16ms increments
 along the vertical axis; if the graph ever goes over one
@@ -248,7 +248,7 @@ on other threads.
 : Performs expensive tasks (mostly I/O) that would
   otherwise block either the UI or raster threads.
   _This thread is not shown in the performance overlay._
-    
+
 For links to more information and videos,
 see [The Framework architecture][] in the
 [Flutter wiki][], and the community article,

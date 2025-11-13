@@ -1,7 +1,7 @@
 ---
 title: Build and release a Windows desktop app
 description: How to release a Flutter app to the Microsoft Store.
-short-title: windows
+shortTitle: windows
 ---
 
 One convenient approach to distributing Windows apps

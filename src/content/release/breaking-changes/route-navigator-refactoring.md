@@ -5,6 +5,8 @@ description: >
   Route and Navigator classes have changed.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `Route` class no longer manages its overlay entries in overlay,
@@ -28,7 +30,7 @@ defined, and the user could achieve the same result by calling
 `Navigator.canPop()`.
 Since the API for `Navigator.canPop()` was better defined,
 we simplified `Navigator.pop()` to not return a boolean value.
- 
+
 On the other hand, the navigator requires the ability
 to manually rearrange entries in the overlay to allow
 the user to change the route history in the new API.

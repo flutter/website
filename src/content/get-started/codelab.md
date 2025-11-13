@@ -1,14 +1,14 @@
 ---
 title: Write your first Flutter app
 description: How to write an app in Flutter.
-short-title: Write your first app
+shortTitle: Write your first app
 prev:
   title: Set up Flutter
-  path: /get-started/install
+  path: /get-started
 next:
   title: Learn more
   path: /get-started/learn-flutter
-toc: false
+showToc: false
 ---
 
 You are now ready to start the "First Flutter app" codelab.
@@ -41,4 +41,4 @@ app for all platforms &mdash; mobile, desktop, and web.
 If you prefer an instructor-led version of this codelab,
 check out the following workshop:
 
-{% ytEmbed '8sAyPDLorek', 'Building your first Flutter app - with a Codelab!' %}
+<YouTubeEmbed id="8sAyPDLorek" title="Building your first Flutter app - with a Codelab!"></YouTubeEmbed>

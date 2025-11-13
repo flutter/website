@@ -1,7 +1,8 @@
 ---
 title: Flutter 1.22.0 release notes
-short-title: 1.22.0 release notes
+shortTitle: 1.22.0 release notes
 description: Release notes for Flutter 1.22.0.
+skipTemplateRendering: true
 ---
 
 This page has release notes for 1.22.0.
@@ -9,7 +10,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 ### framework - 428 pull request(s)
 
@@ -4693,7 +4694,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/engine` 
+## Merged PRs by labels for `flutter/engine`
 
 
 
@@ -5355,7 +5356,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/plugins` 
+## Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -8054,5 +8055,3 @@ There were 65 pull requests.
 [3010](https://github.com/flutter/plugins/pull/3010) [url_launcher_web] Fix a typo in a test name and fix quote consistency (cla: yes, waiting for test harness)
 
 [3011](https://github.com/flutter/plugins/pull/3011) [google_maps_flutter] Fix typo in google_maps_flutter/example/map_ui.dart (cla: yes)
-
-

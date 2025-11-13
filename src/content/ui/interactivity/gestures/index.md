@@ -1,6 +1,6 @@
 ---
 title: Taps, drags, and other gestures
-short-title: Gestures
+shortTitle: Gestures
 description: How gestures, such as taps and drags, work in Flutter.
 ---
 
@@ -153,7 +153,7 @@ use a [`GestureDetector`][].
 To learn more, watch this short
 Widget of the Week video on the `GestureDetector` widget:
 
-{% ytEmbed 'WhVXkCFPmK4', 'GestureDetector - Flutter widget of the week' %}
+<YouTubeEmbed id="WhVXkCFPmK4" title="GestureDetector - Flutter widget of the week"></YouTubeEmbed>
 :::
 
 If you're using Material Components,

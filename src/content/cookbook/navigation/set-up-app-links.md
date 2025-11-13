@@ -48,21 +48,21 @@ It provides a simple API to handle complex routing scenarios.
     ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
+
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),
@@ -74,7 +74,7 @@ It provides a simple API to handle complex routing scenarios.
 
 ## 2. Modify AndroidManifest.xml
 
- 1. Open the Flutter project with VS Code or Android Studio. 
+ 1. Open the Flutter project with VS Code or Android Studio.
  2. Navigate to `android/app/src/main/AndroidManifest.xml` file.
  3. Add the following metadata tag and intent filter inside the
    `<activity>` tag with `.MainActivity`.
@@ -179,8 +179,8 @@ The hosted file should look similar to this:
  4. Verify that your browser can access this file.
 
 :::note
-If you have multiple flavors, you can have many sha256_cert_fingerprint 
-values in the sha256_cert_fingerprints field. 
+If you have multiple flavors, you can have many sha256_cert_fingerprint
+values in the sha256_cert_fingerprints field.
 Just add it to the sha256_cert_fingerprints list
 :::
 
@@ -211,6 +211,11 @@ if web files are not presented.
 To test **both** web and app setup, you must click a link
 directly through web browser or another app.
 One way is to create a Google Doc, add the link, and tap on it.
+
+:::note
+If you are debugging locally (and not downloading the app from the Play Store),
+you might need to enable the toggle for **Supported web addresses** manually.
+:::
 
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:

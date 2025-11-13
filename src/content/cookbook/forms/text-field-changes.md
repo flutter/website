@@ -1,9 +1,6 @@
 ---
 title: Handle changes to a text field
 description: How to detect changes to a text field.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/text_field_changes/"?>
@@ -25,7 +22,7 @@ The simplest approach is to supply an [`onChanged()`][] callback to a
 [`TextField`][] or a [`TextFormField`][].
 Whenever the text changes, the callback is invoked.
 
-In this example, print the current value and length of the text field 
+In this example, print the current value and length of the text field
 to the console every time the text changes.
 
 It's important to use [characters][] when dealing with user input,

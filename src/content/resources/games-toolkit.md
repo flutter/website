@@ -2,6 +2,7 @@
 title: Casual Games Toolkit
 description: >-
   Learn about free & open source multiplatform 2D game development in Flutter.
+showBreadcrumbs: false
 ---
 
 The Flutter Casual Games Toolkit pulls together new and existing resources
@@ -78,7 +79,7 @@ The Casual Games Toolkit provides the following free resources.
 
   1. A sample game built on top of the endless runner template,
      called SuperDash. You can play the game on iOS, Android,
-     or [web][], [view the open source code repo][], or 
+     or [web][], [view the open source code repo][], or
      [read how the game was created in 6 weeks][].
 
 * Developer guides for integrating needed services.
@@ -163,14 +164,14 @@ and Very Good Ventures created new games.
 Once you feel ready to go beyond these games templates,
 investigate other resources that our community recommended.
 
-{% assign pkgIcon = '<span class="material-symbols" aria-label="Package">package_2</span>' %}
-{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation">api</span>' %}
-{% assign docIcon = '<span class="material-symbols" aria-label="Guide">quick_reference_all</span>' %}
-{% assign codelab = '<span class="material-symbols" aria-label="Codelab">science</span>' %}
-{% assign engine = '<span class="material-symbols" aria-label="Game engine">manufacturing</span>' %}
-{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application">handyman</span>' %}
-{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe">book_5</span>' %}
-{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets">photo_album</span>' %}
+{% assign pkgIcon = '<span class="material-symbols" aria-label="Package" translate="no">package_2</span>' %}
+{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation" translate="no">api</span>' %}
+{% assign docIcon = '<span class="material-symbols" aria-label="Guide" translate="no">quick_reference_all</span>' %}
+{% assign codelab = '<span class="material-symbols" aria-label="Codelab" translate="no">science</span>' %}
+{% assign engine = '<span class="material-symbols" aria-label="Game engine" translate="no">manufacturing</span>' %}
+{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application" translate="no">handyman</span>' %}
+{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe" translate="no">book_5</span>' %}
+{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets" translate="no">photo_album</span>' %}
 
 :::secondary
 {{pkgIcon}} Flutter package<br>
@@ -367,7 +368,7 @@ investigate other resources that our community recommended.
 [Flame game engine]: https://flame-engine.org/
 [Games]: {{site.main-url}}/games
 [I/O Pinball Powered by Flutter and Firebase]: {{site.medium}}/flutter/di-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
-[install Flutter]: /get-started/install
+[install Flutter]: /get-started
 [Tomb Toad]: https://play.google.com/store/apps/details?id=com.crescentmoongames.tombtoad
 [basic-template-readme]: {{site.repo.games}}/blob/main/templates/basic/README.md
 [basic-template]: {{site.repo.games}}/tree/main/templates/basic
@@ -414,7 +415,7 @@ investigate other resources that our community recommended.
 [spriteWidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
-[read how the game was created in 6 weeks]: {{site.flutter-medium}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
+[read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
 [view the open source code repo]: {{site.github}}/flutter/super_dash
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
@@ -464,7 +465,7 @@ the Flutter 3.22 release:
 
 [@Marco Bavagnoli]: {{site.github}}/alnitak
 [Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[Best practices for optimizing Flutter web loading speed]: {{site.flutter-medium}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 [Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 [Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [Cheng Lin]: {{site.medium}}/@mhclin113_26002

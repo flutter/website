@@ -1,9 +1,6 @@
 ---
 title: Retrieve the value of a text field
 description: How to retrieve text from a text field.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/retrieve_input"?>
@@ -72,8 +69,8 @@ return TextField(controller: myController);
 ## 3. Display the current value of the text field
 
 After supplying the `TextEditingController` to the text field,
-begin reading values. Use the [`text()`][]
-method provided by the `TextEditingController` to retrieve the
+begin reading values. Use the [`text`][]
+property provided by the `TextEditingController` to retrieve the
 String that the user has entered into the text field.
 
 The following code displays an alert dialog with the current
@@ -179,5 +176,5 @@ class _MyCustomFormState extends State<MyCustomForm> {
 </noscript>
 
 
-[`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
+[`text`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html

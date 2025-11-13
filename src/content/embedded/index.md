@@ -16,7 +16,7 @@ you might embed Flutter in the following situations:
   or a new operating system.
 
 The ability to embed Flutter, while stable,
-uses low-level API and is _not_ for beginners. 
+uses low-level API and is _not_ for beginners.
 In addition to the resources listed below, you
 might consider joining [Discord][], where Flutter
 developers (including Google engineers) discuss
@@ -38,11 +38,9 @@ resources.
 
 [community]: {{site.main-url}}/community
 [Discord]: https://discord.com/invite/N7Yshp4
-[Custom Flutter Engine Embedders]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/Custom-Flutter-Engine-Embedders.md
+[Custom Flutter Engine Embedders]: {{site.repo.flutter}}/blob/main/docs/engine/Custom-Flutter-Engine-Embedders.md
 [Flutter architectural overview]: /resources/architectural-overview
 [Flutter engine `embedder.h` file]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 [Flutter Embedder Engine GLFW example]: {{site.repo.flutter}}/tree/main/engine/src/flutter/examples/glfw#flutter-embedder-engine-glfw-example
 [embedding Flutter in a terminal]: https://github.com/jiahaog/flt
 [Issue 31043]: {{site.repo.flutter}}/issues/31043
-
-

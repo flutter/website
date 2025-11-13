@@ -1,7 +1,7 @@
 ---
 title: Build and release an Android app
 description: How to prepare for and release an Android app to the Play store.
-short-title: Android
+shortTitle: Android
 ---
 
 To test an app, you can use `flutter run` at the command line,
@@ -26,9 +26,9 @@ This guide explains how to perform the following tasks:
 * [Android release FAQ](#android-release-faq)
 
 :::note
-Throughout this page, `[project]` refers to 
+Throughout this page, `[project]` refers to
 the directory that your application is in. While following
-these instructions, substitute `[project]` with 
+these instructions, substitute `[project]` with
 your app's directory.
 :::
 
@@ -139,7 +139,7 @@ If not, create one using one of the following methods:
 
    On Windows, use the following command in PowerShell:
 
-   ```powershell
+   ```ps
    keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `
            -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `
            -alias upload
@@ -187,6 +187,10 @@ storeFile=<keystore-file-location>
 The `storeFile` might be located at
 `/Users/<user name>/upload-keystore.jks` on macOS
 or `C:\\Users\\<user name>\\upload-keystore.jks` on Windows.
+
+:::note
+The Windows path to `keystore.jks` must be specified with double backslashes: `\\`.
+:::
 
 :::warning
 Keep the `key.properties` file private;
@@ -631,6 +635,50 @@ panel (debug is the default):
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
+
+### How to tell if an apk uses Flutter?
+
+Recommended: Using APK files
+[apkanalyzer](https://developer.android.com/tools/apkanalyzer) files list --files-only <SOME-APK>
+Then looking for a file in `/lib/<ARCH>/libflutter.so`
+
+Example:
+`apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l`
+returns any number greater than 0.
+
+**Why this works**
+Flutter depends on C++ code used by the Flutter engine. In Android,
+this code is bundled with the Flutter framework and the developer's
+Dart code as a native library called `libflutter.so`.
+The Java/Android tooling renames the `flutter` library with the `lib` prefix
+and handles library location across architectures.
+This is how some reverse engineer an APK to identify it as a Flutter app.
+
+#### Secondary Evaluation:
+Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>` tag with `android:name="flutterEmbedding"`.
+The value can be `1` or `2`.
+
+Example:
+`apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`
+returns the following style string.
+```
+<meta-data
+   android:name="flutterEmbedding"
+   android:value="2" />
+```
+
+
+**Why this works**
+Flutter has had two different embedders, and this flag was read to determine which embedder was used.
+Flutter 3.22 removed the ability of v1 embedder apps to build.
+https://blog.flutter.dev/whats-new-in-flutter-3-22-fbde6c164fe3
+This mechanism is not recommended because it is unclear how long the `flutterEmbedding` value will
+continue to be included in all Flutter apps. Additionally, this will not work for all libraries written
+in Flutter that are imported into Android apps as AAR dependencies.
+
+#### Non-technical evaluation
+*   Download [Flutter Shark](https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1) on a device and let it scan local apps.
+*   Visit the [Flutter Hunt](https://flutterhunt.com/) website.
 
 {% comment %}
 ### Are there any special considerations with add-to-app?

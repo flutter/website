@@ -3,6 +3,8 @@ title: Use maxLengthEnforcement instead of maxLengthEnforced
 description: Introducing the MaxLengthEnforcement enum.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 To control the behavior of `maxLength` in the
@@ -249,5 +251,5 @@ Relevant PR:
 [`maxLength`]: {{site.api}}/flutter/services/LengthLimitingTextInputFormatter/maxLength.html
 [Issue 63753]: {{site.repo.flutter}}/issues/63753
 [Issue 67898]: {{site.repo.flutter}}/issues/67898
-[PR 63754]: {{site.github}}//flutter/flutter/pull/63754
+[PR 63754]: {{site.github}}/flutter/flutter/pull/63754
 [PR 68086]: {{site.repo.flutter}}/pull/68086

@@ -5,9 +5,11 @@ description: >
   multitouch gestures.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
-`ScrollBehavior`s now allow or disallow scrolling speeds to be affected by the 
+`ScrollBehavior`s now allow or disallow scrolling speeds to be affected by the
 number of pointers on the screen. `ScrollBehavior.multitouchDragStrategy`, by
 default, prevents multiple pointers interacting wih the scrollable at the same
 time from affecting the speed of scrolling.

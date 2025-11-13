@@ -4,7 +4,7 @@ version: 0.0.1
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0-0
 
 dependencies:
   flutter:
@@ -17,7 +17,7 @@ dev_dependencies:
     sdk: flutter
   flutter_driver:
     sdk: flutter
-  test: ^1.24.9
+  test: ^1.26.2
 
 flutter:
   uses-material-design: true

@@ -10,7 +10,7 @@ requirements should also use the [`Router`][] to correctly handle deep links on
 Android and iOS, and to stay in sync with the address bar when the app is
 running on the web.
 
-To configure your Android or iOS application to handle deep links, see 
+To configure your Android or iOS application to handle deep links, see
 [Deep linking][].
 
 ## Using the Navigator
@@ -25,7 +25,9 @@ as `push()` `or pop()`:
 child: const Text('Open second screen'),
 onPressed: () {
   Navigator.of(context).push(
-    MaterialPageRoute(builder: (context) => const SecondScreen()),
+    MaterialPageRoute<void>(
+      builder: (context) => const SecondScreen(),
+    ),
   );
 },
 ```
@@ -34,8 +36,8 @@ Because `Navigator` keeps a stack of `Route` objects (representing the history
 stack), The `push()` method also takes a `Route` object. The `MaterialPageRoute`
 object is a subclass of `Route` that specifies the transition animations for
 Material Design. For more examples of how to use the `Navigator`, follow the
-[navigation recipes][] from the Flutter Cookbook or visit the [Navigator API
-documentation][`Navigator`].
+[navigation recipes][] from the Flutter Cookbook or
+visit the [Navigator API documentation][`Navigator`].
 
 ## Using named routes
 
@@ -155,12 +157,12 @@ resources:
   Medium, describes how to use the `Router` widget directly, without
   a routing package.
 * The [Router design document][] contains the motivation and design of the
-  Router` API.
+  `Router` API.
 
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
 [Deep linking]: /ui/navigation/deep-linking
-[navigation recipes]: /cookbook#navigation
+[navigation recipes]: /cookbook/navigation
 [`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [Navigate with named routes]: /cookbook/navigation/named-routes
 [go_router]: {{site.pub}}/packages/go_router

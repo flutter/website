@@ -32,7 +32,7 @@ you can open and run some of the examples on DartPad.
 Flutter and Jetpack Compose code describe how the UI looks and works.
 Developers call this type of code a _declarative framework_.
 
-While there are key differences especially when it comes to 
+While there are key differences especially when it comes to
 interacting with legacy Android code, there are many commonalities
 between the two frameworks.
 
@@ -43,7 +43,7 @@ later noted in this document as _composables_. Composables can be
 altered or decorated through the use of _Modifier_ objects.
 
 ``` kotlin
-Text("Hello, World!", 
+Text("Hello, World!",
    modifier: Modifier.padding(10.dp)
 )
 Text("Hello, World!",
@@ -73,18 +73,18 @@ Jetpack Compose nests `Composables` while Flutter nests `Widgets`.
 ### Layout process
 
 Jetpack Compose and Flutter handle layout in similar ways. Both of them
-lay out the UI in a single pass and parent elements provide layout constraints 
+lay out the UI in a single pass and parent elements provide layout constraints
 down to their children. More specifically,
 
-1. The parent measures itself and its children recursively providing 
+1. The parent measures itself and its children recursively providing
    any constraints from the parent to the child.
-2. The children try to size themselves using the above methods and 
+2. The children try to size themselves using the above methods and
 provide their own children both their constraints and any that
 might apply from their ancestor nodes.
 3. Upon encountering a leaf node (a node with no children), the size
-and properties are determined based on the provided constraints 
+and properties are determined based on the provided constraints
 and the element is placed in the UI.
-4. With all the children sized and placed, the root nodes can 
+4. With all the children sized and placed, the root nodes can
 determine their measurement, size, and placement.
 
 In both Jetpack Compose and Flutter, the parent component can override
@@ -123,9 +123,9 @@ create buttons, react to on-press events, display lists, grids, and more.
 
 ### Getting started
 
-For **Compose** apps, your main entry point will 
-be _Activity_ or one of its descendants, 
-generally _ComponentActivity_. 
+For **Compose** apps, your main entry point will
+be _Activity_ or one of its descendants,
+generally _ComponentActivity_.
 
 ```kotlin
 class MainActivity : ComponentActivity() {
@@ -258,7 +258,7 @@ Column(verticalArrangement = Arrangement.Center) {
 }
 ```
 
-**Flutter** uses [`Row`][] and [`Column`][] as well but there are some slight differences for specifying child 
+**Flutter** uses [`Row`][] and [`Column`][] as well but there are some slight differences for specifying child
 widgets and alignment. The following is equivalent to the Compose example.
 
 ```dart
@@ -287,23 +287,23 @@ center of the main axis. For `Row`, the main axis is the horizontal
 axis, inversely for `Column`, the main axis is the vertical axis.
 
 ::: note
-Whereas Flutter's `Row` and `Column` have `MainAxisAlignment` 
+Whereas Flutter's `Row` and `Column` have `MainAxisAlignment`
 and `CrossAxisAlignment` to control how items are placed, the properties that
 control placement in Jetpack Compose are one vertical and horizontal property
 from the following: `verticalArrangement`, `verticalAlignment`,
 `horizontalAlignment`, and `horizontalArrangement`. The trick to determine
-which is the `MainAxis` is to look for the property that ends in `arrangement`. 
+which is the `MainAxis` is to look for the property that ends in `arrangement`.
 The `CrossAxis` will be the property that ends in `alignment`.
 :::
 
 ### Displaying a list view
 
 In **Compose**, you have a couple ways to create a list based on
-the size of the list you need to display. For a small number of items 
-that can all be displayed at once, you can iterate over a collection 
+the size of the list you need to display. For a small number of items
+that can all be displayed at once, you can iterate over a collection
 inside a `Column` or `Row`.
 
-For a list with a large number of items, `LazyList` has better 
+For a list with a large number of items, `LazyList` has better
 performance. It only lays out the components that will be visible
 versus all of them.
 
@@ -386,11 +386,11 @@ almost any widget that represents your data.
 
 ### Displaying a grid
 
-Constructing a grid in **Compose** is similar to a 
+Constructing a grid in **Compose** is similar to a
 LazyList (`LazyColumn` or `LazyRow`). You can use the
-same `items` closure. There are properties on each 
+same `items` closure. There are properties on each
 grid type to specify how to arrange the items,
-whether or not to use adaptive or fixed layout, 
+whether or not to use adaptive or fixed layout,
 amongst others.
 
 
@@ -423,7 +423,7 @@ This widget has various constructors. Each constructor has
 a similar goal, but uses different input parameters.
 The following example uses the `.builder()` initializer:
 
-```dart 
+```dart
 const widgets = [
   Text('Row 1'),
   Icon(Icons.arrow_downward),
@@ -457,14 +457,14 @@ various parameters that the grid uses to lay out its components.
 This includes `crossAxisCount` that dictates the number of items
 displayed on each row.
 
-Jetpack Compose's `LazyHorizontalGrid`, `LazyVerticalGrid`, and Flutter's `GridView` are somewhat 
+Jetpack Compose's `LazyHorizontalGrid`, `LazyVerticalGrid`, and Flutter's `GridView` are somewhat
 similar. `GridView` uses a delegate to decide how the grid
 should lay out its components. The `rows`, `columns`, and other
 associated properties on `LazyHorizontalGrid` \ `LazyVerticalGrid` serve the same purpose.
 
 ### Creating a scroll view
 
-`LazyColumn` and `LazyRow` in **Jetpack Compose** have built-in 
+`LazyColumn` and `LazyRow` in **Jetpack Compose** have built-in
 support for scrolling.
 
 To create a scrolling view, **Flutter** uses [`SingleChildScrollView`][].
@@ -487,7 +487,7 @@ SingleChildScrollView(
 
 ### Responsive and adaptive design
 
-Adaptive Design in **Compose** is a complex topic with many 
+Adaptive Design in **Compose** is a complex topic with many
 viable solutions:
 * Using a custom layout
 * Using `WindowSizeClass` alone
@@ -497,7 +497,7 @@ available space
 along with specialized composable layouts for common layouts
 
 For that reason, you are encouraged to look into the **Flutter**
-options directly and see what fits your requirements versus 
+options directly and see what fits your requirements versus
 attempting to find something that is a one to one translation.
 
 To create relative views in **Flutter**, you can use one of two options:
@@ -580,7 +580,7 @@ To learn more ways to manage state, check out [State management][].
 
 ### Drawing on the Screen
 
-In **Compose**, you use the `Canvas` composable to draw 
+In **Compose**, you use the `Canvas` composable to draw
 shapes, images, and text to the screen.
 
 **Flutter** has an API based on the `Canvas` class,
@@ -588,7 +588,7 @@ with two classes that help you draw:
 
 1. [`CustomPaint`][] that requires a painter:
 
-    ```dart 
+    ```dart
     CustomPaint(
       painter: SignaturePainter(_points),
       size: Size.infinite,
@@ -600,9 +600,9 @@ with two classes that help you draw:
     ```dart
     class SignaturePainter extends CustomPainter {
       SignaturePainter(this.points);
-    
+
       final List<Offset?> points;
-    
+
       @override
       void paint(Canvas canvas, Size size) {
         final Paint paint = Paint()
@@ -615,7 +615,7 @@ with two classes that help you draw:
           }
         }
       }
-    
+
       @override
       bool shouldRepaint(SignaturePainter oldDelegate) =>
           oldDelegate.points != points;
@@ -631,8 +631,8 @@ and more. This section covers how to style your apps.
 
 ### Using dark mode
 
-In **Compose**, you can control light and dark at any 
-arbitrary level by wrapping a component with 
+In **Compose**, you can control light and dark at any
+arbitrary level by wrapping a component with
 a `Theme` composable.
 
 In **Flutter**, you can control light and dark mode at the app-level.
@@ -658,10 +658,10 @@ Text("Hello, world!", color = Color.Green,
         fontWeight = FontWeight.Bold, fontSize = 30.sp)
 ```
 ```kotlin
-Text("Hello, world!", 
+Text("Hello, world!",
    style = TextStyle(
-      color = Color.Green, 
-      fontSize = 30.sp, 
+      color = Color.Green,
+      fontSize = 30.sp,
       fontWeight = FontWeight.Bold
    ),
 )
@@ -683,7 +683,7 @@ Text(
 
 ### Styling buttons
 
-In **Compose**, you modify the colors of a button using 
+In **Compose**, you modify the colors of a button using
 the `colors` property. If left unmodified, they
 use the defaults from the current theme.
 
@@ -696,7 +696,7 @@ Button(onClick = {},
 }
 ```
 
-To style button widgets in **Flutter**, you similarly 
+To style button widgets in **Flutter**, you similarly
 set the style of its child, or modify properties on the button itself.
 
 ```dart
@@ -718,9 +718,9 @@ FilledButton(
 There is commonly a need to bundle resources for use in your application.
 They can be animations, vector graphics, images, fonts, or other general files.
 
-Unlike native Android apps that expect a set directory structure under `/res/<qualifier>/` 
+Unlike native Android apps that expect a set directory structure under `/res/<qualifier>/`
 where the qualifier could be indicating the type of file, a specific orientation,
-or android version, Flutter doesn't require a specific location as long 
+or android version, Flutter doesn't require a specific location as long
 as the referenced files are listed in the `pubspec.yaml` file. Below is an excerpt
 from a `pubspec.yaml` referencing several images and a font file.
 
@@ -749,7 +749,7 @@ The following are roughly equivalent Compose and Flutter code for using a font f
 as listed above.
 
 ```kotlin
-// Font files bunded with app
+// Font files bundled with app
 val firaSansFamily = FontFamily(
    Font(R.font.firasans_regular, FontWeight.Normal),
    // ...
@@ -771,14 +771,14 @@ Text(
 
 ### Using a font provider (Google Fonts)
 
-One point of difference is using fonts from a font provider like Google Fonts. In **Compose**, 
+One point of difference is using fonts from a font provider like Google Fonts. In **Compose**,
 the instantiation is done inline with the same approximate code to reference a local file.
 
 After instantiating a provider that references the special strings for the font service,
 you would use the same `FontFamily` declaration.
 
 ```kotlin
-// Font files bunded with app
+// Font files bundled with app
 val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
     providerPackage = "com.google.android.gms",
@@ -805,7 +805,7 @@ import 'package:google_fonts/google_fonts.dart';
 Text(
   'Flutter',
   style: GoogleFonts.firaSans(),
-  // or 
+  // or
   //style: GoogleFonts.getFont('FiraSans')
 ),
 ```

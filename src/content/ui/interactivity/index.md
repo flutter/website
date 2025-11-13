@@ -1,7 +1,7 @@
 ---
 title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
-short-title: Interactivity
+shortTitle: Interactivity
 ---
 
 {% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
@@ -22,7 +22,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/lakes.jpg" caption="The layout tutorial app" />
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -33,7 +33,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
+<DashImage figure image="ui/favorited-not-favorited.png" alt="The custom widget you'll create" img-class="diagram-wrap" />
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -694,7 +694,7 @@ If you prefer, you can use [`GestureDetector`][] to build
 interactivity into any custom widget.
 You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
-in [Handle taps][], a recipe in the [Flutter cookbook][].
+in [Handle taps][], a recipe in the Flutter cookbook.
 
 :::tip
 Flutter also provides a set of iOS-style widgets called
@@ -727,7 +727,7 @@ the prefabricated widgets. Here's a partial list:
 The following resources might help when adding interactivity
 to your app.
 
-[Gestures][], a section in the [Flutter cookbook][].
+[Gestures][], a section in the Flutter cookbook.
 
 [Handling gestures][]
 : How to create a button and make it respond to input.
@@ -745,7 +745,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 : This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
+[Android emulator]: /platform-integration/android/setup#set-up-devices
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
@@ -754,7 +754,6 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: /cookbook
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
@@ -766,7 +765,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
+[iOS simulator]: /platform-integration/ios/setup#set-up-devices
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
@@ -781,7 +780,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: /get-started/install
+[set up]: /get-started
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

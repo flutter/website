@@ -1,6 +1,6 @@
 ---
 title: Add the predictive-back gesture
-short-title: Predictive-back
+shortTitle: Predictive-back
 description: >-
   Learn how to add the predictive back gesture to your Android app.
 ---
@@ -59,4 +59,3 @@ You can find more information at the following link:
 * [Android predictive back][] breaking change
 
 [Android predictive back]: /release/breaking-changes/android-predictive-back
-

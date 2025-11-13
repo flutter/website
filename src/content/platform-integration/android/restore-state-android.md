@@ -1,4 +1,4 @@
---- 
+---
 title: "Restore state on Android"
 description: "How to restore the state of your Android app after it's been killed by the OS."
 ---
@@ -50,30 +50,32 @@ moments to prepare.
 
 You can enable state restoration with just a few tasks:
 
-1. Define a `restorationId` or a `restorationScopeId`
-   for all widgets that support it,
+1. Define a `restorationScopeId` for classes like
+   `CupertinoApp`, `MaterialApp`, or `WidgetsApp`.
+
+2. Define a `restorationId` for widgets that support it,
    such as [`TextField`][] and [`ScrollView`][].
    This automatically enables built-in state restoration
    for those widgets.
 
-2. For custom widgets,
+3. For custom widgets,
    you must decide what state you want to restore
    and hold that state in a [`RestorableProperty`][].
    (The Flutter API provides various subclasses for
    different data types.)
-   Define those `RestorableProperty` widgets 
+   Define those `RestorableProperty` widgets
    in a `State` class that uses the [`RestorationMixin`][].
    Register those widgets with the mixin in a
    `restoreState` method.
 
-3. If you use any Navigator API (like `push`, `pushNamed`, and so on)
+4. If you use any Navigator API (like `push`, `pushNamed`, and so on)
    migrate to the API that has "restorable" in the name
    (`restorablePush`, `restorablePushNamed`, and so on)
    to restore the navigation stack.
 
 Other considerations:
 
-* Providing a `restorationId` to
+* Providing a `restorationScopeId` to
   `MaterialApp`, `CupertinoApp`, or `WidgetsApp`
   automatically enables state restoration by
   injecting a `RootRestorationScope`.
@@ -82,7 +84,7 @@ Other considerations:
 
 * **The difference between a `restorationId` and
   a `restorationScopeId`:** Widgets that take a
-  `restorationScopeID` create a new `restorationScope`
+  `restorationScopeId` create a new `restorationScope`
   (a new `RestorationBucket`) into which all children
   store their state. A `restorationId` means the widget
   (and its children) store the data in the surrounding bucket.
@@ -93,7 +95,7 @@ Other considerations:
 [`RestorationMixin`]: {{site.api}}/flutter/widgets/RestorationMixin-mixin.html
 [`RestorationScope`]: {{site.api}}/flutter/widgets/RestorationScope-class.html
 [`restoreState`]: {{site.api}}/flutter/widgets/RestorationMixin/restoreState.html
-[VeggieSeasons]: {{site.repo.samples}}/tree/main/veggieseasons
+[VeggieSeasons]: https://github.com/flutter/demos/tree/main/veggieseasons
 
 ## Restoring navigation state
 
@@ -106,11 +108,6 @@ If you use the Navigator API directly,
 migrate the standard methods to restorable
 methods (that have "restorable" in the name).
 For example, replace `push` with [`restorablePush`][].
-
-The VeggieSeasons example (listed under "Other resources" below)
-implements navigation with the [`go_router`][] package.
-Setting the `restorationId`
-values occur in the `lib/screens` classes.
 
 ## Testing state restoration
 
@@ -134,19 +131,7 @@ finished with testing!
 ## Other resources
 
 For further information on state restoration,
-check out the following resources:
-
-* For an example that implements state restoration, 
-  check out [VeggieSeasons][], a sample app written
-  for iOS that uses Cupertino widgets. An iOS app requires
-  [a bit of extra setup][] in Xcode, but the restoration
-  classes otherwise work the same on both iOS and Android.<br>
-  The following list links to relevant parts of the VeggieSeasons
-  example:
-    * [Defining a `RestorablePropery` as an instance property]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L33-L37)
-    * [Registering the properties]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L49-L54)
-    * [Updating the property values]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L108-L109)
-    * [Using property values in build]({{site.repo.samples}}/blob/604c82cd7c9c7807ff6c5ca96fbb01d44a4f2c41/veggieseasons/lib/widgets/trivia.dart#L205-L210)<br>
+check out the following resources.
 
 * To learn more about short term and long term state,
   check out [Differentiate between ephemeral state
@@ -156,13 +141,14 @@ check out the following resources:
   perform state restoration, such as [`statePersistence`][].
 
 * For more information on navigation and the
-  `go_router` package, check out [Navigation and routing][].
+  [`go_router`][] package, check out [Navigation and routing][]
+  and the [State restoration][] topic on pub.dev.
 
+[`go_router`]: {{site.pub}}/packages/go_router
+[State restoration]: {{site.pub-api}}/go_router/latest/topics/State%20restoration-topic.html
+[Navigation and routing]: /ui/navigation
 [`RestorableProperty`]: {{site.api}}/flutter/widgets/RestorableProperty-class.html
 [`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView/restorationId.html
 [`statePersistence`]: {{site.pub-pkg}}/state_persistence
 [`TextField`]: {{site.api}}/flutter/material/TextField/restorationId.html
-[`restorablePush`]: {{site.api}}/flutter/widgets/Navigator/restorablePush.html
-[`go_router`]: {{site.pub}}/packages/go_router
-[Navigation and routing]: /ui/navigation

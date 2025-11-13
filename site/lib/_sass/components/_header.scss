@@ -1,0 +1,169 @@
+#site-header {
+  background-color: var(--site-header-bgColor);
+  font-family: var(--site-ui-fontFamily);
+  position: sticky;
+  top: 0;
+  z-index: var(--site-z-header);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
+
+  @media (min-width: 1200px) {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+    border-bottom: none;
+  }
+
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+
+    min-height: var(--site-header-height);
+
+    #menu-toggle {
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    .navbar-brand {
+      margin-right: auto;
+
+      img {
+        width: 129px;
+        height: 37px;
+        vertical-align: middle;
+      }
+    }
+
+    .navbar-contents {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .nav-link {
+      color: var(--site-base-fgColor-alt);
+      padding: 0.25rem .5rem;
+      position: relative;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--site-base-fgColor);
+      }
+    }
+  }
+
+  #call-to-action {
+    padding: 0.5rem 1rem;
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: unset;
+    }
+  }
+
+  #header-search {
+    display: none;
+    position: relative;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 1rem;
+
+    @media (min-width: 576px) {
+      display: flex;
+    }
+
+    &::before {
+      content: 'search';
+      color: var(--site-base-fgColor-alt);
+      font: 28px/1 var(--site-icon-fontFamily);
+      pointer-events: none;
+      position: absolute;
+      left: 1rem;
+    }
+
+    &:hover::before {
+      color: var(--site-base-fgColor);
+    }
+
+    input {
+      border: 0;
+      font-size: 1rem;
+      transition: width .35s ease-in-out;
+      width: 24px;
+      cursor: pointer;
+      border-radius: 24px;
+      padding: 0.5rem 0.5rem 0.5rem 3rem;
+      background: none;
+
+      &:focus {
+        width: 220px;
+        cursor: auto;
+      }
+    }
+  }
+
+  #fallback-search-button {
+    display: none;
+
+    @media (min-width: 320px) {
+      display: flex;
+    }
+
+    @media (min-width: 576px) {
+      display: none;
+    }
+  }
+}
+
+// Toggle between menu and close buttons if sidenav is open or not.
+#menu-toggle span.material-symbols {
+  &:first-child {
+    display: inline;
+  }
+
+  &:last-child {
+    display: none;
+  }
+}
+
+body.open_menu #menu-toggle span.material-symbols {
+  &:first-child {
+    display: none;
+  }
+
+  &:last-child {
+    display: inline;
+  }
+}
+
+#site-primary-logo {
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.25rem;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  >span {
+    &.name {
+      display: none;
+
+      @media (min-width: 420px) {
+        display: unset;
+      }
+    }
+
+    &.subtype {
+      margin-left: 0;
+
+      @media (min-width: 420px) {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}

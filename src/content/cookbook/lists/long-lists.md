@@ -1,9 +1,6 @@
 ---
 title: Work with long lists
 description: Use ListView.builder to implement a long or infinite list.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/long_lists/"?>

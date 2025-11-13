@@ -1,0 +1,86 @@
+@use '../base/mixins';
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+$wrapper-padding: 0.375rem;
+$wrapper-radius: 0.125rem;
+
+ul.nav-tabs {
+  list-style: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding: $wrapper-padding;
+  border-radius: $wrapper-radius;
+  background-color: var(--site-raised-bgColor);
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: thin;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    font-family: var(--site-ui-fontFamily);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.125rem;
+    white-space: nowrap;
+    user-select: none;
+    outline-offset: 1px;
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &.active {
+      background-color: var(--site-filledButton-bgColor);
+      color: var(--site-filledButton-fgColor);
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
+    }
+
+    &:focus-visible {
+      a {
+        outline: none;
+      }
+    }
+  }
+}
+
+.tabs-wrapper.wrapped {
+  .nav-tabs {
+    margin-bottom: 0;
+  }
+
+  .tab-content {
+    padding: 1rem 1rem 0;
+    background-color: var(--site-raised-bgColor-translucent);
+
+    border: $wrapper-padding solid var(--site-raised-bgColor);
+    border-top: none;
+    border-bottom-left-radius: $wrapper-radius;
+    border-bottom-right-radius: $wrapper-radius;
+
+    ul {
+      padding-left: 1rem;
+    }
+
+    .tab-pane> :first-child {
+      margin-block-start: 0;
+    }
+  }
+}

@@ -1,8 +1,11 @@
 ---
 title: Contribute to the docs
-short-title: Docs
+shortTitle: Docs
 description: >-
   Learn about contributing to the Dart and Flutter documentation sites.
+sitemap: false
+noindex: true
+showBreadcrumbs: true
 ---
 
 :::warning
@@ -37,10 +40,6 @@ This document is a work in progress.
 - `examples/`
 
   The source files for [code excerpts][] used in doc code blocks.
-- `site-shared/`
-
-  [`dart-lang/site-shared`][] as a [git submodule][]
-  that contains various configuration and tooling used by the site.
 - `src/`
   - `_11ty/`
 
@@ -73,7 +72,7 @@ This document is a work in progress.
 
       The other directories hosting the site content.
 - `tool/`
-  - `flutter_site/` and `dash_site/`
+  - `dash_site/`
 
     The implementation directories for the `dash_site` tooling.
 - `dash_site`
@@ -96,8 +95,6 @@ This document is a work in progress.
 
 [Cloud Build]: https://cloud.google.com/build
 [code excerpts]: /contribute/docs/excerpts
-[git submodule]: https://git-scm.com/book/en/v2/Git-Tools-Submodules
-[`dart-lang/site-shared`]: https://github.com/dart-lang/site-shared
 
 [Shiki]: https://shiki.style/
 [render and include]: https://liquidjs.com/tags/render.html

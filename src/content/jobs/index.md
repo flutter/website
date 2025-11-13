@@ -1,6 +1,6 @@
 ---
 title: Flutter and Dart team job openings
-short-title: Open jobs
+shortTitle: Open jobs
 description: Open job listings for the Flutter and Dart teams.
 ---
 

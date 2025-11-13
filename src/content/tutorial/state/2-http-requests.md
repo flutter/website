@@ -2,6 +2,7 @@
 title: Fetch data from the internet
 description: Instructions on how to make HTTP requests and parse responses.
 permalink: /tutorial/http-request/
+sitemap: false
 ---
 
 The overarching pattern that this tutorial implements is called
@@ -11,9 +12,9 @@ Model handles data operations, the View displays the UI, and the
 ViewModel manages state and connects them. The core tenet of MVVM
 (and many other patterns) is *separation of concerns*. Managing state
 in separate classes (outside your UI widgets) makes your code more
-testable, reusable, and easier to maintain. 
+testable, reusable, and easier to maintain.
 
-<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%" 
+<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%"
 alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
 
 A single feature in your app contains each one of the MVVM components. In
@@ -25,7 +26,7 @@ this tutorial, you'll create an `ArticleModel`, `ArticleViewModel` and
 The Model is the source-of-truth for your app's data, and is
 responsible for low-level tasks such as making HTTP
 requests, caching data, or managing system resources such as a plugin.
-A model doesn't usually need to import Flutter libraries. 
+A model doesn't usually need to import Flutter libraries.
 
 Create an empty `ArticleModel` class in your `main.dart` file:
 
@@ -45,7 +46,7 @@ summary.
 https://en.wikipedia.org/api/rest_v1/page/random/summary
 ```
 
-Add a method to fetch random Wikipedia article summaries: 
+Add a method to fetch random Wikipedia article summaries:
 
 ```dart
 class ArticleModel {
@@ -55,7 +56,7 @@ class ArticleModel {
       '/api/rest_v1/page/random/summary',
     );
     final response = await get(uri);
-    
+
     // TODO: Add error handling and JSON parsing.
   }
 }

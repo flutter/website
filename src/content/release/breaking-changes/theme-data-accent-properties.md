@@ -5,6 +5,8 @@ description: >
   accentTextTheme properties have been deprecated.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The ThemeData [accentColor][], [accentColorBrightness][], [accentIconTheme][]

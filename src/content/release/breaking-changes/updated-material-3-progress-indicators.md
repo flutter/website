@@ -5,6 +5,8 @@ description: >-
   have been updated to match the Material 3 Design specifications.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `LinearProgressIndicator` and `CircularProgressIndicator` have

@@ -1,7 +1,7 @@
 ---
 title: Build and release an iOS app
 description: How to release a Flutter app to the App Store.
-short-title: iOS
+shortTitle: iOS
 ---
 
 This guide provides a step-by-step walkthrough of releasing a
@@ -25,7 +25,7 @@ You can read more about the various membership options in Apple's
 For those who prefer video over text,
 the following video covers the same material as this guide.
 
-{% ytEmbed 'iE2bpP56QKc', 'Release an iOS app built with Flutter in 7 steps' %}
+<YouTubeEmbed id="iE2bpP56QKc" title="Release an iOS app built with Flutter in 7 steps"></YouTubeEmbed>
 
 ## Register your app on App Store Connect
 
@@ -58,8 +58,8 @@ To register a Bundle ID for your app, follow these steps:
 Register your app on App Store Connect:
 
 1. Open [App Store Connect][appstoreconnect_login] in your browser.
-1. On the App Store Connect landing page, click **My Apps**.
-1. Click **+** in the top-left corner of the My Apps page,
+1. On the App Store Connect landing page, click **Apps**.
+1. Click **+** in the top-left corner,
    then select **New App**.
 1. Fill in your app details in the form that appears.
    In the Platforms section, ensure that iOS is checked.
@@ -115,7 +115,7 @@ In the **Deployment** section of the **Build Settings** tab:
 
 `iOS Deployment Target`
 : The minimum iOS version that your app supports.
-  Flutter supports iOS 12 and later. If your app or plugins
+  Flutter supports iOS 13 and later. If your app or plugins
   include Objective-C or Swift code that makes use of APIs newer
   than iOS 12, update this setting to the highest required version.
 

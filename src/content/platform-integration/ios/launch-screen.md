@@ -1,8 +1,8 @@
 ---
 title: Adding a launch screen to your iOS app
-short-title: Launch screen
+shortTitle: Launch screen
 description: Learn how to add a launch screen to your iOS app.
-toc: false
+showToc: false
 ---
 
 {% comment %}

@@ -5,6 +5,8 @@ description: >
   returns the value specified by the user (defaults to null) as is.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 [`CupertinoThemeData.brightness`] is now nullable.

@@ -1,0 +1,517 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: var(--site-body-fontFamily);
+  overflow-x: hidden;
+  line-height: 1.5;
+  background-color: var(--site-base-bgColor);
+  color: var(--site-base-fgColor);
+
+  // The top TOC is not shown on narrow screens.
+  @media (min-width: 1200px) {
+    --site-subheader-height: 0rem;
+  }
+
+  // If the TOC is disabled, reduce the subheader height to
+  // ensure offset calculations are still correct.
+  &[data-toc="false"],
+  &.no-toc {
+    --site-subheader-height: 0rem;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--site-primary-color);
+}
+
+.container main {
+  overflow-x: hidden;
+}
+
+#site-below-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#site-main-row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+h2 {
+  clear: both;
+}
+
+dd {
+  margin-bottom: .75rem;
+  margin-left: 1rem;
+}
+
+img {
+  max-width: 100%;
+  max-height: 75vh;
+
+  &[width][height] {
+    height: auto;
+  }
+}
+
+picture {
+  max-height: 100%;
+}
+
+.material-symbols {
+  font-family: var(--site-icon-fontFamily);
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+
+  &.ms-filled {
+    font-variation-settings: 'FILL' 1;
+  }
+}
+
+.site-mobile-screenshot {
+  display: block;
+  margin: 0 auto;
+  max-height: none;
+  max-width: 100%;
+
+  @media (min-width: 480px) {
+    max-width: 320px;
+  }
+
+  &--border {
+    border: 1px solid var(--site-inset-borderColor);
+  }
+}
+
+.site-image-right {
+  display: block;
+  margin: 0 auto;
+  max-height: 60vh;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    float: right;
+    margin: 0 0 2.5rem 2.5rem;
+    max-height: none;
+    max-width: calc((100%/2.5) - 2.5rem);
+  }
+}
+
+main figure {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  margin-block-end: 1rem;
+
+  &.site-image-right {
+    max-height: none;
+  }
+
+  .site-figure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 auto;
+    max-width: 100%;
+    text-align: center;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+    }
+  }
+
+  figcaption {
+    font-size: 0.875em;
+    font-style: italic;
+    text-align: center;
+  }
+
+  &.code-and-image {
+    gap: 0.25rem;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    >div {
+      width: 100%;
+
+      &:last-child {
+        text-align: center;
+      }
+    }
+
+    @media(min-width: 769px) {
+      >div {
+        &:first-child {
+          flex: 0 0 58%;
+          max-width: 58%;
+        }
+
+        &:last-child {
+          flex: 0 0 40%;
+          max-width: 40%;
+        }
+      }
+
+      figcaption {
+        text-align: left;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.text-icon {
+  margin: 0 0.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: bottom;
+}
+
+.site-illustration {
+  // Illustrations should be visible in their entirety without the need
+  // for scrolling up and down.
+  max-height: 60vh;
+}
+
+table {
+
+  td,
+  th {
+    padding: .25rem;
+  }
+}
+
+.table {
+  width: 100%;
+  border-spacing: 0;
+
+  thead {
+    vertical-align: bottom;
+    background-color: var(--site-raised-bgColor);
+
+    th {
+      //border-bottom: 1px solid var(--site-inset-borderColor);
+      text-align: start;
+    }
+  }
+
+  tbody {
+    tr {
+      vertical-align: top;
+
+      &:nth-of-type(odd) {
+        background-color: rgb(var(--site-interaction-base-values) / 3%)
+      }
+    }
+  }
+
+  td,
+  th {
+    border-top: 1px solid var(--site-inset-borderColor);
+    padding: .75rem;
+  }
+}
+
+// If table head has empty children, just hide it
+// since markdown-it's tables don't support headless tables.
+thead:has(th:empty) {
+  display: none;
+}
+
+.table-wrapper,
+.scrollable-table {
+  overflow-x: auto;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+}
+
+.scrollable-table {
+  overflow-y: scroll;
+  max-height: 20rem;
+
+  table {
+    width: 100%;
+  }
+}
+
+blockquote {
+  background-color: var(--site-inset-bgColor);
+  padding: 0.75rem 1rem;
+  border-left: solid 5px var(--site-inset-borderColor);
+  margin: 0;
+  margin-block-end: 1rem;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+details {
+  margin-bottom: 0.75rem;
+
+  >summary {
+    font-weight: 500;
+    user-select: none;
+    border-radius: 0.125rem;
+
+    &:hover {
+      color: var(--site-primary-color);
+      cursor: pointer;
+    }
+  }
+
+  &[open] {
+    margin-bottom: unset;
+
+    >summary {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  > :not(:first-child) {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+  }
+}
+
+hr {
+  border: 1px solid var(--site-outline-variant);
+  border-radius: 1rem;
+}
+
+// TODO(parlough): Clean this up and simplify list item styles for all content.
+ol.steps {
+  position: relative;
+  list-style: none;
+  counter-reset: steps;
+  padding-inline-start: 2.5rem;
+  margin-block-end: 1rem;
+
+  $step-indicator-height: 1.75rem;
+
+  li {
+    >* {
+      &:first-child {
+        margin-block-start: 0;
+      }
+
+      &:last-child {
+        margin-block-end: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      padding-block-end: 1rem;
+    }
+  }
+
+  ul>li {
+    &:not(:last-child) {
+      padding-block-end: .5rem;
+    }
+  }
+
+  >li {
+    position: relative;
+    counter-increment: steps;
+
+    ol,
+    ul {
+      padding-inline-start: 2rem;
+      margin-block-end: 0.75rem;
+    }
+
+    >h3:first-child {
+      display: flex;
+      align-items: center;
+      height: $step-indicator-height;
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--site-base-fgColor-lighter);
+      margin-block-end: 0.5rem;
+    }
+
+    padding-block-end: 0.75rem;
+
+    &:after {
+      position: absolute;
+      display: block;
+      content: '';
+      top: 0;
+      left: calc($step-indicator-height / 2 - 2.5rem - 1px);
+      width: 2px;
+      height: 100%;
+      background-color: var(--site-outline-variant);
+    }
+
+    &:last-child:after {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    &:before {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: var(--site-ui-fontFamily);
+      content: counter(steps);
+      user-select: none;
+      z-index: var(--site-z-container);
+
+      position: absolute;
+      left: -2.5rem;
+
+      height: $step-indicator-height;
+      width: $step-indicator-height;
+      background-color: var(--site-outline-variant);
+      color: var(--site-base-fgColor-lighter);
+      font-weight: 500;
+      border-radius: 100%;
+    }
+  }
+}
+
+main {
+
+  ol+img,
+  ul+img,
+  ol+p,
+  ul+p,
+  p+p+img {
+    margin-bottom: 1rem;
+  }
+
+  td {
+    >*:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+p+ul,
+p+ol,
+p+dl {
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+}
+
+.figure-caption {
+  font-size: .875rem;
+  font-style: italic;
+  color: var(--site-base-fgColor-lighter);
+}
+
+.card-os-bug {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 24px;
+    height: 24px;
+    background-position: center center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    z-index: var(--site-z-floating);
+    /* Place in front of card */
+  }
+}
+
+.card-macos {
+  @extend .card-os-bug;
+
+  &::before {
+    background-image: url("/assets/images/docs/brand-svg/macos-bug.svg");
+  }
+}
+
+.card-windows {
+  @extend .card-os-bug;
+
+  &::before {
+    background-image: url("/assets/images/docs/brand-svg/windows-bug.svg");
+  }
+}
+
+.card-linux {
+  @extend .card-os-bug;
+
+  &::before {
+    background-image: url("/assets/images/docs/brand-svg/linux.svg");
+  }
+}
+
+.card-chromeos {
+  @extend .card-os-bug;
+
+  &::before {
+    background-image: url("/assets/images/docs/brand-svg/chromeos.svg");
+  }
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+
+  .video-intro {
+    font-weight: 500;
+    font-size: 1.125rem;
+    padding: 0 0.75rem;
+    text-wrap: pretty;
+  }
+
+  lite-youtube {
+    border-radius: 0.25rem;
+    border: 2px solid rgba(0, 0, 0, .125);
+  }
+}
+
+lite-youtube:not(.full-width) {
+  max-width: 560px;
+}
+
+.footnote-ref a {
+  scroll-margin-top: 6rem;
+}
+
+.footnote-item {
+  scroll-margin-top: 5rem;
+}

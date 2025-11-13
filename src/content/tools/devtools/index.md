@@ -1,5 +1,6 @@
 ---
 title: Flutter and Dart DevTools
+breadcrumb: DevTools
 description: How to use Flutter DevTools with Flutter.
 ---
 
@@ -15,7 +16,7 @@ same set of tools.
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:
 
-{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
+<YouTubeEmbed id="_EYk-E29edo" title="Dive in to Flutter and Dart DevTools"></YouTubeEmbed>
 
 ## What can I do with DevTools?
 
@@ -87,7 +88,7 @@ in the [DevTools issue tracker][]. Thanks!
 
 ## DevTools versioning
 
-DevTools is distrubited as part of the Flutter SDK. To get access to the latest
+DevTools is distributed as part of the Flutter SDK. To get access to the latest
 DevTools functionality, run `flutter upgrade` to get the most up-to-date version
 of Flutter. To access DevTools features before they hit the Flutter `stable`
 channel, consider switching to the `beta` or `main` channels.

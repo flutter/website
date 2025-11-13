@@ -26,7 +26,7 @@ That said, if you have a strong background in
 state management from other reactive frameworks,
 you can find packages and tutorials listed on the [options page][].
 
-## Our example 
+## Our example
 
 <img src='/assets/images/docs/development/data-and-backend/state-mgmt/model-shopper-screencast.webp' alt='An animated gif showing a Flutter app in use. It starts with the user on a login screen. They log in and are taken to the catalog screen, with a list of items. The click on several items, and as they do so, the items are marked as "added". The user clicks on a button and gets taken to the cart view. They see the items there. They go back to the catalog, and the items they bought still show "added". End of animation.' class='site-image-right' style="max-height: 24rem;">
 
@@ -373,7 +373,7 @@ return Consumer<CartModel>(
   builder: (context, cart, [!child!]) => Stack(
     children: [
       // Use SomeExpensiveWidget here, without rebuilding every time.
-      if ([!child!] != null) [!child!],
+      ?[!child!],
       Text('Total price: ${cart.totalPrice}'),
     ],
   ),
@@ -451,10 +451,10 @@ If you want something simpler,
 see what the simple Counter app looks like when
 [built with `provider`][].
 
-By following along with these articles, you've greatly 
-improved your ability to create state-based applications. 
-Try building an application with `provider` yourself to 
-master these skills. 
+By following along with these articles, you've greatly
+improved your ability to create state-based applications.
+Try building an application with `provider` yourself to
+master these skills.
 
 [built with `provider`]: {{site.repo.samples}}/tree/main/provider_counter
 [check out the example]: {{site.repo.samples}}/tree/main/provider_shopper

@@ -5,6 +5,8 @@ description: >
   `ExpansibleController`.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `ExpansionTileController` is deprecated. The same functionality can be
@@ -26,7 +28,7 @@ Code before migration:
 ```dart
 class _MyWidgetState extends State<MyWidget> {
   final ExpansionTileController controller = ExpansionTileController();
-  
+
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
@@ -41,13 +43,13 @@ Code after migration:
 ```dart
 class _MyWidgetState extends State<MyWidget> {
   final ExpansibleController controller = ExpansibleController();
-  
+
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(

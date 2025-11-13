@@ -1,8 +1,7 @@
 ---
 title: Building Windows apps with Flutter
 description: Platform-specific considerations for building for Windows with Flutter.
-toc: true
-short-title: Windows development
+shortTitle: Windows development
 ---
 
 This page discusses considerations unique to building
@@ -50,7 +49,7 @@ including common packages such as [`url_launcher`], [`shared_preferences`], [`fi
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad
 [biometric storage]: {{site.pub}}/packages/biometric_storage
-[taskbar integration]: {{site.pub}}//packages/windows_taskbar
+[taskbar integration]: {{site.pub-pkg}}/windows_taskbar
 [serial port access]: {{site.pub}}/packages/serial_port_win32
 [packages support Windows]: {{site.pub}}/packages?q=platform%3Awindows
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher
@@ -281,11 +280,11 @@ In addition to that executable, you need the following:
   * `msvcp140.dll`
   * `vcruntime140.dll`
   * `vcruntime140_1.dll`
-  
+
   Place the DLL files in the directory next to the executable
   and the other DLLs, and bundle them together in a zip file.
   The resulting structure looks something like this:
-  
+
   ```plaintext
   Release
   │   flutter_windows.dll
@@ -306,8 +305,8 @@ add this folder to a Windows installer such as Inno Setup, WiX, etc.
 
 ## Additional resources
 
-To learn how to build an `.exe` using Inno Setup to distribute 
-your Flutter desktop app for Windows, check out the step-by-step 
+To learn how to build an `.exe` using Inno Setup to distribute
+your Flutter desktop app for Windows, check out the step-by-step
 [Windows packaging guide][windows_packaging_guide].
 
 [deployment example walkthroughs]: https://docs.microsoft.com/en-us/cpp/windows/deployment-examples

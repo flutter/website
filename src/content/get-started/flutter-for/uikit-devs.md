@@ -46,7 +46,7 @@ Jump around and find questions that address your most relevant needs.
 As an introduction, watch the following video.
 It outlines how Flutter works on iOS and how to use Flutter to build iOS apps.
 
-{% ytEmbed 'ceMsPBbcEGg', 'Flutter for iOS developers', true %}
+<YouTubeEmbed id="ceMsPBbcEGg" title="Flutter for iOS developers"></YouTubeEmbed>
 
 ### Views vs. Widgets
 
@@ -1521,8 +1521,7 @@ class _MyFormState extends State<MyForm> {
 ```
 
 You can find more information and the full code listing in
-[Retrieve the value of a text field][],
-from the [Flutter cookbook][].
+[Retrieve the value of a text field][].
 
 ### Placeholder in a text field
 
@@ -2089,10 +2088,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
 [Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
-[Flutter cookbook]: /cookbook
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
-[internationalization guide]: /ui/accessibility-and-internationalization/internationalization
+[internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
 [Introduction to declarative UI]: /get-started/flutter-for/declarative

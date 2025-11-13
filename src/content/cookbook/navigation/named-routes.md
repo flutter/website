@@ -1,9 +1,6 @@
 ---
 title: Navigate with named routes
 description: How to implement named routes for navigating between screens.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/named_routes"?>

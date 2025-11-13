@@ -5,6 +5,8 @@ description: >-
   the Flutter Material library.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 # Flutter 3.33+
 
 This release updates `package:material_color_utilities` from

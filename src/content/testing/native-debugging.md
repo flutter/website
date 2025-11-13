@@ -1,6 +1,6 @@
 ---
 title: Use a native language debugger
-short-title: debuggers
+shortTitle: debuggers
 description: How to connect a native debugger to your running Flutter app.
 ---
 
@@ -51,7 +51,7 @@ debugging your own Flutter project as well.
 
     ```console
     Creating project my_app...
-    Resolving dependencies in my_app... 
+    Resolving dependencies in my_app...
     Got dependencies in my_app.
     Wrote 129 files.
 
@@ -85,9 +85,9 @@ debugging your own Flutter project as well.
 
    The first time you run the debugger takes the longest.
 
-{% comment %}
+   {% comment %}
    ![VS Code window with debug panes opened](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger.png){:width="100%"}
-{% endcomment %}
+   {% endcomment %}
 
 1. Test the debugger.
 
@@ -104,30 +104,30 @@ debugging your own Flutter project as well.
    c. In the app, click the **+** button
       to increment the counter. The app pauses.
 
-{% comment %}
+      {% comment %}
       ![Flutter test app paused](/assets/images/docs/testing/debugging/native/macos/basic-app.png){:width="50%"}
       <div class="figure-caption">
 
       Default Flutter app as rendered on macOS.
 
       </div>
-{% endcomment %}
+      {% endcomment %}
 
     d. At this point, VS Code displays:
 
       - In the **Editor Groups**:
         - The highlighted breakpoint in `main.dart`
         - The widget hierarchy for the Flutter app
-          in the **Widget Tree** of the **Widget Inspector** 
+          in the **Widget Tree** of the **Widget Inspector**
       - In the **side bar**:
         - The state of the app in the **Call Stack** section
         - The value of the `this` local variable in the **Variables** section
       - In the **panel**:
         - The log of the Flutter app in the **Debug console**
 
-{% comment %}
+      {% comment %}
       ![VS Code window with Flutter app paused](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-debugger-paused.png){:width="100%"}
-{% endcomment %}
+      {% endcomment %}
 
 ### VS Code Flutter debugger
 
@@ -172,15 +172,15 @@ You can step in, out, and over Dart statements, hot reload, or resume the app.
 
 | Icon                                                | Action                | Default keyboard shortcut                             |
 |-----------------------------------------------------|-----------------------|-------------------------------------------------------|
-| {% render docs/vscode-flutter-bar/play.md %}        | Start or Resume       | <kbd>F5</kbd>                                         |
-| {% render docs/vscode-flutter-bar/pause.md %}       | Pause                 | <kbd>F6</kbd>                                         |
-| {% render docs/vscode-flutter-bar/step-over.md %}   | Step Over             | <kbd>F10</kbd>                                        |
-| {% render docs/vscode-flutter-bar/step-into.md %}   | Step Into             | <kbd>F11</kbd>                                        |
-| {% render docs/vscode-flutter-bar/step-out.md %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
-| {% render docs/vscode-flutter-bar/hot-reload.md %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
-| {% render docs/vscode-flutter-bar/hot-restart.md %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
-| {% render docs/vscode-flutter-bar/stop.md %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
-| {% render docs/vscode-flutter-bar/inspector.md %}   | Open Widget Inspector |                                                       |
+| {% render "docs/vscode-flutter-bar/play.md" %}        | Start or Resume       | <kbd>F5</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/pause.md" %}       | Pause                 | <kbd>F6</kbd>                                         |
+| {% render "docs/vscode-flutter-bar/step-over.md" %}   | Step Over             | <kbd>F10</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-into.md" %}   | Step Into             | <kbd>F11</kbd>                                        |
+| {% render "docs/vscode-flutter-bar/step-out.md" %}    | Step Out              | <kbd>Shift</kbd> + <kbd>F11</kbd>                     |
+| {% render "docs/vscode-flutter-bar/hot-reload.md" %}  | Hot Reload            | <kbd>Ctrl</kbd> + <kbd>F5</kbd>                       |
+| {% render "docs/vscode-flutter-bar/hot-restart.md" %} | Hot Restart           | <kbd>Shift</kbd> + <kbd>Special</kbd> + <kbd>F5</kbd> |
+| {% render "docs/vscode-flutter-bar/stop.md" %}        | Stop                  | <kbd>Shift</kbd> + <kbd>F5</kbd>                      |
+| {% render "docs/vscode-flutter-bar/inspector.md" %}   | Open Widget Inspector |                                                       |
 
 {:.table .table-striped}
 
@@ -312,7 +312,7 @@ test Flutter app. This update adds native code to debug.
     ```
 
     ```console
-    Resolving dependencies... 
+    Resolving dependencies...
       collection 1.17.1 (1.17.2 available)
     + flutter_web_plugins 0.0.0 from sdk flutter
       matcher 0.12.15 (0.12.16 available)
@@ -338,7 +338,7 @@ test Flutter app. This update adds native code to debug.
    1. In Linux or macOS, run this `find` command.
 
       ```console
-      $ find ./ -mmin -120 
+      $ find ./ -mmin -120
       ```
 
       ```console
@@ -356,11 +356,11 @@ test Flutter app. This update adds native code to debug.
       ```
    1. In Windows, run this command in the command prompt.
 
-      ```powershell
+      ```ps
       Get-ChildItem C:\dev\example\ -Rescurse | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays(-1)}
       ```
 
-      ```powershell
+      ```ps
       C:\dev\example\ios\Flutter\
 
 
@@ -425,7 +425,7 @@ with the Xcode and Visual Studio guides.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-android.md %}
+{% render "docs/debug/debug-flow-android.md" %}
 
 ### Debug Dart and iOS code using Xcode
 
@@ -436,7 +436,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-ios.md %}
+{% render "docs/debug/debug-flow-ios.md" %}
 
 ### Debug Dart and macOS code using Xcode
 
@@ -447,7 +447,7 @@ Flutter via VS Code and Xcode. You need to run both VS Code and Xcode.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-macos.md %}
+{% render "docs/debug/debug-flow-macos.md" %}
 
 ### Debug Dart and C++ code using Visual Studio
 
@@ -459,7 +459,7 @@ You need to run both VS Code and Visual Studio.
 These section uses the same example Flutter `url_launcher` app created
 in [Update test Flutter app](#update-test-flutter-app).
 
-{% include docs/debug/debug-flow-windows.md %}
+{% render "docs/debug/debug-flow-windows.md" %}
 
 ## Resources
 

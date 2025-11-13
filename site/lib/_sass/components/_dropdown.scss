@@ -1,0 +1,66 @@
+@use '../base/mixins';
+
+.dropdown {
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--site-header-bgColor);
+    color: var(--site-base-fgColor);
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.2);
+    border-radius: calc(var(--site-radius) * 1.25);
+    width: max-content;
+    border: var(--site-outline-variant) 1px solid;
+    z-index: var(--site-z-dropdown);
+
+    .dropdown-divider {
+      background-color: var(--site-outline-variant);
+      border-radius: 0.5rem;
+      height: 0.125rem;
+      margin: 0.25rem;
+      padding: 0 !important;
+    }
+
+    .dropdown-menu {
+      padding: 0.2rem;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 0.25rem;
+
+          a,
+          button {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            gap: 0.4rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: var(--site-radius);
+
+            text-decoration: none;
+
+            &:hover {
+              @include mixins.interaction-style(4%);
+            }
+
+            &:active {
+              @include mixins.interaction-style(6%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[data-expanded="true"] {
+    .dropdown-content {
+      display: block;
+    }
+  }
+}

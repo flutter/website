@@ -38,13 +38,13 @@ the project settings.
 
 Press **+** at the bottom of the target list to add a new target.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-target.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-target.png" />
 
 **2.2**
 
 Select the **App Clip** type for your new target.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-app-clip.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-app-clip.png" />
 
 **2.3**
 
@@ -58,21 +58,21 @@ Select the same language as your original target for **Language**.
 don't create a Swift App Clip target for
 an Objective-C main target, and vice versa.)
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/app-clip-details.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/app-clip-details.png" />
 
 **2.4**
 
 In the following dialog,
 activate the new scheme for the new target.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/activate-scheme.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/activate-scheme.png" />
 
 **2.5**
 
 Back in the project settings, open the **Build Phases** tab.
 Drag **Embedded App Clips** to above **Thin Binary**.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/embedded-app-clips.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/embedded-app-clips.png" />
 
 <a id="step-3"></a>
 ## Step 3 - Remove unneeded files
@@ -90,7 +90,7 @@ how much of this template to keep to invoke
 from this code later.
 :::
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/clean-files.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/clean-files.png" />
 
 Move files to trash.
 
@@ -103,7 +103,7 @@ Open the `Info.plist` file in the App Clip group.
 Delete the entire dictionary entry for
 **Application Scene Manifest**.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/scene-manifest.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/scene-manifest.png" />
 
 ## Step 4 - Share build configurations
 
@@ -130,7 +130,7 @@ required build settings.
 Set **iOS Deployment Target** to at least **16.0** to take advantage of the
 15MB size limit.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/configuration.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/configuration.png" />
 
 **4.2**
 
@@ -154,7 +154,7 @@ select the file, then in the first tab of the inspector,
 also include the App Clip target in the `Target Membership`
 checkbox group.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/add-target-membership.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/add-target-membership.png" />
 
 ### Option 2 - Customize Flutter launch for App Clip
 
@@ -180,7 +180,7 @@ Open the `<app clip target>.entitlements` file.
 Add an `Associated Domains` Array type.
 Add a row to the array with `appclips:<your bundle id>`.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/app-clip-entitlements.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/app-clip-entitlements.png" />
 
 **6.2**
 
@@ -197,7 +197,7 @@ Open the file and delete the
 entry for the main app's entitlement file
 (leave that entry for the App Clip's entitlement file).
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/main-app-entitlements.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/main-app-entitlements.png" />
 
 **6.3**
 
@@ -207,7 +207,7 @@ Set the **Code Signing Entitlements** setting to the
 relative path of the second entitlements file
 created for the main app.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/main-app-entitlements-setting.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/main-app-entitlements-setting.png" />
 
 ## Step 7 - Integrate Flutter
 
@@ -222,14 +222,14 @@ build setting to `Runner/Runner-Bridging-Header.h`
 In other words,
 the same as the main app target's build settings.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/bridge-header.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/bridge-header.png" />
 
 **7.2**
 
 Now open the **Build Phases** tab. Press the **+** sign
 and select **New Run Script Phase**.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/new-build-phase.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/new-build-phase.png" />
 
 Drag that new phase to below the **Dependencies** phase.
 
@@ -244,7 +244,7 @@ Uncheck **Based on dependency analysis**.
 In other words,
 the same as the main app target's build phases.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/xcode-backend-build.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/xcode-backend-build.png" />
 
 This ensures that your Flutter Dart code is compiled
 when running the App Clip target.
@@ -265,7 +265,7 @@ Uncheck **Based on dependency analysis**.
 In other words,
 the same as the main app target's build phases.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/xcode-backend-embed.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/xcode-backend-embed.png" />
 
 This ensures that your Flutter app and engine are embedded
 into the App Clip bundle.
@@ -300,7 +300,7 @@ target '<name of your App Clip target>'
 ```
 
 At the top of the file,
-also uncomment `platform :ios, '12.0'` and set the
+also uncomment `platform :ios, '13.0'` and set the
 version to the lowest of the two target's iOS
 Deployment Target.
 
@@ -341,7 +341,7 @@ You can now run your App Clip target from Xcode by
 selecting your App Clip target from the scheme drop-down,
 selecting an iOS 16 or higher device and pressing run.
 
-{% render docs/app-figure.md, image:"development/platform-integration/ios-app-clip/run-select.png" %}
+<DashImage figure image="development/platform-integration/ios-app-clip/run-select.png" />
 
 To test launching an App Clip from the beginning,
 also consult Apple's doc on

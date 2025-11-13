@@ -1,8 +1,10 @@
 ---
-title: Redesigned the Radio Widget
+title: Redesigned the Radio widget
 description: >-
-  Changes to the Radio widget
+  Learn about changes to the radio widget in Flutter 3.35.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -20,6 +22,7 @@ This change also presented an opportunity to simplify the API for individual `Ra
 ## Description of change
 
 The following API is deprecated:
+
 * `Radio.onChanged`
 * `Radio.groupValue`
 * `CupertinoRadio.onChanged`
@@ -211,8 +214,8 @@ Widget build(BuildContext context) {
 
 ## Timeline
 
-Landed in version: Not yet<br>
-In stable release: Not yet
+Landed in version: 3.34.0-0.0.pre<br>
+In stable release: 3.35
 
 ## References
 

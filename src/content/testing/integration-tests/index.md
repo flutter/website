@@ -139,9 +139,9 @@ Output:
 
 ```console
 Building flutter tool...
-Resolving dependencies... 
+Resolving dependencies...
 Got dependencies.
-Resolving dependencies... 
+Resolving dependencies...
 + file 7.0.0
 + flutter_driver 0.0.0 from sdk flutter
 + fuchsia_remote_debug_protocol 0.0.0 from sdk flutter
@@ -171,7 +171,7 @@ dev_dependencies:
 
 ## Create the integration test files
 
-Integration tests reside in a separate directory inside 
+Integration tests reside in a separate directory inside
 your Flutter project.
 
 1. Create a new directory named `integration_test`.
@@ -306,23 +306,23 @@ complete the following tasks.
 
 Based on platform, the command result should resemble the following output.
 
-{% tabs %}
-{% tab "Windows" %}
+<Tabs key="dev-os">
+<Tab name="Windows">
 
-{% render docs/test/integration/windows-example.md %}
+{% render "docs/test/integration/windows-example.md" %}
 
-{% endtab %}
-{% tab "macOS" %}
+</Tab>
+<Tab name="macOS">
 
-{% render docs/test/integration/macos-example.md %}
+{% render "docs/test/integration/macos-example.md" %}
 
-{% endtab %}
-{% tab "Linux" %}
+</Tab>
+<Tab name="Linux">
 
-{% render docs/test/integration/linux-example.md %}
+{% render "docs/test/integration/linux-example.md" %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ---
 
@@ -621,7 +621,7 @@ Firebase Test Lab Console, consult the [iOS Device Testing instructions][].
 [ChromeDriver]: https://googlechromelabs.github.io/chrome-for-testing/
 [Download EdgeDriver]: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
 [Download GeckoDriver]: {{site.github}}/mozilla/geckodriver/releases
-[Firebase Console]: http://console.firebase.google.com/
+[Firebase Console]: https://console.firebase.google.com/
 [Firebase Test Lab section of the README]: {{site.repo.flutter}}/tree/main/packages/integration_test#firebase-test-lab
 [Firebase Test Lab]: {{site.firebase}}/docs/test-lab
 [Firebase Test Lab iOS instructions]: {{site.firebase}}/docs/test-lab/ios/firebase-console

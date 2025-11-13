@@ -39,9 +39,7 @@ visiting the [Affected widgets][] page.
 
 Explore the updated components, typography, color system,
 and elevation support with the
-[interactive Material 3 demo][demo]:
-
-<iframe src="https://github.com/flutter/samples/tree/main/material_3_demo" width="100%" height="600px" title="Material 3 Demo App"></iframe>
+[Material 3 demo][demo].
 
 ## More information {:.no_toc}
 
@@ -54,4 +52,4 @@ check out:
 
 [Material.io developer documentation]: {{site.material}}/develop/flutter
 [Migrating a Flutter app to Material 3]: https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/
-[Umbrella issue on GitHub]: {{site.github}}//flutter/flutter/issues/91605
+[Umbrella issue on GitHub]: {{site.github}}/flutter/flutter/issues/91605

@@ -17,4 +17,3 @@ permission by enabling
 **Settings > Privacy > Local Network > Your App**.
 
 [local network permissions in iOS 14 or later]: {{site.apple-dev}}/news/?id=0oi77447
-

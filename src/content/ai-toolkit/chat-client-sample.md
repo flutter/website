@@ -42,4 +42,3 @@ TODO: If Mit agrees, move this to an official Flutter repo
 {% endcomment %}
 
 [AI Chat README]: {{site.github}}/csells/flutter_ai_chat
-

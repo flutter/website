@@ -1,6 +1,6 @@
 ---
 title: Set up Flutter flavors for iOS and macOS
-short-title: Flavors (iOS and macOS)
+shortTitle: Flavors (iOS and macOS)
 description: >
   How to create Flutter flavors for an iOS or macOS app.
 ---
@@ -82,7 +82,7 @@ always start with an existing project.
 
     * Open the **project navigator**
       (**View** > **Navigators** > **Project**).
-    
+
     * In the **project navigator**, at the top, select
       **Runner**.
 
@@ -113,7 +113,7 @@ always start with an existing project.
     (**Product > Scheme > Manage Schemes**) and make sure
     that the **Shared** checkbox to the right of your new
     scheme is checked.
-    :::   
+    :::
 
 1.  Create configurations for the schemes in Xcode:
 
@@ -137,7 +137,7 @@ always start with an existing project.
     * Repeat the previous step for the
       `Release` configurations and the
       `Profile` configurations.
-    
+
     * When finished, check to make sure that you
       have the following configurations:
 
@@ -189,7 +189,7 @@ always start with an existing project.
 
     * Select the `staging` scheme
       (**Product > Schemes > staging**).
- 
+
     * To the right of `staging` in the toolbar,
       select the iOS device you want to test against. In
       the following example, the device is `iPhone 16 Pro`.
@@ -402,7 +402,7 @@ A bundle identifier is a unique identifier for your
 application on Apple's platforms. If you are using multiple
 Xcode schemes as Flutter flavors, you can have Apple treat
 each scheme as a separate application. To do this, you need
-to assign a different bundle identifier to each scheme. 
+to assign a different bundle identifier to each scheme.
 This allows you to test new features or bug fixes in one
 version of the app (for example `staging`) without affecting
 another version of the app (for example, `production`).
@@ -433,7 +433,7 @@ and `production` in an iOS project called `flavors_example`.
 
     *   Debug, Profile, Release, Debug-production,
         Profile-production, Release-production:
-        
+
         `com.example.flavorsExample`
 
 1.  Ensure that these bundle identifiers are included in
@@ -494,7 +494,7 @@ distribution. One way that you can use build settings
 with Flutter flavors is to assign those build settings
 to Xcode build configurations. For example, you might want
 to assign different API URLs to  `Debug-staging` and
-`Debug-production`. For example: 
+`Debug-production`. For example:
 
 ```plaintext title="debug-staging-settings.xcconfig"
 # Debug-staging build settings

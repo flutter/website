@@ -38,19 +38,19 @@ class WidgetWithBreakPoints extends StatelessWidget {
   const WidgetWithBreakPoints({super.key});
 
   List<Widget> _getHandsetChildren() {
-    return ([
+    return [
       const Text('Handset Child 1'),
       const Text('Handset Child 2'),
       const Text('Handset Child 3'),
-    ]);
+    ];
   }
 
   List<Widget> _getNormalChildren() {
-    return ([
+    return [
       const Text('Normal Child 1'),
       const Text('Normal Child 2'),
       const Text('Normal Child 3'),
-    ]);
+    ];
   }
 
   Widget widgetSwap(BuildContext context) {

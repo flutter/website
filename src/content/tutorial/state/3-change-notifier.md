@@ -2,6 +2,7 @@
 title: State management in Flutter
 description: Instructions on how to manage state with ChangeNotifiers.
 permalink: /tutorial/change-notifier/
+sitemap: false
 ---
 
 When developers talk about state-management in Flutter, they're
@@ -60,8 +61,8 @@ class ArticleViewModel extends ChangeNotifier {
 }
 ```
 
-This constructor initialization provides immediate content when the 
-ViewModel is created. Because constructors can't be asynchronous, 
+This constructor initialization provides immediate content when the
+ViewModel is created. Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
 ## Create the getRandomArticleSummary method
@@ -82,9 +83,9 @@ class ArticleViewModel extends ChangeNotifier {
   Future<void> getRandomArticleSummary() async {
     loading = true;
     notifyListeners();
-    
+
     // TODO: Add data fetching logic
-    
+
     loading = false;
     notifyListeners();
   }
@@ -144,10 +145,10 @@ Future<void> getRandomArticleSummary() async {
   notifyListeners();
   try {
     summary = await model.getRandomArticleSummary();
-    print('Article loaded: ${summary!.titles.normalized}'); // Temporary 
+    print('Article loaded: ${summary!.titles.normalized}'); // Temporary
     errorMessage = null;
   } on HttpException catch (error) {
-    print('Error loading article: ${error.message}'); // Temporary 
+    print('Error loading article: ${error.message}'); // Temporary
     errorMessage = error.message;
     summary = null;
   }
@@ -167,7 +168,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Create ViewModel to test HTTP requests
     final viewModel = ArticleViewModel(ArticleModel());
-    
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -187,4 +188,4 @@ either an article title or an error message, which confirms that your
 Model and ViewModel are wired up correctly.
 
 [ChangeNotifier]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
-[try-catch block]: {{site.dart-site}}/language/error-handling
+[try-catch block]: https://dart.dev/language/error-handling

@@ -1,0 +1,67 @@
+@use '../base/mixins';
+
+#site-switcher {
+  position: relative;
+
+  .dropdown-content {
+    transform: scale(0.9);
+    top: 1.25rem;
+    right: -0.75rem;
+
+    @media (min-width: 420px) {
+      right: 0;
+    }
+  }
+
+  display: none;
+
+  @media (min-width: 320px) {
+    display: block;
+  }
+}
+
+#site-primary-logo,
+#site-switcher .site-wordmark {
+  padding: 0.4rem 0.6rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 0;
+
+  font-variant-ligatures: none;
+  font-size: 1.75rem;
+  line-height: 1.25em;
+  letter-spacing: 0.015em;
+  font-family: 'Google Sans', sans-serif;
+  user-select: none;
+
+  >img {
+    width: 28px;
+    margin-right: 0.25rem;
+  }
+
+  &.current-site {
+    background-color: var(--site-primary-color-highlight);
+  }
+
+  span {
+    color: var(--site-wordmark-fgColor);
+
+    &.name {
+      margin-left: 0.5rem;
+    }
+
+    &.subtype {
+      padding: 0 0.3rem;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.3;
+      border-radius: 0.25rem;
+      background-color: var(--site-secondaryContainer-bgColor);
+      color: var(--site-secondaryContainer-fgColor);
+      margin-left: 0.4rem;
+      letter-spacing: normal;
+    }
+  }
+}

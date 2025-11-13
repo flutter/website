@@ -1,9 +1,6 @@
 ---
 title: Implement swipe to dismiss
 description: How to implement swiping to dismiss or delete.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/gestures/dismissible"?>

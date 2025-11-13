@@ -1,10 +1,7 @@
 ---
 title: Use themes to share colors and font styles
-short-title: Themes
+shortTitle: Themes
 description: How to share colors and font styles throughout an app using Themes.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/design/themes"?>
@@ -164,7 +161,7 @@ Theme(
 
 To learn more, watch this short Widget of the Week video on the `Theme` widget:
 
-{% ytEmbed 'oTvQDJOBXmM', 'Theme | Flutter widget of the week' %}
+<YouTubeEmbed id="oTvQDJOBXmM" title="Theme | Flutter widget of the week"></YouTubeEmbed>
 
 ## Try an interactive example
 
