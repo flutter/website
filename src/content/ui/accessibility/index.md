@@ -117,10 +117,8 @@ To learn more about Flutter and accessibility, check out
 the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
-* [Semantics in Flutter][]
 * [Flutter: Crafting a great experience for screen readers][]
 
 [CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
 [Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
-[Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/
