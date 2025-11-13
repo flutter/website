@@ -77,7 +77,7 @@ Coming from another platform? Check out Flutter for:
 <br>
 
 For more of the latest on Dart, Flutter, and the Future of Apps, check out
-the other tehcnical sessions from [FlutterFlightPlans][], like these!.
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
