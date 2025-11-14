@@ -778,41 +778,29 @@ class _RadioExampleState extends State<RadioExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListTile(
-          title: const Text('Musician'),
-          leading: Radio<Character>(
-            value: Character.musician,
-            groupValue: _character,
-            onChanged: setCharacter,
+    return RadioGroup(
+      groupValue: _character,
+      onChanged: setCharacter,
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            title: const Text('Musician'),
+            leading: Radio<Character>(value: Character.musician),
           ),
-        ),
-        ListTile(
-          title: const Text('Chef'),
-          leading: Radio<Character>(
-            value: Character.chef,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Chef'),
+            leading: Radio<Character>(value: Character.chef),
           ),
-        ),
-        ListTile(
-          title: const Text('Firefighter'),
-          leading: Radio<Character>(
-            value: Character.firefighter,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Firefighter'),
+            leading: Radio<Character>(value: Character.firefighter),
           ),
-        ),
-        ListTile(
-          title: const Text('Artist'),
-          leading: Radio<Character>(
-            value: Character.artist,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Artist'),
+            leading: Radio<Character>(value: Character.artist),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
