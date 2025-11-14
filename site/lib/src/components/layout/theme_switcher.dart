@@ -73,7 +73,13 @@ final class _ThemeSwitcherState extends State<ThemeSwitcher> {
       );
     }
 
-    web.window.localStorage.setItem('theme', newTheme.id);
+    try {
+      web.window.localStorage.setItem('theme', newTheme.id);
+    } catch (e) {
+      if (kDebugMode) {
+        print('Failed to save theme preference: $e');
+      }
+    }
 
     setState(() {
       _currentTheme = newTheme;
