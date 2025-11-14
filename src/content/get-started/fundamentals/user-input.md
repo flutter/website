@@ -778,7 +778,7 @@ class _RadioExampleState extends State<RadioExample> {
 
   @override
   Widget build(BuildContext context) {
-    return RadioGroup(
+    return RadioGroup<Character>(
       groupValue: _character,
       onChanged: setCharacter,
       child: Column(
