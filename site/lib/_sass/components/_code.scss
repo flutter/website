@@ -254,3 +254,25 @@ iframe[src^="https://dartpad"] {
   resize: vertical;
   width: 100%;
 }
+
+.file-tree {
+  --file-tree-bg: var(--site-inset-bgColor);
+  --file-tree-text: var(--site-base-fgColor);
+  --file-tree-icon: var(--site-base-fgColor-alt);
+  --file-tree-highlight: var(--site-link-fgColor);
+  
+  font-family: var(--site-code-fontFamily); 
+
+  border: 1px solid var(--site-inset-borderColor);
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+
+  details {
+    margin: unset;
+
+    summary {
+      font-weight: unset;
+      user-select: unset;
+    }
+  }
+}

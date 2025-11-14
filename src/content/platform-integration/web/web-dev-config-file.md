@@ -5,9 +5,6 @@ description: >-
   Centralize web development settings including a development proxy
 ---
 
-# Set up a web development configuration file
-**By Sydney Bao**
-
 Flutter web includes a development server that defaults to
 serving your application in the `localhost` domain using HTTP
 on a randomly assigned port. While command-line arguments offer
@@ -15,8 +12,12 @@ a quick way to modify the server's behavior,
 this document focuses on a more structured approach:
 defining your server's behavior through a centralized `web_dev_config.yaml` file.
 This configuration file allows you to
-customize server settings&emdash;host, port, HTTPS settings, and
-proxy rules&emdash;ensuring a consistent development environment.
+customize server settings—host, port, HTTPS settings, and
+proxy rules—ensuring a consistent development environment.
+
+:::version-note
+Support for the `web_dev_config.yaml` file was added in Flutter 3.38.
+:::
 
 ## Create a configuration file
 

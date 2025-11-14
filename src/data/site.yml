@@ -5,6 +5,12 @@ email: flutter-dev@googlegroups.com
 
 showBanner: true
 
+# The raw, inline HTML to display in the banner.
+# Is automatically wrapped in a paragraph tag.
+bannerHtml: >-
+  Flutter 3.38 and Dart 3.10 are here!
+  <a href="https://blog.flutter.dev/announcing-flutter-3-38-dart-3-10-building-the-future-of-apps-503429eeb685" target="_blank" rel="noopener">Learn more</a>
+
 branch: main
 repo:
   organization: https://github.com/flutter
@@ -52,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.35.5'
+currentFlutterVersion: '3.38.0'
 
 # Settings for Jaspr.
 

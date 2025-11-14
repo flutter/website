@@ -55,11 +55,13 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 * [SnackBar with action no longer auto-dismisses][]
+* [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35

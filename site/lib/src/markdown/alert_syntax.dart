@@ -157,7 +157,8 @@ enum _AlertType {
   ),
   secondary(
     cssClass: 'alert-secondary',
-  );
+  )
+  ;
 
   /// The CSS class to add to `aside` element
   final String cssClass;
