@@ -747,7 +747,7 @@ the other radio buttons are unselected.
 - A particular `Radio` button's `value` represent that button's value,
 - The selected value for a group of radio buttons is identified by
   the `groupValue` parameter.
-- `Radio` also has an `onChanged` callback that
+- `RadioGroup` also has an `onChanged` callback that
   gets triggered when users click it, like `Switch` and `Checkbox`
 
 {% render "docs/code-and-image.md",
