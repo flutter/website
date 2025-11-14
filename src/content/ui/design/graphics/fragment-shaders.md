@@ -354,47 +354,38 @@ supported and needs to be emulated in the shader.
 ##### `toImageSync` example
 
 ```dart
-class Painter extends CustomPainter {
-  Painter(this._sdfShader, this._renderShader);
+class SDFPainter {
+  SDFPainter(this.sdfShader, this.renderShader);
 
-  final FragmentShader _sdfShader;
-  final FragmentShader _renderShader;
-  ui.Image? _sdf;
-  bool _isDirty = false;
-  double _radius = 0.5;
+  FragmentShader sdfShader;
+  FragmentShader renderShader;
+  Image? _sdf;
+  bool isDirty = false;
+  double radius = 0.5;
 
-  set radius(double val) {
-    _radius = val;
-    _isDirty = true;
-  }
-
-  @override
   void paint(Canvas canvas, Size size) {
-    if (_sdf == null || _isDirty) {
+    if (_sdf == null || isDirty) {
       final recorder = PictureRecorder();
       final subCanvas = Canvas(recorder);
-      final paint = Paint()..shader = _sdfShader;
-      _sdfShader.setFloat(0, size.width);
-      _sdfShader.setFloat(1, size.height);
-      _sdfShader.setFloat(2, _radius);
+      final paint = Paint()..shader = sdfShader;
+      sdfShader.setFloat(0, size.width);
+      sdfShader.setFloat(1, size.height);
+      sdfShader.setFloat(2, radius);
       subCanvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
       final picture = recorder.endRecording();
       _sdf = picture.toImageSync(size.width.toInt(), size.height.toInt());
-      _isDirty = false;
+      isDirty = false;
     }
 
-    _renderShader.setFloat(0, size.width);
-    _renderShader.setFloat(1, size.height);
-    _renderShader.setImageSampler(0, _sdf!);
+    renderShader.setFloat(0, size.width);
+    renderShader.setFloat(1, size.height);
+    renderShader.setImageSampler(0, _sdf!);
 
     canvas.drawRect(
       Rect.fromLTWH(0, 0, size.width, size.height),
-      Paint()..shader = _renderShader,
+      Paint()..shader = renderShader,
     );
   }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
 ```
 
