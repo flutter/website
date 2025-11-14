@@ -71,30 +71,28 @@ Coming from another platform? Check out Flutter for:
 ### Videos
 
 <div class="video-wrapper">
-  <span class="video-intro">Check out what's new in Flutter at Google I/O 2025!</span>
-  <YouTubeEmbed id="v6Rzo5khNE8" title="What's new in Flutter" fullWidth></YouTubeEmbed>
+  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
+  <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
-For more Flutter at Google I/O 2025, check out
-[How to build agentic apps with Flutter and Firebase AI Logic][]
-and [How Flutter makes the most of your platforms][].
+For more of the latest on Dart, Flutter, and the Future of Apps, check out
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="xo271p-Fl_4" title="How to build agentic apps with Flutter and Firebase AI Logic"></YouTubeEmbed>
+      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="flwULzNYRac" title="How Flutter makes the most of your platforms"></YouTubeEmbed>
+      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
-[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
+[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
 
 To learn about all of the Flutter video series, see our [videos][] page.
 
