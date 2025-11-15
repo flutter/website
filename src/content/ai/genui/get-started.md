@@ -6,28 +6,28 @@ description: >
 ---
 
 This guide explains how to get started with the
-[`flutter_genui`][] package. The SDK's key components
+[`genui`][] package. The SDK's key components
 are described in the [Key components][] page.
 
 ```Warning
-The `flutter_genui` package is
-experimental and is likely to change.
+The `genui` package is in alpha
+and is likely to change.
 ```
 
-Use the following instructions to add `flutter_genui` to your Flutter app.
+Use the following instructions to add `genui` to your Flutter app.
 The code examples show how to perform the instructions on a brand new
 app created by running flutter create but you can follow the same
 steps for your existing Flutter app.
 
 ## Configure your agent provider
 
-`flutter_genui` can connect to a variety of agent providers.
+`genui` can connect to a variety of agent providers.
 Choose the section for your preferred provider.
 
 ### Configure Firebase AI logic
 
 To use the built-in `FirebaseAiContentGenerator` to connect
-to Gemini via Firebase AI Logic, follow these instructions:
+to Gemini using the Firebase AI Logic, follow these instructions:
 
 1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -36,27 +36,19 @@ to Gemini via Firebase AI Logic, follow these instructions:
 3. Follow the first three steps in [Firebase's Flutter setup guide][]
    to add Firebase to your app.
 
-4. In `pubspec.yaml`, add `flutter_genui` and `flutter_genui_firebase_ai`
+4. In `pubspec.yaml`, add `genui` and `genui_firebase_ai`
    to the `dependencies` section. As of this writing,
    it's best to use pub's git dependency to refer directly to this project's source.
 
 ```yml
 dependencies:
   # ...
-  flutter_genui:
-    git:
-      url: https://github.com/flutter/genui.git
-      path: packages/flutter_genui
-      ref: main
-  flutter_genui_firebase_ai:
-    git:
-      url: https://github.com/flutter/genui.git
-      path: packages/flutter_genui_firebase_ai
-      ref: main
+  genui: 0.5.0
+  genui_firebase_ai: 0.5.0
 ```
 
 5. In your app's `main` method, ensure that the widget
-   bindings are initialized, and then initialize Firebase.
+   bindings are initialized and then initialize Firebase.
 
 ```dart
 void main() async {
@@ -68,11 +60,12 @@ void main() async {
 
 ### Configure another agent provider
 
-To use `flutter_genui` with another agent provider,
+To use `genui` with another agent provider,
 follow that provider's instructions to configure your app,
 and then create your own subclass of `ContentGenerator` to connect
-to that provider. Use `FirebaseAiContentGenerator` as an example
-of how to do so.
+to that provider. Use `FirebaseAiContentGenerator` or
+`A2uiContentGenerator` (from the `genui_a2ui` package)
+as examples of how to do so.
 
 ## Create the connection to an agent
 
@@ -158,7 +151,7 @@ To receive and display generated UI:
 
 1. Use the callbacks in `GenUiConversation` to track the addition
   and removal of UI surfaces as they are generated.
-  These events include a "surface ID" for each surface.
+  These events include a _surface ID_ for each surface.
 
 2. Build a `GenUiSurface` widget for each active surface using
   the surface IDs received in the previous step.
@@ -247,7 +240,224 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
+## [Optional] Add your own widgets to the catalog
+
+In addition to using the catalog of widgets in `CoreCatalogItems`,
+you can create custom widgets for the agent to generate.
+Use the following instructions.
+
+1. Import `json_schema_builder`
+
+Add the `json_schema_builder` package as a dependency in `pubspec.yaml`.
+Use the same commit reference as the one for `genui`.
+
+```yml
+dependencies:
+  # ...
+  json_schema_builder:
+    git:
+      url: https://github.com/flutter/genui.git
+      path: packages/json_schema_builder
+```
+
+2. Create the new widget's schema
+
+Each catalog item needs a schema that defines the data required
+to populate it. Using the json_schema_builder package,
+define one for the new widget.
+
+```dart
+import 'package:json_schema_builder/json_schema_builder.dart';
+import 'package:flutter/material.dart';
+import 'package:genui/genui.dart';
+
+final _schema = S.object(
+  properties: {
+    'question': S.string(description: 'The question part of a riddle.'),
+    'answer': S.string(description: 'The answer part of a riddle.'),
+  },
+  required: ['question', 'answer'],
+);
+
+```
+
+3. Create a `CatalogItem`
+
+Each `CatalogItem` represents a type of widget that the agent
+is allowed to generate. To do that, combines a name,
+a schema, and a builder function that produces the widgets
+that compose the generated UI.
+
+```dart
+final riddleCard = CatalogItem(
+  name: 'RiddleCard',
+  dataSchema: _schema,
+  widgetBuilder:
+      ({
+        required data,
+        required id,
+        required buildChild,
+        required dispatchEvent,
+        required context,
+        required dataContext,
+      }) {
+        final json = data as Map<String, Object?>;
+        final question = json['question'] as String;
+        final answer = json['answer'] as String;
+
+        return Container(
+          constraints: const BoxConstraints(maxWidth: 400),
+          decoration: BoxDecoration(border: Border.all()),
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(question, style: Theme.of(context).textTheme.headlineMedium),
+              const SizedBox(height: 8.0),
+              Text(answer, style: Theme.of(context).textTheme.headlineSmall),
+            ],
+          ),
+        );
+      },
+);
+```
+
+4. Add the `CatalogItem` to the catalog
+
+Include your catalog items when instantiating `GenUiManager`.
+
+```dart
+_genUiManager = GenUiManager(
+  catalog: CoreCatalogItems.asCatalog().copyWith([riddleCard]),
+);
+```
+
+5. Update the system instruction to use the new widget
+
+To make sure that the agent knows to use your new widget,
+tell the system instruction how and when to do so.
+Provide the name from the `CatalogItem` when you do.
+
+```dart
+final contentGenerator = FirebaseAiContentGenerator(
+  systemInstruction: '''
+      You are an expert in creating funny riddles. Every time I give you a word,
+      you should generate a RiddleCard that displays one new riddle related to that word.
+      Each riddle should have both a question and an answer.
+      ''',
+  tools: _genUiManager.getTools(),
+);
+```
+
+## Data model and data binding
+
+A core concept in `genui` is the `DataModel`, a centralized,
+observable store for all dynamic UI state. Instead of each widget
+managing its own state, its state is stored in the `DataModel`.
+
+Widgets are _bound_ to data in this model.
+When data in the model changes, only the widgets that depend
+on that specific piece of data are rebuilt.
+This is achieved through a `DataContext` object passed to each
+widget's builder function.
+
+### Binding to the data model
+
+To bind a widget's property to the data model,
+specify a special JSON object in the data sent from the AI.
+This object can contain either a `literalString`
+(for static values) or a `path` (to bind to a value in the data model).
+
+For example, to display a user's name in a `Text` widget,
+the AI would generate:
+
+```dart
+{
+  "Text": {
+    "text": {
+      "literalString": "Welcome to GenUI"
+    },
+    "hint": "h1"
+  }
+}
+```
+
+### Image
+
+```dart
+{
+  "Image": {
+    "url": {
+      "literalString": "https://example.com/image.png"
+    },
+    "hint": "mediumFeature"
+  }
+}
+```
+
+### Updating the data model
+
+Input widgets, like `TextField`, update the DataModel directly.
+When the user types in a text field that is bound to `/user/name`,
+the `DataModel` updates, and any other widgets bound to that same
+path will automatically rebuild to show the new value.
+
+This reactive data flow simplifies state management and creates a powerful,
+high-bandwidth interaction loop between the user, the UI, and the AI.
+
+## Next steps
+
+Check out the [examples][] included in the `genui` repo.
+The [travel app][] shows how to define your own widget
+catalog that the agent can use to generate domain-specific UI.
+
+If something is unclear or missing, please [create an issue][].
+
+## System instructions
+
+The `genui` package gives the LLM a set of tools it can use to
+generate UI. To get the LLM to use these tools,
+the `systemInstruction` provided to `ContentGenerator` must explicitly
+tell it to do so. This is why the previous example includes a
+system instruction for the agent with the line
+"Every time I give you a word, you should generate UI that displays one new riddle...".
+
+## Troubleshooting/FAQ
+
+### How can I configure logging?
+
+To observe communication between your app and the agent,
+enable logging in your `main` method.
+
+```dart
+import 'package:logging/logging.dart';
+import 'package:genui/genui.dart';
+
+final logger = configureGenUiLogging(level: Level.ALL);
+
+void main() async {
+  logger.onRecord.listen((record) {
+    debugPrint('${record.loggerName}: ${record.message}');
+  });
+
+  // Additional initialization of bindings and Firebase.
+}
+```
+
+### I'm getting errors about my minimum macOS/iOS version.
+
+Firebase has a [minimum version requirement][] for Apple's platforms,
+which might be higher than Flutter's default.
+Check your `Podfile` (for iOS) and `CMakeLists.txt` (for macOS)
+to ensure that you're targeting a version that meets or exceeds
+Firebase's requirements.
+
+
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
+[create an issue]: {{site.organization}}/genui/issues/new/choose
 [Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
+[examples]: {{site.organization}}/genui/blob/main/examples
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
 [Key components]: /ai/genui/components
+[minimum version requirement]: https://firebase.google.com/support/release-notes/ios
+[travel app]: {{site.organization}}/genui/blob/main/examples/travel_app

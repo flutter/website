@@ -196,7 +196,7 @@
       children:
         - title: GenUI overview
           permalink: /ai/genui
-        - title: Key components
+        - title: Main components & concepts
           permalink: /ai/genui/components
         - title: Get started
           permalink: /ai/genui/get-started
