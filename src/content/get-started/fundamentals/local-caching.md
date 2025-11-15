@@ -203,8 +203,8 @@ For a more thorough guide, see the following resources:
 * Remote Caching, a lightweight caching system for API responses: [`remote_caching` package][]
 
 [`drift` package]: {{site.pub-pkg}}/drift
-[`isar_community` package]: {{site.pub-pkg}}/isar_community
 [`hive_ce` package]: {{site.pub-pkg}}/hive_ce
+[`isar_community` package]: {{site.pub-pkg}}/isar_community
 [`remote_caching` package]: {{site.pub-pkg}}/remote_caching
 
 [Persist data with SQLite]: /cookbook/persistence/sqlite
