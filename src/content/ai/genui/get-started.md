@@ -339,22 +339,22 @@ Use the following instructions.
     );
     ```
 
-5. Update the system instruction to use the new widget
+ 5. Update the system instruction to use the new widget
 
-   To make sure that the agent knows to use your new widget,
-   tell the system instruction how and when to do so.
-   Provide the name from the `CatalogItem` when you do.
+    To make sure that the agent knows to use your new widget,
+    tell the system instruction how and when to do so.
+    Provide the name from the `CatalogItem` when you do.
 
-   ```dart
-   final contentGenerator = FirebaseAiContentGenerator(
-     systemInstruction: '''
-         You are an expert in creating funny riddles. Every time I give you a word,
-         you should generate a RiddleCard that displays one new riddle related to that word.
-         Each riddle should have both a question and an answer.
-         ''',
-     tools: _genUiManager.getTools(),
-   );
-   ```
+    ```dart
+    final contentGenerator = FirebaseAiContentGenerator(
+      systemInstruction: '''
+          You are an expert in creating funny riddles. Every time I give you a word,
+          you should generate a RiddleCard that displays one new riddle related to that word.
+          Each riddle should have both a question and an answer.
+          ''',
+      tools: _genUiManager.getTools(),
+    );
+    ```
 
 ## Data model and data binding
 

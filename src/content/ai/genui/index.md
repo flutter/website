@@ -39,7 +39,7 @@ into your app.  For example:
 For more context about GenUI SDK for Flutter,
 check out the [Getting started with GenUI video][]:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nWr6eZKM6no?si=62ey-Z7ajT-o-643" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI"></YouTubeEmbed>
 
 :::warning Experimental
 The `genui` package is in
