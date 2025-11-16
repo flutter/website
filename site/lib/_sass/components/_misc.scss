@@ -77,3 +77,18 @@
     }
   }
 }
+
+.progress-ring {
+  circle {
+    fill: none;
+    stroke-linecap: round;
+  }
+
+  .ring-inactive {
+    stroke: var(--site-inset-borderColor);
+  }
+
+  .ring-active {
+    stroke: var(--site-primary-color);
+  }
+}

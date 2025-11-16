@@ -167,7 +167,7 @@ Manually passing data down the widget tree can be verbose
 and cause unwanted boilerplate code,
 so Flutter provides _`InheritedWidget`_,
 which provides a way to efficiently host data in a parent widget
-so that child widgets can get access them without storing them as a field.
+so that child widgets can access them without storing them as a field.
 
 To use `InheritedWidget`, extend the `InheritedWidget` class
 and implement the static method `of()`
