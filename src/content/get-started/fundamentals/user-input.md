@@ -739,7 +739,7 @@ Widget build(BuildContext context) {
 
 ### Radio
 
-A group of `Radio` buttons that allows the user to
+A `RadioGroup` containing `Radio` buttons that allow the user to
 select between mutually exclusive values.
 When the user selects a radio button in a group,
 the other radio buttons are unselected.
