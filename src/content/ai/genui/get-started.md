@@ -274,59 +274,15 @@ Use the following instructions.
     to populate it. Using the json_schema_builder package,
     define one for the new widget.
 
-```dart
-import 'package:json_schema_builder/json_schema_builder.dart';
-import 'package:flutter/material.dart';
-import 'package:genui/genui.dart';
+    ```dart
+    import 'package:json_schema_builder/json_schema_builder.dart';
+    import 'package:flutter/material.dart';
+    import 'package:genui/genui.dart';
 
-final _schema = S.object(
-  properties: {
-    'question': S.string(description: 'The question part of a riddle.'),
-    'answer': S.string(description: 'The answer part of a riddle.'),
-  },
-  required: ['question', 'answer'],
-);
-
-```
-
-3. Create a `CatalogItem`
-
-Each `CatalogItem` represents a type of widget that the agent
-is allowed to generate. To do that, it combines a name,
-a schema, and a builder function that produces the widgets
-that compose the generated UI.
-
-```dart
-final riddleCard = CatalogItem(
-  name: 'RiddleCard',
-  dataSchema: _schema,
-  widgetBuilder:
-      ({
-        required data,
-        required id,
-        required buildChild,
-        required dispatchEvent,
-        required context,
-        required dataContext,
-      }) {
-        final json = data as Map<String, Object?>;
-        final question = json['question'] as String;
-        final answer = json['answer'] as String;
-
-        return Container(
-          constraints: const BoxConstraints(maxWidth: 400),
-          decoration: BoxDecoration(border: Border.all()),
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(question, style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: 8.0),
-              Text(answer, style: Theme.of(context).textTheme.headlineSmall),
-            ],
-          ),
-        );
->>>>>>> b97fa069f (Fixing some typos)
+    final _schema = S.object(
+      properties: {
+        'question': S.string(description: 'The question part of a riddle.'),
+        'answer': S.string(description: 'The answer part of a riddle.'),
       },
       required: ['question', 'answer'],
     );
@@ -335,7 +291,7 @@ final riddleCard = CatalogItem(
  3. Create a `CatalogItem`
 
     Each `CatalogItem` represents a type of widget that the agent
-    is allowed to generate. To do that, combines a name,
+    is allowed to generate. To do that, it combines a name,
     a schema, and a builder function that produces the widgets
     that compose the generated UI.
 
