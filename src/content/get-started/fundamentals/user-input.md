@@ -434,11 +434,8 @@ Widget build(BuildContext context) {
     selected: <Calendar>{calendarView},
     onSelectionChanged: (Set<Calendar> newSelection) {
       setState(() {
-        Suggested change
-        // By default there is only a single segment that can be
-        // selected at one time, so its value is always the first
-        // By default, only a single segment can be
-        // selected at one time, so its value is always the first
+        // By default, there is only a single segment that can be
+        // selected at a time, so its value is always the first
         calendarView = newSelection.first;
       });
     },
