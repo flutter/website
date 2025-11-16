@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting installation
-short-title: Troubleshoot
+shortTitle: Troubleshoot
 description: >-
   Get help with common installation issues that new
   Flutter developers might have run into.

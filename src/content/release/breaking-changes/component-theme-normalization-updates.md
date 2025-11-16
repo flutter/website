@@ -6,6 +6,8 @@ description: >-
   Material library.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `AppBarTheme`, `BottomAppBarTheme` and `InputDecorationTheme` were refactored
@@ -98,8 +100,8 @@ const TimePickerThemeData timePickerTheme = TimePickerThemeData(inputDecorationT
 
 ## Timeline
 
-Landed in version: 3.33.0-1.0.pre<br>
-Stable release: Not yet
+Landed in version: 3.33.0-1.0.pre through 3.35.0-0.0.pre<br>
+Stable release: 3.35
 
 ## References
 
@@ -123,4 +125,3 @@ Relevant PRs:
 [`InputDecorationTheme`]: {{site.api}}/flutter/material/InputDecorationTheme-class.html
 [Normalize InputDecorationTheme]: {{site.repo.flutter}}/pull/168981
 [Apply normalization to TimePickerThemeData.inputDecorationTheme]: {{site.repo.flutter}}/pull/171584
-

@@ -43,7 +43,7 @@ The Flutter community created the following useful resources.
 * [Flutter & Firebase Auth 01][video3]
 * [Flutter: Firebase Tutorial Part 1 - Auth and Sign in][video4]
 
-[article]: {{site.flutter-medium}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
+[article]: {{site.flutter-blog}}/must-try-use-firebase-to-host-your-flutter-app-on-the-web-852ee533a469
 [chat app]: {{site.medium}}/flutter-community/building-a-chat-app-with-flutter-and-firebase-from-scratch-9eaa7f41782e
 [codelab1]: {{site.codelabs}}/codelabs/firebase-get-to-know-flutter
 [Firebase plugins]: {{site.firebase}}/docs/flutter/setup#available-plugins

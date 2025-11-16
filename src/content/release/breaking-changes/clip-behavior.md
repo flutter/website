@@ -4,6 +4,8 @@ description: >
   Flutter unifies clipBehavior and defaults to not clip in most cases.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Flutter now defaults to _not_ clip except for a few specialized widgets

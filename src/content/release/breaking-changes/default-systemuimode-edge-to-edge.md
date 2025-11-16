@@ -5,11 +5,13 @@ description: >-
     in to edge-to-edge mode.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 :::note
 You might have found this page because you see a warning in the Google Play
 Console concerning "Edge-to-edge may not display for all users" or "Your app
-uses deprecated APIs or parameters for edge-to-edge". These warnings **will
-not** impact users.
+uses deprecated APIs or parameters for edge-to-edge".
+These warnings **will not** impact users.
 
 This warning references deprecated code used in the Flutter engine to implement
 edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
@@ -96,13 +98,19 @@ Modify these default styles in your manifest file:
 </manifest>
 ```
 
-Find where this style is defined in
+Locate the style definition in:
 `your_app/android/app/src/main/res/values/styles.xml`.
-There, add the following attribute to the style:
 
-```xml title="styles.xml" highlightLines=7
+Add the following attribute to the appropriate styles:
+
+```xml title="styles.xml" highlightLines=6,12
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        ...
+        <!-- Add the following line: -->
+        <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>
+    </style>
     ...
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
         ...
@@ -111,6 +119,11 @@ There, add the following attribute to the style:
     </style>
 </resources>
 ```
+
+Make sure to apply the same change in the night mode styles file as well:
+`your_app/android/app/src/main/res/values-night/styles.xml`.
+
+Ensure both styles are updated consistently in both files.
 
 This modified style opts your app out of edge-to-edge for
 apps targeting Android SDK 15.

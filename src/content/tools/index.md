@@ -1,6 +1,6 @@
 ---
 layout: toc
 title: Tools & techniques
-short-title: Tools
+shortTitle: Tools
 description: Content covering Tools that support developing Flutter apps.
 ---

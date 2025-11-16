@@ -1,9 +1,6 @@
 ---
 title: Animate a page route transition
 description: How to animate from one page to another.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/page_route_animation/"?>
@@ -69,7 +66,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -239,7 +236,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {

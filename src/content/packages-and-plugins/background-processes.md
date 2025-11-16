@@ -16,8 +16,8 @@ in that it doesn't share memory with the main program.
 You'll set up your isolate for background execution using
 callbacks and a callback dispatcher.
 
-Additionally, the [WorkManager] plugin enables persistent background processing 
-that keeps tasks scheduled through app restarts and system reboots. 
+Additionally, the [WorkManager] plugin enables persistent background processing
+that keeps tasks scheduled through app restarts and system reboots.
 
 For more information and a geofencing example that uses background
 execution of Dart code, see the Medium article by Ben Konyi,
@@ -25,6 +25,6 @@ execution of Dart code, see the Medium article by Ben Konyi,
 Geofencing][background-processes].  At the end of this article,
 you'll find links to example code, and relevant documentation for Dart,
 iOS, and Android.
- 
-[background-processes]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
-[WorkManager]: {{site.pub-pkg}}/workmanager 
+
+[background-processes]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[WorkManager]: {{site.pub-pkg}}/workmanager

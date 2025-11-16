@@ -1,9 +1,10 @@
 ---
 title: Create a new Flutter app
-short-title: Create a new app
+shortTitle: Create a new app
 description: >-
   Learn how to bootstrap a new Flutter application from
   your command-line, different editors, and even in the cloud.
+showBreadcrumbs: false
 ---
 
 This page provides step-by-step instructions on how to
@@ -57,7 +58,7 @@ choose your preferred environment and follow the corresponding instructions.
     <div class="card-header">
       <span class="card-title">
         <span>Add to app</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">
@@ -68,14 +69,14 @@ choose your preferred environment and follow the corresponding instructions.
 
 ## VS Code
 
-To create a Flutter app with [VS Code][] and other Code OSS editors,
+To create a Flutter app with [VS Code][] and other Code OSS-based editors,
 you first need to [install Flutter][flutter-setup] and
 [set up VS Code][vscode-setup] for Flutter development.
 Then follow these steps:
 
  1. <h3>Launch VS Code</h3>
 
-    Open VS Code or your preferred Code OSS editor.
+    Open VS Code or your preferred Code OSS-based editor.
 
  1. <h3>Open the command palette</h3>
 
@@ -103,9 +104,10 @@ Then follow these steps:
 
  1. <h3>Select a project location</h3>
 
-    A file dialog will appear.
-    Select or create the parent directory where the project will be created.
-    Do not create the project folder itself, the Flutter tool will do so.
+    A file dialog should appear.
+    Select or create the parent directory where
+    you want the project to be created.
+    Don't create the project folder itself, the Flutter tool does so.
     To confirm your selection,
     click **Select a folder to create the project in**.
 
@@ -119,7 +121,7 @@ Then follow these steps:
  1. <h3>Wait for project initialization</h3>
 
     Based on the information you entered,
-    VS Code will use `flutter create` to bootstrap your application.
+    VS Code uses `flutter create` to bootstrap your app.
     Progress is often surfaced as a notification in the bottom right
     and can also be accessed from the **Output** panel.
 
@@ -433,5 +435,5 @@ check out the [Flutter CLI reference][cli-reference].
 
 [cli-reference]: /reference/flutter-cli
 
-[flutter-setup]: /get-started/install
+[flutter-setup]: /get-started
 [package-name]: {{site.dart-site}}/effective-dart/style#do-name-packages-and-file-system-entities-using-lowercase-with-underscores

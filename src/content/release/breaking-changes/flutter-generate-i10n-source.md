@@ -6,6 +6,8 @@ description: >-
   directory, and not the synthetic package `package:flutter_gen`.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `flutter` tool will no longer generate a synthetic `package:flutter_gen`
@@ -15,7 +17,7 @@ Applications or tools that referenced `package:flutter_gen` should instead
 reference source files generated into the app's source directory directly.
 
 In addition, the property `generate: true` is now required when using generated
-i10n source.
+l10n source.
 
 ## Background
 
@@ -37,7 +39,7 @@ flutter:
   generate: true
 ```
 
-If your app previously used `gen-i10n` without this property, it is now
+If your app previously used `gen-l10n` without this property, it is now
 required.
 
 A synthetic package (`package:flutter_gen`) is
@@ -94,8 +96,8 @@ Relevant Articles:
 - [Internationalizing Flutter apps][internationalization],
   the canonical documentation for the feature.
 
-[`l10n.yaml`]: /ui/accessibility-and-internationalization/internationalization#configuring-the-l10n-yaml-file
+[`l10n.yaml`]: /ui/internationalization#configuring-the-l10n-yaml-file
 [Issue 73870]: {{site.repo.flutter}}/issues/73870
 [Issue 102983]: {{site.repo.flutter}}/issues/102983
 [Issue 157819]: {{site.repo.flutter}}/issues/157819
-[internationalization]: /ui/accessibility-and-internationalization/internationalization#adding-your-own-localized-messages
+[internationalization]: /ui/internationalization#adding-your-own-localized-messages

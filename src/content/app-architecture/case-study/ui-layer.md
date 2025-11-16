@@ -1,6 +1,6 @@
 ---
 title: UI layer case study
-short-title: UI layer
+shortTitle: UI layer
 description: >-
   A walk-through of the UI layer of an app that implements MVVM architecture.
 prev:
@@ -90,7 +90,7 @@ class HomeViewModel {
    required UserRepository userRepository,
   }) : _bookingRepository = bookingRepository,
       _userRepository = userRepository;
- 
+
   final BookingRepository _bookingRepository;
   final UserRepository _userRepository;
 
@@ -98,7 +98,7 @@ class HomeViewModel {
   User? get user => _user;
 
   List<BookingSummary> _bookings = [];
- 
+
   /// Items in an [UnmodifiableListView] can't be directly modified,
   /// but changes in the source list can be modified. Since _bookings
   /// is private and bookings is not, the view has no way to modify the
@@ -254,8 +254,8 @@ would take up the full screen on mobile.
 :::note
 "View" is an abstract term, and one view doesn't equal one widget.
 Widgets are composable, and several can be combined to create one view.
-Therefore, view models don't have a 1-to-1 relationship with widgets,
-but rather a 1-to-1 relation with a *collection* of widgets.
+Therefore, view models don't have a one-to-one relationship with widgets,
+but rather a one-to-one relation with a *collection* of widgets.
 :::
 
 The widgets within a view have three responsibilities:
@@ -404,7 +404,7 @@ a [`Dismissible`][] widget.
 
 Recall this code from the previous snippet:
 
-{% render docs/code-and-image.md,
+{% render "docs/code-and-image.md",
 image:"app-architecture/case-study/dismissible.webp",
 img-style:"max-height: 480px; border-radius: 12px; border: black 2px solid;",
 alt: "A clip that demonstrates the 'dismissible' functionality of the Compass app."

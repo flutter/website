@@ -54,7 +54,7 @@ an existing project.
 
     *   In the Xcode menu bar, select
         **File** > **New** > **Target**.
-    
+
     *   Add **Share Extension**.
 
     *   In the **Name field**, enter **ShareExtension**.
@@ -68,7 +68,7 @@ an existing project.
 
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
-    
+
     *   In the **project navigator**, at the top, select
         **Runner**.
 
@@ -79,6 +79,23 @@ an existing project.
 
     *   Drag **Embed Foundation Extensions** above
         **Run Script**.
+
+
+1.  Make sure your **Minimum Deployments** iOS value is properly
+    set and matches in both **Runner** and **ShareExtension**
+
+    *   Open the **project navigator**
+        (**View** > **Navigators** > **Project**).
+
+    *   In the **project navigator**, at the top, select
+        **Runner**.
+
+    *   In the main window under **TARGETS**, select
+        **Runner**.
+
+    *   On the **General** tab check your **Minimum Deployments**
+        dropdown value to match the one you have on
+        **ShareExtension** > **General** tab.
 
 1.  In the console, run the following command to rebuild your
     iOS app:
@@ -109,9 +126,9 @@ The following steps assume you're using the sample
 application and Share extension from
 [Adding iOS app extensions][].
 
-{% tabs "register-plugins-tabs", true %}
+<Tabs key="register-plugins-tabs" wrapped="true">
 
-{% tab "Simulator" %}
+<Tab name="Simulator">
 
 1.  In Xcode, [add an app extension to your project][].
 
@@ -130,9 +147,9 @@ application and Share extension from
     *   Select a photo, tap the share button, then tap
         on the share extension icon of your app.
 
-{% endtab %}
+</Tab>
 
-{% tab "Physical device" %}
+<Tab name="Physical device">
 
 1.  Add an app extension to your project.
 
@@ -146,13 +163,13 @@ application and Share extension from
 
     *   Launch an app that supports the Share extension,
         such as the Photos app.
-    
+
     *   Select a photo, tap the share button, then tap on
         the share extension icon of your app.
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 [Adding iOS app extensions]: #add-extension
 [add an app extension to your project]: #add-extension
@@ -170,7 +187,7 @@ to communicate with each other.
 
 ### Use higher-level APIs {: #using-higher-level-apis }
 
-Some extensions have APIs. For example, 
+Some extensions have APIs. For example,
 the [Core Spotlight][] framework indexes your app,
 allowing users to search from Spotlight and Safari.
 The [WidgetKit][] framework can trigger an update
@@ -209,7 +226,7 @@ To add a target to an App Group:
     1. Select an App Group from the list.
     1. Click **+** to add a new App Group.
 
-{% render docs/app-figure.md, image:"development/platform-integration/app-extensions/xcode-app-groups.png", alt:"Selecting an App Group within an Xcode Runner target configuration." %}
+<DashImage figure image="development/platform-integration/app-extensions/xcode-app-groups.png" alt="Selecting an App Group within an Xcode Runner target configuration." />
 
 When two targets belong to the same App Group,
 they can read from and write to the same source.
@@ -285,7 +302,7 @@ called `Runner`, and the Flutter app is called
 
 1.  In the console, navigate to your Flutter project
     directory and then open your project in Xcode
-    with the following command: 
+    with the following command:
 
     ```console
     open ios/Runner.xcworkspace
@@ -348,7 +365,7 @@ called `Runner`, and the Flutter app is called
 
     *   Repeat the previous step for **Profile**, and
         **Release**.
-    
+
     *   When you are finished, make sure that the
         configurations look similar to the following:
 
@@ -386,9 +403,8 @@ called `Runner`, and the Flutter app is called
     *   Update `ShareViewController` to use the
         `FlutterViewController` class:
 
-{% tabs "controller-code-tabs", true %}
-
-{% tab "UIKit-Swift" %}
+<Tabs key="controller-code-tabs" wrapped="true">
+<Tab name="UIKit-Swift">
 
 ```swift title="ShareViewController.swift"
 import UIKit
@@ -417,9 +433,9 @@ class ShareViewController: UIViewController {
 }
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "UIKit-ObjC" %}
+<Tab name="UIKit-ObjC">
 
 ```objc title="ShareViewController.h"
 @import Flutter;
@@ -457,9 +473,9 @@ class ShareViewController: UIViewController {
 @end
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
 8.  [Test your app with the simulator][].
 
@@ -484,7 +500,7 @@ called `Runner`, and the Flutter app is called
     *   Open the **project navigator**
         (**View** > **Navigators** > **Project**).
 
-    *   In the main window under **TARGETS**, select 
+    *   In the main window under **TARGETS**, select
         **ShareExtension**.
 
     *   Open the **Build Phases** tab.
@@ -527,18 +543,18 @@ called `Runner`, and the Flutter app is called
     *   Update the `ShareViewController` file to use the
         `GeneratedPluginRegistrant.h`:
 
-{% tabs "register-plugins-tabs", true %}
+<Tabs key="register-plugins-tabs" wrapped="true">
 
-{% tab "UIKit-Swift" %}
+<Tab name="UIKit-Swift">
 
 ```swift title="ShareViewController.swift"
 // Add this inside `showFlutter()` at the top
 GeneratedPluginRegistrant.register(with: flutterEngine)
 ```
 
-{% endtab %}
+</Tab>
 
-{% tab "UIKit-ObjC" %}
+<Tab name="UIKit-ObjC">
 
 ```objc title="ShareViewController.m"
 // Add this import at the top
@@ -550,9 +566,9 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 [GeneratedPluginRegistrant registerWithRegistry:flutterEngine];
 ```
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}        
+</Tabs>
 
 5.  (Xcode) [Test your app with the simulator][].
 
@@ -574,16 +590,16 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
     It is advisable to only modify an app extension's UI
     if the app extension supports at least 100MB of memory.
 
-## Call Dart code / render Flutter content in iOS app extensions 
+## Call Dart code / render Flutter content in iOS app extensions
 
 The [home_widget][] package provides a large amount of functionality,
 which includes allowing the following:
 
-* [Respond to user input][] in app extensions 
+* [Respond to user input][] in app extensions
   using Dart Code.
-  
+
 * [Render Flutter widgets][] in an app extension as an image.
-  
+
 * [Save and retrieve data][] from `UserDefaults` on iOS.
 
 ## Other resources {: #other-resources }

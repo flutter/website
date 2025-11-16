@@ -1,0 +1,96 @@
+@use '../base/mixins';
+
+a {
+  color: var(--site-link-fgColor);
+  border-radius: 0.25rem;
+
+  &:hover {
+    color: var(--site-link-fgColor);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--site-link-fgColor-active);
+  }
+
+  &:visited {
+    color: var(--site-link-fgColor);
+  }
+}
+
+a,
+button {
+  text-decoration: none;
+  background: none;
+  cursor: pointer;
+
+  &.filled-button,
+  &.text-button {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    white-space: nowrap;
+    outline-offset: 1px;
+    border-radius: 24px;
+    font-weight: 500;
+    font-family: var(--site-ui-fontFamily);
+    gap: 0.3rem;
+    padding: 0.4rem 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.filled-button {
+    background-color: var(--site-filledButton-bgColor);
+    color: var(--site-filledButton-fgColor);
+    outline-offset: 2px;
+    user-select: none;
+
+    span.material-symbols {
+      font-variation-settings: 'FILL' 1;
+      font-size: 20px;
+    }
+
+    &:hover {
+      @include mixins.interaction-style(8%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(16%);
+    }
+  }
+
+  &.text-button {
+    color: var(--site-primary-color);
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
+    }
+  }
+
+  &.icon-button {
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    color: var(--site-base-fgColor-alt);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    background: none;
+
+    >span {
+      font-size: 1.75rem;
+    }
+
+    &:hover {
+      color: var(--site-base-fgColor);
+    }
+  }
+}

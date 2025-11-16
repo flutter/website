@@ -7,7 +7,7 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0-0
 
 dependencies:
   flutter:
@@ -17,7 +17,7 @@ dependencies:
   battery: ^2.0.3
   flutter_test:
     sdk: flutter
-  path: ^1.9.0
+  path: ^1.9.1
   integration_test:
     sdk: flutter
 

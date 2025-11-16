@@ -4,6 +4,8 @@ description: >
     Any element subclasses that override forgetChild are required to call super.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 A recent global key duplication detection refactor now requires

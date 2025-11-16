@@ -1,9 +1,6 @@
 ---
 title: Create a scrolling parallax effect
 description: How to implement a scrolling parallax effect.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/effects/parallax_scrolling"?>
@@ -205,7 +202,7 @@ to reposition your child widgets however you want.
 To learn more, check out this short
 Widget of the Week video on the `Flow` widget:
 
-{% ytEmbed 'NG6pvXpnIso', 'Flow | Flutter widget of the week' %}
+<YouTubeEmbed id="NG6pvXpnIso" title="Flow | Flutter widget of the week"></YouTubeEmbed>
 :::
 
 :::note
@@ -889,7 +886,8 @@ class Location {
 }
 
 const urlPrefix =
-    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/assets/images/exercise/effects/parallax';
+
 const locations = [
   Location(
     name: 'Mount Rushmore',

@@ -12,8 +12,8 @@ Warning: Building for device with codesigning disabled. You will have to manuall
 Building com.example.myApp for device (ios)...
 ```
 
-{% tabs "darwin-debug-flow" %}
-{% tab "Start from VS Code" %}
+<Tabs key="darwin-debug-flow">
+<Tab name="Start from VS Code">
 
 #### Start debugging with VS Code first {:#vscode-ios}
 
@@ -21,7 +21,7 @@ If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the Dart debugger in VS Code
 
-{% include docs/debug/debug-flow-vscode-as-start.md add=include.add %}
+{% render "docs/debug/debug-flow-vscode-as-start.md", add: add %}
 
 ##### Attach to the Flutter process in Xcode
 
@@ -33,8 +33,8 @@ To attach to the Flutter app in Xcode:
 1. Select **Runner**. It should be at the top of the
    **Attach to Process** menu under the **Likely Targets** heading.
 
-{% endtab %}
-{% tab "Start from Xcode" %}
+</Tab>
+<Tab name="Start from Xcode">
 
 #### Start debugging with Xcode first {:#xcode-ios}
 
@@ -62,9 +62,9 @@ If you use Xcode to debug most of your code, start with this section.
     {% comment %}
     ![Start button in Xcode interface](/assets/images/docs/testing/debugging/native/xcode/run-app.png)
     <div class="figure-caption">
-    
+
     Start button displayed in Xcode interface.
-    
+
     </div>
     {% endcomment %}
 
@@ -102,5 +102,5 @@ If you use Xcode to debug most of your code, start with this section.
     ![Alt text](/assets/images/docs/testing/debugging/vscode-ui/screens/vscode-add-attach-uri-filled.png)
 {% endcomment %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>

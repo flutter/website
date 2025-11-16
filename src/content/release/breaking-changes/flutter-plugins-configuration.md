@@ -6,6 +6,8 @@ description: >-
   must also be updated.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `flutter` tool will no longer output the `.flutter-plugins` metadata file,

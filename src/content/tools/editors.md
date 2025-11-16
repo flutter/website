@@ -1,9 +1,9 @@
 ---
 title: Flutter editor support
-short-title: Editors
+shortTitle: Editors
 description: >-
   Editor support for Dart and Flutter.
-toc: false
+showToc: false
 ---
 
 You can build apps with Flutter using any text editor or
@@ -53,7 +53,7 @@ with one of the following editors.
     <div class="card-header">
       <span class="card-title">
         <span>DartPad</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">
@@ -64,7 +64,7 @@ with one of the following editors.
     <div class="card-header">
       <span class="card-title">
         <span>Firebase Studio</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">

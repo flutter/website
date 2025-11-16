@@ -1,7 +1,8 @@
 ---
 title: Flutter 1.5.4 release notes
-short-title: 1.5.4 release notes
+shortTitle: 1.5.4 release notes
 description: Release notes for Flutter 1.5.4.
+skipTemplateRendering: true
 ---
 
 In addition to continuing to focus on quality and stability since the 1.2 release, the Flutter 1.5.4 stable release adds a set of new features as we approach the Google I/O conference. Further, [Apple has a deadline for building against the 12.1 version of their iOS SDK](https://developer.apple.com/news/?id=03202019a), which we now do in this update. You can meet Apple's requirements simply by pulling down the 1.5.4 stable release, building and updating your Flutter app in the Apple Store.
@@ -54,7 +55,7 @@ In this release, we fixed several severe performance and crash issues.
 
 ## iOS Changes
 
-Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we've made in this release to make the iOS experience even better.  
+Supporting iOS is just as important to the Flutter team as support Android, which you can see in the huge volume of changes we've made in this release to make the iOS experience even better.
 
 
 

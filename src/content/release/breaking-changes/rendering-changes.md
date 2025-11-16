@@ -1,7 +1,9 @@
 ---
-title: Notable Rendering and Layout Changes after v3.7
+title: Notable rendering and layout changes after v3.7
 description: Non-API related breaking changes made after Flutter v3.7.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 ## Changes
 
@@ -34,9 +36,9 @@ In the example golden image change below, the white blocks are text rendered
 using `Ahem` and `FlutterTest`. The second character is taller in the new font
 since it has a larger descent.
 
-| Before (`Ahem`) | After | Animated Diff |
-| :---: | :---: | :---: |
-| ![before](assets/material.ink_sparkle.bottom_right.0_masterImage.png) | ![after](assets/material.ink_sparkle.bottom_right.0_testImage.png) | ![baseline_animated](assets/baseline.webp) |
+| Before (`Ahem`) | After |               Animated Diff               |
+| :---: | :---: |:-----------------------------------------:|
+| ![before](/assets/images/docs/breaking-changes/material.ink_sparkle.bottom_right.0_masterImage.png) | ![after](/assets/images/docs/breaking-changes/material.ink_sparkle.bottom_right.0_testImage.png) | ![baseline_animated](/assets/images/docs/breaking-changes/baseline.gif) |
 
 **2. Different decoration position**
 
@@ -47,18 +49,18 @@ rendered using `Ahem` and `FlutterTest`. The blue dashed lines indicate the
 [TextDecoration.overline]/[TextDecoration.lineThrough]/[TextDecoration.underline]
 positions for each line.
 
-| Before (`Ahem`) | After | Animated Diff |
-| :---: | :---: | :---: |
-| ![before](assets/widgets.text_golden.Decoration.1_masterImage.png) | ![after](assets/widgets.text_golden.Decoration.1_testImage.png) |  ![baseline_animated](assets/underline.webp) |
+| Before (`Ahem`) | After |               Animated Diff                |
+| :---: | :---: |:------------------------------------------:|
+| ![before](/assets/images/docs/breaking-changes/widgets.text_golden.Decoration.1_masterImage.png) | ![after](/assets/images/docs/breaking-changes/widgets.text_golden.Decoration.1_testImage.png) | ![baseline_animated](/assets/images/docs/breaking-changes/underline.gif) |
 
 **3. The glyph used for unmapped characters are slightly different**
 
 Unmapped characters are rendered as hollow boxes in both fonts, with
 a slight difference:
 
-| Before (`Ahem`) | After | Diff |
-| :---: | :---: | :---: |
-| ![before](assets/material.floating_action_button_test.clip_masterImage.png) | ![after](assets/material.floating_action_button_test.clip_testImage.png) | ![not_def_animated](assets/not_def.webp) |
+| Before (`Ahem`) | After |                  Diff                   |
+| :---: | :---: |:---------------------------------------:|
+| ![before](/assets/images/docs/breaking-changes/material.floating_action_button_test.clip_masterImage.png) | ![after](/assets/images/docs/breaking-changes/material.floating_action_button_test.clip_testImage.png) | ![not_def_animated](/assets/images/docs/breaking-changes/not_def.gif) |
 
 ## References
 

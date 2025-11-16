@@ -1,7 +1,7 @@
 ---
 title: Transforming assets at build time
 description: How to set up automatic transformation of images (and other assets) in your Flutter app.
-short-title: Asset transformation
+shortTitle: Asset transformation
 ---
 
 You can configure your project to automatically transform assets
@@ -91,5 +91,5 @@ Dart package that is used as a transformer, check out the
 [command-line app]: {{site.dart-site}}/tutorials/server/cmdline
 [asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/asset_transformation
 [`vector_graphics_compiler`]: {{site.pub}}/packages/vector_graphics_compiler
-[`vector_graphics`]: {{site.pub}}//packages/vector_graphics
+[`vector_graphics`]: {{site.pub-pkg}}/vector_graphics
 [`stderr`]: {{site.api}}/flutter/dart-io/Process/stderr.html

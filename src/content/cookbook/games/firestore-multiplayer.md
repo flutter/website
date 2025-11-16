@@ -95,7 +95,7 @@ so every player sees the same state.
 If you want a quick, 15-minute primer on Cloud Firestore,
 check out the following video:
 
-{% ytEmbed 'v_hR4K4auoQ', 'What is a NoSQL Database? Learn about Cloud Firestore' %}
+<YouTubeEmbed id="v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore"></YouTubeEmbed>
 
 To add Firestore to your Flutter project,
 follow the first two steps of the
@@ -237,11 +237,11 @@ class FirestoreController {
         toFirestore: _cardsToFirestore,
       );
 
-  StreamSubscription? _areaOneFirestoreSubscription;
-  StreamSubscription? _areaTwoFirestoreSubscription;
+  late final StreamSubscription<void> _areaOneFirestoreSubscription;
+  late final StreamSubscription<void> _areaTwoFirestoreSubscription;
 
-  StreamSubscription? _areaOneLocalSubscription;
-  StreamSubscription? _areaTwoLocalSubscription;
+  late final StreamSubscription<void> _areaOneLocalSubscription;
+  late final StreamSubscription<void> _areaTwoLocalSubscription;
 
   FirestoreController({required this.instance, required this.boardState}) {
     // Subscribe to the remote changes (from Firestore).
@@ -264,10 +264,10 @@ class FirestoreController {
   }
 
   void dispose() {
-    _areaOneFirestoreSubscription?.cancel();
-    _areaTwoFirestoreSubscription?.cancel();
-    _areaOneLocalSubscription?.cancel();
-    _areaTwoLocalSubscription?.cancel();
+    _areaOneFirestoreSubscription.cancel();
+    _areaTwoFirestoreSubscription.cancel();
+    _areaOneLocalSubscription.cancel();
+    _areaTwoLocalSubscription.cancel();
 
     _log.fine('Disposed');
   }
@@ -275,20 +275,21 @@ class FirestoreController {
   /// Takes the raw JSON snapshot coming from Firestore and attempts to
   /// convert it into a list of [PlayingCard]s.
   List<PlayingCard> _cardsFromFirestore(
-    DocumentSnapshot<Map<String, dynamic>> snapshot,
+    DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    final data = snapshot.data()?['cards'] as List?;
+    final data = snapshot.data()?['cards'] as List<Object?>?;
 
     if (data == null) {
       _log.info('No data found on Firestore, returning empty list');
       return [];
     }
 
-    final list = List.castFrom<Object?, Map<String, Object?>>(data);
-
     try {
-      return list.map((raw) => PlayingCard.fromJson(raw)).toList();
+      return data
+          .cast<Map<String, Object?>>()
+          .map(PlayingCard.fromJson)
+          .toList();
     } catch (e) {
       throw FirebaseControllerException(
         'Failed to parse data from Firestore: $e',

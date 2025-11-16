@@ -5,6 +5,8 @@ description: >
   material localizations to widgets localizations.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `ReorderableListView`'s localized strings were moved from

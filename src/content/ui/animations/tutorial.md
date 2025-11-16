@@ -1,11 +1,8 @@
 ---
 title: Animations tutorial
-short-title: Tutorial
+shortTitle: Tutorial
 description: A tutorial showing how to build explicit animations in Flutter.
 ---
-
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
 
 <?code-excerpt path-base="animation"?>
 
@@ -95,7 +92,7 @@ The changes from the non-animated example are highlighted:
 + class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 +   late Animation<double> animation;
 +   late AnimationController controller;
-+ 
++
 +   @override
 +   void initState() {
 +     super.initState();
@@ -109,7 +106,7 @@ The changes from the non-animated example are highlighted:
 +       });
 +     controller.forward();
 +   }
-+ 
++
     @override
     Widget build(BuildContext context) {
       return Center(
@@ -123,7 +120,7 @@ The changes from the non-animated example are highlighted:
         ),
       );
     }
-+ 
++
 +   @override
 +   void dispose() {
 +     controller.dispose();
@@ -175,7 +172,7 @@ check out [Cascade notation][]
 in the [Dart language documentation][].
 :::
 
-##  Simplifying with Animated&shy;Widget
+## Simplifying with AnimatedWidget
 
 :::secondary What's the point?
 * How to use the [`AnimatedWidget`][] helper class
@@ -234,7 +231,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 + class AnimatedLogo extends AnimatedWidget {
 +   const AnimatedLogo({super.key, required Animation<double> animation})
 +       : super(listenable: animation);
-+ 
++
 +   @override
 +   Widget build(BuildContext context) {
 +     final animation = listenable as Animation<double>;
@@ -248,7 +245,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 +     );
 +   }
 + }
-+ 
++
   class LogoApp extends StatefulWidget {
     // ...
 
@@ -279,7 +276,7 @@ and it passes the `Animation` object to `AnimatedLogo`:
 -     );
 -   }
 +   Widget build(BuildContext context) => AnimatedLogo(animation: animation);
-    
+
     // ...
   }
 ```
@@ -393,7 +390,7 @@ dirty as necessary, so you don't need to call `addListener()`.
 The widget tree for the [animate4][]
 example looks like this:
 
-{% render docs/app-figure.md, image:"ui/AnimatedBuilder-WidgetTree.png", alt:"AnimatedBuilder widget tree" %}
+<DashImage figure image="ui/AnimatedBuilder-WidgetTree.png" alt="AnimatedBuilder widget tree" />
 
 Starting from the bottom of the widget tree, the code for rendering
 the logo is straightforward:
@@ -475,10 +472,10 @@ in the bullet points above.
 
 ```dart diff
   void main() => runApp(const LogoApp());
-  
+
 + class LogoWidget extends StatelessWidget {
 +   const LogoWidget({super.key});
-+ 
++
 +   // Leave out the height and width so it fills the animating parent.
 +   @override
 +   Widget build(BuildContext context) {
@@ -488,17 +485,17 @@ in the bullet points above.
 +     );
 +   }
 + }
-+ 
++
 + class GrowTransition extends StatelessWidget {
 +   const GrowTransition({
 +     required this.child,
 +     required this.animation,
 +     super.key,
 +   });
-+ 
++
 +   final Widget child;
 +   final Animation<double> animation;
-+ 
++
 +   @override
 +   Widget build(BuildContext context) {
 +     return Center(
@@ -656,8 +653,8 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
   but doesn't know anything about what appears onscreen.
 * An [`AnimationController`][] manages the `Animation`.
 * A [`CurvedAnimation`][] defines progression as a non-linear curve.
-* A [`Tween`][] interpolates between the range of data as used by the
-  object be
+* A [`Tween`][] interpolates between a beginning and ending value
+  for a property being animated.
 
 ## Next steps
 
@@ -668,12 +665,12 @@ animations specific to your design system type, `ReverseAnimation`,
 shared element transitions (also known as Hero animations),
 physics simulations and `fling()` methods.
 
-[animate0]: {{examples}}/animation/animate0
-[animate1]: {{examples}}/animation/animate1
-[animate2]: {{examples}}/animation/animate2
-[animate3]: {{examples}}/animation/animate3
-[animate4]: {{examples}}/animation/animate4
-[animate5]: {{examples}}/animation/animate5
+[animate0]: {{site.repo.this}}/tree/main/examples/animation/animate0
+[animate1]: {{site.repo.this}}/tree/main/examples/animation/animate1
+[animate2]: {{site.repo.this}}/tree/main/examples/animation/animate2
+[animate3]: {{site.repo.this}}/tree/main/examples/animation/animate3
+[animate4]: {{site.repo.this}}/tree/main/examples/animation/animate4
+[animate5]: {{site.repo.this}}/tree/main/examples/animation/animate5
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html
 [`AnimatedBuilder`]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html
 [Introduction to animations]: /ui/animations

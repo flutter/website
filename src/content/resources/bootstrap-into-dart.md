@@ -1,6 +1,7 @@
 ---
 title: Bootstrap into Dart
 description: How to get started with the Dart programming language.
+showBreadcrumbs: false
 ---
 
 New to the [Dart][] language?

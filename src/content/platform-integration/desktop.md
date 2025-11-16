@@ -36,9 +36,9 @@ Consult the guide for your target desktop environment:
 * [Install macOS desktop devtools][macOS-devtools]
 * [Install Windows desktop devtools][Windows-devtools]
 
-[Linux-devtools]: /get-started/install/linux/desktop
-[macOS-devtools]: /get-started/install/macos/desktop
-[Windows-devtools]: /get-started/install/windows/desktop
+[Linux-devtools]: /platform-integration/linux/setup#set-up-tooling
+[macOS-devtools]: /platform-integration/macos/setup#set-up-tooling
+[Windows-devtools]: /platform-integration/windows/setup#set-up-tooling
 
 If `flutter doctor` finds problems or missing components
 for a platform that you don't want to develop for,
@@ -183,8 +183,8 @@ about endorsed plugins, see the following resources:
 [using packages]: /packages-and-plugins/using-packages
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
+[How to write a Flutter web plugin, part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[Modern Flutter Plugin Development]: {{site.flutter-blog}}/modern-flutter-plugin-development-4c3ee015cf5a
 
 ## Samples and codelabs
 

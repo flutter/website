@@ -2,7 +2,7 @@
 title: Support for WebAssembly (Wasm)
 description: >-
   Current status of Flutter's support for WebAssembly (Wasm).
-short-title: Wasm
+shortTitle: Wasm
 last-update: Nov 6, 2024
 ---
 
@@ -75,7 +75,7 @@ Even with the `--wasm` flag, Flutter will still compile the application to
 JavaScript. If WasmGC support is not detected at runtime, the JavaScript output
 is used so the application will continue to work in all major browsers.
 
-You can verify whether the app is actually running with Wasm by checking for 
+You can verify whether the app is actually running with Wasm by checking for
 the `dart2wasm` environment variable, set during compilation (preferred).
 
 ```dart

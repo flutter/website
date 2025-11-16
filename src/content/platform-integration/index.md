@@ -1,6 +1,6 @@
 ---
 title: Build for and integrate with multiple platforms
-short-title: Platform integration
+shortTitle: Platform integration
 description: >-
   Learn how to develop for different platforms and
   integrate with platform-specific features in Flutter apps.
@@ -272,7 +272,7 @@ web platform to your Flutter app.
     <div class="card-header">
       <span class="card-title">
         <span>Interop with JavaScript</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;">open_in_new</span>
+        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
       </span>
     </div>
     <div class="card-content">

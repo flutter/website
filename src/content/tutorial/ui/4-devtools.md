@@ -2,6 +2,7 @@
 title: DevTools
 description: Learn to use the Dart DevTools when developing Flutter apps.
 permalink: /tutorial/devtools/
+sitemap: false
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
@@ -18,10 +19,10 @@ $ flutter pub global activate devtools  # You only need to run this once
 $ devtools
 ```
 
-:::note Run in your IDE 
+:::note Run in your IDE
 
 You can also run DevTools directly inside [VS Code][] and [IntelliJ][],
-provided you have the Flutter plugin installed. The screenshots in this lesson 
+provided you have the Flutter plugin installed. The screenshots in this lesson
 are from VS Code.
 
 :::
@@ -40,10 +41,10 @@ Consider the `GamePage` widget you created in this section:
 ```dart
 class GamePage extends StatelessWidget {
   const GamePage({super.key});
-  
+
   final Game _game = Game();
 
-  @override  
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -116,7 +117,7 @@ referred to as the "unbounded constraints" error.
 Watch the following video to get an understanding of how to spot and
 resolve this issue.
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 ## The property editor
 

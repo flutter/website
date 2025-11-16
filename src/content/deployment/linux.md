@@ -1,7 +1,7 @@
 ---
 title: Build and release a Linux app to the Snap Store
 description: How to prepare for and release a Linux app to the Snap store.
-short-title: Linux
+shortTitle: Linux
 ---
 
 During a typical development cycle,
@@ -114,7 +114,7 @@ slots:
     interface: dbus
     bus: session
     name: org.bar.super_cool_app # adjust accordingly to your app name and
-    
+
 apps:
   super-cool-app:
     command: super_cool_app
@@ -176,7 +176,7 @@ grade: stable
 
 This section defines the application(s) that exist inside the snap.
 There can be one or more applications per snap. This example
-has a single application&mdash;super_cool_app. 
+has a single application&mdash;super_cool_app.
 
 ```yaml
 apps:
@@ -206,34 +206,34 @@ apps:
   access to the network.
 
 **DBus interface**
-: The [DBus interface][] provides a way for snaps to 
-  communicate over DBus. The snap providing the DBus 
-  service declares a slot with the well-known DBus name 
-  and which bus it uses. Snaps wanting to communicate 
-  with the providing snap's service declare a plug for 
-  the providing snap. Note that a snap declaration is 
-  needed for your snap to be delivered via the snap store 
-  and claim this well-known DBus name (simply upload the 
-  snap to the store and request a manual review and 
+: The [DBus interface][] provides a way for snaps to
+  communicate over DBus. The snap providing the DBus
+  service declares a slot with the well-known DBus name
+  and which bus it uses. Snaps wanting to communicate
+  with the providing snap's service declare a plug for
+  the providing snap. Note that a snap declaration is
+  needed for your snap to be delivered via the snap store
+  and claim this well-known DBus name (simply upload the
+  snap to the store and request a manual review and
   a reviewer will take a look).
 
-  When a providing snap is installed, snapd will 
-  generate security policy that will allow it to 
-  listen on the well-known DBus name on the specified 
-  bus. If the system bus is specified, snapd will also 
-  generate DBus bus policy that allows 'root' to own 
-  the name and any user to communicate with the 
-  service. Non-snap processes are allowed to 
-  communicate with the providing snap following 
-  traditional permissions checks. Other (consuming) 
-  snaps might only communicate with the providing 
+  When a providing snap is installed, snapd will
+  generate security policy that will allow it to
+  listen on the well-known DBus name on the specified
+  bus. If the system bus is specified, snapd will also
+  generate DBus bus policy that allows 'root' to own
+  the name and any user to communicate with the
+  service. Non-snap processes are allowed to
+  communicate with the providing snap following
+  traditional permissions checks. Other (consuming)
+  snaps might only communicate with the providing
   snap by connecting the snaps' interface.
-  
+
 ```plaintext
 dbus-super-cool-app: # adjust accordingly to your app name
   interface: dbus
   bus: session
-  name: dev.site.super_cool_app 
+  name: dev.site.super_cool_app
 ```
 
 ### Parts
@@ -267,16 +267,16 @@ parts:
 ## Desktop file and icon
 
 
-Desktop entry files are used to add an application 
-to the desktop menu. These files specify the name and 
+Desktop entry files are used to add an application
+to the desktop menu. These files specify the name and
 icon of your application, the categories it belongs to,
-related search keywords and more. These files have the 
-extension .desktop and follow the XDG Desktop Entry 
+related search keywords and more. These files have the
+extension .desktop and follow the XDG Desktop Entry
 Specification version 1.1.
-  
+
 ### Flutter super-cool-app.desktop example
 
-Place the .desktop file in your Flutter project 
+Place the .desktop file in your Flutter project
 under `<project root>/snap/gui/super-cool-app.desktop`.
 
 **Notice**: icon and .desktop file name must be the same as your app name in
@@ -288,14 +288,14 @@ For example:
 [Desktop Entry]
 Name=Super Cool App
 Comment=Super Cool App that does everything
-Exec=super-cool-app 
+Exec=super-cool-app
 Icon=${SNAP}/meta/gui/super-cool-app.png # Replace name with your app name.
 Terminal=false
 Type=Application
 Categories=Education; # Adjust accordingly your snap category.
 ```
 
-Place your icon with .png extension in your Flutter 
+Place your icon with .png extension in your Flutter
 project under `<project root>/snap/gui/super-cool-app.png`.
 
 
@@ -309,7 +309,7 @@ To use the Multipass VM backend:
 
 ```console
 $ snapcraft
-``` 
+```
 
 To use the LXD container backend:
 

@@ -2,7 +2,7 @@
 title: General approach to adaptive apps
 description: >-
   General advice on how to approach making your Flutter app adaptive.
-short-title: General approach
+shortTitle: General approach
 ---
 
 <?code-excerpt path-base="ui/adaptive_app_demos"?>
@@ -98,7 +98,7 @@ so you would use `MediaQuery.sizeOf`.
 Previous advice recommended that you use the `of` method of
 `MediaQuery` to obtain the app window's dimensions.
 Why has this advice changed?
-The short answer is **for performance reasons.** 
+The short answer is **for performance reasons.**
 
 `MediaQuery` contains a lot of data, but if you're
 only interested in the size property, it's more
@@ -160,4 +160,3 @@ the [Building an animated responsive app layout with Material 3][codelab].
 
 The next page discusses how to ensure that your
 app looks best on large screens and foldables.
-

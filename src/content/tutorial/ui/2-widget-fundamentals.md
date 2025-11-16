@@ -2,6 +2,7 @@
 title: Create widgets
 description: Learn about stateless widgets and how to build your own.
 permalink: /tutorial/stateless-widgets/
+sitemap: false
 ---
 
 {%- comment %}
@@ -17,11 +18,24 @@ code.  By the end of this lesson, you’ll have created your own custom Tile
 widget.
 
 
+## Before you start
+
+This app relies on a bit of game logic that isn't UI-related, and thus is outside the scope of this tutorial. Before you move on, you need to add this logic to your app.
+
+1. Create a new file in the `lib` directory called `game.dart`.
+2. Copy the following code into it and import that code into your `main.dart` file.
+
+{% render docs/tutorial/game-code.md  %}
+
+:::note Game logic note
+You may notice the lists called `legalGuesses` and `legalWords` only contain a few words. The full lists combined have over 10,000 words, and were omitted for brevity. You don't need the full lists to continue the tutorial. When you're testing your app, make sure to use the few words from those lists.
+
+Alternatively, you can find the full lists in [this github repository][], as well as instructions to import it into your project.
+:::
+
 ## Anatomy of a stateless widget
 
-A `Widget` is a Dart class that extends one of the Flutter widget classes, in
-this case
-[`StatelessWidget`][].
+A `Widget` is a Dart class that extends one of the Flutter widget classes, in this case [`StatelessWidget`][].
 
 Open your `main.dart` file and add this code below the `MainApp` class, which
 defines a new widget called `Tile`.
@@ -33,7 +47,7 @@ class Tile extends StatelessWidget {
   final String letter;
   final HitType hitType;
 
-  // ... 
+  // ...
 }
 ```
 
@@ -42,14 +56,15 @@ class Tile extends StatelessWidget {
 The `Tile` class has a [`constructor`][] that defines
 what data needs to be passed into the widget to render the widget.  Here, a
 `String` is passed in, which represents the guessed letter, and a `HitType`,
-which is an enum value defined in the  `flutter_gse` package and used to
+which is an [enum value][] used to
 determine the color of the tile. (For example `HitType.hit` results in a green
 tile).  Passing data into the widget is at the core of making widgets reusable.
+
 
 ### `Build` method
 
 Finally, there’s the all important `build` method, which must be defined on
-every widget, and will always return another widget. 
+every widget, and will always return another widget.
 
 ```dart
 class Tile extends StatelessWidget {
@@ -90,7 +105,7 @@ class MainApp extends StatelessWidget {
 ```
 
 At the moment, your app will be blank, because the `Tile` widget returns an
-empty `Container`, which doesn’t display anything by default. 
+empty `Container`, which doesn’t display anything by default.
 
 ## The `Container` widget
 
@@ -98,12 +113,12 @@ The `Tile` widget consists of three of the most common basic widgets:
 `Container`, `Center`, and `Text`.
 [`Container`][] is a
 convenience widget that wraps several basic styling widgets, like `Padding`,
-[`ColoredBox`][], [`SizedBox`][], [`DecoratedBox`][], and many more.  
+[`ColoredBox`][], [`SizedBox`][], [`DecoratedBox`][], and many more.
 
 Because the finished UI contains 25 `Tile` widgets in neat columns and rows, it
 should have an explicit size. Set the width and height properties on the
 `Container`. (You could also do this with a `SizedBox` widget, but you’ll use
-more properties of the `Container` next.) 
+more properties of the `Container` next.)
 
 ```dart
 class Tile extends StatelessWidget {
@@ -130,7 +145,7 @@ Next, add a [`Border`][] to the box with the following code:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -138,12 +153,12 @@ class Tile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 	// NEW
-	return Container(
-       width: 60,
-       height: 60,
-       decoration: BoxDecoration(
-         border: Border.all(color: Colors.grey.shade300),
-         // TODO: add background color
+	  return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade300),
+        // TODO: add background color
       ),
     );
   }
@@ -158,7 +173,7 @@ colored border around the white square.
 When this game is complete, the color of the tile will depend on the user’s
 guess. The tile will be green when the user has guessed correctly, yellow when
 the letter is correct but the position is incorrect, and gray if the guess is
-wrong on both axes. 
+wrong on both axes.
 
 The following figure shows all three possibilities.
 
@@ -187,7 +202,7 @@ class Tile extends StatelessWidget {
            HitType.partial => Colors.yellow,
            HitType.miss => Colors.grey,
            _ => Colors.white,
-        },         
+        },
         // TODO: add children
       ),
     );
@@ -197,7 +212,7 @@ class Tile extends StatelessWidget {
 
 ## Child widgets
 
-Finally, add the `Center` and `Text` widgets to the `Container.child` property. 
+Finally, add the `Center` and `Text` widgets to the `Container.child` property.
 
 Most widgets in the Flutter SDK have a `child` or `children` property that’s
 meant to be passed a widget or a list of widgets, respectively. It's best
@@ -205,29 +220,29 @@ practice to use the same naming convention in your own custom widgets.
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
 
   @override
   Widget build(BuildContext context) {
-	return Container(
-       width: 60,
-       height: 60,
-       decoration: BoxDecoration(
-          color: switch (hitType) {
-          border: Border.all(color: Colors.grey.shade300),
-           HitType.hit => Colors.green,
-           HitType.partial => Colors.yellow,
-           HitType.miss => Colors.grey,
-           _ => Colors.white,
-        },         
-        child: Center(
-          child: Text(
-            letter.char.toUpperCase(),
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
+    return Container(
+      width: 60,
+      height: 60,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade300),
+        color: switch (hitType) {
+          HitType.hit => Colors.green,
+          HitType.partial => Colors.yellow,
+          HitType.miss => Colors.grey,
+          _ => Colors.white,
+        },
+      ),
+      child: Center(
+        child: Text(
+          letter.toUpperCase(),
+          style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
     );
@@ -249,7 +264,7 @@ child: Tile('A', HitType.partial)
 ```
 
 Soon, this small box will be one of many widgets on the screen. In the next
-lesson, you’ll start building the game grid itself. 
+lesson, you’ll start building the game grid itself.
 
 
 
@@ -261,3 +276,5 @@ lesson, you’ll start building the game grid itself.
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 [switch expression]: {{site.dart-site}}/language/branches#switch-statements
+[enum value]: {{site.dart-site}}/language/branches#switch-statements
+[this github repository]: https://github.com/ericwindmill/legal_wordle_words

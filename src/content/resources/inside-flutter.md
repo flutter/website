@@ -1,6 +1,8 @@
 ---
 title: Inside Flutter
-description: Learn about Flutter's inner workings from one of the founding engineers.
+description: >-
+  Learn about Flutter's inner workings from one of the founding engineers.
+showBreadcrumbs: false
 ---
 
 This document describes the inner workings of the Flutter toolkit that make
@@ -492,7 +494,7 @@ such that there are very few invalid combinations.
 Not all error conditions can be designed out. For those that remain,
 in debug builds, Flutter generally attempts to catch the errors very
 early and immediately reports them. Asserts are widely used.
-Constructor arguments are sanity checked in detail. Lifecycles are
+Constructor arguments are spot checked in detail. Lifecycles are
 monitored and when inconsistencies are detected they immediately
 cause an exception to be thrown.
 

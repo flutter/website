@@ -1,6 +1,6 @@
 ---
 title: Flutter documentation
-short-title: Docs
+shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.
@@ -8,14 +8,9 @@ description: >-
 
 <div class="card-grid">
 {% for card in docsCards -%}
-  <a class="card filled-card outlined-card" href="{{card.url}}">
-    <div class="card-header">
-      <span class="card-title">{{card.name}}</span>
-    </div>
-    <div class="card-content">
-      <p>{{card.description}}</p>
-    </div>
-  </a>
+  <Card title="{{card.name}}" link="{{card.url}}" outlined="true">
+    {{card.description}}
+  </Card>
 {% endfor -%}
 </div>
 
@@ -30,10 +25,10 @@ Ready to build beautiful, multiplatform apps from a single codebase?
 This video walks you through the fundamentals of Flutter and shows you how to get started.
 
 Once you've [Set up Flutter][],
-you should follow the 
-[Write your first Flutter app][] codelab 
-and read [Flutter fundamentals][]. 
-These resources are opinionated documentation 
+you should follow the
+[Write your first Flutter app][] codelab
+and read [Flutter fundamentals][].
+These resources are opinionated documentation
 that guide you through the most important
 parts of building a Flutter app.
 
@@ -48,7 +43,7 @@ Coming from another platform? Check out Flutter for:
 
 [Building layouts][]
 : Learn how to create layouts in Flutter,
-  where everything is a widget.
+  where everything is a [widget](/resources/glossary#widget).
 
 [Understanding constraints][]
 : Once you understand that "Constraints
@@ -65,7 +60,7 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started/install
+[Set up Flutter]: /get-started
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs
@@ -75,30 +70,29 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-{% videoWrapper 'Check out what\'s new in Flutter at Google I/O 2025!' %}
-{% ytEmbed 'v6Rzo5khNE8', 'What\'s new in Flutter', true %}
-{% endvideoWrapper %}
+<div class="video-wrapper">
+  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
+  <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
+</div>
 <br>
 
-For more Flutter at Google I/O 2025, check out
-[How to build agentic apps with Flutter and Firebase AI Logic][] 
-and [How Flutter makes the most of your platforms][].
+For more of the latest on Dart, Flutter, and the Future of Apps, check out
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'xo271p-Fl_4', 'How to build agentic apps with Flutter and Firebase AI Logic', true %}
+      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      {% ytEmbed 'flwULzNYRac', 'How Flutter makes the most of your platforms', true %}
+      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
-[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
+[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
 
 To learn about all of the Flutter video series, see our [videos][] page.
 

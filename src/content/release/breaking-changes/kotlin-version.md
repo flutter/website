@@ -1,9 +1,11 @@
 ---
-title: Required Kotlin version 
+title: Required Kotlin version
 description: >
     Flutter apps built for the Android platform
     now require Kotlin 1.5.31 or greater.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 :::important
 As of Flutter 3.16, the default Gradle build scripts differ across

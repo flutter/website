@@ -1,7 +1,7 @@
 ---
 title: Text widgets
-short-title: Text
+shortTitle: Text
 description: A catalog of Flutter's widgets for displaying and styling text.
+widgetCategory: Text
+layout: widget-catalog-page
 ---
-
-{% render docs/catalog-page.md, categoryName:"Text", catalog:catalog %}

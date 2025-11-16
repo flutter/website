@@ -30,9 +30,7 @@ To migrate your project:
 1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
    and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
-   {% render docs/captioned-image.liquid,
-   image:"development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png",
-   caption:"Ensure **Run Prepare Flutter Framework Script** runs as a pre-action" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png" caption="Ensure **Run Prepare Flutter Framework Script** runs as a pre-action" />
 
 [Turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
 [manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#add-to-a-flutter-app-manually

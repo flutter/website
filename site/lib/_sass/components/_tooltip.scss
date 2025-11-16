@@ -1,0 +1,62 @@
+.tooltip-wrapper {
+  position: relative;
+
+  a.tooltip-target {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  .tooltip {
+    visibility: hidden;
+
+    display: flex;
+    position: absolute;
+    z-index: var(--site-z-floating);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    flex-flow: column nowrap;
+    width: 16rem;
+
+    background: var(--site-raised-bgColor);
+    border: 0.05rem solid rgba(0, 0, 0, .125);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    padding: 0.8rem;
+
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+
+    .tooltip-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .tooltip-content {
+      font-size: 0.875rem;
+      color: var(--site-secondary-textColor);
+    }
+  }
+
+  // On non-touch devices, show tooltip on hover or focus.
+  @media all and not (pointer: coarse) {
+    &:hover .tooltip {
+      visibility: visible;
+    }
+
+    &:focus-within .tooltip {
+      visibility: visible;
+    }
+  }
+
+  // On touch devices, show tooltip on click (see global_scripts.dart).
+  @media all and (pointer: coarse) {
+    .tooltip.visible {
+      visibility: visible;
+    }
+  }
+}

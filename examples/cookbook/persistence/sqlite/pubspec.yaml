@@ -3,13 +3,13 @@ description: Example of using sqflite plugin to access SQLite database.
 
 resolution: workspace
 environment:
-  sdk: ^3.8.0
+  sdk: ^3.10.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  sqflite: ^2.3.2
-  path: ^1.9.0
+  sqflite: ^2.4.2
+  path: ^1.9.1
 
 dev_dependencies:
   flutter_test:

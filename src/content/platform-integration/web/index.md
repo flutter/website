@@ -1,6 +1,6 @@
 ---
 title: Web support for Flutter
-short-title: Web
+shortTitle: Web
 description: Details of how Flutter supports the creation of web experiences.
 ---
 
@@ -21,7 +21,7 @@ a binary instruction format that enables fast apps on all major browsers.
 For a glimpse into the benefits of using WebAssembly,
 check out the following video.
 
-{% ytEmbed 'lpnKWK-KEYs?start=1712', 'What\'s new in Flutter - WebAssembly' %}
+<YouTubeEmbed id="lpnKWK-KEYs?start=1712" title="What's new in Flutter - WebAssembly"></YouTubeEmbed>
 
 ## How it works
 
@@ -68,8 +68,9 @@ The following resources can help you get started:
 * To add web support to an existing app, or to create a
   new app that includes web support, see
   [Building a web application with Flutter][].
+* To configure web development server settings in a centralized file, see [Set up a web development configuration file][].
 * To learn about Flutter's different web renderers (CanvasKit and Skwasm), see
-  [Web renderers][]
+  [Web renderers][].
 * To learn how to create a responsive Flutter
   app, see [Creating responsive apps][].
 * To view commonly asked questions and answers, see the
@@ -84,6 +85,7 @@ The following resources can help you get started:
   **#help** channel on [Discord][].
 
 [Building a web application with Flutter]: /platform-integration/web/building
+[Set up a web development configuration file]: /platform-integration/web/web-dev-config-file
 [Creating responsive apps]: /ui/adaptive-responsive
 [Discord]: https://discordapp.com/invite/yeZ6s7k
 [file an issue]: https://goo.gle/flutter_web_issue

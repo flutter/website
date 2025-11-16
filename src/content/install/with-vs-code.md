@@ -1,19 +1,24 @@
 ---
 title: Install Flutter using VS Code
-short-title: Install with VS Code
+shortTitle: Install with VS Code
+breadcrumb: With VS Code
 description: >-
   Learn how to use VS Code to quickly install and set up the Flutter SDK.
 ---
 
-Learn how to use VS Code to
-quickly set up your Flutter development environment.
+Learn how to install and set up Flutter in a Code OSS-based editor.
+This includes (but is not limited to), [VS Code][], [Cursor][], and [Windsurf][].
+
+[VS Code]: https://code.visualstudio.com
+[Cursor]: https://cursor.com/
+[Windsurf]: https://windsurf.com/
 
 :::tip
 If you've never set up or developed an app with Flutter before,
-follow [Get started with Flutter][] instead.
+follow [Set up and test drive Flutter][] instead.
 :::
 
-[Get started with Flutter]: /get-started/install
+[Set up and test drive Flutter]: /get-started/quick
 
 ## Choose your development platform {: #dev-platform}
 
@@ -23,7 +28,7 @@ installing Flutter on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Download prerequisite software {: #download-prerequisites}
 

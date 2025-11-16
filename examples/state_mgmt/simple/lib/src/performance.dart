@@ -16,7 +16,7 @@ class ChildUsingDescendant extends StatelessWidget {
       builder: (context, cart, child) => Stack(
         children: [
           // Use SomeExpensiveWidget here, without rebuilding every time.
-          if (child != null) child,
+          ?child,
           Text('Total price: ${cart.totalPrice}'),
         ],
       ),

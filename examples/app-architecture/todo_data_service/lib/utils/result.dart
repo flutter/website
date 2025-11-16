@@ -28,7 +28,7 @@ sealed class Result<T> {
   Ok<T> get asOk => this as Ok<T>;
 
   /// Convenience method to cast to Error
-  Error get asError => this as Error<T>;
+  Error<T> get asError => this as Error<T>;
 }
 
 /// Subclass of Result for values

@@ -1,9 +1,6 @@
 ---
 title: List with spaced items
-description: How to create a list with spaced or expanded items 
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
+description: How to create a list with spaced or expanded items
 ---
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>
@@ -70,7 +67,7 @@ The [`ConstrainedBox`][] widget imposes additional constraints to its child.
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the [`LayoutBuilder`][] constraints.
 
-This ensures that the child widget 
+This ensures that the child widget
 is constrained to have a minimum height equal to the available
 space provided by the [`LayoutBuilder`][] constraints,
 namely the maximum height of the [`BoxConstraints`][].
@@ -98,7 +95,7 @@ in case the items don't fit the screen.
 
 Finally, add a [`Column`][] as the child of the [`ConstrainedBox`][].
 
-To space the items evenly, 
+To space the items evenly,
 set the `mainAxisAlignment` to `MainAxisAlignment.spaceBetween`.
 
 <?code-excerpt "lib/spaced_list.dart (column)"?>
@@ -122,7 +119,7 @@ LayoutBuilder(
 );
 ```
 
-Alternatively, you can use the [`Spacer`][] widget 
+Alternatively, you can use the [`Spacer`][] widget
 to tune the spacing between the items,
 or the [`Expanded`][] widget, if you want one widget to take more space than others.
 

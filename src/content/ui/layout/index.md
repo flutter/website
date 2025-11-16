@@ -1,14 +1,9 @@
 ---
 title: Layouts in Flutter
-short-title: Layout
+shortTitle: Layout
 description: >-
   Learn how Flutter's layout mechanism works and how to build your app's layout.
 ---
-
-{% assign api = site.api | append: '/flutter' -%}
-{% capture examples -%} {{site.repo.this}}/tree/{{site.branch}}/examples {%- endcapture -%}
-
-<?code-excerpt path-base=""?>
 
 ## Overview
 
@@ -75,11 +70,11 @@ visual layout. For more information, see
 [Debugging layout issues visually][].
 :::
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [Debugging layout issues visually]: /tools/devtools/inspector#debugging-layout-issues-visually
-[`Icon`]: {{api}}/material/Icons-class.html
-[`Row`]: {{api}}/widgets/Row-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
+[`Icon`]: {{site.api}}/flutter/material/Icons-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 
 ## Lay out a widget
 
@@ -107,7 +102,7 @@ Center(
 )
 ```
 
-[`Center`]: {{api}}/widgets/Center-class.html
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [layout widgets]: /ui/widgets/layout
 
 ### 2. Create a visible widget
@@ -123,10 +118,10 @@ some text:
 Text('Hello World')
 ```
 
-[icons]: {{api}}/material/Icons-class.html
-[images]: {{api}}/widgets/Image-class.html
-[text]: {{api}}/widgets/Text-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
+[icons]: {{site.api}}/flutter/material/Icons-class.html
+[images]: {{site.api}}/flutter/widgets/Image-class.html
+[text]: {{site.api}}/flutter/widgets/Text-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [visible widget]: /ui/widgets
 
 ### 3. Add the visible widget to the layout widget
@@ -159,9 +154,9 @@ displays the widget.
 <a id="material-apps" aria-hidden="true"></a>
 <a id="cupertino-apps" aria-hidden="true"></a>
 
-{% tabs "app-type-tabs", true %}
+<Tabs key="app-type-tabs" wrapped="true">
 
-{% tab "Standard apps" %}
+<Tab name="Standard apps">
 
 For a general app, you can add the `Container` widget to
 the app's `build()` method:
@@ -194,9 +189,9 @@ general app, you have to build them yourself. This app
 changes the background color to white and the text to
 dark grey to mimic a Material app.
 
-{% endtab %}
+</Tab>
 
-{% tab "Material apps" %}
+<Tab name="Material apps">
 
 For a `Material` app, you can use a [`Scaffold`][] widget;
 it provides a default banner, background color,
@@ -235,9 +230,9 @@ libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino apps" %}
+<Tab name="Cupertino apps">
 
 To create a `Cupertino` app,
 use the `CupertinoApp` and [`CupertinoPageScaffold`][] widgets.
@@ -298,20 +293,20 @@ You can mix widgets from both libraries, you can customize existing widgets,
 or you can build your own set of custom widgets.
 :::
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
-[`CupertinoColors`]: {{api}}/cupertino/CupertinoColors-class.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoThemeData`]: {{api}}/cupertino/CupertinoThemeData-class.html
-[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[Cupertino library]: {{api}}/cupertino/cupertino-library.html
+[`CupertinoColors`]: {{site.api}}/flutter/cupertino/CupertinoColors-class.html
+[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoThemeData`]: {{site.api}}/flutter/cupertino/CupertinoThemeData-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[Cupertino library]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Apple's Human Interface Guidelines for iOS]: {{site.apple-dev}}/design/human-interface-guidelines/designing-for-ios
-[`build()`]: {{api}}/widgets/StatelessWidget/build.html
-[Material library]: {{api}}/material/material-library.html
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[widgets library]: {{api}}/widgets/widgets-library.html
+[`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### 5. Run your app
 
@@ -323,11 +318,11 @@ the app, you should see _Hello World_.
 
 App source code:
 
-* [Material app]({{examples}}/layout/base)
-* [Non-Material app]({{examples}}/layout/non_material)
+* [Material app]({{site.repo.this}}/tree/main/examples/layout/base)
+* [Non-Material app]({{site.repo.this}}/tree/main/examples/layout/non_material)
 
 </div>
-{% render docs/app-figure.md, image:"ui/layout/hello-world.png", alt:"Screenshot of app displaying Hello World", img-style:"max-height: 400px;"  %}
+<DashImage figure image="ui/layout/hello-world.png" alt="Screenshot of app displaying Hello World" img-style="max-height: 400px;"  />
 </div>
 <hr>
 
@@ -384,10 +379,10 @@ For more information, see [Common layout widgets][].
 :::
 
 [Common layout widgets]: #common-layout-widgets
-[`Column`]: {{api}}/widgets/Column-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[`Row`]: {{api}}/widgets/Row-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 
 ### Aligning widgets
 
@@ -444,7 +439,7 @@ space evenly between, before, and after each image.
 <div>
   <img src='/assets/images/docs/ui/layout/row-spaceevenly-visual.png' class="small-diagram-wrap" alt="Row with 3 evenly spaced images">
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 </div>
 </div>
 
@@ -473,13 +468,13 @@ space evenly between, above, and below each image.
 <div class="text-center">
   <img src='/assets/images/docs/ui/layout/column-visual.png' height="250px" class="small-diagram-wrap" alt="Column showing 3 images spaced evenly">
 
-  **App source:** [row_column]({{examples}}/layout/row_column)
+  **App source:** [row_column]({{site.repo.this}}/tree/main/examples/layout/row_column)
 </div>
 </div>
 
-[`CrossAxisAlignment`]: {{api}}/rendering/CrossAxisAlignment.html
-[`MainAxisAlignment`]: {{api}}/rendering/MainAxisAlignment.html
-[`pubspec.yaml` file]: {{examples}}/layout/row_column/pubspec.yaml
+[`CrossAxisAlignment`]: {{site.api}}/flutter/rendering/CrossAxisAlignment.html
+[`MainAxisAlignment`]: {{site.api}}/flutter/rendering/MainAxisAlignment.html
+[`pubspec.yaml` file]: {{site.repo.this}}/tree/main/examples/layout/row_column/pubspec.yaml
 
 ### Sizing widgets
 
@@ -513,7 +508,7 @@ wrap each image with an `Expanded` widget.
 <div>
   <img src='/assets/images/docs/ui/layout/row-expanded-2-visual.png' class="small-diagram-wrap" alt="Row of 3 images that are too wide, but each is constrained to take only 1/3 of the space">
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 </div>
 </div>
 
@@ -542,12 +537,12 @@ the flex factor of the middle image to 2:
 <div>
   <img src='/assets/images/docs/ui/layout/row-expanded-visual.png' class="small-diagram-wrap" alt="Row of 3 images with the middle image twice as wide as the others">
 
-  **App source:** [sizing]({{examples}}/layout/sizing)
+  **App source:** [sizing]({{site.repo.this}}/tree/main/examples/layout/sizing)
 </div>
 </div>
 
-[`Expanded`]: {{api}}/widgets/Expanded-class.html
-[sizing]: {{examples}}/layout/sizing
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
+[sizing]: {{site.repo.this}}/tree/main/examples/layout/sizing
 
 ### Packing widgets
 
@@ -577,7 +572,7 @@ uses this property to pack the star icons together.
 <div>
   <img src='/assets/images/docs/ui/layout/packed.png' class="small-diagram-wrap" alt="Row of 5 stars, packed together in the middle of the row">
 
-  **App source:** [pavlova]({{examples}}/layout/pavlova)
+  **App source:** [pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 </div>
 </div>
 
@@ -747,13 +742,13 @@ simulator window (without changing the number of logical pixels)
 using **Window > Scale**.
 :::
 
-**App source:** [pavlova]({{examples}}/layout/pavlova)
+**App source:** [pavlova]({{site.repo.this}}/tree/main/examples/layout/pavlova)
 
 <hr>
 
 [Pavlova image]: https://pixabay.com/en/photos/pavlova
 [Pixabay]: https://pixabay.com/en/photos/pavlova
-[pubspec file]: {{examples}}/layout/pavlova/pubspec.yaml
+[pubspec file]: {{site.repo.this}}/tree/main/examples/layout/pavlova/pubspec.yaml
 
 ## Common layout widgets
 
@@ -775,9 +770,9 @@ only Material apps can use the Material Components library.
 <a id="standard-widgets" aria-hidden="true"></a>
 <a id="materials-widgets" aria-hidden="true"></a>
 
-{% tabs "widget-types-tabs", true %}
+<Tabs key="widget-types-tabs" wrapped="true">
 
-{% tab "Standard widgets" %}
+<Tab name="Standard widgets">
 
 [`Container`](#container)
 : Adds padding, margins, borders,
@@ -792,9 +787,9 @@ only Material apps can use the Material Components library.
 [`Stack`](#stack)
 : Overlaps a widget on top of another.
 
-{% endtab %}
+</Tab>
 
-{% tab "Material widgets" %}
+<Tab name="Material widgets">
 
 [`Scaffold`][]
 : Provides a structured layout framework
@@ -812,9 +807,9 @@ only Material apps can use the Material Components library.
 : Organizes up to 3 lines of text,
   and optional leading and trailing icons, into a row.
 
-{% endtab %}
+</Tab>
 
-{% tab "Cupertino widgets" %}
+<Tab name="Cupertino widgets">
 
 [`CupertinoPageScaffold`][]
 : Provides the basic layout structure for an iOS-style page.
@@ -828,23 +823,23 @@ only Material apps can use the Material Components library.
 [`CupertinoTabBar`][] and [`CupertinoTabScaffold`][]
 : Creates the characteristic iOS bottom tab bar.
 
-{% endtab %}
+</Tab>
 
-{% endtabs %}
+</Tabs>
 
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[`AppBar`]: {{api}}/material/AppBar-class.html
-[`Container`]: {{api}}/widgets/Container-class.html
-[`CupertinoPageScaffold`]: {{api}}/cupertino/CupertinoPageScaffold-class.html
-[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[`CupertinoSegmentedControl`]: {{api}}/cupertino/CupertinoSegmentedControl-class.html
-[`CupertinoTabBar`]: {{api}}/cupertino/CupertinoTabBar-class.html
-[`CupertinoTabScaffold`]: {{api}}/cupertino/CupertinoTabScaffold-class.html
-[`GridView`]: {{api}}/widgets/GridView-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[Material library]: {{api}}/material/material-library.html
-[widgets library]: {{api}}/widgets/widgets-library.html
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`CupertinoPageScaffold`]: {{site.api}}/flutter/cupertino/CupertinoPageScaffold-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`CupertinoSegmentedControl`]: {{site.api}}/flutter/cupertino/CupertinoSegmentedControl-class.html
+[`CupertinoTabBar`]: {{site.api}}/flutter/cupertino/CupertinoTabBar-class.html
+[`CupertinoTabScaffold`]: {{site.api}}/flutter/cupertino/CupertinoTabScaffold-class.html
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
+[widgets library]: {{site.api}}/flutter/widgets/widgets-library.html
 
 ### Container
 
@@ -857,7 +852,7 @@ color or image.
 <div class="side-by-side">
 <div>
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 
 #### Summary (Container)
 
@@ -923,11 +918,11 @@ Widget _buildImageRow(int imageIndex) => Row(
 
 You can find more `Container` examples in the [tutorial][].
 
-**App source:** [container]({{examples}}/layout/container)
+**App source:** [container]({{site.repo.this}}/tree/main/examples/layout/container)
 
 <hr>
 
-[`Container`]: {{api}}/widgets/Container-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
 [tutorial]: /ui/layout/tutorial
 
 ### GridView
@@ -938,7 +933,7 @@ or you can build your own custom grid. When a `GridView`
 detects that its contents are too long to fit the render box,
 it automatically scrolls.
 
-[`GridView`]: {{api}}/widgets/GridView-class.html
+[`GridView`]: {{site.api}}/flutter/widgets/GridView-class.html
 
 #### Summary (GridView)
 
@@ -962,8 +957,8 @@ it's the entry in the "calorie" column for the "avocado" row), use
 [`Table`][] or [`DataTable`][].
 :::
 
-[`DataTable`]: {{api}}/material/DataTable-class.html
-[`Table`]: {{api}}/widgets/Table-class.html
+[`DataTable`]: {{site.api}}/flutter/material/DataTable-class.html
+[`Table`]: {{site.api}}/flutter/widgets/Table-class.html
 
 #### Examples (GridView)
 
@@ -974,7 +969,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
   Uses `GridView.extent` to create a grid with tiles a maximum
   150 pixels wide.
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 </div>
 <div>
   <img src='/assets/images/docs/ui/layout/gridview-count-flutter-gallery.png' class="text-center" alt="A 2 column grid with footers" height="440px">
@@ -985,7 +980,7 @@ it's the entry in the "calorie" column for the "avocado" row), use
   each [`GridTile`][].
 
   **Dart code:**
-  [`grid_list_demo.dart`]({{examples}}/layout/gallery/lib/grid_list_demo.dart)
+  [`grid_list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/grid_list_demo.dart)
 </div>
 </div>
 
@@ -1008,7 +1003,7 @@ List<Widget> _buildGridTileList(int count) =>
 
 <hr>
 
-[`GridTile`]: {{api}}/material/GridTile-class.html
+[`GridTile`]: {{site.api}}/flutter/material/GridTile-class.html
 
 ### ListView
 
@@ -1016,7 +1011,7 @@ List<Widget> _buildGridTileList(int count) =>
 provides scrolling when its content is too long for
 its render box.
 
-[`ListView`]: {{api}}/widgets/ListView-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 
 #### Summary (ListView)
 
@@ -1026,7 +1021,7 @@ its render box.
 * Less configurable than `Column`, but easier to use and
   supports scrolling
 
-[`Column`]: {{api}}/widgets/Column-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 
 #### Examples (ListView)
 
@@ -1038,7 +1033,7 @@ its render box.
   `ListTile`s. A `Divider` separates the theaters from
   the restaurants.
 
-  **App source:** [grid_and_list]({{examples}}/layout/grid_and_list)
+  **App source:** [grid_and_list]({{site.repo.this}}/tree/main/examples/layout/grid_and_list)
 </div>
 <div>
   <img src='/assets/images/docs/ui/layout/listview-color-gallery.png' height="400px" class="simple-border text-center" alt="ListView containing shades of blue">
@@ -1048,7 +1043,7 @@ its render box.
   for a particular color family.
 
   **Dart code:**
-  [`colors_demo.dart`]({{examples}}/layout/gallery/lib/colors_demo.dart)
+  [`colors_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/colors_demo.dart)
 </div>
 </div>
 
@@ -1090,7 +1085,7 @@ ListTile _tile(String title, String subtitle, IconData icon) {
 
 <hr>
 
-[`Colors`]: {{api}}/material/Colors-class.html
+[`Colors`]: {{site.api}}/flutter/material/Colors-class.html
 [Material 2 Design palette]: {{site.material2}}/design/color/the-color-system.html#tools-for-picking-colors
 
 ### Stack
@@ -1099,7 +1094,7 @@ Use [`Stack`][] to arrange widgets on top of a base
 widget&mdash;often an image. The widgets can completely
 or partially overlap the base widget.
 
-[`Stack`]: {{api}}/widgets/Stack-class.html
+[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
 
 #### Summary (Stack)
 
@@ -1121,7 +1116,7 @@ or partially overlap the base widget.
   The `Stack` offsets the text using the `alignment` property and
   `Alignment`s.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 </div>
 <div>
   <img src='/assets/images/docs/ui/layout/stack-flutter-gallery.png' class="text-center" height="200px" alt="An image with a icon overlaid on top">
@@ -1129,7 +1124,7 @@ or partially overlap the base widget.
   Uses `Stack` to overlay an icon on top of an image.
 
   **Dart code:**
-  [`bottom_navigation_demo.dart`]({{examples}}/layout/gallery/lib/bottom_navigation_demo.dart)
+  [`bottom_navigation_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/bottom_navigation_demo.dart)
 </div>
 </div>
 
@@ -1182,12 +1177,12 @@ For a list of supported elevation values, see [Elevation][] in the
 [Material guidelines][Material Design].
 Specifying an unsupported value disables the drop shadow entirely.
 
-[`Card`]: {{api}}/material/Card-class.html
+[`Card`]: {{site.api}}/flutter/material/Card-class.html
 [Elevation]: {{site.material}}/styles/elevation
-[`ListTile`]: {{api}}/material/ListTile-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [Material Design]: {{site.material}}/styles
-[`SizedBox`]: {{api}}/widgets/SizedBox-class.html
-[Material library]: {{api}}/material/material-library.html
+[`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Summary (Card)
 
@@ -1200,7 +1195,7 @@ Specifying an unsupported value disables the drop shadow entirely.
 * From the [Material library][]
 
 [Material card]: {{site.material}}/components/cards
-[Material library]: {{api}}/material/material-library.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Examples (Card)
 
@@ -1212,7 +1207,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   it with a `SizedBox`. A `Divider` separates the first
   and second `ListTiles`.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 </div>
 <div>
   <img src='/assets/images/docs/ui/layout/card-flutter-gallery.png' height="200px" class="text-center" alt="Tappable card containing an image and multiple forms of text">
@@ -1220,7 +1215,7 @@ Specifying an unsupported value disables the drop shadow entirely.
   A `Card` containing an image and text.
 
   **Dart code:**
-  [`cards_demo.dart`]({{examples}}/layout/gallery/lib/cards_demo.dart)
+  [`cards_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/cards_demo.dart)
 </div>
 </div>
 
@@ -1269,10 +1264,10 @@ containing up to 3 lines of text and optional leading
 and trailing icons. `ListTile` is most commonly used in
 [`Card`][] or [`ListView`][], but can be used elsewhere.
 
-[`Card`]: {{api}}/material/Card-class.html
-[`ListTile`]: {{api}}/material/ListTile-class.html
-[`ListView`]: {{api}}/widgets/ListView-class.html
-[Material library]: {{api}}/material/material-library.html
+[`Card`]: {{site.api}}/flutter/material/Card-class.html
+[`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
+[`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Summary (ListTile)
 
@@ -1281,7 +1276,7 @@ and trailing icons. `ListTile` is most commonly used in
 * Less configurable than `Row`, but easier to use
 * From the [Material library][]
 
-[Material library]: {{api}}/material/material-library.html
+[Material library]: {{site.api}}/flutter/material/material-library.html
 
 #### Examples (ListTile)
 
@@ -1291,7 +1286,7 @@ and trailing icons. `ListTile` is most commonly used in
 
   A `Card` containing 3 `ListTile`s.
 
-  **App source:** [card_and_stack]({{examples}}/layout/card_and_stack)
+  **App source:** [card_and_stack]({{site.repo.this}}/tree/main/examples/layout/card_and_stack)
 </div>
 <div>
   <img src='/assets/images/docs/ui/layout/listtile-flutter-gallery.png' height="200px" class="simple-border text-center" alt="4 ListTiles, each containing a leading avatar">
@@ -1299,7 +1294,7 @@ and trailing icons. `ListTile` is most commonly used in
   Uses `ListTile` with leading widgets.
 
   **Dart code:**
-  [`list_demo.dart`]({{examples}}/layout/gallery/lib/list_demo.dart)
+  [`list_demo.dart`]({{site.repo.this}}/tree/main/examples/layout/gallery/lib/list_demo.dart)
 </div>
 </div>
 
@@ -1320,9 +1315,9 @@ The following videos, part of the
 [Flutter in Focus][] series,
 explain `Stateless` and `Stateful` widgets.
 
-{% ytEmbed 'wE7khGHVkYY', 'How to create stateless widgets' %}
+<YouTubeEmbed id="wE7khGHVkYY" title="How to create stateless widgets"></YouTubeEmbed>
 
-{% ytEmbed 'AqCMFXEmf3w', 'How and when stateful widgets are best used' %}
+<YouTubeEmbed id="AqCMFXEmf3w" title="How and when stateful widgets are best used"></YouTubeEmbed>
 
 [Flutter in Focus playlist]({{site.yt.playlist}}PLjxrf2q8roU2HdJQDjJzOeO6J3FoFLWr2)
 
@@ -1331,7 +1326,7 @@ explain `Stateless` and `Stateful` widgets.
 Each episode of the [Widget of the Week series][] focuses on a widget.
 Several of them include layout widgets.
 
-{% ytEmbed 'b_sQ9bMltGU', 'Introducing widget of the week' %}
+<YouTubeEmbed id="b_sQ9bMltGU" title="Introducing widget of the week"></YouTubeEmbed>
 
 [Flutter Widget of the Week playlist]({{site.yt.playlist}}PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG)
 
@@ -1364,6 +1359,6 @@ The following resources might help when writing layout code.
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets
 [HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
-[API reference docs]: {{api}}
+[API reference docs]: {{site.api}}/flutter
 [Adding assets and images]: /ui/assets/assets-and-images
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

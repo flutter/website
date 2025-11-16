@@ -1,9 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>
@@ -108,7 +105,7 @@ class TodosScreen extends StatelessWidget {
 }
 ```
 
-With Flutter's default styling, you're good to go without sweating about 
+With Flutter's default styling, you're good to go without sweating about
 things that you'd like to do later on!
 
 ## 4. Create a detail screen to display information about a todo
@@ -167,7 +164,7 @@ body: ListView.builder(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (context) => DetailScreen(todo: todos[index]),
           ),
         );
@@ -227,7 +224,7 @@ class TodosScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
@@ -309,7 +306,7 @@ ListView.builder(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (context) => const DetailScreen(),
             // Pass the arguments as part of the RouteSettings. The
             // DetailScreen reads the arguments from these settings.
@@ -372,7 +369,7 @@ class TodosScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => const DetailScreen(),
                   // Pass the arguments as part of the RouteSettings. The
                   // DetailScreen reads the arguments from these settings.

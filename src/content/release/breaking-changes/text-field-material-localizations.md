@@ -5,6 +5,8 @@ description: >
   no MaterialLocalizations widget in the widget tree.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Instances of `TextField` must have a
@@ -137,5 +139,5 @@ Relevant PR:
 [`MaterialLocalizations`]: {{site.api}}/flutter/material/MaterialLocalizations-class.html
 [`DefaultMaterialLocalizations`]: {{site.api}}/flutter/material/DefaultMaterialLocalizations-class.html
 [`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
-[Internationalizing Flutter apps]: /ui/accessibility-and-internationalization/internationalization
+[Internationalizing Flutter apps]: /ui/internationalization
 [PR 58831: Assert debugCheckHasMaterialLocalizations on TextField]: {{site.repo.flutter}}/pull/58831
