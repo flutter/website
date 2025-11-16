@@ -5,7 +5,7 @@ description: >-
   Flutter for GenUI SDK.
 ---
 
-:::warning Experimental
+:::experimental
 The `genui` package is in
 alpha and is likely to change.
 :::

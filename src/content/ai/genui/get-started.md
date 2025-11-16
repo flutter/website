@@ -10,7 +10,7 @@ This guide explains how to get started with the
 [`genui`][] package. The SDK's key components
 are described in the [Key components][] page.
 
-:::warning Experimental
+:::experimental
 The `genui` package is in
 alpha and is likely to change.
 :::

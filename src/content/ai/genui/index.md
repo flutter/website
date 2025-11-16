@@ -41,7 +41,7 @@ check out the [Getting started with GenUI video][]:
 
 <YouTubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI"></YouTubeEmbed>
 
-:::warning Experimental
+:::experimental
 The `genui` package is in
 alpha and is likely to change.
 :::
