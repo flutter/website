@@ -1,7 +1,7 @@
 ---
 title: GenUI SDK for Flutter
-description: >-
-  Learn how to use the GenUI SDK for Flutter to build more
+description: >
+  Learn how to use GenUI SDK for Flutter to build more
   interactive experiences for applications and chatbots.
 ---
 
@@ -16,7 +16,7 @@ Imagine that, instead of presenting your user with a wall of text,
 they are presented with a graphical UI consisting of (for example),
 a row of labeled buttons and a date picker.
 
-The GUI SDK for Flutter uses a JSON-based format to
+The GenUI SDK for Flutter uses a JSON-based format to
 compose a UI from your existing
 widget catalog. As a user interacts with the UI,
 state changes are fed back to the agent,
