@@ -35,7 +35,7 @@ installing and trying out Flutter on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Download prerequisite software {: #download-prerequisites}
 
@@ -89,7 +89,7 @@ first install the following tools.
     step: Download and install Visual Studio Code.**
 
     There are a few ways to install git on your Mac,
-    but the way we recommend is by using XCode. 
+    but the way we recommend is by using XCode.
     This will be important when you target your
     builds for iOS or macOS.
 
@@ -418,7 +418,7 @@ follow the codelab on [Building your first app][],
 set up development for an [additional target platform][], or
 explore some of these resources to continue your Flutter learning journey.
 
-{% render docs/get-started/setup-next-steps.html, site: site %}
+{% render "docs/get-started/setup-next-steps.html", site: site %}
 
 [Building your first app]: /get-started/codelab
 [additional target platform]: /platform-integration#setup

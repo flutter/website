@@ -5,6 +5,8 @@ description: >
   EditableTextState's BuildContext.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 `EditableText.focusNode` is now attached to
@@ -62,7 +64,7 @@ field or a selectable text field like so:
 
 Then please read on and consider following the migration steps to avoid breakages.
 
-If you're not sure whether a codebase needs migration, 
+If you're not sure whether a codebase needs migration,
 search for `is EditableText`, `as EditableText`, `is EditableTextState`, and
 `as EditableTextState` and verify if any of the search results are doing
 a typecheck or typecast on a `FocusNode.context`.

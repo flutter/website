@@ -21,7 +21,7 @@ a binary instruction format that enables fast apps on all major browsers.
 For a glimpse into the benefits of using WebAssembly,
 check out the following video.
 
-{% ytEmbed 'lpnKWK-KEYs?start=1712', 'What\'s new in Flutter - WebAssembly' %}
+<YouTubeEmbed id="lpnKWK-KEYs?start=1712" title="What's new in Flutter - WebAssembly"></YouTubeEmbed>
 
 ## How it works
 

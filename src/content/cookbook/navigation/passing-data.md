@@ -1,9 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>
@@ -108,7 +105,7 @@ class TodosScreen extends StatelessWidget {
 }
 ```
 
-With Flutter's default styling, you're good to go without sweating about 
+With Flutter's default styling, you're good to go without sweating about
 things that you'd like to do later on!
 
 ## 4. Create a detail screen to display information about a todo

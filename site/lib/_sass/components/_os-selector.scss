@@ -1,0 +1,33 @@
+body {
+
+  .windows-only,
+  .macos-only,
+  .linux-only,
+  .chromeos-only {
+    display: none;
+  }
+
+  &.show-windows {
+    .windows-only {
+      display: revert;
+    }
+  }
+
+  &.show-macos {
+    .macos-only {
+      display: revert;
+    }
+  }
+
+  &.show-linux {
+    .linux-only {
+      display: revert;
+    }
+  }
+
+  &.show-chromeos {
+    .chromeos-only {
+      display: revert;
+    }
+  }
+}

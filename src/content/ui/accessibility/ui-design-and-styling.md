@@ -1,5 +1,5 @@
 ---
-title: UI Design & Styling
+title: UI design & styling
 description: Information on Flutter's accessibility support.
 ---
 
@@ -29,8 +29,8 @@ template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"a11y/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
-  {% render docs/app-figure.md, image:"a11y/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  <DashImage figure image="a11y/app-regular-fonts.png" caption="Default font setting" img-class="simple-border" img-style="max-height: 480px;" />
+  <DashImage figure image="a11y/app-large-fonts.png" caption="Largest accessibility font setting" img-class="simple-border" img-style="max-height: 480px;" />
 </div>
 
 
@@ -53,11 +53,12 @@ You can test contrast using Flutter's [Accessibility Guideline API][].
 For more details on testing, check out the [accessibility testing page](/ui/accessibility/accessibility-testing/).
 
 [W3C recommends]: https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html
+
 ## Tap target size
 
 Controls that are too small are hard for many people to interact with and select.
 Ensure that interactive elements have a large enough tap target to be easily
-pressed by users.  
+pressed by users.
 
 Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and 44x44 pts respectively.
 
@@ -72,7 +73,7 @@ For more details on testing, check out the [accessibility testing page](/ui/acce
 
 [Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
 
-## Other Accessibility features
+## Other accessibility features
 
 You can check the [AccessibilityFeatures] class for additional
 accessibility features that may be enabled by the platform,

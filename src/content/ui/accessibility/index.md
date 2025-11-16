@@ -4,6 +4,7 @@ description: Information on Flutter's accessibility support.
 ---
 
 ## Background
+
 Ensuring that apps are accessible to a broad range of users is an essential
 part of building a high-quality app. Applications that are poorly
 designed create barriers to people of all ages. The [UN Convention on
@@ -49,7 +50,7 @@ to people with disabilities.
 In the U.S., the [Americans with Disabilities Act (ADA)][] prohibits
 discrimination in public accommodations.
 [Section 508 of the Rehabilitation Act ][] requires federal agencies and their
-contractors to meet WCAG standards for all ICT. 
+contractors to meet WCAG standards for all ICT.
 
 In the EU, the [European Accessibility Act (EAA)][] requires a wide range of
 public and private sector services to be accessible, primarily using
@@ -63,7 +64,7 @@ the [EN 301 549][] as its technical basis.
 
 [Americans with Disabilities Act (ADA)]: https://www.ada.gov/
 [Section 508 of the Rehabilitation Act]: https://www.section508.gov/
-[European Accessibility Act (EAA)]: https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en 
+[European Accessibility Act (EAA)]: https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en
 
 
 ## Building with accessibility in mind
@@ -83,43 +84,41 @@ Here is a non-exhaustive list of things to consider as you prepare your
 app for release.
 
 * **Active interactions**. Ensure that all active interactions do
-something. Any button that can
-be pushed should do something when pushed. For example, if you have a
-no-op callback for an `onPressed` event, change it to show a `SnackBar`
-on the screen explaining which control you just pushed.
+  something. Any button that can
+  be pushed should do something when pushed. For example, if you have a
+  no-op callback for an `onPressed` event, change it to show a `SnackBar`
+  on the screen explaining which control you just pushed.
 * **Screen reader testing**. The screen reader should be able to
-describe all controls on the page when you tap on them, and the
-descriptions should be intelligible. Test your app with [TalkBack][]
-(Android) and [VoiceOver][] (iOS).
+  describe all controls on the page when you tap on them, and the
+  descriptions should be intelligible. Test your app with [TalkBack][]
+  (Android) and [VoiceOver][] (iOS).
 * **Contrast ratios**. We encourage you to have a contrast ratio of at
-least 4.5:1 between controls or text and the background, with the
-exception of disabled components. Images should also be vetted for
-sufficient contrast.
+  least 4.5:1 between controls or text and the background, with the
+  exception of disabled components. Images should also be vetted for
+  sufficient contrast.
 * **Context switching**. Nothing should change the user's context
-automatically while typing in information. Generally, the widgets
-should avoid changing the user's context without some sort of
-confirmation action.
-* **Tappable targets**. All tappable targets should be at least 48x48
-pixels.
+  automatically while typing in information. Generally, the widgets
+  should avoid changing the user's context without some sort of
+  confirmation action.
+* **Tappable targets**. All tappable targets should be at least 48x48 pixels.
 * **Errors**. Important actions should be able to be undone. In fields
-that show errors, suggest a correction if possible.
+  that show errors, suggest a correction if possible.
 * **Color vision deficiency testing**. Controls should be usable and
-legible in colorblind and grayscale modes.
+  legible in colorblind and grayscale modes.
 * **Scale factors**. The UI should remain legible and usable at very
-large scale factors for text size and display scaling.
+  large scale factors for text size and display scaling.
 
 [TalkBack]: https://support.google.com/accessibility/android/answer/6283677?hl=en
 [VoiceOver]: https://www.apple.com/lae/accessibility/iphone/vision/
+
 ## Learn more
 
 To learn more about Flutter and accessibility, check out
 the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
-* [Semantics in Flutter][]
 * [Flutter: Crafting a great experience for screen readers][]
 
-[CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[CRPD]: https://social.desa.un.org/issues/disability/crpd/article-9-accessibility
 [Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
-[Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/

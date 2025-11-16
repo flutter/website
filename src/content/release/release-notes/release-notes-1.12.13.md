@@ -2,6 +2,7 @@
 title: Flutter 1.12.13 release notes
 shortTitle: 1.12.13 release notes
 description: Release notes for Flutter 1.12.13.
+skipTemplateRendering: true
 ---
 
 Welcome to Flutter 1.12, our biggest stable release so far!
@@ -329,7 +330,7 @@ and [CupertinoDatePicker]({{site.api}}/flutter/cupertino/CupertinoDatePicker-cla
 
 ## Android
 
-In this release, we've merged a list of changes to support Android 10, including a new activity zoom transition. 
+In this release, we've merged a list of changes to support Android 10, including a new activity zoom transition.
 
 [37526]({{site.repo.flutter}}/pull/37526) catch errors during gradle update
 
@@ -398,7 +399,7 @@ In this release, we've merged a list of changes to support Android 10, including
 
 ## Add to App feature
 
-We've made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can't wait to try it? Check out the [Add-to-App documentation](/add-to-app). 
+We've made a significant upgrade to Add-to-App, the feature that allows you to integrate a Flutter module into your Android or iOS app. Can't wait to try it? Check out the [Add-to-App documentation](/add-to-app).
 
 [41666]({{site.repo.flutter}}/pull/41666) Generate projects using the new Android embedding
 
@@ -957,7 +958,7 @@ Material continues to a focus for the Flutter team.
 In this release, we refreshed all Material widgets
 with dark mode support. Also, we added support for
 extending the height of the Scaffold's body behind
-the app bar, which was contributed by a community member! 
+the app bar, which was contributed by a community member!
 
 [36998]({{site.repo.flutter}}/pull/36998) Added properties in DropdownButtonFormField to match DropdownButton
 
@@ -1128,7 +1129,7 @@ In Text and Accessibility, we have several enhancements in ButtonBar and AlertDi
 For animation, we released the
 [TweenAnimationBuilder]({{site.api}}/flutter/widgets/TweenAnimationBuilder-class.html)
 for building custom implicit animations. For more information,
-check out this [TweenAnimationBuilder video](https://www.youtube.com/watch?reload=9&v=6KiPEqzJIKQ) on Youtube.  
+check out this [TweenAnimationBuilder video](https://www.youtube.com/watch?reload=9&v=6KiPEqzJIKQ) on Youtube.
 
 [38317]({{site.repo.flutter}}/pull/38317) TweenAnimationBuilder for building custom animations without managing an AnimationController
 
@@ -1474,7 +1475,7 @@ enabling it in the dev channel.
 
 ## Framework
 
-We've fixed many bugs in this release to improve the quality and stability of our framework. 
+We've fixed many bugs in this release to improve the quality and stability of our framework.
 
 [38643]({{site.repo.flutter}}/pull/38643) PlatformViewLink handles focus
 
@@ -1611,7 +1612,7 @@ We've fixed many bugs in this release to improve the quality and stability of ou
 
 ## Engine
 
-In this update, the core engine continues to see many improvements, including a fix that solves the long-requested scrolling performance issue on iPhoneX/Xs.  
+In this update, the core engine continues to see many improvements, including a fix that solves the long-requested scrolling performance issue on iPhoneX/Xs.
 
 [9386]({{site.repo.engine}}/pull/9386) [glfw] Send the glfw key data to the framework.
 
@@ -2467,7 +2468,7 @@ General bug fixes in the e2e plugin.
 
 #### Plugin: Google Maps Flutter
 
-We have made several improvements in the Google Maps plugin including adding support for displaying the traffic layer. 
+We have made several improvements in the Google Maps plugin including adding support for displaying the traffic layer.
 
 [1702]({{site.github}}/flutter/plugins/pull/1702) [google_maps_flutter]Marker drag event
 

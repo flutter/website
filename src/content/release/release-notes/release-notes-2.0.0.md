@@ -2,6 +2,7 @@
 title: Flutter 2.0.0 release notes
 shortTitle: 2.0.0 release notes
 description: Release notes for Flutter 2.0.0.
+skipTemplateRendering: true
 ---
 
 This page has release notes for 2.0.0.
@@ -9,7 +10,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 ### framework - 793 pull request(s)
 
@@ -9379,7 +9380,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/engine` 
+## Merged PRs by labels for `flutter/engine`
 
 
 
@@ -20254,7 +20255,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/plugins` 
+## Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -29350,4 +29351,3 @@ There were 253 pull requests.
 [3463](https://github.com/flutter/plugins/pull/3463) bump vmservice (cla: yes, p: integration_test)
 
 [3465](https://github.com/flutter/plugins/pull/3465) [path_provider] drop uuid (cla: yes, p: path_provider)
-

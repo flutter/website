@@ -3,6 +3,7 @@ title: In-app purchases overview
 description: >
   Learn about the resources available for adding
   in-app purchases to your Flutter app.
+showBreadcrumbs: false
 ---
 
 ![adding ads](/assets/images/docs/add-in-app-purchases.png)

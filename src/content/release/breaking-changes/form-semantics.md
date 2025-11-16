@@ -5,6 +5,8 @@ description: >-
   which prevents it from being used directly as a sliver.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Previously, the Form widget essentially acted as a direct wrapper
@@ -26,7 +28,7 @@ can provide better information to accessibility services.
 
 ## Description of change
 
-The core change is the integration of a semantics widget 
+The core change is the integration of a semantics widget
 into the Form widget's build method.
 
 ## Migration guide

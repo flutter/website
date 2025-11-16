@@ -1,4 +1,4 @@
---- 
+---
 title: "Restore state on iOS"
 description: "How to restore the state of your iOS app after it's been killed by the OS."
 ---
@@ -10,7 +10,7 @@ often kills the backgrounded app to release memory or
 improve performance for the app running in the foreground.
 
 You can use the [`RestorationManager`][] (and related)
-classes to handle state restoration. 
+classes to handle state restoration.
 An iOS app requires [a bit of extra setup][] in Xcode,
 but the restoration classes otherwise work the same on
 both iOS and Android.
@@ -22,4 +22,3 @@ and the [VeggieSeasons][] code sample.
 [`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
 [State restoration on Android]: /platform-integration/android/restore-state-android
 [VeggieSeasons]: https://github.com/samples/demos/tree/main/veggieseasons
-

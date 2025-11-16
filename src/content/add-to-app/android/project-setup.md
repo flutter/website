@@ -22,8 +22,8 @@ Plugin API to limit the supported architectures in your APK.
 Doing this avoids a missing `libflutter.so` runtime crash,
 for example:
 
-{% tabs "android-build-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-build-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApp/app/build.gradle.kts"
 android {
@@ -37,8 +37,8 @@ android {
 }
 ```
 
-{% endtab %}
-{% tab "Groovy" %}
+</Tab>
+<Tab name="Groovy">
 
 ```groovy title="MyApp/app/build.gradle"
 android {
@@ -52,8 +52,8 @@ android {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The Flutter engine also has an `x86_64` version.
 When using an emulator in debug Just-In-Time (JIT) mode,
@@ -62,8 +62,8 @@ the Flutter module still runs correctly.
 
 ## Integrate your Flutter module
 
-{% tabs %}
-{% tab "With Android Studio" %}
+<Tabs key="android-integrate-flow">
+<Tab name="With Android Studio">
 
 ### Integrate with Android Studio {:.no_toc}
 
@@ -111,8 +111,8 @@ set your Project pane to display **Project Files**.
 This shows all files without filtering.
 :::
 
-{% endtab %}
-{% tab "Without Android Studio" %}
+</Tab>
+<Tab name="Without Android Studio">
 
 ### Integrate without Android Studio {:.no_toc}
 
@@ -202,8 +202,8 @@ host Android app, make the following changes.
 1. Add the `dependencyResolutionManagement` displayed in this step to the
    `settings.gradle` file.
 
-{% tabs "settings.gradle.kts" %}
-{% tab "Kotlin" %}
+<Tabs key="android-build-language">
+<Tab name="Kotlin">
 
 ```kotlin title="settings.gradle.kts"
 dependencyResolutionManagement {
@@ -217,8 +217,8 @@ dependencyResolutionManagement {
 }
 ```
 
-{% endtab %}
-{% tab "Groovy" %}
+</Tab>
+<Tab name="Groovy">
 
 ```groovy title="settings.gradle"
 dependencyResolutionManagement {
@@ -234,11 +234,11 @@ dependencyResolutionManagement {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## Add the Flutter module as a dependency
 
@@ -257,8 +257,8 @@ existing app in Gradle. You can achieve this in two ways.
     one-click build process, but requires the Flutter SDK.
     This is the mechanism used by the Android Studio IDE plugin.
 
-{% tabs %}
-{% tab "Android Archive" %}
+<Tabs key="android-archive">
+<Tab name="Android Archive">
 
 ### Depend on the Android Archive (AAR) {:.no_toc}
 
@@ -278,33 +278,35 @@ flutter build aar
 
 Then, follow the on-screen instructions to integrate.
 
-{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/build-aar-instructions.png" %}
+<DashImage figure image="development/add-to-app/android/project-setup/build-aar-instructions.png" />
 
 More specifically, this command creates
 (by default all debug/profile/release modes)
 a [local repository][], with the following files:
 
-```plaintext
-build/host/outputs/repo
-└── com
-    └── example
-        └── flutter_module
-            ├── flutter_release
-            │   ├── 1.0
-            │   │   ├── flutter_release-1.0.aar
-            │   │   ├── flutter_release-1.0.aar.md5
-            │   │   ├── flutter_release-1.0.aar.sha1
-            │   │   ├── flutter_release-1.0.pom
-            │   │   ├── flutter_release-1.0.pom.md5
-            │   │   └── flutter_release-1.0.pom.sha1
-            │   ├── maven-metadata.xml
-            │   ├── maven-metadata.xml.md5
-            │   └── maven-metadata.xml.sha1
-            ├── flutter_profile
-            │   ├── ...
-            └── flutter_debug
-                └── ...
-```
+<FileTree>
+
+- build/host/outputs/repo
+  - com
+    - example
+      - flutter_module
+        - flutter_release
+          - 1.0
+            - flutter_release-1.0.aar
+            - flutter_release-1.0.aar.md5
+            - flutter_release-1.0.aar.sha1
+            - flutter_release-1.0.pom
+            - flutter_release-1.0.pom.md5
+            - flutter_release-1.0.pom.sha1
+        - maven-metadata.xml
+        - maven-metadata.xml.md5
+        - maven-metadata.xml.sha1
+    - flutter_profile
+        - ...
+    - flutter_debug
+        - ...
+
+</FileTree>
 
 To depend on the AAR, the host app must be able
 to find these files.
@@ -312,8 +314,8 @@ to find these files.
 To do that, edit `settings.gradle` in your host app
 so that it includes the local repository and the dependency:
 
-{% tabs "settings.gradle.kts" %}
-{% tab "Kotlin" %}
+<Tabs key="android-build-language">
+<Tab name="Kotlin">
 
 ```kotlin title="settings.gradle.kts"
 dependencyResolutionManagement {
@@ -326,8 +328,8 @@ dependencyResolutionManagement {
 }
 ```
 
-{% endtab %}
-{% tab "Groovy" %}
+</Tab>
+<Tab name="Groovy">
 
 ```groovy title="settings.gradle"
 dependencyResolutionManagement {
@@ -346,13 +348,13 @@ dependencyResolutionManagement {
         maven {
             url = uri("https://storage.googleapis.com/download.flutter.io")
         }
-        // ...to before this line  
+        // ...to before this line
     }
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 <br>
 
@@ -361,7 +363,7 @@ dependencyResolutionManagement {
 After an `aar` build of a Kotlin DSL-based Android project,
 follow these steps to add the flutter_module.
 
-Include the flutter module as a dependency in 
+Include the flutter module as a dependency in
 the Android project's `app/build.gradle` file.
 
 ```kotlin title="MyApp/app/build.gradle.kts"
@@ -417,11 +419,11 @@ check out [Using Flutter in China][] page.
 You can also build an AAR for your Flutter module in Android Studio using
 the `Build > Flutter > Build AAR` menu.
 
-{% render docs/app-figure.md, image:"development/add-to-app/android/project-setup/ide-build-aar.png" %}
+<DashImage figure image="development/add-to-app/android/project-setup/ide-build-aar.png"/>
 :::
 
-{% endtab %}
-{% tab "Module source code" %}
+</Tab>
+<Tab name="Module source code">
 
 ### Depend on the module's source code {:.no_toc}
 
@@ -449,7 +451,7 @@ If you are using Kotlin, apply the following changes:
 
 ```kotlin title="MyApp/settings.gradle.kts"
 // Include the host app project. Assumed existing content.
-include(":app")            
+include(":app")
 // Replace "flutter_module" with whatever package_name you supplied when you ran:
 // `$ flutter create -t module [package_name]
 val filePath = settingsDir.parentFile.toString() + "/flutter_module/.android/include_flutter.groovy"
@@ -494,8 +496,8 @@ dependencies {
 This code is identical between Groovy and Kotlin.
 :::
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Your app now includes the Flutter module as a dependency.
 

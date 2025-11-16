@@ -2,6 +2,8 @@
 title: Stateful widgets
 description: Learn about StatefulWidgets and rebuilding Flutter UI.
 permalink: /tutorial/stateful-widget/
+sitemap: false
+
 ---
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
@@ -39,7 +41,7 @@ Here is the basic `StatefulWidget` structure (don't do anything yet):
 ```dart
 class ExampleWidget extends StatefulWidget {
   ExampleWidget({super.key});
-  
+
   @override
   State<ExampleWidget> createState() => _ExampleWidgetState();
 }
@@ -58,13 +60,13 @@ To convert the `GamePage` widget (or any other) from
 a stateless widget to a stateful widget, do the following steps:
 
 1. Change `GamePage` to extend `StatefulWidget` instead of
-   `StatelessWidget`.  
+   `StatelessWidget`.
 2. Create a new class named `_GamePageState`, that extends
    `State<GamePage>`. This new class will hold the mutable state and
    the `build` method. Move the `build` method and all properties
-   *instantiated on the widget*  from `GamePage` to the state object.  
+   *instantiated on the widget*  from `GamePage` to the state object.
 3. Implement the `createState()` method in `GamePage`, which returns
-   an instance of `_GamePageState`. 
+   an instance of `_GamePageState`.
 
 :::tip Quick assists
 
@@ -121,7 +123,7 @@ class _GamePageState extends State<GamePage> {
 
 Whenever you mutate a `State` object, you must call [`setState`][] to
 signal the framework to update the user interface and call the
-`State`'s `build` method again. 
+`State`'s `build` method again.
 
 In this app, when a user makes a guess, the word they guessed is saved
 on the `Game` object, which is a property on the `GamePage` class, and
@@ -132,7 +134,7 @@ user’s guess.
 To implement this, update the callback function passed to
 `GuessInput`. The function needs to call `setState` and, within
 `setState`, it needs to execute the logic to determine whether the users
-guess was correct. 
+guess was correct.
 
 :::note
 
@@ -174,7 +176,7 @@ class _GamePageState extends State<GamePage> {
           GuessInput(
            onSubmitGuess: (String guess) {
               setState(() { // NEW
-                _game.guess(guess); 
+                _game.guess(guess);
               });
             },
           ),

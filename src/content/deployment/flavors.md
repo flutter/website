@@ -258,7 +258,7 @@ flavor your deployed app is using.
 
 The following steps show how to add a distinct icon for two
 product flavors called `staging` and `production` in a
-project called `flavors_example`. 
+project called `flavors_example`.
 
 1.  Prepare your icons:
 
@@ -348,6 +348,12 @@ in [Flutter pubspec options][].
 If you have additional build settings that you would like to
 configure for a specific Android product flavor, see
 Android's [Configure build variants][].
+
+While it is possible to set `abiFilters` in product flavors, it is not
+recommended. Instead, favor `abiFilters` in build types. When setting
+`abiFilters` in product flavors, one must use the
+`-Pdisable-abi-filtering` flag when running `flutter build` or
+`flutter run`.
 
 [Configure build variants]: https://developer.android.com/build/build-variants
 

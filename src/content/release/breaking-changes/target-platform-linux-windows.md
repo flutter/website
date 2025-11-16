@@ -5,6 +5,8 @@ description: >
   require additional cases in switch statements that switch on a TargetPlatform.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Two new values were added to the [`TargetPlatform`][] enum

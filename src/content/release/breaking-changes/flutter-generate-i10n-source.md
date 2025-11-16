@@ -6,6 +6,8 @@ description: >-
   directory, and not the synthetic package `package:flutter_gen`.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `flutter` tool will no longer generate a synthetic `package:flutter_gen`

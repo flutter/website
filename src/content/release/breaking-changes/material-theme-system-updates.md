@@ -2,14 +2,16 @@
 title: Material Theme System Updates
 description: >-
   `CardTheme`, `DialogTheme`, and `TabBarTheme` have been normalized to follow
-  Flutter's convention for component themes in the Material library. In 
+  Flutter's convention for component themes in the Material library. In
   `ThemeData`, the type of these properties have also changed accordingly.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
-`CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to 
-conform to Flutter's conventions for component themes. `CardThemeData`, 
+`CardTheme`, `DialogTheme` and `TabBarTheme` were refactored to
+conform to Flutter's conventions for component themes. `CardThemeData`,
 `DialogThemeData` and `TabBarThemeData` were added to define overrides for the
 defaults of the component visual properties.
 
@@ -18,7 +20,7 @@ to `Object?` to accept both `CardTheme` and `CardThemeData`, in order to have
 a smooth transition for the breaking changes. The same approach was used for
 `dialogTheme` and `tabBarTheme`.
 
-To complete the transition and fully conform to the `ThemeData` convention, the 
+To complete the transition and fully conform to the `ThemeData` convention, the
 type of `ThemeData.cardTheme` has been changed to `CardThemeData?`; the type of
 `ThemeData.dialogTheme` has been changed to `DialogThemeData?`; and the type of
 `ThemeData.tabBarTheme` has been changed to `TabBarThemeData?`.
@@ -28,7 +30,7 @@ type of `ThemeData.cardTheme` has been changed to `CardThemeData?`; the type of
 Previously, the type of `ThemeData.cardTheme` was `Object?` to accept both
 `CardTheme` and `CardThemeData`. Now that the type has been changed to
 `CardThemeData?`, a migration is required if `ThemeData.cardTheme` is used.
-Similarly, the types of `ThemeData.dialogTheme` and `ThemeData.tabBarTheme` 
+Similarly, the types of `ThemeData.dialogTheme` and `ThemeData.tabBarTheme`
 should be migrated to `DialogThemeData` and `TabBarThemeData`, respectively.
 
 Code before migration:

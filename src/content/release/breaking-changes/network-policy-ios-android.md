@@ -5,6 +5,8 @@ description: >
   the domain is explicitly allowed by policy.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 If your code tries to open an HTTP connection to a host

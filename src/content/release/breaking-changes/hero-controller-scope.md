@@ -1,9 +1,11 @@
 ---
-title: More Strict Assertions in the Navigator and the Hero Controller Scope
+title: More strict assertions in the Navigator and the Hero controller scope
 description: >
   Added additional assertions to guarantee that
   one hero controller scope can only subscribe to one navigator at a time.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

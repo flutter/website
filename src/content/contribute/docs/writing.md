@@ -4,6 +4,9 @@ short-tile: Writing
 description: >-
   Learn about the writing style guide and processes followed when writing
   for the Dart and Flutter documentation sites.
+sitemap: false
+noindex: true
+showBreadcrumbs: true
 ---
 
 :::warning

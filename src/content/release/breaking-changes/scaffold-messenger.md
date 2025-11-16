@@ -4,6 +4,8 @@ description: >
   SnackBars are now managed by the ScaffoldMessenger, and persist across routes.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The `SnackBar` API within the `Scaffold` is now handled by the
@@ -155,7 +157,7 @@ scaffoldMessengerKey.currentState.showSnackBar(mySnackBar);
 scaffoldMessengerKey.currentState.hideCurrentSnackBar(mySnackBar);
 scaffoldMessengerKey.currentState.removeCurrentSnackBar(mySnackBar);
 
-// The root ScaffoldMessenger can also be accessed by providing a key to 
+// The root ScaffoldMessenger can also be accessed by providing a key to
 // MaterialApp.scaffoldMessengerKey. This way, the ScaffoldMessengerState can be directly accessed
 // without first obtaining it from a BuildContext via ScaffoldMessenger.of. From the key, use
 // the GlobalKey.currentState getter.

@@ -3,6 +3,7 @@ title: Advanced UI features
 description: |
   A gentle introduction into advanced UI features: adaptive layouts, slivers, scrolling, navigation.
 permalink: /tutorial/set-up-ui-102/
+sitemap: false
 ---
 
 In this third installment of the Flutter tutorial series, you'll use

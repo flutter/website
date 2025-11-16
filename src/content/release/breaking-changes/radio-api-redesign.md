@@ -4,6 +4,8 @@ description: >-
   Learn about changes to the radio widget in Flutter 3.35.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Introduced the `RadioGroup` widget to centralize `groupValue` management and the `onChanged`

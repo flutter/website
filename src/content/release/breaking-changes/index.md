@@ -9,13 +9,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-:::important
-These breaking change docs are accurate, as of the release
-under which they are published. Over time, the
-workarounds described here might become inaccurate.
-We don't, in general, keep these breaking change docs up
-to date as of each release.
-:::
+{% render "docs/breaking-changes.md" %}
 
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
@@ -42,25 +36,34 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `OverlayPortal.targetsRootOverlay`][]
-* [Deprecate `TextField.canRequestFocus`][]
+* [Merged threads on Linux][]
 * [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
-* [`CupertinoDynamicColor` wide gamut support][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
-* [SnackBar with action no longer auto-dismisses][]
-* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
-* [Merged threads on Linux][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
+* [Deprecate `TextField.canRequestFocus`][]
 
-[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
-[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
-[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
+[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+
+<a id="released-in-flutter-338" aria-hidden="true"></a>
+### Released in Flutter 3.38
+
+* [`CupertinoDynamicColor` wide gamut support][]
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [SnackBar with action no longer auto-dismisses][]
+* [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
+
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
-[Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35

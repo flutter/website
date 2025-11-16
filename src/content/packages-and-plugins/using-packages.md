@@ -33,7 +33,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-{% ytEmbed 'Y9WifT8aN6o', 'Packages versus plugins | Decoding Flutter' %}
+<YouTubeEmbed id="Y9WifT8aN6o" title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
 :::
 
 Existing packages enable many use cases—for example,
@@ -313,7 +313,7 @@ additional dependency options are available:
     dependencies:
     packageA:
       path: ../packageA/
-  
+
   ```
 
 **Git dependency**
@@ -416,9 +416,9 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-
 1. Run the app. The app's background should now be orange.
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 

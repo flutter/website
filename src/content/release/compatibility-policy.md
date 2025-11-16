@@ -16,8 +16,8 @@ those tests to (a) determine if the change is sufficiently valuable,
 and (b) provide fixes for the code so that the tests continue to pass.
 
 If you would like to provide tests as part of this program, please
-submit a PR to the [flutter/tests repository][]. 
-The [README][flutter-tests-readme] on that repository describes 
+submit a PR to the [flutter/tests repository][].
+The [README][flutter-tests-readme] on that repository describes
 the process in detail.
 
 [flutter/tests repository]: {{site.github}}/flutter/tests

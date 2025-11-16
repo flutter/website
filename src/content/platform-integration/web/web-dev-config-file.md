@@ -1,12 +1,9 @@
 ---
 title: Set up a web development configuration file
-short-title: Web development configuration
+shortTitle: Web development configuration
 description: >-
   Centralize web development settings including a development proxy
 ---
-
-# Set up a web development configuration file
-**By Sydney Bao**
 
 Flutter web includes a development server that defaults to
 serving your application in the `localhost` domain using HTTP
@@ -15,8 +12,12 @@ a quick way to modify the server's behavior,
 this document focuses on a more structured approach:
 defining your server's behavior through a centralized `web_dev_config.yaml` file.
 This configuration file allows you to
-customize server settings&emdash;host, port, HTTPS settings, and
-proxy rules&emdash;ensuring a consistent development environment.
+customize server settings—host, port, HTTPS settings, and
+proxy rules—ensuring a consistent development environment.
+
+:::version-note
+Support for the `web_dev_config.yaml` file was added in Flutter 3.38.
+:::
 
 ## Create a configuration file
 
@@ -36,7 +37,7 @@ You can define the host, port, and HTTPS settings for your development server.
 server:
   host: "0.0.0.0" # Defines the binding address <string>
   port: 8080 # Specifies the port <int> for the development server
-  https: 
+  https:
     cert-path: "/path/to/cert.pem" # Path <string> to your TLS certificate
     cert-key-path: "/path/to/key.pem" # Path <string> to TLS certificate key
 ```
@@ -80,7 +81,7 @@ server:
 *   A request to `/users/names` is
     forwarded to `http://localhost:5000/users/names`.
 *   A request to `/data/2023/` is
-    forwarded to `http://localhost:4000/report/2023`
+    forwarded to `http://localhost:3000/report/2023`
     because `replace: “/report/”` replaces the `/data/` prefix.
 *   A request to `/products/item/123` is
     forwarded to `http://localhost:4000/item/123` because `replace: ""`

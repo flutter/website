@@ -2,7 +2,9 @@
 title: Stack-based navigation
 description: Learn how to navigate from one page to another in a Flutter app
 permalink: /tutorial/stack-based-navigation/
+sitemap: false
 ---
+
 Now that you understand slivers and scrolling, you can implement
 navigation between screens. In this lesson, you'll update the
 small-screen view such that when a contact group is tapped, it
@@ -74,11 +76,11 @@ This small code block contains the most important new information on this page.
 
 `Navigator.of(context)` retrieves the nearest `Navigator` widget from
 the widget tree. The `push` method adds a new route to the
-navigator's stack, and displays the widget returned from the `builder` property. 
+navigator's stack, and displays the widget returned from the `builder` property.
 
 This is the most basic implementation of using stack-based navigation,
 where new screens are pushed on top of the current screen. To navigate
-back to the previous screen, you'd use the `Navigator.pop` method. 
+back to the previous screen, you'd use the `Navigator.pop` method.
 
 `CupertinoPageRoute` creates iOS-style page transitions with the following features:
 - A slide-in animation from the right.

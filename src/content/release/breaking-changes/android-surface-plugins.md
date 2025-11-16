@@ -6,6 +6,8 @@ description: >-
   For Impeller, use of this API is recommended.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The Android embedder for Flutter introduces a new API, [`SurfaceProducer`][],

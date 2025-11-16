@@ -1,0 +1,78 @@
+- name: Command-line app
+  description: >-
+    A command line app that parses command-line options and fetches from GitHub.
+  tags:
+    - cli
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/command_line
+    label: Dart GitHub
+
+- name: Extension methods
+  description: >-
+    Demonstrates Dart's extensions method syntax.
+  tags:
+    - syntax
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/extension_methods
+    label: Dart GitHub
+
+- name: FFI
+  description: >-
+    A series of simple examples demonstrating how to call C libraries from Dart.
+  tags:
+    - platforms
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/ffi
+    label: Dart GitHub
+
+- name: Isolates (in a CLI)
+  description: >-
+    Command line applications that demonstrate how to
+    work with Concurrency in Dart using isolates.
+  tags:
+    - cli
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/ffi
+    label: Dart GitHub
+
+- name: Native Dart app
+  description: >-
+    A command line application that can be compiled to
+    native code using `dart compile exe`.
+  tags:
+    - cli
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/native_app
+    label: Dart GitHub
+
+- name: Server side Dart
+  description: >-
+    Examples of running Dart on the server.
+  tags:
+    - cli
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/server
+    label: Dart GitHub
+
+- name: Package constraint solver
+  description: >-
+    Demonstrates best-practices for publishing packages on pub.dev.
+  tags:
+    - pub
+    - Dart
+  type: quickstart
+  link:
+    url: https://github.com/dart-lang/samples/tree/main/server
+    label: Dart GitHub

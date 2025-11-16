@@ -5,6 +5,8 @@ description: >
   CupertinoTabBar requires a Localizations parent.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Instances of `CupertinoTabBar` must have a

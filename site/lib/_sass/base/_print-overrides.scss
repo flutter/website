@@ -1,0 +1,43 @@
+// Overrides for printing so only page content is printed
+@media print {
+
+  // Ignore navigation elements and other non-necessary interactive ones
+  #site-header,
+  .subnav,
+  .site-footer,
+  #sidenav,
+  .navbar,
+  #site-toc--side,
+  #page-github-links,
+  #cookie-notice,
+  .site-banner,
+  .code-excerpt__copy-btn,
+  .breadcrumb {
+    display: none !important;
+  }
+
+  // Make sure content fills up 100% of width
+  #page-content {
+    max-width: 100% !important;
+    margin-left: 0;
+    padding-left: 0;
+    border: none;
+    flex: 1;
+  }
+
+  // Remove DartPad iframes since they are not functional.
+  iframe[src^="https://dartpad"]:not(#try-dart-pad) {
+    display: none;
+  }
+
+  // Display underlines under links
+  a {
+    text-decoration: underline;
+  }
+
+  // Show borders around notes and code blocks
+  .alert,
+  pre {
+    border: 1px solid black;
+  }
+}

@@ -364,7 +364,7 @@ The quantities plotted on the y-axis are as follows:
   and [DevTools Performance view][].
 
 **Allocated**
-: The current capacity of the heap is typically
+: The current total capacity of all Dart heaps. This is typically
   slightly larger than the total size of all heap objects.
 
 **RSS - Resident Set Size**

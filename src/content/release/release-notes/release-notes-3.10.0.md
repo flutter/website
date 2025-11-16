@@ -2,12 +2,14 @@
 title: Flutter 3.10.0 release notes
 shortTitle: 3.10.0 release notes
 description: Release notes for Flutter 3.10.0.
+skipTemplateRendering: true
 ---
+
 This page has release notes for 3.10.0.
 For information about subsequent bug-fix releases,
 see our [CHANGELOG][].
 
-[CHANGELOG]: {{site.repo.flutter}}/blob/main/CHANGELOG.md
+[CHANGELOG]: https://github.com/flutter/flutter/blob/main/CHANGELOG.md
 
 ## Framework
 
@@ -2793,4 +2795,3 @@ see our [CHANGELOG][].
 * @thomasgales made their first contribution in [40736](https://github.com/flutter/engine/pull/40736)
 
 **Full Changelog**: https://github.com/flutter/engine/compare/3.7.4...3.10.0-1.5.pre
-

@@ -8,7 +8,7 @@ description: How to debug your Flutter app.
 There's a wide variety of tools and features to help debug
 Flutter applications. Here are some of the available tools:
 
-* [VS Code][] (recommended) and [Android Studio/IntelliJ][], 
+* [VS Code][] (recommended) and [Android Studio/IntelliJ][],
   (enabled with the Flutter and Dart plugins)
   support a built-in source-level debugger with
   the ability to set breakpoints, step through code,

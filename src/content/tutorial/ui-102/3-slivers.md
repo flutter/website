@@ -2,6 +2,7 @@
 title: Advanced scrolling and slivers
 description: Learn how to implement performant scrolling with slivers.
 permalink: /tutorial/slivers/
+sitemap: false
 ---
 
 In this lesson, you'll learn about slivers, which are special widgets
@@ -12,7 +13,7 @@ behaviors. By the end of this section, you'll understand how to use
 `CustomScrollView`, create navigation bars that collapse, and organize
 content in scrollable sections.
 
-## Slivers and widgets 
+## Slivers and widgets
 
 Slivers are scrollable areas that can be composed together in a
 `CustomScrollView` or other scroll views. Think of slivers as
@@ -253,7 +254,7 @@ class _ContactGroupsView extends StatelessWidget {
   Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
     //...
   }
-    
+
 }
 ```
 
@@ -264,7 +265,7 @@ and navigation indicators.
 ## Create advanced scrolling for contacts
 
 Now, work on the contacts page. Just like before, you'll create a
-private, reusable view to avoid code duplication. 
+private, reusable view to avoid code duplication.
 
 In the next lesson, you'll implement navigation for small screens. To
 see your progress on the contacts list page in the meantime, update
@@ -433,7 +434,7 @@ smoothly transitions into the collapsed navigation bar.
 Real-world contact apps organize contacts alphabetically. To do this,
 create sections for each letter. Add the following widget to the
 bottom of your `contacts.dart` file. This widget doesn't contain any
-slivers.  
+slivers.
 
 ```dart
 // lib/screens/contacts.dart

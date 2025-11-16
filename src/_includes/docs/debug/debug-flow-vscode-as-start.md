@@ -36,5 +36,5 @@
      This button only works for iOS or Android. Desktop apps launch a browser.
 
 {% if add == 'launch' -%}
-{% render docs/debug/vscode-flutter-attach-json.md %}
+{% render "docs/debug/vscode-flutter-attach-json.md" %}
 {% endif -%}

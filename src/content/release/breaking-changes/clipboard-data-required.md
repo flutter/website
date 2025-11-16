@@ -5,6 +5,8 @@ description: >
   at least one clipboard data variant must be provided.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 The [`ClipboardData constructor`][]'s `text` argument is no longer nullable.

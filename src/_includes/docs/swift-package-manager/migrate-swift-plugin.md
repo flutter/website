@@ -7,11 +7,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    directories.
    Name this new directory the name of the platform package.
 
-   ```plaintext highlightLines=3
-   plugin_name/ios/
-   ├── ...
-   └── plugin_name/
-   ```
+   <FileTree>
+
+   - plugin_name/
+     - ios/
+       - ...
+       - **plugin_name/**
+   
+   </FileTree>
 
 1. Within this new directory, create the following files/directories:
 
@@ -21,22 +24,26 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    Your plugin should look like:
 
-   ```plaintext highlightLines=4-5
-   plugin_name/ios/
-   ├── ...
-   └── plugin_name/
-      ├── Package.swift
-      └── Sources/plugin_name/
-   ```
+   <FileTree>
+
+   - plugin_name/
+     - ios/
+       - ...
+       - plugin_name/
+         - **Package.swift**
+         - **Sources/**
+           - **plugin_name/**
+
+   </FileTree>
 
 1. Use the following template in the `Package.swift` file:
 
    ```swift title="Package.swift"
    // swift-tools-version: 5.9
    // The swift-tools-version declares the minimum version of Swift required to build this package.
-   
+
    import PackageDescription
-   
+
    let package = Package(
        // TODO: Update your plugin name.
        name: "plugin_name",
@@ -65,7 +72,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
@@ -117,7 +124,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
@@ -144,7 +151,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // For more information, see:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    [!.process("PrivacyInfo.xcprivacy"),!]
-   
+
                    // TODO: If you have other resources that need to be bundled with your plugin, refer to
                    // the following instructions to add them:
                    // https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package
