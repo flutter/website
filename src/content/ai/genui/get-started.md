@@ -9,15 +9,17 @@ This guide explains how to get started with the
 [`genui`][] package. The SDK's key components
 are described in the [Key components][] page.
 
-```Warning
-The `genui` package is in alpha
-and is likely to change.
-```
+:::warning Experimental
+The `genui` package is in
+alpha and is likely to change.
+:::
 
 Use the following instructions to add `genui` to your Flutter app.
 The code examples show how to perform the instructions on a brand new
 app created by running flutter create but you can follow the same
 steps for your existing Flutter app.
+
+[`genui`]: {{site.pub-pkg}}/genui
 
 ## Configure your agent provider
 

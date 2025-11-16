@@ -41,9 +41,9 @@ check out the [Getting started with GenUI video][]:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nWr6eZKM6no?si=62ey-Z7ajT-o-643" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-```Warning
+:::warning Experimental
 The `genui` package is in
 alpha and is likely to change.
-```
+:::
 
-[Getting started with GenUI]: https://youtu.be/nWr6eZKM6no?si=ut4yaMxNJLf_3p94
+[Getting started with GenUI video]: https://www.youtube.com/watch?v=nWr6eZKM6no
