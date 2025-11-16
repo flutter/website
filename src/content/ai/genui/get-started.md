@@ -420,9 +420,9 @@ catalog that the agent can use to generate domain-specific UI.
 
 If something is unclear or missing, please [create an issue][].
 
-[examples]: {{site.organization}}/genui/blob/main/examples
-[travel app]: {{site.organization}}/genui/blob/main/examples/travel_app
-[create an issue]: {{site.organization}}/genui/issues/new/choose
+[examples]: {{site.repo.organization}}/genui/blob/main/examples
+[travel app]: {{site.repo.organization}}/genui/blob/main/examples/travel_app
+[create an issue]: {{site.repo.organization}}/genui/issues/new/choose
 
 ## System instructions
 
@@ -464,9 +464,9 @@ to ensure that you're targeting a version that meets or exceeds
 Firebase's requirements.
 
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
-[create an issue]: {{site.organization}}/genui/issues/new/choose
+[create an issue]: {{site.repo.organization}}/genui/issues/new/choose
 [Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
-[examples]: {{site.organization}}/genui/blob/main/examples
+[examples]: {{site.repo.organization}}/genui/blob/main/examples
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
 [`genui`]: {{site.pub-pkg}}/genui
 [Key components]: /ai/genui/components

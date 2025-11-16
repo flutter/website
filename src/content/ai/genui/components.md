@@ -72,5 +72,5 @@ check out the [design doc][].
 
 The next section walks you through adding `genui` to your app.
 
-[design doc]: {{site.organization}}/genui/blob/main/packages/genui/DESIGN.md
+[design doc]: {{site.repo.organization}}/genui/blob/main/packages/genui/DESIGN.md
 [`genui`]: {{site.pub-pkg}}/genui
