@@ -1,14 +1,14 @@
 ---
 title: Main components and concepts
-description: >
-  Familarize yourself with the main components and concepts of the
+description: >-
+  Familiarize yourself with the main components and concepts of the
   Flutter for GenUI SDK.
 ---
 
-```Warning
-The `genui` package is in alpha
-and is likely to change.
-```
+:::warning Experimental
+The `genui` package is in
+alpha and is likely to change.
+:::
 
 ## Main components
 
@@ -33,7 +33,7 @@ The package is built around the following main components:
    This interface uses streams to send `A2uiMessage` commands,
    text responses, and errors back to the `GenUiConversation`.
 
-* `A2uiMessage`:  A message sent from the AI
+* `A2uiMessage`: A message sent from the AI
    (through the `ContentGenerator`) to the UI,
    instructing it to perform actions like `beginRendering`,
    `surfaceUpdate`, `dataModelUpdate`, or `deleteSurface`.
@@ -73,4 +73,4 @@ check out the [design doc][].
 The next section walks you through adding `genui` to your app.
 
 [design doc]: {{site.organization}}/genui/blob/main/packages/genui/DESIGN.md
-[`genui`]: https://pub.dev/packages/genui
+[`genui`]: {{site.pub-pkg}}/genui

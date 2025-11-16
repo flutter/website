@@ -1,14 +1,14 @@
 ---
-title: GenUI SDK for Flutter 
-description: >
-  Learn how to use GenUI SDK for Flutter to build more
+title: GenUI SDK for Flutter
+description: >-
+  Learn how to use the GenUI SDK for Flutter to build more
   interactive experiences for applications and chatbots.
 ---
 
 ## What is GenUI?
 
 At its core, the GenUI SDK for Flutter is an orchestration layer.
-This suite of packages coordinate the flow of information between your user,
+This suite of packages coordinates the flow of information between your user,
 your Flutter widgets, and an AI agent,
 transforming text-based conversations into rich, interactive experiences.
 
