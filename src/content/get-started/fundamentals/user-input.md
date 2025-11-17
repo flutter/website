@@ -910,7 +910,7 @@ Widget build(BuildContext context) {
   return Column(children: [
     Text(
       date == null
-          ? 'You haven\'t picked a date yet.'
+          ? "You haven't picked a date yet."
           : DateFormat('MM-dd-yyyy').format(date),
     ),
     ElevatedButton.icon(
@@ -960,7 +960,7 @@ Widget build(BuildContext context) {
 
   return Column(children: [
     Text(
-      time == null ? 'You haven\'t picked a time yet.' : time.format(context),
+      time == null ? "You haven't picked a time yet." : time.format(context),
     ),
     ElevatedButton.icon(
       icon: const Icon(Icons.calendar_today),
