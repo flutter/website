@@ -20,9 +20,9 @@ Use the following instructions to add `genui` to your Flutter app.
 The code examples show how to perform the instructions on a brand new
 app created by running `flutter create`, but you can follow the same
 steps for your existing Flutter app.
-**
+
 [`genui`]: {{site.pub-pkg}}/genui
-[Key components]: /ai/genui/components
+[main components]: /ai/genui/components
 
 ## Configure your agent provider
 
