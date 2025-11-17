@@ -269,10 +269,10 @@ you can use [Deep Linking][].
 
 By default, flutter view does not handle scroll gestures
 in a [Share][] extension. To support a scrollable list in
-the Share extension, follow [these instructions][].
+the Share extension, follow [the instructions on GitHub][issue-164670].
 
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
-[these instructions]: {{site.github}}/flutter/flutter/issues/164670#issuecomment-2740702986
+[issue-164670]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
 
 ### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter }
 
