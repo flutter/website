@@ -739,17 +739,16 @@ Widget build(BuildContext context) {
 
 ### Radio
 
-A `RadioGroup` containing `Radio` buttons that allow the user to
+A `RadioGroup` contains `Radio` buttons that allow the user to
 select between mutually exclusive values.
 When the user selects a radio button in a group,
 the other radio buttons are unselected.
 
-- A particular `Radio` button's `value` represent that button's value,
-- The selected value for a group of radio buttons is identified by
+- A particular `Radio` button's `value` represent that button's value.
 - The selected value for a `RadioGroup` is identified by
-the `groupValue` parameter.
+  the `groupValue` parameter.
 - `RadioGroup` has an `onChanged` callback that
-  gets triggered when users click it, like `Switch` and `Checkbox`
+  gets triggered when users click it, like `Switch` and `Checkbox`.
 
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/Radio.webp",
