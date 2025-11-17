@@ -736,16 +736,16 @@ Widget build(BuildContext context) {
 
 ### Radio
 
-A group of `Radio` buttons that allows the user to
+A `RadioGroup` contains `Radio` buttons that allow the user to
 select between mutually exclusive values.
 When the user selects a radio button in a group,
 the other radio buttons are unselected.
 
-- A particular `Radio` button's `value` represent that button's value,
-- The selected value for a group of radio buttons is identified by
+- A particular `Radio` button's `value` represent that button's value.
+- The selected value for a `RadioGroup` is identified by
   the `groupValue` parameter.
-- `Radio` also has an `onChanged` callback that
-  gets triggered when users click it, like `Switch` and `Checkbox`
+- `RadioGroup` has an `onChanged` callback that
+  gets triggered when users click it, like `Switch` and `Checkbox`.
 
 {% render "docs/code-and-image.md",
 image:"fwe/user-input/Radio.webp",
@@ -775,41 +775,29 @@ class _RadioExampleState extends State<RadioExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListTile(
-          title: const Text('Musician'),
-          leading: Radio<Character>(
-            value: Character.musician,
-            groupValue: _character,
-            onChanged: setCharacter,
+    return RadioGroup(
+      groupValue: _character,
+      onChanged: setCharacter,
+      child: Column(
+        children: <Widget>[
+          ListTile(
+            title: const Text('Musician'),
+            leading: Radio<Character>(value: Character.musician),
           ),
-        ),
-        ListTile(
-          title: const Text('Chef'),
-          leading: Radio<Character>(
-            value: Character.chef,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Chef'),
+            leading: Radio<Character>(value: Character.chef),
           ),
-        ),
-        ListTile(
-          title: const Text('Firefighter'),
-          leading: Radio<Character>(
-            value: Character.firefighter,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Firefighter'),
+            leading: Radio<Character>(value: Character.firefighter),
           ),
-        ),
-        ListTile(
-          title: const Text('Artist'),
-          leading: Radio<Character>(
-            value: Character.artist,
-            groupValue: _character,
-            onChanged: setCharacter,
+          ListTile(
+            title: const Text('Artist'),
+            leading: Radio<Character>(value: Character.artist),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
