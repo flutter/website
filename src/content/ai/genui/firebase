@@ -1,0 +1,45 @@
+### Configure Firebase AI logic
+
+To use the built-in `FirebaseAiContentGenerator` to connect
+to Gemini using the Firebase AI Logic, follow these instructions:
+
+ 1. [Create a new Firebase project][] using the Firebase Console.
+
+ 2. [Enable the Gemini API][] for that project.
+
+ 3. Follow the first three steps in [Firebase's Flutter setup guide][]
+    to add Firebase to your app.
+
+ 4. In `pubspec.yaml`, add `genui` and `genui_firebase_ai`
+    to the `dependencies` section.
+
+    ```yml
+    dependencies:
+      # ...
+      genui: ^latest_version             #Replace with the actual latest version
+      genui_firebase_ai: ^latest_version # " "
+    ```
+
+ 5. In your app's `main` method, ensure that the widget
+    bindings are initialized and then initialize Firebase.
+
+    ```dart
+    void main() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      runApp(const MyApp());
+    }
+    ```
+
+[Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
+[Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
+[Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
+
+### Configure another agent provider
+
+To use `genui` with another agent provider,
+follow that provider's instructions to configure your app,
+and then create your own subclass of `ContentGenerator` to connect
+to that provider. Use `FirebaseAiContentGenerator` or
+`A2uiContentGenerator` (from the `genui_a2ui` package)
+as examples of how to do so.

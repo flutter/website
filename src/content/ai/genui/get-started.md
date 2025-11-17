@@ -2,13 +2,14 @@
 title: Get started with the GenUI SDK for Flutter
 breadcrumb: Get started
 description: >-
-  Learn how to use GenUI SDK for Flutter to add it
+  Learn how to use GenUI SDK for Flutter and add it
   to your existing Flutter app.
 ---
 
-This guide explains how to get started with the
-[`genui`][] package. The SDK's key components
-are described in the [Key components][] page.
+This guide explains how to get started with
+GenUI SDK for Flutter and its series of packages.
+The SDK's key components
+are described in the [main components][] page.
 
 :::experimental
 The `genui` package is in
@@ -26,55 +27,30 @@ steps for your existing Flutter app.
 ## Configure your agent provider
 
 `genui` can connect to a variety of agent providers.
-Choose the section for your preferred provider.
+Some available providers include the following:
 
-### Configure Firebase AI logic
+- Google Gemini Developer API: Useful for experimentations
+  and local testing as you're mapping out your experience.
+- [Firebase AI logic][]: Useful for production apps where
+  interactions with the LLM are all in your Flutter client,
+  without requiring a server. Firebase also makes it easier to
+  ship your AI features securely since Firebase handles the
+  management of your Gemini API key.
+- [A2UI][]: Useful for client/server architectures where your
+  agent is running on the server.
+- Build your own: Of course, you can also build your own adapter
+  to connect to your preferred LLM provider. Expect more from
+  us and the community soon.
 
-To use the built-in `FirebaseAiContentGenerator` to connect
-to Gemini using the Firebase AI Logic, follow these instructions:
+The easiest way to start using GenUI is to use the
+`generative_ai` package, which only requires a `GEMINI_API_KEY`.
 
- 1. [Create a new Firebase project][] using the Firebase Console.
+[PENDING generative_ai example] xxx
 
- 2. [Enable the Gemini API][] for that project.
-
- 3. Follow the first three steps in [Firebase's Flutter setup guide][]
-    to add Firebase to your app.
-
- 4. In `pubspec.yaml`, add `genui` and `genui_firebase_ai`
-    to the `dependencies` section. As of this writing,
-    it's best to use pub's git dependency to
-    refer directly to this project's source.
-
-    ```yml
-    dependencies:
-      # ...
-      genui: 0.5.0
-      genui_firebase_ai: 0.5.0
-    ```
-
- 5. In your app's `main` method, ensure that the widget
-    bindings are initialized and then initialize Firebase.
-
-    ```dart
-    void main() async {
-      WidgetsFlutterBinding.ensureInitialized();
-      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-      runApp(const MyApp());
-    }
-    ```
-
-[Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
-[Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
-[Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
-
-### Configure another agent provider
-
-To use `genui` with another agent provider,
-follow that provider's instructions to configure your app,
-and then create your own subclass of `ContentGenerator` to connect
-to that provider. Use `FirebaseAiContentGenerator` or
-`A2uiContentGenerator` (from the `genui_a2ui` package)
-as examples of how to do so.
+{% comment %} [Google Gemini Developer API]: xxx {% endcomment %}
+[Firebase AI logic]: {{site.pub-pkg}}/genui_firebase_ai
+[A2UI]: {{site.pub-pkg}}/a2ui
+{% comment %} link for generative_ai {% endcomment %}
 
 ## Create the connection to an agent
 
@@ -102,9 +78,9 @@ to your chosen agent provider.
     You should always include those provided by `GenUiManager`,
     but feel free to include others.
 
- 3. Create a `GenUiConversation` using the instances of `ContentGenerator`
-    and `GenUiManager`. Your app will primarily interact with this object
-    to get things done.
+ 3. Create a `GenUiConversation` using the instances of
+    `ContentGenerator` and `GenUiManager`. Your app will
+    primarily interact with this object to get things done.
 
     For example:
 
@@ -180,9 +156,9 @@ To receive and display generated UI:
         _genUiConversation.sendRequest(UserMessage.text(text));
       }
 
-      // A callback invoked by the [GenUiConversation] when a new UI surface is generated.
-      // Here, the ID is stored so the build method can create a GenUiSurface to
-      // display it.
+      // A callback invoked by the [GenUiConversation] when a new
+      // UI surface is generated. Here, the ID is stored so the
+      // build method can create a GenUiSurface to display it.
       void _onSurfaceAdded(SurfaceAdded update) {
         setState(() {
           _surfaceIds.add(update.surfaceId);
@@ -248,11 +224,16 @@ To receive and display generated UI:
     }
     ```
 
-## [Optional] Add your own widgets to the catalog {:#custom-widgets}
+## Add your own widgets to the catalog {:#custom-widgets}
 
 In addition to using the catalog of widgets in `CoreCatalogItems`,
 you can create custom widgets for the agent to generate.
-Use the following instructions.
+
+You can use the core catalog of widgets provided for your
+convenience. Most production apps will want to use a custom
+catalog of widgets.
+
+To add your own widgets, use the following instructions.
 
  1. Import `json_schema_builder`
 
@@ -262,10 +243,7 @@ Use the following instructions.
     ```yml
     dependencies:
       # ...
-      json_schema_builder:
-        git:
-          url: https://github.com/flutter/genui.git
-          path: packages/json_schema_builder
+      json_schema_builder: ^latest_version # Replace with the actual latest version
     ```
 
  2. Create the new widget's schema
@@ -287,7 +265,6 @@ Use the following instructions.
       required: ['question', 'answer'],
     );
     ```
-
  3. Create a `CatalogItem`
 
     Each `CatalogItem` represents a type of widget that the agent
@@ -328,7 +305,6 @@ Use the following instructions.
           },
     );
     ```
-
  4. Add the `CatalogItem` to the catalog
 
     Include your catalog items when instantiating `GenUiManager`.
