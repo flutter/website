@@ -417,7 +417,8 @@ Then use the following steps:
 1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
-   and select the `hello/example/android/build.gradle` file.
+   and select either the `hello/example/android/build.gradle`
+   or the `hello/example/android/build.gradle.kts` file.
 1. In the **Gradle Sync** dialog, select **OK**.
 1. In the **Android Gradle Plugin Update** dialog,
    select **Don't remind me again for this project**.
@@ -777,7 +778,7 @@ The native build systems that are invoked by FFI
 (and method channels) plugins are:
 
 * For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in `android/build.gradle`.
+  * See the documentation in `android/build.gradle` or `android/build.gradle.kts`.
 * For iOS and macOS: Xcode, using CocoaPods.
   * See the documentation in `ios/hello.podspec`.
   * See the documentation in `macos/hello.podspec`.
