@@ -272,7 +272,7 @@ in a [Share][] extension. To support a scrollable list in
 the Share extension, follow [the instructions on GitHub][issue-164670].
 
 [Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
-[issue-164670]: {{site.organization}}/flutter/issues/164670#issuecomment-2762124121
+[issue-164670]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
 
 ### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter }
 
