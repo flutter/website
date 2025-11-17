@@ -54,7 +54,7 @@ and thus is the quickest way to start using Flutter.
    2. [Widget fundamentals][]
    3. [Layout widgets on a screen][]
    4. [Devtools][]
-   5. [Handle User input][]
+   5. [Handle user input][]
    6. [Learn about stateful widgets][]
    7. [Add implicit animations][]
 2. State in Flutter apps
