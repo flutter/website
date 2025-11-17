@@ -20,37 +20,147 @@ Use the following instructions to add `genui` to your Flutter app.
 The code examples show how to perform the instructions on a brand new
 app created by running `flutter create`, but you can follow the same
 steps for your existing Flutter app.
-
+**
 [`genui`]: {{site.pub-pkg}}/genui
 [Key components]: /ai/genui/components
 
 ## Configure your agent provider
 
-`genui` can connect to a variety of agent providers.
-Some available providers include the following:
+The `genui` package can connect to a variety of agent providers.
+Available providers include the following:
 
-- Google Gemini Developer API: Useful for experimentations
+- **Google Gemini AI**: The fastest way
+  to get started! Use this package for experimentation
   and local testing as you're mapping out your experience.
-- [Firebase AI logic][]: Useful for production apps where
+- **Firebase AI logic**: Useful for production apps where
   interactions with the LLM are all in your Flutter client,
   without requiring a server. Firebase also makes it easier to
   ship your AI features securely since Firebase handles the
   management of your Gemini API key.
-- [A2UI][]: Useful for client/server architectures where your
-  agent is running on the server.
-- Build your own: Of course, you can also build your own adapter
+- **A2UI**: Useful for client/server architectures where your
+  agent is running on the server. (This package is under development
+  and will be open sources soon.)
+- **Build your own**: You can also build your own adapter
   to connect to your preferred LLM provider. Expect more from
   us and the community soon.
 
+<Tabs key="agent-provider">
+
+<Tab name="Google Gemini AI">
+
 The easiest way to start using GenUI is to use the
-`generative_ai` package, which only requires a `GEMINI_API_KEY`.
+[`genui_google_generative_ai`][] package,
+which only requires a `GEMINI_API_KEY`.
 
-[PENDING generative_ai example] xxx
+This package provides the integration between `genui` and the
+Google Cloud Generative Language API.
+It allows you to use the power of Google's Gemini models to generate
+dynamic user interfaces in your Flutter applications.
 
-{% comment %} [Google Gemini Developer API]: xxx {% endcomment %}
-[Firebase AI logic]: {{site.pub-pkg}}/genui_firebase_ai
+This API is meant for quick explorations and local testing or prototyping,
+not for production or deployment.
+Flutter apps built for production should use Firebase AI.
+For mobile and web applications that need client-side access,
+consider using Firebase AI logic instead.
+
+ 1. Create an instance of `GoogleGenerativeAiContentGenerator` and
+    pass it to your `GenUiConversation`:
+
+    ```dart
+    import 'package:genui/genui.dart';
+    import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
+
+    final catalog = Catalog(components: [...]);
+
+    final contentGenerator = GoogleGenerativeAiContentGenerator(
+      catalog: catalog,
+      systemInstruction: 'You are a helpful assistant.',
+      modelName: 'models/gemini-2.5-flash',
+      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable
+    );
+
+    final conversation = GenUiConversation(
+      contentGenerator: contentGenerator,
+    );
+    ```
+
+ 2. To use this package, you need a Gemini API key.
+    If you don't already have one,
+    you can get it for free in Google AI Studio.
+
+    Enable the `GEMINI_API_KEY` in one of two ways:
+
+   * **Environment variable** (recommended). Set the
+     `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment variable.
+
+   * **Constructor parameter**. Pass the API key directly to the constructor.
+
+   If neither approach is provided, the package will attempt to use the
+   default environment variable.
+
+[`genui_google_generative_ai`]: {{site.pub-pkg}}/genui_google_generative_ai
+[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
 [A2UI]: {{site.pub-pkg}}/a2ui
-{% comment %} link for generative_ai {% endcomment %}
+
+</Tab>
+
+<Tab name="Firebase AI logic">
+
+To use the built-in `FirebaseAiContentGenerator` to connect
+to Gemini using the Firebase AI Logic, follow these instructions:
+
+ 1. [Create a new Firebase project][] using the Firebase Console.
+
+ 2. [Enable the Gemini API][] for that project.
+
+ 3. Follow the first three steps in [Firebase's Flutter setup guide][]
+    to add Firebase to your app.
+
+ 4. In `pubspec.yaml`, add `genui` and `genui_firebase_ai`
+    to the `dependencies` section.
+
+    ```yml
+    dependencies:
+      # ...
+      genui: ^latest_version             # Replace with the actual latest version
+      genui_firebase_ai: ^latest_version # " "
+    ```
+
+ 5. In your app's `main` method, ensure that the widget
+    bindings are initialized and then initialize Firebase.
+
+    ```dart
+    void main() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+      runApp(const MyApp());
+    }
+    ```
+
+[Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
+[Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
+[Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
+
+</Tab>
+
+<Tab name="A2UI">
+
+The [A2UI][] package is coming. Stay tuned!
+
+</Tab>
+
+<Tab name="Build your own">
+
+To use `genui` with another agent provider,
+follow that provider's instructions to configure your app,
+and then create your own subclass of `ContentGenerator` to connect
+to that provider. Use `FirebaseAiContentGenerator` or
+`A2uiContentGenerator` (from the `genui_a2ui` package)
+as examples of how to do so.
+
+</Tab>
+
+</Tabs>
 
 ## Create the connection to an agent
 
@@ -226,11 +336,8 @@ To receive and display generated UI:
 
 ## Add your own widgets to the catalog {:#custom-widgets}
 
-In addition to using the catalog of widgets in `CoreCatalogItems`,
-you can create custom widgets for the agent to generate.
-
-You can use the core catalog of widgets provided for your
-convenience. Most production apps will want to use a custom
+For your convenience, you can use the provided core catalog of widgets.
+However, most production apps will want to define a custom
 catalog of widgets.
 
 To add your own widgets, use the following instructions.
@@ -305,6 +412,7 @@ To add your own widgets, use the following instructions.
           },
     );
     ```
+
  4. Add the `CatalogItem` to the catalog
 
     Include your catalog items when instantiating `GenUiManager`.
@@ -325,7 +433,7 @@ To add your own widgets, use the following instructions.
     final contentGenerator = FirebaseAiContentGenerator(
       systemInstruction: '''
           You are an expert in creating funny riddles. Every time I give you a word,
-          you should generate a RiddleCard that displays one new riddle related to that word.
+          generate a RiddleCard that displays one new riddle related to that word.
           Each riddle should have both a question and an answer.
           ''',
       tools: _genUiManager.getTools(),
