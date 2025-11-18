@@ -97,7 +97,7 @@ to choose a different `ScrollBehavior` or customize the `Scrollbar`
 shown. 
 
 This change did not cause any test failures, crashes, or error messages
-in the course of development, but it may result in two `Scrollbar`s
+in the course of development, but it might result in two `Scrollbar`s
 being rendered in your application if you are manually adding `Scrollbar`s
 on Android.
 
