@@ -6,6 +6,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
 import 'client/copy_button.dart';
+import 'material_icon.dart';
 
 /// A rendered code block with support for syntax highlighting,
 /// line highlighting, filenames, language specifying,
@@ -19,6 +20,7 @@ final class WrappedCodeBlock extends StatelessComponent {
     this.highlightLines = const {},
     this.addedLines = const {},
     this.removedLines = const {},
+    this.foldingRanges = const [],
     this.languagesToHide = const {'plaintext', 'console'},
     this.tag,
     this.initialLineNumber = 1,
@@ -35,6 +37,7 @@ final class WrappedCodeBlock extends StatelessComponent {
   final Set<int> highlightLines;
   final Set<int> addedLines;
   final Set<int> removedLines;
+  final List<FoldingRange> foldingRanges;
   final Set<String> languagesToHide;
   final CodeBlockTag? tag;
   final int initialLineNumber;
@@ -43,14 +46,67 @@ final class WrappedCodeBlock extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    final children = <int, Component>{
+      for (var lineIndex = 0; lineIndex < content.length; lineIndex += 1)
+        lineIndex: span(
+          classes: [
+            'line',
+            if (highlightLines.contains(lineIndex + 1)) 'highlighted-line',
+            if (removedLines.contains(lineIndex + 1)) 'removed-line',
+            if (addedLines.contains(lineIndex + 1)) 'added-line',
+          ].toClasses,
+          attributes: {
+            if (showLineNumbers)
+              'data-line': '${initialLineNumber + lineIndex}',
+          },
+          [
+            switch (content[lineIndex]) {
+              // Add a zero-width space when empty
+              // so that the line isn't collapsed to 0 height.
+              final line when line.isEmpty => span(
+                styles: const Styles(
+                  userSelect: UserSelect.none,
+                ),
+                [text('\u200b')],
+              ),
+              final lineSpans => span(lineSpans),
+            },
+            text('\n'),
+          ],
+        ),
+    };
+
+    if (foldingRanges.isNotEmpty) {
+      for (final (:start, :end, :level, :open) in foldingRanges) {
+        final foldingSummary = children.remove(start - 1);
+        final foldedChildren = [
+          for (var i = start + 1; i <= end; i += 1) ?children.remove(i - 1),
+        ];
+
+        children[start - 1] = details(
+          open: open,
+          styles: Styles(raw: {'--level': '$level'}),
+          [
+            summary(
+              classes: 'fold-summary',
+              [
+                const MaterialIcon('keyboard_arrow_right'),
+                foldingSummary ?? text('...'),
+              ],
+            ),
+            ...foldedChildren,
+          ],
+        );
+      }
+    }
+
     return div(
       classes: 'code-block-wrapper language-$language',
       [
         if (title case final title?)
-          div(
-            classes: 'code-block-header',
-            [text(title)],
-          ),
+          div(classes: 'code-block-header', [
+            text(title),
+          ]),
         div(
           classes: [
             'code-block-body',
@@ -71,47 +127,14 @@ final class WrappedCodeBlock extends StatelessComponent {
             pre(
               classes: [
                 if (showLineNumbers) 'show-line-numbers',
+                if (foldingRanges.isNotEmpty) 'show-folding-ranges',
                 'opal',
               ].toClasses,
               attributes: {'tabindex': '0'},
               [
-                code(
-                  [
-                    for (
-                      var lineIndex = 0;
-                      lineIndex < content.length;
-                      lineIndex += 1
-                    )
-                      span(
-                        classes: [
-                          'line',
-                          if (highlightLines.contains(lineIndex + 1))
-                            'highlighted-line',
-                          if (removedLines.contains(lineIndex + 1))
-                            'removed-line',
-                          if (addedLines.contains(lineIndex + 1)) 'added-line',
-                        ].toClasses,
-                        attributes: {
-                          if (showLineNumbers)
-                            'data-line': '${initialLineNumber + lineIndex}',
-                        },
-                        [
-                          switch (content[lineIndex]) {
-                            // Add a zero-width space when empty
-                            // so that the line isn't collapsed to 0 height.
-                            final line when line.isEmpty => span(
-                              styles: const Styles(
-                                userSelect: UserSelect.none,
-                              ),
-                              [text('\u200b')],
-                            ),
-                            final lineSpans => span(lineSpans),
-                          },
-                          text('\n'),
-                        ],
-                      ),
-                  ],
-                ),
+                code([
+                  for (var i = 0; i < content.length; i += 1) ?children[i],
+                ]),
               ],
             ),
             if (textToCopy case final textToCopy?)
@@ -151,3 +174,5 @@ enum CodeBlockTag {
     _ => throw ArgumentError('Unknown tag for code blocks: $tag'),
   };
 }
+
+typedef FoldingRange = ({int start, int end, int level, bool open});
