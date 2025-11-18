@@ -88,13 +88,17 @@ final class CodeBlockProcessor implements PageExtension {
             );
           }
 
-          final diffResult = isDiff ? _processDiffLines(lines) : null;
-          final linesWithDiffRemoved = diffResult?.lines ?? lines;
-          final addedLines = diffResult?.addedLines ?? const <int>{};
-          final removedLines = diffResult?.removedLines ?? const <int>{};
+          final isFolding = metadata.containsKey('foldable');
+
+          final diffResult = isDiff
+              ? _processDiffLines(lines)
+              : (lines: lines, addedLines: <int>{}, removedLines: <int>{});
+          final foldingResult = isFolding
+              ? _processFoldingLines(diffResult.lines)
+              : (lines: diffResult.lines, foldingRanges: <FoldingRange>[]);
 
           final codeLines = _removeHighlights(
-            linesWithDiffRemoved,
+            foldingResult.lines,
             skipHighlighting,
           );
           final processedContent = _highlightCode(
@@ -117,8 +121,9 @@ final class CodeBlockProcessor implements PageExtension {
               },
               title: title,
               highlightLines: _parseNumbersAndRanges(rawHighlightLines),
-              addedLines: addedLines,
-              removedLines: removedLines,
+              addedLines: diffResult.addedLines,
+              removedLines: diffResult.removedLines,
+              foldingRanges: foldingResult.foldingRanges,
               tag: tag != null ? CodeBlockTag.parse(tag) : null,
               initialLineNumber: initialLineNumber ?? 1,
               showLineNumbers: showLineNumbers,
@@ -439,6 +444,65 @@ final class CodeBlockProcessor implements PageExtension {
       lines: processedLines,
       addedLines: addedLines,
       removedLines: removedLines,
+    );
+  }
+
+  /// Processes lines for folding mode, extracting folding range line markers.
+  ///
+  /// Lines equal to '[*' are marked as the start of an open folding range.
+  /// Lines equal to '[* -' are marked as the start of a closed folding range.
+  /// Lines equal to '*]' are marked as the end of a folding range.
+  /// The folding markers are removed from the lines.
+  ({
+    List<String> lines,
+    List<FoldingRange> foldingRanges,
+  })
+  _processFoldingLines(List<String> lines) {
+    final foldingRanges = <FoldingRange>[];
+    final processedLines = <String>[];
+    final foldingStack = <({int start, bool open})>[];
+
+    for (var lineIndex = 0; lineIndex < lines.length; lineIndex += 1) {
+      final line = lines[lineIndex];
+
+      // To account for removal of the folding marker lines.
+      final lineIndexCorrection =
+          (foldingRanges.length * 2) + foldingStack.length;
+
+      if (line.trim() == '[*') {
+        foldingStack.add((
+          start: lineIndex + 1 - lineIndexCorrection,
+          open: true,
+        ));
+        // Skip adding this line to processed lines.
+        continue;
+      } else if (line.trim() == '[* -') {
+        foldingStack.add((
+          start: lineIndex + 1 - lineIndexCorrection,
+          open: false,
+        ));
+        // Skip adding this line to processed lines.
+        continue;
+      } else if (line.trim() == '*]') {
+        if (foldingStack.isNotEmpty) {
+          final (:start, :open) = foldingStack.removeLast();
+          foldingRanges.add((
+            start: start,
+            end: lineIndex - lineIndexCorrection,
+            level: foldingStack.length,
+            open: open,
+          ));
+        }
+        // Skip adding this line to processed lines.
+        continue;
+      }
+
+      processedLines.add(line);
+    }
+
+    return (
+      lines: processedLines,
+      foldingRanges: foldingRanges,
     );
   }
 }
