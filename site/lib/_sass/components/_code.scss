@@ -142,13 +142,111 @@ pre {
     span.line {
       padding-left: 0.5rem;
 
-      &[data-line]::before {
-        display: inline-block;
-        content: attr(data-line) "";
-        width: 2em;
-        margin-right: 0.5rem;
-        text-align: right;
-        color: var(--site-base-fgColor-alt);
+      &[data-line] {
+        padding-left: 0;
+
+        &::before {
+          display: inline-block;
+          content: attr(data-line) "";
+          width: 2em;
+          margin-right: 1rem;
+          text-align: right;
+          color: var(--site-base-fgColor-alt);
+        }
+      }
+    }
+  }
+
+  &.show-folding-ranges code {
+
+    --folding-inset: 0px;
+
+    // A folding range.
+    details {
+      margin: 0;
+      position: relative;
+
+      --level: 0;
+      --inset: calc(var(--folding-inset) + 2px + (var(--level) * 1em));
+
+      // Vertical line drawn along a folding range.
+      &::before {
+        content: "";
+        display: none;
+        position: absolute;
+        // inset + caret width/2 - line width/2
+        left: calc(var(--inset) + .5em - .5px);
+        width: 1px;
+        background: var(--site-inset-borderColor);
+        height: calc(100% - 1lh);
+        top: .8lh;
+      }
+
+      summary {
+        margin: 0;
+        font-weight: initial;
+        user-select: initial;
+        list-style: none;
+        position: relative;
+
+        // Caret at the beginning of the folding range. 
+        span.material-symbols {
+          position: absolute;
+          cursor: pointer;
+          z-index: var(--site-z-base);
+          left: var(--inset);
+          top: 50%;
+          font-size: 1em;
+          user-select: none;
+          translate: 0 -50%;
+          transition: transform 300ms ease;
+          transform: rotate(0);
+          transform-origin: center;
+        }
+
+        &:hover>span {
+          color: initial;
+        }
+      }
+
+      &:not([open])>summary .line {
+        >span {
+          opacity: 0.5;
+        }
+
+        >span::after {
+          content: ' …';
+        }
+      }
+
+      &[open] {
+        &::before {
+          display: block;
+        }
+
+        >summary {
+          cursor: auto;
+
+          span.material-symbols {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      >* {
+        margin: 0;
+      }
+    }
+  }
+
+  &.show-line-numbers.show-folding-ranges code {
+    --folding-inset: 2.5em;
+
+    span.line {
+      &[data-line] {
+        &::before {
+          margin-right: 3rem;
+        }
       }
     }
   }
