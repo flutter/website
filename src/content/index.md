@@ -10,13 +10,13 @@ description: >-
   <Card title="Get started" link="/get-started" outlined="true">
     Set up your environment and start building.
   </Card>
-  <Card title="Widget catalog" link="" outlined="true">
+  <Card title="Widget catalog" link="/ui/widgets" outlined="true">
     Dip into the rich set of Flutter widgets available in the SDK.
   </Card>
   <Card title="API docs" link="{{site.api}}" outlined="true">
     Bookmark the API reference docs for the Flutter framework.
   </Card>
-  <Card title="Learning resources" link="" outlined="true">
+  <Card title="Learning resources" link="/reference/learning-resources" outlined="true">
     Browse sample code, tutorials, and how-tos.
   </Card>
   <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
