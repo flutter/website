@@ -124,7 +124,7 @@ control and configure this feature.
 
 ## Migration guide
 
-Before migration, if you are using a `MaterialApp`, you may have some code
+Before migration, if you are using a `MaterialApp`, you might have some code
 that looks like:
 
 ```dart
