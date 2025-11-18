@@ -1,9 +1,13 @@
 --- 
 title: Get started with the GenUI SDK for Flutter
+shortTitle: Get started with the GenUI SDK
 breadcrumb: Get started
 description: >-
   Learn how to use GenUI SDK for Flutter and add it
   to your existing Flutter app.
+prev:
+  title: GenUI SDK main components & concepts
+  path: /ai/genui/components
 ---
 
 This guide explains how to get started with
@@ -16,34 +20,42 @@ The `genui` package is in
 alpha and is likely to change.
 :::
 
-Use the following instructions to add `genui` to your Flutter app.
+Use the following instructions to add [`genui`][] to your Flutter app.
 The code examples show how to perform the instructions on a brand new
-app created by running `flutter create`, but you can follow the same
+app created by running [`flutter create`][], but you can follow the same
 steps for your existing Flutter app.
 
 [`genui`]: {{site.pub-pkg}}/genui
 [main components]: /ai/genui/components
+[`flutter create`]: /reference/create-new-app
 
 ## Configure your agent provider
 
 The `genui` package can connect to a variety of agent providers.
 Available providers include the following:
 
-- **Google Gemini AI**: The fastest way
-  to get started! Use this package for experimentation
-  and local testing as you're mapping out your experience.
-- **Firebase AI logic**: Useful for production apps where
-  interactions with the LLM are all in your Flutter client,
-  without requiring a server. Firebase also makes it easier to
-  ship your AI features securely since Firebase handles the
-  management of your Gemini API key.
-- **GenUI A2UI**: Useful for client/server architectures where your
-  agent is running on the server.
-- **Build your own**: You can also build your own adapter
-  to connect to your preferred LLM provider. Expect more from
-  us and the community soon.
+**Google Gemini AI**
+: The fastest way to get started!
+  Use this package for experimentation and local testing as
+  you're mapping out your experience.
 
-<Tabs key="agent-provider">
+**Firebase AI Logic**
+: Useful for production apps where interactions with the LLM are
+  all in your Flutter client, without requiring a server.
+  Firebase also makes it easier to ship your
+  AI features securely since Firebase handles the
+  management of your Gemini API key.
+
+**GenUI A2UI**
+: Useful for client/server architectures where your
+  agent is running on the server.
+
+**Build your own**
+: You can also build your own adapter
+  to connect to your preferred LLM provider.
+  Expect more from us and the community soon.
+
+<Tabs key="agent-provider" wrapped="true">
 
 <Tab name="Google Gemini AI">
 
@@ -60,7 +72,7 @@ This API is meant for quick explorations and local testing or prototyping,
 not for production or deployment.
 Flutter apps built for production should use Firebase AI.
 For mobile and web applications that need client-side access,
-consider using Firebase AI logic instead.
+consider using Firebase AI Logic instead.
 
  1. Create an instance of `GoogleGenerativeAiContentGenerator` and
     pass it to your `GenUiConversation`:
@@ -69,13 +81,15 @@ consider using Firebase AI logic instead.
     import 'package:genui/genui.dart';
     import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
 
-    final catalog = Catalog(components: [...]);
+    final catalog = Catalog(components: [
+      // ...
+    ]);
 
     final contentGenerator = GoogleGenerativeAiContentGenerator(
       catalog: catalog,
       systemInstruction: 'You are a helpful assistant.',
       modelName: 'models/gemini-2.5-flash',
-      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable
+      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
     );
 
     final conversation = GenUiConversation(
@@ -85,29 +99,30 @@ consider using Firebase AI logic instead.
 
  2. To use this package, you need a Gemini API key.
     If you don't already have one,
-    you can get it for free in Google AI Studio.
+    you can get it for free in [Google AI Studio][].
 
     Enable the `GEMINI_API_KEY` in one of two ways:
 
-   * **Environment variable** (recommended). Set the
-     `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment variable.
+    - **Environment variable** _(recommended)_
 
-   * **Constructor parameter**. Pass the API key directly to the constructor.
+      Set the `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment variable.
 
-   If neither approach is provided, the package will attempt to use the
-   default environment variable.
+    - **Constructor parameter**
+
+      Pass the API key directly to the constructor.
+
+    If neither approach is provided, the package will attempt to
+    use the default environment variable.
 
 [`genui_google_generative_ai`]: {{site.pub-pkg}}/genui_google_generative_ai
-[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
-[`genui_a2ui`]: {{site.pub-pkg}}/genui_a2ui
-[GenUI A2UI]:   {{site.pub-pkg}}/genui_a2ui
+[Google AI Studio]: https://ai.google.dev/aistudio
 
 </Tab>
 
-<Tab name="Firebase AI logic">
+<Tab name="Firebase AI Logic">
 
 To use the built-in `FirebaseAiContentGenerator` to connect
-to Gemini using the Firebase AI Logic, follow these instructions:
+to Gemini using the Firebase AI Logic SDK, follow these instructions:
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -116,7 +131,7 @@ to Gemini using the Firebase AI Logic, follow these instructions:
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 4. Use `dart pub add` to add `genui` and `genui_firebase_ai` as
+ 4. Use `dart pub add` to add `genui` and [`genui_firebase_ai`][] as
     dependencies in your `pubspec.yaml` file.
 
     ```console
@@ -137,6 +152,7 @@ to Gemini using the Firebase AI Logic, follow these instructions:
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
+[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
 
 </Tab>
 
@@ -146,6 +162,8 @@ to Gemini using the Firebase AI Logic, follow these instructions:
 An integration package for [`genui`][] and the 
 [A2UI Streaming UI Protocol][].
 
+[A2UI Streaming UI Protocol]: https://a2ui.org/
+
 </Tab>
 {% endcomment %}
 
@@ -154,9 +172,14 @@ An integration package for [`genui`][] and the
 To use `genui` with another agent provider,
 follow that provider's instructions to configure your app,
 and then create your own subclass of `ContentGenerator` to connect
-to that provider. Use `FirebaseAiContentGenerator` or
-`A2uiContentGenerator` (from the `genui_a2ui` package)
-as examples of how to do so.
+to that provider.
+
+For examples on how to do so,
+reference `FirebaseAiContentGenerator` (from the [`genui_firebase_ai`][] package)
+and `A2uiContentGenerator` (from the [`genui_a2ui`][] package).
+
+[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
+[`genui_a2ui`]: {{site.pub-pkg}}/genui_a2ui
 
 </Tab>
 
@@ -260,7 +283,7 @@ To receive and display generated UI:
       final _textController = TextEditingController();
       final _surfaceIds = <String>[];
 
-      // Send a message containing the user's text to the agent.
+      // Send a message containing the user's [text] to the agent.
       void _sendMessage(String text) {
         if (text.trim().isEmpty) return;
         _genUiConversation.sendRequest(UserMessage.text(text));
@@ -439,6 +462,8 @@ To add your own widgets, use the following instructions.
     );
     ```
 
+{:.steps}
+
 ## Data model and data binding
 
 A core concept in `genui` is the `DataModel`, a centralized,
@@ -461,7 +486,7 @@ This object can contain either a `literalString`
 For example, to display a user's name in a `Text` widget,
 the AI would generate:
 
-```dart
+```json
 {
   "Text": {
     "text": {
@@ -509,14 +534,30 @@ If something is unclear or missing, please [create an issue][].
 
 ## System instructions
 
-The `genui` package gives the LLM a set of tools it can use to
-generate UI. To get the LLM to use these tools,
-the `systemInstruction` provided to `ContentGenerator` must explicitly
-tell it to do so. This is why the previous example includes a
-system instruction for the agent with the line
-"Every time I give you a word, you should generate UI that displays one new riddle...".
+The `genui` package gives the LLM a set of tools it can use to generate UI.
+To get the LLM to use these tools,
+the `systemInstruction` provided to `ContentGenerator` must
+explicitly tell it to do so.
 
-## Troubleshooting/FAQ
+This is why the [earlier example][instruction-example] includes
+a system instruction for the agent with the line
+"Every time I give you a word, you should generate UI that...":
+
+```dart highlightLines=4-5
+final contentGenerator = FirebaseAiContentGenerator(
+  systemInstruction: '''
+    You are an expert in creating funny riddles.
+    Every time I give you a word, you should generate UI that
+    displays one new riddle related to that word.
+    Each riddle should have both a question and an answer.
+    ''',
+  tools: _genUiManager.getTools(),
+);
+```
+
+[instruction-example]: /ai/genui/get-started#create-the-connection-to-an-agent
+
+## Troubleshooting/FAQ {:#troubleshoot}
 
 ### How can I configure logging?
 
