@@ -18,7 +18,7 @@ scrolling widgets on desktop platforms - Mac, Windows and Linux. On all
 other platforms, a `Scrollbar` could only be applied manually by the
 developer, including Android. This does not match Android's default
 behavior for scrollable `View`s nor its quality guidelines for running
-on large screens; see [Large Screen Quality Guideline T1-10].
+on large screens; see [Large Screen Quality Guideline T1-10][].
 
 Now, `MaterialScrollBehavior`, the default `ScrollBehavior` for all
 `MaterialApp`s, applies a `Scrollbar` automatically to most scrolling
