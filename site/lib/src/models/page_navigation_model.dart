@@ -20,6 +20,8 @@ extension GetPageNavigationData on Page {
       maxLevel: pageData['maxTocDepth'] as int? ?? 3,
     );
 
+    final parentTitle = pageData['navigationCollectionTitle'] as String?;
+
     final pageEntries = <PageNavigationEntry>[];
     if (pageData['navigationEntries'] case final List<Object?> entries) {
       for (final entry in entries) {
@@ -31,10 +33,10 @@ extension GetPageNavigationData on Page {
 
     // If there are less than 2 top-level entries, hide the toc.
     if (tocData.topLevelEntries.length < 2) {
-      return PageNavigationData(null, pageEntries);
+      return PageNavigationData(null, pageEntries, parentTitle);
     }
 
-    return PageNavigationData(tocData, pageEntries);
+    return PageNavigationData(tocData, pageEntries, parentTitle);
   }
 
   TocNavigationData _getTocData(
@@ -91,13 +93,14 @@ extension GetPageNavigationData on Page {
 }
 
 final class PageNavigationData {
-  PageNavigationData(this.toc, this.pageEntries);
+  PageNavigationData(this.toc, this.pageEntries, this.parentTitle);
 
   final TocNavigationData? toc;
   final List<PageNavigationEntry> pageEntries;
+  final String? parentTitle;
 }
 
-class TocNavigationData {
+final class TocNavigationData {
   TocNavigationData(this.topLevelEntries);
 
   final List<TocNavigationEntry> topLevelEntries;

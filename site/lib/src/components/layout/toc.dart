@@ -33,9 +33,18 @@ final class PageNavBar extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final currentLinkedPage = data.pageEntries
-        .where((page) => page.url == context.page.url)
-        .firstOrNull;
+    PageNavigationEntry? currentLinkedPage;
+    String? currentDivider;
+
+    for (final page in data.pageEntries) {
+      if (page.url == context.page.url) {
+        currentLinkedPage = page;
+        break;
+      }
+      if (page.isDivider) {
+        currentDivider = page.title;
+      }
+    }
 
     final linkedPageTitle = currentLinkedPage?.title;
     final currentTitle = context.page.data.page['title'] as String;
@@ -43,8 +52,8 @@ final class PageNavBar extends StatelessComponent {
     var pageEntryNumber = 1;
 
     return PageNav(
-      label: linkedPageTitle,
-      title: currentTitle,
+      breadcrumbs: [?data.parentTitle, ?currentDivider, ?linkedPageTitle],
+      initialHeading: currentTitle,
       content: context.ref(
         div([
           if (data.pageEntries.isEmpty) ...[
