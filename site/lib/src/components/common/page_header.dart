@@ -32,6 +32,7 @@ final class PageHeader extends StatelessComponent {
 
     return header(
       id: 'site-content-title',
+      attributes: {'data-pagefind-weight': '10.0'},
       classes: [if (wrap) 'wrap'].toClasses,
       [
         if (showBreadcrumbs) const PageBreadcrumbs(),

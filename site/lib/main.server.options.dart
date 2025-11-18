@@ -31,6 +31,8 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
     as _menu_toggle;
+import 'package:docs_flutter_dev_site/src/components/layout/search_bar.dart'
+    as _search_bar;
 import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
     as _site_switcher;
 import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
@@ -120,6 +122,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
     _menu_toggle.MenuToggle: ClientTarget<_menu_toggle.MenuToggle>(
       'menu_toggle',
     ),
+    _search_bar.SearchBar: ClientTarget<_search_bar.SearchBar>('search_bar'),
     _site_switcher.SiteSwitcher: ClientTarget<_site_switcher.SiteSwitcher>(
       'site_switcher',
     ),

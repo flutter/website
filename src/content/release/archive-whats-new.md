@@ -3,6 +3,7 @@ title: Archive of What's new
 description: >-
   A list of previous what's new updates on docs.flutter.dev
   and related documentation sites.
+includeInSearch: false
 ---
 
 This page contains archived announcements of

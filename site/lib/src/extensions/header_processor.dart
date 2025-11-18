@@ -62,6 +62,7 @@ final class HeaderWrapperExtension implements PageExtension {
             'class': 'heading-link',
             'href': '#$headerId',
             'aria-label': "Link to '$headerText' section",
+            'data-pagefind-ignore': '',
           },
           const [TextNode('#')],
         ),

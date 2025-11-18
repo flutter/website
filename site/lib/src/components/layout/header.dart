@@ -9,8 +9,8 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../util.dart';
 import '../../utils/active_nav.dart';
 import '../common/button.dart';
-import '../common/material_icon.dart';
 import 'menu_toggle.dart';
+import 'search_bar.dart';
 import 'site_switcher.dart';
 import 'theme_switcher.dart';
 
@@ -73,35 +73,7 @@ class DashHeader extends StatelessComponent {
         div(
           classes: 'navbar-contents',
           [
-            const form(
-              action: '/search/',
-              id: 'header-search',
-              [
-                input(
-                  classes: 'search-field',
-                  type: InputType.search,
-                  name: 'q',
-                  id: 'q',
-                  attributes: {
-                    'autocomplete': 'off',
-                    'placeholder': 'Search',
-                    'aria-label': 'Search',
-                  },
-                ),
-              ],
-            ),
-            const a(
-              id: 'fallback-search-button',
-              classes: 'icon-button',
-              href: '/search',
-              attributes: {
-                'aria-label': 'Navigate to the docs.flutter.dev search page.',
-                'title': 'Navigate to the docs.flutter.dev search page.',
-              },
-              [
-                MaterialIcon('search'),
-              ],
-            ),
+            const SearchBar(),
             const ThemeSwitcher(),
             const SiteSwitcher(),
 

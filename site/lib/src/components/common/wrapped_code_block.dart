@@ -111,6 +111,7 @@ final class WrappedCodeBlock extends StatelessComponent {
         'code-block-wrapper language-$language',
         if (collapsed) 'collapsed',
       ].toClasses,
+      attributes: {'data-pagefind-ignore': ''},
       [
         if (title case final title?)
           div(classes: 'code-block-header', [

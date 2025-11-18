@@ -32,6 +32,8 @@ import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
     deferred as _menu_toggle;
+import 'package:docs_flutter_dev_site/src/components/layout/search_bar.dart'
+    deferred as _search_bar;
 import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
     deferred as _site_switcher;
 import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
@@ -147,6 +149,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'menu_toggle': ClientLoader(
       (p) => _menu_toggle.MenuToggle(),
       loader: _menu_toggle.loadLibrary,
+    ),
+    'search_bar': ClientLoader(
+      (p) => _search_bar.SearchBar(),
+      loader: _search_bar.loadLibrary,
     ),
     'site_switcher': ClientLoader(
       (p) => _site_switcher.SiteSwitcher(),

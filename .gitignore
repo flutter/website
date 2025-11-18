@@ -24,3 +24,4 @@ tmp/
 
 # Temporary as site-shared used to be a submodule.
 site-shared/
+site/web/pagefind/

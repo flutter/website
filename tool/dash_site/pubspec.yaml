@@ -13,6 +13,7 @@ dependencies:
       url: https://github.com/dart-lang/site-shared
       path: pkgs/excerpter
       ref: f91ed8ecef6a0b31685804fe4102b25fda021460
+  http: ^1.6.0
   io: ^1.0.5
   linkcheck: ^3.1.0
   path: ^1.9.1

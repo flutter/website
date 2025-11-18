@@ -122,6 +122,12 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
           'referrerpolicy': 'no-referrer',
         },
       ),
+      const script(
+        attributes: {'type': 'module'},
+        content:
+            'const pagefind = await import("/pagefind/pagefind.js");\n'
+            'window.pagefind = pagefind;',
+      ),
 
       // Set up tag manager and analytics.
       if (productionBuild)

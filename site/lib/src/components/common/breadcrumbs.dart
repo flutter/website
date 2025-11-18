@@ -29,7 +29,11 @@ class PageBreadcrumbs extends StatelessComponent {
 
     return nav(
       classes: 'breadcrumbs',
-      attributes: {'aria-label': 'breadcrumb'},
+      attributes: {
+        'aria-label': 'breadcrumb',
+        'data-pagefind-meta': 'breadcrumbs[data-breadcrumbs]',
+        'data-breadcrumbs': crumbs.map((crumb) => crumb.title).join(';'),
+      },
       [
         ol(
           classes: 'breadcrumb-list',

@@ -35,6 +35,7 @@ class DocLayout extends FlutterDocsLayout {
         (pageData['showBanner'] as bool?) ??
         (siteData['showBanner'] as bool?) ??
         false;
+    final includeInSearch = pageData['includeInSearch'] as bool? ?? true;
     final navigationData = page.navigationData;
 
     return super.buildBody(
@@ -66,23 +67,24 @@ class DocLayout extends FlutterDocsLayout {
               aside(id: 'side-menu', [
                 DashTableOfContents(toc),
               ]),
-            article([
-              PageHeader(
-                title: pageTitle,
-                description: pageDescription,
-                showBreadcrumbs:
-                    allowBreadcrumbs &&
-                    (pageData['showBreadcrumbs'] as bool? ?? true),
-              ),
-
-              child,
-
-              PrevNext(
-                previousPage: PageNavigationEntry.fromData(pageData['prev']),
-                nextPage: PageNavigationEntry.fromData(pageData['next']),
-              ),
-              const TrailingContent(),
-            ]),
+            article(
+              attributes: {if (includeInSearch) 'data-pagefind-body': ''},
+              [
+                PageHeader(
+                  title: pageTitle,
+                  description: pageDescription,
+                  showBreadcrumbs:
+                      allowBreadcrumbs &&
+                      (pageData['showBreadcrumbs'] as bool? ?? true),
+                ),
+                child,
+                PrevNext(
+                  previousPage: PageNavigationEntry.fromData(pageData['prev']),
+                  nextPage: PageNavigationEntry.fromData(pageData['next']),
+                ),
+                const TrailingContent(),
+              ],
+            ),
           ]),
         ],
       ),
