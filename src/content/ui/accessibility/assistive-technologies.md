@@ -51,7 +51,7 @@ accessibility features, view the following video.
 <YouTubeEmbed id="ROIe49kXOc8" title="How to navigate your iPhone or iPad with VoiceOver" />
 
 </Tab>
-<Tab name="Browser">
+<Tab name="Browsers">
 
 For web, the following screen readers are currently supported:
 
