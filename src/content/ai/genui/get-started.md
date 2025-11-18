@@ -116,14 +116,11 @@ to Gemini using the Firebase AI Logic, follow these instructions:
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 4. In `pubspec.yaml`, add `genui` and `genui_firebase_ai`
-    to the `dependencies` section.
+ 4. Use `dart pub add` to add `genui` and `genui_firebase_ai` as
+    dependencies in your `pubspec.yaml` file.
 
-    ```yml
-    dependencies:
-      # ...
-      genui: ^latest_version             # Replace with the actual latest version
-      genui_firebase_ai: ^latest_version # " "
+    ```console
+    $ dart pub add genui genui_firebase_ai
     ```
 
  5. In your app's `main` method, ensure that the widget
@@ -345,21 +342,19 @@ catalog of widgets.
 
 To add your own widgets, use the following instructions.
 
- 1. Import `json_schema_builder`
+ 1. Depend on the `json_schema_builder` package
 
-    Add the `json_schema_builder` package as a dependency in `pubspec.yaml`.
-    Use the same commit reference as the one for `genui`.
+    Use `dart pub add` to add `json_schema_builder` as
+    a dependency in your `pubspec.yaml` file:
    
-    ```yml
-    dependencies:
-      # ...
-      json_schema_builder: ^latest_version # Replace with the actual latest version
+    ```console
+    $ dart pub add json_schema_builder
     ```
 
  2. Create the new widget's schema
 
     Each catalog item needs a schema that defines the data required
-    to populate it. Using the json_schema_builder package,
+    to populate it. Using the `json_schema_builder` package,
     define one for the new widget.
 
     ```dart
@@ -375,6 +370,7 @@ To add your own widgets, use the following instructions.
       required: ['question', 'answer'],
     );
     ```
+
  3. Create a `CatalogItem`
 
     Each `CatalogItem` represents a type of widget that the agent
