@@ -1,8 +1,12 @@
 ---
 title: GenUI SDK for Flutter
+shortTitle: GenUI SDK
 description: >-
   Learn how to use GenUI SDK for Flutter to build more
   interactive experiences for applications and chatbots.
+next:
+  title: GenUI SDK main components & concepts
+  path: /ai/genui/components
 ---
 
 ## What is GenUI?
