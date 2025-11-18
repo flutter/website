@@ -1,50 +1,41 @@
 ---
-title: Default Scrollbars on Desktop
+title: Default Scrollbars on Android
 description: >
-  ScrollBehaviors will now automatically build Scrollbars on Desktop platforms.
+  MaterialScrollBehavior will now automatically build Scrollbars on Android.
 ---
 
 {% render "docs/breaking-changes.md" %}
 
 ## Summary
 
-`ScrollBehavior`s now automatically apply `Scrollbar`s to
-scrolling widgets on desktop platforms - Mac, Windows and Linux.
+`MaterialScrollBehavior` will now automatically apply a `Scrollbar` to
+scrolling widgets on Android.
 
 ## Context
 
-Prior to this change, `Scrollbar`s were applied to scrolling widgets
-manually by the developer across all platforms. This did not match
-developer expectations when executing Flutter applications on desktop platforms.
+Prior to this change, `Scrollbar`s were only applied automatically to
+scrolling widgets on desktop platforms - Mac, Windows and Linux. On all
+other platforms, a `Scrollbar` could only be applied manually by the
+developer, including Android. This does not match Android's default
+behavior for scrollable `View`s nor its quality guidelines for running
+on large screens; see [Large Screen Quality Guideline T1-10].
 
-Now, the inherited `ScrollBehavior` applies a `Scrollbar` automatically
-to most scrolling widgets. This is similar to how `GlowingOverscrollIndicator`
-is created by `ScrollBehavior`. The few widgets that are exempt from this
-behavior are listed below.
-
-To provide better management and control of this feature, `ScrollBehavior`
-has also been updated. The `buildViewportChrome` method, which applied
-a `GlowingOverscrollIndicator`, has been deprecated. Instead, `ScrollBehavior`
-now supports individual methods for decorating the viewport, `buildScrollbar`
-and `buildOverscrollIndicator`. These methods can be overridden to control
-what is built around the scrollable.
-
-Furthermore, `ScrollBehavior` subclasses `MaterialScrollBehavior` and
-`CupertinoScrollBehavior` have been made public, allowing developers to extend
-and build upon the other existing `ScrollBehavior`s in the framework. These
-subclasses were previously private.
-
+Now, `MaterialScrollBehavior`, the default `ScrollBehavior` for all
+`MaterialApp`s, applies a `Scrollbar` automatically to most scrolling
+widgets. This is similar to how the inherited `ScrollBehavior`
+automatically applies a `Scrollbar` on all desktop platforms. The few
+widgets that are exempt from this behavior are listed below.
 
 ## Description of change
 
-<!-- TODO(camsim99): Remove scrollcontrollers from tests where I can -->
-
-The previous approach called on developers to create their own `Scrollbar`s on
-all platforms. In some use cases, a `ScrollController` would need to be provided
-to the `Scrollbar` and the scrollable widget.
+The previous approach called on developers to create their own `Scrollbar`s
+on all non-desktop platforms, including Android. In some use cases, a
+`ScrollController` would need to be provided to the `Scrollbar` and
+the scrollable widget.
 
 ```dart
 final ScrollController controller = ScrollController();
+
 Scrollbar(
   controller: controller,
   child: ListView.builder(
@@ -56,15 +47,33 @@ Scrollbar(
 );
 ```
 
-`MaterialScrollBehavior`, used by default by `MaterialApp`,
- now applies a `Scrollbar` automatically
-when executing on Android, and handles providing the `ScrollController`
-to the `Scrollbar` for you.
+Now, you can specify a `ScrollConfiguration` with the `MaterialScrollBehavior`
+scroll behavior to build a `Scrollbar` automatically on Android:
+
+```dart
+WidgetsApp(
+  builder: (context, child) {
+    return ScrollConfiguration(
+      behavior: MaterialScrollBehavior(),
+      child: ListView.builder(
+        controller: controller,
+        itemBuilder: (BuildContext context, int index) {
+          return Text('Item $index');
+        },
+      ),
+    );
+  },
+);
+```
+
+`MaterialScrollBehavior`, the scroll behavior that `MaterialApp` applies by default,
+now applies a `Scrollbar` automatically when executing on Android,
+and handles providing the `ScrollController` to the `Scrollbar`
+for you.
 
 ```dart
 final ScrollController controller = ScrollController();
 
-// If using MaterialApp...
 MaterialApp(
 home: ListView.builder(
     controller: controller,
@@ -73,32 +82,18 @@ home: ListView.builder(
     }
   ),
 );
-
-// Otherwise...
-WidgetsApp(
-  scrollBehavior: MaterialScrollBehavior(),
-  home: ListView.builder(
-      controller: controller,
-      itemBuilder: (BuildContext context, int index) {
-      return Text('Item $index');
-      }
-  ),
-);
 ```
 
-<!-- TODO(camsim99): double check this -->
-Some widgets in the framework are exempt from
-this automatic `Scrollbar` application.
-They are:
+Some widgets in the framework are exempt from this automatic `Scrollbar`
+application. They are:
 
 - `EditableText`, when `maxLines` is 1.
 - `ListWheelScrollView`
 - `PageView`
-- `NestedScrollView`
 
-Since `MaterialApp` automatically uses `MaterialScrollBehavior`, and thus,
-will automatically apply a `Scrollbar`, you must override the `MaterialApp`'s
-`scrollBehavior` parameter to choose otherwise or customize the `Scrollbar`
+Since `MaterialApp` automatically uses `MaterialScrollBehavior`,
+you must override the `MaterialApp`'s `scrollBehavior` parameter
+to choose a different `ScrollBehavior` or customize the `Scrollbar`
 shown. 
 
 This change did not cause any test failures, crashes, or error messages
@@ -116,12 +111,9 @@ control and configure this feature.
 
   - With your own `ScrollBehavior`, you can apply it app-wide by setting
     `MaterialApp.scrollBehavior`.
-    <!-- TODO(camsim99): check that this works -->
   - Or, if you wish to only apply it to specific widgets, add a
     `ScrollConfiguration` above the widget in question with your
     custom `ScrollBehavior`.
-
-Your scrollable widgets then inherits this and reflects this behavior.
 
 - Instead of creating your own `ScrollBehavior`, another option for changing
   the default behavior is to copy the existing `ScrollBehavior`, and toggle the
@@ -132,35 +124,43 @@ Your scrollable widgets then inherits this and reflects this behavior.
 
 ## Migration guide
 
-### Removing manual `Scrollbar`s on Android
-
-Code before migration:
+Before migration, if you are using a `MaterialApp`, you may have some code
+that looks like:
 
 ```dart
 final ScrollController controller = ScrollController();
-Scrollbar(
-  controller: controller,
-  child: ListView.builder(
+
+MaterialApp(
+  home: Scrollbar(
     controller: controller,
-    itemBuilder: (BuildContext context, int index) {
-      return Text('Item $index');
-    }
+    child: ListView.builder(
+      controller: controller,
+      itemBuilder: (BuildContext context, int index) {
+        return Text('Item $index');
+      }
+    )
   )
 );
 ```
+
+See the following strategies for how to migrate this code.
+
+### Removing manual `Scrollbar`s on Android when using `MaterialApp`
 
 Code after migration:
 
 ```dart
 final ScrollController controller = ScrollController();
+
 final Widget child = ListView.builder(
   controller: controller,
   itemBuilder: (BuildContext context, int index) {
     return Text('Item $index');
   }
 );
-// Only manually add a `Scrollbar` when not on Android or desktop platforms.
-// Or, see other migrations for changing `ScrollBehavior`.
+
+// Only manually add a `Scrollbar` when not on Android or desktop platforms,
+// or see other migrations for changing `ScrollBehavior`.
 switch (currentPlatform) {
   case TargetPlatform.linux:
   case TargetPlatform.macOS:
@@ -174,54 +174,45 @@ switch (currentPlatform) {
       child: child;
     );
 }
+
+MaterialApp(home: child);
 ```
 
 ### Setting a custom `ScrollBehavior` for your application
 
-Code before migration:
-
-```dart
-MaterialApp(
-  // ...
-);
-```
-
 Code after migration:
 
 ```dart
+// Extend any `ScrollBehavior` that you would like.
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
-  // Override behavior methods like buildOverscrollIndicator and buildScrollbar
+  // Override behavior methods like buildOverscrollIndicator and buildScrollbar.
 }
 
-// ScrollBehavior can now be configured for an entire application.
+// MyCustomScrollBehavior can now be configured for an entire application.
+final ScrollController controller = ScrollController();
 MaterialApp(
   scrollBehavior: MyCustomScrollBehavior(),
-  // ...
+  home: ListView.builder(
+        controller: controller,
+        itemBuilder: (BuildContext context, int index) {
+          return Text('Item $index');
+        }
+  )
 );
 ```
 
 ### Setting a custom `ScrollBehavior` for a specific widget
 
-Code before migration:
-
-```dart
-final ScrollController controller = ScrollController();
-ListView.builder(
-  controller: controller,
-  itemBuilder: (BuildContext context, int index) {
-   return Text('Item $index');
- }
-);
-```
-
 Code after migration:
 
 ```dart
+// Extend any `ScrollBehavior` that you would like.
 class MyCustomScrollBehavior extends MaterialScrollBehavior {
-  // Override behavior methods like buildOverscrollIndicator and buildScrollbar
+  // Override behavior methods like buildOverscrollIndicator and buildScrollbar.
 }
 
-// ScrollBehavior can be set for a specific widget.
+
+// MyCustomScrollBehavior can be set for a specific widget.
 final ScrollController controller = ScrollController();
 ScrollConfiguration(
   behavior: MyCustomScrollBehavior(),
@@ -234,20 +225,7 @@ ScrollConfiguration(
 );
 ```
 
-<!-- TOOD(camsim99): check -->
 ### Copy and modify existing `ScrollBehavior`
-
-Code before migration:
-
-```dart
-final ScrollController controller = ScrollController();
-ListView.builder(
-  controller: controller,
-  itemBuilder: (BuildContext context, int index) {
-   return Text('Item $index');
- }
-);
-```
 
 Code after migration:
 
@@ -267,8 +245,8 @@ ScrollConfiguration(
 
 ## Timeline
 
-Landed in version: ?????<br>
-In stable release: ????
+Landed in version: 3.40.0-0.1.pre<br>
+In stable release: 3.40.0
 
 ## References
 
@@ -277,26 +255,20 @@ API documentation:
 * [`ScrollConfiguration`][]
 * [`ScrollBehavior`][]
 * [`MaterialScrollBehavior`][]
-* [`CupertinoScrollBehavior`][]
 * [`Scrollbar`][]
-* [`CupertinoScrollbar`][]
 
 Relevant issues:
 
-* [Issue #40107][]???????
+* [Issue #170540][]
 
 Relevant PRs:
 
-* [Exposing ScrollBehaviors for app-wide settings][]??????
+* [Modify MaterialScrollBehavior to show scrollbar by default][]
 
-
+[Large Screen Quality Guideline T1-10]: https://developer.android.com/docs/quality-guidelines/large-screen-app-quality#T1-10
 [`ScrollConfiguration`]: {{site.api}}/flutter/widgets/ScrollConfiguration-class.html
 [`ScrollBehavior`]: {{site.api}}/flutter/widgets/ScrollBehavior-class.html
 [`MaterialScrollBehavior`]: {{site.api}}/flutter/material/MaterialScrollBehavior-class.html
-[`CupertinoScrollBehavior`]: {{site.api}}/flutter/cupertino/CupertinoScrollBehavior-class.html
 [`Scrollbar`]: {{site.api}}/flutter/material/Scrollbar-class.html
-[`CupertinoScrollbar`]: {{site.api}}/flutter/cupertino/CupertinoScrollbar-class.html
-[Issue #40107]: {{site.repo.flutter}}/issues/40107
-[Issue #70866]: {{site.repo.flutter}}/issues/70866
-[Exposing ScrollBehaviors for app-wide settings]: {{site.repo.flutter}}/pull/76739
-[Automatically applying Scrollbars on desktop platforms with configurable ScrollBehaviors]: {{site.repo.flutter}}/pull/78588
+[Issue #170540]: {{site.repo.flutter}}/issues/170540
+[Modify MaterialScrollBehavior to show scrollbar by default]: {{site.repo.flutter}}/pull/178308
