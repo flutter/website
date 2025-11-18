@@ -7,11 +7,24 @@ description: >-
 ---
 
 <div class="card-grid">
-{% for card in docsCards -%}
-  <Card title="{{card.name}}" link="{{card.url}}" outlined="true">
-    {{card.description}}
+  <Card title="Get started" link="/get-started" outlined="true">
+    Set up your environment and start building.
   </Card>
-{% endfor -%}
+  <Card title="Widget catalog" link="" outlined="true">
+    Dip into the rich set of Flutter widgets available in the SDK.
+  </Card>
+  <Card title="API docs" link="{{site.api}}" outlined="true">
+    Bookmark the API reference docs for the Flutter framework.
+  </Card>
+  <Card title="Learning resources" link="" outlined="true">
+    Browse sample code, tutorials, and how-tos.
+  </Card>
+  <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
+    View the many videos on the Flutter YouTube channel.
+  </Card>
+  <Card title="Create with AI" link="/ai/create-with-ai" outlined="true">
+    Learn how to build with and integrate powerful AI tools.
+  </Card>
 </div>
 
 **To see changes to the site since our last release,
