@@ -7,8 +7,10 @@
   border-bottom: 0.1rem solid var(--site-outline-variant);
 
   @media (min-width: 1200px) {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-    border-bottom: none;
+    &:not(:has(~* #site-subheader.show-always)) {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+      border-bottom: none;
+    }
   }
 
   .navbar {

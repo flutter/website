@@ -14,14 +14,14 @@ import '../../util/component_ref.dart';
 @client
 class PageNav extends StatefulComponent {
   const PageNav({
-    this.label,
-    required this.title,
+    this.breadcrumbs = const [],
+    required this.initialHeading,
     required this.content,
     super.key,
   });
 
-  final String? label;
-  final String title;
+  final List<String> breadcrumbs;
+  final String initialHeading;
   final ComponentRef content;
 
   @override
@@ -65,21 +65,34 @@ class _PageNavState extends State<PageNav> {
           'aria-label': 'Toggle the table of contents dropdown',
         },
         [
-          span(classes: 'toc-intro', [
-            const MaterialIcon('list'),
-            span(
-              attributes: {'aria-label': component.label ?? 'On this page'},
-              [
-                text(component.label ?? 'On this page'),
-              ],
-            ),
-          ]),
+          if (component.breadcrumbs.isEmpty)
+            span(classes: 'toc-intro', [
+              const MaterialIcon('list'),
+              span(
+                attributes: {'aria-label': 'On this page'},
+                [text('On this page')],
+              ),
+            ])
+          else ...[
+            for (final (index, crumb) in component.breadcrumbs.indexed) ...[
+              span(classes: 'toc-breadcrumb', [
+                if (index == 0)
+                  const MaterialIcon('list')
+                else
+                  const MaterialIcon('chevron_right'),
+                span([
+                  text(crumb),
+                ]),
+              ]),
+            ],
+          ],
+
           span(classes: 'toc-current', [
             const MaterialIcon('chevron_right'),
             ValueListenableBuilder(
               listenable: currentPageHeading,
               builder: (context, value) {
-                return span([text(value ?? component.title)]);
+                return span([text(value ?? component.initialHeading)]);
               },
             ),
           ]),

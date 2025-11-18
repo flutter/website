@@ -170,7 +170,8 @@ Map<String, dynamic> _prefix8DartPadInjector(prefix8.DartPadInjector c) => {
   'runAutomatically': c.runAutomatically,
 };
 Map<String, dynamic> _prefix9PageNav(prefix9.PageNav c) => {
-  'title': c.title,
+  'breadcrumbs': c.breadcrumbs,
+  'initialHeading': c.initialHeading,
   'content': c.content.toId(),
 };
 Map<String, dynamic> _prefix13ArchiveTable(prefix13.ArchiveTable c) => {

@@ -1,6 +1,7 @@
 #pagenav {
   flex-grow: 1;
   min-width: 0;
+  max-width: 100%;
 
   >button.dropdown-button {
     display: flex;
@@ -25,27 +26,36 @@
     }
   }
 
-  .toc-intro {
+  .toc-breadcrumb {
+    flex-shrink: 2;
     white-space: nowrap;
+    overflow: hidden;
 
-    .material-symbols {
+    &:first-child .material-symbols {
       margin-right: 0.25rem;
+    }
+
+    span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .toc-current {
-    display: none;
-
-    @media (min-width: 320px) {
-      display: flex;
-    }
-
-    flex-wrap: nowrap;
+    flex-shrink: 1;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 
     color: var(--site-base-fgColor-alt);
+
+    @media (max-width: 320px) {
+      display: none !important;
+    }
+
+    span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   #pagenav-content {
@@ -137,7 +147,7 @@
         color: var(--site-primary-color);
       }
 
-      ~ nav {
+      ~nav {
         padding: 0;
       }
     }
