@@ -32,11 +32,11 @@ rule file or directory names:
 | Environment          | Rules file or directory           | Configuration instructions                            |
 |:---------------------|:----------------------------------|:------------------------------------------------------|
 | Copilot-powered IDEs | `.github/copilot-instructions.md` | [Configure instructions for Copilot][copilot]         |
-| Claude Code          | `CLAUDE.md`                       | [Configure rules for Claude Code][claude]             |          
+| Claude Code          | `CLAUDE.md`                       | [Configure rules for Claude Code][claude]             |
 | Cursor               | `AGENTS.md`                       | [Configure rules in Cursor][cursor]                   |
 | Firebase Studio      | `.idx/airules.md`                 | [Configure instructions in Firebase Studio][firebase] |
 | Gemini CLI           | `GEMINI.md`                       | [Configure context in Gemini CLI][gemini-cli]         |
-| Google Antigravity   | `.agent/rules/<rule-name>.md`     | [Configure rules for Antigravity Agent][antigravity]  |                   
+| Google Antigravity   | `.agent/rules/<rule-name>.md`     | [Configure rules for Antigravity Agent][antigravity]  |
 | JetBrains IDEs       | `.junie/guidelines.md`            | [Configure guidelines for Junie][junie]               |
 | VS Code              | `.instructions.md`                | [Configure instructions in VS Code][vs-code]          |
 | Windsurf             | `.windsurf/rules/<rule-name>.md`  | [Configure rules in Windsurf][windsurf]               |
@@ -56,7 +56,7 @@ the most up-to-date naming conventions and instructions.
 [gemini-cli]: https://geminicli.com/docs/cli/gemini-md
 [antigravity]: https://antigravity.google/docs/rules
 [junie]: https://www.jetbrains.com/help/junie/customize-guidelines.html
-[vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions
+[vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-instructionsmd-files
 [windsurf]: https://docs.windsurf.com/windsurf/cascade/memories#rules
 
 ## Create rules for your editor
