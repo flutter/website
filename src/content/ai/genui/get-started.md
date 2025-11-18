@@ -37,9 +37,8 @@ Available providers include the following:
   without requiring a server. Firebase also makes it easier to
   ship your AI features securely since Firebase handles the
   management of your Gemini API key.
-- **A2UI**: Useful for client/server architectures where your
-  agent is running on the server. (This package is under development
-  and will be open sources soon.)
+- **GenUI A2UI**: Useful for client/server architectures where your
+  agent is running on the server.
 - **Build your own**: You can also build your own adapter
   to connect to your preferred LLM provider. Expect more from
   us and the community soon.
@@ -100,7 +99,8 @@ consider using Firebase AI logic instead.
 
 [`genui_google_generative_ai`]: {{site.pub-pkg}}/genui_google_generative_ai
 [`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
-[A2UI]: {{site.pub-pkg}}/a2ui
+[`genui_a2ui`]: {{site.pub-pkg}}/genui_a2ui
+[GenUI A2UI]:   {{site.pub-pkg}}/genui_a2ui
 
 </Tab>
 
@@ -143,11 +143,14 @@ to Gemini using the Firebase AI Logic, follow these instructions:
 
 </Tab>
 
-<Tab name="A2UI">
+{% comment %}
+<Tab name="GenUI A2UI">
 
-The [A2UI][] package is coming. Stay tuned!
+An integration package for [`genui`][] and the 
+[A2UI Streaming UI Protocol][].
 
 </Tab>
+{% endcomment %}
 
 <Tab name="Build your own">
 
