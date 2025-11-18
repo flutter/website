@@ -4,7 +4,7 @@
   border: 1px solid var(--site-inset-borderColor);
 
   header {
-    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    padding: 1rem 1.2rem 1.2rem;
 
     h3 {
       margin: 0;
@@ -24,10 +24,10 @@
     gap: 1rem;
 
     border-top: 1px solid var(--site-inset-borderColor);
-    padding: .8rem 1.2rem;
+    padding: 0.8rem 1.2rem;
 
     >:first-child {
-      font-size: .875rem;
+      font-size: 0.875rem;
       background-color: var(--site-primary-color-highlight);
       color: var(--site-primary-color);
       border-radius: 0.5rem;
@@ -48,6 +48,8 @@
 
     summary {
       margin: 0;
+      cursor: pointer;
+      list-style: none;
 
       >.material-symbols {
         transition: transform .25s ease-out;
