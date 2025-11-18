@@ -3,8 +3,10 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 
-import '../../models/on_this_page_model.dart';
+import '../../models/page_navigation_model.dart';
+import '../../util.dart';
 import '../common/client/on_this_page_button.dart';
 import '../common/material_icon.dart';
 import '../util/component_ref.dart';
@@ -13,7 +15,7 @@ import 'client/pagenav.dart';
 final class DashTableOfContents extends StatelessComponent {
   const DashTableOfContents(this.data);
 
-  final OnThisPageData data;
+  final TocNavigationData data;
 
   @override
   Component build(BuildContext _) {
@@ -22,38 +24,86 @@ final class DashTableOfContents extends StatelessComponent {
       _TocContents(data),
     ]);
   }
+}
 
-  static Component asDropdown(
-    OnThisPageData data, {
-    required String currentTitle,
-  }) {
-    return Builder(
-      builder: (context) {
-        return PageNav(
-          title: currentTitle,
-          content: context.ref(
-            div([
-              a(
-                href: '#site-content-title',
-                id: 'return-to-top',
-                [
-                  const MaterialIcon('vertical_align_top'),
-                  span([text(currentTitle)]),
-                ],
-              ),
-              div(
-                classes: 'dropdown-divider',
-                attributes: {'aria-hidden': 'true', 'role': 'separator'},
-                [],
-              ),
+final class PageNavBar extends StatelessComponent {
+  const PageNavBar(this.data);
+
+  final PageNavigationData data;
+
+  @override
+  Component build(BuildContext context) {
+    final currentLinkedPage = data.pageEntries
+        .where((page) => page.url == context.page.url)
+        .firstOrNull;
+
+    final linkedPageTitle = currentLinkedPage?.title;
+    final currentTitle = context.page.data.page['title'] as String;
+
+    var pageEntryNumber = 1;
+
+    return PageNav(
+      label: linkedPageTitle,
+      title: currentTitle,
+      content: context.ref(
+        div([
+          if (data.pageEntries.isEmpty) ...[
+            a(
+              href: '#site-content-title',
+              id: 'return-to-top',
+              [
+                const MaterialIcon('vertical_align_top'),
+                span([text(currentTitle)]),
+              ],
+            ),
+            div(
+              classes: 'dropdown-divider',
+              attributes: {'aria-hidden': 'true', 'role': 'separator'},
+              [],
+            ),
+            if (data.toc != null)
               nav(
                 attributes: {'role': 'menu'},
-                [_TocContents(data)],
+                [_TocContents(data.toc!)],
               ),
-            ]),
-          ),
-        );
-      },
+          ] else ...[
+            for (final page in data.pageEntries) ...[
+              if (!page.isDivider) ...[
+                a(
+                  classes: [
+                    'page-link',
+                    if (page == currentLinkedPage) 'active',
+                  ].toClasses,
+                  href: page.url,
+                  attributes: {'role': 'menuitem'},
+                  [
+                    span(classes: 'page-number', [
+                      text('${pageEntryNumber++}'),
+                    ]),
+                    text(page.title),
+                  ],
+                ),
+                if (currentLinkedPage == page && data.toc != null)
+                  nav(
+                    attributes: {'role': 'menu'},
+                    [_TocContents(data.toc!)],
+                  ),
+              ] else ...[
+                if (page != data.pageEntries.first)
+                  div(
+                    classes: 'dropdown-divider',
+                    attributes: {'aria-hidden': 'true', 'role': 'separator'},
+                    [],
+                  ),
+                div(
+                  classes: 'page-divider',
+                  [text(page.title)],
+                ),
+              ],
+            ],
+          ],
+        ]),
+      ),
     );
   }
 }
@@ -61,7 +111,7 @@ final class DashTableOfContents extends StatelessComponent {
 final class _TocContents extends StatelessComponent {
   const _TocContents(this.data);
 
-  final OnThisPageData data;
+  final TocNavigationData data;
 
   @override
   Component build(BuildContext _) => ul(
@@ -69,7 +119,7 @@ final class _TocContents extends StatelessComponent {
     _buildEntries(data.topLevelEntries, 0),
   );
 
-  List<Component> _buildEntries(List<OnThisPageEntry> entries, int depth) {
+  List<Component> _buildEntries(List<TocNavigationEntry> entries, int depth) {
     final nextDepth = depth + 1;
 
     return [

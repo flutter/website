@@ -14,11 +14,13 @@ import '../../util/component_ref.dart';
 @client
 class PageNav extends StatefulComponent {
   const PageNav({
+    this.label,
     required this.title,
     required this.content,
     super.key,
   });
 
+  final String? label;
   final String title;
   final ComponentRef content;
 
@@ -66,9 +68,9 @@ class _PageNavState extends State<PageNav> {
           span(classes: 'toc-intro', [
             const MaterialIcon('list'),
             span(
-              attributes: {'aria-label': 'On this page'},
+              attributes: {'aria-label': component.label ?? 'On this page'},
               [
-                text('On this page'),
+                text(component.label ?? 'On this page'),
               ],
             ),
           ]),

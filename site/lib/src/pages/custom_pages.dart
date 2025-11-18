@@ -76,6 +76,7 @@ MemoryPage get _fweTestingPage => const MemoryPage(
 title: FWE Testing Page
 description: This is a test page for experimenting with First Week Experience (FWE) features.
 sitemap: false
+layout: tutorial
 ---
 
 ## Quiz

@@ -4,6 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 
+import '../../models/page_navigation_model.dart';
 import 'material_icon.dart';
 
 /// Previous and next page buttons to display at the end of a page
@@ -11,8 +12,8 @@ import 'material_icon.dart';
 class PrevNext extends StatelessComponent {
   const PrevNext({super.key, this.previousPage, this.nextPage});
 
-  final ({String url, String title})? previousPage;
-  final ({String url, String title})? nextPage;
+  final PageNavigationEntry? previousPage;
+  final PageNavigationEntry? nextPage;
 
   @override
   Component build(BuildContext context) {
@@ -32,7 +33,7 @@ class PrevNext extends StatelessComponent {
 class _PrevNextCard extends StatelessComponent {
   const _PrevNextCard({required this.page, required this.isPrevious});
 
-  final ({String url, String title}) page;
+  final PageNavigationEntry page;
   final bool isPrevious;
 
   @override

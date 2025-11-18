@@ -186,7 +186,9 @@ body.open_menu #menu-toggle span.material-symbols {
   border-bottom: 0.1rem solid var(--site-outline-variant);
   box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
 
-  @media (width < 240px), (width >= 1200px) {
-    display: none;
+  &:not(.show-always) {
+    @media (width < 240px), (width >= 1200px) {
+      display: none;
+    }
   }
 }

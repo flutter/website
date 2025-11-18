@@ -26,6 +26,7 @@ import 'src/extensions/registry.dart';
 import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
 import 'src/layouts/toc_layout.dart';
+import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
 import 'src/markdown/markdown_parser.dart';
 import 'src/pages/custom_pages.dart';
@@ -66,7 +67,12 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     rawOutputPattern: _passThroughPattern,
     extensions: allNodeProcessingExtensions,
     components: _embeddableComponents,
-    layouts: const [DocLayout(), TocLayout(), CatalogPageLayout()],
+    layouts: const [
+      DocLayout(),
+      TocLayout(),
+      CatalogPageLayout(),
+      TutorialLayout(),
+    ],
     theme: const ContentTheme.none(),
     secondaryOutputs: [
       const RobotsTxtOutput(),

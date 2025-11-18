@@ -8,8 +8,10 @@ body {
   color: var(--site-base-fgColor);
 
   // The top TOC is not shown on narrow screens.
-  @media (min-width: 1200px) {
-    --site-subheader-height: 0rem;
+  &:not(:has(#toc-top.show-always)) {
+    @media (min-width: 1200px) {
+      --site-subheader-height: 0rem;
+    }
   }
 
   // If the TOC is disabled, reduce the subheader height to
