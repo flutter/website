@@ -21,11 +21,11 @@ class DevToolsReleaseNotesIndex extends StatelessComponent {
       'release-notes-',
     ]);
     return context.pages
-        .where((p) => p.path.startsWith(releaseNotesPrefix))
+        .where((page) => page.path.startsWith(releaseNotesPrefix))
         .map(
-          (p) => (
-            version: Version.parse(p.data.page['breadcrumb'] as String),
-            page: p,
+          (page) => (
+            version: Version.parse(page.data.page['breadcrumb'] as String),
+            page: page,
           ),
         )
         .sortedBy((e) => e.version)
