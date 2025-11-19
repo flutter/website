@@ -21,7 +21,7 @@ best practices for building Flutter apps.
 It's a broad term and can refer to any number
 of topics depending on the context. In this guide,
 'architecture' refers to how to structure, organize, and design
-your Flutter app in order to scale as your project requirements and team grow.
+your Flutter app in order to scale as your project requirements and team growth.
 
 </div>
 <div class="centered-rows">
