@@ -134,12 +134,15 @@ The `config` argument is an object that can have the following optional fields:
 
 ## forceSingleThreadedSkwasm
 
-A boolean flag to force the Skia WebAssembly (skwasm) renderer to run in
-**single-threaded mode**. This is useful if:
+A boolean flag to force the Skia WebAssembly (skwasm) renderer 
+to run in **single-threaded mode**. This is useful if:
 
-- Your environment does not support multi-threaded WASM (for example, `SharedArrayBuffer` is not available or required security headers are missing).  
+- Your environment does not support multi-threaded WASM (for example,
+ `SharedArrayBuffer` is not available or required security
+ headers are missing).  
 - You want maximum browser compatibility.
-- - Use `false` (default) to allow multi-threaded rendering when supported, which improves performance.
+- Use `false` (default) to allow multi-threaded rendering when
+  supported, which improves performance.
 
 ## Example usage
 
