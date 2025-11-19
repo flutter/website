@@ -396,7 +396,7 @@ Follow these instructions:
     ```
 
 The [example][] directory on pub.dev contains a
-complete application demonstratinng how to use this package.
+complete application demonstrating how to use this package.
 
 [example]: {{site.pub-pkg}}/genui_a2ui/example
 [A2UI Streaming UI Protocol]: https://a2ui.org/
