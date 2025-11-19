@@ -1,7 +1,7 @@
 .tooltip-wrapper {
   position: relative;
 
-  .tooltip-target a {
+  .tooltip-target:has(+.tooltip) a {
     color: inherit;
     text-decoration: underline;
     text-decoration-style: dotted;
