@@ -111,9 +111,9 @@ You can style a button based on its state using `WidgetStateProperty`.
 
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/ElevatedButton.webp",
-caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
-alt: "A GIF of an elevated button with the text 'Enabled'"
+image: "fwe/user-input/ElevatedButton.webp",
+caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked.",
+alt: "A GIF of an elevated button with the text 'Enabled'",
 code:"
 ```dart
 int count = 0;
@@ -166,9 +166,9 @@ but doesn't allow users to highlight or copy the text.
 `SelectableText` displays a string of _user-selectable_ text.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/SelectableText.webp",
-caption: "This figure shows a cursor highlighting a portion of a string of text."
-alt: 'A GIF of a cursor highlighting two lines of text from a paragraph.'
+image: "fwe/user-input/SelectableText.webp",
+caption: "This figure shows a cursor highlighting a portion of a string of text.",
+alt: 'A GIF of a cursor highlighting two lines of text from a paragraph.',
 code:"
 ```dart
 @override
@@ -196,9 +196,9 @@ different text styles. It's not for handling user input,
 but is useful if you're allowing users edit and format text.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/RichText.png",
-caption: "This figure shows a string of text formatted with different text styles."
-alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
+image: "fwe/user-input/RichText.png",
+caption: "This figure shows a string of text formatted with different text styles.",
+alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.',
 code:"
 ```dart
 @override
@@ -252,9 +252,9 @@ The class supports other configurable properties, such as
 `readOnly` which prevents the user from changing the text.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/TextField.webp",
-caption: "This figure shows text being typed into a TextField with a selected border and label."
-alt: "A GIF of a text field with the label 'Mascot Name', purple focus border and the phrase 'Dash the hummingbird' being typed in."
+image: "fwe/user-input/TextField.webp",
+caption: "This figure shows text being typed into a TextField with a selected border and label.",
+alt: "A GIF of a text field with the label 'Mascot Name', purple focus border and the phrase 'Dash the hummingbird' being typed in.",
 code:"
 ```dart
 final TextEditingController _controller = TextEditingController();
@@ -396,14 +396,13 @@ A `SegmentedButton` has a few relevant properties:
   providing a way to configure a `selectedIcon`.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/segmented-button.webp",
+image: "fwe/user-input/segmented-button.webp",
 caption: "This figure shows a SegmentedButton, each segment with an icon and
-text representing its value."
+text representing its value.",
 alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year.
 Each has a calendar icon to represent its value and a text label.
-Day is first selected, then week and month, then year."
+Day is first selected, then week and month, then year.",
 code:"
-
 ```dart
 enum Calendar { day, week, month, year }
 
@@ -471,11 +470,11 @@ multiple horizontal or vertical runs, to make sure your chips wrap and
 don't get cut off at the edge of your app.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/chip.png",
+image: "fwe/user-input/chip.png",
 caption: "This figure shows two rows of Chip widgets, each containing a circular
-leading profile image and content text."
+leading profile image and content text.",
 alt: "A screenshot of 4 Chips split over two rows with a leading circular
-profile image with content text."
+profile image with content text.",
 code:"
 ```dart
 @override
@@ -541,12 +540,12 @@ Configuration parameters include the following:
   customizing the widget's look and behavior.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/dropdownmenu.webp",
+image: "fwe/user-input/dropdownmenu.webp",
 caption: "This figure shows a DropdownMenu widget with 5 value options. Each
-option's text color is styled to represent the color value."
+option's text color is styled to represent the color value.",
 alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options:
 Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color
-of its value."
+of its value.",
 code:"
 ```dart
 enum ColorLabel {
@@ -615,12 +614,12 @@ Configuration parameters for the `Slider` widget:
 
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/slider.webp",
+image: "fwe/user-input/slider.webp",
 caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0
 broken up into 5 divisions. It shows the current value as a label as the dial
-is dragged."
+is dragged.",
 alt: "A GIF of a slider that has the dial dragged left to right in increments
-of 1, from 0.0 to 5.0"
+of 1, from 0.0 to 5.0",
 code:"
 ```dart
 double _currentVolume = 1;
@@ -682,10 +681,10 @@ The configuration for `Checkbox` and `Switch` contain:
 ### Checkbox
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/checkbox.webp",
-caption: "This figure shows a checkbox being checked and unchecked."
+image: "fwe/user-input/checkbox.webp",
+caption: "This figure shows a checkbox being checked and unchecked.",
 alt: "A GIF that shows a pointer clicking a checkbox
-and then clicking again to uncheck it."
+and then clicking again to uncheck it.",
 code:"
 ```dart
 bool isChecked = false;
@@ -708,11 +707,11 @@ Widget build(BuildContext context) {
 ### Switch
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/Switch.webp",
-caption: "This figure shows a Switch widget that is toggled on and off."
+image: "fwe/user-input/Switch.webp",
+caption: "This figure shows a Switch widget that is toggled on and off.",
 alt: "A GIF of a Switch widget that is toggled on and off. In its off state,
 it is gray with dark gray borders. In its on state,
-it is red with a light red border."
+it is red with a light red border.",
 code:"
 ```dart
 bool light = true;
@@ -748,11 +747,11 @@ the other radio buttons are unselected.
   gets triggered when users click it, like `Switch` and `Checkbox`.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/Radio.webp",
+image: "fwe/user-input/Radio.webp",
 caption: "This figure shows a column of ListTiles containing a radio button and
-label, where only one radio button can be selected at a time."
+label, where only one radio button can be selected at a time.",
 alt: "A GIF of 4 ListTiles in a column, each containing a leading Radio button
-and title text. The Radio buttons are selected in order from top to bottom."
+and title text. The Radio buttons are selected in order from top to bottom.",
 code:"
 ```dart
 enum Character { musician, chef, firefighter, artist }
@@ -810,12 +809,12 @@ These convenience widgets are the same checkbox and switch widgets,
 but support a label (as a `ListTile`).
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/SpecialListTiles.webp",
+image: "fwe/user-input/SpecialListTiles.webp",
 caption: "This figure shows a column containing a CheckboxListTile and
-a SwitchListTile being toggled."
+a SwitchListTile being toggled.",
 alt: "A ListTile with a leading icon, title text, and a trailing checkbox being
 checked and unchecked. It also shows a ListTile with a leading icon, title text
-and a switch being toggled on and off."
+and a switch being toggled on and off.",
 code:"
 ```dart
 double timeDilation = 1.0;
@@ -893,12 +892,12 @@ which returns a `Future<DateTime>`,
 so don't forget to await the asynchronous function call!
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/DatePicker.webp",
+image: "fwe/user-input/DatePicker.webp",
 caption: "This figure shows a DatePicker that is displayed when the
-'Pick a date' button is clicked."
+'Pick a date' button is clicked.",
 alt: "A GIF of a pointer clicking a button that says 'Pick a date',
 then shows a date picker. The date Friday, August 30 is selected and the 'OK'
-button is clicked."
+button is clicked.",
 code:"
 ```dart
 DateTime? selectedDate;
@@ -910,7 +909,7 @@ Widget build(BuildContext context) {
   return Column(children: [
     Text(
       date == null
-          ? "You haven't picked a date yet."
+          ? 'You haven\\\'t picked a date yet.'
           : DateFormat('MM-dd-yyyy').format(date),
     ),
     ElevatedButton.icon(
@@ -944,12 +943,12 @@ Instead of returning a `Future<DateTime>`,
 Once again, don't forget to await the function call!
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/TimePicker.webp",
+image: "fwe/user-input/TimePicker.webp",
 caption: "This figure shows a TimePicker that is displayed when the
-'Pick a time' button is clicked."
+'Pick a time' button is clicked.",
 alt: "A GIF of a pointer clicking a button that says 'Pick a time', then shows
  a time picker. The time picker shows a circular clock as the cursor moves the
- hour hand, then minute hand, selects PM, then the 'OK' button is clicked."
+ hour hand, then minute hand, selects PM, then the 'OK' button is clicked.",
 code:"
 ```dart
 TimeOfDay? selectedTime;
@@ -960,7 +959,7 @@ Widget build(BuildContext context) {
 
   return Column(children: [
     Text(
-      time == null ? "You haven't picked a time yet." : time.format(context),
+      time == null ? 'You haven\\\'t picked a time yet.' : time.format(context),
     ),
     ElevatedButton.icon(
       icon: const Icon(Icons.calendar_today),
@@ -1015,11 +1014,11 @@ It has a number of configuration parameters, including:
   identified from sibling `Dismissible` widgets in the widget tree.
 
 {% render "docs/code-and-image.md",
-image:"fwe/user-input/Dismissible.webp",
+image: "fwe/user-input/Dismissible.webp",
 caption: "This figure shows a list of Dismissible widgets that each contain a
 ListTile. Swiping across the ListTile reveals a green background and makes the tile
-disappear."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+disappear.",
+alt: "A screenshot of three widgets, spaced evenly from each other.",
 code:"
 ```dart
 List<int> items = List<int>.generate(100, (int index) => index);
