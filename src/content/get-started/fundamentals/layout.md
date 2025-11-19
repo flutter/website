@@ -203,9 +203,9 @@ The first figure on this page used both.
 This is the most basic example of using a `Row` widget.
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/row.png",
-caption: "This figure shows a row widget with three children."
-alt: "A screenshot of a row widget with three children"
+image: "fwe/layout/row.png",
+caption: "This figure shows a row widget with three children.",
+alt: "A screenshot of a row widget with three children",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -228,9 +228,9 @@ of the images in the example above using columns.
 
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/nested_row_column.png",
-caption: "This figure shows a row widget with three children, each of which is a column."
-alt: "A screenshot of a row of three widgets, each of which has a label underneath it."
+image: "fwe/layout/nested_row_column.png",
+caption: "This figure shows a row widget with three children, each of which is a column.",
+alt: "A screenshot of a row of three widgets, each of which has a label underneath it.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -287,9 +287,9 @@ divides the free horizontal space evenly between,
 before, and after each image.
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/space_evenly.png",
-caption: "This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
+image: "fwe/layout/space_evenly.png",
+caption: "This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant.",
+alt: "A screenshot of three widgets, spaced evenly from each other.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -340,9 +340,9 @@ images is too wide for its render box,
 wrap each image with an [`Expanded`][] widget.
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/expanded_row.png",
-caption: "This figure shows a row widget with three children that are wrapped with `Expanded` widgets."
-alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
+image: "fwe/layout/expanded_row.png",
+caption: "This figure shows a row widget with three children that are wrapped with `Expanded` widgets.",
+alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -375,9 +375,9 @@ The following code sets the flex factor of the
 middle image to 2:
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/flex_2_row.png",
-caption: "This figure shows a row widget with three children which are wrapped with `Expanded` widgets. The center child has it's `flex` property set to 2."
-alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
+image: "fwe/layout/flex_2_row.png",
+caption: "This figure shows a row widget with three children which are wrapped with `Expanded` widgets. The center child has it's `flex` property set to 2.",
+alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -470,9 +470,9 @@ all the available space on the cross axis,
 as shown in the example below.
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/basic_listview.png",
-caption: "This figure shows a ListView widget with three children."
-alt: "A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+image: "fwe/layout/basic_listview.png",
+caption: "This figure shows a ListView widget with three children.",
+alt: "A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -501,9 +501,9 @@ and therefore the number of todos is unknown.
 
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/listview_builder.png",
-caption: "This figure shows the ListView.builder constructor to display an unknown number of children."
-alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+image: "fwe/layout/listview_builder.png",
+caption: "This figure shows the ListView.builder constructor to display an unknown number of children.",
+alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis.",
 code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
@@ -599,9 +599,9 @@ or greater than 600 pixels.
 
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/layout_builder.png",
-caption: "This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid."
-alt: "Two screenshots, in which one shows a narrow layout and the other shows a wide layout."
+image: "fwe/layout/layout_builder.png",
+caption: "This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid.",
+alt: "Two screenshots, in which one shows a narrow layout and the other shows a wide layout.",
 code:"
 ```dart
 Widget build(BuildContext context) {
@@ -667,8 +667,8 @@ the following example changes the
 background color of every other list item.
 
 {% render "docs/code-and-image.md",
-image:"fwe/layout/alternating_list_items.png"
-caption:"This figure shows a `ListView`, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the `ListView`."
+image: "fwe/layout/alternating_list_items.png",
+caption:"This figure shows a `ListView`, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the `ListView`.",
 code:"
 ```dart
 final List<ToDo> items = Repository.fetchTodos();
