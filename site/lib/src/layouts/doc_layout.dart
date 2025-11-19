@@ -42,10 +42,12 @@ class DocLayout extends FlutterDocsLayout {
           if (tocData == null)
             const Document.body(attributes: {'data-toc': 'false'})
           else
-            NarrowTableOfContents(
-              tocData,
-              currentTitle: pageTitle,
-            ),
+            div(id: 'site-subheader', [
+              DashTableOfContents.asDropdown(
+                tocData,
+                currentTitle: pageTitle,
+              ),
+            ]),
           if (showBanner)
             if (siteData['bannerHtml'] case final String bannerHtml
                 when bannerHtml.trim().isNotEmpty)
@@ -53,7 +55,7 @@ class DocLayout extends FlutterDocsLayout {
           div(classes: 'after-leading-content', [
             if (tocData != null)
               aside(id: 'side-menu', [
-                WideTableOfContents(tocData),
+                DashTableOfContents(tocData),
               ]),
             article([
               div(id: 'site-content-title', [

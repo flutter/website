@@ -1,30 +1,4 @@
-#toc-top {
-  font-family: var(--site-ui-fontFamily);
-
-  display: none;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
-  height: var(--site-subheader-height);
-
-  @media (min-width: 240px) {
-    display: flex;
-  }
-
-  @media (min-width: 1200px) {
-    display: none;
-  }
-
-  position: sticky;
-  top: var(--site-header-height);
-
-  background-color: var(--site-base-bgColor);
-  border-bottom: 0.1rem solid var(--site-outline-variant);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-
-  font-size: 0.875rem;
-  z-index: var(--site-z-subheader);
+#pagenav {
 
   >button.dropdown-button {
     display: flex;
@@ -58,25 +32,21 @@
   }
 
   .toc-current {
-    flex-wrap: nowrap;
-    white-space: nowrap;
-    overflow: hidden;
-
     display: none;
 
     @media (min-width: 320px) {
       display: flex;
     }
-  }
 
-  #current-header {
-    color: var(--site-base-fgColor-alt);
-
+    flex-wrap: nowrap;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    color: var(--site-base-fgColor-alt);
   }
 
-  .dropdown-content {
+  #pagenav-content {
     position: absolute;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
     border-bottom: 0.1rem solid var(--site-outline-variant);
@@ -106,7 +76,7 @@
       max-width: 24rem;
     }
 
-    >a {
+    a#return-to-top {
       margin: 0.4rem 0;
       padding: 0.1rem;
       font-size: 1rem;
@@ -134,7 +104,7 @@
       }
     }
 
-    >nav {
+    nav {
       padding: 0.6rem 0 0.8rem;
     }
   }

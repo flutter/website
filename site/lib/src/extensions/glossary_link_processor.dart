@@ -5,8 +5,9 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
+import '../components/common/client/simple_tooltip.dart';
+import '../components/util/component_ref.dart';
 import '../pages/glossary.dart';
-import '../util.dart';
 
 /// A node-processing, page extension for Jaspr Content that looks for links to
 /// glossary entries and enhances them with interactive glossary tooltips.
@@ -38,20 +39,23 @@ class GlossaryLinkProcessor implements PageExtension {
           continue;
         }
 
+        final target = a(
+          href: node.attributes['href'] ?? '',
+          attributes: node.attributes,
+          [const NodesBuilder([]).build(node.children)],
+        );
+        final content = GlossaryTooltipContent(entry: entry);
+
         processedNodes.add(
-          ElementNode(
-            'span',
-            {'class': 'tooltip-wrapper'},
-            [
-              ElementNode('a', {
-                ...node.attributes,
-                'class': [
-                  ?node.attributes['class'],
-                  'tooltip-target',
-                ].toClasses,
-              }, node.children),
-              ComponentNode(GlossaryTooltip(entry: entry)),
-            ],
+          ComponentNode(
+            Builder(
+              builder: (context) {
+                return SimpleTooltip(
+                  target: context.ref(target),
+                  content: context.ref(content),
+                );
+              },
+            ),
           ),
         );
       } else if (node is ElementNode && node.children != null) {
@@ -71,18 +75,17 @@ class GlossaryLinkProcessor implements PageExtension {
   }
 }
 
-class GlossaryTooltip extends StatelessComponent {
-  const GlossaryTooltip({required this.entry});
+class GlossaryTooltipContent extends StatelessComponent {
+  const GlossaryTooltipContent({required this.entry});
 
   final GlossaryEntry entry;
 
   @override
   Component build(BuildContext context) {
-    return span(classes: 'tooltip', [
+    return span(classes: 'tooltip-content', [
       span(classes: 'tooltip-header', [text(entry.term)]),
-      span(classes: 'tooltip-content', [
-        text(entry.shortDescription),
-        text(' '),
+      span([
+        text('${entry.shortDescription} '),
         a(
           href: '/resources/glossary#${entry.id}',
           attributes: {
