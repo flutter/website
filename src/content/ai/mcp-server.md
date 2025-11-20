@@ -68,7 +68,7 @@ To configure the [Antigravity][] to use the Dart and Flutter MCP server,
 use the [MCP Store][]:
 
 1. Locate the **Agent Side Panel** on the right. 
-  (It may be closed; then press ctrl+cmd+b to open it).
+  (It may be closed; then press Ctrl+Cmd+B to open it).
 2. Click the **`...`** (Additional options) menu-button.
 3. Select **MCP Servers**.
 4. Search for **Dart**.
@@ -77,7 +77,7 @@ use the [MCP Store][]:
 It is also recommended to configure the Dart and Flutter Extensions:
 
 1. Open the View menu and select **Extensions**.
-2. In the Search Extensions field enter **Flutter**
+2. In the Search Extensions field enter **Flutter**.
 3. Click Flutter in the list, and select **Install**.
    This will install both the Flutter and Dart extensions.
 
