@@ -14,6 +14,8 @@ or _implicitly animated widgets_, deriving their name from the
 The following set of resources provide many ways to learn
 about implicit animations in Flutter.
 
+[animation library]: {{site.api}}/flutter/animation/animation-library.html
+
 ## Documentation
 
 [Animations in Flutter codelab][]
@@ -30,6 +32,7 @@ about implicit animations in Flutter.
 
 [Animations in Flutter codelab]: {{site.codelabs}}/advanced-flutter-animations
 [`AnimatedContainer` sample]: /cookbook/animation/animated-container
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [`ImplicitlyAnimatedWidget`]: {{site.api}}/flutter/widgets/ImplicitlyAnimatedWidget-class.html
 
 ## Flutter in Focus videos
@@ -61,16 +64,25 @@ widget with a demo about how it works.
 The following Widget of the Week videos cover
 implicitly animated widgets:
 
-{% assign animatedWidgets = 'AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedSwitcher' | split: ", " %}
-{% assign animatedUrls = 'QZAvjqOqiLY, PY2m0fhGNz4, hC3s2YdtWt8, 2W7POjFb88g' | split: ", " %}
-
-{% for widget in animatedWidgets %}
-{% assign videoUrl = animatedUrls[forloop.index0] %}
-{% assign videoDescription = 'Learn about the ' | append: widget | append: ' Flutter Widget' %}
-
-<YouTubeEmbed id="{{ videoUrl }}" title="{{ videoDescription }}"></YouTubeEmbed>
-
-{% endfor -%}
-
-[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[animation library]: {{site.api}}/flutter/animation/animation-library.html
+<div class="card-grid wide">
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="QZAvjqOqiLY" title="AnimatedOpacity - Flutter widget of the week"></YouTubeEmbed>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="PY2m0fhGNz4" title="AnimatedPadding - Flutter widget of the week"></YouTubeEmbed>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="hC3s2YdtWt8" title="AnimatedPositioned - Flutter widget of the week"></YouTubeEmbed>
+    </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="2W7POjFb88g" title="AnimatedSwitcher - Flutter widget of the week"></YouTubeEmbed>
+    </div>
+  </div>
+</div>

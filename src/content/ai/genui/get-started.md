@@ -178,18 +178,13 @@ The main components in this package include:
 
 Follow these instructions:
 
- 1. Add the following to your `pubspec.yaml` file:
+ 1. Set up dependencies:
+    Use `dart pub add` to add `genui`, `genui_a2ui`, and `a2a` as
+    dependencies in your `pubspec.yaml` file.
 
-    ```yml
-    dependencies:
-      flutter:
-        sdk: flutter
-      genui: ^latest_version      # Replace with the actual latest version
-      genui_a2ui: ^latest_version # Replace with the actual latest version
-      a2a: ^latest_version        # Replace with the actual latest version
+    ```console
+    $ dart pub add genui genui_a2ui a2a
     ```
-
-   Then run `flutter pub get`.
 
  2. Initialize `GenUIManager`:
     Set up `GenUiManager` with your widget `Catalog`.
@@ -215,7 +210,7 @@ Follow these instructions:
     import 'package:logging/logging.dart';
 
     void main() {
-      // Setup logging
+      // Setup logging.
       Logger.root.level = Level.ALL;
       Logger.root.onRecord.listen((record) {
         print('${record.level.name}: ${record.time}: ${record.message}');
@@ -264,24 +259,25 @@ Follow these instructions:
       void initState() {
         super.initState();
         _contentGenerator = A2uiContentGenerator(
-          serverUrl: Uri.parse('http://localhost:8080'), // Replace with your A2A server URL
+          // TODO: Replace with your A2A server URL.
+          serverUrl: Uri.parse('http://localhost:8080'),
         );
         _uiAgent = GenUiConversation(
           contentGenerator: _contentGenerator,
           genUiManager: _genUiManager,
         );
 
-        // Listen for text responses from the agent
+        // Listen for text responses from the agent.
         _contentGenerator.textResponseStream.listen((String text) {
           setState(() {
             _messages.insert(0, AgentMessage.text(text));
           });
         });
 
-        // Listen for errors
+        // Listen for errors.
         _contentGenerator.errorStream.listen((ContentGeneratorError error) {
           print('Error from ContentGenerator: ${error.error}');
-          // Optionally show error to the user
+          // Optionally show the error to the user.
         });
       }
 
@@ -326,13 +322,14 @@ Follow these instructions:
                 decoration: BoxDecoration(color: Theme.of(context).cardColor),
                 child: _buildTextComposer(),
               ),
-              // Surface for the main AI-generated UI
+              // Surface for the main AI-generated UI:
               SizedBox(
-                  height: 300,
-                  child: GenUiSurface(
-                    host: _genUiManager,
-                    surfaceId: 'main_surface',
-                  )),
+                height: 300,
+                child: GenUiSurface(
+                  host: _genUiManager,
+                  surfaceId: 'main_surface',
+                ),
+              ),
             ],
           ),
         );
@@ -384,8 +381,9 @@ Follow these instructions:
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4.0),
                   child: IconButton(
-                      icon: const Icon(Icons.send),
-                      onPressed: () => _handleSubmitted(_textController.text)),
+                    icon: const Icon(Icons.send),
+                    onPressed: () => _handleSubmitted(_textController.text),
+                  ),
                 ),
               ],
             ),
@@ -399,8 +397,6 @@ The [example][] directory on pub.dev contains a
 complete application demonstrating how to use this package.
 
 [example]: {{site.pub-pkg}}/genui_a2ui/example
-[A2UI Streaming UI Protocol]: https://a2ui.org/
-
 [A2UI Streaming UI Protocol]: https://a2ui.org/
 
 </Tab>
