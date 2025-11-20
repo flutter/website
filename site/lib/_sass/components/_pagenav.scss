@@ -1,4 +1,6 @@
 #pagenav {
+  flex-grow: 1;
+  min-width: 0;
 
   >button.dropdown-button {
     display: flex;
