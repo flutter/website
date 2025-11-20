@@ -36,7 +36,7 @@ resources:
   Vertex AI. To get started, check out the
   [official documentation][firebase-ai-logic-docs].
 * [Flutter AI Toolkit][] - A sample app with pre-built widgets to help you build
-  AI-powered features in Flutter
+  AI-powered features in Flutter.
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
@@ -68,7 +68,7 @@ The `genui` package is in
 alpha and is likely to change.
 :::
 
-To learn more, see the [GenUI SDK for Flutter][] documentation.
+To learn more, visit the [GenUI SDK for Flutter][] documentation.
 
 [GenUI SDK for Flutter]: /ai/genui
 
@@ -104,13 +104,14 @@ To get started, visit the [Gemini CLI][] website, or try this
 [Gemini CLI]: https://geminicli.com/
 [Gemini CLI codelab]: https://codelabs.developers.google.com/gemini-cli-hands-on
 
-#### Flutter Extension for Gemini CLI
+#### Flutter extension for Gemini CLI
 
-The [Flutter Extension for Gemini CLI][flutter-extension] combines the [Dart and
-Flutter MCP Server][dart-mcp-dart-docs] with rules and commands. It uses the
-default set of [AI rules for Flutter and Dart][], adds commands like
-`/create-app` and `/modify` to make structured changes to your app, and
-automatically configures the [Dart and Flutter MCP Server][dart-mcp-dart-docs].
+The [Flutter extension for Gemini CLI][flutter-extension] combines the
+[Dart and Flutter MCP Server][dart-mcp-dart-docs] with rules and commands.
+It uses the default set of [AI rules for Flutter and Dart][],
+adds commands like `/create-app` and `/modify` to make
+structured changes to your app, and automatically configures the
+[Dart and Flutter MCP Server][dart-mcp-dart-docs].
 
 You can install it by running the following command:
 
@@ -118,8 +119,8 @@ You can install it by running the following command:
 gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
-To learn more, see the [blog post][flutter-extension-blog] or
-the [README][flutter-extension].
+To learn more, check out
+[Flutter extension for Gemini CLI][].
 
 [flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
 [flutter-extension-blog]: https://blog.flutter.dev/meet-the-flutter-extension-for-gemini-cli-f8be3643eaad
@@ -150,6 +151,6 @@ on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 
 You can use a rules file with AI-powered editors to provide
 context and instructions to an underlying LLM. To get
-started, see the [AI rules for Flutter and Dart][] guide.
+started, visit the [AI rules for Flutter and Dart][] guide.
 
 [AI rules for Flutter and Dart]: /ai/ai-rules
