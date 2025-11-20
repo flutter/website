@@ -62,6 +62,28 @@ This section provides instructions for setting up the
 Dart and Flutter MCP server with popular tools like Firebase Studio,
 Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
+### Antigravity
+
+To configure the [Antigravity][] to use the Dart and Flutter MCP server,
+use the [MCP Store][]:
+
+1. Locate the **Agent Side Panel** on the right. 
+  (It may be closed; then press ctrl+cmd+b to open it).
+2. Click the **`...`** (Additional options) menu-button.
+3. Select **MCP Servers**.
+4. Search for **Dart**.
+5. Select **Install**.
+
+It is also recommended to configure the Dart and Flutter Extensions:
+
+1. Open the View menu and select **Extensions**.
+2. In the Search Extensions field enter **Flutter**
+3. Click Flutter in the list, and select **Install**.
+   This will install both the Flutter and Dart extensions.
+
+[Antigravity]: https://antigravity.google/
+[MCP Store]: https://antigravity.google/docs/agent-side-panel
+
 ### Gemini CLI
 
 To configure the [Gemini CLI][] to use the Dart and Flutter MCP server,
