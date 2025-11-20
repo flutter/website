@@ -36,16 +36,18 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [`FontWeight` also controls the weight attribute of variable fonts][]
+* [Merged threads on Linux][]
+* [Stop generating `AssetManifest.json`][]
 * [UISceneDelegate adoption][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
-* [Stop generating `AssetManifest.json`][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `TextField.canRequestFocus`][]
 
-[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
