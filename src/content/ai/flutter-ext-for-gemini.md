@@ -28,7 +28,7 @@ and the Flutter extension expands on these capabilities.
 
 The Flutter Extension for Gemini CLI provides commands
 to accelerate app development, follows explicit rules to
-write high-quality code following Dart and Flutter best-practices,
+write high-quality code following Dart and Flutter best practices,
 and runs tools from the Dart and Flutter MCP server to directly
 access Dart and Flutter’s developer tools. You spend less time
 on setup and more time building high quality Flutter apps.
@@ -63,7 +63,7 @@ extension for Gemini CLI by using one of the following commands:
     ```
 
 2. To install the current version and ensure that future
-   updates are automatically installed, use the `auto_upate` tag:
+   updates are automatically installed, use the `auto-upate` tag:
 
    ```console
    gemini extensions install https://github.com/gemini-cli-extensions/flutter.git --auto-update
@@ -76,7 +76,7 @@ you will see a message that the Flutter extension is installed and enabled.
    - Update to the latest version:
 
       ```console
-       gemini extensions update flutter
+      gemini extensions update flutter
       ```
 
    - Uninstall the extension:
@@ -95,7 +95,7 @@ a new Gemini CLI session:
   Flutter project with best practices.
 * `/create-package` - Guides you through bootstrapping
   a new Dart package with best practices.
-* `/modify* ` - Manages a structured modification session
+* `/modify` - Manages a structured modification session
   with automated planning.
 * `/commit` - Automates pre-commit checks and generates
   a descriptive commit message.
@@ -133,12 +133,12 @@ after it completes a phase in the Journal section.
 
 After you’ve set up your project, you’re ready to implement
 the features in your implementation plan using the generated
-`IMPLEMENTATION.md` file. Each feature is be implemented separately,
+`IMPLEMENTATION.md` file. Each feature is implemented separately,
 as outlined in this file. Once it finishes implementing a feature,
 the Flutter extension will mark it as complete.
 
 Before moving to the next phase, the extension asks for your approval.
-You can enter the prompt “looks good” to start generating codej
+You can enter the prompt "looks good" to start generating code.
 
 ## Modify
 
@@ -159,10 +159,10 @@ It automatically runs `dart fix` and `dart format`,
 runs the analyzer and tests, and then generates a descriptive
 commit message based on the changes for you to approve.
 
-## Fully loaded with best-practices
+## Fully loaded with best practices
 
 Every interactive chat session includes rules containing
-best-practices for Flutter and Dart development.
+best practices for Flutter and Dart development.
 These rules ensure that Gemini writes high-quality Dart and Flutter code,
 interacts with MCP server tools correctly,
 and follows best practices such as creating unit tests,
@@ -188,8 +188,8 @@ development tasks. For example:
 As previously mentioned, this extension is in alpha.
 If you find a bug, please [file an issue][].
 
-You also might want to checkout out the
-[Gemini CLI extensions][] repo.
+You also might want to check out the
+[Gemini CLI extension][] repo.
 
 [file an issue]: {{site.github}}/gemini-cli-extensions/flutter/issues
-[Gemini CLI extensions]: {{site.github}}/gemini-cli-extensions/flutter
+[Gemini CLI extension]: {{site.github}}/gemini-cli-extensions/flutter
