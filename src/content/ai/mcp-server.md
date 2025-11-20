@@ -79,7 +79,7 @@ It is also recommended to configure the Dart and Flutter Extensions:
 1. Open the View menu and select **Extensions**.
 2. In the Search Extensions field, enter **Flutter**.
 3. Click Flutter in the list, and select **Install**.
-   This will install both the Flutter and Dart extensions.
+   This installs both the Flutter and Dart extensions.
 
 [Antigravity]: https://antigravity.google/
 [MCP Store]: https://antigravity.google/docs/agent-side-panel
