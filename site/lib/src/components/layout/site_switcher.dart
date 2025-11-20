@@ -13,66 +13,62 @@ final class SiteSwitcher extends StatelessComponent {
   const SiteSwitcher();
 
   @override
-  Component build(BuildContext _) => Dropdown(
-    id: 'site-switcher',
-    children: [
-      const DropdownToggle(Button(icon: 'apps', title: 'Visit related sites.')),
-      DropdownContent(
-        nav(
-          classes: 'dropdown-menu',
-          attributes: {
-            'role': 'menu',
-          },
-          [
-            ul(
-              const [
-                _SiteWordMarkListEntry(
-                  name: 'Flutter',
-                  href: 'https://flutter.dev',
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'Flutter',
-                  subtype: 'Docs',
-                  href: '/',
-                  current: true,
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'Flutter',
-                  subtype: 'API',
-                  href: 'https://api.flutter.dev',
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'Flutter',
-                  subtype: 'Blog',
-                  href: 'https://blog.flutter.dev',
-                ),
-                Component.element(
-                  tag: 'li',
-                  classes: 'dropdown-divider',
-                  attributes: {'aria-hidden': 'true', 'role': 'separator'},
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'Dart',
-                  href: 'https://dart.dev',
-                  dart: true,
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'DartPad',
-                  href: 'https://dartpad.dev',
-                  dart: true,
-                ),
-                _SiteWordMarkListEntry(
-                  name: 'pub.dev',
-                  href: 'https://pub.dev',
-                  dart: true,
-                ),
-              ],
-            ),
-          ],
-        ),
+  Component build(BuildContext _) {
+    return Dropdown(
+      id: 'site-switcher',
+      toggle: const Button(icon: 'apps', title: 'Visit related sites.'),
+      content: nav(
+        classes: 'dropdown-menu',
+        attributes: {'role': 'menu'},
+        [
+          ul(
+            const [
+              _SiteWordMarkListEntry(
+                name: 'Flutter',
+                href: 'https://flutter.dev',
+              ),
+              _SiteWordMarkListEntry(
+                name: 'Flutter',
+                subtype: 'Docs',
+                href: '/',
+                current: true,
+              ),
+              _SiteWordMarkListEntry(
+                name: 'Flutter',
+                subtype: 'API',
+                href: 'https://api.flutter.dev',
+              ),
+              _SiteWordMarkListEntry(
+                name: 'Flutter',
+                subtype: 'Blog',
+                href: 'https://blog.flutter.dev',
+              ),
+              Component.element(
+                tag: 'li',
+                classes: 'dropdown-divider',
+                attributes: {'aria-hidden': 'true', 'role': 'separator'},
+              ),
+              _SiteWordMarkListEntry(
+                name: 'Dart',
+                href: 'https://dart.dev',
+                dart: true,
+              ),
+              _SiteWordMarkListEntry(
+                name: 'DartPad',
+                href: 'https://dartpad.dev',
+                dart: true,
+              ),
+              _SiteWordMarkListEntry(
+                name: 'pub.dev',
+                href: 'https://pub.dev',
+                dart: true,
+              ),
+            ],
+          ),
+        ],
       ),
-    ],
-  );
+    );
+  }
 }
 
 class _SiteWordMarkListEntry extends StatelessComponent {

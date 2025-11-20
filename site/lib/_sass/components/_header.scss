@@ -167,3 +167,26 @@ body.open_menu #menu-toggle span.material-symbols {
     }
   }
 }
+
+#site-subheader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  position: sticky;
+  top: var(--site-header-height);
+  z-index: var(--site-z-subheader);
+  height: var(--site-subheader-height);
+
+  font-family: var(--site-ui-fontFamily);
+  font-size: 0.875rem;
+
+  background-color: var(--site-base-bgColor);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+
+  @media (width < 240px), (width >= 1200px) {
+    display: none;
+  }
+}
