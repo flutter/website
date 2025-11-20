@@ -83,8 +83,14 @@ ul.nav-tabs {
       padding-left: 1.75rem;
     }
 
-    .tab-pane> :first-child {
-      margin-block-start: 0;
+    .tab-pane {
+      > :first-child {
+        margin-block-start: 0;
+      }
+
+      > :last-child {
+        margin-block-end: 1rem;
+      }
     }
   }
 }

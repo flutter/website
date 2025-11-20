@@ -75,7 +75,7 @@ In the video below, two of our engineers take a mobile app from a dire
 accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
-{% ytEmbed 'bWbBgbmAdQs', 'Building Flutter apps with accessibility in mind' %}
+<YouTubeEmbed id="bWbBgbmAdQs" title="Building Flutter apps with accessibility in mind" />
 
 
 ## Accessibility release checklist
