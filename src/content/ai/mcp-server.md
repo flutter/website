@@ -77,7 +77,7 @@ use the [MCP Store][]:
 It is also recommended to configure the Dart and Flutter Extensions:
 
 1. Open the View menu and select **Extensions**.
-2. In the Search Extensions field enter **Flutter**.
+2. In the Search Extensions field, enter **Flutter**.
 3. Click Flutter in the list, and select **Install**.
    This will install both the Flutter and Dart extensions.
 
