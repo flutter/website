@@ -158,43 +158,6 @@ main figure {
     font-style: italic;
     text-align: center;
   }
-
-  &.code-and-image {
-    gap: 0.25rem;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    >div {
-      width: 100%;
-
-      &:last-child {
-        text-align: center;
-      }
-    }
-
-    @media(min-width: 769px) {
-      >div {
-        &:first-child {
-          flex: 0 0 58%;
-          max-width: 58%;
-        }
-
-        &:last-child {
-          flex: 0 0 40%;
-          max-width: 40%;
-        }
-      }
-
-      figcaption {
-        text-align: left;
-      }
-
-      img {
-        max-width: 100%;
-      }
-    }
-  }
 }
 
 .text-icon {

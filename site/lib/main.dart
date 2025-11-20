@@ -12,6 +12,7 @@ import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
+import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/common/tabs.dart';
 import 'src/components/common/youtube_embed.dart';
@@ -97,6 +98,7 @@ final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 List<CustomComponent> get _embeddableComponents => [
   const DashTabs(),
   const DashImage(),
+  const CodePreview(),
   const YoutubeEmbed(),
   const FileTree(),
   const Quiz(),
