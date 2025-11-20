@@ -33,6 +33,13 @@ and runs tools from the Dart and Flutter MCP server to directly
 access Dart and Flutter’s developer tools. You spend less time
 on setup and more time building high quality Flutter apps.
 
+The following video showcases
+[how to build multiplatform apps with Gemini CLI][gemini-cli-video]:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RZPkE5sllck?si=szuMDq8uisH7OnVI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+[gemini-cli-video]: https://youtu.be/RZPkE5sllck?si=lM0sGs-V6nx7Tw6T
+
 ## Prerequisites
 
 1. Install Gemini CLI 0.4.0 or later.
