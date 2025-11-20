@@ -120,7 +120,7 @@ gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
 To learn more, check out
-[Flutter extension for Gemini CLI](/ai/flutter-ext-for-gemin).
+[Flutter extension for Gemini CLI](/ai/flutter-ext-for-gemini).
 
 [flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
 
