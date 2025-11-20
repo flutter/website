@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 
 import '../common/button.dart';
 import '../common/material_icon.dart';
@@ -84,7 +85,7 @@ class DashHeader extends StatelessComponent {
                 content: 'Get started',
                 href: '/get-started/quick',
               ),
-              const MenuToggle(),
+              if (context.page.data['sidenav'] != null) const MenuToggle(),
             ],
           ),
         ]),

@@ -1,6 +1,7 @@
 #pagenav {
   flex-grow: 1;
   min-width: 0;
+  max-width: 100%;
 
   >button.dropdown-button {
     display: flex;
@@ -25,27 +26,36 @@
     }
   }
 
-  .toc-intro {
+  .toc-breadcrumb {
+    flex-shrink: 2;
     white-space: nowrap;
+    overflow: hidden;
 
-    .material-symbols {
+    &:first-child .material-symbols {
       margin-right: 0.25rem;
+    }
+
+    span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .toc-current {
-    display: none;
-
-    @media (min-width: 320px) {
-      display: flex;
-    }
-
-    flex-wrap: nowrap;
+    flex-shrink: 1;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
 
     color: var(--site-base-fgColor-alt);
+
+    @media (max-width: 320px) {
+      display: none !important;
+    }
+
+    span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   #pagenav-content {
@@ -85,16 +95,13 @@
       text-decoration: none;
       display: flex;
       align-items: center;
+      gap: 4px;
       color: var(--site-base-fgColor-alt);
       font-weight: 500;
 
       .material-symbols {
         font-size: 1.5rem;
         user-select: none;
-      }
-
-      span:last-child {
-        margin-left: 3px;
       }
 
       &:hover {
@@ -108,6 +115,52 @@
 
     nav {
       padding: 0.6rem 0 0.8rem;
+    }
+
+    .page-link {
+      padding: 0;
+      font-weight: 400;
+      color: var(--site-base-fgColor);
+      margin-top: 0.6rem;
+
+      .page-number {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: var(--site-raised-bgColor);
+        color: var(--site-base-fgColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+
+        transition: background-color 300ms ease, color 300ms ease;
+      }
+
+      &.active .page-number {
+        background-color: var(--site-primary-color);
+        color: var(--site-onPrimary-color-lightest);
+      }
+
+      &:not(.active):has(~.page-link.active) .page-number {
+        background-color: var(--site-onPrimary-color-light);
+        color: var(--site-primary-color);
+      }
+
+      ~nav {
+        padding: 0;
+      }
+    }
+
+    .page-divider {
+      padding-left: 0.25rem;
+      padding-top: 0.25rem;
+      font-weight: 600;
+      color: var(--site-base-fgColor-alt);
+    }
+
+    .dropdown-divider:has(~.page-link) {
+      margin-top: 0.6rem;
     }
   }
 }
