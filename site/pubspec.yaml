@@ -19,6 +19,7 @@ dependencies:
   markdown: ^7.3.0
   markdown_description_list: ^0.1.1
   meta: ^1.17.0
+  nanoid2: ^2.0.1
   # Used for syntax highlighting.
   opal: ^0.2.0
   path: ^1.9.1
