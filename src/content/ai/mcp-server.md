@@ -64,7 +64,7 @@ Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
 ### Antigravity
 
-To configure the [Antigravity][] to use the Dart and Flutter MCP server,
+To configure [Antigravity][] to use the Dart and Flutter MCP server,
 use the [MCP Store][]:
 
 1. Locate the **Agent Side Panel** on the right. 
