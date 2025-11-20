@@ -5,6 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
+import 'client/collapse_button.dart';
 import 'client/copy_button.dart';
 import 'material_icon.dart';
 
@@ -25,11 +26,12 @@ final class WrappedCodeBlock extends StatelessComponent {
     this.tag,
     this.initialLineNumber = 1,
     this.showLineNumbers = false,
-    this.textToCopy,
+    this.showCopyButton = true,
+    this.collapsed = false,
+    this.actions = const [],
   });
 
   final List<List<Component>> content;
-  final String? textToCopy;
 
   final String language;
   final String? title;
@@ -43,6 +45,9 @@ final class WrappedCodeBlock extends StatelessComponent {
   final int initialLineNumber;
 
   final bool showLineNumbers;
+  final bool showCopyButton;
+  final bool collapsed;
+  final List<Component> actions;
 
   @override
   Component build(BuildContext context) {
@@ -101,11 +106,18 @@ final class WrappedCodeBlock extends StatelessComponent {
     }
 
     return div(
-      classes: 'code-block-wrapper language-$language',
+      classes: [
+        'code-block-wrapper language-$language',
+        if (collapsed) 'collapsed',
+      ].toClasses,
       [
         if (title case final title?)
           div(classes: 'code-block-header', [
-            text(title),
+            span([
+              text(title),
+            ]),
+            if (actions.isNotEmpty) ...actions,
+            if (collapsed) const CollapseButton(),
           ]),
         div(
           classes: [
@@ -137,9 +149,8 @@ final class WrappedCodeBlock extends StatelessComponent {
                 ]),
               ],
             ),
-            if (textToCopy case final textToCopy?)
-              CopyButton(
-                toCopy: textToCopy,
+            if (showCopyButton)
+              const CopyButton(
                 title: 'Copy code to clipboard',
               ),
           ],
