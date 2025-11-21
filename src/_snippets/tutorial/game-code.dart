@@ -1,17 +1,3 @@
-<div class='collapsible-section'>
-  <button
-    type="button"
-    class="collapsible-button collapsible collapsed"
-    data-toggle="collapse"
-    role="button"
-    data-target="#game-code-collapsible-content"
-    aria-expanded="false" aria-controls="game-code-collapsible-content">
-    Reveal code
-  </button>
-
-<div class="collapsible-content" id="game-code-collapsible-content">
-
-```dart
 import 'dart:collection';
 import 'dart:math';
 
@@ -169,6 +155,7 @@ class Word with IterableMixin<Letter> {
   String toStringVerbose() {
     return _letters.map((l) => '${l.char} - ${l.type.name}').join('\n');
   }
+}
 
 // Domain specific methods that contain word related logic.
 extension WordUtils on Word {
@@ -217,6 +204,7 @@ extension WordUtils on Word {
           break;
         }
       }
+    }
 
     // Mark remaining letters in guessed word as misses
     for (var i = 0; i < length; i++) {
@@ -228,8 +216,3 @@ extension WordUtils on Word {
     return this;
   }
 }
-```
-
-</div>
-
-</div>

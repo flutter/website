@@ -94,3 +94,17 @@ enum ButtonStyle {
     ButtonStyle.text => 'text-button',
   };
 }
+
+class SegmentedButton extends StatelessComponent {
+  const SegmentedButton({
+    super.key,
+    required this.children,
+  });
+
+  final List<Component> children;
+
+  @override
+  Component build(BuildContext context) {
+    return span(classes: ['segmented-button'].toClasses, children);
+  }
+}

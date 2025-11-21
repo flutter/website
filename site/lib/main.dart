@@ -20,6 +20,7 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
+import 'src/components/tutorial/downloadable_snippet.dart';
 import 'src/components/tutorial/progress_ring.dart';
 import 'src/components/tutorial/quiz.dart';
 import 'src/components/tutorial/summary_card.dart';
@@ -105,6 +106,7 @@ List<CustomComponent> get _embeddableComponents => [
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
+  const DownloadableSnippet(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),

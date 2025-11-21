@@ -276,22 +276,50 @@ pre {
 }
 
 .code-block-wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 100%;
   
   margin-block-start: 1rem;
   margin-block-end: 1rem;
   border: 1px solid var(--site-inset-borderColor);
   background-color: var(--site-inset-bgColor);
 
+  transition: grid-template-rows 0.3s ease, border-bottom-width 0.3s ease;
+
+  &.collapsed {
+    grid-template-rows: min-content 0fr;
+    border-bottom-width: 0px;
+
+    .collapse-button > .material-symbols {
+      transform: rotate(180deg);
+    }
+  }
+
+  .collapse-button > .material-symbols {
+    transform: rotate(0deg);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
   .code-block-header {
+    display: flex;
+    align-items: center;
+
     background-color: var(--site-raised-bgColor);
     border-bottom: 1px solid var(--site-inset-borderColor);
-    font-size: 0.9375rem;
-    font-weight: 500;
-    overflow-x: hidden;
-    text-overflow: ellipsis;
+    
     padding: 0.75rem 0.5rem 0.67rem 1rem;
+    gap: 0.5rem;
+
+    > span:first-child {
+      flex-grow: 1;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
   }
 
   .code-block-body {
@@ -299,6 +327,8 @@ pre {
 
     position: relative;
     background: none;
+    min-height: 0;
+    overflow: hidden;
 
     .copy-button {
       position: absolute;

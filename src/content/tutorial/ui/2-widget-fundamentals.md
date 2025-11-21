@@ -22,10 +22,10 @@ widget.
 
 This app relies on a bit of game logic that isn't UI-related, and thus is outside the scope of this tutorial. Before you move on, you need to add this logic to your app.
 
-1. Create a new file in the `lib` directory called `game.dart`.
-2. Copy the following code into it and import that code into your `main.dart` file.
+1. Download the file below and save it as `lib/game.dart` in your project directory.
+2. Import the file in your `lib/main.dart` file.
 
-{% render docs/tutorial/game-code.md  %}
+<DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
 
 :::note Game logic note
 You may notice the lists called `legalGuesses` and `legalWords` only contain a few words. The full lists combined have over 10,000 words, and were omitted for brevity. You don't need the full lists to continue the tutorial. When you're testing your app, make sure to use the few words from those lists.

@@ -94,3 +94,22 @@ button {
     }
   }
 }
+
+.segmented-button {
+  display: inline-flex;
+
+  a,
+  button {
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      border-right: 1px solid var(--site-outline-variant);
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
