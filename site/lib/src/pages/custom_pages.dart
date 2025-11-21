@@ -194,6 +194,7 @@ items:
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you accomplished in this lesson.
+completed: true
 items:
   - title: Reviewed the core concepts of Flutter
     icon: flutter

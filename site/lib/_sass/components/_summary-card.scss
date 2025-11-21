@@ -5,6 +5,13 @@
 
   header {
     padding: 1rem 1.2rem 1.2rem;
+    display: flex;
+    align-items: center;
+
+    >div {
+      flex: 1;
+      color: var(--site-base-fgColor-alt);
+    }
 
     h3 {
       margin: 0;
@@ -13,8 +20,8 @@
       color: var(--site-base-fgColor);
     }
 
-    span {
-      color: var(--site-base-fgColor-alt);
+    .summary-card-completed {
+      color: var(--site-alert-tip-color);
     }
   }
 

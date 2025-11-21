@@ -49,14 +49,20 @@ class SummaryCardComponent extends StatelessComponent {
   Component build(BuildContext context) {
     return div(classes: 'summary-card', [
       header([
-        h3([text(model.title)]),
-        if (model.subtitle case final subtitle?) span([text(subtitle)]),
+        div([
+          h3([text(model.title)]),
+          if (model.subtitle case final subtitle?) span([text(subtitle)]),
+        ]),
+        if (model.completed)
+          span(classes: 'summary-card-completed', [
+            const MaterialIcon('check_circle'),
+          ]),
       ]),
-      for (final item in model.items) buildSummaryItem(item),
+      for (final item in model.items) _buildSummaryItem(item),
     ]);
   }
 
-  Component buildSummaryItem(SummaryCardItem item) {
+  Component _buildSummaryItem(SummaryCardItem item) {
     if (item.details case final d?) {
       return details([
         summary(classes: 'summary-card-item', [

@@ -8,11 +8,13 @@ class SummaryCardModel {
   const SummaryCardModel({
     required this.title,
     this.subtitle,
+    this.completed = false,
     required this.items,
   });
 
   final String title;
   final String? subtitle;
+  final bool completed;
   final List<SummaryCardItem> items;
 
   @decoder
@@ -20,6 +22,7 @@ class SummaryCardModel {
     return SummaryCardModel(
       title: json['title'] as String,
       subtitle: json['subtitle'] as String?,
+      completed: json['completed'] as bool? ?? false,
       items: (json['items'] as List<Object?>)
           .map((e) => SummaryCardItem.fromMap(e as Map<Object?, Object?>))
           .toList(),
@@ -30,6 +33,7 @@ class SummaryCardModel {
   Map<Object?, Object?> toJson() => {
     'title': title,
     'subtitle': subtitle,
+    'completed': completed,
     'items': items.map((e) => e.toJson()).toList(),
   };
 }
