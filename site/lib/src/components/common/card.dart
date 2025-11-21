@@ -62,7 +62,7 @@ class Card extends StatelessComponent {
       ],
       content: [?child],
       link: link,
-      filled: link != null,
+      filled: link != null && attributes['filled'] != 'false',
       outlined: outlined,
     );
   }

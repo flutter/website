@@ -6,8 +6,9 @@ description: >
   workflow.
 ---
 
-This guide covers how you can leverage AI tools to build AI-powered features for
-your Flutter apps and streamline your Flutter and Dart development.
+This guide covers how you can leverage AI tools to build AI-powered
+features for your Flutter apps and streamline your
+Flutter and Dart development.
 
 ## Overview
 
@@ -17,7 +18,7 @@ language understanding and content generation directly into your Flutter app
 using powerful SDKs, like the Firebase SDK for Generative AI. You can also use
 AI tools, such as Gemini Code Assist and Gemini CLI, to help with code
 generation and scaffolding. These tools are powered by the Dart and Flutter MCP
-Server, which provides AI with a rich context about your codebase. The Flutter
+server, which provides AI with a rich context about your codebase. The Flutter
 Extension for Gemini CLI makes it easy to leverage official rules, the MCP server,
 and custom commands for building your app. Additionally, rules files help
 fine-tune the AI's behavior and enforce project-specific best practices.
@@ -35,7 +36,7 @@ resources:
   Vertex AI. To get started, check out the
   [official documentation][firebase-ai-logic-docs].
 * [Flutter AI Toolkit][] - A sample app with pre-built widgets to help you build
-  AI-powered features in Flutter
+  AI-powered features in Flutter.
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
@@ -53,6 +54,24 @@ concepts, and reduce boilerplate.
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
 
+### GenUI SDK for Flutter {: #genui }
+
+The GenUI SDK transforms text-based conversations into rich,
+interactive experiences. Essentially, it acts as an orchestration layer
+that coordinates the flow of information between your user, your
+Flutter widgets, and an AI agent.
+
+<YouTubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI"></YouTubeEmbed>
+
+:::experimental
+The `genui` package is in
+alpha and is likely to change.
+:::
+
+To learn more, visit the [GenUI SDK for Flutter][] documentation.
+
+[GenUI SDK for Flutter]: /ai/genui
+
 ### Gemini Code Assist
 
 [Gemini Code Assist][] is an AI-powered collaborator available in Visual Studio
@@ -65,7 +84,7 @@ of your project's codebase and can help you with:
   or best practices directly within your IDE.
 * **Debugging and explanation**: If you encounter an error, you can ask Gemini
   Code Assist to explain it and suggest a fix, and
-  [Dart and Flutter MCP Server][dart-mcp-flutter-docs]
+  [Dart and Flutter MCP server][dart-mcp-flutter-docs]
 
 [Gemini Code Assist]: https://codeassist.google/
 
@@ -85,13 +104,14 @@ To get started, visit the [Gemini CLI][] website, or try this
 [Gemini CLI]: https://geminicli.com/
 [Gemini CLI codelab]: https://codelabs.developers.google.com/gemini-cli-hands-on
 
-## Flutter Extension for Gemini CLI
+#### Flutter extension for Gemini CLI
 
-The [Flutter Extension for Gemini CLI][flutter-extension] combines the [Dart and
-Flutter MCP Server][dart-mcp-dart-docs] with rules and commands. It uses the
-default set of [AI rules for Flutter and Dart][], adds commands like
-`/create-app` and `/modify` to make structured changes to your app, and
-automatically configures the [Dart and Flutter MCP Server][dart-mcp-dart-docs].
+The [Flutter extension for Gemini CLI][flutter-extension] combines the
+[Dart and Flutter MCP server][dart-mcp-dart-docs] with rules and commands.
+It uses the default set of [AI rules for Flutter and Dart][],
+adds commands like `/create-app` and `/modify` to make
+structured changes to your app, and automatically configures the
+[Dart and Flutter MCP server][dart-mcp-dart-docs].
 
 You can install it by running the following command:
 
@@ -99,17 +119,16 @@ You can install it by running the following command:
 gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
-To learn more, see the [blog post][flutter-extension-blog] or
-the [README][flutter-extension].
+To learn more, check out
+[Flutter extension for Gemini CLI](/ai/flutter-ext-for-gemini).
 
 [flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
-[flutter-extension-blog]: https://blog.flutter.dev/meet-the-flutter-extension-for-gemini-cli-f8be3643eaad
 
-## Dart and Flutter MCP Server
+### Dart and Flutter MCP server
 
 To provide assistance during Flutter development, AI tools
 need to communicate with Dart and Flutter's developer tools.
-The Dart and Flutter MCP Server facilitates this communication.
+The Dart and Flutter MCP server facilitates this communication.
 The MCP (model context protocol) specification outlines how
 development tools can share the context of a user's code with an AI model,
 which allows the AI to better understand and interact with the code.
@@ -127,10 +146,10 @@ on dart.dev and the [Dart and Flutter MCP repository][dart-mcp-github].
 [dart-mcp-github]: {{site.github}}/dart-lang/ai/tree/main/pkgs/dart_mcp_server
 [dart-mcp-flutter-docs]: #dart-and-flutter-mcp-server
 
-## Rules for Flutter and Dart
+### Rules for Flutter and Dart
 
 You can use a rules file with AI-powered editors to provide
 context and instructions to an underlying LLM. To get
-started, see the [AI rules for Flutter and Dart][] guide.
+started, visit the [AI rules for Flutter and Dart][] guide.
 
 [AI rules for Flutter and Dart]: /ai/ai-rules

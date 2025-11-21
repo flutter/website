@@ -44,7 +44,6 @@ void _setUpSite() {
   _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
-  _setUpTooltips();
 }
 
 void _setUpSearchKeybindings() {
@@ -322,78 +321,19 @@ void _setUpPlatformKeys() {
 /// Enables a "back to top" button in the TOC header.
 void _setUpToc() {
   _setUpTocActiveObserver();
-  _setUpInlineTocDropdown();
 }
 
-void _setUpInlineTocDropdown() {
-  final inlineToc = web.document.getElementById('toc-top');
-  if (inlineToc == null) return;
-
-  final dropdownButton = inlineToc.querySelector('.dropdown-button');
-  final dropdownMenu = inlineToc.querySelector('.dropdown-content');
-  if (dropdownButton == null || dropdownMenu == null) return;
-
-  void closeMenu() {
-    inlineToc.setAttribute('data-expanded', 'false');
-    dropdownButton.ariaExpanded = 'false';
-  }
-
-  dropdownButton.addEventListener(
-    'click',
-    ((web.Event _) {
-      if (inlineToc.getAttribute('data-expanded') == 'true') {
-        closeMenu();
-      } else {
-        inlineToc.setAttribute('data-expanded', 'true');
-        dropdownButton.ariaExpanded = 'true';
-      }
-    }).toJS,
-  );
-
-  web.document.addEventListener(
-    'keydown',
-    ((web.KeyboardEvent event) {
-      if (event.key == 'Escape') {
-        closeMenu();
-      }
-    }).toJS,
-  );
-
-  // Close the dropdown if any link in the TOC is navigated to.
-  final inlineTocLinks = inlineToc.querySelectorAll('a');
-  for (var i = 0; i < inlineTocLinks.length; i++) {
-    final tocLink = inlineTocLinks.item(i) as web.Element;
-    tocLink.addEventListener(
-      'click',
-      ((web.Event _) {
-        closeMenu();
-      }).toJS,
-    );
-  }
-
-  // Close the dropdown if anywhere not in the inline TOC is clicked.
-  web.document.addEventListener(
-    'click',
-    ((web.Event event) {
-      if ((event.target as web.Element).closest('#toc-top') != null) {
-        return;
-      }
-      closeMenu();
-    }).toJS,
-  );
-}
+final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
 
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
     'article .header-wrapper, #site-content-title',
   );
-  final currentHeaderText = web.document.getElementById('current-header');
 
   // No need to have toc scrollspy if there is only one non-title heading.
-  if (headings.length < 2 || currentHeaderText == null) return;
+  if (headings.length < 2) return;
 
   final visibleAnchors = <String>{};
-  final initialHeaderText = currentHeaderText.textContent;
 
   final observer = web.IntersectionObserver(
     ((JSArray<web.IntersectionObserverEntry> entries) {
@@ -414,12 +354,12 @@ void _setUpTocActiveObserver() {
 
         // If the page title is visible, set the current header to its contents.
         if (visibleAnchors.contains('document-title')) {
-          currentHeaderText.textContent = initialHeaderText;
+          currentPageHeading.value = null;
           isFirst = false;
         }
 
         final tocLinks = web.document.querySelectorAll(
-          '.site-toc .sidenav-item a',
+          '.toc-list .sidenav-item a',
         );
         for (var i = 0; i < tocLinks.length; i++) {
           final tocLink = tocLinks.item(i) as web.Element;
@@ -433,7 +373,7 @@ void _setUpTocActiveObserver() {
             sidenavItem.classList.add('active');
 
             if (isFirst) {
-              currentHeaderText.textContent = tocLink.textContent;
+              currentPageHeading.value = tocLink.textContent!;
               isFirst = false;
             }
           } else {
@@ -447,95 +387,5 @@ void _setUpTocActiveObserver() {
 
   for (var i = 0; i < headings.length; i++) {
     observer.observe(headings.item(i) as web.Element);
-  }
-}
-
-void _setUpTooltips() {
-  final tooltipWrappers = web.document.querySelectorAll('.tooltip-wrapper');
-
-  final isTouchscreen = web.window.matchMedia('(pointer: coarse)').matches;
-
-  void setup({required bool setUpClickListener}) {
-    for (var i = 0; i < tooltipWrappers.length; i++) {
-      final linkWrapper = tooltipWrappers.item(i) as web.HTMLElement;
-      final target = linkWrapper.querySelector('.tooltip-target');
-      final tooltip = linkWrapper.querySelector('.tooltip') as web.HTMLElement?;
-
-      if (target == null || tooltip == null) {
-        continue;
-      }
-      _ensureVisible(tooltip);
-
-      if (setUpClickListener && isTouchscreen) {
-        // On touchscreen devices, toggle tooltip visibility on tap.
-        target.addEventListener(
-          'click',
-          ((web.Event e) {
-            final isVisible = tooltip.classList.contains('visible');
-            if (!isVisible) {
-              tooltip.classList.add('visible');
-              e.preventDefault();
-            }
-          }).toJS,
-        );
-      }
-    }
-  }
-
-  void closeAll() {
-    final visibleTooltips = web.document.querySelectorAll(
-      '.tooltip.visible',
-    );
-    for (var i = 0; i < visibleTooltips.length; i++) {
-      final tooltip = visibleTooltips.item(i) as web.HTMLElement;
-      tooltip.classList.remove('visible');
-    }
-  }
-
-  setup(setUpClickListener: true);
-
-  // Reposition tooltips on window resize.
-  web.EventStreamProviders.resizeEvent.forTarget(web.window).listen((_) {
-    setup(setUpClickListener: false);
-  });
-
-  // Close tooltips when clicking outside of any tooltip wrapper.
-  web.EventStreamProviders.clickEvent.forTarget(web.document).listen((e) {
-    if ((e.target as web.Element).closest('.tooltip-wrapper') == null) {
-      closeAll();
-    }
-  });
-
-  // On touchscreen devices, close tooltips when scrolling.
-  if (isTouchscreen) {
-    web.EventStreamProviders.scrollEvent.forTarget(web.window).listen((_) {
-      closeAll();
-    });
-  }
-}
-
-/// Adjust the tooltip position to ensure it is fully inside the
-/// ancestor .content element.
-void _ensureVisible(web.HTMLElement tooltip) {
-  final containerRect = tooltip.closest('.content')?.getBoundingClientRect();
-  final tooltipRect = tooltip.getBoundingClientRect();
-  final offset = double.parse(tooltip.getAttribute('data-adjusted') ?? '0');
-
-  final tooltipLeft = tooltipRect.left - offset;
-  final tooltipRight = tooltipRect.right - offset;
-  final containerLeft = containerRect?.left ?? 0.0;
-  final containerRight = containerRect?.right ?? web.window.innerWidth;
-
-  if (tooltipLeft < containerLeft) {
-    final offset = containerLeft - tooltipLeft;
-    tooltip.style.left = 'calc(50% + ${offset}px)';
-    tooltip.dataset['adjusted'] = offset.toString();
-  } else if (tooltipRight > containerRight) {
-    final offset = tooltipRight - containerRight;
-    tooltip.style.left = 'calc(50% - ${offset}px)';
-    tooltip.dataset['adjusted'] = (-offset).toString();
-  } else {
-    tooltip.style.left = '50%';
-    tooltip.dataset['adjusted'] = '0';
   }
 }

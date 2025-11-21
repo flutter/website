@@ -19,25 +19,29 @@ import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_
     as prefix5;
 import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
     as prefix6;
-import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/simple_tooltip.dart'
     as prefix7;
-import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
+import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
     as prefix8;
-import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as prefix9;
-import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
     as prefix10;
-import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
     as prefix11;
-import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
     as prefix12;
-import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as prefix13;
-import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
     as prefix14;
-import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
     as prefix15;
-import 'package:jaspr_content/components/file_tree.dart' as prefix16;
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
+    as prefix16;
+import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
+    as prefix17;
+import 'package:jaspr_content/components/file_tree.dart' as prefix18;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -88,49 +92,59 @@ JasprOptions get defaultJasprOptions => JasprOptions(
       'src/components/common/client/os_selector',
     ),
 
-    prefix7.DartPadInjector: ClientTarget<prefix7.DartPadInjector>(
-      'src/components/dartpad/dartpad_injector',
-      params: _prefix7DartPadInjector,
+    prefix7.SimpleTooltip: ClientTarget<prefix7.SimpleTooltip>(
+      'src/components/common/client/simple_tooltip',
+      params: _prefix7SimpleTooltip,
     ),
 
-    prefix8.MenuToggle: ClientTarget<prefix8.MenuToggle>(
+    prefix8.DartPadInjector: ClientTarget<prefix8.DartPadInjector>(
+      'src/components/dartpad/dartpad_injector',
+      params: _prefix8DartPadInjector,
+    ),
+
+    prefix9.PageNav: ClientTarget<prefix9.PageNav>(
+      'src/components/layout/client/pagenav',
+      params: _prefix9PageNav,
+    ),
+
+    prefix10.MenuToggle: ClientTarget<prefix10.MenuToggle>(
       'src/components/layout/menu_toggle',
     ),
 
-    prefix9.SiteSwitcher: ClientTarget<prefix9.SiteSwitcher>(
+    prefix11.SiteSwitcher: ClientTarget<prefix11.SiteSwitcher>(
       'src/components/layout/site_switcher',
     ),
 
-    prefix10.ThemeSwitcher: ClientTarget<prefix10.ThemeSwitcher>(
+    prefix12.ThemeSwitcher: ClientTarget<prefix12.ThemeSwitcher>(
       'src/components/layout/theme_switcher',
     ),
 
-    prefix11.ArchiveTable: ClientTarget<prefix11.ArchiveTable>(
+    prefix13.ArchiveTable: ClientTarget<prefix13.ArchiveTable>(
       'src/components/pages/archive_table',
-      params: _prefix11ArchiveTable,
+      params: _prefix13ArchiveTable,
     ),
 
-    prefix12.GlossarySearchSection:
-        ClientTarget<prefix12.GlossarySearchSection>(
+    prefix14.GlossarySearchSection:
+        ClientTarget<prefix14.GlossarySearchSection>(
           'src/components/pages/glossary_search_section',
         ),
 
-    prefix13.LearningResourceFilters:
-        ClientTarget<prefix13.LearningResourceFilters>(
+    prefix15.LearningResourceFilters:
+        ClientTarget<prefix15.LearningResourceFilters>(
           'src/components/pages/learning_resource_filters',
         ),
 
-    prefix14.LearningResourceFiltersSidebar:
-        ClientTarget<prefix14.LearningResourceFiltersSidebar>(
+    prefix16.LearningResourceFiltersSidebar:
+        ClientTarget<prefix16.LearningResourceFiltersSidebar>(
           'src/components/pages/learning_resource_filters_sidebar',
         ),
 
-    prefix15.InteractiveQuiz: ClientTarget<prefix15.InteractiveQuiz>(
+    prefix17.InteractiveQuiz: ClientTarget<prefix17.InteractiveQuiz>(
       'src/components/tutorial/client/quiz',
-      params: _prefix15InteractiveQuiz,
+      params: _prefix17InteractiveQuiz,
     ),
   },
-  styles: () => [...prefix16.FileTree.styles],
+  styles: () => [...prefix18.FileTree.styles],
 );
 
 Map<String, dynamic> _prefix2CopyButton(prefix2.CopyButton c) => {
@@ -145,17 +159,25 @@ Map<String, dynamic> _prefix3DownloadLatestButton(
 Map<String, dynamic> _prefix4FeedbackComponent(prefix4.FeedbackComponent c) => {
   'issueUrl': c.issueUrl,
 };
-Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
+Map<String, dynamic> _prefix7SimpleTooltip(prefix7.SimpleTooltip c) => {
+  'target': c.target.toId(),
+  'content': c.content.toId(),
+};
+Map<String, dynamic> _prefix8DartPadInjector(prefix8.DartPadInjector c) => {
   'title': c.title,
   'theme': c.theme,
   'height': c.height,
   'runAutomatically': c.runAutomatically,
 };
-Map<String, dynamic> _prefix11ArchiveTable(prefix11.ArchiveTable c) => {
+Map<String, dynamic> _prefix9PageNav(prefix9.PageNav c) => {
+  'title': c.title,
+  'content': c.content.toId(),
+};
+Map<String, dynamic> _prefix13ArchiveTable(prefix13.ArchiveTable c) => {
   'os': c.os,
   'channel': c.channel,
 };
-Map<String, dynamic> _prefix15InteractiveQuiz(prefix15.InteractiveQuiz c) => {
+Map<String, dynamic> _prefix17InteractiveQuiz(prefix17.InteractiveQuiz c) => {
   'title': c.title,
   'questions': c.questions.map((i) => i.toJson()).toList(),
 };

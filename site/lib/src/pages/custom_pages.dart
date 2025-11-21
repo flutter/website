@@ -78,6 +78,8 @@ description: This is a test page for experimenting with First Week Experience (F
 sitemap: false
 ---
 
+## Quiz
+
 <Quiz title="Flutter and Dart Basics Quiz">
 - question: What is the Effective Dart guideline for the first sentence of a documentation comment?
   options:
@@ -108,5 +110,112 @@ sitemap: false
       correct: false
       explanation: Stack is used for overlapping widgets, not for scrollable lists.
 </Quiz>
+
+## Progress Ring
+
+<ProgressRing progress="0.0" />
+<ProgressRing progress="0.25" />
+<ProgressRing progress="0.5" />
+<ProgressRing progress="0.75" />
+<ProgressRing progress="1.0" />
+
+---
+
+<ProgressRing progress="0.1" small />
+<ProgressRing progress="0.6" small />
+<ProgressRing progress="0.3" large />
+<ProgressRing progress="0.95" large />
+
+## Foldable Code Block
+
+```dart foldable showLineNumbers
+[* -
+import 'package:flutter/material.dart'; 
+import 'package:flutter/services.dart';
+*]
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    [* -
+    return MaterialApp( // Root widget
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('My Home Page'),
+        ),
+        body: Center(
+          [*
+          child: Builder(
+            builder: (context) {
+              return Column(
+                children: [
+                  const Text('Hello, World!'),
+                  [* -
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      print('Click!');
+                    },
+                    child: const Text('A button'),
+                  ),
+                  *]
+                ],
+              );
+            },
+          ),
+          *]
+        ),
+      ),
+    );
+    *]
+  }
+}
+```
+
+## Summary Card
+
+<SummaryCard>
+title: What you'll learn in this Flutter lesson
+items:
+  - title: Introduction to Flutter and Dart programming
+    icon: flutter
+  - title: How to build beautiful UIs with widgets
+    icon: mobile_layout
+  - title: Adding navigation between different screens
+    icon: conversion_path
+</SummaryCard>
+
+---
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you accomplished in this lesson.
+completed: true
+items:
+  - title: Reviewed the core concepts of Flutter
+    icon: flutter
+    details: >-
+      Solidified understanding of Flutter's core concepts, including the widget
+      tree, state management principles (Stateless vs. Stateful widgets), and
+      the basic project structure. Reviewed the essentials of the Dart
+      programming language.
+  - title: Practiced building layouts with widgets
+    icon: mobile_layout
+    details: >-
+      Built and experimented with common layout widgets (Row, Column,
+      Stack, and Flex), learned how to use padding, alignment, and
+      constraints to create responsive layouts across screen sizes.
+  - title: Implemented screen navigation and routing
+    icon: conversion_path
+    details: >-
+      Implemented navigation between screens using routes and
+      Navigator patterns; learned how to pass arguments between routes
+      and manage back navigation and nested navigation scenarios.
+</SummaryCard>
+
 ''',
 );

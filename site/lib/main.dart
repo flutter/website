@@ -12,6 +12,7 @@ import 'jaspr_options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
+import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/common/tabs.dart';
 import 'src/components/common/youtube_embed.dart';
@@ -19,7 +20,10 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
+import 'src/components/tutorial/progress_ring.dart';
 import 'src/components/tutorial/quiz.dart';
+import 'src/components/tutorial/summary_card.dart';
+import 'src/components/util/component_ref.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
@@ -35,7 +39,7 @@ void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(options: defaultJasprOptions);
 
-  runApp(_docsFlutterDevSite);
+  runApp(ComponentRefScope(child: _docsFlutterDevSite));
 }
 
 Component get _docsFlutterDevSite => ContentApp.custom(
@@ -95,9 +99,12 @@ final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 List<CustomComponent> get _embeddableComponents => [
   const DashTabs(),
   const DashImage(),
+  const CodePreview(),
   const YoutubeEmbed(),
   const FileTree(),
   const Quiz(),
+  const ProgressRing(),
+  const SummaryCard(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),
