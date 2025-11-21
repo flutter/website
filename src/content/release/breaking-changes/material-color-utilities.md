@@ -35,9 +35,9 @@ generating.
 
 ## Timeline
 
-* Landed in version: TBD
+* Landed in version: `3.39.0-1.0.pre-250`
 * In stable release: TBD
 
 ## References
 
-* Relevant PR: [Update material_color_utilities to v0.13.0](https://github.com/flutter/flutter/pull/170000)
+* Relevant commit: [Update material_color_utilities to v0.13.0](https://github.com/flutter/flutter/commit/153fd7fc603836d8d57032a9cb93118245dfba8c)
