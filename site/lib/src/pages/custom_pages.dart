@@ -176,5 +176,46 @@ class MyApp extends StatelessWidget {
 }
 ```
 
+## Summary Card
+
+<SummaryCard>
+title: What you'll learn in this Flutter lesson
+items:
+  - title: Introduction to Flutter and Dart programming
+    icon: flutter
+  - title: How to build beautiful UIs with widgets
+    icon: mobile_layout
+  - title: Adding navigation between different screens
+    icon: conversion_path
+</SummaryCard>
+
+---
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you accomplished in this lesson.
+completed: true
+items:
+  - title: Reviewed the core concepts of Flutter
+    icon: flutter
+    details: >-
+      Solidified understanding of Flutter's core concepts, including the widget
+      tree, state management principles (Stateless vs. Stateful widgets), and
+      the basic project structure. Reviewed the essentials of the Dart
+      programming language.
+  - title: Practiced building layouts with widgets
+    icon: mobile_layout
+    details: >-
+      Built and experimented with common layout widgets (Row, Column,
+      Stack, and Flex), learned how to use padding, alignment, and
+      constraints to create responsive layouts across screen sizes.
+  - title: Implemented screen navigation and routing
+    icon: conversion_path
+    details: >-
+      Implemented navigation between screens using routes and
+      Navigator patterns; learned how to pass arguments between routes
+      and manage back navigation and nested navigation scenarios.
+</SummaryCard>
+
 ''',
 );
