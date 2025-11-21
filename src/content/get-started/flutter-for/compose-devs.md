@@ -56,14 +56,14 @@ Both composables and widgets only exist until they need to change.
 These languages call this property _immutability_.
 Jetpack Compose modifies UI component properties using an optional
 _modifier_ property backed by a `Modifier` object.
-By contrast, Flutter uses widgets for both UI components and
-their properties.
+By contrast, Flutter widgets configure their properties directly
+through constructor parameters.
 
 ```dart
 Padding(                         // <-- This is a Widget
-  padding: EdgeInsets.all(10.0), // <-- So is this
-  child: Text("Hello, World!"),  // <-- This, too
-)));
+  padding: EdgeInsets.all(10.0), // <-- a parameter to Padding
+  child: Text("Hello, World!"),  // <-- This is also a Widget
+);
 ```
 
 To compose layouts, both Jetpack Compose and Flutter nest UI components
