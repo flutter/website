@@ -404,26 +404,30 @@ a [`Dismissible`][] widget.
 
 Recall this code from the previous snippet:
 
-{% render "docs/code-and-image.md",
-image:"app-architecture/case-study/dismissible.webp",
-img-style:"max-height: 480px; border-radius: 12px; border: black 2px solid;",
-alt: "A clip that demonstrates the 'dismissible' functionality of the Compass app."
-code:"
-```dart title=home_screen.dart highlightLines=9-10
-SliverList.builder(
-  itemCount: widget.viewModel.bookings.length,
-  itemBuilder: (_, index) => _Booking(
-    key: ValueKey(viewModel.bookings[index].id),
-    booking: viewModel.bookings[index],
-    onTap: () => context.push(
-      Routes.bookingWithId(viewModel.bookings[index].id)
+<CodePreview direction="row">
+
+  <DashImage 
+    image="app-architecture/case-study/dismissible.webp"
+    alt="A clip that demonstrates the 'dismissible' functionality of the Compass app."
+    img-style="max-height: 480px; border-radius: 12px; border: black 2px solid;"
+    />
+
+  ```dart title=home_screen.dart highlightLines=9-10
+  SliverList.builder(
+    itemCount: widget.viewModel.bookings.length,
+    itemBuilder: (_, index) => _Booking(
+      key: ValueKey(viewModel.bookings[index].id),
+      booking: viewModel.bookings[index],
+      onTap: () => context.push(
+        Routes.bookingWithId(viewModel.bookings[index].id)
+      ),
+      onDismissed: (_) =>
+        viewModel.deleteBooking.execute(widget.viewModel.bookings[index].id),
     ),
-    onDismissed: (_) =>
-      viewModel.deleteBooking.execute(widget.viewModel.bookings[index].id),
   ),
-),
-```
-" %}
+  ```
+
+</CodePreview>
 
 On the `HomeScreen`, a user's saved trip is represented by
 the `_Booking` widget. When a `_Booking` is dismissed,
