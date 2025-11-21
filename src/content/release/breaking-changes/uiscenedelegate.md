@@ -195,7 +195,7 @@ on migrating.
 If you implement your own SceneDelegate, you must subclass it with
 `FlutterSceneDelegate` or conform to the `FlutterSceneLifeCycleProvider`
 protocol. See the [following
-examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
+examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate).
 
 ### Migrate Info.plist
 
