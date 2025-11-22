@@ -171,16 +171,20 @@ ga('send', 'pageview');
         // avoid a flash of the initial theme on load.
         raw('''
 <script>
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+try {
+  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 
-const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-if (storedTheme === 'auto-mode') {
-  document.body.classList.add(
-      'auto-mode',
-      prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
-  );
-} else {
-  document.body.classList.add(storedTheme);
+  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+  if (storedTheme === 'auto-mode') {
+    document.body.classList.add(
+        'auto-mode',
+        prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
+    );
+  } else {
+    document.body.classList.add(storedTheme);
+  }
+} catch (e) {
+  // localStorage is not available, do nothing and fallback to default.
 }
 </script>
       '''),
