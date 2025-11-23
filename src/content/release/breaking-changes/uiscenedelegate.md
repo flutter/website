@@ -189,7 +189,7 @@ If you were using one of these depreacted APIs, such as
 [`applicationDidBecomeActive`]({{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/applicationdidbecomeactive(_:)),
 you will likely need to create a SceneDelegate and migrate to scene life cycle
 events. See [Apple's
-documenation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
+documentation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
 on migrating.
 
 If you implement your own SceneDelegate, you must subclass it with
@@ -324,7 +324,7 @@ but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 </Tab>
 <Tab name="SwiftUI">
 
-When using Flutter in a SwifUI app, you can [optionally use a
+When using Flutter in a SwiftUI app, you can [optionally use a
 FlutterAppDelegate](/add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate)
 to receive application events. To migrate that to use UIScene events, you can
 make the following changes:
@@ -833,7 +833,6 @@ to your pubspec.yaml:
 
 - Landed in version: 3.38.0-0.1.pre
 - Stable release: 3.38
-- Landed in stable: TBD
 - Unknown: Apple changes their warning to an assert and Flutter apps that
   haven't adopted `UISceneDelegate` will start crashing on startup with the
   latest SDK.
