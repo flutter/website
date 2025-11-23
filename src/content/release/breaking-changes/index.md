@@ -38,7 +38,6 @@ They're sorted by release and listed in alphabetical order:
 
 * [Merged threads on Linux][]
 * [Stop generating `AssetManifest.json`][]
-* [UISceneDelegate adoption][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `TextField.canRequestFocus`][]
@@ -46,7 +45,6 @@ They're sorted by release and listed in alphabetical order:
 
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
@@ -60,12 +58,14 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 * [SnackBar with action no longer auto-dismisses][]
 * [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
+* [UISceneDelegate adoption][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
 [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
