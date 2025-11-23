@@ -101,7 +101,7 @@ final class CodeBlockProcessor implements PageExtension {
             foldingResult.lines,
             skipHighlighting,
           );
-          final processedContent = _highlightCode(
+          final processedContent = highlightCode(
             codeLines,
             language: language,
             skipSyntaxHighlighting: skipHighlighting,
@@ -110,7 +110,6 @@ final class CodeBlockProcessor implements PageExtension {
           return ComponentNode(
             WrappedCodeBlock(
               content: processedContent,
-              textToCopy: codeLines.copyContent,
               language: language,
               languagesToHide: const {
                 'plaintext',
@@ -141,8 +140,8 @@ final class CodeBlockProcessor implements PageExtension {
     );
   }
 
-  List<List<jaspr.Component>> _highlightCode(
-    List<_CodeLine> codeLines, {
+  static List<List<jaspr.Component>> highlightCode(
+    List<CodeLine> codeLines, {
     required String language,
     bool skipSyntaxHighlighting = false,
   }) {
@@ -165,7 +164,7 @@ final class CodeBlockProcessor implements PageExtension {
     ];
   }
 
-  List<jaspr.Component> _processLine(
+  static List<jaspr.Component> _processLine(
     List<highlighter.ThemedSpan> spans,
     List<({int startColumn, int length})> highlights,
   ) {
@@ -197,7 +196,7 @@ final class CodeBlockProcessor implements PageExtension {
     return processedSpans;
   }
 
-  List<({int startColumn, int length})> _findIntersectingHighlights(
+  static List<({int startColumn, int length})> _findIntersectingHighlights(
     List<({int startColumn, int length})> highlights,
     int spanStart,
     int spanEnd,
@@ -208,7 +207,7 @@ final class CodeBlockProcessor implements PageExtension {
       })
       .sorted((a, b) => a.startColumn.compareTo(b.startColumn));
 
-  List<jaspr.Component> _splitSpanByHighlights(
+  static List<jaspr.Component> _splitSpanByHighlights(
     highlighter.ThemedSpan span,
     List<({int startColumn, int length})> highlights,
     int spanStart,
@@ -266,7 +265,7 @@ final class CodeBlockProcessor implements PageExtension {
     return result;
   }
 
-  jaspr.Component _createSpan(
+  static jaspr.Component _createSpan(
     highlighter.ThemedSpan span, {
     String? content,
   }) {
@@ -293,13 +292,13 @@ final class CodeBlockProcessor implements PageExtension {
         .toList(growable: false);
   }
 
-  List<_CodeLine> _removeHighlights(
+  List<CodeLine> _removeHighlights(
     List<String> lines, [
     bool skipHighlighting = false,
   ]) {
     if (skipHighlighting) {
       return lines
-          .map((line) => _CodeLine(content: line, highlights: const []))
+          .map((line) => CodeLine(content: line, highlights: const []))
           .toList(growable: false);
     }
 
@@ -404,7 +403,7 @@ final class CodeBlockProcessor implements PageExtension {
 
     return [
       for (var i = 0; i < processedLines.length; i++)
-        _CodeLine(
+        CodeLine(
           content: processedLines[i],
           highlights: lineHighlights[i] ?? [],
         ),
@@ -508,24 +507,11 @@ final class CodeBlockProcessor implements PageExtension {
 }
 
 @immutable
-final class _CodeLine {
+final class CodeLine {
   final String content;
   final List<({int startColumn, int length})> highlights;
 
-  const _CodeLine({required this.content, required this.highlights});
-}
-
-extension on List<_CodeLine> {
-  static final RegExp _terminalReplacementPattern = RegExp(
-    r'^(\s*\$\s*)|(PS\s+)?(C:\\(.*)>\s*)',
-    multiLine: true,
-  );
-  static final RegExp _zeroWidthSpaceReplacementPattern = RegExp(r'\u200B');
-
-  String get copyContent => map((line) => line.content)
-      .join('\n')
-      .replaceAll(_terminalReplacementPattern, '')
-      .replaceAll(_zeroWidthSpaceReplacementPattern, '');
+  const CodeLine({required this.content, required this.highlights});
 }
 
 /// Parses a comma-separated list of numbers and ranges into a set of numbers.
