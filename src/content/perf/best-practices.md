@@ -267,7 +267,7 @@ For more information and examples, check out:
 * [Working with long lists][]
 * [Creating a `ListView` that loads one page at a time][]
   a community article by AbdulRahman AlHamali
-* [`Listview.builder`][] API
+* [`ListView.builder`][] API
 
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
 [`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
