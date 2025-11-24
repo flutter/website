@@ -41,12 +41,14 @@ They're sorted by release and listed in alphabetical order:
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [Stop generating `AssetManifest.json`][]
 * [Deprecate `TextField.canRequestFocus`][]
+* [MaterialScrollBehavior will now automatically build Scrollbars on Android][]
 
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[MaterialScrollBehavior will now automatically build Scrollbars on Android]: /release/breaking-changes/default-android-scrollbars
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
