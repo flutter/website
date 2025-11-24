@@ -62,8 +62,7 @@
       type: "api"
   labels:
     - "scrolling"
-    - "sliver"
-    - "slivers"
+    - "ui"
 
 - term: "Widget"
   short_description: |-
