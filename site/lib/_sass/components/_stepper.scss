@@ -21,6 +21,10 @@
       transform: none;
     }
 
+    &:last-child:not([open])::before {
+      display: none;
+    }
+
     summary {
       position: relative;
       display: flex;
