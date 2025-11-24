@@ -39,6 +39,12 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
+    .page-number {
+      margin-right: 0.5rem;
+      background-color: var(--site-primary-color);
+      color: var(--site-onPrimary-color-lightest);
+    }
   }
 
   .toc-current {
@@ -74,7 +80,13 @@
     scrollbar-width: thin;
     overscroll-behavior: contain;
 
-    padding: 0.2rem 0.4rem;
+    padding: 0.4rem;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
 
     @media (min-width: 420px) {
       border: none;
@@ -118,24 +130,13 @@
     }
 
     .page-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
       padding: 0;
       font-weight: 400;
       color: var(--site-base-fgColor);
-      margin-top: 0.6rem;
-
-      .page-number {
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        background: var(--site-raised-bgColor);
-        color: var(--site-base-fgColor);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 500;
-
-        transition: background-color 300ms ease, color 300ms ease;
-      }
 
       &.active .page-number {
         background-color: var(--site-primary-color);
@@ -153,8 +154,7 @@
     }
 
     .page-divider {
-      padding-left: 0.25rem;
-      padding-top: 0.25rem;
+      padding: 0.25rem;
       font-weight: 600;
       color: var(--site-base-fgColor-alt);
     }
@@ -162,5 +162,19 @@
     .dropdown-divider:has(~.page-link) {
       margin-top: 0.6rem;
     }
+  }
+
+  .page-number {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: var(--site-raised-bgColor);
+    color: var(--site-base-fgColor);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+
+    transition: background-color 300ms ease, color 300ms ease;
   }
 }

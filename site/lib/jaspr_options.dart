@@ -191,6 +191,7 @@ Map<String, dynamic> _prefix10DartPadInjector(prefix10.DartPadInjector c) => {
 };
 Map<String, dynamic> _prefix11PageNav(prefix11.PageNav c) => {
   'breadcrumbs': c.breadcrumbs,
+  'pageNumber': c.pageNumber,
   'initialHeading': c.initialHeading,
   'content': c.content.toId(),
 };

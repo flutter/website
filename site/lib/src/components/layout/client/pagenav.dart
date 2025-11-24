@@ -15,12 +15,14 @@ import '../../util/component_ref.dart';
 class PageNav extends StatefulComponent {
   const PageNav({
     this.breadcrumbs = const [],
+    this.pageNumber,
     required this.initialHeading,
     required this.content,
     super.key,
   });
 
   final List<String> breadcrumbs;
+  final int? pageNumber;
   final String initialHeading;
   final ComponentRef content;
 
@@ -80,6 +82,11 @@ class _PageNavState extends State<PageNav> {
                   const MaterialIcon('list')
                 else
                   const MaterialIcon('chevron_right'),
+                if (index == component.breadcrumbs.length - 1 &&
+                    component.pageNumber != null)
+                  span(classes: 'page-number', [
+                    text('${component.pageNumber}'),
+                  ]),
                 span([
                   text(crumb),
                 ]),
