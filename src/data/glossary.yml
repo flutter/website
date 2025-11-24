@@ -24,6 +24,47 @@
     - "performance"
     - "engine"
 
+- term: "Sliver"
+  short_description: |-
+    A customizable portion of a scrollable area.
+  long_description: |-
+    A sliver refers to a portion of a scrollable area,
+    designed to provide fine-grained control over scrolling behavior.
+    It enables you to create complex and dynamic scrolling effects,
+    such as elastic scrolling.
+  related_links:
+    - text: "Sliver documentation"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+    - text: "Slivers demystified"
+      link: "https://blog.flutter.dev/slivers-demystified-6ff68ab0296f"
+      type: "article"
+    - text: "Building scrolling experiences in Flutter"
+      link: "https://www.youtube.com/watch?v=YY-_yrZdjGc&t=2s"
+      type: "video"
+    - text: "SliverList and SliverGrid WotW"
+      link: "https://youtu.be/ORiTTaVY6mM?si=fDACp_z7xJ3_h2v7"
+      type: "video"
+    - text: "SliverAppBar WotW"
+      link: "https://youtu.be/R9C5KMJKluE?si=GyTtggOgWsBqTAFB"
+      type: "video"
+    - text: "CustomScrollView class"
+      link: "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html"
+      type: "api"
+    - text: "SliverAppBar class"
+      link: "https://api.flutter.dev/flutter/material/SliverAppBar-class.html"
+      type: "api"
+    - text: "SliverGrid class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html"
+      type: "api"
+    - text: "SliverList class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverList-class.html"
+      type: "api"
+  labels:
+    - "scrolling"
+    - "sliver"
+    - "slivers"
+
 - term: "Widget"
   short_description: |-
     The basic building block of a Flutter user interface.
