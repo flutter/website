@@ -75,7 +75,7 @@ for you.
 final ScrollController controller = ScrollController();
 
 MaterialApp(
-home: ListView.builder(
+  home: ListView.builder(
     controller: controller,
     itemBuilder: (BuildContext context, int index) {
     return Text('Item $index');
@@ -245,8 +245,8 @@ ScrollConfiguration(
 
 ## Timeline
 
-Landed in version: 3.40.0-0.1.pre<br>
-In stable release: 3.40.0
+Landed in version: Not yet<br>
+In stable release: Not yet
 
 ## References
 
