@@ -41,12 +41,14 @@ They're sorted by release and listed in alphabetical order:
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `TextField.canRequestFocus`][]
+* [Material 3 tokens update][]
 
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Material 3 tokens update]: /release/breaking-changes/material-color-utilities
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
