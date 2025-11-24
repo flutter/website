@@ -34,7 +34,3 @@
      default browser of your device.
    - **Launch in app**: This button opens this page within your app.
      This button only works for iOS or Android. Desktop apps launch a browser.
-
-{% if add == 'launch' -%}
-{% render "docs/debug/vscode-flutter-attach-json.md" %}
-{% endif -%}
