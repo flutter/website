@@ -4,8 +4,6 @@ shortTitle: Layout tutorial
 description: Learn how to build a layout in Flutter.
 ---
 
-{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
-
 :::secondary What you'll learn
 * How to lay out widgets next to each other.
 * How to add space between widgets.
@@ -271,7 +269,7 @@ Pass the provided name and location to the `TitleSection` constructor.
 
 [automatic reformatting support]: /tools/formatting
 [hot reload]: /tools/hot-reload
-[`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
+[`lib/main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step2/lib/main.dart
 
 ## Add the Button section
 
@@ -581,9 +579,9 @@ You can access the resources used in this tutorial from these locations:
 **Image:** [ch-photo][]<br>
 **Pubspec:** [`pubspec.yaml`][]<br>
 
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/lib/main.dart
 [ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
 
 ## Next Steps
 

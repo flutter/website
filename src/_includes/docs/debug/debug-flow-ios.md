@@ -21,7 +21,11 @@ If you use VS Code to debug most of your code, start with this section.
 
 ##### Start the Dart debugger in VS Code
 
-{% render "docs/debug/debug-flow-vscode-as-start.md", add: add %}
+{% render "docs/debug/debug-flow-vscode-as-start.md" %}
+
+{% if add == 'launch' -%}
+{% render "docs/debug/vscode-flutter-attach-json.md" %}
+{% endif -%}
 
 ##### Attach to the Flutter process in Xcode
 

@@ -3,8 +3,6 @@ title: Test orientation
 description: How to test if an app is in portrait or landscape mode.
 ---
 
-{% assign api = site.api | append: '/flutter' -%}
-
 In Flutter, you can build different layouts depending on a given
 [orientation][]. For example, you could present data in two columns if the app
 is in portrait mode, and three columns if in landscape mode.
