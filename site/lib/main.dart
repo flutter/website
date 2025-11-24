@@ -23,6 +23,7 @@ import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/tutorial/downloadable_snippet.dart';
 import 'src/components/tutorial/progress_ring.dart';
 import 'src/components/tutorial/quiz.dart';
+import 'src/components/tutorial/stepper.dart';
 import 'src/components/tutorial/summary_card.dart';
 import 'src/components/util/component_ref.dart';
 import 'src/extensions/registry.dart';
@@ -107,6 +108,7 @@ List<CustomComponent> get _embeddableComponents => [
   const ProgressRing(),
   const SummaryCard(),
   const DownloadableSnippet(),
+  const Stepper(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),
