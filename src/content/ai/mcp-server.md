@@ -85,7 +85,7 @@ To configure [Antigravity][] to use the Dart and Flutter MCP server,
     click **View raw config**.
 1.  Add the following `dart-mcp-server` entry to the `mcpServers` map:
 
-    ```json highlightLines=3-10
+    ```json title="mcp_config.json" highlightLines=3-10
     {
       "mcpServers": {
         "dart-mcp-server": {
