@@ -86,9 +86,9 @@ use the [MCP Store][]:
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
 1.  Find the `"dart-mcp-server"` entry in the JSON,
-    and add the `--force-roots-fallback` flag to the `args` array:
+    and add the `--force-roots-fallback` flag to the `args` list:
 
-    ```json highlightLines=7
+    ```json title="mcp_config.json" highlightLines=7
     {
       "mcpServers": {
         "dart-mcp-server": {
