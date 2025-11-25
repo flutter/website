@@ -45,11 +45,14 @@ resources:
 ## AI development tools
 
 AI isn't only a feature in your app, but can also be a powerful assistant in
-your development workflow.  Tools like [Gemini Code
-Assist](#gemini-code-assist), [Gemini CLI](#gemini-cli), [Claude Code][],
+your development workflow.  Tools like [Antigravity][],
+[Gemini Code Assist][], [Gemini CLI][], [Claude Code][],
 [Cursor][], and [Windsurf][] can help you write code faster, understand complex
 concepts, and reduce boilerplate.
 
+[Antigravity]: https://antigravity.google/
+[Gemini Code Assist]: https://codeassist.google/
+[Gemini CLI]: https://geminicli.com/
 [Claude Code]: https://www.claude.com/product/claude-code
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
@@ -72,11 +75,26 @@ To learn more, visit the [GenUI SDK for Flutter][] documentation.
 
 [GenUI SDK for Flutter]: /ai/genui
 
+### Antigravity
+
+[Antigravity][] is an in-IDE AI agent that can read and write code, run
+terminal commands, and help you build complex features. Some of its capabilities
+include:
+
+*   **Agentic capabilities**: Unlike chat-based assistants, Antigravity can
+    proactively edit files and run terminal commands to complete tasks.
+*   **Complex reasoning**: It can plan and execute multi-step workflows which
+    makes it suitable for larger refactors or feature implementations.
+*   **Verification**: It can run tests and verify its own changes to ensure
+    correctness.
+
+[Antigravity]: https://antigravity.google/
+
 ### Gemini Code Assist
 
-[Gemini Code Assist][] is an AI-powered collaborator available in Visual Studio
-Code and JetBrains IDEs (including Android Studio).  It has a deep understanding
-of your project's codebase and can help you with:
+[Gemini Code Assist][] is an AI-powered collaborator available for IDEs like
+Visual Studio Code, JetBrains IDEs, and Android Studio. It has a deep
+understanding of your project's codebase and can help you with:
 
 * **Code completion and generation**: It suggests and generates entire blocks of
   code based on the context of what you're writing.
