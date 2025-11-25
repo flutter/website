@@ -136,7 +136,12 @@
 
       padding: 0;
       font-weight: 400;
+      text-decoration: none;
       color: var(--site-base-fgColor);
+
+      &:hover {
+        color: var(--site-link-fgColor);
+      }
 
       &.active .page-number {
         background-color: var(--site-primary-color);
@@ -168,7 +173,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: var(--site-raised-bgColor);
+    background: var(--site-inset-borderColor);
     color: var(--site-base-fgColor);
     display: inline-flex;
     align-items: center;
