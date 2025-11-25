@@ -86,7 +86,7 @@ include:
 *   **Complex reasoning**: It can plan and execute multi-step workflows which
     makes it suitable for larger refactors or feature implementations.
 *   **Verification**: It can run tests and verify its own changes to ensure
-    correctness.    
+    correctness.
 
 [Antigravity]: https://antigravity.google/
 
