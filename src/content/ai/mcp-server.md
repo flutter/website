@@ -65,24 +65,60 @@ Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 ### Antigravity
 
 To configure [Antigravity][] to use the Dart and Flutter MCP server,
-use the [MCP Store][]:
+[connect it as a custom MCP server][antigravity-mcp]:
 
-1. Locate the **Agent Side Panel** on the right. 
-  (It might be closed, so press Ctrl+Cmd+B to open it).
-2. Click the **`...`** (Additional options) menu-button.
-3. Select **MCP Servers**.
-4. Search for **Dart**.
-5. Select **Install**.
+1.  Navigate to or open the **Agent** side panel.
 
-It is also recommended to configure the Dart and Flutter Extensions:
+    If it's closed, open it by either:
 
-1. Open the View menu and select **Extensions**.
-2. In the Search Extensions field, enter **Flutter**.
-3. Click Flutter in the list, and select **Install**.
-   This installs both the Flutter and Dart extensions.
+    - Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Open View...**
+      <span aria-label="and then">></span> **Agent**.
+
+1.  In the upper right of the **Agent** panel,
+    click the **Additional options** (`...`) menu button.
+1.  Select **MCP Servers**.
+1.  In the upper right of the **Agent** panel,
+    click **Manage MCP Servers**.
+1.  In the upper right of the **Manage MCPs** editor view,
+    click **View raw config**.
+1.  Add the following `dart-mcp-server` entry to the `mcpServers` map:
+
+    ```json title="mcp_config.json" highlightLines=3-10
+    {
+      "mcpServers": {
+        "dart-mcp-server": {
+          "command": "dart",
+          "args": [
+            "mcp-server",
+            "--force-roots-fallback"
+          ],
+          "env": {}
+        }
+      }
+    }
+    ```
+
+It is also recommended to install the Dart and Flutter extensions:
+
+1.  Open the **Extensions** view by either:
+
+    - Pressing <kbd>Shift</kbd> +
+      <kbd class="special-key">Cmd/Ctrl</kbd> +
+      <kbd>P</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Extensions**.
+
+1.  In the **Search Extensions** input box, enter **Flutter**.
+1.  From the list of extensions, select **Flutter**.
+1.  In the **Extension: Flutter** view that opens,
+    click the **Install** button.
+
+    This installs both the Dart and Flutter extensions.
 
 [Antigravity]: https://antigravity.google/
-[MCP Store]: https://antigravity.google/docs/agent-side-panel
+[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
 
 ### Gemini CLI
 
