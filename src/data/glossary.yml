@@ -28,10 +28,14 @@
   short_description: |-
     A customizable portion of a scrollable area.
   long_description: |-
-    A sliver refers to a portion of a scrollable area,
-    designed to provide fine-grained control over scrolling behavior.
-    It enables you to create complex and dynamic scrolling effects,
-    such as elastic scrolling.
+    A sliver is a portion of a scrollable area that you can define
+    to behave in a special way.
+    Think of slivers as building blocks that you can compose together
+    inside a `CustomScrollView` to create custom scrolling experiences,
+    like elastic scrolling or a collapsing header.
+    Slivers are built lazily, which means that Flutter only renders
+    the slivers that are visible on screen,
+    making them very efficient for long lists of content.
   related_links:
     - text: "Sliver documentation"
       link: "/ui/layout/scrolling/slivers"
@@ -40,13 +44,13 @@
       link: "https://blog.flutter.dev/slivers-demystified-6ff68ab0296f"
       type: "article"
     - text: "Building scrolling experiences in Flutter"
-      link: "https://www.youtube.com/watch?v=YY-_yrZdjGc&t=2s"
+      link: "https://www.youtube.com/watch"
       type: "video"
     - text: "SliverList and SliverGrid WotW"
-      link: "https://youtu.be/ORiTTaVY6mM?si=fDACp_z7xJ3_h2v7"
+      link: "https://youtu.be/ORiTTaVY6mM"
       type: "video"
     - text: "SliverAppBar WotW"
-      link: "https://youtu.be/R9C5KMJKluE?si=GyTtggOgWsBqTAFB"
+      link: "https://youtu.be/R9C5KMJKluE"
       type: "video"
     - text: "CustomScrollView class"
       link: "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html"
