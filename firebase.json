@@ -50,6 +50,7 @@
       { "source": "/development", "destination": "/", "type": 301 },
       { "source": "/development/:rest*", "destination": "/:rest*", "type": 301 },
       { "source": "/devtools/:rest*", "destination": "/tools/devtools/:rest*", "type": 301 },
+      { "source": "/download", "destination": "/install", "type": 301 },
       { "source": "/downloads/:resource*", "destination": "/resources/:resource*", "type": 301 },
       { "source": "/f/dart-devtools-survey-metadata.json", "destination": "https://storage.googleapis.com/flutter-uxr/surveys/devtools-survey-metadata.json", "type": 301 },
       { "source": "/f/flutter-survey-metadata.json", "destination": "https://storage.googleapis.com/flutter-uxr/surveys/flutter-survey-metadata.json", "type": 301 },
