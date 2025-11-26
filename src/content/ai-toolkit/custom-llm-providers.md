@@ -26,22 +26,19 @@ The LLM could be in the cloud or local, it could be hosted in the Google Cloud
 Platform or on some other cloud provider, it could be a proprietary LLM or open
 source. Any LLM or LLM-like endpoint that can be used to implement this
 interface can be plugged into the chat view as an LLM provider. The AI Toolkit
-comes with three providers out of the box, all of which implement the
+comes with two providers out of the box, both of which implement the
 `LlmProvider` interface that is required to plug the provider into the
 following:
 
-* The [Gemini provider][], which wraps the `google_generative_ai` package
-* The [Vertex provider][], which wraps the `firebase_vertexai` package
+* The [Firebase provider][], which wraps the `firebase_ai` package
 * The [Echo provider][], which is useful as a minimal provider example
 
 [Echo provider]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/EchoProvider-class.html
-[Gemini provider]:
-    {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/GeminiProvider-class.html
+[Firebase provider]:
+    {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/FirebaseProvider-class.html
 [`LlmProvider` interface]:
     {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmProvider-class.html
-[Vertex provider]:
-    {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/VertexProvider-class.html
 
 ## Implementation
 
@@ -55,12 +52,12 @@ with these things in mind:
 
 1. Configuration To support full configurability in your custom provider, you
    should allow the user to create the underlying model and pass that in as a
-   parameter, as the Gemini provider does:
+   parameter, as the Firebase provider does:
 
 ```dart
-class GeminiProvider extends LlmProvider ... {
+class FirebaseProvider extends LlmProvider ... {
   @immutable
-  GeminiProvider({
+  FirebaseProvider({
     required GenerativeModel model,
     ...
   })  : _model = model,
@@ -81,12 +78,12 @@ provider.
   parameters, it must also support saving history as part of the construction
   process.
 
-  The Gemini provider handles this as shown:
+  The Firebase provider handles this as shown:
 
 ```dart
-class GeminiProvider extends LlmProvider with ChangeNotifier {
+class FirebaseProvider extends LlmProvider with ChangeNotifier {
   @immutable
-  GeminiProvider({
+  FirebaseProvider({
     required GenerativeModel model,
     Iterable<ChatMessage>? history,
     ...
@@ -148,13 +145,13 @@ Essentially, a custom provider manages the history for a single chat session
 with the underlying LLM. As the history changes, the underlying chat either
 needs to be kept up to date automatically (as the Gemini AI SDK for Dart does
 when you call the underlying chat-specific methods) or manually recreated (as
-the Gemini provider does whenever the history is set manually).
+the Firebase provider does whenever the history is set manually).
 
 3. Messages and attachments
 
 Attachments must be mapped from the standard `ChatMessage` class exposed by the
 `LlmProvider` type to whatever is handled by the underlying LLM. For example,
-the Gemini provider maps from the `ChatMessage` class from the AI Toolkit to the
+the Firebase provider maps from the `ChatMessage` class from the AI Toolkit to the
 `Content` type provided by the Gemini AI SDK for Dart, as shown in the following
 example:
 
@@ -162,7 +159,7 @@ example:
 import 'package:google_generative_ai/google_generative_ai.dart';
 ...
 
-class GeminiProvider extends LlmProvider with ChangeNotifier {
+class FirebaseProvider extends LlmProvider with ChangeNotifier {
   ...
   static Part _partFrom(Attachment attachment) => switch (attachment) {
         (final FileAttachment a) => DataPart(a.mimeType, a.bytes),
@@ -185,13 +182,13 @@ the underlying LLM. Every provider needs to provide for its own mapping.
 4. Calling the LLM
 
 How you call the underlying LLM to implement `generateStream` and
-`sendMessageStream` methods depends on the protocol it exposes. The Gemini
+`sendMessageStream` methods depends on the protocol it exposes. The Firebase
 provider in the AI Toolkit handles configuration and history but calls to
 `generateStream` and `sendMessageStream` each end up in a call to an API from
-the Gemini AI SDK for Dart:
+the Firebase AI Logic SDK:
 
 ```dart
-class GeminiProvider extends LlmProvider with ChangeNotifier {
+class FirebaseProvider extends LlmProvider with ChangeNotifier {
   ...
 
   @override
@@ -261,12 +258,11 @@ class GeminiProvider extends LlmProvider with ChangeNotifier {
 
 ## Examples
 
-The [Gemini provider][] and [Vertex provider][] implementations are nearly
-identical and provide a good starting point for your own custom provider. If
-you'd like to see an example provider implementation with all of the calls to
-the underlying LLM stripped away, check out the [Echo example app][], which
-simply formats the user's prompt and attachments as Markdown to send back to the
-user as its response.
+The [Firebase provider][] implementation provides a good starting point for your
+own custom provider. If you'd like to see an example provider implementation
+with all of the calls to the underlying LLM stripped away, check out the [Echo
+example app][], which simply formats the user's prompt and attachments as
+Markdown to send back to the user as its response.
 
 [Echo example app]:
     {{site.github}}/flutter/ai/blob/main/lib/src/providers/implementations/echo_provider.dart

@@ -49,12 +49,12 @@ they can do so. The gesture for that activity differs based on the platform
 they're using:
 
 * **Mobile**: Tap Return key on the virtual keyboard
-* **Web**: Unsupported
-* **Desktop**: Press `Ctrl+Enter` or `Opt/Alt+Enter`
+* **Web**: Press `Shift+Enter`
+* **Desktop**: Press `Shift+Enter`
 
 These options look like the following:
 
-**Desktop**:
+**Web and Desktop**:
 
 ![Screenshot of entering text on
 desktop](/assets/images/docs/ai-toolkit/desktop-enter-text.png)

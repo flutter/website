@@ -238,8 +238,10 @@ details into the `example/lib/firebase_options.dart` file. You can do this with
 the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
 app][add-fb] docs **from within the `example` directory**.
 
+
 :::note **Be careful not to check the `firebase_options.dart` file into your git
 repo.** :::
+
 
 ## Feedback
 

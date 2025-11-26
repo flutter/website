@@ -86,8 +86,8 @@ the chat session has been optimized for:
 prompts](/assets/images/docs/ai-toolkit/example-of-suggested-prompts.png)
 
 The suggestions are only shown when there is no existing chat history. Clicking
-one copies the text into the user's prompt editing area. To set the list of
-suggestions, construct the `LlmChatView` with the `suggestions` parameter:
+one sends the prompt to the LLM. To set the list of suggestions, construct the
+`LlmChatView` with the `suggestions` parameter:
 
 ```dart
 class ChatPage extends StatelessWidget {
@@ -190,7 +190,7 @@ To use function calling, you need to define your tools and pass them to the
 `FirebaseProvider`. Check out the [function calling example][] for details.
 
 [function calling example]:
-    {{site.github}}/flutter/ai/tree/main/example/lib/function_calls
+    {{site.github}}/flutter/ai/tree/main/example/lib/function_calls/function_calls.dart
 
 ## Disable attachments and audio input
 
