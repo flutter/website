@@ -75,9 +75,11 @@ Your app continues to execute from where it was prior
 to run the hot reload command.
 The code updates and execution continues.
 
+<a id="hot-restart" aria-hidden="true"></a>
+
 :::secondary
 **What is the difference between hot reload, hot restart,
-and full restart?** {:#hot-restart}
+and full restart?**
 
 * **Hot reload** loads code changes into the VM or the browser,
   and re-builds the widget tree, preserving the app state;

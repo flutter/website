@@ -5,6 +5,7 @@
     a running application in the Dart VM and see the changes immediately
     while maintaining application state.
   long_description: |-
+    This feature is also called "stateful hot reload".
     After the Dart runtime updates classes with the new versions
     of fields and functions, the Flutter framework automatically
     rebuilds the widget tree, allowing you to quickly view the effects
@@ -13,7 +14,9 @@
     Hot reload works on mobile, web, and desktop apps that are
     running in debug mode and is fully supported in VS Code,
     Android Studio, and IntelliJ IDEA. It does not re-run `main` or
-    `initState`; for that, use hot restart.
+    `initState`; for that, use [hot restart][].
+
+    [hot restart]: /resources/glossary/#hot-restart
   related_links:
     - text: "Hot reload documentation"
       link: "/tools/hot-reload"
@@ -34,7 +37,7 @@
     Use hot restart to re-run `main` or `initState`.
   long_description: |-
     Hot restart is still faster than a full restart, which also
-    recompiles the Java / Kotlin / Objective-C / Swift / JavaScript code.
+    recompiles the native, platform code (such as Swift).
     On the web, it also restarts the Dart Development Compiler (DDC).
   related_links:
     - text: "Difference between hot reload, hot restart, and full restart"
