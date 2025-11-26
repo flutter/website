@@ -16,7 +16,7 @@ Hosting an instance of the `LlmChatView` enables a
 number of user experience features that don't require
 any additional code to use:
 
-* **Multi-line text input**: Allows users to paste long text
+* **Multiline text input**: Allows users to paste long text
   input or insert new lines into their text as they enter it.
 * **Voice input**: Allows users to input prompts using speech
   for ease of use.
@@ -32,7 +32,7 @@ any additional code to use:
 
 [`LlmChatView`]: {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatView-class.html
 
-## Multi-line text input
+## Multiline text input
 
 The user has  options when it comes to submitting
 their prompt once they've finished composing it,
@@ -72,22 +72,22 @@ In addition to text input the chat view can take an
 audio recording as input by tapping the Mic button,
 which is visible when no text has yet been entered.
 
-Tapping the **Mic** button starts the recording:
+Tap the **Mic** button to start the recording:
 
 ![Screenshot of entering text](/assets/images/docs/ai-toolkit/enter-textfield.png)
 
-Pressing the **Stop** button translates the user's voice input into text:
+Select the **Stop** button to translate the user's voice input into text:
 
 This text can then be edited, augmented and submitted as normal.
 
 ![Screenshot of entered voice](/assets/images/docs/ai-toolkit/enter-voice-into-textfield.png)
 
-## Multi-media Input
+## Multimedia input
 
 ![Textfield containing "Testing, testing, one, two, three"](/assets/images/docs/ai-toolkit/multi-media-testing-testing.png)
 
 The chat view can also take images and files as input to pass along
-to the underlying LLM. The user can press the **Plus** button to the
+to the underlying LLM. The user can select the **Plus** button to the
 left of the text input and choose from the **Take Photo**, **Image Gallery**,
 **Attach File** and **Attach Link** icons:
 
@@ -97,15 +97,15 @@ The **Take Photo** button allows the user to use their device's camera to take a
 
 ![Selfie image](/assets/images/docs/ai-toolkit/selfie.png)
 
-Pressing the **Image Gallery** button lets the user upload
+Select the **Image Gallery** button to let the user upload
 from their device's image gallery:
 
 ![Download image from gallery](/assets/images/docs/ai-toolkit/download-from-gallery.png)
 
-Pressing the **Attach File** button lets the user select
+Select the **Attach File** button to let the user select
 a file of any type available on their device, like a PDF or TXT file.
 
-Pressing the **Attach Link** button lets the user enter a link to a web page or
+Select the **Attach Link** button to let the user enter a link to a web page or
 an online file.
 
 Once a photo, image, file, or link has been selected, it becomes an attachment and shows up as a thumbnail associated with the currently active prompt:
@@ -121,7 +121,7 @@ The user can zoom into an image thumbnail by tapping it:
 
 ![Zoomed image](/assets/images/docs/ai-toolkit/image-zoom.png)
 
-Pressing the **ESC** key or tapping anywhere outside the
+Pressing the **Esc** key or tapping anywhere outside the
 image dismisses the zoomed image.
 
 ## Copy to clipboard
@@ -135,10 +135,10 @@ copy it to the clipboard as normal:
 ![Copy to clipboard](/assets/images/docs/ai-toolkit/copy-to-clipboard.png)
 
 In addition, at the bottom of each prompt or response,
-the user can press the **Copy** button that pops up
+the user can select the **Copy** button that pops up
 when they hover their mouse:
 
-![Press the copy button](/assets/images/docs/ai-toolkit/chatbot-prompt.png)
+![Select the copy button](/assets/images/docs/ai-toolkit/chatbot-prompt.png)
 
 On mobile platforms, the user can long-tap a prompt or response and choose the Copy option:
 

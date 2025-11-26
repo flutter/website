@@ -21,7 +21,7 @@ Out of the box, it comes with support for [Firebase Vertex AI][].
 
 ## Key features
 
-* **Multi-turn chat**: Maintains context across multiple interactions.
+* **Multiturn chat**: Maintains context across multiple interactions.
 * **Streaming responses**: Displays AI responses in
   real-time as they are generated.
 * **Rich text display**: Supports formatted text in chat messages.
@@ -40,7 +40,7 @@ Out of the box, it comes with support for [Firebase Vertex AI][].
 * **Cross-platform support**: Compatible with Android, iOS, web,
   and macOS platforms.
 
-## Online Demo
+## Online demo
 
 Here's the online demo hosting the AI Toolkit:
 
@@ -255,7 +255,7 @@ in the [Add Firebase to your Flutter app][add-fb] docs
 file into your git repo.**
 :::
 
-## Feedback!
+## Feedback
 
 Along the way, as you use this package,
 please [log issues and feature requests][file-issues] as well as

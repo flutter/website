@@ -30,7 +30,7 @@ additional functionality:
   to present LLM responses.
 * **Custom styling**: Define unique visual styles to match the chat
   appearance to the overall app.
-* **Chat w/o UI**: Interact directly with the LLM providers without
+* **Chat without UI**: Interact directly with the LLM providers without
   affecting the user's current chat session.
 * **Custom LLM providers**: Build your own LLM provider for integration of chat
   with your own model backend.
