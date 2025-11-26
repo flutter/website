@@ -24,10 +24,11 @@ class WidgetCatalogCategories extends CustomComponentBase {
           {'catalog': {'index': final List<Object?> index}} =>
             index
                 .cast<Map<String, Object?>>()
-                .map(WidgetCatalogCategory.new)
+                .map(_WidgetCatalogCategory.new)
                 .sortedBy((c) => c.name),
           _ => throw Exception(
-            'Catalog not found. Make sure the `data/catalog/index.yml` file exists.',
+            'Catalog not found. '
+            'Make sure the `data/catalog/index.yml` file exists.',
           ),
         };
 
@@ -41,7 +42,7 @@ class WidgetCatalogCategories extends CustomComponentBase {
           for (final category in categories)
             if (!excludedCategories.contains(category.name))
               a(
-                href: '${context.page.url}/${category.name.toLowerCase()}',
+                href: '${context.page.url}/${category.id}',
                 classes: 'card outlined-card',
                 [
                   div(classes: 'card-header', [
@@ -58,7 +59,10 @@ class WidgetCatalogCategories extends CustomComponentBase {
   }
 }
 
-extension type WidgetCatalogCategory(Map<String, Object?> _data) {
+extension type _WidgetCatalogCategory(Map<String, Object?> _data) {
+  String get id =>
+      _data['id'] as String? ??
+      (throw Exception('Missing id for widget catalog category. '));
   String get name =>
       _data['name'] as String? ??
       (throw Exception('Missing name for widget catalog category. '));
