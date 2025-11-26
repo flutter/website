@@ -1,7 +1,7 @@
 - term: "Hot reload"
   short_description: |-
-    Also called "stateful hot reload",
-    is a Flutter feature that allows you to inject updated code into 
+    A Flutter feature (also called "stateful hot reload")
+    that allows you to inject updated code into 
     a running application in the Dart VM and see the changes immediately
     while maintaining application state.
   long_description: |-
@@ -30,8 +30,8 @@
 
 - term: "Hot restart"
   short_description: |-
-    Similar to hot reload, but when you need to re-run `main` or
-    `initState`, use hot restart, which does not maintain app state.
+    Similar to hot reload, but it does not maintain app state.
+    Use hot restart to re-run `main` or `initState`.
   long_description: |-
     Hot restart is still faster than a full restart, which also
     recompiles the Java / Kotlin / Objective-C / Swift / JavaScript code.
