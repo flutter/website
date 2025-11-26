@@ -20,8 +20,8 @@ any additional code to use:
   input or insert new lines into their text as they enter it.
 * **Voice input**: Allows users to input prompts using speech
   for ease of use.
-* **Multimedia input**: Enables users to take pictures and
-  send images and other file types.
+* **Multimedia input**: Enables users to take pictures, send images and other file types
+  and attach URLs as link to online resources.
 * **Image zoom**: Enables users to zoom into image thumbnails.
 * **Copy to clipboard**: Allows the  user to copy the text of
   a message or a LLM response to the clipboard.
@@ -89,7 +89,7 @@ This text can then be edited, augmented and submitted as normal.
 The chat view can also take images and files as input to pass along
 to the underlying LLM. The user can press the **Plus** button to the
 left of the text input and choose from the **Take Photo**, **Image Gallery**,
-and **Attach File** icons:
+**Attach File** and **Attach Link** icons:
 
 ![Screenshot of the 4 icons](/assets/images/docs/ai-toolkit/multi-media-icons.png)
 
@@ -105,7 +105,10 @@ from their device's image gallery:
 Pressing the **Attach File** button lets the user select
 a file of any type available on their device, like a PDF or TXT file.
 
-Once a photo, image, or file has been selected, it becomes an attachment and shows up as a thumbnail associated with the currently active prompt:
+Pressing the **Attach Link** button lets the user enter a link to a web page or
+an online file.
+
+Once a photo, image, file, or link has been selected, it becomes an attachment and shows up as a thumbnail associated with the currently active prompt:
 
 ![Thumbnails of images](/assets/images/docs/ai-toolkit/image-thumbnails.png)
 

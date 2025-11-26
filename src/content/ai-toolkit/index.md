@@ -10,22 +10,14 @@ next:
 
 Hello and welcome to the Flutter AI Toolkit!
 
-:::note
-These pages are now out of date. They will be
-updated soon but, in the meantime, be aware that the
-`google_generative_ai` and `vertexai_firebase` packages
-are deprecated and replaced with [`package:firebase_ai`][].
-:::
-
-[`package:firebase_ai`]: {{site.pub-pkg}}/firebase_ai
-
 The AI Toolkit is a set of AI chat-related widgets that make
 it easy to add an AI chat window to your Flutter app.
 The AI Toolkit is organized around an abstract
 LLM provider API to make it easy to swap out the
 LLM provider that you'd like your chat provider to use.
-Out of the box, it comes with support for two LLM provider
-integrations: Google Gemini AI and Firebase Vertex AI.
+Out of the box, it comes with support for [Firebase Vertex AI][].
+
+[Firebase Vertex AI]: https://firebase.google.com/docs/vertex-ai
 
 ## Key features
 
@@ -36,6 +28,7 @@ integrations: Google Gemini AI and Firebase Vertex AI.
 * **Voice input**: Allows users to input prompts using speech.
 * **Multimedia attachments**: Enables sending and
   receiving various media types.
+* **Function calling**: Supports tool calls to the LLM provider.
 * **Custom styling**: Offers extensive customization to
   match your app's design.
 * **Chat serialization/deserialization**: Store and retrieve conversations
@@ -88,75 +81,16 @@ Add the following dependencies to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   flutter_ai_toolkit: ^latest_version
-  google_generative_ai: ^latest_version # you might choose to use Gemini,
-  firebase_core: ^latest_version        # or Vertex AI or both
+  firebase_ai: ^latest_version
+  firebase_core: ^latest_version
 ```
 </li>
 
-<li><b>Gemini AI configuration</b>
+<li><b>Configuration</b>
 
-The toolkit supports both Google Gemini AI and
-Firebase Vertex AI as LLM providers.
-To use Google Gemini AI,
-[obtain an API key][] from Gemini AI Studio.
-Be careful not to check this key into your source code
-repository to prevent unauthorized access.
-
-[obtain an API key]: https://aistudio.google.com/app/apikey
-
-You'll also need to choose a specific Gemini model name
-to use in creating an instance of the Gemini model.
-The following example uses `gemini-2.0-flash`,
-but you can choose from an [ever-expanding set of models][models].
-
-[models]: https://ai.google.dev/gemini-api/docs/models/gemini
-
-
-```dart
-import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:flutter_ai_toolkit/flutter_ai_toolkit.dart';
-
-// ... app stuff here
-
-class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: const Text(App.title)),
-        body: LlmChatView(
-          provider: GeminiProvider(
-            model: GenerativeModel(
-              model: 'gemini-2.0-flash',
-              apiKey: 'GEMINI-API-KEY',
-            ),
-          ),
-        ),
-      );
-}
-```
-
-The `GenerativeModel` class comes from the
-`google_generative_ai` package.
-The AI Toolkit builds on top of this package with
-the `GeminiProvider`, which plugs Gemini AI into the
-`LlmChatView`, the top-level widget that provides an
-LLM-based chat conversation with your users.
-
-For a complete example, check out [`gemini.dart`][] on GitHub.
-
-[`gemini.dart`]: {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
-</li>
-
-<li><b>Vertex AI configuration</b>
-
-While Gemini AI is useful for quick prototyping,
-the recommended solution for production apps is
-Vertex AI in Firebase. This eliminates the need
-for an API key in your client app and replaces it
-with a more secure Firebase project.
-To use Vertex AI in your project,
-follow the steps described in the
+The AI Toolkit supports both Google Gemini AI (for prototyping) and
+Firebase Vertex AI (for production). Both require a Firebase project and
+the `firebase_core` package to be initialized, as described in the
 [Get started with the Gemini API using the Vertex AI in Firebase SDKs][vertex] docs.
 
 [vertex]: https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
@@ -168,12 +102,12 @@ as described in the [Add Firebase to your Flutter app][firebase] docs.
 [firebase]: https://firebase.google.com/docs/flutter/setup
 
 After following these instructions,
-you're ready to use Firebase Vertex AI in your Flutter app.
+you're ready to use Firebase to integrate AI in your Flutter app.
 Start by initializing Firebase:
 
 ```dart
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_vertexai/firebase_vertexai.dart';
+import 'package:firebase_ai/firebase_ai.dart';
 import 'package:flutter_ai_toolkit/flutter_ai_toolkit.dart';
 
 // ... other imports
@@ -190,7 +124,42 @@ void main() async {
 ```
 
 With Firebase properly initialized in your Flutter app,
-you're now ready to create an instance of the Vertex provider:
+you're now ready to create an instance of the Firebase provider. You can do this
+in two ways. For prototyping, consider the Gemini AI endpoint:
+
+```dart
+import 'package:firebase_ai/firebase_ai.dart';
+import 'package:flutter_ai_toolkit/flutter_ai_toolkit.dart';
+
+// ... app stuff here
+
+class ChatPage extends StatelessWidget {
+  const ChatPage({super.key});
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(title: const Text(App.title)),
+        // create the chat view, passing in the Firebase provider
+        body: LlmChatView(
+          provider: FirebaseProvider(
+            // Use the Google AI endpoint
+            model: FirebaseAI.googleAI().generativeModel(
+              model: 'gemini-2.5-flash',
+            ),
+          ),
+        ),
+      );
+}
+```
+
+The `FirebaseProvider` class exposes
+Vertex AI to the `LlmChatView`.
+Note that you provide a model name
+([you have several options][options] from which to choose),
+but you do not provide an API key.
+All of that is handled as part of the Firebase project.
+
+For production workloads, it's easy to swap in the Vertex AI endpoint:
 
 ```dart
 class ChatPage extends StatelessWidget {
@@ -199,11 +168,11 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(title: const Text(App.title)),
-        // create the chat view, passing in the Vertex provider
         body: LlmChatView(
-          provider: VertexProvider(
-            chatModel: FirebaseVertexAI.instance.generativeModel(
-              model: 'gemini-2.0-flash',
+          provider: FirebaseProvider(
+            // Use the Vertex AI endpoint
+            model: FirebaseAI.vertexAI().generativeModel(
+              model: 'gemini-2.5-flash',
             ),
           ),
         ),
@@ -212,18 +181,10 @@ class ChatPage extends StatelessWidget {
 ```
 
 
-The `FirebaseVertexAI` class comes from the
-`firebase_vertexai` package. The AI Toolkit
-builds the `VertexProvider` class to expose
-Vertex AI to the `LlmChatView`.
-Note that you provide a model name
-([you have several options][options] from which to choose),
-but you do not provide an API key.
-All of that is handled as part of the Firebase project.
-
-For a complete example, check out [vertex.dart][] on GitHub.
+For a complete example, check out the [gemini.dart] and [vertex.dart][] examples.
 
 [options]: https://firebase.google.com/docs/vertex-ai/gemini-models#available-model-names
+[gemini.dart]: {{site.github}}/flutter/ai/blob/main/example/lib/gemini/gemini.dart
 [vertex.dart]: {{site.github}}/flutter/ai/blob/main/example/lib/vertex/vertex.dart
 </li>
 
@@ -279,17 +240,6 @@ you'll need to replace the `example/lib/gemini_api_key.dart`
 and `example/lib/firebase_options.dart` files,
 both of which are just placeholders. They're needed
 to enable the example projects in the `example/lib` folder.
-
-**gemini_api_key.dart**
-
-Most of the example apps rely on a Gemini API key,
-so for those to work, you'll need to plug your API key
-in the `example/lib/gemini_api_key.dart` file.
-You can get an API key in [Gemini AI Studio][].
-
-:::note
-**Be careful not to check the `gemini_api_key.dart` file into your git repo.**
-:::
 
 **firebase_options.dart**
 

@@ -176,6 +176,22 @@ class _HomePageState extends State<HomePage> {
 }
 ```
 
+## Function calling
+
+To enable the LLM to perform actions on behalf of the user,
+you can provide a set of tools (functions) that the LLM can call.
+The `FirebaseProvider` supports function calling out of the box.
+It handles the loop of sending the user's prompt,
+receiving a function call request from the LLM,
+executing the function, and sending the result back to the LLM
+until a final text response is generated.
+
+To use function calling, you need to define your tools
+and pass them to the `FirebaseProvider`.
+Check out the [function calling example][] for details.
+
+[function calling example]: {{site.github}}/flutter/ai/tree/main/example/lib/function_calls
+
 ## Disable attachments and audio input
 
 If you'd like to disable attachments (the **+** button) or audio input (the mic button),
@@ -203,6 +219,25 @@ class ChatPage extends StatelessWidget {
 ```
 
 Both of these flags default to `true`.
+
+## Custom speech-to-text
+
+By default, the AI Toolkit uses the `LlmProvider` to pass to the `LlmChatView` to provide the speech-to-text implementation.
+If you'd like to provide your own implementation,
+for example to use a device-specific service,
+you can do so by implementing the `SpeechToText` interface
+and passing it to the `LlmChatView` constructor:
+
+```dart
+LlmChatView(
+  // ...
+  speechToText: MyCustomSpeechToText(),
+)
+```
+
+Check out the [custom STT example][] for details.
+
+[custom STT example]: {{site.github}}/flutter/ai/tree/main/example/lib/custom_stt
 
 ## Manage cancel or error behavior
 
@@ -569,11 +604,16 @@ uses this feature to implement an app with a Halloween theme:
 
 For a complete list of the styles available in the
 `LlmChatViewStyle` class, check out the [reference documentation][].
+You can also customize the appearance of the voice recorder
+using the `voiceNoteRecorderStyle` parameter of the `LlmChatViewStyle` class,
+which is demonstrated in the [styles example][styles-ex].
+
 To see custom styles in action,
-in addition to the [custom styles example][custom-ex],
+in addition to the [custom styles example][custom-ex] and the [styles example][styles-ex],
 check out the [dark mode example][] and the [demo app][].
 
 [custom-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/custom_styles/custom_styles.dart
+[styles-ex]: {{site.github}}/flutter/ai/blob/main/example/lib/styles/styles.dart
 [dark mode example]: {{site.github}}/flutter/ai/blob/main/example/lib/dark_mode/dark_mode.dart
 [demo app]: {{site.github}}/flutter/ai#online-demo
 [reference documentation]: {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/LlmChatViewStyle-class.html
