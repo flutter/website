@@ -130,11 +130,8 @@ pre {
       }
     }
 
-    .terminal-command::before {
-      color: $margin-fgColor;
-      content: "$";
-      content: "$" / "";
-      padding-right: 0.5rem;
+    span[aria-hidden="true"] {
+      user-select: none;
     }
   }
 

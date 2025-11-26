@@ -151,16 +151,53 @@ final class CodeBlockProcessor implements PageExtension {
       _ => opal.BuiltInLanguages.text,
     };
     final highlightedSpans = languageHighlighter.tokenize(content);
-    final renderedSpans = highlighter.ThemedSpanRenderer(
+    var renderedSpans = highlighter.ThemedSpanRenderer(
       themeByName: {
         'light': highlighter.SyntaxHighlightingTheme(dashLightTheme),
         'dark': highlighter.SyntaxHighlightingTheme(dashDarkTheme),
       },
     ).render(highlightedSpans);
 
+    if (language == 'console') {
+      renderedSpans = _applyConsoleStyles(renderedSpans);
+    }
+
     return [
       for (var i = 0; i < renderedSpans.length; i++)
         _processLine(renderedSpans[i], codeLines[i].highlights),
+    ];
+  }
+
+  static const _consolePromptTokenTag = '__console_prompt_token';
+
+  static List<List<highlighter.ThemedSpan>> _applyConsoleStyles(
+    List<List<highlighter.ThemedSpan>> lines,
+  ) {
+    return [
+      for (final line in lines)
+        if (line case [
+          final span,
+          ...final rest,
+        ] when span.content.startsWith('\$ '))
+          [
+            highlighter.ThemedSpan(
+              content: '\$ ',
+              styleByTheme: {
+                'light': dashLightTheme[opal.Tags.comment]!,
+                'dark': dashDarkTheme[opal.Tags.comment]!,
+              },
+              tag: _consolePromptTokenTag,
+            ),
+            if (span.content.length > 2)
+              highlighter.ThemedSpan(
+                content: span.content.substring(2),
+                styleByTheme: span.styleByTheme,
+                tag: span.tag,
+              ),
+            ...rest,
+          ]
+        else
+          line,
     ];
   }
 
@@ -273,6 +310,7 @@ final class CodeBlockProcessor implements PageExtension {
       [jaspr.text(content ?? span.content)],
       attributes: {
         'style': ?span.toInlineStyle(defaultTheme: 'light'),
+        if (span.tag == _consolePromptTokenTag) 'aria-hidden': 'true',
       },
     );
   }
