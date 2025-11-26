@@ -1,7 +1,6 @@
 - term: "Hot reload"
   short_description: |-
-    A Flutter feature (also called "stateful hot reload")
-    that allows you to inject updated code into 
+    A Flutter feature that allows you to inject updated code into 
     a running application in the Dart VM and see the changes immediately
     while maintaining application state.
   long_description: |-
@@ -72,6 +71,31 @@
     - "rendering"
     - "performance"
     - "engine"
+
+- term: "Jank"
+  short_description: |-
+    Instead of animating smoothly, an app exhibits jank by jerking visually.
+  long_description: |-
+    Jank occurs when a system can't keep up with the expected frame rate
+    and drops frames. Jank is a performance problem. Flutter offers
+    information and tooling, such as the Performance tool in DevTools,
+    that can help you diagnose and fix jank in your application.
+  related_links:
+    - text: "Use the Performance view in DevTools"
+      link: "/tools/devtools/performance"
+      type: "doc"
+    - text: "Improving rendering performance"
+      link: "/perf/rendering-performance"
+      type: "doc"
+    - text: "Performance best practices"
+      link: "/perf/best-practices"
+      type: "doc"
+    - text: "Measure performance with an integration test"
+      link: "/cookbook/testing/integration/profiling"
+      type: "doc"
+  labels:
+    - "performance"
+    - "smooth rendering"
 
 - term: "Sliver"
   short_description: |-
