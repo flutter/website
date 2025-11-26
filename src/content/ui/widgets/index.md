@@ -39,21 +39,7 @@ and the Ubuntu-inspired [yaru][] widgets.
 Base widgets support a range of common rendering options
 like input, layout, and text.
 
-<div class="card-grid">
-{% assign categories = catalog.index | sortBy: 'name' -%}
-{% for section in categories %}
-  {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
-    <a class="card outlined-card" href="{{page.url}}/{{section.id}}">
-      <div class="card-header">
-        <span class="card-title">{{section.name}}</span>
-      </div>
-      <div class="card-content">
-        <p>{{section.description}}</p>
-      </div>
-    </a>
-  {% endif -%}
-{% endfor %}
-</div>
+<WidgetCatalogCategories />
 
 ## Widget of the Week
 
