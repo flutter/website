@@ -10,13 +10,14 @@ next:
 
 Hello and welcome to the Flutter AI Toolkit!
 
-The AI Toolkit is a set of AI chat-related widgets that make it easy to add an
-AI chat window to your Flutter app. The AI Toolkit is organized around an
-abstract LLM provider API to make it easy to swap out the LLM provider that
-you'd like your chat provider to use. Out of the box, it comes with support for
-[Firebase Logic AI][].
+The AI Toolkit is a set of AI chat-related widgets that make
+it easy to add an AI chat window to your Flutter app.
+The AI Toolkit is organized around an abstract
+LLM provider API to make it easy to swap out the
+LLM provider that you'd like your chat provider to use.
+Out of the box, it comes with support for [Firebase AI Logic][].
 
-[Firebase Logic AI]: https://firebase.google.com/docs/vertex-ai
+[Firebase AI Logic]: https://firebase.google.com/docs/ai-logic
 
 ## Key features
 
@@ -78,13 +79,13 @@ dependencies:
 
 <li><b>Configuration</b>
 
-The AI Toolkit supports both Google Gemini AI (for prototyping) and Firebase
-Firebase Logic AI (for production). Both require a Firebase project and the
-`firebase_core` package to be initialized, as described in the [Get started with
-the Gemini API using the Firebase Logic AI in Firebase SDKs][vertex] docs.
+The AI Toolkit supports both Google Gemini endpoint (for prototyping) and
+the Vertex endpoint (for production). Both require a Firebase project and
+the `firebase_core` package to be initialized, as described in the
+[Get started with the Gemini API using the Firebase AI Logic SDKs][firebase_ai] docs.
 
-[vertex]:
-    https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
+[firebase_ai]:
+    https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
 Once that's complete, integrate the new Firebase project into your Flutter app
 using the `flutterfire CLI` tool, as described in the [Add Firebase to your
@@ -142,10 +143,12 @@ class ChatPage extends StatelessWidget {
 }
 ```
 
-The `FirebaseProvider` class exposes Firebase Logic AI to the `LlmChatView`. Note that
-you provide a model name ([you have several options][options] from which to
-choose), but you do not provide an API key. All of that is handled as part of
-the Firebase project.
+The `FirebaseProvider` class exposes
+the Firebase AI Logic SDK to the `LlmChatView`.
+Note that you provide a model name
+([you have several options][options] from which to choose),
+but you do not provide an API key.
+All of that is handled as part of the Firebase project.
 
 For production workloads, it's easy to swap in the Firebase Logic AI endpoint:
 
@@ -233,15 +236,17 @@ projects in the `example/lib` folder.
 
 **firebase_options.dart**
 
-To use the [Vertex AI example app][vertex-ex], place your Firebase configuration
-details into the `example/lib/firebase_options.dart` file. You can do this with
-the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
-app][add-fb] docs **from within the `example` directory**.
+To use the [Vertex AI example app][vertex-ex], 
+place your Firebase configuration details 
+into the `example/lib/firebase_options.dart` file. 
+You can do this with the `flutterfire CLI` tool as described 
+in the [Add Firebase to your Flutter app][add-fb] docs 
+**from within the `example` directory**. 
 
-
-:::note **Be careful not to check the `firebase_options.dart` file into your git
-repo.** :::
-
+:::note 
+**Be careful not to check the `firebase_options.dart` 
+file into your git repo.** 
+::: 
 
 ## Feedback
 

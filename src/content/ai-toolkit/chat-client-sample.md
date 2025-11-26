@@ -7,11 +7,13 @@ prev:
   path: /ai-toolkit/custom-llm-providers
 ---
 
-The AI Chat sample is meant to be a full-fledged chat app built using the
-Flutter AI Toolkit and Firebase AI for Firebase. In addition to all of the
-multi-shot, multi-media, streaming features that it gets from the AI Toolkit,
-the AI Chat sample shows how to store and manage multiple chats at once in your
-own apps. On desktop form-factors, the AI Chat sample looks like the following:
+The AI Chat sample is meant to be a full-fledged chat app
+built using the Flutter AI Toolkit and the Firebase AI Logic SDK.
+In addition to all of the multi-shot, multi-media,
+streaming features that it gets from the AI Toolkit,
+the AI Chat sample shows how to store and manage
+multiple chats at once in your own apps.
+On desktop form-factors, the AI Chat sample looks like the following:
 
 ![Desktop app UI](/assets/images/docs/ai-toolkit/desktop-pluto-convo.png)
 
