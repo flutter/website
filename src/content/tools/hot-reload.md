@@ -77,7 +77,7 @@ The code updates and execution continues.
 
 :::secondary
 **What is the difference between hot reload, hot restart,
-and full restart?**
+and full restart?** {:#hot-restart}
 
 * **Hot reload** loads code changes into the VM or the browser,
   and re-builds the widget tree, preserving the app state;

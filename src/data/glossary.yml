@@ -1,3 +1,49 @@
+- term: "Hot reload"
+  short_description: |-
+    Also called "stateful hot reload",
+    is a Flutter feature that allows you to inject updated code into 
+    a running application in the Dart VM and see the changes immediately
+    while maintaining application state.
+  long_description: |-
+    After the Dart runtime updates classes with the new versions
+    of fields and functions, the Flutter framework automatically
+    rebuilds the widget tree, allowing you to quickly view the effects
+    of your changes. Hot reload greatly increases the speed of development.
+
+    Hot reload works on mobile, web, and desktop apps that are
+    running in debug mode and is fully supported in VS Code,
+    Android Studio, and IntelliJ IDEA. It does not re-run `main` or
+    `initState`; for that, use hot restart.
+  related_links:
+    - text: "Hot reload documentation"
+      link: "/tools/hot-reload"
+      type: "doc"
+    - text: "Fast development cycles with Flutter's hot reload"
+      link: "https://youtu.be/YScJS8obxlo?si=QxJDIf_LGmle2Xs6"
+      type: "video"
+    - text: "Stateful hot reload for web is here"
+      link: "https://youtu.be/7nT3BHm6Gyg?si=nLUM0n69PSQnm8CF"
+      type: "video"
+  labels:
+    - "fast development"
+    - "tooling"
+
+- term: "Hot restart"
+  short_description: |-
+    Similar to hot reload, but when you need to re-run `main` or
+    `initState`, use hot restart, which does not maintain app state.
+  long_description: |-
+    Hot restart is still faster than a full restart, which also
+    recompiles the Java / Kotlin / Objective-C / Swift / JavaScript code.
+    On the web, it also restarts the Dart Development Compiler (DDC).
+  related_links:
+    - text: "Difference between hot reload, hot restart, and full restart"
+      link: "/tools/hot-reload#hot-restart"
+      type: "doc"
+  labels:
+    - "fast development"
+    - "tooling"
+
 - term: "Impeller"
   short_description: |-
     Flutter's modern graphics rendering engine,
