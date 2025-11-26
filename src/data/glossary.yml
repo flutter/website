@@ -74,7 +74,8 @@
 
 - term: "Jank"
   short_description: |-
-    Instead of animating smoothly, an app exhibits jank by jerking visually.
+    When an app appears to stutter or jerk visually instead of animating
+    smoothly.
   long_description: |-
     Jank occurs when a system can't keep up with the expected frame rate
     and drops frames. Jank is a performance problem. Flutter offers
