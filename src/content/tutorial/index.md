@@ -49,44 +49,9 @@ and thus is the quickest way to start using Flutter.
 
 ## Contents
 
-1. Introdution to Flutter UI
-   1. [Create a Flutter app][]
-   2. [Widget fundamentals][]
-   3. [Layout widgets on a screen][]
-   4. [Devtools][]
-   5. [Handle user input][]
-   6. [Learn about stateful widgets][]
-   7. [Add implicit animations][]
-2. State in Flutter apps
-   1. [Set up a new project][]
-   2. [Make Http Requests][]
-   3. [Use `ChangeNotifier` to update app state][]
-   4. [Use `ListenableBuilder` to update app UI][]
-3. Flutter UI 102
-   1. [Set up your project][]
-   2. [`LayoutBuilder` and adaptive layouts][]
-   3. [Scrolling and slivers][]
-   4. [Stack based navigation][]
+<TutorialOutline />
 
 [Learn Dart tutorial]: https://dart.dev/
 [installing Flutter on your machine]: /get-started
 [Firebase Studio]: https://firebase.studio/
 [Chrome]: https://www.google.com/chrome/
-
-[Create a Flutter app]: /tutorial/ui/1-create-an-app/
-[Widget fundamentals]: /tutorial/ui/2-widget-fundamentals/
-[Layout widgets on a screen]: /tutorial/ui/3-layout/
-[Devtools]: /tutorial/ui/4-devtools/
-[Handle user input]: /tutorial/ui/5-user-input/
-[Learn about stateful widgets]: /tutorial/ui/6-stateful-widget/
-[Add implicit animations]: /tutorial/ui/7-implicit-animations/
-
-[Set up a new project]: /tutorial/state/1-set-up-project/
-[Make Http Requests]: /tutorial/state/2-http-requests/
-[Use `ChangeNotifier` to update app state]: /tutorial/state/3-change-notifier/
-[Use `ListenableBuilder` to update app UI]: /tutorial/state/4-listenable-builder/
-
-[Set up your project]: /tutorial/ui-102/1-intro/
-[`LayoutBuilder` and adaptive layouts]: /tutorial/ui-102/2-adaptive-layout/
-[Scrolling and slivers]: /tutorial/ui-102/3-slivers/
-[Stack based navigation]: /tutorial/ui-102/4-navigation/

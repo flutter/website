@@ -1,7 +1,6 @@
 ---
 title: State management in Flutter
 description: Instructions on how to manage state with ChangeNotifiers.
-permalink: /tutorial/change-notifier/
 sitemap: false
 ---
 

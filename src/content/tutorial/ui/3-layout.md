@@ -1,7 +1,6 @@
 ---
 title: Layout
 description: Learn about common layout widgets in Flutter.
-permalink: /tutorial/layout/
 sitemap: false
 ---
 
@@ -20,7 +19,7 @@ that lay out widgets vertically or horizontally.
 Mobile applications often have a bar at the top called an “app bar” that can
 display a title, navigation controls, and/or actions.
 
-<img src='/assets/images/docs/tutorial/apppad.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
+<img src='/assets/images/docs/tutorial/appbar.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
 The simplest way to add an appbar to your app is by using two widgets:
 `Scaffold` and `AppBar`.

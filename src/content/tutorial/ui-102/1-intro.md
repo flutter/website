@@ -2,7 +2,6 @@
 title: Advanced UI features
 description: |
   A gentle introduction into advanced UI features: adaptive layouts, slivers, scrolling, navigation.
-permalink: /tutorial/set-up-ui-102/
 sitemap: false
 ---
 
