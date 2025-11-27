@@ -113,6 +113,7 @@ List<CustomComponent> get _embeddableComponents => [
   const Stepper(),
   const WidgetCatalogCategories(),
   const TutorialOutline(),
+  const WidgetCatalogGrid(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),
