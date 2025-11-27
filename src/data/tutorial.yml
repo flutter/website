@@ -1,38 +1,38 @@
 title: Learn Flutter
-chapters:
+units:
   - title: Introdution to Flutter UI
-    units:
+    chapters:
       - title: Create a Flutter app
-        url: /tutorial/ui/1-create-an-app/
+        url: /tutorial/ui/create-an-app/
       - title: Widget fundamentals
-        url: /tutorial/ui/2-widget-fundamentals/
+        url: /tutorial/ui/widget-fundamentals/
       - title: Layout widgets on a screen
-        url: /tutorial/ui/3-layout/
+        url: /tutorial/ui/layout/
       - title: Devtools
-        url: /tutorial/ui/4-devtools/
+        url: /tutorial/ui/devtools/
       - title: Handle user input
-        url: /tutorial/ui/5-user-input/
+        url: /tutorial/ui/user-input/
       - title: Learn about stateful widgets
-        url: /tutorial/ui/6-stateful-widget/
+        url: /tutorial/ui/stateful-widget/
       - title: Add implicit animations
-        url: /tutorial/ui/7-implicit-animations/
+        url: /tutorial/ui/implicit-animations/
   - title: State in Flutter apps
-    units:
+    chapters:
       - title: Set up a new project
-        url: /tutorial/state/1-set-up-project/
+        url: /tutorial/state/set-up-project/
       - title: Make Http Requests
-        url: /tutorial/state/2-http-requests/
+        url: /tutorial/state/http-requests/
       - title: Use `ChangeNotifier` to update app state
-        url: /tutorial/state/3-change-notifier/
+        url: /tutorial/state/change-notifier/
       - title: Use `ListenableBuilder` to update app UI
-        url: /tutorial/state/4-listenable-builder/
+        url: /tutorial/state/listenable-builder/
   - title: Flutter UI 102
-    units:
+    chapters:
       - title: Set up your project
-        url: /tutorial/ui-102/1-intro/
+        url: /tutorial/ui-102/intro/
       - title: "`LayoutBuilder` and adaptive layouts"
-        url: /tutorial/ui-102/2-adaptive-layout/
+        url: /tutorial/ui-102/adaptive-layout/
       - title: Scrolling and slivers
-        url: /tutorial/ui-102/3-slivers/
+        url: /tutorial/ui-102/slivers/
       - title: Stack based navigation
-        url: /tutorial/ui-102/4-navigation/
+        url: /tutorial/ui-102/navigation/

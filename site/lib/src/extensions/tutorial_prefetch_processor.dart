@@ -24,60 +24,49 @@ final class TutorialNavigationExtension implements PageExtension {
       _ => throw Exception('No tutorial data found.'),
     };
 
-    var chapterIndex = -1;
-    var unitIndex = -1;
-
     final normalizedPageUrl = page.url.endsWith('/')
         ? page.url
         : '${page.url}/';
 
-    outer:
-    for (final (i, chapter) in tutorial.chapters.indexed) {
-      for (final (j, unit) in chapter.units.indexed) {
-        final normalizedUnitUrl = unit.url.endsWith('/')
-            ? unit.url
-            : '${unit.url}/';
-        if (normalizedUnitUrl == normalizedPageUrl) {
-          chapterIndex = i;
-          unitIndex = j;
-          break outer;
-        }
-      }
-    }
+    final allChapters = [
+      for (final unit in tutorial.units) ...unit.chapters,
+    ];
 
-    if (chapterIndex == -1 || unitIndex == -1) {
+    final currentChapterIndex = allChapters.indexWhere((chapter) {
+      final normalizedUnitUrl = chapter.url.endsWith('/')
+          ? chapter.url
+          : '${chapter.url}/';
+      return normalizedUnitUrl == normalizedPageUrl;
+    });
+
+    if (currentChapterIndex == -1) {
       return nodes;
     }
 
-    final nextUnit =
-        tutorial.chapters[chapterIndex].units.length > unitIndex + 1
-        ? tutorial.chapters[chapterIndex].units[unitIndex + 1]
-        : tutorial.chapters.length > chapterIndex + 1
-        ? tutorial.chapters[chapterIndex + 1].units.first
+    final nextChapter = allChapters.length > currentChapterIndex + 1
+        ? allChapters[currentChapterIndex + 1]
         : null;
 
-    final prevUnit = unitIndex > 0
-        ? tutorial.chapters[chapterIndex].units[unitIndex - 1]
-        : chapterIndex > 0
-        ? tutorial.chapters[chapterIndex - 1].units.last
+    final prevChapter = currentChapterIndex > 0
+        ? allChapters[currentChapterIndex - 1]
         : null;
 
-    if (nextUnit == null && prevUnit == null) {
+    if (nextChapter == null && prevChapter == null) {
       return nodes;
     }
 
     page.apply(
       data: {
         'page': {
-          if (nextUnit != null)
-            'next': {'title': nextUnit.title, 'path': nextUnit.url},
-          if (prevUnit != null)
-            'prev': {'title': prevUnit.title, 'path': prevUnit.url},
+          if (nextChapter != null)
+            'next': {'title': nextChapter.title, 'path': nextChapter.url},
+          if (prevChapter != null)
+            'prev': {'title': prevChapter.title, 'path': prevChapter.url},
         },
       },
     );
 
-    if (nextUnit == null) {
+    if (nextChapter == null) {
       return nodes;
     }
 
@@ -85,7 +74,7 @@ final class TutorialNavigationExtension implements PageExtension {
       ComponentNode(
         Document.head(
           children: [
-            link(rel: 'prefetch', href: nextUnit.url),
+            link(rel: 'prefetch', href: nextChapter.url),
           ],
         ),
       ),

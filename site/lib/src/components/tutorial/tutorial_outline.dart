@@ -30,14 +30,14 @@ class TutorialOutline extends CustomComponentBase {
 
         return div(classes: 'tutorial-outline', [
           ol([
-            for (final chapter in model.chapters)
+            for (final unit in model.units)
               li([
-                text(chapter.title),
+                text(unit.title),
                 ol([
-                  for (final unit in chapter.units)
+                  for (final chapter in unit.chapters)
                     li([
-                      a(href: unit.url, [
-                        DashMarkdown(content: unit.title, inline: true),
+                      a(href: chapter.url, [
+                        DashMarkdown(content: chapter.title, inline: true),
                       ]),
                     ]),
                 ]),
