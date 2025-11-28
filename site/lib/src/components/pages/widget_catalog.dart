@@ -6,6 +6,8 @@ import 'package:collection/collection.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
+import '../../markdown/markdown_parser.dart';
+import '../../models/widget_catalog_model.dart';
 import '../../util.dart';
 
 class WidgetCatalogCategories extends CustomComponentBase {
@@ -26,10 +28,10 @@ class WidgetCatalogCategories extends CustomComponentBase {
           {'catalog': {'index': final List<Object?> index}} =>
             index
                 .cast<Map<String, Object?>>()
-                .map(_WidgetCatalogCategory.new)
+                .map(WidgetCatalogCategory.new)
                 .sortedBy((c) => c.name),
           _ => throw Exception(
-            'Catalog not found. '
+            'Widget Catalog not found. '
             'Make sure the `data/catalog/index.yml` file exists.',
           ),
         };
@@ -79,7 +81,7 @@ class WidgetCatalogGrid extends CustomComponentBase {
           {'catalog': {'widgets': final List<Object?> widgets}} =>
             widgets
                 .cast<Map<String, Object?>>()
-                .map(_WidgetCatalogWidget.new)
+                .map(WidgetCatalogWidget.new)
                 .sortedBy((c) => c.name),
           _ => throw Exception(
             'Catalog not found. '
@@ -88,69 +90,115 @@ class WidgetCatalogGrid extends CustomComponentBase {
         };
 
         return div(classes: 'card-grid', [
-          for (final widget in widgets)
-            a(href: widget.link, classes: 'card outlined-card', [
-              div(classes: 'card-image-holder', [
-                if (widget.vector case final vector?)
-                  raw(vector)
-                else if (widget.imageSrc case final imageSrc?)
-                  img(
-                    alt:
-                        'Rendered image or visualization of '
-                        'the ${widget.name} widget.',
-                    src: imageSrc,
-                  )
-                else
-                  img(
-                    alt: 'Flutter logo for widget missing visualization image.',
-                    src: '/assets/images/docs/catalog-widget-placeholder.png',
-                    attributes: {'aria-hidden': 'true'},
-                  ),
-              ]),
-              div(classes: 'card-header', [
-                span(classes: 'card-title', [text(widget.name)]),
-              ]),
-              div(classes: 'card-content', [
-                p(classes: 'card-text', [
-                  text(truncateWords(widget.description, 25)),
-                ]),
-              ]),
-            ]),
+          for (final widget in widgets) WidgetCatalogCard(widget: widget),
         ]);
       },
     );
   }
 }
 
-extension type _WidgetCatalogCategory(Map<String, Object?> _data) {
-  String get id =>
-      _data['id'] as String? ??
-      (throw Exception('Missing id for widget catalog category. '));
-  String get name =>
-      _data['name'] as String? ??
-      (throw Exception('Missing name for widget catalog category. '));
-  String get description =>
-      _data['description'] as String? ??
-      (throw Exception(
-        'Missing description for widget catalog category "$name".',
-      ));
-}
+class WidgetCatalogCard extends StatelessComponent {
+  const WidgetCatalogCard({
+    required this.widget,
+    this.isMaterialCatalog = false,
+    this.subcategory,
+    super.key,
+  });
 
-extension type _WidgetCatalogWidget(Map<String, Object?> _data) {
-  String get name =>
-      _data['name'] as String? ??
-      (throw Exception('Missing name for widget catalog widget. '));
-  String get description =>
-      _data['description'] as String? ??
-      (throw Exception(
-        'Missing description for widget catalog widget "$name".',
-      ));
-  String get link =>
-      _data['link'] as String? ??
-      (throw Exception('Missing link for widget catalog widget "$name".'));
-  String? get vector => _data['vector'] as String?;
-  String? get imageSrc => switch (_data['image']) {
-    {'src': final String src} => src,
-    _ => null,
-  };
+  final WidgetCatalogWidget widget;
+  final bool isMaterialCatalog;
+  final WidgetCatalogSubcategory? subcategory;
+
+  @override
+  Component build(BuildContext context) {
+    return a(href: widget.link, classes: 'card outlined-card', [
+      _buildCardImageHolder(
+        name: widget.name,
+        vector: widget.vector,
+        imageSrc: widget.imageSrc,
+        hoverBackgroundSrc: widget.hoverBackgroundSrc,
+        isMaterialCatalog: isMaterialCatalog,
+        subcategoryColor: subcategory?.color,
+      ),
+      div(classes: 'card-header', [
+        span(classes: 'card-title', [text(widget.name)]),
+      ]),
+      div(classes: 'card-content', [
+        p([
+          DashMarkdown(
+            inline: true,
+            content: truncateWords(widget.description, 25),
+          ),
+        ]),
+      ]),
+    ]);
+  }
+
+  static const String _placeholderImagePath =
+      '/assets/images/docs/catalog-widget-placeholder.png';
+
+  Component _buildCardImageHolder({
+    required String name,
+    required String? vector,
+    required String? imageSrc,
+    required String? hoverBackgroundSrc,
+    required bool isMaterialCatalog,
+    required String? subcategoryColor,
+  }) {
+    final holderClass = isMaterialCatalog
+        ? 'card-image-holder-material-3'
+        : 'card-image-holder';
+
+    final imageAlt = isMaterialCatalog
+        ? 'Rendered example of the $name Material widget.'
+        : 'Rendered image or visualization of the $name widget.';
+
+    const placeholderAlt =
+        'Placeholder Flutter logo in place of '
+        'missing widget image or visualization.';
+
+    final styleAttributes = isMaterialCatalog && subcategoryColor != null
+        ? {'style': '--bg-color: $subcategoryColor'}
+        : <String, String>{};
+
+    return div(
+      classes: holderClass,
+      attributes: styleAttributes,
+      [
+        if (isMaterialCatalog) ...[
+          // Material catalog always expects an image.
+          if (imageSrc != null && imageSrc.isNotEmpty)
+            img(alt: imageAlt, src: imageSrc)
+          else
+            img(
+              alt: placeholderAlt,
+              src: _placeholderImagePath,
+              attributes: {'aria-hidden': 'true'},
+            ),
+          if (hoverBackgroundSrc != null && hoverBackgroundSrc.isNotEmpty)
+            div(classes: 'card-image-material-3-hover', [
+              img(
+                alt:
+                    'Decorated background for '
+                    'Material widget visualizations.',
+                src: hoverBackgroundSrc,
+                attributes: {'aria-hidden': 'true'},
+              ),
+            ]),
+        ] else ...[
+          // Standard catalog prefers vector, then image, then placeholder.
+          if (vector != null && vector.isNotEmpty)
+            raw(vector)
+          else if (imageSrc != null && imageSrc.isNotEmpty)
+            img(alt: imageAlt, src: imageSrc)
+          else
+            img(
+              alt: placeholderAlt,
+              src: _placeholderImagePath,
+              attributes: {'aria-hidden': 'true'},
+            ),
+        ],
+      ],
+    );
+  }
 }
