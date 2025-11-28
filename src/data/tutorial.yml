@@ -28,7 +28,7 @@ units:
         url: /tutorial/state/listenable-builder/
   - title: Flutter UI 102
     chapters:
-      - title: Set up your project
+      - title: Advanced UI features
         url: /tutorial/ui-102/intro/
       - title: "`LayoutBuilder` and adaptive layouts"
         url: /tutorial/ui-102/adaptive-layout/

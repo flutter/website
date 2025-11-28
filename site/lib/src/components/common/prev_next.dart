@@ -4,6 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 
+import '../../markdown/markdown_parser.dart';
 import 'material_icon.dart';
 
 /// Previous and next page buttons to display at the end of a page
@@ -49,7 +50,9 @@ class _PrevNextCard extends StatelessComponent {
           attributes: {'aria-label': ariaLabel},
           [text(subtitle)],
         ),
-        span(classes: 'prev-next-title', [text(page.title)]),
+        span(classes: 'prev-next-title', [
+          DashMarkdown(inline: true, content: page.title),
+        ]),
       ]),
       if (!isPrevious) const MaterialIcon('chevron_right'),
     ]);
