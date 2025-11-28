@@ -1,7 +1,6 @@
 ---
 title: Simple animations
 description: Learn the simplest way to implement animations in Flutter.
-permalink: /tutorial/animations/
 sitemap: false
 ---
 

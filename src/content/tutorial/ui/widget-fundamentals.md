@@ -1,7 +1,6 @@
 ---
 title: Create widgets
 description: Learn about stateless widgets and how to build your own.
-permalink: /tutorial/stateless-widgets/
 sitemap: false
 ---
 

@@ -1,7 +1,6 @@
 ---
 title: Stack-based navigation
-description: Learn how to navigate from one page to another in a Flutter app
-permalink: /tutorial/stack-based-navigation/
+description: Learn how to navigate from one page to another in a Flutter app.
 sitemap: false
 ---
 

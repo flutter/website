@@ -1,0 +1,38 @@
+title: Learn Flutter
+units:
+  - title: Introdution to Flutter UI
+    chapters:
+      - title: Create a Flutter app
+        url: /tutorial/ui/create-an-app/
+      - title: Widget fundamentals
+        url: /tutorial/ui/widget-fundamentals/
+      - title: Layout widgets on a screen
+        url: /tutorial/ui/layout/
+      - title: Devtools
+        url: /tutorial/ui/devtools/
+      - title: Handle user input
+        url: /tutorial/ui/user-input/
+      - title: Learn about stateful widgets
+        url: /tutorial/ui/stateful-widget/
+      - title: Add implicit animations
+        url: /tutorial/ui/implicit-animations/
+  - title: State in Flutter apps
+    chapters:
+      - title: Set up a new project
+        url: /tutorial/state/set-up-project/
+      - title: Make Http Requests
+        url: /tutorial/state/http-requests/
+      - title: Use `ChangeNotifier` to update app state
+        url: /tutorial/state/change-notifier/
+      - title: Use `ListenableBuilder` to update app UI
+        url: /tutorial/state/listenable-builder/
+  - title: Flutter UI 102
+    chapters:
+      - title: Advanced UI features
+        url: /tutorial/ui-102/intro/
+      - title: "`LayoutBuilder` and adaptive layouts"
+        url: /tutorial/ui-102/adaptive-layout/
+      - title: Scrolling and slivers
+        url: /tutorial/ui-102/slivers/
+      - title: Stack based navigation
+        url: /tutorial/ui-102/navigation/

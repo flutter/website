@@ -1,7 +1,6 @@
 ---
 title: LayoutBuilder and adaptive layouts
-description: Learn how to use the LayoutBuilder widget
-permalink: /tutorial/adaptive-layouts/
+description: Learn how to use the LayoutBuilder widget.
 sitemap: false
 ---
 

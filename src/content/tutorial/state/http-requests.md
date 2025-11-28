@@ -1,7 +1,6 @@
 ---
 title: Fetch data from the internet
 description: Instructions on how to make HTTP requests and parse responses.
-permalink: /tutorial/http-request/
 sitemap: false
 ---
 
