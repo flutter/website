@@ -557,12 +557,12 @@ class RadialExpansion extends StatelessWidget {
   const RadialExpansion({
     super.key,
     required this.maxRadius,
-    required this.child,
+    this.child,
   }) : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
   final double clipRectSize;
-  final Widget child;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
