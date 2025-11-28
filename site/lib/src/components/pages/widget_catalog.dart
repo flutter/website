@@ -112,14 +112,7 @@ class WidgetCatalogCard extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return a(href: widget.link, classes: 'card outlined-card', [
-      _buildCardImageHolder(
-        name: widget.name,
-        vector: widget.vector,
-        imageSrc: widget.imageSrc,
-        hoverBackgroundSrc: widget.hoverBackgroundSrc,
-        isMaterialCatalog: isMaterialCatalog,
-        subcategoryColor: subcategory?.color,
-      ),
+      _buildCardImageHolder(),
       div(classes: 'card-header', [
         span(classes: 'card-title', [text(widget.name)]),
       ]),
@@ -134,32 +127,26 @@ class WidgetCatalogCard extends StatelessComponent {
     ]);
   }
 
-  static const String _placeholderImagePath =
-      '/assets/images/docs/catalog-widget-placeholder.png';
-
-  Component _buildCardImageHolder({
-    required String name,
-    required String? vector,
-    required String? imageSrc,
-    required String? hoverBackgroundSrc,
-    required bool isMaterialCatalog,
-    required String? subcategoryColor,
-  }) {
+  Component _buildCardImageHolder() {
     final holderClass = isMaterialCatalog
         ? 'card-image-holder-material-3'
         : 'card-image-holder';
 
     final imageAlt = isMaterialCatalog
-        ? 'Rendered example of the $name Material widget.'
-        : 'Rendered image or visualization of the $name widget.';
+        ? 'Rendered example of the ${widget.name} Material widget.'
+        : 'Rendered image or visualization of the ${widget.name} widget.';
 
-    const placeholderAlt =
-        'Placeholder Flutter logo in place of '
-        'missing widget image or visualization.';
-
-    final styleAttributes = isMaterialCatalog && subcategoryColor != null
-        ? {'style': '--bg-color: $subcategoryColor'}
+    final styleAttributes = isMaterialCatalog && subcategory?.color != null
+        ? {'style': '--bg-color: ${subcategory?.color}'}
         : <String, String>{};
+
+    final placeholder = img(
+      alt:
+          'Placeholder Flutter logo in place of '
+          'missing widget image or visualization.',
+      src: '/assets/images/docs/catalog-widget-placeholder.png',
+      attributes: {'aria-hidden': 'true'},
+    );
 
     return div(
       classes: holderClass,
@@ -167,15 +154,12 @@ class WidgetCatalogCard extends StatelessComponent {
       [
         if (isMaterialCatalog) ...[
           // Material catalog always expects an image.
-          if (imageSrc != null && imageSrc.isNotEmpty)
+          if (widget.imageSrc case final imageSrc? when imageSrc.isNotEmpty)
             img(alt: imageAlt, src: imageSrc)
           else
-            img(
-              alt: placeholderAlt,
-              src: _placeholderImagePath,
-              attributes: {'aria-hidden': 'true'},
-            ),
-          if (hoverBackgroundSrc != null && hoverBackgroundSrc.isNotEmpty)
+            placeholder,
+          if (widget.hoverBackgroundSrc case final hoverBackgroundSrc?
+              when hoverBackgroundSrc.isNotEmpty)
             div(classes: 'card-image-material-3-hover', [
               img(
                 alt:
@@ -187,16 +171,13 @@ class WidgetCatalogCard extends StatelessComponent {
             ]),
         ] else ...[
           // Standard catalog prefers vector, then image, then placeholder.
-          if (vector != null && vector.isNotEmpty)
+          if (widget.vector case final vector? when vector.isNotEmpty)
             raw(vector)
-          else if (imageSrc != null && imageSrc.isNotEmpty)
+          else if (widget.imageSrc case final imageSrc?
+              when imageSrc.isNotEmpty)
             img(alt: imageAlt, src: imageSrc)
           else
-            img(
-              alt: placeholderAlt,
-              src: _placeholderImagePath,
-              attributes: {'aria-hidden': 'true'},
-            ),
+            placeholder,
         ],
       ],
     );
