@@ -132,6 +132,11 @@ String truncateWordsMarkdown(String text, int maxWords) {
   return '$truncated...\n$endContent';
 }
 
+extension StringUnCapitalize on String {
+  String unCapitalize() =>
+      isEmpty ? this : substring(0, 1).toLowerCase() + substring(1);
+}
+
 extension ListToClasses on List<String> {
   /// Convert a list of classes into a single class string
   /// that can be added to an HTML element.

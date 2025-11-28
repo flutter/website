@@ -29,7 +29,6 @@ import 'src/components/tutorial/summary_card.dart';
 import 'src/components/tutorial/tutorial_outline.dart';
 import 'src/components/util/component_ref.dart';
 import 'src/extensions/registry.dart';
-import 'src/layouts/catalog_page_layout.dart';
 import 'src/layouts/doc_layout.dart';
 import 'src/layouts/toc_layout.dart';
 import 'src/loaders/data_processor.dart';
@@ -72,7 +71,7 @@ Component get _docsFlutterDevSite => ContentApp.custom(
     rawOutputPattern: _passThroughPattern,
     extensions: allNodeProcessingExtensions,
     components: _embeddableComponents,
-    layouts: const [DocLayout(), TocLayout(), CatalogPageLayout()],
+    layouts: const [DocLayout(), TocLayout()],
     theme: const ContentTheme.none(),
     secondaryOutputs: [
       const RobotsTxtOutput(),
@@ -113,6 +112,7 @@ List<CustomComponent> get _embeddableComponents => [
   const Stepper(),
   const WidgetCatalogCategories(),
   const TutorialOutline(),
+  const WidgetCatalogGrid(),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),
