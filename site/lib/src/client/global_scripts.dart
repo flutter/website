@@ -117,10 +117,16 @@ void _setUpTabs() {
           // If the tab wrapper and this tab have a save key and ID defined,
           // switch other tabs to the tab with the same ID.
           _findAndActivateTabsWithSaveId(currentSaveKey, currentSaveId);
-          web.window.localStorage.setItem(
-            'tab-save-$currentSaveKey',
-            currentSaveId,
-          );
+          try {
+            web.window.localStorage.setItem(
+              'tab-save-$currentSaveKey',
+              currentSaveId,
+            );
+          } catch (e) {
+            if (kDebugMode) {
+              print('Error accessing localStorage $e');
+            }
+          }
         } else {
           _clearActiveTabs(tabs);
           _setActiveTab(tabElement);
@@ -129,12 +135,19 @@ void _setUpTabs() {
 
       tabElement.addEventListener('click', handleClick.toJS);
 
-      // If a tab was previously specified as selected in local storage,
-      // save a reference to it that can be switched to later.
-      if (saveId.isNotEmpty &&
-          localStorageKey != null &&
-          web.window.localStorage.getItem(localStorageKey) == saveId) {
-        tabToChangeTo = tabElement;
+      try {
+        // If a tab was previously specified as selected in local storage,
+        // save a reference to it that can be switched to later.
+        final tabSaveKey = localStorageKey != null
+            ? web.window.localStorage.getItem(localStorageKey)
+            : null;
+        if (saveId.isNotEmpty && tabSaveKey != null && tabSaveKey == saveId) {
+          tabToChangeTo = tabElement;
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage $e');
+        }
       }
     }
 
@@ -165,8 +178,14 @@ void _updateTabsFromQueryParameters() {
 
   for (final MapEntry(:key, :value) in originalQueryParameters.entries) {
     if (key.startsWith('tab-save-')) {
-      web.window.localStorage.setItem(key, value);
-      updatedQueryParameters.remove(key);
+      try {
+        web.window.localStorage.setItem(key, value);
+        updatedQueryParameters.remove(key);
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage $e');
+        }
+      }
     }
   }
 
