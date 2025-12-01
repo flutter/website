@@ -41,7 +41,7 @@ a view model class called the `HomeViewModel`.
 Its inputs are the [repositories][] that provide its data.
 In this case,
 the view model is dependent on the
-`BookingRepository`and `UserRepository` as arguments.
+`BookingRepository` and `UserRepository` as arguments.
 
 ```dart title=home_viewmodel.dart
 class HomeViewModel {
@@ -61,7 +61,7 @@ class HomeViewModel {
 
 View models are always dependent on data repositories,
 which are provided as arguments to the view model's constructor.
-view models and repositories have a many-to-many relationship,
+View models and repositories have a many-to-many relationship,
 and most view models will depend on multiple repositories.
 
 As in the earlier `HomeViewModel` example declaration,
