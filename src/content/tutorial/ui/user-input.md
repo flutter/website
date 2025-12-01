@@ -1,6 +1,7 @@
 ---
 title: User input
-description: Accept input from the user with buttons and text fields
+description: Accept input from the user with buttons and text fields.
+layout: tutorial
 sitemap: false
 ---
 

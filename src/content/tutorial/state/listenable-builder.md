@@ -1,6 +1,7 @@
 ---
 title: Rebuild UI when state changes
 description: Instructions on how to manage state with ChangeNotifiers.
+layout: tutorial
 sitemap: false
 ---
 

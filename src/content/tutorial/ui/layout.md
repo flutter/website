@@ -1,6 +1,7 @@
 ---
 title: Layout
 description: Learn about common layout widgets in Flutter.
+layout: tutorial
 sitemap: false
 ---
 

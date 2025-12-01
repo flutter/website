@@ -88,7 +88,7 @@ class _PageNavState extends State<PageNav> {
                     text('${component.pageNumber}'),
                   ]),
                 span([
-                  text(crumb),
+                  _simpleInlineMarkdown(crumb),
                 ]),
               ]),
             ],
@@ -107,5 +107,34 @@ class _PageNavState extends State<PageNav> {
       ),
       content: component.content.component,
     );
+  }
+
+  /// Simple (and incomplete) implementation of inline markdown parsing
+  /// for use on the client.
+  Component _simpleInlineMarkdown(String content) {
+    final syntaxRegex = RegExp(r'`([^`]+)`|\*([^*]+)\*|\*\*([^*]+)\*\*');
+
+    final components = <Component>[];
+
+    var current = 0;
+    final matches = syntaxRegex.allMatches(content);
+
+    for (final match in matches) {
+      if (match.start > current) {
+        components.add(text(content.substring(current, match.start)));
+      }
+      if (match.group(1) != null) {
+        components.add(code([text(match.group(1)!)]));
+      } else if (match.group(2) != null) {
+        components.add(em([text(match.group(2)!)]));
+      } else if (match.group(3) != null) {
+        components.add(strong([text(match.group(3)!)]));
+      }
+      current = match.end;
+    }
+    if (current < content.length) {
+      components.add(text(content.substring(current)));
+    }
+    return components.length > 1 ? fragment(components) : components.first;
   }
 }

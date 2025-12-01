@@ -2,6 +2,7 @@
 title: Advanced UI features
 description: |
   A gentle introduction into advanced UI features: adaptive layouts, slivers, scrolling, navigation.
+layout: tutorial
 sitemap: false
 ---
 

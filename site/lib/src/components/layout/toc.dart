@@ -5,6 +5,7 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
+import '../../markdown/markdown_parser.dart';
 import '../../models/page_navigation_model.dart';
 import '../../util.dart';
 import '../common/client/on_this_page_button.dart';
@@ -37,8 +38,15 @@ final class PageNavBar extends StatelessComponent {
     var currentLinkedPageNumber = 1;
     String? currentDivider;
 
+    final normalizedPageUrl = context.page.url.endsWith('/')
+        ? context.page.url
+        : '${context.page.url}/';
+
     for (final page in data.pageEntries) {
-      if (page.url == context.page.url) {
+      final normalizedEntryUrl = page.url.endsWith('/')
+          ? page.url
+          : '${page.url}/';
+      if (normalizedEntryUrl == normalizedPageUrl) {
         currentLinkedPage = page;
         break;
       }
@@ -93,7 +101,7 @@ final class PageNavBar extends StatelessComponent {
                     span(classes: 'page-number', [
                       text('${pageEntryNumber++}'),
                     ]),
-                    text(page.title),
+                    DashMarkdown(inline: true, content: page.title),
                   ],
                 ),
                 if (currentLinkedPage == page && data.toc != null)
