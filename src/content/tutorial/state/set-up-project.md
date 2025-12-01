@@ -16,54 +16,66 @@ description, and extract text.">
 
 This tutorial explores:
 
-* Making HTTP requests in Flutter
-* Managing application state with `ChangeNotifier`
-* Using the MVVM architecture pattern
-* Creating responsive user interfaces that update automatically when
-  data changes
+- Making HTTP requests in Flutter.
+- Managing application state with `ChangeNotifier`.
+- Using the MVVM architecture pattern.
+- Creating responsive user interfaces that
+  update automatically when data changes.
 
+This tutorial assumes you've completed the
+[Getting started with Dart][] and the [Introduction to Flutter UI][] tutorials,
+and therefore doesn't explain concepts like HTTP, JSON, or widget basics.
 
-This tutorial assumes you've completed the [Dart Getting Started
-tutorial][] and the [introductory Flutter tutorial][], and therefore
-doesn't explain concepts like HTTP, JSON, or widget basics.
+:::recommend Support Wikipedia
 
-:::note Support Wikipedia
-Wikipedia is a valuable resource, providing free
+[Wikipedia][] is a valuable resource, providing free
 access to human knowledge through millions of articles written
-collaboratively by volunteers worldwide. Consider [donating to
-Wikipedia][] to help keep this incredible resource free and accessible
-to everyone.
+collaboratively by volunteers worldwide.
+Consider [donating to Wikipedia][] to help keep this incredible resource
+free and accessible to everyone.
+
 :::
+
+[Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
+[Getting started with Dart]: {{site.dart-site}}/tutorial
+[Introduction to Flutter UI]: /tutorial/ui/create-an-app/
+[Wikipedia]: https://wikipedia.org/
+[donating to Wikipedia]: https://donate.wikimedia.org/
 
 ## Create a new Flutter project
 
-Create a new Flutter project using the [Flutter CLI][]. In your
-terminal, run the following command to create a minimal Flutter app:
+Create a new Flutter project using the [Flutter CLI][].
+In your preferred terminal, run the following command to
+create a minimal Flutter app:
 
-```bash
+```console
 $ flutter create wikipedia_reader --empty
 ```
+
+[Flutter CLI]: /reference/flutter-cli
 
 ## Add required dependencies
 
 Your app needs two [packages][] to work with HTTP requests and
 Wikipedia data. Add them to your project:
 
-```shell
-$ cd wikipedia_reader
-$ flutter pub add http dartpedia
+```console
+$ cd wikipedia_reader && flutter pub add http dartpedia
 ```
 
 The [`http` package][] provides tools for making HTTP requests, while
 the `dartpedia` package contains data models for working with
 Wikipedia's API responses.
 
+[packages]: /packages-and-plugins/using-packages
+[`http` package]: {{site.pub}}/packages/http
+
 ## Examine the starter code
 
-Open `lib/main.dart` and replace the existing code with this basic
-structure, which adds required imports that the app uses.
+Open `lib/main.dart` and replace the existing code with
+this basic structure, which adds required imports that the app uses:
 
-```dart
+```dart title="lib/main.dart"
 import 'dart:convert';
 import 'dart:io';
 
@@ -94,25 +106,18 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-This code provides a basic app structure with a title bar and
-placeholder content. The imports at the top include everything you
-need for HTTP requests, JSON parsing, and Wikipedia data models.
+This code provides a basic app structure with
+a title bar and placeholder content.
+The imports at the top include everything you need for
+HTTP requests, JSON parsing, and Wikipedia data models.
 
 ## Run your app
 
 Test that everything works by running your app:
 
-```bash
+```console
 $ flutter run -d chrome
 ```
 
 You should see a simple app with "Wikipedia Flutter" in the app bar
 and "Loading..." in the center of the screen.
-
-[Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
-[donating to Wikipedia]: https://donate.wikimedia.org/
-[introductory Flutter tutorial]: /tutorial/create-an-app/
-[Dart Getting Started tutorial]: {{site.dart-site}}/tutorial
-[Flutter CLI]: /reference/flutter-cli
-[packages]: /packages-and-plugins/using-packages
-[`http` package]: {{site.pub}}/packages/http

@@ -7,35 +7,37 @@ sitemap: false
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
-So far, your app displays a grid and an input field, but the grid
-doesn't yet update to reflect the user’s guesses. When this app is
-complete, each tile in the next unfilled row should update after each
-submitted user guess by:
+So far, your app displays a grid and an input field,
+but the grid doesn't yet update to reflect the user's guesses.
+When this app is complete, each tile in the next unfilled row should
+update after each submitted user guess by:
 
-* Displaying the correct letter.
-* Changing color to reflect whether the letter is correct (green), is
-  in the word but at an incorrect position (yellow), or doesn't appear
-  in the word at all (grey).
+- Displaying the correct letter.
+- Changing color to reflect whether the letter is correct (green),
+  is in the word but at an incorrect position (yellow), or
+  doesn't appear in the word at all (grey).
 
 To handle this dynamic behavior, you need to convert `GamePage` from a
 `StatelessWidget` to a [`StatefulWidget`][].
 
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+
 ## Why stateful widgets?
 
-When a widget's appearance or data needs to change during its
- lifetime, you need a `StatefulWidget` and a companion `State` object.
+When a widget's appearance or data needs to change during its lifetime,
+you need a `StatefulWidget` and a companion `State` object.
 While the `StatefulWidget` itself is still immutable (its properties
-can't change after creation), the `State` object is long-lived, can
-hold mutable data, and can be rebuilt when that data changes, causing
-the UI to update.
+can't change after creation), the `State` object is long-lived,
+can hold mutable data, and can be rebuilt when that data changes,
+causing the UI to update.
 
 For example, the following widget tree imagines a simple app
-that has a counter that increases when the button is pressed,
-and uses a stateful widget.
+that uses a stateful widget with a counter that
+increases when the button is pressed.
 
 <img src='/assets/images/docs/tutorial/widget_tree_stateful.png' alt="A diagram of a widget tree with a stateful widget and state object.">
 
-Here is the basic `StatefulWidget` structure (don't do anything yet):
+Here is the basic `StatefulWidget` structure (doesn't do anything yet):
 
 ```dart
 class ExampleWidget extends StatefulWidget {
@@ -48,30 +50,29 @@ class ExampleWidget extends StatefulWidget {
 class _ExampleWidgetState extends State<ExampleWidget> {
   @override
   Widget build(BuildContext context) {
-   return Container();
+    return Container();
   }
 }
 ```
 
 ## Convert `GamePage` to a stateful widget
 
-To convert the `GamePage` widget (or any other) from
+To convert the `GamePage` (or any other) widget from
 a stateless widget to a stateful widget, do the following steps:
 
-1. Change `GamePage` to extend `StatefulWidget` instead of
-   `StatelessWidget`.
-2. Create a new class named `_GamePageState`, that extends
-   `State<GamePage>`. This new class will hold the mutable state and
-   the `build` method. Move the `build` method and all properties
-   *instantiated on the widget*  from `GamePage` to the state object.
-3. Implement the `createState()` method in `GamePage`, which returns
-   an instance of `_GamePageState`.
+1.  Change `GamePage` to extend `StatefulWidget` instead of `StatelessWidget`.
+1.  Create a new class named `_GamePageState`, that extends `State<GamePage>`.
+    This new class will hold the mutable state and the `build` method.
+    Move the `build` method and all properties *instantiated on the widget*
+    from `GamePage` to the state object.
+1.  Implement the `createState()` method in `GamePage`, which
+    returns an instance of `_GamePageState`.
 
 :::tip Quick assists
 
 You don't have to manually do this work, as the Flutter plugins for
-VS Code and IntelliJ provides ["quick assists"][], which will do this
-conversion for you.
+VS Code and IntelliJ provide ["quick assists"][] that can
+do this conversion for you.
 
 :::
 
@@ -118,27 +119,28 @@ class _GamePageState extends State<GamePage> {
 }
 ```
 
+["quick assists"]: /tools/android-studio#assists-quick-fixes
+
 ## Updating the UI with `setState`
 
-Whenever you mutate a `State` object, you must call [`setState`][] to
-signal the framework to update the user interface and call the
-`State`'s `build` method again.
+Whenever you mutate a `State` object,
+you must call [`setState`][] to signal the framework to
+update the user interface and call the `build` method again.
 
-In this app, when a user makes a guess, the word they guessed is saved
-on the `Game` object, which is a property on the `GamePage` class, and
-therefore is state that might change and require the UI to update.
-When this state is mutated, the grid should be re-drawn to show the
-user’s guess.
+In this app, when a user makes a guess, the word they guessed is
+saved on the `Game` object, which is a property on the `GamePage` class,
+and therefore is state that might change and require the UI to update.
+When this state is mutated, the grid should be
+re-drawn to show the user's guess.
 
-To implement this, update the callback function passed to
-`GuessInput`. The function needs to call `setState` and, within
-`setState`, it needs to execute the logic to determine whether the users
-guess was correct.
+To implement this, update the callback function passed to `GuessInput`.
+The function needs to call `setState` and, within `setState`,
+it needs to execute the logic to determine whether the users guess was correct.
 
 :::note
 
-The game logic is abstracted away into the [`Game` object][], and
-outside of the scope of this tutorial.
+The game logic is abstracted away into the `Game` object,
+and outside the scope of this tutorial.
 
 :::
 
@@ -187,12 +189,9 @@ class _GamePageState extends State<GamePage> {
 ```
 
 Now, when you type a legal guess into the `TextInput` and submit it,
-the application will reflect the user’s guess. If you were to call
-`_game.guess(guess)` *without* a calling `setState`, the internal game
-data would change, but Flutter wouldn't know it needs to repaint the
-screen, and the user wouldn't see any updates.
+the application will reflect the user's guess.
+If you were to call `_game.guess(guess)` *without* a calling `setState`,
+the internal game data would change, but Flutter wouldn't know it
+needs to repaint the screen, and the user wouldn't see any updates.
 
-["quick assists"]: /tools/android-studio#assists-quick-fixes
-[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
-[`Game` object]: https://github.com/flutter/demos
