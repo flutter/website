@@ -4,17 +4,22 @@ description: Instructions on how to manage state with ChangeNotifiers.
 sitemap: false
 ---
 
-The view layer is your UI, and in Flutter, that refers to your app's
-widgets. As it pertains to this tutorial, the important part is wiring
-up your UI to respond to data changes from the ViewModel.
+The view layer is your UI, and in Flutter,
+that refers to your app's widgets.
+As it pertains to this tutorial, the important part is
+wiring up your UI to respond to data changes from the ViewModel.
 [`ListenableBuilder`][] is a widget that can "listen" to a
-`ChangeNotifier`, and automatically rebuilds when it's provided
-`ChangeNotifier` calls `notifyListeners()`.
+[`ChangeNotifier`][], and automatically rebuilds when it's
+provided `ChangeNotifier` calls `notifyListeners()`.
 
-## Create the ArticleView widget
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
+[`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-Create the `ArticleView` widget that manages the overall page layout
-and state handling. Start with the basic class structure and widgets:
+## Create the article view widget
+
+Create the `ArticleView` widget that
+manages the overall page layout and state handling.
+Start with the basic class structure and widgets:
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -34,9 +39,9 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-## Create the ViewModel
+## Create the article view model
 
-Create the ViewModel in this widget.
+Create the `ArticleViewModel` in this widget:
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -58,11 +63,11 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-## Add ListenableBuilder
+## Listen for state changes
 
-Wrap your UI in a `ListenableBuilder` to listen for state changes, and
-pass it a `ChangeNotifier` object. In this case, the
-`ArticleViewModel` extends `ChangeNotifier`.
+Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
+and pass it a `ChangeNotifier` object.
+In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -87,22 +92,27 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-`ListenableBuilder` uses the *builder* pattern, which requires a
-callback rather than a `child` widget to build the widget tree below
-it. These widgets are flexible because you can perform operations
-within the callback.
+`ListenableBuilder` uses the *builder* pattern,
+which requires a callback rather than a `child` widget to
+build the widget tree below it.
+These widgets are flexible because you can
+perform operations within the callback,
+building different widgets based on the state.
 
+[`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 
-## Handle all states with switch expression
+## Handle possible view model states
 
-Recall the `ArticleViewModel`, which has three properties that the UI
-is interested in:
-* `Summary? summary`
-* `bool loading`
-* `String? errorMessage`
+Recall the `ArticleViewModel`, which has three properties that
+the UI is interested in:
 
-The UI needs to display different widgets based on the combination of
-states of all three of those properties. Use Dart's switch expressions
+- `Summary? summary`
+- `bool loading`
+- `String? errorMessage`
+
+Depending on the combined state of these properties,
+the UI can display different widgets.
+Use Dart's support for [switch expressions][]
 to handle all possible combinations in a clean, readable way:
 
 ```dart
@@ -131,9 +141,9 @@ class ArticleView extends StatelessWidget {
             (false, null, null) => Center(
               child: Text('An unknown error has occurred'),
             ),
-            // summary must be non-null in this swich case
-            (false, Summary _, null) => ArticlePage(
-              summary: viewModel.summary!,
+            // The summary must be non-null in this switch case.
+            (false, Summary summary, null) => ArticlePage(
+              summary: summary,
               onPressed: viewModel.getRandomArticleSummary,
             ),
           };
@@ -144,23 +154,23 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-This is an excellent example of how a declarative, reactive framework
-like Flutter and a pattern like MVVM work together: The UI is rendered
-based on the state, and updates when a state changes demands it, but
-it doesn't manage any state or the process of updating itself. The
-business logic and rendering are completely separate from each other.
+This is an excellent example of how a
+declarative, reactive framework like Flutter and
+a pattern like MVVM work together:
+The UI is rendered based on the state and updates when
+a state changes demands it, but it
+doesn't manage any state or the process of updating itself.
+The business logic and rendering are completely separate from each other.
 
+[switch expressions]: {{site.dart-site}}/language/branches#switch-expressions
 
 ## Complete the UI
 
 The only thing remaining is to use the properties and methods provided
-by the ViewModel.
+by the view model to build the UI.
 
-Now create the `ArticlePage` widget that displays the actual article
-content. This reusable widget takes summary
-data and a callback function.
-
-Create a simple widget that accepts the required parameters:
+Now create a `ArticlePage` widget that displays the actual article content.
+This reusable widget takes summary data and a callback function:
 
 ```dart
 class ArticlePage extends StatelessWidget {
@@ -180,7 +190,7 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-## Add scrollable layout
+## Add a scrollable layout
 
 Replace the placeholder with a scrollable column layout:
 
@@ -210,7 +220,7 @@ class ArticlePage extends StatelessWidget {
 
 ## Add article content and button
 
-Complete the layout with the article widget and navigation button:
+Complete the layout with an article widget and navigation button:
 
 ```dart
 class ArticlePage extends StatelessWidget {
@@ -244,14 +254,14 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-## Create the ArticleWidget
+## Create the `ArticleWidget`
 
 The `ArticleWidget` handles the display of the actual article content
 with proper styling and conditional rendering.
 
-## Create the basic ArticleWidget structure
+### Set up the basic article structure
 
-Start with the widget that accepts a summary parameter:
+Start with the widget that accepts a `summary` parameter:
 
 ```dart
 class ArticleWidget extends StatelessWidget {
@@ -266,7 +276,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-## Add padding and column layout
+### Add padding and column layout
 
 Wrap the content in proper padding and layout:
 
@@ -291,7 +301,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-## Add conditional image display
+### Add conditional image display
 
 Add the article image that only shows when available:
 
@@ -320,10 +330,10 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-## Complete with styled text content
+### Complete with styled text content
 
-Replace the placeholder with properly styled title, description, and
-extract:
+Replace the placeholder text with a
+properly styled title, description, and extract:
 
 ```dart
 class ArticleWidget extends StatelessWidget {
@@ -363,21 +373,21 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-This widget demonstrates these important UI concepts:
+This widget demonstrates a few important UI concepts:
 
-- **Conditional rendering**: The `if` statements show content only
-  when available.
-- **Text styling**: Different text styles create visual hierarchy
-  using Flutter's theme system.
-- **Proper spacing**: The `spacing` parameter provides consistent
-  vertical spacing.
-- **Overflow handling**: `TextOverflow.ellipsis` prevents text from
-  breaking the layout.
+- **Conditional rendering**:
+  The `if` statements show content only when available.
+- **Text styling**:
+  Different text styles create visual hierarchy using Flutter's theme system.
+- **Proper spacing**:
+  The `spacing` parameter provides consistent vertical spacing.
+- **Overflow handling**:
+  `TextOverflow.ellipsis` prevents text from breaking the layout.
 
-## Update MainApp to use ArticleView
+## Update your app to include the article view
 
-Connect everything together by updating your `MainApp` to use the
-complete `ArticleView`.
+Connect everything together by updating your `MainApp` to
+include your completed `ArticleView`.
 
 Replace your existing `MainApp` with this updated version:
 
@@ -401,16 +411,12 @@ experience with proper state management.
 
 Hot reload your app one final time. You should now see:
 
-1. A loading spinner while the initial article loads
-2. The article content with title, description, and full text
-3. An image (if the article has one)
-4. A button to load another random article
+1.  A loading spinner while the initial article loads.
+1.  The article's title, description, and summary extract.
+1.  An image (if the article has one).
+1.  A button to load another random article.
 
-Click the "Next random article" button to see the reactive UI in
-action. The app shows a loading state, fetches new data, and updates
-the display automatically.
-
-[`ListenableBuilder`]: https://api.flutter.dev/flutter/widgets/ListenableBuilder-class.html
-[widget]: https://docs.flutter.dev/ui/widgets-intro
-[`ListView`]: https://api.flutter.dev/flutter/widgets/ListView-class.html
-[try-catch block]: https://dart.dev/language/error-handling
+To see the reactive UI in action,
+click the **Next random article** button.
+The app shows a loading state, fetches new data, and
+updates the display automatically.

@@ -1,13 +1,14 @@
 ---
 title: Advanced UI features
 description: |
-  A gentle introduction into advanced UI features: adaptive layouts, slivers, scrolling, navigation.
+  A gentle introduction into advanced UI features:
+  adaptive layouts, slivers, scrolling, navigation.
 sitemap: false
 ---
 
-In this third installment of the Flutter tutorial series, you'll use
-Flutter's Cupertino library to build a partial clone of the iOS
-Contacts app.
+In this third installment of the Flutter tutorial series,
+you'll use Flutter's Cupertino library to build a
+partial clone of the iOS Contacts app.
 
 <img src='/assets/images/docs/tutorial/rolodex_complete.png'
 width="100%" alt="A screenshot of the completed Rolodex contact
@@ -34,46 +35,51 @@ and the Flutter project structure.
 
 ## Create a new Flutter project
 
-To build a Flutter app, you first need a Flutter project. You can
-create a new app with the [Flutter CLI tool][], which is installed as part of the
-Flutter SDK.
+To build a Flutter app, you first need a Flutter project.
+You can create a new app with the [Flutter CLI tool][],
+which is installed as part of the Flutter SDK.
 
-Open your terminal or command prompt, and run the following command to
-create a new Flutter project:
+Open your preferred terminal and run
+the following command to create a new Flutter project:
 
-```shell
+```console
 $ flutter create rolodex --empty
 ```
 
-This command creates a new Flutter project that uses the minimal "empty" template.
+This command creates a new Flutter project that
+uses the minimal "empty" template.
+
+[Flutter CLI tool]: /reference/flutter-cli
 
 ## Add the Cupertino Icons dependency
 
-This project uses the [`cupertino_icons` package][], an official Flutter package.  Add it as a dependency by running the following command:
+This project uses the [`cupertino_icons` package][],
+an official Flutter package.
+Add it as a dependency by running the following command:
 
-```shell
+```console
 $ flutter pub add cupertino_icons
 ```
 
 ## Set up the project structure
 
-First, create the basic directory structure for your app. In your project's
-`lib` directory, create the following folders:
+First, create the basic directory structure for your app.
+In your project's `lib` directory, create the following folders:
 
-```shell
+```console
 $ cd rolodex
 $ mkdir lib/data lib/screens lib/theme
 ```
 
-This command creates folders to organize your code into logical
-sections: data models, screen widgets, and theme configuration.
+This command creates folders to organize your code into logical sections:
+data models, screen widgets, and theme configuration.
 
 ## Replace the starter code
 
 In your IDE, open the `lib/main.dart` file, and replace its entire
 contents with the following starter code:
 
-```dart
+```dart title="lib/main.dart"
 import 'package:flutter/cupertino.dart';
 
 void main() {
@@ -103,34 +109,33 @@ class RolodexApp extends StatelessWidget {
 }
 ```
 
-Unlike the previous two tutorials, this app uses `CupertinoApp`
-instead of `MaterialApp`. The Cupertino design system provides
-iOS-style widgets and styling, which is perfect for building apps that
-feel native on Apple devices.
+Unlike the previous two tutorials,
+this app uses `CupertinoApp` instead of `MaterialApp`.
+The Cupertino design system provides iOS-style widgets and styling,
+which is perfect for building apps that feel native on Apple devices.
 
 ## Run your app
 
 In your terminal at the root of your Flutter app, run the following command:
 
-```shell
+```console
 $ flutter run -d chrome
 ```
 
-The app builds and launches in a new instance of Chrome. It displays
-"Hello Rolodex!" in the center of the screen.
+The app builds and launches in a new instance of Chrome.
+It displays "Hello Rolodex!" in the center of the screen.
 
 ## Create the data models
 
-Before building the UI, create the data structures and sample data that
-the app will use. This section is lightly explained because it's not
-the focus of this tutorial.
+Before building the UI,
+create the data structures and sample data that the app will use.
+This section is lightly explained because it's not the focus of this tutorial.
 
 ### `Contact` data
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
-```dart
-// lib/data/contact.dart
+```dart title="lib/data/contact.dart"
 class Contact {
   Contact({
     required this.id,
@@ -316,19 +321,18 @@ final Set<Contact> allContacts = <Contact>{
   christopherDaniel,
   jessicaEdwards,
 };
-
 ```
 
-This sample data includes contacts with and without middle names and
-suffixes. This gives you a variety of data to work with as you build the UI.
+This sample data includes contacts with and without middle names and suffixes.
+This gives you a variety of data to work with as you build the UI.
 
 ### `ContactGroup` data
 
 Now, create the contact groups that organize your contacts into lists.
-Create a new file, `lib/data/contact_group.dart`, and add the `ContactGroup` class:
+Create a new `lib/data/contact_group.dart` file and
+add the `ContactGroup` class:
 
-```dart
-// lib/data/contact_group.dart
+```dart title="lib/data/contact_group.dart"
 import 'dart:collection';
 import 'package:flutter/cupertino.dart';
 import 'contact.dart';
@@ -384,19 +388,18 @@ class ContactGroup {
 }
 ```
 
-A `ContactGroup` represents a collection of contacts, like "All Contacts"
-or "Favorites".
+A `ContactGroup` represents a collection of contacts,
+such as "All Contacts" or "Favorites".
 
 Add the following helper code and sample data to the same file:
 
-```dart
-// lib/data/contact_group.dart
-
+```dart title="lib/data/contact_group.dart"
 // ... ContactGroup class from above
 
 typedef AlphabetizedContactMap = SplayTreeMap<String, List<Contact>>;
 
-/// Sorts a list of contacts alphabetically by last name, then first name, then middle name.
+/// Sorts a list of contacts alphabetically by
+/// last name, then first name, then middle name.
 /// If names are identical, sorts by contact ID to ensure consistent ordering.
 void _sortContacts(List<Contact> contacts) {
   contacts.sort((Contact a, Contact b) {
@@ -442,14 +445,12 @@ List<ContactGroup> generateSeedData() {
 }
 ```
 
-This code creates three sample groups and a function to generate the initial
-data for the app.
+This code creates three sample groups and a function to
+generate the initial data for the app.
 
 Finally, add a class that manages state changes:
 
-```dart
-// lib/data/contact_group.dart
-
+```dart title="lib/data/contact_group.dart"
 // ...
 
 class ContactGroupsModel {
@@ -471,17 +472,18 @@ class ContactGroupsModel {
 }
 ```
 
-If you aren't familiar with `ValueNotifier`, you should
-[complete the previous tutorial][] before continuing,
+If you aren't familiar with `ValueNotifier`,
+you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
+
+[previous tutorial covering state]: /tutorial/state/set-up-project
 
 ## Connect the data to your app
 
-Update your `main.dart` to include the global state and import the new
-data file:
+Update your `main.dart` to include the global state and
+import the new data file:
 
-```dart
-// lib/main.dart
+```dart title="lib/main.dart"
 import 'package:flutter/cupertino.dart';
 import 'package:rolodex/data/contact_group.dart';
 
@@ -510,9 +512,7 @@ class RolodexApp extends StatelessWidget {
 }
 ```
 
-With all of the extraneous code out of the way, in the next lesson,
+With all the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
-[Flutter CLI tool]: /reference/flutter-cli
-[complete the previous tutorial]: /tutorial/set-up-state-app
-[`cupertino_icons` package]: https://pub.dev/packages/cupertino_icons
+[`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons

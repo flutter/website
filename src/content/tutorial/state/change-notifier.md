@@ -4,24 +4,26 @@ description: Instructions on how to manage state with ChangeNotifiers.
 sitemap: false
 ---
 
-When developers talk about state-management in Flutter, they're
-essentially referring to the pattern by which your app updates the
-data it needs to render correctly, and then tells Flutter to re-render
-the UI with that new data.
+When developers talk about state-management in Flutter,
+they're essentially referring to the pattern by which your app
+updates the data it needs to render correctly and then
+tells Flutter to re-render the UI with that new data.
 
-In MVVM, this responsibility falls to the ViewModel layer, which sits
-between and connects your UI to your Model layer. In Flutter,
-ViewModels use Flutter's `ChangeNotifier` class to
+In MVVM, this responsibility falls to the ViewModel layer,
+which sits between and connects your UI to your Model layer.
+In Flutter, ViewModels use Flutter's `ChangeNotifier` class to
 notify the UI when data changes.
 
-To use [ChangeNotifier][], extend it in your state management class to
-gain access to the `notifyListeners()` method, which triggers UI
-rebuilds when called.
+To use [`ChangeNotifier`][], extend it in your state management class to
+gain access to the `notifyListeners()` method,
+which triggers UI rebuilds when called.
 
-## Create the basic ViewModel structure
+[`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-Create the `ArticleViewModel` class with its basic structure and state
-properties:
+## Create the basic view model structure
+
+Create the `ArticleViewModel` class with its
+basic structure and state properties:
 
 ```dart
 class ArticleViewModel extends ChangeNotifier {
@@ -34,7 +36,7 @@ class ArticleViewModel extends ChangeNotifier {
 }
 ```
 
-The ViewModel holds three pieces of state:
+The `ArticleViewModel` holds three pieces of state:
 
 - `summary`: The current Wikipedia article data.
 - `errorMessage`: Any error that occurred during data fetching.
@@ -43,7 +45,7 @@ The ViewModel holds three pieces of state:
 ## Add constructor initialization
 
 Update the constructor to automatically fetch content when the
-ViewModel is created:
+`ArticleViewModel` is created:
 
 ```dart
 class ArticleViewModel extends ChangeNotifier {
@@ -56,17 +58,18 @@ class ArticleViewModel extends ChangeNotifier {
     getRandomArticleSummary();
   }
 
-  // Method will be added next
+  // Methods will be added next.
 }
 ```
 
-This constructor initialization provides immediate content when the
-ViewModel is created. Because constructors can't be asynchronous,
+This constructor initialization provides immediate content when
+a `ArticleViewModel` object is created.
+Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
-## Create the getRandomArticleSummary method
+## Set up the `getRandomArticleSummary` method
 
-Add the method that fetches data and manages state updates:
+Add the `getRandomArticleSummary` that fetches data and manages state updates:
 
 ```dart
 class ArticleViewModel extends ChangeNotifier {
@@ -90,19 +93,20 @@ class ArticleViewModel extends ChangeNotifier {
   }
 }
 ```
-The ViewModel updates the `loading` property and calls
-`notifyListeners()` to inform the UI. When the operation completes, it
-toggles the property back. When you build the UI, you'll use this
-`loading` property to show a loading indicator while fetching a new
-article.
 
-## Retrieve an article from the ArticleModel
+The ViewModel updates the `loading` property and
+calls `notifyListeners()` to inform the UI of the update.
+When the operation completes, it toggles the property back.
+When you build the UI, you'll use this `loading` property to
+show a loading indicator while fetching a new article.
 
-Complete the `getRandomArticleSummary` method to fetch an article
-summary. Use a [try-catch block][] to gracefully handle network
-errors, and store error messages that the UI can display to users. The
-method clears previous errors on success and clears the previous
-article summary on error to maintain consistent state.
+## Retrieve an article from the `ArticleModel`
+
+Complete the `getRandomArticleSummary` method to fetch an article summary.
+Use a [try-catch block][] to gracefully handle network errors and
+store error messages that the UI can display to users.
+The method clears previous errors on success and
+clears the previous article summary on error to maintain a consistent state.
 
 ```dart
 class ArticleViewModel extends ChangeNotifier {
@@ -120,7 +124,7 @@ class ArticleViewModel extends ChangeNotifier {
     notifyListeners();
     try {
       summary = await model.getRandomArticleSummary();
-      errorMessage = null; // Clear any previous errors
+      errorMessage = null; // Clear any previous errors.
     } on HttpException catch (error) {
       errorMessage = error.message;
       summary = null;
@@ -131,12 +135,14 @@ class ArticleViewModel extends ChangeNotifier {
 }
 ```
 
+[try-catch block]: {{site.dart-site}}/language/error-handling#catch
+
 ## Test the ViewModel
 
 Before building the full UI, test that your HTTP requests work by
-printing results to the console. First, update your
-`ArticleViewModel`'s `getRandomArticleSummary` method to print the
-results:
+printing results to the console.
+First, update the `getRandomArticleSummary` method to
+print the results:
 
 ```dart
 Future<void> getRandomArticleSummary() async {
@@ -145,7 +151,7 @@ Future<void> getRandomArticleSummary() async {
   try {
     summary = await model.getRandomArticleSummary();
     print('Article loaded: ${summary!.titles.normalized}'); // Temporary
-    errorMessage = null;
+    errorMessage = null; // Clear any previous errors.
   } on HttpException catch (error) {
     print('Error loading article: ${error.message}'); // Temporary
     errorMessage = error.message;
@@ -156,8 +162,8 @@ Future<void> getRandomArticleSummary() async {
 }
 ```
 
-Then, update the `MainApp` widget to create the ViewModel, which calls
-the `getRandomArticleSummary` method on creation:
+Then, update the `MainApp` widget to create the `ArticleViewModel`,
+which calls the `getRandomArticleSummary` method on creation:
 
 ```dart
 class MainApp extends StatelessWidget {
@@ -165,7 +171,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Create ViewModel to test HTTP requests
+    // Instantiate your `ArticleViewModel` to test its HTTP requests.
     final viewModel = ArticleViewModel(ArticleModel());
 
     return MaterialApp(
@@ -182,9 +188,6 @@ class MainApp extends StatelessWidget {
 }
 ```
 
-Hot reload your app and check your console output. You should see
-either an article title or an error message, which confirms that your
-Model and ViewModel are wired up correctly.
-
-[ChangeNotifier]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
-[try-catch block]: https://dart.dev/language/error-handling
+Hot reload your app and check your console output.
+You should see either an article title or an error message,
+which confirms that your Model and ViewModel are wired up correctly.

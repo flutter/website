@@ -4,23 +4,24 @@ description: Learn how to use the LayoutBuilder widget.
 sitemap: false
 ---
 
-Modern apps need to work well on screens of all sizes. On this page,
-you'll learn how to create layouts that adapt to different screen
-widths. This app shows a sidebar on large screens and a
-navigation-based UI on small screens. Specifically, this app handles
-two screen sizes:
+Modern apps need to work well on screens of all sizes.
+On this page, you'll learn how to create layouts that
+adapt to different screen widths.
+This app shows a sidebar on large screens and
+a navigation-based UI on small screens.
+Specifically, this app handles two screen sizes:
 
-* **Large screens (tablets, desktop)**: Shows contact groups and
-  contact details side-by-side.
-* **Small screens (phones)**: Uses navigation to move between contact
-  groups and details.
+- **Large screens (tablets, desktop)**:
+  Shows contact groups and contact details side-by-side.
+- **Small screens (phones)**:
+  Uses navigation to move between contact groups and details.
 
 ## Create the contact groups page
 
 First, create the basic structure of the `ContactGroupsPage` widget
-for your contact groups screen. Create
-`lib/screens/contact_groups.dart` and add the following basic
-structure:
+for your contact groups screen.
+Create `lib/screens/contact_groups.dart` and add
+the following basic structure:
 
 ```dart
 import 'package:flutter/cupertino.dart';
@@ -42,8 +43,8 @@ class ContactGroupsPage extends StatelessWidget {
 
 ## Create the contacts page
 
-Similarly, create `lib/screens/contacts.dart` to eventually display
-individual contacts:
+Similarly, create `lib/screens/contacts.dart` to eventually
+display individual contacts:
 
 ```dart
 import 'package:flutter/cupertino.dart';
@@ -133,20 +134,20 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 }
 ```
 
-The `LayoutBuilder` widget provides information about the parent's
-size constraints. In the `builder` callback, you receive a
-`BoxConstraints` object that tells you the maximum available width and
-height.
+The `LayoutBuilder` widget provides information about
+the parent's size constraints.
+In the `builder` callback, you receive a`BoxConstraints` object that
+tells you the maximum available width and height.
 
-By checking if `constraints.maxWidth > largeScreenMinWidth`, you can
-decide which layout to show. The 600-pixel threshold is a common
-breakpoint that separates phone-sized screens from tablet-sized
-screens.
+By checking if `constraints.maxWidth > largeScreenMinWidth`,
+you can decide which layout to show.
+The 600-pixel threshold is a common breakpoint that
+separates phone-sized screens from tablet-sized screens.
 
 ## Update the main app
 
-Update `main.dart` to use the adaptive layout, so you can see
-your changes.
+Update `main.dart` to use the adaptive layout,
+so you can see your changes:
 
 ```dart
 import 'package:flutter/cupertino.dart';
@@ -178,13 +179,13 @@ class RolodexApp extends StatelessWidget {
 }
 ```
 
-If you're running in Chrome, you can resize the browser window to see
-layout changes.
+If you're running in Chrome, you can resize the browser window to
+see layout changes.
 
 ## Add list selection functionality
 
-The large screen layout needs to track which contact group is
-selected. Update the state object with the following code:
+The large screen layout needs to track which contact group is selected.
+Update the state object with the following code:
 
 ```dart
 import 'package:flutter/cupertino.dart';
@@ -199,7 +200,6 @@ class AdaptiveLayout extends StatefulWidget {
   @override
   State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
 }
-
 
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   // New
@@ -230,14 +230,13 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 ```
 
 The `selectedListId` variable tracks the currently selected contact group,
-and `_onContactListSelected` updates this value when the
-user makes a selection.
+and `_onContactListSelected` updates this value when the user makes a choice.
 
 ## Build the large screen layout
 
-Now, implement the side-by-side layout for large screens. First,
-replace the temporary text with a widget that contains the proper
-layout.
+Now, implement the side-by-side layout for large screens.
+First, replace the temporary text with a widget that
+contains the proper layout.
 
 ```dart
 import 'package:flutter/cupertino.dart';
@@ -271,7 +270,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         if (isLargeScreen) {
           return _buildLargeScreenLayout(); // New
         } else {
-          // For small screens, use the original, navigation-style approach
+          // For small screens, use the original, navigation-style approach.
           return const ContactGroupsPage();
         }
       },
@@ -285,9 +284,9 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       child: SafeArea(
         child: Row(
           children: [
-            // Contact groups list
+            // Contact groups list:
             Text('Sidebar'),
-            // List detail view
+            // List detail view:
             Text('Details'),
           ],
         ),
@@ -295,11 +294,11 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     );
   }
 }
-
 ```
 
-The large screen layout uses a `Row` to place the sidebar and details
-side-by-side. `SafeArea` ensures that the content doesn't overlap with
+The large screen layout uses a `Row` to
+place the sidebar and details side-by-side.
+`SafeArea` ensures that the content doesn't overlap with
 system UI elements like the status bar.
 
 Now, set the sizes of the two panels and add a visual divider:
@@ -311,17 +310,17 @@ Widget _buildLargeScreenLayout() {
     child: SafeArea(
       child: Row(
         children: [
-          // Contact groups list
+          // Contact groups list:
           SizedBox(
             width: 320,
             child: Text('Sidebar placeholder'), // Temporary
           ),
-          // Divider
+          // Divider:
           Container(
             width: 1,
             color: CupertinoColors.separator,
           ),
-          // List detail view
+          // List detail view:
           Expanded(
             child: Text('Details placeholder'), // Temporary
           ),
@@ -333,22 +332,23 @@ Widget _buildLargeScreenLayout() {
 ```
 
 This layout creates the following:
-* A fixed-width sidebar (320 pixels) for contact groups.
-* A 1-pixel divider between the panels.
-* A details panel that uses an `Expanded` widget to take the remaining
-  space.
+
+- A fixed-width sidebar (320 pixels) for contact groups.
+- A 1-pixel divider between the panels.
+- A details panel that uses an `Expanded` widget to take the remaining space.
 
 ## Test the adaptive layout
 
-Hot reload your app and test the responsive behavior. If you're
-running in Chrome, you can resize the browser window to see the layout
-change:
+Hot reload your app and test the responsive behavior.
+If you're running in Chrome, you can resize the browser window to
+see the layout change:
 
-* **Wide window (> 600px)**: Shows placeholder text for the sidebar
-  and details side-by-side.
-* **Narrow window (< 600px)**: Shows only the contact groups page.
+- **Wide window (> 600px)**:
+  Shows placeholder text for the sidebar and details side-by-side.
+- **Narrow window (< 600px)**:
+  Shows only the contact groups page.
 
 Both the sidebar and main content area show placeholder text for now.
 
-In the next lesson, you'll implement slivers to fill in the contact
-list content.
+In the next lesson, you'll implement slivers to fill in
+the contact list content.
