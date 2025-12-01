@@ -46,7 +46,7 @@ final class _CookieNoticeState extends State<CookieNotice> {
         // If localStorage is unavailable or throws an error,
         // keep the `shouldShowNotice` to true.
         if (kDebugMode) {
-          print('Failed to get stored content $e');
+          print('Failed to get stored content: $e');
         }
       }
 

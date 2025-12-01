@@ -183,7 +183,7 @@ try {
     document.body.classList.add(storedTheme);
   }
 } catch (e) {
-  // localStorage is not available, do nothing and fallback to default.
+  // localStorage is not available, do nothing and fall back to default.
 }
 </script>
       '''),

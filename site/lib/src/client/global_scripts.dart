@@ -124,7 +124,7 @@ void _setUpTabs() {
             );
           } catch (e) {
             if (kDebugMode) {
-              print('Error accessing localStorage $e');
+              print('Error accessing localStorage: $e');
             }
           }
         } else {
@@ -146,7 +146,7 @@ void _setUpTabs() {
         }
       } catch (e) {
         if (kDebugMode) {
-          print('Error accessing localStorage $e');
+          print('Error accessing localStorage: $e');
         }
       }
     }
@@ -183,7 +183,7 @@ void _updateTabsFromQueryParameters() {
         updatedQueryParameters.remove(key);
       } catch (e) {
         if (kDebugMode) {
-          print('Error accessing localStorage $e');
+          print('Error accessing localStorage: $e');
         }
       }
     }
