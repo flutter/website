@@ -15,6 +15,9 @@ class TutorialLayout extends DocLayout {
   String get name => 'tutorial';
 
   @override
+  bool get allowBreadcrumbs => false;
+
+  @override
   Component buildBody(Page page, Component child) {
     final model = switch (page.data['tutorial']) {
       final Map<Object?, Object?>? tutorialData when tutorialData != null =>

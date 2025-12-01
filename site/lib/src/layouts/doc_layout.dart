@@ -22,6 +22,8 @@ class DocLayout extends FlutterDocsLayout {
   @override
   String get name => 'docs';
 
+  bool get allowBreadcrumbs => true;
+
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
@@ -72,7 +74,7 @@ class DocLayout extends FlutterDocsLayout {
                   else
                     text(pageTitle),
                 ]),
-                if (pageData['showBreadcrumbs'] != false)
+                if (allowBreadcrumbs && pageData['showBreadcrumbs'] != false)
                   const PageBreadcrumbs(),
               ]),
 

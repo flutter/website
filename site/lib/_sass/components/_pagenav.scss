@@ -41,7 +41,10 @@
     }
 
     .page-number {
-      margin-right: 0.5rem;
+      height: 1.3rem;
+      width: 1.3rem;
+
+      margin-right: 0.4rem;
       background-color: var(--site-primary-color);
       color: var(--site-onPrimary-color-lightest);
     }
