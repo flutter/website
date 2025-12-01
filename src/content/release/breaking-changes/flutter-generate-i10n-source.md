@@ -55,7 +55,7 @@ const MaterialApp(
 );
 ```
 
-There are two ways to migrate away from importing `package:flutter_gen`:
+There is one way to migrate away from importing `package:flutter_gen`:
 
  1. Specify `synthetic-package: false` in the accompanying [`l10n.yaml`][] file:
 
@@ -67,12 +67,6 @@ There are two ways to migrate away from importing `package:flutter_gen`:
 
     # Or, specifically provide an output path:
     output-dir: lib/src/generated/i18n
-    ```
-
- 2. Enable the `explicit-package-dependencies` feature flag:
-
-    ```sh
-    flutter config --explicit-package-dependencies
     ```
 
 ## Timeline
