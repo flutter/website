@@ -88,6 +88,11 @@ final class CodeBlockProcessor implements PageExtension {
             );
           }
 
+          final isCollapsed = metadata.containsKey('collapsed');
+          if (isCollapsed && title == null) {
+            throw ArgumentError('Collapsed code blocks must have a title.');
+          }
+
           final isFolding = metadata.containsKey('foldable');
 
           final diffResult = isDiff
@@ -126,6 +131,7 @@ final class CodeBlockProcessor implements PageExtension {
               tag: tag != null ? CodeBlockTag.parse(tag) : null,
               initialLineNumber: initialLineNumber ?? 1,
               showLineNumbers: showLineNumbers,
+              collapsed: isCollapsed,
             ),
           );
         }

@@ -602,9 +602,9 @@ different signatures, so it's not completely straight-forward.
 
 Refactor the code such that the logic inside this method isn't repeated.
 
-**Solution**
+**Solution:**
 
-```dart
+```dart title="solution.dart" collapsed
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
 
