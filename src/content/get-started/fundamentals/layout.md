@@ -202,23 +202,27 @@ The first figure on this page used both.
 
 This is the most basic example of using a `Row` widget.
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/row.png",
-caption: "This figure shows a row widget with three children."
-alt: "A screenshot of a row widget with three children"
-code:"
-```dart
-Widget build(BuildContext context) {
-  return Row(
-    children: [
-      BorderedImage(),
-      BorderedImage(),
-      BorderedImage(),
-    ],
-  );
-}
-```
-" %}
+<CodePreview direction="row">
+
+  <DashImage
+    image="fwe/layout/row.png"
+    alt="A screenshot of a row widget with three children"
+    caption="This figure shows a row widget with three children."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        BorderedImage(),
+        BorderedImage(),
+        BorderedImage(),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 Each child of `Row` or `Column` can be
 rows and columns themselves,
@@ -226,40 +230,42 @@ combining to make a complex layout.
 For example, you could add labels to each
 of the images in the example above using columns.
 
+<CodePreview direction="row">
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/nested_row_column.png",
-caption: "This figure shows a row widget with three children, each of which is a column."
-alt: "A screenshot of a row of three widgets, each of which has a label underneath it."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return Row(
-    children: [
-      Column(
-        children: [
-          BorderedImage(),
-          Text('Dash 1'),
-        ],
-      ),
-      Column(
-        children: [
-          BorderedImage(),
-          Text('Dash 2'),
-        ],
-      ),
-      Column(
-        children: [
-          BorderedImage(),
-          Text('Dash 3'),
-        ],
-      ),
-    ],
-  );
-}
-```
-" %}
+  <DashImage
+    image="fwe/layout/nested_row_column.png"
+    alt="A screenshot of a row of three widgets, each of which has a label underneath it."
+    caption="This figure shows a row widget with three children, each of which is a column."
+    />
 
+  ```dart
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Column(
+          children: [
+            BorderedImage(),
+            Text('Dash 1'),
+          ],
+        ),
+        Column(
+          children: [
+            BorderedImage(),
+            Text('Dash 2'),
+          ],
+        ),
+        Column(
+          children: [
+            BorderedImage(),
+            Text('Dash 3'),
+          ],
+        ),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 ### Align widgets within rows and columns
 
@@ -286,24 +292,28 @@ Setting the main axis alignment to `spaceEvenly`
 divides the free horizontal space evenly between,
 before, and after each image.
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/space_evenly.png",
-caption: "This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant."
-alt: "A screenshot of three widgets, spaced evenly from each other."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return Row(
-    [!mainAxisAlignment: MainAxisAlignment.spaceEvenly!],
-    children: [
-      BorderedImage(),
-      BorderedImage(),
-      BorderedImage(),
-    ],
-  );
-}
-```
-" %}
+<CodePreview direction="row">
+
+  <DashImage
+    image="fwe/layout/space_evenly.png"
+    alt="A screenshot of three widgets, spaced evenly from each other."
+    caption="This figure shows a row widget with three children, which are aligned with the MainAxisAlignment.spaceEvenly constant."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return Row(
+      [!mainAxisAlignment: MainAxisAlignment.spaceEvenly!],
+      children: [
+        BorderedImage(),
+        BorderedImage(),
+        BorderedImage(),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 Columns work the same way as rows.
 The following example shows a column of 3 images,
@@ -339,29 +349,33 @@ To fix the previous example where the row of
 images is too wide for its render box,
 wrap each image with an [`Expanded`][] widget.
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/expanded_row.png",
-caption: "This figure shows a row widget with three children that are wrapped with `Expanded` widgets."
-alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return const Row(
-    children: [
-      [!Expanded!](
-        child: BorderedImage(width: 150, height: 150),
-      ),
-      [!Expanded!](
-        child: BorderedImage(width: 150, height: 150),
-      ),
-      [!Expanded!](
-        child: BorderedImage(width: 150, height: 150),
-      ),
-    ],
-  );
-}
-```
-" %}
+<CodePreview direction="row">
+
+  <DashImage
+    image="fwe/layout/expanded_row.png"
+    alt="A screenshot of three widgets, which take up exactly the amount of space available on the main axis. All three widgets are equal width."
+    caption="This figure shows a row widget with three children that are wrapped with `Expanded` widgets."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        [!Expanded!](
+          child: BorderedImage(width: 150, height: 150),
+        ),
+        [!Expanded!](
+          child: BorderedImage(width: 150, height: 150),
+        ),
+        [!Expanded!](
+          child: BorderedImage(width: 150, height: 150),
+        ),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 The `Expanded` widget can also dictate how much
 space a widget should take up relative
@@ -374,30 +388,34 @@ for a widget. The default flex factor is 1.
 The following code sets the flex factor of the
 middle image to 2:
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/flex_2_row.png",
-caption: "This figure shows a row widget with three children which are wrapped with `Expanded` widgets. The center child has it's `flex` property set to 2."
-alt: "A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return const Row(
-    children: [
-      Expanded(
-        child: BorderedImage(width: 150, height: 150),
-      ),
-      Expanded(
-        [!flex: 2!],
-        child: BorderedImage(width: 150, height: 150),
-      ),
-      Expanded(
-        child: BorderedImage(width: 150, height: 150),
-      ),
-    ],
-  );
-}
-```
-" %}
+<CodePreview direction="row">
+
+  <DashImage
+    image="fwe/layout/flex_2_row.png"
+    alt="A screenshot of three widgets, which take up exactly the amount of space available on the main axis. The widget in the center is twice as wide as the widgets on the left and right."
+    caption="This figure shows a row widget with three children which are wrapped with `Expanded` widgets. The center child has it's `flex` property set to 2."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        Expanded(
+          child: BorderedImage(width: 150, height: 150),
+        ),
+        Expanded(
+          [!flex: 2!],
+          child: BorderedImage(width: 150, height: 150),
+        ),
+        Expanded(
+          child: BorderedImage(width: 150, height: 150),
+        ),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 ## DevTools and debugging layout
 
@@ -469,23 +487,27 @@ a `ListView` requires its children to take up
 all the available space on the cross axis,
 as shown in the example below.
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/basic_listview.png",
-caption: "This figure shows a ListView widget with three children."
-alt: "A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return [!ListView!](
-    children: const [
-      BorderedImage(),
-      BorderedImage(),
-      BorderedImage(),
-    ],
-  );
-}
-```
-" %}
+<CodePreview direction="row">
+
+  <DashImage
+    image="fwe/layout/basic_listview.png"
+    alt="A screenshot of three widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+    caption="This figure shows a ListView widget with three children."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return [!ListView!](
+      children: const [
+        BorderedImage(),
+        BorderedImage(),
+        BorderedImage(),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
 
 `ListView`s are commonly used when you have an
 unknown or very large (or infinite) number of list items.
@@ -499,35 +521,38 @@ the `ListView` is displaying a list of to-do items.
 The todo items are being fetched from a repository,
 and therefore the number of todos is unknown.
 
+<CodePreview direction="row">
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/listview_builder.png",
-caption: "This figure shows the ListView.builder constructor to display an unknown number of children."
-alt: "A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
-code:"
-```dart
-final List<ToDo> items = Repository.fetchTodos();
+  <DashImage
+    image="fwe/layout/listview_builder.png"
+    alt="A screenshot of several widgets laid out vertically. They have expanded to take up all available space on the cross axis."
+    caption="This figure shows the ListView.builder constructor to display an unknown number of children."
+    />
 
-Widget build(BuildContext context) {
-  return ListView.builder(
-    itemCount: items.length,
-    itemBuilder: (context, idx) {
-      var item = items[idx];
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(item.description),
-            Text(item.isComplete),
-          ],
-        ),
-      );
-    },
-  );
-}
-```
-" %}
+  ```dart
+  final List<ToDo> items = Repository.fetchTodos();
+
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, idx) {
+        var item = items[idx];
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(item.description),
+              Text(item.isComplete),
+            ],
+          ),
+        );
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 ## Adaptive layouts
 
@@ -597,26 +622,29 @@ changes based on whether the viewport is
 less than or equal 600 pixels,
 or greater than 600 pixels.
 
+<CodePreview direction="row">
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/layout_builder.png",
-caption: "This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid."
-alt: "Two screenshots, in which one shows a narrow layout and the other shows a wide layout."
-code:"
-```dart
-Widget build(BuildContext context) {
-  return LayoutBuilder(
-    builder: (BuildContext context, BoxConstraints constraints) {
-      [!if (constraints.maxWidth <= 600)!] {
-        return _MobileLayout();
-      } else {
-        return _DesktopLayout();
-      }
-    },
-  );
-}
-```
-" %}
+  <DashImage
+    image="fwe/layout/layout_builder.png"
+    alt="Two screenshots, in which one shows a narrow layout and the other shows a wide layout."
+    caption="This figure shows a narrow layout, which lays out its children vertically, and a wider layout, which lays out its children in a grid."
+    />
+
+  ```dart
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        [!if (constraints.maxWidth <= 600)!] {
+          return _MobileLayout();
+        } else {
+          return _DesktopLayout();
+        }
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 Meanwhile, the `itemBuilder` callback on the
 `ListView.builder` constructor is passed the
@@ -666,34 +694,39 @@ To exemplify this,
 the following example changes the
 background color of every other list item.
 
-{% render "docs/code-and-image.md",
-image:"fwe/layout/alternating_list_items.png"
-caption:"This figure shows a `ListView`, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the `ListView`."
-code:"
-```dart
-final List<ToDo> items = Repository.fetchTodos();
+<CodePreview direction="row">
 
-Widget build(BuildContext context) {
-  return ListView.builder(
-    itemCount: items.length,
-    itemBuilder: (context, idx) {
-      var item = items[idx];
-      return Container(
-        [!color: idx % 2 == 0 ? Colors.lightBlue : Colors.transparent!],
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(item.description),
-            Text(item.isComplete),
-          ],
-        ),
-      );
-    },
-  );
-}
-```
-" %}
+  <DashImage
+    image="fwe/layout/alternating_list_items.png"
+    alt="A screenshot of several widgets laid out vertically. Every other widget has a light blue background color."
+    caption="This figure shows a `ListView`, in which its children have alternating background colors. The background colors were determined programmatically based on the index of the child within the `ListView`."
+    />
+
+  ```dart
+  final List<ToDo> items = Repository.fetchTodos();
+
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      itemBuilder: (context, idx) {
+        var item = items[idx];
+        return Container(
+          [!color: idx % 2 == 0 ? Colors.lightBlue : Colors.transparent!],
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(item.description),
+              Text(item.isComplete),
+            ],
+          ),
+        );
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 ## Additional resources
 

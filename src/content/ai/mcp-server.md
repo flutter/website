@@ -62,6 +62,64 @@ This section provides instructions for setting up the
 Dart and Flutter MCP server with popular tools like Firebase Studio,
 Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
+### Antigravity
+
+To configure [Antigravity][] to use the Dart and Flutter MCP server,
+[connect it as a custom MCP server][antigravity-mcp]:
+
+1.  Navigate to or open the **Agent** side panel.
+
+    If it's closed, open it by either:
+
+    - Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Open View...**
+      <span aria-label="and then">></span> **Agent**.
+
+1.  In the upper right of the **Agent** panel,
+    click the **Additional options** (`...`) menu button.
+1.  Select **MCP Servers**.
+1.  In the upper right of the **Agent** panel,
+    click **Manage MCP Servers**.
+1.  In the upper right of the **Manage MCPs** editor view,
+    click **View raw config**.
+1.  Add the following `dart-mcp-server` entry to the `mcpServers` map:
+
+    ```json title="mcp_config.json" highlightLines=3-10
+    {
+      "mcpServers": {
+        "dart-mcp-server": {
+          "command": "dart",
+          "args": [
+            "mcp-server",
+            "--force-roots-fallback"
+          ],
+          "env": {}
+        }
+      }
+    }
+    ```
+
+It is also recommended to install the Dart and Flutter extensions:
+
+1.  Open the **Extensions** view by either:
+
+    - Pressing <kbd>Shift</kbd> +
+      <kbd class="special-key">Cmd/Ctrl</kbd> +
+      <kbd>P</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Extensions**.
+
+1.  In the **Search Extensions** input box, enter **Flutter**.
+1.  From the list of extensions, select **Flutter**.
+1.  In the **Extension: Flutter** view that opens,
+    click the **Install** button.
+
+    This installs both the Dart and Flutter extensions.
+
+[Antigravity]: https://antigravity.google/
+[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
+
 ### Gemini CLI
 
 To configure the [Gemini CLI][] to use the Dart and Flutter MCP server,

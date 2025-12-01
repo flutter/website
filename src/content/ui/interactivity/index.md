@@ -4,8 +4,6 @@ description: How to implement a stateful widget that responds to taps.
 shortTitle: Interactivity
 ---
 
-{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
-
 :::secondary What you'll learn
 * How to respond to taps.
 * How to create a custom widget.
@@ -769,13 +767,13 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
-[`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
+[`lake.jpg`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/images/lake.jpg
 [Libraries and imports]: {{site.dart-site}}/language/libraries
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web

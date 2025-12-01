@@ -75,7 +75,7 @@ In the video below, two of our engineers take a mobile app from a dire
 accessibility state to one that takes advantage of Flutter's built-in
 widgets to offer a dramatically more accessible experience.
 
-{% ytEmbed 'bWbBgbmAdQs', 'Building Flutter apps with accessibility in mind' %}
+<YouTubeEmbed id="bWbBgbmAdQs" title="Building Flutter apps with accessibility in mind" />
 
 
 ## Accessibility release checklist
@@ -117,10 +117,8 @@ To learn more about Flutter and accessibility, check out
 the following articles written by community members:
 
 * [A deep dive into Flutter's accessibility widgets][]
-* [Semantics in Flutter][]
 * [Flutter: Crafting a great experience for screen readers][]
 
-[CRPD]: https://www.un.org/development/desa/disabilities/convention-on-the-rights-of-persons-with-disabilities/article-9-accessibility.html
 [A deep dive into Flutter's accessibility widgets]: {{site.medium}}/flutter-community/a-deep-dive-into-flutters-accessibility-widgets-eb0ef9455bc
+[CRPD]: https://social.desa.un.org/issues/disability/crpd/article-9-accessibility
 [Flutter: Crafting a great experience for screen readers]: https://blog.gskinner.com/archives/2022/09/flutter-crafting-a-great-experience-for-screen-readers.html
-[Semantics in Flutter]: https://www.didierboelens.com/2018/07/semantics/

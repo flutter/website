@@ -40,13 +40,12 @@ investigate search engine indexability of Flutter web.
 
 ### Does hot reload work with a web app?
 
-Yes! Though it's currently behind an experimental flag.
-For more information, check out
+Yes! For more information, check out
 [hot reload on the web][].
 
 [hot reload on the web]: /platform-integration/web/building#hot-reload-web
 
-Hot restart doesn't require a flag and is a fast way of seeing your
+Hot restart is a fast way of seeing your
 changes without having to relaunch your web app and wait for it
 to compile and load. This works similarly to
 the hot reload feature for Flutter mobile development.

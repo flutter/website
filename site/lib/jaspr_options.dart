@@ -7,37 +7,45 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:docs_flutter_dev_site/src/client/global_scripts.dart'
     as prefix0;
-import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/collapse_button.dart'
     as prefix1;
-import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
     as prefix2;
-import 'package:docs_flutter_dev_site/src/components/common/client/download_latest_button.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
     as prefix3;
-import 'package:docs_flutter_dev_site/src/components/common/client/feedback.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/download_button.dart'
     as prefix4;
-import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_button.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/download_latest_button.dart'
     as prefix5;
-import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/feedback.dart'
     as prefix6;
-import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_button.dart'
     as prefix7;
-import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
     as prefix8;
-import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/common/client/simple_tooltip.dart'
     as prefix9;
-import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
+import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
     as prefix10;
-import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as prefix11;
-import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
     as prefix12;
-import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
     as prefix13;
-import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
+import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
     as prefix14;
-import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
+import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as prefix15;
-import 'package:jaspr_content/components/file_tree.dart' as prefix16;
+import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
+    as prefix16;
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters.dart'
+    as prefix17;
+import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
+    as prefix18;
+import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
+    as prefix19;
+import 'package:jaspr_content/components/file_tree.dart' as prefix20;
 
 /// Default [JasprOptions] for use with your jaspr project.
 ///
@@ -61,101 +69,135 @@ JasprOptions get defaultJasprOptions => JasprOptions(
       'src/client/global_scripts',
     ),
 
-    prefix1.CookieNotice: ClientTarget<prefix1.CookieNotice>(
+    prefix1.CollapseButton: ClientTarget<prefix1.CollapseButton>(
+      'src/components/common/client/collapse_button',
+      params: _prefix1CollapseButton,
+    ),
+
+    prefix2.CookieNotice: ClientTarget<prefix2.CookieNotice>(
       'src/components/common/client/cookie_notice',
     ),
 
-    prefix2.CopyButton: ClientTarget<prefix2.CopyButton>(
+    prefix3.CopyButton: ClientTarget<prefix3.CopyButton>(
       'src/components/common/client/copy_button',
-      params: _prefix2CopyButton,
+      params: _prefix3CopyButton,
     ),
 
-    prefix3.DownloadLatestButton: ClientTarget<prefix3.DownloadLatestButton>(
+    prefix4.DownloadButton: ClientTarget<prefix4.DownloadButton>(
+      'src/components/common/client/download_button',
+      params: _prefix4DownloadButton,
+    ),
+
+    prefix5.DownloadLatestButton: ClientTarget<prefix5.DownloadLatestButton>(
       'src/components/common/client/download_latest_button',
-      params: _prefix3DownloadLatestButton,
+      params: _prefix5DownloadLatestButton,
     ),
 
-    prefix4.FeedbackComponent: ClientTarget<prefix4.FeedbackComponent>(
+    prefix6.FeedbackComponent: ClientTarget<prefix6.FeedbackComponent>(
       'src/components/common/client/feedback',
-      params: _prefix4FeedbackComponent,
+      params: _prefix6FeedbackComponent,
     ),
 
-    prefix5.OnThisPageButton: ClientTarget<prefix5.OnThisPageButton>(
+    prefix7.OnThisPageButton: ClientTarget<prefix7.OnThisPageButton>(
       'src/components/common/client/on_this_page_button',
     ),
 
-    prefix6.OsSelector: ClientTarget<prefix6.OsSelector>(
+    prefix8.OsSelector: ClientTarget<prefix8.OsSelector>(
       'src/components/common/client/os_selector',
     ),
 
-    prefix7.DartPadInjector: ClientTarget<prefix7.DartPadInjector>(
-      'src/components/dartpad/dartpad_injector',
-      params: _prefix7DartPadInjector,
+    prefix9.SimpleTooltip: ClientTarget<prefix9.SimpleTooltip>(
+      'src/components/common/client/simple_tooltip',
+      params: _prefix9SimpleTooltip,
     ),
 
-    prefix8.MenuToggle: ClientTarget<prefix8.MenuToggle>(
+    prefix10.DartPadInjector: ClientTarget<prefix10.DartPadInjector>(
+      'src/components/dartpad/dartpad_injector',
+      params: _prefix10DartPadInjector,
+    ),
+
+    prefix11.PageNav: ClientTarget<prefix11.PageNav>(
+      'src/components/layout/client/pagenav',
+      params: _prefix11PageNav,
+    ),
+
+    prefix12.MenuToggle: ClientTarget<prefix12.MenuToggle>(
       'src/components/layout/menu_toggle',
     ),
 
-    prefix9.SiteSwitcher: ClientTarget<prefix9.SiteSwitcher>(
+    prefix13.SiteSwitcher: ClientTarget<prefix13.SiteSwitcher>(
       'src/components/layout/site_switcher',
     ),
 
-    prefix10.ThemeSwitcher: ClientTarget<prefix10.ThemeSwitcher>(
+    prefix14.ThemeSwitcher: ClientTarget<prefix14.ThemeSwitcher>(
       'src/components/layout/theme_switcher',
     ),
 
-    prefix11.ArchiveTable: ClientTarget<prefix11.ArchiveTable>(
+    prefix15.ArchiveTable: ClientTarget<prefix15.ArchiveTable>(
       'src/components/pages/archive_table',
-      params: _prefix11ArchiveTable,
+      params: _prefix15ArchiveTable,
     ),
 
-    prefix12.GlossarySearchSection:
-        ClientTarget<prefix12.GlossarySearchSection>(
+    prefix16.GlossarySearchSection:
+        ClientTarget<prefix16.GlossarySearchSection>(
           'src/components/pages/glossary_search_section',
         ),
 
-    prefix13.LearningResourceFilters:
-        ClientTarget<prefix13.LearningResourceFilters>(
+    prefix17.LearningResourceFilters:
+        ClientTarget<prefix17.LearningResourceFilters>(
           'src/components/pages/learning_resource_filters',
         ),
 
-    prefix14.LearningResourceFiltersSidebar:
-        ClientTarget<prefix14.LearningResourceFiltersSidebar>(
+    prefix18.LearningResourceFiltersSidebar:
+        ClientTarget<prefix18.LearningResourceFiltersSidebar>(
           'src/components/pages/learning_resource_filters_sidebar',
         ),
 
-    prefix15.InteractiveQuiz: ClientTarget<prefix15.InteractiveQuiz>(
+    prefix19.InteractiveQuiz: ClientTarget<prefix19.InteractiveQuiz>(
       'src/components/tutorial/client/quiz',
-      params: _prefix15InteractiveQuiz,
+      params: _prefix19InteractiveQuiz,
     ),
   },
-  styles: () => [...prefix16.FileTree.styles],
+  styles: () => [...prefix20.FileTree.styles],
 );
 
-Map<String, dynamic> _prefix2CopyButton(prefix2.CopyButton c) => {
-  'toCopy': c.toCopy,
+Map<String, dynamic> _prefix1CollapseButton(prefix1.CollapseButton c) => {
+  'classes': c.classes,
+  'title': c.title,
+};
+Map<String, dynamic> _prefix3CopyButton(prefix3.CopyButton c) => {
   'buttonText': c.buttonText,
   'classes': c.classes,
   'title': c.title,
 };
-Map<String, dynamic> _prefix3DownloadLatestButton(
-  prefix3.DownloadLatestButton c,
+Map<String, dynamic> _prefix4DownloadButton(prefix4.DownloadButton c) => {
+  'name': c.name,
+};
+Map<String, dynamic> _prefix5DownloadLatestButton(
+  prefix5.DownloadLatestButton c,
 ) => {'os': c.os, 'arch': c.arch};
-Map<String, dynamic> _prefix4FeedbackComponent(prefix4.FeedbackComponent c) => {
+Map<String, dynamic> _prefix6FeedbackComponent(prefix6.FeedbackComponent c) => {
   'issueUrl': c.issueUrl,
 };
-Map<String, dynamic> _prefix7DartPadInjector(prefix7.DartPadInjector c) => {
+Map<String, dynamic> _prefix9SimpleTooltip(prefix9.SimpleTooltip c) => {
+  'target': c.target.toId(),
+  'content': c.content.toId(),
+};
+Map<String, dynamic> _prefix10DartPadInjector(prefix10.DartPadInjector c) => {
   'title': c.title,
   'theme': c.theme,
   'height': c.height,
   'runAutomatically': c.runAutomatically,
 };
-Map<String, dynamic> _prefix11ArchiveTable(prefix11.ArchiveTable c) => {
+Map<String, dynamic> _prefix11PageNav(prefix11.PageNav c) => {
+  'title': c.title,
+  'content': c.content.toId(),
+};
+Map<String, dynamic> _prefix15ArchiveTable(prefix15.ArchiveTable c) => {
   'os': c.os,
   'channel': c.channel,
 };
-Map<String, dynamic> _prefix15InteractiveQuiz(prefix15.InteractiveQuiz c) => {
+Map<String, dynamic> _prefix19InteractiveQuiz(prefix19.InteractiveQuiz c) => {
   'title': c.title,
   'questions': c.questions.map((i) => i.toJson()).toList(),
 };

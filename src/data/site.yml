@@ -8,9 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Don't miss the live Flutter and Dart Q&A happening
-  today, November 12 at 11am PST.
-  <a href="https://www.youtube.com/watch?v=RTb3gP4p5bw" target="_blank" rel="noopener">Join us!</a>
+  Flutter 3.38 and Dart 3.10 are here!
+  <a href="https://blog.flutter.dev/announcing-flutter-3-38-dart-3-10-building-the-future-of-apps-503429eeb685" target="_blank" rel="noopener">Learn more</a>
 
 branch: main
 repo:
@@ -59,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.38.0'
+currentFlutterVersion: '3.38.1'
 
 # Settings for Jaspr.
 

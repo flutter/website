@@ -25,8 +25,9 @@ navigate around your app.
 
 **To turn on the screen reader on your device, complete the following steps:**
 
-{% tabs %}
-{% tab "TalkBack on Android" %}
+<Tabs key="screen-reader-os" wrapped="true">
+
+<Tab name="Android">
 
 1. On your device, open **Settings**.
 2. Select **Accessibility** and then **TalkBack**.
@@ -36,10 +37,10 @@ navigate around your app.
 To learn how to find and customize Android's
 accessibility features, view the following video.
 
-{% ytEmbed 'FQyj_XTl01w', 'Customize Pixel and Android accessibility features' %}
+<YouTubeEmbed id="FQyj_XTl01w" title="Customize Pixel and Android accessibility features" />
 
-{% endtab %}
-{% tab "VoiceOver on iPhone" %}
+</Tab>
+<Tab name="iOS or iPadOS">
 
 1. On your device, open **Settings > Accessibility > VoiceOver**
 2. Turn the VoiceOver setting on or off
@@ -47,10 +48,10 @@ accessibility features, view the following video.
 To learn how to find and customize iOS
 accessibility features, view the following video.
 
-{% ytEmbed 'ROIe49kXOc8', 'How to navigate your iPhone or iPad with VoiceOver' %}
+<YouTubeEmbed id="ROIe49kXOc8" title="How to navigate your iPhone or iPad with VoiceOver" />
 
-{% endtab %}
-{% tab "Browsers" %}
+</Tab>
+<Tab name="Browsers">
 
 For web, the following screen readers are currently supported:
 
@@ -79,8 +80,8 @@ void main() {
 }
 ```
 
-{% endtab %}
-{% tab "Desktop" %}
+</Tab>
+<Tab name="Desktop">
 
 Windows comes with a screen reader called Narrator
 but some developers recommend using the more popular
@@ -93,7 +94,7 @@ Windows apps, check out
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
 
-{% ytEmbed '5R-6WvAihms', 'Screen reader basics: VoiceOver' %}
+<YouTubeEmbed id="5R-6WvAihms" title="Screen reader basics: VoiceOver" />
 
 On Linux, a popular screen reader is called Orca.
 It comes pre-installed with some distributions
@@ -103,8 +104,8 @@ To learn about using Orca, check out
 
 [orca]: https://www.a11yproject.com/posts/getting-started-with-orca
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 <br/>
 

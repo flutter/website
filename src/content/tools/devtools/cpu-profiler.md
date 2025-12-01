@@ -38,8 +38,15 @@ and Flame chart).
 To load all available CPU samples without manually
 recording and stopping, you can click **Load all CPU samples**,
 which pulls all CPU samples that the VM has recorded and
-stored in its ring buffer, and then displays those
-CPU samples in the profiler views.
+stored in its sample buffer and then
+displays those CPU samples in the profiler view.
+
+By default, the VM's sample buffer is used as a ring buffer,
+meaning that once it has become full, new samples start
+overwriting the oldest ones in the buffer.
+To make the VM instead discard all samples collected after
+the sample buffer has become full,
+pass the `--profile-startup` flag to `dart run` or `flutter run`.
 
 ### Bottom up
 

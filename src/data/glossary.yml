@@ -1,3 +1,52 @@
+- term: "Hot reload"
+  short_description: |-
+    A Flutter feature (also called "stateful hot reload")
+    that allows you to inject updated code into 
+    a running application in the Dart VM and see the changes immediately
+    while maintaining application state.
+  long_description: |-
+    This feature is also called "stateful hot reload".
+    After the Dart runtime updates classes with the new versions
+    of fields and functions, the Flutter framework automatically
+    rebuilds the widget tree, allowing you to quickly view the effects
+    of your changes. Hot reload greatly increases the speed of development.
+
+    Hot reload works on mobile, web, and desktop apps that are
+    running in debug mode and is fully supported in VS Code,
+    Android Studio, and IntelliJ IDEA. It does not re-run `main` or
+    `initState`; for that, use [hot restart][].
+
+    [hot restart]: /resources/glossary/#hot-restart
+  related_links:
+    - text: "Hot reload documentation"
+      link: "/tools/hot-reload"
+      type: "doc"
+    - text: "Fast development cycles with Flutter's hot reload"
+      link: "https://youtu.be/YScJS8obxlo?si=QxJDIf_LGmle2Xs6"
+      type: "video"
+    - text: "Stateful hot reload for web is here"
+      link: "https://youtu.be/7nT3BHm6Gyg?si=nLUM0n69PSQnm8CF"
+      type: "video"
+  labels:
+    - "fast development"
+    - "tooling"
+
+- term: "Hot restart"
+  short_description: |-
+    Similar to hot reload, but it does not maintain app state.
+    Use hot restart to re-run `main` or `initState`.
+  long_description: |-
+    Hot restart is still faster than a full restart, which also
+    recompiles the native, platform code (such as Swift).
+    On the web, it also restarts the Dart Development Compiler (DDC).
+  related_links:
+    - text: "Difference between hot reload, hot restart, and full restart"
+      link: "/tools/hot-reload#hot-restart"
+      type: "doc"
+  labels:
+    - "fast development"
+    - "tooling"
+
 - term: "Impeller"
   short_description: |-
     Flutter's modern graphics rendering engine,
@@ -23,6 +72,47 @@
     - "rendering"
     - "performance"
     - "engine"
+
+- term: "Sliver"
+  short_description: |-
+    A customizable portion of a scrollable area.
+  long_description: |-
+    A sliver is a portion of a scrollable area that you can define
+    to behave in a special way.
+    Think of slivers as building blocks that you can compose together
+    inside a `CustomScrollView` to create custom scrolling experiences,
+    like elastic scrolling or a collapsing header.
+    Slivers are built lazily, which means that Flutter only renders
+    the slivers that are visible on screen,
+    making them very efficient for long lists of content.
+  related_links:
+    - text: "Sliver documentation"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+    - text: "Slivers demystified"
+      link: "https://blog.flutter.dev/slivers-demystified-6ff68ab0296f"
+      type: "article"
+    - text: "SliverList and SliverGrid WotW"
+      link: "https://youtu.be/ORiTTaVY6mM"
+      type: "video"
+    - text: "SliverAppBar WotW"
+      link: "https://youtu.be/R9C5KMJKluE"
+      type: "video"
+    - text: "CustomScrollView class"
+      link: "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html"
+      type: "api"
+    - text: "SliverAppBar class"
+      link: "https://api.flutter.dev/flutter/material/SliverAppBar-class.html"
+      type: "api"
+    - text: "SliverGrid class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html"
+      type: "api"
+    - text: "SliverList class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverList-class.html"
+      type: "api"
+  labels:
+    - "scrolling"
+    - "ui"
 
 - term: "Widget"
   short_description: |-
