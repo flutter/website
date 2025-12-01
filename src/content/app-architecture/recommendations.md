@@ -32,43 +32,7 @@ which reflects how strongly the Flutter team recommends it.
 
 {{section.description}}
 
-{% if section.recommendations.size > 0 %}
-
-<table class="table table-striped" style="border-bottom:1px #DADCE0 solid;">
-<thead>
-  <tr>
-    <th style="width: 30%;">Recommendation</th>
-    <th style="width: 70%;">Description</th>
-  </tr>
-</thead>
-<tbody>
-{% for rec in section.recommendations %}
-<tr>
-<td>
-
-  {{rec.recommendation}}
-
-{% if rec.confidence == "strong" %}
-  <div class="rrec-pill success">Strongly recommend</div>
-{% elsif rec.confidence == "recommend" %}
-  <div class="rrec-pill info">Recommend</div>
-{% else %}
-  <div class="rrec-pill">Conditional</div>
-{% endif %}
-
-</td>
-<td>
-
-  {{rec.description}}
-  {{rec.confidence-description}}
-
-</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-
-{% endif %}
+<ArchitectureRecommendations category="{{section.category}}" />
 {% endfor %}
 
 <a id="recommended-resources" aria-hidden="true"></a>
@@ -100,14 +64,6 @@ which reflects how strongly the Flutter team recommends it.
     Use this package to encourage good coding practices across a team.
 
 
-[Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[architecture case study]: /app-architecture/guide
-[our ChangeNotifier recommendation]: /get-started/fwe/state-management
-[other popular options]: https://docs.flutter.dev/data-and-backend/state-mgmt/options
-[freezed]: https://pub.dev/packages/freezed
-[built_value]: https://pub.dev/packages/built_value
-[Flutter Navigator API]: https://docs.flutter.dev/ui/navigation
-[pub.dev]: https://pub.dev
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/

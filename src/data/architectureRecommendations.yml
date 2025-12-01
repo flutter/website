@@ -28,7 +28,7 @@
       confidence: conditional
       confidence-description: |
         There are many options to handle state-management, and ultimately the decision comes down to personal preference.
-        Read about [our ChangeNotifier recommendation][] or [other popular options][].
+        Read about [our ChangeNotifier recommendation](/get-started/fwe/state-management) or [other popular options](https://docs.flutter.dev/data-and-backend/state-mgmt/options).
 
     - recommendation: Do not put logic in widgets.
       description: |
@@ -62,7 +62,7 @@
     - recommendation: Use `Commands` to handle events from user interaction.
       description: |
         Commands prevent rendering errors in your app, and standardize how the UI layer sends events to the data layer. 
-        Read about commands in the [architecture case study][].
+        Read about commands in the [architecture case study](/app-architecture/guide).
       confidence: recommend
 
     - recommendation: Use immutable data models.
@@ -74,7 +74,7 @@
 
     - recommendation: Use freezed or built_value to generate immutable data models.
       description: |
-        You can use packages to help generate useful functionality in your data models, [freezed][] or [built_value][]. 
+        You can use packages to help generate useful functionality in your data models, [freezed](https://pub.dev/packages/freezed) or [built_value](https://pub.dev/packages/built_value). 
         These can generate common model methods like JSON ser/des, deep equality checking and copy methods. 
         These code generation packages can add significant build time to your applications if you have a lot of models.
       confidence: recommend
@@ -100,7 +100,7 @@
       description: |
         Go_router is the preferred way to write 90% of Flutter applications. 
         There are some specific use-cases that go_router doesn't solve, 
-        in which case you can use the [Flutter Navigator API][] directly or try other packages found on [pub.dev][].
+        in which case you can use the [Flutter Navigator API](https://docs.flutter.dev/ui/navigation) directly or try other packages found on [pub.dev](https://pub.dev).
       confidence: recommend
 
     - recommendation: Use standardized naming conventions for classes, files and directories.
