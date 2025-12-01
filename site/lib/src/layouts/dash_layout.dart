@@ -172,10 +172,9 @@ ga('send', 'pageview');
         raw('''
 <script>
 try {
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-
   const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
   if (storedTheme === 'auto-mode') {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
     document.body.classList.add(
         'auto-mode',
         prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
