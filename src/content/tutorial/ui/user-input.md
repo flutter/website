@@ -573,9 +573,9 @@ in complexity, you probably should. That said, the callbacks
 
 Refactor the code such that the logic inside this methods isn't repeated.
 
-**Solution**
+**Solution:**
 
-```dart
+```dart title="solution.dart" collapsed
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
 

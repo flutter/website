@@ -91,7 +91,7 @@ class GamePage extends StatelessWidget {
 
 **Solution:**
 
-```dart
+```dart title="solution.dart" collapsed
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
