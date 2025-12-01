@@ -139,8 +139,8 @@ it needs to execute the logic to determine whether the users guess was correct.
 
 :::note
 
-The game logic is abstracted away into the [`Game` object][], and
-outside of the scope of this tutorial.
+The game logic is abstracted away into the `Game` object,
+and outside the scope of this tutorial.
 
 :::
 
