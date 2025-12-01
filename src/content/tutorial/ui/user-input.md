@@ -451,7 +451,7 @@ class GuessInput extends StatelessWidget {
               autoFocus: true,
               focusNode: _focusNode,
               onSubmitted: (String input) {
-                onSubmitGuess(_textEditionController.text.trim());
+                onSubmitGuess(_textEditingController.text.trim());
                 _textEditingController.clear();
                 _focusNode.requestFocus();
               }
