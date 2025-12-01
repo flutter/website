@@ -5,24 +5,26 @@ sitemap: false
 ---
 
 Flutter provides a rich set of animation APIs, and the simplest way to
-start using them is with **implicit animations**. "Implicit
-animations" refers to a group of widgets that automatically animate
-changes to their properties without you needing to manage any
-behavior.
+start using them is with **implicit animations**.
+"Implicit animations" refers to a group of widgets that
+automatically animate changes to their properties without you
+needing to manage any intermediate behavior.
 
 In this lesson, you'll learn about one of the most common and
-versatile implicit animation widgets: [`AnimatedContainer`][]. With
-just two additional lines of code, the background color of each `Tile`
+versatile implicit animation widgets: [`AnimatedContainer`][].
+With just two additional lines of code, the background color of each `Tile`
 animates to a new color in about half a second.
+
+[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 
 ## Convert `Container` to `AnimatedContainer`
 
-Currently, the `Tile.build`  method returns  a `Container` to display
-a letter. When the `hitType` changes, like from `HitType.none`
-to `HitType.hit`, the background color of the tile changes
-instantly (from white to green, in this example).
+Currently, the `Tile.build` method returns a `Container` to display a letter.
+When the `hitType` changes, like from `HitType.none` to `HitType.hit`,
+the background color of the tile changes instantly.
+For example, from white to green in the case of `HitType.none` to `HitType.hit`.
 
-Here's the current `Tile` widget code for reference:
+For reference, here's the current implementation of the `Tile` widget:
 
 ```dart
 class Tile extends StatelessWidget {
@@ -56,14 +58,15 @@ class Tile extends StatelessWidget {
 }
 ```
 
-To make the color change animate smoothly, replace the `Container`
-widget with an `AnimatedContainer`.
+To make the color change animate smoothly,
+replace the `Container` widget with an `AnimatedContainer`.
 
-An `AnimatedContainer` is like a `Container`, but it automatically
-animates changes to its properties over a specified `duration`. When
-properties like `color`, `height`, `width`, `decoration`, or
-`alignment` change, `AnimatedContainer` interpolates between the old
-and new values, creating a smooth transition.
+An `AnimatedContainer` is like a `Container`, but it
+automatically animates changes to its properties over a specified `duration`.
+When properties such as
+`color`, `height`, `width`, `decoration`, or `alignment` change,
+`AnimatedContainer` interpolates between the old and new values,
+creating a smooth transition.
 
 Modify your `Tile` widget as follows:
 
@@ -100,25 +103,27 @@ class Tile extends StatelessWidget {
 }
 ```
 
-**`duration`** is a required property that specifies how long the
-animation should take. In this example, `Duration(milliseconds: 500)`
-means the color transition will take half of one second. You can also
-specify seconds, minutes, and many other units of time.
+**`duration`** is a required property that
+specifies how long the animation should take.
+In this example, passing `Duration(milliseconds: 500)` means
+the color transition will take half a second.
+You can also specify seconds, minutes, and many other units of time.
 
 Now, when the `hitType` changes and the `Tile` widget rebuilds
-(because `setState` was called in `GamePage`), the color of the tile
-will smoothly animate from its old color to the new one over the
-specified duration.
+(because `setState` was called in `GamePage`),
+the color of the tile smoothly animates from its old color to
+the new one over the specified duration.
 
-## Adjust the curve
+## Adjust the animation curve
 
-You can add a bit of customization to an implicit animation by passing
-it a [`Curve`][].  Different curves will change the speed of the animation
+To add a bit of customization to an implicit animation,
+you can pass it a different [`Curve`][].
+Different curves change the speed of the animation
 at different points throughout the animation.
 
 {%- comment %} TODO(ewindmill) diagram {%- endcomment %}
 
-To change the `Curve` of this animation, update the the code to the following:
+To change the `Curve` of this animation, update the code to the following:
 
 ```dart
 class Tile extends StatelessWidget {
@@ -126,7 +131,6 @@ class Tile extends StatelessWidget {
 
   final String letter;
   final HitType hitType;
-
 
   @override
   Widget build(BuildContext context) {
@@ -155,16 +159,15 @@ class Tile extends StatelessWidget {
 }
 ```
 
-There are many different curves defined by the Flutter SDK, so feel
-free to try them out by passing different types to the
-`AnimatedContainer.curve` property.
+There are many different curves provided by the Flutter SDK, so
+feel free to try them out by passing different types to the `curve` parameter.
 
-Implicit animations like `AnimatedContainer` are powerful because you
-just tell the widget what the new state should be, and it handles the
-"how" of the animation. For complex, custom animations, you can write
-your own animated widgets. If you’re curious, read the
-[animations tutorial](https://docs.flutter.dev/ui/animations/tutorial).
+Implicit animations like `AnimatedContainer` are powerful because
+you just tell the widget what the new state should be, and
+it handles the "how" of the animation.
 
-[`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
-[`Curve`]: {{site.curve}}/flutter/animation/Curves-class.html
-[animations tutorial]: /ui/animations/tutorial.
+For complex, custom animations, you can write your own animated widgets.
+If you're curious, try it out in the [animations tutorial][].
+
+[`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
+[animations tutorial]: /ui/animations/tutorial

@@ -1,6 +1,6 @@
 title: Learn Flutter
 units:
-  - title: Introdution to Flutter UI
+  - title: Introduction to Flutter UI
     chapters:
       - title: Create a Flutter app
         url: /tutorial/ui/create-an-app/
