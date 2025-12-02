@@ -2,7 +2,7 @@
 title: DevTools 2.53.0 release notes
 shortTitle: 2.53.0 release notes
 breadcrumb: 2.53.0
-toc: false
+showToc: false
 ---
 
 # DevTools 2.53.0 release notes
