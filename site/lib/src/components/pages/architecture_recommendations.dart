@@ -24,16 +24,16 @@ class ArchitectureRecommendations extends CustomComponentBase {
         final recommendations =
             (context.page.data['architectureRecommendations'] as List<Object?>)
                 .cast<Map<String, Object?>>()
-                .map(ArchitectureRecommendationCategory.new)
+                .map(ArchitectureRecommendationCategory._)
                 .toList();
 
-        final categoryName = attributes['category'];
+        final categoryId = attributes['category'];
 
         final category = recommendations
-            .where((category) => category.category == categoryName)
+            .where((category) => category.category == categoryId)
             .firstOrNull;
         if (category == null) {
-          throw ArgumentError('Category $categoryName not found');
+          throw ArgumentError('Category $categoryId not found');
         }
 
         if (category.recommendations.isEmpty) {
@@ -66,22 +66,17 @@ class ArchitectureRecommendations extends CustomComponentBase {
                 tr([
                   td([
                     DashMarkdown(inline: true, content: rec.recommendation),
-                    div(
-                      classes: switch (rec.confidence) {
-                        'strong' => 'rrec-pill success',
-                        'recommend' => 'rrec-pill info',
-                        _ => 'rrec-pill',
-                      },
-                      [
-                        text(
-                          switch (rec.confidence) {
-                            'strong' => 'Strongly recommend',
-                            'recommend' => 'Recommend',
-                            _ => 'Conditional',
-                          },
-                        ),
-                      ],
-                    ),
+                    switch (rec.confidence) {
+                      'strong' => div(classes: 'rrec-pill success', [
+                        text('Strongly recommend'),
+                      ]),
+                      'recommend' => div(classes: 'rrec-pill info', [
+                        text('Recommend'),
+                      ]),
+                      _ => div(classes: 'rrec-pill', [
+                        text('Conditional'),
+                      ]),
+                    },
                   ]),
                   td([
                     DashMarkdown(content: rec.description),
@@ -98,17 +93,16 @@ class ArchitectureRecommendations extends CustomComponentBase {
   }
 }
 
-extension type ArchitectureRecommendationCategory(Map<String, Object?> data) {
+extension type ArchitectureRecommendationCategory._(Map<String, Object?> data) {
   String get category => data['category'] as String;
-  String get description => data['description'] as String;
   List<ArchitectureRecommendationItem> get recommendations =>
       (data['recommendations'] as List<Object?>)
           .cast<Map<String, Object?>>()
-          .map(ArchitectureRecommendationItem.new)
+          .map(ArchitectureRecommendationItem._)
           .toList();
 }
 
-extension type ArchitectureRecommendationItem(Map<String, Object?> data) {
+extension type ArchitectureRecommendationItem._(Map<String, Object?> data) {
   String get recommendation => data['recommendation'] as String;
   String get description => data['description'] as String;
   String get confidence => data['confidence'] as String;

@@ -1,6 +1,4 @@
-- category: Separation of concerns
-  description: |
-    You should separate your app into a UI layer and a data layer. Within those layers, you should further separate logic into classes by responsibility.
+- category: separation-of-concerns
   recommendations:
     - recommendation: Use clearly defined data and UI layers.
       description: |
@@ -48,10 +46,7 @@
       confidence-description: |
         Use in apps with complex logic requirements.
 
-- category: Handling data
-  description: |
-    Handling data with care makes your code easier to understand, less error prone, and
-    prevents malformed or unexpected data from being created.
+- category: handling-data
   recommendations:
     - recommendation: Use unidirectional data flow.
       description: |
@@ -85,11 +80,8 @@
       confidence: conditional
       confidence-description: Use in large apps.
 
-- category: App structure
-  description: |
-    Well organized code benefits both the health of the app itself, and the team working on the code.
+- category: app-structure
   recommendations:
-
     - recommendation: Use dependency injection.
       description: |
         Dependency injection prevents your app from having globally accessible objects, which makes your code less error prone. 
@@ -126,12 +118,8 @@
         which can be used for different app environments, such as "development" and "staging".
       confidence: strong
 
-- category: Testing
-  description: |
-    Good testing practices makes your app flexible. 
-    It also makes it straightforward and low risk to add new logic and new UI.
+- category: testing
   recommendations:
-
     - recommendation: Test architectural components separately, and together.
       description: |
         * Write unit tests for every service, repository and ViewModel class. These tests should test the logic of every method individually.

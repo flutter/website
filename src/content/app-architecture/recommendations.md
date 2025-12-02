@@ -27,13 +27,32 @@ which reflects how strongly the Flutter team recommends it.
 * **Recommend**: This practice will likely improve your app.
 * **Conditional**: This practice can improve your app in certain circumstances.
 
-{% for section in architectureRecommendations %}
-## {{section.category}}
+## Separation of concerns
 
-{{section.description}}
+You should separate your app into a UI layer and a data layer. Within those layers, 
+you should further separate logic into classes by responsibility.
 
-<ArchitectureRecommendations category="{{section.category}}" />
-{% endfor %}
+<ArchitectureRecommendations category="separation-of-concerns" />
+
+## Handling data
+
+Handling data with care makes your code easier to understand, less error prone, and
+prevents malformed or unexpected data from being created.
+
+<ArchitectureRecommendations category="handling-data" />
+
+## App structure
+
+Well organized code benefits both the health of the app itself, and the team working on the code.
+
+<ArchitectureRecommendations category="app-structure" />
+
+## Testing
+
+Good testing practices makes your app flexible. 
+It also makes it straightforward and low risk to add new logic and new UI.
+
+<ArchitectureRecommendations category="testing" />
 
 <a id="recommended-resources" aria-hidden="true"></a>
 
