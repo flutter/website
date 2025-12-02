@@ -19,12 +19,107 @@ Flutter categorizes platforms as follows:
 Based on these categories,
 Flutter supports deploying to the following platforms.
 
-{% assign opsys = platforms %}
+## Mobile platforms
 
-| Target platform | Target architectures | Supported versions | CI-tested versions |  Unsupported versions |
-|---|:---:|:---:|:---:|:---:|
-{%- for platform in opsys %}
-  | {{platform.platform}} | {{platform.target-arch}} | {{platform.supported}} | {{platform.ci-tested}} | {{platform.unsupported}} |
-{%- endfor %}
+<PlatformsGrid>
+  <PlatformCard 
+    name="Android" 
+    icon="mobile" 
+    arch="x64, Arm32, Arm64" 
+    supported="24 to 36" 
+    ci-tested="24 to 36" 
+    unsupported="23 and earlier" 
+    link="/deployment/android" 
+  />
+  <PlatformCard 
+    name="iOS" 
+    icon="mobile" 
+    arch="Arm64" 
+    supported="13 to 26" 
+    ci-tested="18" 
+    unsupported="12 and earlier" 
+    link="/deployment/ios" 
+  />
+</PlatformsGrid>
 
-{:.table .table-striped}
+## Desktop platforms
+
+<PlatformsGrid>
+  <PlatformCard 
+    name="Windows" 
+    icon="desktop_windows" 
+    arch="x64, Arm64" 
+    supported="10, 11" 
+    ci-tested="10" 
+    unsupported="8 and earlier" 
+    link="/deployment/windows"
+  />
+  <PlatformCard 
+    name="macOS" 
+    icon="laptop_mac" 
+    arch="x64, Arm64" 
+    supported="Catalina (10.15) to Tahoe (26)" 
+    ci-tested="Sonoma (14), Sequoia (15)" 
+    unsupported="Mojave (10.14) and earlier" 
+    link="/deployment/macos" 
+  />
+  <PlatformCard 
+    name="Debian (Linux)" 
+    icon="laptop_windows" 
+    arch="x64, Arm64" 
+    supported="10, 11, 12" 
+    ci-tested="11, 12" 
+    unsupported="9 and earlier" 
+    link="/deployment/linux"
+  />
+  <PlatformCard 
+    name="Ubuntu (Linux)" 
+    icon="laptop_windows" 
+    arch="x64, Arm64" 
+    supported="20.04 LTS to 24.04 LTS" 
+    ci-tested="20.04 LTS, 22.04 LTS" 
+    unsupported="24.10 and earlier non-LTS" 
+    link="/deployment/linux"
+  />
+</PlatformsGrid>
+
+## Web platforms
+
+<PlatformsGrid>
+  <PlatformCard 
+    name="Chrome (Web)" 
+    icon="language" 
+    arch="Javascript, WebAssembly" 
+    supported="[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)" 
+    ci-tested="119, 125" 
+    unsupported="95 and earlier" 
+    link="/deployment/web"
+  />
+  <PlatformCard 
+    name="Firefox (Web)" 
+    icon="language" 
+    arch="Javascript" 
+    supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)" 
+    ci-tested="143" 
+    unsupported="98 and earlier" 
+    link="/deployment/web"
+  />
+  <PlatformCard 
+    name="Safari (Web)" 
+    icon="language" 
+    arch="Javascript" 
+    supported="15.6 and newer" 
+    ci-tested="15.6" 
+    unsupported="15.5 and earlier" 
+    link="/deployment/web"
+  />
+  <PlatformCard 
+    name="Edge (Web)" 
+    icon="language" 
+    arch="Javascript, WebAssembly" 
+    supported="[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)" 
+    ci-tested="119, 125" 
+    unsupported="95 and earlier" 
+    link="/deployment/web"
+  />
+</PlatformsGrid>
