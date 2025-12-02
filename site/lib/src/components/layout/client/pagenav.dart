@@ -7,6 +7,7 @@ import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../../client/global_scripts.dart';
+import '../../../util.dart';
 import '../../common/dropdown.dart';
 import '../../common/material_icon.dart';
 import '../../util/component_ref.dart';
@@ -67,35 +68,41 @@ class _PageNavState extends State<PageNav> {
           'aria-label': 'Toggle the table of contents dropdown',
         },
         [
+          const MaterialIcon('list'),
           if (component.breadcrumbs.isEmpty)
-            span(classes: 'toc-intro', [
-              const MaterialIcon('list'),
+            span(classes: 'toc-breadcrumb', [
               span(
                 attributes: {'aria-label': 'On this page'},
                 [text('On this page')],
               ),
+              const MaterialIcon('chevron_right'),
             ])
           else ...[
             for (final (index, crumb) in component.breadcrumbs.indexed) ...[
-              span(classes: 'toc-breadcrumb', [
-                if (index == 0)
-                  const MaterialIcon('list')
-                else
-                  const MaterialIcon('chevron_right'),
-                if (index == component.breadcrumbs.length - 1 &&
-                    component.pageNumber != null)
-                  span(classes: 'page-number', [
-                    text('${component.pageNumber}'),
+              span(
+                classes: [
+                  'toc-breadcrumb',
+                  if (index < component.breadcrumbs.length - 2)
+                    'toc-hide-medium',
+                  if (index < component.breadcrumbs.length - 1)
+                    'toc-hide-small',
+                ].toClasses,
+                [
+                  if (index == component.breadcrumbs.length - 1 &&
+                      component.pageNumber != null)
+                    span(classes: 'page-number', [
+                      text('${component.pageNumber}'),
+                    ]),
+                  span([
+                    _simpleInlineMarkdown(crumb),
                   ]),
-                span([
-                  _simpleInlineMarkdown(crumb),
-                ]),
-              ]),
+                  const MaterialIcon('chevron_right'),
+                ],
+              ),
             ],
           ],
 
           span(classes: 'toc-current', [
-            const MaterialIcon('chevron_right'),
             ValueListenableBuilder(
               listenable: currentPageHeading,
               builder: (context, value) {

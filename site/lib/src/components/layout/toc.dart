@@ -63,8 +63,11 @@ final class PageNavBar extends StatelessComponent {
     var pageEntryNumber = 1;
 
     return PageNav(
-      breadcrumbs: [?data.parentTitle, ?currentDivider, ?linkedPageTitle],
-      pageNumber: currentLinkedPageNumber,
+      breadcrumbs: [
+        ?data.parentTitle,
+        if (linkedPageTitle != null) ...[?currentDivider, linkedPageTitle],
+      ],
+      pageNumber: linkedPageTitle != null ? currentLinkedPageNumber : null,
       initialHeading: currentTitle,
       content: context.ref(
         div([

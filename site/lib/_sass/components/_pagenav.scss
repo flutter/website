@@ -24,6 +24,10 @@
       color: var(--site-base-fgColor-alt);
       font-size: 20px;
     }
+
+    >.material-symbols:first-child {
+      margin-right: 0.25rem;
+    }
   }
 
   .toc-breadcrumb {
@@ -31,16 +35,25 @@
     white-space: nowrap;
     overflow: hidden;
 
-    &:first-child .material-symbols {
-      margin-right: 0.25rem;
+    &.toc-hide-medium {
+      @media (width < 576px) {
+        display: none;
+      }
     }
 
-    span:last-child {
+    &.toc-hide-small {
+      @media (width < 420px) {
+        display: none;
+      }
+    }
+
+    span:not(.material-symbols) {
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
     .page-number {
+      flex-shrink: 0;
       height: 1.3rem;
       width: 1.3rem;
 
@@ -56,10 +69,6 @@
     overflow: hidden;
 
     color: var(--site-base-fgColor-alt);
-
-    @media (max-width: 320px) {
-      display: none !important;
-    }
 
     span:last-child {
       overflow: hidden;

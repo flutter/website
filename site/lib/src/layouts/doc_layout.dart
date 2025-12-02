@@ -40,7 +40,8 @@ class DocLayout extends FlutterDocsLayout {
       page,
       Component.fragment(
         [
-          if (navigationData == null)
+          if (navigationData
+              case null || PageNavigationData(toc: null, pageEntries: []))
             const Document.body(attributes: {'data-toc': 'false'})
           else
             div(
@@ -49,9 +50,7 @@ class DocLayout extends FlutterDocsLayout {
                   ? 'show-always'
                   : null,
               [
-                PageNavBar(
-                  navigationData,
-                ),
+                PageNavBar(navigationData),
               ],
             ),
           if (showBanner)
