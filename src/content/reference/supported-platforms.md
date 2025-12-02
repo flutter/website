@@ -65,7 +65,7 @@ Flutter supports deploying to the following platforms.
   />
   <PlatformCard 
     name="Debian (Linux)" 
-    icon="laptop_windows" 
+    icon="computer" 
     arch="x64, Arm64" 
     supported="10, 11, 12" 
     ci-tested="11, 12" 
@@ -74,7 +74,7 @@ Flutter supports deploying to the following platforms.
   />
   <PlatformCard 
     name="Ubuntu (Linux)" 
-    icon="laptop_windows" 
+    icon="computer" 
     arch="x64, Arm64" 
     supported="20.04 LTS to 24.04 LTS" 
     ci-tested="20.04 LTS, 22.04 LTS" 
@@ -86,40 +86,40 @@ Flutter supports deploying to the following platforms.
 ## Web platforms
 
 <PlatformsGrid>
-  <PlatformCard 
-    name="Chrome (Web)" 
-    icon="language" 
-    arch="Javascript, WebAssembly" 
-    supported="[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)" 
-    ci-tested="119, 125" 
-    unsupported="95 and earlier" 
+  <PlatformCard
+    name="Chrome (Web)"
+    icon="language"
+    arch="Javascript, WebAssembly"
+    supported="[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)"
+    ci-tested="119, 125"
+    unsupported="95 and earlier"
     link="/deployment/web"
   />
-  <PlatformCard 
-    name="Firefox (Web)" 
-    icon="language" 
-    arch="Javascript" 
-    supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)" 
-    ci-tested="143" 
-    unsupported="98 and earlier" 
+  <PlatformCard
+    name="Firefox (Web)"
+    icon="language"
+    arch="Javascript"
+    supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
+    ci-tested="143"
+    unsupported="98 and earlier"
     link="/deployment/web"
   />
-  <PlatformCard 
-    name="Safari (Web)" 
-    icon="language" 
-    arch="Javascript" 
-    supported="15.6 and newer" 
-    ci-tested="15.6" 
-    unsupported="15.5 and earlier" 
+  <PlatformCard
+    name="Safari (Web)"
+    icon="language"
+    arch="Javascript"
+    supported="15.6 and newer"
+    ci-tested="15.6"
+    unsupported="15.5 and earlier"
     link="/deployment/web"
   />
-  <PlatformCard 
-    name="Edge (Web)" 
-    icon="language" 
-    arch="Javascript, WebAssembly" 
-    supported="[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)" 
-    ci-tested="119, 125" 
-    unsupported="95 and earlier" 
+  <PlatformCard
+    name="Edge (Web)"
+    icon="language"
+    arch="Javascript, WebAssembly"
+    supported="[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)"
+    ci-tested="119, 125"
+    unsupported="95 and earlier"
     link="/deployment/web"
   />
 </PlatformsGrid>

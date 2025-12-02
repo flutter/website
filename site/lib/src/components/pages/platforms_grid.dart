@@ -60,7 +60,11 @@ class PlatformCard extends CustomComponentBase {
         (
           name,
           icon,
-          arch.split(',').map((e) => e.trim()).toList(),
+          arch
+              .split(',')
+              .map((e) => e.trim())
+              .where((e) => e.isNotEmpty)
+              .toList(),
           supported,
           ciTested,
           unsupported,
@@ -83,7 +87,6 @@ class PlatformCard extends CustomComponentBase {
           MaterialIcon(icon),
         ]),
         h3([text(name)]),
-
         Button(
           content: 'Deploy to $deployName',
           href: link,
@@ -95,15 +98,15 @@ class PlatformCard extends CustomComponentBase {
 
       div(classes: 'platform-card-details', [
         span([
-          span([text('Supported')]),
+          span(classes: 'platform-card-supported', [text('Supported')]),
           span([DashMarkdown(inline: true, content: supported)]),
         ]),
         span([
-          span([text('CI tested')]),
+          span(classes: 'platform-card-ci-tested', [text('CI tested')]),
           span([text(ciTested)]),
         ]),
         span([
-          span([text('Unsupported')]),
+          span(classes: 'platform-card-unsupported', [text('Unsupported')]),
           span([text(unsupported)]),
         ]),
       ]),

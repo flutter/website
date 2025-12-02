@@ -71,11 +71,14 @@
             >span:first-child {
                 font-size: 0.75rem;
                 font-weight: 500;
-                color: var(--site-alert-tip-color);
-
             }
 
-            &:last-child>span:first-child {
+            .platform-card-supported,
+            .platform-card-ci-tested {
+                color: var(--site-alert-tip-color);
+            }
+
+            .platform-card-unsupported {
                 color: var(--site-alert-error-color);
             }
         }
