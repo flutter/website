@@ -1,6 +1,7 @@
 ---
 title: Set up your project
 description: Instructions on how to create a new Flutter app.
+layout: tutorial
 sitemap: false
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Stack-based navigation
 description: Learn how to navigate from one page to another in a Flutter app.
+layout: tutorial
 sitemap: false
 ---
 
