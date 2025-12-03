@@ -133,13 +133,13 @@ implementation(s) using a [platform channel][].
 
 ### Federated plugins
 
-Federated plugins are a way of splitting the API of a plugin
+**Federated plugins** are a way of splitting the API of a plugin
 into a platform interface, independent platform implementations
 of that interface, and an app-facing interface that uses the
 registered implementation of the running platform.
 
-Package-Separated Federated Plugins are federated plugins where
-the platform interface, platform implementations, and an app-facing
+**Package-separated federated plugins** are federated plugins where
+the platform interface, platform implementations, and the app-facing
 interface are all separated into their own Dart packages.
 
 So, a package-separated federated plugin can use one package for iOS,
@@ -148,24 +148,26 @@ and yet another for a car (as an example of an IoT device).
 Among other benefits, this approach allows a domain expert
 to extend an existing plugin to work for the platform they know best.
 
-A federated plugin requires the following splitting the interface into:
+A federated plugin requires the following:
 
 **app-facing interface**
-: The package that plugin users depend on to use the plugin.
-  This package specifies the API used by the Flutter app.
+: The interface that plugin users interact with when using the
+  plugin. This interface specifies the API used by the Flutter app.
+  In a package-separated federated plugin, this is the the package
+  that plugin users depend on to use the plugin. 
 
 **platform implementation(s)**
 : One or more implementations that contain the platform-specific
   implementation code. The app-facing interface calls into
-  these implementations&mdash;they aren't explicitly depended on in an app,
-  unless they contain platform-specific functionality
-  accessible to the end user.
+  these implementations&mdash;they aren't directly used, or
+  depended on when package-separated, in an app unless they contain
+  platform-specific functionality accessible to the end user.
 
 **platform interface**
-: The interface that glues the app-facing package
+: The interface that glues the app-facing interface
   to the platform implementations(s). This declares an
   interface that any platform implementation must implement to
-  support the app-facing interface. Having a single package
+  support the app-facing interface. Having a separate package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
 
