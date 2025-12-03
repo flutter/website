@@ -212,6 +212,7 @@ final class GlossaryCard extends StatelessComponent {
         'data-partial-matches': partialMatches,
         'data-full-matches': fullMatches,
       },
+      initiallyExpanded: false,
       header: [
         h2(classes: 'card-title', [text(entry.term)]),
         div(classes: 'card-header-buttons', [

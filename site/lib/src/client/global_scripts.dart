@@ -304,11 +304,14 @@ void _setUpExpandableCards() {
       }).toJS,
     );
 
-    if (card.id != currentFragment) {
+    if (card.id == currentFragment) {
+      card.classList.remove('collapsed');
+      expandButton.ariaExpanded = 'true';
+      targetCard = card;
+    } else {
+      // Ensure it is collapsed if it wasn't already (though it should be by default now).
       card.classList.add('collapsed');
       expandButton.ariaExpanded = 'false';
-    } else {
-      targetCard = card;
     }
   }
 
