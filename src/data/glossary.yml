@@ -1,3 +1,23 @@
+- term: "Engine"
+  short_description: |-
+    The portable runtime for Flutter apps.
+  long_description: |-
+    The Flutter engine, written primarily in C++, provides the low-level rendering support using Google's Skia or Impeller graphics library.
+    It also handles platform-specific integration, such as accessibility, file and network I/O, and the plugin architecture.
+    Most developers interact with Flutter through the [framework][], which provides a modern, reactive framework, and a rich set of platform, layout, and foundation widgets.
+
+    [framework]: /resources/architectural-overview#the-framework
+  related_links:
+    - text: "Architectural overview: The Engine"
+      link: "/resources/architectural-overview#the-engine"
+      type: "doc"
+    - text: "Engine repository"
+      link: "https://github.com/flutter/engine"
+      type: "code"
+  labels:
+    - "engine"
+    - "architecture"
+
 - term: "Hot reload"
   short_description: |-
     A Flutter feature that allows you to inject updated code into 
