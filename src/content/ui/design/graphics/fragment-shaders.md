@@ -122,6 +122,11 @@ to apply shaders to already rendered content.
 [`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
 for creating an [`ImageFilter`][] with a custom fragment shader.
 
+:::warning
+The `ImageFilter` API for custom shaders is only supported by the [Impeller][] backend.
+Using it on other backends will throw an error.
+:::
+
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
   return ClipRect(
