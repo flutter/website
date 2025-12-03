@@ -153,7 +153,7 @@ A federated plugin requires the following:
 **app-facing interface**
 : The interface that plugin users interact with when using the
   plugin. This interface specifies the API used by the Flutter app.
-  In a package-separated federated plugin, this is the the package
+  In a package-separated federated plugin, this is the package
   that plugin users depend on to use the plugin. 
 
 **platform implementation(s)**
