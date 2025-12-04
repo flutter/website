@@ -6,11 +6,11 @@
     It also handles platform-specific integration, such as accessibility, file and network I/O, and the plugin architecture.
     Most developers interact with Flutter through the [framework][], which provides a modern, reactive framework, and a rich set of platform, layout, and foundation widgets.
 
-    [framework]: /resources/architectural-overview#the-framework
+    [framework]: /resources/architectural-overview#architectural-layers
     [Impeller]: /resources/glossary/#impeller
   related_links:
     - text: "Architectural overview: The Engine"
-      link: "/resources/architectural-overview#the-engine"
+      link: "/resources/architectural-overview#architectural-layers"
       type: "doc"
     - text: "Engine repository"
       link: "https://github.com/flutter/engine"
