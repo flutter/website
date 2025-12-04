@@ -87,36 +87,36 @@ Flutter supports deploying to the following platforms.
 
 <PlatformsGrid>
   <PlatformCard
-    name="Chrome (Web)"
+    name="Chrome"
     icon="language"
-    arch="Javascript, WebAssembly"
+    arch="JavaScript, WebAssembly"
     supported="[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)"
     ci-tested="119, 125"
     unsupported="95 and earlier"
     link="/deployment/web"
   />
   <PlatformCard
-    name="Firefox (Web)"
+    name="Firefox"
     icon="language"
-    arch="Javascript"
+    arch="JavaScript"
     supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
     ci-tested="143"
     unsupported="98 and earlier"
     link="/deployment/web"
   />
   <PlatformCard
-    name="Safari (Web)"
+    name="Safari"
     icon="language"
-    arch="Javascript"
+    arch="JavaScript"
     supported="15.6 and newer"
     ci-tested="15.6"
     unsupported="15.5 and earlier"
     link="/deployment/web"
   />
   <PlatformCard
-    name="Edge (Web)"
+    name="Edge"
     icon="language"
-    arch="Javascript, WebAssembly"
+    arch="JavaScript, WebAssembly"
     supported="[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)"
     ci-tested="119, 125"
     unsupported="95 and earlier"
