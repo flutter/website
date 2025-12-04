@@ -212,6 +212,7 @@ final class GlossaryCard extends StatelessComponent {
         'data-partial-matches': partialMatches,
         'data-full-matches': fullMatches,
       },
+      initiallyExpanded: false,
       header: [
         h2(classes: 'card-title', [text(entry.term)]),
         div(classes: 'card-header-buttons', [
@@ -231,7 +232,7 @@ final class GlossaryCard extends StatelessComponent {
             classes: const ['expand-button'],
             title: 'Expand or collapse card',
             attributes: {
-              'aria-expanded': 'true',
+              'aria-expanded': 'false',
               'aria-controls': contentId,
               'aria-label': 'Expand or collapse ${entry.term} card',
             },
