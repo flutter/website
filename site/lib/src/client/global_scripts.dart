@@ -304,10 +304,10 @@ void _setUpExpandableCards() {
       }).toJS,
     );
 
-    if (card.id != currentFragment) {
-      card.classList.add('collapsed');
-      expandButton.ariaExpanded = 'false';
-    } else {
+    // If the card is the currently specified fragment, expand it.
+    if (card.id == currentFragment) {
+      card.classList.remove('collapsed');
+      expandButton.ariaExpanded = 'true';
       targetCard = card;
     }
   }
