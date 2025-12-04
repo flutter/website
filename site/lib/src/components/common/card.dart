@@ -88,6 +88,7 @@ class Card extends StatelessComponent {
       if (outlined) 'outlined-card',
       if (filled) 'filled-card',
       if (expandable) 'expandable-card',
+      if (expandable && !initiallyExpanded) 'collapsed',
       ?additionalClasses,
     ].toClasses;
 
