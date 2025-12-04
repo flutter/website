@@ -1,6 +1,7 @@
 ---
 title: DevTools
 description: Learn to use the Dart DevTools when developing Flutter apps.
+layout: tutorial
 sitemap: false
 ---
 

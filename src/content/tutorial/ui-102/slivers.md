@@ -1,6 +1,7 @@
 ---
 title: Advanced scrolling and slivers
 description: Learn how to implement performant scrolling with slivers.
+layout: tutorial
 sitemap: false
 ---
 
