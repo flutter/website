@@ -29,7 +29,7 @@ Flutter supports deploying to the following platforms.
     supported="24 to 36" 
     ci-tested="24 to 36" 
     unsupported="23 and earlier" 
-    link="/deployment/android" 
+    deploy-to-link="/deployment/android" 
   />
   <PlatformCard 
     name="iOS" 
@@ -38,7 +38,7 @@ Flutter supports deploying to the following platforms.
     supported="13 to 26" 
     ci-tested="18" 
     unsupported="12 and earlier" 
-    link="/deployment/ios" 
+    deploy-to-link="/deployment/ios" 
   />
 </PlatformsGrid>
 
@@ -52,7 +52,7 @@ Flutter supports deploying to the following platforms.
     supported="10, 11" 
     ci-tested="10" 
     unsupported="8 and earlier" 
-    link="/deployment/windows"
+    deploy-to-link="/deployment/windows"
   />
   <PlatformCard 
     name="macOS" 
@@ -61,25 +61,27 @@ Flutter supports deploying to the following platforms.
     supported="Catalina (10.15) to Tahoe (26)" 
     ci-tested="Sonoma (14), Sequoia (15)" 
     unsupported="Mojave (10.14) and earlier" 
-    link="/deployment/macos" 
+    deploy-to-link="/deployment/macos" 
   />
   <PlatformCard 
     name="Debian (Linux)" 
     icon="computer" 
     arch="x64, Arm64" 
+    deploy-to="Linux"
     supported="10, 11, 12" 
     ci-tested="11, 12" 
     unsupported="9 and earlier" 
-    link="/deployment/linux"
+    deploy-to-link="/deployment/linux"
   />
   <PlatformCard 
     name="Ubuntu (Linux)" 
     icon="computer" 
     arch="x64, Arm64" 
+    deploy-to="Linux"
     supported="20.04 LTS to 24.04 LTS" 
     ci-tested="20.04 LTS, 22.04 LTS" 
     unsupported="24.10 and earlier non-LTS" 
-    link="/deployment/linux"
+    deploy-to-link="/deployment/linux"
   />
 </PlatformsGrid>
 
@@ -90,36 +92,40 @@ Flutter supports deploying to the following platforms.
     name="Chrome"
     icon="language"
     arch="JavaScript, WebAssembly"
+    deploy-to="Web"
     supported="[Latest 2](https://chromereleases.googleblog.com/search/label/Stable%20updates)"
     ci-tested="119, 125"
     unsupported="95 and earlier"
-    link="/deployment/web"
+    deploy-to-link="/deployment/web"
   />
   <PlatformCard
     name="Firefox"
     icon="language"
     arch="JavaScript"
+    deploy-to="Web"
     supported="[Latest 2](https://www.mozilla.org/en-US/firefox/releases/)"
     ci-tested="143"
     unsupported="98 and earlier"
-    link="/deployment/web"
+    deploy-to-link="/deployment/web"
   />
   <PlatformCard
     name="Safari"
     icon="language"
     arch="JavaScript"
+    deploy-to="Web"
     supported="15.6 and newer"
     ci-tested="15.6"
     unsupported="15.5 and earlier"
-    link="/deployment/web"
+    deploy-to-link="/deployment/web"
   />
   <PlatformCard
     name="Edge"
     icon="language"
     arch="JavaScript, WebAssembly"
+    deploy-to="Web"
     supported="[Latest 2](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)"
     ci-tested="119, 125"
     unsupported="95 and earlier"
-    link="/deployment/web"
+    deploy-to-link="/deployment/web"
   />
 </PlatformsGrid>

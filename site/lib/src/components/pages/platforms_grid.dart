@@ -46,7 +46,7 @@ class PlatformCard extends CustomComponentBase {
       supported,
       ciTested,
       unsupported,
-      link,
+      deployToLink,
     ) = switch (attributes) {
       {
         'name': final String name,
@@ -55,7 +55,7 @@ class PlatformCard extends CustomComponentBase {
         'supported': final String supported,
         'ci-tested': final String ciTested,
         'unsupported': final String unsupported,
-        'link': final String link,
+        'deploy-to-link': final String deployToLink,
       } =>
         (
           name,
@@ -68,18 +68,15 @@ class PlatformCard extends CustomComponentBase {
           supported,
           ciTested,
           unsupported,
-          link,
+          deployToLink,
         ),
       _ => throw ArgumentError(
         'PlatformCard must have a name, icon, arch, supported, '
-        'ci-tested, unsupported, and link attribute.',
+        'ci-tested, unsupported, and deploy-to-link attribute.',
       ),
     };
 
-    final deployName = switch (RegExp(r'^.*\((.+)\)$').firstMatch(name)) {
-      final Match match => match.group(1)!,
-      _ => name,
-    };
+    final deployTo = attributes['deploy-to'] ?? name;
 
     return div(classes: 'platform-card', [
       div(classes: 'platform-card-header', [
@@ -88,8 +85,8 @@ class PlatformCard extends CustomComponentBase {
         ]),
         h3([text(name)]),
         Button(
-          content: 'Deploy to $deployName',
-          href: link,
+          content: 'Deploy to $deployTo',
+          href: deployToLink,
         ),
       ]),
       div(classes: 'platform-card-tags', [
