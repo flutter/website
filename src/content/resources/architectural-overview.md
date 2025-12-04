@@ -93,10 +93,9 @@ The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
 including graphics (through [Impeller][]
-on iOS, Android, and desktop (behind a flag),
-and [Skia][] on other platforms), text layout,
-file and network I/O, accessibility support,
-plugin architecture, and a Dart runtime
+on iOS, Android, desktop, and web,
+and [Skia][] on other or older platforms), text layout,
+file and network I/O, a Dart runtime,
 and compile toolchain.
 
 :::note
