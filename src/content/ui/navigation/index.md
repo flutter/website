@@ -45,7 +45,7 @@ visit the [Navigator API documentation][`Navigator`].
 We don't recommend using named routes for most applications.
 Instead, use [go_router][] (or another routing package) or
 use `Navigator` with [`MaterialPageRoute`][].
-For more information, see the [Limitations][] section below.
+For more information, see the [Limitations](#limitations) section.
 :::
 
 Applications with simple navigation and deep linking requirements can use the
