@@ -44,7 +44,7 @@ visit the [Navigator API documentation][`Navigator`].
 :::note
 We don't recommend using named routes for most applications.
 Instead, use [go_router][] (or another routing package) or
-use `Navigator` with `MaterialPageRoute`.
+use `Navigator` with [`MaterialPageRoute`][].
 For more information, see the [Limitations][] section below.
 :::
 
@@ -74,7 +74,7 @@ pushes a new `Route` onto the Navigator regardless of where the user currently i
 Flutter also doesn't support the browser forward button for applications using
 named routes. For these reasons, we don't recommend using named routes in most
 applications. Instead, use a routing package like [go_router][] or
-use `Navigator` with `MaterialPageRoute`.
+use `Navigator` with [`MaterialPageRoute`][].
 
 ## Using the Router
 
