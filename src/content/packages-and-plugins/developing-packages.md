@@ -133,40 +133,49 @@ implementation(s) using a [platform channel][].
 
 ### Federated plugins
 
-Federated plugins are a way of splitting support for
-different platforms into separate packages.
-So, a federated plugin can use one package for iOS,
+**Federated plugins** are a way of splitting the API of a plugin
+into a platform interface, independent platform implementations
+of that interface, and an app-facing interface that uses the
+registered implementation of the running platform.
+
+**Package-separated federated plugins** are federated plugins where
+the platform interface, platform implementations, and the app-facing
+interface are all separated into their own Dart packages.
+
+So, a package-separated federated plugin can use one package for iOS,
 another for Android, another for web,
 and yet another for a car (as an example of an IoT device).
 Among other benefits, this approach allows a domain expert
 to extend an existing plugin to work for the platform they know best.
 
-A federated plugin requires the following packages:
+A federated plugin requires the following:
 
-**app-facing package**
-: The package that plugin users depend on to use the plugin.
-  This package specifies the API used by the Flutter app.
+**app-facing interface**
+: The interface that plugin users interact with when using the
+  plugin. This interface specifies the API used by the Flutter app.
+  In a package-separated federated plugin, this is the package
+  that plugin users depend on to use the plugin. 
 
-**platform package(s)**
-: One or more packages that contain the platform-specific
-  implementation code. The app-facing package calls into
-  these packages&mdash;they aren't included into an app,
-  unless they contain platform-specific functionality
-  accessible to the end user.
+**platform implementation(s)**
+: One or more implementations that contain the platform-specific
+  implementation code. The app-facing interface calls into
+  these implementations&mdash;they aren't directly used, or
+  depended on when package-separated, in an app unless they contain
+  platform-specific functionality accessible to the end user.
 
-**platform interface package**
-: The package that glues the app-facing package
-  to the platform package(s). This package declares an
-  interface that any platform package must implement to
-  support the app-facing package. Having a single package
+**platform interface**
+: The interface that glues the app-facing interface
+  to the platform implementations(s). This declares an
+  interface that any platform implementation must implement to
+  support the app-facing interface. Having a separate package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
 
 #### Endorsed federated plugin
 
 Ideally, when adding a platform implementation to
-a federated plugin, you will coordinate with the package
-author to include your implementation.
+a packaged-separated federated plugin, you will coordinate with
+the package author to include your implementation.
 In this way, the original author _endorses_ your
 implementation.
 
