@@ -14,9 +14,9 @@ The AI Toolkit is a set of AI chat-related widgets that make it easy to add an
 AI chat window to your Flutter app. The AI Toolkit is organized around an
 abstract LLM provider API to make it easy to swap out the LLM provider that
 you'd like your chat provider to use. Out of the box, it comes with support for
-[Firebase Vertex AI][].
+[Firebase Logic AI][].
 
-[Firebase Vertex AI]: https://firebase.google.com/docs/vertex-ai
+[Firebase Logic AI]: https://firebase.google.com/docs/vertex-ai
 
 ## Key features
 
@@ -79,9 +79,9 @@ dependencies:
 <li><b>Configuration</b>
 
 The AI Toolkit supports both Google Gemini AI (for prototyping) and Firebase
-Vertex AI (for production). Both require a Firebase project and the
+Firebase Logic AI (for production). Both require a Firebase project and the
 `firebase_core` package to be initialized, as described in the [Get started with
-the Gemini API using the Vertex AI in Firebase SDKs][vertex] docs.
+the Gemini API using the Firebase Logic AI in Firebase SDKs][vertex] docs.
 
 [vertex]:
     https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter
@@ -142,12 +142,12 @@ class ChatPage extends StatelessWidget {
 }
 ```
 
-The `FirebaseProvider` class exposes Vertex AI to the `LlmChatView`. Note that
+The `FirebaseProvider` class exposes Firebase Logic AI to the `LlmChatView`. Note that
 you provide a model name ([you have several options][options] from which to
 choose), but you do not provide an API key. All of that is handled as part of
 the Firebase project.
 
-For production workloads, it's easy to swap in the Vertex AI endpoint:
+For production workloads, it's easy to swap in the Firebase Logic AI endpoint:
 
 ```dart
 class ChatPage extends StatelessWidget {

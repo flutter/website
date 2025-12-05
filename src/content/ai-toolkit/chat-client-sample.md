@@ -8,7 +8,7 @@ prev:
 ---
 
 The AI Chat sample is meant to be a full-fledged chat app built using the
-Flutter AI Toolkit and Vertex AI for Firebase. In addition to all of the
+Flutter AI Toolkit and Firebase AI for Firebase. In addition to all of the
 multi-shot, multi-media, streaming features that it gets from the AI Toolkit,
 the AI Chat sample shows how to store and manage multiple chats at once in your
 own apps. On desktop form-factors, the AI Chat sample looks like the following:
