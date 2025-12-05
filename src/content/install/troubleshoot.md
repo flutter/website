@@ -96,7 +96,7 @@ To resolve this:
     Open your PowerShell terminal as an Administrator.
 
 2.  **Check Environment Variables**:
-    Ensure the `SystemRoot` environment variable is set (usually to `C:\Windows`).
+    Ensure the `SystemRoot` environment variable is set (usually to `C:\Windows`). You can check its value by running `echo $env:SystemRoot` in your PowerShell terminal.
 
 3.  **Check Execution Policy**:
     If the issue persists, you might need to adjust your execution policy.
