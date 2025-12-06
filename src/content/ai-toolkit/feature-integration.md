@@ -508,7 +508,7 @@ the Markdown.
 Notice that we're parsing the LLM response as JSON. It's common to set the
 provider into JSON mode and to provide a schema to restrict the format of its
 responses to ensure that we've got something we can parse. Each provider exposes
-this functionality in its own way, but the `FirebaseProvider` classes enable
+this functionality in its own way, but the `FirebaseProvider` class enables
 this with a `GenerationConfig` object that the recipes example uses as follows:
 
 ```dart
