@@ -38,12 +38,12 @@ Out of the box, it comes with support for [Firebase AI Logic][].
 * **Cross-platform support**: Compatible with Android, iOS, web, and macOS
   platforms.
 
-## Online demo
+## Demo
 
-Here's the online demo hosting the AI Toolkit:
+Here's what the demo example looks like hosting the AI Toolkit:
 
-<a href="https://flutter-ai-toolkit-examp-60bad.web.app/"> <img
-src="/assets/images/docs/ai-toolkit/ai-toolkit-app.png" alt="AI demo app"> </a>
+<img
+src="/assets/images/docs/ai-toolkit/ai-toolkit-app.png" alt="AI demo app">
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
