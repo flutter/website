@@ -137,7 +137,7 @@ class Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 500),
-	    curve: Curves.decelerate, // NEW
+      curve: Curves.decelerate, // NEW
       height: 60,
       width: 60,
       decoration: BoxDecoration(
