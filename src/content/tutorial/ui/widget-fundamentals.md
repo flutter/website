@@ -155,9 +155,9 @@ class Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     // NEW
     return Container(
-       width: 60,
-       height: 60,
-       // TODO: Add needed widgets
+      width: 60,
+      height: 60,
+      // TODO: Add needed widgets
     );
   }
 }
