@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
   LlmProvider _createProvider([List<ChatMessage>? history]) => FirebaseProvider(
       history: history,
         ...,
-        model: model: FirebaseAI.geminiAI().generativeModel(
+        model: FirebaseAI.geminiAI().generativeModel(
           model: 'gemini-2.5-flash',
           ...,
           systemInstruction: Content.system('''
