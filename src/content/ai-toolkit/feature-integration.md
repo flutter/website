@@ -61,7 +61,7 @@ class ChatPage extends StatelessWidget {
        body: LlmChatView(
          welcomeMessage: 'Hello and welcome to the Flutter AI Toolkit!',
          provider: FirebaseProvider(
-           model: model: FirebaseAI.geminiAI().generativeModel(
+          model: FirebaseAI.geminiAI().generativeModel(
              model: 'gemini-2.5-flash',
            ),
          ),
