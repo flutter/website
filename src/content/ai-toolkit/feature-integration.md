@@ -102,7 +102,7 @@ class ChatPage extends StatelessWidget {
            'What\'s the difference between a pumpkin and a squash?',
          ],
          provider: FirebaseProvider(
-           model: model: FirebaseAI.geminiAI().generativeModel(
+          model: FirebaseAI.geminiAI().generativeModel(
              model: 'gemini-2.5-flash',
            ),
          ),
