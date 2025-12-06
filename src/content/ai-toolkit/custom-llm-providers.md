@@ -152,7 +152,7 @@ needs to be kept up to date automatically
 the underlying chat-specific methods) or manually recreated
 (as the Firebase provider does whenever the history is set manually).
 
-1. Messages and attachments
+3. Messages and attachments
 
 Attachments must be mapped from the standard
 `ChatMessage` class exposed by the `LlmProvider`
