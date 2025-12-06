@@ -97,8 +97,8 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-	  // TODO: Replace Container with widgets.
-	  return Container();
+    // TODO: Replace Container with widgets.
+    return Container();
   }
 }
 ```
@@ -153,8 +153,8 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-	  // NEW
-	  return Container(
+    // NEW
+    return Container(
        width: 60,
        height: 60,
        // TODO: Add needed widgets
@@ -182,8 +182,8 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-	  // NEW
-	  return Container(
+    // NEW
+    return Container(
       width: 60,
       height: 60,
       decoration: BoxDecoration(
@@ -225,7 +225,7 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-	  return Container(
+    return Container(
        width: 60,
        height: 60,
        decoration: BoxDecoration(
