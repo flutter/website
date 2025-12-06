@@ -75,13 +75,14 @@ In this way, no matter what changes come to the underlying model in the future,
 the configuration knobs will all be available to the user of your custom
 provider.
 
-2. History History is a big part of any provider—not only does the provider need
-  to allow history to be manipulated directly, but it has to notify listeners as
-  it changes. In addition, to support serialization and changing provider
-  parameters, it must also support saving history as part of the construction
-  process.
+2. History
+History is a big part of any provider—not only does the provider need
+to allow history to be manipulated directly, but it has to notify listeners as
+it changes. In addition, to support serialization and changing provider
+parameters, it must also support saving history as part of the construction
+process.
 
-  The Firebase provider handles this as shown:
+The Firebase provider handles this as shown:
 
 ```dart
 class FirebaseProvider extends LlmProvider with ChangeNotifier {
@@ -152,7 +153,7 @@ needs to be kept up to date automatically
 the underlying chat-specific methods) or manually recreated
 (as the Firebase provider does whenever the history is set manually).
 
-3. Messages and attachments
+1. Messages and attachments
 
 Attachments must be mapped from the standard
 `ChatMessage` class exposed by the `LlmProvider`
@@ -163,7 +164,7 @@ For example, the Firebase provider maps from the
 as shown in the following example:
 
 ```dart
-import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:firebase_ai/firebase_ai.dart';
 ...
 
 class FirebaseProvider extends LlmProvider with ChangeNotifier {
