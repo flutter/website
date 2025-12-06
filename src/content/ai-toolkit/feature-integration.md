@@ -149,7 +149,7 @@ You should keep things casual and friendly. You may generate multiple recipes in
 ```
 
 Setting system instructions is unique to each provider; the `FirebaseProvider`
- allow you to provide them through the `systemInstruction` parameter.
+allows you to provide them through the `systemInstruction` parameter.
 
 Notice that, in this case, we're bringing in user preferences as part of the
 creation of the LLM provider passed to the `LlmChatView` constructor. We set the
