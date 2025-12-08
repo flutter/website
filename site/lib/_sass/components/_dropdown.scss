@@ -12,6 +12,10 @@
     border: var(--site-outline-variant) 1px solid;
     z-index: var(--site-z-dropdown);
 
+    .text-button {
+      color: var(--site-base-fgColor-lighter);
+    }
+
     .dropdown-divider {
       background-color: var(--site-outline-variant);
       border-radius: 0.5rem;
@@ -37,6 +41,7 @@
           button {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             flex-direction: row;
             width: 100%;
             gap: 0.4rem;

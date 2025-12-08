@@ -5,13 +5,12 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/common/breadcrumbs.dart';
+import '../components/common/page_header.dart';
 import '../components/common/prev_next.dart';
 import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
 import '../models/page_navigation_model.dart';
-import '../util.dart';
 import 'dash_layout.dart';
 
 /// The Jaspr Content layout to use for normal docs pages,
@@ -30,6 +29,7 @@ class DocLayout extends FlutterDocsLayout {
     final siteData = page.data.site;
 
     final pageTitle = pageData['title'] as String;
+    final pageDescription = (pageData['description'] as String?)?.trim();
     final showBanner =
         (pageData['showBanner'] as bool?) ??
         (siteData['showBanner'] as bool?) ??
@@ -66,16 +66,11 @@ class DocLayout extends FlutterDocsLayout {
                 DashTableOfContents(toc),
               ]),
             article([
-              div(id: 'site-content-title', [
-                h1(id: 'document-title', [
-                  if (pageData['underscore_breaker_titles'] == true)
-                    ...splitByUnderscore(pageTitle)
-                  else
-                    text(pageTitle),
-                ]),
-                if (allowBreadcrumbs && pageData['showBreadcrumbs'] != false)
-                  const PageBreadcrumbs(),
-              ]),
+              PageHeader(
+                title: pageTitle,
+                description: pageDescription,
+                showBreadcrumbs: pageData['showBreadcrumbs'] as bool? ?? true,
+              ),
 
               child,
 
