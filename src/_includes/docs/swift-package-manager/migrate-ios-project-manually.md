@@ -24,7 +24,7 @@ the following files in your issue:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
 
-1. Click <span class="material-symbols" translate="no">add</span>.
+1. Click the <Icon id="add" label="add/plus"></Icon> button.
 1. In the dialog that opens, click **Add Local...**.
 1. Navigate to `ios/Flutter/ephemeral/Packages/FlutterGeneratedPluginSwiftPackage`
    and click **Add Package**.
@@ -44,7 +44,7 @@ the following files in your issue:
 1. Go to **Product > Scheme > Edit Scheme**.
 1. Expand the **Build** section in the left side bar.
 1. Click **Pre-actions**.
-1. Click <span class="material-symbols" translate="no">add</span> and
+1. Click the <Icon id="add" label="add/plus"></Icon> button and
    select **New Run Script Action** from the menu.
 1. Click the **Run Script** title and change it to:
 
