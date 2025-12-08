@@ -69,7 +69,9 @@ class DocLayout extends FlutterDocsLayout {
               PageHeader(
                 title: pageTitle,
                 description: pageDescription,
-                showBreadcrumbs: pageData['showBreadcrumbs'] as bool? ?? true,
+                showBreadcrumbs:
+                    allowBreadcrumbs &&
+                    (pageData['showBreadcrumbs'] as bool? ?? true),
               ),
 
               child,
