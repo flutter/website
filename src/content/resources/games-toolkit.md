@@ -225,7 +225,7 @@ investigate other resources that our community recommended.
 <td>Debugging</td>
 <td>
 
-<Icon id="quick_reference_all" type="Guide"></Icon> [Firebase Crashlytics overview][firebase-crashlytics]<br>
+<Icon id="quick_reference_all" title="Guide"></Icon> [Firebase Crashlytics overview][firebase-crashlytics]<br>
 <Icon id="package_2" title="Flutter package"></Icon> [firebase_crashlytics][]
 
 </td>
