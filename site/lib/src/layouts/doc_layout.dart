@@ -10,8 +10,8 @@ import '../components/common/prev_next.dart';
 import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
+import '../markdown/markdown_parser.dart';
 import '../models/page_navigation_model.dart';
-import '../util.dart';
 import 'dash_layout.dart';
 
 /// The Jaspr Content layout to use for normal docs pages,
@@ -68,10 +68,7 @@ class DocLayout extends FlutterDocsLayout {
             article([
               div(id: 'site-content-title', [
                 h1(id: 'document-title', [
-                  if (pageData['underscore_breaker_titles'] == true)
-                    ...splitByUnderscore(pageTitle)
-                  else
-                    text(pageTitle),
+                  DashMarkdown(content: pageTitle, inline: true),
                 ]),
                 if (allowBreadcrumbs && pageData['showBreadcrumbs'] != false)
                   const PageBreadcrumbs(),
