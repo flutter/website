@@ -126,6 +126,8 @@ From here, you can choose to install from the list or configure manually.
     }
     ```
 
+#### Install extensions
+
 It is also recommended to install the Dart and Flutter extensions:
 
 1.  Open the **Extensions** view by either:
