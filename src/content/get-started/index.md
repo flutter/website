@@ -15,7 +15,7 @@ your Flutter development environment.
   <a class="card filled-card outlined-card" href="/get-started/quick">
     <div class="card-header">
       <span class="card-title">
-        <span class="material-symbols ms-filled" aria-hidden="true" style="font-size: 1.675rem;">rocket_launch</span>
+        <Icon id="rocket_launch" filled="true" size="1.675rem" />
         <span>Quick start</span>
       </span>
       <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
@@ -28,7 +28,7 @@ your Flutter development environment.
   <a class="card outlined-card" href="/get-started/custom">
     <div class="card-header">
       <span class="card-title">
-        <span class="material-symbols ms-filled" aria-hidden="true" style="font-size: 1.675rem;">tune</span>
+        <Icon id="tune" filled="true" size="1.675rem" />
         <span>Custom setup</span>
       </span>
     </div>

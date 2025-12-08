@@ -53,7 +53,7 @@ with one of the following editors.
     <div class="card-header">
       <span class="card-title">
         <span>DartPad</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">
@@ -64,7 +64,7 @@ with one of the following editors.
     <div class="card-header">
       <span class="card-title">
         <span>Firebase Studio</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">

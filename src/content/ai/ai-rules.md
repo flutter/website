@@ -19,7 +19,7 @@ instructions to an underlying LLM. These files help you:
 *   Provide critical project context to the AI.
 
 <a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
-  <span aria-hidden="true" class="material-symbols" translate="no">download</span>
+  <Icon id="download" />
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
