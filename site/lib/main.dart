@@ -14,6 +14,7 @@ import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
 import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
+import 'src/components/common/material_icon.dart';
 import 'src/components/common/tabs.dart';
 import 'src/components/common/youtube_embed.dart';
 import 'src/components/pages/architecture_recommendations.dart';
@@ -120,6 +121,10 @@ List<CustomComponent> get _embeddableComponents => [
   const TutorialOutline(),
   const WidgetCatalogGrid(),
   const ArchitectureRecommendations(),
+  CustomComponent(
+    pattern: RegExp('Icon', caseSensitive: false),
+    builder: (_, attrs, _) => MaterialIcon.fromAttributes(attrs),
+  ),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),

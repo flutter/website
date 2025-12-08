@@ -5,12 +5,11 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/common/breadcrumbs.dart';
+import '../components/common/page_header.dart';
 import '../components/common/prev_next.dart';
 import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
-import '../markdown/markdown_parser.dart';
 import '../models/page_navigation_model.dart';
 import 'dash_layout.dart';
 
@@ -30,6 +29,7 @@ class DocLayout extends FlutterDocsLayout {
     final siteData = page.data.site;
 
     final pageTitle = pageData['title'] as String;
+    final pageDescription = (pageData['description'] as String?)?.trim();
     final showBanner =
         (pageData['showBanner'] as bool?) ??
         (siteData['showBanner'] as bool?) ??
@@ -66,13 +66,13 @@ class DocLayout extends FlutterDocsLayout {
                 DashTableOfContents(toc),
               ]),
             article([
-              div(id: 'site-content-title', [
-                h1(id: 'document-title', [
-                  DashMarkdown(content: pageTitle, inline: true),
-                ]),
-                if (allowBreadcrumbs && pageData['showBreadcrumbs'] != false)
-                  const PageBreadcrumbs(),
-              ]),
+              PageHeader(
+                title: pageTitle,
+                description: pageDescription,
+                showBreadcrumbs:
+                    allowBreadcrumbs &&
+                    (pageData['showBreadcrumbs'] as bool? ?? true),
+              ),
 
               child,
 

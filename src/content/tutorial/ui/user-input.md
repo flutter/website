@@ -321,19 +321,19 @@ class GuessInput extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-		          maxLength: 5,
+              maxLength: 5,
               inputDecoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
               ),
-		          controller: _textEditingController,
-		          autoFocus: true, // NEW
-		          onSubmitted: (String input) {
+              controller: _textEditingController,
+              autoFocus: true, // NEW
+              onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
               }
- 		        ),
+            ),
           ),
         ),
       ],

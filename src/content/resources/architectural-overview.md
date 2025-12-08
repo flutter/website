@@ -92,20 +92,16 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][]
-on iOS, Android, and desktop (behind a flag),
-and [Skia][] on other platforms), text layout,
-file and network I/O, accessibility support,
-plugin architecture, and a Dart runtime
+including graphics text layout, file and network I/O, a Dart runtime,
 and compile toolchain.
 
 :::note
 If you have a question about which devices support
-Impeller, check out [Can I use Impeller?][]
+Impeller, check out [Impeller availability][]
 for detailed information.
 :::
 
-[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
+[Impeller availability]: {{site.main-url}}/go/can-i-use-impeller
 [Skia]: https://skia.org
 [Impeller]: /perf/impeller
 
@@ -588,7 +584,7 @@ such as Windows or macOS.
 
 :::note
 If you want to know which devices Impeller supports,
-check out [Can I use Impeller?][].
+check out [Impeller availability][].
 For more information,
 visit [Impeller rendering engine][]
 :::
