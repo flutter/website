@@ -16,7 +16,7 @@
     5. Responsible for asset resolution.
 
     [framework]: /resources/architectural-overview#architectural-layers
-    [Impeller]: /resources/glossary/#impeller
+    [Impeller]: /resources/glossary#impeller
   related_links:
     - text: "Architectural overview: The Engine"
       link: "/resources/architectural-overview#architectural-layers"
