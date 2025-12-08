@@ -21,7 +21,11 @@ class MaterialIcon extends StatelessComponent {
   factory MaterialIcon.fromAttributes(
     Map<String, String> attributes,
   ) {
-    final id = attributes['id']!;
+    final id =
+        attributes['id'] ??
+        (throw ArgumentError(
+          'The "id" attribute is required for the Icon component.',
+        ));
     final title = attributes['title'];
     final label = attributes['label'];
     final size = attributes['size'];
