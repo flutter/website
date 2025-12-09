@@ -44,11 +44,10 @@ final class DashSideNav extends StatelessComponent {
             iconId: 'play_lesson',
             active: activeEntry == ActiveNavEntry.learn,
           ),
-          _TopNavItem(
+          const _TopNavItem(
             href: 'https://api.flutter.dev',
             label: 'Reference',
             iconId: 'api',
-            active: activeEntry == ActiveNavEntry.reference,
           ),
           const _SideNavDivider(),
         ]),
@@ -242,7 +241,6 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         classes: [
           'nav',
           'collapse',
-          if (expanded) 'show',
         ].toClasses,
         id: id,
       ),

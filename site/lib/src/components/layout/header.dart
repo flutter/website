@@ -53,39 +53,20 @@ class DashHeader extends StatelessComponent {
         // Only show the nav items if the tutorial is active for now.
         if (activeEntry == ActiveNavEntry.learn)
           ul(classes: 'nav-items', [
-            li([
-              a(
-                href: '/',
-                classes: [
-                  'nav-link',
-                  'text-button',
-                  if (activeEntry == ActiveNavEntry.home) 'active',
-                ].toClasses,
-                [text('Home')],
-              ),
-            ]),
-            li([
-              a(
-                href: '/tutorial',
-                classes: [
-                  'nav-link',
-                  'text-button',
-                  if (activeEntry == ActiveNavEntry.learn) 'active',
-                ].toClasses,
-                [text('Learn')],
-              ),
-            ]),
-            li([
-              a(
-                href: 'https://api.flutter.dev',
-                classes: [
-                  'nav-link',
-                  'text-button',
-                  if (activeEntry == ActiveNavEntry.reference) 'active',
-                ].toClasses,
-                [text('Reference')],
-              ),
-            ]),
+            _NavItem(
+              href: '/',
+              label: 'Home',
+              isActive: activeEntry == ActiveNavEntry.home,
+            ),
+            _NavItem(
+              href: '/tutorial',
+              label: 'Learn',
+              isActive: activeEntry == ActiveNavEntry.learn,
+            ),
+            const _NavItem(
+              href: 'https://api.flutter.dev',
+              label: 'Reference',
+            ),
           ]),
 
         div(
@@ -134,6 +115,33 @@ class DashHeader extends StatelessComponent {
           ],
         ),
       ]),
+    ]);
+  }
+}
+
+class _NavItem extends StatelessComponent {
+  const _NavItem({
+    required this.href,
+    required this.label,
+    this.isActive = false,
+  });
+
+  final String href;
+  final String label;
+  final bool isActive;
+
+  @override
+  Component build(BuildContext context) {
+    return li([
+      a(
+        href: href,
+        classes: [
+          'nav-link',
+          'text-button',
+          if (isActive) 'active',
+        ].toClasses,
+        [text(label)],
+      ),
     ]);
   }
 }
