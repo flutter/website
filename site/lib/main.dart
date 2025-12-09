@@ -22,6 +22,7 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
+import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
 import 'src/components/tutorial/downloadable_snippet.dart';
 import 'src/components/tutorial/progress_ring.dart';
@@ -121,6 +122,8 @@ List<CustomComponent> get _embeddableComponents => [
   const TutorialOutline(),
   const WidgetCatalogGrid(),
   const ArchitectureRecommendations(),
+  const PlatformsGrid(),
+  const PlatformCard(),
   CustomComponent(
     pattern: RegExp('Icon', caseSensitive: false),
     builder: (_, attrs, _) => MaterialIcon.fromAttributes(attrs),
