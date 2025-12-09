@@ -22,7 +22,7 @@ class DashHeader extends StatelessComponent {
     final pageUrlPath = context.page.url;
     final activeEntry = activeNavEntry(pageUrlPath);
 
-    return header(id: 'site-header', classes: 'always-dark-mode', [
+    return header(id: 'site-header', [
       nav(classes: 'navbar', [
         a(
           id: 'site-primary-logo',
