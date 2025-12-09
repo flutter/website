@@ -131,17 +131,11 @@ class _NavItem extends StatelessComponent {
   final bool isActive;
 
   @override
-  Component build(BuildContext context) {
-    return li([
-      a(
-        href: href,
-        classes: [
-          'nav-link',
-          'text-button',
-          if (isActive) 'active',
-        ].toClasses,
-        [text(label)],
-      ),
-    ]);
-  }
+  Component build(BuildContext _) => li([
+    a(
+      href: href,
+      classes: ['nav-link', 'text-button', if (isActive) 'active'].toClasses,
+      [text(label)],
+    ),
+  ]);
 }
