@@ -65,7 +65,8 @@ Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 ### Antigravity
 
 To configure [Antigravity][] to use the Dart and Flutter MCP server,
-[connect it as a custom MCP server][antigravity-mcp]:
+you can either install it from the list of available servers or
+[connect it as a custom MCP server][antigravity-mcp].
 
 1.  Navigate to or open the **Agent** side panel.
 
@@ -81,6 +82,31 @@ To configure [Antigravity][] to use the Dart and Flutter MCP server,
 1.  Select **MCP Servers**.
 1.  In the upper right of the **Agent** panel,
     click **Manage MCP Servers**.
+
+From here, you can choose to install from the list or configure manually.
+
+#### Install from list
+
+1.  In the list of available servers, find **Dart** and click **Add**.
+1.  **Important**: The built-in configuration doesn't currently pass the
+    required `--force-roots-fallback` flag. You must add it manually.
+1.  In the upper right of the **Manage MCPs** editor view,
+    click **View raw config**.
+1.  Locate the `dart` entry in the `mcpServers` map and
+    update the `args` list to include `--force-roots-fallback`:
+
+    ```json title="mcp_config.json" highlightLines=6
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server",
+        "--force-roots-fallback"
+      ]
+    }
+    ```
+
+#### Connect manually
+
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
 1.  Add the following `dart-mcp-server` entry to the `mcpServers` map:
@@ -99,6 +125,8 @@ To configure [Antigravity][] to use the Dart and Flutter MCP server,
       }
     }
     ```
+
+#### Install extensions
 
 It is also recommended to install the Dart and Flutter extensions:
 
