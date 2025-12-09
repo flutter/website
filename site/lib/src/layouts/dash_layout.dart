@@ -21,6 +21,8 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
   @override
   String get name;
 
+  List<String> get defaultBodyClasses => [];
+
   @override
   @mustCallSuper
   Iterable<Component> buildHead(Page page) {
@@ -166,7 +168,13 @@ ga('send', 'pageview');
             'dir': 'ltr',
           },
         ),
-        if (bodyClass != null) Document.body(attributes: {'class': bodyClass}),
+        if ([?bodyClass, ...defaultBodyClasses] case final bodyClasses
+            when bodyClasses.isNotEmpty)
+          Document.body(
+            attributes: {
+              'class': bodyClasses.toClasses,
+            },
+          ),
         // The theme setting logic should remain before other scripts to
         // avoid a flash of the initial theme on load.
         raw('''
