@@ -1,6 +1,6 @@
 ---
 title: AI rules for Flutter and Dart
-description: >
+description: >-
   Learn how to add AI rules to tools that accelerate your
   development workflow.
 ---
@@ -18,34 +18,46 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>
-  <span aria-hidden="true" class="material-symbols" translate="no">download</span>
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
+  <Icon id="download" />
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
 ## Environments that support rules
 
-Many AI environments support rules files to guide
-LLM behavior. Here are some common examples and their
-corresponding rule file names:
+Many AI environments support rules files to guide LLM behavior.
+Here are some common examples and their corresponding
+rule file or directory names:
 
-| Environment | Rules File | Installation Instructions                     |
-| :--- | :--- |:----------------------------------------------|
-| Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
-| Cursor | `cursor.md` | [Configure cursorrules.md][]                  |
-| Firebase Studio | `airules.md` | [Configure airules.md][]                      |
-| Gemini CLI | `GEMINI.md` | [Configure GEMINI.md][]                       |
-| JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][]                   |
-| VS Code | `.instructions.md` | [Configure .instructions.md][]                |
-| Windsurf | `guidelines.md` | [Configure guidelines.md][]                   |
+| Environment          | Rules file or directory           | Configuration instructions                            |
+|:---------------------|:----------------------------------|:------------------------------------------------------|
+| Copilot-powered IDEs | `.github/copilot-instructions.md` | [Configure instructions for Copilot][copilot]         |
+| Claude Code          | `CLAUDE.md`                       | [Configure rules for Claude Code][claude]             |
+| Cursor               | `AGENTS.md`                       | [Configure rules in Cursor][cursor]                   |
+| Firebase Studio      | `.idx/airules.md`                 | [Configure instructions in Firebase Studio][firebase] |
+| Gemini CLI           | `GEMINI.md`                       | [Configure context in Gemini CLI][gemini-cli]         |
+| Google Antigravity   | `.agent/rules/<rule-name>.md`     | [Configure rules for Antigravity Agent][antigravity]  |
+| JetBrains IDEs       | `.junie/guidelines.md`            | [Configure guidelines for Junie][junie]               |
+| VS Code              | `.instructions.md`                | [Configure instructions in VS Code][vs-code]          |
+| Windsurf             | `.windsurf/rules/<rule-name>.md`  | [Configure rules in Windsurf][windsurf]               |
 
-[Configure airules.md]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
-[Configure .github/copilot-instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure cursorrules.md]: https://docs.cursor.com/en/context/rules
-[Configure guidelines.md]: https://www.jetbrains.com/help/junie/customize-guidelines.html
-[Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
-[Configure GEMINI.md]: https://codelabs.developers.google.com/gemini-cli-hands-on
+{:.table .table-striped}
+
+:::note Support is evolving
+Support for rules files is still evolving.
+Please check the documentation for your specific development environment for
+the most up-to-date naming conventions and instructions.
+:::
+
+[copilot]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-a-githubcopilotinstructionsmd-file
+[claude]: https://www.anthropic.com/engineering/claude-code-best-practices#1-customize-your-setup
+[cursor]: https://cursor.com/docs/context/rules
+[firebase]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
+[gemini-cli]: https://geminicli.com/docs/cli/gemini-md
+[antigravity]: https://antigravity.google/docs/rules
+[junie]: https://www.jetbrains.com/help/junie/customize-guidelines.html
+[vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-instructionsmd-files
+[windsurf]: https://docs.windsurf.com/windsurf/cascade/memories#rules
 
 ## Create rules for your editor
 
@@ -53,7 +65,7 @@ You can adapt our Flutter and Dart rules template for your
 specific environment. To do so, follow these steps:
 
 1.  Download the Flutter and Dart rules template:
-    <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>rules.md</a>
+    <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download><code>rules.md</code></a>
 
 1.  In an LLM like [Gemini][], attach the
     `rules.md` file that you downloaded in

@@ -122,6 +122,11 @@ to apply shaders to already rendered content.
 [`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
 for creating an [`ImageFilter`][] with a custom fragment shader.
 
+:::warning
+The `ImageFilter` API for custom shaders is only supported by the [Impeller][] backend.
+Using it on other backends will throw an error.
+:::
+
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
   return ClipRect(
@@ -327,6 +332,8 @@ or from part of the application using
 [`Picture.toImageSync`]: {{site.api}}/flutter/dart-ui/Picture/toImageSync.html
 [`Scene.toImageSync`]: {{site.api}}/flutter/dart-ui/Scene/toImageSync.html
 
+##### Sampler usage in GLSL example
+
 ```glsl
 #include <flutter/runtime_effect.glsl>
 
@@ -349,7 +356,45 @@ supported and needs to be emulated in the shader.
 
 [`TileMode.clamp`]: {{site.api}}/flutter/dart-ui/TileMode.html
 
-### Performance considerations
+##### `toImageSync` example
+
+```dart
+class SDFPainter {
+  SDFPainter(this.sdfShader, this.renderShader);
+
+  FragmentShader sdfShader;
+  FragmentShader renderShader;
+  Image? _sdf;
+  bool isDirty = false;
+  double radius = 0.5;
+
+  void paint(Canvas canvas, Size size) {
+    if (_sdf == null || isDirty) {
+      final recorder = PictureRecorder();
+      final subCanvas = Canvas(recorder);
+      final paint = Paint()..shader = sdfShader;
+      sdfShader.setFloat(0, size.width);
+      sdfShader.setFloat(1, size.height);
+      sdfShader.setFloat(2, radius);
+      subCanvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
+      final picture = recorder.endRecording();
+      _sdf = picture.toImageSync(size.width.toInt(), size.height.toInt());
+      isDirty = false;
+    }
+
+    renderShader.setFloat(0, size.width);
+    renderShader.setFloat(1, size.height);
+    renderShader.setImageSampler(0, _sdf!);
+
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Paint()..shader = renderShader,
+    );
+  }
+}
+```
+
+## Performance considerations
 
 When targeting the Skia backend,
 loading the shader might be expensive since it
@@ -366,9 +411,9 @@ this is more efficient than creating a new
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
-[Writing efficient shaders]: {{site.repo.flutter}}/blob/main/engine/src/flutter/impeller/docs/shader_optimization.md
+[Writing efficient shaders]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
 
-### Other resources
+## Other resources
 
 For more information, here are a few resources.
 

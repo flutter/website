@@ -188,10 +188,19 @@
           permalink: /ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai-toolkit/chat-client-sample
+    - title: GenUI SDK for Flutter
+      permalink: /ai/genui
+      children:
+        - title: Overview
+          permalink: /ai/genui
+        - title: Main components & concepts
+          permalink: /ai/genui/components
+        - title: Get started
+          permalink: /ai/genui/get-started
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
-    - title: GenUI SDK for Flutter
-      permalink: https://github.com/flutter/genui
+    - title: Flutter extension for Gemini CLI
+      permalink: /ai/flutter-ext-for-gemini
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
@@ -611,6 +620,8 @@
           permalink: /platform-integration/web
         - title: Set up web development
           permalink: /platform-integration/web/setup
+        - title: Set up a configuration file
+          permalink: /platform-integration/web/web-dev-config-file
         - title: Build a web app
           permalink: /platform-integration/web/building
         - title: Compile to WebAssembly

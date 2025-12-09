@@ -36,19 +36,21 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [`FontWeight` also controls the weight attribute of variable fonts][]
-* [UISceneDelegate adoption][]
-* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [Merged threads on Linux][]
 * [Stop generating `AssetManifest.json`][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
+* [Material 3 tokens update][]
 
-[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
+[Material 3 tokens update]: /release/breaking-changes/material-color-utilities
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
@@ -57,11 +59,15 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `OverlayPortal.targetsRootOverlay`][]
 * [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
 * [SnackBar with action no longer auto-dismisses][]
+* [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
+* [UISceneDelegate adoption][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35

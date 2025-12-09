@@ -1,0 +1,86 @@
+.platforms-grid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+
+.platform-card {
+  flex: 1 0 400px;
+  min-width: 0;
+
+  background-color: var(--site-raised-bgColor-translucent);
+  border-radius: var(--site-radius);
+  border: 1px solid var(--site-inset-borderColor);
+
+  padding: 0.8rem 1rem;
+
+  .platform-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    >span {
+      font-size: 0.875rem;
+      background-color: var(--site-raised-bgColor);
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+    }
+
+    h3 {
+      margin: 0;
+      flex: 1;
+      white-space: nowrap;
+    }
+  }
+
+  .platform-card-tags {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5rem;
+
+    margin-top: 0.5rem;
+
+    span {
+      font-size: 0.875rem;
+      line-height: 1;
+
+      background-color: var(--site-raised-bgColor-translucent);
+      border-radius: var(--site-radius);
+      border: 1px solid var(--site-inset-borderColor);
+
+      padding: 0.2rem 0.4rem;
+    }
+  }
+
+  .platform-card-details {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+
+    >span {
+      flex-grow: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.1rem;
+
+      >span:first-child {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .platform-card-supported,
+      .platform-card-ci-tested {
+        color: var(--site-alert-tip-color);
+      }
+
+      .platform-card-unsupported {
+        color: var(--site-alert-error-color);
+      }
+    }
+  }
+}

@@ -30,9 +30,8 @@ For other introductions to state management, check out these resources:
 * Video: [Managing state in Flutter][managing-state-video].
   This video shows how to use the [riverpod][] package.
 
-<i class="material-symbols" aria-hidden="true" translate="no">flutter_dash</i> Tutorial:
-[State management][].
-This shows how to use `ChangeNotifer` with the [provider][] package.
+* Tutorial: [State management][].
+  This shows how to use `ChangeNotifer` with the [provider][] package.
 
 This guide doesn't use third-party packages
 like provider or Riverpod. Instead,
@@ -167,7 +166,7 @@ Manually passing data down the widget tree can be verbose
 and cause unwanted boilerplate code,
 so Flutter provides _`InheritedWidget`_,
 which provides a way to efficiently host data in a parent widget
-so that child widgets can get access them without storing them as a field.
+so that child widgets can access them without storing them as a field.
 
 To use `InheritedWidget`, extend the `InheritedWidget` class
 and implement the static method `of()`

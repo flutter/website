@@ -44,6 +44,7 @@ void _setUpSite() {
   _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
+  _setUpSteppers();
 }
 
 void _setUpSearchKeybindings() {
@@ -116,10 +117,16 @@ void _setUpTabs() {
           // If the tab wrapper and this tab have a save key and ID defined,
           // switch other tabs to the tab with the same ID.
           _findAndActivateTabsWithSaveId(currentSaveKey, currentSaveId);
-          web.window.localStorage.setItem(
-            'tab-save-$currentSaveKey',
-            currentSaveId,
-          );
+          try {
+            web.window.localStorage.setItem(
+              'tab-save-$currentSaveKey',
+              currentSaveId,
+            );
+          } catch (e) {
+            if (kDebugMode) {
+              print('Error accessing localStorage: $e');
+            }
+          }
         } else {
           _clearActiveTabs(tabs);
           _setActiveTab(tabElement);
@@ -128,12 +135,19 @@ void _setUpTabs() {
 
       tabElement.addEventListener('click', handleClick.toJS);
 
-      // If a tab was previously specified as selected in local storage,
-      // save a reference to it that can be switched to later.
-      if (saveId.isNotEmpty &&
-          localStorageKey != null &&
-          web.window.localStorage.getItem(localStorageKey) == saveId) {
-        tabToChangeTo = tabElement;
+      try {
+        // If a tab was previously specified as selected in local storage,
+        // save a reference to it that can be switched to later.
+        final tabSaveKey = localStorageKey != null
+            ? web.window.localStorage.getItem(localStorageKey)
+            : null;
+        if (saveId.isNotEmpty && tabSaveKey != null && tabSaveKey == saveId) {
+          tabToChangeTo = tabElement;
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage: $e');
+        }
       }
     }
 
@@ -164,8 +178,14 @@ void _updateTabsFromQueryParameters() {
 
   for (final MapEntry(:key, :value) in originalQueryParameters.entries) {
     if (key.startsWith('tab-save-')) {
-      web.window.localStorage.setItem(key, value);
-      updatedQueryParameters.remove(key);
+      try {
+        web.window.localStorage.setItem(key, value);
+        updatedQueryParameters.remove(key);
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage: $e');
+        }
+      }
     }
   }
 
@@ -284,10 +304,10 @@ void _setUpExpandableCards() {
       }).toJS,
     );
 
-    if (card.id != currentFragment) {
-      card.classList.add('collapsed');
-      expandButton.ariaExpanded = 'false';
-    } else {
+    // If the card is the currently specified fragment, expand it.
+    if (card.id == currentFragment) {
+      card.classList.remove('collapsed');
+      expandButton.ariaExpanded = 'true';
       targetCard = card;
     }
   }
@@ -321,78 +341,19 @@ void _setUpPlatformKeys() {
 /// Enables a "back to top" button in the TOC header.
 void _setUpToc() {
   _setUpTocActiveObserver();
-  _setUpInlineTocDropdown();
 }
 
-void _setUpInlineTocDropdown() {
-  final inlineToc = web.document.getElementById('toc-top');
-  if (inlineToc == null) return;
-
-  final dropdownButton = inlineToc.querySelector('.dropdown-button');
-  final dropdownMenu = inlineToc.querySelector('.dropdown-content');
-  if (dropdownButton == null || dropdownMenu == null) return;
-
-  void closeMenu() {
-    inlineToc.setAttribute('data-expanded', 'false');
-    dropdownButton.ariaExpanded = 'false';
-  }
-
-  dropdownButton.addEventListener(
-    'click',
-    ((web.Event _) {
-      if (inlineToc.getAttribute('data-expanded') == 'true') {
-        closeMenu();
-      } else {
-        inlineToc.setAttribute('data-expanded', 'true');
-        dropdownButton.ariaExpanded = 'true';
-      }
-    }).toJS,
-  );
-
-  web.document.addEventListener(
-    'keydown',
-    ((web.KeyboardEvent event) {
-      if (event.key == 'Escape') {
-        closeMenu();
-      }
-    }).toJS,
-  );
-
-  // Close the dropdown if any link in the TOC is navigated to.
-  final inlineTocLinks = inlineToc.querySelectorAll('a');
-  for (var i = 0; i < inlineTocLinks.length; i++) {
-    final tocLink = inlineTocLinks.item(i) as web.Element;
-    tocLink.addEventListener(
-      'click',
-      ((web.Event _) {
-        closeMenu();
-      }).toJS,
-    );
-  }
-
-  // Close the dropdown if anywhere not in the inline TOC is clicked.
-  web.document.addEventListener(
-    'click',
-    ((web.Event event) {
-      if ((event.target as web.Element).closest('#toc-top') != null) {
-        return;
-      }
-      closeMenu();
-    }).toJS,
-  );
-}
+final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
 
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
     'article .header-wrapper, #site-content-title',
   );
-  final currentHeaderText = web.document.getElementById('current-header');
 
   // No need to have toc scrollspy if there is only one non-title heading.
-  if (headings.length < 2 || currentHeaderText == null) return;
+  if (headings.length < 2) return;
 
   final visibleAnchors = <String>{};
-  final initialHeaderText = currentHeaderText.textContent;
 
   final observer = web.IntersectionObserver(
     ((JSArray<web.IntersectionObserverEntry> entries) {
@@ -413,12 +374,12 @@ void _setUpTocActiveObserver() {
 
         // If the page title is visible, set the current header to its contents.
         if (visibleAnchors.contains('document-title')) {
-          currentHeaderText.textContent = initialHeaderText;
+          currentPageHeading.value = null;
           isFirst = false;
         }
 
         final tocLinks = web.document.querySelectorAll(
-          '.site-toc .sidenav-item a',
+          '.toc-list .sidenav-item a',
         );
         for (var i = 0; i < tocLinks.length; i++) {
           final tocLink = tocLinks.item(i) as web.Element;
@@ -432,7 +393,7 @@ void _setUpTocActiveObserver() {
             sidenavItem.classList.add('active');
 
             if (isFirst) {
-              currentHeaderText.textContent = tocLink.textContent;
+              currentPageHeading.value = tocLink.textContent!;
               isFirst = false;
             }
           } else {
@@ -447,4 +408,66 @@ void _setUpTocActiveObserver() {
   for (var i = 0; i < headings.length; i++) {
     observer.observe(headings.item(i) as web.Element);
   }
+}
+
+void _setUpSteppers() {
+  final steppers = web.document.querySelectorAll('.stepper');
+
+  for (var i = 0; i < steppers.length; i++) {
+    final stepper = steppers.item(i) as web.HTMLElement;
+    final steps = stepper.querySelectorAll('details');
+
+    for (var j = 0; j < steps.length; j++) {
+      final step = steps.item(j) as web.HTMLDetailsElement;
+
+      step.addEventListener(
+        'toggle',
+        ((web.Event e) {
+          // Close all other steps when one is opened.
+          if (step.open) {
+            for (var k = 0; k < steps.length; k++) {
+              final otherStep = steps.item(k) as web.HTMLDetailsElement;
+              if (otherStep != step) {
+                otherStep.open = false;
+              }
+            }
+          }
+        }).toJS,
+      );
+
+      final nextButton = step.querySelector('.next-step-button');
+      if (nextButton != null) {
+        nextButton.addEventListener(
+          'click',
+          ((web.Event e) {
+            e.preventDefault();
+            step.open = false;
+            _scrollTo(step, smooth: false);
+            if (j + 1 < steps.length) {
+              final nextStep = steps.item(j + 1) as web.HTMLDetailsElement;
+              nextStep.open = true;
+              _scrollTo(nextStep, smooth: true);
+            }
+          }).toJS,
+        );
+      }
+    }
+  }
+}
+
+void _scrollTo(web.Element element, {required bool smooth}) {
+  // Scroll the next step into view, accounting for the fixed header and toc.
+  final headerOffset =
+      web.document.getElementById('site-header')?.clientHeight ?? 0;
+  final tocOffset = web.document.getElementById('toc-top')?.clientHeight ?? 0;
+  final elementPosition = element.getBoundingClientRect().top;
+  final offsetPosition =
+      elementPosition + web.window.scrollY - headerOffset - tocOffset;
+
+  web.window.scrollTo(
+    web.ScrollToOptions(
+      top: offsetPosition,
+      behavior: smooth ? 'smooth' : 'auto',
+    ),
+  );
 }

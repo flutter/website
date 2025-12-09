@@ -39,7 +39,7 @@ which is covered at the end of this section.
 No matter which design system you choose, the principals on this page apply.
 :::
 
-> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**:
+> <Icon id="menu_book"></Icon> **Reference**:
 > The [widget catalog][] has an inventory of commonly used widgets in the [Material][] and [Cupertino][] libraries.
 
 Next, we'll cover a few of the Material widgets that support common
@@ -83,7 +83,7 @@ but styled differently for various use cases, including:
 - `FloatingActionButton`: An icon button that hovers over
   content to promote a primary action.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+> <Icon id="slideshow"></Icon> **Video**:
 > [FloatingActionButton (Widget of the Week)][]
 
 There are usually 3 main aspects to constructing a button:
@@ -109,42 +109,42 @@ You can style a button based on its state using `WidgetStateProperty`.
 
 - Finally, a button's `style` controls its appearance: color, border, and so on.
 
+<CodePreview previewColor="#FBF4FC">
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/ElevatedButton.webp",
-caption: "This figure shows an ElevatedButton with the text \"Enabled\" being clicked."
-alt: "A GIF of an elevated button with the text 'Enabled'"
-code:"
-```dart
-int count = 0;
+  <DashImage
+    image="fwe/user-input/ElevatedButton.webp"
+    alt="A GIF of an elevated button with the text 'Enabled'" 
+    caption="This figure shows an ElevatedButton with the text 'Enabled' being clicked." 
+    width="20em" />
 
-@override
-Widget build(BuildContext context) {
-  return ElevatedButton(
-    style: ElevatedButton.styleFrom(
-      textStyle: const TextStyle(fontSize: 20),
-    ),
-    onPressed: () {
-      setState(() {
-        count += 1;
-      });
-    },
-    child: const Text('Enabled'),
-  );
-}
-```
-" %}
+  ```dart
+  int count = 0;
 
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20),
+      ),
+      onPressed: () {
+        setState(() {
+          count += 1;
+        });
+      },
+      child: const Text('Enabled'),
+    );
+  }
+  ```
 
-<br>
+</CodePreview>
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+> <Icon id="star"></Icon> **Checkpoint**:
 > Complete this tutorial that teaches you how to build a
 > "favorite" button: [Add interactivity to your Flutter app][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: [`ElevatedButton`][] • [`FilledButton`][] • [`OutlinedButton`][] • [`TextButton`][] • [`IconButton`][] • [`FloatingActionButton`][]
+<Icon id="menu_book"></Icon> **API Docs**: [`ElevatedButton`][] • [`FilledButton`][] • [`OutlinedButton`][] • [`TextButton`][] • [`IconButton`][] • [`FloatingActionButton`][]
 
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [`FilledButton`]: {{site.api}}/flutter/material/FilledButton-class.html
@@ -165,25 +165,29 @@ Flutter's `Text` widget displays text on the screen,
 but doesn't allow users to highlight or copy the text.
 `SelectableText` displays a string of _user-selectable_ text.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/SelectableText.webp",
-caption: "This figure shows a cursor highlighting a portion of a string of text."
-alt: 'A GIF of a cursor highlighting two lines of text from a paragraph.'
-code:"
-```dart
-@override
-Widget build(BuildContext context) {
-  return const SelectableText('''
-Two households, both alike in dignity,
-In fair Verona, where we lay our scene,
-From ancient grudge break to new mutiny,
-Where civil blood makes civil hands unclean.
-From forth the fatal loins of these two foes''');
-}
-```
-" %}
+<CodePreview previewColor="#FBF4FC">
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+  <DashImage 
+    image="fwe/user-input/SelectableText.webp"
+    alt="A GIF of a cursor highlighting two lines of text from a paragraph."
+    caption="This figure shows a cursor highlighting a portion of a string of text."
+    width="25em" />
+
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return const SelectableText('''
+  Two households, both alike in dignity,
+  In fair Verona, where we lay our scene,
+  From ancient grudge break to new mutiny,
+  Where civil blood makes civil hands unclean.
+  From forth the fatal loins of these two foes''');
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [SelectableText (Widget of the Week)][]
 
 [SelectableText (Widget of the Week)]: {{site.youtube-site}}/watch?v=ZSU3ZXOs6hc
@@ -195,32 +199,36 @@ From forth the fatal loins of these two foes''');
 different text styles. It's not for handling user input,
 but is useful if you're allowing users edit and format text.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/RichText.png",
-caption: "This figure shows a string of text formatted with different text styles."
-alt: 'A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
-code:"
-```dart
-@override
-Widget build(BuildContext context) {
-  return RichText(
-    text: TextSpan(
-      text: 'Hello ',
-      style: DefaultTextStyle.of(context).style,
-      children: const <TextSpan>[
-        TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
-        TextSpan(text: ' world!'),
-      ],
-    ),
-  );
-}
-```
-" %}
+<CodePreview previewColor="#FEF7FF">
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+  <DashImage 
+    image="fwe/user-input/RichText.png"
+    alt='A screenshot of the text "Hello bold world!" with the word "bold" in bold font.'
+    caption="This figure shows a string of text formatted with different text styles." 
+    width="20em" />
+
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        text: 'Hello ',
+        style: DefaultTextStyle.of(context).style,
+        children: const <TextSpan>[
+          TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+          TextSpan(text: ' world!'),
+        ],
+      ),
+    );
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [Rich Text (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**:
+> <Icon id="code"></Icon> **Code**:
 > [Rich Text Editor code][]
 
 [Rich Text (Widget of the Week)]: {{site.youtube-site}}/watch?v=rykDVh-QFfw
@@ -251,28 +259,32 @@ The class supports other configurable properties, such as
 `obscureText` that turns each letter into a `readOnly` circle as its entered and
 `readOnly` which prevents the user from changing the text.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/TextField.webp",
-caption: "This figure shows text being typed into a TextField with a selected border and label."
-alt: "A GIF of a text field with the label 'Mascot Name', purple focus border and the phrase 'Dash the hummingbird' being typed in."
-code:"
-```dart
-final TextEditingController _controller = TextEditingController();
+<CodePreview previewColor="#FBF4FC">
 
-@override
-Widget build(BuildContext context) {
-  return TextField(
-    controller: _controller,
-    decoration: const InputDecoration(
-      border: OutlineInputBorder(),
-      labelText: 'Mascot Name',
-    ),
-  );
-}
-```
-" %}
+  <DashImage 
+    image="fwe/user-input/TextField.webp"
+    alt="A GIF of a text field with the label 'Mascot Name', purple focus border and the phrase 'Dash the hummingbird' being typed in."
+    caption="This figure shows text being typed into a TextField with a selected border and label."
+    width="20em" />
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+  ```dart
+  final TextEditingController _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: _controller,
+      decoration: const InputDecoration(
+        border: OutlineInputBorder(),
+        labelText: 'Mascot Name',
+      ),
+    );
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="star"></Icon> **Checkpoint**:
 > Complete this 4-part cookbook series that walks
 > you through how to create a text field,
 > retrieve its value, and update your app state:
@@ -342,18 +354,18 @@ Widget build(BuildContext context) {
 }
 ```
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+> <Icon id="star"></Icon> **Checkpoint**:
 > Complete this tutorial to learn how to [build a form with validation][].
 
-> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**:
+> <Icon id="flutter"></Icon> **Demo**:
 > [Form app][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">code</span> **Code**:
+> <Icon id="code"></Icon> **Code**:
 > [Form app code][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
+<Icon id="menu_book"></Icon> **API Docs**: [`TextField`][] • [`RichText`][] • [`SelectableText`][] • [`Form`][]
 
 [Build a form with validation]: /cookbook/forms/validation
 [Form app]: https://github.com/flutter/samples/tree/main/form_app/
@@ -395,58 +407,54 @@ A `SegmentedButton` has a few relevant properties:
   For example, `style` takes a `ButtonStyle`,
   providing a way to configure a `selectedIcon`.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/segmented-button.webp",
-caption: "This figure shows a SegmentedButton, each segment with an icon and
-text representing its value."
-alt: "A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year.
-Each has a calendar icon to represent its value and a text label.
-Day is first selected, then week and month, then year."
-code:"
+<CodePreview previewColor="#F6EFF7">
 
-```dart
-enum Calendar { day, week, month, year }
+  <DashImage 
+    image="fwe/user-input/segmented-button.webp"
+    alt="A GIF of a SegmentedButton with 4 segments: Day, Week, Month, and Year. Each has a calendar icon to represent its value and a text label. Day is first selected, then week and month, then year."
+    caption="This figure shows a SegmentedButton, each segment with an icon and text representing its value." 
+    width="25em" />
 
-// StatefulWidget...
-Calendar calendarView = Calendar.day;
+  ```dart
+  enum Calendar { day, week, month, year }
 
-@override
-Widget build(BuildContext context) {
-  return SegmentedButton<Calendar>(
-    segments: const <ButtonSegment<Calendar>>[
-      ButtonSegment<Calendar>(
-          value: Calendar.day,
-          label: Text('Day'),
-          icon: Icon(Icons.calendar_view_day)),
-      ButtonSegment<Calendar>(
-          value: Calendar.week,
-          label: Text('Week'),
-          icon: Icon(Icons.calendar_view_week)),
-      ButtonSegment<Calendar>(
-          value: Calendar.month,
-          label: Text('Month'),
-          icon: Icon(Icons.calendar_view_month)),
-      ButtonSegment<Calendar>(
-          value: Calendar.year,
-          label: Text('Year'),
-          icon: Icon(Icons.calendar_today)),
-    ],
-    selected: <Calendar>{calendarView},
-    onSelectionChanged: (Set<Calendar> newSelection) {
-      setState(() {
-        Suggested change
-        // By default there is only a single segment that can be
-        // selected at one time, so its value is always the first
-        // By default, only a single segment can be
-        // selected at one time, so its value is always the first
-        calendarView = newSelection.first;
-      });
-    },
-  );
-}
-```
-" %}
+  // StatefulWidget...
+  Calendar calendarView = Calendar.day;
 
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedButton<Calendar>(
+      segments: const <ButtonSegment<Calendar>>[
+        ButtonSegment<Calendar>(
+            value: Calendar.day,
+            label: Text('Day'),
+            icon: Icon(Icons.calendar_view_day)),
+        ButtonSegment<Calendar>(
+            value: Calendar.week,
+            label: Text('Week'),
+            icon: Icon(Icons.calendar_view_week)),
+        ButtonSegment<Calendar>(
+            value: Calendar.month,
+            label: Text('Month'),
+            icon: Icon(Icons.calendar_view_month)),
+        ButtonSegment<Calendar>(
+            value: Calendar.year,
+            label: Text('Year'),
+            icon: Icon(Icons.calendar_today)),
+      ],
+      selected: <Calendar>{calendarView},
+      onSelectionChanged: (Set<Calendar> newSelection) {
+        setState(() {
+          // By default, there is only a single segment that can be
+          // selected at a time, so its value is always the first
+          calendarView = newSelection.first;
+        });
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 ### Chip
 
@@ -473,50 +481,52 @@ You will typically use `Wrap`, a widget that displays its children in
 multiple horizontal or vertical runs, to make sure your chips wrap and
 don't get cut off at the edge of your app.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/chip.png",
-caption: "This figure shows two rows of Chip widgets, each containing a circular
-leading profile image and content text."
-alt: "A screenshot of 4 Chips split over two rows with a leading circular
-profile image with content text."
-code:"
-```dart
-@override
-Widget build(BuildContext context) {
-  return const SizedBox(
-    width: 500,
-    child: Wrap(
-      alignment: WrapAlignment.center,
-      spacing: 8,
-      runSpacing: 4,
-      children: [
-        Chip(
-          avatar: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/dash_chef.png')),
-          label: Text('Chef Dash'),
-        ),
-        Chip(
-          avatar: CircleAvatar(
-              backgroundImage:
-                  AssetImage('assets/images/dash_firefighter.png')),
-          label: Text('Firefighter Dash'),
-        ),
-        Chip(
-          avatar: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/dash_musician.png')),
-          label: Text('Musician Dash'),
-        ),
-        Chip(
-          avatar: CircleAvatar(
-              backgroundImage: AssetImage('assets/images/dash_artist.png')),
-          label: Text('Artist Dash'),
-        ),
-      ],
-    ),
-  );
-}
-```
-" %}
+<CodePreview previewColor="#FEF7FF">
+
+  <DashImage 
+    image="fwe/user-input/chip.png"
+    alt="A screenshot of 4 Chips split over two rows with a leading circular profile image with content text."
+    caption="This figure shows two rows of Chip widgets, each containing a circular leading profile image and content text." 
+    width="22em" />
+
+  ```dart
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      width: 500,
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 8,
+        runSpacing: 4,
+        children: [
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_chef.png')),
+            label: Text('Chef Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage:
+                    AssetImage('assets/images/dash_firefighter.png')),
+            label: Text('Firefighter Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_musician.png')),
+            label: Text('Musician Dash'),
+          ),
+          Chip(
+            avatar: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/dash_artist.png')),
+            label: Text('Artist Dash'),
+          ),
+        ],
+      ),
+    );
+  }
+  ```
+
+</CodePreview>
 
 [InputChip]: {{site.api}}/flutter/material/InputChip-class.html
 [ChoiceChip]: {{site.api}}/flutter/material/ChoiceChip-class.html
@@ -543,62 +553,63 @@ Configuration parameters include the following:
 - Additional parameters are also available for
   customizing the widget's look and behavior.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/dropdownmenu.webp",
-caption: "This figure shows a DropdownMenu widget with 5 value options. Each
-option's text color is styled to represent the color value."
-alt: "A GIF the DropdownMenu widget that is selected, it displays 5 options:
-Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color
-of its value."
-code:"
-```dart
-enum ColorLabel {
-  blue('Blue', Colors.blue),
-  pink('Pink', Colors.pink),
-  green('Green', Colors.green),
-  orange('Orange', Colors.orange),
-  grey('Grey', Colors.grey);
+<CodePreview previewColor="#FBF4FC">
 
-  const ColorLabel(this.label, this.color);
-  final String label;
-  final Color color;
-}
+  <DashImage 
+    image="fwe/user-input/dropdownmenu.webp"
+    alt="A GIF the DropdownMenu widget that is selected, it displays 5 options: Blue, Pink, Green, Orange, and Grey. The option text is displayed in the color of its value."
+    caption="This figure shows a DropdownMenu widget with 5 value options. Each option's text color is styled to represent the color value." 
+    width="14em" />
 
-// StatefulWidget...
-@override
-Widget build(BuildContext context) {
-  return DropdownMenu<ColorLabel>(
-    initialSelection: ColorLabel.green,
-    controller: colorController,
-    // requestFocusOnTap is enabled/disabled by platforms when it is null.
-    // On mobile platforms, this is false by default. Setting this to true will
-    // trigger focus request on the text field and virtual keyboard will appear
-    // afterward. On desktop platforms however, this defaults to true.
-    requestFocusOnTap: true,
-    label: const Text('Color'),
-    onSelected: (ColorLabel? color) {
-      setState(() {
-        selectedColor = color;
-      });
-    },
-    dropdownMenuEntries: ColorLabel.values
-      .map<DropdownMenuEntry<ColorLabel>>(
-          (ColorLabel color) {
-            return DropdownMenuEntry<ColorLabel>(
-              value: color,
-              label: color.label,
-              enabled: color.label != 'Grey',
-              style: MenuItemButton.styleFrom(
-                foregroundColor: color.color,
-              ),
-            );
-      }).toList(),
-  );
-}
-```
-" %}
+  ```dart
+  enum ColorLabel {
+    blue('Blue', Colors.blue),
+    pink('Pink', Colors.pink),
+    green('Green', Colors.green),
+    orange('Orange', Colors.orange),
+    grey('Grey', Colors.grey);
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+    const ColorLabel(this.label, this.color);
+    final String label;
+    final Color color;
+  }
+
+  // StatefulWidget...
+  @override
+  Widget build(BuildContext context) {
+    return DropdownMenu<ColorLabel>(
+      initialSelection: ColorLabel.green,
+      controller: colorController,
+      // requestFocusOnTap is enabled/disabled by platforms when it is null.
+      // On mobile platforms, this is false by default. Setting this to true will
+      // trigger focus request on the text field and virtual keyboard will appear
+      // afterward. On desktop platforms however, this defaults to true.
+      requestFocusOnTap: true,
+      label: const Text('Color'),
+      onSelected: (ColorLabel? color) {
+        setState(() {
+          selectedColor = color;
+        });
+      },
+      dropdownMenuEntries: ColorLabel.values
+        .map<DropdownMenuEntry<ColorLabel>>(
+            (ColorLabel color) {
+              return DropdownMenuEntry<ColorLabel>(
+                value: color,
+                label: color.label,
+                enabled: color.label != 'Grey',
+                style: MenuItemButton.styleFrom(
+                  foregroundColor: color.color,
+                ),
+              );
+        }).toList(),
+    );
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [DropdownMenu (Widget of the Week)][]
 
 [DropdownMenu (Widget of the Week)]: {{site.youtube-site}}/watch?v=giV9AbM2gd8?si=E23hjg72cjMTe_mz
@@ -616,41 +627,41 @@ Configuration parameters for the `Slider` widget:
 - `divisions` establishes a discrete interval with which the user can move the
   handle along the track.
 
+<CodePreview previewColor="#FCF5FD">
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/slider.webp",
-caption: "This figure shows a slider widget with a value ranging from 0.0 to 5.0
-broken up into 5 divisions. It shows the current value as a label as the dial
-is dragged."
-alt: "A GIF of a slider that has the dial dragged left to right in increments
-of 1, from 0.0 to 5.0"
-code:"
-```dart
-double _currentVolume = 1;
+  <DashImage 
+    image="fwe/user-input/slider.webp"
+    alt="A GIF of a slider that has the dial dragged left to right in increments of 1, from 0.0 to 5.0"
+    caption="This figure shows a slider widget with a value ranging from 0.0 to 5.0 broken up into 5 divisions. It shows the current value as a label as the dial is dragged." 
+    width="20em" />
 
-@override
-Widget build(BuildContext context) {
-  return Slider(
-    value: _currentVolume,
-    max: 5,
-    divisions: 5,
-    label: _currentVolume.toString(),
-    onChanged: (double value) {
-      setState(() {
-        _currentVolume = value;
-      });
-    },
-  );
-}
-```
-" %}
+  ```dart
+  double _currentVolume = 1;
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+  @override
+  Widget build(BuildContext context) {
+    return Slider(
+      value: _currentVolume,
+      max: 5,
+      divisions: 5,
+      label: _currentVolume.toString(),
+      onChanged: (double value) {
+        setState(() {
+          _currentVolume = value;
+        });
+      },
+    );
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [Slider, RangeSlider, CupertinoSlider (Widget of the Week)][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:** [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][] • [`Chip`][]
+<Icon id="menu_book"></Icon> **API Docs:** [`SegmentedButton`][] • [`DropdownMenu`][] • [`Slider`][] • [`Chip`][]
 
 [Slider, RangeSlider, CupertinoSlider (Widget of the Week)]: {{site.youtube-site}}/watch?v=ufb4gIPDmEss
 [`SegmentedButton`]: {{site.api}}/flutter/material/SegmentedButton-class.html
@@ -684,197 +695,193 @@ The configuration for `Checkbox` and `Switch` contain:
 
 ### Checkbox
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/checkbox.webp",
-caption: "This figure shows a checkbox being checked and unchecked."
-alt: "A GIF that shows a pointer clicking a checkbox
-and then clicking again to uncheck it."
-code:"
-```dart
-bool isChecked = false;
+<CodePreview previewColor="#FDF6FE">
 
-@override
-Widget build(BuildContext context) {
-  return Checkbox(
-    checkColor: Colors.white,
-    value: isChecked,
-    onChanged: (bool? value) {
-      setState(() {
-        isChecked = value!;
-      });
-    },
-  );
-}
-```
-" %}
+  <DashImage 
+    image="fwe/user-input/checkbox.webp"
+    alt="A GIF that shows a pointer clicking a checkbox and then clicking again to uncheck it."
+    caption="This figure shows a checkbox being checked and unchecked." 
+    width="6em" />
+
+  ```dart
+  bool isChecked = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Checkbox(
+      checkColor: Colors.white,
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 ### Switch
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/Switch.webp",
-caption: "This figure shows a Switch widget that is toggled on and off."
-alt: "A GIF of a Switch widget that is toggled on and off. In its off state,
-it is gray with dark gray borders. In its on state,
-it is red with a light red border."
-code:"
-```dart
-bool light = true;
+<CodePreview previewColor="#FBF4FC">
 
-@override
-Widget build(BuildContext context) {
-  return Switch(
-    // This bool value toggles the switch.
-    value: light,
-    activeColor: Colors.red,
-    onChanged: (bool value) {
-      // This is called when the user toggles the switch.
-      setState(() {
-        light = value;
-      });
-    },
-  );
-}
-```
-" %}
+  <DashImage 
+    image="fwe/user-input/Switch.webp"
+    alt="A GIF of a Switch widget that is toggled on and off. In its off state, it is gray with dark gray borders. In its on state, it is red with a light red border."
+    caption="This figure shows a Switch widget that is toggled on and off." 
+    width="8em" />
+
+  ```dart
+  bool light = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      // This bool value toggles the switch.
+      value: light,
+      activeThumbColor: Colors.red,
+      onChanged: (bool value) {
+        // This is called when the user toggles the switch.
+        setState(() {
+          light = value;
+        });
+      },
+    );
+  }
+  ```
+
+</CodePreview>
 
 ### Radio
 
-A group of `Radio` buttons that allows the user to
+A `RadioGroup` contains `Radio` buttons that allow the user to
 select between mutually exclusive values.
 When the user selects a radio button in a group,
 the other radio buttons are unselected.
 
-- A particular `Radio` button's `value` represent that button's value,
-- The selected value for a group of radio buttons is identified by
+- A particular `Radio` button's `value` represent that button's value.
+- The selected value for a `RadioGroup` is identified by
   the `groupValue` parameter.
-- `Radio` also has an `onChanged` callback that
-  gets triggered when users click it, like `Switch` and `Checkbox`
+- `RadioGroup` has an `onChanged` callback that
+  gets triggered when users click it, like `Switch` and `Checkbox`.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/Radio.webp",
-caption: "This figure shows a column of ListTiles containing a radio button and
-label, where only one radio button can be selected at a time."
-alt: "A GIF of 4 ListTiles in a column, each containing a leading Radio button
-and title text. The Radio buttons are selected in order from top to bottom."
-code:"
-```dart
-enum Character { musician, chef, firefighter, artist }
+<CodePreview previewColor="#FBF4FC">
 
-class RadioExample extends StatefulWidget {
-  const RadioExample({super.key});
+  <DashImage 
+    image="fwe/user-input/Radio.webp"
+    alt="A GIF of 4 ListTiles in a column, each containing a leading Radio button and title text. The Radio buttons are selected in order from top to bottom."
+    caption="This figure shows a column of ListTiles containing a radio button and label, where only one radio button can be selected at a time." 
+    width="14em" />
 
-  @override
-  State<RadioExample> createState() => _RadioExampleState();
-}
+  ```dart
+  enum Character { musician, chef, firefighter, artist }
 
-class _RadioExampleState extends State<RadioExample> {
-  Character? _character = Character.musician;
+  class RadioExample extends StatefulWidget {
+    const RadioExample({super.key});
 
-  void setCharacter(Character? value) {
-    setState(() {
-      _character = value;
-    });
+    @override
+    State<RadioExample> createState() => _RadioExampleState();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        ListTile(
-          title: const Text('Musician'),
-          leading: Radio<Character>(
-            value: Character.musician,
-            groupValue: _character,
-            onChanged: setCharacter,
-          ),
+  class _RadioExampleState extends State<RadioExample> {
+    Character? _character = Character.musician;
+
+    void setCharacter(Character? value) {
+      setState(() {
+        _character = value;
+      });
+    }
+
+    @override
+    Widget build(BuildContext context) {
+      return RadioGroup(
+        groupValue: _character,
+        onChanged: setCharacter,
+        child: Column(
+          children: <Widget>[
+            ListTile(
+              title: const Text('Musician'),
+              leading: Radio<Character>(value: Character.musician),
+            ),
+            ListTile(
+              title: const Text('Chef'),
+              leading: Radio<Character>(value: Character.chef),
+            ),
+            ListTile(
+              title: const Text('Firefighter'),
+              leading: Radio<Character>(value: Character.firefighter),
+            ),
+            ListTile(
+              title: const Text('Artist'),
+              leading: Radio<Character>(value: Character.artist),
+            ),
+          ],
         ),
-        ListTile(
-          title: const Text('Chef'),
-          leading: Radio<Character>(
-            value: Character.chef,
-            groupValue: _character,
-            onChanged: setCharacter,
-          ),
-        ),
-        ListTile(
-          title: const Text('Firefighter'),
-          leading: Radio<Character>(
-            value: Character.firefighter,
-            groupValue: _character,
-            onChanged: setCharacter,
-          ),
-        ),
-        ListTile(
-          title: const Text('Artist'),
-          leading: Radio<Character>(
-            value: Character.artist,
-            groupValue: _character,
-            onChanged: setCharacter,
-          ),
-        ),
-      ],
-    );
+      );
+    }
   }
-}
-```
-" %}
+  ```
+
+</CodePreview>
 
 #### Bonus: CheckboxListTile & SwitchListTile
 
 These convenience widgets are the same checkbox and switch widgets,
 but support a label (as a `ListTile`).
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/SpecialListTiles.webp",
-caption: "This figure shows a column containing a CheckboxListTile and
-a SwitchListTile being toggled."
-alt: "A ListTile with a leading icon, title text, and a trailing checkbox being
-checked and unchecked. It also shows a ListTile with a leading icon, title text
-and a switch being toggled on and off."
-code:"
-```dart
-double timeDilation = 1.0;
-bool _lights = false;
+<CodePreview previewColor="#FCF5FD">
 
-@override
-Widget build(BuildContext context) {
-  return Column(
-    children: [
-      CheckboxListTile(
-        title: const Text('Animate Slowly'),
-        value: timeDilation != 1.0,
-        onChanged: (bool? value) {
-          setState(() {
-            timeDilation = value! ? 10.0 : 1.0;
-          });
-        },
-        secondary: const Icon(Icons.hourglass_empty),
-      ),
-      SwitchListTile(
-        title: const Text('Lights'),
-        value: _lights,
-        onChanged: (bool value) {
-          setState(() {
-            _lights = value;
-          });
-        },
-        secondary: const Icon(Icons.lightbulb_outline),
-      ),
-    ],
-  );
-}
-```
-" %}
+  <DashImage 
+    image="fwe/user-input/SpecialListTiles.webp"
+    alt="A GIF of a column containing a CheckboxListTile and a SwitchListTile being toggled."
+    caption="This figure shows a column containing a CheckboxListTile and a SwitchListTile being toggled." 
+    width="20em" />
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+  ```dart
+  double timeDilation = 1.0;
+  bool _lights = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CheckboxListTile(
+          title: const Text('Animate Slowly'),
+          value: timeDilation != 1.0,
+          onChanged: (bool? value) {
+            setState(() {
+              timeDilation = value! ? 10.0 : 1.0;
+            });
+          },
+          secondary: const Icon(Icons.hourglass_empty),
+        ),
+        SwitchListTile(
+          title: const Text('Lights'),
+          value: _lights,
+          onChanged: (bool value) {
+            setState(() {
+              _lights = value;
+            });
+          },
+          secondary: const Icon(Icons.lightbulb_outline),
+        ),
+      ],
+    );
+  }
+  ```
+
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [CheckboxListTile (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+> <Icon id="slideshow"></Icon> **Video**:
 > [SwitchListTile (Widget of the Week)][]
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**:
+<Icon id="menu_book"></Icon> **API Docs**:
 [`Checkbox`][] • [`CheckboxListTile`][] • [`Switch`][] • [`SwitchListTile`][] •
 [`Radio`][]
 
@@ -907,48 +914,49 @@ Activate by calling the `showDatePicker` function,
 which returns a `Future<DateTime>`,
 so don't forget to await the asynchronous function call!
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/DatePicker.webp",
-caption: "This figure shows a DatePicker that is displayed when the
-'Pick a date' button is clicked."
-alt: "A GIF of a pointer clicking a button that says 'Pick a date',
-then shows a date picker. The date Friday, August 30 is selected and the 'OK'
-button is clicked."
-code:"
-```dart
-DateTime? selectedDate;
+<CodePreview previewColor="#FAF3FB">
 
-@override
-Widget build(BuildContext context) {
-  var date = selectedDate;
+  <DashImage 
+    image="fwe/user-input/DatePicker.webp"
+    alt="A GIF of a pointer clicking a button that says 'Pick a date', then shows a date picker. The date Friday, August 30 is selected and the 'OK' button is clicked."
+    caption="This figure shows a DatePicker that is displayed when the 'Pick a date' button is clicked." 
+    width="18em" />
 
-  return Column(children: [
-    Text(
-      date == null
-          ? 'You haven\'t picked a date yet.'
-          : DateFormat('MM-dd-yyyy').format(date),
-    ),
-    ElevatedButton.icon(
-      icon: const Icon(Icons.calendar_today),
-      onPressed: () async {
-        var pickedDate = await showDatePicker(
-          context: context,
-          initialEntryMode: DatePickerEntryMode.calendarOnly,
-          initialDate: DateTime.now(),
-          firstDate: DateTime(2019),
-          lastDate: DateTime(2050),
-        );
+  ```dart
+  DateTime? selectedDate;
 
-        setState(() {
-          selectedDate = pickedDate;
-        });
-      },
-      label: const Text('Pick a date'),
-    )
-  ]);
-}
-```
-" %}
+  @override
+  Widget build(BuildContext context) {
+    var date = selectedDate;
+
+    return Column(children: [
+      Text(
+        date == null
+            ? 'You haven\\\'t picked a date yet.'
+            : DateFormat('MM-dd-yyyy').format(date),
+      ),
+      ElevatedButton.icon(
+        icon: const Icon(Icons.calendar_today),
+        onPressed: () async {
+          var pickedDate = await showDatePicker(
+            context: context,
+            initialEntryMode: DatePickerEntryMode.calendarOnly,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2019),
+            lastDate: DateTime(2050),
+          );
+
+          setState(() {
+            selectedDate = pickedDate;
+          });
+        },
+        label: const Text('Pick a date'),
+      )
+    ]);
+  }
+  ```
+
+</CodePreview>
 
 ### TimePickerDialog
 
@@ -958,44 +966,45 @@ Instead of returning a `Future<DateTime>`,
 `showTimePicker` instead returns a `Future<TimeOfDay>`.
 Once again, don't forget to await the function call!
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/TimePicker.webp",
-caption: "This figure shows a TimePicker that is displayed when the
-'Pick a time' button is clicked."
-alt: "A GIF of a pointer clicking a button that says 'Pick a time', then shows
- a time picker. The time picker shows a circular clock as the cursor moves the
- hour hand, then minute hand, selects PM, then the 'OK' button is clicked."
-code:"
-```dart
-TimeOfDay? selectedTime;
+<CodePreview previewColor="#FAF3FB">
 
-@override
-Widget build(BuildContext context) {
-  var time = selectedTime;
+  <DashImage 
+    image="fwe/user-input/TimePicker.webp"
+    alt="A GIF of a pointer clicking a button that says 'Pick a time', then shows a time picker. The time picker shows a circular clock as the cursor moves the hour hand, then minute hand, selects PM, then the 'OK' button is clicked."
+    caption="This figure shows a TimePicker that is displayed when the 'Pick a time' button is clicked." 
+    width="18em" />
 
-  return Column(children: [
-    Text(
-      time == null ? 'You haven\'t picked a time yet.' : time.format(context),
-    ),
-    ElevatedButton.icon(
-      icon: const Icon(Icons.calendar_today),
-      onPressed: () async {
-        var pickedTime = await showTimePicker(
-          context: context,
-          initialEntryMode: TimePickerEntryMode.dial,
-          initialTime: TimeOfDay.now(),
-        );
+  ```dart
+  TimeOfDay? selectedTime;
 
-        setState(() {
-          selectedTime = pickedTime;
-        });
-      },
-      label: const Text('Pick a time'),
-    )
-  ]);
-}
-```
-" %}
+  @override
+  Widget build(BuildContext context) {
+    var time = selectedTime;
+
+    return Column(children: [
+      Text(
+        time == null ? 'You haven\\\'t picked a time yet.' : time.format(context),
+      ),
+      ElevatedButton.icon(
+        icon: const Icon(Icons.calendar_today),
+        onPressed: () async {
+          var pickedTime = await showTimePicker(
+            context: context,
+            initialEntryMode: TimePickerEntryMode.dial,
+            initialTime: TimeOfDay.now(),
+          );
+
+          setState(() {
+            selectedTime = pickedTime;
+          });
+        },
+        label: const Text('Pick a time'),
+      )
+    ]);
+  }
+  ```
+
+</CodePreview>
 
 :::tip
 Calling `showDatePicker()` and `showTimePicker()`
@@ -1010,7 +1019,7 @@ on to the `Navigator` stack.
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:**
+<Icon id="menu_book"></Icon> **API Docs:**
 [`showDatePicker`][] • [`showTimePicker`][]
 
 [`showDatePicker`]: {{site.api}}/flutter/material/showDatePicker.html
@@ -1029,54 +1038,56 @@ It has a number of configuration parameters, including:
 - It's important to include a `key` object as well so that they can be uniquely
   identified from sibling `Dismissible` widgets in the widget tree.
 
-{% render "docs/code-and-image.md",
-image:"fwe/user-input/Dismissible.webp",
-caption: "This figure shows a list of Dismissible widgets that each contain a
-ListTile. Swiping across the ListTile reveals a green background and makes the tile
-disappear."
-alt: "A screenshot of three widgets, spaced evenly from each other."
-code:"
-```dart
-List<int> items = List<int>.generate(100, (int index) => index);
+<CodePreview previewColor="#FBF4FC">
 
-@override
-Widget build(BuildContext context) {
-  return ListView.builder(
-    itemCount: items.length,
-    padding: const EdgeInsets.symmetric(vertical: 16),
-    itemBuilder: (BuildContext context, int index) {
-      return Dismissible(
-        background: Container(
-          color: Colors.green,
-        ),
-        key: ValueKey<int>(items[index]),
-        onDismissed: (DismissDirection direction) {
-          setState(() {
-            items.removeAt(index);
-          });
-        },
-        child: ListTile(
-          title: Text(
-            'Item ${items[index]}',
+  <DashImage 
+    image="fwe/user-input/Dismissible.webp"
+    alt="A GIF of a list of Dismissible widgets that each contain a ListTile. Swiping across the ListTile reveals a green background and makes the tile disappear."
+    caption="This figure shows a list of Dismissible widgets that each contain a ListTile. Swiping across the ListTile reveals a green background and makes the tile disappear." 
+    width="18em" />
+
+  ```dart
+  List<int> items = List<int>.generate(100, (int index) => index);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: items.length,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      itemBuilder: (BuildContext context, int index) {
+        return Dismissible(
+          background: Container(
+            color: Colors.green,
           ),
-        ),
-      );
-    },
-  );
-}
-```
-" %}
+          key: ValueKey<int>(items[index]),
+          onDismissed: (DismissDirection direction) {
+            setState(() {
+              items.removeAt(index);
+            });
+          },
+          child: ListTile(
+            title: Text(
+              'Item ${items[index]}',
+            ),
+          ),
+        );
+      },
+    );
+  }
+  ```
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+</CodePreview>
+
+> <Icon id="slideshow"></Icon> **Video**:
 > [Dismissible (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+> <Icon id="star"></Icon> **Checkpoint**:
 > Complete this tutorial on how to [implement swipe to dismiss][] using the
 > dismissible widget.
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs:**
+<Icon id="menu_book"></Icon> **API Docs:**
 [`Dismissible`][]
 
 [Dismissible (Widget of the Week)]: {{site.youtube-site}}/watch?v=iEMgjrfuc58?si=f0S7IdaA9PIWIYvl
@@ -1090,7 +1101,7 @@ you can use for handling user input in your Flutter app.
 Check out the [Material Widget library][] and
 [Material Library API docs][] for a full list of widgets.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">flutter</span> **Demo**:
+> <Icon id="flutter"></Icon> **Demo**:
 > See Flutter's [Material 3 Demo][] for a curated sample of user input widgets
 > available in the Material library.
 
@@ -1101,7 +1112,7 @@ For example, the [`flutter_slidable`][] package provides
 a `Slidable` widget that is more customizable than
 the `Dismissible` widget described in the previous section.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+> <Icon id="slideshow"></Icon> **Video**:
 > [flutter_slidable (Package of the Week)][]
 
 [Material Widget Library]: /ui/widgets/material
@@ -1119,18 +1130,18 @@ fits the user interaction that you're looking for?
 You can build your own custom widget and
 make it interactive using `GestureDetector`.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+> <Icon id="star"></Icon> **Checkpoint**:
 > Use this recipe as a starting point to create your own _custom_ button widget
 > that can [handle taps][].
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+> <Icon id="slideshow"></Icon> **Video**:
 > [GestureDetector (Widget of the Week)][]
 
-> <span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **Reference**:
+> <Icon id="menu_book"></Icon> **Reference**:
 > Check out [Taps, drags, and other gestures][] which explains how to listen
 > for, and respond to, gestures in Flutter.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Bonus Video**:
+> <Icon id="slideshow"></Icon> **Bonus Video**:
 > Curious how Flutter's `GestureArena` turns raw user interaction data into
 > human recognizable concepts like taps, drags, and pinches?
 > Check out this video: [GestureArena (Decoding Flutter)][]
@@ -1147,13 +1158,13 @@ annotate its meaning with the `Semantics` widget.
 It provides descriptions and metadata to screen readers and
 other semantic analysis-based tools.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">slideshow</span> **Video**:
+> <Icon id="slideshow"></Icon> **Video**:
 > [Semantics (Flutter Widget of the Week)][]
 
 
 <br>
 
-<span class="material-symbols" aria-hidden="true" translate="no">menu_book</span> **API Docs**:
+<Icon id="menu_book"></Icon> **API Docs**:
 [`GestureDetector`][] • [`Semantics`][]
 
 [`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
@@ -1168,11 +1179,11 @@ ensure that everything works as expected!
 These tutorials walk you through writing tests that
 simulate user interactions in your app:
 
-> <span class="material-symbols" aria-hidden="true" translate="no">star</span> **Checkpoint**:
+> <Icon id="star"></Icon> **Checkpoint**:
 > Follow this [tap, drag, and enter text][] cookbook article and learn how to
 > use `WidgetTester` to simulate and test user interactions in your app.
 
-> <span class="material-symbols" aria-hidden="true" translate="no">bookmark</span> **Bonus Tutorial**:
+> <Icon id="bookmark"></Icon> **Bonus Tutorial**:
 > The [handle scrolling][] cookbook recipe shows you how to verify that
 > lists of widgets contain the expected content by
 > scrolling through the lists using widget tests.

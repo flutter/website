@@ -62,6 +62,92 @@ This section provides instructions for setting up the
 Dart and Flutter MCP server with popular tools like Firebase Studio,
 Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
+### Antigravity
+
+To configure [Antigravity][] to use the Dart and Flutter MCP server,
+you can either install it from the list of available servers or
+[connect it as a custom MCP server][antigravity-mcp].
+
+1.  Navigate to or open the **Agent** side panel.
+
+    If it's closed, open it by either:
+
+    - Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Open View...**
+      <span aria-label="and then">></span> **Agent**.
+
+1.  In the upper right of the **Agent** panel,
+    click the **Additional options** (`...`) menu button.
+1.  Select **MCP Servers**.
+1.  In the upper right of the **Agent** panel,
+    click **Manage MCP Servers**.
+
+From here, you can choose to install from the list or configure manually.
+
+#### Install from list
+
+1.  In the list of available servers, find **Dart** and click **Add**.
+1.  **Important**: The built-in configuration doesn't currently pass the
+    required `--force-roots-fallback` flag. You must add it manually.
+1.  In the upper right of the **Manage MCPs** editor view,
+    click **View raw config**.
+1.  Locate the `dart` entry in the `mcpServers` map and
+    update the `args` list to include `--force-roots-fallback`:
+
+    ```json title="mcp_config.json" highlightLines=6
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server",
+        "--force-roots-fallback"
+      ]
+    }
+    ```
+
+#### Connect manually
+
+1.  In the upper right of the **Manage MCPs** editor view,
+    click **View raw config**.
+1.  Add the following `dart-mcp-server` entry to the `mcpServers` map:
+
+    ```json title="mcp_config.json" highlightLines=3-10
+    {
+      "mcpServers": {
+        "dart-mcp-server": {
+          "command": "dart",
+          "args": [
+            "mcp-server",
+            "--force-roots-fallback"
+          ],
+          "env": {}
+        }
+      }
+    }
+    ```
+
+#### Install extensions
+
+It is also recommended to install the Dart and Flutter extensions:
+
+1.  Open the **Extensions** view by either:
+
+    - Pressing <kbd>Shift</kbd> +
+      <kbd class="special-key">Cmd/Ctrl</kbd> +
+      <kbd>P</kbd>.
+    - Going to **View**
+      <span aria-label="and then">></span> **Extensions**.
+
+1.  In the **Search Extensions** input box, enter **Flutter**.
+1.  From the list of extensions, select **Flutter**.
+1.  In the **Extension: Flutter** view that opens,
+    click the **Install** button.
+
+    This installs both the Dart and Flutter extensions.
+
+[Antigravity]: https://antigravity.google/
+[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
+
 ### Gemini CLI
 
 To configure the [Gemini CLI][] to use the Dart and Flutter MCP server,
@@ -198,8 +284,8 @@ documentation for [enabling MCP support][].
 The easiest way to configure the Dart and Flutter MCP server with
 Cursor is by clicking the **Add to Cursor** button:
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIC0tZXhwZXJpbWVudGFsLW1jcC1zZXJ2ZXIgLS1mb3JjZS1yb290cy1mYWxsYmFjayJ9){:.light-mode-visible}
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-light.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJ0eXBlIjoic3RkaW8iLCJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIC0tZXhwZXJpbWVudGFsLW1jcC1zZXJ2ZXIgLS1mb3JjZS1yb290cy1mYWxsYmFjayJ9){:.dark-mode-visible}
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIn0%3D){:.light-mode-visible}
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-light.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=dart&config=eyJjb21tYW5kIjoiZGFydCBtY3Atc2VydmVyIn0%3D){:.dark-mode-visible}
 
 Alternatively, you can configure the server manually:
 
@@ -218,9 +304,7 @@ Alternatively, you can configure the server manually:
         "dart": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--experimental-mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ]
         }
       }

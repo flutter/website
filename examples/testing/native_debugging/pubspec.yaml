@@ -1,12 +1,11 @@
 name: native_debugging
 description: Demonstration of native code debugging
-sdk: ^3.9.0
 
 version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
