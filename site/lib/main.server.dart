@@ -8,7 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 
-import 'jaspr_options.dart'; // Generated. Do not remove or edit.
+import 'main.server.options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
@@ -44,7 +44,7 @@ import 'src/util.dart';
 
 void main() {
   // Initializes the server environment with the generated default options.
-  Jaspr.initializeApp(options: defaultJasprOptions);
+  Jaspr.initializeApp(options: defaultServerOptions);
 
   runApp(ComponentRefScope(child: _docsFlutterDevSite));
 }

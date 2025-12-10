@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -84,7 +85,7 @@ class _OsSelectorState extends State<OsSelector> {
             ]),
             div(classes: 'card-header text-center', [
               span(classes: 'card-title', [
-                text(os.label),
+                .text(os.label),
               ]),
             ]),
           ],

@@ -5,6 +5,7 @@
 import 'dart:convert' show LineSplitter;
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart' as dom;
 import 'package:jaspr/jaspr.dart' as jaspr;
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:meta/meta.dart';
@@ -312,8 +313,8 @@ final class CodeBlockProcessor implements PageExtension {
     highlighter.ThemedSpan span, {
     String? content,
   }) {
-    return jaspr.span(
-      [jaspr.text(content ?? span.content)],
+    return dom.span(
+      [.text(content ?? span.content)],
       attributes: {
         'style': ?span.toInlineStyle(defaultTheme: 'light'),
         if (span.tag == _consolePromptTokenTag) 'aria-hidden': 'true',

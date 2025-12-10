@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../models/sidenav_model.dart';
@@ -105,7 +106,7 @@ class _SideNavDivider extends StatelessComponent {
   const _SideNavDivider();
 
   @override
-  Component build(BuildContext _) => li(
+  Component build(BuildContext _) => const li(
     attributes: {'aria-hidden': 'true'},
     [div(classes: 'sidenav-divider', [])],
   );
@@ -117,7 +118,7 @@ class _SideNavHeader extends StatelessComponent {
   final String title;
 
   @override
-  Component build(BuildContext _) => li(classes: 'nav-header', [text(title)]);
+  Component build(BuildContext _) => li(classes: 'nav-header', [.text(title)]);
 }
 
 class _SideNavCollapsibleSection extends StatelessComponent {
@@ -151,7 +152,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
               isActive: isInActivePath,
             )
           : li(classes: 'nav-item', [
-              span(classes: 'nav-link', [text(section.title)]),
+              span(classes: 'nav-link', [.text(section.title)]),
             ]);
     }
 
@@ -172,7 +173,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           'aria-controls': id,
         },
         [
-          span([text(section.title)]),
+          span([.text(section.title)]),
           const MaterialIcon('expand_more', classes: ['expander']),
         ],
       ),
@@ -234,7 +235,7 @@ class _SideNavLink extends StatelessComponent {
         attributes: isExternal ? {'rel': 'noopener'} : null,
         [
           div([
-            span([text(link.title)]),
+            span([.text(link.title)]),
             if (isExternal) const MaterialIcon('open_in_new'),
           ]),
         ],
