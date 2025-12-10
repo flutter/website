@@ -766,6 +766,67 @@ you're free to push data or prepare your Flutter environment
 in any way you'd like, before presenting the Flutter UI using a
 `FlutterViewController`.
 
+## Content Sized Views
+
+On iOS, you can also set your embedded FlutterView to size itself based off it's content.
+
+<Tabs key="darwin-language">
+<Tab name="Swift">
+
+```swift
+let flutterViewController = FlutterViewController(engine: engine, nibName: nil, bundle: nil)
+flutterViewController.isAutoResizable = true
+```
+
+</Tab>
+<Tab name="Objective-C">
+
+```objc
+_flutterViewController = [[FlutterViewController alloc] init];
+_flutterViewController.autoResizable = true;
+```
+
+</Tab>
+</Tabs>
+
+### Restrictions
+
+Since content sized Flutter views requires your Flutter app to be able to size itself, certain widgets are not supported.
+
+* Widgets with unbounded size, like a ListView.
+* Widgets that defer to a it's child for the size, like LayoutBuilder.
+
+In practice, this means that quite a few common widgets are not supported, such as 
+ScaffoldBuilder, CupertinoTimerPicker, or any widget that internally relies on a LayoutBuilder.
+When in doubt, you can use a UnconstrainedBox to test the usability of a widget for a content sized view, like below.
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context)
+  => MaterialApp(home: MyPage());
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: UnconstrainedBox(
+          // TODO: Edit this line to check if a widget
+          // can cause problems with content-sized views.
+          child: Text('This works!'),
+          // child: Column(children: [Column(children: [Expanded(child: Text('This blows up!'))])]),
+          // child: ListView(children: [Text('This blows up!')]),
+        )
+    );
+  }
+}
+```
+For a working example, refer to this [sample project][].
 
 [`FlutterEngine`]: {{site.api}}/ios-embedder/interface_flutter_engine.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
@@ -788,3 +849,4 @@ in any way you'd like, before presenting the Flutter UI using a
 [`Observable`]: https://developer.apple.com/documentation/observation/observable
 [`NavigationLink`]: https://developer.apple.com/documentation/swiftui/navigationlink
 [`Observable()`]: https://developer.apple.com/documentation/observation/observable()
+[sample project]: https://github.com/flutter/samples/tree/main/add_to_app/ios_content_resizing
