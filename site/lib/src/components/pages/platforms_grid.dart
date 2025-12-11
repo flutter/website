@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -83,28 +84,30 @@ class PlatformCard extends CustomComponentBase {
         span([
           MaterialIcon(icon),
         ]),
-        h3([text(name)]),
+        h3([.text(name)]),
         Button(
           content: 'Deploy to $deployTo',
           href: deployToLink,
         ),
       ]),
       div(classes: 'platform-card-tags', [
-        for (final a in arch) span([text(a)]),
+        for (final a in arch) span([.text(a)]),
       ]),
 
       div(classes: 'platform-card-details', [
         span([
-          span(classes: 'platform-card-supported', [text('Supported')]),
+          const span(classes: 'platform-card-supported', [.text('Supported')]),
           span([DashMarkdown(inline: true, content: supported)]),
         ]),
         span([
-          span(classes: 'platform-card-ci-tested', [text('CI tested')]),
-          span([text(ciTested)]),
+          const span(classes: 'platform-card-ci-tested', [.text('CI tested')]),
+          span([.text(ciTested)]),
         ]),
         span([
-          span(classes: 'platform-card-unsupported', [text('Unsupported')]),
-          span([text(unsupported)]),
+          const span(classes: 'platform-card-unsupported', [
+            .text('Unsupported'),
+          ]),
+          span([.text(unsupported)]),
         ]),
       ]),
     ]);

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -24,7 +25,7 @@ class ChipSet extends StatelessComponent {
         id: 'reset-filters',
         classes: 'text-button',
         events: {'click': (_) => onReset()},
-        [text('Clear filters')],
+        [const .text('Clear filters')],
       ),
   ]);
 }
@@ -75,7 +76,7 @@ class InfoChip extends StatelessComponent {
               Component.element(tag: 'path', attributes: {'d': iconPath}),
             ],
           ),
-        span(classes: 'label', [text(label)]),
+        span(classes: 'label', [.text(label)]),
       ],
     );
   }
@@ -151,7 +152,7 @@ class FilterChip extends StatelessComponent {
               ),
             ],
           ),
-        span(classes: 'label', [text(label)]),
+        span(classes: 'label', [.text(label)]),
       ],
     );
   }
@@ -236,7 +237,7 @@ class _SelectChipState<T> extends State<SelectChip<T>> {
             },
           },
           [
-            span(classes: 'label', [text(component.label)]),
+            span(classes: 'label', [.text(component.label)]),
             if (component.showDropdownIcon)
               svg(
                 classes: 'chip-icon trailing-icon',
@@ -329,7 +330,7 @@ class SelectMenuItem<T> {
                 ),
               ],
             ),
-          span(classes: 'label', [text(label)]),
+          span(classes: 'label', [.text(label)]),
         ],
       ),
     ]);

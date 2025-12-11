@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -68,15 +69,15 @@ final class WrappedCodeBlock extends StatelessComponent {
             switch (content[lineIndex]) {
               // Add a zero-width space when empty
               // so that the line isn't collapsed to 0 height.
-              final line when line.isEmpty => span(
-                styles: const Styles(
+              final line when line.isEmpty => const span(
+                styles: Styles(
                   userSelect: UserSelect.none,
                 ),
-                [text('\u200b')],
+                [.text('\u200b')],
               ),
               final lineSpans => span(lineSpans),
             },
-            text('\n'),
+            const .text('\n'),
           ],
         ),
     };
@@ -96,7 +97,7 @@ final class WrappedCodeBlock extends StatelessComponent {
               classes: 'fold-summary',
               [
                 const MaterialIcon('keyboard_arrow_right'),
-                foldingSummary ?? text('...'),
+                foldingSummary ?? const .text('...'),
               ],
             ),
             ...foldedChildren,
@@ -114,7 +115,7 @@ final class WrappedCodeBlock extends StatelessComponent {
         if (title case final title?)
           div(classes: 'code-block-header', [
             span([
-              text(title),
+              .text(title),
             ]),
             if (actions.isNotEmpty) ...actions,
             if (collapsed) const CollapseButton(),
@@ -128,13 +129,13 @@ final class WrappedCodeBlock extends StatelessComponent {
             if (tag case final codeTag?)
               span(
                 classes: 'code-block-tag',
-                [text(codeTag.spanContent)],
+                [.text(codeTag.spanContent)],
               ),
             if (!languagesToHide.contains(language))
               span(
                 classes: 'code-block-language',
                 attributes: {'title': 'Language $language'},
-                [text(language)],
+                [.text(language)],
               ),
             pre(
               classes: [

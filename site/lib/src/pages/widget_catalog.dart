@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -54,7 +55,7 @@ List<MemoryPage> get widgetCatalogPages {
 
           final isMaterialCatalog = category.name == 'Material components';
 
-          return Component.fragment([
+          return .fragment([
             if (_additionalCatalogContent[category.name] case final content?)
               DashMarkdown(content: content),
             // Only show description for non-material catalogs.
@@ -81,20 +82,20 @@ List<MemoryPage> get widgetCatalogPages {
             ],
 
             if (isMaterialCatalog)
-              p([
-                text('Find more widgets in the '),
+              const p([
+                .text('Find more widgets in the '),
                 a(href: '/ui/widgets/material2', [
-                  text('Material 2 widget catalog'),
+                  .text('Material 2 widget catalog'),
                 ]),
-                text(' and other categories of the '),
-                a(href: '/ui/widgets', [text('widget catalog')]),
-                text('.'),
+                .text(' and other categories of the '),
+                a(href: '/ui/widgets', [.text('widget catalog')]),
+                .text('.'),
               ])
             else
-              p([
-                text('Find more widgets in the '),
-                a(href: '/ui/widgets', [text('widget catalog')]),
-                text('.'),
+              const p([
+                .text('Find more widgets in the '),
+                a(href: '/ui/widgets', [.text('widget catalog')]),
+                .text('.'),
               ]),
           ]);
         },
@@ -164,7 +165,7 @@ List<Component> _buildSubcategorySection(
   if (widgets.isEmpty) return const [];
 
   return [
-    h2(id: slugify(subName), [text(subName)]),
+    h2(id: slugify(subName), [.text(subName)]),
     _buildCardGrid(
       widgets,
       isMaterialCatalog: isMaterialCatalog,

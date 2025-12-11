@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -67,6 +68,6 @@ class MaterialIcon extends StatelessComponent {
       'translate': 'no',
       if (size case final sizeToUse?) 'style': 'font-size: $sizeToUse;',
     },
-    [text(id)],
+    [.text(id)],
   );
 }

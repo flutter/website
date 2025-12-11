@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -24,7 +25,7 @@ class DashHeader extends StatelessComponent {
 
     return header(id: 'site-header', [
       nav(classes: 'navbar', [
-        a(
+        const a(
           id: 'site-primary-logo',
           classes: 'site-wordmark',
           href: '/',
@@ -41,11 +42,11 @@ class DashHeader extends StatelessComponent {
             span(
               classes: 'name',
               attributes: {'translate': 'no'},
-              [text('Flutter')],
+              [.text('Flutter')],
             ),
             span(
               classes: 'subtype',
-              [text('Docs')],
+              [.text('Docs')],
             ),
           ],
         ),
@@ -72,7 +73,7 @@ class DashHeader extends StatelessComponent {
         div(
           classes: 'navbar-contents',
           [
-            form(
+            const form(
               action: '/search/',
               id: 'header-search',
               [
@@ -89,7 +90,7 @@ class DashHeader extends StatelessComponent {
                 ),
               ],
             ),
-            a(
+            const a(
               id: 'fallback-search-button',
               classes: 'icon-button',
               href: '/search',
@@ -97,7 +98,7 @@ class DashHeader extends StatelessComponent {
                 'aria-label': 'Navigate to the docs.flutter.dev search page.',
                 'title': 'Navigate to the docs.flutter.dev search page.',
               },
-              const [
+              [
                 MaterialIcon('search'),
               ],
             ),
@@ -135,7 +136,7 @@ class _NavItem extends StatelessComponent {
     a(
       href: href,
       classes: ['nav-link', 'text-button', if (isActive) 'active'].toClasses,
-      [text(label)],
+      [.text(label)],
     ),
   ]);
 }

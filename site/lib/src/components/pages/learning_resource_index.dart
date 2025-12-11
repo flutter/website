@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -74,7 +75,7 @@ final class _ResourceCard extends StatelessComponent {
               },
             ].toClasses,
             [
-              text(
+              .text(
                 resource.type.substring(0, 1).toUpperCase() +
                     resource.type.substring(1),
               ),
@@ -84,11 +85,11 @@ final class _ResourceCard extends StatelessComponent {
         ]),
         div(classes: 'card-header', [
           span(classes: 'card-title', [
-            text(resource.name),
+            .text(resource.name),
           ]),
         ]),
         div(classes: 'card-content', [
-          text(resource.description),
+          .text(resource.description),
         ]),
       ],
     );
@@ -106,7 +107,7 @@ final class _ResourceCard extends StatelessComponent {
         ),
       ],
     ),
-    'Dart GitHub' || 'Dart docs' => img(
+    'Dart GitHub' || 'Dart docs' => const img(
       src: '/assets/images/branding/dart/logo.svg',
       width: 24,
       alt: 'Dart logo',
@@ -137,7 +138,7 @@ final class _ResourceCard extends StatelessComponent {
         attributes: {'href': '/assets/images/social/medium.svg#medium'},
       ),
     ]),
-    'Flutter docs' || _ => img(
+    'Flutter docs' || _ => const img(
       src: '/assets/images/branding/flutter/icon/1080.png',
       alt: 'Flutter logo',
       width: 24,

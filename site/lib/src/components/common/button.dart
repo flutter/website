@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -53,10 +54,10 @@ class Button extends StatelessComponent {
       ...?classes,
     ].toClasses;
 
-    final children = [
+    final children = <Component>[
       if (icon case final iconId?) MaterialIcon(iconId),
       if (content case final contentText?)
-        asRaw ? raw(contentText) : text(contentText),
+        asRaw ? RawText(contentText) : .text(contentText),
     ];
 
     if (href case final href?) {
