@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -54,10 +55,10 @@ class ArchitectureRecommendations extends CustomComponentBase {
             thead([
               tr([
                 th(styles: Styles(width: 30.percent), [
-                  text('Recommendation'),
+                  const .text('Recommendation'),
                 ]),
                 th(styles: Styles(width: 70.percent), [
-                  text('Description'),
+                  const .text('Description'),
                 ]),
               ]),
             ]),
@@ -67,14 +68,14 @@ class ArchitectureRecommendations extends CustomComponentBase {
                   td([
                     DashMarkdown(inline: true, content: rec.recommendation),
                     switch (rec.confidence) {
-                      'strong' => div(classes: 'rrec-pill success', [
-                        text('Strongly recommend'),
+                      'strong' => const div(classes: 'rrec-pill success', [
+                        .text('Strongly recommend'),
                       ]),
-                      'recommend' => div(classes: 'rrec-pill info', [
-                        text('Recommend'),
+                      'recommend' => const div(classes: 'rrec-pill info', [
+                        .text('Recommend'),
                       ]),
-                      _ => div(classes: 'rrec-pill', [
-                        text('Conditional'),
+                      _ => const div(classes: 'rrec-pill', [
+                        .text('Conditional'),
                       ]),
                     },
                   ]),

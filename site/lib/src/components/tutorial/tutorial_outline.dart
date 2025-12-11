@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -32,7 +33,7 @@ class TutorialOutline extends CustomComponentBase {
           ol([
             for (final unit in model.units)
               li([
-                text(unit.title),
+                .text(unit.title),
                 ol([
                   for (final chapter in unit.chapters)
                     li([

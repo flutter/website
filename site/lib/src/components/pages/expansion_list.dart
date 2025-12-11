@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -99,7 +100,7 @@ class ExpansionList extends StatefulComponent {
           for (final page in context.pages)
             if (page.path.startsWith(listPath) && page.path.endsWith('.md'))
               ExpansionListItem.fromPage(page),
-        ].sorted((a, b) => a.order.compareTo(b.order));
+        ].sorted((a_, b_) => a_.order.compareTo(b_.order));
 
         return ExpansionList(
           key: ValueKey(listName),
@@ -139,7 +140,7 @@ class _ExpansionListState extends State<ExpansionList> {
                       alt: 'An icon showing a generic application.',
                     )
                   else
-                    img(
+                    const img(
                       src:
                           '/assets/images/docs/app-architecture/design-patterns/kv-store-icon.svg',
                       alt: 'An icon showing a generic application.',
@@ -147,16 +148,16 @@ class _ExpansionListState extends State<ExpansionList> {
                 ]),
                 div(classes: 'expansion-panel-title-content', [
                   p(classes: 'content-title', [
-                    text(item.data.title),
+                    .text(item.data.title),
                   ]),
                   ul(classes: 'content-tags', [
                     for (final contentTag in item.data.contentTags)
                       li(classes: 'tag', [
-                        text(contentTag),
+                        .text(contentTag),
                       ]),
                   ]),
                   p(classes: 'content-description', [
-                    text(item.data.description),
+                    .text(item.data.description),
                   ]),
                 ]),
               ]),
@@ -172,11 +173,11 @@ class _ExpansionListState extends State<ExpansionList> {
               DashMarkdown(content: item.content),
               p([
                 a(href: item.url, [
-                  text('Read full article'),
+                  const .text('Read full article'),
                 ]),
               ]),
               // Required to add "margin" that doesn't cause expansion jank.
-              div(
+              const div(
                 classes: 'separator',
                 attributes: {'aria-hidden': 'true'},
                 [],

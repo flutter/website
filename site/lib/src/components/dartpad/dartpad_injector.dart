@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import '../util/retake_element.dart';
 import 'embedded_dartpad.dart';
@@ -102,7 +103,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
       return pre([
         code(
           attributes: {'title': component.title},
-          [text(content ?? '')],
+          [.text(content ?? '')],
         ),
       ]);
     }

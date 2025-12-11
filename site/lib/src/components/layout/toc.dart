@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -77,10 +78,10 @@ final class PageNavBar extends StatelessComponent {
               id: 'return-to-top',
               [
                 const MaterialIcon('vertical_align_top'),
-                span([text(currentTitle)]),
+                span([.text(currentTitle)]),
               ],
             ),
-            div(
+            const div(
               classes: 'dropdown-divider',
               attributes: {'aria-hidden': 'true', 'role': 'separator'},
               [],
@@ -102,7 +103,7 @@ final class PageNavBar extends StatelessComponent {
                   attributes: {'role': 'menuitem'},
                   [
                     span(classes: 'page-number', [
-                      text('${pageEntryNumber++}'),
+                      .text('${pageEntryNumber++}'),
                     ]),
                     DashMarkdown(inline: true, content: page.title),
                   ],
@@ -114,14 +115,14 @@ final class PageNavBar extends StatelessComponent {
                   ),
               ] else ...[
                 if (page != data.pageEntries.first)
-                  div(
+                  const div(
                     classes: 'dropdown-divider',
                     attributes: {'aria-hidden': 'true', 'role': 'separator'},
                     [],
                   ),
                 div(
                   classes: 'page-divider',
-                  [text(page.title)],
+                  [.text(page.title)],
                 ),
               ],
             ],
@@ -152,7 +153,7 @@ final class _TocContents extends StatelessComponent {
           span(classes: 'sidenav-item', [
             a(
               href: '#${entry.id}',
-              [text(entry.text)],
+              [.text(entry.text)],
             ),
           ]),
           if (entry.children.isNotEmpty)

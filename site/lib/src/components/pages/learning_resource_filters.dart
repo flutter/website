@@ -4,6 +4,7 @@
 
 import 'dart:math';
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
@@ -167,10 +168,10 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
         label(
           attributes: {'for': 'resource-search'},
           [
-            text('Showing '),
-            span([text('$filteredResourcesCount')]),
-            text(' / '),
-            span([text('${resources.length}')]),
+            const .text('Showing '),
+            span([.text('$filteredResourcesCount')]),
+            const .text(' / '),
+            span([.text('${resources.length}')]),
           ],
         ),
         button(
@@ -187,7 +188,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
           },
           [
             const MaterialIcon('close_small'),
-            span([text('Clear filters')]),
+            const span([.text('Clear filters')]),
           ],
         ),
       ]),
