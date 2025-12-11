@@ -21,13 +21,18 @@ sealed class NavEntry {
 
   const factory NavEntry.header(String title) = NavHeader;
   const factory NavEntry.divider() = NavDivider;
-  const factory NavEntry.link(String title, String permalink) = NavLink;
+  const factory NavEntry.link(
+    String title,
+    String permalink, {
+    String? icon,
+  }) = NavLink;
   const factory NavEntry.section(
     String title,
     List<NavEntry> children, {
     String? permalink,
     bool expanded,
     bool hiddenChildren,
+    String? icon,
   }) = NavSection;
 
   factory NavEntry._fromMap(Map<String, Object?> item) {
@@ -53,18 +58,21 @@ sealed class NavEntry {
         final permalink = item['permalink'] as String?;
         final expanded = item['expanded'] as bool? ?? false;
         final hiddenChildren = item['hiddenChildren'] as bool? ?? false;
+        final icon = item['icon'] as String?;
         return NavEntry.section(
           title,
           children,
           permalink: permalink,
           expanded: expanded,
           hiddenChildren: hiddenChildren,
+          icon: icon,
         );
       }
     } else {
       final permalink = item['permalink'] as String?;
+      final icon = item['icon'] as String?;
       if (permalink != null) {
-        return NavEntry.link(title, permalink);
+        return NavEntry.link(title, permalink, icon: icon);
       }
     }
 
@@ -85,8 +93,9 @@ final class NavDivider extends NavEntry {
 final class NavLink extends NavEntry {
   final String title;
   final String permalink;
+  final String? icon;
 
-  const NavLink(this.title, this.permalink);
+  const NavLink(this.title, this.permalink, {this.icon});
 }
 
 final class NavSection extends NavEntry {
@@ -95,6 +104,7 @@ final class NavSection extends NavEntry {
   final String? permalink;
   final bool expanded;
   final bool hiddenChildren;
+  final String? icon;
 
   const NavSection(
     this.title,
@@ -102,5 +112,6 @@ final class NavSection extends NavEntry {
     this.permalink,
     this.expanded = false,
     this.hiddenChildren = false,
+    this.icon,
   });
 }

@@ -106,6 +106,13 @@
           margin-left: 0.125rem;
           color: var(--site-base-fgColor-alt);
         }
+        // Leading icons placed before the title
+        .material-symbols.leading {
+          margin-right: 0.375rem;
+          margin-left: 0;
+          font-size: 1rem;
+          color: var(--site-base-fgColor-alt);
+        }
       }
 
       span {

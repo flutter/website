@@ -95,6 +95,7 @@ class _SideNavLevel extends StatelessComponent {
       NavLink() => _SideNavLink(
         entry,
         isActive: isInActivePath && activePath.isLeafAt(currentLevel),
+        leadingIconId: currentLevel == 0 ? entry.icon : null,
       ),
     };
   }
@@ -150,9 +151,14 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           ? _SideNavLink(
               NavLink(section.title, section.permalink!),
               isActive: isInActivePath,
+              leadingIconId: currentLevel == 0 ? section.icon : null,
             )
           : li(classes: 'nav-item', [
-              span(classes: 'nav-link', [.text(section.title)]),
+              span(classes: 'nav-link', [
+                if (currentLevel == 0 && section.icon != null)
+                  MaterialIcon(section.icon!, classes: const ['leading']),
+                .text(section.title),
+              ]),
             ]);
     }
 
@@ -173,7 +179,11 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           'aria-controls': id,
         },
         [
-          span([.text(section.title)]),
+          div([
+            if (currentLevel == 0 && section.icon != null)
+              MaterialIcon(section.icon!, classes: const ['leading']),
+            span([.text(section.title)]),
+          ]),
           const MaterialIcon('expand_more', classes: ['expander']),
         ],
       ),
@@ -219,14 +229,16 @@ class _SideNavCollapsibleSection extends StatelessComponent {
 }
 
 class _SideNavLink extends StatelessComponent {
-  const _SideNavLink(this.link, {this.isActive = false});
+  const _SideNavLink(this.link, {this.isActive = false, this.leadingIconId});
 
   final NavLink link;
   final bool isActive;
+  final String? leadingIconId;
 
   @override
   Component build(BuildContext _) {
     final isExternal = link.permalink.contains('://');
+    final iconToUse = leadingIconId ?? link.icon;
     return li(classes: 'nav-item', [
       a(
         classes: ['nav-link', if (isActive) 'active'].toClasses,
@@ -235,6 +247,8 @@ class _SideNavLink extends StatelessComponent {
         attributes: isExternal ? {'rel': 'noopener'} : null,
         [
           div([
+            if (iconToUse != null)
+              MaterialIcon(iconToUse, classes: const ['leading']),
             span([.text(link.title)]),
             if (isExternal) const MaterialIcon('open_in_new'),
           ]),
