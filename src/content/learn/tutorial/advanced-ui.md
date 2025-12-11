@@ -477,7 +477,7 @@ If you aren't familiar with `ValueNotifier`,
 you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
-[previous tutorial covering state]: /tutorial/state/set-up-project
+[previous tutorial covering state]: /tutorial/set-up-state-project
 
 ## Connect the data to your app
 

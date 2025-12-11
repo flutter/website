@@ -141,6 +141,7 @@
       { "source": "/ios-14", "destination": "/platform-integration/ios/ios-debugging", "type": 301 },
       { "source": "/ios-project-migration", "destination": "https://web.archive.org/web/20220614103526/https://docs.flutter.dev/development/ios-project-migration", "type": 301 },
       { "source": "/layout", "destination": "/ui/layout", "type": 301 },
+      { "source": "/learn", "destination": "/get-started/learn-flutter", "type": 301 },
       { "source": "/material-3-migration", "destination": "/release/breaking-changes/material-3-migration", "type": 301 },
       { "source": "/packages-and-plugins/androidx-compatibility", "destination": "/platform-integration/android/androidx-migration", "type": 301 },
       { "source": "/packages-and-plugins/c-interop", "destination": "/platform-integration/android/c-interop", "type": 301 },
