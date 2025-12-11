@@ -90,7 +90,7 @@ class _TopNavItem extends StatelessComponent {
       classes: ['nav-button', if (active) 'active'].toClasses,
       [
         MaterialIcon(iconId),
-        text(label),
+        .text(label),
       ],
     ),
   ]);
