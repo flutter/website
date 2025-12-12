@@ -24,11 +24,8 @@ class CollapseButton extends StatefulComponent {
 
 class _CollapseButtonState extends State<CollapseButton> {
   final buttonKey = GlobalNodeKey<web.HTMLButtonElement>();
-  bool _collapsed = true;
 
   void toggleCollapse() {
-    setState(() => _collapsed = !_collapsed);
-
     buttonKey.currentNode
         ?.closest('.code-block-wrapper')
         ?.classList
@@ -38,7 +35,7 @@ class _CollapseButtonState extends State<CollapseButton> {
   @override
   Component build(BuildContext _) {
     return Button(
-      ref: buttonKey,
+      key: buttonKey,
       classes: ['collapse-button', ...component.classes],
       title: component.title,
       icon: 'keyboard_arrow_up',

@@ -17,7 +17,6 @@ class Button extends StatelessComponent {
     this.href,
     this.content,
     this.style = ButtonStyle.text,
-    this.ref,
     this.id,
     this.attributes = const {},
     this.classes,
@@ -31,7 +30,6 @@ class Button extends StatelessComponent {
   final String? title;
   final ButtonStyle style;
   final String? icon;
-  final Key? ref;
   final String? id;
   final String? href;
   final Map<String, String> attributes;
@@ -62,7 +60,6 @@ class Button extends StatelessComponent {
 
     if (href case final href?) {
       return a(
-        key: ref,
         id: id,
         href: href,
         classes: mergedClasses,
@@ -72,7 +69,6 @@ class Button extends StatelessComponent {
       );
     } else {
       return button(
-        key: ref,
         id: id,
         classes: mergedClasses,
         attributes: mergedAttributes,
