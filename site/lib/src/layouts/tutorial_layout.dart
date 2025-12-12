@@ -18,6 +18,9 @@ class TutorialLayout extends DocLayout {
   bool get allowBreadcrumbs => false;
 
   @override
+  List<String> get defaultBodyClasses => ['sidenav-closed'];
+
+  @override
   Component buildBody(Page page, Component child) {
     final model = switch (page.data['tutorial']) {
       final Map<Object?, Object?>? tutorialData when tutorialData != null =>
@@ -42,7 +45,6 @@ class TutorialLayout extends DocLayout {
             'navigationCollectionTitle': model.title,
             'navigationEntries': navigationEntries,
           },
-          'sidenav': null,
         },
       ),
       child,
