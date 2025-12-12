@@ -36,6 +36,7 @@
       { "source": "/bootstrap-into-dart", "destination": "/resources/bootstrap-into-dart", "type": 301 },
       { "source": "/bug-reports", "destination": "/resources/bug-reports", "type": 301 },
       { "source": "/cd", "destination": "/deployment/cd", "type": 301 },
+      { "source": "/code-of-conduct", "destination": "https://github.com/crowdin/flutter-sdk/blob/main/CODE_OF_CONDUCT.md", "type": 301 },
       { "source": "/custom-fonts", "destination": "/cookbook/design/fonts", "type": 301 },
       { "source": "/data-and-backend/json", "destination": "/data-and-backend/serialization/json", "type": 301 },
       { "source": "/debugging", "destination": "/testing/debugging", "type": 301 },
