@@ -4,9 +4,11 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../models/sidenav_model.dart';
 import '../../util.dart';
+import '../../utils/active_nav.dart';
 import '../common/material_icon.dart';
 
 /// The site-wide side navigation menu,
@@ -24,20 +26,73 @@ final class DashSideNav extends StatelessComponent {
   final String currentPageUrl;
 
   @override
-  Component build(BuildContext _) => div(id: 'sidenav', [
-    nav([
-      _SideNavLevel(
-        entries: navEntries,
-        parentId: 'sidenav',
-        currentLevel: 0,
-        possiblyActive: true,
-        currentPageUrl: currentPageUrl,
-        activePath: _ActiveNavigationPath.findActive(
+  Component build(BuildContext context) {
+    final activeEntry = activeNavEntry(context.page.url);
+
+    return div(id: 'sidenav', [
+      // Only show the nav items if the tutorial is active for now.
+      if (activeEntry == ActiveNavEntry.learn)
+        ul(classes: 'navbar-nav', [
+          _TopNavItem(
+            href: '/',
+            label: 'Home',
+            iconId: 'asterisk',
+            active: activeEntry == ActiveNavEntry.home,
+          ),
+          _TopNavItem(
+            href: '/tutorial',
+            label: 'Learn',
+            iconId: 'play_lesson',
+            active: activeEntry == ActiveNavEntry.learn,
+          ),
+          const _TopNavItem(
+            href: 'https://api.flutter.dev',
+            label: 'Reference',
+            iconId: 'api',
+          ),
+          const _SideNavDivider(),
+        ]),
+
+      nav([
+        _SideNavLevel(
           entries: navEntries,
+          parentId: 'sidenav',
+          currentLevel: 0,
+          possiblyActive: true,
           currentPageUrl: currentPageUrl,
+          activePath: _ActiveNavigationPath.findActive(
+            entries: navEntries,
+            currentPageUrl: currentPageUrl,
+          ),
         ),
-      ),
-    ]),
+      ]),
+    ]);
+  }
+}
+
+class _TopNavItem extends StatelessComponent {
+  const _TopNavItem({
+    required this.href,
+    required this.label,
+    required this.iconId,
+    this.active = false,
+  });
+
+  final String href;
+  final String label;
+  final String iconId;
+  final bool active;
+
+  @override
+  Component build(BuildContext _) => li(classes: 'nav-item', [
+    a(
+      href: href,
+      classes: ['nav-button', if (active) 'active'].toClasses,
+      [
+        MaterialIcon(iconId),
+        .text(label),
+      ],
+    ),
   ]);
 }
 
@@ -198,7 +253,6 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         classes: [
           'nav',
           'collapse',
-          if (expanded) 'show',
         ].toClasses,
         id: id,
       ),
