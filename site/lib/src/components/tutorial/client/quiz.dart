@@ -147,7 +147,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
           content: 'Previous',
         ),
         Button(
-          ref: nextButtonKey,
+          key: nextButtonKey,
           classes: ['quiz-button'],
           style: ButtonStyle.filled,
           disabled: currentQuestion != null && selectedOption == null,

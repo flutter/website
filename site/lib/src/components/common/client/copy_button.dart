@@ -81,7 +81,7 @@ class _CopyButtonState extends State<CopyButton> {
     final iconButton = component.buttonText == null;
 
     return Button(
-      ref: buttonKey,
+      key: buttonKey,
       style: iconButton ? ButtonStyle.text : ButtonStyle.filled,
       classes: [
         'copy-button',
