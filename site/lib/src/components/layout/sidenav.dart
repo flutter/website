@@ -143,6 +143,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
   Component build(BuildContext _) {
     // Determine if children should be shown based on hiddenChildren setting.
     final shouldShowChildren = _shouldShowChildren();
+    final showIcon = currentLevel == 0 && section.icon != null;
 
     if (!shouldShowChildren) {
       // When hiddenChildren is true and path doesn't match,
@@ -155,7 +156,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
             )
           : li(classes: 'nav-item', [
               span(classes: 'nav-link', [
-                if (currentLevel == 0 && section.icon != null)
+                if (showIcon)
                   MaterialIcon(section.icon!, classes: const ['leading']),
                 .text(section.title),
               ]),
@@ -180,7 +181,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         },
         [
           div([
-            if (currentLevel == 0 && section.icon != null)
+            if (showIcon)
               MaterialIcon(section.icon!, classes: const ['leading']),
             span([.text(section.title)]),
           ]),
@@ -238,7 +239,6 @@ class _SideNavLink extends StatelessComponent {
   @override
   Component build(BuildContext _) {
     final isExternal = link.permalink.contains('://');
-    final iconToUse = leadingIconId ?? link.icon;
     return li(classes: 'nav-item', [
       a(
         classes: ['nav-link', if (isActive) 'active'].toClasses,
@@ -247,8 +247,8 @@ class _SideNavLink extends StatelessComponent {
         attributes: isExternal ? {'rel': 'noopener'} : null,
         [
           div([
-            if (iconToUse != null)
-              MaterialIcon(iconToUse, classes: const ['leading']),
+            if (leadingIconId != null)
+              MaterialIcon(leadingIconId!, classes: const ['leading']),
             span([.text(link.title)]),
             if (isExternal) const MaterialIcon('open_in_new'),
           ]),

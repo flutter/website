@@ -448,7 +448,7 @@
     - title: API overview
       permalink: /ui/animations/overview
 
-- title: Accessibility 
+- title: Accessibility
   permalink: /ui/accessibility
   icon: accessibility
   children:
