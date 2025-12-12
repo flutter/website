@@ -794,7 +794,7 @@ _flutterViewController.autoResizable = true;
 Since content sized Flutter views require your Flutter app to be able to size itself, certain widgets are not supported.
 
 * Widgets with unbounded size, like a ListView.
-* Widgets that defer to a it's child for the size, like LayoutBuilder.
+* Widgets that defer to its child for the size, like LayoutBuilder.
 
 In practice, this means that quite a few common widgets are not supported, such as 
 ScaffoldBuilder, CupertinoTimerPicker, or any widget that internally relies on a LayoutBuilder.
