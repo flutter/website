@@ -187,7 +187,7 @@ class FirebaseProvider extends LlmProvider with ChangeNotifier {
 The `_contentFrom` method is called whenever a user prompt needs to be sent to
 the underlying LLM. Every provider needs to provide for its own mapping.
 
-1. Calling the LLM
+4. Calling the LLM
 
 How you call the underlying LLM to implement
 `generateStream` and `sendMessageStream` methods
