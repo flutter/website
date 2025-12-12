@@ -27,16 +27,20 @@
     }
   }
 
-  @media (min-width: 1024px) {
-    display: block;
-    border-right: 0.1rem solid var(--site-outline-variant);
-    padding: 0.75rem 0.75rem 2.25rem;
-    position: sticky;
-    height: calc(100vh - var(--site-header-height));
-    top: var(--site-header-height);
-    overscroll-behavior: auto;
-    width: 16rem;
-    background: none;
+  @at-root body:not(.sidenav-closed) {
+    #sidenav {
+      @media (min-width: 1024px) {
+        display: block;
+        border-right: 0.1rem solid var(--site-outline-variant);
+        padding: 0.75rem 0.75rem 2.25rem;
+        position: sticky;
+        height: calc(100vh - var(--site-header-height));
+        top: var(--site-header-height);
+        overscroll-behavior: auto;
+        width: 16rem;
+        background: none;
+      }
+    }
   }
 
   .nav-header {
@@ -74,8 +78,8 @@
       margin-top: 0.5rem;
     }
 
-    a.nav-link,
-    button.nav-link {
+    a,
+    button {
       background: none;
       border: none;
       text-wrap: pretty;
@@ -98,53 +102,60 @@
       font-family: var(--site-ui-fontFamily);
       text-decoration: none;
 
-      >div {
-        display: inline-block;
+      &.nav-link {
 
-        .material-symbols {
-          font-size: 0.825rem;
-          margin-left: 0.125rem;
-          color: var(--site-base-fgColor-alt);
+        >div {
+          display: flex;
+          align-items: center;
+
+          .material-symbols {
+            font-size: 0.825rem;
+            margin-left: 0.125rem;
+            color: var(--site-base-fgColor-alt);
+          }
+
+          .material-symbols.leading {
+            margin-right: 0.375rem;
+            margin-left: 0;
+            font-size: 1rem;
+            color: var(--site-base-fgColor-alt);
+            vertical-align: middle;
+          }
         }
-      }
 
-      span {
-        vertical-align: middle;
-      }
-
-      .expander {
-        color: var(--site-base-fgColor-lighter);
-        transition: transform .3s ease-in-out;
-      }
-
-      +ul {
-        display: none;
-
-        &.show {
-          display: block;
-        }
-      }
-
-      &:hover {
-        @include mixins.interaction-style(3%);
-      }
-
-      &:active {
-        @include mixins.interaction-style(5%);
-      }
-
-      &:not(.collapsed) {
         .expander {
-          transform: rotate(180deg);
+          color: var(--site-base-fgColor-lighter);
+          transition: transform .3s ease-in-out;
         }
-      }
 
-      &.active {
-        //background-color: rgb(245, 245, 246);
-        background-color: rgb(var(--site-interaction-base-values) / 4%);
+        +ul {
+          display: none;
+        }
 
-        &:not(.collapsible) {
-          color: var(--site-link-fgColor);
+        &:hover {
+          @include mixins.interaction-style(3%);
+        }
+
+        &:active {
+          @include mixins.interaction-style(5%);
+        }
+
+        &:not(.collapsed) {
+          .expander {
+            transform: rotate(180deg);
+          }
+
+          +ul {
+            display: block;
+          }
+        }
+
+        &.active {
+          background-color: rgb(var(--site-interaction-base-values) / 4%);
+
+          &:not(.collapsible) {
+            color: var(--site-link-fgColor);
+          }
         }
       }
     }
@@ -163,6 +174,42 @@
 
     >.nav-header {
       font-size: 1.075rem;
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a.nav-button {
+      font-size: 1.125rem;
+      margin: 0;
+      padding: 0.375rem 0.6rem;
+      justify-content: flex-start;
+      gap: .5rem;
+
+      &.active {
+        background-color: var(--site-primary-color);
+        color: var(--site-onPrimary-color-lightest);
+      }
+
+      &:hover {
+        @include mixins.interaction-style(5%);
+      }
+
+      &:active {
+        @include mixins.interaction-style(10%);
+      }
+    }
+
+    .material-symbols {
+      font-size: 1.25rem;
+    }
+
+    // Hide items from top navbar in wide layout to avoid duplication.
+    @media (min-width: 1024px) {
+      display: none;
     }
   }
 }
