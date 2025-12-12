@@ -798,7 +798,8 @@ Since content sized Flutter views require your Flutter app to be able to size it
 
 In practice, this means that quite a few common widgets are not supported, such as 
 ScaffoldBuilder, CupertinoTimerPicker, or any widget that internally relies on a LayoutBuilder.
-When in doubt, you can use a UnconstrainedBox to test the usability of a widget for a content sized view, like below.
+When in doubt, you can use an UnconstrainedBox to test the usability of 
+a widget for a content sized view, as in the following example:
 
 ```dart
 import 'package:flutter/material.dart';
