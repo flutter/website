@@ -60,7 +60,7 @@ class DashHeader extends StatelessComponent {
               isActive: activeEntry == ActiveNavEntry.home,
             ),
             _NavItem(
-              href: '/tutorial',
+              href: '/learn',
               label: 'Learn',
               isActive: activeEntry == ActiveNavEntry.learn,
             ),
