@@ -4,6 +4,7 @@
 - title: Set up Flutter
   permalink: /get-started
   hiddenChildren: true
+  icon: build
   children:
     - title: Overview
       permalink: /get-started
@@ -14,6 +15,7 @@
 
 - title: Install Flutter
   permalink: /install
+  icon: download
   children:
     - title: Overview
       permalink: /install
@@ -34,6 +36,7 @@
       permalink: /install/uninstall
 
 - title: Learn Flutter
+  icon: school
   children:
     - title: Introduction
       permalink: /get-started/learn-flutter
@@ -87,6 +90,7 @@
 
 - title: Stay up to date
   permalink: /release
+  icon: update
   children:
     - title: Release notes
       permalink: /release/release-notes
@@ -101,6 +105,7 @@
       permalink: /release/whats-new
 
 - title: App solutions
+  icon: apps
   children:
     - title: Develop with Firebase
       children:
@@ -169,6 +174,7 @@
 
 - title: AI solutions
   permalink: /ai
+  icon: smart_toy
   children:
     - title: Create with AI
       permalink: /ai/create-with-ai
@@ -208,8 +214,10 @@
 - header: User interface
 - title: Introduction
   permalink: /ui
+  icon: palette
 - title: Widget catalog
   permalink: /ui/widgets
+  icon: view_module
   children:
     - title: Overview
       permalink: /ui/widgets
@@ -249,6 +257,7 @@
           permalink: /ui/widgets/text
 - title: Layout
   permalink: /ui/layout
+  icon: view_quilt
   children:
     - title: Introduction
       permalink: /ui/layout
@@ -282,6 +291,7 @@
           permalink: /cookbook/effects/parallax-scrolling
 - title: Adaptive & responsive design
   permalink: /ui/adaptive-responsive
+  icon: devices
   children:
     - title: Overview
       permalink: /ui/adaptive-responsive
@@ -303,6 +313,7 @@
       permalink: /ui/adaptive-responsive/more-info
 - title: Design & theming
   permalink: /ui/design
+  icon: palette
   children:
     - title: Share styles with themes
       permalink: /cookbook/design/themes
@@ -331,6 +342,7 @@
 
 - title: Interactivity
   permalink: /ui/interactivity
+  icon: touch_app
   children:
     - title: Add interactivity to your app
       permalink: /ui/interactivity
@@ -371,6 +383,7 @@
 
 - title: Assets & media
   permalink: /ui/assets
+  icon: photo_library
   children:
     - title: Add assets and images
       permalink: /ui/assets/assets-and-images
@@ -385,6 +398,7 @@
 
 - title: Navigation & routing
   permalink: /ui/navigation
+  icon: alt_route
   children:
     - title: Overview
       permalink: /ui/navigation
@@ -409,6 +423,7 @@
 
 - title: Animations & transitions
   permalink: /ui/animations
+  icon: animation
   children:
     - title: Introduction
       permalink: /ui/animations
@@ -433,8 +448,9 @@
     - title: API overview
       permalink: /ui/animations/overview
 
-- title: Accessibility 
+- title: Accessibility
   permalink: /ui/accessibility
+  icon: accessibility
   children:
     - title: Introduction
       permalink: /ui/accessibility
@@ -449,12 +465,14 @@
 
 - title: Internationalization
   permalink: /ui/internationalization
+  icon: translate
 
 - divider
 - header: Beyond UI
 
 - title: Data & backend
   permalink: /data-and-backend
+  icon: storage
   children:
     - title: State management
       permalink: /data-and-backend/state-mgmt
@@ -514,6 +532,7 @@
 
 - title: App architecture
   permalink: /app-architecture
+  icon: account_tree
   children:
     - title: Introduction
       permalink: /app-architecture
@@ -542,6 +561,7 @@
 
 - title: Platform integration
   permalink: /platform-integration
+  icon: integration_instructions
   children:
     - title: Supported platforms
       permalink: /reference/supported-platforms
@@ -648,6 +668,7 @@
 
 - title: Packages & plugins
   permalink: /packages-and-plugins
+  icon: extension
   children:
     - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
@@ -668,6 +689,7 @@
 
 - title: Testing & debugging
   permalink: /testing
+  icon: bug_report
   children:
     - header: Testing
     - title: Overview
@@ -716,6 +738,7 @@
 
 - title: Performance & optimization
   permalink: /perf
+  icon: speed
   children:
     - title: Overview
       permalink: /perf
@@ -748,6 +771,7 @@
 
 - title: Deployment
   permalink: /deployment
+  icon: rocket_launch
   children:
     - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
@@ -772,6 +796,7 @@
 
 - title: Add to an existing app
   permalink: /add-to-app
+  icon: add_circle
   children:
     - title: Introduction
       permalink: /add-to-app
@@ -808,6 +833,7 @@
 
 - title: Tools & editors
   permalink: /tools
+  icon: construction
   children:
     - title: Android Studio & IntelliJ
       permalink: /tools/android-studio
@@ -864,6 +890,7 @@
       permalink: /tools/formatting
 
 - title: Flutter concepts
+  icon: lightbulb
   children:
     - title: Architectural overview
       permalink: /resources/architectural-overview
@@ -878,6 +905,7 @@
 
 - title: Resources
   permalink: /resources
+  icon: library_books
   children:
     #    - header: Learn
     - title: FAQ

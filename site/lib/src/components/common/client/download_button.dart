@@ -84,7 +84,7 @@ class _DownloadButtonState extends State<DownloadButton> {
   @override
   Component build(BuildContext context) {
     return Button(
-      ref: buttonKey,
+      key: buttonKey,
       onClick: saveAsFile,
       style: ButtonStyle.filled,
       icon: 'download',

@@ -150,6 +150,7 @@ class _SideNavLevel extends StatelessComponent {
       NavLink() => _SideNavLink(
         entry,
         isActive: isInActivePath && activePath.isLeafAt(currentLevel),
+        leadingIconId: currentLevel == 0 ? entry.icon : null,
       ),
     };
   }
@@ -197,6 +198,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
   Component build(BuildContext _) {
     // Determine if children should be shown based on hiddenChildren setting.
     final shouldShowChildren = _shouldShowChildren();
+    final showIcon = currentLevel == 0 && section.icon != null;
 
     if (!shouldShowChildren) {
       // When hiddenChildren is true and path doesn't match,
@@ -205,9 +207,14 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           ? _SideNavLink(
               NavLink(section.title, section.permalink!),
               isActive: isInActivePath,
+              leadingIconId: currentLevel == 0 ? section.icon : null,
             )
           : li(classes: 'nav-item', [
-              span(classes: 'nav-link', [.text(section.title)]),
+              span(classes: 'nav-link', [
+                if (showIcon)
+                  MaterialIcon(section.icon!, classes: const ['leading']),
+                .text(section.title),
+              ]),
             ]);
     }
 
@@ -228,7 +235,11 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           'aria-controls': id,
         },
         [
-          span([.text(section.title)]),
+          div([
+            if (showIcon)
+              MaterialIcon(section.icon!, classes: const ['leading']),
+            span([.text(section.title)]),
+          ]),
           const MaterialIcon('expand_more', classes: ['expander']),
         ],
       ),
@@ -273,10 +284,11 @@ class _SideNavCollapsibleSection extends StatelessComponent {
 }
 
 class _SideNavLink extends StatelessComponent {
-  const _SideNavLink(this.link, {this.isActive = false});
+  const _SideNavLink(this.link, {this.isActive = false, this.leadingIconId});
 
   final NavLink link;
   final bool isActive;
+  final String? leadingIconId;
 
   @override
   Component build(BuildContext _) {
@@ -289,6 +301,8 @@ class _SideNavLink extends StatelessComponent {
         attributes: isExternal ? {'rel': 'noopener'} : null,
         [
           div([
+            if (leadingIconId != null)
+              MaterialIcon(leadingIconId!, classes: const ['leading']),
             span([.text(link.title)]),
             if (isExternal) const MaterialIcon('open_in_new'),
           ]),

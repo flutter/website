@@ -6,4 +6,4 @@ import 'package:build/build.dart';
 
 import 'src/builders/styles_hash_builder.dart' show StylesHashBuilder;
 
-Builder stylesHashBuilder(BuilderOptions _) => const StylesHashBuilder();
+Builder stylesHashBuilder(BuilderOptions options) => StylesHashBuilder(options);
