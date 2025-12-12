@@ -782,7 +782,7 @@ flutterViewController.isAutoResizable = true
 <Tab name="Objective-C">
 
 ```objc
-_flutterViewController = [[FlutterViewController alloc] init];
+_flutterViewController = [[FlutterViewController alloc] initWithEngine:engine nibName:nil bundle:nil];
 _flutterViewController.autoResizable = true;
 ```
 
