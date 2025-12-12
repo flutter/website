@@ -438,6 +438,7 @@
       { "source": "/go/flutter-drop-win7-2024", "destination": "https://docs.google.com/document/d/18gfRT8klo0zEvn6fIpders7ghoWIBKO22cNYS22WLhc/edit?resourcekey=0-SFkxdqfyM6KNNkG4zS6aaA", "type": 301 },
       { "source": "/go/flutter-engine-clocks", "destination": "https://docs.google.com/document/d/1Sx8QA1qXgJGw5r4ESviDnU2LSShNHiq_LjbRWPgSvXQ/edit?usp=sharing&resourcekey=0-BoBvLxgqf_nc_rwLc0zmTw", "type": 301 },
       { "source": "/go/flutter-engine-extensions", "destination": "https://docs.google.com/document/d/1xG7jR4FserdW7TdwnklF3_lXUGmt4myPQjDGF3LFtCQ/edit?resourcekey=0-Iug4D2mWuyQI6suvC_2itw#", "type": 301 },
+      { "source": "/go/flutter-file-system", "destination": "https://docs.google.com/document/d/150KFR6WRSqpxbUcvQriBgrv6P5DMcq6dORikf_cOgZo/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-for-embedded-linux", "destination": "https://docs.google.com/document/d/1n4NXCk0QlGz16gUCtywR79H0Z1fzPqB2iNL8oxuexuk/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-gradle-plugin-apply", "destination": "/release/breaking-changes/flutter-gradle-plugin-apply", "type": 301 },
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit", "type": 301 },

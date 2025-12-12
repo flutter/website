@@ -376,44 +376,29 @@ To learn more about publishing packages, check out the
 The Flutter team can't guarantee the long-term availability of any mirrors.
 You can use other mirrors if they become available.
 
-{% for mirror in mirrors %}
+{% render "docs/china-mirror.md",
+    group: "China Flutter User Group",
+    url: "flutter-io.cn",
+    pubHosted: "https://pub.flutter-io.cn",
+    flutterStorage: "https://storage.flutter-io.cn",
+    issueLink: "https://github.com/cfug/flutter.cn/issues/new/choose",
+    groupLink: "https://github.com/cfug" %}
 
-<hr>
+{% render "docs/china-mirror.md",
+    group: "Shanghai Jiao Tong University *nix User Group",
+    url: "mirror.sjtu.edu.cn",
+    pubHosted: "https://mirror.sjtu.edu.cn/dart-pub",
+    flutterStorage: "https://mirror.sjtu.edu.cn",
+    issueLink: "https://github.com/sjtug/mirror-requests",
+    groupLink: "https://github.com/sjtug" %}
 
-### {{mirror.group}}
-
-[{{mirror.group}}][] maintains the `{{mirror.mirror}}` mirror.
-It includes the Flutter SDK and pub packages.
-
-#### Configure your machine to use this mirror
-
-To set your machine to use this mirror, use these commands.
-
-On macOS, Linux, or ChromeOS:
-
-```console
-export PUB_HOSTED_URL={{mirror.urls.pubhosted}};
-export FLUTTER_STORAGE_BASE_URL={{mirror.urls.flutterstorage}}
-```
-
-On Windows:
-
-```console
-$env:PUB_HOSTED_URL="{{mirror.urls.pubhosted}}";
-$env:FLUTTER_STORAGE_BASE_URL="{{mirror.urls.flutterstorage}}"
-```
-
-#### Get support for this mirror
-
-If you're running into issues that only occur when
-using the `{{mirror.mirror}}` mirror, report the issue to their
-[issue tracker]({{mirror.urls.issues}}).
-
-{% endfor %}
-
-{% for mirror in mirrors %}
-[{{mirror.group}}]: {{mirror.urls.group}}
-{% endfor %}
+{% render "docs/china-mirror.md",
+    group: "Tsinghua University TUNA Association",
+    url: "mirrors.tuna.tsinghua.edu.cn",
+    pubHosted: "https://mirrors.tuna.tsinghua.edu.cn/dart-pub",
+    flutterStorage: "https://mirrors.tuna.tsinghua.edu.cn/flutter",
+    issueLink: "https://github.com/tuna/issues",
+    groupLink: "https://tuna.moe" %}
 
 ## Offer to host a new mirror site
 

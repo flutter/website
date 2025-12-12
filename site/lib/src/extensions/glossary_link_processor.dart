@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -83,9 +84,9 @@ class GlossaryTooltipContent extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return span(classes: 'tooltip-content', [
-      span(classes: 'tooltip-header', [text(entry.term)]),
+      span(classes: 'tooltip-header', [.text(entry.term)]),
       span([
-        text('${entry.shortDescription} '),
+        .text('${entry.shortDescription} '),
         a(
           href: '/resources/glossary#${entry.id}',
           attributes: {
@@ -93,7 +94,7 @@ class GlossaryTooltipContent extends StatelessComponent {
                 'Learn more about \'${entry.term}\' and '
                 'find related resources.',
           },
-          [text('Learn more')],
+          [const .text('Learn more')],
         ),
       ]),
     ]);

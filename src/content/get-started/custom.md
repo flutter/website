@@ -166,7 +166,7 @@ Follow the codelab on [Building your first app][],
 set up development for an [additional target platform][], or
 explore some of these other learning resources.
 
-{% render "docs/get-started/setup-next-steps.html", site:site %}
+{% render "docs/get-started/setup-next-steps.html", site: site %}
 
 [Building your first app]: /get-started/codelab
 [additional target platform]: /platform-integration#setup

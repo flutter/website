@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -50,10 +51,10 @@ class WidgetCatalogCategories extends CustomComponentBase {
                 classes: 'card outlined-card',
                 [
                   div(classes: 'card-header', [
-                    span(classes: 'card-title', [text(category.name)]),
+                    span(classes: 'card-title', [.text(category.name)]),
                   ]),
                   div(classes: 'card-content', [
-                    p([text(category.description)]),
+                    p([.text(category.description)]),
                   ]),
                 ],
               ),
@@ -114,7 +115,7 @@ class WidgetCatalogCard extends StatelessComponent {
     return a(href: widget.link, classes: 'card outlined-card', [
       _buildCardImageHolder(),
       div(classes: 'card-header', [
-        span(classes: 'card-title', [text(widget.name)]),
+        span(classes: 'card-title', [.text(widget.name)]),
       ]),
       div(classes: 'card-content', [
         p([
@@ -140,7 +141,7 @@ class WidgetCatalogCard extends StatelessComponent {
         ? {'style': '--bg-color: ${subcategory?.color}'}
         : <String, String>{};
 
-    final placeholder = img(
+    final placeholder = const img(
       alt:
           'Placeholder Flutter logo in place of '
           'missing widget image or visualization.',
@@ -172,7 +173,7 @@ class WidgetCatalogCard extends StatelessComponent {
         ] else ...[
           // Standard catalog prefers vector, then image, then placeholder.
           if (widget.vector case final vector? when vector.isNotEmpty)
-            raw(vector)
+            RawText(vector)
           else if (widget.imageSrc case final imageSrc?
               when imageSrc.isNotEmpty)
             img(alt: imageAlt, src: imageSrc)

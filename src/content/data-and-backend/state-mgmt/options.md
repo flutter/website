@@ -106,7 +106,7 @@ refine the search to find packages that match your needs.
     <div class="card-header">
       <span class="card-title">
         <span>State management packages</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">

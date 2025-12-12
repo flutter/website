@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -41,7 +42,7 @@ class DevToolsReleaseNotesIndex extends StatelessComponent {
       for (final release in releases)
         li([
           a(href: release.page.url, [
-            text(release.page.data.page['shortTitle'] as String),
+            .text(release.page.data.page['shortTitle'] as String),
           ]),
         ]),
     ]);
