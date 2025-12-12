@@ -768,7 +768,7 @@ in any way you'd like, before presenting the Flutter UI using a
 
 ## Content Sized Views
 
-On iOS, you can also set your embedded FlutterView to size itself based off it's content.
+On iOS, you can also set your embedded FlutterView to size itself based off its content.
 
 <Tabs key="darwin-language">
 <Tab name="Swift">
