@@ -7,6 +7,17 @@ sitemap: false
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Learn when widgets need to be stateful
+    icon: change_circle
+  - title: Convert a StatelessWidget to a StatefulWidget
+    icon: swap_horiz
+  - title: Trigger UI updates with setState
+    icon: refresh
+</SummaryCard>
+
 So far, your app displays a grid and an input field,
 but the grid doesn't yet update to reflect the user's guesses.
 When this app is complete, each tile in the next unfilled row should
@@ -195,3 +206,31 @@ the internal game data would change, but Flutter wouldn't know it
 needs to repaint the screen, and the user wouldn't see any updates.
 
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Learned when widgets need to be stateful
+    icon: change_circle
+    details: >-
+      When a widget's appearance or data needs to change during its lifetime,
+      you need a `StatefulWidget`. The widget itself stays immutable, but
+      its companion `State` object holds mutable data and triggers rebuilds.
+  - title: Converted GamePage to a StatefulWidget
+    icon: swap_horiz
+    details: >-
+      You refactored `GamePage` to be stateful by
+      creating a companion `_GamePageState` class, moving the
+      `build` method and mutable properties to it, and
+      implementing `createState()`.
+      Your IDE's support for quick assists can automate this conversion.
+  - title: Made your app respond to user input with setState
+    icon: refresh
+    details: >-
+      Calling `setState` tells Flutter to rebuild the UI of a widget.
+      When a user submits a guess, you call `setState` to update the game state,
+      and the grid automatically reflects the new data.
+      Your app is now truly interactive!
+</SummaryCard>

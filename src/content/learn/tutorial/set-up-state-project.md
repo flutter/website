@@ -5,7 +5,18 @@ layout: tutorial
 sitemap: false
 ---
 
-In this tutorial, you'll learn how to work with data in a Flutter app.
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Preview the Wikipedia reader app you'll build
+    icon: preview
+  - title: Add packages for handling HTTP requests and Wikipedia data
+    icon: inventory_2
+  - title: Set up the initial project structure
+    icon: code
+</SummaryCard>
+
+In the next few lessons, you'll learn how to work with data in a Flutter app.
 You'll build an app that fetches and displays article summaries from
 the [Wikipedia API][].
 
@@ -14,7 +25,7 @@ style="border:1px solid black" alt="A screenshot of the completed
 Wikipedia reader app showing an article with image, title,
 description, and extract text.">
 
-This tutorial explores:
+These lessons explore:
 
 - Making HTTP requests in Flutter.
 - Managing application state with `ChangeNotifier`.
@@ -121,3 +132,29 @@ $ flutter run -d chrome
 
 You should see a simple app with "Wikipedia Flutter" in the app bar
 and "Loading..." in the center of the screen.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Previewed the Wikipedia reader app
+    icon: preview
+    details: >-
+      You're starting a new tutorial section focused on working with data.
+      You'll learn HTTP requests, state management with `ChangeNotifier`,
+      and the MVVM architectural pattern.
+  - title: Added the http and dartpedia packages
+    icon: inventory_2
+    details: >-
+      You used `flutter pub add` to install packages for making HTTP requests
+      and working with Wikipedia data models.
+      Packages let you leverage existing code built by the community
+     instead of building everything from scratch.
+  - title: Set up the initial project structure
+    icon: code
+    details: >-
+      Your app has the basic structure with all necessary imports for
+      HTTP requests, JSON parsing, and Wikipedia data.
+      You're ready to start fetching real data from the Wikipedia API!
+</SummaryCard>

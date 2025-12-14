@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Understand the MVVM architecture pattern
+    icon: layers
+  - title: Build HTTP requests with async/await
+    icon: cloud_download
+  - title: Handle errors and parse JSON responses
+    icon: data_object
+</SummaryCard>
+
 The overarching pattern that this tutorial implements is called
 _Model-View-ViewModel_ or _MVVM_.
 MVVM is an [architectural pattern][] used in client apps that
@@ -135,3 +146,32 @@ check out the [Getting started with Dart][] tutorial.
 [Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
 [JSON]: {{site.dart-site}}/tutorial/json
 [Getting started with Dart]: {{site.dart-site}}/tutorial
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Understood the MVVM architecture pattern
+    icon: layers
+    details: >-
+      MVVM separates your app into Model (data operations),
+      View (user interface), and ViewModel (state management).
+      This separation of concerns makes your code more
+      testable, reusable, and easier to maintain.
+  - title: Built an HTTP request to fetch Wikipedia data
+    icon: cloud_download
+    details: >-
+      You created an `ArticleModel` class with a method that
+      uses `async` and `await` to fetch data from the Wikipedia API.
+      To safely build the URLs for the requests,
+      you used the `Uri.https` constructor which
+      handles encoding and special characters for you.
+  - title: Handled errors and parsed JSON responses
+    icon: data_object
+    details: >-
+      You checked the HTTP status code to detect errors and
+      used `jsonDecode` to parse the response body.
+      Then to convert the raw JSON into a typed Dart object,
+      you used the `Summary.fromJson` named constructor.
+</SummaryCard>

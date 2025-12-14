@@ -7,6 +7,17 @@ sitemap: false
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Explore your app's widget tree with the widget inspector
+    icon: account_tree
+  - title: Learn to debug layout issues like unbounded constraints
+    icon: bug_report
+  - title: Experiment with properties in real-time
+    icon: tune
+</SummaryCard>
+
 As your Flutter app grows in complexity, it becomes more important
 to understand how each of the widget properties affects the UI.
 The [Dart and Flutter DevTools][] provide you with
@@ -188,3 +199,31 @@ change the numerical value in the property editor.
 Then instantly see the update on your running app without
 needing to recompile or even hot reload.
 This allows for rapid iteration on UI design.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Explored your app's widget tree with the widget inspector
+    icon: account_tree
+    details: >-
+      The widget inspector lets you visualize your entire widget tree,
+      select any widget to view its properties, and
+      jump directly to its source code.
+      It's an essential tool forunderstanding your app's structure.
+  - title: Learned about common layout issues
+    icon: bug_report
+    details: >-
+      You learned about **unbounded constraints**,
+      one of the most common errors hit in Flutter development.
+      This happens when widgets like
+      `Row`, `Column`, or `ListView` receive infinite constraints.
+      Now you can recognize and fix these issues when they occur.
+  - title: Experimented with properties in real-time
+    icon: tune
+    details: >-
+      The property editor shows all properties of a selected widget and
+      lets you modify values instantly with no recompiling or hot reload needed.
+      This enables rapid iteration when fine-tuning your UI.
+</SummaryCard>

@@ -7,6 +7,19 @@ sitemap: false
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Structure an app with Scaffold and AppBar
+    icon: web_asset
+  - title: Arrange widgets using Column and Row
+    icon: view_column
+  - title: Generate widgets dynamically from data
+    icon: repeat
+  - title: Build a grid layout for the game board
+    icon: grid_view
+</SummaryCard>
+
 Given that Flutter is a UI toolkit,
 you'll spend a lot of time creating layouts with Flutter widgets.
 
@@ -260,3 +273,35 @@ When you reload your app, you should see a 5x5 grid of white squares.
 <img src='/assets/images/docs/tutorial/grid_of_tiles.png' alt="A screenshot that resembles the popular game Wordle.">
 
 [record]: {{site.dart-site}}/language/records
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Structured your app with Scaffold and AppBar
+    icon: web_asset
+    details: >-
+      You used `Scaffold` to provide a Material-style page layout and
+      `AppBar` to add a title bar at the top of your app.
+      These high-level widgets give your app a standard, yet polished structure.
+  - title: Arranged widgets using Column and Row
+    icon: view_column
+    details: >-
+      `Column` arranges widgets vertically and `Row` arranges them horizontally.
+      These are fundamental layout widgets you'll use constantly in Flutter.
+      The `spacing` property adds consistent gaps between children.
+  - title: Generated widgets dynamically from data
+    icon: repeat
+    details: >-
+      You used a collection for element to build widgets from a list.
+      This declarative approach lets you build user interfaces that
+      automatically and visually reflect your data,
+      a pattern central to Flutter development.
+  - title: Built the game board grid
+    icon: grid_view
+    details: >-
+      By nesting `Row` widgets inside a `Column` and using nested loops,
+      you created a 5x5 grid of `Tile` widgets.
+      Your app now displays the complete game board layout!
+</SummaryCard>
