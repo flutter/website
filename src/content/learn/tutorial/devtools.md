@@ -211,7 +211,7 @@ items:
       The widget inspector lets you visualize your entire widget tree,
       select any widget to view its properties, and
       jump directly to its source code.
-      It's an essential tool forunderstanding your app's structure.
+      It's an essential tool for understanding your app's structure.
   - title: Learned about common layout issues
     icon: bug_report
     details: >-

@@ -150,7 +150,7 @@ items:
       You used `flutter pub add` to install packages for making HTTP requests
       and working with Wikipedia data models.
       Packages let you leverage existing code built by the community
-     instead of building everything from scratch.
+      instead of building everything from scratch.
   - title: Set up the initial project structure
     icon: code
     details: >-
