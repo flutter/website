@@ -7,6 +7,18 @@ sitemap: false
 
 {%- comment %} TODO(ewindmill) embed video {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Build a text input widget with TextField
+    icon: text_fields
+  - title: Manage text with TextEditingController
+    icon: edit_note
+  - title: Control input focus for a better user experience
+    icon: center_focus_strong
+  - title: Handle user actions with callbacks and buttons
+    icon: touch_app
+</SummaryCard>
 
 The app will display the user's guesses in the `Tile` widgets,
 but it needs a way for the user to input those guesses.
@@ -656,3 +668,35 @@ class GuessInput extends StatelessWidget {
 ```
 
 :::
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Built a text input widget with TextField
+    icon: text_fields
+    details: >-
+      You created a `GuessInput` widget with a `TextField` for text entry.
+      You configured it with a rounded border, character limit, and
+      used `Expanded` to make it fill available space in the row.
+  - title: Managed text with TextEditingController
+    icon: edit_note
+    details: >-
+      `TextEditingController` lets you read and modify text field content.
+      You used it to capture the user's input with `.text` and clear the
+      field after submission with `.clear()`.
+  - title: Controlled input focus for a polished UX
+    icon: center_focus_strong
+    details: >-
+      You used `autofocus` to focus the text field on launch and `FocusNode`
+      with `requestFocus()` to maintain focus after each guess.
+      These details make your app feel responsive and well-built.
+  - title: Handled user actions with callbacks and buttons
+    icon: touch_app
+    details: >-
+      To respond to user input,
+      you specified callback functions like `onSubmitted` and `onPressed`.
+      Passing callback functions as constructor arguments keeps your
+      widgets reusable and decoupled from specific logic.
+</SummaryCard>

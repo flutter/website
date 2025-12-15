@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Create responsive layouts with LayoutBuilder
+    icon: fit_screen
+  - title: Detect screen size to choose different layouts
+    icon: devices
+  - title: Build a sidebar and detail layout for large screens
+    icon: view_sidebar
+</SummaryCard>
+
 Modern apps need to work well on screens of all sizes.
 On this page, you'll learn how to create layouts that
 adapt to different screen widths.
@@ -353,3 +364,29 @@ Both the sidebar and main content area show placeholder text for now.
 
 In the next lesson, you'll implement slivers to fill in
 the contact list content.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Created responsive layouts with LayoutBuilder
+    icon: fit_screen
+    details: >-
+      `LayoutBuilder` provides the parent's size constraints in
+      its builder callback. By checking `constraints.maxWidth`,
+      you can decide which layout to show based on available space.
+  - title: Detected screen size to choose different layouts
+    icon: devices
+    details: >-
+      You used a 600-pixel breakpoint to
+      distinguish phone-sized screens from tablet-sized screens.
+      This common threshold helps your app adapt its UI to
+      provide the best experience on each device.
+  - title: Built a sidebar and detail layout for large screens
+    icon: view_sidebar
+    details: >-
+      On large screens, you displayed a fixed-width sidebar and
+      an `Expanded` detail panel side-by-side using a `Row`.
+      This classic pattern maximizes screen real estate on tablets and desktops.
+</SummaryCard>

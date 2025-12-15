@@ -5,6 +5,19 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Understand slivers and how they differ from widgets
+    icon: view_day
+  - title: Build scrollable layouts with CustomScrollView
+    icon: unfold_more
+  - title: Create collapsible navigation bars with search
+    icon: search
+  - title: Organize contacts in alphabetized sections
+    icon: sort_by_alpha
+</SummaryCard>
+
 In this lesson, you'll learn about slivers,
 which are special widgets that can take advantage of
 Flutter's powerful and composable scrolling system.
@@ -524,3 +537,34 @@ add a list of normal widgets to a scrollable sliver area.
 In the next lesson, you'll learn about stack-based navigation and
 update the UI on small screens to navigate between
 the contacts list view and the contacts view.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Understood slivers and how they differ from widgets
+    icon: view_day
+    details: >-
+      Slivers are specialized widgets for scrollable layouts.
+      They can only be direct children of scroll views like `CustomScrollView`.
+      In `CustomScrollView` and other sliver contexts, regular widgets must be
+      wrapped in `SliverToBoxAdapter` or `SliverFillRemaining`.
+  - title: Built scrollable layouts with CustomScrollView
+    icon: unfold_more
+    details: >-
+      `CustomScrollView` lets you compose multiple slivers together.
+      You used `CupertinoSliverNavigationBar`, `SliverFillRemaining`,
+      and `SliverList` to create sophisticated scrollable interfaces.
+  - title: Created collapsible navigation bars with search
+    icon: search
+    details: >-
+      You used the `CupertinoSliverNavigationBar.search` constructor to
+      create a collapsible navigation bar with integrated search functionality.
+  - title: Organized contacts in alphabetized sections
+    icon: sort_by_alpha
+    details: >-
+      You created `ContactListSection` widgets grouped by last name initial,
+      then used `SliverList.list` to add them to the scrollable area.
+      This mirrors the familiar iOS Contacts app experience.
+</SummaryCard>

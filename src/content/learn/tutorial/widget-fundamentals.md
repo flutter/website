@@ -9,6 +9,17 @@ sitemap: false
 <!-- TODO(ewindmill) embed video -->
 {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Create a custom StatelessWidget
+    icon: widgets
+  - title: Make widgets reusable with constructor parameters
+    icon: tune
+  - title: Style widgets using Container and BoxDecoration
+    icon: palette
+</SummaryCard>
+
 In this lesson, you'll create your own custom widget and
 learn about some of the most common widgets included in the SDK.
 
@@ -302,3 +313,31 @@ child: Tile('A', HitType.partial)
 
 Soon, this small box will be one of many widgets on the screen. In the next
 lesson, you'll start building the game grid itself.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Built a custom StatelessWidget
+    icon: widgets
+    details: >-
+      You created a new `Tile` widget by extending `StatelessWidget`.
+      Every widget has a constructor to accept data and
+      a `build` method that returns other widgets.
+      This pattern is fundamental to building user interfaces with Flutter.
+  - title: Made widgets reusable with constructor parameters
+    icon: tune
+    details: >-
+      By accepting `letter` and `hitType` as constructor parameters,
+      your `Tile` widget can display different content and colors.
+      Passing data through constructors is how you can
+      create flexible, reusable components.
+  - title: Styled widgets using Container and BoxDecoration
+    icon: palette
+    details: >-
+      You used `Container` to set the widget's size and
+      `BoxDecoration` to add borders and background colors.
+      Then to conditional style the tile's color,
+      you used a switch expression on the `hitType` value.
+</SummaryCard>

@@ -9,6 +9,17 @@ sitemap: false
 <!-- TODO(ewindmill) embed video -->
 {%- endcomment %}
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Create a new Flutter project using the CLI
+    icon: terminal
+  - title: Understand widgets and the widget tree
+    icon: account_tree
+  - title: Run your app and use hot reload
+    icon: bolt
+</SummaryCard>
+
 In this first section of the Flutter tutorial,
 you'll build the core UI of an app called 'Birdle',
 a game similar to [Wordle, the popular New York Times game][].
@@ -129,3 +140,32 @@ Change the text inside the string to anything you want.
 Then, hot-reload your app by
 pressing `r` in the terminal where the app is running.
 The running app should instantly show your updated text.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Created your first Flutter project
+    icon: terminal
+    details: >-
+      You used `flutter create` with the `--empty` flag to
+      scaffold a minimal Flutter project.
+      The CLI generates the project structure and
+      boilerplate code needed to get started.
+  - title: Explored the widget tree
+    icon: account_tree
+    details: >-
+      Flutter UIs are built by composing **widgets** into a tree structure.
+      The `runApp` function takes a root widget, and that widget's
+      `build` method returns other widgets, forming the **widget tree**.
+      Your job as a Flutter developer is to
+      compose these widgets into custom UIs.
+  - title: Ran your app with hot reload
+    icon: bolt
+    details: >-
+      You ran your app with `flutter run` and
+      experienced **stateful hot reload**, which lets you
+      see code changes reflected in under a second without losing app state.
+      Press `r` in the terminal to trigger a hot reload.
+</SummaryCard>

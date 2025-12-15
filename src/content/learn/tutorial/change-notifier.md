@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Create a ViewModel with ChangeNotifier
+    icon: layers
+  - title: Manage loading, success, and error states
+    icon: toggle_on
+  - title: Signal UI updates with notifyListeners
+    icon: notifications_active
+</SummaryCard>
+
 When developers talk about state-management in Flutter,
 they're essentially referring to the pattern by which your app
 updates the data it needs to render correctly and then
@@ -192,3 +203,31 @@ class MainApp extends StatelessWidget {
 Hot reload your app and check your console output.
 You should see either an article title or an error message,
 which confirms that your Model and ViewModel are wired up correctly.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Created the ArticleViewModel with ChangeNotifier
+    icon: layers
+    details: >-
+      The ViewModel sits between your UI and Model,
+      managing state and connecting the two layers.
+      By extending `ChangeNotifier`, your ViewModel gains the ability to
+      notify listeners when data changes.
+  - title: Managed loading, success, and error states
+    icon: toggle_on
+    details: >-
+      Your ViewModel tracks three pieces of state:
+      `loading`, `summary`, and `errorMessage`.
+      Using `try` and `catch`, you handle network errors gracefully and
+      maintain consistent state for each possible outcome.
+  - title: Used notifyListeners to signal UI updates
+    icon: notifications_active
+    details: >-
+      Calling `notifyListeners()` tells any listening widgets to rebuild.
+      You call it after setting `loading = true` and again
+      after the operation completes.
+      This is how you can implement reactive UI updates in Flutter.
+</SummaryCard>

@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Use ListenableBuilder to rebuild UI automatically
+    icon: sync
+  - title: Handle all possible states with switch expressions
+    icon: alt_route
+  - title: Build the complete View layer with proper styling
+    icon: article
+</SummaryCard>
+
 The view layer is your UI, and in Flutter,
 that refers to your app's widgets.
 As it pertains to this tutorial, the important part is
@@ -421,3 +432,39 @@ To see the reactive UI in action,
 click the **Next random article** button.
 The app shows a loading state, fetches new data, and
 updates the display automatically.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Used ListenableBuilder to rebuild UI automatically
+    icon: sync
+    details: >-
+      `ListenableBuilder` listens to your ViewModel and automatically rebuilds
+      its children whenever `notifyListeners()` is called.
+      In the MVVM pattern,
+      this is the key connection between your ViewModel and View.
+  - title: Handled all possible states with switch expressions
+    icon: alt_route
+    details: >-
+      Using a switch expression, you accounted for
+      the possible state combinations with an appropriate user interface,
+      Conditionally displaying a loading spinner, an error message,
+      or the actual article content.
+      With this handling, the UI is now more robust and complete.
+  - title: Built the complete View layer with proper styling
+    icon: article
+    details: >-
+      You created `ArticleView`, `ArticlePage`, and
+      `ArticleWidget` with conditional rendering, text styling,
+      proper spacing, and overflow handling.
+      These are core UI patterns you'll use in every Flutter app.
+  - title: Completed the MVVM architecture
+    icon: celebration
+    details: >-
+      You've built a complete app with Model (data operations),
+      ViewModel (state management), and View (reactive UI) layers.
+      This separation of concerns helps your code be
+      more testable, maintainable, and scalable.
+</SummaryCard>
