@@ -35,7 +35,7 @@ The flow of an event is as follows:
    and forwards the event.
 4. Transmission: The `GenUiConversation` identifies the event
    and sends it to the configured `ContentGenerator`,
-   which forwards it to the AI Agent.
+   which forwards it to the AI agent.
 
 ## Defining events
 
