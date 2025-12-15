@@ -791,7 +791,8 @@ _flutterViewController.autoResizable = true;
 
 ### Restrictions
 
-Since content sized Flutter views require your Flutter app to be able to size itself, certain widgets are not supported.
+Since content-sized Flutter views require your Flutter app to be able to size itself,
+some widgets are not supported.
 
 * Widgets with unbounded size, like a ListView.
 * Widgets that defer to its child for the size, like LayoutBuilder.
