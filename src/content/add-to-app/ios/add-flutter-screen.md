@@ -800,8 +800,8 @@ some widgets are not supported.
 In practice, this means that quite a few common widgets are not supported,
 such as `ScaffoldBuilder`, `CupertinoTimerPicker`,
 or any widget that internally relies on a `LayoutBuilder`.
-When in doubt, you can use an UnconstrainedBox to test the usability of 
-a widget for a content sized view, as in the following example:
+When in doubt, you can use an `UnconstrainedBox` to test the usability of 
+a widget for a content-sized view, as in the following example:
 
 ```dart
 import 'package:flutter/material.dart';
