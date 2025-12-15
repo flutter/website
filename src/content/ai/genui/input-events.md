@@ -232,7 +232,7 @@ When an event is received, `sendRequest`:
 
 1. Calls `contentGenerator.sendRequest` with the `UserUiInteractionMessage`.
 2. The `ContentGenerator` (perhaps `GoogleGenerativeAiContentGenerator` or
-   `A2AContentGenerator`) handles the network transport to the AI Agent.
+   `A2uiContentGenerator`) handles the network transport to the AI Agent.
 
 The AI Agent receives this JSON message, processes the user action,
 and might stream back new `surfaceUpdate` or `dataModelUpdate` messages
