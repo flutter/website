@@ -852,4 +852,4 @@ For a working example, refer to this [sample project][].
 [`Observable`]: https://developer.apple.com/documentation/observation/observable
 [`NavigationLink`]: https://developer.apple.com/documentation/swiftui/navigationlink
 [`Observable()`]: https://developer.apple.com/documentation/observation/observable()
-[sample project]: https://github.com/flutter/samples/tree/main/add_to_app/ios_content_resizing
+[sample project]: {{site.repo.samples}}/tree/main/add_to_app/ios_content_resizing
