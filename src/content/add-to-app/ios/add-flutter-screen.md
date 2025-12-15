@@ -849,7 +849,7 @@ For a working example, refer to this [sample project][].
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`PlatformDispatcher.defaultRouteName`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
 [Start a FlutterEngine and FlutterViewController section]:/add-to-app/ios/add-flutter-screen/#start-a-flutterengine-and-flutterviewcontroller
-[`Observable`]: https://developer.apple.com/documentation/observation/observable
-[`NavigationLink`]: https://developer.apple.com/documentation/swiftui/navigationlink
-[`Observable()`]: https://developer.apple.com/documentation/observation/observable()
+[`Observable`]: {{site.apple-dev}}/documentation/observation/observable
+[`NavigationLink`]: {[site.apple-dev}}/documentation/swiftui/navigationlink
+[`Observable()`]: {{site.apple.dev}}/documentation/observation/observable()
 [sample project]: {{site.repo.samples}}/tree/main/add_to_app/ios_content_resizing
