@@ -766,9 +766,9 @@ you're free to push data or prepare your Flutter environment
 in any way you'd like, before presenting the Flutter UI using a
 `FlutterViewController`.
 
-## Content Sized Views
+## Content-sized views
 
-On iOS, you can also set your embedded FlutterView to size itself based off its content.
+On iOS, you can also set your embedded `FlutterView` to size itself based off its content.
 
 <Tabs key="darwin-language">
 <Tab name="Swift">
