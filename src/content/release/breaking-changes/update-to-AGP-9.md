@@ -15,7 +15,7 @@ First, built-in kotlin is the new default, meaning any apps using the android-ko
 plugin will not build successfully. You must migrate from android-kotlin to built-in kotlin.
 
 Second, AGP 9+ will only use the new AGP DSL interfaces, meaning any old DSL
-types will not be properly read. We are working on migrating old DSL types
+types will not be properly read. The team is working on migrating old DSL types
 to use the new DSL. In the meantime, you can set a gradle property flag
 to allow for usage of the old DSL.
 
