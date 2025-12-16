@@ -6,10 +6,9 @@ prev:
   path: /ai/genui/get-started
 ---
 
-This guide explains how user interactions are defined,
-captured, and processed within the GenUI package,
-from the initial widget interaction to the AI agent
-receiving the event.
+This guide explains how user interactions are handled
+within the GenUI package, from the initial widget
+interaction to the AI agent receiving the event.
 
 :::experimental
 The `genui` package is in alpha and is likely to change.
@@ -25,14 +24,14 @@ in response to user input.
 
 The flow of an event is as follows:
 
-1. Interaction: User interacts with a widget
-   (for example, the user taps a button).
+1. Interaction: User interacts with a widget;
+   for example, the user taps a button.
 2. Capture: The widget implementation dispatches a `UiEvent`.
-3. Processing: The core framework adds context
+3. Processing: The framework adds context
    (such as a `surfaceId` or data model values)
    and forwards the event.
 4. Transmission: The `GenUiConversation` identifies the event
-   and sends it to the configured `ContentGenerator`,
+   and routes it to the configured `ContentGenerator`,
    which forwards it to the AI agent.
 
 ## Defining events
@@ -46,9 +45,7 @@ A `userAction` contains:
   (defined by the AI when generating the component).
 * `surfaceId`: The ID of the UI surface where the event occurred.
 * `sourceComponentId`: The ID of the component that triggered the event.
-* `context`: A JSON object containing data relevant to the event defined
-   by the AI when generating the event bindings
-   (such as static values or linked data model values).
+* `context`: A JSON object containing data relevant to the event.
 * `timestamp`: When the event occurred.
 
 ### Dart implementation
@@ -80,7 +77,10 @@ extension type UserActionEvent.fromMap(JsonMap _json) implements UiEvent {
 
 ## Capturing events in widgets
 
-Widgets in GenUI are defined in a `Catalog`.
+Widgets in GenUI are defined in a `Catalog`,
+which includes information about what events
+the widget can send to the AI. The AI can then send
+information about how to communicate those events back.
 When you implement a custom widget (or use the standard ones),
 you use the `CatalogItemContext` to dispatch events.
 
@@ -126,34 +126,6 @@ widgetBuilder: (itemContext) {
   );
 },
 ```
-
-## Context resolution
-
-A critical aspect of GenUI events is that the **AI defines the context**
-it needs to receive. When the AI generates a component
-(like a button) with an action,
-it also specifies a context array.
-This array tells the client exactly what data to gather and send back
-when that action is triggered.
-
-This decouples the widget implementation from the business logic.
-The `Button` widget doesn't need to know what data matters;
-it just executes the instructions provided by the AI.
-
-The `resolveContext` function (provided by `packages/genui`)
-handles this logic:
-
-1. It iterates through the `context` definition provided by the AI.
-2. For each item, it checks if the value is a static binding
-   (for example, `literalString`) or a dynamic binding (such as `path`).
-3. If it's a `path`, it looks up the current value in the `DataModel`
-   for that surface.
-4. It constructs a final JSON object with the resolved values
-   to be sent in the event.
-
-This mechanism allows the AI to say,
-"When this button is clicked, send me the value of the 'email'
-field and the static ID 'form-123'."
 
 ## Event processing pipeline
 
