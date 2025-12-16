@@ -1,8 +1,6 @@
 ---
-title: GenUI input and events
+title: Input and events
 description: Handling input and events in GenUI applications.
-shortTitle: Input and events
-breadcrumb: Input and events
 prev:
   title: Get started with the GenUI SDK for Flutter
   path: /ai/genui/get-started
