@@ -279,3 +279,5 @@ to send back to the user as its response.
 
 [Echo example app]:
     {{site.github}}/flutter/ai/blob/main/lib/src/providers/implementations/echo_provider.dart
+[Firebase provider]:
+    {{site.pub-api}}/flutter_ai_toolkit/latest/flutter_ai_toolkit/FirebaseProvider-class.html
