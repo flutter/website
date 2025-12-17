@@ -97,12 +97,12 @@ resolves any data bindings in the context, and sends the event.
 ```dart
 // Inside a CatalogItem widgetBuilder:
 widgetBuilder: (itemContext) {
-  // 1. Extract action data from the component properties
+  // 1. Extract action data from the component properties.
   final buttonData = _ButtonData.fromMap(itemContext.data as JsonMap);
   final JsonMap actionData = buttonData.action;
   final actionName = actionData['name'] as String;
 
-  // 2. Extract context definition (which data to send back)
+  // 2. Extract context definition (which data to send back).
   final List<Object?> contextDefinition =
       (actionData['context'] as List<Object?>?) ?? <Object?>[];
 
