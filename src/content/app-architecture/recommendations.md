@@ -85,7 +85,7 @@ It also makes it straightforward and low risk to add new logic and new UI.
 
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
 [very_good_cli]: https://cli.vgv.dev/
-[Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
+[Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/architecture/
 [State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
 [Flutter developer tools]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints

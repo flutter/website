@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:yaml/yaml.dart';
@@ -50,12 +51,12 @@ class SummaryCardComponent extends StatelessComponent {
     return div(classes: 'summary-card', [
       header([
         div([
-          h3([text(model.title)]),
-          if (model.subtitle case final subtitle?) span([text(subtitle)]),
+          h3([.text(model.title)]),
+          if (model.subtitle case final subtitle?) span([.text(subtitle)]),
         ]),
         if (model.completed)
-          span(classes: 'summary-card-completed', [
-            const MaterialIcon('check_circle'),
+          const span(classes: 'summary-card-completed', [
+            MaterialIcon('check_circle'),
           ]),
       ]),
       for (final item in model.items) _buildSummaryItem(item),
@@ -67,7 +68,7 @@ class SummaryCardComponent extends StatelessComponent {
       return details([
         summary(classes: 'summary-card-item', [
           span([MaterialIcon(item.icon)]),
-          span(classes: 'summary-card-item-title', [text(item.title)]),
+          span(classes: 'summary-card-item-title', [.text(item.title)]),
           const MaterialIcon('keyboard_arrow_up'),
         ]),
         div(classes: 'summary-card-item-details', [
@@ -77,7 +78,7 @@ class SummaryCardComponent extends StatelessComponent {
     }
     return div(classes: 'summary-card-item', [
       span([MaterialIcon(item.icon)]),
-      span(classes: 'summary-card-item-title', [text(item.title)]),
+      span(classes: 'summary-card-item-title', [.text(item.title)]),
     ]);
   }
 }

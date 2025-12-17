@@ -92,6 +92,7 @@ picture {
   font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+  user-select: none;
 
   &.ms-filled {
     font-variation-settings: 'FILL' 1;

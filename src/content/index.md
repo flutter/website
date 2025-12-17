@@ -17,7 +17,7 @@ description: >-
     Bookmark the API reference docs for the Flutter framework.
   </Card>
   <Card title="Learning resources" link="/reference/learning-resources" outlined="true">
-    Browse sample code, tutorials, and how-tos.
+    Browse tutorials, sample code, workshops, and recipes.
   </Card>
   <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
     View the many videos on the Flutter YouTube channel.

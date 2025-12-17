@@ -8,12 +8,13 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
 
-import 'jaspr_options.dart'; // Generated. Do not remove or edit.
+import 'main.server.options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
 import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
+import 'src/components/common/material_icon.dart';
 import 'src/components/common/tabs.dart';
 import 'src/components/common/youtube_embed.dart';
 import 'src/components/pages/architecture_recommendations.dart';
@@ -21,6 +22,7 @@ import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
+import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
 import 'src/components/tutorial/downloadable_snippet.dart';
 import 'src/components/tutorial/progress_ring.dart';
@@ -42,7 +44,7 @@ import 'src/util.dart';
 
 void main() {
   // Initializes the server environment with the generated default options.
-  Jaspr.initializeApp(options: defaultJasprOptions);
+  Jaspr.initializeApp(options: defaultServerOptions);
 
   runApp(ComponentRefScope(child: _docsFlutterDevSite));
 }
@@ -120,6 +122,12 @@ List<CustomComponent> get _embeddableComponents => [
   const TutorialOutline(),
   const WidgetCatalogGrid(),
   const ArchitectureRecommendations(),
+  const PlatformsGrid(),
+  const PlatformCard(),
+  CustomComponent(
+    pattern: RegExp('Icon', caseSensitive: false),
+    builder: (_, attrs, _) => MaterialIcon.fromAttributes(attrs),
+  ),
   CustomComponent(
     pattern: RegExp('OSSelector', caseSensitive: false),
     builder: (_, _, _) => const OsSelector(),

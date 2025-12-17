@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -66,7 +67,7 @@ class PageBreadcrumbs extends StatelessComponent {
 
     final segments = pageUrl
         .split('/')
-        .where((s) => s.isNotEmpty)
+        .where((segment) => segment.isNotEmpty)
         .toList(growable: false);
     if (segments.isEmpty) return null;
 
@@ -79,7 +80,7 @@ class PageBreadcrumbs extends StatelessComponent {
 
       // Try to find the index page for this directory.
       final indexPage = pages.firstWhereOrNull(
-        (p) => p.url == currentPath,
+        (page) => page.url == currentPath,
       );
 
       // Skip if no index page found.
@@ -161,7 +162,7 @@ final class _BreadcrumbItemComponent extends StatelessComponent {
         href: crumb.url,
         attributes: {'property': 'item', 'typeof': 'WebPage'},
         [
-          span(attributes: {'property': 'name'}, [text(crumb.title)]),
+          span(attributes: {'property': 'name'}, [.text(crumb.title)]),
         ],
       ),
       meta(attributes: {'property': 'position', 'content': index.toString()}),

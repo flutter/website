@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../analytics/analytics.dart';
@@ -23,26 +24,26 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return div(classes: 'right-col', [
-      input(
+      const input(
         type: InputType.checkbox,
         id: 'open-filter-toggle',
         attributes: {'hidden': 'true'},
       ),
       div(id: 'resource-filter-group-wrapper', [
         div(id: 'resource-filter-group', [
-          div(classes: 'filter-header', [
+          const div(classes: 'filter-header', [
             label(
               attributes: {'for': 'open-filter-toggle', 'aria-hidden': 'true'},
               classes: 'close-icon',
-              [const MaterialIcon('close')],
+              [MaterialIcon('close')],
             ),
           ]),
-          div(classes: 'table-title', [text('Filter by')]),
+          const div(classes: 'table-title', [.text('Filter by')]),
           ListenableBuilder(
             listenable: filters,
             builder: (context) {
               return div(classes: 'table-content', [
-                h4([text('Subject')]),
+                const h4([.text('Subject')]),
                 ul(classes: filters.tagsExpanded ? '' : 'collapsed', [
                   for (final (index, tag) in LearningResourceTag.values.indexed)
                     li(
@@ -64,20 +65,20 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
                         ),
                         label(
                           attributes: {'for': 'filter-${tag.name}'},
-                          [text(tag.label)],
+                          [.text(tag.label)],
                         ),
                       ],
                     ),
                 ]),
                 button(onClick: filters.toggleTagsExpanded, [
                   span(classes: 'label', [
-                    text(filters.tagsExpanded ? 'Less' : 'More'),
+                    .text(filters.tagsExpanded ? 'Less' : 'More'),
                   ]),
                   MaterialIcon(
                     filters.tagsExpanded ? 'expand_less' : 'expand_more',
                   ),
                 ]),
-                h4([text('Type')]),
+                const h4([.text('Type')]),
                 ul([
                   for (final type in LearningResourceType.values)
                     li([
@@ -95,7 +96,7 @@ class LearningResourceFiltersSidebar extends StatelessComponent {
                       ),
                       label(
                         attributes: {'for': 'filter-${type.name}'},
-                        [text(type.label)],
+                        [.text(type.label)],
                       ),
                     ]),
                 ]),

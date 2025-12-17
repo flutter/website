@@ -1,6 +1,9 @@
 ---
-title: Learn Flutter
-description: Resources to help you learn Flutter.
+title: Flutter tutorial
+shortTitle: Tutorial
+description: >-
+  Learn how to use Flutter to build pixel-perfect applications from scratch that
+  run on mobile, desktop, and web.
 layout: tutorial
 sitemap: false
 ---

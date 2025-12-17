@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// The site-wide banner.
@@ -20,7 +21,7 @@ class DashBanner extends StatelessComponent {
     attributes: {'role': 'alert'},
     [
       p([
-        raw(inlineHtmlContent),
+        RawText(inlineHtmlContent),
       ]),
     ],
   );

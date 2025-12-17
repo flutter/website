@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
@@ -70,12 +71,12 @@ class _PageNavState extends State<PageNav> {
         [
           const MaterialIcon('list'),
           if (component.breadcrumbs.isEmpty)
-            span(classes: 'toc-breadcrumb', [
+            const span(classes: 'toc-breadcrumb', [
               span(
                 attributes: {'aria-label': 'On this page'},
-                [text('On this page')],
+                [.text('On this page')],
               ),
-              const MaterialIcon('chevron_right'),
+              MaterialIcon('chevron_right'),
             ])
           else ...[
             for (final (index, crumb) in component.breadcrumbs.indexed) ...[
@@ -91,7 +92,7 @@ class _PageNavState extends State<PageNav> {
                   if (index == component.breadcrumbs.length - 1 &&
                       component.pageNumber != null)
                     span(classes: 'page-number', [
-                      text('${component.pageNumber}'),
+                      .text('${component.pageNumber}'),
                     ]),
                   span([
                     _simpleInlineMarkdown(crumb),
@@ -106,7 +107,7 @@ class _PageNavState extends State<PageNav> {
             ValueListenableBuilder(
               listenable: currentPageHeading,
               builder: (context, value) {
-                return span([text(value ?? component.initialHeading)]);
+                return span([.text(value ?? component.initialHeading)]);
               },
             ),
           ]),
@@ -128,20 +129,20 @@ class _PageNavState extends State<PageNav> {
 
     for (final match in matches) {
       if (match.start > current) {
-        components.add(text(content.substring(current, match.start)));
+        components.add(.text(content.substring(current, match.start)));
       }
       if (match.group(1) != null) {
-        components.add(code([text(match.group(1)!)]));
+        components.add(code([.text(match.group(1)!)]));
       } else if (match.group(2) != null) {
-        components.add(em([text(match.group(2)!)]));
+        components.add(em([.text(match.group(2)!)]));
       } else if (match.group(3) != null) {
-        components.add(strong([text(match.group(3)!)]));
+        components.add(strong([.text(match.group(3)!)]));
       }
       current = match.end;
     }
     if (current < content.length) {
-      components.add(text(content.substring(current)));
+      components.add(.text(content.substring(current)));
     }
-    return components.length > 1 ? fragment(components) : components.first;
+    return components.length > 1 ? .fragment(components) : components.first;
   }
 }

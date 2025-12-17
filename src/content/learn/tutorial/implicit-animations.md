@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Discover implicit animations in Flutter
+    icon: auto_awesome
+  - title: Animate property changes with AnimatedContainer
+    icon: animation
+  - title: Customize timing with duration and curves
+    icon: timeline
+</SummaryCard>
+
 Flutter provides a rich set of animation APIs, and the simplest way to
 start using them is with **implicit animations**.
 "Implicit animations" refers to a group of widgets that
@@ -137,7 +148,7 @@ class Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 500),
-	    curve: Curves.decelerate, // NEW
+      curve: Curves.decelerate, // NEW
       height: 60,
       width: 60,
       decoration: BoxDecoration(
@@ -172,3 +183,36 @@ If you're curious, try it out in the [animations tutorial][].
 
 [`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
 [animations tutorial]: /ui/animations/tutorial
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Discovered implicit animations
+    icon: auto_awesome
+    details: >-
+      Implicit animations are widgets that automatically
+      animate changes to their properties.
+      You specify the new state, and the widget handles
+      the animation for you without requiring manual animation management.
+  - title: Animated the tiles with AnimatedContainer
+    icon: animation
+    details: >-
+      By replacing `Container` with `AnimatedContainer` and adding a `duration`,
+      your tiles now smoothly transition between colors.
+      With just two lines of code, you added professional polish to your app!
+  - title: Customized timing with duration and curves
+    icon: timeline
+    details: >-
+      The `duration` property controls how long the animation takes,
+      while `curve` changes the animation's feel.
+      You tried `Curves.decelerate`, but you can also try other values
+      like `Curves.easeIn`, `Curves.bounceOut`, or `Curves.elasticIn`.
+  - title: Completed the Birdle game
+    icon: celebration
+    details: >-
+      You've built a complete Wordle-style game with custom widgets,
+      dynamic layouts, user input, state management, and smooth animations.
+      You now have the foundational skills to build your own Flutter apps!
+</SummaryCard>

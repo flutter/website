@@ -5,6 +5,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Navigate between screens with Navigator.push
+    icon: open_in_new
+  - title: Use CupertinoPageRoute for iOS-style transitions
+    icon: swipe_right
+  - title: Create different navigation patterns for each screen size
+    icon: devices
+</SummaryCard>
+
 Now that you understand slivers and scrolling,
 you can implement navigation between screens.
 In this lesson,
@@ -220,3 +231,37 @@ Hot reload your app and test the navigation:
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
 This provides an optimal experience on both phones and tablets.
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Navigated between screens with Navigator.push
+    icon: open_in_new
+    details: >-
+      `Navigator.of(context).push` adds a new route to the navigation stack.
+      This is the foundation of stack-based navigation, where screens are
+      pushed on top of each other and popped to go back.
+  - title: Used CupertinoPageRoute for iOS-style transitions
+    icon: swipe_right
+    details: >-
+      `CupertinoPageRoute` provides support for native iOS navigation features:
+      slide-in animations from the right, automatic back buttons,
+      proper title handling, and swipe-to-go-back gesture support.
+  - title: Implemented adaptive navigation patterns
+    icon: devices
+    details: >-
+      You set up different navigation patterns for small and large screens.
+      Small screens use stack-based navigation where
+      tapping a group pushes a new screen.
+      Large screens use a master-detail pattern where selecting
+      a group updates the detail panel without navigation.
+  - title: Completed the Rolodex app
+    icon: celebration
+    details: >-
+      You've built a complete iOS-style contacts app with
+      adaptive layouts, advanced scrolling,
+      collapsible headers with search, and responsive navigation.
+      These are common patterns used in production apps!
+</SummaryCard>

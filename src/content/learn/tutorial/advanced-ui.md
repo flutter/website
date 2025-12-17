@@ -7,6 +7,17 @@ layout: tutorial
 sitemap: false
 ---
 
+<SummaryCard>
+title: What you'll accomplish
+items:
+  - title: Preview the Rolodex app you'll build
+    icon: preview
+  - title: Set up a project with Cupertino widgets
+    icon: phone_iphone
+  - title: Create data models for contacts and groups
+    icon: data_object
+</SummaryCard>
+
 In this third installment of the Flutter tutorial series,
 you'll use Flutter's Cupertino library to build a
 partial clone of the iOS Contacts app.
@@ -477,7 +488,7 @@ If you aren't familiar with `ValueNotifier`,
 you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
-[previous tutorial covering state]: /tutorial/state/set-up-project
+[previous tutorial covering state]: /learn/tutorial/set-up-state-project
 
 ## Connect the data to your app
 
@@ -517,3 +528,29 @@ With all the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
+
+<SummaryCard>
+title: What you accomplished
+subtitle: Here's a summary of what you built and learned in this lesson.
+completed: true
+items:
+  - title: Previewed the Rolodex app
+    icon: preview
+    details: >-
+      You're starting a new tutorial section focused on advanced UI features.
+      To make your app feel polished and native on any device,
+      you'll learn adaptive layouts, slivers, navigation, and theming.
+  - title: Set up a project with Cupertino widgets
+    icon: phone_iphone
+    details: >-
+      Unlike the previous lessons,
+      this app uses `CupertinoApp` instead of `MaterialApp`.
+      The Cupertino design system provides iOS-style widgets that
+      feel native on Apple devices.
+  - title: Created data models for contacts and groups
+    icon: data_object
+    details: >-
+      You created `Contact` and `ContactGroup` classes with sample data,
+      plus a `ContactGroupsModel` for state management.
+      This foundation supports the UI you'll build in the coming lessons.
+</SummaryCard>
