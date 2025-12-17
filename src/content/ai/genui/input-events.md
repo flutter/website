@@ -87,7 +87,7 @@ When you implement a custom widget (or use the standard widgets),
 you use the `dispatchEvent` method in `CatalogItemContext`
 to dispatch events.
 
-### Example: Button implementation
+### Example: Button implementation {: #button-example}
 
 The following example shows how a `Button` widget typically captures
 a tap and dispatches an event. It retrieves the action definition
