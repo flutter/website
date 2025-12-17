@@ -21,8 +21,8 @@ The Flutter team is working on migrating old DSL types
 to use the new DSL. In the meantime, you can set a gradle property flag 
 to use the old DSL.
 
-In Flutter 3.40.0, support was added for applying AGP 9+. Projects created
-with versions of Flutter prior to 3.40.0 must be migrated manually.
+In a future Flutter release, support will be added for applying AGP 9+. 
+For now, all projects must be migrated manually.
 
 To learn more about Android Gradle Plugin,
 see the [Android Gradle Plugin docs][AGP block].
