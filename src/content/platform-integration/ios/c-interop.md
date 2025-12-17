@@ -79,7 +79,7 @@ to build to. However, you need to include the platform of
 the device you are testing on.
 :::
 
-This will create a package with C/C++ sources in `native_add/src`.
+This creates a package with C/C++ sources in `native_add/src`.
 These sources are built by the `hook/build.dart` file.
 
 The FFI library can only bind against C symbols,
