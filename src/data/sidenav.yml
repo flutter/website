@@ -203,6 +203,8 @@
           permalink: /ai/genui/components
         - title: Get started
           permalink: /ai/genui/get-started
+        - title: Input and events
+          permalink: /ai/genui/input-events
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: Flutter extension for Gemini CLI

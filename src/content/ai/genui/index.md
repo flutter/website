@@ -51,5 +51,3 @@ alpha and is likely to change.
 :::
 
 [Getting started with GenUI video]: https://www.youtube.com/watch?v=nWr6eZKM6no
-
-{% comment %} TODO: add NEXT/PREV page links between the GenUI pages {% endcomment %}
