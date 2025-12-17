@@ -95,7 +95,7 @@ The native code is invoked from dart in `lib/native_add_bindings_generated.dart`
 
 The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
 
-### Legacy FFI Plugin
+### Legacy FFI plugin
 
 If you need to access the Flutter Plugin API in Swift/Kotlin,
 you should use the legacy `plugin_ffi` template:
