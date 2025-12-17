@@ -95,7 +95,7 @@ a tap and dispatches an event. It retrieves the action definition
 resolves any data bindings in the context, and sends the event.
 
 ```dart
-// Inside a CatalogItem widgetBuilder
+// Inside a CatalogItem widgetBuilder:
 widgetBuilder: (itemContext) {
   // 1. Extract action data from the component properties
   final buttonData = _ButtonData.fromMap(itemContext.data as JsonMap);
