@@ -51,11 +51,11 @@ A `userAction` contains:
 
 ### Dart implementation
 
-In [`packages/genui`][], user events are represented by the
+In [`package:genui`][], user events are represented by the
 `UiEvent` extension type and its concrete implementation
 `UserActionEvent`.
 
-[`packages/genui`]: {{site.pub-pkg}}/genui
+[`package:genui`]: {{site.pub-pkg}}/genui
 
 The following structures are defined in
 `lib/src/model/ui_models.dart`:
