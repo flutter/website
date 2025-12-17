@@ -133,6 +133,10 @@ android.useAndroidX=true
 Execute `flutter run` to confirm that your app builds and
 launches on a connected Android device or emulator.
 
+## Timeline
+
+In stable release: TBD
+
 ## References
 
 Relevant issue:
