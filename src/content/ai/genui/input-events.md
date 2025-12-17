@@ -1,6 +1,6 @@
 ---
 title: Input and events
-description: Handling input and events in GenUI applications.
+description: How input and events in are handled in GenUI applications.
 prev:
   title: Get started with the GenUI SDK for Flutter
   path: /ai/genui/get-started
@@ -30,8 +30,9 @@ The flow of an event is as follows:
 3. Processing: The framework adds context
    (such as a `surfaceId` or data model values)
    and forwards the event.
-4. Transmission: The `GenUiConversation` identifies the event
-   and routes it to the configured `ContentGenerator`,
+4. Transmission: The Flutter widget generates the event,
+   adds the appropriate context, and routes
+   it to the AI through the `ContentGenerator`,
    which forwards it to the AI agent.
 
 ## Defining events
@@ -79,12 +80,12 @@ extension type UserActionEvent.fromMap(JsonMap _json) implements UiEvent {
 
 Widgets in GenUI are defined in a `Catalog`,
 which includes information about what events
-the widget can send to the AI. The AI can then send
+the widget can send to the AI.
+The AI can then send
 information about how to communicate those events back.
-When you implement a custom widget (or use the standard ones),
-you use the `CatalogItemContext` to dispatch events.
-
-The `CatalogItemContext` provides a `dispatchEvent` method.
+When you implement a custom widget (or use the standard widgets),
+you use the `dispatchEvent` method in `CatalogItemContext`
+to dispatch events.
 
 ### Example: Button implementation
 
@@ -163,12 +164,12 @@ void _dispatchEvent(UiEvent event) {
 The `A2uiMessageProcessor` (in `lib/src/core/a2ui_message_processor.dart`)
 is the central hub for managing UI state.
 
-When `handleUiEvent` is called:
+When `handleUiEvent` is called, it does the following:
 
-1. It verifies the event type.
-2. It wraps the event in the `userAction` JSON envelope
-   required by the protocol.
-3. It emits a `UserUiInteractionMessage` on its onSubmit stream.
+1. Verifies the event type
+2. Wraps the event in the `userAction` JSON envelope
+   required by the protocol
+3. Emits a `UserUiInteractionMessage` on its onSubmit stream
 
 ```dart
 // A2uiMessageProcessor implementation details
@@ -186,10 +187,9 @@ void handleUiEvent(UiEvent event) {
 
 ## Transmission to AI
 
-The final step is sending the event to the AI Agent.
+The final step sends the event to the AI Agent.
 This is typically handled by `GenUiConversation`
 (in `lib/src/facade/gen_ui_conversation.dart`).
-
 The `GenUiConversation` listens to the `onSubmit` stream
 from the message processor.
 
@@ -198,7 +198,7 @@ from the message processor.
 _userEventSubscription = a2uiMessageProcessor.onSubmit.listen(sendRequest);
 ```
 
-When an event is received, `sendRequest`:
+When an event is received, the `sendRequest` method:
 
 1. Calls `contentGenerator.sendRequest` with the `UserUiInteractionMessage`.
 2. The `ContentGenerator` (perhaps `GoogleGenerativeAiContentGenerator` or
