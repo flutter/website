@@ -60,7 +60,7 @@ In [`package:genui`][], user events are represented by the
 The following structures are defined in
 `lib/src/model/ui_models.dart`:
 
-```dart
+```dart title="lib/src/model/ui_models.dart"
 /// A data object that represents a user interaction event in the UI.
 extension type UiEvent.fromMap(JsonMap _json) { ... }
 
