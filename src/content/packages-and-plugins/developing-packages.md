@@ -777,7 +777,7 @@ you should use the legacy `plugin_ffi` template.
 
 #### Step 1: Create the plugin (Legacy)
 
-To create a starter FFI plugin package,
+To create a starter legacy FFI plugin,
 use the `--template=plugin_ffi` flag with `flutter create`:
 
 ```console
