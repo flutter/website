@@ -166,10 +166,10 @@ is the central hub for managing UI state.
 
 When `handleUiEvent` is called, it does the following:
 
-1. Verifies the event type
-2. Wraps the event in the `userAction` JSON envelope
-   required by the protocol
-3. Emits a `UserUiInteractionMessage` on its onSubmit stream
+1.  Verifies the event type.
+2.  Wraps the event in the `userAction` JSON envelope
+   required by the protocol.
+3.  Emits a `UserUiInteractionMessage` on its `onSubmit` stream.
 
 ```dart
 // A2uiMessageProcessor implementation details
