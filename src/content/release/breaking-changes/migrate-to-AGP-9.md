@@ -136,7 +136,7 @@ launches on a connected Android device or emulator.
 ## References
 
 Relevant issue:
-[Issue #175688][]:  Audit flutter for compatibility with the AGP 9.0.0
+[Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
 
 The Gradle build files in your app vary based on the Flutter version 
 used when your app was created. 
