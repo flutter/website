@@ -114,7 +114,7 @@ widgetBuilder: (itemContext) {
         contextDefinition,
       );
 
-      // 4. Dispatch the event
+      // 4. Dispatch the event.
       itemContext.dispatchEvent(
         UserActionEvent(
           name: actionName,
