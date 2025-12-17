@@ -108,7 +108,7 @@ widgetBuilder: (itemContext) {
 
   return ElevatedButton(
     onPressed: () {
-      // 3. Resolve the context values from the data model
+      // 3. Resolve the context values from the data model.
       final JsonMap resolvedContext = resolveContext(
         itemContext.dataContext,
         contextDefinition,
