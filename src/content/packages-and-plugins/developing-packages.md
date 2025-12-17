@@ -769,7 +769,7 @@ implementation of one platform in a federated plugin:
         dartPluginClass: SomeClass
 ```
 
-### Legacy FFI Plugin
+### Legacy FFI plugin
 
 If you need to access the Flutter Plugin API in Swift/Kotlin,
 or if you need to configure a Google Play services runtime on Android,
