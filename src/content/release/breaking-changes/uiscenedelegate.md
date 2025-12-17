@@ -86,12 +86,11 @@ sequence, plugin registration must now be handled in a new callback called
 -     GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-  }
 
-+ func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-+   GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-+ }
-}
++   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
++     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
++   }
+  }
 ```
 
 </Tab>
