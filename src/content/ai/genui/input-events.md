@@ -123,7 +123,7 @@ widgetBuilder: (itemContext) {
         ),
       );
     },
-    child: ...
+    child: /* ... */
   );
 },
 ```
