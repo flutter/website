@@ -1,29 +1,39 @@
 ---
-title: "Binding to native iOS code using dart:ffi"
-description: "To use C code in your Flutter program, use the dart:ffi library."
+title: "Binding to native iOS code"
+description: "To use C code in your Flutter program, use build hooks or the dart:ffi library."
 ---
 
 <?code-excerpt path-base="platform_integration"?>
 
-Flutter mobile and desktop apps can use the
-[dart:ffi][] library to call native C APIs.
-_FFI_ stands for [_foreign function interface._][FFI]
-Other terms for similar functionality include
-_native interface_ and _language bindings._
+This guide demonstrates how to bind your Flutter app to native iOS code.
+
+## Overview
+
+Flutter mobile and desktop apps can use [build hooks][] or the the [dart:ffi][]
+library to call native C APIs. FFI stands for
+[_foreign function interface._][FFI]. Other terms for similar functionality
+include _native interface_ and _language bindings_.
 
 :::note
-This page describes using the `dart:ffi` library
-in iOS apps. For information on Android, see
-[Binding to native Android code using dart:ffi][android-ffi].
-For information in macOS, see
-[Binding to native macOS code using dart:ffi][macos-ffi].
 This feature is not yet supported for web plugins.
 :::
 
-[android-ffi]: /platform-integration/android/c-interop
-[macos-ffi]: /platform-integration/macos/c-interop
+Prefer using an FFI package with [build hooks][] and code assets.
+
+**Packages with code assets**:
+*   Don't require OS-specific build scripts.
+*   Run on all OSes and on Dart standalone.
+*   Access native code in a uniform way no matter what link mode is used.
+
+**Legacy FFI plugins**:
+*   Can access the Flutter plugin API.
+*   Can use static linking on iOS.
+
+[build hooks]: {{site.baseurl}}/packages-and-plugins/developing-packages#build-hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
+
+### Accessing native code (build hooks)
 
 Before your library or program can use the FFI library
 to bind to native code, you must ensure that the
@@ -31,14 +41,20 @@ native code is loaded and its symbols are visible to Dart.
 This page focuses on compiling, packaging,
 and loading iOS native code within a Flutter plugin or app.
 
-This tutorial demonstrates how to bundle C/C++
-sources in a Flutter plugin and bind to them using
-the Dart FFI library on iOS.
-In this walkthrough, you'll create a C function
-that implements 32-bit addition and then
-exposes it through a Dart plugin named "native_add".
+When using build hooks, you can access native code using the `@Native` annotation.
+The `@Native` annotation resolves native symbols automatically.
 
-## Dynamic vs static linking
+```dart
+@Native<Int32 Function(Int32, Int32)>(symbol: 'native_add')
+external int nativeAdd(int a, int b);
+```
+
+Currently, build hooks essentially use dynamic linking.
+However, the `@Native` annotation is agnostic to the linking method.
+This means that if build hooks support static linking in the future,
+your Dart code won't need to change.
+
+### Dynamic vs static linking (legacy FFI plugin)
 
 A native library can be linked into an app either
 dynamically or statically. A statically linked library
@@ -60,10 +76,9 @@ Dart using `DynamicLibrary.open`.
 API documentation is available from the
 [Dart API reference documentation][].
 
-
 [Dart API reference documentation]: {{site.dart.api}}
 
-## Create an FFI package {: #create-an-ffi-plugin }
+## Create an FFI package (build hooks) {: #create-an-ffi-package }
 
 To create an FFI package called "native_add",
 do the following:
@@ -73,29 +88,55 @@ $ flutter create --template=package_ffi native_add
 $ cd native_add
 ```
 
-:::note
-You can exclude platforms from `--platforms` that you don't want
-to build to. However, you need to include the platform of
-the device you are testing on.
-:::
-
 This creates a package with C/C++ sources in `native_add/src`.
 These sources are built by the `hook/build.dart` file.
 
 The FFI library can only bind against C symbols,
 so in C++ these symbols are marked `extern "C"`.
 
+:::note
+If you are using the legacy `plugin_ffi`,
 You should also add attributes to indicate that the
 symbols are referenced from Dart,
 to prevent the linker from discarding the symbols
 during link-time optimization.
 `__attribute__((visibility("default"))) __attribute__((used))`.
+:::
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
 The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
 
-### Legacy FFI plugin
+### Platform library
+
+To link against a platform library,
+use the following instructions:
+
+1. In Xcode, open `Runner.xcworkspace`.
+1. Select the target platform.
+1. Click **+** in the **Linked Frameworks and Libraries**
+   section.
+1. Select the system library to link against.
+
+### First-party support
+
+A first-party native library can be included either
+as source or as a (signed) `.framework` file.
+It's probably possible to include statically linked
+archives as well, but it requires testing.
+
+### Open-source third-party support
+
+For open source, build the C/C++ sources in your build hook. Or build the
+sources on GitHub actions and download the binary from github artifacts on
+the build hook.
+
+### Closed-source third-party support
+
+For closed source, build the dynamic library somewhere, and download it in
+your build hook.
+
+## Create an FFI plugin (legacy) {: #create-an-ffi-plugin }
 
 If you need to access the Flutter Plugin API in Swift/Kotlin,
 you should use the legacy `plugin_ffi` template:
@@ -108,46 +149,51 @@ This creates a plugin with C/C++ sources in `native_add/src`,
 but uses platform-specific build files (like `ios/native_add.podspec`)
 to build the native code.
 
-## Other use cases
-
-### iOS and macOS
-
-Dynamically linked libraries are automatically loaded by
-the dynamic linker when the app starts. Their constituent
-symbols can be resolved using [`DynamicLibrary.process`][].
-You can also get a handle to the library with
-[`DynamicLibrary.open`][] to restrict the scope of
-symbol resolution, but it's unclear how Apple's
-review process handles this.
-
-Symbols statically linked into the application binary
-can be resolved using [`DynamicLibrary.executable`][] or
-[`DynamicLibrary.process`][].
-
-
-[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
-[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
-[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
-
-#### Platform library
-
-To link against a platform library,
-use the following instructions:
-
-1. In Xcode, open `Runner.xcworkspace`.
-1. Select the target platform.
-1. Click **+** in the **Linked Frameworks and Libraries**
-   section.
-1. Select the system library to link against.
-
-#### First-party library
+### First-party support
 
 A first-party native library can be included either
 as source or as a (signed) `.framework` file.
 It's probably possible to include statically linked
 archives as well, but it requires testing.
 
-#### Source code
+### Open-source third-party support
+
+To create a Flutter plugin that includes both
+C/C++/Objective-C _and_ Dart code,
+use the following instructions:
+
+1. In your plugin project,
+   open `ios/<myproject>.podspec`.
+1. Add the native code to the `source_files`
+   field.
+
+The native code is then statically linked into
+the application binary of any app that uses
+this plugin.
+
+### Closed-source third-party support
+
+To create a Flutter plugin that includes Dart
+source code, but distribute the C/C++ library
+in binary form, use the following instructions:
+
+1. In your plugin project,
+   open `ios/<myproject>.podspec`.
+1. Add a `vendored_frameworks` field.
+   See the [CocoaPods example][].
+
+:::warning
+**Do not** upload this plugin
+(or any plugin containing binary code) to pub.dev.
+Instead, this plugin should be downloaded
+from a trusted third-party,
+as shown in the CocoaPods example.
+:::
+
+[CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
+
+
+## Link to source code
 
 To link directly to source code,
 use the following instructions:
@@ -171,7 +217,7 @@ use the following instructions:
     @_cdecl("myFunctionName")
     ```
 
-#### Compiled (dynamic) library
+## Compiled (dynamic) library
 
 To link to a compiled dynamic library,
 use the following instructions:
@@ -183,41 +229,24 @@ use the following instructions:
 1. Also add it to the **Linked Frameworks & Libraries**
    section of the target in Xcode.
 
-#### Open-source third-party library
+## Work with symbols
 
-To create a Flutter plugin that includes both
-C/C++/Objective-C _and_ Dart code,
-use the following instructions:
+Dynamically linked libraries are automatically loaded by
+the dynamic linker when the app starts. Their constituent
+symbols can be resolved using [`DynamicLibrary.process`][].
+You can also get a handle to the library with
+[`DynamicLibrary.open`][] to restrict the scope of
+symbol resolution, but it's unclear how Apple's
+review process handles this.
 
-1. In your plugin project,
-   open `ios/<myproject>.podspec`.
-1. Add the native code to the `source_files`
-   field.
+Symbols statically linked into the application binary
+can be resolved using [`DynamicLibrary.executable`][] or
+[`DynamicLibrary.process`][].
 
-The native code is then statically linked into
-the application binary of any app that uses
-this plugin.
 
-#### Closed-source third-party library
-
-To create a Flutter plugin that includes Dart
-source code, but distribute the C/C++ library
-in binary form, use the following instructions:
-
-1. In your plugin project,
-   open `ios/<myproject>.podspec`.
-1. Add a `vendored_frameworks` field.
-   See the [CocoaPods example][].
-
-:::warning
-**Do not** upload this plugin
-(or any plugin containing binary code) to pub.dev.
-Instead, this plugin should be downloaded
-from a trusted third-party,
-as shown in the CocoaPods example.
-:::
-
-[CocoaPods example]: {{site.github}}/CocoaPods/CocoaPods/blob/master/examples/Vendored%20Framework%20Example/Example%20Pods/VendoredFrameworkExample.podspec
+[`DynamicLibrary.executable`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.executable.html
+[`DynamicLibrary.open`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.open.html
+[`DynamicLibrary.process`]: {{site.dart.api}}/dart-ffi/DynamicLibrary/DynamicLibrary.process.html
 
 ## Stripping iOS symbols
 
