@@ -98,16 +98,20 @@ From here, you can choose to install the MCP server from
     required `--force-roots-fallback` flag. You must add it manually.
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
-1.  Locate the `dart` entry in the `mcpServers` map and
-    update the `args` list to include `--force-roots-fallback`:
+1.  Locate the `dart-mcp-server` entry in the `mcpServers` map and
+    update its `args` list to include the `--force-roots-fallback` flag:
 
-    ```json title="mcp_config.json" highlightLines=5
-    "dart": {
-      "command": "dart",
-      "args": [
-        "mcp-server",
-        "--force-roots-fallback"
-      ]
+    ```json title="mcp_config.json" highlightLines=7
+    {
+      "mcpServers": {
+        "dart-mcp-server": {
+          "command": "dart",
+          "args": [
+            "mcp-server",
+            "--force-roots-fallback"
+          ]
+        }
+      }
     }
     ```
 
