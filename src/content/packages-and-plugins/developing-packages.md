@@ -55,7 +55,7 @@ Packages can contain more than one kind of content:
 : A specialized Dart package that enables calling native code using `dart:ffi`.
   These packages work in Dart standalone and don't require OS-specific build files.
   They are created with the `flutter create --template=package_ffi` command (see
-  [Create an FFI package](/platform-integration/c-interop#create-an-ffi-package)).
+  [Create an FFI package](/platform-integration/c-interop)).
   This is the recommended approach to build and bundle native code since Flutter 3.38.
 
 **FFI plugin packages (legacy)**
