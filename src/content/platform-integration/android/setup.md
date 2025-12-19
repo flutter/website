@@ -13,7 +13,7 @@ This page assumes you have already installed the Flutter SDK.
 
 If you haven't, visit the [Get started with Flutter][] guide first.
 Installing the Flutter plugin for Android Studio is **not** enough;
-you must also install the Flutter SDK and add it to your PATH
+you must also install the Flutter SDK and add its `bin` directory to your PATH
 to use the `flutter` command.
 :::
 
