@@ -93,7 +93,7 @@ From here, you can choose to install the MCP server from
 #### Install from the MCP store {: #antigravity-mcp-store-install}
 
 1.  In the list of available MCP servers,
-    find or search for **Dart** and click **Add**.
+    find or search for **Dart** and click **Install**.
 1.  **Important**:The built-in configuration doesn't currently pass the
     required `--force-roots-fallback` flag. You must add it manually.
 1.  In the upper right of the **Manage MCPs** editor view,
