@@ -1,3 +1,27 @@
+- term: "Embedder"
+  short_description: |-
+    The platform-specific component that coordinates with the operating system
+    and manages the Flutter engine.
+  long_description: |-
+    The _embedder_ provides the entrypoint for a Flutter app.
+    It coordinates with the underlying operating system to access
+    services like rendering surfaces, accessibility, and input.
+    It also manages the message event loop.
+
+    The embedder is written in a language appropriate for the platform,
+    such as Java/Kotlin for Android, Swift/Objective-C for iOS/macOS,
+    and C++ for Windows and Linux.
+  related_links:
+    - text: "Architectural overview: The Embedder"
+      link: "/resources/architectural-overview#platform-embedding"
+      type: "doc"
+    - text: "Flutter on embedded devices"
+      link: "/embedded"
+      type: "doc"
+  labels:
+    - "architecture"
+    - "engine"
+
 - term: "Engine"
   short_description: |-
     The portable runtime for Flutter apps.
