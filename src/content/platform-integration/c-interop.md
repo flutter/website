@@ -23,7 +23,7 @@ documentation:
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
-## Create an FFI package
+## Create an FFI package {:#create-an-ffi-package}
 
 To create an FFI package, run the following command:
 
