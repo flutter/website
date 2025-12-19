@@ -14,7 +14,7 @@ hooks](https://dart.dev/tools/hooks) to configure the native build in a
 approach works for both Flutter and Dart standalone projects.
 
 The legacy FFI plugins (`flutter create --template=plugin_ffi`) are still useful
-for some situations. For these cases, refer to the legacy FFI plug-in
+for some situations. For these cases, refer to the legacy FFI plugin
 documentation:
 - [Android](/platform-integration/android/c-interop)
 - [iOS](/platform-integration/ios/c-interop)

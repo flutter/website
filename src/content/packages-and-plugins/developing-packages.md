@@ -729,9 +729,9 @@ Since Flutter 3.38, the recommended way for using FFI is to use the
 
 The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
 are still useful for some situations:
-(1) to access the Flutter Plugin API,
-(2) if you need to configure a Google Play services runtime on Android, or
-(3) if you need to use static linking on iOS or macOS.
+1. to access the Flutter Plugin API,
+2. if you need to configure a Google Play services runtime on Android, or
+3. if you need to use static linking on iOS or macOS.
 :::
 
 If you want to develop a package that calls into native APIs using
