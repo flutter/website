@@ -51,10 +51,18 @@ Packages can contain more than one kind of content:
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
-**FFI Plugin packages**
-: A specialized Dart package that contains an API written in
-  Dart code combined with one or more platform-specific
-  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
+**FFI packages**
+: A specialized Dart package that enables calling native code using `dart:ffi`.
+  These packages work in Dart standalone and don't require OS-specific build files.
+  They are created with the `flutter create --template=package_ffi` command (see
+  [Create an FFI package](/platform-integration/c-interop#create-an-ffi-package)).
+  This is the recommended approach to build and bundle native code since Flutter 3.38.
+
+**FFI plugin packages (legacy)**
+: A specialized Dart package that contains an API written in Dart code combined
+  with one or more platform-specific implementations that use `dart:ffi`
+  ([Android][Android], [iOS][iOS], [macOS][macOS]). These packages are created
+  with `flutter create --template=plugin_ffi` and require OS-specific build files.
 
 ## Developing Dart packages {:#dart}
 
@@ -710,7 +718,21 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing FFI plugin packages {:#plugin-ffi}
+## Developing legacy FFI plugin packages {:#plugin-ffi}
+
+:::warning
+This section documents a legacy approach for FFI plugins.
+
+Since Flutter 3.38, the recommended way for using FFI is to use the
+`flutter create --template=package_ffi` command, which uses
+[build hooks](/platform-integration/c-interop).
+
+The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
+are still useful for some situations:
+(1) to access the Flutter Plugin API,
+(2) if you need to configure a Google Play services runtime on Android, or
+(3) if you need to use static linking on iOS or macOS.
+:::
 
 If you want to develop a package that calls into native APIs using
 Dart's FFI, you need to develop an FFI plugin package.
