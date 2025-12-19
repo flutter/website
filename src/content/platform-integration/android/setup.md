@@ -8,10 +8,16 @@ description: >-
 Learn how to set up your development environment
 to run, build, and deploy Flutter apps for Android devices.
 
-:::note
-If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+:::warning
+This page assumes you have already installed the Flutter SDK.
 
+If you haven't, visit the [Get started with Flutter][] guide first.
+Installing the Flutter plugin for Android Studio is **not** enough;
+you must also install the Flutter SDK and add it to your PATH
+to use the `flutter` command.
+:::
+
+:::note
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
