@@ -65,15 +65,15 @@ API documentation is available from the
 
 [Dart API reference documentation]: {{site.dart.api}}
 
-## Create an FFI package {: #create-an-ffi-plugin }
+## Create an FFI plugin
 
-If you already have a package, skip this step.
+If you already have a plugin, skip this step.
 
-To create a package called "native_add",
+To create a plugin called "native_add",
 do the following:
 
 ```console
-$ flutter create --template=package_ffi native_add
+$ flutter create --platforms=macos --template=plugin_ffi native_add
 $ cd native_add
 ```
 
@@ -83,8 +83,9 @@ to build to. However, you need to include the platform of
 the device you are testing on.
 :::
 
-This creates a package with C/C++ sources in `native_add/src`.
-These sources are built by the `hook/build.dart` file.
+This will create a plugin with C/C++ sources in `native_add/src`.
+These sources are built by the native build files in the various
+os build folders.
 
 The FFI library can only bind against C symbols,
 so in C++ these symbols are marked `extern "C"`.
@@ -95,22 +96,11 @@ to prevent the linker from discarding the symbols
 during link-time optimization.
 `__attribute__((visibility("default"))) __attribute__((used))`.
 
+On iOS, the `native_add/macos/native_add.podspec` links the code.
+
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
 The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
-
-### Legacy FFI plugin
-
-If you need to access the Flutter Plugin API in Swift/Objective-C,
-you should use the legacy `plugin_ffi` template:
-
-```console
-$ flutter create --platforms=macos --template=plugin_ffi native_add
-```
-
-This creates a plugin with C/C++ sources in `native_add/src`,
-but uses platform-specific build files (like `macos/native_add.podspec`)
-to build the native code.
 
 ## Other use cases
 
