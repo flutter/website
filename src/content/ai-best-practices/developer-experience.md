@@ -118,7 +118,7 @@ Read the @tasks.md file and implement the first milestone.
 ```
 
 You can watch the coding agent at work, jumping in to correct it as it works, or
-just let it go. Either way, when it’s done, it’s time to check it’s work.
+just let it go. Either way, when it’s done, it’s time to check its work.
 
 ### Validate
 
