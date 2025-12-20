@@ -265,7 +265,7 @@ Unfortunately, as of this writing, combining structured output and functions
 when using the Firebase AI Logic SDK produces an exception:
 
 ```plaintext
-Function calling with a response mime type: ‘application/json’ is unsupported
+Function calling with a response mime type: 'application/json' is unsupported
 ```
 
 As a (hopefully temporary) work-around to this issue, the sample removes the
