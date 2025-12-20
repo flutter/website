@@ -26,8 +26,8 @@ The goal of the planning process is to kick off the coding process with enough d
 ```plaintext
 I'd like to create a file called requirements.md in the plans folder at the root of the project. here's a description of the project:
 
-The application will be an open-source sample hosted on GitHub in the flutter/demos directory. It aims to demonstrate the use of Flutter, Firebase AI Logic, and Gemini to produce an agentic workflow that can solve a small crossword puzzle (one with a size under 10x10)....lots more description of the app along with a sample puzzle screenshot...
-Ask any questions you may have before you get started.
+The application will be an open-source sample hosted on GitHub in the flutter/demos directory. It aims to demonstrate the use of Flutter, Firebase AI Logic, and Gemini to produce an agentic workflow that can solve a small crossword puzzle (one with a size under 10x10)....lots more description of the app along with a sample puzzle screenshot...
+Ask any questions you may have before you get started.
 ```
 
 This prompt, with a little bit of Q&A, manual edits by a human, and some updates during the coding process, yielded [the requirements file][requirements].
