@@ -48,7 +48,7 @@ Start by initializing the model instance with your expected output format:
 
 ```dart
 // the schema for the clue solver output
-final static final _crosswordSchema = Schema(
+static final _crosswordSchema = Schema(
   SchemaType.object,
   properties: {
     'width': Schema(SchemaType.integer),
