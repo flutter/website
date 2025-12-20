@@ -143,7 +143,7 @@ However, tool calling requires a history of messages that form the initial promp
 - Loop until the model provides a response without tool calls  
 - Return the text accumulated across all responses
 
-Here’s that algorithm expressed an the extension method on the `GenerativeModel` class so we can call it just like we call `generateContent`:
+Here’s that algorithm expressed as an extension method on the `GenerativeModel` class so we can call it just like we call `generateContent`:
 
 ```dart
 extension on GenerativeModel {
