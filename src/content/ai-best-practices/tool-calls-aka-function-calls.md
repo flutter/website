@@ -114,7 +114,7 @@ _clueSolverModel = FirebaseAI.googleAI().generativeModel(
         'Gets grammatical metadata for a word, like its part of speech. '
         'Best used to verify a candidate answer against a clue that implies a '
         'grammatical constraint.',
-         parameters: {
+        parameters: {
            'word': Schema(SchemaType.string, description: 'The word to look up.'),
          },
        ),
