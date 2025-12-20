@@ -253,7 +253,7 @@ As a (hopefully temporary) work-around to this issue, the sample removes the str
 }
 ```
 
-The `returnResult` method is also mentioned it in the system instruction:
+The `returnResult` method is also mentioned in the system instruction:
 
 ````dart
 static String get clueSolverSystemInstruction =>
