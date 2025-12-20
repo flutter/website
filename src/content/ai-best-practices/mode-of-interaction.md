@@ -27,7 +27,7 @@ The task list is the set of clues that need solving. The goal is to use colors a
 
 So how do we get consistent, deterministic updates of the task list? Take task management out of the LLM’s hands and handle it in the code.
 
-To generalize, before applying an LLM solution to a problem you’re facing, ask yourself whether an LLM is the best tool for the job. Is human-like problem solving and creatively worth the tradeoff in unpredictability?
+To generalize, before applying an LLM solution to a problem you’re facing, ask yourself whether an LLM is the best tool for the job. Is human-like problem solving and creativity worth the tradeoff in unpredictability?
 
 The answer to that question comes with experimentation. Here are some examples from the sample:
 
