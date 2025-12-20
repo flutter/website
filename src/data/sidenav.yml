@@ -180,6 +180,22 @@
       permalink: /ai/create-with-ai
     - title: AI Rules
       permalink: /ai/ai-rules
+    - title: AI Best Practices
+      permalink: /ai-best-practices
+      expanded: false
+      children:
+        - title: Overview
+          permalink: /ai-best-practices
+        - title: Prompting
+          permalink: /ai-best-practices/prompting
+        - title: Structure & output
+          permalink: /ai-best-practices/structure-output
+        - title: Tool calls (aka function calls)
+          permalink: /ai-best-practices/tool-calls-aka-function-calls
+        - title: Mode of interaction
+          permalink: /ai-best-practices/mode-of-interaction
+        - title: Developer experience
+          permalink: /ai-best-practices/developer-experience
     - title: AI Toolkit
       permalink: /ai-toolkit
       expanded: false
