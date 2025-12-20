@@ -22,7 +22,7 @@ A prompt is the input you provide to an LLM to get the output you want. It will 
 As an example, in building the Crossword Companion, the original clue solving prompt looked like this:
 
 ```dart
-You are a crossword puzzle solver. Your goal is to solve the puzzle by filling in the grid with the correct answers. Given the current state of the crossword grid and a single clue, provide the answer for that clue. The answer should be a single word, returned in a JSON object that matches the following schema:'{"type": "object", "properties": {"answer": {"type": "string"}}}'.
+You are a crossword puzzle solver. Your goal is to solve the puzzle by filling in the grid with the correct answers. Given the current state of the crossword grid and a single clue, provide the answer for that clue. The answer should be a single word, returned in a JSON object that matches the following schema: '{"type": "object", "properties": {"answer": {"type": "string"}}}'.
 
 # Puzzle Information
 ## Grid Layout
