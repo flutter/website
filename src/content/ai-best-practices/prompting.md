@@ -60,7 +60,7 @@ This prompt isn’t all bad – it has some useful pieces:
 - **Format:** provide the output in JSON so the result could be parsed
   programmatically
 
-However, because of the two-dimentional nature of the data, this is a hard
+However, because of the two-dimensional nature of the data, this is a hard
 prompt for some models to solve. The results from Gemini 2.5 Flash (the more
 efficient of the models available at the time) were inconsistent. The quality of
 the results from Gemini 2.5 Pro were excellent, but they were slower and more
