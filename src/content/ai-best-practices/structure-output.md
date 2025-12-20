@@ -1,7 +1,8 @@
 ---
 title: Structure & output
 description: >
-  Learn how to use structured input and output schemas to receive reliable, parsable JSON data from an LLM.
+  Learn how to use structured input and output schemas to receive reliable, 
+  parsable JSON data from an LLM.
 prev:
   title: Prompting
   path: /ai-best-practices/prompting
@@ -11,13 +12,20 @@ next:
 ---
 
 
-When you’re writing programs against an LLM, you want to provide unambiguous input and get unambiguous output.
+When you’re writing programs against an LLM, you want to provide unambiguous
+input and get unambiguous output.
 
 ### Structured input
 
-As input, an LLM can take pretty much anything you can render as text. That includes free form text and semi-structured text like Markdown, but also includes structured formats like CSV, JSON, and XML. If you have data with structure, format the data with that structure and the LLM is going to give you better results.
+As input, an LLM can take pretty much anything you can render as text. That
+includes free form text and semi-structured text like Markdown, but also
+includes structured formats like CSV, JSON, and XML. If you have data with
+structure, format the data with that structure and the LLM is going to give you
+better results.
 
-In addition to structured text input, you can also pass binary data, like images or PDFs. In the sample, the app passes the crossword puzzle screenshot images to Gemini for it to infer the grid data:
+In addition to structured text input, you can also pass binary data, like images
+or PDFs. In the sample, the app passes the crossword puzzle screenshot images to
+Gemini for it to infer the grid data:
 
 ```dart
 final imageParts = <Part>[];
@@ -38,11 +46,14 @@ final response = await _crosswordModel.generateContent(content);
 ...
 ```
 
-This code passes the prompt and the images to Gemini as part of the same request.
+This code passes the prompt and the images to Gemini as part of the same
+request.
 
 ### Structured output
 
-An LLM can have a harder time with structured output than with structured input. You want to be clear and thorough when asking the model for JSON output to ensure you get something that you can reliably parse in your apps. 
+An LLM can have a harder time with structured output than with structured input.
+You want to be clear and thorough when asking the model for JSON output to
+ensure you get something that you can reliably parse in your apps. 
 
 Start by initializing the model instance with your expected output format:
 
@@ -104,7 +115,8 @@ _crosswordModel = FirebaseAI.googleAI().generativeModel(
 );
 ```
 
-And while this might be enough, the most reliable results come when you also specify the output schema in the system instruction:
+And while this might be enough, the most reliable results come when you also
+specify the output schema in the system instruction:
 
 ```dart
 final _crosswordPrompt =
@@ -131,5 +143,7 @@ final cluesData = json['clues'] as Map<String, dynamic>;
 ...
 ```
 
-Reliable JSON output from the model is what makes it possible to integrate AI into your app. The data might or might not be correct, but it will be in a format your app can work with.
+Reliable JSON output from the model is what makes it possible to integrate AI
+into your app. The data might or might not be correct, but it will be in a
+format your app can work with.
 

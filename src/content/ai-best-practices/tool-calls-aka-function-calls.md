@@ -1,7 +1,8 @@
 ---
 title: Tool calls (aka function calls)
 description: >
-  Learn how to implement tool calling, manage agentic loops, and incorporate human-in-the-loop interactions using the Firebase AI Logic SDK.
+  Learn how to implement tool calling, manage agentic loops, and incorporate 
+  human-in-the-loop interactions using the Firebase AI Logic SDK.
 prev:
   title: Structure & output
   path: /ai-best-practices/structure-output
@@ -11,23 +12,48 @@ next:
 ---
 
 
-While it’s true that LLMs are trained essentially on the entire internet, they don’t know everything. They know what was on the public internet the day they were trained, but they don’t know anything more recent than that. They don’t know anything that’s private to you or your organization. And even things they do know can easily get tangled up with other things they know.
+While it’s true that LLMs are trained essentially on the entire internet, they
+don’t know everything. They know what was on the public internet the day they
+were trained, but they don’t know anything more recent than that. They don’t
+know anything that’s private to you or your organization. And even things they
+do know can easily get tangled up with other things they know.
 
-For those scenarios, and many others, we often provide an LLM with one or more tools.
+For those scenarios, and many others, we often provide an LLM with one or more
+tools.
 
 ### Tool defined
 
-A tool is a name, a description and a JSON schema for the format of the input data when the LLM “calls” the tool. For example, if we prompt the LLM to “Reduce the carbs in Grandma’s All America Breakfast recipe”, it won’t know what grandma’s recipe is unless we give it a “lookupRecipe” tool that takes a query string we can use to look up the recipe.
+A tool is a name, a description and a JSON schema for the format of the input
+data when the LLM “calls” the tool. For example, if we prompt the LLM to “Reduce
+the carbs in Grandma’s All America Breakfast recipe”, it won’t know what
+grandma’s recipe is unless we give it a “lookupRecipe” tool that takes a query
+string we can use to look up the recipe.
 
-Conceptually, a tool is something we give the LLM to call when it needs that data or service. The way an LLM calls a tool is by responding to the app’s request with a specially formatted message that means “tool call”. A tool call message includes the name and JSON arguments for the tool. The app handles the tool call and bundles the result in another LLM request, to which the LLM then responds.
+Conceptually, a tool is something we give the LLM to call when it needs that
+data or service. The way an LLM calls a tool is by responding to the app’s
+request with a specially formatted message that means “tool call”. A tool call
+message includes the name and JSON arguments for the tool. The app handles the
+tool call and bundles the result in another LLM request, to which the LLM then
+responds.
 
-This can go on for a while. An app can configure a model instance with any number of tools (although the LLM does better with a smaller set of targeted tools that don’t overlap in functionality). The LLM can bundle up any number of tool calls in its response and can take any number of tool results in a request. The LLM consolidates multiple round-trips for prompts and tool call results via a stack of messages that form a history of request/response pairs.
+This can go on for a while. An app can configure a model instance with any
+number of tools (although the LLM does better with a smaller set of targeted
+tools that don’t overlap in functionality). The LLM can bundle up any number of
+tool calls in its response and can take any number of tool results in a request.
+The LLM consolidates multiple round-trips for prompts and tool call results via
+a stack of messages that form a history of request/response pairs.
 
-When it’s done with the tool calls, the LLM returns its final response, for example “Here’s a version of Grandma’s All American Breakfast recipe that’s high on protein and low on carbs…”.
+When it’s done with the tool calls, the LLM returns its final response, for
+example “Here’s a version of Grandma’s All American Breakfast recipe that’s high
+on protein and low on carbs…”.
 
 ### Gemini functions
 
-In the Firebase AI Logic SDK, a tool is called a “function”, but it’s the same thing. In the sample, the clue solver model is configured with a function to look up word details. If the LLM wants details about a word to help with the solving process, calling the function provides it with data from [the Free Dictionary API][dictionary-api]:
+In the Firebase AI Logic SDK, a tool is called a “function”, but it’s the same
+thing. In the sample, the clue solver model is configured with a function to
+look up word details. If the LLM wants details about a word to help with the
+solving process, calling the function provides it with data from [the Free
+Dictionary API][dictionary-api]:
 
 ```json
 [
@@ -97,7 +123,8 @@ _clueSolverModel = FirebaseAI.googleAI().generativeModel(
 );
 ```
 
-For reliability, it’s also a good idea to list the tools in the system instruction:
+For reliability, it’s also a good idea to list the tools in the system
+instruction:
 
 ````dart
 static String get clueSolverSystemInstruction =>
@@ -129,15 +156,24 @@ ${jsonEncode(_getWordMetadataFunction.toJson())}
 ''';
 ````
 
-When the app makes a request, the model now has a tool to use when it decides that it will be helpful. To support tool calls, we need to implement an agentic loop.
+When the app makes a request, the model now has a tool to use when it decides
+that it will be helpful. To support tool calls, we need to implement an agentic
+loop.
 
 ## The Agentic Loop
 
-An LLM is functionally stateless, which means that you have to give it all of the data it needs with every request. For a request that’s just the prompt and any files you want to send along, the Firebase AI Logic SDK exposes the `generateContent` method on your model instance.
+An LLM is functionally stateless, which means that you have to give it all of
+the data it needs with every request. For a request that’s just the prompt and
+any files you want to send along, the Firebase AI Logic SDK exposes the
+`generateContent` method on your model instance.
 
-However, tool calling requires a history of messages that form the initial prompt, as well as the response/request pairs that make up tool calls and tool results. To support this Firebase Logic AI provides a “chat” object to gather the history. We use it to build the agentic loop:
+However, tool calling requires a history of messages that form the initial
+prompt, as well as the response/request pairs that make up tool calls and tool
+results. To support this Firebase Logic AI provides a “chat” object to gather
+the history. We use it to build the agentic loop:
 
-- Start a chat to hold the message history across multiple request/response pairs  
+- Start a chat to hold the message history across multiple request/response
+  pairs  
 - Gather the tool results for any tool calls it provides  
 - Bundle the tool results into a new request  
 - Loop until the model provides a response without tool calls  
@@ -195,7 +231,8 @@ extension on GenerativeModel {
 }
 ```
 
-This method takes a prompt and a callback for handling the specific tool calls, which the sample calls to handle the word lookup function:
+This method takes a prompt and a callback for handling the specific tool calls,
+which the sample calls to handle the word lookup function:
 
 ```dart
 await _clueSolverModel.generateContentWithFunctions(
@@ -209,48 +246,57 @@ await _clueSolverModel.generateContentWithFunctions(
 );
 ```
 
-Structured output makes an LLM useful to program against but it’s the tools that turn an LLM into an “agent” (more on this in the Mode of interaction section).
+Structured output makes an LLM useful to program against but it’s the tools that
+turn an LLM into an “agent” (more on this in the Mode of interaction section).
 
 ### Structured output and tool calls
 
-Combining structured output and tool calls produce a powerful combination. In the sample, the clue solver has a tool to look up word details. It’s also asked to return JSON that bundles the solution with a confidence score, both of which are shown in the app’s task list:
+Combining structured output and tool calls produce a powerful combination. In
+the sample, the clue solver has a tool to look up word details. It’s also asked
+to return JSON that bundles the solution with a confidence score, both of which
+are shown in the app’s task list:
 
-<img src="/assets/images/docs/ai-best-practices/app-task-list-showing-crossword-clues-fo.png" alt="App task list showing crossword clues followed by bold answers and confidence scores in parentheses">
+<img
+src="/assets/images/docs/ai-best-practices/app-task-list-showing-crossword-clues-fo.png"
+alt="App task list showing crossword clues followed by bold answers and
+confidence scores in parentheses">
 
-Unfortunately, as of this writing, combining structured output and functions when using the Firebase AI Logic SDK produces an exception:
+Unfortunately, as of this writing, combining structured output and functions
+when using the Firebase AI Logic SDK produces an exception:
 
 ```plaintext
 Function calling with a response mime type: ‘application/json’ is unsupported
 ```
 
-As a (hopefully temporary) work-around to this issue, the sample removes the structured output configuration, instead using a tool called `returnResult` to simulate structured output:
+As a (hopefully temporary) work-around to this issue, the sample removes the
+structured output configuration, instead using a tool called `returnResult` to
+simulate structured output:
 
 ```dart
  // The model for solving clues.
-  _clueSolverModel = FirebaseAI.googleAI().generativeModel(
-    model: 'gemini-2.5-flash',
-    systemInstruction: Content.text(clueSolverSystemInstruction),
-    tools: [
-      Tool.functionDeclarations([
-        ...,
-        FunctionDeclaration(
-         'returnResult',
-         'Returns the final result of the clue solving process.',
-         parameters: {
-          'answer': Schema(
-            SchemaType.string,
-            description: 'The answer to the clue.',
+_clueSolverModel = FirebaseAI.googleAI().generativeModel(
+  model: 'gemini-2.5-flash',
+  systemInstruction: Content.text(clueSolverSystemInstruction),
+  tools: [
+    Tool.functionDeclarations([
+      ...,
+      FunctionDeclaration(
+        'returnResult',
+        'Returns the final result of the clue solving process.',
+        parameters: {
+        'answer': Schema(
+          SchemaType.string,
+          description: 'The answer to the clue.',
+        ),
+        'confidence': Schema(
+          SchemaType.number,
+          description: 'The confidence score in the answer from 0.0 to 1.0.',
           ),
-          'confidence': Schema(
-            SchemaType.number,
-            description: 'The confidence score in the answer from 0.0 to 1.0.',
-           ),
-         },
-       ),
-      ]),
-    ],
-  );
-}
+        },
+      ),
+    ]),
+  ],
+);
 ```
 
 The `returnResult` method is also mentioned in the system instruction:
@@ -277,7 +323,8 @@ ${jsonEncode(_returnResultFunction.toJson())}
 ''';
 ````
 
-When the model calls `returnResult`, the sample caches the result, which the `solveClue` looks up after calling `generateContentWithFunctions`:
+When the model calls `returnResult`, the sample caches the result, which the
+`solveClue` looks up after calling `generateContentWithFunctions`:
 
 ```dart
 // Buffer for the result of the clue solving process.
@@ -315,15 +362,25 @@ Future<ClueAnswer?> solveClue(Clue clue, int length, String pattern) async {
 }
 ```
 
-We have to work a little harder to get the combo of structured output and tool calls using Firebase AI Logic, but the results are worth it!
+We have to work a little harder to get the combo of structured output and tool
+calls using Firebase AI Logic, but the results are worth it!
 
 ### Human in the loop
 
-So far, we’ve seen tools used for gathering data and formatting output. We can also use them to get a human involved.
+So far, we’ve seen tools used for gathering data and formatting output. We can
+also use them to get a human involved.
 
-As an example, sometimes when the sample will pass in a pattern the solution should take – like “_R_Y” – the model wants to suggest an answer that doesn’t fit this pattern – like “RENT”. A conflict like this is a good time to ask for help from the user:  
-<img src="/assets/images/docs/ai-best-practices/crossword-companion-app-displaying-a-con.png" alt="Crossword Companion app displaying a Conflict Detected dialog asking for user input to resolve a clue pattern">  
-This is called putting the “human in the loop” and it’s yet another way for humans and LLMs to collaborate. Flutter and the Firebase AI Logic SDK make this easy to do. First, the sample defines a function and configures the model:
+As an example, sometimes when the sample will pass in a pattern the solution
+should take – like “_R_Y” – the model wants to suggest an answer that doesn’t
+fit this pattern – like “RENT”. A conflict like this is a good time to ask for
+help from the user:  
+<img
+src="/assets/images/docs/ai-best-practices/crossword-companion-app-displaying-a-con.png"
+alt="Crossword Companion app displaying a Conflict Detected dialog asking for
+user input to resolve a clue pattern">  
+This is called putting the “human in the loop” and it’s yet another way for
+humans and LLMs to collaborate. Flutter and the Firebase AI Logic SDK make this
+easy to do. First, the sample defines a function and configures the model:
 
 ````dart
 
@@ -348,17 +405,15 @@ static final _resolveConflictFunction = FunctionDeclaration(
 
 // Pass the new tool to the model for solving clues.
 final _clueSolverModel = FirebaseAI.googleAI().generativeModel(
-    model: 'gemini-2.5-flash',
-    systemInstruction: Content.text(clueSolverSystemInstruction),
-    tools: [
-      Tool.functionDeclarations([
-        ...
-        _resolveConflictFunction,
-      ]),
-    ],
-  );
-}
-
+  model: 'gemini-2.5-flash',
+  systemInstruction: Content.text(clueSolverSystemInstruction),
+  tools: [
+    Tool.functionDeclarations([
+      ...
+      _resolveConflictFunction,
+    ]),
+  ],
+);
 // Let the LLM know that it has a new tool.
 static String get clueSolverSystemInstruction =>
     '''
@@ -416,13 +471,30 @@ Future<Map<String, dynamic>> _handleResolveConflict(
 }
 ```
 
-The sample handles the tool with an implementation of the `onConflict` method that calls `showDialog` to gather data from the user. This all happens in the middle of the agentic loop, but that’s OK – the model is not waiting; it’s already sent back its response to the app’s initial request. The user can take their time with the UI while the sample waits on the `Future` returned `showDialog`. When they’re done, the model continues where it left off using the message history and the most recent request, which in this case happens to be data gathered interactively from the user.
+The sample handles the tool with an implementation of the `onConflict` method
+that calls `showDialog` to gather data from the user. This all happens in the
+middle of the agentic loop, but that’s OK – the model is not waiting; it’s
+already sent back its response to the app’s initial request. The user can take
+their time with the UI while the sample waits on the `Future` returned
+`showDialog`. When they’re done, the model continues where it left off using the
+message history and the most recent request, which in this case happens to be
+data gathered interactively from the user.
 
-A modal dialog box is a simple way to put the human in the loop but is not the only way in Flutter to do so. If you’d prefer, an instance of [a `Completer`][completer] lets you set some state in your app that puts it into “gathering data from the user” mode. When the app has the data, it can call `complete` on the `Completer` and resume the agentic loop.
+A modal dialog box is a simple way to put the human in the loop but is not the
+only way in Flutter to do so. If you’d prefer, an instance of [a
+`Completer`][completer] lets you set some state in your app that puts it into
+“gathering data from the user” mode. When the app has the data, it can call
+`complete` on the `Completer` and resume the agentic loop.
 
-Or, since you own the agentic loop, you can check for a call to a “special” function that indicates that you need to gather data from the user. This kind of special function is sometimes called an "interrupt" and you “resume” the conversation with the model when you have the data from the user.
+Or, since you own the agentic loop, you can check for a call to a “special”
+function that indicates that you need to gather data from the user. This kind of
+special function is sometimes called an "interrupt" and you “resume” the
+conversation with the model when you have the data from the user.
 
-Remember that the LLM is stateless. It’s not waiting on you, so you can handle the agentic loop in whatever way makes the most sense for your app. You can come back to the LLM with an updated message history and a new prompt at any time, whether it’s been a minute or in a month.
+Remember that the LLM is stateless. It’s not waiting on you, so you can handle
+the agentic loop in whatever way makes the most sense for your app. You can come
+back to the LLM with an updated message history and a new prompt at any time,
+whether it’s been a minute or in a month.
 
 
 
