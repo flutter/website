@@ -5,6 +5,9 @@ breadcrumb: Get started
 description: >-
   Learn how to use GenUI SDK for Flutter and add it
   to your existing Flutter app.
+next:
+  title: Input and events
+  path: /ai/genui/input-events
 prev:
   title: GenUI SDK main components & concepts
   path: /ai/genui/components
