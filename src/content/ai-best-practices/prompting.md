@@ -19,7 +19,7 @@ At that scale, a model trained with that much data has created models that can i
 
 A prompt is the input you provide to an LLM to get the output you want. It will include text as well zero or more files, like images or PDF files. If you’re building chat into your app, then the user will be entering the prompts (and [the Flutter AI Toolkit][ai-toolkit] is useful for building the chat UI). If you’re using an LLM to implement the features of your app, like parsing an image for crossword puzzle data, then you’re going to be building the prompts yourself. How you build them matters.
 
-An an example, in building the Crossword Companion, the original clue solving prompt looked like this:
+As an example, in building the Crossword Companion, the original clue solving prompt looked like this:
 
 ```dart
 You are a crossword puzzle solver. Your goal is to solve the puzzle by filling in the grid with the correct answers. Given the current state of the crossword grid and a single clue, provide the answer for that clue. The answer should be a single word, returned in a JSON object that matches the following schema:'{"type": "object", "properties": {"answer": {"type": "string"}}}'.
