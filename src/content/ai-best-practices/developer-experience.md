@@ -71,7 +71,7 @@ provides the set of rules you want it to remember for any activity. Gemini was
 running inside of an empty Flutter app project, so the `/init` command
 documented how to build, test and run it, which was useful during coding.
 
-If you’d building something more than a sample, I also recommend adding
+If you’re building something more than a sample, I also recommend adding
 something for test-driven development:
 
 ```markdown
