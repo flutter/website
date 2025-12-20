@@ -8,7 +8,7 @@ description: >
 
 This guide discusses the Dart and Flutter MCP server.
 
-:::note experimental
+:::experimental
 The Dart and Flutter MCP server is experimental and likely to evolve quickly.
 The following instructions require Dart 3.9 or later.
 :::
@@ -83,29 +83,39 @@ you can either install it from the list of available servers or
 1.  In the upper right of the **Agent** panel,
     click **Manage MCP Servers**.
 
-From here, you can choose to install from the list or configure manually.
+From here, you can choose to install the MCP server from
+[the built-in MCP store](#antigravity-mcp-store-install) or by
+[configuring it manually](#antigravity-mcp-manual-install).
 
-#### Install from list
+[Antigravity]: https://antigravity.google/
+[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
 
-1.  In the list of available servers, find **Dart** and click **Add**.
+#### Install from the MCP store {: #antigravity-mcp-store-install}
+
+1.  In the list of available MCP servers,
+    find or search for **Dart** and click **Install**.
 1.  **Important**: The built-in configuration doesn't currently pass the
     required `--force-roots-fallback` flag. You must add it manually.
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
-1.  Locate the `dart` entry in the `mcpServers` map and
-    update the `args` list to include `--force-roots-fallback`:
+1.  Locate the `dart-mcp-server` entry in the `mcpServers` map and
+    update its `args` list to include the `--force-roots-fallback` flag:
 
-    ```json title="mcp_config.json" highlightLines=6
-    "dart": {
-      "command": "dart",
-      "args": [
-        "mcp-server",
-        "--force-roots-fallback"
-      ]
+    ```json title="mcp_config.json" highlightLines=7
+    {
+      "mcpServers": {
+        "dart-mcp-server": {
+          "command": "dart",
+          "args": [
+            "mcp-server",
+            "--force-roots-fallback"
+          ]
+        }
+      }
     }
     ```
 
-#### Connect manually
+#### Connect manually {: #antigravity-mcp-manual-install}
 
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
@@ -145,8 +155,10 @@ It is also recommended to install the Dart and Flutter extensions:
 
     This installs both the Dart and Flutter extensions.
 
-[Antigravity]: https://antigravity.google/
-[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
+To learn more about the Dart and Flutter extensions,
+check out [Develop Flutter apps in VS Code][].
+
+[Develop Flutter apps in VS Code]: /tools/vs-code
 
 ### Gemini CLI
 
@@ -174,7 +186,7 @@ add a Dart entry to the `mcpServers` section of the Gemini config.
 For more information, check out the official Gemini CLI
 documentation for [setting up MCP servers][].
 
-[Gemini CLI]: https://geminicli.com/docs/
+[Gemini CLI]: https://geminicli.com/
 [setting up MCP servers]: https://geminicli.com/docs/tools/mcp-server/#how-to-set-up-your-mcp-server
 
 ### Firebase Studio
@@ -207,10 +219,12 @@ follow these steps:
     *   Open the Command Palette (**Shift+Ctrl+P**).
     *   Enter **Firebase Studio: Rebuild Environment**.
 
-For more information about MCP server configuration in
-Firebase Studio, see [Customize your Firebase Studio workspace][].
+For more information about MCP server configuration in Firebase Studio,
+check out [Connect to MCP servers][fs-mcp] and
+[Customize your Firebase Studio workspace][].
 
 [Firebase Studio]: https://firebase.studio/
+[fs-mcp]: https://firebase.google.com/docs/studio/mcp-servers
 [Customize your Firebase Studio workspace]: https://firebase.google.com/docs/studio/customize-workspace
 
 ### Gemini Code Assist in VS Code
