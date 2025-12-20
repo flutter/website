@@ -202,13 +202,8 @@ on the [Flutter contributors Discord][]!
 If you've made changes to the content and you'd like to make sure the site
 builds and that the links resolve properly, then run the following command:
 
-```terminal
-# build the site with the updated content
-dart run dash_site build
-
-# check the links
-dart run dash_site check-link-references
-```
+# build the site and check links
+dart run dash_site build && dart run dash_site check-link-references
 If this script reports any errors or warnings, then address those issues and
 rerun the command.
 
