@@ -9,11 +9,11 @@ prev:
 ---
 
 
-Generative AI is not just useful for implementing features in your app; it’s
+Generative AI is not just useful for implementing features in your app; it's
 also useful for generating the code to implement those features.
 
-Unfortunately, it’s just as easy as prompting an AI coding agent to “build a
-Flutter app that solves crossword puzzles.” I’m sure that prompt would yield
+Unfortunately, it's just as easy as prompting an AI coding agent to "build a
+Flutter app that solves crossword puzzles." I'm sure that prompt would yield
 something, but I doubt very much that it would give us the powerful AI-assisted,
 user-validated combination the Crossword Companion provides.
 
@@ -47,7 +47,7 @@ the GEMINI.md rules file and then to update it with a list of architectural
 principles:
 
 ```plaintext
-DRY (Don’t Repeat Yourself) – eliminate duplicated logic by extracting shared utilities and modules.
+DRY (Don't Repeat Yourself) – eliminate duplicated logic by extracting shared utilities and modules.
 
 Separation of Concerns – each module should handle one distinct responsibility.
 
@@ -71,7 +71,7 @@ provides the set of rules you want it to remember for any activity. Gemini was
 running inside of an empty Flutter app project, so the `/init` command
 documented how to build, test and run it, which was useful during coding.
 
-If you’re building something more than a sample, I also recommend adding
+If you're building something more than a sample, I also recommend adding
 something for test-driven development:
 
 ```markdown
@@ -96,16 +96,16 @@ break it down into [tasks][tasks-spec]:
 please read the files in the @specs folder and create a corresponding tasks.md file in the same folder that lays out a set of tasks and subtasks representing the functionality of this app. lay out the top-level tasks as minimal new functionality that the user can see in the running app, step-by-step as each top-level task is completed. each top-level task should include sub-tasks for creating and running tests and updating the @README.md with a description of the current functionality of the app. ask any questions you may have before you get started.
 ```
 
-All of this happens before any code is written. You don’t have to split things
+All of this happens before any code is written. You don't have to split things
 into separate files, but by carefully considering the requirements, the design
-and the task breakdown, you’re helping the agent to provide results that meet
-your expectations. This is called “Spec-Driven Development” and it’s currently
-the best way we know of to upgrade your process from “vibe coding” to
-“AI-assisted software development.”
+and the task breakdown, you're helping the agent to provide results that meet
+your expectations. This is called "Spec-Driven Development" and it's currently
+the best way we know of to upgrade your process from "vibe coding" to
+"AI-assisted software development."
 
-Also, the sentence that says “ask any questions you may have before you get
-started” is a great way for the agent to clarify anything that it doesn’t
-understand instead of just making up the answers as it goes. It’s also useful to
+Also, the sentence that says "ask any questions you may have before you get
+started" is a great way for the agent to clarify anything that it doesn't
+understand instead of just making up the answers as it goes. It's also useful to
 help you to decide on details you might not otherwise have considered.
 
 ### Code
@@ -118,7 +118,7 @@ Read the @tasks.md file and implement the first milestone.
 ```
 
 You can watch the coding agent at work, jumping in to correct it as it works, or
-just let it go. Either way, when it’s done, it’s time to check its work.
+just let it go. Either way, when it's done, it's time to check its work.
 
 ### Validate
 
@@ -140,7 +140,7 @@ back to the coding agent, iterating between it coding and your validation until
 you get to a good place from a functional point of view.
 
 Now take another pass through validation from an architectural principles point
-of view, spinning up a new agent to check the code. By clearing out the agent’s
+of view, spinning up a new agent to check the code. By clearing out the agent's
 context, you remove the biases the original agent gathered choosing what code to
 write in the first place. To ground it on just the code changes the agent has
 just made, use a prompt like this:

@@ -12,7 +12,7 @@ next:
 ---
 
 
-When you’re writing programs against an LLM, you want to provide unambiguous
+When you're writing programs against an LLM, you want to provide unambiguous
 input and get unambiguous output.
 
 ### Structured input
@@ -130,7 +130,7 @@ The JSON schema is as follows: ${jsonEncode(_crosswordSchema.toJson())}
 '''
 ```
 
-Now you can parse the model’s text response as JSON:
+Now you can parse the model's text response as JSON:
 
 ```dart
 final response = await _crosswordModel.generateContent(content);

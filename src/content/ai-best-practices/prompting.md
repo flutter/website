@@ -12,29 +12,29 @@ next:
 ---
 
 
-Assuming you’ve configured your Flutter app with the Firebase project and
+Assuming you've configured your Flutter app with the Firebase project and
 configuration you need to use the Firebase AI Logic SDK (which you can learn
-about in [the README][crossword-readme]), you’re all set to start using
+about in [the README][crossword-readme]), you're all set to start using
 generative AI. Generative AI is the branch of Machine Learning (ML) that uses a
 neural network trained on a large set of human language to produce a Large
 Language Model (LLM). At this point, the best models (like Google Gemini) are
 trained on what is essentially the entire internet.
 
 At that scale, a model trained with that much data has created models that can
-interpret human language and produce useful human language outputs. By now I’m
-sure you’ve used [the Gemini chat app][gemini-app] (or ChatGPT or Claude or
+interpret human language and produce useful human language outputs. By now I'm
+sure you've used [the Gemini chat app][gemini-app] (or ChatGPT or Claude or
 other chat apps), so you know that if you talk to an LLM using vague language,
-you’re likely to get vague, often incorrect, results. If you want to get good
-results, you’ll have to use good prompts.
+you're likely to get vague, often incorrect, results. If you want to get good
+results, you'll have to use good prompts.
 
 ### Prompt construction
 
 A prompt is the input you provide to an LLM to get the output you want. It will
-include text as well zero or more files, like images or PDF files. If you’re
+include text as well zero or more files, like images or PDF files. If you're
 building chat into your app, then the user will be entering the prompts (and
 [the Flutter AI Toolkit][ai-toolkit] is useful for building the chat UI). If
-you’re using an LLM to implement the features of your app, like parsing an image
-for crossword puzzle data, then you’re going to be building the prompts
+you're using an LLM to implement the features of your app, like parsing an image
+for crossword puzzle data, then you're going to be building the prompts
 yourself. How you build them matters.
 
 As an example, in building the Crossword Companion, the original clue solving prompt looked like this:
@@ -51,10 +51,10 @@ ${_getGridStateAsString(grid)}
 ${clue.number} ${clue.direction == ClueDirection.across ? 'Across' : 'Down'}: ${clue.text}
 ```
 
-This prompt isn’t all bad – it has some useful pieces:
+This prompt isn't all bad – it has some useful pieces:
 
-- **Persona:** the phrase “You are a crossword puzzle solver” narrows the
-  model’s focus  
+- **Persona:** the phrase "You are a crossword puzzle solver" narrows the
+  model's focus  
 - **Context:** the current state of the puzzle  
 - **Query:** asking for a solution to a clue  
 - **Format:** provide the output in JSON so the result could be parsed
@@ -86,7 +86,7 @@ Return your answer and confidence score in the required JSON format.
 This prompt asks to solve the clue, provides the important context, and
 specifies the output format. Instead of handing in the entire state of the
 two-dimensional grid, the input was narrowed to the length requirement and a
-pattern, such as “_ R _ Y”. These simplifications produce high quality results
+pattern, such as "_ R _ Y". These simplifications produce high quality results
 from Flash that come back quickly enough to make it [fun to
 watch][crossword-demo].  
 <img
@@ -99,10 +99,10 @@ with AI-generated answers and confidence scores">
 The prompt used to solve the clues is not the only prompt the model sees. It
 also has the system instruction (also known as the system message or the system
 prompt) which is set as part of model instance creation. Think of the system
-instruction as “this is what you do” while the individual prompts are “now do
-this.”
+instruction as "this is what you do" while the individual prompts are "now do
+this."
 
-Here is the partial system instruction for the clue solver model (you’ll see the
+Here is the partial system instruction for the clue solver model (you'll see the
 rest later):
 
 ```dart
@@ -141,7 +141,7 @@ created dynamically based on data.
 
 Each clue solver prompt is created using the text from the clue, the target
 length of the answer and the pattern so far given previously solved clues, such
-as “_R_Y”:
+as "_R_Y":
 
 ```dart
 String getSolverPrompt(Clue clue, int length, String pattern) =>
