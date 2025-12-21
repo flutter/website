@@ -2,13 +2,13 @@
 title: Set up and test drive Flutter
 shortTitle: Quick start
 description: >-
-  Set up Flutter on your device with a OSS-based editor, such as VS Code, and
+  Set up Flutter on your device with a Code OSS-based editor, such as VS Code, and
   get started developing your first multi-platform app with Flutter!
 showBanner: false
 sitemap: false
 ---
 
-Learn how to use any OSS-based editor, such as VS Code,
+Learn how to use any Code OSS-based editor, such as VS Code,
 to set up your Flutter development environment and
 test drive Flutter's developer experience.
 
