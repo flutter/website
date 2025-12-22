@@ -18,8 +18,8 @@ You must migrate from `kotlin-android` to built-in Kotlin.
 Second, AGP 9+ will only use the new AGP DSL interfaces.
 This means any old DSL types will not be properly read. 
 The Flutter team is working on migrating old DSL types 
-to use the new DSL. In the meantime, you can set a gradle property flag 
-to use the old DSL.
+to use the new DSL: [Issue #180137][]. In the meantime, 
+you can set a gradle property flag to use the old DSL.
 
 In a future Flutter release, support will be added for applying AGP 9+. 
 For now, all projects must be migrated manually.
@@ -135,12 +135,13 @@ launches on a connected Android device or emulator.
 
 ## Timeline
 
-In stable release: TBD
+In stable release: TBD (for more details, see issue [Issue #179914][])
 
 ## References
 
 Relevant issue:
 [Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
+[Issue #180137][]: Migrate from old to new AGP DSL
 
 The Gradle build files in your app vary based on the Flutter version 
 used when your app was created. 
@@ -150,4 +151,6 @@ in your app's directory.
 
 [AGP block]: {{site.android-dev}}/build/releases/gradle-plugin
 
+[Issue #179914]: {{site.github}}/flutter/flutter/issues/179914
 [Issue #175688]: {{site.github}}/flutter/flutter/issues/175688
+[Issue #180137]: {{site.github}}/flutter/flutter/issues/180137
