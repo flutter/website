@@ -59,7 +59,7 @@ Run the server with the `dart mcp-server` command,
 which must be configured in your preferred client.
 
 This section provides instructions for setting up the
-Dart and Flutter MCP server with popular tools like Firebase Studio,
+Dart and Flutter MCP server with popular tools like Antigravity,
 Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
 ### Antigravity
