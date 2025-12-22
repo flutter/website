@@ -197,6 +197,17 @@ on the [Flutter contributors Discord][]!
 
 [Flutter contributors Discord]: https://github.com/flutter/flutter/blob/main/docs/contributing/Chat.md
 
+### Check links
+
+If you've made changes to the content and you'd like to make sure the site
+builds and that the links resolve properly, then run the following command:
+
+# build the site and check links
+dart run dash_site build && dart run dash_site check-link-references
+If this script reports any errors or warnings, then address those issues and
+rerun the command.
+
+
 ### Refresh code excerpts
 
 A build that fails with the error
