@@ -1,6 +1,5 @@
 - header: Get started
 
-
 - title: Set up Flutter
   permalink: /get-started
   hiddenChildren: true
@@ -582,8 +581,6 @@
           permalink: /platform-integration/android/splash-screen
         - title: Add predictive back
           permalink: /platform-integration/android/predictive-back
-        - title: Bind to native code
-          permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Calling JetPack APIs
@@ -611,8 +608,6 @@
           permalink: /platform-integration/ios/ios-app-clip
         - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: Bind to native code
-          permalink: /platform-integration/ios/c-interop
         - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
         - title: Enable debugging on iOS
@@ -633,8 +628,6 @@
           permalink: /platform-integration/macos/setup
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
-        - title: Bind to native code
-          permalink: /platform-integration/macos/c-interop
         - title: Host a native macOS view
           permalink: /platform-integration/macos/platform-views
     - title: Web
