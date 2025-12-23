@@ -571,7 +571,7 @@
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
     - title: Bind to native code
-      permalink: /platform-integration/c-interop
+      permalink: /platform-integration/bind-native-code
     - title: Android
       permalink: /platform-integration/android
       children:
