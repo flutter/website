@@ -8,8 +8,8 @@ for [_foreign function interface_][FFI]. Other terms for similar functionality
 include _native interface_ and _language bindings._
 
 Since Flutter 3.38, the recommended way to bind to native code is to use the
-`flutter create --template=package_ffi` command. This template uses [build
-hooks](https://dart.dev/tools/hooks) to configure the native build in a
+`flutter create --template=package_ffi` command. This template uses
+[build hooks][] to configure the native build in a
 `build.dart` script, and no longer requires OS-specific build files. This
 approach works for both Flutter and Dart standalone projects.
 
@@ -20,6 +20,7 @@ documentation:
 - [iOS](/platform-integration/ios/c-interop)
 - [macOS](/platform-integration/macos/c-interop)
 
+[build hooks]: https://dart.dev/tools/hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
@@ -57,8 +58,7 @@ file. The function is marked to be exported so that it can be called from Dart.
 ## The build hook
 
 The native code is compiled and bundled with your app automatically. This is
-done by the `hook/build.dart` script, which is a [build
-hook](https://dart.dev/tools/hooks).
+done by the `hook/build.dart` script, which is a [build hook][build hooks].
 
 This means you no longer need to write OS-specific build files (like
 `CMakeLists.txt` for Linux/Windows, `.podspec` for iOS/macOS, or `build.gradle`
