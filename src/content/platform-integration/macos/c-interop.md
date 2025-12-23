@@ -7,7 +7,7 @@ description: "To use C code in your Flutter program, use the dart:ffi library."
 This page documents a legacy approach to C interop on macOS.
 
 Since Flutter 3.38, we recommend using a `package_ffi` template with
-[build hooks](/platform-integration/c-interop) for C interop.
+[build hooks](/platform-integration/bind-native-code) for C interop.
 
 However, the legacy FFI plugin template (`plugin_ffi`) documented here is
 still useful if you need to:
