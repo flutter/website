@@ -55,7 +55,7 @@ Packages can contain more than one kind of content:
 : A specialized Dart package that enables calling native code using `dart:ffi`.
   These packages work in Dart standalone and don't require OS-specific build files.
   They are created with the `flutter create --template=package_ffi` command (see
-  [Create an FFI package](/platform-integration/c-interop)).
+  [Create an FFI package][bind-native]).
   This is the recommended approach to build and bundle native code since Flutter 3.38.
 
 **FFI plugin packages (legacy)**
@@ -725,7 +725,7 @@ This section documents a legacy approach for FFI plugins.
 
 Since Flutter 3.38, the recommended way for using FFI is to use the
 `flutter create --template=package_ffi` command, which uses
-[build hooks](/platform-integration/c-interop).
+[build hooks][bind-native].
 
 The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
 are still useful for some situations:
@@ -1087,6 +1087,7 @@ file, like any other Dart package.
 PENDING
 {% endcomment %}
 
+[bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus
