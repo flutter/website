@@ -105,7 +105,7 @@ an existing project.
         as your `ShareExtension` target.
         For example: `platform :ios, '16.0'`.
 
-    *   Add the following code to the end of the file:
+    *   Add the following code to the end of the file. If you used a different name for your extension target, replace `'ShareExtension'` with your target's name:
 
         ```ruby
         target 'ShareExtension' do
