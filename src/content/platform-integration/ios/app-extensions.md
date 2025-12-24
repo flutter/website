@@ -97,6 +97,33 @@ an existing project.
         dropdown value to match the one you have on
         **ShareExtension** > **General** tab.
 
+1.  Keep the `Podfile` in sync with the new target.
+
+    *   Open `ios/Podfile`.
+
+    *   Ensure that the deployment target is set to the same version
+        as your `ShareExtension` target.
+        For example: `platform :ios, '16.0'`.
+
+    *   Add the following code to the end of the file:
+
+        ```ruby
+        target 'ShareExtension' do
+          use_frameworks!
+          use_modular_headers!
+
+          flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+        end
+        ```
+
+1.  In the console, install the new pods:
+
+    ```console
+    $ cd ios
+    $ pod install
+    $ cd ..
+    ```
+
 1.  In the console, run the following command to rebuild your
     iOS app:
 
