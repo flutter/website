@@ -78,7 +78,7 @@ For example:
 <Tabs key="android-material-dependency">
 <Tab name="Kotlin">
 
-```groovy
+```kotlin
 dependencies {
     // ...
     implementation("com.google.android.material:material:<version>")
