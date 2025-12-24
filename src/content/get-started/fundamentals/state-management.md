@@ -157,8 +157,8 @@ Column(
 
 Passing the shared data for your app through widget constructors
 makes it clear to anyone reading the code that there are shared dependencies.
-This is a common design pattern called _dependency injection_
-and many frameworks take advantage of it or provide tools to make it easier.
+However, creating a chain of widgets that only pass data down to their children
+is often referred to as _prop drilling_.
 
 ### Using InheritedWidget
 
