@@ -31,6 +31,14 @@ To install the latest version of the following IDEs, follow their instructions:
 [IntelliJ IDEA Community]: https://www.jetbrains.com/idea/download/
 [IntelliJ IDEA Ultimate]: https://www.jetbrains.com/idea/download/
 
+
+::note
+You still need to install the **Flutter SDK** even if the flutter plugin installed in **Android Studio**
+
+* Follow this – [tutorial]({{site.android-dev}}/studio/install) to install the Flutter SDK 
+
+[tutorial]: {{site.android-dev}}/studio/install
+
 ### Install the Flutter plugin {: #install-plugin}
 
 <Tabs key="dev-os">
@@ -121,9 +129,9 @@ You should be prompted in the IDE when an update is available.
 
 To check for updates manually:
 
- 1. Open preferences (**Android Studio > Check for Updates** on macOS,
-    **Help > Check for Updates** on Linux).
- 1. If `dart` or `flutter` are listed, update them.
+1. Open preferences (**Android Studio > Check for Updates** on macOS,
+   **Help > Check for Updates** on Linux).
+1. If `dart` or `flutter` are listed, update them.
 
 ## Creating projects
 
@@ -136,26 +144,26 @@ differs between Android Studio and IntelliJ.
 
 **In Android Studio:**
 
- 1. In the IDE, click **New Flutter Project** from the **Welcome** window or
-    **File > New > New Flutter Project** from the main IDE window.
- 1. Specify the **Flutter SDK path** and click **Next**.
- 1. Enter your desired **Project name**,
-    **Description**, and **Project location**.
- 1. If you might publish this app,
-    [set the company domain](#set-the-company-domain).
- 1. Click **Finish**.
+1. In the IDE, click **New Flutter Project** from the **Welcome** window or
+   **File > New > New Flutter Project** from the main IDE window.
+1. Specify the **Flutter SDK path** and click **Next**.
+1. Enter your desired **Project name**,
+   **Description**, and **Project location**.
+1. If you might publish this app,
+   [set the company domain](#set-the-company-domain).
+1. Click **Finish**.
 
 **In IntelliJ:**
 
- 1. In the IDE, click **New Project** from the **Welcome** window or
-    **File > New > Project** from the main IDE window.
- 1. Select **Flutter** from the **Generators** list in the left panel
- 1. Specify the **Flutter SDK path** and click **Next**.
- 1. Enter your desired **Project name**,
-    **Description**, and **Project location**.
- 1. If you might publish this app,
-    [set the company domain](#set-the-company-domain).
- 1. Click **Finish**.
+1. In the IDE, click **New Project** from the **Welcome** window or
+   **File > New > Project** from the main IDE window.
+1. Select **Flutter** from the **Generators** list in the left panel
+1. Specify the **Flutter SDK path** and click **Next**.
+1. Enter your desired **Project name**,
+   **Description**, and **Project location**.
+1. If you might publish this app,
+   [set the company domain](#set-the-company-domain).
+1. Click **Finish**.
 
 #### Set the company domain
 
@@ -171,16 +179,16 @@ is released. Your organization name should be unique.
 
 To open an existing Flutter project:
 
- 1. In the IDE, click **Open** from the **Welcome** window, or
-    **File > Open** from the main IDE window.
- 1. Browse to the directory holding your existing
-    Flutter source code files.
- 1. Click **Open**.
+1. In the IDE, click **Open** from the **Welcome** window, or
+   **File > Open** from the main IDE window.
+1. Browse to the directory holding your existing
+   Flutter source code files.
+1. Click **Open**.
 
-    :::important
-    Do *not* use the **New > Project from existing sources**
-    option for Flutter projects.
-    :::
+   :::important
+   Do *not* use the **New > Project from existing sources**
+   option for Flutter projects.
+   :::
 
 
 ## Editing code and viewing issues
@@ -231,21 +239,21 @@ Android devices or simulators.
 You need to connect a device, or start a simulator, to proceed.
 :::
 
- 1. Locate the **Flutter Target Selector** drop-down button.
-    This shows a list of available targets.
- 2. Select the target you want your app to be started on.
-    When you connect devices, or start simulators,
-    additional entries appear.
+1. Locate the **Flutter Target Selector** drop-down button.
+   This shows a list of available targets.
+2. Select the target you want your app to be started on.
+   When you connect devices, or start simulators,
+   additional entries appear.
 
 ### Run app without breakpoints
 
- 1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
-    The bottom **Run** pane shows logs output.
+1. Click the **Play icon** in the toolbar, or invoke **Run > Run**.
+   The bottom **Run** pane shows logs output.
 
 ### Run app with breakpoints
 
- 1. If desired, set breakpoints in your source code.
- 1. Click the **Debug icon** in the toolbar, or invoke **Run > Debug**.
+1. If desired, set breakpoints in your source code.
+1. Click the **Debug icon** in the toolbar, or invoke **Run > Debug**.
     * The bottom **Debugger** pane shows Stack Frames and Variables.
     * The bottom **Console** pane shows detailed logs output.
     * Debugging is based on a default launch configuration.
@@ -459,18 +467,18 @@ to fix it.
 To enable editing of Android code in IntelliJ IDEA, you need to configure the
 location of the Android SDK:
 
- 1. In **Preferences > Plugins**, enable **Android Support** if you
-    haven't already.
- 1. Right-click the **android** folder in the Project view, and select **Open
-    Module Settings**.
- 1. In the **Sources** tab, locate the **Language level** field, and
-    select level 8 or later.
- 1. In the **Dependencies** tab, locate the **Module SDK** field,
-    and select an Android SDK. If no SDK is listed, click **New**
-    and specify the location of the Android SDK.
-    Make sure to select an Android SDK matching the one used by
-    Flutter (as reported by `flutter doctor`).
- 1. Click **OK**.
+1. In **Preferences > Plugins**, enable **Android Support** if you
+   haven't already.
+1. Right-click the **android** folder in the Project view, and select **Open
+   Module Settings**.
+1. In the **Sources** tab, locate the **Language level** field, and
+   select level 8 or later.
+1. In the **Dependencies** tab, locate the **Module SDK** field,
+   and select an Android SDK. If no SDK is listed, click **New**
+   and specify the location of the Android SDK.
+   Make sure to select an Android SDK matching the one used by
+   Flutter (as reported by `flutter doctor`).
+1. Click **OK**.
 
 ## Flutter Property Editor {: #property-editor}
 
