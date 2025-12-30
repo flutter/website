@@ -1733,6 +1733,13 @@
     - 'Scrolling'
   subcategories: []
   link: https://api.flutter.dev/flutter/material/ReorderableListView-class.html
+- name: RepeatingAnimationBuilder
+  description: >-
+    A widget that animates an Animatable value and repeats indefinitely.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/RepeatingAnimationBuilder-class.html
 - name: RichText
   description: >-
     The RichText widget displays text that uses multiple different styles. The
