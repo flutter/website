@@ -1740,6 +1740,15 @@
     - 'Animation and motion'
   subcategories: []
   link: https://api.flutter.dev/flutter/widgets/RepeatingAnimationBuilder-class.html
+  vector: >-
+    <svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100'
+    fill='#3949ab'/><rect x='35' y='35' width='30' height='30'
+    fill='#ffffff'/><rect x='37.5' y='37.5' width='25' height='25'
+    fill='#3b75ad'/><path d="M20 45 L15 50 L20 55" stroke="#ffffff"
+    fill="#3949ab" stroke-linecap="round" /><path d="M25 50 L15 50"
+    stroke="#ffffff" stroke-linecap="round" /><path d="M80 45 L85 50 L80 55"
+    stroke="#ffffff" fill="#3949ab" stroke-linecap="round" /><path
+    d="M75 50 L85 50" stroke="#ffffff" stroke-linecap="round" /></svg>
 - name: RichText
   description: >-
     The RichText widget displays text that uses multiple different styles. The
