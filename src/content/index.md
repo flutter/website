@@ -37,6 +37,8 @@ see [What's new][].**
 Ready to build beautiful, multiplatform apps from a single codebase?
 This video walks you through the fundamentals of Flutter and shows you how to get started.
 
+<YouTubeEmbed id="W4JWeQolJsU" title="Build and ship amazing multiplatform iOS and Android apps with one codebase" fullWidth></YouTubeEmbed>
+
 Once you've [Set up Flutter][],
 you should follow the
 [Write your first Flutter app][] codelab
