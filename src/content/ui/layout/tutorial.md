@@ -412,7 +412,6 @@ class ButtonWithText extends StatelessWidget {
       // ···
     );
   }
-
 }
 ```
 
