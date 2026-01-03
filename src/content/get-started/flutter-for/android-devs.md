@@ -1355,7 +1355,7 @@ user interfaces for larger screens, and help scale your application UI.
 In Flutter, both of these concepts fall under the umbrella of `Widget`s.
 
 To learn more about the UI for building Activities and Fragments,
-see the community-contributed Medium article,
+see the community-contributed article,
 [Flutter for Android Developers: How to design Activity UI in Flutter][].
 
 As mentioned in the [Intents][] section,
@@ -2380,7 +2380,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [Firebase Messaging]: {{site.github}}/firebase/flutterfire/tree/master/packages/firebase_messaging
 [first party plugins]: {{site.pub}}/flutter/packages?q=firebase
 [Flutter for Android Developers: How to design LinearLayout in Flutter]: https://proandroiddev.com/flutter-for-android-developers-how-to-design-linearlayout-in-flutter-5d819c0ddf1a
-[Flutter for Android Developers: How to design Activity UI in Flutter]: https://blog.usejournal.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48
+[Flutter for Android Developers: How to design Activity UI in Flutter]: https://burhanrashid52.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter/
 [`geolocator`]: {{site.pub}}/packages/geolocator
 [`http` package]: {{site.pub}}/packages/http
 [`image_picker`]: {{site.pub}}/packages/image_picker
