@@ -56,7 +56,6 @@ The [`genui`][] package is built around the following main components:
 : Handles the processing of `A2uiMessage`s,
   manages the `DataModel`, and maintains the state of UI surfaces.
 
-
 ## How it works
 
 The `GenUiConversation` manages the interaction cycle:
