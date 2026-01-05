@@ -78,7 +78,7 @@ For example:
 <Tabs key="android-material-dependency">
 <Tab name="Kotlin">
 
-```groovy
+```kotlin
 dependencies {
     // ...
     implementation("com.google.android.material:material:<version>")
@@ -231,9 +231,9 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 + import java.util.Properties
 + import java.io.FileInputStream
 +
-plugins {
-   ...
-}
+  plugins {
+     ...
+  }
 +
 + val keystoreProperties = Properties()
 + val keystorePropertiesFile = rootProject.file("key.properties")
@@ -241,9 +241,9 @@ plugins {
 +     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 + }
 +
-android {
-   ...
-}
+  android {
+     ...
+  }
 ```
 
 </Tab>
@@ -253,9 +253,9 @@ android {
 + import java.util.Properties
 + import java.io.FileInputStream
 +
-plugins {
-   ...
-}
+  plugins {
+     ...
+  }
 +
 + def keystoreProperties = new Properties()
 + def keystorePropertiesFile = rootProject.file('key.properties')
@@ -263,9 +263,9 @@ plugins {
 +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 + }
 +
-android {
-   ...
-}
+  android {
+     ...
+  }
 ```
 
 </Tab>
