@@ -75,7 +75,7 @@ final class PageNavBar extends StatelessComponent {
           if (data.pageEntries.isEmpty) ...[
             a(
               href: '#site-content-title',
-              id: 'return-to-top',
+              classes: 'pagenav-title',
               [
                 const MaterialIcon('vertical_align_top'),
                 span([.text(currentTitle)]),
@@ -92,6 +92,24 @@ final class PageNavBar extends StatelessComponent {
                 [_TocContents(data.toc!)],
               ),
           ] else ...[
+            if (data case PageNavigationData(
+              :final parentTitle?,
+              :final parentUrl?,
+            )) ...[
+              a(
+                href: parentUrl,
+                classes: 'pagenav-title',
+                [
+                  const MaterialIcon('school'),
+                  span([.text(parentTitle)]),
+                ],
+              ),
+              const div(
+                classes: 'dropdown-divider',
+                attributes: {'aria-hidden': 'true', 'role': 'separator'},
+                [],
+              ),
+            ],
             for (final page in data.pageEntries) ...[
               if (!page.isDivider) ...[
                 a(
