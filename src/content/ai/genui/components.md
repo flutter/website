@@ -23,13 +23,15 @@ The [`genui`][] package is built around the following main components:
 
 `GenUiConversation`
 : The primary facade and entry point for the package.
-  It includes the `GenUiManager` and `ContentGenerator` classes,
+  It includes the `A2uiMessageProcessor` and `ContentGenerator` classes,
   manages the conversation history,
   and orchestrates the entire generative UI process.
 
 `Catalog`
 : A collection of `CatalogItem` objects that defines
   the set of widgets that the AI is allowed to use.
+  The `A2uiMessageProcessor` supports multiple catalogs,
+  allowing you to organize your widgets into logical groups.
   Each `CatalogItem` specifies a widget's name (for the AI
   to reference), a data schema for its properties, and a
   builder function to render the Flutter widget.
@@ -49,6 +51,10 @@ The [`genui`][] package is built around the following main components:
   (through the `ContentGenerator`) to the UI,
   instructing it to perform actions like `beginRendering`,
   `surfaceUpdate`, `dataModelUpdate`, or `deleteSurface`.
+
+`A2uiMessageProcessor`
+: Handles the processing of `A2uiMessage`s,
+  manages the `DataModel`, and maintains the state of UI surfaces.
 
 ## How it works
 
@@ -77,12 +83,12 @@ The `GenUiConversation` manages the interaction cycle:
  5. **UI state update**
 
     `GenUiConversation` listens to these streams.
-    `A2uiMessages` are passed to `GenUiManager.handleMessage()`,
+    `A2uiMessages` are passed to `A2uiMessageProcessor.handleMessage()`,
     which updates the UI state and `DataModel`.
 
  6. **UI rendering**
 
-    The `GenUiManager` broadcasts an update,
+    The `A2uiMessageProcessor` broadcasts an update,
     and any `GenUiSurface` widgets listening for that surface ID will rebuild.
     Widgets are bound to the `DataModel`, so they update automatically
     when their data changes.
@@ -98,7 +104,7 @@ The `GenUiConversation` manages the interaction cycle:
     (for example, by typing in a text field). This interaction directly
     updates the `DataModel`. If the interaction is an action (like a button click),
     the `GenUiSurface` captures the event and forwards it to the
-    `GenUiConversation`'s `GenUiManager`, which automatically creates
+    `GenUiConversation`'s `A2uiMessageProcessor`, which automatically creates
     a new `UserMessage` containing the current state of the data model
     and restarts the cycle.
 
