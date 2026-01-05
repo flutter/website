@@ -231,9 +231,9 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 + import java.util.Properties
 + import java.io.FileInputStream
 +
-  plugins {
-     ...
-  }
+plugins {
+   ...
+}
 +
 + val keystoreProperties = Properties()
 + val keystorePropertiesFile = rootProject.file("key.properties")
