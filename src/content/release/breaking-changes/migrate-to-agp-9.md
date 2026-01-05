@@ -87,11 +87,11 @@ android {
 Replace the `kotlinOptions` block with the following:
 
 ```kotlin diff
-+ kotlin {
-    + compilerOptions {
-        + jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    + kotlin {
+        + compilerOptions {
+            + jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+        + }
     + }
-+ }
 ```
 
 Here is how the file will likely end up:
