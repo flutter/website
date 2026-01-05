@@ -70,16 +70,16 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 ```kotlin diff
 plugins {
     id("com.android.application")
-    -id("kotlin-android")
+    - id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
     ...
-    -kotlinOptions {
-        -jvmTarget = JavaVersion.VERSION_17.toString()
-    -}
+    - kotlinOptions {
+        - jvmTarget = JavaVersion.VERSION_17.toString()
+    - }
     ...
 }
 ```
@@ -87,11 +87,11 @@ android {
 Replace the `kotlinOptions` block with the following:
 
 ```kotlin diff
-+kotlin {
-    +compilerOptions {
-        +jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-    +}
-+}
++ kotlin {
+    + compilerOptions {
+        + jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    + }
++ }
 ```
 
 Here is how the file will likely end up:
