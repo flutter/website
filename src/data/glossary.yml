@@ -169,6 +169,26 @@
     - "scrolling"
     - "ui"
 
+- term: "Viewport"
+  short_description: |-
+    A widget that displays a subset of its children based on the current scroll offset.
+  long_description: |-
+    A viewport is the visual component of the scrolling machinery.
+    It displays a subset of its children (usually slivers)
+    based on the current scroll offset. 
+    It is often described as being "bigger on the inside"
+    because it can contain more content than is visible on the screen.
+  related_links:
+    - text: "Viewport class"
+      link: "https://api.flutter.dev/flutter/widgets/Viewport-class.html"
+      type: "api"
+    - text: "Slivers"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+  labels:
+    - "scrolling"
+    - "ui"
+
 - term: "Widget"
   short_description: |-
     The basic building block of a Flutter user interface.
