@@ -162,7 +162,6 @@
     - "state management"
     - "architecture"
 
-
 - term: "Sliver"
   short_description: |-
     A customizable portion of a scrollable area.
