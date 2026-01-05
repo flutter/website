@@ -263,9 +263,9 @@ plugins {
 +     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 + }
 +
-  android {
-     ...
-  }
+android {
+   ...
+}
 ```
 
 </Tab>
