@@ -35,7 +35,7 @@ see [What's new][].**
 ## New to Flutter?
 
 Ready to build beautiful, multiplatform apps from a single codebase?
-Visit the [learn Flutter](/get-started/learn-flutter) page.
+First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
 
 ### Docs
 
