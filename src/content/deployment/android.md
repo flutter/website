@@ -253,9 +253,9 @@ plugins {
 + import java.util.Properties
 + import java.io.FileInputStream
 +
-  plugins {
-     ...
-  }
+plugins {
+   ...
+}
 +
 + def keystoreProperties = new Properties()
 + def keystorePropertiesFile = rootProject.file('key.properties')
