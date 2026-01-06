@@ -112,7 +112,7 @@
       max-width: 24rem;
     }
 
-    a#return-to-top {
+    .pagenav-title {
       margin: 0.4rem 0;
       padding: 0.1rem;
       font-size: 1rem;
@@ -168,16 +168,16 @@
       ~nav {
         padding: 0;
       }
+
+      ~.dropdown-divider {
+        margin-top: 0.6rem;
+      }
     }
 
     .page-divider {
       padding: 0.25rem;
       font-weight: 600;
       color: var(--site-base-fgColor-alt);
-    }
-
-    .dropdown-divider:has(~.page-link) {
-      margin-top: 0.6rem;
     }
   }
 
