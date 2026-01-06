@@ -5,8 +5,6 @@ breadcrumb: 2.54.0
 showToc: false
 ---
 
-# DevTools 2.54.0 release notes
-
 The 2.54.0 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
@@ -15,13 +13,14 @@ To learn more about DevTools, check out the
 ## General updates
 
 - Dropped connections to DTD will now automatically be retried to improve the
-  experience when your machine is resumed from sleep.
+  experience when your machine is resumed from sleep. -
   [#9587](https://github.com/flutter/devtools/pull/9587)
 
 ## Inspector updates
 
-- Added a warning banner that the legacy inspector will be removed in a future
-  release. - [#9572](https://github.com/flutter/devtools/pull/9572)
+- Added a warning banner that the legacy inspector
+  will be removed in a future release. -
+  [#9572](https://github.com/flutter/devtools/pull/9572)
 
 ## Memory updates
 
@@ -30,8 +29,8 @@ To learn more about DevTools, check out the
 
 ## Deep links tool updates
 
-- Added more informative dialog if Deep Links tool is unable to find build
-  options for the iOS or Android app. -
+- Added a more informative dialog if the Deep Links tool is
+  unable to find build options for the iOS or Android app. -
   [#9571](https://github.com/flutter/devtools/pull/9571)
 - Fixed null error when parsing universal link settings. -
   [#9581](https://github.com/flutter/devtools/pull/9581)
