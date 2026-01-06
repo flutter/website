@@ -43,6 +43,7 @@ class TutorialLayout extends DocLayout {
           'page': {
             'showBanner': false,
             'navigationCollectionTitle': model.title,
+            'navigationCollectionUrl': model.url,
             'navigationEntries': navigationEntries,
           },
         },
