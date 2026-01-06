@@ -19,7 +19,7 @@ Second, AGP 9+ will only use the new AGP DSL interfaces.
 This means any old DSL types will not be properly read. 
 The Flutter team is working on migrating old DSL types 
 to use the new DSL: [Issue #180137][]. In the meantime, 
-you can set a gradle property flag to use the old DSL.
+you can set a Gradle property flag to use the old DSL.
 
 In a future Flutter release, support will be added for applying AGP 9+. 
 For now, all projects must be migrated manually.
@@ -47,6 +47,7 @@ As an example, consider the `build.gradle.kts` file from
 a Flutter app created before this change:
 
 **Before**:
+
 ```kotlin
 plugins {
     id("com.android.application")
@@ -56,47 +57,49 @@ plugins {
 }
 
 android {
-    ...
+    // ...
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    ...
+    // ...
 }
-...
+
+// ...
 ```
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
 ```kotlin diff
-plugins {
-    id("com.android.application")
-    - id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
-}
-
-android {
-    ...
-    - kotlinOptions {
-        - jvmTarget = JavaVersion.VERSION_17.toString()
-    - }
-    ...
-}
+  plugins {
+      id("com.android.application")
+-     id("kotlin-android")
+      // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+      id("dev.flutter.flutter-gradle-plugin")
+  }
+  
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
 ```
 
 Replace the `kotlinOptions` block with the following:
 
 ```kotlin diff
-    + kotlin {
-        + compilerOptions {
-            + jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        + }
-    + }
++ kotlin {
++     compilerOptions {
++         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
++     }
++ }
 ```
 
 Here is how the file will likely end up:
 
 **After**:
+
 ```kotlin
 plugins {
     id("com.android.application")
@@ -105,26 +108,27 @@ plugins {
 }
 
 android {
-    ...
+    // ...
     kotlin {
         compilerOptions {
             jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
         }
     }
-    ...
+    // ...
 }
-...
+
+// ...
 ```
 
 ### Set the Gradle property flag
 
-Next, to use the old AGP DSL, set the gradle property flag
+Next, to use the old AGP DSL, set the Gradle property flag
 `android.newDsl` to `false` in 
 your app's `<app-src>/android/gradle.properties` file.
 
 ```properties diff
-org.gradle.jvmargs=-Xmx8G -XX:MaxMetaspaceSize=4G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError
-android.useAndroidX=true
+  org.gradle.jvmargs=-Xmx8G -XX:MaxMetaspaceSize=4G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError
+  android.useAndroidX=true
 + android.newDsl=false
 ```
 
@@ -135,17 +139,18 @@ launches on a connected Android device or emulator.
 
 ## Timeline
 
-In stable release: TBD (for more details, see issue [Issue #179914][])
+In stable release: TBD (for more details, see [Issue #179914][])
 
 ## References
 
-Relevant issue:
-[Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
-[Issue #180137][]: Migrate from old to new AGP DSL
+Relevant issues:
+
+- [Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
+- [Issue #180137][]: Migrate from old to new AGP DSL
 
 The Gradle build files in your app vary based on the Flutter version 
 used when your app was created. 
-Consider staying up-to-date with the latest version 
+Consider staying up to date with the latest version 
 of the build files by periodically running `flutter upgrade` 
 in your app's directory.
 
