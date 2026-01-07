@@ -34,7 +34,7 @@
       { "source": "/ai-toolkit", "destination": "/ai/ai-toolkit", "type": 301 },
       { "source": "/ai-toolkit/:rest*", "destination": "/ai/ai-toolkit/:rest*", "type": 301 },
       { "source": "/ai/flutter-ext-for-gemini", "destination": "/ai/gemini-cli-extension", "type": 301 },
-      { "source": "/ai/best-practices/tool-calls-aka-function-calls", "destination": "/ai/tool-calls", "type": 301 },
+      { "source": "/ai/best-practices/tool-calls-aka-function-calls", "destination": "/ai/best-practices/tool-calls", "type": 301 },
       { "source": "/android-release", "destination": "/deployment/android", "type": 301 },
       { "source": "/animations", "destination": "/ui/animations", "type": 301 },
       { "source": "/animations/:rest*", "destination": "/ui/animations/:rest*", "type": 301 },

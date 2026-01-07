@@ -1,6 +1,6 @@
 ---
 title: Flutter AI best practices
-short-title: AI best practices
+shortTitle: AI best practices
 breadcrumb: Best practices
 description: >
   Learn best practices for building AI-powered Flutter apps using guardrails to 
