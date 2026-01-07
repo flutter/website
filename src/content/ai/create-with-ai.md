@@ -40,7 +40,7 @@ resources:
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
-[Flutter AI Toolkit]: /ai-toolkit
+[Flutter AI Toolkit]: /ai/ai-toolkit
 
 ## AI development tools
 
