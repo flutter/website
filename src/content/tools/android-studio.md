@@ -33,11 +33,9 @@ To install the latest version of the following IDEs, follow their instructions:
 
 
 ::note
-You still need to install the **Flutter SDK** even if the flutter plugin installed in **Android Studio**
+You still need to install the **Flutter SDK**; the Flutter plugin for **Android Studio** doesn't install it for you.
 
-* Follow this – [tutorial]({{site.android-dev}}/studio/install) to install the Flutter SDK 
-
-[tutorial]: {{site.android-dev}}/studio/install
+* To install the Flutter SDK, follow the [installation guide](/install).
 
 ### Install the Flutter plugin {: #install-plugin}
 
