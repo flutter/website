@@ -6,7 +6,7 @@
     Each native platform supported by Flutter has an _embedder_
     for platform-specific logic. The embedder is the bridge
     that coordinates with the underlying operating system.
-    It implements services such as input, accessibility,
+    It provides access to services like input, accessibility,
     message event loops, and more.
     The embedder also launches and manages the Flutter engine.
 
@@ -14,9 +14,8 @@
     Java and Kotlin for Android, Swift and Objective-C for iOS and macOS,
     and C++ for Windows and Linux.
 
-    Each embedder also exposes plugin APIs that enable
-    plugin packages add additional platform-specific
-    functionality to the app.
+    Each embedder enables plugin packages to add additional
+    platform-specific functionality to the app.
 
     The embedder is launched and managed by the runner app.
   related_links:
