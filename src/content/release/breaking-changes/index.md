@@ -46,7 +46,6 @@ They're sorted by release and listed in alphabetical order:
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
 
-
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
