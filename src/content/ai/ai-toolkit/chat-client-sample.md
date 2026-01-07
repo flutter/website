@@ -4,7 +4,7 @@ description: >
   Learn about the chat client sample included in the AI Toolkit.
 prev:
   title: Custom LLM providers
-  path: /ai-toolkit/custom-llm-providers
+  path: /ai/ai-toolkit/custom-llm-providers
 ---
 
 The AI Chat sample is meant to be a full-fledged chat app built using the

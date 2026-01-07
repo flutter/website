@@ -5,10 +5,10 @@ description: >
   parsable JSON data from an LLM.
 prev:
   title: Prompting
-  path: /ai-best-practices/prompting
+  path: /ai/best-practices/prompting
 next:
   title: Tool calls (aka function calls)
-  path: /ai-best-practices/tool-calls-aka-function-calls
+  path: /ai/best-practices/tool-calls
 ---
 
 
@@ -146,4 +146,3 @@ final cluesData = json['clues'] as Map<String, dynamic>;
 Reliable JSON output from the model is what makes it possible to integrate AI
 into your app. The data might or might not be correct, but it will be in a
 format your app can work with.
-

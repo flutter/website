@@ -1,11 +1,13 @@
 ---
 title: Flutter AI best practices
+shortTitle: AI best practices
+breadcrumb: Best practices
 description: >
   Learn best practices for building AI-powered Flutter apps using guardrails to 
   verify and correct AI-generated data.
 next:
   title: Prompting
-  path: /ai-best-practices/prompting
+  path: /ai/best-practices/prompting
 ---
 
 
@@ -55,7 +57,6 @@ That's important; bad data leads to bad results.
 So this write-up is not about the app in detail but rather about the best
 practices to use when you're building your own AI apps with Flutter. So let's
 get to it!
-
 
 
 [crossword-app]: {{site.github}}/flutter/demos/tree/main/crossword_companion
