@@ -30,15 +30,15 @@
 
 - term: "Frame"
   short_description: |-
-    A single image in a sequence of images that makes up an animation or
-    UI update.
+    A single image in a sequence of images that
+    makes up an animation or UI update.
   long_description: |-
     Flutter aims to produce 60 frames per second (fps),
-    or 120 fps on capable devices. This means the framework has
-    approximately 16ms (at 60 fps)
+    or 120 fps on capable devices.
+    This means the framework has approximately 16ms (at 60 fps)
     or 8ms (at 120 fps) to render each frame.
-    If the app takes longer than this to render a frame, the user may see
-    [jank](/resources/glossary#jank).
+    If the app takes longer than this to render a frame,
+    the user might see [jank](/resources/glossary#jank).
   related_links:
     - text: "Rendering performance"
       link: "/perf/rendering-performance"
