@@ -1,14 +1,15 @@
 ---
 title: Tool calls (aka function calls)
+shortTitle: Tool calls
 description: >
   Learn how to implement tool calling, manage agentic loops, and incorporate 
   human-in-the-loop interactions using the Firebase AI Logic SDK.
 prev:
   title: Structure & output
-  path: /ai-best-practices/structure-output
+  path: /ai/best-practices/structure-output
 next:
   title: Mode of interaction
-  path: /ai-best-practices/mode-of-interaction
+  path: /ai/best-practices/mode-of-interaction
 ---
 
 

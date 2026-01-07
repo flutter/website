@@ -1,5 +1,6 @@
 ---
 title: Dart and Flutter MCP server
+shortTitle: MCP server
 description: >
   Learn about the Dart and Flutter MCP server tool that
   exposes Dart and Flutter tools to compatible

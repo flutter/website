@@ -4,10 +4,10 @@ description: >
   How to integrate with other Flutter features.
 prev:
   title: User experience
-  path: /ai-toolkit/user-experience
+  path: /ai/ai-toolkit/user-experience
 next:
   title: Custom LLM providers
-  path: /ai-toolkit/custom-llm-providers
+  path: /ai/ai-toolkit/custom-llm-providers
 ---
 
 In addition to the features that are provided automatically by the

@@ -4,10 +4,10 @@ description: >
   How to integrate with other Flutter features.
 prev:
   title: Feature integration
-  path: /ai-toolkit/feature-integration
+  path: /ai/ai-toolkit/feature-integration
 next:
   title: Chat client sample
-  path: /ai-toolkit/chat-client-sample
+  path: /ai/ai-toolkit/chat-client-sample
 ---
 
 The protocol connecting an LLM and the `LlmChatView` is expressed in the
