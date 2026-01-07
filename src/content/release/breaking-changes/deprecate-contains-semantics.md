@@ -9,30 +9,30 @@ description: >
 
 ## Summary
 
-The `containsSemantics` matcher is deprecated and replaced by `isSemantics` 
-(for partial matching) and `matchesSemantics` (for exact matching) to clarify 
-intent and standardize matcher conventions.
+The `containsSemantics` partial matcher is deprecated and replaced by
+`isSemantics` to clarify intent and standardize matcher conventions.
 
-## Background
+## Context
 
-The `containsSemantics` matcher was ambiguous about whether it performed 
-partial or exact matching on semantics properties. To resolve this and align 
-with a new naming convention for matchers:
+The `contains` prefix for partial matchers, such as `containsSemantics`, has been 
+replaced with `is` to align with naming conventions:
 
-*   **Partial matchers** (like `isSemantics`) only match the properties you 
-    explicitly provide. Arguments not provided are ignored
-    (treated as wildcards).
-*   **Exact matchers** (like `matchesSemantics`) match all values. Arguments 
-    not provided are expected to match the default values of the object.
-
-This change codifies this convention and deprecates `containsSemantics` in 
-favor of more explicit options.
+* **Partial matchers** (e.g. `isSemantics`) match only the properties explicitly
+  provided. Any arguments not provided are ignored.
+* **Exact matchers** (e.g. `matchesSemantics`) verify all values. Any arguments 
+  not provided are expected to match the object's default values.
 
 ## Migration guide
 
-Replace `containsSemantics` with `isSemantics` for partial matching (most 
-common case), or `matchesSemantics` if you need to assert exact property 
-values (including defaults for omitted arguments).
+To automatically migrate your code, run the following command:
+
+```bash
+dart fix --apply
+```
+
+Alternatively, replace `containsSemantics` with `isSemantics` for partial
+matching (most common case), or `matchesSemantics` if you need to assert 
+exact property values (including defaults for omitted arguments).
 
 Code before migration:
 

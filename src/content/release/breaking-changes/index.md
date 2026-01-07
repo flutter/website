@@ -57,7 +57,6 @@ They're sorted by release and listed in alphabetical order:
 [Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
 
-
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
 
