@@ -65,6 +65,7 @@
       { "source": "/fastlane-cd", "destination": "/deployment/cd#fastlane", "type": 301 },
       { "source": "/flutter-for-:platform*", "destination": "/get-started/flutter-for/:platform*-devs", "type": 301 },
       { "source": "/formatting", "destination": "/tools/formatting", "type": 301 },
+      { "source": "/framework-devtool-a11y-support", "destination": "https://docs.google.com/document/d/1lR0QaojgeprwwAy8Ks57rCPKUQOCCRz7Zh3yybKLOsk/edit?usp=sharing", "type": 301 },
       { "source": "/gestures", "destination": "/ui/advanced/gestures", "type": 301 },
       { "source": "/glossary", "destination": "/resources/glossary", "type": 301 },
       { "source": "/glossary/:entry", "destination": "/resources/glossary#:entry", "type": 301 },
