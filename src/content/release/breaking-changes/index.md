@@ -40,7 +40,6 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
-* [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
@@ -49,7 +48,6 @@ They're sorted by release and listed in alphabetical order:
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
 [Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
