@@ -8,9 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Don't miss our
-  <a href="https://youtube.com/live/pGN8kq7QDgg" target="_blank" rel="noopener">December livestream</a>,
-  with updates on Flutter and live Q&A!
+  Even if you missed it, you can watch the recording of the
+  <a href="https://youtube.com/live/pGN8kq7QDgg" target="_blank" rel="noopener">December 17th livestream and Q&A!</a>
 
 branch: main
 repo:

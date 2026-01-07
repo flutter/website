@@ -1,6 +1,5 @@
 - header: Get started
 
-
 - title: Set up Flutter
   permalink: /get-started
   hiddenChildren: true
@@ -180,6 +179,22 @@
       permalink: /ai/create-with-ai
     - title: AI Rules
       permalink: /ai/ai-rules
+    - title: AI Best Practices
+      permalink: /ai-best-practices
+      expanded: false
+      children:
+        - title: Overview
+          permalink: /ai-best-practices
+        - title: Prompting
+          permalink: /ai-best-practices/prompting
+        - title: Structure & output
+          permalink: /ai-best-practices/structure-output
+        - title: Tool calls (aka function calls)
+          permalink: /ai-best-practices/tool-calls-aka-function-calls
+        - title: Mode of interaction
+          permalink: /ai-best-practices/mode-of-interaction
+        - title: Developer experience
+          permalink: /ai-best-practices/developer-experience
     - title: AI Toolkit
       permalink: /ai-toolkit
       expanded: false
@@ -571,6 +586,8 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
+    - title: Bind to native code
+      permalink: /platform-integration/bind-native-code
     - title: Android
       permalink: /platform-integration/android
       children:
@@ -580,8 +597,6 @@
           permalink: /platform-integration/android/splash-screen
         - title: Add predictive back
           permalink: /platform-integration/android/predictive-back
-        - title: Bind to native code
-          permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Calling JetPack APIs
@@ -609,8 +624,6 @@
           permalink: /platform-integration/ios/ios-app-clip
         - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: Bind to native code
-          permalink: /platform-integration/ios/c-interop
         - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
         - title: Enable debugging on iOS
@@ -631,8 +644,6 @@
           permalink: /platform-integration/macos/setup
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
-        - title: Bind to native code
-          permalink: /platform-integration/macos/c-interop
         - title: Host a native macOS view
           permalink: /platform-integration/macos/platform-views
     - title: Web

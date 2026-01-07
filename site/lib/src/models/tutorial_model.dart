@@ -7,16 +7,19 @@ import 'package:jaspr/jaspr.dart';
 class TutorialModel {
   const TutorialModel({
     required this.title,
+    required this.url,
     required this.units,
   });
 
   final String title;
+  final String url;
   final List<TutorialUnit> units;
 
   @decoder
   factory TutorialModel.fromMap(Map<Object?, Object?> json) {
     return TutorialModel(
       title: json['title'] as String,
+      url: json['url'] as String,
       units: (json['units'] as List<Object?>)
           .map((e) => TutorialUnit.fromMap(e as Map<Object?, Object?>))
           .toList(),
@@ -26,6 +29,7 @@ class TutorialModel {
   @encoder
   Map<Object?, Object?> toJson() => {
     'title': title,
+    'url': url,
     'units': units.map((e) => e.toJson()).toList(),
   };
 }

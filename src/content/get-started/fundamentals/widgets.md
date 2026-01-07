@@ -40,7 +40,6 @@ widget, as this trivial example shows:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 

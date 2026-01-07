@@ -356,6 +356,7 @@ class ButtonWithText extends StatelessWidget {
       ],
     );
   }
+}
 ```
 
 ### Position the buttons with a `Row` widget
@@ -411,7 +412,6 @@ class ButtonWithText extends StatelessWidget {
       // ···
     );
   }
-
 }
 ```
 

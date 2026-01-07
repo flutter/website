@@ -1267,7 +1267,7 @@
   categories:
     - 'Basics'
   subcategories: []
-  link: https://api.flutter.dev/flutter/material/FlutterLogo-class.html
+  link: https://api.flutter.dev/flutter/widgets/FlutterLogo-class.html
 - name: Form
   description: >-
     An optional container for grouping together multiple form field widgets

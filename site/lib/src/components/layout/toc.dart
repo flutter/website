@@ -20,12 +20,10 @@ final class DashTableOfContents extends StatelessComponent {
   final TocNavigationData data;
 
   @override
-  Component build(BuildContext _) {
-    return nav(id: 'toc-side', [
-      const OnThisPageButton(),
-      _TocContents(data),
-    ]);
-  }
+  Component build(BuildContext _) => nav(id: 'toc-side', [
+    const OnThisPageButton(),
+    _TocContents(data),
+  ]);
 }
 
 final class PageNavBar extends StatelessComponent {
@@ -54,7 +52,7 @@ final class PageNavBar extends StatelessComponent {
       if (page.isDivider) {
         currentDivider = page.title;
       } else {
-        currentLinkedPageNumber++;
+        currentLinkedPageNumber += 1;
       }
     }
 
@@ -75,23 +73,33 @@ final class PageNavBar extends StatelessComponent {
           if (data.pageEntries.isEmpty) ...[
             a(
               href: '#site-content-title',
-              id: 'return-to-top',
+              classes: 'pagenav-title',
               [
                 const MaterialIcon('vertical_align_top'),
                 span([.text(currentTitle)]),
               ],
             ),
-            const div(
-              classes: 'dropdown-divider',
-              attributes: {'aria-hidden': 'true', 'role': 'separator'},
-              [],
-            ),
-            if (data.toc != null)
+            const _DropdownDivider(),
+            if (data.toc case final tocData?)
               nav(
                 attributes: {'role': 'menu'},
-                [_TocContents(data.toc!)],
+                [_TocContents(tocData)],
               ),
           ] else ...[
+            if (data case PageNavigationData(
+              :final parentTitle?,
+              :final parentUrl?,
+            )) ...[
+              a(
+                href: parentUrl,
+                classes: 'pagenav-title',
+                [
+                  const MaterialIcon('school'),
+                  span([.text(parentTitle)]),
+                ],
+              ),
+              const _DropdownDivider(),
+            ],
             for (final page in data.pageEntries) ...[
               if (!page.isDivider) ...[
                 a(
@@ -108,18 +116,13 @@ final class PageNavBar extends StatelessComponent {
                     DashMarkdown(inline: true, content: page.title),
                   ],
                 ),
-                if (currentLinkedPage == page && data.toc != null)
+                if (data.toc case final tocData? when currentLinkedPage == page)
                   nav(
                     attributes: {'role': 'menu'},
-                    [_TocContents(data.toc!)],
+                    [_TocContents(tocData)],
                   ),
               ] else ...[
-                if (page != data.pageEntries.first)
-                  const div(
-                    classes: 'dropdown-divider',
-                    attributes: {'aria-hidden': 'true', 'role': 'separator'},
-                    [],
-                  ),
+                if (page != data.pageEntries.first) const _DropdownDivider(),
                 div(
                   classes: 'page-divider',
                   [.text(page.title)],
@@ -161,4 +164,15 @@ final class _TocContents extends StatelessComponent {
         ]),
     ];
   }
+}
+
+class _DropdownDivider extends StatelessComponent {
+  const _DropdownDivider();
+
+  @override
+  Component build(BuildContext _) => const div(
+    classes: 'dropdown-divider',
+    attributes: {'aria-hidden': 'true', 'role': 'separator'},
+    [],
+  );
 }

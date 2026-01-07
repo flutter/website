@@ -456,6 +456,7 @@
       { "source": "/go/flutter-plugin-languages", "destination": "https://docs.google.com/document/d/1Ok_mUPgmw8_l-ynLueEKtXm2Fs48lEVB0JqZd7M7uyA/edit", "type": 301 },
       { "source": "/go/flutter-plugins-repo-migration", "destination": "https://docs.google.com/document/d/1VihAgx1e-X_H8VRc9WmUv_7qqsi81eeHrrhwhHgwtjQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-skia-ios-font-problem", "destination": "https://docs.google.com/document/d/1UkAhEKUEWNUjfKlqoBjJnx8zXrqErIqidPYjd9FBwsg", "type": 301 },
+      { "source": "/go/flutter-style-updates", "destination": "https://docs.google.com/document/d/1Ao6RZmI4F8VSCpN-89o0Y6bZXhYb1-qgVGV5tALxm48", "type": 301 },
       { "source": "/go/flutter-support-multi-architecture", "destination": "https://docs.google.com/document/d/19tzWySgtgtTA99XQsjx5Pg0SFJeZKXyUlYavR0EXv8c/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-test-runner-simplification", "destination": "https://docs.google.com/document/d/1BBjSAQRJYC3OxgpPq6MxEiO8Dp5qGYaxYYenF17mS1I/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-tool-extension-api", "destination": "https://docs.google.com/document/d/12iXm23TP6e6qS1Ntx-i-azcBWByiUl_kWjRxRC2YTz8/edit?usp=sharing&resourcekey=0-pVl2giJzGAHqOYEaZagVow", "type": 301 },
