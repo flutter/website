@@ -1,6 +1,5 @@
 ---
 title: Resources
-shortTitle: Tools
 layout: toc
 showBreadcrumbs: false
 description: >-
