@@ -105,7 +105,9 @@ an existing project.
         as your `ShareExtension` target.
         For example: `platform :ios, '16.0'`.
 
-    *   Add the following code to the end of the file. If you used a different name for your extension target, replace `'ShareExtension'` with your target's name:
+    *   Add the following code to the end of the file.
+        If you used a different name for your extension target,
+        replace `'ShareExtension'` with your target's name:
 
         ```ruby
         target 'ShareExtension' do
@@ -124,8 +126,8 @@ an existing project.
     $ cd ..
     ```
 
-1.  In the console, run the following command to rebuild your
-    iOS app:
+1.  In the console, run the following command to
+    rebuild your iOS app:
 
     ```console
     $ flutter build ios --config-only

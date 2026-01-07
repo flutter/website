@@ -126,7 +126,6 @@ void main() {
 }
 ```
 
-
 Perform any _quick_ initialization (less than a frame or two, roughly 16-32ms)
 _before_ calling `runApp()`,
 though be aware that the widget tree hasn't been created yet.
