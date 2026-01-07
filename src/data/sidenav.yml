@@ -177,38 +177,36 @@
   children:
     - title: Create with AI
       permalink: /ai/create-with-ai
-    - title: AI Rules
+    - title: Rules for AI
       permalink: /ai/ai-rules
-    - title: AI Best Practices
-      permalink: /ai-best-practices
-      expanded: false
+    - title: AI best practices
+      permalink: /ai/best-practices
       children:
         - title: Overview
-          permalink: /ai-best-practices
+          permalink: /ai/best-practices
         - title: Prompting
-          permalink: /ai-best-practices/prompting
+          permalink: /ai/best-practices/prompting
         - title: Structure & output
-          permalink: /ai-best-practices/structure-output
+          permalink: /ai/best-practices/structure-output
         - title: Tool calls (aka function calls)
-          permalink: /ai-best-practices/tool-calls-aka-function-calls
+          permalink: /ai/best-practices/tool-calls
         - title: Mode of interaction
-          permalink: /ai-best-practices/mode-of-interaction
+          permalink: /ai/best-practices/mode-of-interaction
         - title: Developer experience
-          permalink: /ai-best-practices/developer-experience
+          permalink: /ai/best-practices/developer-experience
     - title: AI Toolkit
-      permalink: /ai-toolkit
-      expanded: false
+      permalink: /ai/ai-toolkit
       children:
         - title: Overview
-          permalink: /ai-toolkit
+          permalink: /ai/ai-toolkit
         - title: User experience
-          permalink: /ai-toolkit/user-experience
+          permalink: /ai/ai-toolkit/user-experience
         - title: Feature integration
-          permalink: /ai-toolkit/feature-integration
+          permalink: /ai/ai-toolkit/feature-integration
         - title: Custom LLM providers
-          permalink: /ai-toolkit/custom-llm-providers
+          permalink: /ai/ai-toolkit/custom-llm-providers
         - title: Chat client sample
-          permalink: /ai-toolkit/chat-client-sample
+          permalink: /ai/ai-toolkit/chat-client-sample
     - title: GenUI SDK for Flutter
       permalink: /ai/genui
       children:
@@ -223,7 +221,7 @@
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: Flutter extension for Gemini CLI
-      permalink: /ai/flutter-ext-for-gemini
+      permalink: /ai/gemini-cli-extension
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
@@ -920,13 +918,14 @@
   permalink: /resources
   icon: library_books
   children:
-    #    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Videos
       permalink: /resources/videos
     - title: Courses
       permalink: /resources/courses
+    - title: Glossary
+      permalink: /resources/glossary
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - title: Get support

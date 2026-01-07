@@ -1,11 +1,12 @@
 ---
-title: AI Toolkit
+title: Flutter AI Toolkit
+shortTitle: AI Toolkit
 description: >
   Learn how to add the AI Toolkit chatbot
   to your Flutter application.
 next:
   title: User experience
-  path: /ai-toolkit/user-experience
+  path: /ai/ai-toolkit/user-experience
 ---
 
 Hello and welcome to the Flutter AI Toolkit!

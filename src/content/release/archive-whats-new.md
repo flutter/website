@@ -191,7 +191,7 @@ This website release includes several important updates!
 [Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
-[Flutter AI Toolkit]: /ai-toolkit
+[Flutter AI Toolkit]: /ai/ai-toolkit
 [fwe]: /get-started/fundamentals
 [Interactive Media Ads]: {{site.pub-pkg}}/interactive_media_ads
 [jc]: /platform-integration/android/compose-activity

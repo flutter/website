@@ -5,10 +5,10 @@ description: >
   guardrails to manage nondeterministic AI behavior.
 prev:
   title: Tool calls (aka function calls)
-  path: /ai-best-practices/tool-calls-aka-function-calls
+  path: /ai/best-practices/tool-calls
 next:
   title: Developer experience
-  path: /ai-best-practices/developer-experience
+  path: /ai/best-practices/developer-experience
 ---
 
 
