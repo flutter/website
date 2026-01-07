@@ -40,7 +40,6 @@ They're sorted by release and listed in alphabetical order:
 * [Stop generating `AssetManifest.json`][]
 * [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
-* [Deprecate `TextField.canRequestFocus`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
