@@ -920,13 +920,14 @@
   permalink: /resources
   icon: library_books
   children:
-    #    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Videos
       permalink: /resources/videos
     - title: Courses
       permalink: /resources/courses
+    - title: Glossary
+      permalink: /resources/glossary
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - title: Get support
