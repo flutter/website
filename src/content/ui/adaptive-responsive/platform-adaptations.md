@@ -151,11 +151,16 @@ On **iOS**, scrolling past the edge of a scrollable
 
 ### Scrollbars
 
-On **Material-based platforms** (such as Android and web), scrollbars are typically visible during scrolling and may remain visible depending on the platform and theme.
+On **Material-based platforms** (such as Android and web),
+scrollbars are typically visible during scrolling
+and may remain visible depending on the platform and theme.
 
-On **Cupertino-based platforms** (such as iOS), scrollbars are more minimal and generally only appear briefly while the user is actively scrolling, fading out when interaction stops.
+On **Cupertino-based platforms** (such as iOS),
+scrollbars are more minimal and generally only appear briefly
+while the user is actively scrolling, fading out when interaction stops.
 
-This difference reflects each platform’s visual conventions and helps maintain a native look and feel across devices.
+This difference reflects each platform’s visual conventions
+and helps maintain a native look and feel across devices.
 
 ### Momentum
 
