@@ -157,9 +157,9 @@ Column(
 
 Passing the shared data for your app through widget constructors
 makes it clear to anyone reading the code that there are shared dependencies.
-However, creating a chain of widgets that only pass data down to their children
-is often referred to as _prop drilling_.
-
+Creating a chain of widgets that only pass data down to their children
+is often referred to as [_prop drilling_](/resources/glossary#prop-drilling).
+ 
 ### Using InheritedWidget
 
 Manually passing data down the widget tree can be verbose
