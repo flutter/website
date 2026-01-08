@@ -178,6 +178,24 @@
     - "performance"
     - "smooth rendering"
 
+- term: "Prop drilling"
+  short_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters.
+  long_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor pareameterss, usually to reach a deeper descendant.
+    This pattern can become verbose, which is
+    why other state management solutions
+    (like `InheritedWidget` or `Provider`) are often used.
+  related_links:
+    - text: "State management: Sharing state"
+      link: "/get-started/fundamentals/state-management#sharing-state-between-widgets"
+      type: "doc"
+  labels:
+    - "state management"
+    - "architecture"
+
 - term: "Sliver"
   short_description: |-
     A customizable portion of a scrollable area.
