@@ -373,6 +373,7 @@
       { "source": "/go/dash-tooling-plugin-strategy", "destination": "https://docs.google.com/document/d/1Zc0AE8JTKfOSA-IFpEYcPFJ2eALbXE3AG4ZucWXeMig/", "type": 301 },
       { "source": "/go/data-sync", "destination": "https://docs.google.com/document/d/1yH96-p-SkMmt6hL5xHHDtMvCKRz2XGrMuw9ZY_nE954", "type": 301 },
       { "source": "/go/decouple-design", "destination": "https://docs.google.com/document/d/189AbzVGpxhQczTcdfJd13o_EL36t-M5jOEt1hgBIh7w/edit?usp=sharing", "type": 301 },
+      { "source": "/go/decouple-page-transition-builders", "destination": "https://docs.google.com/document/d/1iIoJH_TkeCWl14h_jnVqW5EG-y2y7YKWbnkPYMZUZUo/edit?usp=sharing", "type": 301},
       { "source": "/go/decoupling-design-from-text", "destination": "https://docs.google.com/document/d/1oFezK5leJzTWA5lsw3BQGx7gLbhpSL8dMleU3HD7bNY/edit?usp=sharing", "type": 301},
       { "source": "/go/dds-daemon", "destination": "https://docs.google.com/document/d/18IgFakijiv9CLFGT5BckbwZuf2pqhOUeN27mB9XqvpQ/edit?usp=sharing&resourcekey=0-rBHvH9gLXLjGPWt5WE-XFg", "type": 301 },
       { "source": "/go/decoupling-framework-tests", "destination": "https://docs.google.com/document/d/1UHxALQqCbmgjnM1RNV9xE2pK3IGyx-UktGX1D7hYCjs/edit?pli=1&tab=t.0", "type": 301 },
