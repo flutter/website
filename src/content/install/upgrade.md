@@ -182,13 +182,24 @@ error: unable to create file ...: Filename too long
 This occurs because the path to a file in the Flutter SDK exceeds the default
 maximum path length limit on Windows.
 
-To resolve this issue, enable long paths support in Git:
+To resolve this issue, do the following:
+
+1. Enable long paths support in Git:
 
 ```console
 $ git config --system core.longpaths true
 ```
 
-If the command fails with a permission error, try running your terminal as an administrator.
+If the command fails with a permission error,
+try running your terminal as an administrator.
+
+1. Enable long paths in Windows:
+
+```console
+New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+```
+
+This command requires administrator privileges.
 
 [Flutter SDK archive]: /install/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
