@@ -27,7 +27,7 @@
     <summary>Expand for <code>bash</code> instructions</summary>
 
     ```console
-    $ echo 'export PATH="<path-to-sdk>:$PATH"' >> ~/.bashrc
+    $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.bashrc
     ```
 
     For example, if you downloaded Flutter into a
