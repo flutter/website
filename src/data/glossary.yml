@@ -1,3 +1,34 @@
+- term: "Embedder"
+  short_description: |-
+    The platform-specific component that supports Flutter
+    on a native platform.
+  long_description: |-
+    Each native platform supported by Flutter has an _embedder_
+    for platform-specific logic. The embedder is the bridge
+    that coordinates with the underlying operating system.
+    It provides access to services like input, accessibility,
+    message event loops, and more.
+    The embedder also launches and manages the Flutter engine.
+
+    Each embedder is written in the platform's native language:
+    Java and Kotlin for Android, Swift and Objective-C for iOS and macOS,
+    and C++ for Windows and Linux.
+
+    Each embedder enables plugin packages to add additional
+    platform-specific functionality to the app.
+
+    The embedder is launched and managed by the runner app.
+  related_links:
+    - text: "Architectural overview: The Embedder"
+      link: "/resources/architectural-overview#platform-embedding"
+      type: "doc"
+    - text: "Flutter on embedded devices"
+      link: "/embedded"
+      type: "doc"
+  labels:
+    - "architecture"
+    - "engine"
+
 - term: "Engine"
   short_description: |-
     The portable runtime for Flutter apps.
@@ -146,6 +177,24 @@
   labels:
     - "performance"
     - "smooth rendering"
+
+- term: "Prop drilling"
+  short_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters.
+  long_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor pareameterss, usually to reach a deeper descendant.
+    This pattern can become verbose, which is
+    why other state management solutions
+    (like `InheritedWidget` or `Provider`) are often used.
+  related_links:
+    - text: "State management: Sharing state"
+      link: "/get-started/fundamentals/state-management#sharing-state-between-widgets"
+      type: "doc"
+  labels:
+    - "state management"
+    - "architecture"
 
 - term: "Sliver"
   short_description: |-

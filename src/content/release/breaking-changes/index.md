@@ -37,8 +37,6 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Merged threads on Linux][]
-* [Stop generating `AssetManifest.json`][]
-* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `containsSemantics` in favor of `isSemantics`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
@@ -83,6 +81,7 @@ They're sorted by release and listed in alphabetical order:
 * [Flutter now sets default `abiFilters` in Android builds][]
 * [Merged threads on macOS and Windows][]
 * [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
@@ -185,6 +184,7 @@ They're sorted by release and listed in alphabetical order:
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
 <a id="released-in-flutter-319" aria-hidden="true"></a>
+
 ### Released in Flutter 3.19
 
 * [Deprecated API removed after v3.16][]
@@ -192,6 +192,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate imperative apply of Flutter's Gradle plugins][]
 * [Default multitouch scrolling][]
 * [Accessibility traversal order of tooltip changed][]
+* [Stop generating `AssetManifest.json`][]
 
 [Deprecated API removed after v3.16]: /release/breaking-changes/3-16-deprecations
 [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: /release/breaking-changes/key-event-migration
