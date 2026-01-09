@@ -286,5 +286,4 @@ items:
 
 <TutorialOutro>
 </TutorialOutro>
-
 </TutorialLesson>

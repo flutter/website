@@ -207,11 +207,8 @@ items:
       You're ready to start fetching real data from the Wikipedia API!
 </SummaryCard>
 
-
 </TutorialSteps>
 
 <TutorialOutro>
-
-
 </TutorialOutro>
 </TutorialLesson>

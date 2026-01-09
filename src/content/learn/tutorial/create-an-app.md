@@ -216,4 +216,7 @@ items:
 </SummaryCard>
 
 </TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
 </TutorialLesson>

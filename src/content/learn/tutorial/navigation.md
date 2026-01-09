@@ -315,7 +315,6 @@ items:
       These are common patterns used in production apps!
 </SummaryCard>
 
-
 </TutorialSteps>
 
 <TutorialOutro>

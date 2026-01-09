@@ -7,49 +7,6 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 /// A component that provides the structure for a tutorial lesson page.
-///
-/// The `<TutorialLesson>` component expects three child sections:
-/// - `<TutorialIntro>`: The intro section with description, video, and SummaryCard
-/// - `<TutorialSteps>`: The main content wrapped in a Stepper
-/// - `<TutorialOutro>`: The completion section with the summary SummaryCard
-///
-/// Usage in markdown:
-/// ```markdown
-/// <TutorialLesson>
-/// <TutorialIntro>
-///
-/// Learn the basics of Flutter widgets.
-///
-/// <YouTubeEmbed id="..." title="..."/>
-///
-/// <SummaryCard>
-/// title: What you'll accomplish
-/// items:
-///   - ...
-/// </SummaryCard>
-///
-/// </TutorialIntro>
-///
-/// <TutorialSteps>
-///
-/// ### First step
-/// ...content...
-///
-/// ### Test yourself
-/// <Quiz>...</Quiz>
-///
-/// </TutorialSteps>
-///
-/// <TutorialOutro>
-///
-/// <SummaryCard>
-/// title: What you accomplished
-/// ...
-/// </SummaryCard>
-///
-/// </TutorialOutro>
-/// </TutorialLesson>
-/// ```
 class TutorialLesson extends CustomComponent {
   const TutorialLesson() : super.base();
 

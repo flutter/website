@@ -282,4 +282,6 @@ items:
 
 </TutorialSteps>
 
+<TutorialOutro>
+</TutorialOutro>
 </TutorialLesson>
