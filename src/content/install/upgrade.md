@@ -167,8 +167,6 @@ the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-out
 $ flutter pub outdated
 ```
 
-<a id="troubleshooting" aria-hidden="true"></a>
-
 ## Troubleshooting
 
 ### Windows: "Filename too long" error
