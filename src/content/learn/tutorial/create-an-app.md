@@ -5,26 +5,12 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
 <TutorialIntro>
 
-{%- comment %}
-<!-- TODO(ewindmill) embed video -->
-{%- endcomment %}
+Learn the first steps to building a Flutter app, from creating a project to understanding widgets and hot reload.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
-In this first section of the Flutter tutorial,
-you'll build the core UI of an app called 'Birdle',
-a game similar to [Wordle, the popular New York Times game][].
-
-By the end of this tutorial, you'll have
-learned the fundamentals of building Flutter UIs, and your app will
-look like the following screenshot (and it'll even mostly work 😀).
-
-<img src='/assets/images/docs/tutorial/birdle.png' width="320px" class="diagram-wrap" alt="A screenshot that resembles the popular game Wordle.">
-
-[Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html
-
 
 <SummaryCard>
 title: What you'll accomplish
@@ -39,7 +25,22 @@ items:
 
 </TutorialIntro>
 
-<Stepper level="3">
+<TutorialSteps>
+
+### What you'll build
+
+In this first section of the Flutter tutorial,
+you'll build the core UI of an app called 'Birdle',
+a game similar to [Wordle, the popular New York Times game][].
+
+<img src='/assets/images/docs/tutorial/birdle.png' width="320px" class="diagram-wrap" alt="A screenshot that resembles the popular game Wordle.">
+
+By the end of this tutorial, you'll have
+learned the fundamentals of building Flutter UIs, and your app will
+look like the following screenshot (and it'll even mostly work 😀).
+
+[Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html
+
 
 ### Create a new Flutter project
 
@@ -111,7 +112,7 @@ compose widgets from the SDK into larger, custom widgets that display a UI.
 
 At the moment, the widget tree is quite simple:
 
-<img src='/assets/images/docs/tutorial/initial_widget_tree.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/initial_widget_tree.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 ### Run your app
 
@@ -130,7 +131,7 @@ At the moment, the widget tree is quite simple:
 
     The app will build and launch in a new instance of Chrome.
 
-<img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/hello_world.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 ### Use hot reload
 
@@ -183,9 +184,9 @@ The running app should instantly show your updated text.
       explanation: By default, you need to press `r` to trigger hot reload in the terminal.
 </Quiz>
 
-</Stepper>
+### Review
 
-<SummaryCard>
+<SummaryCard expands="false">
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
 completed: true
@@ -213,3 +214,6 @@ items:
       see code changes reflected in under a second without losing app state.
       Press `r` in the terminal to trigger a hot reload.
 </SummaryCard>
+
+</TutorialSteps>
+</TutorialLesson>

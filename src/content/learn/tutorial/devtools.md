@@ -5,7 +5,12 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+<TutorialLesson>
+<TutorialIntro>
+
+Learn to use the widget inspector and property editor to debug layout issues and experiment with properties in real-time.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish
@@ -17,6 +22,12 @@ items:
   - title: Experiment with properties in real-time
     icon: tune
 </SummaryCard>
+
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
 
 As your Flutter app grows in complexity, it becomes more important
 to understand how each of the widget properties affects the UI.
@@ -45,14 +56,14 @@ The screenshots in this lesson are from VS Code.
 [VS Code]: /tools/vs-code
 [IntelliJ and Android Studio]: /tools/android-studio
 
-## The widget inspector
+### The widget inspector
 
 The widget inspector allows you to visualize and explore your widget tree.
 It helps you understand the layout of your UI and
 identifies which widgets are responsible for different parts of the screen.
 Running against the app you've built so far, the inspector looks like this:
 
-<img src='/assets/images/docs/tutorial/widget_inspector.png' alt="A screenshot of the Flutter widget inspector tool.">
+<img src='/assets/images/docs/tutorial/widget_inspector.png' width="320px" alt="A screenshot of the Flutter widget inspector tool.">
 
 Consider the `GamePage` widget you created in this section:
 
@@ -108,7 +119,7 @@ the `Row` widgets with `Tile` children.
 You can select any widget in the tree to see its properties and
 even jump to its source code in your IDE.
 
-## Debugging layout issues
+### Debugging layout issues
 
 The widget inspector is perhaps most useful for debugging layout issues.
 
@@ -148,14 +159,14 @@ spot and resolve this issue.
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [`ScrollView`]: {{site.api}}/flutter/widgets/ScrollView-class.html
 
-## The property editor
+### The property editor
 
 When you select a widget in the widget inspector,
 the property editor displays all the properties of that selected widget.
 This is a powerful tool for understanding why a widget looks the way it does and
 for experimenting with property value changes in real-time.
 
-<img src='/assets/images/docs/tutorial/property_editor.png' alt="A screenshot of the Flutter property editor tool.">
+<img src='/assets/images/docs/tutorial/property_editor.png' width="320px" alt="A screenshot of the Flutter property editor tool.">
 
 Look at the `Tile` widget's `build` method from earlier:
 
@@ -200,6 +211,8 @@ Then instantly see the update on your running app without
 needing to recompile or even hot reload.
 This allows for rapid iteration on UI design.
 
+### Test yourself
+
 <Quiz title="DevTools Quiz">
 - question: What is a common cause of "unbounded constraints" errors in Flutter?
   options:
@@ -231,6 +244,8 @@ This allows for rapid iteration on UI design.
       explanation: Theme editing requires code changes; the Widget Inspector is for inspecting the current state.
 </Quiz>
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -251,6 +266,14 @@ items:
       This happens when widgets like
       `Row`, `Column`, or `ListView` receive infinite constraints.
       Now you can recognize and fix these issues when they occur.
+  - title: Learned about common layout issues
+    icon: bug_report
+    details: >-
+      You learned about **unbounded constraints**,
+      one of the most common errors hit in Flutter development.
+      This happens when widgets like
+      `Row`, `Column`, or `ListView` receive infinite constraints.
+      Now you can recognize and fix these issues when they occur.
   - title: Experimented with properties in real-time
     icon: tune
     details: >-
@@ -258,3 +281,10 @@ items:
       lets you modify values instantly with no recompiling or hot reload needed.
       This enables rapid iteration when fine-tuning your UI.
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
+
+</TutorialLesson>

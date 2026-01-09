@@ -5,6 +5,20 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
+<TutorialIntro>
+
+In this lesson, you'll learn about slivers,
+which are special widgets that can take advantage of
+Flutter's powerful and composable scrolling system.
+Slivers enable you to create sophisticated scroll effects,
+including collapsible headers, search integration, and custom scroll behaviors.
+By the end of this section, you'll understand how to
+use `CustomScrollView`, create navigation bars that collapse,
+and organize content in scrollable sections.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -18,16 +32,11 @@ items:
     icon: sort_by_alpha
 </SummaryCard>
 
-In this lesson, you'll learn about slivers,
-which are special widgets that can take advantage of
-Flutter's powerful and composable scrolling system.
-Slivers enable you to create sophisticated scroll effects,
-including collapsible headers, search integration, and custom scroll behaviors.
-By the end of this section, you'll understand how to
-use `CustomScrollView`, create navigation bars that collapse,
-and organize content in scrollable sections.
+</TutorialIntro>
 
-## Slivers and widgets
+<TutorialSteps>
+
+### Slivers and widgets
 
 Slivers are scrollable areas that can be composed together in a
 `CustomScrollView` or other scroll views.
@@ -53,7 +62,7 @@ This architectural separation allows Flutter to
 optimize scrolling performance while it maintains clear boundaries between
 different types of UI components.
 
-## Add a basic sliver structure to contact groups
+### Add a basic sliver structure to contact groups
 
 First, replace the placeholder content in your contact groups page.
 To avoid duplicating code between the phone layout and the tablet sidebar,
@@ -154,7 +163,7 @@ This structure keeps the `ContactGroupsPage` clean and
 focused on its primary responsibility: navigation,
 which you'll learn about in the next section of this tutorial.
 
-## Enhance the list with icons and visual elements
+### Enhance the list with icons and visual elements
 
 Now, add icons and contact counts to make the list more informative.
 Add this `_buildTrailing` helper method to your `_ContactGroupsView` class:
@@ -275,7 +284,7 @@ The updated code now shows icons that differentiate between the
 main "All iPhone" group and user-created groups, along with
 contact counts and navigation indicators.
 
-## Create advanced scrolling for contacts
+### Create advanced scrolling for contacts
 
 Now, work on the contacts page. Just like before,
 you'll create a private, reusable view to avoid code duplication.
@@ -378,7 +387,7 @@ class ContactListsPage extends StatelessWidget {
 This basic implementation demonstrates how to use slivers with dynamic
 data in a reusable component.
 
-## Add search integration with slivers
+### Add search integration with slivers
 
 Now, enhance the contacts page with integrated search functionality UI.
 Update the `CustomScrollView` in `_ContactListView` to use the
@@ -434,7 +443,7 @@ The `CupertinoSliverNavigationBar.search` constructor provides
 integrated search functionality. As you scroll down,
 the search field smoothly transitions into the collapsed navigation bar.
 
-## Create alphabetized contact sections
+### Create alphabetized contact sections
 
 Real-world contact apps organize contacts alphabetically.
 To do this, create sections for each letter.
@@ -495,7 +504,7 @@ class ContactListSection extends StatelessWidget {
 This widget creates the familiar alphabetized sections that
 you see in the iOS Contacts app.
 
-## Use `SliverList` for the alphabetized sections
+### Use `SliverList` for the alphabetized sections
 
 Now, replace the placeholder content in `_ContactListView` with
 the alphabetized sections:
@@ -538,6 +547,8 @@ In the next lesson, you'll learn about stack-based navigation and
 update the UI on small screens to navigate between
 the contacts list view and the contacts view.
 
+### Test yourself
+
 <Quiz title="Slivers Quiz">
 - question: What is the key difference between slivers and regular widgets?
   options:
@@ -569,6 +580,8 @@ the contacts list view and the contacts view.
       explanation: CustomScrollView uses the slivers property; there's no child property for this purpose.
 </Quiz>
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -599,3 +612,12 @@ items:
       then used `SliverList.list` to add them to the scrollable area.
       This mirrors the familiar iOS Contacts app experience.
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+
+
+
+</TutorialOutro>
+</TutorialLesson>

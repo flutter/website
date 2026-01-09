@@ -5,6 +5,13 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
+<TutorialIntro>
+
+Learn how to create layouts that adapt to different screen widths.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +22,12 @@ items:
   - title: Build a sidebar and detail layout for large screens
     icon: view_sidebar
 </SummaryCard>
+
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
 
 Modern apps need to work well on screens of all sizes.
 On this page, you'll learn how to create layouts that
@@ -28,7 +41,7 @@ Specifically, this app handles two screen sizes:
 - **Small screens (phones)**:
   Uses navigation to move between contact groups and details.
 
-## Create the contact groups page
+### Create the contact groups page
 
 First, create the basic structure of the `ContactGroupsPage` widget
 for your contact groups screen.
@@ -53,7 +66,7 @@ class ContactGroupsPage extends StatelessWidget {
 }
 ```
 
-## Create the contacts page
+### Create the contacts page
 
 Similarly, create `lib/screens/contacts.dart` to eventually
 display individual contacts:
@@ -82,7 +95,7 @@ The `ContaactsListPage` widget and `ContactGroupsPage` widget are
 placeholder pages that are needed to implement the adaptive layout
 widget, which you'll do next.
 
-## Build the adaptive layout foundation
+### Build the adaptive layout foundation
 
 Create `lib/screens/adaptive_layout.dart`
 and start with the following basic structure:
@@ -156,7 +169,7 @@ you can decide which layout to show.
 The 600-pixel threshold is a common breakpoint that
 separates phone-sized screens from tablet-sized screens.
 
-## Update the main app
+### Update the main app
 
 Update `main.dart` to use the adaptive layout,
 so you can see your changes:
@@ -194,7 +207,7 @@ class RolodexApp extends StatelessWidget {
 If you're running in Chrome, you can resize the browser window to
 see layout changes.
 
-## Add list selection functionality
+### Add list selection functionality
 
 The large screen layout needs to track which contact group is selected.
 Update the state object with the following code:
@@ -244,7 +257,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 The `selectedListId` variable tracks the currently selected contact group,
 and `_onContactListSelected` updates this value when the user makes a choice.
 
-## Build the large screen layout
+### Build the large screen layout
 
 Now, implement the side-by-side layout for large screens.
 First, replace the temporary text with a widget that
@@ -349,7 +362,7 @@ This layout creates the following:
 - A 1-pixel divider between the panels.
 - A details panel that uses an `Expanded` widget to take the remaining space.
 
-## Test the adaptive layout
+### Test the adaptive layout
 
 Hot reload your app and test the responsive behavior.
 If you're running in Chrome, you can resize the browser window to
@@ -364,6 +377,8 @@ Both the sidebar and main content area show placeholder text for now.
 
 In the next lesson, you'll implement slivers to fill in
 the contact list content.
+
+### Test yourself
 
 <Quiz title="Adaptive Layout Quiz">
 - question: What information does LayoutBuilder provide to its builder callback?
@@ -396,6 +411,8 @@ the contact list content.
       explanation: ListView is for scrollable lists, not for side-by-side layout.
 </Quiz>
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -421,3 +438,12 @@ items:
       an `Expanded` detail panel side-by-side using a `Row`.
       This classic pattern maximizes screen real estate on tablets and desktops.
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+
+
+
+</TutorialOutro>
+</TutorialLesson>

@@ -5,6 +5,15 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
+<TutorialIntro>
+
+Flutter provides a rich set of animation APIs, and the simplest way to
+start using them is with **implicit animations**.
+"Implicit animations" refers to a group of widgets that
+automatically animate changes to their properties without you
+needing to manage any intermediate behavior.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -16,12 +25,6 @@ items:
     icon: timeline
 </SummaryCard>
 
-Flutter provides a rich set of animation APIs, and the simplest way to
-start using them is with **implicit animations**.
-"Implicit animations" refers to a group of widgets that
-automatically animate changes to their properties without you
-needing to manage any intermediate behavior.
-
 In this lesson, you'll learn about one of the most common and
 versatile implicit animation widgets: [`AnimatedContainer`][].
 With just two additional lines of code, the background color of each `Tile`
@@ -29,7 +32,10 @@ animates to a new color in about half a second.
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 
-## Convert `Container` to `AnimatedContainer`
+</TutorialIntro>
+<TutorialSteps>
+
+### Convert `Container` to `AnimatedContainer`
 
 Currently, the `Tile.build` method returns a `Container` to display a letter.
 When the `hitType` changes, like from `HitType.none` to `HitType.hit`,
@@ -126,7 +132,7 @@ Now, when the `hitType` changes and the `Tile` widget rebuilds
 the color of the tile smoothly animates from its old color to
 the new one over the specified duration.
 
-## Adjust the animation curve
+### Adjust the animation curve
 
 To add a bit of customization to an implicit animation,
 you can pass it a different [`Curve`][].
@@ -135,12 +141,12 @@ at different points throughout the animation.
 
 For example, the default curve for Flutter animations is `Curves.linear`. This gif shows how the animation curve behaves:
 
-<img src="/assets/images/docs/tutorial/linear_curve.gif" width="50%"
+<img src="/assets/images/docs/tutorial/linear_curve.gif" width="320px"
 alt="A gif that shows a linear curve.">
 
 Compare that to `Curve.bounceIn`, another common curve:
 
-<img src="/assets/images/docs/tutorial/bounce_in_curve.gif" width="50%"
+<img src="/assets/images/docs/tutorial/bounce_in_curve.gif" width="320px"
 alt="A gif that shows a bounce-in curve">
 
 
@@ -195,6 +201,8 @@ If you're curious, try it out in the [animations tutorial][].
 [animations tutorial]: /ui/animations/tutorial
 
 
+### Test yourself
+
 <Quiz title="Implicit Animations Quiz">
 - question: What widget can you use to automatically animate changes to properties like color, size, and decoration?
   options:
@@ -226,6 +234,7 @@ If you're curious, try it out in the [animations tutorial][].
       explanation: Implicit animations run once per state change; repetition requires explicit animation controllers.
 </Quiz>
 
+### Review
 
 <SummaryCard>
 title: What you accomplished
@@ -259,3 +268,9 @@ items:
       dynamic layouts, user input, state management, and smooth animations.
       You now have the foundational skills to build your own Flutter apps!
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
+</TutorialLesson>

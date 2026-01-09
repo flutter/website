@@ -5,7 +5,12 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+<TutorialLesson>
+<TutorialIntro>
+
+Learn to build text inputs, manage text with controllers, and handle user actions with buttons.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish
@@ -20,6 +25,12 @@ items:
     icon: touch_app
 </SummaryCard>
 
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
+
 The app will display the user's guesses in the `Tile` widgets,
 but it needs a way for the user to input those guesses.
 In this lesson, build that functionality with two interaction widgets:
@@ -28,7 +39,7 @@ In this lesson, build that functionality with two interaction widgets:
 [`TextField`]: {{site.api}}/flutter/material/TextField-class.html
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 
-## Implement callback functions
+### Implement callback functions
 
 To allow users to type in their guesses,
 you'll create a dedicated widget named `GuessInput`.
@@ -69,9 +80,9 @@ is called when a user enters a guess.
 First, you'll need to build the visual parts of this widget.
 This is what the widget will look like.
 
-<img src='/assets/images/docs/tutorial/app_with_input.png' alt="A screenshot of the Flutter property editor tool.">
+<img src='/assets/images/docs/tutorial/app_with_input.png' width="320px" alt="A screenshot of the Flutter property editor tool.">
 
-## The `TextField` widget
+### The `TextField` widget
 
 Given that the text field and button are displayed side-by-side,
 create them as a `Row` widget.
@@ -134,7 +145,7 @@ Thus far, `TextField` has the following configuration.
 [`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
 [unbounded width/height]: https://www.youtube.com/watch?v=jckqXR5CrPI
 
-## Handle text with `TextEditingController`
+### Handle text with `TextEditingController`
 
 Next, you need a way to manage the text that
 the user types into the input field.
@@ -305,7 +316,7 @@ The preceding example does so.
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html
 [wildcard]: {{site.dart-site}}/language/variables#wildcard-variables
 
-## Gain input focus
+### Gain input focus
 
 Often, you want a specific input or widget to
 automatically gain focus without the user taking action.
@@ -428,7 +439,7 @@ you can continue typing.
 
 [`FocusNode`]: {{site.api}}/flutter/widgets/FocusNode-class.html
 
-## Use the input
+### Use the input
 
 Finally, you need to handle the text that the user enters.
 Recall that the constructor for `GuessInput` requires a
@@ -523,7 +534,7 @@ prove that it's wired up correctly.
 Submitting the guess requires using the functionality of a `StatefulWidget`,
 which you'll do in the next lesson.
 
-## Buttons
+### Buttons
 
 To improve the UX on mobile and reflect well-known UI practices,
 there should also be a button that can submit the guess.
@@ -669,6 +680,8 @@ class GuessInput extends StatelessWidget {
 
 :::
 
+### Test yourself
+
 <Quiz title="User Input Quiz">
 - question: How do you programmatically read or clear the text in a TextField?
   options:
@@ -699,6 +712,9 @@ class GuessInput extends StatelessWidget {
       correct: false
       explanation: This is not how focus is managed; FocusNode is the proper approach.
 </Quiz>
+
+### Review
+
 
 <SummaryCard>
 title: What you accomplished
@@ -731,3 +747,10 @@ items:
       Passing callback functions as constructor arguments keeps your
       widgets reusable and decoupled from specific logic.
 </SummaryCard>
+
+
+</TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
+</TutorialLesson>

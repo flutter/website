@@ -5,7 +5,12 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+<TutorialLesson>
+<TutorialIntro>
+
+Learn how to build layouts with common widgets like Scaffold, AppBar, Column, and Row.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish
@@ -19,6 +24,12 @@ items:
   - title: Build a grid layout for the game board
     icon: grid_view
 </SummaryCard>
+
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
 
 Given that Flutter is a UI toolkit,
 you'll spend a lot of time creating layouts with Flutter widgets.
@@ -35,12 +46,12 @@ lay out widgets vertically or horizontally.
 [`Column`]:  {{site.api}}/flutter/widgets/Column-class.html
 [`Row`]: {{site.api}}/flutter/widgets/Row-class.html
 
-## `Scaffold` and `AppBar`
+### `Scaffold` and `AppBar`
 
 Mobile applications often have a bar at the top called an "app bar" that can
 display a title, navigation controls, and/or actions.
 
-<img src='/assets/images/docs/tutorial/appbar.png' alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
+<img src='/assets/images/docs/tutorial/appbar.png' width="320px" alt="A screenshot of a simple application with a bar across the top that has a title and settings button.">
 
 The simplest way to add an app bar to your app is by using two widgets:
 `Scaffold` and `AppBar`.
@@ -80,16 +91,16 @@ class MainApp extends StatelessWidget {
 
 [`Align`]: {{site.api}}/flutter/widgets/Align-class.html
 
-### An updated widget tree
+#### An updated widget tree
 
 Considering your app's widget tree gets more important as your app grows.
 At this point, there's a "branch" in the widget tree for the first time,
 and it now looks like the following figure:
 
-<img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/widget_tree_with_app_bar.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 
-## Create a widget for the game page layout
+### Create a widget for the game page layout
 
 Add the following code for a new widget,
 called `GamePage`, to your `main.dart` file.
@@ -132,11 +143,11 @@ class MainApp extends StatelessWidget {
 
 :::
 
-## Arrange widgets with `Column` and `Row`
+### Arrange widgets with `Column` and `Row`
 
 The `GamePage` layout contains the grid of tiles that display a user's guesses.
 
-<img src='/assets/images/docs/tutorial/birdle.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/birdle.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 There are a number of ways you can build this layout.
 The simplest is with the `Column` and `Row` widgets.
@@ -224,12 +235,12 @@ one for each guess on the `Game` object.
 
 [collection for element]: /language/collections#for-element
 
-### An updated widget tree
+#### An updated widget tree
 
 The widget tree for this app has expanded significantly in this lesson.
 Now, it looks more like the following (abridged) figure:
 
-<img src='/assets/images/docs/tutorial/widget_tree_rows_columns.png' alt="A diagram showing a tree like structure with a node for each widget in the app.">
+<img src='/assets/images/docs/tutorial/widget_tree_rows_columns.png' width="320px" alt="A diagram showing a tree like structure with a node for each widget in the app.">
 
 :::note Challenge
 
@@ -270,9 +281,11 @@ class GamePage extends StatelessWidget {
 
 When you reload your app, you should see a 5x5 grid of white squares.
 
-<img src='/assets/images/docs/tutorial/grid_of_tiles.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/grid_of_tiles.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
 [record]: {{site.dart-site}}/language/records
+
+### Test yourself
 
 <Quiz title="Layout Quiz">
 - question: What is the primary difference between a Column and a Row widget?
@@ -305,6 +318,9 @@ When you reload your app, you should see a 5x5 grid of white squares.
       explanation: Scaffold doesn't manage state; you use StatefulWidget or state management solutions for that.
 </Quiz>
 
+### Review
+
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -336,3 +352,9 @@ items:
       you created a 5x5 grid of `Tile` widgets.
       Your app now displays the complete game board layout!
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
+</TutorialLesson>

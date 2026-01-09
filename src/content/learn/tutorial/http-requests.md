@@ -5,6 +5,13 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
+<TutorialIntro>
+
+Learn the MVVM architecture pattern and how to build HTTP requests with async/await.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +22,12 @@ items:
   - title: Handle errors and parse JSON responses
     icon: data_object
 </SummaryCard>
+
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
 
 The overarching pattern that this tutorial implements is called
 _Model-View-ViewModel_ or _MVVM_.
@@ -29,7 +42,7 @@ The core tenet of MVVM (and many other patterns) is *separation of concerns*.
 Managing state in separate classes (outside your UI widgets) makes
 your code more testable, reusable, and easier to maintain.
 
-<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%"
+<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="320px"
 alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
 
 A single feature in your app contains each one of the MVVM components.
@@ -38,7 +51,7 @@ you'll create `ArticleModel`, `ArticleViewModel`, and `ArticleView`.
 
 [architectural pattern]: /app-architecture/guide
 
-## Define the Model
+### Define the Model
 
 The Model is the source-of-truth for your app's data and is responsible for
 low-level tasks such as making HTTP requests, caching data, or
@@ -53,7 +66,7 @@ class ArticleModel {
 }
 ```
 
-## Build the HTTP request
+### Build the HTTP request
 
 Wikipedia provides a REST API that returns JSON data about articles.
 For this app, you'll use the endpoint that returns a random article summary.
@@ -90,7 +103,7 @@ especially when dealing with special characters or query parameters.
 [`async` and `await`]: {{site.dart-site}}/language/async
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 
-## Handle network errors
+### Handle network errors
 
 Always handle errors when making HTTP requests.
 A status code of **200** indicates success, while other codes indicate errors.
@@ -115,7 +128,7 @@ class ArticleModel {
 }
 ```
 
-## Parse JSON from Wikipedia
+### Parse JSON from Wikipedia
 
 The [Wikipedia API][] returns [JSON][] data that
 you decode into a `Summary` class
@@ -146,6 +159,8 @@ check out the [Getting started with Dart][] tutorial.
 [Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
 [JSON]: {{site.dart-site}}/tutorial/json
 [Getting started with Dart]: {{site.dart-site}}/tutorial
+
+### Test yourself
 
 <Quiz title="HTTP Requests Quiz">
 - question: What do the `async` and `await` keywords do in Dart?
@@ -178,6 +193,8 @@ check out the [Getting started with Dart][] tutorial.
       explanation: Uri.https builds the URL; it doesn't check if the endpoint exists.
 </Quiz>
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -206,3 +223,9 @@ items:
       Then to convert the raw JSON into a typed Dart object,
       you used the `Summary.fromJson` named constructor.
 </SummaryCard>
+
+</TutorialSteps>
+
+<TutorialOutro>
+</TutorialOutro>
+</TutorialLesson>

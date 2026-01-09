@@ -5,6 +5,13 @@ layout: tutorial
 sitemap: false
 ---
 
+<TutorialLesson>
+<TutorialIntro>
+
+Learn to create a ViewModel with ChangeNotifier and manage loading, success, and error states.
+
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +22,12 @@ items:
   - title: Signal UI updates with notifyListeners
     icon: notifications_active
 </SummaryCard>
+
+</TutorialIntro>
+
+<TutorialSteps>
+
+### Introduction
 
 When developers talk about state-management in Flutter,
 they're essentially referring to the pattern by which your app
@@ -32,7 +45,7 @@ which triggers UI rebuilds when called.
 
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-## Create the basic view model structure
+### Create the basic view model structure
 
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
@@ -54,7 +67,7 @@ The `ArticleViewModel` holds three pieces of state:
 - `errorMessage`: Any error that occurred during data fetching.
 - `loading`: A flag to show progress indicators.
 
-## Add constructor initialization
+### Add constructor initialization
 
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
@@ -79,7 +92,7 @@ a `ArticleViewModel` object is created.
 Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
-## Set up the `getRandomArticleSummary` method
+### Set up the `getRandomArticleSummary` method
 
 Add the `getRandomArticleSummary` that fetches data and manages state updates:
 
@@ -112,7 +125,7 @@ When the operation completes, it toggles the property back.
 When you build the UI, you'll use this `loading` property to
 show a loading indicator while fetching a new article.
 
-## Retrieve an article from the `ArticleModel`
+### Retrieve an article from the `ArticleModel`
 
 Complete the `getRandomArticleSummary` method to fetch an article summary.
 Use a [try-catch block][] to gracefully handle network errors and
@@ -149,7 +162,7 @@ class ArticleViewModel extends ChangeNotifier {
 
 [try-catch block]: {{site.dart-site}}/language/error-handling#catch
 
-## Test the ViewModel
+### Test the ViewModel
 
 Before building the full UI, test that your HTTP requests work by
 printing results to the console.
@@ -204,6 +217,8 @@ Hot reload your app and check your console output.
 You should see either an article title or an error message,
 which confirms that your Model and ViewModel are wired up correctly.
 
+### Test yourself
+
 <Quiz title="State Management Quiz">
 - question: What is a ChangeNotifier?
   options:
@@ -235,6 +250,8 @@ which confirms that your Model and ViewModel are wired up correctly.
       explanation: notifyListeners doesn't modify state; it just signals that state has changed.
 </Quiz>
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -262,3 +279,7 @@ items:
       after the operation completes.
       This is how you can implement reactive UI updates in Flutter.
 </SummaryCard>
+
+</TutorialSteps>
+
+</TutorialLesson>

@@ -35,16 +35,25 @@ class SummaryCard extends CustomComponent {
         model.items.isNotEmpty,
         'SummaryCard must contain at least one item.',
       );
-      return SummaryCardComponent(model: model);
+
+      final expandsAttr = node.attributes['expands'];
+      final expands = expandsAttr != 'false';
+
+      return SummaryCardComponent(model: model, expands: expands);
     }
     return null;
   }
 }
 
 class SummaryCardComponent extends StatelessComponent {
-  const SummaryCardComponent({super.key, required this.model});
+  const SummaryCardComponent({
+    super.key,
+    required this.model,
+    this.expands = true,
+  });
 
   final SummaryCardModel model;
+  final bool expands;
 
   @override
   Component build(BuildContext context) {
@@ -65,6 +74,17 @@ class SummaryCardComponent extends StatelessComponent {
 
   Component _buildSummaryItem(SummaryCardItem item) {
     if (item.details case final d?) {
+      if (!expands) {
+        return div(classes: 'summary-card-item-static', [
+          div(classes: 'summary-card-item', [
+            span([MaterialIcon(item.icon)]),
+            span(classes: 'summary-card-item-title', [.text(item.title)]),
+          ]),
+          div(classes: 'summary-card-item-details', [
+            DashMarkdown(content: d),
+          ]),
+        ]);
+      }
       return details([
         summary(classes: 'summary-card-item', [
           span([MaterialIcon(item.icon)]),
