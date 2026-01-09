@@ -4,9 +4,12 @@
     often changing layout or input methods based on device capabilities.
   long_description: |-
     Adaptive design is about the UI being _usable_ in the space,
-    as opposed to [responsive][] design which is about fitting the UI _into_ the space.
-    An adaptive app selects the appropriate layout (such as bottom nav vs side panel)
-    and input devices (for example, mouse vs touch) to feel natural on the current device.
+    as opposed to responsive design which is about fitting the UI _into_
+    the space.
+    An adaptive app selects the appropriate layout
+    (such as bottom nav vs side panel)
+    and input devices (for example, mouse vs touch)
+    to feel natural on the current device.
   related_links:
     - text: "Adaptive vs responsive design"
       link: "/ui/adaptive-responsive#what-is-responsive-vs-adaptive"
