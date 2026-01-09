@@ -173,7 +173,8 @@ $ flutter pub outdated
 
 ### Windows: "Filename too long" error
 
-When running `flutter upgrade` on Windows, you might encounter an error like:
+When running `flutter upgrade` on Windows,
+you might encounter an error like the following:
 
 ```text
 error: unable to create file ...: Filename too long
@@ -182,7 +183,12 @@ error: unable to create file ...: Filename too long
 This occurs because the path to a file in the Flutter SDK exceeds the default
 maximum path length limit on Windows.
 
-To resolve this issue, do the following:
+To resolve this issue, consider installing the Flutter SDK
+at a shorter path. For example, install Flutter at
+`C:Flutter` instead of something longer like
+`C:\Users\<user name>\Documents\flutter`.
+
+Otherwise, do the following:
 
 1. Enable long paths support in Git:
 
