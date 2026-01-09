@@ -185,7 +185,7 @@ maximum path length limit on Windows.
 
 To resolve this issue, consider installing the Flutter SDK
 at a shorter path. For example, install Flutter at
-`C:Flutter` instead of something longer like
+`C:\Flutter` instead of something longer like
 `C:\Users\<user name>\Documents\flutter`.
 
 Otherwise, do the following:
