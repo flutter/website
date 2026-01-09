@@ -167,6 +167,29 @@ the Dart [`pub outdated` documentation]({{site.dart-site}}/tools/pub/cmd/pub-out
 $ flutter pub outdated
 ```
 
+<a id="troubleshooting" aria-hidden="true"></a>
+
+## Troubleshooting
+
+### Windows: "Filename too long" error
+
+When running `flutter upgrade` on Windows, you might encounter an error like:
+
+```text
+error: unable to create file ...: Filename too long
+```
+
+This occurs because the path to a file in the Flutter SDK exceeds the default
+maximum path length limit on Windows.
+
+To resolve this issue, enable long paths support in Git:
+
+```console
+$ git config --system core.longpaths true
+```
+
+If the command fails with a permission error, try running your terminal as an administrator.
+
 [Flutter SDK archive]: /install/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [pubspec.yaml]: {{site.dart-site}}/tools/pub/pubspec
