@@ -147,6 +147,37 @@ check out the [Getting started with Dart][] tutorial.
 [JSON]: {{site.dart-site}}/tutorial/json
 [Getting started with Dart]: {{site.dart-site}}/tutorial
 
+<Quiz title="HTTP Requests Quiz">
+- question: What do the `async` and `await` keywords do in Dart?
+  options:
+    - text: They make code run on a separate thread.
+      correct: false
+      explanation: Dart is single-threaded; async/await handles asynchronous operations without threads.
+    - text: They mark a function as asynchronous and pause execution until a Future completes.
+      correct: true
+      explanation: The `async` keyword marks a function as asynchronous, and `await` pauses execution until the Future resolves.
+    - text: They automatically cache the results of function calls.
+      correct: false
+      explanation: Caching requires separate implementation; async/await is for handling asynchronous operations.
+    - text: They convert synchronous code to run in the background.
+      correct: false
+      explanation: They don't move code to the background; they manage asynchronous execution flow.
+- question: Why is `Uri.https` preferred over string concatenation when building URLs in Dart?
+  options:
+    - text: It makes the code shorter.
+      correct: false
+      explanation: Code length isn't the main benefit; proper encoding is.
+    - text: It safely handles encoding and formatting, especially for special characters and query parameters.
+      correct: true
+      explanation: Uri.https properly encodes special characters and formats URLs, preventing common errors.
+    - text: It's required by the http package.
+      correct: false
+      explanation: You can use strings, but Uri.https is safer and more reliable.
+    - text: It automatically validates that the URL exists.
+      correct: false
+      explanation: Uri.https builds the URL; it doesn't check if the endpoint exists.
+</Quiz>
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.

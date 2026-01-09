@@ -133,6 +133,37 @@ $ flutter run -d chrome
 You should see a simple app with "Wikipedia Flutter" in the app bar
 and "Loading..." in the center of the screen.
 
+<Quiz title="Project Setup Quiz">
+- question: What does the `--empty` flag do when running `flutter create`?
+  options:
+    - text: Creates a project with no files at all.
+      correct: false
+      explanation: The project still has essential files; it just uses a minimal template.
+    - text: Creates a minimal Flutter project with less boilerplate code.
+      correct: true
+      explanation: The `--empty` flag generates a minimal starter template without the default counter app.
+    - text: Creates a project without any dependencies.
+      correct: false
+      explanation: The project still includes core Flutter dependencies.
+    - text: Creates a project that can only run on web.
+      correct: false
+      explanation: The flag doesn't restrict platforms; it only affects the starter template.
+- question: What command is used to add a package dependency to a Flutter project?
+  options:
+    - text: flutter install <package_name>
+      correct: false
+      explanation: The correct command uses `pub add`, not `install`.
+    - text: flutter pub add <package_name>
+      correct: true
+      explanation: Running `flutter pub add` adds the package to pubspec.yaml and downloads it.
+    - text: dart get <package_name>
+      correct: false
+      explanation: The command for adding packages is `flutter pub add` or editing pubspec.yaml.
+    - text: flutter package install <package_name>
+      correct: false
+      explanation: There is no `flutter package` command; use `flutter pub add`.
+</Quiz>
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.

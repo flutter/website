@@ -22,8 +22,8 @@ In this third installment of the Flutter tutorial series,
 you'll use Flutter's Cupertino library to build a
 partial clone of the iOS Contacts app.
 
-<img src='/assets/images/docs/tutorial/rolodex_complete.png'
-width="100%" alt="A screenshot of the completed Rolodex contact
+<img src='/assets/images/docs/tutorial/rolodex_complete.png' class="diagram-wrap"
+width="320px" alt="A screenshot of the completed Rolodex contact
 management app showing a list of contacts organized alphabetically.">
 
 By the end of this tutorial, you'll have learned how to create
@@ -44,6 +44,9 @@ This tutorial explores the following topics:
 This tutorial assumes that you've completed the previous Flutter tutorials
 and are comfortable with basic widget composition, state management,
 and the Flutter project structure.
+
+
+<Stepper level="2">
 
 ## Create a new Flutter project
 
@@ -147,7 +150,7 @@ This section is lightly explained because it's not the focus of this tutorial.
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
-```dart title="lib/data/contact.dart"
+```dart foldable title="lib/data/contact.dart"
 class Contact {
   Contact({
     required this.id,
@@ -164,6 +167,7 @@ class Contact {
   final String? suffix;
 }
 
+[* - 
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -279,7 +283,9 @@ final jessicaEdwards = Contact(
   firstName: 'Jessica',
   lastName: 'Edwards',
 );
+*]
 
+[* -
 final Set<Contact> allContacts = <Contact>{
   johnAppleseed,
   kateBell,
@@ -333,6 +339,7 @@ final Set<Contact> allContacts = <Contact>{
   christopherDaniel,
   jessicaEdwards,
 };
+*]
 ```
 
 This sample data includes contacts with and without middle names and suffixes.
@@ -528,6 +535,40 @@ With all the extraneous code out of the way, in the next lesson,
 you'll start building the app in earnest.
 
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
+
+</Stepper>
+
+
+<Quiz title="Advanced UI Setup Quiz">
+- question: What is the main difference between CupertinoApp and MaterialApp?
+  options:
+    - text: CupertinoApp only works on iOS devices.
+      correct: false
+      explanation: CupertinoApp can run on any platform; it just provides iOS-style widgets.
+    - text: CupertinoApp provides iOS-style widgets and styling, while MaterialApp provides Material Design widgets.
+      correct: true
+      explanation: CupertinoApp uses Cupertino design system widgets that match the iOS look and feel.
+    - text: CupertinoApp is lighter and has better performance.
+      correct: false
+      explanation: Both have similar performance; they differ in visual style, not speed.
+    - text: MaterialApp requires more configuration to set up.
+      correct: false
+      explanation: Both have similar setup requirements; they just use different design systems.
+- question: What is the purpose of a ValueNotifier in state management?
+  options:
+    - text: To validate user input values.
+      correct: false
+      explanation: ValueNotifier holds and notifies about value changes, not validation.
+    - text: To hold a single value and notify listeners when that value changes.
+      correct: true
+      explanation: ValueNotifier is a simple ChangeNotifier that wraps a single value and notifies listeners on change.
+    - text: To convert values between different data types.
+      correct: false
+      explanation: Type conversion is not the purpose of ValueNotifier.
+    - text: To store values permanently in local storage.
+      correct: false
+      explanation: ValueNotifier holds values in memory; persistence requires separate implementation.
+</Quiz>
 
 <SummaryCard>
 title: What you accomplished
