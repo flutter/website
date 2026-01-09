@@ -192,20 +192,20 @@ Otherwise, do the following:
 
 1. Enable long paths support in Git:
 
-```console
-$ git config --system core.longpaths true
-```
-
-If the command fails with a permission error,
-try running your terminal as an administrator.
+   ```console
+   $ git config --system core.longpaths true
+   ```
+   
+   If the command fails with a permission error,
+   try running your terminal as an administrator.
 
 1. Enable long paths in Windows:
-
-```console
-New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
-```
-
-This command requires administrator privileges.
+   
+   ```console
+   New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name "LongPathsEnabled" -Value 1 -PropertyType DWORD -Force
+   ```
+   
+   This command requires administrator privileges.
 
 [Flutter SDK archive]: /install/archive
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
