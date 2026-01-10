@@ -542,6 +542,7 @@
       { "source": "/go/ios-platform-view-focus", "destination": "https://docs.google.com/document/d/1GG8VfYeuVtTQHiMWQXbrSG5HEUorzqU8IGbNySVJ-bY", "type": 301 },
       { "source": "/go/ios-platform-view-hittest-blocking", "destination": "https://docs.google.com/document/d/1jVBK6fqLdN7qA8jGM8PryQeUYMYBNvP-808w4K6KBGw/edit?usp=sharing&resourcekey=0-D8jiTjjIZjFSiA20osvrHw", "type": 301 },
       { "source": "/go/ios-platform-view-mask-hardware-rendering", "destination": "https://docs.google.com/document/d/1TqG_N4GK_qctuk73Gk3zOdAiILUrwMqxoCMgroK_AeA/edit?resourcekey=0-jUiidfzIS642ngG2w9vSUA&tab=t.0", "type": 301 },
+      { "source": "/go/ios-platform-view-touch-gesture-blocking", "destination": "https://docs.google.com/document/d/1ag4drAdJsR7y-rQZkqJWc6tOQ4qCbflQSGyoxsSC6MM/edit?tab=t.0", "type": 301 },
       { "source": "/go/ios-platformview-backdrop-filter-blur", "destination": "https://docs.google.com/document/d/1V7Jc_RGaknrBBPPBBKB8lT7f3PKhYr8sin35MSMFAf4/edit?usp=sharing", "type": 301 },
       { "source": "/go/ios-plugins-swift-migration", "destination": "https://docs.google.com/document/d/1XsaulkJA6_ZSpM7chkQLhQY25sQqhEMiqHMYzw8H85o/edit?resourcekey=0-_cUjF1c0iBvRLKfV-3gK5A", "type": 301 },
       { "source": "/go/ios-pull-to-refresh", "destination": "https://docs.google.com/document/d/1oUgNd3fsJ1QVuEmA6ENBT8vq3o6QKCRUPGCB6q91VgI/edit", "type": 301 },
