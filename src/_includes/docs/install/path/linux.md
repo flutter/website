@@ -27,7 +27,7 @@
     <summary>Expand for <code>bash</code> instructions</summary>
 
     ```console
-    $ echo 'export PATH="<path-to-sdk>:$PATH"' >> ~/.bash_profile
+    $ echo 'export PATH="<path-to-sdk>/bin:$PATH"' >> ~/.bashrc
     ```
 
     For example, if you downloaded Flutter into a
@@ -35,7 +35,7 @@
     you'd run the following:
 
     ```console
-    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.bash_profile
+    $ echo 'export PATH="$HOME/develop/flutter/bin:$PATH"' >> ~/.bashrc
     ```
 
     </details>
