@@ -62,9 +62,9 @@
     The main responsibilities of the engine are as follows:
 
     1. Exposes the `dart:ui` API, which are the low-level primitives
-       that the Flutter framework builds upon.
+       that the Flutter [framework][] builds upon.
     2. Converts low-level drawing commands into pixels (also called
-       _rasterization_, this includes Impeller and Skia).
+       _rasterization_, this includes [Impeller][] and Skia).
     3. Responsible for launching and managing Dart's runtime.
     4. Responsible for laying out text.
     5. Responsible for asset resolution.
@@ -118,7 +118,7 @@
     Android Studio, and IntelliJ IDEA. It does not re-run `main` or
     `initState`; for that, use [hot restart][].
 
-    [hot restart]: /resources/glossary/#hot-restart
+    [hot restart]: /resources/glossary#hot-restart
   related_links:
     - text: "Hot reload documentation"
       link: "/tools/hot-reload"
@@ -207,7 +207,7 @@
     through constructor parameters.
   long_description: |-
     The process of passing data through multiple layers of widgets
-    through constructor pareameterss, usually to reach a deeper descendant.
+    through constructor parameters, usually to reach a deeper descendant.
     This pattern can become verbose, which is
     why other state management solutions
     (like `InheritedWidget` or `Provider`) are often used.
@@ -297,8 +297,8 @@
     When a widget's state changes, the Flutter framework
     rebuilds the necessary parts of the tree to update the UI.
 
-    There are two primary types of widgets,
-    including [`StatelessWidget`][], which have no mutable state, and
+    The two primary types of widgets are
+    [`StatelessWidget`][], which have no mutable state, and
     [`StatefulWidget`][], which have a persistent [state][] that can be updated.
 
     [`StatelessWidget`]: https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html
