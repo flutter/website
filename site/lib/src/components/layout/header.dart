@@ -25,26 +25,29 @@ class DashHeader extends StatelessComponent {
 
     return header(id: 'site-header', [
       nav(classes: 'navbar', [
-        const a(
+        a(
           id: 'site-primary-logo',
-          classes: 'site-wordmark',
+          classes: [
+            'site-wordmark',
+            if (activeEntry == ActiveNavEntry.home) 'active',
+          ].toClasses,
           href: '/',
           attributes: {
             'aria-label': 'Go to the Flutter docs homepage.',
             'title': 'Go to the Flutter docs homepage.',
           },
           [
-            img(
+            const img(
               src: '/assets/images/branding/flutter/logo/default.svg',
               alt: 'Flutter logo',
               attributes: {'width': '28'},
             ),
-            span(
+            const span(
               classes: 'name',
               attributes: {'translate': 'no'},
               [.text('Flutter')],
             ),
-            span(
+            const span(
               classes: 'subtype',
               [.text('Docs')],
             ),
@@ -55,9 +58,9 @@ class DashHeader extends StatelessComponent {
         if (activeEntry == ActiveNavEntry.learn)
           ul(classes: 'nav-items', [
             _NavItem(
-              href: '/',
-              label: 'Home',
-              isActive: activeEntry == ActiveNavEntry.home,
+              href: '/install',
+              label: 'Install',
+              isActive: activeEntry == ActiveNavEntry.install,
             ),
             _NavItem(
               href: '/learn',

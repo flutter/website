@@ -20,5 +20,6 @@ ActiveNavEntry activeNavEntry(String pageUrlPath) {
 enum ActiveNavEntry {
   home,
   learn,
+  install,
   // reference,
 }

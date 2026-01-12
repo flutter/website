@@ -38,6 +38,7 @@
       flex-direction: row;
       align-items: center;
       gap: .4rem;
+      margin: 0 0 0 auto;
     }
 
     .nav-link {
@@ -54,7 +55,6 @@
     ul.nav-items {
       display: none;
       padding: 0;
-      margin: 0 0 0 auto;
       gap: .75rem;
       flex-direction: row;
       list-style-type: none;
