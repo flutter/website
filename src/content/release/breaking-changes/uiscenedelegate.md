@@ -87,9 +87,9 @@ sequence, plugin registration must now be handled in a new callback called
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
-+     func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-+       GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-+     }
++   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
++     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
++   }
   }
 ```
 
