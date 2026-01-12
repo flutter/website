@@ -547,39 +547,6 @@ In the next lesson, you'll learn about stack-based navigation and
 update the UI on small screens to navigate between
 the contacts list view and the contacts view.
 
-### Test yourself
-
-<Quiz title="Slivers Quiz">
-- question: What is the key difference between slivers and regular widgets?
-  options:
-    - text: Slivers are faster to render than regular widgets.
-      correct: false
-      explanation: Both are optimized; the difference is their purpose and context.
-    - text: Slivers are specialized widgets designed for scrollable layouts and can only be direct children of scroll views.
-      correct: true
-      explanation: Slivers work within scroll views like CustomScrollView; regular widgets can be used anywhere.
-    - text: Slivers can have an unlimited number of children.
-      correct: false
-      explanation: Some slivers like SliverList can have many children, but that's not what distinguishes them.
-    - text: Slivers automatically handle user gestures.
-      correct: false
-      explanation: Gesture handling is separate; slivers are about scrollable layout composition.
-- question: How do you use a regular widget inside a CustomScrollView's slivers list?
-  options:
-    - text: Just add it directly; CustomScrollView accepts any widget.
-      correct: false
-      explanation: CustomScrollView only accepts slivers; regular widgets must be wrapped.
-    - text: Wrap it in a SliverToBoxAdapter or SliverFillRemaining.
-      correct: true
-      explanation: These adapters convert regular widgets into slivers so they can be used in sliver contexts.
-    - text: Convert the widget to a sliver by calling `.toSliver()` on it.
-      correct: false
-      explanation: There's no `.toSliver()` method; you use adapter widgets like SliverToBoxAdapter.
-    - text: Pass it to the `child` property instead of `slivers`.
-      correct: false
-      explanation: CustomScrollView uses the slivers property; there's no child property for this purpose.
-</Quiz>
-
 ### Review
 
 <SummaryCard>
@@ -614,7 +581,4 @@ items:
 </SummaryCard>
 
 </TutorialSteps>
-
-<TutorialOutro>
-</TutorialOutro>
 </TutorialLesson>

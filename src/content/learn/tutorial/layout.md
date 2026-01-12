@@ -285,41 +285,7 @@ When you reload your app, you should see a 5x5 grid of white squares.
 
 [record]: {{site.dart-site}}/language/records
 
-### Test yourself
-
-<Quiz title="Layout Quiz">
-- question: What is the primary difference between a Column and a Row widget?
-  options:
-    - text: Column is for scrolling content; Row is for static content.
-      correct: false
-      explanation: Both Column and Row are for layout, not scrolling. Use ListView or SingleChildScrollView for scrolling.
-    - text: Column arranges children vertically; Row arranges children horizontally.
-      correct: true
-      explanation: Column lays out its children along the vertical axis, while Row uses the horizontal axis.
-    - text: Column can have unlimited children; Row is limited to two.
-      correct: false
-      explanation: Both widgets can have any number of children.
-    - text: Column requires a Scaffold parent; Row does not.
-      correct: false
-      explanation: Neither widget requires a Scaffold as a parent.
-- question: What does the Scaffold widget provide in a Flutter app?
-  options:
-    - text: Only a background color for the page.
-      correct: false
-      explanation: Scaffold provides much more, including structure for app bars, drawers, and more.
-    - text: A Material-style page layout with slots for app bar, body, drawer, and more.
-      correct: true
-      explanation: Scaffold is a convenience widget that provides a standard Material page structure.
-    - text: A way to navigate between different pages.
-      correct: false
-      explanation: Navigation is handled by Navigator, not Scaffold.
-    - text: Automatic state management for the page.
-      correct: false
-      explanation: Scaffold doesn't manage state; you use StatefulWidget or state management solutions for that.
-</Quiz>
-
 ### Review
-
 
 <SummaryCard>
 title: What you accomplished
@@ -354,7 +320,4 @@ items:
 </SummaryCard>
 
 </TutorialSteps>
-
-<TutorialOutro>
-</TutorialOutro>
 </TutorialLesson>

@@ -547,39 +547,6 @@ you'll start building the app in earnest.
 
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
 
-### Test yourself
-
-<Quiz title="Advanced UI Setup Quiz">
-- question: What is the main difference between CupertinoApp and MaterialApp?
-  options:
-    - text: CupertinoApp only works on iOS devices.
-      correct: false
-      explanation: CupertinoApp can run on any platform; it just provides iOS-style widgets.
-    - text: CupertinoApp provides iOS-style widgets and styling, while MaterialApp provides Material Design widgets.
-      correct: true
-      explanation: CupertinoApp uses Cupertino design system widgets that match the iOS look and feel.
-    - text: CupertinoApp is lighter and has better performance.
-      correct: false
-      explanation: Both have similar performance; they differ in visual style, not speed.
-    - text: MaterialApp requires more configuration to set up.
-      correct: false
-      explanation: Both have similar setup requirements; they just use different design systems.
-- question: What is the purpose of a ValueNotifier in state management?
-  options:
-    - text: To validate user input values.
-      correct: false
-      explanation: ValueNotifier holds and notifies about value changes, not validation.
-    - text: To hold a single value and notify listeners when that value changes.
-      correct: true
-      explanation: ValueNotifier is a simple ChangeNotifier that wraps a single value and notifies listeners on change.
-    - text: To convert values between different data types.
-      correct: false
-      explanation: Type conversion is not the purpose of ValueNotifier.
-    - text: To store values permanently in local storage.
-      correct: false
-      explanation: ValueNotifier holds values in memory; persistence requires separate implementation.
-</Quiz>
-
 ### Review
 
 <SummaryCard>
@@ -609,7 +576,4 @@ items:
 </SummaryCard>
 
 </TutorialSteps>
-
-<TutorialOutro>
-</TutorialOutro>
 </TutorialLesson>

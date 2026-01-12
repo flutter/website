@@ -378,39 +378,6 @@ Both the sidebar and main content area show placeholder text for now.
 In the next lesson, you'll implement slivers to fill in
 the contact list content.
 
-### Test yourself
-
-<Quiz title="Adaptive Layout Quiz">
-- question: What information does LayoutBuilder provide to its builder callback?
-  options:
-    - text: The device's operating system and screen orientation.
-      correct: false
-      explanation: LayoutBuilder provides size constraints, not OS or orientation info.
-    - text: The parent's size constraints, including maximum width and height.
-      correct: true
-      explanation: LayoutBuilder's builder receives BoxConstraints that tell you the available space from the parent.
-    - text: The current theme colors and typography.
-      correct: false
-      explanation: Theme data comes from Theme.of(context), not LayoutBuilder.
-    - text: The number of child widgets in the tree.
-      correct: false
-      explanation: LayoutBuilder provides layout constraints, not widget tree information.
-- question: In a large screen layout, which widget can be used to place a sidebar and details panel side-by-side?
-  options:
-    - text: Column
-      correct: false
-      explanation: Column arranges widgets vertically, not side-by-side.
-    - text: Row
-      correct: true
-      explanation: Row arranges its children horizontally, making it ideal for placing a sidebar and details panel side-by-side.
-    - text: Stack
-      correct: false
-      explanation: Stack overlaps widgets on top of each other, not side-by-side.
-    - text: ListView
-      correct: false
-      explanation: ListView is for scrollable lists, not for side-by-side layout.
-</Quiz>
-
 ### Review
 
 <SummaryCard>
@@ -440,7 +407,4 @@ items:
 </SummaryCard>
 
 </TutorialSteps>
-
-<TutorialOutro>
-</TutorialOutro>
 </TutorialLesson>
