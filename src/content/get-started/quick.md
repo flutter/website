@@ -242,10 +242,9 @@ follow the instructions in [Install Flutter manually][].
        {:type="a"}
 
     :::note
-    The VS Code setup process might attempt to locate Android Studio.
-    If you do not have Android Studio installed, you might see a warning or error.
-    Installation should still succeed for other platforms (like web, iOS, or macOS).
-    Run `flutter doctor` to verify your installation.
+    The VS Code setup process might check for Android Studio, which can result in a warning if it's not installed.
+    You can safely ignore this if you're targeting other platforms (like web, iOS, or macOS), as the installation will still succeed.
+    Afterward, run `flutter doctor` to verify your installation.
     :::
 
  1. <h3>Troubleshoot installation issues</h3>
