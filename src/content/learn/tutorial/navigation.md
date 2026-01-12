@@ -265,3 +265,36 @@ items:
       collapsible headers with search, and responsive navigation.
       These are common patterns used in production apps!
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Navigation Quiz">
+- question: What does `Navigator.of(context).push` do?
+  options:
+    - text: Replaces the current screen with a new one.
+      correct: false
+      explanation: Push adds to the stack; `pushReplacement` replaces the current screen.
+    - text: Adds a new route to the navigation stack, displaying it on top of the current screen.
+      correct: true
+      explanation: Push adds the new route to the stack, allowing users to go back to the previous screen.
+    - text: Removes the current screen from the navigation stack.
+      correct: false
+      explanation: That's what `pop` does; push adds a new screen.
+    - text: Opens a dialog box over the current screen.
+      correct: false
+      explanation: Dialogs use `showDialog`; Navigator.push navigates to a full screen.
+- question: What does `Navigator.of(context).pop()` do?
+  options:
+    - text: Closes the entire app.
+      correct: false
+      explanation: Pop only removes the current route; it doesn't close the app.
+    - text: Removes the current route from the navigation stack, returning to the previous screen.
+      correct: true
+      explanation: Pop removes the top route from the stack, revealing the screen beneath it.
+    - text: Clears all routes and shows the home screen.
+      correct: false
+      explanation: That would require popUntil or pushAndRemoveUntil; pop removes only the top route.
+    - text: Refreshes the current screen with new data.
+      correct: false
+      explanation: Pop navigates back; to refresh, you'd use setState or other state management.
+</Quiz>

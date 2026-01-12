@@ -169,3 +169,36 @@ items:
       see code changes reflected in under a second without losing app state.
       Press `r` in the terminal to trigger a hot reload.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Create an App Quiz">
+- question: What is the purpose of the `runApp` function in a Flutter application?
+  options:
+    - text: It compiles the Dart code into native machine code.
+      correct: false
+      explanation: Compilation happens before the app runs; `runApp` starts the Flutter framework with a root widget.
+    - text: It takes a widget as an argument and makes it the root of the widget tree.
+      correct: true
+      explanation: The `runApp` function inflates the given widget and attaches it to the screen, making it the root of the widget tree.
+    - text: It creates the `main.dart` file for the project.
+      correct: false
+      explanation: The file is created by `flutter create`; `runApp` is called at runtime.
+    - text: It downloads Flutter dependencies from the internet.
+      correct: false
+      explanation: Dependencies are managed by `flutter pub get`, not `runApp`.
+- question: How do you trigger a hot reload while a Flutter app is running in the terminal?
+  options:
+    - text: Press `h` in the terminal.
+      correct: false
+      explanation: Pressing `h` shows help options; `r` triggers hot reload.
+    - text: Press `r` in the terminal.
+      correct: true
+      explanation: Pressing `r` in the terminal where the app is running triggers a hot reload.
+    - text: Stop and restart the app with `flutter run`.
+      correct: false
+      explanation: A full restart is not needed; hot reload is faster.
+    - text: Save the file and wait for automatic reload.
+      correct: false
+      explanation: By default, you need to press `r` to trigger hot reload in the terminal.
+</Quiz>

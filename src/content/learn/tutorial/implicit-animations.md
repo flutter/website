@@ -216,3 +216,36 @@ items:
       dynamic layouts, user input, state management, and smooth animations.
       You now have the foundational skills to build your own Flutter apps!
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Implicit Animations Quiz">
+- question: What widget can you use to automatically animate changes to properties like color, size, and decoration?
+  options:
+    - text: Container
+      correct: false
+      explanation: Container doesn't animate; property changes happen instantly.
+    - text: AnimatedContainer
+      correct: true
+      explanation: AnimatedContainer automatically animates changes to its properties over the specified duration.
+    - text: AnimationController
+      correct: false
+      explanation: AnimationController is for explicit animations; AnimatedContainer is simpler for basic animations.
+    - text: TransitionContainer
+      correct: false
+      explanation: There is no TransitionContainer widget; use AnimatedContainer for implicit animations.
+- question: What does the `duration` property control in an AnimatedContainer?
+  options:
+    - text: How long the widget stays on screen before disappearing.
+      correct: false
+      explanation: Duration controls animation time, not widget visibility.
+    - text: How long the animation takes to transition from the old value to the new value.
+      correct: true
+      explanation: The duration specifies the time over which the property change is animated.
+    - text: The delay before the animation starts.
+      correct: false
+      explanation: Duration is about animation length; delays require separate configuration.
+    - text: How many times the animation repeats.
+      correct: false
+      explanation: Implicit animations run once per state change; repetition requires explicit animation controllers.
+</Quiz>
