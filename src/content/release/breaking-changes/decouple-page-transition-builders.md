@@ -35,9 +35,8 @@ is semantically a Cupertino component—its implementation uses
 Cupertino transition mixins and provides iOS-style navigation
 animations.
 
-To improve code organization and allow Cupertino apps to use this
-builder without depending on Material, `CupertinoPageTransitionsBuilder`
-has been moved to the Cupertino library where it logically belongs.
+This move improves code organization and allows Cupertino apps to use this
+builder without depending on the Material library.
 
 ## Migration guide
 
