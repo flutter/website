@@ -1,3 +1,26 @@
+- term: "Adaptive"
+  short_description: |-
+    A design concept where the UI adapts to be usable in the available space,
+    often changing layout or input methods based on device capabilities.
+  long_description: |-
+    Adaptive design is about the UI being _usable_ in the space,
+    as opposed to responsive design which is about fitting the UI _into_
+    the space.
+    An adaptive app selects the appropriate layout
+    (such as having a bottom nav instead of a side panel)
+    and input devices (for example, mouse versus touch)
+    to feel natural on the current device.
+  related_links:
+    - text: "Adaptive vs responsive design"
+      link: "/ui/adaptive-responsive#what-is-responsive-vs-adaptive"
+      type: "doc"
+    - text: "Building adaptive apps"
+      link: "/ui/adaptive-responsive"
+      type: "doc"
+  labels:
+    - "ui"
+    - "design"
+    
 - term: "Dart"
   short_description: |-
     A client-optimized language for fast apps on any platform.
