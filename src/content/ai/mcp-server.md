@@ -60,12 +60,12 @@ Run the server with the `dart mcp-server` command,
 which must be configured in your preferred client.
 
 This section provides instructions for setting up the
-Dart and Flutter MCP server with popular tools like Firebase Studio,
+Dart and Flutter MCP server with popular tools like Antigravity,
 Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
 
 ### Antigravity
 
-To configure [Antigravity][] to use the Dart and Flutter MCP server,
+To configure Google [Antigravity][] to use the Dart and Flutter MCP server,
 you can either install it from the list of available servers or
 [connect it as a custom MCP server][antigravity-mcp].
 
@@ -330,6 +330,36 @@ For more information, see the official Cursor
 documentation for [installing MCP servers][].
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
+
+### Claude Code
+
+To configure Claude Code to use the Dart and Flutter MCP server
+for the current project, use the `claude mcp add` CLI command:
+
+```console
+$ claude mcp add --transport stdio dart -- dart mcp-server
+```
+
+If Claude reports issues
+
+To learn more about configuring MCP servers in Claude Code,
+check out their documentation on [Installing MCP servers][claude-install].
+
+[claude-install]: https://code.claude.com/docs/en/mcp#installing-mcp-servers
+
+### Codex CLI
+
+To configure the Codex CLI to use the Dart and Flutter MCP server
+for the current project, use the `codex mcp add` CLI command:
+
+```console
+$ codex mcp add dart -- dart mcp-server --force-roots-fallback
+```
+
+To learn more about configuring MCP servers in the Codex CLI,
+check out their documentation on [Connecting to MCP servers][codex-connect].
+
+[codex-connect]: https://developers.openai.com/codex/mcp
 
 ## Use your MCP client
 
