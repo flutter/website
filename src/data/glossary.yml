@@ -1,3 +1,57 @@
+- term: "Adaptive"
+  short_description: |-
+    A design concept where the UI adapts to be usable in the available space,
+    often changing layout or input methods based on device capabilities.
+  long_description: |-
+    Adaptive design is about the UI being _usable_ in the space,
+    as opposed to responsive design which is about fitting the UI _into_
+    the space.
+    An adaptive app selects the appropriate layout
+    (such as having a bottom nav instead of a side panel)
+    and input devices (for example, mouse versus touch)
+    to feel natural on the current device.
+  related_links:
+    - text: "Adaptive vs responsive design"
+      link: "/ui/adaptive-responsive#what-is-responsive-vs-adaptive"
+      type: "doc"
+    - text: "Building adaptive apps"
+      link: "/ui/adaptive-responsive"
+      type: "doc"
+  labels:
+    - "ui"
+    - "design"
+
+- term: "Embedder"
+  short_description: |-
+    The platform-specific component that supports Flutter
+    on a native platform.
+  long_description: |-
+    Each native platform supported by Flutter has an _embedder_
+    for platform-specific logic. The embedder is the bridge
+    that coordinates with the underlying operating system.
+    It provides access to services like input, accessibility,
+    message event loops, and more.
+    The embedder also launches and manages the Flutter engine.
+
+    Each embedder is written in the platform's native language:
+    Java and Kotlin for Android, Swift and Objective-C for iOS and macOS,
+    and C++ for Windows and Linux.
+
+    Each embedder enables plugin packages to add additional
+    platform-specific functionality to the app.
+
+    The embedder is launched and managed by the runner app.
+  related_links:
+    - text: "Architectural overview: The Embedder"
+      link: "/resources/architectural-overview#platform-embedding"
+      type: "doc"
+    - text: "Flutter on embedded devices"
+      link: "/embedded"
+      type: "doc"
+  labels:
+    - "architecture"
+    - "engine"
+
 - term: "Engine"
   short_description: |-
     The portable runtime for Flutter apps.
@@ -8,9 +62,9 @@
     The main responsibilities of the engine are as follows:
 
     1. Exposes the `dart:ui` API, which are the low-level primitives
-       that the Flutter framework builds upon.
+       that the Flutter [framework][] builds upon.
     2. Converts low-level drawing commands into pixels (also called
-       _rasterization_, this includes Impeller and Skia).
+       _rasterization_, this includes [Impeller][] and Skia).
     3. Responsible for launching and managing Dart's runtime.
     4. Responsible for laying out text.
     5. Responsible for asset resolution.
@@ -28,9 +82,28 @@
     - "engine"
     - "architecture"
 
+- term: "Frame"
+  short_description: |-
+    A single image in a sequence of images that
+    makes up an animation or UI update.
+  long_description: |-
+    Flutter aims to produce 60 frames per second (fps),
+    or 120 fps on capable devices.
+    This means the framework has approximately 16ms (at 60 fps)
+    or 8ms (at 120 fps) to render each frame.
+    If the app takes longer than this to render a frame,
+    the user might see [jank](/resources/glossary#jank).
+  related_links:
+    - text: "Rendering performance"
+      link: "/perf/rendering-performance"
+      type: "doc"
+  labels:
+    - "performance"
+    - "rendering"
+
 - term: "Hot reload"
   short_description: |-
-    A Flutter feature that allows you to inject updated code into 
+    A Flutter feature that allows you to inject updated code into
     a running application in the Dart VM and see the changes immediately
     while maintaining application state.
   long_description: |-
@@ -45,7 +118,7 @@
     Android Studio, and IntelliJ IDEA. It does not re-run `main` or
     `initState`; for that, use [hot restart][].
 
-    [hot restart]: /resources/glossary/#hot-restart
+    [hot restart]: /resources/glossary#hot-restart
   related_links:
     - text: "Hot reload documentation"
       link: "/tools/hot-reload"
@@ -128,6 +201,24 @@
     - "performance"
     - "smooth rendering"
 
+- term: "Prop drilling"
+  short_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters.
+  long_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters, usually to reach a deeper descendant.
+    This pattern can become verbose, which is
+    why other state management solutions
+    (like `InheritedWidget` or `Provider`) are often used.
+  related_links:
+    - text: "State management: Sharing state"
+      link: "/get-started/fundamentals/state-management#sharing-state-between-widgets"
+      type: "doc"
+  labels:
+    - "state management"
+    - "architecture"
+
 - term: "Sliver"
   short_description: |-
     A customizable portion of a scrollable area.
@@ -169,6 +260,27 @@
     - "scrolling"
     - "ui"
 
+- term: "Viewport"
+  short_description: |-
+    A widget that displays a subset of its children
+    based on the current scroll offset.
+  long_description: |-
+    A viewport is the visual component of the scrolling machinery.
+    It displays a subset of its children (usually slivers)
+    based on the current scroll offset.
+    It is often described as being "bigger on the inside"
+    because it can contain more content than is visible on the screen.
+  related_links:
+    - text: "Viewport class"
+      link: "https://api.flutter.dev/flutter/widgets/Viewport-class.html"
+      type: "api"
+    - text: "Slivers"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+  labels:
+    - "scrolling"
+    - "ui"
+
 - term: "Widget"
   short_description: |-
     The basic building block of a Flutter user interface.
@@ -184,9 +296,9 @@
     Widgets are composed together in a hierarchy to form the widget tree.
     When a widget's state changes, the Flutter framework
     rebuilds the necessary parts of the tree to update the UI.
-    
-    There are two primary types of widgets,
-    including [`StatelessWidget`][], which have no mutable state, and
+
+    The two primary types of widgets are
+    [`StatelessWidget`][], which have no mutable state, and
     [`StatefulWidget`][], which have a persistent [state][] that can be updated.
 
     [`StatelessWidget`]: https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html

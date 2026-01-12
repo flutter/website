@@ -7,9 +7,11 @@ description: >-
 ---
 
 Learn how to install and set up Flutter in a Code OSS-based editor.
-This includes (but is not limited to), [VS Code][], [Cursor][], and [Windsurf][].
+This includes (but is not limited to),
+[VS Code][], [Antigravity][], [Cursor][], and [Windsurf][].
 
 [VS Code]: https://code.visualstudio.com
+[Antigravity]: https://antigravity.google/
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
 

@@ -27,3 +27,6 @@ targets:
             # Disable for now.
             # dart2wasm:
             #   args: [-O2, -Djaspr.flags.release=true]
+      docs_flutter_dev_site:stylesHashBuilder:
+        dev_options:
+          fixed_hash: true

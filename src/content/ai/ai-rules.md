@@ -1,5 +1,6 @@
 ---
 title: AI rules for Flutter and Dart
+shortTitle: AI rules
 description: >-
   Learn how to add AI rules to tools that accelerate your
   development workflow.

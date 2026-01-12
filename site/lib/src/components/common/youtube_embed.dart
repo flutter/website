@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -63,7 +64,7 @@ class YoutubeEmbed with CustomComponentBase {
           target: Target.blank,
           attributes: {'rel': 'noopener'},
           [
-            text('Watch on YouTube in a new tab: "$videoTitle"'),
+            .text('Watch on YouTube in a new tab: "$videoTitle"'),
           ],
         ),
       ],

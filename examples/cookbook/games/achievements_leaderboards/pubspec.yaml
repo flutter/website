@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  games_services: ^4.1.1
+  games_services: ^5.0.0
   logging: ^1.3.0
 
 flutter:

@@ -5,6 +5,9 @@ breadcrumb: Get started
 description: >-
   Learn how to use GenUI SDK for Flutter and add it
   to your existing Flutter app.
+next:
+  title: Input and events
+  path: /ai/genui/input-events
 prev:
   title: GenUI SDK main components & concepts
   path: /ai/genui/components
@@ -85,6 +88,8 @@ consider using Firebase AI Logic instead.
       // ...
     ]);
 
+    final messageProcessor = A2uiMessageProcessor(catalogs: [catalog]);
+
     final contentGenerator = GoogleGenerativeAiContentGenerator(
       catalog: catalog,
       systemInstruction: 'You are a helpful assistant.',
@@ -94,6 +99,7 @@ consider using Firebase AI Logic instead.
 
     final conversation = GenUiConversation(
       contentGenerator: contentGenerator,
+      a2uiMessageProcessor: messageProcessor,
     );
     ```
 
@@ -169,7 +175,7 @@ The main components in this package include:
 * `A2uiContentGenerator`:
   Implements the `ContentGenerator` that manages the connection
   to the A2A server and processes incoming A2UI messages,
-  updating the `GenUiManager`.
+  updating the `A2uiMessageProcessor`.
 * `A2uiAgentConnector`:
   Handles the low-level web socket communication with the
   A2A server, including sending messages and parsing stream events.
@@ -186,8 +192,8 @@ Follow these instructions:
     $ dart pub add genui genui_a2ui a2a
     ```
 
- 2. Initialize `GenUIManager`:
-    Set up `GenUiManager` with your widget `Catalog`.
+ 2. Initialize `A2uiMessageProcessor`:
+    Set up `A2uiMessageProcessor` with your widget `Catalog`s.
 
  3. Create `A2uiContentGenerator`:
     Instantiate `A2uiContentGenerator`, providing the A2A server URI.
@@ -249,8 +255,8 @@ Follow these instructions:
 
     class _ChatScreenState extends State<ChatScreen> {
       final TextEditingController _textController = TextEditingController();
-      final GenUiManager _genUiManager =
-          GenUiManager(catalog: CoreCatalogItems.asCatalog());
+      final A2uiMessageProcessor _a2uiMessageProcessor =
+          A2uiMessageProcessor(catalogs: [CoreCatalogItems.asCatalog()]);
       late final A2uiContentGenerator _contentGenerator;
       late final GenUiConversation _uiAgent;
       final List<ChatMessage> _messages = [];
@@ -264,7 +270,7 @@ Follow these instructions:
         );
         _uiAgent = GenUiConversation(
           contentGenerator: _contentGenerator,
-          genUiManager: _genUiManager,
+          a2uiMessageProcessor: _a2uiMessageProcessor,
         );
 
         // Listen for text responses from the agent.
@@ -285,7 +291,7 @@ Follow these instructions:
       void dispose() {
         _textController.dispose();
         _uiAgent.dispose();
-        _genUiManager.dispose();
+        _a2uiMessageProcessor.dispose();
         _contentGenerator.dispose();
         super.dispose();
       }
@@ -326,7 +332,7 @@ Follow these instructions:
               SizedBox(
                 height: 300,
                 child: GenUiSurface(
-                  host: _genUiManager,
+                  host: _a2uiMessageProcessor,
                   surfaceId: 'main_surface',
                 ),
               ),
@@ -436,48 +442,48 @@ to enable outbound network requests:
 Next, use the following instructions to connect your app
 to your chosen agent provider.
 
- 1. Create a `GenUiManager`, and provide it with the catalog
+ 1. Create a `A2uiMessageProcessor`, and provide it with the catalogs
     of widgets that you want to make available to the agent.
 
  2. Create a `ContentGenerator`, and provide it with a
     system instruction and a set of tools (functions
     you want the agent to be able to invoke).
-    You should always include those provided by `GenUiManager`,
+    You should always include those provided by `A2uiMessageProcessor`,
     but feel free to include others.
 
  3. Create a `GenUiConversation` using the instances of
-    `ContentGenerator` and `GenUiManager`. Your app will
+    `ContentGenerator` and `A2uiMessageProcessor`. Your app will
     primarily interact with this object to get things done.
 
     For example:
 
     ```dart
     class _MyHomePageState extends State<MyHomePage> {
-      late final GenUiManager _genUiManager;
+      late final A2uiMessageProcessor _a2uiMessageProcessor;
       late final GenUiConversation _genUiConversation;
 
       @override
       void initState() {
         super.initState();
 
-        // Create a GenUiManager with a widget catalog.
+        // Create a A2uiMessageProcessor with a widget catalog.
         // The CoreCatalogItems contain basic widgets for text, markdown, and images.
-        _genUiManager = GenUiManager(catalog: CoreCatalogItems.asCatalog());
+        _a2uiMessageProcessor = A2uiMessageProcessor(catalogs: [CoreCatalogItems.asCatalog()]);
 
         // Create a ContentGenerator to communicate with the LLM.
-        // Provide system instructions and the tools from the GenUiManager.
+        // Provide system instructions and the tools from the A2uiMessageProcessor.
         final contentGenerator = FirebaseAiContentGenerator(
           systemInstruction: '''
             You are an expert in creating funny riddles. Every time I give you a word,
             you should generate UI that displays one new riddle related to that word.
             Each riddle should have both a question and an answer.
             ''',
-          tools: _genUiManager.getTools(),
+          additionalTools: _a2uiMessageProcessor.getTools(),
         );
 
         // Create the GenUiConversation to orchestrate everything.
         _genUiConversation = GenUiConversation(
-          genUiManager: _genUiManager,
+          a2uiMessageProcessor: _a2uiMessageProcessor,
           contentGenerator: contentGenerator,
           onSurfaceAdded: _onSurfaceAdded, // Added in the next step.
           onSurfaceDeleted: _onSurfaceDeleted, // Added in the next step.
@@ -671,11 +677,11 @@ To add your own widgets, use the following instructions.
 
  4. Add the `CatalogItem` to the catalog
 
-    Include your catalog items when instantiating `GenUiManager`.
+     Include your catalog items when instantiating `A2uiMessageProcessor`.
 
     ```dart
-    _genUiManager = GenUiManager(
-      catalog: CoreCatalogItems.asCatalog().copyWith([riddleCard]),
+    _a2uiMessageProcessor = A2uiMessageProcessor(
+      catalogs: [CoreCatalogItems.asCatalog().copyWith([riddleCard])],
     );
     ```
 
@@ -692,7 +698,7 @@ To add your own widgets, use the following instructions.
           generate a RiddleCard that displays one new riddle related to that word.
           Each riddle should have both a question and an answer.
           ''',
-      tools: _genUiManager.getTools(),
+      additionalTools: _a2uiMessageProcessor.getTools(),
     );
     ```
 
@@ -785,7 +791,7 @@ final contentGenerator = FirebaseAiContentGenerator(
     displays one new riddle related to that word.
     Each riddle should have both a question and an answer.
     ''',
-  tools: _genUiManager.getTools(),
+  additionalTools: _a2uiMessageProcessor.getTools(),
 );
 ```
 

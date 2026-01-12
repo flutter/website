@@ -12,8 +12,8 @@ dependencies:
   crypto: ^3.0.7
   html: ^0.15.6
   http: ^1.5.0
-  jaspr: ^0.21.6
-  jaspr_content: ^0.4.3
+  jaspr: ^0.22.1
+  jaspr_content: ^0.4.5
   # Used as our template engine.
   liquify: ^1.3.1
   markdown: ^7.3.0
@@ -21,7 +21,7 @@ dependencies:
   meta: ^1.17.0
   nanoid2: ^2.0.1
   # Used for syntax highlighting.
-  opal: ^0.2.0
+  opal: ^0.2.2
   path: ^1.9.1
   pub_semver: ^2.2.0
   universal_web: ^1.1.1+1
@@ -35,8 +35,8 @@ dev_dependencies:
       ref: f91ed8ecef6a0b31685804fe4102b25fda021460
   build_runner: ^2.10.2
   build_web_compilers: ^4.4.0
-  jaspr_builder: ^0.21.6
-  sass: ^1.93.3
+  jaspr_builder: ^0.22.1
+  sass: ^1.97.2
   sass_builder: ^2.4.0
 
 jaspr:

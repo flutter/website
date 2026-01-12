@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -35,12 +36,12 @@ class TrailingContent extends StatelessComponent {
 
         p(id: 'page-github-links', [
           span([
-            text(
+            .text(
               'Unless stated otherwise, the documentation on '
               'this site reflects Flutter $currentFlutterVersion. ',
             ),
             if (pageDate != null)
-              text(
+              .text(
                 'Page last updated on $pageDate. ',
               ),
           ]),
@@ -48,9 +49,9 @@ class TrailingContent extends StatelessComponent {
             a(
               href: pageSource,
               attributes: {'target': '_blank', 'rel': 'noopener'},
-              [text('View source')],
+              [const .text('View source')],
             ),
-            span([text(' or ')]),
+            const span([.text(' or ')]),
           ],
           a(
             href: issueUrl,
@@ -59,9 +60,9 @@ class TrailingContent extends StatelessComponent {
               'target': '_blank',
               'rel': 'noopener',
             },
-            [text(pageSource == null ? 'Report an issue' : 'report an issue')],
+            [.text(pageSource == null ? 'Report an issue' : 'report an issue')],
           ),
-          text('.'),
+          const .text('.'),
         ]),
       ],
     );

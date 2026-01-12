@@ -1,38 +1,39 @@
 title: Learn Flutter
+url: /learn/tutorial
 units:
   - title: Introduction to Flutter UI
     chapters:
       - title: Create a Flutter app
-        url: /tutorial/ui/create-an-app/
+        url: /learn/tutorial/create-an-app
       - title: Widget fundamentals
-        url: /tutorial/ui/widget-fundamentals/
+        url: /learn/tutorial/widget-fundamentals
       - title: Layout widgets on a screen
-        url: /tutorial/ui/layout/
-      - title: Devtools
-        url: /tutorial/ui/devtools/
+        url: /learn/tutorial/layout
+      - title: DevTools
+        url: /learn/tutorial/devtools
       - title: Handle user input
-        url: /tutorial/ui/user-input/
+        url: /learn/tutorial/user-input
       - title: Learn about stateful widgets
-        url: /tutorial/ui/stateful-widget/
+        url: /learn/tutorial/stateful-widget
       - title: Add implicit animations
-        url: /tutorial/ui/implicit-animations/
+        url: /learn/tutorial/implicit-animations
   - title: State in Flutter apps
     chapters:
       - title: Set up a new project
-        url: /tutorial/state/set-up-project/
+        url: /learn/tutorial/set-up-state-project
       - title: Make Http Requests
-        url: /tutorial/state/http-requests/
+        url: /learn/tutorial/http-requests
       - title: Use `ChangeNotifier` to update app state
-        url: /tutorial/state/change-notifier/
+        url: /learn/tutorial/change-notifier
       - title: Use `ListenableBuilder` to update app UI
-        url: /tutorial/state/listenable-builder/
+        url: /learn/tutorial/listenable-builder
   - title: Flutter UI 102
     chapters:
       - title: Advanced UI features
-        url: /tutorial/ui-102/intro/
-      - title: "`LayoutBuilder` and adaptive layouts"
-        url: /tutorial/ui-102/adaptive-layout/
+        url: /learn/tutorial/advanced-ui
+      - title: Adaptive layouts
+        url: /learn/tutorial/adaptive-layout
       - title: Scrolling and slivers
-        url: /tutorial/ui-102/slivers/
+        url: /learn/tutorial/slivers
       - title: Stack based navigation
-        url: /tutorial/ui-102/navigation/
+        url: /learn/tutorial/navigation

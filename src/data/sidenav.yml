@@ -1,9 +1,9 @@
 - header: Get started
 
-
 - title: Set up Flutter
   permalink: /get-started
   hiddenChildren: true
+  icon: build
   children:
     - title: Overview
       permalink: /get-started
@@ -14,6 +14,7 @@
 
 - title: Install Flutter
   permalink: /install
+  icon: download
   children:
     - title: Overview
       permalink: /install
@@ -34,6 +35,7 @@
       permalink: /install/uninstall
 
 - title: Learn Flutter
+  icon: school
   children:
     - title: Introduction
       permalink: /get-started/learn-flutter
@@ -82,11 +84,12 @@
           permalink: /get-started/flutter-for/dart-swift-concurrency
 
     - divider
-    - title: Samples & tutorials
+    - title: Learning resources
       permalink: /reference/learning-resources
 
 - title: Stay up to date
   permalink: /release
+  icon: update
   children:
     - title: Release notes
       permalink: /release/release-notes
@@ -101,6 +104,7 @@
       permalink: /release/whats-new
 
 - title: App solutions
+  icon: apps
   children:
     - title: Develop with Firebase
       children:
@@ -169,25 +173,40 @@
 
 - title: AI solutions
   permalink: /ai
+  icon: smart_toy
   children:
     - title: Create with AI
       permalink: /ai/create-with-ai
-    - title: AI Rules
+    - title: Rules for AI
       permalink: /ai/ai-rules
-    - title: AI Toolkit
-      permalink: /ai-toolkit
-      expanded: false
+    - title: AI best practices
+      permalink: /ai/best-practices
       children:
         - title: Overview
-          permalink: /ai-toolkit
+          permalink: /ai/best-practices
+        - title: Prompting
+          permalink: /ai/best-practices/prompting
+        - title: Structure & output
+          permalink: /ai/best-practices/structure-output
+        - title: Tool calls (aka function calls)
+          permalink: /ai/best-practices/tool-calls
+        - title: Mode of interaction
+          permalink: /ai/best-practices/mode-of-interaction
+        - title: Developer experience
+          permalink: /ai/best-practices/developer-experience
+    - title: AI Toolkit
+      permalink: /ai/ai-toolkit
+      children:
+        - title: Overview
+          permalink: /ai/ai-toolkit
         - title: User experience
-          permalink: /ai-toolkit/user-experience
+          permalink: /ai/ai-toolkit/user-experience
         - title: Feature integration
-          permalink: /ai-toolkit/feature-integration
+          permalink: /ai/ai-toolkit/feature-integration
         - title: Custom LLM providers
-          permalink: /ai-toolkit/custom-llm-providers
+          permalink: /ai/ai-toolkit/custom-llm-providers
         - title: Chat client sample
-          permalink: /ai-toolkit/chat-client-sample
+          permalink: /ai/ai-toolkit/chat-client-sample
     - title: GenUI SDK for Flutter
       permalink: /ai/genui
       children:
@@ -197,10 +216,12 @@
           permalink: /ai/genui/components
         - title: Get started
           permalink: /ai/genui/get-started
+        - title: Input and events
+          permalink: /ai/genui/input-events
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: Flutter extension for Gemini CLI
-      permalink: /ai/flutter-ext-for-gemini
+      permalink: /ai/gemini-cli-extension
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
@@ -208,8 +229,10 @@
 - header: User interface
 - title: Introduction
   permalink: /ui
+  icon: palette
 - title: Widget catalog
   permalink: /ui/widgets
+  icon: view_module
   children:
     - title: Overview
       permalink: /ui/widgets
@@ -249,6 +272,7 @@
           permalink: /ui/widgets/text
 - title: Layout
   permalink: /ui/layout
+  icon: view_quilt
   children:
     - title: Introduction
       permalink: /ui/layout
@@ -282,6 +306,7 @@
           permalink: /cookbook/effects/parallax-scrolling
 - title: Adaptive & responsive design
   permalink: /ui/adaptive-responsive
+  icon: devices
   children:
     - title: Overview
       permalink: /ui/adaptive-responsive
@@ -303,6 +328,7 @@
       permalink: /ui/adaptive-responsive/more-info
 - title: Design & theming
   permalink: /ui/design
+  icon: palette
   children:
     - title: Share styles with themes
       permalink: /cookbook/design/themes
@@ -331,6 +357,7 @@
 
 - title: Interactivity
   permalink: /ui/interactivity
+  icon: touch_app
   children:
     - title: Add interactivity to your app
       permalink: /ui/interactivity
@@ -371,6 +398,7 @@
 
 - title: Assets & media
   permalink: /ui/assets
+  icon: photo_library
   children:
     - title: Add assets and images
       permalink: /ui/assets/assets-and-images
@@ -385,6 +413,7 @@
 
 - title: Navigation & routing
   permalink: /ui/navigation
+  icon: alt_route
   children:
     - title: Overview
       permalink: /ui/navigation
@@ -409,6 +438,7 @@
 
 - title: Animations & transitions
   permalink: /ui/animations
+  icon: animation
   children:
     - title: Introduction
       permalink: /ui/animations
@@ -433,8 +463,9 @@
     - title: API overview
       permalink: /ui/animations/overview
 
-- title: Accessibility 
+- title: Accessibility
   permalink: /ui/accessibility
+  icon: accessibility
   children:
     - title: Introduction
       permalink: /ui/accessibility
@@ -449,12 +480,14 @@
 
 - title: Internationalization
   permalink: /ui/internationalization
+  icon: translate
 
 - divider
 - header: Beyond UI
 
 - title: Data & backend
   permalink: /data-and-backend
+  icon: storage
   children:
     - title: State management
       permalink: /data-and-backend/state-mgmt
@@ -514,6 +547,7 @@
 
 - title: App architecture
   permalink: /app-architecture
+  icon: account_tree
   children:
     - title: Introduction
       permalink: /app-architecture
@@ -542,6 +576,7 @@
 
 - title: Platform integration
   permalink: /platform-integration
+  icon: integration_instructions
   children:
     - title: Supported platforms
       permalink: /reference/supported-platforms
@@ -549,6 +584,8 @@
       permalink: /platform-integration/desktop
     - title: Write platform-specific code
       permalink: /platform-integration/platform-channels
+    - title: Bind to native code
+      permalink: /platform-integration/bind-native-code
     - title: Android
       permalink: /platform-integration/android
       children:
@@ -558,8 +595,6 @@
           permalink: /platform-integration/android/splash-screen
         - title: Add predictive back
           permalink: /platform-integration/android/predictive-back
-        - title: Bind to native code
-          permalink: /platform-integration/android/c-interop
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
         - title: Calling JetPack APIs
@@ -587,8 +622,6 @@
           permalink: /platform-integration/ios/ios-app-clip
         - title: Add iOS app extensions
           permalink: /platform-integration/ios/app-extensions
-        - title: Bind to native code
-          permalink: /platform-integration/ios/c-interop
         - title: Host a native iOS view
           permalink: /platform-integration/ios/platform-views
         - title: Enable debugging on iOS
@@ -609,8 +642,6 @@
           permalink: /platform-integration/macos/setup
         - title: Build a macOS app
           permalink: /platform-integration/macos/building
-        - title: Bind to native code
-          permalink: /platform-integration/macos/c-interop
         - title: Host a native macOS view
           permalink: /platform-integration/macos/platform-views
     - title: Web
@@ -648,6 +679,7 @@
 
 - title: Packages & plugins
   permalink: /packages-and-plugins
+  icon: extension
   children:
     - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
@@ -668,6 +700,7 @@
 
 - title: Testing & debugging
   permalink: /testing
+  icon: bug_report
   children:
     - header: Testing
     - title: Overview
@@ -716,6 +749,7 @@
 
 - title: Performance & optimization
   permalink: /perf
+  icon: speed
   children:
     - title: Overview
       permalink: /perf
@@ -748,6 +782,7 @@
 
 - title: Deployment
   permalink: /deployment
+  icon: rocket_launch
   children:
     - title: Obfuscate Dart code
       permalink: /deployment/obfuscate
@@ -772,6 +807,7 @@
 
 - title: Add to an existing app
   permalink: /add-to-app
+  icon: add_circle
   children:
     - title: Introduction
       permalink: /add-to-app
@@ -808,6 +844,7 @@
 
 - title: Tools & editors
   permalink: /tools
+  icon: construction
   children:
     - title: Android Studio & IntelliJ
       permalink: /tools/android-studio
@@ -864,6 +901,7 @@
       permalink: /tools/formatting
 
 - title: Flutter concepts
+  icon: lightbulb
   children:
     - title: Architectural overview
       permalink: /resources/architectural-overview
@@ -878,14 +916,16 @@
 
 - title: Resources
   permalink: /resources
+  icon: library_books
   children:
-    #    - header: Learn
     - title: FAQ
       permalink: /resources/faq
     - title: Videos
       permalink: /resources/videos
     - title: Courses
       permalink: /resources/courses
+    - title: Glossary
+      permalink: /resources/glossary
     - title: Learn Dart
       permalink: /resources/bootstrap-into-dart
     - title: Get support

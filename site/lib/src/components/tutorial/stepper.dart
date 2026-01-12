@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -60,7 +61,7 @@ class Stepper extends CustomComponent {
               span(
                 classes: 'step-number',
                 attributes: {'aria-label': 'Step ${index + 1}'},
-                [text('${index + 1}')],
+                [.text('${index + 1}')],
               ),
               div(classes: 'step-title', [
                 builder.build([step.title]),

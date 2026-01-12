@@ -40,7 +40,6 @@ widget, as this trivial example shows:
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
@@ -147,7 +146,7 @@ class PaddedText extends StatelessWidget {
 The framework calls the `build` method when this
 widget is created and when the dependencies of this
 widget change (such as state that is passed into the widget).
-This method can potentially be called in every frame
+This method can potentially be called in every frame (typically 60 times a second)
 and should not have any side effects beyond
 building a widget.
 To learn more about how Flutter renders widgets,

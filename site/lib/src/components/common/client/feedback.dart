@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../../analytics/analytics.dart';
@@ -36,7 +37,7 @@ final class _FeedbackComponentState extends State<FeedbackComponent> {
   Component build(BuildContext context) {
     return div(id: 'page-feedback', [
       div(classes: 'feedback', [
-        div([Component.text(feedback.introduction)]),
+        div([.text(feedback.introduction)]),
         ...switch (feedback) {
           _FeedbackState.none => [
             div(classes: 'feedback-buttons', [

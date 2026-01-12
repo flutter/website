@@ -8,8 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Flutter 3.38 and Dart 3.10 are here!
-  <a href="https://blog.flutter.dev/announcing-flutter-3-38-dart-3-10-building-the-future-of-apps-503429eeb685" target="_blank" rel="noopener">Learn more</a>
+  Check out our newly published best practices for
+  <a href="/ai/best-practices">building AI-powered apps with Flutter!</a>
 
 branch: main
 repo:
@@ -58,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.38.1'
+currentFlutterVersion: '3.38.6'
 
 # Settings for Jaspr.
 
