@@ -60,8 +60,8 @@ Run the server with the `dart mcp-server` command,
 which must be configured in your preferred client.
 
 This section provides instructions for setting up the
-Dart and Flutter MCP server with popular tools like Antigravity,
-Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
+Dart and Flutter MCP server with popular tools such as
+Antigravity, Gemini CLI, Cursor, and GitHub Copilot.
 
 ### Antigravity
 
@@ -339,8 +339,6 @@ for the current project, use the `claude mcp add` CLI command:
 ```console
 $ claude mcp add --transport stdio dart -- dart mcp-server
 ```
-
-If Claude reports issues
 
 To learn more about configuring MCP servers in Claude Code,
 check out their documentation on [Installing MCP servers][claude-install].
