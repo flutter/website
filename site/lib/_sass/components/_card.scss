@@ -162,9 +162,8 @@
     }
   }
 
-  &.install-card {
+    &.install-card {
     gap: 0.25rem;
-    padding: 1rem;
 
     .card-leading {
       margin: 0.4rem 0;
@@ -182,7 +181,6 @@
     .card-title {
       color: var(--site-base-fgColor-lighter);
       font-weight: 400;
-      font-size: 1.25rem;
     }
 
     &.selected-card {
