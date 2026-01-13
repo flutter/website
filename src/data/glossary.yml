@@ -26,7 +26,7 @@
     A client-optimized programming language for fast apps on any platform.
   long_description: |-
     Dart is an approachable, portable, and performant language designed
-    for client-side development. It offers sound null safety,
+    for full-stack app development. It offers sound null safety,
     a strong type system, and compiles to native machine code (ARM/x64)
     for mobile, desktop, and backend, as well as JavaScript or WebAssembly
     for the web. While Dart is the foundation of Flutter,
