@@ -7,9 +7,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Preview the Rolodex app you'll build and set up a Cupertino-based project with data models.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -25,9 +22,7 @@ items:
     icon: data_object
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -607,6 +602,3 @@ items:
       correct: false
       explanation: ValueNotifier holds values in memory; persistence requires separate implementation.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

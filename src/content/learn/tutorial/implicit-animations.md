@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Flutter provides a rich set of animation APIs, and the simplest way to
 start using them is with **implicit animations**.
 "Implicit animations" refers to a group of widgets that
@@ -32,8 +29,7 @@ animates to a new color in about half a second.
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 
-</TutorialIntro>
-<TutorialSteps>
+---
 
 ### Convert `Container` to `AnimatedContainer`
 
@@ -267,6 +263,3 @@ items:
       correct: false
       explanation: Implicit animations run once per state change; repetition requires explicit animation controllers.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

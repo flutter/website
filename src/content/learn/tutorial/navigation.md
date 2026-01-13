@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to navigate between screens with Navigator.push and implement adaptive navigation patterns for different screen sizes.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: devices
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -314,6 +309,3 @@ items:
       correct: false
       explanation: Pop navigates back; to refresh, you'd use setState or other state management.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

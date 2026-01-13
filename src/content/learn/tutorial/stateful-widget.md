@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn when widgets need to be stateful and how to trigger UI updates with setState.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: refresh
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -280,6 +275,3 @@ items:
       correct: false
       explanation: The widget remains; it just won't visually update without setState.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

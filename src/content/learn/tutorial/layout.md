@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn how to build layouts with common widgets like Scaffold, AppBar, Column, and Row.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -25,9 +22,7 @@ items:
     icon: grid_view
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -351,6 +346,3 @@ items:
       correct: false
       explanation: Scaffold doesn't manage state; you use StatefulWidget or state management solutions for that.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

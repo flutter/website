@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn the first steps to building a Flutter app, from creating a project to understanding widgets and hot reload.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: bolt
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### What you'll build
 
@@ -215,5 +210,3 @@ items:
       explanation: "By default, you need to press `r` to trigger hot reload in the terminal."
 </Quiz>
 
-</TutorialSteps>
-</TutorialLesson>

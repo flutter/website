@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to use the widget inspector and property editor to debug layout issues and experiment with properties in real-time.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: tune
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -281,6 +276,3 @@ items:
       correct: false
       explanation: Theme editing requires code changes; the Widget Inspector is for inspecting the current state.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

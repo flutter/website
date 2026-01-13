@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to create a ViewModel with ChangeNotifier and manage loading, success, and error states.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: notifications_active
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -279,6 +274,3 @@ items:
       correct: false
       explanation: "`notifyListeners()` doesn't modify state; it just signals that state has changed."
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to create custom widgets and use the most common SDK widgets like
 Container, Center, and Text.
 
@@ -24,9 +21,7 @@ items:
     icon: palette
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Before you start
 
@@ -376,7 +371,3 @@ items:
       correct: false
       explanation: EdgeInsets is for specifying padding or margin, not visual decorations.
 </Quiz>
-
-</TutorialSteps>
-
-</TutorialLesson>
