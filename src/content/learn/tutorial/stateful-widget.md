@@ -5,7 +5,10 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %} TODO(ewindmill) embed video {%- endcomment %}
+Learn when widgets need to be stateful and how to trigger UI updates with setState.
+
+<!-- TODO(ewindmill): Add "StatefulWidget" video when released -->
+<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
 
 <SummaryCard>
 title: What you'll accomplish
@@ -17,6 +20,10 @@ items:
   - title: Trigger UI updates with setState
     icon: refresh
 </SummaryCard>
+
+---
+
+### Introduction
 
 So far, your app displays a grid and an input field,
 but the grid doesn't yet update to reflect the user's guesses.
@@ -33,7 +40,7 @@ To handle this dynamic behavior, you need to convert `GamePage` from a
 
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 
-## Why stateful widgets?
+### Why stateful widgets?
 
 When a widget's appearance or data needs to change during its lifetime,
 you need a `StatefulWidget` and a companion `State` object.
@@ -46,7 +53,7 @@ For example, the following widget tree imagines a simple app
 that uses a stateful widget with a counter that
 increases when the button is pressed.
 
-<img src='/assets/images/docs/tutorial/widget_tree_stateful.png' alt="A diagram of a widget tree with a stateful widget and state object.">
+<img src='/assets/images/docs/tutorial/widget_tree_stateful.png' width="320px" alt="A diagram of a widget tree with a stateful widget and state object.">
 
 Here is the basic `StatefulWidget` structure (doesn't do anything yet):
 
@@ -66,7 +73,7 @@ class _ExampleWidgetState extends State<ExampleWidget> {
 }
 ```
 
-## Convert `GamePage` to a stateful widget
+### Convert `GamePage` to a stateful widget
 
 To convert the `GamePage` (or any other) widget from
 a stateless widget to a stateful widget, do the following steps:
@@ -132,7 +139,7 @@ class _GamePageState extends State<GamePage> {
 
 ["quick assists"]: /tools/android-studio#assists-quick-fixes
 
-## Updating the UI with `setState`
+### Updating the UI with `setState`
 
 Whenever you mutate a `State` object,
 you must call [`setState`][] to signal the framework to
@@ -206,6 +213,8 @@ the internal game data would change, but Flutter wouldn't know it
 needs to repaint the screen, and the user wouldn't see any updates.
 
 [`setState`]: {{site.api}}/flutter/widgets/State/setState.html
+
+### Review
 
 <SummaryCard>
 title: What you accomplished

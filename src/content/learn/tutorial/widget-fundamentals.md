@@ -5,9 +5,11 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %}
-<!-- TODO(ewindmill) embed video -->
-{%- endcomment %}
+Learn to create custom widgets and use the most common SDK widgets like
+Container, Center, and Text.
+
+<!-- TODO(ewindmill): Add "Anatomy of a widget" video when released -->
+<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
 
 <SummaryCard>
 title: What you'll accomplish
@@ -20,16 +22,9 @@ items:
     icon: palette
 </SummaryCard>
 
-In this lesson, you'll create your own custom widget and
-learn about some of the most common widgets included in the SDK.
+---
 
-Custom widgets allow you to reuse UI components across your app,
-organize complex UI code into manageable pieces, and
-create cleaner, more maintainable code.
-By the end of this lesson, you'll have created your own custom `Tile` widget.
-
-
-## Before you start
+### Before you start
 
 This app relies on a bit of game logic that isn't UI-related,
 and thus is outside the scope of this tutorial.
@@ -57,7 +52,7 @@ instructions to import it into your project.
 
 [full-words]: https://github.com/ericwindmill/legal_wordle_words
 
-## Anatomy of a stateless widget
+### Anatomy of a stateless widget
 
 A `Widget` is a Dart class that extends one of the Flutter widget classes,
 in this case [`StatelessWidget`][].
@@ -78,7 +73,7 @@ class Tile extends StatelessWidget {
 
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 
-### Constructor
+#### Constructor
 
 The `Tile` class has a [constructor][] that defines
 what data needs to be passed into the widget to render the widget.
@@ -94,7 +89,7 @@ Passing data into widget constructors is at the core of making widgets reusable.
 [constructor]: {{site.dart-site}}/language/constructors
 [enum value]: {{site.dart-site}}/language/enums
 
-### Build method
+#### Build method
 
 Finally, there's the all important `build` method, which must be defined on
 every widget, and will always return another widget.
@@ -114,7 +109,7 @@ class Tile extends StatelessWidget {
 }
 ```
 
-## Use the custom widget
+### Use the custom widget
 
 When the app is finished,
 there will be 25 instances of this widget on the screen.
@@ -142,7 +137,7 @@ At the moment, your app will be blank,
 because the `Tile` widget returns an empty `Container`,
 which doesn't display anything by default.
 
-## The `Container` widget
+### The `Container` widget
 
 The `Tile` widget consists of three of the most common core widgets:
 `Container`, `Center`, and `Text`.
@@ -180,7 +175,7 @@ class Tile extends StatelessWidget {
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`DecoratedBox`]: {{site.api}}/flutter/widgets/DecoratedBox-class.html
 
-## BoxDecoration
+### BoxDecoration
 
 Next, add a [`Border`][] to the box with the following code:
 
@@ -221,7 +216,7 @@ gray if the guess is wrong in both respects.
 
 The following figure shows all three possibilities.
 
-<img src='/assets/images/docs/tutorial/tiles.png' alt="A screenshot of a green, yellow, and grey tile.">
+<img src='/assets/images/docs/tutorial/tiles.png' width="320px" alt="A screenshot of a green, yellow, and grey tile.">
 
 
 To achieve this in UI, use a [switch expression][] to
@@ -257,7 +252,7 @@ class Tile extends StatelessWidget {
 [`Border`]: {{site.api}}/flutter/widgets/Container-class.html
 [switch expression]: {{site.dart-site}}/language/branches#switch-expressions
 
-## Child widgets
+### Child widgets
 
 Finally, add the `Center` and `Text` widgets to the `Container.child` property.
 
@@ -313,6 +308,9 @@ child: Tile('A', HitType.partial)
 
 Soon, this small box will be one of many widgets on the screen. In the next
 lesson, you'll start building the game grid itself.
+
+### Review
+
 
 <SummaryCard>
 title: What you accomplished

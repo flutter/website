@@ -5,6 +5,12 @@ layout: tutorial
 sitemap: false
 ---
 
+Flutter provides a rich set of animation APIs, and the simplest way to
+start using them is with **implicit animations**.
+"Implicit animations" refers to a group of widgets that
+automatically animate changes to their properties without you
+needing to manage any intermediate behavior.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -16,12 +22,6 @@ items:
     icon: timeline
 </SummaryCard>
 
-Flutter provides a rich set of animation APIs, and the simplest way to
-start using them is with **implicit animations**.
-"Implicit animations" refers to a group of widgets that
-automatically animate changes to their properties without you
-needing to manage any intermediate behavior.
-
 In this lesson, you'll learn about one of the most common and
 versatile implicit animation widgets: [`AnimatedContainer`][].
 With just two additional lines of code, the background color of each `Tile`
@@ -29,7 +29,9 @@ animates to a new color in about half a second.
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 
-## Convert `Container` to `AnimatedContainer`
+---
+
+### Convert `Container` to `AnimatedContainer`
 
 Currently, the `Tile.build` method returns a `Container` to display a letter.
 When the `hitType` changes, like from `HitType.none` to `HitType.hit`,
@@ -126,14 +128,24 @@ Now, when the `hitType` changes and the `Tile` widget rebuilds
 the color of the tile smoothly animates from its old color to
 the new one over the specified duration.
 
-## Adjust the animation curve
+### Adjust the animation curve
 
 To add a bit of customization to an implicit animation,
 you can pass it a different [`Curve`][].
 Different curves change the speed of the animation
 at different points throughout the animation.
 
-{%- comment %} TODO(ewindmill) diagram {%- endcomment %}
+For example, the default curve for Flutter animations is `Curves.linear`. This gif shows how the animation curve behaves:
+
+<img src="/assets/images/docs/tutorial/linear_curve.gif" width="320px"
+alt="A gif that shows a linear curve.">
+
+Compare that to `Curve.bounceIn`, another common curve:
+
+<img src="/assets/images/docs/tutorial/bounce_in_curve.gif" width="320px"
+alt="A gif that shows a bounce-in curve">
+
+
 
 To change the `Curve` of this animation, update the code to the following:
 
@@ -148,7 +160,7 @@ class Tile extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 500),
-      curve: Curves.decelerate, // NEW
+      curve: Curves.bounceIn, // NEW
       height: 60,
       width: 60,
       decoration: BoxDecoration(
@@ -183,6 +195,8 @@ If you're curious, try it out in the [animations tutorial][].
 
 [`Curve`]: {{site.api}}/flutter/animation/Curves-class.html
 [animations tutorial]: /ui/animations/tutorial
+
+### Review
 
 <SummaryCard>
 title: What you accomplished

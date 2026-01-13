@@ -5,6 +5,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +17,10 @@ items:
   - title: Build the complete View layer with proper styling
     icon: article
 </SummaryCard>
+
+---
+
+### Introduction
 
 The view layer is your UI, and in Flutter,
 that refers to your app's widgets.
@@ -27,7 +33,7 @@ provided `ChangeNotifier` calls `notifyListeners()`.
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-## Create the article view widget
+### Create the article view widget
 
 Create the `ArticleView` widget that
 manages the overall page layout and state handling.
@@ -51,7 +57,7 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-## Create the article view model
+### Create the article view model
 
 Create the `ArticleViewModel` in this widget:
 
@@ -75,7 +81,7 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-## Listen for state changes
+### Listen for state changes
 
 Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
 and pass it a `ChangeNotifier` object.
@@ -113,7 +119,7 @@ building different widgets based on the state.
 
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 
-## Handle possible view model states
+### Handle possible view model states
 
 Recall the `ArticleViewModel`, which has three properties that
 the UI is interested in:
@@ -176,7 +182,7 @@ The business logic and rendering are completely separate from each other.
 
 [switch expressions]: {{site.dart-site}}/language/branches#switch-expressions
 
-## Complete the UI
+### Complete the UI
 
 The only thing remaining is to use the properties and methods provided
 by the view model to build the UI.
@@ -202,7 +208,7 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-## Add a scrollable layout
+### Add a scrollable layout
 
 Replace the placeholder with a scrollable column layout:
 
@@ -230,7 +236,7 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-## Add article content and button
+### Add article content and button
 
 Complete the layout with an article widget and navigation button:
 
@@ -266,12 +272,12 @@ class ArticlePage extends StatelessWidget {
 }
 ```
 
-## Create the `ArticleWidget`
+### Create the `ArticleWidget`
 
 The `ArticleWidget` handles the display of the actual article content
 with proper styling and conditional rendering.
 
-### Set up the basic article structure
+#### Set up the basic article structure
 
 Start with the widget that accepts a `summary` parameter:
 
@@ -288,7 +294,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-### Add padding and column layout
+#### Add padding and column layout
 
 Wrap the content in proper padding and layout:
 
@@ -313,7 +319,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-### Add conditional image display
+#### Add conditional image display
 
 Add the article image that only shows when available:
 
@@ -342,7 +348,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-### Complete with styled text content
+#### Complete with styled text content
 
 Replace the placeholder text with a
 properly styled title, description, and extract:
@@ -396,7 +402,7 @@ This widget demonstrates a few important UI concepts:
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
 
-## Update your app to include the article view
+### Update your app to include the article view
 
 Connect everything together by updating your `MainApp` to
 include your completed `ArticleView`.
@@ -419,7 +425,7 @@ class MainApp extends StatelessWidget {
 This change switches from the console-based test to the full UI
 experience with proper state management.
 
-## Run the complete app
+### Run the complete app
 
 Hot reload your app one final time. You should now see:
 
@@ -432,6 +438,8 @@ To see the reactive UI in action,
 click the **Next random article** button.
 The app shows a loading state, fetches new data, and
 updates the display automatically.
+
+### Review
 
 <SummaryCard>
 title: What you accomplished
