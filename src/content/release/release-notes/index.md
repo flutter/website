@@ -11,7 +11,7 @@ releases to the stable channel.
 For information about bug-fix releases,
 check out the Flutter [CHANGELOG][].
 
-To see a list of changes in beta releases, check out the
+To see what's changed in beta releases, check out the
 [Beta channel](/install/archive#beta-channel) section on the archive page.
 :::
 
