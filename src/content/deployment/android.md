@@ -606,9 +606,9 @@ From the command line:
 
 This command results in three APK files:
 
-* `[project]/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `[project]/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `[project]/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs.
