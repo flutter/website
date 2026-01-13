@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: article
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -516,6 +511,3 @@ items:
       correct: false
       explanation: "ListenableBuilder rebuilds based on the Listenable, not parent rebuilds."
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

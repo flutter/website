@@ -39,7 +39,7 @@ class Stepper extends CustomComponent {
             attributes: {'class': 'header-wrapper'},
             children: [final ElementNode heading, ..._],
           ) when heading.tag == 'h$level') {
-            steps.add((title: child, content: []));
+            steps.add((title: heading, content: []));
           } else {
             if (steps.isEmpty) {
               throw Exception(

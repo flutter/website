@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn to build text inputs, manage text with controllers, and handle user actions with buttons.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -25,9 +22,7 @@ items:
     icon: touch_app
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -747,7 +742,3 @@ items:
       correct: false
       explanation: This is not how focus is managed; FocusNode is the proper approach.
 </Quiz>
-
-
-</TutorialSteps>
-</TutorialLesson>

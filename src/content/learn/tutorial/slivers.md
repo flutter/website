@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 In this lesson, you'll learn about slivers,
 which are special widgets that can take advantage of
 Flutter's powerful and composable scrolling system.
@@ -32,9 +29,7 @@ items:
     icon: sort_by_alpha
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Slivers and widgets
 
@@ -612,6 +607,3 @@ items:
       correct: false
       explanation: CustomScrollView uses the slivers property; there's no child property for this purpose.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

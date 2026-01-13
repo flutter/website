@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn the MVVM architecture pattern and how to build HTTP requests with async/await.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: data_object
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -223,6 +218,3 @@ items:
       correct: false
       explanation: Uri.https builds the URL; it doesn't check if the endpoint exists.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

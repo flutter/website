@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Preview the Wikipedia reader app you'll build and set up the initial project with required packages.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: code
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -206,6 +201,3 @@ items:
       correct: false
       explanation: "There is no `flutter package` command; use `flutter pub add`."
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

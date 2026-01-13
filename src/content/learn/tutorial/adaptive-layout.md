@@ -5,9 +5,6 @@ layout: tutorial
 sitemap: false
 ---
 
-<TutorialLesson>
-<TutorialIntro>
-
 Learn how to create layouts that adapt to different screen widths.
 
 <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
@@ -23,9 +20,7 @@ items:
     icon: view_sidebar
 </SummaryCard>
 
-</TutorialIntro>
-
-<TutorialSteps>
+---
 
 ### Introduction
 
@@ -438,6 +433,3 @@ items:
       correct: false
       explanation: ListView is for scrollable lists, not for side-by-side layout.
 </Quiz>
-
-</TutorialSteps>
-</TutorialLesson>

@@ -29,7 +29,6 @@ import 'src/components/tutorial/progress_ring.dart';
 import 'src/components/tutorial/quiz.dart';
 import 'src/components/tutorial/stepper.dart';
 import 'src/components/tutorial/summary_card.dart';
-import 'src/components/tutorial/tutorial_lesson.dart';
 import 'src/components/tutorial/tutorial_outline.dart';
 import 'src/components/util/component_ref.dart';
 import 'src/extensions/registry.dart';
@@ -119,7 +118,6 @@ List<CustomComponent> get _embeddableComponents => [
   const SummaryCard(),
   const DownloadableSnippet(),
   const Stepper(),
-  const TutorialLesson(),
   const WidgetCatalogCategories(),
   const TutorialOutline(),
   const WidgetCatalogGrid(),
