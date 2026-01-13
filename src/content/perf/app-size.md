@@ -186,6 +186,14 @@ Some other things you can do to make your app smaller are:
 * Minimize resource imported from libraries
 * Compress PNG and JPEG files
 
+Another way to reduce the code size is to use `defaultTargetPlatform`.
+The Dart compiler removes any code that is unreachable on the target platform.
+For example, if you have code that is specific to Windows, you can wrap it in a
+check like `if (defaultTargetPlatform == TargetPlatform.windows)`.
+When you build the app for Android, the compiler sees that this check is
+always false and removes the Windows-specific code from the release build.
+
+
 [FAQ]: /resources/faq
 [How big is the Flutter engine?]: /resources/faq#how-big-is-the-flutter-engine
 [instructions]: /deployment/ios
