@@ -178,16 +178,16 @@ items:
       explanation: The flag doesn't restrict platforms; it only affects the starter template.
 - question: What command is used to add a package dependency to a Flutter project?
   options:
-    - text: flutter install [package_name]
+    - text: `flutter install [package_name]`
       correct: false
       explanation: The correct command uses `pub add`, not `install`.
-    - text: flutter pub add [package_name]
+    - text: `flutter pub add [package_name]`
       correct: true
       explanation: Running `flutter pub add` adds the package to pubspec.yaml and downloads it.
-    - text: dart get [package_name]
+    - text: `dart get [package_name]`
       correct: false
       explanation: The command for adding packages is `flutter pub add` or editing pubspec.yaml.
-    - text: flutter package install [package_name]
+    - text: `flutter package install [package_name]`
       correct: false
       explanation: There is no `flutter package` command; use `flutter pub add`.
 </Quiz>

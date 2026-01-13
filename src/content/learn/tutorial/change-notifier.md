@@ -253,14 +253,14 @@ items:
   options:
     - text: Saves the current state to local storage.
       correct: false
-      explanation: notifyListeners signals UI updates; persistence requires separate implementation.
+      explanation: `notifyListeners()` signals UI updates; persistence requires separate implementation.
     - text: Tells any listening widgets to rebuild and reflect the new state.
       correct: true
-      explanation: Calling notifyListeners triggers a rebuild of all widgets listening to this ChangeNotifier.
+      explanation: Calling `notifyListeners()` triggers a rebuild of all widgets listening to this ChangeNotifier.
     - text: Logs the state change to the console for debugging.
       correct: false
       explanation: It doesn't log anything; it signals listeners to rebuild.
     - text: Resets all state properties to their default values.
       correct: false
-      explanation: notifyListeners doesn't modify state; it just signals that state has changed.
+      explanation: `notifyListeners()` doesn't modify state; it just signals that state has changed.
 </Quiz>

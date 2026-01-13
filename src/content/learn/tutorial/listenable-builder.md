@@ -477,12 +477,12 @@ items:
     - text: To create animations based on a ChangeNotifier.
       correct: false
       explanation: ListenableBuilder rebuilds UI on state changes, not specifically for animations.
-    - text: To listen to a ChangeNotifier and automatically rebuild its child widgets when notifyListeners is called.
+    - text: To listen to a ChangeNotifier and automatically rebuild its child widgets when notifyListeners() is called.
       correct: true
       explanation: ListenableBuilder listens to a Listenable and rebuilds its builder function when notified.
     - text: To manually control when widgets should be rebuilt.
       correct: false
-      explanation: The rebuild is automatic when notifyListeners is called; you don't control it manually.
+      explanation: The rebuild is automatic when notifyListeners() is called; you don't control it manually.
     - text: To cache widget builds for better performance.
       correct: false
       explanation: ListenableBuilder is about reactive updates, not caching.
@@ -493,10 +493,10 @@ items:
       explanation: ListenableBuilder only rebuilds when notified, not on every frame.
     - text: When the Listenable it's listening to calls notifyListeners().
       correct: true
-      explanation: ListenableBuilder subscribes to the Listenable and rebuilds its builder function whenever notifyListeners is called.
+      explanation: ListenableBuilder subscribes to the Listenable and rebuilds its builder function whenever notifyListeners() is called.
     - text: Only when the widget is first mounted.
       correct: false
-      explanation: It rebuilds whenever notifyListeners is called, not just on mount.
+      explanation: It rebuilds whenever notifyListeners() is called, not just on mount.
     - text: When the parent widget rebuilds.
       correct: false
       explanation: ListenableBuilder rebuilds based on the Listenable, not parent rebuilds.
