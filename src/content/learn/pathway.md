@@ -15,7 +15,7 @@ Welcome to the Dart and Flutter getting started pathway. In it, you'll set up yo
 
 Before you can start building Flutter apps, you'll need to set up your development environment. Follow the installation guide to get Flutter and all required dependencies installed on your machine.
 
-[Get Started →](./get-started)
+[Get Started →](/install)
 
 ### 2. Complete the Dart Getting Started tutorial
 
@@ -27,13 +27,13 @@ If you're in a hurry and already familiar with modern, object-oriented programmi
 
 ### 3. Complete the Flutter Getting Started tutorial
 
-Now that you have Dart basics under your belt, dive into Flutter! This hands-on tutorial walks you through building three small Flutter apps step-by-step.
+Now that you have Dart skills under your belt, dive into Flutter! This hands-on tutorial walks you through building three small Flutter apps step-by-step.
 
-[Flutter Getting Started tutorial →](./learn/tutorial)
+[Flutter Getting Started tutorial →](/learn/tutorial)
 
 ### 4. Understand how Flutter works
 
-Deepen your understanding of Flutter's architecture by watching this video series. Learn about the widget tree, rendering pipeline, and what makes Flutter unique.
+Deepen your understanding of Flutter's architecture by watching this video series. Learn about the widget tree, rendering pipeline, and what makes Flutter unique. This series contains the knowledge you need to know to reach the next level of Flutter understanding.
 
 [Watch: How Flutter Works →](https://youtu.be/0Xn1QhNtPkQ?si=iIHtTuVae5804F92)
 
