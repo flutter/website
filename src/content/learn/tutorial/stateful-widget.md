@@ -248,5 +248,38 @@ items:
       Your app is now truly interactive!
 </SummaryCard>
 
+### Test yourself
+
+<Quiz title="Stateful Widgets Quiz">
+- question: When should you use a StatefulWidget instead of a StatelessWidget?
+  options:
+    - text: When the widget needs to make HTTP requests.
+      correct: false
+      explanation: HTTP requests can be made from either, but state changes require StatefulWidget.
+    - text: When the widget's appearance or data needs to change during its lifetime.
+      correct: true
+      explanation: StatefulWidget is needed when the UI must update in response to data changes over time.
+    - text: When the widget has more than three child widgets.
+      correct: false
+      explanation: The number of children doesn't determine whether a widget is stateful.
+    - text: When the widget is at the root of the widget tree.
+      correct: false
+      explanation: Root widgets can be stateless; statefulness depends on whether data changes during the widget's lifetime.
+- question: What happens if you change data in a State object without calling setState?
+  options:
+    - text: The app will crash with an error.
+      correct: false
+      explanation: The app won't crash, but the UI won't update.
+    - text: The data changes internally, but Flutter won't rebuild the UI to reflect the change.
+      correct: true
+      explanation: Without calling setState, Flutter doesn't know it needs to repaint, so the user won't see updates.
+    - text: Flutter automatically detects the change and rebuilds the UI.
+      correct: false
+      explanation: Flutter requires setState to know when to rebuild; it doesn't auto-detect changes.
+    - text: The widget is removed from the widget tree.
+      correct: false
+      explanation: The widget remains; it just won't visually update without setState.
+</Quiz>
+
 </TutorialSteps>
 </TutorialLesson>

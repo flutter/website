@@ -249,5 +249,38 @@ items:
       This enables rapid iteration when fine-tuning your UI.
 </SummaryCard>
 
+### Test yourself
+
+<Quiz title="DevTools Quiz">
+- question: What is a common cause of "unbounded constraints" errors in Flutter?
+  options:
+    - text: Using too many StatefulWidgets in the widget tree.
+      correct: false
+      explanation: StatefulWidget usage doesn't cause unbounded constraints.
+    - text: Placing a widget that tries to expand infinitely inside a scrollable or flex container without proper constraints.
+      correct: true
+      explanation: Widgets like ListView inside a Row, or nested scrollables, can receive infinite constraints and fail.
+    - text: Forgetting to call setState after changing data.
+      correct: false
+      explanation: Missing setState causes UI not to update, not constraint errors.
+    - text: Using Container without specifying a color.
+      correct: false
+      explanation: Color is optional and unrelated to layout constraints.
+- question: What can you do with the Widget Inspector in Flutter DevTools?
+  options:
+    - text: Automatically generate unit tests for your widgets.
+      correct: false
+      explanation: The Widget Inspector is for visualization and debugging, not test generation.
+    - text: Visualize your widget tree, select widgets to view their properties, and jump to source code.
+      correct: true
+      explanation: The Widget Inspector lets you explore your app's structure, inspect widget properties, and navigate to the corresponding source code.
+    - text: Deploy your app directly to the app store.
+      correct: false
+      explanation: Deployment is handled separately; the Widget Inspector is for debugging.
+    - text: Edit your app's theme colors and typography.
+      correct: false
+      explanation: Theme editing requires code changes; the Widget Inspector is for inspecting the current state.
+</Quiz>
+
 </TutorialSteps>
 </TutorialLesson>

@@ -344,6 +344,39 @@ items:
       you used a switch expression on the `hitType` value.
 </SummaryCard>
 
+### Test yourself
+
+<Quiz title="Widget Fundamentals Quiz">
+- question: "What must every Flutter widget's `build` method return?"
+  options:
+    - text: A String describing the widget.
+      correct: false
+      explanation: "The `build` method returns a widget, not a String."
+    - text: Another widget.
+      correct: true
+      explanation: "The `build` method always returns another widget, which forms part of the widget tree."
+    - text: A boolean indicating success or failure.
+      correct: false
+      explanation: Widgets don't indicate success; they return other widgets to be rendered.
+    - text: Null if there's nothing to display.
+      correct: false
+      explanation: "The `build` method cannot return null; it must return a valid widget."
+- question: Which object is used to add decorations like borders, background colors, and shadows to a Container?
+  options:
+    - text: ThemeData
+      correct: false
+      explanation: ThemeData is for app-wide styling, not individual container decorations.
+    - text: TextStyle
+      correct: false
+      explanation: TextStyle is for text formatting, not container decorations.
+    - text: BoxDecoration
+      correct: true
+      explanation: BoxDecoration can add borders, background colors, gradients, shadows, and more to a Container.
+    - text: EdgeInsets
+      correct: false
+      explanation: EdgeInsets is for specifying padding or margin, not visual decorations.
+</Quiz>
+
 </TutorialSteps>
 
 </TutorialLesson>
