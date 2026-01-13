@@ -345,20 +345,20 @@ items:
 ### Test yourself
 
 <Quiz title="Widget Fundamentals Quiz">
-- question: What must every Flutter widget's `build` method return?
+- question: "What must every Flutter widget's `build` method return?"
   options:
     - text: A String describing the widget.
       correct: false
-      explanation: The `build` method returns a widget, not a String.
+      explanation: "The `build` method returns a widget, not a String."
     - text: Another widget.
       correct: true
-      explanation: The `build` method always returns another widget, which forms part of the widget tree.
+      explanation: "The `build` method always returns another widget, which forms part of the widget tree."
     - text: A boolean indicating success or failure.
       correct: false
       explanation: Widgets don't indicate success; they return other widgets to be rendered.
     - text: Null if there's nothing to display.
       correct: false
-      explanation: The `build` method cannot return null; it must return a valid widget.
+      explanation: "The `build` method cannot return null; it must return a valid widget."
 - question: Which object is used to add decorations like borders, background colors, and shadows to a Container?
   options:
     - text: ThemeData

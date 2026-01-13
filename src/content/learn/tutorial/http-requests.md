@@ -179,21 +179,21 @@ items:
 ### Test yourself
 
 <Quiz title="HTTP Requests Quiz">
-- question: What do the `async` and `await` keywords do in Dart?
+- question: "What do the `async` and `await` keywords do in Dart?"
   options:
     - text: They make code run on a separate thread.
       correct: false
       explanation: Dart is single-threaded; async/await handles asynchronous operations without threads.
     - text: They mark a function as asynchronous and pause execution until a Future completes.
       correct: true
-      explanation: The `async` keyword marks a function as asynchronous, and `await` pauses execution until the Future resolves.
+      explanation: "The `async` keyword marks a function as asynchronous, and `await` pauses execution until the Future resolves."
     - text: They automatically cache the results of function calls.
       correct: false
       explanation: Caching requires separate implementation; async/await is for handling asynchronous operations.
     - text: They convert synchronous code to run in the background.
       correct: false
       explanation: They don't move code to the background; they manage asynchronous execution flow.
-- question: Why is `Uri.https` preferred over string concatenation when building URLs in Dart?
+- question: "Why is `Uri.https` preferred over string concatenation when building URLs in Dart?"
   options:
     - text: It makes the code shorter.
       correct: false

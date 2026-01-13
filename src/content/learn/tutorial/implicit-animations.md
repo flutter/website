@@ -234,7 +234,7 @@ items:
     - text: TransitionContainer
       correct: false
       explanation: There is no TransitionContainer widget; use AnimatedContainer for implicit animations.
-- question: What does the `duration` property control in an AnimatedContainer?
+- question: "What does the `duration` property control in an AnimatedContainer?"
   options:
     - text: How long the widget stays on screen before disappearing.
       correct: false

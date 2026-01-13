@@ -269,21 +269,21 @@ items:
 ### Test yourself
 
 <Quiz title="Navigation Quiz">
-- question: What does `Navigator.of(context).push` do?
+- question: "What does `Navigator.of(context).push` do?"
   options:
     - text: Replaces the current screen with a new one.
       correct: false
-      explanation: Push adds to the stack; `pushReplacement` replaces the current screen.
+      explanation: "Push adds to the stack; `pushReplacement` replaces the current screen."
     - text: Adds a new route to the navigation stack, displaying it on top of the current screen.
       correct: true
       explanation: Push adds the new route to the stack, allowing users to go back to the previous screen.
     - text: Removes the current screen from the navigation stack.
       correct: false
-      explanation: That's what `pop` does; push adds a new screen.
+      explanation: "That's what `pop` does; push adds a new screen."
     - text: Opens a dialog box over the current screen.
       correct: false
-      explanation: Dialogs use `showDialog`; Navigator.push navigates to a full screen.
-- question: What does `Navigator.of(context).pop()` do?
+      explanation: "Dialogs use `showDialog`; Navigator.push navigates to a full screen."
+- question: "What does `Navigator.of(context).pop()` do?"
   options:
     - text: Closes the entire app.
       correct: false

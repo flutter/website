@@ -594,10 +594,10 @@ items:
     - text: Wrap it in a SliverToBoxAdapter or SliverFillRemaining.
       correct: true
       explanation: These adapters convert regular widgets into slivers so they can be used in sliver contexts.
-    - text: Convert the widget to a sliver by calling `.toSliver()` on it.
+    - text: "Convert the widget to a sliver by calling `.toSliver()` on it."
       correct: false
-      explanation: There's no `.toSliver()` method; you use adapter widgets like SliverToBoxAdapter.
-    - text: Pass it to the `child` property instead of `slivers`.
+      explanation: "There's no `.toSliver()` method; you use adapter widgets like SliverToBoxAdapter."
+    - text: "Pass it to the `child` property instead of `slivers`."
       correct: false
       explanation: CustomScrollView uses the slivers property; there's no child property for this purpose.
 </Quiz>

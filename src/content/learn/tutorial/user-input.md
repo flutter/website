@@ -720,15 +720,15 @@ items:
       explanation: TextField doesn't have a getText method; use TextEditingController instead.
 - question: How do you programmatically move focus to a specific TextField?
   options:
-    - text: Call `TextField.focus()` directly.
+    - text: "Call `TextField.focus()` directly."
       correct: false
       explanation: TextField doesn't have a focus method; you use a FocusNode.
-    - text: Set the `autoFocus` property to true at runtime.
+    - text: "Set the `autoFocus` property to true at runtime."
       correct: false
       explanation: autoFocus only works on initial build, not for moving focus later.
-    - text: Use a FocusNode and call `requestFocus()` on it.
+    - text: "Use a FocusNode and call `requestFocus()` on it."
       correct: true
-      explanation: A FocusNode gives you control over focus, and calling `requestFocus()` moves focus to its associated widget.
+      explanation: "A FocusNode gives you control over focus, and calling `requestFocus()` moves focus to its associated widget."
     - text: Wrap the TextField in a GestureDetector and tap programmatically.
       correct: false
       explanation: This is not how focus is managed; FocusNode is the proper approach.
