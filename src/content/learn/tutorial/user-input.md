@@ -700,3 +700,36 @@ items:
       Passing callback functions as constructor arguments keeps your
       widgets reusable and decoupled from specific logic.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="User Input Quiz">
+- question: How do you programmatically read or clear the text in a TextField?
+  options:
+    - text: Access the TextField's text property directly.
+      correct: false
+      explanation: TextField doesn't expose a text property; you need a controller.
+    - text: Use the TextEditingController attached to the TextField.
+      correct: true
+      explanation: TextEditingController provides the text property to read the value and clear() method to reset it.
+    - text: Listen to the onChanged callback and store the value in a variable.
+      correct: false
+      explanation: While onChanged works for reading, clearing requires a TextEditingController.
+    - text: Call TextField.getText() method.
+      correct: false
+      explanation: TextField doesn't have a getText method; use TextEditingController instead.
+- question: How do you programmatically move focus to a specific TextField?
+  options:
+    - text: "Call `TextField.focus()` directly."
+      correct: false
+      explanation: TextField doesn't have a focus method; you use a FocusNode.
+    - text: "Set the `autoFocus` property to true at runtime."
+      correct: false
+      explanation: autoFocus only works on initial build, not for moving focus later.
+    - text: "Use a FocusNode and call `requestFocus()` on it."
+      correct: true
+      explanation: "A FocusNode gives you control over focus, and calling `requestFocus()` moves focus to its associated widget."
+    - text: Wrap the TextField in a GestureDetector and tap programmatically.
+      correct: false
+      explanation: This is not how focus is managed; FocusNode is the proper approach.
+</Quiz>
