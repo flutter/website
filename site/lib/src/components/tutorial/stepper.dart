@@ -21,6 +21,8 @@ class Stepper extends CustomComponent {
     )) {
       final levelStr = attributes['level'] ?? '1';
       final level = int.tryParse(levelStr) ?? 1;
+      final collapsible = attributes['collapsible']?.toLowerCase() != 'false';
+      final showActions = attributes['actions']?.toLowerCase() != 'none';
 
       assert(
         level >= 1 && level <= 6,
@@ -54,9 +56,13 @@ class Stepper extends CustomComponent {
 
       assert(steps.isNotEmpty, 'Stepper must have at least one step.');
 
-      return div(classes: 'stepper', [
+      final stepperClasses = collapsible
+          ? 'stepper'
+          : 'stepper non-collapsible';
+
+      return div(classes: stepperClasses, [
         for (final (index, step) in steps.indexed)
-          details(open: index == 0, [
+          details(open: !collapsible || index == 0, [
             summary([
               span(
                 classes: 'step-number',
@@ -71,13 +77,14 @@ class Stepper extends CustomComponent {
             div(classes: 'step-content', [
               builder.build(step.content),
             ]),
-            div(classes: 'step-actions', [
-              Button(
-                classes: ['next-step-button'],
-                style: ButtonStyle.filled,
-                content: index == steps.length - 1 ? 'Finish' : 'Continue',
-              ),
-            ]),
+            if (showActions)
+              div(classes: 'step-actions', [
+                Button(
+                  classes: ['next-step-button'],
+                  style: ButtonStyle.filled,
+                  content: index == steps.length - 1 ? 'Finish' : 'Continue',
+                ),
+              ]),
           ]),
       ]);
     }
