@@ -7,8 +7,6 @@ sitemap: false
 
 Learn to navigate between screens with Navigator.push and implement adaptive navigation patterns for different screen sizes.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:

@@ -7,8 +7,6 @@ sitemap: false
 
 Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:

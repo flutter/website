@@ -7,8 +7,6 @@ sitemap: false
 
 Learn to create a ViewModel with ChangeNotifier and manage loading, success, and error states.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:

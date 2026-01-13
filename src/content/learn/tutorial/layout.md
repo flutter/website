@@ -7,7 +7,8 @@ sitemap: false
 
 Learn how to build layouts with common widgets like Scaffold, AppBar, Column, and Row.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+<!-- TODO(ewindmill): Add "Layout and Constraints" video when released -->
+<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
 
 <SummaryCard>
 title: What you'll accomplish

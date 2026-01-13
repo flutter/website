@@ -8,7 +8,8 @@ sitemap: false
 Learn to create custom widgets and use the most common SDK widgets like
 Container, Center, and Text.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+<!-- TODO(ewindmill): Add "Anatomy of a widget" video when released -->
+<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
 
 <SummaryCard>
 title: What you'll accomplish

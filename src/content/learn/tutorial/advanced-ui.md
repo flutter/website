@@ -9,8 +9,6 @@ sitemap: false
 
 Preview the Rolodex app you'll build and set up a Cupertino-based project with data models.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:

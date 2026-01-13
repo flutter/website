@@ -7,8 +7,6 @@ sitemap: false
 
 Learn to build text inputs, manage text with controllers, and handle user actions with buttons.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:
