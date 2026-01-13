@@ -151,8 +151,14 @@ The MCP (model context protocol) specification outlines how
 development tools can share the context of a user's code with an AI model,
 which allows the AI to better understand and interact with the code.
 
-The Dart and Flutter MCP server provides a growing list of tools to analyze
-and fix errors, hot reload, get the selected widget, and more.
+The Dart and Flutter MCP server unlocks the full potential of your AI assistant
+by connecting it directly to your development environment. It enables the AI to:
+
+*   **Introspect the widget tree**: Visualize and debug layout issues in your running app.
+*   **Manage dependencies**: Search pub.dev for packages and add them to your project.
+*   **Control the runtime**: Trigger hot reloads and restarts to see changes instantly.
+*   **Fix complex errors**: Analyze static and runtime errors with deep context.
+
 This bridges the gap between the AI's natural language understanding,
 and Dart and Flutter's suite of developer tools.
 
