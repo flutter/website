@@ -103,6 +103,8 @@ install and set up the latest stable version of [Android Studio][].
        - **Android SDK Command-line Tools**
        - **Android Emulator**
        - **Android SDK Platform-Tools**
+       - **NDK (Side by side)**
+       - **CMake**
 
     1. If the **Status** column for any of the preceding tools displays
        **Update available** or **Not installed**:
