@@ -933,7 +933,7 @@ so don't forget to await the asynchronous function call!
       Text(
         date == null
             ? 'You haven\\\'t picked a date yet.'
-            : '${date.month}-${date.day}-${date.year}',
+            : '${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}-${date.year}',
       ),
       ElevatedButton.icon(
         icon: const Icon(Icons.calendar_today),
