@@ -164,26 +164,26 @@
 
 - title: From another platform?
   icon: devices
-  permalink: /get-started/flutter-for
+  permalink: /flutter-for
   children:
     - title: Flutter for Android devs
-      permalink: /get-started/flutter-for/android-devs
+      permalink: /flutter-for/android-devs
     - title: Flutter for Jetpack Compose devs
-      permalink: /get-started/flutter-for/compose-devs
+      permalink: /flutter-for/compose-devs
     - title: Flutter for SwiftUI devs
-      permalink: /get-started/flutter-for/swiftui-devs
+      permalink: /flutter-for/swiftui-devs
     - title: Flutter for UIKit devs
-      permalink: /get-started/flutter-for/uikit-devs
+      permalink: /flutter-for/uikit-devs
     - title: Flutter for React Native devs
-      permalink: /get-started/flutter-for/react-native-devs
+      permalink: /flutter-for/react-native-devs
     - title: Flutter for web devs
-      permalink: /get-started/flutter-for/web-devs
+      permalink: /flutter-for/web-devs
     - title: Flutter for Xamarin.Forms devs
-      permalink: /get-started/flutter-for/xamarin-forms-devs
+      permalink: /flutter-for/xamarin-forms-devs
     - title: Introduction to declarative UI
-      permalink: /get-started/flutter-for/declarative
+      permalink: /flutter-for/declarative
     - title: Flutter versus Swift concurrency
-      permalink: /get-started/flutter-for/dart-swift-concurrency
+      permalink: /flutter-for/dart-swift-concurrency
 - divider
 - header: User interface
 - title: Introduction
