@@ -38,3 +38,17 @@ Deepen your understanding of how Flutter works under the hood by watching this v
 [Watch: How Flutter Works →](https://youtu.be/0Xn1QhNtPkQ?si=iIHtTuVae5804F92)
 
 </Stepper>
+
+<img src="/assets/images/docs/learn/beginner.jpg" alt="Dash with question marks around her; looking curious." class="image-wrapper" style="max-width: 500px; display:flex; justify-self: center;">
+
+
+
+ <Card title="Feedback" additional-classes="display-card">
+  <p>
+
+    We're always looking for ways to improve the Getting Started experience. Moving forward, we plan to add more resources to this section of the website. We'd love to know what you think and what you'd like to see.
+    
+    Please take a moment to share your feedback with us.
+  </p>
+  <a href="https://google.qualtrics.com/jfe/form/SV_6A9KxXR7XmMrNsy?page='index'" class="outlined-button">Leave feedback</a>
+</Card>

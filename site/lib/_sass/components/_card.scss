@@ -73,7 +73,7 @@
   // Card that is used to display content, not necessarily used in a collection of cards
   &.display-card {
     border: 1px solid var(--card-border-color, var(--site-card-borderColor));
-    margin-bottom: 1rem;
+    margin: 2rem 0;
   }
 
   .card-leading {
