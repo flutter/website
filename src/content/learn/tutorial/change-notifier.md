@@ -5,6 +5,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Learn to create a ViewModel with ChangeNotifier and manage loading, success, and error states.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +17,10 @@ items:
   - title: Signal UI updates with notifyListeners
     icon: notifications_active
 </SummaryCard>
+
+---
+
+### Introduction
 
 When developers talk about state-management in Flutter,
 they're essentially referring to the pattern by which your app
@@ -32,7 +38,7 @@ which triggers UI rebuilds when called.
 
 [`ChangeNotifier`]: {{site.api}}/flutter/foundation/ChangeNotifier-class.html
 
-## Create the basic view model structure
+### Create the basic view model structure
 
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
@@ -54,7 +60,7 @@ The `ArticleViewModel` holds three pieces of state:
 - `errorMessage`: Any error that occurred during data fetching.
 - `loading`: A flag to show progress indicators.
 
-## Add constructor initialization
+### Add constructor initialization
 
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
@@ -79,7 +85,7 @@ a `ArticleViewModel` object is created.
 Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
-## Set up the `getRandomArticleSummary` method
+### Set up the `getRandomArticleSummary` method
 
 Add the `getRandomArticleSummary` that fetches data and manages state updates:
 
@@ -112,7 +118,7 @@ When the operation completes, it toggles the property back.
 When you build the UI, you'll use this `loading` property to
 show a loading indicator while fetching a new article.
 
-## Retrieve an article from the `ArticleModel`
+### Retrieve an article from the `ArticleModel`
 
 Complete the `getRandomArticleSummary` method to fetch an article summary.
 Use a [try-catch block][] to gracefully handle network errors and
@@ -149,7 +155,7 @@ class ArticleViewModel extends ChangeNotifier {
 
 [try-catch block]: {{site.dart-site}}/language/error-handling#catch
 
-## Test the ViewModel
+### Test the ViewModel
 
 Before building the full UI, test that your HTTP requests work by
 printing results to the console.
@@ -204,6 +210,8 @@ Hot reload your app and check your console output.
 You should see either an article title or an error message,
 which confirms that your Model and ViewModel are wired up correctly.
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -231,3 +239,36 @@ items:
       after the operation completes.
       This is how you can implement reactive UI updates in Flutter.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="State Management Quiz">
+- question: What is a ChangeNotifier?
+  options:
+    - text: A widget that displays notifications to the user.
+      correct: false
+      explanation: ChangeNotifier is not a widget; it's a class for managing state.
+    - text: A class that can notify listeners when its data changes, enabling reactive UI updates.
+      correct: true
+      explanation: ChangeNotifier provides the notifyListeners method to signal widgets to rebuild when state changes.
+    - text: A built-in Dart class for sending push notifications.
+      correct: false
+      explanation: ChangeNotifier is for in-app state management, not push notifications.
+    - text: A type of animation controller in Flutter.
+      correct: false
+      explanation: Animation controllers are separate; ChangeNotifier is for state management.
+- question: "What does calling `notifyListeners()` do in a ChangeNotifier?"
+  options:
+    - text: Saves the current state to local storage.
+      correct: false
+      explanation: "`notifyListeners()` signals UI updates; persistence requires separate implementation."
+    - text: Tells any listening widgets to rebuild and reflect the new state.
+      correct: true
+      explanation: "Calling `notifyListeners()` triggers a rebuild of all widgets listening to this ChangeNotifier."
+    - text: Logs the state change to the console for debugging.
+      correct: false
+      explanation: It doesn't log anything; it signals listeners to rebuild.
+    - text: Resets all state properties to their default values.
+      correct: false
+      explanation: "`notifyListeners()` doesn't modify state; it just signals that state has changed."
+</Quiz>

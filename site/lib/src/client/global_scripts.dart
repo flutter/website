@@ -390,10 +390,18 @@ void _setUpSteppers() {
 
   for (var i = 0; i < steppers.length; i++) {
     final stepper = steppers.item(i) as web.HTMLElement;
-    final steps = stepper.querySelectorAll('details');
+    final children = stepper.childNodes;
+    final steps = [
+      for (var j = 0; j < children.length; j++)
+        if (children.item(j) case web.Element(
+          nodeType: web.Node.ELEMENT_NODE,
+          tagName: 'DETAILS',
+        ))
+          children.item(j) as web.HTMLDetailsElement,
+    ];
 
     for (var j = 0; j < steps.length; j++) {
-      final step = steps.item(j) as web.HTMLDetailsElement;
+      final step = steps[j];
 
       step.addEventListener(
         'toggle',
@@ -401,7 +409,7 @@ void _setUpSteppers() {
           // Close all other steps when one is opened.
           if (step.open) {
             for (var k = 0; k < steps.length; k++) {
-              final otherStep = steps.item(k) as web.HTMLDetailsElement;
+              final otherStep = steps[k];
               if (otherStep != step) {
                 otherStep.open = false;
               }
@@ -419,7 +427,7 @@ void _setUpSteppers() {
             step.open = false;
             _scrollTo(step, smooth: false);
             if (j + 1 < steps.length) {
-              final nextStep = steps.item(j + 1) as web.HTMLDetailsElement;
+              final nextStep = steps[j + 1];
               nextStep.open = true;
               _scrollTo(nextStep, smooth: true);
             }

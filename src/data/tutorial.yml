@@ -19,7 +19,7 @@ units:
         url: /learn/tutorial/implicit-animations
   - title: State in Flutter apps
     chapters:
-      - title: Set up a new project
+      - title: The state management project
         url: /learn/tutorial/set-up-state-project
       - title: Make Http Requests
         url: /learn/tutorial/http-requests
