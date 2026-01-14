@@ -23,7 +23,7 @@
     
 - term: "Dart"
   short_description: |-
-    A client-optimized programming language for fast apps on any platform.
+    A programming language for fast apps on any platform.
   long_description: |-
     Dart is an approachable, portable, and performant language designed
     for full-stack app development. It offers sound null safety,
