@@ -81,6 +81,17 @@ SDK archive:
     </Tab>
 </Tabs>
 
+:::tip
+To see what's changed in a beta release, compare the version tags on GitHub.
+
+1. Find the version number (tag) you want to see (for example, `3.38.0-0.2.pre`).
+2. Find the previous version number (for example, `3.38.0-0.1.pre`).
+3. Go to the [GitHub compare page](https://github.com/flutter/flutter/compare).
+4. Select the older tag for the `base` field and the newer tag for the `compare` field.
+
+For example: [flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
+:::
+
 <a id="master-channel" aria-hidden="true"></a>
 
 ## Main channel
