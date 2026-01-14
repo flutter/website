@@ -10,7 +10,7 @@ This file provides a curated list of resources to help Large Language Models und
 - [Installation guide](https://docs.flutter.dev/get-started/install): The first step for any developer to set up their environment for Flutter development.
 - [Introduction to declarative UI](https://docs.flutter.dev/get-started/flutter-for/declarative): This introduction describes the conceptual difference between the declarative style used by Flutter, and the imperative style used by many other UI frameworks.
 - [Write Your First App Codelab](https://codelabs.developers.google.com/codelabs/flutter-codelab-first): The canonical hands-on tutorial for building a basic Flutter application.
-- [Flutter Fundamentals](https://docs.flutter.dev/get-started/fundamentals): A guide for new developers learning Flutter, covering fundamental topics like Dart, widgets, layout, state
+- [Flutter Learning Pathway](https://docs.flutter.dev/learn/pathway): A guide for new developers learning Flutter, covering fundamental topics like Dart, widgets, layout, state
   management, user input, networking, and local data caching.
 - [Dart language tour](https://dart.dev/language): A comprehensive introduction to the Dart programming language, which is required for Flutter development.
 - [Flutter Widget of the Week playlist](https://www.youtube.com/watch?v=D0xwcz2IqAY&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG): Short, engaging videos introducing individual widgets.

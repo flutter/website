@@ -229,7 +229,7 @@ providing a declarative alternative to the following:
 In this case, it adds five `Row` widgets to the column,
 one for each guess on the `Game` object.
 
-[collection for element]: /language/collections#for-element
+[collection for element]: {{site.dart-site}}/language/collections#for-element
 
 #### An updated widget tree
 

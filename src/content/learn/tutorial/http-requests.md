@@ -35,9 +35,6 @@ The core tenet of MVVM (and many other patterns) is *separation of concerns*.
 Managing state in separate classes (outside your UI widgets) makes
 your code more testable, reusable, and easier to maintain.
 
-<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="320px"
-alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
-
 A single feature in your app contains each one of the MVVM components.
 In this tutorial, in addition to Flutter widgets,
 you'll create `ArticleModel`, `ArticleViewModel`, and `ArticleView`.

@@ -192,11 +192,11 @@ This website release includes several important updates!
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
 [Flutter AI Toolkit]: /ai/ai-toolkit
-[fwe]: /get-started/fundamentals
+[fwe]: /learn/pathway
 [Interactive Media Ads]: {{site.pub-pkg}}/interactive_media_ads
 [jc]: /platform-integration/android/compose-activity
 [jetpack-api]: /platform-integration/android/call-jetpack-apis
-[Intro to Dart]: /get-started/fundamentals/dart
+[Intro to Dart]: {{site.dart-site}}/tutorials
 [plugin-authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [web renderers]: /platform-integration/web/renderers
@@ -259,12 +259,12 @@ This website release includes several important updates!
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
-[Flutter fundamentals docs]: /get-started/fundamentals
-[Widgets]: /get-started/fundamentals/widgets
+[Flutter fundamentals docs]: /learn/pathway
+[Widgets]: /learn/tutorial/widget-fundamentals
 [iOS app extension]: /platform-integration/ios/app-extensions
 [iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /get-started/fundamentals/layout
+[Layout]: /learn/tutorial/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 
@@ -336,7 +336,7 @@ To learn more, check out [dart.dev/go/macros][].
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
-[Flutter fundamentals docs]: /get-started/fundamentals
+[Flutter fundamentals docs]: /learn/pathway
 [Flutter install]: /get-started
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website

@@ -184,8 +184,10 @@
       permalink: /flutter-for/declarative
     - title: Flutter versus Swift concurrency
       permalink: /flutter-for/dart-swift-concurrency
+
 - divider
 - header: User interface
+
 - title: Introduction
   permalink: /ui
   icon: palette

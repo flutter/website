@@ -104,7 +104,7 @@ or begin expanding integration with Linux.
           <a class="text-button" href="/get-started/codelab">Write your first app</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
