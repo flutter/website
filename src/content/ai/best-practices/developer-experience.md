@@ -131,7 +131,7 @@ tests. To validate, ask yourself some questions:
 - Do the tests pass?  
 - Does the code pass your review?
 
-The questions to these questions form the input to the next phase.
+The answers to these questions are the input for the next phase.
 
 ### Iterate
 
