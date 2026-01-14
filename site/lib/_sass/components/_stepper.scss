@@ -98,4 +98,14 @@
       justify-content: flex-end;
     }
   }
+
+  // Non-collapsible variant: all steps stay open, no toggle interaction
+  &.non-collapsible > details > summary {
+    pointer-events: none;
+    cursor: default;
+
+    span.material-symbols {
+      display: none;
+    }
+  }
 }
