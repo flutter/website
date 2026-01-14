@@ -16,14 +16,13 @@ Start here for an overview of how to get set up, build Flutter apps, write Dart 
   <p>
 
     This is the **recommended** set of resources to start learning Flutter! Learn how to write Dart code in the first tutorial, then build a series of apps using Flutter in the second. You'll learn the essential best practices for Flutter app development, app architecture, fetching data from the network, and more. Great for beginners with minimal programming experience.
-
   </p>
-  <a href="/learn/pathway" class="outlined-button">Start learning </a>
+  <a href="/learn/pathway" class="outlined-button">Start learning</a>
 </Card>
 
 ## For experienced developers
 
-Dive deeper into more specific topics in Flutter development with sample code, YouTube videos, codelabs, and more. 
+Dive deeper into more specific topics in Flutter development with sample code, YouTube videos, codelabs, and more.
 
 <Card title="Learning resources index"  additional-classes="display-card">
   <p>
@@ -34,7 +33,7 @@ Dive deeper into more specific topics in Flutter development with sample code, Y
 
 <Card title="App Architecture case study"  additional-classes="display-card">
   <p>
-    Learn the recommended app architecture to build a Flutter app. This guide contains everything you need to know understand and implement MVVM architecture in a Flutter app. 
+    Learn the recommended app architecture to build a Flutter app. This guide contains everything you need to know to understand and implement MVVM architecture in a Flutter app.
   </p>
   <a href="/app-architecture" class="outlined-button">Start learning</a>
 </Card>

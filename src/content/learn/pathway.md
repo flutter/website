@@ -7,7 +7,7 @@ showToc: false
 
 <!-- TODO(ewindmill): insert "Welcome to FWE" video -->
 
-Welcome to the Dart and Flutter Getting Started pathway. In it, you'll set up your development environment, learn how to write Dart code, and build three small Flutter apps step-by-step. This learning pathway spans both the Dart and Flutter websites, Youtube, and your IDE. By the end, you'll have a solid foundation in both Dart and Flutter.
+Welcome to the Dart and Flutter Getting Started pathway. In it, you'll set up your development environment, learn how to write Dart code, and build three small Flutter apps step-by-step. This learning pathway spans both the Dart and Flutter websites, YouTube, and your IDE. By the end, you'll have a solid foundation in both Dart and Flutter.
 
 <Stepper level="3" collapsible="false" actions="none">
 
@@ -33,7 +33,7 @@ Now that you have Dart skills under your belt, dive into Flutter! This hands-on 
 
 ### 4. Understand how Flutter works
 
-Deepen your understanding of Flutter's architecture by watching this video series. Learn about the widget tree, rendering pipeline, and what makes Flutter unique. This series contains the knowledge you need to know to reach the next level of Flutter understanding.
+Deepen your understanding of how Flutter works under the hood by watching this video series. Learn about the widget tree, rendering pipeline, and what makes Flutter unique. This series provides the knowledge you need to know to take full advantage of the framework.
 
 [Watch: How Flutter Works →](https://youtu.be/0Xn1QhNtPkQ?si=iIHtTuVae5804F92)
 
