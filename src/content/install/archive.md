@@ -81,7 +81,7 @@ SDK archive:
     </Tab>
 </Tabs>
 
-:::note
+:::tip
 To see what's changed in a beta release, compare the version tags on GitHub.
 
 1. Find the version number (tag) you want to see (for example, `3.38.0-0.2.pre`).
