@@ -5,6 +5,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Learn how to create layouts that adapt to different screen widths.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +17,10 @@ items:
   - title: Build a sidebar and detail layout for large screens
     icon: view_sidebar
 </SummaryCard>
+
+---
+
+### Introduction
 
 Modern apps need to work well on screens of all sizes.
 On this page, you'll learn how to create layouts that
@@ -28,7 +34,7 @@ Specifically, this app handles two screen sizes:
 - **Small screens (phones)**:
   Uses navigation to move between contact groups and details.
 
-## Create the contact groups page
+### Create the contact groups page
 
 First, create the basic structure of the `ContactGroupsPage` widget
 for your contact groups screen.
@@ -53,7 +59,7 @@ class ContactGroupsPage extends StatelessWidget {
 }
 ```
 
-## Create the contacts page
+### Create the contacts page
 
 Similarly, create `lib/screens/contacts.dart` to eventually
 display individual contacts:
@@ -82,7 +88,7 @@ The `ContaactsListPage` widget and `ContactGroupsPage` widget are
 placeholder pages that are needed to implement the adaptive layout
 widget, which you'll do next.
 
-## Build the adaptive layout foundation
+### Build the adaptive layout foundation
 
 Create `lib/screens/adaptive_layout.dart`
 and start with the following basic structure:
@@ -156,7 +162,7 @@ you can decide which layout to show.
 The 600-pixel threshold is a common breakpoint that
 separates phone-sized screens from tablet-sized screens.
 
-## Update the main app
+### Update the main app
 
 Update `main.dart` to use the adaptive layout,
 so you can see your changes:
@@ -194,7 +200,7 @@ class RolodexApp extends StatelessWidget {
 If you're running in Chrome, you can resize the browser window to
 see layout changes.
 
-## Add list selection functionality
+### Add list selection functionality
 
 The large screen layout needs to track which contact group is selected.
 Update the state object with the following code:
@@ -244,7 +250,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 The `selectedListId` variable tracks the currently selected contact group,
 and `_onContactListSelected` updates this value when the user makes a choice.
 
-## Build the large screen layout
+### Build the large screen layout
 
 Now, implement the side-by-side layout for large screens.
 First, replace the temporary text with a widget that
@@ -349,7 +355,7 @@ This layout creates the following:
 - A 1-pixel divider between the panels.
 - A details panel that uses an `Expanded` widget to take the remaining space.
 
-## Test the adaptive layout
+### Test the adaptive layout
 
 Hot reload your app and test the responsive behavior.
 If you're running in Chrome, you can resize the browser window to
@@ -364,6 +370,8 @@ Both the sidebar and main content area show placeholder text for now.
 
 In the next lesson, you'll implement slivers to fill in
 the contact list content.
+
+### Review
 
 <SummaryCard>
 title: What you accomplished
@@ -390,3 +398,36 @@ items:
       an `Expanded` detail panel side-by-side using a `Row`.
       This classic pattern maximizes screen real estate on tablets and desktops.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Adaptive Layout Quiz">
+- question: What information does LayoutBuilder provide to its builder callback?
+  options:
+    - text: The device's operating system and screen orientation.
+      correct: false
+      explanation: LayoutBuilder provides size constraints, not OS or orientation info.
+    - text: The parent's size constraints, including maximum width and height.
+      correct: true
+      explanation: LayoutBuilder's builder receives BoxConstraints that tell you the available space from the parent.
+    - text: The current theme colors and typography.
+      correct: false
+      explanation: Theme data comes from Theme.of(context), not LayoutBuilder.
+    - text: The number of child widgets in the tree.
+      correct: false
+      explanation: LayoutBuilder provides layout constraints, not widget tree information.
+- question: In a large screen layout, which widget can be used to place a sidebar and details panel side-by-side?
+  options:
+    - text: Column
+      correct: false
+      explanation: Column arranges widgets vertically, not side-by-side.
+    - text: Row
+      correct: true
+      explanation: Row arranges its children horizontally, making it ideal for placing a sidebar and details panel side-by-side.
+    - text: Stack
+      correct: false
+      explanation: Stack overlaps widgets on top of each other, not side-by-side.
+    - text: ListView
+      correct: false
+      explanation: ListView is for scrollable lists, not for side-by-side layout.
+</Quiz>

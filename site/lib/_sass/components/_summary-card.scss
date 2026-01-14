@@ -84,4 +84,15 @@
       }
     }
   }
+
+  .summary-card-item-static { 
+    .summary-card-item-details {
+      padding: .8rem 1.2rem;
+        color: var(--site-base-fgColor-lighter);
+
+        >:last-child {
+          margin-bottom: 0;
+        }
+    }
+  }
 }

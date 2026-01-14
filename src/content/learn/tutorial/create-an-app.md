@@ -5,9 +5,10 @@ layout: tutorial
 sitemap: false
 ---
 
-{%- comment %}
-<!-- TODO(ewindmill) embed video -->
-{%- endcomment %}
+Learn the first steps to building a Flutter app, from creating a project to understanding widgets and hot reload.
+
+<!-- TODO(ewindmill): Add "Getting Started with Flutter" video when released -->
+<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
 
 <SummaryCard>
 title: What you'll accomplish
@@ -20,19 +21,24 @@ items:
     icon: bolt
 </SummaryCard>
 
+---
+
+### What you'll build
+
 In this first section of the Flutter tutorial,
 you'll build the core UI of an app called 'Birdle',
 a game similar to [Wordle, the popular New York Times game][].
+
+<img src='/assets/images/docs/tutorial/birdle.png' width="320px" class="diagram-wrap" alt="A screenshot that resembles the popular game Wordle.">
 
 By the end of this tutorial, you'll have
 learned the fundamentals of building Flutter UIs, and your app will
 look like the following screenshot (and it'll even mostly work 😀).
 
-<img src='/assets/images/docs/tutorial/birdle.png' width="100%" alt="A screenshot that resembles the popular game Wordle.">
-
 [Wordle, the popular New York Times game]: https://www.nytimes.com/games/wordle/index.html
 
-## Create a new Flutter project
+
+### Create a new Flutter project
 
 The first step to building Flutter apps is to create a new project.
 You create new apps with the [Flutter CLI tool][],
@@ -49,7 +55,7 @@ This creates a new Flutter project using the minimal "empty" template.
 
 [Flutter CLI tool]: /reference/flutter-cli
 
-## Examine the code
+### Examine the code
 
 In your IDE, open the file at `lib/main.dart`.
 Starting from the top, you'll see this code.
@@ -102,9 +108,9 @@ compose widgets from the SDK into larger, custom widgets that display a UI.
 
 At the moment, the widget tree is quite simple:
 
-<img src='/assets/images/docs/tutorial/initial_widget_tree.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/initial_widget_tree.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
-## Run your app
+### Run your app
 
 1.  In your terminal,
     navigate to the root directory of your created Flutter app:
@@ -121,9 +127,9 @@ At the moment, the widget tree is quite simple:
 
     The app will build and launch in a new instance of Chrome.
 
-<img src='/assets/images/docs/tutorial/hello_world.png' alt="A screenshot that resembles the popular game Wordle.">
+<img src='/assets/images/docs/tutorial/hello_world.png' width="320px" alt="A screenshot that resembles the popular game Wordle.">
 
-## Use hot reload
+### Use hot reload
 
 **Stateful hot reload**, if you haven't heard of it,
 allows a running Flutter app to re-render updated business logic or UI code in
@@ -141,7 +147,9 @@ Then, hot-reload your app by
 pressing `r` in the terminal where the app is running.
 The running app should instantly show your updated text.
 
-<SummaryCard>
+### Review
+
+<SummaryCard expands="false">
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
 completed: true
@@ -169,3 +177,37 @@ items:
       see code changes reflected in under a second without losing app state.
       Press `r` in the terminal to trigger a hot reload.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Create an App Quiz">
+- question: "What is the purpose of the `runApp` function in a Flutter application?"
+  options:
+    - text: It compiles the Dart code into native machine code.
+      correct: false
+      explanation: "Compilation happens before the app runs; `runApp` starts the Flutter framework with a root widget."
+    - text: It takes a widget as an argument and makes it the root of the widget tree.
+      correct: true
+      explanation: "The `runApp` function inflates the given widget and attaches it to the screen, making it the root of the widget tree."
+    - text: "It creates the `main.dart` file for the project."
+      correct: false
+      explanation: "The file is created by `flutter create`; `runApp` is called at runtime."
+    - text: It downloads Flutter dependencies from the internet.
+      correct: false
+      explanation: "Dependencies are managed by `flutter pub get`, not `runApp`."
+- question: How do you trigger a hot reload while a Flutter app is running in the terminal?
+  options:
+    - text: "Press `h` in the terminal."
+      correct: false
+      explanation: "Pressing `h` shows help options; `r` triggers hot reload."
+    - text: "Press `r` in the terminal."
+      correct: true
+      explanation: "Pressing `r` in the terminal where the app is running triggers a hot reload."
+    - text: "Stop and restart the app with `flutter run`."
+      correct: false
+      explanation: A full restart is not needed; hot reload is faster.
+    - text: Save the file and wait for automatic reload.
+      correct: false
+      explanation: "By default, you need to press `r` to trigger hot reload in the terminal."
+</Quiz>
+

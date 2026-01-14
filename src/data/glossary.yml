@@ -1,3 +1,26 @@
+- term: "Adaptive"
+  short_description: |-
+    A design concept where the UI adapts to be usable in the available space,
+    often changing layout or input methods based on device capabilities.
+  long_description: |-
+    Adaptive design is about the UI being _usable_ in the space,
+    as opposed to responsive design which is about fitting the UI _into_
+    the space.
+    An adaptive app selects the appropriate layout
+    (such as having a bottom nav instead of a side panel)
+    and input devices (for example, mouse versus touch)
+    to feel natural on the current device.
+  related_links:
+    - text: "Adaptive vs responsive design"
+      link: "/ui/adaptive-responsive#what-is-responsive-vs-adaptive"
+      type: "doc"
+    - text: "Building adaptive apps"
+      link: "/ui/adaptive-responsive"
+      type: "doc"
+  labels:
+    - "ui"
+    - "design"
+
 - term: "Embedder"
   short_description: |-
     The platform-specific component that supports Flutter
@@ -39,9 +62,9 @@
     The main responsibilities of the engine are as follows:
 
     1. Exposes the `dart:ui` API, which are the low-level primitives
-       that the Flutter framework builds upon.
+       that the Flutter [framework][] builds upon.
     2. Converts low-level drawing commands into pixels (also called
-       _rasterization_, this includes Impeller and Skia).
+       _rasterization_, this includes [Impeller][] and Skia).
     3. Responsible for launching and managing Dart's runtime.
     4. Responsible for laying out text.
     5. Responsible for asset resolution.
@@ -95,7 +118,7 @@
     Android Studio, and IntelliJ IDEA. It does not re-run `main` or
     `initState`; for that, use [hot restart][].
 
-    [hot restart]: /resources/glossary/#hot-restart
+    [hot restart]: /resources/glossary#hot-restart
   related_links:
     - text: "Hot reload documentation"
       link: "/tools/hot-reload"
@@ -184,7 +207,7 @@
     through constructor parameters.
   long_description: |-
     The process of passing data through multiple layers of widgets
-    through constructor pareameterss, usually to reach a deeper descendant.
+    through constructor parameters, usually to reach a deeper descendant.
     This pattern can become verbose, which is
     why other state management solutions
     (like `InheritedWidget` or `Provider`) are often used.
@@ -274,8 +297,8 @@
     When a widget's state changes, the Flutter framework
     rebuilds the necessary parts of the tree to update the UI.
 
-    There are two primary types of widgets,
-    including [`StatelessWidget`][], which have no mutable state, and
+    The two primary types of widgets are
+    [`StatelessWidget`][], which have no mutable state, and
     [`StatefulWidget`][], which have a persistent [state][] that can be updated.
 
     [`StatelessWidget`]: https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html

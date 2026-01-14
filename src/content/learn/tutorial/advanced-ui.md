@@ -7,6 +7,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Preview the Rolodex app you'll build and set up a Cupertino-based project with data models.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -18,19 +20,23 @@ items:
     icon: data_object
 </SummaryCard>
 
+---
+
+### Introduction
+
 In this third installment of the Flutter tutorial series,
 you'll use Flutter's Cupertino library to build a
 partial clone of the iOS Contacts app.
 
-<img src='/assets/images/docs/tutorial/rolodex_complete.png'
-width="100%" alt="A screenshot of the completed Rolodex contact
+<img src='/assets/images/docs/tutorial/rolodex_complete.png' class="diagram-wrap"
+width="320px" alt="A screenshot of the completed Rolodex contact
 management app showing a list of contacts organized alphabetically.">
 
 By the end of this tutorial, you'll have learned how to create
 adaptive layouts, implement comprehensive theming, build navigation
 patterns, and use advanced scrolling techniques.
 
-## What you'll learn
+#### What you'll learn
 
 This tutorial explores the following topics:
 
@@ -45,7 +51,8 @@ This tutorial assumes that you've completed the previous Flutter tutorials
 and are comfortable with basic widget composition, state management,
 and the Flutter project structure.
 
-## Create a new Flutter project
+
+### Create a new Flutter project
 
 To build a Flutter app, you first need a Flutter project.
 You can create a new app with the [Flutter CLI tool][],
@@ -63,7 +70,7 @@ uses the minimal "empty" template.
 
 [Flutter CLI tool]: /reference/flutter-cli
 
-## Add the Cupertino Icons dependency
+### Add the Cupertino Icons dependency
 
 This project uses the [`cupertino_icons` package][],
 an official Flutter package.
@@ -73,7 +80,7 @@ Add it as a dependency by running the following command:
 $ flutter pub add cupertino_icons
 ```
 
-## Set up the project structure
+### Set up the project structure
 
 First, create the basic directory structure for your app.
 In your project's `lib` directory, create the following folders:
@@ -86,7 +93,7 @@ $ mkdir lib/data lib/screens lib/theme
 This command creates folders to organize your code into logical sections:
 data models, screen widgets, and theme configuration.
 
-## Replace the starter code
+### Replace the starter code
 
 In your IDE, open the `lib/main.dart` file, and replace its entire
 contents with the following starter code:
@@ -126,7 +133,7 @@ this app uses `CupertinoApp` instead of `MaterialApp`.
 The Cupertino design system provides iOS-style widgets and styling,
 which is perfect for building apps that feel native on Apple devices.
 
-## Run your app
+### Run your app
 
 In your terminal at the root of your Flutter app, run the following command:
 
@@ -137,17 +144,17 @@ $ flutter run -d chrome
 The app builds and launches in a new instance of Chrome.
 It displays "Hello Rolodex!" in the center of the screen.
 
-## Create the data models
+### Create the data models
 
 Before building the UI,
 create the data structures and sample data that the app will use.
 This section is lightly explained because it's not the focus of this tutorial.
 
-### `Contact` data
+#### `Contact` data
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
-```dart title="lib/data/contact.dart"
+```dart foldable title="lib/data/contact.dart"
 class Contact {
   Contact({
     required this.id,
@@ -164,6 +171,7 @@ class Contact {
   final String? suffix;
 }
 
+[* - 
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -279,7 +287,9 @@ final jessicaEdwards = Contact(
   firstName: 'Jessica',
   lastName: 'Edwards',
 );
+*]
 
+[* -
 final Set<Contact> allContacts = <Contact>{
   johnAppleseed,
   kateBell,
@@ -333,12 +343,13 @@ final Set<Contact> allContacts = <Contact>{
   christopherDaniel,
   jessicaEdwards,
 };
+*]
 ```
 
 This sample data includes contacts with and without middle names and suffixes.
 This gives you a variety of data to work with as you build the UI.
 
-### `ContactGroup` data
+#### `ContactGroup` data
 
 Now, create the contact groups that organize your contacts into lists.
 Create a new `lib/data/contact_group.dart` file and
@@ -490,7 +501,7 @@ which covers state management.
 
 [previous tutorial covering state]: /learn/tutorial/set-up-state-project
 
-## Connect the data to your app
+### Connect the data to your app
 
 Update your `main.dart` to include the global state and
 import the new data file:
@@ -529,6 +540,8 @@ you'll start building the app in earnest.
 
 [`cupertino_icons` package]: {{site.pub-pkg}}/cupertino_icons
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -554,3 +567,36 @@ items:
       plus a `ContactGroupsModel` for state management.
       This foundation supports the UI you'll build in the coming lessons.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Advanced UI Setup Quiz">
+- question: What is the main difference between CupertinoApp and MaterialApp?
+  options:
+    - text: CupertinoApp only works on iOS devices.
+      correct: false
+      explanation: CupertinoApp can run on any platform; it just provides iOS-style widgets.
+    - text: CupertinoApp provides iOS-style widgets and styling, while MaterialApp provides Material Design widgets.
+      correct: true
+      explanation: CupertinoApp uses Cupertino design system widgets that match the iOS look and feel.
+    - text: CupertinoApp is lighter and has better performance.
+      correct: false
+      explanation: Both have similar performance; they differ in visual style, not speed.
+    - text: MaterialApp requires more configuration to set up.
+      correct: false
+      explanation: Both have similar setup requirements; they just use different design systems.
+- question: What is the purpose of a ValueNotifier in state management?
+  options:
+    - text: To validate user input values.
+      correct: false
+      explanation: ValueNotifier holds and notifies about value changes, not validation.
+    - text: To hold a single value and notify listeners when that value changes.
+      correct: true
+      explanation: ValueNotifier is a simple ChangeNotifier that wraps a single value and notifies listeners on change.
+    - text: To convert values between different data types.
+      correct: false
+      explanation: Type conversion is not the purpose of ValueNotifier.
+    - text: To store values permanently in local storage.
+      correct: false
+      explanation: ValueNotifier holds values in memory; persistence requires separate implementation.
+</Quiz>

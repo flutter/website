@@ -5,6 +5,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Learn the MVVM architecture pattern and how to build HTTP requests with async/await.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +17,10 @@ items:
   - title: Handle errors and parse JSON responses
     icon: data_object
 </SummaryCard>
+
+---
+
+### Introduction
 
 The overarching pattern that this tutorial implements is called
 _Model-View-ViewModel_ or _MVVM_.
@@ -29,7 +35,7 @@ The core tenet of MVVM (and many other patterns) is *separation of concerns*.
 Managing state in separate classes (outside your UI widgets) makes
 your code more testable, reusable, and easier to maintain.
 
-<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="100%"
+<img src="/assets/images/docs/tutorial/simple_mvvm.png" width="320px"
 alt="A diagram that shows the three layers of MVVM architecture: Model, ViewModel, and View.">
 
 A single feature in your app contains each one of the MVVM components.
@@ -38,7 +44,7 @@ you'll create `ArticleModel`, `ArticleViewModel`, and `ArticleView`.
 
 [architectural pattern]: /app-architecture/guide
 
-## Define the Model
+### Define the Model
 
 The Model is the source-of-truth for your app's data and is responsible for
 low-level tasks such as making HTTP requests, caching data, or
@@ -53,7 +59,7 @@ class ArticleModel {
 }
 ```
 
-## Build the HTTP request
+### Build the HTTP request
 
 Wikipedia provides a REST API that returns JSON data about articles.
 For this app, you'll use the endpoint that returns a random article summary.
@@ -90,7 +96,7 @@ especially when dealing with special characters or query parameters.
 [`async` and `await`]: {{site.dart-site}}/language/async
 [`Future`]: {{site.api}}/flutter/dart-async/Future-class.html
 
-## Handle network errors
+### Handle network errors
 
 Always handle errors when making HTTP requests.
 A status code of **200** indicates success, while other codes indicate errors.
@@ -115,7 +121,7 @@ class ArticleModel {
 }
 ```
 
-## Parse JSON from Wikipedia
+### Parse JSON from Wikipedia
 
 The [Wikipedia API][] returns [JSON][] data that
 you decode into a `Summary` class
@@ -147,6 +153,8 @@ check out the [Getting started with Dart][] tutorial.
 [JSON]: {{site.dart-site}}/tutorial/json
 [Getting started with Dart]: {{site.dart-site}}/tutorial
 
+### Review
+
 <SummaryCard>
 title: What you accomplished
 subtitle: Here's a summary of what you built and learned in this lesson.
@@ -175,3 +183,36 @@ items:
       Then to convert the raw JSON into a typed Dart object,
       you used the `Summary.fromJson` named constructor.
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="HTTP Requests Quiz">
+- question: "What do the `async` and `await` keywords do in Dart?"
+  options:
+    - text: They make code run on a separate thread.
+      correct: false
+      explanation: Dart is single-threaded; async/await handles asynchronous operations without threads.
+    - text: They mark a function as asynchronous and pause execution until a Future completes.
+      correct: true
+      explanation: "The `async` keyword marks a function as asynchronous, and `await` pauses execution until the Future resolves."
+    - text: They automatically cache the results of function calls.
+      correct: false
+      explanation: Caching requires separate implementation; async/await is for handling asynchronous operations.
+    - text: They convert synchronous code to run in the background.
+      correct: false
+      explanation: They don't move code to the background; they manage asynchronous execution flow.
+- question: "Why is `Uri.https` preferred over string concatenation when building URLs in Dart?"
+  options:
+    - text: It makes the code shorter.
+      correct: false
+      explanation: Code length isn't the main benefit; proper encoding is.
+    - text: It safely handles encoding and formatting, especially for special characters and query parameters.
+      correct: true
+      explanation: Uri.https properly encodes special characters and formats URLs, preventing common errors.
+    - text: It's required by the http package.
+      correct: false
+      explanation: You can use strings, but Uri.https is safer and more reliable.
+    - text: It automatically validates that the URL exists.
+      correct: false
+      explanation: Uri.https builds the URL; it doesn't check if the endpoint exists.
+</Quiz>

@@ -1,6 +1,6 @@
 .stepper {
 
-  details {
+  >details {
     position: relative;
     margin: 0;
     padding-bottom: 1px;
@@ -25,7 +25,7 @@
       display: none;
     }
 
-    summary {
+    >summary {
       position: relative;
       display: flex;
       align-items: center;
@@ -52,7 +52,14 @@
       }
 
       .step-title {
-        .header-wrapper, h1, h2, h3, h4, h5, h6 {
+
+        .header-wrapper,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           margin: 0;
         }
       }
@@ -66,7 +73,7 @@
       }
     }
 
-    &[open] summary {
+    &[open]>summary {
       .step-number {
         background-color: var(--site-primary-color);
         color: var(--site-onPrimary-color-lightest);
@@ -77,7 +84,7 @@
       }
     }
 
-    &:not([open]):has(~[open]) summary .step-number {
+    &:not([open]):has(~[open])>summary .step-number {
       background-color: var(--site-onPrimary-color-light);
       color: var(--site-primary-color);
     }

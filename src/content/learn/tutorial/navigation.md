@@ -5,6 +5,8 @@ layout: tutorial
 sitemap: false
 ---
 
+Learn to navigate between screens with Navigator.push and implement adaptive navigation patterns for different screen sizes.
+
 <SummaryCard>
 title: What you'll accomplish
 items:
@@ -15,6 +17,10 @@ items:
   - title: Create different navigation patterns for each screen size
     icon: devices
 </SummaryCard>
+
+---
+
+### Introduction
 
 Now that you understand slivers and scrolling,
 you can implement navigation between screens.
@@ -52,7 +58,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
 }
 ```
 
-## Add navigation to contact groups
+### Add navigation to contact groups
 
 The `ContactGroupsPage` already uses a `_ContactGroupsView`
 and provides it with a callback.
@@ -99,7 +105,7 @@ the following features:
 - Proper title handling.
 - Swipe-to-go-back gesture support.
 
-## Create the sidebar component for large screens
+### Create the sidebar component for large screens
 
 For large screens, you need a sidebar that doesn't navigate but
 instead updates the main content area.
@@ -137,7 +143,7 @@ it calls `onListSelected` with the ID of the tapped list.
 It also passes the `selectedListId` to `_ContactGroupsView` so that
 the selected item can be highlighted.
 
-## Create the detail view for large screens
+### Create the detail view for large screens
 
 For the large screen layout, you need a detail view that
 doesn't show navigation controls. Just like the sidebar,
@@ -167,7 +173,7 @@ The detail view reuses `_ContactListView` and sets
 the `automaticallyImplyLeading` parameter to `false` to
 hide the back button, as navigation is handled by the sidebar.
 
-## Connect the sidebar to the adaptive layout
+### Connect the sidebar to the adaptive layout
 
 Now, connect the sidebar to your adaptive layout.
 Update your `adaptive_layout.dart` file to import the necessary files and
@@ -212,17 +218,17 @@ Widget _buildLargeScreenLayout() {
 This code creates the classic menu-detail layout where the sidebar
 controls the content of the detail area.
 
-## Test the adaptive navigation behavior
+### Test the adaptive navigation behavior
 
 Hot reload your app and test the navigation:
 
-**Small screens (< 600px width):**
+**Small screens (<600px width):**
 
 - Tap contact groups to navigate to contact details.
 - Use the back button or a swipe gesture to return.
 - This is a classic stack-based navigation flow.
 
-**Large screens (> 600px width):**
+**Large screens (>600px width):**
 
 - Click contact groups in the sidebar to update the detail view.
 - There is no navigation stack. The selection updates the content area.
@@ -231,6 +237,9 @@ Hot reload your app and test the navigation:
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
 This provides an optimal experience on both phones and tablets.
+
+### Review
+
 
 <SummaryCard>
 title: What you accomplished
@@ -265,3 +274,36 @@ items:
       collapsible headers with search, and responsive navigation.
       These are common patterns used in production apps!
 </SummaryCard>
+
+### Test yourself
+
+<Quiz title="Navigation Quiz">
+- question: "What does `Navigator.of(context).push` do?"
+  options:
+    - text: Replaces the current screen with a new one.
+      correct: false
+      explanation: "Push adds to the stack; `pushReplacement` replaces the current screen."
+    - text: Adds a new route to the navigation stack, displaying it on top of the current screen.
+      correct: true
+      explanation: Push adds the new route to the stack, allowing users to go back to the previous screen.
+    - text: Removes the current screen from the navigation stack.
+      correct: false
+      explanation: "That's what `pop` does; push adds a new screen."
+    - text: Opens a dialog box over the current screen.
+      correct: false
+      explanation: "Dialogs use `showDialog`; Navigator.push navigates to a full screen."
+- question: "What does `Navigator.of(context).pop()` do?"
+  options:
+    - text: Closes the entire app.
+      correct: false
+      explanation: Pop only removes the current route; it doesn't close the app.
+    - text: Removes the current route from the navigation stack, returning to the previous screen.
+      correct: true
+      explanation: Pop removes the top route from the stack, revealing the screen beneath it.
+    - text: Clears all routes and shows the home screen.
+      correct: false
+      explanation: That would require popUntil or pushAndRemoveUntil; pop removes only the top route.
+    - text: Refreshes the current screen with new data.
+      correct: false
+      explanation: Pop navigates back; to refresh, you'd use setState or other state management.
+</Quiz>
