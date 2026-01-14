@@ -21,8 +21,8 @@ control where the overlay child renders.
 As a result, the `OverlayPortal.targetsRootOverlay` constructor is
 no longer useful.
 
-Made `Overlay.of` to account for `LookupBoundary` help to prevent `OverlayEntry` to be
-inserted across multi-views by mistake.
+To prevent an `OverlayEntry` from being inserted across multi-view boundaries
+by mistake, `Overlay.of` now respects `LookupBoundary`.
 
 ## Description of change
 
