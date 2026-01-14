@@ -1,7 +1,7 @@
 ---
-title: Deprecate `OverlayPortal.targetsRootOverlay`
+title: Deprecate `OverlayPortal.targetsRootOverlay` and enforce `LookupBoundary` in `Overlay.of`
 description: >-
-  Learn about changes to the OverlayPortal in Flutter.
+  Learn about changes to the OverlayPortal and Overlay in Flutter.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -11,6 +11,8 @@ description: >-
 The `OverlayPortal.targetsRootOverlay` property was deprecated and
 replaced with `overlayLocation`.
 
+The `Overlay.of` and `Overlay.maybeOf` now respect `LookupBoundary`.
+
 ## Context
 
 A `overlayLocation` parameter was added to
@@ -19,9 +21,14 @@ control where the overlay child renders.
 As a result, the `OverlayPortal.targetsRootOverlay` constructor is
 no longer useful.
 
+Made `Overlay.of` to account for `LookupBoundary` help to prevent `OverlayEntry` to be
+inserted across multi-views by mistake.
+
 ## Description of change
 
 The `OverlayPortal.targetsRootOverlay` constructor is deprecated.
+
+The `Overlay.of` and `Overlay.maybeOf` will not lookup past `LookupBoundary`.
 
 ## Migration guide
 
@@ -55,6 +62,27 @@ Widget build(BuildContext context) {
 }
 ```
 
+If you expect `Overlay.of` and `Overlay.maybeOf` to lookup past `LookupBoundary`,
+use `findAncestorStateOfType` instead.
+
+Code before migration:
+
+```dart
+Widget build(BuildContext context) {
+  Overlay.of(context);
+  // ...
+}
+```
+
+Code after migration:
+
+```dart
+Widget build(BuildContext context) {
+  context.findAncestorStateOfType<OverlayState>();
+  // ...
+}
+```
+
 ## Timeline
 
 Landed in version: 3.38.0-0.1.pre<br>
@@ -65,6 +93,9 @@ In stable release: 3.38
 API documentation:
 
 * [`OverlayPortal`][]
+* [`Overlay.of`][]
+* [`Overlay.maybeOf`][]
+* [`LookupBoundary`][]
 
 Relevant issue:
 
@@ -75,5 +106,8 @@ Relevant PR:
 * [PR 174239][]
 
 [`OverlayPortal`]: {{site.api}}/flutter/widgets/OverlayPortal-class.html
+[`Overlay.of`]: {{site.api}}/flutter/widgets/Overlay/of.html
+[`Overlay.maybeOf`]: {{site.api}}/flutter/widgets/Overlay/maybeOf.html
+[`LookupBoundary`]: {{site.api}}/flutter/widgets/LookupBoundary-class.html
 [Issue 168785]: {{site.repo.flutter}}/issues/168785
 [PR 174239]: {{site.repo.flutter}}/pull/174239
