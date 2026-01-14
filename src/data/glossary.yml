@@ -27,7 +27,7 @@
   long_description: |-
     Dart is an approachable, portable, and performant language designed
     for full-stack app development. It offers sound null safety,
-    a strong type system, and compiles to native machine code (ARM/x64)
+    a strong type system, and compiles to native machine code
     for mobile, desktop, and backend, as well as JavaScript or WebAssembly
     for the web. While Dart is the foundation of Flutter,
     it is also used for building command-line tools, servers,
