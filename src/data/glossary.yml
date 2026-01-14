@@ -36,9 +36,6 @@
     - text: "Dart language site"
       link: "https://dart.dev"
       type: "external"
-    - text: "Intro to Dart"
-      link: "/get-started/fundamentals/dart"
-      type: "doc"
   labels:
     - "dart"
     - "fundamentals"
