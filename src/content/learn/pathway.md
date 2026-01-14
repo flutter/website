@@ -7,7 +7,7 @@ showToc: false
 
 <!-- TODO(ewindmill): insert "Welcome to FWE" video -->
 
-Welcome to the Dart and Flutter getting started pathway. In it, you'll set up your development environment, learn how to write Dart code, and build three small Flutter apps step-by-step. This learning pathway spans both the Dart and Flutter websites, Youtube, and your IDE. By the end, you'll have a solid foundation in both Dart and Flutter.
+Welcome to the Dart and Flutter Getting Started pathway. In it, you'll set up your development environment, learn how to write Dart code, and build three small Flutter apps step-by-step. This learning pathway spans both the Dart and Flutter websites, Youtube, and your IDE. By the end, you'll have a solid foundation in both Dart and Flutter.
 
 <Stepper level="3" collapsible="false" actions="none">
 
