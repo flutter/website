@@ -1,90 +1,23 @@
 - header: Get started
 
-- title: Set up Flutter
-  permalink: /get-started
-  hiddenChildren: true
+- title: Install Flutter
   icon: build
   children:
-    - title: Overview
-      permalink: /get-started
-    - title: Quick start
-      permalink: /get-started/quick
-    - title: Custom setup
-      permalink: /get-started/custom
-
-- title: Install Flutter
-  permalink: /install
-  icon: download
-  children:
-    - title: Overview
+    - title: Start here
       permalink: /install
-    - title: Install with VS Code
-      permalink: /install/with-vs-code
-    - title: Install manually
-      permalink: /install/manual
-    - title: Upgrade SDK
-      permalink: /install/upgrade
-    - title: SDK archive
-      permalink: /install/archive
-    - divider
-    - title: Add to path
-      permalink: /install/add-to-path
-    - title: Troubleshoot
-      permalink: /install/troubleshoot
-    - title: Uninstall SDK
-      permalink: /install/uninstall
+    - title: Quick start
+      permalink: /install/quick
+    - title: Custom setup
+      permalink: /install/custom
 
 - title: Learn Flutter
   icon: school
   children:
-    - title: Introduction
-      permalink: /get-started/learn-flutter
-    - title: Write your first app
-      permalink: /get-started/codelab
-    - title: Learn the fundamentals
-      expanded: true
-      children:
-        - title: Introduction
-          permalink: /get-started/fundamentals
-        - title: Intro to Dart
-          permalink: /get-started/fundamentals/dart
-        - title: Widgets
-          permalink: /get-started/fundamentals/widgets
-        - title: Layout
-          permalink: /get-started/fundamentals/layout
-        - title: State management
-          permalink: /get-started/fundamentals/state-management
-        - title: Handling user input
-          permalink: /get-started/fundamentals/user-input
-        - title: Networking and data
-          permalink: /get-started/fundamentals/networking
-        - title: Local data and caching
-          permalink: /get-started/fundamentals/local-caching
-
-    - title: From another platform?
-      permalink: /get-started/flutter-for
-      children:
-        - title: Flutter for Android devs
-          permalink: /get-started/flutter-for/android-devs
-        - title: Flutter for Jetpack Compose devs
-          permalink: /get-started/flutter-for/compose-devs
-        - title: Flutter for SwiftUI devs
-          permalink: /get-started/flutter-for/swiftui-devs
-        - title: Flutter for UIKit devs
-          permalink: /get-started/flutter-for/uikit-devs
-        - title: Flutter for React Native devs
-          permalink: /get-started/flutter-for/react-native-devs
-        - title: Flutter for web devs
-          permalink: /get-started/flutter-for/web-devs
-        - title: Flutter for Xamarin.Forms devs
-          permalink: /get-started/flutter-for/xamarin-forms-devs
-        - title: Introduction to declarative UI
-          permalink: /get-started/flutter-for/declarative
-        - title: Flutter versus Swift concurrency
-          permalink: /get-started/flutter-for/dart-swift-concurrency
-
-    - divider
-    - title: Learning resources
+    - title: Overview
+      permalink: /learn
+    - title: Learning pathway
+      permalink: /learn/pathway
+    - title: All learning resources
       permalink: /reference/learning-resources
 
 - title: Stay up to date
@@ -102,6 +35,9 @@
       permalink: https://blog.flutter.dev
     - title: What's new in the docs
       permalink: /release/whats-new
+
+- divider
+- header: Guides
 
 - title: App solutions
   icon: apps
@@ -225,8 +161,33 @@
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
+
+- title: From another platform?
+  icon: devices
+  permalink: /flutter-for
+  children:
+    - title: Flutter for Android devs
+      permalink: /flutter-for/android-devs
+    - title: Flutter for Jetpack Compose devs
+      permalink: /flutter-for/compose-devs
+    - title: Flutter for SwiftUI devs
+      permalink: /flutter-for/swiftui-devs
+    - title: Flutter for UIKit devs
+      permalink: /flutter-for/uikit-devs
+    - title: Flutter for React Native devs
+      permalink: /flutter-for/react-native-devs
+    - title: Flutter for web devs
+      permalink: /flutter-for/web-devs
+    - title: Flutter for Xamarin.Forms devs
+      permalink: /flutter-for/xamarin-forms-devs
+    - title: Introduction to declarative UI
+      permalink: /flutter-for/declarative
+    - title: Flutter versus Swift concurrency
+      permalink: /flutter-for/dart-swift-concurrency
+
 - divider
 - header: User interface
+
 - title: Introduction
   permalink: /ui
   icon: palette

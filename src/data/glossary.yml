@@ -232,8 +232,8 @@
     why other state management solutions
     (like `InheritedWidget` or `Provider`) are often used.
   related_links:
-    - text: "State management: Sharing state"
-      link: "/get-started/fundamentals/state-management#sharing-state-between-widgets"
+    - text: "State management introduction"
+      link: "/data-and-backend/state-mgmt/intro"
       type: "doc"
   labels:
     - "state management"
@@ -325,8 +325,8 @@
     [`StatefulWidget`]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
     [state]: https://api.flutter.dev/flutter/widgets/State-class.html
   related_links:
-    - text: "Fundamentals: Widgets"
-      link: "/get-started/fundamentals/widgets"
+    - text: "Widget fundamentals"
+      link: "/learn/tutorial/widget-fundamentals"
       type: "doc"
     - text: "Widget catalog"
       link: "/ui/widgets"
