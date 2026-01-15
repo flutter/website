@@ -319,7 +319,7 @@ And after the user enters a guess, the focus should stay
 in the `TextField` so they can enter their next guess.
 
 To resolve the first focus issue,
-set up the `autoFocus` property on the `TextField`.
+set up the `autofocus` property on the `TextField`.
 
 ```dart
 class GuessInput extends StatelessWidget {
@@ -344,7 +344,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              autoFocus: true, // NEW
+              autofocus: true, // NEW
               onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
@@ -411,7 +411,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              autoFocus: true,
+              autofocus: true,
               focusNode: _focusNode, // NEW
               onSubmitted: (String input) {
                 print(input); // Temporary
@@ -465,7 +465,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              autoFocus: true,
+              autofocus: true,
               focusNode: _focusNode,
               onSubmitted: (String input) {
                 onSubmitGuess(_textEditingController.text.trim());
@@ -730,9 +730,9 @@ items:
     - text: "Call `TextField.focus()` directly."
       correct: false
       explanation: TextField doesn't have a focus method; you use a FocusNode.
-    - text: "Set the `autoFocus` property to true at runtime."
+    - text: "Set the `autofocus` property to true at runtime."
       correct: false
-      explanation: autoFocus only works on initial build, not for moving focus later.
+      explanation: autofocus only works on initial build, not for moving focus later.
     - text: "Use a FocusNode and call `requestFocus()` on it."
       correct: true
       explanation: "A FocusNode gives you control over focus, and calling `requestFocus()` moves focus to its associated widget."
