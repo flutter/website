@@ -108,8 +108,7 @@ From here, you can choose to install the MCP server from
         "dart-mcp-server": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ],
           "env": {}
         }
