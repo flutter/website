@@ -51,24 +51,22 @@ class DashHeader extends StatelessComponent {
           ],
         ),
 
-        // Only show the nav items if the tutorial is active for now.
-        if (activeEntry == ActiveNavEntry.learn)
-          ul(classes: 'nav-items', [
-            _NavItem(
-              href: '/',
-              label: 'Home',
-              isActive: activeEntry == ActiveNavEntry.home,
-            ),
-            _NavItem(
-              href: '/learn',
-              label: 'Learn',
-              isActive: activeEntry == ActiveNavEntry.learn,
-            ),
-            const _NavItem(
-              href: 'https://api.flutter.dev',
-              label: 'Reference',
-            ),
-          ]),
+        ul(classes: 'nav-items', [
+          _NavItem(
+            href: '/',
+            label: 'Home',
+            isActive: activeEntry == ActiveNavEntry.home,
+          ),
+          _NavItem(
+            href: '/learn',
+            label: 'Learn',
+            isActive: activeEntry == ActiveNavEntry.learn,
+          ),
+          const _NavItem(
+            href: 'https://api.flutter.dev',
+            label: 'Reference',
+          ),
+        ]),
 
         div(
           classes: 'navbar-contents',
