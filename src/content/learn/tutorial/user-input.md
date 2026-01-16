@@ -732,7 +732,7 @@ items:
       explanation: TextField doesn't have a focus method; you use a FocusNode.
     - text: "Set the `autofocus` property to true at runtime."
       correct: false
-      explanation: `autofocus` only works on initial build, not for moving focus later.
+      explanation: The 'autofocus' property only works on initial build, not for moving focus later.
     - text: "Use a FocusNode and call `requestFocus()` on it."
       correct: true
       explanation: "A FocusNode gives you control over focus, and calling `requestFocus()` moves focus to its associated widget."
