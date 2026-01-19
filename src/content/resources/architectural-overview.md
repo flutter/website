@@ -277,7 +277,6 @@ way up to the root widget (the container that hosts the Flutter app, typically
 <?code-excerpt "lib/main.dart (main)"?>
 ```dart
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() => runApp(const MyApp());
 
