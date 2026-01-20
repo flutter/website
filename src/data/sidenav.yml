@@ -9,6 +9,19 @@
       permalink: /install/quick
     - title: Custom setup
       permalink: /install/custom
+    - divider
+    - title: SDK archive
+      permalink: /install/archive
+    - title: Manage install
+      children:
+        - title: Upgrade SDK
+          permalink: /install/upgrade
+        - title: Add to path
+          permalink: /install/add-to-path
+        - title: Troubleshoot
+          permalink: /install/troubleshoot
+        - title: Uninstall SDK
+          permalink: /install/uninstall
 
 - title: Learn Flutter
   icon: school
@@ -887,8 +900,6 @@
       permalink: /resources/courses
     - title: Glossary
       permalink: /resources/glossary
-    - title: Learn Dart
-      permalink: /resources/bootstrap-into-dart
     - title: Get support
       permalink: /resources/support
     - divider

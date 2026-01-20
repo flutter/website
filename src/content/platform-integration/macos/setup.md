@@ -156,9 +156,6 @@ or begin expanding integration with macOS.
         <li>
           <a class="text-button" href="/reference/learning-resources">Check out samples</a>
         </li>
-        <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
-        </li>
       </ul>
     </div>
   </div>
