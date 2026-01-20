@@ -5,7 +5,7 @@ description: This learning pathway walks you through the basics of both Dart and
 showToc: false
 ---
 
-<!-- TODO(ewindmill): insert "Welcome to FWE" video -->
+<YouTubeEmbed id="2kjp9yAKpT4" title="Welcome to the Dart and Flutter Getting Started tutorial" fullWidth="true"></YouTubeEmbed>
 
 Welcome to the Dart and Flutter Getting Started pathway. In it, you'll set up your development environment, learn how to write Dart code, and build three small Flutter apps step-by-step. This learning pathway spans both the Dart and Flutter websites, YouTube, and your IDE. By the end, you'll have a solid foundation in both Dart and Flutter.
 
