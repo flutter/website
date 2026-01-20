@@ -7,8 +7,7 @@ sitemap: false
 
 Learn to use the widget inspector and property editor to debug layout issues and experiment with properties in real-time.
 
-<!-- TODO(ewindmill): Add DevTools video when released -->
-<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
+<YouTubeEmbed id="CIfLE0CShbg" title="Intro to Flutter and Dart DevTools" fullWidth="true"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish

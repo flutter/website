@@ -7,8 +7,7 @@ sitemap: false
 
 Learn when widgets need to be stateful and how to trigger UI updates with setState.
 
-<!-- TODO(ewindmill): Add "StatefulWidget" video when released -->
-<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
+<YouTubeEmbed id="Gzz8FwSlsUg" title="Stateful widgets in Flutter" fullWidth="true"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish

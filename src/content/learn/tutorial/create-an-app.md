@@ -7,8 +7,7 @@ sitemap: false
 
 Learn the first steps to building a Flutter app, from creating a project to understanding widgets and hot reload.
 
-<!-- TODO(ewindmill): Add "Getting Started with Flutter" video when released -->
-<!-- <YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed> -->
+<YouTubeEmbed id="sE1M2EayFes" title="First steps with Flutter" fullWidth="true"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish
