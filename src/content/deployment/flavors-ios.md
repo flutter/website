@@ -151,9 +151,9 @@ always start with an existing project.
 
     :::note
     Your configurations should be based on your
-    `Debug.xconfig`, `Profile.xcconfig`, and
-    `Release.xcconfig` files, not the
-    `Pods-Runner.xcconfigs` file. You can check this by
+    `Debug.xconfig`, `Profile.xcconfig`,
+    and `Release.xcconfig` files, not the
+    `Pods-Runner.xcconfig` file. You can check this by
     expanding the configuration names in Xcode.
     :::
 
