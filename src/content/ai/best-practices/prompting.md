@@ -168,7 +168,7 @@ final result = await _clueSolverModel.generateContent(
 
 ### Prompt versioning
 
-This simple app keeps the prompt strings in code.
+This basic app keeps the prompt strings in code.
 This makes them hard to track down and update.
 For production apps, it's better to keep your prompts separated from the code,
 perhaps bundled as Flutter assets.
