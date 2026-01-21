@@ -19,28 +19,37 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
+The Flutter project provides several versions of the rules file to accommodate different tool limits:
+
+*   `rules.md`: The comprehensive master rule set.
+*   `rules_10k.md`: A condensed version (<10k chars) for tools with stricter context limits.
+*   `rules_4k.md`: A highly concise version (<4k chars) for limited contexts.
+*   `rules_1k.md`: An ultra-compact version (<1k chars) for very strict limits.
+
 <a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
   <Icon id="download" />
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
-## Environments that support rules
+## Device & Editor Specific Limits
 
-Many AI environments support rules files to guide LLM behavior.
-Here are some common examples and their corresponding
-rule file or directory names:
+Different AI coding assistants and tools have varying limits for their "rules" or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Environment          | Rules file or directory           | Configuration instructions                            |
-|:---------------------|:----------------------------------|:------------------------------------------------------|
-| Copilot-powered IDEs | `.github/copilot-instructions.md` | [Configure instructions for Copilot][copilot]         |
-| Claude Code          | `CLAUDE.md`                       | [Configure rules for Claude Code][claude]             |
-| Cursor               | `AGENTS.md`                       | [Configure rules in Cursor][cursor]                   |
-| Firebase Studio      | `.idx/airules.md`                 | [Configure instructions in Firebase Studio][firebase] |
-| Gemini CLI           | `GEMINI.md`                       | [Configure context in Gemini CLI][gemini-cli]         |
-| Google Antigravity   | `.agent/rules/<rule-name>.md`     | [Configure rules for Antigravity Agent][antigravity]  |
-| JetBrains IDEs       | `.junie/guidelines.md`            | [Configure guidelines for Junie][junie]               |
-| VS Code              | `.instructions.md`                | [Configure instructions in VS Code][vs-code]          |
-| Windsurf             | `.windsurf/rules/<rule-name>.md`  | [Configure rules in Windsurf][windsurf]               |
+| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Notes & Sources |
+|:---|:---|:---|:---|
+| Aider | No Hard Limit | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
+| Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
+| Claude Code | `CLAUDE.md` | No Hard Limit | [Docs](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits). Uses `CLAUDE.md`. |
+| CodeRabbit | N/A | 1,000 chars (Hard) | [Docs](https://docs.coderabbit.ai/pr-reviews/pre-merge-checks#ui-configuration). Applied to "Instructions" field. |
+| Cursor | `AGENTS.md` | No Hard Limit | [Docs](https://cursor.com/docs/context/rules). Keep rules under 500 lines. |
+| Firebase Studio | `.idx/airules.md` | Unknown | [Configure instructions][firebase] |
+| Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context). |
+| GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot). |
+| Goose | N/A | No Hard Limit | [Docs](https://block.github.io/goose/). |
+| JetBrains AI | `.junie/guidelines.md` | No Hard Limit | [Docs](https://www.jetbrains.com/help/idea/ai-assistant.html). |
+| OpenAI (ChatGPT) | Custom Instructions | 1,500 chars | [Help](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions). |
+| VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
+| Windsurf | `.windsurf/rules/<rule-name>.md` | Unknown | [Configure rules][windsurf] |
 
 {:.table .table-striped}
 
