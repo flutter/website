@@ -444,7 +444,7 @@ Verify the following values:
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 
-## Review the app's build configuration {:#review-the-gradle-build-configuration}
+## Review the Gradle build configuration {:#review-the-gradle-build-configuration}
 
 To verify the Android build configuration,
 review the `android` block in the default
