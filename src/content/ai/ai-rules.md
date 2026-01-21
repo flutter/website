@@ -47,7 +47,6 @@ Different AI coding assistants and tools have varying limits for their "rules" o
 | GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [GitHub Copilot Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot) |
 | Goose | `.goosehints` | No Hard Limit | [Goose Docs](https://block.github.io/goose/blog/2025/06/05/whats-in-my-goosehints-file/) |
 | JetBrains AI (Junie) | `.junie/guidelines.md` | No Hard Limit | [JetBrains AI Docs](https://www.jetbrains.com/help/junie/get-started-with-junie.html) |
-| OpenAI (ChatGPT) | Custom Instructions | 1,500 chars | [OpenAI Help](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions) |
 | VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
 | Windsurf | `.windsurf/rules/<rule-name>.md` | Unknown | [Configure rules][windsurf] |
 
