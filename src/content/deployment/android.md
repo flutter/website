@@ -444,13 +444,12 @@ Verify the following values:
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 
-## Review or change the Gradle build configuration {:#review-the-gradle-build-configuration}
+## Review the Gradle build configuration {:#review-the-gradle-build-configuration}
 
 To verify the Android build configuration,
 review the `android` block in the default
 [Gradle build script][gradlebuild].
 The default Gradle build script is found at `[project]/android/app/build.gradle.kts`.
-You can change the values of any of these properties.
 
 ```kotlin title="[project]/android/app/build.gradle.kts"
 android {
@@ -458,22 +457,20 @@ android {
     // Any value starting with "flutter." gets its value from
     // the Flutter Gradle plugin.
     // To change from these defaults, make your changes in this file.
-    [!compileSdk = flutter.compileSdkVersion!]
+    compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     ...
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        [!applicationId = "com.example.[project]"!]
+        applicationId = "com.example.[project]"
         // You can update the following values to match your application needs.
-        [!minSdk = flutter.minSdkVersion!]
-        [!targetSdk = flutter.targetSdkVersion!]
-        // These two properties use values defined elsewhere in this file.
-        // You can set these values in the property declaration
-        // or use a variable.
-        [!versionCode = flutterVersionCode.toInteger()!]
-        [!versionName = flutterVersionName!]
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
     }
 
     buildTypes {
@@ -484,36 +481,43 @@ android {
 
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 
-### Properties to adjust in build.gradle.kts
+### Application ID
 
-| Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| `compileSdk`         | The Android API level against which your app is compiled. This should be the highest version available. If you set this property to `31`, you run your app on a device running API `30` or earlier as long as your app makes uses no APIs specific to `31`. | |
-| `defaultConfig`      |  |  |
-| `.applicationId`     | The final, unique [application ID][] that identifies your app.                                                                                                                                                                                              |                            |
-| `.minSdk`            | The [minimum Android API level][] for which you designed your app to run.                                                                                                                                                                                   | `flutter.minSdkVersion`    |
-| `.targetSdk`         | The Android API level against which you tested your app to run. Your app should run on all Android API levels up to this one.                                                                                                                               | `flutter.targetSdkVersion` |
-| `.versionCode`       | A positive integer that sets an [internal version number][]. This number only determines which version is more recent than another. Greater numbers indicate more recent versions. App users never see this value.                                          |                            |
-| `.versionName`       | A string that your app displays as its version number. Set this property as a raw string or as a reference to a string resource.                                                                                                                            |                            |
-| `.buildToolsVersion` | The Gradle plugin specifies the default version of the Android build tools that your project uses. To specify a different version of the build tools, change this value.                                                                                    |                            |
+The `applicationId` is the unique identifier for your app on the Google Play Store
+and on developers' devices.
 
-{:.table .table-striped}
-
-To learn more about Gradle, check out the module-level build
-section in the [Gradle build file][gradlebuild].
-
-:::note
-If you use a recent version of the Android SDK,
-you might get deprecation warnings about
-`compileSdkVersion`, `minSdkVersion`, or `targetSdkVersion`.
-You can rename these properties to
-`compileSdk`, `minSdk`, and `targetSdk` respectively.
+:::important
+Review the `applicationId` in `defaultConfig` and ensure it is unique.
+Typically, this is a reverse domain name, such as `com.example.myapp`.
+Once you upload your app to the Play Store, you cannot change the Application ID.
 :::
 
-[application ID]: {{site.android-dev}}/studio/build/application-id
-[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
-[internal version number]: {{site.android-dev}}/studio/publish/versioning
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+[application-id]: {{site.android-dev}}/studio/build/application-id
+
+### Android SDK versions
+
+The Flutter tooling sets default values for the Android SDK versions:
+
+*   **`compileSdk`**: The version of the Android SDK used to compile the app.
+*   **`minSdk`**: The minimum Android version that the app supports.
+*   **`targetSdk`**: The Android version the app is designed and tested to run on.
+
+These default values (`flutter.compileSdkVersion`, etc.) are managed by Flutter
+to ensure compatibility with the framework and plugins.
+You typically **do not** need to change these unless:
+
+1.  **You need a newer API**: If you are using a plugin or feature that requires a higher
+    `minSdk` than Flutter's default, you can manually set it to a higher version number
+    (for example, `minSdk = 24`).
+2.  **You need to lock versions**: If you want to prevent automatic updates to these versions
+    when upgrading Flutter, you can replace the default variables with specific integer values.
+
+### Version code and name
+
+The `versionCode` and `versionName` are automatically set from your `pubspec.yaml` file
+(using the `version: 1.0.0+1` field). You generally don't need to modify these in the Gradle file.
+
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
 
 ## Build the app for release
 
