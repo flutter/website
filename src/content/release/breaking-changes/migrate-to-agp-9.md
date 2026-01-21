@@ -152,7 +152,7 @@ to the new AGP DSL, you can remove `android.newDsl=false` from your
 `gradle.properties` file. The documentation will be updated to
 reflect that change.
 
-- **Full Add-to-app Support:** Full support for Add-to-app on AGP 9 
+- **Full Add-to-app Support:** Full support for Add-to-app on AGP 9
 will be enabled upon completion of the DSL migration
 and potentially additional updates.
 

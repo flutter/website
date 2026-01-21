@@ -11,6 +11,11 @@ subproject or as AARs.
 The integration flow can be done using the Android Studio
 IDE with the [Flutter plugin][] or manually.
 
+:::warning **Do not update to AGP 9 if you are using Add-to-app.**
+
+The host app and Flutter module cannot properly sync when using AGP 9.
+For more details, see [Issue #180502][]. :::
+
 :::warning
 Your existing Android app might support architectures
 such as `mips` or `x86`. Flutter currently [only supports][]
@@ -509,3 +514,4 @@ Continue to the [Adding a Flutter screen to an Android app][] guide.
 [local repository]: https://docs.gradle.org/current/userguide/declaring_repositories.html#sub:maven_local
 [only supports]: /resources/faq#what-devices-and-os-versions-does-flutter-run-on
 [Using Flutter in China]: /community/china
+[Issue #180502]: {{site.github}}/flutter/flutter/issues/180502
