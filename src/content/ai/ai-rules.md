@@ -19,12 +19,17 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-The Flutter project provides several versions of the rules file to accommodate different tool limits:
+The Flutter project provides several versions of the rules file to accommodate
+different tool limits:
 
-*   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md): The comprehensive master rule set.
-*   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md): A condensed version (<10k chars) for tools with stricter context limits.
-*   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md): A highly concise version (<4k chars) for limited contexts.
-*   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md): An ultra-compact version (<1k chars) for very strict limits.
+*   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md):
+    The comprehensive master rule set.
+*   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md):
+    A condensed version (<10k chars) for tools with stricter context limits.
+*   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md):
+    A highly concise version (<4k chars) for limited contexts.
+*   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md):
+    An ultra-compact version (<1k chars) for very strict limits.
 
 <a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
   <Icon id="download" />
@@ -33,7 +38,8 @@ The Flutter project provides several versions of the rules file to accommodate d
 
 ## Device & Editor Specific Limits
 
-Different AI coding assistants and tools have varying limits for their "rules" or "custom instructions" files. *Last updated: 2026-01-05.*
+Different AI coding assistants and tools have varying limits for their "rules"
+or "custom instructions" files. *Last updated: 2026-01-05.*
 
 | Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Documentation |
 |:---|:---|:---|:---|
