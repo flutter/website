@@ -37,10 +37,10 @@ Different AI coding assistants and tools have varying limits for their "rules" o
 
 | Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Documentation |
 |:---|:---|:---|:---|
-| Aider | No Hard Limit | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
+| Aider | `CONVENTIONS.md` | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
 | Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
-| CodeRabbit | any | 1,000 chars (Hard) | [CodeRabbit Docs](https://www.coderabbit.ai/blog/code-guidelines-bring-your-coding-rules-to-coderabbit) |
+| CodeRabbit | Any | 1,000 chars (Hard) | [CodeRabbit Docs](https://www.coderabbit.ai/blog/code-guidelines-bring-your-coding-rules-to-coderabbit) |
 | Cursor | `AGENTS.md` | No Hard Limit | [Cursor Docs](https://cursor.com/docs/context/rules) |
 | Firebase Studio | `.idx/airules.md` | Unknown | [Configure instructions][firebase] |
 | Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Gemini CLI Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context) |
