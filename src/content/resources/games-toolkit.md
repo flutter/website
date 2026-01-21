@@ -8,10 +8,6 @@ showBreadcrumbs: false
 The Flutter Casual Games Toolkit pulls together new and existing resources
 so you can accelerate development of games on mobile platforms.
 
-:::recommend
-Check out the latest [game updates and resources for Flutter 3.22](#updates)!
-:::
-
 This page outlines where you can find these available resources.
 
 ## Why Flutter for games?
