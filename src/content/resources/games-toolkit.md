@@ -126,8 +126,6 @@ Are you ready? To get started:
 
    * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
    * Build a [word puzzle][] with Flutter.
-   * Build a [2D physics game][] with Flutter and Flame.
-   * [Add sound and music][] to your Flutter game with SoLoud.
    * Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
    * Monetize your games with [in-game ads][ads-recipe]
@@ -141,8 +139,6 @@ Are you ready? To get started:
 1. Write your game!
 1. Deploy to both the Google Play and Apple stores.
 
-[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[2D physics game]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [word puzzle]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 
 ## Example games
@@ -198,7 +194,6 @@ investigate other resources that our community recommended.
 
 <Icon id="package_2" title="Flutter package"></Icon> [audioplayers][]<br>
 <Icon id="package_2" title="Flutter package"></Icon> [flutter_soloud][]<br>
-<Icon id="science" title="Codelab"></Icon>  [Add sound and music to your Flutter game with SoLoud][]
 
 </td>
 </tr>
@@ -282,15 +277,6 @@ investigate other resources that our community recommended.
 </tr>
 
 <tr>
-<td>Legacy code</td>
-<td>
-
-<Icon id="science" title="Codelab"></Icon> [Use the Foreign Function Interface in a Flutter plugin][]
-
-</td>
-</tr>
-
-<tr>
 <td>Level editor</td>
 <td>
 
@@ -336,7 +322,6 @@ investigate other resources that our community recommended.
 <td>User Experience</td>
 <td>
 
-<Icon id="science" title="Codelab"></Icon> [Build next generation UIs in Flutter][]<br>
 <Icon id="quick_reference_all" title="Guide"></Icon> [Best practices for optimizing Flutter web loading speed][]
 
 </td>
@@ -369,14 +354,12 @@ investigate other resources that our community recommended.
 [runner-template]: {{site.repo.games}}/tree/main/templates/endless_runner
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
 [firebase-crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
 [ads-recipe]: /cookbook/plugins/google-mobile-ads
 [iap-recipe]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
 [leaderboard-recipe]: /cookbook/games/achievements-leaderboard
 [multiplayer-recipe]: /cookbook/games/firestore-multiplayer
 [firebase-auth]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps#0
-[Use the Foreign Function Interface in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [bonfire-pkg]: {{site.pub}}/packages/bonfire
 [CraftPix]: https://craftpix.net
 [Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
@@ -402,56 +385,6 @@ investigate other resources that our community recommended.
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
-[SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-
-## Games Toolkit updates for Flutter 3.22 {:#updates}
-
-The following codelabs and guides were added for
-the Flutter 3.22 release:
-
-**Low-latency, high-performance sound**
-: In collaboration with the Flutter community ([@Marco Bavagnoli][]),
-  we've enabled the SoLoud audio engine.
-  This free and portable engine delivers the low-latency and
-  high-performance sound that's essential for many games.
-  To help you get started, check out the codelab,
-  [Add sound and music to your Flutter game with SoLoud][],
-  dedicated to adding sound and music to your game.
-
-**Word puzzle games**
-: Check out the codelab,
-  [Build a word puzzle with Flutter][],
-  focused on building word puzzle games.
-  This genre is perfect for exploring Flutter's UI capabilities,
-  and this codelab dives into using Flutter's background processing
-  to effortlessly generate expansive crossword-style grids of
-  interlocking words without compromising the user experience.
-
-**Forge 2D physics engine**
-: The Forge2D codelab,
-  [Build a 2D physics game with Flutter and Flame][],
-  guides you through crafting game mechanics in a
-  Flutter and Flame game using a 2D physics simulation
-  along the lines of Box2D, called [Forge2D][].
-
-**Optimize loading speed for Flutter web-based games**
-: In the fast-paced world of web-based gaming,
-  a slow-loading game is a major deterrent.
-  Players expect instant gratification and will
-  quickly abandon a game that doesn't load promptly.
-  Hence, we've published a guide,
-  [Best practices for optimizing Flutter web loading speed][],
-  authored by [Cheng Lin][],
-  to help you optimize your Flutter web-based games
-  and apps for lightning-fast loading speeds.
-
-[@Marco Bavagnoli]: {{site.github}}/alnitak
-[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
-[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[Cheng Lin]: {{site.medium}}/@mhclin113_26002
-[Forge2D]: {{site.pub-pkgs}}/forge2d
 
 ## Other resources
 
