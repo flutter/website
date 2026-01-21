@@ -35,19 +35,19 @@ The Flutter project provides several versions of the rules file to accommodate d
 
 Different AI coding assistants and tools have varying limits for their "rules" or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Notes & Sources |
+| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Docs |
 |:---|:---|:---|:---|
 | Aider | No Hard Limit | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
-| Claude Code | `CLAUDE.md` | No Hard Limit | [Docs](https://support.claude.com/en/articles/11647753-understanding-usage-and-length-limits). Uses `CLAUDE.md`. |
-| CodeRabbit | N/A | 1,000 chars (Hard) | [Docs](https://docs.coderabbit.ai/pr-reviews/pre-merge-checks#ui-configuration). Applied to "Instructions" field. |
-| Cursor | `AGENTS.md` | No Hard Limit | [Docs](https://cursor.com/docs/context/rules). Keep rules under 500 lines. |
+| Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
+| CodeRabbit | any | 1,000 chars (Hard) | [CodeRabbit Docs](https://www.coderabbit.ai/blog/code-guidelines-bring-your-coding-rules-to-coderabbit) |
+| Cursor | `AGENTS.md` | No Hard Limit | [Cursor Docs](https://cursor.com/docs/context/rules) |
 | Firebase Studio | `.idx/airules.md` | Unknown | [Configure instructions][firebase] |
-| Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context). |
-| GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot). |
-| Goose | N/A | No Hard Limit | [Docs](https://block.github.io/goose/). |
-| JetBrains AI | `.junie/guidelines.md` | No Hard Limit | [Docs](https://www.jetbrains.com/help/idea/ai-assistant.html). |
-| OpenAI (ChatGPT) | Custom Instructions | 1,500 chars | [Help](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions). |
+| Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Gemini CLI Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context) |
+| GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [GitHub Copilot Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot) |
+| Goose | `.goosehints` | No Hard Limit | [Goose Docs](https://block.github.io/goose/blog/2025/06/05/whats-in-my-goosehints-file/) |
+| JetBrains AI (Junie) | `.junie/guidelines.md` | No Hard Limit | [JetBrains AI Docs](https://www.jetbrains.com/help/junie/get-started-with-junie.html) |
+| OpenAI (ChatGPT) | Custom Instructions | 1,500 chars | [OpenAI Help](https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions) |
 | VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
 | Windsurf | `.windsurf/rules/<rule-name>.md` | Unknown | [Configure rules][windsurf] |
 
@@ -64,7 +64,7 @@ the most up-to-date naming conventions and instructions.
 [cursor]: https://cursor.com/docs/context/rules
 [firebase]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
 [gemini-cli]: https://geminicli.com/docs/cli/gemini-md
-[antigravity]: https://antigravity.google/docs/rules
+[antigravity]: https://antigravity.google/docs/rules-workflows
 [junie]: https://www.jetbrains.com/help/junie/customize-guidelines.html
 [vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-instructionsmd-files
 [windsurf]: https://docs.windsurf.com/windsurf/cascade/memories#rules
