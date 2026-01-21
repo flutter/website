@@ -385,6 +385,7 @@ investigate other resources that our community recommended.
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
+[Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
 
 ## Other resources
 
