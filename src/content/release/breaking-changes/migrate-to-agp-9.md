@@ -137,9 +137,24 @@ your app's `<app-src>/android/gradle.properties` file.
 Execute `flutter run` to confirm that your app builds and
 launches on a connected Android device or emulator.
 
-## Timeline
+## Next Steps
 
-In stable release: TBD (for more details, see [Issue #179914][])
+**Current Status:** Add-to-app Android projects are currently
+incompatible with AGP 9: [Issue #180502][].
+This support is paused while the Flutter team migrates internal build logic
+from the deprecated AGP DSL to the new DSL.
+
+**Future Updates:** After the AGP DSL migration is complete,
+the following changes should occur:
+
+- **Remove DSL Gradle Property:** Once the Flutter team completes the migration
+to the new AGP DSL, you can remove `android.newDsl=false` from your
+`gradle.properties` file. The documentation will be updated to
+reflect that change.
+
+- **Full Add-to-app Support:** Full support for Add-to-app on AGP 9 
+will be enabled upon completion of the DSL migration
+and potentially additional updates.
 
 ## References
 
@@ -147,6 +162,7 @@ Relevant issues:
 
 - [Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
 - [Issue #180137][]: Migrate from old to new AGP DSL
+- [Issue #180502][]: Add-to-app Android projects cannot sync with AGP 9
 
 The Gradle build files in your app vary based on the Flutter version 
 used when your app was created. 
@@ -159,3 +175,4 @@ in your app's directory.
 [Issue #179914]: {{site.github}}/flutter/flutter/issues/179914
 [Issue #175688]: {{site.github}}/flutter/flutter/issues/175688
 [Issue #180137]: {{site.github}}/flutter/flutter/issues/180137
+[Issue #180502]: {{site.github}}/flutter/flutter/issues/180502
