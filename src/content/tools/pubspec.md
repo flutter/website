@@ -178,20 +178,20 @@ Subfields of `assets`:
 
 * `path_to_file`: A string that represents the path to
   a file.
-*   `path_to_directory`: A string that represents the path to
-    a directory.
-*   `flavor_path_field`: A path field and its flavor
-    subfields.
-*   `platform_path_field`: A path field and its platform
-    subfields.
-*   `path`: The path to a directory.
-*   `flavors`: A list of flutter flavors to use with assets
-    at a specific path. To learn more about
-    flavors, see [Set up flavors for iOS and macOS] and
-    [Set up flavors for Android].
-*   `platforms`: A list of platforms to use with assets at a
-    specific path. Valid values are `android`, `ios`, `web`, `linux`,
-    `macos`, and `windows`.
+* `path_to_directory`: A string that represents the path to
+  a directory.
+* `flavor_path_field`: A path field and its flavor
+  subfields.
+* `platform_path_field`: A path field and its platform
+  subfields.
+* `path`: The path to an asset file or directory.
+* `flavors`: A list of flutter flavors to use with assets
+  at a specific path. To learn more about
+  flavors, see [Set up flavors for iOS and macOS] and
+  [Set up flavors for Android].
+* `platforms`: A list of platforms to use with assets at a
+  specific path. Valid values are `android`, `ios`, `web`, `linux`,
+  `macos`, and `windows`.
 
 You can pass in a path to a file:
 
