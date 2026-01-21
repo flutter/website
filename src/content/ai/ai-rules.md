@@ -35,7 +35,7 @@ The Flutter project provides several versions of the rules file to accommodate d
 
 Different AI coding assistants and tools have varying limits for their "rules" or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Docs |
+| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Documentation |
 |:---|:---|:---|:---|
 | Aider | No Hard Limit | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
