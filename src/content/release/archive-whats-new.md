@@ -642,17 +642,17 @@ The following codelabs have been published since Flutter 3.7:
   Discover Dart 3's new records and patterns features.
   Learn how you can use them in a Flutter app to help you
   write more readable and maintainable Dart code.
-* [Building next generation UIs in Flutter][]<br>
+* [Building next generation UIs in Flutter][] _(Now archived)_ <br>
   Learn how to build a Flutter app that uses the power of `flutter_animate`,
   fragment shaders, and particle fields. You will craft a user interface that
   evokes those science fiction movies and TV shows we all love
   watching when we aren't coding.
-* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+* [Create haikus about Google products with the PaLM API and Flutter][]<br>
   Learn how to build an app that uses the PaLM API to generate haikus
   based on Google product names. The PaLM API gives you access to Google's
   state-of-the-art large language models.
 
-[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
+[Building next generation UIs in Flutter]: https://web.archive.org/web/20251126130753/https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
@@ -782,7 +782,7 @@ We have new codelabs since the last stable release:
   The final app is responsive to different screen sizes.
   (Note that this codelab replaces the previous "Write
   your first Flutter codelab for mobile, part 1 and part 2.")
-* [Using FFI in a Flutter plugin][]<br>
+* [Using FFI in a Flutter plugin][] _(Now archived)_ <br>
   Dart's FFI (foreign function interface) allows Flutter apps
   to use of existing native libraries that expose a C API.
   Dart supports FFI on Android, iOS, Windows, macOS, and Linux.
@@ -798,7 +798,7 @@ We have new codelabs since the last stable release:
   and Google Sign In authorization to a Flutter app. You'll also learn
   how to set up a Firebase project,
   and use the FlutterFire CLI to initialize Firebase in your Flutter app.
-* [Local development for your Flutter apps using the Firebase Emulator Suite][]<br>
+* [Local development for your Flutter apps using the Firebase Emulator Suite][] _(Now archived)_ <br>
   Learn how to use the Firebase Emulator Suite with Flutter during local development,
   including how to use email-password authentication with the Emulator Suite,
   and how to read and write data to the Firestore emulator. Also, you'll import
@@ -813,8 +813,8 @@ to reflect the latest available codelabs.
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [codelabs & workshops]: /reference/learning-resources
-[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
-[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
+[Local development for your Flutter apps using the Firebase Emulator Suite]: https://web.archive.org/web/20251102002913/https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+[Using FFI in a Flutter plugin]: https://web.archive.org/web/20250908035316/https://codelabs.developers.google.com/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 
 **Articles**
@@ -957,7 +957,7 @@ and the [Flutter 3 release notes][].
 
 We have a new codelab since the last stable release:
 
-* [Take your Flutter app from boring to beautiful][]
+* [Take your Flutter app from boring to beautiful][] _(Now archived)_ <br>
   Learn how to use features in Material 3 to make your
   more beautiful _and_ more responsive.
 
@@ -965,7 +965,7 @@ Also, check out the workshops written by our GDEs
 and available on the [Flutter community blog][].
 
 [Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
-[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
+[Take your Flutter app from boring to beautiful]: https://web.archive.org/web/20251204045151/https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
 
 **Videos**
 
@@ -1351,10 +1351,10 @@ we wrote new codelabs and updated existing codelabs.
 New codelabs include:
 
 * [Adding Admob Ads to a Flutter app][]
-* [How to write a Flutter plugin][]
+* [How to write a Flutter plugin][] _(Now archived)_
 * [Multi-platform Firestore Flutter][]
-* [Using a plugin with a Flutter web app][]
-* [Write a Flutter desktop application][]
+* [Using a plugin with a Flutter web app][] _(Now archived)_
+* [Write a Flutter desktop application][] _(Now archived)_
 
 For a complete list, see [Flutter codelabs][].
 
@@ -1403,7 +1403,7 @@ publication since the last stable release:
 [Flutter Performance Updates in 2019]: {{site.flutter-blog}}/going-deeper-with-flutters-web-support-66d7ad95eb5224
 [Going deeper with Flutter's web support]: {{site.flutter-blog}}/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.flutter-blog}}/handling-404-page-not-found-error-in-flutter-731f5a9fba29
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
+[How to write a Flutter plugin]: https://web.archive.org/web/20250908035316/https://codelabs.developers.google.com/codelabs/flutter-ffigen
 [Managing issues in a large-scale open source project]: {{site.flutter-blog}}/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
@@ -1413,11 +1413,11 @@ publication since the last stable release:
 [Two Months of #FlutterGoodNewsWednesday]: {{site.flutter-blog}}/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.flutter-blog}}/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
 [Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
+[Using a plugin with a Flutter web app]: https://web.archive.org/web/20230927112932/https://codelabs.developers.google.com/codelabs/web-url-launcher
 [web-perf]: {{site.flutter-blog}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [What's new with the Slider widget?]: {{site.flutter-blog}}/whats-new-with-the-slider-widget-ce48a22611a3
 [What we learned from the Flutter Q2 2020 survey]: {{site.flutter-blog}}/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+[Write a Flutter desktop application]: https://web.archive.org/web/20250908033205/https://codelabs.developers.google.com/codelabs/flutter-github-client
 
 ## 06 May 2020: Work-From-Home: 1.17 release
 
