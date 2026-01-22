@@ -43,18 +43,13 @@ or "custom instructions" files. *Last updated: 2026-01-05.*
 
 | Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Documentation |
 |:---|:---|:---|:---|
-| Aider | `CONVENTIONS.md` | Limited by context | [Aider Conventions](https://aider.chat/docs/usage/conventions.html) |
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
 | Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
-| CodeRabbit | Any | 1,000 chars (Hard) | [CodeRabbit Docs](https://www.coderabbit.ai/blog/code-guidelines-bring-your-coding-rules-to-coderabbit) |
 | Cursor | `AGENTS.md` | No Hard Limit | [Cursor Docs](https://cursor.com/docs/context/rules) |
-| Firebase Studio | `.idx/airules.md` | Unknown | [Configure instructions][firebase] |
 | Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Gemini CLI Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context) |
 | GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [GitHub Copilot Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot) |
-| Goose | `.goosehints` | No Hard Limit | [Goose Docs](https://block.github.io/goose/blog/2025/06/05/whats-in-my-goosehints-file/) |
 | JetBrains AI (Junie) | `.junie/guidelines.md` | No Hard Limit | [JetBrains AI Docs](https://www.jetbrains.com/help/junie/get-started-with-junie.html) |
 | VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
-| Windsurf | `.windsurf/rules/<rule-name>.md` | Unknown | [Configure rules][windsurf] |
 
 {:.table .table-striped}
 
