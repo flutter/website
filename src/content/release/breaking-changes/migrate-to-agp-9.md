@@ -162,7 +162,7 @@ Relevant issues:
 
 - [Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
 - [Issue #180137][]: Migrate from old to new AGP DSL
-- [Issue #180502][]: Add-to-app Android projects cannot sync with AGP 9
+- [Issue #180502][]: Add-to-app Android projects are incompatible with AGP 9
 
 The Gradle build files in your app vary based on the Flutter version 
 used when your app was created. 
