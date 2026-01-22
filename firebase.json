@@ -185,6 +185,7 @@
       { "source": "/platform-integration/windows/run-loop-migration", "destination": "/release/breaking-changes/windows-run-loop", "type": 301 },
       { "source": "/platform-integration/windows/version-migration", "destination": "/release/breaking-changes/windows-version-information", "type": 301 },
       { "source": "/platform-integration/windows/dark-mode-migration", "destination": "/release/breaking-changes/windows-dark-mode", "type": 301 },
+      { "source": "/reference/learning-resources", "destination": "/learn/learning-resources", "type": 301 },
       { "source": "/reference/widgets/:catalogpage+", "destination": "/ui/widgets/:catalogpage+", "type": 301 },
       { "source": "/reference/widgets/widgetindex", "destination": "/reference/widgets", "type": 301 },
       { "source": "/release/release-notes/changelogs/changelog-1.17.0", "destination": "/release/release-notes/release-notes-1.17.0", "type": 301 },
