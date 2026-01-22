@@ -1,0 +1,12 @@
+- title: Overview
+  permalink: /learn
+- title: Learning pathway
+  permalink: /learn/pathway
+- title: Tutorials
+  children:
+    - title: Flutter getting started
+      permalink: /learn/tutorial
+    - title: Dart getting started 
+      permalink: https://dart.dev/learn
+- title: All learning resources
+  permalink: /learn/learning-resources
