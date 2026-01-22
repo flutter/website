@@ -144,7 +144,7 @@ module an embeddable Android library.
 This folder is generated for testing purposes and **will be overwritten**
 whenever you run `flutter pub get` or build the module.
 
-*   To add **module-specific** native code (reusable across apps), create a [Flutter Plugin](/packages-and-plugins/developing-packages#plugin) and depend on it.
+*   To add native code you may use across apps/modules, create a [Flutter Plugin](/packages-and-plugins/developing-packages#plugin) and depend on it.
 *   To add **app-specific** native code, add it directly to your existing Android host application.
 
 The `.android` directory contains a generated Android project that uses Java to bootstrap the Flutter module. This helps you run a barebones standalone version of your Flutter module via `flutter run` and verify basic functionality. The use of Java here does not prevent you from using Kotlin in your host app or plugins.
