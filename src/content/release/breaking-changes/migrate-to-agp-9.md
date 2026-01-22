@@ -149,8 +149,7 @@ the following changes should occur:
 
 - **Remove DSL Gradle Property:** Once the Flutter team completes the migration
 to the new AGP DSL, remove `android.newDsl=false` from your
-`gradle.properties` file. This document will be updated to
-reflect that change.
+`gradle.properties` file. This document will be updated to reflect that change.
 
 - **Full Add-to-app Support:** Full support for Add-to-app on AGP 9
 will be enabled upon completion of the DSL migration
