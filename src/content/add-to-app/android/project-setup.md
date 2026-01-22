@@ -122,9 +122,9 @@ follow these steps:
 
 #### Create a Flutter module
 
-Let's assume that you have an existing Android app at
+Assuming that you have an existing Android app at
 `some/path/MyApp`, and that you want your Flutter
-project as a sibling:
+project as a sibling, do the following:
 
 ```console
 cd some/path/
@@ -132,10 +132,10 @@ flutter create -t module --org com.example flutter_module
 ```
 
 This creates a `some/path/flutter_module/` Flutter module project
-with some Dart code to get you started and an `.android/`
+with some Dart code to get you started and a `.android/`
 hidden subfolder. The `.android` folder contains an
 Android project that can both help you run a barebones
-standalone version of your Flutter module via `flutter run`
+standalone version of your Flutter module with `flutter run`
 and it's also a wrapper that helps bootstrap the Flutter
 module an embeddable Android library.
 
@@ -144,10 +144,17 @@ module an embeddable Android library.
 This folder is generated for testing purposes and **will be overwritten**
 whenever you run `flutter pub get` or build the module.
 
-*   To add native code you may use across apps/modules, create a [Flutter Plugin](/packages-and-plugins/developing-packages#plugin) and depend on it.
-*   To add **app-specific** native code, add it directly to your existing Android host application.
+* To add native code that you can use across apps/modules,
+  create a [Flutter Plugin](/packages-and-plugins/developing-packages#plugin)
+  and depend on it.
+* To add **app-specific** native code,
+  add it directly to your existing Android host application.
 
-The `.android` directory contains a generated Android project that uses Java to bootstrap the Flutter module. This helps you run a barebones standalone version of your Flutter module via `flutter run` and verify basic functionality. The use of Java here does not prevent you from using Kotlin in your host app or plugins.
+The `.android` directory contains a generated Android project that uses Java
+to bootstrap the Flutter module, so **do not** add it to source control.
+This approach helps you run a barebones standalone version
+of your Flutter module (with `flutter run`) and verify basic functionality.
+Using Java here doesn't prevent you from using Kotlin in your host app or plugins.
 :::
 
 :::note
