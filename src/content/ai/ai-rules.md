@@ -36,12 +36,12 @@ different tool limits:
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
-## Device & Editor Specific Limits
+## Device & editor specific limits
 
 Different AI coding assistants and tools have varying limits for their "rules"
 or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Tool / Product | Rules File / Feature | Limit (Soft / Hard) | Documentation |
+| Tool / Product | Rules file / Feature | Limit (soft / hard) | Documentation |
 |:---|:---|:---|:---|
 | Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
 | Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
