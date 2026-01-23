@@ -260,11 +260,11 @@ This website release includes several important updates!
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
 [Flutter fundamentals docs]: /learn/pathway
-[Widgets]: /learn/tutorial/widget-fundamentals
+[Widgets]: /learn/pathway/tutorial/widget-fundamentals
 [iOS app extension]: /platform-integration/ios/app-extensions
 [iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /learn/tutorial/layout
+[Layout]: /learn/pathway/tutorial/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 

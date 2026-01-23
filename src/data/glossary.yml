@@ -326,7 +326,7 @@
     [state]: https://api.flutter.dev/flutter/widgets/State-class.html
   related_links:
     - text: "Widget fundamentals"
-      link: "/learn/tutorial/widget-fundamentals"
+      link: "/learn/pathway/tutorial/widget-fundamentals"
       type: "doc"
     - text: "Widget catalog"
       link: "/ui/widgets"

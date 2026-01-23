@@ -2,7 +2,6 @@
 title: Fetch data from the internet
 description: Instructions on how to make HTTP requests and parse responses.
 layout: tutorial
-sitemap: false
 ---
 
 Learn the MVVM architecture pattern and how to build HTTP requests with async/await.

@@ -97,7 +97,7 @@
       { "source": "/setup", "destination": "/install", "type": 301 },
       { "source": "/technical-overview", "destination": "/resources/architectural-overview", "type": 301 },
       { "source": "/text-input", "destination": "/cookbook/forms/text-input", "type": 301 },
-      { "source": "/tutorial", "destination": "/learn/tutorial", "type": 301 },
+      { "source": "/tutorial", "destination": "/learn/pathway/tutorial", "type": 301 },
       { "source": "/tutorials", "destination": "/reference/learning-resources", "type": 301 },
       { "source": "/unbounded-constraints", "destination": "/ui/layout/constraints#unbounded", "type": 301 },
       { "source": "/ui-performance", "destination": "/perf/ui-performance", "type": 301 },

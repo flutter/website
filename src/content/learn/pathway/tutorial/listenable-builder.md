@@ -2,7 +2,6 @@
 title: Rebuild UI when state changes
 description: Instructions on how to manage state with ChangeNotifiers.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.

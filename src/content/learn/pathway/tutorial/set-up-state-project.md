@@ -2,7 +2,6 @@
 title: Set up your project
 description: Instructions on how to create a new Flutter app.
 layout: tutorial
-sitemap: false
 ---
 
 Preview the Wikipedia reader app you'll build and set up the initial project with required packages.
@@ -57,7 +56,7 @@ free and accessible to everyone.
 
 [Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
 [Getting started with Dart]: {{site.dart-site}}/tutorial
-[Introduction to Flutter UI]: /learn/tutorial/create-an-app
+[Introduction to Flutter UI]: /learn/pathway/tutorial/create-an-app
 [Wikipedia]: https://wikipedia.org/
 [donating to Wikipedia]: https://donate.wikimedia.org/
 
