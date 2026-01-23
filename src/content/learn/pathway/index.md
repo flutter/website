@@ -23,7 +23,9 @@ Flutter uses the Dart programming language. If you're new to Dart, complete this
 
 If you're in a hurry and already familiar with modern, object-oriented programming languages, you can safely skip this step.
 
-[Dart Getting Started tutorial →]({{site.dart-site}}/learn/tutorial)
+<a href="{{site.dart-site}}/learn/tutorial" target="_blank">
+Dart Getting Started tutorial →
+</a>
 
 ### Complete the Flutter Getting Started tutorial
 
@@ -34,6 +36,7 @@ Now that you have Dart skills under your belt, dive into Flutter! This hands-on 
 ### Understand how Flutter works
 
 Deepen your understanding of how Flutter works under the hood by watching this video series. Learn about the widget tree, rendering pipeline, and what makes Flutter unique. This series provides the knowledge you need to know to take full advantage of the framework.
+
 
 [Watch: How Flutter Works →](/learn/pathway/how-flutter-works)
 
