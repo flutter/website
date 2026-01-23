@@ -102,6 +102,7 @@
   // Non-collapsible variant: all steps stay open, no toggle interaction
   &.non-collapsible > details > summary {
     pointer-events: none;
+    user-select: initial;
     cursor: default;
 
     span.material-symbols {
