@@ -57,7 +57,32 @@ that have migrated.
 {% render "docs/swift-package-manager/migrate-objective-c-plugin.md", site: site %}
 
 </Tab>
+</Tab>
 </Tabs>
+
+## Manually add the plugin to the example app
+
+Flutter attempts to automatically add your plugin as a local package dependency
+to your example app's Xcode project.
+However, if this fails or if you need to debug the integration,
+you can add it manually:
+
+1.  Open `example/ios/Runner.xcworkspace` in Xcode.
+
+1.  Navigate to **Package Dependencies** for the project.
+
+1.  Click the <Icon id="add" label="plus/add"></Icon> button.
+
+1.  In the dialog that opens, click the **Add Local...** button.
+
+1.  Navigate to your plugin's root iOS directory (the folder containing `Package.swift`)
+    and click **Add Package**.
+
+1.  Select your plugin's library product and ensure it is added to the **Runner** target.
+
+1.  Click **Add Package**.
+
+This overrides the published version of the plugin (if any) with your local source code.
 
 ## How to update unit tests in a plugin's example app
 
