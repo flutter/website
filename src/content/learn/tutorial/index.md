@@ -20,7 +20,7 @@ the critical features of Flutter development (and more!)
 
 ### Before you begin
 
-This tutorial is the third step in the Flutter learning pathway, and therefor assumes that you have:
+This tutorial is the third step in the Flutter learning pathway, and therefore assumes that you have:
 1. A Flutter environment set up
 2. Basic understanding of the Dart programming language
 
