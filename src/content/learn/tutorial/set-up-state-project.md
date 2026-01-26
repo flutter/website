@@ -57,7 +57,7 @@ free and accessible to everyone.
 
 [Wikipedia API]: https://en.wikipedia.org/api/rest_v1/
 [Getting started with Dart]: https://dart.dev/learn/tutorial
-[Introduction to Flutter UI]: https://docs.flutter.dev/ui/layout/tutorial
+[Introduction to Flutter UI]: https://docs.flutter.dev/learn/tutorial/create-an-app
 [Wikipedia]: https://wikipedia.org/
 [donating to Wikipedia]: https://donate.wikimedia.org/
 
