@@ -244,7 +244,7 @@
     The package manager for the Dart programming language.
   long_description: |-
     Pub is the tool used for managing Dart packages.
-    It allows you to install, upgrade, and manage dependencies for your Flutter app.
+    It allows you to install, upgrade, and manage dependencies for your Dart app.
     Dependencies are defined in the [`pubspec.yaml`][] file.
     Packages are hosted on [pub.dev][], the official package repository.
     
