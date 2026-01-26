@@ -6,7 +6,7 @@ showToc: false
 ---
 
 <img src='/assets/images/docs/learn/learn-flutter-anyway.png' 
-    alt="An image of Dash in front of a blackboard." class="image-wrapper tutorial-image-wrapper"> 
+    alt="An image of Dash in front of a blackboard." class="image-wrapper learn-image-wrapper">
 
 ## For beginners
 
