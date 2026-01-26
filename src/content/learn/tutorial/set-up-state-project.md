@@ -7,8 +7,6 @@ sitemap: false
 
 Preview the Wikipedia reader app you'll build and set up the initial project with required packages.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
-
 <SummaryCard>
 title: What you'll accomplish
 items:
