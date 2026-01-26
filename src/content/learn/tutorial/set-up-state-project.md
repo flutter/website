@@ -85,7 +85,9 @@ $ cd wikipedia_reader && flutter pub add http
 ### Examine the starter code
 
 First, create a new file `lib/summary.dart` to define the data model
-for Wikipedia article summaries:
+for Wikipedia article summaries. This file has no special logic, and is
+simply a collection of classes that represent the data returned by the
+Wikipedia API. Its sufficient to copy the code below into the file and then ignore it. If you aren't comfortable basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
 
 ```dart title="lib/summary.dart" collapsed
 class Summary {
@@ -415,6 +417,8 @@ This code provides a basic app structure with
 a title bar and placeholder content.
 The imports at the top include everything you need for
 HTTP requests, JSON parsing, and the Wikipedia data model.
+
+[Dart Getting Started]: {{site.dart-site}}/tutorial
 
 ### Run your app
 
