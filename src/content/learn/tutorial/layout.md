@@ -103,7 +103,7 @@ This widget will eventually display the UI elements needed for the game itself.
 
 ```dart title="lib/main.dart"
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
   // This object is part of the game.dart file.
   // It manages wordle logic, and is outside the scope of this tutorial.
   final Game _game = Game();
@@ -156,7 +156,7 @@ To get started, replace the `Container` in `GamePage.build` with a
 
 ```dart
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
   // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
@@ -189,7 +189,7 @@ and therefore will always render five rows.
 
 ```dart
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
   // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
@@ -247,7 +247,7 @@ The `guess` variable in the loop is a [record][] with the type
 
 ```dart
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
   // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
