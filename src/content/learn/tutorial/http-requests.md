@@ -142,7 +142,7 @@ class ArticleModel {
 }
 ```
 
-The `dartpedia` package provides the `Summary` class.
+The `Summary` class is defined in `summary.dart`.
 If you're unfamiliar with JSON parsing,
 check out the [Getting started with Dart][] tutorial.
 
