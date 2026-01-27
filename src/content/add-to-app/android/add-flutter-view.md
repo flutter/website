@@ -95,8 +95,8 @@ system UI overlay, plugins, and so on.
 ## Content-sized views
 
 Usually, a [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html) 
-needs fixed dimensionseither via it's own dimensions or by matching a 
-parents.  This can bee seen in the [sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/android_view).
+needs fixed dimensions either through it's own dimensions or by matching a 
+parent's dimensions.  This can be seen in the [sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/android_view).
 However, it is now possible to allow FlutterView is size themselves
 based on their content. By using, `content_wrap` for either the height
 or the width a FlutterView can size itself: [content sized sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/content_sizing_android_view).
