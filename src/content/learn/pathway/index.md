@@ -42,7 +42,7 @@ Deepen your understanding of how Flutter works under the hood by watching this v
 
 </Stepper>
 
-<img src="/assets/images/docs/learn/beginner.jpg" alt="Dash with question marks around her; looking curious." class="image-wrapper" style="max-width: 500px; display:flex; justify-self: center;">
+<img src="/assets/images/docs/learn/beginner.jpg" alt="Dash with question marks around her; looking curious." class="image-wrapper learn-image-wrapper">
 
 
 

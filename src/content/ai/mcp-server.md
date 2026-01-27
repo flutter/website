@@ -310,6 +310,33 @@ documentation for [installing MCP servers][].
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
 
+### OpenCode
+
+To configure [OpenCode][] to use the Dart and Flutter MCP server,
+add the `dart-mcp-server` entry to your OpenCode configuration.
+
+OpenCode configuration is typically found in `~/.opencode/config.json`
+or in your project's `opencode key` configuration.
+
+```json title="~/.opencode/config.json"
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dart-mcp-server": {
+      "type": "local",
+      "command": [
+        "dart",
+        "mcp-server"
+      ],
+      "enabled": true,
+      "environment": {}
+    }
+  }
+}
+```
+
+[OpenCode]: https://opencode.ai/
+
 ### Claude Code
 
 To configure Claude Code to use the Dart and Flutter MCP server

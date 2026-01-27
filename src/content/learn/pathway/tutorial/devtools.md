@@ -63,7 +63,7 @@ Consider the `GamePage` widget you created in this section:
 
 ```dart
 class GamePage extends StatelessWidget {
-  const GamePage({super.key});
+  GamePage({super.key});
 
   final Game _game = Game();
 
