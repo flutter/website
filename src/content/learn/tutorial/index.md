@@ -28,7 +28,7 @@ If either of those aren't true, please start at the [Learning pathway page](/lea
 
 </div>
   <div class="centered-rows">
-    <DashImage figure image="learn/tutorial-hero.png" alt="Dash with magnifying glass" img-style="max-width: 500px;" />
+    <DashImage figure image="learn/tutorial-hero.png" alt="Dash with magnifying glass" img-class="learn-image-wrapper" />
   </div>
 </div>
 
