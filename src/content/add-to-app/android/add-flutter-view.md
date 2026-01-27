@@ -91,3 +91,53 @@ demo class or in the
 [`FlutterActivityAndFragmentDelegate`](https://cs.opensource.google/flutter/engine/+/main:shell/platform/android/io/flutter/embedding/android/FlutterActivityAndFragmentDelegate.java)
 to ensure a correct functioning of other features such as clipboards,
 system UI overlay, plugins, and so on.
+
+## Content-sized views
+
+Usually, a [`FlutterView`]({{site.api}}/javadoc/io/flutter/embedding/android/FlutterView.html) 
+needs fixed dimensionseither via it's own dimensions or by matching a 
+parents.  This can bee seen in the [sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/android_view).
+However, it is now possible to allow FlutterView is size themselves
+based on their content. By using, `content_wrap` for either the height
+or the width a FlutterView can size itself: [content sized sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/content_sizing_android_view).
+
+### Restrictions
+
+Since content-sized Flutter views require your Flutter app to be able to size itself,
+some widgets are not supported.
+
+* Widgets with unbounded size, like a `ListView`.
+* Widgets that defer to its child for the size, like `LayoutBuilder`.
+
+In practice, this means that quite a few common widgets are not supported,
+such as `ScaffoldBuilder`, `CupertinoTimerPicker`,
+or any widget that internally relies on a `LayoutBuilder`.
+When in doubt, you can use an `UnconstrainedBox` to test the usability of
+a widget for a content-sized view, as in the following example:
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context)
+  => MaterialApp(home: MyPage());
+}
+
+class MyPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: UnconstrainedBox(
+          // TODO: Edit this line to check if a widget
+          // can cause problems with content-sized views.
+          child: Text('This works!'),
+          // child: Column(children: [Column(children: [Expanded(child: Text('This blows up!'))])]),
+          // child: ListView(children: [Text('This blows up!')]),
+        )
+    );
+  }
+}
+```
