@@ -249,7 +249,7 @@
     Packages are hosted on [pub.dev][], the official package repository.
     
     [pub.dev]: https://pub.dev
-    [`pubspec.yaml`]: /tools/pub/pubspec
+    [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
   related_links:
     - text: "pub.dev"
       link: "https://pub.dev"
