@@ -210,12 +210,9 @@ this file should resemble the following content:
         "appIDs": [
           "S8QB4VV633.com.example.deeplinkCookbook"
         ],
-        "paths": [
-          "*"
-        ],
         "components": [
           {
-            "/": "/*"
+            "/": "*"
           }
         ]
       }
@@ -232,11 +229,17 @@ this file should resemble the following content:
 1. Set one value in the `appIDs` array to
    `<team id>.<bundle id>`.
 
-1. Set the `paths` array to `["*"]`.
-   The `paths` array specifies the allowed universal links.
-   Using the asterisk, `*` redirects every path to the Flutter app.
-   If needed, change the `paths` array value to a setting more
-   appropriate to your app.
+1. Configure the `components` array.
+   This field allows you to specify the URL patterns that your app supports.
+   In the example above, `{"/": "*"}` allows all paths.
+   To exclude specific paths or match complex patterns, using `components`
+   is recommended for iOS 13 and later.
+
+   :::note
+   For support on iOS 12 and earlier, you must also provide the `paths` array:
+   `"paths": ["*"]`.
+   If you support both new and old iOS versions, providing both fields is valid.
+   :::
 
 1. Host the file at a URL that resembles the following structure.
 
