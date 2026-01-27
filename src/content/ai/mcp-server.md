@@ -318,7 +318,7 @@ add the `dart-mcp-server` entry to your OpenCode configuration.
 OpenCode configuration is typically found in `~/.opencode/config.json`
 or in your project's `opencode key` configuration.
 
-```json
+```json title="~/.opencode/config.json"
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
