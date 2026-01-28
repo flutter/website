@@ -2,7 +2,6 @@
 title: Layout
 description: Learn about common layout widgets in Flutter.
 layout: tutorial
-sitemap: false
 ---
 
 Learn how to build layouts with common widgets like Scaffold, AppBar, Column, and Row.

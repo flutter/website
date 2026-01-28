@@ -23,6 +23,37 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
 
   List<String> get defaultBodyClasses => [];
 
+  String get defaultSidenav => 'default';
+
+  /// Path prefix to sidenav name mapping.
+  /// More specific paths should come before less specific ones.
+  static const pathSidenavs = <String, String>{
+    '/learn': 'learn',
+    // Add future path-specific sidenavs here
+  };
+
+  /// Returns the sidenav key for a given page URL.
+  /// Priority order:
+  /// 1. Page frontmatter 'sidenav' field (if specified)
+  /// 2. Path-based sidenav (if URL matches a registered path prefix)
+  /// 3. Default sidenav
+  String getSidenavForPage(String pageUrl, String? pageSpecifiedSidenav) {
+    // Priority 1: Page-specific override from frontmatter
+    if (pageSpecifiedSidenav != null) {
+      return pageSpecifiedSidenav;
+    }
+
+    // Priority 2: Path prefix matching
+    for (final entry in pathSidenavs.entries) {
+      if (pageUrl.startsWith(entry.key)) {
+        return entry.value;
+      }
+    }
+
+    // Priority 3: Default fallback
+    return defaultSidenav;
+  }
+
   @override
   @mustCallSuper
   Iterable<Component> buildHead(Page page) {
@@ -154,8 +185,16 @@ ga('send', 'pageview');
     final pageData = page.data.page;
     final bodyClass = pageData['bodyClass'] as String?;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
+
+    final pageSidenav = getSidenavForPage(
+      pageUrl,
+      pageData['sidenav'] as String?,
+    );
     final sideNavEntries = switch (page.data['sidenav']) {
-      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+      final Map<String, Object?> sidenavs => switch (sidenavs[pageSidenav]) {
+        final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+        _ => null,
+      },
       _ => null,
     };
     final obsolete = pageData['obsolete'] == true;
