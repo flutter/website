@@ -101,6 +101,16 @@ However, it's now possible to allow `FlutterView` to size itself
 based on its content. By using, `content_wrap` for either the height
 or the width a `FlutterView` can size itself, as shown in the [content sized sample project]({{site.repo.samples}}/tree/main/add_to_app/android_view/content_sizing_android_view).
 
+* To _enable_ Content-sized view when deploying your app,
+  add the following setting to your project's
+  `AndroidManifest.xml` file under the `<application>` tag:
+  
+```xml
+<meta-data
+  android:name="io.flutter.embedding.android.EnableContentSizing"
+  android:value="true" />
+```
+
 ### Restrictions
 
 Since content-sized Flutter views require your Flutter app to be able to size itself,
