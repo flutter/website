@@ -11,8 +11,8 @@ description: >-
 
 The `onReorder` callback in the `ReorderableListView`,
 `ReorderableListView.builder`, `ReorderableList` and `SliverReorderableList`
-widgets has been replaced by a new callback, `onReorderItem`
-to fix the confusing behavior of the second callback parameter, `newIndex`.
+widgets has been replaced by a new callback, `onReorderItem`,
+which provides a more intuitive behavior on index.
 
 ## Background
 
@@ -52,18 +52,6 @@ ReorderableListView(
 ```
 
 ## Migration guide
-
-First, rename the `onReorder` callback parameter in any `ReorderableListView`,
-`ReorderableListView.builder`, `ReorderableList` and `SliverReorderableList`
-widget constructors, to `onReorderItem`.
-
-Then, in the callback that is passed to `onReorderItem`,
-remove the if-case that corrects the second function parameter,
-if it is larger than the first function parameter,
-since it is no longer needed.
-
-This migration is not supported by `dart fix`,
-due to the change in meaning for the second callback parameter.
 
 Code before migration:
 
@@ -115,6 +103,22 @@ SliverReorderableList(
 )
 ```
 
+```dart
+void handleReorder(int oldIndex, int newIndex) {
+    if (oldIndex < newIndex) {
+        newIndex -= 1;
+    }
+
+    // Handle reorder ...
+}
+
+ReorderableListView(
+    onReorder: (int oldIndex, int newIndex) {
+        return handleReorder(oldIndex, newIndex);
+    }
+)
+```
+
 Code after migration:
 
 ```dart
@@ -149,14 +153,27 @@ SliverReorderableList(
 )
 ```
 
+```dart
+void handleReorder(int oldIndex, int newIndex) {
+    // Handle reorder ...
+}
+
+ReorderableListView(
+    onReorderItem: (int oldIndex, int newIndex) {
+        return handleReorder(oldIndex, newIndex);
+    }
+)
+```
+
+This migration is not supported by `dart fix`,
+due to the change in meaning for the second callback parameter.
+
 ## Timeline
 
 Landed in version: 3.41.0-1.0.pre-364<br>
 In stable release: Not yet
 
 ## References
-
-{% render "docs/main-api.md", site: site %}
 
 API documentation:
 
@@ -173,8 +190,6 @@ Relevant issues:
 Relevant PRs:
 
 * [Deprecate onReorder callback][]
-
-{% render "docs/main-api.md", site: site %}
 
 [`ReorderCallback`]: {{site.main-api}}/flutter/widgets/ReorderCallback.html
 [`ReorderableList`]: {{site.main-api}}/flutter/widgets/ReorderableList-class.html
