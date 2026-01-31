@@ -161,7 +161,7 @@ class ArticleView extends StatelessWidget {
             // The summary must be non-null in this switch case.
             (false, Summary summary, null) => ArticlePage(
               summary: summary,
-              onPressed: viewModel.getRandomArticleSummary,
+              nextArticleCallback: viewModel.getRandomArticleSummary,
             ),
           };
         },
@@ -244,16 +244,17 @@ class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
     required this.summary,
-    required this.onPressed,
+    required this.nextArticleCallback,
   });
 
   final Summary summary;
-  final VoidCallback onPressed;
+  final VoidCallback nextArticleCallback;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           Flexible(
             child: ArticleWidget(
