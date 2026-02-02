@@ -2,7 +2,6 @@
 title: Simple animations
 description: Learn the simplest way to implement animations in Flutter.
 layout: tutorial
-sitemap: false
 ---
 
 Flutter provides a rich set of animation APIs, and the simplest way to

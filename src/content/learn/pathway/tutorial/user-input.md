@@ -2,7 +2,6 @@
 title: User input
 description: Accept input from the user with buttons and text fields.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to build text inputs, manage text with controllers, and handle user actions with buttons.

@@ -4,6 +4,7 @@ shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.
+sidenav: default
 ---
 
 <div class="card-grid">
@@ -16,7 +17,7 @@ description: >-
   <Card title="API docs" link="{{site.api}}" outlined="true">
     Bookmark the API reference docs for the Flutter framework.
   </Card>
-  <Card title="Learning resources" link="/reference/learning-resources" outlined="true">
+  <Card title="Learning resources" link="/learn" outlined="true">
     Browse tutorials, sample code, workshops, and recipes.
   </Card>
   <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
