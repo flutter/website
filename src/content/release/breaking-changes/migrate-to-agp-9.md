@@ -32,8 +32,8 @@ see the [Android Gradle Plugin docs][AGP block].
 :::warning
 **Current Status:** Flutter apps using plugins are currently
 incompatible with AGP 9: [Issue #181383][].
-This support is paused while the Flutter team audits the migration is backwards
-compatible with older versions of AGP.
+This support is paused while the Flutter team audits the migration for backwards
+compatibility with older versions of AGP.
 :::
 
 These instructions assume you are updating from 
