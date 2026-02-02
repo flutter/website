@@ -175,9 +175,10 @@ app's `build.gradle` file, under the `android { }` block.
 android {
     // ...
     compileOptions {
-        sourceCompatibility = 11 // The minimum value
-        targetCompatibility = 11 // The minimum value
+        sourceCompatibility = JavaVersion.VERSION_17 // The minimum value
+        targetCompatibility = JavaVersion.VERSION_17 // The minimum value
     }
+    // ...
 }
 ```
 
