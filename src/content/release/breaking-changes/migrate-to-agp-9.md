@@ -146,8 +146,8 @@ launches on a connected Android device or emulator.
 
 ## Next Steps
 
-- **Full Support for Plugins:** Full support for Add-to-app on AGP 9
-  will be enabled upon confirming the migration is backwards compatible with
+- **Full Support for Plugins:** Full support for plugins on AGP 9
+  will be enabled once the team confirms the migration is backwards compatible with
   older versions of AGP.
 
 - **Remove DSL Gradle Property:** Once the Flutter team completes the migration
