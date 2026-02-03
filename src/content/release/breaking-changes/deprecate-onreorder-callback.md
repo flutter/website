@@ -1,8 +1,8 @@
 ---
 title: Deprecate onReorder callback
 description: >-
-  The `onReorder` callback has been deprecated
-  in favor of a new callback, called `onReorderItem`.
+  The onReorder callback has been deprecated
+  in favor of a new callback, called onReorderItem.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -25,16 +25,16 @@ due to the list of items shortening by one element in this case.
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {
-    if (oldIndex < newIndex) {
-        // removing the item at oldIndex will shorten the list by 1.
-        newIndex -= 1;
-    }
+  if (oldIndex < newIndex) {
+    // Removing the item at oldIndex will shorten the list by 1.
+    newIndex -= 1;
+  }
 
-    // handle the actual reorder behavior...
+  // Handle the actual reorder behavior...
 }
 
 ReorderableListView(
-    onReorder: handleReorder,
+  onReorder: handleReorder,
 )
 ```
 
@@ -43,130 +43,141 @@ by doing the correction automatically.
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {
-    // handle the actual reorder behavior...
+  // handle the actual reorder behavior...
 }
 
 ReorderableListView(
-    onReorderItem: handleReorder,
+  onReorderItem: handleReorder,
 )
 ```
 
 ## Migration guide
 
+The `ReorderableListView`, `ReorderableListView.builder`,
+`ReorderableList` and `SliverReorderableList` widgets
+share the same reordering logic, the migration steps
+are identical for any of these widgets.
+
+For the purpose of this migration guide,
+`ReorderableListView` is chosen as an example.
+
+### Case 1: trivial case
+
 Code before migration:
 
 ```dart
 ReorderableListView(
-    onReorder: (int oldIndex, int newIndex) {
-        if (oldIndex < newIndex) {
-            newIndex -= 1;
-        }
-
-        // Handle reorder ...
-    }
-)
-```
-
-```dart
-ReorderableListView.builder(
-    onReorder: (int oldIndex, int newIndex) {
-        if (oldIndex < newIndex) {
-            newIndex -= 1;
-        }
-
-        // Handle reorder ...
-    }
-)
-```
-
-```dart
-ReorderableList(
-    onReorder: (int oldIndex, int newIndex) {
-        if (oldIndex < newIndex) {
-            newIndex -= 1;
-        }
-
-        // Handle reorder ...
-    }
-)
-```
-
-```dart
-SliverReorderableList(
-    onReorder: (int oldIndex, int newIndex) {
-        if (oldIndex < newIndex) {
-            newIndex -= 1;
-        }
-
-        // Handle reorder ...
-    }
-)
-```
-
-```dart
-void handleReorder(int oldIndex, int newIndex) {
+  onReorder: (int oldIndex, int newIndex) {
     if (oldIndex < newIndex) {
-        newIndex -= 1;
+      newIndex -= 1;
     }
 
     // Handle reorder ...
-}
-
-ReorderableListView(
-    onReorder: (int oldIndex, int newIndex) {
-        return handleReorder(oldIndex, newIndex);
-    }
+  }
 )
 ```
 
 Code after migration:
 
-```dart
-ReorderableListView(
-    onReorderItem: (int oldIndex, int newIndex) {
-        // Handle reorder ...
+```dart diff
+  ReorderableListView(
+-   onReorder: (int oldIndex, int newIndex) {
+-     if (oldIndex < newIndex) {
+-       newIndex -= 1;
+-     }
+-
++   onReorderItem: (int oldIndex, int newIndex) {
+      // Handle reorder ...
     }
-)
+  )
 ```
 
-```dart
-ReorderableListView.builder(
-    onReorderItem: (int oldIndex, int newIndex) {
-        // Handle reorder ...
-    }
-)
-```
+### Case 2: using a separate callback
 
-```dart
-ReorderableList(
-    onReorderItem: (int oldIndex, int newIndex) {
-        // Handle reorder ...
-    }
-)
-```
-
-```dart
-SliverReorderableList(
-    onReorderItem: (int oldIndex, int newIndex) {
-        // Handle reorder ...
-    }
-)
-```
+Code before migration:
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {
-    // Handle reorder ...
+  if (oldIndex < newIndex) {
+    newIndex -= 1;
+  }
+
+  // Handle reorder ...
 }
 
 ReorderableListView(
-    onReorderItem: (int oldIndex, int newIndex) {
-        return handleReorder(oldIndex, newIndex);
-    }
+  onReorder: (int oldIndex, int newIndex) {
+    return handleReorder(oldIndex, newIndex);
+  }
 )
 ```
 
+Code after migration:
+
+```dart diff
+  void handleReorder(int oldIndex, int newIndex) {
+-   if (oldIndex < newIndex) {
+-     newIndex -= 1;
+-   }
+-
+    // Handle reorder ...
+  }
+
+  ReorderableListView(
+-   onReorder: (int oldIndex, int newIndex) {
++   onReorderItem: (int oldIndex, int newIndex) {
+      return handleReorder(oldIndex, newIndex);
+    }
+  )
+```
+
+### Case 3: opting out, for complex onReorder implementations
+
+In some cases, it might not be obvious how to do the migration
+to the new `onReorderItem` callback,
+particularly if the provided callback is very complex.
+
+In that case, to opt out of the new behavior,
+adjust the `newIndex` to match the old behavior.
+
+Code before migration:
+
+```dart
+void handleSomeComplexReorder(int oldIndex, int newIndex) {
+  // Handle reorder ...
+}
+
+ReorderableListView(
+  onReorder: (int oldIndex, int newIndex) {
+    handleSomeComplexReorder(oldIndex, newIndex);
+  }
+)
+```
+
+Code after migration:
+
+```dart diff
+  void handleSomeComplexReorder(int oldIndex, int newIndex) {
+    // Handle reorder ...
+  }
+
+  ReorderableListView(
+-   onReorder: (int oldIndex, int newIndex) {
++   onReorderItem: (int oldIndex, int newIndex) {
++     // To get the equivalent of the old newIndex:
++     if (oldIndex < newIndex) {
++       newIndex += 1;
++     }
++
+      return handleSomeComplexReorder(oldIndex, newIndex);
+    }
+  )
+```
+
+:::important
 This migration is not supported by `dart fix`,
 due to the change in meaning for the second callback parameter.
+:::
 
 ## Timeline
 
