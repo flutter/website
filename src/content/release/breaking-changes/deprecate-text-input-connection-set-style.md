@@ -1,7 +1,7 @@
-title: Deprecate TextInputConnection.setStyle
+title: Deprecate `TextInputConnection.setStyle`
 description: >-
-  Syncs text metrics via `TextInputConnection.updateStyle` to fix IME and
-  selection alignment. Deprecates `setStyle`.
+  The `TextInputConnection.setStyle` method has been deprecated in favor
+  of the `TextInputConnection.updateStyle` method.
 ---
 
 {% render "docs/breaking-changes.md" %}
