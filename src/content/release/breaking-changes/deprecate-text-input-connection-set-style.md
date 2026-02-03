@@ -49,6 +49,7 @@ connection.updateStyle(
     textDirection: TextDirection.ltr,
     textAlign: TextAlign.start,
     letterSpacing: 1.2,
+    wordSpacing: 1.0,
     lineHeight: 1.5,
   ),
 );
