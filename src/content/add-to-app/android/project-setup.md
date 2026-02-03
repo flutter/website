@@ -391,16 +391,18 @@ dependencies {
 }
 ```
 
-The `profileImplementation` ID is a custom `configuration` to be
-implemented in the `app/build.gradle` file of a host project.
+Add the custom `profileImplementation` dependency configuration to the end
+of the same app-level build.gradle file.
 
-```kotlin title="host-project/app/build.gradle.kts"
+```kotlin title="MyApp/app/build.gradle.kts"
 configurations {
     getByName("profileImplementation") {
     }
 }
 ```
 
+Then, add the following `dependencyResolutionManagement` block to the
+`settings.gradle` file:
 ```kotlin title="MyApp/settings.gradle.kts"
 include(":app")
 
