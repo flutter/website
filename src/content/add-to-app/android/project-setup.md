@@ -189,7 +189,7 @@ declarations in `settings.gradle` instead of project or module level
 declarations in `build.gradle` files.
 
 Before attempting to connect your Flutter module project to your
-host Android app, make the following changes.
+host Android app, make the following changes to your host app:
 
 1. Remove the `repositories` block in all of your app's `build.gradle` files.
 
@@ -343,7 +343,7 @@ dependencyResolutionManagement {
 
         // Add the new repositories starting on the next line...
         maven {
-            url = uri("some/path/flutter_module/build/host/outputs/repo")
+            url = uri("<some/path/flutter_module>/build/host/outputs/repo")
             // This is relative to the location of the build.gradle file
             // if using a relative path.
         }
@@ -367,7 +367,7 @@ After an `aar` build of a Kotlin DSL-based Android project,
 follow these steps to add the flutter_module.
 
 Include the flutter module as a dependency in
-the Android project's `app/build.gradle` file.
+the host app's `app/build.gradle` file.
 
 ```kotlin title="MyApp/app/build.gradle.kts"
 android {
@@ -407,7 +407,7 @@ include(":app")
 dependencyResolutionManagement {
     repositories {
         maven(url = "https://storage.googleapis.com/download.flutter.io")
-        maven(url = "some/path/flutter_module_project/build/host/outputs/repo")
+        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
     }
 }
 ```
