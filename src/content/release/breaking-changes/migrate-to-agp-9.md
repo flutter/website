@@ -144,7 +144,7 @@ your app's `<app-src>/android/gradle.properties` file.
 Execute `flutter run` to confirm that your app builds and
 launches on a connected Android device or emulator.
 
-## Next Steps
+## Next steps
 
 - **Full Support for Plugins:** Full support for plugins on AGP 9
   will be enabled once the team confirms the migration is backwards compatible with
