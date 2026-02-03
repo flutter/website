@@ -29,7 +29,7 @@ the checkbox is unselected instead of being used as the border color.
 
 The updated `Checkbox.fillColor` behavior applies the fill color to the
 checkbox's background in the unselected state. To get the previous behavior,
-set `Checbox.fillColor` to `Colors.transparent` in the unselected state and
+set `Checkbox.fillColor` to `Colors.transparent` in the unselected state and
 set `Checkbox.side` to the desired color.
 
 If you use the `Checkbox.fillColor` property to customize the checkbox.
