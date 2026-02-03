@@ -43,6 +43,6 @@ class SearchBar extends StatelessComponent {
         onInput: onInput != null ? (value) => onInput!(value as String) : null,
       ),
     ]),
-    if (trailing case final trailing?) trailing,
+    ?trailing,
   ]);
 }
