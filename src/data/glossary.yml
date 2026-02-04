@@ -23,9 +23,9 @@
     
 - term: "Cupertino"
   short_description: |-
-    The design language used by Apple on iOS.
+    Flutter's implementation of the iOS design language.
   long_description: |-
-    Flutter's `cupertino` library implements the current iOS design language,
+    Flutter's `cupertino` library implements the iOS design language,
     comprising a set of widgets that implement Apple's Human Interface Guidelines.
 
     The `cupertino` library, originally part of the main Flutter repo,
