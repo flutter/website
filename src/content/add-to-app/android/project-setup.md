@@ -327,6 +327,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://storage.googleapis.com/download.flutter.io")
+        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
     }
 }
 ```
@@ -397,19 +398,6 @@ of the same app-level build.gradle file.
 ```kotlin title="MyApp/app/build.gradle.kts"
 configurations {
     getByName("profileImplementation") {
-    }
-}
-```
-
-Then, add the following `dependencyResolutionManagement` block to the
-`settings.gradle` file:
-```kotlin title="MyApp/settings.gradle.kts"
-include(":app")
-
-dependencyResolutionManagement {
-    repositories {
-        maven(url = "https://storage.googleapis.com/download.flutter.io")
-        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
     }
 }
 ```
