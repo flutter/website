@@ -236,9 +236,9 @@ flutter:
         - web
     - path: assets/desktop_icon.png
       platforms:
-      - windows
-      - linux
-      - macos
+        - windows
+        - linux
+        - macos
 ```
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios
