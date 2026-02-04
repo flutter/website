@@ -331,6 +331,25 @@
     - "packages"
     - "tooling"
 
+- term: "RenderObject"
+  short_description: |-
+    An object in the render tree that handles layout, painting, and hit testing.
+  long_description: |-
+    The `RenderObject` class is the base class for every node in the render tree.
+    It defines the abstract model for layout, painting, and hit testing.
+    The render tree is a subset of the element tree, where each `RenderObject`
+    has a corresponding `RenderObjectElement`.
+  related_links:
+    - text: "Architectural overview: Layout and rendering"
+      link: "/resources/architectural-overview#layout-and-rendering"
+      type: "doc"
+    - text: "RenderObject class"
+      link: "https://api.flutter.dev/flutter/rendering/RenderObject-class.html"
+      type: "api"
+  labels:
+    - "architecture"
+    - "rendering"
+
 - term: "Sliver"
   short_description: |-
     A customizable portion of a scrollable area.
