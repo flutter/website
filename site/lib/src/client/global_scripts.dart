@@ -442,7 +442,7 @@ void _scrollTo(web.Element element, {required bool smooth}) {
   // Scroll the next step into view, accounting for the fixed header and toc.
   final headerOffset =
       web.document.getElementById('site-header')?.clientHeight ?? 0;
-  final tocOffset = web.document.getElementById('toc-top')?.clientHeight ?? 0;
+  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
   final elementPosition = element.getBoundingClientRect().top;
   final offsetPosition =
       elementPosition + web.window.scrollY - headerOffset - tocOffset;
