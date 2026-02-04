@@ -164,7 +164,7 @@ not be identical to your host app's package name.
 
 #### Java version requirement
 
-Flutter requires your project to declare compatibility with Java 11 or later.
+Flutter requires your project to declare compatibility with Java 17 or later.
 
 Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
