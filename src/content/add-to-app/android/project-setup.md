@@ -327,7 +327,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://storage.googleapis.com/download.flutter.io")
-        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
+        maven(url = "<some/path/flutter_module>/build/host/outputs/repo")
     }
 }
 ```
