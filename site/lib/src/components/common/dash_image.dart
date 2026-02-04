@@ -31,7 +31,7 @@ class DashImage with CustomComponentBase {
 
     final style =
         [
-              if (attributes['img-style'] case final s?) s,
+              ?attributes['img-style'],
               if (attributes['width'] case final w?) 'width: $w',
               if (attributes['height'] case final h?) 'height: $h',
             ]
