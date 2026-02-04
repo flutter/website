@@ -233,7 +233,7 @@ flutter:
   assets:
     - path: assets/web_worker.js
       platforms:
-      - web
+        - web
     - path: assets/desktop_icon.png
       platforms:
       - windows
