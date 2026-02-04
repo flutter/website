@@ -2,7 +2,6 @@
 title: Create an app
 description: Instructions on how to create a new Flutter app.
 layout: tutorial
-sitemap: false
 ---
 
 Learn the first steps to building a Flutter app, from creating a project to understanding widgets and hot reload.

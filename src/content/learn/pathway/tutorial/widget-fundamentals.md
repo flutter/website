@@ -2,7 +2,6 @@
 title: Create widgets
 description: Learn about stateless widgets and how to build your own.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to create custom widgets and use the most common SDK widgets like

@@ -2,7 +2,6 @@
 title: Stateful widgets
 description: Learn about StatefulWidgets and rebuilding Flutter UI.
 layout: tutorial
-sitemap: false
 ---
 
 Learn when widgets need to be stateful and how to trigger UI updates with setState.
