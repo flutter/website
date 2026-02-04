@@ -21,6 +21,28 @@
     - "ui"
     - "design"
     
+- term: "Cupertino"
+  short_description: |-
+    Flutter's implementation of the iOS design language.
+  long_description: |-
+    Flutter's `cupertino` library implements the iOS design language,
+    comprising a set of widgets that implement Apple's Human Interface Guidelines.
+
+    The `cupertino` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Human Interface Guidelines"
+      link: "https://developer.apple.com/design/human-interface-guidelines/"
+      type: "external"
+    - text: "Cupertino widgets"
+      link: "/ui/widgets/cupertino"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
 - term: "Dart"
   short_description: |-
     A programming language for fast apps on any platform.
@@ -246,6 +268,29 @@
     - "performance"
     - "smooth rendering"
 
+- term: "Material"
+  short_description: |-
+    An open-source design system built and supported by Google.
+  long_description: |-
+    Material Design is an adaptable system of guidelines, components, and tools
+    that support the best practices of user interface design.
+    Flutter's `material` library implements Material Design widgets.
+
+    The `material` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Material Design site"
+      link: "https://m3.material.io"
+      type: "external"
+    - text: "Material widgets"
+      link: "/ui/widgets/material"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
 - term: "Prop drilling"
   short_description: |-
     The process of passing data through multiple layers of widgets
@@ -263,6 +308,28 @@
   labels:
     - "state management"
     - "architecture"
+
+- term: "pub"
+  short_description: |-
+    The package manager for the Dart programming language.
+  long_description: |-
+    Pub is the tool used for managing Dart packages.
+    It allows you to install, upgrade, and manage dependencies for your Dart app.
+    Dependencies are defined in the [`pubspec.yaml`][] file.
+    Packages are hosted on [pub.dev][], the official package repository.
+    
+    [pub.dev]: https://pub.dev
+    [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
+  related_links:
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
+    - text: "Using packages"
+      link: "/packages-and-plugins/using-packages"
+      type: "doc"
+  labels:
+    - "packages"
+    - "tooling"
 
 - term: "Sliver"
   short_description: |-
