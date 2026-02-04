@@ -2,7 +2,6 @@
 title: Stack-based navigation
 description: Learn how to navigate from one page to another in a Flutter app.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to navigate between screens with Navigator.push and implement adaptive navigation patterns for different screen sizes.

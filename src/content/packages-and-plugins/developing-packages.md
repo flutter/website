@@ -58,12 +58,6 @@ Packages can contain more than one kind of content:
   [Create an FFI package][bind-native]).
   This is the recommended approach to build and bundle native code since Flutter 3.38.
 
-**FFI plugin packages (legacy)**
-: A specialized Dart package that contains an API written in Dart code combined
-  with one or more platform-specific implementations that use `dart:ffi`
-  ([Android][Android], [iOS][iOS], [macOS][macOS]). These packages are created
-  with `flutter create --template=plugin_ffi` and require OS-specific build files.
-
 ## Developing Dart packages {:#dart}
 
 The following instructions explain how to write a Flutter
@@ -718,106 +712,37 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing legacy FFI plugin packages {:#plugin-ffi}
-
-:::warning
-This section documents a legacy approach for FFI plugins.
-
-Since Flutter 3.38, the recommended way for using FFI is to use the
-`flutter create --template=package_ffi` command, which uses
-[build hooks][bind-native].
-
-The legacy FFI plugins (`flutter create --template=plugin_ffi`) described here
-are still useful for some situations:
-- To access the Flutter Plugin API.
-- If you need to configure a Google Play services runtime on Android.
-- If you need to use static linking on iOS or macOS.
-:::
+## Developing FFI packages {:#ffi}
 
 If you want to develop a package that calls into native APIs using
-Dart's FFI, you need to develop an FFI plugin package.
+Dart's FFI, you need to develop an FFI package.
 
-Both FFI plugin packages and non-FFI plugin packages support
-bundling native code. However, FFI plugin packages don't
-support method channels,
-but they _do_ support method channel registration code.
-To implement a plugin that uses both method channels
-_and_ FFI, use a non-FFI plugin.
-Each platform can use either an FFI or non-FFI platform.
+:::note
+If you need to access the Flutter Plugin API or configure a Google Play
+services runtime on Android, use the `flutter create --template=plugin`
+command instead.
+:::
 
 ### Step 1: Create the package
 
-To create a starter FFI plugin package,
-use the `--template=plugin_ffi` flag with `flutter create`:
+To create a starter FFI package,
+use the `--template=package_ffi` flag with `flutter create`:
 
 ```console
-$ flutter create --template=plugin_ffi hello
+$ flutter create --template=package_ffi hello
 ```
 
-This creates an FFI plugin project in the `hello`
+This creates an FFI package project in the `hello`
 folder with the following specialized content:
 
-**lib**: The Dart code that defines the API of the plugin,
+**lib**: The Dart code that defines the API of the package,
   and which calls into the native code using `dart:ffi`.
 
-**src**: The native source code, and a `CMakeLists.txt`
-  file for building that source code into a dynamic library.
+**src**: The native source code.
 
-**platform folders** (`android`, `ios`, `windows`, etc.): The
-  build files for building and bundling the native code
-  library with the platform application.
+**hook/build.dart**: The build hook script that compiles the native code.
 
-### Step 2: Building and bundling native code
-
-The `pubspec.yaml` specifies FFI plugins as follows:
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        ffiPlugin: true
-```
-
-This configuration invokes the native build
-for the various target platforms and bundles
-the binaries in Flutter applications using these FFI plugins.
-
-This can be combined with `dartPluginClass`,
-such as when FFI is used for the
-implementation of one platform in a federated plugin:
-
-```yaml
-  plugin:
-    implements: some_other_plugin
-    platforms:
-      some_platform:
-        dartPluginClass: SomeClass
-        ffiPlugin: true
-```
-
-A plugin can have both FFI and method channels:
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: SomeName
-        ffiPlugin: true
-```
-
-The native build systems that are invoked by FFI
-(and method channels) plugins are:
-
-* For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in `android/build.gradle` or `android/build.gradle.kts`.
-* For iOS and macOS: Xcode, using CocoaPods.
-  * See the documentation in `ios/hello.podspec`.
-  * See the documentation in `macos/hello.podspec`.
-* For Linux and Windows: CMake.
-  * See the documentation in `linux/CMakeLists.txt`.
-  * See the documentation in `windows/CMakeLists.txt`.
-
-### Step 3: Binding to native code
+### Step 2: Binding to native code
 
 To use the native code, bindings in Dart are needed.
 
@@ -830,10 +755,10 @@ on how to install this package.
 To regenerate the bindings, run the following command:
 
 ```console
-$ dart run ffigen --config ffigen.yaml
+$ dart run tool/ffigen.dart
 ```
 
-### Step 4: Invoking native code
+### Step 3: Invoking native code
 
 Very short-running native functions can be directly
 invoked from any isolate.
