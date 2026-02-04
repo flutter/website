@@ -293,7 +293,7 @@
 
 - term: "Null safety"
   short_description: |-
-    A Dart feature that prevents errors that result from accessing variables set to null.
+    A Dart feature that prevents errors that result from accessing variables set to `null`.
   long_description: |-
     Dart's null safety prevents errors that result from unintentional access
     of variables set to `null`.
