@@ -2,7 +2,6 @@
 title: User input
 description: Accept input from the user with buttons and text fields.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to build text inputs, manage text with controllers, and handle user actions with buttons.
@@ -198,7 +197,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -241,7 +240,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -281,7 +280,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -338,7 +337,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -405,7 +404,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -459,7 +458,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),

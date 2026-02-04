@@ -2,7 +2,6 @@
 title: DevTools
 description: Learn to use the Dart DevTools when developing Flutter apps.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to use the widget inspector and property editor to debug layout issues and experiment with properties in real-time.
@@ -79,7 +78,7 @@ class GamePage extends StatelessWidget {
             Row(
               spacing: 5.0,
               children: [
-              for (var letter in guess) Tile(letter, )
+                for (var letter in guess) Tile(letter.char, letter.type)
               ]
             ),
         ],

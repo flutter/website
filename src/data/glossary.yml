@@ -63,6 +63,31 @@
     - "fundamentals"
     - "language"
 
+- term: "Declarative"
+  short_description: |-
+    A programming style where the UI state is described,
+    and the framework transitions the UI to match that state.
+  long_description: |-
+    Declarative programming is a style where you describe the
+    _current state_ of your UI, and the framework takes care
+    of transitioning the UI to match that state.
+
+    In Flutter, widgets are immutable "blueprints".
+    To change the UI, a widget triggers a rebuild on itself
+    (usually by calling `setState`) and constructs a new widget subtree.
+    This contrasts with _imperative_ programming,
+    where you manually construct and mutate UI entities.
+  related_links:
+    - text: "Introduction to declarative UI"
+      link: "/get-started/flutter-for/declarative"
+      type: "doc"
+    - text: "Start thinking declaratively"
+      link: "/data-and-backend/state-mgmt/declarative"
+      type: "doc"
+  labels:
+    - "fundamentals"
+    - "ui"
+
 - term: "Embedder"
   short_description: |-
     The platform-specific component that supports Flutter
@@ -371,7 +396,7 @@
     [state]: https://api.flutter.dev/flutter/widgets/State-class.html
   related_links:
     - text: "Widget fundamentals"
-      link: "/learn/tutorial/widget-fundamentals"
+      link: "/learn/pathway/tutorial/widget-fundamentals"
       type: "doc"
     - text: "Widget catalog"
       link: "/ui/widgets"

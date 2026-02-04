@@ -2,7 +2,6 @@
 title: LayoutBuilder and adaptive layouts
 description: Learn how to use the LayoutBuilder widget.
 layout: tutorial
-sitemap: false
 ---
 
 Learn how to create layouts that adapt to different screen widths.

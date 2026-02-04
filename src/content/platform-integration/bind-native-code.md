@@ -13,12 +13,9 @@ Since Flutter 3.38, the recommended way to bind to native code is to use the
 `build.dart` script, and no longer requires OS-specific build files. This
 approach works for both Flutter and Dart standalone projects.
 
-The legacy FFI plugins (`flutter create --template=plugin_ffi`) are still useful
-for some situations. For these cases, refer to the legacy FFI plugin
-documentation:
-- [Android](/platform-integration/android/c-interop)
-- [iOS](/platform-integration/ios/c-interop)
-- [macOS](/platform-integration/macos/c-interop)
+If you need to use the Flutter Plugin API, or if you need to configure a Google
+Play services runtime on Android, use the standard plugin template (`flutter create
+--template=plugin`).
 
 [build hooks]: https://dart.dev/tools/hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
