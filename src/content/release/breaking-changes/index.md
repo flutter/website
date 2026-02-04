@@ -40,10 +40,10 @@ They're sorted by release and listed in alphabetical order:
 * [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `containsSemantics` in favor of `isSemantics`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
+* [Deprecate `TextInputConnection.setStyle`][]
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
 * [Page transition builders reorganization][]
-* [Deprecate `TextInputConnection.setStyle`][]
 
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
@@ -52,9 +52,9 @@ They're sorted by release and listed in alphabetical order:
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `containsSemantics` in favor of `isSemantics`]: /release/breaking-changes/deprecate-contains-semantics
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
+[Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
-[Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
