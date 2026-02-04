@@ -171,7 +171,7 @@ flutter:
 # platform_path_field structure
 - path: path/to/file
   platforms:
-  - platform_name
+    - platform_name
 ```
 
 Subfields of `assets`:
