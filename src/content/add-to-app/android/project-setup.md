@@ -175,9 +175,10 @@ app's `build.gradle` file, under the `android { }` block.
 android {
     // ...
     compileOptions {
-        sourceCompatibility = 11 // The minimum value
-        targetCompatibility = 11 // The minimum value
+        sourceCompatibility = JavaVersion.VERSION_17 // The minimum value
+        targetCompatibility = JavaVersion.VERSION_17 // The minimum value
     }
+    // ...
 }
 ```
 
@@ -188,7 +189,7 @@ declarations in `settings.gradle` instead of project or module level
 declarations in `build.gradle` files.
 
 Before attempting to connect your Flutter module project to your
-host Android app, make the following changes.
+host Android app, make the following changes to your host app:
 
 1. Remove the `repositories` block in all of your app's `build.gradle` files.
 
@@ -342,7 +343,7 @@ dependencyResolutionManagement {
 
         // Add the new repositories starting on the next line...
         maven {
-            url = uri("some/path/flutter_module/build/host/outputs/repo")
+            url = uri("<some/path/flutter_module>/build/host/outputs/repo")
             // This is relative to the location of the build.gradle file
             // if using a relative path.
         }
@@ -366,7 +367,7 @@ After an `aar` build of a Kotlin DSL-based Android project,
 follow these steps to add the flutter_module.
 
 Include the flutter module as a dependency in
-the Android project's `app/build.gradle` file.
+the host app's `app/build.gradle` file.
 
 ```kotlin title="MyApp/app/build.gradle.kts"
 android {
@@ -390,23 +391,25 @@ dependencies {
 }
 ```
 
-The `profileImplementation` ID is a custom `configuration` to be
-implemented in the `app/build.gradle` file of a host project.
+Add the custom `profileImplementation` dependency configuration to the end
+of the same app-level build.gradle file.
 
-```kotlin title="host-project/app/build.gradle.kts"
+```kotlin title="MyApp/app/build.gradle.kts"
 configurations {
     getByName("profileImplementation") {
     }
 }
 ```
 
+Then, add the following `dependencyResolutionManagement` block to the
+`settings.gradle` file:
 ```kotlin title="MyApp/settings.gradle.kts"
 include(":app")
 
 dependencyResolutionManagement {
     repositories {
         maven(url = "https://storage.googleapis.com/download.flutter.io")
-        maven(url = "some/path/flutter_module_project/build/host/outputs/repo")
+        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
     }
 }
 ```
