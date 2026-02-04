@@ -23,6 +23,9 @@ class Stepper extends CustomComponent {
       final level = int.tryParse(levelStr) ?? 1;
       final collapsible = attributes['collapsible']?.toLowerCase() != 'false';
       final showActions = attributes['actions']?.toLowerCase() != 'none';
+      final showFinish =
+          showActions &&
+          attributes['actions']?.toLowerCase() != 'continue-only';
 
       assert(
         level >= 1 && level <= 6,
@@ -77,7 +80,7 @@ class Stepper extends CustomComponent {
             div(classes: 'step-content', [
               builder.build(step.content),
             ]),
-            if (showActions)
+            if (showActions && (index < steps.length - 1 || showFinish))
               div(classes: 'step-actions', [
                 Button(
                   classes: ['next-step-button'],
