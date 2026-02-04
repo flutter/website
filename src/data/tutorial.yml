@@ -1,39 +1,47 @@
-title: Learn Flutter
-url: /learn/tutorial
+title: Getting started course
+url: /learn/pathway
 units:
+  - title: Quick install
+    chapters:
+      - title: Install Flutter
+        url: /learn/pathway/quick-install
   - title: Introduction to Flutter UI
     chapters:
       - title: Create a Flutter app
-        url: /learn/tutorial/create-an-app
+        url: /learn/pathway/tutorial/create-an-app
       - title: Widget fundamentals
-        url: /learn/tutorial/widget-fundamentals
+        url: /learn/pathway/tutorial/widget-fundamentals
       - title: Layout widgets on a screen
-        url: /learn/tutorial/layout
+        url: /learn/pathway/tutorial/layout
       - title: DevTools
-        url: /learn/tutorial/devtools
+        url: /learn/pathway/tutorial/devtools
       - title: Handle user input
-        url: /learn/tutorial/user-input
+        url: /learn/pathway/tutorial/user-input
       - title: Learn about stateful widgets
-        url: /learn/tutorial/stateful-widget
+        url: /learn/pathway/tutorial/stateful-widget
       - title: Add implicit animations
-        url: /learn/tutorial/implicit-animations
+        url: /learn/pathway/tutorial/implicit-animations
   - title: State in Flutter apps
     chapters:
-      - title: Set up a new project
-        url: /learn/tutorial/set-up-state-project
+      - title: The state management project
+        url: /learn/pathway/tutorial/set-up-state-project
       - title: Make Http Requests
-        url: /learn/tutorial/http-requests
+        url: /learn/pathway/tutorial/http-requests
       - title: Use `ChangeNotifier` to update app state
-        url: /learn/tutorial/change-notifier
+        url: /learn/pathway/tutorial/change-notifier
       - title: Use `ListenableBuilder` to update app UI
-        url: /learn/tutorial/listenable-builder
+        url: /learn/pathway/tutorial/listenable-builder
   - title: Flutter UI 102
     chapters:
       - title: Advanced UI features
-        url: /learn/tutorial/advanced-ui
+        url: /learn/pathway/tutorial/advanced-ui
       - title: Adaptive layouts
-        url: /learn/tutorial/adaptive-layout
+        url: /learn/pathway/tutorial/adaptive-layout
       - title: Scrolling and slivers
-        url: /learn/tutorial/slivers
+        url: /learn/pathway/tutorial/slivers
       - title: Stack based navigation
-        url: /learn/tutorial/navigation
+        url: /learn/pathway/tutorial/navigation
+  - title: How Flutter works
+    chapters:
+      - title: How Flutter works
+        url: /learn/pathway/how-flutter-works

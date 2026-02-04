@@ -53,6 +53,7 @@ class Card extends StatelessComponent {
         attributes['title'] ??
         (throw Exception('Card component requires a "title" attribute.'));
     final outlined = attributes['outlined'] == 'true';
+    final additionalClasses = attributes['additional-classes'];
     return Card(
       header: [
         Component.element(
@@ -65,6 +66,7 @@ class Card extends StatelessComponent {
       link: link,
       filled: link != null && attributes['filled'] != 'false',
       outlined: outlined,
+      additionalClasses: additionalClasses,
     );
   }
 

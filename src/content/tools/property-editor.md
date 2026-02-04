@@ -48,7 +48,7 @@ UI development and iteration.
 
 [VS Code]: /tools/vs-code#property-editor
 [Android Studio/IntelliJ]: /tools/android-studio#property-editor
-[widget constructor invocation]: /get-started/fundamentals/widgets
+[widget constructor invocation]: /learn/pathway/tutorial/widget-fundamentals
 
 ### Runtime usage
 

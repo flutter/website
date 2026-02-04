@@ -95,26 +95,6 @@ From here, you can choose to install the MCP server from
 
 1.  In the list of available MCP servers,
     find or search for **Dart** and click **Install**.
-1.  **Important**: The built-in configuration doesn't currently pass the
-    required `--force-roots-fallback` flag. You must add it manually.
-1.  In the upper right of the **Manage MCPs** editor view,
-    click **View raw config**.
-1.  Locate the `dart-mcp-server` entry in the `mcpServers` map and
-    update its `args` list to include the `--force-roots-fallback` flag:
-
-    ```json title="mcp_config.json" highlightLines=7
-    {
-      "mcpServers": {
-        "dart-mcp-server": {
-          "command": "dart",
-          "args": [
-            "mcp-server",
-            "--force-roots-fallback"
-          ]
-        }
-      }
-    }
-    ```
 
 #### Connect manually {: #antigravity-mcp-manual-install}
 
@@ -128,8 +108,7 @@ From here, you can choose to install the MCP server from
         "dart-mcp-server": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ],
           "env": {}
         }
@@ -330,6 +309,33 @@ For more information, see the official Cursor
 documentation for [installing MCP servers][].
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
+
+### OpenCode
+
+To configure [OpenCode][] to use the Dart and Flutter MCP server,
+add the `dart-mcp-server` entry to your OpenCode configuration.
+
+OpenCode configuration is typically found in `~/.opencode/config.json`
+or in your project's `opencode key` configuration.
+
+```json title="~/.opencode/config.json"
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dart-mcp-server": {
+      "type": "local",
+      "command": [
+        "dart",
+        "mcp-server"
+      ],
+      "enabled": true,
+      "environment": {}
+    }
+  }
+}
+```
+
+[OpenCode]: https://opencode.ai/
 
 ### Claude Code
 

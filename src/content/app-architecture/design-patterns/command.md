@@ -626,6 +626,6 @@ final class Command1<T, A> extends Command<T> {
 [`Result` class]: /app-architecture/design-patterns/result
 [pub.dev]: {{site.pub}}
 [`command_it`]: {{site.pub-pkg}}/command_it
-[`ChangeNotifier`]: /get-started/fundamentals/state-management
+[`ChangeNotifier`]: /learn/pathway/tutorial/change-notifier
 [Model-View-ViewModel (MVVM)]: /app-architecture/guide#view-models
 [View models]: /app-architecture/guide#view-models

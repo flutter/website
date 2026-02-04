@@ -15,10 +15,8 @@ An iOS app requires [a bit of extra setup][] in Xcode,
 but the restoration classes otherwise work the same on
 both iOS and Android.
 
-For more information, check out [State restoration on Android][]
-and the [VeggieSeasons][] code sample.
+For more information, check out [State restoration on Android][].
 
 [a bit of extra setup]: {{site.api}}/flutter/services/RestorationManager-class.html#state-restoration-on-ios
 [`RestorationManager`]: {{site.api}}/flutter/services/RestorationManager-class.html
 [State restoration on Android]: /platform-integration/android/restore-state-android
-[VeggieSeasons]: https://github.com/samples/demos/tree/main/veggieseasons

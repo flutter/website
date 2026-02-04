@@ -20,6 +20,73 @@
   labels:
     - "ui"
     - "design"
+    
+- term: "Cupertino"
+  short_description: |-
+    Flutter's implementation of the iOS design language.
+  long_description: |-
+    Flutter's `cupertino` library implements the iOS design language,
+    comprising a set of widgets that implement Apple's Human Interface Guidelines.
+
+    The `cupertino` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Human Interface Guidelines"
+      link: "https://developer.apple.com/design/human-interface-guidelines/"
+      type: "external"
+    - text: "Cupertino widgets"
+      link: "/ui/widgets/cupertino"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
+- term: "Dart"
+  short_description: |-
+    A programming language for fast apps on any platform.
+  long_description: |-
+    Dart is an approachable, portable, and performant language designed
+    for full-stack app development. It offers sound null safety,
+    a strong type system, and compiles to native machine code
+    for mobile, desktop, and backend, as well as JavaScript or WebAssembly
+    for the web. While Dart is the foundation of Flutter,
+    it is also used for building command-line tools, servers,
+    and other applications.
+  related_links:
+    - text: "Dart language site"
+      link: "https://dart.dev"
+      type: "external"
+  labels:
+    - "dart"
+    - "fundamentals"
+    - "language"
+
+- term: "Declarative"
+  short_description: |-
+    A programming style where the UI state is described,
+    and the framework transitions the UI to match that state.
+  long_description: |-
+    Declarative programming is a style where you describe the
+    _current state_ of your UI, and the framework takes care
+    of transitioning the UI to match that state.
+
+    In Flutter, widgets are immutable "blueprints".
+    To change the UI, a widget triggers a rebuild on itself
+    (usually by calling `setState`) and constructs a new widget subtree.
+    This contrasts with _imperative_ programming,
+    where you manually construct and mutate UI entities.
+  related_links:
+    - text: "Introduction to declarative UI"
+      link: "/get-started/flutter-for/declarative"
+      type: "doc"
+    - text: "Start thinking declaratively"
+      link: "/data-and-backend/state-mgmt/declarative"
+      type: "doc"
+  labels:
+    - "fundamentals"
+    - "ui"
 
 - term: "Embedder"
   short_description: |-
@@ -201,6 +268,29 @@
     - "performance"
     - "smooth rendering"
 
+- term: "Material"
+  short_description: |-
+    An open-source design system built and supported by Google.
+  long_description: |-
+    Material Design is an adaptable system of guidelines, components, and tools
+    that support the best practices of user interface design.
+    Flutter's `material` library implements Material Design widgets.
+
+    The `material` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Material Design site"
+      link: "https://m3.material.io"
+      type: "external"
+    - text: "Material widgets"
+      link: "/ui/widgets/material"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
 - term: "Prop drilling"
   short_description: |-
     The process of passing data through multiple layers of widgets
@@ -212,12 +302,34 @@
     why other state management solutions
     (like `InheritedWidget` or `Provider`) are often used.
   related_links:
-    - text: "State management: Sharing state"
-      link: "/get-started/fundamentals/state-management#sharing-state-between-widgets"
+    - text: "State management introduction"
+      link: "/data-and-backend/state-mgmt/intro"
       type: "doc"
   labels:
     - "state management"
     - "architecture"
+
+- term: "pub"
+  short_description: |-
+    The package manager for the Dart programming language.
+  long_description: |-
+    Pub is the tool used for managing Dart packages.
+    It allows you to install, upgrade, and manage dependencies for your Dart app.
+    Dependencies are defined in the [`pubspec.yaml`][] file.
+    Packages are hosted on [pub.dev][], the official package repository.
+    
+    [pub.dev]: https://pub.dev
+    [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
+  related_links:
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
+    - text: "Using packages"
+      link: "/packages-and-plugins/using-packages"
+      type: "doc"
+  labels:
+    - "packages"
+    - "tooling"
 
 - term: "Sliver"
   short_description: |-
@@ -305,8 +417,8 @@
     [`StatefulWidget`]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
     [state]: https://api.flutter.dev/flutter/widgets/State-class.html
   related_links:
-    - text: "Fundamentals: Widgets"
-      link: "/get-started/fundamentals/widgets"
+    - text: "Widget fundamentals"
+      link: "/learn/pathway/tutorial/widget-fundamentals"
       type: "doc"
     - text: "Widget catalog"
       link: "/ui/widgets"

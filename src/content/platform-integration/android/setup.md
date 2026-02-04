@@ -103,6 +103,8 @@ install and set up the latest stable version of [Android Studio][].
        - **Android SDK Command-line Tools**
        - **Android Emulator**
        - **Android SDK Platform-Tools**
+       - **CMake**
+       - **NDK (Side by side)**
 
     1. If the **Status** column for any of the preceding tools displays
        **Update available** or **Not installed**:
@@ -354,16 +356,13 @@ or begin improving integration with Android.
           <a class="text-button" href="/get-started/codelab">Write your first app</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
           <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-        <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
         </li>
       </ul>
     </div>

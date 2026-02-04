@@ -25,7 +25,7 @@ button {
   cursor: pointer;
 
   &.filled-button,
-  &.text-button {
+  &.text-button, &.outlined-button {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -62,6 +62,19 @@ button {
 
   &.text-button {
     color: var(--site-primary-color);
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
+    }
+  }
+
+  &.outlined-button {
+    color: var(--site-primary-color);
+    border: 1px solid var(--site-primary-color);
 
     &:hover {
       @include mixins.interaction-style(4%);
