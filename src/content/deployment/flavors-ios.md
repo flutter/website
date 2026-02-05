@@ -239,6 +239,36 @@ Flutter CLI using the following steps:
     $ flutter run --flavor staging
     ```
 
+### Access the current flavor
+
+1.  **Import the services library:**
+    To access the `appFlavor` constant, add the following import to your Dart file:
+    ```dart
+    import 'package:flutter/services.dart';
+    ```
+
+1.  **Check the flavor value:**
+    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+
+    ```dart
+    void main() {
+      // appFlavor will match the flavor name from build.gradle.kts
+      if (appFlavor == 'production') {
+        // Logic for production environment
+        Config.apiUrl = '[https://api.flavors_example.com](https://api.flavors_example.com)';
+      } else if (appFlavor == 'staging') {
+        // Logic for staging environment
+        Config.apiUrl = '[https://staging.api.flavors_example.com](https://staging.api.flavors_example.com)';
+      }
+
+      runApp(const MyApp());
+    }
+    ```
+
+    :::note
+    The value of `appFlavor` matches the name of the product flavor you defined in your `build.gradle.kts` file (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
+    :::
+
 ### Use the run command (Xcode)
 
 You can launch a specific scheme in Xcode using the
