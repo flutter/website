@@ -730,6 +730,7 @@
       { "source": "/go/towards-improved-performance-tooling", "destination": "https://docs.google.com/document/d/1wSDNcG0ww2V6JX1EE8avilCwnOiRVy83zSCWt916O0o", "type": 301 },
       { "source": "/go/tracking-material-states", "destination": "https://docs.google.com/document/d/1PJdsOoXhWdhnpYKlW5Nm2Di3Di5XARoYyHerMwWovXE", "type": 301 },
       { "source": "/go/trackpad-gestures", "destination": "https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8/edit?usp=sharing&resourcekey=0-pt4_T7uggSTrsq2gWeGsYQ", "type": 301 },
+      { "source": "/go/transitions-everywhere", "destination": "https://docs.google.com/document/d/1qvznbZ-W0g90zkJ8h4k0aPgrpARo4CZUupVzq8la7Cw", "type": 301 },
       { "source": "/go/triage-2022-rfp", "destination": "https://docs.google.com/document/d/1Kyrh1WijM04XqtUkVbL2uwDthlG9v3sljgl9HRlU4bU/edit", "type": 301 },
       { "source": "/go/triage-2023-rfc", "destination": "https://docs.google.com/document/d/1RBvsolWL9nUkcEFhPZV4b-tstVUDHfHKzs-uQ3HiX-w/edit", "type": 301 },
       { "source": "/go/try", "destination": "https://github.com/flutter/put-flutter-to-work", "type": 301 },
