@@ -252,7 +252,7 @@ Flutter CLI using the following steps:
 
     ```dart
     void main() {
-      // appFlavor will match the flavor name from build.gradle.kts
+// appFlavor will match the name of the Xcode scheme
       if (appFlavor == 'production') {
         // Logic for production environment
         Config.apiUrl = '[https://api.flavors_example.com](https://api.flavors_example.com)';
