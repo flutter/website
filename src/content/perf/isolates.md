@@ -37,7 +37,7 @@ to painting a frame on the screen.
 The following figure shows an example event queue
 with 3 events waiting to be processed.
 
-![The main isolate diagram](/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%"}
+![The main isolate diagram](/assets/images/docs/development/concurrency/basics-main-isolate.png){:width="50%" .diagram-wrap}
 
 For smooth rendering,
 Flutter adds a "paint frame" event to the event queue
@@ -47,7 +47,7 @@ the application experiences UI jank,
 or worse,
 become unresponsive altogether.
 
-![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
+![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="60%" .diagram-wrap}
 
 Whenever a process can't be completed in a frame gap,
 the time between two frames,
@@ -64,7 +64,7 @@ documentation.
 
 [concurrency page]: {{site.dart-site}}/language/concurrency
 
-{% ytEmbed 'vl_AaCgudcY', 'Isolates and the event loop | Flutter in Focus' %}
+<YouTubeEmbed id="vl_AaCgudcY" title="Isolates and the event loop | Flutter in Focus"></YouTubeEmbed>
 
 ## Common use cases for isolates
 
@@ -74,7 +74,7 @@ to experience UI jank.
 This jank happens when there is any computation that takes longer than
 Flutter's frame gap.
 
-![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="50%"}
+![Event jank diagram](/assets/images/docs/development/concurrency/event-jank.png){:width="60%" .diagram-wrap}
 
 Any process _could_ take longer to complete,
 depending on the implementation
@@ -141,7 +141,7 @@ and then shuts the isolate down when the computation is complete.
 This all happens concurrently with the main isolate,
 and doesn't block it.
 
-![Isolate diagram](/assets/images/docs/development/concurrency/isolate-bg-worker.png){:width="50%"}
+![Isolate diagram](/assets/images/docs/development/concurrency/isolate-bg-worker.png){:width="70%" .diagram-wrap}
 
 The `Isolate.run` method requires a single argument,
 a callback function,
@@ -343,10 +343,10 @@ For more information on isolates, check out the following resources:
 or the pub package that clones the functionality for Dart applications not using
 Flutter.
 - Dart's Isolates are an implementation of the [Actor model][].
-- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.  
+- [isolate_agents][] is a package that abstracts Ports and make it easier to create long-lived isolates.
 - Read more about the `BackgroundIsolateBinaryMessenger` API [announcement][].
 
-[announcement]: {{site.flutter-medium}}/introducing-background-isolate-channels-7a299609cad8
+[announcement]: {{site.flutter-blog}}/introducing-background-isolate-channels-7a299609cad8
 [Actor model]: https://en.wikipedia.org/wiki/Actor_model
 [isolate_agents]: {{site.medium}}/@gaaclarke/isolate-agents-easy-isolates-for-flutter-6d75bf69a2e7
 [marshaling data]: https://en.wikipedia.org/wiki/Marshalling_(computer_science)

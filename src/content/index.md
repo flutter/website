@@ -1,18 +1,31 @@
 ---
 title: Flutter documentation
-short-title: Docs
-description: Get started with Flutter. Widgets, examples, updates, and API docs to help you write your first Flutter app.
+shortTitle: Docs
+description: >-
+  Get started with Flutter. Widgets, examples, updates, and API docs to
+  help you write your first Flutter app.
+sidenav: default
 ---
 
 <div class="card-grid">
-{% for card in docs_cards -%}
-    <a class="card" href="{{card.url}}">
-      <div class="card-body">
-        <header class="card-title">{{card.name}}</header>
-        <p class="card-text">{{card.description}}</p>
-      </div>
-    </a>
-{% endfor %}
+  <Card title="Get started" link="/get-started" outlined="true">
+    Set up your environment and start building.
+  </Card>
+  <Card title="Widget catalog" link="/ui/widgets" outlined="true">
+    Dip into the rich set of Flutter widgets available in the SDK.
+  </Card>
+  <Card title="API docs" link="{{site.api}}" outlined="true">
+    Bookmark the API reference docs for the Flutter framework.
+  </Card>
+  <Card title="Learning resources" link="/learn" outlined="true">
+    Browse tutorials, sample code, workshops, and recipes.
+  </Card>
+  <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
+    View the many videos on the Flutter YouTube channel.
+  </Card>
+  <Card title="Create with AI" link="/ai/create-with-ai" outlined="true">
+    Learn how to build with and integrate powerful AI tools.
+  </Card>
 </div>
 
 **To see changes to the site since our last release,
@@ -22,16 +35,8 @@ see [What's new][].**
 
 ## New to Flutter?
 
-Once you've [Set up Flutter][],
-you should follow the 
-[Write your first Flutter app][] codelab 
-and read [Flutter fundamentals][]. 
-These resources are opinionated documentation 
-that guide you through the most important
-parts of building a Flutter app.
-
-[Write your first Flutter app]: /get-started/codelab
-[Flutter fundamentals]: /get-started/fundamentals
+Ready to build beautiful, multiplatform apps from a single codebase?
+First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
 
 ### Docs
 
@@ -41,7 +46,7 @@ Coming from another platform? Check out Flutter for:
 
 [Building layouts][]
 : Learn how to create layouts in Flutter,
-  where everything is a widget.
+  where everything is a [widget](/resources/glossary#widget).
 
 [Understanding constraints][]
 : Once you understand that "Constraints
@@ -58,7 +63,6 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started/install
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs
@@ -68,61 +72,34 @@ Coming from another platform? Check out Flutter for:
 
 ### Videos
 
-Check out the Introducing Flutter series.
-Learn Flutter basics like
-[how do I make my first Flutter app?][first-app]
-In Flutter, "everything is a widget"!
-Learn more about `Stateless` and `Stateful`
-widgets in [What is State?][]
+<div class="video-wrapper">
+  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
+  <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
+</div>
+<br>
+
+For more of the latest on Dart, Flutter, and the Future of Apps, check out
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 <div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'xWV71C2kp38', 'Create your first Flutter app', true, true %}
-        </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
     </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'QlwiL_yLh6E', 'What is state?', true, true %}
-        </div>
+  </div>
+  <div class="card wrapped-card outlined-card">
+    <div class="card-content">
+      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
     </div>
+  </div>
 </div>
 
-[first-app]: {{site.yt.watch}}?v=xWV71C2kp38
-[What is State?]: {{site.yt.watch}}?v=QlwiL_yLh6E
+[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
 
-{% videoWrapper 'Only have 60 seconds? Learn how to build and deploy a Flutter App!' %}
-{% ytEmbed 'ZnufaryH43s', 'How to build and deploy a Flutter app in 60 seconds!', true %}
-{% endvideoWrapper %}
+To learn about all of the Flutter video series, see our [videos][] page.
 
-## Want to skill up?
+We release new videos almost every week!
 
-Dive deeper into how Flutter works under the hood!
-Learn [why you write standalone widgets instead of
-using helper methods][standalone-widgets] or
-[what is "BuildContext" and how is it used][buildcontext]?
-
-<div class="card-grid">
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'IOyq-eTRhvo', 'Widgets vs helper methods | Decoding Flutter', true, true %}
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-body">
-            {% ytEmbed 'rIaaH87z1-g', 'BuildContext?! | Decoding Flutter', true, true %}
-        </div>
-    </div>
-</div>
-
-[standalone-widgets]: {{site.yt.watch}}?v=IOyq-eTRhvo
-[buildcontext]: {{site.yt.watch}}?v=rIaaH87z1-g
-
-To learn about all of the Flutter video series,
-see our [videos][] page.
-
-We release new videos almost every week on the Flutter YouTube channel:
-
-<a class="btn btn-primary" target="_blank" href="https://www.youtube.com/@flutterdev">Explore more Flutter videos</a>
+<a class="filled-button" target="_blank" href="https://www.youtube.com/@flutterdev">Check out the Flutter YouTube channel</a>
 
 [videos]: /resources/videos

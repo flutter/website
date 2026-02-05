@@ -1,7 +1,7 @@
 ---
 title: Transforming assets at build time
 description: How to set up automatic transformation of images (and other assets) in your Flutter app.
-short-title: Asset transformation
+shortTitle: Asset transformation
 ---
 
 You can configure your project to automatically transform assets
@@ -29,9 +29,7 @@ displayed using the [`vector_graphics`][] package, like so:
 ```dart
 import 'package:vector_graphics/vector_graphics.dart';
 
-const Widget logo = VectorGraphic(
-  loader: AssetBytesLoader('assets/logo.svg'),
-);
+const Widget logo = VectorGraphic(loader: AssetBytesLoader('assets/logo.svg'));
 ```
 
 ### Passing arguments to asset transformers
@@ -74,10 +72,15 @@ An asset transformer is a Dart [command-line app][] that is invoked with
 the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
-If the transformer applications finishes with a non-zero exit code, the build
+If the transformer finishes with a non-zero exit code, the application build
 fails with error message explaining that transformation of the asset failed.
 Anything written to the [`stderr`] stream of the process by the transformer is
 included in the error message.
+
+During the invocation of the transformer, the `FLUTTER_BUILD_MODE`
+environment variable will be set to the CLI name of the build mode being used.
+For example, if you run your app with `flutter run -d macos --release`, then
+`FLUTTER_BUILD_MODE` will be set to `release`.
 
 ## Sample
 
@@ -88,5 +91,5 @@ Dart package that is used as a transformer, check out the
 [command-line app]: {{site.dart-site}}/tutorials/server/cmdline
 [asset_transformers project in the Flutter samples repo]: {{site.repo.samples}}/tree/main/asset_transformation
 [`vector_graphics_compiler`]: {{site.pub}}/packages/vector_graphics_compiler
-[`vector_graphics`]: {{site.pub}}//packages/vector_graphics
+[`vector_graphics`]: {{site.pub-pkg}}/vector_graphics
 [`stderr`]: {{site.api}}/flutter/dart-io/Process/stderr.html

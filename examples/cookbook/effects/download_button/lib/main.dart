@@ -28,18 +28,18 @@ class _ExampleCupertinoDownloadButtonState
     super.initState();
     _downloadControllers = List<DownloadController>.generate(
       20,
-      (index) => SimulatedDownloadController(onOpenDownload: () {
-        _openDownload(index);
-      }),
+      (index) => SimulatedDownloadController(
+        onOpenDownload: () {
+          _openDownload(index);
+        },
+      ),
     );
   }
 
   void _openDownload(int index) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('Open App ${index + 1}'),
-      ),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text('Open App ${index + 1}')));
   }
 
   @override
@@ -48,7 +48,7 @@ class _ExampleCupertinoDownloadButtonState
       appBar: AppBar(title: const Text('Apps')),
       body: ListView.separated(
         itemCount: _downloadControllers.length,
-        separatorBuilder: (_, __) => const Divider(),
+        separatorBuilder: (_, _) => const Divider(),
         itemBuilder: _buildListItem,
       ),
     );
@@ -103,17 +103,11 @@ class DemoAppIcon extends StatelessWidget {
           height: 80,
           child: DecoratedBox(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.red, Colors.blue],
-              ),
+              gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
               borderRadius: BorderRadius.all(Radius.circular(20)),
             ),
             child: Center(
-              child: Icon(
-                Icons.ac_unit,
-                color: Colors.white,
-                size: 40,
-              ),
+              child: Icon(Icons.ac_unit, color: Colors.white, size: 40),
             ),
           ),
         ),
@@ -122,12 +116,7 @@ class DemoAppIcon extends StatelessWidget {
   }
 }
 
-enum DownloadStatus {
-  notDownloaded,
-  fetchingDownload,
-  downloading,
-  downloaded,
-}
+enum DownloadStatus { notDownloaded, fetchingDownload, downloading, downloaded }
 
 abstract class DownloadController implements ChangeNotifier {
   DownloadStatus get downloadStatus;
@@ -144,9 +133,9 @@ class SimulatedDownloadController extends DownloadController
     DownloadStatus downloadStatus = DownloadStatus.notDownloaded,
     double progress = 0.0,
     required VoidCallback onOpenDownload,
-  })  : _downloadStatus = downloadStatus,
-        _progress = progress,
-        _onOpenDownload = onOpenDownload;
+  }) : _downloadStatus = downloadStatus,
+       _progress = progress,
+       _onOpenDownload = onOpenDownload;
 
   DownloadStatus _downloadStatus;
   @override
@@ -328,15 +317,16 @@ class ButtonShapeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var shape = const ShapeDecoration(
-      shape: StadiumBorder(),
-      color: CupertinoColors.lightBackgroundGray,
-    );
-
+    final ShapeDecoration shape;
     if (isDownloading || isFetching) {
-      shape = ShapeDecoration(
-        shape: const CircleBorder(),
-        color: Colors.white.withOpacity(0),
+      shape = const ShapeDecoration(
+        shape: CircleBorder(),
+        color: Colors.transparent,
+      );
+    } else {
+      shape = const ShapeDecoration(
+        shape: StadiumBorder(),
+        color: CupertinoColors.lightBackgroundGray,
       );
     }
 
@@ -355,9 +345,9 @@ class ButtonShapeWidget extends StatelessWidget {
             isDownloaded ? 'OPEN' : 'GET',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
-                ),
+              fontWeight: FontWeight.bold,
+              color: CupertinoColors.activeBlue,
+            ),
           ),
         ),
       ),
@@ -389,10 +379,12 @@ class ProgressIndicatorWidget extends StatelessWidget {
           return CircularProgressIndicator(
             backgroundColor: isDownloading
                 ? CupertinoColors.lightBackgroundGray
-                : Colors.white.withOpacity(0),
-            valueColor: AlwaysStoppedAnimation(isFetching
-                ? CupertinoColors.lightBackgroundGray
-                : CupertinoColors.activeBlue),
+                : Colors.transparent,
+            valueColor: AlwaysStoppedAnimation(
+              isFetching
+                  ? CupertinoColors.lightBackgroundGray
+                  : CupertinoColors.activeBlue,
+            ),
             strokeWidth: 2,
             value: isFetching ? null : progress,
           );

@@ -40,10 +40,7 @@ class _CounterState extends State<Counter> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        ElevatedButton(
-          onPressed: _increment,
-          child: const Text('Increment'),
-        ),
+        ElevatedButton(onPressed: _increment, child: const Text('Increment')),
         const SizedBox(width: 16),
         Text('Count: $_counter'),
       ],
@@ -54,11 +51,7 @@ class _CounterState extends State<Counter> {
 void main() {
   runApp(
     const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Counter(),
-        ),
-      ),
+      home: Scaffold(body: Center(child: Counter())),
     ),
   );
 }

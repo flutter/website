@@ -1,11 +1,10 @@
 ---
 title: Add a Flutter Fragment to an Android app
-short-title: Add a Flutter Fragment
+shortTitle: Add a Flutter Fragment
 description: Learn how to add a Flutter Fragment to your existing Android app.
 ---
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png'
-class="mw-100" alt="Add Flutter Fragment Header">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_header.png' alt="Add Flutter Fragment Header">
 
 This guide describes how to add a Flutter `Fragment` to an existing
 Android app.  In Android, a [`Fragment`][] represents a modular
@@ -45,8 +44,8 @@ To add a `FlutterFragment` to a host `Activity`, instantiate and
 attach an instance of `FlutterFragment` in `onCreate()` within the
 `Activity`, or at another time that works for your app:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -94,8 +93,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -142,8 +141,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The previous code is sufficient to render a Flutter UI
 that begins with a call to your `main()` Dart entrypoint,
@@ -153,8 +152,8 @@ Flutter behavior. Flutter depends on various OS signals that
 must  be forwarded from your host `Activity` to `FlutterFragment`.
 These calls are shown in the following example:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 class MyActivity : FragmentActivity() {
@@ -207,8 +206,8 @@ class MyActivity : FragmentActivity() {
 }
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 public class MyActivity extends FragmentActivity {
@@ -268,8 +267,8 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 With the OS signals forwarded to Flutter,
 your `FlutterFragment` works as expected.
@@ -292,10 +291,10 @@ using an existing, pre-warmed instance of `FlutterEngine`.
 
 To use a pre-warmed `FlutterEngine` in a `FlutterFragment`,
 instantiate a `FlutterFragment` with the `withCachedEngine()`
-factory method.  
+factory method.
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyApplication.kt"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -318,8 +317,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyApplication.java"
 // Somewhere in your app, before your FlutterFragment is needed,
@@ -342,8 +341,8 @@ FlutterEngineCache
 FlutterFragment.withCachedEngine("my_engine_id").build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 `FlutterFragment` internally knows about [`FlutterEngineCache`][]
 and retrieves the pre-warmed `FlutterEngine` based on the ID
@@ -355,7 +354,7 @@ first Flutter frame as quickly as possible.
 
 #### Initial route with a cached engine
 
-{% include docs/add-to-app/android-initial-route-cached-engine.md %}
+{% render "docs/add-to-app/android-initial-route-cached-engine.md" %}
 
 ## Display a splash screen
 
@@ -377,8 +376,8 @@ initial routes (routes other than `/`).
 To facilitate this, `FlutterFragment`'s `Builder`
 allows you to specify a desired initial route, as shown:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -387,8 +386,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -397,8 +396,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 :::note
 `FlutterFragment`'s initial route property has no effect when a pre-warmed
@@ -418,8 +417,8 @@ Dart entrypoint: `main()`, but you can define other entrypoints.
 Dart entrypoint to execute for the given Flutter experience.
 To specify an entrypoint, build `FlutterFragment`, as shown:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -427,8 +426,8 @@ val flutterFragment = FlutterFragment.withNewEngine()
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -436,8 +435,8 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 The `FlutterFragment` configuration results in the execution
 of a Dart entrypoint called `mySpecialEntrypoint()`.
@@ -469,8 +468,8 @@ then you need to use `TextureView` instead of `SurfaceView`.
 Select a `TextureView` by building a `FlutterFragment` with a
 `texture` `RenderMode`:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // With a new FlutterEngine.
@@ -484,8 +483,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // With a new FlutterEngine.
@@ -499,8 +498,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Using the configuration shown, the resulting `FlutterFragment`
 renders its UI to a `TextureView`.
@@ -537,8 +536,8 @@ for information about controlling the `RenderMode`.
 To enable transparency for a `FlutterFragment`,
 build it with the following configuration:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -552,8 +551,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -567,8 +566,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## The relationship between `FlutterFragment` and its `Activity`
 
@@ -577,8 +576,7 @@ In these apps, it would be reasonable for a `Fragment` to
 control system chrome like Android's status bar,
 navigation bar, and orientation.
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png'
- class="mw-100" alt="Fullscreen Flutter">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_fullscreen.png' alt="Fullscreen Flutter">
 
 In other apps, `Fragment`s are used to represent only
 a portion of a UI. A `FlutterFragment` might be used to
@@ -588,8 +586,7 @@ inappropriate for the `FlutterFragment` to affect
 Android's system chrome because there are other UI
 pieces within the same `Window`.
 
-<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png'
- class="mw-100" alt="Flutter as Partial UI">
+<img src='/assets/images/docs/development/add-to-app/android/add-flutter-fragment/add-flutter-fragment_partial-ui.png' alt="Flutter as Partial UI">
 
 `FlutterFragment` comes with a concept that helps
 differentiate between the case when a `FlutterFragment`
@@ -601,8 +598,8 @@ prevent Flutter from controlling the `Activity`'s system UI,
 use the `shouldAttachEngineToActivity()` method in
 `FlutterFragment`'s `Builder`, as shown:
 
-{% tabs "android-language" %}
-{% tab "Kotlin" %}
+<Tabs key="android-language">
+<Tab name="Kotlin">
 
 ```kotlin title="MyActivity.kt"
 // Using a new FlutterEngine.
@@ -616,8 +613,8 @@ val flutterFragment = FlutterFragment.withCachedEngine("my_engine_id")
     .build()
 ```
 
-{% endtab %}
-{% tab "Java" %}
+</Tab>
+<Tab name="Java">
 
 ```java title="MyActivity.java"
 // Using a new FlutterEngine.
@@ -631,8 +628,8 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 Passing `false` to the `shouldAttachEngineToActivity()`
 `Builder` method prevents Flutter from interacting with

@@ -10,10 +10,7 @@ class SampleApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Sample App',
-      home: SampleAppPage(),
-    );
+    return const MaterialApp(title: 'Sample App', home: SampleAppPage());
   }
 }
 
@@ -28,10 +25,9 @@ class _SampleAppPageState extends State<SampleAppPage> {
   List<Widget> _getListData() {
     final List<Widget> widgets = [];
     for (int i = 0; i < 100; i++) {
-      widgets.add(Padding(
-        padding: const EdgeInsets.all(10),
-        child: Text('Row $i'),
-      ));
+      widgets.add(
+        Padding(padding: const EdgeInsets.all(10), child: Text('Row $i')),
+      );
     }
     return widgets;
   }
@@ -39,9 +35,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: ListView(children: _getListData()),
     );
   }

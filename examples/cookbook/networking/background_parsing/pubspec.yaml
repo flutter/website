@@ -1,17 +1,14 @@
 name: background_parsing
 description: Background parsing
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.0
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
+  http: ^1.5.0
 
 flutter:
   uses-material-design: true

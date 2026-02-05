@@ -44,7 +44,7 @@ Other ways you can contribute:
 * [Request docs for docs.flutter.dev][doc-issues]
 * [Submit PRs to docs.flutter.dev][doc-PRs]
 * [Follow us on Twitter: @flutterdev](https://twitter.com/flutterdev/)
-* [Read the Flutter Publication on Medium](https://medium.com/flutter)
+* [Read the Flutter blog](https://blog.flutter.dev)
 * [Sign up to Future UX Studies on Flutter](https://flutter.dev/research-signup)
 * [Join the subreddit to keep up with the latest in the Flutter
    community][reddit]
@@ -60,5 +60,5 @@ Happy Fluttering!
 [doc-PRs]: https://github.com/flutter/website/pulls
 [so]: https://stackoverflow.com/tags/flutter
 [mailinglist]: https://groups.google.com/d/forum/flutter-dev
-[chat]: https://github.com/flutter/flutter/blob/master/docs/contributing/Chat.md
+[chat]: https://github.com/flutter/flutter/blob/main/docs/contributing/Chat.md
 [reddit]: https://www.reddit.com/r/FlutterDev

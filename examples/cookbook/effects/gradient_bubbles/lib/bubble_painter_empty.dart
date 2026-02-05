@@ -5,11 +5,7 @@ import 'package:flutter/material.dart';
 // #docregion BubblePainterEmpty
 @immutable
 class BubbleBackground extends StatelessWidget {
-  const BubbleBackground({
-    super.key,
-    required this.colors,
-    this.child,
-  });
+  const BubbleBackground({super.key, required this.colors, this.child});
 
   final List<Color> colors;
   final Widget? child;
@@ -17,18 +13,14 @@ class BubbleBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomPaint(
-      painter: BubblePainter(
-        colors: colors,
-      ),
+      painter: BubblePainter(colors: colors),
       child: child,
     );
   }
 }
 
 class BubblePainter extends CustomPainter {
-  BubblePainter({
-    required List<Color> colors,
-  }) : _colors = colors;
+  BubblePainter({required List<Color> colors}) : _colors = colors;
 
   final List<Color> _colors;
 
@@ -43,4 +35,5 @@ class BubblePainter extends CustomPainter {
     return false;
   }
 }
+
 // #enddocregion BubblePainterEmpty

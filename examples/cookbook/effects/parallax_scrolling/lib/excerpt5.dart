@@ -13,11 +13,7 @@ class LocationListItem extends StatelessWidget {
         backgroundImageKey: _backgroundImageKey,
       ),
       children: [
-        Image.network(
-          imageUrl,
-          key: _backgroundImageKey,
-          fit: BoxFit.cover,
-        ),
+        Image.network(imageUrl, key: _backgroundImageKey, fit: BoxFit.cover),
       ],
     );
   }
@@ -59,7 +55,7 @@ class LocationListItem extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.transparent, Colors.black.withOpacity(0.7)],
+            colors: [Colors.transparent, Colors.black.withValues(alpha: 0.7)],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const [0.6, 0.95],
@@ -87,15 +83,13 @@ class LocationListItem extends StatelessWidget {
           ),
           Text(
             country,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
         ],
       ),
     );
   }
+
   // #docregion global-key
 }
 // #enddocregion global-key
@@ -114,9 +108,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
   // #enddocregion parallax-flow-delegate-gk
   @override
   BoxConstraints getConstraintsForChild(int i, BoxConstraints constraints) {
-    return BoxConstraints.tightFor(
-      width: constraints.maxWidth,
-    );
+    return BoxConstraints.tightFor(width: constraints.maxWidth);
   }
 
   // #docregion paint-children
@@ -130,15 +122,18 @@ class ParallaxFlowDelegate extends FlowDelegate {
     final scrollableBox = scrollable.context.findRenderObject() as RenderBox;
     final listItemBox = listItemContext.findRenderObject() as RenderBox;
     final listItemOffset = listItemBox.localToGlobal(
-        listItemBox.size.centerLeft(Offset.zero),
-        ancestor: scrollableBox);
+      listItemBox.size.centerLeft(Offset.zero),
+      ancestor: scrollableBox,
+    );
     // #enddocregion paint-children
 
     // Determine the percent position of this list item within the
     // scrollable area.
     final viewportDimension = scrollable.position.viewportDimension;
-    final scrollFraction =
-        (listItemOffset.dy / viewportDimension).clamp(0.0, 1.0);
+    final scrollFraction = (listItemOffset.dy / viewportDimension).clamp(
+      0.0,
+      1.0,
+    );
     // #enddocregion paint-children-2
 
     // Calculate the vertical alignment of the background
@@ -152,15 +147,18 @@ class ParallaxFlowDelegate extends FlowDelegate {
         (backgroundImageKey.currentContext!.findRenderObject() as RenderBox)
             .size;
     final listItemSize = context.size;
-    final childRect =
-        verticalAlignment.inscribe(backgroundSize, Offset.zero & listItemSize);
+    final childRect = verticalAlignment.inscribe(
+      backgroundSize,
+      Offset.zero & listItemSize,
+    );
     // #enddocregion paint-children-4
 
     // Paint the background.
     context.paintChild(
       0,
-      transform:
-          Transform.translate(offset: Offset(0.0, childRect.top)).transform,
+      transform: Transform.translate(
+        offset: Offset(0.0, childRect.top),
+      ).transform,
     );
     // #enddocregion paint-children-5
 
@@ -174,6 +172,7 @@ class ParallaxFlowDelegate extends FlowDelegate {
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey;
   }
+
   // #docregion parallax-flow-delegate-gk
 }
 // #enddocregion parallax-flow-delegate-gk
@@ -211,7 +210,7 @@ class Location {
 }
 
 const urlPrefix =
-    'https://docs.flutter.dev/cookbook/img-files/effects/parallax';
+    'https://docs.flutter.dev/assets/images/exercise/effects/parallax';
 
 const locations = [
   Location(
@@ -244,9 +243,5 @@ const locations = [
     place: 'Mexico',
     imageUrl: '$urlPrefix/06-mexico-city.jpg',
   ),
-  Location(
-    name: 'Cairo',
-    place: 'Egypt',
-    imageUrl: '$urlPrefix/07-cairo.jpg',
-  ),
+  Location(name: 'Cairo', place: 'Egypt', imageUrl: '$urlPrefix/07-cairo.jpg'),
 ];

@@ -13,9 +13,6 @@ on:
 # Declare default permissions as read only.
 permissions: read-all
 
-env:
-  NODE_VERSION: 20
-
 jobs:
   test:
     name: Analyze and test code examples
@@ -27,29 +24,27 @@ jobs:
         include:
           - name: "Beta channel"
             branch: beta
-            experimental: true
+            experimental: false
           - name: "Stable channel"
             branch: stable
-            experimental: false
+            experimental: true
     continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          submodules: recursive
-      - uses: subosito/flutter-action@44ac965b96f18d999802d4b807e3256d5a3f9fa1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: subosito/flutter-action@e938fdf56512cc96ef2f93601a5a40bde3801046
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
         run: dart pub get
         continue-on-error: ${{ matrix.experimental }}
       - name: Check Dart code formatting
-        run: dart run flutter_site format-dart --check
+        run: dart run dash_site format-dart --check
         continue-on-error: ${{ matrix.experimental }}
       - name: Analyze Dart code
-        run: dart run flutter_site analyze-dart
+        run: dart run dash_site analyze-dart
         continue-on-error: ${{ matrix.experimental }}
       - name: Run Dart tests
-        run: dart run flutter_site test-dart
+        run: dart run dash_site test-dart
         continue-on-error: ${{ matrix.experimental }}
 
   excerpts:
@@ -57,59 +52,46 @@ jobs:
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: dart-lang/setup-dart@e51d8e571e22473a2ddebf0ef8a2123f0ab2c02c
         with:
-          submodules: recursive
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
-        with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Check if excerpts are up to date
-        run: dart run flutter_site refresh-excerpts --fail-on-update --dry-run
+        run: dart run dash_site refresh-excerpts --fail-on-update --dry-run
         continue-on-error: ${{ matrix.experimental }}
 
   linkcheck:
     name: Build site and check links
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: dart-lang/setup-dart@e51d8e571e22473a2ddebf0ef8a2123f0ab2c02c
         with:
-          submodules: recursive
-      - name: Enable Corepack
-        run: corepack enable
-      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'pnpm'
-      - name: Setup pnpm
-        run: corepack install
-      - name: Install node dependencies
-        run: pnpm install --frozen-lockfile
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
-        with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
+      - name: Install firebase-tools
+        run: curl -sL https://firebase.tools | bash
       - name: Build site
-        run: dart run flutter_site build
+        run: dart run dash_site build
       - name: Check for broken Markdown link references
-        run: dart run flutter_site check-link-references
+        run: dart run dash_site check-link-references
       - name: Check for broken internal links
-        run: dart run flutter_site check-links
+        run: dart run dash_site check-links
 
   firebase-validate:
     name: Validate Firebase configuration
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: dart-lang/setup-dart@e51d8e571e22473a2ddebf0ef8a2123f0ab2c02c
         with:
-          submodules: recursive
-      - uses: dart-lang/setup-dart@0a8a0fc875eb934c15d08629302413c671d3f672
-        with:
-          sdk: stable
+          sdk: beta
       - name: Fetch Dart dependencies
         run: dart pub get
       - name: Validate the firebase.json file
-        run: dart run flutter_site verify-firebase-json
+        run: dart run dash_site verify-firebase-json

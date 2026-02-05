@@ -1,6 +1,7 @@
 ---
 layout: toc
 title: Flutter reference docs
-short-title: Reference
+shortTitle: Reference
 description: Miscellaneous reference docs relating to Flutter.
+showBreadcrumbs: false
 ---

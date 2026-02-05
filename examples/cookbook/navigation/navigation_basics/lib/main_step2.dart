@@ -6,9 +6,7 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('First Route'),
-      ),
+      appBar: AppBar(title: const Text('First Route')),
       body: Center(
         child: ElevatedButton(
           child: const Text('Open route'),
@@ -17,7 +15,9 @@ class FirstRoute extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SecondRoute()),
+              MaterialPageRoute<void>(
+                builder: (context) => const SecondRoute(),
+              ),
             );
           },
           // #enddocregion first-route-on-pressed
@@ -33,9 +33,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Second Route'),
-      ),
+      appBar: AppBar(title: const Text('Second Route')),
       body: Center(
         child: ElevatedButton(
           // #docregion second-route-on-pressed

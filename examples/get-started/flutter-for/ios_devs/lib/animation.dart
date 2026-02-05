@@ -34,10 +34,7 @@ class _MyFadeTest extends State<MyFadeTest>
       duration: const Duration(milliseconds: 2000),
       vsync: this,
     );
-    curve = CurvedAnimation(
-      parent: controller,
-      curve: Curves.easeIn,
-    );
+    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
   }
 
   @override

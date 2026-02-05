@@ -2,16 +2,15 @@ name: common_errors
 description: Excerpts for common Flutter errors.
 publish_to: none
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../example_utils
   integration_test:
     sdk: flutter
   flutter_test:

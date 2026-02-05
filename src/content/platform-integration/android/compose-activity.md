@@ -1,6 +1,6 @@
 ---
 title: Launching a Jetpack Compose activity from your Flutter application
-short-title: Native Android activities
+shortTitle: Native Android activities
 description: >-
   Learn how to launch native Android activities in your Flutter app.
 ---
@@ -80,14 +80,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: const Center(
-          child: Text('Hello World!'),
-        ),
+        body: const Center(child: Text('Hello World!')),
         floatingActionButton: FloatingActionButton(
           // SECTION 3: Call `_launchAndroidActivity` somewhere.
           onPressed: _launchAndroidActivity,
-          // SECTION 3: End
 
+          // SECTION 3: End
           tooltip: 'Launch Android activity',
           child: const Icon(Icons.launch),
         ),
@@ -139,7 +137,7 @@ The first file requiring modifications is `android/app/build.gradle`.
     [developer.android.com]: {{site.android-dev}}/jetpack/androidx/releases/compose-kotlin
 
  2. Next, add the following block at the bottom of the file, at the root level:
- 
+
     ```groovy title="android/app/build.gradle"
     dependencies {
         implementation("androidx.core:core-ktx:1.10.1")
@@ -162,9 +160,9 @@ The first file requiring modifications is `android/app/build.gradle`.
     ```
 
     The second file requiring modifications is `android/build.gradle`.
- 
+
  1. Add the following buildscript block at the top of the file:
- 
+
     ```groovy title="android/build.gradle"
     buildscript {
         dependencies {
@@ -180,9 +178,9 @@ The first file requiring modifications is `android/app/build.gradle`.
 
     The third file requiring modifications is
     `android/app/src/main/AndroidManifest.xml`.
- 
+
  1. In the root application block, add the following `<activity>` declaration:
- 
+
     ```xml title="android/app/src/main/AndroidManifest.xml"
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
         <application
@@ -202,9 +200,9 @@ The first file requiring modifications is `android/app/build.gradle`.
     The fourth and final code requiring modifications is
     `android/app/src/main/kotlin/com/example/flutter_android_activity/MainActivity.kt`.
     Here you'll write Kotlin code for your desired Android functionality.
- 
+
  1. Add the necessary imports at the top of the file:
- 
+
     :::note
     Your imports might vary if library versions have changed or
     if you introduce different Compose classes when
@@ -233,10 +231,10 @@ The first file requiring modifications is `android/app/build.gradle`.
     import io.flutter.plugin.common.MethodChannel
     import io.flutter.plugins.GeneratedPluginRegistrant
     ```
- 
+
  1. Modify the generated `MainActivity` class by adding a
     `CHANNEL` field and a `configureFlutterEngine` method:
- 
+
      ```kotlin  title="MainActivity.kt"
      class MainActivity: FlutterActivity() {
          // This value must match the `MethodChannel` name in your Dart code.
@@ -266,10 +264,10 @@ The first file requiring modifications is `android/app/build.gradle`.
          }
      }
      ```
- 
+
  1. Add a second `Activity` to the bottom of the file, which you
     referenced in the previous changes to `AndroidManifest.xml`:
- 
+
     ```kotlin  title="MainActivity.kt"
     class SecondActivity : ComponentActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {

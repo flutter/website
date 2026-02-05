@@ -11,8 +11,7 @@ Find past what's new information on the
 You might also check out the
 Flutter SDK [release notes][].
 
-To stay on top of Flutter announcements including
-breaking changes,
+To stay on top of Flutter announcements including breaking changes,
 join the [flutter-announce][] Google group.
 
 For Dart, you can join the [Dart Announce][] Google group,
@@ -23,147 +22,130 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
-## 07 August 2024: I/O Connect Beijing 3.24 release
+## 12 November 2025: Release 3.38
 
-Flutter 3.24 is live! For more information,
-check out the [Flutter 3.24 umbrella blog post][3.24-umbrella]
-and the [Flutter 3.24 technical blog post][3.24-tech].
-You might also check out the [Dart 3.5 release][] blog post.
+Flutter 3.38 is live! For details,
+check out the [Flutter 3.38 technical blog post][3.38-tech].
 
-[3.24-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-24-6c040f87d1e4
-[3.24-umbrella]: {{site.flutter-medium}}/flutter-3-24-dart-3-5-204b7d20c45d
-[Dart 3.5 release]: {{site.medium}}/dartlang/dart-3-5-6ca36259fa2f
+[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 
-**Docs updated or added since the 3.22 release**
+**Website update**
 
-This website release includes several important updates!
+A significant update to the website has recently landed!
+As with the update to the dart.dev website that landed
+earlier this year, the docs.flutter.dev website has been
+reimplemented to use [Jaspr][], a Dart web framework.
 
-* An updated widget catalog:
-  * Added 37 missing widgets to the [Cupertino catalog][],
-    and a new screenshot for the updated `CupertinoActionSheet` widget.
-  * Added the new [`CarouselView`][] widget.
-  * `CupertinoButton` and `CupertinoTextField`
-    also have updated behaviors.
-* New guides on adding support for Swift Package Manager
-  to [iOS plugins][] and [iOS apps][]. (Note that,
-  until all of your app's dependencies are migrated,
-  Flutter will continue to use CocoaPods.)
-* Updated web docs:
-  * [Embedding Flutter on the web][], including how to
-    enable multi-view mode
-  * [Embedding web content into a Flutter app][]
-* Update for Android 14:
-  If you are using an Android device that runs on
-  Android 14, you can now support Android's
-  [predictive back gesture][].
-* Updates for iOS 18:
-  The iOS 18 release is in beta at the time of this release.
-  These iOS 18 features are already enabled in Flutter
-  and are now mentioned in the docs:
-  * Use an [iOS app extension][] in your Flutter app
-    to create a custom toggle. Your users can then
-    add your app's toggle when customizing their
-    Control Center.
-  * [Tinted app icons][] are supported
-* Two pages of the [Flutter fundamentals docs][] are updated:
-  * [Widgets][]
-  * [Layout][]
-  We hope these pages are helpful for new Flutter developers.
-* DevTools also has updates. Check out the release notes for
-  [DevTools 2.35.0][], [DevTools 2.36.0][], and [DevTools 2.37.2][].
+Let us know what you think!
 
-[`CarouselView`]: {{site.api}}/flutter/material/CarouselView-class.html
-[Cupertino catalog]: /ui/widgets/cupertino
-[DevTools 2.35.0]: /tools/devtools/release-notes/release-notes-2.35.0
-[DevTools 2.36.0]: /tools/devtools/release-notes/release-notes-2.36.0
-[DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
-[Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
-[Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
-[Flutter fundamentals docs]: /get-started/fundamentals
-[Widgets]: /get-started/fundamentals/widgets
-[iOS app extension]: /platform-integration/ios/app-extensions
-[iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
-[iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /get-started/fundamentals/layout
-[predictive back gesture]: /platform-integration/android/predictive-back
-[Tinted app icons]: /deployment/ios#add-an-app-icon
+[Jaspr]: https://jaspr.site/
 
-### Other
+**Docs updated or added since the 3.35 release**
 
-* If you are interested in the new, experimental
-  Flutter GPU API, check out the [Flutter GPU blog post][].
-* The Flutter wiki has been divided up and moved into the
-  relevant GitHub repos, making it easier to keep that
-  info up to date.
+* The Dart language now supports _dot shorthands_ syntax
+  (aka _shorthands_), which allows you to write more
+  concise code. For more information, visit the
+  [Dart dot shorthands][] page on dart.dev. Over time,
+  the samples on this website will be updated
+  to take advantage of this new feature.
 
-[Flutter GPU blog post]: {{site.flutter-medium}}/getting-started-with-flutter-gpu-f33d497b7c11
+* The `flutter run` command now supports a configuration file
+  that allows you to specify web settings like host, port,
+  certification, and header.
+  The web dev config file also supports proxy settings,
+  making it possible to forward specific path requests
+  to another server. This makes it easier to develop a
+  web client that connects to dynamic endpoints on the same host. 
+  For more information, visit
+  [setting up a web development configuration file][web-config-file].
 
-## 14 May 2024: Google I/O 3.22 release
+* Development continues on the Flutter Widget Previewer tool,
+  introduced as an experimental feature in the 3.35 release.
+  For this release, the previewer better integrates with the VS Code
+  and IntelliJ IDEs (including Android Studio).
+  It's still an experimental feature.
+  For more info about the latest version, 
+  check out the [Widget Previewer tool page][].
 
-Flutter 3.22 is live! For more information,
-check out the [Flutter 3.22 umbrella blog post][3.22-umbrella]
-and the [Flutter 3.22 technical blog post][3.22-tech].
+* The Flutter 3.38 release fully supports the platform releases
+  for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
+  For the most recent info on Flutter's support for iOS,
+  visit [Flutter on latest iOS][].
 
-You might also check out the [Dart 3.4 release][] blog post.
-In particular, Dart now provides a "baked in" language macro,
-`JsonCodable`, for serializing and deserializing JSON data. 
-A future (and unspecified) Dart release will allow
-you to create your own macros.
-To learn more, check out [dart.dev/go/macros][].
+* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
+  To support this, code migration is required.
+  For more information, visit the [UIScene migration guide][].
 
-[3.22-tech]: {{site.flutter-medium}}/whats-new-in-flutter-3-22-fbde6c164fe3
-[3.22-umbrella]: {{site.flutter-medium}}/io24-5e211f708a37
-[Dart 3.4 release]: {{site.medium}}/dartlang/dart-3-4-bd8d23b4462a
-[dart.dev/go/macros]: http://dart.dev/go/macros
+* With a focus on improving Flutter's accessibility,
+  the [accessibility docs][] have also been completely reworked. 
 
-**Docs updated or added since the 3.19 release**
+* Also, don't forget to check out the [breaking changes][bc-3.38]
+  page for this release. That's where you'll find information
+  about breaking changes, code deprecations, and migration guides.
 
-* A new 7-page section on [Adaptive and Responsive design][].
-  (This replaces our previous, somewhat scattered,
-  documentation on this subject.)
-* For new-ish Flutter developer who has worked through
-  the first Flutter codelab, we've added some "what's next"
-  advice on how to move beyond that initial step.
-  Check out the [Flutter fundamentals docs][].
-* Our [Flutter install][] docs have been revamped.
-* We have three new codelabs and a new guide for the Games Toolkit.
-  To see the list of additions,
-  check out the updated [Casual Games Toolkit][] page.
-* A new section, [Conditionally bundling assets based on flavor][],
-  in the Flavors page.
-* Flutter support for Web Assembly (Wasm) has now reached stable.
-  To learn more, check out the updated
-  [Support for WebAssembly (Wasm)][] page.
-* DevTools has a new screen for evaluating deep links on Android.
-  To learn more, check out the new page, [Validate deep links][].
-* We have a new page that describes web bootstrapping for
-  Flutter SDK release 3.22 and later.
-  Check out [Flutter web app initialization][].
-* You can now provide code to transform your assets
-  into another format at runtime. To learn more,
-  check out [Transforming assets at build time][].
+Other relevant resources:
 
-**Website infrastructure**
+* [3.38 release notes and changelog][]
+* [DevTools 2.51.1 release notes][]
+* [Dart 3.10 release][] blog post
 
-* If you contribute to the website, you might have noticed
-  some recent changes. Namely, the website infrastructure
-  has been updated and the new workflow is simpler.
-  For more details, check out the [website README][].
-* You might also have noticed that the **App solutions**
-  submenu in the sidenav now has an **AI** section,
-  and an enhanced **Monetization** section,
-  to name some of the changes.
+[3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
+[accessibility docs]: /ui/accessibility
+[bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
+[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
+[Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
+[DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
+[UIScene migration guide]: /release/breaking-changes/uiscenedelegate
+[Widget Previewer tool page]: /tools/widget-previewer
+[web-config-file]: /platform-integration/web/web-dev-config-file
 
-[Adaptive and Responsive design]: /ui/adaptive-responsive
-[Casual Games Toolkit]: /resources/games-toolkit
-[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
-[Flutter fundamentals docs]: /get-started/fundamentals
-[Flutter install]: /get-started/install
-[Flutter web app initialization]: /platform-integration/web/initialization
-[website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
-[Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
-[Transforming assets at build time]: /ui/assets/asset-transformation
-[Validate deep links]: /tools/devtools/deep-links
+--- 
+
+## 13 August 2025: Release 3.35
+
+Flutter 3.35 is live! For more information,
+check out the [Flutter 3.35 technical blog post][3.35-tech].
+You might also check out the [Dart 3.9 release][] blog post.
+
+[3.35-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-35-c58ef72e3766
+[Dart 3.9 release]: {{site.medium}}/dartlang/announcing-dart-3-9-ba49e8f38298
+
+**Docs updated or added since the 3.32 release**
+
+* Hot reload is now available on the web and no longer
+  requires an experimental flag. For more information,
+  check out [hot reload][].
+
+* There is a new [Create with AI][] guide which covers
+  how you can leverage AI tools like Gemini Code Assist,
+  GeminiCLI, and the Dart and Flutter MCP Server to build
+  AI-powered features for your Flutter apps.
+
+* You can now use the [Flutter Widget Previewer][] guide
+  to help you view a preview of your Flutter widgets in
+  Chrome.
+
+* Each stable release affects which versions of
+  deployed platforms that Flutter supports.
+  For more information, visit the updated
+  [supported platforms][] page.
+
+* On Android, you can now protect sensitive content,
+  such as customer information, when you share your screen.
+  Learn more by visiting [Protect your app's sensitive content][].
+
+* Also, don't forget to check out the [breaking changes][bc-3.35]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[Flutter Widget Previewer]: /tools/widget-previewer
+[Create with AI]: /ai/create-with-ai
+[bc-3.35]: /release/breaking-changes#released-in-flutter-3-35
+[hot reload]: /tools/hot-reload
+[Protect your app's sensitive content]: /platform-integration/android/sensitive-content
+[supported platforms]: /reference/supported-platforms
 
 ---
 
@@ -171,4 +153,3 @@ For past releases, check out the
 [What's new archive][] page.
 
 [What's new archive]: /release/archive-whats-new
-

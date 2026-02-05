@@ -28,7 +28,7 @@ In addition to the standard advice for
 info for creating apps that are both
 adaptive _and_ accessible.
 
-[creating accessible apps]: /ui/accessibility-and-internationalization/accessibility
+[creating accessible apps]: /ui/accessibility
 
 ## Scroll wheel for custom widgets
 
@@ -83,10 +83,12 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
     return FocusableActionDetector(
       onFocusChange: (value) => setState(() => _hasFocus = value),
       actions: <Type, Action<Intent>>{
-        ActivateIntent: CallbackAction<Intent>(onInvoke: (intent) {
-          print('Enter or Space was pressed!');
-          return null;
-        }),
+        ActivateIntent: CallbackAction<Intent>(
+          onInvoke: (intent) {
+            print('Enter or Space was pressed!');
+            return null;
+          },
+        ),
       },
       child: Stack(
         clipBehavior: Clip.none,
@@ -100,7 +102,7 @@ class _BasicActionDetectorState extends State<BasicActionDetector> {
               bottom: -4,
               right: -4,
               child: _roundedBorder(),
-            )
+            ),
         ],
       ),
     );
@@ -126,12 +128,12 @@ a form before tabbing to the submit button:
 
 <?code-excerpt "lib/pages/focus_examples_page.dart (focus-traversal-group)"?>
 ```dart
-return Column(children: [
-  FocusTraversalGroup(
-    child: MyFormWithMultipleColumnsAndRows(),
-  ),
-  SubmitButton(),
-]);
+return Column(
+  children: [
+    FocusTraversalGroup(child: MyFormWithMultipleColumnsAndRows()),
+    SubmitButton(),
+  ],
+);
 ```
 
 Flutter has several built-in ways to traverse widgets and groups,
@@ -173,9 +175,7 @@ or a [`Focus`][] widget and listen for keyboard events:
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 400),
         child: const TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-          ),
+          decoration: InputDecoration(border: OutlineInputBorder()),
         ),
       ),
     );
@@ -208,10 +208,7 @@ Widget build(BuildContext context) {
         ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
-      child: Focus(
-        autofocus: true,
-        child: Container(),
-      ),
+      child: Focus(autofocus: true, child: Container()),
     ),
   );
 }
@@ -303,9 +300,9 @@ for standard button and text cursors.
 of the Material buttons to set the `overlayColor` to transparent.)
 
 Implement a focus state for any custom buttons or
-gesture detectors in your app. 
+gesture detectors in your app.
 If you change the default Material button styles,
-test for keyboard focus states and 
+test for keyboard focus states and
 implement your own, if needed.
 
 To change the cursor from within your custom widgets,
@@ -374,7 +371,7 @@ negative or positive value that you want.
 By switching between different
 densities, you can easily adjust your UI.
 
-![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.gif){:width="100%"}
+![Adaptive scaffold](/assets/images/docs/ui/adaptive-responsive/adaptive_scaffold.webp){:width="100%"}
 
 To set a custom visual density,
 inject the density into your `MaterialApp` theme:
@@ -382,8 +379,10 @@ inject the density into your `MaterialApp` theme:
 <?code-excerpt "lib/main.dart (visual-density)"?>
 ```dart
 double densityAmt = touchMode ? 0.0 : -1.0;
-VisualDensity density =
-    VisualDensity(horizontal: densityAmt, vertical: densityAmt);
+VisualDensity density = VisualDensity(
+  horizontal: densityAmt,
+  vertical: densityAmt,
+);
 return MaterialApp(
   theme: ThemeData(visualDensity: density),
   home: MainAppScaffold(),
@@ -421,4 +420,3 @@ see the [Material Design guide][].
 
 [Material Design guide]: {{site.material2}}/design/layout/applying-density.html#usage
 [`VisualDensity`]: {{site.api}}/flutter/material/VisualDensity-class.html
-

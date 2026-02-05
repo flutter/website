@@ -1,9 +1,6 @@
 ---
 title: Return data from a screen
 description: How to return data from a new screen.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/returning_data/"?>
@@ -35,13 +32,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Returning Data Demo'),
-      ),
+      appBar: AppBar(title: const Text('Returning Data Demo')),
       // Create the SelectionButton widget in the next step.
-      body: const Center(
-        child: SelectionButton(),
-      ),
+      body: const Center(child: SelectionButton()),
     );
   }
 }
@@ -80,7 +73,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     final result = await Navigator.push(
       context,
       // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
   }
 }
@@ -104,9 +97,7 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pick an option'),
-      ),
+      appBar: AppBar(title: const Text('Pick an option')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -128,7 +119,7 @@ class SelectionScreen extends StatelessWidget {
                 },
                 child: const Text('Nope.'),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -188,7 +179,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
   // Navigator.pop on the Selection Screen.
   final result = await Navigator.push(
     context,
-    MaterialPageRoute(builder: (context) => const SelectionScreen()),
+    MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
   );
 
   // When a BuildContext is used from a StatefulWidget, the mounted property
@@ -210,12 +201,7 @@ Future<void> _navigateAndDisplaySelection(BuildContext context) async {
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Returning Data',
-      home: HomeScreen(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Returning Data', home: HomeScreen()));
 }
 
 class HomeScreen extends StatelessWidget {
@@ -224,12 +210,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Returning Data Demo'),
-      ),
-      body: const Center(
-        child: SelectionButton(),
-      ),
+      appBar: AppBar(title: const Text('Returning Data Demo')),
+      body: const Center(child: SelectionButton()),
     );
   }
 }
@@ -259,7 +241,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     // Navigator.pop on the Selection Screen.
     final result = await Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
 
     // When a BuildContext is used from a StatefulWidget, the mounted property
@@ -272,6 +254,7 @@ class _SelectionButtonState extends State<SelectionButton> {
       ..removeCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text('$result')));
   }
+
 }
 
 class SelectionScreen extends StatelessWidget {
@@ -280,9 +263,7 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pick an option'),
-      ),
+      appBar: AppBar(title: const Text('Pick an option')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -306,7 +287,7 @@ class SelectionScreen extends StatelessWidget {
                 },
                 child: const Text('Nope.'),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -316,7 +297,7 @@ class SelectionScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/returning-data.gif" alt="Returning data demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/returning-data.webp" alt="Returning data demo" class="site-mobile-screenshot" />
 </noscript>
 
 

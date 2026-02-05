@@ -1,6 +1,9 @@
 ---
 title: Security false positives
-description: Security vulnerabilities incorrectly reported by automated static analysis tools
+description: >-
+  Security vulnerabilities incorrectly reported by
+  automated static analysis tools.
+showBreadcrumbs: false
 ---
 
 ## Introduction
@@ -69,7 +72,7 @@ simply because pure Dart code is a managed language
 where things like buffer overruns don't exist.
 
 In principle, you can create vulnerable code when using Dart FFI,
-but normal use of Dart FFI would not be prone to these issues either, 
+but normal use of Dart FFI would not be prone to these issues either,
 assuming it's used with C code that itself uses stack canary values
 appropriately.
 
@@ -145,7 +148,7 @@ HLS is Apple's streaming format,
 which defines the type of encryption that must be used for DRM;
 this isn't a vulnerability,
 as DRM doesn't protect the user's machine or data
-but instead merely provides obfuscation 
+but instead merely provides obfuscation
 to limit the user's ability to fully use their software and hardware.
 
 ### Apps can read and write to external storage

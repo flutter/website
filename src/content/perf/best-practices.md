@@ -1,10 +1,10 @@
 ---
 title: Performance best practices
-short-title: Best practices
+shortTitle: Best practices
 description: How to ensure that your Flutter app is performant.
 ---
 
-{% render docs/performance.md %}
+{% render "docs/performance.md" %}
 
 Generally, Flutter applications are performant by default,
 so you only need to avoid common pitfalls to get excellent
@@ -25,9 +25,9 @@ performant on the web:
 :::
 
 [Flutter Gallery]: {{site.gallery-archive}}
-[web-perf-1]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
-[web-perf-2]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
-[web-perf-3]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
+[web-perf-1]: {{site.flutter-blog}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[web-perf-2]: {{site.flutter-blog}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[web-perf-3]: {{site.flutter-blog}}/building-performant-flutter-widgets-3b2558aa08fa
 
 How do you design a Flutter app to most efficiently
 render your scenes? In particular, how do you ensure
@@ -90,7 +90,7 @@ For more information, check out:
 * [Performance considerations][],
   part of the [`StatefulWidget`][] API doc
 * [Widgets vs helper methods][],
-  a video from the official Flutter YouTube 
+  a video from the official Flutter YouTube
   channel that explains why widgets
   (especially widgets with `const` constructors)
   are more performant than functions.
@@ -98,11 +98,23 @@ For more information, check out:
 [`flutter_lints`]: {{site.pub-pkg}}/flutter_lints
 [`flutter_lints` migration guide]: /release/breaking-changes/flutter-lints-package#migration-guide
 [Performance considerations]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#performance-considerations
-[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/master/packages/flutter/lib/src/widgets/transitions.dart#L168
+[source code for `SlideTransition`]: {{site.repo.flutter}}/blob/main/packages/flutter/lib/src/widgets/transitions.dart#L168
 [`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
 [`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
 [`TransitionBuilder`]: {{site.api}}/flutter/widgets/TransitionBuilder.html
 [Widgets vs helper methods]: {{site.yt.watch}}?v=IOyq-eTRhvo
+
+---
+
+### Use StringBuffer for efficient string building
+
+When you need to build a string from multiple parts, especially inside a loop,
+using the `+` operator can be inefficient because it creates a new `String`
+object on each concatenation. A better approach is to use `StringBuffer`,
+which collects all the strings and concatenates them only once, when you call
+`toString()`.
+
+<YouTubeEmbed id="xSsFtDY-nOw" title="StringBuffer (Technique of the Week)"></YouTubeEmbed>
 
 ---
 
@@ -159,7 +171,7 @@ create your visual effects:
     in the same way, with the same transparency,
     you can precalculate what this overlapped,
     semi-transparent object looks like, cache it,
-    and use that instead of calling `saveLayer()`. 
+    and use that instead of calling `saveLayer()`.
     This works with any static shape you can precalculate.
   * Can you refactor your painting logic to avoid
     overlaps altogether?
@@ -234,7 +246,7 @@ Here are some tips you might find to be useful:
 
 ---
 
-### Implement grids and lists thoughtfully 
+### Implement grids and lists thoughtfully
 
 How your grids and lists are implemented
 might be causing performance problems for your app.
@@ -252,14 +264,13 @@ screen is built at startup time.
 
 For more information and examples, check out:
 
-* [Working with long lists][] in the [Cookbook][]
+* [Working with long lists][]
 * [Creating a `ListView` that loads one page at a time][]
   a community article by AbdulRahman AlHamali
-* [`Listview.builder`][] API
+* [`ListView.builder`][] API
 
-[Cookbook]: /cookbook
 [Creating a `ListView` that loads one page at a time]: {{site.medium}}/saugo360/flutter-creating-a-listview-that-loads-one-page-at-a-time-c5c91b6fabd3
-[`Listview.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
+[`ListView.builder`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html
 [Working with long lists]: /cookbook/lists/long-lists
 
 #### Avoid intrinsics
@@ -302,7 +313,7 @@ that the widget prefers, assuming no constraints.
 With this information,
 the framework determines a uniform cell size,
 and re-visits all grid cells a second time,
-telling each card what size to use. 
+telling each card what size to use.
 
 #### Debugging intrinsic passes
 
@@ -411,7 +422,7 @@ your app's performance.
   of children (such as `Column()` or `ListView()`)
   if most of the children are not visible
   on screen to avoid the build cost.
-  
+
 * Avoid overriding `operator ==` on `Widget` objects.
   While it might seem like it would help by avoiding unnecessary rebuilds,
   in practice it hurts performance because it results in O(N²) behavior.
@@ -444,4 +455,4 @@ For more performance info, check out the following resources:
 [Performance optimizations]: {{site.api}}/flutter/widgets/AnimatedBuilder-class.html#performance-optimizations
 [Performance considerations for opacity animation]: {{site.api}}/flutter/widgets/Opacity-class.html#performance-considerations-for-opacity-animation
 [`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
-[best-practices-medium]: https://medium.com/flutter/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
+[best-practices-medium]: https://blog.flutter.dev/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c

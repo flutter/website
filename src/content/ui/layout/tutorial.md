@@ -1,10 +1,8 @@
 ---
 title: Build a Flutter layout
-short-title: Layout tutorial
+shortTitle: Layout tutorial
 description: Learn how to build a layout in Flutter.
 ---
-
-{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
 :::secondary What you'll learn
 * How to lay out widgets next to each other.
@@ -16,7 +14,7 @@ This tutorial explains how to design and build layouts in Flutter.
 
 If you use the example code provided, you can build the following app.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-demo-app.png", caption:"The finished app.", width:"50%" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app." width="50%" />
 
 <figcaption class="figure-caption">
 
@@ -64,7 +62,7 @@ Ask these questions to break the layout down to its basic elements.
 Identify the larger elements. In this example, you arrange the image, title,
 buttons, and description into a column.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-sketch-intro.svg", caption:"Major elements in the layout: image, row, row, and text block", width:"50%" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/layout-sketch-intro.svg" caption="Major elements in the layout: image, row, row, and text block" width="50%" />
 
 </li>
 <li>
@@ -80,7 +78,7 @@ a column of text, a star icon, and a number.
 Its first child, the column, contains two lines of text.
 That first column might need more space.
 
-{% render docs/app-figure.md, image:"ui/layout/layout-sketch-title-block.svg", caption:"Title section with text blocks and an icon" -%}
+<DashImage figure image="ui/layout/layout-sketch-title-block.svg" caption="Title section with text blocks and an icon" />
 
 </li>
 
@@ -89,7 +87,7 @@ That first column might need more space.
 Row 2, the **Button** section, has three children: each child contains
 a column which then contains an icon and text.
 
-{% render docs/app-figure.md, image:"ui/layout/layout-sketch-button-block.svg", caption:"The Button section with three labeled buttons", width:"50%" %}
+<DashImage figure image="ui/layout/layout-sketch-button-block.svg" caption="The Button section with three labeled buttons" width="50%" />
 
   </li>
 
@@ -142,9 +140,7 @@ In this section, shell out the basic Flutter app code to start your app.
        return MaterialApp(
          title: appTitle,
          home: Scaffold(
-           appBar: AppBar(
-             title: const Text(appTitle),
-           ),
+           appBar: AppBar(title: const Text(appTitle)),
            body: const Center(
              child: Text('Hello World'),
            ),
@@ -154,8 +150,8 @@ In this section, shell out the basic Flutter app code to start your app.
    }
    ```
 
-[Set up your Flutter environment]: /get-started/install
-[new-flutter-app]: /get-started/test-drive
+[Set up your Flutter environment]: /get-started
+[new-flutter-app]: /reference/create-new-app
 
 ## Add the Title section
 
@@ -164,7 +160,7 @@ the following layout.
 
 <?code-excerpt path-base="layout/lakes"?>
 
-{% render docs/app-figure.md, image:"ui/layout/layout-sketch-title-block-unlabeled.svg", caption:"The Title section as sketch and prototype UI" %}
+<DashImage figure image="ui/layout/layout-sketch-title-block-unlabeled.svg" caption="The Title section as sketch and prototype UI" />
 
 ### Add the `TitleSection` Widget
 
@@ -173,11 +169,7 @@ Add the following code after the `MyApp` class.
 <?code-excerpt "step2/lib/main.dart (title-section)"?>
 ```dart
 class TitleSection extends StatelessWidget {
-  const TitleSection({
-    super.key,
-    required this.name,
-    required this.location,
-  });
+  const TitleSection({super.key, required this.name, required this.location});
 
   final String name;
   final String location;
@@ -198,25 +190,15 @@ class TitleSection extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 8),
                   child: Text(
                     name,
-                    style: const TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(
-                  location,
-                  style: TextStyle(
-                    color: Colors.grey[500],
-                  ),
-                ),
+                Text(location, style: TextStyle(color: Colors.grey[500])),
               ],
             ),
           ),
           /*3*/
-          Icon(
-            Icons.star,
-            color: Colors.red[500],
-          ),
+          Icon(Icons.star, color: Colors.red[500]),
           const Text('41'),
         ],
       ),
@@ -287,7 +269,7 @@ Pass the provided name and location to the `TitleSection` constructor.
 
 [automatic reformatting support]: /tools/formatting
 [hot reload]: /tools/hot-reload
-[`lib/main.dart`]: {{examples}}/layout/lakes/step2/lib/main.dart
+[`lib/main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step2/lib/main.dart
 
 ## Add the Button section
 
@@ -298,7 +280,7 @@ In this section, add the buttons that will add functionality to your app.
 The **Button** section contains three columns that use the same layout:
 an icon over a row of text.
 
-{% render docs/app-figure.md, image:"ui/layout/layout-sketch-button-block-unlabeled.svg", caption:"The Button section as sketch and prototype UI" %}
+<DashImage figure image="ui/layout/layout-sketch-button-block-unlabeled.svg" caption="The Button section as sketch and prototype UI" />
 
 Plan to distribute these columns in one row so each takes the same
 amount of space. Paint all text and icons with the primary color.
@@ -318,6 +300,7 @@ class ButtonSection extends StatelessWidget {
     final Color color = Theme.of(context).primaryColor;
     // ···
   }
+
 }
 ```
 
@@ -373,6 +356,7 @@ class ButtonWithText extends StatelessWidget {
       ],
     );
   }
+}
 ```
 
 ### Position the buttons with a `Row` widget
@@ -400,25 +384,14 @@ class ButtonSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ButtonWithText(
-            color: color,
-            icon: Icons.call,
-            label: 'CALL',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.near_me,
-            label: 'ROUTE',
-          ),
-          ButtonWithText(
-            color: color,
-            icon: Icons.share,
-            label: 'SHARE',
-          ),
+          ButtonWithText(color: color, icon: Icons.call, label: 'CALL'),
+          ButtonWithText(color: color, icon: Icons.near_me, label: 'ROUTE'),
+          ButtonWithText(color: color, icon: Icons.share, label: 'SHARE'),
         ],
       ),
     );
   }
+
 }
 
 class ButtonWithText extends StatelessWidget {
@@ -461,7 +434,7 @@ Add the button section to the `children` list.
 
 In this section, add the text description to this app.
 
-{% render docs/app-figure.md, image:"ui/layout/layout-sketch-add-text-block.svg", caption:"The text block as sketch and prototype UI" %}
+<DashImage figure image="ui/layout/layout-sketch-add-text-block.svg" caption="The text block as sketch and prototype UI" />
 
 <?code-excerpt path-base="layout/lakes"?>
 
@@ -472,10 +445,7 @@ Add the following code as a separate widget after the `ButtonSection` widget.
 <?code-excerpt "step4/lib/main.dart (text-section)"?>
 ```dart
 class TextSection extends StatelessWidget {
-  const TextSection({
-    super.key,
-    required this.description,
-  });
+  const TextSection({super.key, required this.description});
 
   final String description;
 
@@ -483,10 +453,7 @@ class TextSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(32),
-      child: Text(
-        description,
-        softWrap: true,
-      ),
+      child: Text(description, softWrap: true),
     );
   }
 }
@@ -517,7 +484,7 @@ the text of the location description.
 +         'degrees Celsius in the summer. Activities enjoyed here '
 +         'include rowing, and riding the summer toboggan run.',
 +   ),
-  ], 
+  ],
 ```
 
 ## Add the Image section
@@ -573,12 +540,7 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      image,
-      width: 600,
-      height: 240,
-      fit: BoxFit.cover,
-    );
+    return Image.asset(image, width: 600, height: 240, fit: BoxFit.cover);
   }
 }
 ```
@@ -607,7 +569,7 @@ Set the `image` property to the path of the image you added in
 
 That's it! When you hot reload the app, your app should look like this.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/layout-demo-app.png", caption:"The finished app", width:"50%" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/layout-demo-app.png" caption="The finished app" width="50%" />
 
 ## Resources
 
@@ -617,9 +579,9 @@ You can access the resources used in this tutorial from these locations:
 **Image:** [ch-photo][]<br>
 **Pubspec:** [`pubspec.yaml`][]<br>
 
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/lib/main.dart
 [ch-photo]: https://unsplash.com/photos/red-and-gray-tents-in-grass-covered-mountain-5Rhl-kSRydQ
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
 
 ## Next Steps
 

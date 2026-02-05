@@ -11,29 +11,11 @@ updates:
       - "auto.dependencies"
       - "auto.github-action"
       - "lang.yaml"
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "daily"
-    allow:
-      - dependency-type: "production"
-    labels:
-      - "auto.dependencies"
-      - "auto.npm"
-      - "lang.javascript"
-  # Automatically update submodules
-  - package-ecosystem: 'gitsubmodule'
-    directory: '/'
-    schedule:
-      interval: 'daily'
-    labels:
-      - "auto.dependencies"
-      - "auto.submodules"
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
     directories:
       - "/"
-      - "/tool/flutter_site"
+      - "/tool/dash_site"
     schedule:
       interval: "daily"
     labels:
@@ -60,7 +42,6 @@ updates:
       - "/examples/animation/animate3"
       - "/examples/animation/animate4"
       - "/examples/animation/animate5"
-      - "/examples/animation/implicit"
       - "/examples/cookbook/animation/animated_container"
       - "/examples/cookbook/animation/opacity_animation"
       - "/examples/cookbook/animation/page_route_animation"
@@ -133,7 +114,6 @@ updates:
       - "/examples/data-and-backend/json"
       - "/examples/deployment/obfuscate"
       - "/examples/example_utils"
-      - "/examples/get-started/codelab_web"
       - "/examples/get-started/flutter-for/android_devs"
       - "/examples/get-started/flutter-for/declarative"
       - "/examples/get-started/flutter-for/ios_devs"

@@ -1,9 +1,6 @@
 ---
 title: Create lists with different types of items
 description: How to implement a list that contains different types of assets.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/mixed_list/"?>
@@ -48,10 +45,7 @@ class HeadingItem implements ListItem {
 
   @override
   Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: Theme.of(context).textTheme.headlineSmall,
-    );
+    return Text(heading, style: Theme.of(context).textTheme.headlineSmall);
   }
 
   @override
@@ -150,9 +144,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView.builder(
           // Let the ListView know how many items it needs to build.
           itemCount: items.length,
@@ -189,10 +181,7 @@ class HeadingItem implements ListItem {
 
   @override
   Widget buildTitle(BuildContext context) {
-    return Text(
-      heading,
-      style: Theme.of(context).textTheme.headlineSmall,
-    );
+    return Text(heading, style: Theme.of(context).textTheme.headlineSmall);
   }
 
   @override

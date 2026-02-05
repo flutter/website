@@ -24,4 +24,5 @@ class _ExpandableFabState extends State<ExpandableFab> {
     return const SizedBox();
   }
 }
+
 // #enddocregion ExpandableFab

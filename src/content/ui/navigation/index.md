@@ -10,7 +10,7 @@ requirements should also use the [`Router`][] to correctly handle deep links on
 Android and iOS, and to stay in sync with the address bar when the app is
 running on the web.
 
-To configure your Android or iOS application to handle deep links, see 
+To configure your Android or iOS application to handle deep links, see
 [Deep linking][].
 
 ## Using the Navigator
@@ -20,53 +20,52 @@ animations for the target platform. To navigate to a new screen, access the
 `Navigator` through the route's `BuildContext` and call imperative methods such
 as `push()` `or pop()`:
 
+<?code-excerpt "ui/navigation/lib/navigator_basic.dart (push-route)"?>
 ```dart
+child: const Text('Open second screen'),
 onPressed: () {
   Navigator.of(context).push(
-    MaterialPageRoute(
-      builder: (context) => const SongScreen(song: song),
+    MaterialPageRoute<void>(
+      builder: (context) => const SecondScreen(),
     ),
   );
 },
-child: Text(song.name),
 ```
-
 
 Because `Navigator` keeps a stack of `Route` objects (representing the history
 stack), The `push()` method also takes a `Route` object. The `MaterialPageRoute`
 object is a subclass of `Route` that specifies the transition animations for
 Material Design. For more examples of how to use the `Navigator`, follow the
-[navigation recipes][] from the Flutter Cookbook or visit the [Navigator API
-documentation][`Navigator`].
+[navigation recipes][] from the Flutter Cookbook or
+visit the [Navigator API documentation][`Navigator`].
 
 ## Using named routes
 
 :::note
 We don't recommend using named routes for most applications.
-For more information, see the Limitations section below.
+Instead, use [go_router][] (or another routing package) or
+use `Navigator` with [`MaterialPageRoute`][].
+For more information, see the [Limitations](#limitations) section.
 :::
 
 Applications with simple navigation and deep linking requirements can use the
 `Navigator` for navigation and the [`MaterialApp.routes`][] parameter for deep
 links:
 
+<?code-excerpt "ui/navigation/lib/navigator_named_routes.dart (push-route)"?>
 ```dart
-@override
-Widget build(BuildContext context) {
-  return MaterialApp(
-    routes: {
-      '/': (context) => HomeScreen(),
-      '/details': (context) => DetailScreen(),
-    },
-  );
-}
+child: const Text('Open second screen'),
+onPressed: () {
+  Navigator.pushNamed(context, '/second');
+},
 ```
 
-Routes specified here are called _named routes_. For a complete example, follow
-the [Navigate with named routes][] recipe from the Flutter Cookbook.
+`/second` represents a _named route_ that was declared in the
+`MaterialApp.routes` list. For a complete example, follow the
+[Navigate with named routes][] recipe from the Flutter Cookbook.
 
 
-### Limitations
+### Limitations {: #limitations}
 
 Although named routes can handle deep links, the behavior is always the same and
 can't be customized. When a new deep link is received by the platform, Flutter
@@ -74,7 +73,8 @@ pushes a new `Route` onto the Navigator regardless of where the user currently i
 
 Flutter also doesn't support the browser forward button for applications using
 named routes. For these reasons, we don't recommend using named routes in most
-applications.
+applications. Instead, use a routing package like [go_router][] or
+use `Navigator` with [`MaterialPageRoute`][].
 
 ## Using the Router
 
@@ -86,20 +86,17 @@ new deep link.
 
 To use the Router, switch to the `router` constructor on `MaterialApp` or
 `CupertinoApp` and provide it with a `Router` configuration. Routing packages,
-such as [go_router][], typically provide a
-configuration for you. For example:
+such as [go_router][], typically provide route configuration and routes
+can be used as follows:
 
+<?code-excerpt "ui/navigation/lib/navigator_router.dart (push-route)"?>
 ```dart
-MaterialApp.router(
-  routerConfig: GoRouter(
-    // …
-  )
-);
+child: const Text('Open second screen'),
+onPressed: () => context.go('/second'),
 ```
 
 Because packages like go_router are _declarative_, they will always display the
 same screen(s) when a deep link is received.
-
 
 :::note Note for advanced developers
 If you prefer not to use a routing package
@@ -163,12 +160,12 @@ resources:
   Medium, describes how to use the `Router` widget directly, without
   a routing package.
 * The [Router design document][] contains the motivation and design of the
-  Router` API.
+  `Router` API.
 
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Router`]: {{site.api}}/flutter/widgets/Router-class.html
 [Deep linking]: /ui/navigation/deep-linking
-[navigation recipes]: /cookbook#navigation
+[navigation recipes]: /cookbook/navigation
 [`MaterialApp.routes`]: {{site.api}}/flutter/material/MaterialApp/routes.html
 [Navigate with named routes]: /cookbook/navigation/named-routes
 [go_router]: {{site.pub}}/packages/go_router
@@ -178,3 +175,4 @@ resources:
 [Understanding navigation]: https://material.io/design/navigation/understanding-navigation.html
 [Learning Flutter's new navigation and routing system]: {{site.medium}}/flutter/learning-flutters-new-navigation-and-routing-system-7c9068155ade
 [Router design document]: {{site.main-url}}/go/navigator-with-router
+[`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

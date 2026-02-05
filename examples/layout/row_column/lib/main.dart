@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
+        appBar: AppBar(title: const Text('Flutter layout demo')),
         // Change to buildColumn() for the other column example
         body: Center(child: buildRow()),
       ),

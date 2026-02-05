@@ -1,7 +1,7 @@
 ---
 title: Hero animations
 description: How to animate a widget to fly between two screens.
-short-title: Hero
+shortTitle: Hero
 ---
 
 :::secondary What you'll learn
@@ -23,7 +23,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
 
-{% ytEmbed 'Be9UH1kXFDw', 'Hero | Flutter widget of the week' %}
+<YouTubeEmbed id="Be9UH1kXFDw" title="Hero | Flutter widget of the week"></YouTubeEmbed>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -67,7 +67,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-{% ytEmbed 'CEcFnqRDfgw', 'Standard hero animation in Flutter' %}
+<YouTubeEmbed id="CEcFnqRDfgw" title="Standard hero animation in Flutter"></YouTubeEmbed>
 
 **Radial hero animations**<br>
 
@@ -82,7 +82,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-{% ytEmbed 'LWKENpwDKiM', 'Radial hero animation in Flutter' %}
+<YouTubeEmbed id="LWKENpwDKiM" title="Radial hero animation in Flutter"></YouTubeEmbed>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -268,7 +268,7 @@ using Flutter's hero widget. When using `MaterialPageRoute`
 to specify the new route, the image flies along a curved path,
 as described by the [Material Design motion spec][].
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the [hero_animation][].
 
 To run the example:
@@ -286,11 +286,7 @@ The custom PhotoHero class maintains the hero,
 and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
-<div class="text-center mb-4">
-
-  ![PhotoHero class widget tree](/assets/images/docs/ui/animations/photohero-class.png)
-
-</div>
+<DashImage figure image="ui/animations/photohero-class.png" alt="PhotoHero class widget tree" />
 
 Here's the code:
 
@@ -485,7 +481,7 @@ rectangular clips yield a rectangle that's the same size as the hero
 widget. In other words, at the end of the transition the image is no
 longer clipped.
 
-[Create a new Flutter example][] and
+[Create a new Flutter app][] and
 update it using the files from the
 [radial_hero_animation][] GitHub directory.
 
@@ -514,7 +510,7 @@ class Photo extends StatelessWidget {
   Widget build(BuildContext context) {
     return [!Material(!]
       // Slightly opaque color appears where the image has transparency.
-      [!color: Theme.of(context).primaryColor.withOpacity(0.25),!]
+      [!color: Theme.of(context).primaryColor.withValues(alpha: 0.25),!]
       child: [!InkWell(!]
         onTap: [!onTap,!]
         child: [!Image.asset(!]
@@ -552,11 +548,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-<div class="text-center mb-4">
-
-  ![RadialExpansion widget tree](/assets/images/docs/ui/animations/radial-expansion-class.png)
-
-</div>
+<DashImage figure image="ui/animations/radial-expansion-class.png" alt="RadialExpansion widget tree" />
 
 Here's the code:
 
@@ -569,8 +561,8 @@ class RadialExpansion extends StatelessWidget {
   }) : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
-  final clipRectSize;
-  final Widget child;
+  final double clipRectSize;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -622,7 +614,7 @@ Key information:
 [Building Layouts in Flutter]: /ui/layout
 [`ClipOval`]: {{site.api}}/flutter/widgets/ClipOval-class.html
 [ClipRect]: {{site.api}}/flutter/widgets/ClipRect-class.html
-[Create a new Flutter example]: /get-started/test-drive
+[Create a new Flutter app]: /reference/create-new-app
 [`createRectTween`]: {{site.api}}/flutter/widgets/CreateRectTween.html
 [`debugPaintSizeEnabled`]: /tools/devtools/inspector#debugging-layout-issues-visually
 [`Hero`]: {{site.api}}/flutter/widgets/Hero-class.html

@@ -3,7 +3,7 @@ title: Improving rendering performance
 description: How to measure and evaluate your app's rendering performance.
 ---
 
-{% render docs/performance.md %}
+{% render "docs/performance.md" %}
 
 Rendering animations in your app is one of the most cited
 topics of interest when it comes to measuring performance.
@@ -39,11 +39,11 @@ see the following docs:
 
 ## Mobile-only advice
 
-Do you see noticeable jank on your mobile app, but only on
-the first run of an animation? If so, see
-[Reduce shader animation jank on mobile][].
+Do you see noticeable jank on your mobile app, but only on the first run of an
+animation? To avoid this, make sure you're using Flutter's default
+graphic renderer, [Impeller][].
 
-[Reduce shader animation jank on mobile]: /perf/shader
+[Impeller]: /perf/impeller
 
 ## Web-only advice
 
@@ -56,10 +56,10 @@ app on the web:
 * [Building performant Flutter widgets][]
 
 
-[Building performant Flutter widgets]: {{site.flutter-medium}}/building-performant-flutter-widgets-3b2558aa08fa
+[Building performant Flutter widgets]: {{site.flutter-blog}}/building-performant-flutter-widgets-3b2558aa08fa
 [Flutter's build modes]: /testing/build-modes
 [Flutter performance profiling]: /perf/ui-performance
-[images]: {{site.flutter-medium}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
+[images]: {{site.flutter-blog}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [Performance best practices]: /perf/best-practices
-[shaking]: {{site.flutter-medium}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
+[shaking]: {{site.flutter-blog}}/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674
 [Show performance data]: /tools/android-studio#show-performance-data

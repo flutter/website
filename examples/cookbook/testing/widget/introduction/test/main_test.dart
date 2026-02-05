@@ -22,11 +22,7 @@ void main() {
 
 // #docregion widget
 class MyWidget extends StatelessWidget {
-  const MyWidget({
-    super.key,
-    required this.title,
-    required this.message,
-  });
+  const MyWidget({super.key, required this.title, required this.message});
 
   final String title;
   final String message;
@@ -36,14 +32,11 @@ class MyWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: Center(
-          child: Text(message),
-        ),
+        appBar: AppBar(title: Text(title)),
+        body: Center(child: Text(message)),
       ),
     );
   }
 }
+
 // #enddocregion widget

@@ -43,10 +43,7 @@ class ListDemo extends StatelessWidget {
   }
 }
 
-enum ListDemoType {
-  oneLine,
-  twoLine,
-}
+enum ListDemoType { oneLine, twoLine }
 
 void main() {
   runApp(const ListDemo(type: ListDemoType.twoLine));

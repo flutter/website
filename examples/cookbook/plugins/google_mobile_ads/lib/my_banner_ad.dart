@@ -18,10 +18,7 @@ class MyBannerAdWidget extends StatefulWidget {
       : 'ca-app-pub-3940256099942544/2934735716';
   // #enddocregion adUnitId
 
-  MyBannerAdWidget({
-    super.key,
-    this.adSize = AdSize.banner,
-  });
+  MyBannerAdWidget({super.key, this.adSize = AdSize.banner});
 
   @override
   State<MyBannerAdWidget> createState() => _MyBannerAdWidgetState();
@@ -40,7 +37,7 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
         height: widget.adSize.height.toDouble(),
         child: _bannerAd == null
             // Nothing to render yet.
-            ? SizedBox()
+            ? const SizedBox()
             // The actual ad.
             : AdWidget(ad: _bannerAd!),
       ),
@@ -91,5 +88,6 @@ class _MyBannerAdWidgetState extends State<MyBannerAdWidget> {
     // Start loading.
     bannerAd.load();
   }
+
   // #enddocregion loadAd
 }

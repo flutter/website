@@ -1,16 +1,12 @@
 ---
 title: Understanding constraints
 description: Flutter's model for widget constraints, sizing, positioning, and how they interact.
-toc: false
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
+showToc: false
 ---
 
 <?code-excerpt path-base="layout/constraints/"?>
 
-<img src='/assets/images/docs/ui/layout/article-hero-image.png'
-     class="mw-100" alt="Hero image from the article">
+<img src='/assets/images/docs/ui/layout/article-hero-image.png' alt="Hero image from the article">
 
 :::note
 If you are experiencing specific layout errors,
@@ -61,7 +57,7 @@ For example, if a composed widget contains a column
 with some padding, and wants to lay out its two children
 as follows:
 
-<img src='/assets/images/docs/ui/layout/children.png' class="mw-100" alt="Visual layout">
+<img src='/assets/images/docs/ui/layout/children.png' alt="Visual layout">
 
 The negotiation goes something like this:
 
@@ -128,7 +124,7 @@ pass their constraint on to their children.
 
 Generally, there are three kinds of boxes,
 in terms of how they handle their constraints:
-  
+
 * Those that try to be as big as possible.
   For example, the boxes used by [`Center`][] and
   [`ListView`][].
@@ -148,7 +144,7 @@ for instance, it tries to honor that and be that particular size.
 Others, for example [`Row`][] and [`Column`][] (flex boxes)
 vary based on the constraints they are given,
 as described in the [Flex](#flex) section.
-  
+
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Column`]: {{site.api}}/flutter/widgets/Column-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
@@ -230,10 +226,7 @@ abstract class Example extends StatelessWidget {
 //////////////////////////////////////////////////
 
 class FlutterLayoutArticle extends StatefulWidget {
-  const FlutterLayoutArticle(
-    this.examples, {
-    super.key,
-  });
+  const FlutterLayoutArticle(this.examples, {super.key});
 
   final List<Example> examples;
 
@@ -283,10 +276,14 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Expanded(
-                      child: ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: double.infinity, height: double.infinity),
-                          child: widget.examples[count - 1])),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints.tightFor(
+                        width: double.infinity,
+                        height: double.infinity,
+                      ),
+                      child: widget.examples[count - 1],
+                    ),
+                  ),
                   Container(
                     height: 50,
                     width: double.infinity,
@@ -321,8 +318,9 @@ class _FlutterLayoutArticleState extends State<FlutterLayoutArticle> {
                               Text(
                                 explanation,
                                 style: TextStyle(
-                                    color: Colors.blue[900],
-                                    fontStyle: FontStyle.italic),
+                                  color: Colors.blue[900],
+                                  fontStyle: FontStyle.italic,
+                                ),
                               ),
                             ],
                           ),
@@ -406,7 +404,8 @@ class Example1 extends Example {
   final code = 'Container(color: red)';
 
   @override
-  final explanation = 'The screen is the parent of the Container, '
+  final explanation =
+      'The screen is the parent of the Container, '
       'and it forces the Container to be exactly the same size as the screen.'
       '\n\n'
       'So the Container fills the screen and paints it red.';
@@ -443,7 +442,8 @@ class Example3 extends Example {
   const Example3({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: Container(width: 100, height: 100, color: red))';
   @override
   final String explanation =
@@ -455,9 +455,7 @@ class Example3 extends Example {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(width: 100, height: 100, color: red),
-    );
+    return Center(child: Container(width: 100, height: 100, color: red));
   }
 }
 
@@ -467,7 +465,8 @@ class Example4 extends Example {
   const Example4({super.key});
 
   @override
-  final code = 'Align(\n'
+  final code =
+      'Align(\n'
       '   alignment: Alignment.bottomRight,\n'
       '   child: Container(width: 100, height: 100, color: red))';
   @override
@@ -492,7 +491,8 @@ class Example5 extends Example {
   const Example5({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: Container(\n'
       '              color: red,\n'
       '              width: double.infinity,\n'
@@ -509,7 +509,10 @@ class Example5 extends Example {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          width: double.infinity, height: double.infinity, color: red),
+        width: double.infinity,
+        height: double.infinity,
+        color: red,
+      ),
     );
   }
 }
@@ -536,9 +539,7 @@ class Example6 extends Example {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(color: red),
-    );
+    return Center(child: Container(color: red));
   }
 }
 
@@ -548,7 +549,8 @@ class Example7 extends Example {
   const Example7({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: Container(color: red\n'
       '      child: Container(color: green, width: 30, height: 30)))';
   @override
@@ -583,7 +585,8 @@ class Example8 extends Example {
   const Example8({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: Container(color: red\n'
       '      padding: const EdgeInsets.all(20),\n'
       '      child: Container(color: green, width: 30, height: 30)))';
@@ -611,7 +614,8 @@ class Example9 extends Example {
   const Example9({super.key});
 
   @override
-  final code = 'ConstrainedBox(\n'
+  final code =
+      'ConstrainedBox(\n'
       '   constraints: BoxConstraints(\n'
       '              minWidth: 70, minHeight: 70,\n'
       '              maxWidth: 150, maxHeight: 150),\n'
@@ -645,7 +649,8 @@ class Example10 extends Example {
   const Example10({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: ConstrainedBox(\n'
       '      constraints: BoxConstraints(\n'
       '                 minWidth: 70, minHeight: 70,\n'
@@ -681,7 +686,8 @@ class Example11 extends Example {
   const Example11({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: ConstrainedBox(\n'
       '      constraints: BoxConstraints(\n'
       '                 minWidth: 70, minHeight: 70,\n'
@@ -716,7 +722,8 @@ class Example12 extends Example {
   const Example12({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: ConstrainedBox(\n'
       '      constraints: BoxConstraints(\n'
       '                 minWidth: 70, minHeight: 70,\n'
@@ -751,7 +758,8 @@ class Example13 extends Example {
   const Example13({super.key});
 
   @override
-  final code = 'UnconstrainedBox(\n'
+  final code =
+      'UnconstrainedBox(\n'
       '   child: Container(color: red, width: 20, height: 50));';
   @override
   final String explanation =
@@ -772,7 +780,8 @@ class Example14 extends Example {
   const Example14({super.key});
 
   @override
-  final code = 'UnconstrainedBox(\n'
+  final code =
+      'UnconstrainedBox(\n'
       '   child: Container(color: red, width: 4000, height: 50));';
   @override
   final String explanation =
@@ -796,7 +805,8 @@ class Example15 extends Example {
   const Example15({super.key});
 
   @override
-  final code = 'OverflowBox(\n'
+  final code =
+      'OverflowBox(\n'
       '   minWidth: 0,'
       '   minHeight: 0,'
       '   maxWidth: double.infinity,'
@@ -830,7 +840,8 @@ class Example16 extends Example {
   const Example16({super.key});
 
   @override
-  final code = 'UnconstrainedBox(\n'
+  final code =
+      'UnconstrainedBox(\n'
       '   child: Container(color: Colors.red, width: double.infinity, height: 100));';
   @override
   final String explanation =
@@ -856,12 +867,14 @@ class Example17 extends Example {
   const Example17({super.key});
 
   @override
-  final code = 'UnconstrainedBox(\n'
+  final code =
+      'UnconstrainedBox(\n'
       '   child: LimitedBox(maxWidth: 100,\n'
       '      child: Container(color: Colors.red,\n'
       '                       width: double.infinity, height: 100));';
   @override
-  final String explanation = 'Here you won\'t get an error anymore, '
+  final String explanation =
+      'Here you won\'t get an error anymore, '
       'because when the LimitedBox is given an infinite size by the UnconstrainedBox, '
       'it passes a maximum width of 100 down to its child.'
       '\n\n'
@@ -892,7 +905,8 @@ class Example18 extends Example {
   const Example18({super.key});
 
   @override
-  final code = 'FittedBox(\n'
+  final code =
+      'FittedBox(\n'
       '   child: Text(\'Some Example Text.\'));';
   @override
   final String explanation =
@@ -905,9 +919,7 @@ class Example18 extends Example {
 
   @override
   Widget build(BuildContext context) {
-    return const FittedBox(
-      child: Text('Some Example Text.'),
-    );
+    return const FittedBox(child: Text('Some Example Text.'));
   }
 }
 
@@ -917,7 +929,8 @@ class Example19 extends Example {
   const Example19({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: FittedBox(\n'
       '      child: Text(\'Some Example Text.\')));';
   @override
@@ -931,11 +944,7 @@ class Example19 extends Example {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: FittedBox(
-        child: Text('Some Example Text.'),
-      ),
-    );
+    return const Center(child: FittedBox(child: Text('Some Example Text.')));
   }
 }
 
@@ -945,7 +954,8 @@ class Example20 extends Example {
   const Example20({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: FittedBox(\n'
       '      child: Text(\'…\')));';
   @override
@@ -960,7 +970,8 @@ class Example20 extends Example {
     return const Center(
       child: FittedBox(
         child: Text(
-            'This is some very very very large text that is too big to fit a regular screen in a single line.'),
+          'This is some very very very large text that is too big to fit a regular screen in a single line.',
+        ),
       ),
     );
   }
@@ -972,10 +983,12 @@ class Example21 extends Example {
   const Example21({super.key});
 
   @override
-  final code = 'Center(\n'
+  final code =
+      'Center(\n'
       '   child: Text(\'…\'));';
   @override
-  final String explanation = 'If, however, you remove the FittedBox, '
+  final String explanation =
+      'If, however, you remove the FittedBox, '
       'the Text gets its maximum width from the screen, '
       'and breaks the line so that it fits the screen.';
 
@@ -983,7 +996,8 @@ class Example21 extends Example {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-          'This is some very very very large text that is too big to fit a regular screen in a single line.'),
+        'This is some very very very large text that is too big to fit a regular screen in a single line.',
+      ),
     );
   }
 }
@@ -994,7 +1008,8 @@ class Example22 extends Example {
   const Example22({super.key});
 
   @override
-  final code = 'FittedBox(\n'
+  final code =
+      'FittedBox(\n'
       '   child: Container(\n'
       '      height: 20, width: double.infinity));';
   @override
@@ -1005,11 +1020,7 @@ class Example22 extends Example {
   @override
   Widget build(BuildContext context) {
     return FittedBox(
-      child: Container(
-        height: 20,
-        width: double.infinity,
-        color: Colors.red,
-      ),
+      child: Container(height: 20, width: double.infinity, color: Colors.red),
     );
   }
 }
@@ -1020,7 +1031,8 @@ class Example23 extends Example {
   const Example23({super.key});
 
   @override
-  final code = 'Row(children:[\n'
+  final code =
+      'Row(children:[\n'
       '   Container(color: red, child: Text(\'Hello!\'))\n'
       '   Container(color: green, child: Text(\'Goodbye!\'))]';
   @override
@@ -1036,8 +1048,14 @@ class Example23 extends Example {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(color: red, child: const Text('Hello!', style: big)),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: red,
+          child: const Text('Hello!', style: big),
+        ),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1049,7 +1067,8 @@ class Example24 extends Example {
   const Example24({super.key});
 
   @override
-  final code = 'Row(children:[\n'
+  final code =
+      'Row(children:[\n'
       '   Container(color: red, child: Text(\'…\'))\n'
       '   Container(color: green, child: Text(\'Goodbye!\'))]';
   @override
@@ -1070,7 +1089,10 @@ class Example24 extends Example {
             style: big,
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1082,7 +1104,8 @@ class Example25 extends Example {
   const Example25({super.key});
 
   @override
-  final code = 'Row(children:[\n'
+  final code =
+      'Row(children:[\n'
       '   Expanded(\n'
       '       child: Container(color: red, child: Text(\'…\')))\n'
       '   Container(color: green, child: Text(\'Goodbye!\'))]';
@@ -1109,7 +1132,10 @@ class Example25 extends Example {
             ),
           ),
         ),
-        Container(color: green, child: const Text('Goodbye!', style: big)),
+        Container(
+          color: green,
+          child: const Text('Goodbye!', style: big),
+        ),
       ],
     );
   }
@@ -1121,7 +1147,8 @@ class Example26 extends Example {
   const Example26({super.key});
 
   @override
-  final code = 'Row(children:[\n'
+  final code =
+      'Row(children:[\n'
       '   Expanded(\n'
       '       child: Container(color: red, child: Text(\'…\')))\n'
       '   Expanded(\n'
@@ -1149,10 +1176,7 @@ class Example26 extends Example {
         Expanded(
           child: Container(
             color: green,
-            child: const Text(
-              'Goodbye!',
-              style: big,
-            ),
+            child: const Text('Goodbye!', style: big),
           ),
         ),
       ],
@@ -1166,7 +1190,8 @@ class Example27 extends Example {
   const Example27({super.key});
 
   @override
-  final code = 'Row(children:[\n'
+  final code =
+      'Row(children:[\n'
       '   Flexible(\n'
       '       child: Container(color: red, child: Text(\'…\')))\n'
       '   Flexible(\n'
@@ -1198,10 +1223,7 @@ class Example27 extends Example {
         Flexible(
           child: Container(
             color: green,
-            child: const Text(
-              'Goodbye!',
-              style: big,
-            ),
+            child: const Text('Goodbye!', style: big),
           ),
         ),
       ],
@@ -1215,7 +1237,8 @@ class Example28 extends Example {
   const Example28({super.key});
 
   @override
-  final code = 'Scaffold(\n'
+  final code =
+      'Scaffold(\n'
       '   body: Container(color: blue,\n'
       '   child: Column(\n'
       '      children: [\n'
@@ -1237,12 +1260,7 @@ class Example28 extends Example {
     return Scaffold(
       body: Container(
         color: blue,
-        child: const Column(
-          children: [
-            Text('Hello!'),
-            Text('Goodbye!'),
-          ],
-        ),
+        child: const Column(children: [Text('Hello!'), Text('Goodbye!')]),
       ),
     );
   }
@@ -1254,7 +1272,8 @@ class Example29 extends Example {
   const Example29({super.key});
 
   @override
-  final code = 'Scaffold(\n'
+  final code =
+      'Scaffold(\n'
       '   body: Container(color: blue,\n'
       '   child: SizedBox.expand(\n'
       '      child: Column(\n'
@@ -1276,12 +1295,7 @@ class Example29 extends Example {
       body: SizedBox.expand(
         child: Container(
           color: blue,
-          child: const Column(
-            children: [
-              Text('Hello!'),
-              Text('Goodbye!'),
-            ],
-          ),
+          child: const Column(children: [Text('Hello!'), Text('Goodbye!')]),
         ),
       ),
     );
@@ -1300,7 +1314,7 @@ The examples are explained in the following sections.
 
 ### Example 1
 
-<img src='/assets/images/docs/ui/layout/layout-1.png' class="mw-100" alt="Example 1 layout">
+<img src='/assets/images/docs/ui/layout/layout-1.png' alt="Example 1 layout">
 
 <?code-excerpt "lib/main.dart (Example1)" replace="/(return |;)//g"?>
 ```dart
@@ -1314,7 +1328,7 @@ So the `Container` fills the screen and paints it red.
 
 ### Example 2
 
-<img src='/assets/images/docs/ui/layout/layout-2.png' class="mw-100" alt="Example 2 layout">
+<img src='/assets/images/docs/ui/layout/layout-2.png' alt="Example 2 layout">
 
 <?code-excerpt "lib/main.dart (Example2)" replace="/(return |;)//g"?>
 ```dart
@@ -1329,13 +1343,11 @@ So the `Container` fills the screen.
 
 ### Example 3
 
-<img src='/assets/images/docs/ui/layout/layout-3.png' class="mw-100" alt="Example 3 layout">
+<img src='/assets/images/docs/ui/layout/layout-3.png' alt="Example 3 layout">
 
 <?code-excerpt "lib/main.dart (Example3)" replace="/(return |;)//g"?>
 ```dart
-Center(
-  child: Container(width: 100, height: 100, color: red),
-)
+Center(child: Container(width: 100, height: 100, color: red))
 ```
 
 The screen forces the `Center` to be exactly the same size
@@ -1347,7 +1359,7 @@ can indeed be 100 × 100.
 
 ### Example 4
 
-<img src='/assets/images/docs/ui/layout/layout-4.png' class="mw-100" alt="Example 4 layout">
+<img src='/assets/images/docs/ui/layout/layout-4.png' alt="Example 4 layout">
 
 <?code-excerpt "lib/main.dart (Example4)" replace="/(return |;)//g"?>
 ```dart
@@ -1367,13 +1379,16 @@ available space.
 
 ### Example 5
 
-<img src='/assets/images/docs/ui/layout/layout-5.png' class="mw-100" alt="Example 5 layout">
+<img src='/assets/images/docs/ui/layout/layout-5.png' alt="Example 5 layout">
 
 <?code-excerpt "lib/main.dart (Example5)" replace="/(return |;)//g"?>
 ```dart
 Center(
   child: Container(
-      width: double.infinity, height: double.infinity, color: red),
+    width: double.infinity,
+    height: double.infinity,
+    color: red,
+  ),
 )
 ```
 
@@ -1387,13 +1402,11 @@ it just fills the screen.
 
 ### Example 6
 
-<img src='/assets/images/docs/ui/layout/layout-6.png' class="mw-100" alt="Example 6 layout">
+<img src='/assets/images/docs/ui/layout/layout-6.png' alt="Example 6 layout">
 
 <?code-excerpt "lib/main.dart (Example6)" replace="/(return |;)//g"?>
 ```dart
-Center(
-  child: Container(color: red),
-)
+Center(child: Container(color: red))
 ```
 
 The screen forces the `Center` to be exactly the
@@ -1414,7 +1427,7 @@ how it behaves, depending on the circumstances.
 
 ### Example 7
 
-<img src='/assets/images/docs/ui/layout/layout-7.png' class="mw-100" alt="Example 7 layout">
+<img src='/assets/images/docs/ui/layout/layout-7.png' alt="Example 7 layout">
 
 <?code-excerpt "lib/main.dart (Example7)" replace="/(return |;)//g"?>
 ```dart
@@ -1445,7 +1458,7 @@ entirely covers the red `Container`.
 
 ### Example 8
 
-<img src='/assets/images/docs/ui/layout/layout-8.png' class="mw-100" alt="Example 8 layout">
+<img src='/assets/images/docs/ui/layout/layout-8.png' alt="Example 8 layout">
 
 <?code-excerpt "lib/main.dart (Example8)" replace="/(return |;)//g"?>
 ```dart
@@ -1467,7 +1480,7 @@ in the previous example.
 
 ### Example 9
 
-<img src='/assets/images/docs/ui/layout/layout-9.png' class="mw-100" alt="Example 9 layout">
+<img src='/assets/images/docs/ui/layout/layout-9.png' alt="Example 9 layout">
 
 <?code-excerpt "lib/main.dart (Example9)" replace="/(return |;)//g"?>
 ```dart
@@ -1494,7 +1507,7 @@ to also assume the size of the screen, thus ignoring its
 
 ### Example 10
 
-<img src='/assets/images/docs/ui/layout/layout-10.png' class="mw-100" alt="Example 10 layout">
+<img src='/assets/images/docs/ui/layout/layout-10.png' alt="Example 10 layout">
 
 <?code-excerpt "lib/main.dart (Example10)" replace="/(return |;)//g"?>
 ```dart
@@ -1521,7 +1534,7 @@ so it ends up having 70 (the minimum).
 
 ### Example 11
 
-<img src='/assets/images/docs/ui/layout/layout-11.png' class="mw-100" alt="Example 11 layout">
+<img src='/assets/images/docs/ui/layout/layout-11.png' alt="Example 11 layout">
 
 <?code-excerpt "lib/main.dart (Example11)" replace="/(return |;)//g"?>
 ```dart
@@ -1548,7 +1561,7 @@ so it ends up having 150 (the maximum).
 
 ### Example 12
 
-<img src='/assets/images/docs/ui/layout/layout-12.png' class="mw-100" alt="Example 12 layout">
+<img src='/assets/images/docs/ui/layout/layout-12.png' alt="Example 12 layout">
 
 <?code-excerpt "lib/main.dart (Example12)" replace="/(return |;)//g"?>
 ```dart
@@ -1575,7 +1588,7 @@ since that's between 70 and 150.
 
 ### Example 13
 
-<img src='/assets/images/docs/ui/layout/layout-13.png' class="mw-100" alt="Example 13 layout">
+<img src='/assets/images/docs/ui/layout/layout-13.png' alt="Example 13 layout">
 
 <?code-excerpt "lib/main.dart (Example13)" replace="/(return |;)//g"?>
 ```dart
@@ -1590,7 +1603,7 @@ lets its child `Container` be any size it wants.
 
 ### Example 14
 
-<img src='/assets/images/docs/ui/layout/layout-14.png' class="mw-100" alt="Example 14 layout">
+<img src='/assets/images/docs/ui/layout/layout-14.png' alt="Example 14 layout">
 
 <?code-excerpt "lib/main.dart (Example14)" replace="/(return |;)//g"?>
 ```dart
@@ -1610,7 +1623,7 @@ the much dreaded "overflow warning".
 
 ### Example 15
 
-<img src='/assets/images/docs/ui/layout/layout-15.png' class="mw-100" alt="Example 15 layout">
+<img src='/assets/images/docs/ui/layout/layout-15.png' alt="Example 15 layout">
 
 <?code-excerpt "lib/main.dart (Example15)" replace="/(return |;)//g"?>
 ```dart
@@ -1638,7 +1651,7 @@ with no warnings given.
 
 ### Example 16
 
-<img src='/assets/images/docs/ui/layout/layout-16.png' class="mw-100" alt="Example 16 layout">
+<img src='/assets/images/docs/ui/layout/layout-16.png' alt="Example 16 layout">
 
 <?code-excerpt "lib/main.dart (Example16)" replace="/(return |;)//g"?>
 ```dart
@@ -1657,7 +1670,7 @@ the following message: `BoxConstraints forces an infinite width.`
 
 ### Example 17
 
-<img src='/assets/images/docs/ui/layout/layout-17.png' class="mw-100" alt="Example 17 layout">
+<img src='/assets/images/docs/ui/layout/layout-17.png' alt="Example 17 layout">
 
 <?code-excerpt "lib/main.dart (Example17)" replace="/(return |;)//g"?>
 ```dart
@@ -1689,13 +1702,11 @@ and a `ConstrainedBox`.
 
 ### Example 18
 
-<img src='/assets/images/docs/ui/layout/layout-18.png' class="mw-100" alt="Example 18 layout">
+<img src='/assets/images/docs/ui/layout/layout-18.png' alt="Example 18 layout">
 
 <?code-excerpt "lib/main.dart (Example18)" replace="/(return |;)//g"?>
 ```dart
-const FittedBox(
-  child: Text('Some Example Text.'),
-)
+const FittedBox(child: Text('Some Example Text.'))
 ```
 
 The screen forces the `FittedBox` to be exactly the same
@@ -1710,15 +1721,11 @@ the available width.
 
 ### Example 19
 
-<img src='/assets/images/docs/ui/layout/layout-19.png' class="mw-100" alt="Example 19 layout">
+<img src='/assets/images/docs/ui/layout/layout-19.png' alt="Example 19 layout">
 
 <?code-excerpt "lib/main.dart (Example19)" replace="/(return |;)//g"?>
 ```dart
-const Center(
-  child: FittedBox(
-    child: Text('Some Example Text.'),
-  ),
-)
+const Center(child: FittedBox(child: Text('Some Example Text.')))
 ```
 
 But what happens if you put the `FittedBox` inside of a
@@ -1732,14 +1739,15 @@ no scaling happens.
 
 ### Example 20
 
-<img src='/assets/images/docs/ui/layout/layout-20.png' class="mw-100" alt="Example 20 layout">
+<img src='/assets/images/docs/ui/layout/layout-20.png' alt="Example 20 layout">
 
 <?code-excerpt "lib/main.dart (Example20)" replace="/(return |;)//g"?>
 ```dart
 const Center(
   child: FittedBox(
     child: Text(
-        'This is some very very very large text that is too big to fit a regular screen in a single line.'),
+      'This is some very very very large text that is too big to fit a regular screen in a single line.',
+    ),
   ),
 )
 ```
@@ -1754,13 +1762,14 @@ and resizes `Text` so that it fits the screen, too.
 
 ### Example 21
 
-<img src='/assets/images/docs/ui/layout/layout-21.png' class="mw-100" alt="Example 21 layout">
+<img src='/assets/images/docs/ui/layout/layout-21.png' alt="Example 21 layout">
 
 <?code-excerpt "lib/main.dart (Example21)" replace="/(return |;)//g"?>
 ```dart
 const Center(
   child: Text(
-      'This is some very very very large text that is too big to fit a regular screen in a single line.'),
+    'This is some very very very large text that is too big to fit a regular screen in a single line.',
+  ),
 )
 ```
 
@@ -1770,16 +1779,12 @@ and breaks the line so that it fits the screen.
 
 ### Example 22
 
-<img src='/assets/images/docs/ui/layout/layout-22.png' class="mw-100" alt="Example 22 layout">
+<img src='/assets/images/docs/ui/layout/layout-22.png' alt="Example 22 layout">
 
 <?code-excerpt "lib/main.dart (Example22)" replace="/(return |;)//g"?>
 ```dart
 FittedBox(
-  child: Container(
-    height: 20,
-    width: double.infinity,
-    color: Colors.red,
-  ),
+  child: Container(height: 20, width: double.infinity, color: Colors.red),
 )
 ```
 
@@ -1790,14 +1795,20 @@ and you'll see an error in the console.
 
 ### Example 23
 
-<img src='/assets/images/docs/ui/layout/layout-23.png' class="mw-100" alt="Example 23 layout">
+<img src='/assets/images/docs/ui/layout/layout-23.png' alt="Example 23 layout">
 
 <?code-excerpt "lib/main.dart (Example23)" replace="/(return |;)//g"?>
 ```dart
 Row(
   children: [
-    Container(color: red, child: const Text('Hello!', style: big)),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: red,
+      child: const Text('Hello!', style: big),
+    ),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```
@@ -1813,7 +1824,7 @@ and any extra space remains empty.
 
 ### Example 24
 
-<img src='/assets/images/docs/ui/layout/layout-24.png' class="mw-100" alt="Example 24 layout">
+<img src='/assets/images/docs/ui/layout/layout-24.png' alt="Example 24 layout">
 
 <?code-excerpt "lib/main.dart (Example24)" replace="/(return |;)//g"?>
 ```dart
@@ -1827,7 +1838,10 @@ Row(
         style: big,
       ),
     ),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```
@@ -1839,7 +1853,7 @@ the available width of the `Row`. In this case, just like an
 
 ### Example 25
 
-<img src='/assets/images/docs/ui/layout/layout-25.png' class="mw-100" alt="Example 25 layout">
+<img src='/assets/images/docs/ui/layout/layout-25.png' alt="Example 25 layout">
 
 <?code-excerpt "lib/main.dart (Example25)" replace="/(return |;)//g"?>
 ```dart
@@ -1856,7 +1870,10 @@ Row(
         ),
       ),
     ),
-    Container(color: green, child: const Text('Goodbye!', style: big)),
+    Container(
+      color: green,
+      child: const Text('Goodbye!', style: big),
+    ),
   ],
 )
 ```
@@ -1873,7 +1890,7 @@ the original child's width becomes irrelevant, and is ignored.
 
 ### Example 26
 
-<img src='/assets/images/docs/ui/layout/layout-26.png' class="mw-100" alt="Example 26 layout">
+<img src='/assets/images/docs/ui/layout/layout-26.png' alt="Example 26 layout">
 
 <?code-excerpt "lib/main.dart (Example26)" replace="/(return |;)//g"?>
 ```dart
@@ -1891,10 +1908,7 @@ Row(
     Expanded(
       child: Container(
         color: green,
-        child: const Text(
-          'Goodbye!',
-          style: big,
-        ),
+        child: const Text('Goodbye!', style: big),
       ),
     ),
   ],
@@ -1911,7 +1925,7 @@ its children.
 
 ### Example 27
 
-<img src='/assets/images/docs/ui/layout/layout-27.png' class="mw-100" alt="Example 27 layout">
+<img src='/assets/images/docs/ui/layout/layout-27.png' alt="Example 27 layout">
 
 <?code-excerpt "lib/main.dart (Example27)" replace="/(return |;)//g"?>
 ```dart
@@ -1929,10 +1943,7 @@ Row(
     Flexible(
       child: Container(
         color: green,
-        child: const Text(
-          'Goodbye!',
-          style: big,
-        ),
+        child: const Text('Goodbye!', style: big),
       ),
     ),
   ],
@@ -1955,19 +1966,14 @@ when you use `Expanded` or `Flexible`.
 
 ### Example 28
 
-<img src='/assets/images/docs/ui/layout/layout-28.png' class="mw-100" alt="Example 28 layout">
+<img src='/assets/images/docs/ui/layout/layout-28.png' alt="Example 28 layout">
 
 <?code-excerpt "lib/main.dart (Example28)" replace="/(return |;)//g"?>
 ```dart
 Scaffold(
   body: Container(
     color: blue,
-    child: const Column(
-      children: [
-        Text('Hello!'),
-        Text('Goodbye!'),
-      ],
-    ),
+    child: const Column(children: [Text('Hello!'), Text('Goodbye!')]),
   ),
 )
 ```
@@ -1985,7 +1991,7 @@ to its child. More on that later.
 
 ### Example 29
 
-<img src='/assets/images/docs/ui/layout/layout-29.png' class="mw-100" alt="Example 29 layout">
+<img src='/assets/images/docs/ui/layout/layout-29.png' alt="Example 29 layout">
 
 <?code-excerpt "lib/main.dart (Example29)" replace="/(return |;)//g"?>
 ```dart
@@ -1993,12 +1999,7 @@ Scaffold(
   body: SizedBox.expand(
     child: Container(
       color: blue,
-      child: const Column(
-        children: [
-          Text('Hello!'),
-          Text('Goodbye!'),
-        ],
-      ),
+      child: const Column(children: [Text('Hello!'), Text('Goodbye!')]),
     ),
   ),
 )
@@ -2177,7 +2178,7 @@ Here's an example:
   `performLayout()`. This is the method that does
   the layout for the `Column`.
 
-<img src='/assets/images/docs/ui/layout/layout-final.png' class="mw-100" alt="A goodbye layout">
+<img src='/assets/images/docs/ui/layout/layout-final.png' alt="A goodbye layout">
 
 ---
 
@@ -2201,5 +2202,5 @@ header image at the top of the article.
 To better understand how Flutter implements layout
 constraints, check out the following 5-minute video:
 
-{% ytEmbed 'jckqXR5CrPI', 'Decoding Flutter: Unbounded height and width' %}
+<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 :::

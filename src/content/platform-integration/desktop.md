@@ -36,9 +36,9 @@ Consult the guide for your target desktop environment:
 * [Install macOS desktop devtools][macOS-devtools]
 * [Install Windows desktop devtools][Windows-devtools]
 
-[Linux-devtools]: /get-started/install/linux/desktop
-[macOS-devtools]: /get-started/install/macos/desktop
-[Windows-devtools]: /get-started/install/windows/desktop
+[Linux-devtools]: /platform-integration/linux/setup#set-up-tooling
+[macOS-devtools]: /platform-integration/macos/setup#set-up-tooling
+[Windows-devtools]: /platform-integration/windows/setup#set-up-tooling
 
 If `flutter doctor` finds problems or missing components
 for a platform that you don't want to develop for,
@@ -65,13 +65,13 @@ restart your IDE so that it can detect the new device.
 ### Create and run
 
 Creating a new project with desktop support is no different
-than [creating a new Flutter project][] for other platforms.
+from [creating a new Flutter project][] for other platforms.
 
 Once you've configured your environment for desktop
 support, you can create and run a desktop application
 either in the IDE or from the command line.
 
-[creating a new Flutter project]: /get-started/test-drive
+[creating a new Flutter project]: /reference/create-new-app
 
 #### Using an IDE
 
@@ -183,15 +183,12 @@ about endorsed plugins, see the following resources:
 [using packages]: /packages-and-plugins/using-packages
 [Developing packages and plugins]: /packages-and-plugins/developing-packages
 [Federated plugins]: /packages-and-plugins/developing-packages#federated-plugins
-[How to write a Flutter web plugin, part 2]: {{site.flutter-medium}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
-[Modern Flutter Plugin Development]: {{site.flutter-medium}}/modern-flutter-plugin-development-4c3ee015cf5a
+[How to write a Flutter web plugin, part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
+[Modern Flutter Plugin Development]: {{site.flutter-blog}}/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Samples and codelabs
+<a id="samples-and-codelabs" aria-hidden="true"></a>
 
-[Write a Flutter desktop application][]
-: A codelab that walks you through building
-a desktop application that integrates the GitHub
-GraphQL API with your Flutter app.
+## Samples
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -219,4 +216,3 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

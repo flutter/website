@@ -1,10 +1,10 @@
-name: introduction
-description: A new Flutter project.
-publish_to: none # Remove this line if you wish to publish to pub.dev
-version: 1.0.0+1
+name: integration_testing_introduction
+description: Integration testing example snippets.
+publish_to: none
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
@@ -15,9 +15,7 @@ dependencies:
     sdk: flutter
 
 dev_dependencies:
-  example_utils:
-    path: ../../../../example_utils
-  test: any
+  test: ^1.26.2
 
 flutter:
   uses-material-design: true

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -27,7 +23,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion transitionsBuilder
@@ -41,10 +37,7 @@ Route _createRoute() {
       // #enddocregion Tween
 
       // #docregion SlideTransition
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
+      return SlideTransition(position: animation.drive(tween), child: child);
       // #enddocregion SlideTransition
     },
     // #enddocregion transitionsBuilder
@@ -58,9 +51,7 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }

@@ -6,8 +6,9 @@ import 'package:http/http.dart' as http;
 
 // #docregion fetchAlbum
 Future<Album> fetchAlbum(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -63,9 +64,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fetch Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Fetch Data Example')),
         body: Center(
           child: FutureBuilder<Album>(
             future: futureAlbum,

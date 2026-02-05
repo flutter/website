@@ -9,21 +9,15 @@ Deep linking is a mechanism for launching an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
-:::note
-Did you know that Flutter DevTools provides a
-deep link validation tool for Android?
-An iOS version of the tool is in the works.
-Learn more and see a demo at [Validate deep links][].
-:::
-
-[Validate deep links]: /tools/devtools/deep-links
-
 An _app link_ is a type of deep link that uses
 `http` or `https` and is exclusive to Android devices.
 
 Setting up app links requires one to own a web domain.
 Otherwise, consider using [Firebase Hosting][]
 or [GitHub Pages][] as a temporary solution.
+
+Once you've set up your deep links, you can validate them.
+To learn more, see [Validate deep links][].
 
 ## 1. Customize a Flutter application
 
@@ -54,21 +48,21 @@ It provides a simple API to handle complex routing scenarios.
     ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
+
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),
@@ -80,7 +74,7 @@ It provides a simple API to handle complex routing scenarios.
 
 ## 2. Modify AndroidManifest.xml
 
- 1. Open the Flutter project with VS Code or Android Studio. 
+ 1. Open the Flutter project with VS Code or Android Studio.
  2. Navigate to `android/app/src/main/AndroidManifest.xml` file.
  3. Add the following metadata tag and intent filter inside the
    `<activity>` tag with `.MainActivity`.
@@ -88,7 +82,6 @@ It provides a simple API to handle complex routing scenarios.
     Replace `example.com` with your own web domain.
 
     ```xml
-    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
     <intent-filter android:autoVerify="true">
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -97,14 +90,29 @@ It provides a simple API to handle complex routing scenarios.
         <data android:scheme="https" />
     </intent-filter>
     ```
-   
+
+    :::version-note
+    If you use a Flutter version earlier than 3.27,
+    you need to manually opt in to deep linking by
+    adding the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="true" />
+    ```
+    :::
+
     :::note
-    The metadata tag `flutter_deeplinking_enabled` opts
-    into Flutter's default deeplink handler.
-    If you are using the third-party plugins,
-    such as [app_links][], setting this metadata tag will
-    break these plugins. Omit this metadata tag
-    if you prefer to use third-party plugins.
+    If you use a third-party plugin to handle deep links,
+    such as [app_links][],
+    Flutter's default deeplink handler will
+    break these plugins.
+
+    To opt out of using Flutter's default deep link handler,
+    add the following metadata tag to `<activity>`:
+
+    ```xml
+    <meta-data android:name="flutter_deeplinking_enabled" android:value="false" />
+    ```
     :::
 
 ## 3. Hosting assetlinks.json file
@@ -171,8 +179,8 @@ The hosted file should look similar to this:
  4. Verify that your browser can access this file.
 
 :::note
-If you have multiple flavors, you can have many sha256_cert_fingerprint 
-values in thesha256_cert_fingerprints field. 
+If you have multiple flavors, you can have many sha256_cert_fingerprint
+values in the sha256_cert_fingerprints field.
 Just add it to the sha256_cert_fingerprints list
 :::
 
@@ -204,6 +212,11 @@ To test **both** web and app setup, you must click a link
 directly through web browser or another app.
 One way is to create a Google Doc, add the link, and tap on it.
 
+:::note
+If you are debugging locally (and not downloading the app from the Play Store),
+you might need to enable the toggle for **Supported web addresses** manually.
+:::
+
 If everything is set up correctly, the Flutter application
 launches and displays the details screen:
 
@@ -219,3 +232,4 @@ Source code: [deeplink_cookbook][]
 [GitHub Pages]: https://pages.github.com
 [app_links]: {{site.pub}}/packages/app_links
 [Signing the app]: /deployment/android#signing-the-app
+[Validate deep links]: /tools/devtools/deep-links

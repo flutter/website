@@ -31,9 +31,7 @@ Future<Album> updateAlbum(String title) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 
   if (response.statusCode == 200) {
@@ -57,14 +55,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -102,9 +93,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Update Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Update Data Example')),
         body: Container(
           alignment: Alignment.center,
           padding: const EdgeInsets.all(8),

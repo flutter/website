@@ -11,9 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Home Page'),
-        ),
+        appBar: AppBar(title: const Text('My Home Page')),
         body: Center(
           child: Builder(
             builder: (context) {
@@ -95,6 +93,7 @@ class LayoutBuilderExample extends StatelessWidget {
       },
     );
   }
+
   // #enddocregion layout-builder
 }
 

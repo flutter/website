@@ -30,7 +30,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -54,9 +54,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -78,10 +76,11 @@ class _SampleAppPageState extends State<SampleAppPage> {
   }
 
   Future<void> loadData() async {
-    var dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
-    http.Response response = await http.get(dataURL);
+    final dataURL = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+    final response = await http.get(dataURL);
     setState(() {
-      widgets = jsonDecode(response.body);
+      widgets = (jsonDecode(response.body) as List)
+          .cast<Map<String, Object?>>();
     });
   }
 }

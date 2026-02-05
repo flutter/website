@@ -5,6 +5,8 @@ description: >
   no longer builds the same child widgets.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 A new `ColoredBox` widget has been added to the framework,

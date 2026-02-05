@@ -1,9 +1,6 @@
 ---
 title: Pass arguments to a named route
 description: How to pass arguments to a named route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/navigate_with_arguments"?>
@@ -84,12 +81,8 @@ class ExtractArgumentsScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(args.title),
-      ),
-      body: Center(
-        child: Text(args.message),
-      ),
+      appBar: AppBar(title: Text(args.title)),
+      body: Center(child: Text(args.message)),
     );
   }
 }
@@ -260,9 +253,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Screen'),
-      ),
+      appBar: AppBar(title: const Text('Home Screen')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -329,12 +320,8 @@ class ExtractArgumentsScreen extends StatelessWidget {
     final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(args.title),
-      ),
-      body: Center(
-        child: Text(args.message),
-      ),
+      appBar: AppBar(title: Text(args.title)),
+      body: Center(child: Text(args.message)),
     );
   }
 }
@@ -362,12 +349,8 @@ class PassArgumentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(message),
-      ),
+      appBar: AppBar(title: Text(title)),
+      body: Center(child: Text(message)),
     );
   }
 }
@@ -384,7 +367,7 @@ class ScreenArguments {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/navigate-with-arguments.gif" alt="Demonstrates navigating to different routes with arguments" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/navigate-with-arguments.webp" alt="Demonstrates navigating to different routes with arguments" class="site-mobile-screenshot" />
 </noscript>
 
 

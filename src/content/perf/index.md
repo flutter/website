@@ -3,7 +3,7 @@ title: Performance
 description: Evaluating the performance of your app from several angles.
 ---
 
-{% ytEmbed 'PKGguGUwSYE', 'Flutter performance tips | Flutter in Focus' %}
+<YouTubeEmbed id="PKGguGUwSYE" title="Flutter performance tips | Flutter in Focus"></YouTubeEmbed>
 
 :::note
 If your app has a performance issue and you are

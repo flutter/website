@@ -1,6 +1,7 @@
 ---
 title: Flutter support
 description: Where can you get support when developing with Flutter.
+showBreadcrumbs: false
 ---
 
 Welcome!
@@ -53,13 +54,3 @@ As an open source project,
 we're not set up to offer paid support.
 We recommend checking out the
 [consultancy program]({{site.main-url}}/consultants).
-
-{% comment %}
-Add this when Crag's page is done...
-
-## I want to know if Flutter is right for me and my project
-
-Check out our whitepaper for CTOs and Decision Makers
-check out the case studies
-
-{% endcomment -%}

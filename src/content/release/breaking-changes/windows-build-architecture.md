@@ -5,6 +5,8 @@ description: >-
   the Windows build path was updated to include the target architecture.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Built executables for Flutter Windows apps are now located in architecture
@@ -53,7 +55,7 @@ In stable release: 3.16
 
 Design document:
 
-*  [flutter.dev/go/windows-arm64][]
+* [flutter.dev/go/windows-arm64][]
 
 Relevant pull requests:
 

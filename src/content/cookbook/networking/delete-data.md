@@ -30,7 +30,7 @@ Import the `http` package.
 import 'package:http/http.dart' as http;
 ```
 
-{% render docs/cookbook/networking/internet-permission.md %}
+{% render "docs/cookbook/networking/internet-permission.md" %}
 
 ## 2. Delete data on the server
 
@@ -83,8 +83,9 @@ Column(
       child: const Text('Delete Data'),
       onPressed: () {
         setState(() {
-          _futureAlbum =
-              deleteAlbum(snapshot.data!.id.toString());
+          _futureAlbum = deleteAlbum(
+            snapshot.data!.id.toString(),
+          );
         });
       },
     ),
@@ -193,14 +194,7 @@ class Album {
 
   factory Album.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {
-        'id': int id,
-        'title': String title,
-      } =>
-        Album(
-          id: id,
-          title: title,
-        ),
+      {'id': int id, 'title': String title} => Album(id: id, title: title),
       _ => throw const FormatException('Failed to load album.'),
     };
   }
@@ -236,9 +230,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Delete Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Delete Data Example')),
         body: Center(
           child: FutureBuilder<Album>(
             future: _futureAlbum,
@@ -255,8 +247,9 @@ class _MyAppState extends State<MyApp> {
                         child: const Text('Delete Data'),
                         onPressed: () {
                           setState(() {
-                            _futureAlbum =
-                                deleteAlbum(snapshot.data!.id.toString());
+                            _futureAlbum = deleteAlbum(
+                              snapshot.data!.id.toString(),
+                            );
                           });
                         },
                       ),

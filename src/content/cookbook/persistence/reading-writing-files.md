@@ -22,7 +22,7 @@ This recipe uses the following steps:
 To learn more, watch this Package of the Week video
 on the `path_provider` package:
 
-{% ytEmbed 'Ci4t-NkOY3I', 'path_provider | Flutter package of the week' %}
+<YouTubeEmbed id="Ci4t-NkOY3I" title="path_provider | Flutter package of the week"></YouTubeEmbed>
 
 :::note
 This recipe doesn't work with web apps at this time.
@@ -173,6 +173,7 @@ class CounterStorage {
     // Write the file
     return file.writeAsString('$counter');
   }
+
 }
 
 class FlutterDemo extends StatefulWidget {
@@ -209,13 +210,9 @@ class _FlutterDemoState extends State<FlutterDemo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Reading and Writing Files'),
-      ),
+      appBar: AppBar(title: const Text('Reading and Writing Files')),
       body: Center(
-        child: Text(
-          'Button tapped $_counter time${_counter == 1 ? '' : 's'}.',
-        ),
+        child: Text('Button tapped $_counter time${_counter == 1 ? '' : 's'}.'),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

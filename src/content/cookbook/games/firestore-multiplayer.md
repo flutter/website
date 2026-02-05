@@ -95,7 +95,7 @@ so every player sees the same state.
 If you want a quick, 15-minute primer on Cloud Firestore,
 check out the following video:
 
-{% ytEmbed 'v_hR4K4auoQ', 'What is a NoSQL Database? Learn about Cloud Firestore' %}
+<YouTubeEmbed id="v_hR4K4auoQ" title="What is a NoSQL Database? Learn about Cloud Firestore"></YouTubeEmbed>
 
 To add Firestore to your Flutter project,
 follow the first two steps of the
@@ -147,9 +147,7 @@ Dart code in that guide, return to this recipe.
     ```dart
     WidgetsFlutterBinding.ensureInitialized();
     
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     ```
 
     This ensures that Firebase is initialized on game startup.
@@ -166,12 +164,7 @@ Dart code in that guide, return to this recipe.
 
     <?code-excerpt "lib/main.dart (runApp)"?>
     ```dart
-    runApp(
-      Provider.value(
-        value: FirebaseFirestore.instance,
-        child: MyApp(),
-      ),
-    );
+    runApp(Provider.value(value: FirebaseFirestore.instance, child: MyApp()));
     ```
 
     Put the provider above `MyApp`, not inside it.
@@ -232,19 +225,23 @@ class FirestoreController {
       .collection('areas')
       .doc('area_one')
       .withConverter<List<PlayingCard>>(
-          fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
+        fromFirestore: _cardsFromFirestore,
+        toFirestore: _cardsToFirestore,
+      );
 
   late final _areaTwoRef = _matchRef
       .collection('areas')
       .doc('area_two')
       .withConverter<List<PlayingCard>>(
-          fromFirestore: _cardsFromFirestore, toFirestore: _cardsToFirestore);
+        fromFirestore: _cardsFromFirestore,
+        toFirestore: _cardsToFirestore,
+      );
 
-  StreamSubscription? _areaOneFirestoreSubscription;
-  StreamSubscription? _areaTwoFirestoreSubscription;
+  late final StreamSubscription<void> _areaOneFirestoreSubscription;
+  late final StreamSubscription<void> _areaTwoFirestoreSubscription;
 
-  StreamSubscription? _areaOneLocalSubscription;
-  StreamSubscription? _areaTwoLocalSubscription;
+  late final StreamSubscription<void> _areaOneLocalSubscription;
+  late final StreamSubscription<void> _areaTwoLocalSubscription;
 
   FirestoreController({required this.instance, required this.boardState}) {
     // Subscribe to the remote changes (from Firestore).
@@ -267,10 +264,10 @@ class FirestoreController {
   }
 
   void dispose() {
-    _areaOneFirestoreSubscription?.cancel();
-    _areaTwoFirestoreSubscription?.cancel();
-    _areaOneLocalSubscription?.cancel();
-    _areaTwoLocalSubscription?.cancel();
+    _areaOneFirestoreSubscription.cancel();
+    _areaTwoFirestoreSubscription.cancel();
+    _areaOneLocalSubscription.cancel();
+    _areaTwoLocalSubscription.cancel();
 
     _log.fine('Disposed');
   }
@@ -278,23 +275,25 @@ class FirestoreController {
   /// Takes the raw JSON snapshot coming from Firestore and attempts to
   /// convert it into a list of [PlayingCard]s.
   List<PlayingCard> _cardsFromFirestore(
-    DocumentSnapshot<Map<String, dynamic>> snapshot,
+    DocumentSnapshot<Map<String, Object?>> snapshot,
     SnapshotOptions? options,
   ) {
-    final data = snapshot.data()?['cards'] as List?;
+    final data = snapshot.data()?['cards'] as List<Object?>?;
 
     if (data == null) {
       _log.info('No data found on Firestore, returning empty list');
       return [];
     }
 
-    final list = List.castFrom<Object?, Map<String, Object?>>(data);
-
     try {
-      return list.map((raw) => PlayingCard.fromJson(raw)).toList();
+      return data
+          .cast<Map<String, Object?>>()
+          .map(PlayingCard.fromJson)
+          .toList();
     } catch (e) {
       throw FirebaseControllerException(
-          'Failed to parse data from Firestore: $e');
+        'Failed to parse data from Firestore: $e',
+      );
     }
   }
 
@@ -309,14 +308,17 @@ class FirestoreController {
 
   /// Updates Firestore with the local state of [area].
   Future<void> _updateFirestoreFromLocal(
-      PlayingArea area, DocumentReference<List<PlayingCard>> ref) async {
+    PlayingArea area,
+    DocumentReference<List<PlayingCard>> ref,
+  ) async {
     try {
       _log.fine('Updating Firestore with local data (${area.cards}) ...');
       await ref.set(area.cards);
       _log.fine('... done updating.');
     } catch (e) {
       throw FirebaseControllerException(
-          'Failed to update Firestore with local data (${area.cards}): $e');
+        'Failed to update Firestore with local data (${area.cards}): $e',
+      );
     }
   }
 
@@ -332,7 +334,9 @@ class FirestoreController {
 
   /// Updates the local state of [area] with the data from Firestore.
   void _updateLocalFromFirestore(
-      PlayingArea area, DocumentSnapshot<List<PlayingCard>> snapshot) {
+    PlayingArea area,
+    DocumentSnapshot<List<PlayingCard>> snapshot,
+  ) {
     _log.fine('Received new data from Firestore (${snapshot.data()})');
 
     final cards = snapshot.data() ?? [];
@@ -405,8 +409,10 @@ Notice the following features of this code:
     ```dart
     final firestore = context.read<FirebaseFirestore?>();
     if (firestore == null) {
-      _log.warning("Firestore instance wasn't provided. "
-          'Running without _firestoreController.');
+      _log.warning(
+        "Firestore instance wasn't provided. "
+        'Running without _firestoreController.',
+      );
     } else {
       _firestoreController = FirestoreController(
         instance: firestore,

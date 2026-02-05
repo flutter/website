@@ -8,7 +8,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   unawaited(MobileAds.instance.initialize());
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 // #enddocregion main
 

@@ -2,7 +2,7 @@
 title: Mock dependencies using Mockito
 description: >
   Use the Mockito package to mimic the behavior of services for testing.
-short-title: Mocking
+shortTitle: Mocking
 ---
 
 <?code-excerpt path-base="cookbook/testing/unit/mocking"?>
@@ -74,8 +74,9 @@ The function should now look like this:
 <?code-excerpt "lib/main.dart (fetchAlbum)"?>
 ```dart
 Future<Album> fetchAlbum(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -89,7 +90,7 @@ Future<Album> fetchAlbum(http.Client client) async {
 }
 ```
 
-In your app code, you can provide an `http.Client` to the `fetchAlbum` method 
+In your app code, you can provide an `http.Client` to the `fetchAlbum` method
 directly with `fetchAlbum(http.Client())`. `http.Client()` creates a default
 `http.Client`.
 
@@ -100,11 +101,12 @@ Next, create a test file.
 Following the advice in the [Introduction to unit testing][] recipe,
 create a file called `fetch_album_test.dart` in the root `test` folder.
 
-Add the annotation `@GenerateMocks([http.Client])` to the main
-function to generate a `MockClient` class with `mockito`.
+Add the annotation
+`@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])`
+to the main function to generate a `MockHttpClient` class with `mockito`.
 
-The generated `MockClient` class implements the `http.Client` class.
-This allows you to pass the `MockClient` to the `fetchAlbum` function,
+The generated `MockHttpClient` class implements the `http.Client` class.
+This allows you to pass the `MockHttpClient` to the `fetchAlbum` function,
 and return different http responses in each test.
 
 The generated mocks will be located in `fetch_album_test.mocks.dart`.
@@ -118,7 +120,9 @@ import 'package:mockito/annotations.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
 }
 ```
@@ -137,7 +141,7 @@ The `fetchAlbum()` function does one of two things:
   2. Throws an `Exception` if the http call fails
 
 Therefore, you want to test these two conditions.
-Use the `MockClient` class to return an "Ok" response
+Use the `MockHttpClient` class to return an "Ok" response
 for the success test, and an error response for the unsuccessful test.
 Test these conditions using the `when()` function provided by
 Mockito:
@@ -154,30 +158,34 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client
-              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async =>
-              http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
+      when(
+        client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')),
+      ).thenAnswer(
+        (_) async =>
+            http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200),
+      );
 
       expect(await fetchAlbum(client), isA<Album>());
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client
-              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async => http.Response('Not Found', 404));
+      when(
+        client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')),
+      ).thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);
     });
@@ -210,8 +218,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 Future<Album> fetchAlbum(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+  );
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -266,9 +275,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Fetch Data Example'),
-        ),
+        appBar: AppBar(title: const Text('Fetch Data Example')),
         body: Center(
           child: FutureBuilder<Album>(
             future: futureAlbum,
@@ -304,30 +311,34 @@ import 'fetch_album_test.mocks.dart';
 
 // Generate a MockClient using the Mockito package.
 // Create new instances of this class in each test.
-@GenerateMocks([http.Client])
+// Note: Naming the generated mock `MockHttpClient` to avoid confusion with
+// `MockClient` from `package:http/testing.dart`.
+@GenerateMocks([], customMocks: [MockSpec<http.Client>(as: #MockHttpClient)])
 void main() {
   group('fetchAlbum', () {
     test('returns an Album if the http call completes successfully', () async {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return a successful response when it calls the
       // provided http.Client.
-      when(client
-              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async =>
-              http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200));
+      when(
+        client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')),
+      ).thenAnswer(
+        (_) async =>
+            http.Response('{"userId": 1, "id": 2, "title": "mock"}', 200),
+      );
 
       expect(await fetchAlbum(client), isA<Album>());
     });
 
     test('throws an exception if the http call completes with an error', () {
-      final client = MockClient();
+      final client = MockHttpClient();
 
       // Use Mockito to return an unsuccessful response when it calls the
       // provided http.Client.
-      when(client
-              .get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')))
-          .thenAnswer((_) async => http.Response('Not Found', 404));
+      when(
+        client.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1')),
+      ).thenAnswer((_) async => http.Response('Not Found', 404));
 
       expect(fetchAlbum(client), throwsException);
     });

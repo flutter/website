@@ -3,21 +3,27 @@ title: Impeller rendering engine
 description: What is Impeller and how to enable it?
 ---
 
+:::note
+As of the 3.27 release, Impeller is the default
+rendering engine for both iOS and Android API 29+.
+To see _detailed_ info on where Impeller is currently supported,
+check out the [Can I use Impeller?][] page.
+:::
+
+[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
+
 ## What is Impeller?
 
 Impeller provides a new rendering runtime for Flutter.
-The Flutter team's believes this solves Flutter's
-[early-onset jank][] issue.
 Impeller precompiles a [smaller, simpler set of shaders][]
-at Engine-build time so they don't compile at runtime.
+at engine-build time so they don't compile at runtime.
 
-[early-onset jank]: {{site.repo.flutter}}/projects/188
 [smaller, simpler set of shaders]: {{site.repo.flutter}}/issues/77412
 
 For a video introduction to Impeller, check out the following
 talk from Google I/O 2023.
 
-{% ytEmbed 'vd5NqS01rlA', 'Introducing Impeller, Flutter\'s new rendering engine' %}
+<YouTubeEmbed id="vd5NqS01rlA" title="Introducing Impeller, Flutter's new rendering engine"></YouTubeEmbed>
 
 Impeller has the following objectives:
 
@@ -43,41 +49,49 @@ Impeller has the following objectives:
 
 ## Availability
 
-Where can you use Impeller?
+Where can you use Impeller? For _detailed_ info, check out
+the [Can I use Impeller?][] page.
 
 ### iOS
 
-Flutter **enables Impeller by default** on iOS.
+Since [Flutter 3.29](https://blog.flutter.dev/whats-new-in-flutter-3-29-f90c380c2317), Impeller is the **default on iOS** with no ability to
+switch to Skia.
 
-* To _disable_ Impeller on iOS when debugging,
+### Android
+
+Impeller is **available and enabled by default on Android API 29+**.
+On devices running lower versions of Android or don't support Vulkan,
+Impeller falls back to the the legacy OpenGL renderer.
+No action on your part is necessary for this fallback behavior.
+
+* To _disable_ Impeller when debugging,
   pass `--no-enable-impeller` to the `flutter run` command.
 
   ```console
   flutter run --no-enable-impeller
   ```
 
-* To _disable_ Impeller on iOS when deploying your app,
-  add the following tags under the top-level `<dict>` tag in your
-  app's `Info.plist` file.
+* To _disable_ Impeller when deploying your app,
+  add the following setting to your project's
+  `AndroidManifest.xml` file under the `<application>` tag:
 
-  ```xml
-    <key>FLTEnableImpeller</key>
-    <false />
-  ```
+```xml
+<meta-data
+    android:name="io.flutter.embedding.android.EnableImpeller"
+    android:value="false" />
+```
 
-The team continues to improve iOS support.
-If you encounter performance or fidelity issues
-with Impeller on iOS,
-file an issue in the [GitHub tracker][file-issue].
-Prefix the issue title with `[Impeller]` and
-include a small reproducible test case.
+### Web
 
-[file-issue]: {{site.repo.flutter}}/issues/new/choose
+Flutter on the web offers [two renderers][] --
+`canvaskit` and `skwasm` -- which both currently use Skia.
+They might use Impeller in the future.
+
+[two renderers]: /platform-integration/web/renderers#renderers
 
 ### macOS
 
-As of the 3.19 release,
-you can try out Impeller for macOS behind a flag.
+You can try out Impeller for macOS behind a flag.
 In a future release, the ability to opt-out of
 using Impeller will be removed.
 
@@ -97,44 +111,7 @@ add the following tags under the top-level
   <true />
 ```
 
-### Android
-
-As of the 3.22 release, Impeller on Android with Vulkan
-is a release candidate. On devices that don't support Vulkan,
-Impeller will fallback to the the legacy OpenGL renderer. No
-action on your part is necessary for this fallback behavior.
-Consider trying Impeller on Android before it becomes the default
-on stable, you can explicitly opt into it.
-
-:::secondary Does your device support Vulkan?
-You can determine whether your Android device
-supports Vulkan at [checking for Vulkan support][vulkan].
-:::
-
-To try out Impeller on Vulkan-capable Android devices,
-pass `--enable-impeller` to `flutter run`:
-
-```console
-flutter run --enable-impeller
-```
-
-Or, you can add the following setting to your project's
-`AndroidManifest.xml` file under the `<application>` tag:
-
-```xml
-<meta-data
-    android:name="io.flutter.embedding.android.EnableImpeller"
-    android:value="true" />
-```
-
-[vulkan]: https://docs.vulkan.org/guide/latest/checking_for_support.html#_android
-
 ### Bugs and issues
-
-For the full list of Impeller's known bugs
-and missing features,
-the most up-to-date information is on the
-[Impeller project board][] on GitHub.
 
 The team continues to improve Impeller support.
 If you encounter performance or fidelity issues
@@ -153,6 +130,7 @@ submitting an issue for Impeller:
   Zip the file and attach it to the GitHub issue.
 
 [export of the performance trace]:/tools/devtools/performance#import-and-export
+[file-issue]: {{site.github}}/flutter/flutter/issues/new/choose
 [Impeller project board]: {{site.github}}/orgs/flutter/projects/21
 
 ## Architecture
@@ -160,15 +138,24 @@ submitting an issue for Impeller:
 To learn more details about Impeller's design and architecture,
 check out the [README.md][] file in the source tree.
 
-[README.md]: {{site.repo.engine}}/blob/main/impeller/README.md
+[README.md]: {{site.repo.flutter}}/blob/main/engine/src/flutter/impeller/README.md
 
 ## Additional information
 
-* [Frequently asked questions]({{site.repo.engine}}/blob/main/impeller/docs/faq.md)
-* [Impeller's coordinate system]({{site.repo.engine}}/blob/main/impeller/docs/coordinate_system.md)
-* [How to set up Xcode for GPU frame captures with metal]({{site.repo.engine}}/blob/main/impeller/docs/xcode_frame_capture.md)
-* [Learning to read GPU frame captures]({{site.repo.engine}}/blob/main/impeller/docs/read_frame_captures.md)
-* [How to enable metal validation for command line apps]({{site.repo.engine}}/blob/main/impeller/docs/metal_validation.md)
-* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0]({{site.repo.engine}}/blob/main/impeller/docs/ubo_gles2.md)
-* [Guidance for writing efficient shaders]({{site.repo.engine}}/blob/main/impeller/docs/shader_optimization.md)
-* [How color blending works in Impeller]({{site.repo.engine}}/blob/main/impeller/docs/blending.md)
+* [Frequently asked questions][impeller-faq]
+* [Impeller's coordinate system][impeller-coords]
+* [How to set up Xcode for GPU frame captures with metal][impeller-xcode-capture]
+* [Learning to read GPU frame captures][impeller-read-capture]
+* [How to enable metal validation for command line apps][impeller-metal-validation]
+* [How Impeller works around the lack of uniform buffers in Open GL ES 2.0][impeller-ubo-gles2]
+* [Guidance for writing efficient shaders][impeller-shader-optimization]
+* [How color blending works in Impeller][impeller-blending]
+
+[impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
+[impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md
+[impeller-xcode-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md
+[impeller-read-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/read_frame_captures.md
+[impeller-metal-validation]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/metal_validation.md
+[impeller-ubo-gles2]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/ubo_gles2.md
+[impeller-shader-optimization]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
+[impeller-blending]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/blending.md

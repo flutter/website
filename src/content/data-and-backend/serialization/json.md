@@ -1,6 +1,6 @@
 ---
 title: JSON and serialization
-short-title: JSON
+shortTitle: JSON
 description: How to use JSON with Flutter.
 ---
 
@@ -26,6 +26,8 @@ To avoid confusion, this doc uses "serialization" when referring to the
 overall process, and "encoding" and "decoding" when specifically
 referring to those processes.
 :::
+
+<YouTubeEmbed id="ngsxzZt5DoY" title="dart:convert (Technique of the Week)"></YouTubeEmbed>
 
 ## Which JSON serialization method is right for me?
 
@@ -174,13 +176,10 @@ class User {
   User(this.name, this.email);
 
   User.fromJson(Map<String, dynamic> json)
-      : name = json['name'] as String,
-        email = json['email'] as String;
+    : name = json['name'] as String,
+      email = json['email'] as String;
 
-  Map<String, dynamic> toJson() => {
-        'name': name,
-        'email': email,
-      };
+  Map<String, dynamic> toJson() => {'name': name, 'email': email};
 }
 ```
 
@@ -220,7 +219,7 @@ decoded.
 :::
 
 However, real-world scenarios are not always that simple.
-Sometimes JSON API responses are more complex, for example since they 
+Sometimes JSON API responses are more complex, for example since they
 contain nested JSON objects that must be parsed through their own model
 class.
 
@@ -240,7 +239,7 @@ on pub.dev that generate JSON serialization code,
 [`json_serializable`][] and [`built_value`][].
 How do you choose between these packages?
 The `json_serializable` package allows you to make regular
-classes serializable by using annotations, 
+classes serializable by using annotations,
 whereas the `built_value` package provides a higher-level way
 of defining immutable value classes that can also be
 serialized to JSON.
@@ -321,16 +320,16 @@ you can use the `@JsonKey` annotation with a name parameter:
 final int registrationDateMillis;
 ```
 
-It's best if both server and client follow the same naming strategy.  
-`@JsonSerializable()` provides `fieldRename` enum for totally converting dart 
+It's best if both server and client follow the same naming strategy.
+`@JsonSerializable()` provides `fieldRename` enum for totally converting dart
 fields into JSON keys.
 
 Modifying `@JsonSerializable(fieldRename: FieldRename.snake)` is equivalent to
 adding `@JsonKey(name: '<snake_case>')` to each field.
 
 Sometimes server data is uncertain, so it is necessary to verify and protect data
- on client.  
-Other commonly used `@JsonKey` annotations include: 
+ on client.
+Other commonly used `@JsonKey` annotations include:
 
 ```dart
 /// Tell json_serializable to use "defaultValue" if the JSON doesn't
@@ -338,13 +337,13 @@ Other commonly used `@JsonKey` annotations include:
 @JsonKey(defaultValue: false)
 final bool isAdult;
 
-/// When `true` tell json_serializable that JSON must contain the key, 
+/// When `true` tell json_serializable that JSON must contain the key,
 /// If the key doesn't exist, an exception is thrown.
 @JsonKey(required: true)
 final String id;
 
-/// When `true` tell json_serializable that generated code should 
-/// ignore this field completely. 
+/// When `true` tell json_serializable that generated code should
+/// ignore this field completely.
 @JsonKey(ignore: true)
 final String verificationCode;
 ```
@@ -352,10 +351,11 @@ final String verificationCode;
 ### Running the code generation utility
 
 When creating `json_serializable` classes the first time,
-you'll get errors similar to what is shown in the image below.
+you'll get errors similar to the following:
 
-![IDE warning when the generated code for a model class does not exist
-yet.](/assets/images/docs/json/ide_warning.png){:.mw-100}
+```plaintext
+Target of URI hasn't been generated: 'user.g.dart'.
+```
 
 These errors are entirely normal and are simply because the generated code for
 the model class does not exist yet. To resolve this, run the code
@@ -457,7 +457,7 @@ class User {
 }
 ```
 
-Running 
+Running
 `dart run build_runner build --delete-conflicting-outputs`
 in the terminal creates
 the `*.g.dart` file, but the private `_$UserToJson()` function
@@ -529,11 +529,11 @@ For more information, see the following resources:
 
 [`built_value`]: {{site.pub}}/packages/built_value
 [code generation libraries]: #code-generation
-[`dart:convert`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert
+[`dart:convert`]: {{site.dart.api}}/dart-convert
 [`explicitToJson`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable/explicitToJson.html
 [Flutter Favorite]: /packages-and-plugins/favorites
 [json background parsing]: /cookbook/networking/background-parsing
-[`JsonCodec`]: {{site.dart.api}}/{{site.dart.sdk.channel}}/dart-convert/JsonCodec-class.html
+[`JsonCodec`]: {{site.dart.api}}/dart-convert/JsonCodec-class.html
 [`JsonSerializable`]: {{site.pub}}/documentation/json_annotation/latest/json_annotation/JsonSerializable-class.html
 [`json_annotation`]: {{site.pub}}/packages/json_annotation
 [`json_serializable`]: {{site.pub}}/packages/json_serializable

@@ -5,6 +5,8 @@ description: >
   a delete button in favor of deleteButtonTooltipMessage.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 ## Summary
 
 Using `useDeleteButtonTooltip` of any chip that has a delete button gives a

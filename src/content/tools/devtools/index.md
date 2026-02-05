@@ -1,5 +1,6 @@
 ---
 title: Flutter and Dart DevTools
+breadcrumb: DevTools
 description: How to use Flutter DevTools with Flutter.
 ---
 
@@ -10,12 +11,12 @@ for Dart and Flutter.
 _Flutter DevTools_ and _Dart DevTools_ refer to the
 same set of tools.
 
-![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.gif){:width="100%"}
+![Dart DevTools Screens](/assets/images/docs/tools/devtools/dart-devtools.webp){:width="100%"}
 
 For a video introduction to DevTools, check out
 the following deep dive and use-case walkthrough:
 
-{% ytEmbed '_EYk-E29edo', 'Dive in to Flutter and Dart DevTools' %}
+<YouTubeEmbed id="_EYk-E29edo" title="Dive in to Flutter and Dart DevTools"></YouTubeEmbed>
 
 ## What can I do with DevTools?
 
@@ -32,7 +33,7 @@ Here are some of the things you can do with DevTools:
   about a running Flutter or Dart
   command-line app.
 * Analyze code and app size.
-* Validate deep links in your Android app.
+* Validate deep links in your Android or iOS app.
 
 We expect you to use DevTools in conjunction with
 your existing IDE or command-line based development workflow.
@@ -42,8 +43,11 @@ your existing IDE or command-line based development workflow.
 
 ## How to launch DevTools {:#start}
 
-See the [VS Code][], [Android Studio/IntelliJ][], or
-[command line][] pages for instructions on how to launch DevTools.
+You can launch DevTools with the following tools:
+
+* [VS Code][]
+* [Android Studio/IntelliJ][]
+* [command line][]
 
 ## Troubleshooting some standard issues
 
@@ -81,6 +85,13 @@ without performance impact.
 
 Please give DevTools a try, provide feedback, and file issues
 in the [DevTools issue tracker][]. Thanks!
+
+## DevTools versioning
+
+DevTools is distributed as part of the Flutter SDK. To get access to the latest
+DevTools functionality, run `flutter upgrade` to get the most up-to-date version
+of Flutter. To access DevTools features before they hit the Flutter `stable`
+channel, consider switching to the `beta` or `main` channels.
 
 ## Other resources
 

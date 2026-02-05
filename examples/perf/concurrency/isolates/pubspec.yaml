@@ -4,15 +4,11 @@ publish_to: none
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: any
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
-
+  shared_preferences: ^2.5.3

@@ -1,0 +1,431 @@
+- term: "Adaptive"
+  short_description: |-
+    A design concept where the UI adapts to be usable in the available space,
+    often changing layout or input methods based on device capabilities.
+  long_description: |-
+    Adaptive design is about the UI being _usable_ in the space,
+    as opposed to responsive design which is about fitting the UI _into_
+    the space.
+    An adaptive app selects the appropriate layout
+    (such as having a bottom nav instead of a side panel)
+    and input devices (for example, mouse versus touch)
+    to feel natural on the current device.
+  related_links:
+    - text: "Adaptive vs responsive design"
+      link: "/ui/adaptive-responsive#what-is-responsive-vs-adaptive"
+      type: "doc"
+    - text: "Building adaptive apps"
+      link: "/ui/adaptive-responsive"
+      type: "doc"
+  labels:
+    - "ui"
+    - "design"
+    
+- term: "Cupertino"
+  short_description: |-
+    Flutter's implementation of the iOS design language.
+  long_description: |-
+    Flutter's `cupertino` library implements the iOS design language,
+    comprising a set of widgets that implement Apple's Human Interface Guidelines.
+
+    The `cupertino` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Human Interface Guidelines"
+      link: "https://developer.apple.com/design/human-interface-guidelines/"
+      type: "external"
+    - text: "Cupertino widgets"
+      link: "/ui/widgets/cupertino"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
+- term: "Dart"
+  short_description: |-
+    A programming language for fast apps on any platform.
+  long_description: |-
+    Dart is an approachable, portable, and performant language designed
+    for full-stack app development. It offers sound null safety,
+    a strong type system, and compiles to native machine code
+    for mobile, desktop, and backend, as well as JavaScript or WebAssembly
+    for the web. While Dart is the foundation of Flutter,
+    it is also used for building command-line tools, servers,
+    and other applications.
+  related_links:
+    - text: "Dart language site"
+      link: "https://dart.dev"
+      type: "external"
+  labels:
+    - "dart"
+    - "fundamentals"
+    - "language"
+
+- term: "Declarative"
+  short_description: |-
+    A programming style where the UI state is described,
+    and the framework transitions the UI to match that state.
+  long_description: |-
+    Declarative programming is a style where you describe the
+    _current state_ of your UI, and the framework takes care
+    of transitioning the UI to match that state.
+
+    In Flutter, widgets are immutable "blueprints".
+    To change the UI, a widget triggers a rebuild on itself
+    (usually by calling `setState`) and constructs a new widget subtree.
+    This contrasts with _imperative_ programming,
+    where you manually construct and mutate UI entities.
+  related_links:
+    - text: "Introduction to declarative UI"
+      link: "/get-started/flutter-for/declarative"
+      type: "doc"
+    - text: "Start thinking declaratively"
+      link: "/data-and-backend/state-mgmt/declarative"
+      type: "doc"
+  labels:
+    - "fundamentals"
+    - "ui"
+
+- term: "Embedder"
+  short_description: |-
+    The platform-specific component that supports Flutter
+    on a native platform.
+  long_description: |-
+    Each native platform supported by Flutter has an _embedder_
+    for platform-specific logic. The embedder is the bridge
+    that coordinates with the underlying operating system.
+    It provides access to services like input, accessibility,
+    message event loops, and more.
+    The embedder also launches and manages the Flutter engine.
+
+    Each embedder is written in the platform's native language:
+    Java and Kotlin for Android, Swift and Objective-C for iOS and macOS,
+    and C++ for Windows and Linux.
+
+    Each embedder enables plugin packages to add additional
+    platform-specific functionality to the app.
+
+    The embedder is launched and managed by the runner app.
+  related_links:
+    - text: "Architectural overview: The Embedder"
+      link: "/resources/architectural-overview#platform-embedding"
+      type: "doc"
+    - text: "Flutter on embedded devices"
+      link: "/embedded"
+      type: "doc"
+  labels:
+    - "architecture"
+    - "engine"
+
+- term: "Engine"
+  short_description: |-
+    The portable runtime for Flutter apps.
+  long_description: |-
+    The engine is Flutter's platform-agnostic logic that's written
+    in native code, mostly C++.
+
+    The main responsibilities of the engine are as follows:
+
+    1. Exposes the `dart:ui` API, which are the low-level primitives
+       that the Flutter [framework][] builds upon.
+    2. Converts low-level drawing commands into pixels (also called
+       _rasterization_, this includes [Impeller][] and Skia).
+    3. Responsible for launching and managing Dart's runtime.
+    4. Responsible for laying out text.
+    5. Responsible for asset resolution.
+
+    [framework]: /resources/architectural-overview#architectural-layers
+    [Impeller]: /resources/glossary#impeller
+  related_links:
+    - text: "Architectural overview: The Engine"
+      link: "/resources/architectural-overview#architectural-layers"
+      type: "doc"
+    - text: "Engine repository"
+      link: "https://github.com/flutter/flutter/tree/main/engine/src/flutter"
+      type: "code"
+  labels:
+    - "engine"
+    - "architecture"
+
+- term: "Frame"
+  short_description: |-
+    A single image in a sequence of images that
+    makes up an animation or UI update.
+  long_description: |-
+    Flutter aims to produce 60 frames per second (fps),
+    or 120 fps on capable devices.
+    This means the framework has approximately 16ms (at 60 fps)
+    or 8ms (at 120 fps) to render each frame.
+    If the app takes longer than this to render a frame,
+    the user might see [jank](/resources/glossary#jank).
+  related_links:
+    - text: "Rendering performance"
+      link: "/perf/rendering-performance"
+      type: "doc"
+  labels:
+    - "performance"
+    - "rendering"
+
+- term: "Hot reload"
+  short_description: |-
+    A Flutter feature that allows you to inject updated code into
+    a running application in the Dart VM and see the changes immediately
+    while maintaining application state.
+  long_description: |-
+    This feature is also called "stateful hot reload".
+    After the Dart runtime updates classes with the new versions
+    of fields and functions, the Flutter framework automatically
+    rebuilds the widget tree, allowing you to quickly view the effects
+    of your changes. Hot reload greatly increases the speed of development.
+
+    Hot reload works on mobile, web, and desktop apps that are
+    running in debug mode and is fully supported in VS Code,
+    Android Studio, and IntelliJ IDEA. It does not re-run `main` or
+    `initState`; for that, use [hot restart][].
+
+    [hot restart]: /resources/glossary#hot-restart
+  related_links:
+    - text: "Hot reload documentation"
+      link: "/tools/hot-reload"
+      type: "doc"
+    - text: "Fast development cycles with Flutter's hot reload"
+      link: "https://youtu.be/YScJS8obxlo?si=QxJDIf_LGmle2Xs6"
+      type: "video"
+    - text: "Stateful hot reload for web is here"
+      link: "https://youtu.be/7nT3BHm6Gyg?si=nLUM0n69PSQnm8CF"
+      type: "video"
+  labels:
+    - "fast development"
+    - "tooling"
+
+- term: "Hot restart"
+  short_description: |-
+    Similar to hot reload, but it does not maintain app state.
+    Use hot restart to re-run `main` or `initState`.
+  long_description: |-
+    Hot restart is still faster than a full restart, which also
+    recompiles the native, platform code (such as Swift).
+    On the web, it also restarts the Dart Development Compiler (DDC).
+  related_links:
+    - text: "Difference between hot reload, hot restart, and full restart"
+      link: "/tools/hot-reload#hot-restart"
+      type: "doc"
+  labels:
+    - "fast development"
+    - "tooling"
+
+- term: "Impeller"
+  short_description: |-
+    Flutter's modern graphics rendering engine,
+    designed for smooth, predictable performance.
+  long_description: |-
+    _Impeller_ is Flutter's high-performance rendering engine,
+    built from the ground up for Flutter's needs and modern graphics APIs.
+
+    Its primary goal is to provide consistently smooth performance and
+    eliminate stuttering while rendering, particularly that
+    caused by shader compilation during animations and interactions.
+
+    Impeller achieves this by pre-compiling a specific, smaller set of
+    shaders at application build time, rather than compiling at runtime.
+  related_links:
+    - text: "Impeller documentation"
+      link: "/perf/impeller"
+      type: "doc"
+    - text: "Impeller FAQ"
+      link: "https://github.com/flutter/flutter/blob/main/docs/engine/impeller/docs/faq.md"
+      type: "external"
+  labels:
+    - "rendering"
+    - "performance"
+    - "engine"
+
+- term: "Jank"
+  short_description: |-
+    When an app appears to stutter or jerk visually instead of animating
+    smoothly.
+  long_description: |-
+    Jank occurs when a system can't keep up with the expected frame rate
+    and drops frames. Jank is a performance problem. Flutter offers
+    information and tooling, such as the Performance tool in DevTools,
+    that can help you diagnose and fix jank in your application.
+  related_links:
+    - text: "Use the Performance view in DevTools"
+      link: "/tools/devtools/performance"
+      type: "doc"
+    - text: "Improving rendering performance"
+      link: "/perf/rendering-performance"
+      type: "doc"
+    - text: "Performance best practices"
+      link: "/perf/best-practices"
+      type: "doc"
+    - text: "Measure performance with an integration test"
+      link: "/cookbook/testing/integration/profiling"
+      type: "doc"
+  labels:
+    - "performance"
+    - "smooth rendering"
+
+- term: "Material"
+  short_description: |-
+    An open-source design system built and supported by Google.
+  long_description: |-
+    Material Design is an adaptable system of guidelines, components, and tools
+    that support the best practices of user interface design.
+    Flutter's `material` library implements Material Design widgets.
+
+    The `material` library, originally part of the main Flutter repo,
+    will be decoupled into a separate package.
+    For more information,
+    visit [flutter.dev/go/decouple-design](https://flutter.dev/go/decouple-design).
+  related_links:
+    - text: "Material Design site"
+      link: "https://m3.material.io"
+      type: "external"
+    - text: "Material widgets"
+      link: "/ui/widgets/material"
+      type: "doc"
+  labels:
+    - "design"
+    - "ui"
+
+- term: "Prop drilling"
+  short_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters.
+  long_description: |-
+    The process of passing data through multiple layers of widgets
+    through constructor parameters, usually to reach a deeper descendant.
+    This pattern can become verbose, which is
+    why other state management solutions
+    (like `InheritedWidget` or `Provider`) are often used.
+  related_links:
+    - text: "State management introduction"
+      link: "/data-and-backend/state-mgmt/intro"
+      type: "doc"
+  labels:
+    - "state management"
+    - "architecture"
+
+- term: "pub"
+  short_description: |-
+    The package manager for the Dart programming language.
+  long_description: |-
+    Pub is the tool used for managing Dart packages.
+    It allows you to install, upgrade, and manage dependencies for your Dart app.
+    Dependencies are defined in the [`pubspec.yaml`][] file.
+    Packages are hosted on [pub.dev][], the official package repository.
+    
+    [pub.dev]: https://pub.dev
+    [`pubspec.yaml`]: https://dart.dev/tools/pub/pubspec
+  related_links:
+    - text: "pub.dev"
+      link: "https://pub.dev"
+      type: "external"
+    - text: "Using packages"
+      link: "/packages-and-plugins/using-packages"
+      type: "doc"
+  labels:
+    - "packages"
+    - "tooling"
+
+- term: "Sliver"
+  short_description: |-
+    A customizable portion of a scrollable area.
+  long_description: |-
+    A sliver is a portion of a scrollable area that you can define
+    to behave in a special way.
+    Think of slivers as building blocks that you can compose together
+    inside a `CustomScrollView` to create custom scrolling experiences,
+    like elastic scrolling or a collapsing header.
+    Slivers are built lazily, which means that Flutter only renders
+    the slivers that are visible on screen,
+    making them very efficient for long lists of content.
+  related_links:
+    - text: "Sliver documentation"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+    - text: "Slivers demystified"
+      link: "https://blog.flutter.dev/slivers-demystified-6ff68ab0296f"
+      type: "article"
+    - text: "SliverList and SliverGrid WotW"
+      link: "https://youtu.be/ORiTTaVY6mM"
+      type: "video"
+    - text: "SliverAppBar WotW"
+      link: "https://youtu.be/R9C5KMJKluE"
+      type: "video"
+    - text: "CustomScrollView class"
+      link: "https://api.flutter.dev/flutter/widgets/CustomScrollView-class.html"
+      type: "api"
+    - text: "SliverAppBar class"
+      link: "https://api.flutter.dev/flutter/material/SliverAppBar-class.html"
+      type: "api"
+    - text: "SliverGrid class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverGrid-class.html"
+      type: "api"
+    - text: "SliverList class"
+      link: "https://api.flutter.dev/flutter/widgets/SliverList-class.html"
+      type: "api"
+  labels:
+    - "scrolling"
+    - "ui"
+
+- term: "Viewport"
+  short_description: |-
+    A widget that displays a subset of its children
+    based on the current scroll offset.
+  long_description: |-
+    A viewport is the visual component of the scrolling machinery.
+    It displays a subset of its children (usually slivers)
+    based on the current scroll offset.
+    It is often described as being "bigger on the inside"
+    because it can contain more content than is visible on the screen.
+  related_links:
+    - text: "Viewport class"
+      link: "https://api.flutter.dev/flutter/widgets/Viewport-class.html"
+      type: "api"
+    - text: "Slivers"
+      link: "/ui/layout/scrolling/slivers"
+      type: "doc"
+  labels:
+    - "scrolling"
+    - "ui"
+
+- term: "Widget"
+  short_description: |-
+    The basic building block of a Flutter user interface.
+  long_description: |-
+    An immutable description of part of a user interface.
+
+    In Flutter, almost everything is a _widget_.
+    Widgets are the fundamental building blocks you use to
+    create your application's UI with Flutter.
+    Each widget is an immutable declaration of _what the UI should
+    look like based on its current configuration and state.
+
+    Widgets are composed together in a hierarchy to form the widget tree.
+    When a widget's state changes, the Flutter framework
+    rebuilds the necessary parts of the tree to update the UI.
+
+    The two primary types of widgets are
+    [`StatelessWidget`][], which have no mutable state, and
+    [`StatefulWidget`][], which have a persistent [state][] that can be updated.
+
+    [`StatelessWidget`]: https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html
+    [`StatefulWidget`]: https://api.flutter.dev/flutter/widgets/StatefulWidget-class.html
+    [state]: https://api.flutter.dev/flutter/widgets/State-class.html
+  related_links:
+    - text: "Widget fundamentals"
+      link: "/learn/pathway/tutorial/widget-fundamentals"
+      type: "doc"
+    - text: "Widget catalog"
+      link: "/ui/widgets"
+      type: "doc"
+    - text: "Widget class"
+      link: "https://api.flutter.dev/flutter/widgets/Widget-class.html"
+      type: "api"
+  labels:
+    - "ui"
+    - "widgets"

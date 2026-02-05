@@ -23,10 +23,7 @@ class _MenuState extends State<Menu> {
       color: Colors.white,
       child: Stack(
         fit: StackFit.expand,
-        children: [
-          _buildFlutterLogo(),
-          _buildContent(),
-        ],
+        children: [_buildFlutterLogo(), _buildContent()],
       ),
     );
   }
@@ -57,10 +54,7 @@ class _MenuState extends State<Menu> {
           child: Text(
             _menuTitles[i],
             textAlign: TextAlign.left,
-            style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w500,
-            ),
+            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
           ),
         ),
       );
@@ -82,14 +76,12 @@ class _MenuState extends State<Menu> {
           onPressed: () {},
           child: const Text(
             'Get Started',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 22,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 22),
           ),
         ),
       ),
     );
   }
 }
+
 // #enddocregion step1

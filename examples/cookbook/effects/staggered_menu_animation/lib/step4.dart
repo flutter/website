@@ -38,7 +38,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
     }
 
     final buttonStartTime =
-        Duration(milliseconds: (_menuTitles.length * 50)) + _buttonDelayTime;
+        Duration(milliseconds: _menuTitles.length * 50) + _buttonDelayTime;
     final buttonEndTime = buttonStartTime + _buttonTime;
     _buttonInterval = Interval(
       buttonStartTime.inMilliseconds / _animationDuration.inMilliseconds,
@@ -69,7 +69,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   static const _staggerTime = Duration(milliseconds: 50);
   static const _buttonDelayTime = Duration(milliseconds: 150);
   static const _buttonTime = Duration(milliseconds: 500);
-  final _animationDuration = _initialDelayTime +
+  final _animationDuration =
+      _initialDelayTime +
       (_staggerTime * _menuTitles.length) +
       _buttonDelayTime +
       _buttonTime;
@@ -109,10 +110,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             child: Text(
               _menuTitles[i],
               textAlign: TextAlign.left,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.w500),
             ),
           ),
         ),
@@ -132,16 +130,14 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
           animation: _staggeredController,
           builder: (context, child) {
             final animationPercent = Curves.elasticOut.transform(
-                _buttonInterval.transform(_staggeredController.value));
+              _buttonInterval.transform(_staggeredController.value),
+            );
             final opacity = animationPercent.clamp(0.0, 1.0);
             final scale = (animationPercent * 0.5) + 0.5;
 
             return Opacity(
               opacity: opacity,
-              child: Transform.scale(
-                scale: scale,
-                child: child,
-              ),
+              child: Transform.scale(scale: scale, child: child),
             );
           },
           child: ElevatedButton(
@@ -153,15 +149,13 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
             onPressed: () {},
             child: const Text(
               'Get Started',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22,
-              ),
+              style: TextStyle(color: Colors.white, fontSize: 22),
             ),
           ),
         ),
       ),
     );
   }
+
   // #enddocregion build-get-started
 }

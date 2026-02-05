@@ -32,7 +32,7 @@ class SampleAppPage extends StatefulWidget {
 }
 
 class _SampleAppPageState extends State<SampleAppPage> {
-  List widgets = [];
+  List<Map<String, Object?>> widgets = [];
 
   @override
   void initState() {
@@ -56,9 +56,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample App'),
-      ),
+      appBar: AppBar(title: const Text('Sample App')),
       body: getBody(),
     );
   }
@@ -85,15 +83,18 @@ class _SampleAppPageState extends State<SampleAppPage> {
     await Isolate.spawn(dataLoader, receivePort.sendPort);
 
     // The 'echo' isolate sends its SendPort as the first message.
-    SendPort sendPort = await receivePort.first;
+    SendPort sendPort = await receivePort.first as SendPort;
 
-    final msg = await sendReceive(
-      sendPort,
-      'https://jsonplaceholder.typicode.com/posts',
-    ) as List<Object?>;
+    final msg =
+        await sendReceive(
+              sendPort,
+              'https://jsonplaceholder.typicode.com/posts',
+            )
+            as List<Object?>;
+    final posts = msg.cast<Map<String, Object?>>();
 
     setState(() {
-      widgets = msg;
+      widgets = posts;
     });
   }
 
@@ -106,11 +107,10 @@ class _SampleAppPageState extends State<SampleAppPage> {
     sendPort.send(port.sendPort);
 
     await for (var msg in port) {
-      String data = msg[0];
-      SendPort replyTo = msg[1];
+      String dataUrl = msg[0] as String;
+      SendPort replyTo = msg[1] as SendPort;
 
-      String dataURL = data;
-      http.Response response = await http.get(Uri.parse(dataURL));
+      http.Response response = await http.get(Uri.parse(dataUrl));
       // Lots of JSON to parse
       replyTo.send(jsonDecode(response.body));
     }
@@ -121,5 +121,6 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
+
   // #enddocregion load-data
 }

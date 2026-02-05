@@ -59,9 +59,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Butterfly Video'),
-      ),
+      appBar: AppBar(title: const Text('Butterfly Video')),
       // #docregion FutureBuilder
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
@@ -79,9 +77,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           } else {
             // If the VideoPlayerController is still initializing, show a
             // loading spinner.
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

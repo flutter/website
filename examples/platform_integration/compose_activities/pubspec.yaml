@@ -5,8 +5,9 @@ publish_to: none
 
 version: 1.0.0+1
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
@@ -15,8 +16,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  example_utils:
-    path: ../../example_utils
 
 flutter:
   uses-material-design: true

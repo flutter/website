@@ -1,15 +1,10 @@
 ---
 title: Building user interfaces with Flutter
-short-title: UI
+shortTitle: UI
 description: Introduction to user interface development in Flutter.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="ui/widgets_intro/"?>
-
-{% assign api = site.api | append: '/flutter' -%}
 
 Flutter widgets are built using a modern framework that takes
 inspiration from [React][]. The central idea is that you build
@@ -41,6 +36,7 @@ void main() {
       child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
+        style: TextStyle(color: Colors.blue),
       ),
     ),
   );
@@ -125,9 +121,7 @@ class MyAppBar extends StatelessWidget {
           ),
           // Expanded expands its child
           // to fill the available space.
-          Expanded(
-            child: title,
-          ),
+          Expanded(child: title),
           const IconButton(
             icon: Icon(Icons.search),
             tooltip: 'Search',
@@ -153,16 +147,13 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context) //
-                  .primaryTextTheme
-                  .titleLarge,
+              style:
+                  Theme.of(context) //
+                      .primaryTextTheme
+                      .titleLarge,
             ),
           ),
-          const Expanded(
-            child: Center(
-              child: Text('Hello, world!'),
-            ),
-          ),
+          const Expanded(child: Center(child: Text('Hello, world!'))),
         ],
       ),
     );
@@ -173,9 +164,7 @@ void main() {
   runApp(
     const MaterialApp(
       title: 'My app', // used by the OS task switcher
-      home: SafeArea(
-        child: MyScaffold(),
-      ),
+      home: SafeArea(child: MyScaffold()),
     ),
   );
 }
@@ -234,12 +223,7 @@ widget is entirely optional but a good practice.
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Flutter Tutorial',
-      home: TutorialHome(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Flutter Tutorial', home: TutorialHome()));
 }
 
 class TutorialHome extends StatelessWidget {
@@ -266,9 +250,7 @@ class TutorialHome extends StatelessWidget {
         ],
       ),
       // body is the majority of the screen.
-      body: const Center(
-        child: Text('Hello, world!'),
-      ),
+      body: const Center(child: Text('Hello, world!')),
       floatingActionButton: const FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
         onPressed: null,
@@ -332,9 +314,7 @@ class MyButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
           color: Colors.lightGreen[500],
         ),
-        child: const Center(
-          child: Text('Engage'),
-        ),
+        child: const Center(child: Text('Engage')),
       ),
     );
   }
@@ -343,11 +323,7 @@ class MyButton extends StatelessWidget {
 void main() {
   runApp(
     const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: MyButton(),
-        ),
-      ),
+      home: Scaffold(body: Center(child: MyButton())),
     ),
   );
 }
@@ -428,10 +404,7 @@ class _CounterState extends State<Counter> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        ElevatedButton(
-          onPressed: _increment,
-          child: const Text('Increment'),
-        ),
+        ElevatedButton(onPressed: _increment, child: const Text('Increment')),
         const SizedBox(width: 16),
         Text('Count: $_counter'),
       ],
@@ -442,11 +415,7 @@ class _CounterState extends State<Counter> {
 void main() {
   runApp(
     const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Counter(),
-        ),
-      ),
+      home: Scaffold(body: Center(child: Counter())),
     ),
   );
 }
@@ -497,10 +466,7 @@ class CounterIncrementor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      child: const Text('Increment'),
-    );
+    return ElevatedButton(onPressed: onPressed, child: const Text('Increment'));
   }
 }
 
@@ -536,11 +502,7 @@ class _CounterState extends State<Counter> {
 void main() {
   runApp(
     const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Counter(),
-        ),
-      ),
+      home: Scaffold(body: Center(child: Counter())),
     ),
   );
 }
@@ -577,7 +539,7 @@ class Product {
   final String name;
 }
 
-typedef CartChangedCallback = Function(Product product, bool inCart);
+typedef CartChangedCallback = void Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
@@ -681,7 +643,7 @@ class Product {
   final String name;
 }
 
-typedef CartChangedCallback = Function(Product product, bool inCart);
+typedef CartChangedCallback = void Function(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
   ShoppingListItem({
@@ -724,10 +686,7 @@ class ShoppingListItem extends StatelessWidget {
         backgroundColor: _getColor(context),
         child: Text(product.name[0]),
       ),
-      title: Text(
-        product.name,
-        style: _getTextStyle(context),
-      ),
+      title: Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -769,9 +728,7 @@ class _ShoppingListState extends State<ShoppingList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Shopping List'),
-      ),
+      appBar: AppBar(title: const Text('Shopping List')),
       body: ListView(
         padding: const EdgeInsets.symmetric(vertical: 8),
         children: widget.products.map((product) {
@@ -787,16 +744,18 @@ class _ShoppingListState extends State<ShoppingList> {
 }
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'Shopping App',
-    home: ShoppingList(
-      products: [
-        Product(name: 'Eggs'),
-        Product(name: 'Flour'),
-        Product(name: 'Chocolate chips'),
-      ],
+  runApp(
+    const MaterialApp(
+      title: 'Shopping App',
+      home: ShoppingList(
+        products: [
+          Product(name: 'Eggs'),
+          Product(name: 'Flour'),
+          Product(name: 'Chocolate chips'),
+        ],
+      ),
     ),
-  ));
+  );
 }
 ```
 
@@ -898,54 +857,54 @@ retrieve the state associated with a widget.
 
 For more information, check out the [`GlobalKey`][] API.
 
-[`actions`]: {{api}}/material/AppBar-class.html#actions
+[`actions`]: {{site.api}}/flutter/material/AppBar-class.html#actions
 [adding interactivity to your Flutter app]: /ui/interactivity
-[`AppBar`]: {{api}}/material/AppBar-class.html
-[`BoxDecoration`]: {{api}}/painting/BoxDecoration-class.html
-[`build()`]: {{api}}/widgets/StatelessWidget/build.html
+[`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html
+[`BoxDecoration`]: {{site.api}}/flutter/painting/BoxDecoration-class.html
+[`build()`]: {{site.api}}/flutter/widgets/StatelessWidget/build.html
 [building layouts]: /ui/layout
-[`Center`]: {{api}}/widgets/Center-class.html
-[`Column`]: {{api}}/widgets/Column-class.html
-[`Container`]: {{api}}/widgets/Container-class.html
-[`createState()`]: {{api}}/widgets/StatefulWidget-class.html#createState
+[`Center`]: {{site.api}}/flutter/widgets/Center-class.html
+[`Column`]: {{site.api}}/flutter/widgets/Column-class.html
+[`Container`]: {{site.api}}/flutter/widgets/Container-class.html
+[`createState()`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html#createState
 [Cupertino components]: /ui/widgets/cupertino
-[`CupertinoApp`]: {{api}}/cupertino/CupertinoApp-class.html
-[`CupertinoNavigationBar`]: {{api}}/cupertino/CupertinoNavigationBar-class.html
-[`didUpdateWidget()`]: {{api}}/widgets/State-class.html#didUpdateWidget
-[`dispose()`]: {{api}}/widgets/State-class.html#dispose
-[`Expanded`]: {{api}}/widgets/Expanded-class.html
+[`CupertinoApp`]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
+[`CupertinoNavigationBar`]: {{site.api}}/flutter/cupertino/CupertinoNavigationBar-class.html
+[`didUpdateWidget()`]: {{site.api}}/flutter/widgets/State-class.html#didUpdateWidget
+[`dispose()`]: {{site.api}}/flutter/widgets/State-class.html#dispose
+[`Expanded`]: {{site.api}}/flutter/widgets/Expanded-class.html
 [`final`]: {{site.dart-site}}/language/variables#final-and-const
-[`flex`]: {{api}}/widgets/Expanded-class.html#flex
-[`FloatingActionButton`]: {{api}}/material/FloatingActionButton-class.html
+[`flex`]: {{site.api}}/flutter/widgets/Expanded-class.html#flex
+[`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Gestures in Flutter]: /ui/interactivity/gestures
-[`GestureDetector`]: {{api}}/widgets/GestureDetector-class.html
-[`GlobalKey`]: {{api}}/widgets/GlobalKey-class.html
-[`IconButton`]: {{api}}/material/IconButton-class.html
-[`initState()`]: {{api}}/widgets/State-class.html#initState
-[`key`]: {{api}}/widgets/Widget-class.html#key
-[`Key`]: {{api}}/foundation/Key-class.html
+[`GestureDetector`]: {{site.api}}/flutter/widgets/GestureDetector-class.html
+[`GlobalKey`]: {{site.api}}/flutter/widgets/GlobalKey-class.html
+[`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
+[`initState()`]: {{site.api}}/flutter/widgets/State-class.html#initState
+[`key`]: {{site.api}}/flutter/widgets/Widget-class.html#key
+[`Key`]: {{site.api}}/flutter/foundation/Key-class.html
 [Layouts]: /ui/widgets/layout
-[`leading`]: {{api}}/material/AppBar-class.html#leading
+[`leading`]: {{site.api}}/flutter/material/AppBar-class.html#leading
 [Material Components widgets]: /ui/widgets/material
 [Material icons]: https://design.google.com/icons/
-[`MaterialApp`]: {{api}}/material/MaterialApp-class.html
-[`Navigator`]: {{api}}/widgets/Navigator-class.html
-[`onPressed()`]: {{api}}/material/ElevatedButton-class.html#onPressed
-[`onTap()`]: {{api}}/widgets/GestureDetector-class.html#onTap
-[`Positioned`]: {{api}}/widgets/Positioned-class.html
-[`ElevatedButton`]: {{api}}/material/ElevatedButton-class.html
+[`MaterialApp`]: {{site.api}}/flutter/material/MaterialApp-class.html
+[`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
+[`onPressed()`]: {{site.api}}/flutter/material/ElevatedButton-class.html#onPressed
+[`onTap()`]: {{site.api}}/flutter/widgets/GestureDetector-class.html#onTap
+[`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html
+[`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [React]: https://react.dev
-[`RenderObject`]: {{api}}/rendering/RenderObject-class.html
-[`Row`]: {{api}}/widgets/Row-class.html
-[`runApp()`]: {{api}}/widgets/runApp.html
-[`runtimeType`]: {{api}}/widgets/Widget-class.html#runtimeType
-[`Scaffold`]: {{api}}/material/Scaffold-class.html
-[`setState()`]: {{api}}/widgets/State/setState.html
-[`Stack`]: {{api}}/widgets/Stack-class.html
-[`State`]: {{api}}/widgets/State-class.html
-[`StatefulWidget`]: {{api}}/widgets/StatefulWidget-class.html
-[`StatelessWidget`]: {{api}}/widgets/StatelessWidget-class.html
-[`Text`]: {{api}}/widgets/Text-class.html
-[`title`]: {{api}}/material/AppBar-class.html#title
-[`widget`]: {{api}}/widgets/State-class.html#widget
-[`Widget`]: {{api}}/widgets/Widget-class.html
+[`RenderObject`]: {{site.api}}/flutter/rendering/RenderObject-class.html
+[`Row`]: {{site.api}}/flutter/widgets/Row-class.html
+[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
+[`runtimeType`]: {{site.api}}/flutter/widgets/Widget-class.html#runtimeType
+[`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
+[`setState()`]: {{site.api}}/flutter/widgets/State/setState.html
+[`Stack`]: {{site.api}}/flutter/widgets/Stack-class.html
+[`State`]: {{site.api}}/flutter/widgets/State-class.html
+[`StatefulWidget`]: {{site.api}}/flutter/widgets/StatefulWidget-class.html
+[`StatelessWidget`]: {{site.api}}/flutter/widgets/StatelessWidget-class.html
+[`Text`]: {{site.api}}/flutter/widgets/Text-class.html
+[`title`]: {{site.api}}/flutter/material/AppBar-class.html#title
+[`widget`]: {{site.api}}/flutter/widgets/State-class.html#widget
+[`Widget`]: {{site.api}}/flutter/widgets/Widget-class.html

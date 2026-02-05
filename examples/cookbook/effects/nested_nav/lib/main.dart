@@ -16,9 +16,7 @@ void main() {
     MaterialApp(
       theme: ThemeData(
         brightness: Brightness.dark,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blue,
-        ),
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.blue),
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Colors.blue,
         ),
@@ -31,16 +29,15 @@ void main() {
         } else if (settings.name == routeSettings) {
           page = const SettingsScreen();
         } else if (settings.name!.startsWith(routePrefixDeviceSetup)) {
-          final subRoute =
-              settings.name!.substring(routePrefixDeviceSetup.length);
-          page = SetupFlow(
-            setupPageRoute: subRoute,
+          final subRoute = settings.name!.substring(
+            routePrefixDeviceSetup.length,
           );
+          page = SetupFlow(setupPageRoute: subRoute);
         } else {
           throw Exception('Unknown route: ${settings.name}');
         }
 
-        return MaterialPageRoute<dynamic>(
+        return MaterialPageRoute<void>(
           builder: (context) {
             return page;
           },
@@ -59,10 +56,7 @@ class SetupFlow extends StatefulWidget {
     return context.findAncestorStateOfType<SetupFlowState>()!;
   }
 
-  const SetupFlow({
-    super.key,
-    required this.setupPageRoute,
-  });
+  const SetupFlow({super.key, required this.setupPageRoute});
 
   final String setupPageRoute;
 
@@ -100,28 +94,30 @@ class SetupFlowState extends State<SetupFlow> {
 
   Future<bool> _isExitDesired() async {
     return await showDialog<bool>(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text('Are you sure?'),
-                content: const Text(
-                    'If you exit device setup, your progress will be lost.'),
-                actions: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                    },
-                    child: const Text('Leave'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(false);
-                    },
-                    child: const Text('Stay'),
-                  ),
-                ],
-              );
-            }) ??
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              title: const Text('Are you sure?'),
+              content: const Text(
+                'If you exit device setup, your progress will be lost.',
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(true);
+                  },
+                  child: const Text('Leave'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop(false);
+                  },
+                  child: const Text('Stay'),
+                ),
+              ],
+            );
+          },
+        ) ??
         false;
   }
 
@@ -154,20 +150,18 @@ class SetupFlowState extends State<SetupFlow> {
   Route<Widget> _onGenerateRoute(RouteSettings settings) {
     final page = switch (settings.name) {
       routeDeviceSetupStartPage => WaitingPage(
-          message: 'Searching for nearby bulb...',
-          onWaitComplete: _onDiscoveryComplete,
-        ),
+        message: 'Searching for nearby bulb...',
+        onWaitComplete: _onDiscoveryComplete,
+      ),
       routeDeviceSetupSelectDevicePage => SelectDevicePage(
-          onDeviceSelected: _onDeviceSelected,
-        ),
+        onDeviceSelected: _onDeviceSelected,
+      ),
       routeDeviceSetupConnectingPage => WaitingPage(
-          message: 'Connecting...',
-          onWaitComplete: _onConnectionEstablished,
-        ),
-      routeDeviceSetupFinishedPage => FinishedPage(
-          onFinishPressed: _exitSetup,
-        ),
-      _ => throw StateError('Unexpected route name: ${settings.name}!')
+        message: 'Connecting...',
+        onWaitComplete: _onConnectionEstablished,
+      ),
+      routeDeviceSetupFinishedPage => FinishedPage(onFinishPressed: _exitSetup),
+      _ => throw StateError('Unexpected route name: ${settings.name}!'),
     };
 
     return MaterialPageRoute(
@@ -190,10 +184,7 @@ class SetupFlowState extends State<SetupFlow> {
 }
 
 class SelectDevicePage extends StatelessWidget {
-  const SelectDevicePage({
-    super.key,
-    required this.onDeviceSelected,
-  });
+  const SelectDevicePage({super.key, required this.onDeviceSelected});
 
   final void Function(String deviceId) onDeviceSelected;
 
@@ -225,9 +216,7 @@ class SelectDevicePage extends StatelessWidget {
                   },
                   child: const Text(
                     'Bulb 22n483nk5834',
-                    style: TextStyle(
-                      fontSize: 24,
-                    ),
+                    style: TextStyle(fontSize: 24),
                   ),
                 ),
               ),
@@ -289,10 +278,7 @@ class _WaitingPageState extends State<WaitingPage> {
 }
 
 class FinishedPage extends StatelessWidget {
-  const FinishedPage({
-    super.key,
-    required this.onFinishPressed,
-  });
+  const FinishedPage({super.key, required this.onFinishPressed});
 
   final VoidCallback onFinishPressed;
 
@@ -325,17 +311,16 @@ class FinishedPage extends StatelessWidget {
                 const Text(
                   'Bulb added!',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 32),
                 ElevatedButton(
                   style: ButtonStyle(
                     padding: WidgetStateProperty.resolveWith((states) {
                       return const EdgeInsets.symmetric(
-                          horizontal: 24, vertical: 12);
+                        horizontal: 24,
+                        vertical: 12,
+                      );
                     }),
                     backgroundColor: WidgetStateColor.resolveWith((states) {
                       return const Color(0xFF222222);
@@ -345,12 +330,7 @@ class FinishedPage extends StatelessWidget {
                     }),
                   ),
                   onPressed: onFinishPressed,
-                  child: const Text(
-                    'Finish',
-                    style: TextStyle(
-                      fontSize: 24,
-                    ),
-                  ),
+                  child: const Text('Finish', style: TextStyle(fontSize: 24)),
                 ),
               ],
             ),
@@ -363,9 +343,7 @@ class FinishedPage extends StatelessWidget {
 
 @immutable
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    super.key,
-  });
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -396,10 +374,7 @@ class HomeScreen extends StatelessWidget {
               const Text(
                 'Add your first bulb',
                 textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -430,9 +405,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({
-    super.key,
-  });
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -458,8 +431,6 @@ class SettingsScreen extends StatelessWidget {
   }
 
   PreferredSizeWidget _buildAppBar() {
-    return AppBar(
-      title: const Text('Settings'),
-    );
+    return AppBar(title: const Text('Settings'));
   }
 }

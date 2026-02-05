@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter layout demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
+        appBar: AppBar(title: const Text('Flutter layout demo')),
         // Change to buildFoo() for the other examples
         body: Center(child: buildExpandedImages()),
       ),
@@ -40,15 +38,9 @@ class MyApp extends StatelessWidget {
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            child: Image.asset('images/pic1.jpg'),
-          ),
-          Expanded(
-            child: Image.asset('images/pic2.jpg'),
-          ),
-          Expanded(
-            child: Image.asset('images/pic3.jpg'),
-          ),
+          Expanded(child: Image.asset('images/pic1.jpg')),
+          Expanded(child: Image.asset('images/pic2.jpg')),
+          Expanded(child: Image.asset('images/pic3.jpg')),
         ],
       );
   // #enddocregion expanded-images
@@ -58,16 +50,9 @@ class MyApp extends StatelessWidget {
       Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            child: Image.asset('images/pic1.jpg'),
-          ),
-          Expanded(
-            flex: 2,
-            child: Image.asset('images/pic2.jpg'),
-          ),
-          Expanded(
-            child: Image.asset('images/pic3.jpg'),
-          ),
+          Expanded(child: Image.asset('images/pic1.jpg')),
+          Expanded(flex: 2, child: Image.asset('images/pic2.jpg')),
+          Expanded(child: Image.asset('images/pic3.jpg')),
         ],
       );
   // #enddocregion expanded-images-with-flex

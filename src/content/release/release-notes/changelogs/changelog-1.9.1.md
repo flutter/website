@@ -1,7 +1,8 @@
 ---
-title: Change log for Flutter 1.9.1 
-short-title: 1.9.1 change log
+title: Change log for Flutter 1.9.1
+shortTitle: 1.9.1 change log
 description: Change log for Flutter 1.9.1 containing a list of all PRs merged for this release.
+skipTemplateRendering: true
 ---
 
 
@@ -1893,4 +1894,3 @@ From Fri Jun 21 22:31:55 2019 -0400 to Sun Aug 18 12:22:00 2019 -0700
 [11072](https://github.com/flutter/engine/pull/11072) Roll src/third_party/dart beee442625..79e6c74337 (8 commits) (cla: yes)
 
 [11075](https://github.com/flutter/engine/pull/11075) [dynamic_thread_merging] Resubmit only on the frame where the merge (cla: yes)
-

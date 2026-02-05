@@ -1,6 +1,6 @@
 ---
 title: Add Flutter to an existing app
-short-title: Add to app
+shortTitle: Add to app
 description: Adding Flutter as a library to an existing Android or iOS app.
 ---
 
@@ -15,7 +15,7 @@ piecemeal, as a module. This feature is known as "add-to-app". The module can be
 imported into your existing app to render part of your app using Flutter, while
 the rest can be rendered using existing technology. This method can also be used
 to run shared non-UI logic by taking advantage of Dart's portability and
-interopability with other languages.
+interoperability with other languages.
 
 Add-to-app is currently supported on Android, iOS, and web.
 
@@ -48,7 +48,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### Add to Android applications
 
-{% render docs/app-figure.md, image:"development/add-to-app/android-overview.gif", alt:"Add-to-app steps on Android" %}
+<DashImage figure image="development/add-to-app/android-overview.webp" alt="Add-to-app steps on Android" />
 
 * Auto-build and import the Flutter module by adding a
   Flutter SDK hook to your Gradle script.
@@ -70,7 +70,7 @@ various use-cases. Two of the most common use-cases are:
 
 ### Add to iOS applications
 
-{% render docs/app-figure.md, image:"development/add-to-app/ios-overview.gif", alt:"Add-to-app steps on iOS" %}
+<DashImage figure image="development/add-to-app/ios-overview.webp" alt="Add-to-app steps on iOS" />
 
 * Auto-build and import the Flutter module by adding a Flutter
   SDK hook to your CocoaPods and to your Xcode build phase.
@@ -122,25 +122,19 @@ To get started, see our project integration guide for
 Android and iOS:
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/project-setup">
+    <div class="card-header text-center">
+      <span class="card-title">Android</span>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/project-setup">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/project-setup">
+    <div class="card-header text-center">
+      <span class="card-title">iOS</span>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#embedded-mode">
+    <div class="card-header text-center">
+      <span class="card-title">Web</span>
     </div>
   </a>
 </div>
@@ -151,25 +145,19 @@ After Flutter is integrated into your project,
 see our API usage guides at the following links:
 
 <div class="card-grid">
-  <a class="card" href="/add-to-app/android/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Android
-      </header>
+  <a class="card outlined-card" href="/add-to-app/android/add-flutter-screen">
+    <div class="card-header text-center">
+      <span class="card-title">Android</span>
     </div>
   </a>
-  <a class="card" href="/add-to-app/ios/add-flutter-screen">
-    <div class="card-body">
-      <header class="card-title text-center">
-        iOS
-      </header>
+  <a class="card outlined-card" href="/add-to-app/ios/add-flutter-screen">
+    <div class="card-header text-center">
+      <span class="card-title">iOS</span>
     </div>
   </a>
-  <a class="card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
-    <div class="card-body">
-      <header class="card-title text-center">
-        Web
-      </header>
+  <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
+    <div class="card-header text-center">
+      <span class="card-title">Web</span>
     </div>
   </a>
 </div>
@@ -201,7 +189,7 @@ Web limitations:
 [`FlutterActivity`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterActivity.html
 [java-engine]: {{site.api}}/javadoc/io/flutter/embedding/engine/FlutterEngine.html
 [ios-engine]: {{site.api}}/ios-embedder/interface_flutter_engine.html
-[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/master/packages
+[FlutterFire]: {{site.github}}/firebase/flutterfire/tree/main/packages
 [`FlutterFragment`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterFragment.html
 [`FlutterPlugin`]: {{site.api}}/javadoc/io/flutter/embedding/engine/plugins/FlutterPlugin.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html

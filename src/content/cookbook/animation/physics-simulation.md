@@ -1,9 +1,6 @@
 ---
 title: Animate a widget using a physics simulation
 description: How to implement a physics animation.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/animation/physics_simulation/"?>
@@ -42,11 +39,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
-      ),
+      body: const DraggableCard(child: FlutterLogo(size: 128)),
     );
   }
 }
@@ -73,11 +66,7 @@ class _DraggableCardState extends State<DraggableCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      child: Card(
-        child: widget.child,
-      ),
-    );
+    return Align(child: Card(child: widget.child));
   }
 }
 ```
@@ -179,10 +168,7 @@ dragged to, to the point in the center.
 ```dart
 void _runAnimation() {
   _animation = _controller.drive(
-    AlignmentTween(
-      begin: _dragAlignment,
-      end: Alignment.center,
-    ),
+    AlignmentTween(begin: _dragAlignment, end: Alignment.center),
   );
   _controller.reset();
   _controller.forward();
@@ -212,9 +198,7 @@ Next, make the `Align` widget use the `_dragAlignment` field:
 ```dart
 child: Align(
   alignment: _dragAlignment,
-  child: Card(
-    child: widget.child,
-  ),
+  child: Card(child: widget.child),
 ),
 ```
 
@@ -265,10 +249,7 @@ Finally, `AnimationController` has an `animateWith()` method that can be given a
 /// Calculates and runs a [SpringSimulation].
 void _runAnimation(Offset pixelsPerSecond, Size size) {
   _animation = _controller.drive(
-    AlignmentTween(
-      begin: _dragAlignment,
-      end: Alignment.center,
-    ),
+    AlignmentTween(begin: _dragAlignment, end: Alignment.center),
   );
   // Calculate the velocity relative to the unit interval, [0,1],
   // used by the animation controller.
@@ -277,11 +258,7 @@ void _runAnimation(Offset pixelsPerSecond, Size size) {
   final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
   final unitVelocity = unitsPerSecond.distance;
 
-  const spring = SpringDescription(
-    mass: 30,
-    stiffness: 1,
-    damping: 1,
-  );
+  const spring = SpringDescription(mass: 1, stiffness: 1, damping: 1);
 
   final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
@@ -299,7 +276,7 @@ onPanEnd: (details) {
 ```
 
 :::note
-Now that the animation controller uses a simulation it's `duration` argument
+Now that the animation controller uses a simulation, its `duration` argument
 is no longer required.
 :::
 
@@ -321,11 +298,7 @@ class PhysicsCardDragDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const DraggableCard(
-        child: FlutterLogo(
-          size: 128,
-        ),
-      ),
+      body: const DraggableCard(child: FlutterLogo(size: 128)),
     );
   }
 }
@@ -357,10 +330,7 @@ class _DraggableCardState extends State<DraggableCard>
   /// Calculates and runs a [SpringSimulation].
   void _runAnimation(Offset pixelsPerSecond, Size size) {
     _animation = _controller.drive(
-      AlignmentTween(
-        begin: _dragAlignment,
-        end: Alignment.center,
-      ),
+      AlignmentTween(begin: _dragAlignment, end: Alignment.center),
     );
     // Calculate the velocity relative to the unit interval, [0,1],
     // used by the animation controller.
@@ -369,11 +339,7 @@ class _DraggableCardState extends State<DraggableCard>
     final unitsPerSecond = Offset(unitsPerSecondX, unitsPerSecondY);
     final unitVelocity = unitsPerSecond.distance;
 
-    const spring = SpringDescription(
-      mass: 30,
-      stiffness: 1,
-      damping: 1,
-    );
+    const spring = SpringDescription(mass: 1, stiffness: 1, damping: 1);
 
     final simulation = SpringSimulation(spring, 0, 1, -unitVelocity);
 
@@ -418,9 +384,7 @@ class _DraggableCardState extends State<DraggableCard>
       },
       child: Align(
         alignment: _dragAlignment,
-        child: Card(
-          child: widget.child,
-        ),
+        child: Card(child: widget.child),
       ),
     );
   }
@@ -428,7 +392,7 @@ class _DraggableCardState extends State<DraggableCard>
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.gif" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/animation-physics-card-drag.webp" alt="Demo showing a widget being dragged and snapped back to the center" class="site-mobile-screenshot" />
 </noscript>
 
 [Align]: {{site.api}}/flutter/widgets/Align-class.html

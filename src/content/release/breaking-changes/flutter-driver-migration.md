@@ -4,6 +4,8 @@ description: >-
   Learn how to migrate existing flutter_driver tests to integration_test.
 ---
 
+{% render "docs/breaking-changes.md" %}
+
 <?code-excerpt path-base="integration_test_migration/"?>
 
 This page describes how to migrate an existing project using
@@ -30,7 +32,7 @@ functionality:
 * The list of plants is loaded from a local JSON file located in the
   `/assets` folder.
 
-<img src='/assets/images/docs/integration-test/migration-1.png' class="mw-100" alt="Starter project screenshot">
+<img src='/assets/images/docs/integration-test/migration-1.png' alt="Starter project screenshot">
 
 You can find the full code example in the [Example Project][] folder.
 
@@ -63,7 +65,7 @@ dev_dependencies:
 ```
 
 Next, in your project, create a new directory
-`integration_test/`, create your tests files there 
+`integration_test/`, create your tests files there
 with the format: `<name>_test.dart`.
 
 ## Test migration
@@ -73,7 +75,7 @@ This section contains different examples on how to migrate existing
 
 ### Example: Verifying a widget is displayed
 
-When the app starts the screen on the right displays 
+When the app starts the screen on the right displays
 a text asking the user to select one of the plants on the list.
 
 This test verifies that the text is displayed.
@@ -86,11 +88,13 @@ The test fail if the widget can't be found.
 
 <?code-excerpt "test_driver/main_test.dart (wait-for)"?>
 ```dart
-test('do not select any item, verify please select text is displayed',
-    () async {
-  // Wait for 'please select' text is displayed
-  await driver.waitFor(find.text('Please select a plant from the list.'));
-});
+test(
+  'do not select any item, verify please select text is displayed',
+  () async {
+    // Wait for 'please select' text is displayed
+    await driver.waitFor(find.text('Please select a plant from the list.'));
+  },
+);
 ```
 
 **integration_test**
@@ -105,20 +109,22 @@ In `integration_test` you have to perform two steps:
 
 <?code-excerpt "integration_test/main_test.dart (finds-one)"?>
 ```dart
-testWidgets('do not select any item, verify please select text is displayed',
-    (tester) async {
-  // load the PlantsApp widget
-  await tester.pumpWidget(const PlantsApp());
+testWidgets(
+  'do not select any item, verify please select text is displayed',
+  (tester) async {
+    // load the PlantsApp widget
+    await tester.pumpWidget(const PlantsApp());
 
-  // wait for data to load
-  await tester.pumpAndSettle();
+    // wait for data to load
+    await tester.pumpAndSettle();
 
-  // Find widget with 'please select'
-  final finder = find.text('Please select a plant from the list.');
+    // Find widget with 'please select'
+    final finder = find.text('Please select a plant from the list.');
 
-  // Check if widget is displayed
-  expect(finder, findsOneWidget);
-});
+    // Check if widget is displayed
+    expect(finder, findsOneWidget);
+  },
+);
 ```
 
 ### Example: Tap actions
@@ -158,8 +164,9 @@ test('tap on the first item (Alder), verify selected', () async {
   await driver.waitFor(find.text('Alnus'));
 
   // 'please select' text should not be displayed
-  await driver
-      .waitForAbsent(find.text('Please select a plant from the list.'));
+  await driver.waitForAbsent(
+    find.text('Please select a plant from the list.'),
+  );
 });
 ```
 
@@ -212,7 +219,7 @@ use the `driver.scroll` method.
 You must provide the widget to perform the scrolling action,
 as well as a duration for the scroll.
 
-You also have to provide the total offset for the scrolling action. 
+You also have to provide the total offset for the scrolling action.
 
 <?code-excerpt "test_driver/main_test.dart (scroll)"?>
 ```dart
@@ -242,8 +249,9 @@ test('scroll, tap on the last item (Zedoary), verify selected', () async {
   await driver.waitFor(find.text('Curcuma zedoaria'));
 
   // 'please select' text should not be displayed
-  await driver
-      .waitForAbsent(find.text('Please select a plant from the list.'));
+  await driver.waitForAbsent(
+    find.text('Please select a plant from the list.'),
+  );
 });
 ```
 
@@ -263,8 +271,9 @@ The action repeats until the item is visible.
 
 <?code-excerpt "integration_test/main_test.dart (scroll)"?>
 ```dart
-testWidgets('scroll, tap on the last item (Zedoary), verify selected',
-    (tester) async {
+testWidgets('scroll, tap on the last item (Zedoary), verify selected', (
+  tester,
+) async {
   await tester.pumpWidget(const PlantsApp());
 
   // wait for data to load
@@ -275,10 +284,7 @@ testWidgets('scroll, tap on the last item (Zedoary), verify selected',
 
   // finds Scrollable widget and scrolls until item is visible
   // a 100,000 pixels is enough to reach the bottom of the list
-  await tester.scrollUntilVisible(
-    item,
-    100000,
-  );
+  await tester.scrollUntilVisible(item, 100000);
 
   // assert item is found
   expect(item, findsOneWidget);

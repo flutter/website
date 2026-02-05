@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 // ignore_for_file: unused_local_variable
 
 void main() {
-  runApp(
-    const MaterialApp(
-      title: 'Returning Data',
-      home: HomeScreen(),
-    ),
-  );
+  runApp(const MaterialApp(title: 'Returning Data', home: HomeScreen()));
 }
 
 // #docregion HomeScreen
@@ -17,13 +12,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Returning Data Demo'),
-      ),
+      appBar: AppBar(title: const Text('Returning Data Demo')),
       // Create the SelectionButton widget in the next step.
-      body: const Center(
-        child: SelectionButton(),
-      ),
+      body: const Center(child: SelectionButton()),
     );
   }
 }
@@ -54,7 +45,7 @@ class _SelectionButtonState extends State<SelectionButton> {
     final result = await Navigator.push(
       context,
       // Create the SelectionScreen in the next step.
-      MaterialPageRoute(builder: (context) => const SelectionScreen()),
+      MaterialPageRoute<String>(builder: (context) => const SelectionScreen()),
     );
   }
 }
@@ -67,9 +58,7 @@ class SelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pick an option'),
-      ),
+      appBar: AppBar(title: const Text('Pick an option')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -95,11 +84,12 @@ class SelectionScreen extends StatelessWidget {
                 child: const Text('Nope.'),
               ),
               // #enddocregion Nope
-            )
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 // #enddocregion SelectionScreen

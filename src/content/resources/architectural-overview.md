@@ -1,25 +1,36 @@
 ---
 title: Flutter architectural overview
-description: A high-level overview of the architecture of Flutter, including the core principles and concepts that form its design.
+description: >
+  A high-level overview of the architecture of Flutter,
+  including the core principles and concepts that form its design.
+showBreadcrumbs: false
 ---
 
 <?code-excerpt path-base="resources/architectural_overview/"?>
 
 This article is intended to provide a high-level overview of the architecture of
 Flutter, including the core principles and concepts that form its design.
+If you are interested in how to architect a Flutter app,
+check out [Architecting Flutter apps][].
+
+[Architecting Flutter apps]: /app-architecture
 
 Flutter is a cross-platform UI toolkit that is designed to allow code reuse
-across operating systems such as iOS and Android, while also allowing
-applications to interface directly with underlying platform services. The goal
-is to enable developers to deliver high-performance apps that feel natural on
-different platforms, embracing differences where they exist while sharing as
+across operating systems such as iOS, Android, web, and desktop,
+while also allowing
+applications to interface directly with underlying platform services.
+The goal is to enable developers to deliver high-performance apps
+that feel natural on different platforms,
+embracing differences where they exist while sharing as
 much code as possible.
 
-During development, Flutter apps run in a VM that offers stateful hot reload of
-changes without needing a full recompile. For release, Flutter apps are compiled
-directly to machine code, whether Intel x64 or ARM instructions, or to
-JavaScript if targeting the web. The framework is open source, with a permissive
-BSD license, and has a thriving ecosystem of third-party packages that
+During development, Flutter apps run in a VM that offers
+stateful hot reload of changes without needing a full recompile.
+For release, Flutter apps are compiled directly to machine code,
+whether Intel x64 or ARM instructions,
+or to JavaScript if targeting the web.
+The framework is open source, with a permissive BSD license,
+and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
 
 This overview is divided into a number of sections:
@@ -27,13 +38,13 @@ This overview is divided into a number of sections:
 1. The **layer model**: The pieces from which Flutter is constructed.
 1. **Reactive user interfaces**: A core concept for Flutter user interface
    development.
-1. An introduction to **widgets**: The fundamental building blocks of Flutter user
-   interfaces.
+1. An introduction to **widgets**: The fundamental building blocks
+   of Flutter user interfaces.
 1. The **rendering process**: How Flutter turns UI code into pixels.
 1. An overview of the **platform embedders**: The code that lets mobile and
    desktop OSes execute Flutter apps.
-1. **Integrating Flutter with other code**: Information about different techniques
-   available to Flutter apps.
+1. **Integrating Flutter with other code**: Information about
+   different techniques available to Flutter apps.
 1. **Support for the web**: Concluding remarks about the characteristics of
    Flutter in a browser environment.
 
@@ -56,7 +67,6 @@ The following settings were used:
  - Enable _Transparent Background_
  - Enable _Selection Only_, _Crop_
  - Enable _Include a copy of my diagram_
-
 {% endcomment %}
 
 ![Architectural
@@ -67,12 +77,14 @@ same way as any other native application. A platform-specific embedder provides
 an entrypoint; coordinates with the underlying operating system for access to
 services like rendering surfaces, accessibility, and input; and manages the
 message event loop. The embedder is written in a language that is appropriate
-for the platform: currently Java and C++ for Android, Objective-C/Objective-C++
-for iOS and macOS, and C++ for Windows and Linux. Using the embedder, Flutter
-code can be integrated into an existing application as a module, or the code might
-be the entire content of the application. Flutter includes a number of embedders
-for common target platforms, but [other embedders also
-exist](https://hover.build/blog/one-year-in/).
+for the platform: currently Java and C++ for Android, Swift and
+Objective-C/Objective-C++ for iOS and macOS,
+and C++ for Windows and Linux. Using the embedder, Flutter
+code can be integrated into an existing application as a module,
+or the code might be the entire content of the application.
+Flutter includes a number of embedders
+for common target platforms, but other embedders also
+exist.
 
 At the core of Flutter is the **Flutter engine**,
 which is mostly written in C++ and supports
@@ -80,17 +92,21 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][] on iOS and coming to Android and macOS,
-and [Skia][] on other platforms) text layout,
-file and network I/O, accessibility support,
-plugin architecture, and a Dart runtime
+including graphics text layout, file and network I/O, a Dart runtime,
 and compile toolchain.
 
+:::note
+If you have a question about which devices support
+Impeller, check out [Impeller availability][]
+for detailed information.
+:::
+
+[Impeller availability]: {{site.main-url}}/go/can-i-use-impeller
 [Skia]: https://skia.org
 [Impeller]: /perf/impeller
 
 The engine is exposed to the Flutter framework through
-[`dart:ui`]({{site.repo.engine}}/tree/main/lib/ui),
+[`dart:ui`]({{site.repo.flutter}}/tree/main/engine/src/flutter/lib/ui),
 which wraps the underlying C++ code in Dart classes. This library
 exposes the lowest-level primitives, such as classes for driving input,
 graphics, and text rendering subsystems.
@@ -100,23 +116,23 @@ which provides a modern, reactive framework written in the Dart language. It
 includes a rich set of platform, layout, and foundational libraries, composed of
 a series of layers. Working from the bottom to the top, we have:
 
-- Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
+* Basic **[foundational]({{site.api}}/flutter/foundation/foundation-library.html)**
   classes, and building block services such as
   **[animation]({{site.api}}/flutter/animation/animation-library.html),
   [painting]({{site.api}}/flutter/painting/painting-library.html), and
   [gestures]({{site.api}}/flutter/gestures/gestures-library.html)** that offer
   commonly used abstractions over the underlying foundation.
-- The **[rendering
+* The **[rendering
   layer]({{site.api}}/flutter/rendering/rendering-library.html)** provides an
   abstraction for dealing with layout. With this layer, you can build a tree of
   renderable objects. You can manipulate these objects dynamically, with the
   tree automatically updating the layout to reflect your changes.
-- The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
+* The **[widgets layer]({{site.api}}/flutter/widgets/widgets-library.html)** is
   a composition abstraction. Each render object in the rendering layer has a
   corresponding class in the widgets layer. In addition, the widgets layer
   allows you to define combinations of classes that you can reuse. This is the
   layer at which the reactive programming model is introduced.
-- The
+* The
   **[Material]({{site.api}}/flutter/material/material-library.html)**
   and
   **[Cupertino]({{site.api}}/flutter/cupertino/cupertino-library.html)**
@@ -166,14 +182,14 @@ pieces of a Flutter app.
   accessibility, text input).
 * Composites the app's widget tree into a scene.
 
-**Engine** ([source code]({{site.repo.engine}}/tree/main/shell/common))
+**Engine** ([source code]({{site.repo.flutter}}/tree/main/engine/src/flutter/shell/common))
 * Responsible for rasterizing composited scenes.
 * Provides low-level implementation of Flutter's core APIs
   (for example, graphics, text layout, Dart runtime).
 * Exposes its functionality to the framework using the **dart:ui API**.
 * Integrates with a specific platform using the Engine's **Embedder API**.
 
-**Embedder** ([source code]({{site.repo.engine}}/tree/main/shell/platform))
+**Embedder** ([source code]({{site.repo.flutter}}/tree/main/engine/src/flutter/shell/platform))
 * Coordinates with the underlying operating system
   for access to services like rendering surfaces,
   accessibility, and input.
@@ -213,8 +229,8 @@ one part of the user interface can cause ripple effects to seemingly unrelated
 pieces of code.
 
 One solution to this is an approach like MVC, where you push data changes to the
-model via the controller, and then the model pushes the new state to the view
-via the controller. However, this also is problematic, since creating and
+model through the controller, and then the model pushes the new state to the view
+through the controller. However, this also is problematic, since creating and
 updating UI elements are two separate steps that can easily get out of sync.
 
 Flutter, along with other reactive frameworks, takes an alternative approach to
@@ -245,7 +261,7 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 ## Widgets
 
@@ -272,9 +288,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My Home Page'),
-        ),
+        appBar: AppBar(title: const Text('My Home Page')),
         body: Center(
           child: Builder(
             builder: (context) {
@@ -308,21 +322,21 @@ efficiently updates the user interface.
 
 Flutter has its own implementations of each UI control, rather than deferring to
 those provided by the system: for example, there is a pure [Dart
-implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html) of both the
-[iOS Toggle
+implementation]({{site.api}}/flutter/cupertino/CupertinoSwitch-class.html)
+of both the [iOS Toggle
 control]({{site.apple-dev}}/design/human-interface-guidelines/toggles)
 and the [one for]({{site.api}}/flutter/material/Switch-class.html) the
 [Android equivalent]({{site.material}}/components/switch).
 
 This approach provides several benefits:
 
-- Provides for unlimited extensibility. A developer who wants a variant of the
+* Provides for unlimited extensibility. A developer who wants a variant of the
   Switch control can create one in any arbitrary way, and is not limited to the
   extension points provided by the OS.
-- Avoids a significant performance bottleneck by allowing Flutter to composite
+* Avoids a significant performance bottleneck by allowing Flutter to composite
   the entire scene at once, without transitioning back and forth between Flutter
   code and platform code.
-- Decouples the application behavior from any operating system dependencies. The
+* Decouples the application behavior from any operating system dependencies. The
   application looks and feels the same on all versions of the OS, even if the OS
   changed the implementations of its controls.
 
@@ -359,7 +373,7 @@ includes utility widgets that take advantage of this compositional approach.
 
 For example, [`Container`]({{site.api}}/flutter/widgets/Container-class.html), a
 commonly used widget, is made up of several widgets responsible for layout,
-painting, positioning, and sizing. Specifically, Container is made up of the
+painting, positioning, and sizing. Specifically, `Container` is made up of the
 [`LimitedBox`]({{site.api}}/flutter/widgets/LimitedBox-class.html),
 [`ConstrainedBox`]({{site.api}}/flutter/widgets/ConstrainedBox-class.html),
 [`Align`]({{site.api}}/flutter/widgets/Align-class.html),
@@ -404,7 +418,7 @@ important that build methods should return quickly, and heavy computational work
 should be done in some asynchronous manner and then stored as part of the state
 to be used by a build method.
 
-While relatively naïve in approach, this automated comparison is quite
+While relatively naive in approach, this automated comparison is quite
 effective, enabling high-performance, interactive apps. And, the design of the
 build function simplifies your code by focusing on declaring what a widget is
 made of, rather than the complexities of updating the user interface from one
@@ -419,7 +433,7 @@ Many widgets have no mutable state: they don't have any properties that change
 over time (for example, an icon or a label). These widgets subclass
 [`StatelessWidget`]({{site.api}}/flutter/widgets/StatelessWidget-class.html).
 
-However, if the unique characteristics of a widget need to change based on user
+However, if the unique characteristics of a widget needs to change based on user
 interaction or other factors, that widget is _stateful_. For example, if a
 widget has a counter that increments whenever the user taps a button, then the
 value of the counter is the state for that widget. When that value changes, the
@@ -471,7 +485,7 @@ You can use `InheritedWidget` to create a state widget
 that wraps a common ancestor in the
 widget tree, as shown in this example:
 
-![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%"}
+![Inherited widgets](/assets/images/docs/arch-overview/inherited-widget.png){:width="50%" .diagram-wrap}
 
 [`InheritedWidget`]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 
@@ -560,8 +574,8 @@ By contrast, Flutter minimizes those abstractions,
 bypassing the system UI widget libraries in favor
 of its own widget set. The Dart code that paints
 Flutter's visuals is compiled into native code,
-which uses Skia (or, in the future, Impeller) for rendering.
-Flutter also embeds its own copy of Skia as part of the engine,
+which uses Impeller  for rendering.
+Impeller is shipped along with the application,
 allowing the developer to upgrade their app to stay
 updated with the latest performance improvements
 even if the phone hasn't been updated with a new Android version.
@@ -569,11 +583,13 @@ The same is true for Flutter on other native platforms,
 such as Windows or macOS.
 
 :::note
-Flutter 3.10 set Impeller as the default
-rendering engine on iOS. You can preview
-Impeller on Android behind the `enable-impeller` flag.
-For more information, check out [Impeller rendering engine][Impeller].
+If you want to know which devices Impeller supports,
+check out [Impeller availability][].
+For more information,
+visit [Impeller rendering engine][]
 :::
+
+[Impeller rendering engine]: /perf/impeller
 
 ### From user input to the GPU
 
@@ -582,8 +598,7 @@ rendering pipeline is that **simple is fast**.
 Flutter has a straightforward pipeline for how data flows to
 the system, as shown in the following sequencing diagram:
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/render-pipeline.png){:width="100%" .diagram-wrap}
 
 Let's take a look at some of these phases in greater detail.
 
@@ -628,8 +643,7 @@ as `RawImage` and `RichText` during the build process. The eventual widget
 hierarchy might therefore be deeper than what the code represents,
 as in this case[^2]:
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widgets.png){:width="35%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widgets.png){:width="40%" .diagram-wrap}
 
 This explains why, when you examine the tree through
 a debug tool such as the
@@ -647,8 +661,7 @@ hierarchy. There are two basic types of elements:
 - `RenderObjectElement`, an element that participates in the layout or paint
   phases.
 
-![Render pipeline sequencing
-diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%"}
+![Render pipeline sequencing diagram](/assets/images/docs/arch-overview/widget-element.png){:width="85%" .diagram-wrap}
 
 `RenderObjectElement`s are an intermediary between their widget analog and the
 underlying `RenderObject`, which we'll come to later.
@@ -695,8 +708,7 @@ an image, and
 [`RenderTransform`]({{site.api}}/flutter/rendering/RenderTransform-class.html)
 applies a transformation before painting its child.
 
-![Differences between the widgets hierarchy and the element and render
-trees](/assets/images/docs/arch-overview/trees.png){:width="100%"}
+![Differences between the widgets hierarchy and the element and render trees](/assets/images/docs/arch-overview/trees.png){:width="100%" .diagram-wrap}
 
 Most Flutter widgets are rendered by an object that inherits from the
 `RenderBox` subclass, which represents a `RenderObject` of fixed size in a 2D
@@ -710,8 +722,7 @@ the child _must_ respect the constraints given to it by its parent. Children
 respond by **passing up a size** to their parent object within the constraints
 the parent established.
 
-![Constraints go down, sizes go
-up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="80%"}
+![Constraints go down, sizes go up](/assets/images/docs/arch-overview/constraints-sizes.png){:width="70%" .diagram-wrap}
 
 At the end of this single walk through the tree, every object has a defined size
 within its parent's constraints and is ready to be painted by calling the
@@ -778,19 +789,22 @@ As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
-unique concerns of that platform. The engine is platform-agnostic, presenting a
-[stable ABI (Application Binary
-Interface)]({{site.repo.engine}}/blob/main/shell/platform/embedder/embedder.h)
+unique concerns of that platform. The engine is platform-agnostic,
+presenting a [stable ABI (Application Binary Interface)][ABI].
 that provides a _platform embedder_ with a way to set up and use Flutter.
+
+[ABI]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
-When you start a Flutter app, the embedder provides the entrypoint, initializes
-the Flutter engine, obtains threads for UI and rastering, and creates a texture
-that Flutter can write to. The embedder is also responsible for the app
-lifecycle, including input gestures (such as mouse, keyboard, touch), window
-sizing, thread management, and platform messages. Flutter includes platform
-embedders for Android, iOS, Windows, macOS, and Linux; you can also create a
+When you start a Flutter app, the embedder provides the entrypoint,
+initializes the Flutter engine, obtains threads for UI and rastering,
+and creates a texture that Flutter can write to.
+The embedder is also responsible for the app lifecycle,
+including input gestures (such as mouse, keyboard, touch), window
+sizing, thread management, and platform messages.
+Flutter includes platform embedders for Android, iOS, Windows,
+macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
 example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
@@ -799,6 +813,10 @@ Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
 
+- As of Flutter 3.29, the UI and platform threads are merged on
+  iOS and Android. Specifically, the UI thread
+  is removed and the Dart code runs on the native platform thread.
+  For more information, see [The great thread merge][] video. 
 - On iOS and macOS, Flutter is loaded into the embedder as a `UIViewController`
   or `NSViewController`, respectively. The platform embedder creates a
   `FlutterEngine`, which serves as a host to the Dart VM and your Flutter
@@ -814,6 +832,8 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
+
+[The great thread merge]: https://youtu.be/miW7vCmQwnw?si=9EYvRDxtkpkPrcSO
 
 ## Integrating with other code
 
@@ -833,8 +853,7 @@ Swift. Data is serialized from a Dart type like `Map` into a standard format,
 and then deserialized into an equivalent representation in Kotlin (such as
 `HashMap`) or Swift (such as `Dictionary`).
 
-![How platform channels allow Flutter to communicate with host
-code](/assets/images/docs/arch-overview/platform-channels.png){:width="70%"}
+![How platform channels allow Flutter to communicate with host code](/assets/images/docs/arch-overview/platform-channels.png){:width="65%" .diagram-wrap}
 
 The following is a short platform channel example of a Dart call to a receiving
 event handler in Kotlin (Android) or Swift (iOS):
@@ -877,7 +896,7 @@ already available]({{site.pub}}/flutter) for Flutter that cover many common
 scenarios, ranging from Firebase to ads to device hardware like camera and
 Bluetooth.
 
-### Foreign Function Interface
+### Foreign Function Interface (FFI)
 
 For C-based APIs, including those that can be generated for code written in
 modern languages like Rust or Go, Dart provides a direct mechanism for binding
@@ -898,24 +917,27 @@ here's a fragment of code to call the traditional Win32 `MessageBox()` API:
 import 'dart:ffi';
 import 'package:ffi/ffi.dart'; // contains .toNativeUtf16() extension method
 
-typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  Int32 uType,
-);
+typedef MessageBoxNative =
+    Int32 Function(
+      IntPtr hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      Int32 uType,
+    );
 
-typedef MessageBoxDart = int Function(
-  int hWnd,
-  Pointer<Utf16> lpText,
-  Pointer<Utf16> lpCaption,
-  int uType,
-);
+typedef MessageBoxDart =
+    int Function(
+      int hWnd,
+      Pointer<Utf16> lpText,
+      Pointer<Utf16> lpCaption,
+      int uType,
+    );
 
 void exampleFfi() {
   final user32 = DynamicLibrary.open('user32.dll');
-  final messageBox =
-      user32.lookupFunction<MessageBoxNative, MessageBoxDart>('MessageBoxW');
+  final messageBox = user32.lookupFunction<MessageBoxNative, MessageBoxDart>(
+    'MessageBoxW',
+  );
 
   final result = messageBox(
     0, // No owner window
@@ -980,7 +1002,8 @@ if (defaultTargetPlatform == TargetPlatform.android) {
   );
 }
 return Text(
-    '$defaultTargetPlatform is not yet supported by the maps plugin');
+  '$defaultTargetPlatform is not yet supported by the maps plugin',
+);
 ```
 
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
@@ -1023,58 +1046,111 @@ supports, there are some unique characteristics of Flutter's web support that
 are worthy of comment.
 
 Dart has been compiling to JavaScript for as long as the language has existed,
-with a toolchain optimized for both development and production purposes. Many
-important apps compile from Dart to JavaScript and run in production today,
+with a toolchain optimized for both development and production purposes.
+Many important apps compile from Dart to JavaScript and run in production today,
 including the [advertiser tooling for Google Ads](https://ads.google.com/home/).
-Because the Flutter framework is written in Dart, compiling it to JavaScript was
-relatively straightforward.
+Because the Flutter framework is written in Dart, compiling it to JavaScript
+was relatively straightforward.
 
 However, the Flutter engine, written in C++,
 is designed to interface with the
 underlying operating system rather than a web browser.
 A different approach is therefore required.
-On the web, Flutter provides a reimplementation of the
-engine on top of standard browser APIs.
-We currently have two options for
-rendering Flutter content on the web: HTML and WebGL.
-In HTML mode, Flutter uses HTML, CSS, Canvas, and SVG.
-To render to WebGL, Flutter uses a version of Skia
-compiled to WebAssembly called
-[CanvasKit](https://skia.org/docs/user/modules/canvaskit/).
-While HTML mode offers the best code size characteristics,
-`CanvasKit` provides the fastest path to the
-browser's graphics stack,
-and offers somewhat higher graphical fidelity with the
-native mobile targets[^4].
 
-The web version of the architectural layer diagram is as follows:
+On the web, Flutter offers two renderers:
 
-![Flutter web
-architecture](/assets/images/docs/arch-overview/web-arch.png){:width="100%"}
+<table class="table table-striped">
+<tr>
+<th>Renderer</th>
+<th>Compilation target</th>
+</tr>
 
-Perhaps the most notable difference compared to other platforms on which Flutter
-runs is that there is no need for Flutter to provide a Dart runtime. Instead,
-the Flutter framework (along with any code you write) is compiled to JavaScript.
-It's also worthy to note that Dart has very few language semantic differences
-across all its modes (JIT versus AOT, native versus web compilation), and most
-developers will never write a line of code that runs into such a difference.
+<tr>
+<td>CanvasKit
+</td>
+<td>JavaScript
+</td>
+</tr>
+
+<tr>
+<td>Skwasm
+</td>
+<td>WebAssembly
+</td>
+</tr>
+</table>
+
+_Build modes_ are command-line options that dictate
+which renderers are available when you run the app.
+
+Flutter offers two _build_ modes:
+
+<table class="table table-striped">
+<tr>
+<th>Build mode</th>
+<th>Available renderer(s)</th>
+</tr>
+
+<tr>
+<td>default</td>
+<td>CanvasKit</td>
+</tr>
+
+<tr>
+<td>`--wasm`</td>
+<td>Skwasm (preferred), CanvasKit (fallback)</td>
+</tr>
+</table>
+
+
+The default mode makes only CanvasKit renderer available.
+The `--wasm` option makes both renderers available,
+and chooses the engine based on browser capabilities:
+preferring Skwasm if the browser is capable of running it,
+and falls back to CanvasKit otherwise.
+
+{% comment %}
+The draw.io source for the following image is in /diagrams/resources
+{% endcomment %}
+
+![Flutter web architecture](/assets/images/docs/arch-overview/web-framework-diagram.png){:width="80%" .diagram-wrap}
+
+Perhaps the most notable difference compared to other
+platforms on which Flutter runs is that there is no need
+for Flutter to provide a Dart runtime.
+Instead, the Flutter framework (along with any code you write)
+is compiled to JavaScript.
+It's also worthy to note that Dart has very few language
+semantic differences across all of its modes
+(JIT versus AOT, native versus web compilation),
+and most developers will never write a line of code that
+runs into such a difference.
 
 During development time, Flutter web uses
-[`dartdevc`]({{site.dart-site}}/tools/dartdevc), a compiler that supports
-incremental compilation and therefore allows hot restart (although not currently
-hot reload) for apps. Conversely, when you are ready to create a production app
-for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js), Dart's
-highly-optimized production JavaScript compiler is used, packaging the Flutter
-core and framework along with your application into a minified source file that
-can be deployed to any web server. Code can be offered in a single file or split
+[`dartdevc`]({{site.dart-site}}/tools/dartdevc),
+a compiler that supports incremental compilation
+and therefore allows hot restart and
+[hot reload behind a flag][].
+Conversely, when you are ready to create a production app
+for the web, [`dart2js`]({{site.dart-site}}/tools/dart2js),
+Dart's highly-optimized production JavaScript compiler is used,
+packaging the Flutter core and framework along with your
+application into a minified source file that
+can be deployed to any web server.
+Code can be offered in a single file or split
 into multiple files through [deferred imports][].
 
+For more information on Flutter web, check out
+[Web support for Flutter][] and [Web renderers][].
+
 [deferred imports]: {{site.dart-site}}/language/libraries#lazily-loading-a-library
+[Web renderers]: /platform-integration/web/renderers
+[Web support for Flutter]: /platform-integration/web
 
 ## Further information
 
-For those interested in more information about the internals of Flutter, the
-[Inside Flutter](/resources/inside-flutter) whitepaper
+For those interested in more information about the internals of Flutter,
+the [Inside Flutter](/resources/inside-flutter) whitepaper
 provides a useful guide to the framework's design philosophy.
 
 [^1]: While the `build` function returns a fresh tree,
@@ -1087,5 +1163,3 @@ provides a useful guide to the framework's design philosophy.
 [^3]: There are some limitations with this approach, for example,
   transparency doesn't composite the same way for a platform view as
   it would for other Flutter widgets.
-[^4]: One example is shadows, which have to be approximated with
-  DOM-equivalent primitives at the cost of some fidelity.

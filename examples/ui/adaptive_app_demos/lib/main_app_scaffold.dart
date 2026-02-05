@@ -22,21 +22,25 @@ List<Widget> getMainMenuChildren(BuildContext context) {
   int index = context.select<AppModel, int>((m) => m.selectedIndex);
   return [
     SelectedPageButton(
-        onPressed: () => changePage(0),
-        label: 'Adaptive Grid',
-        isSelected: index == 0),
+      onPressed: () => changePage(0),
+      label: 'Adaptive Grid',
+      isSelected: index == 0,
+    ),
     SelectedPageButton(
-        onPressed: () => changePage(1),
-        label: 'Adaptive Data Table',
-        isSelected: index == 1),
+      onPressed: () => changePage(1),
+      label: 'Adaptive Data Table',
+      isSelected: index == 1,
+    ),
     SelectedPageButton(
-        onPressed: () => changePage(2),
-        label: 'Adaptive Reflow',
-        isSelected: index == 2),
+      onPressed: () => changePage(2),
+      label: 'Adaptive Reflow',
+      isSelected: index == 2,
+    ),
     SelectedPageButton(
-        onPressed: () => changePage(3),
-        label: 'Focus Examples',
-        isSelected: index == 3),
+      onPressed: () => changePage(3),
+      label: 'Focus Examples',
+      isSelected: index == 3,
+    ),
   ];
 }
 
@@ -85,26 +89,28 @@ class _MainAppScaffoldState extends State<MainAppScaffold> {
                           appBar: useTabs
                               ? AppBar(backgroundColor: Colors.blue.shade300)
                               : null,
-                          body: Stack(children: [
-                            // Vertical layout with Tab controller and drawer
-                            if (useTabs) ...[
-                              Column(
-                                children: [
-                                  Expanded(child: _PageStack()),
-                                  _TabMenu(),
-                                ],
-                              )
-                            ]
-                            // Horizontal layout with desktop style side menu
-                            else ...[
-                              Row(
-                                children: [
-                                  const _SideMenu(),
-                                  Expanded(child: _PageStack()),
-                                ],
-                              ),
+                          body: Stack(
+                            children: [
+                              // Vertical layout with Tab controller and drawer
+                              if (useTabs) ...[
+                                Column(
+                                  children: [
+                                    Expanded(child: _PageStack()),
+                                    _TabMenu(),
+                                  ],
+                                ),
+                              ]
+                              // Horizontal layout with desktop style side menu
+                              else ...[
+                                Row(
+                                  children: [
+                                    const _SideMenu(),
+                                    Expanded(child: _PageStack()),
+                                  ],
+                                ),
+                              ],
                             ],
-                          ]),
+                          ),
                         ),
                       ),
               ),
@@ -154,25 +160,31 @@ class _SideMenu extends StatelessWidget {
       child: Stack(
         children: [
           // Buttons
-          Column(children: [
-            const SizedBox(height: Insets.extraLarge),
-            if (showPageButtons) ...getMainMenuChildren(context),
-            const SizedBox(height: Insets.extraLarge),
-            const SecondaryMenuButton(label: 'Submenu Item 1'),
-            const SecondaryMenuButton(label: 'Submenu Item 2'),
-            const SecondaryMenuButton(label: 'Submenu Item 3'),
-            const Spacer(),
-            OutlinedButton(
-              onPressed: handleLogoutPressed,
-              child: const Text('Logout'),
-            ),
-            const SizedBox(height: Insets.large),
-          ]),
+          Column(
+            children: [
+              const SizedBox(height: Insets.extraLarge),
+              if (showPageButtons) ...getMainMenuChildren(context),
+              const SizedBox(height: Insets.extraLarge),
+              const SecondaryMenuButton(label: 'Submenu Item 1'),
+              const SecondaryMenuButton(label: 'Submenu Item 2'),
+              const SecondaryMenuButton(label: 'Submenu Item 3'),
+              const Spacer(),
+              OutlinedButton(
+                onPressed: handleLogoutPressed,
+                child: const Text('Logout'),
+              ),
+              const SizedBox(height: Insets.large),
+            ],
+          ),
           // Divider
           Align(
-              alignment: Alignment.centerRight,
-              child: Container(
-                  width: 1, height: double.infinity, color: Colors.blue)),
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 1,
+              height: double.infinity,
+              color: Colors.blue,
+            ),
+          ),
         ],
       ),
     );
@@ -183,9 +195,9 @@ class _TabMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Wrap all the main menu buttons in Expanded() so they fill up the screen horizontally
-    List<Expanded> tabButtons = getMainMenuChildren(context)
-        .map((btn) => Expanded(child: btn))
-        .toList();
+    List<Expanded> tabButtons = getMainMenuChildren(
+      context,
+    ).map((btn) => Expanded(child: btn)).toList();
     return Column(
       children: [
         // Top Divider

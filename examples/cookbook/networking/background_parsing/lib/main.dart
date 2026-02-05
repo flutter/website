@@ -7,8 +7,9 @@ import 'package:http/http.dart' as http;
 
 // #docregion fetchPhotos
 Future<List<Photo>> fetchPhotos(http.Client client) async {
-  final response = await client
-      .get(Uri.parse('https://jsonplaceholder.typicode.com/photos'));
+  final response = await client.get(
+    Uri.parse('https://jsonplaceholder.typicode.com/photos'),
+  );
 
   // Use the compute function to run parsePhotos in a separate isolate.
   return compute(parsePhotos, response.body);
@@ -17,10 +18,10 @@ Future<List<Photo>> fetchPhotos(http.Client client) async {
 
 // A function that converts a response body into a List<Photo>.
 List<Photo> parsePhotos(String responseBody) {
-  final parsed =
-      (jsonDecode(responseBody) as List).cast<Map<String, dynamic>>();
+  final parsed = (jsonDecode(responseBody) as List<Object?>)
+      .cast<Map<String, Object?>>();
 
-  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
+  return parsed.map<Photo>(Photo.fromJson).toList();
 }
 
 class Photo {
@@ -86,22 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: FutureBuilder<List<Photo>>(
         future: futurePhotos,
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(
-              child: Text('An error has occurred!'),
-            );
+            return const Center(child: Text('An error has occurred!'));
           } else if (snapshot.hasData) {
             return PhotosList(photos: snapshot.data!);
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

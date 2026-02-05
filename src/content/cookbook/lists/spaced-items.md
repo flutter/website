@@ -1,9 +1,6 @@
 ---
 title: List with spaced items
-description: How to create a list with spaced or expanded items 
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
+description: How to create a list with spaced or expanded items
 ---
 
 <?code-excerpt path-base="cookbook/lists/spaced_items/"?>
@@ -53,11 +50,11 @@ even when the parent container is too small.
 
 <?code-excerpt "lib/spaced_list.dart (builder)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: Placeholder(),
-  );
-});
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(child: Placeholder());
+  },
+);
 ```
 
 ## 2. Add a `ConstrainedBox` inside the `SingleChildScrollView`
@@ -70,21 +67,23 @@ The [`ConstrainedBox`][] widget imposes additional constraints to its child.
 Configure the constraint by setting the `minHeight` parameter to be
 the `maxHeight` of the [`LayoutBuilder`][] constraints.
 
-This ensures that the child widget 
+This ensures that the child widget
 is constrained to have a minimum height equal to the available
 space provided by the [`LayoutBuilder`][] constraints,
 namely the maximum height of the [`BoxConstraints`][].
 
 <?code-excerpt "lib/spaced_list.dart (constrainedBox)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: Placeholder(),
-    ),
-  );
-});
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: Placeholder(),
+      ),
+    );
+  },
+);
 ```
 
 However, you don't set the `maxHeight` parameter,
@@ -96,29 +95,31 @@ in case the items don't fit the screen.
 
 Finally, add a [`Column`][] as the child of the [`ConstrainedBox`][].
 
-To space the items evenly, 
+To space the items evenly,
 set the `mainAxisAlignment` to `MainAxisAlignment.spaceBetween`.
 
 <?code-excerpt "lib/spaced_list.dart (column)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          ItemWidget(text: 'Item 1'),
-          ItemWidget(text: 'Item 2'),
-          ItemWidget(text: 'Item 3'),
-        ],
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ItemWidget(text: 'Item 1'),
+            ItemWidget(text: 'Item 2'),
+            ItemWidget(text: 'Item 3'),
+          ],
+        ),
       ),
-    ),
-  );
-});
+    );
+  },
+);
 ```
 
-Alternatively, you can use the [`Spacer`][] widget 
+Alternatively, you can use the [`Spacer`][] widget
 to tune the spacing between the items,
 or the [`Expanded`][] widget, if you want one widget to take more space than others.
 
@@ -128,25 +129,25 @@ instead of expanding infinitely.
 
 <?code-excerpt "lib/spaced_list.dart (intrinsic)"?>
 ```dart
-LayoutBuilder(builder: (context, constraints) {
-  return SingleChildScrollView(
-    child: ConstrainedBox(
-      constraints: BoxConstraints(minHeight: constraints.maxHeight),
-      child: IntrinsicHeight(
-        child: Column(
-          children: [
-            ItemWidget(text: 'Item 1'),
-            Spacer(),
-            ItemWidget(text: 'Item 2'),
-            Expanded(
-              child: ItemWidget(text: 'Item 3'),
-            ),
-          ],
+LayoutBuilder(
+  builder: (context, constraints) {
+    return SingleChildScrollView(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+        child: IntrinsicHeight(
+          child: Column(
+            children: [
+              ItemWidget(text: 'Item 1'),
+              Spacer(),
+              ItemWidget(text: 'Item 2'),
+              Expanded(child: ItemWidget(text: 'Item 3')),
+            ],
+          ),
         ),
       ),
-    ),
-  );
-});
+    );
+  },
+);
 ```
 
 :::tip
@@ -180,43 +181,40 @@ class SpacedItemsList extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        cardTheme: CardTheme(color: Colors.blue.shade50),
-        useMaterial3: true,
+        cardTheme: CardThemeData(color: Colors.blue.shade50),
       ),
       home: Scaffold(
-        body: LayoutBuilder(builder: (context, constraints) {
-          return SingleChildScrollView(
-            child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: constraints.maxHeight),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List.generate(
-                    items, (index) => ItemWidget(text: 'Item $index')),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            return SingleChildScrollView(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: List.generate(
+                    items,
+                    (index) => ItemWidget(text: 'Item $index'),
+                  ),
+                ),
               ),
-            ),
-          );
-        }),
+            );
+          },
+        ),
       ),
     );
   }
 }
 
 class ItemWidget extends StatelessWidget {
-  const ItemWidget({
-    super.key,
-    required this.text,
-  });
+  const ItemWidget({super.key, required this.text});
 
   final String text;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: SizedBox(
-        height: 100,
-        child: Center(child: Text(text)),
-      ),
+      child: SizedBox(height: 100, child: Center(child: Text(text))),
     );
   }
 }

@@ -15,9 +15,7 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    _staggeredController = AnimationController(
-      vsync: this,
-    );
+    _staggeredController = AnimationController(vsync: this);
   }
 
   @override
@@ -31,6 +29,8 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Container();
   }
+
   // #docregion animation-controller
 }
+
 // #enddocregion animation-controller

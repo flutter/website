@@ -1,9 +1,6 @@
 ---
 title: Send data to a new screen
 description: How to pass data to a new route.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/navigation/passing_data"?>
@@ -66,9 +63,7 @@ final todos = List.generate(
 ListView.builder(
   itemCount: todos.length,
   itemBuilder: (context, index) {
-    return ListTile(
-      title: Text(todos[index].title),
-    );
+    return ListTile(title: Text(todos[index].title));
   },
 )
 ```
@@ -97,16 +92,12 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       //passing in the ListView.builder
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(todos[index].title),
-          );
+          return ListTile(title: Text(todos[index].title));
         },
       ),
     );
@@ -114,7 +105,7 @@ class TodosScreen extends StatelessWidget {
 }
 ```
 
-With Flutter's default styling, you're good to go without sweating about 
+With Flutter's default styling, you're good to go without sweating about
 things that you'd like to do later on!
 
 ## 4. Create a detail screen to display information about a todo
@@ -139,9 +130,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -175,7 +164,7 @@ body: ListView.builder(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (context) => DetailScreen(todo: todos[index]),
           ),
         );
@@ -223,9 +212,7 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -237,7 +224,7 @@ class TodosScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => DetailScreen(todo: todos[index]),
                 ),
               );
@@ -260,9 +247,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -291,9 +276,7 @@ class DetailScreen extends StatelessWidget {
 
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -323,13 +306,11 @@ ListView.builder(
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (context) => const DetailScreen(),
             // Pass the arguments as part of the RouteSettings. The
             // DetailScreen reads the arguments from these settings.
-            settings: RouteSettings(
-              arguments: todos[index],
-            ),
+            settings: RouteSettings(arguments: todos[index]),
           ),
         );
       },
@@ -376,9 +357,7 @@ class TodosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Todos'),
-      ),
+      appBar: AppBar(title: const Text('Todos')),
       body: ListView.builder(
         itemCount: todos.length,
         itemBuilder: (context, index) {
@@ -390,13 +369,11 @@ class TodosScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
+                MaterialPageRoute<void>(
                   builder: (context) => const DetailScreen(),
                   // Pass the arguments as part of the RouteSettings. The
                   // DetailScreen reads the arguments from these settings.
-                  settings: RouteSettings(
-                    arguments: todos[index],
-                  ),
+                  settings: RouteSettings(arguments: todos[index]),
                 ),
               );
             },
@@ -416,9 +393,7 @@ class DetailScreen extends StatelessWidget {
 
     // Use the Todo to create the UI.
     return Scaffold(
-      appBar: AppBar(
-        title: Text(todo.title),
-      ),
+      appBar: AppBar(title: Text(todo.title)),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Text(todo.description),
@@ -429,7 +404,7 @@ class DetailScreen extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/passing-data.gif" alt="Passing Data Demo" class="site-mobile-screenshot" />
+  <img src="/assets/images/docs/cookbook/passing-data.webp" alt="Passing Data Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

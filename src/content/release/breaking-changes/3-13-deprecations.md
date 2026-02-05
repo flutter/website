@@ -16,7 +16,7 @@ primary source to aid in migration.
 To further aid your migration, check out this
 [quick reference sheet][].
 
-[Deprecation Policy]: {{site.repo.flutter}}/blob/master/docs/contributing/Tree-hygiene.md#deprecations
+[Deprecation Policy]: {{site.repo.flutter}}/blob/main/docs/contributing/Tree-hygiene.md#deprecations
 [quick reference sheet]: /go/deprecations-removed-after-3-13
 
 ## Changes
@@ -42,7 +42,7 @@ same result as setting the original property `useDeleteButtonTooltip` to false.
 When `deleteButtonTooltipMessage` is unset, the
 `MaterialLocalizations.deleteButtonTooltip` is used by default.
 
-The [Deprecate `useDeleteButtonTooltip` for Chips][] design document 
+The [Deprecate `useDeleteButtonTooltip` for Chips][] design document
 covers this update to chips and tooltips in greater depth.
 To learn more, check out the [chips and tooltips migration guide][].
 

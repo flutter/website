@@ -3,11 +3,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      home: Page1(),
-    ),
-  );
+  runApp(const MaterialApp(home: Page1()));
 }
 
 class Page1 extends StatelessWidget {
@@ -29,7 +25,7 @@ class Page1 extends StatelessWidget {
   }
 }
 
-Route _createRoute() {
+Route<void> _createRoute() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -45,15 +41,13 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Center(
-        child: Text('Page 2'),
-      ),
+      body: const Center(child: Text('Page 2')),
     );
   }
 }
 // #enddocregion Starter
 
-Route step1() {
+Route<void> step1() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step1
@@ -68,7 +62,7 @@ Route step1() {
   );
 }
 
-Route step2() {
+Route<void> step2() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step2
@@ -78,10 +72,7 @@ Route step2() {
       final tween = Tween(begin: begin, end: end);
       final offsetAnimation = animation.drive(tween);
 
-      return SlideTransition(
-        position: offsetAnimation,
-        child: child,
-      );
+      return SlideTransition(position: offsetAnimation, child: child);
     },
     // #enddocregion step2
   );
@@ -94,7 +85,7 @@ void createCurves() {
   // #enddocregion step3
 }
 
-Route step4() {
+Route<void> step4() {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
     // #docregion step4
@@ -104,10 +95,7 @@ Route step4() {
       const curve = Curves.ease;
 
       final tween = Tween(begin: begin, end: end);
-      final curvedAnimation = CurvedAnimation(
-        parent: animation,
-        curve: curve,
-      );
+      final curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
 
       return SlideTransition(
         position: tween.animate(curvedAnimation),

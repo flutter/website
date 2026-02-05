@@ -6,16 +6,15 @@ import 'package:flutter/services.dart';
 
 Widget layoutBuilderWidget() {
   // #docregion layout-builder
-  Widget foo = LayoutBuilder(builder: (context, constraints) {
-    bool useVerticalLayout = constraints.maxWidth < 400;
-    return Flex(
-      direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
-      children: const [
-        Text('Hello'),
-        Text('World'),
-      ],
-    );
-  });
+  Widget foo = LayoutBuilder(
+    builder: (context, constraints) {
+      bool useVerticalLayout = constraints.maxWidth < 400;
+      return Flex(
+        direction: useVerticalLayout ? Axis.vertical : Axis.horizontal,
+        children: const [Text('Hello'), Text('World')],
+      );
+    },
+  );
   // #enddocregion layout-builder
 
   return foo;
@@ -63,10 +62,7 @@ Widget build(BuildContext context) {
         ),
       },
       // Your sub-tree must be wrapped in a focusNode, so it can take focus.
-      child: Focus(
-        autofocus: true,
-        child: Container(),
-      ),
+      child: Focus(autofocus: true, child: Container()),
     ),
   );
 }
@@ -96,13 +92,15 @@ class _MyWidgetState extends State<MyWidget> {
   static bool get isMultiSelectModifierDown {
     bool isDown = false;
     if (Platform.isMacOS) {
-      isDown = isKeyDown(
-        {LogicalKeyboardKey.metaLeft, LogicalKeyboardKey.metaRight},
-      );
+      isDown = isKeyDown({
+        LogicalKeyboardKey.metaLeft,
+        LogicalKeyboardKey.metaRight,
+      });
     } else {
-      isDown = isKeyDown(
-        {LogicalKeyboardKey.controlLeft, LogicalKeyboardKey.controlRight},
-      );
+      isDown = isKeyDown({
+        LogicalKeyboardKey.controlLeft,
+        LogicalKeyboardKey.controlRight,
+      });
     }
     return isDown;
   }
@@ -167,7 +165,10 @@ Widget richTextSpan() {
     TextSpan(
       children: [
         TextSpan(text: 'Hello'),
-        TextSpan(text: 'Bold', style: TextStyle(fontWeight: FontWeight.bold)),
+        TextSpan(
+          text: 'Bold',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
       ],
     ),
   );

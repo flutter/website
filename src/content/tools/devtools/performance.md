@@ -22,7 +22,6 @@ the cause of poor performance in your app:
 
 * Flutter frames chart (Flutter apps only)
 * Frame analysis tab (Flutter apps only)
-* Raster stats tab (Flutter apps only)
 * Timeline events trace viewer (all native Dart applications)
 * Advanced debugging tools (Flutter apps only)
 
@@ -62,8 +61,6 @@ application. Each pair of bars in the chart represents a single
 Flutter frame. Selecting a frame from this chart updates the data
 that is displayed below in the [Frame analysis](#frame-analysis-tab) tab
 or the [Timeline events](#timeline-events-tab) tab.
-(As of [DevTools 2.23.1][], the [Raster stats](#raster-stats-tab)
-is a standalone feature without data per frame).
 
 [DevTools 2.23.1]: /tools/devtools/release-notes/release-notes-2.23.1
 
@@ -144,33 +141,6 @@ that we have detected that might have contributed to the slow frame time.
 
 ![Screenshot of the frame analysis tab](/assets/images/docs/tools/devtools/frame-analysis-tab.png)
 
-## Raster stats tab
-
-:::note
-For best results, this tool should be used with
-the Impeller rendering engine. When using Skia,
-the raster stats reported might be inconsistent
-due to the timing of when shaders are compiled.
-:::
-
-If you have Flutter frames that are janking with
-slow raster thread times, this tool might be able
-to help you diagnose the source of the slow performance.
-To generate raster stats:
-
-1. Navigate to the screen in your app where you are seeing
-   raster thread jank.
-2. Click **Take Snapshot**.
-3. View different layers and their respective rendering times.
-
-If you see an expensive layer, find the Dart code in your app
-that is producing this layer and investigate further.
-You can make changes to your code, hot reload,
-and take new snapshots to see if the performance of a layer
-was improved by your change.
-
-![Screenshot of the raster stats tab](/assets/images/docs/tools/devtools/raster-stats-tab.png)
-
 ## Timeline events tab
 
 The timeline events chart shows all event tracing from your application.
@@ -246,7 +216,7 @@ reproduce the activity in your app.
 Then select the new frames in the frames chart
 to inspect the timeline events
 with the layers disabled.
-If Raster time has significantly decreased,
+If raster time has significantly decreased,
 excessive use of the effects you disabled might be contributing
 to the jank you saw in your app.
 
@@ -255,13 +225,13 @@ to the jank you saw in your app.
   is affecting performance.
   If performance improves with this option disabled,
   try to reduce the use of clipping effects in your app.
-  
+
 **Render Opacity layers**
 :  Disable this option to check whether
    excessive use of opacity effects are affecting performance.
    If performance improves with this option disabled,
    try to reduce the use of opacity effects in your app.
-  
+
 **Render Physical Shape layers**
 : Disable this option to check whether excessive
   use of physical modeling effects are affecting performance,
@@ -288,7 +258,7 @@ detect jank using DevTools, check out a guided
 
 [GPU graph]: /perf/ui-performance#identifying-problems-in-the-gpu-graph
 [Flutter performance profiling]: /perf/ui-performance
-[Reduce shader compilation jank on mobile]: /perf/shader
+[Reduce shader compilation jank on mobile]: /perf/rendering-performance
 [Import and export]: #import-and-export
 [performance-tutorial]: {{site.medium}}/@fluttergems/mastering-dart-flutter-devtools-performance-view-part-8-of-8-4ae762f91230
 [track-widgets]: {{site.yt.watch}}/_EYk-E29edo?t=623

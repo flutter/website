@@ -9,21 +9,15 @@ Deep linking allows an app user to launch an app with a URI.
 This URI contains scheme, host, and path,
 and opens the app to a specific screen.
 
-:::note
-Did you know that Flutter DevTools provides a
-deep link validation tool for Android?
-An iOS version of the tool is in the works.
-Learn more and see a demo at [Validate deep links][].
-:::
-
-[Validate deep links]: /tools/devtools/deep-links
-
 A _universal link_, a type of deep link exclusive to iOS devices,
 uses only the `http` or `https` protocols.
 
 To set up universal links, you need to own a web domain.
 As a temporary solution,
 consider using [Firebase Hosting][] or [GitHub Pages][].
+
+Once you've set up your deep links, you can validate them.
+To learn more, see [Validate deep links][].
 
 ## Create or modify a Flutter app
 
@@ -51,21 +45,21 @@ It provides a simple API to handle complex routing scenarios.
     ```dart title="main.dart"
     import 'package:flutter/material.dart';
     import 'package:go_router/go_router.dart';
-    
+
     void main() => runApp(MaterialApp.router(routerConfig: router));
-    
+
     /// This handles '/' and '/details'.
     final router = GoRouter(
       routes: [
         GoRoute(
           path: '/',
-          builder: (_, __) => Scaffold(
+          builder: (_, _) => Scaffold(
             appBar: AppBar(title: const Text('Home Screen')),
           ),
           routes: [
             GoRoute(
               path: 'details',
-              builder: (_, __) => Scaffold(
+              builder: (_, _) => Scaffold(
                 appBar: AppBar(title: const Text('Details Screen')),
               ),
             ),
@@ -82,39 +76,20 @@ It provides a simple API to handle complex routing scenarios.
 1. Open the `ios/Runner.xcworkspace` file inside the
    Flutter project's `ios` folder.
 
-### Add the FlutterDeepLinkingEnabled key value pair
-
-1. In the Xcode Navigator, expand **Runner** then click **Info**.
-
-   <img src="/assets/images/docs/cookbook/set-up-universal-links-info-plist.png"
-       alt="Xcode info.Plist screenshot"
-       width="100%" />
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Raw Keys and Values** from the context menu.
-
-1. In the Editor, <kbd>Ctrl</kbd> + click and
-   select **Add Row** from the context menu.
-
-   A new **Key** should display.
-
-1. Change the new key properties to meet the following:
-
-   * Change the **Key** to `FlutterDeepLinkingEnabled`
-   * Change the **Type** to `Boolean`
-   * Change the **Value** to `YES`.
-
-   <img
-      src="/assets/images/docs/cookbook/set-up-universal-links-flutterdeeplinkingenabled.png"
-      alt="Screenshot of FlutterDeepLinkingEnabled value set to YES."
-      width="100%" />
+   :::version-note
+   If you use a Flutter version earlier than 3.27,
+   you need to manually opt in to deep linking by adding the
+   key and value pair `FlutterDeepLinkingEnabled` and `YES` to `info.Plist`.
+   :::
 
    :::note
-   The `FlutterDeepLinkingEnabled` property enables
-   Flutter's default deeplink handler.
-   If you use a third-party plugin, such as [app_links][],
-   setting this property breaks the third-party plugin.
-   Skip this step if you prefer to use a third-party plugin.
+   If you're using third-party plugins to handle deep links,
+   such as [app_links][],
+   Flutter's default deeplink handler will
+   break these plugins.
+
+   If you use a third-party plugin, add the
+   key and value pair `FlutterDeepLinkingEnabled` and `NO` to `info.Plist`.
    :::
 
 ### Add associated domains
@@ -124,8 +99,8 @@ Personal development teams don't support the Associated Domains
 capability. To add associated domains, choose the IDE tab.
 :::
 
-{% tabs %}
-{% tab "Xcode" %}
+<Tabs key="darwin-editors">
+<Tab name="Xcode">
 
 1. Launch Xcode if necessary.
 
@@ -154,8 +129,8 @@ capability. To add associated domains, choose the IDE tab.
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-{% endtab %}
-{% tab "Other editors" %}
+</Tab>
+<Tab name="Other editors">
 
 1. Open the `ios/Runner/Runner.entitlements` XML file in your preferred editor.
 
@@ -194,8 +169,8 @@ perform the following steps:
       alt="Xcode add associated domains screenshot"
       width="100%" />
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 You have finished configuring the application for deep linking.
 
@@ -216,7 +191,7 @@ Apple formats the `appID` as `<team id>.<bundle id>`.
 
 **For example:** Given a team ID of `S8QB4VV633`
 and a bundle ID of `com.example.deeplinkCookbook`,
-You would enter an `appID` entry of
+you would enter an `appID` entry of
 `S8QB4VV633.com.example.deeplinkCookbook`.
 
 ### Create and host `apple-app-site-association` JSON file
@@ -295,7 +270,7 @@ To bypass Apple's CDN, check out the [alternate mode section][].
        width="50%" />
 
    When complete,
-   the Flutter app displays on the home screen of the 
+   the Flutter app displays on the home screen of the
    iOS device or Simulator.
 
 1. If you test using the Simulator, use the Xcode CLI:
@@ -311,7 +286,7 @@ To bypass Apple's CDN, check out the [alternate mode section][].
    1. Click the resulting link.
 
    If successful, the Flutter app launches and displays its details screen.
- 
+
    <img
       src="/assets/images/docs/cookbook/set-up-universal-links-simulator-deeplinked.png"
       alt="Deeplinked Simulator screenshot"
@@ -332,3 +307,4 @@ recipe in the GitHub repo.
 [go_router]: {{site.pub-pkg}}/go_router
 [GitHub Pages]: https://pages.github.com
 [app_links]: {{site.pub-pkg}}/app_links
+[Validate deep links]: /tools/devtools/deep-links

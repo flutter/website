@@ -38,23 +38,19 @@ search-engine optimized HTML.
 That said, as mentioned in the [roadmap][], the Flutter team plans to
 investigate search engine indexability of Flutter web.
 
-### How do I create an app that also runs on the web?
-
-See [building a web app with Flutter][].
-
 ### Does hot reload work with a web app?
 
-No, but you can use hot restart. Hot restart is a fast way of seeing your
-changes without having to relaunch your web app and wait for it to compile and
-load. This works similarly to the hot reload feature for Flutter mobile
-development. The only difference is that hot reload remembers your state and hot
+Yes! For more information, check out
+[hot reload on the web][].
+
+[hot reload on the web]: /platform-integration/web/building#hot-reload-web
+
+Hot restart is a fast way of seeing your
+changes without having to relaunch your web app and wait for it
+to compile and load. This works similarly to
+the hot reload feature for Flutter mobile development.
+The difference is that hot reload remembers your state and hot
 restart doesn't.
-
-### How do I restart the app running in the browser?
-
-You can either use the browser's refresh button,
-or you can enter "R" in the console where
-"flutter run -d chrome" is running.
 
 ### Which web browsers are supported by Flutter?
 
@@ -104,14 +100,6 @@ Flutter web apps can potentially work around this
 by using [web workers][],
 although no such support is built in.
 
-### How do I embed a Flutter web app in a web page?
-
-See [Embedding Flutter web][].
-
-### How do I embed web content in a Flutter web app?
-
-See [Web content in Flutter][].
-
 ### How do I deploy a web app?
 
 See [Preparing a web app for release][].
@@ -122,7 +110,7 @@ Not currently.
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You might need to configure the `Cache-Control` header returned by your web server. 
+You might need to configure the `Cache-Control` header returned by your web server.
 For example, if this header is set to 3600, then the browser
 and CDN will cache the asset for 1 hour, and your users might see an out-of-date
 version of your app up to 1 hour after you deploy a new version. For
@@ -130,7 +118,7 @@ more information about caching on the web,
 check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
 It is a good idea to be aware of this behavior to avoid an undesirable user experience.
-After you deploy your app, users might use a 
+After you deploy your app, users might use a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
 This can lead to users using a version of your app that

@@ -1,10 +1,8 @@
 ---
 title: Add interactivity to your Flutter app
 description: How to implement a stateful widget that responds to taps.
-short-title: Interactivity
+shortTitle: Interactivity
 ---
-
-{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
 
 :::secondary What you'll learn
 * How to respond to taps.
@@ -22,7 +20,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/lakes.jpg" caption="The layout tutorial app" />
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -33,7 +31,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-<img src='/assets/images/docs/ui/favorited-not-favorited.png' class="mw-100 text-center" alt="The custom widget you'll create" width="200px">
+<DashImage figure image="ui/favorited-not-favorited.png" alt="The custom widget you'll create" img-class="diagram-wrap" />
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -212,15 +210,11 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
             [!onPressed: _toggleFavorite,!]
           ),
         ),
-        SizedBox(
-          width: 18,
-          child: SizedBox(
-            [!child: Text('$_favoriteCount'),!]
-          ),
-        ),
+        SizedBox(width: 18, child: SizedBox([!child: Text('$_favoriteCount'))),!]
       ],
     );
   }
+
   // ···
 }
 ```
@@ -349,17 +343,17 @@ creates a container that, when tapped, toggles between a
 green or grey box. The `_active` boolean determines the
 color: green for active or grey for inactive.
 
-<div class="row mb-4">
-  <div class="col-12 text-center">
-    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Active state">
-    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="border mt-1 mb-1 mw-100" width="150px" alt="Inactive state">
+<div class="side-by-side text-center">
+  <div class="text-center">
+    <img src='/assets/images/docs/ui/tapbox-active-state.png' class="simple-border" width="150px" alt="Active state">
+    <img src='/assets/images/docs/ui/tapbox-inactive-state.png' class="simple-border" width="150px" alt="Inactive state">
   </div>
 </div>
 
 These examples use [`GestureDetector`][] to capture activity
 on the `Container`.
 
-<a id="self-managed"></a>
+<a id="self-managed" aria-hidden="true"></a>
 
 ### The widget manages its own state
 
@@ -437,12 +431,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter Demo'),
-        ),
-        body: const Center(
-          child: TapboxA(),
-        ),
+        appBar: AppBar(title: const Text('Flutter Demo')),
+        body: const Center(child: TapboxA()),
       ),
     );
   }
@@ -507,10 +497,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxB(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxB(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -518,11 +505,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //------------------------- TapboxB ----------------------------------
 
 class TapboxB extends StatelessWidget {
-  const TapboxB({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxB({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -616,10 +599,7 @@ class _ParentWidgetState extends State<ParentWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: TapboxC(
-        active: _active,
-        onChanged: _handleTapboxChanged,
-      ),
+      child: TapboxC(active: _active, onChanged: _handleTapboxChanged),
     );
   }
 }
@@ -627,11 +607,7 @@ class _ParentWidgetState extends State<ParentWidget> {
 //----------------------------- TapboxC ------------------------------
 
 class TapboxC extends StatefulWidget {
-  const TapboxC({
-    super.key,
-    this.active = false,
-    required this.onChanged,
-  });
+  const TapboxC({super.key, this.active = false, required this.onChanged});
 
   final bool active;
   final ValueChanged<bool> onChanged;
@@ -680,15 +656,14 @@ class _TapboxCState extends State<TapboxC> {
         decoration: BoxDecoration(
           color: widget.active ? Colors.lightGreen[700] : Colors.grey[600],
           border: _highlight
-              ? Border.all(
-                  color: Colors.teal[700]!,
-                  width: 10,
-                )
+              ? Border.all(color: Colors.teal[700]!, width: 10)
               : null,
         ),
         child: Center(
-          child: Text(widget.active ? 'Active' : 'Inactive',
-              style: const TextStyle(fontSize: 32, color: Colors.white)),
+          child: Text(
+            widget.active ? 'Active' : 'Inactive',
+            style: const TextStyle(fontSize: 32, color: Colors.white),
+          ),
         ),
       ),
     );
@@ -717,7 +692,7 @@ If you prefer, you can use [`GestureDetector`][] to build
 interactivity into any custom widget.
 You can find examples of `GestureDetector` in
 [Managing state][]. Learn more about the `GestureDetector`
-in [Handle taps][], a recipe in the [Flutter cookbook][].
+in [Handle taps][], a recipe in the Flutter cookbook.
 
 :::tip
 Flutter also provides a set of iOS-style widgets called
@@ -750,7 +725,7 @@ the prefabricated widgets. Here's a partial list:
 The following resources might help when adding interactivity
 to your app.
 
-[Gestures][], a section in the [Flutter cookbook][].
+[Gestures][], a section in the Flutter cookbook.
 
 [Handling gestures][]
 : How to create a button and make it respond to input.
@@ -768,7 +743,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 : This video includes information about state and
   stateless widgets.  Presented by Google engineer, Ian Hickson.
 
-[Android emulator]: /get-started/install/windows/mobile?tab=virtual#configure-your-target-android-device
+[Android emulator]: /platform-integration/android/setup#set-up-devices
 [`Checkbox`]: {{site.api}}/flutter/material/Checkbox-class.html
 [`Cupertino`]: {{site.api}}/flutter/cupertino/cupertino-library.html
 [Dart language documentation]: {{site.dart-site}}/language
@@ -777,7 +752,6 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`TextButton`]: {{site.api}}/flutter/material/TextButton-class.html
 [`FloatingActionButton`]: {{site.api}}/flutter/material/FloatingActionButton-class.html
 [Flutter API documentation]: {{site.api}}
-[Flutter cookbook]: /cookbook
 [Flutter's Layered Design]: {{site.yt.watch}}?v=dkyY9WCGMi0
 [`FormField`]: {{site.api}}/flutter/widgets/FormField-class.html
 [`Form`]: {{site.api}}/flutter/widgets/Form-class.html
@@ -785,26 +759,26 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [Gestures]: /cookbook/gestures
 [Gestures in Flutter]: /ui/interactivity/gestures
 [Handling gestures]: /ui#handling-gestures
-[new-flutter-app]: /get-started/test-drive
+[new-flutter-app]: /reference/create-new-app
 [`IconButton`]: {{site.api}}/flutter/material/IconButton-class.html
 [`Icon`]: {{site.api}}/flutter/widgets/Icon-class.html
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html
-[iOS simulator]: /get-started/install/macos/mobile-ios#configure-your-target-ios-device
+[iOS simulator]: /platform-integration/ios/setup#set-up-devices
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
-[`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
+[`lake.jpg`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/images/lake.jpg
 [Libraries and imports]: {{site.dart-site}}/language/libraries
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: /get-started/install
+[set up]: /get-started
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

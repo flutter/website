@@ -1,10 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 void main() {
-  runApp(const CupertinoApp(
-    title: 'Navigation Basics',
-    home: FirstRoute(),
-  ));
+  runApp(const CupertinoApp(title: 'Navigation Basics', home: FirstRoute()));
 }
 
 class FirstRoute extends StatelessWidget {
@@ -13,16 +10,16 @@ class FirstRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('First Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('First Route')),
       child: Center(
         child: CupertinoButton(
           child: const Text('Open route'),
           onPressed: () {
             Navigator.push(
               context,
-              CupertinoPageRoute(builder: (context) => const SecondRoute()),
+              CupertinoPageRoute<void>(
+                builder: (context) => const SecondRoute(),
+              ),
             );
           },
         ),
@@ -37,9 +34,7 @@ class SecondRoute extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: const CupertinoNavigationBar(
-        middle: Text('Second Route'),
-      ),
+      navigationBar: const CupertinoNavigationBar(middle: Text('Second Route')),
       child: Center(
         child: CupertinoButton(
           onPressed: () {

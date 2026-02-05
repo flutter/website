@@ -1,7 +1,8 @@
 ---
 title: Flutter Changelog 0.0.21 - 1.0.0
-short-title: Flutter Changelog up to 1.0.0
+shortTitle: Flutter Changelog up to 1.0.0
 description: Archived Changelog wiki page, containing release information between Flutter 0.0.21 and 1.0.0.
+skipTemplateRendering: true
 ---
 
 _This page is a dump of the old Changelog page from the Flutter wiki up until
@@ -13,17 +14,17 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
   * [video_player image distortion problem after last flutter update 0.11.3](https://github.com/flutter/flutter/issues/24402)
   * [Green, flickering bar over camera preview](https://github.com/flutter/flutter/issues/24289)
   * [Image rendering issues on Adreno 3xx devices after upgrade from 0.9.4 to 0.10.2](https://github.com/flutter/flutter/issues/24517)
-* Engine rolls to fix 
+* Engine rolls to fix
   * [Prepend [NSLocale currentLocale] for first locale on iOS to ensure countryCode exists. Allow language-only locales.](https://github.com/flutter/engine/issues/6995)
   * [Changes to unblock Fuchsia roll](https://github.com/flutter/engine/issues/6949)
 * Various fixes to tooling for documentation, documentation, and documentation accompanying the templates.
 
 ## Changes since v0.10.2
 * [flutter/engine#6883](https://github.com/flutter/engine/pull/6883) - FlutterViewController will no longer load your app's splash screen by default.  The implementation of that has been moved to a new method `loadDefaultSplashScreenView`.
-* [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0. 
+* [#23755](https://github.com/flutter/flutter/pull/23755) Removed direct dependency of flutter_test on `package:test`. Flutter now requires test version 1.5.1 and mockito version 4.0.0.
 
   ### Breaking change:
-  This requires adding an explicit dependency to your pubspec.yaml: 
+  This requires adding an explicit dependency to your pubspec.yaml:
   ```yaml
   dev_dependencies:
     test: ^1.5.1
@@ -71,7 +72,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 * [flutter/engine#6393](https://github.com/flutter/engine/pull/6393) adds nullability annotations to Android MethodChannel/MethodCall.
 
 ### v0.9.6
-* [#21251](https://github.com/flutter/flutter/pull/21251) adds CupertinoDatePicker, an iOS-style picker control that supports a date mode and a date + time mode. 
+* [#21251](https://github.com/flutter/flutter/pull/21251) adds CupertinoDatePicker, an iOS-style picker control that supports a date mode and a date + time mode.
 
 ## Changes in v0.9.4 (since v0.8.2 ) - beta 9
 
@@ -106,7 +107,7 @@ _This page is a dump of the old Changelog page from the Flutter wiki up until
 ## Changes in v0.6.0 (since v0.5.1) - beta 6
 
 ### v0.6.0
-* Dart SDK updated to a Dart 2 build (2.1.0-dev.0.0). Package and plugin authors should ensure their `pubspec.yaml` files include a Dart SDK constraint with an upper bound of `<3.0.0`. See the [Getting ready for Dart 2 post](https://medium.com/dartlang/getting-ready-for-dart-2-and-making-your-packages-look-great-on-the-pub-site-118464d7f59d) for details.
+* Dart SDK updated to a Dart 2 build (2.1.0-dev.0.0). Package and plugin authors should ensure their `pubspec.yaml` files include a Dart SDK constraint with an upper bound of `<3.0.0`. See the [Getting ready for Dart 2 post](https://blog.dart.dev/getting-ready-for-dart-2-and-making-your-packages-look-great-on-the-pub-site-118464d7f59d) for details.
 * [#19025](https://github.com/flutter/flutter/pull/19025) renamed `CupertinoRefreshControl` to `CupertinoSliverRefreshControl` for consistency.
 * [#19317](https://github.com/flutter/flutter/pull/19317) Add cursorWidth and cursorRadius to TextField (Material) cursor.
 * [#20116](https://github.com/flutter/flutter/pull/20116) reduced release binary sizes by ~2MB
@@ -363,4 +364,3 @@ To follow our investigation, see [Dart issue 32936](https://github.com/dart-lang
 * [#4487](https://github.com/flutter/engine/pull/4487) replaces all uses of the `RequestPermissionResult` callback concept in `io.flutter.plugin.common.PluginRegistry` with `RequestPermissionsResult`, adding a missing `s` to align with the corresponding Android SDK concept.
 
   The old API has been deprecated and will be made unavailable in a later release. There will be a grace period of at least four weeks between the release that introduces the deprecation and the release that makes the old API unavailable.
-  

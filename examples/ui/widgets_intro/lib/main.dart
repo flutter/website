@@ -6,6 +6,7 @@ void main() {
       child: Text(
         'Hello, world!',
         textDirection: TextDirection.ltr,
+        style: TextStyle(color: Colors.blue),
       ),
     ),
   );

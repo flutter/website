@@ -1,17 +1,14 @@
 name: web_sockets
 description: Web Sockets
 
+resolution: workspace
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
-  web_socket_channel: ^2.4.3
-
-dev_dependencies:
-  example_utils:
-    path: ../../../example_utils
+  web_socket_channel: ^3.0.3
 
 flutter:
   uses-material-design: true

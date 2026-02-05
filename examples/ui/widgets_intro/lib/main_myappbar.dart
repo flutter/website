@@ -23,9 +23,7 @@ class MyAppBar extends StatelessWidget {
           ),
           // Expanded expands its child
           // to fill the available space.
-          Expanded(
-            child: title,
-          ),
+          Expanded(child: title),
           const IconButton(
             icon: Icon(Icons.search),
             tooltip: 'Search',
@@ -51,16 +49,13 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme.of(context) //
-                  .primaryTextTheme
-                  .titleLarge,
+              style:
+                  Theme.of(context) //
+                      .primaryTextTheme
+                      .titleLarge,
             ),
           ),
-          const Expanded(
-            child: Center(
-              child: Text('Hello, world!'),
-            ),
-          ),
+          const Expanded(child: Center(child: Text('Hello, world!'))),
         ],
       ),
     );
@@ -71,9 +66,7 @@ void main() {
   runApp(
     const MaterialApp(
       title: 'My app', // used by the OS task switcher
-      home: SafeArea(
-        child: MyScaffold(),
-      ),
+      home: SafeArea(child: MyScaffold()),
     ),
   );
 }

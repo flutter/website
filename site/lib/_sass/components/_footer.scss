@@ -1,0 +1,137 @@
+#site-footer {
+  position: relative;
+  background-color: var(--site-footer-bgColor);
+  color: var(--site-footer-fgColor);
+  padding: 32px;
+
+  font-family: var(--site-ui-fontFamily);
+  font-size: 14px;
+
+  .brand {
+    width: 176px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.125rem;
+  }
+
+  .footer-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .footer-main {
+    margin-bottom: 24px;
+    align-items: center;
+  }
+
+  .footer-tray {
+    border-top: 1px solid #82878c;
+    padding-top: 24px;
+
+    .footer-licenses {
+      width: 70%;
+      max-width: 720px;
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .footer-social-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+
+    a {
+      display: inline-flex;
+      text-align: center;
+      padding: 0.25rem;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      user-select: none;
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
+  }
+
+  .footer-technology {
+    margin-top: 1rem;
+
+    .jaspr-badge-link {
+      span:last-child {
+        display: none;
+      }
+
+      &:hover {
+        span:first-child {
+          display: none;
+        }
+
+        span:last-child {
+          display: initial;
+        }
+      }
+    }
+  }
+
+  .footer-utility-links {
+    @media (min-width: 768px) {
+      text-align: right;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 12px 0 0;
+      padding: 0;
+
+      li {
+        display: inline;
+        margin-left: 16px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+
+        li:first-child {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  a {
+    color: var(--site-footer-fgColor);
+    font-family: var(--site-ui-fontFamily);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--site-filledButton-fgColor);
+    }
+  }
+}

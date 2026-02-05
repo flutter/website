@@ -1,9 +1,6 @@
 ---
 title: Add a drawer to a screen
 description: How to implement a Material Drawer.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/design/drawer"?>
@@ -35,9 +32,7 @@ In this example, create a `Scaffold` with a `drawer`:
 <?code-excerpt "lib/drawer.dart (DrawerStart)" replace="/null, //g"?>
 ```dart
 Scaffold(
-  appBar: AppBar(
-    title: const Text('AppBar without hamburger button'),
-  ),
+  appBar: AppBar(title: const Text('AppBar without hamburger button')),
   drawer: // Add a Drawer here in the next step.
 );
 ```
@@ -52,9 +47,7 @@ which adheres to the Material Design spec.
 <?code-excerpt "lib/drawer.dart (DrawerEmpty)" replace="/null, //g"?>
 ```dart
 Scaffold(
-  appBar: AppBar(
-    title: const Text('AppBar with hamburger button'),
-  ),
+  appBar: AppBar(title: const Text('AppBar with hamburger button')),
   drawer: Drawer(
     child: // Populate the Drawer in the next step.
   ),
@@ -86,9 +79,7 @@ Drawer(
     padding: EdgeInsets.zero,
     children: [
       const DrawerHeader(
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
+        decoration: BoxDecoration(color: Colors.blue),
         child: Text('Drawer Header'),
       ),
       ListTile(
@@ -204,21 +195,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+  );
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    Text('Index 0: Home', style: optionStyle),
+    Text('Index 1: Business', style: optionStyle),
+    Text('Index 2: School', style: optionStyle),
   ];
 
   void _onItemTapped(int index) {
@@ -243,9 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
       ),
-      body: Center(
-        child: _widgetOptions[_selectedIndex],
-      ),
+      body: Center(child: _widgetOptions[_selectedIndex]),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -255,9 +237,7 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
+              decoration: BoxDecoration(color: Colors.blue),
               child: Text('Drawer Header'),
             ),
             ListTile(
@@ -305,10 +285,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html
 [`DrawerHeader`]: {{site.api}}/flutter/material/DrawerHeader-class.html
-[list recipes]: /cookbook#lists
+[list recipes]: /cookbook/lists
 [`ListTile`]: {{site.api}}/flutter/material/ListTile-class.html
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
 [material library]: {{site.api}}/flutter/material/material-library.html
 [`Navigator`]: {{site.api}}/flutter/widgets/Navigator-class.html
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
-[Navigation]: /cookbook#navigation
+[Navigation]: /cookbook/navigation

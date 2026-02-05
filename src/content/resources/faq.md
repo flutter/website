@@ -1,6 +1,7 @@
 ---
 title: FAQ
 description: Frequently asked questions and answers about Flutter.
+showBreadcrumbs: false
 ---
 
 ## Introduction
@@ -161,14 +162,14 @@ See [editor configuration][] for setup details,
 and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
 
-[Project IDX][], currently in beta,
+[Firebase Studio][], currently in preview,
 is an AI-assisted workspace for full-stack,
 multiplatform app development in the cloud.
-IDX supports Dart and Flutter. For more information,
-check out the [Project IDX Getting Started][] guide.
+Firebase Studio supports Dart and Flutter. For more information,
+check out [Get started with Firebase Studio][].
 
-[Project IDX]: https://idx.dev/
-[Project IDX Getting Started]: https://developers.google.com/idx/guides/get-started
+[Firebase Studio]: https://firebase.studio/
+[Get started with Firebase Studio]: https://firebase.google.com/docs/studio/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
@@ -178,7 +179,7 @@ of the many editors that support [editing Dart][].
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
 [editing Dart]: {{site.dart-site}}/tools
-[editor configuration]: /get-started/editor
+[editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
 [VS Code]: https://code.visualstudio.com/
 
@@ -459,6 +460,13 @@ _Fast allocation_
 Flutter can run Dart code that doesn't directly or
 transitively import `dart:mirrors` or `dart:html`.
 
+### Can Flutter compile Dart to JavaScript?
+
+Flutter compiles Dart to JavaScript with the
+[`js.dart`][] package.
+
+[`js.dart`]: {{site.dart-site}}/tools/dart-compile#js
+
 ### How big is the Flutter engine?
 
 In March 2021, we measured the download size of a
@@ -473,7 +481,7 @@ On ARM32, the core engine is approximately 3.4 MB
 (compressed), and necessary Java code (`classes.dex`)
 is 120 KB (compressed).
 
-In ARM64, the core engine is approximately 4.0 MB 
+In ARM64, the core engine is approximately 4.0 MB
 (compressed), the framework + app code is approximately
 659 KB (compressed), the LICENSE file is 58 KB
 (compressed), and necessary Java code (`classes.dex`)
@@ -513,7 +521,7 @@ To do that, see [Measuring your app's size][].
 Flutter uses logical pixels,
 and often refers to them merely as "pixels".
 Flutter's [`devicePixelRatio`][] expresses the ratio
-between physical pixels and logical CSS pixels. 
+between physical pixels and logical CSS pixels.
 
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-html/Window/devicePixelRatio.html
 
@@ -521,11 +529,21 @@ between physical pixels and logical CSS pixels.
 
 ### What kind of app performance can I expect?
 
-You can expect excellent performance. Flutter is
-designed to help developers easily achieve a constant 60fps.
-Flutter apps run using natively compiled code&mdash;no
-interpreters are involved.
-This means that Flutter apps start quickly.
+In general, you can expect excellent performance. Flutter is designed to help
+developers easily achieve a constant 60fps. Flutter apps run using natively
+compiled code, so no interpreters are involved. This means that Flutter apps
+start quickly.
+
+Flutter's performance when using native code depends on your
+[app's architecture][]. For optimal performance, familiarize yourself with Flutter's
+[platform channels][]. These channels provide an asynchronous message-passing
+system for communicating with native code.
+
+To learn more about performance and Flutter, see the [Performance FAQ][].
+
+[platform channels]: /platform-integration/platform-channels
+[app's architecture]: /app-architecture
+[Performance FAQ]: /perf/faq
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {:#hot-reload}
 
@@ -563,7 +581,7 @@ You can compile and deploy your Flutter app to iOS, Android,
 
 * We support and test running Flutter on a variety
   of low-end to high-end platforms.  For a detailed list
-  of the platforms on which we test, see 
+  of the platforms on which we test, see
   the list of [supported platforms][].
 
 * Flutter supports building ahead-of-time (AOT) compiled libraries
@@ -577,7 +595,7 @@ You can compile and deploy your Flutter app to iOS, Android,
   [development operating system][install].
 
 
-[install]: /get-started/install
+[install]: /get-started
 [supported platforms]: /reference/supported-platforms
 
 ### Does Flutter run on the web?
@@ -715,17 +733,21 @@ if Dart can identify the code path at compile time.
 To date, we've found other approaches for specific needs
 that offer a better trade-off, such as code generation.
 
-### How do I do international&shy;ization (i18n), localization (l10n), and accessibility (a11y) in Flutter?
+### Are internationalization and localization supported?
 
-Learn more about i18n and l10n in the
-[internationalization tutorial][].
+Yes, Flutter supports internationalization (i18n) and localization (l10n) so
+that your apps are adaptable to different languages and cultures. You can
+learn more in the [internationalization documentation][].
 
-Learn more about a11y in the
-[accessibility documentation][].
+[internationalization documentation]: /ui/internationalization
 
+### What accessibility is supported?
 
-[accessibility documentation]: /ui/accessibility-and-internationalization/accessibility
-[internationalization tutorial]: /ui/accessibility-and-internationalization/internationalization
+Flutter supports strict accessibility requirements (a11y). For example,
+screen readers, large text, color contrast, and hardware switch control are
+all supported. To learn more, see the [accessibility documentation][].
+
+[accessibility documentation]: /ui/accessibility
 
 ### How do I write parallel and/or concurrent apps for Flutter?
 
@@ -736,7 +758,7 @@ communicate by sending and receiving asynchronous messages.
 
 Check out an [example of using isolates with Flutter][].
 
-[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/master/examples/layers/services/isolate.dart
+[example of using isolates with Flutter]: {{site.repo.flutter}}/blob/main/examples/layers/services/isolate.dart
 
 ### Can I run Dart code in the background of a Flutter app?
 
@@ -744,9 +766,9 @@ Yes, you can run Dart code in a background process on both
 iOS and Android. For more information, see the free Medium article
 [Executing Dart in the Background with Flutter Plugins and Geofencing][backgnd].
 
-[backgnd]: {{site.flutter-medium}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
+[backgnd]: {{site.flutter-blog}}/executing-dart-in-the-background-with-flutter-plugins-and-geofencing-2b3e40a1a124
 
-### Can I use JSON/XML/<wbr>protobuffers (and so on) with Flutter?
+### Can I use JSON/XML/<wbr>Protobufs (and so on) with Flutter?
 
 Absolutely. There are libraries on
 [pub.dev][] for JSON, XML, protobufs,
@@ -798,6 +820,14 @@ Chromebooks][].
 Flutter and Dart don't offer application binary interface (ABI)
 compatibility. Offering ABI compatibility is not a current
 goal for Flutter or Dart.
+
+### How does Flutter handle scrolling?
+
+A custom scrolling implementation is used for each app platform so that
+scrolling matches that platform's native scrolling look and feel. To learn
+more about scrolling with Flutter, see the [scrolling][] documentation.
+
+[scrolling]: /ui/layout/scrolling
 
 ## Framework
 
@@ -1074,7 +1104,7 @@ For more information, see the [Community][] page.
 You can also engage with other developers on the Flutter
 [Discord][].
 
-[Contributing guide]: {{site.repo.flutter}}/blob/master/CONTRIBUTING.md
+[Contributing guide]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
 [easy starter issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22
 
 ### Is Flutter open source?
@@ -1098,8 +1128,8 @@ The framework is entirely self-contained and requires
 In addition, any Dart packages you use might have their
 own license requirements.
 
-[license file]: https://raw.githubusercontent.com/flutter/engine/master/sky/packages/sky_engine/LICENSE
-[only one license]: {{site.repo.flutter}}/blob/master/LICENSE
+[license file]: {{site.repo.flutter}}/blob/main/engine/src/flutter/sky/packages/sky_engine/LICENSE
+[only one license]: {{site.repo.flutter}}/blob/main/LICENSE
 
 ### How can I determine the licenses my Flutter application needs to show?
 

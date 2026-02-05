@@ -10,9 +10,8 @@ Future<http.Response> updateAlbum(String title) {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
     },
-    body: jsonEncode(<String, String>{
-      'title': title,
-    }),
+    body: jsonEncode(<String, String>{'title': title}),
   );
 }
+
 // #enddocregion updateAlbum

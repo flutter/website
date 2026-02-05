@@ -1,7 +1,7 @@
 ---
 title: Adding assets and images
 description: How to use images (and other assets) in your Flutter app.
-short-title: Assets and images
+shortTitle: Assets and images
 ---
 
 <?code-excerpt path-base="ui/assets_and_images/lib"?>
@@ -85,12 +85,6 @@ Flutter supports using a Dart package to transform asset files when building you
 To do this, specify the asset files and transformer package in your pubspec file.
 To learn how to do this and write your own asset-transforming packages, see
 [Transforming assets at build time][].
-
-### Conditional bundling of assets based on app flavor
-
-If your project utilizes the [flavors feature][], you can configure individual
-assets to be bundled only in certain flavors of your app.
-For more information, check out [Conditionally bundling assets based on flavor].
 
 ## Loading assets
 
@@ -378,28 +372,14 @@ let path = mainBundle.path(forResource: key, ofType: nil)
 For a more complete example, see the implementation of the
 Flutter [`video_player` plugin][] on pub.dev.
 
-The [`ios_platform_images`][] plugin on pub.dev wraps
-up this logic in a convenient category. You fetch
-an image as follows:
-
-**Objective-C:**
-```objc
-[UIImage flutterImageWithName:@"icons/heart.png"];
-```
-
-**Swift:**
-```swift
-UIImage.flutterImageNamed("icons/heart.png")
-```
-
 ### Loading iOS images in Flutter
 
 When implementing Flutter by
 [adding it to an existing iOS app][add-to-app],
 you might have images hosted in iOS that you
 want to use in Flutter. To accomplish
-that, use the [`ios_platform_images`][] plugin
-available on pub.dev.
+that, use [platform channels][] to pass the image
+data to Dart as `FlutterStandardTypedData`.
 
 ## Platform assets
 
@@ -521,7 +501,7 @@ For more details, see
 [`FlutterView`]: {{site.api}}/javadoc/io/flutter/view/FlutterView.html
 [`FlutterViewController`]: {{site.api}}/ios-embedder/interface_flutter_view_controller.html
 [Human Interface Guidelines]: {{site.apple-dev}}/design/human-interface-guidelines/app-icons
-[`ios_platform_images`]: {{site.pub}}/packages/ios_platform_images
+[platform channels]: /platform-integration/platform-channels
 [layer list drawable]: {{site.android-dev}}/guide/topics/resources/drawable-resource#LayerList
 [`mainBundle`]: {{site.apple-dev}}/documentation/foundation/nsbundle/1410786-mainbundle
 [`openFd`]: {{site.android-dev}}/reference/android/content/res/AssetManager#openFd(java.lang.String)
@@ -536,5 +516,4 @@ For more details, see
 [MaterialApp]: {{site.api}}/flutter/material/MaterialApp-class.html
 [CupertinoApp]: {{site.api}}/flutter/cupertino/CupertinoApp-class.html
 [Transforming assets at build time]: /ui/assets/asset-transformation
-[Conditionally bundling assets based on flavor]: /deployment/flavors#conditionally-bundling-assets-based-on-flavor
 [flavors feature]: /deployment/flavors

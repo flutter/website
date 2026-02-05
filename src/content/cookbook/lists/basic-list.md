@@ -1,9 +1,6 @@
 ---
 title: Use lists
 description: How to implement a list.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.js
 ---
 
 <?code-excerpt path-base="cookbook/lists/basic_list"?>
@@ -23,18 +20,9 @@ widget is a way to give items a visual structure.
 ```dart
 ListView(
   children: const <Widget>[
-    ListTile(
-      leading: Icon(Icons.map),
-      title: Text('Map'),
-    ),
-    ListTile(
-      leading: Icon(Icons.photo_album),
-      title: Text('Album'),
-    ),
-    ListTile(
-      leading: Icon(Icons.phone),
-      title: Text('Phone'),
-    ),
+    ListTile(leading: Icon(Icons.map), title: Text('Map')),
+    ListTile(leading: Icon(Icons.photo_album), title: Text('Album')),
+    ListTile(leading: Icon(Icons.phone), title: Text('Phone')),
   ],
 ),
 ```
@@ -57,23 +45,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: title,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text(title),
-        ),
+        appBar: AppBar(title: const Text(title)),
         body: ListView(
           children: const <Widget>[
-            ListTile(
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            ),
+            ListTile(leading: Icon(Icons.map), title: Text('Map')),
+            ListTile(leading: Icon(Icons.photo_album), title: Text('Album')),
+            ListTile(leading: Icon(Icons.phone), title: Text('Phone')),
           ],
         ),
       ),
@@ -83,7 +60,7 @@ class MyApp extends StatelessWidget {
 ```
 
 <noscript>
-  <img src="/assets/images/docs/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" /> 
+  <img src="/assets/images/docs/cookbook/basic-list.png" alt="Basic List Demo" class="site-mobile-screenshot" />
 </noscript>
 
 

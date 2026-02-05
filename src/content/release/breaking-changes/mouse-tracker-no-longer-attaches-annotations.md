@@ -2,9 +2,11 @@
 title: MouseTracker no longer attaches annotations
 description: >
   MouseTracker no longer relies on annotation attachment to
-  perform the mounted-exit check; therefore, 
+  perform the mounted-exit check; therefore,
   all three related methods are removed.
 ---
+
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

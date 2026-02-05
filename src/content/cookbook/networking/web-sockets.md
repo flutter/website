@@ -58,7 +58,7 @@ StreamBuilder(
   builder: (context, snapshot) {
     return Text(snapshot.hasData ? '${snapshot.data}' : '');
   },
-)
+),
 ```
 
 ### How this works
@@ -120,18 +120,13 @@ class MyApp extends StatelessWidget {
     const title = 'WebSocket Demo';
     return const MaterialApp(
       title: title,
-      home: MyHomePage(
-        title: title,
-      ),
+      home: MyHomePage(title: title),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({
-    super.key,
-    required this.title,
-  });
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -148,9 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -168,7 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
               builder: (context, snapshot) {
                 return Text(snapshot.hasData ? '${snapshot.data}' : '');
               },
-            )
+            ),
           ],
         ),
       ),
@@ -194,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 ```
-![Web sockets demo](/assets/images/docs/cookbook/web-sockets.gif){:.site-mobile-screenshot}
+![Web sockets demo](/assets/images/docs/cookbook/web-sockets.webp){:.site-mobile-screenshot}
 
 
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html

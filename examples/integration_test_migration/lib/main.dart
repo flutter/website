@@ -50,9 +50,9 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _loadPlants() {
-    DefaultAssetBundle.of(context)
-        .loadString('assets/plants.json')
-        .then((data) {
+    DefaultAssetBundle.of(context).loadString('assets/plants.json').then((
+      data,
+    ) {
       setState(() {
         final jsonResult = jsonDecode(data);
         final birdsJson = jsonResult['plants'] as List<dynamic>;
@@ -69,9 +69,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: AppBar(title: Text(widget.title)),
       body: Row(
         children: [
           ListOfPlantsWidget(
@@ -86,11 +84,7 @@ class _HomePageState extends State<HomePage> {
           Expanded(
             child: Container(
               decoration: const BoxDecoration(
-                border: Border(
-                  left: BorderSide(
-                    color: Colors.grey,
-                  ),
-                ),
+                border: Border(left: BorderSide(color: Colors.grey)),
               ),
               child: DetailPlant(plant: _selectedPlant),
             ),
@@ -111,7 +105,7 @@ class ListOfPlantsWidget extends StatefulWidget {
 
   final List<Plant> plants;
   final Plant? selectedPlant;
-  final Function(Plant selected) onSelectPlant;
+  final void Function(Plant selected) onSelectPlant;
 
   @override
   State<ListOfPlantsWidget> createState() => _ListOfPlantsWidgetState();
@@ -144,56 +138,34 @@ class _ListOfPlantsWidgetState extends State<ListOfPlantsWidget> {
 }
 
 class DetailPlant extends StatelessWidget {
-  const DetailPlant({
-    super.key,
-    this.plant,
-  });
+  const DetailPlant({super.key, this.plant});
 
   final Plant? plant;
 
   @override
   Widget build(BuildContext context) {
     if (plant == null) {
-      return const Center(
-        child: Text('Please select a plant from the list.'),
-      );
+      return const Center(child: Text('Please select a plant from the list.'));
     }
-    const textStyleLabel = TextStyle(
-      fontWeight: FontWeight.bold,
-      fontSize: 20,
-    );
-    const textStyleText = TextStyle(
-      fontSize: 20,
-    );
+    const textStyleLabel = TextStyle(fontWeight: FontWeight.bold, fontSize: 20);
+    const textStyleText = TextStyle(fontSize: 20);
     return Padding(
       padding: const EdgeInsets.all(32),
       child: Column(
         children: [
           Row(
             children: [
-              const Text(
-                'Name:',
-                style: textStyleLabel,
-              ),
+              const Text('Name:', style: textStyleLabel),
               const SizedBox(width: 16),
-              Text(
-                plant!.name,
-                style: textStyleText,
-              ),
+              Text(plant!.name, style: textStyleText),
             ],
           ),
           const SizedBox(height: 8),
           Row(
             children: [
-              const Text(
-                'Species:',
-                style: textStyleLabel,
-              ),
+              const Text('Species:', style: textStyleLabel),
               const SizedBox(width: 16),
-              Text(
-                plant!.species,
-                style: textStyleText,
-              ),
+              Text(plant!.species, style: textStyleText),
             ],
           ),
         ],

@@ -33,7 +33,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-{% ytEmbed 'Y9WifT8aN6o', 'Packages versus plugins | Decoding Flutter' %}
+<YouTubeEmbed id="Y9WifT8aN6o" title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
 :::
 
 Existing packages enable many use cases—for example,
@@ -95,13 +95,33 @@ or any combination thereof.
 [web]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Aweb
 [Windows]: {{site.pub-pkg}}?q=sdk%3Aflutter+platform%3Awindows
 
+### Adding a package dependency to an app using `flutter pub add`
+
+To add the package `css_colors` to an app:
+
+1. Use the [`pub add`][] command from inside the project directory
+   * `flutter pub add css_colors`
+
+1. Import it
+   * Add a corresponding `import` statement in the Dart code.
+
+1. Stop and restart the app, if necessary
+   * If the package brings platform-specific code
+     (Kotlin/Java for Android, Swift/Objective-C for iOS),
+     that code must be built into your app.
+     Hot reload and hot restart only update the Dart code,
+     so a full restart of the app might be required to avoid
+     errors like `MissingPluginException` when using the package.
+
+[`pub add`]: {{site.dart-site}}/tools/pub/cmd/pub-add
+
 ### Adding a package dependency to an app
 
-To add the package, `css_colors`, to an app:
+To add the package `css_colors` to an app:
 
 1. Depend on it
    * Open the `pubspec.yaml` file located inside the app folder,
-     and add `css_colors:` under `dependencies`.
+     and add `css_colors: ^1.0.0` under `dependencies`.
 
 1. Install it
    * From the terminal: Run `flutter pub get`.<br/>
@@ -122,29 +142,11 @@ To add the package, `css_colors`, to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-### Adding a package dependency to an app using `flutter pub add`
+### Removing a package dependency from an app using `flutter pub remove`
 
-To add the package, `css_colors`, to an app:
+To remove the package `css_colors` from an app:
 
-1. Issue the command while being inside the project directory
-   * `flutter pub add css_colors`
-
-1. Import it
-   * Add a corresponding `import` statement in the Dart code.
-
-1. Stop and restart the app, if necessary
-   * If the package brings platform-specific code
-     (Kotlin/Java for Android, Swift/Objective-C for iOS),
-     that code must be built into your app.
-     Hot reload and hot restart only update the Dart code,
-     so a full restart of the app might be required to avoid
-     errors like `MissingPluginException` when using the package.
-
-### Removing a package dependency to an app using `flutter pub remove`
-
-To remove the package, `css_colors`, to an app:
-
-1. Issue the command while being inside the project directory
+1. Use the [`pub remove`][] command from inside the project directory
    * `flutter pub remove css_colors`
 
 The [Installing tab][],
@@ -156,6 +158,7 @@ see the [css_colors example][] below.
 
 [css_colors example]: #css-example
 [Installing tab]: {{site.pub-pkg}}/css_colors/install
+[`pub remove`]: {{site.dart-site}}/tools/pub/cmd/pub-remove
 
 ### Conflict resolution
 
@@ -310,7 +313,7 @@ additional dependency options are available:
     dependencies:
     packageA:
       path: ../packageA/
-  
+
   ```
 
 **Git dependency**
@@ -399,9 +402,7 @@ To use this package:
     
       @override
       Widget build(BuildContext context) {
-        return const MaterialApp(
-          home: DemoPage(),
-        );
+        return const MaterialApp(home: DemoPage());
       }
     }
     
@@ -415,9 +416,9 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-
 1. Run the app. The app's background should now be orange.
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 
@@ -451,7 +452,6 @@ To use this plugin:
     <?code-excerpt "lib/url_launcher.dart (url-launcher)"?>
     ```dart
     import 'package:flutter/material.dart';
-    import 'package:path/path.dart' as p;
     import 'package:url_launcher/url_launcher.dart';
     
     void main() {
@@ -463,9 +463,7 @@ To use this plugin:
     
       @override
       Widget build(BuildContext context) {
-        return const MaterialApp(
-          home: DemoPage(),
-        );
+        return const MaterialApp(home: DemoPage());
       }
     }
     
@@ -473,7 +471,7 @@ To use this plugin:
       const DemoPage({super.key});
     
       void launchURL() {
-        launchUrl(p.toUri('https://flutter.dev'));
+        launchUrl(Uri.parse('https://flutter.dev'));
       }
     
       @override
