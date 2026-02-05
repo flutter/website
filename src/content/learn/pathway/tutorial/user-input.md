@@ -2,7 +2,6 @@
 title: User input
 description: Accept input from the user with buttons and text fields.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to build text inputs, manage text with controllers, and handle user actions with buttons.
@@ -68,7 +67,7 @@ It's a good practice for interactive widgets to
 use callback functions to keep the widget that handles interactions reusable and
 decoupled from any specific functionality.
 
-By the end of this lesson, the passed-in `onGuessSubmitted` function
+By the end of this lesson, the passed-in `onSubmitGuess` function
 is called when a user enters a guess.
 First, you'll need to build the visual parts of this widget.
 This is what the widget will look like.
@@ -198,7 +197,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -241,7 +240,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -281,7 +280,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -338,7 +337,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -405,7 +404,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -436,7 +435,7 @@ you can continue typing.
 
 Finally, you need to handle the text that the user enters.
 Recall that the constructor for `GuessInput` requires a
-callback called `onGuessSubmitted`.
+callback called `onSubmitGuess`.
 In `GuessInput`, you need to use that callback.
 Replace the `print` statement with a call to that function.
 
@@ -459,7 +458,7 @@ class GuessInput extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               maxLength: 5,
-              inputDecoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
