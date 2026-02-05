@@ -266,7 +266,7 @@ Flutter CLI using the following steps:
     ```
 
     :::note
-    The value of `appFlavor` matches the name of the product flavor you defined in your `build.gradle.kts` file (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
+The value of `appFlavor` matches the name of the Xcode scheme you defined (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
     :::
 
 ### Use the run command (Xcode)
