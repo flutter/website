@@ -255,10 +255,10 @@ Flutter CLI using the following steps:
 // appFlavor will match the name of the Xcode scheme
       if (appFlavor == 'production') {
         // Logic for production environment
-        Config.apiUrl = '[https://api.flavors_example.com](https://api.flavors_example.com)';
+        Config.apiUrl = 'https://api.flavors_example.com';
       } else if (appFlavor == 'staging') {
         // Logic for staging environment
-        Config.apiUrl = '[https://staging.api.flavors_example.com](https://staging.api.flavors_example.com)';
+        Config.apiUrl = 'https://staging.api.flavors_example.com';
       }
 
       runApp(const MyApp());
