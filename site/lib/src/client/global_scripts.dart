@@ -390,6 +390,9 @@ void _setUpSteppers() {
 
   for (var i = 0; i < steppers.length; i++) {
     final stepper = steppers.item(i) as web.HTMLElement;
+
+    final collapsible = !stepper.classList.contains('non-collapsible');
+
     final children = stepper.childNodes;
     final steps = [
       for (var j = 0; j < children.length; j++)
@@ -403,20 +406,22 @@ void _setUpSteppers() {
     for (var j = 0; j < steps.length; j++) {
       final step = steps[j];
 
-      step.addEventListener(
-        'toggle',
-        ((web.Event e) {
-          // Close all other steps when one is opened.
-          if (step.open) {
-            for (var k = 0; k < steps.length; k++) {
-              final otherStep = steps[k];
-              if (otherStep != step) {
-                otherStep.open = false;
+      if (collapsible) {
+        step.addEventListener(
+          'toggle',
+          ((web.Event e) {
+            // Close all other steps when one is opened.
+            if (step.open) {
+              for (var k = 0; k < steps.length; k++) {
+                final otherStep = steps[k];
+                if (otherStep != step) {
+                  otherStep.open = false;
+                }
               }
             }
-          }
-        }).toJS,
-      );
+          }).toJS,
+        );
+      }
 
       final nextButton = step.querySelector('.next-step-button');
       if (nextButton != null) {
@@ -424,7 +429,9 @@ void _setUpSteppers() {
           'click',
           ((web.Event e) {
             e.preventDefault();
-            step.open = false;
+            if (collapsible) {
+              step.open = false;
+            }
             _scrollTo(step, smooth: false);
             if (j + 1 < steps.length) {
               final nextStep = steps[j + 1];
@@ -442,7 +449,7 @@ void _scrollTo(web.Element element, {required bool smooth}) {
   // Scroll the next step into view, accounting for the fixed header and toc.
   final headerOffset =
       web.document.getElementById('site-header')?.clientHeight ?? 0;
-  final tocOffset = web.document.getElementById('toc-top')?.clientHeight ?? 0;
+  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
   final elementPosition = element.getBoundingClientRect().top;
   final offsetPosition =
       elementPosition + web.window.scrollY - headerOffset - tocOffset;
