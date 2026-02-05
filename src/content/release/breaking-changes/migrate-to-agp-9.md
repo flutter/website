@@ -11,8 +11,7 @@ are currently incompatible with AGP 9: [Issue #181383][].
 This support is paused while the Flutter team audits 
 the migration for backwards compatibility with older versions of AGP.
 
-If you would still like to migrate to AGP 9, you can follow the below migration
-doc for guidance.
+If you would still like to migrate to AGP 9, follow the migration guide below.
 :::
 
 ## Summary
