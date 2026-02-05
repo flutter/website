@@ -74,6 +74,14 @@ an iOS physical device or on the iOS Simulator.
     $ xcodebuild -downloadPlatform iOS
     ```
 
+ 1. <h3>Install Rosetta</h3>
+
+    If you're developing on an [Apple Silicon][] (ARM) Mac,
+    [install Rosetta 2][]:
+
+    ```console
+    $ sudo softwareupdate --install-rosetta --agree-to-license
+    ```
 
  1. <h3>Install CocoaPods</h3>
 
@@ -90,7 +98,7 @@ an iOS physical device or on the iOS Simulator.
 
 [xcode]: https://developer.apple.com/xcode/
 [Apple Silicon]: https://support.apple.com/en-us/116943
-
+[install Rosetta 2]: https://support.apple.com/en-us/102527
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
