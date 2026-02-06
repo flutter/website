@@ -9,15 +9,22 @@ description: >-
 
 ## Summary
 
-Two properties, `cacheExtent` and `cacheExtentStyle`, are deprecated in scrolling related widgets (like `ListView`, `GridView`, `CustomScrollView`, `Viewport`) and their corresponding RenderObjects (like `RenderViewport`).
-A new property, `scrollCacheExtent`, has been introduced which encapsulates both the value and the caching strategy (pixels or viewport).
+Two properties, `cacheExtent` and `cacheExtentStyle`, are deprecated in scrolling
+related widgets (like `ListView`, `GridView`, `CustomScrollView`, `Viewport`)
+and their corresponding RenderObjects (like `RenderViewport`).
+A new property, `scrollCacheExtent`, has been introduced which encapsulates
+both the value and the caching strategy (pixels or viewport).
 
 ## Background
 
-Previously, `cacheExtent` was a `double` and `cacheExtentStyle` determined how that `double` was interpreted (either as pixels or as a fraction of the viewport).
+Previously, `cacheExtent` was a `double` and `cacheExtentStyle` determined how
+that `double` was interpreted (either as pixels or as a fraction of the
+viewport).
 It also separated the value from its unit, which could be confusing.
 
-The new `scrollCacheExtent` property uses a `ScrollCacheExtent` object that explicitly encapsulates both the value and the caching strategy (pixels or viewport), ensuring type safety and clearer intent.
+The new `scrollCacheExtent` property uses a `ScrollCacheExtent` object that
+explicitly encapsulates both the value and the caching strategy (pixels or
+viewport), ensuring type safety and clearer intent.
 
 ## Migration guide
 
@@ -25,7 +32,8 @@ The new `scrollCacheExtent` property uses a `ScrollCacheExtent` object that expl
 
 #### cacheExtent (Pixels)
 
-If you were using `cacheExtent` (which defaults to pixels), use `scrollCacheExtent` with `ScrollCacheExtent.pixels`.
+If you were using `cacheExtent` (which defaults to pixels), use `scrollCacheExtent`
+with `ScrollCacheExtent.pixels`.
 
 **Before:**
 
@@ -46,8 +54,9 @@ ListView(
 ```
 
 #### cacheExtentStyle (Viewport)
- 
- If you were using `cacheExtent` with `CacheExtentStyle.viewport` (commonly used in `Viewport`), use `scrollCacheExtent` with `ScrollCacheExtent.viewport`.
+
+If you were using `cacheExtent` with `CacheExtentStyle.viewport` (commonly used
+in `Viewport`), use `scrollCacheExtent` with `ScrollCacheExtent.viewport`.
  
  **Before:**
  
