@@ -4,6 +4,15 @@ description: >-
   How to migrate your Flutter app's Android Gradle files 
   to build apps with Android Gradle Plugin 9.0.0+.
 ---
+:::warning
+**Current Status:** Please **do not** update your 
+Flutter app for Android to AGP 9. Flutter apps using plugins 
+are currently incompatible with AGP 9: [Issue #181383][]. 
+This support is paused while the Flutter team audits 
+the migration for backwards compatibility with older versions of AGP.
+
+If you would still like to migrate to AGP 9, follow the migration guide below.
+:::
 
 ## Summary
 
@@ -28,13 +37,6 @@ To learn more about Android Gradle Plugin,
 see the [Android Gradle Plugin docs][AGP block].
 
 ## Migrate
-
-:::warning
-**Current Status:** Flutter apps using plugins are currently
-incompatible with AGP 9: [Issue #181383][].
-This support is paused while the Flutter team audits the migration for backwards
-compatibility with older versions of AGP.
-:::
 
 These instructions assume you are updating from 
 an AGP version created before 9.0.0 to an AGP version 9.0.0+.
