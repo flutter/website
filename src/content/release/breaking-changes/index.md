@@ -44,7 +44,9 @@ They're sorted by release and listed in alphabetical order:
 * [Material 3 tokens update][]
 * [Page transition builders reorganization][]
 * [Deprecate onReorder callback][]
+* [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 
+[Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
