@@ -86,12 +86,11 @@ sequence, plugin registration must now be handled in a new callback called
 -     GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-  }
 
-+ func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-+   GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-+ }
-}
++   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
++     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
++   }
+  }
 ```
 
 </Tab>
@@ -119,7 +118,7 @@ sequence, plugin registration must now be handled in a new callback called
 2. Create method channels and platform views in
 `didInitializeImplicitFlutterEngine`, if applicable.
 
-If you previously created [method channels][platform-views-docs] or
+If you previously created [method channels][method-channels-docs] or
 [platform views][platform-views-docs] in
 `application:didFinishLaunchingWithOptions:`,
 move that logic to `didInitializeImplicitFlutterEngine`.

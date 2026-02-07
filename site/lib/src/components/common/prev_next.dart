@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../markdown/markdown_parser.dart';
@@ -49,7 +50,7 @@ class _PrevNextCard extends StatelessComponent {
         span(
           classes: 'prev-next-subtitle',
           attributes: {'aria-label': ariaLabel},
-          [text(subtitle)],
+          [.text(subtitle)],
         ),
         span(classes: 'prev-next-title', [
           DashMarkdown(inline: true, content: page.title),

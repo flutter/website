@@ -142,7 +142,7 @@ To add the package `css_colors` to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-### Removing a package dependency to an app using `flutter pub remove`
+### Removing a package dependency from an app using `flutter pub remove`
 
 To remove the package `css_colors` from an app:
 

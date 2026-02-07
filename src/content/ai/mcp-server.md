@@ -1,5 +1,6 @@
 ---
 title: Dart and Flutter MCP server
+shortTitle: MCP server
 description: >
   Learn about the Dart and Flutter MCP server tool that
   exposes Dart and Flutter tools to compatible
@@ -8,7 +9,7 @@ description: >
 
 This guide discusses the Dart and Flutter MCP server.
 
-:::note experimental
+:::experimental
 The Dart and Flutter MCP server is experimental and likely to evolve quickly.
 The following instructions require Dart 3.9 or later.
 :::
@@ -59,12 +60,12 @@ Run the server with the `dart mcp-server` command,
 which must be configured in your preferred client.
 
 This section provides instructions for setting up the
-Dart and Flutter MCP server with popular tools like Firebase Studio,
-Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
+Dart and Flutter MCP server with popular tools such as
+Antigravity, Gemini CLI, Cursor, and GitHub Copilot.
 
 ### Antigravity
 
-To configure [Antigravity][] to use the Dart and Flutter MCP server,
+To configure Google [Antigravity][] to use the Dart and Flutter MCP server,
 you can either install it from the list of available servers or
 [connect it as a custom MCP server][antigravity-mcp].
 
@@ -83,29 +84,19 @@ you can either install it from the list of available servers or
 1.  In the upper right of the **Agent** panel,
     click **Manage MCP Servers**.
 
-From here, you can choose to install from the list or configure manually.
+From here, you can choose to install the MCP server from
+[the built-in MCP store](#antigravity-mcp-store-install) or by
+[configuring it manually](#antigravity-mcp-manual-install).
 
-#### Install from list
+[Antigravity]: https://antigravity.google/
+[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
 
-1.  In the list of available servers, find **Dart** and click **Add**.
-1.  **Important**: The built-in configuration doesn't currently pass the
-    required `--force-roots-fallback` flag. You must add it manually.
-1.  In the upper right of the **Manage MCPs** editor view,
-    click **View raw config**.
-1.  Locate the `dart` entry in the `mcpServers` map and
-    update the `args` list to include `--force-roots-fallback`:
+#### Install from the MCP store {: #antigravity-mcp-store-install}
 
-    ```json title="mcp_config.json" highlightLines=6
-    "dart": {
-      "command": "dart",
-      "args": [
-        "mcp-server",
-        "--force-roots-fallback"
-      ]
-    }
-    ```
+1.  In the list of available MCP servers,
+    find or search for **Dart** and click **Install**.
 
-#### Connect manually
+#### Connect manually {: #antigravity-mcp-manual-install}
 
 1.  In the upper right of the **Manage MCPs** editor view,
     click **View raw config**.
@@ -117,8 +108,7 @@ From here, you can choose to install from the list or configure manually.
         "dart-mcp-server": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ],
           "env": {}
         }
@@ -145,8 +135,10 @@ It is also recommended to install the Dart and Flutter extensions:
 
     This installs both the Dart and Flutter extensions.
 
-[Antigravity]: https://antigravity.google/
-[antigravity-mcp]: https://antigravity.google/docs/mcp#connecting-custom-mcp-servers
+To learn more about the Dart and Flutter extensions,
+check out [Develop Flutter apps in VS Code][].
+
+[Develop Flutter apps in VS Code]: /tools/vs-code
 
 ### Gemini CLI
 
@@ -174,7 +166,7 @@ add a Dart entry to the `mcpServers` section of the Gemini config.
 For more information, check out the official Gemini CLI
 documentation for [setting up MCP servers][].
 
-[Gemini CLI]: https://geminicli.com/docs/
+[Gemini CLI]: https://geminicli.com/
 [setting up MCP servers]: https://geminicli.com/docs/tools/mcp-server/#how-to-set-up-your-mcp-server
 
 ### Firebase Studio
@@ -207,10 +199,12 @@ follow these steps:
     *   Open the Command Palette (**Shift+Ctrl+P**).
     *   Enter **Firebase Studio: Rebuild Environment**.
 
-For more information about MCP server configuration in
-Firebase Studio, see [Customize your Firebase Studio workspace][].
+For more information about MCP server configuration in Firebase Studio,
+check out [Connect to MCP servers][fs-mcp] and
+[Customize your Firebase Studio workspace][].
 
 [Firebase Studio]: https://firebase.studio/
+[fs-mcp]: https://firebase.google.com/docs/studio/mcp-servers
 [Customize your Firebase Studio workspace]: https://firebase.google.com/docs/studio/customize-workspace
 
 ### Gemini Code Assist in VS Code
@@ -315,6 +309,61 @@ For more information, see the official Cursor
 documentation for [installing MCP servers][].
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
+
+### OpenCode
+
+To configure [OpenCode][] to use the Dart and Flutter MCP server,
+add the `dart-mcp-server` entry to your OpenCode configuration.
+
+OpenCode configuration is typically found in `~/.opencode/config.json`
+or in your project's `opencode key` configuration.
+
+```json title="~/.opencode/config.json"
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dart-mcp-server": {
+      "type": "local",
+      "command": [
+        "dart",
+        "mcp-server"
+      ],
+      "enabled": true,
+      "environment": {}
+    }
+  }
+}
+```
+
+[OpenCode]: https://opencode.ai/
+
+### Claude Code
+
+To configure Claude Code to use the Dart and Flutter MCP server
+for the current project, use the `claude mcp add` CLI command:
+
+```console
+$ claude mcp add --transport stdio dart -- dart mcp-server
+```
+
+To learn more about configuring MCP servers in Claude Code,
+check out their documentation on [Installing MCP servers][claude-install].
+
+[claude-install]: https://code.claude.com/docs/en/mcp#installing-mcp-servers
+
+### Codex CLI
+
+To configure the Codex CLI to use the Dart and Flutter MCP server
+for the current project, use the `codex mcp add` CLI command:
+
+```console
+$ codex mcp add dart -- dart mcp-server --force-roots-fallback
+```
+
+To learn more about configuring MCP servers in the Codex CLI,
+check out their documentation on [Connecting to MCP servers][codex-connect].
+
+[codex-connect]: https://developers.openai.com/codex/mcp
 
 ## Use your MCP client
 

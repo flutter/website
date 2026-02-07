@@ -40,69 +40,7 @@
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/dart-patterns-records
 
-- name: Scrolling experiences in Flutter
-  description: |
-    Start with an app that performs simple, straightforward scrolling
-      and enhance it to create fancy and custom scrolling effects
-      by using slivers.
-  tags:
-    - scrolling
-    - scroll
-  type: codelab
-  link:
-    label: YouTube
-    url: https://www.youtube.com/watch?v=YY-_yrZdjGc
-
 #Design
-
-- name: Take your Flutter app from boring to beautiful
-  description: |
-    Learn how to use some of the features in Material 3
-    to make your app beautiful and responsive.
-  tags:
-    - design
-    - material
-    - responsive
-    - adaptive
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
-
-- name: Building next generation UIs in Flutter
-  description: |
-    Learn how to build a Flutter app that uses the power of `flutter_animate`,
-    fragment shaders, and particle fields.
-  tags:
-    - animation
-    - flutter animate
-    - ui
-    - shaders
-
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
-
-- name: Adaptive Apps in Flutter
-  description: |
-    Learn how to build a Flutter app that adapts to the
-      platform that it's running on, be that Android, iOS,
-      the web, Windows, macOS, or Linux.
-  tags:
-    - adaptive
-    - linux
-    - macos
-    - desktop
-    - windows
-    - android
-    - ios
-    - web
-
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-adaptive-app
 
 - name: Animations in Flutter
   description: |
@@ -288,31 +226,6 @@
 
 ## Games
 
-- name: Add sound and music to your Flutter game with SoLoud
-  description: |
-    The SoLoud package, a free and portable engine,
-    delivers the low-latency and high-performance sound that's
-    essential for many games.
-  tags:
-    - game
-    - audio
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-codelab-soloud
-
-- name: Build a 2D physics game with Flutter and Flame
-  description: |
-    This codelab guides you through crafting game mechanics in a
-    Flutter and Flame game using a 2D physics simulation called Forge2D.
-  tags:
-    - game
-    - physics
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-flame-forge2d
-
 - name: Build a word puzzle with Flutter
   description: |
     This codelab focuses on building word puzzle games,
@@ -366,35 +279,6 @@
     label: Google Codelab
     url: https://codelabs.developers.google.com/codelabs/flutter-webview
 
-- name: Using FFI in a Flutter plugin
-  description: |
-    Learn how to use Dart's FFI (foreign function interface)
-    library, ffigen, allowing you to leverage
-    existing native libraries that provide a
-    C interface.
-  tags:
-    - FFI
-    - interop
-    - plugin
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-ffigen
-
-# Testing
-
-- name: How to test a Flutter app
-  description: |
-    Start with a simple app that manages state with the Provider package.
-    Unit test the provider package. Write widget tests for two of the
-    widgets. Use Flutter Driver to create an integration test.
-  tags:
-    - testing
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-app-testing/
-
 # Platform
 
 - name: Adding a Home Screen widget to your Flutter app
@@ -409,18 +293,3 @@
   link:
     label: Google Codelab
     url: https://codelabs.developers.google.com/flutter-home-screen-widgets
-
-- name: Write a Flutter desktop application
-  description: |
-    Build a Flutter desktop app (Windows, Linux, or macOS)
-    that accesses GitHub APIs, and 
-    create and use plugins to interact with native APIs and desktop applications.
-  tags:
-    - desktop
-    - windows
-    - linux
-    - macos
-  type: codelab
-  link:
-    label: Google Codelab
-    url: https://codelabs.developers.google.com/codelabs/flutter-github-client

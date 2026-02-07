@@ -2,6 +2,7 @@
   background-color: var(--site-raised-bgColor-translucent);
   border-radius: var(--site-radius);
   border: 1px solid var(--site-inset-borderColor);
+  margin-block: 1rem;
 
   header {
     padding: 1rem 1.2rem 1.2rem;
@@ -10,13 +11,13 @@
 
     >div {
       flex: 1;
-      color: var(--site-base-fgColor-alt);
+      color: var(--site-base-fgColor-lighter);
     }
 
     h3 {
       margin: 0;
       font-size: 1.25rem;
-      font-weight: 600;
+      font-weight: 700;
       color: var(--site-base-fgColor);
     }
 
@@ -47,6 +48,7 @@
 
       font-size: 1rem;
       font-weight: 500;
+      font-family: var(--site-ui-fontFamily);
     }
   }
 
@@ -75,11 +77,22 @@
       margin: 0;
       border-top: 1px solid var(--site-inset-borderColor);
       padding: .8rem 1.2rem;
-      color: var(--site-base-fgColor-alt);
+      color: var(--site-base-fgColor-lighter);
 
       >:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+
+  .summary-card-item-static { 
+    .summary-card-item-details {
+      padding: .8rem 1.2rem;
+        color: var(--site-base-fgColor-lighter);
+
+        >:last-child {
+          margin-bottom: 0;
+        }
     }
   }
 }

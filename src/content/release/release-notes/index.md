@@ -10,6 +10,9 @@ releases to the stable channel.
 :::note
 For information about bug-fix releases,
 check out the Flutter [CHANGELOG][].
+
+To see what's changed in beta releases, check out the
+[Beta channel](/install/archive#beta-channel) section on the archive page.
 :::
 
 * 3.38.0

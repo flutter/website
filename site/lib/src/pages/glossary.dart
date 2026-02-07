@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -144,7 +145,7 @@ final class Glossary {
 
     // Sort entries alphabetically by term.
     entries.sort(
-      (a, b) => a.term.toLowerCase().compareTo(b.term.toLowerCase()),
+      (a_, b_) => a_.term.toLowerCase().compareTo(b_.term.toLowerCase()),
     );
 
     return Glossary(entries: entries);
@@ -165,10 +166,10 @@ final class GlossaryIndex extends StatelessComponent {
     final glossary = Glossary.fromList(
       glossaryData ?? context.page.data['glossary'] as List<Object?>,
     );
-    return Component.fragment(
+    return .fragment(
       [
-        p([
-          text(
+        const p([
+          .text(
             'The following are definitions of terms used '
             'across the Flutter documentation.',
           ),
@@ -214,7 +215,7 @@ final class GlossaryCard extends StatelessComponent {
       },
       initiallyExpanded: false,
       header: [
-        h2(classes: 'card-title', [text(entry.term)]),
+        h2(classes: 'card-title', [.text(entry.term)]),
         div(classes: 'card-header-buttons', [
           Button(
             href: '#$cardId',
@@ -249,8 +250,8 @@ final class GlossaryCard extends StatelessComponent {
 
         if (entry.relatedLinks.isNotEmpty)
           div([
-            h3(classes: 'no_toc details-header', [
-              text('Related docs and resources'),
+            const h3(classes: 'no_toc details-header', [
+              .text('Related docs and resources'),
             ]),
             ul(classes: 'resources-list', [
               for (final resource in entry.relatedLinks)

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -14,7 +15,7 @@ final class TutorialNavigationExtension implements PageExtension {
 
   @override
   Future<List<Node>> apply(Page page, List<Node> nodes) async {
-    if (!page.path.startsWith('tutorial/')) {
+    if (!page.path.startsWith('learn/pathway/')) {
       return nodes;
     }
 

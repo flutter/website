@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -72,10 +73,10 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
     return div(key: quizKey, classes: 'quiz not-content', [
       if (component.title case final title?)
         h3(classes: 'quiz-title', [
-          text(title),
+          .text(title),
         ]),
       span(classes: 'quiz-progress', [
-        text(
+        .text(
           currentQuestion != null
               ? '${currentQuestionIndex + 1} / ${component.questions.length}'
               : 'Complete',
@@ -88,7 +89,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
             if (question == currentQuestion) 'active',
           ].toClasses,
           [
-            strong([text(question.question)]),
+            strong([.text(question.question)]),
             ol([
               for (final (index, option) in question.options.indexed)
                 li(
@@ -112,14 +113,14 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
                   [
                     div(classes: 'question-wrapper', [
                       div(classes: 'question', [
-                        p([text(option.text)]),
+                        p([.text(option.text)]),
                       ]),
                       div(classes: 'solution', [
                         if (option.correct)
-                          p(classes: 'correct', [text('That\'s right!')])
+                          const p(classes: 'correct', [.text('That\'s right!')])
                         else
-                          p(classes: 'incorrect', [text('Not quite')]),
-                        p([text(option.explanation)]),
+                          const p(classes: 'incorrect', [.text('Not quite')]),
+                        p([.text(option.explanation)]),
                       ]),
                     ]),
                   ],
@@ -129,9 +130,9 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
         ),
 
       if (currentQuestion == null)
-        div(classes: 'quiz-complete', [
-          strong([text('Great job!')]),
-          p([text('You completed the quiz.')]),
+        const div(classes: 'quiz-complete', [
+          strong([.text('Great job!')]),
+          p([.text('You completed the quiz.')]),
         ]),
       div(classes: 'quiz-actions', [
         Button(
@@ -146,7 +147,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
           content: 'Previous',
         ),
         Button(
-          ref: nextButtonKey,
+          key: nextButtonKey,
           classes: ['quiz-button'],
           style: ButtonStyle.filled,
           disabled: currentQuestion != null && selectedOption == null,

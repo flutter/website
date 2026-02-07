@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -14,15 +15,15 @@ final class SiteSwitcher extends StatelessComponent {
 
   @override
   Component build(BuildContext _) {
-    return Dropdown(
+    return const Dropdown(
       id: 'site-switcher',
-      toggle: const Button(icon: 'apps', title: 'Visit related sites.'),
+      toggle: Button(icon: 'apps', title: 'Visit related sites.'),
       content: nav(
         classes: 'dropdown-menu',
         attributes: {'role': 'menu'},
         [
           ul(
-            const [
+            [
               _SiteWordMarkListEntry(
                 name: 'Flutter',
                 href: 'https://flutter.dev',
@@ -103,14 +104,14 @@ class _SiteWordMarkListEntry extends StatelessComponent {
           },
           [
             if (dart)
-              img(
+              const img(
                 src: '/assets/images/branding/dart/logo.svg',
                 alt: 'Dart logo',
                 width: 28,
                 height: 28,
               )
             else
-              img(
+              const img(
                 src: '/assets/images/branding/flutter/logo/default.svg',
                 alt: 'Flutter logo',
                 width: 28,
@@ -120,12 +121,12 @@ class _SiteWordMarkListEntry extends StatelessComponent {
               attributes: {
                 'translate': 'no',
               },
-              [text(name)],
+              [.text(name)],
             ),
             if (subtype case final subtype?)
               span(
                 classes: 'subtype',
-                [text(subtype)],
+                [.text(subtype)],
               ),
           ],
         ),

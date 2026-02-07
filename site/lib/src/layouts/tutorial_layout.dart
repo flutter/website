@@ -18,6 +18,9 @@ class TutorialLayout extends DocLayout {
   bool get allowBreadcrumbs => false;
 
   @override
+  List<String> get defaultBodyClasses => [];
+
+  @override
   Component buildBody(Page page, Component child) {
     final model = switch (page.data['tutorial']) {
       final Map<Object?, Object?>? tutorialData when tutorialData != null =>
@@ -40,9 +43,9 @@ class TutorialLayout extends DocLayout {
           'page': {
             'showBanner': false,
             'navigationCollectionTitle': model.title,
+            'navigationCollectionUrl': model.url,
             'navigationEntries': navigationEntries,
           },
-          'sidenav': null,
         },
       ),
       child,

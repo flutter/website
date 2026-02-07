@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:meta/meta.dart';
 
@@ -72,36 +73,36 @@ class _ArchiveTableState extends State<ArchiveTable> {
 
   @override
   Component build(BuildContext context) {
-    return Component.fragment([
-      p([
-        text('Select from the following scrollable list:'),
+    return .fragment([
+      const p([
+        .text('Select from the following scrollable list:'),
       ]),
       div(classes: 'scrollable-table table-wrapper', [
         table(
           id: 'downloads-$os-$channel',
           classes: 'table table-striped',
           [
-            thead([
+            const thead([
               tr([
-                th([text('Flutter version')]),
-                th([text('Architecture')]),
-                th([text('Ref')]),
-                th(classes: 'date', [text('Release date')]),
-                th([text('Dart version')]),
-                th([text('Provenance')]),
+                th([.text('Flutter version')]),
+                th([.text('Architecture')]),
+                th([.text('Ref')]),
+                th(classes: 'date', [.text('Release date')]),
+                th([.text('Dart version')]),
+                th([.text('Provenance')]),
               ]),
             ]),
             tbody([
               if (isLoading)
-                tr(classes: 'loading', [
-                  td(attributes: {'colspan': '6'}, [text('Loading...')]),
+                const tr(classes: 'loading', [
+                  td(attributes: {'colspan': '6'}, [.text('Loading...')]),
                 ])
               else if (error != null)
-                tr(classes: 'error', [
+                const tr(classes: 'error', [
                   td(
                     attributes: {'colspan': '6'},
                     [
-                      text(
+                      .text(
                         'Failed to load releases. Refresh page to try again.',
                       ),
                     ],
@@ -112,22 +113,22 @@ class _ArchiveTableState extends State<ArchiveTable> {
                   tr([
                     td([
                       a(href: release.url, [
-                        text(release.version),
+                        .text(release.version),
                       ]),
                     ]),
                     td([
-                      span([text(release.architecture)]),
+                      span([.text(release.architecture)]),
                     ]),
                     td([
-                      span(classes: 'git-hash', [text(release.hash)]),
+                      span(classes: 'git-hash', [.text(release.hash)]),
                     ]),
                     td(classes: 'date', [
-                      text(
+                      .text(
                         release.releaseDate.toLocaleDateString(),
                       ),
                     ]),
                     td([
-                      span([text(release.dartSdkVersion)]),
+                      span([.text(release.dartSdkVersion)]),
                     ]),
                     td([
                       buildProvenanceLink(release),
@@ -148,10 +149,10 @@ class _ArchiveTableState extends State<ArchiveTable> {
 
     if (os == 'windows' && dateValue < windowsCutoff) {
       // Provenance not available before 4/3/2023 for Windows
-      return span([text('-')]);
+      return const span([.text('-')]);
     } else if (dateValue < otherOsCutoff) {
       // Provenance not available before 12/15/2022 for macOS and Linux
-      return span([text('-')]);
+      return const span([.text('-')]);
     }
 
     final archiveExtension = os == 'linux' ? 'tar.xz' : 'zip';
@@ -161,7 +162,7 @@ class _ArchiveTableState extends State<ArchiveTable> {
           'flutter_${os}_${release.version}-$channel.'
           '$archiveExtension.intoto.jsonl',
       target: Target.blank,
-      [text('Attestation bundle')],
+      [const .text('Attestation bundle')],
     );
   }
 }
