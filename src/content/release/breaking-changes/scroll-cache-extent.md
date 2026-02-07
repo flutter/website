@@ -12,7 +12,7 @@ description: >-
 Two properties, `cacheExtent` and `cacheExtentStyle`, are deprecated in scrolling
 related widgets (like `ListView`, `GridView`, `CustomScrollView`, `Viewport`)
 and their corresponding RenderObjects (like `RenderViewport`).
-A new property, `scrollCacheExtent`, has been introduced which encapsulates
+A new property, `scrollCacheExtent`, has been introduced that encapsulates
 both the value and the caching strategy (pixels or viewport).
 
 ## Background
