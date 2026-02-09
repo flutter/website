@@ -713,18 +713,18 @@ event, visit Apple's documentation on
 [`UISceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate
 [`UIWindowSceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate
 
-| App Delegate Method | Scene Delegate Equivalent |
-| :--- | :--- |
-| [`applicationDidBecomeActive`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622956-applicationdidbecomeactive) | [`sceneDidBecomeActive`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197915-scenedidbecomeactive) |
-| [`applicationWillResignActive`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622950-applicationwillresignactive) | [`sceneWillResignActive`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197919-scenewillresignactive) |
-| [`applicationWillEnterForeground`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623076-applicationwillenterforeground) | [`sceneWillEnterForeground`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197918-scenewillenterforeground) |
-| [`applicationDidEnterBackground`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground) | [`sceneDidEnterBackground:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197917-scenedidenterbackground) |
-| [`application:continueUserActivity:restorationHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623072-application) | [`scene:continueUserActivity:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238053-scene) |
-| [`application:performActionForShortcutItem:completionHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623033-application) | [`windowScene:performActionForShortcutItem:completionHandler:`](https://developer.apple.com/documentation/uikit/uiwindowscenedelegate/3238088-windowscene) |
-| [`application:openURL:options:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application) | [`scene:openURLContexts:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238059-scene) |
-| [`application:performFetchWithCompletionHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623125-application) | [`BGAppRefreshTask`](https://developer.apple.com/documentation/backgroundtasks/bgapprefreshtask) |
-| [`application:willFinishLaunchingWithOptions:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623032-application) | [`scene:willConnectToSession:options:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197914-scene) |
-| [`application:didFinishLaunchingWithOptions:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application) | [`scene:willConnectToSession:options:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197914-scene) |
+| App Delegate Method | Scene Delegate Equivalent                                                                                                                                  |
+| :--- |:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`applicationDidBecomeActive`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622956-applicationdidbecomeactive) | [`sceneDidBecomeActive`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197915-scenedidbecomeactive)                                     |
+| [`applicationWillResignActive`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622950-applicationwillresignactive) | [`sceneWillResignActive`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197919-scenewillresignactive)                                   |
+| [`applicationWillEnterForeground`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623076-applicationwillenterforeground) | [`sceneWillEnterForeground`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197918-scenewillenterforeground)                             |
+| [`applicationDidEnterBackground`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622997-applicationdidenterbackground) | [`sceneDidEnterBackground`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197917-scenedidenterbackground)                               |
+| [`application:continueUserActivity:restorationHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623072-application) | [`scene:continueUserActivity:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/scene(_:continue:))                                             |
+| [`application:performActionForShortcutItem:completionHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/application(_:performactionfor:completionhandler:)) | [`windowScene:performActionForShortcutItem:completionHandler:`](https://developer.apple.com/documentation/uikit/uiwindowscenedelegate/3238088-windowscene) |
+| [`application:openURL:options:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623112-application) | [`scene:openURLContexts:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238059-scene)                                                  |
+| [`application:performFetchWithCompletionHandler:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623125-application) | [`BGAppRefreshTask`](https://developer.apple.com/documentation/backgroundtasks/bgapprefreshtask)                                                           |
+| [`application:willFinishLaunchingWithOptions:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623032-application) | [`scene:willConnectToSession:options:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197914-scene)                                     |
+| [`application:didFinishLaunchingWithOptions:`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1622921-application) | [`scene:willConnectToSession:options:`](https://developer.apple.com/documentation/uikit/uiscenedelegate/3197914-scene)                                     |
 
 <Tabs key="ios-language-switcher">
 <Tab name="Swift">
@@ -791,14 +791,25 @@ public func windowScene(
 </Tab>
 </Tabs>
 
-Optionally, while the below methods are not deprecated by UIScene, they should be migrated if you would like to support multiscene in the future. Note that this also entails an extra step of making your pluginRegistrar a variable.
+5. Move launch logic from `application:willFinishLaunchingWithOptions:` and
+`application:didFinishLaunchingWithOptions:` to
+`scene:willConnectToSession:options:`.
 
-| Deprecated API                                                                                               | UIScene Replacement                                                     |
-|:-------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)         | `self.pluginRegistrar.viewController.view.window.windowScene.screen`    |
-| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow) | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
-| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/1622975-windows)     | `self.pluginRegistrar.viewController.view.window.windowScene.windows`   |
-| `UIApplicationDelegate window`                                                                               | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
+Despite `application:willFinishLaunchingWithOptions:` and
+`application:didFinishLaunchingWithOptions:` not being deprecated, after
+migrating to the `UIScene` lifecycle, the launch options will be `nil`. Any logic
+performed here related to the launch options should be moved to the
+`scene:willConnectToSession:options:` event.
+
+
+6. [Optional] Migrate other deprecated APIs to support multiple scenes in the future.
+
+| Deprecated API                                                                                                 | UIScene Replacement                                                     |
+|:---------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
+| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | `self.pluginRegistrar.viewController.view.window.windowScene.screen`    |
+| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
+| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/1622975-windows)       | `self.pluginRegistrar.viewController.view.window.windowScene.windows`   |
+| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
 
 First, create a new view provider with an instance method that holds a reference to your `FlutterPluginRegistrar`.
 
@@ -868,15 +879,6 @@ Next, in your plugin’s `registerWithRegistrar` method, initialize your new vie
 </Tab>
 </Tabs>
 
-5. Move launch logic from `application:willFinishLaunchingWithOptions:` and
-`application:didFinishLaunchingWithOptions:` to
-`scene:willConnectToSession:options:`.
-
-Despite `application:willFinishLaunchingWithOptions:` and
-`application:didFinishLaunchingWithOptions:` not being deprecated, after
-migrating to the `UIScene` lifecycle, the launch options will be `nil`. Any logic
-performed here related to the launch options should be moved to the
-`scene:willConnectToSession:options:` event.
 
 ## Bespoke FlutterViewController usage
 
