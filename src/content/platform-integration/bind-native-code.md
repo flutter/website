@@ -186,3 +186,67 @@ different versions of your pre-compiled library.
 
 For more examples, see the [code_assets package
 examples](https://pub.dev/packages/code_assets/example).
+
+## Dynamic library naming guidelines
+
+When implementing `build.dart` hooks for packages that bundle code assets, it
+is critical to ensure consistent naming of your dynamic libraries across all
+target architectures and SDKs.
+
+On Apple platforms (iOS and macOS), dynamic libraries are bundled into
+frameworks. Flutter's build system relies on these names to generate metadata
+and package distributive formats like XCFrameworks.
+
+### Consistency across architectures
+
+For a given asset ID, your hook will be invoked multiple times, once per
+architecture. Your hook must produce the same filename regardless of the target
+architecture (for example, `arm64` vs. `x64`).
+
+*   **Why?** Within a single SDK build, Flutter combines architecture-specific
+    binaries into a single universal (fat) binary using `lipo`. If architectures
+    have different filenames, the tool will pick one non-deterministically and
+    issue a warning. Furthermore, error messages at runtime will be confusing
+    for your users if dynamic libraries are renamed.
+*   **Recommended action**: Avoid adding architecture suffixes to your
+    filenames (for example, use `libsqlite3.dylib` instead of
+    `libsqlite3_arm64.dylib`). Instead, write the file to
+    `input.outputDirectory` (which is unique per architecture) or to an
+    architecture-specific subdirectory of `input.outputDirectoryShared` (for
+    example, `input.outputDirectoryShared.resolve('$architecture/')`).
+
+### Consistency across SDKs (iOS)
+
+When building for iOS, your hook will be invoked multiple times with different
+values for the SDK and architecture. Both physical device (`iphoneos`) and
+simulator (`iphonesimulator`) invocations must produce the same framework name
+for the same asset ID.
+
+*   **Why?** Flutter uses `xcodebuild -create-xcframework` to combine these
+    outputs. Xcode requires that all platform slices within an XCFramework
+    share the same framework name to allow seamless linking. If filenames
+    differ, the Flutter tool cannot create a correct XCFramework, and commands
+    like `flutter build ios-framework` will fail.
+*   **Recommended action**: Do not use suffixes like `_sim` or `_simulator` for
+    the simulator build. The XCFramework structure already handles the platform
+    separation internally (for example,
+    `MyLib.xcframework/ios-arm64_x86_64-simulator/MyLib.framework`). Instead,
+    write the file to `input.outputDirectory` (which is unique per SDK) or to an
+    SDK-specific subdirectory of `input.outputDirectoryShared`.
+
+### Consistency in the set of assets
+
+Your hook must produce the same set of Asset IDs across all SDKs for a given
+target platform.
+
+*   **Why?** Apple's build system and App Store validation require that all
+    frameworks included in an application are compatible with the target
+    device. If you produce an asset for the simulator (`iphonesimulator`) but
+    not for the physical device (`iphoneos`), the resulting XCFramework will
+    contain a slice that has no counterpart for the device. This can lead to
+    build failures or Apple rejecting the application for including
+    simulator-only binaries in a device build.
+*   **Recommended action**: Ensure that your `build.dart` hook logic handles
+    all supported SDKs consistently. If you have code that is only relevant
+    for a single SDK, include it in a dynamic library that is present in
+    both SDKs rather than creating a separate asset for it.
