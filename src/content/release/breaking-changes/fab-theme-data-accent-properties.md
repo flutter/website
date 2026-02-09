@@ -6,7 +6,7 @@ description: >
   its unnecessary use of accentIconTheme.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

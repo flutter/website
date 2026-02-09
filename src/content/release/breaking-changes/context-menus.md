@@ -1,11 +1,11 @@
 ---
 title: A new way to customize context menus
 description: >
-  Several hard-coded parameters for customizing context menus have 
+  Several hard-coded parameters for customizing context menus have
   now been replaced by a generic widget builder.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

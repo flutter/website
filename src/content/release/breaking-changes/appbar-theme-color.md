@@ -5,7 +5,7 @@ description: >-
   deprecated in favor of backgroundColor for better API consistency.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

@@ -21,10 +21,10 @@ In these ways and more, it simulates a real-world,
 feature-rich Flutter application.
 
 <div class="wrapping-row" style="margin-block-end: 2rem">
-  {% render docs/app-figure.md, image:"app-architecture/case-study/splash_screen.png", alt:"A screenshot of the splash screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render docs/app-figure.md, image:"app-architecture/case-study/home_screen.png", alt:"A screenshot of the home screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render docs/app-figure.md, image:"app-architecture/case-study/search_form_screen.png", alt:"A screenshot of the search form screen of the compass app.", img-style:"max-height: 400px;" %}
-  {% render docs/app-figure.md, image:"app-architecture/case-study/booking_screen.png", alt:"A screenshot of the booking screen of the compass app.", img-style:"max-height: 400px;" %}
+  <DashImage figure image="app-architecture/case-study/splash_screen.png" alt="A screenshot of the splash screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/home_screen.png" alt="A screenshot of the home screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/search_form_screen.png" alt="A screenshot of the search form screen of the compass app." img-style="max-height: 400px;" />
+  <DashImage figure image="app-architecture/case-study/booking_screen.png" alt="A screenshot of the booking screen of the compass app." img-style="max-height: 400px;" />
 </div>
 
 The Compass app's architecture most resembles the [MVVM architectural pattern][]
@@ -82,48 +82,46 @@ Data layer objects (repositories and services) aren't tied to a single feature,
 while UI layer objects (views and view models) are.
 The following is how the code is organized within the Compass application.
 
-```plaintext
-lib
-├─┬─ ui
-│ ├─┬─ core
-│ │ ├─┬─ ui
-│ │ │ └─── <shared widgets>
-│ │ └─── themes
-│ └─┬─ <FEATURE NAME>
-│   ├─┬─ view_model
-│   │ └─── <view_model class>.dart
-│   └─┬─ widgets
-│     ├── <feature name>_screen.dart
-│     └── <other widgets>
-├─┬─ domain
-│ └─┬─ models
-│   └─── <model name>.dart
-├─┬─ data
-│ ├─┬─ repositories
-│ │ └─── <repository class>.dart
-│ ├─┬─ services
-│ │ └─── <service class>.dart
-│ └─┬─ model
-│   └─── <api model class>.dart
-├─── config
-├─── utils
-├─── routing
-├─── main_staging.dart
-├─── main_development.dart
-└─── main.dart
+<FileTree>
 
-// The test folder contains unit and widget tests
-test
-├─── data
-├─── domain
-├─── ui
-└─── utils
+- lib/
+  - ui/
+    - core/
+      - ui/ 
+        - <shared_widgets>
+      - themes/
+    - <feature_name>/
+      - view_models/
+        - <view_model_class>.dart
+      - widgets/
+        - <feature_name>_screen.dart
+        - <other_widgets>
+  - domain/
+    - models/
+      - <model_name>.dart
+  - data/
+    - repositories/
+      - <repository_class>.dart
+    - services/
+      - <service_class>.dart
+    - model/
+      - <api_model_class>.dart
+  - config/
+  - utils/
+  - routing/
+  - main_staging.dart
+  - main_development.dart
+  - main.dart
+- test/ // Contains unit and widget tests.
+  - data/
+  - domain/
+  - ui/
+  - utils/
+- testing/ // Contains mocks that other classes need to execute tests.
+  - fakes/
+  - models/
 
-// The testing folder contains mocks other classes need to execute tests
-testing
-├─── fakes
-└─── models
-```
+</FileTree>
 
 Most of the application code lives in the
 `data`, `domain`, and `ui` folders.

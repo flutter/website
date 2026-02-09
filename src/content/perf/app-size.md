@@ -55,7 +55,7 @@ dropping the .aab file.
 View the application's download and install size in the **Android vitals** ->
 **App size** tab.
 
-{% render docs/app-figure.md, image:"perf/vital-size.png", alt:"App size tab in Google Play Console" %}
+<DashImage figure image="perf/vital-size.png" alt="App size tab in Google Play Console" />
 
 The download size is calculated based on an XXXHDPI (~640dpi) device on an
 arm64-v8a architecture. Your end users' download sizes might vary depending on
@@ -144,7 +144,7 @@ In addition to analyzing a single build, two builds can also be diffed by
 loading two `*-code-size-analysis_*.json` files into DevTools.
 Check out the [DevTools documentation][] for details.
 
-{% render docs/app-figure.md, image:"perf/size-summary.png", alt:"Size summary of an Android application in terminal" %}
+<DashImage figure image="perf/size-summary.png" alt="Size summary of an Android application in terminal" />
 
 Through the summary, you can get a quick idea of the size usage per category
 (such as asset, native code, Flutter libraries, etc). The compiled Dart
@@ -167,7 +167,7 @@ up to function level for the Dart AOT artifact.
 This can be done by `dart devtools`, selecting
 `Open app size tool` and uploading the JSON file.
 
-{% render docs/app-figure.md, image:"perf/devtools-size.png", alt:"Example breakdown of app in DevTools" %}
+<DashImage figure image="perf/devtools-size.png" alt="Example breakdown of app in DevTools" />
 
 For further information on using the DevTools app size tool,
 check out the [DevTools documentation][].
@@ -185,6 +185,14 @@ Some other things you can do to make your app smaller are:
 * Remove unused resources
 * Minimize resource imported from libraries
 * Compress PNG and JPEG files
+
+Another way to reduce app size is by using platform-specific code.
+The Dart compiler removes code that is unreachable on the target platform.
+For example, if you have code that is specific to Windows, you can wrap it in a
+check using the `Platform` class from `dart:io`, like `if (Platform.isWindows)`.
+When you build the app for Android, the compiler sees that this check is
+always false and removes the Windows-specific code from the release build.
+
 
 [FAQ]: /resources/faq
 [How big is the Flutter engine?]: /resources/faq#how-big-is-the-flutter-engine

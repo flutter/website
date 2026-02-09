@@ -3,7 +3,7 @@ description: Use Form widget to perform form validation.
 
 resolution: workspace
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:

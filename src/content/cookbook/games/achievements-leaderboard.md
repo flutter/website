@@ -7,7 +7,7 @@ description: >
 <?code-excerpt path-base="cookbook/games/achievements_leaderboards"?>
 
 Gamers have various motivations for playing games.
-In broad strokes, there are four major motivations: 
+In broad strokes, there are four major motivations:
 [immersion, achievement, cooperation, and competition][].
 No matter the game you build, some players want to *achieve* in it.
 This could be trophies won or secrets unlocked.
@@ -22,7 +22,7 @@ centralized services for achievements and leaderboards.
 Players can view achievements from all their games in one place and
 developers don't need to re-implement them for every game.
 
-This recipe demonstrates how to use the [`games_services` package][] 
+This recipe demonstrates how to use the [`games_services` package][]
 to add achievements and leaderboard functionality to your mobile game.
 
 [`games_services` package]: {{site.pub-pkg}}/games_services
@@ -67,8 +67,8 @@ To enable Game Center (GameKit) on iOS:
 To enable *Play Games Services* on Android:
 
 1.  If you haven't already, go to [Google Play Console][]
-    and register your game there.  
-    
+    and register your game there.
+
     ![Screenshot of the 'Create app' button in Google Play Console](/assets/images/docs/cookbook/google-play-create-app.png)
 
 2.  Still in Google Play Console, select *Play Games Services* → *Setup
@@ -79,8 +79,8 @@ To enable *Play Games Services* on Android:
         Among other things, you'll need to set up an
         OAuth consent screen in Google Cloud Console.
         If at any point you feel lost, consult the
-        official [Play Games Services guide][].    
-         
+        official [Play Games Services guide][].
+
         ![Screenshot showing the Games Services section in Google Play Console](/assets/images/docs/cookbook/play-console-play-games-services.png)
 
 3.  When done, you can start adding leaderboards and achievements in
@@ -191,7 +191,7 @@ the raw functionality of the `games_services` plugin.
 
 3.  To display the achievements in your own UI, use
     [`GamesServices.loadAchievements()`][].
-    
+
 [`GamesServices.loadAchievements()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadAchievements.html
 
 ## 4. Submit scores
@@ -234,7 +234,7 @@ leaderboards.
 
 3.  If you want to display the leaderboard scores in your own UI, you
     can fetch them with [`GamesServices.loadLeaderboardScores()`][].
-    
+
 [`GamesServices.loadLeaderboardScores()`]: {{site.pub-api}}/games_services/latest/games_services/GamesServices/loadLeaderboardScores.html
 
 ## 5. Next steps
@@ -250,7 +250,7 @@ all 10 pieces of the McGuffin."
 
 Each game has different needs from game services.
 
-To start, you might want to create this controller 
+To start, you might want to create this controller
 in order to keep all achievements & leaderboards logic in one place:
 
 <?code-excerpt "lib/games_services_controller.dart"?>

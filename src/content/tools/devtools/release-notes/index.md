@@ -1,5 +1,6 @@
 ---
 title: DevTools release notes
+breadcrumb: Release notes
 description: Learn about the latest changes in Dart and Flutter DevTools.
 showToc: false
 ---
@@ -20,12 +21,8 @@ $ dart devtools --version
 
 {% comment %}
 When adding the release notes for a new DevTools release,
-make sure to add the version number as an entry to the list
-found at `/src/_data/devtools_releases.yml`.
+make sure to add the version number as the first entry in the list
+found at `/site/src/data/devtools_releases.dart`.
 {% endcomment -%}
 
-{% assign releases = devtools_releases.releases %}
-
-{% for release in releases -%}
-* [{{release}} release notes](/tools/devtools/release-notes/release-notes-{{release}})
-{% endfor -%}
+<DevToolsReleaseNotesIndex />

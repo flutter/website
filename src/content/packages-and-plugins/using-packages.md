@@ -33,7 +33,7 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-{% ytEmbed 'Y9WifT8aN6o', 'Packages versus plugins | Decoding Flutter' %}
+<YouTubeEmbed id="Y9WifT8aN6o" title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
 :::
 
 Existing packages enable many use cases—for example,
@@ -142,7 +142,7 @@ To add the package `css_colors` to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-### Removing a package dependency to an app using `flutter pub remove`
+### Removing a package dependency from an app using `flutter pub remove`
 
 To remove the package `css_colors` from an app:
 
@@ -212,13 +212,30 @@ Gradle build logic instead.
 To force the use of `guava` version `28.0`, make the following
 changes to the app's `android/build.gradle` file:
 
-```groovy
+<Tabs key="android-conflict-resolution">
+<Tab name="Kotlin">
+
+```kotlin title="android/app/build.gradle.kts"
+configurations.all {
+    resolutionStrategy {
+        force("com.google.guava:guava:28.0-android")
+    }
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/app/build.gradle"
 configurations.all {
     resolutionStrategy {
         force 'com.google.guava:guava:28.0-android'
     }
 }
 ```
+
+</Tab>
+</Tabs>
 
 CocoaPods doesn't currently offer dependency
 override functionality.
@@ -313,7 +330,7 @@ additional dependency options are available:
     dependencies:
     packageA:
       path: ../packageA/
-  
+
   ```
 
 **Git dependency**
@@ -416,9 +433,9 @@ To use this package:
     }
     ```
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
-
 1. Run the app. The app's background should now be orange.
+
+[`css_colors`]: {{site.pub-pkg}}/css_colors
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 

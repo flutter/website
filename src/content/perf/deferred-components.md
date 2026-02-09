@@ -48,7 +48,22 @@ Add Play Core to the Android app's
 build.gradle dependencies.
 In `android/app/build.gradle` add the following:
 
-```groovy
+<Tabs key="android-play-core">
+<Tab name="Kotlin">
+
+```kotlin title="android/app/build.gradle.kts"
+...
+dependencies {
+  ...
+  implementation("com.google.android.play:core:1.8.0")
+  ...
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/app/build.gradle"
 ...
 dependencies {
   ...
@@ -56,6 +71,9 @@ dependencies {
   ...
 }
 ```
+
+</Tab>
+</Tabs>
 </li>
 
 <li>
@@ -146,7 +164,7 @@ to your app initialization:
 ```java
 import io.flutter.embedding.engine.dynamicfeatures.PlayStoreDeferredComponentManager;
 import io.flutter.FlutterInjector;
-... 
+...
 PlayStoreDeferredComponentManager deferredComponentManager = new
   PlayStoreDeferredComponentManager(this, null);
 FlutterInjector.setInstance(new FlutterInjector.Builder()
@@ -154,7 +172,7 @@ FlutterInjector.setInstance(new FlutterInjector.Builder()
 ```
 
 </li>
-    
+
 <li>
 
 Opt into deferred components by adding
@@ -558,10 +576,24 @@ defined in the pubspec named, `boxComponent`, `circleComponent`,
 and `assetComponent`, ensure that `android/settings.gradle`
 contains the following:
 
-```groovy
+<Tabs key="android-settings-gradle">
+<Tab name="Kotlin">
+
+```kotlin title="android/settings.gradle.kts"
+include(":app", ":boxComponent", ":circleComponent", ":assetComponent")
+...
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/settings.gradle"
 include ':app', ':boxComponent', ':circleComponent', ':assetComponent'
 ...
 ```
+
+</Tab>
+</Tabs>
 
 </li>
 

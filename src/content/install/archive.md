@@ -4,7 +4,7 @@ shortTitle: Archive
 description: "All current Flutter SDK releases: stable, beta, and main."
 ---
 
-{% render docs/china-notice.md %}
+{% render "docs/china-notice.md" %}
 
 ## Overview
 
@@ -15,15 +15,15 @@ version of Flutter for compatibility reasons or to investigate bugs.
 The archive includes Flutter SDKs for Windows, macOS, and Linux on the
 following [channels][]:
 
-*   **{{site.sdk.channel | capitalize }} channel**: This channel contains the
-    most stable Flutter builds. Roughly every third beta version is promoted
-    to the stable version. The stable channel is the recommended channel for
+*   **Stable channel**: This channel contains the most stable Flutter builds.
+    Roughly every third beta version is promoted to the stable version.
+    The stable channel is the recommended channel for
     new users and for production app releases.
 
 *   **Beta channel**: This channel is the most recent version of Flutter that is
     available, but it is not yet stable. The beta branch is usually released
     on the first Wednesday of the month. A fix will typically end up in the
-    beta channel about two weeks after it lands in the main channel. 
+    beta channel about two weeks after it lands in the main channel.
     Releases are distributed as [installation bundles][].
 
 *   **Main channel**: This channel has the newest features, but it hasn't been fully
@@ -55,53 +55,42 @@ SDK archive:
 
 ## Stable channel
 
-{% tabs "os-archive-tabs" %}
-
-{% tab "Windows" %}
-
-{% render docs/release/archive-release.md, os: "Windows", channel: "stable" %}
-
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% render docs/release/archive-release.md, os: "macOS", channel: "stable" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% render docs/release/archive-release.md, os: "Linux", channel: "stable" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="stable" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="stable" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="stable" />
+    </Tab>
+</Tabs>
 
 ## Beta channel
 
-{% tabs "os-archive-tabs" %}
+<Tabs key="os-archive-tabs">
+    <Tab name="Windows">
+        <ArchiveTable os="Windows" channel="beta" />
+    </Tab>
+    <Tab name="macOS">
+        <ArchiveTable os="macOS" channel="beta" />
+    </Tab>
+    <Tab name="Linux">
+        <ArchiveTable os="Linux" channel="beta" />
+    </Tab>
+</Tabs>
 
-{% tab "Windows" %}
+:::tip
+To see what's changed in a beta release, compare the version tags on GitHub.
 
-{% render docs/release/archive-release.md, os: "Windows", channel: "beta" %}
+1. Find the version number (tag) you want to see (for example, `3.38.0-0.2.pre`).
+2. Find the previous version number (for example, `3.38.0-0.1.pre`).
+3. Go to the [GitHub compare page](https://github.com/flutter/flutter/compare).
+4. Select the older tag for the `base` field and the newer tag for the `compare` field.
 
-{% endtab %}
-
-{% tab "macOS" %}
-
-{% render docs/release/archive-release.md, os: "macOS", channel: "beta" %}
-
-{% endtab %}
-
-{% tab "Linux" %}
-
-{% render docs/release/archive-release.md, os: "Linux", channel: "beta" %}
-
-{% endtab %}
-
-{% endtabs %}
-
+For example: [flutter/flutter@3.38.0-0.1.pre...3.38.0-0.2.pre](https://github.com/flutter/flutter/compare/3.38.0-0.1.pre...3.38.0-0.2.pre)
+:::
 
 <a id="master-channel" aria-hidden="true"></a>
 

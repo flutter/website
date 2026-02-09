@@ -7,7 +7,7 @@ description: >-
   `goldenFileComparator` directly.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

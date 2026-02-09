@@ -2,7 +2,7 @@ name: flutter_docs_examples
 publish_to: none
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 workspace:
   - _animation/basic_hero_animation
@@ -19,7 +19,6 @@ workspace:
   - animation/animate3
   - animation/animate4
   - animation/animate5
-  - animation/implicit
   - app-architecture/command
   - app-architecture/offline_first
   - app-architecture/optimistic_state

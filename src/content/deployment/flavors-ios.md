@@ -82,7 +82,7 @@ always start with an existing project.
 
     * Open the **project navigator**
       (**View** > **Navigators** > **Project**).
-    
+
     * In the **project navigator**, at the top, select
       **Runner**.
 
@@ -113,7 +113,7 @@ always start with an existing project.
     (**Product > Scheme > Manage Schemes**) and make sure
     that the **Shared** checkbox to the right of your new
     scheme is checked.
-    :::   
+    :::
 
 1.  Create configurations for the schemes in Xcode:
 
@@ -137,7 +137,7 @@ always start with an existing project.
     * Repeat the previous step for the
       `Release` configurations and the
       `Profile` configurations.
-    
+
     * When finished, check to make sure that you
       have the following configurations:
 
@@ -151,9 +151,9 @@ always start with an existing project.
 
     :::note
     Your configurations should be based on your
-    `Debug.xconfig`, `Profile.xcconfig`, and
-    `Release.xcconfig` files, not the
-    `Pods-Runner.xcconfigs` file. You can check this by
+    `Debug.xcconfig`, `Profile.xcconfig`,
+    and `Release.xcconfig` files, not the
+    `Pods-Runner.xcconfig` file. You can check this by
     expanding the configuration names in Xcode.
     :::
 
@@ -189,7 +189,7 @@ always start with an existing project.
 
     * Select the `staging` scheme
       (**Product > Schemes > staging**).
- 
+
     * To the right of `staging` in the toolbar,
       select the iOS device you want to test against. In
       the following example, the device is `iPhone 16 Pro`.
@@ -238,6 +238,36 @@ Flutter CLI using the following steps:
     ```console title="console"
     $ flutter run --flavor staging
     ```
+
+### Access the current flavor
+
+1.  **Import the services library:**
+    To access the `appFlavor` constant, add the following import to your Dart file:
+    ```dart
+    import 'package:flutter/services.dart';
+    ```
+
+1.  **Check the flavor value:**
+    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+
+    ```dart
+    void main() {
+      // appFlavor will match the name of the Xcode scheme
+      if (appFlavor == 'production') {
+        // Logic for production environment
+        Config.apiUrl = 'https://api.flavors_example.com';
+      } else if (appFlavor == 'staging') {
+        // Logic for staging environment
+        Config.apiUrl = 'https://staging.api.flavors_example.com';
+      }
+
+      runApp(const MyApp());
+    }
+    ```
+
+    :::note
+The value of `appFlavor` matches the name of the Xcode scheme you defined (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
+    :::
 
 ### Use the run command (Xcode)
 
@@ -402,7 +432,7 @@ A bundle identifier is a unique identifier for your
 application on Apple's platforms. If you are using multiple
 Xcode schemes as Flutter flavors, you can have Apple treat
 each scheme as a separate application. To do this, you need
-to assign a different bundle identifier to each scheme. 
+to assign a different bundle identifier to each scheme.
 This allows you to test new features or bug fixes in one
 version of the app (for example `staging`) without affecting
 another version of the app (for example, `production`).
@@ -433,7 +463,7 @@ and `production` in an iOS project called `flavors_example`.
 
     *   Debug, Profile, Release, Debug-production,
         Profile-production, Release-production:
-        
+
         `com.example.flavorsExample`
 
 1.  Ensure that these bundle identifiers are included in
@@ -494,7 +524,7 @@ distribution. One way that you can use build settings
 with Flutter flavors is to assign those build settings
 to Xcode build configurations. For example, you might want
 to assign different API URLs to  `Debug-staging` and
-`Debug-production`. For example: 
+`Debug-production`. For example:
 
 ```plaintext title="debug-staging-settings.xcconfig"
 # Debug-staging build settings

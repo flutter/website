@@ -23,7 +23,7 @@ motion is sometimes referred to as a _shared element transition_.
 
 You might want to watch this one-minute video introducing the Hero widget:
 
-{% ytEmbed 'Be9UH1kXFDw', 'Hero | Flutter widget of the week' %}
+<YouTubeEmbed id="Be9UH1kXFDw" title="Hero | Flutter widget of the week"></YouTubeEmbed>
 
 This guide demonstrates how to build standard hero animations, and hero
 animations that transform the image from a circular shape to a square shape
@@ -67,7 +67,7 @@ Tapping the flippers in the blue route (or using the device's
 back-to-previous-route gesture) flies the flippers back to
 the original route.
 
-{% ytEmbed 'CEcFnqRDfgw', 'Standard hero animation in Flutter' %}
+<YouTubeEmbed id="CEcFnqRDfgw" title="Standard hero animation in Flutter"></YouTubeEmbed>
 
 **Radial hero animations**<br>
 
@@ -82,7 +82,7 @@ that displays it with a square shape.
 Tapping the square image flies the hero back to
 the original route, displayed with a circular shape.
 
-{% ytEmbed 'LWKENpwDKiM', 'Radial hero animation in Flutter' %}
+<YouTubeEmbed id="LWKENpwDKiM" title="Radial hero animation in Flutter"></YouTubeEmbed>
 
 Before moving to the sections specific to
 [standard](#standard-hero-animations)
@@ -286,7 +286,7 @@ The custom PhotoHero class maintains the hero,
 and its size, image, and behavior when tapped.
 The PhotoHero builds the following widget tree:
 
-{% render docs/app-figure.md, image:"ui/animations/photohero-class.png", alt:"PhotoHero class widget tree %}
+<DashImage figure image="ui/animations/photohero-class.png" alt="PhotoHero class widget tree" />
 
 Here's the code:
 
@@ -548,7 +548,7 @@ with a rectangular clip (that remains a constant size throughout).
 
 To do this, it builds the following widget tree:
 
-{% render docs/app-figure.md, image:"ui/animations/radial-expansion-class.png", alt:"RadialExpansion widget tree" %}
+<DashImage figure image="ui/animations/radial-expansion-class.png" alt="RadialExpansion widget tree" />
 
 Here's the code:
 
@@ -561,8 +561,8 @@ class RadialExpansion extends StatelessWidget {
   }) : [!clipRectSize = 2.0 * (maxRadius / math.sqrt2);!]
 
   final double maxRadius;
-  final clipRectSize;
-  final Widget child;
+  final double clipRectSize;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {

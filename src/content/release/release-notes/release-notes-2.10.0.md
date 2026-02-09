@@ -2,13 +2,15 @@
 title: Flutter 2.10.0 release notes
 shortTitle: 2.10.0 release notes
 description: Release notes for Flutter 2.10.0.
+skipTemplateRendering: true
 ---
+
 This page has release notes for 2.10.0.
 For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 [CHANGELOG]: https://github.com/flutter/flutter/blob/master/CHANGELOG.md
 
-## Merged PRs by labels for `flutter/flutter` 
+## Merged PRs by labels for `flutter/flutter`
 
 
 
@@ -5419,7 +5421,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/engine` 
+## Merged PRs by labels for `flutter/engine`
 
 
 
@@ -9766,7 +9768,7 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 
 
 
-## Merged PRs by labels for `flutter/plugins` 
+## Merged PRs by labels for `flutter/plugins`
 
 
 
@@ -11210,6 +11212,3 @@ For information about subsequent bug-fix releases, see our [CHANGELOG][]
 #### customer: marketplace - 1 pull request(s)
 
 [3325](https://github.com/flutter/plugins/pull/3325) [webview_flutter]Add zoom to android webview (cla: yes, waiting for tree to go green, p: webview_flutter, last mile, customer: marketplace)
-
-
-

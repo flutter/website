@@ -1,0 +1,46 @@
+// Styles for TutorialLesson component sections.
+
+.tutorial-lesson {
+  // Container for the entire tutorial lesson
+
+  .tutorial-intro {
+    margin: 1rem 0;
+
+    .description {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .intro-video {
+      display: flex;
+      justify-content: center;
+      background-color: var(--site-diagram-wrap-bgColor);
+      padding: 1rem;
+      border-radius: 1rem;
+
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .tutorial-divider {
+    border: none;
+    border-top: 1px solid var(--site-inset-borderColor);
+    margin: 3rem 1rem;
+  }
+
+  img  {
+    display:flex;
+    justify-self: center;
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+// Images are centered and have a 
+// max width of 500px within the /learn directory
+.learn-image-wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }

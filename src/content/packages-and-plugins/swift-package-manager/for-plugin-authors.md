@@ -16,7 +16,7 @@ Flutter continues to support CocoaPods.
 Flutter's Swift Package Manager integration has several benefits:
 
 1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]! 
+   Flutter plugins can use the growing ecosystem of [Swift packages][]!
 1. **Simplifies Flutter installation**.
    Swift Package Manager is bundled with Xcode.
    In the future, you won’t need to install Ruby and CocoaPods to target iOS or
@@ -28,7 +28,7 @@ Flutter's Swift Package Manager integration has several benefits:
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% render docs/swift-package-manager/how-to-enable-disable.md, site: site %}
+{% render "docs/swift-package-manager/how-to-enable-disable.md", site: site %}
 
 ## How to add Swift Package Manager support to an existing Flutter plugin
 
@@ -46,18 +46,18 @@ Plugins that don't support Swift Package Manager can cause problems for projects
 that have migrated.
 
 
-{% tabs %}
-{% tab "Swift plugin" %}
+<Tabs key="darwin-plugin-type">
+<Tab name="Swift plugin">
 
-{% render docs/swift-package-manager/migrate-swift-plugin.md, site: site %}
+{% render "docs/swift-package-manager/migrate-swift-plugin.md", site: site %}
 
-{% endtab %}
-{% tab "Objective-C plugin" %}
+</Tab>
+<Tab name="Objective-C plugin">
 
-{% render docs/swift-package-manager/migrate-objective-c-plugin.md, site: site %}
+{% render "docs/swift-package-manager/migrate-objective-c-plugin.md", site: site %}
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## How to update unit tests in a plugin's example app
 
@@ -77,7 +77,7 @@ To update your unit tests:
    ```ruby title="ios/Podfile" diff
      target 'RunnerTests' do
        inherit! :search_paths
-   
+
    -   pod 'OCMock', '3.5'
      end
    ```
@@ -87,12 +87,12 @@ To update your unit tests:
 
 1. Navigate to **Package Dependencies** for the project.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/package-dependencies.png", caption:"The project's package dependencies" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
 
 1. Click the **+** button and add any test-only dependencies by searching for
    them in the top right search bar.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/search-for-ocmock.png", caption:"Search for test-only dependencies" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/search-for-ocmock.png" caption="Search for test-only dependencies" />
 
    :::note
    OCMock uses unsafe build flags and can only be used if targeted by commit.
@@ -102,7 +102,7 @@ To update your unit tests:
 
 1. Ensure the dependency is added to the `RunnerTests` Target.
 
-   {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/choose-package-products-test.png", caption:"Ensure the dependency is added to the `RunnerTests` target" %}
+   <DashImage image="development/packages-and-plugins/swift-package-manager/choose-package-products-test.png" caption="Ensure the dependency is added to the `RunnerTests` target" />
 
 1. Click the **Add Package** button.
 
@@ -114,17 +114,17 @@ To update your unit tests:
    1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
       build phase:
 
-      {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png", caption:"The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" %}
+      <DashImage image="development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png" caption="The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" />
 
       If the build phase doesn't exist already, create one.
-      Click the <span class="material-symbols" translate="no">add</span> and
+      Click the <Icon id="add" label="plus/add"></Icon> button and
       then click **New Link Binary With Libraries Phase**.
 
-      {% render docs/captioned-image.liquid, image:"development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png", caption:"Add `Link Binary With Libraries` Build Phase" %}
+      <DashImage image="development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png" caption="Add `Link Binary With Libraries` Build Phase" />
 
    1. Navigate to **Package Dependencies** for the project.
 
-   1. Click <span class="material-symbols" translate="no">add</span>.
+   1. Click the <Icon id="add" label="plus/add"></Icon> button.
 
    1. In the dialog that opens, click the **Add Local...** button.
 

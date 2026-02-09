@@ -1,9 +1,6 @@
 ---
 title: Build a form with validation
 description: How to build a form that validates input.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/forms/validation"?>

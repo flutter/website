@@ -5,16 +5,37 @@ description: >-
   Learn how to install the Flutter SDK.
 ---
 
-Learn how to install the Flutter SDK and
-manage the resulting installation.
+Ready to build beautiful, multiplatform apps from a single codebase?
+Choose from the following two options to get started setting up
+your Flutter development environment.
 
-:::recommend
-If you've never set up or developed an app with Flutter before
-and plan to use VS Code or another Code OSS-based editor,
-follow [Set up and test drive Flutter][] instead.
-:::
-
-[Set up and test drive Flutter]: /get-started/quick
+<div class="card-grid very-wide">
+  <a class="card filled-card outlined-card" href="/install/quick">
+    <div class="card-header">
+      <span class="card-title">
+        <Icon id="rocket_launch" filled="true" size="1.675rem" />
+        <span>Quick start</span>
+      </span>
+      <span class="card-subtitle" style="margin-top: 0.1rem;">Recommended</span>
+    </div>
+    <div class="card-content">
+      <p>Use VS Code or another Code OSS-based editor to quickly
+        install, set up, and try out Flutter development!</p>
+    </div>
+  </a>
+  <a class="card outlined-card" href="/install/custom">
+    <div class="card-header">
+      <span class="card-title">
+        <Icon id="tune" filled="true" size="1.675rem" />
+        <span>Custom setup</span>
+      </span>
+    </div>
+    <div class="card-content">
+      <p>Install the Flutter SDK, set up any initial target platform, and
+        get started learning and developing with Flutter!</p>
+    </div>
+  </a>
+</div>
 
 ## Try Flutter {:#try}
 
@@ -25,7 +46,7 @@ You can quickly try Flutter online without any local setup.
     <div class="card-header">
       <span class="card-title">
         <span>DartPad</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">
@@ -36,7 +57,7 @@ You can quickly try Flutter online without any local setup.
     <div class="card-header">
       <span class="card-title">
         <span>Firebase Studio</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">
@@ -46,43 +67,6 @@ You can quickly try Flutter online without any local setup.
 </div>
 
 <a id="get-started" aria-hidden="true"></a>
-
-## Install Flutter {: #install}
-
-To get started developing with Flutter,
-follow these steps to install and set up Flutter
-for your preferred development environment and target devices.
-
-<div class="card-grid">
-  <a class="card outlined-card" href="/install/with-vs-code">
-    <div class="card-header">
-      <span class="card-title">Install with VS Code</span>
-      <span class="card-subtitle">Recommended</span>
-    </div>
-    <div class="card-content">
-      <p>Use VS Code or another Code - OSS derived editor to quickly
-        set up your Flutter development environment.</p>
-    </div>
-  </a>
-  <a class="card outlined-card" href="/install/manual">
-    <div class="card-header">
-      <span class="card-title">Install manually</span>
-      <span class="card-subtitle">For specific releases</span>
-    </div>
-    <div class="card-content">
-      <p>Manually install and set up a specific release of the Flutter SDK
-        for your preferred development environment.</p>
-    </div>
-  </a>
-</div>
-
-:::tip
-If you've never set up or developed an app with Flutter before
-and plan to use VS Code or another Code - OSS derived editor,
-consider following the [Flutter quick start][] instead.
-:::
-
-[Flutter quick start]: /get-started/quick
 
 ## Update Flutter {: #update}
 
@@ -107,3 +91,34 @@ up to date with the **latest** `stable` or `beta` releases.
 :::
 
 [SDK archive]: /install/archive
+
+## Troubleshoot and uninstall Flutter {: #uninstall}
+
+Guides to help you resolve common issues with your Flutter development environment and uninstall Flutter.
+
+<div class="card-list">
+  <a class="card outlined-card" href="/install/add-to-path">
+    <div class="card-header">
+      <span class="card-title">Add Flutter to path</span>
+    </div>
+    <div class="card-content">
+      <p>Using Flutter on the command line requires that the Flutter SDK is added to your system's `PATH` environment variable.</p>
+    </div>
+  </a>
+  <a class="card outlined-card" href="/install/troubleshoot">
+    <div class="card-header">
+      <span class="card-title">Troubleshoot SDK</span>
+    </div>
+    <div class="card-content">
+      <p>Use this guide to resolve common issues with your Flutter development environment.</p>
+    </div>
+  </a>
+  <a class="card outlined-card" href="/install/uninstall">
+    <div class="card-header">
+      <span class="card-title">Uninstall SDK</span>
+    </div>
+    <div class="card-content">
+      <p>Uninstall Flutter from your system.</p>
+    </div>
+  </a>
+</div>

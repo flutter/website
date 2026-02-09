@@ -68,7 +68,7 @@ This is what `package:provider` and many other approaches use under the hood.
 The following instructor-led video workshop covers how to
 use `InheritedWidget`:
 
-{% ytEmbed 'LFcGPS6cGrY', 'How to manage application state using inherited widgets' %}
+<YouTubeEmbed id="LFcGPS6cGrY" title="How to manage application state using inherited widgets"></YouTubeEmbed>
 
 Other useful docs include:
 
@@ -81,7 +81,7 @@ Other useful docs include:
 
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
-[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-medium}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
+[Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
 [Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
 [Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
 
@@ -106,7 +106,7 @@ refine the search to find packages that match your needs.
     <div class="card-header">
       <span class="card-title">
         <span>State management packages</span>
-        <span class="material-symbols" aria-hidden="true" style="font-size: 1rem;" translate="no">open_in_new</span>
+        <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">

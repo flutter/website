@@ -5,7 +5,7 @@ description: >
   are deprecated in favor of collate.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -74,7 +74,7 @@ tester.binding.setSurfaceSize(animationSheet.sheetSize(600));
 ```
 
 * The frames per row should be the result of the two
-  numbers divided, rounded down. For example, 
+  numbers divided, rounded down. For example,
   600 / 80 = 7 (rounded down), therefore
 
 ```dart

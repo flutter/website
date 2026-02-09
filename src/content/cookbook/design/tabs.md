@@ -1,9 +1,6 @@
 ---
 title: Work with tabs
 description: How to implement tabs in a layout.
-js:
-  - defer: true
-    url: /assets/js/inject_dartpad.dart.js
 ---
 
 <?code-excerpt path-base="cookbook/design/tabs/"?>

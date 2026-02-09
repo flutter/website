@@ -9,7 +9,7 @@ As described in the [breaking change policy][],
 on occasion we publish guides
 for migrating code across a breaking change.
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 To be notified about future breaking changes,
 join the groups [Flutter announce][] and [Dart announce][].
@@ -36,23 +36,42 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Deprecate `OverlayPortal.targetsRootOverlay`][]
-* [Deprecate `TextField.canRequestFocus`][]
-* [Stop generating `AssetManifest.json`][]
-* [UISceneDelegate adoption][]
-* [`CupertinoDynamicColor` wide gamut support][]
-* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
-* [SnackBar with action no longer auto-dismisses][]
-* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [Merged threads on Linux][]
+* [`FontWeight` also controls the weight attribute of variable fonts][]
+* [Deprecate `containsSemantics` in favor of `isSemantics`][]
+* [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
+* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
+* [Material 3 tokens update][]
+* [Page transition builders reorganization][]
+* [Deprecate onReorder callback][]
 
-[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
-[Deprecate `TextField.canRequestFocus`]: /release/breaking-changes/can-request-focus
+[Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
+[Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
-[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
-[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
+[Deprecate `containsSemantics` in favor of `isSemantics`]: /release/breaking-changes/deprecate-contains-semantics
+[Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
+[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
+[Material 3 tokens update]: /release/breaking-changes/material-color-utilities
+[Deprecate onReorder callback]: /release/breaking-changes/deprecate-onreorder-callback
+
+<a id="released-in-flutter-338" aria-hidden="true"></a>
+### Released in Flutter 3.38
+
+* [`CupertinoDynamicColor` wide gamut support][]
+* [Deprecate `OverlayPortal.targetsRootOverlay`][]
+* [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`][]
+* [SnackBar with action no longer auto-dismisses][]
+* [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
+* [UISceneDelegate adoption][]
+
+[`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
+[Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
 [Deprecate `SemanticsProperties.focusable` and `SemanticsConfiguration.isFocusable`]: /release/breaking-changes/deprecate-focusable
+[SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
+[The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
+[UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
@@ -66,6 +85,7 @@ They're sorted by release and listed in alphabetical order:
 * [Flutter now sets default `abiFilters` in Android builds][]
 * [Merged threads on macOS and Windows][]
 * [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled][]
+* [`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`][]
 
 [Component theme normalization updates]: /release/breaking-changes/component-theme-normalization-updates
 [Deprecate `DropdownButtonFormField` `value` parameter in favor of `initialValue`]: /release/breaking-changes/deprecate-dropdownbuttonformfield-value
@@ -168,6 +188,7 @@ They're sorted by release and listed in alphabetical order:
 [Rename `MemoryAllocations` to `FlutterMemoryAllocations`]: /release/breaking-changes/flutter-memory-allocations
 
 <a id="released-in-flutter-319" aria-hidden="true"></a>
+
 ### Released in Flutter 3.19
 
 * [Deprecated API removed after v3.16][]
@@ -175,6 +196,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate imperative apply of Flutter's Gradle plugins][]
 * [Default multitouch scrolling][]
 * [Accessibility traversal order of tooltip changed][]
+* [Stop generating `AssetManifest.json`][]
 
 [Deprecated API removed after v3.16]: /release/breaking-changes/3-16-deprecations
 [Migrate RawKeyEvent/RawKeyboard system to KeyEvent/HardwareKeyboard system]: /release/breaking-changes/key-event-migration

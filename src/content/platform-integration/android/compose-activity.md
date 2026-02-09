@@ -114,6 +114,26 @@ The first file requiring modifications is `android/app/build.gradle`.
 
  1. Add the following to the existing `android` block:
 
+    <Tabs key="android-build-features">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/app/build.gradle.kts"
+    android {
+      // Begin adding here
+      buildFeatures {
+        compose = true
+      }
+      composeOptions {
+        // https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+        kotlinCompilerExtensionVersion = "1.4.8"
+      }
+      // End adding here
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
     ```groovy title="android/app/build.gradle"
     android {
       // Begin adding here
@@ -128,6 +148,9 @@ The first file requiring modifications is `android/app/build.gradle`.
     }
     ```
 
+    </Tab>
+    </Tabs>
+
     Visit the [developer.android.com][] link in the code snippet and
     adjust `kotlinCompilerExtensionVersion`, as necessary.
     You should only need to do this if you
@@ -137,7 +160,35 @@ The first file requiring modifications is `android/app/build.gradle`.
     [developer.android.com]: {{site.android-dev}}/jetpack/androidx/releases/compose-kotlin
 
  2. Next, add the following block at the bottom of the file, at the root level:
- 
+
+    <Tabs key="android-dependencies">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/app/build.gradle.kts"
+    dependencies {
+        implementation("androidx.core:core-ktx:1.10.1")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+        implementation("androidx.activity:activity-compose")
+        implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+        implementation("androidx.compose.ui:ui")
+        implementation("androidx.compose.ui:ui-graphics")
+        implementation("androidx.compose.ui:ui-tooling-preview")
+        implementation("androidx.compose.material:material")
+        implementation("androidx.compose.material3:material3")
+        testImplementation("junit:junit:4.13.2")
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+        androidTestImplementation(platform("androidx.compose:compose-bom:2024.06.00"))
+        androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+        androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+        debugImplementation("androidx.compose.ui:ui-tooling")
+        debugImplementation("androidx.compose.ui:ui-test-manifest")
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
     ```groovy title="android/app/build.gradle"
     dependencies {
         implementation("androidx.core:core-ktx:1.10.1")
@@ -155,14 +206,51 @@ The first file requiring modifications is `android/app/build.gradle`.
         androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
         androidTestImplementation("androidx.compose.ui:ui-test-junit4")
         debugImplementation("androidx.compose.ui:ui-tooling")
-        debugImplementation("androidx.compose.ui:ui-test-manifest")
+implementation "androidx.core:core-ktx:1.10.1"
+implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+implementation "androidx.activity:activity-compose"
+implementation platform("androidx.compose:compose-bom:2024.06.00")
+implementation "androidx.compose.ui:ui"
+implementation "androidx.compose.ui:ui-graphics"
+implementation "androidx.compose.ui:ui-tooling-preview"
+implementation "androidx.compose.material:material"
+implementation "androidx.compose.material3:material3"
+testImplementation "junit:junit:4.13.2"
+androidTestImplementation "androidx.test.ext:junit:1.1.5"
+androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+androidTestImplementation platform("androidx.compose:compose-bom:2023.08.00")
+androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+debugImplementation "androidx.compose.ui:ui-tooling"
+debugImplementation "androidx.compose.ui:ui-test-manifest"
     }
     ```
 
+    </Tab>
+    </Tabs>
+
     The second file requiring modifications is `android/build.gradle`.
- 
+
  1. Add the following buildscript block at the top of the file:
- 
+
+    <Tabs key="android-buildscript">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/build.gradle.kts"
+    buildscript {
+        dependencies {
+            // Replace with the latest version.
+            classpath("com.android.tools.build:gradle:8.1.1")
+        }
+        repositories {
+            google()
+            mavenCentral()
+        }
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
     ```groovy title="android/build.gradle"
     buildscript {
         dependencies {
@@ -176,11 +264,14 @@ The first file requiring modifications is `android/app/build.gradle`.
     }
     ```
 
+    </Tab>
+    </Tabs>
+
     The third file requiring modifications is
     `android/app/src/main/AndroidManifest.xml`.
- 
+
  1. In the root application block, add the following `<activity>` declaration:
- 
+
     ```xml title="android/app/src/main/AndroidManifest.xml"
     <manifest xmlns:android="http://schemas.android.com/apk/res/android">
         <application
@@ -200,9 +291,9 @@ The first file requiring modifications is `android/app/build.gradle`.
     The fourth and final code requiring modifications is
     `android/app/src/main/kotlin/com/example/flutter_android_activity/MainActivity.kt`.
     Here you'll write Kotlin code for your desired Android functionality.
- 
+
  1. Add the necessary imports at the top of the file:
- 
+
     :::note
     Your imports might vary if library versions have changed or
     if you introduce different Compose classes when
@@ -231,10 +322,10 @@ The first file requiring modifications is `android/app/build.gradle`.
     import io.flutter.plugin.common.MethodChannel
     import io.flutter.plugins.GeneratedPluginRegistrant
     ```
- 
+
  1. Modify the generated `MainActivity` class by adding a
     `CHANNEL` field and a `configureFlutterEngine` method:
- 
+
      ```kotlin  title="MainActivity.kt"
      class MainActivity: FlutterActivity() {
          // This value must match the `MethodChannel` name in your Dart code.
@@ -264,10 +355,10 @@ The first file requiring modifications is `android/app/build.gradle`.
          }
      }
      ```
- 
+
  1. Add a second `Activity` to the bottom of the file, which you
     referenced in the previous changes to `AndroidManifest.xml`:
- 
+
     ```kotlin  title="MainActivity.kt"
     class SecondActivity : ComponentActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {

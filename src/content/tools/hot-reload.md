@@ -75,6 +75,8 @@ Your app continues to execute from where it was prior
 to run the hot reload command.
 The code updates and execution continues.
 
+<a id="hot-restart" aria-hidden="true"></a>
+
 :::secondary
 **What is the difference between hot reload, hot restart,
 and full restart?**

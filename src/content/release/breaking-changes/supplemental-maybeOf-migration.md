@@ -1,11 +1,11 @@
 ---
 title: Migrate `of` to non-nullable return values, and add `maybeOf`
 description: >
-  To eliminate nullOk parameters to help with API sanity
+  To eliminate nullOk parameters to help with API clarity
   in the face of null safety.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

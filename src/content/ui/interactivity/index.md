@@ -4,8 +4,6 @@ description: How to implement a stateful widget that responds to taps.
 shortTitle: Interactivity
 ---
 
-{% assign examples = site.repo.this | append: "/tree/" | append: site.branch | append: "/examples" -%}
-
 :::secondary What you'll learn
 * How to respond to taps.
 * How to create a custom widget.
@@ -22,7 +20,7 @@ stateless widgets.
 The [building layouts tutorial][] showed you how to create
 the layout for the following screenshot.
 
-{% render docs/app-figure.md, img-class:"site-mobile-screenshot border", image:"ui/layout/lakes.jpg", caption:"The layout tutorial app" %}
+<DashImage figure img-class="site-mobile-screenshot border" image="ui/layout/lakes.jpg" caption="The layout tutorial app" />
 
 When the app first launches, the star is solid red,
 indicating that this lake has previously been favorited.
@@ -33,7 +31,7 @@ replacing the solid star with an outline and
 decreasing the count. Tapping again favorites the lake,
 drawing a solid star and increasing the count.
 
-{% render docs/app-figure.md, image:"ui/favorited-not-favorited.png", alt:"The custom widget you'll create", img-class:"diagram-wrap" %}
+<DashImage figure image="ui/favorited-not-favorited.png" alt="The custom widget you'll create" img-class="diagram-wrap" />
 
 To accomplish this, you'll create a single custom widget
 that includes both the star and the count,
@@ -769,13 +767,13 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [building layouts tutorial]: /ui/layout/tutorial
 [community]: {{site.main-url}}/community
 [Handle taps]: /cookbook/gestures/handling-taps
-[`lake.jpg`]: {{examples}}/layout/lakes/step6/images/lake.jpg
+[`lake.jpg`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/images/lake.jpg
 [Libraries and imports]: {{site.dart-site}}/language/libraries
 [`ListView`]: {{site.api}}/flutter/widgets/ListView-class.html
-[`main.dart`]: {{examples}}/layout/lakes/step6/lib/main.dart
+[`main.dart`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/lib/main.dart
 [Managing state]: #managing-state
 [Material Design guidelines]: {{site.material}}/styles
-[`pubspec.yaml`]: {{examples}}/layout/lakes/step6/pubspec.yaml
+[`pubspec.yaml`]: {{site.repo.this}}/blob/main/examples/layout/lakes/step6/pubspec.yaml
 [`Radio`]: {{site.api}}/flutter/material/Radio-class.html
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web

@@ -3,6 +3,7 @@ title: Flutter architectural overview
 description: >
   A high-level overview of the architecture of Flutter,
   including the core principles and concepts that form its design.
+showBreadcrumbs: false
 ---
 
 <?code-excerpt path-base="resources/architectural_overview/"?>
@@ -25,16 +26,12 @@ much code as possible.
 
 During development, Flutter apps run in a VM that offers
 stateful hot reload of changes without needing a full recompile.
-(On web, Flutter supports hot restart and
-[hot reload behind a flag][].)
 For release, Flutter apps are compiled directly to machine code,
 whether Intel x64 or ARM instructions,
 or to JavaScript if targeting the web.
 The framework is open source, with a permissive BSD license,
 and has a thriving ecosystem of third-party packages that
 supplement the core library functionality.
-
-[hot reload behind a flag]: /platform-integration/web/building#hot-reload-web
 
 This overview is divided into a number of sections:
 
@@ -95,20 +92,16 @@ the primitives necessary to support all Flutter applications.
 The engine is responsible for rasterizing composited scenes
 whenever a new frame needs to be painted.
 It provides the low-level implementation of Flutter's core API,
-including graphics (through [Impeller][]
-on iOS, Android, and desktop (behind a flag),
-and [Skia][] on other platforms), text layout,
-file and network I/O, accessibility support,
-plugin architecture, and a Dart runtime
+including graphics text layout, file and network I/O, a Dart runtime,
 and compile toolchain.
 
 :::note
 If you have a question about which devices support
-Impeller, check out [Can I use Impeller?][]
+Impeller, check out [Impeller availability][]
 for detailed information.
 :::
 
-[Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
+[Impeller availability]: {{site.main-url}}/go/can-i-use-impeller
 [Skia]: https://skia.org
 [Impeller]: /perf/impeller
 
@@ -268,7 +261,7 @@ as often as once per rendered frame).
 This approach relies on certain characteristics of a language runtime (in
 particular, fast object instantiation and deletion). Fortunately, [Dart is
 particularly well suited for this
-task]({{site.flutter-medium}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
+task]({{site.flutter-blog}}/flutter-dont-fear-the-garbage-collector-d69b3ff1ca30).
 
 ## Widgets
 
@@ -591,8 +584,8 @@ such as Windows or macOS.
 
 :::note
 If you want to know which devices Impeller supports,
-check out [Can I use Impeller?][].
-For more information, 
+check out [Impeller availability][].
+For more information,
 visit [Impeller rendering engine][]
 :::
 
@@ -796,19 +789,22 @@ As we've seen, rather than being translated into the equivalent OS widgets,
 Flutter user interfaces are built, laid out, composited, and painted by Flutter
 itself. The mechanism for obtaining the texture and participating in the app
 lifecycle of the underlying operating system inevitably varies depending on the
-unique concerns of that platform. The engine is platform-agnostic, presenting a
-[stable ABI (Application Binary
-Interface)]({{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h)
+unique concerns of that platform. The engine is platform-agnostic,
+presenting a [stable ABI (Application Binary Interface)][ABI].
 that provides a _platform embedder_ with a way to set up and use Flutter.
+
+[ABI]: {{site.repo.flutter}}/blob/main/engine/src/flutter/shell/platform/embedder/embedder.h
 
 The platform embedder is the native OS application that hosts all Flutter
 content, and acts as the glue between the host operating system and Flutter.
-When you start a Flutter app, the embedder provides the entrypoint, initializes
-the Flutter engine, obtains threads for UI and rastering, and creates a texture
-that Flutter can write to. The embedder is also responsible for the app
-lifecycle, including input gestures (such as mouse, keyboard, touch), window
-sizing, thread management, and platform messages. Flutter includes platform
-embedders for Android, iOS, Windows, macOS, and Linux; you can also create a
+When you start a Flutter app, the embedder provides the entrypoint,
+initializes the Flutter engine, obtains threads for UI and rastering,
+and creates a texture that Flutter can write to.
+The embedder is also responsible for the app lifecycle,
+including input gestures (such as mouse, keyboard, touch), window
+sizing, thread management, and platform messages.
+Flutter includes platform embedders for Android, iOS, Windows,
+macOS, and Linux; you can also create a
 custom platform embedder, as in [this worked
 example]({{site.github}}/chinmaygarde/fluttercast) that supports remoting
 Flutter sessions through a VNC-style framebuffer or [this worked example for
@@ -817,6 +813,10 @@ Raspberry Pi]({{site.github}}/ardera/flutter-pi).
 Each platform has its own set of APIs and constraints. Some brief
 platform-specific notes:
 
+- As of Flutter 3.29, the UI and platform threads are merged on
+  iOS and Android. Specifically, the UI thread
+  is removed and the Dart code runs on the native platform thread.
+  For more information, see [The great thread merge][] video. 
 - On iOS and macOS, Flutter is loaded into the embedder as a `UIViewController`
   or `NSViewController`, respectively. The platform embedder creates a
   `FlutterEngine`, which serves as a host to the Dart VM and your Flutter
@@ -832,6 +832,8 @@ platform-specific notes:
   rendered using
   [ANGLE](https://chromium.googlesource.com/angle/angle/+/master/README.md), a
   library that translates OpenGL API calls to the DirectX 11 equivalents.
+
+[The great thread merge]: https://youtu.be/miW7vCmQwnw?si=9EYvRDxtkpkPrcSO
 
 ## Integrating with other code
 
@@ -1000,7 +1002,8 @@ if (defaultTargetPlatform == TargetPlatform.android) {
   );
 }
 return Text(
-    '$defaultTargetPlatform is not yet supported by the maps plugin');
+  '$defaultTargetPlatform is not yet supported by the maps plugin',
+);
 ```
 
 Communicating with the native code underlying the `AndroidView` or `UiKitView`
@@ -1160,5 +1163,3 @@ provides a useful guide to the framework's design philosophy.
 [^3]: There are some limitations with this approach, for example,
   transparency doesn't composite the same way for a platform view as
   it would for other Flutter widgets.
-[^4]: One example is shadows, which have to be approximated with
-  DOM-equivalent primitives at the cost of some fidelity.

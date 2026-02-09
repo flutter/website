@@ -1,6 +1,7 @@
 ---
 title: AI rules for Flutter and Dart
-description: >
+shortTitle: AI rules
+description: >-
   Learn how to add AI rules to tools that accelerate your
   development workflow.
 ---
@@ -18,34 +19,55 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
-<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>
-  <span aria-hidden="true" class="material-symbols" translate="no">download</span>
+The Flutter project provides several versions of the rules file to accommodate
+different tool limits:
+
+*   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md):
+    The comprehensive master rule set.
+*   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md):
+    A condensed version (<10k chars) for tools with stricter context limits.
+*   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md):
+    A highly concise version (<4k chars) for limited contexts.
+*   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md):
+    An ultra-compact version (<1k chars) for very strict limits.
+
+<a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
+  <Icon id="download" />
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
-## Environments that support rules
+## Device & editor specific limits
 
-Many AI environments support rules files to guide
-LLM behavior. Here are some common examples and their
-corresponding rule file names:
+Different AI coding assistants and tools have varying limits for their "rules"
+or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Environment | Rules File | Installation Instructions                     |
-| :--- | :--- |:----------------------------------------------|
-| Copilot powered IDEs | `copilot-instructions.md` | [Configure .github/copilot-instructions.md][] |
-| Cursor | `cursor.md` | [Configure cursorrules.md][]                  |
-| Firebase Studio | `airules.md` | [Configure airules.md][]                      |
-| Gemini CLI | `GEMINI.md` | [Configure GEMINI.md][]                       |
-| JetBrains IDEs | `guidelines.md` | [Configure guidelines.md][]                   |
-| VS Code | `.instructions.md` | [Configure .instructions.md][]                |
-| Windsurf | `guidelines.md` | [Configure guidelines.md][]                   |
+| Tool / Product | Rules file / Feature | Limit (soft / hard) | Documentation |
+|:---|:---|:---|:---|
+| Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
+| Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
+| Cursor | `AGENTS.md` | No Hard Limit | [Cursor Docs](https://cursor.com/docs/context/rules) |
+| Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Gemini CLI Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context) |
+| GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [GitHub Copilot Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot) |
+| JetBrains AI (Junie) | `.junie/guidelines.md` | No Hard Limit | [JetBrains AI Docs](https://www.jetbrains.com/help/junie/get-started-with-junie.html) |
+| VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
 
-[Configure airules.md]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
-[Configure .github/copilot-instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure cursorrules.md]: https://docs.cursor.com/en/context/rules
-[Configure guidelines.md]: https://www.jetbrains.com/help/junie/customize-guidelines.html
-[Configure .instructions.md]: https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions
-[Configure guidelines.md]: https://docs.windsurf.com/windsurf/cascade/memories#rules
-[Configure GEMINI.md]: https://codelabs.developers.google.com/gemini-cli-hands-on
+{:.table .table-striped}
+
+:::note Support is evolving
+Support for rules files is still evolving.
+Please check the documentation for your specific development environment for
+the most up-to-date naming conventions and instructions.
+:::
+
+[copilot]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-a-githubcopilotinstructionsmd-file
+[claude]: https://www.anthropic.com/engineering/claude-code-best-practices#1-customize-your-setup
+[cursor]: https://cursor.com/docs/context/rules
+[firebase]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
+[gemini-cli]: https://geminicli.com/docs/cli/gemini-md
+[antigravity]: https://antigravity.google/docs/rules-workflows
+[junie]: https://www.jetbrains.com/help/junie/customize-guidelines.html
+[vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-instructionsmd-files
+[windsurf]: https://docs.windsurf.com/windsurf/cascade/memories#rules
 
 ## Create rules for your editor
 
@@ -53,12 +75,12 @@ You can adapt our Flutter and Dart rules template for your
 specific environment. To do so, follow these steps:
 
 1.  Download the Flutter and Dart rules template:
-    <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/master/docs/rules/rules.md" download>rules.md</a>
+    <a href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download><code>rules.md</code></a>
 
 1.  In an LLM like [Gemini][], attach the
     `rules.md` file that you downloaded in
     the last step.
-    
+
 1.  Provide a prompt to reformat the file for your desired
     editor.
 

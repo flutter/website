@@ -111,8 +111,8 @@ it's easier to get set up than a physical iOS device.
 However, you should also test your app on an actual
 physical device.
 
-{% tabs "ios-simulator-or-physical-device" %}
-{% tab "Simulator" %}
+<Tabs key="ios-simulator-or-physical-device">
+<Tab name="Simulator">
 
 Start the iOS Simulator with the following command:
 
@@ -126,8 +126,8 @@ on the Apple Developer site.
 
 [Downloading and installing additional Xcode components]: {{site.apple-dev}}/documentation/xcode/downloading-and-installing-additional-xcode-components
 
-{% endtab %}
-{% tab "Physical device" %}
+</Tab>
+<Tab name="Physical device">
 
 :::warning
 An upcoming change to iOS has caused a temporary break in Flutter's debug mode
@@ -151,7 +151,7 @@ Set up each iOS device on which you want to test.
     1. Click **Trust**.
 
        ![Trust Mac](/assets/images/docs/setup/trust-computer.png)
- 
+
  1. <h3>Configure your physical iOS device</h3>
 
     Apple requires enabling **[Developer Mode][]**
@@ -224,8 +224,8 @@ Set up each iOS device on which you want to test.
 [Apple Developer program]: {{site.apple-dev}}/programs/
 [Apple Developer account]: {{site.apple-dev}}/account
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ---
 
@@ -250,16 +250,13 @@ or begin improving integration with iOS.
           <a class="text-button" href="/get-started/codelab">Write your first app</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
           <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-        <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
         </li>
       </ul>
     </div>
@@ -292,4 +289,3 @@ or begin improving integration with iOS.
     </div>
   </div>
 </div>
-

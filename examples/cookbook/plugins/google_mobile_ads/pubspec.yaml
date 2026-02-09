@@ -3,13 +3,13 @@ description: Google mobile ads
 
 resolution: workspace
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   flutter:
     sdk: flutter
 
-  google_mobile_ads: ^6.0.0
+  google_mobile_ads: ^7.0.0
 
 flutter:
   uses-material-design: true

@@ -29,8 +29,8 @@ template rendered with the default iOS font setting,
 and with the largest font setting selected in iOS accessibility settings.
 
 <div class="wrapping-row">
-  {% render docs/app-figure.md, image:"a11y/app-regular-fonts.png", caption:"Default font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
-  {% render docs/app-figure.md, image:"a11y/app-large-fonts.png", caption:"Largest accessibility font setting", img-class:"simple-border", img-style:"max-height: 480px;" %}
+  <DashImage figure image="a11y/app-regular-fonts.png" caption="Default font setting" img-class="simple-border" img-style="max-height: 480px;" />
+  <DashImage figure image="a11y/app-large-fonts.png" caption="Largest accessibility font setting" img-class="simple-border" img-style="max-height: 480px;" />
 </div>
 
 
@@ -58,7 +58,7 @@ For more details on testing, check out the [accessibility testing page](/ui/acce
 
 Controls that are too small are hard for many people to interact with and select.
 Ensure that interactive elements have a large enough tap target to be easily
-pressed by users.  
+pressed by users.
 
 Both [Android][] and [iOS][] recommend a minimum tap target size of 48x48 dp and 44x44 pts respectively.
 

@@ -3,7 +3,7 @@ title: Migration guide for RouteSettings copyWith
 description: Removal of RouteSettings copyWith and how to migrate
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

@@ -5,7 +5,7 @@ description: >
   a run or build error from Gradle.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -61,7 +61,7 @@ Upgrade the Gradle version in Android Studio Flamingo
 as follows:
 
 1. In Android Studio, open the `android` folder.
-   This should bring up the following dialog: 
+   This should bring up the following dialog:
 
    ![Dialog prompting you to upgrade Gradle](/assets/images/docs/releaseguide/android-studio-flamingo-upgrade-alert.png){:width="50%"}
 
@@ -88,21 +88,21 @@ Do the following from the top of your Flutter project.
    ```
 
 ## You didn't update Android Studio and still have a Java error
-The error appears similar to `Unsupported class file major version 65`. 
+The error appears similar to `Unsupported class file major version 65`.
 This is an indication that your Java version is newer than the version of
 gradle you are running can handle. There is a non obvious set of dependencies
-surrounding AGP, Java, and Gradle. 
+surrounding AGP, Java, and Gradle.
 
-### Solution 1: Android Studio 
-The easiest way to resolve this issue is to use Android Studio AGP upgrade assistant. 
-To use select your top-level `build.gradle` file in Android Studio then select 
-Tools -> AGP Upgrade Assistant. 
+### Solution 1: Android Studio
+The easiest way to resolve this issue is to use Android Studio AGP upgrade assistant.
+To use select your top-level `build.gradle` file in Android Studio then select
+Tools -> AGP Upgrade Assistant.
 
 ### Solution 2: Command line
-Run `flutter analyze --suggestions` to see if your AGP, Java, and Gradle versions are compatible. 
+Run `flutter analyze --suggestions` to see if your AGP, Java, and Gradle versions are compatible.
 If Gradle needs to be updated you can update it with `./gradlew wrapper --gradle-version=SOMEGRADLEVERSION`
 where SOMEGRADLEVERSION is the version (you can use a newer version)
-suggested by `flutter analyze`. 
+suggested by `flutter analyze`.
 
 To find the Java version being used run `flutter doctor`.
 On a mac, you can find the Java versions that the OS knows about with `/usr/libexec/java_home -V`.

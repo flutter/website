@@ -3,6 +3,18 @@ title: "Binding to native Android code using dart:ffi"
 description: "To use C code in your Flutter program, use the dart:ffi library."
 ---
 
+:::warning
+This page documents a legacy approach to C interop on Android.
+
+Since Flutter 3.38, we recommend using a `package_ffi` template with
+[build hooks](/platform-integration/bind-native-code) for C interop.
+
+However, the legacy FFI plugin template (`plugin_ffi`) documented here is
+still useful if you need to:
+- Access the Flutter Plugin API.
+- Configure a Google Play services runtime on Android.
+:::
+
 <?code-excerpt path-base="platform_integration"?>
 
 Flutter mobile and desktop apps can use the
@@ -84,7 +96,7 @@ $ cd native_add
 
 :::note
 You can exclude platforms from `--platforms` that you don't want
-to build to. However, you need to include the platform of 
+to build to. However, you need to include the platform of
 the device you are testing on.
 :::
 
@@ -206,4 +218,4 @@ in the following way.
 
 [Android guidelines]: {{site.android-dev}}/topic/performance/reduce-apk-size#extract-false
 
-{% render docs/resource-links/ffi-video-resources.md, site: site %}
+{% render "docs/resource-links/ffi-video-resources.md", site: site %}

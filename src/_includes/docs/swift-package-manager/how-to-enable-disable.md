@@ -50,15 +50,22 @@ instructions.
 ### Turn off for a single project
 
 In the project's `pubspec.yaml` file, under the `flutter` section,
-add `disable-swift-package-manager: true`.
+set `enable-swift-package-manager` to `false` in the `config` subsection.
 
 ```yaml title="pubspec.yaml"
 # The following section is specific to Flutter packages.
 flutter:
-  disable-swift-package-manager: true
+  config:
+    enable-swift-package-manager: false
 ```
 
 This turns off Swift Package Manager for all contributors to this project.
+
+:::note Migrating from deprecated syntax
+If you were previously using `disable-swift-package-manager: true`,
+update your `pubspec.yaml` to use the new `config` section format shown above.
+The old syntax is deprecated and will produce an error in Flutter 3.38 and later.
+:::
 
 ### Turn off globally for all projects
 
@@ -71,7 +78,7 @@ flutter config --no-enable-swift-package-manager
 This turns off Swift Package Manager for the current user.
 
 If a project is incompatible with Swift Package Manager, all contributors
-need to run this command. 
+need to run this command.
 
 [addSPM]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration

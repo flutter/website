@@ -27,7 +27,7 @@ UI development and iteration.
 
 2.  Locate a [widget constructor invocation][] in your Flutter code.
 
-3.  Move your cursor anywhere inside the widget constructor invocation. 
+3.  Move your cursor anywhere inside the widget constructor invocation.
 
     For example, in the following `build` method, place your cursor anywhere
     between the `T` of `Text` and the ending parenthesis `)` after
@@ -48,7 +48,7 @@ UI development and iteration.
 
 [VS Code]: /tools/vs-code#property-editor
 [Android Studio/IntelliJ]: /tools/android-studio#property-editor
-[widget constructor invocation]: /get-started/fundamentals/widgets
+[widget constructor invocation]: /learn/pathway/tutorial/widget-fundamentals
 
 ### Runtime usage
 
@@ -103,9 +103,9 @@ with hot reload to view changes in real time.
     * Open `Settings > Tools > Actions on Save` and select
      `Configure autosave options`.
         - Check the option to `Save files if the IDE is idle for X seconds`.
-        - **Recommended:** Set a small delay duration. For example, 2 seconds. 
-    
-    * Open `Settings > Languages & Frameworks > Flutter`. 
+        - **Recommended:** Set a small delay duration. For example, 2 seconds.
+
+    * Open `Settings > Languages & Frameworks > Flutter`.
         - Check the option to `Perform hot reload on save`.
 
 2.  Run and debug your Flutter application.
@@ -124,7 +124,7 @@ speed up the development process.
 
 When a widget is selected in the Flutter Property Editor, its documentation is
 displayed at the top. This allows you to quickly read the widget documentation,
-without needing to jump-to-definition or search online. 
+without needing to jump-to-definition or search online.
 
 By default, the widget documentation is truncated. Click on "Show more" to
 expand the widget documentation.
@@ -211,7 +211,7 @@ properties of interest.
           `true`.
         * Typing "double" would filter to all properties of type `double`.
 
-    ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}   
+    ![Filter input with filtering by text highlighted](/assets/images/docs/tools/devtools/property-editor-filter-text.png){:width="500px"}
 
 * **Filter by "set" properties:**
     * Use the filter menu button to open the filter options. Check "Only
@@ -219,7 +219,7 @@ properties of interest.
     * This hides all properties that have not been explicitly set in your
       code, allowing you to focus only on the properties you have explicitly set.
 
-    ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}   
+    ![Filter input with filter menu button highlighted](/assets/images/docs/tools/devtools/property-editor-filter-menu-button.png){:width="500px"}
 
 * **Filter with a regex:**
     * The regex toggle (an `*` icon button) allows you to toggle on regex mode
@@ -227,7 +227,7 @@ properties of interest.
     * When enabled, your filter text will be interpreted as a regular
       expression.
 
-    ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"} 
+    ![Filter input with regex toggle highlighted](/assets/images/docs/tools/devtools/property-editor-filter-regex-toggle.png){:width="500px"}
 
 * **Clear the current filter:**
     * The clear button (an `X` icon button) clears out any active filters,

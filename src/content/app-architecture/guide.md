@@ -196,7 +196,7 @@ check out the [state management fundamentals][].
 
 [UI layer]: /app-architecture/case-study/ui-layer
 [App architecture case study]: /app-architecture/case-study
-[state management fundamentals]: /get-started/fundamentals/state-management
+[state management fundamentals]: /data-and-backend/state-mgmt/intro
 
 ## Data layer
 

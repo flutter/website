@@ -5,7 +5,7 @@ description: >-
   select one based on the rendering context.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

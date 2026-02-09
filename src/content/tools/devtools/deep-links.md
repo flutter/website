@@ -27,5 +27,4 @@ This tool helps you identify and troubleshoot any errors
 in your mobile deep link setup,
 from website configuration to manifest files.
 DevTools provides instructions on how to fix any issues,
-making the implementation process easier. 
-
+making the implementation process easier.

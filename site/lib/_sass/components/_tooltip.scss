@@ -1,0 +1,63 @@
+.tooltip-wrapper {
+  position: relative;
+
+  .tooltip-target a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+  }
+
+  .tooltip {
+    visibility: hidden;
+
+    display: block;
+    position: absolute;
+    z-index: var(--site-z-floating);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 16rem;
+
+    background: var(--site-raised-bgColor);
+    border: 0.05rem solid rgba(0, 0, 0, .125);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    padding: 0.8rem;
+
+    font-size: 0.875rem;
+    font-weight: normal;
+    font-style: normal;
+
+    .tooltip-content {
+      display: flex;
+      flex-flow: column nowrap;
+      color: var(--site-secondary-textColor);
+    }
+
+    .tooltip-header {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+  }
+
+  // On non-touch devices, show tooltip on hover or focus.
+  @media all and not (pointer: coarse) {
+    &:hover .tooltip {
+      visibility: visible;
+    }
+
+    &:focus-within .tooltip {
+      visibility: visible;
+    }
+  }
+
+  // On touch devices, show tooltip on click.
+  @media all and (pointer: coarse) {
+    .tooltip.visible {
+      visibility: visible;
+    }
+  }
+}

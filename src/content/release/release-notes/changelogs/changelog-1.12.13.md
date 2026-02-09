@@ -2,6 +2,7 @@
 title: Change log for Flutter 1.12.13
 shortTitle: 1.12.13 change log
 description: Change log for Flutter 1.12.13 containing a list of all PRs merged for this release.
+skipTemplateRendering: true
 ---
 
 ## PRs closed in this release of flutter/flutter
@@ -3828,4 +3829,3 @@ From Sun Aug 19 17:37:00 2019 -0700 to Mon Nov 25 12:05:00 2019 -0800
 [2296](https://github.com/flutter/plugins/pull/2296) [shared_preferences] Add missing DartDoc (cla: yes)
 
 [2297](https://github.com/flutter/plugins/pull/2297) [share] README update (cla: yes)
-

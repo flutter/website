@@ -8,10 +8,16 @@ description: >-
 Learn how to set up your development environment
 to run, build, and deploy Flutter apps for Android devices.
 
-:::note
-If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+:::warning
+This page assumes you have already installed the Flutter SDK.
 
+If you haven't, visit the [Get started with Flutter][] guide first.
+Installing the Flutter plugin for Android Studio is **not** enough;
+you must also install the Flutter SDK and add its `bin` directory to your PATH
+to use the `flutter` command.
+:::
+
+:::note
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
@@ -27,7 +33,7 @@ setting up Android development on a **Windows**{:.selected-os-text} device.
 If you'd like to follow the instructions for a different OS,
 please select one of the following.
 
-{% osSelector %}
+<OSSelector />
 
 ## Set up Android tooling {: #set-up-tooling}
 
@@ -97,6 +103,8 @@ install and set up the latest stable version of [Android Studio][].
        - **Android SDK Command-line Tools**
        - **Android Emulator**
        - **Android SDK Platform-Tools**
+       - **CMake**
+       - **NDK (Side by side)**
 
     1. If the **Status** column for any of the preceding tools displays
        **Update available** or **Not installed**:
@@ -154,8 +162,8 @@ install and set up the latest stable version of [Android Studio][].
 You can debug Flutter apps on physical Android devices or
 by running them on an Android emulator.
 
-{% tabs "android-emulator-or-not" %}
-{% tab "Android emulator" %}
+<Tabs key="android-emulator-or-not">
+<Tab name="Android emulator">
 
 To set up your development environment to
 run a Flutter app on an Android emulator, follow these steps:
@@ -235,8 +243,8 @@ run a Flutter app on an Android emulator, follow these steps:
 [hardware acceleration]: {{site.android-dev}}/studio/run/emulator-acceleration
 [Create and manage virtual devices]: {{site.android-dev}}/studio/run/managing-avds
 
-{% endtab %}
-{% tab "Physical device" %}
+</Tab>
+<Tab name="Physical device">
 
 To set up your development environment to
 run a Flutter app on a physical Android device, follow these steps:
@@ -282,8 +290,8 @@ run a Flutter app on a physical Android device, follow these steps:
 [Connect to your device using Wi-Fi]: {{site.android-dev}}/studio/run/device#wireless
 [Install OEM USB drivers]: {{site.android-dev}}/studio/run/oem-usb
 
-{% endtab %}
-{% endtabs %}
+</Tab>
+</Tabs>
 
 ## Validate your setup {: #validate-setup}
 
@@ -348,16 +356,13 @@ or begin improving integration with Android.
           <a class="text-button" href="/get-started/codelab">Write your first app</a>
         </li>
         <li>
-          <a class="text-button" href="/get-started/fundamentals">Learn the fundamentals</a>
+          <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
         <li>
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
           <a class="text-button" href="/reference/learning-resources">Check out samples</a>
-        </li>
-        <li>
-          <a class="text-button" href="/resources/bootstrap-into-dart">Learn about Dart</a>
         </li>
       </ul>
     </div>

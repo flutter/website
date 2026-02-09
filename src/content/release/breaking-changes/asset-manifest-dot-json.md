@@ -4,7 +4,7 @@ description: >-
     Built Flutter apps will no longer include an AssetManifest.json asset file.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 

@@ -6,7 +6,7 @@ description: >-
   support Android 14's Predictive Back feature.
 ---
 
-{% render docs/breaking-changes.md %}
+{% render "docs/breaking-changes.md" %}
 
 ## Summary
 
@@ -306,7 +306,7 @@ if (_route.popDisposition == RoutePopDisposition.doNotPop) {
 ### Migrating a back confirmation dialog
 
 `WillPopScope` was sometimes used to show a confirmation
-dialog when a back gesture was received. 
+dialog when a back gesture was received.
 This can still be done with `PopScope` in a similar pattern.
 
 Code before migration:

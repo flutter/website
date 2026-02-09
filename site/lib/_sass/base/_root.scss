@@ -1,0 +1,176 @@
+@use 'sass:color';
+
+$base_primary_color: #0468D7;
+
+// Root variables shared by both light and dark mode.
+body {
+  // Site typography.
+  --site-ui-fontFamily: 'Google Sans', 'Roboto', ui-sans, sans-serif;
+  --site-body-fontFamily: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
+  --site-code-fontFamily: 'Google Sans Mono', 'Roboto Mono', ui-monospace, monospace;
+  --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
+
+  // Site layout sizes.
+  --site-header-height: 4rem;
+  --site-subheader-height: 2.5rem;
+
+  // Site visual hierarchy levels.
+  --site-z-base: 1;
+  --site-z-container: 5;
+  --site-z-floating: 10;
+  --site-z-side: 20;
+  --site-z-subheader: 40;
+  --site-z-header: 50;
+  --site-z-dropdown: 100;
+  --site-z-top: 1000;
+
+  // Misc site styles.
+  --site-radius: 0.35rem;
+}
+
+body {
+  color-scheme: light;
+
+  --site-outline: rgba(194, 198, 214, .75);
+  --site-outline-variant: #e7e8ed;
+
+  --site-interaction-base-values: 0 0 0;
+
+  --site-base-bgColor: #ffffff;
+  --site-base-fgColor: #212121;
+  --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
+  --site-base-fgColor-alt: #6a6f71;
+
+  --site-raised-bgColor: #e9ecef;
+  --site-raised-bgColor-translucent: #{color.change(#e9ecef, $alpha: 0.2)};
+
+  --site-primary-color: #{$base_primary_color};
+  --site-accent-color: #833ef2;
+
+  --site-primary-color-highlight: #{color.change($base_primary_color, $alpha: 0.05)};
+
+  --site-secondaryContainer-bgColor: #c2e5ff;
+  --site-secondaryContainer-fgColor: var(--site-base-fgColor);
+
+  --site-onPrimary-color: #B8EAFE;
+  --site-onPrimary-color-light: #{color.mix(#fff, #B8EAFE, 25%)};
+  --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
+  --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
+
+  --site-inset-bgColor: #F6F7F8;
+  --site-inset-bgColor-translucent: rgba(237, 240, 242, 0.8);
+  --site-inset-fgColor: var(--site-base-fgColor);
+  --site-inset-borderColor: #DADCE0;
+
+  // Specific UI element styles.
+  --site-link-fgColor: var(--site-primary-color);
+  --site-link-fgColor-active: #0553B1;
+
+  --site-wordmark-fgColor: #4a4a4a;
+
+  --site-header-bgColor: var(--site-base-bgColor);
+
+  --site-footer-bgColor: #303c42;
+  --site-footer-fgColor: #DADCE0;
+
+  --site-banner-bgColor: linear-gradient(139deg, #{$base_primary_color}, #833ef2);
+  --site-banner-fgColor: #fff;
+
+  --site-card-borderColor: var(--site-outline);
+  --site-filledCard-bgColor: #{color.scale($base_primary_color, $lightness: 95%)};
+  --site-filledCard-fgColor: var(--site-base-fgColor);
+
+  --site-filledButton-bgColor: var(--site-primary-color);
+  --site-filledButton-fgColor: #fff;
+
+  --site-code-highlight-bgColor: rgba(255, 245, 156, 0.8);
+
+  --site-diagram-wrap-bgColor: #f8f9fa;
+
+  --site-alert-info-color: #2058b7;
+  --site-alert-tip-color: #0c7927;
+  --site-alert-important-color: #7e5ac2;
+  --site-alert-warning-color: #9e6300;
+  --site-alert-error-color: #cd3434;
+
+  &:not(.dark-mode) .dark-mode-visible {
+    display: none !important;
+  }
+
+  &.dark-mode {
+    color-scheme: dark;
+    --site-outline: rgba(95, 100, 119, .75);
+    --site-outline-variant: #252834;
+
+    --site-interaction-base-values: 255 255 255;
+
+    --site-base-bgColor: #121317;
+    --site-base-fgColor: #dcdcdc;
+    --site-base-fgColor-lighter: #{color.scale(#dcdcdc, $lightness: -25%)};
+    --site-base-fgColor-alt: #a8acad;
+
+    --site-raised-bgColor: #1c1e27;
+    --site-raised-bgColor-translucent: #{color.change(#1c1e27, $alpha: 0.4)};
+
+    --site-primary-color: #{$base_primary_color};
+    --site-accent-color: #b07fff;
+
+    --site-primary-color-highlight: #{color.change($base_primary_color, $alpha: 0.1)};
+
+    --site-secondaryContainer-bgColor: rgb(22 83 153);
+    --site-secondaryContainer-fgColor: var(--site-base-fgColor);
+
+    --site-onPrimary-color: #B8EAFE;
+    --site-onPrimary-color-light: #{color.mix(#fff, #B8EAFE, 25%)};
+    --site-onPrimary-color-lighter: #{color.mix(#fff, #B8EAFE, 50%)};
+    --site-onPrimary-color-lightest: #{color.mix(#fff, #B8EAFE, 75%)};
+
+    --site-inset-bgColor: #202731; // pub.dev uses #242b32;
+    --site-inset-bgColor-translucent: rgba(32, 39, 49, 0.7);
+    --site-inset-fgColor: var(--site-base-fgColor);
+    --site-inset-borderColor: #485563;
+
+    // Specific UI element styles.
+    --site-link-fgColor: #47b0f8;
+    --site-link-fgColor-active: #28a3f7;
+
+    --site-wordmark-fgColor: #fff;
+
+    --site-header-bgColor: var(--site-raised-bgColor);
+
+    --site-footer-bgColor: #27323a;
+    --site-footer-fgColor: #DADCE0;
+
+    --site-banner-bgColor: linear-gradient(139deg, #165399, #5b0fd7);
+    --site-banner-fgColor: #fff;
+
+    --site-card-borderColor: var(--site-outline);
+    --site-filledCard-bgColor: var(--site-raised-bgColor);
+    --site-filledCard-fgColor: var(--site-base-fgColor);
+
+    --site-filledButton-bgColor: var(--site-primary-color);
+    --site-filledButton-fgColor: #fff;
+
+    --site-code-highlight-bgColor: rgba(164, 158, 62, 0.15);
+
+    --site-diagram-wrap-bgColor: #e1e6ea;
+
+    --site-alert-info-color: #439bff;
+    --site-alert-tip-color: #25c04b;
+    --site-alert-important-color: #ac7fff;
+    --site-alert-warning-color: #cea11f;
+    --site-alert-error-color: #ff5d5d;
+
+    .opal,
+    .opal span {
+      color: var(--opal-dark-color) !important;
+      font-style: var(--opal-dark-font-style) !important;
+      font-weight: var(--opal-dark-font-weight) !important;
+      text-decoration: var(--opal-dark-text-decoration) !important;
+    }
+
+    .light-mode-visible {
+      display: none !important;
+    }
+  }
+}

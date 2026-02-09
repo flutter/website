@@ -40,13 +40,12 @@ investigate search engine indexability of Flutter web.
 
 ### Does hot reload work with a web app?
 
-Yes! Though it's currently behind an experimental flag.
-For more information, check out
+Yes! For more information, check out
 [hot reload on the web][].
 
 [hot reload on the web]: /platform-integration/web/building#hot-reload-web
 
-Hot restart doesn't require a flag and is a fast way of seeing your
+Hot restart is a fast way of seeing your
 changes without having to relaunch your web app and wait for it
 to compile and load. This works similarly to
 the hot reload feature for Flutter mobile development.
@@ -111,7 +110,7 @@ Not currently.
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You might need to configure the `Cache-Control` header returned by your web server. 
+You might need to configure the `Cache-Control` header returned by your web server.
 For example, if this header is set to 3600, then the browser
 and CDN will cache the asset for 1 hour, and your users might see an out-of-date
 version of your app up to 1 hour after you deploy a new version. For
@@ -119,7 +118,7 @@ more information about caching on the web,
 check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
 It is a good idea to be aware of this behavior to avoid an undesirable user experience.
-After you deploy your app, users might use a 
+After you deploy your app, users might use a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
 This can lead to users using a version of your app that
