@@ -4,6 +4,7 @@ shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.
+sidenav: default
 ---
 
 <div class="card-grid">
@@ -16,7 +17,7 @@ description: >-
   <Card title="API docs" link="{{site.api}}" outlined="true">
     Bookmark the API reference docs for the Flutter framework.
   </Card>
-  <Card title="Learning resources" link="/reference/learning-resources" outlined="true">
+  <Card title="Learning resources" link="/learn" outlined="true">
     Browse tutorials, sample code, workshops, and recipes.
   </Card>
   <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
@@ -35,18 +36,7 @@ see [What's new][].**
 ## New to Flutter?
 
 Ready to build beautiful, multiplatform apps from a single codebase?
-This video walks you through the fundamentals of Flutter and shows you how to get started.
-
-Once you've [Set up Flutter][],
-you should follow the
-[Write your first Flutter app][] codelab
-and read [Flutter fundamentals][].
-These resources are opinionated documentation
-that guide you through the most important
-parts of building a Flutter app.
-
-[Write your first Flutter app]: /get-started/codelab
-[Flutter fundamentals]: /get-started/fundamentals
+First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
 
 ### Docs
 
@@ -73,7 +63,6 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs

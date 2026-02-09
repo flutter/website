@@ -51,24 +51,23 @@ class DashHeader extends StatelessComponent {
           ],
         ),
 
-        // Only show the nav items if the tutorial is active for now.
-        if (activeEntry == ActiveNavEntry.learn)
-          ul(classes: 'nav-items', [
-            _NavItem(
-              href: '/',
-              label: 'Home',
-              isActive: activeEntry == ActiveNavEntry.home,
-            ),
-            _NavItem(
-              href: '/learn',
-              label: 'Learn',
-              isActive: activeEntry == ActiveNavEntry.learn,
-            ),
-            const _NavItem(
-              href: 'https://api.flutter.dev',
-              label: 'Reference',
-            ),
-          ]),
+        ul(classes: 'nav-items', [
+          _NavItem(
+            href: '/',
+            label: 'User Guides',
+            isActive: activeEntry == ActiveNavEntry.home,
+          ),
+          _NavItem(
+            href: '/learn',
+            label: 'Learn',
+            isActive: activeEntry == ActiveNavEntry.learn,
+          ),
+          const _NavItem(
+            href: 'https://api.flutter.dev',
+            label: 'Reference',
+            openInNewTab: true,
+          ),
+        ]),
 
         div(
           classes: 'navbar-contents',
@@ -125,17 +124,20 @@ class _NavItem extends StatelessComponent {
     required this.href,
     required this.label,
     this.isActive = false,
+    this.openInNewTab = false,
   });
 
   final String href;
   final String label;
   final bool isActive;
+  final bool openInNewTab;
 
   @override
   Component build(BuildContext _) => li([
     a(
       href: href,
       classes: ['nav-link', 'text-button', if (isActive) 'active'].toClasses,
+      attributes: openInNewTab ? {'target': '_blank', 'rel': 'noopener'} : null,
       [.text(label)],
     ),
   ]);

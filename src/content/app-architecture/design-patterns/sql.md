@@ -471,7 +471,7 @@ TodoListScreen(
 
 [Flutter Architecture design]:/app-architecture
 [Flutter architecture recommendations]:/app-architecture
-[MVVM pattern]:/get-started/fundamentals/state-management#using-mvvm-for-your-applications-architecture
+[MVVM pattern]:/app-architecture/guide#mvvm
 [Persist data with SQLite]:/cookbook/persistence/sqlite
 [Persistent storage architecture: Key-value data]:/app-architecture/design-patterns/key-value-data
 [`/examples/app-architecture/todo_data_service/`]: {{site.repo.this}}/tree/main/examples/app-architecture/todo_data_service/

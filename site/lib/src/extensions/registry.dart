@@ -11,6 +11,7 @@ import 'header_extractor.dart';
 import 'header_processor.dart';
 import 'table_processor.dart';
 import 'tutorial_prefetch_processor.dart';
+import 'tutorial_structure_processor.dart';
 
 /// A list of all node-processing, page extensions to applied to
 /// content loaded with Jaspr Content.
@@ -22,4 +23,5 @@ const List<PageExtension> allNodeProcessingExtensions = [
   CodeBlockProcessor(),
   GlossaryLinkProcessor(),
   TutorialNavigationExtension(),
+  TutorialStructureExtension(),
 ];

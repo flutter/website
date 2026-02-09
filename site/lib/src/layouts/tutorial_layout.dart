@@ -18,7 +18,7 @@ class TutorialLayout extends DocLayout {
   bool get allowBreadcrumbs => false;
 
   @override
-  List<String> get defaultBodyClasses => ['sidenav-closed'];
+  List<String> get defaultBodyClasses => [];
 
   @override
   Component buildBody(Page page, Component child) {
@@ -43,6 +43,7 @@ class TutorialLayout extends DocLayout {
           'page': {
             'showBanner': false,
             'navigationCollectionTitle': model.title,
+            'navigationCollectionUrl': model.url,
             'navigationEntries': navigationEntries,
           },
         },

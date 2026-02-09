@@ -186,12 +186,9 @@ about endorsed plugins, see the following resources:
 [How to write a Flutter web plugin, part 2]: {{site.flutter-blog}}/how-to-write-a-flutter-web-plugin-part-2-afdddb69ece6
 [Modern Flutter Plugin Development]: {{site.flutter-blog}}/modern-flutter-plugin-development-4c3ee015cf5a
 
-## Samples and codelabs
+<a id="samples-and-codelabs" aria-hidden="true"></a>
 
-[Write a Flutter desktop application][]
-: A codelab that walks you through building
-a desktop application that integrates the GitHub
-GraphQL API with your Flutter app.
+## Samples
 
 You can run the following samples as desktop apps,
 as well as download and inspect the source code to
@@ -219,4 +216,3 @@ Flokk [announcement blogpost][gskinner-flokk-blogpost], [repo][gskinner-flokk-re
 [Photo Search app]: {{site.repo.samples}}/tree/main/desktop_photo_search
 [gskinner-flokk-repo]: {{site.github}}/gskinnerTeam/flokk
 [gskinner-flokk-blogpost]: https://blog.gskinner.com/archives/2020/09/flokk-how-we-built-a-desktop-app-using-flutter.html
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-client

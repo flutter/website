@@ -1,5 +1,6 @@
 ---
 title: Dart and Flutter MCP server
+shortTitle: MCP server
 description: >
   Learn about the Dart and Flutter MCP server tool that
   exposes Dart and Flutter tools to compatible
@@ -59,12 +60,12 @@ Run the server with the `dart mcp-server` command,
 which must be configured in your preferred client.
 
 This section provides instructions for setting up the
-Dart and Flutter MCP server with popular tools like Firebase Studio,
-Gemini CLI, Gemini Code Assist, Cursor, and GitHub Copilot.
+Dart and Flutter MCP server with popular tools such as
+Antigravity, Gemini CLI, Cursor, and GitHub Copilot.
 
 ### Antigravity
 
-To configure [Antigravity][] to use the Dart and Flutter MCP server,
+To configure Google [Antigravity][] to use the Dart and Flutter MCP server,
 you can either install it from the list of available servers or
 [connect it as a custom MCP server][antigravity-mcp].
 
@@ -94,26 +95,6 @@ From here, you can choose to install the MCP server from
 
 1.  In the list of available MCP servers,
     find or search for **Dart** and click **Install**.
-1.  **Important**: The built-in configuration doesn't currently pass the
-    required `--force-roots-fallback` flag. You must add it manually.
-1.  In the upper right of the **Manage MCPs** editor view,
-    click **View raw config**.
-1.  Locate the `dart-mcp-server` entry in the `mcpServers` map and
-    update its `args` list to include the `--force-roots-fallback` flag:
-
-    ```json title="mcp_config.json" highlightLines=7
-    {
-      "mcpServers": {
-        "dart-mcp-server": {
-          "command": "dart",
-          "args": [
-            "mcp-server",
-            "--force-roots-fallback"
-          ]
-        }
-      }
-    }
-    ```
 
 #### Connect manually {: #antigravity-mcp-manual-install}
 
@@ -127,8 +108,7 @@ From here, you can choose to install the MCP server from
         "dart-mcp-server": {
           "command": "dart",
           "args": [
-            "mcp-server",
-            "--force-roots-fallback"
+            "mcp-server"
           ],
           "env": {}
         }
@@ -329,6 +309,61 @@ For more information, see the official Cursor
 documentation for [installing MCP servers][].
 
 [installing MCP servers]: https://docs.cursor.com/context/model-context-protocol#installing-mcp-servers
+
+### OpenCode
+
+To configure [OpenCode][] to use the Dart and Flutter MCP server,
+add the `dart-mcp-server` entry to your OpenCode configuration.
+
+OpenCode configuration is typically found in `~/.opencode/config.json`
+or in your project's `opencode key` configuration.
+
+```json title="~/.opencode/config.json"
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "dart-mcp-server": {
+      "type": "local",
+      "command": [
+        "dart",
+        "mcp-server"
+      ],
+      "enabled": true,
+      "environment": {}
+    }
+  }
+}
+```
+
+[OpenCode]: https://opencode.ai/
+
+### Claude Code
+
+To configure Claude Code to use the Dart and Flutter MCP server
+for the current project, use the `claude mcp add` CLI command:
+
+```console
+$ claude mcp add --transport stdio dart -- dart mcp-server
+```
+
+To learn more about configuring MCP servers in Claude Code,
+check out their documentation on [Installing MCP servers][claude-install].
+
+[claude-install]: https://code.claude.com/docs/en/mcp#installing-mcp-servers
+
+### Codex CLI
+
+To configure the Codex CLI to use the Dart and Flutter MCP server
+for the current project, use the `codex mcp add` CLI command:
+
+```console
+$ codex mcp add dart -- dart mcp-server --force-roots-fallback
+```
+
+To learn more about configuring MCP servers in the Codex CLI,
+check out their documentation on [Connecting to MCP servers][codex-connect].
+
+[codex-connect]: https://developers.openai.com/codex/mcp
 
 ## Use your MCP client
 

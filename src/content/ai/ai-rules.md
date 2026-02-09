@@ -1,5 +1,6 @@
 ---
 title: AI rules for Flutter and Dart
+shortTitle: AI rules
 description: >-
   Learn how to add AI rules to tools that accelerate your
   development workflow.
@@ -18,28 +19,37 @@ instructions to an underlying LLM. These files help you:
     design.
 *   Provide critical project context to the AI.
 
+The Flutter project provides several versions of the rules file to accommodate
+different tool limits:
+
+*   [`rules.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md):
+    The comprehensive master rule set.
+*   [`rules_10k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_10k.md):
+    A condensed version (<10k chars) for tools with stricter context limits.
+*   [`rules_4k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_4k.md):
+    A highly concise version (<4k chars) for limited contexts.
+*   [`rules_1k.md`](https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules_1k.md):
+    An ultra-compact version (<1k chars) for very strict limits.
+
 <a class="filled-button" style="margin-bottom: 0.5rem;" href="https://raw.githubusercontent.com/flutter/flutter/refs/heads/main/docs/rules/rules.md" download>
   <Icon id="download" />
   <span>Download the Flutter and Dart rules template</span>
 </a>
 
-## Environments that support rules
+## Device & editor specific limits
 
-Many AI environments support rules files to guide LLM behavior.
-Here are some common examples and their corresponding
-rule file or directory names:
+Different AI coding assistants and tools have varying limits for their "rules"
+or "custom instructions" files. *Last updated: 2026-01-05.*
 
-| Environment          | Rules file or directory           | Configuration instructions                            |
-|:---------------------|:----------------------------------|:------------------------------------------------------|
-| Copilot-powered IDEs | `.github/copilot-instructions.md` | [Configure instructions for Copilot][copilot]         |
-| Claude Code          | `CLAUDE.md`                       | [Configure rules for Claude Code][claude]             |
-| Cursor               | `AGENTS.md`                       | [Configure rules in Cursor][cursor]                   |
-| Firebase Studio      | `.idx/airules.md`                 | [Configure instructions in Firebase Studio][firebase] |
-| Gemini CLI           | `GEMINI.md`                       | [Configure context in Gemini CLI][gemini-cli]         |
-| Google Antigravity   | `.agent/rules/<rule-name>.md`     | [Configure rules for Antigravity Agent][antigravity]  |
-| JetBrains IDEs       | `.junie/guidelines.md`            | [Configure guidelines for Junie][junie]               |
-| VS Code              | `.instructions.md`                | [Configure instructions in VS Code][vs-code]          |
-| Windsurf             | `.windsurf/rules/<rule-name>.md`  | [Configure rules in Windsurf][windsurf]               |
+| Tool / Product | Rules file / Feature | Limit (soft / hard) | Documentation |
+|:---|:---|:---|:---|
+| Antigravity (Google) | `.agent/rules/<rule-name>.md` | 12,000 chars (Hard) | [Configure rules][antigravity] |
+| Claude Code | `CLAUDE.md` | No Hard Limit | [Claude Code Docs](https://code.claude.com/docs/en/memory) |
+| Cursor | `AGENTS.md` | No Hard Limit | [Cursor Docs](https://cursor.com/docs/context/rules) |
+| Gemini CLI | `GEMINI.md` | 1M+ Tokens (Context) | [Gemini CLI Docs](https://cloud.google.com/vertex-ai/generative-ai/docs/long-context) |
+| GitHub Copilot | `.github/copilot-instructions.md` | ~4k chars | [GitHub Copilot Docs](https://docs.github.com/en/copilot/customizing-copilot/adding-custom-instructions-for-github-copilot) |
+| JetBrains AI (Junie) | `.junie/guidelines.md` | No Hard Limit | [JetBrains AI Docs](https://www.jetbrains.com/help/junie/get-started-with-junie.html) |
+| VS Code | `.instructions.md` | Unknown | [Configure instructions][vs-code] |
 
 {:.table .table-striped}
 
@@ -54,7 +64,7 @@ the most up-to-date naming conventions and instructions.
 [cursor]: https://cursor.com/docs/context/rules
 [firebase]: https://firebase.google.com/docs/studio/set-up-gemini#custom-instructions
 [gemini-cli]: https://geminicli.com/docs/cli/gemini-md
-[antigravity]: https://antigravity.google/docs/rules
+[antigravity]: https://antigravity.google/docs/rules-workflows
 [junie]: https://www.jetbrains.com/help/junie/customize-guidelines.html
 [vs-code]: https://code.visualstudio.com/docs/copilot/customization/custom-instructions#_use-instructionsmd-files
 [windsurf]: https://docs.windsurf.com/windsurf/cascade/memories#rules
