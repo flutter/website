@@ -96,8 +96,8 @@ renderViewport.scrollCacheExtent = const ScrollCacheExtent.pixels(500.0);
 
 ## Timeline
 
-Landed in version: 3.29.0-0.3.pre
-In stable release: 3.32
+Landed in version: 3.41.0-0.0.pre
+In stable release: TBD
 
 ## References
 
