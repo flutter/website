@@ -44,7 +44,10 @@ They're sorted by release and listed in alphabetical order:
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
 * [Page transition builders reorganization][]
+* [Deprecate onReorder callback][]
+* [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 
+[Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
@@ -55,6 +58,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
 [Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
+[Deprecate onReorder callback]: /release/breaking-changes/deprecate-onreorder-callback
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
 ### Released in Flutter 3.38
