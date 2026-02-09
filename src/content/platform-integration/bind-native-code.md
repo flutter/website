@@ -195,7 +195,7 @@ target architectures and SDKs.
 
 On Apple platforms (iOS and macOS), dynamic libraries are bundled into
 frameworks. Flutter's build system relies on these names to generate metadata
-and package distributive formats like XCFrameworks.
+and package distributable formats like XCFrameworks.
 
 ### Consistency across architectures
 
@@ -247,6 +247,6 @@ target platform.
     build failures or Apple rejecting the application for including
     simulator-only binaries in a device build.
 *   **Recommended action**: Ensure that your `build.dart` hook logic handles
-    all supported SDKs consistently. If you have code that is only relevant
-    for a single SDK, include it in a dynamic library that is present in
-    both SDKs rather than creating a separate asset for it.
+    all supported SDKs consistently. If you produce an asset for one SDK, you
+    must produce a corresponding asset for all other SDKs for that platform.
+    For SDK-specific code, you can use stub implementations for other SDKs.
