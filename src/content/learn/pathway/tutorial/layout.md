@@ -76,8 +76,9 @@ class MainApp extends StatelessWidget {
             child: Text('Birdle'),
           ),
         ),
-        body: Center(child: Tile('A', HitType.hit)),
+        body: Center(child: Text('A')
       ),
+    ),
     );
   }
 }
