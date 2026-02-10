@@ -22,6 +22,15 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
+## 11 February 2026: Year of the Fire Horse Release 3.41
+
+Flutter 3.41 is live! For details,
+check out the [Flutter 3.41 blog post][3.41-blog].
+
+[3.41-blog]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
+
+---
+
 ## 12 November 2025: Release 3.38
 
 Flutter 3.38 is live! For details,
