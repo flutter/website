@@ -7,8 +7,10 @@ skipTemplateRendering: true
 
 This page has release notes for Flutter 3.41.
 
-## What's Changed
+## What's changed
+
 ### Framework
+
 * Add saturation ColorFilter. by @ksokolovskyi in [176464](https://github.com/flutter/flutter/pull/176464)
 * Remove unnecessary nullable types in examples. by @ksokolovskyi in [176713](https://github.com/flutter/flutter/pull/176713)
 * [WebParagraph] Support for more styles, placeholders, decorations, etc by @Rusino in [172853](https://github.com/flutter/flutter/pull/172853)
@@ -206,7 +208,9 @@ This page has release notes for Flutter 3.41.
 * Add drag handle to CupertinoSheet by @MitchellGoodwin in [179962](https://github.com/flutter/flutter/pull/179962)
 * Do not dispose CupertinoSheetTransition animation on update and throw ticker error by @MitchellGoodwin in [180609](https://github.com/flutter/flutter/pull/180609)
 * [beta] Cherry pick [181269](https://github.com/flutter/flutter/pull/181269) by @dkwingsmt in https://github.com/flutter/flutter/pull/181371
+
 ### Material
+
 * Feat: Add carousel view builder by @rkishan516 in [172837](https://github.com/flutter/flutter/pull/172837)
 * Make sure that a DesktopTextSelectionToolbarButton doesn't crash in 0… by @ahmedsameha1 in [173827](https://github.com/flutter/flutter/pull/173827)
 * Simplify `if-else` block into single `return` statement by @ValentinVignal in [175574](https://github.com/flutter/flutter/pull/175574)
@@ -384,7 +388,9 @@ This page has release notes for Flutter 3.41.
 * Raw tooltip with smaller API surface that exposes tooltip widget by @victorsanni in [177678](https://github.com/flutter/flutter/pull/177678)
 * [beta] Cherry pick [181074](https://github.com/flutter/flutter/pull/181074) by @dkwingsmt in https://github.com/flutter/flutter/pull/181367
 * [CP-beta]Fixes Typo in codebase by @flutteractionsbot in [181354](https://github.com/flutter/flutter/pull/181354)
+
 ### iOS
+
 * Add structured warning event for slow wireless debugging on iOS 26+ d… by @okorohelijah in [176673](https://github.com/flutter/flutter/pull/176673)
 * Fix Xcode cache errors by @okorohelijah in [175659](https://github.com/flutter/flutter/pull/175659)
 * iOS can set application locale before view controller is set by @chunhtai in [176592](https://github.com/flutter/flutter/pull/176592)
@@ -410,7 +416,9 @@ This page has release notes for Flutter 3.41.
 * [ios][pv] quick fix to enable and re-enable web view's gesture recognizer by @hellohuanlin in [179908](https://github.com/flutter/flutter/pull/179908)
 * [Engine] iOS style blurring by @dkwingsmt in [175458](https://github.com/flutter/flutter/pull/175458)
 * flutter_tools: Auto-generate ExportOptions.plist for manual iOS code signing by @MohammedTarigg in [177888](https://github.com/flutter/flutter/pull/177888)
+
 ### Android
+
 * Keyboard Animation Fix by @mboetger in [176418](https://github.com/flutter/flutter/pull/176418)
 * [HCPP] Properly remove hcpp views that are no longer visible by @gmackall in [176742](https://github.com/flutter/flutter/pull/176742)
 * Fix - TalkBack does not announce list information by @jwlilly in [174374](https://github.com/flutter/flutter/pull/174374)
@@ -472,9 +480,13 @@ This page has release notes for Flutter 3.41.
 * Improve code quality in `KeyboardManagerTest.java` by @AbdeMohlbi in [180625](https://github.com/flutter/flutter/pull/180625)
 * Prevent calling `setStatusBarColor` on `API_35` and update related documentation by @AbdeMohlbi in [180062](https://github.com/flutter/flutter/pull/180062)
 * Improve code quality in `AndroidTouchProcessorTest.java` by @AbdeMohlbi in [180583](https://github.com/flutter/flutter/pull/180583)
+
 ### macOS
+
 * Fix no op host debug builds doing work by @gmackall in [178077](https://github.com/flutter/flutter/pull/178077)
+
 ### Windows
+
 * Fixing WindowManagerTest::DialogCanNeverBeFullscreen possibly hanging by @mattkae in [177179](https://github.com/flutter/flutter/pull/177179)
 * Workaround for lag when dragging window titlebar on Windows by @knopp in [177597](https://github.com/flutter/flutter/pull/177597)
 * Fix Windows Enter key after focus loss by @letrungdo in [178523](https://github.com/flutter/flutter/pull/178523)
@@ -487,7 +499,9 @@ This page has release notes for Flutter 3.41.
 * fix: fresh install of windows support by @jtmcdole in [179720](https://github.com/flutter/flutter/pull/179720)
 * [win32] Do not flood message loop with wake up messages by @knopp in [179538](https://github.com/flutter/flutter/pull/179538)
 * Fix an issue where the semantics announce event may be encoded as either an int32_t or an int64_t depending on its value by @mattkae in [180071](https://github.com/flutter/flutter/pull/180071)
+
 ### Linux
+
 * Change default Linux thread policy to merge platform and UI threads. by @robert-ancell in [176759](https://github.com/flutter/flutter/pull/176759)
 * Fix accessibility events not being correctly translated to ATK by @robert-ancell in [176991](https://github.com/flutter/flutter/pull/176991)
 * [Desktop] Propagate SemanticsNode::identifier to AXPlatformNodeDelegate::AuthorUniqueId by @loic-peron-inetum-public in [175405](https://github.com/flutter/flutter/pull/175405)
@@ -495,7 +509,9 @@ This page has release notes for Flutter 3.41.
 * Replace use of eglCreateImage with eglCreateImageKHR to reduce EGL requirement by @robert-ancell in [179310](https://github.com/flutter/flutter/pull/179310)
 * Implement flutter/accessibility channel by @robert-ancell in [179484](https://github.com/flutter/flutter/pull/179484)
 * Remove obsolete windowing channel by @robert-ancell in [179718](https://github.com/flutter/flutter/pull/179718)
+
 ### Web
+
 * [web] Match the behavior of other platforms in Web Locale.toString if the country code is an empty string by @jason-simmons in [176862](https://github.com/flutter/flutter/pull/176862)
 * impeller: allows access of float uniforms by name by @gaaclarke in [176728](https://github.com/flutter/flutter/pull/176728)
 * [web] Fix focus issues in newer versions of Chrome by @mdebbar in [176938](https://github.com/flutter/flutter/pull/176938)
@@ -540,7 +556,9 @@ This page has release notes for Flutter 3.41.
 * Revert "Reverts "[reland] Unify canvas creation and Surface code in S…kwasm and CanvasKit (#179473)" (#180152)" by @harryterkelsen in [180610](https://github.com/flutter/flutter/pull/180610)
 * [web] Fix SemanticsService.announce not working inside dialogs by @flutter-zl in [179958](https://github.com/flutter/flutter/pull/179958)
 * [CP] Fix style_manager_test for Firefox (#181084) by @harryterkelsen in [181204](https://github.com/flutter/flutter/pull/181204)
+
 ### Tooling
+
 * Roll pub packages by @flutter-pub-roller-bot in [176743](https://github.com/flutter/flutter/pull/176743)
 * [native_assets] create macOS CCompilerConfig via xcrun --find by @GregoryConrad in [175717](https://github.com/flutter/flutter/pull/175717)
 * [ Tool ] Roll package:dwds to 26.0.0 by @bkonyi in [176808](https://github.com/flutter/flutter/pull/176808)
@@ -634,12 +652,16 @@ This page has release notes for Flutter 3.41.
 * [CP-beta][ Tool ] Fix `flutter run -d all` crash (#180845) by @bkonyi in [181163](https://github.com/flutter/flutter/pull/181163)
 * [CP-beta][ Tool ] Handle DartDevelopmentServiceException when launching web applications by @bkonyi in [181162](https://github.com/flutter/flutter/pull/181162)
 * Generate Flutter framework swift package by @vashworth in [181578](https://github.com/flutter/flutter/pull/181578)
+
 ### Documentation
+
 * Remove unnecessary location permission by @mboetger in [176672](https://github.com/flutter/flutter/pull/176672)
 * Making the multiple_windows example app demonstrate dialogs of dialogs by @mattkae in [177786](https://github.com/flutter/flutter/pull/177786)
 * Add missing flutter_lints dev dependencies by @guidezpl in [178105](https://github.com/flutter/flutter/pull/178105)
 * Update window settings as they change rather than the more outdated "Apply" pattern. by @robert-ancell in [179861](https://github.com/flutter/flutter/pull/179861)
-### Other Changes
+
+### Other changes
+
 * Configure FfiNative resolver on dart:io by @mraleph in [176621](https://github.com/flutter/flutter/pull/176621)
 * fix: build windows_arm artifacts for cah by @jtmcdole in [176723](https://github.com/flutter/flutter/pull/176723)
 * Roll pub packages by @flutter-pub-roller-bot in [176764](https://github.com/flutter/flutter/pull/176764)
@@ -838,7 +860,8 @@ This page has release notes for Flutter 3.41.
 * [CP-beta]Roll libpng to version 1.6.53 by @flutteractionsbot in [181543](https://github.com/flutter/flutter/pull/181543)
 * Bump engine.version for 3.41.0-0.2.pre by @eyebrowsoffire in [181615](https://github.com/flutter/flutter/pull/181615)
 
-## New Contributors
+## New contributors
+
 * @jwlilly made their first contribution in [174374](https://github.com/flutter/flutter/pull/174374)
 * @progamax made their first contribution in [174497](https://github.com/flutter/flutter/pull/174497)
 * @leuchte made their first contribution in [177078](https://github.com/flutter/flutter/pull/177078)
