@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import 'material_icon.dart';
@@ -40,7 +41,7 @@ class Tag extends StatelessComponent {
       },
       [
         if (icon case final iconId?) MaterialIcon(iconId),
-        span([text(content)]),
+        span([.text(content)]),
       ],
     );
   }

@@ -25,7 +25,7 @@ button {
   cursor: pointer;
 
   &.filled-button,
-  &.text-button {
+  &.text-button, &.outlined-button {
     display: flex;
     align-items: center;
     width: fit-content;
@@ -72,6 +72,19 @@ button {
     }
   }
 
+  &.outlined-button {
+    color: var(--site-primary-color);
+    border: 1px solid var(--site-primary-color);
+
+    &:hover {
+      @include mixins.interaction-style(4%);
+    }
+
+    &:active {
+      @include mixins.interaction-style(8%);
+    }
+  }
+
   &.icon-button {
     border-radius: 0.25rem;
     padding: 0.25rem;
@@ -91,6 +104,25 @@ button {
 
     &:hover {
       color: var(--site-base-fgColor);
+    }
+  }
+}
+
+.segmented-button {
+  display: inline-flex;
+
+  a,
+  button {
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      border-right: 1px solid var(--site-outline-variant);
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
     }
   }
 }

@@ -122,6 +122,11 @@ to apply shaders to already rendered content.
 [`ImageFilter`][] provides a constructor, [`ImageFilter.shader`][],
 for creating an [`ImageFilter`][] with a custom fragment shader.
 
+:::warning
+The `ImageFilter` API for custom shaders is only supported by the [Impeller][] backend.
+Using it on other backends will throw an error.
+:::
+
 ```dart
 Widget build(BuildContext context, FragmentShader shader) {
   return ClipRect(
@@ -209,19 +214,22 @@ A fragment program can be configured by defining
 and then setting these values in Dart for
 each fragment shader instance.
 
-Floating point uniforms with the GLSL types
-`float`, `vec2`, `vec3`, and `vec4`
-are set using the [`FragmentShader.setFloat`][] method.
-GLSL sampler values, which use the `sampler2D` type,
-are set using the [`FragmentShader.setImageSampler`][] method.
+Floating point uniforms with the GLSL types `float`, `vec2`, `vec3`, and `vec4`
+are set using the [`FragmentShader.setFloat`][] or
+[`FragmentShader.getUniformFloat`][] method. GLSL sampler values, which use the
+`sampler2D` type, are set using the [`FragmentShader.setImageSampler`][] or
+[`FragmentShader.getImageSampler`][] method.
 
-The correct index for each `uniform` value is determined by the order
-that the uniform values are defined in the fragment program.
-For data types composed of multiple floats, such as a `vec4`,
-you must call [`FragmentShader.setFloat`][] once for each value.
+The correct index for each `uniform` value is determined by the order that the
+uniform values are defined in the fragment program. For data types composed of
+multiple floats, such as a `vec4`, you must call [`FragmentShader.setFloat`][]
+or [`UniformFloatSlot.set`][] once for each value.
 
 [`FragmentShader.setFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/setFloat.html
+[`UniformFloatSlot.set`]: {{site.api}}/flutter/dart-ui/UniformFloatSlot/set.html
+[`FragmentShader.getUniformFloat`]: {{site.api}}/flutter/dart-ui/FragmentShader/getUniformFloat.html
 [`FragmentShader.setImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/setImageSampler.html
+[`FragmentShader.getImageSampler`]: {{site.api}}/flutter/dart-ui/FragmentShader/getImageSampler.html
 
 For example, given the following uniforms declarations in a GLSL fragment program:
 
@@ -235,26 +243,39 @@ uniform vec4 uColor;
 The corresponding Dart code to initialize these `uniform` values is as follows:
 
 ```dart
-void updateShader(FragmentShader shader, Color color, Image image) {
-  shader.setFloat(0, 23);  // uScale
-  shader.setFloat(1, 114); // uMagnitude x
-  shader.setFloat(2, 83);  // uMagnitude y
+class Foobar {
+  late final UniformFloatSlot _scale;
+  late final List<UniformFloatSlot> _magnitude;
+  late final List<UniformFloatSlot> _color;
+  late final ImageSamplerSlot _texture;
 
-  // Convert color to premultiplied opacity.
-  shader.setFloat(3, color.red / 255 * color.opacity);   // uColor r
-  shader.setFloat(4, color.green / 255 * color.opacity); // uColor g
-  shader.setFloat(5, color.blue / 255 * color.opacity);  // uColor b
-  shader.setFloat(6, color.opacity);                     // uColor a
+  void setUp(FragmentShader shader) {
+    _scale = shader.getUniformFloat('uScale');
+    _magnitude = List<UniformFloatSlot>.generate(2, (int index) {
+      return shader.getUniformFloat('uMagnitude', index);
+    });    
+    _color = List<UniformFloatSlot>.generate(4, (int index) {
+      return shader.getUniformFloat('uColor', index);
+    });
+    _texture = shader.getImageSampler('uTexture');
+  }
 
-  // Initialize sampler uniform.
-  shader.setImageSampler(0, image);
- }
+  void update(Color color, Image image) {
+    _scale.set(23);
+    _magnitude[0].set(114);
+    _magnitude[1].set(83);
+    _color[0].set(color.r * color.a);
+    _color[1].set(color.g * color.a);
+    _color[2].set(color.b * color.a);
+    _color[3].set(color.a);
+    _texture.set(image);
+  }
+}
  ```
 
-Observe that the indices used with [`FragmentShader.setFloat`][]
-do not count the `sampler2D` uniform.
-This uniform is set separately with [`FragmentShader.setImageSampler`][],
-with the index starting over at 0.
+When using [`FragmentShader.setFloat`][] note that the indices do not count the
+`sampler2D` uniform. This uniform is set separately with
+[`FragmentShader.setImageSampler`][], with the index starting over at 0.
 
 Any float uniforms that are left uninitialized will default to `0.0`.
 
@@ -299,33 +320,31 @@ void main() {
 
 The value returned from `FlutterFragCoord` is distinct from `gl_FragCoord`.
 `gl_FragCoord` provides the screen space coordinates and should generally be
-avoided to ensure that shaders are consistent across backends.
-When targeting a Skia backend,
-the calls to `gl_FragCoord` are rewritten to access local
+avoided to ensure that shaders are consistent across backends. When targeting a
+Skia backend, the calls to `gl_FragCoord` are rewritten to access local
 coordinates but this rewriting isn't possible with Impeller.
 
 #### Colors
 
-There isn't a built-in data type for colors.
-Instead they are commonly represented as a `vec4`
-with each component corresponding to one of the RGBA
+There isn't a built-in data type for colors. Instead they are commonly
+represented as a `vec4` with each component corresponding to one of the RGBA
 color channels.
 
-The single output `fragColor` expects that the color value
-is normalized to be in the range of `0.0` to `1.0`
-and that it has premultiplied alpha.
-This is different than typical Flutter colors which use
-a `0-255` value encoding and have unpremultipled alpha.
+The single output `fragColor` expects that the color value is normalized to be
+in the range of `0.0` to `1.0` and that it has premultiplied alpha. This is
+different than typical Flutter colors which use a `0-255` value encoding and
+have unpremultipled alpha.
 
 #### Samplers
 
-A sampler provides access to a `dart:ui` `Image` object.
-This image can be acquired either from a decoded image
-or from part of the application using
+A sampler provides access to a `dart:ui` `Image` object. This image can be
+acquired either from a decoded image or from part of the application using
 [`Scene.toImageSync`][] or [`Picture.toImageSync`][].
 
 [`Picture.toImageSync`]: {{site.api}}/flutter/dart-ui/Picture/toImageSync.html
 [`Scene.toImageSync`]: {{site.api}}/flutter/dart-ui/Scene/toImageSync.html
+
+##### Sampler usage in GLSL example
 
 ```glsl
 #include <flutter/runtime_effect.glsl>
@@ -341,41 +360,74 @@ void main() {
 }
 ```
 
-By default, the image uses
-[`TileMode.clamp`][] to determine how values outside
-of the range of `[0, 1]` behave.
-Customization of the tile mode is not
-supported and needs to be emulated in the shader.
+By default, the image uses [`TileMode.clamp`][] to determine how values outside
+of the range of `[0, 1]` behave. Customization of the tile mode is not supported
+and needs to be emulated in the shader.
 
 [`TileMode.clamp`]: {{site.api}}/flutter/dart-ui/TileMode.html
 
-### Performance considerations
+##### `toImageSync` example
 
-When targeting the Skia backend,
-loading the shader might be expensive since it
-must be compiled to the appropriate
-platform-specific shader at runtime.
-If you intend to use one or more shaders during an animation,
-consider precaching the fragment program objects before
-starting the animation.
+```dart
+class SDFPainter {
+  SDFPainter(this.sdfShader, this.renderShader);
 
-You can reuse a `FragmentShader` object across frames;
-this is more efficient than creating a new
-`FragmentShader` for each frame.
+  FragmentShader sdfShader;
+  FragmentShader renderShader;
+  Image? _sdf;
+  bool isDirty = false;
+  double radius = 0.5;
+
+  void paint(Canvas canvas, Size size) {
+    if (_sdf == null || isDirty) {
+      final recorder = PictureRecorder();
+      final subCanvas = Canvas(recorder);
+      final paint = Paint()..shader = sdfShader;
+      sdfShader.setFloat(0, size.width);
+      sdfShader.setFloat(1, size.height);
+      sdfShader.setFloat(2, radius);
+      subCanvas.drawRect(Rect.fromLTWH(0, 0, size.width, size.height), paint);
+      final picture = recorder.endRecording();
+      _sdf = picture.toImageSync(size.width.toInt(), size.height.toInt());
+      isDirty = false;
+    }
+
+    renderShader.setFloat(0, size.width);
+    renderShader.setFloat(1, size.height);
+    renderShader.setImageSampler(0, _sdf!);
+
+    canvas.drawRect(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Paint()..shader = renderShader,
+    );
+  }
+}
+```
+
+## Performance considerations
+
+When targeting the Skia backend, loading the shader might be expensive since it
+must be compiled to the appropriate platform-specific shader at runtime. If you
+intend to use one or more shaders during an animation, consider precaching the
+fragment program objects before starting the animation.
+
+You can reuse a `FragmentShader` object across frames; this is more efficient
+than creating a new `FragmentShader` for each frame.
 
 For a more detailed guide on writing performant shaders,
 check out [Writing efficient shaders][] on GitHub.
 
 [Writing efficient shaders]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/shader_optimization.md
 
-### Other resources
+## Other resources
 
 For more information, here are a few resources.
 
 * [The Book of Shaders][] by Patricio Gonzalez Vivo and Jen Lowe
 * [Shader toy][], a collaborative shader playground
 * [`simple_shader`][], a simple Flutter fragment shaders sample project
-* [`flutter_shaders`][], a package that simplifies using fragment shaders in Flutter
+* [`flutter_shaders`][], a package that simplifies using fragment shaders in
+  Flutter
 
 [Shader toy]: https://www.shadertoy.com/
 [The Book of Shaders]: https://thebookofshaders.com/

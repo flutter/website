@@ -2,17 +2,16 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/common/breadcrumbs.dart';
+import '../components/common/page_header.dart';
 import '../components/common/prev_next.dart';
 import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
-import '../extensions/header_extractor.dart';
-import '../models/on_this_page_model.dart';
-import '../util.dart';
+import '../models/page_navigation_model.dart';
 import 'dash_layout.dart';
 
 /// The Jaspr Content layout to use for normal docs pages,
@@ -23,54 +22,64 @@ class DocLayout extends FlutterDocsLayout {
   @override
   String get name => 'docs';
 
+  bool get allowBreadcrumbs => true;
+
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
     final siteData = page.data.site;
 
     final pageTitle = pageData['title'] as String;
+    final pageDescription = (pageData['description'] as String?)?.trim();
     final showBanner =
         (pageData['showBanner'] as bool?) ??
         (siteData['showBanner'] as bool?) ??
         false;
-    final tocData = _tocForPage(page);
+    final navigationData = page.navigationData;
 
     return super.buildBody(
       page,
-      Component.fragment(
+      .fragment(
         [
-          if (tocData == null)
+          if (navigationData
+              case null || PageNavigationData(toc: null, pageEntries: []))
             const Document.body(attributes: {'data-toc': 'false'})
           else
-            NarrowTableOfContents(
-              tocData,
-              currentTitle: pageTitle,
+            div(
+              id: 'site-subheader',
+              classes: navigationData.pageEntries.isNotEmpty
+                  ? 'show-always'
+                  : null,
+              [
+                PageNavBar(navigationData),
+              ],
             ),
           if (showBanner)
-            if (page.data['banner'] case final Map<String, Object?> bannerData)
-              DashBanner(BannerContent.fromMap(bannerData)),
+            if (siteData['bannerHtml'] case final String bannerHtml
+                when bannerHtml.trim().isNotEmpty)
+              DashBanner(bannerHtml),
           div(classes: 'after-leading-content', [
-            if (tocData != null)
+            if (navigationData case PageNavigationData(
+              toc: final toc?,
+              pageEntries: [],
+            ))
               aside(id: 'side-menu', [
-                WideTableOfContents(tocData),
+                DashTableOfContents(toc),
               ]),
             article([
-              div(id: 'site-content-title', [
-                h1(id: 'document-title', [
-                  if (pageData['underscore_breaker_titles'] == true)
-                    ...splitByUnderscore(pageTitle)
-                  else
-                    text(pageTitle),
-                ]),
-                if (pageData['showBreadcrumbs'] != false)
-                  const PageBreadcrumbs(),
-              ]),
+              PageHeader(
+                title: pageTitle,
+                description: pageDescription,
+                showBreadcrumbs:
+                    allowBreadcrumbs &&
+                    (pageData['showBreadcrumbs'] as bool? ?? true),
+              ),
 
               child,
 
               PrevNext(
-                previousPage: _pageInfoFromObject(pageData['prev']),
-                nextPage: _pageInfoFromObject(pageData['next']),
+                previousPage: PageNavigationEntry.fromData(pageData['prev']),
+                nextPage: PageNavigationEntry.fromData(pageData['next']),
               ),
               const TrailingContent(),
             ]),
@@ -79,34 +88,4 @@ class DocLayout extends FlutterDocsLayout {
       ),
     );
   }
-
-  OnThisPageData? _tocForPage(Page page) {
-    final pageData = page.data.page;
-    final showToc = pageData['showToc'] as bool? ?? true;
-
-    // If 'showToc' was explicitly set to false, hide the toc.
-    if (!showToc) return null;
-
-    final onThisPageData = OnThisPageData.fromContentHeaders(
-      page.data['contentHeaders'] as List<ContentHeader>? ?? const [],
-      minLevel: pageData['minTocDepth'] as int? ?? 2,
-      maxLevel: pageData['maxTocDepth'] as int? ?? 3,
-    );
-
-    // If there are less than 2 top-level entries, hide the toc.
-    if (onThisPageData.topLevelEntries.length < 2) return null;
-
-    return onThisPageData;
-  }
-}
-
-({String url, String title})? _pageInfoFromObject(Object? data) {
-  if (data case {
-    'path': final String pageUrl,
-    'title': final String pageTitle,
-  }) {
-    return (url: pageUrl, title: pageTitle);
-  }
-
-  return null;
 }

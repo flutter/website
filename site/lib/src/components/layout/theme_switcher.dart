@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -20,7 +21,8 @@ final class ThemeSwitcher extends StatefulComponent {
 enum _Theme {
   light('Light', 'Switch to the light theme.', 'light_mode'),
   dark('Dark', 'Switch to the dark theme.', 'dark_mode'),
-  auto('Automatic', 'Match theme to device theme.', 'night_sight_auto');
+  auto('Automatic', 'Match theme to device theme.', 'night_sight_auto')
+  ;
 
   final String label;
   final String description;
@@ -72,7 +74,13 @@ final class _ThemeSwitcherState extends State<ThemeSwitcher> {
       );
     }
 
-    web.window.localStorage.setItem('theme', newTheme.id);
+    try {
+      web.window.localStorage.setItem('theme', newTheme.id);
+    } catch (e) {
+      if (kDebugMode) {
+        print('Failed to save theme preference: $e');
+      }
+    }
 
     setState(() {
       _currentTheme = newTheme;
@@ -80,30 +88,25 @@ final class _ThemeSwitcherState extends State<ThemeSwitcher> {
   }
 
   @override
-  Component build(BuildContext _) => Dropdown(
-    id: 'theme-switcher',
-    children: [
-      const DropdownToggle(Button(icon: 'routine', title: 'Select a theme.')),
-      DropdownContent(
-        div(
-          classes: 'dropdown-menu',
+  Component build(BuildContext _) {
+    return Dropdown(
+      id: 'theme-switcher',
+      toggle: const Button(icon: 'routine', title: 'Select a theme.'),
+      content: div(classes: 'dropdown-menu', [
+        ul(
+          attributes: {'role': 'listbox'},
           [
-            ul(
-              attributes: {'role': 'listbox'},
-              [
-                for (final mode in _Theme.values)
-                  _ThemeButtonEntry(
-                    mode: mode,
-                    selected: _currentTheme == mode,
-                    setMode: _setTheme,
-                  ),
-              ],
-            ),
+            for (final mode in _Theme.values)
+              _ThemeButtonEntry(
+                mode: mode,
+                selected: _currentTheme == mode,
+                setMode: _setTheme,
+              ),
           ],
         ),
-      ),
-    ],
-  );
+      ]),
+    );
+  }
 }
 
 final class _ThemeButtonEntry extends StatelessComponent {
@@ -132,7 +135,7 @@ final class _ThemeButtonEntry extends StatelessComponent {
       },
       [
         MaterialIcon(mode.iconId),
-        span([text(mode.label)]),
+        span([.text(mode.label)]),
       ],
     ),
   ]);

@@ -7,8 +7,10 @@
   border-bottom: 0.1rem solid var(--site-outline-variant);
 
   @media (min-width: 1200px) {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
-    border-bottom: none;
+    &:not(:has(~* #site-subheader.show-always)) {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+      border-bottom: none;
+    }
   }
 
   .navbar {
@@ -20,12 +22,6 @@
     padding: 0.5rem 0.75rem;
 
     min-height: var(--site-header-height);
-
-    #menu-toggle {
-      @media (min-width: 1024px) {
-        display: none;
-      }
-    }
 
     .navbar-brand {
       margin-right: auto;
@@ -41,7 +37,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
-      gap: .5rem;
+      gap: .4rem;
     }
 
     .nav-link {
@@ -52,6 +48,27 @@
 
       &:hover {
         color: var(--site-base-fgColor);
+      }
+    }
+
+    ul.nav-items {
+      display: none;
+      padding: 0;
+      margin: 0 auto 0 0;
+      gap: .75rem;
+      flex-direction: row;
+      list-style-type: none;
+
+      @media (min-width: 1024px) {
+        display: flex;
+      }
+
+      .nav-link {
+        font-weight: 500;
+
+        &.active {
+          color: var(--site-link-fgColor);
+        }
       }
     }
   }
@@ -119,6 +136,12 @@
   }
 }
 
+body:not(.sidenav-closed) #menu-toggle {
+  @media (min-width: 1024px) {
+    display: none;
+  }
+}
+
 // Toggle between menu and close buttons if sidenav is open or not.
 #menu-toggle span.material-symbols {
   &:first-child {
@@ -164,6 +187,31 @@ body.open_menu #menu-toggle span.material-symbols {
       @media (min-width: 420px) {
         margin-left: 0.4rem;
       }
+    }
+  }
+}
+
+#site-subheader {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+
+  position: sticky;
+  top: var(--site-header-height);
+  z-index: var(--site-z-subheader);
+  height: var(--site-subheader-height);
+
+  font-family: var(--site-ui-fontFamily);
+  font-size: 0.875rem;
+
+  background-color: var(--site-base-bgColor);
+  border-bottom: 0.1rem solid var(--site-outline-variant);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+
+  &:not(.show-always) {
+    @media (width < 240px), (width >= 1200px) {
+      display: none;
     }
   }
 }

@@ -51,10 +51,12 @@ Packages can contain more than one kind of content:
   see the Medium article by Harry Terkelsen,
   [How to Write a Flutter Web Plugin, Part 1][].
 
-**FFI Plugin packages**
-: A specialized Dart package that contains an API written in
-  Dart code combined with one or more platform-specific
-  implementations that use Dart FFI([Android][Android], [iOS][iOS], [macOS][macOS]).
+**FFI packages**
+: A specialized Dart package that enables calling native code using `dart:ffi`.
+  These packages work in Dart standalone and don't require OS-specific build files.
+  They are created with the `flutter create --template=package_ffi` command (see
+  [Create an FFI package][bind-native]).
+  This is the recommended approach to build and bundle native code since Flutter 3.38.
 
 ## Developing Dart packages {:#dart}
 
@@ -133,40 +135,49 @@ implementation(s) using a [platform channel][].
 
 ### Federated plugins
 
-Federated plugins are a way of splitting support for
-different platforms into separate packages.
-So, a federated plugin can use one package for iOS,
+**Federated plugins** are a way of splitting the API of a plugin
+into a platform interface, independent platform implementations
+of that interface, and an app-facing interface that uses the
+registered implementation of the running platform.
+
+**Package-separated federated plugins** are federated plugins where
+the platform interface, platform implementations, and the app-facing
+interface are all separated into their own Dart packages.
+
+So, a package-separated federated plugin can use one package for iOS,
 another for Android, another for web,
 and yet another for a car (as an example of an IoT device).
 Among other benefits, this approach allows a domain expert
 to extend an existing plugin to work for the platform they know best.
 
-A federated plugin requires the following packages:
+A federated plugin requires the following:
 
-**app-facing package**
-: The package that plugin users depend on to use the plugin.
-  This package specifies the API used by the Flutter app.
+**app-facing interface**
+: The interface that plugin users interact with when using the
+  plugin. This interface specifies the API used by the Flutter app.
+  In a package-separated federated plugin, this is the package
+  that plugin users depend on to use the plugin. 
 
-**platform package(s)**
-: One or more packages that contain the platform-specific
-  implementation code. The app-facing package calls into
-  these packages&mdash;they aren't included into an app,
-  unless they contain platform-specific functionality
-  accessible to the end user.
+**platform implementation(s)**
+: One or more implementations that contain the platform-specific
+  implementation code. The app-facing interface calls into
+  these implementations&mdash;they aren't directly used, or
+  depended on when package-separated, in an app unless they contain
+  platform-specific functionality accessible to the end user.
 
-**platform interface package**
-: The package that glues the app-facing package
-  to the platform package(s). This package declares an
-  interface that any platform package must implement to
-  support the app-facing package. Having a single package
+**platform interface**
+: The interface that glues the app-facing interface
+  to the platform implementations(s). This declares an
+  interface that any platform implementation must implement to
+  support the app-facing interface. Having a separate package
   that defines this interface ensures that all platform
   packages implement the same functionality in a uniform way.
 
 #### Endorsed federated plugin
 
 Ideally, when adding a platform implementation to
-a federated plugin, you will coordinate with the package
-author to include your implementation.
+a packaged-separated federated plugin, you will coordinate with
+the package author to include your implementation.
 In this way, the original author _endorses_ your
 implementation.
 
@@ -417,7 +428,8 @@ Then use the following steps:
 1. Select **Open an existing Android Studio Project**
    in the **Welcome to Android Studio** dialog,
    or select **File > Open** from the menu,
-   and select the `hello/example/android/build.gradle` file.
+   and select either the `hello/example/android/build.gradle`
+   or the `hello/example/android/build.gradle.kts` file.
 1. In the **Gradle Sync** dialog, select **OK**.
 1. In the **Android Gradle Plugin Update** dialog,
    select **Don't remind me again for this project**.
@@ -700,92 +712,37 @@ check out [Flutter in plugin tests][].
 [Flutter in plugin tests]: /testing/plugins-in-tests
 [Testing plugins]: /testing/testing-plugins
 
-## Developing FFI plugin packages {:#plugin-ffi}
+## Developing FFI packages {:#ffi}
 
 If you want to develop a package that calls into native APIs using
-Dart's FFI, you need to develop an FFI plugin package.
+Dart's FFI, you need to develop an FFI package.
 
-Both FFI plugin packages and non-FFI plugin packages support
-bundling native code. However, FFI plugin packages don't
-support method channels,
-but they _do_ support method channel registration code.
-To implement a plugin that uses both method channels
-_and_ FFI, use a non-FFI plugin.
-Each platform can use either an FFI or non-FFI platform.
+:::note
+If you need to access the Flutter Plugin API or configure a Google Play
+services runtime on Android, use the `flutter create --template=plugin`
+command instead.
+:::
 
 ### Step 1: Create the package
 
-To create a starter FFI plugin package,
-use the `--template=plugin_ffi` flag with `flutter create`:
+To create a starter FFI package,
+use the `--template=package_ffi` flag with `flutter create`:
 
 ```console
-$ flutter create --template=plugin_ffi hello
+$ flutter create --template=package_ffi hello
 ```
 
-This creates an FFI plugin project in the `hello`
+This creates an FFI package project in the `hello`
 folder with the following specialized content:
 
-**lib**: The Dart code that defines the API of the plugin,
+**lib**: The Dart code that defines the API of the package,
   and which calls into the native code using `dart:ffi`.
 
-**src**: The native source code, and a `CMakeLists.txt`
-  file for building that source code into a dynamic library.
+**src**: The native source code.
 
-**platform folders** (`android`, `ios`, `windows`, etc.): The
-  build files for building and bundling the native code
-  library with the platform application.
+**hook/build.dart**: The build hook script that compiles the native code.
 
-### Step 2: Building and bundling native code
-
-The `pubspec.yaml` specifies FFI plugins as follows:
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        ffiPlugin: true
-```
-
-This configuration invokes the native build
-for the various target platforms and bundles
-the binaries in Flutter applications using these FFI plugins.
-
-This can be combined with `dartPluginClass`,
-such as when FFI is used for the
-implementation of one platform in a federated plugin:
-
-```yaml
-  plugin:
-    implements: some_other_plugin
-    platforms:
-      some_platform:
-        dartPluginClass: SomeClass
-        ffiPlugin: true
-```
-
-A plugin can have both FFI and method channels:
-
-```yaml
-  plugin:
-    platforms:
-      some_platform:
-        pluginClass: SomeName
-        ffiPlugin: true
-```
-
-The native build systems that are invoked by FFI
-(and method channels) plugins are:
-
-* For Android: Gradle, which invokes the Android NDK for native builds.
-  * See the documentation in `android/build.gradle`.
-* For iOS and macOS: Xcode, using CocoaPods.
-  * See the documentation in `ios/hello.podspec`.
-  * See the documentation in `macos/hello.podspec`.
-* For Linux and Windows: CMake.
-  * See the documentation in `linux/CMakeLists.txt`.
-  * See the documentation in `windows/CMakeLists.txt`.
-
-### Step 3: Binding to native code
+### Step 2: Binding to native code
 
 To use the native code, bindings in Dart are needed.
 
@@ -798,10 +755,10 @@ on how to install this package.
 To regenerate the bindings, run the following command:
 
 ```console
-$ dart run ffigen --config ffigen.yaml
+$ dart run tool/ffigen.dart
 ```
 
-### Step 4: Invoking native code
+### Step 3: Invoking native code
 
 Very short-running native functions can be directly
 invoked from any isolate.
@@ -1055,6 +1012,7 @@ file, like any other Dart package.
 PENDING
 {% endcomment %}
 
+[bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html
 [Dart library package]: {{site.dart-site}}/guides/libraries/create-library-packages
 [`device_info_plus`]: {{site.pub-api}}/device_info_plus

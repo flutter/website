@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import '../util/retake_element.dart';
 import 'embedded_dartpad.dart';
-
-import 'extract_content.dart' if (dart.library.io) 'extract_content_vm.dart';
 
 /// Prepares a code block that will be replaced with an embedded
 /// DartPad when the site is loaded.
@@ -79,7 +79,16 @@ class _DartPadInjectorState extends State<DartPadInjector> {
 
     if (kIsWeb) {
       // During hydration, extract the content from the pre-rendered code block.
-      content = extractContent(context as Element);
+      final elem = retakeElement(context, (elem) {
+        return elem.tagName.toLowerCase() == 'pre';
+      });
+
+      if (elem == null) {
+        content = '';
+      } else {
+        elem.parentNode?.removeChild(elem);
+        content = elem.textContent ?? '';
+      }
     }
   }
 
@@ -94,7 +103,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
       return pre([
         code(
           attributes: {'title': component.title},
-          [text(content ?? '')],
+          [.text(content ?? '')],
         ),
       ]);
     }

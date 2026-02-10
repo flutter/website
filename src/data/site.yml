@@ -5,6 +5,12 @@ email: flutter-dev@googlegroups.com
 
 showBanner: true
 
+# The raw, inline HTML to display in the banner.
+# Is automatically wrapped in a paragraph tag.
+bannerHtml: >-
+  Check out our newly published best practices for
+  <a href="/ai/best-practices">building AI-powered apps with Flutter!</a>
+
 branch: main
 repo:
   organization: https://github.com/flutter
@@ -52,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.35.5'
+currentFlutterVersion: '3.38.6'
 
 # Settings for Jaspr.
 

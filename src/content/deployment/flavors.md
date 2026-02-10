@@ -164,6 +164,42 @@ Example:
 $ flutter build apk --flavor staging
 ```
 
+## Use flavors in Flutter code
+
+After you've configured your product flavors, you can change your app's behavior—such as pointing to different API endpoints or changing the theme—based on the active flavor.
+
+The Flutter framework provides the `appFlavor` constant, which retrieves the name of the current flavor as a `String`. This value matches the flavor name passed to the `--flavor` flag during the `flutter run` or `flutter build` process.
+
+### Access the current flavor
+
+1.  **Import the services library:**
+    To access the `appFlavor` constant, add the following import to your Dart file:
+    ```dart
+    import 'package:flutter/services.dart';
+    ```
+
+1.  **Check the flavor value:**
+    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+
+    ```dart
+    void main() {
+      // appFlavor will match the flavor name from build.gradle.kts
+      if (appFlavor == 'production') {
+        // Logic for production environment
+        Config.apiUrl = 'https://api.flavors_example.com';
+      } else if (appFlavor == 'staging') {
+        // Logic for staging environment
+        Config.apiUrl = 'https://staging.api.flavors_example.com';
+      }
+
+      runApp(const MyApp());
+    }
+    ```
+
+    :::note
+    The value of `appFlavor` matches the name of the product flavor you defined in your `build.gradle.kts` file (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
+    :::
+
 ## Customize configurations
 
 After you've added product flavors, you can customize them
@@ -348,6 +384,12 @@ in [Flutter pubspec options][].
 If you have additional build settings that you would like to
 configure for a specific Android product flavor, see
 Android's [Configure build variants][].
+
+While it is possible to set `abiFilters` in product flavors, it is not
+recommended. Instead, favor `abiFilters` in build types. When setting
+`abiFilters` in product flavors, one must use the
+`-Pdisable-abi-filtering` flag when running `flutter build` or
+`flutter run`.
 
 [Configure build variants]: https://developer.android.com/build/build-variants
 

@@ -27,49 +27,32 @@ which reflects how strongly the Flutter team recommends it.
 * **Recommend**: This practice will likely improve your app.
 * **Conditional**: This practice can improve your app in certain circumstances.
 
-{% for section in architectureRecommendations %}
-## {{section.category}}
+## Separation of concerns
 
-{{section.description}}
+You should separate your app into a UI layer and a data layer. Within those layers, 
+you should further separate logic into classes by responsibility.
 
-{% if section.recommendations.size > 0 %}
+<ArchitectureRecommendations category="separation-of-concerns" />
 
-<table class="table table-striped" style="border-bottom:1px #DADCE0 solid;">
-<thead>
-  <tr>
-    <th style="width: 30%;">Recommendation</th>
-    <th style="width: 70%;">Description</th>
-  </tr>
-</thead>
-<tbody>
-{% for rec in section.recommendations %}
-<tr>
-<td>
+## Handling data
 
-  {{rec.recommendation}}
+Handling data with care makes your code easier to understand, less error prone, and
+prevents malformed or unexpected data from being created.
 
-{% if rec.confidence == "strong" %}
-  <div class="rrec-pill success">Strongly recommend</div>
-{% elsif rec.confidence == "recommend" %}
-  <div class="rrec-pill info">Recommend</div>
-{% else %}
-  <div class="rrec-pill">Conditional</div>
-{% endif %}
+<ArchitectureRecommendations category="handling-data" />
 
-</td>
-<td>
+## App structure
 
-  {{rec.description}}
-  {{rec.confidence-description}}
+Well organized code benefits both the health of the app itself, and the team working on the code.
 
-</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
+<ArchitectureRecommendations category="app-structure" />
 
-{% endif %}
-{% endfor %}
+## Testing
+
+Good testing practices makes your app flexible. 
+It also makes it straightforward and low risk to add new logic and new UI.
+
+<ArchitectureRecommendations category="testing" />
 
 <a id="recommended-resources" aria-hidden="true"></a>
 
@@ -100,17 +83,9 @@ which reflects how strongly the Flutter team recommends it.
     Use this package to encourage good coding practices across a team.
 
 
-[Separation-of-concerns]: https://en.wikipedia.org/wiki/Separation_of_concerns
-[architecture case study]: /app-architecture/guide
-[our ChangeNotifier recommendation]: /get-started/fwe/state-management
-[other popular options]: https://docs.flutter.dev/data-and-backend/state-mgmt/options
-[freezed]: https://pub.dev/packages/freezed
-[built_value]: https://pub.dev/packages/built_value
-[Flutter Navigator API]: https://docs.flutter.dev/ui/navigation
-[pub.dev]: https://pub.dev
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
 [very_good_cli]: https://cli.vgv.dev/
-[Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/
+[Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/architecture/
 [State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
 [Flutter developer tools]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints

@@ -151,9 +151,9 @@ always start with an existing project.
 
     :::note
     Your configurations should be based on your
-    `Debug.xconfig`, `Profile.xcconfig`, and
-    `Release.xcconfig` files, not the
-    `Pods-Runner.xcconfigs` file. You can check this by
+    `Debug.xcconfig`, `Profile.xcconfig`,
+    and `Release.xcconfig` files, not the
+    `Pods-Runner.xcconfig` file. You can check this by
     expanding the configuration names in Xcode.
     :::
 
@@ -238,6 +238,36 @@ Flutter CLI using the following steps:
     ```console title="console"
     $ flutter run --flavor staging
     ```
+
+### Access the current flavor
+
+1.  **Import the services library:**
+    To access the `appFlavor` constant, add the following import to your Dart file:
+    ```dart
+    import 'package:flutter/services.dart';
+    ```
+
+1.  **Check the flavor value:**
+    Use the `appFlavor` constant in your application logic (often in `main()`) to handle flavor-specific configurations:
+
+    ```dart
+    void main() {
+      // appFlavor will match the name of the Xcode scheme
+      if (appFlavor == 'production') {
+        // Logic for production environment
+        Config.apiUrl = 'https://api.flavors_example.com';
+      } else if (appFlavor == 'staging') {
+        // Logic for staging environment
+        Config.apiUrl = 'https://staging.api.flavors_example.com';
+      }
+
+      runApp(const MyApp());
+    }
+    ```
+
+    :::note
+The value of `appFlavor` matches the name of the Xcode scheme you defined (for example, `staging` or `production`). If no flavor is specified during the build, `appFlavor` returns `null`.
+    :::
 
 ### Use the run command (Xcode)
 

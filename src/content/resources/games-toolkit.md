@@ -8,10 +8,6 @@ showBreadcrumbs: false
 The Flutter Casual Games Toolkit pulls together new and existing resources
 so you can accelerate development of games on mobile platforms.
 
-:::recommend
-Check out the latest [game updates and resources for Flutter 3.22](#updates)!
-:::
-
 This page outlines where you can find these available resources.
 
 ## Why Flutter for games?
@@ -34,7 +30,8 @@ These games respond to simple user input,
 like tapping on a card or entering a number or letter.
 These games are well suited for Flutter.
 
-_Real-time games_ cover games a series of actions require real time responses.
+_Real-time games_ cover games with a series of actions that
+require real-time responses.
 These include endless runner games, racing games, and so on.
 You might want to create a game with advanced features like collision detection,
 camera views, game loops, and the like.
@@ -45,7 +42,7 @@ These types of games could use an open source game engine like the
 
 The Casual Games Toolkit provides the following free resources.
 
-* A repository that includes three new game templates that provide
+* A repository that includes three game templates that provide
   a starting point for building a casual game.
 
   1. A [base game template][basic-template]
@@ -123,25 +120,21 @@ Are you ready? To get started:
    have a Discord account).
 1. Review the codelabs and cookbook recipes.
 
-   * {{recipeIcon}} Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
-   * {{codelab}} Build a [word puzzle][] with Flutter.—**NEW**
-   * {{codelab}} Build a [2D physics game][] with Flutter and Flame.—**NEW**
-   * {{codelab}} [Add sound and music][] to your Flutter game with SoLoud.—**NEW**
-   * {{recipeIcon}}Make your games more engaging
+   * Build a [multiplayer game][multiplayer-recipe] with Cloud Firestore.
+   * Build a [word puzzle][] with Flutter.
+   * Make your games more engaging
      with [leaderboards and achievements][leaderboard-recipe].
-   * Monetize your games with {{recipeIcon}}[in-game ads][ads-recipe]
-     and {{codelab}} [in-app purchases][iap-recipe].
+   * Monetize your games with [in-game ads][ads-recipe]
+     and [in-app purchases][iap-recipe].
    * Add user authentication flow to your game with
-     {{recipeIcon}} [Firebase Authentication][firebase-auth].
+     [Firebase Authentication][firebase-auth].
    * Collect analytics about crashes and errors inside your game
-     with {{recipeIcon}} [Firebase Crashlytics][firebase-crashlytics].
+     with [Firebase Crashlytics][firebase-crashlytics].
 
 1. Set up accounts on AdMob, Firebase, and Cloud, as needed.
 1. Write your game!
 1. Deploy to both the Google Play and Apple stores.
 
-[Add sound and music]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-[2D physics game]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
 [word puzzle]: {{site.codelabs}}/codelabs/flutter-word-puzzle
 
 ## Example games
@@ -164,25 +157,6 @@ and Very Good Ventures created new games.
 Once you feel ready to go beyond these games templates,
 investigate other resources that our community recommended.
 
-{% assign pkgIcon = '<span class="material-symbols" aria-label="Package" translate="no">package_2</span>' %}
-{% assign apiIcon = '<span class="material-symbols" aria-label="API documentation" translate="no">api</span>' %}
-{% assign docIcon = '<span class="material-symbols" aria-label="Guide" translate="no">quick_reference_all</span>' %}
-{% assign codelab = '<span class="material-symbols" aria-label="Codelab" translate="no">science</span>' %}
-{% assign engine = '<span class="material-symbols" aria-label="Game engine" translate="no">manufacturing</span>' %}
-{% assign toolIcon = '<span class="material-symbols" aria-label="Desktop application" translate="no">handyman</span>' %}
-{% assign recipeIcon = '<span class="material-symbols" aria-label="Cookbook recipe" translate="no">book_5</span>' %}
-{% assign assetsIcon = '<span class="material-symbols" aria-label="Game assets" translate="no">photo_album</span>' %}
-
-:::secondary
-{{pkgIcon}} Flutter package<br>
-{{apiIcon}} API documentation<br>
-{{codelab}} Codelab<br>
-{{recipeIcon}} Cookbook recipe<br>
-{{toolIcon}} Desktop application<br>
-{{assetsIcon}} Game assets<br>
-{{docIcon}} Guide<br>
-:::
-
 <table class="table table-striped">
 <tr>
 <th>Feature</th>
@@ -193,10 +167,10 @@ investigate other resources that our community recommended.
 <td>Animation and sprites</td>
 <td>
 
-{{recipeIcon}} [Special effects][]<br>
-{{toolIcon}} [Spriter Pro][]<br>
-{{pkgIcon}} [rive][]<br>
-{{pkgIcon}} [spriteWidget][]
+<Icon id="book_5" title="Cookbook recipe"></Icon> [Special effects][]<br>
+<Icon id="handyman" title="Desktop tool"></Icon> [Spriter Pro][]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [rive][]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [spritewidget][]
 
 </td>
 </tr>
@@ -205,7 +179,7 @@ investigate other resources that our community recommended.
 <td>App review</td>
 <td>
 
-{{pkgIcon}} [app_review][]
+<Icon id="package_2" title="Flutter package"></Icon> [app_review][]
 
 </td>
 </tr>
@@ -214,9 +188,8 @@ investigate other resources that our community recommended.
 <td>Audio</td>
 <td>
 
-{{pkgIcon}} [audioplayers][]<br>
-{{pkgIcon}} [flutter_soloud][]—**NEW**<br>
-{{codelab}}  [Add sound and music to your Flutter game with SoLoud][]—**NEW**
+<Icon id="package_2" title="Flutter package"></Icon> [audioplayers][]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [flutter_soloud][]<br>
 
 </td>
 </tr>
@@ -225,7 +198,7 @@ investigate other resources that our community recommended.
 <td>Authentication</td>
 <td>
 
-{{codelab}} [User Authentication using Firebase][firebase-auth]
+<Icon id="science" title="Codelab"></Icon> [User Authentication using Firebase][firebase-auth]
 
 </td>
 </tr>
@@ -234,7 +207,7 @@ investigate other resources that our community recommended.
 <td>Cloud services</td>
 <td>
 
-{{codelab}} [Add Firebase to your Flutter game][]
+<Icon id="science" title="Codelab"></Icon> [Add Firebase to your Flutter game][]
 
 </td>
 </tr>
@@ -243,8 +216,8 @@ investigate other resources that our community recommended.
 <td>Debugging</td>
 <td>
 
-{{docIcon}} [Firebase Crashlytics overview][firebase-crashlytics]<br>
-{{pkgIcon}} [firebase_crashlytics][]
+<Icon id="quick_reference_all" title="Guide"></Icon> [Firebase Crashlytics overview][firebase-crashlytics]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [firebase_crashlytics][]
 
 </td>
 </tr>
@@ -253,7 +226,7 @@ investigate other resources that our community recommended.
 <td>Drivers</td>
 <td>
 
-{{pkgIcon}} [win32_gamepad][]
+<Icon id="package_2" title="Flutter package"></Icon> [win32_gamepad][]
 
 </td>
 </tr>
@@ -262,9 +235,9 @@ investigate other resources that our community recommended.
 <td>Game assets<br>and asset tools</td>
 <td>
 
-{{assetsIcon}} [CraftPix][]<br>
-{{assetsIcon}} [Game Developer Studio][]<br>
-{{toolIcon}} [GIMP][]
+<Icon id="photo_album" title="Game assets"></Icon> [CraftPix][]<br>
+<Icon id="photo_album" title="Game assets"></Icon> [Game Developer Studio][]<br>
+<Icon id="handyman" title="Desktop tool"></Icon> [GIMP][]
 
 </td>
 </tr>
@@ -273,9 +246,9 @@ investigate other resources that our community recommended.
 <td>Game engines</td>
 <td>
 
-{{pkgIcon}} [Flame][flame-pkg]<br>
-{{pkgIcon}} [Bonfire][bonfire-pkg]<br>
-{{pkgIcon}} [forge2d][]
+<Icon id="package_2" title="Flutter package"></Icon> [Flame][flame-pkg]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [Bonfire][bonfire-pkg]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [forge2d][]
 
 </td>
 </tr>
@@ -284,8 +257,8 @@ investigate other resources that our community recommended.
 <td>Game features</td>
 <td>
 
-{{recipeIcon}} [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
-{{recipeIcon}} [Add multiplayer support to your game][multiplayer-recipe]
+<Icon id="book_5" title="Cookbook recipe"></Icon> [Add achievements and leaderboards to your game][leaderboard-recipe]<br>
+<Icon id="book_5" title="Cookbook recipe"></Icon> [Add multiplayer support to your game][multiplayer-recipe]
 
 </td>
 </tr>
@@ -294,16 +267,7 @@ investigate other resources that our community recommended.
 <td>Game services integration</td>
 <td>
 
-{{pkgIcon}} [games_services][game-svc-pkg]
-
-</td>
-</tr>
-
-<tr>
-<td>Legacy code</td>
-<td>
-
-{{codelab}} [Use the Foreign Function Interface in a Flutter plugin][]
+<Icon id="package_2" title="Flutter package"></Icon> [games_services][game-svc-pkg]
 
 </td>
 </tr>
@@ -312,7 +276,7 @@ investigate other resources that our community recommended.
 <td>Level editor</td>
 <td>
 
-{{toolIcon}} [Tiled][]
+<Icon id="handyman" title="Desktop tool"></Icon> [Tiled][]
 
 </td>
 </tr>
@@ -321,10 +285,10 @@ investigate other resources that our community recommended.
 <td>Monetization</td>
 <td>
 
-{{recipeIcon}} [Add advertising to your Flutter game][ads-recipe]<br>
-{{codelab}}  [Add AdMob ads to a Flutter app][]<br>
-{{codelab}}  [Add in-app purchases to your Flutter app][iap-recipe]<br>
-{{docIcon}} [Gaming UX and Revenue Optimizations for Apps][] (PDF)
+<Icon id="book_5" title="Cookbook recipe"></Icon> [Add advertising to your Flutter game][ads-recipe]<br>
+<Icon id="science" title="Codelab"></Icon> [Add AdMob ads to a Flutter app][]<br>
+<Icon id="science" title="Codelab"></Icon> [Add in-app purchases to your Flutter app][iap-recipe]<br>
+<Icon id="science" title="Codelab"></Icon> [Gaming UX and Revenue Optimizations for Apps][] (PDF)<br>
 
 </td>
 </tr>
@@ -333,9 +297,9 @@ investigate other resources that our community recommended.
 <td>Persistence</td>
 <td>
 
-{{pkgIcon}} [shared_preferences][]<br>
-{{pkgIcon}} [sqflite][]<br>
-{{pkgIcon}} [cbl_flutter][] (Couchbase Lite)<br>
+<Icon id="package_2" title="Flutter package"></Icon> [shared_preferences][]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [sqflite][]<br>
+<Icon id="package_2" title="Flutter package"></Icon> [cbl_flutter][] (Couchbase Lite)<br>
 
 </td>
 </tr>
@@ -344,8 +308,8 @@ investigate other resources that our community recommended.
 <td>Special effects</td>
 <td>
 
-{{apiIcon}} [Paint API][]<br>
-{{recipeIcon}} [Special effects][]
+<Icon id="api" title="API documentation"></Icon> [Paint API][]<br>
+<Icon id="book_5" title="Cookbook recipe"></Icon> [Special effects][]
 
 </td>
 </tr>
@@ -354,8 +318,7 @@ investigate other resources that our community recommended.
 <td>User Experience</td>
 <td>
 
-{{codelab}} [Build next generation UIs in Flutter][]<br>
-{{docIcon}} [Best practices for optimizing Flutter web loading speed][]—**NEW**
+<Icon id="quick_reference_all" title="Guide"></Icon> [Best practices for optimizing Flutter web loading speed][]
 
 </td>
 </tr>
@@ -387,14 +350,12 @@ investigate other resources that our community recommended.
 [runner-template]: {{site.repo.games}}/tree/main/templates/endless_runner
 
 [Add AdMob ads to a Flutter app]: {{site.codelabs}}/codelabs/admob-ads-in-flutter
-[Build next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis
 [firebase-crashlytics]: {{site.firebase}}/docs/crashlytics/get-started?platform=flutter
 [ads-recipe]: /cookbook/plugins/google-mobile-ads
 [iap-recipe]: {{site.codelabs}}/codelabs/flutter-in-app-purchases#0
 [leaderboard-recipe]: /cookbook/games/achievements-leaderboard
 [multiplayer-recipe]: /cookbook/games/firestore-multiplayer
 [firebase-auth]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps#0
-[Use the Foreign Function Interface in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
 [bonfire-pkg]: {{site.pub}}/packages/bonfire
 [CraftPix]: https://craftpix.net
 [Add Firebase to your Flutter game]: {{site.firebase}}/docs/flutter/setup
@@ -412,7 +373,7 @@ investigate other resources that our community recommended.
 [game-svc-pkg]: {{site.pub-pkg}}/games_services
 [rive]: {{site.pub-pkg}}/rive
 [shared_preferences]: {{site.pub-pkg}}/shared_preferences
-[spriteWidget]: {{site.pub-pkg}}/spritewidget
+[spritewidget]: {{site.pub-pkg}}/spritewidget
 [sqflite]: {{site.pub-pkg}}/sqflite
 [win32_gamepad]: {{site.pub-pkg}}/win32_gamepad
 [read how the game was created in 6 weeks]: {{site.flutter-blog}}/how-we-built-the-new-super-dash-demo-in-flutter-and-flame-in-just-six-weeks-9c7aa2a5ad31
@@ -420,58 +381,9 @@ investigate other resources that our community recommended.
 [web]: https://superdash.flutter.dev/
 [Tiled]: https://www.mapeditor.org/
 [flutter_soloud]: {{site.pub-pkg}}/flutter_soloud
-[SoLoud codelab]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
-
-## Games Toolkit updates for Flutter 3.22 {:#updates}
-
-The following codelabs and guides were added for
-the Flutter 3.22 release:
-
-**Low-latency, high-performance sound**
-: In collaboration with the Flutter community ([@Marco Bavagnoli][]),
-  we've enabled the SoLoud audio engine.
-  This free and portable engine delivers the low-latency and
-  high-performance sound that's essential for many games.
-  To help you get started, check out the new codelab,
-  [Add sound and music to your Flutter game with SoLoud][],
-  dedicated to adding sound and music to your game.
-
-**Word puzzle games**
-: Check out the new codelab,
-  [Build a word puzzle with Flutter][],
-  focused on building word puzzle games.
-  This genre is perfect for exploring Flutter's UI capabilities,
-  and this codelab dives into using Flutter's background processing
-  to effortlessly generate expansive crossword-style grids of
-  interlocking words without compromising the user experience.
-
-**Forge 2D physics engine**
-: The new Forge2D codelab,
-  [Build a 2D physics game with Flutter and Flame][],
-  guides you through crafting game mechanics in a
-  Flutter and Flame game using a 2D physics simulation
-  along the lines of Box2D, called [Forge2D][].
-
-**Optimize loading speed for Flutter web-based games**
-: In the fast-paced world of web-based gaming,
-  a slow loading game is a major deterrent.
-  Players expect instant gratification and will
-  quickly abandon a game that doesn't load promptly.
-  Hence, we've published a guide,
-  [Best practices for optimizing Flutter web loading speed][],
-  authored by [Cheng Lin][],
-  to help you optimize your Flutter web-based games
-  and apps for lightning-fast loading speeds.
-
-[@Marco Bavagnoli]: {{site.github}}/alnitak
-[Add sound and music to your Flutter game with SoLoud]: {{site.codelabs}}/codelabs/flutter-codelab-soloud
 [Best practices for optimizing Flutter web loading speed]: {{site.flutter-blog}}/best-practices-for-optimizing-flutter-web-loading-speed-7cc0df14ce5c
-[Build a word puzzle with Flutter]: {{site.codelabs}}/codelabs/flutter-word-puzzle
-[Build a 2D physics game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-forge2d
-[Cheng Lin]: {{site.medium}}/@mhclin113_26002
-[Forge2D]: {{site.pub-pkgs}}/forge2d
 
-## Other new resources
+## Other resources
 
 Check out the following videos:
 

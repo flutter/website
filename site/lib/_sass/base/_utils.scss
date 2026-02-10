@@ -58,8 +58,15 @@ main {
   .simple-border {
     border: 1px solid var(--site-inset-borderColor);
   }
+
+  .center {
+    display: flex;
+    justify-content: center;
+
+  }
 }
 
 .text-center {
   text-align: center;
 }
+

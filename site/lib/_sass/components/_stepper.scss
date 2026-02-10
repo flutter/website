@@ -1,0 +1,113 @@
+.stepper {
+  margin-bottom: 1rem;
+
+  >details {
+    position: relative;
+    margin: 0;
+    padding-bottom: 1px;
+
+    // Vertical line between steps
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      border-radius: 1px;
+      background: var(--site-inset-borderColor);
+      transform: translateY(2rem);
+    }
+
+    &:last-child::before {
+      transform: none;
+    }
+
+    &:last-child:not([open])::before {
+      display: none;
+    }
+
+    >summary {
+      position: relative;
+      display: flex;
+      align-items: center;
+      list-style: none;
+
+      width: 100%;
+      padding-left: 1.5rem;
+      padding-block: 1rem;
+
+      .step-number {
+        position: absolute;
+        left: -1rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background: var(--site-raised-bgColor);
+        color: var(--site-base-fgColor);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+
+        transition: background-color 300ms ease, color 300ms ease;
+      }
+
+      .step-title {
+
+        .header-wrapper,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          margin: 0;
+        }
+      }
+
+      span.material-symbols {
+        position: absolute;
+        right: 0;
+        transition: transform 300ms ease;
+        transform: rotate(180deg);
+        transform-origin: center;
+      }
+    }
+
+    &[open]>summary {
+      .step-number {
+        background-color: var(--site-primary-color);
+        color: var(--site-onPrimary-color-lightest);
+      }
+
+      span.material-symbols {
+        transform: rotate(0);
+      }
+    }
+
+    &:not([open]):has(~[open])>summary .step-number {
+      background-color: var(--site-onPrimary-color-light);
+      color: var(--site-primary-color);
+    }
+
+    .step-content {
+      margin-left: 1.5rem;
+    }
+
+    .step-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  // Non-collapsible variant: all steps stay open, no toggle interaction
+  &.non-collapsible > details > summary {
+    pointer-events: none;
+    user-select: initial;
+    cursor: default;
+
+    span.material-symbols {
+      display: none;
+    }
+  }
+}

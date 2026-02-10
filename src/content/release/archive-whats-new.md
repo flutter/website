@@ -12,6 +12,73 @@ check out the [current what's new][] page.
 
 [current what's new]: /release/whats-new
 
+---
+
+## 20 May 2025: Google I/O release 3.32
+
+Flutter 3.32 is live! For more information,
+check out the [Flutter 3.32 technical blog post][3.32-tech].
+You might also check out the [Dart 3.8 release][] blog post.
+
+[3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-32-40c1086bab6e
+[Dart 3.8 release]: {{site.medium}}/dartlang/announcing-dart-3-8-724eaaec9f47
+
+**Website update**
+
+First of all, a behind-the-scenes rewrite of the website has
+been in the works. These changes have been published incrementally,
+so you might have already noticed some of them:
+
+* Dark mode is now available
+* You can now rate each page on the site with a thumbs up
+  or thumbs down
+* The sidenav has changed and it's (hopefully) easier to find content
+* The website has been made more accessible
+* Files have been moved around (we always provide redirects)
+
+**Docs updated or added since the 3.29 release**
+
+* An updated [Flutter on iOS][] page.
+* We have a new [workflow for installing Flutter][] on the various
+  development platforms. This continues to be a work in progress,
+  so stay tuned.
+* A new page on how you can use the new DevTools feature,
+  [Flutter Property Editor][].
+  The [VS Code][] and [Android Studio/IntelliJ][] instructions
+  are also updated on how to use this feature.
+* The website is updated to explain how
+  you can [use hot reload on web][] behind a flag.
+  For this release, hot reload on web is an experimental feature.
+* A new page on [adding iOS app extensions][].
+* A completely rewritten page for
+  [setting up Flutter flavors for iOS and macOS][].
+* A new page for [setting up Flutter flavors for Android][].
+* The Cupertino instructions were updated for the
+  [Place a floating app bar above a list][floating-app-bar]
+  cookbook recipe.
+* You can now
+  [improve accessibility of your apps with SemanticRoles][semantic-roles].
+* Also, don't forget to check out the [breaking changes][bc-3.32]
+  page for this release. That's also where you'll find useful
+  migration info.
+
+[Architectural overview page]: /resources/architectural-overview
+[bc-3.32]: /release/breaking-changes#released-in-flutter-3-32
+
+[adding iOS app extensions]: /platform-integration/ios/app-extensions
+[Android Studio/IntelliJ]: /tools/android-studio#property-editor
+[floating-app-bar]: /cookbook/lists/floating-app-bar
+[Flutter on iOS]: https://flutter.dev/multi-platform/ios
+[Flutter Property Editor]: /tools/property-editor
+[semantic-roles]: /ui/accessibility/web-accessibility#enhancing-accessibility-with-semantic-roles
+[setting up Flutter flavors for Android]: /deployment/flavors
+[setting up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
+[use hot reload on web]: /platform-integration/web/building#hot-reload-web
+[VS Code]: /tools/vs-code#property-editor
+[workflow for installing Flutter]: /install
+
+---
+
 ## 12 February 2025: 3.29 release
 
 Flutter 3.29 is live! For more information,
@@ -124,12 +191,12 @@ This website release includes several important updates!
 [Can I use Impeller?]: {{site.main-url}}/go/can-i-use-impeller
 [deep-linking-tool]: /tools/devtools/deep-links
 [design patterns]: /app-architecture/design-patterns
-[Flutter AI Toolkit]: /ai-toolkit
-[fwe]: /get-started/fundamentals
+[Flutter AI Toolkit]: /ai/ai-toolkit
+[fwe]: /learn/pathway
 [Interactive Media Ads]: {{site.pub-pkg}}/interactive_media_ads
 [jc]: /platform-integration/android/compose-activity
 [jetpack-api]: /platform-integration/android/call-jetpack-apis
-[Intro to Dart]: /get-started/fundamentals/dart
+[Intro to Dart]: {{site.dart-site}}/tutorials
 [plugin-authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
 [web renderers]: /platform-integration/web/renderers
@@ -192,12 +259,12 @@ This website release includes several important updates!
 [DevTools 2.37.2]: /tools/devtools/release-notes/release-notes-2.37.2
 [Embedding Flutter on the web]: /platform-integration/web/embedding-flutter-web
 [Embedding web content into a Flutter app]: /platform-integration/web/web-content-in-flutter
-[Flutter fundamentals docs]: /get-started/fundamentals
-[Widgets]: /get-started/fundamentals/widgets
+[Flutter fundamentals docs]: /learn/pathway
+[Widgets]: /learn/pathway/tutorial/widget-fundamentals
 [iOS app extension]: /platform-integration/ios/app-extensions
 [iOS plugins]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 [iOS apps]: /packages-and-plugins/swift-package-manager/for-app-developers
-[Layout]: /get-started/fundamentals/layout
+[Layout]: /learn/pathway/tutorial/layout
 [predictive back gesture]: /platform-integration/android/predictive-back
 [Tinted app icons]: /deployment/ios#add-an-app-icon
 
@@ -269,7 +336,7 @@ To learn more, check out [dart.dev/go/macros][].
 
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
-[Flutter fundamentals docs]: /get-started/fundamentals
+[Flutter fundamentals docs]: /learn/pathway
 [Flutter install]: /get-started
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
@@ -575,17 +642,17 @@ The following codelabs have been published since Flutter 3.7:
   Discover Dart 3's new records and patterns features.
   Learn how you can use them in a Flutter app to help you
   write more readable and maintainable Dart code.
-* [Building next generation UIs in Flutter][]<br>
+* [Building next generation UIs in Flutter][] _(Now archived)_ <br>
   Learn how to build a Flutter app that uses the power of `flutter_animate`,
   fragment shaders, and particle fields. You will craft a user interface that
   evokes those science fiction movies and TV shows we all love
   watching when we aren't coding.
-* [Create haikus about Google products with the PaLM API and Flutter][]<br> **NEW**
+* [Create haikus about Google products with the PaLM API and Flutter][]<br>
   Learn how to build an app that uses the PaLM API to generate haikus
   based on Google product names. The PaLM API gives you access to Google's
   state-of-the-art large language models.
 
-[Building next generation UIs in Flutter]: {{site.codelabs}}/codelabs/flutter-next-gen-uis#0
+[Building next generation UIs in Flutter]: https://web.archive.org/web/20251126130753/https://codelabs.developers.google.com/codelabs/flutter-next-gen-uis
 [Records and Patterns in Dart 3]: {{site.codelabs}}/codelabs/dart-patterns-records
 [Create haikus about Google products with the PaLM API and Flutter]: {{site.codelabs}}/haiku-generator
 
@@ -715,7 +782,7 @@ We have new codelabs since the last stable release:
   The final app is responsive to different screen sizes.
   (Note that this codelab replaces the previous "Write
   your first Flutter codelab for mobile, part 1 and part 2.")
-* [Using FFI in a Flutter plugin][]<br>
+* [Using FFI in a Flutter plugin][] _(Now archived)_ <br>
   Dart's FFI (foreign function interface) allows Flutter apps
   to use of existing native libraries that expose a C API.
   Dart supports FFI on Android, iOS, Windows, macOS, and Linux.
@@ -731,7 +798,7 @@ We have new codelabs since the last stable release:
   and Google Sign In authorization to a Flutter app. You'll also learn
   how to set up a Firebase project,
   and use the FlutterFire CLI to initialize Firebase in your Flutter app.
-* [Local development for your Flutter apps using the Firebase Emulator Suite][]<br>
+* [Local development for your Flutter apps using the Firebase Emulator Suite][] _(Now archived)_ <br>
   Learn how to use the Firebase Emulator Suite with Flutter during local development,
   including how to use email-password authentication with the Emulator Suite,
   and how to read and write data to the Firestore emulator. Also, you'll import
@@ -746,8 +813,8 @@ to reflect the latest available codelabs.
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
 [codelabs & workshops]: /reference/learning-resources
-[Local development for your Flutter apps using the Firebase Emulator Suite]: {{site.firebase}}/codelabs/get-started-firebase-emulators-and-flutter
-[Using FFI in a Flutter plugin]: {{site.codelabs}}/codelabs/flutter-ffigen
+[Local development for your Flutter apps using the Firebase Emulator Suite]: https://web.archive.org/web/20251102002913/https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
+[Using FFI in a Flutter plugin]: https://web.archive.org/web/20250908035316/https://codelabs.developers.google.com/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
 
 **Articles**
@@ -890,7 +957,7 @@ and the [Flutter 3 release notes][].
 
 We have a new codelab since the last stable release:
 
-* [Take your Flutter app from boring to beautiful][]
+* [Take your Flutter app from boring to beautiful][] _(Now archived)_ <br>
   Learn how to use features in Material 3 to make your
   more beautiful _and_ more responsive.
 
@@ -898,7 +965,7 @@ Also, check out the workshops written by our GDEs
 and available on the [Flutter community blog][].
 
 [Flutter community blog]: {{site.medium}}/@flutter_community/622b52f70173
-[Take your Flutter app from boring to beautiful]: {{site.codelabs}}/codelabs/flutter-boring-to-beautiful
+[Take your Flutter app from boring to beautiful]: https://web.archive.org/web/20251204045151/https://codelabs.developers.google.com/codelabs/flutter-boring-to-beautiful
 
 **Videos**
 
@@ -1284,10 +1351,10 @@ we wrote new codelabs and updated existing codelabs.
 New codelabs include:
 
 * [Adding Admob Ads to a Flutter app][]
-* [How to write a Flutter plugin][]
+* [How to write a Flutter plugin][] _(Now archived)_
 * [Multi-platform Firestore Flutter][]
-* [Using a plugin with a Flutter web app][]
-* [Write a Flutter desktop application][]
+* [Using a plugin with a Flutter web app][] _(Now archived)_
+* [Write a Flutter desktop application][] _(Now archived)_
 
 For a complete list, see [Flutter codelabs][].
 
@@ -1336,7 +1403,7 @@ publication since the last stable release:
 [Flutter Performance Updates in 2019]: {{site.flutter-blog}}/going-deeper-with-flutters-web-support-66d7ad95eb5224
 [Going deeper with Flutter's web support]: {{site.flutter-blog}}/going-deeper-with-flutters-web-support-66d7ad95eb52
 [Handling 404: Page not found error in Flutter]: {{site.flutter-blog}}/handling-404-page-not-found-error-in-flutter-731f5a9fba29
-[How to write a Flutter plugin]: {{site.codelabs}}/codelabs/write-flutter-plugin
+[How to write a Flutter plugin]: https://web.archive.org/web/20250908035316/https://codelabs.developers.google.com/codelabs/flutter-ffigen
 [Managing issues in a large-scale open source project]: {{site.flutter-blog}}/managing-issues-in-a-large-scale-open-source-project-b3be6eecae2b
 [How to debug layout issues with the Flutter Inspector]: {{site.flutter-blog}}/how-to-debug-layout-issues-with-the-flutter-inspector-87460a7b9db
 [Multi-platform Firestore Flutter]: {{site.codelabs}}/codelabs/friendlyeats-flutter/
@@ -1346,11 +1413,11 @@ publication since the last stable release:
 [Two Months of #FlutterGoodNewsWednesday]: {{site.flutter-blog}}/two-months-of-fluttergoodnewswednesday-a12e60bab782
 [ubuntu]: {{site.flutter-blog}}/announcing-flutter-linux-alpha-with-canonical-19eb824590a9
 [Understanding null safety]: {{site.dart-site}}/null-safety/understanding-null-safety
-[Using a plugin with a Flutter web app]: {{site.codelabs}}/codelabs/web-url-launcher/
+[Using a plugin with a Flutter web app]: https://web.archive.org/web/20230927112932/https://codelabs.developers.google.com/codelabs/web-url-launcher
 [web-perf]: {{site.flutter-blog}}/improving-perceived-performance-with-image-placeholders-precaching-and-disabled-navigation-6b3601087a2b
 [What's new with the Slider widget?]: {{site.flutter-blog}}/whats-new-with-the-slider-widget-ce48a22611a3
 [What we learned from the Flutter Q2 2020 survey]: {{site.flutter-blog}}/what-we-learned-from-the-flutter-q2-2020-survey-a4f1fc8faac9
-[Write a Flutter desktop application]: {{site.codelabs}}/codelabs/flutter-github-graphql-client/
+[Write a Flutter desktop application]: https://web.archive.org/web/20250908033205/https://codelabs.developers.google.com/codelabs/flutter-github-client
 
 ## 06 May 2020: Work-From-Home: 1.17 release
 

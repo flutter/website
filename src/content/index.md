@@ -4,14 +4,28 @@ shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.
+sidenav: default
 ---
 
 <div class="card-grid">
-{% for card in docsCards -%}
-  <Card title="{{card.name}}" link="{{card.url}}" outlined="true">
-    {{card.description}}
+  <Card title="Get started" link="/get-started" outlined="true">
+    Set up your environment and start building.
   </Card>
-{% endfor -%}
+  <Card title="Widget catalog" link="/ui/widgets" outlined="true">
+    Dip into the rich set of Flutter widgets available in the SDK.
+  </Card>
+  <Card title="API docs" link="{{site.api}}" outlined="true">
+    Bookmark the API reference docs for the Flutter framework.
+  </Card>
+  <Card title="Learning resources" link="/learn" outlined="true">
+    Browse tutorials, sample code, workshops, and recipes.
+  </Card>
+  <Card title="Videos" link="https://www.youtube.com/@flutterdev" outlined="true">
+    View the many videos on the Flutter YouTube channel.
+  </Card>
+  <Card title="Create with AI" link="/ai/create-with-ai" outlined="true">
+    Learn how to build with and integrate powerful AI tools.
+  </Card>
 </div>
 
 **To see changes to the site since our last release,
@@ -22,18 +36,7 @@ see [What's new][].**
 ## New to Flutter?
 
 Ready to build beautiful, multiplatform apps from a single codebase?
-This video walks you through the fundamentals of Flutter and shows you how to get started.
-
-Once you've [Set up Flutter][],
-you should follow the
-[Write your first Flutter app][] codelab
-and read [Flutter fundamentals][].
-These resources are opinionated documentation
-that guide you through the most important
-parts of building a Flutter app.
-
-[Write your first Flutter app]: /get-started/codelab
-[Flutter fundamentals]: /get-started/fundamentals
+First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
 
 ### Docs
 
@@ -60,7 +63,6 @@ Coming from another platform? Check out Flutter for:
 [Android]: /get-started/flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
-[Set up Flutter]: /get-started
 [interactivity]: /ui/interactivity
 [SwiftUI]: /get-started/flutter-for/swiftui-devs
 [UIKit]: /get-started/flutter-for/uikit-devs
@@ -71,30 +73,28 @@ Coming from another platform? Check out Flutter for:
 ### Videos
 
 <div class="video-wrapper">
-  <span class="video-intro">Check out what's new in Flutter at Google I/O 2025!</span>
-  <YouTubeEmbed id="v6Rzo5khNE8" title="What's new in Flutter" fullWidth></YouTubeEmbed>
+  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
+  <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
-For more Flutter at Google I/O 2025, check out
-[How to build agentic apps with Flutter and Firebase AI Logic][]
-and [How Flutter makes the most of your platforms][].
+For more of the latest on Dart, Flutter, and the Future of Apps, check out
+the other technical sessions from [FlutterFlightPlans][], like these!
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="xo271p-Fl_4" title="How to build agentic apps with Flutter and Firebase AI Logic"></YouTubeEmbed>
+      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="flwULzNYRac" title="How Flutter makes the most of your platforms"></YouTubeEmbed>
+      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[How to build agentic apps with Flutter and Firebase AI Logic]: {{site.yt.watch}}?v=xo271p-Fl_4
-[How Flutter makes the most of your platforms]: {{site.yt.watch}}?v=flwULzNYRac
+[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
 
 To learn about all of the Flutter video series, see our [videos][] page.
 

@@ -7,7 +7,9 @@ import 'package:build/build.dart';
 import 'package:crypto/crypto.dart';
 
 class StylesHashBuilder implements Builder {
-  const StylesHashBuilder();
+  const StylesHashBuilder(this.options);
+
+  final BuilderOptions options;
 
   @override
   Map<String, List<String>> get buildExtensions => {
@@ -16,10 +18,16 @@ class StylesHashBuilder implements Builder {
 
   @override
   Future<void> build(BuildStep buildStep) async {
-    final inputId = buildStep.inputId;
-    final bytes = await buildStep.readAsBytes(inputId);
-    final digest = sha256.convert(bytes);
-    final hashString = base64.encode(digest.bytes).substring(0, 12);
+    final String hashString;
+
+    if (options.config['fixed_hash'] == true) {
+      hashString = '';
+    } else {
+      final inputId = buildStep.inputId;
+      final bytes = await buildStep.readAsBytes(inputId);
+      final digest = sha256.convert(bytes);
+      hashString = base64.encode(digest.bytes).substring(0, 12);
+    }
 
     final outputContent =
         """

@@ -63,7 +63,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.9.0
+  sdk: ^3.10.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -146,7 +146,7 @@ The `asset` field has this structure:
 flutter:
   assets:
     - [ path_to_file | path_to_directory ]
-      [ flavor_path_field ]
+      [ flavor_path_field | platform_path_field ]
     [...]
 ```
 
@@ -167,6 +167,13 @@ flutter:
   - flavor_name
 ```
 
+```yaml
+# platform_path_field structure
+- path: path/to/file
+  platforms:
+    - platform_name
+```
+
 Subfields of `assets`:
 
 * `path_to_file`: A string that represents the path to
@@ -175,11 +182,16 @@ Subfields of `assets`:
   a directory.
 * `flavor_path_field`: A path field and its flavor
   subfields.
-* `path`: The path to a directory.
+* `platform_path_field`: A path field and its platform
+  subfields.
+* `path`: The path to an asset file or directory.
 * `flavors`: A list of flutter flavors to use with assets
   at a specific path. To learn more about
   flavors, see [Set up flavors for iOS and macOS] and
   [Set up flavors for Android].
+* `platforms`: A list of platforms to use with assets at a
+  specific path. Valid values are `android`, `ios`, `web`, `linux`,
+  `macos`, and `windows`.
 
 You can pass in a path to a file:
 
@@ -212,6 +224,21 @@ flutter:
     - path: assets/flavor_c/images
       flavors:
       - flavor_c
+```
+
+You can pass in a path to a file for specific platforms:
+
+```yaml title="pubspec.yaml"
+flutter:
+  assets:
+    - path: assets/web_worker.js
+      platforms:
+        - web
+    - path: assets/desktop_icon.png
+      platforms:
+        - windows
+        - linux
+        - macos
 ```
 
 [Set up flavors for iOS and macOS]: /deployment/flavors-ios

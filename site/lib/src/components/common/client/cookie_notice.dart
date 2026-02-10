@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
@@ -26,17 +27,27 @@ final class _CookieNoticeState extends State<CookieNotice> {
   void initState() {
     if (kIsWeb) {
       var shouldShowNotice = true;
-      if (web.window.localStorage.getItem(_cookieStorageKey)
-          case final lastConsentedMs?) {
-        if (int.tryParse(lastConsentedMs) case final msFromEpoch?) {
-          final consentedDateTime = DateTime.fromMillisecondsSinceEpoch(
-            msFromEpoch,
-          );
-          final difference = consentedDateTime.difference(DateTime.now());
-          if (difference.inDays < 180) {
-            // If consented less than 180 days ago, don't show the notice.
-            shouldShowNotice = false;
+      try {
+        final storedConsent = web.window.localStorage.getItem(
+          _cookieStorageKey,
+        );
+        if (storedConsent case final lastConsentedMs?) {
+          if (int.tryParse(lastConsentedMs) case final msFromEpoch?) {
+            final consentedDateTime = DateTime.fromMillisecondsSinceEpoch(
+              msFromEpoch,
+            );
+            final difference = consentedDateTime.difference(DateTime.now());
+            if (difference.inDays < 180) {
+              // If consented less than 180 days ago, don't show the notice.
+              shouldShowNotice = false;
+            }
           }
+        }
+      } catch (e) {
+        // If localStorage is unavailable or throws an error,
+        // keep the `shouldShowNotice` to true.
+        if (kDebugMode) {
+          print('Failed to get stored content: $e');
         }
       }
 
@@ -53,8 +64,8 @@ final class _CookieNoticeState extends State<CookieNotice> {
       attributes: {'data-nosnippet': 'true'},
       [
         div(classes: 'container', [
-          p([
-            text(
+          const p([
+            .text(
               'docs.flutter.dev uses cookies from Google to deliver and '
               'enhance the quality of its services and to analyze traffic.',
             ),
@@ -69,10 +80,16 @@ final class _CookieNoticeState extends State<CookieNotice> {
               content: 'OK, got it',
               style: ButtonStyle.filled,
               onClick: () {
-                web.window.localStorage.setItem(
-                  _cookieStorageKey,
-                  DateTime.now().millisecondsSinceEpoch.toString(),
-                );
+                try {
+                  web.window.localStorage.setItem(
+                    _cookieStorageKey,
+                    DateTime.now().millisecondsSinceEpoch.toString(),
+                  );
+                } catch (e) {
+                  if (kDebugMode) {
+                    print('Failed to set stored consent: $e');
+                  }
+                }
                 setState(() {
                   showNotice = false;
                 });

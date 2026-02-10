@@ -142,7 +142,7 @@ To add the package `css_colors` to an app:
      so a full restart of the app might be required to avoid
      errors like `MissingPluginException` when using the package.
 
-### Removing a package dependency to an app using `flutter pub remove`
+### Removing a package dependency from an app using `flutter pub remove`
 
 To remove the package `css_colors` from an app:
 
@@ -212,13 +212,30 @@ Gradle build logic instead.
 To force the use of `guava` version `28.0`, make the following
 changes to the app's `android/build.gradle` file:
 
-```groovy
+<Tabs key="android-conflict-resolution">
+<Tab name="Kotlin">
+
+```kotlin title="android/app/build.gradle.kts"
+configurations.all {
+    resolutionStrategy {
+        force("com.google.guava:guava:28.0-android")
+    }
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="android/app/build.gradle"
 configurations.all {
     resolutionStrategy {
         force 'com.google.guava:guava:28.0-android'
     }
 }
 ```
+
+</Tab>
+</Tabs>
 
 CocoaPods doesn't currently offer dependency
 override functionality.

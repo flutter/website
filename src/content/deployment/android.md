@@ -75,13 +75,30 @@ For example:
 
 1. Add the dependency on Android's Material in `<my-app>/android/app/build.gradle.kts`:
 
-   ```groovy
-   dependencies {
-       // ...
-       implementation("com.google.android.material:material:<version>")
-       // ...
-   }
-   ```
+<Tabs key="android-material-dependency">
+<Tab name="Kotlin">
+
+```kotlin
+dependencies {
+    // ...
+    implementation("com.google.android.material:material:<version>")
+    // ...
+}
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy
+dependencies {
+    // ...
+    implementation 'com.google.android.material:material:<version>'
+    // ...
+}
+```
+
+</Tab>
+</Tabs>
 
    To find out the latest version, visit [Google Maven][maven-material].
 
@@ -207,52 +224,114 @@ To configure Gradle, edit the `<project>/android/app/build.gradle.kts` file.
 
 1. Set the `keystoreProperties` object to load the `key.properties` file.
 
-   ```kotlin diff title="[project]/android/app/build.gradle.kts"
-   + import java.util.Properties
-   + import java.io.FileInputStream
-   +
-     plugins {
-        ...
-     }
-   +
-   + val keystoreProperties = Properties()
-   + val keystorePropertiesFile = rootProject.file("key.properties")
-   + if (keystorePropertiesFile.exists()) {
-   +     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
-   + }
-   +
-     android {
-        ...
-     }
-   ```
+<Tabs key="android-keystore-properties">
+<Tab name="Kotlin">
+
+```kotlin diff title="[project]/android/app/build.gradle.kts"
++ import java.util.Properties
++ import java.io.FileInputStream
++
+  plugins {
+     ...
+  }
++
++ val keystoreProperties = Properties()
++ val keystorePropertiesFile = rootProject.file("key.properties")
++ if (keystorePropertiesFile.exists()) {
++     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
++ }
++
+  android {
+     ...
+  }
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy diff title="[project]/android/app/build.gradle"
++ import java.util.Properties
++ import java.io.FileInputStream
++
+  plugins {
+     ...
+  }
++
++ def keystoreProperties = new Properties()
++ def keystorePropertiesFile = rootProject.file('key.properties')
++ if (keystorePropertiesFile.exists()) {
++     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
++ }
++
+  android {
+     ...
+  }
+```
+
+</Tab>
+</Tabs>
 
 1. Add the signing configuration before the `buildTypes` property block
    inside the `android` property block.
 
-   ```kotlin diff title="[project]/android/app/build.gradle.kts"
-     android {
-         // ...
+<Tabs key="android-signing-config">
+<Tab name="Kotlin">
 
-   +     signingConfigs {
-   +         create("release") {
-   +             keyAlias = keystoreProperties["keyAlias"] as String
-   +             keyPassword = keystoreProperties["keyPassword"] as String
-   +             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
-   +             storePassword = keystoreProperties["storePassword"] as String
-   +         }
-   +     }
-         buildTypes {
-             release {
-                 // TODO: Add your own signing config for the release build.
-                 // Signing with the debug keys for now,
-                 // so `flutter run --release` works.
-   -             signingConfig = signingConfigs.getByName("debug")
-   +             signingConfig = signingConfigs.getByName("release")
-             }
-         }
-     ...
-     }
-   ```
+```kotlin diff title="[project]/android/app/build.gradle.kts"
+  android {
+      // ...
+
++     signingConfigs {
++         create("release") {
++             keyAlias = keystoreProperties["keyAlias"] as String
++             keyPassword = keystoreProperties["keyPassword"] as String
++             storeFile = keystoreProperties["storeFile"]?.let { file(it) }
++             storePassword = keystoreProperties["storePassword"] as String
++         }
++     }
+      buildTypes {
+          release {
+              // TODO: Add your own signing config for the release build.
+              // Signing with the debug keys for now,
+              // so `flutter run --release` works.
+-             signingConfig = signingConfigs.getByName("debug")
++             signingConfig = signingConfigs.getByName("release")
+          }
+      }
+  ...
+  }
+```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy diff title="[project]/android/app/build.gradle"
+  android {
+      // ...
+
++     signingConfigs {
++         release {
++             keyAlias = keystoreProperties['keyAlias']
++             keyPassword = keystoreProperties['keyPassword']
++             storeFile = keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
++             storePassword = keystoreProperties['storePassword']
++         }
++     }
+      buildTypes {
+          release {
+              // TODO: Add your own signing config for the release build.
+              // Signing with the debug keys for now,
+              // so `flutter run --release` works.
+-             signingConfig = signingConfigs.debug
++             signingConfig = signingConfigs.release
+          }
+      }
+  ...
+  }
+```
+
+</Tab>
+</Tabs>
 
 Flutter now signs all release builds.
 
@@ -365,13 +444,12 @@ Verify the following values:
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 [permissiontag]: {{site.android-dev}}/guide/topics/manifest/uses-permission-element
 
-## Review or change the Gradle build configuration {:#review-the-gradle-build-configuration}
+## Review the Gradle build configuration {:#review-the-gradle-build-configuration}
 
 To verify the Android build configuration,
 review the `android` block in the default
 [Gradle build script][gradlebuild].
 The default Gradle build script is found at `[project]/android/app/build.gradle.kts`.
-You can change the values of any of these properties.
 
 ```kotlin title="[project]/android/app/build.gradle.kts"
 android {
@@ -379,22 +457,20 @@ android {
     // Any value starting with "flutter." gets its value from
     // the Flutter Gradle plugin.
     // To change from these defaults, make your changes in this file.
-    [!compileSdk = flutter.compileSdkVersion!]
+    compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     ...
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        [!applicationId = "com.example.[project]"!]
+        applicationId = "com.example.[project]"
         // You can update the following values to match your application needs.
-        [!minSdk = flutter.minSdkVersion!]
-        [!targetSdk = flutter.targetSdkVersion!]
-        // These two properties use values defined elsewhere in this file.
-        // You can set these values in the property declaration
-        // or use a variable.
-        [!versionCode = flutterVersionCode.toInteger()!]
-        [!versionName = flutterVersionName!]
+        // For more information, see: https://flutter.dev/to/review-gradle-config.
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutterVersionCode.toInteger()
+        versionName = flutterVersionName
     }
 
     buildTypes {
@@ -405,36 +481,43 @@ android {
 
 [gradlebuild]: {{site.android-dev}}/studio/build/#module-level
 
-### Properties to adjust in build.gradle.kts
+### Application ID
 
-| Property             | Purpose                                                                                                                                                                                                                                                     | Default Value              |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
-| `compileSdk`         | The Android API level against which your app is compiled. This should be the highest version available. If you set this property to `31`, you run your app on a device running API `30` or earlier as long as your app makes uses no APIs specific to `31`. | |
-| `defaultConfig`      |  |  |
-| `.applicationId`     | The final, unique [application ID][] that identifies your app.                                                                                                                                                                                              |                            |
-| `.minSdk`            | The [minimum Android API level][] for which you designed your app to run.                                                                                                                                                                                   | `flutter.minSdkVersion`    |
-| `.targetSdk`         | The Android API level against which you tested your app to run. Your app should run on all Android API levels up to this one.                                                                                                                               | `flutter.targetSdkVersion` |
-| `.versionCode`       | A positive integer that sets an [internal version number][]. This number only determines which version is more recent than another. Greater numbers indicate more recent versions. App users never see this value.                                          |                            |
-| `.versionName`       | A string that your app displays as its version number. Set this property as a raw string or as a reference to a string resource.                                                                                                                            |                            |
-| `.buildToolsVersion` | The Gradle plugin specifies the default version of the Android build tools that your project uses. To specify a different version of the build tools, change this value.                                                                                    |                            |
+The `applicationId` is the unique identifier for your app on the Google Play Store
+and on developers' devices.
 
-{:.table .table-striped}
-
-To learn more about Gradle, check out the module-level build
-section in the [Gradle build file][gradlebuild].
-
-:::note
-If you use a recent version of the Android SDK,
-you might get deprecation warnings about
-`compileSdkVersion`, `minSdkVersion`, or `targetSdkVersion`.
-You can rename these properties to
-`compileSdk`, `minSdk`, and `targetSdk` respectively.
+:::important
+Review the `applicationId` in `defaultConfig` and ensure it is unique.
+Typically, this is a reverse domain name, such as `com.example.myapp`.
+Once you upload your app to the Play Store, you cannot change the Application ID.
 :::
 
-[application ID]: {{site.android-dev}}/studio/build/application-id
-[minimum Android API level]: {{site.android-dev}}/studio/publish/versioning#minsdk
-[internal version number]: {{site.android-dev}}/studio/publish/versioning
-[gradlebuild]: {{site.android-dev}}/studio/build/#module-level
+[application-id]: {{site.android-dev}}/studio/build/application-id
+
+### Android SDK versions
+
+The Flutter tooling sets default values for the Android SDK versions:
+
+*   **`compileSdk`**: The version of the Android SDK used to compile the app.
+*   **`minSdk`**: The minimum Android version that the app supports.
+*   **`targetSdk`**: The Android version the app is designed and tested to run on.
+
+These default values (`flutter.compileSdkVersion`, etc.) are managed by Flutter
+to ensure compatibility with the framework and plugins.
+You typically **do not** need to change these unless:
+
+1.  **You need a newer API**: If you are using a plugin or feature that requires a higher
+    `minSdk` than Flutter's default, you can manually set it to a higher version number
+    (for example, `minSdk = 24`).
+2.  **You need to lock versions**: If you want to prevent automatic updates to these versions
+    when upgrading Flutter, you can replace the default variables with specific integer values.
+
+### Version code and name
+
+The `versionCode` and `versionName` are automatically set from your `pubspec.yaml` file
+(using the `version: 1.0.0+1` field). You generally don't need to modify these in the Gradle file.
+
+[Version your app]: {{site.android-dev}}/studio/publish/versioning
 
 ## Build the app for release
 
@@ -527,9 +610,9 @@ From the command line:
 
 This command results in three APK files:
 
-* `[project]/build/app/outputs/apk/release/app-armeabi-v7a-release.apk`
-* `[project]/build/app/outputs/apk/release/app-arm64-v8a-release.apk`
-* `[project]/build/app/outputs/apk/release/app-x86_64-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-arm64-v8a-release.apk`
+* `[project]/build/app/outputs/flutter-apk/app-x86_64-release.apk`
 
 Removing the `--split-per-abi` flag results in a fat APK that contains
 your code compiled for _all_ the target ABIs.
@@ -635,6 +718,50 @@ panel (debug is the default):
 
 The resulting app bundle or APK files are located in
 `build/app/outputs` within your app's folder.
+
+### How to tell if an apk uses Flutter?
+
+Recommended: Using APK files
+[apkanalyzer](https://developer.android.com/tools/apkanalyzer) files list --files-only <SOME-APK>
+Then looking for a file in `/lib/<ARCH>/libflutter.so`
+
+Example:
+`apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l`
+returns any number greater than 0.
+
+**Why this works**
+Flutter depends on C++ code used by the Flutter engine. In Android,
+this code is bundled with the Flutter framework and the developer's
+Dart code as a native library called `libflutter.so`.
+The Java/Android tooling renames the `flutter` library with the `lib` prefix
+and handles library location across architectures.
+This is how some reverse engineer an APK to identify it as a Flutter app.
+
+#### Secondary Evaluation:
+Run `apkanalyzer manifest print <SOME-APK>` and look for a `<meta-data>` tag with `android:name="flutterEmbedding"`.
+The value can be `1` or `2`.
+
+Example:
+`apkanalyzer manifest print some-flutter-app.apk | grep flutterEmbedding -C 2`
+returns the following style string.
+```
+<meta-data
+   android:name="flutterEmbedding"
+   android:value="2" />
+```
+
+
+**Why this works**
+Flutter has had two different embedders, and this flag was read to determine which embedder was used.
+Flutter 3.22 removed the ability of v1 embedder apps to build.
+https://blog.flutter.dev/whats-new-in-flutter-3-22-fbde6c164fe3
+This mechanism is not recommended because it is unclear how long the `flutterEmbedding` value will
+continue to be included in all Flutter apps. Additionally, this will not work for all libraries written
+in Flutter that are imported into Android apps as AAR dependencies.
+
+#### Non-technical evaluation
+*   Download [Flutter Shark](https://play.google.com/store/apps/details?id=com.fluttershark.fluttersharkapp&pli=1) on a device and let it scan local apps.
+*   Visit the [Flutter Hunt](https://flutterhunt.com/) website.
 
 {% comment %}
 ### Are there any special considerations with add-to-app?

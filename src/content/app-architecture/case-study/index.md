@@ -91,7 +91,7 @@ The following is how the code is organized within the Compass application.
         - <shared_widgets>
       - themes/
     - <feature_name>/
-      - view_model/
+      - view_models/
         - <view_model_class>.dart
       - widgets/
         - <feature_name>_screen.dart

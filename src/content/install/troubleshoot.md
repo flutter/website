@@ -74,6 +74,38 @@ in a directory like
 Try relocating Flutter to a different folder,
 such as `C:\src\flutter`.
 
+### Invoke-Expression: You cannot call a method on a null-valued expression
+
+__What does this issue look like?__
+
+When running `flutter doctor` on Windows, you might see an error like:
+
+```plaintext
+Invoke-Expression : You cannot call a method on a null-valued expression.
+At ...\update_engine_version.ps1:60 char:20
+```
+
+__Explanation and suggestions__
+
+This error typically occurs when the `SystemRoot` environment variable is missing
+or when the PowerShell execution policy prevents the script from running correctly.
+
+To resolve this:
+
+1.  **Run as Administrator**:
+    Open your PowerShell terminal as an Administrator.
+
+2.  **Check Environment Variables**:
+    Ensure the `SystemRoot` environment variable is set (usually to `C:\Windows`). You can check its value by running `echo $env:SystemRoot` in your PowerShell terminal.
+
+3.  **Check Execution Policy**:
+    If the issue persists, you might need to adjust your execution policy.
+    Run the following command in an Administrator PowerShell window:
+
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    ```
+
 ## Android setup
 
 ### Having multiple versions of Java installed

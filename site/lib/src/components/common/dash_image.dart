@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -28,11 +29,15 @@ class DashImage with CustomComponentBase {
     final figureClass = isFigure ? attributes['class'] : null;
     final imgClass = attributes[isFigure ? 'img-class' : 'class'];
 
-    final style = [
-      if (attributes['img-style'] case final s?) s,
-      if (attributes['width'] case final w?) 'width: $w',
-      if (attributes['height'] case final h?) 'height: $h',
-    ].map((s) => s.trim()).map((s) => s.endsWith(';') ? s : '$s;').join(' ');
+    final style =
+        [
+              ?attributes['img-style'],
+              if (attributes['width'] case final w?) 'width: $w',
+              if (attributes['height'] case final h?) 'height: $h',
+            ]
+            .map((style) => style.trim())
+            .map((style) => style.endsWith(';') ? style : '$style;')
+            .join(' ');
 
     final child = Component.fragment([
       img(

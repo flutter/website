@@ -2,10 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../models/sidenav_model.dart';
 import '../../util.dart';
+import '../../utils/active_nav.dart';
 import '../common/material_icon.dart';
 
 /// The site-wide side navigation menu,
@@ -23,20 +26,73 @@ final class DashSideNav extends StatelessComponent {
   final String currentPageUrl;
 
   @override
-  Component build(BuildContext _) => div(id: 'sidenav', [
-    nav([
-      _SideNavLevel(
-        entries: navEntries,
-        parentId: 'sidenav',
-        currentLevel: 0,
-        possiblyActive: true,
-        currentPageUrl: currentPageUrl,
-        activePath: _ActiveNavigationPath.findActive(
+  Component build(BuildContext context) {
+    final activeEntry = activeNavEntry(context.page.url);
+
+    return div(id: 'sidenav', [
+      // Only show the nav items if the tutorial is active for now.
+      if (activeEntry == ActiveNavEntry.learn)
+        ul(classes: 'navbar-nav', [
+          _TopNavItem(
+            href: '/',
+            label: 'Home',
+            iconId: 'asterisk',
+            active: activeEntry == ActiveNavEntry.home,
+          ),
+          _TopNavItem(
+            href: '/learn',
+            label: 'Learn',
+            iconId: 'play_lesson',
+            active: activeEntry == ActiveNavEntry.learn,
+          ),
+          const _TopNavItem(
+            href: 'https://api.flutter.dev',
+            label: 'Reference',
+            iconId: 'api',
+          ),
+          const _SideNavDivider(),
+        ]),
+
+      nav([
+        _SideNavLevel(
           entries: navEntries,
+          parentId: 'sidenav',
+          currentLevel: 0,
+          possiblyActive: true,
           currentPageUrl: currentPageUrl,
+          activePath: _ActiveNavigationPath.findActive(
+            entries: navEntries,
+            currentPageUrl: currentPageUrl,
+          ),
         ),
-      ),
-    ]),
+      ]),
+    ]);
+  }
+}
+
+class _TopNavItem extends StatelessComponent {
+  const _TopNavItem({
+    required this.href,
+    required this.label,
+    required this.iconId,
+    this.active = false,
+  });
+
+  final String href;
+  final String label;
+  final String iconId;
+  final bool active;
+
+  @override
+  Component build(BuildContext _) => li(classes: 'nav-item', [
+    a(
+      href: href,
+      classes: ['nav-button', if (active) 'active'].toClasses,
+      [
+        MaterialIcon(iconId),
+        .text(label),
+      ],
+    ),
   ]);
 }
 
@@ -94,6 +150,7 @@ class _SideNavLevel extends StatelessComponent {
       NavLink() => _SideNavLink(
         entry,
         isActive: isInActivePath && activePath.isLeafAt(currentLevel),
+        leadingIconId: currentLevel == 0 ? entry.icon : null,
       ),
     };
   }
@@ -105,7 +162,7 @@ class _SideNavDivider extends StatelessComponent {
   const _SideNavDivider();
 
   @override
-  Component build(BuildContext _) => li(
+  Component build(BuildContext _) => const li(
     attributes: {'aria-hidden': 'true'},
     [div(classes: 'sidenav-divider', [])],
   );
@@ -117,7 +174,7 @@ class _SideNavHeader extends StatelessComponent {
   final String title;
 
   @override
-  Component build(BuildContext _) => li(classes: 'nav-header', [text(title)]);
+  Component build(BuildContext _) => li(classes: 'nav-header', [.text(title)]);
 }
 
 class _SideNavCollapsibleSection extends StatelessComponent {
@@ -141,6 +198,7 @@ class _SideNavCollapsibleSection extends StatelessComponent {
   Component build(BuildContext _) {
     // Determine if children should be shown based on hiddenChildren setting.
     final shouldShowChildren = _shouldShowChildren();
+    final showIcon = currentLevel == 0 && section.icon != null;
 
     if (!shouldShowChildren) {
       // When hiddenChildren is true and path doesn't match,
@@ -149,9 +207,14 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           ? _SideNavLink(
               NavLink(section.title, section.permalink!),
               isActive: isInActivePath,
+              leadingIconId: currentLevel == 0 ? section.icon : null,
             )
           : li(classes: 'nav-item', [
-              span(classes: 'nav-link', [text(section.title)]),
+              span(classes: 'nav-link', [
+                if (showIcon)
+                  MaterialIcon(section.icon!, classes: const ['leading']),
+                .text(section.title),
+              ]),
             ]);
     }
 
@@ -172,7 +235,11 @@ class _SideNavCollapsibleSection extends StatelessComponent {
           'aria-controls': id,
         },
         [
-          span([text(section.title)]),
+          div([
+            if (showIcon)
+              MaterialIcon(section.icon!, classes: const ['leading']),
+            span([.text(section.title)]),
+          ]),
           const MaterialIcon('expand_more', classes: ['expander']),
         ],
       ),
@@ -186,7 +253,6 @@ class _SideNavCollapsibleSection extends StatelessComponent {
         classes: [
           'nav',
           'collapse',
-          if (expanded) 'show',
         ].toClasses,
         id: id,
       ),
@@ -218,10 +284,11 @@ class _SideNavCollapsibleSection extends StatelessComponent {
 }
 
 class _SideNavLink extends StatelessComponent {
-  const _SideNavLink(this.link, {this.isActive = false});
+  const _SideNavLink(this.link, {this.isActive = false, this.leadingIconId});
 
   final NavLink link;
   final bool isActive;
+  final String? leadingIconId;
 
   @override
   Component build(BuildContext _) {
@@ -234,7 +301,9 @@ class _SideNavLink extends StatelessComponent {
         attributes: isExternal ? {'rel': 'noopener'} : null,
         [
           div([
-            span([text(link.title)]),
+            if (leadingIconId != null)
+              MaterialIcon(leadingIconId!, classes: const ['leading']),
+            span([.text(link.title)]),
             if (isExternal) const MaterialIcon('open_in_new'),
           ]),
         ],

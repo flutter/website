@@ -11,8 +11,7 @@ Find past what's new information on the
 You might also check out the
 Flutter SDK [release notes][].
 
-To stay on top of Flutter announcements including
-breaking changes,
+To stay on top of Flutter announcements including breaking changes,
 join the [flutter-announce][] Google group.
 
 For Dart, you can join the [Dart Announce][] Google group,
@@ -22,6 +21,87 @@ and review the [Dart changelog][].
 [Dart changelog]: {{site.github}}/dart-lang/sdk/blob/main/CHANGELOG.md
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
+
+## 12 November 2025: Release 3.38
+
+Flutter 3.38 is live! For details,
+check out the [Flutter 3.38 technical blog post][3.38-tech].
+
+[3.38-tech]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
+
+**Website update**
+
+A significant update to the website has recently landed!
+As with the update to the dart.dev website that landed
+earlier this year, the docs.flutter.dev website has been
+reimplemented to use [Jaspr][], a Dart web framework.
+
+Let us know what you think!
+
+[Jaspr]: https://jaspr.site/
+
+**Docs updated or added since the 3.35 release**
+
+* The Dart language now supports _dot shorthands_ syntax
+  (aka _shorthands_), which allows you to write more
+  concise code. For more information, visit the
+  [Dart dot shorthands][] page on dart.dev. Over time,
+  the samples on this website will be updated
+  to take advantage of this new feature.
+
+* The `flutter run` command now supports a configuration file
+  that allows you to specify web settings like host, port,
+  certification, and header.
+  The web dev config file also supports proxy settings,
+  making it possible to forward specific path requests
+  to another server. This makes it easier to develop a
+  web client that connects to dynamic endpoints on the same host. 
+  For more information, visit
+  [setting up a web development configuration file][web-config-file].
+
+* Development continues on the Flutter Widget Previewer tool,
+  introduced as an experimental feature in the 3.35 release.
+  For this release, the previewer better integrates with the VS Code
+  and IntelliJ IDEs (including Android Studio).
+  It's still an experimental feature.
+  For more info about the latest version, 
+  check out the [Widget Previewer tool page][].
+
+* The Flutter 3.38 release fully supports the platform releases
+  for iOS 26, Xcode 26, and macOS 26, all of which were released in September. 
+  For the most recent info on Flutter's support for iOS,
+  visit [Flutter on latest iOS][].
+
+* Flutter 3.38 supports the new Apple-mandated [UIScene lifecycle][].
+  To support this, code migration is required.
+  For more information, visit the [UIScene migration guide][].
+
+* With a focus on improving Flutter's accessibility,
+  the [accessibility docs][] have also been completely reworked. 
+
+* Also, don't forget to check out the [breaking changes][bc-3.38]
+  page for this release. That's where you'll find information
+  about breaking changes, code deprecations, and migration guides.
+
+Other relevant resources:
+
+* [3.38 release notes and changelog][]
+* [DevTools 2.51.1 release notes][]
+* [Dart 3.10 release][] blog post
+
+[3.38 release notes and changelog]: /release/release-notes/release-notes-3.38.0
+[accessibility docs]: /ui/accessibility
+[bc-3.38]: /release/breaking-changes#released-in-flutter-3-38
+[Dart 3.10 release]: https://blog.dart.dev/announcing-dart-3-10-ea8b952b6088
+[Dart dot shorthands]: {{site.dart-site}}/language/dot-shorthands
+[DevTools 2.51.1 release notes]: /tools/devtools/release-notes/release-notes-2.51.1
+[Flutter on latest iOS]: /platform-integration/ios/ios-latest
+[UIScene lifecycle]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
+[UIScene migration guide]: /release/breaking-changes/uiscenedelegate
+[Widget Previewer tool page]: /tools/widget-previewer
+[web-config-file]: /platform-integration/web/web-dev-config-file
+
+--- 
 
 ## 13 August 2025: Release 3.35
 
@@ -66,71 +146,6 @@ You might also check out the [Dart 3.9 release][] blog post.
 [hot reload]: /tools/hot-reload
 [Protect your app's sensitive content]: /platform-integration/android/sensitive-content
 [supported platforms]: /reference/supported-platforms
-
----
-
-## 20 May 2025: Google I/O release 3.32
-
-Flutter 3.32 is live! For more information,
-check out the [Flutter 3.32 technical blog post][3.32-tech].
-You might also check out the [Dart 3.8 release][] blog post.
-
-[3.32-tech]: {{site.medium}}/flutter/whats-new-in-flutter-3-32-40c1086bab6e
-[Dart 3.8 release]: {{site.medium}}/dartlang/announcing-dart-3-8-724eaaec9f47
-
-**Website update**
-
-First of all, a behind-the-scenes rewrite of the website has
-been in the works. These changes have been published incrementally,
-so you might have already noticed some of them:
-
-* Dark mode is now available
-* You can now rate each page on the site with a thumbs up
-  or thumbs down
-* The sidenav has changed and it's (hopefully) easier to find content
-* The website has been made more accessible
-* Files have been moved around (we always provide redirects)
-
-**Docs updated or added since the 3.29 release**
-
-* An updated [Flutter on iOS][] page.
-* We have a new [workflow for installing Flutter][] on the various
-  development platforms. This continues to be a work in progress,
-  so stay tuned.
-* A new page on how you can use the new DevTools feature,
-  [Flutter Property Editor][].
-  The [VS Code][] and [Android Studio/IntelliJ][] instructions
-  are also updated on how to use this feature.
-* The website is updated to explain how
-  you can [use hot reload on web][] behind a flag.
-  For this release, hot reload on web is an experimental feature.
-* A new page on [adding iOS app extensions][].
-* A completely rewritten page for
-  [setting up Flutter flavors for iOS and macOS][].
-* A new page for [setting up Flutter flavors for Android][].
-* The Cupertino instructions were updated for the
-  [Place a floating app bar above a list][floating-app-bar]
-  cookbook recipe.
-* You can now
-  [improve accessibility of your apps with SemanticRoles][semantic-roles].
-* Also, don't forget to check out the [breaking changes][bc-3.32]
-  page for this release. That's also where you'll find useful
-  migration info.
-
-[Architectural overview page]: /resources/architectural-overview
-[bc-3.32]: /release/breaking-changes#released-in-flutter-3-32
-
-[adding iOS app extensions]: /platform-integration/ios/app-extensions
-[Android Studio/IntelliJ]: /tools/android-studio#property-editor
-[floating-app-bar]: /cookbook/lists/floating-app-bar
-[Flutter on iOS]: https://flutter.dev/multi-platform/ios
-[Flutter Property Editor]: /tools/property-editor
-[semantic-roles]: /ui/accessibility/web-accessibility#enhancing-accessibility-with-semantic-roles
-[setting up Flutter flavors for Android]: /deployment/flavors
-[setting up Flutter flavors for iOS and macOS]: /deployment/flavors-ios
-[use hot reload on web]: /platform-integration/web/building#hot-reload-web
-[VS Code]: /tools/vs-code#property-editor
-[workflow for installing Flutter]: /install
 
 ---
 

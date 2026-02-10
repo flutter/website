@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../client/global_scripts.dart';
 import '../components/common/client/cookie_notice.dart';
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
@@ -21,6 +21,39 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
   @override
   String get name;
 
+  List<String> get defaultBodyClasses => [];
+
+  String get defaultSidenav => 'default';
+
+  /// Path prefix to sidenav name mapping.
+  /// More specific paths should come before less specific ones.
+  static const pathSidenavs = <String, String>{
+    '/learn': 'learn',
+    // Add future path-specific sidenavs here
+  };
+
+  /// Returns the sidenav key for a given page URL.
+  /// Priority order:
+  /// 1. Page frontmatter 'sidenav' field (if specified)
+  /// 2. Path-based sidenav (if URL matches a registered path prefix)
+  /// 3. Default sidenav
+  String getSidenavForPage(String pageUrl, String? pageSpecifiedSidenav) {
+    // Priority 1: Page-specific override from frontmatter
+    if (pageSpecifiedSidenav != null) {
+      return pageSpecifiedSidenav;
+    }
+
+    // Priority 2: Path prefix matching
+    for (final entry in pathSidenavs.entries) {
+      if (pageUrl.startsWith(entry.key)) {
+        return entry.value;
+      }
+    }
+
+    // Priority 3: Default fallback
+    return defaultSidenav;
+  }
+
   @override
   @mustCallSuper
   Iterable<Component> buildHead(Page page) {
@@ -33,24 +66,24 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
       ...super.buildHead(page),
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
-        meta(name: 'robots', content: 'noindex'),
+        const meta(name: 'robots', content: 'noindex'),
       if (pageData['canonical'] case final String canonicalUrl
           when canonicalUrl.isNotEmpty)
         link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
-        raw('<script>window.location.replace("$redirectTo");</script>'),
-      link(
+        RawText('<script>window.location.replace("$redirectTo");</script>'),
+      const link(
         rel: 'icon',
         href: '/assets/images/branding/flutter/icon/64.png',
         attributes: {'sizes': '64x64'},
       ),
-      link(
+      const link(
         rel: 'apple-touch-icon',
         href: '/assets/images/branding/flutter/logo/flutter-logomark-320px.png',
       ),
-      meta(name: 'twitter:card', content: 'summary'),
-      meta(name: 'twitter:site', content: '@flutterdev'),
+      const meta(name: 'twitter:card', content: 'summary'),
+      const meta(name: 'twitter:site', content: '@flutterdev'),
       meta(name: 'twitter:title', content: pageTitle),
       meta(
         name: 'twitter:description',
@@ -65,40 +98,40 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
         },
       ),
       meta(attributes: {'property': 'og:url', 'content': page.path}),
-      meta(
+      const meta(
         attributes: {
           'property': 'og:image',
           'content': '/assets/images/flutter-logo-sharing.png',
         },
       ),
 
-      link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
-      link(
+      const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
+      const link(
         rel: 'preconnect',
         href: 'https://fonts.gstatic.com',
         attributes: {'crossorigin': ''},
       ),
-      link(
+      const link(
         rel: 'stylesheet',
         href:
             'https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap',
       ),
-      link(
+      const link(
         rel: 'stylesheet',
         href:
             'https://fonts.googleapis.com/css2?family=Google+Sans+Mono:wght@400;500;700&display=swap',
       ),
-      link(
+      const link(
         rel: 'stylesheet',
         href:
             'https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400;500;700&display=swap',
       ),
-      link(
+      const link(
         rel: 'stylesheet',
         href:
             'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0',
       ),
-      link(
+      const link(
         rel: 'stylesheet',
         href: '/assets/css/main.css?hash=$generatedStylesHash',
       ),
@@ -110,7 +143,7 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
               src: jsUrl,
               attributes: {if (defer == 'true' || defer == true) 'defer': ''},
             ),
-      script(
+      const script(
         src:
             'https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.8.2/lite-youtube.js',
         attributes: {
@@ -123,7 +156,7 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
 
       // Set up tag manager and analytics.
       if (productionBuild)
-        raw('''
+        const RawText('''
 <meta name="google-site-verification" content="HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4">
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -152,13 +185,21 @@ ga('send', 'pageview');
     final pageData = page.data.page;
     final bodyClass = pageData['bodyClass'] as String?;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
+
+    final pageSidenav = getSidenavForPage(
+      pageUrl,
+      pageData['sidenav'] as String?,
+    );
     final sideNavEntries = switch (page.data['sidenav']) {
-      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+      final Map<String, Object?> sidenavs => switch (sidenavs[pageSidenav]) {
+        final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+        _ => null,
+      },
       _ => null,
     };
     final obsolete = pageData['obsolete'] == true;
 
-    return Component.fragment(
+    return .fragment(
       [
         const Document.html(
           attributes: {
@@ -166,33 +207,42 @@ ga('send', 'pageview');
             'dir': 'ltr',
           },
         ),
-        if (bodyClass != null) Document.body(attributes: {'class': bodyClass}),
+        if ([?bodyClass, ...defaultBodyClasses] case final bodyClasses
+            when bodyClasses.isNotEmpty)
+          Document.body(
+            attributes: {
+              'class': bodyClasses.toClasses,
+            },
+          ),
         // The theme setting logic should remain before other scripts to
         // avoid a flash of the initial theme on load.
-        raw('''
+        const RawText('''
 <script>
-const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-
-const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
-if (storedTheme === 'auto-mode') {
-  document.body.classList.add(
-      'auto-mode',
-      prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
-  );
-} else {
-  document.body.classList.add(storedTheme);
+try {
+  const storedTheme = window.localStorage.getItem('theme') ?? 'light-mode';
+  if (storedTheme === 'auto-mode') {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+    document.body.classList.add(
+        'auto-mode',
+        prefersDarkMode.matches ? 'dark-mode' : 'light-mode',
+    );
+  } else {
+    document.body.classList.add(storedTheme);
+  }
+} catch (e) {
+  // localStorage is not available, do nothing and fall back to default.
 }
 </script>
       '''),
         if (productionBuild)
-          raw(
+          const RawText(
             '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ND4LWWZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>',
           ),
-        a(
+        const a(
           id: 'skip-to-main',
           classes: 'filled-button',
           href: '#site-content-title',
-          [text('Skip to main content')],
+          [.text('Skip to main content')],
         ),
         const CookieNotice(),
         const DashHeader(),
@@ -211,9 +261,11 @@ if (storedTheme === 'auto-mode') {
               [child],
             ),
             if (obsolete)
-              div(id: 'obsolete-banner', [
+              const div(id: 'obsolete-banner', [
                 div(classes: 'text-center', [
-                  text('Some content on this page might be out of date.'),
+                  .text(
+                    'Some content on this page might be out of date.',
+                  ),
                 ]),
               ]),
           ]),
@@ -221,7 +273,7 @@ if (storedTheme === 'auto-mode') {
         ]),
         // Scroll the sidenav to the active item before other logic
         // to avoid it jumping after page load.
-        raw('''
+        const RawText('''
 <script>
 const sidenav = document.getElementById('sidenav');
 if (sidenav) {
@@ -236,7 +288,6 @@ if (sidenav) {
 }
 </script>
       '''),
-        GlobalScripts(),
       ],
     );
   }

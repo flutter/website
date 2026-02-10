@@ -1,6 +1,4 @@
-- category: Separation of concerns
-  description: |
-    You should separate your app into a UI layer and a data layer. Within those layers, you should further separate logic into classes by responsibility.
+- category: separation-of-concerns
   recommendations:
     - recommendation: Use clearly defined data and UI layers.
       description: |
@@ -28,7 +26,7 @@
       confidence: conditional
       confidence-description: |
         There are many options to handle state-management, and ultimately the decision comes down to personal preference.
-        Read about [our ChangeNotifier recommendation][] or [other popular options][].
+        Read about [our ChangeNotifier recommendation](/get-started/fwe/state-management) or [other popular options](https://docs.flutter.dev/data-and-backend/state-mgmt/options).
 
     - recommendation: Do not put logic in widgets.
       description: |
@@ -48,10 +46,7 @@
       confidence-description: |
         Use in apps with complex logic requirements.
 
-- category: Handling data
-  description: |
-    Handling data with care makes your code easier to understand, less error prone, and
-    prevents malformed or unexpected data from being created.
+- category: handling-data
   recommendations:
     - recommendation: Use unidirectional data flow.
       description: |
@@ -62,7 +57,7 @@
     - recommendation: Use `Commands` to handle events from user interaction.
       description: |
         Commands prevent rendering errors in your app, and standardize how the UI layer sends events to the data layer. 
-        Read about commands in the [architecture case study][].
+        Read about commands in the [architecture case study](/app-architecture/guide).
       confidence: recommend
 
     - recommendation: Use immutable data models.
@@ -74,7 +69,7 @@
 
     - recommendation: Use freezed or built_value to generate immutable data models.
       description: |
-        You can use packages to help generate useful functionality in your data models, [freezed][] or [built_value][]. 
+        You can use packages to help generate useful functionality in your data models, [freezed](https://pub.dev/packages/freezed) or [built_value](https://pub.dev/packages/built_value). 
         These can generate common model methods like JSON ser/des, deep equality checking and copy methods. 
         These code generation packages can add significant build time to your applications if you have a lot of models.
       confidence: recommend
@@ -85,11 +80,8 @@
       confidence: conditional
       confidence-description: Use in large apps.
 
-- category: App structure
-  description: |
-    Well organized code benefits both the health of the app itself, and the team working on the code.
+- category: app-structure
   recommendations:
-
     - recommendation: Use dependency injection.
       description: |
         Dependency injection prevents your app from having globally accessible objects, which makes your code less error prone. 
@@ -100,7 +92,7 @@
       description: |
         Go_router is the preferred way to write 90% of Flutter applications. 
         There are some specific use-cases that go_router doesn't solve, 
-        in which case you can use the [Flutter Navigator API][] directly or try other packages found on [pub.dev][].
+        in which case you can use the [Flutter Navigator API](https://docs.flutter.dev/ui/navigation) directly or try other packages found on [pub.dev](https://pub.dev).
       confidence: recommend
 
     - recommendation: Use standardized naming conventions for classes, files and directories.
@@ -126,12 +118,8 @@
         which can be used for different app environments, such as "development" and "staging".
       confidence: strong
 
-- category: Testing
-  description: |
-    Good testing practices makes your app flexible. 
-    It also makes it straightforward and low risk to add new logic and new UI.
+- category: testing
   recommendations:
-
     - recommendation: Test architectural components separately, and together.
       description: |
         * Write unit tests for every service, repository and ViewModel class. These tests should test the logic of every method individually.

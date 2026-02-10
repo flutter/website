@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -52,18 +53,20 @@ class Card extends StatelessComponent {
         attributes['title'] ??
         (throw Exception('Card component requires a "title" attribute.'));
     final outlined = attributes['outlined'] == 'true';
+    final additionalClasses = attributes['additional-classes'];
     return Card(
       header: [
         Component.element(
           tag: 'header',
           classes: 'card-title',
-          children: [text(title)],
+          children: [.text(title)],
         ),
       ],
       content: [?child],
       link: link,
-      filled: link != null,
+      filled: link != null && attributes['filled'] != 'false',
       outlined: outlined,
+      additionalClasses: additionalClasses,
     );
   }
 
@@ -88,6 +91,7 @@ class Card extends StatelessComponent {
       if (outlined) 'outlined-card',
       if (filled) 'filled-card',
       if (expandable) 'expandable-card',
+      if (expandable && !initiallyExpanded) 'collapsed',
       ?additionalClasses,
     ].toClasses;
 

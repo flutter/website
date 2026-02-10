@@ -12,39 +12,14 @@ import '../util.dart';
 ///
 /// These are temporary until they can be integrated with their
 /// relevant Jaspr components.
-@client
-final class GlobalScripts extends StatefulComponent {
-  @override
-  State<StatefulComponent> createState() => _GlobalScriptsState();
-}
-
-final class _GlobalScriptsState extends State<GlobalScripts> {
-  @override
-  void initState() {
-    if (kIsWeb) {
-      // Run setup if DOM is loaded, otherwise do it after it has loaded.
-      if (web.document.readyState == 'loading') {
-        web.document.addEventListener('DOMContentLoaded', _setUpSite.toJS);
-      } else {
-        _setUpSite();
-      }
-    }
-
-    super.initState();
-  }
-
-  @override
-  Component build(BuildContext context) => const Component.empty();
-}
-
-void _setUpSite() {
+void setUpSite() {
   _setUpSearchKeybindings();
   _setUpTabs();
   _setUpCollapsibleElements();
   _setUpExpandableCards();
   _setUpPlatformKeys();
   _setUpToc();
-  _setUpTooltips();
+  _setUpSteppers();
 }
 
 void _setUpSearchKeybindings() {
@@ -117,10 +92,16 @@ void _setUpTabs() {
           // If the tab wrapper and this tab have a save key and ID defined,
           // switch other tabs to the tab with the same ID.
           _findAndActivateTabsWithSaveId(currentSaveKey, currentSaveId);
-          web.window.localStorage.setItem(
-            'tab-save-$currentSaveKey',
-            currentSaveId,
-          );
+          try {
+            web.window.localStorage.setItem(
+              'tab-save-$currentSaveKey',
+              currentSaveId,
+            );
+          } catch (e) {
+            if (kDebugMode) {
+              print('Error accessing localStorage: $e');
+            }
+          }
         } else {
           _clearActiveTabs(tabs);
           _setActiveTab(tabElement);
@@ -129,12 +110,19 @@ void _setUpTabs() {
 
       tabElement.addEventListener('click', handleClick.toJS);
 
-      // If a tab was previously specified as selected in local storage,
-      // save a reference to it that can be switched to later.
-      if (saveId.isNotEmpty &&
-          localStorageKey != null &&
-          web.window.localStorage.getItem(localStorageKey) == saveId) {
-        tabToChangeTo = tabElement;
+      try {
+        // If a tab was previously specified as selected in local storage,
+        // save a reference to it that can be switched to later.
+        final tabSaveKey = localStorageKey != null
+            ? web.window.localStorage.getItem(localStorageKey)
+            : null;
+        if (saveId.isNotEmpty && tabSaveKey != null && tabSaveKey == saveId) {
+          tabToChangeTo = tabElement;
+        }
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage: $e');
+        }
       }
     }
 
@@ -165,8 +153,14 @@ void _updateTabsFromQueryParameters() {
 
   for (final MapEntry(:key, :value) in originalQueryParameters.entries) {
     if (key.startsWith('tab-save-')) {
-      web.window.localStorage.setItem(key, value);
-      updatedQueryParameters.remove(key);
+      try {
+        web.window.localStorage.setItem(key, value);
+        updatedQueryParameters.remove(key);
+      } catch (e) {
+        if (kDebugMode) {
+          print('Error accessing localStorage: $e');
+        }
+      }
     }
   }
 
@@ -285,10 +279,10 @@ void _setUpExpandableCards() {
       }).toJS,
     );
 
-    if (card.id != currentFragment) {
-      card.classList.add('collapsed');
-      expandButton.ariaExpanded = 'false';
-    } else {
+    // If the card is the currently specified fragment, expand it.
+    if (card.id == currentFragment) {
+      card.classList.remove('collapsed');
+      expandButton.ariaExpanded = 'true';
       targetCard = card;
     }
   }
@@ -322,78 +316,19 @@ void _setUpPlatformKeys() {
 /// Enables a "back to top" button in the TOC header.
 void _setUpToc() {
   _setUpTocActiveObserver();
-  _setUpInlineTocDropdown();
 }
 
-void _setUpInlineTocDropdown() {
-  final inlineToc = web.document.getElementById('toc-top');
-  if (inlineToc == null) return;
-
-  final dropdownButton = inlineToc.querySelector('.dropdown-button');
-  final dropdownMenu = inlineToc.querySelector('.dropdown-content');
-  if (dropdownButton == null || dropdownMenu == null) return;
-
-  void closeMenu() {
-    inlineToc.setAttribute('data-expanded', 'false');
-    dropdownButton.ariaExpanded = 'false';
-  }
-
-  dropdownButton.addEventListener(
-    'click',
-    ((web.Event _) {
-      if (inlineToc.getAttribute('data-expanded') == 'true') {
-        closeMenu();
-      } else {
-        inlineToc.setAttribute('data-expanded', 'true');
-        dropdownButton.ariaExpanded = 'true';
-      }
-    }).toJS,
-  );
-
-  web.document.addEventListener(
-    'keydown',
-    ((web.KeyboardEvent event) {
-      if (event.key == 'Escape') {
-        closeMenu();
-      }
-    }).toJS,
-  );
-
-  // Close the dropdown if any link in the TOC is navigated to.
-  final inlineTocLinks = inlineToc.querySelectorAll('a');
-  for (var i = 0; i < inlineTocLinks.length; i++) {
-    final tocLink = inlineTocLinks.item(i) as web.Element;
-    tocLink.addEventListener(
-      'click',
-      ((web.Event _) {
-        closeMenu();
-      }).toJS,
-    );
-  }
-
-  // Close the dropdown if anywhere not in the inline TOC is clicked.
-  web.document.addEventListener(
-    'click',
-    ((web.Event event) {
-      if ((event.target as web.Element).closest('#toc-top') != null) {
-        return;
-      }
-      closeMenu();
-    }).toJS,
-  );
-}
+final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
 
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
     'article .header-wrapper, #site-content-title',
   );
-  final currentHeaderText = web.document.getElementById('current-header');
 
   // No need to have toc scrollspy if there is only one non-title heading.
-  if (headings.length < 2 || currentHeaderText == null) return;
+  if (headings.length < 2) return;
 
   final visibleAnchors = <String>{};
-  final initialHeaderText = currentHeaderText.textContent;
 
   final observer = web.IntersectionObserver(
     ((JSArray<web.IntersectionObserverEntry> entries) {
@@ -414,12 +349,12 @@ void _setUpTocActiveObserver() {
 
         // If the page title is visible, set the current header to its contents.
         if (visibleAnchors.contains('document-title')) {
-          currentHeaderText.textContent = initialHeaderText;
+          currentPageHeading.value = null;
           isFirst = false;
         }
 
         final tocLinks = web.document.querySelectorAll(
-          '.site-toc .sidenav-item a',
+          '.toc-list .sidenav-item a',
         );
         for (var i = 0; i < tocLinks.length; i++) {
           final tocLink = tocLinks.item(i) as web.Element;
@@ -433,7 +368,7 @@ void _setUpTocActiveObserver() {
             sidenavItem.classList.add('active');
 
             if (isFirst) {
-              currentHeaderText.textContent = tocLink.textContent;
+              currentPageHeading.value = tocLink.textContent!;
               isFirst = false;
             }
           } else {
@@ -450,92 +385,79 @@ void _setUpTocActiveObserver() {
   }
 }
 
-void _setUpTooltips() {
-  final tooltipWrappers = web.document.querySelectorAll('.tooltip-wrapper');
+void _setUpSteppers() {
+  final steppers = web.document.querySelectorAll('.stepper');
 
-  final isTouchscreen = web.window.matchMedia('(pointer: coarse)').matches;
+  for (var i = 0; i < steppers.length; i++) {
+    final stepper = steppers.item(i) as web.HTMLElement;
 
-  void setup({required bool setUpClickListener}) {
-    for (var i = 0; i < tooltipWrappers.length; i++) {
-      final linkWrapper = tooltipWrappers.item(i) as web.HTMLElement;
-      final target = linkWrapper.querySelector('.tooltip-target');
-      final tooltip = linkWrapper.querySelector('.tooltip') as web.HTMLElement?;
+    final collapsible = !stepper.classList.contains('non-collapsible');
 
-      if (target == null || tooltip == null) {
-        continue;
+    final children = stepper.childNodes;
+    final steps = [
+      for (var j = 0; j < children.length; j++)
+        if (children.item(j) case web.Element(
+          nodeType: web.Node.ELEMENT_NODE,
+          tagName: 'DETAILS',
+        ))
+          children.item(j) as web.HTMLDetailsElement,
+    ];
+
+    for (var j = 0; j < steps.length; j++) {
+      final step = steps[j];
+
+      if (collapsible) {
+        step.addEventListener(
+          'toggle',
+          ((web.Event e) {
+            // Close all other steps when one is opened.
+            if (step.open) {
+              for (var k = 0; k < steps.length; k++) {
+                final otherStep = steps[k];
+                if (otherStep != step) {
+                  otherStep.open = false;
+                }
+              }
+            }
+          }).toJS,
+        );
       }
-      _ensureVisible(tooltip);
 
-      if (setUpClickListener && isTouchscreen) {
-        // On touchscreen devices, toggle tooltip visibility on tap.
-        target.addEventListener(
+      final nextButton = step.querySelector('.next-step-button');
+      if (nextButton != null) {
+        nextButton.addEventListener(
           'click',
           ((web.Event e) {
-            final isVisible = tooltip.classList.contains('visible');
-            if (!isVisible) {
-              tooltip.classList.add('visible');
-              e.preventDefault();
+            e.preventDefault();
+            if (collapsible) {
+              step.open = false;
+            }
+            _scrollTo(step, smooth: false);
+            if (j + 1 < steps.length) {
+              final nextStep = steps[j + 1];
+              nextStep.open = true;
+              _scrollTo(nextStep, smooth: true);
             }
           }).toJS,
         );
       }
     }
   }
-
-  void closeAll() {
-    final visibleTooltips = web.document.querySelectorAll(
-      '.tooltip.visible',
-    );
-    for (var i = 0; i < visibleTooltips.length; i++) {
-      final tooltip = visibleTooltips.item(i) as web.HTMLElement;
-      tooltip.classList.remove('visible');
-    }
-  }
-
-  setup(setUpClickListener: true);
-
-  // Reposition tooltips on window resize.
-  web.EventStreamProviders.resizeEvent.forTarget(web.window).listen((_) {
-    setup(setUpClickListener: false);
-  });
-
-  // Close tooltips when clicking outside of any tooltip wrapper.
-  web.EventStreamProviders.clickEvent.forTarget(web.document).listen((e) {
-    if ((e.target as web.Element).closest('.tooltip-wrapper') == null) {
-      closeAll();
-    }
-  });
-
-  // On touchscreen devices, close tooltips when scrolling.
-  if (isTouchscreen) {
-    web.EventStreamProviders.scrollEvent.forTarget(web.window).listen((_) {
-      closeAll();
-    });
-  }
 }
 
-/// Adjust the tooltip position to ensure it is fully inside the
-/// ancestor .content element.
-void _ensureVisible(web.HTMLElement tooltip) {
-  final containerRect = tooltip.closest('.content')?.getBoundingClientRect();
-  final tooltipRect = tooltip.getBoundingClientRect();
-  final offset = double.parse(tooltip.getAttribute('data-adjusted') ?? '0');
+void _scrollTo(web.Element element, {required bool smooth}) {
+  // Scroll the next step into view, accounting for the fixed header and toc.
+  final headerOffset =
+      web.document.getElementById('site-header')?.clientHeight ?? 0;
+  final tocOffset = web.document.getElementById('pagenav')?.clientHeight ?? 0;
+  final elementPosition = element.getBoundingClientRect().top;
+  final offsetPosition =
+      elementPosition + web.window.scrollY - headerOffset - tocOffset;
 
-  final tooltipLeft = tooltipRect.left - offset;
-  final tooltipRight = tooltipRect.right - offset;
-  final containerLeft = containerRect?.left ?? 0.0;
-  final containerRight = containerRect?.right ?? web.window.innerWidth;
-
-  if (tooltipLeft < containerLeft) {
-    final offset = containerLeft - tooltipLeft;
-    tooltip.style.left = 'calc(50% + ${offset}px)';
-    tooltip.dataset['adjusted'] = offset.toString();
-  } else if (tooltipRight > containerRight) {
-    final offset = tooltipRight - containerRight;
-    tooltip.style.left = 'calc(50% - ${offset}px)';
-    tooltip.dataset['adjusted'] = (-offset).toString();
-  } else {
-    tooltip.style.left = '50%';
-    tooltip.dataset['adjusted'] = '0';
-  }
+  web.window.scrollTo(
+    web.ScrollToOptions(
+      top: offsetPosition,
+      behavior: smooth ? 'smooth' : 'auto',
+    ),
+  );
 }

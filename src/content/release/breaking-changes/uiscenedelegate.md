@@ -6,12 +6,6 @@ description: >
 
 {% render "docs/breaking-changes.md" %}
 
-:::note
-This is an upcoming breaking change that has not yet been finalized or
-implemented. The current details are provisional and might be altered. Further
-announcements will be made as the change approaches implementation.
-:::
-
 ## Summary
 
 Apple now requires iOS developers to adopt the UIScene life cycle.
@@ -79,6 +73,9 @@ sequence, plugin registration must now be handled in a new callback called
 
 1. Add `FlutterImplicitEngineDelegate` and move `GeneratedPluginRegistrant`.
 
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
+
 ```swift  title="my_app/ios/Runner/AppDelegate.swift" diff
 - @objc class AppDelegate: FlutterAppDelegate {
 + @objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
@@ -89,13 +86,16 @@ sequence, plugin registration must now be handled in a new callback called
 -     GeneratedPluginRegistrant.register(with: self)
       return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-  }
 
-+ func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-+   GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
-+ }
-}
++   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
++     GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
++   }
+  }
 ```
+
+</Tab>
+<Tab name="Objective-C">
+
 ```objc title="my_app/ios/Runner/AppDelegate.h" diff
 - @interface AppDelegate : FlutterAppDelegate
 + @interface AppDelegate : FlutterAppDelegate <FlutterImplicitEngineDelegate>
@@ -112,13 +112,19 @@ sequence, plugin registration must now be handled in a new callback called
 + }
 ```
 
+</Tab>
+</Tabs>
+
 2. Create method channels and platform views in
 `didInitializeImplicitFlutterEngine`, if applicable.
 
-If you previously created [method channels][platform-views-docs] or
+If you previously created [method channels][method-channels-docs] or
 [platform views][platform-views-docs] in
 `application:didFinishLaunchingWithOptions:`,
 move that logic to `didInitializeImplicitFlutterEngine`.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift
   func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
@@ -136,6 +142,9 @@ move that logic to `didInitializeImplicitFlutterEngine`.
   }
 ```
 
+</Tab>
+<Tab name="Objective-C">
+
 ```objc
   func didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {
     // Register plugins with `engineBridge.pluginRegistry`
@@ -151,6 +160,9 @@ move that logic to `didInitializeImplicitFlutterEngine`.
       [[FLNativeViewFactory alloc] initWithMessenger:engineBridge.applicationRegistrar.messenger];
   }
 ```
+
+</Tab>
+</Tabs>
 
 :::warning
 If you try to access the `FlutterViewController` in
@@ -176,13 +188,13 @@ If you were using one of these depreacted APIs, such as
 [`applicationDidBecomeActive`]({{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/applicationdidbecomeactive(_:)),
 you will likely need to create a SceneDelegate and migrate to scene life cycle
 events. See [Apple's
-documenation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
+documentation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
 on migrating.
 
 If you implement your own SceneDelegate, you must subclass it with
 `FlutterSceneDelegate` or conform to the `FlutterSceneLifeCycleProvider`
 protocol. See the [following
-examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate-uikit).
+examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate).
 
 ### Migrate Info.plist
 
@@ -235,6 +247,9 @@ subclassing `FlutterSceneDelegate`.
 
 ![New Empty File option in Xcode](/assets/images/docs/breaking-changes/uiscene-new-file.png)
 
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
+
 For Swift projects, create a `SceneDelegate.swift`:
 
 ```swift title=my_app/ios/Runner/SceneDelegate.swift
@@ -245,6 +260,13 @@ class SceneDelegate: FlutterSceneDelegate {
 
 }
 ```
+
+3. Change the "Delegate Class Name" (`UISceneDelegateClassName`) in the
+Info.plist from `FlutterSceneDelegate` to
+`$(PRODUCT_MODULE_NAME).SceneDelegate`.
+
+</Tab>
+<Tab name="Objective-C">
 
 For Objective-C projects, create a `SceneDelegate.h` and `SceneDelegate.m`:
 
@@ -266,8 +288,10 @@ For Objective-C projects, create a `SceneDelegate.h` and `SceneDelegate.m`:
 ```
 
 3. Change the "Delegate Class Name" (`UISceneDelegateClassName`) in the
-Info.plist from `FlutterSceneDelegate` to
-`$(PRODUCT_MODULE_NAME).SceneDelegate`.
+Info.plist from `FlutterSceneDelegate` to `SceneDelegate`.
+
+</Tab>
+</Tabs>
 
 ## Migration guide for adding Flutter to existing app (Add to App)
 
@@ -275,7 +299,10 @@ Similar to the `FlutterAppDelegate`, the `FlutterSceneDelgate` is recommended
 but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 [`openURL`][] to plugins such as [local_auth][].
 
-### Create/Update a SceneDelegate (UIKit)
+### Create/Update a SceneDelegate
+
+<Tabs key="ios-framework-switcher">
+<Tab name="UIKit-Swift">
 
 ```swift diff
   import UIKit
@@ -285,15 +312,18 @@ but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 + class SceneDelegate: FlutterSceneDelegate {
 ```
 
+</Tab>
+<Tab name="UIKit-ObjC">
+
 ```objc diff
 - @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 + @interface SceneDelegate : FlutterSceneDelegate
 ```
 
+</Tab>
+<Tab name="SwiftUI">
 
-### Create/Update a SceneDelegate (SwiftUI)
-
-When using Flutter in a SwifUI app, you can [optionally use a
+When using Flutter in a SwiftUI app, you can [optionally use a
 FlutterAppDelegate](/add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate)
 to receive application events. To migrate that to use UIScene events, you can
 make the following changes:
@@ -330,12 +360,19 @@ UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate
 Otherwise, see [If your app supports multiple
 scenes](/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
 for further instructions.
+
+</Tab>
+</Tabs>
+
 ### If you can't directly make FlutterSceneDelegate a subclass
 
 If you can't directly make `FlutterSceneDelegate` a subclass, you can use the
 `FlutterSceneLifeCycleProvider` protocol and
 `FlutterPluginSceneLifeCycleDelegate` object to forward scene life cycle events
 to Flutter.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift title="SceneDelegate.swift" diff
   import Flutter
@@ -405,6 +442,10 @@ to Flutter.
     }
   }
 ```
+
+</Tab>
+<Tab name="Objective-C">
+
 ```objc title="SceneDelegate.h" diff
 - @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 + @interface SceneDelegate : UIResponder <UIWindowSceneDelegate, FlutterSceneLifeCycleProvider>
@@ -464,6 +505,9 @@ to Flutter.
   }
 ```
 
+</Tab>
+</Tabs>
+
 ### If your app supports multiple scenes
 
 When multiple scenes is enabled (UIApplicationSupportsMultipleScenes), Flutter cannot automatically associate a
@@ -474,6 +518,9 @@ manually registered with either the `FlutterSceneDelegate` or
 `scene:willConnectToSession:options:`. Otherwise, once the view, created by the
 `FlutterViewController` and `FlutterEngine`, is added to the view heirarchy,
 the `FlutterEngine` will automatically register for scene events.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift title="SceneDelegate.swift"
 import Flutter
@@ -507,6 +554,10 @@ class SceneDelegate: FlutterSceneDelegate {
   }
 }
 ```
+
+</Tab>
+<Tab name="Objective-C">
+
 ```objc title="SceneDelegate.h"
 #import <UIKit/UIKit.h>
 #import <Flutter/Flutter.h>
@@ -554,8 +605,14 @@ class SceneDelegate: FlutterSceneDelegate {
 @end
 ```
 
+</Tab>
+</Tabs>
+
 If you manually register a `FlutterEngine` with a scene, you must also
 unregister it if the view created by the `FlutterEngine` changes scenes.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift
 // If using FlutterSceneDelegate:
@@ -565,6 +622,9 @@ self.unregisterSceneLifeCycle(with: flutterEngine)
 sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 ```
 
+</Tab>
+<Tab name="Objective-C">
+
 ```objc
 // If using FlutterSceneDelegate:
 [self unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
@@ -573,6 +633,9 @@ sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 [self.sceneLifeCycleDelegate unregisterSceneLifeCycleWithFlutterEngine:self.flutterEngine];
 ```
 
+</Tab>
+</Tabs>
+
 ## Migration guide for Flutter plugins
 
 Not all plugins use lifecycle events. If your plugin does, though, you will
@@ -580,37 +643,43 @@ need to migrate to UIKit's scene-based lifecycle.
 
 1. Update the Dart and Flutter SDK versions in your pubspec.yaml
 
+The new APIs required for this migration are available in Flutter 3.38.0.
+
 ```yaml
 environment:
-  sdk: ^3.10.0-290.1.beta
-  flutter: ">=3.38.0-0.1.pre"
+  sdk: ^3.10.0
+  flutter: ">=3.38.0"
 ```
 
-:::warning
-The below Flutter APIs are available in the 3.38.0-0.1.pre beta, but are not
-yet available on stable. You might consider publishing a
-[prerelease](https://dart.dev/tools/pub/publishing#publishing-prereleases) or
-[preview](https://dart.dev/tools/pub/publishing#publish-preview-versions)
-version of your plugin to migrate early.
-:::
-
 2. Adopt the `FlutterSceneLifeCycleDelegate` protocol
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift diff
 - public final class MyPlugin: NSObject, FlutterPlugin {
 + public final class MyPlugin: NSObject, FlutterPlugin, FlutterSceneLifeCycleDelegate {
 ```
 
+</Tab>
+<Tab name="Objective-C">
+
 ```objc diff
 - @interface MyPlugin : NSObject<FlutterPlugin>
 + @interface MyPlugin : NSObject<FlutterPlugin, FlutterSceneLifeCycleDelegate>
 ```
+
+</Tab>
+</Tabs>
 
 3. Registers the plugin as a receiver of `UISceneDelegate` calls.
 
 To continue supporting apps that have not migrated to the UIScene lifecycle yet,
 you might consider remaining registered to the App Delegate and keeping the App
 Delegate events as well.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift diff
   public static func register(with registrar: FlutterPluginRegistrar) {
@@ -620,6 +689,9 @@ Delegate events as well.
   }
 ```
 
+</Tab>
+<Tab name="Objective-C">
+
 ```objc diff
   + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
     ...
@@ -627,6 +699,9 @@ Delegate events as well.
 +   [registrar addSceneDelegate:instance];
   }
 ```
+
+</Tab>
+</Tabs>
 
 4. Add one or more of the following scene events that are needed for your
 plugin.
@@ -638,6 +713,8 @@ event, visit Apple's documentation on
 [`UISceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate
 [`UIWindowSceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiwindowscenedelegate
 
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
 
 ```swift
 public func scene(
@@ -671,6 +748,9 @@ public func windowScene(
   ) -> Bool { }
 ```
 
+</Tab>
+<Tab name="Objective-C">
+
 ```objc
 - (BOOL)scene:(UIScene*)scene
     willConnectToSession:(UISceneSession*)session
@@ -694,6 +774,9 @@ public func windowScene(
     performActionForShortcutItem:(UIApplicationShortcutItem*)shortcutItem
                completionHandler:(void (^)(BOOL succeeded))completionHandler { }
 ```
+
+</Tab>
+</Tabs>
 
 5. Move launch logic from `application:willFinishLaunchingWithOptions:` and
 `application:didFinishLaunchingWithOptions:` to
@@ -747,8 +830,8 @@ to your pubspec.yaml:
 
 ## Timeline
 
-- Landed in main: TBD
-- Landed in stable: TBD
+- Landed in version: 3.38.0-0.1.pre
+- Stable release: 3.38
 - Unknown: Apple changes their warning to an assert and Flutter apps that
   haven't adopted `UISceneDelegate` will start crashing on startup with the
   latest SDK.

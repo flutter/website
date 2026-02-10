@@ -75,7 +75,10 @@ does (transitively via a plugin).
 
 For instance, your existing app's Gradle might already have:
 
-```groovy title="ExistingApp/app/build.gradle"
+<Tabs key="existing-app-dependencies-1">
+<Tab name="Kotlin">
+
+```kotlin title="ExistingApp/app/build.gradle.kts"
 …
 dependencies {
     …
@@ -84,6 +87,22 @@ dependencies {
 }
 …
 ```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="ExistingApp/app/build.gradle"
+…
+dependencies {
+    …
+    implementation "com.crashlytics.sdk.android:crashlytics:2.10.1"
+    …
+}
+…
+```
+
+</Tab>
+</Tabs>
 
 And your Flutter module also depends on
 [firebase_crashlytics][] via `pubspec.yaml`:
@@ -104,7 +123,7 @@ firebase_crashlytics v0.1.3's own [Gradle file][]:
 …
 dependencies {
     …
-    implementation("com.crashlytics.sdk.android:crashlytics:2.9.9")
+    implementation "com.crashlytics.sdk.android:crashlytics:2.9.9"
     …
 }
 …
@@ -124,15 +143,34 @@ or implementation breaking changes between the versions.
 For example, you might use the new Crashlytics library
 in your existing app as follows:
 
-```groovy title="ExistingApp/app/build.gradle"
+<Tabs key="existing-app-dependencies-2">
+<Tab name="Kotlin">
+
+```kotlin title="ExistingApp/app/build.gradle.kts"
 …
 dependencies {
     …
-    implementation("com.google.firebase:firebase-crashlytics:17.0.0-beta03")
+    implementation("com.crashlytics.sdk.android:crashlytics:2.10.1")
     …
 }
 …
 ```
+
+</Tab>
+<Tab name="Groovy">
+
+```groovy title="ExistingApp/app/build.gradle"
+…
+dependencies {
+    …
+    implementation "com.google.firebase:firebase-crashlytics:17.0.0-beta03"
+    …
+}
+…
+```
+
+</Tab>
+</Tabs>
 
 This approach won't work since there are major API differences
 between the Crashlytics' Gradle library version

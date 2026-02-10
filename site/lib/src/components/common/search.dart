@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import 'material_icon.dart';
@@ -13,6 +14,8 @@ class SearchBar extends StatelessComponent {
     required this.label,
     this.value,
     this.onInput,
+    this.trailing,
+    this.id,
   });
 
   final String placeholder;
@@ -20,9 +23,15 @@ class SearchBar extends StatelessComponent {
   final String? value;
   final void Function(String)? onInput;
 
+  /// Optional trailing content displayed after the search input.
+  final Component? trailing;
+
+  /// Optional id for the search-wrapper element.
+  final String? id;
+
   @override
   Component build(BuildContext context) => div(classes: 'search-row', [
-    div(classes: 'search-wrapper', [
+    div(classes: 'search-wrapper', id: id, [
       const MaterialIcon('search', classes: ['leading-icon']),
       input(
         type: InputType.search,
@@ -34,5 +43,6 @@ class SearchBar extends StatelessComponent {
         onInput: onInput != null ? (value) => onInput!(value as String) : null,
       ),
     ]),
+    ?trailing,
   ]);
 }

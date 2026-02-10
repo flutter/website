@@ -3,8 +3,10 @@
 // found in the LICENSE file.
 
 import 'package:collection/collection.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:path/path.dart' as path;
 import 'package:pub_semver/pub_semver.dart';
 
 class DevToolsReleaseNotesIndex extends StatelessComponent {
@@ -13,13 +15,18 @@ class DevToolsReleaseNotesIndex extends StatelessComponent {
   static List<({Version version, Page page})> findDevToolsReleases(
     BuildContext context,
   ) {
-    const releaseNotesPrefix = 'tools/devtools/release-notes/release-notes-';
+    final releaseNotesPrefix = path.joinAll([
+      'tools',
+      'devtools',
+      'release-notes',
+      'release-notes-',
+    ]);
     return context.pages
-        .where((p) => p.path.startsWith(releaseNotesPrefix))
+        .where((page) => page.path.startsWith(releaseNotesPrefix))
         .map(
-          (p) => (
-            version: Version.parse(p.data.page['breadcrumb'] as String),
-            page: p,
+          (page) => (
+            version: Version.parse(page.data.page['breadcrumb'] as String),
+            page: page,
           ),
         )
         .sortedBy((e) => e.version)
@@ -35,7 +42,7 @@ class DevToolsReleaseNotesIndex extends StatelessComponent {
       for (final release in releases)
         li([
           a(href: release.page.url, [
-            text(release.page.data.page['shortTitle'] as String),
+            .text(release.page.data.page['shortTitle'] as String),
           ]),
         ]),
     ]);

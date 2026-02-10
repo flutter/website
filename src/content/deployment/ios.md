@@ -127,11 +127,6 @@ the following:
 For a detailed overview of app signing, see
 [Create, export, and delete signing certificates][appsigning].
 
-## Updating the app's deployment version
-
-If you changed `Deployment Target` in your Xcode project,
-open `ios/Flutter/AppframeworkInfo.plist` in your Flutter app
-and update the `MinimumOSVersion` value to match.
 
 ## Add an app icon
 

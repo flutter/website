@@ -11,13 +11,11 @@ import '../button.dart';
 @client
 class CopyButton extends StatefulComponent {
   const CopyButton({
-    required this.toCopy,
     this.buttonText,
     this.classes = const [],
     this.title,
   });
 
-  final String toCopy;
   final String? title;
   final String? buttonText;
   final List<String> classes;
@@ -27,21 +25,47 @@ class CopyButton extends StatefulComponent {
 }
 
 class _CopyButtonState extends State<CopyButton> {
-  bool _hidden = true;
+  final buttonKey = GlobalNodeKey<web.HTMLButtonElement>();
+
+  String? content;
   bool _copied = false;
+
+  static final RegExp _terminalReplacementPattern = RegExp(
+    r'^(\s*\$\s*)|(PS\s+)?(C:\\(.*)>\s*)',
+    multiLine: true,
+  );
 
   @override
   void initState() {
-    // Unhide the copy button if successfully initialized on the client.
-    if (kIsWeb && component.toCopy.isNotEmpty) {
-      _hidden = false;
+    if (kIsWeb) {
+      // Extract the code content and unhide the copy button on the client.
+      context.binding.addPostFrameCallback(() {
+        setState(() {
+          content = buttonKey.currentNode
+              ?.closest('.code-block-wrapper')
+              ?.querySelector('pre code')
+              ?.textContent
+              ?.replaceAll(_terminalReplacementPattern, '')
+              .replaceAll('\u200B', ''); // Remove zero-width spaces
+        });
+
+        assert(
+          content != null,
+          'CopyButton: Unable to find code content to copy. '
+          'Is the CopyButton inside a code block?',
+        );
+      });
     }
 
     super.initState();
   }
 
   void _copy() {
-    web.window.navigator.clipboard.writeText(component.toCopy);
+    if (content == null) {
+      return;
+    }
+
+    web.window.navigator.clipboard.writeText(content!);
 
     setState(() => _copied = true);
 
@@ -57,13 +81,14 @@ class _CopyButtonState extends State<CopyButton> {
     final iconButton = component.buttonText == null;
 
     return Button(
+      key: buttonKey,
       style: iconButton ? ButtonStyle.text : ButtonStyle.filled,
       classes: [
         'copy-button',
-        if (_hidden) 'hidden',
+        if (content == null) 'hidden',
         ...component.classes,
       ],
-      title: component.title ?? 'Copy ${component.toCopy} to your clipboard.',
+      title: component.title ?? 'Copy $content to your clipboard.',
       content: _copied ? 'Copied!' : component.buttonText,
       icon: iconButton ? 'content_copy' : null,
       onClick: _copy,

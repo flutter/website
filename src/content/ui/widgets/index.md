@@ -14,47 +14,32 @@ you can also see all the widgets in the [widget index][].
 Flutter ships with two design systems as part of the SDK.
 
 <div class="card-grid">
-{% assign categories = catalog.index | sortBy: 'name' -%}
-{% for section in categories %}
-  {%- if section.name == "Cupertino" or section.name == "Material components" -%}
-    <a class="card outlined-card" href="{{page.url}}/{{section.id}}">
-      <div class="card-header">
-        <span class="card-title">{{section.name}}</span>
-      </div>
-      <div class="card-content">
-        <p>{{section.description}}</p>
-      </div>
-    </a>
-  {% endif -%}
-{% endfor %}
+  <Card title="Cupertino" link="/ui/widgets/cupertino" outlined="true" filled="false">
+    Beautiful and high-fidelity widgets that align with
+    Apple's Human Interface Guidelines for iOS and macOS.
+  </Card>
+  <Card title="Material design" link="/ui/widgets/material" outlined="true" filled="false">
+    Visual, behavioral, and motion-rich widgets implementing
+    the Material 3 design specification.
+  </Card>
 </div>
 
-You can find many more designs systems created by the Flutter community
-on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter,
-like for example the Windows-inspired [fluent_ui]({{site.pub-pkg}}/fluent_ui),
-macOS-inspired [macos_ui]({{site.pub-pkg}}/macos_ui),
-and the Ubuntu-inspired [yaru]({{site.pub-pkg}}/yaru) widgets.
+You can find many more design systems created by the Flutter community
+on [pub.dev]({{site.pub}}), the package repository for Dart and Flutter.
+For example, the Windows-inspired [fluent_ui][],
+macOS-inspired [macos_ui][],
+and the Ubuntu-inspired [yaru][] widgets.
+
+[fluent_ui]: {{site.pub-pkg}}/fluent_ui
+[macos_ui]: {{site.pub-pkg}}/macos_ui
+[yaru]: {{site.pub-pkg}}/yaru
 
 ## Base widgets
 
 Base widgets support a range of common rendering options
 like input, layout, and text.
 
-<div class="card-grid">
-{% assign categories = catalog.index | sortBy: 'name' -%}
-{% for section in categories %}
-  {%- if section.name != "Cupertino" and section.name != "Material components" and section.name != "Material 2 components" -%}
-    <a class="card outlined-card" href="{{page.url}}/{{section.id}}">
-      <div class="card-header">
-        <span class="card-title">{{section.name}}</span>
-      </div>
-      <div class="card-content">
-        <p>{{section.description}}</p>
-      </div>
-    </a>
-  {% endif -%}
-{% endfor %}
-</div>
+<WidgetCatalogCategories />
 
 ## Widget of the Week
 

@@ -8,8 +8,10 @@ body {
   color: var(--site-base-fgColor);
 
   // The top TOC is not shown on narrow screens.
-  @media (min-width: 1200px) {
-    --site-subheader-height: 0rem;
+  &:not(:has(#site-subheader.show-always)) {
+    @media (min-width: 1200px) {
+      --site-subheader-height: 0rem;
+    }
   }
 
   // If the TOC is disabled, reduce the subheader height to
@@ -46,8 +48,13 @@ h2 {
 }
 
 dd {
-  margin-bottom: .75rem;
+  margin-block-end: .75rem;
   margin-left: 1rem;
+
+  >p:only-child {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+  }
 }
 
 img {
@@ -85,6 +92,7 @@ picture {
   font-feature-settings: 'liga';
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
+  user-select: none;
 
   &.ms-filled {
     font-variation-settings: 'FILL' 1;
@@ -152,43 +160,6 @@ main figure {
     font-size: 0.875em;
     font-style: italic;
     text-align: center;
-  }
-
-  &.code-and-image {
-    gap: 0.25rem;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    >div {
-      width: 100%;
-
-      &:last-child {
-        text-align: center;
-      }
-    }
-
-    @media(min-width: 769px) {
-      >div {
-        &:first-child {
-          flex: 0 0 58%;
-          max-width: 58%;
-        }
-
-        &:last-child {
-          flex: 0 0 40%;
-          max-width: 40%;
-        }
-      }
-
-      figcaption {
-        text-align: left;
-      }
-
-      img {
-        max-width: 100%;
-      }
-    }
   }
 }
 
@@ -353,14 +324,19 @@ ol.steps {
       margin-block-end: 0.75rem;
     }
 
+    >h3:first-child,
+    >p:first-child {
+      height: $step-indicator-height;
+      margin-block-end: 0.5rem;
+      font-weight: 500;
+    }
+
     >h3:first-child {
       display: flex;
       align-items: center;
-      height: $step-indicator-height;
       font-size: 1.125rem;
       font-weight: 500;
       color: var(--site-base-fgColor-lighter);
-      margin-block-end: 0.5rem;
     }
 
     padding-block-end: 0.75rem;
@@ -429,6 +405,7 @@ p+dl {
 }
 
 .figure-caption {
+  margin-top: 0.25rem;
   font-size: .875rem;
   font-style: italic;
   color: var(--site-base-fgColor-lighter);

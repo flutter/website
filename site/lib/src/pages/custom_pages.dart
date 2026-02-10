@@ -9,12 +9,14 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../components/pages/devtools_release_notes_index.dart';
 import 'glossary.dart';
+import 'widget_catalog.dart';
 
 /// All pages that should be loaded from memory rather than
 /// from content loaded from the file system.
 List<MemoryPage> get allMemoryPages => [
   _glossaryPage,
   _devtoolsReleasesIndex,
+  ...widgetCatalogPages,
 ];
 
 /// The `/resources/glossary` page which hosts the [GlossaryIndex].

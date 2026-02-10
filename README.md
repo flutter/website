@@ -102,13 +102,13 @@ flutter --version
 ```
 
 [Install Flutter]: https://docs.flutter.dev/get-started
-[Upgrading Flutter]: https://docs.flutter.dev/release/upgrade
+[Upgrading Flutter]: https://docs.flutter.dev/install/upgrade
 
 ### Clone this repo
 
 If you're not a member of the Flutter organization,
-we recommend you [create a fork][] of this repo under your own account,
-and then submit a PR from that fork.
+we recommend you [create a fork][] of this repo under your own GitHub account
+and then submit a pull request from that fork.
 
 Once you have a fork (or you're a Flutter org member),
 clone the repository with `git clone`:
@@ -122,7 +122,7 @@ git clone https://github.com/flutter/website.git
 ## Set up your local environment and serve changes
 
 Before you continue setting up the site infrastructure,
-verify the correct versions of Flutter and Node.js are set up and available by
+verify the correct versions of Flutter are set up and available by
 following the instructions in [Get the prerequisites](#get-the-prerequisites).
 
 1. _Optional:_ After cloning the repo,
@@ -196,6 +196,40 @@ You can also chat with us on the `#hackers-devrel` channel
 on the [Flutter contributors Discord][]!
 
 [Flutter contributors Discord]: https://github.com/flutter/flutter/blob/main/docs/contributing/Chat.md
+
+### Check links
+
+If you've made changes to the content and would like to check all
+internal links are functional and Markdown link references are valid,
+build the site locally and then run the following commands.
+
+1.  Build the site locally.
+
+    ```bash
+    dart run dash_site build
+    ```
+
+1.  Verify all Markdown link references are resolved.
+
+    ```bash
+    dart run dash_site check-link-references
+    ```
+
+1.  Validate all internal links are valid.
+
+    > [!NOTE]
+    > This command relies on the `firebase` CLI tool being on your PATH.
+    > If you haven't installed it or updated it in a while,
+    > follow [Set up or update the Firebase CLI][firebase-install].
+
+    ```bash
+    dart run dash_site check-links
+    ```
+
+If either command reports any errors or warnings,
+then address those issues, rebuild the site, and rerun the command.
+
+[firebase-install]: https://firebase.google.com/docs/cli#setup_update_cli
 
 ### Refresh code excerpts
 

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../../util.dart';
@@ -51,10 +52,10 @@ class Button extends StatelessComponent {
       ...?classes,
     ].toClasses;
 
-    final children = [
+    final children = <Component>[
       if (icon case final iconId?) MaterialIcon(iconId),
       if (content case final contentText?)
-        asRaw ? raw(contentText) : text(contentText),
+        asRaw ? RawText(contentText) : .text(contentText),
     ];
 
     if (href case final href?) {
@@ -81,11 +82,26 @@ class Button extends StatelessComponent {
 enum ButtonStyle {
   filled,
   outlined,
-  text;
+  text
+  ;
 
   String get cssClass => switch (this) {
     ButtonStyle.filled => 'filled-button',
     ButtonStyle.outlined => 'outlined-button',
     ButtonStyle.text => 'text-button',
   };
+}
+
+class SegmentedButton extends StatelessComponent {
+  const SegmentedButton({
+    super.key,
+    required this.children,
+  });
+
+  final List<Component> children;
+
+  @override
+  Component build(BuildContext context) {
+    return span(classes: ['segmented-button'].toClasses, children);
+  }
 }

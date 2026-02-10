@@ -4,6 +4,7 @@
 
 import 'dart:math';
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
@@ -11,6 +12,7 @@ import 'package:universal_web/web.dart' as web;
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
 import '../common/material_icon.dart';
+import '../common/search.dart';
 import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
@@ -120,24 +122,17 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
   @override
   Component build(BuildContext context) {
     return div(id: 'resource-search-group', classes: 'chip-filters-group', [
-      div(classes: 'top-row', [
-        div(classes: 'search-wrapper', id: 'resource-search', [
-          const MaterialIcon('search', classes: ['leading-icon']),
-          input(
-            type: InputType.search,
-            attributes: {
-              'placeholder': 'Try "button" or "networking"...',
-              'aria-label': 'Search learning resources by name and category',
-            },
-            value: searchQuery,
-            onInput: (value) {
-              setFilters(() {
-                searchQuery = value as String;
-              });
-            },
-          ),
-        ]),
-        GlobalEventListener(
+      SearchBar(
+        placeholder: 'Try "button" or "networking"...',
+        label: 'Search learning resources by name and category',
+        value: searchQuery,
+        id: 'resource-search',
+        onInput: (value) {
+          setFilters(() {
+            searchQuery = value;
+          });
+        },
+        trailing: GlobalEventListener(
           onClick: (event) {
             final target = event.target as web.Element?;
             // If clicking outside the filters or toggle, close the filters.
@@ -162,15 +157,15 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
             ],
           ),
         ),
-      ]),
+      ),
       div(classes: 'label-row', [
         label(
           attributes: {'for': 'resource-search'},
           [
-            text('Showing '),
-            span([text('$filteredResourcesCount')]),
-            text(' / '),
-            span([text('${resources.length}')]),
+            const .text('Showing '),
+            span([.text('$filteredResourcesCount')]),
+            const .text(' / '),
+            span([.text('${resources.length}')]),
           ],
         ),
         button(
@@ -187,7 +182,7 @@ class _LearningResourceFiltersState extends State<LearningResourceFilters> {
           },
           [
             const MaterialIcon('close_small'),
-            span([text('Clear filters')]),
+            const span([.text('Clear filters')]),
           ],
         ),
       ]),

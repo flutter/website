@@ -126,10 +126,34 @@ The `config` argument is an object that can have the following optional fields:
 |`entrypointBaseUrl`| The base URL of your Flutter app's entrypoint. Defaults to "/".  |`String`|
 |`hostElement`| HTML Element into which Flutter renders the app. When not set, Flutter web takes over the whole page. |`HtmlElement`|
 |`renderer`| Specifies the [web renderer][web-renderers] for the current Flutter application, either `"canvaskit"` or `"skwasm"`. |`String`|
+|`forceSingleThreadedSkwasm`| Forces the Skia WASM renderer to run in single-threaded mode for compatibility. |`bool`|
 
 {:.table}
 
 [web-renderers]: /platform-integration/web/renderers
+
+## forceSingleThreadedSkwasm
+
+A boolean flag to force the Skia WebAssembly (skwasm) renderer 
+to run in **single-threaded mode**. This is useful if:
+
+- Your environment does not support multi-threaded WASM (for example,
+ `SharedArrayBuffer` is not available or required security
+ headers are missing).  
+- You want maximum browser compatibility.
+- Use `false` (default) to allow multi-threaded rendering when
+  supported, which improves performance.
+
+## Example usage
+
+```js
+_flutter.loader.load({
+  config: {
+    renderer: 'skwasm',
+    forceSingleThreadedSkwasm: true,
+  },
+});
+```
 
 ## Example: Customizing Flutter configuration based on URL query parameters
 

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
@@ -29,7 +30,7 @@ class TocLayout extends DocLayout {
                 pageToCheck,
           ];
 
-          return Component.fragment([
+          return .fragment([
             if (childPages.isNotEmpty)
               div(classes: 'card-grid very-wide', [
                 for (final childPage in childPages)
@@ -37,13 +38,13 @@ class TocLayout extends DocLayout {
                     link: childPage.url,
                     header: [
                       span(classes: 'card-title', [
-                        text(childPage.data.page['title'] as String),
+                        .text(childPage.data.page['title'] as String),
                       ]),
                     ],
                     content: [
                       if (childPage.data.page['description']
                           case final String description)
-                        p([text(description)]),
+                        p([.text(description)]),
                     ],
                     filled: true,
                   ),
@@ -75,7 +76,9 @@ class TocLayout extends DocLayout {
 
     // Check if this is a direct child by ensuring there's only one
     // path segment (no additional slashes beyond a possible trailing slash).
-    final segments = remainingPath.split('/').where((s) => s.isNotEmpty);
+    final segments = remainingPath
+        .split('/')
+        .where((segment) => segment.isNotEmpty);
 
     return segments.length == 1;
   }
