@@ -291,6 +291,26 @@
     - "design"
     - "ui"
 
+- term: "Primary constructor"
+  short_description: |-
+    A constructor declared as part of the type declaration.
+  long_description: |-
+    A _primary constructor_ is a concise way to declare a constructor
+    directly in the type declaration.
+    
+    Currently, this feature is only available for [extension types][].
+    It allows you to define the underlying representation object
+    and bind it to a field in one step.
+
+    [extension types]: https://dart.dev/language/extension-types
+  related_links:
+    - text: "Extension types constructors"
+      link: "https://dart.dev/language/extension-types#constructors"
+      type: "external"
+  labels:
+    - "dart"
+    - "language"
+
 - term: "Prop drilling"
   short_description: |-
     The process of passing data through multiple layers of widgets
