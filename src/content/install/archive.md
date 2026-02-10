@@ -54,17 +54,26 @@ SDK archive:
 [Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
 
 ## Public release windows
-Predictability is key to landing complex features safely. We use public release windows to provide the community with the visibility needed to plan ahead. By explicitly calling out branch cutoff dates and release targets, we enable everyone to align their development cycles and coordinate feature landing effectively.
+
+Predictability is key to landing complex features safely.
+We use public release windows to provide the community with
+the visibility needed to plan ahead.
+By explicitly calling out branch cutoff dates and release targets,
+we enable everyone to align their development cycles and
+coordinate feature landing effectively.
 
 ### What is a branch cutoff date?
-This date is the deadline for pull requests to land in the default branches (**main** for Dart and **flutter** for Flutter) to guarantee inclusion in the next stable release. 
+
+This date is the deadline for pull requests to
+land in the default branches (**main** for Dart and **flutter** for Flutter) to
+guarantee inclusion in the next stable release.
 
 * **Before cutoff:** Your PR will ship in the next stable version.
 * **After cutoff:** Your PR will wait for the following cycle.
 
 ### 2026 Schedule
 
-| Flutter Version | Release Target | Branch Cutoff Date |
+| Flutter version | Release target | Branch cutoff date |
 |-----------------|----------------|--------------------|
 | Flutter 3.41    | February       | 06 January         |
 | Flutter 3.44    | May            | 07 April           |
