@@ -2,7 +2,7 @@
 title: Material Color Utilities update in Flutter
 description: >-
   The latest Material Color Utilities have been
-  applied to the Flutter Materiallibrary.
+  applied to the Flutter Material library.
 ---
 
 {% render "docs/breaking-changes.md" %}
