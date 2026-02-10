@@ -804,81 +804,100 @@ performed here related to the launch options should be moved to the
 
 6. [Optional] Migrate other deprecated APIs to support multiple scenes in the future.
 
-| Deprecated API                                                                                                 | UIScene Replacement                                                     |
-|:---------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------|
-| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | `self.pluginRegistrar.viewController.view.window.windowScene.screen`    |
-| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
-| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/1622975-windows)       | `self.pluginRegistrar.viewController.view.window.windowScene.windows`   |
-| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | `self.pluginRegistrar.viewController.view.window.windowScene.keyWindow` |
+| Deprecated API                                                                                                 | UIScene Replacement                                                                                                                                              |
+|:---------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | [`self.pluginRegistrar.viewController.view.window.windowScene.screen`](https://developer.apple.com/documentation/uikit/uiwindowscene/screen?language=objc)       |
+| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiwindowscene/keywindow?language=objc) |
+| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`self.pluginRegistrar.viewController.view.window.windowScene.windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
+| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                                                                                      |
 
-First, create a new view provider with an instance method that holds a reference to your `FlutterPluginRegistrar`.
-
-<Tabs key="ios-language-switcher">
-<Tab name="Objective-C">
-
-```objc 
-@implementation YourFlutterViewProvider
-  - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
-    self = [super init];
-    if (self) {
-      _registrar = registrar;
-    }
-    return self;
-  }
-  
-  - (UIViewController *)viewController {
-    return self.registrar.viewController;
-  }
-@end
-```
-
-</Tab>
-<Tab name="Swift">
-
-```swift
-final class ViewPresenterProvider: ViewPresenterProvider {
-  private let registrar: FlutterPluginRegistrar
-
-  init(registrar: FlutterPluginRegistrar) {
-    self.registrar = registrar
-  }
-
-  var viewPresenter: ViewPresenter? {
-    registrar.viewController
-  }
-}
-  ```
-</Tab>
-</Tabs>
-
-Next, in your plugin’s `registerWithRegistrar` method, initialize your new view provider and pass it into your plugin instance.
+Instead of accessing these APIs, you can access the windowScene through the viewController. See examples below.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Objective-C">
 
 ```objc diff
+@interface MyPlugin ()
++ @property(nonatomic, weak) NSObject<FlutterPluginRegistrar> *registrar;
+
++ - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar;
+@end
+
+@implementation MyPlugin
+
++  - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
++    self = [super init];
++    if (self) {
++      _registrar = registrar;
++    }
++    return self;
++  }
+
   + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
--   YourFlutterViewPlugin *instance = [[YourFlutterViewPlugin alloc] init];
-+   YourFlutterViewProvider *viewProvider = [[YourFlutterViewProvider alloc] initWithRegistrar:registrar];
-+.  YourFlutterViewPlugin *instance = [[YourFlutterViewPlugin alloc] initWithViewProvider:viewProvider];
-    SetUpFLTImagePickerApi(registrar.messenger, instance);
-}
+-    MyPlugin *instance = [[MyPlugin alloc] init];
++    MyPlugin *instance = [[MyPlugin alloc] initWithRegistrar:registrar];
+  }
+
+  - (void)someMethod {
+-    UIScreen *screen = [UIScreen mainScreen];
++    UIScreen *screen = self.registrar.viewController.view.window.windowScene.screen;
+
+-    UIWindow *window = [UIApplication sharedApplication].delegate.window;
++    UIWindow *window = self.registrar.viewController.view.window;
+
+-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
++    if (@available(iOS 15.0, *)) {
++      UIWindow *keyWindow = self.registrar.viewController.view.window.windowScene.keyWindow;
++    } else {
++      for (UIWindow *window in self.registrar.viewController.view.window.windowScene.windows) {
++        if (window.isKeyWindow) {
++          UIWindow *keyWindow = window;
++        }
++      }
++    }
+
+-    NSArray<UIWindow *> *windows = [UIApplication sharedApplication].windows;
++    NSArray<UIWindow *> *windows = self.pluginRegistrar.viewController.view.window.windowScene.windows;
+  }
 ```
 
 </Tab>
 <Tab name="Swift">
 
 ```swift diff
+public class MyPlugin: NSObject, FlutterPlugin {
++  var registrar: FlutterPluginRegistrar
+
++  init(registrar: FlutterPluginRegistrar) {
++    self.registrar = registrar
++  }
+
   public static func register(with registrar: FlutterPluginRegistrar) {
--    let instance = FileSelectorPlugin()
-+    let instance = YourFlutterPlugin(
-      viewPresenterProvider: ViewPresenterProvider(registrar: registrar))
-    YourFlutterPluginApiSetup.setUp(binaryMessenger: registrar.messenger(), api: instance)
+-    let instance = MyPlugin()
++    let instance = MyPlugin(registrar: registrar)
+  }
+
+  func someMethod {
+-    let screen = UIScreen.main;
++    let screen = self.registrar.viewController?.view.window?.windowScene?.screen;
+
+-    let window = UIApplication.shared.delegate?.window;
++    let window = self.registrar.viewController?.view.window;
+
+-    let keyWindow = UIApplication.shared.keyWindow;
++    if #available(iOS 15.0, *) {
++      let keyWindow = self.registrar.viewController?.view.window?.windowScene?.keyWindow
++    } else {
++      let keyWindow = self.registrar.viewController?.view.window?.windowScene?.windows.filter({ $0.isKeyWindow }).first
++    }
+   
+-    let windows = UIApplication.shared.windows;
++    let windows = self.registrar.viewController?.view.window?.windowScene?.windows;
+
   }
 ```
 </Tab>
 </Tabs>
-
 
 ## Bespoke FlutterViewController usage
 
