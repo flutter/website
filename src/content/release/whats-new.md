@@ -52,7 +52,7 @@ significant changes:
   A special thank you to [navaronbracke][], who wrote a migration
   guide for the [deprecation of the `onReorder` callback][onReorder].
   
-[breaking-changes]: /release/breaking-changes
+[breaking changes]: /release/breaking-changes
 [docs.flutter.dev]: /
 [Flutter API docs]: {{site.api}}
 [fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
