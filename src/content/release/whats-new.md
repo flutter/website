@@ -54,7 +54,7 @@ significant changes:
   
 [breaking-changes]: /release/breaking-changes
 [docs.flutter.dev]: /
-[Flutter API docs]: {{pub.api}}
+[Flutter API docs]: {{site.api}}
 [fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
 [navaronbracke]: {{site.github}}/navaronbracke
