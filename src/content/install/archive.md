@@ -65,7 +65,7 @@ coordinate feature landing effectively.
 ### What is a branch cutoff date?
 
 This date is the deadline for pull requests to
-land in the default branches (**main** for Dart and **flutter** for Flutter) to
+land in the default branches (`main` for Dart and `master` for Flutter) to
 guarantee inclusion in the next stable release.
 
 * **Before cutoff:** Your PR will ship in the next stable version.
