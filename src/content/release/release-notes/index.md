@@ -111,12 +111,8 @@ To see what's changed in beta releases, check out the
   * [1.12.13 release notes and change log][]
 * Earlier
   * [Archived release notes][]
-
-<<<<<<< HEAD
-[3.41.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-c58ef72e3766
+[3.41.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
 [3.41.0 release notes & change log]: /release/release-notes/release-notes-3.41.0
-=======
->>>>>>> main
 [3.41.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-41
 [3.38.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 [3.38.0 release notes & change log]: /release/release-notes/release-notes-3.38.0
