@@ -61,9 +61,9 @@ Here, rather than mutating an old instance `b` when the UI changes,
 Flutter constructs new Widget instances. The framework manages many of the
 responsibilities of a traditional UI object (such as maintaining the
 state of the layout) behind the scenes with
-[`RenderObject`s](/resources/glossary#renderobject) [(API link)][].
-A `RenderObject persists between frames and Flutter's lightweight Widgets
+[`RenderObject`s](/resources/glossary#renderobject) [(API link)][ro-api].
+A `RenderObject` persists between frames and Flutter's lightweight widgets
 tell the framework to mutate the `RenderObject`s between states.
 The Flutter framework handles the rest.
 
-(API link)]: {{site.api}}/flutter/rendering/RenderObject-class.html
+[ro-api]: {{site.api}}/flutter/rendering/RenderObject-class.html
