@@ -817,12 +817,12 @@ Instead of accessing these APIs, you can access the windowScene through the view
 <Tab name="Objective-C">
 
 ```objc diff
-@interface MyPlugin ()
-+ @property(nonatomic, weak) NSObject<FlutterPluginRegistrar> *registrar;
-+  - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar;
-@end
+  @interface MyPlugin ()
++   @property(nonatomic, weak) NSObject<FlutterPluginRegistrar> *registrar;
++    - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar;
+  @end
 
-@implementation MyPlugin
+  @implementation MyPlugin
 
 +  - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
 +    self = [super init];
@@ -864,7 +864,7 @@ Instead of accessing these APIs, you can access the windowScene through the view
 <Tab name="Swift">
 
 ```swift diff
-public class MyPlugin: NSObject, FlutterPlugin {
+  public class MyPlugin: NSObject, FlutterPlugin {
 +  var registrar: FlutterPluginRegistrar
 
 +  init(registrar: FlutterPluginRegistrar) {
