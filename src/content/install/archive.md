@@ -75,10 +75,10 @@ guarantee inclusion in the next stable release.
 
 | Flutter version | Release target | Branch cutoff date |
 |-----------------|----------------|--------------------|
-| Flutter 3.41    | February       | 06 January         |
-| Flutter 3.44    | May            | 07 April           |
-| Flutter 3.47    | August         | 07 July            |
-| Flutter 3.50    | November       | 06 October         |
+| Flutter 3.41    | February, 2026 | 06 January         |
+| Flutter 3.44    | May, 2026      | 07 April           |
+| Flutter 3.47    | August, 2026   | 07 July            |
+| Flutter 3.50    | November, 2026 | 06 October         |
 
 {:.table}
 
