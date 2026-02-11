@@ -1,6 +1,6 @@
 ---
 title: Deprecate `containsSemantics` in favor of `isSemantics`
-description: >
+description: >-
   The `containsSemantics` matcher has been deprecated in favor of
   `isSemantics` and `matchesSemantics` matchers.
 ---
@@ -17,17 +17,19 @@ The `containsSemantics` partial matcher is deprecated and replaced by
 The `contains` prefix for partial matchers, such as `containsSemantics`, has been 
 replaced with `is` to align with naming conventions:
 
-* **Partial matchers** (e.g. `isSemantics`) match only the properties explicitly
-  provided. Any arguments not provided are ignored.
-* **Exact matchers** (e.g. `matchesSemantics`) verify all values. Any arguments 
-  not provided are expected to match the object's default values.
+* **Partial matchers** (such as `isSemantics`) match only
+  the properties explicitly provided.
+  Any arguments not provided are ignored.
+* **Exact matchers** (such as `matchesSemantics`) verify all values.
+  Any arguments not provided are expected to
+  match the object's default values.
 
 ## Migration guide
 
 To automatically migrate your code, run the following command:
 
-```bash
-dart fix --apply
+```console
+$ dart fix --apply
 ```
 
 Alternatively, replace `containsSemantics` with `isSemantics` for partial
@@ -60,8 +62,8 @@ expect(
 
 ## Timeline
 
-Landed in version: 3.40.0-1.0.pre
-In stable release: 3.40
+Landed in version: 3.40.0-1.0.pre<br>
+In stable release: 3.41
 
 ## References
 
@@ -79,7 +81,6 @@ Relevant PR:
 
 * [PR 180538][]
 
-<!-- Stable channel link: -->
 [`isSemantics`]: {{site.api}}/flutter/flutter_test/isSemantics.html
 [`matchesSemantics`]: {{site.api}}/flutter/flutter_test/matchesSemantics.html
 [Issue 180534]: {{site.repo.flutter}}/issues/180534
