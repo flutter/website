@@ -71,7 +71,7 @@ guarantee inclusion in the next stable release.
 * **Before cutoff:** Your PR will ship in the next stable version.
 * **After cutoff:** Your PR will wait for the following cycle.
 
-### 2026 Schedule
+### 2026 schedule
 
 | Flutter version | Release target | Branch cutoff date |
 |-----------------|----------------|--------------------|
@@ -79,6 +79,8 @@ guarantee inclusion in the next stable release.
 | Flutter 3.44    | May            | 07 April           |
 | Flutter 3.47    | August         | 07 July            |
 | Flutter 3.50    | November       | 06 October         |
+
+{:.table}
 
 ---
 
