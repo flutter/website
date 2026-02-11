@@ -27,7 +27,8 @@ and review the [Dart changelog][].
 Flutter 3.41 is live! For details,
 check out the [Flutter 3.41 blog post][3.41-blog-post].
 
-[3.41-blog-post]: {{site.flutter-blog}}/xxx
+[3.41-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
+
 
 **Docs updated or added since the 3.38 release**
 
