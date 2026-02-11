@@ -9,8 +9,7 @@ showBanner: true
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
   Flutter 3.41 is live! Check out the
-  <a href="https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632
-">Flutter 3.41 blog post!</a>
+  <a href="https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632">Flutter 3.41 blog post!</a>
 
 branch: main
 repo:
