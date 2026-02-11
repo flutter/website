@@ -645,6 +645,7 @@
       { "source": "/go/plugin-support-for-custom-embeddings", "destination": "https://docs.google.com/document/d/1AJTHdC20JhD3viR4JWTghagIztqL5jg_R9NFQmnwAMw/edit?usp=sharing&resourcekey=0-qAECjzHKB5tM47azrVnH1w", "type": 301 },
       { "source": "/go/plugins-list-migration", "destination": "https://docs.google.com/document/d/1itYyHax0bzL3-hRtQd1zRPqJfOrLYih1fW0nPDJDytc/edit", "type": 301 },
       { "source": "/go/plugins-team", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSfpPqJYuL_RzLaTCjrWYw73Zrrei3YiU8B5eTrDBh4fuGhbXw/viewform?usp=sf_link", "type": 301 },
+      { "source": "/go/post-decoupling-breaking-changes", "destination": "https://docs.google.com/document/d/1SMxhPDWLgos9xGPj5NUzTVX7J6sPGtW9D8EDQNF30G4/edit?pli=1&tab=t.0", "type": 301 },
       { "source": "/go/profile-and-release-mode-for-custom-devices", "destination": "https://docs.google.com/document/d/1jcMyJvsWLizYOIJAdyosLSW-Io0-E_MGsU_uL_Q4Wt8/edit?usp=sharing", "type": 301 },
       { "source": "/go/programmatic-sheet", "destination": "https://docs.google.com/document/d/15A3q1QrcvEU82uG4heTCKV230depmaJZTIP5rEz7V8g/edit?usp=sharing&resourcekey=0-q-TH-9-LVmygnp6Ku4xKIg", "type": 301 },
       { "source": "/go/pub-automated-publishing", "destination": "https://docs.google.com/document/d/1LSYVjDdgGNCc7p5Y2_hu8UA_Ms9MgZs3Jm974D1J344", "type": 301 },
