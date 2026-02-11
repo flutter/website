@@ -819,8 +819,7 @@ Instead of accessing these APIs, you can access the windowScene through the view
 ```objc diff
 @interface MyPlugin ()
 + @property(nonatomic, weak) NSObject<FlutterPluginRegistrar> *registrar;
-
-+ - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar;
++  - (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar;
 @end
 
 @implementation MyPlugin
@@ -858,7 +857,7 @@ Instead of accessing these APIs, you can access the windowScene through the view
 
 -    NSArray<UIWindow *> *windows = [UIApplication sharedApplication].windows;
 +    NSArray<UIWindow *> *windows = self.pluginRegistrar.viewController.view.window.windowScene.windows;
-  }
+}
 ```
 
 </Tab>
@@ -894,7 +893,7 @@ public class MyPlugin: NSObject, FlutterPlugin {
 -    let windows = UIApplication.shared.windows;
 +    let windows = self.registrar.viewController?.view.window?.windowScene?.windows;
 
-  }
+}
 ```
 </Tab>
 </Tabs>
