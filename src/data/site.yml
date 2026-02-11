@@ -8,8 +8,9 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Check out our newly published best practices for
-  <a href="/ai/best-practices">building AI-powered apps with Flutter!</a>
+  Flutter 3.41 is live! Check out the
+  <a href="https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632
+">Flutter 3.41 blog post!</a>
 
 branch: main
 repo:
