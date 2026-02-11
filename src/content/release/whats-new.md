@@ -22,12 +22,43 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
-## 11 February 2026: Year of the Fire Horse Release 3.41
+## 11 February 2026: "Year of the Fire Horse" Release 3.41
 
 Flutter 3.41 is live! For details,
-check out the [Flutter 3.41 blog post][3.41-blog].
+check out the [Flutter 3.41 blog post][3.41-blog-post].
 
-[3.41-blog]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
+[3.41-blog-post]: {{site.flutter-blog}}/xxx
+
+**Docs updated or added since the 3.38 release**
+
+In addition to many smaller updates, here are some of the more
+significant changes:
+
+* We have introduced a new getting started experience for
+  both Flutter and Dart, as announced in a recent [blog post][fwe].
+  You can find the Flutter [learning pathway][] under the **Learn**
+  tab at the top of [docs.flutter.dev][]. To return to the rest of the site,
+  select the **User Guides** tab. As always, the **Reference**
+  tab takes you to the [Flutter API docs][].
+
+* Flutter and Dart now have an [official glossary][].
+  As part of the recent migration of the websites to Jaspr,
+  a glossary has been added to the Flutter website.
+  Expect to see it grow in the fullness of time.
+
+* As always, check out the [breaking changes][] page,
+  which includes links to migrations guides and other vital information.
+  A special thank you to [navaronbracke][], who wrote a migration
+  guide for the [deprecation of the `onReorder` callback][onReorder].
+  
+[breaking-changes]: /release/breaking-changes
+[docs.flutter.dev]: /
+[Flutter API docs]: {{pub.api}}
+[fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
+[learning pathway]: /learn
+[navaronbracke]: {{site.github}}/navaronbracke
+[official glossary]: /resources/glossary
+[onReorder]: /release/breaking-changes/separated-builder-find-child-index-callback
 
 ---
 
