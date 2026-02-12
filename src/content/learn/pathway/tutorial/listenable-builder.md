@@ -161,7 +161,7 @@ class ArticleView extends StatelessWidget {
             // The summary must be non-null in this switch case.
             (false, Summary summary, null) => ArticlePage(
               summary: summary,
-              onPressed: viewModel.getRandomArticleSummary,
+              nextArticleCallback: viewModel.getRandomArticleSummary,
             ),
           };
         },
