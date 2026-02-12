@@ -244,11 +244,11 @@ class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
     required this.summary,
-    required this.onPressed,
+    required this.nextArticleCallback,
   });
 
   final Summary summary;
-  final VoidCallback onPressed;
+  final VoidCallback nextArticleCallback;
 
   @override
   Widget build(BuildContext context) {
