@@ -362,7 +362,7 @@ or begin improving integration with Android.
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
-          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
+          <a class="text-button" href="/learn/learning-resources">Check out samples</a>
         </li>
       </ul>
     </div>
