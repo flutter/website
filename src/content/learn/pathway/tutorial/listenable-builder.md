@@ -255,10 +255,8 @@ class ArticlePage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Flexible(
-            child: ArticleWidget(
-              summary: summary,
-            ),
+          ArticleWidget(
+            summary: summary,
           ),
           ElevatedButton(
             onPressed: nextArticleCallback,
