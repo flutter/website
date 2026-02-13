@@ -57,32 +57,59 @@ that have migrated.
 {% render "docs/swift-package-manager/migrate-objective-c-plugin.md", site: site %}
 
 </Tab>
-</Tab>
 </Tabs>
 
-## Manually add the plugin to the example app
+## (Optional, but Recommended) Add plugin as local package in example app
 
-Flutter attempts to automatically add your plugin as a local package dependency
-to your example app's Xcode project.
-However, if this fails or if you need to debug the integration,
-you can add it manually:
+If your plugin includes an example, it is recommended to add the plugin as a local package in the example app. This is not required, but provides better Xcode support when editing the plugin's source code in the example app. See [issue #179032](https://github.com/flutter/flutter/issues/179032).
 
-1.  Open `example/ios/Runner.xcworkspace` in Xcode.
+### Add plugin as local package
 
-1.  Navigate to **Package Dependencies** for the project.
+1. In a terminal navigate to `my_plugin`.
 
-1.  Click the <Icon id="add" label="plus/add"></Icon> button.
+1. Run the following command to open the example app's workspace in Xcode, (replace `ios` with `macos` if your plugin targets macOS): 
 
-1.  In the dialog that opens, click the **Add Local...** button.
+```bash
+open example/ios/Runner.xcworkspace
+```
 
-1.  Navigate to your plugin's root iOS directory (the folder containing `Package.swift`)
-    and click **Add Package**.
+1. Right click **Flutter** > **Add Files to “Runner”**.
 
-1.  Select your plugin's library product and ensure it is added to the **Runner** target.
+   ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
 
-1.  Click **Add Package**.
+1. Select `my_plugin/ios/my_plugin` (or `macos` if your plugin targets macOS).
 
-This overrides the published version of the plugin (if any) with your local source code.
+1. Make sure “Reference files in place” is selected (it should be the default), and click **Finish**.
+
+   ![Select Reference files in place](/assets/images/docs/development/packages-and-plugins/swift-package-manager/reference-files-in-place.png)
+
+This adds the plugin as a local package, but it will be referenced by absolute path, which is not desirable for distribution. To change it to a relative path, follow the steps below.
+
+### Change to relative path
+
+1. Copy “Full Path” for plugin from the File Inspector.
+
+   ![Copy Full Path](/assets/images/docs/development/packages-and-plugins/swift-package-manager/copy-full-path.png)
+
+1. In terminal:
+   `open -a Xcode example/ios/Runner.xcodeproj/project.pbxproj`
+
+1. Find the following:
+   ```text
+   path = [COPIED FULL PATH]; sourceTree = "<absolute>"  
+   ```
+
+   For example:
+
+   ```text
+   path = /Users/username/path/to/my_plugin/ios/my_plugin; sourceTree = "<absolute>"
+   ```
+
+1. And replace with relative path:
+   ```text
+   path = ../../ios/my_plugin; sourceTree = "<group>"
+   ```
+   (Adjust `ios` to `macos` or `darwin` as needed).
 
 ## How to update unit tests in a plugin's example app
 
