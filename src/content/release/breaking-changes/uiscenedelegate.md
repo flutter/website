@@ -811,7 +811,7 @@ performed here related to the launch options should be moved to the
 | [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`UIWindowScene windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
 | [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`UIView window`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                     |
 
-Instead of accessing these APIs, you can access the windowScene through the viewController. See examples below.
+Instead of accessing these APIs, you can access the `windowScene` through the `viewController`. See examples below.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Objective-C">
