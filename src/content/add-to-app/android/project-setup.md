@@ -164,7 +164,7 @@ not be identical to your host app's package name.
 
 #### Java version requirement
 
-Flutter requires your project to declare compatibility with Java 11 or later.
+Flutter requires your project to declare compatibility with Java 17 or later.
 
 Before attempting to connect your Flutter module project
 to your host Android app, ensure that your host Android
@@ -327,6 +327,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         maven("https://storage.googleapis.com/download.flutter.io")
+        maven(url = "<some/path/flutter_module>/build/host/outputs/repo")
     }
 }
 ```
@@ -397,19 +398,6 @@ of the same app-level build.gradle file.
 ```kotlin title="MyApp/app/build.gradle.kts"
 configurations {
     getByName("profileImplementation") {
-    }
-}
-```
-
-Then, add the following `dependencyResolutionManagement` block to the
-`settings.gradle` file:
-```kotlin title="MyApp/settings.gradle.kts"
-include(":app")
-
-dependencyResolutionManagement {
-    repositories {
-        maven(url = "https://storage.googleapis.com/download.flutter.io")
-        maven(url = "<some/path/flutter_module_project>/build/host/outputs/repo")
     }
 }
 ```

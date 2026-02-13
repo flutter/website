@@ -36,22 +36,29 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
+* [Deprecate `onReorder` callback][]
+* [Deprecated `cacheExtent` and `cacheExtentStyle`][]
+* [Page transition builders reorganization][]
+
+[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
+[Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
+[Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
+[Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
+
+<a id="released-in-flutter-341" aria-hidden="true"></a>
+### Released in Flutter 3.41
+
 * [Merged threads on Linux][]
 * [`FontWeight` also controls the weight attribute of variable fonts][]
 * [Deprecate `containsSemantics` in favor of `isSemantics`][]
 * [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors][]
-* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Material 3 tokens update][]
-* [Page transition builders reorganization][]
 
-[Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 [Merged threads on Linux]: /release/breaking-changes/linux-merged-threads
-[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
-[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 [`FontWeight` also controls the weight attribute of variable fonts]: /release/breaking-changes/font-weight-variation
 [Deprecate `containsSemantics` in favor of `isSemantics`]: /release/breaking-changes/deprecate-contains-semantics
 [Deprecate `findChildIndexCallback` in favor of `findItemIndexCallback` in `ListView` and `SliverList` separated constructors]: /release/breaking-changes/separated-builder-find-child-index-callback
-[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Material 3 tokens update]: /release/breaking-changes/material-color-utilities
 
 <a id="released-in-flutter-338" aria-hidden="true"></a>
@@ -94,6 +101,7 @@ They're sorted by release and listed in alphabetical order:
 [Flutter now sets default `abiFilters` in Android builds]: /release/breaking-changes/default-abi-filters-android
 [Merged threads on macOS and Windows]: /release/breaking-changes/macos-windows-merged-threads
 [The `Visibility` widget is no longer focusable by default when `maintainState` is enabled]: /release/breaking-changes/visibility-maintainfocusability
+[`$FLUTTER_ROOT/version` replaced by `$FLUTTER_ROOT/bin/cache/flutter.version.json`]: /release/breaking-changes/flutter-root-version-file
 
 <a id="released-in-flutter-332" aria-hidden="true"></a>
 ### Released in Flutter 3.32
@@ -201,6 +209,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate imperative apply of Flutter's Gradle plugins]: /release/breaking-changes/flutter-gradle-plugin-apply
 [Default multitouch scrolling]: /release/breaking-changes/multi-touch-scrolling
 [Accessibility traversal order of tooltip changed]: /release/breaking-changes/tooltip-semantics-order
+[Stop generating `AssetManifest.json`]: /release/breaking-changes/asset-manifest-dot-json
 
 <a id="released-in-flutter-316" aria-hidden="true"></a>
 ### Released in Flutter 3.16
