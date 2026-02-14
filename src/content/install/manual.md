@@ -1,4 +1,4 @@
----
+Oct---
 title: Install Flutter manually
 shortTitle: Install manually
 breadcrumb: Manually
