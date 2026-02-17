@@ -62,7 +62,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -107,7 +107,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -173,7 +173,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
