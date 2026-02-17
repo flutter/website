@@ -804,14 +804,14 @@ performed here related to the launch options should be moved to the
 
 6. [Optional] Migrate other deprecated APIs to support multiple scenes in the future.
 
-| Deprecated API                                                                                                 | UIScene Replacement                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | [`self.pluginRegistrar.viewController.view.window.windowScene.screen`](https://developer.apple.com/documentation/uikit/uiwindowscene/screen?language=objc)       |
-| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiwindowscene/keywindow?language=objc) |
-| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`self.pluginRegistrar.viewController.view.window.windowScene.windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
-| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                                                                                      |
+| Deprecated API                                                                                                 | UIScene Replacement                                                                                                |
+|:---------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | [`UIWindowScene screen`](https://developer.apple.com/documentation/uikit/uiwindowscene/screen?language=objc)       |
+| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | [`UIWindowScene keyWindow`](https://developer.apple.com/documentation/uikit/uiwindowscene/keywindow?language=objc) |
+| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`UIWindowScene windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
+| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`UIView window`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                     |
 
-Instead of accessing these APIs, you can access the windowScene through the viewController. See examples below.
+Instead of accessing these APIs, you can access the `windowScene` through the `viewController`. See examples below.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Objective-C">
