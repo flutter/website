@@ -8,42 +8,46 @@ description: >
 
 :::important
 As of the Flutter 3.41 release, `UIScene` support is the
-default and auto migration to `UIScene` happens automatically.
+default for iOS apps and auto migration to `UIScene`
+is automatic.
 :::
 
 ## Summary
 
 Apple now requires iOS developers to adopt the `UIScene` life cycle.
-This migration has implications on the [app launch
-sequence]({{site.apple-dev}}/documentation/uikit/about-the-app-launch-sequence)
-and [app life
-cycle]({{site.apple-dev}}/documentation/uikit/managing-your-app-s-life-cycle).
+This migration has implications for the [app launch sequence][]
+and [app life cycle][].
+
+[app launch sequence]: {{site.apple-dev}}/documentation/uikit/about-the-app-launch-sequence
+[app life cycle]: {{site.apple-dev}}/documentation/uikit/managing-your-app-s-life-cycle
 
 ## Background
 
-During WWDC25, Apple
-[announced]({{site.apple-dev}}/videos/play/wwdc2025/243/?time=1317)
-the following:
+During WWDC25, Apple [announced][] the following:
+
 > In the release following iOS 26, any UIKit app built with the latest SDK will
 > be required to use the UIScene life cycle, otherwise it will not launch.
 
 To use the UIScene lifecycle with Flutter, migrate the following support:
 
-* All Flutter apps that support iOS - See the [migration guide for Flutter
-  apps](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
-* Flutter embedded in iOS native apps - See the [migration guide for adding
-  Flutter to an existing
-  app](/release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app)
-* Flutter plugins that use iOS application lifecycle events - See the [migration
-  guide for
-  plugins](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
+* For all Flutter apps that support iOS,
+  visit the [migration guide][] for Flutter apps.
+* For Flutter app embedded in iOS native apps, visit the
+  [migration guide for adding Flutter to an existing app][migrate-existing-app].
+* For Flutter plugins that use iOS application lifecycle events, visit the
+  [migration guide for plugins][]
 
-Migrating to UIScene shifts the AppDelegate's role—the UI lifecycle is
+Migrating to UIScene shifts the `AppDelegate`'s role—the UI lifecycle is
 now handled by the `UISceneDelegate`. The `AppDelegate`
-remains responsible for process events and the overall application
-lifecycle. All UI-related logic should be moved from the `AppDelegate` to the
+remains responsible for process events and the overall application lifecycle.
+All UI-related logic should be moved from the `AppDelegate` to the
 corresponding `UISceneDelegate` methods. After migrating to `UIScene`,
 UIKit won't call `AppDelegate` methods related to UI state.
+
+[announced]: {{site.apple-dev}}/videos/play/wwdc2025/243/?time=1317
+[migrate-existing-app]: /release/breaking-changes/uiscenedelegate/#migration-guide-for-adding-flutter-to-existing-app-add-to-app
+[migration guide]: /release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps
+[migration guide for plugins]: /release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins
 
 ## Migration guide for Flutter apps
 
@@ -64,15 +68,17 @@ or
 flutter build ios
 ```
 
-If the migration succeeds, you will see a log that says "Finished migration to
-UIScene lifecycle". Otherwise, it warns you to migrate manually using the
-included instructions. If the migration succeeds, no further action is required!
+If the migration succeeds,
+you will see a log that says "Finished migration to UIScene lifecycle".
+Otherwise, it warns you to migrate manually using the included instructions.
+If the migration succeeds, no further action is required.
 
 ### Migrate AppDelegate
 
 Previously, Flutter plugins were registered in
-`application:didFinishLaunchingWithOptions:`. To accomodate the new app launch
-sequence, plugin registration must now be handled in a new callback called
+`application:didFinishLaunchingWithOptions:`.
+To accomodate the new app launch sequence,
+plugin registration must now be handled in a new callback called
 `didInitializeImplicitFlutterEngine`.
 
 1. Add `FlutterImplicitEngineDelegate` and move `GeneratedPluginRegistrant`.
@@ -120,7 +126,7 @@ sequence, plugin registration must now be handled in a new callback called
 </Tabs>
 
 2. Create method channels and platform views in
-`didInitializeImplicitFlutterEngine`, if applicable.
+   `didInitializeImplicitFlutterEngine`, if applicable.
 
 If you previously created [method channels][method-channels-docs] or
 [platform views][platform-views-docs] in
@@ -185,25 +191,26 @@ usage](/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-
 
 3. Migrate any custom logic within application life cycle events.
 
-Apple has deprecated application life cycle events related to UI state. After
-migrating to UIScene lifecycle, UIKit will no longer call these events.
+Apple has deprecated application life cycle events related to UI state.
+After migrating to UIScene lifecycle, UIKit will no longer call these events.
 
-If you were using one of these depreacted APIs, such as
-[`applicationDidBecomeActive`]({{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/applicationdidbecomeactive(_:)),
-you will likely need to create a SceneDelegate and migrate to scene life cycle
-events. See [Apple's
-documentation]({{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle)
-on migrating.
+If you were using one of these depreacted APIs, such as [`applicationDidBecomeActive`],
+you will likely need to create a `SceneDelegate` and migrate to scene life cycle events.
+Check out [Apple's documentation] on migrating.
 
-If you implement your own SceneDelegate, you must subclass it with
-`FlutterSceneDelegate` or conform to the `FlutterSceneLifeCycleProvider`
-protocol. See the [following
-examples](/release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate).
+If you implement your own `SceneDelegate`,
+you must subclass it with `FlutterSceneDelegate` or
+conform to the `FlutterSceneLifeCycleProvider` protocol.
+Visit the [following examples][].
+
+[Apple's documentation]: {{site.apple-dev}}/documentation/technotes/tn3187-migrating-to-the-uikit-scene-based-life-cycle
+[`applicationDidBecomeActive`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/applicationdidbecomeactive
+[following examples]: /release/breaking-changes/uiscenedelegate/#createupdate-a-scenedelegate
 
 ### Migrate Info.plist
 
-To complete the migration to the UIScene lifecycle, add an `Application Scene
-Manifest` to your Info.plist.
+To complete the migration to the `UIScene` lifecycle,
+add an `Application Scene Manifest` to your `Info.plist`.
 
 As seen in Xcode's editor:
 
@@ -241,10 +248,19 @@ As XML:
 </dict>
 ```
 
+### Temporarily disable UIScene
+
+To _temporarily_ disable UIScene, add an underbar (`_`)
+in front of **Application Scene Manifest** in your `Info.plist`:
+
+![Temporarily disable UIScene](/assets/images/docs/breaking-changes/disable-UIScene.png)
+
+When you are ready to re-enable, remove the underbar.
+
 ### Create a SceneDelegate (Optional)
 
-If you need access to the `SceneDelegate`, you can create one by
-subclassing `FlutterSceneDelegate`.
+If you need access to the `SceneDelegate`,
+you can create one by subclassing `FlutterSceneDelegate`.
 
 1. Open your app in Xcode
 2. Right click the **Runner** folder and select **New Empty File**
@@ -266,8 +282,7 @@ class SceneDelegate: FlutterSceneDelegate {
 ```
 
 3. Change the "Delegate Class Name" (`UISceneDelegateClassName`) in the
-Info.plist from `FlutterSceneDelegate` to
-`$(PRODUCT_MODULE_NAME).SceneDelegate`.
+`Info.plist` from `FlutterSceneDelegate` to `$(PRODUCT_MODULE_NAME).SceneDelegate`.
 
 </Tab>
 <Tab name="Objective-C">
@@ -292,8 +307,7 @@ For Objective-C projects, create a `SceneDelegate.h` and `SceneDelegate.m`:
 ```
 
 3. Change the "Delegate Class Name" (`UISceneDelegateClassName`) in the
-Info.plist from `FlutterSceneDelegate` to `SceneDelegate`.
-
+`Info.plist` from `FlutterSceneDelegate` to `SceneDelegate`.
 </Tab>
 </Tabs>
 
@@ -327,10 +341,11 @@ but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
 </Tab>
 <Tab name="SwiftUI">
 
-When using Flutter in a SwiftUI app, you can [optionally use a
-FlutterAppDelegate](/add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate)
-to receive application events. To migrate that to use UIScene events, you can
-make the following changes:
+When using Flutter in a SwiftUI app,
+you can [optionally use a FlutterAppDelegate][]
+to receive application events.
+To migrate that to use `UIScene` events,
+you can make the following changes:
 
 1. Set the Scene Delegate to `FlutterSceneDelegate` in
 `application:configurationForConnecting:options:`.
@@ -354,24 +369,26 @@ make the following changes:
   }
 ```
 
-2. If your app does not support multiple scenes, set `Enable Multiple Scenes`
-to `NO` under `Application Scene Manifest` in your target's Info properties.
-This is enabled by default for SwiftUI apps.
+[optionally use a FlutterAppDelegate]: /add-to-app/ios/add-flutter-screen#using-the-flutterappdelegate
+
+2. If your app doesn't support multiple scenes, set `Enable Multiple Scenes`
+   to `NO` under `Application Scene Manifest` in your target's Info properties.
+   This is enabled by default for SwiftUI apps.
 
 ![Xcode plist editor for
 UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate-swiftui-info-plist.png)
 
-Otherwise, see [If your app supports multiple
-scenes](/release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes)
-for further instructions.
+Otherwise, visit [if your app supports multiple scenes][] for further instructions.
 
 </Tab>
 </Tabs>
 
+[if your app supports multiple scenes]: /release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes
+
 ### If you can't directly make FlutterSceneDelegate a subclass
 
-If you can't directly make `FlutterSceneDelegate` a subclass, you can use the
-`FlutterSceneLifeCycleProvider` protocol and
+If you can't directly make `FlutterSceneDelegate` a subclass,
+you can use the `FlutterSceneLifeCycleProvider` protocol and
 `FlutterPluginSceneLifeCycleDelegate` object to forward scene life cycle events
 to Flutter.
 
@@ -514,12 +531,14 @@ to Flutter.
 
 ### If your app supports multiple scenes
 
-When multiple scenes is enabled (UIApplicationSupportsMultipleScenes), Flutter cannot automatically associate a
-`FlutterEngine` with a scene during the scene connection phase. In order for
-plugins to receive launch connection information, the `FlutterEngine` must be
-manually registered with either the `FlutterSceneDelegate` or
-`FlutterPluginSceneLifeCycleDelegate` during
-`scene:willConnectToSession:options:`. Otherwise, once the view, created by the
+When multiple scenes is enabled (`UIApplicationSupportsMultipleScenes`),
+Flutter can't automatically associate a
+`FlutterEngine` with a scene during the scene connection phase.
+For plugins to receive launch connection information,
+the `FlutterEngine` must be manually registered with either the
+`FlutterSceneDelegate` or `FlutterPluginSceneLifeCycleDelegate` during
+`scene:willConnectToSession:options:`.
+Otherwise, once the view, created by the
 `FlutterViewController` and `FlutterEngine`, is added to the view heirarchy,
 the `FlutterEngine` will automatically register for scene events.
 
@@ -642,7 +661,7 @@ sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 
 ## Migration guide for Flutter plugins
 
-Not all plugins use lifecycle events. If your plugin does, though, you will
+Not all plugins use lifecycle events. However, if your plugin does you will
 need to migrate to UIKit's scene-based lifecycle.
 
 1. Update the Dart and Flutter SDK versions in your pubspec.yaml
@@ -678,9 +697,9 @@ environment:
 
 3. Registers the plugin as a receiver of `UISceneDelegate` calls.
 
-To continue supporting apps that have not migrated to the UIScene lifecycle yet,
-you might consider remaining registered to the App Delegate and keeping the App
-Delegate events as well.
+To continue supporting apps that have not migrated to the `UIScene` lifecycle yet,
+you might consider remaining registered to the App Delegate and keeping the
+`AppDelegate` events as well.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Swift">
@@ -707,11 +726,10 @@ Delegate events as well.
 </Tab>
 </Tabs>
 
-4. Add one or more of the following scene events that are needed for your
-plugin.
+4. Add one or more of the following scene events needed for your plugin.
 
-Most App Delegate UI events have a 1-to-1 replacement. To see details for each
-event, visit Apple's documentation on
+Most `AppDelegate` UI events have a 1-to-1 replacement.
+To see details for each event, visit Apple's documentation on
 [`UISceneDelegate`][] and [`UIWindowSceneDelegate`][].
 
 [`UISceneDelegate`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate
@@ -796,15 +814,15 @@ public func windowScene(
 </Tabs>
 
 5. Move launch logic from `application:willFinishLaunchingWithOptions:` and
-`application:didFinishLaunchingWithOptions:` to
-`scene:willConnectToSession:options:`.
+   `application:didFinishLaunchingWithOptions:` to
+   `scene:willConnectToSession:options:`.
 
 Despite `application:willFinishLaunchingWithOptions:` and
-`application:didFinishLaunchingWithOptions:` not being deprecated, after
-migrating to the `UIScene` lifecycle, the launch options will be `nil`. Any logic
-performed here related to the launch options should be moved to the
-`scene:willConnectToSession:options:` event.
-
+`application:didFinishLaunchingWithOptions:` not being deprecated,
+after migrating to the `UIScene` lifecycle,
+the launch options will be `nil`.
+Any logic performed here related to the launch options should be
+moved to the `scene:willConnectToSession:options:` event.
 
 6. [Optional] Migrate other deprecated APIs to support multiple scenes in the future.
 
@@ -815,7 +833,9 @@ performed here related to the launch options should be moved to the
 | [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`UIWindowScene windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
 | [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`UIView window`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                     |
 
-Instead of accessing these APIs, you can access the `windowScene` through the `viewController`. See examples below.
+Instead of accessing these APIs,
+you can access the `windowScene` through the `viewController`.
+See the following examples.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Objective-C">
@@ -932,8 +952,9 @@ Migration options:
 ```
 
 ## Hide Migration Warning
-To hide the Flutter CLI warning about migrating to UIScene, add the following
-to your pubspec.yaml:
+
+To hide the Flutter CLI warning about migrating to UIScene,
+add the following to your pubspec.yaml:
 
 ```yaml file="pubspec.yaml" diff
   flutter:
