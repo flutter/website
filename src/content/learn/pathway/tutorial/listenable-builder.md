@@ -2,7 +2,6 @@
 title: Rebuild UI when state changes
 description: Instructions on how to manage state with ChangeNotifiers.
 layout: tutorial
-sitemap: false
 ---
 
 Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.
@@ -162,7 +161,7 @@ class ArticleView extends StatelessWidget {
             // The summary must be non-null in this switch case.
             (false, Summary summary, null) => ArticlePage(
               summary: summary,
-              onPressed: viewModel.getRandomArticleSummary,
+              nextArticleCallback: viewModel.getRandomArticleSummary,
             ),
           };
         },
@@ -245,21 +244,19 @@ class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
     required this.summary,
-    required this.onPressed,
+    required this.nextArticleCallback,
   });
 
   final Summary summary;
-  final VoidCallback onPressed;
+  final VoidCallback nextArticleCallback;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Flexible(
-            child: ArticleWidget(
-              summary: summary,
-            ),
+          ArticleWidget(
+            summary: summary,
           ),
           ElevatedButton(
             onPressed: nextArticleCallback,

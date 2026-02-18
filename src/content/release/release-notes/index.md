@@ -15,6 +15,10 @@ To see what's changed in beta releases, check out the
 [Beta channel](/install/archive#beta-channel) section on the archive page.
 :::
 
+* 3.41.0
+  * [3.41.0 announcement][]
+  * [3.41.0 release notes & change log][]
+  * [3.41.0 breaking changes & migrations][]
 * 3.38.0
   * [3.38.0 announcement][]
   * [3.38.0 release notes & change log][]
@@ -108,6 +112,10 @@ To see what's changed in beta releases, check out the
 * Earlier
   * [Archived release notes][]
 
+[Archived release notes]: /release/release-notes/release-notes-archive
+[3.41.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
+[3.41.0 release notes & change log]: /release/release-notes/release-notes-3.41.0
+[3.41.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-41
 [3.38.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 [3.38.0 release notes & change log]: /release/release-notes/release-notes-3.38.0
 [3.38.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-38

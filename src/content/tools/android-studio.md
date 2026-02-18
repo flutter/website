@@ -493,27 +493,27 @@ visual interface.
 
 ### Known issues and feedback
 
-Important known issues that might impact your experience are documented
-in the [Flutter plugin README][] file.
+Important known issues that might impact your experience are
+documented in the [Flutter plugin README][] file.
 
-All known bugs are tracked in the issue trackers:
+Known bugs and feature requests are tracked in the issue trackers:
 
-* Flutter plugin: [GitHub issue tracker][]
-* Dart plugin: [JetBrains YouTrack][]
+* [Flutter plugin issue tracker][]
+* [Dart plugin issue tracker][]
 
 We welcome feedback, both on bugs/issues and feature requests.
 Prior to filing new issues:
 
-* Do a quick search in the issue trackers to see if the issue is already
-  tracked.
-* Make sure you have [updated](#updating) to the most recent version of the
-  plugin.
+* Do a quick search in the issue trackers to
+  see if the issue is already tracked.
+* Make sure you have [updated](#updating) to
+  the most recent version of the plugin.
 
 When filing new issues, include the output of [`flutter doctor`][].
 
 [DevTools]: /tools/devtools
-[GitHub issue tracker]: {{site.repo.flutter}}-intellij/issues
-[JetBrains YouTrack]: https://youtrack.jetbrains.com/issues?q=%23dart%20%23Unresolved
+[Flutter plugin issue tracker]: https://github.com/flutter/flutter-intellij/issues
+[Dart plugin issue tracker]: https://github.com/flutter/dart-intellij-third-party/issues
 [`flutter doctor`]: /resources/bug-reports#provide-some-flutter-diagnostics
 [Debugging Flutter apps]: /testing/debugging
 [Flutter plugin README]: {{site.repo.flutter}}-intellij/blob/master/README.md

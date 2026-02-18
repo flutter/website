@@ -33,7 +33,7 @@ please reach out on [Issue 150525][].
 ## Timeline
 
 Landed in version: 3.39.0-0.1.pre<br>
-In stable release: Not yet
+In stable release: 3.41
 
 ## References
 

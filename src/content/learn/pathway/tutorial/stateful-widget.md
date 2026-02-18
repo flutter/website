@@ -2,7 +2,6 @@
 title: Stateful widgets
 description: Learn about StatefulWidgets and rebuilding Flutter UI.
 layout: tutorial
-sitemap: false
 ---
 
 Learn when widgets need to be stateful and how to trigger UI updates with setState.
@@ -119,7 +118,7 @@ class _GamePageState extends State<GamePage> {
                 for (var letter in guess)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2.5, vertical: 2.5),
-                    child: Tile(letter),
+                    child: Tile(letter.char, letter.type),
                   )
               ],
             ),
@@ -187,7 +186,7 @@ class _GamePageState extends State<GamePage> {
                 for (var letter in guess)
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 2.5, vertical: 2.5),
-                    child: Tile(letter),
+                    child: Tile(letter.char, letter.type),
                   )
               ],
             ),

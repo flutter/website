@@ -4,7 +4,6 @@ description: >-
   A gentle introduction into advanced UI features:
   adaptive layouts, slivers, scrolling, navigation.
 layout: tutorial
-sitemap: false
 ---
 
 Preview the Rolodex app you'll build and set up a Cupertino-based project with data models.
@@ -499,7 +498,7 @@ If you aren't familiar with `ValueNotifier`,
 you should complete the [previous tutorial covering state][] before continuing,
 which covers state management.
 
-[previous tutorial covering state]: /learn/tutorial/set-up-state-project
+[previous tutorial covering state]: /learn/pathway/tutorial/set-up-state-project
 
 ### Connect the data to your app
 

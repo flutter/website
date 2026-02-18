@@ -2,7 +2,6 @@
 title: Simple animations
 description: Learn the simplest way to implement animations in Flutter.
 layout: tutorial
-sitemap: false
 ---
 
 Flutter provides a rich set of animation APIs, and the simplest way to
@@ -63,7 +62,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -108,7 +107,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
@@ -174,7 +173,7 @@ class Tile extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          letter.char.toUpperCase(),
+          letter.toUpperCase(),
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),

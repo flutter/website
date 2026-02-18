@@ -29,7 +29,7 @@ index calculation errors.
 If you use the deprecated `findChildIndexCallback` parameter,
 you will see a deprecation warning:
 
-```
+```plaintext
 'findChildIndexCallback' is deprecated and shouldn't be used.
 Use findItemIndexCallback instead.
 findChildIndexCallback returns child indices (which include separators),
@@ -42,7 +42,7 @@ This feature was deprecated after v3.37.0-1.0.pre.
 Additionally, if you try to provide both parameters, you will encounter
 an assertion error:
 
-```
+```plaintext
 Cannot provide both findItemIndexCallback and findChildIndexCallback.
 Use findItemIndexCallback as findChildIndexCallback is deprecated.
 ```
@@ -61,7 +61,7 @@ ListView.separated(
   findChildIndexCallback: (Key key) {
     final ValueKey<String> valueKey = key as ValueKey<String>;
     final int itemIndex = items.indexOf(valueKey.value);
-    // Multiply by 2 to account for separators
+    // Multiply by 2 to account for separators.
     return itemIndex == -1 ? null : itemIndex * 2;
   },
   itemBuilder: (BuildContext context, int index) {
@@ -82,7 +82,7 @@ ListView.separated(
   findItemIndexCallback: (Key key) {
     final ValueKey<String> valueKey = key as ValueKey<String>;
     final int itemIndex = items.indexOf(valueKey.value);
-    // Return item index directly - no need to multiply by 2
+    // Return item index directly - no need to multiply by 2.
     return itemIndex == -1 ? null : itemIndex;
   },
   itemBuilder: (BuildContext context, int index) {
@@ -140,7 +140,7 @@ SliverList.separated(
 ## Timeline
 
 Landed in version: 3.38.0-1.0.pre<br>
-In stable release: Not yet
+In stable release: 3.41
 
 ## References
 
