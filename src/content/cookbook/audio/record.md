@@ -9,7 +9,7 @@ This recipe demonstrates how to use the [`record` package][] to add
 audio recording and streaming capabilities to your Flutter app.
 Here is an overview of the steps involved in implementing audio input:
 
-[record package]: {{site.pub}}/packages/record
+[`record` package]: {{site.pub}}/packages/record
 
 1. Add the package dependency
 1. Initialize an `AudioRecorder` object
@@ -47,7 +47,7 @@ final recorder = AudioRecorder();
 
 Before recording, you need to request user permission.
 You might also need to add platform-specific permission configurations.
-Refer to the [record package][] documentation for details.
+Refer to the [`record` package][] documentation for details.
 
 ```dart
 final recorder = AudioRecorder();
@@ -151,7 +151,7 @@ Some examples include:
 * `pcm16bits`
 
 For more detailed information and the full list of supported options,
-visit the [record package][] page on pub.dev or check out the
+visit the [`record` package][] page on pub.dev or check out the
 following Package of the Week video.
 
 <div class="card-grid">
