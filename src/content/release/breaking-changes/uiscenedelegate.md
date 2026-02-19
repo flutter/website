@@ -77,7 +77,7 @@ If the migration succeeds, no further action is required.
 
 Previously, Flutter plugins were registered in
 `application:didFinishLaunchingWithOptions:`.
-To accomodate the new app launch sequence,
+To accommodate the new app launch sequence,
 plugin registration must now be handled in a new callback called
 `didInitializeImplicitFlutterEngine`.
 
