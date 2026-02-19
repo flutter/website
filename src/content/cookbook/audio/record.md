@@ -137,7 +137,7 @@ await recorder.dispose();
 The `record` package supports various encoders and file formats,
 but support varies by platform.
 For the full list of supported encoders per platform,
-check out the package's [encoding support table][record-encoders].
+check out the package's [encoding support table][].
 
 [encoding support table]: {{site.pub-pkg}}/record#file
 
