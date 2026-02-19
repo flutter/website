@@ -136,8 +136,7 @@ await recorder.dispose();
 ## Supported formats and encodings
 
 The `record` package supports various file formats
-and encodings across different platforms
-(iOS, Android, Web, macOS, Windows, and Linux).
+and encodings across different platforms.
 Some examples include:
 
 * `aacLc`
