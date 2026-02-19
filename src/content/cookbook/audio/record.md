@@ -153,10 +153,6 @@ For more detailed information and the full list of supported options,
 visit the [`record` package][] page on pub.dev or check out the
 following Package of the Week video.
 
-<div class="card-grid">
-  <div class="card wrapped-card outlined-card">
-    <div class="card-content"> 
-      <YouTubeEmbed id="v=Vv2A_nUL1tw" title="record Package of the Week"></YouTubeEmbed>
-    </div>
-  </div>
+<div class="video-wrapper">
+  <YouTubeEmbed id="Vv2A_nUL1tw" title="record - Package of the Week"></YouTubeEmbed>
 </div>
