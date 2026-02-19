@@ -1,6 +1,8 @@
 ---
 title: Record or stream audio input
-description: 
+description: >-
+  Learn how to record or stream audio input in
+  your Flutter app using the record package.
 --- 
 
 <?code-excerpt path-base="cookbook/audio/record/"?>
