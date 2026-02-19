@@ -24,11 +24,10 @@ Here is an overview of the steps involved in implementing audio input:
 
 ## 1. Add the package dependency
 
-Add record to your `pubspec.yaml` file:
+To add `package:record` as a dependency, use `flutter pub add`:
 
-```yaml
-dependencies:
-  record: ^latest_version
+```console
+$ flutter pub add record
 ```
 
 Then run `flutter pub get`
