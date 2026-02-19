@@ -117,7 +117,7 @@ stream.listen((audioChunk) {
 ## 8. Stop recording
 
 To stop the recording and get the path to the saved file,
-call the asynchronous `stop()` method on the `AudioRecorder`.
+call the asynchronous `stop` method on the `AudioRecorder`.
 
 ```dart
 final path = await recorder.stop();
