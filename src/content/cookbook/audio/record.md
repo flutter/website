@@ -127,7 +127,7 @@ print('Recording stopped. File saved to: $path');
 ## 9. Dispose of the recorder
 
 When you are finished using the `AudioRecorder`,
-remember to dispose() of it to release resources.
+remember to call its `dispose` method to release its resources.
 
 ```dart
 await recorder.dispose();
