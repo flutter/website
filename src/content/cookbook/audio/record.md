@@ -134,20 +134,12 @@ await recorder.dispose();
 ```
 
 ## Supported formats and encodings
+The `record` package supports various encoders and file formats,
+but support varies by platform.
+For the full list of supported encoders per platform,
+check out the package's [encoding support table][record-encoders].
 
-The `record` package supports various file formats
-and encodings across different platforms.
-Some examples include:
-
-* `aacLc`
-* `aacEld`
-* `aacHe`
-* `amrNb`
-* `amrWb`
-* `opus`
-* `wav`
-* `flac`
-* `pcm16bits`
+[encoding support table]: {{site.pub-pkg}}/record#file
 
 For more detailed information and the full list of supported options,
 visit the [`record` package][] page on pub.dev or check out the
