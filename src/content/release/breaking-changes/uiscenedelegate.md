@@ -194,7 +194,7 @@ usage](/release/breaking-changes/uiscenedelegate/#bespoke-flutterviewcontroller-
 Apple has deprecated application life cycle events related to UI state.
 After migrating to UIScene lifecycle, UIKit will no longer call these events.
 
-If you were using one of these depreacted APIs, such as [`applicationDidBecomeActive`],
+If you were using one of these deprecated APIs, such as [`applicationDidBecomeActive`],
 you will likely need to create a `SceneDelegate` and migrate to scene life cycle events.
 Check out [Apple's documentation] on migrating.
 
