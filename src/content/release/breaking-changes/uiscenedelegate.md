@@ -32,7 +32,7 @@ To use the UIScene lifecycle with Flutter, migrate the following support:
 
 * For all Flutter apps that support iOS,
   visit the [migration guide][] for Flutter apps.
-* For Flutter app embedded in iOS native apps, visit the
+* For Flutter apps embedded in iOS native apps, visit the
   [migration guide for adding Flutter to an existing app][migrate-existing-app].
 * For Flutter plugins that use iOS application lifecycle events, visit the
   [migration guide for plugins][]
