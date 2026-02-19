@@ -253,7 +253,7 @@ As XML:
 To _temporarily_ disable UIScene, add an underscore (`_`)
 in front of **Application Scene Manifest** in your `Info.plist`:
 
-![Temporarily disable UIScene](/assets/images/docs/breaking-changes/disable-UIScene.png)
+![Temporarily disable UIScene](/assets/images/docs/breaking-changes/disable-ui-scene.png)
 
 When you are ready to re-enable, remove the underscore.
 
