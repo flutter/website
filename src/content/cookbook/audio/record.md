@@ -5,7 +5,6 @@ description: >-
   your Flutter app using the record package.
 --- 
 
-<?code-excerpt path-base="cookbook/audio/record/"?>
 
 This recipe demonstrates how to use the [`record` package][] to add
 audio recording and streaming capabilities to your Flutter app.
