@@ -20,13 +20,15 @@ Attempting to opt out of edge-to-edge mode in Android 16
 or later might cause your app to crash.
 :::
 
+[Android 16 release notes]: {{site.android-dev}}/about/versions/16/behavior-changes-16#edge-to-edge
+
 ## Android 16 (and later) edge-to-edge mode
 
 After it was no longer possible to opt out of Android's edge-to-edge mode,
 some apps running on some devices (particularly older Android devices)
 experienced display issues.
 
-To learn how to structure you app to avoid this,
+To learn how to structure your app to avoid this,
 we recommend that you visit the Leancode article, [Mastering Edge-To-Edge in Flutter:
 A Deep Dive Into the System Navigation Bar in Android][article].
 You can also find more discussion in [Issue 168635][] on GitHub.
@@ -90,12 +92,11 @@ Be aware of the following:
 
 [edge-to-edge mode]: {{site.android-dev}}/develop/ui/views/layout/edge-to-edge
 [Android 15 release notes]: {{site.android-dev}}/about/versions/15/behavior-changes-15#edge-to-edge
-[Android 16 release notes]: {{site.android-dev}}/about/versions/16/behavior-changes-16#edge-to-edge
 [`SystemChrome.setEnabledSystemUIMode`]: {{site.api}}/flutter/services/SystemChrome/setEnabledSystemUIMode.html
 
 ## Migration guide
 
-To opt out of edge-to-edge on Android SDK 15 (and **only** Android 15),
+To opt out of edge-to-edge on Android SDK 15 (for Android 15 only),
 specify the new style attribute in each activity that requires it.
 If you have a parent style that child styles need to opt out of,
 you can modify the parent only. In the following example,
