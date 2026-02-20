@@ -180,7 +180,7 @@ var stream = SoLoud.instance.setBufferStream(
 Play the stream:
 
 ```dart
-handle = await SoLoud.instance.play(stream);
+final handle = await SoLoud.instance.play(stream);
 ```
 
 As your app receives audio data, add it to the stream:
