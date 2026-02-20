@@ -58,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.38.6'
+currentFlutterVersion: '3.41.2'
 
 # Settings for Jaspr.
 
