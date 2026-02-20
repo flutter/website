@@ -22,7 +22,7 @@ To get started using the package, follow these steps:
 
 ## 1. Add the package dependency
 
-To add `package:record` as a dependency, use `flutter pub add`:
+To add `package:flutter_soloud` as a dependency, use `flutter pub add`:
 
 ```console
 $ flutter pub add flutter_soloud
