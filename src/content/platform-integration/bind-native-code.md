@@ -33,7 +33,7 @@ $ cd native_add
 This creates a package with the following specialized content:
 
 - **`lib/native_add.dart`**: The Dart code that defines the API of the package.
-- **`lib/src/native_add_bindings_generated.dart`**: The generated Dart bindings
+- **`lib/native_add_bindings_generated.dart`**: The generated Dart bindings
   for the native code.
 - **`src/native_add.c`**: The native C source code.
 - **`src/native_add.h`**: The C header file for the native code.
@@ -75,11 +75,11 @@ To bind to the native code, the template uses [`package:ffigen`][] to generate
 bindings from the header file (`src/native_add.h`). The generation is configured
 in `ffigen.yaml`.
 
-This generates `lib/src/native_add_bindings_generated.dart`.
+This generates `lib/native_add_bindings_generated.dart`.
 
 ### Calling the native function
 
-The generated bindings in `lib/src/native_add_bindings_generated.dart` contain
+The generated bindings in `lib/native_add_bindings_generated.dart` contain
 `@Native() external` functions. These functions are automatically resolved at
 runtime against the code asset outputted by the build hook (which runs at build
 time). This means there is no OS-specific logic required for `dlopen`-ing the
