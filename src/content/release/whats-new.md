@@ -39,7 +39,7 @@ significant changes:
   both Flutter and Dart, as announced in a recent [blog post][fwe].
   You can find the Flutter [learning pathway][] under the **Learn**
   tab at the top of [docs.flutter.dev][]. To return to the rest of the site,
-  select the **User Guides** tab. As always, the **Reference**
+  select the **Guides** tab. As always, the **Reference**
   tab takes you to the [Flutter API docs][].
 
 * Flutter and Dart now have an [official glossary][].
@@ -47,12 +47,12 @@ significant changes:
   a glossary has been added to the Flutter website.
   Expect to see it grow in the fullness of time.
 
-* As always, check out the [breaking changes][] page,
-  which includes links to migrations guides and other vital information.
+* As always, check out the [breaking changes][bc-3-41] page for this release,
+  which includes links to migration guides and other vital information.
   A special thank you to [navaronbracke][], who wrote a migration
   guide for the [deprecation of the `onReorder` callback][onReorder].
-  
-[breaking changes]: /release/breaking-changes
+
+[bc-3-41]: /release/breaking-changes#released-in-flutter-3-41
 [docs.flutter.dev]: /
 [Flutter API docs]: {{site.api}}
 [fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
