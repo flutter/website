@@ -39,7 +39,7 @@ significant changes:
   both Flutter and Dart, as announced in a recent [blog post][fwe].
   You can find the Flutter [learning pathway][] under the **Learn**
   tab at the top of [docs.flutter.dev][]. To return to the rest of the site,
-  select the **User Guides** tab. As always, the **Reference**
+  select the **Guides** tab. As always, the **Reference**
   tab takes you to the [Flutter API docs][].
 
 * Flutter and Dart now have an [official glossary][].

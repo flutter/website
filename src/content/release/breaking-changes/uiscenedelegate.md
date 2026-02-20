@@ -6,9 +6,14 @@ description: >
 
 {% render "docs/breaking-changes.md" %}
 
+:::important
+As of the Flutter 3.41 release, `UIScene` support is the
+default and auto migration to `UIScene` happens automatically.
+:::
+
 ## Summary
 
-Apple now requires iOS developers to adopt the UIScene life cycle.
+Apple now requires iOS developers to adopt the `UIScene` life cycle.
 This migration has implications on the [app launch
 sequence]({{site.apple-dev}}/documentation/uikit/about-the-app-launch-sequence)
 and [app life
@@ -23,6 +28,7 @@ the following:
 > be required to use the UIScene life cycle, otherwise it will not launch.
 
 To use the UIScene lifecycle with Flutter, migrate the following support:
+
 * All Flutter apps that support iOS - See the [migration guide for Flutter
   apps](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-apps)
 * Flutter embedded in iOS native apps - See the [migration guide for adding
@@ -33,30 +39,28 @@ To use the UIScene lifecycle with Flutter, migrate the following support:
   plugins](/release/breaking-changes/uiscenedelegate/#migration-guide-for-flutter-plugins)
 
 Migrating to UIScene shifts the AppDelegate's role—the UI lifecycle is
-now handled by the UISceneDelegate. The AppDelegate
+now handled by the `UISceneDelegate`. The `AppDelegate`
 remains responsible for process events and the overall application
-lifecycle. All UI-related logic should be moved from the AppDelegate to the
-corresponding UISceneDelegate methods. After migrating to UIScene,
-UIKit won't call AppDelegate methods related to UI state.
+lifecycle. All UI-related logic should be moved from the `AppDelegate` to the
+corresponding `UISceneDelegate` methods. After migrating to `UIScene`,
+UIKit won't call `AppDelegate` methods related to UI state.
 
 ## Migration guide for Flutter apps
 
-### Auto-Migrate (Experimental)
+### Auto-migrate
 
-The Flutter CLI can automatically migrate your app if your AppDelegate has not
-been customized.
+As of Flutter 3.41, `UIScene` is supported by default.
+The Flutter CLI automatically migrates your app if your `AppDelegate`
+hasn't been customized.
 
-1. Enable UIScene Migration Feature
-
-```console
-flutter config --enable-uiscene-migration
-```
-
-2. Build or run your app
+1. Build or run your app
 
 ```console
 flutter run
+```
 or
+
+```console
 flutter build ios
 ```
 
@@ -804,14 +808,14 @@ performed here related to the launch options should be moved to the
 
 6. [Optional] Migrate other deprecated APIs to support multiple scenes in the future.
 
-| Deprecated API                                                                                                 | UIScene Replacement                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | [`self.pluginRegistrar.viewController.view.window.windowScene.screen`](https://developer.apple.com/documentation/uikit/uiwindowscene/screen?language=objc)       |
-| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiwindowscene/keywindow?language=objc) |
-| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`self.pluginRegistrar.viewController.view.window.windowScene.windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
-| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`self.pluginRegistrar.viewController.view.window.windowScene.keyWindow`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                                                                                      |
+| Deprecated API                                                                                                 | UIScene Replacement                                                                                                |
+|:---------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| [`UIScreen mainScreen`](https://developer.apple.com/documentation/uikit/uiscreen/1617815-mainscreen)           | [`UIWindowScene screen`](https://developer.apple.com/documentation/uikit/uiwindowscene/screen?language=objc)       |
+| [`UIApplication keyWindow`](https://developer.apple.com/documentation/uikit/uiapplication/1622924-keywindow)   | [`UIWindowScene keyWindow`](https://developer.apple.com/documentation/uikit/uiwindowscene/keywindow?language=objc) |
+| [`UIApplication windows`](https://developer.apple.com/documentation/uikit/uiapplication/windows)       | [`UIWindowScene windows`](https://developer.apple.com/documentation/uikit/uiwindowscene/windows?language=objc)     |
+| [`UIApplicationDelegate window`](https://developer.apple.com/documentation/uikit/uiapplicationdelegate/window) | [`UIView window`](https://developer.apple.com/documentation/uikit/uiview/window?language=objc)                     |
 
-Instead of accessing these APIs, you can access the windowScene through the viewController. See examples below.
+Instead of accessing these APIs, you can access the `windowScene` through the `viewController`. See examples below.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Objective-C">

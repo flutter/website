@@ -15,4 +15,4 @@ help you build up an application with Flutter.
 To discover recipes and other learning materials relevant to you,
 check out the [learning resources index][].
 
-[learning resources index]: /reference/learning-resources
+[learning resources index]: /learn/learning-resources
