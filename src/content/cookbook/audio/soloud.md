@@ -95,7 +95,7 @@ You can also configure gapless looping.
 
 ```dart
 // Play the sound
-handle = await SoLoud.instance.play(sound);
+var handle = await SoLoud.instance.play(sound);
 
 // Play with gapless looping
 handle = await SoLoud.instance.play(
