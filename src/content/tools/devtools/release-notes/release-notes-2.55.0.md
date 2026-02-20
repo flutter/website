@@ -1,3 +1,10 @@
+---
+title: DevTools 2.55.0 release notes
+shortTitle: 2.55.0 release notes
+breadcrumb: 2.55.0
+showToc: false
+---
+
 The 2.55.0 release of the Dart and Flutter DevTools
 includes the following changes among other general improvements.
 To learn more about DevTools, check out the
