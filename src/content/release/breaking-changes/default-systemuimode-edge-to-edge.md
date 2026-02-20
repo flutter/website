@@ -7,18 +7,6 @@ description: >-
 
 {% render "docs/breaking-changes.md" %}
 
-:::note
-You might have found this page because you see a warning in the Google Play
-Console concerning "Edge-to-edge may not display for all users" or "Your app
-uses deprecated APIs or parameters for edge-to-edge".
-These warnings **will not** impact users.
-
-This warning references deprecated code used in the Flutter engine to implement
-edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
-changes for users, so it will continue to work should you set edge-to-edge
-mode in your app. See [flutter#169810] for more information.
-:::
-
 ## Summary
 
 Edge-to-edge mode is Android's default display behavior as of
@@ -32,8 +20,36 @@ Attempting to opt out of edge-to-edge mode in Android 16
 or later might cause your app to crash.
 :::
 
-The rest of this page discusses how to opt out of edge-to-edge
+## Android 16 (and later) edge-to-edge mode
+
+After it was no longer possible to opt out of Android's edge-to-edge mode,
+some apps running on some devices (particularly older Android devices)
+experienced display issues.
+
+To learn how to structure you app to avoid this,
+we recommend that you visit the Leancode article, [Mastering Edge-To-Edge in Flutter:
+A Deep Dive Into the System Navigation Bar in Android][article].
+You can also find more discussion in [Issue 168635][] on GitHub.
+
+[article]: https://leancode.co/blog/mastering-edge-to-edge-in-flutter
+[Issue 168635]: {{site.github}}/flutter/flutter/issues/168635#issuecomment-3485274018
+
+---
+
+The remainder of this page discusses how to opt out of edge-to-edge
 mode for **Android 15 only**.
+
+:::note
+You might have found this page because you see a warning in the Google Play
+Console concerning "Edge-to-edge may not display for all users" or "Your app
+uses deprecated APIs or parameters for edge-to-edge".
+These warnings **will not** impact users.
+
+This warning references deprecated code used in the Flutter engine to implement
+edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
+changes for users, so it will continue to work should you set edge-to-edge
+mode in your app. See [flutter#169810] for more information.
+:::
 
 If your Flutter app targets Android SDK version 15,
 your app automatically displays in edge-to-edge mode,
