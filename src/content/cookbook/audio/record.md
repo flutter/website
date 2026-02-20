@@ -5,7 +5,6 @@ description: >-
   your Flutter app using the record package.
 --- 
 
-
 This recipe demonstrates how to use the [`record` package][] to add
 audio recording and streaming capabilities to your Flutter app.
 Here is an overview of the steps involved in implementing audio input:
@@ -134,6 +133,7 @@ await recorder.dispose();
 ```
 
 ## Supported formats and encodings
+
 The `record` package supports various encoders and file formats,
 but support varies by platform.
 For the full list of supported encoders per platform,
@@ -143,7 +143,7 @@ check out the package's [encoding support table][].
 
 For more detailed information and the full list of supported options,
 visit the [`record` package][] page on pub.dev or check out the
-following Package of the Week video.
+`record` Package of the Week video.
 
 <div class="video-wrapper">
   <YouTubeEmbed id="Vv2A_nUL1tw" title="record - Package of the Week"></YouTubeEmbed>
