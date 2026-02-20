@@ -59,6 +59,58 @@ that have migrated.
 </Tab>
 </Tabs>
 
+## (Optional, but Recommended) Add plugin as local package in example app
+
+If your plugin includes an example, it is recommended to add the plugin as a local package in the example app. This is not required, but provides better Xcode support when editing the plugin's source code in the example app. See [issue #179032](https://github.com/flutter/flutter/issues/179032).
+
+### Add plugin as local package
+
+1. In a terminal navigate to `my_plugin`.
+
+1. Run the following command to open the example app's workspace in Xcode, (replace `ios` with `macos` if your plugin targets macOS): 
+
+```bash
+open example/ios/Runner.xcworkspace
+```
+
+1. Right click **Flutter** > **Add Files to “Runner”**.
+
+   ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
+
+1. Select `my_plugin/ios/my_plugin` (or `macos` if your plugin targets macOS).
+
+1. Make sure “Reference files in place” is selected (it should be the default), and click **Finish**.
+
+   ![Select Reference files in place](/assets/images/docs/development/packages-and-plugins/swift-package-manager/reference-files-in-place.png)
+
+This adds the plugin as a local package, but it will be referenced by absolute path, which is not desirable for distribution. To change it to a relative path, follow the steps below.
+
+### Change to relative path
+
+1. Copy “Full Path” for plugin from the File Inspector.
+
+   ![Copy Full Path](/assets/images/docs/development/packages-and-plugins/swift-package-manager/copy-full-path.png)
+
+1. In terminal:
+   `open -a Xcode example/ios/Runner.xcodeproj/project.pbxproj`
+
+1. Find the following:
+   ```text
+   path = [COPIED FULL PATH]; sourceTree = "<absolute>"  
+   ```
+
+   For example:
+
+   ```text
+   path = /Users/username/path/to/my_plugin/ios/my_plugin; sourceTree = "<absolute>"
+   ```
+
+1. And replace with relative path:
+   ```text
+   path = ../../ios/my_plugin; sourceTree = "<group>"
+   ```
+   (Adjust `ios` to `macos` or `darwin` as needed).
+
 ## How to update unit tests in a plugin's example app
 
 If your plugin has native XCTests, you might need to update them to work with
