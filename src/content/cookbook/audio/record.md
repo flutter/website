@@ -71,8 +71,8 @@ passing in the `recordConfig` you defined
 and the path where the file should be stored.
 
 ```dart
-// Specify the path where the audio file should be saved.
-final audioFilePath = 'myRecording.m4a';
+// TODO: Specify the path where the audio file should be saved.
+final audioFilePath = 'myRecording.wav';
 await recorder.start(recordConfig, path: audioFilePath);
 ```
 
