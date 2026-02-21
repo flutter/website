@@ -3,23 +3,13 @@ title: Record or stream audio input
 description: >-
   Learn how to record or stream audio input in
   your Flutter app using the record package.
---- 
+---
 
 This recipe demonstrates how to use the [`record` package][] to add
 audio recording and streaming capabilities to your Flutter app.
-Here is an overview of the steps involved in implementing audio input:
+To get started using the package, follow these steps:
 
 [`record` package]: {{site.pub-pkg}}/record
-
-1. Add the package dependency
-1. Initialize an `AudioRecorder` object
-1. Request user permission
-1. Create and configure a `RecordConfig`
-1. Start recording to a file
-1. Control an ongoing recording
-1. [Optional] Record to an audio stream
-1. Stop the recording
-1. Dispose of the recorder
 
 ## 1. Add the package dependency
 
@@ -28,8 +18,6 @@ To add `package:record` as a dependency, use `flutter pub add`:
 ```console
 $ flutter pub add record
 ```
-
-Then run `flutter pub get`
 
 ## 2. Initialize an `AudioRecorder`
 
@@ -51,13 +39,13 @@ Refer to the [`record` package][] documentation for details.
 ```dart
 final recorder = AudioRecorder();
 if (await recorder.hasPermission()) {
-  // Permission granted, proceed with recording
+  // Permission granted, proceed with recording.
 } else {
-  // Permission denied
+  // Permission denied.
 }
 ```
 
-## 4. Create and configure a recorder
+## 4. Create a recording configuration
 
 Create and configure a `RecordConfig` object to specify the record settings,
 such as the encoder, sample rate, and channel number.
@@ -77,23 +65,21 @@ final recordConfig = RecordConfig(
 
 ## 5. Start recording to a file
 
-Get the desired file path and call the `start` method
-on the `AudioRecorder`, passing in the `recordConfig`
+To start recording to a file,
+call the `start` method on the `AudioRecorder`,
+passing in the `recordConfig` you defined
 and the path where the file should be stored.
 
 ```dart
-import 'package:path_provider/path_provider.dart'; // For getting a temporary directory
-
-final directory = await getTemporaryDirectory();
-final path = '${directory.path}/myRecord.m4a';
-await recorder.start(recordConfig, path: path);
-print('Recording started to: $path');
+// TODO: Specify the path where the audio file should be saved.
+final audioFilePath = 'myRecording.wav';
+await recorder.start(recordConfig, path: audioFilePath);
 ```
 
 ## 6. Control an ongoing recording
 
-You can control an ongoing recording using `pause()`, `resume()`,
-and `stop()`.
+You can control an ongoing recording using the
+`pause`, `resume`, and `stop` methods on the `AudioRecorder`.
 
 ```dart
 await recorder.pause();
@@ -104,14 +90,16 @@ await recorder.stop();
 ## 7. [Optional] Record to an audio stream
 
 To stream audio, use the `startStream` method.
-This returns a stream of audio data.
+This returns a [stream][] of audio data.
 
 ```dart
 final stream = await recorder.startStream(recordConfig);
 stream.listen((audioChunk) {
-  // Process audioChunk (e.g., send to a server)
+  // Process the audio data. For example, send it to a server.
 });
 ```
+
+[stream]: {{site.api}}/flutter/dart-async/Stream-class.html
 
 ## 8. Stop recording
 
@@ -139,12 +127,12 @@ but support varies by platform.
 For the full list of supported encoders per platform,
 check out the package's [encoding support table][].
 
-[encoding support table]: {{site.pub-pkg}}/record#file
-
-For more detailed information and the full list of supported options,
-visit the [`record` package][] page on pub.dev or check out the
-`record` Package of the Week video.
+For more detailed information and examples,
+visit the [`record` package][] page on pub.dev or
+check out the `record` Package of the Week video.
 
 <div class="video-wrapper">
   <YouTubeEmbed id="Vv2A_nUL1tw" title="record - Package of the Week"></YouTubeEmbed>
 </div>
+
+[encoding support table]: {{site.pub-pkg}}/record#file
