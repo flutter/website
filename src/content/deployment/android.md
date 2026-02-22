@@ -1,4 +1,4 @@
----
+
 title: Build and release an Android app
 description: How to prepare for and release an Android app to the Play store.
 shortTitle: Android
