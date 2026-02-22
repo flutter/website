@@ -390,9 +390,12 @@ default `CupertinoSliverNavigationBar` constructor:
 class _ContactListView extends StatelessWidget {
   const _ContactListView({
     required this.listId,
+    this.automaticallyImplyLeading = true,
   });
 
   final int listId;
+  final bool automaticallyImplyLeading;
+  
 
   @override
   Widget build(BuildContext context) {
