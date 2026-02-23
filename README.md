@@ -53,7 +53,7 @@ Here are a few things to keep in mind before you submit a PR:
   and submit those changes as a PR.
 - We follow the [Google Developer Documentation Style Guidelines][]—
   for example, avoid "i.e." or "e.g.",
-  don't write in the first person,
+  avoid writing in the first person,
   and avoid the future tense.
   You can start with the
   [style guide highlights](https://developers.google.com/style/highlights)
