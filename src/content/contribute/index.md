@@ -190,7 +190,7 @@ check out the Flutter [contribution guide][framework-contribute]
 and how to [Set up the engine development environment][engine-setup].
 
 [framework-contribute]: {{site.repo.flutter}}/blob/main/CONTRIBUTING.md
-[engine-setup]: {{site.repo.flutter}}/blob/main/engine/src/flutter/docs/contributing/Setting-up-the-Engine-development-environment.md
+[engine-setup]: {{site.repo.flutter}}/blob/main/docs/engine/contributing/Setting-up-the-Engine-development-environment.md
 
 ### Flutter packages
 

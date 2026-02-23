@@ -33,28 +33,28 @@ it's easiest to make changes using the GitHub UI.
 
 If you have an issue with the
 API docs on [api.flutter.dev](https://api.flutter.dev),
-please file those issues on
+please file them on
 the [`flutter/flutter`](https://github.com/flutter/flutter/issues) repo,
 not on this (`flutter/website`) repo.
 The API docs are embedded in Flutter's source code,
-so the engineering team handles those.
+so the engineering team handles them.
 
 
 ## Before you submit a PR
 
 We love it when the community gets involved in improving our docs!
-But here are a few notes to keep in mind before you submit a PR:
+Here are a few things to keep in mind before you submit a PR:
 
 - When triaging issues,
   we sometimes label an issue with the tag **PRs welcome**.
-  But we welcome PRs on other issues as well&mdash;
+  However, we welcome PRs on other issues as well&mdash;
   it doesn't have to be tagged with that label.
-- Please don't run our docs through Grammarly (or similar)
+- Please don't run our docs through Grammarly (or a similar tool)
   and submit those changes as a PR.
-- We follow the [Google Developer Documentation Style Guidelines][] —
-  for example, don't use "i.e." or "e.g.",
-  avoid writing in first person,
-  and avoid writing in future tense.
+- We follow the [Google Developer Documentation Style Guidelines][]—
+  for example, avoid "i.e." or "e.g.",
+  avoid writing in the first person,
+  and avoid the future tense.
   You can start with the
   [style guide highlights](https://developers.google.com/style/highlights)
   or the [word list](https://developers.google.com/style/word-list),
@@ -76,7 +76,7 @@ Often you can make changes using the GitHub UI.
 If needed, we can stage the changes automatically in your pull request.
 
 If your change involves code samples, adds/removes pages, or affects navigation,
-do consider building and testing your work before submitting.
+please build and test your work before submitting.
 
 If you want or need to build the site, follow the steps below.
 
@@ -94,8 +94,8 @@ install the latest stable release of Flutter, which includes Dart.
 If you don't have Flutter or need to update, follow the
 instructions at [Install Flutter][] or [Upgrading Flutter][].
 
-If you already have Flutter installed, verify it's on your path
-and already the latest stable version:
+If you already have Flutter installed, verify it's in your path
+and is the latest stable version:
 
 ```console
 flutter --version
@@ -122,7 +122,7 @@ git clone https://github.com/flutter/website.git
 ## Set up your local environment and serve changes
 
 Before you continue setting up the site infrastructure,
-verify the correct versions of Flutter are set up and available by
+verify that the correct version of Flutter is set up and available by
 following the instructions in [Get the prerequisites](#get-the-prerequisites).
 
 1. _Optional:_ After cloning the repo,
@@ -181,17 +181,17 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
 
 If you've made changes to the code in
 the `/examples`, `/site`, or `/tool` directories,
-commit your work, then run the following command to
-verify it is up to date and matches the site standards.
+commit your work, and then run the following command to
+verify that it is up to date and matches site standards.
 
 ```terminal
 dart run dash_site check-all
 ```
 
 If this script reports any errors or warnings,
-then address those issues and rerun the command.
-If you have any issues, leave a comment on your issue or pull request,
-and we'll try our best to help you.
+address them and rerun the command.
+If you have questions, leave a comment on your issue or pull request,
+and we'll do our best to help.
 You can also chat with us on the `#hackers-devrel` channel
 on the [Flutter contributors Discord][]!
 
@@ -199,9 +199,9 @@ on the [Flutter contributors Discord][]!
 
 ### Check links
 
-If you've made changes to the content and would like to check all
-internal links are functional and Markdown link references are valid,
-build the site locally and then run the following commands.
+If you've made changes to the content and want to check that all
+internal links and Markdown link references are valid,
+build the site locally and run the following commands.
 
 1.  Build the site locally.
 
@@ -215,7 +215,7 @@ build the site locally and then run the following commands.
     dart run dash_site check-link-references
     ```
 
-1.  Validate all internal links are valid.
+1.  Verify that all internal links are valid.
 
     > [!NOTE]
     > This command relies on the `firebase` CLI tool being on your PATH.
@@ -227,14 +227,14 @@ build the site locally and then run the following commands.
     ```
 
 If either command reports any errors or warnings,
-then address those issues, rebuild the site, and rerun the command.
+address them, rebuild the site, and rerun the command.
 
 [firebase-install]: https://firebase.google.com/docs/cli#setup_update_cli
 
 ### Refresh code excerpts
 
 A build that fails with the error
-`Error: Some code excerpts needed to be updated!`
+`Error: Some code excerpts need to be updated!`
 means that one or more code excerpts in the site Markdown files
 aren't identical to the code regions declared
 in the corresponding `.dart` files.
