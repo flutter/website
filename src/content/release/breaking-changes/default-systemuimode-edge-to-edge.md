@@ -10,23 +10,20 @@ description: >-
 ## Summary
 
 Edge-to-edge mode is Android's default display behavior as of
-Android version 15 and above. In Android 15, it was possible to
-opt out of this behavior but, as of Android 16, **you cannot opt out**.
+Android version 15 and above. In Android 15, you could
+opt out of this behavior but, as of Android 16, you can't.
 To learn more about this change,
 check out the [Android 16 release notes][].
 
-:::warning
-Attempting to opt out of edge-to-edge mode in Android 16
-or later might cause your app to crash.
-:::
-
 [Android 16 release notes]: {{site.android-dev}}/about/versions/16/behavior-changes-16#edge-to-edge
 
-## Android 16 (and later) edge-to-edge mode
+## Android 16 (or later)
 
-After it was no longer possible to opt out of Android's edge-to-edge mode,
-some apps running on some devices (particularly older Android devices)
-experienced display issues.
+Using the mechanism to opt out of edge-to-edge on Android 16
+or later might cause your app to crash, but you can avoid this
+by using version-specific resources;
+visit the [migration guide](#migration-guide).
+for details.
 
 To learn how to structure your app to avoid this,
 we recommend that you visit the Leancode article, [Mastering Edge-To-Edge in Flutter:
@@ -36,27 +33,12 @@ You can also find more discussion in [Issue 168635][] on GitHub.
 [article]: https://leancode.co/blog/mastering-edge-to-edge-in-flutter
 [Issue 168635]: {{site.github}}/flutter/flutter/issues/168635#issuecomment-3485274018
 
----
-
-The remainder of this page discusses how to opt out of edge-to-edge
-mode for **Android 15 only**.
-
-:::note
-You might have found this page because you see a warning in the Google Play
-Console concerning "Edge-to-edge may not display for all users" or "Your app
-uses deprecated APIs or parameters for edge-to-edge".
-These warnings **will not** impact users.
-
-This warning references deprecated code used in the Flutter engine to implement
-edge-to-edge mode. The engine relies on this deprecated code to avoid breaking
-changes for users, so it will continue to work should you set edge-to-edge
-mode in your app. See [flutter#169810] for more information.
-:::
+## Android 15 (and below)
 
 If your Flutter app targets Android SDK version 15,
 your app automatically displays in edge-to-edge mode,
 as documented on the [`SystemUiMode`][] API page.
-To maintain non-edge-to-edge app behavior
+To maintain non edge-to-edge app behavior
 (including an unset `SystemUiMode`),
 follow the steps in [migration guide](#migration-guide).
 
@@ -69,8 +51,8 @@ target Android 15 or later.
 To learn more about this change, check out the [Android 15 release notes][].
 This impacts devices running on Android SDK 15+ or API 35+.
 
-Prior to Flutter 3.27, Flutter apps target Android 14 by default and
-won't opt into edge-to-edge mode automatically, but
+Prior to Flutter 3.27, Flutter apps targeted Android 14 by default and
+didn't opt into edge-to-edge mode automatically, but
 your app _will_ be impacted when you choose to target Android 15.
 If your app targets `flutter.targetSdkVersion` (as it does by default),
 then it targets Android 15 starting with Flutter version 3.27,
@@ -96,7 +78,7 @@ Be aware of the following:
 
 ## Migration guide
 
-To opt out of edge-to-edge on Android SDK 15 (for Android 15 only),
+To opt out of edge-to-edge on Android SDK 15,
 specify the new style attribute in each activity that requires it.
 If you have a parent style that child styles need to opt out of,
 you can modify the parent only. In the following example,
@@ -150,6 +132,14 @@ Ensure both styles are updated consistently in both files.
 
 This modified style opts your app out of edge-to-edge for
 apps targeting Android SDK 15.
+
+:::note
+If your app runs on Android 16 or above, to avoid crashes you can
+create a `your_app/android/app/src/main/res/values-35` resource
+directory that contains styles without the
+`android:windowOptOutEdgeToEdgeEnforcement` attribute.
+:::
+
 So now you're done!
 
 ## Timeline
