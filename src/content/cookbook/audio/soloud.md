@@ -12,14 +12,6 @@ To get started using the package, follow these steps:
 
 [`flutter_soloud` package]: {{site.pub-pkg}}/flutter_soloud
 
-1. Add the package dependency
-2. Initialize `SoLoud`
-3. Load audio
-4. Play audio
-5. Control playback
-6. Dispose of sound sources
-7. [Optional] Stream audio
-
 ## 1. Add the package dependency
 
 To add `package:flutter_soloud` as a dependency, use `flutter pub add`:
@@ -38,10 +30,10 @@ buffer size, and the number of channels.
 ```dart
 import 'package:flutter_soloud/flutter_soloud.dart';
 
-// Initialize with default settings
+// Initialize with default settings.
 await SoLoud.instance.init();
 
-// Or configure with custom settings
+// Or configure with custom settings.
 await SoLoud.instance.init(
   sampleRate: 44100,
   bufferSize: 2048,
@@ -58,19 +50,19 @@ You can load audio from different sources.
 From a local file:
 
 ```dart
-SoundProps sound = await SoLoud.instance.loadFile('path/to/sound.mp3');
+final sound = await SoLoud.instance.loadFile('path/to/sound.mp3');
 ```
 
 From an app asset:
 
 ```dart
-SoundProps sound = await SoLoud.instance.loadAsset('assets/sound.mp3');
+final sound = await SoLoud.instance.loadAsset('assets/sound.mp3');
 ```
 
 From a network URL:
 
 ```dart
-SoundProps sound = await SoLoud.instance.loadUrl(
+final sound = await SoLoud.instance.loadUrl(
   'https://example.com/sound.mp3',
   mode: LoadMode.memory,
 );
@@ -79,10 +71,12 @@ SoundProps sound = await SoLoud.instance.loadUrl(
 From bytes in memory:
 
 ```dart
-// Uint8List bytes = ...; // Your audio data
-SoundProps sound = await SoLoud.instance.loadMem(
+// TODO: Replace with your actual audio data.
+final soundBytes = Uint8List.fromList([]);
+
+final sound = await SoLoud.instance.loadMem(
   'reference_name.mp3',
-  bytes,
+  soundBytes,
   mode: LoadMode.memory,
 );
 ```
@@ -94,10 +88,10 @@ you can play it using `SoLoud.instance.play`.
 You can also configure gapless looping.
 
 ```dart
-// Play the sound
+// Play the sound.
 var handle = await SoLoud.instance.play(sound);
 
-// Play with gapless looping
+// Play with gapless looping.
 handle = await SoLoud.instance.play(
   sound,
   looping: true,
@@ -115,7 +109,8 @@ With the handle returned from `play`,
 you can perform various actions such as pausing or resuming playback:
 
 ```dart
-SoLoud.instance.pauseSwitch(handle); // Toggles pause state
+// Toggle pause state.
+SoLoud.instance.pauseSwitch(handle);
 ```
 
 Seek to a specific timestamp:
@@ -127,13 +122,15 @@ SoLoud.instance.seek(handle, Duration(seconds: 5));
 Set playback speed:
 
 ```dart
-SoLoud.instance.setRelativePlaySpeed(handle, 2.0); // Play twice as fast
+// Play twice as fast.
+SoLoud.instance.setRelativePlaySpeed(handle, 2.0);
 ```
 
 Adjust playback volume:
 
 ```dart
-SoLoud.instance.setVolume(handle, 0.5); // 50% volume
+// Set playback to 50% volume.
+SoLoud.instance.setVolume(handle, 0.5);
 ```
 
 Fade the audio volume:
@@ -141,8 +138,8 @@ Fade the audio volume:
 ```dart
 SoLoud.instance.fadeVolume(
   handle,
-  0.0, // target volume
-  Duration(seconds: 2), // fade duration
+  0.0, // The volume to fade to.
+  Duration(seconds: 2), // The duration of the fade.
 );
 ```
 
@@ -155,7 +152,7 @@ await SoLoud.instance.stop(handle);
 ## 6. Dispose of sound sources
 
 When you are finished with a sound source,
-remember to dispose it to free up resources.
+remember to dispose of it to free up resources.
 
 ```dart
 await SoLoud.instance.disposeSource(sound);
@@ -164,12 +161,12 @@ await SoLoud.instance.disposeSource(sound);
 ## 7. [Optional] Stream audio
 
 The `flutter_soloud` package also supports streaming
-audio data in real-time.
+audio data in real time.
 
 Initialize and configure a buffer stream:
 
 ```dart
-var stream = SoLoud.instance.setBufferStream(
+final stream = SoLoud.instance.setBufferStream(
   bufferingType: BufferingType.released,
   sampleRate: 24000,
   channels: Channels.mono,
@@ -186,7 +183,9 @@ final handle = await SoLoud.instance.play(stream);
 As your app receives audio data, add it to the stream:
 
 ```dart
-// Uint8List audioChunk = ...; // Your audio data chunk
+// TODO: Replace with your actual audio data.
+final audioChunk = Uint8List.fromList([]);
+
 SoLoud.instance.addAudioDataStream(
   stream,
   audioChunk,
