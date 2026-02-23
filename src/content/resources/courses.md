@@ -48,7 +48,6 @@ To include your course, [submit a PR][]:
 * [Flutter Zero to Hero][] by Veli Bacik
 
 ## Urdu
-## Urdu
 
 * [Tech Idara - Flutter from Basic to Advanced][] by Ishaq Hassan
 
