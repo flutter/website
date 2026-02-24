@@ -660,7 +660,7 @@
       { "source": "/go/remove-fab-accent-theme-dependency", "destination": "https://docs.google.com/document/d/1kmXWerkykXXjMfibsc9O105NocBGH3dGW8UL2VH5Q48/edit", "type": 301 },
       { "source": "/go/remove-include-flutter-groovy", "destination": "https://docs.google.com/document/d/1OulURfRSWgJnnFA_cSup4ev7wrJwnZ7Siao_FGbLN9I", "type": 301 },
       { "source": "/go/reorderable-list-view-update", "destination": "https://docs.google.com/document/d/1JzNtMQ-jnPnSHEBoi6IO0x2qMMylwhvRslEDcmqiwSs", "type": 301 },
-      { "source": "/go/replace-block-semantics","destination": "https://docs.google.com/document/d/1niJnShCR3-PIMYo1a9lWdVySBqr_wmXYPvBXntvcc0c/edit?usp=sharing", "type": 301 },
+      { "source": "/go/replace-block-semantics", "destination": "https://docs.google.com/document/d/1niJnShCR3-PIMYo1a9lWdVySBqr_wmXYPvBXntvcc0c/edit", "type": 301 },
       { "source": "/go/respecting-tabcontroller-animateto-duration", "destination": "https://docs.google.com/document/d/1wzSzUYstDM-Kg5kwskyXcEUX7QTb-lBOso7Z5ebrCTk/edit", "type": 301 },
       { "source": "/go/restoring-anonymous-routes", "destination": "https://docs.google.com/document/d/1vnjDruoiDz0eEd4eVzg3IS6W_LRaFxNSlKWtU6iXp2M/edit", "type": 301 },
       { "source": "/go/rfc-32-bit-ios-support", "destination": "https://docs.google.com/document/d/1Xz8B2w42ZGmrSdvQHo6LVLhiSZBIxnHxZxoZ-8oyRUc/edit", "type": 301 },
