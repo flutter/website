@@ -21,9 +21,8 @@ check out the [Android 16 release notes][].
 
 Using the mechanism to opt out of edge-to-edge on Android 16
 or later might cause your app to crash, but you can avoid this
-by using version-specific resources;
+by using version-specific resources; for details,
 visit the [migration guide](#migration-guide).
-for details.
 
 To learn how to structure your app to avoid this,
 we recommend that you visit the Leancode article, [Mastering Edge-To-Edge in Flutter:
@@ -40,7 +39,7 @@ your app automatically displays in edge-to-edge mode,
 as documented on the [`SystemUiMode`][] API page.
 To maintain non edge-to-edge app behavior
 (including an unset `SystemUiMode`),
-follow the steps in [migration guide](#migration-guide).
+follow the steps in the [migration guide](#migration-guide).
 
 [`SystemUiMode`]: {{site.api}}/flutter/services/SystemUiMode.html
 
@@ -139,8 +138,6 @@ create a `your_app/android/app/src/main/res/values-35` resource
 directory that contains styles without the
 `android:windowOptOutEdgeToEdgeEnforcement` attribute.
 :::
-
-So now you're done!
 
 ## Timeline
 
