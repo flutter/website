@@ -81,7 +81,7 @@ flutter build apk
 ```
 
 
-In a new file `tool\jnigen.dart`, add the following code.
+In a new file `tool/jnigen.dart`, add the following code.
 
 ```dart
 import 'dart:io';
