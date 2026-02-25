@@ -77,7 +77,15 @@ If you would like to allow HTTP connections for Android debug
 builds, you can add the following snippet to your $project_path\android\app\src\debug\AndroidManifest.xml:
 
 ```xml
-<application android:usesCleartextTraffic="true"/>
+<application android:networkSecurityConfig="@xml/network_security_config"> 
+```
+
+Then, add the network configuration to your $project_path/android/app/src/debug/res/xml/network_security_config.xml:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
 ```
 
 For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
