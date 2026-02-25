@@ -360,7 +360,7 @@ debugImplementation "androidx.compose.ui:ui-test-manifest"
     Follow your IDE's hints for the correct imports you require.
     :::
 
- ```dart
+```kotlin
  package com.example.android_launch_activity
 
 import android.content.Intent
