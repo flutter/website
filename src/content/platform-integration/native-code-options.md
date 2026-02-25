@@ -23,7 +23,7 @@ This method involves using a plugin that hosts native code
 which is executed asynchronously through message passing 
 from Dart to iOS/Android and back.
 
-* Type-safe plaform channels via Pigeon
+* Type-safe platform channels via Pigeon
 
 With regular method channels, one must manage type safety 
 and object serialization on their own. With Pigeon, the 
