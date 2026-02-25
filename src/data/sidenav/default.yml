@@ -365,9 +365,11 @@
       permalink: /reference/supported-platforms
     - title: Build desktop apps with Flutter
       permalink: /platform-integration/desktop
-    - title: Write platform-specific code
+    - title: Write platform-specific code (new)
+      permalink: /platform-integration/native-code-options
+    - title: Communicate with the host OS (old pigeon/platform channels topic)
       permalink: /platform-integration/platform-channels
-    - title: Bind to native code
+    - title: Bind to native code using ffi (title change)
       permalink: /platform-integration/bind-native-code
     - title: Android
       permalink: /platform-integration/android
@@ -380,10 +382,14 @@
           permalink: /platform-integration/android/predictive-back
         - title: Host a native Android view
           permalink: /platform-integration/android/platform-views
-        - title: Calling JetPack APIs
-          permalink: /platform-integration/android/call-jetpack-apis
-        - title: Launch a Jetpack Compose activity
+        - title: Call native APIs (delete)
+          permalink: /platform-integration/android/call-native-apis
+        - title: Use jnigen to call Android code (new)
+          permalink: /platform-integration/android/jnigen
+        - title: Launch a Jetpack Compose activity (updated)
           permalink: /platform-integration/android/compose-activity
+        - title: Request Android permissions from Flutter (new)
+          permalink: /platform-integration/android/request-permission
         - title: Restore state on Android
           permalink: /platform-integration/android/restore-state-android
         - title: Target ChromeOS with Android
