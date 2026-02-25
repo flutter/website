@@ -14,8 +14,6 @@ Before we can use a native interop call in an application, we need to do a littl
 
 The APISummarizer is a tool that reads source and bytecode to determine which classes and functions are present. The abstract syntax tree defining the desired classes is read to create Dart versions with modifications to account for the differences between the Java platform and Dart.
 
-Diagram should go here
-
 
 <img src='/assets/images/android/jni-call-lifecycle-light.png' class="text-center diagram-wrap" alt="Node tree">
 
@@ -81,7 +79,6 @@ void main(List<String> args) {
 
 
 ```
-
 
 The `Config` object is a Dart API for specifying:
 
