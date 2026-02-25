@@ -27,6 +27,9 @@ and a configuration file describing the generated output.
 On the Android side, you will need to make some modifications to some Android build
 files to account for Compose views and a new `Activity`. 
 
+The [code][] for this version is available on Github.
+
+[code]:https://github.com/flutter/demos/tree/main/native_interop_demos/android_launch_activity
 
 ## Overview of launching Activities using Method Channels
 
