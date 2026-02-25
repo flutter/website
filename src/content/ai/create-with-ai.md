@@ -88,7 +88,10 @@ include:
 *   **Verification**: It can run tests and verify its own changes to ensure
     correctness.
 
-<YouTubeEmbed id="YY2w2JEX2xk" title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
+<YouTubeEmbed
+  id="YY2w2JEX2xk"
+  title="Flutter + Antigravity in 10 minutes">
+</YouTubeEmbed>
 
 [Antigravity]: https://antigravity.google/
 
