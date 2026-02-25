@@ -43,7 +43,7 @@ flutter build apk
 
 ### Step 3: Set configuration of Dart bindings
 There is a Dart API in `jnigen` to specify the properties your generated should have. You will create
-a Dart file. `tool\jnigen.dart` is the convention but you can create it anywhere. The file needs at
+a Dart file. `tool/jnigen.dart` is the convention but you can create it anywhere. The file needs at
 minimum a single function call to `generateJniBindings` that accepts a `Config` object as a parameter.
 
 Here is a minimal configuration file. 
