@@ -14,7 +14,7 @@ to abstract some of the native bits away. They are:
 
 * Direct native interop using FFI or JNI
 
-This method involves an addtional step to generate code
+This method involves an additional step to generate code
 bindings from the host platform language into Dart. 
 
 * Self-managed platform channels
