@@ -64,7 +64,7 @@ For instance, if you put your XML configuration under
 your manifest would contain the following:
 
 ```xml
-<application ...>
+<application android:networkSecurityConfig="@xml/network_security_config">
   ...
   <meta-data android:name="io.flutter.network-policy"
              android:resource="@xml/network_security_config"/>
@@ -77,7 +77,11 @@ If you would like to allow HTTP connections for Android debug
 builds, you can add the following snippet to your $project_path\android\app\src\debug\AndroidManifest.xml:
 
 ```xml
-<application android:networkSecurityConfig="@xml/network_security_config"> 
+<application android:networkSecurityConfig="@xml/network_security_config">
+  ...
+  <meta-data android:name="io.flutter.network-policy"
+             android:resource="@xml/network_security_config"/>
+</application>
 ```
 
 Then, add the network configuration to your $project_path/android/app/src/debug/res/xml/network_security_config.xml:
