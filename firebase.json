@@ -149,6 +149,7 @@
       { "source": "/get-started/fundamentals/*", "destination": "/learn/pathway", "type": 301 },
       { "source": "/get-started/install", "destination": "/install", "type": 301 },
       { "source": "/get-started/install/help", "destination": "/install/troubleshoot", "type": 301 },
+      { "source": "/get-started/install/*", "destination": "/install", "type": 301 },
       { "source": "/get-started/learn-flutter", "destination": "/learn", "type": 301 },
       { "source": "/get-started/learn-more", "destination": "/learn", "type": 301 },
       { "source": "/get-started/test-drive*", "destination": "/learn/pathway", "type": 301 },
