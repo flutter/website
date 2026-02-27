@@ -2,6 +2,7 @@
 title: Flutter release notes
 shortTitle: Release notes
 description: Release notes for Flutter for prior releases.
+showToc: false
 ---
 
 This page links to announcements and release notes for
@@ -9,12 +10,22 @@ releases to the stable channel.
 
 :::note
 For information about bug-fix releases,
-check out the Flutter [CHANGELOG][].
+check out the Flutter repository [changelog][].
 
-To see what's changed in beta releases, check out the
-[Beta channel](/install/archive#beta-channel) section on the archive page.
+To see what's changed in beta releases, follow the steps
+outlined in the [Beta channel][] section of the [SDK archive][] page.
 :::
 
+[changelog]: {{site.repo.flutter}}/blob/stable/CHANGELOG.md
+[Beta channel]: /install/archive#beta-channel
+[SDK archive]: /install/archive
+
+## Stable releases
+
+* 3.41.0
+  * [3.41.0 announcement][]
+  * [3.41.0 release notes & change log][]
+  * [3.41.0 breaking changes & migrations][]
 * 3.38.0
   * [3.38.0 announcement][]
   * [3.38.0 release notes & change log][]
@@ -108,6 +119,9 @@ To see what's changed in beta releases, check out the
 * Earlier
   * [Archived release notes][]
 
+[3.41.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
+[3.41.0 release notes & change log]: /release/release-notes/release-notes-3.41.0
+[3.41.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-41
 [3.38.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-38-3f7b258f7228
 [3.38.0 release notes & change log]: /release/release-notes/release-notes-3.38.0
 [3.38.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-38
@@ -176,4 +190,3 @@ To see what's changed in beta releases, check out the
 [1.12.13 announcement]: {{site.flutter-blog}}/announcing-flutter-1-12-what-a-year-22c256ba525d
 [1.12.13 release notes and change log]: /release/release-notes/release-notes-1.12.13
 [Archived release notes]: /release/release-notes/release-notes-archive
-[CHANGELOG]: {{site.repo.flutter}}/blob/stable/CHANGELOG.md

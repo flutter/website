@@ -28,7 +28,7 @@ Dive deeper into more specific topics in Flutter development with sample code, Y
   <p>
     Find sample code, YouTube videos, codelabs, and more written by the experts on the Flutter team at Google. This index contains the resources you need to learn any aspect of Flutter.
   </p>
-  <a href="/reference/learning-resources" class="outlined-button">Explore all resources</a>
+  <a href="/learn/learning-resources" class="outlined-button">Explore all resources</a>
 </Card>
 
 <Card title="App Architecture case study"  additional-classes="display-card">
