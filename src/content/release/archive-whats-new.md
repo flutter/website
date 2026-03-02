@@ -812,7 +812,7 @@ to reflect the latest available codelabs.
 
 [Add a user authentication flow to a Flutter app using FirebaseUI]: {{site.firebase}}/codelabs/firebase-auth-in-flutter-apps
 [Building a game with Flutter and Flame]: {{site.codelabs}}/codelabs/flutter-flame-game
-[codelabs & workshops]: /reference/learning-resources
+[codelabs & workshops]: /learn/learning-resources
 [Local development for your Flutter apps using the Firebase Emulator Suite]: https://web.archive.org/web/20251102002913/https://firebase.google.com/codelabs/get-started-firebase-emulators-and-flutter
 [Using FFI in a Flutter plugin]: https://web.archive.org/web/20250908035316/https://codelabs.developers.google.com/codelabs/flutter-ffigen
 [Your first Flutter app]: {{site.codelabs}}/codelabs/flutter-codelab-first
@@ -1390,14 +1390,14 @@ publication since the last stable release:
 [Announcing Adobe XD Support for Flutter]: {{site.flutter-blog}}/announcing-adobe-xd-support-for-flutter-4b3dd55ff40e
 [Announcing Flutter 1.20]: {{site.flutter-blog}}/announcing-flutter-1-20-2aaf68c89c75
 [Building performant Flutter widgets]: {{site.flutter-blog}}/building-performant-flutter-widgets-3b2558aa08fa
-[codelabs landing]: /reference/learning-resources
+[codelabs landing]: /learn/learning-resources
 [Desktop support]: /platform-integration/desktop
 [dev-tools]: {{site.flutter-blog}}/new-tools-for-flutter-developers-built-in-flutter-a122cb4eec86
 [Developing for iOS 14 beta]: /platform-integration/ios/ios-debugging
 [Enums with Extensions in Dart]: {{site.flutter-blog}}/enums-with-extensions-dart-460c42ea51f7
 [Flutter and Desktop apps]: {{site.flutter-blog}}/flutter-and-desktop-3a0dd0f8353e
 [Flutter architectural overview]: /resources/architectural-overview
-[Flutter codelabs]: /reference/learning-resources
+[Flutter codelabs]: /learn/learning-resources
 [Flutter Day]: https://events.withgoogle.com/flutter-day/
 [Flutter Package Ecosystem Update]: {{site.flutter-blog}}/flutter-package-ecosystem-update-d50645f2d7bc
 [Flutter Performance Updates in 2019]: {{site.flutter-blog}}/going-deeper-with-flutters-web-support-66d7ad95eb5224

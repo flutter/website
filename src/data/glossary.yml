@@ -293,15 +293,19 @@
 
 - term: "Primary constructor"
   short_description: |-
-    A constructor declared as part of the type declaration.
+    A constructor declared in the header of a class or similar
+    as part of the type declaration.
   long_description: |-
     A _primary constructor_ is a concise way to declare a constructor
     directly in the type declaration.
-    
-    Currently, this feature is only available for [extension types][].
-    It allows you to define the underlying representation object
-    and bind it to a field in one step.
 
+    A primary constructor in a class, mixin class, or enum declaration is a concise
+    way to specify a constructor and a number of instance variables in a single
+    constructor declaration in the header.
+    A primary constructor in an extension type declaration allows you to define the 
+    underlying representation variable and its type.
+
+    [classes]: https://dart.dev/language/constructors#primary-constructors
     [extension types]: https://dart.dev/language/extension-types
   related_links:
     - text: "Extension types constructors"
@@ -310,6 +314,33 @@
   labels:
     - "dart"
     - "language"
+
+- term: "Null safety"
+  short_description: |-
+    A Dart feature that prevents errors that result from accessing variables set to `null`.
+  long_description: |-
+    Dart's null safety prevents errors that result from unintentional access
+    of variables set to `null`.
+    
+    With [sound null safety][], variables are non-nullable by default:
+    they can only be assigned a value of `null` if you explicitly declare
+    them as nullable.
+    This differs from other "mixed" null safety implementations,
+    where a non-nullable variable could still contain `null` at runtime.
+    With Dart's sound null safety, the compiler guarantees that a
+    non-nullable variable can never be `null`.
+    
+    [sound null safety]: https://dart.dev/null-safety
+  related_links:
+    - text: "Sound null safety"
+      link: "https://dart.dev/null-safety"
+      type: "external"
+    - text: "Null safety codelab"
+      link: "https://dart.dev/codelabs/null-safety"
+      type: "tutorial"
+  labels:
+    - "language"
+    - "fundamentals"
 
 - term: "Prop drilling"
   short_description: |-

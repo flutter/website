@@ -1,7 +1,8 @@
 ---
 title: FontWeight also controls the weight attribute of variable fonts
-description: >
-  FontWeight values applied to text styles will now set the weight attribute of variable fonts.
+description: >-
+  FontWeight values applied to text styles will now
+  set the weight attribute of variable fonts.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -57,7 +58,7 @@ to restore the font's default weight, set `fontWeight` to `FontWeight.normal`.
 ## Timeline
 
 Landed in version: 3.39.0-0.0.pre<br>
-In stable release: Not yet
+In stable release: 3.41
 
 ## References
 
