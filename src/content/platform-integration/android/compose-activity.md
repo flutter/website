@@ -15,8 +15,27 @@ you will have access to the full breadth of native Android functionality.
 
 Adding this functionality requires making several changes to
 your Flutter app and its internal, generated Android app.
+
+There are two ways to do it: Either using `jnigen` or Method Channels.
+
+## Overview of launching Activities using `jnigen`
+
+On the Flutter side, you will need to create Dart bindings for various Android APIs 
+and call them using Dart code. This will involve setting up `jni`, `jnigen`,
+and a configuration file describing the generated output.
+
+On the Android side, you will need to make some modifications to some Android build
+files to account for Compose views and a new `Activity`. 
+
+The [code][] for this version is available on Github.
+
+[code]:https://github.com/flutter/demos/tree/main/native_interop_demos/android_launch_activity
+
+## Overview of launching Activities using Method Channels
+
 On the Flutter side, you will need to create a new
 platform method channel and call its `invokeMethod` method.
+
 On the Android side, you will need to register a matching native `MethodChannel`
 to receive the signal from Dart and then launch a new activity.
 Recall that all Flutter apps (when running on Android) exist within
@@ -36,7 +55,360 @@ check out [Hosting native Android views][].
 Not all Android activities use Jetpack Compose, but
 this tutorial assumes you want to use Compose.
 
-## On the Dart side
+## Launch Activity Using Native Interop (`jnigen`)
+
+### On the command line
+
+On the commandline, add `jnigen` as a development dependency
+and `jni` as a runtime dependency. `jnigen` will be used to
+generate Dart bindings and then when the app is run, `jni`
+will execute them. 
+```sh
+flutter pub add jnigen --dev
+flutter pub add jni
+```
+
+### On the Dart side
+
+In your dart code, create jnigen.dart file specifying the
+bindings you will be generating.
+
+First, run the following command to build the app and make
+available the files needed to execute code generation.
+
+```sh
+flutter build apk
+```
+
+
+In a new file `tool/jnigen.dart`, add the following code.
+
+```dart
+import 'dart:io';
+
+import 'package:jnigen/jnigen.dart';
+
+void main(List<String> args) {
+  final packageRoot = Platform.script.resolve('../');
+  generateJniBindings(
+    Config(
+      outputConfig: OutputConfig(
+        dartConfig: DartCodeOutputConfig(
+          path: packageRoot.resolve('lib/gen/android.g.dart'),
+          structure: OutputStructure.singleFile,
+        ),
+      ),
+      androidSdkConfig: AndroidSdkConfig(addGradleDeps: true),
+      classes: [
+        // provided by Android OS
+        'android.os.Bundle',
+        'android.content.Intent',
+        'android.content.Context'
+      ],
+    ),
+  );
+}
+```
+
+Execute `dart run tool/jnigen.dart` to generate the Dart bindings.
+
+With the bindings generated, we can directly
+
+```dart
+import 'package:flutter/material.dart';
+// uses added namespace because some bindings conflict with Dart classes (Intent)
+import 'package:android_launch_activity/gen/android.g.dart' as native;
+import 'package:jni/jni.dart';
+
+// Context.fromReference ensures we get Android Context object
+// rather than the default `JObject`
+var context = native.Context.fromReference(Jni.androidApplicationContext.reference);
+
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  // SECTION 2: START COPYING HERE
+  void _launchAndroidActivity() {
+
+    var intent = native.Intent.new$1(context, native.SecondActivity.type.jClass);
+    intent.addFlags(native.Intent.FLAG_ACTIVITY_NEW_TASK);
+    intent.putExtra$18('message'.toJString(), 'Hello from Flutter'.toJString());
+    context.startActivity(intent);
+
+    intent.release();
+
+}
+  // SECTION 2: END COPYING HERE
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: const Center(child: Text('Hello World!')),
+        floatingActionButton: FloatingActionButton(
+          // SECTION 3: Call `_launchAndroidActivity` somewhere.
+          onPressed: _launchAndroidActivity,
+
+          // SECTION 3: End
+          tooltip: 'Launch Android activity',
+          child: const Icon(Icons.launch),
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+
+### On the Android Side
+
+You must make changes to 4 files in the generated Android app to
+ready it for launching fresh Compose activities.
+
+The first file requiring modifications is `android/app/build.gradle`.
+
+ 1. Add the following to the existing `android` block:
+
+    <Tabs key="android-build-features">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/app/build.gradle.kts"
+    android {
+      // Begin adding here
+      buildFeatures {
+        compose = true
+      }
+      composeOptions {
+        // https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+        kotlinCompilerExtensionVersion = "1.4.8"
+      }
+      // End adding here
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
+    ```groovy title="android/app/build.gradle"
+    android {
+      // Begin adding here
+      buildFeatures {
+        compose true
+      }
+      composeOptions {
+        // https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+        kotlinCompilerExtensionVersion = "1.4.8"
+      }
+      // End adding here
+    }
+    ```
+
+    </Tab>
+    </Tabs>
+
+    Visit the [developer.android.com][] link in the code snippet and
+    adjust `kotlinCompilerExtensionVersion`, as necessary.
+    You should only need to do this if you
+    receive errors during `flutter run` and those errors tell you
+    which versions are installed on your machine.
+
+    [developer.android.com]: {{site.android-dev}}/jetpack/androidx/releases/compose-kotlin
+
+ 2. Next, add the following block at the bottom of the file, at the root level:
+
+    <Tabs key="android-dependencies">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/app/build.gradle.kts"
+    dependencies {
+        implementation("androidx.core:core-ktx:1.10.1")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+        implementation("androidx.activity:activity-compose")
+        implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+        implementation("androidx.compose.ui:ui")
+        implementation("androidx.compose.ui:ui-graphics")
+        implementation("androidx.compose.ui:ui-tooling-preview")
+        implementation("androidx.compose.material:material")
+        implementation("androidx.compose.material3:material3")
+        testImplementation("junit:junit:4.13.2")
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+        androidTestImplementation(platform("androidx.compose:compose-bom:2024.06.00"))
+        androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+        androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+        debugImplementation("androidx.compose.ui:ui-tooling")
+        debugImplementation("androidx.compose.ui:ui-test-manifest")
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
+    ```groovy title="android/app/build.gradle"
+    dependencies {
+        implementation("androidx.core:core-ktx:1.10.1")
+        implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+        implementation("androidx.activity:activity-compose")
+        implementation(platform("androidx.compose:compose-bom:2024.06.00"))
+        implementation("androidx.compose.ui:ui")
+        implementation("androidx.compose.ui:ui-graphics")
+        implementation("androidx.compose.ui:ui-tooling-preview")
+        implementation("androidx.compose.material:material")
+        implementation("androidx.compose.material3:material3")
+        testImplementation("junit:junit:4.13.2")
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+        androidTestImplementation(platform("androidx.compose:compose-bom:2023.08.00"))
+        androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+        debugImplementation("androidx.compose.ui:ui-tooling")
+implementation "androidx.core:core-ktx:1.10.1"
+implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+implementation "androidx.activity:activity-compose"
+implementation platform("androidx.compose:compose-bom:2024.06.00")
+implementation "androidx.compose.ui:ui"
+implementation "androidx.compose.ui:ui-graphics"
+implementation "androidx.compose.ui:ui-tooling-preview"
+implementation "androidx.compose.material:material"
+implementation "androidx.compose.material3:material3"
+testImplementation "junit:junit:4.13.2"
+androidTestImplementation "androidx.test.ext:junit:1.1.5"
+androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+androidTestImplementation platform("androidx.compose:compose-bom:2023.08.00")
+androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+debugImplementation "androidx.compose.ui:ui-tooling"
+debugImplementation "androidx.compose.ui:ui-test-manifest"
+    }
+    ```
+
+    </Tab>
+    </Tabs>
+
+    The second file requiring modifications is `android/build.gradle`.
+
+ 1. Add the following buildscript block at the top of the file:
+
+    <Tabs key="android-buildscript">
+    <Tab name="Kotlin">
+
+    ```kotlin title="android/build.gradle.kts"
+    buildscript {
+        dependencies {
+            // Replace with the latest version.
+            classpath("com.android.tools.build:gradle:8.1.1")
+        }
+        repositories {
+            google()
+            mavenCentral()
+        }
+    }
+    ```
+
+    </Tab>
+    <Tab name="Groovy">
+
+    ```groovy title="android/build.gradle"
+    buildscript {
+        dependencies {
+            // Replace with the latest version.
+            classpath 'com.android.tools.build:gradle:8.1.1'
+        }
+        repositories {
+            google()
+            mavenCentral()
+        }
+    }
+    ```
+
+    </Tab>
+    </Tabs>
+
+    The third file requiring modifications is
+    `android/app/src/main/AndroidManifest.xml`.
+
+ 1. In the root application block, add the following `<activity>` declaration:
+
+    ```xml title="android/app/src/main/AndroidManifest.xml"
+    <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+        <application
+            android:label="flutter_android_activity"
+            android:name="${applicationName}"
+            android:icon="@mipmap/ic_launcher">
+
+           // START COPYING HERE
+            <activity android:name=".SecondActivity" android:exported="true" android:theme="@style/LaunchTheme"></activity>
+           // END COPYING HERE
+
+           <activity android:name=".MainActivity" …></activity>
+          …
+    </manifest>
+    ```
+
+    The fourth and final code requiring modifications is
+    `android/app/src/main/kotlin/com/example/flutter_android_activity/MainActivity.kt`.
+    Here you'll write Kotlin code for your desired Android functionality.
+
+ 1. Add the necessary imports at the top of the file 
+   :::note
+    Your imports might vary if library versions have changed or
+    if you introduce different Compose classes when
+    you write your own Kotlin code.
+    Follow your IDE's hints for the correct imports you require.
+    :::
+
+```kotlin
+ package com.example.android_launch_activity
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.ui.Modifier
+import androidx.core.app.ActivityCompat
+import io.flutter.embedding.android.FlutterActivity
+ ```
+ 
+  
+ 1. Add a second `Activity` to the bottom of the file, which you
+    referenced in the previous changes to `AndroidManifest.xml`:
+
+    ```kotlin  title="MainActivity.kt"
+class SecondActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContent {
+            MaterialTheme {
+            Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                Column {
+                    Text(text = "Second Activity")
+                    // Note: This must match the shape of the data passed from your Dart code.
+                    Text("" + getIntent()?.getExtras()?.getString("message"))
+                    Button(onClick = {  finish() }) {
+                        Text("Exit")
+                    }
+                }
+            }
+            }
+        }
+    }
+}
+    ```
+
+
+## Launch Activity using `MethodChannels`
+
+### On the Dart side
 
 On the Dart side, create a method channel and invoke it from
 a specific user interaction, like tapping a button.
@@ -105,7 +477,7 @@ There are 3 important values that must match across your Dart and Kotlin code:
     In this case, the data is a map with a single `"message"` key.
 
 
-## On the Android side
+### On the Android side
 
 You must make changes to 4 files in the generated Android app to
 ready it for launching fresh Compose activities.
