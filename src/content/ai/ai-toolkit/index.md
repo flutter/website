@@ -233,10 +233,22 @@ details into the `example/lib/firebase_options.dart` file. You can do this with
 the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
 app][add-fb] docs **from within the `example` directory**.
 
+:::note Security considerations for `firebase_options.dart`
+
+If your Flutter app calls Gemini or Vertex AI directly from the client, do not
+commit `firebase_options.dart` to a public repository. Anyone could reuse your
+app configuration to send requests to your AI endpoint, consuming quota and
+potentially causing billing costs.
+
+While this guide shows direct client-side calls for simplicity, for production
+apps, you should route AI requests through a backend service (for example [Cloud
+Functions for Firebase](https://firebase.google.com/docs/functions), [Cloud
+Run](https://cloud.google.com/run), or your own server). In that setup, the
+backend — not the client — controls access, and including
+`firebase_options.dart` in your repository is safe.
+
+You should also review and follow the [Firebase security checklist](https://firebase.google.com/support/guides/security-checklist).
 :::
-note **Be careful not to check the `firebase_options.dart` file into your git
-repo.**
-::: 
 
 ## Feedback
 
