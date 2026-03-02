@@ -1,5 +1,5 @@
 ---
-title: Set up Flutter for your needs
+title: Set up Flutter for your particular needs
 shortTitle: Custom setup
 description: >-
   Install and set up Flutter for your preferred
