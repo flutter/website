@@ -2,7 +2,6 @@
 title: Advanced scrolling and slivers
 description: Learn how to implement performant scrolling with slivers.
 layout: tutorial
-sitemap: false
 ---
 
 In this lesson, you'll learn about slivers,
@@ -305,7 +304,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         if (isLargeScreen) {
           return _buildLargeScreenLayout();
         } else {
-          return const ContactsListPage(listId: 0); // New, temporary
+          return const ContactListsPage(listId: 0); // New, temporary
         }
       },
     );

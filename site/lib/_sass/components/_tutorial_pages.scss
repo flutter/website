@@ -28,8 +28,19 @@
     margin: 3rem 1rem;
   }
 
-  img {
+  img  {
     display:flex;
     justify-self: center;
+    max-width: 500px;
+    width: 100%;
   }
 }
+
+// Images are centered and have a 
+// max width of 500px within the /learn directory
+.learn-image-wrapper {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }

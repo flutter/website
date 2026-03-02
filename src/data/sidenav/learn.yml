@@ -1,0 +1,18 @@
+- title: Getting started course
+  permalink: /learn/pathway
+  expanded: true
+  icon: school
+  children:
+    - title: Overview
+      permalink: /learn/pathway
+    - title: Install Flutter
+      permalink: /learn/pathway/quick-install
+    - title: Dart getting started 
+      permalink: https://dart.dev/learn
+    - title: Flutter getting started
+      permalink: /learn/pathway/tutorial
+    - title: How Flutter Works
+      permalink: /learn/pathway/how-flutter-works
+- title: More resources
+  permalink: /learn/learning-resources
+  icon: more

@@ -2,7 +2,6 @@
 title: LayoutBuilder and adaptive layouts
 description: Learn how to use the LayoutBuilder widget.
 layout: tutorial
-sitemap: false
 ---
 
 Learn how to create layouts that adapt to different screen widths.
@@ -96,7 +95,7 @@ and start with the following basic structure:
 ```dart
 import 'package:flutter/cupertino.dart';
 
-import 'contract_groups.dart';
+import 'contact_groups.dart';
 
 class AdaptiveLayout extends StatefulWidget {
   const AdaptiveLayout({super.key});
@@ -208,7 +207,7 @@ Update the state object with the following code:
 ```dart
 import 'package:flutter/cupertino.dart';
 
-import 'contract_groups.dart';
+import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
 
@@ -259,7 +258,7 @@ contains the proper layout.
 ```dart
 import 'package:flutter/cupertino.dart';
 
-import 'contract_groups.dart';
+import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
 

@@ -90,5 +90,5 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
 }();
 
 extension on DateTime {
-  String get formatted => '$year-$month-$day';
+  String get formatted => toIso8601String().substring(0, 10);
 }
