@@ -60,11 +60,13 @@ operating system libraries against which it's been compiled.
 To see the full list of libraries,
 use the `ldd` command on your application's directory.
 
-For example, assume you have a Flutter desktop application
-called `linux_desktop_test`.
-To inspect the its system library dependencies, use the following commands:
+For example, to create a new Flutter desktop application called
+`linux_desktop_test`, build it, and inspect its system library dependencies,
+run the following commands:
 
 ```console
+$ flutter create linux_desktop_test
+$ cd linux_desktop_test
 $ flutter build linux --release
 $ ldd build/linux/x64/release/bundle/linux_desktop_test
 ```
