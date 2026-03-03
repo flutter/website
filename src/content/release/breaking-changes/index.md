@@ -38,12 +38,14 @@ They're sorted by release and listed in alphabetical order:
 
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
+* [Deprecate `TextInputConnection.setStyle`][]
 * [ListTile throws exception when wrapped in a colored widget][]
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Page transition builders reorganization][]
 
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
+[Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [ListTile throws exception when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
 [Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
