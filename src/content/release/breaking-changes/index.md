@@ -36,14 +36,16 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
+* [ListTile throws exception when wrapped in a colored widget][]
+* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Page transition builders reorganization][]
 
-[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
+[ListTile throws exception when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
+[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 
 <a id="released-in-flutter-341" aria-hidden="true"></a>
