@@ -65,7 +65,7 @@ your manifest would contain the following:
 ```
 
 To be clear, this only controls native Android sockets. There is currently no
-way to allow http traffic using Dart sockets.
+way to disallow http traffic using Dart sockets.
 
 ### Allowing cleartext connection for debug builds
 
@@ -87,7 +87,7 @@ Then, add the network configuration to your $project_path/android/app/src/debug/
 ```
 
 To be clear, this only controls native Android sockets. There is currently no
-way to allow http traffic using Dart sockets.
+way to disallow http traffic using Dart sockets.
 
 For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 
