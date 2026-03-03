@@ -25,7 +25,7 @@ assert was introduced. This exception explicitly points out the issue during
 development.
 
 If your code has an intermediate colored widget between a `ListTile` and a
-`Material`, you will see an error similar to this:
+`Material` widget, you will see an error similar to this:
 
 ```text
 ListTile background color or ink splashes may be invisible.
