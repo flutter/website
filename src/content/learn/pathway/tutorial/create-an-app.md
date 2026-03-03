@@ -58,13 +58,11 @@ This creates a new Flutter project using the minimal "empty" template.
 In your IDE, open the file at `lib/main.dart`.
 Starting from the top, you'll see this code.
 
-```dart title"lib/main.dart"
-import 'package:flutter/material.dart'; // Imports Flutter.
-
+<?code-excerpt "fwe/birdle/lib/step1_main.dart (main)"?>
+```dart title="lib/main.dart"
 void main() {
   runApp(const MainApp());
 }
-// ...
 ```
 
 The `main` function is the entry point to any Dart program,
@@ -75,6 +73,7 @@ In this case, an instance of the `MainApp` widget is being passed in.
 
 Just below the `main` function, you'll find the `MainApp` class declaration.
 
+<?code-excerpt "fwe/birdle/lib/step1_main.dart (MainApp)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -90,7 +89,6 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
 ```
 
 `MainApp` is the **root widget**,
@@ -136,6 +134,7 @@ less than a second – all without losing your place in the app.
 In your IDE, open the `main.dart` file and navigate to line ~15 and find this
 code:
 
+<?code-excerpt "fwe/birdle/lib/step1_main.dart (Text)"?>
 ```dart
 child: Text('Hello World!'),
 ```

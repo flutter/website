@@ -5,6 +5,7 @@ void main() {
   runApp(const MainApp());
 }
 
+// #docregion MainApp
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -12,12 +13,20 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(                 
+          title: Align(                 
+            alignment: Alignment.centerLeft, 
+            child: Text('Birdle'),      
+          ),                            
+        ),                              
         body: Center(child: GamePage()),
       ),
     );
   }
 }
+// #enddocregion MainApp
 
+// #docregion GamePage
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
 
@@ -56,7 +65,9 @@ class _GamePageState extends State<GamePage> {
     );
   }
 }
+// #enddocregion GamePage
 
+// #docregion GuessInput
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
 
@@ -105,7 +116,9 @@ class GuessInput extends StatelessWidget {
     );
   }
 }
+// #enddocregion GuessInput
 
+// #docregion Tile
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
 
@@ -114,9 +127,12 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // #docregion AnimatedContainer
     return AnimatedContainer(
       duration: const Duration(milliseconds: 500),
-      curve: Curves.bounceIn,
+      // #docregion Curve
+      curve: Curves.bounceIn, // NEW
+      // #enddocregion Curve
       height: 60,
       width: 60,
       decoration: BoxDecoration(
@@ -135,5 +151,7 @@ class Tile extends StatelessWidget {
         ),
       ),
     );
+    // #enddocregion AnimatedContainer
   }
 }
+// #enddocregion Tile

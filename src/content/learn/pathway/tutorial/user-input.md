@@ -41,6 +41,7 @@ Name the callback function `onSubmitGuess`.
 
 Add the following code to your `main.dart` file.
 
+<?code-excerpt "fwe/birdle/lib/step4a_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -81,6 +82,7 @@ create them as a `Row` widget.
 Replace the `Container` placeholder in your `build` method with
 a `Row` containing an `Expanded` `TextField`:
 
+<?code-excerpt "fwe/birdle/lib/step4b_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -143,6 +145,7 @@ Next, you need a way to manage the text that
 the user types into the input field.
 For this, use a [`TextEditingController`][].
 
+<?code-excerpt "fwe/birdle/lib/step4c_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -180,6 +183,7 @@ A `TextEditingController` is used to
 read, clear, and modify the text in a `TextField`.
 To use it, pass it into the `TextField`.
 
+<?code-excerpt "fwe/birdle/lib/step4d_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -223,6 +227,7 @@ the user presses the "Enter" key on the keyboard while the text field has focus.
 For now, ensure that this works by
 adding the following callback to `TextField.onSubmitted`:
 
+<?code-excerpt "fwe/birdle/lib/step4e_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -263,6 +268,7 @@ you could print the `input` passed to the `onSubmitted` callback directly,
 but a better user experience clears the text after each guess:
 You need a `TextEditingController` to do that. Update the code as follows:
 
+<?code-excerpt "fwe/birdle/lib/step4f_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -320,6 +326,7 @@ in the `TextField` so they can enter their next guess.
 To resolve the first focus issue,
 set up the `autofocus` property on the `TextField`.
 
+<?code-excerpt "fwe/birdle/lib/step4g_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -365,6 +372,7 @@ or to know when a field has focus.
 
 First, create a `FocusNode` in the `GuessInput` class:
 
+<?code-excerpt "fwe/birdle/lib/step4h_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -378,6 +386,7 @@ class GuessInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ...
+    return Container();
   }
 }
 ```
@@ -385,6 +394,7 @@ class GuessInput extends StatelessWidget {
 Then, use the `FocusNode` to request focus whenever
 the `TextField` is submitted after the controller is cleared:
 
+<?code-excerpt "fwe/birdle/lib/step4i_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -439,6 +449,7 @@ callback called `onSubmitGuess`.
 In `GuessInput`, you need to use that callback.
 Replace the `print` statement with a call to that function.
 
+<?code-excerpt "fwe/birdle/lib/step4j_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -490,6 +501,7 @@ In the `build` method of that class,
 under the `Row` widgets in the `Column` widget's children,
 add the `GuessInput` widget:
 
+<?code-excerpt "fwe/birdle/lib/step4k_main.dart (GamePage)"?>
 ```dart
 class GamePage extends StatelessWidget {
   final Game _game = Game();
@@ -546,6 +558,7 @@ the `padding` property sets the padding between the
 edge of the button and the icon it wraps to zero.
 This removes the default padding and makes the button smaller.
 
+<?code-excerpt "fwe/birdle/lib/step4l_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -559,10 +572,11 @@ class GuessInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(/* ... */),
+        Expanded(child: Container()),
         IconButton(
           padding: EdgeInsets.zero,
           icon: Icon(Icons.arrow_circle_up),
+          onPressed: null,
         ),
       ],
     );
@@ -572,6 +586,7 @@ class GuessInput extends StatelessWidget {
 
 The `IconButton.onPressed` callback should look familiar:
 
+<?code-excerpt "fwe/birdle/lib/step4m_main.dart (GuessInput)"?>
 ```dart
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -585,7 +600,7 @@ class GuessInput extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(/* ... */),
+        Expanded(child: Container()),
         IconButton(
           padding: EdgeInsets.zero,
           icon: Icon(Icons.arrow_circle_up),
@@ -620,6 +635,7 @@ Refactor the code such that the logic inside this method isn't repeated.
 
 **Solution:**
 
+<?code-excerpt "fwe/birdle/lib/step4_main.dart (GuessInput)"?>
 ```dart title="solution.dart" collapsed
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
@@ -647,7 +663,7 @@ class GuessInput extends StatelessWidget {
               maxLength: 5,
               focusNode: _focusNode,
               autofocus: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(35)),
                 ),
@@ -661,7 +677,7 @@ class GuessInput extends StatelessWidget {
         ),
         IconButton(
           padding: EdgeInsets.zero,
-          icon: Icon(Icons.arrow_circle_up),
+          icon: const Icon(Icons.arrow_circle_up),
           onPressed: _onSubmit,
         ),
       ],
