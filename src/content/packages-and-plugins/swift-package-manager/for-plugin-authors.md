@@ -77,7 +77,7 @@ open example/ios/Runner.xcworkspace
 
    ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
 
-1. Select `my_plugin/ios/my_plugin` (or `macos` if your plugin targets macOS).
+1. Select `my_plugin/ios/my_plugin` (or `macos` or `darwin` depending on what platforms your plugin supports).
 
 1. Make sure “Reference files in place” is selected (it should be the default), and click **Finish**.
 

@@ -1,9 +1,19 @@
 ---
 title: Migrating Flutter Android app to Android Gradle Plugin 9.0.0
 description: >-
-  How to migrate your Flutter app's Android Gradle files 
+  How to migrate your Flutter app's Android Gradle files
   to build apps with Android Gradle Plugin 9.0.0+.
 ---
+
+:::warning
+**Current status:** Please **do not** update your
+Flutter app for Android to AGP 9. Flutter apps using plugins
+are currently incompatible with AGP 9: [Issue #181383][].
+This support is paused while the Flutter team audits
+the migration for backwards compatibility with older versions of AGP.
+
+If you would still like to migrate to AGP 9, follow the migration guide below.
+:::
 
 ## Summary
 
@@ -16,12 +26,12 @@ using the `kotlin-android` plugin will not build successfully.
 You must migrate from `kotlin-android` to built-in Kotlin.
 
 Second, AGP 9+ will only use the new AGP DSL interfaces.
-This means any old DSL types will not be properly read. 
-The Flutter team is working on migrating old DSL types 
-to use the new DSL: [Issue #180137][]. In the meantime, 
+This means any old DSL types will not be properly read.
+The Flutter team is working on migrating old DSL types
+to use the new DSL: [Issue #180137][]. In the meantime,
 you can set a Gradle property flag to use the old DSL.
 
-In a future Flutter release, support will be added for applying AGP 9+. 
+In a future Flutter release, support will be added for applying AGP 9+.
 For now, all projects must be migrated manually.
 
 To learn more about Android Gradle Plugin,
@@ -29,26 +39,19 @@ see the [Android Gradle Plugin docs][AGP block].
 
 ## Migrate
 
-:::warning
-**Current Status:** Flutter apps using plugins are currently
-incompatible with AGP 9: [Issue #181383][].
-This support is paused while the Flutter team audits the migration for backwards
-compatibility with older versions of AGP.
-:::
-
-These instructions assume you are updating from 
+These instructions assume you are updating from
 an AGP version created before 9.0.0 to an AGP version 9.0.0+.
 You should also use the minimum compatible dependency versions
 listed in the [Android Gradle Plugin docs][AGP block].
 
 ### Update the Gradle file
 
-If your app doesn't apply 
-the `kotlin-android` plugin (also called Kotlin Gradle Plugin), 
+If your app doesn't apply
+the `kotlin-android` plugin (also called Kotlin Gradle Plugin),
 then skip to the next step.
 
-First, find the `kotlin-android` plugin, likely located 
-in the `plugins` block of the `<app-src>/android/build.gradle` 
+First, find the `kotlin-android` plugin, likely located
+in the `plugins` block of the `<app-src>/android/build.gradle`
 or `<app-src>/android/build.gradle.kts` file.
 As an example, consider the `build.gradle.kts` file from
 a Flutter app created before this change:
@@ -83,7 +86,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
       // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
       id("dev.flutter.flutter-gradle-plugin")
   }
-  
+
   android {
       // ...
 -     kotlinOptions {
@@ -130,7 +133,7 @@ android {
 ### Set the Gradle property flag
 
 Next, to use the old AGP DSL, set the Gradle property flag
-`android.newDsl` to `false` in 
+`android.newDsl` to `false` in
 your app's `<app-src>/android/gradle.properties` file.
 
 ```properties diff
@@ -163,10 +166,10 @@ Relevant issues:
 - [Issue #180137][]: Migrate from old to new AGP DSL
 - [Issue #181383][]: Flutter plugins should support AGP 9.0.0
 
-The Gradle build files in your app vary based on the Flutter version 
-used when your app was created. 
-Consider staying up to date with the latest version 
-of the build files by periodically running `flutter upgrade` 
+The Gradle build files in your app vary based on the Flutter version
+used when your app was created.
+Consider staying up to date with the latest version
+of the build files by periodically running `flutter upgrade`
 in your app's directory.
 
 [AGP block]: {{site.android-dev}}/build/releases/gradle-plugin

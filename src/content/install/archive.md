@@ -53,6 +53,37 @@ SDK archive:
 [calendar versioning]: https://calver.org/
 [Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
 
+## Public release windows
+
+Predictability is key to landing complex features safely.
+We use public release windows to provide the community with
+the visibility needed to plan ahead.
+By explicitly calling out branch cutoff dates and release targets,
+we enable everyone to align their development cycles and
+coordinate feature landing effectively.
+
+### What is a branch cutoff date?
+
+This date is the deadline for pull requests to
+land in the default branches (`main` for Dart and `master` for Flutter) to
+guarantee inclusion in the next stable release.
+
+* **Before cutoff:** Your PR will ship in the next stable version.
+* **After cutoff:** Your PR will wait for the following cycle.
+
+### 2026 schedule
+
+| Flutter version | Release target | Branch cutoff date |
+|-----------------|----------------|--------------------|
+| Flutter 3.41    | February, 2026 | 06 January         |
+| Flutter 3.44    | May, 2026      | 07 April           |
+| Flutter 3.47    | August, 2026   | 07 July            |
+| Flutter 3.50    | November, 2026 | 06 October         |
+
+{:.table}
+
+---
+
 ## Stable channel
 
 <Tabs key="os-archive-tabs">
