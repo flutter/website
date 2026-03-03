@@ -72,7 +72,7 @@ Material(
 )
 ```
 
-Or you can wrap the `ListTile` in its own `Material` directly:
+Or you can wrap the `ListTile` in its own `Material` widget directly:
 
 ```dart
 Container(
