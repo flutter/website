@@ -132,7 +132,7 @@ To add `integration_test` and `flutter_test` packages as
 `dev_dependencies` using `sdk: flutter`, run following command.
 
 ```console
-$ flutter pub add 'dev:integration_test:{"sdk":"flutter"}'
+$ flutter pub add "dev:integration_test:{sdk: flutter}"
 ```
 
 Output:
