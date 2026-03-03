@@ -227,14 +227,6 @@ items:
       This happens when widgets like
       `Row`, `Column`, or `ListView` receive infinite constraints.
       Now you can recognize and fix these issues when they occur.
-  - title: Learned about common layout issues
-    icon: bug_report
-    details: >-
-      You learned about **unbounded constraints**,
-      one of the most common errors hit in Flutter development.
-      This happens when widgets like
-      `Row`, `Column`, or `ListView` receive infinite constraints.
-      Now you can recognize and fix these issues when they occur.
   - title: Experimented with properties in real-time
     icon: tune
     details: >-
