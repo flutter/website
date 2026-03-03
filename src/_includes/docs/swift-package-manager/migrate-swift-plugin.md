@@ -176,14 +176,14 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    ```swift title="Package.swift"
    dependencies: [
-       .package(name: "FlutterFramework", path: "../FlutterFramework")
+       [!.package(name: "FlutterFramework", path: "../FlutterFramework")!]
    ],
    targets: [
        .target(
            // TODO: Update your target name.
            name: "plugin_name",
            dependencies: [
-               .product(name: "FlutterFramework", package: "FlutterFramework")
+               [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
            ],
    ```
 
