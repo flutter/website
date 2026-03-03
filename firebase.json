@@ -454,6 +454,7 @@
       { "source": "/go/floating-snackbar-offset", "destination": "https://docs.google.com/document/d/1elP-y83PtvfAZHNcpHCtnOFhZO9VnnlobwfQ33QO4hg/edit", "type": 301 },
       { "source": "/go/floating-widgetspans", "destination": "https://docs.google.com/document/d/1I-VqCxvszXGAas_6EE9b6ZIzyMY3HjxDxGW9_DWWd7M/edit", "type": 301 },
       { "source": "/go/flutter-android-emulator-testing", "destination": "https://docs.google.com/document/d/10wYUcLcSTF4Epg2EUGoBqOkkOe4zxKHvYKjXFZAOgGs/edit?usp=sharing&resourcekey=0-pltjPvEtVezXDADMbUwFHQ", "type": 301 },
+      { "source": "/go/flutter-dependency-hosting", "destination": "https://docs.google.com/document/d/1EKb1VypI0ArXqwBWJKGTsiQ2WU0ruYb55JpIeKxWaDs/edit", "type": 301 },
       { "source": "/go/flutter-developer-tooling-plugins", "destination": "https://docs.google.com/document/d/189A-T-pcHPuds8pOtbzLS8Wl6Hr0AIAIl0aRTPvLKec/", "type": 301 },
       { "source": "/go/flutter-devtools-extensions", "destination": "https://docs.google.com/document/d/189A-T-pcHPuds8pOtbzLS8Wl6Hr0AIAIl0aRTPvLKec/", "type": 301 },
       { "source": "/go/flutter-devtools-static-extensions", "destination": "https://docs.google.com/document/d/11J4h1oEfB9wBoRYUy4KzclnKITBY-234jKpU3kq4V4w/edit?resourcekey=0-pPo85Svkb9lKdtlrhMCTbw", "type": 301 },
