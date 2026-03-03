@@ -1,3 +1,4 @@
+---
 title: Deprecate `TextInputConnection.setStyle`
 description: >-
   The `TextInputConnection.setStyle` method has been deprecated in favor
@@ -70,6 +71,5 @@ Relevant issues:
 
 * [Issue 161592][]
 
-<!-- Stable channel link: -->
 [PR 180436]: {{site.repo.flutter}}/pull/180436
 [Issue 161592]: {{site.repo.flutter}}/issues/161592
