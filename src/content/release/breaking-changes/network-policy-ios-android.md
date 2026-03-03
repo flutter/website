@@ -53,11 +53,6 @@ On iOS, you can add [NSExceptionDomains][] to your
 application's Info.plist.
 
 On Android, you can add a [network security config][] XML.
-For Flutter to find your XML file, you need to also add a
-`metadata` entry to the `<application>` tag in your manifest.
-This metadata entry should carry the name:
-`io.flutter.network-policy` and should contain the
-resource identifier of the XML.
 
 For instance, if you put your XML configuration under
 `res/xml/network_security_config.xml`,
@@ -66,10 +61,11 @@ your manifest would contain the following:
 ```xml
 <application android:networkSecurityConfig="@xml/network_security_config">
   ...
-  <meta-data android:name="io.flutter.network-policy"
-             android:resource="@xml/network_security_config"/>
 </application>
 ```
+
+To be clear, this only controls native Android sockets. There is currently no
+way to allow http traffic using Dart sockets.
 
 ### Allowing cleartext connection for debug builds
 
@@ -79,8 +75,6 @@ builds, you can add the following snippet to your $project_path\android\app\src\
 ```xml
 <application android:networkSecurityConfig="@xml/network_security_config">
   ...
-  <meta-data android:name="io.flutter.network-policy"
-             android:resource="@xml/network_security_config"/>
 </application>
 ```
 
@@ -91,6 +85,9 @@ Then, add the network configuration to your $project_path/android/app/src/debug/
     <base-config cleartextTrafficPermitted="true" />
 </network-security-config>
 ```
+
+To be clear, this only controls native Android sockets. There is currently no
+way to allow http traffic using Dart sockets.
 
 For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 
