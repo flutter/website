@@ -308,6 +308,7 @@ For Objective-C projects, create a `SceneDelegate.h` and `SceneDelegate.m`:
 
 3. Change the "Delegate Class Name" (`UISceneDelegateClassName`) in the
 `Info.plist` from `FlutterSceneDelegate` to `SceneDelegate`.
+
 </Tab>
 </Tabs>
 
