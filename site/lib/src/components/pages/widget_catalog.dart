@@ -115,7 +115,7 @@ class WidgetCatalogCard extends StatelessComponent {
     return a(href: widget.link, classes: 'card outlined-card', [
       _buildCardImageHolder(),
       div(classes: 'card-header', [
-        span(classes: 'card-title', [.text(widget.name)]),
+        span(classes: 'card-title', _splitCamelCase(widget.name)),
       ]),
       div(classes: 'card-content', [
         p([
@@ -183,4 +183,51 @@ class WidgetCatalogCard extends StatelessComponent {
       ],
     );
   }
+}
+
+class WidgetCardGrid extends StatelessComponent {
+  const WidgetCardGrid({
+    required this.widgets,
+    required this.isMaterialCatalog,
+    this.subcategory,
+  });
+
+  final List<WidgetCatalogWidget> widgets;
+  final bool isMaterialCatalog;
+  final WidgetCatalogSubcategory? subcategory;
+
+  @override
+  Component build(BuildContext _) => div(
+    classes: [
+      'card-grid',
+      if (isMaterialCatalog) 'material-cards',
+    ].toClasses,
+    [
+      for (final widget in widgets)
+        WidgetCatalogCard(
+          widget: widget,
+          isMaterialCatalog: isMaterialCatalog,
+          subcategory: subcategory,
+        ),
+    ],
+  );
+}
+
+final RegExp _camelCaseSplitRegex = RegExp(
+  r'(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])',
+);
+
+/// Splits an UpperCamelCase [name] into its constituent parts,
+/// interleaving `<wbr>` elements to allow the browser to
+/// break long widget names across lines.
+List<Component> _splitCamelCase(String name) {
+  final parts = name.split(_camelCaseSplitRegex);
+  if (parts.length <= 1) return [.text(name)];
+  return [
+    .text(parts.first),
+    for (var partIndex = 1; partIndex < parts.length; partIndex += 1) ...[
+      const wbr(),
+      .text(parts[partIndex]),
+    ],
+  ];
 }
