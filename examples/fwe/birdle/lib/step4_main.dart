@@ -18,8 +18,7 @@ class GamePage extends StatelessWidget {
             Row(
               spacing: 5.0,
               children: [
-                for (var letter in guess)
-                  Tile(letter.char, letter.type),
+                for (var letter in guess) Tile(letter.char, letter.type),
               ],
             ),
           // #docregion GuessInputInstance
@@ -91,4 +90,5 @@ class GuessInput extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion GuessInput

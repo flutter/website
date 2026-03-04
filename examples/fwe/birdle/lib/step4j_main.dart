@@ -31,7 +31,7 @@ class GuessInput extends StatelessWidget {
                 onSubmitGuess(_textEditingController.text.trim());
                 _textEditingController.clear();
                 _focusNode.requestFocus();
-              }
+              },
             ),
           ),
         ),
@@ -39,4 +39,5 @@ class GuessInput extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion GuessInput

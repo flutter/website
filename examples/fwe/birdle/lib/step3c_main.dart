@@ -19,11 +19,12 @@ class GamePage extends StatelessWidget {
               spacing: 5.0,
               children: [
                 // We'll add the tiles here later.
-              ]
+              ],
             ),
         ],
       ),
     );
   }
 }
+
 // #enddocregion GamePage

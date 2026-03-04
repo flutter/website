@@ -24,16 +24,18 @@ class GamePage extends StatelessWidget {
             onSubmitGuess: (String guess) {
               // TODO, handle guess
               print(guess); // Temporary
-            }
+            },
           ),
         ],
       ),
     );
   }
 }
+
 // #enddocregion GamePage
 class GuessInput extends StatelessWidget {
   GuessInput({super.key, required this.onSubmitGuess});
   final void Function(String) onSubmitGuess;
-  @override Widget build(BuildContext context) => const SizedBox();
+  @override
+  Widget build(BuildContext context) => const SizedBox();
 }

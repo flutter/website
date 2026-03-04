@@ -23,9 +23,10 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String input) { // NEW
+              onSubmitted: (String input) {
+                // NEW
                 print(_textEditingController.text); // Temporary
-              }
+              },
             ),
           ),
         ),
@@ -33,4 +34,5 @@ class GuessInput extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion GuessInput

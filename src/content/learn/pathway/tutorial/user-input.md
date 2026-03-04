@@ -91,7 +91,7 @@ class GuessInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Row(
+    return Row(
       children: [
         Expanded(
           child: Padding(
@@ -251,9 +251,10 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String input) { // NEW
+              onSubmitted: (String input) {
+                // NEW
                 print(_textEditingController.text); // Temporary
-              }
+              },
             ),
           ),
         ),
@@ -292,10 +293,11 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (_) { // UPDATED
+              onSubmitted: (_) {
+                // UPDATED
                 print(_textEditingController.text); // Temporary
                 _textEditingController.clear(); // NEW
-              }
+              },
             ),
           ),
         ),
@@ -354,7 +356,7 @@ class GuessInput extends StatelessWidget {
               onSubmitted: (String input) {
                 print(input); // Temporary
                 _textEditingController.clear();
-              }
+              },
             ),
           ),
         ),
@@ -426,7 +428,7 @@ class GuessInput extends StatelessWidget {
                 print(input); // Temporary
                 _textEditingController.clear();
                 _focusNode.requestFocus(); // NEW
-              }
+              },
             ),
           ),
         ),
@@ -481,7 +483,7 @@ class GuessInput extends StatelessWidget {
                 onSubmitGuess(_textEditingController.text.trim());
                 _textEditingController.clear();
                 _focusNode.requestFocus();
-              }
+              },
             ),
           ),
         ),
@@ -524,7 +526,7 @@ class GamePage extends StatelessWidget {
             onSubmitGuess: (String guess) {
               // TODO, handle guess
               print(guess); // Temporary
-            }
+            },
           ),
         ],
       ),

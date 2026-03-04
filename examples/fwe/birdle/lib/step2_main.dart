@@ -62,6 +62,7 @@ class Tile extends StatelessWidget {
     // #enddocregion Tile-Container
   }
 }
+
 // #enddocregion Tile
 // #docregion TileUsage
 void docRegionTileUsage() {
@@ -73,4 +74,5 @@ void docRegionTileUsage() {
   // yellow
   Tile('A', HitType.partial);
 }
+
 // #enddocregion TileUsage

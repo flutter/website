@@ -13,12 +13,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(                 
-          title: Align(                 
-            alignment: Alignment.centerLeft, 
-            child: Text('Birdle'),      
-          ),                            
-        ),                              
+        appBar: AppBar(
+          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
+        ),
         body: Center(child: GamePage()),
       ),
     );
@@ -58,7 +55,7 @@ class _GamePageState extends State<GamePage> {
               setState(() {
                 _game.guess(guess);
               });
-            }
+            },
           ),
         ],
       ),
@@ -103,7 +100,7 @@ class GuessInput extends StatelessWidget {
               focusNode: _focusNode,
               onSubmitted: (String input) {
                 _onSubmit();
-              }
+              },
             ),
           ),
         ),
@@ -154,4 +151,5 @@ class Tile extends StatelessWidget {
     // #enddocregion AnimatedContainer
   }
 }
+
 // #enddocregion Tile

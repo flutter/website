@@ -28,16 +28,20 @@ class _GamePageState extends State<GamePage> {
               children: [
                 for (var letter in guess)
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 2.5, vertical: 2.5),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 2.5,
+                      vertical: 2.5,
+                    ),
                     child: Tile(letter.char, letter.type),
-                  )
+                  ),
               ],
             ),
           GuessInput(
             // #docregion GuessInputInstance
             onSubmitGuess: (String guess) {
               // #docregion setState
-              setState(() { // NEW
+              setState(() {
+                // NEW
                 _game.guess(guess);
               });
               // #enddocregion setState
@@ -49,4 +53,5 @@ class _GamePageState extends State<GamePage> {
     );
   }
 }
+
 // #enddocregion GamePage

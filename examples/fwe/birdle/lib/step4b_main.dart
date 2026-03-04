@@ -8,7 +8,7 @@ class GuessInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return Row(
+    return Row(
       children: [
         Expanded(
           child: Padding(
@@ -27,4 +27,5 @@ class GuessInput extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion GuessInput

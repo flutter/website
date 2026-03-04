@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'game.dart';
-import 'step2_main.dart' show Tile; // Use Tile from step2 for simplicity, or just define it here.
+import 'step2_main.dart'
+    show Tile; // Use Tile from step2 for simplicity, or just define it here.
 
 // But actually the excerpt tool just reads the file, so redefining `Tile` is fine, we just don't tag it.
 class Tile extends StatelessWidget {
@@ -23,10 +24,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // #docregion AppBar
         appBar: AppBar(
-          title: Align(
-            alignment: Alignment.centerLeft,
-            child: Text('Birdle'),
-          ),
+          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
         ),
         // #enddocregion AppBar
         body: Center(child: GamePage()),
@@ -39,7 +37,7 @@ class MainApp extends StatelessWidget {
 // #docregion GamePage
 class GamePage extends StatelessWidget {
   GamePage({super.key});
-  
+
   // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
@@ -57,10 +55,9 @@ class GamePage extends StatelessWidget {
               spacing: 5.0,
               children: [
                 // #docregion TileLoop
-                for (var letter in guess)
-                  Tile(letter.char, letter.type),
+                for (var letter in guess) Tile(letter.char, letter.type),
                 // #enddocregion TileLoop
-              ]
+              ],
             ),
           // #enddocregion Rows
         ],
@@ -69,4 +66,5 @@ class GamePage extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion GamePage
