@@ -248,15 +248,6 @@ As XML:
 </dict>
 ```
 
-### Temporarily disable UIScene
-
-To _temporarily_ disable UIScene, add an underscore (`_`)
-in front of **Application Scene Manifest** in your `Info.plist`:
-
-![Temporarily disable UIScene](/assets/images/docs/breaking-changes/disable-ui-scene.png)
-
-When you are ready to re-enable, remove the underscore.
-
 ### Create a SceneDelegate (Optional)
 
 If you need access to the `SceneDelegate`,
@@ -963,6 +954,14 @@ add the following to your pubspec.yaml:
 +     enable-uiscene-migration: false
 ```
 
+## Temporarily disable UIScene
+
+To _temporarily_ disable UIScene, add an underscore (`_`)
+in front of **Application Scene Manifest** in your `Info.plist`:
+
+![Temporarily disable UIScene](/assets/images/docs/breaking-changes/disable-ui-scene.png)
+
+When you are ready to re-enable, remove the underscore.
 
 ## Timeline
 
