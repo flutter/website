@@ -51,9 +51,9 @@ The current committee members
 (ordered alphabetically by last name)
 are as follows:
 
+* Abdallah Shaban
 * Pooja Bhaumik
 * Hillel Coren
-* Ander Dobo
 * Majid Hajian
 * Simon Lightfoot
 * John Ryan
