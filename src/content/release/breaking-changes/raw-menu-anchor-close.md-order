@@ -35,7 +35,7 @@ The updated behavior ensures that when a parent `RawMenuAnchor` begins to close,
 it subsequently triggers `onCloseRequested` for all of its
 descendant `RawMenuAnchor`s in a top-down manner.
 
-Upon closing by calling the `hideOverlay` callback in `onCloseRequested`,
+When `hideOverlay` is called from within `onCloseRequested` to close the menu,
 all descendant `RawMenuAnchor`s will have their `onClose` callbacks executed
 in a bottom-up order.
 This means that the most recently opened `RawMenuAnchor`
