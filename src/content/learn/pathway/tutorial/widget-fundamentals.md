@@ -58,6 +58,7 @@ in this case [`StatelessWidget`][].
 Open your `main.dart` file and add this code below the `MainApp` class,
 which defines a new widget called `Tile`.
 
+<?code-excerpt "fwe/birdle/lib/step2a_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
@@ -65,7 +66,10 @@ class Tile extends StatelessWidget {
   final String letter;
   final HitType hitType;
 
-  // ...
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
 }
 ```
 
@@ -92,6 +96,7 @@ Passing data into widget constructors is at the core of making widgets reusable.
 Finally, there's the all important `build` method, which must be defined on
 every widget, and will always return another widget.
 
+<?code-excerpt "fwe/birdle/lib/step2b_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
@@ -114,13 +119,14 @@ there will be 25 instances of this widget on the screen.
 For now, though, display just one so you can see the updates as they're made.
 In the `MainApp.build` method, replace the `Text` widget with the following:
 
+<?code-excerpt "fwe/birdle/lib/step2_main.dart (MainApp)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         body: Center(
           child: Tile('A', HitType.hit), // NEW
@@ -148,6 +154,7 @@ Set the width and height properties on the `Container`.
 (You could also do this with a `SizedBox` widget, but you'll use
 more properties of the `Container` next.)
 
+<?code-excerpt "fwe/birdle/lib/step2c_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
@@ -177,6 +184,7 @@ class Tile extends StatelessWidget {
 
 Next, add a [`Border`][] to the box with the following code:
 
+<?code-excerpt "fwe/birdle/lib/step2d_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
@@ -220,9 +228,10 @@ The following figure shows all three possibilities.
 To achieve this in UI, use a [switch expression][] to
 set the `color` of the `BoxDecoration`.
 
+<?code-excerpt "fwe/birdle/lib/step2e_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -259,6 +268,7 @@ meant to be passed a widget or a list of widgets, respectively.
 It's the best practice to use the same naming convention in
 your own custom widgets.
 
+<?code-excerpt "fwe/birdle/lib/step2f_main.dart (Tile)"?>
 ```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
@@ -294,14 +304,17 @@ class Tile extends StatelessWidget {
 Hot reload and a green box appears. To toggle the color,
 update and hot reload the `HitType` passed into the `Tile` you created:
 
+<?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
 ```dart
-// main.dart line ~16
-// green
-child: Tile('A', HitType.hit)
-// grey
-child: Tile('A', HitType.miss)
-// yellow
-child: Tile('A', HitType.partial)
+void docRegionTileUsage() {
+  // main.dart line ~16
+  // green
+  Tile('A', HitType.hit);
+  // grey
+  Tile('A', HitType.miss);
+  // yellow
+  Tile('A', HitType.partial);
+}
 ```
 
 Soon, this small box will be one of many widgets on the screen. In the next

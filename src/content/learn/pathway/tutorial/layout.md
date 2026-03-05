@@ -100,6 +100,7 @@ Add the following code for a new widget,
 called `GamePage`, to your `main.dart` file.
 This widget will eventually display the UI elements needed for the game itself.
 
+<?code-excerpt "fwe/birdle/lib/step3a_main.dart (GamePage)"?>
 ```dart title="lib/main.dart"
 class GamePage extends StatelessWidget {
   GamePage({super.key});
@@ -119,6 +120,7 @@ class GamePage extends StatelessWidget {
 
 **Solution:**
 
+<?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
 ```dart title="solution.dart" collapsed
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -127,7 +129,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        // Changed from `Tile`
+        appBar: AppBar(
+          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
+        ),
         body: Center(child: GamePage()),
       ),
     );
@@ -153,6 +157,7 @@ where each row contains five children.
 To get started, replace the `Container` in `GamePage.build` with a
 `Padding` widget with a `Column` widget as its child:
 
+<?code-excerpt "fwe/birdle/lib/step3b_main.dart (GamePage)"?>
 ```dart
 class GamePage extends StatelessWidget {
   GamePage({super.key});
@@ -186,6 +191,7 @@ The list will always contain exactly five elements,
 and therefore will always render five rows.
 :::
 
+<?code-excerpt "fwe/birdle/lib/step3c_main.dart (GamePage)"?>
 ```dart
 class GamePage extends StatelessWidget {
   GamePage({super.key});
@@ -204,7 +210,7 @@ class GamePage extends StatelessWidget {
               spacing: 5.0,
               children: [
                 // We'll add the tiles here later.
-              ]
+              ],
             ),
         ],
       ),
@@ -244,27 +250,29 @@ The `guess` variable in the loop is a [record][] with the type
 
 **Solution:**
 
+<?code-excerpt "fwe/birdle/lib/step3_main.dart (GamePage)"?>
 ```dart
 class GamePage extends StatelessWidget {
   GamePage({super.key});
+
   // This manages game logic, and is out of scope for this lesson.
   final Game _game = Game();
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         spacing: 5.0,
         children: [
-            for (var guess in _game.guesses)
-              Row(
-                spacing: 5.0,
-                children: [
-                  for (var letter in guess)
-                    Tile(letter.char, letter.type),
-                ]
-              ),
-          ],
+          for (var guess in _game.guesses)
+            Row(
+              spacing: 5.0,
+              children: [
+                for (var letter in guess) Tile(letter.char, letter.type),
+              ],
+            ),
+        ],
       ),
     );
   }
