@@ -306,15 +306,13 @@ update and hot reload the `HitType` passed into the `Tile` you created:
 
 <?code-excerpt "fwe/birdle/lib/step2_main.dart (TileUsage)"?>
 ```dart
-void docRegionTileUsage() {
-  // main.dart line ~16
-  // green
-  Tile('A', HitType.hit);
-  // grey
-  Tile('A', HitType.miss);
-  // yellow
-  Tile('A', HitType.partial);
-}
+// main.dart line ~16
+// green
+Tile('A', HitType.hit);
+// grey
+Tile('A', HitType.miss);
+// yellow
+Tile('A', HitType.partial);
 ```
 
 Soon, this small box will be one of many widgets on the screen. In the next
