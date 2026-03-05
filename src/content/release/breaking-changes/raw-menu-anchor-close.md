@@ -1,5 +1,5 @@
 ---
-title: RawMenuAnchor close order
+title: Changing RawMenuAnchor close order
 description: >-
   Closing a `RawMenuAnchor` now triggers `onClose` and `onCloseRequested` callbacks
   for all descendant `RawMenuAnchor`s in a coordinated sequence.
