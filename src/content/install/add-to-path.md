@@ -50,7 +50,7 @@ follow [Set up and test drive Flutter][] instead.
   </a>
 </div>
 
-[Set up and test drive Flutter]: /get-started/quick
+[Set up and test drive Flutter]: /install/quick
 
 ## Windows
 

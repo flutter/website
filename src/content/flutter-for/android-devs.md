@@ -2355,7 +2355,7 @@ In Flutter, access this functionality using the
 For more information on using the Firebase Cloud Messaging API,
 see the [`firebase_messaging`][] plugin documentation.
 
-[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
+[Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
 [Add Flutter to existing app]: /add-to-app
 [Animation & Motion widgets]: /ui/widgets/animation
 [Animations tutorial]: /ui/animations/tutorial
@@ -2386,7 +2386,7 @@ see the [`firebase_messaging`][] plugin documentation.
 [`image_picker`]: {{site.pub}}/packages/image_picker
 [Intents]: #what-is-the-equivalent-of-an-intent-in-flutter
 [intl package]: {{site.pub}}/packages/intl
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
+[Introduction to declarative UI]: /flutter-for/declarative
 [Material Components]: {{site.material}}/develop/flutter
 [Material Design guidelines]: {{site.material}}/styles
 [optimized for all platforms]: {{site.material}}/develop

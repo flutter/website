@@ -15,7 +15,7 @@ you can follow the [custom setup instructions][] instead.
 
 :::
 
-[custom setup instructions]: /get-started/custom
+[custom setup instructions]: /install/custom
 
 ## Confirm your development platform {: #dev-platform}
 

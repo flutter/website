@@ -71,9 +71,6 @@ It also makes it straightforward and low risk to add new logic and new UI.
     Very Good Engineering is a documentation site by VGV that has
     technical articles, demos, and open-sourced projects.
     It includes documentation on architecting Flutter applications.
-  * [State Management with ChangeNotifier walkthrough][] -
-    A gentle introduction into using the primitives in
-    the Flutter SDK for your state management.
 * Tooling
   * [Flutter developer tools][] -
     DevTools is a suite of performance and debugging tools for Dart and Flutter.
@@ -86,7 +83,6 @@ It also makes it straightforward and low risk to add new logic and new UI.
 [Compass app source code]: https://github.com/flutter/samples/tree/main/compass_app
 [very_good_cli]: https://cli.vgv.dev/
 [Very Good Engineering architecture documentation]: https://engineering.verygood.ventures/architecture/architecture/
-[State Management with ChangeNotifier walkthrough]: /get-started/fwe/state-management
 [Flutter developer tools]: /tools/devtools
 [flutter_lints]: https://pub.dev/packages/flutter_lints
 

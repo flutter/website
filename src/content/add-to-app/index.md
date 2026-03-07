@@ -182,7 +182,7 @@ Web limitations:
   using normal Dart concepts. However, the engine will remain warmed up, even if
   it's not rendering anything.
 
-[get started]: /get-started/codelab
+[get started]: /learn/pathway
 [add-to-app GitHub Samples repository]: {{site.repo.samples}}/tree/main/add_to_app
 [Android Archive (AAR)]: {{site.android-dev}}/studio/projects/android-library
 [Flutter plugins]: {{site.pub}}/flutter

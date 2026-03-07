@@ -8,7 +8,7 @@ sidenav: default
 ---
 
 <div class="card-grid">
-  <Card title="Get started" link="/get-started" outlined="true">
+  <Card title="Install Flutter" link="/install" outlined="true">
     Set up your environment and start building.
   </Card>
   <Card title="Widget catalog" link="/ui/widgets" outlined="true">
@@ -36,7 +36,11 @@ see [What's new][].**
 ## New to Flutter?
 
 Ready to build beautiful, multiplatform apps from a single codebase?
-First, [set up your Flutter environment](/get-started), then visit the [learn Flutter](/get-started/learn-flutter) page.
+First, [set up your Flutter environment][],
+then follow the [Flutter learning pathway][].
+
+[set up your Flutter environment]: /install/quick
+[Flutter learning pathway]: /learn/pathway
 
 ### Docs
 
@@ -60,15 +64,15 @@ Coming from another platform? Check out Flutter for:
 [FAQ][]
 : Get the answers to frequently asked questions.
 
-[Android]: /get-started/flutter-for/android-devs
+[Android]: /flutter-for/android-devs
 [Building layouts]: /ui/layout
 [FAQ]: /resources/faq
 [interactivity]: /ui/interactivity
-[SwiftUI]: /get-started/flutter-for/swiftui-devs
-[UIKit]: /get-started/flutter-for/uikit-devs
-[React Native]: /get-started/flutter-for/react-native-devs
+[SwiftUI]: /flutter-for/swiftui-devs
+[UIKit]: /flutter-for/uikit-devs
+[React Native]: /flutter-for/react-native-devs
 [Understanding constraints]: /ui/layout/constraints
-[Xamarin.Forms]: /get-started/flutter-for/xamarin-forms-devs
+[Xamarin.Forms]: /flutter-for/xamarin-forms-devs
 
 ### Videos
 

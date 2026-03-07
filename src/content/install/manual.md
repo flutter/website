@@ -10,15 +10,11 @@ Learn how to install and manually set up
 your Flutter development environment.
 
 :::tip
-If you've never set up or developed an app with Flutter before,
-follow [Get started with Flutter][] instead.
-
 If you're just looking to quickly install Flutter,
 consider [installing Flutter with VS Code][with-vs-code] for
 a streamlined setup experience.
 :::
 
-[Get started with Flutter]: /get-started
 [with-vs-code]: /install/with-vs-code
 
 ## Choose your development platform {: #dev-platform}
@@ -361,9 +357,6 @@ the Flutter team recommends you first try out
     </div>
     <div class="card-content">
       <ul>
-        <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
         <li>
           <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
