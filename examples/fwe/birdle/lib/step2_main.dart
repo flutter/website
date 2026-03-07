@@ -65,8 +65,8 @@ class Tile extends StatelessWidget {
 }
 
 // #enddocregion Tile
-// #docregion TileUsage
 void docRegionTileUsage() {
+  // #docregion TileUsage
   // main.dart line ~16
   // green
   Tile('A', HitType.hit);
@@ -74,6 +74,5 @@ void docRegionTileUsage() {
   Tile('A', HitType.miss);
   // yellow
   Tile('A', HitType.partial);
+  // #enddocregion TileUsage
 }
-
-// #enddocregion TileUsage
