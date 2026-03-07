@@ -49,7 +49,8 @@ A model doesn't usually need to import Flutter libraries.
 
 Create an empty `ArticleModel` class in your `main.dart` file:
 
-```dart title="lib/main.dart"
+<?code-excerpt "fwe/wikipedia_reader/lib/step2a_main.dart (ArticleModel)"?>
+```dart
 class ArticleModel {
   // Properties and methods will be added here.
 }
@@ -66,6 +67,7 @@ https://en.wikipedia.org/api/rest_v1/page/random/summary
 
 Add a method to fetch a random Wikipedia article summary:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step2b_main.dart (ArticleModel)"?>
 ```dart
 class ArticleModel {
   Future<Summary> getRandomArticleSummary() async {
@@ -76,6 +78,7 @@ class ArticleModel {
     final response = await get(uri);
 
     // TODO: Add error handling and JSON parsing.
+    throw UnimplementedError();
   }
 }
 ```
@@ -99,6 +102,7 @@ A status code of **200** indicates success, while other codes indicate errors.
 If the status code isn't **200**, the model throws an error for
 the UI to display to users.
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step2c_main.dart (ArticleModel)"?>
 ```dart
 class ArticleModel {
   Future<Summary> getRandomArticleSummary() async {
@@ -109,10 +113,11 @@ class ArticleModel {
     final response = await get(uri);
 
     if (response.statusCode != 200) {
-      throw HttpException('Failed to update resource');
+      throw const HttpException('Failed to update resource');
     }
 
     // TODO: Parse JSON and return Summary.
+    throw UnimplementedError();
   }
 }
 ```
@@ -123,6 +128,7 @@ The [Wikipedia API][] returns [JSON][] data that
 you decode into a `Summary` class
 Complete the `getRandomArticleSummary` method:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step2_main.dart (ArticleModel)"?>
 ```dart
 class ArticleModel {
   Future<Summary> getRandomArticleSummary() async {
