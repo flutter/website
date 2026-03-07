@@ -42,6 +42,7 @@ which triggers UI rebuilds when called.
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3a_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
@@ -64,6 +65,7 @@ The `ArticleViewModel` holds three pieces of state:
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3b_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
@@ -76,6 +78,7 @@ class ArticleViewModel extends ChangeNotifier {
   }
 
   // Methods will be added next.
+  void getRandomArticleSummary() {}
 }
 ```
 
@@ -182,6 +185,7 @@ Future<void> getRandomArticleSummary() async {
 Then, update the `MainApp` widget to create the `ArticleViewModel`,
 which calls the `getRandomArticleSummary` method on creation:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3e_main.dart (MainApp)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -193,12 +197,8 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Wikipedia Flutter'),
-        ),
-        body: const Center(
-          child: Text('Check console for article data'),
-        ),
+        appBar: AppBar(title: const Text('Wikipedia Flutter')),
+        body: const Center(child: Text('Check console for article data')),
       ),
     );
   }

@@ -38,6 +38,7 @@ Create the `ArticleView` widget that
 manages the overall page layout and state handling.
 Start with the basic class structure and widgets:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4a_main.dart (ArticleView)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
@@ -45,12 +46,8 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
-      body: const Center(
-        child: Text('UI will update here'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: const Center(child: Text('UI will update here')),
     );
   }
 }
@@ -60,6 +57,7 @@ class ArticleView extends StatelessWidget {
 
 Create the `ArticleViewModel` in this widget:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (ArticleView)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
@@ -69,12 +67,8 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
-      body: const Center(
-        child: Text('UI will update here'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: const Center(child: Text('UI will update here')),
     );
   }
 }
@@ -86,6 +80,7 @@ Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
 and pass it a `ChangeNotifier` object.
 In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4c_main.dart (ArticleView)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
@@ -95,9 +90,7 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
       body: ListenableBuilder(
         listenable: viewModel,
         builder: (context, child) {
@@ -406,15 +399,14 @@ include your completed `ArticleView`.
 
 Replace your existing `MainApp` with this updated version:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/main.dart (MainApp)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ArticleView(),
-    );
+    return MaterialApp(home: ArticleView());
   }
 }
 ```
