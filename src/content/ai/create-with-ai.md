@@ -31,6 +31,8 @@ support natural language understanding and content generation.
 To get started building AI-powered experiences in Flutter, check out these
 resources:
 
+* [Firebase AI Logic Showcase][] - An application that demonstrates Firebase
+  AI Logic capabilities through a series of interactive demos.
 * [Firebase AI Logic][] - The official Firebase SDK for using generative AI
   features directly in Flutter. Compatible with the Gemini Developer API or
   Vertex AI. To get started, check out the
@@ -39,6 +41,7 @@ resources:
   AI-powered features in Flutter.
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
+[Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [Flutter AI Toolkit]: /ai/ai-toolkit
 
