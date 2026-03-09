@@ -75,7 +75,7 @@ way a traditional website would.
 
 [Dart documentation]: {{site.dart-site}}
 [Flutter documentation]: {{site.main-url}}
-[Jaspr]: {{site.pub-pkg}}/jaspr
+[Jaspr]: https://jaspr.site/
 [marketing]: {{site.main-url}}
 
 ## Get started

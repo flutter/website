@@ -50,7 +50,7 @@ we recommend _either_ using:
 
 [Dart documentation]: {{site.dart-site}}
 [Flutter documentation]: /
-[Jaspr]:  {{site.pub-pkg}}/jaspr
+[Jaspr]: https://jaspr.site/
 [marketing]: {{site.main-url}}
 
 ### Does hot reload work with a web app?
