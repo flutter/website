@@ -10,13 +10,13 @@ to run, build, and deploy Flutter apps for the web platform.
 
 :::note
 If you haven't set up Flutter already,
-visit and follow [Install Flutter][] first.
+[install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Install Flutter]: /install
+[install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Install a web browser {: #install}
