@@ -41,7 +41,8 @@ To summarize, for web content that is static or document-like,
 we recommend _either_ using:
 
 1. [Jaspr][], if you want to use Dart but want a more traditional
-   DOM-based website.
+   DOM-based website. Also note that Jaspr makes SEO work the
+   same way  a traditional website would.
 1. HTML—in this case, consider separating your primary application
    experience (created in Flutter), from your landing page,
    marketing content, and help content (created using

@@ -69,7 +69,8 @@ However, if you want to use Dart and wish to implement a traditional
 DOM-based website, a recently released Dart package,
 [Jaspr][], supports static websites; in fact,
 the [Dart][] and [Flutter][] websites were migrated to use the Jaspr package.
-Note that Jaspr uses Dart, but not Flutter.
+Note that Jaspr uses Dart (but not Flutter), and makes SEO work the same
+way a traditional website would..
 
 [Dart]: {{site.dart-site}}
 [Flutter]: {{site.main-url}}
