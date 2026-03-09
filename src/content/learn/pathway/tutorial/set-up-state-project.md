@@ -88,10 +88,7 @@ for Wikipedia article summaries. This file has no special logic, and is
 simply a collection of classes that represent the data returned by the
 Wikipedia API. Its sufficient to copy the code below into the file and then ignore it. If you aren't comfortable basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
 
-<?code-excerpt "fwe/wikipedia_reader/lib/summary.dart (All)"?>
 ```dart title="lib/summary.dart" collapsed
-
-// Representation of the JSON data returned by the Wikipedia API.
 class Summary {
   /// Returns a new [Summary] instance.
   Summary({
@@ -99,47 +96,68 @@ class Summary {
     required this.pageid,
     required this.extract,
     required this.extractHtml,
-    this.thumbnail,
-    this.originalImage,
     required this.lang,
     required this.dir,
+    this.thumbnail,
+    this.originalImage,
+    this.url,
+
     this.description,
-    required this.url,
   });
 
-  /// Titles
+  ///
   TitlesSet titles;
 
-  /// Page ID
+  /// The page ID
   int pageid;
 
-  /// Extract
+  /// First several sentences of an article in plain text
   String extract;
 
-  /// Extract HTML
+  /// First several sentences of an article in simple HTML format
   String extractHtml;
 
-  /// Thumbnail image
   ImageFile? thumbnail;
 
-  /// Original image
+  /// Url to the article on Wikipedia
+  String? url;
+
+  ///
   ImageFile? originalImage;
 
-  /// Language
+  /// The page language code
   String lang;
 
-  /// Directionality
+  /// The page language direction code
   String dir;
 
-  /// Description
+  /// Wikidata description for the page
   String? description;
 
-  /// URL
-  String url;
+  bool get hasImage =>
+      (originalImage != null || thumbnail != null) && preferredSource != null;
 
-  bool get hasImage => originalImage != null && thumbnail != null;
+  String? get preferredSource {
+    ImageFile? file;
 
-  /// Returns a new [Summary] instance and imports its values from a JSON map
+    if (originalImage != null) {
+      file = originalImage;
+    } else {
+      file = thumbnail;
+    }
+
+    if (file != null) {
+      if (acceptableImageFormats.contains(file.extension.toLowerCase())) {
+        return file.source;
+      } else {
+        return null;
+      }
+    }
+
+    return null;
+  }
+
+  /// Returns a new [Summary] instance
   static Summary fromJson(Map<String, Object?> json) {
     return switch (json) {
       {
@@ -147,11 +165,37 @@ class Summary {
         'pageid': final int pageid,
         'extract': final String extract,
         'extract_html': final String extractHtml,
-        'thumbnail': final Map<String, Object?> thumbnail,
-        'originalimage': final Map<String, Object?> originalImage,
         'lang': final String lang,
         'dir': final String dir,
+        'content_urls': {
+          'desktop': {'page': final String url},
+          'mobile': {'page': String _},
+        },
         'description': final String description,
+        'thumbnail': final Map<String, Object?> thumbnail,
+        'originalimage': final Map<String, Object?> originalImage,
+      } =>
+        Summary(
+          titles: TitlesSet.fromJson(titles),
+          pageid: pageid,
+          extract: extract,
+          extractHtml: extractHtml,
+          thumbnail: ImageFile.fromJson(thumbnail),
+          originalImage: ImageFile.fromJson(originalImage),
+          lang: lang,
+          dir: dir,
+          url: url,
+          description: description,
+        ),
+      {
+        'titles': final Map<String, Object?> titles,
+        'pageid': final int pageid,
+        'extract': final String extract,
+        'extract_html': final String extractHtml,
+        'lang': final String lang,
+        'dir': final String dir,
+        'thumbnail': final Map<String, Object?> thumbnail,
+        'originalimage': final Map<String, Object?> originalImage,
         'content_urls': {
           'desktop': {'page': final String url},
           'mobile': {'page': String _},
@@ -166,7 +210,6 @@ class Summary {
           originalImage: ImageFile.fromJson(originalImage),
           lang: lang,
           dir: dir,
-          description: description,
           url: url,
         ),
       {
@@ -331,12 +374,12 @@ String? getFileExtension(String file) {
 }
 
 const acceptableImageFormats = ['png', 'jpg', 'jpeg'];
+
 ```
 
 Then, open `lib/main.dart` and replace the existing code with
 this basic structure, which adds required imports that the app uses:
 
-<?code-excerpt "fwe/wikipedia_reader/lib/step1_main.dart (All)"?>
 ```dart title="lib/main.dart"
 import 'dart:convert';
 import 'dart:io';
@@ -357,8 +400,12 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Wikipedia Flutter')),
-        body: const Center(child: Text('Loading...')),
+        appBar: AppBar(
+          title: const Text('Wikipedia Flutter'),
+        ),
+        body: const Center(
+          child: Text('Loading...'),
+        ),
       ),
     );
   }
