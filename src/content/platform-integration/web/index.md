@@ -28,7 +28,7 @@ check out the following video.
 ## How it works
 
 Adding web support to Flutter involved implementing Flutter's
-core drawing layer on top of standard browser APIs;
+core drawing layer on top of standard browser APIs,
 in addition to compiling Dart to JavaScript,
 instead of the ARM machine code that
 is used for mobile applications.
@@ -66,15 +66,17 @@ can deliver. However, you _can_ use Flutter to embed interactive
 experiences into these websites.
 
 However, if you want to use Dart and wish to implement a traditional
-DOM-based website, a recently released Dart package,
+DOM-based website, a community-released Dart package,
 [Jaspr][], supports static websites; in fact,
-the [Dart][] and [Flutter][] websites were migrated to use the Jaspr package.
-Note that Jaspr uses Dart (but not Flutter), and makes SEO work the same
-way a traditional website would..
+the [Dart documentation][] and [Flutter documentation][]
+and [marketing][] websites were migrated to use the Jaspr package.
+Note that Jaspr uses Dart (but not Flutter), and makes SEO work in the same
+way a traditional website would.
 
-[Dart]: {{site.dart-site}}
-[Flutter]: {{site.main-url}}
-[Jaspr]:  https://jaspr.site/
+[Dart documentation]: {{site.dart-site}}
+[Flutter documentation]: {{site.main-url}}
+[Jaspr]: {{site.pub-pkg}}/jaspr
+[marketing]: {{site.main-url}}
 
 ## Get started
 

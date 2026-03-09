@@ -32,25 +32,26 @@ Flutter web prioritizes performance, fidelity, and consistency.
 This means application output doesn't align with what search
 engines need to properly index.
 
-However, a recently released Dart package, [Jaspr][] _does_
+However, a community-released Dart package, [Jaspr][] _does_
 support static websites.
-In fact, both the [Dart][] and [Flutter][] documentation
-websites were recently migrated to using the Jaspr package.
+In fact, the [Dart documentation][] and [Flutter documentation][] and
+[marketing][] websites were migrated to using the Jaspr package.
 
 To summarize, for web content that is static or document-like,
 we recommend _either_ using:
 
 1. [Jaspr][], if you want to use Dart but want a more traditional
-   DOM-based website. Also note that Jaspr makes SEO work the
-   same way  a traditional website would.
+   DOM-based website. Also note that Jaspr makes SEO work in the
+   same way a traditional website would.
 1. HTML—in this case, consider separating your primary application
    experience (created in Flutter), from your landing page,
    marketing content, and help content (created using
    search engine optimized HTML).
 
-[Dart]: {{site.dart-site}}
-[Flutter]: {{site.main-url}}
-[Jaspr]:  https://jaspr.site/
+[Dart documentation]: {{site.dart-site}}
+[Flutter documentation]: /
+[Jaspr]:  {{site.pub-pkg}}/jaspr
+[marketing]: {{site.main-url}}
 
 ### Does hot reload work with a web app?
 
