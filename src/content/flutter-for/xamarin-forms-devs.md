@@ -2497,7 +2497,7 @@ For more information on using the Firebase Cloud Messaging API, see the
 [internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub}}/packages/intl
 [`intl_translation`]: {{site.pub}}/packages/intl_translation
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
+[Introduction to declarative UI]: /flutter-for/declarative
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: /ui/widgets/material
 [Material Design]: {{site.material}}/styles

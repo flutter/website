@@ -985,7 +985,7 @@ final container = Container(
 [`BoxShadow`]: {{site.api}}/flutter/painting/BoxShadow-class.html
 [`Center`]: {{site.api}}/flutter/widgets/Center-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
+[Introduction to declarative UI]: /flutter-for/declarative
 [Learning Dart as a JavaScript Developer]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
 [`Matrix4`]: {{site.api}}/flutter/vector_math_64/Matrix4-class.html
 [`Positioned`]: {{site.api}}/flutter/widgets/Positioned-class.html

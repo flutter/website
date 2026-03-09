@@ -88,8 +88,8 @@ void main() {
 }
 ```
 
-To try these tests out, run them on the app you create in the
-[Write your first Flutter app](/get-started/codelab) codelab.
+To try these tests out, run them on
+a [new app created with `flutter create`][create-new-app].
 Each button on that app's main screen serves as a tappable target
 with text rendered in an 18-point font.
 
@@ -97,6 +97,7 @@ You can add Guideline API tests alongside other [widget tests][],
 or in a separate file, such as `test/a11y_test.dart` in this example.
 
 [Accessibility Guideline API]: {{site.api}}/flutter/flutter_test/AccessibilityGuideline-class.html
+[create-new-app]: /reference/create-new-app
 [widget tests]: /testing/overview#widget-tests
 
 ## Testing accessibility on the web

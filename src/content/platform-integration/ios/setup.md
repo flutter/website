@@ -10,13 +10,13 @@ to run, build, and deploy Flutter apps for iOS devices.
 
 :::note
 If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+visit and follow [Install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Get started with Flutter]: /get-started
+[Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up iOS tooling {: #set-up-tooling}
@@ -246,9 +246,6 @@ or begin improving integration with iOS.
     </div>
     <div class="card-content">
       <ul>
-        <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
         <li>
           <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>

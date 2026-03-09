@@ -86,7 +86,7 @@ should provide details.
 [^5]: Uses Google's ML Kit and supports various features like text recognition, face detection, image labeling, landmark recognition, and barcode scanning. You can also create a custom model with Firebase. To learn more, see [Use a custom TensorFlow Lite model with Flutter][].
 [^6]: Uses the [OpenWeatherMap API][]. Other packages exist that can pull from different weather APIs.
 
-[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
+[Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [Using packages]: /packages-and-plugins/using-packages
 [pub.dev]: {{site.pub-pkg}}
 [`shared_preferences`]: {{site.pub-pkg}}/shared_preferences

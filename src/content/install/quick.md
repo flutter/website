@@ -172,11 +172,11 @@ it's time to create an app and try out Flutter development!
 
 **Congratulations!**
 Now that you've installed and tried out Flutter,
-follow the codelab on [Building your first app][],
+follow the [Flutter learning pathway][],
 set up development for an [additional target platform][], or
 explore some of these resources to continue your Flutter learning journey.
 
 {% render "docs/get-started/setup-next-steps.html", site: site %}
 
-[Building your first app]: /get-started/codelab
+[Flutter learning pathway]: /learn/pathway
 [additional target platform]: /platform-integration#setup

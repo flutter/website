@@ -107,7 +107,7 @@ You might also check out the [Dart 3.7 release][] blog post.
 [Architectural overview page]: /resources/architectural-overview
 [bc-3.29]: /release/breaking-changes#released-in-flutter-3-29
 [Dart 3.7 release]: {{site.medium}}/dartlang/announcing-dart-3-7-bf864a1b195c
-[Flutter for Jetpack Compose devs]: /get-started/flutter-for/compose-devs
+[Flutter for Jetpack Compose devs]: /flutter-for/compose-devs
 [Test orientation]: /cookbook/testing/widget/orientation
 
 ---
@@ -337,7 +337,7 @@ To learn more, check out [dart.dev/go/macros][].
 [Adaptive and Responsive design]: /ui/adaptive-responsive
 [Casual Games Toolkit]: /resources/games-toolkit
 [Flutter fundamentals docs]: /learn/pathway
-[Flutter install]: /get-started
+[Flutter install]: /install
 [Flutter web app initialization]: /platform-integration/web/initialization
 [website README]: {{site.github}}/flutter/website/?tab=readme-ov-file#flutter-documentation-website
 [Support for WebAssembly (Wasm)]: /platform-integration/web/wasm
@@ -369,7 +369,7 @@ You might also check out the [Dart 3.3 release][] blog post.
 
 [@TahaTesser]: {{site.github}}/TahaTesser
 [Concurrency and isolates]: /perf/isolates
-[Flutter install]: /get-started
+[Flutter install]: /install
 [let us know]: {{site.github}}/flutter/website/issues/new/choose
 [migrating from Material 2 to Material 3]: /release/breaking-changes/material-3-migration
 [Use themes to share colors and font styles]: /cookbook/design/themes
@@ -758,9 +758,9 @@ and [Introducing Dart 3 alpha][].
 [Adding an iOS clip target]: /platform-integration/ios/ios-app-clip
 [Creating Flavors for Flutter]: /deployment/flavors
 [Customizing web app initialization]: /platform-integration/web/initialization
-[Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: /flutter-for/dart-swift-concurrency
 [Flutter FAQ]: /resources/faq
-[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
+[Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [Internationalizing Flutter apps]: /ui/internationalization
 [Introducing isolate background channels]: {{site.medium}}/flutter/introducing-background-isolate-channels-7a299609cad8
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
@@ -886,7 +886,7 @@ and the [Flutter 3.3 release notes][3.3 release notes].
 [Build and release a Windows desktop app]: /deployment/windows
 [Developer mode]: {{site.apple-dev}}/documentation/xcode/enabling-developer-mode-on-a-device
 [Handling errors in Flutter]: /testing/errors
-[install page]: /get-started
+[install page]: /install
 [navigation and routing overview]: /ui/navigation
 [URL strategies]: /ui/navigation/url-strategies
 
@@ -951,7 +951,7 @@ and the [Flutter 3 release notes][].
 [Games page]: {{site.main-url}}/games
 [Games doc page]: /resources/games-toolkit
 [js-to-dart]: {{site.dart-site}}/guides/language/coming-from/js-to-dart
-[install page]: /get-started
+[install page]: /install
 
 **Codelabs and workshops**
 
@@ -1563,7 +1563,7 @@ Happy Fluttering!
 [Flutter Medium publication]: {{site.medium}}/flutter
 [Migrating your plugin to the new Android APIs]: /release/breaking-changes/plugin-api-migration
 [Web support for Flutter goes beta]: {{site.flutter-blog}}/web-support-for-flutter-goes-beta-35b64a1217c0
-[Get started]: /get-started
+[Get started]: /install
 
 ## 10 Sep 2019: 1.9 release
 
