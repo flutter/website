@@ -36,6 +36,7 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Changing RawMenuAnchor close order][]
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [Deprecate `TextInputConnection.setStyle`][]
@@ -43,6 +44,7 @@ They're sorted by release and listed in alphabetical order:
 * [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
 * [Page transition builders reorganization][]
 
+[Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
