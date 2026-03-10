@@ -95,9 +95,9 @@ consider using Firebase AI Logic instead.
     ]);
     final catalogs = [catalog];
 
-    final messageProcessor = SurfaceController(catalogs: catalogs);
+    final surfaceController = SurfaceController(catalogs: catalogs);
     final transportAdapter = A2uiTransportAdapter();
-    transportAdapter.messageStream.listen(messageProcessor.handleMessage);
+    transportAdapter.messageStream.listen(surfaceController.handleMessage);
     
     final promptBuilder = PromptBuilder.chat(
       catalog: catalog,
@@ -111,7 +111,7 @@ consider using Firebase AI Logic instead.
     );
 
     final conversation = Conversation(
-      surfaceController: messageProcessor,
+      surfaceController: surfaceController,
       transportAdapter: transportAdapter,
     );
     ```
@@ -136,11 +136,11 @@ To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 4. Use `dart pub add` to add `genui` and [`firebase_vertexai`][] as
+ 4. Use `dart pub add` to add `genui` and [`firebase_ai_logic`][] as
     dependencies in your `pubspec.yaml` file.
 
     ```console
-    $ dart pub add genui firebase_vertexai
+    $ dart pub add genui firebase_ai_logic
     ```
 
  5. In your app's `main` method, ensure that the widget
@@ -157,7 +157,7 @@ To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
-[`firebase_vertexai`]: {{site.pub-pkg}}/firebase_vertexai
+[`firebase_ai_logic`]: {{site.pub-pkg}}/firebase_ai_logic
 
 </Tab>
 
@@ -277,9 +277,7 @@ Follow these instructions:
         );
 
         // Listen for messages from the remote agent.
-        _connector.stream.listen((A2uiMessage message) {
-          // Pass messages to Adapter/Controller
-        });
+        _connector.stream.listen(_surfaceController.handleMessage);
 
       }
 
@@ -288,6 +286,7 @@ Follow these instructions:
         _textController.dispose();
         _uiAgent.dispose();
         _surfaceController.dispose();
+        _connector.dispose();
         super.dispose();
       }
 
@@ -528,7 +527,6 @@ To receive and display generated UI:
        void _sendMessage(String text) {
          if (text.trim().isEmpty) return;
          // _conversation.sendMessage(text);
-         // Or pass chunk texts directly via LLM SDK stream into the transportAdapter
        }
 
        // A callback invoked by the [Conversation] when a new
