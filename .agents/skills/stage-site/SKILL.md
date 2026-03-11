@@ -37,12 +37,6 @@ Markdown link references in the site output:
 dart run dash_site check-link-references
 ```
 
-Alternatively, to verify all links between pages on the site work:
-
-```bash
-dart run dash_site check-links
-```
-
 If any broken links are found, try to patch them or alert the user.
 
 ## 4. Stage the site locally
