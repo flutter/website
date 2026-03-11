@@ -21,16 +21,16 @@ alpha and is likely to change.
 
 The [`genui`][] package is built around the following main components:
 
-`GenUiConversation`
+`Conversation`
 : The primary facade and entry point for the package.
-  It includes the `A2uiMessageProcessor` and `ContentGenerator` classes,
+  It includes the `SurfaceController` class,
   manages the conversation history,
   and orchestrates the entire generative UI process.
 
 `Catalog`
 : A collection of `CatalogItem` objects that defines
   the set of widgets that the AI is allowed to use.
-  The `A2uiMessageProcessor` supports multiple catalogs,
+  The `SurfaceController` supports multiple catalogs,
   allowing you to organize your widgets into logical groups.
   Each `CatalogItem` specifies a widget's name (for the AI
   to reference), a data schema for its properties, and a
@@ -41,70 +41,68 @@ The [`genui`][] package is built around the following main components:
   Widgets are _bound_ to data in this model. When data changes,
   only the widgets that depend on that specific piece of data are rebuilt.
 
-`ContentGenerator`
-: An interface for communicating with a generative AI model.
-  This interface uses streams to send `A2uiMessage` commands,
-  text responses, and errors back to the `GenUiConversation`.
+`A2uiTransportAdapter`
+: A bridge that parses raw text streams coming from your LLM into
+  `A2uiMessage` commands for the `SurfaceController`.
 
 `A2uiMessage`
 : A message sent from the AI
-  (through the `ContentGenerator`) to the UI,
-  instructing it to perform actions like `beginRendering`,
+  (parsed by the `A2uiTransportAdapter`) to the UI,
+  instructing it to perform actions like `createSurface`,
   `surfaceUpdate`, `dataModelUpdate`, or `deleteSurface`.
 
-`A2uiMessageProcessor`
+`SurfaceController`
 : Handles the processing of `A2uiMessage`s,
   manages the `DataModel`, and maintains the state of UI surfaces.
 
+
 ## How it works
 
-The `GenUiConversation` manages the interaction cycle:
+The `Conversation` manages the interaction cycle:
 
  1. **User input**
 
     The user provides a prompt (for example, through a text field).
-    The app calls `genUiConversation.sendRequest()`.
+    The app calls `conversation.sendMessage()`.
 
  2. **AI invocation**
 
-    The `GenUiConversation` adds the user's message to its
-    internal conversation history and calls `contentGenerator.sendRequest()`.
+    The `Conversation` sends the user's message to the LLM SDK.
 
  3. **AI response**
 
-    The `ContentGenerator` interacts with the AI model.
-    The AI, guided by the widget schemas, sends back responses.
+    The LLM, guided by the widget schemas provided in its system prompt,
+    sends back responses.
 
  4. **Stream handling**
 
-    The `ContentGenerator` emits A2uiMessages,
-    text responses, or errors on its streams.
+    The text stream from the LLM SDK is fed into the `A2uiTransportAdapter`.
 
  5. **UI state update**
 
-    `GenUiConversation` listens to these streams.
-    `A2uiMessages` are passed to `A2uiMessageProcessor.handleMessage()`,
-    which updates the UI state and `DataModel`.
+    `A2uiMessages` parsed by the adapter are passed to
+    `SurfaceController.handleMessage()`, which updates
+    the UI state and `DataModel`.
 
  6. **UI rendering**
 
-    The `A2uiMessageProcessor` broadcasts an update,
-    and any `GenUiSurface` widgets listening for that surface ID will rebuild.
+    The `SurfaceController` broadcasts an update,
+    and any `Surface` widgets listening for that surface ID will rebuild.
     Widgets are bound to the `DataModel`, so they update automatically
     when their data changes.
 
  7. **Callbacks**
 
-    Text responses and errors trigger the `onTextResponse`
-    and `onError` callbacks on `GenUiConversation`.
+    Text responses and errors trigger callbacks on the `Conversation` or
+    are handled by your specific LLM integration flow.
 
  8. **User interaction**
 
     The user interacts with the newly generated UI
     (for example, by typing in a text field). This interaction directly
     updates the `DataModel`. If the interaction is an action (like a button click),
-    the `GenUiSurface` captures the event and forwards it to the
-    `GenUiConversation`'s `A2uiMessageProcessor`, which automatically creates
+    the `Surface` captures the event and forwards it to the
+    `SurfaceController`, which automatically creates
     a new `UserMessage` containing the current state of the data model
     and restarts the cycle.
 

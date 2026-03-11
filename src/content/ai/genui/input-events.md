@@ -39,8 +39,8 @@ The flow of an event is as follows:
 
 ### Protocol level
 
-The A2UI protocol defines a `userAction` message used to report events.
-A `userAction` contains:
+The A2UI protocol defines an `action` message used to report events.
+An `action` contains:
 
 * `name`: The name of the action
   (defined by the AI when generating the component).
@@ -133,9 +133,9 @@ widgetBuilder: (itemContext) {
 Once `dispatchEvent` is called,
 the event travels through the GenUI core layers.
 
-### GenUISurface
+### Surface
 
-The `GenUiSurface` widget (in `lib/src/core/genui_surface.dart`)
+The `Surface` widget (in `lib/src/core/surface.dart`)
 wraps the rendered widgets.
 It provides the dispatchEvent callback implementation.
 
@@ -143,11 +143,11 @@ When `_dispatchEvent` is called:
 
 1. It automatically injects the `surfaceId` into the event,
    ensuring the AI knows which surface the interaction came from.
-2. It delegates handling to the `GenUiHost`
-   (implemented by `A2uiMessageProcessor`).
+2. It delegates handling to the `SurfaceHost`
+   (implemented by `SurfaceController`).
 
 ```dart
-// GenUiSurface implementation details
+// Surface implementation details
 void _dispatchEvent(UiEvent event) {
   // ...
   final Map<String, Object?> eventMap = {
@@ -159,28 +159,28 @@ void _dispatchEvent(UiEvent event) {
 }
 ```
 
-### A2uiMessageProcessor
+### SurfaceController
 
-The `A2uiMessageProcessor` (in `lib/src/core/a2ui_message_processor.dart`)
+The `SurfaceController` (in `lib/src/core/surface_controller.dart`)
 is the central hub for managing UI state.
 
 When `handleUiEvent` is called, it does the following:
 
 1.  Verifies the event type.
-2.  Wraps the event in the `userAction` JSON envelope
+2.  Wraps the event in the `action` JSON envelope
    required by the protocol.
 3.  Emits a `UserUiInteractionMessage` on its `onSubmit` stream.
 
 ```dart
-// A2uiMessageProcessor implementation details
+// SurfaceController implementation details
 @override
 void handleUiEvent(UiEvent event) {
   if (event is! UserActionEvent) return;
 
-  // Wrap in protocol 'userAction' envelope
-  final String eventJsonString = jsonEncode({'userAction': event.toMap()});
+  // Wrap in protocol 'action' envelope
+  final String eventJsonString = jsonEncode({'action': event.toMap()});
 
-  // Emit for listeners (like GenUiConversation)
+  // Emit for listeners (like Conversation)
   _onSubmit.add(UserUiInteractionMessage.text(eventJsonString));
 }
 ```
@@ -188,22 +188,23 @@ void handleUiEvent(UiEvent event) {
 ## Transmission to AI
 
 The final step sends the event to the AI Agent.
-This is typically handled by `GenUiConversation`
-(in `lib/src/facade/gen_ui_conversation.dart`).
-The `GenUiConversation` listens to the `onSubmit` stream
+This is typically handled by `Conversation`
+(in `lib/src/facade/conversation.dart`).
+The `Conversation` listens to the `onSubmit` stream
 from the message processor.
 
 ```dart
-// GenUiConversation constructor
-_userEventSubscription = a2uiMessageProcessor.onSubmit.listen(sendRequest);
+// Conversation constructor
+_userEventSubscription = surfaceController.onSubmit.listen(sendMessage);
 ```
 
-When an event is received, the `sendRequest` method:
+When an event is received, the `sendMessage` method:
 
-1. Calls `contentGenerator.sendRequest` with the `UserUiInteractionMessage`.
-2. The `ContentGenerator` (perhaps `GoogleGenerativeAiContentGenerator` or
-   `A2uiContentGenerator`) handles the network transport to the AI Agent.
+1. Wraps the `UserUiInteractionMessage` back to the developer's client code.
+2. The custom integration or predefined transport adapter forwards
+   the message to the LLM agent network transport.
 
 The AI Agent receives this JSON message, processes the user action,
 and might stream back new `surfaceUpdate` or `dataModelUpdate` messages
 to modify the UI, or some other action, completing the full interaction loop.
+
