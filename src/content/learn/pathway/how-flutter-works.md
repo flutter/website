@@ -19,12 +19,12 @@ next:
 
 Welcome to the first episode of "How Flutter Works,"
 a six-part series designed to explore what happens to
-your Dart code after you release it into Flutter.
-This episode takes a high-level look at Flutter's architecture.
-Learn about declarative code, multi-platform frameworks, and
-the role of Dart in Flutter's architecture.
-This video is perfect for those beginning to
-research Flutter and who want to understand the big picture.
+your Dart code after you hand it off to the Flutter framework.
+This episode takes a high-level look at Flutter's architecture,
+covering declarative code, multi-platform frameworks, and
+the role of Dart.
+This video is perfect for anyone beginning to
+research Flutter who wants to understand the big picture.
 
 ## Widgets and the three trees {:#three-trees}
 
@@ -36,7 +36,7 @@ Dive into Flutter's architecture by exploring its
 three primary trees: `Widget`, `Element`, and `RenderObject`.
 Discover how widgets provide the declarative API for Flutter developers and
 see how elements glue widgets to the rendering layer.
-Follow along to also learn about the role of render objects in
+You'll also learn about the role of render objects in
 translating widget values into painting calls.
 
 ## State objects and their lifecycle {:#state}
@@ -75,7 +75,7 @@ Ever wonder how your Flutter app actually renders to the screen?
 This video dives into `RenderObjectWidget`—the only type of
 widget in Flutter that creates something visual.
 While stateless and stateful widgets help structure your app,
-it's `RenderObjectWidget` that turn your UI code into real pixels.
+it's render object widgets that turns your UI code into real pixels.
 
 You'll learn how Flutter builds the
 `Widget`, `Element`, and `RenderObject` trees,
