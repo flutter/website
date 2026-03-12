@@ -168,8 +168,7 @@ enum CodeBlockTag {
   passesStaticAnalysis('static analysis: success', parentClass: 'passes-sa'),
   failsStaticAnalysis('static analysis: failure', parentClass: 'fails-sa'),
   runtimeSuccess('runtime: success', parentClass: 'runtime-success'),
-  runtimeFailure('runtime: failure', parentClass: 'runtime-fail')
-  ;
+  runtimeFailure('runtime: failure', parentClass: 'runtime-fail');
 
   const CodeBlockTag(this.spanContent, {required this.parentClass});
 
