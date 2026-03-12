@@ -514,6 +514,8 @@
           permalink: /cookbook/testing/integration/introduction
         - title: Write and run an integration test
           permalink: /testing/integration-tests
+        - title: Write and run a Patrol test
+          permalink: /testing/patrol-tests
         - title: Profile an integration test
           permalink: /cookbook/testing/integration/profiling
     - title: Test a plugin
