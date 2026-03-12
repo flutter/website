@@ -152,8 +152,7 @@ enum FontWeight {
   w600(600),
   w700(700),
   w800(800),
-  w900(900)
-  ;
+  w900(900);
 
   final int weight;
 
