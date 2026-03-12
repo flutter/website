@@ -75,7 +75,7 @@ Ever wonder how your Flutter app actually renders to the screen?
 This video dives into `RenderObjectWidget`—the only type of
 widget in Flutter that creates something visual.
 While stateless and stateful widgets help structure your app,
-it's render object widgets that turns your UI code into real pixels.
+it's render object widgets that turn your UI code into real pixels.
 
 You'll learn how Flutter builds the
 `Widget`, `Element`, and `RenderObject` trees,
