@@ -165,9 +165,9 @@ class Tile extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
         color: switch (hitType) {
-          LetterType.hit => Colors.green,
-          LetterType.partial => Colors.yellow,
-          LetterType.miss => Colors.grey,
+          HitType.hit => Colors.green,
+          HitType.partial => Colors.yellow,
+          HitType.miss => Colors.grey,
           _ => Colors.white,
         },
       ),
