@@ -166,7 +166,7 @@ Look at the `Tile` widget's `build` method from earlier:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
