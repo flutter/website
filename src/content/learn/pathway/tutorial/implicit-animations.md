@@ -41,7 +41,7 @@ For reference, here's the current implementation of the `Tile` widget:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -85,7 +85,7 @@ Modify your `Tile` widget as follows:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -150,7 +150,7 @@ To change the `Curve` of this animation, update the code to the following:
 
 ```dart
 class Tile extends StatelessWidget {
-  const Tile(required this.letter, required hitType, {super.key});
+  const Tile(this.letter, this.hitType, {super.key});
 
   final String letter;
   final HitType hitType;
@@ -165,9 +165,9 @@ class Tile extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey.shade300),
         color: switch (hitType) {
-          LetterType.hit => Colors.green,
-          LetterType.partial => Colors.yellow,
-          LetterType.miss => Colors.grey,
+          HitType.hit => Colors.green,
+          HitType.partial => Colors.yellow,
+          HitType.miss => Colors.grey,
           _ => Colors.white,
         },
       ),

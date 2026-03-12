@@ -169,8 +169,8 @@ extension WordUtils on Word {
 
   /// Compares two [Word] objects and returns a new [Word] that
   /// has the same letters as the [this], but each [Letter]
-  /// has new a [LetterType] of either [LetterType.hit],
-  /// [LetterType.partial], or [LetterType.miss].
+  /// has new a [HitType] of either [HitType.hit],
+  /// [HitType.partial], or [HitType.miss].
   Word evaluateGuess(Word other) {
     assert(isLegalGuess);
 
