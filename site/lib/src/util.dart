@@ -123,8 +123,7 @@ enum OperatingSystem {
   windows('Windows'),
   macos('macOS'),
   linux('Linux'),
-  chromeos('ChromeOS')
-  ;
+  chromeos('ChromeOS');
 
   const OperatingSystem(this.label);
   final String label;
