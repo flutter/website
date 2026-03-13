@@ -17,7 +17,7 @@ that open non-Flutter windows.
 When adding a non-Flutter window to a Flutter Windows app, it will not be part
 of the logic for application lifecycle state updates by default. For example,
 this means that when the external window is shown or hidden, the app lifecycle
-state will not appropriately update to inactive or hidden. As a result, the app
+state won't appropriately update to inactive or hidden. As a result, the app
 might receive incorrect lifecycle state changes through
 [WidgetsBindingObserver.didChangeAppLifecycle][].
 
@@ -28,9 +28,9 @@ the window's `WndProc` procedure
 must invoke `FlutterEngine::ProcessExternalWindowMessage`.
 
 To achieve this, add the following code to the message handler function
-of your custom external window. The exact file and class name depend on
-your app's implementation, but it should be wherever you define the `WndProc`
-for the non-Flutter window:
+of your custom external window. In C++ wrappers for the Win32 API,
+this is often a class method called from the window's `WndProc`.
+The exact file and class name depend on your app's implementation.
 
 ```cpp diff
   LRESULT MyExternalWindow::MessageHandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
