@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, prefer_const_declarations, prefer_const_constructors
+// ignore_for_file: specify_nonobvious_property_types, avoid_print, prefer_const_declarations, prefer_const_constructors
 
 // #docregion build
 import 'package:flutter/material.dart';

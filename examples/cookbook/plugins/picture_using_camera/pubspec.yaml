@@ -3,12 +3,12 @@ description: A new Flutter project.
 
 resolution: workspace
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.11.0
 
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.11.2
+  camera: ^0.12.0
   path_provider: ^2.1.5
   path: ^1.9.1
 

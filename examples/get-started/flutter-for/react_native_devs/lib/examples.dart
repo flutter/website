@@ -324,8 +324,8 @@ class HttpExample extends StatefulWidget {
 class _HttpExampleState extends State<HttpExample> {
   String _ipAddress = '';
   // #docregion http
-  final url = Uri.parse('https://httpbin.org/ip');
-  final httpClient = HttpClient();
+  final Uri url = Uri.parse('https://httpbin.org/ip');
+  final HttpClient httpClient = HttpClient();
 
   Future<void> getIPAddress() async {
     final request = await httpClient.getUrl(url);

@@ -1068,7 +1068,7 @@ RegEx adds last two lines with commented out code and closing bracket.
 
 <?code-excerpt "add_language/lib/nn_intl.dart (date-symbols)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
 ```dart
-const nnDateSymbols = {
+const Map<String, Object?> nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>['f.Kr.', 'e.Kr.'],
 ```

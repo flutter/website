@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(const HomePage());
 
-const red = Colors.red;
-const green = Colors.green;
-const blue = Colors.blue;
-const big = TextStyle(fontSize: 30);
+const Color red = Colors.red;
+const Color green = Colors.green;
+const Color blue = Colors.blue;
+const TextStyle big = TextStyle(fontSize: 30);
 
 //////////////////////////////////////////////////
 

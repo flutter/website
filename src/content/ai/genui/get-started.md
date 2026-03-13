@@ -63,10 +63,10 @@ Available providers include the following:
 <Tab name="Google Gemini AI">
 
 The easiest way to start using GenUI is to use the
-[`genui_google_generative_ai`][] package,
+[`google_generative_ai`][] package directly,
 which only requires a `GEMINI_API_KEY`.
 
-This package provides the integration between `genui` and the
+This package provides the integration with the
 Google Cloud Generative Language API.
 It allows you to use the power of Google's Gemini models to generate
 dynamic user interfaces in your Flutter applications.
@@ -77,58 +77,57 @@ Flutter apps built for production should use Firebase AI.
 For mobile and web applications that need client-side access,
 consider using Firebase AI Logic instead.
 
- 1. Create an instance of `GoogleGenerativeAiContentGenerator` and
-    pass it to your `GenUiConversation`:
+ 1. Add `google_generative_ai` and `genui` to your `pubspec.yaml` file:
+
+    ```console
+    $ dart pub add genui google_generative_ai
+    ```
+
+ 2. Create an instance of `GenerativeModel` and wrap it with your
+    `SurfaceController` and `A2uiTransportAdapter`:
 
     ```dart
     import 'package:genui/genui.dart';
-    import 'package:genui_google_generative_ai/genui_google_generative_ai.dart';
+    import 'package:google_generative_ai/google_generative_ai.dart';
 
     final catalog = Catalog(components: [
       // ...
     ]);
+    final catalogs = [catalog];
 
-    final messageProcessor = A2uiMessageProcessor(catalogs: [catalog]);
-
-    final contentGenerator = GoogleGenerativeAiContentGenerator(
+    final surfaceController = SurfaceController(catalogs: catalogs);
+    final transportAdapter = A2uiTransportAdapter();
+    transportAdapter.messageStream.listen(surfaceController.handleMessage);
+    
+    final promptBuilder = PromptBuilder.chat(
       catalog: catalog,
-      systemInstruction: 'You are a helpful assistant.',
-      modelName: 'models/gemini-2.5-flash',
-      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
+      instructions: 'You are a helpful assistant.',
     );
 
-    final conversation = GenUiConversation(
-      contentGenerator: contentGenerator,
-      a2uiMessageProcessor: messageProcessor,
+    final model = GenerativeModel(
+      model: 'gemini-2.5-flash',
+      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
+      systemInstruction: Content.system(promptBuilder.systemPrompt),
+    );
+
+    final conversation = Conversation(
+      surfaceController: surfaceController,
+      transportAdapter: transportAdapter,
     );
     ```
 
- 2. To use this package, you need a Gemini API key.
+ 3. To use this package, you need a Gemini API key.
     If you don't already have one,
     you can get it for free in [Google AI Studio][].
 
-    Enable the `GEMINI_API_KEY` in one of two ways:
-
-    - **Environment variable** _(recommended)_
-
-      Set the `GEMINI_API_KEY` or `GOOGLE_API_KEY` environment variable.
-
-    - **Constructor parameter**
-
-      Pass the API key directly to the constructor.
-
-    If neither approach is provided, the package will attempt to
-    use the default environment variable.
-
-[`genui_google_generative_ai`]: {{site.pub-pkg}}/genui_google_generative_ai
+[`google_generative_ai`]: {{site.pub-pkg}}/google_generative_ai
 [Google AI Studio]: https://ai.google.dev/aistudio
 
 </Tab>
 
 <Tab name="Firebase AI Logic">
 
-To use the built-in `FirebaseAiContentGenerator` to connect
-to Gemini using the Firebase AI Logic SDK, follow these instructions:
+To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
 
  1. [Create a new Firebase project][] using the Firebase Console.
 
@@ -137,11 +136,11 @@ to Gemini using the Firebase AI Logic SDK, follow these instructions:
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 4. Use `dart pub add` to add `genui` and [`genui_firebase_ai`][] as
+ 4. Use `dart pub add` to add `genui` and [`firebase_ai_logic`][] as
     dependencies in your `pubspec.yaml` file.
 
     ```console
-    $ dart pub add genui genui_firebase_ai
+    $ dart pub add genui firebase_ai_logic
     ```
 
  5. In your app's `main` method, ensure that the widget
@@ -158,7 +157,7 @@ to Gemini using the Firebase AI Logic SDK, follow these instructions:
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
 [Enable the Gemini API]: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini
 [Firebase's Flutter setup guide]: https://firebase.google.com/docs/flutter/setup
-[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
+[`firebase_ai_logic`]: {{site.pub-pkg}}/firebase_ai_logic
 
 </Tab>
 
@@ -172,10 +171,6 @@ AI agent using the `genui` framework.
 
 The main components in this package include:
 
-* `A2uiContentGenerator`:
-  Implements the `ContentGenerator` that manages the connection
-  to the A2A server and processes incoming A2UI messages,
-  updating the `A2uiMessageProcessor`.
 * `A2uiAgentConnector`:
   Handles the low-level web socket communication with the
   A2A server, including sending messages and parsing stream events.
@@ -185,34 +180,37 @@ The main components in this package include:
 Follow these instructions:
 
  1. Set up dependencies:
-    Use `dart pub add` to add `genui`, `genui_a2ui`, and `a2a` as
+    Use `dart pub add` to add `genui`, `genui_a2a`, and `a2a` as
     dependencies in your `pubspec.yaml` file.
 
     ```console
-    $ dart pub add genui genui_a2ui a2a
+    $ dart pub add genui genui_a2a a2a
     ```
 
- 2. Initialize `A2uiMessageProcessor`:
-    Set up `A2uiMessageProcessor` with your widget `Catalog`s.
+ 2. Initialize `SurfaceController`:
+    Set up `SurfaceController` with your widget `Catalog`s.
 
- 3. Create `A2uiContentGenerator`:
-    Instantiate `A2uiContentGenerator`, providing the A2A server URI.
+ 3. Create `A2uiTransportAdapter`:
+    Instantiate `A2uiTransportAdapter` to parse the messages.
 
- 4. Create `GenUiConversation`:
-    Pass the `A2uiContentGenerator` to the `GenUiConversation`.
+ 4. Create `A2uiAgentConnector`:
+    Instantiate `A2uiAgentConnector`, providing the A2A server URI.
 
- 5. Render with `GenUiSurface`:
-    Use `GenUiSurface` widgets in your UI to display
+ 5. Create `Conversation`:
+    Pass the adapter and controller to the `Conversation`.
+
+ 6. Render with `Surface`:
+    Use `Surface` widgets in your UI to display
     the agent-generated content.
 
- 6. Send Messages:
-    Use `GenUiConversation.sendRequest` to send user input
+ 7. Send Messages:
+    Use `connector.connectAndSend` or `Conversation.sendMessage` to send user input
     to the agent-generated content.
 
     ```dart
     import 'package:flutter/material.dart';
     import 'package:genui/genui.dart';
-    import 'package:genui_a2ui/genui_a2ui.dart';
+    import 'package:genui_a2a/genui_a2a.dart';
     import 'package:logging/logging.dart';
 
     void main() {
@@ -255,55 +253,57 @@ Follow these instructions:
 
     class _ChatScreenState extends State<ChatScreen> {
       final TextEditingController _textController = TextEditingController();
-      final A2uiMessageProcessor _a2uiMessageProcessor =
-          A2uiMessageProcessor(catalogs: [CoreCatalogItems.asCatalog()]);
-      late final A2uiContentGenerator _contentGenerator;
-      late final GenUiConversation _uiAgent;
+      final SurfaceController _surfaceController =
+          SurfaceController(catalogs: [CoreCatalogItems.asCatalog()]);
+      final A2uiTransportAdapter _transportAdapter = A2uiTransportAdapter();
+      late final Conversation _uiAgent;
+      late final A2uiAgentConnector _connector;
       final List<ChatMessage> _messages = [];
 
       @override
       void initState() {
         super.initState();
-        _contentGenerator = A2uiContentGenerator(
+        
+        // Connect Adapter -> Controller
+        _transportAdapter.messageStream.listen(_surfaceController.handleMessage);
+        
+        _connector = A2uiAgentConnector(
           // TODO: Replace with your A2A server URL.
-          serverUrl: Uri.parse('http://localhost:8080'),
+          url: Uri.parse('http://localhost:8080'),
         );
-        _uiAgent = GenUiConversation(
-          contentGenerator: _contentGenerator,
-          a2uiMessageProcessor: _a2uiMessageProcessor,
+        _uiAgent = Conversation(
+          surfaceController: _surfaceController,
+          transportAdapter: _transportAdapter,
         );
 
-        // Listen for text responses from the agent.
-        _contentGenerator.textResponseStream.listen((String text) {
-          setState(() {
-            _messages.insert(0, AgentMessage.text(text));
-          });
-        });
+        // Listen for messages from the remote agent.
+        _connector.stream.listen(_surfaceController.handleMessage);
 
-        // Listen for errors.
-        _contentGenerator.errorStream.listen((ContentGeneratorError error) {
-          print('Error from ContentGenerator: ${error.error}');
-          // Optionally show the error to the user.
-        });
       }
 
       @override
       void dispose() {
         _textController.dispose();
         _uiAgent.dispose();
-        _a2uiMessageProcessor.dispose();
-        _contentGenerator.dispose();
+        _surfaceController.dispose();
+        _connector.dispose();
         super.dispose();
       }
 
-      void _handleSubmitted(String text) {
+      void _handleSubmitted(String text) async {
         if (text.isEmpty) return;
         _textController.clear();
-        final message = UserMessage.text(text);
+        final message = ChatMessage.user(TextPart(text));
         setState(() {
           _messages.insert(0, message);
         });
-        _uiAgent.sendRequest(message);
+        
+        final responseText = await _connector.connectAndSend(
+            message,
+            clientCapabilities: A2uiClientCapabilities(supportedProtocols: ['a2ui/0.9.0'])
+        );
+        
+        // Handling response depends on your app's logic
       }
 
       @override
@@ -331,8 +331,8 @@ Follow these instructions:
               // Surface for the main AI-generated UI:
               SizedBox(
                 height: 300,
-                child: GenUiSurface(
-                  host: _a2uiMessageProcessor,
+                child: Surface(
+                  surfaceController: _surfaceController,
                   surfaceId: 'main_surface',
                 ),
               ),
@@ -349,13 +349,13 @@ Follow these instructions:
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.only(right: 16.0),
-                child: CircleAvatar(child: Text(message is UserMessage ? 'U' : 'A')),
+                child: CircleAvatar(child: Text(message.role == Role.user ? 'U' : 'A')),
               ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(message is UserMessage ? 'User' : 'Agent',
+                    Text(message.role == Role.user ? 'User' : 'Agent',
                         style: const TextStyle(fontWeight: FontWeight.bold)),
                     Container(
                       margin: const EdgeInsets.only(top: 5.0),
@@ -402,7 +402,7 @@ Follow these instructions:
 The [example][] directory on pub.dev contains a
 complete application demonstrating how to use this package.
 
-[example]: {{site.pub-pkg}}/genui_a2ui/example
+[example]: {{site.pub-pkg}}/genui_a2a/example
 [A2UI Streaming UI Protocol]: https://a2ui.org/
 
 </Tab>
@@ -410,16 +410,8 @@ complete application demonstrating how to use this package.
 <Tab name="Build your own">
 
 To use `genui` with another agent provider,
-follow that provider's instructions to configure your app,
-and then create your own subclass of `ContentGenerator` to connect
-to that provider.
-
-For examples on how to do so,
-reference `FirebaseAiContentGenerator` (from the [`genui_firebase_ai`][] package)
-and `A2uiContentGenerator` (from the [`genui_a2ui`][] package).
-
-[`genui_firebase_ai`]: {{site.pub-pkg}}/genui_firebase_ai
-[`genui_a2ui`]: {{site.pub-pkg}}/genui_a2ui
+follow that provider's SDK documentation to implement a connection,
+and stream its results into an `A2uiTransportAdapter`.
 
 </Tab>
 
@@ -442,49 +434,55 @@ to enable outbound network requests:
 Next, use the following instructions to connect your app
 to your chosen agent provider.
 
- 1. Create a `A2uiMessageProcessor`, and provide it with the catalogs
+ 1. Create a `SurfaceController`, and provide it with the catalogs
     of widgets that you want to make available to the agent.
+    Create an `A2uiTransportAdapter` to parse messages and connect it.
 
- 2. Create a `ContentGenerator`, and provide it with a
-    system instruction and a set of tools (functions
+ 2. Create a `PromptBuilder`, and provide it with a
+    system instruction and the tools (functions
     you want the agent to be able to invoke).
-    You should always include those provided by `A2uiMessageProcessor`,
-    but feel free to include others.
+    You should always include the tools provided by `SurfaceController`,
+    but feel free to include others. Add this to your LLM system prompt.
 
- 3. Create a `GenUiConversation` using the instances of
-    `ContentGenerator` and `A2uiMessageProcessor`. Your app will
+ 3. Create a `Conversation` using the instances of
+    `SurfaceController` and `A2uiTransportAdapter`. Your app will
     primarily interact with this object to get things done.
 
     For example:
 
     ```dart
     class _MyHomePageState extends State<MyHomePage> {
-      late final A2uiMessageProcessor _a2uiMessageProcessor;
-      late final GenUiConversation _genUiConversation;
+      late final SurfaceController _surfaceController;
+      late final A2uiTransportAdapter _transportAdapter;
+      late final Conversation _conversation;
 
       @override
       void initState() {
         super.initState();
 
-        // Create a A2uiMessageProcessor with a widget catalog.
+        // Create a SurfaceController with a widget catalog.
         // The CoreCatalogItems contain basic widgets for text, markdown, and images.
-        _a2uiMessageProcessor = A2uiMessageProcessor(catalogs: [CoreCatalogItems.asCatalog()]);
+        _surfaceController = SurfaceController(catalogs: [CoreCatalogItems.asCatalog()]);
 
-        // Create a ContentGenerator to communicate with the LLM.
-        // Provide system instructions and the tools from the A2uiMessageProcessor.
-        final contentGenerator = FirebaseAiContentGenerator(
-          systemInstruction: '''
+        _transportAdapter = A2uiTransportAdapter();
+        _transportAdapter.messageStream.listen(_surfaceController.handleMessage);
+
+        final catalog = CoreCatalogItems.asCatalog();
+        final promptBuilder = PromptBuilder.chat(
+          catalog: catalog,
+          instructions: '''
             You are an expert in creating funny riddles. Every time I give you a word,
             you should generate UI that displays one new riddle related to that word.
             Each riddle should have both a question and an answer.
             ''',
-          additionalTools: _a2uiMessageProcessor.getTools(),
         );
 
-        // Create the GenUiConversation to orchestrate everything.
-        _genUiConversation = GenUiConversation(
-          a2uiMessageProcessor: _a2uiMessageProcessor,
-          contentGenerator: contentGenerator,
+        // ... initialize your LLM Client of choice using promptBuilder.systemPrompt
+
+        // Create the Conversation to orchestrate everything.
+        _conversation = Conversation(
+          surfaceController: _surfaceController,
+          transportAdapter: _transportAdapter,
           onSurfaceAdded: _onSurfaceAdded, // Added in the next step.
           onSurfaceDeleted: _onSurfaceDeleted, // Added in the next step.
         );
@@ -493,7 +491,7 @@ to your chosen agent provider.
       @override
       void dispose() {
         _textController.dispose();
-        _genUiConversation.dispose();
+        _conversation.dispose();
     
         super.dispose();
       }
@@ -502,100 +500,102 @@ to your chosen agent provider.
    
 ## Send messages and display the agent's responses
 
-Send a message to the agent using the `sendRequest` method
-in the `GenUiConversation` class.
+Send a message to the agent using the `sendMessage` method
+in the `Conversation` class,
+or by directly streaming into your LLM Client and pumping
+the result stream to the adapter via `_transportAdapter.addChunk`.
 
 To receive and display generated UI:
 
- 1. Use the callbacks in `GenUiConversation` to track the addition
-    and removal of UI surfaces as they are generated.
-    These events include a _surface ID_ for each surface.
+  1. Use the callbacks in `Conversation` to track the addition
+     and removal of UI surfaces as they are generated.
+     These events include a _surface ID_ for each surface.
 
- 2. Build a `GenUiSurface` widget for each active surface using
-    the surface IDs received in the previous step.
+  2. Build a `Surface` widget for each active surface using
+     the surface IDs received in the previous step.
 
-    For example:
+     For example:
 
-    ```dart
-    class _MyHomePageState extends State<MyHomePage> {
-      // ...
+     ```dart
+     class _MyHomePageState extends State<MyHomePage> {
+       // ...
 
-      final _textController = TextEditingController();
-      final _surfaceIds = <String>[];
+       final _textController = TextEditingController();
+       final _surfaceIds = <String>[];
 
-      // Send a message containing the user's [text] to the agent.
-      void _sendMessage(String text) {
-        if (text.trim().isEmpty) return;
-        _genUiConversation.sendRequest(UserMessage.text(text));
-      }
+       // Send a message containing the user's [text] to the agent.
+       void _sendMessage(String text) {
+         if (text.trim().isEmpty) return;
+         // _conversation.sendMessage(text);
+       }
 
-      // A callback invoked by the [GenUiConversation] when a new
-      // UI surface is generated. Here, the ID is stored so the
-      // build method can create a GenUiSurface to display it.
-      void _onSurfaceAdded(SurfaceAdded update) {
-        setState(() {
-          _surfaceIds.add(update.surfaceId);
-        });
-      }
+       // A callback invoked by the [Conversation] when a new
+       // UI surface is generated. Here, the ID is stored so the
+       // build method can create a Surface to display it.
+       void _onSurfaceAdded(SurfaceAdded update) {
+         setState(() {
+           _surfaceIds.add(update.surfaceId);
+         });
+       }
 
-      // A callback invoked by GenUiConversation when a UI surface is removed.
-      void _onSurfaceDeleted(SurfaceRemoved update) {
-        setState(() {
-          _surfaceIds.remove(update.surfaceId);
-        });
-      }
+       // A callback invoked by Conversation when a UI surface is removed.
+       void _onSurfaceDeleted(SurfaceRemoved update) {
+         setState(() {
+           _surfaceIds.remove(update.surfaceId);
+         });
+       }
 
-      @override
-      Widget build(BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-            title: Text(widget.title),
-          ),
-          body: Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount: _surfaceIds.length,
-                  itemBuilder: (context, index) {
-                    // For each surface, create a GenUiSurface to display it.
-                    final id = _surfaceIds[index];
-                    return GenUiSurface(host: _genUiConversation.host, surfaceId: id);
-                  },
-                ),
-              ),
-              SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          controller: _textController,
-                          decoration: const InputDecoration(
-                            hintText: 'Enter a message',
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 16),
-                      ElevatedButton(
-                        onPressed: () {
-                          // Send the user's text to the agent.
-                          _sendMessage(_textController.text);
-                          _textController.clear();
-                        },
-                        child: const Text('Send'),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      }
-    }
-    ```
+       @override
+       Widget build(BuildContext context) {
+         return Scaffold(
+           appBar: AppBar(
+             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+             title: Text(widget.title),
+           ),
+           body: Column(
+             children: [
+               Expanded(
+                 child: ListView.builder(
+                   itemCount: _surfaceIds.length,
+                   itemBuilder: (context, index) {
+                     // For each surface, create a Surface to display it.
+                     final id = _surfaceIds[index];
+                     return Surface(surfaceController: _conversation.surfaceController, surfaceId: id);
+                   },
+                 ),
+               ),
+               SafeArea(
+                 child: Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                   child: Row(
+                     children: [
+                       Expanded(
+                         child: TextField(
+                           controller: _textController,
+                           decoration: const InputDecoration(
+                             hintText: 'Enter a message',
+                           ),
+                         ),
+                       ),
+                       const SizedBox(width: 16),
+                       ElevatedButton(
+                         onPressed: () {
+                           // Send the user's text to the agent.
+                           _sendMessage(_textController.text);
+                           _textController.clear();
+                         },
+                         child: const Text('Send'),
+                       ),
+                     ],
+                   ),
+                 ),
+               ),
+             ],
+           ),
+         );
+       }
+     }
+     ```
 
 ## Add your own widgets to the catalog {:#custom-widgets}
 
@@ -677,10 +677,10 @@ To add your own widgets, use the following instructions.
 
  4. Add the `CatalogItem` to the catalog
 
-     Include your catalog items when instantiating `A2uiMessageProcessor`.
+     Include your catalog items when instantiating `SurfaceController`.
 
     ```dart
-    _a2uiMessageProcessor = A2uiMessageProcessor(
+    _surfaceController = SurfaceController(
       catalogs: [CoreCatalogItems.asCatalog().copyWith([riddleCard])],
     );
     ```
@@ -692,14 +692,16 @@ To add your own widgets, use the following instructions.
     Provide the name from the `CatalogItem` when you do.
 
     ```dart
-    final contentGenerator = FirebaseAiContentGenerator(
-      systemInstruction: '''
+    final promptBuilder = PromptBuilder.chat(
+      catalog: catalog,
+      instructions: '''
           You are an expert in creating funny riddles. Every time I give you a word,
           generate a RiddleCard that displays one new riddle related to that word.
           Each riddle should have both a question and an answer.
           ''',
-      additionalTools: _a2uiMessageProcessor.getTools(),
     );
+    
+    // Pass promptBuilder.systemPrompt to your LLM Config
     ```
 
 {:.steps}
@@ -720,20 +722,18 @@ widget's builder function.
 
 To bind a widget's property to the data model,
 specify a special JSON object in the data sent from the AI.
-This object can contain either a `literalString`
-(for static values) or a `path` (to bind to a value in the data model).
+This object can contain standard JSON primitives
+(for static values) or an object with a `path` property
+(to bind to a value in the data model).
 
 For example, to display a user's name in a `Text` widget,
 the AI would generate:
 
 ```json
 {
-  "Text": {
-    "text": {
-      "literalString": "Welcome to GenUI"
-    },
-    "hint": "h1"
-  }
+  "component": "Text",
+  "text": "Welcome to GenUI",
+  "variant": "h1"
 }
 ```
 
@@ -741,12 +741,9 @@ the AI would generate:
 
 ```json
 {
-  "Image": {
-    "url": {
-      "literalString": "https://example.com/image.png"
-    },
-    "hint": "mediumFeature"
-  }
+  "component": "Image",
+  "url": "https://example.com/image.png",
+  "variant": "mediumFeature"
 }
 ```
 
@@ -776,7 +773,7 @@ If something is unclear or missing, please [create an issue][].
 
 The `genui` package gives the LLM a set of tools it can use to generate UI.
 To get the LLM to use these tools,
-the `systemInstruction` provided to `ContentGenerator` must
+the system instructions provided via `PromptBuilder` must
 explicitly tell it to do so.
 
 This is why the [earlier example][instruction-example] includes
@@ -784,14 +781,14 @@ a system instruction for the agent with the line
 "Every time I give you a word, you should generate UI that...":
 
 ```dart highlightLines=4-5
-final contentGenerator = FirebaseAiContentGenerator(
-  systemInstruction: '''
+final promptBuilder = PromptBuilder.chat(
+  catalog: catalog,
+  instructions: '''
     You are an expert in creating funny riddles.
     Every time I give you a word, you should generate UI that
     displays one new riddle related to that word.
     Each riddle should have both a question and an answer.
     ''',
-  additionalTools: _a2uiMessageProcessor.getTools(),
 );
 ```
 

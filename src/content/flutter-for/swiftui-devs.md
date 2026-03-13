@@ -443,7 +443,7 @@ The following example uses the `.builder()` initializer:
 
 <?code-excerpt "lib/grid.dart (grid-example)"?>
 ```dart dartpad="d6b9174f33db94164e457b3da80da933"
-const widgets = [
+const widgets = <Widget>[
   Text('Row 1'),
   Icon(CupertinoIcons.arrow_down_square),
   Icon(CupertinoIcons.arrow_up_square),

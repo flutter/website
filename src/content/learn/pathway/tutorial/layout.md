@@ -116,12 +116,11 @@ class GamePage extends StatelessWidget {
 }
 ```
 
-:::note Challenge - Display the `GamePage` rather than a `Tile`.
-
-**Solution:**
+Then update your `MainPage` widget to create and
+display a `GamePage` widget instead of "Hello World!".
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
-```dart title="solution.dart" collapsed
+```dart highlightLines=11
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -138,8 +137,6 @@ class MainApp extends StatelessWidget {
   }
 }
 ```
-
-:::
 
 ### Arrange widgets with `Column` and `Row`
 
@@ -251,7 +248,7 @@ The `guess` variable in the loop is a [record][] with the type
 **Solution:**
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (GamePage)"?>
-```dart
+```dart title="lib/main.dart" collapsed
 class GamePage extends StatelessWidget {
   GamePage({super.key});
 
