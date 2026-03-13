@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   // #docregion connect
-  final _channel = WebSocketChannel.connect(
+  final WebSocketChannel _channel = WebSocketChannel.connect(
     Uri.parse('wss://echo.websocket.events'),
   );
   // #enddocregion connect

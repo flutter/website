@@ -38,7 +38,7 @@ class Person {
 }
 
 // Next, create a list of 100 persons.
-final mockPersons = Iterable.generate(
+final List<Person> mockPersons = List.generate(
   100,
   (index) => Person(name: 'Person #${index + 1}', age: 10 + index),
 );
