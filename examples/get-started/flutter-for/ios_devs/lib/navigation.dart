@@ -33,8 +33,8 @@ class Person {
   const Person({required this.name, required this.age});
 }
 
-// Next, create a list of 100 Persons.
-final mockPersons = Iterable.generate(
+// Next, create a list of 100 persons.
+final List<Person> mockPersons = List.generate(
   100,
   (index) => Person(name: 'Person #${index + 1}', age: 10 + index),
 );

@@ -2003,8 +2003,8 @@ GET, POST, PUT, and DELETE.
 
 <?code-excerpt "lib/examples.dart (http)"?>
 ```dart
-final url = Uri.parse('https://httpbin.org/ip');
-final httpClient = HttpClient();
+final Uri url = Uri.parse('https://httpbin.org/ip');
+final HttpClient httpClient = HttpClient();
 
 Future<void> getIPAddress() async {
   final request = await httpClient.getUrl(url);

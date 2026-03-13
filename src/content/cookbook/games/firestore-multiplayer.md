@@ -219,9 +219,11 @@ class FirestoreController {
 
   /// For now, there is only one match. But in order to be ready
   /// for match-making, put it in a Firestore collection called matches.
-  late final _matchRef = instance.collection('matches').doc('match_1');
+  late final DocumentReference<Map<String, Object?>> _matchRef = instance
+      .collection('matches')
+      .doc('match_1');
 
-  late final _areaOneRef = _matchRef
+  late final DocumentReference<List<PlayingCard>> _areaOneRef = _matchRef
       .collection('areas')
       .doc('area_one')
       .withConverter<List<PlayingCard>>(
@@ -229,7 +231,7 @@ class FirestoreController {
         toFirestore: _cardsToFirestore,
       );
 
-  late final _areaTwoRef = _matchRef
+  late final DocumentReference<List<PlayingCard>> _areaTwoRef = _matchRef
       .collection('areas')
       .doc('area_two')
       .withConverter<List<PlayingCard>>(

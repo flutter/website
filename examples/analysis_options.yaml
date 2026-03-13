@@ -37,7 +37,9 @@ linter:
     - prefer_final_fields
     - prefer_relative_imports
     - prefer_single_quotes
+    - simplify_variable_pattern
     - sort_unnamed_constructors_first
+    - specify_nonobvious_property_types
     - strict_top_level_inference
     - switch_on_type
     - test_types_in_equals

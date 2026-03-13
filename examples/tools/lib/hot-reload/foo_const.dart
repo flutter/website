@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: specify_nonobvious_property_types, avoid_print
 
 // #docregion const
 const foo = 1;
