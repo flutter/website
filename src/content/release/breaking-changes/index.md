@@ -37,6 +37,7 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Changing RawMenuAnchor close order][]
+* [Default cache extent changed][]
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [Deprecate `TextInputConnection.setStyle`][]
@@ -45,6 +46,7 @@ They're sorted by release and listed in alphabetical order:
 * [Page transition builders reorganization][]
 
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
+[Default cache extent changed]: /release/breaking-changes/default-cache-extent
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
