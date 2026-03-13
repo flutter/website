@@ -34,8 +34,8 @@ engines need to properly index.
 
 However, a community-released Dart package, [Jaspr][] _does_
 support static websites.
-In fact, the [Dart documentation][] and [Flutter documentation][] and
-[marketing][] websites were migrated to using the Jaspr package.
+In fact, the [Dart documentation][], [Flutter documentation][], and
+[Flutter marketing][] websites were migrated to using the Jaspr package.
 
 To summarize, for web content that is static or document-like,
 we recommend _either_ using:
@@ -50,8 +50,8 @@ we recommend _either_ using:
 
 [Dart documentation]: {{site.dart-site}}
 [Flutter documentation]: /
+[Flutter marketing]: {{site.main-url}}
 [Jaspr]: https://jaspr.site/
-[marketing]: {{site.main-url}}
 
 ### Does hot reload work with a web app?
 
@@ -102,12 +102,12 @@ on [dart.dev]({{site.dart-site}}).
 
 ### Does Flutter web support concurrency?
 
-Dart's concurrency support via [isolates][]
+Dart's concurrency support that uses [isolates][]
 is not currently supported in Flutter web.
 
 Flutter web apps can potentially work around this
 by using [web workers][],
-although no such support is built in.
+although such support isn't built in.
 
 ### How do I deploy a web app?
 
@@ -115,25 +115,38 @@ See [Preparing a web app for release][].
 
 ### Does `Platform.is` work on the web?
 
-Not currently. Instead,
-consider using the [`os_detect`][] package.
+No. While you can technically import `dart:io` when compiling for the web,
+calling any `Platform.isXYZ` method throws an `UnsupportedError`.
+Furthermore, importing `dart:io` in a package
+(except through conditional imports) causes pub.dev
+to score the package as not supporting the web.
+
+* If you are developing a Flutter app, consider using [`kIsWeb`][].
+* If you are developing a package
+  (especially one without a Flutter dependency),
+  consider using the [`os_detect`][] package.
+
+[`kIsWeb`]: {{site.api}}/flutter/foundation/kIsWeb-constant.html
 
 ### Why doesn't my app update immediately after it's deployed?
 
-You might need to configure the `Cache-Control` header returned by your web server.
+You might need to configure the `Cache-Control` header
+returned by your web server.
 For example, if this header is set to 3600,
 then the browser and CDN will cache the asset for 1 hour,
 and your users might see an out-of-date
 version of your app up to 1 hour after you deploy a new version.
-For more information about caching on the web,
-check out [Prevent unnecessary network requests with the HTTP Cache][http-cache].
+For more information about caching on the web, check out
+[Prevent unnecessary network requests with the HTTP Cache][http-cache].
 
-It's a good idea to be aware of this behavior to avoid an undesirable user experience.
+It's a good idea to be aware of this behavior to avoid an
+undesirable user experience.
 After you deploy your app, users might use a
 cached version of your app (cached by the browser or CDN)
 for the duration defined by your cache headers.
-This can lead to users using a version of your app that
-is incompatible with changes that have been deployed to backend services.
+This can lead to using a version of your app that
+is incompatible with changes that have been deployed
+to backend services.
 
 ### How do I clear the web cache after a deployment and force an app download?
 
