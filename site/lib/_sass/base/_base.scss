@@ -466,6 +466,7 @@ p+dl {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-block-end: 1.25rem;
   align-items: center;
 
   .video-intro {
@@ -477,7 +478,8 @@ p+dl {
 
   lite-youtube {
     border-radius: 0.25rem;
-    border: 2px solid rgba(0, 0, 0, .125);
+    border: 2px solid var(--site-outline-variant);
+    max-width: 760px;
   }
 }
 
