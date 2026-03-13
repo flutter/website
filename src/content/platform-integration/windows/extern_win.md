@@ -1,13 +1,15 @@
 ---
 title: External windows in Flutter Windows apps
-description: Special considerations for adding external windows to Flutter apps
+description: >-
+  Special considerations for adding external windows to Flutter apps
 ---
 
 # Windows lifecycle
 
 ## Who is affected
 
-Windows applications built against Flutter versions after 3.13 that open non-Flutter windows.
+Windows applications built against Flutter versions after 3.13
+that open non-Flutter windows.
 
 
 ## Overview
@@ -25,10 +27,13 @@ To add the external window to this application logic,
 the window's `WndProc` procedure
 must invoke `FlutterEngine::ProcessExternalWindowMessage`.
 
-To achieve this, add the following code to a window message handler function:
+To achieve this, add the following code to the message handler function
+of your custom external window. The exact file and class name depend on
+your app's implementation, but it should be wherever you define the `WndProc`
+for the non-Flutter window:
 
 ```cpp diff
-  LRESULT Window::Messagehandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
+  LRESULT MyExternalWindow::MessageHandler(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam) {
 +     std::optional<LRESULT> result = flutter_controller_->engine()->ProcessExternalWindowMessage(hwnd, msg, wparam, lparam);
 +     if (result.has_value()) {
 +         return *result;
