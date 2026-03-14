@@ -1,0 +1,3 @@
+REJECTED SHORTHANDS REPORT FOR: visual_debugging
+
+None. No shorthands were converted by the script (0 prefixes stripped) so no heuristics failed.

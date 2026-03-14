@@ -1,0 +1,13 @@
+REJECTED SHORTHANDS REPORT FOR: get-started
+
+flutter-for/react_native_devs/lib/examples.dart:L100 - Kept `FontWeight.w600`
+Reason: Numeric font weights lose meaning without the class name prefix.
+
+flutter-for/web_devs/lib/main.dart:L424 - Kept `FontWeight.w900`
+Reason: Numeric font weights lose meaning without the class name prefix.
+
+flutter-for/web_devs/lib/main.dart:L461 - Kept `FontWeight.w300`
+Reason: Numeric font weights lose meaning without the class name prefix.
+
+All Colors.* shorthands (e.g. Colors.red, Colors.blue) - Reverted ~90 instances.
+Reason: The Colors class does not have the same static members as Color, causing 'dot_shorthand_undefined_member' or resolving to deprecated instance getters. MUST REVERT to fix compilation.

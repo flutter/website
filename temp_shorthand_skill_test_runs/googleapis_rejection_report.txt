@@ -1,0 +1,4 @@
+REJECTED SHORTHANDS REPORT FOR: googleapis
+
+lib/main.dart:L120 - Kept `Colors.red`
+Reason: The Colors class does not have the same static members as Color, causing 'dot_shorthand_undefined_member' or resolving to deprecated instance getters. MUST REVERT to fix compilation.
