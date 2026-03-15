@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   // #docregion connect
   final WebSocketChannel _channel = WebSocketChannel.connect(
-    Uri.parse('wss://echo.websocket.events'),
+    Uri.parse('wss://echo.websocket.org'),
   );
   // #enddocregion connect
 
