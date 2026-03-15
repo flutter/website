@@ -35,7 +35,7 @@ create a `WebSocketChannel` that connects to a server:
 <?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
 final WebSocketChannel channel = WebSocketChannel.connect(
-  Uri.parse('wss://echo.websocket.events'),
+  Uri.parse('wss://echo.websocket.org'),
 );
 ```
 
