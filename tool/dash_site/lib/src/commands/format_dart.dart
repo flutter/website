@@ -5,7 +5,6 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
-import 'package:path/path.dart' as path;
 
 import '../utils.dart';
 
@@ -34,17 +33,7 @@ final class FormatDartCommand extends Command<int> {
 }
 
 int formatDart({bool justCheck = false}) {
-  // Currently format all Dart files in the /tool directory
-  // and everything in /examples.
-  final directoriesToFormat = [
-    'site',
-    'tool',
-    ...Directory('examples')
-        .listSync()
-        .whereType<Directory>()
-        .map((e) => e.path)
-        .where((e) => !path.basename(e).startsWith('.')),
-  ];
+  final directoriesToFormat = ['examples', 'pkgs', 'site', 'tool'];
 
   final dartFormatOutput = Process.runSync(Platform.resolvedExecutable, [
     'format',
