@@ -115,6 +115,7 @@
       { "source": "/widgets/:rest*", "destination": "/ui/widgets/:rest*", "type": 301 },
 
       { "source": "/accessibility-and-localization", "destination": "/ui/accessibility", "type": 301 },
+      { "source": "/accessibility-and-localization/internationalization", "destination": "/ui/internationalization", "type": 301 },
       { "source": "/accessibility-and-localization/:rest*", "destination": "/ui/accessibility", "type": 301 },
       { "source": "/add-to-app/android/add-splash-screen", "destination": "/platform-integration/android/splash-screen", "type": 301 },
       { "source": "/codelabs", "destination": "/learn/learning-resources", "type": 301 },
