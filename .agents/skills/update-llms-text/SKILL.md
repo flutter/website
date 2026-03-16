@@ -31,8 +31,8 @@ When asked to add new links to an existing section:
 1.  If not provided, ask for the target section and links to add.
 2.  For each link provided:
 
-    1.  Analyzer its source file and identify its title and
-        determine an appropriate description.
+    1.  To determine an appropriate description,
+        load and analyze its source file and identify its title.
     2.  Append the link to the specified section,
         matching the existing Markdown-based format:
 

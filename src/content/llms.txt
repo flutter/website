@@ -46,7 +46,7 @@ This file provides a curated list of resources to help Large Language Models und
 
 ## Adding interactivity & navigation
 
-- [Handle taps and dragging](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps on widgets.
+- [Handle tapping and dragging](https://docs.flutter.dev/cookbook/gestures/handling-taps): Respond to user taps and drags on widgets.
 - [State management for Beginners](https://docs.flutter.dev/data-and-backend/state-mgmt/simple): A guide to the basics of state management using the recommended `provider` package.
 - [Navigation and Routing](https://docs.flutter.dev/ui/navigation): An introduction to navigating between different screens in your app.
 - [Navigate to a new screen and back](https://docs.flutter.dev/cookbook/navigation/navigation-basics): The most basic navigation pattern.
