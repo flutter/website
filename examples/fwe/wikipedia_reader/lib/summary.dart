@@ -20,34 +20,34 @@ class Summary {
   });
 
   /// Titles
-  TitlesSet titles;
+  final TitlesSet titles;
 
   /// Page ID
-  int pageid;
+  final int pageid;
 
   /// Extract
-  String extract;
+  final String extract;
 
   /// Extract HTML
-  String extractHtml;
+  final String extractHtml;
 
   /// Thumbnail image
-  ImageFile? thumbnail;
+  final ImageFile? thumbnail;
 
   /// Original image
-  ImageFile? originalImage;
+  final ImageFile? originalImage;
 
   /// Language
-  String lang;
+  final String lang;
 
   /// Directionality
-  String dir;
+  final String dir;
 
   /// Description
-  String? description;
+  final String? description;
 
   /// URL
-  String url;
+  final String url;
 
   bool get hasImage => originalImage != null && thumbnail != null;
 
@@ -154,13 +154,13 @@ class ImageFile {
   ImageFile({required this.source, required this.width, required this.height});
 
   /// Original image URI
-  String source;
+  final String source;
 
   /// Original image width
-  int width;
+  final int width;
 
   /// Original image height
-  int height;
+  final int height;
 
   String get extension {
     final extension = getFileExtension(source);
@@ -206,14 +206,14 @@ class TitlesSet {
 
   /// the DB key (non-prefixed), e.g. may have _ instead of spaces,
   /// best for making request URIs, still requires Percent-encoding
-  String canonical;
+  final String canonical;
 
   /// the normalized title (https://www.mediawiki.org/wiki/API:Query#Example_2:_Title_normalization),
   /// e.g. may have spaces instead of _
-  String normalized;
+  final String normalized;
 
   /// the title as it should be displayed to the user
-  String display;
+  final String display;
 
   /// Returns a new [TitlesSet] instance and imports its values from a JSON map
   static TitlesSet fromJson(Map<String, Object?> json) {

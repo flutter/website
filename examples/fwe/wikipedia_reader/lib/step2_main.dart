@@ -39,7 +39,7 @@ class ArticleModel {
       throw HttpException('Failed to update resource');
     }
 
-    return Summary.fromJson(jsonDecode(response.body));
+    return Summary.fromJson(jsonDecode(response.body) as Map<String, Object?>);
   }
 }
 
