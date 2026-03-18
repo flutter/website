@@ -14,9 +14,7 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        children: [
-          const Text('Article content will be displayed here'),
-        ],
+        children: [const Text('Article content will be displayed here')],
       ),
     );
   }
