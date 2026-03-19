@@ -76,14 +76,12 @@ Other useful docs include:
 * [Managing Flutter Application State With InheritedWidgets][],
   by Hans Muller
 * [Inheriting Widgets][], by Mehmet Fidanboylu
-* [Using Flutter Inherited Widgets Effectively][], by Eric Windmill
 * [Widget - State - Context - InheritedWidget][], by Didier Bolelens
 
 [InheritedWidget docs]: {{site.api}}/flutter/widgets/InheritedWidget-class.html
 [Inheriting Widgets]: {{site.medium}}/@mehmetf_71205/inheriting-widgets-b7ac56dbbeb1
 [Managing Flutter Application State With InheritedWidgets]: {{site.flutter-blog}}/managing-flutter-application-state-with-inheritedwidgets-1140452befe1
-[Using Flutter Inherited Widgets Effectively]: https://ericwindmill.com/articles/inherited_widget/
-[Widget - State - Context - InheritedWidget]: https://www.didierboelens.com/2018/06/widget---state---context---inheritedwidget/
+[Widget - State - Context - InheritedWidget]: https://flutteris.com/blog/en/widget-state-context-inheritedwidget
 
 ## Community-provided packages
 

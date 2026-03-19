@@ -89,7 +89,7 @@ NVDA screen reader. To learn about using NVDA to test
 Windows apps, check out
 [Screen Readers 101 For Front-End Developers (Windows)][nvda].
 
-[nvda]: https://get-evinced.com/blog/screen-readers-101-for-front-end-developers-windows
+[nvda]: https://evinced.com/blog/screen-readers-101-for-front-end-developers-windows
 
 On a Mac, you can use the desktop version of VoiceOver,
 which is included in macOS.
