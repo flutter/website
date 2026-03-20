@@ -48,8 +48,8 @@ Choose one of the following installation methods:
 
 For the best development experience with Flutter,
 install an IDE or editor with support for Dart and Flutter.
-Some popular options include VS Code, Android Studio,
-Firebase Studio, and other Code OSS-based editors.
+Some popular options include VS Code, Antigravity,
+Android Studio, and other Code OSS-based editors.
 
 <div class="card-grid wide">
  <a class="card outlined-card" href="/tools/vs-code#setup" target="_blank">
@@ -76,14 +76,17 @@ Firebase Studio, and other Code OSS-based editors.
      <p>Set up Flutter support in an IntelliJ-based IDE.</p>
    </div>
  </a>
- <a class="card outlined-card" href="https://studio.firebase.google.com/new/flutter" target="_blank">
+
+{% comment %}
+ <a class="card outlined-card" href="xxx" target="_blank">
    <div class="card-header">
-     <span class="card-title">Firebase Studio</span>
+     <span class="card-title">Antigravity</span>
    </div>
    <div class="card-content">
-     <p>Create a new Flutter workspace in Firebase Studio.</p>
+     <p>xxx</p>
    </div>
  </a>
+{% endcomment -%}
 </div>
 
 ## Set up a target platform {: #target-platform}

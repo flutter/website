@@ -53,15 +53,15 @@ You can quickly try Flutter online without any local setup.
       <p>Quickly build and run simple single-file Flutter apps on the web.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="https://firebase.studio" target="_blank">
+  <a class="card outlined-card" href="https://antigravity.google/" target="_blank">
     <div class="card-header">
       <span class="card-title">
-        <span>Firebase Studio</span>
+        <span>Antigravity</span>
         <Icon id="open_in_new" size="1rem" />
       </span>
     </div>
     <div class="card-content">
-      <p>Develop complex Flutter apps in an AI-assisted workspace in the cloud.</p>
+      <p>Build apps using Google's AI-assisted IDE.</p>
     </div>
   </a>
 </div>
@@ -122,3 +122,4 @@ Guides to help you resolve common issues with your Flutter development environme
     </div>
   </a>
 </div>
+

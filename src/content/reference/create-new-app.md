@@ -38,12 +38,12 @@ choose your preferred environment and follow the corresponding instructions.
       <p>Create a new Flutter app without leaving your IntelliJ-based IDE.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="#firebase-studio">
+  <a class="card outlined-card" href="#antigravity">
     <div class="card-header">
-      <span class="card-title">Firebase Studio</span>
+      <span class="card-title">Antigravity</span>
     </div>
     <div class="card-content">
-      <p>For quick and easy setup, create a new Flutter app in Firebase Studio.</p>
+      <p>For quick and easy setup, create a new Flutter app in Antigravity.</p>
     </div>
   </a>
   <a class="card outlined-card" href="#terminal">
@@ -300,61 +300,62 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 <a id="project-idx" aria-hidden="true"></a>
 
-## Firebase Studio
+## Antigravity
 
-To create a Flutter app with [Firebase Studio][fbs],
-you first need a Google account and to [set up Firebase Studio][fbs-setup].
-Then follow these steps:
+To create a Flutter app with [Antigravity][ag],
+you first need a Google account and to [download it][ag-install]].
 
- 1. <h3>Launch Firebase Studio</h3>
+To set it up, do the following:
 
-    In your preferred browser, navigate to the [Firebase Studio dashboard][]
-    found at `studio.firebase.google.com/`.
-    If you haven't yet, you might need to log in to your Google account.
+ 1. <h3>Launch Antigravity</h3>
 
- 1. <h3>Create a new workspace</h3>
+    After opening Antigravity the first time,
+    the **How do you want to use Antigravity** screen
+    provides a list of radio buttons as well as some pulldown menus
+    that you can use to customize your use of the tool
 
-    In the Firebase Studio dashboard, find the **Start coding an app** section.
-    It should include a variety of templates to choose from.
-    Select the **Flutter** template.
-    If you can't find it, it might be under a **Mobile** category.
+    We recommend that you select **Review-driven development**,
+    which allows you to review and controll any commands that
+    Antigravity wants to run. Note that you can changed this
+    setting at any time to give Antigravity more control or less.
+    Even if you give Antigravity control to run commands,
+    you can specify certain commands that will always ask
+    for your review, such a `rm`.
 
- 1. <h3>Name your workspace</h3>
+ 1. <h3>Install the Dart and Flutter extensions</h3>
 
-    Firebase Studio should prompt you to **Name your workspace**.
-    This name is distinct from the name of your Flutter app.
-    Choose a descriptive name that you'll recognize
-    in a list of your workspaces.
+    Open the **Extensions** menu in the left nav and search for Dart.
+    The search results bring up both Dart and Flutter extensions.
+    Click the **install** button for Dart and then do the same
+    for Flutter.
 
- 1. <h3>Provision your new workspace</h3>
+  1. <h3>Set up any MCP servers that you use</h3>
 
-    Once you've chosen a name and configured your workspace,
-    click **Create** to provision your new workspace.
+     Click the 3-dot hamburger menu in the upper right of
+     the xxx screen. Select **Manage MCP Servers** from
+     the pulldown menu.
+ 
+     The **MCP Store** screen displays and you can search for Dart,
+     which is likely already in the display list.
+     Click **install**.
 
- 1. <h3>Wait for workspace initialization</h3>
+     After installing any servers that you want,
+     view them by clicking the **Manage MCP Servers** button
+     (not the same as the pulldown menu),
+     and click **View raw config** to access your JSON manifest.
 
-    Firebase Studio will now initialize your workspace,
-    bootstrap your project file structure,
-    and retrieve your app's dependencies.
-    This might take a while.
+  1. Watch the following [Flutter + Antigravity] 10-minute video
+     for these tips and also to learn how to take advantage
+     of Antigravity's other benefits.
 
-1. <h3>Run your app</h3>
+<YouTubeEmbed id="YY2w2JEX2xk"
+  title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
 
-   Your new app should now be created and opened in the Firebase Studio editor.
-   To try your new app, follow the docs provided by Firebase Studio to
-   [preview your app][fbs-preview] on the web or on Android.
-
-{:.steps}
-
-You've successfully created a new Flutter app in Firebase Studio!
-If you need help configuring your workspace,
-check out [Customize your Firebase studio workspace][fbs-customize].
-
-[fbs]: https://firebase.studio
-[Firebase Studio dashboard]: https://studio.firebase.google.com/
-[fbs-setup]: https://firebase.google.com/docs/studio/get-started
-[fbs-preview]: https://firebase.google.com/docs/studio/preview-apps
-[fbs-customize]: https://firebase.google.com/docs/studio/customize-workspace
+[ag]: https://antigravity.google/
+[ag-codelab]: {{site.codelabs}}/getting-started-google-antigravity#0
+[ag-install]: https://antigravity.google/download
+[ag-video]: https://www.youtube.com/watch?v=YY2w2JEX2xk&t=1s
+[sunsetFS]: https://firebase.blog/posts/2026/03/announcing-ai-studio-integration
 
 ## Terminal
 
