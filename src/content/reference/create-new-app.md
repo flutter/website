@@ -303,7 +303,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 ## Antigravity
 
 To create a Flutter app with [Antigravity][ag],
-you first need a Google account and to [download it][ag-install]].
+you first need a Google account and to [download it][ag-install].
 
 To set it up, do the following:
 
