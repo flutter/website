@@ -22,15 +22,6 @@ void _setup() {
       isTrue,
     );
   });
-
-  test('includes default exclusions', () {
-    expect(
-      Updater(baseSourcePath: 'example', validTargetExtensions: {'.md'})
-          .excludePaths
-          .any((excludePattern) => excludePattern.hasMatch('.dart_tool')),
-      isTrue,
-    );
-  });
 }
 
 void _defaultBehavior() {

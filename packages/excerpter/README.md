@@ -82,9 +82,6 @@ The `main-stub` region is discontinuous as it has a break in it.
 When this package is run to update excerpts, each break is
 replaced by a language-specific comment filled with a plaster marker (`...`).
 
-For details concerning the processing of plasters, see the
-[code_excerpt_updater][] documentation.
-
 ## Injecting excerpts
 
 To inject content from docregions or entire files into Markdown files,
