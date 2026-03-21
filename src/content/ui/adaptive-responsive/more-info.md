@@ -53,6 +53,6 @@ Here are some resources that you might find useful:
 [Material guidelines on canonical layouts]: {{site.material}}/foundations/layout/canonical-layouts/overview
 [Human interface guidelines (Apple)]: {{site.apple-dev}}/design/human-interface-guidelines/
 [Material design for large screens]: {{site.material2}}/blog/material-design-for-large-screens
-[Machine sizes and breakpoints (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/screen-sizes-and-breakpoints-for-responsive-desig
-[Responsive design techniques (Microsoft)]: https://docs.microsoft.com/en-us/windows/uwp/design/layout/responsive-design
+[Machine sizes and breakpoints (Microsoft)]: https://learn.microsoft.com/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design
+[Responsive design techniques (Microsoft)]: https://learn.microsoft.com/windows/apps/design/layout/responsive-design
 [UI design do's and don'ts (Apple)]: {{site.apple-dev}}/design/tips/
