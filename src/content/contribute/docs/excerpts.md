@@ -17,4 +17,4 @@ The source of code excerpts is in the root `/examples` directory.
 To learn how to use code excerpts,
 check out the [excerpter tool README][].
 
-[excerpter tool README]: https://github.com/dart-lang/site-shared/blob/main/pkgs/excerpter/README.md
+[excerpter tool README]: https://github.com/flutter/website/blob/main/packages/excerpter/README.md

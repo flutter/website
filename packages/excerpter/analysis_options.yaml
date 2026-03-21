@@ -1,0 +1,5 @@
+include: package:analysis_defaults/analysis.yaml
+
+analyzer:
+  exclude:
+    - test_data/
