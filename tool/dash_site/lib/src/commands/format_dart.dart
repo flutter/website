@@ -5,6 +5,7 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:path/path.dart' as path;
 
 import '../utils.dart';
 
@@ -33,7 +34,12 @@ final class FormatDartCommand extends Command<int> {
 }
 
 int formatDart({bool justCheck = false}) {
-  final directoriesToFormat = ['examples', 'pkgs', 'site', 'tool'];
+  final directoriesToFormat = [
+    'examples',
+    'packages',
+    'site',
+    path.join('tool', 'dash_site'),
+  ];
 
   final dartFormatOutput = Process.runSync(Platform.resolvedExecutable, [
     'format',
