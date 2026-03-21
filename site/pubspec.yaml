@@ -29,7 +29,7 @@ dependencies:
 
 dev_dependencies:
   analysis_defaults:
-    path: ../pkgs/analysis_defaults
+    path: ../packages/analysis_defaults
   build_runner: ^2.11.0
   build_web_compilers: ^4.4.9
   jaspr_builder: ^0.22.3

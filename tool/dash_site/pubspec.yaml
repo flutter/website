@@ -9,11 +9,11 @@ environment:
 dependencies:
   args: ^2.7.0
   excerpter:
-    path: ../../pkgs/excerpter
+    path: ../../packages/excerpter
   io: ^1.0.5
   linkcheck: ^3.1.0
   path: ^1.9.1
 
 dev_dependencies:
   analysis_defaults:
-    path: ../../pkgs/analysis_defaults
+    path: ../../packages/analysis_defaults
