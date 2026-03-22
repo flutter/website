@@ -2,34 +2,33 @@ import 'dart:collection';
 import 'dart:math';
 
 const List<String> allLegalGuesses = [...legalWords, ...legalGuesses];
-const defaultNumGuesses = 5;
+const int defaultNumGuesses = 5;
 
 enum HitType { none, hit, partial, miss, removed }
 
 typedef Letter = ({String char, HitType type});
 
-const legalWords = <String>["aback", "abase", "abate", "abbey", "abbot"];
+const List<String> legalWords = ['aback', 'abase', 'abate', 'abbey', 'abbot'];
 
 /// Legal guesses minus legal wordles
-const legalGuesses = <String>[
-  "aback",
-  "abase",
-  "abate",
-  "abbey",
-  "abbot",
-  "abhor",
-  "abide",
-  "abled",
-  "abode",
-  "abort",
+const List<String> legalGuesses = [
+  'aback',
+  'abase',
+  'abate',
+  'abbey',
+  'abbot',
+  'abhor',
+  'abide',
+  'abled',
+  'abode',
+  'abort',
 ];
 
 /// This class holds game state for a single round of Bulls and Cows,
 /// and exposes methods that a UI would need to manage the game state.
 ///
-/// On it's own, this class won't manage a game. For example, it won't
-/// call [startGame] on it's own. It assumes that a client will use it's
-/// methods to progress through a game.
+/// On it's own, this class won't manage a game.
+/// It assumes that a client will use its methods to progress through a game.
 class Game {
   Game({this.numAllowedGuesses = defaultNumGuesses, this.seed}) {
     _wordToGuess = seed == null ? Word.random() : Word.fromSeed(seed!);
@@ -76,7 +75,7 @@ class Game {
   bool get didWin {
     if (_guesses.first.isEmpty) return false;
 
-    for (var letter in previousGuess) {
+    for (final letter in previousGuess) {
       if (letter.type != HitType.hit) return false;
     }
 
@@ -94,7 +93,7 @@ class Game {
   // Doesn't move the game forward, only executes match logic.
   Word matchGuessOnly(String guess) {
     // The hidden word will be used by subsequent guesses.
-    var hiddenCopy = Word.fromString(_wordToGuess.toString());
+    final hiddenCopy = Word.fromString(_wordToGuess.toString());
     return Word.fromString(guess).evaluateGuess(hiddenCopy);
   }
 
@@ -112,16 +111,16 @@ class Word with IterableMixin<Letter> {
   }
 
   factory Word.fromString(String guess) {
-    var list = guess.toLowerCase().split('');
-    var letters = list
+    final list = guess.toLowerCase().split('');
+    final letters = list
         .map((String char) => (char: char, type: HitType.none))
         .toList();
     return Word(letters);
   }
 
   factory Word.random() {
-    var rand = Random();
-    var nextWord = legalWords[rand.nextInt(legalWords.length)];
+    final rand = Random();
+    final nextWord = legalWords[rand.nextInt(legalWords.length)];
     return Word.fromString(nextWord);
   }
 
@@ -144,7 +143,7 @@ class Word with IterableMixin<Letter> {
   bool get isNotEmpty => !isEmpty;
 
   Letter operator [](int i) => _letters[i];
-  operator []=(int i, Letter value) => _letters[i] = value;
+  void operator []=(int i, Letter value) => _letters[i] = value;
 
   @override
   String toString() {
@@ -168,7 +167,7 @@ extension WordUtils on Word {
   }
 
   /// Compares two [Word] objects and returns a new [Word] that
-  /// has the same letters as the [this], but each [Letter]
+  /// has the same letters as this word, but each [Letter]
   /// has new a [HitType] of either [HitType.hit],
   /// [HitType.partial], or [HitType.miss].
   Word evaluateGuess(Word other) {
@@ -188,12 +187,12 @@ extension WordUtils on Word {
     for (var i = 0; i < other.length; i++) {
       // If a letter in the hidden word is already marked as "removed",
       // then it's already an exact match, so skip it
-      Letter targetLetter = other[i];
+      final targetLetter = other[i];
       if (targetLetter.type != HitType.none) continue;
 
-      // loop through the guessed word onces for each letter in the hidden word
+      // Loop through the guessed word once for each letter in the hidden word
       for (var j = 0; j < length; j++) {
-        Letter guessedLetter = this[j];
+        final guessedLetter = this[j];
         // skip letters that have already been marked as exact matches
         if (guessedLetter.type != HitType.none) continue;
         // If this letter, which must not be in the same position, is the same,

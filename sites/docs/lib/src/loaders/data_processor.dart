@@ -24,7 +24,7 @@ final class DataProcessor implements DataLoader {
       path.join(pageLoader.directory, page.path),
     );
 
-    final inputPath = path.relative(sourcePath, from: '..');
+    final inputPath = path.relative(sourcePath);
     page.apply(
       data: {
         'page': {
