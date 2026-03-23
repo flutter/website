@@ -157,10 +157,8 @@ your app". This is usually handled by Gradle or included by passing
 
 If your application or package depends on the C++ standard library or includes
 [multiple shared libraries](runtimes), your application will likely need to
-bundle the library. This can be done by including the appropriate
-`libc++_shared.so` library for the host platform and target architecture in
-`build.dart` or by depending on the library convenience package
-[`android_libcpp_shared`](libcpp_shared).
+bundle the library. This can be done by depending on the library convenience
+package [`android_libcpp_shared`](libcpp_shared).
 
 [runtimes]: {{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes
 [libcpp_shared]: {{site.pub}}/packages/android_libcpp_shared
