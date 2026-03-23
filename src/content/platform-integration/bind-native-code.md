@@ -151,8 +151,9 @@ The Android NDK developer guide
 [C++ library support](https://developer.android.com/ndk/guides/cpp-support#cs)
 page explicitly states that: "`libc++` is not a system library. If you use
 `libc++_shared.so`, it must be included in your app". This is usually handled
-by Gradle or included by passing `-DANDROID_STL=c++_shared` to `cmake`. If your
-application or package depends on the C++ standard library or includes
+by Gradle or included by passing `-DANDROID_STL=c++_shared` to `cmake`.
+
+If your application or package depends on the C++ standard library or includes
 [multiple shared libraries](https://developer.android.com/ndk/guides/cpp-support#shared_runtimes),
 your application will likely need to bundle the library. This can be done by
 including the appropriate `libc++_shared.so` library for the host platform and
