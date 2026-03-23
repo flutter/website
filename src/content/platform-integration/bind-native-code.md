@@ -148,17 +148,17 @@ functions that use the symbols from these system libraries.
 #### Note on packages that require Android's `libc++_shared.so` dynamic library
 
 The Android NDK developer guide
-[C++ library support](https://developer.android.com/ndk/guides/cpp-support#cs)
+[C++ library support]({{site.android-dev}}/ndk/guides/cpp-support#cs)
 page explicitly states that: "`libc++` is not a system library. If you use
 `libc++_shared.so`, it must be included in your app". This is usually handled
 by Gradle or included by passing `-DANDROID_STL=c++_shared` to `cmake`.
 
 If your application or package depends on the C++ standard library or includes
-[multiple shared libraries](https://developer.android.com/ndk/guides/cpp-support#shared_runtimes),
+[multiple shared libraries]({{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes),
 your application will likely need to bundle the library. This can be done by
 including the appropriate `libc++_shared.so` library for the host platform and
 target architecture in `build.dart` or by depending on the library convenience
-package [`android_libcpp_shared`](https://pub.dev/packages/android_libcpp_shared).
+package [`android_libcpp_shared`]({{site.pub}}/packages/android_libcpp_shared).
 
 ### Closed-source libraries
 
