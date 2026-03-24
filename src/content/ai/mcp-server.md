@@ -428,3 +428,11 @@ writing the appropriate code in your app,
 is now a single request.
 
 [`package:fl_chart`]: {{site.pub-pkg}}/fl_chart
+
+## Provide feedback
+
+If you encounter any issues or have feedback about the
+Dart and Flutter MCP server, file an issue on the
+[`dart-lang/ai` issue tracker][ai-issues].
+
+[ai-issues]: https://github.com/dart-lang/ai/issues
