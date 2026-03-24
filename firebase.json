@@ -494,6 +494,7 @@
       { "source": "/go/games-revenue", "destination": "https://services.google.com/fh/files/blogs/gaming_ux_and_revenue_optimizations.pdf", "type": 301 },
       { "source": "/go/generated-plugin-registration", "destination": "https://docs.google.com/document/d/17-GIBYMgaoYS_G34w-fL9oe8W_GX70v6X2bhfKSBrdo/edit", "type": 301 },
       { "source": "/go/generating-flutter-localizations", "destination": "https://docs.google.com/document/d/18saQREDwBMPA_svFe9IkU22ljNXsLpYxiy__jzPCzEc/edit", "type": 301 },
+      { "source": "/go/genui-codelab", "destination": "https://developers.google.com/codelabs", "type": 301 },
       { "source": "/go/global-selection", "destination": "https://docs.google.com/document/d/1q_ns8VVTS2vaKqGwr_hheZpsoli52wAM0QWi9_uBdnk", "type": 301 },
       { "source": "/go/global-surface-pool-for-macos", "destination": "https://docs.google.com/document/d/1YUDyCQ1ocdFICOdWeZuuoOm_8bmmxWr0CnC-Y-qXuNI/edit?usp=sharing", "type": 301 },
       { "source": "/go/globalkey-duplication-refactoring", "destination": "https://docs.google.com/document/d/15U1XDLrP-SXfgeu5DBBsA7MQuFpDUW005Y2ObwmYWIc/", "type": 301 },
