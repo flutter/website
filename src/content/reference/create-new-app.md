@@ -302,60 +302,61 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 ## Antigravity
 
-To create a Flutter app with [Antigravity][ag],
-you first need a Google account and to [download it][ag-install].
+To create a Flutter app with Antigravity, you first need
+to install and set up Antigravity as described on the
+[Antigravity tools page](/tools/antigravity).
+Then follow these steps:
 
-To set it up, do the following:
+ 1. <h3>Open Antigravity and create a Workspace</h3>
 
- 1. <h3>Launch Antigravity</h3>
+    Launch the Antigravity IDE and create a new,
+    sandboxed workspace for your project using the Agent Manager.
 
-    After opening Antigravity the first time,
-    the **How do you want to use Antigravity** screen
-    provides a list of radio buttons as well as some pulldown menus
-    that you can use to customize your use of the tool
+ 1. <h3>Use the Agent Manager</h3>
 
-    We recommend that you select **Review-driven development**,
-    which allows you to review and controll any commands that
-    Antigravity wants to run. Note that you can changed this
-    setting at any time to give Antigravity more control or less.
-    Even if you give Antigravity control to run commands,
-    you can specify certain commands that will always ask
-    for your review, such a `rm`.
+    Switch to the Agent Manager interface,
+    which is where you interact with the AI agents by using chat.
 
- 1. <h3>Install the Dart and Flutter extensions</h3>
+ 1. <h3>Write detailed prompts</h3>
 
-    Open the **Extensions** menu in the left nav and search for Dart.
-    The search results bring up both Dart and Flutter extensions.
-    Click the **install** button for Dart and then do the same
-    for Flutter.
+    Communicate your app requirements to the agent using detailed,
+    structured prompts, much like providing instructions to a junior developer.
+    For example, "Create a new Flutter project named my_app.
+    Add a home screen with a list of items and a floating action button".
 
-  1. <h3>Set up any MCP servers that you use</h3>
+ 1. <h3>Review and approve the plan</h3>
 
-     Click the 3-dot hamburger menu in the upper right of
-     the xxx screen. Select **Manage MCP Servers** from
-     the pulldown menu.
- 
-     The **MCP Store** screen displays and you can search for Dart,
-     which is likely already in the display list.
-     Click **install**.
+    The AI agent will generate a detailed implementation plan,
+    including folder structure, dependencies, and steps.
+    You can review this plan and click **Proceed** or
+    provide feedback to make changes.
 
-     After installing any servers that you want,
-     view them by clicking the **Manage MCP Servers** button
-     (not the same as the pulldown menu),
-     and click **View raw config** to access your JSON manifest.
+ 1. <h3>Authorize actions</h3>
 
-  1. Watch the following [Flutter + Antigravity] 10-minute video
-     for these tips and also to learn how to take advantage
-     of Antigravity's other benefits.
+    The agent will ask for permission before running terminal commands
+    (like flutter pub add or flutter create) or accessing the browser/emulator.
+    Review and **Accept** these actions to allow the agent to build the app.
 
-<YouTubeEmbed id="YY2w2JEX2xk"
-  title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
+ 1. <h3>Iterate and refine</h3>
 
-[ag]: https://antigravity.google/
-[ag-codelab]: {{site.codelabs}}/getting-started-google-antigravity#0
-[ag-install]: https://antigravity.google/download
-[ag-video]: https://www.youtube.com/watch?v=YY2w2JEX2xk&t=1s
-[sunsetFS]: https://firebase.blog/posts/2026/03/announcing-ai-studio-integration
+    Once the initial app is generated,
+    you can provide further prompts to add features,
+    refine the UI, implement logic, or add persistence
+    (for example, "Add local storage using shared_preferences").
+
+ 1. <h3>Test the app</h3>
+
+    Use the integrated emulator or connect a physical device
+    to test the app. The agent can even run tests and provide
+    video walkthroughs of the functionality.
+
+ 1. <h3>Verify code in the editor</h3>
+
+    You can switch to the standard code editor view at any time 
+    to inspect the generated Dart and Flutter files,
+    ensuring the code quality meets your standards.
+
+{:.steps}
 
 ## Terminal
 
