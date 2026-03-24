@@ -54,14 +54,14 @@ the [Can I use Impeller?][] page.
 
 ### iOS
 
-Since [Flutter 3.29](https://blog.flutter.dev/whats-new-in-flutter-3-29-f90c380c2317), Impeller is the **default on iOS** with no ability to
-switch to Skia.
+Impeller is the **only supported** rendering engine on iOS with
+no ability to switch to Skia.
 
 ### Android
 
 Impeller is **available and enabled by default on Android API 29+**.
 On devices running lower versions of Android or don't support Vulkan,
-Impeller falls back to the the legacy OpenGL renderer.
+Impeller falls back to the legacy OpenGL renderer.
 No action on your part is necessary for this fallback behavior.
 
 * To _disable_ Impeller when debugging,
