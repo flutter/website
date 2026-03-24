@@ -12,8 +12,8 @@ To get started developing with Flutter,
 follow these steps to install and set up Flutter
 for your preferred development environment and target platform.
 
-If you plan to use VS Code or another Code - OSS derived editor,
-consider following the [Flutter quick start][] instead.
+If you plan to use VS Code or another Code - OSS derived editor
+like Antigravity, consider following the [Flutter quick start][] instead.
 
 [Flutter quick start]: /install/quick
 
@@ -76,17 +76,6 @@ Android Studio, and other Code OSS-based editors.
      <p>Set up Flutter support in an IntelliJ-based IDE.</p>
    </div>
  </a>
-
-{% comment %}
- <a class="card outlined-card" href="xxx" target="_blank">
-   <div class="card-header">
-     <span class="card-title">Antigravity</span>
-   </div>
-   <div class="card-content">
-     <p>xxx</p>
-   </div>
- </a>
-{% endcomment -%}
 </div>
 
 ## Set up a target platform {: #target-platform}

@@ -53,17 +53,6 @@ You can quickly try Flutter online without any local setup.
       <p>Quickly build and run simple single-file Flutter apps on the web.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="https://antigravity.google/" target="_blank">
-    <div class="card-header">
-      <span class="card-title">
-        <span>Antigravity</span>
-        <Icon id="open_in_new" size="1rem" />
-      </span>
-    </div>
-    <div class="card-content">
-      <p>Build apps using Google's AI-assisted IDE.</p>
-    </div>
-  </a>
 </div>
 
 <a id="get-started" aria-hidden="true"></a>

@@ -1,12 +1,12 @@
 ---
-title: Antigravity
+title: Google Antigravity
 shortTitle: Antigravity
 description: Learn about the Antigravity agentic coding assistant.
 ---
 
 ## Introduction
 
-[Antigravity][ag] is a powerful agentic AI coding assistant
+[Antigravity][ag] is a powerful agentic coding assistant
 and IDE for building apps, including Flutter apps.
 You can pair with Antigravity to solve your
 coding tasks, create new codebases, modify existing ones,
@@ -50,11 +50,24 @@ the [Antigravity site](https://antigravity.google/download).
     Click the **Install** button for Dart and then do the same
     for Flutter.
 
-  1. <h3>Set up any MCP servers that you use</h3>
+ 1. <h3>Set up any MCP servers that you use</h3>
 
-     Click the 3-dot hamburger menu in the upper right of
-     the Agent panel. Select **Manage MCP Servers** from
-     the pulldown menu.
+    Navigate to or open the **Agent** side panel.
+
+    If it's closed, open it by either:
+
+    * Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+    * Going to **View**
+      <span aria-label="and then">></span> **Open View...**
+      <span aria-label="and then">></span> **Agent**.
+
+     In the upper right of the **Agent** panel,
+     click the **Additional options** (`...`) menu button.
+
+ 1.  Select **MCP Servers**.
+
+ 1.  In the upper right of the **Agent** panel,
+     click **Manage MCP Servers**.
 
      The **MCP Store** screen appears and you can search for Dart,
      which is likely already in the list.
@@ -62,7 +75,6 @@ the [Antigravity site](https://antigravity.google/download).
 
      After installing any servers that you want,
      view them by clicking the **Manage MCP Servers** button
-     (a new button, not the same as the pulldown menu),
      and click **View raw config** to access your JSON manifest.
 
   1. For these tips and more that show some of Antigravity's benefits,
