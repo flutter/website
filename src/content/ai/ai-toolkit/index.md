@@ -47,7 +47,6 @@ Here's what the demo example looks like hosting the AI Toolkit:
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
 [src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
-[Antigravity]: https://antigravity.google/
 
 ## Get started
 
