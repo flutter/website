@@ -13,7 +13,6 @@ coding tasks, create new codebases, modify existing ones,
 and answer questions.
 
 [ag]: https://antigravity.google/
-[ag-announce]: https://firebase.google.com/docs/studio/migrating-project
 
 ## Installation and setup {: #setup}
 
