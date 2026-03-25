@@ -43,7 +43,7 @@ choose your preferred environment and follow the corresponding instructions.
       <span class="card-title">Antigravity</span>
     </div>
     <div class="card-content">
-      <p>For quick and easy setup, create a new Flutter app in Antigravity.</p>
+      <p>For agentic coding support, create a new Flutter app in Antigravity.</p>
     </div>
   </a>
   <a class="card outlined-card" href="#terminal">
