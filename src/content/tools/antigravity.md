@@ -52,30 +52,30 @@ the [Antigravity site](https://antigravity.google/download).
 
  1. <h3>Set up any MCP servers that you use</h3>
 
-    Navigate to or open the **Agent** side panel.
+    1.  Navigate to or open the **Agent** side panel.
 
-    If it's closed, open it by either:
+        If it's closed, open it by either:
 
-    * Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
-    * Going to **View**
-      <span aria-label="and then">></span> **Open View...**
-      <span aria-label="and then">></span> **Agent**.
+        * Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+        * Going to **View**
+          <span aria-label="and then">></span> **Open View...**
+          <span aria-label="and then">></span> **Agent**.
 
-     In the upper right of the **Agent** panel,
-     click the **Additional options** (`...`) menu button.
+        In the upper right of the **Agent** panel,
+        click the **Additional options** (`...`) menu button.
 
- 1.  Select **MCP Servers**.
+    1.  Select **MCP Servers**.
 
- 1.  In the upper right of the **Agent** panel,
-     click **Manage MCP Servers**.
+    1.  In the upper right of the **Agent** panel,
+        click **Manage MCP Servers**.
 
-     The **MCP Store** screen appears and you can search for Dart,
-     which is likely already in the list.
-     Click **Install**.
+        The **MCP Store** screen appears and you can search for Dart,
+        which is likely already in the list.
+        Click **Install**.
 
-     After installing any servers that you want,
-     view them by clicking the **Manage MCP Servers** button
-     and click **View raw config** to access your JSON manifest.
+        After installing any servers that you want,
+        view them by clicking the **Manage MCP Servers** button
+        and click **View raw config** to access your JSON manifest.
 
   1. For these tips and more that show some of Antigravity's benefits,
      watch the following 10-minute [Flutter + Antigravity video][ag-video]:
