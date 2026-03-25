@@ -12,10 +12,6 @@ You can pair with Antigravity to solve your
 coding tasks, create new codebases, modify existing ones,
 and answer questions.
 
-:::note
-[Antigravity replaces Firebase Studio][ag-announce].
-:::
-
 [ag]: https://antigravity.google/
 [ag-announce]: https://firebase.google.com/docs/studio/migrating-project
 
