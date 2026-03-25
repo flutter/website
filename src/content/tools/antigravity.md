@@ -24,8 +24,6 @@ and answer questions.
 Install the latest version of Antigravity for your platform by visiting
 the [Antigravity site](https://antigravity.google/download).
 
-## Install the Dart and Flutter extensions
-
  1. <h3>Open **Antigravity**</h3>
 
     When opening Antigravity for the first time,
