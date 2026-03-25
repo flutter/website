@@ -170,6 +170,7 @@ of the many editors that support [editing Dart][].
 
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
+[Antigravity]: /tools/antigravity
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
