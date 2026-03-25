@@ -690,6 +690,8 @@
       permalink: /tools/android-studio
     - title: Visual Studio Code
       permalink: /tools/vs-code
+    - title: Antigravity
+      permalink: /tools/antigravity
     - title: DevTools
       permalink: /tools/devtools
       children:

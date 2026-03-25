@@ -12,8 +12,8 @@ To get started developing with Flutter,
 follow these steps to install and set up Flutter
 for your preferred development environment and target platform.
 
-If you plan to use VS Code or another Code - OSS derived editor,
-consider following the [Flutter quick start][] instead.
+If you plan to use VS Code or another Code - OSS derived editor
+like Antigravity, consider following the [Flutter quick start][] instead.
 
 [Flutter quick start]: /install/quick
 
@@ -48,8 +48,8 @@ Choose one of the following installation methods:
 
 For the best development experience with Flutter,
 install an IDE or editor with support for Dart and Flutter.
-Some popular options include VS Code, Android Studio,
-Firebase Studio, and other Code OSS-based editors.
+Some popular options include VS Code, Antigravity,
+Android Studio, and other Code OSS-based editors.
 
 <div class="card-grid wide">
  <a class="card outlined-card" href="/tools/vs-code#setup" target="_blank">
@@ -74,14 +74,6 @@ Firebase Studio, and other Code OSS-based editors.
    </div>
    <div class="card-content">
      <p>Set up Flutter support in an IntelliJ-based IDE.</p>
-   </div>
- </a>
- <a class="card outlined-card" href="https://studio.firebase.google.com/new/flutter" target="_blank">
-   <div class="card-header">
-     <span class="card-title">Firebase Studio</span>
-   </div>
-   <div class="card-content">
-     <p>Create a new Flutter workspace in Firebase Studio.</p>
    </div>
  </a>
 </div>

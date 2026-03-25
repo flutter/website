@@ -157,19 +157,11 @@ Flutter includes:
 ### Does Flutter work with any editors or IDEs?
 
 We provide plugins for [VS Code][],
+[Antigravity][] (an AI-assisted IDE),
 [Android Studio][], and [IntelliJ IDEA][].
 See [editor configuration][] for setup details,
 and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
-
-[Firebase Studio][], currently in preview,
-is an AI-assisted workspace for full-stack,
-multiplatform app development in the cloud.
-Firebase Studio supports Dart and Flutter. For more information,
-check out [Get started with Firebase Studio][].
-
-[Firebase Studio]: https://firebase.studio/
-[Get started with Firebase Studio]: https://firebase.google.com/docs/studio/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
@@ -178,6 +170,7 @@ of the many editors that support [editing Dart][].
 
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
+[Antigravity]: /tools/antigravity
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
