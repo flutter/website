@@ -334,7 +334,7 @@ Then follow these steps:
  1. <h3>Authorize actions</h3>
 
     The agent will ask for permission before running terminal commands
-    (like flutter pub add or flutter create) or accessing the browser/emulator.
+    (like `flutter pub add` or `flutter create`) or accessing the browser/emulator.
     Review and **Accept** these actions to allow the agent to build the app.
 
  1. <h3>Iterate and refine</h3>
