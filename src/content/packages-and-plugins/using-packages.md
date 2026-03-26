@@ -10,8 +10,8 @@ to the Flutter and Dart ecosystems. This allows quickly building
 an app without having to develop everything from scratch.
 
 :::note Difference between packages and plugins
-A plugin is a _type_ of
-package&mdash;the full designation is _plugin package_,
+A plugin is a _type_ of package&mdash;the
+full designation is _plugin package_,
 which is generally shortened to _plugin_.
 
 **Packages**
@@ -33,7 +33,8 @@ which is generally shortened to _plugin_.
   For example, a plugin might provide Flutter apps
   with the ability to use a device's camera.
 
-<YouTubeEmbed id="Y9WifT8aN6o" title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
+<YouTubeEmbed id="Y9WifT8aN6o"
+  title="Packages versus plugins | Decoding Flutter"></YouTubeEmbed>
 :::
 
 Existing packages enable many use cases—for example,
@@ -97,10 +98,10 @@ or any combination thereof.
 
 ### Adding a package dependency to an app using `flutter pub add`
 
-To add the package `css_colors` to an app:
+To add the package `english_words` to an app:
 
 1. Use the [`pub add`][] command from inside the project directory
-   * `flutter pub add css_colors`
+   * `flutter pub add english_words`
 
 1. Import it
    * Add a corresponding `import` statement in the Dart code.
@@ -117,11 +118,11 @@ To add the package `css_colors` to an app:
 
 ### Adding a package dependency to an app
 
-To add the package `css_colors` to an app:
+To add the package `english_words` to an app:
 
 1. Depend on it
    * Open the `pubspec.yaml` file located inside the app folder,
-     and add `css_colors: ^1.0.0` under `dependencies`.
+     and add `english_words: ^4.0.0` under `dependencies`.
 
 1. Install it
    * From the terminal: Run `flutter pub get`.<br/>
@@ -144,20 +145,20 @@ To add the package `css_colors` to an app:
 
 ### Removing a package dependency from an app using `flutter pub remove`
 
-To remove the package `css_colors` from an app:
+To remove the package `english_words` from an app:
 
 1. Use the [`pub remove`][] command from inside the project directory
-   * `flutter pub remove css_colors`
+   * `flutter pub remove english_words`
 
 The [Installing tab][],
 available on any package page on pub.dev,
 is a handy reference for these steps.
 
 For a complete example,
-see the [css_colors example][] below.
+see the [english_words example][] below.
 
-[css_colors example]: #css-example
-[Installing tab]: {{site.pub-pkg}}/css_colors/install
+[english_words example]: #english-words-example
+[Installing tab]: {{site.pub-pkg}}/english_words/install
 [`pub remove`]: {{site.dart-site}}/tools/pub/cmd/pub-remove
 
 ### Conflict resolution
@@ -381,23 +382,22 @@ additional dependency options are available:
 The following examples walk through the necessary steps for
 using packages.
 
-### Example: Using the css_colors package {:#css-example}
+### Example: Using the english_words package {:#english-words-example}
 
-The [`css_colors`][] package
-defines color constants for CSS colors, so use the constants
-wherever the Flutter framework expects the `Color` type.
+The [`english_words`][] package
+contains a few thousand of the most used English words plus some utility functions.
 
 To use this package:
 
-1. Create a new project called `cssdemo`.
+1. Create a new project called `wordsdemo`.
 
-1. Open `pubspec.yaml`, and add the `css-colors` dependency:
+1. Open `pubspec.yaml`, and add the `english_words` dependency:
 
    ```yaml
    dependencies:
      flutter:
        sdk: flutter
-     css_colors: ^1.0.0
+     english_words: ^4.0.0
    ```
 
 1. Run `flutter pub get` in the terminal,
@@ -405,9 +405,9 @@ To use this package:
 
 1. Open `lib/main.dart` and replace its full contents with:
 
-    <?code-excerpt "lib/css_colors.dart (css-colors)"?>
+    <?code-excerpt "lib/english_words.dart (english-words)"?>
     ```dart
-    import 'package:css_colors/css_colors.dart';
+    import 'package:english_words/english_words.dart';
     import 'package:flutter/material.dart';
     
     void main() {
@@ -428,14 +428,18 @@ To use this package:
     
       @override
       Widget build(BuildContext context) {
-        return Scaffold(body: Container(color: CSSColors.orange));
+        return Scaffold(
+          body: Center(
+            child: Text(generateWordPairs().first.asPascalCase),
+          ),
+        );
       }
     }
     ```
 
-1. Run the app. The app's background should now be orange.
+1. Run the app. The app's text should display a random English word pair.
 
-[`css_colors`]: {{site.pub-pkg}}/css_colors
+[`english_words`]: {{site.pub-pkg}}/english_words
 
 ### Example: Using the url_launcher package to launch the browser {:#url-example}
 
