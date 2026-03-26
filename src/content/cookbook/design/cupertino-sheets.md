@@ -117,7 +117,9 @@ class CupertinoSheetPage extends StatelessWidget {
                         const SizedBox(height: 20),
                         CupertinoButton(
                           child: const Text('Close'),
-                          onPressed: () => Navigator.pop(context),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                         ),
                       ],
                     ),
