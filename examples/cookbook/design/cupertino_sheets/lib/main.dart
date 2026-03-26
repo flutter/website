@@ -31,12 +31,14 @@ class CupertinoSheetPage extends StatelessWidget {
             // #docregion ShowCupertinoSheet
             showCupertinoSheet(
               context: context,
-              builder: (BuildContext context) {
-                return CupertinoSheet(
+              scrollableBuilder: (context, scrollController) {
+                return SingleChildScrollView(
+                  controller: scrollController,
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        const SizedBox(height: 100),
                         const Text('This is a Cupertino sheet'),
                         const SizedBox(height: 20),
                         CupertinoButton(

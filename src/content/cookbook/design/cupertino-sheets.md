@@ -11,12 +11,11 @@ used to present content or options.
 It slides up from the bottom of the screen
 and can be pulled down to dismiss.
 
-In Flutter, this is the job of [`showCupertinoSheet`][]
-and the [`CupertinoSheet`][] widget.
+In Flutter, this is the job of [`showCupertinoSheet`][].
 This recipe implements a Cupertino sheet using the following steps:
 
   1. Create a `CupertinoApp` or `MaterialApp`.
-  2. Display a `CupertinoSheet`.
+  2. Display the sheet content.
 
 ## 1. Create a `CupertinoApp`
 
@@ -40,23 +39,24 @@ class CupertinoSheetDemo extends StatelessWidget {
 }
 ```
 
-## 2. Display a `CupertinoSheet`
+## 2. Display the sheet content
 
-With the basic app structure in place,
-display a `CupertinoSheet`.
-To show it, call `showCupertinoSheet` and
-return a `CupertinoSheet` widget from the builder.
+With the basic app structure in place, display the sheet.
+To show it, call `showCupertinoSheet` and provide a `scrollableBuilder`
+that returns the content for the sheet, such as a `SingleChildScrollView`.
 
 <?code-excerpt "lib/main.dart (ShowCupertinoSheet)"?>
 ```dart
 showCupertinoSheet(
   context: context,
-  builder: (BuildContext context) {
-    return CupertinoSheet(
+  scrollableBuilder: (context, scrollController) {
+    return SingleChildScrollView(
+      controller: scrollController,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(height: 100),
             const Text('This is a Cupertino sheet'),
             const SizedBox(height: 20),
             CupertinoButton(
@@ -107,12 +107,14 @@ class CupertinoSheetPage extends StatelessWidget {
           onPressed: () {
             showCupertinoSheet(
               context: context,
-              builder: (BuildContext context) {
-                return CupertinoSheet(
+              scrollableBuilder: (context, scrollController) {
+                return SingleChildScrollView(
+                  controller: scrollController,
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        const SizedBox(height: 100),
                         const Text('This is a Cupertino sheet'),
                         const SizedBox(height: 20),
                         CupertinoButton(
@@ -137,4 +139,3 @@ class CupertinoSheetPage extends StatelessWidget {
 ```
 
 [`showCupertinoSheet`]: {{site.api}}/flutter/cupertino/showCupertinoSheet.html
-[`CupertinoSheet`]: {{site.api}}/flutter/cupertino/CupertinoSheet-class.html
