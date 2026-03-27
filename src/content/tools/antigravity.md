@@ -70,14 +70,22 @@ the [Antigravity site](https://antigravity.google/download).
         view them by clicking the **Manage MCP Servers** button
         and click **View raw config** to access your JSON manifest.
 
-  1. For these tips and more that show some of Antigravity's benefits,
-     watch the following 10-minute [Flutter + Antigravity video][ag-video]:
-  
-     <YouTubeEmbed id="YY2w2JEX2xk"
-       title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
+ 1. <h3>Get started developing</h3>
 
-For a walkthrough on creating a new Flutter app in Antigravity,
-visit [Create a new Flutter app][].
+    For these tips and more that show some of Antigravity's benefits,
+    watch the following 10-minute [Flutter + Antigravity video][ag-video]:
+
+    <YouTubeEmbed id="YY2w2JEX2xk"
+      title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
+
+    For a walkthrough on creating a new Flutter app in Antigravity,
+    visit [Create a new Flutter app][].
+    To learn more about the development features enabled by
+    the Dart and Flutter extensions,
+    check out [How to develop Flutter apps in VS Code][vs-code].
+
+{:.steps}
 
 [ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
 [Create a new Flutter app]: /reference/create-new-app#antigravity
+[vs-code]: /tools/vs-code
