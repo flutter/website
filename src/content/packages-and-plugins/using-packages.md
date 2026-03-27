@@ -429,9 +429,7 @@ To use this package:
       @override
       Widget build(BuildContext context) {
         return Scaffold(
-          body: Center(
-            child: Text(generateWordPairs().first.asPascalCase),
-          ),
+          body: Center(child: Text(generateWordPairs().first.asPascalCase)),
         );
       }
     }
