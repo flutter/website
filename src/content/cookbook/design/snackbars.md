@@ -69,8 +69,7 @@ the `ScaffoldMessenger` widget:
 You might want to provide an action to the user when
 the `SnackBar` is displayed.
 For example, if the user accidentally deletes a message,
-they might use an optional action in the `SnackBar` to recover
-the message.
+an `action` in the `SnackBar` could allow recovering the message.
 
 Here's an example that provides
 an additional `action` to the `SnackBar` widget:
