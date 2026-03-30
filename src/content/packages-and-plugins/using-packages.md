@@ -391,7 +391,7 @@ To use this package:
 
 1. Create a new project called `words_demo`.
 
-1. Run `dart pub add english_words` in the terminal.
+1. Run `dart pub add english_words` to add the dependency.
 
 1. Open `lib/main.dart` and replace its full contents with:
 
