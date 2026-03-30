@@ -1,5 +1,5 @@
-// #docregion css-colors
-import 'package:css_colors/css_colors.dart';
+// #docregion english-words
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,8 +20,10 @@ class DemoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(color: CSSColors.orange));
+    return Scaffold(
+      body: Center(child: Text(generateWordPairs().first.asPascalCase)),
+    );
   }
 }
 
-// #enddocregion css-colors
+// #enddocregion english-words
