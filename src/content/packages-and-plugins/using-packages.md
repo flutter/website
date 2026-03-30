@@ -384,24 +384,14 @@ using packages.
 
 ### Example: Using the english_words package {:#english-words-example}
 
-The [`english_words`][] package
-contains a few thousand of the most used English words plus some utility functions.
+The [`english_words`][] package contains a few thousand
+of the most used English words plus some utility functions.
 
 To use this package:
 
 1. Create a new project called `words_demo`.
 
-1. Open `pubspec.yaml`, and add the `english_words` dependency:
-
-   ```yaml
-   dependencies:
-     flutter:
-       sdk: flutter
-     english_words: ^4.0.0
-   ```
-
-1. Run `flutter pub get` in the terminal,
-   or click **Get Packages** in VS Code.
+1. Run `dart pub add english_words` in the terminal.
 
 1. Open `lib/main.dart` and replace its full contents with:
 
