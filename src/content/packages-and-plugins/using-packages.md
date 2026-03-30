@@ -389,7 +389,7 @@ contains a few thousand of the most used English words plus some utility functio
 
 To use this package:
 
-1. Create a new project called `wordsdemo`.
+1. Create a new project called `words_demo`.
 
 1. Open `pubspec.yaml`, and add the `english_words` dependency:
 
