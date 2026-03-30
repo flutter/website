@@ -80,6 +80,29 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
+### Update your app to include the article view
+
+Connect everything together by updating your `MainApp` to
+include your completed `ArticleView`.
+
+Replace your existing `MainApp` with this updated version:
+
+```dart
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: ArticleView(),
+    );
+  }
+}
+```
+
+This change switches from the console-based test to the full UI
+experience with proper state management.
+
 ### Listen for state changes
 
 Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
@@ -398,29 +421,6 @@ This widget demonstrates a few important UI concepts:
   The `spacing` parameter provides consistent vertical spacing.
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
-
-### Update your app to include the article view
-
-Connect everything together by updating your `MainApp` to
-include your completed `ArticleView`.
-
-Replace your existing `MainApp` with this updated version:
-
-```dart
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ArticleView(),
-    );
-  }
-}
-```
-
-This change switches from the console-based test to the full UI
-experience with proper state management.
 
 ### Run the complete app
 

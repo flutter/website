@@ -263,8 +263,7 @@ In Dart, you can offload computation to a worker isolate,
 often called a background worker.
 A common scenario spawns a simple worker isolate and
 returns the results in a message when the worker exits.
-As of Dart 2.19, you can use `Isolate.run()` to
-spawn an isolate and run computations:
+You can use `Isolate.run()` to spawn an isolate and run computations:
 
 ```dart
 void main() async {

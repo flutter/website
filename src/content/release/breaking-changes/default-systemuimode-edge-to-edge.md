@@ -25,7 +25,7 @@ by using version-specific resources; for details,
 visit the [migration guide](#migration-guide).
 
 To learn how to structure your app to avoid this,
-we recommend that you visit the Leancode article, [Mastering Edge-To-Edge in Flutter:
+we recommend that you visit the LeanCode article, [Mastering Edge-To-Edge in Flutter:
 A Deep Dive Into the System Navigation Bar in Android][article].
 You can also find more discussion in [Issue 168635][] on GitHub.
 
