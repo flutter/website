@@ -56,7 +56,7 @@ particular callback was set.
 It is important to use the same zone when calling `ensureInitialized` on the
 binding as when calling `runApp` later.
 To make this warning fatal, set BindingBase.debugZoneErrorsAreFatal to true before
-the bindings are initialized (i.e. as the first statement in `void main() { }`).
+the bindings are initialized (that is, as the first statement in `void main() { }`).
 [...]
 ═══════════════════════════════════════════════════════════════════════════════════
 ```
