@@ -224,7 +224,7 @@ To use the `RobotoMono-Bold` font that you added to your app,
 set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
 
 If you hadn't added `RobotoMono-Bold` to your app and declared its weight,
-Flutter attempts to make the regular font look bold.
+Flutter attempts to make the regular font _look_ bold.
 The text then might appear to be somewhat darker.
 
 You can't use the `weight` property to override the weight of the font.
