@@ -38,7 +38,7 @@ final class DashSideNav extends StatelessComponent {
           active: activeEntry == ActiveNavEntry.home,
         ),
         _TopNavItem(
-          href: '/learn',
+          href: '/learn/pathway',
           label: 'Learn',
           iconId: 'play_lesson',
           active: activeEntry == ActiveNavEntry.learn,
