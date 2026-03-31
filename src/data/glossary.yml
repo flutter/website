@@ -372,7 +372,7 @@
     which is the most detailed tree in Flutter's multi-tree architecture.
   related_links:
     - text: "Architectural Overview: The Rendering Layer"
-      link: "/resources/architectural-overview#the-rendering-layer"
+      link: "/resources/architectural-overview#architectural-layers"
       type: "doc"
     - text: "RenderObject API documentation"
       link: "https://api.flutter.dev/flutter/rendering/RenderObject-class.html"
