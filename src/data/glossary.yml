@@ -21,11 +21,11 @@
     - "ui"
     - "design"
     
-- term: "Agentic skill"
+- term: "Agent skill"
   short_description: |-
     A specialized capability or tool that an AI agent uses for a specific task.
   long_description: |-
-    An agentic skill is a specialized set of instructions,
+    An agent skill is a specialized set of instructions,
     scripts, and resources that extend an AI agent's capabilities
     for a specific domain or task.
     Skills enable agents to interact with the environment,
