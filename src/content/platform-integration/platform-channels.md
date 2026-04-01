@@ -706,7 +706,13 @@ Make sure to use the same channel name
 as was used on the Flutter client side.
 
 :::note
-If your app adopts the `UISceneDelegate` lifecycle, `window` will be `nil` during `application:didFinishLaunchingWithOptions:`. To avoid a crash, instantiate your `FlutterMethodChannel` and set its call handler within your `SceneDelegate`'s `scene:willConnectToSession:options:` method, accessing the controller via `(FlutterViewController*)self.window.rootViewController`.
+If your app adopts the `UISceneDelegate` lifecycle,
+`window` will be `nil` during `application:didFinishLaunchingWithOptions:`.
+To avoid a crash, instantiate your `FlutterMethodChannel`
+and set its call handler within your `SceneDelegate`'s
+`scene:willConnectToSession:options:` method,
+accessing the controller by using
+`(FlutterViewController*)self.window.rootViewController`.
 :::
 
 ```objc title="AppDelegate.m"
