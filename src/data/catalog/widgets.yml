@@ -137,6 +137,14 @@
     - 'Animation and motion'
   subcategories: []
   link: https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html
+- name: AnimatedScale
+  description: >-
+    Animated version of `Transform.scale` that automatically transitions the child's
+    scale over a given duration whenever the given scale changes.
+  categories:
+    - 'Animation and motion'
+  subcategories: []
+  link: https://api.flutter.dev/flutter/widgets/AnimatedScale-class.html
 - name: AnimatedSize
   description: >-
     Animated widget that automatically transitions its size over a given
