@@ -50,7 +50,7 @@ The following table shows which commands you can use with the `flutter` tool:
 | assemble        | `flutter assemble -o <DIRECTORY>`              | Assemble and build flutter resources.                                             |
 | attach          | `flutter attach -d <DEVICE_ID>`                | Attach to a running application.                                                  |
 | bash-completion | `flutter bash-completion`                      | Output command line shell completion setup scripts.                               |
-| build           | `flutter build <BUILD_TARGET>`                 | Flutter build commands.                                                           |
+| build           | `flutter build <BUILD_TARGET>`                 | Build a target-specific bundle..                                                           |
 | channel         | `flutter channel <CHANNEL_NAME>`               | List or switch flutter channels.                                                  |
 | clean           | `flutter clean`                                | Delete the `build/` and `.dart_tool/` directories.                                |
 | config          | `flutter config --build-dir=<DIRECTORY>`       | Configure Flutter settings. To remove a setting, configure it to an empty string. |
