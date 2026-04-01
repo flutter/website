@@ -62,7 +62,7 @@ Alternatively, you can do it manually using the following steps:
 
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [launchericons]: {{site.material}}/styles/icons
-[config qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[config-qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 
 ## Enable Material Components
@@ -496,10 +496,16 @@ If you update the `applicationId` and `namespace` properties,
 you must also update the `package` statement in your `MainActivity.kt`
 or `MainActivity.java` file and move the file
 to the corresponding directory structure.
-For example, if your new ID is `com.example.myapp`,
-move your `MainActivity` file to
-`android/app/src/main/kotlin/com/example/myapp/MainActivity.kt`
-and ensure the first line is `package com.example.myapp`.
+
+For example:
+
+- In Kotlin, if your new ID is `com.example.myapp`,
+  move your `MainActivity` file to
+  `android/app/src/main/kotlin/com/example/myapp/MainActivity.kt`
+  and ensure the first line is `package com.example.myapp`.
+- In Java, move your `MainActivity` file to
+  `android/app/src/main/java/com/example/myapp/MainActivity.java`
+  and ensure the first line is `package com.example.myapp`.
 
 [application-id]: {{site.android-dev}}/studio/build/application-id
 
