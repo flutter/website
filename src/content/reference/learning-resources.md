@@ -1,6 +1,7 @@
 ---
 title: Flutter learning resources
-description: A catalog of Flutter tutorials, sample code, workshops, and recipes.
+description: >-
+  A catalog of Flutter tutorials, sample code, workshops, and recipes.
 shortTitle: Learning resources
 showBreadcrumbs: false
 bodyClass: wide-site-content
