@@ -21,6 +21,20 @@
     - "ui"
     - "design"
     
+- term: "Agent skill"
+  short_description: |-
+    A specialized capability or tool that an AI agent uses for a specific task.
+  long_description: |-
+    An agent skill is a specialized set of instructions,
+    scripts, and resources that extend an AI agent's capabilities
+    for a specific domain or task.
+    Skills enable agents to interact with the environment,
+    execute multi-step workflows,
+    and perform complex problem-solving autonomously.
+  labels:
+    - "ai"
+    - "tooling"
+
 - term: "Cupertino"
   short_description: |-
     Flutter's implementation of the iOS design language.
