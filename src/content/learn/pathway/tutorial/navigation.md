@@ -68,6 +68,8 @@ Ensure that the `onListSelected` callback in
 `lib/screens/contact_groups.dart` is implemented as follows:
 
 ```dart title="lib/screens/contact_groups.dart"
+import 'package:rolodex/screens/contacts.dart';
+
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
 
@@ -236,6 +238,17 @@ Hot reload your app and test the navigation:
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
 This provides an optimal experience on both phones and tablets.
+
+:::note
+If you resize the app from a small screen to a large screen while on
+a contact list page, and then press the back button,
+you might see a `Hero` tag exception.
+This happens because the `Navigator` still holds the pushed small-screen
+route while the large-screen layout simultaneously renders the detail view,
+causing duplicate widgets (like the navigation bar) in the widget tree during transition.
+This is an expected edge case for this simple architecture and can be ignored
+for the purpose of this learning pathway.
+:::
 
 ### Review
 
