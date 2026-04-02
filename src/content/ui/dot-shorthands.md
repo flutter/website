@@ -8,7 +8,7 @@ accessing static members, constructors, or enum values, provided the compiler
 can infer the type from the surrounding context.
 
 :::note
-For n technical overview of this feature, refer to the
+For a technical overview of this feature, refer to the
 [Dot Shorthands guide](https://dart.dev/language/dot-shorthand) in the Dart
 documentation.
 :::
@@ -17,7 +17,7 @@ documentation.
 
 Building layouts in Flutter often involves deeply nested widget trees.
 Historically, this meant repeatedly typing explicit class and enum names for
-properties like colors, typography, and alignment. Dot shorthands reduce this
+properties like colors, typography, and alignment. Dot shorthands reduces this
 boilerplate, making your code easier to read and faster to write.
 
 Here is a side-by-side comparison of building a simple `Container`:
@@ -25,7 +25,6 @@ Here is a side-by-side comparison of building a simple `Container`:
 ### Without dot shorthands
 ```dart
 Container(
-  color: Colors.blue,
   alignment: Alignment.center,
   padding: const EdgeInsets.all(16.0),
   child: Column(
@@ -46,8 +45,7 @@ Container(
 ### With dot shorthands
 ```dart
 Container(
-  color: .blue, // Instead of Colors.blue
-  alignment: .center, // Instead of Alignment.center
+  alignment: .center, // Instead of Alignment.center,
   padding: const .all(16.0), // Instead of EdgeInsets.all(16.0)
   child: Column(
     mainAxisAlignment: .center, // Instead of MainAxisAlignment.center
@@ -73,12 +71,12 @@ everywhere inside a widget's property list.
 The most common targets for dot shorthands in Flutter are:
 
 *   **Enums**: `MainAxisAlignment`, `CrossAxisAlignment`, `BoxFit`, `TextDirection`.
-*   **Static properties and methods**: `Colors`, `Icons`, `Alignment`. 
+*   **Static properties and methods**: `FontWeight` (constants like `.bold`). 
 *   **Constructors**: `EdgeInsets.all()`, `BorderRadius.circular()`.
 
 ### Example: enums
 
-When a property expects an enum, such as `mainAxisAlignment`, you can omit the
+When a property expects an `enum`, such as `mainAxisAlignment`, you can omit the
 enum's name and just provide the value preceded by a dot (`.`):
 
 ```dart
@@ -90,30 +88,24 @@ Row(
 
 ### Example: static properties
 
-`Colors.green` and `Alignment.bottomRight` are static properties on their
-respective classes. Since `color` expects a `Color` object, you can just write
-`.green`:
+Static properties work when the context type is exactly the class that defines the property. A common example is text styling with `FontWeight`:
 
 ```dart
-DecoratedBox(
-  decoration: BoxDecoration(
-    color: .green, // Infers Colors.green
-  ),
-  child: Align(
-    alignment: .bottomRight, // Infers Alignment.bottomRight
-    child: FlutterLogo(),
+Text(
+  'Feature highlights',
+  style: TextStyle(
+    fontWeight: .bold, // Infers FontWeight.bold
   ),
 )
 ```
 
 ### Example: constructors
 
-You can also use dot shorthands for named constructors. A common case is
-`EdgeInsets`:
+You can also use dot shorthands for named constructors. Many Flutter layout properties accept a base class like `EdgeInsetsGeometry`. To support dot shorthands, Flutter adds redirecting constructors to these base classes that point to the appropriate subclasses.
 
 ```dart
 Padding(
-  padding: .symmetric(horizontal: 16.0, vertical: 8.0), // Infers EdgeInsets.symmetric
+  padding: .symmetric(horizontal: 16.0, vertical: 8.0), // Infers EdgeInsetsGeometry.symmetric
   child: Text('Spaced out text'),
 )
 ```
