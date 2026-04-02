@@ -35,7 +35,7 @@ create a `WebSocketChannel` that connects to a server:
 <?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
 final WebSocketChannel channel = WebSocketChannel.connect(
-  Uri.parse('wss://echo.websocket.events'),
+  Uri.parse('wss://echo.websocket.org'),
 );
 ```
 
@@ -137,7 +137,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   final WebSocketChannel _channel = WebSocketChannel.connect(
-    Uri.parse('wss://echo.websocket.events'),
+    Uri.parse('wss://echo.websocket.org'),
   );
 
   @override
