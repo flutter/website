@@ -241,7 +241,7 @@ This provides an optimal experience on both phones and tablets.
 
 :::note
 If you resize the app from a small screen to a large screen while on
-a contact list page, and then press the back button,
+a contact detail page, and then press the back button,
 you might see a `Hero` tag exception.
 This happens because the `Navigator` still holds the pushed small-screen
 route while the large-screen layout simultaneously renders the detail view,
