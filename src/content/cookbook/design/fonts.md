@@ -94,7 +94,8 @@ Choose the typeface or font family that meets the design needs of your app.
 To learn how to get direct access to over 1,000 open-sourced font families,
 check out the [google_fonts][] package.
 
-<YouTubeEmbed id="8Vzv2CdbEY0" title="google_fonts | Flutter package of the week"></YouTubeEmbed>
+<YouTubeEmbed id="8Vzv2CdbEY0"
+  title="google_fonts | Flutter package of the week"></YouTubeEmbed>
 
 To learn about another approach to using custom fonts that allows you to
 re-use one font over multiple projects,
@@ -200,14 +201,15 @@ choose and import font files that represent that variety.
 When you import a font file that doesn't include either multiple fonts
 within it or variable font capabilities,
 don't use the `style` or `weight` property to adjust how they display.
-If you do use those properties on a regular font file,
+If you use those properties on a regular font file,
 Flutter attempts to _simulate_ the look.
 The visual result will look quite different from using the correct font file.
 
-### Set styles and weights with font files
+### Declare styles and weights
 
-When you declare which font files represent styles or weights of a font,
-you can apply the `style` or `weight` properties.
+Flutter doesn't infer a font's weight or style from its file name.
+To use a specific weight or style, you must explicitly declare the `weight`
+or `style` property for that font file in your `pubspec.yaml`.
 
 #### Set font weight
 
@@ -221,8 +223,8 @@ you defined `RobotoMono-Bold` as the `700` weight of the font family.
 To use the `RobotoMono-Bold` font that you added to your app,
 set `fontWeight` to `FontWeight.w700` in your `TextStyle` widget.
 
-If you hadn't added `RobotoMono-Bold` to your app,
-Flutter attempts to make the font look bold.
+If you hadn't added `RobotoMono-Bold` to your app and declared its weight,
+Flutter attempts to make the regular font _look_ bold.
 The text then might appear to be somewhat darker.
 
 You can't use the `weight` property to override the weight of the font.
@@ -244,8 +246,8 @@ To use the `Raleway-Italic` font that you added to your app,
 set `style: TextStyle(fontStyle: FontStyle.italic)`.
 Flutter swaps `Raleway-Regular` with `Raleway-Italic` when rendering.
 
-If hadn't added `Raleway-Italic` to your app,
-Flutter attempts to make the font _look_ italic.
+If you hadn't added `Raleway-Italic` to your app and declared its style,
+Flutter attempts to make the regular font _look_ italic.
 The text then might appear to be leaning to the right.
 
 You can't use the `style` property to override the glyphs of a font.

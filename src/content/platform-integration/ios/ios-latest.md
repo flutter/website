@@ -16,7 +16,7 @@ visit the following issues in the flutter/flutter repo.
 * Hover typing feature: [Issue 152715][]
 * iOS formatting menu: [Issue 150068][]
 * iOS-style zoom page transition: [Issue 150588][]
-* iPad-style tab bar: [Issue 150950][]
+* iPad-style tab bar: [Issue 150590][]
 * iPhone mirroring when viewing a Flutter app: [Issue 152711][]
 * Large content viewer: [Issue 152715][]
 * Add "Translate" button to the context edit menu: [Issue 150392][]
@@ -27,7 +27,7 @@ visit the following issues in the flutter/flutter repo.
 [Issue 150392]: {{site.repo.flutter}}/issues/150392
 [Issue 150452]: {{site.repo.flutter}}/issues/150452
 [Issue 150588]: {{site.repo.flutter}}/issues/150588
-[Issue 150950]: {{site.repo.flutter}}/issues/150590
+[Issue 150590]: {{site.repo.flutter}}/issues/150590
 [Issue 150965]: {{site.repo.flutter}}/issues/150965
 [Issue 152711]: {{site.repo.flutter}}/issues/152711
 [Issue 152715]: {{site.repo.flutter}}/issues/152715

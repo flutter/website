@@ -32,7 +32,7 @@ an MCP client should also support [Roots][].
 
 If you are using a client that claims it
 supports roots but doesn't actually set them,
-pass `--force-roots-fallback` to enable tools for managing the roots.
+pass `--force-roots-fallback` flag to enable tools for managing the roots.
 
 The Dart and Flutter MCP server provides a growing list of tools that
 grant AI assistants deep insights into your project.
@@ -168,44 +168,6 @@ documentation for [setting up MCP servers][].
 
 [Gemini CLI]: https://geminicli.com/
 [setting up MCP servers]: https://geminicli.com/docs/tools/mcp-server/#how-to-set-up-your-mcp-server
-
-### Firebase Studio
-
-If you wish to use the Dart and Flutter MCP Server in [Firebase Studio][],
-an agentic cloud-based development environment that helps
-you build and ship production-quality full-stack AI apps,
-follow these steps:
-
-1.  In your Firebase Studio app project, create a
-    `.idx/mcp.json` file in your project if it
-    doesn't exist already and add the following
-    Dart and Flutter MCP Server configuration to the file:
-
-    ```json title=".idx/mcp.json"
-    {
-      "mcpServers": {
-        "dart": {
-          "command": "dart",
-          "args": [
-            "mcp-server"
-          ]
-        }
-      }
-    }
-    ```
-
-1.  Ensure your environment is running Dart SDK 3.9/Flutter 3.35 or later.
-1.  Rebuild your workspace to complete the setup.
-    *   Open the Command Palette (**Shift+Ctrl+P**).
-    *   Enter **Firebase Studio: Rebuild Environment**.
-
-For more information about MCP server configuration in Firebase Studio,
-check out [Connect to MCP servers][fs-mcp] and
-[Customize your Firebase Studio workspace][].
-
-[Firebase Studio]: https://firebase.studio/
-[fs-mcp]: https://firebase.google.com/docs/studio/mcp-servers
-[Customize your Firebase Studio workspace]: https://firebase.google.com/docs/studio/customize-workspace
 
 ### Gemini Code Assist in VS Code
 
@@ -428,3 +390,11 @@ writing the appropriate code in your app,
 is now a single request.
 
 [`package:fl_chart`]: {{site.pub-pkg}}/fl_chart
+
+## Provide feedback
+
+If you encounter any issues or have feedback about the
+Dart and Flutter MCP server, file an issue on the
+[`dart-lang/ai` issue tracker][ai-issues].
+
+[ai-issues]: https://github.com/dart-lang/ai/issues

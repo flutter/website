@@ -29,11 +29,14 @@ This, however, requires a slight shift in thinking for how to manipulate UI.
 
 Consider a simplified example below:
 
-<img src="/assets/images/docs/declarativeUIchanges.png" alt="View B (contained by view A) morphs from containing two views, c1 and c2, to containing only view c3.">
+<img src="/assets/images/docs/declarativeUIchanges.png"
+  alt="View B (contained by view A) morphs from containing two views, c1 and c2,
+  to containing only view c3.">
 
 In the imperative style, you would typically go to ViewB's owner
 and retrieve the instance `b` using selectors or with `findViewById` or similar,
-and invoke mutations on it (and implicitly invalidate it). For example:
+and invoke mutations on it (and implicitly invalidate it).
+For example:
 
 ```java
 // Imperative style
@@ -46,10 +49,11 @@ b.add(c3)
 You might also need to replicate this configuration in the constructor of
 ViewB since the source of truth for the UI might outlive instance `b` itself.
 
-In the declarative style, view configurations (such as Flutter's Widgets)
-are immutable and are only lightweight "blueprints". To change the UI,
-a widget triggers a rebuild on itself (most commonly by calling `setState()`
-on StatefulWidgets in Flutter) and constructs a new Widget subtree.
+In the declarative style, view configurations (such as Flutter's `Widget`s)
+are immutable and are only lightweight "blueprints".
+To change the UI, a widget triggers a rebuild on itself
+(most commonly by calling `setState` on `StatefulWidgets` in Flutter)
+and constructs a new `Widget` subtree.
 
 <?code-excerpt "lib/main.dart (declarative)"?>
 ```dart
@@ -58,9 +62,16 @@ return ViewB(color: red, child: const ViewC());
 ```
 
 Here, rather than mutating an old instance `b` when the UI changes,
-Flutter constructs new Widget instances. The framework manages many of the
-responsibilities of a traditional UI object (such as maintaining the
-state of the layout) behind the scenes with RenderObjects.
-RenderObjects persist between frames and Flutter's lightweight Widgets
-tell the framework to mutate the RenderObjects between states.
+Flutter constructs new `Widget` instances.
+The framework manages many of the
+responsibilities of a traditional UI object
+(such as maintaining the state of the layout)
+behind the scenes with [`RenderObjects`][].
+A `RenderObject` is a persistent,
+mutable object that handles the heavy lifting of layout, painting, and hit testing.
+`RenderObject`s persist between frames and Flutter's lightweight,
+immutable `Widget`s serve as blueprints that tell the framework to
+mutate the `RenderObject`s between states.
 The Flutter framework handles the rest.
+
+[`RenderObjects`]: /resources/glossary#renderobject
