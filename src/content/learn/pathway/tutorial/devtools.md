@@ -45,9 +45,9 @@ opens the interface in a browser.
 
 To connect DevTools to your running app:
 
-1. Find the **Dart VM Service URL** printed in the terminal
+1. Find the DevTools URL printed in the terminal
    where your app is running (for example:
-   `A Dart VM Service on Chrome is available at: http://127.0.0.1:50377/op6w1lQFs6Q=`).
+   `Serving DevTools at http://127.0.0.1:9101`).
 2. Copy this URL.
 3. Paste it into the connect bar in the DevTools browser page.
 
