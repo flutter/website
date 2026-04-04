@@ -30,7 +30,7 @@ Before you move on, you need to add this logic to your app.
 
 1.  Download the file below and save it
     as `lib/game.dart` in your project directory.
-1.  Import the file in your `lib/main.dart` file.
+1.  Import the file in your `lib/main.dart` file. Open `lib/main.dart` and add this line `import 'game.dart';` after the first import. 
 
 <DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
 
