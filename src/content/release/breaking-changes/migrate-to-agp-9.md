@@ -44,16 +44,19 @@ the `kotlin-android` plugin (also called Kotlin Gradle Plugin),
 then skip to the next step.
 
 First, find the `kotlin-android` plugin, likely located
-in the `plugins` block or the legacy `apply()` method 
-of the `<app-src>/android/build.gradle` 
+in the `plugins` block of the `<app-src>/android/build.gradle`
 or `<app-src>/android/build.gradle.kts` file.
+If you use the legacy apply() method, it will be located in
+the Groovy-based `<app-src>/android/build.gradle` file, as this syntax is
+not supported in Kotlin DSL.
+
 As an example, consider the `build.gradle.kts` file from
 a Flutter app created before this change:
 
-**Before**:
-
 <Tabs key="modern-legacy-apply">
 <Tab name="plugins block">
+
+**Before**:
 
 ```kotlin
 plugins {
@@ -80,21 +83,6 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
       id("com.android.application")
 -     id("kotlin-android")
       // ...
-  }
-
-  android {
-      // ...
--     kotlinOptions {
--         jvmTarget = JavaVersion.VERSION_17.toString()
--     }
-      // ...
-  }
-```
-```groovy diff
-  plugins {
-      apply plugin:'com.android.application'
--     apply plugin: 'kotlin-android'
-    // ...
   }
 
   android {
@@ -142,9 +130,12 @@ kotlin {
 </Tab>
 <Tab name="legacy apply">
 
+**Before**:
+
 ```groovy
-apply plugin:'com.android.application'
+apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+// ...
 
 android {
     // ...
@@ -160,8 +151,9 @@ android {
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
 ```groovy diff
-  apply plugin:'com.android.application'
+  apply plugin: 'com.android.application'
 - apply plugin: 'kotlin-android'
+// ...
 
   android {
       // ...
@@ -171,10 +163,9 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
       // ...
   }
 ```
-
 Replace the `kotlinOptions` block with the following:
 
-```kotlin diff
+```groovy diff
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -187,7 +178,8 @@ Here is how the file will likely end up:
 **After**:
 
 ```groovy
-apply plugin:'com.android.application'
+apply plugin: 'com.android.application'
+// ...
 
 android {
     // ...
