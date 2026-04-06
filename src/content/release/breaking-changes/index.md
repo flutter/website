@@ -40,18 +40,16 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [Deprecate `TextInputConnection.setStyle`][]
-* [`IconData` class marked as `final`][]
-* [ListTile reports error in debug when wrapped in a colored widget][]
-* [Migrating Flutter Android app to Android Gradle Plugin 9.0.0][]
+* [ListTile throws exception when wrapped in a colored widget][]
+* [Migrating Flutter Android Projects to Built-in Kotlin][]
 * [Page transition builders reorganization][]
 
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
-[`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
-[ListTile reports error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
-[Migrating Flutter Android app to Android Gradle Plugin 9.0.0]: /release/breaking-changes/migrate-to-agp-9
+[ListTile throws exception when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
+[Migrating Flutter Android Projects to Built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 
 <a id="released-in-flutter-341" aria-hidden="true"></a>

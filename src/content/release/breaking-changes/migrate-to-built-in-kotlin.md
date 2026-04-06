@@ -1,5 +1,5 @@
 ---
-title: Migrating Flutter Android projects to Built-in Kotlin
+title: Migrating Flutter Android Projects to Built-in Kotlin
 description: >-
   Update your Flutter Android Gradle files to use built-in Kotlin support.
   Essential for migrating projects to Android Gradle Plugin 9.0.0+.
@@ -20,8 +20,9 @@ This means any old DSL types will not be properly read.
 The Flutter team is working on migrating old DSL types
 to use the new DSL: [Issue #180137][].
 
-Support has been added to upgrade to AGP 9+. All projects,
-including apps and plugins must manually migrate to built-in Kotlin.
+Flutter now supports built-in Kotlin, enabling a safe upgrade to AGP 9.0+.
+To ensure compatibility, all apps and plugins must be manually migrated
+from the legacy Kotlin Gradle Plugin (KGP) to built-in Kotlin.
 In a future flutter version, support for applying KGP will be removed.
 
 To learn more about Android Gradle Plugin,
