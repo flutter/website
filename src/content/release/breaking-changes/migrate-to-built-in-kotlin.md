@@ -38,6 +38,30 @@ listed in the [Android Gradle Plugin docs][AGP block].
 This guide provides migration steps for Flutter Android apps,
 Flutter plugins, and add-to-app android host apps.
 
+### Verify flags in properties file
+
+To ensure compatibility between the legacy Kotlin Gradle Plugin (KGP)
+and the built-in Kotlin support during this migration,
+we now automatically add `android.builtInKotlin=false`
+and `android.newDsl=false` to your `gradle.properties` file.
+
+If these flags are missing from your gradle.properties file,
+they will be automatically added when you next build or run your app
+using `flutter run` or `flutter build apk`. Alternatively, performing a build
+through Android Studio tooling will also populate these entries.
+Once the process completes, verify that the flags have been added.
+For more details, see [Issue #183910].
+
+:::note All add-to-app projects must manually add `android.builtInKotlin=false`
+and `android.newDsl=false` to the android host app's `gradle.properties` file.
+
+```properties diff title="<host-app-project>/gradle.properties"
+# ...
++ android.newDsl=false
++ android.builtInKotlin=false
+```
+:::
+
 ### Update the Gradle file
 
 If your app doesn't apply
@@ -424,22 +448,6 @@ kotlin {
 
 </Tab>
 </Tabs>
-
-:::note This is a no-op. No further migration is required.
-
-To ensure compatibility between the legacy Kotlin Gradle Plugin (KGP) 
-and the built-in Kotlin support during this migration,
-we now automatically add `android.builtInKotlin=false`
-and `android.newDsl=false` to your `gradle.properties` file.
-
-If these flags are missing from your gradle.properties file,
-they will be automatically generated when you next build or run your app
-using flutter run or flutter build apk. Alternatively, performing a build
-through Android Studio tooling will also populate these entries.
-Once the process completes, verify that the flags have been added.
-
-For more details, see [Issue #183910].
-:::
 
 ### Validate
 
