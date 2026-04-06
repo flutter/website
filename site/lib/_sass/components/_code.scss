@@ -9,7 +9,6 @@ samp {
 
 // Inline code spans found within the primary contents of the page.
 // Targets all <code> elements, but <pre><code> shouldn't have many of these.
-
 main code,
 main kbd {
   font-size: 0.9em;
@@ -22,7 +21,6 @@ main kbd {
   white-space: normal;
   word-wrap: break-word;
   word-break: normal;
-
 }
 
 main kbd {
