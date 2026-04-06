@@ -1,8 +1,8 @@
 ---
-title: Migrating Flutter Android app to Android Gradle Plugin 9.0.0
+title: Migrating Flutter Android projects to Built-in Kotlin
 description: >-
-  How to migrate your Flutter app's Android Gradle files
-  to build apps with Android Gradle Plugin 9.0.0+.
+  Update your Flutter Android Gradle files to use built-in Kotlin support.
+  Essential for migrating projects to Android Gradle Plugin 9.0.0+.
 ---
 
 ## Summary
@@ -43,9 +43,9 @@ If your app doesn't apply
 the `kotlin-android` plugin (also called Kotlin Gradle Plugin),
 then skip to the next step.
 
-First, find the `kotlin-android` plugin, likely located
-in the `plugins` block of the `<app-src>/android/build.gradle`
-or `<app-src>/android/build.gradle.kts` file.
+First, find the `kotlin-android` plugin (or the `org.jetbrains.kotlin.android`),
+likely located in the `plugins` block of the `<app-src>/android/build.gradle`
+or the `<app-src>/android/build.gradle.kts` file.
 If you use the legacy apply() method, it will be located in
 the Groovy-based `<app-src>/android/build.gradle` file, as this syntax is
 not supported in Kotlin DSL.
@@ -61,7 +61,7 @@ a Flutter plugins, and an add-to-app android host apps:
 
 **Before**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -111,7 +111,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     id("com.android.application")
     // ...
@@ -208,7 +208,7 @@ kotlin {
 
 **Before**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     id("com.android.library")
     id("kotlin-android")
@@ -258,7 +258,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     id("com.android.library")
     // ...
@@ -353,7 +353,7 @@ kotlin {
 
 **Before**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -402,7 +402,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin title="<app-src>/android/build.gradle.kts"
+```kotlin title="<app-src>/android/build.gradle(.kts)"
 plugins {
     alias(libs.plugins.android.application)
     // ...
@@ -424,6 +424,22 @@ kotlin {
 </Tab>
 </Tabs>
 
+:::note This is a no-op. No further migration is required.
+
+To ensure compatibility between the legacy Kotlin Gradle Plugin (KGP) 
+and the built-in Kotlin support during this migration,
+we now automatically add `android.builtInKotlin=false`
+and `android.newDsl=false` to your `gradle.properties` file.
+
+If these flags are missing from your gradle.properties file,
+they will be automatically generated when you next build or run your app
+using flutter run or flutter build apk. Alternatively, performing a build
+through Android Studio tooling will also populate these entries.
+Once the process completes, verify that the flags have been added.
+
+For more details, see [Issue #183910].
+:::
+
 ### Validate
 
 Execute `flutter run` or `flutter build apk` to confirm that
@@ -431,9 +447,10 @@ your app builds and launches on a connected Android device or emulator.
 
 ## Next steps
 
-- **Full Support for Plugins:** Full support for plugins on AGP 9
-  will be enabled once the team confirms the migration is backwards compatible with
-  older versions of AGP.
+- **Remove Support for KGP:** In a future version of Flutter,
+  support for applying KGP will be removed. Developers must 
+  migrate their projects (apps, plugins, host app projects) or else
+  they will be unable to build.
 
 - **Remove DSL Gradle Property:** Once the Flutter team completes the migration
   to the new AGP DSL, remove `android.newDsl=false` from your
@@ -447,6 +464,7 @@ Relevant issues:
 - [Issue #175688][]: Audit flutter for compatibility with the AGP 9.0.0
 - [Issue #180137][]: Migrate from old to new AGP DSL
 - [Issue #181383][]: Flutter plugins should support AGP 9.0.0
+- [Issue #183910][]: Add Disable Built-in Kotlin and new DSL Migrators
 
 The Gradle build files in your app vary based on the Flutter version
 used when your app was created.
@@ -459,3 +477,4 @@ in your app's directory.
 [Issue #175688]: {{site.github}}/flutter/flutter/issues/175688
 [Issue #180137]: {{site.github}}/flutter/flutter/issues/180137
 [Issue #181383]: {{site.github}}/flutter/flutter/issues/181383
+[Issue #183910]: {{site.github}}/flutter/flutter/issues/183910
