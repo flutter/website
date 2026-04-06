@@ -50,15 +50,15 @@ If you use the legacy apply() method, it will be located in
 the Groovy-based `<app-src>/android/build.gradle` file, as this syntax is
 not supported in Kotlin DSL.
 
-As an example, consider the `build.gradle.kts` file from
-a Flutter app created before this change:
+The following are migration examples for migrating a Flutter Android app,
+a Flutter plugins, and an add-to-app android host apps:
 
 <Tabs key="modern-legacy-apply">
 <Tab name="plugins block">
 
 **Before**:
 
-```kotlin
+```kotlin title="<app-src>/android/build.gradle.kts"
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -78,7 +78,7 @@ android {
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-```kotlin diff
+```kotlin diff title="<app-src>/android/build.gradle.kts"
   plugins {
       id("com.android.application")
 -     id("kotlin-android")
@@ -96,7 +96,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
 Replace the `kotlinOptions` block with the following:
 
-```kotlin diff
+```kotlin diff title="<app-src>/android/build.gradle.kts"
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -108,7 +108,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin
+```kotlin title="<app-src>/android/build.gradle.kts"
 plugins {
     id("com.android.application")
     // ...
@@ -132,7 +132,7 @@ kotlin {
 
 **Before**:
 
-```groovy
+```groovy title="<app-src>/android/build.gradle"
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 // ...
@@ -150,7 +150,7 @@ android {
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-```groovy diff
+```groovy diff title="<app-src>/android/build.gradle"
   apply plugin: 'com.android.application'
 - apply plugin: 'kotlin-android'
 // ...
@@ -165,7 +165,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 ```
 Replace the `kotlinOptions` block with the following:
 
-```groovy diff
+```groovy diff title="<app-src>/android/build.gradle"
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -177,7 +177,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```groovy
+```groovy title="<app-src>/android/build.gradle"
 apply plugin: 'com.android.application'
 // ...
 
