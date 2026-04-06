@@ -5,16 +5,6 @@ description: >-
   to build apps with Android Gradle Plugin 9.0.0+.
 ---
 
-:::warning
-**Current status:** Please **do not** update your
-Flutter app for Android to AGP 9. Flutter apps using plugins
-are currently incompatible with AGP 9: [Issue #181383][].
-This support is paused while the Flutter team audits
-the migration for backwards compatibility with older versions of AGP.
-
-If you would still like to migrate to AGP 9, follow the migration guide below.
-:::
-
 ## Summary
 
 To build a Flutter app for Android, the Android Gradle Plugin (AGP)
@@ -28,11 +18,11 @@ You must migrate from `kotlin-android` to built-in Kotlin.
 Second, AGP 9+ will only use the new AGP DSL interfaces.
 This means any old DSL types will not be properly read.
 The Flutter team is working on migrating old DSL types
-to use the new DSL: [Issue #180137][]. In the meantime,
-you can set a Gradle property flag to use the old DSL.
+to use the new DSL: [Issue #180137][].
 
-In a future Flutter release, support will be added for applying AGP 9+.
-For now, all projects must be migrated manually.
+Support has been added to upgrade to AGP 9+. All projects,
+including apps and plugins must manually migrate to built-in Kotlin.
+In a future flutter version, support for applying KGP will be removed.
 
 To learn more about Android Gradle Plugin,
 see the [Android Gradle Plugin docs][AGP block].
@@ -44,6 +34,9 @@ an AGP version created before 9.0.0 to an AGP version 9.0.0+.
 You should also use the minimum compatible dependency versions
 listed in the [Android Gradle Plugin docs][AGP block].
 
+This guide provides migration steps for Flutter Android apps,
+Flutter plugins, and add-to-app android host apps.
+
 ### Update the Gradle file
 
 If your app doesn't apply
@@ -51,19 +44,22 @@ the `kotlin-android` plugin (also called Kotlin Gradle Plugin),
 then skip to the next step.
 
 First, find the `kotlin-android` plugin, likely located
-in the `plugins` block of the `<app-src>/android/build.gradle`
+in the `plugins` block or the legacy `apply()` method 
+of the `<app-src>/android/build.gradle` 
 or `<app-src>/android/build.gradle.kts` file.
 As an example, consider the `build.gradle.kts` file from
 a Flutter app created before this change:
 
 **Before**:
 
+<Tabs key="modern-legacy-apply">
+<Tab name="plugins block">
+
 ```kotlin
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
+    // ...
 }
 
 android {
@@ -83,8 +79,22 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
   plugins {
       id("com.android.application")
 -     id("kotlin-android")
-      // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-      id("dev.flutter.flutter-gradle-plugin")
+      // ...
+  }
+
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
+```
+```groovy diff
+  plugins {
+      apply plugin:'com.android.application'
+-     apply plugin: 'kotlin-android'
+    // ...
   }
 
   android {
@@ -113,16 +123,33 @@ Here is how the file will likely end up:
 ```kotlin
 plugins {
     id("com.android.application")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id("dev.flutter.flutter-gradle-plugin")
+    // ...
 }
 
 android {
     // ...
-    kotlin {
-        compilerOptions {
-            jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
-        }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+// ...
+```
+
+</Tab>
+<Tab name="legacy apply">
+
+```groovy
+apply plugin:'com.android.application'
+apply plugin: 'kotlin-android'
+
+android {
+    // ...
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
     }
     // ...
 }
@@ -130,22 +157,58 @@ android {
 // ...
 ```
 
-### Set the Gradle property flag
+Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-Next, to use the old AGP DSL, set the Gradle property flag
-`android.newDsl` to `false` in
-your app's `<app-src>/android/gradle.properties` file.
+```groovy diff
+  apply plugin:'com.android.application'
+- apply plugin: 'kotlin-android'
 
-```properties diff
-  org.gradle.jvmargs=-Xmx8G -XX:MaxMetaspaceSize=4G -XX:ReservedCodeCacheSize=512m -XX:+HeapDumpOnOutOfMemoryError
-  android.useAndroidX=true
-+ android.newDsl=false
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
 ```
+
+Replace the `kotlinOptions` block with the following:
+
+```kotlin diff
++ kotlin {
++     compilerOptions {
++         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
++     }
++ }
+```
+
+Here is how the file will likely end up:
+
+**After**:
+
+```groovy
+apply plugin:'com.android.application'
+
+android {
+    // ...
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+// ...
+```
+
+</Tab>
+</Tabs>
 
 ### Validate
 
-Execute `flutter run` to confirm that your app builds and
-launches on a connected Android device or emulator.
+Execute `flutter run` or `flutter build apk` to confirm that
+your app builds and launches on a connected Android device or emulator.
 
 ## Next steps
 
