@@ -203,6 +203,9 @@ kotlin {
 
 <Tab name="plugin">
 
+<Tabs key="modern-legacy-apply">
+<Tab name="plugins block">
+
 **Before**:
 
 ```kotlin title="<app-src>/android/build.gradle.kts"
@@ -342,10 +345,83 @@ kotlin {
 ```
 
 </Tab>
+</Tabs>
 
-<Tab name="host app">
 </Tab>
 
+<Tab name="host app">
+
+**Before**:
+
+```kotlin title="<app-src>/android/build.gradle.kts"
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    // ...
+}
+
+android {
+    // ...
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+    // ...
+}
+
+// ...
+```
+
+Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
+
+```kotlin diff title="<app-src>/android/build.gradle.kts"
+  plugins {
+      alias(libs.plugins.android.application)
+-     alias(libs.plugins.kotlin.android)
+      // ...
+  }
+
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
+```
+Replace the `kotlinOptions` block with the following:
+
+```kotlin diff title="<app-src>/android/build.gradle.kts"
++ kotlin {
++     compilerOptions {
++         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
++     }
++ }
+```
+
+Here is how the file will likely end up:
+
+**After**:
+
+```kotlin title="<app-src>/android/build.gradle.kts"
+plugins {
+    alias(libs.plugins.android.application)
+    // ...
+}
+
+android {
+    // ...
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+// ...
+```
+
+</Tab>
 </Tabs>
 
 ### Validate
