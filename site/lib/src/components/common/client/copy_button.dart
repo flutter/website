@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../button.dart';
@@ -30,23 +30,31 @@ class _CopyButtonState extends State<CopyButton> {
   String? content;
   bool _copied = false;
 
-  static final RegExp _terminalReplacementPattern = RegExp(
-    r'^(\s*\$\s*)|(PS\s+)?(C:\\(.*)>\s*)',
-    multiLine: true,
-  );
-
   @override
   void initState() {
     if (kIsWeb) {
       // Extract the code content and unhide the copy button on the client.
       context.binding.addPostFrameCallback(() {
         setState(() {
-          content = buttonKey.currentNode
+          final codeElement = buttonKey.currentNode
               ?.closest('.code-block-wrapper')
               ?.querySelector('pre code')
-              ?.textContent
-              ?.replaceAll(_terminalReplacementPattern, '')
-              .replaceAll('\u200B', ''); // Remove zero-width spaces
+              ?.cloneNode(true);
+          if (codeElement == null) return;
+
+          // Filter out hidden elements like the terminal sign or folding icons.
+          final iterator = web.document.createNodeIterator(codeElement);
+          web.Node? currentNode;
+          while ((currentNode = iterator.nextNode()) != null) {
+            if (currentNode.isA<web.Element>() &&
+                (currentNode as web.Element).getAttribute('aria-hidden') ==
+                    'true') {
+              currentNode.remove();
+            }
+          }
+
+          // Remove zero-width spaces
+          content = codeElement.textContent?.replaceAll('\u200B', '');
         });
 
         assert(
