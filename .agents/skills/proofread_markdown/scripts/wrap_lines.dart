@@ -57,9 +57,7 @@ String wrapMarkdown(String content, {int width = 80}) {
     // Handle lists or quotes (matching python script's simple approach)
     if (stripped.startsWith('-') ||
         stripped.startsWith('*') ||
-        stripped.startsWith('1.') ||
-        stripped.startsWith('2.') ||
-        stripped.startsWith('3.')) {
+        RegExp(r'^\d+\.').hasMatch(stripped)) {
       output.addAll(wrapText(line, width));
       continue;
     }
@@ -72,25 +70,27 @@ String wrapMarkdown(String content, {int width = 80}) {
 }
 
 List<String> wrapText(String text, int width) {
-  final words = text.split(RegExp(r'\s+'));
+  final leadingSpace = RegExp(r'^\s*').stringMatch(text) ?? '';
+  final words = text.trim().split(RegExp(r'\s+'));
   final lines = <String>[];
-  var currentLine = '';
+  var currentLine = leadingSpace;
 
   for (final word in words) {
-    if ((currentLine + word).length > width) {
-      if (currentLine.isNotEmpty) {
-        lines.add(currentLine.trim());
-        currentLine = word;
+    final space = currentLine == leadingSpace ? '' : ' ';
+    if ((currentLine.length + space.length + word.length) > width) {
+      if (currentLine != leadingSpace) {
+        lines.add(currentLine);
+        currentLine = leadingSpace + word;
       } else {
-        lines.add(word);
-        currentLine = '';
+        lines.add(leadingSpace + word);
+        currentLine = leadingSpace;
       }
     } else {
-      currentLine += (currentLine.isEmpty ? '' : ' ') + word;
+      currentLine += space + word;
     }
   }
-  if (currentLine.isNotEmpty) {
-    lines.add(currentLine.trim());
+  if (currentLine != leadingSpace) {
+    lines.add(currentLine);
   }
   return lines;
 }

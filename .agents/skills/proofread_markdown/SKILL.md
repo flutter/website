@@ -19,7 +19,7 @@ agents, when a screenshot of a markdown file is needed.
 1. Run the `wrap_lines.dart` script on the file to automate line wrapping:
 
    ```bash
-   dart /Users/afitch/flutter_web/website/.agents/skills/proofread_markdown/scripts/wrap_lines.dart <file_path>
+   dart .agents/skills/proofread_markdown/scripts/wrap_lines.dart <file_path>
    ```
 
 2. Verify that the file was wrapped correctly (preserving headings and
