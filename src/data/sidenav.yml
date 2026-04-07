@@ -757,6 +757,8 @@
       permalink: /testing/build-modes
     - title: Hot reload
       permalink: /tools/hot-reload
+    - title: Dot shorthands
+      permalink: /ui/dot-shorthands
 
 - title: App solutions
   icon: apps
