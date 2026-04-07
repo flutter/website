@@ -65,8 +65,7 @@ Container(
 ## Where to use dot shorthands
 
 Dot shorthands work anywhere the Dart compiler has a clear "context type",
-meaning it knows exactly what type it expects. In Flutter, this is almost
-everywhere inside a widget's property list. 
+meaning it knows exactly what type it expects.
 
 The most common targets for dot shorthands in Flutter are:
 
@@ -76,7 +75,7 @@ The most common targets for dot shorthands in Flutter are:
 
 ### Example: enums
 
-When a property expects an `enum`, such as `mainAxisAlignment`, you can omit the
+When the context type is expects an `enum`, such as `mainAxisAlignment`, you can omit the
 enum's name and just provide the value preceded by a dot (`.`):
 
 ```dart
@@ -105,13 +104,12 @@ You can also use dot shorthands for named constructors. Many Flutter layout prop
 
 ```dart
 Padding(
-  padding: .symmetric(horizontal: 16.0, vertical: 8.0), // Infers EdgeInsetsGeometry.symmetric
+  padding: .all(8.0), // Infers EdgeInsetsGeometry.all
   child: Text('Spaced out text'),
 )
 ```
 
-You can even use `.new` to call an unnamed constructor, though this is less
-common in standard widget trees:
+You can also use `.new` to call an unnamed constructor:
 
 ```dart
 class _MyState extends State<MyWidget> {
