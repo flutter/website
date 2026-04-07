@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../button.dart';
@@ -43,13 +42,15 @@ class _CopyButtonState extends State<CopyButton> {
           if (codeElement == null) return;
 
           // Filter out hidden elements like the terminal sign or folding icons.
-          final iterator = web.document.createNodeIterator(codeElement);
+          final iterator = web.document.createNodeIterator(
+            codeElement,
+            /* NodeFilter.SHOW_ELEMENT */ 1,
+          );
           web.Node? currentNode;
           while ((currentNode = iterator.nextNode()) != null) {
-            if (currentNode.isA<web.Element>() &&
-                (currentNode as web.Element).getAttribute('aria-hidden') ==
-                    'true') {
-              currentNode.remove();
+            final element = currentNode as web.Element;
+            if (element.getAttribute('aria-hidden') == 'true') {
+              element.remove();
             }
           }
 
