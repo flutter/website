@@ -4,9 +4,11 @@ description: Learn to use the Dart DevTools when developing Flutter apps.
 layout: tutorial
 ---
 
-Learn to use the widget inspector and property editor to debug layout issues and experiment with properties in real-time.
+Learn to use the widget inspector and property editor to debug layout issues
+and experiment with properties in real-time.
 
-<YouTubeEmbed id="CIfLE0CShbg" title="Intro to Flutter and Dart DevTools" fullWidth="true"></YouTubeEmbed>
+<YouTubeEmbed id="CIfLE0CShbg" title="Intro to Flutter and Dart DevTools"
+  fullWidth="true"></YouTubeEmbed>
 
 <SummaryCard>
 title: What you'll accomplish
@@ -30,11 +32,24 @@ two particularly useful features:
 the **widget inspector** and the **property editor**.
 
 First, launch DevTools by running the following commands while
-your app is running in debug mode:
+your app is running in debug mode.
+Run this command in a **separate terminal window**
+from where your app is running:
 
 ```console
 $ dart devtools
 ```
+
+Running this command starts the DevTools server and
+opens the interface in a browser.
+
+To connect DevTools to your running app:
+
+1. Find the DevTools URL printed in the terminal
+   where your app is running (for example:
+   `Serving DevTools at http://127.0.0.1:9101`).
+2. Copy this URL.
+3. Paste it into the connect bar in the DevTools browser page.
 
 :::note Run in your IDE
 
@@ -43,7 +58,6 @@ you can also run DevTools directly inside
 Code OSS-based editors such as [VS Code][] as well as
 [IntelliJ and Android Studio][].
 The screenshots in this lesson are from VS Code.
-
 :::
 
 [Dart and Flutter DevTools]: /tools/devtools
@@ -57,7 +71,8 @@ It helps you understand the layout of your UI and
 identifies which widgets are responsible for different parts of the screen.
 Running against the app you've built so far, the inspector looks like this:
 
-<img src='/assets/images/docs/tutorial/widget_inspector.png' width="320px" alt="A screenshot of the Flutter widget inspector tool.">
+<img src='/assets/images/docs/tutorial/widget_inspector.png'
+  width="320px" alt="A screenshot of the Flutter widget inspector tool.">
 
 Consider the `GamePage` widget you created in this section:
 
@@ -144,7 +159,8 @@ This error is referred to as the "unbounded constraints" error.
 Watch the following video to get an understanding of how to
 spot and resolve this issue.
 
-<YouTubeEmbed id="jckqXR5CrPI" title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
+<YouTubeEmbed id="jckqXR5CrPI"
+  title="Decoding Flutter: Unbounded height and width"></YouTubeEmbed>
 
 [constraints]: /ui/layout/constraints
 [`double.infinity`]: {{site.api}}/flutter/dart-core/double/infinity-constant.html
@@ -160,7 +176,8 @@ the property editor displays all the properties of that selected widget.
 This is a powerful tool for understanding why a widget looks the way it does and
 for experimenting with property value changes in real-time.
 
-<img src='/assets/images/docs/tutorial/property_editor.png' width="320px" alt="A screenshot of the Flutter property editor tool.">
+<img src='/assets/images/docs/tutorial/property_editor.png'
+  width="320px" alt="A screenshot of the Flutter property editor tool.">
 
 Look at the `Tile` widget's `build` method from earlier:
 
