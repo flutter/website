@@ -4,7 +4,7 @@
 
 import 'package:jaspr/jaspr.dart';
 
-import '../../util/component_ref.dart';
+import '../../utils/component_ref.dart';
 import '../tooltip.dart';
 
 @client
@@ -21,8 +21,8 @@ class SimpleTooltip extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return Tooltip(
-      target: target.component,
-      content: content.component,
+      target: target,
+      content: content,
     );
   }
 }

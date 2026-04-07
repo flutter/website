@@ -6,8 +6,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../../util.dart';
-import '../util/global_event_listener.dart';
+import '../util.dart';
+import '../utils/global_event_listener.dart';
 
 class Tooltip extends StatefulComponent {
   const Tooltip({

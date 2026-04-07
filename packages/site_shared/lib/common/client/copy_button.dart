@@ -11,11 +11,13 @@ import '../button.dart';
 class CopyButton extends StatefulComponent {
   const CopyButton({
     this.buttonText,
+    this.toCopy,
     this.classes = const [],
     this.title,
   });
 
   final String? title;
+  final String? toCopy;
   final String? buttonText;
   final List<String> classes;
 
@@ -32,38 +34,42 @@ class _CopyButtonState extends State<CopyButton> {
   @override
   void initState() {
     if (kIsWeb) {
-      // Extract the code content and unhide the copy button on the client.
-      context.binding.addPostFrameCallback(() {
-        setState(() {
-          final codeElement = buttonKey.currentNode
-              ?.closest('.code-block-wrapper')
-              ?.querySelector('pre code')
-              ?.cloneNode(true);
-          if (codeElement == null) return;
+      if (component.toCopy != null) {
+        content = component.toCopy;
+      } else {
+        // Extract the code content and unhide the copy button on the client.
+        context.binding.addPostFrameCallback(() {
+          setState(() {
+            final codeElement = buttonKey.currentNode
+                ?.closest('.code-block-wrapper')
+                ?.querySelector('pre code')
+                ?.cloneNode(true);
+            if (codeElement == null) return;
 
-          // Filter out hidden elements like the terminal sign or folding icons.
-          final iterator = web.document.createNodeIterator(
-            codeElement,
-            /* NodeFilter.SHOW_ELEMENT */ 1,
-          );
-          web.Node? currentNode;
-          while ((currentNode = iterator.nextNode()) != null) {
-            final element = currentNode as web.Element;
-            if (element.getAttribute('aria-hidden') == 'true') {
-              element.remove();
+            // Filter out hidden elements like the terminal sign or folding icons.
+            final iterator = web.document.createNodeIterator(
+              codeElement,
+              /* NodeFilter.SHOW_ELEMENT */ 1,
+            );
+            web.Node? currentNode;
+            while ((currentNode = iterator.nextNode()) != null) {
+              final element = currentNode as web.Element;
+              if (element.getAttribute('aria-hidden') == 'true') {
+                element.remove();
+              }
             }
-          }
 
-          // Remove zero-width spaces
-          content = codeElement.textContent?.replaceAll('\u200B', '');
+            // Remove zero-width spaces
+            content = codeElement.textContent?.replaceAll('\u200B', '');
+          });
+
+          assert(
+            content != null,
+            'CopyButton: Unable to find code content to copy. '
+            'Is the CopyButton inside a code block?',
+          );
         });
-
-        assert(
-          content != null,
-          'CopyButton: Unable to find code content to copy. '
-          'Is the CopyButton inside a code block?',
-        );
-      });
+      }
     }
 
     super.initState();

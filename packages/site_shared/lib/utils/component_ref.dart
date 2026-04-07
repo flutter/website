@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:nanoid2/nanoid2.dart';
 
@@ -17,32 +18,32 @@ import 'retake_element.dart';
 /// On the server, wrap your component with `context.ref(yourComponent)`, and
 /// pass the resulting [ComponentRef] to your @client component.
 /// On the client, retrieve the original component by calling `myRef.component`.
-class ComponentRef {
-  const ComponentRef._(this.id);
+class ComponentRef extends StatelessComponent {
+  const ComponentRef._(this.id, [this._component = const .empty()]);
 
   final String id;
+  final Component _component;
 
-  Component get component {
-    return Builder(
-      builder: (context) {
-        if (!kIsWeb) {
-          final scope =
-              context
-                      .getElementForInheritedComponentOfExactType<
-                        ComponentRefScope
-                      >()
-                  as _ComponentRefScopeElement?;
-          return Component.wrapElement(
-            id: id,
-            child: scope!.getComponentById(id),
-          );
-        } else {
-          final elem = retakeElement(context, (elem) => elem.id == id);
-          assert(elem != null, 'Element with id "$id" not found');
-          return wrapNode(elem!);
-        }
-      },
-    );
+  @override
+  Component build(BuildContext context) {
+    if (!kIsWeb) {
+      final scope =
+          context
+                  .getElementForInheritedComponentOfExactType<
+                    ComponentRefScope
+                  >()
+              as _ComponentRefScopeElement?;
+      assert(scope != null, 'No ComponentRefScope found in context');
+      scope!.register(id, _component);
+
+      return Component.fragment([
+        RawText('<!--ref:$id-->'),
+        _component,
+        RawText('<!--/ref:$id-->'),
+      ]);
+    }
+
+    return retakeRef(context, id);
   }
 
   @decoder
@@ -54,16 +55,8 @@ class ComponentRef {
   String toId() => id;
 }
 
-extension ComponentRefExtension on BuildContext {
-  /// Wraps a [Component] in a [ComponentRef] for use in @client components.
-  ComponentRef ref(Component child) {
-    final scope =
-        getElementForInheritedComponentOfExactType<ComponentRefScope>()
-            as _ComponentRefScopeElement?;
-    assert(scope != null, 'No ComponentRefScope found in context');
-    final ref = scope!.register(child);
-    return ref;
-  }
+ComponentRef ref(Component child) {
+  return ComponentRef._(nanoid(length: 8), child);
 }
 
 /// A scope for registering and retrieving component references.
@@ -94,9 +87,7 @@ class _ComponentRefScopeElement extends InheritedElement {
     return component!;
   }
 
-  ComponentRef register(Component child) {
-    final id = 'ref-${nanoid(length: 8)}';
+  void register(String id, Component child) {
     _registeredComponents[id] = child;
-    return ComponentRef._(id);
   }
 }

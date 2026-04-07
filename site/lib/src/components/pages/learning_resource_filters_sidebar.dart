@@ -4,11 +4,11 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/common/material_icon.dart';
 
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
 import '../../util.dart';
-import '../common/material_icon.dart';
 import 'learning_resource_filters.dart';
 
 @client

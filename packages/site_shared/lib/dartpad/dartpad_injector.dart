@@ -4,8 +4,9 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import '../util/retake_element.dart';
 import 'embedded_dartpad.dart';
+
+import 'extract_content.dart' if (dart.library.io) 'extract_content_vm.dart';
 
 /// Prepares a code block that will be replaced with an embedded
 /// DartPad when the site is loaded.
@@ -79,16 +80,7 @@ class _DartPadInjectorState extends State<DartPadInjector> {
 
     if (kIsWeb) {
       // During hydration, extract the content from the pre-rendered code block.
-      final elem = retakeElement(context, (elem) {
-        return elem.tagName.toLowerCase() == 'pre';
-      });
-
-      if (elem == null) {
-        content = '';
-      } else {
-        elem.parentNode?.removeChild(elem);
-        content = elem.textContent ?? '';
-      }
+      content = extractContent(context as Element);
     }
   }
 

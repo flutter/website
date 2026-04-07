@@ -10,9 +10,9 @@ import 'package:jaspr/jaspr.dart' as jaspr;
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:meta/meta.dart';
 import 'package:opal/opal.dart' as opal;
+import 'package:site_shared/common/wrapped_code_block.dart';
+import 'package:site_shared/dartpad/dartpad_injector.dart';
 
-import '../components/common/wrapped_code_block.dart';
-import '../components/dartpad/dartpad_injector.dart';
 import '../highlight/theme/dark.dart';
 import '../highlight/theme/light.dart';
 import '../highlight/token_renderer.dart' as highlighter;

@@ -76,7 +76,6 @@ class DocLayout extends FlutterDocsLayout {
               ),
 
               child,
-
               PrevNext(
                 previousPage: PageNavigationEntry.fromData(pageData['prev']),
                 nextPage: PageNavigationEntry.fromData(pageData['next']),

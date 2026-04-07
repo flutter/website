@@ -6,28 +6,10 @@
 
 import 'package:jaspr/client.dart';
 
-import 'package:docs_flutter_dev_site/src/components/common/client/collapse_button.dart'
-    deferred as _collapse_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
-    deferred as _cookie_notice;
-import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
-    deferred as _copy_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/download_button.dart'
-    deferred as _download_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/download_latest_button.dart'
     deferred as _download_latest_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/feedback.dart'
-    deferred as _feedback;
-import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_button.dart'
-    deferred as _on_this_page_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
     deferred as _os_selector;
-import 'package:docs_flutter_dev_site/src/components/common/client/page_header_options.dart'
-    deferred as _page_header_options;
-import 'package:docs_flutter_dev_site/src/components/common/client/simple_tooltip.dart'
-    deferred as _simple_tooltip;
-import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
-    deferred as _dartpad_injector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
@@ -46,10 +28,26 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     deferred as _learning_resource_filters_sidebar;
 import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
     deferred as _quiz;
-import 'package:docs_flutter_dev_site/src/components/util/component_ref.dart'
-    as _component_ref;
 import 'package:docs_flutter_dev_site/src/models/quiz_model.dart'
     as _quiz_model;
+import 'package:site_shared/common/client/collapse_button.dart'
+    deferred as _collapse_button;
+import 'package:site_shared/common/client/cookie_notice.dart'
+    deferred as _cookie_notice;
+import 'package:site_shared/common/client/copy_button.dart'
+    deferred as _copy_button;
+import 'package:site_shared/common/client/download_button.dart'
+    deferred as _download_button;
+import 'package:site_shared/common/client/feedback.dart' deferred as _feedback;
+import 'package:site_shared/common/client/on_this_page_button.dart'
+    deferred as _on_this_page_button;
+import 'package:site_shared/common/client/page_header_options.dart'
+    deferred as _page_header_options;
+import 'package:site_shared/common/client/simple_tooltip.dart'
+    deferred as _simple_tooltip;
+import 'package:site_shared/dartpad/dartpad_injector.dart'
+    deferred as _dartpad_injector;
+import 'package:site_shared/utils/component_ref.dart' as _component_ref;
 
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
@@ -69,29 +67,6 @@ import 'package:docs_flutter_dev_site/src/models/quiz_model.dart'
 /// ```
 ClientOptions get defaultClientOptions => ClientOptions(
   clients: {
-    'collapse_button': ClientLoader(
-      (p) => _collapse_button.CollapseButton(
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
-      ),
-      loader: _collapse_button.loadLibrary,
-    ),
-    'cookie_notice': ClientLoader(
-      (p) => _cookie_notice.CookieNotice(),
-      loader: _cookie_notice.loadLibrary,
-    ),
-    'copy_button': ClientLoader(
-      (p) => _copy_button.CopyButton(
-        buttonText: p['buttonText'] as String?,
-        classes: (p['classes'] as List<Object?>).cast<String>(),
-        title: p['title'] as String?,
-      ),
-      loader: _copy_button.loadLibrary,
-    ),
-    'download_button': ClientLoader(
-      (p) => _download_button.DownloadButton(name: p['name'] as String),
-      loader: _download_button.loadLibrary,
-    ),
     'download_latest_button': ClientLoader(
       (p) => _download_latest_button.DownloadLatestButton(
         os: p['os'] as String,
@@ -99,41 +74,9 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _download_latest_button.loadLibrary,
     ),
-    'feedback': ClientLoader(
-      (p) => _feedback.FeedbackComponent(issueUrl: p['issueUrl'] as String),
-      loader: _feedback.loadLibrary,
-    ),
-    'on_this_page_button': ClientLoader(
-      (p) => _on_this_page_button.OnThisPageButton(),
-      loader: _on_this_page_button.loadLibrary,
-    ),
     'os_selector': ClientLoader(
       (p) => _os_selector.OsSelector(),
       loader: _os_selector.loadLibrary,
-    ),
-    'page_header_options': ClientLoader(
-      (p) => _page_header_options.PageHeaderOptions(
-        title: p['title'] as String,
-        sourceUrl: p['sourceUrl'] as String?,
-        issueUrl: p['issueUrl'] as String?,
-      ),
-      loader: _page_header_options.loadLibrary,
-    ),
-    'simple_tooltip': ClientLoader(
-      (p) => _simple_tooltip.SimpleTooltip(
-        target: _component_ref.ComponentRef.fromId(p['target'] as String),
-        content: _component_ref.ComponentRef.fromId(p['content'] as String),
-      ),
-      loader: _simple_tooltip.loadLibrary,
-    ),
-    'dartpad_injector': ClientLoader(
-      (p) => _dartpad_injector.DartPadInjector(
-        title: p['title'] as String,
-        theme: p['theme'] as String?,
-        height: p['height'] as String?,
-        runAutomatically: p['runAutomatically'] as bool,
-      ),
-      loader: _dartpad_injector.loadLibrary,
     ),
     'pagenav': ClientLoader(
       (p) => _pagenav.PageNav(
@@ -186,6 +129,65 @@ ClientOptions get defaultClientOptions => ClientOptions(
             .toList(),
       ),
       loader: _quiz.loadLibrary,
+    ),
+    'site_shared:collapse_button': ClientLoader(
+      (p) => _collapse_button.CollapseButton(
+        classes: (p['classes'] as List<Object?>).cast<String>(),
+        title: p['title'] as String?,
+      ),
+      loader: _collapse_button.loadLibrary,
+    ),
+    'site_shared:cookie_notice': ClientLoader(
+      (p) => _cookie_notice.CookieNotice(
+        host: p['host'] as String,
+        alwaysDarkMode: p['alwaysDarkMode'] as bool,
+      ),
+      loader: _cookie_notice.loadLibrary,
+    ),
+    'site_shared:copy_button': ClientLoader(
+      (p) => _copy_button.CopyButton(
+        buttonText: p['buttonText'] as String?,
+        toCopy: p['toCopy'] as String?,
+        classes: (p['classes'] as List<Object?>).cast<String>(),
+        title: p['title'] as String?,
+      ),
+      loader: _copy_button.loadLibrary,
+    ),
+    'site_shared:download_button': ClientLoader(
+      (p) => _download_button.DownloadButton(name: p['name'] as String),
+      loader: _download_button.loadLibrary,
+    ),
+    'site_shared:feedback': ClientLoader(
+      (p) => _feedback.FeedbackComponent(issueUrl: p['issueUrl'] as String),
+      loader: _feedback.loadLibrary,
+    ),
+    'site_shared:on_this_page_button': ClientLoader(
+      (p) => _on_this_page_button.OnThisPageButton(),
+      loader: _on_this_page_button.loadLibrary,
+    ),
+    'site_shared:page_header_options': ClientLoader(
+      (p) => _page_header_options.PageHeaderOptions(
+        title: p['title'] as String,
+        sourceUrl: p['sourceUrl'] as String?,
+        issueUrl: p['issueUrl'] as String?,
+      ),
+      loader: _page_header_options.loadLibrary,
+    ),
+    'site_shared:simple_tooltip': ClientLoader(
+      (p) => _simple_tooltip.SimpleTooltip(
+        target: _component_ref.ComponentRef.fromId(p['target'] as String),
+        content: _component_ref.ComponentRef.fromId(p['content'] as String),
+      ),
+      loader: _simple_tooltip.loadLibrary,
+    ),
+    'site_shared:dartpad_injector': ClientLoader(
+      (p) => _dartpad_injector.DartPadInjector(
+        title: p['title'] as String,
+        theme: p['theme'] as String?,
+        height: p['height'] as String?,
+        runAutomatically: p['runAutomatically'] as bool,
+      ),
+      loader: _dartpad_injector.loadLibrary,
     ),
   },
 );

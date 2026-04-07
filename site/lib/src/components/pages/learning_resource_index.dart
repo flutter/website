@@ -12,7 +12,7 @@ import 'learning_resource_filters.dart';
 import 'learning_resource_filters_sidebar.dart';
 
 final class LearningResourceIndex extends StatelessComponent {
-  LearningResourceIndex({super.key});
+  const LearningResourceIndex({super.key});
 
   @override
   Component build(BuildContext context) {

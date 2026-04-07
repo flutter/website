@@ -14,7 +14,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:markdown_description_list/markdown_description_list.dart';
 
-import '../extensions/registry.dart';
 import 'alert_syntax.dart';
 import 'attribute_syntax.dart';
 import 'fenced_code_block_syntax.dart';
@@ -65,7 +64,7 @@ class DashMarkdown extends AsyncStatelessComponent {
         ? _defaultMarkdownDocument.parseInline(content)
         : _defaultMarkdownDocument.parse(content);
     var nodes = DashMarkdownParser.buildNodes(markdownNodes);
-    for (final extension in allNodeProcessingExtensions) {
+    for (final extension in currentPage.config.extensions) {
       nodes = await extension.apply(currentPage, nodes);
     }
 

@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../util.dart';
+import '../util.dart';
 
 class Card extends StatelessComponent {
   /// Creates a card that can have a [header], [content], and [actions].

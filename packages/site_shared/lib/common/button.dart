@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../util.dart';
+import '../util.dart';
 import 'material_icon.dart';
 
 /// A generic button component with different style variants.
@@ -14,6 +14,7 @@ class Button extends StatelessComponent {
   const Button({
     super.key,
     this.icon,
+    this.trailingIcon,
     this.href,
     this.content,
     this.style = ButtonStyle.text,
@@ -30,6 +31,7 @@ class Button extends StatelessComponent {
   final String? title;
   final ButtonStyle style;
   final String? icon;
+  final String? trailingIcon;
   final String? id;
   final String? href;
   final Map<String, String> attributes;
@@ -48,7 +50,8 @@ class Button extends StatelessComponent {
 
     final mergedClasses = [
       style.cssClass,
-      if (icon != null && content == null) 'icon-button',
+      if ((icon != null || trailingIcon != null) && content == null)
+        'icon-button',
       ...?classes,
     ].toClasses;
 
@@ -56,6 +59,7 @@ class Button extends StatelessComponent {
       if (icon case final iconId?) MaterialIcon(iconId),
       if (content case final contentText?)
         asRaw ? RawText(contentText) : .text(contentText),
+      if (trailingIcon case final iconId?) MaterialIcon(iconId),
     ];
 
     if (href case final href?) {
@@ -89,18 +93,4 @@ enum ButtonStyle {
     ButtonStyle.outlined => 'outlined-button',
     ButtonStyle.text => 'text-button',
   };
-}
-
-class SegmentedButton extends StatelessComponent {
-  const SegmentedButton({
-    super.key,
-    required this.children,
-  });
-
-  final List<Component> children;
-
-  @override
-  Component build(BuildContext context) {
-    return span(classes: ['segmented-button'].toClasses, children);
-  }
 }

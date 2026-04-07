@@ -5,10 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../../markdown/markdown_parser.dart';
-import '../common/button.dart';
-import '../common/material_icon.dart';
+import 'package:site_shared/common/button.dart';
+import 'package:site_shared/common/material_icon.dart';
+import 'package:site_shared/markdown/markdown_parser.dart';
 
 class PlatformsGrid extends CustomComponentBase {
   const PlatformsGrid();

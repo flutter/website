@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../util.dart';
+import '../util.dart';
 
 /// A Material Symbols icon rendered as a span element.
 class MaterialIcon extends StatelessComponent {

@@ -7,7 +7,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../../util.dart';
+import '../util.dart';
 import 'material_icon.dart';
 
 /// Breadcrumbs navigation component that
@@ -18,11 +18,14 @@ import 'material_icon.dart';
 /// - https://schema.org/BreadcrumbList
 /// - https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html
 class PageBreadcrumbs extends StatelessComponent {
-  const PageBreadcrumbs({super.key});
+  const PageBreadcrumbs({this.crumbs, super.key});
+
+  final List<BreadcrumbItem>? crumbs;
 
   @override
   Component build(BuildContext context) {
-    final crumbs = _breadcrumbsForPage(context.pages, context.page);
+    final crumbs =
+        this.crumbs ?? _breadcrumbsForPage(context.pages, context.page);
     if (crumbs == null || crumbs.isEmpty) {
       return const Component.empty();
     }
@@ -54,7 +57,7 @@ class PageBreadcrumbs extends StatelessComponent {
   ///
   /// Uses page metadata to generate breadcrumb titles with fallbacks:
   /// `breadcrumb` > `shortTitle` > `title`.
-  List<_BreadcrumbItem>? _breadcrumbsForPage(List<Page> pages, Page page) {
+  List<BreadcrumbItem>? _breadcrumbsForPage(List<Page> pages, Page page) {
     final pageUrl = page.url;
 
     // Only show breadcrumbs if the URL isn't empty.
@@ -71,7 +74,7 @@ class PageBreadcrumbs extends StatelessComponent {
         .toList(growable: false);
     if (segments.isEmpty) return null;
 
-    final breadcrumbs = <_BreadcrumbItem>[];
+    final breadcrumbs = <BreadcrumbItem>[];
     var currentPath = '';
 
     // Build breadcrumbs for each segment except the current page.
@@ -88,7 +91,7 @@ class PageBreadcrumbs extends StatelessComponent {
 
       if (indexPage.breadcrumb case final indexBreadcrumb?) {
         breadcrumbs.add(
-          _BreadcrumbItem(
+          BreadcrumbItem(
             title: indexBreadcrumb,
             url: indexPage.url,
           ),
@@ -104,7 +107,7 @@ class PageBreadcrumbs extends StatelessComponent {
 
     // Add the current page as the final breadcrumb.
     breadcrumbs.add(
-      _BreadcrumbItem(
+      BreadcrumbItem(
         title: pageBreadcrumb,
         url: pageUrl,
       ),
@@ -127,8 +130,8 @@ extension on Page {
   }
 }
 
-final class _BreadcrumbItem {
-  const _BreadcrumbItem({required this.title, required this.url});
+final class BreadcrumbItem {
+  const BreadcrumbItem({required this.title, required this.url});
 
   final String title;
   final String url;
@@ -142,7 +145,7 @@ final class _BreadcrumbItemComponent extends StatelessComponent {
     required this.isLast,
   });
 
-  final _BreadcrumbItem crumb;
+  final BreadcrumbItem crumb;
   final int index;
   final bool isLast;
 

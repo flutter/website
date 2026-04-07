@@ -7,21 +7,34 @@ import 'package:jaspr/client.dart';
 import 'package:jaspr/src/dom/type_checks.dart';
 import 'package:universal_web/web.dart' as web;
 
-/// Retakes the element matching [predicate] during hydration.
-web.Element? retakeElement(
-  BuildContext context,
-  bool Function(web.Element element) predicate,
-) {
+/// Retakes the element with the specified [id] ref during hydration.
+Component retakeRef(BuildContext context, String id) {
   final r = (context as Element).parentRenderObjectElement?.renderObject;
-  if (r == null) return null;
-  final node = (r as DomRenderObject).retakeNode((node) {
-    return node.isElement && predicate(node as web.Element);
-  });
-  return node as web.Element?;
-}
+  if (r == null) return const .empty();
 
-Component wrapNode(web.Node node) {
-  return RawNode(node);
+  var node = (r as DomRenderObject).retakeNode((node) {
+    return node.isComment && (node as web.Comment).data.startsWith('ref:$id');
+  });
+
+  if (node == null) return const .empty();
+
+  final nodes = <web.Node>[node];
+
+  node = node.nextSibling;
+  while (node != null) {
+    r.retakeNode((n) => n == node);
+    nodes.add(node);
+
+    if (node.isComment && (node as web.Comment).data.startsWith('/ref:$id')) {
+      break;
+    }
+
+    node = node.nextSibling;
+  }
+
+  return .fragment([
+    for (final node in nodes) RawNode(node),
+  ]);
 }
 
 class RawNode extends Component {

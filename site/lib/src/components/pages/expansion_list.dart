@@ -7,8 +7,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
+import 'package:site_shared/markdown/markdown_parser.dart';
 
-import '../../markdown/markdown_parser.dart';
 import '../../util.dart';
 
 class ExpansionListItem {

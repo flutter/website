@@ -5,13 +5,13 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/common/client/on_this_page_button.dart';
+import 'package:site_shared/common/material_icon.dart';
+import 'package:site_shared/markdown/markdown_parser.dart';
+import 'package:site_shared/utils/component_ref.dart';
 
-import '../../markdown/markdown_parser.dart';
 import '../../models/page_navigation_model.dart';
 import '../../util.dart';
-import '../common/client/on_this_page_button.dart';
-import '../common/material_icon.dart';
-import '../util/component_ref.dart';
 import 'client/pagenav.dart';
 
 final class DashTableOfContents extends StatelessComponent {
@@ -68,7 +68,7 @@ final class PageNavBar extends StatelessComponent {
       ],
       pageNumber: linkedPageTitle != null ? currentLinkedPageNumber : null,
       initialHeading: currentTitle,
-      content: context.ref(
+      content: ref(
         div([
           if (data.pageEntries.isEmpty) ...[
             a(

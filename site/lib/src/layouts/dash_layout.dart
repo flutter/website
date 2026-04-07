@@ -5,8 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/common/client/cookie_notice.dart';
 
-import '../components/common/client/cookie_notice.dart';
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/layout/sidenav.dart';
@@ -208,7 +208,7 @@ try {
           href: '#site-content-title',
           [.text('Skip to main content')],
         ),
-        const CookieNotice(),
+        const CookieNotice(host: 'docs.flutter.dev'),
         const DashHeader(),
         div(id: 'site-below-header', [
           div(id: 'site-main-row', [

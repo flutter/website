@@ -7,7 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import 'package:universal_web/web.dart' as web;
 
-import '../util/global_event_listener.dart';
+import '../utils/global_event_listener.dart';
 
 /// A dropdown with a toggle button and expandable content.
 final class Dropdown extends StatefulComponent {

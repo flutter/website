@@ -5,28 +5,10 @@
 // Generated with jaspr_builder
 
 import 'package:jaspr/server.dart';
-import 'package:docs_flutter_dev_site/src/components/common/client/collapse_button.dart'
-    as _collapse_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/cookie_notice.dart'
-    as _cookie_notice;
-import 'package:docs_flutter_dev_site/src/components/common/client/copy_button.dart'
-    as _copy_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/download_button.dart'
-    as _download_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/download_latest_button.dart'
     as _download_latest_button;
-import 'package:docs_flutter_dev_site/src/components/common/client/feedback.dart'
-    as _feedback;
-import 'package:docs_flutter_dev_site/src/components/common/client/on_this_page_button.dart'
-    as _on_this_page_button;
 import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.dart'
     as _os_selector;
-import 'package:docs_flutter_dev_site/src/components/common/client/page_header_options.dart'
-    as _page_header_options;
-import 'package:docs_flutter_dev_site/src/components/common/client/simple_tooltip.dart'
-    as _simple_tooltip;
-import 'package:docs_flutter_dev_site/src/components/dartpad/dartpad_injector.dart'
-    as _dartpad_injector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
 import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
@@ -46,6 +28,20 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
 import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
     as _quiz;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
+import 'package:site_shared/common/client/collapse_button.dart'
+    as _collapse_button;
+import 'package:site_shared/common/client/cookie_notice.dart' as _cookie_notice;
+import 'package:site_shared/common/client/copy_button.dart' as _copy_button;
+import 'package:site_shared/common/client/download_button.dart'
+    as _download_button;
+import 'package:site_shared/common/client/feedback.dart' as _feedback;
+import 'package:site_shared/common/client/on_this_page_button.dart'
+    as _on_this_page_button;
+import 'package:site_shared/common/client/page_header_options.dart'
+    as _page_header_options;
+import 'package:site_shared/common/client/simple_tooltip.dart'
+    as _simple_tooltip;
+import 'package:site_shared/dartpad/dartpad_injector.dart' as _dartpad_injector;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -66,53 +62,14 @@ import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
   clients: {
-    _collapse_button.CollapseButton:
-        ClientTarget<_collapse_button.CollapseButton>(
-          'collapse_button',
-          params: __collapse_buttonCollapseButton,
-        ),
-    _cookie_notice.CookieNotice: ClientTarget<_cookie_notice.CookieNotice>(
-      'cookie_notice',
-    ),
-    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
-      'copy_button',
-      params: __copy_buttonCopyButton,
-    ),
-    _download_button.DownloadButton:
-        ClientTarget<_download_button.DownloadButton>(
-          'download_button',
-          params: __download_buttonDownloadButton,
-        ),
     _download_latest_button.DownloadLatestButton:
         ClientTarget<_download_latest_button.DownloadLatestButton>(
           'download_latest_button',
           params: __download_latest_buttonDownloadLatestButton,
         ),
-    _feedback.FeedbackComponent: ClientTarget<_feedback.FeedbackComponent>(
-      'feedback',
-      params: __feedbackFeedbackComponent,
-    ),
-    _on_this_page_button.OnThisPageButton:
-        ClientTarget<_on_this_page_button.OnThisPageButton>(
-          'on_this_page_button',
-        ),
     _os_selector.OsSelector: ClientTarget<_os_selector.OsSelector>(
       'os_selector',
     ),
-    _page_header_options.PageHeaderOptions:
-        ClientTarget<_page_header_options.PageHeaderOptions>(
-          'page_header_options',
-          params: __page_header_optionsPageHeaderOptions,
-        ),
-    _simple_tooltip.SimpleTooltip: ClientTarget<_simple_tooltip.SimpleTooltip>(
-      'simple_tooltip',
-      params: __simple_tooltipSimpleTooltip,
-    ),
-    _dartpad_injector.DartPadInjector:
-        ClientTarget<_dartpad_injector.DartPadInjector>(
-          'dartpad_injector',
-          params: __dartpad_injectorDartPadInjector,
-        ),
     _pagenav.PageNav: ClientTarget<_pagenav.PageNav>(
       'pagenav',
       params: __pagenavPageNav,
@@ -146,24 +103,81 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'quiz',
       params: __quizInteractiveQuiz,
     ),
+    _collapse_button.CollapseButton:
+        ClientTarget<_collapse_button.CollapseButton>(
+          'site_shared:collapse_button',
+          params: __collapse_buttonCollapseButton,
+        ),
+    _cookie_notice.CookieNotice: ClientTarget<_cookie_notice.CookieNotice>(
+      'site_shared:cookie_notice',
+      params: __cookie_noticeCookieNotice,
+    ),
+    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
+      'site_shared:copy_button',
+      params: __copy_buttonCopyButton,
+    ),
+    _download_button.DownloadButton:
+        ClientTarget<_download_button.DownloadButton>(
+          'site_shared:download_button',
+          params: __download_buttonDownloadButton,
+        ),
+    _feedback.FeedbackComponent: ClientTarget<_feedback.FeedbackComponent>(
+      'site_shared:feedback',
+      params: __feedbackFeedbackComponent,
+    ),
+    _on_this_page_button.OnThisPageButton:
+        ClientTarget<_on_this_page_button.OnThisPageButton>(
+          'site_shared:on_this_page_button',
+        ),
+    _page_header_options.PageHeaderOptions:
+        ClientTarget<_page_header_options.PageHeaderOptions>(
+          'site_shared:page_header_options',
+          params: __page_header_optionsPageHeaderOptions,
+        ),
+    _simple_tooltip.SimpleTooltip: ClientTarget<_simple_tooltip.SimpleTooltip>(
+      'site_shared:simple_tooltip',
+      params: __simple_tooltipSimpleTooltip,
+    ),
+    _dartpad_injector.DartPadInjector:
+        ClientTarget<_dartpad_injector.DartPadInjector>(
+          'site_shared:dartpad_injector',
+          params: __dartpad_injectorDartPadInjector,
+        ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
 
+Map<String, Object?> __download_latest_buttonDownloadLatestButton(
+  _download_latest_button.DownloadLatestButton c,
+) => {'os': c.os, 'arch': c.arch};
+Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
+  'breadcrumbs': c.breadcrumbs,
+  'pageNumber': c.pageNumber,
+  'initialHeading': c.initialHeading,
+  'content': c.content.toId(),
+};
+Map<String, Object?> __archive_tableArchiveTable(
+  _archive_table.ArchiveTable c,
+) => {'os': c.os, 'channel': c.channel};
+Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
+  'title': c.title,
+  'questions': c.questions.map((i) => i.toJson()).toList(),
+};
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
+Map<String, Object?> __cookie_noticeCookieNotice(
+  _cookie_notice.CookieNotice c,
+) => {'host': c.host, 'alwaysDarkMode': c.alwaysDarkMode};
 Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
   'buttonText': c.buttonText,
+  'toCopy': c.toCopy,
   'classes': c.classes,
   'title': c.title,
 };
 Map<String, Object?> __download_buttonDownloadButton(
   _download_button.DownloadButton c,
 ) => {'name': c.name};
-Map<String, Object?> __download_latest_buttonDownloadLatestButton(
-  _download_latest_button.DownloadLatestButton c,
-) => {'os': c.os, 'arch': c.arch};
 Map<String, Object?> __feedbackFeedbackComponent(
   _feedback.FeedbackComponent c,
 ) => {'issueUrl': c.issueUrl};
@@ -180,17 +194,4 @@ Map<String, Object?> __dartpad_injectorDartPadInjector(
   'theme': c.theme,
   'height': c.height,
   'runAutomatically': c.runAutomatically,
-};
-Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
-  'breadcrumbs': c.breadcrumbs,
-  'pageNumber': c.pageNumber,
-  'initialHeading': c.initialHeading,
-  'content': c.content.toId(),
-};
-Map<String, Object?> __archive_tableArchiveTable(
-  _archive_table.ArchiveTable c,
-) => {'os': c.os, 'channel': c.channel};
-Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
-  'title': c.title,
-  'questions': c.questions.map((i) => i.toJson()).toList(),
 };

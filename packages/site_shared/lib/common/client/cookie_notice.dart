@@ -6,13 +6,20 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../../../util.dart';
+import '../../util.dart';
 import '../button.dart';
 
 /// The cookie banner to show on a user's first time visiting the site.
 @client
 final class CookieNotice extends StatefulComponent {
-  const CookieNotice({super.key});
+  const CookieNotice({
+    super.key,
+    required this.host,
+    this.alwaysDarkMode = false,
+  });
+
+  final String host;
+  final bool alwaysDarkMode;
 
   @override
   State<CookieNotice> createState() => _CookieNoticeState();
@@ -60,13 +67,16 @@ final class _CookieNoticeState extends State<CookieNotice> {
   Component build(BuildContext context) {
     return section(
       id: 'cookie-notice',
-      classes: [if (showNotice) 'show'].toClasses,
+      classes: [
+        if (showNotice) 'show',
+        if (component.alwaysDarkMode) 'always-dark-mode',
+      ].toClasses,
       attributes: {'data-nosnippet': 'true'},
       [
         div(classes: 'container', [
-          const p([
+          p([
             .text(
-              'docs.flutter.dev uses cookies from Google to deliver and '
+              '${component.host} uses cookies from Google to deliver and '
               'enhance the quality of its services and to analyze traffic.',
             ),
           ]),

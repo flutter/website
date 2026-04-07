@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../util.dart';
+import '../util.dart';
 import 'client/collapse_button.dart';
 import 'client/copy_button.dart';
 import 'material_icon.dart';

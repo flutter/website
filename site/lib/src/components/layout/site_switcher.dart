@@ -4,10 +4,10 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/common/button.dart';
+import 'package:site_shared/common/dropdown.dart';
 
 import '../../util.dart';
-import '../common/button.dart';
-import '../common/dropdown.dart';
 
 @client
 final class SiteSwitcher extends StatelessComponent {

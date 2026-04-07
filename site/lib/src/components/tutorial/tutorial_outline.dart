@@ -5,8 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/markdown/markdown_parser.dart';
 
-import '../../markdown/markdown_parser.dart';
 import '../../models/tutorial_model.dart';
 
 class TutorialOutline extends CustomComponentBase {

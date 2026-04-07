@@ -4,14 +4,14 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/common/dropdown.dart';
+import 'package:site_shared/common/material_icon.dart';
+import 'package:site_shared/utils/component_ref.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../../client/global_scripts.dart';
 import '../../../util.dart';
-import '../../common/dropdown.dart';
-import '../../common/material_icon.dart';
-import '../../util/component_ref.dart';
 
 @client
 class PageNav extends StatefulComponent {
@@ -113,7 +113,7 @@ class _PageNavState extends State<PageNav> {
           ]),
         ],
       ),
-      content: component.content.component,
+      content: component.content,
     );
   }
 
