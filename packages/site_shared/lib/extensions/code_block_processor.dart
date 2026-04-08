@@ -21,7 +21,9 @@ final class CodeBlockProcessor implements PageExtension {
   static final opal.LanguageRegistry _languageRegistry =
       opal.LanguageRegistry.withDefaults();
 
-  const CodeBlockProcessor();
+  const CodeBlockProcessor({required this.defaultTitle});
+
+  final String defaultTitle;
 
   @override
   Future<List<Node>> apply(Page page, List<Node> nodes) async {
@@ -55,7 +57,7 @@ final class CodeBlockProcessor implements PageExtension {
             return ComponentNode(
               DartPadWrapper(
                 content: lines.join('\n'),
-                title: title ?? 'Runnable Flutter example',
+                title: title ?? defaultTitle,
                 theme: metadata['theme'],
                 height: metadata['height'],
                 runAutomatically: metadata['run'] == 'true',

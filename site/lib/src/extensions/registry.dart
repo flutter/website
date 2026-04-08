@@ -20,7 +20,7 @@ const List<PageExtension> allNodeProcessingExtensions = [
   HeaderExtractorExtension(),
   HeaderWrapperExtension(),
   TableWrapperExtension(),
-  CodeBlockProcessor(),
+  CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
   GlossaryLinkProcessor(),
   TutorialNavigationExtension(),
   TutorialStructureExtension(),

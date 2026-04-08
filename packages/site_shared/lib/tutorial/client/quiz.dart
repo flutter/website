@@ -89,7 +89,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
             if (question == currentQuestion) 'active',
           ].toClasses,
           [
-            strong([.text(question.question)]),
+            strong([RawText(question.question)]),
             ol([
               for (final (index, option) in question.options.indexed)
                 li(
@@ -113,14 +113,14 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
                   [
                     div(classes: 'question-wrapper', [
                       div(classes: 'question', [
-                        p([.text(option.text)]),
+                        p([RawText(option.text)]),
                       ]),
                       div(classes: 'solution', [
                         if (option.correct)
                           const p(classes: 'correct', [.text('That\'s right!')])
                         else
-                          const p(classes: 'incorrect', [.text('Not quite')]),
-                        p([.text(option.explanation)]),
+                          const p(classes: 'incorrect', [.text('Not quite.')]),
+                        p([RawText(option.explanation)]),
                       ]),
                     ]),
                   ],
@@ -144,7 +144,7 @@ class _InteractiveQuizState extends State<InteractiveQuiz> {
               currentQuestionIndex--;
             });
           },
-          content: 'Previous',
+          content: 'Previous question',
         ),
         Button(
           key: nextButtonKey,

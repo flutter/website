@@ -10,7 +10,9 @@ import '../markdown/markdown_parser.dart';
 import 'models/tutorial_model.dart';
 
 class TutorialOutline extends CustomComponentBase {
-  const TutorialOutline();
+  const TutorialOutline({this.showUnitTitle = true});
+
+  final bool showUnitTitle;
 
   @override
   Pattern get pattern => 'TutorialOutline';
@@ -30,22 +32,31 @@ class TutorialOutline extends CustomComponentBase {
         };
 
         return div(classes: 'tutorial-outline', [
-          ol([
-            for (final unit in model.units)
-              li([
-                .text(unit.title),
-                ol([
-                  for (final chapter in unit.chapters)
-                    li([
-                      a(href: chapter.url, [
-                        DashMarkdown(content: chapter.title, inline: true),
-                      ]),
-                    ]),
-                ]),
-              ]),
-          ]),
+          ol([for (final unit in model.units) ..._buildUnit(unit)]),
         ]);
       },
     );
+  }
+
+  List<Component> _buildUnit(TutorialUnit unit) {
+    final chapters = [
+      for (final chapter in unit.chapters)
+        li([
+          a(href: chapter.url, [
+            DashMarkdown(content: chapter.title, inline: true),
+          ]),
+        ]),
+    ];
+
+    if (showUnitTitle) {
+      return [
+        li([
+          .text(unit.title),
+          ol(chapters),
+        ]),
+      ];
+    } else {
+      return chapters;
+    }
   }
 }
