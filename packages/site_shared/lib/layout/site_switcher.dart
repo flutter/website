@@ -4,27 +4,29 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/common/button.dart';
-import 'package:site_shared/common/dropdown.dart';
 
-import '../../util.dart';
+import '../common/button.dart';
+import '../common/dropdown.dart';
+import '../util.dart';
 
 @client
 final class SiteSwitcher extends StatelessComponent {
-  const SiteSwitcher();
+  const SiteSwitcher({this.isFlutter = true, super.key});
+
+  final bool isFlutter;
 
   @override
   Component build(BuildContext _) {
-    return const Dropdown(
+    return Dropdown(
       id: 'site-switcher',
-      toggle: Button(icon: 'apps', title: 'Visit related sites.'),
+      toggle: const Button(icon: 'apps', title: 'Visit related sites.'),
       content: nav(
         classes: 'dropdown-menu',
         attributes: {'role': 'menu'},
         [
-          ul(
-            [
-              _SiteWordMarkListEntry(
+          ul([
+            if (isFlutter) ...[
+              const _SiteWordMarkListEntry(
                 name: 'Flutter',
                 href: 'https://flutter.dev',
               ),
@@ -32,40 +34,47 @@ final class SiteSwitcher extends StatelessComponent {
                 name: 'Flutter',
                 subtype: 'Docs',
                 href: '/',
-                current: true,
+                current: isFlutter,
               ),
-              _SiteWordMarkListEntry(
+              const _SiteWordMarkListEntry(
                 name: 'Flutter',
                 subtype: 'API',
                 href: 'https://api.flutter.dev',
               ),
-              _SiteWordMarkListEntry(
+              const _SiteWordMarkListEntry(
                 name: 'Flutter',
                 subtype: 'Blog',
                 href: 'https://blog.flutter.dev',
               ),
-              Component.element(
+              const Component.element(
                 tag: 'li',
                 classes: 'dropdown-divider',
                 attributes: {'aria-hidden': 'true', 'role': 'separator'},
               ),
-              _SiteWordMarkListEntry(
-                name: 'Dart',
-                href: 'https://dart.dev',
-                dart: true,
-              ),
-              _SiteWordMarkListEntry(
-                name: 'DartPad',
-                href: 'https://dartpad.dev',
-                dart: true,
-              ),
-              _SiteWordMarkListEntry(
-                name: 'pub.dev',
-                href: 'https://pub.dev',
-                dart: true,
-              ),
             ],
-          ),
+            _SiteWordMarkListEntry(
+              name: 'Dart',
+              href: 'https://dart.dev',
+              dart: true,
+              current: !isFlutter,
+            ),
+            if (!isFlutter)
+              const _SiteWordMarkListEntry(
+                name: 'Dart',
+                subtype: 'API',
+                href: 'https://api.dart.dev',
+              ),
+            const _SiteWordMarkListEntry(
+              name: 'DartPad',
+              href: 'https://dartpad.dev',
+              dart: true,
+            ),
+            const _SiteWordMarkListEntry(
+              name: 'pub.dev',
+              href: 'https://pub.dev',
+              dart: true,
+            ),
+          ]),
         ],
       ),
     );

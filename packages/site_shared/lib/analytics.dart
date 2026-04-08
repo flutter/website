@@ -4,8 +4,8 @@
 
 import 'package:meta/meta.dart';
 
-import 'analytics_server.dart'
-    if (dart.library.js_interop) 'analytics_web.dart';
+import 'src/analytics/analytics_server.dart'
+    if (dart.library.js_interop) 'src/analytics/analytics_web.dart';
 
 /// Used to report analytic events.
 final analytics = AnalyticsImplementation();

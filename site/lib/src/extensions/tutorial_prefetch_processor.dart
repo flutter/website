@@ -5,8 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../models/tutorial_model.dart';
+import 'package:site_shared/tutorial/models/tutorial_model.dart';
 
 /// A page extension for Jaspr Content that adds page navigation and a
 /// prefetch link for the next unit to the current tutorial page.

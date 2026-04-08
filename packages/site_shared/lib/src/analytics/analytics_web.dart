@@ -6,8 +6,8 @@ import 'package:meta/meta.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
-import '../util.dart';
-import 'analytics.dart';
+import '../../analytics.dart';
+import '../../util.dart';
 
 /// Web implementation of [Analytics].
 ///

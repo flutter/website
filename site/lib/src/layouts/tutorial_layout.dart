@@ -4,8 +4,8 @@
 
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/tutorial/models/tutorial_model.dart';
 
-import '../models/tutorial_model.dart';
 import 'doc_layout.dart';
 
 class TutorialLayout extends DocLayout {

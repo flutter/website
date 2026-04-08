@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:yaml/yaml.dart';
 
-import '../../models/quiz_model.dart';
+import 'models/quiz_model.dart';
 import 'client/quiz.dart';
 
 class Quiz extends CustomComponent {

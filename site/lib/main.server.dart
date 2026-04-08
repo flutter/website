@@ -12,6 +12,12 @@ import 'package:site_shared/common/material_icon.dart';
 import 'package:site_shared/common/tabs.dart';
 import 'package:site_shared/common/youtube_embed.dart';
 import 'package:site_shared/markdown/markdown_parser.dart';
+import 'package:site_shared/tutorial/downloadable_snippet.dart';
+import 'package:site_shared/tutorial/progress_ring.dart';
+import 'package:site_shared/tutorial/quiz.dart';
+import 'package:site_shared/tutorial/stepper.dart';
+import 'package:site_shared/tutorial/summary_card.dart';
+import 'package:site_shared/tutorial/tutorial_outline.dart';
 import 'package:site_shared/utils/component_ref.dart';
 import 'package:site_shared/utils/define_component.dart';
 
@@ -27,12 +33,6 @@ import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
-import 'src/components/tutorial/downloadable_snippet.dart';
-import 'src/components/tutorial/progress_ring.dart';
-import 'src/components/tutorial/quiz.dart';
-import 'src/components/tutorial/stepper.dart';
-import 'src/components/tutorial/summary_card.dart';
-import 'src/components/tutorial/tutorial_outline.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/doc_layout.dart';
 import 'src/layouts/toc_layout.dart';
@@ -117,7 +117,9 @@ List<CustomComponent> get _embeddableComponents => [
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
-  const DownloadableSnippet(),
+  DownloadableSnippet(
+    snippetsDirectoryPath: path.join(siteSrcDirectoryPath, '_snippets'),
+  ),
   const Stepper(),
   const WidgetCatalogCategories(),
   const TutorialOutline(),

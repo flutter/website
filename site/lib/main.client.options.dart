@@ -12,12 +12,6 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     deferred as _os_selector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     deferred as _pagenav;
-import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
-    deferred as _menu_toggle;
-import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
-    deferred as _site_switcher;
-import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
-    deferred as _theme_switcher;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     deferred as _archive_table;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
@@ -26,10 +20,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     deferred as _learning_resource_filters;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     deferred as _learning_resource_filters_sidebar;
-import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
-    deferred as _quiz;
-import 'package:docs_flutter_dev_site/src/models/quiz_model.dart'
-    as _quiz_model;
 import 'package:site_shared/common/client/collapse_button.dart'
     deferred as _collapse_button;
 import 'package:site_shared/common/client/cookie_notice.dart'
@@ -47,6 +37,13 @@ import 'package:site_shared/common/client/simple_tooltip.dart'
     deferred as _simple_tooltip;
 import 'package:site_shared/dartpad/dartpad_injector.dart'
     deferred as _dartpad_injector;
+import 'package:site_shared/layout/menu_toggle.dart' deferred as _menu_toggle;
+import 'package:site_shared/layout/site_switcher.dart'
+    deferred as _site_switcher;
+import 'package:site_shared/layout/theme_switcher.dart'
+    deferred as _theme_switcher;
+import 'package:site_shared/tutorial/client/quiz.dart' deferred as _quiz;
+import 'package:site_shared/tutorial/models/quiz_model.dart' as _quiz_model;
 import 'package:site_shared/utils/component_ref.dart' as _component_ref;
 
 /// Default [ClientOptions] for use with your Jaspr project.
@@ -87,18 +84,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
       ),
       loader: _pagenav.loadLibrary,
     ),
-    'menu_toggle': ClientLoader(
-      (p) => _menu_toggle.MenuToggle(),
-      loader: _menu_toggle.loadLibrary,
-    ),
-    'site_switcher': ClientLoader(
-      (p) => _site_switcher.SiteSwitcher(),
-      loader: _site_switcher.loadLibrary,
-    ),
-    'theme_switcher': ClientLoader(
-      (p) => _theme_switcher.ThemeSwitcher(),
-      loader: _theme_switcher.loadLibrary,
-    ),
     'archive_table': ClientLoader(
       (p) => _archive_table.ArchiveTable(
         os: p['os'] as String,
@@ -118,17 +103,6 @@ ClientOptions get defaultClientOptions => ClientOptions(
       (p) =>
           _learning_resource_filters_sidebar.LearningResourceFiltersSidebar(),
       loader: _learning_resource_filters_sidebar.loadLibrary,
-    ),
-    'quiz': ClientLoader(
-      (p) => _quiz.InteractiveQuiz(
-        title: p['title'] as String?,
-        questions: (p['questions'] as List<Object?>)
-            .map(
-              (i) => _quiz_model.Question.fromMap(i as Map<Object?, Object?>),
-            )
-            .toList(),
-      ),
-      loader: _quiz.loadLibrary,
     ),
     'site_shared:collapse_button': ClientLoader(
       (p) => _collapse_button.CollapseButton(
@@ -188,6 +162,29 @@ ClientOptions get defaultClientOptions => ClientOptions(
         runAutomatically: p['runAutomatically'] as bool,
       ),
       loader: _dartpad_injector.loadLibrary,
+    ),
+    'site_shared:menu_toggle': ClientLoader(
+      (p) => _menu_toggle.MenuToggle(),
+      loader: _menu_toggle.loadLibrary,
+    ),
+    'site_shared:site_switcher': ClientLoader(
+      (p) => _site_switcher.SiteSwitcher(isFlutter: p['isFlutter'] as bool),
+      loader: _site_switcher.loadLibrary,
+    ),
+    'site_shared:theme_switcher': ClientLoader(
+      (p) => _theme_switcher.ThemeSwitcher(),
+      loader: _theme_switcher.loadLibrary,
+    ),
+    'site_shared:quiz': ClientLoader(
+      (p) => _quiz.InteractiveQuiz(
+        title: p['title'] as String?,
+        questions: (p['questions'] as List<Object?>)
+            .map(
+              (i) => _quiz_model.Question.fromMap(i as Map<Object?, Object?>),
+            )
+            .toList(),
+      ),
+      loader: _quiz.loadLibrary,
     ),
   },
 );

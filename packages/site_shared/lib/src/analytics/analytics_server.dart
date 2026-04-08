@@ -4,7 +4,7 @@
 
 import 'package:meta/meta.dart';
 
-import 'analytics.dart';
+import '../../analytics.dart';
 
 /// Server implementation of [Analytics].
 ///

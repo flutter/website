@@ -5,6 +5,7 @@
 import 'package:jaspr/client.dart';
 // ignore: implementation_imports
 import 'package:jaspr/src/dom/type_checks.dart';
+import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 /// Retakes the element with the specified [id] ref during hydration.
@@ -35,6 +36,23 @@ Component retakeRef(BuildContext context, String id) {
   return .fragment([
     for (final node in nodes) RawNode(node),
   ]);
+}
+
+/// Extracts the content of a <pre><code> block inside the given
+/// [element] during hydration.
+String extractContent(Element element) {
+  final r = element.parentRenderObjectElement?.renderObject as DomRenderObject?;
+  if (r == null) return '';
+
+  final code = r.retakeNode((node) {
+    return node.instanceOfString('Element') &&
+        (node as web.Element).tagName.toLowerCase() == 'pre';
+  });
+
+  if (code == null) return '';
+
+  code.parentNode?.removeChild(code);
+  return (code as web.Element).textContent ?? '';
 }
 
 class RawNode extends Component {

@@ -6,7 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:nanoid2/nanoid2.dart';
 
-import 'retake_element.dart';
+import '../src/utils/retake_element.dart';
 
 /// A wrapper around [Component] to make it usable across server/client boundaries.
 ///

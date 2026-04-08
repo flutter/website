@@ -11,12 +11,6 @@ import 'package:docs_flutter_dev_site/src/components/common/client/os_selector.d
     as _os_selector;
 import 'package:docs_flutter_dev_site/src/components/layout/client/pagenav.dart'
     as _pagenav;
-import 'package:docs_flutter_dev_site/src/components/layout/menu_toggle.dart'
-    as _menu_toggle;
-import 'package:docs_flutter_dev_site/src/components/layout/site_switcher.dart'
-    as _site_switcher;
-import 'package:docs_flutter_dev_site/src/components/layout/theme_switcher.dart'
-    as _theme_switcher;
 import 'package:docs_flutter_dev_site/src/components/pages/archive_table.dart'
     as _archive_table;
 import 'package:docs_flutter_dev_site/src/components/pages/glossary_search_section.dart'
@@ -25,8 +19,6 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
     as _learning_resource_filters;
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     as _learning_resource_filters_sidebar;
-import 'package:docs_flutter_dev_site/src/components/tutorial/client/quiz.dart'
-    as _quiz;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
 import 'package:site_shared/common/client/collapse_button.dart'
     as _collapse_button;
@@ -42,6 +34,10 @@ import 'package:site_shared/common/client/page_header_options.dart'
 import 'package:site_shared/common/client/simple_tooltip.dart'
     as _simple_tooltip;
 import 'package:site_shared/dartpad/dartpad_injector.dart' as _dartpad_injector;
+import 'package:site_shared/layout/menu_toggle.dart' as _menu_toggle;
+import 'package:site_shared/layout/site_switcher.dart' as _site_switcher;
+import 'package:site_shared/layout/theme_switcher.dart' as _theme_switcher;
+import 'package:site_shared/tutorial/client/quiz.dart' as _quiz;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///
@@ -74,15 +70,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
       'pagenav',
       params: __pagenavPageNav,
     ),
-    _menu_toggle.MenuToggle: ClientTarget<_menu_toggle.MenuToggle>(
-      'menu_toggle',
-    ),
-    _site_switcher.SiteSwitcher: ClientTarget<_site_switcher.SiteSwitcher>(
-      'site_switcher',
-    ),
-    _theme_switcher.ThemeSwitcher: ClientTarget<_theme_switcher.ThemeSwitcher>(
-      'theme_switcher',
-    ),
     _archive_table.ArchiveTable: ClientTarget<_archive_table.ArchiveTable>(
       'archive_table',
       params: __archive_tableArchiveTable,
@@ -99,10 +86,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
         ClientTarget<
           _learning_resource_filters_sidebar.LearningResourceFiltersSidebar
         >('learning_resource_filters_sidebar'),
-    _quiz.InteractiveQuiz: ClientTarget<_quiz.InteractiveQuiz>(
-      'quiz',
-      params: __quizInteractiveQuiz,
-    ),
     _collapse_button.CollapseButton:
         ClientTarget<_collapse_button.CollapseButton>(
           'site_shared:collapse_button',
@@ -143,6 +126,20 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'site_shared:dartpad_injector',
           params: __dartpad_injectorDartPadInjector,
         ),
+    _menu_toggle.MenuToggle: ClientTarget<_menu_toggle.MenuToggle>(
+      'site_shared:menu_toggle',
+    ),
+    _site_switcher.SiteSwitcher: ClientTarget<_site_switcher.SiteSwitcher>(
+      'site_shared:site_switcher',
+      params: __site_switcherSiteSwitcher,
+    ),
+    _theme_switcher.ThemeSwitcher: ClientTarget<_theme_switcher.ThemeSwitcher>(
+      'site_shared:theme_switcher',
+    ),
+    _quiz.InteractiveQuiz: ClientTarget<_quiz.InteractiveQuiz>(
+      'site_shared:quiz',
+      params: __quizInteractiveQuiz,
+    ),
   },
   styles: () => [..._file_tree.FileTree.styles],
 );
@@ -159,10 +156,6 @@ Map<String, Object?> __pagenavPageNav(_pagenav.PageNav c) => {
 Map<String, Object?> __archive_tableArchiveTable(
   _archive_table.ArchiveTable c,
 ) => {'os': c.os, 'channel': c.channel};
-Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
-  'title': c.title,
-  'questions': c.questions.map((i) => i.toJson()).toList(),
-};
 Map<String, Object?> __collapse_buttonCollapseButton(
   _collapse_button.CollapseButton c,
 ) => {'classes': c.classes, 'title': c.title};
@@ -194,4 +187,11 @@ Map<String, Object?> __dartpad_injectorDartPadInjector(
   'theme': c.theme,
   'height': c.height,
   'runAutomatically': c.runAutomatically,
+};
+Map<String, Object?> __site_switcherSiteSwitcher(
+  _site_switcher.SiteSwitcher c,
+) => {'isFlutter': c.isFlutter};
+Map<String, Object?> __quizInteractiveQuiz(_quiz.InteractiveQuiz c) => {
+  'title': c.title,
+  'questions': c.questions.map((i) => i.toJson()).toList(),
 };

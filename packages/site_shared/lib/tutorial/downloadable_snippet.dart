@@ -5,15 +5,17 @@
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
-import 'package:site_shared/common/client/copy_button.dart';
-import 'package:site_shared/common/client/download_button.dart';
-import 'package:site_shared/common/wrapped_code_block.dart';
-
-import '../../extensions/code_block_processor.dart';
-import '../../util.dart';
+import '../common/client/copy_button.dart';
+import '../common/client/download_button.dart';
+import '../common/wrapped_code_block.dart';
+import '../extensions/code_block_processor.dart';
 
 class DownloadableSnippet extends CustomComponentBase {
-  const DownloadableSnippet();
+  const DownloadableSnippet({
+    required this.snippetsDirectoryPath,
+  });
+
+  final String snippetsDirectoryPath;
 
   @override
   Pattern get pattern => 'DownloadableSnippet';
@@ -33,7 +35,7 @@ class DownloadableSnippet extends CustomComponentBase {
       builder: (context) {
         final page = context.page;
         final snippet = page.loader.readPartialSync(
-          path.join(siteSrcDirectoryPath, '_snippets', src),
+          path.join(snippetsDirectoryPath, src),
           page,
         );
         final language = src.split('.').last;
