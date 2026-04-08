@@ -11,17 +11,10 @@
 @use 'base/utils';
 
 // Styles for individual components or content types, alphabetically ordered.
-@use 'components/alert';
 @use 'components/banner';
 @use 'components/books';
-@use 'components/breadcrumbs';
-@use 'components/button';
-@use 'components/card';
-@use 'components/code';
 @use 'components/content';
 @use 'components/collapsible';
-@use 'components/cookie-notice';
-@use 'components/dropdown';
 @use 'components/expansion-list';
 @use 'components/filter-search';
 @use 'components/footer';
@@ -33,17 +26,27 @@
 @use 'components/pagenav';
 @use 'components/platform-cards';
 @use 'components/pill';
-@use 'components/quiz';
 @use 'components/sidebar';
 @use 'components/side-menu';
-@use 'components/site-switcher';
-@use 'components/summary-card';
-@use 'components/stepper';
-@use 'components/tabs';
-@use 'components/theming';
-@use 'components/tooltip';
 @use 'components/trailing';
 @use 'components/tutorial_pages';
+
+// Shared styles from site_shared package, alphabetically ordered.
+@use 'package:site_shared/_sass/alert';
+@use 'package:site_shared/_sass/breadcrumbs';
+@use 'package:site_shared/_sass/button';
+@use 'package:site_shared/_sass/card';
+@use 'package:site_shared/_sass/code';
+@use 'package:site_shared/_sass/cookie-notice';
+@use 'package:site_shared/_sass/dropdown';
+@use 'package:site_shared/_sass/menu-toggle';
+@use 'package:site_shared/_sass/quiz';
+@use 'package:site_shared/_sass/site-switcher';
+@use 'package:site_shared/_sass/stepper';
+@use 'package:site_shared/_sass/summary-card';
+@use 'package:site_shared/_sass/tabs';
+@use 'package:site_shared/_sass/theming';
+@use 'package:site_shared/_sass/tooltip';
 
 // Styles for specific pages, alphabetically ordered.
 @use 'pages/glossary';
