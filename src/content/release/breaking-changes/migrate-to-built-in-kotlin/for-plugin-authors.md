@@ -169,7 +169,8 @@ Beginning with Flutter 3.44, the minimum required KGP version is 2.0.0.
 To ensure that apps using your plugin can safely migrate to built-in Kotlin,
 you should require a minimum Flutter version of 3.44 for this plugin version.
 
-Since you are updating the minimum Flutter version, you must also update the minimum associated Dart version.
+Since you are updating the minimum Flutter version,
+you must also update the minimum associated Dart version.
 
 Update the minimum Flutter version and the minimum Dart version:
 
