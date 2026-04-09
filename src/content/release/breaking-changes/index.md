@@ -51,7 +51,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
 [ListTile reports error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
-[Migrating Flutter Android Projects to Built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
+[Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 
 <a id="released-in-flutter-341" aria-hidden="true"></a>
