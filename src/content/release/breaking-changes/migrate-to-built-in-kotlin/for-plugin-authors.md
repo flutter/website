@@ -198,7 +198,7 @@ environment:
 # ...
 ```
 
-### Update the Plugin `CHANGELOG.md`
+### Update the plugin's `CHANGELOG.md`
 
 Include your changes in the CHANGELOG of the newly released plugin version:
 
