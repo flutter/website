@@ -4,7 +4,7 @@ description: >-
   Migrate Flutter plugins to use built-in Kotlin.
 ---
 
-## Migrate Your Flutter Plugin
+## Migrate your Flutter plugin
 
 This guide outlines the migration steps specifically for plugin authors.
 
