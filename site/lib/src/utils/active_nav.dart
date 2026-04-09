@@ -13,6 +13,7 @@ ActiveNavEntry activeNavEntry(String pageUrlPath) {
 
   return switch (firstFragment) {
     'learn' || 'tutorial' => ActiveNavEntry.learn,
+    'ai' => ActiveNavEntry.ai,
     _ => ActiveNavEntry.home,
   };
 }
@@ -20,5 +21,6 @@ ActiveNavEntry activeNavEntry(String pageUrlPath) {
 enum ActiveNavEntry {
   home,
   learn,
+  ai,
   // reference,
 }
