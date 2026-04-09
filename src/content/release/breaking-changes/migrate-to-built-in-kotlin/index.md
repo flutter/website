@@ -76,5 +76,5 @@ in your app's directory.
 [Issue #184838]: {{site.github}}/flutter/flutter/issues/184838
 [Issue #184839]: {{site.github}}/flutter/flutter/issues/184839
 
-[app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin
+[app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
 [plugin-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
