@@ -539,11 +539,6 @@
           permalink: /packages-and-plugins/swift-package-manager/for-app-developers
         - title: For plugin authors
           permalink: /packages-and-plugins/swift-package-manager/for-plugin-authors
-    - title: Built-in Kotlin
-      permalink: /packages-and-plugins/built-in-kotlin
-      children:
-        - title: Migrate to Built-in Kotlin
-          permalink: /release/breaking-changes/migrate-to-built-in-kotlin
     - divider
     - title: Flutter Favorites
       permalink: /packages-and-plugins/favorites
