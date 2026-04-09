@@ -1,5 +1,5 @@
 ---
-title: Migrating Flutter Android Projects to Built-in Kotlin
+title: Migrating Flutter Android projects to built-in Kotlin
 description: >-
   Update your Flutter Android Gradle files to use built-in Kotlin support.
   Essential for migrating projects to Android Gradle Plugin 9.0.0+.

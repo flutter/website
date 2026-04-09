@@ -4,7 +4,7 @@ description: >-
   Migrate Flutter plugins to use built-in Kotlin.
 ---
 
-## Migrate Your Flutter Plugin
+## Migrate your Flutter plugin
 
 This guide outlines the migration steps specifically for plugin authors.
 
@@ -161,14 +161,16 @@ kotlin {
 // ...
 ```
 
-### Update the Plugin `pubspec.yaml`
+### Update the plugin's `pubspec.yaml`
 
-Using the `kotlin.compilerOptions {}` DSL block requires a minimum Kotlin Gradle Plugin (KGP) version of 2.0.0.
+Using the `kotlin.compilerOptions {}` DSL block requires
+a minimum Kotlin Gradle Plugin (KGP) version of 2.0.0.
 Beginning with Flutter 3.44, the minimum required KGP version is 2.0.0.
 To ensure that apps using your plugin can safely migrate to built-in Kotlin,
 you should require a minimum Flutter version of 3.44 for this plugin version.
 
-Since you are updating the minimum Flutter version, you must also update the minimum associated Dart version.
+Since you are updating the minimum Flutter version,
+you must also update the minimum associated Dart version.
 
 Update the minimum Flutter version and the minimum Dart version:
 
@@ -196,7 +198,7 @@ environment:
 # ...
 ```
 
-### Update the Plugin `CHANGELOG.md`
+### Update the plugin's `CHANGELOG.md`
 
 Include your changes in the CHANGELOG of the newly released plugin version:
 
