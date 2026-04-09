@@ -1,3 +1,9 @@
+---
+title: Built-in Kotlin migration for app developers
+description: >-
+  Migrate Flutter apps to use built-in Kotlin.
+---
+
 ## Migrate
 
 This guide outlines the migration steps specifically for app developers.

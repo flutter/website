@@ -1,3 +1,9 @@
+---
+title: Built-in Kotlin migration for plugin authors
+description: >-
+  Migrate Flutter plugins to use built-in Kotlin.
+---
+
 ## Migrate Your Flutter Plugin
 
 This guide outlines the migration steps specifically for plugin authors.
