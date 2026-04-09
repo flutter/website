@@ -42,7 +42,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `TextInputConnection.setStyle`][]
 * [`IconData` class marked as `final`][]
 * [ListTile reports error in debug when wrapped in a colored widget][]
-* [Migrating Flutter Android Projects to Built-in Kotlin][]
+* [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
 
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
