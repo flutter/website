@@ -219,4 +219,4 @@ If your plugin example app also applies KGP,
 then you will also have to migrate the example app.
 Follow the [migration guide for app developers][app-migration-guide] to migrate your example app.
 
-[app-migration-guide]: https://docs.flutter.dev/release/breaking-changes/migrate-to-built-in-kotlin
+[app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin

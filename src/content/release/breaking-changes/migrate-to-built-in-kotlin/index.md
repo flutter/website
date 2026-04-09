@@ -37,9 +37,9 @@ see the [Android Gradle Plugin docs][AGP block].
 
 ## Migrate
 
-**For app developers:** See the [app developer migration guide](./for-app-developers).
+**For app developers:** See the [app developer migration guide][app-migration-guide].
 
-**For plugin authors:** See the [plugin author migration guide](./for-plugin-authors).
+**For plugin authors:** See the [plugin author migration guide][plugin-migration-guide].
 
 ## Next steps
 
@@ -75,3 +75,6 @@ in your app's directory.
 [Issue #184837]: {{site.github}}/flutter/flutter/issues/184837
 [Issue #184838]: {{site.github}}/flutter/flutter/issues/184838
 [Issue #184839]: {{site.github}}/flutter/flutter/issues/184839
+
+[app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin
+[plugin-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
