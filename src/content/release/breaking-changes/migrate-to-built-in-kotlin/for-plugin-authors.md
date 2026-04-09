@@ -161,7 +161,7 @@ kotlin {
 // ...
 ```
 
-### Update the Plugin `pubspec.yaml`
+### Update the plugin's `pubspec.yaml`
 
 Using the `kotlin.compilerOptions {}` DSL block requires a minimum Kotlin Gradle Plugin (KGP) version of 2.0.0.
 Beginning with Flutter 3.44, the minimum required KGP version is 2.0.0.
