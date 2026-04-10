@@ -5,7 +5,9 @@ description: >
   powerful SDKs to build AI features directly into your Flutter applications.
 ---
 
-This guide covers how to integrate AI into your development process to write code faster, and how to build generative AI features directly into your Flutter apps. 
+This guide covers how to integrate AI into your development process to write
+code faster, and how to build generative AI features directly into your
+Flutter apps.
 
 ## Develop with AI
 

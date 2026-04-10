@@ -4,10 +4,10 @@
 - title: Develop with AI
   expanded: true
   children:
-    - title: Antigravity (Coming Soon)
-      permalink: /ai/create-with-ai # Redirects to overview until page is added
+    - title: Antigravity
+      permalink: /ai/antigravity
     - title: Gemini Code Assist
-      permalink: /ai/create-with-ai # Redirects to overview until page is added
+      permalink: /ai/gemini-code-assist
     - title: Gemini CLI
       permalink: /ai/gemini-cli-extension
     - title: MCP Server
@@ -19,10 +19,10 @@
   expanded: true
   children:
     - title: Firebase AI Logic
-      permalink: /ai/create-with-ai # Standard documentation link points to overview for now
+      permalink: /ai/firebase-ai-logic
     - title: GenUI SDK
-      permalink: /ai/genui/
+      permalink: /ai/genui
     - title: Flutter AI Toolkit
-      permalink: /ai/ai-toolkit/
+      permalink: /ai/ai-toolkit
     - title: Best Practices
-      permalink: /ai/best-practices/
+      permalink: /ai/best-practices

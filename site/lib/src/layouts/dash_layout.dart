@@ -29,6 +29,7 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
   /// More specific paths should come before less specific ones.
   static const pathSidenavs = <String, String>{
     '/learn': 'learn',
+    '/ai': 'ai',
     // Add future path-specific sidenavs here
   };
 
