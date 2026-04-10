@@ -63,7 +63,7 @@ class DashHeader extends StatelessComponent {
             isActive: activeEntry == ActiveNavEntry.learn,
           ),
           _NavItem(
-            href: 'https://docs.flutter.dev/ai/create-with-ai',
+            href: '/ai/create-with-ai',
             label: 'AI',
             isActive: activeEntry == ActiveNavEntry.ai,
           ),
