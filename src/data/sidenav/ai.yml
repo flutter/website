@@ -1,0 +1,28 @@
+- title: AI in Flutter
+  permalink: /ai/create-with-ai
+
+- title: Develop with AI
+  expanded: true
+  children:
+    - title: Antigravity (Coming Soon)
+      permalink: /ai/create-with-ai # Redirects to overview until page is added
+    - title: Gemini Code Assist
+      permalink: /ai/create-with-ai # Redirects to overview until page is added
+    - title: Gemini CLI
+      permalink: /ai/gemini-cli-extension
+    - title: MCP Server
+      permalink: /ai/mcp-server
+    - title: AI Rules
+      permalink: /ai/ai-rules
+
+- title: Build AI-powered apps
+  expanded: true
+  children:
+    - title: Firebase AI Logic
+      permalink: /ai/create-with-ai # Standard documentation link points to overview for now
+    - title: GenUI SDK
+      permalink: /ai/genui/
+    - title: Flutter AI Toolkit
+      permalink: /ai/ai-toolkit/
+    - title: Best Practices
+      permalink: /ai/best-practices/
