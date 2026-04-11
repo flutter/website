@@ -18,7 +18,7 @@ To learn more about DevTools, check out the
 
 - Added support for searching within the log details view (raw text mode). [#9712](https://github.com/flutter/devtools/pull/9712)
 
-  ![Search in log details](/assets/images/docs/tools/devtools/release-notes/images-2.57.0 "Searching within the log details view")
+  ![Search in log details](/assets/images/docs/tools/devtools/release-notes/images-2.57.0/log_details_search.png "Searching within the log details view")
 
 ## App size tool updates
 
