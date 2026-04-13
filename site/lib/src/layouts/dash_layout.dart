@@ -157,7 +157,12 @@ ga('send', 'pageview');
     final bodyClass = pageData['bodyClass'] as String?;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
 
+    final pageSidenav = pageData['sidenav'] as String? ?? defaultSidenav;
     final sideNavEntries = switch (page.data['sidenav']) {
+      _ when pageSidenav == 'ai' => switch (page.data['ai']) {
+        final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+        _ => null,
+      },
       final List<Object?> sidenavData => navEntriesFromData(sidenavData),
       _ => null,
     };
