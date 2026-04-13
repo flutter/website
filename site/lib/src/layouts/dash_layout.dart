@@ -25,7 +25,6 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
 
   String get defaultSidenav => 'default';
 
-
   @override
   @mustCallSuper
   Iterable<Component> buildHead(Page page) {
