@@ -12,7 +12,7 @@ import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
 import '../models/page_navigation_model.dart';
-import 'flutter_docs_layout.dart';
+import 'dash_layout.dart';
 
 /// The Jaspr Content layout to use for normal docs pages,
 /// adding elements such as breadcrumbs, TOC, and prev/next cards.

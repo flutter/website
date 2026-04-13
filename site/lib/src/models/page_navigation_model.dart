@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../extensions/header_extractor.dart';
+import 'package:site_shared/extensions/header_extractor.dart';
 
 extension GetPageNavigationData on Page {
   PageNavigationData? get navigationData {

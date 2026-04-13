@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/markdown/attribute_syntax.dart';
+import '../markdown/attribute_syntax.dart';
 
 /// A node-processing, page extension for Jaspr Content that looks for
 /// attribute markers from [AttributeBlockSyntax] and [AttributeInlineSyntax],
