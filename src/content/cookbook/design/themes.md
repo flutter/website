@@ -8,8 +8,7 @@ description: How to share colors and font styles throughout an app using Themes.
 
 :::note
 This recipe uses Flutter's support for [Material 3][] and
-the [google_fonts][] package. As of the Flutter 3.16 release,
-Material 3 is Flutter's default theme.
+the [google_fonts][] package.
 :::
 
 [Material 3]: /ui/design/material
@@ -37,9 +36,6 @@ colors and font styles for app bars, buttons, checkboxes, and more.
 To share a `Theme` across your entire app, set the `theme` property
 to your `MaterialApp` constructor.
 This property takes a [`ThemeData`][] instance.
-
-As of the Flutter 3.16 release, Material 3 is Flutter's
-default theme.
 
 If you don't specify a theme in the constructor,
 Flutter creates a default theme for you.

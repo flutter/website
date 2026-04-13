@@ -10,13 +10,13 @@ to run, build, and deploy Flutter apps for the web platform.
 
 :::note
 If you haven't set up Flutter already,
-visit and follow [Install Flutter][] first.
+[install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Install Flutter]: /install
+[install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Install a web browser {: #install}
@@ -84,7 +84,7 @@ or begin expanding integration with the web.
           <a class="text-button" href="https://www.youtube.com/watch?v=b_sQ9bMltGU&list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG">Explore Flutter widgets</a>
         </li>
         <li>
-          <a class="text-button" href="/learn/learning-resources">Check out samples</a>
+          <a class="text-button" href="/reference/learning-resources">Check out samples</a>
         </li>
       </ul>
     </div>

@@ -58,7 +58,7 @@ To include your course, [submit a PR][]:
 [Flutter Animations Masterclass]: https://codewithandrea.com/courses/flutter-animations-masterclass/
 [The Complete Dart Developer Guide]: https://codewithandrea.com/courses/complete-dart-guide/
 [Flutter & Dart - The Complete Guide, 2023 Edition]: https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/
-[The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.co/p/flutter-development-bootcamp-with-dart/
+[The Complete 2021 Flutter Development Bootcamp Using Dart]: https://www.appbrewery.com/p/flutter-development-bootcamp-with-dart/
 [Flutter Crash Course]: https://fluttercrashcourse.com/
 [Flutter leicht gemacht 2022 - Zero to Mastery!]: https://www.udemy.com/course/dart-flutter-leicht-gemacht/
 [Flutter Zero to Hero]: {{site.yt.playlist}}PL1k5oWAuBhgXdw1BbxVGxxWRmkGB1C11l

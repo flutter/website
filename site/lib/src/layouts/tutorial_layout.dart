@@ -18,7 +18,7 @@ class TutorialLayout extends DocLayout {
   bool get allowBreadcrumbs => false;
 
   @override
-  List<String> get defaultBodyClasses => [];
+  List<String> get defaultBodyClasses => ['sidenav-hidden'];
 
   @override
   Component buildBody(Page page, Component child) {

@@ -144,13 +144,6 @@
     label: Flutter docs
     url: /cookbook/effects/staggered-menu-animation
 
-- name: Create a typing indicator
-  description: Build a speech bubble typing indicator that animates in and out of view.
-  type: recipe
-  link:
-    label: Flutter docs
-    url: /cookbook/effects/typing-indicator
-
 - name: Create an expandable FAB
   description: Create a floating action button that spawns other action buttons.
   tags:

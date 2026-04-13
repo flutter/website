@@ -33,9 +33,10 @@ final class AnalyzeDartCommand extends Command<int> {
 
 int analyzeDart({bool verboseLogging = false}) {
   final directoriesToAnalyze = [
-    path.join('site'),
+    'examples',
+    'packages',
+    'site',
     path.join('tool', 'dash_site'),
-    path.join('examples'),
   ];
 
   if (!verboseLogging) {
@@ -52,7 +53,7 @@ int analyzeDart({bool verboseLogging = false}) {
       return pubGetResult;
     }
 
-    final flutterAnalyzeOutput = Process.runSync('flutter', const [
+    final flutterAnalyzeOutput = Process.runSync('dart', const [
       'analyze',
       '.',
     ], workingDirectory: directory);

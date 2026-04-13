@@ -38,12 +38,12 @@ choose your preferred environment and follow the corresponding instructions.
       <p>Create a new Flutter app without leaving your IntelliJ-based IDE.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="#firebase-studio">
+  <a class="card outlined-card" href="#antigravity">
     <div class="card-header">
-      <span class="card-title">Firebase Studio</span>
+      <span class="card-title">Antigravity</span>
     </div>
     <div class="card-content">
-      <p>For quick and easy setup, create a new Flutter app in Firebase Studio.</p>
+      <p>For agentic coding support, create a new Flutter app in Antigravity.</p>
     </div>
   </a>
   <a class="card outlined-card" href="#terminal">
@@ -300,61 +300,63 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 <a id="project-idx" aria-hidden="true"></a>
 
-## Firebase Studio
+## Antigravity
 
-To create a Flutter app with [Firebase Studio][fbs],
-you first need a Google account and to [set up Firebase Studio][fbs-setup].
+To create a Flutter app with Antigravity, you first need
+to install and set up Antigravity as described on the
+[Antigravity tools page](/tools/antigravity).
 Then follow these steps:
 
- 1. <h3>Launch Firebase Studio</h3>
+ 1. <h3>Open Antigravity and create a Workspace</h3>
 
-    In your preferred browser, navigate to the [Firebase Studio dashboard][]
-    found at `studio.firebase.google.com/`.
-    If you haven't yet, you might need to log in to your Google account.
+    Launch the Antigravity IDE and create a new,
+    sandboxed workspace for your project using the Agent Manager.
 
- 1. <h3>Create a new workspace</h3>
+ 1. <h3>Use the Agent Manager</h3>
 
-    In the Firebase Studio dashboard, find the **Start coding an app** section.
-    It should include a variety of templates to choose from.
-    Select the **Flutter** template.
-    If you can't find it, it might be under a **Mobile** category.
+    Switch to the Agent Manager interface,
+    which is where you interact with the AI agents by using chat.
 
- 1. <h3>Name your workspace</h3>
+ 1. <h3>Write detailed prompts</h3>
 
-    Firebase Studio should prompt you to **Name your workspace**.
-    This name is distinct from the name of your Flutter app.
-    Choose a descriptive name that you'll recognize
-    in a list of your workspaces.
+    Communicate your app requirements to the agent using detailed,
+    structured prompts, much like providing instructions to a junior developer.
+    For example, "Create a new Flutter project named my_app.
+    Add a home screen with a list of items and a floating action button".
 
- 1. <h3>Provision your new workspace</h3>
+ 1. <h3>Review and approve the plan</h3>
 
-    Once you've chosen a name and configured your workspace,
-    click **Create** to provision your new workspace.
+    The AI agent will generate a detailed implementation plan,
+    including folder structure, dependencies, and steps.
+    You can review this plan and click **Proceed** or
+    provide feedback to make changes.
 
- 1. <h3>Wait for workspace initialization</h3>
+ 1. <h3>Authorize actions</h3>
 
-    Firebase Studio will now initialize your workspace,
-    bootstrap your project file structure,
-    and retrieve your app's dependencies.
-    This might take a while.
+    The agent will ask for permission before running terminal commands
+    (like `flutter pub add` or `flutter create`) or accessing the browser/emulator.
+    Review and **Accept** these actions to allow the agent to build the app.
 
-1. <h3>Run your app</h3>
+ 1. <h3>Iterate and refine</h3>
 
-   Your new app should now be created and opened in the Firebase Studio editor.
-   To try your new app, follow the docs provided by Firebase Studio to
-   [preview your app][fbs-preview] on the web or on Android.
+    Once the initial app is generated,
+    you can provide further prompts to add features,
+    refine the UI, implement logic, or add persistence
+    (for example, "Add local storage using shared_preferences").
+
+ 1. <h3>Test the app</h3>
+
+    Use the integrated emulator or connect a physical device
+    to test the app. The agent can even run tests and provide
+    video walkthroughs of the functionality.
+
+ 1. <h3>Verify code in the editor</h3>
+
+    You can switch to the standard code editor view at any time 
+    to inspect the generated Dart and Flutter files,
+    ensuring the code quality meets your standards.
 
 {:.steps}
-
-You've successfully created a new Flutter app in Firebase Studio!
-If you need help configuring your workspace,
-check out [Customize your Firebase studio workspace][fbs-customize].
-
-[fbs]: https://firebase.studio
-[Firebase Studio dashboard]: https://studio.firebase.google.com/
-[fbs-setup]: https://firebase.google.com/docs/studio/get-started
-[fbs-preview]: https://firebase.google.com/docs/studio/preview-apps
-[fbs-customize]: https://firebase.google.com/docs/studio/customize-workspace
 
 ## Terminal
 

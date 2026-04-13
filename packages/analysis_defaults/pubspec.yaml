@@ -1,0 +1,12 @@
+name: analysis_defaults
+description: Analysis defaults for Dart/Flutter site tools.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.11.0
+
+# NOTE: Code isn't allowed in this package.
+# Don't add dependencies besides the underlying lints package.
+dependencies:
+  dart_flutter_team_lints: ^3.5.2

@@ -1,16 +1,16 @@
 ---
-title: ListTile throws exception when wrapped in a colored widget
+title: ListTile reports error in debug when wrapped in a colored widget
 description: >-
-  ListTile throws an exception when it is wrapped in an intermediate
-  widget with a non-transparent background color.
+  ListTile reports an error in debug mode when it is wrapped in
+  an intermediate widget with a non-transparent background color.
 ---
 
 ## Summary
 
 When a `ListTile` is wrapped in a widget with a non-transparent background color
 (such as a `Container` or `ColoredBox` with a color specified) that sits between
-the `ListTile` and its nearest `Material` ancestor, the framework now throws an
-exception.
+the `ListTile` and its nearest `Material` ancestor, the framework now reports an
+error.
 
 ## Background
 
@@ -21,7 +21,7 @@ them invisible to the user.
 
 To prevent developers from accidentally introducing this bug and wondering why
 the background or ink splash effects on the `ListTile` are not displaying, an
-assert was introduced. This exception explicitly points out the issue during
+assert was introduced. This error explicitly points out the issue during
 development.
 
 If your code has an intermediate colored widget between a `ListTile` and a
@@ -38,7 +38,7 @@ Container.
 
 ## Migration guide
 
-To fix the exception, follow the exception's hint and either remove the
+To fix the error, follow the error's hint and either remove the
 background color from the intermediate widget, or wrap the `ListTile` in its own
 `Material` widget.
 
