@@ -1,0 +1,15 @@
+categories:
+  - slug: releases
+    label: Releases
+    showFeatured: true
+  - slug: announcements
+    label: Announcements
+    showFeatured: true
+  - slug: other
+    label: Other
+    showFeatured: true
+nextPostsTitle: "More from Flutter"
+atom:
+  # The title used for links pointing readers at the blog Atom feed.
+  subscribeTitle: "Subscribe to the Flutter Blog Atom feed"
+  feedAuthor: "Flutter Team"

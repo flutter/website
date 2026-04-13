@@ -2,10 +2,35 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:jaspr/jaspr.dart';
+
 export 'src/utils/slugify.dart';
 
 /// Whether this build of the site will be deployed to production.
 const bool productionBuild = .fromEnvironment('PRODUCTION');
+
+/// Split the specific [sourceString] into a list of Jaspr [Component]
+/// by adding a `<wbr>`  element after each underscore.
+///
+/// This is useful for long IDs separated with underscores, such as lint names,
+/// that might otherwise break across lines in an undesirable way.
+List<Component> splitByUnderscore(String sourceString) {
+  final parts = sourceString.split('_');
+  final result = <Component>[];
+
+  for (var i = 0; i < parts.length; i++) {
+    result.add(.text(parts[i]));
+
+    // Add a word break opportunity after each underscore,
+    // except for the final one.
+    if (i < parts.length - 1) {
+      result.add(const Component.text('_'));
+      result.add(const Component.element(tag: 'wbr'));
+    }
+  }
+
+  return result;
+}
 
 /// Parses attribute tokens from [attributeString] into HTML attributes.
 ///

@@ -3,12 +3,18 @@
 // can be found in the LICENSE file.
 
 import 'package:jaspr/server.dart';
-import 'package:jaspr_content/jaspr_content.dart';
+import 'package:jaspr_content/components/file_tree.dart';
+import 'package:jaspr_content/jaspr_content.dart' hide BlogLayout;
 import 'package:jaspr_content/theme.dart';
+import 'package:site_shared/components/blog/blog_index.dart';
+import 'package:site_shared/components/common/youtube_embed.dart';
 import 'package:site_shared/components/utils/define_component.dart';
+import 'package:site_shared/page_extensions.dart';
 
 import 'main.server.options.dart';
+import 'src/components/common/dash_image.dart';
 import 'src/components/common/image.dart';
+import 'src/layouts/blog_layout.dart';
 import 'src/layouts/consultants_tos_layout.dart';
 import 'src/layouts/default_layout.dart';
 import 'src/layouts/showcase_story_layout.dart';
@@ -41,6 +47,7 @@ void main() async {
   final assetManager = AssetManager(
     directory: 'content',
     outputPrefix: 'assets',
+    dataProperties: const {'page.image'},
     assetTransformers: [
       TrackingAssetTransformer(),
       ResizingAssetTransformer(),
@@ -76,10 +83,15 @@ void main() async {
       configResolver: PageConfig.all(
         dataLoaders: [
           FilesystemDataLoader('content'),
+
           assetManager.dataLoader,
         ],
         parsers: [const MarkdownParser()],
-        extensions: [ShowcaseStoryExtension(), assetManager.pageExtension],
+        extensions: [
+          ShowcaseStoryExtension(),
+          const CodeBlockProcessor(defaultTitle: 'Runnable Flutter example'),
+          assetManager.pageExtension,
+        ],
         components: [
           defineComponent('HomePage', const HomePage()),
           defineComponent('DevelopmentPage', const DevelopmentPage()),
@@ -105,11 +117,20 @@ void main() async {
           defineComponent('FlipPage', const FlipPage()),
           defineComponent('NewsPage', const NewsPage()),
           defineComponentWithAttrs('Image', Image.fromAttrs),
+
+          CustomComponent(
+            pattern: RegExp('BlogIndex', caseSensitive: false),
+            builder: (_, _, _) => const BlogIndex(),
+          ),
+          const DashImage(),
+          const YoutubeEmbed(),
+          const FileTree(),
         ],
         layouts: [
           DefaultLayout(),
           ConsultantsTosLayout(),
           ShowcaseStoryLayout(),
+          BlogLayout(),
         ],
         theme: const ContentTheme.none(),
       ),
