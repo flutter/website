@@ -1,5 +1,6 @@
 ---
 title: Flutter extension for Gemini CLI
+sidenav: ai
 description: >
   Learn how to use the Flutter extension for Gemini CLI
   to make structured changes to your app at the command line
