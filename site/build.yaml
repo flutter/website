@@ -1,13 +1,3 @@
-builders:
-  stylesHashBuilder:
-    import: 'package:docs_flutter_dev_site/builders.dart'
-    builder_factories: [ 'stylesHashBuilder' ]
-    build_extensions:
-      "web/assets/css/main.css":
-        - "lib/src/style_hash.dart"
-    auto_apply: root_package
-    build_to: source
-
 targets:
   $default:
     builders:
@@ -27,6 +17,3 @@ targets:
             # Disable for now.
             # dart2wasm:
             #   args: [-O2, -Djaspr.flags.release=true]
-      docs_flutter_dev_site:stylesHashBuilder:
-        dev_options:
-          fixed_hash: true

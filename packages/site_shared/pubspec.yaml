@@ -6,7 +6,9 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
+  build: ^4.0.5
   collection: ^1.19.1
+  crypto: ^3.0.7
   html: ^0.15.6
   jaspr: ^0.22.4
   jaspr_content: ^0.5.1
