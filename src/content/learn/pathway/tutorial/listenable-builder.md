@@ -56,9 +56,9 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-### Create the article view model
+### Add ListenableBuilder and handle states
 
-Create the `ArticleViewModel` in this widget:
+Use `ListenableBuilder` to listen for state changes and rebuild the UI. Handle different states using a switch expression:
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -105,9 +105,7 @@ experience with proper state management.
 
 ### Listen for state changes
 
-Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
-and pass it a `ChangeNotifier` object.
-In this case, the `ArticleViewModel` extends `ChangeNotifier`.
+Create the `ArticlePage` widget that will display the content when loaded:
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -141,19 +139,9 @@ building different widgets based on the state.
 
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 
-### Handle possible view model states
+### Complete the ArticlePage layout
 
-Recall the `ArticleViewModel`, which has three properties that
-the UI is interested in:
-
-- `Summary? summary`
-- `bool loading`
-- `String? errorMessage`
-
-Depending on the combined state of these properties,
-the UI can display different widgets.
-Use Dart's support for [switch expressions][]
-to handle all possible combinations in a clean, readable way:
+Add the `ArticleWidget` and a button to fetch the next article:
 
 ```dart
 class ArticleView extends StatelessWidget {
@@ -368,6 +356,7 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
+<<<<<<< HEAD
 #### Complete with styled text content
 
 Replace the placeholder text with a
@@ -421,6 +410,10 @@ This widget demonstrates a few important UI concepts:
   The `spacing` parameter provides consistent vertical spacing.
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
+=======
+This change switches from the console-based test to the full UI
+experience with proper state management.
+>>>>>>> 5fbb1990b (Fix Column spacing, clean up summary.dart, lower SDK constraint, and fix excerpts in listenable-builder.md)
 
 ### Run the complete app
 
