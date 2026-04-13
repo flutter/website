@@ -4,9 +4,9 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/common/dropdown.dart';
-import 'package:site_shared/common/material_icon.dart';
-import 'package:site_shared/utils/component_ref.dart';
+import 'package:site_shared/components/common/dropdown.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 

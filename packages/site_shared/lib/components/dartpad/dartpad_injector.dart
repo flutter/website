@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../src/utils/retake_element.dart';
+import '../../src/utils/retake_element.dart';
 import 'embedded_dartpad.dart';
 
 /// Prepares a code block that will be replaced with an embedded

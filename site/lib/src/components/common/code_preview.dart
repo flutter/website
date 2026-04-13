@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/wrapped_code_block.dart';
+import 'package:site_shared/components/common/wrapped_code_block.dart';
 
 import '../../util.dart';
 

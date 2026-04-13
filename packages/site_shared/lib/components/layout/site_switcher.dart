@@ -7,7 +7,7 @@ import 'package:jaspr/jaspr.dart';
 
 import '../common/button.dart';
 import '../common/dropdown.dart';
-import '../util.dart';
+import '../../util.dart';
 
 @client
 final class SiteSwitcher extends StatelessComponent {

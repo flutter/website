@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:yaml/yaml.dart';
 
-import '../markdown/markdown_parser.dart';
+import '../../markdown/markdown_parser.dart';
 import 'client/quiz.dart';
 import 'models/quiz_model.dart';
 

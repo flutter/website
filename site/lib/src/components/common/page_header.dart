@@ -5,8 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/breadcrumbs.dart';
-import 'package:site_shared/common/client/page_header_options.dart';
+import 'package:site_shared/components/common/breadcrumbs.dart';
+import 'package:site_shared/components/common/client/page_header_options.dart';
 import 'package:site_shared/markdown/markdown_parser.dart';
 
 import '../../util.dart';

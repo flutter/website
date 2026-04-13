@@ -20,24 +20,24 @@ import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_fil
 import 'package:docs_flutter_dev_site/src/components/pages/learning_resource_filters_sidebar.dart'
     as _learning_resource_filters_sidebar;
 import 'package:jaspr_content/components/file_tree.dart' as _file_tree;
-import 'package:site_shared/common/client/collapse_button.dart'
+import 'package:site_shared/components/common/client/collapse_button.dart'
     as _collapse_button;
-import 'package:site_shared/common/client/cookie_notice.dart' as _cookie_notice;
-import 'package:site_shared/common/client/copy_button.dart' as _copy_button;
-import 'package:site_shared/common/client/download_button.dart'
+import 'package:site_shared/components/common/client/cookie_notice.dart' as _cookie_notice;
+import 'package:site_shared/components/common/client/copy_button.dart' as _copy_button;
+import 'package:site_shared/components/common/client/download_button.dart'
     as _download_button;
-import 'package:site_shared/common/client/feedback.dart' as _feedback;
-import 'package:site_shared/common/client/on_this_page_button.dart'
+import 'package:site_shared/components/common/client/feedback.dart' as _feedback;
+import 'package:site_shared/components/common/client/on_this_page_button.dart'
     as _on_this_page_button;
-import 'package:site_shared/common/client/page_header_options.dart'
+import 'package:site_shared/components/common/client/page_header_options.dart'
     as _page_header_options;
-import 'package:site_shared/common/client/simple_tooltip.dart'
+import 'package:site_shared/components/common/client/simple_tooltip.dart'
     as _simple_tooltip;
-import 'package:site_shared/dartpad/dartpad_injector.dart' as _dartpad_injector;
-import 'package:site_shared/layout/menu_toggle.dart' as _menu_toggle;
-import 'package:site_shared/layout/site_switcher.dart' as _site_switcher;
-import 'package:site_shared/layout/theme_switcher.dart' as _theme_switcher;
-import 'package:site_shared/tutorial/client/quiz.dart' as _quiz;
+import 'package:site_shared/components/dartpad/dartpad_injector.dart' as _dartpad_injector;
+import 'package:site_shared/components/layout/menu_toggle.dart' as _menu_toggle;
+import 'package:site_shared/components/layout/site_switcher.dart' as _site_switcher;
+import 'package:site_shared/components/layout/theme_switcher.dart' as _theme_switcher;
+import 'package:site_shared/components/tutorial/client/quiz.dart' as _quiz;
 
 /// Default [ServerOptions] for use with your Jaspr project.
 ///

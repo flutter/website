@@ -8,7 +8,7 @@ import 'package:path/path.dart' as path;
 import '../common/client/copy_button.dart';
 import '../common/client/download_button.dart';
 import '../common/wrapped_code_block.dart';
-import '../extensions/code_block_processor.dart';
+import '../../extensions/code_block_processor.dart';
 
 class DownloadableSnippet extends CustomComponentBase {
   const DownloadableSnippet({

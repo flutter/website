@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/client/cookie_notice.dart';
+import 'package:site_shared/components/common/client/cookie_notice.dart';
 
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';

@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../analytics.dart';
+import '../../../analytics.dart';
 import '../button.dart';
 
 /// Provides the user options to provide feedback on the specified page.

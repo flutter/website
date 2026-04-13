@@ -6,7 +6,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../util.dart';
+import '../../util.dart';
 
 class YoutubeEmbed with CustomComponentBase {
   const YoutubeEmbed();

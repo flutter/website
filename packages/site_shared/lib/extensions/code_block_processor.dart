@@ -11,8 +11,8 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:meta/meta.dart';
 import 'package:opal/opal.dart' as opal;
 
-import '../common/wrapped_code_block.dart';
-import '../dartpad/dartpad_injector.dart';
+import '../components/common/wrapped_code_block.dart';
+import '../components/dartpad/dartpad_injector.dart';
 import '../src/highlight/theme/dark.dart';
 import '../src/highlight/theme/light.dart';
 import '../src/highlight/token_renderer.dart' as highlighter;

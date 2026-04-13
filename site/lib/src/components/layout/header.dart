@@ -5,11 +5,11 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/button.dart';
-import 'package:site_shared/common/material_icon.dart';
-import 'package:site_shared/layout/menu_toggle.dart';
-import 'package:site_shared/layout/site_switcher.dart';
-import 'package:site_shared/layout/theme_switcher.dart';
+import 'package:site_shared/components/common/button.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/layout/menu_toggle.dart';
+import 'package:site_shared/components/layout/site_switcher.dart';
+import 'package:site_shared/components/layout/theme_switcher.dart';
 
 import '../../util.dart';
 import '../../utils/active_nav.dart';

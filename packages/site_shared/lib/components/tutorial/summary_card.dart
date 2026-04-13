@@ -8,7 +8,7 @@ import 'package:jaspr_content/jaspr_content.dart';
 import 'package:yaml/yaml.dart';
 
 import '../common/material_icon.dart';
-import '../markdown/markdown_parser.dart';
+import '../../markdown/markdown_parser.dart';
 import 'models/summary_card_model.dart';
 
 class SummaryCard extends CustomComponent {

@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/material_icon.dart';
+import 'package:site_shared/components/common/material_icon.dart';
 
 import '../../models/sidenav_model.dart';
 import '../../util.dart';

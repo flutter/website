@@ -5,8 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/client/simple_tooltip.dart';
-import 'package:site_shared/utils/component_ref.dart';
+import 'package:site_shared/components/common/client/simple_tooltip.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../pages/glossary.dart';
 

@@ -5,8 +5,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/common/button.dart';
-import 'package:site_shared/common/card.dart';
+import 'package:site_shared/components/common/button.dart';
+import 'package:site_shared/components/common/card.dart';
 import 'package:site_shared/markdown/markdown_parser.dart';
 
 import '../components/pages/glossary_search_section.dart';
@@ -21,7 +21,8 @@ enum ResourceType {
   video,
   code,
   diagnostic,
-  external;
+  external
+  ;
 
   /// The ID of the material symbol icon associated with each resource type.
   String get icon => switch (this) {

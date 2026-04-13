@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../util.dart';
+import '../../util.dart';
 import 'material_icon.dart';
 
 /// A generic button component with different style variants.
@@ -86,7 +86,8 @@ class Button extends StatelessComponent {
 enum ButtonStyle {
   filled,
   outlined,
-  text;
+  text
+  ;
 
   String get cssClass => switch (this) {
     ButtonStyle.filled => 'filled-button',
