@@ -6,7 +6,11 @@ description: >
   to accelerate your Flutter development.
 ---
 
-AI tools are not only features in your app, but can also be powerful assistants in your development workflow. Tools like Antigravity and Gemini CLI can help you write code faster, understand complex concepts, and reduce boilerplate.
+AI tools are not only features in your app,
+but can also be powerful assistants in your development workflow.
+
+Tools like Antigravity and Gemini CLI can help you write code faster,
+understand complex concepts, and reduce boilerplate.
 
 ## Antigravity
 
