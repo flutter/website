@@ -1,5 +1,6 @@
 ---
 title: Input and events
+sidenav: ai
 description: How input and events are handled in GenUI applications.
 prev:
   title: Get started with the GenUI SDK for Flutter

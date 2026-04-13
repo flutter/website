@@ -10,8 +10,7 @@ you can connect to servers using `WebSockets`.
 `WebSockets` allow for two-way communication with a server
 without polling.
 
-In this example, connect to a
-[test WebSocket server sponsored by Lob.com][].
+In this example, connect to a [test WebSocket server][].
 The server sends back the same message you send to it.
 This recipe uses the following steps:
 
@@ -35,7 +34,7 @@ create a `WebSocketChannel` that connects to a server:
 <?code-excerpt "lib/main.dart (connect)" replace="/_channel/channel/g"?>
 ```dart
 final WebSocketChannel channel = WebSocketChannel.connect(
-  Uri.parse('wss://echo.websocket.events'),
+  Uri.parse('wss://echo.websocket.org'),
 );
 ```
 
@@ -137,7 +136,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
   final WebSocketChannel _channel = WebSocketChannel.connect(
-    Uri.parse('wss://echo.websocket.events'),
+    Uri.parse('wss://echo.websocket.org'),
   );
 
   @override
@@ -193,6 +192,6 @@ class _MyHomePageState extends State<MyHomePage> {
 [`Stream`]: {{site.api}}/flutter/dart-async/Stream-class.html
 [`StreamBuilder`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`StreamSink`]: {{site.api}}/flutter/dart-async/StreamSink-class.html
-[test WebSocket server sponsored by Lob.com]: https://www.lob.com/blog/websocket-org-is-down-here-is-an-alternative
+[test WebSocket server]: https://websocket.org/tools/websocket-echo-server/
 [`Text`]: {{site.api}}/flutter/widgets/Text-class.html
 [`web_socket_channel`]: {{site.pub-pkg}}/web_socket_channel

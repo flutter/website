@@ -5,5 +5,7 @@ environment:
   sdk: ^3.11.0
 
 workspace:
+  - packages/analysis_defaults
+  - packages/excerpter
   - site
   - tool/dash_site

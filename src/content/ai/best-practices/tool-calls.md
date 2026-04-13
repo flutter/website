@@ -1,5 +1,6 @@
 ---
 title: Tool calls (aka function calls)
+sidenav: ai
 shortTitle: Tool calls
 description: >
   Learn how to implement tool calling, manage agentic loops, and incorporate 

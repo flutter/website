@@ -27,9 +27,9 @@ This guide explains how to perform the following tasks:
 
 :::note
 Throughout this page, `[project]` refers to
-the directory that your application is in. While following
-these instructions, substitute `[project]` with
-your app's directory.
+the directory that contains your application.
+While following these instructions,
+substitute `[project]` with your app's directory.
 :::
 
 [play]: {{site.android-dev}}/distribute
@@ -47,7 +47,7 @@ Alternatively, you can do it manually using the following steps:
 
 1. In the `[project]/android/app/src/main/res/` directory,
    place your icon files in folders named using
-   [configuration qualifiers][].
+   [configuration qualifiers][config-qual].
    The default `mipmap-` folders demonstrate the correct
    naming convention.
 
@@ -62,7 +62,7 @@ Alternatively, you can do it manually using the following steps:
 
 [flutter_launcher_icons]: {{site.pub}}/packages/flutter_launcher_icons
 [launchericons]: {{site.material}}/styles/icons
-[configuration qualifiers]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
+[config-qual]: {{site.android-dev}}/guide/topics/resources/providing-resources#AlternativeResources
 [applicationtag]: {{site.android-dev}}/guide/topics/manifest/application-element
 
 ## Enable Material Components
@@ -123,7 +123,7 @@ dependencies {
 <a id="signing-the-app"></a>
 ## Sign the app
 
-To publish on the Play Store, you need to
+To publish on the Play Store, you must
 sign your app with a digital certificate.
 
 Android uses two signing keys: _upload_ and _app signing_.
@@ -144,7 +144,7 @@ To sign your app, use the following instructions.
 If you have an existing keystore, skip to the next step.
 If not, create one using one of the following methods:
 
-1. Follow the [Android Studio key generation steps][].
+1. Follow the [Android Studio key generation steps][as-key-steps].
 1. Run the following command at the command line:
 
    On macOS or Linux, use the following command:
@@ -185,7 +185,7 @@ If not, create one using one of the following methods:
      the keystore type defaults to PKS12.
    :::
 
-[Android Studio key generation steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
+[as-key-steps]: {{site.android-dev}}/studio/publish/app-signing#generate-key
 
 ### Reference the keystore from the app
 
@@ -469,8 +469,8 @@ android {
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
-        versionCode = flutterVersionCode.toInteger()
-        versionName = flutterVersionName
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
     }
 
     buildTypes {
@@ -491,6 +491,21 @@ Review the `applicationId` in `defaultConfig` and ensure it is unique.
 Typically, this is a reverse domain name, such as `com.example.myapp`.
 Once you upload your app to the Play Store, you cannot change the Application ID.
 :::
+
+If you update the `applicationId` and `namespace` properties,
+you must also update the `package` statement in your `MainActivity.kt`
+or `MainActivity.java` file and move the file
+to the corresponding directory structure.
+
+For example:
+
+- In Kotlin, if your new ID is `com.example.myapp`,
+  move your `MainActivity` file to
+  `android/app/src/main/kotlin/com/example/myapp/MainActivity.kt`
+  and ensure the first line is `package com.example.myapp`.
+- In Java, move your `MainActivity` file to
+  `android/app/src/main/java/com/example/myapp/MainActivity.java`
+  and ensure the first line is `package com.example.myapp`.
 
 [application-id]: {{site.android-dev}}/studio/build/application-id
 

@@ -182,9 +182,8 @@ You can solve this in one of two ways:
 
 How to obtain the physical screen dimensions?
 
-You can use the [`Display`][] API, introduced in
-Flutter 3.13, which contains the size,
-pixel ratio, and the refresh rate of the physical device.
+You can use the [`Display`][] API, which contains the
+size, pixel ratio, and refresh rate of the physical device.
 
 [`Display`]: {{site.api}}/flutter/dart-ui/Display-class.html
 

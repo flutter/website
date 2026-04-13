@@ -4,7 +4,8 @@ description: Learn how to navigate from one page to another in a Flutter app.
 layout: tutorial
 ---
 
-Learn to navigate between screens with Navigator.push and implement adaptive navigation patterns for different screen sizes.
+Learn to navigate between screens with Navigator.push and implement
+adaptive navigation patterns for different screen sizes.
 
 <SummaryCard>
 title: What you'll accomplish

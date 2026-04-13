@@ -26,7 +26,6 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
   String get defaultSidenav => 'default';
 
 
-
   @override
   @mustCallSuper
   Iterable<Component> buildHead(Page page) {
@@ -161,11 +160,11 @@ ga('send', 'pageview');
 
     final pageSidenav = pageData['sidenav'] as String? ?? defaultSidenav;
     final sideNavEntries = switch (page.data['sidenav']) {
-      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
-      final Map<String, Object?> sidenavs when pageSidenav == 'ai' => switch (sidenavs['ai']) {
+      _ when pageSidenav == 'ai' => switch (page.data['ai']) {
         final List<Object?> sidenavData => navEntriesFromData(sidenavData),
         _ => null,
       },
+      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
       _ => null,
     };
     final obsolete = pageData['obsolete'] == true;

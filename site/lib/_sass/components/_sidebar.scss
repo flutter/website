@@ -15,30 +15,32 @@
   z-index: var(--site-z-side);
   background-color: var(--site-base-bgColor);
 
-  @at-root body.open_menu {
-    overflow-y: hidden;
+  @at-root body {
+    &.open_menu {
+      overflow-y: hidden;
 
-    @media (min-width: 1024px) {
-      overflow-y: auto;
-    }
-
-    #sidenav {
-      display: block;
-    }
-  }
-
-  @at-root body:not(.sidenav-closed) {
-    #sidenav {
       @media (min-width: 1024px) {
+        overflow-y: auto;
+      }
+
+      #sidenav {
         display: block;
-        border-right: 0.1rem solid var(--site-outline-variant);
-        padding: 0.75rem 0.75rem 2.25rem;
-        position: sticky;
-        height: calc(100vh - var(--site-header-height));
-        top: var(--site-header-height);
-        overscroll-behavior: auto;
-        width: 16rem;
-        background: none;
+      }
+    }
+
+    &:not(.sidenav-hidden) {
+      #sidenav {
+        @media (min-width: 1024px) {
+          display: block;
+          border-right: 0.1rem solid var(--site-outline-variant);
+          padding: 0.75rem 0.75rem 2.25rem;
+          position: sticky;
+          height: calc(100vh - var(--site-header-height));
+          top: var(--site-header-height);
+          overscroll-behavior: auto;
+          width: 16rem;
+          background: none;
+        }
       }
     }
   }

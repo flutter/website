@@ -2,20 +2,15 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:collection/collection.dart';
-
 ActiveNavEntry activeNavEntry(String pageUrlPath) {
-  final firstFragment = pageUrlPath
-      .split('/')
-      .firstWhereOrNull((fragment) => fragment.isNotEmpty)
-      ?.trim()
-      .toLowerCase();
+  if (pageUrlPath.startsWith('/learn/pathway')) {
+    return ActiveNavEntry.learn;
+  }
 
-  return switch (firstFragment) {
-    'learn' || 'tutorial' => ActiveNavEntry.learn,
-    'ai' => ActiveNavEntry.ai,
-    _ => ActiveNavEntry.home,
-  };
+  if (pageUrlPath.startsWith('/ai')) {
+    return ActiveNavEntry.ai;
+  }
+  return ActiveNavEntry.home;
 }
 
 enum ActiveNavEntry {
