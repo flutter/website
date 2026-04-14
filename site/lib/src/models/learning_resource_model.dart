@@ -57,7 +57,8 @@ enum LearningResourceType {
   tutorial('Tutorial', ['codelab', 'tutorial']),
   sampleCode('Sample code', ['quickstart', 'demo', 'sample', 'sample code']),
   workshop('Workshop', ['workshop', 'video']),
-  recipe('Recipe', ['recipe', 'how to', 'cookbook']);
+  recipe('Recipe', ['recipe', 'how to', 'cookbook'])
+  ;
 
   const LearningResourceType(this.label, this.tags);
 
@@ -99,7 +100,8 @@ enum LearningResourceTag {
   ]),
   testing('Testing', ['testing', 'tests', 'test', 'perf', 'performance']),
   web('Web', ['web', 'wasm']),
-  widgets('Widgets', ['widgets', 'layout']);
+  widgets('Widgets', ['widgets', 'layout'])
+  ;
 
   const LearningResourceTag(this.label, this.tags);
 

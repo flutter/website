@@ -31,7 +31,21 @@ it navigates to the contact list for that group.
 First, revert changes in the adaptive layout widget so that it
 displays the `ContactGroupsPage` by default on small screens.
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart"?>
+```dart
+import 'package:flutter/cupertino.dart';
+import 'contact_groups.dart';
+import 'contacts.dart';
+
+const largeScreenMinWidth = 600;
+
+class AdaptiveLayout extends StatefulWidget {
+  const AdaptiveLayout({super.key});
+
+  @override
+  State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
+}
+
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   int selectedListId = 0;
 
@@ -55,6 +69,28 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       },
     );
   }
+
+  Widget _buildLargeScreenLayout() {
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.extraLightBackgroundGray,
+      child: SafeArea(
+        child: Row(
+          children: [
+            SizedBox(
+              width: 320,
+              child: ContactGroupsSidebar(
+                selectedListId: selectedListId,
+                onListSelected: _onContactListSelected,
+              ),
+            ),
+            Container(width: 1, color: CupertinoColors.separator),
+            Expanded(child: ContactListDetail(listId: selectedListId)),
+          ],
+        ),
+      ),
+    );
+  }
+
 }
 ```
 
@@ -65,10 +101,12 @@ and provides it with a callback.
 That callback needs to be updated to navigate when a group is tapped,
 rather than printing the group to the console.
 
-Ensure that the `onListSelected` callback in
-`lib/screens/contact_groups.dart` is implemented as follows:
+Ensure that the `onListSelected` callback and imports in `lib/screens/contact_groups.dart` are implemented as follows:
 
-```dart title="lib/screens/contact_groups.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_page)"?>
+```dart
+import 'contacts.dart';
+
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
 
@@ -113,10 +151,8 @@ Thanks to the refactoring in the previous step,
 creating this component is more straightforward.
 Add this widget to the bottom of `lib/screens/contact_groups.dart`:
 
-```dart title="lib/screens/contact_groups.dart"
-// ...
-
-/// A sidebar component for selecting contact groups, designed for large screens.
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_sidebar)"?>
+```dart
 class ContactGroupsSidebar extends StatelessWidget {
   const ContactGroupsSidebar({
     super.key,
@@ -150,10 +186,8 @@ doesn't show navigation controls. Just like the sidebar,
 this can be recreated by reusing the `_ContactListView`.
 Add this widget to the bottom of your `contacts.dart` file:
 
-```dart title="lib/screens/contacts.dart"
-// ...
-
-/// A detail view component for showing contacts in a specific list.
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contacts.dart (contact_list_detail)"?>
+```dart
 class ContactListDetail extends StatelessWidget {
   const ContactListDetail({super.key, required this.listId});
 
@@ -161,10 +195,7 @@ class ContactListDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _ContactListView(
-      listId: listId,
-      automaticallyImplyLeading: false,
-    );
+    return _ContactListView(listId: listId, automaticallyImplyLeading: false);
   }
 }
 ```
@@ -179,15 +210,17 @@ Now, connect the sidebar to your adaptive layout.
 Update your `adaptive_layout.dart` file to import the necessary files and
 update the large screen layout:
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (imports)"?>
+```dart
 import 'package:flutter/cupertino.dart';
-import 'package:rolodex/screens/contact_groups.dart';
-import 'package:rolodex/screens/contacts.dart';
+import 'contact_groups.dart';
+import 'contacts.dart';
 ```
 
 Then update the `_buildLargeScreenLayout` method:
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (build_large_screen)"?>
+```dart
 Widget _buildLargeScreenLayout() {
   return CupertinoPageScaffold(
     backgroundColor: CupertinoColors.extraLightBackgroundGray,
@@ -201,13 +234,8 @@ Widget _buildLargeScreenLayout() {
               onListSelected: _onContactListSelected,
             ),
           ),
-          Container(
-            width: 1,
-            color: CupertinoColors.separator,
-          ),
-          Expanded(
-            child: ContactListDetail(listId: selectedListId),
-          ),
+          Container(width: 1, color: CupertinoColors.separator),
+          Expanded(child: ContactListDetail(listId: selectedListId)),
         ],
       ),
     ),
