@@ -8,7 +8,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 
 import '../components/common/page_header.dart';
 import '../components/common/prev_next.dart';
-import '../components/layout/banner.dart';
 import '../components/layout/toc.dart';
 import '../components/layout/trailing_content.dart';
 import '../models/page_navigation_model.dart';
@@ -27,14 +26,9 @@ class DocLayout extends FlutterDocsLayout {
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
-    final siteData = page.data.site;
 
     final pageTitle = pageData['title'] as String;
     final pageDescription = (pageData['description'] as String?)?.trim();
-    final showBanner =
-        (pageData['showBanner'] as bool?) ??
-        (siteData['showBanner'] as bool?) ??
-        false;
     final navigationData = page.navigationData;
 
     return super.buildBody(
@@ -54,10 +48,7 @@ class DocLayout extends FlutterDocsLayout {
                 PageNavBar(navigationData),
               ],
             ),
-          if (showBanner)
-            if (siteData['bannerHtml'] case final String bannerHtml
-                when bannerHtml.trim().isNotEmpty)
-              DashBanner(bannerHtml),
+          ?buildBanner(page),
           div(classes: 'after-leading-content', [
             if (navigationData case PageNavigationData(
               toc: final toc?,

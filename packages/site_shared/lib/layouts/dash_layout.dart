@@ -9,6 +9,7 @@ import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../components/common/client/cookie_notice.dart';
+import '../components/layout/banner.dart';
 import '../util.dart';
 
 /// The base Jaspr Content layout for all sites.
@@ -255,6 +256,21 @@ try {
         ),
       ],
     );
+  }
+
+  /// Builds the banner component for the given [page].
+  Component? buildBanner(Page page) {
+    final showBanner =
+        (page.data.page['showBanner'] as bool?) ??
+        (page.data.site['showBanner'] as bool?) ??
+        false;
+    if (showBanner) {
+      if (page.data['banner'] case final Map<String, Object?> bannerData) {
+        return DashBanner(BannerContent.fromMap(bannerData));
+      }
+    }
+
+    return null;
   }
 
   /// Builds the speculation rules `<script>` and `<link rel="prefetch">`

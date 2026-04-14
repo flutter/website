@@ -1,4 +1,4 @@
-@use 'base/mixins';
+@use '../base/mixins';
 
 .card-list {
   display: flex;
@@ -173,7 +173,7 @@
     }
   }
 
-    &.install-card {
+  &.install-card {
     gap: 0.25rem;
 
     .card-leading {

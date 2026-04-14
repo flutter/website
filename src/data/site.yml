@@ -5,12 +5,6 @@ email: flutter-dev@googlegroups.com
 
 showBanner: true
 
-# The raw, inline HTML to display in the banner.
-# Is automatically wrapped in a paragraph tag.
-bannerHtml: >-
-  Flutter is back at Google I/O on May 19-20!
-  <a href="https://io.google/2026/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=flutter" target="_blank">Register now</a>
-
 branch: main
 repo:
   organization: https://github.com/flutter
