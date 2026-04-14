@@ -359,6 +359,7 @@
       { "source": "/go/ci-post-test-analysis", "destination": "https://docs.google.com/document/d/1V0W6q7gkk2hHFLYb3t7JFr84Km5uhKl9T3Ksb1IpkLQ/edit?usp=sharing", "type": 301 },
       { "source": "/go/clean-up-not-disposed-disposables-in-ff", "destination": "https://docs.google.com/document/d/1bXannXQ8rEtfwxEVd7LDo7xiVu5-QxRoall28MIIFss", "type": 301 },
       { "source": "/go/clip-behavior", "destination": "https://docs.google.com/document/d/1gC5Di4ykTCqupD77PWpy9D8xXo0Ide5CnrH0zzVIhKo/edit", "type": 301 },
+      { "source": "/go/codeshare-avatar", "destination": "https://docs.google.com/document/d/1tFLsdeahcHvjS9ERo9926duK7AshZiHEiCd3yZ9ZgI0/edit?usp=sharing", "type": 301 },
       { "source": "/go/codeshare-expansion-tile", "destination": "https://docs.google.com/document/d/1GTyEZjjTpx6fcrzOX-6kQ3phwu5UhUGLOWXJoy0yto0/edit?usp=sharing", "type": 301 },
       { "source": "/go/codeshare-tooltip", "destination": "https://docs.google.com/document/d/1K3msJRq_Rru5hMhUYl34U0CTjM889J_xekRSGj1gSJo/edit?usp=sharing", "type": 301 },
       { "source": "/go/colorscheme-enhancements", "destination": "https://docs.google.com/document/d/1cIBW0jMRrtWVA5E0TB0qmwqSgLoVDIVPOysKYJOvH7U/edit?usp=sharing", "type": 301 },
