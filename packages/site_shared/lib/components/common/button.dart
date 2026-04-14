@@ -86,8 +86,7 @@ class Button extends StatelessComponent {
 enum ButtonStyle {
   filled,
   outlined,
-  text
-  ;
+  text;
 
   String get cssClass => switch (this) {
     ButtonStyle.filled => 'filled-button',
