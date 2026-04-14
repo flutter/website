@@ -11,18 +11,24 @@ This guide covers how you can leverage AI tools to build AI-powered
 features for your Flutter apps and streamline your
 Flutter and Dart development.
 
-## Overview
+AI can be used for building AI-powered apps with Flutter
+and for accelerating your development workflow.
 
-AI can be used for building AI-powered apps with Flutter and for accelerating
-your development workflow. You can integrate AI-powered features like natural
-language understanding and content generation directly into your Flutter app
-using powerful SDKs, like the Firebase SDK for Generative AI. You can also use
-AI tools, such as Gemini Code Assist and Gemini CLI, to help with code
-generation and scaffolding. These tools are powered by the Dart and Flutter MCP
-server, which provides AI with a rich context about your codebase. The Flutter
-Extension for Gemini CLI makes it easy to leverage official rules, the MCP server,
-and custom commands for building your app. Additionally, rules files help
-fine-tune the AI's behavior and enforce project-specific best practices.
+You can integrate AI-powered features like natural language understanding
+and content generation directly into your Flutter app
+using powerful SDKs, like the Firebase SDK for Generative AI.
+
+You can also use AI tools, such as Gemini Code Assist and Gemini CLI,
+to help with code generation and scaffolding.
+
+These tools are powered by the Dart and Flutter MCP server,
+which provides AI with a rich context about your codebase.
+
+The Flutter Extension for Gemini CLI makes it easy to leverage official rules,
+the MCP server, and custom commands for building your app.
+
+Additionally, rules files help fine-tune the AI's behavior
+and enforce project-specific best practices.
 
 ## Build AI-powered experiences with Flutter
 
