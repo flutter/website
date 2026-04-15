@@ -1,5 +1,6 @@
 ---
 title: Chat client sample
+sidenav: ai
 description: >
   Learn about the chat client sample included in the AI Toolkit.
 prev:
