@@ -98,25 +98,26 @@ consider using Firebase AI Logic instead.
 
     final surfaceController = SurfaceController(catalogs: catalogs);
     
-    // The Conversation wires transport -> controller internally.
-    // Implement onSend to call your LLM and pipe chunks back.
-    final transportAdapter = A2uiTransportAdapter(onSend: (message) async {
-      // final stream = model.generateContentStream(...);
-      // await for (final chunk in stream) {
-      //   transportAdapter.addChunk(chunk.text ?? '');
-      // }
-    });
-    
     final promptBuilder = PromptBuilder.chat(
       catalog: catalog,
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
     final model = GenerativeModel(
-      model: 'gemini-2.5-flash',
+      model: 'gemini-1.5-flash',
       apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
+
+    // The Conversation wires transport -> controller internally.
+    // Implement onSend to call your LLM and pipe chunks back.
+    late final A2uiTransportAdapter transportAdapter;
+    transportAdapter = A2uiTransportAdapter(onSend: (message) async {
+      // final stream = model.generateContentStream(...);
+      // await for (final chunk in stream) {
+      //   transportAdapter.addChunk(chunk.text ?? '');
+      // }
+    });
 
     final conversation = Conversation(
       controller: surfaceController,
@@ -557,7 +558,7 @@ To receive and display generated UI:
        // Send a request containing the user's [text] to the agent.
        void _sendMessage(String text) async {
          if (text.trim().isEmpty) return;
-         // await _conversation.sendRequest(ChatMessage.user(text));
+         // await _conversation.sendRequest(ChatMessage.user(TextPart(text)));
        }
 
        // Invoked by the events stream listener when a new
