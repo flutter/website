@@ -635,6 +635,161 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 </Tab>
 </Tabs>
 
+## Using the FlutterSceneDelegate
+
+Similar to the `FlutterAppDelegate`,
+the `FlutterSceneDelegate` is recommended but not required.
+The `FlutterSceneDelegate` forwards scene callbacks,
+such as [`openURL`][] to plugins.
+
+### Create/Update a SceneDelegate
+
+<Tabs key="ios-framework-switcher">
+<Tab name="UIKit-Swift">
+
+```swift diff
+  import UIKit
++ import Flutter
+
+- class SceneDelegate: UIResponder, UIWindowSceneDelegate {
++ class SceneDelegate: FlutterSceneDelegate {
+```
+
+</Tab>
+<Tab name="UIKit-ObjC">
+
+```objc diff
+- @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
++ @interface SceneDelegate : FlutterSceneDelegate
+```
+
+</Tab>
+<Tab name="SwiftUI">
+
+When using Flutter in a SwiftUI app,
+you can [optionally use a FlutterAppDelegate](#using-the-flutterappdelegate)
+to receive application events. To migrate that to use `UIScene` events,
+you can make the following changes:
+
+1. Set the Scene Delegate to `FlutterSceneDelegate`
+   in `application:configurationForConnecting:options:`.
+
+```swift diff
+  @Observable
+  class AppDelegate: FlutterAppDelegate {
+    ...
++   override func application(
++     _ application: UIApplication,
++     configurationForConnecting connectingSceneSession: UISceneSession,
++     options: UIScene.ConnectionOptions
++   ) -> UISceneConfiguration {
++     let configuration = UISceneConfiguration(
++       name: nil,
++       sessionRole: connectingSceneSession.role
++     )
++     configuration.delegateClass = FlutterSceneDelegate.self
++     return configuration
++   }
+  }
+```
+
+2. If your app doesn't support multiple scenes,
+   set `Enable Multiple Scenes` to `NO` under
+   `Application Scene Manifest` in your target's Info properties.
+   This is enabled by default for SwiftUI apps.
+
+![Xcode plist editor for UIApplicationSceneManifest](/assets/images/docs/breaking-changes/uiscenedelegate-swiftui-info-plist.png)
+
+Otherwise, visit [if your app supports multiple scenes][multiple-scenes]
+for further instructions.
+
+</Tab>
+</Tabs>
+
+### If you can't directly make FlutterSceneDelegate a subclass
+
+If you can't directly make `FlutterSceneDelegate` a subclass,
+you can use the `FlutterSceneLifeCycleProvider` protocol and
+`FlutterPluginSceneLifeCycleDelegate` object to forward scene
+life cycle events to Flutter.
+
+<Tabs key="ios-language-switcher">
+<Tab name="Swift">
+
+```swift title="SceneDelegate.swift" diff
+  import Flutter
+  import UIKit
+
+- class SceneDelegate: UIResponder, UIWindowSceneDelegate
++ class SceneDelegate: UIResponder, UIWindowSceneDelegate, FlutterSceneLifeCycleProvider
+  {
++   var sceneLifeCycleDelegate: FlutterPluginSceneLifeCycleDelegate =
++     FlutterPluginSceneLifeCycleDelegate()
+
+    var window: UIWindow?
+
++   func add(_ delegate: FlutterSceneLifeCycleDelegate) {
++     sceneLifeCycleDelegate.add(delegate)
++   }
++
++   func remove(_ delegate: FlutterSceneLifeCycleDelegate) {
++     sceneLifeCycleDelegate.remove(delegate)
++   }
++
++   // Forward scene lifecycle methods as needed, for example:
++   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
++     sceneLifeCycleDelegate.scene(scene, openURLContexts: URLContexts)
++   }
+  }
+```
+
+</Tab>
+<Tab name="Objective-C">
+
+```objc title="SceneDelegate.h" diff
+  @import Flutter;
+  @import UIKit;
+
+- @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
++ @interface SceneDelegate : UIResponder <UIWindowSceneDelegate, FlutterSceneLifeCycleProvider>
+  @property (strong, nonatomic) UIWindow *window;
++ @property (nonatomic, strong) FlutterPluginSceneLifeCycleDelegate* sceneLifeCycleDelegate;
+  @end
+```
+
+```objc title="SceneDelegate.m" diff
+  #import "SceneDelegate.h"
+
+  @implementation SceneDelegate
+
++ - (instancetype)init {
++     if (self = [super init]) {
++         _sceneLifeCycleDelegate = [[FlutterPluginSceneLifeCycleDelegate alloc] init];
++     }
++     return self;
++ }
++
++ - (void)addSceneLifeCycleDelegate:(NSObject<FlutterPlugin>*)delegate {
++     [_sceneLifeCycleDelegate addDelegate:delegate];
++ }
++
++ - (void)removeSceneLifeCycleDelegate:(NSObject<FlutterPlugin>*)delegate {
++     [_sceneLifeCycleDelegate removeDelegate:delegate];
++ }
++
++ // Forward scene lifecycle methods as needed, for example:
++ - (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
++     [_sceneLifeCycleDelegate scene:scene openURLContexts:URLContexts];
++ }
+
+  @end
+```
+
+</Tab>
+</Tabs>
+
+[multiple-scenes]: /release/breaking-changes/uiscenedelegate/#if-your-app-supports-multiple-scenes
+
 ## Launch options
 
 The examples demonstrate running Flutter using the default launch settings.
