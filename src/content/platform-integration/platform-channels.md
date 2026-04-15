@@ -613,33 +613,29 @@ a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
 :::note
-If your app adopts the `UISceneDelegate` lifecycle,
+If your app adopts the `UISceneDelegate` lifecycle (default in Flutter 3.41+),
 `window` will be `nil` during `application(_:didFinishLaunchingWithOptions:)`.
-To avoid a crash, instantiate your `FlutterMethodChannel`
-and set its call handler within your `SceneDelegate`'s
-`scene(_:willConnectTo:options:)` method,
-accessing the controller by using
-`window?.rootViewController as? FlutterViewController`.
+To avoid a crash, use the `FlutterImplicitEngineDelegate` protocol and
+create your `FlutterMethodChannel` in the `didInitializeImplicitFlutterEngine` method.
 :::
 
 ```swift title="AppDelegate.swift"
 @main
-@objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+@objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
+   
+  func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
+    GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
 
-    let controller : FlutterViewController = window?.rootViewController as! FlutterViewController
-    let batteryChannel = FlutterMethodChannel(name: "samples.flutter.dev/battery",
-                                              binaryMessenger: controller.binaryMessenger)
+    let batteryChannel = FlutterMethodChannel(
+      name: "samples.flutter.dev/battery",
+      binaryMessenger: engineBridge.applicationRegistrar.messenger()
+    )
+
     batteryChannel.setMethodCallHandler({
       [weak self] (call: FlutterMethodCall, result: FlutterResult) -> Void in
       // This method is invoked on the UI thread.
       // Handle battery messages.
     })
-
-    GeneratedPluginRegistrant.register(with: self)
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
 ```
@@ -706,13 +702,10 @@ Make sure to use the same channel name
 as was used on the Flutter client side.
 
 :::note
-If your app adopts the `UISceneDelegate` lifecycle,
+If your app adopts the `UISceneDelegate` lifecycle (default in Flutter 3.41+),
 `window` will be `nil` during `application:didFinishLaunchingWithOptions:`.
-To avoid a crash, instantiate your `FlutterMethodChannel`
-and set its call handler within your `SceneDelegate`'s
-`scene:willConnectToSession:options:` method,
-accessing the controller by using
-`(FlutterViewController*)self.window.rootViewController`.
+To avoid a crash, use the `FlutterImplicitEngineDelegate` protocol and
+create your `FlutterMethodChannel` in the `didInitializeImplicitFlutterEngine` method.
 :::
 
 ```objc title="AppDelegate.m"
@@ -720,21 +713,20 @@ accessing the controller by using
 #import "GeneratedPluginRegistrant.h"
 
 @implementation AppDelegate
-- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
-  FlutterViewController* controller = (FlutterViewController*)self.window.rootViewController;
+
+- (void)didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {
+  [GeneratedPluginRegistrant registerWithRegistry:engineBridge.pluginRegistry];
 
   FlutterMethodChannel* batteryChannel = [FlutterMethodChannel
-                                          methodChannelWithName:@"samples.flutter.dev/battery"
-                                          binaryMessenger:controller.binaryMessenger];
+                                        methodChannelWithName:@"samples.flutter.dev/battery"
+                                        binaryMessenger:engineBridge.applicationRegistrar.messenger];
 
   [batteryChannel setMethodCallHandler:^(FlutterMethodCall* call, FlutterResult result) {
     // This method is invoked on the UI thread.
     // TODO
   }];
-
-  [GeneratedPluginRegistrant registerWithRegistry:self];
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
+@end
 ```
 
 Next, add the iOS ObjectiveC code that uses the iOS battery APIs to

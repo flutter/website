@@ -169,21 +169,18 @@ modify the App's `AppDelegate.swift`:
 import Flutter
 import UIKit
 
-@UIApplicationMain
-@objc class AppDelegate: FlutterAppDelegate {
-    override func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?
-    ) -> Bool {
-        GeneratedPluginRegistrant.register(with: self)
+@main
+@objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
+   
+    func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
+        GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
 
-        guard let pluginRegistrar = self.registrar(forPlugin: "plugin-name") else { return false }
+        guard let pluginRegistrar = engineBridge.pluginRegistry.registrar(forPlugin: "plugin-name") else { return }
 
         let factory = FLNativeViewFactory(messenger: pluginRegistrar.messenger())
         pluginRegistrar.register(
             factory,
             withId: "<platform-view-type>")
-        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 }
 ```
@@ -298,19 +295,16 @@ modify the App's `AppDelegate.m`:
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [GeneratedPluginRegistrant registerWithRegistry:self];
+- (void)didInitializeImplicitFlutterEngine:(NSObject<FlutterImplicitEngineBridge>*)engineBridge {
+  [GeneratedPluginRegistrant registerWithRegistry:engineBridge.pluginRegistry];
 
-   NSObject<FlutterPluginRegistrar>* registrar =
-      [self registrarForPlugin:@"plugin-name"];
+  NSObject<FlutterPluginRegistrar>* registrar =
+      [engineBridge.pluginRegistry registrarForPlugin:@"plugin-name"];
 
   FLNativeViewFactory* factory =
       [[FLNativeViewFactory alloc] initWithMessenger:registrar.messenger];
 
-  [[self registrarForPlugin:@"<plugin-name>"] registerViewFactory:factory
-                                                          withId:@"<platform-view-type>"];
-  return [super application:application didFinishLaunchingWithOptions:launchOptions];
+  [registrar registerViewFactory:factory withId:@"<platform-view-type>"];
 }
 
 @end
