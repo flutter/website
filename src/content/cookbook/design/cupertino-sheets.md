@@ -53,6 +53,7 @@ showCupertinoSheet(
     return SingleChildScrollView(
       child: Center(
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const SizedBox(height: 100),
@@ -110,6 +111,7 @@ class CupertinoSheetPage extends StatelessWidget {
                 return SingleChildScrollView(
                   child: Center(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         const SizedBox(height: 100),
