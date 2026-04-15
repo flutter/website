@@ -196,10 +196,10 @@ from the message processor.
 
 ```dart
 // Conversation constructor
-_userEventSubscription = surfaceController.onSubmit.listen(sendMessage);
+_userEventSubscription = surfaceController.onSubmit.listen(sendRequest);
 ```
 
-When an event is received, the `sendMessage` method:
+When an event is received, the `sendRequest` method:
 
 1. Wraps the `UserUiInteractionMessage` back to the developer's client code.
 2. The custom integration or predefined transport adapter forwards
