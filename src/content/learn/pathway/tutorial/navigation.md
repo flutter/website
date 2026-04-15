@@ -68,7 +68,7 @@ Ensure that the `onListSelected` callback in
 `lib/screens/contact_groups.dart` is implemented as follows:
 
 ```dart title="lib/screens/contact_groups.dart"
-import 'package:rolodex/screens/contacts.dart';
+import 'contacts.dart';
 
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
@@ -182,8 +182,8 @@ update the large screen layout:
 
 ```dart title="lib/screens/adaptive_layout.dart"
 import 'package:flutter/cupertino.dart';
-import 'package:rolodex/screens/contact_groups.dart';
-import 'package:rolodex/screens/contacts.dart';
+import 'contact_groups.dart';
+import 'contacts.dart';
 ```
 
 Then update the `_buildLargeScreenLayout` method:
