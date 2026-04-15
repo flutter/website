@@ -368,7 +368,7 @@ attacks that make use of quantum computing.
 For more information, check out the
 [Android documentation on PQC APK signing][android-doc]
 
-[android-doc]: ({{site.android-dev}}/about/versions/17/features#pqc-apk-signing).
+[android-doc]: {{site.android-dev}}/about/versions/17/features#pqc-apk-signing
 
 ## Shrink your code with R8
 
@@ -767,13 +767,19 @@ The resulting app bundle or APK files are located in
 
 ### How to tell if an apk uses Flutter?
 
-Recommended: Using APK files
-[`apkanalyzer files list --files-only <SOME-APK> files list --files-only <SOME-APK>`][apkanalyzer]
-Then looking for a file in `/lib/<ARCH>/libflutter.so`
+You can use the [`apkanalyzer`][] tool and list the files:
 
-Example:
-`apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l`
-returns any number greater than 0.
+```sh
+apkanalyzer files list --files-only <SOME-APK> files list --files-only <SOME-APK>
+```
+
+Then look for a file in `/lib/<ARCH>/libflutter.so`.
+
+For example, the following should return a number greater than 0:
+
+```sh
+apkanalyzer files list some-flutter-app.apk | grep flutter.so | wc -l
+```
 
 **Why this works**
 
@@ -784,7 +790,7 @@ The Java/Android tooling renames the `flutter` library with the `lib` prefix
 and handles library location across architectures.
 This is how some reverse engineer an APK to identify it as a Flutter app.
 
-[apkanalyzer]: {{site.android-dev}}/tools/apkanalyzer
+[`apkanalyzer`]: {{site.android-dev}}/tools/apkanalyzer
 
 #### Secondary Evaluation:
 
