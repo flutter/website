@@ -4,6 +4,8 @@ description: Learn how to use the LayoutBuilder widget.
 layout: tutorial
 ---
 
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
 Learn how to create layouts that adapt to different screen widths.
 
 <SummaryCard>
@@ -182,15 +184,15 @@ class RolodexApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return const CupertinoApp(
       title: 'Rolodex',
-      theme: const CupertinoThemeData(
+      theme: CupertinoThemeData(
         barBackgroundColor: CupertinoDynamicColor.withBrightness(
           color: Color(0xFFF9F9F9),
           darkColor: Color(0xFF1D1D1D),
         ),
       ),
-      home: const AdaptiveLayout(),
+      home: AdaptiveLayout(),
     );
   }
 }
@@ -206,6 +208,7 @@ Update the state object in `lib/screens/adaptive_layout.dart` with the following
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v3.dart"?>
 ```dart
+
 import 'package:flutter/cupertino.dart';
 
 import 'contact_groups.dart';
@@ -256,6 +259,7 @@ contains the proper layout.
 
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v4.dart"?>
 ```dart
+
 import 'package:flutter/cupertino.dart';
 
 import 'contact_groups.dart';

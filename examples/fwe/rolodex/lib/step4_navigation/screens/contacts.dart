@@ -64,7 +64,7 @@ class _ContactListView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   ...contacts.keys.map(
-                    (String initial) => ContactListSection(
+                    (initial) => ContactListSection(
                       lastInitial: initial,
                       contacts: contacts[initial]!,
                     ),

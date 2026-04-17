@@ -4,6 +4,8 @@ description: Learn how to implement performant scrolling with slivers.
 layout: tutorial
 ---
 
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
 In this lesson, you'll learn about slivers,
 which are special widgets that can take advantage of
 Flutter's powerful and composable scrolling system.
@@ -244,6 +246,7 @@ update `lib/screens/adaptive_layout.dart` to display the contacts list page:
 
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/adaptive_layout.dart"?>
 ```dart
+
 import 'package:flutter/cupertino.dart';
 
 import 'contacts.dart';
@@ -511,7 +514,7 @@ class _ContactListView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   ...contacts.keys.map(
-                    (String initial) => ContactListSection(
+                    (initial) => ContactListSection(
                       lastInitial: initial,
                       contacts: contacts[initial]!,
                     ),

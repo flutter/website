@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element_parameter
+
 import 'package:flutter/cupertino.dart';
 
 import '../data/contact.dart';
@@ -54,7 +56,7 @@ class _ContactListView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 20),
                   ...contacts.keys.map(
-                    (String initial) => ContactListSection(
+                    (initial) => ContactListSection(
                       lastInitial: initial,
                       contacts: contacts[initial]!,
                     ),
