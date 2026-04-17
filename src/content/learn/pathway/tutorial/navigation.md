@@ -102,10 +102,11 @@ and provides it with a callback.
 That callback needs to be updated to navigate when a group is tapped,
 rather than printing the group to the console.
 
-Ensure that the `onListSelected` callback and imports in `lib/screens/contact_groups.dart` are implemented as follows:
+Ensure that the `onListSelected` callback and imports in
+`lib/screens/contact_groups.dart` are implemented as follows:
 
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_page)"?>
-```dart
+```dart title="lib/screens/contact_groups.dart"
 import 'contacts.dart';
 
 class ContactGroupsPage extends StatelessWidget {
@@ -267,6 +268,17 @@ Hot reload your app and test the navigation:
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
 This provides an optimal experience on both phones and tablets.
+
+:::note
+If you resize the app from a small screen to a large screen while on
+a contact detail page, and then press the back button,
+you might see a `Hero` tag exception.
+This happens because the `Navigator` still holds the pushed small-screen
+route while the large-screen layout simultaneously renders the detail view,
+causing duplicate widgets (like the navigation bar) in the widget tree during transition.
+This is an expected edge case for this simple architecture and can be ignored
+for the purpose of this learning pathway.
+:::
 
 ### Review
 

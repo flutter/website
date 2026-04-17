@@ -23,6 +23,8 @@
   children:
     - title: Firebase AI Logic
       permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
+    - title: Genkit Dart
+      permalink: https://genkit.dev/docs/dart/get-started
     - title: GenUI SDK for Flutter
       permalink: /ai/genui
       children:
