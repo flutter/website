@@ -44,12 +44,18 @@ resources:
   features directly in Flutter. Compatible with the Gemini Developer API or
   Vertex AI. To get started, check out the
   [official documentation][firebase-ai-logic-docs].
+* [Genkit Dart][] - An open-source framework for building AI-powered
+  features in Dart and Flutter with support for multiple model providers,
+  type-safe schemas, and built-in observability. To get started, check out the
+  [quickstart guide][genkit-dart-quickstart].
 * [Flutter AI Toolkit][] - A sample app with pre-built widgets to help you build
   AI-powered features in Flutter.
 
 [Firebase AI Logic]: {{site.firebase}}/docs/ai-logic
 [Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
+[Genkit Dart]: https://genkit.dev
+[genkit-dart-quickstart]: https://genkit.dev/docs/dart/get-started
 [Flutter AI Toolkit]: /ai/ai-toolkit
 
 ## AI development tools
@@ -84,6 +90,34 @@ alpha and is likely to change.
 To learn more, visit the [GenUI SDK for Flutter][] documentation.
 
 [GenUI SDK for Flutter]: /ai/genui
+
+### Genkit Dart
+
+[Genkit Dart](https://genkit.dev) is an open-source, model-agnostic framework
+for building AI-powered applications in Dart and Flutter.
+It provides a structured way to integrate AI features into your app
+with support for multiple model providers, including
+Google Gemini, Anthropic Claude, and OpenAI.
+
+Key features include:
+
+*   **Model-agnostic API**: Switch between AI providers with minimal code changes.
+*   **Type-safe schemas**: Define strongly-typed inputs and outputs for AI
+    interactions using the [`schemantic`](https://pub.dev/packages/schemantic) package.
+*   **Flows**: Testable, observable, and deployable functions that wrap
+    AI logic with typed inputs and outputs.
+*   **Tools**: Define functions that models can invoke to fetch live data
+    or perform actions.
+*   **Developer UI**: A built-in web UI for testing prompts, viewing execution
+    traces, and debugging flows.
+
+Genkit Dart supports multiple deployment architectures for Flutter,
+including running AI logic entirely in the app,
+calling backend flows from Flutter, or proxying model requests
+through a Genkit backend.
+
+To get started, check out the
+[Genkit Dart quickstart](https://genkit.dev/docs/dart/get-started).
 
 ### Antigravity
 
