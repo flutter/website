@@ -15,7 +15,7 @@ class App extends StatelessWidget {
 }
 
 // #docregion grid-example
-const widgets = [
+const widgets = <Widget>[
   Text('Row 1'),
   Icon(CupertinoIcons.arrow_down_square),
   Icon(CupertinoIcons.arrow_up_square),

@@ -1358,7 +1358,7 @@ The following resources might help when writing layout code.
 
 [Layout tutorial]: /ui/layout/tutorial
 [Widget catalog]: /ui/widgets
-[HTML/CSS Analogs in Flutter]: /get-started/flutter-for/web-devs
+[HTML/CSS Analogs in Flutter]: /flutter-for/web-devs
 [API reference docs]: {{site.api}}/flutter
 [Adding assets and images]: /ui/assets/assets-and-images
 [Zero to One with Flutter]: {{site.medium}}/@mravn/zero-to-one-with-flutter-43b13fd7b354

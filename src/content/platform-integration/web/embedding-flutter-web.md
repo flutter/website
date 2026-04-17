@@ -334,8 +334,7 @@ and [Understanding constraints][].
 
 ## Custom element (`hostElement`)
 
-As of the Flutter 3.10 release,
-you can embed a single-view Flutter web app
+You can embed a single-view Flutter web app
 into any HTML element of your web page.
 
 To tell Flutter web which element to render into,

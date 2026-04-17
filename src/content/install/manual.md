@@ -10,15 +10,11 @@ Learn how to install and manually set up
 your Flutter development environment.
 
 :::tip
-If you've never set up or developed an app with Flutter before,
-follow [Get started with Flutter][] instead.
-
 If you're just looking to quickly install Flutter,
 consider [installing Flutter with VS Code][with-vs-code] for
 a streamlined setup experience.
 :::
 
-[Get started with Flutter]: /get-started
 [with-vs-code]: /install/with-vs-code
 
 ## Choose your development platform {: #dev-platform}
@@ -195,6 +191,13 @@ then extract the SDK to where you want it stored.
       -Destination $env:USERPROFILE\develop\
     ```
 
+    :::note
+    If the `flutter.bat` file is missing from the `bin` directory
+    after extraction, your antivirus software might have quarantined it.
+    If this happens, configure your antivirus to trust the Flutter SDK directory,
+    then extract the bundle again.
+    :::
+
 {: .steps .windows-only}
 
  1. <h3>Download the Flutter SDK bundle</h3>
@@ -323,7 +326,9 @@ the Flutter team recommends you first try out
 <div class="card-grid link-cards">
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/decorative/flutter-on-phone.svg" height="160" aria-hidden="true" alt="A representation of Flutter on multiple devices.">
+      <img src="/assets/images/decorative/flutter-on-phone.svg"
+           height="160" aria-hidden="true"
+           alt="A representation of Flutter on multiple devices.">
     </div>
     <div class="card-header">
       <span class="card-title">Set up a target platform</span>
@@ -354,16 +359,15 @@ the Flutter team recommends you first try out
 
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/decorative/pointing-the-way.png" height="160" aria-hidden="true" alt="Dash helping you explore Flutter learning resources.">
+      <img src="/assets/images/decorative/pointing-the-way.png"
+           height="160" aria-hidden="true"
+           alt="Dash helping you explore Flutter learning resources.">
     </div>
     <div class="card-header">
       <span class="card-title">Learn Flutter development</span>
     </div>
     <div class="card-content">
       <ul>
-        <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
         <li>
           <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>
@@ -376,7 +380,8 @@ the Flutter team recommends you first try out
 
   <div class="card filled-card list-card">
     <div class="card-leading">
-      <img src="/assets/images/decorative/up-to-date.png" height="160" aria-hidden="true" alt="Keep up to date with Flutter">
+      <img src="/assets/images/decorative/up-to-date.png" height="160"
+           aria-hidden="true" alt="Keep up to date with Flutter">
     </div>
     <div class="card-header">
       <span class="card-title">Stay up to date with Flutter</span>

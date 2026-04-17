@@ -831,7 +831,7 @@ After adding your image, you can display it using the `Image` widget's
 To review a complete example, check out the [`Image`][] docs.
 
 
-[Flutter for Android developers]: /get-started/flutter-for/android-devs
+[Flutter for Android developers]: /flutter-for/android-devs
 [Add Flutter to existing app]: /add-to-app
 [Material]: {{site.material}}/develop/flutter/
 [Platform adaptations]: /platform-integration/platform-adaptations

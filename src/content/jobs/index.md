@@ -9,6 +9,7 @@ description: Open job listings for the Flutter and Dart teams.
 #### Sunnyvale, CA, USA
 
 * [Software Engineer III, Flutter (iOS)](/jobs/swe_ios_iii)
+* [Senior Software Engineer, Flutter (Framework)](/jobs/swe_framework_sr)
 
 {% comment %}
 The Flutter and Dart SWE teams aren't currently hiring.

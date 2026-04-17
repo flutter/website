@@ -15,7 +15,7 @@ final class TutorialNavigationExtension implements PageExtension {
 
   @override
   Future<List<Node>> apply(Page page, List<Node> nodes) async {
-    if (!page.path.startsWith('learn/tutorial/')) {
+    if (!page.path.startsWith('learn/pathway/')) {
       return nodes;
     }
 

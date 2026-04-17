@@ -66,8 +66,8 @@ List<MemoryPage> get widgetCatalogPages {
 
             // Only show main category widgets for non-material catalogs.
             if (!isMaterialCatalog && widgetsInCategory.isNotEmpty)
-              _buildCardGrid(
-                widgetsInCategory,
+              WidgetCardGrid(
+                widgets: widgetsInCategory,
                 isMaterialCatalog: isMaterialCatalog,
               ),
 
@@ -166,31 +166,10 @@ List<Component> _buildSubcategorySection(
 
   return [
     h2(id: slugify(subName), [.text(subName)]),
-    _buildCardGrid(
-      widgets,
+    WidgetCardGrid(
+      widgets: widgets,
       isMaterialCatalog: isMaterialCatalog,
       subcategory: subcategory,
     ),
   ];
-}
-
-Component _buildCardGrid(
-  List<WidgetCatalogWidget> widgets, {
-  required bool isMaterialCatalog,
-  WidgetCatalogSubcategory? subcategory,
-}) {
-  return div(
-    classes: [
-      'card-grid',
-      if (isMaterialCatalog) 'material-cards',
-    ].toClasses,
-    [
-      for (final widget in widgets)
-        WidgetCatalogCard(
-          widget: widget,
-          isMaterialCatalog: isMaterialCatalog,
-          subcategory: subcategory,
-        ),
-    ],
-  );
 }

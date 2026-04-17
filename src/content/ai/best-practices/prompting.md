@@ -1,5 +1,6 @@
 ---
 title: Prompting
+sidenav: ai
 description: >
   Learn how to build and optimize generative AI prompts in Flutter using system 
   instructions, dynamic parameters, and versioning techniques.
@@ -168,7 +169,13 @@ final result = await _clueSolverModel.generateContent(
 
 ### Prompt versioning
 
-arrange prompt files is to use [the Google dotprompt format][dotprompt], which allows you to write `.prompt` files that look like this:
+This basic app keeps the prompt strings in code.
+This makes them hard to track down and update.
+For production apps, it's better to keep your prompts separated from the code,
+perhaps bundled as Flutter assets.
+One way to arrange prompt files is to
+use [the Google dotprompt format][dotprompt],
+which allows you to write `.prompt` files that look like this:
 
 ```markdown
 ---

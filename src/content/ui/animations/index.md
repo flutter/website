@@ -59,7 +59,7 @@ To create a custom implicit animation, watch
 
 <YouTubeEmbed id="6KiPEqzJIKQ" title="Create custom implicit animations with TweenAnimationBuilder"></YouTubeEmbed>
 
-### Built-in implicit animations
+### Built-in explicit animations
 
 To create an explicit animation (where you control the animation,
 rather than letting the framework control it), perhaps

@@ -19,30 +19,6 @@
     url: https://github.com/flutter/samples/tree/main/background_isolate_channels
     label: Flutter GitHub
 
-- name: Code sharing
-  description: >-
-    Demonstrates how to share business logic between a
-    Flutter client and Dart server using `package:shelf`.
-  tags:
-    - Dart
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/code_sharing
-    label: Flutter GitHub
-
-- name: Context menus
-  description: >-
-    This sample shows how to create and customize cross-platform context menus,
-    such as the text selection toolbar on mobile or
-    the right click menu on desktop.
-  tags:
-    - macos
-    - windows
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/context_menus
-    label: Flutter GitHub
-
 - name: Desktop UI
   description: >-
     Demonstrates desktop features in both Material and FluentUI design systems.
@@ -101,32 +77,6 @@
     url: https://github.com/flutter/samples/tree/main/google_maps
     label: Flutter GitHub
 
-- name: Infinite list
-  description: >-
-    A Flutter sample app that shows an implementation of
-    the 'infinite list' UX pattern.
-  tags:
-    - lists
-    - layout
-    - scrolling
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/infinite_list
-    label: Flutter GitHub
-
-- name: Isolates
-  description: >-
-    A sample application that
-    demonstrate best practices when using isolates.
-  tags:
-    - isolates
-    - perf
-    - threads
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/isolate_example
-    label: Flutter GitHub
-
 - name: Navigation and routing
   description: >-
     A sample that shows how to use `go_router` API to
@@ -137,18 +87,6 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/navigation_and_routing
-    label: Flutter GitHub
-
-- name: Google Maps Flutter plugin
-  description: >-
-    A sample place tracking app that uses the google_apps_flutter plugin.
-  tags:
-    - maps
-    - google
-    - plugins
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/place_tracker
     label: Flutter GitHub
 
 - name: Platform adaptive design
@@ -164,30 +102,6 @@
     url: https://github.com/flutter/samples/tree/main/platform_design
     label: Flutter GitHub
 
-- name: Counter app with Provider
-  description: >-
-    The starter Flutter application, but
-    using the Provider package to manage state.
-  tags:
-    - state management
-    - architecture
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/provider_counter
-    label: Flutter GitHub
-
-- name: Shopping app with Provider
-  description: >-
-    A Flutter sample app that shows a
-    state management approach using the Provider package.
-  tags:
-    - state management
-    - architecture
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/provider_shopper
-    label: Flutter GitHub
-
 - name: Simple shaders
   description: >-
     A simple Flutter fragment shaders project.
@@ -197,16 +111,6 @@
   type: quickstart
   link:
     url: https://github.com/flutter/samples/tree/main/simple_shader
-    label: Flutter GitHub
-
-- name: Desktop calculator
-  description: >-
-    A calculator sample to demonstrate a simple start for a desktop Flutter app.
-  tags:
-    - desktop
-  type: quickstart
-  link:
-    url: https://github.com/flutter/samples/tree/main/simplistic_calculator
     label: Flutter GitHub
 
 - name: Testing app

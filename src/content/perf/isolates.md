@@ -238,11 +238,10 @@ follow the examples in the [Dart documentation][].
 
 ## Using platform plugins in isolates
 
-As of Flutter 3.7, you can use platform plugins in background isolates.
-This opens many possibilities to offload heavy,
-platform-dependent computations to an isolate that won't block your UI.
-For example, imagine you're encrypting data
-using a native host API
+You can use platform plugins in background isolates.
+This enables plugins to offload heavy, platform-dependent
+computations to an isolate that won't block your UI.
+For example, imagine you're encrypting data using a native host API
 (such as an Android API on Android, an iOS API on iOS, and so on).
 Previously, [marshaling data][] to the host platform could waste UI thread time,
 and can now be done in a background isolate.

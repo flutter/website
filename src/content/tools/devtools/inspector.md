@@ -29,7 +29,8 @@ trees, and can be used for the following:
 
 ## The new Flutter inspector {:#new}
 
-As part of Flutter 3.29, the new Flutter inspector is enabled by default. However, it can be disabled from the [inspector settings dialog][].
+As part of Flutter 3.29, the new Flutter inspector is enabled by default.
+However, it can be disabled from the [inspector settings dialog][].
 
 [inspector settings dialog]: #inspector-settings
 [legacy inspector]: /tools/devtools/legacy-inspector

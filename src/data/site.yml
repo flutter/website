@@ -8,8 +8,8 @@ showBanner: true
 # The raw, inline HTML to display in the banner.
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
-  Check out our newly published best practices for
-  <a href="/ai/best-practices">building AI-powered apps with Flutter!</a>
+  Flutter is back at Google I/O on May 19-20!
+  <a href="https://io.google/2026/?utm_source=flutter&utm_medium=embedded_marketing&utm_campaign=flutter" target="_blank">Register now</a>
 
 branch: main
 repo:
@@ -58,7 +58,7 @@ yt:
   watch: 'https://www.youtube.com/watch'
   playlist: 'https://www.youtube.com/playlist?list='
 
-currentFlutterVersion: '3.38.6'
+currentFlutterVersion: '3.41.5'
 
 # Settings for Jaspr.
 

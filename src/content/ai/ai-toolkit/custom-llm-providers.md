@@ -1,5 +1,6 @@
 ---
 title: Custom LLM providers
+sidenav: ai
 description: >
   How to integrate with other Flutter features.
 prev:

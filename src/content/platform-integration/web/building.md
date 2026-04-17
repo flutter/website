@@ -11,7 +11,7 @@ application using Flutter.
 
 Before you can build a web application with Flutter,
 make sure that you have the [Flutter SDK][] and a web browser installed.
-See the [Set up web development for Flutter][Setup-web] instructions
+Visit [Set up web development for Flutter][Setup-web] instructions
 for details.
 
 ## Set up a Flutter project
@@ -42,7 +42,7 @@ and run your Flutter app.
 
 ## Run your app
 
-See the following sections to run your app.
+Check out the following sections to run your app.
 
 ### Run your app from the command line
 
@@ -82,7 +82,7 @@ $ flutter run -d chrome --wasm
 ```
 
 Flutter web offers multiple build modes and renderers.
-For more information, see [Web renderers][].
+For more information, check out [Web renderers][].
 
 ### Disable hot reload in VS Code
 
@@ -143,6 +143,7 @@ $ flutter build web
 ```
 
 ### Build your app using WebAssembly
+
 You can also pass the `--wasm` flag to build your app using WebAssembly:
 
 ```console
@@ -153,9 +154,9 @@ This populates a `build/web` directory
 with built files, including an `assets` directory,
 which need to be served together.
 
-To learn more about how to deploy these assets to the web, see
-[Build and release a web app][].
-For answers to other common questions, see the [Web FAQ][].
+To learn more about how to deploy these assets to the web,
+visit [Build and release a web app][].
+For answers to other common questions, visit the [Web FAQ][].
 
 ## Debugging
 
@@ -174,7 +175,7 @@ Use [Chrome DevTools][] for the following tasks:
 ## Testing
 
 Use [widget tests][Widget tests] or integration tests. To learn more about
-running integration tests in a browser, see the [Integration testing][] page.
+running integration tests in a browser, check out the [Integration testing][] page.
 
 [Analyzing performance]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance
 [Build and release a web app]: /deployment/web
@@ -182,7 +183,7 @@ running integration tests in a browser, see the [Integration testing][] page.
 [Chrome]: https://www.google.com/chrome/
 [Debugging]: /tools/devtools/debugger
 [Flutter DevTools]: /tools/devtools
-[Flutter SDK]: /get-started
+[Flutter SDK]: /install
 [Generating event timeline]: {{site.developers}}/web/tools/chrome-devtools/evaluate-performance/performance-reference
 [Integration testing]: /testing/integration-tests#test-in-a-web-browser
 [Logging]: /tools/devtools/logging

@@ -2072,7 +2072,7 @@ class _SampleAppPageState extends State<SampleAppPage> {
 }
 ```
 
-[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
+[Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
 [Add Flutter to existing app]: /add-to-app
 [Adding Assets and Images in Flutter]: /ui/assets/assets-and-images
 [Animation & Motion widgets]: /ui/widgets/animation
@@ -2087,13 +2087,13 @@ class _SampleAppPageState extends State<SampleAppPage> {
 [Cupertino widgets]: /ui/widgets/cupertino
 [`devicePixelRatio`]: {{site.api}}/flutter/dart-ui/FlutterView/devicePixelRatio.html
 [existing plugin]: {{site.pub}}/flutter
-[Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: /flutter-for/dart-swift-concurrency
 [`http` package]: {{site.pub-pkg}}/http
 [Human Interface Guidelines]: {{site.apple-dev}}/ios/human-interface-guidelines/overview/themes/
 [internationalization guide]: /ui/internationalization
 [`intl`]: {{site.pub-pkg}}/intl
 [`intl_translation`]: {{site.pub-pkg}}/intl_translation
-[Introduction to declarative UI]: /get-started/flutter-for/declarative
+[Introduction to declarative UI]: /flutter-for/declarative
 [layout tutorial]: /ui/widgets/layout
 [`Localizations`]: {{site.api}}/flutter/widgets/Localizations-class.html
 [Material Components]: {{site.material}}/develop/flutter/

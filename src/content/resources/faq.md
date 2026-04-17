@@ -157,19 +157,11 @@ Flutter includes:
 ### Does Flutter work with any editors or IDEs?
 
 We provide plugins for [VS Code][],
+[Antigravity][] (an AI-assisted IDE),
 [Android Studio][], and [IntelliJ IDEA][].
 See [editor configuration][] for setup details,
 and [VS Code][] and [Android Studio/IntelliJ][]
 for tips on how to use the plugins.
-
-[Firebase Studio][], currently in preview,
-is an AI-assisted workspace for full-stack,
-multiplatform app development in the cloud.
-Firebase Studio supports Dart and Flutter. For more information,
-check out [Get started with Firebase Studio][].
-
-[Firebase Studio]: https://firebase.studio/
-[Get started with Firebase Studio]: https://firebase.google.com/docs/studio/get-started
 
 Alternatively, you can use the `flutter` command
 from a terminal, along with one
@@ -178,6 +170,7 @@ of the many editors that support [editing Dart][].
 
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio/IntelliJ]: /tools/android-studio
+[Antigravity]: /tools/antigravity
 [editing Dart]: {{site.dart-site}}/tools
 [editor configuration]: /tools/editors
 [IntelliJ IDEA]: https://www.jetbrains.com/idea/
@@ -498,19 +491,12 @@ compression less efficient (see the
 [iOS App Store Specific Considerations][]
 section of Apple's [QA1795][]).
 
-:::note
-The release engine binary used to include LLVM IR (bitcode).
-However, Apple [deprecated bitcode in Xcode 14][] and removed support,
-so it has been removed from the Flutter 3.7 release.
-:::
-
 Of course, we recommend that you measure your own app.
 To do that, see [Measuring your app's size][].
 
 
 [apkanalyzer]: {{site.android-dev}}/studio/command-line/apkanalyzer
 [built into Android Studio]: {{site.android-dev}}/studio/build/apk-analyzer
-[deprecated bitcode in Xcode 14]: {{site.apple-dev}}/documentation/xcode-release-notes/xcode-14-release-notes
 [iOS App Store Specific Considerations]: {{site.apple-dev}}/library/archive/qa/qa1795/_index.html#//apple_ref/doc/uid/DTS40014195-CH1-APP_STORE_CONSIDERATIONS
 [Measuring your app's size]: /perf/app-size
 [minimal Flutter app]: {{site.repo.flutter}}/tree/75228a59dacc24f617272f7759677e242bbf74ec/examples/hello_world
@@ -595,7 +581,7 @@ You can compile and deploy your Flutter app to iOS, Android,
   [development operating system][install].
 
 
-[install]: /get-started
+[install]: /install
 [supported platforms]: /reference/supported-platforms
 
 ### Does Flutter run on the web?

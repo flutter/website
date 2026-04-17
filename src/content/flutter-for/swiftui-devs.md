@@ -443,7 +443,7 @@ The following example uses the `.builder()` initializer:
 
 <?code-excerpt "lib/grid.dart (grid-example)"?>
 ```dart dartpad="d6b9174f33db94164e457b3da80da933"
-const widgets = [
+const widgets = <Widget>[
   Text('Row 1'),
   Icon(CupertinoIcons.arrow_down_square),
   Icon(CupertinoIcons.arrow_up_square),
@@ -1068,11 +1068,11 @@ Android, iOS, and on the web from the same codebase.
 
 To review a complete walkthrough, check out the [video_player example][].
 
-[Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
+[Flutter for UIKit developers]: /flutter-for/uikit-devs
 [Add Flutter to existing app]: /add-to-app
 [Animations overview]: /ui/animations
 [Cupertino widgets]: /ui/widgets/cupertino
-[Flutter concurrency for Swift developers]: /get-started/flutter-for/dart-swift-concurrency
+[Flutter concurrency for Swift developers]: /flutter-for/dart-swift-concurrency
 [Navigation and routing]: /ui/navigation
 [Material]: {{site.material}}/develop/flutter/
 [Platform adaptations]: /platform-integration/platform-adaptations

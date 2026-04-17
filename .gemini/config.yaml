@@ -1,0 +1,17 @@
+# Configuration for the Gemini Code Assist review bot on GitHub.
+# Relevant documentation: https://developers.google.com/gemini-code-assist/docs/customize-gemini-behavior-github
+
+code_review:
+  # Only leave review comments for medium or higher severity issues.
+  comment_severity_threshold: MEDIUM
+  # We don't need to include drafts.
+  pull_request_opened:
+    # The documentation can be referenced if needed.
+    help: false
+    # The summaries are often too verbose to be helpful, and we expect
+    # contributors to provide sufficient detail in the PR description.
+    summary: false
+    include_drafts: false
+
+# We have lots of fun already and less noise is fun too.
+have_fun: false

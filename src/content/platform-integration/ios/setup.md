@@ -10,13 +10,13 @@ to run, build, and deploy Flutter apps for iOS devices.
 
 :::note
 If you haven't set up Flutter already,
-visit and follow the [Get started with Flutter][] guide first.
+visit and follow [Install Flutter][] first.
 
 If you've already installed Flutter,
 ensure that it's [up to date][].
 :::
 
-[Get started with Flutter]: /get-started
+[Install Flutter]: /install
 [up to date]: /install/upgrade
 
 ## Set up iOS tooling {: #set-up-tooling}
@@ -129,14 +129,6 @@ on the Apple Developer site.
 </Tab>
 <Tab name="Physical device">
 
-:::warning
-An upcoming change to iOS has caused a temporary break in Flutter's debug mode
-on physical devices running iOS 26 (currently in beta).
-If your physical device is already on iOS 26, we recommend switching to the
-**Simulator** tab and following the instructions.
-See [Flutter on latest iOS][] for details.
-:::
-
 [Flutter on latest iOS]: /platform-integration/ios/ios-latest
 
 Set up each iOS device on which you want to test.
@@ -246,9 +238,6 @@ or begin improving integration with iOS.
     </div>
     <div class="card-content">
       <ul>
-        <li>
-          <a class="text-button" href="/get-started/codelab">Write your first app</a>
-        </li>
         <li>
           <a class="text-button" href="/learn/pathway">Learn the fundamentals</a>
         </li>

@@ -19,13 +19,6 @@ Insecure HTTP is not allowed by platform: <host>
 
 Use HTTPS instead.
 
-:::important
-This change over-restricted HTTP access on local networks beyond the
-restrictions imposed by mobile platforms ([flutter/flutter#72723]({{site.repo.flutter}}/issues/72723)).
-
-This change has since been reverted.
-:::
-
 ## Context
 
 Starting with Android [API 28][] and [iOS 9][],
@@ -42,10 +35,14 @@ network policy. See the migration guide below for details.
 [API 28]: {{site.android-dev}}/training/articles/security-config#CleartextTrafficPermitted
 [iOS 9]: {{site.apple-dev}}/documentation/bundleresources/information_property_list/nsapptransportsecurity
 
-Much like the platforms, the application can still open
-insecure socket connections. Flutter does not enforce
-any policy at socket level; you would be
-responsible for securing the connection.
+:::important
+The following only applies to platform native sockets (sockets owned
+by the Android and iOS platforms).  
+
+Flutter does not enforce any policy at socket level; you would be
+responsible for securing the connection. If the socket is owned by
+Dart/Flutter, no policy will be enforced.
+:::
 
 ## Migration guide
 
@@ -53,23 +50,6 @@ On iOS, you can add [NSExceptionDomains][] to your
 application's Info.plist.
 
 On Android, you can add a [network security config][] XML.
-For Flutter to find your XML file, you need to also add a
-`metadata` entry to the `<application>` tag in your manifest.
-This metadata entry should carry the name:
-`io.flutter.network-policy` and should contain the
-resource identifier of the XML.
-
-For instance, if you put your XML configuration under
-`res/xml/network_security_config.xml`,
-your manifest would contain the following:
-
-```xml
-<application ...>
-  ...
-  <meta-data android:name="io.flutter.network-policy"
-             android:resource="@xml/network_security_config"/>
-</application>
-```
 
 ### Allowing cleartext connection for debug builds
 
@@ -77,8 +57,21 @@ If you would like to allow HTTP connections for Android debug
 builds, you can add the following snippet to your $project_path\android\app\src\debug\AndroidManifest.xml:
 
 ```xml
-<application android:usesCleartextTraffic="true"/>
+<application android:networkSecurityConfig="@xml/network_security_config">
+  ...
+</application>
 ```
+
+Then, add the network configuration to your $project_path/android/app/src/debug/res/xml/network_security_config.xml:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+```
+
+It is also possible to set the policy per domain.  See the Android
+docuentation for more information.
 
 For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 
@@ -96,12 +89,6 @@ We **do not** recommend you do this for your release builds.
 
 * Build time configuration is the only way to change
   network policy. It cannot be modified at runtime.
-* Localhost connections are always allowed.
-* You can allow insecure connections only to domains.
-  Specific IP addresses are not accepted as input.
-  This is in line with what platforms support. If you would
-  like to allow IP addresses, the only option is to allow
-  cleartext connections in your app.
 
 [network security config]: {{site.android-dev}}/training/articles/security-config#CleartextTrafficPermitted
 [NSExceptionDomains]: {{site.apple-dev}}/documentation/bundleresources/information_property_list/nsapptransportsecurity/nsexceptiondomains

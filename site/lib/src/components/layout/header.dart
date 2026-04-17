@@ -54,17 +54,23 @@ class DashHeader extends StatelessComponent {
         ul(classes: 'nav-items', [
           _NavItem(
             href: '/',
-            label: 'Home',
+            label: 'Guides',
             isActive: activeEntry == ActiveNavEntry.home,
           ),
           _NavItem(
-            href: '/learn',
+            href: '/learn/pathway',
             label: 'Learn',
             isActive: activeEntry == ActiveNavEntry.learn,
+          ),
+          _NavItem(
+            href: '/ai/create-with-ai',
+            label: 'AI',
+            isActive: activeEntry == ActiveNavEntry.ai,
           ),
           const _NavItem(
             href: 'https://api.flutter.dev',
             label: 'Reference',
+            openInNewTab: true,
           ),
         ]),
 
@@ -108,7 +114,7 @@ class DashHeader extends StatelessComponent {
                 id: 'call-to-action',
                 style: ButtonStyle.filled,
                 content: 'Get started',
-                href: '/get-started/quick',
+                href: '/learn/pathway',
               ),
             if (context.page.data['sidenav'] != null) const MenuToggle(),
           ],
@@ -123,17 +129,20 @@ class _NavItem extends StatelessComponent {
     required this.href,
     required this.label,
     this.isActive = false,
+    this.openInNewTab = false,
   });
 
   final String href;
   final String label;
   final bool isActive;
+  final bool openInNewTab;
 
   @override
   Component build(BuildContext _) => li([
     a(
       href: href,
       classes: ['nav-link', 'text-button', if (isActive) 'active'].toClasses,
+      attributes: openInNewTab ? {'target': '_blank', 'rel': 'noopener'} : null,
       [.text(label)],
     ),
   ]);

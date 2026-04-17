@@ -199,13 +199,6 @@ Both the build name and number can be overridden in
 `flutter build windows` by specifying `--build-name` and
 `--build-number`, respectively.
 
-:::note
-Flutter projects created before Flutter 3.3
-need to be updated to set the executable's version
-information. For more information,
-refer to the [version migration guide][].
-:::
-
 ## Add app icons
 
 To update the icon of a Flutter Windows

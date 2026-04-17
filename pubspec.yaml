@@ -2,8 +2,10 @@ name: docs_flutter_dev
 publish_to: none
 
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.11.0
 
 workspace:
+  - packages/analysis_defaults
+  - packages/excerpter
   - site
   - tool/dash_site

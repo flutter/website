@@ -65,7 +65,7 @@ const nnLocaleDatePatterns = {
 /// These are not accurate and are just a clone of the date symbols for the
 /// `no` locale to demonstrate how one would write and use custom date symbols.
 // #docregion date-symbols
-const nnDateSymbols = {
+const Map<String, Object?> nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>['f.Kr.', 'e.Kr.'],
   // #enddocregion date-symbols

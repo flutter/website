@@ -1,5 +1,6 @@
 ---
 title: Flutter AI Toolkit
+sidenav: ai
 shortTitle: AI Toolkit
 description: >
   Learn how to add the AI Toolkit chatbot
@@ -46,20 +47,7 @@ Here's what the demo example looks like hosting the AI Toolkit:
 
 The [source code for this demo][src-code] is available in the repo on GitHub.
 
-Or, you can open it in [Firebase Studio][], Google's full-stack AI workspace and
-IDE that runs in the cloud:
-
-<a
-  href="https://studio.firebase.google.com/new?template=https%3A%2F%2Fgithub.com%2Fflutter%2Fai">
-    <picture> <source media="(prefers-color-scheme: dark)"
-      srcset="https://cdn.firebasestudio.dev/btn/try_light_32.svg"> <source
-      media="(prefers-color-scheme: light)"
-    srcset="https://cdn.firebasestudio.dev/btn/try_dark_32.svg"> <img
-      height="32" alt="Try in Firebase Studio"
-      src="https://cdn.firebasestudio.dev/btn/try_blue_32.svg"> </picture> </a>
-
 [src-code]: {{site.github}}/flutter/ai/blob/main/example/lib/demo/demo.dart
-[Firebase Studio]: https://firebase.studio/
 
 ## Get started
 
@@ -233,10 +221,22 @@ details into the `example/lib/firebase_options.dart` file. You can do this with
 the `flutterfire CLI` tool as described in the [Add Firebase to your Flutter
 app][add-fb] docs **from within the `example` directory**.
 
+:::note Security considerations for `firebase_options.dart`
+
+If your Flutter app calls Gemini or Vertex AI directly from the client, do not
+commit `firebase_options.dart` to a public repository. Anyone could reuse your
+app configuration to send requests to your AI endpoint, consuming quota and
+potentially causing billing costs.
+
+While this guide shows direct client-side calls for simplicity, for production
+apps, you should route AI requests through a backend service (for example [Cloud
+Functions for Firebase](https://firebase.google.com/docs/functions), [Cloud
+Run](https://cloud.google.com/run), or your own server). In that setup, the
+backend — not the client — controls access, and including
+`firebase_options.dart` in your repository is safe.
+
+You should also review and follow the [Firebase security checklist](https://firebase.google.com/support/guides/security-checklist).
 :::
-note **Be careful not to check the `firebase_options.dart` file into your git
-repo.**
-::: 
 
 ## Feedback
 

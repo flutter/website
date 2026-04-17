@@ -778,7 +778,7 @@ Wonderous app [running app][wonderous-app], [repo][wonderous-repo]
 [`ElevatedButton`]: {{site.api}}/flutter/material/ElevatedButton-class.html
 [wonderous-app]: {{site.wonderous}}/web
 [wonderous-repo]: {{site.repo.wonderous}}
-[set up]: /get-started
+[set up]: /install
 [`SizedBox`]: {{site.api}}/flutter/widgets/SizedBox-class.html
 [`Slider`]: {{site.api}}/flutter/material/Slider-class.html
 [`State`]: {{site.api}}/flutter/widgets/State-class.html

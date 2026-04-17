@@ -10,6 +10,7 @@ import 'package:http/http.dart' as http;
 Future<Album> fetchAlbum() async {
   final response = await http.get(
     Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+    headers: {'Accept': 'application/json'},
   );
 
   if (response.statusCode == 200) {

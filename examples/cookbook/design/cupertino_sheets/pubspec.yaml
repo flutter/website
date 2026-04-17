@@ -1,0 +1,10 @@
+name: cupertino_sheets
+description: Sample code for cupertino sheets cookbook recipe.
+
+resolution: workspace
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter

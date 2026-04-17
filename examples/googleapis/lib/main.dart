@@ -42,7 +42,7 @@ class _LikedVideosWidgetState extends State<_LikedVideosWidget> {
   List<PlaylistItemSnippet>? _favoriteVideos;
 
   // #docregion init
-  final _googleSignIn = GoogleSignIn.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
 
   // #docregion post-init
   @override

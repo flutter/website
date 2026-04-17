@@ -556,7 +556,7 @@ Numbers, including those that represent currency values,
 are displayed very differently in different locales.
 The localizations generation tool in
 `flutter_localizations` uses the
-[`NumberFormat`]({{site.api}}/flutter/intl/NumberFormat-class.html)
+[`NumberFormat`]({{site.api}}/flutter/package-intl_intl/NumberFormat-class.html)
 class in the `intl` package to format
 numbers based on the locale and the desired format.
 
@@ -641,7 +641,7 @@ In a Russian locale, it would produce "9.07.1959".
 AppLocalizations.of(context).helloWorldOn(DateTime.utc(1959, 7, 9))
 ```
 
-[`DateFormat`]: {{site.api}}/flutter/intl/DateFormat-class.html
+[`DateFormat`]: {{site.api}}/flutter/package-intl_intl/DateFormat-class.html
 
 <a id="ios-specifics"></a>
 ### Localizing for iOS: Updating the iOS app bundle
@@ -1068,7 +1068,7 @@ RegEx adds last two lines with commented out code and closing bracket.
 
 <?code-excerpt "add_language/lib/nn_intl.dart (date-symbols)" replace="/  ],/  ],\n  \/\/ ...\n}/g"?>
 ```dart
-const nnDateSymbols = {
+const Map<String, Object?> nnDateSymbols = {
   'NAME': 'nn',
   'ERAS': <dynamic>['f.Kr.', 'e.Kr.'],
 ```

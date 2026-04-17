@@ -263,8 +263,7 @@ In Dart, you can offload computation to a worker isolate,
 often called a background worker.
 A common scenario spawns a simple worker isolate and
 returns the results in a message when the worker exits.
-As of Dart 2.19, you can use `Isolate.run()` to
-spawn an isolate and run computations:
+You can use `Isolate.run()` to spawn an isolate and run computations:
 
 ```dart
 void main() async {
@@ -299,6 +298,6 @@ and more information on Flutter at
 [Flutter for UIKit developers][].
 
 [Learning Dart as a Swift developer]: {{site.dart-site}}/guides/language/coming-from/swift-to-dart
-[Flutter for SwiftUI developers]: /get-started/flutter-for/swiftui-devs
-[Flutter for UIKit developers]: /get-started/flutter-for/uikit-devs
+[Flutter for SwiftUI developers]: /flutter-for/swiftui-devs
+[Flutter for UIKit developers]: /flutter-for/uikit-devs
 [`@Observable`]: https://developer.apple.com/documentation/observation/observable()
