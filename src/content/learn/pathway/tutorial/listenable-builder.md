@@ -356,7 +356,6 @@ class ArticleWidget extends StatelessWidget {
 }
 ```
 
-<<<<<<< HEAD
 #### Complete with styled text content
 
 Replace the placeholder text with a
@@ -410,10 +409,6 @@ This widget demonstrates a few important UI concepts:
   The `spacing` parameter provides consistent vertical spacing.
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
-=======
-This change switches from the console-based test to the full UI
-experience with proper state management.
->>>>>>> 5fbb1990b (Fix Column spacing, clean up summary.dart, lower SDK constraint, and fix excerpts in listenable-builder.md)
 
 ### Run the complete app
 
