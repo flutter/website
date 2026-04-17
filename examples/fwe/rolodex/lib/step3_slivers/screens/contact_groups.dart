@@ -32,9 +32,9 @@ class _ContactGroupsView extends StatelessWidget {
         slivers: [
           const CupertinoSliverNavigationBar(largeTitle: Text('Lists')),
           SliverFillRemaining(
+            // #docregion cupertino_list_section
             child: ValueListenableBuilder<List<ContactGroup>>(
               valueListenable: contactGroupsModel.listsNotifier,
-              // #docregion cupertino_list_section
               builder: (context, contactLists, child) {
                 const groupIcon = Icon(
                   CupertinoIcons.group,
@@ -60,9 +60,9 @@ class _ContactGroupsView extends StatelessWidget {
                       ),
                   ],
                 );
-                // #enddocregion cupertino_list_section
               },
             ),
+            // #enddocregion cupertino_list_section
           ),
         ],
       ),

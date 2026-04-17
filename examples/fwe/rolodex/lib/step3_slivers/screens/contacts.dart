@@ -15,7 +15,9 @@ class ContactListsPage extends StatelessWidget {
   }
 }
 
+// #docregion alphabetized
 class _ContactListView extends StatelessWidget {
+  // #enddocregion alphabetized
   const _ContactListView({
     required this.listId,
     this.automaticallyImplyLeading = true,
@@ -24,6 +26,7 @@ class _ContactListView extends StatelessWidget {
   final int listId;
   final bool automaticallyImplyLeading;
 
+  // #docregion alphabetized
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -65,6 +68,7 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
+// #enddocregion alphabetized
 
 // #docregion contact_list_section
 class ContactListSection extends StatelessWidget {

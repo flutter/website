@@ -14,7 +14,9 @@ class ContactListsPage extends StatelessWidget {
   }
 }
 
+// #docregion search
 class _ContactListView extends StatelessWidget {
+  // #enddocregion search
   const _ContactListView({
     required this.listId,
     this.automaticallyImplyLeading = true,
@@ -23,6 +25,7 @@ class _ContactListView extends StatelessWidget {
   final int listId;
   final bool automaticallyImplyLeading;
 
+  // #docregion search
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -35,6 +38,7 @@ class _ContactListView extends StatelessWidget {
 
           return CustomScrollView(
             slivers: [
+              // Now using a search bar:
               CupertinoSliverNavigationBar.search(
                 largeTitle: Text(contactList.title),
                 searchField: const CupertinoSearchTextField(
@@ -56,3 +60,5 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
+
+// #enddocregion search

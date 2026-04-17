@@ -120,6 +120,7 @@ Add this widget to the bottom of `lib/screens/contact_groups.dart`:
 
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_sidebar)"?>
 ```dart
+/// A sidebar component for selecting contact groups on large screens.
 class ContactGroupsSidebar extends StatelessWidget {
   const ContactGroupsSidebar({
     super.key,

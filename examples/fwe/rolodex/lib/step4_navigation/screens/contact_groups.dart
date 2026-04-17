@@ -24,6 +24,7 @@ class ContactGroupsPage extends StatelessWidget {
 // #enddocregion contact_groups_page
 
 // #docregion contact_groups_sidebar
+/// A sidebar component for selecting contact groups on large screens.
 class ContactGroupsSidebar extends StatelessWidget {
   const ContactGroupsSidebar({
     super.key,
