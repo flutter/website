@@ -66,6 +66,7 @@ adding `_ContactGroupsView` to the bottom of the file.
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups_v1.dart (contact_groups_view)"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import '../data/contact_group.dart';
 import '../main.dart';
 
@@ -237,7 +238,7 @@ first update `lib/screens/adaptive_layout.dart` to display the contacts list pag
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/adaptive_layout.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
-import 'contact_groups.dart';
+
 import 'contacts.dart';
 
 const largeScreenMinWidth = 600;
@@ -365,6 +366,7 @@ default `CupertinoSliverNavigationBar` constructor:
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts_v2.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import '../data/contact_group.dart';
 import '../main.dart';
 
@@ -496,6 +498,7 @@ the alphabetized sections:
 <?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import '../data/contact.dart';
 import '../data/contact_group.dart';
 import '../main.dart';

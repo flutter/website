@@ -351,7 +351,9 @@ add the `ContactGroup` class:
 <?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact_group.dart (contact_group_class)"?>
 ```dart
 import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
+
 import 'contact.dart';
 
 class ContactGroup {
@@ -497,6 +499,7 @@ import the new data file:
 <?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/main.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'data/contact_group.dart';
 
 final contactGroupsModel = ContactGroupsModel();

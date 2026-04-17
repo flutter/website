@@ -1,5 +1,7 @@
 import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
+
 import 'contact.dart';
 
 class ContactGroup {

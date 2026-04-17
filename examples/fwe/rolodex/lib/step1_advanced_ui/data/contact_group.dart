@@ -1,6 +1,8 @@
 // #docregion contact_group_class
 import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
+
 import 'contact.dart';
 
 class ContactGroup {
@@ -118,4 +120,5 @@ class ContactGroupsModel {
     _listsNotifier.dispose();
   }
 }
+
 // #enddocregion model_class

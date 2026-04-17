@@ -1,5 +1,6 @@
 // #docregion contact_groups_view
 import 'package:flutter/cupertino.dart';
+
 import '../data/contact_group.dart';
 import '../main.dart';
 
@@ -55,4 +56,5 @@ class _ContactGroupsView extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion contact_groups_view

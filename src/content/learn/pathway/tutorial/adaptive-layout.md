@@ -93,6 +93,7 @@ and start with the following basic structure:
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v1.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
 class AdaptiveLayout extends StatefulWidget {
@@ -118,6 +119,7 @@ Next, add the screen size detection logic to `lib/screens/adaptive_layout.dart`:
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v2.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
@@ -165,6 +167,7 @@ so you can see your changes:
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/main.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'data/contact_group.dart';
 import 'screens/adaptive_layout.dart';
 
@@ -204,6 +207,7 @@ Update the state object in `lib/screens/adaptive_layout.dart` with the following
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v3.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
@@ -253,6 +257,7 @@ contains the proper layout.
 <?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v4.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
@@ -282,6 +287,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         if (isLargeScreen) {
           return _buildLargeScreenLayout();
         } else {
+          // For small screens, use the original, navigation-style approach.
           return const ContactGroupsPage();
         }
       },
@@ -302,60 +308,24 @@ place the sidebar and details side-by-side.
 `SafeArea` ensures that the content doesn't overlap with
 system UI elements like the status bar.
 
-Now, set the sizes of the two panels and add a visual divider in `lib/screens/adaptive_layout.dart`:
+Now, set the sizes of the two panels and
+add a visual divider in `lib/screens/adaptive_layout.dart`:
 
-<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout.dart"?>
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout.dart (panel-and-divider)"?>
 ```dart
-import 'package:flutter/cupertino.dart';
-import 'contact_groups.dart';
-
-const largeScreenMinWidth = 600;
-
-class AdaptiveLayout extends StatefulWidget {
-  const AdaptiveLayout({super.key});
-
-  @override
-  State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
-}
-
-class _AdaptiveLayoutState extends State<AdaptiveLayout> {
-  int selectedListId = 0;
-
-  void _onContactListSelected(int listId) {
-    setState(() {
-      selectedListId = listId;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final isLargeScreen = constraints.maxWidth > largeScreenMinWidth;
-
-        if (isLargeScreen) {
-          return _buildLargeScreenLayout();
-        } else {
-          return const ContactGroupsPage();
-        }
-      },
-    );
-  }
-
-  Widget _buildLargeScreenLayout() {
-    return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: SafeArea(
-        child: Row(
-          children: [
-            const SizedBox(width: 320, child: Text('Sidebar placeholder')),
-            Container(width: 1, color: CupertinoColors.separator),
-            const Expanded(child: Text('Details placeholder')),
-          ],
-        ),
+Widget _buildLargeScreenLayout() {
+  return CupertinoPageScaffold(
+    backgroundColor: CupertinoColors.extraLightBackgroundGray,
+    child: SafeArea(
+      child: Row(
+        children: [
+          const SizedBox(width: 320, child: Text('Sidebar placeholder')),
+          Container(width: 1, color: CupertinoColors.separator),
+          const Expanded(child: Text('Details placeholder')),
+        ],
       ),
-    );
-  }
+    ),
+  );
 }
 ```
 

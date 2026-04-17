@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
 const largeScreenMinWidth = 600;
@@ -34,6 +35,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     );
   }
 
+  // #docregion panel-and-divider
   Widget _buildLargeScreenLayout() {
     return CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,
@@ -48,4 +50,6 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       ),
     );
   }
+
+  // #enddocregion panel-and-divider
 }

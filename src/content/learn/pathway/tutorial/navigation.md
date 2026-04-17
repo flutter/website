@@ -34,6 +34,7 @@ displays the `ContactGroupsPage` by default on small screens.
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 import 'contacts.dart';
 
@@ -213,6 +214,7 @@ update the large screen layout:
 <?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (imports)"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 import 'contacts.dart';
 ```

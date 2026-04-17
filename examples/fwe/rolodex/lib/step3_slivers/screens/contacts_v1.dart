@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import '../data/contact_group.dart';
 import '../main.dart';
 
@@ -55,4 +56,5 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
+
 // #enddocregion contact_list_view
