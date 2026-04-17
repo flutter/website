@@ -59,8 +59,11 @@ class ContactGroup {
 // #docregion helper_code
 typedef AlphabetizedContactMap = SplayTreeMap<String, List<Contact>>;
 
+/// Sorts a list of [contacts] alphabetically by
+/// last name, then first name, then middle name.
+/// If names are identical, sorts by contact ID to ensure consistent ordering.
 void _sortContacts(List<Contact> contacts) {
-  contacts.sort((Contact a, Contact b) {
+  contacts.sort((a, b) {
     final int checkLastName = a.lastName.compareTo(b.lastName);
     if (checkLastName != 0) {
       return checkLastName;
@@ -77,6 +80,8 @@ void _sortContacts(List<Contact> contacts) {
     } else if (a.middleName != null || b.middleName != null) {
       return a.middleName != null ? 1 : -1;
     }
+
+    // If both contacts have the exact same name, order by first created.
     return a.id.compareTo(b.id);
   });
 }
