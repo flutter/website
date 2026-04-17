@@ -1,4 +1,3 @@
-// #docregion contact_class
 class Contact {
   Contact({
     required this.id,
@@ -15,6 +14,7 @@ class Contact {
   final String? suffix;
 }
 
+// openFold
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -130,10 +130,10 @@ final jessicaEdwards = Contact(
   firstName: 'Jessica',
   lastName: 'Edwards',
 );
-// #enddocregion contact_class
+// closeFold
 
-// #docregion all_contacts
-final Set<Contact> allContacts = <Contact>{
+// openFold
+final Set<Contact> allContacts = {
   johnAppleseed,
   kateBell,
   annaHaro,
@@ -186,4 +186,4 @@ final Set<Contact> allContacts = <Contact>{
   christopherDaniel,
   jessicaEdwards,
 };
-// #enddocregion all_contacts
+// closeFold

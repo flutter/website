@@ -150,8 +150,8 @@ This section is lightly explained because it's not the focus of this tutorial.
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
-<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact.dart"?>
-```dart
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact.dart" replace="/\/\/ openFold/[* -/g; /\/\/ closeFold/*]/g;"?>
+```dart foldable
 class Contact {
   Contact({
     required this.id,
@@ -168,6 +168,7 @@ class Contact {
   final String? suffix;
 }
 
+[* -
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -283,8 +284,10 @@ final jessicaEdwards = Contact(
   firstName: 'Jessica',
   lastName: 'Edwards',
 );
+*]
 
-final Set<Contact> allContacts = <Contact>{
+[* -
+final Set<Contact> allContacts = {
   johnAppleseed,
   kateBell,
   annaHaro,
@@ -337,6 +340,7 @@ final Set<Contact> allContacts = <Contact>{
   christopherDaniel,
   jessicaEdwards,
 };
+*]
 ```
 
 This sample data includes contacts with and without middle names and suffixes.
