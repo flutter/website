@@ -31,22 +31,8 @@ it navigates to the contact list for that group.
 First, revert changes in the adaptive layout widget so that it
 displays the `ContactGroupsPage` by default on small screens.
 
-<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart"?>
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (reverted-state)"?>
 ```dart
-import 'package:flutter/cupertino.dart';
-
-import 'contact_groups.dart';
-import 'contacts.dart';
-
-const largeScreenMinWidth = 600;
-
-class AdaptiveLayout extends StatefulWidget {
-  const AdaptiveLayout({super.key});
-
-  @override
-  State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
-}
-
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   int selectedListId = 0;
 
@@ -70,28 +56,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       },
     );
   }
-
-  Widget _buildLargeScreenLayout() {
-    return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: SafeArea(
-        child: Row(
-          children: [
-            SizedBox(
-              width: 320,
-              child: ContactGroupsSidebar(
-                selectedListId: selectedListId,
-                onListSelected: _onContactListSelected,
-              ),
-            ),
-            Container(width: 1, color: CupertinoColors.separator),
-            Expanded(child: ContactListDetail(listId: selectedListId)),
-          ],
-        ),
-      ),
-    );
-  }
-
+  // ···
 }
 ```
 

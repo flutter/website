@@ -14,6 +14,7 @@ class AdaptiveLayout extends StatefulWidget {
   State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
 }
 
+// #docregion reverted-state
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   int selectedListId = 0;
 
@@ -37,6 +38,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       },
     );
   }
+  // #enddocregion reverted-state
 
   // #docregion build_large_screen
   Widget _buildLargeScreenLayout() {
@@ -61,4 +63,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   }
 
   // #enddocregion build_large_screen
+  // #docregion reverted-state
 }
+
+// #enddocregion reverted-state
