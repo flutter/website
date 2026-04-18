@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_dynamic_calls
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -145,7 +143,7 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        spacing: 10.0,
+        spacing: 10,
         children: [
           if (summary.hasImage) Image.network(summary.originalImage!.source),
           Text(

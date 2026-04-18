@@ -233,8 +233,6 @@ class Summary {
 }
 
 // Image path and size, but doesn't contain any Wikipedia descriptions.
-///
-/// For images with metadata, see [WikipediaImage]
 class ImageFile {
   /// Returns a new [ImageFile] instance.
   ImageFile({required this.source, required this.width, required this.height});

@@ -146,8 +146,6 @@ class Summary {
 // #enddocregion Summary
 
 // Image path and size, but doesn't contain any Wikipedia descriptions.
-///
-/// For images with metadata, see [WikipediaImage]
 // #docregion ImageFile
 class ImageFile {
   /// Returns a new [ImageFile] instance.
