@@ -147,21 +147,23 @@ class ImageFile {
   /// Returns a new [ImageFile] instance.
   ImageFile({required this.source, required this.width, required this.height});
 
-  /// Original image URI
+  /// The URI of the original image.
   final String source;
 
-  /// Original image width
+  /// The width of the original image.
   final int width;
 
-  /// Original image height
+  /// The height of the original image.
   final int height;
 
+  /// The file extension of the image, or 'err' if one can't be determined.
   String get extension {
     final extension = getFileExtension(source);
-    // by default, return a non-viable image extension
+    // By default, return a non-viable image extension.
     return extension ?? 'err';
   }
 
+  /// Returns a JSON map representation of this [ImageFile].
   Map<String, Object?> toJson() {
     return <String, Object?>{
       'source': source,
@@ -170,8 +172,7 @@ class ImageFile {
     };
   }
 
-  /// Returns a new [ImageFile] instance
-  // ignore: prefer_constructors_over_static_methods
+  /// Returns a new [ImageFile] instance with its values populated from [json].
   static ImageFile fromJson(Map<String, Object?> json) {
     if (json case {
       'source': final String source,
@@ -198,18 +199,20 @@ class TitlesSet {
     required this.display,
   });
 
-  /// the DB key (non-prefixed), e.g. may have _ instead of spaces,
-  /// best for making request URIs, still requires Percent-encoding
+  /// The non-prefixed DB key for the article.
+  ///
+  /// Might contain changes such as underscores instead of spaces.
+  /// Best suited for making request URIs, but still requires percent-encoding.
   final String canonical;
 
-  /// the normalized title (https://www.mediawiki.org/wiki/API:Query#Example_2:_Title_normalization),
-  /// e.g. may have spaces instead of _
+  /// The [normalized title](https://www.mediawiki.org/wiki/API:Query#Example_2:_Title_normalization)
+  /// of the article.
   final String normalized;
 
-  /// the title as it should be displayed to the user
+  /// The title as it should be displayed to the user.
   final String display;
 
-  /// Returns a new [TitlesSet] instance and imports its values from a JSON map
+  /// Returns a new [TitlesSet] instance with its values populated from [json].
   static TitlesSet fromJson(Map<String, Object?> json) {
     if (json case {
       'canonical': final String canonical,
