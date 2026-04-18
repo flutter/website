@@ -35,7 +35,7 @@ and this package provides a DevTools extension.
 When a user depends on `package:foo` in their app,
 they automatically get access to the DevTools extension
 provided by this package. When DevTools detects the
-`package:fooextension` is available, based on information
+`package:foo` extension is available, based on information
 from the user’s app or from their IDE,
 a new tab "Foo" will be added to DevTools that contains
 the developer tools provided by `package:foo`.
@@ -254,7 +254,7 @@ import 'package:devtools_extensions/devtools_extensions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const DevToolsExtension());
+  runApp(const FooDevToolsExtension());
 }
 
 class FooDevToolsExtension extends StatelessWidget {
@@ -326,7 +326,7 @@ add a configuration to your `launch.json` file in VS code:
 or launch your app from the command line with the added flag:
 
 ```console
-flutter run -d chrome - dart-define=use_simulated_environment=true
+flutter run -d chrome -dart-define=use_simulated_environment=true
 ```
 
 ### Option B: Use a real DevTools environment
@@ -412,7 +412,7 @@ available from the action buttons in the upper right corner of the screen.
 
 ![DevTools Extensions menu](/assets/images/docs/tools/devtools/devtools-extensions-menu.png)
 
-[CONTRIBUTING.md]: {{site.github}}/flutter/devtools/tree/7a53fd2ddf289ee1b76840b9bfd9a2cb7876f13b/packages/devtools_extensions
+[CONTRIBUTING.md]: {{site.github}}/flutter/devtools/tree/master/packages/devtools_extensions
 [instructions]: {{site.github}}/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app
 
 ## Publish your package with a DevTools extension
