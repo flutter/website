@@ -1,18 +1,8 @@
-// ignore_for_file: unused_import, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
+
 import 'summary.dart';
 
-class ArticleWidget extends StatelessWidget {
-  const ArticleWidget({super.key, required this.summary});
-
-  final Summary summary;
-
-  @override
-  Widget build(BuildContext context) => const Placeholder();
-}
-
-// #docregion ArticlePage
+// #docregion page
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
@@ -25,18 +15,10 @@ class ArticlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          ArticleWidget(summary: summary),
-          ElevatedButton(
-            onPressed: nextArticleCallback,
-            child: const Text('Next random article'),
-          ),
-        ],
-      ),
+    return const Center(
+      child: Text('Article content will be displayed here...'),
     );
   }
 }
 
-// #enddocregion ArticlePage
+// #enddocregion page

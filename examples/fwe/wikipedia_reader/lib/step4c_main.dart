@@ -1,27 +1,34 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
 import 'summary.dart';
 
-// #docregion ArticlePage
-class ArticlePage extends StatelessWidget {
-  const ArticlePage({
-    super.key,
-    required this.summary,
-    required this.nextArticleCallback,
-  });
+class ArticleViewModel extends ChangeNotifier {
+  ArticleViewModel(ArticleModel model);
+  bool get isLoading => false;
+  Summary? get summary => null;
+  Exception? get error => null;
+  Future<void> fetchArticle() async {}
+}
 
-  final Summary summary;
-  final VoidCallback nextArticleCallback;
+class ArticleModel {}
+
+// #docregion view-model
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
+
+  final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [Text('Article content will be displayed here...')],
+    return Scaffold(
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: ListenableBuilder(
+        listenable: viewModel,
+        builder: (context, child) {
+          return const Center(child: Text('Loading...'));
+        },
       ),
     );
   }
 }
 
-// #enddocregion ArticlePage
+// #enddocregion view-model

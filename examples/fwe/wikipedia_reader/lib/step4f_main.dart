@@ -1,9 +1,8 @@
-// ignore_for_file: unused_import, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
+
 import 'summary.dart';
 
-// #docregion ArticleWidget
+// #docregion article
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
 
@@ -11,13 +10,8 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Column(
-        children: [Text('Article content will be displayed here...')],
-      ),
-    );
+    return const Text('Article content will be displayed here...');
   }
 }
 
-// #enddocregion ArticleWidget
+// #enddocregion article

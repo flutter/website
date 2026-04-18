@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_dynamic_calls
-
 import 'dart:convert';
 import 'dart:io';
 
@@ -12,7 +10,7 @@ void main() {
   runApp(const MainApp());
 }
 
-// #docregion MainApp
+// #docregion main-app
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -21,7 +19,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(home: ArticleView());
   }
 }
-// #enddocregion MainApp
+// #enddocregion main-app
 
 class ArticleModel {
   Future<Summary> getRandomArticleSummary() async {
@@ -65,6 +63,7 @@ class ArticleViewModel extends ChangeNotifier {
   }
 }
 
+// #docregion view-model
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
@@ -84,11 +83,12 @@ class ArticleView extends StatelessWidget {
               viewModel.error,
             )) {
               (true, _, _) => const CircularProgressIndicator(),
+              (_, _, final Exception e) => Text('Error: $e'),
+              // The summary must be non-null in this switch case.
               (_, final summary?, _) => ArticlePage(
                 summary: summary,
                 nextArticleCallback: viewModel.fetchArticle,
               ),
-              (_, _, final Exception e) => Text('Error: $e'),
               _ => const Text('Something went wrong!'),
             };
           },
@@ -97,7 +97,9 @@ class ArticleView extends StatelessWidget {
     );
   }
 }
+// #enddocregion view-model
 
+// #docregion page
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
@@ -123,7 +125,9 @@ class ArticlePage extends StatelessWidget {
     );
   }
 }
+// #enddocregion page
 
+// #docregion article
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
 
@@ -132,30 +136,27 @@ class ArticleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
+        spacing: 10,
         children: [
-          if (summary.hasImage) ...[
-            Image.network(summary.originalImage!.source),
-            const SizedBox(height: 10.0),
-          ],
+          if (summary.hasImage) Image.network(summary.originalImage!.source),
           Text(
             summary.titles.normalized,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.displaySmall,
           ),
-          const SizedBox(height: 10.0),
-          if (summary.description != null) ...[
+          if (summary.description != null)
             Text(
               summary.description!,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            const SizedBox(height: 10.0),
-          ],
           Text(summary.extract),
         ],
       ),
     );
   }
 }
+
+// #enddocregion article

@@ -1,10 +1,7 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unused_import
-
 import 'package:flutter/material.dart';
 
-// #docregion ArticleView
 class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+  const ArticleView({super.key});
 
   // The view model will be instantiated here next.
 
@@ -16,5 +13,3 @@ class ArticleView extends StatelessWidget {
     );
   }
 }
-
-// #enddocregion ArticleView
