@@ -1,9 +1,7 @@
 // ignore_for_file: directives_ordering
 
 // #docregion All
-
-// Representation of the JSON data returned by the Wikipedia API.
-// #docregion Summary
+/// Representation of the JSON data returned by the Wikipedia API.
 class Summary {
   /// Returns a new [Summary] instance.
   Summary({
@@ -19,36 +17,37 @@ class Summary {
     required this.url,
   });
 
-  /// Titles
+  /// The title information of this article.
   final TitlesSet titles;
 
-  /// Page ID
+  /// The page ID of this article.
   final int pageid;
 
-  /// Extract
+  /// The first few sentences of the article in plain text.
   final String extract;
 
-  /// Extract HTML
+  /// The first few sentences of the article in HTML format.
   final String extractHtml;
 
-  /// Thumbnail image
+  /// A thumbnail-sized version of the article's primary image, if available.
   final ImageFile? thumbnail;
 
-  /// Original image
+  /// The original full-sized article's primary image, if available.
   final ImageFile? originalImage;
 
-  /// Language
+  /// The language code of the article's content, such as "en" for English.
   final String lang;
 
-  /// Directionality
+  /// The text directionality of the article's content, such as "ltr" or "rtl".
   final String dir;
 
-  /// Description
+  /// A description of the article, if available.
   final String? description;
 
-  /// URL
+  /// The URL of the page.
   final String url;
 
+  /// Whether this article has an image.
   bool get hasImage => originalImage != null && thumbnail != null;
 
   /// Returns a new [Summary] instance and imports its values from a JSON map
@@ -143,7 +142,6 @@ class Summary {
       'description=$description'
       ']';
 }
-// #enddocregion Summary
 
 // Image path and size, but doesn't contain any Wikipedia descriptions.
 // #docregion ImageFile

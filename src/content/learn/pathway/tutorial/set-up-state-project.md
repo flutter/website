@@ -86,12 +86,12 @@ $ cd wikipedia_reader && flutter pub add http
 First, create a new file `lib/summary.dart` to define the data model
 for Wikipedia article summaries. This file has no special logic, and is
 simply a collection of classes that represent the data returned by the
-Wikipedia API. Its sufficient to copy the code below into the file and then ignore it. If you aren't comfortable basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
+Wikipedia API. It's sufficient to copy the code below into the file and then ignore it.
+If you aren't comfortable with basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
 
 <?code-excerpt "fwe/wikipedia_reader/lib/summary.dart (All)"?>
 ```dart title="lib/summary.dart" collapsed
-
-// Representation of the JSON data returned by the Wikipedia API.
+/// Representation of the JSON data returned by the Wikipedia API.
 class Summary {
   /// Returns a new [Summary] instance.
   Summary({
@@ -107,36 +107,37 @@ class Summary {
     required this.url,
   });
 
-  /// Titles
+  /// The title information of this article.
   final TitlesSet titles;
 
-  /// Page ID
+  /// The page ID of this article.
   final int pageid;
 
-  /// Extract
+  /// The first few sentences of the article in plain text.
   final String extract;
 
-  /// Extract HTML
+  /// The first few sentences of the article in HTML format.
   final String extractHtml;
 
-  /// Thumbnail image
+  /// A thumbnail-sized version of the article's primary image, if available.
   final ImageFile? thumbnail;
 
-  /// Original image
+  /// The original full-sized article's primary image, if available.
   final ImageFile? originalImage;
 
-  /// Language
+  /// The language code of the article's content, such as "en" for English.
   final String lang;
 
-  /// Directionality
+  /// The text directionality of the article's content, such as "ltr" or "rtl".
   final String dir;
 
-  /// Description
+  /// A description of the article, if available.
   final String? description;
 
-  /// URL
+  /// The URL of the page.
   final String url;
 
+  /// Whether this article has an image.
   bool get hasImage => originalImage != null && thumbnail != null;
 
   /// Returns a new [Summary] instance and imports its values from a JSON map

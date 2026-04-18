@@ -89,7 +89,7 @@ it delegates initial content fetching to a separate method.
 
 ### Set up the `fetchArticle` method
 
-Add the `fetchArticle` that fetches data and manages state updates:
+Add the `fetchArticle` method that fetches data and manages state updates:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step3c_main.dart (ArticleViewModel)"?>
 ```dart
