@@ -4,7 +4,10 @@ description: Instructions on how to manage state with ChangeNotifiers.
 layout: tutorial
 ---
 
-Learn to use ListenableBuilder to automatically rebuild UI and handle all possible states with switch expressions.
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
+Learn to use ListenableBuilder to automatically rebuild UI and
+handle all possible states with switch expressions.
 
 <SummaryCard>
 title: What you'll accomplish
@@ -38,19 +41,20 @@ Create the `ArticleView` widget that
 manages the overall page layout and state handling.
 Start with the basic class structure and widgets:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4a_main.dart"?>
 ```dart
+import 'package:flutter/material.dart';
+
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
+
+  // The view model will be instantiated here next.
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
-      body: const Center(
-        child: Text('UI will update here'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: const Center(child: Text('Loading...')),
     );
   }
 }
@@ -60,21 +64,18 @@ class ArticleView extends StatelessWidget {
 
 Create the `ArticleViewModel` in this widget:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (view-model)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
-  final viewModel = ArticleViewModel(ArticleModel());
+  final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
-      body: const Center(
-        child: Text('UI will update here'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: const Center(child: Text('Loading...')),
     );
   }
 }
@@ -87,15 +88,14 @@ include your completed `ArticleView`.
 
 Replace your existing `MainApp` with this updated version:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (main-app)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ArticleView(),
-    );
+    return MaterialApp(home: ArticleView());
   }
 }
 ```
@@ -109,6 +109,7 @@ Wrap your UI in a [`ListenableBuilder`][] to listen for state changes,
 and pass it a `ChangeNotifier` object.
 In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4c_main.dart (view-model)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
@@ -118,13 +119,11 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-      ),
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
       body: ListenableBuilder(
         listenable: viewModel,
         builder: (context, child) {
-          return const Center(child: Text('UI will update here'));
+          return const Center(child: Text('Loading...'));
         },
       ),
     );
@@ -147,14 +146,15 @@ Recall the `ArticleViewModel`, which has three properties that
 the UI is interested in:
 
 - `Summary? summary`
-- `bool loading`
-- `String? errorMessage`
+- `bool isLoading`
+- `Exception? error`
 
 Depending on the combined state of these properties,
 the UI can display different widgets.
 Use Dart's support for [switch expressions][]
 to handle all possible combinations in a clean, readable way:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (view-model)"?>
 ```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
@@ -164,30 +164,27 @@ class ArticleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Wikipedia Flutter'),
-        actions: [],
-      ),
-      body: ListenableBuilder(
-        listenable: viewModel,
-        builder: (context, child) {
-          return switch ((
-            viewModel.loading,
-            viewModel.summary,
-            viewModel.errorMessage,
-          )) {
-            (true, _, _) => CircularProgressIndicator(),
-            (false, _, String message) => Center(child: Text(message)),
-            (false, null, null) => Center(
-              child: Text('An unknown error has occurred'),
-            ),
-            // The summary must be non-null in this switch case.
-            (false, Summary summary, null) => ArticlePage(
-              summary: summary,
-              nextArticleCallback: viewModel.getRandomArticleSummary,
-            ),
-          };
-        },
+      appBar: AppBar(title: const Text('Wikipedia Flutter')),
+      body: Center(
+        child: ListenableBuilder(
+          listenable: viewModel,
+          builder: (context, _) {
+            return switch ((
+              viewModel.isLoading,
+              viewModel.summary,
+              viewModel.error,
+            )) {
+              (true, _, _) => const CircularProgressIndicator(),
+              (_, _, final Exception e) => Text('Error: $e'),
+              // The summary must be non-null in this switch case.
+              (_, final summary?, _) => ArticlePage(
+                summary: summary,
+                nextArticleCallback: viewModel.fetchArticle,
+              ),
+              _ => const Text('Something went wrong!'),
+            };
+          },
+        ),
       ),
     );
   }
@@ -212,6 +209,7 @@ by the view model to build the UI.
 Now create a `ArticlePage` widget that displays the actual article content.
 This reusable widget takes summary data and a callback function:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4d_main.dart (page)"?>
 ```dart
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
@@ -225,7 +223,9 @@ class ArticlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Article content will be displayed here'));
+    return const Center(
+      child: Text('Article content will be displayed here...'),
+    );
   }
 }
 ```
@@ -234,6 +234,7 @@ class ArticlePage extends StatelessWidget {
 
 Replace the placeholder with a scrollable column layout:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4e_main.dart (page)"?>
 ```dart
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
@@ -247,11 +248,9 @@ class ArticlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
-        children: [
-          Text('Article content will be displayed here'),
-        ],
+        children: [Text('Article content will be displayed here...')],
       ),
     );
   }
@@ -262,6 +261,7 @@ class ArticlePage extends StatelessWidget {
 
 Complete the layout with an article widget and navigation button:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (page)"?>
 ```dart
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
@@ -278,12 +278,10 @@ class ArticlePage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ArticleWidget(
-            summary: summary,
-          ),
+          ArticleWidget(summary: summary),
           ElevatedButton(
             onPressed: nextArticleCallback,
-            child: Text('Next random article'),
+            child: const Text('Next random article'),
           ),
         ],
       ),
@@ -301,6 +299,7 @@ with proper styling and conditional rendering.
 
 Start with the widget that accepts a `summary` parameter:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4f_main.dart (article)"?>
 ```dart
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
@@ -309,7 +308,7 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('Article content will be displayed here');
+    return const Text('Article content will be displayed here...');
   }
 }
 ```
@@ -318,6 +317,7 @@ class ArticleWidget extends StatelessWidget {
 
 Wrap the content in proper padding and layout:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4g_main.dart (article)"?>
 ```dart
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
@@ -327,12 +327,10 @@ class ArticleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
-        spacing: 10.0,
-        children: [
-          Text('Article content will be displayed here'),
-        ],
+        spacing: 10,
+        children: [const Text('Article content will be displayed here...')],
       ),
     );
   }
@@ -343,6 +341,7 @@ class ArticleWidget extends StatelessWidget {
 
 Add the article image that only shows when available:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4h_main.dart (article)"?>
 ```dart
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
@@ -352,15 +351,12 @@ class ArticleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
-        spacing: 10.0,
+        spacing: 10,
         children: [
-          if (summary.hasImage)
-            Image.network(
-              summary.originalImage!.source,
-            ),
-          Text('Article content will be displayed here'),
+          if (summary.hasImage) Image.network(summary.originalImage!.source),
+          const Text('Article content will be displayed here...'),
         ],
       ),
     );
@@ -373,6 +369,7 @@ class ArticleWidget extends StatelessWidget {
 Replace the placeholder text with a
 properly styled title, description, and extract:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (article)"?>
 ```dart
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
@@ -382,28 +379,23 @@ class ArticleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(8),
       child: Column(
-        spacing: 10.0,
+        spacing: 10,
         children: [
-          if (summary.hasImage)
-            Image.network(
-              summary.originalImage!.source,
-            ),
+          if (summary.hasImage) Image.network(summary.originalImage!.source),
           Text(
             summary.titles.normalized,
             overflow: TextOverflow.ellipsis,
-            style: TextTheme.of(context).displaySmall,
+            style: Theme.of(context).textTheme.displaySmall,
           ),
           if (summary.description != null)
             Text(
               summary.description!,
               overflow: TextOverflow.ellipsis,
-              style: TextTheme.of(context).bodySmall,
+              style: Theme.of(context).textTheme.bodySmall,
             ),
-          Text(
-            summary.extract,
-          ),
+          Text(summary.extract),
         ],
       ),
     );

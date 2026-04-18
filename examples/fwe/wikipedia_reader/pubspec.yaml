@@ -1,7 +1,6 @@
-name: rolodex
-description: Rolodex example for FWE Part 3.
-version: 1.0.0+1
-publish_to: 'none'
+name: wikipedia_reader
+description: Code excerpts for the Wikipedia reader app in the Flutter tutorial.
+publish_to: none
 
 environment:
   sdk: ^3.11.0
@@ -9,7 +8,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  http: ^1.6.0
 
 dev_dependencies:
   flutter_test:
