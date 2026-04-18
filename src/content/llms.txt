@@ -78,7 +78,8 @@ This file provides a curated list of resources to help Large Language Models und
 - [Firebase AI Logic](https://firebase.google.com/docs/ai-logic): Official documentation for Firebase AI Logic.
 - [Firebase AI Logic package](https://pub.dev/packages/firebase_ai): The pub.dev package for Firebase AI Logic.
 - [GenUI SDK for Flutter](https://docs.flutter.dev/ai/genui): Learn how to use the GenUI SDK for Flutter to build more interactive experiences in your apps.
-- [Get started with GenKit](https://genkit.dev/docs/dart/get-started/): Use GenKit to build AI-powered apps.
+- [Genkit Dart](https://genkit.dev): An open-source, model-agnostic framework for building AI-powered apps in Dart and Flutter with type-safe schemas, flows, and built-in observability.
+- [Genkit Dart quickstart](https://genkit.dev/docs/dart/get-started): Get started building AI-powered Dart and Flutter apps with Genkit.
 
 ## Testing & debugging
 

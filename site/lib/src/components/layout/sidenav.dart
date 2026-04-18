@@ -43,6 +43,12 @@ final class DashSideNav extends StatelessComponent {
           iconId: 'play_lesson',
           active: activeEntry == ActiveNavEntry.learn,
         ),
+        _TopNavItem(
+          href: '/ai/create-with-ai',
+          label: 'AI',
+          iconId: 'auto_awesome',
+          active: activeEntry == ActiveNavEntry.ai,
+        ),
         const _TopNavItem(
           href: 'https://api.flutter.dev',
           label: 'Reference',

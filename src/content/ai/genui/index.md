@@ -1,5 +1,6 @@
 ---
 title: GenUI SDK for Flutter
+sidenav: ai
 shortTitle: GenUI SDK
 description: >-
   Learn how to use GenUI SDK for Flutter to build more

@@ -1,5 +1,6 @@
 ---
 title: Developer experience
+sidenav: ai
 description: >
   Learn how to use spec-driven development and Gemini to plan, code, and 
   iterate on high-quality Flutter applications.
