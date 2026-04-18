@@ -63,7 +63,7 @@ class ArticleView extends StatelessWidget {
 Create the `ArticleViewModel` in this widget:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (view-model)"?>
-```dart highlightLines=4
+```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
@@ -108,7 +108,7 @@ and pass it a `ChangeNotifier` object.
 In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4c_main.dart (view-model)"?>
-```dart highlightLines=12-17
+```dart
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 

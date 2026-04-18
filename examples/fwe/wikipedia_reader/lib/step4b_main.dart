@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'summary.dart';
 
 class ArticleViewModel extends ChangeNotifier {
