@@ -14,22 +14,10 @@ class ArticleViewModel extends ChangeNotifier {
 class ArticleModel {}
 
 // #docregion ArticleView
-class ArticleView extends StatefulWidget {
-  const ArticleView({super.key});
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
 
-  @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  late final ArticleViewModel viewModel;
-
-  @override
-  void initState() {
-    super.initState();
-    viewModel = ArticleViewModel(ArticleModel());
-    viewModel.fetchArticle();
-  }
+  final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
 
   @override
   Widget build(BuildContext context) {
@@ -66,8 +54,10 @@ class ArticlePage extends StatelessWidget {
     required this.summary,
     required this.nextArticleCallback,
   });
+
   final Summary summary;
   final VoidCallback nextArticleCallback;
+
   @override
   Widget build(BuildContext context) => const Placeholder();
 }

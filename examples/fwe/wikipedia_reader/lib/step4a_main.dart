@@ -1,17 +1,12 @@
-// ignore_for_file: unused_import
+// ignore_for_file: prefer_const_constructors_in_immutables, unused_import
 
 import 'package:flutter/material.dart';
 
 // #docregion ArticleView
-class ArticleView extends StatefulWidget {
-  const ArticleView({super.key});
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
 
-  @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  // viewModel will be instantiated next
+  // The view model will be instantiated here next.
 
   @override
   Widget build(BuildContext context) {

@@ -17,7 +17,9 @@ class ArticlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
-      child: Column(children: [Text('Article content will be displayed here')]),
+      child: Column(
+        children: [Text('Article content will be displayed here...')],
+      ),
     );
   }
 }

@@ -11,7 +11,7 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Article content will be displayed here');
+    return const Text('Article content will be displayed here...');
   }
 }
 

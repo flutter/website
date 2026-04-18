@@ -40,15 +40,10 @@ Start with the basic class structure and widgets:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4a_main.dart (ArticleView)"?>
 ```dart
-class ArticleView extends StatefulWidget {
-  const ArticleView({super.key});
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
 
-  @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  // viewModel will be instantiated next
+  // The view model will be instantiated here next.
 
   @override
   Widget build(BuildContext context) {
@@ -66,22 +61,10 @@ Create the `ArticleViewModel` in this widget:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (ArticleView)"?>
 ```dart
-class ArticleView extends StatefulWidget {
-  const ArticleView({super.key});
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
 
-  @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  late final ArticleViewModel viewModel;
-
-  @override
-  void initState() {
-    super.initState();
-    viewModel = ArticleViewModel(ArticleModel());
-    viewModel.fetchArticle();
-  }
+  final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +139,9 @@ class ArticlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
-      child: Column(children: [Text('Article content will be displayed here')]),
+      child: Column(
+        children: [Text('Article content will be displayed here...')],
+      ),
     );
   }
 }
@@ -241,7 +226,7 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('Article content will be displayed here');
+    return const Text('Article content will be displayed here...');
   }
 }
 ```
@@ -259,10 +244,10 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Column(
-        children: [const Text('Article content will be displayed here')],
+        children: [Text('Article content will be displayed here...')],
       ),
     );
   }
@@ -285,10 +270,10 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        spacing: 10,
         children: [
           if (summary.hasImage) ...[
             Image.network(summary.originalImage!.source),
-            const SizedBox(height: 10.0),
           ],
           const Text('Article content will be displayed here'),
         ],
@@ -319,24 +304,22 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        spacing: 10,
         children: [
           if (summary.hasImage) ...[
             Image.network(summary.originalImage!.source),
-            const SizedBox(height: 10.0),
           ],
           Text(
             summary.titles.normalized,
             overflow: TextOverflow.ellipsis,
             style: Theme.of(context).textTheme.displaySmall,
           ),
-          const SizedBox(height: 10.0),
           if (summary.description != null) ...[
             Text(
               summary.description!,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodySmall,
             ),
-            const SizedBox(height: 10.0),
           ],
           Text(summary.extract),
         ],
@@ -357,7 +340,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: ArticleView());
+    return MaterialApp(home: ArticleView());
   }
 }
 ```

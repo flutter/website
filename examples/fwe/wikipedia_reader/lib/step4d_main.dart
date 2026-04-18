@@ -5,7 +5,9 @@ import 'summary.dart';
 
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
+
   final Summary summary;
+
   @override
   Widget build(BuildContext context) => const Placeholder();
 }

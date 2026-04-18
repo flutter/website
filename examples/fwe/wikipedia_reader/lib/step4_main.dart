@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: ArticleView());
+    return MaterialApp(home: ArticleView());
   }
 }
 // #enddocregion MainApp
@@ -40,14 +40,14 @@ class ArticleModel {
 }
 
 class ArticleViewModel extends ChangeNotifier {
-  ArticleViewModel(this.model);
   final ArticleModel model;
-
   Summary? summary;
-
+  Exception? error;
   bool isLoading = false;
 
-  Exception? error;
+  ArticleViewModel(this.model) {
+    fetchArticle();
+  }
 
   Future<void> fetchArticle() async {
     isLoading = true;
@@ -56,8 +56,7 @@ class ArticleViewModel extends ChangeNotifier {
 
     try {
       summary = await model.getRandomArticleSummary();
-      error = null;
-    } on Exception catch (e) {
+    } on HttpException catch (e) {
       error = e;
     } finally {
       isLoading = false;
@@ -66,22 +65,10 @@ class ArticleViewModel extends ChangeNotifier {
   }
 }
 
-class ArticleView extends StatefulWidget {
-  const ArticleView({super.key});
+class ArticleView extends StatelessWidget {
+  ArticleView({super.key});
 
-  @override
-  State<ArticleView> createState() => _ArticleViewState();
-}
-
-class _ArticleViewState extends State<ArticleView> {
-  late final ArticleViewModel viewModel;
-
-  @override
-  void initState() {
-    super.initState();
-    viewModel = ArticleViewModel(ArticleModel());
-    viewModel.fetchArticle();
-  }
+  final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
 
   @override
   Widget build(BuildContext context) {

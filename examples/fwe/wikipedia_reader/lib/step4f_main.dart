@@ -11,10 +11,10 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Column(
-        children: [const Text('Article content will be displayed here')],
+        children: [Text('Article content will be displayed here...')],
       ),
     );
   }
