@@ -7,12 +7,12 @@ class Summary {
     required this.pageId,
     required this.extract,
     required this.extractHtml,
-    this.thumbnail,
-    this.originalImage,
     required this.lang,
     required this.dir,
-    this.description,
     required this.url,
+    this.description,
+    this.thumbnail,
+    this.originalImage,
   });
 
   /// The title information of this article.
@@ -27,23 +27,23 @@ class Summary {
   /// The first few sentences of the article in HTML format.
   final String extractHtml;
 
-  /// A thumbnail-sized version of the article's primary image, if available.
-  final ImageFile? thumbnail;
-
-  /// The original full-sized article's primary image, if available.
-  final ImageFile? originalImage;
-
   /// The language code of the article's content, such as "en" for English.
   final String lang;
 
   /// The text directionality of the article's content, such as "ltr" or "rtl".
   final String dir;
 
+  /// The URL of the page.
+  final String url;
+
   /// A description of the article, if available.
   final String? description;
 
-  /// The URL of the page.
-  final String url;
+  /// A thumbnail-sized version of the article's primary image, if available.
+  final ImageFile? thumbnail;
+
+  /// The original full-sized article's primary image, if available.
+  final ImageFile? originalImage;
 
   /// Whether this article has an image.
   bool get hasImage => originalImage != null && thumbnail != null;
