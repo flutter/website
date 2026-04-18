@@ -382,7 +382,7 @@ extension's assets). Once you have done this, run `pub get` on the package.
   that depends on your package in a supported IDE
   (VS Code or IntelliJ / Android Studio).
 
-[`path`]: {{site.dart-dev}}/tools/pub/dependencies#path-packages
+[`path`]: {{site.dart-site}}/tools/pub/dependencies#path-packages
 
 ### Start DevTools
 
