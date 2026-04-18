@@ -377,7 +377,7 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        
+        spacing: 10,
         children: [
           if (summary.hasImage)
             Image.network(
@@ -407,7 +407,7 @@ class ArticleWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
-        
+        spacing: 10,
         children: [
           if (summary.hasImage)
             Image.network(
@@ -440,8 +440,8 @@ This widget demonstrates a few important UI concepts:
   The `if` statements show content only when available.
 - **Text styling**:
   Different text styles create visual hierarchy using Flutter's theme system.
-
-
+- **Proper spacing**:
+  The `spacing` parameter provides consistent vertical spacing.
 - **Overflow handling**:
   `TextOverflow.ellipsis` prevents text from breaking the layout.
 
@@ -486,7 +486,7 @@ items:
     details: >-
       You created `ArticleView`, `ArticlePage`, and
       `ArticleWidget` with conditional rendering, text styling,
-      and overflow handling.
+      proper spacing, and overflow handling.
       These are core UI patterns you'll use in every Flutter app.
   - title: Completed the MVVM architecture
     icon: celebration
