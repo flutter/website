@@ -4,6 +4,8 @@ description: Instructions on how to manage state with ChangeNotifiers.
 layout: tutorial
 ---
 
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
 Learn to use ListenableBuilder to automatically rebuild UI and
 handle all possible states with switch expressions.
 
@@ -44,7 +46,7 @@ Start with the basic class structure and widgets:
 import 'package:flutter/material.dart';
 
 class ArticleView extends StatelessWidget {
-  const ArticleView({super.key});
+  ArticleView({super.key});
 
   // The view model will be instantiated here next.
 
