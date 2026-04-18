@@ -4,7 +4,7 @@ class Summary {
   /// Returns a new [Summary] instance.
   Summary({
     required this.titles,
-    required this.pageid,
+    required this.pageId,
     required this.extract,
     required this.extractHtml,
     this.thumbnail,
@@ -19,7 +19,7 @@ class Summary {
   final TitlesSet titles;
 
   /// The page ID of this article.
-  final int pageid;
+  final int pageId;
 
   /// The first few sentences of the article in plain text.
   final String extract;
@@ -53,7 +53,7 @@ class Summary {
     return switch (json) {
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
         'thumbnail': final Map<String, Object?> thumbnail,
@@ -68,7 +68,7 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           thumbnail: ImageFile.fromJson(thumbnail),
@@ -80,7 +80,7 @@ class Summary {
         ),
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
         'lang': final String lang,
@@ -93,7 +93,7 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           lang: lang,
@@ -103,7 +103,7 @@ class Summary {
         ),
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
         'lang': final String lang,
@@ -115,7 +115,7 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           lang: lang,
@@ -130,7 +130,7 @@ class Summary {
   String toString() =>
       'Summary['
       'titles=$titles, '
-      'pageid=$pageid, '
+      'pageId=$pageId, '
       'extract=$extract, '
       'extractHtml=$extractHtml, '
       'thumbnail=${thumbnail ?? 'null'}, '
