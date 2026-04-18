@@ -19,8 +19,7 @@ Extensions are built using Flutter web and leverage existing
 frameworks and utilities from DevTools to simplify
 the developer tool authoring experience.
 
-[image  custom-devtools-extension.png]
-alt-text="Example DevTools extension for `package:foo`
+![Example DevTools extension for `package:foo`](/assets/images/docs/tools/devtools/custom-devtools-extension.png)
 
 ## How do DevTools extensions work?
 
@@ -38,14 +37,18 @@ they automatically get access to the DevTools extension
 provided by this package. When DevTools detects the
 `package:fooextension` is available, based on information
 from the user’s app or from their IDE,
-a new tab “Foo” will be added to DevTools that contains
+a new tab "Foo" will be added to DevTools that contains
 the developer tools provided by `package:foo`.
 
-[image  how-devtools-extension-works.png]
+![Diagram showing how a DevTools extension works](/assets/images/docs/tools/devtools/how-devtools-extension-works.png)
 
 Some examples of packages that have added a DevTools extension
-to an existing package are `package:provider`, `package:patrol`,
-and `package:drift`.
+to an existing package are [`package:provider`][], [`package:patrol`][],
+and [`package:drift`][].
+
+[`package:drift`]: {{site.pub-pkg}}/drift
+[`package:patrol`]: {{site.pub-pkg}}/patrol
+[`package:provider`]: {{site.pub-pkg}}/provider
 
 ## What types of tools are supported?
 
@@ -66,6 +69,10 @@ For example, users can:
 * Use your tool from DevTools in the browser.
 * Use your tool embedded directly in their IDE.
 * Discover and open your tool from Dart and Flutter supported IDEs.
+
+Next, learn how to write a DevTools extension.
+
+---
 
 ## Write a DevTools extension
 
@@ -92,7 +99,7 @@ and since users of your package will add your package as a dev_dependency,
 the size of your package won't affect the user's app size.
 Your package structure will look like the following:
 
-```
+```yaml
 my_new_tool
   extension/
     devtools/
@@ -111,10 +118,10 @@ use `flutter create` to generate the package:
 flutter create --template app --platforms web my_new_tool
 ```
 
-You will use the `my_new_tool` package to configure your extension
+Next, use the `my_new_tool` package to configure your extension
 in the next step.
 
-#### Companion extension
+#### Companion extensions
 
 For a companion extension (that is shipped as part of an existing pub package),
 consider placing your extension source code outside of your pub package.
@@ -122,7 +129,7 @@ This keeps your package size as small as possible, to avoid inflating
 the size of user apps that depend on your package.
 Here is the recommended package structure:
 
-```
+```yaml
 foo/  # formerly the repository root of your pub package
   packages/
     foo/  # your pub package
@@ -140,17 +147,17 @@ foo/  # formerly the repository root of your pub package
 In the Dart package that provides the DevTools extension to users,
 add a top-level extension directory:
 
-```
+```yaml
 foo/
   extension/
   lib/
   ...
 ```
 
-Under the extension directory,
-create the following structure exactly as shown:
+Under the `extension` directory,
+create the following structure **exactly as shown**:
 
-```
+```yaml
 extension/
   devtools/
     build/
@@ -160,47 +167,89 @@ extension/
 The `config.yaml` file contains metadata that DevTools
 needs to load the extension:
 
-```yml
+```yaml
 name: foo
 version: 0.0.1
 issueTracker: <link_to_your_issue_tracker.com>
 materialIconCodePoint: '0xe0b1'
 requiresConnection: true  # optional field - defaults to true
-Copy the config.yaml file content above and paste it into the config.yaml file you just created in your package. It is important that you use the exact file name and field names as shown, or else your extension may fail to load in DevTools.
+```
+
+Copy the `config.yaml` file content as shown and
+paste it into the `config.yaml` file you just created in your package.
+**It's important that you use the exact file name and field names as shown,
+or else your extension might fail to load in DevTools**.
 
 For each key, fill in the appropriate value for your package.
 
-name: the package name that this DevTools extension belongs to. The value of this field is used in the extension page title bar. [required]
-version: the version of your DevTools extension. This version number should evolve over time as you ship new features for your extension. The value of this field is used in the extension page title bar. [required]
-issueTracker: the URL for your issue tracker. When a user clicks the “Report an issue” link in the DevTools UI, they are directed to this URL. [required]
+* `name`: The package name for this DevTools extension.
+  The value of this field is used in the extension page title bar. [**required**]
+* `version`: The version of your DevTools extension.
+  This version number should evolve over time as you ship new features for your extension.
+  The value of this field is used in the extension page title bar. [**required**]
+* `issueTracker`: The URL for your issue tracker.
+  When a user clicks the **Report an issue** link in the DevTools UI,
+  they are directed to this URL. [**required**]
 
-DevTools extension screen title bar
-materialIconCodePoint: corresponds to the codepoint value of an icon from material/icons.dart. This icon is used for the extension’s tab in the top-level DevTools tab bar. [required]
+![DevTools extension screen title bar](/assets/images/docs/tools/devtools/devtools-extension-screen-title-bar.png){:width="80%"}
 
-DevTools extension tab icon
-requiresConnection: whether the extension requires a connected Dart or Flutter app to use. This is an optional field that will default to true if unspecified. [optional]
-For the most up-to-date documentation on the config.yaml spec, see extension_config_spec.md.
+* `materialIconCodePoint`: Corresponds to the codepoint value of an icon
+  from material/icons.dart. This icon is used for the extension’s tab
+  in the top-level DevTools tab bar. [**required**]
 
-Become a member
-Now it is time to build your extension.
+![DevTools extension tab icon](/assets/images/docs/tools/devtools/devtools-extension-tab-icon.png){:width="12%"}
 
-Step 3: Build your extension
-Create the Flutter web app.
-Note: skip this step if you are building a standalone extension, since you already did this when you set up your package hierarchy.
+* `requiresConnection`: Indicates whether the extension requires a connected Dart
+  or Flutter app to use. This is an optional field that will default
+  to `true` if unspecified. [**optional**]
 
-From the directory where you want your extension source code to live, run the following command, replacing foo_devtools_extension with <your_package_name>_devtools_extension:
+For the most up-to-date documentation on the `config.yaml` spec,
+visit [extension_config_spec.md][].
 
+[extension_config_spec.md]: {{site.github}}/flutter/devtools/blob/master/packages/devtools_extensions/extension_config_spec.md
+
+## Build your extension
+
+Use the following steps to build an extension.
+
+### Create the Flutter web app
+
+:::note
+Skip this step if you are building a standalone extension,
+since you already did this when you set up your package hierarchy.
+:::
+
+From the directory where you want your extension source code to live,
+run the following command, replacing `foo_devtools_extension` with
+`<your_package_name>_devtools_extension`:
+
+```console
 flutter create --template app --platforms web foo_devtools_extension
-2. Add the package:devtools_extensions dependency to your extension Flutter web app.
+```
 
+### Add the `package:devtools_extensions` dependency
+
+```console
 flutter pub add devtools_extensions
-You will likely also want to add a dependency on package:devtools_app_shared, which contains shared services, utilities, and UI components for you to use while building your extension. See devtools_app_shared/example for sample usages.
+```
 
+You will likely also want to add a dependency on [`package:devtools_app_shared`][],
+which contains shared services, utilities, and UI components to use
+while building your extension.
+Visit [`devtools_app_shared/example`][] for sample usages.
+
+```console
 flutter pub add devtools_app_shared
-3. Add the DevToolsExtension widget at the root of your Fluter web app.
+```
 
-In lib/main.dart, add the following:
+[`package:devtools_app_shared`]: {{site.pub-pkg}}/devtools_app_shared
+[`devtools_app_shared/example`]: {{site.github}}/flutter/devtools/tree/master/packages/devtools_app_shared/example
 
+### Add the `DevToolsExtension` widget
+
+In `lib/main.dart`, add the following imports:
+
+```dart
 import 'package:devtools_extensions/devtools_extensions.dart';
 import 'package:flutter/material.dart';
 
@@ -218,26 +267,45 @@ class FooDevToolsExtension extends StatelessWidget {
     );
   }
 }
-The DevToolsExtension widget automatically performs all extension initialization required to interact with DevTools. From anywhere in your extension web app, you can access the globals:
+```
 
-extensionManager: a manager for interacting with DevTools or the extensions framework.
-serviceManager: a manager for interacting with the connected vm service, if present.
-dtdManager: a manager for interacting with the Dart Tooling Daemon, if present.
-Step 4: Debug your extension
-When developing and maintaining your DevTools extension, you’ll want to run, debug, and test your extension Flutter web app. You have a couple of different options for this, outlined below.
+The `DevToolsExtension` widget automatically initializes all extensions
+required to interact with DevTools.
+From anywhere in your extension web app, you can access the following globals:
 
-Option A: Use the Simulated DevTools Environment (recommended for development)
-For debugging purposes, you will likely want to use the “simulated DevTools environment”. This is a simulated environment that allows you to build your extension without having to develop it as an embedded iFrame in DevTools. Running your extension this way will wrap your extension with an environment that simulates the DevTools-to-DevTools extension connection. It also gives you access to hot restart and a faster development cycle.
+* `extensionManager`: a manager for interacting with DevTools or the extensions framework.
+* `serviceManager`: a manager for interacting with the connected vm service, if present.
+* `dtdManager`: a manager for interacting with the Dart Tooling Daemon, if present.
 
-Press enter or click to view image in full size
+## Debug your extension
 
-Debugging an extension with the Simulated DevTools Environment
-Your DevTools extension.
-The VM service URI for a test app that your DevTools extension will interact with. This app should depend on your extension’s parent package (package:foo in this example).
-Buttons to perform actions that a user may trigger from DevTools.
-Logs showing the messages that will be sent between your extension and DevTools.
-The simulated environment is enabled by the environment parameter use_simulated_environment. To run your extension web app with this flag enabled, add a configuration to your launch.json file in VS code:
+When developing and maintaining your DevTools extension,
+you’ll want to run, debug, and test your extension Flutter web app.
+You have a couple of different options for this, outlined below.
 
+### Option A: Use the Simulated DevTools Environment (recommended for development)
+
+For debugging purposes,
+you will likely want to use the "simulated DevTools environment".
+This is a simulated environment that allows you to build your extension
+without having to develop it as an embedded iFrame in DevTools.
+Running your extension this way will wrap your extension with an environment
+that simulates the DevTools-to-DevTools extension connection.
+It also gives you access to hot restart and a faster development cycle.
+
+![Debugging an extension with the Simulated DevTools Environment](/assets/images/docs/tools/devtools/devtools-extension-debugger.png)
+
+1. _Your DevTools extension._
+2. _The VM service URI for a test app that your DevTools extension will interact with.
+   This app should depend on your extension’s parent package (`package:foo` in this example)._
+3. _Buttons to perform actions that a user may trigger from DevTools._
+4. _Logs showing the messages that will be sent between your extension and DevTools._
+
+The simulated environment is enabled by the environment parameter `use_simulated_environment`.
+To run your extension web app with this flag enabled,
+add a configuration to your `launch.json` file in VS code:
+
+```json
 {
     ...
     "configurations": [
@@ -253,64 +321,158 @@ The simulated environment is enabled by the environment parameter use_simulated_
         },
     ]
 }
+```
+
 or launch your app from the command line with the added flag:
 
+```console
 flutter run -d chrome - dart-define=use_simulated_environment=true
-Option B: Use a real DevTools environment
-Once you develop your extension to a point where you are ready to test your changes in a real DevTools environment, you need to perform a series of setup steps:
+```
 
-1. Develop your extension to a point where you are ready to test your changes in a real DevTools environment. Build your flutter web app and copy the built assets from your_extension_web_app/build/web to your pub package's extension/devtools/build directory.
+### Option B: Use a real DevTools environment
 
-Use the build_and_copy command from package:devtools_extensions to help with this step.
+Once you develop your extension to a point where you are ready
+to test your changes in a real DevTools environment,
+you need to perform a series of setup steps:
 
+1. Develop your extension to a point where you are ready to test
+   your changes in a real DevTools environment.
+   Build your flutter web app and copy the built assets from
+   `your_extension_web_app/build/web` to your pub package's
+   `extension/devtools/build directory`.
+
+Use the `build_and_copy` command from `package:devtools_extensions`
+to help with this step.
+
+```console
 cd your_extension_web_app;
 flutter pub get;
 dart run devtools_extensions build_and_copy --source=. --dest=path/to/your_pub_package/extension/devtools
-Note: if you are using the recommended package structure from above for adding an extension to an existing pub package, the value for — dest should be ../your_pub_package/extension/devtools.
+```
 
-To ensure that your extension is setup properly for loading in DevTools, run the validate command from package:devtools_extensions. The --package argument should point to the root of the Dart package that this extension will be published with.
+:::note
+If you are using the recommended package structure for adding an extension
+to an existing pub package,
+the value for `--dest` should be `../your_pub_package/extension/devtools`.
+:::
 
+To ensure that your extension is setup properly for loading in DevTools,
+run the `validate` command from `package:devtools_extensions`.
+The `--package` argument should point to the root of the Dart package
+that this extension will be published with.
+
+```console
 cd your_extension_web_app;
 flutter pub get;
 dart run devtools_extensions validate --package=path/to/your_pub_package
-2. Prepare and a test environment with a dependency on your pub package that is providing the extension.
+```
 
-In the Dart or Flutter project where you are adding a dependency on your package, add a path dependency that points to your local package source code (the package that contains the extension/devtools/ directory with your extension's assets). Once you have done this, run pub get on the package.
+Prepare a test environment with a dependency on your pub package
+that is providing the extension.
 
-If your extension requires a running application, then you’ll need to run the app that depends on your extension.
-If your extension does not require a running application, then you will need to open the test Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio).
-3. Start DevTools in one of the following ways:
+In the Dart or Flutter project where you are adding a dependency on your package,
+add a [`path`][] dependency that points to your local package source code
+(the package that contains the `extension/devtools/` directory with your
+extension's assets). Once you have done this, run `pub get` on the package.
 
-If your extension requires a running application, you can open DevTools either from the URI that was printed to command line when you ran the test app, or from the IDE where you ran your test app.
-If your extension does not require a running application, you can open your Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio). Open DevTools from the IDE to see your extension in the browser.
-If you need local or unreleased changes from DevTools, you’ll need to build and run DevTools from source. See the DevTools CONTRIBUTING.md for a guide on how to do this. You’ll need to build DevTools with the server and the front end to test extensions — see instructions.
-4. Once you have opened DevTools, you should see a tab in the DevTools app bar for your extension. The enabled or disabled state of your extension is managed by DevTools, which is exposed from an “Extensions” menu, available from the action buttons in the upper right corner of the screen.
+* **If your extension requires a running application**,
+  then you’ll need to run the app that depends on your extension.
+* **If your extension does not require a running application**,
+  then you will need to open the test Dart or Flutter project
+  that depends on your package in a supported IDE
+  (VS Code or IntelliJ / Android Studio).
 
+[`path`]: {{site.dart-dev}}/tools/pub/dependencies#path-packages
 
-DevTools Extensions menu button
-Press enter or click to view image in full size
+### Start DevTools
 
-DevTools Extensions menu
-Step 5: Publish your package with a DevTools extension
-In order for a package to provide a DevTools extension to its users, it must be published with the expected content in the your_pub_package/extension/devtools/ directory (see the setup instructions above).
+Use one of the following ways to start DevTools:
 
-1. Ensure the extension/devtools/config.yaml file exists and is configured per the specifications above. You can run the validate command from package:devtools_extensions to verify.
+* **If your extension requires a running application**,
+  you can open DevTools either from the URI that was printed
+  to the command line when you ran the test app,
+  or from the IDE where you ran your test app.
+* **If your extension does not require a running application**,
+  you can open your Dart or Flutter project that depends on your package
+  in a supported IDE (VS Code or IntelliJ / Android Studio).
+  Open DevTools from the IDE to see your extension in the browser.
+* **If you need local or unreleased changes from DevTools**,
+  you’ll need to build and run DevTools from source.
+  See the DevTools [CONTRIBUTING.md][] for a guide on how to do this.
+  You’ll need to build DevTools with the server and the
+  front end to test extensions ([instructions][]).
 
+Once you've opened DevTools,
+you should see a tab in the DevTools app bar for your extension.
+The enabled or disabled state of your extension is managed by DevTools,
+which is exposed from an "Extensions" menu,
+available from the action buttons in the upper right corner of the screen.
+
+![DevTools Extensions menu button](/assets/images/docs/tools/devtools/devtools-extensions-menu-button.png){:width="80%"}
+
+![DevTools Extensions menu](/assets/images/docs/tools/devtools/devtools-extensions-menu.png)
+
+[CONTRIBUTING.md]: {{site.github}}/flutter/devtools/tree/7a53fd2ddf289ee1b76840b9bfd9a2cb7876f13b/packages/devtools_extensions
+[instructions]: {{site.github}}/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app
+
+## Publish your package with a DevTools extension
+
+For a package to provide a DevTools extension to its users,
+it must be published with the expected content in the
+`your_pub_package/extension/devtools/` directory
+(as described in the preceding setup instructions).
+
+1. Ensure the `extension/devtools/config.yaml` file exists
+   and is configured per the specifications above.
+   You can run the `validate` command from
+   `package:devtools_extensions` to verify.
+
+```console
 cd your_extension_web_app;
 flutter pub get;
 dart run devtools_extensions validate --package=path/to/pkg_providing_your_extension_assets
-2. Use the build_and_copy command provided by package:devtools_extensions to build your extension and copy the output to the extension/devtools directory:
+```
 
+2. Use the `build_and_copy` command provided by
+   `package:devtools_extensions` to build your extension
+   and copy the output to the `extension/devtools` directory:
+
+```console
 cd your_extension_web_app;
 flutter pub get;
 dart run devtools_extensions build_and_copy --source=. --dest=path/to/your_pub_package/extension/devtools
-Then publish your package on pub.dev: flutter pub publish. When running pub publish, you will see a warning if you do not have the config.yaml file and a non-empty build directory as required.
+```
 
-For additional guidance around publishing your package, see the package:devtools_extensions publishing guide.
+Then, publish your package on [`pub.dev`][]:
 
-Conclusion
-That’s it! Now, when a user depends on the latest version of your package, they will automatically get access to the tools you provide in your DevTools extension.
+```console
+flutter pub publish
+```
 
-For issues and feature requests, please file an issue on the DevTools issue tracker.
+When running `pub publish`,
+you will see a warning if you do not have the `config.yaml` file
+and a non-empty `build` directory as required.
 
-For general support and access to the community of DevTools extension authors, check out the #devtools-extension-authors Discord channel (you will first need to join the Flutter Discord server).
+For additional guidance around publishing your package,
+visit the `package:devtools_extensions` [publishing guide][].
+
+[`pub.dev`]: {{site.pub}}
+[publishing guide]: {{site.pub-pkg}}/devtools_extensions#publish-your-package-with-a-devtools-extension
+
+---
+
+That’s it! Now,
+when a user depends on the latest version of your package,
+they will automatically get access to the tools you provide
+in your DevTools extension.
+
+For issues and feature requests,
+please [file an issue][] on the DevTools issue tracker.
+
+For general support and access to the community of DevTools extension authors,
+check out the [#devtools-extension-authors][extensions-discord] Discord channel
+(you will first need to join the [Flutter Discord server][]).
+
+[extensions-discord]: https://discord.com/channels/608014603317936148/1159561514072690739
+[file an issue]: {{site.github}}/flutter/devtools/issues
+[Flutter Discord server]: {{site.github}}/flutter/flutter/wiki/Chat
