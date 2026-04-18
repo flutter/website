@@ -1,5 +1,3 @@
-// ignore_for_file: directives_ordering
-
 // #docregion All
 /// Representation of the JSON data returned by the Wikipedia API.
 class Summary {

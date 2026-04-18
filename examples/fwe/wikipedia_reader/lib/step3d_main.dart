@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, avoid_dynamic_calls
+// ignore_for_file: unused_import
 
 import 'dart:io';
 
