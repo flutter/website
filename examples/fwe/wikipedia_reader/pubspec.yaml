@@ -1,5 +1,5 @@
 name: wikipedia_reader
-description: Code excerpts for the Wikipedia reader app in FWE.
+description: Code excerpts for the Wikipedia reader app in the Flutter tutorial.
 publish_to: none
 
 environment:
