@@ -36,7 +36,7 @@ class ArticleModel {
     final response = await get(uri);
 
     if (response.statusCode != 200) {
-      throw HttpException('Failed to update resource');
+      throw const HttpException('Failed to update resource');
     }
 
     return Summary.fromJson(jsonDecode(response.body) as Map<String, Object?>);
