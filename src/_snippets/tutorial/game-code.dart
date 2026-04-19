@@ -27,7 +27,7 @@ const legalGuesses = <String>[
 /// This class holds game state for a single round of Bulls and Cows,
 /// and exposes methods that a UI would need to manage the game state.
 ///
-/// On it's own, this class won't manage a game.
+/// On its own, this class won't manage a game.
 /// For example, it won't call [resetGame] on its own.
 /// It assumes that a client will use its methods to progress through a game.
 class Game {
