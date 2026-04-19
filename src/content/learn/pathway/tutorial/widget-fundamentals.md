@@ -33,17 +33,14 @@ Before you move on, you need to add this logic to your app.
 
     <DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
 
-1.  Import the `game.dart` library in your `lib/main.dart` file by
-    adding the following line below the existing imports:
+1.  To enable access to the types defined in the `game.dart` library,
+    add an import to it from your `lib/main.dart` file:
 
     ```dart title="main.dart" highlightLines=3
     import 'package:flutter/material.dart';
-    
+
     import 'game.dart';
     ```
-
-    This import enables the code you add in the following steps to access
-    types and functions defined in the `game.dart` library, such as `HitType`.
 
 :::note Game logic note
 
@@ -70,7 +67,7 @@ Open your `main.dart` file and add this code below the `MainApp` class,
 which defines a new widget called `Tile`.
 
 <?code-excerpt "fwe/birdle/lib/step2a_main.dart (Tile)"?>
-```dart title="main.dart"
+```dart
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
 
