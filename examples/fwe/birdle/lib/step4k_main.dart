@@ -1,10 +1,13 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:flutter/material.dart';
 import 'game.dart';
 import 'step2_main.dart' show Tile;
 
 // #docregion GamePage
 class GamePage extends StatelessWidget {
+  GamePage({super.key});
+
   final Game _game = Game();
 
   @override
@@ -14,15 +17,15 @@ class GamePage extends StatelessWidget {
       child: Column(
         spacing: 5.0,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
               ],
             ),
           GuessInput(
-            onSubmitGuess: (String guess) {
+            onSubmitGuess: (guess) {
               // TODO, handle guess
               print(guess); // Temporary
             },

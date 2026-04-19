@@ -1,10 +1,6 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'game.dart';
-import 'step2_main.dart'
-    show Tile; // Use Tile from step2 for simplicity, or just define it here.
 
-// But actually the excerpt tool just reads the file, so redefining `Tile` is fine, we just don't tag it.
 class Tile extends StatelessWidget {
   const Tile(this.letter, this.hitType, {super.key});
   final String letter;
@@ -25,7 +21,10 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         // #docregion AppBar
         appBar: AppBar(
-          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
+          title: const Align(
+            alignment: Alignment.centerLeft,
+            child: Text('Birdle'),
+          ),
         ),
         // #enddocregion AppBar
         body: Center(child: GamePage()),
@@ -51,12 +50,12 @@ class GamePage extends StatelessWidget {
         spacing: 5.0,
         children: [
           // #docregion Rows
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
                 // #docregion TileLoop
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
                 // #enddocregion TileLoop
               ],
             ),

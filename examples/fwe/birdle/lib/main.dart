@@ -14,9 +14,12 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
+          title: const Align(
+            alignment: Alignment.centerLeft,
+            child: Text('Birdle'),
+          ),
         ),
-        body: Center(child: GamePage()),
+        body: const Center(child: GamePage()),
       ),
     );
   }
@@ -42,16 +45,16 @@ class _GamePageState extends State<GamePage> {
         spacing: 5.0,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
               ],
             ),
           GuessInput(
-            onSubmitGuess: (String guess) {
+            onSubmitGuess: (guess) {
               setState(() {
                 _game.guess(guess);
               });
@@ -98,7 +101,7 @@ class GuessInput extends StatelessWidget {
               controller: _textEditingController,
               autofocus: true,
               focusNode: _focusNode,
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 _onSubmit();
               },
             ),

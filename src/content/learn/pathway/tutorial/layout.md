@@ -120,7 +120,7 @@ Then update your `MainPage` widget to create and
 display a `GamePage` widget instead of "Hello World!".
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>
-```dart highlightLines=11
+```dart highlightLines=14
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -129,7 +129,10 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
+          title: const Align(
+            alignment: Alignment.centerLeft,
+            child: Text('Birdle'),
+          ),
         ),
         body: Center(child: GamePage()),
       ),
@@ -202,7 +205,7 @@ class GamePage extends StatelessWidget {
       child: Column(
         spacing: 5.0,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
@@ -262,11 +265,11 @@ class GamePage extends StatelessWidget {
       child: Column(
         spacing: 5.0,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
               ],
             ),
         ],

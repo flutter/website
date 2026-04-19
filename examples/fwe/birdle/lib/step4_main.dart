@@ -1,4 +1,3 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 import 'game.dart';
 import 'step2_main.dart' show Tile;
@@ -15,11 +14,11 @@ class GamePage extends StatelessWidget {
       child: Column(
         spacing: 5.0,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
               ],
             ),
           // #docregion GuessInputInstance
@@ -73,7 +72,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String value) {
+              onSubmitted: (value) {
                 _onSubmit();
               },
             ),

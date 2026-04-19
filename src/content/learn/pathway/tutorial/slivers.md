@@ -91,7 +91,7 @@ class _ContactGroupsView extends StatelessWidget {
   const _ContactGroupsView({required this.onListSelected, this.selectedListId});
 
   final int? selectedListId;
-  final Function(ContactGroup) onListSelected;
+  final void Function(ContactGroup) onListSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -321,9 +321,7 @@ class _ContactListView extends StatelessWidget {
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList = contactGroupsModel.findContactList(
-            listId,
-          );
+          final contactList = contactGroupsModel.findContactList(listId);
 
           return CustomScrollView(
             slivers: [
@@ -383,9 +381,7 @@ class _ContactListView extends StatelessWidget {
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList = contactGroupsModel.findContactList(
-            listId,
-          );
+          final contactList = contactGroupsModel.findContactList(listId);
 
           return CustomScrollView(
             slivers: [
@@ -493,12 +489,9 @@ class _ContactListView extends StatelessWidget {
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList = contactGroupsModel.findContactList(
-            listId,
-          );
+          final contactList = contactGroupsModel.findContactList(listId);
 
-          final AlphabetizedContactMap contacts =
-              contactList.alphabetizedContacts;
+          final contacts = contactList.alphabetizedContacts;
 
           return CustomScrollView(
             slivers: [
