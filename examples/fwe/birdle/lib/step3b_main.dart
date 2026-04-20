@@ -1,5 +1,7 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_literals_to_create_immutables, unused_field, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+
 import 'game.dart';
 
 // #docregion GamePage

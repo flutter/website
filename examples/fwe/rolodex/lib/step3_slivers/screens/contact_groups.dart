@@ -22,7 +22,7 @@ class _ContactGroupsView extends StatelessWidget {
   const _ContactGroupsView({required this.onListSelected, this.selectedListId});
 
   final int? selectedListId;
-  final Function(ContactGroup) onListSelected;
+  final void Function(ContactGroup) onListSelected;
 
   @override
   Widget build(BuildContext context) {
