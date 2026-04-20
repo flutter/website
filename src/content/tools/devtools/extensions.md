@@ -83,4 +83,4 @@ You might also check out the following video:
 <YouTubeEmbed id="gOrSc4s4RWY"
   title="Building DevTools extensions | Flutter Build Show"></YouTubeEmbed>
 
-[build-extensions]: /tools/devtools/custom-extension
+[build-extensions]: /tools/devtools/custom-tool
