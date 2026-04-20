@@ -59,7 +59,6 @@ many types of tools, including:
 * Companion tools for existing packages.
 * New tools that are shipped as their own package.
 * Tools that interact with a running application.
-* Tools that **do not** interact with a running application.
 * Tools that interact with project files opened in the IDE.
 * Tools that interact with the Analysis server.
 
