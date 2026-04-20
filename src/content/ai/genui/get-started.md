@@ -425,13 +425,17 @@ To use `genui` with another agent provider,
 follow that provider's SDK documentation to implement a connection,
 and stream its results into an `A2uiTransportAdapter`.
 
-> [!WARNING]
-> `PromptBuilder.chat()` generates a system prompt that may be
-> **3,000–5,000+ tokens** long, which can exceed the context window
-> of on-device or small models. If you are targeting an on-device LLM, consider:
-> - Writing a compact custom system prompt that covers only the A2UI
-> `createSurface` → `updateComponents` flow.
-> - Using `systemPromptFragments` to pass only the portions of the schema your use-case requires.
+:::warning
+`PromptBuilder.chat()` generates a system prompt that might be
+**3,000–5,000+ tokens** long, which can
+exceed the context window of on-device or small models.
+If you are targeting an on-device LLM, consider:
+
+- Writing a compact custom system prompt that covers only the
+  A2UI `createSurface` to `updateComponents` flow.
+- Using `systemPromptFragments` to pass only the portions of
+  the schema your use case requires.
+:::
 
 </Tab>
 
