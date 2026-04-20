@@ -60,12 +60,12 @@ class ArticleView extends StatelessWidget {
 }
 ```
 
-### Create the article view model
+### Instantiate the article view model
 
-Create the `ArticleViewModel` in this widget:
+Instantiate the `ArticleViewModel` in a `viewModel` field in the widget:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (view-model)"?>
-```dart
+```dart highlightLines=4
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
@@ -89,7 +89,7 @@ include your completed `ArticleView`.
 Replace your existing `MainApp` with this updated version:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (main-app)"?>
-```dart
+```dart highlightLines=6
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -110,7 +110,7 @@ and pass it a `ChangeNotifier` object.
 In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4c_main.dart (view-model)"?>
-```dart
+```dart highlightLines=10-15
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
@@ -155,7 +155,7 @@ Use Dart's support for [switch expressions][]
 to handle all possible combinations in a clean, readable way:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (view-model)"?>
-```dart
+```dart highlightLines=14-27
 class ArticleView extends StatelessWidget {
   ArticleView({super.key});
 
@@ -235,7 +235,7 @@ class ArticlePage extends StatelessWidget {
 Replace the placeholder with a scrollable column layout:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4e_main.dart (page)"?>
-```dart
+```dart highlightLines=13-16
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
@@ -262,7 +262,7 @@ class ArticlePage extends StatelessWidget {
 Complete the layout with an article widget and navigation button:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (page)"?>
-```dart
+```dart highlightLines=16-20
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
     super.key,
@@ -318,7 +318,7 @@ class ArticleWidget extends StatelessWidget {
 Wrap the content in proper padding and layout:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4g_main.dart (article)"?>
-```dart
+```dart highlightLines=8-14
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
 
@@ -342,7 +342,7 @@ class ArticleWidget extends StatelessWidget {
 Add the article image that only shows when available:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4h_main.dart (article)"?>
-```dart
+```dart highlightLines=13
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
 
@@ -370,7 +370,7 @@ Replace the placeholder text with a
 properly styled title, description, and extract:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (article)"?>
-```dart
+```dart highlightLines=14-25
 class ArticleWidget extends StatelessWidget {
   const ArticleWidget({super.key, required this.summary});
 
