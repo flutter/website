@@ -42,9 +42,9 @@ class ContactGroup {
   List<Contact> get contacts => _contacts;
 
   AlphabetizedContactMap get alphabetizedContacts {
-    final AlphabetizedContactMap contactsMap = AlphabetizedContactMap();
-    for (final Contact contact in _contacts) {
-      final String lastInitial = contact.lastName[0].toUpperCase();
+    final contactsMap = AlphabetizedContactMap();
+    for (final contact in _contacts) {
+      final lastInitial = contact.lastName[0].toUpperCase();
       if (contactsMap.containsKey(lastInitial)) {
         contactsMap[lastInitial]!.add(contact);
       } else {
@@ -64,16 +64,16 @@ typedef AlphabetizedContactMap = SplayTreeMap<String, List<Contact>>;
 /// If names are identical, sorts by contact ID to ensure consistent ordering.
 void _sortContacts(List<Contact> contacts) {
   contacts.sort((a, b) {
-    final int checkLastName = a.lastName.compareTo(b.lastName);
+    final checkLastName = a.lastName.compareTo(b.lastName);
     if (checkLastName != 0) {
       return checkLastName;
     }
-    final int checkFirstName = a.firstName.compareTo(b.firstName);
+    final checkFirstName = a.firstName.compareTo(b.firstName);
     if (checkFirstName != 0) {
       return checkFirstName;
     }
     if (a.middleName != null && b.middleName != null) {
-      final int checkMiddleName = a.middleName!.compareTo(b.middleName!);
+      final checkMiddleName = a.middleName!.compareTo(b.middleName!);
       if (checkMiddleName != 0) {
         return checkMiddleName;
       }

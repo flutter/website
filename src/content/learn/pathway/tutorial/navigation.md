@@ -81,7 +81,7 @@ class ContactGroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return _ContactGroupsView(
       onListSelected: (list) => Navigator.of(context).push(
-        CupertinoPageRoute(
+        CupertinoPageRoute<void>(
           title: list.title,
           builder: (context) => ContactListsPage(listId: list.id),
         ),
@@ -129,7 +129,7 @@ class ContactGroupsSidebar extends StatelessWidget {
   });
 
   final int selectedListId;
-  final Function(int) onListSelected;
+  final void Function(int) onListSelected;
 
   @override
   Widget build(BuildContext context) {

@@ -251,7 +251,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 // NEW
                 print(_textEditingController.text); // Temporary
               },
@@ -353,7 +353,7 @@ class GuessInput extends StatelessWidget {
               ),
               controller: _textEditingController,
               autofocus: true, // NEW
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 print(input); // Temporary
                 _textEditingController.clear();
               },
@@ -424,7 +424,7 @@ class GuessInput extends StatelessWidget {
               controller: _textEditingController,
               autofocus: true,
               focusNode: _focusNode, // NEW
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 print(input); // Temporary
                 _textEditingController.clear();
                 _focusNode.requestFocus(); // NEW
@@ -479,7 +479,7 @@ class GuessInput extends StatelessWidget {
               controller: _textEditingController,
               autofocus: true,
               focusNode: _focusNode,
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 onSubmitGuess(_textEditingController.text.trim());
                 _textEditingController.clear();
                 _focusNode.requestFocus();
@@ -506,6 +506,8 @@ add the `GuessInput` widget:
 <?code-excerpt "fwe/birdle/lib/step4k_main.dart (GamePage)"?>
 ```dart
 class GamePage extends StatelessWidget {
+  GamePage({super.key});
+
   final Game _game = Game();
 
   @override
@@ -515,15 +517,15 @@ class GamePage extends StatelessWidget {
       child: Column(
         spacing: 5.0,
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               spacing: 5.0,
               children: [
-                for (var letter in guess) Tile(letter.char, letter.type),
+                for (final letter in guess) Tile(letter.char, letter.type),
               ],
             ),
           GuessInput(
-            onSubmitGuess: (String guess) {
+            onSubmitGuess: (guess) {
               // TODO, handle guess
               print(guess); // Temporary
             },
@@ -577,7 +579,7 @@ class GuessInput extends StatelessWidget {
         Expanded(child: Container()),
         IconButton(
           padding: EdgeInsets.zero,
-          icon: Icon(Icons.arrow_circle_up),
+          icon: const Icon(Icons.arrow_circle_up),
           onPressed: null,
         ),
       ],
@@ -605,7 +607,7 @@ class GuessInput extends StatelessWidget {
         Expanded(child: Container()),
         IconButton(
           padding: EdgeInsets.zero,
-          icon: Icon(Icons.arrow_circle_up),
+          icon: const Icon(Icons.arrow_circle_up),
           onPressed: () {
             onSubmitGuess(_textEditingController.text.trim());
             _textEditingController.clear();
@@ -671,7 +673,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String value) {
+              onSubmitted: (value) {
                 _onSubmit();
               },
             ),

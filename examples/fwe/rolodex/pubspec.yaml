@@ -1,8 +1,9 @@
 name: rolodex
-description: Rolodex example for FWE Part 3.
-version: 1.0.0+1
-publish_to: 'none'
+description: >-
+  Code excerpts for the Rolodex example app in the Flutter tutorial.
+publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.11.0
 
@@ -14,7 +15,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^6.0.0
 
 flutter:
   uses-material-design: true

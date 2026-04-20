@@ -43,12 +43,9 @@ class _ContactListView extends StatelessWidget {
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList = contactGroupsModel.findContactList(
-            listId,
-          );
+          final contactList = contactGroupsModel.findContactList(listId);
 
-          final AlphabetizedContactMap contacts =
-              contactList.alphabetizedContacts;
+          final contacts = contactList.alphabetizedContacts;
 
           return CustomScrollView(
             slivers: [
