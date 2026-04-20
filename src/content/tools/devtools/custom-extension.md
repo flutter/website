@@ -43,12 +43,13 @@ the developer tools provided by `package:foo`.
 ![Diagram showing how a DevTools extension works](/assets/images/docs/tools/devtools/how-devtools-extension-works.png)
 
 Some examples of packages that have added a DevTools extension
-to an existing package are [`package:provider`][], [`package:patrol`][],
-and [`package:drift`][].
+to an existing package are [`package: shared_preferences`][],
+[`package:provider`][], [`package:patrol`][], and [`package:drift`][].
 
 [`package:drift`]: {{site.pub-pkg}}/drift
 [`package:patrol`]: {{site.pub-pkg}}/patrol
 [`package:provider`]: {{site.pub-pkg}}/provider
+[`package:shared_preferences`]: {{site.pub-pkg}}/shared_preferences
 
 ## What types of tools are supported?
 
