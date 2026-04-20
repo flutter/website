@@ -104,7 +104,7 @@ consider using Firebase AI Logic instead.
     );
 
     final model = GenerativeModel(
-      model: 'gemini-1.5-flash',
+      model: 'gemini-2.5-flash',
       apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
