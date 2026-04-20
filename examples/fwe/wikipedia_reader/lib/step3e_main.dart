@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import, avoid_dynamic_calls, avoid_print
-
 import 'dart:io';
 
 import 'package:flutter/material.dart';
