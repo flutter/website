@@ -31,11 +31,11 @@ class CupertinoSheetPage extends StatelessWidget {
             // #docregion ShowCupertinoSheet
             showCupertinoSheet(
               context: context,
-              scrollableBuilder: (context, scrollController) {
+              builder: (context) {
                 return SingleChildScrollView(
-                  controller: scrollController,
                   child: Center(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         const SizedBox(height: 100),

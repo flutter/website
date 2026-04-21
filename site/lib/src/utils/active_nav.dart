@@ -7,11 +7,15 @@ ActiveNavEntry activeNavEntry(String pageUrlPath) {
     return ActiveNavEntry.learn;
   }
 
+  if (pageUrlPath.startsWith('/ai')) {
+    return ActiveNavEntry.ai;
+  }
   return ActiveNavEntry.home;
 }
 
 enum ActiveNavEntry {
   home,
   learn,
+  ai,
   // reference,
 }

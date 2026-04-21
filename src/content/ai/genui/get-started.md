@@ -1,5 +1,6 @@
 --- 
 title: Get started with the GenUI SDK for Flutter
+sidenav: ai
 shortTitle: Get started with the GenUI SDK
 breadcrumb: Get started
 description: >-
@@ -96,23 +97,31 @@ consider using Firebase AI Logic instead.
     final catalogs = [catalog];
 
     final surfaceController = SurfaceController(catalogs: catalogs);
-    final transportAdapter = A2uiTransportAdapter();
-    transportAdapter.messageStream.listen(surfaceController.handleMessage);
     
     final promptBuilder = PromptBuilder.chat(
       catalog: catalog,
-      instructions: 'You are a helpful assistant.',
+      systemPromptFragments: ['You are a helpful assistant.'],
     );
 
     final model = GenerativeModel(
       model: 'gemini-2.5-flash',
       apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
-      systemInstruction: Content.system(promptBuilder.systemPrompt),
+      systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
 
+    // The Conversation wires transport -> controller internally.
+    // Implement onSend to call your LLM and pipe chunks back.
+    late final A2uiTransportAdapter transportAdapter;
+    transportAdapter = A2uiTransportAdapter(onSend: (message) async {
+      // final stream = model.generateContentStream(...);
+      // await for (final chunk in stream) {
+      //   transportAdapter.addChunk(chunk.text ?? '');
+      // }
+    });
+
     final conversation = Conversation(
-      surfaceController: surfaceController,
-      transportAdapter: transportAdapter,
+      controller: surfaceController,
+      transport: transportAdapter,
     );
     ```
 
@@ -254,8 +263,8 @@ Follow these instructions:
     class _ChatScreenState extends State<ChatScreen> {
       final TextEditingController _textController = TextEditingController();
       final SurfaceController _surfaceController =
-          SurfaceController(catalogs: [CoreCatalogItems.asCatalog()]);
-      final A2uiTransportAdapter _transportAdapter = A2uiTransportAdapter();
+          SurfaceController(catalogs: [BasicCatalogItems.asCatalog()]);
+      late final A2uiTransportAdapter _transportAdapter;
       late final Conversation _uiAgent;
       late final A2uiAgentConnector _connector;
       final List<ChatMessage> _messages = [];
@@ -264,16 +273,18 @@ Follow these instructions:
       void initState() {
         super.initState();
         
-        // Connect Adapter -> Controller
-        _transportAdapter.messageStream.listen(_surfaceController.handleMessage);
+        // The Conversation wires transport -> controller internally.
+        _transportAdapter = A2uiTransportAdapter(onSend: (message) async {
+          // Implement sending to LLM if needed, or handled by connector
+        });
         
         _connector = A2uiAgentConnector(
           // TODO: Replace with your A2A server URL.
           url: Uri.parse('http://localhost:8080'),
         );
         _uiAgent = Conversation(
-          surfaceController: _surfaceController,
-          transportAdapter: _transportAdapter,
+          controller: _surfaceController,
+          transport: _transportAdapter,
         );
 
         // Listen for messages from the remote agent.
@@ -285,6 +296,7 @@ Follow these instructions:
       void dispose() {
         _textController.dispose();
         _uiAgent.dispose();
+        _transportAdapter.dispose();
         _surfaceController.dispose();
         _connector.dispose();
         super.dispose();
@@ -413,6 +425,18 @@ To use `genui` with another agent provider,
 follow that provider's SDK documentation to implement a connection,
 and stream its results into an `A2uiTransportAdapter`.
 
+:::warning
+`PromptBuilder.chat()` generates a system prompt that might be
+**3,000–5,000+ tokens** long, which can
+exceed the context window of on-device or small models.
+If you are targeting an on-device LLM, consider:
+
+- Writing a compact custom system prompt that covers only the
+  A2UI `createSurface` to `updateComponents` flow.
+- Using `systemPromptFragments` to pass only the portions of
+  the schema your use case requires.
+:::
+
 </Tab>
 
 </Tabs>
@@ -461,37 +485,49 @@ to your chosen agent provider.
         super.initState();
 
         // Create a SurfaceController with a widget catalog.
-        // The CoreCatalogItems contain basic widgets for text, markdown, and images.
-        _surfaceController = SurfaceController(catalogs: [CoreCatalogItems.asCatalog()]);
+        // The BasicCatalogItems contain basic widgets for text, markdown, and images.
+        _surfaceController = SurfaceController(catalogs: [BasicCatalogItems.asCatalog()]);
 
-        _transportAdapter = A2uiTransportAdapter();
-        _transportAdapter.messageStream.listen(_surfaceController.handleMessage);
+        // The Conversation wires transport -> controller internally.
+        _transportAdapter = A2uiTransportAdapter(onSend: (message) async {
+          // Implement sending to LLM and pipe chunks back.
+        });
 
-        final catalog = CoreCatalogItems.asCatalog();
+        final catalog = BasicCatalogItems.asCatalog();
         final promptBuilder = PromptBuilder.chat(
           catalog: catalog,
-          instructions: '''
+          systemPromptFragments: [
+            '''
             You are an expert in creating funny riddles. Every time I give you a word,
             you should generate UI that displays one new riddle related to that word.
             Each riddle should have both a question and an answer.
-            ''',
+            '''
+          ],
         );
 
-        // ... initialize your LLM Client of choice using promptBuilder.systemPrompt
+        // ... initialize your LLM Client of choice using promptBuilder.systemPromptJoined()
 
         // Create the Conversation to orchestrate everything.
         _conversation = Conversation(
-          surfaceController: _surfaceController,
-          transportAdapter: _transportAdapter,
-          onSurfaceAdded: _onSurfaceAdded, // Added in the next step.
-          onSurfaceDeleted: _onSurfaceDeleted, // Added in the next step.
+          controller: _surfaceController,
+          transport: _transportAdapter,
         );
+        
+        // Listen for surface lifecycle events:
+        _conversation.events.listen((event) {
+          if (event is ConversationSurfaceAdded) {
+            _onSurfaceAdded(event);
+          } else if (event is ConversationSurfaceRemoved) {
+            _onSurfaceDeleted(event);
+          }
+        });
       }
 
       @override
       void dispose() {
         _textController.dispose();
         _conversation.dispose();
+        _transportAdapter.dispose();
     
         super.dispose();
       }
@@ -500,14 +536,14 @@ to your chosen agent provider.
    
 ## Send messages and display the agent's responses
 
-Send a message to the agent using the `sendMessage` method
+Send a request to the agent using the `sendRequest` method
 in the `Conversation` class,
 or by directly streaming into your LLM Client and pumping
 the result stream to the adapter via `_transportAdapter.addChunk`.
 
 To receive and display generated UI:
 
-  1. Use the callbacks in `Conversation` to track the addition
+  1. Listen to the `events` stream in `Conversation` to track the addition
      and removal of UI surfaces as they are generated.
      These events include a _surface ID_ for each surface.
 
@@ -523,23 +559,23 @@ To receive and display generated UI:
        final _textController = TextEditingController();
        final _surfaceIds = <String>[];
 
-       // Send a message containing the user's [text] to the agent.
-       void _sendMessage(String text) {
+       // Send a request containing the user's [text] to the agent.
+       void _sendMessage(String text) async {
          if (text.trim().isEmpty) return;
-         // _conversation.sendMessage(text);
+         // await _conversation.sendRequest(ChatMessage.user(TextPart(text)));
        }
 
-       // A callback invoked by the [Conversation] when a new
+       // Invoked by the events stream listener when a new
        // UI surface is generated. Here, the ID is stored so the
        // build method can create a Surface to display it.
-       void _onSurfaceAdded(SurfaceAdded update) {
+       void _onSurfaceAdded(ConversationSurfaceAdded update) {
          setState(() {
            _surfaceIds.add(update.surfaceId);
          });
        }
 
-       // A callback invoked by Conversation when a UI surface is removed.
-       void _onSurfaceDeleted(SurfaceRemoved update) {
+       // Invoked by the events stream listener when a UI surface is removed.
+       void _onSurfaceDeleted(ConversationSurfaceRemoved update) {
          setState(() {
            _surfaceIds.remove(update.surfaceId);
          });
@@ -560,7 +596,7 @@ To receive and display generated UI:
                    itemBuilder: (context, index) {
                      // For each surface, create a Surface to display it.
                      final id = _surfaceIds[index];
-                     return Surface(surfaceController: _conversation.surfaceController, surfaceId: id);
+                     return Surface(surfaceContext: _surfaceController.contextFor(id));
                    },
                  ),
                ),
@@ -681,7 +717,7 @@ To add your own widgets, use the following instructions.
 
     ```dart
     _surfaceController = SurfaceController(
-      catalogs: [CoreCatalogItems.asCatalog().copyWith([riddleCard])],
+      catalogs: [BasicCatalogItems.asCatalog().copyWith([riddleCard])],
     );
     ```
 
@@ -694,14 +730,16 @@ To add your own widgets, use the following instructions.
     ```dart
     final promptBuilder = PromptBuilder.chat(
       catalog: catalog,
-      instructions: '''
-          You are an expert in creating funny riddles. Every time I give you a word,
-          generate a RiddleCard that displays one new riddle related to that word.
-          Each riddle should have both a question and an answer.
-          ''',
+      systemPromptFragments: [
+        '''
+        You are an expert in creating funny riddles. Every time I give you a word,
+        generate a RiddleCard that displays one new riddle related to that word.
+        Each riddle should have both a question and an answer.
+        '''
+      ],
     );
     
-    // Pass promptBuilder.systemPrompt to your LLM Config
+    // Pass promptBuilder.systemPromptJoined() to your LLM Config
     ```
 
 {:.steps}

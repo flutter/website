@@ -271,59 +271,6 @@
 - divider
 - header: Beyond UI
 
-- title: AI solutions
-  permalink: /ai
-  icon: smart_toy
-  children:
-    - title: Create with AI
-      permalink: /ai/create-with-ai
-    - title: Rules for AI
-      permalink: /ai/ai-rules
-    - title: AI best practices
-      permalink: /ai/best-practices
-      children:
-        - title: Overview
-          permalink: /ai/best-practices
-        - title: Prompting
-          permalink: /ai/best-practices/prompting
-        - title: Structure & output
-          permalink: /ai/best-practices/structure-output
-        - title: Tool calls (aka function calls)
-          permalink: /ai/best-practices/tool-calls
-        - title: Mode of interaction
-          permalink: /ai/best-practices/mode-of-interaction
-        - title: Developer experience
-          permalink: /ai/best-practices/developer-experience
-    - title: AI Toolkit
-      permalink: /ai/ai-toolkit
-      children:
-        - title: Overview
-          permalink: /ai/ai-toolkit
-        - title: User experience
-          permalink: /ai/ai-toolkit/user-experience
-        - title: Feature integration
-          permalink: /ai/ai-toolkit/feature-integration
-        - title: Custom LLM providers
-          permalink: /ai/ai-toolkit/custom-llm-providers
-        - title: Chat client sample
-          permalink: /ai/ai-toolkit/chat-client-sample
-    - title: GenUI SDK for Flutter
-      permalink: /ai/genui
-      children:
-        - title: Overview
-          permalink: /ai/genui
-        - title: Main components & concepts
-          permalink: /ai/genui/components
-        - title: Get started
-          permalink: /ai/genui/get-started
-        - title: Input and events
-          permalink: /ai/genui/input-events
-    - title: Dart & Flutter MCP server
-      permalink: /ai/mcp-server
-    - title: Flutter extension for Gemini CLI
-      permalink: /ai/gemini-cli-extension
-    - title: Firebase AI Logic
-      permalink: https://firebase.google.com/docs/ai-logic/get-started?platform=flutter
 
 - title: Data & backend
   permalink: /data-and-backend
@@ -727,6 +674,8 @@
           permalink: /tools/devtools/app-size
         - title: DevTools extensions
           permalink: /tools/devtools/extensions
+        - title: Build a custom tool
+          permalink: /tools/devtools/custom-tool
         - title: Validate deep links
           permalink: /tools/devtools/deep-links
         - title: Release notes
@@ -757,6 +706,8 @@
       permalink: /testing/build-modes
     - title: Hot reload
       permalink: /tools/hot-reload
+    - title: Dot shorthands
+      permalink: /ui/dot-shorthands
 
 - title: App solutions
   icon: apps

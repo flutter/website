@@ -33,7 +33,7 @@ int installJasprCliIfNecessary() {
     'global',
     'activate',
     'jaspr_cli',
-    '^0.22.3',
+    '^0.23.0',
   ]);
 
   if (activateOutput.exitCode != 0) {
