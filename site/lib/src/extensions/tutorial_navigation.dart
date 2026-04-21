@@ -2,14 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:jaspr/dom.dart';
-import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../models/tutorial_model.dart';
 
-/// A page extension for Jaspr Content that adds page navigation and a
-/// prefetch link for the next unit to the current tutorial page.
+/// A page extension for Jaspr Content that adds
+/// page navigation to the current tutorial page.
 final class TutorialNavigationExtension implements PageExtension {
   const TutorialNavigationExtension();
 
@@ -67,19 +65,6 @@ final class TutorialNavigationExtension implements PageExtension {
       },
     );
 
-    if (nextChapter == null) {
-      return nodes;
-    }
-
-    return [
-      ComponentNode(
-        Document.head(
-          children: [
-            link(rel: 'prefetch', href: nextChapter.url),
-          ],
-        ),
-      ),
-      ...nodes,
-    ];
+    return nodes;
   }
 }
