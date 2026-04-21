@@ -328,7 +328,7 @@ if (sidenav) {
             'eagerness': 'eager',
           },
       ],
-    });
+    }).replaceAll('</', r'<\/');
 
     return [
       RawText('<script type="speculationrules">$rules</script>'),
