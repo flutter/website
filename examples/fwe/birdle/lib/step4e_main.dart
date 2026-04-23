@@ -1,4 +1,3 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
 
 // #docregion GuessInput
@@ -24,7 +23,7 @@ class GuessInput extends StatelessWidget {
                 ),
               ),
               controller: _textEditingController,
-              onSubmitted: (String input) {
+              onSubmitted: (input) {
                 // NEW
                 print(_textEditingController.text); // Temporary
               },

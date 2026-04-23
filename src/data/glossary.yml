@@ -21,6 +21,20 @@
     - "ui"
     - "design"
     
+- term: "Agent skill"
+  short_description: |-
+    A specialized capability or tool that an AI agent uses for a specific task.
+  long_description: |-
+    An agent skill is a specialized set of instructions,
+    scripts, and resources that extend an AI agent's capabilities
+    for a specific domain or task.
+    Skills enable agents to interact with the environment,
+    execute multi-step workflows,
+    and perform complex problem-solving autonomously.
+  labels:
+    - "ai"
+    - "tooling"
+
 - term: "Cupertino"
   short_description: |-
     Flutter's implementation of the iOS design language.
@@ -357,6 +371,29 @@
   labels:
     - "packages"
     - "tooling"
+
+- term: "RenderObject"
+  short_description: |-
+    A persistent object in the Flutter framework responsible for layout,
+    painting, and hit testing.
+  long_description: |-
+    While widgets are immutable blueprints,
+    `RenderObject`s are mutable objects that persist between frames.
+    They handle the heavy lifting of determining exactly where elements
+     should be placed and how they should look.
+    
+    They represent a node in the render tree,
+    which is the most detailed tree in Flutter's multi-tree architecture.
+  related_links:
+    - text: "Architectural Overview: The Rendering Layer"
+      link: "/resources/architectural-overview#architectural-layers"
+      type: "doc"
+    - text: "RenderObject API documentation"
+      link: "https://api.flutter.dev/flutter/rendering/RenderObject-class.html"
+      type: "api"
+  labels:
+    - "rendering"
+    - "architecture"
 
 - term: "Sliver"
   short_description: |-

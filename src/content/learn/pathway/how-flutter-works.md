@@ -3,9 +3,6 @@ title: How Flutter works
 description: >-
   Dive deeper into how Flutter works through a six-part video series.
 layout: tutorial
-next:
-  title: Flutter learning resources
-  path: /learn/learning-resources
 ---
 
 <Stepper level="2">

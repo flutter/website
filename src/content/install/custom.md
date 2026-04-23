@@ -24,7 +24,7 @@ install the Flutter SDK to your development device.
 Choose one of the following installation methods:
 
 <div class="card-grid">
-  <a class="card outlined-card" href="/install/with-vs-code" target="_blank">
+  <a class="card outlined-card" href="/install/with-vs-code">
     <div class="card-header">
       <span class="card-title">Install with VS Code</span>
       <span class="card-subtitle">Recommended</span>
@@ -33,7 +33,7 @@ Choose one of the following installation methods:
       <p>Use VS Code to quickly set up your Flutter development environment.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/install/manual" target="_blank">
+  <a class="card outlined-card" href="/install/manual">
     <div class="card-header">
       <span class="card-title">Install manually</span>
       <span class="card-subtitle">For specific releases</span>
@@ -52,7 +52,7 @@ Some popular options include VS Code, Antigravity,
 Android Studio, and other Code OSS-based editors.
 
 <div class="card-grid wide">
- <a class="card outlined-card" href="/tools/vs-code#setup" target="_blank">
+ <a class="card outlined-card" href="/tools/vs-code#setup">
    <div class="card-header">
      <span class="card-title">VS Code</span>
    </div>
@@ -60,7 +60,7 @@ Android Studio, and other Code OSS-based editors.
      <p>Set up Flutter support in VS Code.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/tools/android-studio#setup" target="_blank">
+ <a class="card outlined-card" href="/tools/android-studio#setup">
    <div class="card-header">
      <span class="card-title">Android Studio</span>
    </div>
@@ -68,7 +68,7 @@ Android Studio, and other Code OSS-based editors.
      <p>Set up Flutter support in Android Studio.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/tools/android-studio#setup" target="_blank">
+ <a class="card outlined-card" href="/tools/android-studio#setup">
    <div class="card-header">
      <span class="card-title">IntelliJ</span>
    </div>
@@ -84,12 +84,12 @@ Once you've successfully installed Flutter,
 set up development for at least one target platform
 to continue your journey with Flutter.
 
-We recommend [developing for the web][web-setup]{: target="_blank"} first as
+We recommend [developing for the web][web-setup] first as
 it requires no additional setup besides an appropriate browser.
 You can always set up development for additional target platforms later.
 
 <div class="card-grid wide">
- <a class="card outlined-card" href="/platform-integration/android/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/android/setup">
    <div class="card-header">
      <span class="card-title">Target Android</span>
      <span class="card-subtitle">On any device</span>
@@ -98,7 +98,7 @@ You can always set up development for additional target platforms later.
      <p>Set up your development environment to build Flutter apps for Android.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/platform-integration/ios/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/ios/setup">
    <div class="card-header">
      <span class="card-title">Target iOS</span>
      <span class="card-subtitle">On macOS only</span>
@@ -107,7 +107,7 @@ You can always set up development for additional target platforms later.
      <p>Set up your development environment to build Flutter apps for iOS.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/platform-integration/web/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/web/setup">
    <div class="card-header">
      <span class="card-title">Target Web</span>
      <span class="card-subtitle">On any device</span>
@@ -116,31 +116,31 @@ You can always set up development for additional target platforms later.
      <p>Set up your development environment to build Flutter apps for the web.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/platform-integration/windows/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/windows/setup">
    <div class="card-header">
      <span class="card-title">Target Windows</span>
      <span class="card-subtitle">On Windows only</span>
    </div>
    <div class="card-content">
-     <p>Set up your development environment to build Flutter apps for Windows desktop.</p>
+     <p>Set up your development environment to build Flutter apps for Windows.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/platform-integration/macos/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/macos/setup">
    <div class="card-header">
      <span class="card-title">Target macOS</span>
      <span class="card-subtitle">On macOS only</span>
    </div>
    <div class="card-content">
-     <p>Set up your development environment to build Flutter apps for macOS desktop.</p>
+     <p>Set up your development environment to build Flutter apps for macOS.</p>
    </div>
  </a>
- <a class="card outlined-card" href="/platform-integration/linux/setup" target="_blank">
+ <a class="card outlined-card" href="/platform-integration/linux/setup">
    <div class="card-header">
      <span class="card-title">Target Linux</span>
      <span class="card-subtitle">On Linux only</span>
    </div>
    <div class="card-content">
-     <p>Set up your development environment to build Flutter apps for Linux desktop.</p>
+     <p>Set up your development environment to build Flutter apps for Linux.</p>
    </div>
  </a>
 </div>

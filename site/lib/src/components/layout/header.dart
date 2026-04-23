@@ -58,9 +58,14 @@ class DashHeader extends StatelessComponent {
             isActive: activeEntry == ActiveNavEntry.home,
           ),
           _NavItem(
-            href: '/learn',
+            href: '/learn/pathway',
             label: 'Learn',
             isActive: activeEntry == ActiveNavEntry.learn,
+          ),
+          _NavItem(
+            href: '/ai/create-with-ai',
+            label: 'AI',
+            isActive: activeEntry == ActiveNavEntry.ai,
           ),
           const _NavItem(
             href: 'https://api.flutter.dev',
@@ -109,7 +114,7 @@ class DashHeader extends StatelessComponent {
                 id: 'call-to-action',
                 style: ButtonStyle.filled,
                 content: 'Get started',
-                href: '/get-started/quick',
+                href: '/learn/pathway',
               ),
             if (context.page.data['sidenav'] != null) const MenuToggle(),
           ],

@@ -1,0 +1,20 @@
+name: wikipedia_reader
+description: >-
+  Code excerpts for the Wikipedia reader app in the Flutter tutorial.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

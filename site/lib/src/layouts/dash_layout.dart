@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'dart:convert';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -25,34 +27,13 @@ abstract class FlutterDocsLayout extends PageLayoutBase {
 
   String get defaultSidenav => 'default';
 
-  /// Path prefix to sidenav name mapping.
-  /// More specific paths should come before less specific ones.
-  static const pathSidenavs = <String, String>{
-    '/learn': 'learn',
-    // Add future path-specific sidenavs here
-  };
-
-  /// Returns the sidenav key for a given page URL.
-  /// Priority order:
-  /// 1. Page frontmatter 'sidenav' field (if specified)
-  /// 2. Path-based sidenav (if URL matches a registered path prefix)
-  /// 3. Default sidenav
-  String getSidenavForPage(String pageUrl, String? pageSpecifiedSidenav) {
-    // Priority 1: Page-specific override from frontmatter
-    if (pageSpecifiedSidenav != null) {
-      return pageSpecifiedSidenav;
-    }
-
-    // Priority 2: Path prefix matching
-    for (final entry in pathSidenavs.entries) {
-      if (pageUrl.startsWith(entry.key)) {
-        return entry.value;
-      }
-    }
-
-    // Priority 3: Default fallback
-    return defaultSidenav;
-  }
+  /// Returns page-specific URLs to eagerly speculate on, in addition to
+  /// the document-level rules that match all internal links.
+  ///
+  /// Override in subclasses to provide page-specific URLs for
+  /// eager prerendering and prefetching.
+  ({Set<String> prerender, Set<String> prefetch}) speculationUrls(Page page) =>
+      const (prerender: {}, prefetch: {});
 
   @override
   @mustCallSuper
@@ -177,6 +158,9 @@ ga('create', 'UA-67589403-1', 'auto');
 ga('send', 'pageview');
 </script>
 '''),
+      // Add speculation rules and prefetch fallback links for
+      // URLs provided by subclass overrides of speculationUrls.
+      ..._buildSpeculationRulesHead(page),
     ];
   }
 
@@ -186,15 +170,16 @@ ga('send', 'pageview');
     final bodyClass = pageData['bodyClass'] as String?;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
 
-    final pageSidenav = getSidenavForPage(
-      pageUrl,
-      pageData['sidenav'] as String?,
-    );
+    final pageSidenavRaw = pageData['sidenav'];
+    final pageSidenav = pageSidenavRaw is String
+        ? pageSidenavRaw
+        : defaultSidenav;
     final sideNavEntries = switch (page.data['sidenav']) {
-      final Map<String, Object?> sidenavs => switch (sidenavs[pageSidenav]) {
+      _ when pageSidenav == 'ai' => switch (page.data['ai']) {
         final List<Object?> sidenavData => navEntriesFromData(sidenavData),
         _ => null,
       },
+      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
       _ => null,
     };
     final obsolete = pageData['obsolete'] == true;
@@ -290,5 +275,67 @@ if (sidenav) {
       '''),
       ],
     );
+  }
+
+  /// Builds the speculation rules `<script>` and `<link rel="prefetch">`
+  /// fallback tags for the given [page].
+  ///
+  /// Includes page-specific list rules from [speculationUrls] and
+  /// document rules that prefetch internal links on hover (`moderate`)
+  /// and prerender them on click (`conservative`).
+  ///
+  /// Add the `no-prerender` class to a link to
+  /// exclude it from document-level prerendering.
+  List<Component> _buildSpeculationRulesHead(Page page) {
+    final (:prerender, :prefetch) = speculationUrls(page);
+
+    // Exclude prerendered URLs from the prefetch list since
+    // prerendering is a superset of prefetching.
+    final prefetchOnly = prefetch.difference(prerender);
+
+    // Document rules to match same-origin links across the page.
+    const internalLink = {'href_matches': '/*'};
+    const notNoPrerender = {
+      'not': {'selector_matches': '.no-prerender'},
+    };
+
+    final rules = jsonEncode({
+      'prefetch': [
+        // Prefetch internal links on hover.
+        {
+          'where': internalLink,
+          'eagerness': 'moderate',
+        },
+        // Prefetch specific URLs from the page eagerly.
+        if (prefetchOnly.isNotEmpty)
+          {
+            'urls': [...prefetchOnly],
+          },
+      ],
+      'prerender': [
+        // Prerender internal links on click,
+        // unless the link has the 'no-prerender' class.
+        {
+          'where': {
+            'and': [internalLink, notNoPrerender],
+          },
+          'eagerness': 'conservative',
+        },
+        // Prerender specific URLs from the page eagerly.
+        if (prerender.isNotEmpty)
+          {
+            'urls': [...prerender],
+            'eagerness': 'eager',
+          },
+      ],
+    }).replaceAll('</', r'<\/');
+
+    return [
+      RawText('<script type="speculationrules">$rules</script>'),
+      // Fall back to prefetch link tags for browsers without
+      // Speculation Rules API support.
+      for (final url in {...prerender, ...prefetch})
+        link(rel: 'prefetch', href: url),
+    ];
   }
 }

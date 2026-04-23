@@ -4,7 +4,6 @@ shortTitle: Docs
 description: >-
   Get started with Flutter. Widgets, examples, updates, and API docs to
   help you write your first Flutter app.
-sidenav: default
 ---
 
 <div class="card-grid">

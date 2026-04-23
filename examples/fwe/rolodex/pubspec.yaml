@@ -1,0 +1,20 @@
+name: rolodex
+description: >-
+  Code excerpts for the Rolodex example app in the Flutter tutorial.
+publish_to: none
+
+resolution: workspace
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

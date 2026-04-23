@@ -4,6 +4,8 @@ description: Learn how to implement performant scrolling with slivers.
 layout: tutorial
 ---
 
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
 In this lesson, you'll learn about slivers,
 which are special widgets that can take advantage of
 Flutter's powerful and composable scrolling system.
@@ -63,22 +65,33 @@ you can create a private, reusable widget.
 Update `lib/screens/contact_groups.dart` by
 adding `_ContactGroupsView` to the bottom of the file.
 
-```dart title="lib/screens/contact_groups.dart"
-// New imports
-import 'package:rolodex/data/contact_group.dart';
-import 'package:rolodex/main.dart';
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups_v1.dart (contact_groups_view)"?>
+```dart
+import 'package:flutter/cupertino.dart';
 
-// ... ContactGroupsPage widget ...
+import '../data/contact_group.dart';
+import '../main.dart';
 
-// New
+class ContactGroupsPage extends StatelessWidget {
+  const ContactGroupsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return _ContactGroupsView(
+      selectedListId: 0,
+      onListSelected: (list) {
+        debugPrint(list.toString());
+      },
+    );
+  }
+}
+
+// ···
 class _ContactGroupsView extends StatelessWidget {
-  const _ContactGroupsView({
-    required this.onListSelected,
-    this.selectedListId,
-  });
+  const _ContactGroupsView({required this.onListSelected, this.selectedListId});
 
   final int? selectedListId;
-  final Function(ContactGroup) onListSelected;
+  final void Function(ContactGroup) onListSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -86,9 +99,7 @@ class _ContactGroupsView extends StatelessWidget {
       backgroundColor: CupertinoColors.extraLightBackgroundGray,
       child: CustomScrollView(
         slivers: [
-          const CupertinoSliverNavigationBar(
-            largeTitle: Text('Lists'),
-          ),
+          const CupertinoSliverNavigationBar(largeTitle: Text('Lists')),
           SliverFillRemaining(
             child: ValueListenableBuilder<List<ContactGroup>>(
               valueListenable: contactGroupsModel.listsNotifier,
@@ -131,9 +142,10 @@ This widget introduces several slivers:
 It accepts a callback function, `onListSelected`, to handle taps,
 which makes it adaptable for both navigation and sidebar selection.
 
-Now, update `ContactGroupsPage` to use your new `_ContactGroupsView` widget:
+Now, update `ContactGroupsPage` in `lib/screens/contact_groups.dart` to use your new `_ContactGroupsView` widget:
 
-```dart title="lib/screens/contact_groups.dart"
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups_v1.dart (contact_groups_page)"?>
+```dart
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
 
@@ -142,13 +154,11 @@ class ContactGroupsPage extends StatelessWidget {
     return _ContactGroupsView(
       selectedListId: 0,
       onListSelected: (list) {
-        // TODO: Implement navigation lesson.
         debugPrint(list.toString());
       },
     );
   }
 }
-// ... _ContactGroupsView from above
 ```
 
 This structure keeps the `ContactGroupsPage` clean and
@@ -158,11 +168,11 @@ which you'll learn about in the next section of this tutorial.
 ### Enhance the list with icons and visual elements
 
 Now, add icons and contact counts to make the list more informative.
-Add this `_buildTrailing` helper method to your `_ContactGroupsView` class:
+Add this `_buildTrailing` helper method to your
+`_ContactGroupsView` class in `lib/screens/contact_groups.dart`:
 
-```dart title="lib/screens/contact_groups.dart"
-// Inside _ContactGroupsView:
-
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups.dart (build_trailing)"?>
+```dart
 Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
   final TextStyle style = CupertinoTheme.of(
     context,
@@ -187,89 +197,39 @@ It shows the contact count and a forward arrow.
 
 Now, update the `CupertinoListSection` in `_ContactGroupsView` to
 use icons and the trailing helper. Update the code within the
-`ListenableBuilder.builder` callback in the `build` method:
+`ValueListenableBuilder.builder` callback in the `build` method:
 
-```dart title="lib/screens/contact_groups.dart"
-import 'package:flutter/cupertino.dart';
-import 'package:rolodex/data/contact.dart';
-import 'package:rolodex/data/contact_group.dart';
-import 'package:rolodex/main.dart';
-
-class ContactGroupsPage extends StatelessWidget {
-  const ContactGroupsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return _ContactGroupsView(
-      selectedListId: 0,
-      onListSelected: (list) {
-        // TODO: Implement navigation lesson.
-        debugPrint(list.toString());
-      },
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contact_groups.dart (cupertino_list_section)"?>
+```dart
+child: ValueListenableBuilder<List<ContactGroup>>(
+  valueListenable: contactGroupsModel.listsNotifier,
+  builder: (context, contactLists, child) {
+    const groupIcon = Icon(
+      CupertinoIcons.group,
+      weight: 900,
+      size: 32,
     );
-  }
-}
 
-class _ContactGroupsView extends StatelessWidget {
-  const _ContactGroupsView({
-    required this.onListSelected,
-    this.selectedListId,
-  });
-
-  final int? selectedListId;
-  final Function(ContactGroup) onListSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: CustomScrollView(
-        slivers: [
-          const CupertinoSliverNavigationBar(
-            largeTitle: Text('Lists'),
-          ),
-          SliverFillRemaining(
-            child: ValueListenableBuilder<List<ContactGroup>>(
-              valueListenable: contactGroupsModel.listsNotifier,
-              builder: (context, contactLists, child) {
-
-                // New from here:
-                const groupIcon = Icon(
-                  CupertinoIcons.group,
-                  weight: 900,
-                  size: 32,
-                );
-
-                const pairIcon = Icon(
-                  CupertinoIcons.person_2,
-                  weight: 900,
-                  size: 24,
-                );
-
-                return CupertinoListSection.insetGrouped(
-                  header: const Text('iPhone'),
-                  children: [
-                    for (final ContactGroup contactList in contactLists)
-                      CupertinoListTile(
-                        leading: contactList.id == 0 ? groupIcon : pairIcon,
-                        title: Text(contactList.label),
-                        trailing: _buildTrailing(contactList.contacts, context),
-                        onTap: () => onListSelected(contactList),
-                      ),
-                  ],
-                );
-              },
-            ),
-          ),
-        ],
-      ),
+    const pairIcon = Icon(
+      CupertinoIcons.person_2,
+      weight: 900,
+      size: 24,
     );
-  }
 
-  Widget _buildTrailing(List<Contact> contacts, BuildContext context) {
-    //...
-  }
-}
+    return CupertinoListSection.insetGrouped(
+      header: const Text('iPhone'),
+      children: [
+        for (final ContactGroup contactList in contactLists)
+          CupertinoListTile(
+            leading: contactList.id == 0 ? groupIcon : pairIcon,
+            title: Text(contactList.label),
+            trailing: _buildTrailing(contactList.contacts, context),
+            onTap: () => onListSelected(contactList),
+          ),
+      ],
+    );
+  },
+),
 ```
 
 The updated code now shows icons that differentiate between the
@@ -278,14 +238,28 @@ contact counts and navigation indicators.
 
 ### Create advanced scrolling for contacts
 
-Now, work on the contacts page. Just like before,
-you'll create a private, reusable view to avoid code duplication.
+Next, you'll implement the contacts list page.
 
 In the next lesson, you'll implement navigation for small screens.
-To see your progress on the contacts list page in the meantime,
-update `AdaptiveLayout` to display the contacts list page:
+To see your progress on the contacts list page in the meantime, first
+update `lib/screens/adaptive_layout.dart` to display the contacts list page:
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/adaptive_layout.dart"?>
+```dart
+
+import 'package:flutter/cupertino.dart';
+
+import 'contacts.dart';
+
+const largeScreenMinWidth = 600;
+
+class AdaptiveLayout extends StatefulWidget {
+  const AdaptiveLayout({super.key});
+
+  @override
+  State<AdaptiveLayout> createState() => _AdaptiveLayoutState();
+}
+
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   int selectedListId = 0;
 
@@ -309,13 +283,29 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       },
     );
   }
+
+  Widget _buildLargeScreenLayout() {
+    return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.extraLightBackgroundGray,
+      child: SafeArea(
+        child: Row(
+          children: [
+            const SizedBox(width: 320, child: Text('Sidebar placeholder')),
+            Container(width: 1, color: CupertinoColors.separator),
+            const Expanded(child: Text('Details placeholder')),
+          ],
+        ),
+      ),
+    );
+  }
 }
 ```
 
 Update `lib/screens/contacts.dart` by adding `_ContactListView` to
 the bottom of the file:
 
-```dart title="lib/screens/contacts.dart"
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts_v1.dart (contact_list_view)"?>
+```dart
 class _ContactListView extends StatelessWidget {
   const _ContactListView({
     required this.listId,
@@ -331,8 +321,7 @@ class _ContactListView extends StatelessWidget {
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList =
-              contactGroupsModel.findContactList(listId);
+          final contactList = contactGroupsModel.findContactList(listId);
 
           return CustomScrollView(
             slivers: [
@@ -343,7 +332,8 @@ class _ContactListView extends StatelessWidget {
               SliverFillRemaining(
                 child: Center(
                   child: Text(
-                      '${contactList.contacts.length} contacts in ${contactList.label}'),
+                    '${contactList.contacts.length} contacts in ${contactList.label}',
+                  ),
                 ),
               ),
             ],
@@ -357,11 +347,8 @@ class _ContactListView extends StatelessWidget {
 
 Now, update `ContactListsPage` to use this view:
 
-```dart title="lib/screens/contacts.dart"
-import 'package:flutter/cupertino.dart';
-import 'package:rolodex/data/contact_group.dart';
-import 'package:rolodex/main.dart';
-
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts_v1.dart (contact_lists_page)"?>
+```dart
 class ContactListsPage extends StatelessWidget {
   const ContactListsPage({super.key, required this.listId});
 
@@ -372,8 +359,6 @@ class ContactListsPage extends StatelessWidget {
     return _ContactListView(listId: listId);
   }
 }
-
-// ... _ContactListView from above.
 ```
 
 This basic implementation demonstrates how to use slivers with dynamic
@@ -386,30 +371,21 @@ Update the `CustomScrollView` in `_ContactListView` to use the
 `CupertinoSliverNavigationBar.search` constructor instead of the
 default `CupertinoSliverNavigationBar` constructor:
 
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts_v2.dart (search)"?>
 ```dart
 class _ContactListView extends StatelessWidget {
-  const _ContactListView({
-    required this.listId,
-    this.automaticallyImplyLeading = true,
-  });
-
-  final int listId;
-  final bool automaticallyImplyLeading;
-  
-
+  // ···
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: ValueListenableBuilder<List<ContactGroup>>(
         valueListenable: contactGroupsModel.listsNotifier,
         builder: (context, contactGroups, child) {
-          final ContactGroup contactList = contactGroupsModel.findContactList(
-            listId,
-          );
+          final contactList = contactGroupsModel.findContactList(listId);
 
           return CustomScrollView(
             slivers: [
-              // New
+              // Now using a search bar:
               CupertinoSliverNavigationBar.search(
                 largeTitle: Text(contactList.title),
                 searchField: const CupertinoSearchTextField(
@@ -431,8 +407,8 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
-
 ```
+
 
 The `CupertinoSliverNavigationBar.search` constructor provides
 integrated search functionality. As you scroll down,
@@ -445,9 +421,8 @@ To do this, create sections for each letter.
 Add the following widget to the bottom of your `contacts.dart` file.
 This widget doesn't contain any slivers.
 
-```dart title="lib/screens/contacts.dart"
-// ...
-
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts.dart (contact_list_section)"?>
+```dart
 class ContactListSection extends StatelessWidget {
   const ContactListSection({
     super.key,
@@ -484,7 +459,7 @@ class ContactListSection extends StatelessWidget {
             children: [
               for (final Contact contact in contacts)
                 CupertinoListTile(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   title: Text('${contact.firstName} ${contact.lastName}'),
                 ),
             ],
@@ -504,34 +479,48 @@ you see in the iOS Contacts app.
 Now, replace the placeholder content in `_ContactListView` with
 the alphabetized sections:
 
-```dart title="lib/screens/contacts.dart"
-// Inside _ContactListView's builder:
+<?code-excerpt "fwe/rolodex/lib/step3_slivers/screens/contacts.dart (alphabetized)"?>
+```dart
+class _ContactListView extends StatelessWidget {
+  // ···
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoPageScaffold(
+      child: ValueListenableBuilder<List<ContactGroup>>(
+        valueListenable: contactGroupsModel.listsNotifier,
+        builder: (context, contactGroups, child) {
+          final contactList = contactGroupsModel.findContactList(listId);
 
-final AlphabetizedContactMap contacts = contactList.alphabetizedContacts;
+          final contacts = contactList.alphabetizedContacts;
 
-return CustomScrollView(
-  slivers: [
-    CupertinoSliverNavigationBar.search(
-      largeTitle: Text(contactList.title),
-      automaticallyImplyLeading: automaticallyImplyLeading,
-      searchField: const CupertinoSearchTextField(
-        suffixIcon: Icon(CupertinoIcons.mic_fill),
-        suffixMode: OverlayVisibilityMode.always,
+          return CustomScrollView(
+            slivers: [
+              CupertinoSliverNavigationBar.search(
+                largeTitle: Text(contactList.title),
+                automaticallyImplyLeading: automaticallyImplyLeading,
+                searchField: const CupertinoSearchTextField(
+                  suffixIcon: Icon(CupertinoIcons.mic_fill),
+                  suffixMode: OverlayVisibilityMode.always,
+                ),
+              ),
+              SliverList.list(
+                children: [
+                  const SizedBox(height: 20),
+                  ...contacts.keys.map(
+                    (initial) => ContactListSection(
+                      lastInitial: initial,
+                      contacts: contacts[initial]!,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          );
+        },
       ),
-    ),
-    SliverList.list(
-      children: [
-        const SizedBox(height: 20),
-        ...contacts.keys.map(
-          (String initial) => ContactListSection(
-            lastInitial: initial,
-            contacts: contacts[initial]!,
-          ),
-        ),
-      ],
-    ),
-  ],
-);
+    );
+  }
+}
 ```
 
 `SliverList.list` allows you to provide a list of widgets that

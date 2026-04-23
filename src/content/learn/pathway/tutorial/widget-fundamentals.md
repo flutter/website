@@ -28,11 +28,19 @@ This app relies on a bit of game logic that isn't UI-related,
 and thus is outside the scope of this tutorial.
 Before you move on, you need to add this logic to your app.
 
-1.  Download the file below and save it
+1.  Download the following Dart file and save it
     as `lib/game.dart` in your project directory.
-1.  Import the file in your `lib/main.dart` file.
 
-<DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
+    <DownloadableSnippet src="tutorial/game-code.dart" name="game.dart" />
+
+1.  To enable access to the types defined in the `game.dart` library,
+    add an import to it from your `lib/main.dart` file:
+
+    ```dart title="main.dart" highlightLines=3
+    import 'package:flutter/material.dart';
+
+    import 'game.dart';
+    ```
 
 :::note Game logic note
 
