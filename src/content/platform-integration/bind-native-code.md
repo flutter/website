@@ -145,25 +145,21 @@ void main(List<String> args) async {
 The Dart files (`unix.dart`, `windows.dart`) would then contain the `external`
 functions that use the symbols from these system libraries.
 
-#### Note on packages that require Android's `libc++_shared.so` dynamic library
+#### Bundling `libc++_shared.so` on Android
 
-The Android NDK developer guide [C++ library support][libcpp-support] page
-explicitly states that:
+Although `libc++_shared.so` ships with the Android NDK,
+it isn't a system library.
+If your app or package uses the [C++ standard library][libcpp-support],
+or includes [multiple shared libraries][shared-libraries] that depend on it,
+your app needs to bundle `libc++_shared.so`.
 
-> `libc++` is not a system library.
-> If you use `libc++_shared.so`, it must be included in your app.
-
-This is usually handled by Gradle or included by
-passing `-DANDROID_STL=c++_shared` to `cmake`.
-
-If your application or package depends on
-the C++ standard library or includes [multiple shared libraries][runtimes],
-your application will likely need to bundle the library.
-This can be done by depending on the convenient
-[`android_libcpp_shared`][libcpp-shared] package.
+To bundle the library in your app,
+add a dependency on [`package:android_libcpp_shared`][libcpp-shared],
+which uses its own build hook to bundle `libc++_shared.so`
+from the locally installed NDK for each target architecture.
 
 [libcpp-support]: {{site.android-dev}}/ndk/guides/cpp-support#cs
-[runtimes]: {{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes
+[shared-libraries]: {{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes
 [libcpp-shared]: {{site.pub}}/packages/android_libcpp_shared
 
 ### Closed-source libraries
