@@ -1186,7 +1186,7 @@
     - 'Buttons'
   link: https://api.flutter.dev/flutter/material/DropdownButton-class.html
   image:
-    src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0B7WCemMG6e0VakJ6a0F2MFJaaDQ/components_menus.png
+    src: /assets/images/docs/widget-catalog/material-2-dropdown-menu.png
 - name: ElevatedButton
   description: >-
     A Material Design elevated button. A filled button whose material elevates
@@ -1224,7 +1224,7 @@
     - 'Dialogs, alerts, and panels'
   link: https://api.flutter.dev/flutter/material/ExpansionPanel-class.html
   image:
-    src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VOXF3eEJ3azZMSjg/components_expansion_panels.png
+    src: /assets/images/docs/widget-catalog/material-2-expansion-panel.png
 - name: FadeTransition
   description: >-
     Animates the opacity of a widget.
@@ -1498,7 +1498,7 @@
     - 'App structure and navigation'
   link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   image:
-    src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7Y1huOXVQdlFPMmM/materialdesign_introduction.png
+    src: /assets/images/docs/widget-catalog/material-2-expansion-panel.png
 - name: MatrixTransition
   description: >-
     Animates the Matrix4 of a transformed widget.
@@ -1726,7 +1726,7 @@
   subcategories: []
   link: https://api.flutter.dev/flutter/material/RefreshIndicator-class.html
   image:
-    src: https://storage.googleapis.com/material-design/publish/material_v_12/assets/0B7WCemMG6e0VS2kzSmZwNnNKQVk/patterns-swipe-to-refresh.png
+    src: /assets/images/docs/widget-catalog/material-2-refresh-indicator.png
 - name: RelativePositionedTransition
   description: >-
     Animated version of Positioned which transitions the child's position based on the value of rect relative to a bounding box with the specified size.
@@ -1804,7 +1804,7 @@
     - 'App structure and navigation'
   link: https://api.flutter.dev/flutter/material/Scaffold-class.html
   image:
-    src: https://storage.googleapis.com/material-design/publish/material_v_11/assets/0Bx4BSt6jniD7T0hfM01sSmRyTG8/layout_structure_regions_mobile.png
+    src: /assets/images/docs/widget-catalog/material-2-scaffold.png
 - name: ScaleTransition
   description: >-
     Animates the scale of transformed widget.
@@ -1867,7 +1867,7 @@
     - 'Dialogs, alerts, and panels'
   link: https://api.flutter.dev/flutter/material/SimpleDialog-class.html
   image:
-    src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VVGNnN3NvMGdoQTg/components_dialogs.png
+    src: /assets/images/docs/widget-catalog/material-2-simple-dialog.png
 - name: SingleChildScrollView
   description: >-
     A box in which a single widget can be scrolled. This widget is useful when
@@ -2055,7 +2055,7 @@
     - 'Layout'
   link: https://api.flutter.dev/flutter/material/Stepper-class.html
   image:
-    src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VTndyUnNCR2tQREE/components_steppers.png
+    src: /assets/images/docs/widget-catalog/material-2-stepper.png
 - name: StreamBuilder
   description: >-
     Widget that builds itself based on the latest snapshot of interaction with a
@@ -2144,7 +2144,7 @@
     - 'Buttons'
   link: https://api.flutter.dev/flutter/material/TextButton-class.html
   image:
-    src: https://material-design.storage.googleapis.com/publish/material_v_9/0B7WCemMG6e0VNDg3V3ZjU2hsNGc/components_buttons_usage3.png
+    src: /assets/images/docs/widget-catalog/material-2-text-button.png
 - name: TextField
   description: >-
     Box into which app users can enter text. They appear in forms and dialogs.
