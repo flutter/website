@@ -145,6 +145,23 @@ void main(List<String> args) async {
 The Dart files (`unix.dart`, `windows.dart`) would then contain the `external`
 functions that use the symbols from these system libraries.
 
+#### Bundling `libc++_shared.so` on Android
+
+Although `libc++_shared.so` ships with the Android NDK,
+it isn't a system library.
+If your app or package uses the [C++ standard library][libcpp-support],
+or includes [multiple shared libraries][shared-libraries] that depend on it,
+your app needs to bundle `libc++_shared.so`.
+
+To bundle the library in your app,
+add a dependency on [`package:android_libcpp_shared`][libcpp-shared],
+which uses its own build hook to bundle `libc++_shared.so`
+from the locally installed NDK for each target architecture.
+
+[libcpp-support]: {{site.android-dev}}/ndk/guides/cpp-support#cs
+[shared-libraries]: {{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes
+[libcpp-shared]: {{site.pub}}/packages/android_libcpp_shared
+
 ### Closed-source libraries
 
 You can also use build hooks to link against pre-compiled, closed-source
