@@ -17,11 +17,7 @@ updates:
 
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directories:
-      - "/"
-      - "/site"
-      - "/packages/**"
-      - "/tool/dash_site"
+    directory: "/"
     schedule:
       interval: "weekly"
     labels:
@@ -29,8 +25,7 @@ updates:
 
   - package-ecosystem: "pub"
     versioning-strategy: "increase-if-necessary"
-    directories:
-      - "/examples/**"
+    directory: "/examples"
     schedule:
       interval: "weekly"
     groups:
