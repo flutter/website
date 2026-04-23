@@ -71,26 +71,58 @@ String wrapMarkdown(String content, {int width = 80}) {
 
 List<String> wrapText(String text, int width) {
   final leadingSpace = RegExp(r'^\s*').stringMatch(text) ?? '';
-  final words = text.trim().split(RegExp(r'\s+'));
+  final content = text.trim();
+  
+  if (content.isEmpty) return [leadingSpace];
+
+  // Split by spaces that follow punctuation (.,;:!?)
+  // We use a lookbehind to keep the punctuation with the preceding chunk.
+  final chunks = content.split(RegExp(r'(?<=[.,;:!?])\s+'));
   final lines = <String>[];
   var currentLine = leadingSpace;
 
-  for (final word in words) {
-    final space = currentLine == leadingSpace ? '' : ' ';
-    if ((currentLine.length + space.length + word.length) > width) {
+  for (final chunk in chunks) {
+    // If the chunk itself is longer than width, fallback to word wrapping for this chunk
+    if (chunk.length > width) {
+      // Flush current line if not empty
       if (currentLine != leadingSpace) {
         lines.add(currentLine);
-        currentLine = leadingSpace + word;
-      } else {
-        lines.add(leadingSpace + word);
         currentLine = leadingSpace;
       }
+      
+      // Word wrap the chunk
+      final words = chunk.split(RegExp(r'\s+'));
+      for (final word in words) {
+        final space = currentLine == leadingSpace ? '' : ' ';
+        if ((currentLine.length + space.length + word.length) > width) {
+          if (currentLine != leadingSpace) {
+            lines.add(currentLine);
+            currentLine = leadingSpace + word;
+          } else {
+            lines.add(leadingSpace + word);
+            currentLine = leadingSpace;
+          }
+        } else {
+          currentLine += space + word;
+        }
+      }
+      continue;
+    }
+
+    final space = currentLine == leadingSpace ? '' : ' ';
+    if ((currentLine.length + space.length + chunk.length) > width) {
+      if (currentLine != leadingSpace) {
+        lines.add(currentLine);
+      }
+      currentLine = leadingSpace + chunk;
     } else {
-      currentLine += space + word;
+      currentLine += space + chunk;
     }
   }
+
   if (currentLine != leadingSpace) {
     lines.add(currentLine);
   }
+
   return lines;
 }
