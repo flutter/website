@@ -147,16 +147,20 @@ functions that use the symbols from these system libraries.
 
 #### Note on packages that require Android's `libc++_shared.so` dynamic library
 
-The Android NDK developer guide
-[C++ library support][libcpp-support] page explicitly states that: "`libc++`
-is not a system library. If you use `libc++_shared.so`, it must be included in
-your app". This is usually handled by Gradle or included by passing
-`-DANDROID_STL=c++_shared` to `cmake`.
+The Android NDK developer guide [C++ library support][libcpp-support] page
+explicitly states that:
 
-If your application or package depends on the C++ standard library or includes
-[multiple shared libraries][runtimes], your application will likely need to
-bundle the library. This can be done by depending on the library convenience
-package [`android_libcpp_shared`][libcpp-shared].
+> `libc++` is not a system library.
+> If you use `libc++_shared.so`, it must be included in your app.
+
+This is usually handled by Gradle or included by
+passing `-DANDROID_STL=c++_shared` to `cmake`.
+
+If your application or package depends on
+the C++ standard library or includes [multiple shared libraries][runtimes],
+your application will likely need to bundle the library.
+This can be done by depending on the convenient
+[`android_libcpp_shared`][libcpp-shared] package.
 
 [libcpp-support]: {{site.android-dev}}/ndk/guides/cpp-support#cs
 [runtimes]: {{site.android-dev}}/ndk/guides/cpp-support#shared_runtimes
