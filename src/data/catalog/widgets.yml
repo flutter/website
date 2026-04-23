@@ -1498,7 +1498,7 @@
     - 'App structure and navigation'
   link: https://api.flutter.dev/flutter/material/MaterialApp-class.html
   image:
-    src: /assets/images/docs/widget-catalog/material-2-expansion-panel.png
+    src: /assets/images/docs/widget-catalog/material-2-material-app.png
 - name: MatrixTransition
   description: >-
     Animates the Matrix4 of a transformed widget.
