@@ -33,21 +33,8 @@ Tests written with `integration_test` can perform the following tasks:
 
 However, `integration_test` can't interact with native platform UI,
 such as permission dialogs, notifications, or the contents of
-platform views.
-
-### `patrol` package
-
-[Patrol][] is an open-source testing framework that builds on top
-of Flutter's testing capabilities. It extends `integration_test`
-with native interaction support. Patrol lets you:
-
-* Interact with native platform UI, such as permission dialogs,
-  notifications, and WebViews.
-* Access device-level features like toggling Wi-Fi
-  or adjusting system settings.
-* Write more concise tests using [patrol finders][].
-
-To learn more, visit the [Patrol documentation][].
+platform views. For these additional features, consider using the
+[`patrol`][] package.
 
 ## Terminology
 
@@ -69,19 +56,17 @@ Flutter app test file.
 To migrate existing projects that use `flutter_driver`,
 consult the [Migrating from flutter_driver][] guide.
 
-To use Patrol, follow the [Patrol setup guide][].
+To use `patrol`, follow the [Patrol setup guide][].
 
 ## Use cases for integration testing
 
 The other guides in this section explain how to use integration tests to validate
 [functionality][] and [performance][].
 
-[patrol finders]: {{site.pub-pkg}}/patrol_finders
 [functionality]: /testing/integration-tests/
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Migrating from flutter_driver]: /release/breaking-changes/flutter-driver-migration
-[Patrol]: {{site.pub-pkg}}/patrol
-[Patrol documentation]: https://patrol.leancode.co/
+[`patrol`]: {{site.pub-pkg}}/patrol
 [Patrol setup guide]: https://patrol.leancode.co/getting-started
 [performance]: /cookbook/testing/integration/profiling/
 [widget tests]: /testing/overview#widget-tests

@@ -99,21 +99,21 @@ from the test driver code to avoid skewing the results.
 The Flutter SDK includes the [`integration_test`][] package.
 However, this package can't interact with native platform UI,
 such as permission dialogs, notifications, or platform views.
-For apps that need native interactions, you can use [Patrol][],
-an open-source framework that extends Flutter's testing
-capabilities with native platform support.
+For apps that need native interactions, you can use the 
+[`patrol`][] package, an open-source framework that extends
+Flutter's testing capabilities with native platform support.
 
 For more information on how to write integration tests, see the [integration
 testing page][].
 
 [`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test
-[Patrol]: {{site.pub-pkg}}/patrol
+[`patrol`]: {{site.pub-pkg}}/patrol
 
 ### Recipes {:.no_toc}
 
 - [Integration testing concepts](/cookbook/testing/integration/introduction)
-- [Write and run an integration test](/testing/integration-tests)
-- [Write and run a Patrol test](/testing/patrol-tests)
+- [Write and run a Flutter integration test](/testing/integration-tests)
+- [Write and run a Patrol integration test](https://patrol.leancode.co/documentation/write-your-first-test)
 - [Measure performance with an integration test](/cookbook/testing/integration/profiling)
 
 ## Continuous integration services
