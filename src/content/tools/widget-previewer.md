@@ -331,8 +331,8 @@ should be aware of:
   IDEs.
 
   Widgets with transitive dependencies on `dart:io` or `dart:ffi` will
-  load correctly, but all APIs from `dart:io` or `dart:ffi` will throw an
-  exception when invoked. 
+  load correctly, but all APIs from these libraries will throw an
+  exception when invoked.
 
   See the [Dart documentation on conditional imports] for details
   on how to structure your application to cleanly support
