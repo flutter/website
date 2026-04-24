@@ -608,7 +608,7 @@ Add support for Swift in the standard template setup that uses Objective-C:
 1. Open the file `AppDelegate.swift` located under **Runner > Runner**
    in the Project navigator.
 
-Override the `application:didFinishLaunchingWithOptions:` function and create
+Implement the `didInitializeImplicitFlutterEngine:` method and create
 a `FlutterMethodChannel` tied to the channel name
 `samples.flutter.dev/battery`:
 
@@ -696,8 +696,8 @@ Start by opening the iOS host portion of the Flutter app in Xcode:
 1. Open the file `AppDelegate.m`, located under **Runner > Runner**
    in the Project navigator.
 
-Create a `FlutterMethodChannel` and add a handler inside the `application
-didFinishLaunchingWithOptions:` method.
+Create a `FlutterMethodChannel` and add a handler inside the
+`didInitializeImplicitFlutterEngine:` method.
 Make sure to use the same channel name
 as was used on the Flutter client side.
 
@@ -711,6 +711,9 @@ create your `FlutterMethodChannel` in the `didInitializeImplicitFlutterEngine` m
 ```objc title="AppDelegate.m"
 #import <Flutter/Flutter.h>
 #import "GeneratedPluginRegistrant.h"
+
+@interface AppDelegate () <FlutterImplicitEngineDelegate>
+@end
 
 @implementation AppDelegate
 

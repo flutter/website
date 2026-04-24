@@ -101,6 +101,19 @@ class AppDelegate: FlutterAppDelegate { // More on the FlutterAppDelegate.
     GeneratedPluginRegistrant.register(with: self.flutterEngine);
     return super.application(application, didFinishLaunchingWithOptions: launchOptions);
   }
+
+  override func application(
+    _ application: UIApplication,
+    configurationForConnecting connectingSceneSession: UISceneSession,
+    options: UIScene.ConnectionOptions
+  ) -> UISceneConfiguration {
+    let configuration = UISceneConfiguration(
+      name: nil,
+      sessionRole: connectingSceneSession.role
+    )
+    configuration.delegateClass = FlutterSceneDelegate.self
+    return configuration
+  }
 }
 ```
 
@@ -135,6 +148,15 @@ exposed as a property, on app startup in the app delegate.
   // Connects plugins with iOS platform code to this app.
   [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (UISceneConfiguration *)application:(UIApplication *)application
+    configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
+                                   options:(UISceneConnectionOptions *)options {
+    UISceneConfiguration *configuration = [[UISceneConfiguration alloc] initWithName:nil
+                                                                         sessionRole:connectingSceneSession.role];
+    configuration.delegateClass = [FlutterSceneDelegate class];
+    return configuration;
 }
 
 @end
@@ -375,6 +397,11 @@ The `FlutterAppDelegate` performs functions such as:
 * Keeping the Flutter connection open
   in debug mode when the phone screen locks.
 
+As of Flutter 3.41, `UIScene` support is the default for iOS apps.
+When using `FlutterAppDelegate`, you should also ensure that your app
+uses `FlutterSceneDelegate` (or a subclass) to receive scene lifecycle
+events, such as [`openURL`][] and [`continueUserActivity`][].
+
 ### Creating a FlutterAppDelegate subclass
 Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown
 in the [Start a FlutterEngine and FlutterViewController section][].
@@ -399,6 +426,19 @@ class AppDelegate: FlutterAppDelegate {
       GeneratedPluginRegistrant.register(with: self.flutterEngine);
       return true;
     }
+
+  override func application(
+    _ application: UIApplication,
+    configurationForConnecting connectingSceneSession: UISceneSession,
+    options: UIScene.ConnectionOptions
+  ) -> UISceneConfiguration {
+    let configuration = UISceneConfiguration(
+      name: nil,
+      sessionRole: connectingSceneSession.role
+    )
+    configuration.delegateClass = FlutterSceneDelegate.self
+    return configuration
+  }
 }
 
 @main
@@ -841,6 +881,7 @@ For a working example, refer to this [sample project][].
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
 [`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
+[`continueUserActivity`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623072-application
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`PlatformDispatcher.defaultRouteName`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
