@@ -465,6 +465,32 @@ class Dog {
 }
 ```
 
+## Using relationships between tables
+
+> This is a more advanced use case and not required for basic usage.
+
+In real-world applications, you often need to model relationships between tables.
+
+For example, instead of storing all data in a single table, you can separate related data into multiple tables and connect them using foreign keys.
+
+```sql
+CREATE TABLE breeds(
+  id INTEGER PRIMARY KEY,
+  name TEXT
+);
+
+CREATE TABLE dogs(
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  age INTEGER,
+  breed_id INTEGER,
+  FOREIGN KEY (breed_id) REFERENCES breeds(id)
+);
+```
+
+In this example, each dog is associated with a breed using the `breed_id` field. This allows you to organize data more efficiently and avoid duplication.
+
+
 
 [`delete()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/delete.html
 [`insert()`]: {{site.pub-api}}/sqflite_common/latest/sqlite_api/DatabaseExecutor/insert.html
