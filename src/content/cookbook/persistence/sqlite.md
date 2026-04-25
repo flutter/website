@@ -465,7 +465,7 @@ class Dog {
 }
 ```
 
-## Using relationships between tables
+## Use relationships between tables
 
 > This is a more advanced use case and not required for basic usage.
 
@@ -478,6 +478,8 @@ CREATE TABLE breeds(
   id INTEGER PRIMARY KEY,
   name TEXT
 );
+
+You can execute these statements using the `db.execute()` method from the `sqflite` package.
 
 CREATE TABLE dogs(
   id INTEGER PRIMARY KEY,
