@@ -473,7 +473,8 @@ This is a more advanced use case and not required for basic usage.
 
 In real-world applications, you often need to model relationships between tables.
 
-For example, instead of storing all data in a single table, you can separate related data into multiple tables and connect them using foreign keys.
+For example, instead of storing all data in a single table, you can separate
+related data into multiple tables and connect them using foreign keys.
 
 ```sql
 CREATE TABLE breeds(
