@@ -493,7 +493,8 @@ CREATE TABLE dogs(
 );
 ```
 
-In this example, each dog is associated with a breed using the `breed_id` field. This allows you to organize data more efficiently and avoid duplication.
+In this example, each dog is associated with a breed using the `breed_id` field.
+This allows you to organize data more efficiently and avoid duplication.
 
 
 
