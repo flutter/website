@@ -467,7 +467,9 @@ class Dog {
 
 ## Use relationships between tables
 
-> This is a more advanced use case and not required for basic usage.
+:::note
+This is a more advanced use case and not required for basic usage.
+:::
 
 In real-world applications, you often need to model relationships between tables.
 
