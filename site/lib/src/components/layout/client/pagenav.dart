@@ -112,8 +112,8 @@ class _PageNavState extends State<PageNav> {
                 }
                 return ValueListenableBuilder(
                   listenable: currentPageHeading,
-                  builder: (context, value) {
-                    return span([.text(value ?? component.initialHeading)]);
+                  builder: (context, heading) {
+                    return span([.text(heading ?? component.initialHeading)]);
                   },
                 );
               },
