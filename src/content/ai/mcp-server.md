@@ -392,6 +392,29 @@ is now a single request.
 
 [`package:fl_chart`]: {{site.pub-pkg}}/fl_chart
 
+### Interact with a running app using Flutter Driver
+
+You can use the Dart and Flutter MCP server to connect to a running
+Flutter app and interact with its UI—taking screenshots, tapping
+buttons, entering text, and scrolling.
+
+Launch your app with `--print-dtd` and ask your AI assistant:
+
+> Connect to my running Flutter app using the DTD URI from the
+> terminal output, then take a screenshot and tap "Sign In".
+
+The AI agent connects via the `dtd` tool, takes a screenshot with
+`flutter_driver_command`, and taps the button—all without you
+writing test code.
+
+:::note
+Your app must call `enableFlutterDriverExtension()` before `runApp()`
+for Flutter Driver commands to work. See the
+[full setup guide][flutter-driver-guide] for details.
+:::
+
+[flutter-driver-guide]: https://github.com/dart-lang/ai/blob/main/pkgs/dart_mcp_server/README.md#connect-to-a-running-flutter-app
+
 ## Provide feedback
 
 If you encounter any issues or have feedback about the
