@@ -318,11 +318,12 @@ void _setUpToc() {
   _setUpTocActiveObserver();
 }
 
+final ValueNotifier<bool> showPageTitle = ValueNotifier<bool>(true);
 final ValueNotifier<String?> currentPageHeading = ValueNotifier<String?>(null);
 
 void _setUpTocActiveObserver() {
   final headings = web.document.querySelectorAll(
-    'article .header-wrapper, #site-content-title',
+    'article .header-wrapper, article .stepper .step-title, #site-content-title',
   );
 
   // No need to have toc scrollspy if there is only one non-title heading.
@@ -334,7 +335,8 @@ void _setUpTocActiveObserver() {
     ((JSArray<web.IntersectionObserverEntry> entries) {
       for (var i = 0; i < entries.length; i++) {
         final entry = entries[i];
-        final headingId = entry.target.querySelector('h1, h2, h3')?.id;
+        final heading = entry.target.querySelector('h1, h2, h3');
+        final headingId = heading?.id;
         if (headingId == null) return;
 
         if (entry.isIntersecting) {
@@ -344,18 +346,19 @@ void _setUpTocActiveObserver() {
         }
       }
 
-      if (visibleAnchors.isNotEmpty) {
-        var isFirst = true;
+      var isFirst = true;
 
-        // If the page title is visible, set the current header to its contents.
-        if (visibleAnchors.contains('document-title')) {
-          currentPageHeading.value = null;
-          isFirst = false;
-        }
+      // If the page title is visible, set the current header to its contents.
+      if (visibleAnchors.contains('document-title')) {
+        showPageTitle.value = true;
+      } else {
+        showPageTitle.value = false;
+      }
 
-        final tocLinks = web.document.querySelectorAll(
-          '.toc-list .sidenav-item a',
-        );
+      final tocLinks = web.document.querySelectorAll(
+        '.toc-list .sidenav-item a',
+      );
+      if (tocLinks.length > 0) {
         for (var i = 0; i < tocLinks.length; i++) {
           final tocLink = tocLinks.item(i) as web.Element;
           final headingId = tocLink.getAttribute('href')?.substring(1);
@@ -405,6 +408,11 @@ void _setUpSteppers() {
 
     for (var j = 0; j < steps.length; j++) {
       final step = steps[j];
+      final header = step.querySelector('summary h2, summary h3');
+
+      if (header?.textContent case final title? when step.open) {
+        currentPageHeading.value = title;
+      }
 
       if (collapsible) {
         step.addEventListener(
@@ -417,6 +425,10 @@ void _setUpSteppers() {
                 if (otherStep != step) {
                   otherStep.open = false;
                 }
+              }
+
+              if (header?.textContent case final title?) {
+                currentPageHeading.value = title;
               }
             }
           }).toJS,
@@ -437,6 +449,10 @@ void _setUpSteppers() {
               final nextStep = steps[j + 1];
               nextStep.open = true;
               _scrollTo(nextStep, smooth: true);
+
+              if (header?.textContent case final title?) {
+                currentPageHeading.value = title;
+              }
             }
           }).toJS,
         );

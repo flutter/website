@@ -105,9 +105,17 @@ class _PageNavState extends State<PageNav> {
 
           span(classes: 'toc-current', [
             ValueListenableBuilder(
-              listenable: currentPageHeading,
+              listenable: showPageTitle,
               builder: (context, value) {
-                return span([.text(value ?? component.initialHeading)]);
+                if (value) {
+                  return span([.text(component.initialHeading)]);
+                }
+                return ValueListenableBuilder(
+                  listenable: currentPageHeading,
+                  builder: (context, value) {
+                    return span([.text(value ?? component.initialHeading)]);
+                  },
+                );
               },
             ),
           ]),
