@@ -151,7 +151,7 @@ If not, create one using one of the following methods:
 
    ```console
    keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
-           -keysize 2048 -validity 10000 -alias upload
+           -storetype JKS -keysize 2048 -validity 10000 -alias upload
    ```
 
    On Windows, use the following command in PowerShell:
