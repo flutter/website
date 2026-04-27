@@ -161,6 +161,7 @@ kotlin {
 // ...
 ```
 </Tab>
+</Tabs>
 
 ### Update the plugin's `pubspec.yaml`
 
