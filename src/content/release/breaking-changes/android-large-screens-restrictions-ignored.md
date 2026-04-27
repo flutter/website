@@ -1,5 +1,5 @@
 ---
-title: Orientation and resizability restrictions ignored on Android 17
+title: Large screen orientation and resizability restrictions ignored on Android 17
 description: >-
   For apps targeting Android 17 or higher, orientation, resizability, and
   aspect ratio restrictions no longer apply on large displays (widths 600dp or
