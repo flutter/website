@@ -39,35 +39,38 @@ class _CopyButtonState extends State<CopyButton> {
       } else {
         // Extract the code content and unhide the copy button on the client.
         context.binding.addPostFrameCallback(() {
-          setState(() {
-            final codeElement = buttonKey.currentNode
-                ?.closest('.code-block-wrapper')
-                ?.querySelector('pre code')
-                ?.cloneNode(true);
-            if (codeElement == null) return;
+          final codeElement = buttonKey.currentNode
+              ?.closest('.code-block-wrapper')
+              ?.querySelector('pre code')
+              ?.cloneNode(true);
+          if (codeElement == null) return;
 
-            // Filter out hidden elements like the terminal sign or folding icons.
-            final iterator = web.document.createNodeIterator(
-              codeElement,
-              /* NodeFilter.SHOW_ELEMENT */ 1,
-            );
-            web.Node? currentNode;
-            while ((currentNode = iterator.nextNode()) != null) {
-              final element = currentNode as web.Element;
-              if (element.getAttribute('aria-hidden') == 'true') {
-                element.remove();
-              }
+          // Filter out hidden elements like the terminal sign or folding icons.
+          final iterator = web.document.createNodeIterator(
+            codeElement,
+            /* NodeFilter.SHOW_ELEMENT */ 1,
+          );
+
+          web.Node? currentNode;
+          while ((currentNode = iterator.nextNode()) != null) {
+            final element = currentNode as web.Element;
+            if (element.getAttribute('aria-hidden') == 'true') {
+              element.remove();
             }
+          }
 
-            // Remove zero-width spaces
-            content = codeElement.textContent?.replaceAll('\u200B', '');
-          });
+          // Remove zero-width spaces
+          final extracted = codeElement.textContent?.replaceAll('\u200B', '');
 
           assert(
-            content != null,
+            extracted != null,
             'CopyButton: Unable to find code content to copy. '
             'Is the CopyButton inside a code block?',
           );
+
+          setState(() {
+            content = extracted;
+          });
         });
       }
     }

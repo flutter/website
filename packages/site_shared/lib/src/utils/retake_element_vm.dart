@@ -1,7 +1,7 @@
 import 'package:jaspr/jaspr.dart';
 
-Component retakeRef(BuildContext context, String id, [String? selector]) {
+Component retakeRef(BuildContext context, String id) {
   throw UnimplementedError();
 }
 
-String extractContent(BuildContext context) => '';
+String extractContent(Element element) => '';

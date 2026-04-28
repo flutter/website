@@ -5,7 +5,8 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
-import 'package:site_shared/markdown/markdown_parser.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
 import '../components/pages/widget_catalog.dart';
 import '../models/widget_catalog_model.dart';

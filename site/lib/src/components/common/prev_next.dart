@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/material_icon.dart';
-import 'package:site_shared/markdown/markdown_parser.dart';
+import 'package:site_shared/markdown.dart';
 
 import '../../models/page_navigation_model.dart';
 

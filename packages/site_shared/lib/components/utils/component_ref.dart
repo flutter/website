@@ -27,15 +27,6 @@ class ComponentRef extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     if (!kIsWeb) {
-      final scope =
-          context
-                  .getElementForInheritedComponentOfExactType<
-                    ComponentRefScope
-                  >()
-              as _ComponentRefScopeElement?;
-      assert(scope != null, 'No ComponentRefScope found in context');
-      scope!.register(id, _component);
-
       return Component.fragment([
         RawText('<!--ref:$id-->'),
         _component,
@@ -57,37 +48,4 @@ class ComponentRef extends StatelessComponent {
 
 ComponentRef ref(Component child) {
   return ComponentRef._(nanoid(length: 8), child);
-}
-
-/// A scope for registering and retrieving component references.
-///
-/// This should wrap your entire app, typically in `main.dart`.
-class ComponentRefScope extends InheritedComponent {
-  const ComponentRefScope({
-    required super.child,
-  });
-
-  @override
-  bool updateShouldNotify(ComponentRefScope oldComponent) {
-    return false;
-  }
-
-  @override
-  InheritedElement createElement() => _ComponentRefScopeElement(this);
-}
-
-class _ComponentRefScopeElement extends InheritedElement {
-  _ComponentRefScopeElement(ComponentRefScope super.component);
-
-  final Map<String, Component> _registeredComponents = {};
-
-  Component getComponentById(String id) {
-    final component = _registeredComponents[id];
-    assert(component != null, 'No component registered with id "$id"');
-    return component!;
-  }
-
-  void register(String id, Component child) {
-    _registeredComponents[id] = child;
-  }
 }

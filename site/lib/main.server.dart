@@ -11,15 +11,14 @@ import 'package:site_shared/components/common/card.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/common/tabs.dart';
 import 'package:site_shared/components/common/youtube_embed.dart';
-import 'package:site_shared/markdown/markdown_parser.dart';
 import 'package:site_shared/components/tutorial/downloadable_snippet.dart';
 import 'package:site_shared/components/tutorial/progress_ring.dart';
 import 'package:site_shared/components/tutorial/quiz.dart';
 import 'package:site_shared/components/tutorial/stepper.dart';
 import 'package:site_shared/components/tutorial/summary_card.dart';
 import 'package:site_shared/components/tutorial/tutorial_outline.dart';
-import 'package:site_shared/components/utils/component_ref.dart';
 import 'package:site_shared/components/utils/define_component.dart';
+import 'package:site_shared/markdown.dart';
 
 import 'main.server.options.dart'; // Generated. Do not remove or edit.
 import 'src/components/common/client/download_latest_button.dart';
@@ -47,7 +46,7 @@ void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(options: defaultServerOptions);
 
-  runApp(ComponentRefScope(child: _docsFlutterDevSite));
+  runApp(_docsFlutterDevSite);
 }
 
 Component get _docsFlutterDevSite => ContentApp.custom(

@@ -10,8 +10,8 @@ import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/layout/menu_toggle.dart';
 import 'package:site_shared/components/layout/site_switcher.dart';
 import 'package:site_shared/components/layout/theme_switcher.dart';
+import 'package:site_shared/util.dart';
 
-import '../../util.dart';
 import '../../utils/active_nav.dart';
 
 /// The site-wide top navigation bar.

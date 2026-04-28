@@ -6,9 +6,9 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
 
+import '../../../util.dart';
 import '../../common/button.dart';
 import '../models/quiz_model.dart';
-import '../../../util.dart';
 
 @client
 class InteractiveQuiz extends StatefulComponent {

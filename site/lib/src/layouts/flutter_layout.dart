@@ -6,13 +6,13 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/layouts/dash_layout.dart';
+import 'package:site_shared/util.dart';
 
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/layout/sidenav.dart';
 import '../models/sidenav_model.dart';
 import '../style_hash.dart';
-import '../util.dart';
 
 /// The base Jaspr Content layout for wrapping site content.
 abstract class FlutterDocsLayout extends DashLayout {
@@ -41,6 +41,17 @@ abstract class FlutterDocsLayout extends DashLayout {
 
   @override
   String get stylesHash => generatedStylesHash;
+
+  @override
+  Iterable<Component> buildExtraHead(Page page) {
+    return const [
+      if (productionBuild)
+        meta(
+          name: 'google-site-verification',
+          content: 'HFqxhSbf9YA_0rBglNLzDiWnrHiK_w4cqDh2YD2GEY4',
+        ),
+    ];
+  }
 
   @override
   Component buildBody(Page page, Component child) {

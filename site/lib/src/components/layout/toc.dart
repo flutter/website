@@ -7,11 +7,11 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:site_shared/components/common/client/on_this_page_button.dart';
 import 'package:site_shared/components/common/material_icon.dart';
-import 'package:site_shared/markdown/markdown_parser.dart';
 import 'package:site_shared/components/utils/component_ref.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
 import '../../models/page_navigation_model.dart';
-import '../../util.dart';
 import 'client/pagenav.dart';
 
 final class DashTableOfContents extends StatelessComponent {

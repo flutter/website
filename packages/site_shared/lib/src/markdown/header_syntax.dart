@@ -4,7 +4,7 @@
 
 import 'package:markdown/markdown.dart' as md;
 
-import '../util.dart';
+import '../../util.dart';
 
 /// A custom header syntax that extends the default header syntax to support:
 ///

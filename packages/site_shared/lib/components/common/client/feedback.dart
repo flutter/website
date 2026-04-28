@@ -83,7 +83,8 @@ enum _FeedbackState {
   unhelpful(
     'Thank you for your feedback! '
     'Please let us know what we can do to improve.',
-  );
+  )
+  ;
 
   const _FeedbackState(this.introduction);
 

@@ -7,11 +7,11 @@ import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/components/common/dropdown.dart';
 import 'package:site_shared/components/common/material_icon.dart';
 import 'package:site_shared/components/utils/component_ref.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../../client/global_scripts.dart';
-import '../../../util.dart';
 
 @client
 class PageNav extends StatefulComponent {

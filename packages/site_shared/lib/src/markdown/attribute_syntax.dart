@@ -4,7 +4,7 @@
 
 import 'package:markdown/markdown.dart' as md;
 
-import '../util.dart';
+import '../../util.dart';
 
 /// A `package:markdown` extension that adds support for
 /// attribute syntax as a standalone block.

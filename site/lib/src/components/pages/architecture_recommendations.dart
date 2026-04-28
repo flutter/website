@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/markdown/markdown_parser.dart';
+import 'package:site_shared/markdown.dart';
 
 class ArchitectureRecommendations extends CustomComponentBase {
   const ArchitectureRecommendations();

@@ -5,9 +5,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
+import '../../util.dart';
 import '../common/button.dart';
 import '../common/dropdown.dart';
-import '../../util.dart';
 
 @client
 final class SiteSwitcher extends StatelessComponent {
@@ -63,6 +63,7 @@ final class SiteSwitcher extends StatelessComponent {
                 name: 'Dart',
                 subtype: 'API',
                 href: 'https://api.dart.dev',
+                dart: true,
               ),
             const _SiteWordMarkListEntry(
               name: 'DartPad',

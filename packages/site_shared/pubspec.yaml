@@ -10,8 +10,8 @@ dependencies:
   collection: ^1.19.1
   crypto: ^3.0.7
   html: ^0.15.6
-  jaspr: ^0.22.4
-  jaspr_content: ^0.5.1
+  jaspr: ^0.23.0
+  jaspr_content: ^0.5.2
   markdown: ^7.3.1
   markdown_description_list: ^0.1.1
   meta: ^1.18.2

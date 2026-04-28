@@ -1,6 +1,6 @@
-// Copyright (c) 2026, the Dart project authors. Please see the AUTHORS file
-// for details. All rights reserved. Use of this source code is governed by a
-// BSD-style license that can be found in the LICENSE file.
+// Copyright 2026 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
 import 'dart:convert';
 
@@ -78,7 +78,7 @@ abstract class DashLayout implements PageLayout {
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
         const meta(name: 'robots', content: 'noindex'),
-      if (canonicalUrl case final canonicalUrl?)
+      if (canonicalUrl case final canonicalUrl? when canonicalUrl.isNotEmpty)
         link(rel: 'canonical', href: canonicalUrl),
       if (pageData['redirectTo'] case final String redirectTo
           when redirectTo.isNotEmpty)
