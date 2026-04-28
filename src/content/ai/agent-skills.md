@@ -60,13 +60,13 @@ CLI tool. It's distributed through npm, so you'll need
 To install the official Flutter skills:
 
 ```bash
-npx skills add flutter/skills --all
+npx skills add flutter/skills --skill '*' --agent universal
 ```
 
 And to install the official Dart skills:
 
 ```bash
-npx skills add dart-lang/skills --all
+npx skills add dart-lang/skills --skill '*' --agent universal
 ```
 
 Running these commands automatically creates the `.agents/skills` directory and
