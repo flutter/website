@@ -47,7 +47,15 @@ abstract class FlutterDocsLayout extends DashLayout {
     final pageData = page.data.page;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
 
+    final pageSidenavRaw = pageData['sidenav'];
+    final pageSidenav = pageSidenavRaw is String
+        ? pageSidenavRaw
+        : defaultSidenav;
     final sideNavEntries = switch (page.data['sidenav']) {
+      _ when pageSidenav == 'ai' => switch (page.data['ai']) {
+        final List<Object?> sidenavData => navEntriesFromData(sidenavData),
+        _ => null,
+      },
       final List<Object?> sidenavData => navEntriesFromData(sidenavData),
       _ => null,
     };

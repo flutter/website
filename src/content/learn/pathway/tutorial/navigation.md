@@ -31,7 +31,8 @@ it navigates to the contact list for that group.
 First, revert changes in the adaptive layout widget so that it
 displays the `ContactGroupsPage` by default on small screens.
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (reverted-state)"?>
+```dart
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   int selectedListId = 0;
 
@@ -55,6 +56,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
       },
     );
   }
+  // ···
 }
 ```
 
@@ -65,10 +67,13 @@ and provides it with a callback.
 That callback needs to be updated to navigate when a group is tapped,
 rather than printing the group to the console.
 
-Ensure that the `onListSelected` callback in
-`lib/screens/contact_groups.dart` is implemented as follows:
+Ensure that the `onListSelected` callback and imports in
+`lib/screens/contact_groups.dart` are implemented as follows:
 
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_page)"?>
 ```dart title="lib/screens/contact_groups.dart"
+import 'contacts.dart';
+
 class ContactGroupsPage extends StatelessWidget {
   const ContactGroupsPage({super.key});
 
@@ -76,7 +81,7 @@ class ContactGroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return _ContactGroupsView(
       onListSelected: (list) => Navigator.of(context).push(
-        CupertinoPageRoute(
+        CupertinoPageRoute<void>(
           title: list.title,
           builder: (context) => ContactListsPage(listId: list.id),
         ),
@@ -113,10 +118,9 @@ Thanks to the refactoring in the previous step,
 creating this component is more straightforward.
 Add this widget to the bottom of `lib/screens/contact_groups.dart`:
 
-```dart title="lib/screens/contact_groups.dart"
-// ...
-
-/// A sidebar component for selecting contact groups, designed for large screens.
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contact_groups.dart (contact_groups_sidebar)"?>
+```dart
+/// A sidebar component for selecting contact groups on large screens.
 class ContactGroupsSidebar extends StatelessWidget {
   const ContactGroupsSidebar({
     super.key,
@@ -125,7 +129,7 @@ class ContactGroupsSidebar extends StatelessWidget {
   });
 
   final int selectedListId;
-  final Function(int) onListSelected;
+  final void Function(int) onListSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -150,10 +154,8 @@ doesn't show navigation controls. Just like the sidebar,
 this can be recreated by reusing the `_ContactListView`.
 Add this widget to the bottom of your `contacts.dart` file:
 
-```dart title="lib/screens/contacts.dart"
-// ...
-
-/// A detail view component for showing contacts in a specific list.
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/contacts.dart (contact_list_detail)"?>
+```dart
 class ContactListDetail extends StatelessWidget {
   const ContactListDetail({super.key, required this.listId});
 
@@ -161,10 +163,7 @@ class ContactListDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _ContactListView(
-      listId: listId,
-      automaticallyImplyLeading: false,
-    );
+    return _ContactListView(listId: listId, automaticallyImplyLeading: false);
   }
 }
 ```
@@ -179,15 +178,18 @@ Now, connect the sidebar to your adaptive layout.
 Update your `adaptive_layout.dart` file to import the necessary files and
 update the large screen layout:
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (imports)"?>
+```dart
 import 'package:flutter/cupertino.dart';
-import 'package:rolodex/screens/contact_groups.dart';
-import 'package:rolodex/screens/contacts.dart';
+
+import 'contact_groups.dart';
+import 'contacts.dart';
 ```
 
 Then update the `_buildLargeScreenLayout` method:
 
-```dart title="lib/screens/adaptive_layout.dart"
+<?code-excerpt "fwe/rolodex/lib/step4_navigation/screens/adaptive_layout.dart (build_large_screen)"?>
+```dart
 Widget _buildLargeScreenLayout() {
   return CupertinoPageScaffold(
     backgroundColor: CupertinoColors.extraLightBackgroundGray,
@@ -201,13 +203,8 @@ Widget _buildLargeScreenLayout() {
               onListSelected: _onContactListSelected,
             ),
           ),
-          Container(
-            width: 1,
-            color: CupertinoColors.separator,
-          ),
-          Expanded(
-            child: ContactListDetail(listId: selectedListId),
-          ),
+          Container(width: 1, color: CupertinoColors.separator),
+          Expanded(child: ContactListDetail(listId: selectedListId)),
         ],
       ),
     ),
@@ -237,6 +234,17 @@ Hot reload your app and test the navigation:
 The app automatically chooses the
 appropriate navigation pattern based on screen size.
 This provides an optimal experience on both phones and tablets.
+
+:::note
+If you resize the app from a small screen to a large screen while on
+a contact detail page, and then press the back button,
+you might see a `Hero` tag exception.
+This happens because the `Navigator` still holds the pushed small-screen
+route while the large-screen layout simultaneously renders the detail view,
+causing duplicate widgets (like the navigation bar) in the widget tree during transition.
+This is an expected edge case for this simple architecture and can be ignored
+for the purpose of this learning pathway.
+:::
 
 ### Review
 

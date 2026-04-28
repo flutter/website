@@ -37,9 +37,11 @@ You can modify the setting at any time from the DevTools Extensions dialog:
 
 ![Screenshot of extension enablement dialog](/assets/images/docs/tools/devtools/extension_dialog.png)
 
-> Note: if the extension requires a running a connection to a running
-application, you will not see the enablement prompt or enablement settings until
+:::note
+If the extension requires connecting to a running application,
+you won't see the enablement prompt or enablement settings until
 DevTools is connected to a running app.
+:::
 
 Extension enablement states are stored in a `devtools_options.yaml`
 file in the root of the user's project
@@ -73,13 +75,12 @@ differ between project contributors.
 
 ## Build a DevTools extension
 
-For an in-depth guide on how to build a DevTools extension,
-check out [Dart and Flutter DevTools extensions][article],
-a free article on Medium.
+For an in-depth guide on how to build a DevTools extension, visit
+[Build custom tooling in Flutter and Dart DevTools][build-extensions]
 
-To learn more about writing and using DevTools extensions,
-check out the following video:
+You might also check out the following video:
 
-<YouTubeEmbed id="gOrSc4s4RWY" title="Building DevTools extensions | Flutter Build Show"></YouTubeEmbed>
+<YouTubeEmbed id="gOrSc4s4RWY"
+  title="Building DevTools extensions | Flutter Build Show"></YouTubeEmbed>
 
-[article]: {{site.flutter-blog}}/dart-flutter-devtools-extensions-c8bc1aaf8e5f
+[build-extensions]: /tools/devtools/custom-tool

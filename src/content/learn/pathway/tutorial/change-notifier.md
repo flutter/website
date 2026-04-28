@@ -42,12 +42,13 @@ which triggers UI rebuilds when called.
 Create the `ArticleViewModel` class with its
 basic structure and state properties:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3a_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
   Summary? summary;
-  String? errorMessage;
-  bool loading = false;
+  Exception? error;
+  bool isLoading = false;
 
   ArticleViewModel(this.model);
 }
@@ -56,26 +57,28 @@ class ArticleViewModel extends ChangeNotifier {
 The `ArticleViewModel` holds three pieces of state:
 
 - `summary`: The current Wikipedia article data.
-- `errorMessage`: Any error that occurred during data fetching.
-- `loading`: A flag to show progress indicators.
+- `error`: Any error that occurred during data fetching.
+- `isLoading`: A flag to show progress indicators.
 
 ### Add constructor initialization
 
 Update the constructor to automatically fetch content when the
 `ArticleViewModel` is created:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3b_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
   Summary? summary;
-  String? errorMessage;
-  bool loading = false;
+  Exception? error;
+  bool isLoading = false;
 
   ArticleViewModel(this.model) {
-    getRandomArticleSummary();
+    fetchArticle();
   }
 
   // Methods will be added next.
+  Future<void> fetchArticle() async {}
 }
 ```
 
@@ -84,69 +87,71 @@ a `ArticleViewModel` object is created.
 Because constructors can't be asynchronous,
 it delegates initial content fetching to a separate method.
 
-### Set up the `getRandomArticleSummary` method
+### Set up the `fetchArticle` method
 
-Add the `getRandomArticleSummary` that fetches data and manages state updates:
+Add the `fetchArticle` method that fetches data and manages state updates:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3c_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
   Summary? summary;
-  String? errorMessage;
-  bool loading = false;
+  Exception? error;
+  bool isLoading = false;
 
   ArticleViewModel(this.model) {
-    getRandomArticleSummary();
+    fetchArticle();
   }
 
-  Future<void> getRandomArticleSummary() async {
-    loading = true;
+  Future<void> fetchArticle() async {
+    isLoading = true;
     notifyListeners();
 
     // TODO: Add data fetching logic
 
-    loading = false;
+    isLoading = false;
     notifyListeners();
   }
 }
 ```
 
-The ViewModel updates the `loading` property and
+The ViewModel updates the `isLoading` property and
 calls `notifyListeners()` to inform the UI of the update.
 When the operation completes, it toggles the property back.
-When you build the UI, you'll use this `loading` property to
+When you build the UI, you'll use this `isLoading` property to
 show a loading indicator while fetching a new article.
 
 ### Retrieve an article from the `ArticleModel`
 
-Complete the `getRandomArticleSummary` method to fetch an article summary.
+Complete the `fetchArticle` method to fetch an article summary.
 Use a [try-catch block][] to gracefully handle network errors and
 store error messages that the UI can display to users.
 The method clears previous errors on success and
 clears the previous article summary on error to maintain a consistent state.
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3d_main.dart (ArticleViewModel)"?>
 ```dart
 class ArticleViewModel extends ChangeNotifier {
   final ArticleModel model;
   Summary? summary;
-  String? errorMessage;
-  bool loading = false;
+  Exception? error;
+  bool isLoading = false;
 
   ArticleViewModel(this.model) {
-    getRandomArticleSummary();
+    fetchArticle();
   }
 
-  Future<void> getRandomArticleSummary() async {
-    loading = true;
+  Future<void> fetchArticle() async {
+    isLoading = true;
     notifyListeners();
     try {
       summary = await model.getRandomArticleSummary();
-      errorMessage = null; // Clear any previous errors.
-    } on HttpException catch (error) {
-      errorMessage = error.message;
+      error = null; // Clear any previous errors.
+    } on HttpException catch (e) {
+      error = e;
       summary = null;
     }
-    loading = false;
+    isLoading = false;
     notifyListeners();
   }
 }
@@ -158,30 +163,32 @@ class ArticleViewModel extends ChangeNotifier {
 
 Before building the full UI, test that your HTTP requests work by
 printing results to the console.
-First, update the `getRandomArticleSummary` method to
+First, update the `fetchArticle` method to
 print the results:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3e_main.dart (fetchArticle)"?>
 ```dart
-Future<void> getRandomArticleSummary() async {
-  loading = true;
+Future<void> fetchArticle() async {
+  isLoading = true;
   notifyListeners();
   try {
     summary = await model.getRandomArticleSummary();
     print('Article loaded: ${summary!.titles.normalized}'); // Temporary
-    errorMessage = null; // Clear any previous errors.
-  } on HttpException catch (error) {
-    print('Error loading article: ${error.message}'); // Temporary
-    errorMessage = error.message;
+    error = null; // Clear any previous errors.
+  } on HttpException catch (e) {
+    print('Error loading article: ${e.message}'); // Temporary
+    error = e;
     summary = null;
   }
-  loading = false;
+  isLoading = false;
   notifyListeners();
 }
 ```
 
 Then, update the `MainApp` widget to create the `ArticleViewModel`,
-which calls the `getRandomArticleSummary` method on creation:
+which calls the `fetchArticle` method on creation:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step3f_main.dart (MainApp)"?>
 ```dart
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
@@ -193,12 +200,8 @@ class MainApp extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Wikipedia Flutter'),
-        ),
-        body: const Center(
-          child: Text('Check console for article data'),
-        ),
+        appBar: AppBar(title: const Text('Wikipedia Flutter')),
+        body: const Center(child: Text('Check console for article data')),
       ),
     );
   }
@@ -227,7 +230,7 @@ items:
     icon: toggle_on
     details: >-
       Your ViewModel tracks three pieces of state:
-      `loading`, `summary`, and `errorMessage`.
+      `isLoading`, `summary`, and `error`.
       Using `try` and `catch`, you handle network errors gracefully and
       maintain consistent state for each possible outcome.
   - title: Used notifyListeners to signal UI updates

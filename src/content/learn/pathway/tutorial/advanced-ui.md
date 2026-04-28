@@ -62,6 +62,7 @@ the following command to create a new Flutter project:
 
 ```console
 $ flutter create rolodex --empty
+$ cd rolodex
 ```
 
 This command creates a new Flutter project that
@@ -85,7 +86,6 @@ First, create the basic directory structure for your app.
 In your project's `lib` directory, create the following folders:
 
 ```console
-$ cd rolodex
 $ mkdir lib/data lib/screens lib/theme
 ```
 
@@ -97,7 +97,8 @@ data models, screen widgets, and theme configuration.
 In your IDE, open the `lib/main.dart` file, and replace its entire
 contents with the following starter code:
 
-```dart title="lib/main.dart"
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/main_starter.dart"?>
+```dart
 import 'package:flutter/cupertino.dart';
 
 void main() {
@@ -117,11 +118,7 @@ class RolodexApp extends StatelessWidget {
           darkColor: Color(0xFF1D1D1D),
         ),
       ),
-      home: CupertinoPageScaffold(
-        child: Center(
-          child: Text('Hello Rolodex!'),
-        ),
-      ),
+      home: CupertinoPageScaffold(child: Center(child: Text('Hello Rolodex!'))),
     );
   }
 }
@@ -149,11 +146,12 @@ Before building the UI,
 create the data structures and sample data that the app will use.
 This section is lightly explained because it's not the focus of this tutorial.
 
-#### `Contact` data
+#### Contact data
 
 Create a new file, `lib/data/contact.dart`, and add the basic `Contact` class:
 
-```dart foldable title="lib/data/contact.dart"
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact.dart" replace="/\/\/ openFold/[* -/g; /\/\/ closeFold/*]/g;"?>
+```dart foldable
 class Contact {
   Contact({
     required this.id,
@@ -170,7 +168,7 @@ class Contact {
   final String? suffix;
 }
 
-[* - 
+[* -
 final johnAppleseed = Contact(id: 0, firstName: 'John', lastName: 'Appleseed');
 final kateBell = Contact(id: 1, firstName: 'Kate', lastName: 'Bell');
 final annaHaro = Contact(id: 2, firstName: 'Anna', lastName: 'Haro');
@@ -289,7 +287,7 @@ final jessicaEdwards = Contact(
 *]
 
 [* -
-final Set<Contact> allContacts = <Contact>{
+final Set<Contact> allContacts = {
   johnAppleseed,
   kateBell,
   annaHaro,
@@ -348,15 +346,18 @@ final Set<Contact> allContacts = <Contact>{
 This sample data includes contacts with and without middle names and suffixes.
 This gives you a variety of data to work with as you build the UI.
 
-#### `ContactGroup` data
+#### ContactGroup data
 
 Now, create the contact groups that organize your contacts into lists.
 Create a new `lib/data/contact_group.dart` file and
 add the `ContactGroup` class:
 
-```dart title="lib/data/contact_group.dart"
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact_group.dart (contact_group_class)"?>
+```dart
 import 'dart:collection';
+
 import 'package:flutter/cupertino.dart';
+
 import 'contact.dart';
 
 class ContactGroup {
@@ -384,8 +385,8 @@ class ContactGroup {
     this.permanent = false,
     String? title,
     List<Contact>? contacts,
-  })  : title = title ?? label,
-        _contacts = contacts ?? const <Contact>[];
+  }) : title = title ?? label,
+       _contacts = contacts ?? const <Contact>[];
 
   final int id;
   final bool permanent;
@@ -396,9 +397,9 @@ class ContactGroup {
   List<Contact> get contacts => _contacts;
 
   AlphabetizedContactMap get alphabetizedContacts {
-    final AlphabetizedContactMap contactsMap = AlphabetizedContactMap();
-    for (final Contact contact in _contacts) {
-      final String lastInitial = contact.lastName[0].toUpperCase();
+    final contactsMap = AlphabetizedContactMap();
+    for (final contact in _contacts) {
+      final lastInitial = contact.lastName[0].toUpperCase();
       if (contactsMap.containsKey(lastInitial)) {
         contactsMap[lastInitial]!.add(contact);
       } else {
@@ -413,34 +414,34 @@ class ContactGroup {
 A `ContactGroup` represents a collection of contacts,
 such as "All Contacts" or "Favorites".
 
-Add the following helper code and sample data to the same file:
+Add the following helper code and sample data to `lib/data/contact_group.dart`:
 
-```dart title="lib/data/contact_group.dart"
-// ... ContactGroup class from above
-
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact_group.dart (helper_code)"?>
+```dart
 typedef AlphabetizedContactMap = SplayTreeMap<String, List<Contact>>;
 
-/// Sorts a list of contacts alphabetically by
+/// Sorts a list of [contacts] alphabetically by
 /// last name, then first name, then middle name.
 /// If names are identical, sorts by contact ID to ensure consistent ordering.
 void _sortContacts(List<Contact> contacts) {
-  contacts.sort((Contact a, Contact b) {
-    final int checkLastName = a.lastName.compareTo(b.lastName);
+  contacts.sort((a, b) {
+    final checkLastName = a.lastName.compareTo(b.lastName);
     if (checkLastName != 0) {
       return checkLastName;
     }
-    final int checkFirstName = a.firstName.compareTo(b.firstName);
+    final checkFirstName = a.firstName.compareTo(b.firstName);
     if (checkFirstName != 0) {
       return checkFirstName;
     }
     if (a.middleName != null && b.middleName != null) {
-      final int checkMiddleName = a.middleName!.compareTo(b.middleName!);
+      final checkMiddleName = a.middleName!.compareTo(b.middleName!);
       if (checkMiddleName != 0) {
         return checkMiddleName;
       }
     } else if (a.middleName != null || b.middleName != null) {
       return a.middleName != null ? 1 : -1;
     }
+
     // If both contacts have the exact same name, order by first created.
     return a.id.compareTo(b.id);
   });
@@ -470,11 +471,10 @@ List<ContactGroup> generateSeedData() {
 This code creates three sample groups and a function to
 generate the initial data for the app.
 
-Finally, add a class that manages state changes:
+Finally, add a class that manages state changes to `lib/data/contact_group.dart`:
 
-```dart title="lib/data/contact_group.dart"
-// ...
-
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/data/contact_group.dart (model_class)"?>
+```dart
 class ContactGroupsModel {
   ContactGroupsModel() : _listsNotifier = ValueNotifier(generateSeedData());
 
@@ -505,9 +505,11 @@ which covers state management.
 Update your `main.dart` to include the global state and
 import the new data file:
 
-```dart title="lib/main.dart"
+<?code-excerpt "fwe/rolodex/lib/step1_advanced_ui/main.dart"?>
+```dart
 import 'package:flutter/cupertino.dart';
-import 'package:rolodex/data/contact_group.dart';
+
+import 'data/contact_group.dart';
 
 final contactGroupsModel = ContactGroupsModel();
 
@@ -520,9 +522,9 @@ class RolodexApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return const CupertinoApp(
       title: 'Rolodex',
-      theme: const CupertinoThemeData(
+      theme: CupertinoThemeData(
         barBackgroundColor: CupertinoDynamicColor.withBrightness(
           color: Color(0xFFF9F9F9),
           darkColor: Color(0xFF1D1D1D),

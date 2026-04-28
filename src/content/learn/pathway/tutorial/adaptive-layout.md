@@ -4,6 +4,8 @@ description: Learn how to use the LayoutBuilder widget.
 layout: tutorial
 ---
 
+<?code-excerpt replace="/ *\/\/\s+ignore_for_file:[^\n]+\n//g;"?>
+
 Learn how to create layouts that adapt to different screen widths.
 
 <SummaryCard>
@@ -40,6 +42,7 @@ for your contact groups screen.
 Create `lib/screens/contact_groups.dart` and add
 the following basic structure:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/contact_groups.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
 
@@ -50,9 +53,7 @@ class ContactGroupsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: Center(
-        child: Text('Contact Groups will go here'),
-      ),
+      child: Center(child: Text('Contact Groups will go here')),
     );
   }
 }
@@ -63,6 +64,7 @@ class ContactGroupsPage extends StatelessWidget {
 Similarly, create `lib/screens/contacts.dart` to eventually
 display individual contacts:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/contacts.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
 
@@ -75,9 +77,7 @@ class ContactListsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: Center(
-        child: Text('Lists of contacts will go here'),
-      ),
+      child: Center(child: Text('Lists of contacts will go here')),
     );
   }
 }
@@ -92,6 +92,7 @@ widget, which you'll do next.
 Create `lib/screens/adaptive_layout.dart`
 and start with the following basic structure:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v1.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
 
@@ -110,19 +111,19 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     return const ContactGroupsPage(); // Temporary placeholder
   }
 }
-
 ```
 
 This is a `StatefulWidget` because the adaptive layout eventually
 manages which contact group is currently selected.
 
-Next, add the screen size detection logic:
+Next, add the screen size detection logic to `lib/screens/adaptive_layout.dart`:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v2.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
+
 import 'contact_groups.dart';
 
-// New
 const largeScreenMinWidth = 600;
 
 class AdaptiveLayout extends StatefulWidget {
@@ -135,7 +136,6 @@ class AdaptiveLayout extends StatefulWidget {
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   @override
   Widget build(BuildContext context) {
-    // Replace from here
     return LayoutBuilder(
       builder: (context, constraints) {
         final isLargeScreen = constraints.maxWidth > largeScreenMinWidth;
@@ -166,10 +166,12 @@ separates phone-sized screens from tablet-sized screens.
 Update `main.dart` to use the adaptive layout,
 so you can see your changes:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/main.dart"?>
 ```dart
 import 'package:flutter/cupertino.dart';
-import 'package:rolodex/data/contact_group.dart';
-import 'package:rolodex/screens/adaptive_layout.dart';
+
+import 'data/contact_group.dart';
+import 'screens/adaptive_layout.dart';
 
 final contactGroupsModel = ContactGroupsModel();
 
@@ -190,7 +192,7 @@ class RolodexApp extends StatelessWidget {
           darkColor: Color(0xFF1D1D1D),
         ),
       ),
-      home: AdaptiveLayout(), // New
+      home: AdaptiveLayout(),
     );
   }
 }
@@ -202,9 +204,11 @@ see layout changes.
 ### Add list selection functionality
 
 The large screen layout needs to track which contact group is selected.
-Update the state object with the following code:
+Update the state object in `lib/screens/adaptive_layout.dart` with the following code:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v3.dart"?>
 ```dart
+
 import 'package:flutter/cupertino.dart';
 
 import 'contact_groups.dart';
@@ -219,10 +223,8 @@ class AdaptiveLayout extends StatefulWidget {
 }
 
 class _AdaptiveLayoutState extends State<AdaptiveLayout> {
-  // New
   int selectedListId = 0;
 
-  // New
   void _onContactListSelected(int listId) {
     setState(() {
       selectedListId = listId;
@@ -251,11 +253,13 @@ and `_onContactListSelected` updates this value when the user makes a choice.
 
 ### Build the large screen layout
 
-Now, implement the side-by-side layout for large screens.
+Now, implement the side-by-side layout for large screens in `lib/screens/adaptive_layout.dart`.
 First, replace the temporary text with a widget that
 contains the proper layout.
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout_v4.dart"?>
 ```dart
+
 import 'package:flutter/cupertino.dart';
 
 import 'contact_groups.dart';
@@ -285,7 +289,7 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
         final isLargeScreen = constraints.maxWidth > largeScreenMinWidth;
 
         if (isLargeScreen) {
-          return _buildLargeScreenLayout(); // New
+          return _buildLargeScreenLayout();
         } else {
           // For small screens, use the original, navigation-style approach.
           return const ContactGroupsPage();
@@ -294,20 +298,10 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
     );
   }
 
-  // New
   Widget _buildLargeScreenLayout() {
     return const CupertinoPageScaffold(
       backgroundColor: CupertinoColors.extraLightBackgroundGray,
-      child: SafeArea(
-        child: Row(
-          children: [
-            // Contact groups list:
-            Text('Sidebar'),
-            // List detail view:
-            Text('Details'),
-          ],
-        ),
-      ),
+      child: SafeArea(child: Row(children: [Text('Sidebar'), Text('Details')])),
     );
   }
 }
@@ -318,8 +312,10 @@ place the sidebar and details side-by-side.
 `SafeArea` ensures that the content doesn't overlap with
 system UI elements like the status bar.
 
-Now, set the sizes of the two panels and add a visual divider:
+Now, set the sizes of the two panels and
+add a visual divider in `lib/screens/adaptive_layout.dart`:
 
+<?code-excerpt "fwe/rolodex/lib/step2_adaptive_layout/screens/adaptive_layout.dart (panel-and-divider)"?>
 ```dart
 Widget _buildLargeScreenLayout() {
   return CupertinoPageScaffold(
@@ -327,20 +323,9 @@ Widget _buildLargeScreenLayout() {
     child: SafeArea(
       child: Row(
         children: [
-          // Contact groups list:
-          SizedBox(
-            width: 320,
-            child: Text('Sidebar placeholder'), // Temporary
-          ),
-          // Divider:
-          Container(
-            width: 1,
-            color: CupertinoColors.separator,
-          ),
-          // List detail view:
-          Expanded(
-            child: Text('Details placeholder'), // Temporary
-          ),
+          const SizedBox(width: 320, child: Text('Sidebar placeholder')),
+          Container(width: 1, color: CupertinoColors.separator),
+          const Expanded(child: Text('Details placeholder')),
         ],
       ),
     ),

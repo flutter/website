@@ -10,7 +10,7 @@ import 'package:site_shared/extensions/header_processor.dart';
 import 'package:site_shared/extensions/table_processor.dart';
 
 import 'glossary_link_processor.dart';
-import 'tutorial_prefetch_processor.dart';
+import 'tutorial_navigation.dart';
 import 'tutorial_structure_processor.dart';
 
 /// A list of all node-processing, page extensions to applied to

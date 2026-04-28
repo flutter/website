@@ -24,6 +24,27 @@ class DocLayout extends FlutterDocsLayout {
   bool get allowBreadcrumbs => true;
 
   @override
+  ({Set<String> prerender, Set<String> prefetch}) speculationUrls(Page page) {
+    // On the homepage, prefetch pages commonly navigated to,
+    // such as entries from the top navigation menu.
+    if (page.path == 'index.md') {
+      return (
+        prerender: const {},
+        prefetch: const {
+          '/learn/pathway',
+          '/ai/create-with-ai',
+        },
+      );
+    }
+
+    final pageData = page.data.page;
+    return (
+      prerender: {?_pathFromPageInfo(pageData['next'])},
+      prefetch: {?_pathFromPageInfo(pageData['prev'])},
+    );
+  }
+
+  @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
 
@@ -78,4 +99,13 @@ class DocLayout extends FlutterDocsLayout {
       ),
     );
   }
+}
+
+/// Extracts and returns the `path` value from a page info map,
+/// or `null` if [data] is not a map or has no `path` entry.
+String? _pathFromPageInfo(Object? data) {
+  if (data case {'path': final String path}) {
+    return path;
+  }
+  return null;
 }

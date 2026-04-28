@@ -86,116 +86,73 @@ $ cd wikipedia_reader && flutter pub add http
 First, create a new file `lib/summary.dart` to define the data model
 for Wikipedia article summaries. This file has no special logic, and is
 simply a collection of classes that represent the data returned by the
-Wikipedia API. Its sufficient to copy the code below into the file and then ignore it. If you aren't comfortable basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
+Wikipedia API. It's sufficient to copy the code below into the file and then ignore it.
+If you aren't comfortable with basic Dart classes, you should read the [Dart Getting Started][] tutorial first.
 
+<?code-excerpt "fwe/wikipedia_reader/lib/summary.dart (All)"?>
 ```dart title="lib/summary.dart" collapsed
+/// Representation of the JSON data returned by the Wikipedia API.
 class Summary {
   /// Returns a new [Summary] instance.
   Summary({
     required this.titles,
-    required this.pageid,
+    required this.pageId,
     required this.extract,
     required this.extractHtml,
     required this.lang,
     required this.dir,
+    required this.url,
+    this.description,
     this.thumbnail,
     this.originalImage,
-    this.url,
-
-    this.description,
   });
 
-  ///
-  TitlesSet titles;
+  /// The title information of this article.
+  final TitlesSet titles;
 
-  /// The page ID
-  int pageid;
+  /// The page ID of this article.
+  final int pageId;
 
-  /// First several sentences of an article in plain text
-  String extract;
+  /// The first few sentences of the article in plain text.
+  final String extract;
 
-  /// First several sentences of an article in simple HTML format
-  String extractHtml;
+  /// The first few sentences of the article in HTML format.
+  final String extractHtml;
 
-  ImageFile? thumbnail;
+  /// The language code of the article's content, such as "en" for English.
+  final String lang;
 
-  /// Url to the article on Wikipedia
-  String? url;
+  /// The text directionality of the article's content, such as "ltr" or "rtl".
+  final String dir;
 
-  ///
-  ImageFile? originalImage;
+  /// The URL of the page.
+  final String url;
 
-  /// The page language code
-  String lang;
+  /// A description of the article, if available.
+  final String? description;
 
-  /// The page language direction code
-  String dir;
+  /// A thumbnail-sized version of the article's primary image, if available.
+  final ImageFile? thumbnail;
 
-  /// Wikidata description for the page
-  String? description;
+  /// The original full-sized article's primary image, if available.
+  final ImageFile? originalImage;
 
-  bool get hasImage =>
-      (originalImage != null || thumbnail != null) && preferredSource != null;
+  /// Whether this article has an image.
+  bool get hasImage => originalImage != null && thumbnail != null;
 
-  String? get preferredSource {
-    ImageFile? file;
-
-    if (originalImage != null) {
-      file = originalImage;
-    } else {
-      file = thumbnail;
-    }
-
-    if (file != null) {
-      if (acceptableImageFormats.contains(file.extension.toLowerCase())) {
-        return file.source;
-      } else {
-        return null;
-      }
-    }
-
-    return null;
-  }
-
-  /// Returns a new [Summary] instance
+  /// Returns a new [Summary] instance and imports its values from a JSON map
   static Summary fromJson(Map<String, Object?> json) {
     return switch (json) {
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
+        'thumbnail': final Map<String, Object?> thumbnail,
+        'originalimage': final Map<String, Object?> originalImage,
         'lang': final String lang,
         'dir': final String dir,
-        'content_urls': {
-          'desktop': {'page': final String url},
-          'mobile': {'page': String _},
-        },
         'description': final String description,
-        'thumbnail': final Map<String, Object?> thumbnail,
-        'originalimage': final Map<String, Object?> originalImage,
-      } =>
-        Summary(
-          titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
-          extract: extract,
-          extractHtml: extractHtml,
-          thumbnail: ImageFile.fromJson(thumbnail),
-          originalImage: ImageFile.fromJson(originalImage),
-          lang: lang,
-          dir: dir,
-          url: url,
-          description: description,
-        ),
-      {
-        'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
-        'extract': final String extract,
-        'extract_html': final String extractHtml,
-        'lang': final String lang,
-        'dir': final String dir,
-        'thumbnail': final Map<String, Object?> thumbnail,
-        'originalimage': final Map<String, Object?> originalImage,
         'content_urls': {
           'desktop': {'page': final String url},
           'mobile': {'page': String _},
@@ -203,18 +160,19 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           thumbnail: ImageFile.fromJson(thumbnail),
           originalImage: ImageFile.fromJson(originalImage),
           lang: lang,
           dir: dir,
+          description: description,
           url: url,
         ),
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
         'lang': final String lang,
@@ -227,7 +185,7 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           lang: lang,
@@ -237,7 +195,7 @@ class Summary {
         ),
       {
         'titles': final Map<String, Object?> titles,
-        'pageid': final int pageid,
+        'pageid': final int pageId,
         'extract': final String extract,
         'extract_html': final String extractHtml,
         'lang': final String lang,
@@ -249,7 +207,7 @@ class Summary {
       } =>
         Summary(
           titles: TitlesSet.fromJson(titles),
-          pageid: pageid,
+          pageId: pageId,
           extract: extract,
           extractHtml: extractHtml,
           lang: lang,
@@ -264,7 +222,7 @@ class Summary {
   String toString() =>
       'Summary['
       'titles=$titles, '
-      'pageid=$pageid, '
+      'pageId=$pageId, '
       'extract=$extract, '
       'extractHtml=$extractHtml, '
       'thumbnail=${thumbnail ?? 'null'}, '
@@ -276,27 +234,27 @@ class Summary {
 }
 
 // Image path and size, but doesn't contain any Wikipedia descriptions.
-///
-/// For images with metadata, see [WikipediaImage]
 class ImageFile {
   /// Returns a new [ImageFile] instance.
   ImageFile({required this.source, required this.width, required this.height});
 
-  /// Original image URI
-  String source;
+  /// The URI of the original image.
+  final String source;
 
-  /// Original image width
-  int width;
+  /// The width of the original image.
+  final int width;
 
-  /// Original image height
-  int height;
+  /// The height of the original image.
+  final int height;
 
+  /// The file extension of the image, or 'err' if one can't be determined.
   String get extension {
     final extension = getFileExtension(source);
-    // by default, return a non-viable image extension
+    // By default, return a non-viable image extension.
     return extension ?? 'err';
   }
 
+  /// Returns a JSON map representation of this [ImageFile].
   Map<String, Object?> toJson() {
     return <String, Object?>{
       'source': source,
@@ -305,8 +263,7 @@ class ImageFile {
     };
   }
 
-  /// Returns a new [ImageFile] instance
-  // ignore: prefer_constructors_over_static_methods
+  /// Returns a new [ImageFile] instance with its values populated from [json].
   static ImageFile fromJson(Map<String, Object?> json) {
     if (json case {
       'source': final String source,
@@ -331,18 +288,20 @@ class TitlesSet {
     required this.display,
   });
 
-  /// the DB key (non-prefixed), e.g. may have _ instead of spaces,
-  /// best for making request URIs, still requires Percent-encoding
-  String canonical;
+  /// The non-prefixed DB key for the article.
+  ///
+  /// Might contain changes such as underscores instead of spaces.
+  /// Best suited for making request URIs, but still requires percent-encoding.
+  final String canonical;
 
-  /// the normalized title (https://www.mediawiki.org/wiki/API:Query#Example_2:_Title_normalization),
-  /// e.g. may have spaces instead of _
-  String normalized;
+  /// The [normalized title](https://www.mediawiki.org/wiki/API:Query#Example_2:_Title_normalization)
+  /// of the article.
+  final String normalized;
 
-  /// the title as it should be displayed to the user
-  String display;
+  /// The title as it should be displayed to the user.
+  final String display;
 
-  /// Returns a new [TitlesSet] instance and imports its values from a JSON map
+  /// Returns a new [TitlesSet] instance with its values populated from [json].
   static TitlesSet fromJson(Map<String, Object?> json) {
     if (json case {
       'canonical': final String canonical,
@@ -374,12 +333,12 @@ String? getFileExtension(String file) {
 }
 
 const acceptableImageFormats = ['png', 'jpg', 'jpeg'];
-
 ```
 
 Then, open `lib/main.dart` and replace the existing code with
 this basic structure, which adds required imports that the app uses:
 
+<?code-excerpt "fwe/wikipedia_reader/lib/step1_main.dart (All)"?>
 ```dart title="lib/main.dart"
 import 'dart:convert';
 import 'dart:io';
@@ -400,12 +359,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Wikipedia Flutter'),
-        ),
-        body: const Center(
-          child: Text('Loading...'),
-        ),
+        appBar: AppBar(title: const Text('Wikipedia Flutter')),
+        body: const Center(child: Text('Loading...')),
       ),
     );
   }
