@@ -10,6 +10,12 @@ description: >-
 This guide covers how you can leverage AI rules to
 streamline your Flutter and Dart development.
 
+:::note Agent skills
+While rules configure the default behavior for all tasks,
+you can use [Agent skills](/ai/agent-skills) to give the AI specific tools
+and instructions for discrete tasks.
+:::
+
 ## Overview
 
 AI-powered editors use rules files to provide context and
