@@ -5,14 +5,14 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/util.dart';
 
 import '../../models/learning_resource_model.dart';
-import '../../util.dart';
 import 'learning_resource_filters.dart';
 import 'learning_resource_filters_sidebar.dart';
 
 final class LearningResourceIndex extends StatelessComponent {
-  LearningResourceIndex({super.key});
+  const LearningResourceIndex({super.key});
 
   @override
   Component build(BuildContext context) {

@@ -3,10 +3,9 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
-
-import '../util.dart';
 
 /// Global scripts converted from JS.
 ///

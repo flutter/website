@@ -3,8 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../models/tutorial_model.dart';
+import 'package:site_shared/components/tutorial/models/tutorial_model.dart';
 
 /// A page extension for Jaspr Content that adds
 /// page navigation to the current tutorial page.

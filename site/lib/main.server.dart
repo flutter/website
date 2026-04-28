@@ -7,16 +7,24 @@ import 'package:jaspr_content/components/file_tree.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
 import 'package:path/path.dart' as path;
+import 'package:site_shared/components/common/card.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/tabs.dart';
+import 'package:site_shared/components/common/youtube_embed.dart';
+import 'package:site_shared/components/tutorial/downloadable_snippet.dart';
+import 'package:site_shared/components/tutorial/progress_ring.dart';
+import 'package:site_shared/components/tutorial/quiz.dart';
+import 'package:site_shared/components/tutorial/stepper.dart';
+import 'package:site_shared/components/tutorial/summary_card.dart';
+import 'package:site_shared/components/tutorial/tutorial_outline.dart';
+import 'package:site_shared/components/utils/define_component.dart';
+import 'package:site_shared/markdown.dart';
 
 import 'main.server.options.dart'; // Generated. Do not remove or edit.
-import 'src/components/common/card.dart';
 import 'src/components/common/client/download_latest_button.dart';
 import 'src/components/common/client/os_selector.dart';
 import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
-import 'src/components/common/material_icon.dart';
-import 'src/components/common/tabs.dart';
-import 'src/components/common/youtube_embed.dart';
 import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
@@ -24,19 +32,11 @@ import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
 import 'src/components/pages/platforms_grid.dart';
 import 'src/components/pages/widget_catalog.dart';
-import 'src/components/tutorial/downloadable_snippet.dart';
-import 'src/components/tutorial/progress_ring.dart';
-import 'src/components/tutorial/quiz.dart';
-import 'src/components/tutorial/stepper.dart';
-import 'src/components/tutorial/summary_card.dart';
-import 'src/components/tutorial/tutorial_outline.dart';
-import 'src/components/util/component_ref.dart';
 import 'src/extensions/registry.dart';
 import 'src/layouts/doc_layout.dart';
 import 'src/layouts/toc_layout.dart';
 import 'src/layouts/tutorial_layout.dart';
 import 'src/loaders/data_processor.dart';
-import 'src/markdown/markdown_parser.dart';
 import 'src/pages/custom_pages.dart';
 import 'src/pages/robots_txt.dart';
 import 'src/templating/dash_template_engine.dart';
@@ -46,7 +46,7 @@ void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(options: defaultServerOptions);
 
-  runApp(ComponentRefScope(child: _docsFlutterDevSite));
+  runApp(_docsFlutterDevSite);
 }
 
 Component get _docsFlutterDevSite => ContentApp.custom(
@@ -116,7 +116,9 @@ List<CustomComponent> get _embeddableComponents => [
   const Quiz(),
   const ProgressRing(),
   const SummaryCard(),
-  const DownloadableSnippet(),
+  DownloadableSnippet(
+    snippetsDirectoryPath: path.join(siteSrcDirectoryPath, '_snippets'),
+  ),
   const Stepper(),
   const WidgetCatalogCategories(),
   const TutorialOutline(),
@@ -124,36 +126,18 @@ List<CustomComponent> get _embeddableComponents => [
   const ArchitectureRecommendations(),
   const PlatformsGrid(),
   const PlatformCard(),
-  CustomComponent(
-    pattern: RegExp('Icon', caseSensitive: false),
-    builder: (_, attrs, _) => MaterialIcon.fromAttributes(attrs),
+  defineComponentWithAttrs('Icon', MaterialIcon.fromAttributes),
+  defineComponent('OSSelector', const OsSelector()),
+  defineComponentWithChild('Card', Card.fromAttributes),
+  defineComponent('LearningResourceIndex', const LearningResourceIndex()),
+  defineComponentWithAttrs('ArchiveTable', ArchiveTable.fromAttributes),
+  defineComponentWithAttrs(
+    'DownloadLatestButton',
+    DownloadLatestButton.fromAttributes,
   ),
-  CustomComponent(
-    pattern: RegExp('OSSelector', caseSensitive: false),
-    builder: (_, _, _) => const OsSelector(),
-  ),
-  CustomComponent(
-    pattern: RegExp('Card', caseSensitive: false),
-    builder: (_, attrs, child) => Card.fromAttributes(attrs, child),
-  ),
-  CustomComponent(
-    pattern: RegExp('LearningResourceIndex', caseSensitive: false),
-    builder: (_, _, _) => LearningResourceIndex(),
-  ),
-  CustomComponent(
-    pattern: RegExp('ArchiveTable'),
-    builder: (_, attrs, _) => ArchiveTable.fromAttributes(attrs),
-  ),
-  CustomComponent(
-    pattern: RegExp('DownloadLatestButton', caseSensitive: false),
-    builder: (_, attrs, _) => DownloadLatestButton.fromAttributes(attrs),
-  ),
-  CustomComponent(
-    pattern: RegExp('ExpansionList', caseSensitive: false),
-    builder: (_, attrs, _) => ExpansionList.fromAttributes(attrs),
-  ),
-  CustomComponent(
-    pattern: RegExp('DevToolsReleaseNotesIndex', caseSensitive: false),
-    builder: (_, _, _) => const DevToolsReleaseNotesIndex(),
+  defineComponentWithAttrs('ExpansionList', ExpansionList.fromAttributes),
+  defineComponent(
+    'DevToolsReleaseNotesIndex',
+    const DevToolsReleaseNotesIndex(),
   ),
 ];

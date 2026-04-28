@@ -1,6 +1,6 @@
 // Must be imported first to ensure that
 // the reset is applied before any other styles are applied.
-@use 'base/reset';
+@use 'package:site_shared/_sass/base/reset';
 
 // Must be imported second to ensure that our defined CSS variables are defined
 // before any other styles are applied and they are used.
@@ -11,17 +11,9 @@
 @use 'base/utils';
 
 // Styles for individual components or content types, alphabetically ordered.
-@use 'components/alert';
-@use 'components/banner';
 @use 'components/books';
-@use 'components/breadcrumbs';
-@use 'components/button';
-@use 'components/card';
-@use 'components/code';
 @use 'components/content';
 @use 'components/collapsible';
-@use 'components/cookie-notice';
-@use 'components/dropdown';
 @use 'components/expansion-list';
 @use 'components/filter-search';
 @use 'components/footer';
@@ -33,17 +25,28 @@
 @use 'components/pagenav';
 @use 'components/platform-cards';
 @use 'components/pill';
-@use 'components/quiz';
 @use 'components/sidebar';
 @use 'components/side-menu';
-@use 'components/site-switcher';
-@use 'components/summary-card';
-@use 'components/stepper';
-@use 'components/tabs';
-@use 'components/theming';
-@use 'components/tooltip';
 @use 'components/trailing';
 @use 'components/tutorial_pages';
+
+// Shared styles from site_shared package, alphabetically ordered.
+@use 'package:site_shared/_sass/components/alert';
+@use 'package:site_shared/_sass/components/banner';
+@use 'package:site_shared/_sass/components/breadcrumbs';
+@use 'package:site_shared/_sass/components/button';
+@use 'package:site_shared/_sass/components/card';
+@use 'package:site_shared/_sass/components/code';
+@use 'package:site_shared/_sass/components/cookie-notice';
+@use 'package:site_shared/_sass/components/dropdown';
+@use 'package:site_shared/_sass/components/menu-toggle';
+@use 'package:site_shared/_sass/components/quiz';
+@use 'package:site_shared/_sass/components/site-switcher';
+@use 'package:site_shared/_sass/components/stepper';
+@use 'package:site_shared/_sass/components/summary-card';
+@use 'package:site_shared/_sass/components/tabs';
+@use 'package:site_shared/_sass/components/theming';
+@use 'package:site_shared/_sass/components/tooltip';
 
 // Styles for specific pages, alphabetically ordered.
 @use 'pages/glossary';

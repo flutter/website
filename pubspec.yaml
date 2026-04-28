@@ -7,5 +7,6 @@ environment:
 workspace:
   - packages/analysis_defaults
   - packages/excerpter
+  - packages/site_shared
   - site
   - tool/dash_site

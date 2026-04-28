@@ -6,14 +6,14 @@ import 'dart:math';
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/components/common/search.dart';
+import 'package:site_shared/components/utils/global_event_listener.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 
 import '../../analytics/analytics.dart';
 import '../../models/learning_resource_model.dart';
-import '../common/material_icon.dart';
-import '../common/search.dart';
-import '../util/global_event_listener.dart';
 import 'learning_resource_filters_sidebar.dart';
 
 @client

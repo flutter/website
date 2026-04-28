@@ -5,12 +5,12 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
+import 'package:site_shared/components/common/breadcrumbs.dart';
+import 'package:site_shared/components/common/client/page_header_options.dart';
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
-import '../../markdown/markdown_parser.dart';
-import '../../util.dart';
 import '../../utils/page_source_info.dart';
-import 'breadcrumbs.dart';
-import 'client/page_header_options.dart';
 
 final class PageHeader extends StatelessComponent {
   const PageHeader({

@@ -4,10 +4,10 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/common/material_icon.dart';
+import 'package:site_shared/markdown.dart';
 
-import '../../markdown/markdown_parser.dart';
 import '../../models/page_navigation_model.dart';
-import 'material_icon.dart';
 
 /// Previous and next page buttons to display at the end of a page
 /// in a connected series of pages, such as the language docs.
