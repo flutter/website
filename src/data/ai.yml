@@ -6,6 +6,8 @@
   children:
     - title: Rules for Flutter and Dart
       permalink: /ai/ai-rules
+    - title: Agent skills
+      permalink: /ai/agent-skills
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
     - title: AI Coding Assistants
