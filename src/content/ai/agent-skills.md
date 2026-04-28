@@ -16,9 +16,9 @@ AI agents can write Flutter and Dart code, but they sometimes are unaware of
 tools and best practices that professional developers use.
 
 [Agent Skills](https://agentskills.io/) help solve this problem by providing a
-standardized way to give your AI agent a set of task-oriented blueprints to follow. By
-giving the agent actual domain expertise and repeatable workflows, you drastically
-reduce mistakes and can enforce consistent patterns.
+standardized way to give your AI agent a set of task-oriented blueprints to
+follow. By giving the agent actual domain expertise and repeatable workflows,
+you drastically reduce mistakes and can enforce consistent patterns.
 
 To understand how Agent Skills fit into your workflow, consider how they compare
 to other AI capabilities:
@@ -26,10 +26,10 @@ to other AI capabilities:
 *   **Rules files:** While [rules files](/ai/ai-rules) configure the agent's
     general behavior across all tasks, Agent Skills give the AI step-by-step
     instructions for one specific job.
-*   **Model Context Protocol (MCP):** The
-    [Dart and Flutter MCP server](/ai/mcp-server) gives your agent access to
-    specialized tools. If MCP provides the raw machinery, an Agent Skill provides
-    the professional know-how to operate that machinery correctly.
+*   **Model Context Protocol (MCP):** The [Dart and Flutter MCP
+    server](/ai/mcp-server) gives your agent access to specialized tools. If MCP
+    provides the raw machinery, an Agent Skill provides the professional
+    know-how to operate that machinery correctly.
 
 Skills use what we call "progressive disclosure," which is similar to deferred
 loading in Flutter. Instead of loading every single instruction into the context
@@ -53,9 +53,9 @@ tailored specifically for our frameworks.
 By default, compatible AI agents discover Agent Skills within the
 `.agents/skills` directory of your project workspace.
 
-To easily download and manage skills in that folder, you can use the `skills` CLI
-tool. It's distributed via npm, so you'll need [Node.js](https://nodejs.org/)
-installed to run it with `npx`.
+To easily download and manage skills in that folder, you can use the `skills`
+CLI tool. It's distributed via npm, so you'll need
+[Node.js](https://nodejs.org/) installed to run it with `npx`.
 
 To install the official Flutter skills:
 
