@@ -41,10 +41,12 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [Deprecate `TextInputConnection.setStyle`][]
 * [`IconData` class marked as `final`][]
+* [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [ListTile reports error in debug when wrapped in a colored widget][]
 * [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
 
+[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
