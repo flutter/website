@@ -77,7 +77,7 @@ For more details on available skills, updating, and contributing, see the
 [Flutter skills repository](https://github.com/flutter/skills).
 
 :::tip
-Once you’ve added skills to your project, try asking your AI agent to review
+Once you've added skills to your project, try asking your AI agent to review
 the `.agents/skills` directory. You can ask, "Which of my installed skills
 can help me with [your current task]?" or "Summarize the capabilities of the
 skills I have available."
