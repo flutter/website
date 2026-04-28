@@ -24,8 +24,12 @@ execute these skills when they are relevant to your request.
 
 ## Getting started
 
-To use these skills in a compatible AI agent, you can add them directly to
-your project using the `skills` CLI tool:
+By default, compatible AI agents discover Agent Skills within the
+`.agents/skills` directory of your project workspace.
+
+To easily download and manage skills in this standard folder, you can use the
+`skills` CLI tool. Since the CLI is distributed via npm, you must have
+[Node.js](https://nodejs.org/) installed to use the `npx` command.
 
 To install the official Flutter skills:
 ```bash
@@ -36,6 +40,9 @@ To install the official Dart skills:
 ```bash
 npx skills add dart-lang/skills
 ```
+
+This automatically creates the `.agents/skills` directory and copies the
+requested skills into your project.
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and
