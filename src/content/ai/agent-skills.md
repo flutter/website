@@ -15,24 +15,31 @@ with domain-specific capabilities using Agent Skills.
 [Agent Skills](https://agentskills.io/) provide a standardized way to give AI
 agents new capabilities, domain expertise, and repeatable workflows.
 
-Where [rules files](/ai/ai-rules) configure the AI's general behavior and
-constraints, Agent Skills give the AI specific, actionable tools and
-instructions for discrete tasks.
+Where [rules files](/ai/ai-rules) configure the agents default behavior for all
+tasks, Agent Skills give the AI specific tools and instructions for discrete
+tasks.
 
 When an AI agent supports Agent Skills, it can dynamically discover and
 execute these skills when they are relevant to your request.
 
-## How it works
+## Getting started
 
-Skills are defined using a `SKILL.md` file that includes:
+To use these skills in a compatible AI agent, you can add them directly to
+your project using the `skills` CLI tool:
 
-*   **Metadata:** Information like the name and description of the skill.
-*   **Instructions:** Detailed steps for the agent to follow.
-*   **Resources:** Optional scripts or reference files.
+To install the official Flutter skills:
+```bash
+npx skills add flutter/skills
+```
 
-Agents load the metadata at startup to understand what skills are available,
-and then read the full `SKILL.md` instructions when a task matches the
-skill's description.
+To install the official Dart skills:
+```bash
+npx skills add dart-lang/skills
+```
+
+For more details on available skills, updating, and contributing, see the
+[Dart skills repository](https://github.com/dart-lang/skills) and
+[Flutter skills repository](https://github.com/flutter/skills).
 
 ## Official repositories
 
@@ -62,16 +69,3 @@ Available skills can help the AI perform tasks such as:
 *   Setting up declarative routing
 *   Implementing JSON serialization
 *   Running accessibility audits
-
-## Getting started
-
-To use these skills in a compatible AI agent, you can add them directly to
-your project. For example, to install the Flutter skills:
-
-```bash
-npx skills add flutter/skills
-```
-
-For more details on available skills, updating, and contributing, see the
-[Dart skills repository](https://github.com/dart-lang/skills) and
-[Flutter skills repository](https://github.com/flutter/skills).
