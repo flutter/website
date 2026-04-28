@@ -18,23 +18,21 @@ This test can also be called end-to-end testing or GUI testing.
 
 ## Testing frameworks
 
-Flutter supports two main approaches for integration testing:
+Two packages are commonly used to perform Flutter integration tests.
+These are:
 
-### `integration_test` package
+- [integration_test][integration_test] package: The official
+integration test package that is part of the Flutter SDK. Tests written
+with `integration_test` can perform the following tasks: run on the
+target device, run from the host machine with `flutter test integration_test`,
+and use `flutter_test` APIs. This makes integration tests similar to writing 
+[widget tests][]. However, `integration_test` can't interact with
+native platform UI.
 
-The Flutter SDK includes the [`integration_test`][integration_test] package.
-Tests written with `integration_test` can perform the following tasks:
-
-* Run on the target device.
-  To test multiple Android or iOS devices, use Firebase Test Lab.
-* Run from the host machine with `flutter test integration_test`.
-* Use `flutter_test` APIs. This makes integration tests
-  similar to writing [widget tests][].
-
-However, `integration_test` can't interact with native platform UI,
-such as permission dialogs, notifications, or the contents of
-platform views. For these additional features, consider using the
-[`patrol`][] package.
+- [patrol][] package: A popular third-party integration test package that
+has many of the features supported by the `integration_test` package,
+but can additionally interact with native platform UI such as
+permission dialogs, notifications, or the contents of platform views.
 
 ## Terminology
 
@@ -66,7 +64,7 @@ The other guides in this section explain how to use integration tests to validat
 [functionality]: /testing/integration-tests/
 [integration_test]: {{site.repo.flutter}}/tree/main/packages/integration_test
 [Migrating from flutter_driver]: /release/breaking-changes/flutter-driver-migration
-[`patrol`]: {{site.pub-pkg}}/patrol
+[patrol]: {{site.pub-pkg}}/patrol
 [Patrol setup guide]: https://patrol.leancode.co/getting-started
 [performance]: /cookbook/testing/integration/profiling/
 [widget tests]: /testing/overview#widget-tests

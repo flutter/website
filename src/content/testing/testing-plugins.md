@@ -192,9 +192,9 @@ Some extra considerations for plugin testing:
   try to have at least one integration test of each
   platform channel call.
 
-* If some flows can't be tested using the `integration_test` package-for
-  example if they require interacting with native UI or mocking
-  device state-consider using the [`patrol`][] package for
+* If some flows can't be tested using the `integration_test` package
+  (for example if they require interacting with native UI or mocking
+  device state), consider using the [`patrol`][] package for
   native UI interactions, or writing "end to end" tests of the two halves
   using unit tests:
 
