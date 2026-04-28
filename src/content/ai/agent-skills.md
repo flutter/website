@@ -15,12 +15,38 @@ with domain-specific capabilities using Agent Skills.
 [Agent Skills](https://agentskills.io/) provide a standardized way to give AI
 agents new capabilities, domain expertise, and repeatable workflows.
 
-Where [rules files](/ai/ai-rules) configure the agents default behavior for all
-tasks, Agent Skills give the AI specific tools and instructions for discrete
-tasks.
+By giving the AI strict, task-oriented blueprints, these skills help prevent
+hallucinations and reduce the "verification tax"—the time you spend manually
+auditing and refining AI-generated output.
 
-When an AI agent supports Agent Skills, it can dynamically discover and
-execute these skills when they are relevant to your request.
+To understand how Agent Skills fit into your workflow, it helps to compare them
+with other AI capabilities:
+
+*   **Rules files**: Where [rules files](/ai/ai-rules) configure the agent's
+    default behavior for all tasks, Agent Skills give the AI specific
+    instructions for discrete tasks.
+*   **Model Context Protocol (MCP)**: Where the
+    [Dart and Flutter MCP server](/ai/mcp-server) gives an agent access to
+    specialized tools, an Agent Skill provides the instructions and professional
+    know-how for using those tools to complete a specific task.
+
+Skills improve context efficiency through "progressive disclosure" (similar to
+deferred loading in Flutter). Rather than loading all instructions into the
+context window at once, the agent only sees relevant metadata initially. It
+dynamically discovers and executes the full skill instructions only when they
+are relevant to your request. This improves accuracy while lowering token costs.
+
+## Official repositories
+
+The Dart and Flutter teams maintain official repositories of Agent Skills
+tailored for their respective frameworks.
+
+*   **[dart-lang/skills](https://github.com/dart-lang/skills)**: Skills for
+    Dart development, such as generating unit tests, resolving package
+    dependencies, and fixing static analysis errors.
+*   **[flutter/skills](https://github.com/flutter/skills)**: Skills for Flutter
+    development, such as building responsive layouts, setting up declarative
+    routing, and implementing JSON serialization.
 
 ## Getting started
 
@@ -47,32 +73,3 @@ requested skills into your project.
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and
 [Flutter skills repository](https://github.com/flutter/skills).
-
-## Official repositories
-
-The Dart and Flutter teams maintain official repositories of Agent Skills
-that you can use in your projects.
-
-### Dart skills
-
-The [dart-lang/skills](https://github.com/dart-lang/skills) repository
-contains Agent Skills specifically designed for Dart development.
-
-Available skills can help the AI perform tasks such as:
-
-*   Generating unit tests
-*   Resolving package dependencies and conflicts
-*   Running static analysis and fixing errors
-*   Collecting test coverage
-
-### Flutter skills
-
-The [flutter/skills](https://github.com/flutter/skills) repository
-contains Agent Skills specifically designed for Flutter development.
-
-Available skills can help the AI perform tasks such as:
-
-*   Building responsive layouts
-*   Setting up declarative routing
-*   Implementing JSON serialization
-*   Running accessibility audits
