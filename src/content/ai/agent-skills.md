@@ -54,7 +54,7 @@ By default, compatible AI agents discover Agent Skills within the
 `.agents/skills` directory of your project workspace.
 
 To easily download and manage skills in that folder, you can use the `skills`
-CLI tool. It's distributed via npm, so you'll need
+CLI tool. It's distributed through npm, so you'll need
 [Node.js](https://nodejs.org/) installed to run it with `npx`.
 
 To install the official Flutter skills:
