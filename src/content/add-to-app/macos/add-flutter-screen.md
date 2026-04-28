@@ -8,18 +8,18 @@ This guide describes how to add a single Flutter screen to an existing macOS app
 
 ## Start a FlutterEngine and FlutterViewController
 
-To launch a Flutter screen from an existing macOS app, you start a
-[`FlutterEngine`][] and a [`FlutterViewController`][].
+To launch a Flutter screen from an existing macOS app,
+you start a [`FlutterEngine`][] and a [`FlutterViewController`][].
 
 :::note
 The `FlutterEngine` serves as a host to the Dart VM and your Flutter runtime,
-and the `FlutterViewController` attaches to a `FlutterEngine` to pass
-input events into Flutter and to display frames rendered by the
-`FlutterEngine`.
+and the `FlutterViewController` attaches to a `FlutterEngine`
+to pass input events into Flutter
+and to display frames rendered by the `FlutterEngine`.
 :::
 
-The `FlutterEngine` might have the same lifespan as your
-`FlutterViewController` or outlive your `FlutterViewController`.
+The `FlutterEngine` might have the same lifespan
+as your `FlutterViewController` or outlive your `FlutterViewController`.
 
 :::tip
 It's generally recommended to pre-warm a long-lived
@@ -27,8 +27,8 @@ It's generally recommended to pre-warm a long-lived
 
 * The first frame appears faster when showing the `FlutterViewController`.
 * Your Flutter and Dart state will outlive one `FlutterViewController`.
-* Your application and your plugins can interact with Flutter and your Dart
-  logic before showing the UI.
+* Your application and your plugins can interact with Flutter
+  and your Dart logic before showing the UI.
 :::
 
 See [Loading sequence and performance][]
@@ -42,8 +42,8 @@ Where you create a `FlutterEngine` depends on your host app.
 <Tabs key="macos-framework">
 <Tab name="SwiftUI">
 
-In this example, we create a `FlutterEngine` object inside a SwiftUI [`Observable`][]
-object called `FlutterDependencies`.
+In this example, we create a `FlutterEngine` object
+inside a SwiftUI [`Observable`][] object called `FlutterDependencies`.
 Pre-warm the engine by calling `run()`, and then inject this object
 into a `ContentView` using the `environment()` view modifier.
 
@@ -80,9 +80,8 @@ struct MyApp: App {
 </Tab>
 <Tab name="AppKit-Swift">
 
-As an example, we demonstrate creating a
-`FlutterEngine`, exposed as a property, on app startup in
-the app delegate.
+As an example, we demonstrate creating a `FlutterEngine`,
+exposed as a property, on app startup in the app delegate.
 
 ```swift title="AppDelegate.swift"
 import Cocoa
@@ -111,10 +110,11 @@ class AppDelegate: FlutterAppDelegate {
 
 The following example shows a generic `ContentView` with a
 [`NavigationLink`][] hooked to a flutter screen.
-First, create a `FlutterViewControllerRepresentable` to represent the
-`FlutterViewController`. The `FlutterViewController` constructor takes
-the pre-warmed `FlutterEngine` as an argument, which is injected through
-the view environment.
+First, create a `FlutterViewControllerRepresentable`
+to represent the `FlutterViewController`.
+The `FlutterViewController` constructor takes
+the pre-warmed `FlutterEngine` as an argument,
+which is injected through the view environment.
 
 ```swift title="ContentView.swift"
 import SwiftUI
@@ -190,10 +190,9 @@ class ViewController: NSViewController {
 Now, you have a Flutter screen embedded in your macOS app.
 
 :::note
-Using the previous example, the default `main()`
-entrypoint function of your default Dart library
-would run when calling `run` on the
-`FlutterEngine` created in the `AppDelegate`.
+Using the previous example, the default `main()` entrypoint function
+of your default Dart library would run
+when calling `run` on the `FlutterEngine` created in the `AppDelegate`.
 :::
 
 </Tab>
@@ -201,21 +200,22 @@ would run when calling `run` on the
 
 ### _Alternatively_ - Create a FlutterViewController with an implicit FlutterEngine
 
-As an alternative to the previous example, you can let the
-`FlutterViewController` implicitly create its own `FlutterEngine` without
-pre-warming one ahead of time.
+As an alternative to the previous example,
+you can let the `FlutterViewController` implicitly create
+its own `FlutterEngine` without pre-warming one ahead of time.
 
-This is not usually recommended because creating a
-`FlutterEngine` on-demand could introduce a noticeable
-latency between when the `FlutterViewController` is
-presented and when it renders its first frame. This could, however, be
-useful if the Flutter screen is rarely shown, when there are no good
-heuristics to determine when the Dart VM should be started, and when Flutter
-doesn't need to persist state between view controllers.
+This is not usually recommended
+because creating a `FlutterEngine` on-demand could introduce a noticeable
+latency between when the `FlutterViewController` is presented
+and when it renders its first frame.
+This could, however, be useful if the Flutter screen is rarely shown,
+when there are no good heuristics
+to determine when the Dart VM should be started,
+and when Flutter doesn't need to persist state between view controllers.
 
-To let the `FlutterViewController` present without an existing
-`FlutterEngine`, omit the `FlutterEngine` construction, and create the
-`FlutterViewController` without an engine reference.
+To let the `FlutterViewController` present without an existing `FlutterEngine`,
+omit the `FlutterEngine` construction,
+and create the `FlutterViewController` without an engine reference.
 
 <Tabs key="macos-framework">
 <Tab name="SwiftUI">
@@ -259,8 +259,8 @@ The `FlutterAppDelegate` performs functions such as:
 ### Creating a FlutterAppDelegate subclass
 Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown
 in the [Start a FlutterEngine and FlutterViewController section][].
-In a SwiftUI app, you can create a subclass of the
-`FlutterAppDelegate` and annotate it with the [`Observable()`][] macro as follows:
+In a SwiftUI app, you can create a subclass of the `FlutterAppDelegate`
+and annotate it with the [`Observable()`][] macro as follows:
 
 ```swift title="MyApp.swift"
 import SwiftUI
@@ -273,7 +273,8 @@ class AppDelegate: FlutterAppDelegate {
   override func applicationDidFinishLaunching(_ aNotification: Notification) {
     // Runs the default Dart entrypoint with a default Flutter route.
     flutterEngine.run(withEntrypoint: nil)
-    // Used to connect plugins (only if you have plugins with macOS platform code).
+    // Used to connect plugins (only if you have plugins
+    // with macOS platform code).
     RegisterGeneratedPlugins(registry: self.flutterEngine)
   }
 }
@@ -292,7 +293,8 @@ struct MyApp: App {
 }
 ```
 
-Then, in your view, the `AppDelegate` is accessible through the view environment.
+Then, in your view, the `AppDelegate` is accessible
+through the view environment.
 
 ```swift title="ContentView.swift"
 import SwiftUI
