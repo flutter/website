@@ -257,6 +257,7 @@ The `FlutterAppDelegate` performs functions such as:
   to plugins such as [google_sign_in][].
 
 ### Creating a FlutterAppDelegate subclass
+
 Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown
 in the [Start a FlutterEngine and FlutterViewController section][].
 In a SwiftUI app, you can create a subclass of the `FlutterAppDelegate`
