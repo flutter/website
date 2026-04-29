@@ -156,7 +156,7 @@ when the `FlutterDependencies` observable is initialized.
 </Tab>
 <Tab name="AppKit-Swift">
 
-The following example shows a generic `ViewController` with a
+The following example shows a generic `ViewController` with an
 `NSButton` hooked to present a [`FlutterViewController`][].
 The `FlutterViewController` uses the `FlutterEngine` instance
 created in the `AppDelegate`.
