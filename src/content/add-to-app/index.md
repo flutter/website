@@ -174,7 +174,7 @@ see our API usage guides at the following links:
 
   <a class="card outlined-card" href="/platform-integration/web/embedding-flutter-web#manage-flutter-views-from-js">
     <div class="card-header text-center">
-      <span class="card-title">Web</span>
+      <span class="card-title">web</span>
     </div>
   </a>
 </div>
