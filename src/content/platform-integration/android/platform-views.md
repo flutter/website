@@ -42,20 +42,6 @@ SurfaceFlinger composes the Flutter content and the platform views.
 * `-` Certain transformations that can be applied to Flutter widgets
       won't work when applied to platform views.
 
-## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
-
-Platform Views are rendered into a texture.
-Flutter draws the platform views (using the texture).
-Flutter content is rendered directly into a Surface.
-
-* `+` good performance for Android Views
-* `+` best performance for Flutter rendering.
-* `+` all transformations work correctly.
-* `-` quick scrolling (such as a web view) will be janky
-* `-` SurfaceViews are problematic in this mode and will be moved into a virtual
-display (breaking a11y)
-* `-` Text magnifier will break unless Flutter is rendered into a TextureView.
-
 ## [Hybrid Composition++ (HCPP)](#hcpp)
 
 :::note
@@ -77,7 +63,7 @@ If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
 configured for the app.
 
-### Opting In
+### Opting in
 
 Because HCPP acts as a global upgrade for how platform views are backed,
 it's enabled through configuration rather than standard Dart initialization methods
@@ -118,6 +104,19 @@ You can enable HCPP using one of the following methods:
   when all four of these layers intersect.
 
 To create a platform view on Android, use the following steps:
+## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
+
+Platform Views are rendered into a texture.
+Flutter draws the platform views (using the texture).
+Flutter content is rendered directly into a Surface.
+
+* `+` good performance for Android Views
+* `+` best performance for Flutter rendering.
+* `+` all transformations work correctly.
+* `-` quick scrolling (such as a web view) will be janky
+* `-` SurfaceViews are problematic in this mode and will be moved into a virtual
+display (breaking a11y)
+* `-` Text magnifier will break unless Flutter is rendered into a TextureView.
 
 ## On the Dart side
 
@@ -410,8 +409,7 @@ class NativeViewFactory extends PlatformViewFactory {
 Finally, register the platform view.
 You can do this in an app or a plugin.
 
-For app registration,
-modify the app's main activity
+For app registration, modify the app's main activity
 (for example, `MainActivity.java`):
 
 ```java
@@ -481,11 +479,6 @@ android {
     }
 }
 ```
-### Surface views
-
-Handling SurfaceViews is problematic for Flutter and should be avoided when
-possible.
-
 ### Manual view invalidation
 
 Certain Android Views don't invalidate themselves when their content changes.
