@@ -191,7 +191,7 @@ Now, you have a Flutter screen embedded in your macOS app.
 
 :::note
 Using the previous example, the default `main()` entrypoint function
-of your default Dart library would run
+of your default Dart library runs
 when calling `run` on the `FlutterEngine` created in the `AppDelegate`.
 :::
 
