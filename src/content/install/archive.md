@@ -59,7 +59,8 @@ After downloading a Flutter SDK archive from this page,
 use the following steps to install:
 
 1. Extract the downloaded archive to a desired location on your system.
-2. Add the Flutter `bin` directory to your system's `PATH`.
+2. Add the Flutter `bin` directory to your system's `PATH`. For more information,
+   see [Add Flutter to PATH](/install/add-to-path).
 3. Run the following command to verify the installation:
 
 ```bash id="yfl9s6"
