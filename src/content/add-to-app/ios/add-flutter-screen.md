@@ -399,7 +399,7 @@ The `FlutterAppDelegate` performs functions such as:
 
 As of Flutter 3.41, `UIScene` support is the default for iOS apps.
 When using `FlutterAppDelegate`, you should also ensure that your app
-uses `FlutterSceneDelegate` (or a subclass) to receive scene lifecycle
+uses `FlutterSceneDelegate` or `FlutterSceneLifeCycleProvider` to receive scene lifecycle
 events, such as [`openURL`][] and [`continueUserActivity`][].
 
 ### Creating a FlutterAppDelegate subclass
