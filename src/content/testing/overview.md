@@ -96,12 +96,24 @@ such as iOS Simulator or Android Emulator.
 The app under test is typically isolated
 from the test driver code to avoid skewing the results.
 
+The Flutter SDK includes the [`integration_test`][] package.
+However, this package can't interact with native platform UI,
+such as permission dialogs, notifications, or platform views.
+For apps that need native interactions, you can use the 
+[`patrol`][] package, an open-source framework that extends
+Flutter's testing capabilities with native platform support.
+
 For more information on how to write integration tests, see the [integration
 testing page][].
+
+[`integration_test`]: {{site.repo.flutter}}/tree/main/packages/integration_test
+[`patrol`]: {{site.pub-pkg}}/patrol
 
 ### Recipes {:.no_toc}
 
 - [Integration testing concepts](/cookbook/testing/integration/introduction)
+- [Write and run a Flutter integration test](/testing/integration-tests)
+- [Write and run a Patrol integration test](https://patrol.leancode.co/documentation/write-your-first-test)
 - [Measure performance with an integration test](/cookbook/testing/integration/profiling)
 
 ## Continuous integration services
@@ -119,13 +131,15 @@ integration services, see the following:
 * [Test Flutter apps on Travis][]
 * [Test Flutter apps on Cirrus][]
 * [Codemagic CI/CD for Flutter][]
+* [Codemagic CI/CD for Patrol][] 
 * [Flutter CI/CD with Bitrise][]
 
 [code coverage]: https://en.wikipedia.org/wiki/Code_coverage
 [Codemagic CI/CD for Flutter]: https://blog.codemagic.io/getting-started-with-codemagic/
+[Codemagic CI/CD for Patrol]: https://docs.codemagic.io/integrations/patrol-integration/
 [Continuous delivery using fastlane with Flutter]: /deployment/cd#fastlane
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/en/getting-started/quick-start-guides/getting-started-with-flutter-apps
 [Test Flutter apps on Appcircle]: https://blog.appcircle.io/article/flutter-ci-cd-github-ios-android-web#
 [Test Flutter apps on Cirrus]: https://cirrus-ci.org/examples/#flutter
 [Test Flutter apps on Travis]: {{site.flutter-blog}}/test-flutter-apps-on-travis-3fd5142ecd8c
-[integration testing page]: /testing/integration-tests
+[integration testing page]: /cookbook/testing/integration/introduction

@@ -42,8 +42,10 @@ and look in the indicated directories.
   code that needs to run in a browser.
 
   These are often the most important tests for a plugin.
-  However, Dart integration tests can't interact with native UI,
-  such as native dialogs or the contents of platform views.
+  However, Dart integration tests using `integration_test` can't
+  interact with native UI, such as native dialogs or the contents
+  of platform views. For native component interaction support,
+  consider using [`patrol`][]
 
   See the  `example/integration_test` directory for an example.
 
@@ -85,12 +87,12 @@ enables tests that interact with both native and Flutter UI elements,
 so can be useful if your plugin can't be tested without
 native UI interactions.
 
-
 [Espresso]: {{site.repo.packages}}/tree/main/packages/espresso
 [GoogleTest]: {{site.github}}/google/googletest
 [integration tests]: /cookbook/testing/integration/introduction
 [JUnit]: {{site.github}}/junit-team/junit4/wiki/Getting-started
 [mocked in tests]: /testing/plugins-in-tests#mock-the-platform-channel
+[`patrol`]: {{site.pub-pkg}}/patrol
 [plugin-tests]: /packages-and-plugins/developing-packages#step-1-create-the-package-1
 [unit tests]: /cookbook/testing/unit/introduction
 [widget tests]: /cookbook/testing/widget/introduction
@@ -190,10 +192,11 @@ Some extra considerations for plugin testing:
   try to have at least one integration test of each
   platform channel call.
 
-* If some flows can't be tested using integration
-  tests—for example if they require interacting with
-  native UI or mocking device state—consider writing
-  "end to end" tests of the two halves using unit tests:
+* If some flows can't be tested using the `integration_test` package
+  (for example if they require interacting with native UI or mocking
+  device state), consider using the [`patrol`][] package for
+  native UI interactions, or writing "end to end" tests of the two halves
+  using unit tests:
 
   * Native unit tests that set up the necessary mocks,
     then call into the method channel entry point
