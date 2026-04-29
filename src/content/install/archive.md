@@ -53,6 +53,23 @@ SDK archive:
 [calendar versioning]: https://calver.org/
 [Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
 
+## Install from an archive
+
+After downloading a Flutter SDK archive from this page, follow these steps to install it:
+
+1. Extract the downloaded archive to a desired location on your system.
+2. Add the Flutter `bin` directory to your system's `PATH`.
+3. Run the following command to verify the installation:
+
+```bash id="yfl9s6"
+flutter doctor
+```
+
+The `flutter doctor` command checks your environment and displays a report of the status of your Flutter installation.
+
+For more detailed platform-specific setup instructions, refer to the main [Flutter installation guide](../install).
+
+
 ## Public release windows
 
 Predictability is key to landing complex features safely.
