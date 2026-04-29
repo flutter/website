@@ -17,4 +17,4 @@ to comment staged site links on GitHub PRs.
 When the `Dockerfile` file or `cloudbuild.yaml` template in this directory
 are changed in a PR, the cloud build template is triggered.
 Then a new version of the image is deployed as the latest version in
-Container Registry under the `flutter-dev` project on Google Cloud.
+Container Registry under the `flutter-dev-230821` project on Google Cloud.
