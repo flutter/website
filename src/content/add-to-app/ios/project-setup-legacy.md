@@ -53,7 +53,7 @@ Flutter creates module project under `/path/to/my_flutter/`.
 If you use the [CocoaPods method][], save the module
 in the same parent directory as your existing iOS app.
 
-[CocoaPods method]: /add-to-app/ios/project-setup/?tab=embed-using-cocoapods
+[CocoaPods method]: /add-to-app/ios/project-setup-legacy/?tab=embed-using-cocoapods
 
 From the Flutter module directory,
 you can run the same `flutter` commands you would in any other Flutter project,
