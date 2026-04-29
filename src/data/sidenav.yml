@@ -618,6 +618,13 @@
           permalink: /add-to-app/ios/project-setup
         - title: Add a single Flutter screen
           permalink: /add-to-app/ios/add-flutter-screen
+    - title: Add to an macOS app
+      permalink: /add-to-app/macos
+      children:
+        - title: Set up macOS project
+          permalink: /add-to-app/macos/project-setup
+        - title: Add a single Flutter screen
+          permalink: /add-to-app/macos/add-flutter-screen
     - title: Add to a web app
       permalink: /platform-integration/web/embedding-flutter-web
     - title: Debug embedded Flutter module
