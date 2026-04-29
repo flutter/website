@@ -17,19 +17,21 @@ Google Developer Documentation Style Guide.
 
 - [ ] Wrap lines semantically and keep them generally under 80 characters using
       [scripts/wrap_lines.dart](scripts/wrap_lines.dart)
-- [ ] Verify that the file was wrapped correctly, preserving headings and
-      code blocks
+- [ ] **Never touch the front matter.**
+      Do not modify the content between the first two `---` lines at the top of the file.
+- [ ] Verify that the file was wrapped correctly,
+      preserving headings and code blocks
 
 ### 2. Fix voice and tone
 
 - [ ] Use active voice.
 - [ ] Use present tense.
-- [ ] Use second person ("you"). No "we".
+- [ ] Use second person ("you"). No "we" or "I".
 
 ### 3. Check word choice
 
 - [ ] Replace forbidden terms: "e.g.", "i.e.", "etc.", "should", "would",
-      "could".
+      "could", "via", "may".
 - [ ] Use Oxford comma and American spelling.
 
 ### 4. Check style of headings

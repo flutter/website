@@ -26,9 +26,28 @@ String wrapMarkdown(String content, {int width = 80}) {
   final lines = content.split('\n');
   final output = <String>[];
   bool inCodeBlock = false;
+  bool inFrontMatter = false;
+  bool firstLine = true;
 
   for (final line in lines) {
     final stripped = line.trim();
+
+    if (firstLine) {
+      firstLine = false;
+      if (stripped == '---') {
+        inFrontMatter = true;
+        output.add(line);
+        continue;
+      }
+    }
+
+    if (inFrontMatter) {
+      output.add(line);
+      if (stripped == '---') {
+        inFrontMatter = false;
+      }
+      continue;
+    }
 
     // Handle code blocks
     if (stripped.startsWith('```') || stripped.startsWith('~~~')) {
