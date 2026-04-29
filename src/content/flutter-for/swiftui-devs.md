@@ -176,11 +176,11 @@ In **SwiftUI**, you use `App` to start your app.
 ```swift
 @main
 struct MyApp: App {
-    var body: some Scene {
-        WindowGroup {
-            HomePage()
-        }
+  var body: some Scene {
+    WindowGroup {
+      HomePage()
     }
+  }
 }
 ```
 
@@ -725,18 +725,18 @@ tap on that person.
 
 ```swift
 NavigationStack(path: $path) {
-      List {
-        ForEach(persons) { person in
-          NavigationLink(
-            person.name,
-            value: person
-          )
-        }
-      }
-      .navigationDestination(for: Person.self) { person in
-        PersonView(person: person)
-      }
+  List {
+    ForEach(persons) { person in
+      NavigationLink(
+        person.name,
+        value: person
+      )
     }
+  }
+  .navigationDestination(for: Person.self) { person in
+    PersonView(person: person)
+  }
+}
 ```
 
 If you have a small **Flutter** app without complex linking,
@@ -833,8 +833,8 @@ the previous screen.
 
 ```swift
 Button("Pop back") {
-        dismiss()
-      }
+  dismiss()
+}
 ```
 
 In **Flutter**, use the `pop()` function of the `Navigator` class:
@@ -861,13 +861,13 @@ URL to another application.
 
 // View code goes here
 
- Button("Open website") {
-      openUrl(
-        URL(
-          string: "https://google.com"
-        )!
-      )
-    }
+Button("Open website") {
+  openUrl(
+    URL(
+      string: "https://google.com"
+    )!
+  )
+}
 ```
 
 In **Flutter**, use the [`url_launcher`][] plugin.
@@ -939,12 +939,11 @@ In **SwiftUI**, you use modifier functions to style buttons.
 
 ```swift
 Button("Do something") {
-    // do something when button is tapped
-  }
-  .font(.system(size: 30, weight: .bold))
-  .background(Color.yellow)
-  .foregroundColor(Color.blue)
+  // do something when button is tapped
 }
+.font(.system(size: 30, weight: .bold))
+.background(Color.yellow)
+.foregroundColor(Color.blue)
 ```
 
 To style button widgets in **Flutter**, set the style of its child,
@@ -961,7 +960,6 @@ In the following example:
 child: CupertinoButton(
   color: CupertinoColors.systemYellow,
   onPressed: () {},
-  padding: const EdgeInsets.all(16),
   child: const Text(
     'Do something',
     style: TextStyle(
