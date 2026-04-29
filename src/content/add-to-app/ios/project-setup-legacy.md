@@ -6,7 +6,10 @@ description: Learn how to integrate a Flutter module into your existing iOS proj
 
 :::warning
 
-As of Flutter 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods as the default dependency manager for iOS and macOS Flutter apps. CocoaPods is officially in maintenance mode, and its registry will permanently [become read-only on December 2, 2026][].
+As of Flutter 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods
+as the default dependency manager for iOS and macOS Flutter apps.
+CocoaPods is officially in maintenance mode,
+and its registry will permanently [become read-only on December 2, 2026][].
 
 This guide is preserved for reference only, and will not receive ongoing maintenance. Please migrate to using Swift Package Manager using the [updated integration guide][].
 
