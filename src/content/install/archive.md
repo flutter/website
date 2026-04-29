@@ -55,7 +55,8 @@ SDK archive:
 
 ## Install from an archive
 
-After downloading a Flutter SDK archive from this page, follow these steps to install it:
+After downloading a Flutter SDK archive from this page,
+use the following steps to install:
 
 1. Extract the downloaded archive to a desired location on your system.
 2. Add the Flutter `bin` directory to your system's `PATH`.
