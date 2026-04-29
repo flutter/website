@@ -69,8 +69,9 @@ seen in the original Hybrid Composition mode.
 It is currently available as an opt-in feature.
 
 ### Requirements
-* **Android API 34 or later**:
-Required for native transaction synchronization capabilities.
+
+* **Android API 34 or later**: Required for native transaction
+  synchronization capabilities.
 * **Vulkan Rendering**: The device must be capable of rendering with Vulkan.
 
 If these requirements are not met on the end-user device,
@@ -490,7 +491,7 @@ possible.
 
 Certain Android Views don't invalidate themselves when their content changes.
 Some example views include `SurfaceView` and `SurfaceTexture`.
-When your PlatformView includes these views you are required to
+When your Platform View includes these views, you are required to
 manually invalidate the view after they have been drawn to
 (or more specifically: after the swap chain is flipped).
 Manual view invalidation is done by calling `invalidate` on the View
@@ -501,8 +502,8 @@ or one of its parent views.
 
 ### Issues
 
-[Existing PlatformView issues][]
+[Existing Platform View issues][]
 
 {% render "docs/platform-view-perf.md", site: site %}
 
-[Existing PlatformView issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22
+[Existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22
