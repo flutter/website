@@ -1,7 +1,9 @@
 ---
 title: Hosting native Android views in your Flutter app with Platform Views
 shortTitle: Android platform-views
-description: Learn how to host native Android views in your Flutter app with Platform Views.
+description: >-
+  Learn how to host native Android views in your
+  Flutter app with Platform Views.
 ---
 
 <?code-excerpt path-base="platform_integration/platform_views"?>
@@ -18,9 +20,9 @@ directly inside your Flutter app.
 This page discusses how to host your own native Android views
 within a Flutter app.
 If you'd like to embed native iOS views in your Flutter app,
-see [Hosting native iOS views][].
-If you'd like to embed native macOS views in your Flutter app,
-see [Hosting native macOS views][].
+visit [Hosting native iOS views][].
+To embed native macOS views in your Flutter app,
+visit [Hosting native macOS views][].
 :::
 
 [Hosting native iOS views]: /platform-integration/ios/platform-views
@@ -29,8 +31,7 @@ see [Hosting native macOS views][].
 Platform Views on Android have several implementations.
 They come with tradeoffs both in terms of performance and fidelity.
 
-
-## [Hybrid Composition](#hybrid-composition)
+## Hybrid composition  {: #hybrid-composition }
 
 Platform Views are rendered as they are normally.
 Flutter content is rendered into a texture.
@@ -42,10 +43,10 @@ SurfaceFlinger composes the Flutter content and the platform views.
 * `-` Certain transformations that can be applied to Flutter widgets
       won't work when applied to platform views.
 
-## [Hybrid Composition++ (HCPP)](#hcpp)
+## Hybrid Composition++ (HCPP)  {: #hcpp }
 
 :::note
-This feature is experimental and available starting from Flutter 3.44.
+This feature is experimental and is available starting from Flutter 3.44.
 :::
 
 HCPP is the latest hybrid composition strategy,
@@ -63,7 +64,7 @@ If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
 configured for the app.
 
-### Opting in
+### Opt in
 
 Because HCPP acts as a global upgrade for how platform views are backed,
 it's enabled through configuration rather than standard Dart initialization methods
@@ -95,7 +96,7 @@ You can enable HCPP using one of the following methods:
        android:value="true" />
    ```
 
-### Limitations and Known Issues
+### Limitations and known issues
 
 * **Complex Overlay Stacking**:
   Transparent platform views won't display correctly
@@ -103,8 +104,9 @@ You can enable HCPP using one of the following methods:
   Flutter canvas -> Platform View -> Overlay -> Transparent Platform View,
   when all four of these layers intersect.
 
-To create a platform view on Android, use the following steps:
-## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
+To create a platform view on Android, use the following steps.
+
+## Texture layer { #texturelayerhybridcomposition }
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (using the texture).
@@ -479,6 +481,7 @@ android {
     }
 }
 ```
+
 ### Manual view invalidation
 
 Certain Android Views don't invalidate themselves when their content changes.
