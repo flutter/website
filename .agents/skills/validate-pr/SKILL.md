@@ -5,9 +5,9 @@ description: >-
   verifying excerpts, updating formatting, and serving the dev site.
 ---
 
-Do the following to validate the site
+# Validate the site
 
-## 1. Sync code excerpts
+## Sync code excerpts
 
 Ensure that any changed code excerpts are properly run and synced to the
 Markdown files:
@@ -16,7 +16,7 @@ Markdown files:
 dart run dash_site refresh-excerpts
 ```
 
-## 2. Update formatting
+## Update formatting
 
 Update the formatting of the site examples and tools to ensure
 they follow the official Dart format:
@@ -25,7 +25,7 @@ they follow the official Dart format:
 dart run dash_site format-dart
 ```
 
-## 3. Check for broken links
+## Check for broken links
 
 Run the following command to check for any unlinked or broken
 Markdown link references in the site output:
