@@ -39,6 +39,7 @@ They're sorted by release and listed in alphabetical order:
 * [Changing RawMenuAnchor close order][]
 * [Deprecate `onReorder` callback][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
+* [Deprecate `CurvedAnimation` in favor of `CurveTween` or `ReversibleCurvedAnimation`][]
 * [Deprecate `TextInputConnection.setStyle`][]
 * [`IconData` class marked as `final`][]
 * [Large screen orientation and resizability restrictions ignored on Android 17][]
@@ -50,6 +51,7 @@ They're sorted by release and listed in alphabetical order:
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
+[Deprecate `CurvedAnimation` in favor of `CurveTween` or `ReversibleCurvedAnimation`]: /release/breaking-changes/deprecate-curved-animation
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
 [ListTile reports error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
