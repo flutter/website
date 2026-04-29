@@ -17,6 +17,7 @@ Google Developer Documentation Style Guide.
 
 - [ ] Wrap lines semantically and keep them generally under 80 characters using
       [scripts/wrap_lines.dart](scripts/wrap_lines.dart)
+- [ ] **Never touch the front matter.** Do not modify the content between the first two `---` lines at the top of the file.
 - [ ] Verify that the file was wrapped correctly, preserving headings and
       code blocks
 

@@ -5,11 +5,7 @@ description: >-
   verifying excerpts, updating formatting, and serving the dev site.
 ---
 
-# Stage the Flutter site
-
-Before committing changes or reviewing a PR locally,
-it is important to stage the site and ensure everything works correctly. 
-Follow these steps to stage the site:
+Do the following to validate the site
 
 ## 1. Sync code excerpts
 
@@ -40,10 +36,3 @@ dart run dash_site check-link-references
 
 If any broken links are found, try to patch them or alert the user.
 
-## 4. Stage the site locally
-
-Finally, serve a local development server of the site so the user can preview the changes:
-
-```bash
-dart run dash_site serve
-```
