@@ -132,7 +132,7 @@ To add Flutter to an existing app, build it normally, then follow the
 ## Get started
 
 To get started, see our project integration guide for
-Android, Web, iOS, and macOS:
+Android, web, iOS, and macOS:
 
 <div class="card-grid">
   <a class="card outlined-card" href="/add-to-app/android/project-setup">
