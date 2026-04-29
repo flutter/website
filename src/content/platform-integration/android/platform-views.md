@@ -1,7 +1,8 @@
 ---
 title: Hosting native Android views in your Flutter app with Platform Views
 shortTitle: Android platform-views
-description: Learn how to host native Android views in your Flutter app with Platform Views.
+description:
+Learn how to host native Android views in your Flutter app with Platform Views.
 ---
 
 <?code-excerpt path-base="platform_integration/platform_views"?>
@@ -10,8 +11,8 @@ Platform views allow you to embed native views in a Flutter app,
 so you can apply transforms, clips, and opacity to the native view
 from Dart.
 
-This allows you, for example, to use the native
-Google Maps from the Android SDK
+This allows you, for example,
+to use the native Google Maps from the Android SDK
 directly inside your Flutter app.
 
 :::note
@@ -26,35 +27,97 @@ see [Hosting native macOS views][].
 [Hosting native iOS views]: /platform-integration/ios/platform-views
 [Hosting native macOS views]: /platform-integration/macos/platform-views
 
-Platform Views on Android have two implementations. They come with tradeoffs
-both in terms of performance and fidelity.
-Platform views require Android API 23+.
+Platform Views on Android have several implementations.
+They come with tradeoffs both in terms of performance and fidelity.
+
 
 ## [Hybrid Composition](#hybrid-composition)
 
-Platform Views are rendered as they are normally. Flutter content is rendered into a texture.
+Platform Views are rendered as they are normally.
+Flutter content is rendered into a texture.
 SurfaceFlinger composes the Flutter content and the platform views.
 
 * `+` best performance and fidelity of Android views.
 * `-` Flutter performance suffers.
 * `-` FPS of application will be lower.
-* `-` Certain transformations that can be applied to Flutter widgets will not work when applied to platform views.
+* `-` Certain transformations that can be applied to Flutter widgets
+      won't work when applied to platform views.
 
 ## [Texture Layer](#texturelayerhybridcomposition) (or Texture Layer Hybrid Composition)
 
 Platform Views are rendered into a texture.
-Flutter draws the platform views (via the texture).
+Flutter draws the platform views (using the texture).
 Flutter content is rendered directly into a Surface.
 
 * `+` good performance for Android Views
 * `+` best performance for Flutter rendering.
 * `+` all transformations work correctly.
 * `-` quick scrolling (e.g. a web view) will be janky
-* `-` SurfaceViews are problematic in this mode and will be moved into a virtual display (breaking a11y)
+* `-` SurfaceViews are problematic in this mode and will be moved into a virtual
+display (breaking a11y)
 * `-` Text magnifier will break unless Flutter is rendered into a TextureView.
 
-To create a platform view on Android,
-use the following steps:
+## [Hybrid Composition++ (HCPP)](#hcpp)
+
+:::note
+This feature is experimental and available starting from Flutter 3.44.
+:::
+
+HCPP is the latest hybrid composition strategy,
+designed to solve compositing performance and synchronization issues
+seen in the original Hybrid Composition mode.
+It is currently available as an opt-in feature.
+
+### Requirements
+* **Android API 34 or later**:
+Required for native transaction synchronization capabilities.
+* **Vulkan Rendering**: The device must be capable of rendering with Vulkan.
+
+If these requirements are not met on the end-user device,
+Flutter will automatically fall back to the existing platform view strategy
+configured for the app.
+
+### Opting In
+
+Because HCPP acts as a global upgrade for how platform views are backed,
+it's enabled through configuration rather than standard Dart initialization methods
+(`initAndroidView`, and so on).
+
+You can enable HCPP using one of the following methods:
+
+1. **Command Line Flag (Run/Test)**:
+   Pass the `--enable-hcpp` flag to your `flutter run` or `flutter test` command:
+
+   ```bash
+   flutter run --enable-hcpp
+   ```
+
+:::note
+   This flag is intended for local execution and testing.
+   It **can't** be passed to the `flutter build` commands.
+   For release builds, use the manifest configuration
+   as shown in the next step.
+:::
+
+2. **AndroidManifest.xml**:
+   Include a `<meta-data>` tag inside the `<application>` block of your
+   `AndroidManifest.xml`:
+
+   ```xml
+   <meta-data
+       android:name="io.flutter.embedding.android.EnableHcpp"
+       android:value="true" />
+   ```
+
+### Limitations and Known Issues
+
+* **Complex Overlay Stacking**:
+  Transparent platform views won't display correctly
+  in layout stacks structured as:
+  Flutter canvas -> Platform View -> Overlay -> Transparent Platform View,
+  when all four of these layers intersect.
+
+To create a platform view on Android, use the following steps:
 
 ## On the Dart side
 
@@ -115,7 +178,7 @@ use the following instructions:
    }
    ```
 
-For more information, see the API docs for:
+For more information, visit the API docs for:
 
 * [`PlatformViewLink`][]
 * [`AndroidViewSurface`][]
@@ -158,7 +221,7 @@ use the following instructions:
    }
    ```
 
-For more information, see the API docs for:
+For more information, visit the API docs for:
 
 * [`AndroidView`][]
 
@@ -395,7 +458,7 @@ public class PlatformViewPlugin implements FlutterPlugin {
 </Tab>
 </Tabs>
 
-For more information, see the API docs for:
+For more information, visit the API docs for:
 
 * [`FlutterPlugin`][]
 * [`PlatformViewRegistry`][]
@@ -418,24 +481,28 @@ android {
     }
 }
 ```
-### Surface Views
+### Surface views
 
-Handling SurfaceViews is problematic for Flutter and should be avoided when possible.
+Handling SurfaceViews is problematic for Flutter and should be avoided when
+possible.
 
 ### Manual view invalidation
 
-Certain Android Views do not invalidate themselves when their content changes.
+Certain Android Views don't invalidate themselves when their content changes.
 Some example views include `SurfaceView` and `SurfaceTexture`.
-When your Platform View includes these views you are required to
+When your PlatformView includes these views you are required to
 manually invalidate the view after they have been drawn to
 (or more specifically: after the swap chain is flipped).
 Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
-[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`AndroidViewSurface`]:
+{{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
 ### Issues
 
-[Existing Platform View issues](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22)
+[Existing PlatformView issues][]
 
 {% render "docs/platform-view-perf.md", site: site %}
+
+[Existing PlatformView issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22
