@@ -12,7 +12,7 @@ into your existing macOS application using Swift packages.
 * Flutter 3.44 or later
 * Xcode 15.0 or later
 
-### Migrate from Legacy Integration (If Applicable) {: #migrate-legacy-integration}
+### Migrate from legacy integration (if applicable) {: #migrate-legacy-integration}
 
 If you've already integrated Flutter into your macOS app
 using embedded frameworks,
