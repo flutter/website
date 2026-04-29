@@ -52,7 +52,7 @@ Flutter content is rendered directly into a Surface.
 * `+` good performance for Android Views
 * `+` best performance for Flutter rendering.
 * `+` all transformations work correctly.
-* `-` quick scrolling (e.g. a web view) will be janky
+* `-` quick scrolling (such as a web view) will be janky
 * `-` SurfaceViews are problematic in this mode and will be moved into a virtual
 display (breaking a11y)
 * `-` Text magnifier will break unless Flutter is rendered into a TextureView.
@@ -497,8 +497,7 @@ manually invalidate the view after they have been drawn to
 Manual view invalidation is done by calling `invalidate` on the View
 or one of its parent views.
 
-[`AndroidViewSurface`]:
-{{site.api}}/flutter/widgets/AndroidViewSurface-class.html
+[`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
 ### Issues
 
@@ -506,4 +505,4 @@ or one of its parent views.
 
 {% render "docs/platform-view-perf.md", site: site %}
 
-[Existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views%22
+[Existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
