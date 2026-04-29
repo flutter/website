@@ -11,7 +11,8 @@ as the default dependency manager for iOS and macOS Flutter apps.
 CocoaPods is officially in maintenance mode,
 and its registry will permanently [become read-only on December 2, 2026][].
 
-This guide is preserved for reference only, and will not receive ongoing maintenance. Please migrate to using Swift Package Manager using the [updated integration guide][].
+This guide is preserved for reference only, and will not receive ongoing maintenance.
+Please migrate to using Swift Package Manager using the [updated integration guide][].
 
 :::
 
