@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/firebase-ghcli'
+      - 'cloud_build/firebase-ghcli'
+images:
+  - 'gcr.io/$PROJECT_ID/firebase-ghcli'
+tags:
+  - 'dash-firebase-ghcli'
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY
