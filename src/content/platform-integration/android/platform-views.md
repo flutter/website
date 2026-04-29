@@ -1,8 +1,7 @@
 ---
 title: Hosting native Android views in your Flutter app with Platform Views
 shortTitle: Android platform-views
-description:
-Learn how to host native Android views in your Flutter app with Platform Views.
+description: Learn how to host native Android views in your Flutter app with Platform Views.
 ---
 
 <?code-excerpt path-base="platform_integration/platform_views"?>
