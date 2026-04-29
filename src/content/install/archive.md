@@ -70,7 +70,8 @@ flutter doctor
 The `flutter doctor` command checks your environment
 and reports on the status of your installation.
 
-For more detailed platform-specific setup instructions, refer to the main [Flutter installation guide](../install).
+For detailed platform-specific setup instructions,
+refer to the main [Flutter installation guide](../install).
 
 
 ## Public release windows
