@@ -6,6 +6,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class CleanSiteCommand extends Command<int> {
@@ -26,7 +27,7 @@ final class CleanSiteCommand extends Command<int> {
     final process = await Process.start(
       Platform.resolvedExecutable,
       ['pub', 'global', 'run', 'jaspr_cli:jaspr', 'clean', '--kill'],
-      workingDirectory: 'site',
+      workingDirectory: Site.docs.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 

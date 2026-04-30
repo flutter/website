@@ -173,7 +173,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
 ### Check documentation and example code
 
 If you've made changes to the code in
-the `/examples`, `/site`, or `/tool` directories,
+the `/examples`, `/sites`, or `/tool` directories,
 commit your work, and then run the following command to
 verify that it is up to date and matches site standards.
 

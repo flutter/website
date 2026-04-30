@@ -2,14 +2,13 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:path/path.dart' as path;
 import 'package:universal_web/web.dart' as web;
 
 /// Whether this build of the site will be deployed to production.
 const productionBuild = bool.fromEnvironment('PRODUCTION');
 
 /// Path to the `/src` directory where site content is located.
-final siteSrcDirectoryPath = path.join('..', 'src');
+const siteSrcDirectoryPath = 'src';
 
 /// Converts the specified [text] into a standardized URL slug
 /// that can be used as the ID for headers and other anchors in HTML.

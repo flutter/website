@@ -6,6 +6,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class ServeSiteCommand extends Command<int> {
@@ -43,7 +44,7 @@ final class ServeSiteCommand extends Command<int> {
         '--dart-define=PRODUCTION=false',
         if (release) '--release',
       ],
-      workingDirectory: 'site',
+      workingDirectory: Site.docs.directory,
       runInShell: true,
       mode: ProcessStartMode.inheritStdio,
     );

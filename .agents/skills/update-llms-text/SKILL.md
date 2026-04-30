@@ -7,10 +7,10 @@ argument-hint: "[action or description of changes]"
 
 # Update llms.txt
 
-Update `src/content/llms.txt`, a curated resource list that
+Update `sites/docs/src/content/llms.txt`, a curated resource list that
 helps LLMs understand the Flutter framework.
 
-Always start by reading the existing `src/content/llms.txt` to
+Always start by reading the existing `sites/docs/src/content/llms.txt` to
 understand the current structure and content before making changes.
 
 ## Actions
