@@ -56,7 +56,7 @@ with these things in mind:
 1. Configuration
    To support full configurability in your custom provider,
    you should allow the user to create the underlying model
-   and pass that in as a parameter, as the Firebase provider does:
+   and pass that in as a parameter, as the MyLlmProvider does:
 
 ```dart
 class MyLlmProvider extends LlmProvider ... {
