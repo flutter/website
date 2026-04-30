@@ -43,9 +43,7 @@ class ArticleViewModel extends ChangeNotifier {
   Exception? error;
   bool isLoading = false;
 
-  ArticleViewModel(this.model) {
-    fetchArticle();
-  }
+  ArticleViewModel(this.model);
 
   Future<void> fetchArticle() async {
     isLoading = true;
@@ -64,10 +62,21 @@ class ArticleViewModel extends ChangeNotifier {
 }
 
 // #docregion view-model
-class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+class ArticleView extends StatefulWidget {
+  const ArticleView({super.key});
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel.fetchArticle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +93,6 @@ class ArticleView extends StatelessWidget {
             )) {
               (true, _, _) => const CircularProgressIndicator(),
               (_, _, final Exception e) => Text('Error: $e'),
-              // The summary must be non-null in this switch case.
               (_, final summary?, _) => ArticlePage(
                 summary: summary,
                 nextArticleCallback: viewModel.fetchArticle,
