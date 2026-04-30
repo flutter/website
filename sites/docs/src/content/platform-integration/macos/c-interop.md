@@ -35,7 +35,6 @@ This feature is not yet supported for web plugins.
 
 
 [android-ffi]: /platform-integration/android/c-interop
-[ios-ffi]: /platform-integration/ios/c-interop
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
