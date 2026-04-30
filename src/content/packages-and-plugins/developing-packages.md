@@ -1020,7 +1020,6 @@ PENDING
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install
 [Android]: /platform-integration/android/c-interop
-[iOS]: /platform-integration/ios/c-interop
 [macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: /tools/editors
