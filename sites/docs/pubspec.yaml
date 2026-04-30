@@ -29,7 +29,7 @@ dependencies:
 
 dev_dependencies:
   analysis_defaults:
-    path: ../packages/analysis_defaults
+    path: ../../packages/analysis_defaults
   build_runner: ^2.13.1
   build_web_compilers: ^4.4.17
   jaspr_builder: ^0.23.0
