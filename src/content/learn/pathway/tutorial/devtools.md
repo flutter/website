@@ -218,8 +218,9 @@ modify their values directly within the property editor.
 For example, to quickly test how a different `width` or `height` would look
 for your `Container` in the `Tile` widget,
 change the numerical value in the property editor.
-Then instantly see the update on your running app without
-needing to recompile or even hot reload.
+The tool writes this update directly back to your `.dart` source file on disk,
+allowing you to instantly view the visual update on your running app
+upon saving or triggering a hot reload.
 This allows for rapid iteration on UI design.
 
 ### Review
@@ -248,7 +249,8 @@ items:
     icon: tune
     details: >-
       The property editor shows all properties of a selected widget and
-      lets you modify values instantly with no recompiling or hot reload needed.
+      lets you modify values directly on disk, allowing you to instantly view 
+      updates upon saving or triggering a hot reload.
       This enables rapid iteration when fine-tuning your UI.
 </SummaryCard>
 
