@@ -142,7 +142,8 @@ class Game {
   ///
   /// UIs can call this method before [guess] to
   /// show players a message when they enter an invalid word.
-  bool isLegalGuess(String guess) => Word.fromString(guess).isLegalGuess;
+  bool isLegalGuess(String guess) =>
+      guess.length == 5 && Word.fromString(guess).isLegalGuess;
 
   /// Evaluates [guess] against the hidden word without advancing the game.
   Word matchGuessOnly(String guess) =>
@@ -150,7 +151,12 @@ class Game {
 
   /// Stores [guess] in the next empty slot of [guesses].
   void addGuessToList(Word guess) {
-    _guesses[activeIndex] = guess;
+    final guessIndex = activeIndex;
+    if (guessIndex == -1) {
+      throw StateError('No guesses remaining.');
+    }
+
+    _guesses[guessIndex] = guess;
   }
 
   /// Returns the starting hidden word for a new round.
@@ -175,6 +181,14 @@ class Word with IterableMixin<Letter> {
   /// Each character is lowercased,
   /// every [Letter] starts as [HitType.none].
   factory Word.fromString(String guess) {
+    if (guess.length != 5) {
+      throw ArgumentError.value(
+        guess,
+        'guess',
+        'Must be exactly 5 characters long.',
+      );
+    }
+
     final letters = guess
         .toLowerCase()
         .split('')
@@ -203,6 +217,9 @@ class Word with IterableMixin<Letter> {
   /// Whether every [Letter] in this word has no character.
   @override
   bool get isEmpty => every((letter) => letter.char.isEmpty);
+
+  @override
+  int get length => _letters.length;
 
   /// The [Letter] at index [i] in word.
   Letter operator [](int i) => _letters[i];
