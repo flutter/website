@@ -5,7 +5,7 @@
 /// Builds a navigation structure for the site sidenav from
 /// a loaded YAML or JSON structure.
 ///
-/// Expects data in the format used by `src/_data/sidenav.yml`.
+/// Expects data in the format used by files in `src/data/sidenav/`.
 List<NavEntry> navEntriesFromData(List<Object?> data) => [
   for (final item in data)
     switch (item) {

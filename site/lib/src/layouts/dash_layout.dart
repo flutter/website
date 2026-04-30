@@ -170,18 +170,12 @@ ga('send', 'pageview');
     final bodyClass = pageData['bodyClass'] as String?;
     final pageUrl = page.url.startsWith('/') ? page.url : '/${page.url}';
 
-    final pageSidenavRaw = pageData['sidenav'];
-    final pageSidenav = pageSidenavRaw is String
-        ? pageSidenavRaw
-        : defaultSidenav;
-    final sideNavEntries = switch (page.data['sidenav']) {
-      _ when pageSidenav == 'ai' => switch (page.data['ai']) {
-        final List<Object?> sidenavData => navEntriesFromData(sidenavData),
-        _ => null,
-      },
-      final List<Object?> sidenavData => navEntriesFromData(sidenavData),
-      _ => null,
-    };
+    final sidenavs = page.data['sidenav'] as Map<String, Object?>;
+    final pageSidenavKey = pageData['sidenav'] as String? ?? defaultSidenav;
+    final sideNavEntries = navEntriesFromData(
+      sidenavs[pageSidenavKey] as List<Object?>,
+    );
+
     final obsolete = pageData['obsolete'] == true;
 
     return .fragment(
@@ -233,11 +227,10 @@ try {
         const DashHeader(),
         div(id: 'site-below-header', [
           div(id: 'site-main-row', [
-            if (sideNavEntries != null)
-              DashSideNav(
-                navEntries: sideNavEntries,
-                currentPageUrl: pageUrl,
-              ),
+            DashSideNav(
+              navEntries: sideNavEntries,
+              currentPageUrl: pageUrl,
+            ),
             main_(
               id: 'page-content',
               classes: [
@@ -265,7 +258,7 @@ if (sidenav) {
   const activeEntries = sidenav.querySelectorAll('.nav-link.active');
   if (activeEntries.length > 0) {
     const activeEntry = activeEntries[activeEntries.length - 1];
-    
+
     sidenav.scrollTo({
       top: activeEntry.offsetTop - window.innerHeight / 3,
     });
