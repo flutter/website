@@ -59,9 +59,9 @@ with these things in mind:
    and pass that in as a parameter, as the Firebase provider does:
 
 ```dart
-class FirebaseProvider extends LlmProvider ... {
+class MyLlmProvider extends LlmProvider ... {
   @immutable
-  FirebaseProvider({
+  MyLlmProvider({
     required GenerativeModel model,
     ...
   })  : _model = model,
@@ -86,9 +86,9 @@ process.
 The Firebase provider handles this as shown:
 
 ```dart
-class FirebaseProvider extends LlmProvider with ChangeNotifier {
+class MyLlmProvider extends LlmProvider with ChangeNotifier {
   @immutable
-  FirebaseProvider({
+  MyLlmProvider({
     required GenerativeModel model,
     Iterable<ChatMessage>? history,
     ...
@@ -168,7 +168,7 @@ as shown in the following example:
 import 'package:firebase_ai/firebase_ai.dart';
 ...
 
-class FirebaseProvider extends LlmProvider with ChangeNotifier {
+class MyLlmProvider extends LlmProvider with ChangeNotifier {
   ...
   static Part _partFrom(Attachment attachment) => switch (attachment) {
         (final FileAttachment a) => DataPart(a.mimeType, a.bytes),
@@ -199,7 +199,7 @@ handles configuration and history but calls to
 end up in a call to an API from the Firebase Logic AI SDK:
 
 ```dart
-class FirebaseProvider extends LlmProvider with ChangeNotifier {
+class MyLlmProvider extends LlmProvider with ChangeNotifier {
   ...
 
   @override
