@@ -1,6 +1,6 @@
 name: flutter_websites
 description: >-
-  Pub workspace for Flutter websites and relating tooling.
+  Pub workspace for Flutter websites and related tooling.
 publish_to: none
 
 environment:
