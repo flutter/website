@@ -16,7 +16,11 @@ The sidenav presents the overall information architecture for the site
 and provides developers access to documentation by topic.
 
 The contents of the sidenav are configured in
-the `/src/_data/sidenav.yml` file in [YAML][] format.
+[YAML][] files in the `/src/data/sidenav/` directory.
+Each file in that directory defines a named sidenav,
+with the filename (without extension) serving as the key.
+Pages select which sidenav to display through the `sidenav` front matter field.
+If no sidenav is specified, the `default` sidenav is used.
 
 [YAML]: https://yaml.org/
 

@@ -12,7 +12,7 @@ import '../../utils/active_nav.dart';
 import '../common/material_icon.dart';
 
 /// The site-wide side navigation menu,
-/// with entries loaded from the `src/data/sidenav.yml` file.
+/// with entries loaded from files in the `src/data/sidenav` directory.
 final class DashSideNav extends StatelessComponent {
   const DashSideNav({
     super.key,
