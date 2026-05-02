@@ -26,14 +26,13 @@ _native interface_ and _language bindings._
 :::note
 This page describes using the `dart:ffi` library
 in Android apps. For information on iOS, see
-[Binding to native iOS code using dart:ffi][ios-ffi].
+Binding to native iOS code using `dart:ffi`.
 For information in macOS, see
 [Binding to native macOS code using dart:ffi][macos-ffi].
 This feature is not yet supported for web plugins.
 :::
 
 
-[ios-ffi]: /platform-integration/ios/c-interop
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [macos-ffi]: /platform-integration/macos/c-interop
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface

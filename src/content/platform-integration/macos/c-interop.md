@@ -29,13 +29,12 @@ in macOS desktop apps.
 For information on Android, see
 [Binding to native Android code using dart:ffi][android-ffi].
 For information on iOS, see
-[Binding to native iOS code using dart:ffi][ios-ffi].
+Binding to native iOS code using `dart:ffi`.
 This feature is not yet supported for web plugins.
 :::
 
 
 [android-ffi]: /platform-integration/android/c-interop
-[ios-ffi]: /platform-integration/ios/c-interop
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
 
