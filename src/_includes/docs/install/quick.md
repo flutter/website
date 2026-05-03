@@ -175,6 +175,11 @@ follow the instructions in [Install Flutter manually][].
     If not already open, open VS Code by searching for it with Spotlight
     or opening it manually from the directory where it's installed.
 
+    :::note Windows users
+    If the Flutter installation fails or the command palette doesn't respond,
+    try relaunching VS Code as **Administrator** and repeat this step.
+    :::
+
  1. <h3>Add the Flutter extension to VS Code</h3>
 
     To add the Dart and Flutter extensions to VS Code,
