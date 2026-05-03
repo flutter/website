@@ -49,6 +49,7 @@ They're sorted by release and listed in alphabetical order:
 
 * [Changing RawMenuAnchor close order][]
 * [Deprecate `onReorder` callback][]
+* [Deprecate `CurvedAnimation.reverseCurve` in favor of `AsymmetricCurvedAnimation`][]
 * [Deprecate `TextInputConnection.setStyle`][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [`IconData` class marked as `final`][]
@@ -59,6 +60,7 @@ They're sorted by release and listed in alphabetical order:
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
+[Deprecate `CurvedAnimation.reverseCurve` in favor of `AsymmetricCurvedAnimation`]: /release/breaking-changes/deprecate-curved-animation-reverse-curve
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
 [ListTile reports an error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
