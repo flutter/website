@@ -71,7 +71,7 @@ To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
     dependencies in your `pubspec.yaml` file:
 
     ```console
-    $ dart pub add genui firebase_ai_logic
+    $ dart pub add genui firebase_vertex_ai
     ```
 
  5. In your app's `main` method, ensure that the widget
