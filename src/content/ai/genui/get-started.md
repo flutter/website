@@ -92,7 +92,7 @@ To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
 
     ```dart
     import 'package:genui/genui.dart';
-    import 'package:firebase_ai_logic/firebase_ai_logic.dart';
+    import 'package:firebase_vertex_ai/firebase_vertex_ai.dart';
 
     final catalog = Catalog(components: [
       // ...
