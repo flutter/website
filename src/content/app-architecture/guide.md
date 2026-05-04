@@ -263,7 +263,7 @@ Because view models and repositories have a many-to-many relationship,
 multiple view models can depend on the same repository instance
 (typically managed through a service locator or dependency injection container).
 This allows distinct features to reactively observe and modify
-the same shared state through streams or futures exposed by the repository,
+the same shared state through streams and methods exposed by the repository,
 without violating the clean one-to-one boundary between a view and its view model.
 
 ### Services
