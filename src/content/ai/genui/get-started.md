@@ -91,7 +91,7 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
     }
     ```
 
- 6. Create an instance of `FirebaseVertexAI`'s generative model and wrap it
+ 6. Create an instance of the Vertex AI for Firebase generative model and wrap it
     with your `SurfaceController` and `A2uiTransportAdapter`:
 
     ```dart
