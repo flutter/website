@@ -250,7 +250,7 @@ If your application has business logic that needs data from two repositories,
 you should combine the data in the view model or in the domain layer,
 especially if your repository-to-view-model relationship is complex.
 
-#### Managing app-wide lifecycle state
+#### Managing app-wide session state
 
 Because repositories are the single source of truth for application data,
 they are also the ideal place to manage **app-wide lifecycle state**—state that
