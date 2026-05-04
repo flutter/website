@@ -207,11 +207,11 @@ class Tile extends StatelessWidget {
 }
 ```
 
-If you select a `Tile` widget in the widget inspector,
-the property editor would show you its
-`width` (60), `height` (60), and the `decoration` property.
-You could then expand the `BoxDecoration` to
-see the `border` and `color` properties.
+If you select the `Container` widget inside the `Tile` in the widget inspector,
+the property editor shows its `width` (60), `height` (60), and the `decoration`
+property.
+You could then expand the `BoxDecoration` to see the `border` and `color`
+properties.
 
 For many properties, you can even
 modify their values directly within the property editor.

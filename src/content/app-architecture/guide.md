@@ -1,7 +1,7 @@
 ---
 title: Guide to app architecture
 shortTitle: Architecture guide
-description: >
+description: >-
   The recommended way to architect a Flutter app.
 prev:
     title: Common architecture concepts
@@ -17,8 +17,8 @@ making them easier to scale, test, and maintain.
 However, they're guidelines, not steadfast rules,
 and you should adapt them to your unique requirements.
 
-This section provides a high-level overview of how Flutter applications can be
-architected. It explains the layers of an application,
+This section provides a high-level overview of how Flutter applications
+can be architected. It explains the layers of an application,
 along with the classes that exist within each layer.
 The section after this provides concrete code samples and
 walks through a Flutter application that's implemented these recommendations.
@@ -72,7 +72,7 @@ the following simplified version of that diagram will be used as an anchor.
 
 :::note
 Apps with complex logic might also have a logic layer that sits in between the
-UI layer and data layer. This logic layer is commonly called the *domain layer.*
+UI layer and data layer. This logic layer is commonly called the *domain layer*.
 The domain layer contains additional components often called *interactors* or
 *use-cases*. The domain layer is covered later in this guide.
 :::
@@ -109,7 +109,8 @@ based on the MVVM design pattern:
 
 Views and view models should have a one-to-one relationship.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png' alt="A simplified diagram of the architecture described on this page with the view and view model objects highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-UI-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the view and view model objects highlighted.">
 
 In the simplest terms,
 a view model manages the UI state and the view displays that state.
@@ -149,7 +150,8 @@ Views are the primary method of rendering UI,
 and shouldn't contain any business logic.
 They should be passed all data they need to render from the view model.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png' alt="A simplified diagram of the architecture described on this page with the view object highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-View-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the view object highlighted.">
 
 The only logic a view should contain is:
 
@@ -167,13 +169,14 @@ A view model exposes the application data necessary to render a view.
 In the architecture design described on this page,
 most of the logic in your Flutter application lives in view models.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-ViewModel-highlighted.png' alt="A simplified diagram of the architecture described on this page with the view model object highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-ViewModel-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the view model object highlighted.">
 
 A view model's main responsibilities include:
 
 * Retrieving application data from repositories and transforming it into a
   format suitable for presentation in the view.
-  For example, it might filter, sort or aggregate data.
+  For example, it might filter, sort, or aggregate data.
 * Maintaining the current state needed in the view,
   so that the view can rebuild without losing data.
   For example, it might contain boolean flags to
@@ -205,7 +208,8 @@ Two pieces of architecture make up the data layer: services and repositories.
 These pieces should have well-defined inputs and outputs
 to simplify their reusability and testability.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png' alt="A simplified diagram of the architecture described on this page with the Data layer highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Data-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the Data layer highlighted.">
 
 Using MVVM language, services and repositories make up your *model layer*.
 
@@ -228,7 +232,8 @@ Repositories handle the business logic associated with services, such as:
 * Polling services for new data
 * Refreshing data based on user actions
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png' alt="A simplified diagram of the architecture described on this page with the Repository object highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Repository-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the Repository object highlighted.">
 
 Repositories output application data as domain models.
 For example, a social media app might have a
@@ -244,6 +249,22 @@ Repositories should never be aware of each other.
 If your application has business logic that needs data from two repositories,
 you should combine the data in the view model or in the domain layer,
 especially if your repository-to-view-model relationship is complex.
+
+#### Managing app-wide session state
+
+Because repositories are the single source of truth for application data,
+they are also the ideal place to manage **app-wide lifecycle state**—state that
+needs to be shared across multiple view models but shouldn't persist beyond the
+current application session.
+
+Examples of app-wide lifecycle state include an active user session,
+in-memory data caches, or transient application settings.
+Because view models and repositories have a many-to-many relationship,
+multiple view models can depend on the same repository instance
+(typically managed through a service locator or dependency injection container).
+This allows distinct features to reactively observe and modify
+the same shared state through streams and methods exposed by the repository,
+without violating the clean one-to-one boundary between a view and its view model.
 
 ### Services
 
@@ -266,19 +287,21 @@ Services and repositories have a many-to-many relationship.
 A single Repository can use several services,
 and a service can be used by multiple repositories.
 
-<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Service-highlighted.png' alt="A simplified diagram of the architecture described on this page with the Service object highlighted.">
+<img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-Service-highlighted.png'
+  alt="A simplified diagram of the architecture described on this page with the Service object highlighted.">
 
 ## Optional: Domain layer
 
-As your app grows and adds features, you may need to abstract away logic that
-adds too much complexity to your view models.
+As your app grows and adds features, you might need to abstract away logic
+that adds too much complexity to your view models.
 These classes are often called interactors or **use-cases**.
 
 Use-cases are responsible for making interactions between
 the UI and Data layers simpler and more reusable.
 They take data from repositories and make it suitable for the UI layer.
 
-<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-domain-layer.png' alt="MVVM design pattern with an added domain layer object">
+<img src='/assets/images/docs/app-architecture/guide/mvvm-intro-with-domain-layer.png'
+  alt="MVVM design pattern with an added domain layer object">
 
 Use-cases are primarily used to encapsulate business logic that would otherwise
 live in the view model and meets one or more of the following conditions:
@@ -322,7 +345,7 @@ accessing data through use-cases most of the time,
 you can always refactor your code to utilize use-cases exclusively.
 The example app used later in this guide has use-cases for some features,
 but also has view models that interact with repositories directly.
-A complex feature may ultimately end up looking like this:
+A complex feature might ultimately end up looking like this:
 
 <img src='/assets/images/docs/app-architecture/guide/feature-architecture-simplified-with-logic-layer.png'
 alt="A simplified diagram of the architecture described on this page with a use case object.">
