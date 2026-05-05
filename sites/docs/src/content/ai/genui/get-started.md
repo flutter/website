@@ -38,11 +38,6 @@ steps for your existing Flutter app.
 The `genui` package can connect to a variety of agent providers.
 Available providers include the following:
 
-**Google Gemini AI**
-: The fastest way to get started!
-  Use this package for experimentation and local testing as
-  you're mapping out your experience.
-
 **Firebase AI Logic**
 : Useful for production apps where interactions with the LLM are
   all in your Flutter client, without requiring a server.
@@ -61,35 +56,47 @@ Available providers include the following:
 
 <Tabs key="agent-provider" wrapped="true">
 
-<Tab name="Google Gemini AI">
+<Tab name="Firebase AI Logic">
 
-The easiest way to start using GenUI is to use the
-[`google_generative_ai`][] package directly,
-which only requires a `GEMINI_API_KEY`.
+To connect to Gemini using the Vertex AI for Firebase SDK, follow these instructions:
 
-This package provides the integration with the
-Google Cloud Generative Language API.
-It allows you to use the power of Google's Gemini models to generate
-dynamic user interfaces in your Flutter applications.
+ 1. [Create a new Firebase project][] using the Firebase Console.
 
-This API is meant for quick explorations and local testing or prototyping,
-not for production or deployment.
-Flutter apps built for production should use Firebase AI.
-For mobile and web applications that need client-side access,
-consider using Firebase AI Logic instead.
+ 2. [Enable the Gemini API][] for that project.
 
- 1. Add `google_generative_ai` and `genui` to your `pubspec.yaml` file:
+ 3. Follow the first three steps in [Firebase's Flutter setup guide][]
+    to add Firebase to your app.
+
+ 4. Use `dart pub add` to add `genui` and `firebase_vertex_ai` as
+    dependencies in your `pubspec.yaml` file:
 
     ```console
-    $ dart pub add genui google_generative_ai
+    $ dart pub add genui firebase_vertex_ai
     ```
 
- 2. Create an instance of `GenerativeModel` and wrap it with your
-    `SurfaceController` and `A2uiTransportAdapter`:
+ 5. In your app's `main` method, ensure that the widget
+    bindings are initialized and then initialize Firebase:
+
+    ```dart
+    import 'package:flutter/material.dart';
+    import 'package:firebase_core/firebase_core.dart';
+    import 'firebase_options.dart';
+
+    void main() async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+      runApp(const MyApp());
+    }
+    ```
+
+ 6. Create an instance of the Vertex AI for Firebase generative model and wrap it
+    with your `SurfaceController` and `A2uiTransportAdapter`:
 
     ```dart
     import 'package:genui/genui.dart';
-    import 'package:google_generative_ai/google_generative_ai.dart';
+    import 'package:firebase_vertex_ai/firebase_vertex_ai.dart';
 
     final catalog = Catalog(components: [
       // ...
@@ -103,14 +110,12 @@ consider using Firebase AI Logic instead.
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
-    final model = GenerativeModel(
+    final model = FirebaseVertexAI.instance.generativeModel(
       model: 'gemini-2.5-flash',
-      apiKey: 'YOUR_API_KEY', // Or set GEMINI_API_KEY environment variable.
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
 
     // The Conversation wires transport -> controller internally.
-    // Implement onSend to call your LLM and pipe chunks back.
     late final A2uiTransportAdapter transportAdapter;
     transportAdapter = A2uiTransportAdapter(onSend: (message) async {
       // final stream = model.generateContentStream(...);
@@ -123,44 +128,6 @@ consider using Firebase AI Logic instead.
       controller: surfaceController,
       transport: transportAdapter,
     );
-    ```
-
- 3. To use this package, you need a Gemini API key.
-    If you don't already have one,
-    you can get it for free in [Google AI Studio][].
-
-[`google_generative_ai`]: {{site.pub-pkg}}/google_generative_ai
-[Google AI Studio]: https://ai.google.dev/aistudio
-
-</Tab>
-
-<Tab name="Firebase AI Logic">
-
-To connect to Gemini using the Firebase AI Logic SDK, follow these instructions:
-
- 1. [Create a new Firebase project][] using the Firebase Console.
-
- 2. [Enable the Gemini API][] for that project.
-
- 3. Follow the first three steps in [Firebase's Flutter setup guide][]
-    to add Firebase to your app.
-
- 4. Use `dart pub add` to add `genui` and [`firebase_ai_logic`][] as
-    dependencies in your `pubspec.yaml` file.
-
-    ```console
-    $ dart pub add genui firebase_ai_logic
-    ```
-
- 5. In your app's `main` method, ensure that the widget
-    bindings are initialized and then initialize Firebase.
-
-    ```dart
-    void main() async {
-      WidgetsFlutterBinding.ensureInitialized();
-      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-      runApp(const MyApp());
-    }
     ```
 
 [Create a new Firebase project]: https://support.google.com/appsheet/answer/10104995
@@ -539,7 +506,7 @@ to your chosen agent provider.
 Send a request to the agent using the `sendRequest` method
 in the `Conversation` class,
 or by directly streaming into your LLM Client and pumping
-the result stream to the adapter via `_transportAdapter.addChunk`.
+the result stream to the adapter by using `_transportAdapter.addChunk`.
 
 To receive and display generated UI:
 
@@ -811,7 +778,7 @@ If something is unclear or missing, please [create an issue][].
 
 The `genui` package gives the LLM a set of tools it can use to generate UI.
 To get the LLM to use these tools,
-the system instructions provided via `PromptBuilder` must
+the system instructions provided through `PromptBuilder` must
 explicitly tell it to do so.
 
 This is why the [earlier example][instruction-example] includes

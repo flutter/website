@@ -60,7 +60,15 @@ The following code updates it to use an additional layout widget: [`Align`][].
 This positions the title to the left, which would be centered by default.
 The `Text` widget contains the title itself.
 
-Modify the `Scaffold` within your `MainApp` widget's `build` method:
+Modify the `Scaffold` within your `MainApp` widget's `build` method.
+
+Passing an enum or static property directly (like `Alignment.centerLeft`)
+can also be shortened using [Dart's dot shorthands][] syntax,
+which you can read more about on both the official Dart documentation
+and the [Flutter shorthands overview][].
+
+[Dart's dot shorthands]: https://dart.dev/language/dot-shorthands
+[Flutter shorthands overview]: /ui/dot-shorthands
 
 ```dart
 class MainApp extends StatelessWidget {

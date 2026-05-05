@@ -38,16 +38,24 @@ provided `ChangeNotifier` calls `notifyListeners()`.
 ### Create the article view widget
 
 Create the `ArticleView` widget that
-manages the overall page layout and state handling.
-Start with the basic class structure and widgets:
+manages your page's layout and ViewModel lifecycle.
+Because it must explicitly initialize data fetching before rendering,
+implement it as a `StatefulWidget`.
+
+Start by creating the basic stateful structure:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4a_main.dart"?>
 ```dart
 import 'package:flutter/material.dart';
 
-class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+class ArticleView extends StatefulWidget {
+  const ArticleView({super.key});
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   // The view model will be instantiated here next.
 
   @override
@@ -62,14 +70,26 @@ class ArticleView extends StatelessWidget {
 
 ### Instantiate the article view model
 
-Instantiate the `ArticleViewModel` in a `viewModel` field in the widget:
+Next, initialize your `ArticleViewModel` mapping it to the state's lifecycle. 
+Provide the ViewModel and execute `fetchArticle()` within `initState()`:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4b_main.dart (view-model)"?>
-```dart highlightLines=4
-class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+```dart highlightLines=2-8
+class ArticleView extends StatefulWidget {
+  const ArticleView({super.key});
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel.fetchArticle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -110,11 +130,22 @@ and pass it a `ChangeNotifier` object.
 In this case, the `ArticleViewModel` extends `ChangeNotifier`.
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4c_main.dart (view-model)"?>
-```dart highlightLines=10-15
-class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+```dart highlightLines=21-26
+class ArticleView extends StatefulWidget {
+  const ArticleView({super.key});
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel.fetchArticle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -155,11 +186,22 @@ Use Dart's support for [switch expressions][]
 to handle all possible combinations in a clean, readable way:
 
 <?code-excerpt "fwe/wikipedia_reader/lib/step4_main.dart (view-model)"?>
-```dart highlightLines=14-27
-class ArticleView extends StatelessWidget {
-  ArticleView({super.key});
+```dart
+class ArticleView extends StatefulWidget {
+  const ArticleView({super.key});
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   final ArticleViewModel viewModel = ArticleViewModel(ArticleModel());
+
+  @override
+  void initState() {
+    super.initState();
+    viewModel.fetchArticle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -176,7 +218,6 @@ class ArticleView extends StatelessWidget {
             )) {
               (true, _, _) => const CircularProgressIndicator(),
               (_, _, final Exception e) => Text('Error: $e'),
-              // The summary must be non-null in this switch case.
               (_, final summary?, _) => ArticlePage(
                 summary: summary,
                 nextArticleCallback: viewModel.fetchArticle,
