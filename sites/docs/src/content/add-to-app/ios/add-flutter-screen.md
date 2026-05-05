@@ -400,7 +400,7 @@ The `FlutterAppDelegate` performs functions such as:
 As of Flutter 3.41, `UIScene` support is the default for iOS apps.
 When using `FlutterAppDelegate`, you should also ensure that your app
 uses `FlutterSceneDelegate` (or a subclass) to receive scene lifecycle
-events, such as [`openURL`][] and [`continueUserActivity`][].
+events, such as [`scene(_:openURLContexts:)`][] and [`scene(_:continue:)`][].
 
 ### Creating a FlutterAppDelegate subclass
 Creating a subclass of the `FlutterAppDelegate` in UIKit apps was shown
@@ -881,7 +881,8 @@ For a working example, refer to this [sample project][].
 [`runApp`]: {{site.api}}/flutter/widgets/runApp.html
 [`runWithEntrypoint`]: {{site.api}}/ios-embedder/interface_flutter_engine.html#a019d6b3037eff6cfd584fb2eb8e9035e
 [`SystemNavigator.pop()`]: {{site.api}}/flutter/services/SystemNavigator/pop.html
-[`continueUserActivity`]: {{site.apple-dev}}/documentation/uikit/uiapplicationdelegate/1623072-application
+[`scene(_:openURLContexts:)`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/scene(_:openurlcontexts:)
+[`scene(_:continue:)`]: {{site.apple-dev}}/documentation/uikit/uiscenedelegate/scene(_:continue:)
 [tree-shaken]: https://en.wikipedia.org/wiki/Tree_shaking
 [`WidgetsApp`]: {{site.api}}/flutter/widgets/WidgetsApp-class.html
 [`PlatformDispatcher.defaultRouteName`]: {{site.api}}/flutter/dart-ui/PlatformDispatcher/defaultRouteName.html
