@@ -7,6 +7,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class CheckAllCommand extends Command<int> {
@@ -25,6 +26,8 @@ final class CheckAllCommand extends Command<int> {
       ['refresh-excerpts', '--fail-on-update', '--dry-run'],
     ];
 
+    final siteName = selectedSite.name;
+
     var seenFailure = false;
 
     for (final task in verificationTasks) {
@@ -32,6 +35,7 @@ final class CheckAllCommand extends Command<int> {
       final process = await Process.start(Platform.resolvedExecutable, [
         'run',
         'dash_site',
+        '--$siteOptionName=$siteName',
         ...task,
       ]);
       await stdout.addStream(process.stdout);

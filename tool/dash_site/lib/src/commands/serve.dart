@@ -44,7 +44,7 @@ final class ServeSiteCommand extends Command<int> {
         '--dart-define=PRODUCTION=false',
         if (release) '--release',
       ],
-      workingDirectory: Site.docs.directory,
+      workingDirectory: selectedSite.directory,
       runInShell: true,
       mode: ProcessStartMode.inheritStdio,
     );

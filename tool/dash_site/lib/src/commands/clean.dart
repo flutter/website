@@ -27,7 +27,7 @@ final class CleanSiteCommand extends Command<int> {
     final process = await Process.start(
       Platform.resolvedExecutable,
       ['pub', 'global', 'run', 'jaspr_cli:jaspr', 'clean', '--kill'],
-      workingDirectory: Site.docs.directory,
+      workingDirectory: selectedSite.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 

@@ -35,6 +35,7 @@ final class BuildSiteCommand extends Command<int> {
     installJasprCliIfNecessary();
 
     final productionRelease = argResults.get<bool>(_releaseFlag, false);
+    final site = selectedSite;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
@@ -52,7 +53,7 @@ final class BuildSiteCommand extends Command<int> {
         r'--sitemap-exclude=\.html\.md$',
         '--dart-define=PRODUCTION=$productionRelease',
       ],
-      workingDirectory: Site.docs.directory,
+      workingDirectory: site.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 
@@ -60,7 +61,7 @@ final class BuildSiteCommand extends Command<int> {
 
     final originalOutputDirectoryPath = path.join(
       repositoryRoot,
-      Site.docs.directory,
+      site.directory,
       'build',
       'jaspr',
     );
