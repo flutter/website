@@ -38,8 +38,8 @@ The following matrix summarizes the different implementations and their trade-of
 | Mode | Benefits | Considerations | Enabler |
 | :--- | :--- | :--- | :--- |
 | **Texture layer** | • Best Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews break | Default behavior or `AndroidView` |
-| **Hybrid Composition** | • Full native fidelity<br>• Correct a11y and SurfaceViews | • Causes thread merging, which degrades Flutter FPS | `PlatformViewLink` with `AndroidViewSurface` |
-| **Hybrid Composition++ (HCPP)** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+ and Vulkan support | `<meta-data>` in `AndroidManifest.xml` |
+| **Hybrid Composition** | • Full native fidelity<br>• Correct accessibility and SurfaceViews | • Causes thread merging, which degrades Flutter FPS | `PlatformViewLink` with `AndroidViewSurface` |
+| **Hybrid Composition++ (HCPP)** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+ and Vulkan support | `<meta-data>` and `PlatformViewLink` in `AndroidManifest.xml` |
 
 {:.table .table-striped}
 
@@ -126,8 +126,9 @@ This approach provides:
 However, this approach might cause:
 
 * jankiness on quick scrolling (such as a web view)
-* broken a11y if `SurfaceView`s are moved into a virtual display
-* broken text magnification unless rendered into a `TextureView`
+* broken accessibility for `SurfaceView`s
+* broken text magnification unless Flutter is rendered
+  into a `TextureView`
 
 ## On the Dart side
 
