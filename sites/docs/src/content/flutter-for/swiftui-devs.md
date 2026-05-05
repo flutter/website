@@ -939,7 +939,7 @@ In **SwiftUI**, you use modifier functions to style buttons.
 
 ```swift
 Button("Do something") {
-  // do something when button is tapped
+  // Do something when the button is tapped.
 }
 .font(.system(size: 30, weight: .bold))
 .background(Color.yellow)
