@@ -8,7 +8,12 @@ import 'package:path/path.dart' as path;
 /// The sites maintained in this repository.
 enum Site {
   /// The Flutter documentation site.
-  docs;
+  docs(baseUrl: 'https://docs.flutter.dev');
+
+  const Site({required this.baseUrl});
+
+  /// The canonical base URL where this site is hosted in production.
+  final String baseUrl;
 
   /// The directory where this site's content and implementation is located.
   String get directory => path.join('sites', name);
