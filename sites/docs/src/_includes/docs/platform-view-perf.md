@@ -2,24 +2,26 @@
 
 Platform views in Flutter come with performance trade-offs.
 
-For example, in a typical Flutter app, the Flutter UI is composed
-on a dedicated raster thread. This allows Flutter apps to be fast,
-as the main platform thread is rarely blocked.
+In a typical Flutter app, the Flutter UI is composed on a dedicated raster thread,
+while platform code runs on the UI/platform thread.
+This separation keeps Flutter rendering fast and fluid.
 
-While a platform view is rendered with hybrid composition,
-the Flutter UI is composed from the platform thread,
-which competes with other tasks like handling OS or plugin messages.
+However, when a platform view is rendered on Android using **Hybrid
+Composition**, Flutter merges the raster and UI threads into a single thread to
+ensure correct synchronization between the native Android views and the Flutter canvas.
+Because of this thread merging, rendering complex Flutter widgets
+alongside a platform view can compete with OS messages and plugin interactions,
+potentially causing lower application FPS and frame drops.
 
-Prior to Android 10, hybrid composition copied each Flutter frame
-out of the graphic memory into main memory, and then copied it back
-to a GPU texture. As this copy happens per frame, the performance of
-the entire Flutter UI might be impacted. In Android 10 or above, the
-graphics memory is copied only once.
+**Hybrid Composition++ (HCPP)** minimizes this overhead by using native
+transaction synchronization on supported devices (Android API 34+ with Vulkan),
+allowing superior performance without the heavy costs of original hybrid
+composition.
 
-Virtual display, on the other hand,
-makes each pixel of the native view
-flow through additional intermediate graphic buffers,
-which cost graphic memory and drawing performance.
+**Virtual display** (used by the texture layer mode), on the other hand,
+avoids thread merging but forces every pixel of the native Android view to flow
+through additional intermediate graphic buffers, which increases graphic memory
+usage and can cause jank during high-frequency updates like fast scrolling.
 
 For complex cases, there are some techniques that
 can be used to mitigate these issues.
@@ -31,7 +33,7 @@ platform view is rendered,
 then consider taking a screenshot of the
 native view and rendering it as a texture.
 
-For more information, see:
+For more information, visit:
 
 * [`TextureLayer`][]
 * [`TextureRegistry`][]
