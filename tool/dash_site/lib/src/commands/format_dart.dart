@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:args/command_runner.dart';
 import 'package:path/path.dart' as path;
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class FormatDartCommand extends Command<int> {
@@ -37,7 +38,7 @@ int formatDart({bool justCheck = false}) {
   final directoriesToFormat = [
     'examples',
     'packages',
-    'site',
+    Site.docs.directory,
     path.join('tool', 'dash_site'),
   ];
 

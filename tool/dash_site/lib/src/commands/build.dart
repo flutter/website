@@ -8,6 +8,7 @@ import 'package:args/command_runner.dart';
 import 'package:io/io.dart' as io;
 import 'package:path/path.dart' as path;
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class BuildSiteCommand extends Command<int> {
@@ -51,7 +52,7 @@ final class BuildSiteCommand extends Command<int> {
         r'--sitemap-exclude=\.html\.md$',
         '--dart-define=PRODUCTION=$productionRelease',
       ],
-      workingDirectory: 'site',
+      workingDirectory: Site.docs.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 
@@ -59,7 +60,7 @@ final class BuildSiteCommand extends Command<int> {
 
     final originalOutputDirectoryPath = path.join(
       repositoryRoot,
-      'site',
+      Site.docs.directory,
       'build',
       'jaspr',
     );
