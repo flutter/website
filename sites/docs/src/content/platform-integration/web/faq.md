@@ -212,8 +212,8 @@ If your application requires offline support or advanced caching,
 you need to configure a service worker yourself using standard
 web tooling or third-party solutions such as [Workbox][workbox].
 
-For more information on building custom service workers, see
-[using-service-workers][].
+For more information on building custom service workers,
+check out [Using service workers][].
 
 If your service worker is not refreshing, configure your CDN and
 browser cache by setting the `Cache-Control` header to a small
@@ -232,7 +232,7 @@ value such as 0 or 60 seconds.
 [Preparing a web app for release]: /deployment/web
 [roadmap]: {{site.github}}/flutter/flutter/blob/master/docs/roadmap/Roadmap.md#web-platform
 [run your web apps in any supported browser]: /platform-integration/web/building#create-and-run
-[using-service-workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
+[Using service workers]: https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
 [Web content in Flutter]: /platform-integration/web/web-content-in-flutter
 [Web support for Flutter]: /platform-integration/web
 [web workers]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
