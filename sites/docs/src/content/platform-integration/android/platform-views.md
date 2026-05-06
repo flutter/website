@@ -37,9 +37,9 @@ The following matrix summarizes the different implementations and their trade-of
 
 | Mode | Benefits | Considerations | Enabler |
 | :--- | :--- | :--- | :--- |
-| **Texture layer** | • Best Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews break | Default behavior or `AndroidView` |
-| **Hybrid Composition** | • Full native fidelity<br>• Correct accessibility and SurfaceViews | • Causes thread merging, which degrades Flutter FPS | `PlatformViewLink` with `AndroidViewSurface` |
-| **Hybrid Composition++ (HCPP)** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+ and Vulkan support | `<meta-data>` and `PlatformViewLink` in `AndroidManifest.xml` |
+| **Texture layer** | • Best Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks | Default behavior or standard `AndroidView` |
+| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging, which degrades Flutter FPS | `PlatformViewLink` with `AndroidViewSurface` |
+| **HCPP** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+ and Vulkan support | • `<meta-data>` in `AndroidManifest.xml`<br>• `--enable-hcpp` local flag |
 
 {:.table .table-striped}
 
@@ -495,11 +495,10 @@ android {
 
 Certain Android Views don't invalidate themselves when their content changes.
 Some examples include `SurfaceView` and `SurfaceTexture`.
-When your Platform View includes these views, you must
-manually invalidate the view after it's been drawn to
+When your Platform View includes these views,
+you must manually invalidate it after it has been drawn
 (or, more specifically, after the swap chain is flipped).
-Manual view invalidation is done by calling `invalidate` on the view
-or one of its parent views.
+Invalidate the view by calling `invalidate` on it or on one of its parents.
 
 [`AndroidViewSurface`]: {{site.api}}/flutter/widgets/AndroidViewSurface-class.html
 
@@ -507,6 +506,58 @@ or one of its parent views.
 
 Check out the [existing Platform View issues][] on GitHub.
 
-{% render "docs/platform-view-perf.md", site: site %}
-
 [existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
+
+## Performance
+
+Platform views in Flutter come with performance trade-offs.
+
+In a typical Flutter app,
+the Flutter UI is composed on a dedicated raster thread,
+while platform code runs on the UI/platform thread.
+This separation keeps Flutter rendering fast and fluid.
+
+However, when a platform view is rendered on Android using hybrid
+composition, Flutter merges the raster and UI threads into a single thread to
+ensure correct synchronization between the native Android views and the Flutter canvas.
+Because of this thread merging, rendering complex Flutter widgets
+alongside a platform view can compete with OS messages and plugin interactions,
+potentially causing lower application FPS and frame drops.
+
+Also, prior to Android 10, hybrid composition copied each Flutter frame
+out of the graphic memory into main memory,
+and then copied it back to a GPU texture. As this copy happens per frame,
+the performance of the entire Flutter UI might be impacted.
+In Android 10 or above, the graphics memory is copied only once.
+
+Hybrid Composition++ (HCPP) minimizes this overhead by using native
+transaction synchronization on supported devices (Android API 34+ with Vulkan),
+allowing superior performance without the heavy costs of original hybrid
+composition.
+
+Virtual display, on the other hand, makes each pixel of the native view flow
+through additional intermediate graphic buffers,
+which cost graphic memory and drawing performance.
+This can cause jank during high-frequency updates like fast scrolling.
+
+For complex cases, there are some techniques that
+can be used to mitigate these issues.
+
+For example, you could use a placeholder texture
+while an animation is happening in Dart.
+In other words, if an animation is slow while a
+platform view is rendered,
+then consider taking a screenshot of the
+native view and rendering it as a texture.
+
+For more information, visit the following API pages:
+
+* [`TextureLayer`][]
+* [`TextureRegistry`][]
+* [`FlutterTextureRegistry`][]
+* [`FlutterImageView`][]
+
+[`FlutterImageView`]: {{site.api}}/javadoc/io/flutter/embedding/android/FlutterImageView.html
+[`FlutterTextureRegistry`]: {{site.api}}/ios-embedder/protocol_flutter_texture_registry-p.html
+[`TextureLayer`]: {{site.api}}/flutter/rendering/TextureLayer-class.html
+[`TextureRegistry`]: {{site.api}}/javadoc/io/flutter/view/TextureRegistry.html
