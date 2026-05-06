@@ -74,51 +74,59 @@ final String? _repositoryRoot = () {
 String? _lastModifiedDateForPath(String inputPath) =>
     _lastModifiedPerPath[inputPath]?.formatted;
 
+/// The most recent Git commit date for each content file path.
+///
+/// The paths are relative to the repository root.
+/// If Git metadata isn't available, the map is empty.
 final Map<String, DateTime> _lastModifiedPerPath = () {
   final fileLastModified = <String, DateTime>{};
   final repositoryRoot = _repositoryRoot;
   if (repositoryRoot == null) return fileLastModified;
 
+  final ProcessResult result;
   try {
-    final output =
-        Process.runSync(
-              'git',
-              [
-                'log',
-                '--name-only',
-                '--format=commit-date:%cI',
-                '--',
-                path.join('sites', 'docs', 'src', 'content'),
-              ],
-              workingDirectory: repositoryRoot,
-            ).stdout
-            as String;
+    result = Process.runSync(
+      'git',
+      [
+        'log',
+        '--name-only',
+        '--format=commit-date:%cI',
+        '--',
+        path.join('sites', 'docs', 'src', 'content'),
+      ],
+      workingDirectory: repositoryRoot,
+    );
+  } on FileSystemException catch (_) {
+    // Ignore and return an empty list.
+    // We just won't render the last updated time.
+    return fileLastModified;
+  } on ProcessException catch (_) {
+    // Ignore and return an empty list.
+    // We just won't render the last updated time.
+    return fileLastModified;
+  }
 
-    final lines = const LineSplitter().convert(output);
-    DateTime? currentCommitDate;
-    for (final line in lines) {
-      // Check if the line is a commit date line.
-      if (line.split('commit-date:') case [_, final dateString]) {
-        // Extract the date string and try to parse it.
-        currentCommitDate = DateTime.tryParse(dateString);
-      } else if (line.isNotEmpty) {
-        // If it's a non-empty line and a date is set, it's a file path.
-        if (currentCommitDate case final lastModifiedTime?) {
-          // Only set the last modified time for this path
-          // if we haven't already stored a later modified time.
-          fileLastModified.putIfAbsent(
-            line,
-            () => lastModifiedTime,
-          );
-        }
+  if (result.exitCode != 0) return fileLastModified;
+
+  final output = result.stdout as String;
+  final lines = const LineSplitter().convert(output);
+  DateTime? currentCommitDate;
+  for (final line in lines) {
+    // Check if the line is a commit date line.
+    if (line.split('commit-date:') case [_, final dateString]) {
+      // Extract the date string and try to parse it.
+      currentCommitDate = DateTime.tryParse(dateString);
+    } else if (line.isNotEmpty) {
+      // If it's a non-empty line and a date is set, it's a file path.
+      if (currentCommitDate case final lastModifiedTime?) {
+        // Only set the last modified time for this path
+        // if we haven't already stored a later modified time.
+        fileLastModified.putIfAbsent(
+          line,
+          () => lastModifiedTime,
+        );
       }
     }
-  } on FileSystemException catch (_) {
-    // Ignore and fall through to return an empty list.
-    // We just won't render the last updated time.
-  } on ProcessException catch (_) {
-    // Ignore and fall through to return an empty list.
-    // We just won't render the last updated time.
   }
 
   return fileLastModified;
