@@ -19,7 +19,7 @@ final class BuildSiteCommand extends Command<int> {
       _releaseFlag,
       defaultsTo: false,
       help:
-          'Build a release build for docs.flutter.dev. '
+          'Build a production release of the site. '
           'Optimizes site resources.',
     );
   }
@@ -35,6 +35,7 @@ final class BuildSiteCommand extends Command<int> {
     installJasprCliIfNecessary();
 
     final productionRelease = argResults.get<bool>(_releaseFlag, false);
+    final site = selectedSite;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
@@ -47,12 +48,12 @@ final class BuildSiteCommand extends Command<int> {
         // Use build_web_compiler options specified in build.yaml instead of
         // those specified by jaspr_cli.
         '--no-managed-build-options',
-        '--sitemap-domain=https://docs.flutter.dev',
+        '--sitemap-domain=${site.baseUrl}',
         // Exclude secondary Markdown output files from sitemap.
         r'--sitemap-exclude=\.html\.md$',
         '--dart-define=PRODUCTION=$productionRelease',
       ],
-      workingDirectory: Site.docs.directory,
+      workingDirectory: site.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 
@@ -60,7 +61,7 @@ final class BuildSiteCommand extends Command<int> {
 
     final originalOutputDirectoryPath = path.join(
       repositoryRoot,
-      Site.docs.directory,
+      site.directory,
       'build',
       'jaspr',
     );
