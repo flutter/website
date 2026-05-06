@@ -74,10 +74,10 @@ an iOS physical device or on the iOS Simulator.
     $ xcodebuild -downloadPlatform iOS
     ```
 
-:::note
-As of Flutter 3.44, Rosetta is no longer required when
-installing on an Apple Silicon (ARM) device.
-:::
+    :::note
+    As of Flutter 3.44, Rosetta is no longer required when
+    developing on an [Apple Silicon][] (ARM) Mac.
+    :::
 
  1. <h3>Install CocoaPods</h3>
 
