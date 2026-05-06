@@ -75,8 +75,9 @@ an iOS physical device or on the iOS Simulator.
     ```
 
     :::note
-    As of Flutter 3.44, Rosetta is no longer required when
-    developing on an [Apple Silicon][] (ARM) Mac.
+    As of Flutter 3.41.x and 3.44,
+    Rosetta is no longer required to build and run
+    iOS apps on [Apple Silicon][] Macs.
     :::
 
  1. <h3>Install CocoaPods</h3>
