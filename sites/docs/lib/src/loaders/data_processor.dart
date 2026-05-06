@@ -24,7 +24,7 @@ final class DataProcessor implements DataLoader {
       path.join(pageLoader.directory, page.path),
     );
 
-    final inputPath = path.relative(sourcePath, from: '..');
+    final inputPath = path.relative(sourcePath, from: _repositoryRoot);
     page.apply(
       data: {
         'page': {
@@ -39,6 +39,17 @@ final class DataProcessor implements DataLoader {
     );
   }
 }
+
+/// The root directory of this repository.
+final String _repositoryRoot = () {
+  final result = Process.runSync('git', const ['rev-parse', '--show-toplevel']);
+  if (result.exitCode != 0) {
+    throw StateError(
+      'Couldn\'t find repository root: ${result.stderr}',
+    );
+  }
+  return path.canonicalize((result.stdout as String).trim());
+}();
 
 /// Determines the last modified date for a given path
 /// in the form `yyyy-mm-dd`.
@@ -58,7 +69,7 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
               '--name-only',
               '--format=commit-date:%cI',
               '--',
-              '../src/content',
+              'src/content',
             ]).stdout
             as String;
 
