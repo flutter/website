@@ -12,8 +12,7 @@ description: >-
 
 [`CurvedAnimation`][]'s [`reverseCurve`][] field has been deprecated.
 
-If needed,
-switch from [`CurvedAnimation`][] to [`AsymmetricCurvedAnimation`][].
+To use distinct curves for forward and reverse directions, switch from [`CurvedAnimation`][] to [`AsymmetricCurvedAnimation`][].
 
 ## Background
 
