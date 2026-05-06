@@ -142,8 +142,7 @@ class Game {
   ///
   /// UIs can call this method before [guess] to
   /// show players a message when they enter an invalid word.
-  bool isLegalGuess(String guess) =>
-      guess.length == 5 && Word.fromString(guess).isLegalGuess;
+  bool isLegalGuess(String guess) => Word.fromString(guess).isLegalGuess;
 
   /// Evaluates [guess] against the hidden word without advancing the game.
   Word matchGuessOnly(String guess) =>
