@@ -659,8 +659,8 @@ sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 
 ## Migration guide for Flutter plugins
 
-Not all plugins use lifecycle events. However, if your plugin does you
-need to migrate to UIKit's scene-based lifecycle, as follows:
+Not all plugins use lifecycle events. However, if your plugin does,
+you need to migrate to UIKit's scene-based lifecycle, as follows:
 
 1. Update the Dart and Flutter SDK versions in your `pubspec.yaml`.
 
