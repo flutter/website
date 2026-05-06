@@ -3,7 +3,8 @@
 // found in the LICENSE file.
 
 import 'dart:convert';
-import 'dart:io' show FileSystemException, Process;
+import 'dart:io'
+    show FileSystemException, Process, ProcessException, ProcessResult;
 
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
@@ -21,18 +22,24 @@ final class DataProcessor implements DataLoader {
     if (pageLoader is! FilesystemLoader) return;
 
     final sourcePath = path.canonicalize(
-      path.join(pageLoader.directory, page.path),
+      path.absolute(path.join(pageLoader.directory, page.path)),
     );
 
-    final inputPath = path.relative(sourcePath, from: _repositoryRoot);
+    final repositoryRoot = _repositoryRoot;
+    final inputPath = repositoryRoot != null
+        ? path.relative(sourcePath, from: repositoryRoot)
+        : null;
+    final lastModifiedDate = inputPath != null
+        ? _lastModifiedDateForPath(inputPath)
+        : null;
     page.apply(
       data: {
         'page': {
-          'date': ?_lastModifiedDateForPath(inputPath),
-          'inputPath': inputPath,
+          'date': ?lastModifiedDate,
+          'inputPath': ?inputPath,
           if (page.data.page['sitemap'] == null)
             'sitemap': {
-              'lastmod': _lastModifiedDateForPath(inputPath),
+              'lastmod': lastModifiedDate,
             },
         },
       },
@@ -40,14 +47,22 @@ final class DataProcessor implements DataLoader {
   }
 }
 
-/// The root directory of this repository.
-final String _repositoryRoot = () {
-  final result = Process.runSync('git', const ['rev-parse', '--show-toplevel']);
-  if (result.exitCode != 0) {
-    throw StateError(
-      'Couldn\'t find repository root: ${result.stderr}',
-    );
+/// The root directory of this repository, if available from Git.
+final String? _repositoryRoot = () {
+  final ProcessResult result;
+  try {
+    result = Process.runSync('git', const [
+      'rev-parse',
+      '--show-toplevel',
+    ]);
+  } on ProcessException {
+    return null;
   }
+
+  if (result.exitCode != 0) {
+    return null;
+  }
+
   return path.canonicalize((result.stdout as String).trim());
 }();
 
@@ -61,16 +76,22 @@ String? _lastModifiedDateForPath(String inputPath) =>
 
 final Map<String, DateTime> _lastModifiedPerPath = () {
   final fileLastModified = <String, DateTime>{};
+  final repositoryRoot = _repositoryRoot;
+  if (repositoryRoot == null) return fileLastModified;
 
   try {
     final output =
-        Process.runSync('git', [
-              'log',
-              '--name-only',
-              '--format=commit-date:%cI',
-              '--',
-              'src/content',
-            ]).stdout
+        Process.runSync(
+              'git',
+              [
+                'log',
+                '--name-only',
+                '--format=commit-date:%cI',
+                '--',
+                path.join('sites', 'docs', 'src', 'content'),
+              ],
+              workingDirectory: repositoryRoot,
+            ).stdout
             as String;
 
     final lines = const LineSplitter().convert(output);
@@ -93,6 +114,9 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
       }
     }
   } on FileSystemException catch (_) {
+    // Ignore and fall through to return an empty list.
+    // We just won't render the last updated time.
+  } on ProcessException catch (_) {
     // Ignore and fall through to return an empty list.
     // We just won't render the last updated time.
   }
