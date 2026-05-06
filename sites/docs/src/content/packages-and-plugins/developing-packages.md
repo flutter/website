@@ -506,7 +506,7 @@ s.source = {
     # Alternatively, for pods hosted locally
     # :path => "file:///path/to/private/repo",
     :tag => s.version.to_s
-  }`
+  }
 ```
 
 [Private CocoaPods]: https://guides.cocoapods.org/making/private-cocoapods.html
