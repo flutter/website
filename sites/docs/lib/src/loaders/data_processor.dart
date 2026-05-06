@@ -26,8 +26,12 @@ final class DataProcessor implements DataLoader {
     );
 
     final repositoryRoot = _repositoryRoot;
+    // Use native separators for filesystem paths,
+    // then POSIX separators for Git paths and source URLs.
     final inputPath = repositoryRoot != null
-        ? path.relative(sourcePath, from: repositoryRoot)
+        ? path.posix.joinAll(
+            path.split(path.relative(sourcePath, from: repositoryRoot)),
+          )
         : null;
     final lastModifiedDate = inputPath != null
         ? _lastModifiedDateForPath(inputPath)
@@ -92,7 +96,7 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
         '--name-only',
         '--format=commit-date:%cI',
         '--',
-        path.join('sites', 'docs', 'src', 'content'),
+        path.posix.join('sites', 'docs', 'src', 'content'),
       ],
       workingDirectory: repositoryRoot,
     );
