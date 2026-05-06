@@ -403,7 +403,7 @@ Launch your app with `--print-dtd` and ask your AI assistant:
 > Connect to my running Flutter app using the DTD URI from the
 > terminal output, then take a screenshot and tap "Sign In".
 
-The AI agent connects via the `dtd` tool, takes a screenshot with
+The AI agent connects with the `dtd` tool, takes a screenshot with
 `flutter_driver_command`, and taps the button—all without you
 writing test code.
 
