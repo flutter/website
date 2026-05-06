@@ -101,11 +101,11 @@ final Map<String, DateTime> _lastModifiedPerPath = () {
       workingDirectory: repositoryRoot,
     );
   } on FileSystemException catch (_) {
-    // Ignore and return an empty list.
+    // Ignore and return an empty map.
     // We just won't render the last updated time.
     return fileLastModified;
   } on ProcessException catch (_) {
-    // Ignore and return an empty list.
+    // Ignore and return an empty map.
     // We just won't render the last updated time.
     return fileLastModified;
   }
