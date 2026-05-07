@@ -4,8 +4,9 @@ description: How does Impeller perform anti-aliasing?
 ---
 
 Aliasing is the visual artifacts that result from drawing geometry to a grid of
-pixels (rasterization). Impeller employs a couple of techniques to smooth out
-the mapping to raster graphics (anti-aliasing).
+pixels (rasterization). The artifacts show up as jagged or rough edges on
+shapes. Impeller employs a couple techniques to smooth out the mapping to raster
+graphics (anti-aliasing).
 
 ## Techniques
 
@@ -24,15 +25,14 @@ On desktop and mobile 4x MSAA is used for all rendering calls.
 
 ### Signed distance fields ([SDFs][])
 
-Typically, hardware accelerated computer graphics is done by defining a series
-of points and edges (a [mesh][]) and [shaders][]. SDF rendering instead renders
-the shape of things in the fragment shader program using SDFs to define the
-shape of the object being drawn. Since the shape is defined in the fragment
-shader there is an opportunity to smooth out edges at the fragment level instead
-of relying on the rasterization of a mesh.
+Typically, hardware accelerated computer graphics define a series of points and
+edges (a [mesh][]) and [shaders][]. Instead, SDF renders shapes in the fragment
+shader program as signed distance fields. Since the shape is defined in the
+fragment shader the edges can be smoothed at the fragment level instead of
+relying on the rasterization of a mesh.
 
-On desktop, rendering with SDFs is enabled. On mobile platforms SDFs is an
-option whose default value is false.
+On desktop, rendering with SDFs is enabled. On mobile platforms, SDFs are an
+option that defaults to false.
 
 This technique is prioritized on desktop because SDF rendering puts more demand
 on the GPU and Flutter supports older mobile phones. Also, the physical pixel
@@ -41,16 +41,16 @@ any imperfection will be more evident there.
 
 ### Examples
 
-| No AA | MSAA 4x | MSAA 4x + SDF |
-| --- | --- | --- |
+| No AA                                       | MSAA 4x                                        | MSAA 4x + SDF                                           |
+| ------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------- |
 | ![No AA](/assets/images/docs/perf/noaa.png) | ![MSAA 4x](/assets/images/docs/perf/msaa4.png) | ![MSAA 4x + SDF](/assets/images/docs/perf/msaa4sdf.png) |
 
 ## Working with anti-aliasing
 
 ### SDFs with the FragmentShader API
 
-Standard primitive shapes in Flutter will be drawn automatically with SDFs. If
-a Flutter developer wants to define their own custom graphics with SDFs they can
+Standard primitive shapes in Flutter are drawn automatically with SDFs. If a
+Flutter developer wants to define their own custom graphics with SDFs they can
 do so with the [FragmentShader API][]. Using the [drawPath()][] is sufficient
 for most use cases without resorting to high quality SDF rendering. Not all
 drawn paths are guaranteed to result in SDF rendering though.
