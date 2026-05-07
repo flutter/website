@@ -392,25 +392,34 @@ is now a single request.
 
 [`package:fl_chart`]: {{site.pub-pkg}}/fl_chart
 
-### Interact with a running app using Flutter Driver
+### Interact with a running app
 
-You can use the Dart and Flutter MCP server to connect to a running
-Flutter app and interact with its UI—taking screenshots, tapping
-buttons, entering text, and scrolling.
+You can use the Dart and Flutter MCP server to drive a running
+Flutter app from your AI assistant—take screenshots, tap buttons,
+enter text, scroll, and hot reload.
 
-Launch your app with `--print-dtd` and ask your AI assistant:
+Launch your app and ask your assistant to connect:
 
-> Connect to my running Flutter app using the DTD URI from the
-> terminal output, then take a screenshot and tap "Sign In".
+```bash
+flutter run -d <device-id> --dart-define=ENABLE_FLUTTER_DRIVER=true
+```
 
-The AI agent connects with the `dtd` tool, takes a screenshot with
-`flutter_driver_command`, and taps the button—all without you
-writing test code.
+> Connect to my running Flutter app, take a screenshot, then tap "Sign In".
+
+The agent uses the `dtd` tool to discover the app and `flutter_driver_command`
+to drive its UI—no integration test setup required.
 
 :::note
-Your app must call `enableFlutterDriverExtension()` before `runApp()`
-for Flutter Driver commands to work. See the
-[full setup guide][flutter-driver-guide] for details.
+**Mobile (iOS, Android) and desktop**: gate
+`enableFlutterDriverExtension()` behind a `--dart-define` flag so it stays
+out of production builds.
+**Web**: the `flutter_driver` package doesn't compile under dart2js. Pair
+the Dart MCP server with a browser-driving MCP for clicks and screenshots;
+the Dart MCP server still handles widget tree, runtime errors, and hot
+reload through DTD.
+
+See the [setup guide][flutter-driver-guide] for the snippet, web modes,
+and common pitfalls.
 :::
 
 [flutter-driver-guide]: https://github.com/dart-lang/ai/blob/main/pkgs/dart_mcp_server/README.md#connect-to-a-running-flutter-app
