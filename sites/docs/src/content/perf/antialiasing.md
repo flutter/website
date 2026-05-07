@@ -39,6 +39,12 @@ on the GPU and Flutter supports older mobile phones. Also, the physical pixel
 sizes on desktop computers are typically bigger than those of mobile phones. So
 any imperfection will be more evident there.
 
+### Examples
+
+| No AA | MSAA 4x | MSAA 4x + SDF |
+| --- | --- | --- |
+| ![No AA](/assets/images/docs/perf/noaa.png) | ![MSAA 4x](/assets/images/docs/perf/msaa4.png) | ![MSAA 4x + SDF](/assets/images/docs/perf/msaa4sdf.png) |
+
 ## Working with anti-aliasing
 
 ### SDFs with the FragmentShader API
