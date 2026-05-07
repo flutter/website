@@ -419,8 +419,11 @@ We recommend you edit the Android code using Android Studio.
 Before editing the Android platform code in Android Studio,
 first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
-or in a terminal execute
-`cd hello/example; flutter build apk --config-only`).
+or in a terminal execute:
+
+```console
+cd hello/example; flutter build apk --config-only
+```
 
 Then use the following steps:
 
@@ -465,13 +468,12 @@ You can run the example app by pressing the run (&#9654;) button.
 
 ##### Add native Darwin dependencies (Swift Package Manager)
 
-Flutter uses Swift Package Manager as the primary strategy to manage native iOS
-and macOS dependencies.
+Flutter uses Swift Package Manager as the primary strategy to manage
+native iOS and macOS dependencies.
 
 To add a dependency to your plugin using Swift Package Manager:
 
-1. Create a `Package.swift` file in your plugin's `ios/` or `macos/` directory
-   inside a subdirectory matching your plugin name.
+1. Create a `Package.swift` file in your plugin's `ios/` or `macos/` directory.
 2. Declare your native dependency within the `dependencies` array of the
    `Package.swift` descriptor file:
 
@@ -482,8 +484,10 @@ dependencies: [
 ```
 
 For complete details and instructions on structuring native folders, resource
-bundling, or handling hybrid setups, see the [Swift Package Manager for plugin
-authors](/packages-and-plugins/swift-package-manager/for-plugin-authors) guide.
+bundling, or handling hybrid setups,
+visit the [Swift Package Manager for plugin authors][] guide.
+
+[Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
 ##### Add CocoaPod dependencies (Legacy)
 
