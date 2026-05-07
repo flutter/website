@@ -52,10 +52,10 @@ further migration.
 First, find the `kotlin-android` plugin (or the `org.jetbrains.kotlin.android`
 plugin).
 It is likely located in the `plugins` block of the
-`<app-src>/android/build.gradle` or the
-`<app-src>/android/build.gradle.kts` file.
+`<app-src>/android/app/build.gradle` or the
+`<app-src>/android/app/build.gradle.kts` file.
 If you use the legacy `apply` syntax, it will be located in
-the Groovy-based `<app-src>/android/build.gradle` file, as this syntax is
+the Groovy-based `<app-src>/android/app/build.gradle` file, as this syntax is
 not supported in Kotlin DSL.
 
 The following examples demonstrate how to migrate a Flutter Android app
@@ -68,7 +68,7 @@ and an add-to-app Android host app:
 
 **Before**:
 
-```kotlin title="<app-src>/android/build.gradle(.kts)"
+```kotlin title="<app-src>/android/app/build.gradle(.kts)"
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -88,7 +88,7 @@ android {
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-```kotlin diff title="<app-src>/android/build.gradle.kts"
+```kotlin diff title="<app-src>/android/app/build.gradle.kts"
   plugins {
       id("com.android.application")
 -     id("kotlin-android")
@@ -106,7 +106,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
 Add the `kotlin.compilerOptions{}` DSL block with the following:
 
-```kotlin diff title="<app-src>/android/build.gradle.kts"
+```kotlin diff title="<app-src>/android/app/build.gradle.kts"
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -118,7 +118,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin title="<app-src>/android/build.gradle(.kts)"
+```kotlin title="<app-src>/android/app/build.gradle(.kts)"
 plugins {
     id("com.android.application")
     // ...
@@ -142,7 +142,7 @@ kotlin {
 
 **Before**:
 
-```groovy title="<app-src>/android/build.gradle"
+```groovy title="<app-src>/android/app/build.gradle"
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 // ...
@@ -160,7 +160,7 @@ android {
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-```groovy diff title="<app-src>/android/build.gradle"
+```groovy diff title="<app-src>/android/app/build.gradle"
   apply plugin: 'com.android.application'
 - apply plugin: 'kotlin-android'
 // ...
@@ -175,7 +175,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 ```
 Add the `kotlin.compilerOptions{}` DSL block with the following:
 
-```groovy diff title="<app-src>/android/build.gradle"
+```groovy diff title="<app-src>/android/app/build.gradle"
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -187,7 +187,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```groovy title="<app-src>/android/build.gradle"
+```groovy title="<app-src>/android/app/build.gradle"
 apply plugin: 'com.android.application'
 // ...
 
@@ -215,7 +215,7 @@ Therefore, only the `plugins {}` block instructions are included.
 
 **Before**:
 
-```kotlin title="<app-src>/android/build.gradle(.kts)"
+```kotlin title="<app-src>/android/app/build.gradle(.kts)"
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -235,7 +235,7 @@ android {
 
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
-```kotlin diff title="<app-src>/android/build.gradle.kts"
+```kotlin diff title="<app-src>/android/app/build.gradle.kts"
   plugins {
       alias(libs.plugins.android.application)
 -     alias(libs.plugins.kotlin.android)
@@ -252,7 +252,7 @@ Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 ```
 Add the `kotlin.compilerOptions{}` DSL block with the following:
 
-```kotlin diff title="<app-src>/android/build.gradle.kts"
+```kotlin diff title="<app-src>/android/app/build.gradle.kts"
 + kotlin {
 +     compilerOptions {
 +         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
@@ -264,7 +264,7 @@ Here is how the file will likely end up:
 
 **After**:
 
-```kotlin title="<app-src>/android/build.gradle(.kts)"
+```kotlin title="<app-src>/android/app/build.gradle(.kts)"
 plugins {
     alias(libs.plugins.android.application)
     // ...

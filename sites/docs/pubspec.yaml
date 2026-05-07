@@ -7,12 +7,12 @@ environment:
   sdk: ^3.11.0
 
 dependencies:
-  build: ^4.0.5
+  build: ^4.0.6
   collection: ^1.19.1
   crypto: ^3.0.7
   html: ^0.15.6
   http: ^1.6.0
-  jaspr: ^0.23.0
+  jaspr: ^0.23.1
   jaspr_content: ^0.5.2
   # Used as our template engine.
   liquify: ^1.5.1
@@ -30,10 +30,10 @@ dependencies:
 dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
-  build_runner: ^2.13.1
-  build_web_compilers: ^4.4.17
-  jaspr_builder: ^0.23.0
-  sass: ^1.97.3
+  build_runner: ^2.15.0
+  build_web_compilers: ^4.4.19
+  jaspr_builder: ^0.23.1
+  sass: ^1.99.0
   sass_builder: ^2.4.0
 
 jaspr:

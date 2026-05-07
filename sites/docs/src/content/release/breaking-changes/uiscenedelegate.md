@@ -1,6 +1,6 @@
 ---
 title: UISceneDelegate adoption
-description: >
+description: >-
   A guide for Flutter iOS developers to adopt Apple's UISceneDelegate protocol.
 ---
 
@@ -523,16 +523,22 @@ to Flutter.
 
 ### If your app supports multiple scenes
 
-When multiple scenes is enabled (`UIApplicationSupportsMultipleScenes`),
-Flutter can't automatically associate a
-`FlutterEngine` with a scene during the scene connection phase.
-For plugins to receive launch connection information,
-the `FlutterEngine` must be manually registered with either the
-`FlutterSceneDelegate` or `FlutterPluginSceneLifeCycleDelegate` during
-`scene:willConnectToSession:options:`.
-Otherwise, once the view, created by the
-`FlutterViewController` and `FlutterEngine`, is added to the view heirarchy,
-the `FlutterEngine` will automatically register for scene events.
+When multiple scenes are enabled (`UIApplicationSupportsMultipleScenes`),
+Flutter can't automatically connect a `FlutterEngine` to its corresponding
+`UIScene` during the initial scene connection phase.
+
+To ensure that Flutter plugins can receive the initial scene setup options
+(such as deep link URLs or shortcut items passed inside the
+`UIScene.ConnectionOptions` payload), you must manually register the
+`FlutterEngine` with either your `FlutterSceneDelegate` or your
+`FlutterPluginSceneLifeCycleDelegate` inside the
+`scene:willConnectToSession:options:` method.
+
+If you don't perform this manual registration, the `FlutterEngine` still
+automatically registers itself later once the view created by the
+`FlutterViewController` is added to the active view hierarchy.
+However, by that point, any launch connection events passed during
+`willConnectToSession:` will have already been missed by the engine and its plugins.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Swift">
@@ -653,12 +659,12 @@ sceneLifeCycleDelegate.unregisterSceneLifeCycle(with: flutterEngine)
 
 ## Migration guide for Flutter plugins
 
-Not all plugins use lifecycle events. However, if your plugin does you will
-need to migrate to UIKit's scene-based lifecycle.
+Not all plugins use lifecycle events. However, if your plugin does,
+you need to migrate to UIKit's scene-based lifecycle, as follows:
 
-1. Update the Dart and Flutter SDK versions in your pubspec.yaml
+1. Update the Dart and Flutter SDK versions in your `pubspec.yaml`.
 
-The new APIs required for this migration are available in Flutter 3.38.0.
+The APIs required for this migration are available in Flutter 3.38.0.
 
 ```yaml
 environment:
@@ -666,7 +672,7 @@ environment:
   flutter: ">=3.38.0"
 ```
 
-2. Adopt the `FlutterSceneLifeCycleDelegate` protocol
+2. Adopt the `FlutterSceneLifeCycleDelegate` protocol.
 
 <Tabs key="ios-language-switcher">
 <Tab name="Swift">
@@ -687,10 +693,10 @@ environment:
 </Tab>
 </Tabs>
 
-3. Registers the plugin as a receiver of `UISceneDelegate` calls.
+3. Register the plugin as a receiver of `UISceneDelegate` calls.
 
-To continue supporting apps that have not migrated to the `UIScene` lifecycle yet,
-you might consider remaining registered to the App Delegate and keeping the
+To continue supporting apps that haven't yet migrated to the `UIScene` lifecycle,
+consider remaining registered to the App Delegate and keeping the
 `AppDelegate` events as well.
 
 <Tabs key="ios-language-switcher">
@@ -924,7 +930,7 @@ accommodate the new initialization order.
 Migration options:
 
 - Subclass `FlutterViewController` and put the logic in
-  the subclasses' `awakeFromNib`.
+ the subclasses' `awakeFromNib`.
 - Specify a `UISceneDelegate` in the `Info.plist` or
   in the `UIApplicationDelegate` and
   put the logic in `scene:willConnectToSession:options:`.
@@ -943,7 +949,7 @@ Migration options:
 }
 ```
 
-## Hide Migration Warning
+## Hide migration warning
 
 To hide the Flutter CLI warning about migrating to UIScene,
 add the following to your pubspec.yaml:
