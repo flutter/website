@@ -398,11 +398,28 @@ You can use the Dart and Flutter MCP server to drive a running
 Flutter app from your AI assistant—take screenshots, tap buttons,
 enter text, scroll, and hot reload.
 
-Launch your app and ask your assistant to connect:
+On mobile and desktop, gate `enableFlutterDriverExtension()` behind a
+`--dart-define` flag in your app's `main()` so it stays out of
+production builds:
+
+```dart
+import 'package:flutter_driver/driver_extension.dart';
+
+void main() {
+  if (const bool.fromEnvironment('ENABLE_FLUTTER_DRIVER')) {
+    enableFlutterDriverExtension();
+  }
+  runApp(const MyApp());
+}
+```
+
+Launch your app with the flag turned on:
 
 ```bash
 flutter run -d <device-id> --dart-define=ENABLE_FLUTTER_DRIVER=true
 ```
+
+Then ask your assistant to connect:
 
 > Connect to my running Flutter app, take a screenshot, then tap "Sign In".
 
@@ -410,9 +427,6 @@ The agent uses the `dtd` tool to discover the app and `flutter_driver_command`
 to drive its UI—no integration test setup required.
 
 :::note
-**Mobile (iOS, Android) and desktop**: gate
-`enableFlutterDriverExtension()` behind a `--dart-define` flag so it stays
-out of production builds.
 **Web**: the `flutter_driver` package doesn't compile under dart2js. Pair
 the Dart MCP server with a browser-driving MCP for clicks and screenshots;
 the Dart MCP server still handles widget tree, runtime errors, and hot
