@@ -119,7 +119,7 @@ Icon(myDynamicIconData);
 
 ## Timeline
 
-Change landed in version: 3.44.0-0.1.pre<br>
+Landed in version: 3.44.0-0.1.pre<br>
 In stable release: 3.44
 
 ## References
@@ -133,6 +133,6 @@ Relevant issues:
 * [Issue 181342][]
 * [Issue 181344][]
 
-[PR 181345]: {{site.repo.flutter}}/pulls/181345
+[PR 181345]: {{site.repo.flutter}}/pull/181345
 [Issue 181342]: {{site.repo.flutter}}/issues/181342
 [Issue 181344]: {{site.repo.flutter}}/issues/181344
