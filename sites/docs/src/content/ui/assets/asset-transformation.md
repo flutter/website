@@ -73,7 +73,7 @@ the file to transform and `--output`, which is the location where the
 transformer code must write its output to.
 
 If the transformer finishes with a non-zero exit code, the application build
-fails with error message explaining that transformation of the asset failed.
+fails with an error message explaining that transformation of the asset failed.
 Anything written to the [`stderr`] stream of the process by the transformer is
 included in the error message.
 

@@ -108,7 +108,7 @@ the `Column` tries to be wider than the space the `Row`
 (its parent) can allocate to it, causing an overflow error.
 Why does the `Column` try to do that?
 To understand this layout behavior, you need to know
-how Flutter framework performs layout:
+how the Flutter framework performs layout:
 
 "_To perform layout, Flutter walks the render tree in a depth-first traversal
 and **passes down size constraints** from parent to child… Children respond by

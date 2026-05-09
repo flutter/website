@@ -380,7 +380,7 @@ The following breaking change was reverted in release 2.2:
 
 **[Network Policy on iOS and Android][]**<br>
 :  Introduced in version: 2.0.0<br>
-   Reverted in version:   2.2.0
+   Reverted in version: 2.2.0
 
 [Network Policy on iOS and Android]: /release/breaking-changes/network-policy-ios-android
 

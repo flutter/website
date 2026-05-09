@@ -197,7 +197,7 @@ of the defaults are.  When a button or button theme specifies
 computed defaults. The button's `style` parameter overrides non-null
 properties specified by the corresponding button theme. For example if
 `foregroundColor` property of a `TextButton`'s style is non-null, it
-overrides the same property for the `TextButonTheme`'s style.
+overrides the same property for the `TextButtonTheme`'s style.
 
 As explained earlier, each button class includes a static method
 called `styleFrom` which constructs a ButtonStyle from a simple set of

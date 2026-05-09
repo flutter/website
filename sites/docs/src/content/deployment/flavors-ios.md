@@ -557,10 +557,10 @@ To learn about them, see
 For more information on creating and using flavors, check
 out the following resources:
 
-* [How to Setup Flutter & Firebase with Multiple Flavors
-  using the FlutterFire CLI][flutterfireCLI]
+* [How to set up Flutter & Firebase with Multiple Flavors
+  using the FlutterFire CLI][flutterfire-cli]
 * [Build flavors in Flutter (Android and iOS) with different
   Firebase projects per flavor Flutter Ready to Go][flavors-firebase]
 
-[flutterfireCLI]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
+[flutterfire-cli]: https://codewithandrea.com/articles/flutter-firebase-multiple-flavors-flutterfire-cli/
 [flavors-firebase]: {{site.medium}}/@animeshjain/build-flavors-in-flutter-android-and-ios-with-different-firebase-projects-per-flavor-27c5c5dac10b

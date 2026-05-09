@@ -24,7 +24,7 @@ options available to help automate the delivery of your application.
 You can use fastlane with the following tooling:
 
 * [GitHub Actions][]
-  * Example: [Github Action in Flutter Project][]
+  * Example: [GitHub Action in Flutter Project][]
 * [Cirrus][]
 * [Travis][]
 * [GitLab][]
@@ -315,7 +315,7 @@ information.
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[Github Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
+[GitHub Action in Flutter Project]: {{site.github}}/nabilnalakath/flutter-githubaction
 [GitHub Actions]: {{site.github}}/features/actions
 [GitLab]: https://docs.gitlab.com/ee/ci/
 [CircleCI]: https://circleci.com

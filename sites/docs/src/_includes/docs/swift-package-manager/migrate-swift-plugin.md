@@ -269,7 +269,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::note
    `Bundle.module` only works if there are resources
    [defined in the `Package.swift` file][Bundling resources] or
-   [automatically included by Xcode][Xcode resource detection]).
+   [automatically included by Xcode][Xcode resource detection].
    Otherwise, using `Bundle.module` results in an error.
    :::
 

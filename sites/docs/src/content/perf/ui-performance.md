@@ -361,12 +361,12 @@ Flutter's tools and debugging in Flutter:
 * [Why Flutter uses Dart][video], a video on the Flutter channel
 * [DevTools][devtools]: performance tooling for Dart and Flutter apps
 * [Flutter API][] docs, particularly the [`PerformanceOverlay`][] class,
-  and the [dart:developer][] package
+  and the [`dart:developer`][] package
 
 [`PerformanceOverlay`]: {{site.api}}/flutter/widgets/PerformanceOverlay-class.html
 [`RepaintBoundary`]: {{site.api}}/flutter/widgets/RepaintBoundary-class.html
 [`saveLayer`]: {{site.api}}/flutter/dart-ui/Canvas/saveLayer.html
-[dart:developer]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
+[`dart:developer`]: {{site.api}}/flutter/dart-developer/dart-developer-library.html
 [Debugging]: /testing/debugging
 [devtools]: /tools/devtools
 [Flutter API]: {{site.api}}
