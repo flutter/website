@@ -143,7 +143,7 @@ due to the change in meaning for the second callback parameter.
 ## Timeline
 
 Landed in version: 3.41.0-1.0.pre-364<br>
-In stable release: Not yet
+In stable release: 3.44
 
 ## References
 

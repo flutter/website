@@ -58,8 +58,8 @@ connection.updateStyle(
 
 ## Timeline
 
-Landed in version: TBD<br>
-In stable release: Not yet
+Landed in version: 3.43.0-0.1.pre<br>
+In stable release: 3.44
 
 ## References
 

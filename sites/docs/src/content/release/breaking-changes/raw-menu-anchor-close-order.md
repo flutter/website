@@ -122,7 +122,7 @@ This migration is not supported by `dart fix`
 ## Timeline
 
 Landed in version: 3.44.0-0.1.pre<br>
-In stable release: TBD
+In stable release: 3.44
 
 ## References
 
