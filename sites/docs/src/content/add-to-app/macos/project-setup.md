@@ -83,7 +83,7 @@ The example directory structure resembles the following:
     flutter build swift-package --platform macos
     ```
 
-    This will generate the following directories:
+    This generates the following directories:
 
     <FileTree>
 
@@ -117,14 +117,15 @@ The example directory structure resembles the following:
 
  1. <h3>Add build settings</h3>
 
-    1. In the **Build Settings** tab, set the location of the Flutter app's Swift package output directory:
+    1. In the **Build Settings** tab,
+       set the location of the Flutter app's Swift package output directory:
        ```
        FLUTTER_SWIFT_PACKAGE_OUTPUT=$SRCROOT/../my_flutter_app/build/macos/SwiftPackages
        ```
     1. For custom configurations, set the Flutter build mode.
 
        Flutter supports three [build modes][]: Debug, Profile, and Release.
-       The build mode is determined using the `CONFIGURATION`.
+       The build mode is determined using the `CONFIGURATION` value.
        If your configuration does not match one of these,
        you can set the `FLUTTER_BUILD_MODE` build setting
        to one of these values.
@@ -143,11 +144,11 @@ The example directory structure resembles the following:
 
     1. (Optional) Allow Xcode to re-build your Flutter app.
 
-       Add the below build settings to your target
+       Add the following build settings to your target
        to allow Xcode to re-build your Flutter app as part of its build.
        This allows you to make changes to your Flutter application
        without needing to re-run `flutter build swift-package`.
-       This requires Flutter to be installed on the machine.
+       This requires a Flutter installation on the machine.
 
        ```
        FLUTTER_APPLICATION_PATH=$SRCROOT/../my_flutter_app
@@ -175,7 +176,7 @@ The example directory structure resembles the following:
 
     <DashImage image="development/add-to-app/ios/project-setup-swiftpm/pre-action.png" caption="Pre-action Run Script in scheme editor." />
 
- 1. <h3>Add New Run Script Build Phase to Target</h3>
+ 1. <h3>Add new run script build phase to your target</h3>
 
     1. Navigate to your target's **Build Phases**
        &gt; **+** &gt; **New Run Script Phase**
