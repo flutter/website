@@ -166,9 +166,9 @@ The example directory structure resembles the following:
        <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-relative-location.png" caption="Relative location of FlutterNativeIntegration shown in Xcode's File inspector." />
 
     1. Navigate to your target's **General** tab
-       and add `FlutterPluginRegistrant` under
+       and add `FlutterNativeIntegration` under
        **Frameworks, Libraries, and Embedded Content**.
-       <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutterpluginregistrant-library.png" caption="FlutterPluginRegistrant under Frameworks, Libraries, and Embedded Content." />
+       <DashImage image="development/add-to-app/ios/project-setup-swiftpm/flutternativeintegration-library.png" caption="FlutterNativeIntegration under Frameworks, Libraries, and Embedded Content." />
 
  1. <h3>Add build settings</h3>
 
