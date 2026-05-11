@@ -18,18 +18,21 @@ it uses [Jaspr Content](https://docs.jaspr.site/content).
 
 ### Directory structure
 
-- `src/content/`:
-  Markdown-based documentation pages.
-- `src/data/`:
-  YAML and JSON data files used by the site, such as
-  for the sidenav, glossary, and various indices.
-- `src/_includes/`:
-  Liquid partial files written in Markdown.
+- `sites/`:
+  Top-level directory containing each website maintained in this repository.
+  - `sites/docs/`:
+    The implementation of docs.flutter.dev,
+    written in Dart using Jaspr and Jaspr Content.
+    - `sites/docs/src/content/`:
+      Markdown-based documentation pages.
+    - `sites/docs/src/data/`:
+      YAML and JSON data files used by the site, such as
+      for the sidenav, glossary, and various indices.
+    - `sites/docs/src/_includes/`:
+      Liquid partial files written in Markdown.
 - `examples/`:
   A pub workspace containing Dart and Flutter code examples,
   referenced by code excerpts in the Markdown files.
-- `site/`:
-  The site implementation written in Dart using Jaspr and Jaspr Content.
 - `tool/dash_site/`:
   CLI tool for site development and maintenance.
 

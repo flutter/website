@@ -1,5 +1,5 @@
-// ignore_for_file: unused_import, unused_field, unused_local_variable, avoid_print, prefer_const_constructors_in_immutables, use_key_in_widget_constructors, sized_box_for_whitespace
 import 'package:flutter/material.dart';
+
 import 'game.dart';
 import 'step2_main.dart' show Tile;
 import 'step4_main.dart' show GuessInput;
@@ -23,11 +23,11 @@ class _GamePageState extends State<GamePage> {
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          for (var guess in _game.guesses)
+          for (final guess in _game.guesses)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                for (var letter in guess)
+                for (final letter in guess)
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 2.5,
@@ -39,7 +39,7 @@ class _GamePageState extends State<GamePage> {
             ),
           GuessInput(
             // #docregion GuessInputInstance
-            onSubmitGuess: (String guess) {
+            onSubmitGuess: (guess) {
               // #docregion setState
               setState(() {
                 // NEW

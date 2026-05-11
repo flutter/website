@@ -93,6 +93,9 @@ workspace:
   - cookbook/testing/widget/tap_drag
   - data-and-backend/json
   - deployment/obfuscate
+  - fwe/birdle
+  - fwe/rolodex
+  - fwe/wikipedia_reader
   - get-started/flutter-for/android_devs
   - get-started/flutter-for/declarative
   - get-started/flutter-for/ios_devs
