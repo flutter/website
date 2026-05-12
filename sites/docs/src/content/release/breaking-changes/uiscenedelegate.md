@@ -305,8 +305,8 @@ For Objective-C projects, create a `SceneDelegate.h` and `SceneDelegate.m`:
 
 ## Migration guide for adding Flutter to existing app (Add to App)
 
-Similar to the `FlutterAppDelegate`, the `FlutterSceneDelgate` is recommended
-but not required. The `FlutterSceneDelgate` forwards scene callbacks, such as
+Similar to the `FlutterAppDelegate`, the `FlutterSceneDelegate` is recommended
+but not required. The `FlutterSceneDelegate` forwards scene callbacks, such as
 [`openURL`][] to plugins such as [local_auth][].
 
 ### Create/Update a SceneDelegate

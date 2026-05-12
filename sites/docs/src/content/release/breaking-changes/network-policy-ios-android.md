@@ -71,7 +71,7 @@ Then, add the network configuration to your $project_path/android/app/src/debug/
 ```
 
 It is also possible to set the policy per domain.  See the Android
-docuentation for more information.
+documentation for more information.
 
 For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
 

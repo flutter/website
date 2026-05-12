@@ -280,7 +280,7 @@ names for two product flavors called `staging` and
 
     * To see more information for `Flavors p...` or
       `Flavors s...`, long-press the icon for one of them
-      and and select `App info`.
+      and select `App info`.
 
 [Launch a flavor]: #launching-your-app-flavors
 

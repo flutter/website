@@ -36,17 +36,22 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
+* [Large screen orientation and resizability restrictions ignored on Android 17][]
+
+[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+
+<a id="released-in-flutter-344" aria-hidden="true"></a>
+### Released in Flutter 3.44
+
 * [Changing RawMenuAnchor close order][]
 * [Deprecate `onReorder` callback][]
-* [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [Deprecate `TextInputConnection.setStyle`][]
+* [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [`IconData` class marked as `final`][]
-* [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [ListTile reports error in debug when wrapped in a colored widget][]
 * [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
 
-[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [Changing RawMenuAnchor close order]: /release/breaking-changes/raw-menu-anchor-close-order
 [Deprecate `onReorder` callback]: /release/breaking-changes/deprecate-onreorder-callback
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
@@ -380,7 +385,7 @@ The following breaking change was reverted in release 2.2:
 
 **[Network Policy on iOS and Android][]**<br>
 :  Introduced in version: 2.0.0<br>
-   Reverted in version:   2.2.0
+   Reverted in version: 2.2.0
 
 [Network Policy on iOS and Android]: /release/breaking-changes/network-policy-ios-android
 

@@ -84,7 +84,7 @@ and full restart?**
 * **Hot reload** loads code changes into the VM or the browser,
   and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
-  (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+  (`⌘\` in IntelliJ and Android Studio, `⌃F5` in VSCode)
 * **Hot restart** loads code changes into the VM or the browser,
   and restarts the Flutter app, losing the app state.
   On the web, this can restart the app without a full page refresh.

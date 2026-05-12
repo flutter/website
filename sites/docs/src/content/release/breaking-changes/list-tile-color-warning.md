@@ -89,8 +89,8 @@ Container(
 
 ## Timeline
 
-Landed in version: TBD
-In stable release: Not yet
+Landed in version: 3.43.0-0.1.pre<br>
+In stable release: 3.44
 
 ## References
 

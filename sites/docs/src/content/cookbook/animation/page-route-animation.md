@@ -93,7 +93,7 @@ class Page2 extends StatelessWidget {
 To make the new page animate in from the bottom, it should animate from
 `Offset(0,1)` to `Offset(0, 0)` (usually defined using the `Offset.zero`
 constructor). In this case, the Offset is a 2D vector for the
-['FractionalTranslation'][] widget.
+[`FractionalTranslation`][] widget.
 Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
@@ -117,7 +117,7 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 Flutter has a set of widgets extending [`AnimatedWidget`][]
 that rebuild themselves when the value of the animation changes. For instance,
 SlideTransition takes an `Animation<Offset>` and translates its child (using a
-FractionalTranslation widget) whenever the value of the animation changes.
+`FractionalTranslation` widget) whenever the value of the animation changes.
 
 AnimatedWidget Return a [`SlideTransition`][]
 with the `Animation<Offset>` and the child widget:
@@ -274,7 +274,7 @@ class Page2 extends StatelessWidget {
 [`Curve`]: {{site.api}}/flutter/animation/Curve-class.html
 [`Curves`]: {{site.api}}/flutter/animation/Curves-class.html
 [`CurveTween`]: {{site.api}}/flutter/animation/CurveTween-class.html
-['FractionalTranslation']: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
+[`FractionalTranslation`]: {{site.api}}/flutter/widgets/FractionalTranslation-class.html
 [`PageRouteBuilder`]: {{site.api}}/flutter/widgets/PageRouteBuilder-class.html
 [`Route`]: {{site.api}}/flutter/widgets/Route-class.html
 [`SlideTransition`]: {{site.api}}/flutter/widgets/SlideTransition-class.html

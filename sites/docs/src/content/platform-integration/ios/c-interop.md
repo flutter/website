@@ -27,7 +27,7 @@ _native interface_ and _language bindings._
 This page describes using the `dart:ffi` library
 in iOS apps. For information on Android, see
 [Binding to native Android code using dart:ffi][android-ffi].
-For information in macOS, see
+For information on macOS, see
 [Binding to native macOS code using dart:ffi][macos-ffi].
 This feature is not yet supported for web plugins.
 :::
@@ -108,7 +108,7 @@ On iOS, the `native_add/ios/native_add.podspec` links the code.
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
+The bindings are generated with [`package:ffigen`]({{site.pub-pkg}}/ffigen).
 
 ## Other use cases
 

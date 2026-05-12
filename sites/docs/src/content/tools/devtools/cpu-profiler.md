@@ -52,10 +52,10 @@ pass the `--profile-startup` flag to `dart run` or `flutter run`.
 
 This table provides a bottom-up representation
 of a CPU profile. This means that each top-level method,
-or root, in the bottom up table is actually the
+or root, in the bottom-up table is actually the
 top method in the call stack for one or more CPU samples.
-In other words, each top-level method in a bottom up
-table is a leaf node from the top down table
+In other words, each top-level method in a bottom-up
+table is a leaf node from the top-down table
 (the call tree).
 In this table, a method can be expanded to show its _callers_.
 
@@ -64,7 +64,7 @@ in a CPU profile. When a root node in this table
 has a high _self_ time, that means that many CPU samples
 in this profile ended with that method on top of the call stack.
 
-![Screenshot of the Bottom up view](/assets/images/docs/tools/devtools/bottom-up-view.png)
+![Screenshot of the Bottom-up view](/assets/images/docs/tools/devtools/bottom-up-view.png)
 See the [Guidelines](#guidelines) section below to learn how to
 enable the blue and green vertical lines seen in this image.
 
@@ -87,7 +87,7 @@ this is the self time of the top-level method (the callee)
 when called through the child method (the caller).
 
 **Table element** (self time)
-![Screenshot of a bottom up table](/assets/images/docs/tools/devtools/table-element.png)
+![Screenshot of a bottom-up table](/assets/images/docs/tools/devtools/table-element.png)
 
 ### Call tree
 
