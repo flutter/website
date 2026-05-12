@@ -1,0 +1,33 @@
+# This file contains the source data used to populate the
+# "Resources for Flutter consultants" carousel at the
+# bottom of the https://flutter.dev/consultants page.
+#
+# Don't directly open PRs with additions to this list.
+#
+# If you have a resource you'd like to be listed,
+# please open an issue with more information.
+
+- title: "How IBM Created a Flutter Center of Excellence"
+  summary: "Learn why and how IBM created a center of excellence with hundreds of Flutter developers."
+  card: "images/third_party/resources/Bizaia.png"
+  external_url: "https://blog.flutter.dev/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441"
+  background_color: "#027DFD"
+  button_text: "Read this Story"
+- title: "Training Clients on Flutter"
+  summary: "Learn how VGV created a successful training program to upskill consultants and customers."
+  card: "images/third_party/resources/Timeline.png"
+  external_url: "https://verygood.ventures/blog/training-clients-in-flutter"
+  background_color: "#027DFD"
+  button_text: "Read this Story"
+- title: "How Consultants Build Faster with FlutterFlow"
+  summary: "Explore the benefits of FlutterFlow, a low-code editor for Flutter apps."
+  card: "images/third_party/resources/Developer_widget.png"
+  external_url: "https://medium.com/flutterflow-enterprise/how-flutterflow-helps-consultants-solve-clients-last-mile-of-digital-transformation-b6d8e7d3b49e"
+  background_color: "#027DFD"
+  button_text: "Read this Story"
+- title: "Build Wonders with Flutter"
+  summary: "See why Flutter is such a valuable tool for award winning design agencies like gSkinner"
+  card: "images/third_party/resources/App.png"
+  external_url: "https://www.youtube.com/watch?v=6IKhXXFFOuw"
+  background_color: "#027DFD"
+  button_text: "Watch the video"

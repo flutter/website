@@ -1,0 +1,32 @@
+steps:
+  - name: gcr.io/flutter-dev-230821/firebase-ghcli
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |-
+        set -e
+        # Set path for pub cache to access jaspr
+        export PATH="$$PATH":"$$HOME/.pub-cache/bin"
+
+        dart pub get
+        dart pub global activate jaspr_cli
+        jaspr build
+
+        .cloud_build/scripts/stage_site_and_comment_on_github.sh
+    secretEnv: ['GH_PAT_TOKEN']
+    env:
+      - 'PR_NUMBER=$_PR_NUMBER'
+      - 'HEAD_BRANCH=$_HEAD_BRANCH'
+      - 'PROJECT_ID=$PROJECT_ID'
+      - 'COMMIT_SHA=$COMMIT_SHA'
+      - 'REPO_FULL_NAME=$REPO_FULL_NAME'
+
+availableSecrets:
+  secretManager:
+    # use flutter-docs-prod so we can reuse the same bot as github.com/flutter/website
+    - versionName: projects/flutter-docs-prod/secrets/flutter-website-bot-comment-pat/versions/latest
+      env: 'GH_PAT_TOKEN'
+
+timeout: 1200s
+options:
+  logging: CLOUD_LOGGING_ONLY

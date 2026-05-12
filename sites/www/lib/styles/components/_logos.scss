@@ -1,0 +1,37 @@
+.logos {
+  display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: var(--gutter-sm);
+
+    .logos-col {
+      &.centerpiece {
+        > div {
+          height: 356px;
+          width: 356px;
+        }
+      }
+    }
+
+    .logos-col > div {
+      width: 163px;
+      height: 163px;
+      background-color: var(--grey-1);
+      box-shadow: var(--ui-drop-shadow-sm);
+      border-radius: var(--ui-border-radius-sm);
+      padding: 37px;
+      display: grid;
+      place-items: center;
+  
+      &::before {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        grid-area: 1 / 1 / 2 / 2;
+      }
+  
+      img {
+        width: 100%;
+        grid-area: 1 / 1 / 2 / 2;
+      }
+    }
+  }
