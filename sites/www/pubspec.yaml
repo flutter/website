@@ -2,10 +2,12 @@ name: flutter_website
 description: >-
   The website for the Flutter open-source framework,
   built with Dart and Jaspr and hosted at flutter.dev.
+homepage: https://flutter.dev
 
 # This package is not intended for publishing or consumption. DO NOT publish.
 publish_to: none
 
+resolution: workspace
 environment:
   sdk: ^3.11.0
 
@@ -26,10 +28,7 @@ dependencies:
 
 dev_dependencies:
   analysis_defaults:
-    git:
-      url: https://github.com/dart-lang/site-shared
-      path: pkgs/analysis_defaults
-      ref: 3408a746891e80b12882ea1aca647f9a410ba851
+    path: ../../packages/analysis_defaults
   build_runner: ^2.13.1
   build_web_compilers: ^4.4.17
   code_builder: ^4.11.1

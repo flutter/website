@@ -10,4 +10,5 @@ workspace:
   - packages/analysis_defaults
   - packages/excerpter
   - sites/docs
+  - sites/www
   - tool/dash_site

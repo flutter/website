@@ -6,14 +6,6 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
 
-plugins:
-  jaspr_lints:
-    version: 0.7.1
-    diagnostics:
-      sort_children_last: true
-      prefer_html_components: true
-      styles_ordering: true
-
 linter:
   rules:
     # Disabled for now since we have a lot of strings in code currently.
