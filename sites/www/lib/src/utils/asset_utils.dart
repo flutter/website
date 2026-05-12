@@ -38,8 +38,10 @@ class ResizingAssetTransformer implements AssetTransformer {
       return asset;
     }
 
-    // WebP is not supported by the image package.
-    if (p.extension(asset.path) == '.webp') {
+    final inputExt = p.extension(asset.path).toLowerCase();
+
+    // WebP and AVIF are not supported by the image package.
+    if (inputExt case '.webp' || '.avif') {
       return asset;
     }
 
@@ -49,9 +51,14 @@ class ResizingAssetTransformer implements AssetTransformer {
     }
 
     try {
-      final image = decoder.decode(asset.readAsBytes());
+      var image = decoder.decode(asset.readAsBytes());
       if (image == null) {
-        throw StateError('[ERROR] Failed to decode image: ${asset.path}');
+        return asset;
+      }
+
+      if (image.hasPalette) {
+        // Expand indexed-color images before resizing and re-encoding.
+        image = image.convert(format: img.Format.uint8, numChannels: 4);
       }
 
       if (image.width <= width) {
@@ -64,10 +71,9 @@ class ResizingAssetTransformer implements AssetTransformer {
           interpolation: img.Interpolation.average,
         );
 
-        final inputExt = p.extension(asset.path);
         final (encoder, outputExt) = switch (inputExt) {
           '.png' => (img.PngEncoder(level: 6), inputExt),
-          '.jpg' || 'jpeg' => (img.JpegEncoder(quality: 100), inputExt),
+          '.jpg' || '.jpeg' => (img.JpegEncoder(quality: 100), inputExt),
           '.gif' => (img.GifEncoder(samplingFactor: 30), inputExt),
           _ => (img.PngEncoder(level: 6), '.png'),
         };
