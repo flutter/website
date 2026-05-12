@@ -33,7 +33,6 @@
       { "source": "/multi-platform/:rest*", "destination": "/development/:rest*", "type": 301 },
       { "source": "/freecourse", "destination": "https://docs.flutter.dev/apprentice-giveaway", "type": 301 },
       { "source": "/apprentice-giveaway", "destination": "https://docs.flutter.dev/apprentice-giveaway", "type": 301 },
-      { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
       { "source": "/security", "destination": "https://docs.flutter.dev/security", "type": 301 },
       { "source": "/subscribe", "destination": "/", "type": 301 },
       { "source": "/subscribe/preferences", "destination": "https://docs.flutter.dev/subscribe/preferences", "type": 301 },

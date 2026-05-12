@@ -32,7 +32,10 @@ final class BuildSiteCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    installJasprCliIfNecessary();
+    final jasprInstallResult = installJasprCliIfNecessary();
+    if (jasprInstallResult != 0) {
+      return jasprInstallResult;
+    }
 
     final productionRelease = argResults.get<bool>(_releaseFlag, false);
     final site = selectedSite;
@@ -61,9 +64,7 @@ final class BuildSiteCommand extends Command<int> {
 
     final originalOutputDirectoryPath = path.join(
       repositoryRoot,
-      site.directory,
-      'build',
-      'jaspr',
+      site.jasprBuildOutputDirectory,
     );
     if (!Directory(originalOutputDirectoryPath).existsSync()) {
       stderr.writeln(
@@ -73,17 +74,29 @@ final class BuildSiteCommand extends Command<int> {
       return 1;
     }
 
-    // Copy the entire site output to the _site directory.
-    io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
+    final siteOutputDirectoryPath = path.join(
+      repositoryRoot,
+      site.buildOutputDirectory,
+    );
+    if (path.normalize(originalOutputDirectoryPath) !=
+        path.normalize(siteOutputDirectoryPath)) {
+      final outputDirectory = Directory(siteOutputDirectoryPath);
+      if (outputDirectory.existsSync()) {
+        outputDirectory.deleteSync(recursive: true);
+      }
 
-    _move404File();
+      // Copy the entire site output to the configured output directory.
+      io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
+    }
+
+    _move404File(siteOutputDirectoryPath);
 
     return processExitCode;
   }
 }
 
 /// Moves the 404 file to the location expected by Firebase hosting.
-void _move404File() {
+void _move404File(String siteOutputDirectoryPath) {
   final initial404Directory = path.join(siteOutputDirectoryPath, '404');
   final original404File = File(path.join(initial404Directory, 'index.html'));
   if (original404File.existsSync()) {

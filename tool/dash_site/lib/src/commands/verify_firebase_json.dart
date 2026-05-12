@@ -6,6 +6,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:path/path.dart' as path;
+
+import '../sites.dart';
+import '../utils.dart';
 
 final class VerifyFirebaseJsonCommand extends Command<int> {
   @override
@@ -17,15 +21,16 @@ final class VerifyFirebaseJsonCommand extends Command<int> {
   String get name => 'verify-firebase-json';
 
   @override
-  Future<int> run() async => _verifyFirebaseJson();
+  Future<int> run() async => _verifyFirebaseJson(selectedSite);
 }
 
-int _verifyFirebaseJson() {
-  final firebaseFile = File('firebase.json');
+int _verifyFirebaseJson(Site site) {
+  final firebasePath = path.join(repositoryRoot, site.firebaseConfigPath);
+  final firebaseFile = File(firebasePath);
 
   if (!firebaseFile.existsSync()) {
     stderr.writeln(
-      'Cannot find the firebase.json file in the current directory.',
+      'Cannot find the ${site.name} Firebase config at $firebasePath.',
     );
     return 1;
   }

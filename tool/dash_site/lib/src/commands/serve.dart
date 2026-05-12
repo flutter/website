@@ -28,7 +28,10 @@ final class ServeSiteCommand extends Command<int> {
   Future<int> run() async {
     final release = argResults!.flag('release');
 
-    installJasprCliIfNecessary();
+    final jasprInstallResult = installJasprCliIfNecessary();
+    if (jasprInstallResult != 0) {
+      return jasprInstallResult;
+    }
 
     final process = await Process.start(
       Platform.resolvedExecutable,
