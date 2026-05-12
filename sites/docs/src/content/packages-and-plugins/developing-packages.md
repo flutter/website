@@ -473,7 +473,8 @@ native iOS and macOS dependencies.
 
 To add a dependency to your plugin using Swift Package Manager:
 
-1. Create a `Package.swift` file in your plugin's `ios/` or `macos/` directory.
+1. Create a `Package.swift` file in your plugin's `ios/my_plugin_name`
+   or `macos/my_plugin_name` directory.
 2. Declare your native dependency within the `dependencies` array of the
    `Package.swift` descriptor file:
 
