@@ -1,4 +1,4 @@
-name: WWW site
+name: Flutter.dev site
 
 on:
   push:
