@@ -63,10 +63,31 @@ enum Site {
   /// The directory where Jaspr writes this site's production build.
   String get jasprBuildOutputDirectory =>
       path.join(directory, 'build', 'jaspr');
+
+  /// The port where Jaspr serves this site locally.
+  int get jasprServePort => _portAfterJasprDefault(_jasprDefaultSitePort);
+
+  /// The webdev port Jaspr uses when serving this site locally.
+  int get jasprWebDevPort => _portAfterJasprDefault(_jasprDefaultWebDevPort);
+
+  /// The proxy port Jaspr uses when serving this site locally.
+  int get jasprProxyPort => _portAfterJasprDefault(_jasprDefaultProxyPort);
+
+  /// The port offset from [jasprDefaultPort] for this site.
+  ///
+  /// Starts after Jaspr's defaults to avoid colliding with a separate
+  /// Jaspr project running with no explicit port configuration.
+  int _portAfterJasprDefault(int jasprDefaultPort) {
+    return jasprDefaultPort + index + 1;
+  }
 }
 
 /// The name of the global `--site` option.
 const String siteOptionName = 'site';
+
+const int _jasprDefaultSitePort = 8080;
+const int _jasprDefaultWebDevPort = 5467;
+const int _jasprDefaultProxyPort = 5567;
 
 extension CommandSiteResolution<T> on Command<T> {
   /// The [Site] selected with the global `--site` option,
