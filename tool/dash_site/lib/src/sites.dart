@@ -13,6 +13,7 @@ enum Site {
     buildOutputPathSegments: ['_site'],
     contentPathSegments: ['src', 'content'],
     firebaseConfigPathSegments: ['firebase.json'],
+    firebaseEmulatorPort: 5502,
     supportsCodeExcerpts: true,
   ),
 
@@ -22,6 +23,7 @@ enum Site {
     buildOutputPathSegments: ['sites', 'www', 'build', 'jaspr'],
     contentPathSegments: ['content'],
     firebaseConfigPathSegments: ['sites', 'www', 'firebase.json'],
+    firebaseEmulatorPort: 5503,
   );
 
   const Site({
@@ -29,6 +31,7 @@ enum Site {
     required this.buildOutputPathSegments,
     required this.contentPathSegments,
     required this.firebaseConfigPathSegments,
+    required this.firebaseEmulatorPort,
     this.supportsCodeExcerpts = false,
   });
 
@@ -46,6 +49,14 @@ enum Site {
 
   /// The path segments for this site's Firebase config file.
   final List<String> firebaseConfigPathSegments;
+
+  /// The hosting emulator port declared in this site's Firebase config.
+  ///
+  /// The value must match the `emulators.hosting.port` value in
+  /// the site's Firebase config (`firebase.json`) file.
+  /// Each site needs a unique port so the emulators can run concurrently,
+  /// and `5000` must be avoided since AirPlay can use it on macOS.
+  final int firebaseEmulatorPort;
 
   /// Whether this site supports code excerpts managed by `refresh-excerpts`.
   final bool supportsCodeExcerpts;

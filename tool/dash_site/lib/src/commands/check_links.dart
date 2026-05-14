@@ -37,11 +37,6 @@ final class CheckLinksCommand extends Command<int> {
   );
 }
 
-/// The port that the firebase emulator runs on by default.
-/// This must match what's declared in the `firebase.json`
-/// and can't be 5000, since Airplay uses it.
-const int _emulatorPort = 5502;
-
 /// The path from root where the linkcheck skip list lives.
 final String _skipFilePath = path.join(
   'tool',
@@ -53,9 +48,11 @@ Future<int> _checkLinks({
   required Site site,
   bool checkExternal = false,
 }) async {
-  if (await _isPortInUse(_emulatorPort)) {
+  final emulatorPort = site.firebaseEmulatorPort;
+
+  if (await _isPortInUse(emulatorPort)) {
     stderr.writeln(
-      'Error: Port $_emulatorPort is already in use! '
+      'Error: Port $emulatorPort is already in use! '
       'Are you running the emulator elsewhere?',
     );
     return 1;
@@ -101,14 +98,14 @@ Future<int> _checkLinks({
 
   try {
     // Check to see if the emulator is running.
-    if (!(await _isPortInUse(_emulatorPort))) {
+    if (!(await _isPortInUse(emulatorPort))) {
       stderr.writeln('Error: The Firebase hosting emulator did not start!');
       return 1;
     }
 
     try {
       final result = await linkcheck.run([
-        ':$_emulatorPort',
+        ':$emulatorPort',
         '--skip-file',
         _skipFilePath,
         if (checkExternal) 'external',
