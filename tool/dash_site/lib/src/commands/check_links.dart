@@ -75,7 +75,7 @@ Future<int> _checkLinks({
   );
   final firebaseConfigDirectory = path.join(
     repositoryRoot,
-    path.dirname(site.firebaseConfigPath),
+    site.firebaseConfigDirectory,
   );
   final firebaseConfigFileName = path.basename(site.firebaseConfigPath);
   final emulatorProcess = await Process.start(

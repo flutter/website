@@ -1,3 +1,5 @@
+substitutions:
+  _SITE: docs
 steps:
   - name: gcr.io/cloud-builders/git
     args: ['fetch', '--unshallow']
@@ -8,7 +10,9 @@ steps:
       - '-c'
       - |-
         set -euo pipefail
-        cloud_build/scripts/deploy_sites.sh
+        SITE="${SITE:-docs}"
+        dart pub get
+        dart run dash_site --site="$SITE" deploy
     env:
       - 'SITE=$_SITE'
 options:

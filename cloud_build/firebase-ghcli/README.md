@@ -1,7 +1,7 @@
 # Site deployment image
 
 This directory contains a Dockerfile that provides access to
-Dart, Firebase CLI tools, and the GitHub CLI.
+Dart and Firebase CLI tools.
 This image is used to deploy various Dart/Flutter websites to
 Firebase in both production and staging and
 to comment staged site links on GitHub PRs.
@@ -9,7 +9,6 @@ to comment staged site links on GitHub PRs.
 ## Installed tools
 
 * Dart SDK Beta
-* GitHub CLI
 * Firebase Tools
 
 ## Updating image

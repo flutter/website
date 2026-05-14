@@ -9,7 +9,7 @@ import 'package:path/path.dart' as path;
 enum Site {
   /// The Flutter documentation site.
   docs(
-    baseUrl: 'https://docs.flutter.dev',
+    host: 'docs.flutter.dev',
     buildOutputPathSegments: ['_site'],
     contentPathSegments: ['src', 'content'],
     firebaseConfigPathSegments: ['firebase.json'],
@@ -18,22 +18,25 @@ enum Site {
 
   /// The Flutter marketing site.
   www(
-    baseUrl: 'https://flutter.dev',
+    host: 'flutter.dev',
     buildOutputPathSegments: ['sites', 'www', 'build', 'jaspr'],
     contentPathSegments: ['content'],
     firebaseConfigPathSegments: ['sites', 'www', 'firebase.json'],
   );
 
   const Site({
-    required this.baseUrl,
+    required this.host,
     required this.buildOutputPathSegments,
     required this.contentPathSegments,
     required this.firebaseConfigPathSegments,
     this.supportsCodeExcerpts = false,
   });
 
+  /// The host name where this site is served in production.
+  final String host;
+
   /// The canonical base URL where this site is hosted in production.
-  final String baseUrl;
+  String get baseUrl => 'https://$host';
 
   /// The path segments for this site's production build output directory.
   final List<String> buildOutputPathSegments;
@@ -59,6 +62,9 @@ enum Site {
 
   /// The location of this site's Firebase config file.
   String get firebaseConfigPath => path.joinAll(firebaseConfigPathSegments);
+
+  /// The directory containing this site's Firebase config file.
+  String get firebaseConfigDirectory => path.dirname(firebaseConfigPath);
 
   /// The directory where Jaspr writes this site's production build.
   String get jasprBuildOutputDirectory =>

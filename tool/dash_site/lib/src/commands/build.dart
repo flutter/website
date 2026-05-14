@@ -32,67 +32,71 @@ final class BuildSiteCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    final jasprInstallResult = installJasprCliIfNecessary();
-    if (jasprInstallResult != 0) {
-      return jasprInstallResult;
-    }
-
-    final productionRelease = argResults.get<bool>(_releaseFlag, false);
-    final site = selectedSite;
-
-    final process = await Process.start(
-      Platform.resolvedExecutable,
-      [
-        'pub',
-        'global',
-        'run',
-        'jaspr_cli:jaspr',
-        'build',
-        // Use build_web_compiler options specified in build.yaml instead of
-        // those specified by jaspr_cli.
-        '--no-managed-build-options',
-        '--sitemap-domain=${site.baseUrl}',
-        // Exclude secondary Markdown output files from sitemap.
-        r'--sitemap-exclude=\.html\.md$',
-        '--dart-define=PRODUCTION=$productionRelease',
-      ],
-      workingDirectory: site.directory,
-      mode: ProcessStartMode.inheritStdio,
+    return buildSite(
+      selectedSite,
+      productionRelease: argResults.get<bool>(_releaseFlag, false),
     );
-
-    final processExitCode = await process.exitCode;
-
-    final originalOutputDirectoryPath = path.join(
-      repositoryRoot,
-      site.jasprBuildOutputDirectory,
-    );
-    if (!Directory(originalOutputDirectoryPath).existsSync()) {
-      stderr.writeln(
-        'Error: Jaspr output directory not found at: '
-        '$originalOutputDirectoryPath',
-      );
-      return 1;
-    }
-
-    final siteOutputDirectoryPath = path.join(
-      repositoryRoot,
-      site.buildOutputDirectory,
-    );
-    if (path.normalize(originalOutputDirectoryPath) !=
-        path.normalize(siteOutputDirectoryPath)) {
-      final outputDirectory = Directory(siteOutputDirectoryPath);
-      if (outputDirectory.existsSync()) {
-        outputDirectory.deleteSync(recursive: true);
-      }
-
-      // Copy the entire site output to the configured output directory.
-      io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
-    }
-
-    _move404File(siteOutputDirectoryPath);
-
-    return processExitCode;
   }
+}
+
+Future<int> buildSite(Site site, {required bool productionRelease}) async {
+  final jasprInstallResult = installJasprCliIfNecessary();
+  if (jasprInstallResult != 0) {
+    return jasprInstallResult;
+  }
+
+  final process = await Process.start(
+    Platform.resolvedExecutable,
+    [
+      'pub',
+      'global',
+      'run',
+      'jaspr_cli:jaspr',
+      'build',
+      // Use build_web_compiler options specified in build.yaml instead of
+      // those specified by jaspr_cli.
+      '--no-managed-build-options',
+      '--sitemap-domain=${site.baseUrl}',
+      // Exclude secondary Markdown output files from sitemap.
+      r'--sitemap-exclude=\.html\.md$',
+      '--dart-define=PRODUCTION=$productionRelease',
+    ],
+    workingDirectory: site.directory,
+    mode: ProcessStartMode.inheritStdio,
+  );
+
+  final processExitCode = await process.exitCode;
+
+  final originalOutputDirectoryPath = path.join(
+    repositoryRoot,
+    site.jasprBuildOutputDirectory,
+  );
+  if (!Directory(originalOutputDirectoryPath).existsSync()) {
+    stderr.writeln(
+      'Error: Jaspr output directory not found at: '
+      '$originalOutputDirectoryPath',
+    );
+    return 1;
+  }
+
+  final siteOutputDirectoryPath = path.join(
+    repositoryRoot,
+    site.buildOutputDirectory,
+  );
+  if (path.normalize(originalOutputDirectoryPath) !=
+      path.normalize(siteOutputDirectoryPath)) {
+    final outputDirectory = Directory(siteOutputDirectoryPath);
+    if (outputDirectory.existsSync()) {
+      outputDirectory.deleteSync(recursive: true);
+    }
+
+    // Copy the entire site output to the configured output directory.
+    io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
+  }
+
+  _move404File(siteOutputDirectoryPath);
+
+  return processExitCode;
 }
 
 /// Moves the 404 file to the location expected by Firebase hosting.

@@ -1,0 +1,331 @@
+// Copyright 2026 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:args/command_runner.dart';
+import 'package:github/github.dart' as github;
+import 'package:path/path.dart' as path;
+
+import '../sites.dart';
+import '../utils.dart';
+import 'build.dart';
+
+const String _githubPatTokenEnv = 'GH_PAT_TOKEN';
+
+/// Everything required to post a preview comment on a GitHub pull request.
+///
+/// Built up front during option parsing so that a misconfigured trigger
+/// fails before the build + deploy runs.
+typedef _PullRequestContext = ({
+  int prNumber,
+  String repoFullName,
+  String githubToken,
+  String commitSha,
+});
+
+/// Builds the selected site, deploys it to a Firebase Hosting preview
+/// channel, and — when run with pull request context — posts or updates a
+/// sticky comment on the PR with the preview URL.
+///
+/// Without `--pr-number` and `--repo`, the deploy still runs but the
+/// GitHub comment step is skipped.
+final class StagePreviewCommand extends Command<int> {
+  static const String _prNumberOption = 'pr-number';
+  static const String _repoOption = 'repo';
+  static const String _commitShaOption = 'commit-sha';
+  static const String _headBranchOption = 'head-branch';
+
+  StagePreviewCommand() {
+    argParser
+      ..addOption(
+        _prNumberOption,
+        help:
+            'The pull request number to comment on. '
+            'Required together with --$_repoOption to post a preview comment.',
+      )
+      ..addOption(
+        _repoOption,
+        help:
+            'The full repository name in "owner/repository" form. '
+            'Required together with --$_prNumberOption to '
+            'post a preview comment.',
+        valueHelp: 'owner/repository',
+      )
+      ..addOption(
+        _commitShaOption,
+        help:
+            'The commit SHA being staged. '
+            'Required to post a comment.',
+      )
+      ..addOption(
+        _headBranchOption,
+        help: 'The branch name to include in the staging channel name.',
+      );
+  }
+
+  @override
+  String get description =>
+      'Build the site, deploy it to a Firebase staging channel, '
+      'and comment the preview URL on GitHub.';
+
+  @override
+  String get name => 'stage-preview';
+
+  @override
+  Future<int> run() async {
+    final selectedSite = this.selectedSite;
+
+    final prNumberArg = _nonEmpty(argResults?.option(_prNumberOption));
+    final repoFullName = _nonEmpty(argResults?.option(_repoOption));
+    final commitSha = _nonEmpty(argResults?.option(_commitShaOption));
+    final headBranch = _nonEmpty(argResults?.option(_headBranchOption));
+
+    // Validate PR-context preconditions up front so a misconfigured
+    // trigger fails before the build + deploy burns CI minutes.
+    final _PullRequestContext? prContext;
+    if (prNumberArg != null && repoFullName != null) {
+      final prNumber = int.tryParse(prNumberArg);
+      if (prNumber == null) {
+        stderr.writeln('Error: --$_prNumberOption must be an integer.');
+        return 1;
+      }
+      if (!repoFullName.contains('/')) {
+        stderr.writeln(
+          'Error: --$_repoOption must be in the form "owner/repository".',
+        );
+        return 1;
+      }
+      if (commitSha == null) {
+        stderr.writeln(
+          'Error: --$_commitShaOption must be set to '
+          'comment on the pull request.',
+        );
+        return 1;
+      }
+      final githubToken = _nonEmpty(Platform.environment[_githubPatTokenEnv]);
+      if (githubToken == null) {
+        stderr.writeln(
+          'Error: $_githubPatTokenEnv must be set to '
+          'comment on the pull request.',
+        );
+        return 1;
+      }
+      prContext = (
+        prNumber: prNumber,
+        repoFullName: repoFullName,
+        githubToken: githubToken,
+        commitSha: commitSha,
+      );
+    } else {
+      if (prNumberArg != null || repoFullName != null) {
+        stderr.writeln(
+          'Warning: Both --$_prNumberOption and --$_repoOption must be set '
+          'to comment on the pull request; skipping the GitHub comment.',
+        );
+      }
+      prContext = null;
+    }
+
+    final buildResult = await buildSite(selectedSite, productionRelease: false);
+    if (buildResult != 0) {
+      return buildResult;
+    }
+
+    final branchOrSha = headBranch ?? commitSha ?? 'manual';
+    final stagingUrl = await _deploySiteToStaging(
+      selectedSite,
+      prNumber: prNumberArg,
+      branchOrSha: branchOrSha,
+    );
+    if (stagingUrl == null) {
+      return 1;
+    }
+
+    if (prContext == null) {
+      print('No pull request context available; skipping GitHub comment.');
+      return 0;
+    }
+
+    return _commentStagingUrlOnGitHub(
+      site: selectedSite,
+      stagingUrl: stagingUrl,
+      context: prContext,
+    );
+  }
+}
+
+/// Deploys [site] to a Firebase Hosting preview channel and returns the
+/// channel's public URL on success, or `null` if the deploy fails or no
+/// URL can be extracted (in which case diagnostics are written to stderr).
+///
+/// The channel name is derived from [prNumber] and [branchOrSha] so that
+/// re-deploys for the same PR + branch reuse the same channel.
+Future<String?> _deploySiteToStaging(
+  Site site, {
+  String? prNumber,
+  required String branchOrSha,
+}) async {
+  final channel = _firebaseChannelForSite(
+    site,
+    prNumber: prNumber,
+    branchOrSha: branchOrSha,
+  );
+  print('Deploying ${site.host} to Firebase channel $channel...');
+
+  final result = await Process.run(
+    'firebase',
+    ['hosting:channel:deploy', channel, '--expires', '7d', '--json'],
+    workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory),
+  );
+
+  if (result.exitCode != 0) {
+    stderr.writeln(result.stderr);
+    stderr.writeln(result.stdout);
+    return null;
+  }
+
+  final stagingUrl = _extractDeployedUrl(result.stdout as String);
+  if (stagingUrl == null) {
+    stderr.writeln('Failed to find a Firebase staging URL for ${site.host}.');
+    return null;
+  }
+
+  return stagingUrl;
+}
+
+/// Extracts the deployed preview URL from
+/// `firebase hosting:channel:deploy --json` output, which has the shape
+/// `{"status": ..., "result": {"<target-or-site>": {"url": ..., ...}}}`.
+///
+/// Returns `null` if the input isn't valid JSON or doesn't contain a URL.
+String? _extractDeployedUrl(String firebaseJsonOutput) {
+  final Object? parsed;
+  try {
+    parsed = jsonDecode(firebaseJsonOutput);
+  } on FormatException {
+    return null;
+  }
+  final result = (parsed is Map ? parsed['result'] : null);
+  if (result is! Map) return null;
+  for (final entry in result.values) {
+    if (entry is Map && entry['url'] is String) {
+      return entry['url'] as String;
+    }
+  }
+  return null;
+}
+
+/// Posts a new preview comment on the pull request, or updates the
+/// existing one identified by an HTML marker that includes [site]'s name,
+/// so each PR ends up with at most one preview comment per site.
+///
+/// Returns 0 on success or 1 if the GitHub API call fails (after writing
+/// the error to stderr).
+Future<int> _commentStagingUrlOnGitHub({
+  required Site site,
+  required String stagingUrl,
+  required _PullRequestContext context,
+}) async {
+  final commentMarker = '<!-- flutter-preview-${site.name} -->';
+  final commentBody =
+      '''
+$commentMarker
+Preview URL for the ${site.host} site (updated for commit ${context.commitSha}):
+
+$stagingUrl''';
+
+  print('Commenting ${site.host} staging URL on the PR...');
+  final gitHub = github.GitHub(
+    auth: github.Authentication.withToken(context.githubToken),
+  );
+  try {
+    final repository = github.RepositorySlug.full(context.repoFullName);
+    final existingCommentId = await _findExistingPreviewCommentId(
+      gitHub: gitHub,
+      repository: repository,
+      issueNumber: context.prNumber,
+      commentMarker: commentMarker,
+    );
+
+    if (existingCommentId == null) {
+      await gitHub.issues.createComment(
+        repository,
+        context.prNumber,
+        commentBody,
+      );
+    } else {
+      // package:github's IssuesService.updateComment issues a POST,
+      // but GitHub's REST API requires PATCH for this endpoint.
+      await gitHub.request(
+        'PATCH',
+        '/repos/${repository.fullName}/issues/comments/$existingCommentId',
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({'body': commentBody}),
+        statusCode: github.StatusCodes.OK,
+      );
+    }
+  } on github.GitHubError catch (error) {
+    stderr.writeln('Error: Failed to comment on the pull request: $error');
+    return 1;
+  } finally {
+    gitHub.dispose();
+  }
+
+  return 0;
+}
+
+/// Returns the id of the first comment on the issue whose body contains
+/// [commentMarker], or `null` if no matching comment exists.
+///
+/// Pagination stops as soon as a match is found so long-lived PRs don't
+/// fetch every comment page on each run.
+Future<int?> _findExistingPreviewCommentId({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required int issueNumber,
+  required String commentMarker,
+}) async {
+  await for (final comment in gitHub.issues.listCommentsByIssue(
+    repository,
+    issueNumber,
+  )) {
+    if (comment.body?.contains(commentMarker) ?? false) {
+      return comment.id;
+    }
+  }
+  return null;
+}
+
+/// Builds a Firebase Hosting channel name for [site] that satisfies
+/// Firebase's naming constraints: lowercase, only `[a-z0-9-]`, no longer
+/// than 63 characters, and no trailing dashes.
+///
+/// When [prNumber] is non-null, a `pr<N>-` segment is included so
+/// PR-driven channels can be told apart from manual deploys.
+String _firebaseChannelForSite(
+  Site site, {
+  String? prNumber,
+  required String branchOrSha,
+}) {
+  final prefix = prNumber != null ? 'pr$prNumber-' : '';
+  var channel = '${site.name}-$prefix$branchOrSha'.toLowerCase().replaceAll(
+    RegExp('[^a-z0-9-]+'),
+    '-',
+  );
+  if (channel.length > 63) {
+    channel = channel.substring(0, 63);
+  }
+  return channel.replaceAll(RegExp(r'-+$'), '');
+}
+
+/// Returns [value] if it is non-null and non-empty, otherwise `null`.
+///
+/// Lets unset and empty-string CLI options collapse to a single `null`
+/// sentinel for downstream checks.
+String? _nonEmpty(String? value) {
+  if (value == null || value.isEmpty) return null;
+  return value;
+}

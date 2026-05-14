@@ -1,19 +1,22 @@
+substitutions:
+  _SITE: docs
 steps:
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
-    # Build the selected site, deploy it to staging, then comment links on the PR.
+    # Build the selected site, deploy it to staging, then comment the preview link.
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
         set -euo pipefail
-        cloud_build/scripts/stage_sites_and_comment_on_github.sh
+        SITE="${SITE:-docs}"
+        dart pub get
+        dart run dash_site --site="$SITE" stage-preview \
+          --pr-number "$_PR_NUMBER" \
+          --repo "$REPO_FULL_NAME" \
+          --commit-sha "$COMMIT_SHA" \
+          --head-branch "$_HEAD_BRANCH"
     secretEnv: ['GH_PAT_TOKEN']
     env:
-      - 'PR_NUMBER=$_PR_NUMBER'
-      - 'HEAD_BRANCH=$_HEAD_BRANCH'
-      - 'PROJECT_ID=$PROJECT_ID'
-      - 'COMMIT_SHA=$COMMIT_SHA'
-      - 'REPO_FULL_NAME=$REPO_FULL_NAME'
       - 'SITE=$_SITE'
 availableSecrets:
   secretManager:
