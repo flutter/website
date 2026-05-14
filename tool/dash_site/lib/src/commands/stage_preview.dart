@@ -233,7 +233,7 @@ Future<int> _commentStagingUrlOnGitHub({
   final commentBody =
       '''
 $commentMarker
-Preview URL for the ${site.host} site (updated for commit ${context.commitSha}):
+Staged preview of the updated ${site.host} site (updated for commit ${context.commitSha}):
 
 $stagingUrl''';
 
