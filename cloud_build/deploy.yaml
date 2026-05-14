@@ -10,10 +10,7 @@ steps:
       - '-c'
       - |-
         set -euo pipefail
-        SITE="${SITE:-docs}"
         dart pub get
-        dart run dash_site --site="$SITE" deploy
-    env:
-      - 'SITE=$_SITE'
+        dart run dash_site --site="$_SITE" deploy
 options:
   logging: CLOUD_LOGGING_ONLY

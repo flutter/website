@@ -8,16 +8,13 @@ steps:
       - '-c'
       - |-
         set -euo pipefail
-        SITE="${SITE:-docs}"
         dart pub get
-        dart run dash_site --site="$SITE" stage-preview \
+        dart run dash_site --site="$_SITE" stage-preview \
           --pr-number "$_PR_NUMBER" \
           --repo "$REPO_FULL_NAME" \
           --commit-sha "$COMMIT_SHA" \
           --head-branch "$_HEAD_BRANCH"
     secretEnv: ['GH_PAT_TOKEN']
-    env:
-      - 'SITE=$_SITE'
 availableSecrets:
   secretManager:
     - versionName: projects/flutter-docs-prod/secrets/flutter-website-bot-comment-pat/versions/latest
