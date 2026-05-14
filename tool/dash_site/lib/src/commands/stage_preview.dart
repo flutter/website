@@ -13,25 +13,9 @@ import '../sites.dart';
 import '../utils.dart';
 import 'build.dart';
 
-const String _githubPatTokenEnv = 'GH_PAT_TOKEN';
-
-/// Everything required to post a preview comment on a GitHub pull request.
-///
-/// Built up front during option parsing so that a misconfigured trigger
-/// fails before the build + deploy runs.
-typedef _PullRequestContext = ({
-  int prNumber,
-  String repoFullName,
-  String githubToken,
-  String commitSha,
-});
-
-/// Builds the selected site, deploys it to a Firebase Hosting preview
-/// channel, and — when run with pull request context — posts or updates a
-/// sticky comment on the PR with the preview URL.
-///
-/// Without `--pr-number` and `--repo`, the deploy still runs but the
-/// GitHub comment step is skipped.
+/// Builds the selected site,
+/// deploys it to a Firebase Hosting preview channel,
+/// and posts or updates a comment on the source GitHub PR (if present).
 final class StagePreviewCommand extends Command<int> {
   static const String _prNumberOption = 'pr-number';
   static const String _repoOption = 'repo';
@@ -77,14 +61,15 @@ final class StagePreviewCommand extends Command<int> {
   @override
   Future<int> run() async {
     final selectedSite = this.selectedSite;
+    final argResults = this.argResults!;
 
-    final prNumberArg = _nonEmpty(argResults?.option(_prNumberOption));
-    final repoFullName = _nonEmpty(argResults?.option(_repoOption));
-    final commitSha = _nonEmpty(argResults?.option(_commitShaOption));
-    final headBranch = _nonEmpty(argResults?.option(_headBranchOption));
+    final prNumberArg = _nonEmpty(argResults.option(_prNumberOption));
+    final repoFullName = _nonEmpty(argResults.option(_repoOption));
+    final commitSha = _nonEmpty(argResults.option(_commitShaOption));
+    final headBranch = _nonEmpty(argResults.option(_headBranchOption));
 
     // Validate PR-context preconditions up front so a misconfigured
-    // trigger fails before the build + deploy burns CI minutes.
+    // trigger fails before the build and deploy runs unnecessarily.
     final _PullRequestContext? prContext;
     if (prNumberArg != null && repoFullName != null) {
       final prNumber = int.tryParse(prNumberArg);
@@ -105,10 +90,11 @@ final class StagePreviewCommand extends Command<int> {
         );
         return 1;
       }
-      final githubToken = _nonEmpty(Platform.environment[_githubPatTokenEnv]);
+      const githubPatTokenEnv = 'GH_PAT_TOKEN';
+      final githubToken = _nonEmpty(Platform.environment[githubPatTokenEnv]);
       if (githubToken == null) {
         stderr.writeln(
-          'Error: $_githubPatTokenEnv must be set to '
+          'Error: $githubPatTokenEnv must be set to '
           'comment on the pull request.',
         );
         return 1;
@@ -157,12 +143,12 @@ final class StagePreviewCommand extends Command<int> {
   }
 }
 
-/// Deploys [site] to a Firebase Hosting preview channel and returns the
-/// channel's public URL on success, or `null` if the deploy fails or no
-/// URL can be extracted (in which case diagnostics are written to stderr).
+/// Deploys [site] to a Firebase Hosting preview channel and
+/// returns the channel's public URL on success, or
+/// `null` if the deploy fails or no URL can be extracted.
 ///
 /// The channel name is derived from [prNumber] and [branchOrSha] so that
-/// re-deploys for the same PR + branch reuse the same channel.
+/// re-deploys for the same PR and branch reuse the same channel.
 Future<String?> _deploySiteToStaging(
   Site site, {
   String? prNumber,
@@ -197,8 +183,7 @@ Future<String?> _deploySiteToStaging(
 }
 
 /// Extracts the deployed preview URL from
-/// `firebase hosting:channel:deploy --json` output, which has the shape
-/// `{"status": ..., "result": {"<target-or-site>": {"url": ..., ...}}}`.
+/// `firebase hosting:channel:deploy --json` output.
 ///
 /// Returns `null` if the input isn't valid JSON or doesn't contain a URL.
 String? _extractDeployedUrl(String firebaseJsonOutput) {
@@ -218,12 +203,11 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
   return null;
 }
 
-/// Posts a new preview comment on the pull request, or updates the
-/// existing one identified by an HTML marker that includes [site]'s name,
-/// so each PR ends up with at most one preview comment per site.
+/// Posts a new preview comment on the pull request,
+/// or updates the existing one identified by an HTML marker that
+/// includes the [site]'s name.
 ///
-/// Returns 0 on success or 1 if the GitHub API call fails (after writing
-/// the error to stderr).
+/// Returns `0` on success or `1` if the GitHub API call fails.
 Future<int> _commentStagingUrlOnGitHub({
   required Site site,
   required String stagingUrl,
@@ -277,11 +261,10 @@ $stagingUrl''';
   return 0;
 }
 
-/// Returns the id of the first comment on the issue whose body contains
-/// [commentMarker], or `null` if no matching comment exists.
+/// Returns the id of the first comment on the issue whose body
+/// contains the specified [commentMarker].
 ///
-/// Pagination stops as soon as a match is found so long-lived PRs don't
-/// fetch every comment page on each run.
+/// Returns `null` if no matching comment exists.
 Future<int?> _findExistingPreviewCommentId({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
@@ -299,12 +282,13 @@ Future<int?> _findExistingPreviewCommentId({
   return null;
 }
 
-/// Builds a Firebase Hosting channel name for [site] that satisfies
-/// Firebase's naming constraints: lowercase, only `[a-z0-9-]`, no longer
-/// than 63 characters, and no trailing dashes.
+/// Builds a Firebase Hosting channel name for [site] that
+/// incorporates [branchOrSha] and if specified, [prNumber],
+/// and satisfies Firebase's naming constraints:
 ///
-/// When [prNumber] is non-null, a `pr<N>-` segment is included so
-/// PR-driven channels can be told apart from manual deploys.
+/// - Lowercase a-z characters, 0-9 digits, and dashes (`-`).
+/// - No longer than 63 characters.
+/// - No trailing dashes.
 String _firebaseChannelForSite(
   Site site, {
   String? prNumber,
@@ -322,10 +306,18 @@ String _firebaseChannelForSite(
 }
 
 /// Returns [value] if it is non-null and non-empty, otherwise `null`.
-///
-/// Lets unset and empty-string CLI options collapse to a single `null`
-/// sentinel for downstream checks.
 String? _nonEmpty(String? value) {
   if (value == null || value.isEmpty) return null;
   return value;
 }
+
+/// Everything required to post a preview comment on a GitHub pull request.
+///
+/// Built during option parsing so that a misconfigured Cloud Build trigger
+/// fails before the build and deploy runs.
+typedef _PullRequestContext = ({
+  int prNumber,
+  String repoFullName,
+  String githubToken,
+  String commitSha,
+});
