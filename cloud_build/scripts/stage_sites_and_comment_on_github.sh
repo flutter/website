@@ -26,12 +26,18 @@ deploy_site_to_staging() {
   dart run dash_site --site="$site" build
 
   echo "Deploying $site to Firebase channel $channel..."
-  local deploy_response
-  deploy_response="$(cd "$firebase_config_dir" && firebase hosting:channel:deploy "$channel" --expires 7d)"
-  echo "$deploy_response"
+  local deploy_output_file
+  deploy_output_file="$(mktemp)"
+  trap 'rm -f "$deploy_output_file"' RETURN
+  (
+    cd "$firebase_config_dir"
+    firebase hosting:channel:deploy "$channel" --expires 7d 2>&1 |
+      tee "$deploy_output_file"
+  )
 
   local staging_url
-  staging_url="$(grep -m1 -Eo 'https://[a-zA-Z0-9./?=_%:-]+--[a-zA-Z0-9./?=_%:-]*' <<< "$deploy_response" || true)"
+  staging_url="$(grep -m1 -Eo 'https://[a-zA-Z0-9./?=_%:-]+--[a-zA-Z0-9./?=_%:-]*' "$deploy_output_file" || true)"
+
   if [[ -z "$staging_url" ]]; then
     echo "Failed to find a Firebase staging URL for $site." >&2
     return 1
