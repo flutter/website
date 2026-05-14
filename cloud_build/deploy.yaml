@@ -2,12 +2,14 @@ steps:
   - name: gcr.io/cloud-builders/git
     args: ['fetch', '--unshallow']
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
-    # Build all sites, then deploy them to production.
+    # Build the selected site, then deploy it to production.
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
         set -euo pipefail
         cloud_build/scripts/deploy_sites.sh
+    env:
+      - 'SITE=$_SITE'
 options:
   logging: CLOUD_LOGGING_ONLY

@@ -43,8 +43,61 @@ deploy_site_to_staging() {
     return 1
   fi
 
-  preview_rows+="| $site | $staging_url |"$'\n'
+  deployed_staging_url="$staging_url"
 }
+
+comment_staging_url_on_github() {
+  local site="$1"
+  local display_name="$2"
+  local staging_url="$3"
+  local comment_marker="<!-- flutter-preview-$site -->"
+
+  local comment_body
+  comment_body="$comment_marker
+Preview URL for the $display_name site (updated for commit ${COMMIT_SHA:-unknown}):
+
+$staging_url"
+
+  echo "Commenting $display_name staging URL on the PR..."
+  local comment_id
+  comment_id="$(
+    gh api "repos/$REPO_FULL_NAME/issues/$PR_NUMBER/comments" \
+      --paginate \
+      --jq ".[] | select(.body | contains(\"$comment_marker\")) | .id" |
+      tail -n 1
+  )"
+
+  if [[ -n "$comment_id" ]]; then
+    gh api \
+      --method PATCH \
+      "repos/$REPO_FULL_NAME/issues/comments/$comment_id" \
+      -f "body=$comment_body" \
+      > /dev/null
+  else
+    gh api \
+      --method POST \
+      "repos/$REPO_FULL_NAME/issues/$PR_NUMBER/comments" \
+      -f "body=$comment_body" \
+      > /dev/null
+  fi
+}
+
+: "${SITE:?Set the _SITE Cloud Build substitution to 'docs' or 'www'.}"
+
+case "$SITE" in
+  docs)
+    firebase_config_dir="."
+    display_name="Docs"
+    ;;
+  www)
+    firebase_config_dir="sites/www"
+    display_name="Flutter.dev"
+    ;;
+  *)
+    echo "Error: Unsupported site '$SITE'. Expected 'docs' or 'www'." >&2
+    exit 1
+    ;;
+esac
 
 if [[ -n "${PR_NUMBER:-}" && -n "${REPO_FULL_NAME:-}" ]]; then
   echo "Logging into GitHub under bot account..."
@@ -54,24 +107,12 @@ fi
 echo "Fetching Dart dependencies..."
 dart pub get
 
-preview_rows=""
-
-deploy_site_to_staging docs .
-deploy_site_to_staging www sites/www
-
-comment_body="Preview URLs for this PR (updated for commit ${COMMIT_SHA:-unknown}):
-
-| Site | Preview |
-| --- | --- |
-$preview_rows"
+deployed_staging_url=""
+deploy_site_to_staging "$SITE" "$firebase_config_dir"
 
 if [[ -z "${PR_NUMBER:-}" || -z "${REPO_FULL_NAME:-}" ]]; then
   echo "No pull request context available; skipping GitHub comment."
   exit 0
 fi
 
-echo "Commenting staging URLs on the PR..."
-
-# If the bot already commented, edit it, otherwise leave a new comment.
-gh pr comment "$PR_NUMBER" --repo "$REPO_FULL_NAME" --edit-last --body "$comment_body" \
-  || gh pr comment "$PR_NUMBER" --repo "$REPO_FULL_NAME" --body "$comment_body"
+comment_staging_url_on_github "$SITE" "$display_name" "$deployed_staging_url"

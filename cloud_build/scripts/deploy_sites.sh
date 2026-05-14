@@ -19,8 +19,20 @@ deploy_site() {
   )
 }
 
+: "${SITE:?Set the _SITE Cloud Build substitution to 'docs' or 'www'.}"
+
 echo "Fetching Dart dependencies..."
 dart pub get
 
-deploy_site docs .
-deploy_site www sites/www
+case "$SITE" in
+  docs)
+    deploy_site docs .
+    ;;
+  www)
+    deploy_site www sites/www
+    ;;
+  *)
+    echo "Error: Unsupported site '$SITE'. Expected 'docs' or 'www'." >&2
+    exit 1
+    ;;
+esac

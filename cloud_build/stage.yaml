@@ -1,6 +1,6 @@
 steps:
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
-    # Build all sites, deploy them to staging, then comment links on the PR.
+    # Build the selected site, deploy it to staging, then comment links on the PR.
     entrypoint: '/bin/bash'
     args:
       - '-c'
@@ -14,6 +14,7 @@ steps:
       - 'PROJECT_ID=$PROJECT_ID'
       - 'COMMIT_SHA=$COMMIT_SHA'
       - 'REPO_FULL_NAME=$REPO_FULL_NAME'
+      - 'SITE=$_SITE'
 availableSecrets:
   secretManager:
     - versionName: projects/flutter-docs-prod/secrets/flutter-website-bot-comment-pat/versions/latest
