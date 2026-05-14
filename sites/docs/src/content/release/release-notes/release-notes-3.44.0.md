@@ -7,9 +7,10 @@ skipTemplateRendering: true
 
 This page has release notes for Flutter 3.44.
 
-## What's Changed
+## What's changed
 
 ### Framework
+
 * Add new motion accessibility features to iOS. by @ksokolovskyi in [178102](https://github.com/flutter/flutter/pull/178102)
 * Implementation of tooltip windows for win32 by @mattkae in [179147](https://github.com/flutter/flutter/pull/179147)
 * Make sure that an EditableText doesn't crash in 0x0 environment by @ahmedsameha1 in [180457](https://github.com/flutter/flutter/pull/180457)
@@ -247,7 +248,9 @@ This page has release notes for Flutter 3.44.
 * [Dot shorthands] Migrate examples/api/test by @loic-sharma in [183966](https://github.com/flutter/flutter/pull/183966)
 * Warn about the use of TestSemantics by @justinmc in [184369](https://github.com/flutter/flutter/pull/184369)
 * [CP-beta]Fix an ordering dependency in the services/system_chrome_test.dart test suite by @flutteractionsbot in [185104](https://github.com/flutter/flutter/pull/185104)
+
 ### Material
+
 * Fix typo in dropdown_menu.dart by @Koichi5 in [180172](https://github.com/flutter/flutter/pull/180172)
 * [A11y ] Add `clearSemantics`in table by @hannah-hyj in [180665](https://github.com/flutter/flutter/pull/180665)
 * Add TabBar API example for scroll notification integration by @huycozy in [180728](https://github.com/flutter/flutter/pull/180728)
@@ -363,7 +366,9 @@ This page has release notes for Flutter 3.44.
 * [cupertino.dart] Implement CupertinoMenuAnchor and CupertinoMenuItem using RawMenuAnchor by @davidhicks980 in [182036](https://github.com/flutter/flutter/pull/182036)
 * Remove editable_text_utils cross-imports from material and cupertino … by @xfce0 in [184519](https://github.com/flutter/flutter/pull/184519)
 * Add more error handling to unawaited callsites by @victorsanni in [184526](https://github.com/flutter/flutter/pull/184526)
+
 ### iOS
+
 * Fix iOS xattr removal to clear all extended attributes by @Saqib198 in [180355](https://github.com/flutter/flutter/pull/180355)
 * Reverts "Fix iOS xattr removal to clear all extended attributes (#180355)" by @auto-submit[bot] in [180709](https://github.com/flutter/flutter/pull/180709)
 * Implement macOS wide gamut (Display P3) support by @westito in [181769](https://github.com/flutter/flutter/pull/181769)
@@ -395,7 +400,9 @@ This page has release notes for Flutter 3.44.
 * [CP-beta]Fix killing wrong xcrun command by @flutteractionsbot in [185097](https://github.com/flutter/flutter/pull/185097)
 * [CP-beta]Only use LLDB breakpoint in debug mode by @flutteractionsbot in [185343](https://github.com/flutter/flutter/pull/185343)
 * [CP-beta][SwiftPM] Enable package resolution on xcodebuild commands by @flutteractionsbot in [185746](https://github.com/flutter/flutter/pull/185746)
+
 ### Android
+
 * Re-prioritize pipeline compile jobs and perform them eagerly instead of waiting. by @chinmaygarde in [180022](https://github.com/flutter/flutter/pull/180022)
 * Improve code quality in `BinaryMessenger.java` by @AbdeMohlbi in [180733](https://github.com/flutter/flutter/pull/180733)
 * Fix `documentation member not recognized` because of missing import in `FlutterEngine.java` by @AbdeMohlbi in [180731](https://github.com/flutter/flutter/pull/180731)
@@ -445,7 +452,9 @@ This page has release notes for Flutter 3.44.
 * Reland "Apply rect clipping to surface views" by @gmackall in [184732](https://github.com/flutter/flutter/pull/184732)
 * Fix Android engine flags defaulting to true for malformed values by @realmeylisdev in [184631](https://github.com/flutter/flutter/pull/184631)
 * [CP-beta][Android] Gboard Text Shift Stuck Fix by @flutteractionsbot in [185749](https://github.com/flutter/flutter/pull/185749)
+
 ### Windows
+
 * [win32] Fix overflow in TaskRunnerWindow. by @knopp in [182822](https://github.com/flutter/flutter/pull/182822)
 * Roll GoogleTest to e9907112b472 by @jason-simmons in [182795](https://github.com/flutter/flutter/pull/182795)
 * Roll RapidJSON to a branch based on the current upstream head by @jason-simmons in [183048](https://github.com/flutter/flutter/pull/183048)
@@ -454,7 +463,9 @@ This page has release notes for Flutter 3.44.
 * [Windows] Restore and enable IAccessibleEx implementation by @loic-peron-inetum-public in [175406](https://github.com/flutter/flutter/pull/175406)
 * Windows: Get graphics adapter from engine instead of view by @knopp in [184479](https://github.com/flutter/flutter/pull/184479)
 * [CP-beta][Win32] FlutterDesktopEngineGetGraphicsAdapter should use out parameter by @flutteractionsbot in [185634](https://github.com/flutter/flutter/pull/185634)
+
 ### Linux
+
 * fix build fail for wayland only platform by @HuQian in [182057](https://github.com/flutter/flutter/pull/182057)
 * Remove unused function prototype by @robert-ancell in [182915](https://github.com/flutter/flutter/pull/182915)
 * Support sending window constraints in metrics events by @robert-ancell in [182921](https://github.com/flutter/flutter/pull/182921)
@@ -467,7 +478,9 @@ This page has release notes for Flutter 3.44.
 * Revert "Linux reuse sibling (#183653)" by @robert-ancell in [183871](https://github.com/flutter/flutter/pull/183871)
 * Use clearer return value for idle and timeout callbacks. by @robert-ancell in [183811](https://github.com/flutter/flutter/pull/183811)
 * Protect access to renderables with a mutex by @robert-ancell in [183813](https://github.com/flutter/flutter/pull/183813)
+
 ### Web
+
 * Move all getUniformX tests to web_ui/test. by @walley892 in [180910](https://github.com/flutter/flutter/pull/180910)
 * [canvaskit] Fix image decoding in CPU-only mode by @harryterkelsen in [180706](https://github.com/flutter/flutter/pull/180706)
 * [web] Fix loading of fragment shader with space in name. by @ksokolovskyi in [180919](https://github.com/flutter/flutter/pull/180919)
@@ -514,7 +527,9 @@ This page has release notes for Flutter 3.44.
 * [web] Make it safe to call dispose multiple times on a CkSurface by @jason-simmons in [184270](https://github.com/flutter/flutter/pull/184270)
 * fix(web): call ui.Picture.onDispose for the original picture only by @harryterkelsen in [184348](https://github.com/flutter/flutter/pull/184348)
 * [web_ui] Fix avoid_type_to_string lint violation by @srawlins in [184342](https://github.com/flutter/flutter/pull/184342)
+
 ### Tooling
+
 * [ Widget Preview ] Move widget_preview_scaffold tests to `dev/integration_tests/widget_preview_scaffold` by @bkonyi in [180658](https://github.com/flutter/flutter/pull/180658)
 * [web] Don't serve files outside of project by @mdebbar in [180699](https://github.com/flutter/flutter/pull/180699)
 * Unpin google_mobile_ads by @goderbauer in [180573](https://github.com/flutter/flutter/pull/180573)
@@ -641,9 +656,13 @@ This page has release notes for Flutter 3.44.
 * [CP-beta]Use relative path for reloadedSourcesUri and reloaded modules by @flutteractionsbot in [185540](https://github.com/flutter/flutter/pull/185540)
 * [CP-beta][Widget Preview] Fix flaky integration test timeout during flutter clean (#184991) by @bkonyi in [185300](https://github.com/flutter/flutter/pull/185300)
 * [CP-beta]Fix `--enable-hcpp` flag being ignored in release by @flutteractionsbot in [185717](https://github.com/flutter/flutter/pull/185717)
+
 ### Documentation
+
 * Update example description by @robert-ancell in [182067](https://github.com/flutter/flutter/pull/182067)
-### Other Changes
+
+### Other changes
+
 * Update flutter changelog for 3.38.6 by @walley892 in [180708](https://github.com/flutter/flutter/pull/180708)
 * Update CODEOWNERS to remove chinmaygarde. by @chinmaygarde in [180703](https://github.com/flutter/flutter/pull/180703)
 * Enabled some disabled impeller fragment shader dart tests by @gaaclarke in [180759](https://github.com/flutter/flutter/pull/180759)
@@ -920,7 +939,8 @@ This page has release notes for Flutter 3.44.
 * [flutter-3.44-candidate.0] Update Flutter DEPS to Dart 9dc12969f5526d1bf1c2b48197d1608a68075866 by @flutteractionsbot in [185757](https://github.com/flutter/flutter/pull/185757)
 * [flutter-3.44-candidate.0] Sync engine.version to 73dc1ccd62aec198da4aefde1dae20b1167b131d by @flutteractionsbot in [185771](https://github.com/flutter/flutter/pull/185771)
 
-## New Contributors
+## New contributors
+
 * @Koichi5 made their first contribution in [180172](https://github.com/flutter/flutter/pull/180172)
 * @vhaudiquet made their first contribution in [178711](https://github.com/flutter/flutter/pull/178711)
 * @augustocesarperin made their first contribution in [180824](https://github.com/flutter/flutter/pull/180824)
