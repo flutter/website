@@ -94,7 +94,7 @@ class MonetizationPage extends StatelessComponent {
                         a(
                           classes: 'btn',
                           href:
-                              'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads?_gl=1*t0r6r2*_gcl_aw*R0NMLjE3Mjk4OTI2MjcuQ2owS0NRand2ZUs0QmhENEFSSXNBS3k2cE1Kek8zU3ZkcWhSUGxGZUJJUG9PaGtXa2U4YzFUNy1rOWZybFREVGhyTWUzRHQ2T0tCNTkzUWFBbXpaRUFMd193Y0I.*_gcl_dc*R0NMLjE3Mjk4OTI2MjcuQ2owS0NRand2ZUs0QmhENEFSSXNBS3k2cE1Kek8zU3ZkcWhSUGxGZUJJUG9PaGtXa2U4YzFUNy1rOWZybFREVGhyTWUzRHQ2T0tCNTkzUWFBbXpaRUFMd193Y0I.*_ga*MjA4MTI4NzI4OC4xNzI1NDk2NTUx*_ga_04YGWK0175*MTczMTAwNDY2NC41Ny4xLjE3MzEwMDU3NTEuMC4wLjA.',
+                              'https://docs.flutter.dev/cookbook/plugins/google-mobile-ads',
                           [.text('Get started')],
                         ),
                       ]),
