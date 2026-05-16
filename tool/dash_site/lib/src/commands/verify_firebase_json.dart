@@ -6,6 +6,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:path/path.dart' as path;
+
+import '../sites.dart';
+import '../utils.dart';
 
 final class VerifyFirebaseJsonCommand extends Command<int> {
   @override
@@ -17,15 +21,16 @@ final class VerifyFirebaseJsonCommand extends Command<int> {
   String get name => 'verify-firebase-json';
 
   @override
-  Future<int> run() async => _verifyFirebaseJson();
+  Future<int> run() async => _verifyFirebaseJson(selectedSite);
 }
 
-int _verifyFirebaseJson() {
-  final firebaseFile = File('firebase.json');
+int _verifyFirebaseJson(Site site) {
+  final firebasePath = path.join(repositoryRoot, site.firebaseConfigPath);
+  final firebaseFile = File(firebasePath);
 
   if (!firebaseFile.existsSync()) {
     stderr.writeln(
-      'Cannot find the firebase.json file in the current directory.',
+      'Cannot find the ${site.name} Firebase config at $firebasePath.',
     );
     return 1;
   }
@@ -41,6 +46,10 @@ int _verifyFirebaseJson() {
       stderr.writeln(
         "Error: The firebase.json file is missing a top-level 'hosting' entry.",
       );
+      return 1;
+    }
+
+    if (!_verifyHostingEmulatorPort(firebaseConfig, site)) {
       return 1;
     }
 
@@ -152,4 +161,39 @@ int _verifyFirebaseJson() {
   }
 
   return 0;
+}
+
+/// Returns whether the Firebase hosting emulator port in
+/// the [firebaseConfig] matches the one specified for [site].
+bool _verifyHostingEmulatorPort(
+  Map<String, Object?> firebaseConfig,
+  Site site,
+) {
+  final emulatorsConfig = firebaseConfig['emulators'];
+  if (emulatorsConfig is! Map<String, Object?>) {
+    stderr.writeln(
+      "Error: The firebase.json file is missing a top-level 'emulators' entry.",
+    );
+    return false;
+  }
+
+  final hostingEmulatorConfig = emulatorsConfig['hosting'];
+  if (hostingEmulatorConfig is! Map<String, Object?>) {
+    stderr.writeln(
+      "Error: The firebase.json file is missing an 'emulators.hosting' entry.",
+    );
+    return false;
+  }
+
+  final port = hostingEmulatorConfig['port'];
+  if (port != site.firebaseEmulatorPort) {
+    stderr.writeln(
+      "Error: The firebase.json 'emulators.hosting.port' value must be "
+      '${site.firebaseEmulatorPort} for the ${site.name} site, '
+      'but found $port.',
+    );
+    return false;
+  }
+
+  return true;
 }
