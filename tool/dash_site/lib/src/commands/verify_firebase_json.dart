@@ -172,7 +172,8 @@ bool _verifyHostingEmulatorPort(
   final emulatorsConfig = firebaseConfig['emulators'];
   if (emulatorsConfig is! Map<String, Object?>) {
     stderr.writeln(
-      "Error: The firebase.json file is missing a top-level 'emulators' entry.",
+      'Error: The ${site.name} Firebase config is '
+      "missing a top-level 'emulators' entry.",
     );
     return false;
   }
@@ -180,7 +181,8 @@ bool _verifyHostingEmulatorPort(
   final hostingEmulatorConfig = emulatorsConfig['hosting'];
   if (hostingEmulatorConfig is! Map<String, Object?>) {
     stderr.writeln(
-      "Error: The firebase.json file is missing an 'emulators.hosting' entry.",
+      'Error: The ${site.name} Firebase config is '
+      "missing an 'emulators.hosting' entry.",
     );
     return false;
   }
@@ -188,9 +190,8 @@ bool _verifyHostingEmulatorPort(
   final port = hostingEmulatorConfig['port'];
   if (port != site.firebaseEmulatorPort) {
     stderr.writeln(
-      "Error: The firebase.json 'emulators.hosting.port' value must be "
-      '${site.firebaseEmulatorPort} for the ${site.name} site, '
-      'but found $port.',
+      "Error: The ${site.name} Firebase config 'emulators.hosting.port' "
+      'value must be ${site.firebaseEmulatorPort}, but found $port.',
     );
     return false;
   }
