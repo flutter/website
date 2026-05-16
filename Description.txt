@@ -1,0 +1,1 @@
+This project focuses on how to use github to do profesional projects with your teammates.
