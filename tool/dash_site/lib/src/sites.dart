@@ -74,10 +74,26 @@ enum Site {
 
   /// The directory containing this site's Firebase config file.
   String get firebaseConfigDirectory => path.dirname(firebaseConfigPath);
+
+  /// The ports Jaspr uses when serving this site locally.
+  ///
+  /// Each port is derived from this site's declaration order in [Site] so
+  /// that multiple sites can be served concurrently without port conflicts.
+  /// Each is offset by one past Jaspr's default to avoid colliding with a
+  /// separate Jaspr project running with default port configuration.
+  ({int serve, int webDev, int proxy}) get jasprPorts => (
+    serve: _jasprDefaultSitePort + index + 1,
+    webDev: _jasprDefaultWebDevPort + index + 1,
+    proxy: _jasprDefaultProxyPort + index + 1,
+  );
 }
 
 /// The name of the global `--site` option.
 const String siteOptionName = 'site';
+
+const int _jasprDefaultSitePort = 8080;
+const int _jasprDefaultWebDevPort = 5467;
+const int _jasprDefaultProxyPort = 5567;
 
 extension CommandSiteResolution<T> on Command<T> {
   /// The [Site] selected with the global `--site` option,
