@@ -7,6 +7,9 @@ import 'dart:io';
 import 'package:args/command_runner.dart';
 import 'package:path/path.dart' as path;
 
+import '../sites.dart';
+import '../utils.dart';
+
 final class CheckLinkReferencesCommand extends Command<int> {
   @override
   String get description =>
@@ -17,13 +20,16 @@ final class CheckLinkReferencesCommand extends Command<int> {
   String get name => 'check-link-references';
 
   @override
-  Future<int> run() async => _checkLinkReferences();
+  Future<int> run() async => _checkLinkReferences(selectedSite);
 }
 
-int _checkLinkReferences() {
+int _checkLinkReferences(Site site) {
   print('Checking for broken Markdown link references...');
 
-  const generatedSiteDirectory = '_site';
+  final generatedSiteDirectory = path.join(
+    repositoryRoot,
+    site.buildOutputDirectory,
+  );
 
   final directory = Directory(generatedSiteDirectory);
 
