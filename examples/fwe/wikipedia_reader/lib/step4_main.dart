@@ -16,7 +16,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: ArticleView());
+    return const MaterialApp(home: ArticleView());
   }
 }
 // #enddocregion main-app

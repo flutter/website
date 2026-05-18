@@ -9,6 +9,7 @@ import 'package:args/command_runner.dart';
 import 'package:linkcheck/linkcheck.dart' as linkcheck show run;
 import 'package:path/path.dart' as path;
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class CheckLinksCommand extends Command<int> {
@@ -30,14 +31,11 @@ final class CheckLinksCommand extends Command<int> {
   String get name => 'check-links';
 
   @override
-  Future<int> run() async =>
-      _checkLinks(checkExternal: argResults.get<bool>(_externalFlag, false));
+  Future<int> run() async => _checkLinks(
+    site: selectedSite,
+    checkExternal: argResults.get<bool>(_externalFlag, false),
+  );
 }
-
-/// The port that the firebase emulator runs on by default.
-/// This must match what's declared in the `firebase.json`
-/// and can't be 5000, since Airplay uses it.
-const int _emulatorPort = 5502;
 
 /// The path from root where the linkcheck skip list lives.
 final String _skipFilePath = path.join(
@@ -46,10 +44,15 @@ final String _skipFilePath = path.join(
   'linkcheck-skip-list.txt',
 );
 
-Future<int> _checkLinks({bool checkExternal = false}) async {
-  if (await _isPortInUse(_emulatorPort)) {
+Future<int> _checkLinks({
+  required Site site,
+  bool checkExternal = false,
+}) async {
+  final emulatorPort = site.firebaseEmulatorPort;
+
+  if (await _isPortInUse(emulatorPort)) {
     stderr.writeln(
-      'Error: Port $_emulatorPort is already in use! '
+      'Error: Port $emulatorPort is already in use! '
       'Are you running the emulator elsewhere?',
     );
     return 1;
@@ -67,15 +70,27 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
     'Using firebase-tools $firebaseToolsVersion to start the '
     'Firebase hosting emulator asynchronously...',
   );
-  final emulatorProcess = await Process.start('firebase', const [
-    'emulators:start',
-    '--only',
-    'hosting',
-    '--project',
-    'default',
-    '--log-verbosity',
-    'QUIET',
-  ], mode: ProcessStartMode.inheritStdio);
+  final firebaseConfigDirectory = path.join(
+    repositoryRoot,
+    site.firebaseConfigDirectory,
+  );
+  final firebaseConfigFileName = path.basename(site.firebaseConfigPath);
+  final emulatorProcess = await Process.start(
+    'firebase',
+    [
+      'emulators:start',
+      '--only',
+      'hosting',
+      '--project',
+      'default',
+      '--config',
+      firebaseConfigFileName,
+      '--log-verbosity',
+      'QUIET',
+    ],
+    workingDirectory: firebaseConfigDirectory,
+    mode: ProcessStartMode.inheritStdio,
+  );
 
   print('Connecting to the emulator...');
   // Give the emulator a few seconds to start up.
@@ -83,14 +98,14 @@ Future<int> _checkLinks({bool checkExternal = false}) async {
 
   try {
     // Check to see if the emulator is running.
-    if (!(await _isPortInUse(_emulatorPort))) {
+    if (!(await _isPortInUse(emulatorPort))) {
       stderr.writeln('Error: The Firebase hosting emulator did not start!');
       return 1;
     }
 
     try {
       final result = await linkcheck.run([
-        ':$_emulatorPort',
+        ':$emulatorPort',
         '--skip-file',
         _skipFilePath,
         if (checkExternal) 'external',

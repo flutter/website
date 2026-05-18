@@ -56,7 +56,7 @@ custom tools or CI configurations might.
 
 For example, the Flutter team's own `api.flutter.dev` generation script:
 
-```dart title="post_processe_docs.dart"
+```dart title="post_process_docs.dart"
 final File versionFile = File('version');
 final String version = versionFile.readAsStringSync();
 ```

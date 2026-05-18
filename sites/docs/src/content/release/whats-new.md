@@ -36,7 +36,7 @@ In addition to many smaller updates, here are some of the more
 significant changes:
 
 * We have introduced a new getting started experience for
-  both Flutter and Dart, as announced in a recent [blog post][fwe].
+  both Flutter and Dart, as announced in a recent [blog post][few].
   You can find the Flutter [learning pathway][] under the **Learn**
   tab at the top of [docs.flutter.dev][]. To return to the rest of the site,
   select the **Guides** tab. As always, the **Reference**
@@ -55,7 +55,7 @@ significant changes:
 [bc-3-41]: /release/breaking-changes#released-in-flutter-3-41
 [docs.flutter.dev]: /
 [Flutter API docs]: {{site.api}}
-[fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
+[few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
 [navaronbracke]: {{site.github}}/navaronbracke
 [official glossary]: /resources/glossary

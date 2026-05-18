@@ -161,7 +161,7 @@ flutter:
 ```
 
 ```yaml
-# flavor_path_field strucure
+# flavor_path_field structure
 - path: path/to/directory
   flavors:
   - flavor_name

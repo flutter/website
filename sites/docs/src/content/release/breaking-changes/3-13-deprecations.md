@@ -415,7 +415,7 @@ To learn more about this `TestWindow` update, check out
 Code before migration:
 
 ```dart
-testWidgets('My test', (WidgetTester tester) aysnc {
+testWidgets('My test', (WidgetTester tester) async {
   // For all instances, replace window with platformDispatcher
   tester.binding.window.textScaleFactorTestValue = 42;
   addTearDown(tester.binding.window.clearTextScaleFactorTestValue);
@@ -426,7 +426,7 @@ testWidgets('My test', (WidgetTester tester) aysnc {
 Code after migration:
 
 ```dart
-testWidgets('My test', (WidgetTester tester) aysnc {
+testWidgets('My test', (WidgetTester tester) async {
   // For all instances, replace window with platformDispatcher
   tester.binding.platformDispatcher.textScaleFactorTestValue = 42;
   addTearDown(tester.binding.platformDispatcher.clearTextScaleFactorTestValue);

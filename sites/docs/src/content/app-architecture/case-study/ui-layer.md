@@ -228,12 +228,17 @@ class HomeViewModel extends ChangeNotifier {
 `ChangeNotifier` and [`ListenableBuilder`][] (discussed later on this page) are
 part of the Flutter SDK,
 and provide a good solution for updating the UI when state changes.
-You can also use a robust third-party state management solution,
-such as [package:riverpod][], [package:flutter_bloc][], or [package:signals][].
+You can also use a robust third-party state management solution, such as
+[`package:riverpod`][], [`package:flutter_bloc`][], or [`package:signals`][].
 These libraries offer different tools for handling UI updates.
 Read more about using `ChangeNotifier` in
 our [state-management documentation][].
 :::
+
+[`package:riverpod`]: {{site.pub-pkg}}/riverpod
+[`package:flutter_bloc`]: {{site.pub-pkg}}/flutter_bloc
+[`package:signals`]: {{site.pub-pkg}}/signals
+[state-management documentation]: /data-and-backend/state-mgmt/intro
 
 ## Define a view
 
@@ -639,7 +644,6 @@ the Command pattern. [Read about it on GitHub][].
 [`Listenable`]: {{site.api}}/flutter/foundation/Listenable-class.html
 [`ListenableBuilder`]: {{site.api}}/flutter/widgets/ListenableBuilder-class.html
 [`notifyListeners`]: {{site.api}}/flutter/foundation/ChangeNotifier/notifyListeners.html
-[state-management documentation]: /data-and-backend/state-mgmt/intro
 [`Scaffold`]: {{site.api}}/flutter/material/Scaffold-class.html
 [`Dismissible`]: {{site.api}}/flutter/widgets/Dismissible-class.html
 [`utils` directory]: https://github.com/flutter/samples/blob/main/compass_app/app/lib/utils/command.dart
@@ -648,9 +652,6 @@ the Command pattern. [Read about it on GitHub][].
 [`StreamBuilders`]: {{site.api}}/flutter/widgets/StreamBuilder-class.html
 [`AsyncSnapshot`]: {{site.api}}/flutter/widgets/AsyncSnapshot-class.html
 [Read about it on GitHub]: https://github.com/flutter/samples/pull/2449#pullrequestreview-2328333146
-[package:riverpod]: {{site.pub-pkg}}/riverpod
-[package:flutter_bloc]: {{site.pub-pkg}}/flutter_bloc
-[package:signals]: {{site.pub-pkg}}/signals
 
 ## Feedback
 

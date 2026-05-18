@@ -44,9 +44,9 @@ into 2 to 3 layers, depending on complexity.
 
 * **UI layer** - Displays data to the user that is exposed by the business logic
   layer, and handles user interaction. This is also commonly referred to as the
-  ‘presentation layer'.
+  "presentation layer".
 * **Logic layer** - Implements core business logic, and facilitates interaction
-  between the data layer and UI layer. Commonly known as the ‘domain layer'.
+  between the data layer and UI layer. Commonly known as the "domain layer".
   The logic layer is optional, and only needs to be implemented if your
   application has complex business logic that happens on the client.
   Many apps are only concerned with presenting data to a user and
@@ -55,7 +55,7 @@ into 2 to 3 layers, depending on complexity.
 * **Data layer** - Manages interactions with data sources, such as databases or
   platform plugins. Exposes data and methods to the business logic layer.
 
-These are called ‘layers' because each layer can only communicate with the
+These are called "layers" because each layer can only communicate with the
 layers directly below or above it. The UI layer shouldn't know that the data
 layer exists, and vice versa.
 

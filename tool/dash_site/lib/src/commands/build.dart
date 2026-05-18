@@ -31,59 +31,77 @@ final class BuildSiteCommand extends Command<int> {
   String get name => 'build';
 
   @override
-  Future<int> run() async {
-    installJasprCliIfNecessary();
+  Future<int> run() async => buildSite(
+    selectedSite,
+    productionRelease: argResults.get<bool>(_releaseFlag, false),
+  );
+}
 
-    final productionRelease = argResults.get<bool>(_releaseFlag, false);
-    final site = selectedSite;
+Future<int> buildSite(Site site, {required bool productionRelease}) async {
+  if (installJasprCliIfNecessary() case final jasprInstallResult
+      when jasprInstallResult != 0) {
+    return jasprInstallResult;
+  }
 
-    final process = await Process.start(
-      Platform.resolvedExecutable,
-      [
-        'pub',
-        'global',
-        'run',
-        'jaspr_cli:jaspr',
-        'build',
-        // Use build_web_compiler options specified in build.yaml instead of
-        // those specified by jaspr_cli.
-        '--no-managed-build-options',
-        '--sitemap-domain=${site.baseUrl}',
-        // Exclude secondary Markdown output files from sitemap.
-        r'--sitemap-exclude=\.html\.md$',
-        '--dart-define=PRODUCTION=$productionRelease',
-      ],
-      workingDirectory: site.directory,
-      mode: ProcessStartMode.inheritStdio,
-    );
-
-    final processExitCode = await process.exitCode;
-
-    final originalOutputDirectoryPath = path.join(
-      repositoryRoot,
-      site.directory,
+  final process = await Process.start(
+    Platform.resolvedExecutable,
+    [
+      'pub',
+      'global',
+      'run',
+      'jaspr_cli:jaspr',
       'build',
-      'jaspr',
-    );
-    if (!Directory(originalOutputDirectoryPath).existsSync()) {
-      stderr.writeln(
-        'Error: Jaspr output directory not found at: '
-        '$originalOutputDirectoryPath',
-      );
-      return 1;
-    }
+      // Use build_web_compiler options specified in build.yaml instead of
+      // those specified by jaspr_cli.
+      '--no-managed-build-options',
+      '--sitemap-domain=${site.baseUrl}',
+      // Exclude secondary Markdown output files from sitemap.
+      r'--sitemap-exclude=\.html\.md$',
+      '--dart-define=PRODUCTION=$productionRelease',
+    ],
+    workingDirectory: site.directory,
+    mode: ProcessStartMode.inheritStdio,
+  );
 
-    // Copy the entire site output to the _site directory.
-    io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
-
-    _move404File();
-
+  if (await process.exitCode case final processExitCode
+      when processExitCode != 0) {
     return processExitCode;
   }
+
+  final originalOutputDirectoryPath = path.join(
+    repositoryRoot,
+    site.jasprBuildOutputDirectory,
+  );
+  if (!Directory(originalOutputDirectoryPath).existsSync()) {
+    stderr.writeln(
+      'Error: Jaspr output directory not found at: '
+      '$originalOutputDirectoryPath',
+    );
+    return 1;
+  }
+
+  final siteOutputDirectoryPath = path.join(
+    repositoryRoot,
+    site.buildOutputDirectory,
+  );
+  if (path.normalize(originalOutputDirectoryPath) !=
+      path.normalize(siteOutputDirectoryPath)) {
+    final outputDirectory = Directory(siteOutputDirectoryPath);
+    if (outputDirectory.existsSync()) {
+      outputDirectory.deleteSync(recursive: true);
+    }
+
+    // Copy the entire site output to the configured output directory.
+    io.copyPathSync(originalOutputDirectoryPath, siteOutputDirectoryPath);
+  }
+
+  _move404File(siteOutputDirectoryPath);
+
+  return 0;
 }
 
 /// Moves the 404 file to the location expected by Firebase hosting.
-void _move404File() {
+void _move404File(String siteOutputDirectoryPath) {
   final initial404Directory = path.join(siteOutputDirectoryPath, '404');
   final original404File = File(path.join(initial404Directory, 'index.html'));
   if (original404File.existsSync()) {

@@ -36,7 +36,6 @@ class HomePage extends StatelessWidget {
         child: CupertinoButton(
           color: CupertinoColors.systemYellow,
           onPressed: () {},
-          padding: const EdgeInsets.all(16),
           child: const Text(
             'Do something',
             style: TextStyle(

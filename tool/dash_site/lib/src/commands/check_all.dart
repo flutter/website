@@ -19,11 +19,13 @@ final class CheckAllCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    const verificationTasks = [
+    final selectedSite = this.selectedSite;
+    final verificationTasks = [
       ['format-dart', '--check'],
       ['analyze-dart'],
       ['test-dart'],
-      ['refresh-excerpts', '--fail-on-update', '--dry-run'],
+      if (selectedSite.supportsCodeExcerpts)
+        ['refresh-excerpts', '--fail-on-update', '--dry-run'],
     ];
 
     final siteName = selectedSite.name;
