@@ -36,7 +36,7 @@ int analyzeDart({bool verboseLogging = false}) {
   final directoriesToAnalyze = [
     'examples',
     'packages',
-    Site.docs.directory,
+    for (final site in Site.values) site.directory,
     path.join('tool', 'dash_site'),
   ];
 

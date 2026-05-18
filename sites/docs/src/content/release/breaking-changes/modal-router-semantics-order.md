@@ -77,12 +77,12 @@ void main() {
 
 SemanticsNode getChild(SemanticsNode node) {
   SemanticsNode child;
-  bool visiter(SemanticsNode target) {
+  bool visitor(SemanticsNode target) {
     child = target;
     return false;
   }
 
-  node.visitChildren(visiter);
+  node.visitChildren(visitor);
   return child;
 }
 ```
@@ -127,12 +127,12 @@ void main() {
 
 SemanticsNode getChild(SemanticsNode node) {
   SemanticsNode child;
-  bool visiter(SemanticsNode target) {
+  bool visitor(SemanticsNode target) {
     child = target;
     return false;
   }
 
-  node.visitChildren(visiter);
+  node.visitChildren(visitor);
   return child;
 }
 ```

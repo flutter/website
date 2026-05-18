@@ -34,7 +34,7 @@ the [Antigravity site](https://antigravity.google/download).
     more or less control. Even if you select **Agent driven development**,
     which allows Antigravity to directly run commands without approval,
     you can specify certain commands that will _always_ ask
-    for your approval, such as the `rm` command to removes files.
+    for your approval, such as the `rm` command to remove files.
 
  1. <h3>Install the Dart and Flutter extensions</h3>
 

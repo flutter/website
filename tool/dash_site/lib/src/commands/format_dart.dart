@@ -38,7 +38,7 @@ int formatDart({bool justCheck = false}) {
   final directoriesToFormat = [
     'examples',
     'packages',
-    Site.docs.directory,
+    for (final site in Site.values) site.directory,
     path.join('tool', 'dash_site'),
   ];
 

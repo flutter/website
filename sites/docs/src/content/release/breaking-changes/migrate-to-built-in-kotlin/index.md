@@ -35,11 +35,18 @@ In a future Flutter version, support for applying KGP will be removed
 To learn more about Android Gradle Plugin,
 see the [Android Gradle Plugin docs][AGP block].
 
+[AGP block]: {{site.android-dev}}/build/releases/gradle-plugin
+
 ## Migrate
 
-**For app developers:** See the [app developer migration guide][app-migration-guide].
+**For app developers:**
+Follow the [app developer migration guide][app-migration-guide].
 
-**For plugin authors:** See the [plugin author migration guide][plugin-migration-guide].
+**For plugin authors:**
+Follow the [plugin author migration guide][plugin-migration-guide].
+
+[app-migration-guide]: /release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
+[plugin-migration-guide]: /release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
 
 ## Next steps
 
@@ -51,6 +58,13 @@ see the [Android Gradle Plugin docs][AGP block].
 - **Remove DSL Gradle Property:** Once the Flutter team
   completes the migration to the new AGP DSL,
   the Flutter team will remove support for the old DSL [Issue #184839][].
+
+## Timeline
+
+Landed in version: 3.44.0-0.1.pre<br>
+In stable release: 3.44
+
+## References
 
 Relevant issues:
 
@@ -67,14 +81,9 @@ Consider staying up to date with the latest version
 of the build files by periodically running `flutter upgrade`
 in your app's directory.
 
-[AGP block]: {{site.android-dev}}/build/releases/gradle-plugin
-
-[Issue #180137]: {{site.github}}/flutter/flutter/issues/180137
-[Issue #181383]: {{site.github}}/flutter/flutter/issues/181383
-[Issue #183909]: {{site.github}}/flutter/flutter/issues/183909
-[Issue #184837]: {{site.github}}/flutter/flutter/issues/184837
-[Issue #184838]: {{site.github}}/flutter/flutter/issues/184838
-[Issue #184839]: {{site.github}}/flutter/flutter/issues/184839
-
-[app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
-[plugin-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors
+[Issue #180137]: {{site.repo.flutter}}/issues/180137
+[Issue #181383]: {{site.repo.flutter}}/issues/181383
+[Issue #183909]: {{site.repo.flutter}}/issues/183909
+[Issue #184837]: {{site.repo.flutter}}/issues/184837
+[Issue #184838]: {{site.repo.flutter}}/issues/184838
+[Issue #184839]: {{site.repo.flutter}}/issues/184839

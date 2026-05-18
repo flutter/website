@@ -22,6 +22,9 @@ outlined in the [Beta channel][] section of the [SDK archive][] page.
 
 ## Stable releases
 
+* 3.44.0
+  * [3.44.0 release notes & change log][]
+  * [3.44.0 breaking changes & migrations][]
 * 3.41.0
   * [3.41.0 announcement][]
   * [3.41.0 release notes & change log][]
@@ -119,6 +122,8 @@ outlined in the [Beta channel][] section of the [SDK archive][] page.
 * Earlier
   * [Archived release notes][]
 
+[3.44.0 release notes & change log]: /release/release-notes/release-notes-3.44.0
+[3.44.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-44
 [3.41.0 announcement]: {{site.flutter-blog}}/whats-new-in-flutter-3-41-302ec140e632
 [3.41.0 release notes & change log]: /release/release-notes/release-notes-3.41.0
 [3.41.0 breaking changes & migrations]: /release/breaking-changes#released-in-flutter-3-41

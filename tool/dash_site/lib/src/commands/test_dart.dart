@@ -7,6 +7,7 @@ import 'dart:io';
 import 'package:args/command_runner.dart';
 import 'package:path/path.dart' as path;
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class TestDartCommand extends Command<int> {
@@ -21,7 +22,7 @@ final class TestDartCommand extends Command<int> {
   }
 
   @override
-  String get description => 'Run tests on the site infra and examples.';
+  String get description => 'Run tests on the sites, site infra, and examples.';
 
   @override
   String get name => 'test-dart';
@@ -32,16 +33,24 @@ final class TestDartCommand extends Command<int> {
 }
 
 Future<int> _testDart({bool verboseLogging = false}) async {
-  final directoriesToTest = [
-    path.join('tool', 'dash_site'),
-    ...exampleProjectDirectories,
+  final directoriesToTest = <(String directory, String executable)>[
+    (path.join('tool', 'dash_site'), 'dart'),
+    for (final site in Site.values)
+      if (Directory(path.join(site.directory, 'test')).existsSync())
+        (site.directory, 'dart'),
+    for (final directory in exampleProjectDirectories) (directory, 'flutter'),
   ];
 
   print('Testing code...');
 
   final failedTests = <String>[
-    for (final directory in directoriesToTest)
-      if (!(await testsPassInDirectory(directory, verboseLogging))) directory,
+    for (final (directory, executable) in directoriesToTest)
+      if (!(await testsPassInDirectory(
+        directory,
+        verboseLogging,
+        executable: executable,
+      )))
+        directory,
   ];
 
   if (failedTests.isNotEmpty) {
@@ -54,23 +63,28 @@ Future<int> _testDart({bool verboseLogging = false}) async {
   return 0;
 }
 
-Future<bool> testsPassInDirectory(String directory, bool verboseLogging) async {
+Future<bool> testsPassInDirectory(
+  String directory,
+  bool verboseLogging, {
+  String executable = 'flutter',
+}) async {
   if (verboseLogging) {
-    print('Testing code in $directory...');
+    print('Testing code in $directory with $executable test...');
   }
 
-  final flutterTestOutput = await Process.run('flutter', [
+  final testOutput = await Process.run(executable, [
     'test',
     '--reporter',
     'expanded', // Non-animated expanded output looks better in CI and logs.
   ], workingDirectory: directory);
 
-  if (flutterTestOutput.exitCode != 0) {
-    final normalOutput = flutterTestOutput.stdout.toString();
-    final errorOutput = flutterTestOutput.stderr.toString();
+  if (testOutput.exitCode != 0) {
+    final normalOutput = testOutput.stdout.toString();
+    final errorOutput = testOutput.stderr.toString();
 
     // It's ok if the test directory is not found.
     if (!errorOutput.contains('No test') &&
+        !normalOutput.contains('No test files were passed') &&
         !normalOutput.contains('Could not find package `test`') &&
         !normalOutput.contains('No tests were') &&
         !errorOutput.contains(RegExp(r'Test directory.*not found'))) {

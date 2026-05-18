@@ -15,17 +15,25 @@ import 'src/commands/refresh_excerpts.dart';
 import 'src/commands/serve.dart';
 import 'src/commands/test_dart.dart';
 import 'src/commands/verify_firebase_json.dart';
+import 'src/sites.dart';
 
-/// The root command runner of the Fluter documentation website tooling.
+/// The root command runner of the Flutter website tooling.
 ///
-/// To learn about it and its subcommands,
+/// To learn about the command, its supported options, and its subcommands,
 /// run `dart run dash_site --help`.
 final class DashSiteCommandRunner extends CommandRunner<int> {
   DashSiteCommandRunner()
     : super(
         'dart run dash_site',
-        'Infrastructure tooling for the Flutter documentation website.',
+        'Infrastructure tooling for the Flutter websites.',
       ) {
+    argParser.addOption(
+      siteOptionName,
+      defaultsTo: Site.docs.name,
+      allowed: [for (final site in Site.values) site.name],
+      help: 'The site to operate on.',
+    );
+
     addCommand(AnalyzeDartCommand());
     addCommand(BuildSiteCommand());
     addCommand(CheckAllCommand());
