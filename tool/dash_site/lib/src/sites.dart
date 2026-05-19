@@ -14,6 +14,7 @@ enum Site {
     contentPathSegments: ['src', 'content'],
     firebaseConfigPathSegments: ['firebase.json'],
     firebaseEmulatorPort: 5502,
+    defaultFirebaseProjectId: 'flutter-docs-prod',
     supportsCodeExcerpts: true,
   );
 
@@ -23,6 +24,7 @@ enum Site {
     required this.contentPathSegments,
     required this.firebaseConfigPathSegments,
     required this.firebaseEmulatorPort,
+    required this.defaultFirebaseProjectId,
     this.supportsCodeExcerpts = false,
   });
 
@@ -50,6 +52,12 @@ enum Site {
   /// Each site needs a unique port so the emulators can run concurrently,
   /// and `5000` must be avoided since AirPlay can use it on macOS.
   final int firebaseEmulatorPort;
+
+  /// The default Firebase project ID for production and staging deploys.
+  ///
+  /// Commands expose this as an overrideable default so contributors can
+  /// deploy the site to their own Firebase projects for testing.
+  final String defaultFirebaseProjectId;
 
   /// Whether this site supports code excerpts managed by `refresh-excerpts`.
   final bool supportsCodeExcerpts;
