@@ -10,11 +10,17 @@ steps:
         set -euo pipefail
 
         dart pub get
-        dart run dash_site --site="$_SITE" stage-preview \
-          --pr-number "$_PR_NUMBER" \
-          --repo "$REPO_FULL_NAME" \
-          --commit-sha "$COMMIT_SHA" \
-          --head-branch "$_HEAD_BRANCH"
+        dart run dash_site --site="$${SITE}" stage-preview \
+          --pr-number "$${PR_NUMBER}" \
+          --repo "$${REPO_FULL_NAME}" \
+          --commit-sha "$${COMMIT_SHA}" \
+          --head-branch "$${HEAD_BRANCH}"
+    env:
+      - 'SITE=$_SITE'
+      - 'PR_NUMBER=$_PR_NUMBER'
+      - 'REPO_FULL_NAME=$REPO_FULL_NAME'
+      - 'COMMIT_SHA=$COMMIT_SHA'
+      - 'HEAD_BRANCH=$_HEAD_BRANCH'
     secretEnv: ['GH_PAT_TOKEN']
 availableSecrets:
   secretManager:

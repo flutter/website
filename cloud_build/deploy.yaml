@@ -12,6 +12,8 @@ steps:
         set -euo pipefail
 
         dart pub get
-        dart run dash_site --site="$_SITE" deploy
+        dart run dash_site --site="$${SITE}" deploy
+    env:
+      - 'SITE=$_SITE'
 options:
   logging: CLOUD_LOGGING_ONLY
