@@ -34,7 +34,7 @@ the [Antigravity site](https://antigravity.google/download).
     more or less control. Even if you select **Agent driven development**,
     which allows Antigravity to directly run commands without approval,
     you can specify certain commands that will _always_ ask
-    for your approval, such as the `rm` command to removes files.
+    for your approval, such as the `rm` command to remove files.
 
  1. <h3>Install the Dart and Flutter extensions</h3>
 
@@ -85,6 +85,14 @@ the [Antigravity site](https://antigravity.google/download).
     check out [How to develop Flutter apps in VS Code][vs-code].
 
 {:.steps}
+
+## Agentic Hot Reload {: #agentic-hot-reload}
+
+If you are using Antigravity in Agent mode,
+the agent can automatically hot reload your running application
+when you prompt it to modify your app.
+This enables a hands-free, "prompt-to-reload" workflow
+that reduces context switching and development latency.
 
 [ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
 [Create a new Flutter app]: /reference/create-new-app#antigravity

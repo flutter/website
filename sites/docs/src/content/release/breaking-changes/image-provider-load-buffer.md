@@ -73,7 +73,7 @@ class MyImageProvider extends ImageProvider<MyImageProvider> {
 class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
   MyDelegatingProvider(this.provider);
 
-  final ImageProvder provider;
+  final ImageProvider provider;
 
   @override
   ImageStreamCompleter load(MyDelegatingProvider key, DecoderCallback decode) {
@@ -103,7 +103,7 @@ class MyImageProvider extends ImageProvider<MyImageProvider> {
 class MyDelegatingProvider extends ImageProvider<MyDelegatingProvider> {
   MyDelegatingProvider(this.provider);
 
-  final ImageProvder provider;
+  final ImageProvider provider;
 
   @override
   ImageStreamCompleter loadBuffer(MyDelegatingProvider key, DecoderCallback decode) {

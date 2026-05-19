@@ -71,7 +71,7 @@ extension for Gemini CLI by using one of the following commands:
     ```
 
 2. To install the current version and ensure that future
-   updates are automatically installed, use the `auto-upate` tag:
+   updates are automatically installed, use the `auto-update` tag:
 
    ```console
    gemini extensions install https://github.com/gemini-cli-extensions/flutter.git --auto-update

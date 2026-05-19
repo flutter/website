@@ -117,7 +117,7 @@ On Android, the `native_add/android/build.gradle` links the code.
 
 The native code is invoked from dart in `lib/native_add_bindings_generated.dart`.
 
-The bindings are generated with [package:ffigen]({{site.pub-pkg}}/ffigen).
+The bindings are generated with [`package:ffigen`]({{site.pub-pkg}}/ffigen).
 
 ## Other use cases
 

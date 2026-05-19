@@ -220,7 +220,7 @@ Removed in:
 
 Supported by Flutter Fix: yes
 
-In v2.4, several changes were made ot the app bar classes and their themes to
+In v2.4, several changes were made to the app bar classes and their themes to
 better align with Material Design. Several properties were deprecated at that
 time and have been removed.
 

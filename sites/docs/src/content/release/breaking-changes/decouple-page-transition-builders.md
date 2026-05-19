@@ -75,8 +75,8 @@ If your app already imports both packages, no changes are needed.
 
 ## Timeline
 
-Landed in version: Not yet released<br>
-In stable release: Not yet released
+Landed in version: 3.43.0-0.1.pre<br>
+In stable release: 3.44
 
 ## References
 

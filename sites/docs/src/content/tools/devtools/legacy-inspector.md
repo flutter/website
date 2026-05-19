@@ -112,7 +112,7 @@ constraints.
 Additionally, the explorer shows layout constraint violations
 and render overflow errors. Violated layout constraints
 are colored red, and overflow errors are presented in the
-standard  "yellow-tape" pattern, as you might see on a running
+standard "yellow-tape" pattern, as you might see on a running
 device. These visualizations aim to improve understanding of
 why overflow errors occur as well as how to fix them.
 

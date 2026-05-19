@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering
 
-import './backend.dart';
+import 'backend.dart';
 
 import 'package:flutter/services.dart';
 

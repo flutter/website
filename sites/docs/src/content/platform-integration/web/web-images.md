@@ -132,7 +132,9 @@ Examples:
 [CloudFlare Workers]: https://developers.cloudflare.com/workers/examples/cors-header-proxy
 [Firebase Functions]: {{site.github}}/7kfpun/cors-proxy
 
-### Use a HTML platform view
+<a id="use-a-html-platform-view" aria-hidden="true"></a>
+
+### Use an HTML platform view
 
 If none of the other solutions work for your app, Flutter
 supports embedding raw HTML inside the app using

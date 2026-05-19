@@ -22,9 +22,6 @@ final String repositoryRoot = () {
   return maybeRoot;
 }();
 
-/// The path of the site output directory.
-final String siteOutputDirectoryPath = path.join(repositoryRoot, '_site');
-
 final bool _runningInCi = Platform.environment['CI'] == 'true';
 
 int installJasprCliIfNecessary() {
