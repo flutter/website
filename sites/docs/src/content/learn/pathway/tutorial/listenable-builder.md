@@ -220,7 +220,7 @@ class _ArticleViewState extends State<ArticleView> {
               (_, _, final Exception e) => Text('Error: $e'),
               (_, final summary?, _) => ArticlePage(
                 summary: summary,
-                nextArticleCallback: viewModel.fetchArticle,
+                nextArticleCallback: () => viewModel.fetchArticle,
               ),
               _ => const Text('Something went wrong!'),
             };
