@@ -18,6 +18,7 @@ steps:
     secretEnv: ['GH_PAT_TOKEN']
 availableSecrets:
   secretManager:
+    # Use flutter-docs-prod across sites, so we only need a single bot setup.
     - versionName: projects/flutter-docs-prod/secrets/flutter-website-bot-comment-pat/versions/latest
       env: 'GH_PAT_TOKEN'
 timeout: 1200s
