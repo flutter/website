@@ -413,4 +413,4 @@ then you will also have to migrate the example app.
 Follow the [migration guide for app developers][app-migration-guide] to migrate your example app.
 
 [app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
-[flutter-sdk-minimum-below-3.44]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#supporting-flutter-versions-earlier-than-344
+[flutter-sdk-minimum-below-3.44]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#supporting-flutter-versions-earlier-than-3-44
