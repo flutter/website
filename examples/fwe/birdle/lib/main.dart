@@ -84,8 +84,13 @@ class _GuessInputState extends State<GuessInput> {
   final FocusNode _focusNode = FocusNode();
 
   void _onSubmit() {
-    widget.onSubmitGuess(_textEditingController.text.trim());
-    _textEditingController.clear();
+    final text = _textEditingController.text.trim();
+
+    if (text.length == 5) {
+      widget.onSubmitGuess(text);
+      _textEditingController.clear();
+    }
+
     _focusNode.requestFocus();
   }
 
