@@ -35,7 +35,7 @@ you will now see an error similar to this:
 ```text
 ListTile background color or ink splashes may be invisible.
 The ListTile is wrapped in a Container that has a background color.
-BecauseListTile paints its background and ink splashes on
+Because ListTile paints its background and ink splashes on
 the nearest Material ancestor, this Container will hide those effects.
 To fix this, wrap the ListTile in its own Material widget, or
 remove the background color from the intermediate Container.

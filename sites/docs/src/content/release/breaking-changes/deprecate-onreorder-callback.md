@@ -10,7 +10,7 @@ description: >-
 ## Summary
 
 The `onReorder` callback in the
-`ReorderableListView`,`ReorderableListView.builder`,
+`ReorderableListView`, `ReorderableListView.builder`,
 `ReorderableList`, and `SliverReorderableList` widgets
 has been replaced by a new callback, `onReorderItem`,
 which provides more intuitive behavior for `newIndex`.
@@ -22,7 +22,7 @@ The `onReorder` callback in the
 `ReorderableList`, and `SliverReorderableList` widgets required
 a manual correction for the second parameter, `newIndex`,
 in case the `oldIndex` is before the `newIndex` because
-list of items would be shortened by one element.
+the list of items would be shortened by one element.
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {

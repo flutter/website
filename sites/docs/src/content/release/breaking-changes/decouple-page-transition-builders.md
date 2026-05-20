@@ -43,7 +43,7 @@ use this builder without depending on the Material library.
 ## Migration guide
 
 If you use `CupertinoPageTransitionsBuilder` and
-only import`package:flutter/material.dart`,
+only import `package:flutter/material.dart`,
 add an import for `package:flutter/cupertino.dart`.
 
 Code before migration:
