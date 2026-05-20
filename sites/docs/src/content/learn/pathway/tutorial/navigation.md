@@ -84,7 +84,7 @@ class ContactGroupsPage extends StatelessWidget {
         CupertinoPageRoute<void>(
           title: list.title,
           builder: (context) => ContactListsPage(listId: list.id),
-        ),
+        );
       ),
     );
   }
