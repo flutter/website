@@ -6,7 +6,7 @@ environment:
   sdk: ^3.12.0-0
 
 dependencies:
-  collection: ^1.19.1 # Pull the version of package:collection from Flutter.
+  collection: any # Pull the version of package:collection from Flutter.
   extension_google_sign_in_as_googleapis_auth: ^3.0.0
   flutter:
     sdk: flutter
