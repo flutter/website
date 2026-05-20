@@ -6,7 +6,7 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0-0
 
 workspace:
   - my_widgets
@@ -14,9 +14,9 @@ workspace:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
-  http: ^1.5.0
-  shared_preferences: ^2.5.3
+  cupertino_icons: ^1.0.9
+  http: ^1.6.0
+  shared_preferences: ^2.5.5
   my_widgets:
     path: my_widgets
 

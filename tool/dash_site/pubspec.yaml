@@ -4,12 +4,13 @@ publish_to: none
 
 resolution: workspace
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0-0
 
 dependencies:
   args: ^2.7.0
   excerpter:
     path: ../../packages/excerpter
+  github: ^9.25.0
   io: ^1.0.5
   linkcheck: ^3.1.0
   path: ^1.9.1

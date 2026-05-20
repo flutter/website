@@ -42,15 +42,16 @@ class CupertinoSheetDemo extends StatelessWidget {
 ## 2. Display the sheet content
 
 With the basic app structure in place, display the sheet.
-To show it, call `showCupertinoSheet` and provide a `builder`
+To show it, call `showCupertinoSheet` and provide a `scrollableBuilder`
 that returns the content for the sheet, such as a `SingleChildScrollView`.
 
 <?code-excerpt "lib/main.dart (ShowCupertinoSheet)"?>
 ```dart
 showCupertinoSheet(
   context: context,
-  builder: (context) {
+  scrollableBuilder: (context, scrollController) {
     return SingleChildScrollView(
+      controller: scrollController,
       child: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -107,8 +108,9 @@ class CupertinoSheetPage extends StatelessWidget {
           onPressed: () {
             showCupertinoSheet(
               context: context,
-              builder: (context) {
+              scrollableBuilder: (context, scrollController) {
                 return SingleChildScrollView(
+                  controller: scrollController,
                   child: Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
