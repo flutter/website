@@ -10,9 +10,9 @@ import 'package:flutter/services.dart';
 import 'package:meta/meta.dart' show immutable, protected, visibleForTesting;
 
 Object? _extractReplyValueOrThrow(
-    List<Object?>? replyList,
-    String channelName, {
-    required bool isNullValid,
+  List<Object?>? replyList,
+  String channelName, {
+  required bool isNullValid,
 }) {
   if (replyList == null) {
     throw PlatformException(
@@ -46,8 +46,9 @@ bool _deepEquals(Object? a, Object? b) {
   }
   if (a is List && b is List) {
     return a.length == b.length &&
-        a.indexed
-            .every(((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]));
+        a.indexed.every(
+          ((int, dynamic) item) => _deepEquals(item.$2, b[item.$1]),
+        );
   }
   if (a is Map && b is Map) {
     if (a.length != b.length) {
@@ -96,28 +97,22 @@ int _deepHash(Object? value) {
   return value.hashCode;
 }
 
-
 class SearchRequest {
-  SearchRequest({
-    required this.query,
-  });
+  SearchRequest({required this.query});
 
   String query;
 
   List<Object?> _toList() {
-    return <Object?>[
-      query,
-    ];
+    return <Object?>[query];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static SearchRequest decode(Object result) {
     result as List<Object?>;
-    return SearchRequest(
-      query: result[0]! as String,
-    );
+    return SearchRequest(query: result[0]! as String);
   }
 
   @override
@@ -138,26 +133,21 @@ class SearchRequest {
 }
 
 class SearchReply {
-  SearchReply({
-    required this.result,
-  });
+  SearchReply({required this.result});
 
   String result;
 
   List<Object?> _toList() {
-    return <Object?>[
-      result,
-    ];
+    return <Object?>[result];
   }
 
   Object encode() {
-    return _toList();  }
+    return _toList();
+  }
 
   static SearchReply decode(Object result) {
     result as List<Object?>;
-    return SearchReply(
-      result: result[0]! as String,
-    );
+    return SearchReply(result: result[0]! as String);
   }
 
   @override
@@ -177,7 +167,6 @@ class SearchReply {
   int get hashCode => _deepHash(<Object?>[runtimeType, ..._toList()]);
 }
 
-
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -185,10 +174,10 @@ class _PigeonCodec extends StandardMessageCodec {
     if (value is int) {
       buffer.putUint8(4);
       buffer.putInt64(value);
-    }    else if (value is SearchRequest) {
+    } else if (value is SearchRequest) {
       buffer.putUint8(129);
       writeValue(buffer, value.encode());
-    }    else if (value is SearchReply) {
+    } else if (value is SearchReply) {
       buffer.putUint8(130);
       writeValue(buffer, value.encode());
     } else {
@@ -214,8 +203,10 @@ class Api {
   /// available for dependency injection.  If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
   Api({BinaryMessenger? binaryMessenger, String messageChannelSuffix = ''})
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+    : pigeonVar_binaryMessenger = binaryMessenger,
+      pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+          ? '.$messageChannelSuffix'
+          : '';
   final BinaryMessenger? pigeonVar_binaryMessenger;
 
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
@@ -223,21 +214,23 @@ class Api {
   final String pigeonVar_messageChannelSuffix;
 
   Future<SearchReply> search(SearchRequest request) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.pigeon_examples.Api.search$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.pigeon_examples.Api.search$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[request]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[request],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
 
     final Object? pigeonVar_replyValue = _extractReplyValueOrThrow(
-        pigeonVar_replyList,
-        pigeonVar_channelName,
-        isNullValid: false,
-    )
-    ;
+      pigeonVar_replyList,
+      pigeonVar_channelName,
+      isNullValid: false,
+    );
     return pigeonVar_replyValue! as SearchReply;
   }
 }
