@@ -9,7 +9,7 @@ environment:
   sdk: ^3.12.0-0
 
 dependencies:
-  animations: ^2.0.11
+  animations: ^2.2.0
   flutter:
     sdk: flutter
 
