@@ -10,6 +10,11 @@ This guide outlines the migration steps specifically for plugin authors.
 
 ### Update the Gradle file
 
+The following steps assume you can update your plugin's Flutter SDK minimum
+to 3.44. If you cannot update the Flutter SDK minimum to 3.44, follow the
+instructions for
+[supporting Flutter versions earlier than 3.44][flutter-sdk-minimum-below-3.44].
+
 First, find the `kotlin-android` plugin (or the `org.jetbrains.kotlin.android`
 plugin).
 It is likely located in the `plugins` block of the
@@ -200,6 +205,190 @@ environment:
 # ...
 ```
 
+## Supporting Flutter versions earlier than 3.44
+
+If you updated your plugin's Flutter SDK minimum to 3.44, skip this section
+and proceed to updating the plugin's `CHANGELOG.md`.
+
+If you cannot update the plugin's Flutter SDK minimum to 3.44, you must make
+the following changes to `<plugin-project>/android/build.gradle` or
+`<plugin-project>/android/build.gradle.kts` to support apps on AGP < 9
+and AGP >= 9:
+
+<Tabs key="workaround-for-plugins">
+<Tab name="Kotlin DSL fix">
+
+**Before**:
+
+```kotlin title="<app-src>/android/build.gradle.kts"
+plugins {
+    id("com.android.library")
+    id("kotlin-android")
+    // ...
+}
+
+android {
+    // ...
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+    // ...
+}
+
+// ...
+```
+
+Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
+
+```kotlin diff title="<app-src>/android/build.gradle.kts"
+  plugins {
+      id("com.android.library")
+-     id("kotlin-android")
+      // ...
+  }
+
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
+```
+
+Add a check to apply the Kotlin Gradle Plugin only when the app's Android
+Gradle Plugin version is earlier than 9.
+
+```kotlin diff title="<app-src>/android/build.gradle.kts"
++ val agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.substringBefore('.').toInt()
++
++ if (agpMajor < 9) {
++    apply(plugin = "org.jetbrains.kotlin.android")
++ }
+```
+
+Add the `compilerOptions` configuration using the project extension:
+
+```kotlin diff title="<app-src>/android/build.gradle.kts"
++ project.extensions.configure(org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension::class.java) {
++     compilerOptions {
++         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
++     }
++ }
+```
+
+Here is how the file will likely end up:
+
+**After**:
+
+```kotlin title="<app-src>/android/build.gradle.kts"
+plugins {
+    id("com.android.library")
+    // ...
+}
+
+val agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.substringBefore('.').toInt()
+
+if (agpMajor < 9) {
+    apply(plugin = "org.jetbrains.kotlin.android")
+}
+
+android {
+    // ...
+}
+
+project.extensions.configure(org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension::class.java) {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+// ...
+```
+
+</Tab>
+<Tab name="Groovy DSL fix">
+
+**Before**:
+
+```groovy title="<app-src>/android/build.gradle"
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    // ...
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+    // ...
+}
+
+// ...
+```
+
+Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
+
+```groovy diff title="<app-src>/android/build.gradle"
+apply plugin: 'com.android.library'
+- apply plugin: 'kotlin-android'
+
+  android {
+      // ...
+-     kotlinOptions {
+-         jvmTarget = JavaVersion.VERSION_17.toString()
+-     }
+      // ...
+  }
+```
+
+Add a check to apply the Kotlin Gradle Plugin only when the app's Android
+Gradle Plugin version is earlier than 9.
+
+```groovy diff title="<app-src>/android/build.gradle"
++ def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
++
++ if (agpMajor < 9) {
++    apply plugin: 'kotlin-android'
++ }
+```
+
+Add the `kotlin.compilerOptions{}` DSL block with the following:
+
+```groovy diff title="<app-src>/android/build.gradle"
++ kotlin {
++     compilerOptions {
++         jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
++     }
++ }
+```
+
+Here is how the file will likely end up:
+
+**After**:
+
+```groovy title="<app-src>/android/build.gradle"
+apply plugin: 'com.android.library'
+
+def agpMajor = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')[0] as int
+if (agpMajor < 9) {
+    apply plugin: 'kotlin-android'
+}
+
+android {
+    // ...
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
+    }
+}
+
+// ...
+```
+</Tab>
+</Tabs>
+
 ### Update the plugin's `CHANGELOG.md`
 
 Include your changes in the CHANGELOG of the newly released plugin version:
@@ -224,3 +413,4 @@ then you will also have to migrate the example app.
 Follow the [migration guide for app developers][app-migration-guide] to migrate your example app.
 
 [app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
+[flutter-sdk-minimum-below-3.44]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#supporting-flutter-versions-earlier-than-3-44

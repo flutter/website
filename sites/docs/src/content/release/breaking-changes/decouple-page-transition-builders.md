@@ -14,35 +14,37 @@ description: >-
 
 ## Background
 
-Flutter provides several page transition builders that control
-how routes animate when navigating between pages. These builders
-are used with `PageTransitionsTheme` to customize transitions
-per platform.
+Flutter provides several page transition builders that
+control how routes animate when navigating between pages.
+These builders are used with `PageTransitionsTheme` to
+customize transitions per platform.
 
 The available page transition builders are:
 
 | Builder | Library | Description |
 |---------|---------|-------------|
-| `FadeUpwardsPageTransitionsBuilder` | Material | Default pre-Material 3 transition |
+| `FadeUpwardsPageTransitionsBuilder` | Material | Default transition before Material 3 |
 | `OpenUpwardsPageTransitionsBuilder` | Material | Vertical slide transition |
 | `ZoomPageTransitionsBuilder` | Material | Zoom transition (Material 3 default) |
 | `PredictiveBackPageTransitionsBuilder` | Material | Android predictive back gesture support |
 | `CupertinoPageTransitionsBuilder` | **Cupertino** | iOS-style horizontal slide transition |
 
-Previously, `CupertinoPageTransitionsBuilder` was defined in the
-Material library alongside the other builders. However, this class
-is semantically a Cupertino component—its implementation uses
-Cupertino transition mixins and provides iOS-style navigation
-animations.
+{:.table}
 
-This move improves code organization and allows Cupertino apps to use this
-builder without depending on the Material library.
+Previously, `CupertinoPageTransitionsBuilder` was defined in
+the Material library alongside the other builders.
+This class is semantically a Cupertino component because
+its implementation uses Cupertino transition mixins and
+provides iOS-style navigation animations.
+
+This move improves code organization and allows Cupertino apps to
+use this builder without depending on the Material library.
 
 ## Migration guide
 
-If you use `CupertinoPageTransitionsBuilder` and only import
-`package:flutter/material.dart`, add an import for
-`package:flutter/cupertino.dart`.
+If you use `CupertinoPageTransitionsBuilder` and
+only import `package:flutter/material.dart`,
+add an import for `package:flutter/cupertino.dart`.
 
 Code before migration:
 
@@ -82,6 +84,6 @@ In stable release: 3.44
 
 Relevant PRs:
 
-* [Decouple CupertinoPageTransitionsBuilder from Material][]
+* [Decouple CupertinoPageTransitionsBuilder from Material][pr-179776]
 
-[Decouple CupertinoPageTransitionsBuilder from Material]: {{site.repo.flutter}}/pull/179776
+[pr-179776]: {{site.repo.flutter}}/pull/179776
