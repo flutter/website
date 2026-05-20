@@ -293,14 +293,10 @@ $stagingUrl''';
         commentBody,
       );
     } else {
-      // package:github's IssuesService.updateComment issues a POST,
-      // but GitHub's REST API requires PATCH for this endpoint.
-      await gitHub.request(
-        'PATCH',
-        '/repos/${repository.fullName}/issues/comments/$existingCommentId',
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'body': commentBody}),
-        statusCode: github.StatusCodes.OK,
+      await gitHub.issues.updateComment(
+        repository,
+        existingCommentId,
+        commentBody,
       );
     }
   } on github.GitHubError catch (error) {
