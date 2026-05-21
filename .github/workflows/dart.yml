@@ -9,6 +9,7 @@ on:
       - '**/pubspec.yaml'
       - '**/pubspec.lock'
       - '**/analysis_options.yaml'
+      - 'examples/**'
       - 'packages/**'
       - 'tool/dash_site/**'
       - '.github/workflows/dart.yml'
@@ -20,11 +21,12 @@ on:
       - '**/pubspec.yaml'
       - '**/pubspec.lock'
       - '**/analysis_options.yaml'
+      - 'examples/**'
       - 'packages/**'
       - 'tool/dash_site/**'
       - '.github/workflows/dart.yml'
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
 
 permissions: read-all
 
@@ -37,6 +39,7 @@ jobs:
     name: Analyze and test Dart (${{ matrix.name }})
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
+    timeout-minutes: 30
     strategy:
       fail-fast: false
       matrix:

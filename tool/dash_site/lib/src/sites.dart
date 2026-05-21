@@ -14,6 +14,7 @@ enum Site {
     contentPathSegments: ['src', 'content'],
     firebaseConfigPathSegments: ['firebase.json'],
     firebaseEmulatorPort: 5502,
+    defaultFirebaseProjectId: 'flutter-docs-prod',
     supportsCodeExcerpts: true,
   ),
 
@@ -24,6 +25,7 @@ enum Site {
     contentPathSegments: ['content'],
     firebaseConfigPathSegments: ['sites', 'www', 'firebase.json'],
     firebaseEmulatorPort: 5503,
+    defaultFirebaseProjectId: 'flutter-dev-230821',
   );
 
   const Site({
@@ -32,6 +34,7 @@ enum Site {
     required this.contentPathSegments,
     required this.firebaseConfigPathSegments,
     required this.firebaseEmulatorPort,
+    required this.defaultFirebaseProjectId,
     this.supportsCodeExcerpts = false,
   });
 
@@ -41,10 +44,12 @@ enum Site {
   /// The canonical base URL where this site is hosted in production.
   String get baseUrl => 'https://$host';
 
-  /// The path segments for this site's production build output directory.
+  /// The path segments for this site's production build output directory,
+  /// relative to the repository root.
   final List<String> buildOutputPathSegments;
 
-  /// The path segments for this site's content directory.
+  /// The path segments for this site's content directory,
+  /// relative to the site's [directory].
   final List<String> contentPathSegments;
 
   /// The path segments for this site's Firebase config file.
@@ -57,6 +62,12 @@ enum Site {
   /// Each site needs a unique port so the emulators can run concurrently,
   /// and `5000` must be avoided since AirPlay can use it on macOS.
   final int firebaseEmulatorPort;
+
+  /// The default Firebase project ID for production and staging deploys.
+  ///
+  /// Commands expose this as an overrideable default so contributors can
+  /// deploy the site to their own Firebase projects for testing.
+  final String defaultFirebaseProjectId;
 
   /// Whether this site supports code excerpts managed by `refresh-excerpts`.
   final bool supportsCodeExcerpts;
@@ -71,32 +82,28 @@ enum Site {
   /// The directory where this site's production build output should end up.
   String get buildOutputDirectory => path.joinAll(buildOutputPathSegments);
 
+  /// The directory where Jaspr writes this site's production build,
+  /// before it is copied to [buildOutputDirectory] if different.
+  String get jasprBuildOutputDirectory =>
+      path.join(directory, 'build', 'jaspr');
+
   /// The location of this site's Firebase config file.
   String get firebaseConfigPath => path.joinAll(firebaseConfigPathSegments);
 
   /// The directory containing this site's Firebase config file.
   String get firebaseConfigDirectory => path.dirname(firebaseConfigPath);
 
-  /// The directory where Jaspr writes this site's production build.
-  String get jasprBuildOutputDirectory =>
-      path.join(directory, 'build', 'jaspr');
-
-  /// The port where Jaspr serves this site locally.
-  int get jasprServePort => _portAfterJasprDefault(_jasprDefaultSitePort);
-
-  /// The webdev port Jaspr uses when serving this site locally.
-  int get jasprWebDevPort => _portAfterJasprDefault(_jasprDefaultWebDevPort);
-
-  /// The proxy port Jaspr uses when serving this site locally.
-  int get jasprProxyPort => _portAfterJasprDefault(_jasprDefaultProxyPort);
-
-  /// The port offset from [jasprDefaultPort] for this site.
+  /// The ports Jaspr uses when serving this site locally.
   ///
-  /// Starts after Jaspr's defaults to avoid colliding with a separate
-  /// Jaspr project running with no explicit port configuration.
-  int _portAfterJasprDefault(int jasprDefaultPort) {
-    return jasprDefaultPort + index + 1;
-  }
+  /// Each port is derived from this site's declaration order in [Site] so
+  /// that multiple sites can be served concurrently without port conflicts.
+  /// Each is offset by one past Jaspr's default to avoid colliding with a
+  /// separate Jaspr project running with default port configuration.
+  ({int serve, int webDev, int proxy}) get jasprPorts => (
+    serve: _jasprDefaultSitePort + index + 1,
+    webDev: _jasprDefaultWebDevPort + index + 1,
+    proxy: _jasprDefaultProxyPort + index + 1,
+  );
 }
 
 /// The name of the global `--site` option.

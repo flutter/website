@@ -23,17 +23,17 @@ final class CleanSiteCommand extends Command<int> {
   Future<int> run() async {
     print('Cleaning the Jaspr setup...');
 
-    final jasprInstallResult = installJasprCliIfNecessary();
-    if (jasprInstallResult != 0) {
+    if (installJasprCliIfNecessary() case final jasprInstallResult
+        when jasprInstallResult != 0) {
       return jasprInstallResult;
     }
 
-    final site = selectedSite;
+    final selectedSite = this.selectedSite;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
       ['pub', 'global', 'run', 'jaspr_cli:jaspr', 'clean', '--kill'],
-      workingDirectory: site.directory,
+      workingDirectory: selectedSite.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 
@@ -41,7 +41,7 @@ final class CleanSiteCommand extends Command<int> {
 
     print('Cleaning the site output directory...');
     final outputDirectory = Directory(
-      path.join(repositoryRoot, site.buildOutputDirectory),
+      path.join(repositoryRoot, selectedSite.buildOutputDirectory),
     );
     if (outputDirectory.existsSync()) {
       outputDirectory.deleteSync(recursive: true);

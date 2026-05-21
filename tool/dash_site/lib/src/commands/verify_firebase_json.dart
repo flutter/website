@@ -14,7 +14,7 @@ import '../utils.dart';
 final class VerifyFirebaseJsonCommand extends Command<int> {
   @override
   String get description =>
-      'Verify the firebase.json file is valid and '
+      "Verify the site's Firebase config is valid and "
       'meets the site standards.';
 
   @override
@@ -44,7 +44,8 @@ int _verifyFirebaseJson(Site site) {
 
     if (hostingConfig == null) {
       stderr.writeln(
-        "Error: The firebase.json file is missing a top-level 'hosting' entry.",
+        'Error: The ${site.name} Firebase config is '
+        "missing a top-level 'hosting' entry.",
       );
       return 1;
     }
@@ -57,14 +58,16 @@ int _verifyFirebaseJson(Site site) {
 
     if (redirects == null) {
       stdout.writeln(
-        'There are no redirects specified within the firebase.json file.',
+        'There are no redirects specified in '
+        'the ${site.name} Firebase config.',
       );
       return 0;
     }
 
     if (redirects is! List<Object?>) {
       stderr.writeln(
-        "Error: The firebase.json file's 'redirect' entry is not a list.",
+        "Error: The ${site.name} Firebase config 'hosting.redirects' "
+        'entry is not a list.',
       );
       return 1;
     }
@@ -80,8 +83,8 @@ int _verifyFirebaseJson(Site site) {
     for (final redirect in redirects) {
       if (redirect is! Map<String, Object?>) {
         stderr.writeln(
-          'Error: Each redirect must be a map containing '
-          "a 'source' or 'regex' field.",
+          'Error: Each redirect in the ${site.name} Firebase config must be '
+          "a map containing a 'source' or 'regex' field.",
         );
         return 1;
       }
@@ -89,7 +92,7 @@ int _verifyFirebaseJson(Site site) {
       final source = redirect['source'] ?? redirect['regex'];
       if (source == null) {
         stderr.writeln(
-          'Error: The firebase.json file has a '
+          'Error: The ${site.name} Firebase config has a '
           "redirect missing a 'source' or 'regex'.",
         );
         return 1;
@@ -97,7 +100,7 @@ int _verifyFirebaseJson(Site site) {
 
       if (source is! String) {
         stderr.writeln(
-          'Error: The firebase.json redirect $redirect has a '
+          'Error: The ${site.name} Firebase config redirect $redirect has a '
           "'source' or 'regex' specified which is not a string.",
         );
         return 1;
@@ -105,14 +108,17 @@ int _verifyFirebaseJson(Site site) {
 
       if (source.isEmpty) {
         stderr.writeln(
-          'Error: The firebase.json redirect $redirect has an '
+          'Error: The ${site.name} Firebase config redirect $redirect has an '
           "empty 'source' or 'regex'.",
         );
         return 1;
       }
 
       if (sources.contains(source)) {
-        stderr.writeln("Error: Multiple redirects share the '$source' source.");
+        stderr.writeln(
+          'Error: Multiple ${site.name} redirects '
+          "share the '$source' source.",
+        );
         duplicatesFound += 1;
       }
 
@@ -122,7 +128,7 @@ int _verifyFirebaseJson(Site site) {
 
       if (destination == null) {
         stderr.writeln(
-          'Error: The firebase.json file has a '
+          'Error: The ${site.name} Firebase config has a '
           "redirect missing a 'destination'.",
         );
         return 1;
@@ -130,7 +136,7 @@ int _verifyFirebaseJson(Site site) {
 
       if (destination is! String) {
         stderr.writeln(
-          'Error: The firebase.json redirect $redirect has a '
+          'Error: The ${site.name} Firebase config redirect $redirect has a '
           "'destination' specified which is not a string.",
         );
         return 1;
@@ -138,8 +144,8 @@ int _verifyFirebaseJson(Site site) {
 
       if (destination.isEmpty) {
         stderr.writeln(
-          'Error: The firebase.json redirect $redirect has '
-          "an empty 'destination'.",
+          'Error: The ${site.name} Firebase config redirect $redirect has an '
+          "empty 'destination'.",
         );
         return 1;
       }
@@ -147,14 +153,15 @@ int _verifyFirebaseJson(Site site) {
 
     if (duplicatesFound > 0) {
       stderr.writeln(
-        'Error: $duplicatesFound duplicate sources found '
-        'in the firebase.json redirects.',
+        'Error: $duplicatesFound duplicate sources found in '
+        'the ${site.name} Firebase config redirects.',
       );
       return 1;
     }
   } catch (e) {
     stderr.writeln(
-      'Error: Encountered an error when loading the firebase.json file:',
+      'Error: Encountered an error when loading '
+      'the ${site.name} Firebase config:',
     );
     stderr.writeln(e);
     return 1;
@@ -163,6 +170,8 @@ int _verifyFirebaseJson(Site site) {
   return 0;
 }
 
+/// Returns whether the Firebase hosting emulator port in
+/// the [firebaseConfig] matches the one specified for [site].
 bool _verifyHostingEmulatorPort(
   Map<String, Object?> firebaseConfig,
   Site site,
@@ -170,7 +179,8 @@ bool _verifyHostingEmulatorPort(
   final emulatorsConfig = firebaseConfig['emulators'];
   if (emulatorsConfig is! Map<String, Object?>) {
     stderr.writeln(
-      "Error: The firebase.json file is missing a top-level 'emulators' entry.",
+      'Error: The ${site.name} Firebase config is '
+      "missing a top-level 'emulators' entry.",
     );
     return false;
   }
@@ -178,7 +188,8 @@ bool _verifyHostingEmulatorPort(
   final hostingEmulatorConfig = emulatorsConfig['hosting'];
   if (hostingEmulatorConfig is! Map<String, Object?>) {
     stderr.writeln(
-      "Error: The firebase.json file is missing an 'emulators.hosting' entry.",
+      'Error: The ${site.name} Firebase config is '
+      "missing an 'emulators.hosting' entry.",
     );
     return false;
   }
@@ -186,9 +197,8 @@ bool _verifyHostingEmulatorPort(
   final port = hostingEmulatorConfig['port'];
   if (port != site.firebaseEmulatorPort) {
     stderr.writeln(
-      "Error: The firebase.json 'emulators.hosting.port' value must be "
-      '${site.firebaseEmulatorPort} for the ${site.name} site, '
-      'but found $port.',
+      "Error: The ${site.name} Firebase config 'emulators.hosting.port' "
+      'value must be ${site.firebaseEmulatorPort}, but found $port.',
     );
     return false;
   }

@@ -30,6 +30,7 @@ int _checkLinkReferences(Site site) {
     repositoryRoot,
     site.buildOutputDirectory,
   );
+
   final directory = Directory(generatedSiteDirectory);
 
   if (!directory.existsSync()) {

@@ -33,31 +33,22 @@ final class TestDartCommand extends Command<int> {
 }
 
 Future<int> _testDart({bool verboseLogging = false}) async {
-  final dartDirectoriesToTest = [
+  final directoriesToTest = <(String directory, String executable)>[
+    (path.join('tool', 'dash_site'), 'dart'),
     for (final site in Site.values)
       if (Directory(path.join(site.directory, 'test')).existsSync())
-        site.directory,
-  ];
-  final flutterDirectoriesToTest = [
-    path.join('tool', 'dash_site'),
-    ...exampleProjectDirectories,
+        (site.directory, 'dart'),
+    for (final directory in exampleProjectDirectories) (directory, 'flutter'),
   ];
 
   print('Testing code...');
 
   final failedTests = <String>[
-    for (final directory in dartDirectoriesToTest)
+    for (final (directory, executable) in directoriesToTest)
       if (!(await testsPassInDirectory(
         directory,
         verboseLogging,
-        executable: 'dart',
-      )))
-        directory,
-    for (final directory in flutterDirectoriesToTest)
-      if (!(await testsPassInDirectory(
-        directory,
-        verboseLogging,
-        executable: 'flutter',
+        executable: executable,
       )))
         directory,
   ];
@@ -93,6 +84,7 @@ Future<bool> testsPassInDirectory(
 
     // It's ok if the test directory is not found.
     if (!errorOutput.contains('No test') &&
+        !normalOutput.contains('No test files were passed') &&
         !normalOutput.contains('Could not find package `test`') &&
         !normalOutput.contains('No tests were') &&
         !errorOutput.contains(RegExp(r'Test directory.*not found'))) {

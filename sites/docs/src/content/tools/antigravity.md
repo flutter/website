@@ -86,6 +86,14 @@ the [Antigravity site](https://antigravity.google/download).
 
 {:.steps}
 
+## Agentic Hot Reload {: #agentic-hot-reload}
+
+If you are using Antigravity in Agent mode,
+the agent can automatically hot reload your running application
+when you prompt it to modify your app.
+This enables a hands-free, "prompt-to-reload" workflow
+that reduces context switching and development latency.
+
 [ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
 [Create a new Flutter app]: /reference/create-new-app#antigravity
 [vs-code]: /tools/vs-code

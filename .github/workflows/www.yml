@@ -24,7 +24,7 @@ on:
       - 'analysis_options.yaml'
       - '.github/workflows/www.yml'
   schedule:
-    - cron: "0 0 * * 0"
+    - cron: '0 0 * * 0'
 
 permissions: read-all
 
@@ -58,6 +58,7 @@ jobs:
     name: Validate Firebase configuration
     runs-on: ubuntu-latest
     if: github.repository == 'flutter/website'
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - uses: dart-lang/setup-dart@65eb853c7ba17dde3be364c3d2858773e7144260

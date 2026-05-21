@@ -31,17 +31,15 @@ final class BuildSiteCommand extends Command<int> {
   String get name => 'build';
 
   @override
-  Future<int> run() async {
-    return buildSite(
-      selectedSite,
-      productionRelease: argResults.get<bool>(_releaseFlag, false),
-    );
-  }
+  Future<int> run() async => buildSite(
+    selectedSite,
+    productionRelease: argResults.get<bool>(_releaseFlag, false),
+  );
 }
 
 Future<int> buildSite(Site site, {required bool productionRelease}) async {
-  final jasprInstallResult = installJasprCliIfNecessary();
-  if (jasprInstallResult != 0) {
+  if (installJasprCliIfNecessary() case final jasprInstallResult
+      when jasprInstallResult != 0) {
     return jasprInstallResult;
   }
 
@@ -65,7 +63,10 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
     mode: ProcessStartMode.inheritStdio,
   );
 
-  final processExitCode = await process.exitCode;
+  if (await process.exitCode case final processExitCode
+      when processExitCode != 0) {
+    return processExitCode;
+  }
 
   final originalOutputDirectoryPath = path.join(
     repositoryRoot,
@@ -96,7 +97,7 @@ Future<int> buildSite(Site site, {required bool productionRelease}) async {
 
   _move404File(siteOutputDirectoryPath);
 
-  return processExitCode;
+  return 0;
 }
 
 /// Moves the 404 file to the location expected by Firebase hosting.

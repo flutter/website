@@ -26,6 +26,8 @@ class YouTubeVideo extends Video {
     required super.title,
     required super.description,
     String? thumbnailUrl,
+    // Keep the public parameter aligned with the `thumbnailUrl` getter.
+    // ignore: prefer_initializing_formals
   }) : _thumbnailUrl = thumbnailUrl;
 
   /// The YouTube video ID (the value after `watch?v=`).

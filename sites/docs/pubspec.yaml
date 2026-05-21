@@ -4,7 +4,7 @@ homepage: https://docs.flutter.dev
 
 resolution: workspace
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0-0
 
 dependencies:
   build: ^4.0.6
@@ -16,9 +16,9 @@ dependencies:
   jaspr_content: ^0.5.2
   # Used as our template engine.
   liquify: ^1.5.1
-  markdown: ^7.3.0
+  markdown: ^7.3.1
   markdown_description_list: ^0.1.1
-  meta: ^1.18.1
+  meta: ^1.18.2
   nanoid2: ^2.0.1
   # Used for syntax highlighting.
   opal: ^0.2.2
@@ -31,10 +31,10 @@ dev_dependencies:
   analysis_defaults:
     path: ../../packages/analysis_defaults
   build_runner: ^2.15.0
-  build_web_compilers: ^4.4.19
+  build_web_compilers: ^4.6.0
   jaspr_builder: ^0.23.1
   sass: ^1.99.0
-  sass_builder: ^2.4.0
+  sass_builder: ^2.4.0+1
 
 jaspr:
   mode: static

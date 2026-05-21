@@ -9,14 +9,18 @@ import 'package:args/command_runner.dart';
 import 'package:github/github.dart' as github;
 import 'package:path/path.dart' as path;
 
+import '../firebase.dart';
 import '../sites.dart';
 import '../utils.dart';
 import 'build.dart';
 
-/// Builds the selected site,
+/// Builds the selected or default site,
 /// deploys it to a Firebase Hosting preview channel,
-/// and posts or updates a comment on the source GitHub PR (if present).
+/// and posts or updates a comment on the source GitHub PR when requested.
 final class StagePreviewCommand extends Command<int> {
+  static const String _projectOption = 'project';
+  static const String _channelOption = 'channel';
+  static const String _expiresOption = 'expires';
   static const String _prNumberOption = 'pr-number';
   static const String _repoOption = 'repo';
   static const String _commitShaOption = 'commit-sha';
@@ -24,6 +28,27 @@ final class StagePreviewCommand extends Command<int> {
 
   StagePreviewCommand() {
     argParser
+      ..addOption(
+        _projectOption,
+        help:
+            'The Firebase project ID or alias to stage to. '
+            'Defaults to the selected site production project. '
+            'Use this to test previews against a personal Firebase project.',
+        valueHelp: 'project-id',
+      )
+      ..addOption(
+        _channelOption,
+        help:
+            'The Firebase Hosting preview channel name. '
+            'Defaults to a stable name based on the selected site and PR.',
+        valueHelp: 'channel',
+      )
+      ..addOption(
+        _expiresOption,
+        defaultsTo: '7d',
+        help: 'How long the Firebase Hosting preview channel should live.',
+        valueHelp: 'duration',
+      )
       ..addOption(
         _prNumberOption,
         help:
@@ -42,7 +67,7 @@ final class StagePreviewCommand extends Command<int> {
         _commitShaOption,
         help:
             'The commit SHA being staged. '
-            'Required to post a comment.',
+            'Required to post a preview comment.',
       )
       ..addOption(
         _headBranchOption,
@@ -63,6 +88,11 @@ final class StagePreviewCommand extends Command<int> {
     final selectedSite = this.selectedSite;
     final argResults = this.argResults!;
 
+    final project =
+        argResults.option(_projectOption) ??
+        selectedSite.defaultFirebaseProjectId;
+    final channel = _nonEmpty(argResults.option(_channelOption));
+    final expires = argResults.option(_expiresOption)!;
     final prNumberArg = _nonEmpty(argResults.option(_prNumberOption));
     final repoFullName = _nonEmpty(argResults.option(_repoOption));
     final commitSha = _nonEmpty(argResults.option(_commitShaOption));
@@ -115,16 +145,29 @@ final class StagePreviewCommand extends Command<int> {
       prContext = null;
     }
 
-    final buildResult = await buildSite(selectedSite, productionRelease: false);
-    if (buildResult != 0) {
+    final firebaseToolsVersion = await validateFirebaseCli();
+    if (firebaseToolsVersion == null) {
+      return 1;
+    }
+
+    if (await buildSite(selectedSite, productionRelease: false)
+        case final buildResult when buildResult != 0) {
       return buildResult;
     }
 
+    print('Using firebase-tools $firebaseToolsVersion.');
     final branchOrSha = headBranch ?? commitSha ?? 'manual';
     final stagingUrl = await _deploySiteToStaging(
       selectedSite,
-      prNumber: prNumberArg,
-      branchOrSha: branchOrSha,
+      project: project,
+      channel:
+          channel ??
+          _firebaseChannelForSite(
+            selectedSite,
+            prNumber: prNumberArg,
+            branchOrSha: branchOrSha,
+          ),
+      expires: expires,
     );
     if (stagingUrl == null) {
       return 1;
@@ -132,6 +175,7 @@ final class StagePreviewCommand extends Command<int> {
 
     if (prContext == null) {
       print('No pull request context available; skipping GitHub comment.');
+      print(stagingUrl);
       return 0;
     }
 
@@ -146,24 +190,27 @@ final class StagePreviewCommand extends Command<int> {
 /// Deploys [site] to a Firebase Hosting preview channel and
 /// returns the channel's public URL on success, or
 /// `null` if the deploy fails or no URL can be extracted.
-///
-/// The channel name is derived from [prNumber] and [branchOrSha] so that
-/// re-deploys for the same PR and branch reuse the same channel.
 Future<String?> _deploySiteToStaging(
   Site site, {
-  String? prNumber,
-  required String branchOrSha,
+  required String project,
+  required String channel,
+  required String expires,
 }) async {
-  final channel = _firebaseChannelForSite(
-    site,
-    prNumber: prNumber,
-    branchOrSha: branchOrSha,
+  print(
+    'Deploying ${site.host} to Firebase project $project '
+    'preview channel $channel...',
   );
-  print('Deploying ${site.host} to Firebase channel $channel...');
 
   final result = await Process.run(
-    'firebase',
-    ['hosting:channel:deploy', channel, '--expires', '7d', '--json'],
+    firebaseCliExecutable,
+    [
+      'hosting:channel:deploy',
+      channel,
+      '--project=$project',
+      '--expires',
+      expires,
+      '--json',
+    ],
     workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory),
   );
 
@@ -172,6 +219,9 @@ Future<String?> _deploySiteToStaging(
     stderr.writeln(result.stdout);
     return null;
   }
+
+  stdout.write(result.stdout);
+  stderr.write(result.stderr);
 
   final stagingUrl = _extractDeployedUrl(result.stdout as String);
   if (stagingUrl == null) {
@@ -193,11 +243,13 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
   } on FormatException {
     return null;
   }
-  final result = (parsed is Map ? parsed['result'] : null);
-  if (result is! Map) return null;
-  for (final entry in result.values) {
-    if (entry is Map && entry['url'] is String) {
-      return entry['url'] as String;
+  if (parsed case <String, Object?>{
+    'result': final Map<String, Object?> result,
+  }) {
+    for (final entry in result.values) {
+      if (entry case <String, Object?>{'url': final String url}) {
+        return url;
+      }
     }
   }
   return null;
@@ -241,14 +293,10 @@ $stagingUrl''';
         commentBody,
       );
     } else {
-      // package:github's IssuesService.updateComment issues a POST,
-      // but GitHub's REST API requires PATCH for this endpoint.
-      await gitHub.request(
-        'PATCH',
-        '/repos/${repository.fullName}/issues/comments/$existingCommentId',
-        headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'body': commentBody}),
-        statusCode: github.StatusCodes.OK,
+      await gitHub.issues.updateComment(
+        repository,
+        existingCommentId,
+        commentBody,
       );
     }
   } on github.GitHubError catch (error) {

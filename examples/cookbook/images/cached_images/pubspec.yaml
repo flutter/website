@@ -7,12 +7,12 @@ version: 1.0.0+1
 
 resolution: workspace
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0-0
 
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.9
   cached_network_image: ^3.4.1
 
 dev_dependencies:

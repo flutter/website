@@ -2,21 +2,29 @@ substitutions:
   _SITE: docs
 steps:
   - name: gcr.io/flutter-dev-230821/firebase-ghcli
-    # Build the selected site, deploy it to staging, then comment the preview link.
+    # Build the selected site, deploy it to staging, then comment the link.
     entrypoint: '/bin/bash'
     args:
       - '-c'
       - |-
         set -euo pipefail
+
         dart pub get
-        dart run dash_site --site="$_SITE" stage-preview \
-          --pr-number "$_PR_NUMBER" \
-          --repo "$REPO_FULL_NAME" \
-          --commit-sha "$COMMIT_SHA" \
-          --head-branch "$_HEAD_BRANCH"
+        dart run dash_site --site="$${SITE}" stage-preview \
+          --pr-number "$${PR_NUMBER}" \
+          --repo "$${REPO_FULL_NAME}" \
+          --commit-sha "$${COMMIT_SHA}" \
+          --head-branch "$${HEAD_BRANCH}"
+    env:
+      - 'SITE=$_SITE'
+      - 'PR_NUMBER=$_PR_NUMBER'
+      - 'REPO_FULL_NAME=$REPO_FULL_NAME'
+      - 'COMMIT_SHA=$COMMIT_SHA'
+      - 'HEAD_BRANCH=$_HEAD_BRANCH'
     secretEnv: ['GH_PAT_TOKEN']
 availableSecrets:
   secretManager:
+    # Use flutter-docs-prod across sites, so we only need a single bot setup.
     - versionName: projects/flutter-docs-prod/secrets/flutter-website-bot-comment-pat/versions/latest
       env: 'GH_PAT_TOKEN'
 timeout: 1200s

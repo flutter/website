@@ -48,7 +48,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `TextInputConnection.setStyle`][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [`IconData` class marked as `final`][]
-* [ListTile reports error in debug when wrapped in a colored widget][]
+* [ListTile reports an error in debug when wrapped in a colored widget][]
 * [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
 
@@ -57,7 +57,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
-[ListTile reports error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
+[ListTile reports an error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders
 

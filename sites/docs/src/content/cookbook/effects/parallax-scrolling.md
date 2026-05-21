@@ -776,8 +776,7 @@ class ParallaxParentData extends ContainerBoxParentData<RenderBox> {}
 
 class RenderParallax extends RenderBox
     with RenderObjectWithChildMixin<RenderBox>, RenderProxyBoxMixin {
-  RenderParallax({required ScrollableState scrollable})
-    : _scrollable = scrollable;
+  RenderParallax({required this._scrollable});
 
   ScrollableState _scrollable;
 
