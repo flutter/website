@@ -37,8 +37,10 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Large screen orientation and resizability restrictions ignored on Android 17][]
+* [OpenGL ES render-to-texture content is stored top-down][]
 
 [Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+[OpenGL ES render-to-texture content is stored top-down]: /release/breaking-changes/opengles-render-to-texture-top-down
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
