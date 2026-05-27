@@ -44,7 +44,14 @@ into your app.  For example:
 For more context about GenUI SDK for Flutter,
 check out the [Getting started with GenUI video][]:
 
-<YouTubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI"></YouTubeEmbed>
+<YouTubeEmbed id="nWr6eZKM6no"
+    title="Getting started with GenUI"></YouTubeEmbed>
+
+Also, check out the Flutter + A2UI = GenUI video from
+Google I/O 2026!
+
+<YouTubeEmbed id="tXeyaV1gVJk"
+    title="Flutter + A2UI = GenUI"></YouTubeEmbed>
 
 :::experimental
 The `genui` package is in
