@@ -41,7 +41,8 @@ If you were previously disabling your `DropdownButton` by conditionally passing
 `null` to `onChanged`, you should migrate to using the new `enabled` property. 
 This cleanly separates the state of the widget (enabled/disabled) from its behavior (the callback).
 
-To automatically migrate your code for simple cases (such as statically passing `null`), run the following command:
+To automatically migrate your code for simple cases
+(such as statically passing `null`), run the following command:
 
 ```console
 $ dart fix --apply
