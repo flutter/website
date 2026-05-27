@@ -30,7 +30,7 @@ If it were mandatory, it would have introduced a massive breaking change, breaki
 nearly every existing `DropdownButton` implementation in the Flutter ecosystem. 
 Instead, to preserve backward compatibility, if the `enabled` argument is not 
 explicitly provided, the button determines its state by falling back to whether 
-`onChanged` is provided (i.e., it is enabled if `onChanged != null`, and disabled 
+  `onChanged` is provided (that is, it is enabled if `onChanged != null`, and disabled 
 if `onChanged == null`).
 
 The minor breaking change here is structural: while the old conditional `onChanged` 
