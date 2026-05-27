@@ -50,7 +50,8 @@ $ dart fix --apply
 ```
 
 :::important
-Note that `dart fix` will not automatically migrate cases where `onChanged` is set using conditional logic. For those, you must update your code manually.
+Note that `dart fix` will not automatically migrate cases where `onChanged`
+is set using conditional logic. For those, you must update your code manually.
 :::
 
 ### Case 1: Statically disabled dropdown {: #case-1-statically-disabled }
