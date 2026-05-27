@@ -25,11 +25,14 @@ such as `onChanged: condition ? (value) { ... } : null`.
 To improve this API, a dedicated `enabled` property was introduced, and `onChanged` 
 was made optional. 
 
-The `enabled` property is optional. If it were mandatory, it would introduce a massive breaking change, breaking nearly every existing `DropdownButton` implementation in the Flutter ecosystem.
+The `enabled` property is optional.
+If it were mandatory, it would introduce a massive breaking change,
+breaking nearly every existing `DropdownButton` implementation in the
+Flutter ecosystem.
 Instead, to preserve backward compatibility, if the `enabled` argument is not 
 explicitly provided, the button determines its state by falling back to whether 
-  `onChanged` is provided (that is, it is enabled if `onChanged != null`, and disabled 
-if `onChanged == null`).
+`onChanged` is provided (that is, it is enabled if `onChanged != null`,
+and disabled if `onChanged == null`).
 
 The minor breaking change here is structural: while the old conditional `onChanged` 
 pattern technically still works due to the fallback logic, developers are 

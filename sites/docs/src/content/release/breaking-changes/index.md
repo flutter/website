@@ -37,10 +37,10 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Large screen orientation and resizability restrictions ignored on Android 17][]
-* [Update DropdownButton enabled property logic][]
+* [Added enabled property and made onChanged optional for DropdownButton][]
 
 [Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
-[Update DropdownButton enabled property logic]: /release/breaking-changes/dropdownbutton-enabled-property
+[Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
