@@ -9,6 +9,7 @@ import 'package:args/command_runner.dart';
 import 'package:linkcheck/linkcheck.dart' as linkcheck show run;
 import 'package:path/path.dart' as path;
 
+import '../firebase.dart';
 import '../sites.dart';
 import '../utils.dart';
 
@@ -58,11 +59,8 @@ Future<int> _checkLinks({
     return 1;
   }
 
-  final toolVersionOutput = await Process.run('firebase', const ['--version']);
-
-  final firebaseToolsVersion = (toolVersionOutput.stdout as String?)?.trim();
-  if (firebaseToolsVersion == null || firebaseToolsVersion.isEmpty) {
-    stderr.writeln('Error: Could not determine firebase-tools version!');
+  final firebaseToolsVersion = await validateFirebaseCli();
+  if (firebaseToolsVersion == null) {
     return 1;
   }
 
@@ -76,7 +74,7 @@ Future<int> _checkLinks({
   );
   final firebaseConfigFileName = path.basename(site.firebaseConfigPath);
   final emulatorProcess = await Process.start(
-    'firebase',
+    firebaseCliExecutable,
     [
       'emulators:start',
       '--only',

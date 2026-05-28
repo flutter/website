@@ -1,9 +1,9 @@
 ---
 title: Large screen orientation and resizability restrictions ignored on Android 17
 description: >-
-  For apps targeting Android 17 or higher, orientation, resizability, and
-  aspect ratio restrictions no longer apply on large displays (widths 600dp or
-  larger).
+  For apps targeting Android 17 or higher,
+  orientation, resizability, and aspect ratio restrictions no longer
+  apply on large displays with widths of 600dp or larger.
 ---
 
 {% render "docs/breaking-changes.md" %}
@@ -11,18 +11,18 @@ description: >-
 ## Summary
 
 For apps targeting Android 17 or higher,
-orientation, resizability, and aspect ratio restrictions no longer apply
-on displays with width 600dp or greater.
-This means that [`SystemChrome.setPreferredOrientations`][] is ignored
-on these devices.
+orientation, resizability, and aspect ratio restrictions no longer
+apply on displays with width 600dp or greater.
+This means that [`SystemChrome.setPreferredOrientations`][] is
+ignored on these devices.
 
 ## Background
 
 Android is shifting toward a model where apps are expected to adapt
 to various orientations, display sizes, and aspect ratios.
-Restrictions like fixed orientation or limited resizability hinder app
-adaptability.
-See [Android 17 behavior changes][] for more details.
+Restrictions like fixed orientation or limited resizability
+hinder app adaptability.
+For more details, see [Android 17 behavior changes][].
 
 In Android 16, this behavior was introduced as a default
 but allowed apps to temporarily opt out
