@@ -423,8 +423,8 @@ Then ask your assistant to connect:
 
 > Connect to my running Flutter app, take a screenshot, then tap "Sign In".
 
-The agent uses the `dtd` tool to discover the app and `flutter_driver_command`
-to drive its UI—no integration test setup required.
+The agent uses the `dtd` tool to discover the app and
+`flutter_driver_command` to drive its UI.
 
 :::note
 **Web**: the `flutter_driver` package doesn't compile under dart2js. Pair
