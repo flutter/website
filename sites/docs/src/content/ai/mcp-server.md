@@ -431,7 +431,7 @@ The agent uses the `dtd` tool to discover the app and
 the Dart MCP server with a browser-driving MCP for clicks and screenshots;
 the Dart MCP server still handles widget tree, runtime errors, and hot
 reload through DTD. Prefer `flutter run -d web-server` so the browser the
-agent drives is the one DTD is connected to—with -d chrome, only the
+agent drives is the one DTD is connected to—with `-d chrome`, only the
 window Flutter spawned receives hot reload patches.
 
 See the [setup guide][flutter-driver-guide] for the snippet, web modes,
