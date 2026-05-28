@@ -444,20 +444,6 @@ Using the above line in a build method won't cause this widget to
 rebuild when `notifyListeners` is called.
 
 
-## Putting it all together
-
-You can [check out the example][] covered in this article.
-If you want something simpler,
-see what the simple Counter app looks like when
-[built with `provider`][].
-
-By following along with these articles, you've greatly
-improved your ability to create state-based applications.
-Try building an application with `provider` yourself to
-master these skills.
-
-[built with `provider`]: {{site.repo.samples}}/tree/main/provider_counter
-[check out the example]: {{site.repo.samples}}/tree/main/provider_shopper
 [declarative UI programming]: /data-and-backend/state-mgmt/declarative
 [ephemeral and app state]: /data-and-backend/state-mgmt/ephemeral-vs-app
 [options page]: /data-and-backend/state-mgmt/options
