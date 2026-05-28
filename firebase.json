@@ -478,6 +478,7 @@
       { "source": "/go/flutter-iap-migrate-pblv2", "destination": "https://docs.google.com/document/d/1XM16UsLE_aPWoZnheE9waO06mhxLkkWjpPf9jtI1AdY/edit", "type": 301 },
       { "source": "/go/flutter-ios-system-font", "destination": "https://docs.google.com/document/d/1FG9ONkG-sLuFkb9vUAL2i7oeUtUqm8qiQJe_poK754w/edit", "type": 301 },
       { "source": "/go/flutter-lints", "destination": "https://docs.google.com/document/d/1b0X0HOzvFY3WxI363U8BXx6Am13qFm96KlbS72mmFAk/edit", "type": 301 },
+      { "source": "/go/flutter-material-design-version-management-external", "destination": "https://docs.google.com/document/d/1-vO5fcdqnL4EmTjptbRyOg5q8jCdmdHArLz85KT0I_A/edit?usp=sharing", "type": 301 },
       { "source": "/go/flutter-migrate", "destination": "https://docs.google.com/document/d/1fPnpUI6gXE9PkNWuFoAW20m_sQ87ZSC1rrn_D7fxBvs", "type": 301 },
       { "source": "/go/flutter-nonhost", "destination": "https://docs.google.com/document/d/1rTLxAxsshEir-B2vE6DU_MaqMMusOdCgLGEGpBYG3CM", "type": 301 },
       { "source": "/go/flutter-pigeon-native-wrapper", "destination": "https://docs.google.com/document/d/1Sw6F8GbNiO_lvS2fFjXrRYk2Go5RNDHudDT6kIX6Sm0/edit?usp=sharing", "type": 301 },
