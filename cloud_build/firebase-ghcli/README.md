@@ -8,7 +8,7 @@ to comment staged site links on GitHub PRs.
 
 ## Installed tools
 
-* Dart SDK Beta
+* Dart SDK
 * GitHub CLI
 * Firebase Tools
 

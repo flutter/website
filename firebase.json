@@ -558,6 +558,7 @@
       { "source": "/go/introduce-disposable", "destination": "https://docs.google.com/document/d/1cjylBOczGk70x-sn1iZYVNAfpPZdtGWsm_KzoNQX0jc/edit", "type": 301 },
       { "source": "/go/io22concurrency", "destination": "https://github.com/goderbauer/io22concurrency", "type": 301 },
       { "source": "/go/ios-17-text-input", "destination": "https://docs.google.com/document/d/1sM3HMv-SQin39yX1aPUU7vtGv7Hcef1Quc3QhRXBl6A/edit?resourcekey=0-SFYD8vmOIkXiXCZvB1Wlcw", "type": 301 },
+      { "source": "/go/ios-26-keyboard-bleed", "destination": "https://docs.google.com/document/d/1WU1XhnVQYIgdab8dAqpVjLLviK02BeOmjDjektpYHRk/edit?usp=sharing", "type": 301 },
       { "source": "/go/ios-autocorrection-highlight-support", "destination": "https://docs.google.com/document/d/18ZO7ThKu2wwCofGOKZSInPsq93IzkQTRn9eiyskeh7I/edit", "type": 301 },
       { "source": "/go/ios-camera-plugin-thread-model", "destination": "https://docs.google.com/document/d/1Znjp-BduXIb1Ix3JOE1YKyJi1Z0d6rB-2q6Lt7j8xSo/edit", "type": 301 },
       { "source": "/go/ios-keyboard-calculating-inset", "destination": "https://docs.google.com/document/d/1pb1oqTanWSxwM8nAdm_-_ero3P6MM05vR1JjcdeFkiM/edit?usp=sharing&resourcekey=0-syHrzFB8A4zywVaHBicZNg", "type": 301 },
