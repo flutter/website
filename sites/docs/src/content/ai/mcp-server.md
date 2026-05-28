@@ -415,8 +415,8 @@ void main() {
 
 Launch your app with the flag turned on:
 
-```bash
-flutter run -d <device-id> --dart-define=ENABLE_FLUTTER_DRIVER=true
+```console
+$ flutter run -d <device-id> --dart-define=ENABLE_FLUTTER_DRIVER=true
 ```
 
 Then ask your assistant to connect:
