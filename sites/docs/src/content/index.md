@@ -76,30 +76,42 @@ Coming from another platform? Check out Flutter for:
 ### Videos
 
 <div class="video-wrapper">
-  <span class="video-intro">Check out the latest in Dart, Flutter, and GenUI!</span>
-  <YouTubeEmbed id="-AuAZTyRelY" title="What's New in Flutter 3.38 / Dart 3.10" fullWidth></YouTubeEmbed>
+  <span class="video-intro">Check out the latest in Dart and Flutter</span>
+  <YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
-For more of the latest on Dart, Flutter, and the Future of Apps, check out
-the other technical sessions from [FlutterFlightPlans][], like these!
+For more of the latest on Dart and Flutter, check out
+the technical sessions from [Google I/O][io-wrap-up],
+like these!
 
 <div class="card-grid">
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="nWr6eZKM6no" title="Getting Started with GenUI"></YouTubeEmbed>
+      <YouTubeEmbed id="UNdQhnpm8GY" title="Vibe once, run anywhere with Google and Antigravity"></YouTubeEmbed>
     </div>
   </div>
   <div class="card wrapped-card outlined-card">
     <div class="card-content">
-      <YouTubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built a 4.8-Star Flutter app"></YouTubeEmbed>
+      <YouTubeEmbed id="O0UjId1VoRU" title="How to write really good Flutter code"></YouTubeEmbed>
     </div>
   </div>
 </div>
 
-[FlutterFlightPlans]: {{site.yt.watch}}?v=RTb3gP4p5bw
+Also, we launched a new 4-video series at Google I/O called
+the Full-stack developer guide:
 
-To learn about all of the Flutter video series, see our [videos][] page.
+<div class="video-wrapper">
+  <YouTubeEmbed id="hNbY3Bmgojg" title="The Full-stack developer guide" fullWidth></YouTubeEmbed>
+</div>
+
+You can find the 4 videos in this series, as well as a wrap-up video,
+on the [Google I/O wrap-up][io-wrap-up] blog post.
+
+[io-wrap-up]: {{site.flutter-blog}}/thats-a-wrap-everything-flutter-at-google-i-o-2026-f316e57186e3
+
+To learn about all of the Flutter video series,
+visit our [videos][] page.
 
 We release new videos almost every week!
 
