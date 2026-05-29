@@ -77,7 +77,7 @@ Coming from another platform? Check out Flutter for:
 
 <div class="video-wrapper">
   <span class="video-intro">Check out the latest in Dart and Flutter</span>
-  <YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Flutter 3.44" fullWidth></YouTubeEmbed>
+  <YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
 </div>
 <br>
 
@@ -102,11 +102,11 @@ Also, we launched a new 4-video series at Google I/O called
 the Full-stack developer guide:
 
 <div class="video-wrapper">
-  <YouTubeEmbed id="hNbY3Bmgojg" title="The full-stack developer guide" fullWidth></YouTubeEmbed>
+  <YouTubeEmbed id="hNbY3Bmgojg" title="The Full-stack developer guide" fullWidth></YouTubeEmbed>
 </div>
 
-You can find the 4 videos in this series, as well as a wrap up video,
-on the [Google I/O wrap up][io-wrap-up] blog post.
+You can find the 4 videos in this series, as well as a wrap-up video,
+on the [Google I/O wrap-up][io-wrap-up] blog post.
 
 [io-wrap-up]: {{site.flutter-blog}}/thats-a-wrap-everything-flutter-at-google-i-o-2026-f316e57186e3
 
