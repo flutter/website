@@ -24,7 +24,7 @@ Container Registry under the `flutter-dev-230821` project on Google Cloud.
 The base Dart image in `Dockerfile` is pinned by both tag and digest:
 
 ```dockerfile
-FROM dart:<version>@sha256:<digest>
+FROM dart:<version>@<digest>
 ```
 
 When updating the Dart SDK version, update both the tag and the digest.
