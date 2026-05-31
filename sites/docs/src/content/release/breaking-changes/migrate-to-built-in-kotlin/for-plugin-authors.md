@@ -184,11 +184,11 @@ Update the minimum Flutter version and the minimum Dart version:
 ```yaml diff title="<plugin-project>/pubspec.yaml"
 # ...
 
-environment:
--  sdk: ^<previous-dart-minimum>
-+  sdk: ^3.12.0
--  flutter: ">=<previous-flutter-minimum>"
-+  flutter: ">=3.44.0"
+  environment:
+-   sdk: ^<previous-dart-minimum>
++   sdk: ^3.12.0
+-   flutter: ">=<previous-flutter-minimum>"
++   flutter: ">=3.44.0"
 
 # ...
 ```
@@ -329,7 +329,7 @@ android {
 Next, remove the `kotlin-android` plugin and the `kotlinOptions` block:
 
 ```groovy diff title="<app-src>/android/build.gradle"
-apply plugin: 'com.android.library'
+  apply plugin: 'com.android.library'
 - apply plugin: 'kotlin-android'
 
   android {

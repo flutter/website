@@ -14,6 +14,12 @@ and answer questions.
 
 [ag]: https://antigravity.google/
 
+To learn some of what Antigravity is capable of,
+watch this talk from Google I/O 2026.
+
+<YouTubeEmbed id="UNdQhnpm8GY"
+  title="Vibe once, run anywhere with Google Antigravity and Flutter"></YouTubeEmbed>
+
 ## Installation and setup {: #setup}
 
 Install the latest version of Antigravity for your platform by visiting

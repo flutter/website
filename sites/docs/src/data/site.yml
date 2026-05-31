@@ -9,8 +9,7 @@ showBanner: true
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
   Flutter 3.44 is here!
-  Everywhere, everyday, built by everyone, for everyone.<br>
-  Watch the <a href="https://www.youtube.com/live/3TfGKugPlpE" target="_blank">live announcement</a> and
+  Watch <a href="https://www.youtube.com/watch?v=I1uIbGh1dGE&t=1s" target="_blank">What's new in Flutter</a> and
   read the <a href="https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527" target="_blank">blog post</a>.
 
 branch: main
