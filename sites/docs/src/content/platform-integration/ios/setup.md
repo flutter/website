@@ -74,12 +74,6 @@ an iOS physical device or on the iOS Simulator.
     $ xcodebuild -downloadPlatform iOS
     ```
 
-    :::note
-    As of Flutter 3.41.9,
-    Rosetta is no longer required to build and run
-    iOS apps on [Apple Silicon][] Macs.
-    :::
-
  1. <h3>Install CocoaPods</h3>
 
     To support [Flutter plugins][] that use native iOS or macOS code,
