@@ -37,8 +37,10 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Large screen orientation and resizability restrictions ignored on Android 17][]
+* [Android engine flags specified via `Intent`s no longer supported][]
 
 [Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+[Android engine flags specified via `Intent`s no longer supported]: /release/breaking-changes/intent-extra-engine-flags-not-supported.md
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
