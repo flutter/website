@@ -398,6 +398,12 @@ You can use the Dart and Flutter MCP server to drive a running
 Flutter app from your AI assistant—take screenshots, tap buttons,
 enter text, scroll, and hot reload.
 
+First, add the `flutter_driver` package:
+
+```console
+$ flutter pub add "flutter_driver:{sdk: flutter}"
+```
+
 On mobile and desktop, gate `enableFlutterDriverExtension()` behind a
 `--dart-define` flag in your app's `main()` so it stays out of
 production builds:
@@ -427,15 +433,17 @@ The agent uses the `dtd` tool to discover the app and
 `flutter_driver_command` to drive its UI.
 
 :::note
-**Web**: the `flutter_driver` package doesn't compile under dart2js. Pair
-the Dart MCP server with a browser-driving MCP for clicks and screenshots;
-the Dart MCP server still handles widget tree, runtime errors, and hot
-reload through DTD. Prefer `flutter run -d web-server` so the browser the
-agent drives is the one DTD is connected to—with `-d chrome`, only the
-window Flutter spawned receives hot reload patches.
+**Web**: the `flutter_driver` extension isn't supported on web builds, so
+finder-based commands like screenshots and taps aren't available there.
+Pair the Dart MCP server with a browser-driving MCP for those. Everything
+that flows through DTD—widget tree, runtime errors, and hot reload—still
+works in a normal `flutter run` web debug session. Prefer
+`flutter run -d web-server` so the browser the agent drives is the one DTD
+is connected to—with `-d chrome`, only the window Flutter spawned receives
+hot reload patches.
 
-See the [setup guide][flutter-driver-guide] for the snippet, web modes,
-and common pitfalls.
+See the [setup guide][flutter-driver-guide] for the web-safe conditional
+import, the `-d web-server` versus `-d chrome` modes, and common pitfalls.
 :::
 
 [flutter-driver-guide]: https://github.com/dart-lang/ai/blob/main/pkgs/dart_mcp_server/README.md#connect-to-a-running-flutter-app
