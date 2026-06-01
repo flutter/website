@@ -59,9 +59,11 @@ jobs:
       - name: Fetch Dart dependencies
         run: dart pub get
         continue-on-error: ${{ matrix.experimental }}
-      - name: Check Dart code formatting
-        run: dart run dash_site format-dart --check
-        continue-on-error: ${{ matrix.experimental }}
+# Disabled for now due to non-language versioned formatting changes.
+# TODO(parlough): Revisit this once standardized on 3.13 beta or newer.
+#      - name: Check Dart code formatting
+#        run: dart run dash_site format-dart --check
+#        continue-on-error: ${{ matrix.experimental }}
       - name: Analyze Dart code
         run: dart run dash_site analyze-dart
         continue-on-error: ${{ matrix.experimental }}
