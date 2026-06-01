@@ -9,46 +9,48 @@ description: >-
 
 ## Summary
 
-`DropdownButton` and `DropdownButtonFormField` now include an `enabled` property
-to explicitly manage their interactive state, and the `onChanged` callback is no
-longer marked as `required`.
+`DropdownButton` and `DropdownButtonFormField` now include
+an `enabled` property to explicitly manage their interactive state,
+and the `onChanged` callback is no longer marked as `required`.
 
 ## Background
 
-Previously, `DropdownButton` and `DropdownButtonFormField` did not have an
-`enabled` parameter. The only way to disable the dropdown (graying it out and
-making it non-interactive) was to pass `null` to the `required` `onChanged`
-callback.
-This led to unintuitive code when trying to dynamically enable or disable the
-button,
+Previously, `DropdownButton` and `DropdownButtonFormField` didn't
+have an `enabled` parameter.
+The only way to disable the dropdown
+(graying it out and making it non-interactive) was to
+pass `null` to the `required` `onChanged` callback.
+This led to unintuitive code when trying to
+dynamically enable or disable the button,
 forcing developers to write conditional expressions for the callback itself,
 such as `onChanged: condition ? (value) { ... } : null`.
 
 To improve this API, a dedicated `enabled` property was introduced,
-and `onChanged`
-was made optional.
+and `onChanged` was made optional.
 
 The `enabled` property is optional.
-Making it mandatory introduces a massive breaking change
-that breaks nearly every existing `DropdownButton` implementation in the
-Flutter ecosystem.
-Instead, to preserve backward compatibility, if the `enabled` argument is not
-explicitly provided, the button determines its state by falling back to whether
-`onChanged` is provided (that is, it is enabled if `onChanged != null`,
+Making it mandatory introduces a massive breaking change that
+breaks nearly every existing `DropdownButton` implementation in
+the Flutter ecosystem.
+Instead, to preserve backward compatibility,
+if the `enabled` argument isn't explicitly provided,
+the button determines its state by falling back to whether
+`onChanged` is provided (that is, it's enabled if `onChanged != null`,
 and disabled if `onChanged == null`).
 
 The minor breaking change here is structural:
-while the old conditional `onChanged`
-pattern technically still works due to the fallback logic, developers are
-encouraged to migrate to the clearer API by explicitly using the `enabled`
-property.
+while the old conditional `onChanged` pattern technically
+still works due to the fallback logic,
+developers are encouraged to migrate to the clearer API by
+explicitly using the `enabled` property.
 
 ## Migration guide
 
-If you previously disabled your `DropdownButton` by conditionally passing
-`null` to `onChanged`, migrate to the new `enabled` property.
-This cleanly separates the state of the widget (enabled/disabled) from its
-behavior (the callback).
+If you previously disabled your `DropdownButton` by
+conditionally passing `null` to `onChanged`,
+migrate to the new `enabled` property.
+This cleanly separates the state of the widget (enabled/disabled) from
+its behavior (the callback).
 
 To automatically migrate your code for simple cases
 (such as statically passing `null`), run the following command:
@@ -94,8 +96,8 @@ Code after migration:
 
 ### Case 2: Conditionally disabled dropdown {: #case-2-conditionally-disabled }
 
-The recommended best practice is to separate the callback from the interactive
-state by using the `enabled` property directly.
+The recommended best practice is to separate the callback from
+the interactive state by using the `enabled` property directly.
 
 Code before migration:
 
@@ -143,10 +145,7 @@ Relevant PRs:
 
 * [Update DropdownButton enabled property logic][]
 
-<!-- Stable channel link: -->
 [`DropdownButton`]: {{site.api}}/flutter/material/DropdownButton-class.html
-[`DropdownButtonFormField`]:
-{{site.api}}/flutter/material/DropdownButtonFormField-class.html
+[`DropdownButtonFormField`]: {{site.api}}/flutter/material/DropdownButtonFormField-class.html
 [issue-57953]: {{site.repo.flutter}}/issues/57953
-[Update DropdownButton enabled property logic]:
-{{site.repo.flutter}}/pull/182419
+[Update DropdownButton enabled property logic]: {{site.repo.flutter}}/pull/182419
