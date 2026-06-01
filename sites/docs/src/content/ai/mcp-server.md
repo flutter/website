@@ -425,6 +425,13 @@ Launch your app with the flag turned on:
 $ flutter run -d <device-id> --dart-define=ENABLE_FLUTTER_DRIVER=true
 ```
 
+:::warning
+Enabling the Flutter Driver extension disables real keyboard input—typing
+is dropped and the on-screen keyboard might not appear. To type manually,
+use `enableFlutterDriverExtension(enableTextEntryEmulation: false)`, but
+then the agent's `enterText` command stops working.
+:::
+
 Then ask your assistant to connect:
 
 > Connect to my running Flutter app, take a screenshot, then tap "Sign In".
