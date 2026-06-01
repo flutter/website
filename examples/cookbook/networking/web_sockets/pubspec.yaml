@@ -3,7 +3,7 @@ description: Web Sockets
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0-0
+  sdk: ^3.12.0
 
 dependencies:
   flutter:
