@@ -97,8 +97,6 @@ They're sorted by release and listed in alphabetical order:
 [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
 
-
-
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
 
