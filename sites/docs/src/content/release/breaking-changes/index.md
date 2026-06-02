@@ -87,6 +87,7 @@ They're sorted by release and listed in alphabetical order:
 * [SnackBar with action no longer auto-dismisses][]
 * [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
 * [UISceneDelegate adoption][]
+* [Update semantics header and headingLevel behavior on iOS and Android][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
@@ -94,6 +95,9 @@ They're sorted by release and listed in alphabetical order:
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
 [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
+[Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
+
+
 
 <a id="released-in-flutter-335" aria-hidden="true"></a>
 ### Released in Flutter 3.35
