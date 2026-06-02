@@ -6,10 +6,9 @@ import '../services/database_service.dart';
 
 class UserProfileRepository {
   UserProfileRepository({
-    required ApiClientService apiClientService,
-    required DatabaseService databaseService,
-  }) : _apiClientService = apiClientService,
-       _databaseService = databaseService {
+    required this._apiClientService,
+    required this._databaseService,
+  }) {
     // #docregion Timer
     Timer.periodic(const Duration(minutes: 5), (timer) => sync());
     // #enddocregion Timer

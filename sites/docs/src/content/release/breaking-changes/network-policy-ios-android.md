@@ -37,7 +37,7 @@ network policy. See the migration guide below for details.
 
 :::important
 The following only applies to platform native sockets (sockets owned
-by the Android and iOS platforms).  
+by the Android and iOS platforms).
 
 Flutter does not enforce any policy at socket level; you would be
 responsible for securing the connection. If the socket is owned by
@@ -71,9 +71,10 @@ Then, add the network configuration to your $project_path/android/app/src/debug/
 ```
 
 It is also possible to set the policy per domain.  See the Android
-docuentation for more information.
+documentation for more information.
 
-For iOS, you can follow [these instructions](/add-to-app/ios/project-setup/?tab=embed-using-cocoapods#set-local-network-privacy-permissions) to create a `Info-debug.plist` and put this in:
+For iOS, you can follow [these instructions][] to create a `Info-debug.plist`
+and put this in:
 
 ```xml
 <key>NSAppTransportSecurity</key>
@@ -112,3 +113,4 @@ Relevant PRs:
 
 [PR 20218: Plumbing for setting domain network policy]: {{site.repo.engine}}/pull/20218
 [Introduce per-domain policy for strict secure connections]: {{site.github}}/dart-lang/sdk/commit/d878cfbf20375befa09f9bf85f0ba2b87b319427
+[these instructions]: /add-to-app/ios/project-setup#local-network-permissions

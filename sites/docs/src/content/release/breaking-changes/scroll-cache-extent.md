@@ -9,31 +9,34 @@ description: >-
 
 ## Summary
 
-Two properties, `cacheExtent` and `cacheExtentStyle`, are deprecated in scrolling
-related widgets (like `ListView`, `GridView`, `CustomScrollView`, `Viewport`)
-and their corresponding RenderObjects (like `RenderViewport`).
-A new property, `scrollCacheExtent`, has been introduced that encapsulates
+Flutter 3.44 deprecates `cacheExtent` and `cacheExtentStyle`
+in scrolling-related widgets, such as
+`ListView`, `GridView`, `CustomScrollView`, and `Viewport`,
+and their corresponding render objects, such as `RenderViewport`.
+The new `scrollCacheExtent` property encapsulates
 both the value and the caching strategy (pixels or viewport).
 
 ## Background
 
-Previously, `cacheExtent` was a `double` and `cacheExtentStyle` determined how
-that `double` was interpreted (either as pixels or as a fraction of the
-viewport).
-It also separated the value from its unit, which could be confusing.
+Previously, `cacheExtent` was a `double` and
+`cacheExtentStyle` determined how that `double` was interpreted
+(either as pixels or as a fraction of the viewport).
+This split made the setting harder to understand.
 
 The new `scrollCacheExtent` property uses a `ScrollCacheExtent` object that
-explicitly encapsulates both the value and the caching strategy (pixels or
-viewport), ensuring type safety and clearer intent.
+explicitly encapsulates both the value and
+the caching strategy (pixels or viewport),
+which provides type safety and clearer intent.
 
 ## Migration guide
 
-### Widget Layer
+### Widget layer
 
-#### cacheExtent (Pixels)
+#### `cacheExtent` (pixels)
 
-If you were using `cacheExtent` (which defaults to pixels), use `scrollCacheExtent`
-with `ScrollCacheExtent.pixels`.
+If your code uses `cacheExtent`,
+which defaults to pixels,
+use `scrollCacheExtent` with `ScrollCacheExtent.pixels`.
 
 **Before:**
 
@@ -53,33 +56,36 @@ ListView(
 )
 ```
 
-#### cacheExtentStyle (Viewport)
+#### `cacheExtentStyle` (viewport)
 
-If you were using `cacheExtent` with `CacheExtentStyle.viewport` (commonly used
-in `Viewport`), use `scrollCacheExtent` with `ScrollCacheExtent.viewport`.
- 
- **Before:**
- 
- ```dart
- Viewport(
-   cacheExtent: 0.5,
-   cacheExtentStyle: CacheExtentStyle.viewport,
-   slivers: // ...
- )
- ```
- 
- **After:**
- 
- ```dart
- Viewport(
-   scrollCacheExtent: const ScrollCacheExtent.viewport(0.5),
-   slivers: // ...
- )
- ```
+If your code uses `cacheExtent` with `CacheExtentStyle.viewport`,
+which is common in `Viewport`,
+use `scrollCacheExtent` with `ScrollCacheExtent.viewport`.
 
-### RenderObject Layer
+**Before:**
 
-If you were manually setting properties on `RenderViewport` or similar, update to use `scrollCacheExtent`.
+```dart
+Viewport(
+  cacheExtent: 0.5,
+  cacheExtentStyle: CacheExtentStyle.viewport,
+  slivers: // ...
+)
+```
+
+**After:**
+
+```dart
+Viewport(
+  scrollCacheExtent: const ScrollCacheExtent.viewport(0.5),
+  slivers: // ...
+)
+```
+
+### Render object layer
+
+If your code manually sets properties on
+`RenderViewport` or a similar render object,
+use `scrollCacheExtent`.
 
 **Before:**
 
@@ -97,7 +103,7 @@ renderViewport.scrollCacheExtent = const ScrollCacheExtent.pixels(500.0);
 ## Timeline
 
 Landed in version: 3.41.0-0.0.pre<br>
-In stable release: TBD
+In stable release: 3.44
 
 ## References
 
@@ -109,10 +115,10 @@ API documentation:
 
 Relevant PRs:
 
-* [Introduce ScrollCacheExtent][]
+* [Introduce ScrollCacheExtent][pr-181092]
 
 [`ScrollCacheExtent`]: {{site.api}}/flutter/rendering/ScrollCacheExtent-class.html
 [`ScrollView.scrollCacheExtent`]: {{site.api}}/flutter/widgets/ScrollView/scrollCacheExtent.html
 [`RenderViewportBase.scrollCacheExtent`]: {{site.api}}/flutter/rendering/RenderViewportBase/scrollCacheExtent.html
 
-[Introduce ScrollCacheExtent]: {{site.repo.flutter}}/pull/181092
+[pr-181092]: {{site.repo.flutter}}/pull/181092

@@ -9,24 +9,25 @@ description: >-
 
 ## Summary
 
-The `onReorder` callback in the `ReorderableListView`,
-`ReorderableListView.builder`, `ReorderableList` and `SliverReorderableList`
-widgets has been replaced by a new callback, `onReorderItem`,
-which provides a more intuitive behavior on index.
+The `onReorder` callback in the
+`ReorderableListView`, `ReorderableListView.builder`,
+`ReorderableList`, and `SliverReorderableList` widgets
+has been replaced by a new callback, `onReorderItem`,
+which provides more intuitive behavior for `newIndex`.
 
 ## Background
 
-The `onReorder` callback in the `ReorderableListView`,
-`ReorderableListView.builder`, `ReorderableList` and `SliverReorderableList`
-widgets used to require a manual correction
-for the second parameter, `newIndex`,
-in case the `oldIndex` is before the `newIndex`,
-due to the list of items shortening by one element in this case.
+The `onReorder` callback in the
+`ReorderableListView`, `ReorderableListView.builder`,
+`ReorderableList`, and `SliverReorderableList` widgets required
+a manual correction for the second parameter, `newIndex`,
+in case the `oldIndex` is before the `newIndex` because
+the list of items would be shortened by one element.
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {
   if (oldIndex < newIndex) {
-    // Removing the item at oldIndex will shorten the list by 1.
+    // Removing the item at oldIndex shortens the list by 1.
     newIndex -= 1;
   }
 
@@ -38,12 +39,12 @@ ReorderableListView(
 )
 ```
 
-The new callback, `onReorderItem`, aims to solve this problem,
+The new callback, `onReorderItem`, solves this problem
 by doing the correction automatically.
 
 ```dart
 void handleReorder(int oldIndex, int newIndex) {
-  // handle the actual reorder behavior...
+  // Handle the actual reorder behavior...
 }
 
 ReorderableListView(
@@ -54,14 +55,13 @@ ReorderableListView(
 ## Migration guide
 
 The `ReorderableListView`, `ReorderableListView.builder`,
-`ReorderableList` and `SliverReorderableList` widgets
-share the same reordering logic, the migration steps
-are identical for any of these widgets.
+`ReorderableList`, and `SliverReorderableList` widgets
+share the same reordering logic.
+The same migration steps apply to each of these widgets.
 
-For the purpose of this migration guide,
-`ReorderableListView` is chosen as an example.
+This migration guide uses `ReorderableListView` as an example.
 
-### Case 1: trivial case
+### Case 1: Simple callbacks {: #case-1-simple-callbacks }
 
 Code before migration:
 
@@ -92,13 +92,12 @@ Code after migration:
   )
 ```
 
-### Case 2: opting out, for complex onReorder implementations
+### Case 2: Opt out for complex `onReorder` implementations {: #case-2-opt-out }
 
-In some cases, it might not be obvious how to do the migration
-to the new `onReorderItem` callback,
-particularly if the provided callback is very complex.
+In some cases, such as when the provided callback is complex,
+the migration to the new `onReorderItem` callback might not be obvious.
 
-In that case, to opt out of the new behavior,
+In these cases, to opt out of the new behavior,
 adjust the `newIndex` to match the old behavior.
 
 Code before migration:
@@ -136,14 +135,14 @@ Code after migration:
 ```
 
 :::important
-This migration is not supported by `dart fix`,
+This migration isn't supported by `dart fix`,
 due to the change in meaning for the second callback parameter.
 :::
 
 ## Timeline
 
 Landed in version: 3.41.0-1.0.pre-364<br>
-In stable release: Not yet
+In stable release: 3.44
 
 ## References
 
@@ -156,18 +155,18 @@ API documentation:
 
 Relevant issues:
 
-* [Issue 127901][]
-* [Issue 169878][]
+* [The index parameter for ReorderableListView's onReorderCallback is confusing][issue-127901]
+* [SliverReorderableList newIndex arg off by one on drag down list][issue-169878]
 
 Relevant PRs:
 
 * [Deprecate onReorder callback][]
 
-[`ReorderCallback`]: {{site.main-api}}/flutter/widgets/ReorderCallback.html
-[`ReorderableList`]: {{site.main-api}}/flutter/widgets/ReorderableList-class.html
-[`ReorderableListView`]: {{site.main-api}}/flutter/material/ReorderableListView-class.html
-[`SliverReorderableList`]: {{site.main-api}}/flutter/widgets/SliverReorderableList-class.html
+[`ReorderCallback`]: {{site.api}}/flutter/widgets/ReorderCallback.html
+[`ReorderableList`]: {{site.api}}/flutter/widgets/ReorderableList-class.html
+[`ReorderableListView`]: {{site.api}}/flutter/material/ReorderableListView-class.html
+[`SliverReorderableList`]: {{site.api}}/flutter/widgets/SliverReorderableList-class.html
 
-[Issue 127901]: {{site.repo.flutter}}/issues/127901
-[Issue 169878]: {{site.repo.flutter}}/issues/169878
+[issue-127901]: {{site.repo.flutter}}/issues/127901
+[issue-169878]: {{site.repo.flutter}}/issues/169878
 [Deprecate onReorder callback]: {{site.repo.flutter}}/pull/178242

@@ -76,12 +76,12 @@ final List<IOSSystemContextMenuItem> defaultItems =
     SystemContextMenu.getDefaultItems(editableTextState);
 final WidgetsLocalizations localizations =
     WidgetsLocalizations.of(context);
-final List<IOSSystemContextMenuItemData> defaultItemDatas =
+final List<IOSSystemContextMenuItemData> defaultItemData =
     defaultItems
         .map((IOSSystemContextMenuItem item) =>
             item.getData(localizations))
         .toList();
-_controller.showWithItems(selectionRect, defaultItemDatas);
+_controller.showWithItems(selectionRect, defaultItemData);
 ```
 
 ## Timeline

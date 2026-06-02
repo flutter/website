@@ -223,7 +223,7 @@ in which the `StreamController`
 or `Sink` is created in one isolate,
 and the listener is set up in the other isolate.
 In this analogy,
-the `StreamConroller` is called a `SendPort`,
+the `StreamController` is called a `SendPort`,
 and you can "add" messages with the `send()` method.
 `ReceivePort`s are the listeners,
 and when these listeners receive a new message,

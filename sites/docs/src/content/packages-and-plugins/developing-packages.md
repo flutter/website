@@ -297,7 +297,7 @@ dependencies:
   hello_windows: ^1.0.0
 ```
 
-Note that as shown here, an app-facing package can have
+Note that, as shown here, an app-facing package can have
 some platforms implemented within the package,
 and others in endorsed federated implementations.
 
@@ -419,8 +419,11 @@ We recommend you edit the Android code using Android Studio.
 Before editing the Android platform code in Android Studio,
 first make sure that the code has been built at least once
 (in other words, run the example app from your IDE/editor,
-or in a terminal execute
-`cd hello/example; flutter build apk --config-only`).
+or in a terminal execute:
+
+```console
+cd hello/example; flutter build apk --config-only
+```
 
 Then use the following steps:
 
@@ -463,51 +466,62 @@ the path will end with `hello/darwin/Classes` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
-##### Add CocoaPod dependencies
+##### Add native Darwin dependencies (Swift Package Manager)
 
-:::warning
-Flutter is migrating to [Swift Package Manager][]
-to manage iOS and macOS native dependencies.
-Flutter's support of Swift Package Manager is under development.
-The implementation might change in the future.
-Swift Package Manager support is only available
-on Flutter's [`main` channel][].
-Flutter continues to support CocoaPods.
-:::
+Flutter uses Swift Package Manager as the primary strategy to manage
+native iOS and macOS dependencies.
 
-[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[`main` channel]: /install/upgrade#switching-flutter-channels
+To add a dependency to your plugin using Swift Package Manager:
 
-Use the following instructions to add `HelloPod` with the version `0.0.1`:
+1. Create a `Package.swift` file in your plugin's `ios/my_plugin_name`
+   or `macos/my_plugin_name` directory.
+2. Declare your native dependency within the `dependencies` array of the
+   `Package.swift` descriptor file:
 
-1. Specify the dependency at the end of `ios/hello.podspec`:
+```swift title="Package.swift"
+dependencies: [
+    .package(url: "https://github.com/path/to/HelloLibrary.git", from: "1.0.0")
+]
+```
 
-   ```ruby
-   s.dependency 'HelloPod', '0.0.1'
-   ```
+For complete details and instructions on structuring native folders, resource
+bundling, or handling hybrid setups,
+visit the [Swift Package Manager for plugin authors][] guide.
 
-   For private pods, refer to
-   [Private CocoaPods][] to ensure repo access:
+[Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
-   ```ruby
-   s.source = {
-       # For pods hosted on GitHub
-       :git => "https://github.com/path/to/HelloPod.git",
-       # Alternatively, for pods hosted locally
-       # :path => "file:///path/to/private/repo",
-       :tag => s.version.to_s
-     }`
-   ```
+##### Add CocoaPod dependencies (Legacy)
+
+Flutter continues to support CocoaPods for backward compatibility. If your
+plugin needs to support developers who haven't migrated to Swift Package
+Manager yet, specify your CocoaPods dependency at the end of
+`ios/hello.podspec`:
+
+```ruby
+s.dependency 'HelloPod', '0.0.1'
+```
+
+For private pods, refer to
+[Private CocoaPods][] to ensure repo access:
+
+```ruby
+s.source = {
+    # For pods hosted on GitHub
+    :git => "https://github.com/path/to/HelloPod.git",
+    # Alternatively, for pods hosted locally
+    # :path => "file:///path/to/private/repo",
+    :tag => s.version.to_s
+  }
+```
 
 [Private CocoaPods]: https://guides.cocoapods.org/making/private-cocoapods.html
 
-2. Installing the plugin
+##### Installing the plugin dependencies
 
-   - Add the plugin in the project’s `pubspec.yaml` dependencies.
-   - Run `flutter pub get`.
-   - In the project’s `ios/` directory, run `pod install`.
-
-The pod should appear in the installation summary.
+To fetch and link the plugin's dependencies, add the plugin to your app project's
+`pubspec.yaml` dependencies, and run `flutter pub get`. Flutter automatically
+resolves and wires up the Swift Package Manager descriptors or CocoaPods
+pod files during the native app build step.
 
 If your plugin requires a privacy manifest, for example,
 if it uses any **required reason APIs**,
@@ -1004,13 +1018,6 @@ For additional details on `.podspec` files, see the
 
 All web dependencies are handled by the `pubspec.yaml`
 file, like any other Dart package.
-
-{% comment %}
-<!-- Remove until we have better text. -->
-### MacOS
-
-PENDING
-{% endcomment %}
 
 [bind-native]: /platform-integration/bind-native-code
 [CocoaPods Documentation]: https://guides.cocoapods.org/syntax/podspec.html

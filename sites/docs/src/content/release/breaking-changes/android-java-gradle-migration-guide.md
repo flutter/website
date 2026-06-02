@@ -90,7 +90,7 @@ Do the following from the top of your Flutter project.
 ## You didn't update Android Studio and still have a Java error
 The error appears similar to `Unsupported class file major version 65`.
 This is an indication that your Java version is newer than the version of
-gradle you are running can handle. There is a non obvious set of dependencies
+Gradle you are running can handle. There is a non-obvious set of dependencies
 surrounding AGP, Java, and Gradle.
 
 ### Solution 1: Android Studio

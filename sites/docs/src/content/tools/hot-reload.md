@@ -18,7 +18,12 @@ A demo of hot reload in DartPad
 
 ## How to perform a hot reload
 
-To hot reload a Flutter app:
+If you are using an AI coding assistant like [Google Antigravity](/tools/antigravity),
+you can use Agent mode to automatically hot reload your running application
+as soon as you prompt the agent to apply changes.
+For details, see [Agentic Hot Reload](/tools/antigravity#agentic-hot-reload).
+
+To hot reload a Flutter app manually:
 
  1. Run the app from a supported [Flutter editor][] or a terminal window.
     Either a physical or virtual device can be the target.
@@ -84,7 +89,7 @@ and full restart?**
 * **Hot reload** loads code changes into the VM or the browser,
   and re-builds the widget tree, preserving the app state;
   it doesn't rerun `main()` or `initState()`.
-  (`⌘\` in Intellij and Android Studio, `⌃F5` in VSCode)
+  (`⌘\` in IntelliJ and Android Studio, `⌃F5` in VSCode)
 * **Hot restart** loads code changes into the VM or the browser,
   and restarts the Flutter app, losing the app state.
   On the web, this can restart the app without a full page refresh.
