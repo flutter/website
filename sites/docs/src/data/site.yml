@@ -9,7 +9,7 @@ showBanner: true
 # Is automatically wrapped in a paragraph tag.
 bannerHtml: >-
   Help improve Flutter!
-  <a href="https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website" target="_blank">Take our Q2 survey</a>.
+  <a href="https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website" target="_blank" rel="noopener">Take our Q2 survey</a>
 
 branch: main
 repo:
