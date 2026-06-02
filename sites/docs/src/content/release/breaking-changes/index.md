@@ -36,11 +36,13 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [Added enabled property and made onChanged optional for DropdownButton][]
+* [Large screen orientation and resizability restrictions ignored on Android 17][]
+* [Update semantics header and headingLevel behavior on iOS and Android][]
 
-[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+[Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
@@ -87,7 +89,6 @@ They're sorted by release and listed in alphabetical order:
 * [SnackBar with action no longer auto-dismisses][]
 * [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`][]
 * [UISceneDelegate adoption][]
-* [Update semantics header and headingLevel behavior on iOS and Android][]
 
 [`CupertinoDynamicColor` wide gamut support]: /release/breaking-changes/wide-gamut-cupertino-dynamic-color
 [Deprecate `OverlayPortal.targetsRootOverlay`]: /release/breaking-changes/deprecate-overlay-portal-targets-root
@@ -95,7 +96,6 @@ They're sorted by release and listed in alphabetical order:
 [SnackBar with action no longer auto-dismisses]: /release/breaking-changes/snackbar-with-action-behavior-update
 [The default page transition on Android is now `PredictiveBackPageTransitionBuilder`]: /release/breaking-changes/default-android-page-transition
 [UISceneDelegate adoption]: /release/breaking-changes/uiscenedelegate
-[Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
 
 
 

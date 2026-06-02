@@ -91,7 +91,7 @@ SemanticsProperties(
 
 ## Timeline
 
-Landed in version: 3.38.0-1.0.pre<br>
+Landed in version: 3.45.0-0.1.pre<br>
 In stable release: TBD
 
 ## References
