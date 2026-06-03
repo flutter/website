@@ -121,10 +121,10 @@ Use the following instructions to manually migrate your app.
 To use SPM, consult one of the following pages, as appropriate:
 
 * [Integrate a Flutter app into your iOS project][ios-add-2-app]
-* [Integrate a Flutter app into your macOS project[macos-add-2-app]
+* [Integrate a Flutter app into your macOS project][macos-add-2-app]
 
-[ios-add-2-app]:   /add-2-app/ios/project-setup
-[macos-add-2-app]: /add-2-app/macos/project-setup
+[ios-add-2-app]:   /add-to-app/ios/project-setup
+[macos-add-2-app]: /add-to-app/macos/project-setup
 
 ### Add to a custom Xcode target
 
@@ -141,7 +141,7 @@ of the `Flutter` target.
 In [Step 2][manualIntegrationStep2] for list item 6, use your custom target instead
 of the `Flutter` target.
 
-[Xcode targets]: {{site-apple.dev}}/documentation/xcode/configuring-a-new-target-in-your-project
+[Xcode targets]: {{site.apple-dev}}/documentation/xcode/configuring-a-new-target-in-your-project
 [manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-flutter-app-manually
 [manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
 [manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action

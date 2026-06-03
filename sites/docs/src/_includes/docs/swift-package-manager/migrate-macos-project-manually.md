@@ -1,6 +1,6 @@
 Migrating to SPM requires updating the
-`ios/Runner.xcodeproj/project.pbxproj` and
-`ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
+`macos/Runner.xcodeproj/project.pbxproj` and
+`macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 
 ### Step 1: Add FlutterGeneratedPluginSwiftPackage package dependency {:.no_toc}
 

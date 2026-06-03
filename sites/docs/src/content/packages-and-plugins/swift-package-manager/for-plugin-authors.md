@@ -114,7 +114,7 @@ Visit [issue #179032](https://github.com/flutter/flutter/issues/179032).
 1. In a terminal navigate to `my_plugin`.
 
 1. In Xcode, run the following command to open the example app's workspace,
-   (replace `ios` with `macos` as appriate): 
+   (replace `ios` with `macos` as appropriate): 
 
 ```bash
 open example/ios/Runner.xcworkspace
@@ -125,7 +125,7 @@ open example/ios/Runner.xcworkspace
    ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
 
 1. Select `my_plugin/ios/my_plugin`
-   (or `macos` or `darwin`, as appropriate.
+   (or `macos` or `darwin`, as appropriate).
 
 1. Make sure “Reference files in place” is selected
    (it should be the default), and click **Finish**.
