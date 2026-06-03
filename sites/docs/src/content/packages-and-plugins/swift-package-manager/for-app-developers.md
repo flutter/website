@@ -42,7 +42,7 @@ You are done with this page.
 ## How to turn off Swift Package Manager
 
 In general, don't do this. Remember that
-the CocoaPods registry becomes read only on December 2, 2026.
+the CocoaPods registry becomes read-only on December 2, 2026.
 
 Disabling Swift Package Manager causes Flutter to use CocoaPods for all
 dependencies. However, SPM remains integrated with your project.
@@ -77,7 +77,7 @@ This turns off Swift Package Manager for the current user.
 If a project is incompatible with Swift Package Manager,
 all contributors need to run this command.
 
-[removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
+[removeSPM]: #how-to-remove-swift-package-manager-integration
 
 ## How to add Swift Package Manager integration
 
@@ -133,18 +133,18 @@ products, like frameworks or unit tests.
 You can add Swift Package Manager integration to these custom Xcode targets.
 
 Follow the steps in
-[How to add Swift Package Manager integration to a project _manually_][manualIntegration].
+[How to add Swift Package Manager integration][manualIntegration].
 
-In [Step 1][manualIntegrationStep1] for list item 6, use your custom target instead
-of the `Flutter` target.
+In [Step 1][] for list item 6,
+use your custom target instead of the `Flutter` target.
 
-In [Step 2][manualIntegrationStep2] for list item 6, use your custom target instead
-of the `Flutter` target.
+In [Step 2][] for list item 6,
+use your custom target instead of the `Flutter` target.
 
 [Xcode targets]: {{site.apple-dev}}/documentation/xcode/configuring-a-new-target-in-your-project
-[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-flutter-app-manually
-[manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
-[manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action
+[manualIntegration]: #how-to-add-swift-package-manager-integration
+[Step1]: #step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
+[Step2]: #step-2-add-run-prepare-flutter-framework-script-pre-action
 
 ## How to remove Swift Package Manager integration
 
@@ -191,7 +191,7 @@ To undo this migration:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png" caption="The build pre-action to remove" />
 
-[Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
+[Turn off Swift Package Manager]: #how-to-turn-off-swift-package-manager
 
 ## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
 
