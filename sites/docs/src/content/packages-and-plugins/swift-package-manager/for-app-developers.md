@@ -143,8 +143,8 @@ use your custom target instead of the `Flutter` target.
 
 [Xcode targets]: {{site.apple-dev}}/documentation/xcode/configuring-a-new-target-in-your-project
 [manualIntegration]: #how-to-add-swift-package-manager-integration
-[Step1]: #step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
-[Step2]: #step-2-add-run-prepare-flutter-framework-script-pre-action
+[Step 1]: #step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
+[Step 2]: #step-2-add-run-prepare-flutter-framework-script-pre-action
 
 ## How to remove Swift Package Manager integration
 
