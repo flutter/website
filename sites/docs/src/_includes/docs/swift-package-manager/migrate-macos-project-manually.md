@@ -1,25 +1,10 @@
-Once you [turn on Swift Package Manager][], the Flutter CLI tries to migrate
-your project to use Swift Package Manager the next time you run your app
-using the CLI.
+Migrating to SPM requires updating the
+`ios/Runner.xcodeproj/project.pbxproj` and
+`ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 
-However, the Flutter CLI tool might be unable to migrate your project
-automatically if there are unexpected modifications.
+### Step 1: Add FlutterGeneratedPluginSwiftPackage package dependency {:.no_toc}
 
-If the automatic migration fails, use the steps below to add Swift Package
-Manager integration to a project manually.
-
-Before migrating manually, [file an issue][]; this helps the Flutter team
-improve the automatic migration process.
-Include the error message and, if possible, include a copy of
-the following files in your issue:
-
-* `macos/Runner.xcodeproj/project.pbxproj`
-* `macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
-  (or the xcscheme for the flavor used)
-
-### Step 1: Add FlutterGeneratedPluginSwiftPackage Package Dependency {:.no_toc}
-
-1. Open your app (`macos/Runner.xcworkspace`) in Xcode.
+1. In Xcode, open `macos/Runner.xcworkspace`.
 1. Navigate to **Package Dependencies** for the project.
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
@@ -37,7 +22,7 @@ the following files in your issue:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/add-generated-framework.png" caption="Ensure that `FlutterGeneratedPluginSwiftPackage` was added to **Frameworks, Libraries, and Embedded Content**" />
 
-### Step 2: Add Run Prepare Flutter Framework Script Pre-Action {:.no_toc}
+### Step 2: Add Run Prepare Flutter Framework Script Pre-action {:.no_toc}
 
 **The following steps must be completed for each flavor.**
 
@@ -63,7 +48,7 @@ the following files in your issue:
 
 ### Step 3: Run app {:.no_toc}
 
-1. Run the app in Xcode.
+1. In Xcode, run the app.
 1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
    and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
@@ -71,5 +56,4 @@ the following files in your issue:
 
 1. Ensure that the app runs on the command line with `flutter run`.
 
-[turn on Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-on-swift-package-manager
 [file an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml

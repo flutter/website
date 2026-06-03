@@ -3,32 +3,75 @@ title: Swift Package Manager for plugin authors
 description: How to add Swift Package Manager compatibility to iOS and macOS plugins
 ---
 
-:::warning
-Flutter is migrating to [Swift Package Manager][]
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
 to manage iOS and macOS native dependencies.
-Flutter's support of Swift Package Manager is under development.
-If you find a bug in Flutter's Swift Package Manager support,
-[open an issue][].
-Swift Package Manager support is [off by default][].
-Flutter continues to support CocoaPods.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
 :::
 
-Flutter's Swift Package Manager integration has several benefits:
-
-1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][]!
-1. **Simplifies Flutter installation**.
-   Swift Package Manager is bundled with Xcode.
-   In the future, you won’t need to install Ruby and CocoaPods to target iOS or
-   macOS.
-
-
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[off by default]: #how-to-turn-on-swift-package-manager
-[Swift packages]: https://swiftpackageindex.com/
-[open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% render "docs/swift-package-manager/how-to-enable-disable.md", site: site %}
+## How to turn on Swift Package Manager
+
+As of the 3.44 release, Flutter's Swift Package Manager (SPM)
+support is on by default.
+Upgrading Flutter and running your app automatically adds SPM integration.
+This makes your project download the Swift packages that
+your Flutter plugins depend on.
+To use an older Flutter version,
+you must [remove Swift Package Manager integration][removeSPM]
+from the app.
+
+Note that Flutter falls back to CocoaPods for dependencies that don't
+yet support Swift Package Manager.
+
+[Optional] To check if your project is using SPM:
+
+1. In Xcode, run the app.
+1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
+   and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
+
+   <DashImage image="development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png" caption="Ensure **Run Prepare Flutter Framework Script** runs as a pre-action" />
+
+## How to turn off Swift Package Manager
+
+Disabling Swift Package Manager causes Flutter to use CocoaPods for all
+dependencies. However, SPM remains integrated with your project.
+To remove Swift Package Manager integration completely from your project,
+follow the [How to remove Swift Package Manager integration][removeSPM]
+instructions.
+
+### Turn off SPM for a single project
+
+In the project's `pubspec.yaml` file, under the `flutter` section,
+set `enable-swift-package-manager` to `false` in the `config` subsection.
+
+```yaml title="pubspec.yaml"
+# The following section is specific to Flutter packages.
+flutter:
+  config:
+    enable-swift-package-manager: false
+```
+
+This turns off Swift Package Manager for all contributors to this project.
+
+### Turn off SPM globally for all projects
+
+Run the following command:
+
+```sh
+flutter config --no-enable-swift-package-manager
+```
+
+This turns off Swift Package Manager for the current user.
+
+If a project is incompatible with Swift Package Manager,
+all contributors need to run this command.
+
+[removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 
 ## How to add Swift Package Manager support to an existing Flutter plugin
 
@@ -45,7 +88,6 @@ migrated to Swift Package Manager yet.
 Plugins that don't support Swift Package Manager can cause problems for projects
 that have migrated.
 
-
 <Tabs key="darwin-plugin-type">
 <Tab name="Swift plugin">
 
@@ -59,15 +101,20 @@ that have migrated.
 </Tab>
 </Tabs>
 
-## (Optional, but Recommended) Add plugin as local package in example app
+## (Optional, but recommended) Add plugin as local package in example app
 
-If your plugin includes an example, it is recommended to add the plugin as a local package in the example app. This is not required, but provides better Xcode support when editing the plugin's source code in the example app. See [issue #179032](https://github.com/flutter/flutter/issues/179032).
+If your plugin includes an example,
+it is recommended to add the plugin as a local package in the example app.
+This is not required, but provides better Xcode support when editing
+the plugin's source code in the example app.
+Visit [issue #179032](https://github.com/flutter/flutter/issues/179032).
 
 ### Add plugin as local package
 
 1. In a terminal navigate to `my_plugin`.
 
-1. Run the following command to open the example app's workspace in Xcode, (replace `ios` with `macos` if your plugin targets macOS): 
+1. In Xcode, run the following command to open the example app's workspace,
+   (replace `ios` with `macos` as appriate): 
 
 ```bash
 open example/ios/Runner.xcworkspace
@@ -77,13 +124,18 @@ open example/ios/Runner.xcworkspace
 
    ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
 
-1. Select `my_plugin/ios/my_plugin` (or `macos` or `darwin` depending on what platforms your plugin supports).
+1. Select `my_plugin/ios/my_plugin`
+   (or `macos` or `darwin`, as appropriate.
 
-1. Make sure “Reference files in place” is selected (it should be the default), and click **Finish**.
+1. Make sure “Reference files in place” is selected
+   (it should be the default), and click **Finish**.
 
    ![Select Reference files in place](/assets/images/docs/development/packages-and-plugins/swift-package-manager/reference-files-in-place.png)
 
-This adds the plugin as a local package, but it will be referenced by absolute path, which is not desirable for distribution. To change it to a relative path, follow the steps below.
+This adds the plugin as a local package,
+but it's referenced by absolute path,
+which isn't desirable for distribution.
+To change it to a relative path, use the following instructions.
 
 ### Change to relative path
 
@@ -106,6 +158,7 @@ This adds the plugin as a local package, but it will be referenced by absolute p
    ```
 
 1. And replace with relative path:
+
    ```text
    path = ../../ios/my_plugin; sourceTree = "<group>"
    ```
@@ -113,7 +166,8 @@ This adds the plugin as a local package, but it will be referenced by absolute p
 
 ## How to update unit tests in a plugin's example app
 
-If your plugin has native XCTests, you might need to update them to work with
+If your plugin has native XCTests,
+you might need to update them to work with
 Swift Package Manager if one of the following is true:
 
 * You're using a CocoaPod dependency for the test.
@@ -121,7 +175,7 @@ Swift Package Manager if one of the following is true:
 
 To update your unit tests:
 
-1. Open your `example/ios/Runner.xcworkspace` in Xcode.
+1. In Xcode, open your `example/ios/Runner.xcworkspace`.
 
 1. If you were using a CocoaPod dependency for tests, such as `OCMock`,
    you'll want to remove it from your `Podfile` file.
@@ -188,4 +242,4 @@ To update your unit tests:
 
 1. Ensure tests pass **Product > Test**.
 
-[library type recommendations]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
+[library type recommendations]: {{site.apple-dev}}/documentation/packagedescription/product/library(name:type:targets:)

@@ -490,7 +490,7 @@ visit the [Swift Package Manager for plugin authors][] guide.
 
 [Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
-##### Add CocoaPod dependencies (Legacy)
+##### Add CocoaPod dependencies (legacy)
 
 Flutter continues to support CocoaPods for backward compatibility. If your
 plugin needs to support developers who haven't migrated to Swift Package
