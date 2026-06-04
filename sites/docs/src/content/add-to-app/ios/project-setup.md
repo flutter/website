@@ -271,5 +271,4 @@ You can now [add a Flutter screen][] to your existing iOS app.
 
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [legacy integration guide]: /add-to-app/ios/project-setup-legacy
-[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [build modes]: /testing/build-modes

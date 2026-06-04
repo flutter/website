@@ -1,4 +1,4 @@
-Migrating to SPM requires updating the
+Migrating to SwiftPM requires updating the
 `macos/Runner.xcodeproj/project.pbxproj` and
 `macos/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme` files.
 

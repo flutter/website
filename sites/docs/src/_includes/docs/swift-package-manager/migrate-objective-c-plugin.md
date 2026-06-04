@@ -1,7 +1,7 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
 The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applicable.
 
-1.  Ensure that you are running Flutter 3.44 or later. This enables SPM by default.
+1.  Ensure that you are running Flutter 3.44 or later. This enables SwiftPM by default.
 
 1. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
