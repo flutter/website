@@ -296,24 +296,24 @@ Future<int> _publishStagingDeploymentOnGitHub({
       repository: repository,
       environment: environment,
     );
-    // final deploymentId = await _createPreviewDeployment(
-    //   gitHub: gitHub,
-    //   repository: repository,
-    //   site: site,
-    //   stagingUrl: stagingUrl,
-    //   environment: environment,
-    //   context: context,
-    // );
-    //
-    // await _createPreviewDeploymentStatus(
-    //   gitHub: gitHub,
-    //   repository: repository,
-    //   deploymentId: deploymentId,
-    //   site: site,
-    //   stagingUrl: stagingUrl,
-    //   environment: environment,
-    //   commitSha: context.commitSha,
-    // );
+    final deploymentId = await _createPreviewDeployment(
+      gitHub: gitHub,
+      repository: repository,
+      site: site,
+      stagingUrl: stagingUrl,
+      environment: environment,
+      context: context,
+    );
+
+    await _createPreviewDeploymentStatus(
+      gitHub: gitHub,
+      repository: repository,
+      deploymentId: deploymentId,
+      site: site,
+      stagingUrl: stagingUrl,
+      environment: environment,
+      commitSha: context.commitSha,
+    );
     await _deletePreviewDeployments(
       gitHub: gitHub,
       repository: repository,
