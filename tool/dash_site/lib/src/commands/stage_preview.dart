@@ -16,7 +16,7 @@ import 'build.dart';
 
 /// Builds the selected or default site,
 /// deploys it to a Firebase Hosting preview channel,
-/// and posts or updates a comment on the source GitHub PR when requested.
+/// and publishes a deployment status on the source GitHub PR when requested.
 final class StagePreviewCommand extends Command<int> {
   static const String _projectOption = 'project';
   static const String _channelOption = 'channel';
@@ -52,22 +52,22 @@ final class StagePreviewCommand extends Command<int> {
       ..addOption(
         _prNumberOption,
         help:
-            'The pull request number to comment on. '
-            'Required together with --$_repoOption to post a preview comment.',
+            'The pull request number to publish a deployment for. '
+            'Required together with --$_repoOption to publish a deployment.',
       )
       ..addOption(
         _repoOption,
         help:
             'The full repository name in "owner/repository" form. '
             'Required together with --$_prNumberOption to '
-            'post a preview comment.',
+            'publish a deployment.',
         valueHelp: 'owner/repository',
       )
       ..addOption(
         _commitShaOption,
         help:
             'The commit SHA being staged. '
-            'Required to post a preview comment.',
+            'Required to publish a deployment.',
       )
       ..addOption(
         _headBranchOption,
@@ -78,7 +78,7 @@ final class StagePreviewCommand extends Command<int> {
   @override
   String get description =>
       'Build the site, deploy it to a Firebase staging channel, '
-      'and comment the preview URL on GitHub.';
+      'and publish the preview URL as a GitHub deployment.';
 
   @override
   String get name => 'stage-preview';
@@ -116,7 +116,7 @@ final class StagePreviewCommand extends Command<int> {
       if (commitSha == null) {
         stderr.writeln(
           'Error: --$_commitShaOption must be set to '
-          'comment on the pull request.',
+          'publish a deployment.',
         );
         return 1;
       }
@@ -125,7 +125,7 @@ final class StagePreviewCommand extends Command<int> {
       if (githubToken == null) {
         stderr.writeln(
           'Error: $githubPatTokenEnv must be set to '
-          'comment on the pull request.',
+          'publish a deployment.',
         );
         return 1;
       }
@@ -139,7 +139,7 @@ final class StagePreviewCommand extends Command<int> {
       if (prNumberArg != null || repoFullName != null) {
         stderr.writeln(
           'Warning: Both --$_prNumberOption and --$_repoOption must be set '
-          'to comment on the pull request; skipping the GitHub comment.',
+          'to publish a deployment; skipping the GitHub deployment.',
         );
       }
       prContext = null;
@@ -174,12 +174,12 @@ final class StagePreviewCommand extends Command<int> {
     }
 
     if (prContext == null) {
-      print('No pull request context available; skipping GitHub comment.');
+      print('No pull request context available; skipping GitHub deployment.');
       print(stagingUrl);
       return 0;
     }
 
-    return _commentStagingUrlOnGitHub(
+    return _publishStagingDeploymentOnGitHub(
       site: selectedSite,
       stagingUrl: stagingUrl,
       context: prContext,
@@ -255,52 +255,71 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
   return null;
 }
 
-/// Posts a new preview comment on the pull request,
-/// or updates the existing one identified by an HTML marker that
-/// includes the [site]'s name.
+const String _githubApiVersion = '2026-03-10';
+const String _githubJsonMimeType = 'application/vnd.github+json';
+const String _previewDeploymentTask = 'deploy:preview';
+
+/// Publishes [stagingUrl] as a GitHub deployment status.
 ///
 /// Returns `0` on success or `1` if the GitHub API call fails.
-Future<int> _commentStagingUrlOnGitHub({
+Future<int> _publishStagingDeploymentOnGitHub({
   required Site site,
   required String stagingUrl,
   required _PullRequestContext context,
 }) async {
-  final commentMarker = '<!-- flutter-preview-${site.name} -->';
-  final commentBody =
-      '''
-$commentMarker
-Staged preview of the updated ${site.host} site (updated for commit ${context.commitSha}):
+  final environment = _previewEnvironmentForSite(
+    site,
+    prNumber: context.prNumber,
+  );
 
-$stagingUrl''';
-
-  print('Commenting ${site.host} staging URL on the PR...');
+  print(
+    'Publishing ${site.host} staging URL to GitHub deployment '
+    '$environment...',
+  );
   final gitHub = github.GitHub(
     auth: github.Authentication.withToken(context.githubToken),
+    version: _githubApiVersion,
   );
   try {
     final repository = github.RepositorySlug.full(context.repoFullName);
-    final existingCommentId = await _findExistingPreviewCommentId(
+    final deploymentId = await _createPreviewDeployment(
       gitHub: gitHub,
       repository: repository,
-      issueNumber: context.prNumber,
-      commentMarker: commentMarker,
+      site: site,
+      stagingUrl: stagingUrl,
+      environment: environment,
+      context: context,
+    );
+    if (deploymentId == null) {
+      stderr.writeln(
+        'Error: Failed to find a deployment id in the GitHub response.',
+      );
+      return 1;
+    }
+
+    await _createPreviewDeploymentStatus(
+      gitHub: gitHub,
+      repository: repository,
+      deploymentId: deploymentId,
+      site: site,
+      stagingUrl: stagingUrl,
+      environment: environment,
+      commitSha: context.commitSha,
     );
 
-    if (existingCommentId == null) {
-      await gitHub.issues.createComment(
-        repository,
-        context.prNumber,
-        commentBody,
-      );
-    } else {
-      await gitHub.issues.updateComment(
-        repository,
-        existingCommentId,
-        commentBody,
-      );
-    }
+    final deploymentIds = await _findPreviewDeploymentIds(
+      gitHub: gitHub,
+      repository: repository,
+      environment: environment,
+    );
+    await _deletePreviewDeployments(
+      gitHub: gitHub,
+      repository: repository,
+      deploymentIds: deploymentIds.where((id) => id < deploymentId).toList(),
+      environment: environment,
+    );
   } on github.GitHubError catch (error) {
-    stderr.writeln('Error: Failed to comment on the pull request: $error');
+    stderr.writeln('Error: Failed to publish the GitHub deployment: $error');
     return 1;
   } finally {
     gitHub.dispose();
@@ -309,26 +328,156 @@ $stagingUrl''';
   return 0;
 }
 
-/// Returns the id of the first comment on the issue whose body
-/// contains the specified [commentMarker].
-///
-/// Returns `null` if no matching comment exists.
-Future<int?> _findExistingPreviewCommentId({
+/// Returns existing deployment ids for a PR/site preview [environment].
+Future<List<int>> _findPreviewDeploymentIds({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
-  required int issueNumber,
-  required String commentMarker,
+  required String environment,
 }) async {
-  await for (final comment in gitHub.issues.listCommentsByIssue(
-    repository,
-    issueNumber,
-  )) {
-    if (comment.body?.contains(commentMarker) ?? false) {
-      return comment.id;
+  final deploymentIds = <int>[];
+  var page = 1;
+  while (true) {
+    final deployments = await gitHub.getJSON<Object?, List<Object?>>(
+      '/repos/${repository.fullName}/deployments',
+      params: <String, String>{
+        'environment': environment,
+        'task': _previewDeploymentTask,
+        'per_page': '100',
+        'page': '$page',
+      },
+      convert: (json) => json as List<Object?>,
+    );
+    if (deployments.isEmpty) {
+      return deploymentIds;
     }
+    for (final deployment in deployments) {
+      if (deployment case <String, Object?>{'id': final num id}) {
+        deploymentIds.add(id.toInt());
+      }
+    }
+    page += 1;
+  }
+}
+
+/// Creates the GitHub deployment record for the staged preview.
+Future<int?> _createPreviewDeployment({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required Site site,
+  required String stagingUrl,
+  required String environment,
+  required _PullRequestContext context,
+}) async {
+  final response = await gitHub.postJSON<Object?, Map<String, Object?>>(
+    '/repos/${repository.fullName}/deployments',
+    statusCode: 201,
+    body: jsonEncode(<String, Object?>{
+      'ref': context.commitSha,
+      'task': _previewDeploymentTask,
+      'auto_merge': false,
+      'required_contexts': <String>[],
+      'payload': <String, Object?>{
+        'id': _previewDeploymentPayloadId(site, prNumber: context.prNumber),
+        'site': site.name,
+        'site_host': site.host,
+        'pull_request': context.prNumber,
+        'preview_url': stagingUrl,
+      },
+      'environment': environment,
+      'description': 'Staged preview for ${site.host} PR #${context.prNumber}.',
+      'transient_environment': true,
+      'production_environment': false,
+    }),
+    convert: _jsonMap,
+  );
+  if (response case <String, Object?>{'id': final num id}) {
+    return id.toInt();
   }
   return null;
 }
+
+/// Creates a successful deployment status with [stagingUrl] as the target.
+Future<void> _createPreviewDeploymentStatus({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required int deploymentId,
+  required Site site,
+  required String stagingUrl,
+  required String environment,
+  required String commitSha,
+}) async {
+  await gitHub.postJSON<Object?, Map<String, Object?>>(
+    '/repos/${repository.fullName}/deployments/$deploymentId/statuses',
+    statusCode: 201,
+    body: jsonEncode(<String, Object?>{
+      'state': 'success',
+      'log_url': stagingUrl,
+      'description': 'Staged ${site.host} preview for ${_shortSha(commitSha)}.',
+      'environment': environment,
+      'environment_url': stagingUrl,
+      'auto_inactive': false,
+    }),
+    convert: _jsonMap,
+  );
+}
+
+/// Marks and deletes deployments superseded by the newly published preview.
+Future<void> _deletePreviewDeployments({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required List<int> deploymentIds,
+  required String environment,
+}) async {
+  if (deploymentIds.isEmpty) {
+    return;
+  }
+
+  print(
+    'Deleting ${deploymentIds.length} older GitHub deployment(s) '
+    'for $environment...',
+  );
+  for (final deploymentId in deploymentIds) {
+    await _createInactiveDeploymentStatus(
+      gitHub: gitHub,
+      repository: repository,
+      deploymentId: deploymentId,
+      environment: environment,
+    );
+    await gitHub.request(
+      'DELETE',
+      '/repos/${repository.fullName}/deployments/$deploymentId',
+      statusCode: 204,
+      headers: _githubJsonHeaders,
+    );
+  }
+}
+
+/// Marks [deploymentId] inactive so GitHub allows it to be deleted.
+Future<void> _createInactiveDeploymentStatus({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required int deploymentId,
+  required String environment,
+}) async {
+  await gitHub.postJSON<Object?, Map<String, Object?>>(
+    '/repos/${repository.fullName}/deployments/$deploymentId/statuses',
+    statusCode: 201,
+    body: jsonEncode(<String, Object?>{
+      'state': 'inactive',
+      'description': 'Superseded by a newer staged preview.',
+      'environment': environment,
+      'auto_inactive': false,
+    }),
+    convert: _jsonMap,
+  );
+}
+
+Map<String, String> get _githubJsonHeaders => <String, String>{
+  'Accept': _githubJsonMimeType,
+  'X-GitHub-Api-Version': _githubApiVersion,
+};
+
+Map<String, Object?> _jsonMap(Object? json) => json as Map<String, Object?>;
 
 /// Builds a Firebase Hosting channel name for [site] that
 /// incorporates [branchOrSha] and if specified, [prNumber],
@@ -353,13 +502,30 @@ String _firebaseChannelForSite(
   return channel.replaceAll(RegExp(r'-+$'), '');
 }
 
+/// Returns the stable GitHub environment name for a PR/site preview.
+///
+/// GitHub assigns deployment ids, so the environment is the stable PR/site key.
+String _previewEnvironmentForSite(Site site, {required int prNumber}) =>
+    'preview-${site.name}-pr-$prNumber';
+
+/// Returns an opaque stable payload id for a PR/site preview deployment.
+String _previewDeploymentPayloadId(Site site, {required int prNumber}) =>
+    '${site.name}-pr-$prNumber';
+
+String _shortSha(String sha) {
+  if (sha.length <= 7) {
+    return sha;
+  }
+  return sha.substring(0, 7);
+}
+
 /// Returns [value] if it is non-null and non-empty, otherwise `null`.
 String? _nonEmpty(String? value) {
   if (value == null || value.isEmpty) return null;
   return value;
 }
 
-/// Everything required to post a preview comment on a GitHub pull request.
+/// Everything required to publish a preview deployment for a pull request.
 ///
 /// Built during option parsing so that a misconfigured Cloud Build trigger
 /// fails before the build and deploy runs.
