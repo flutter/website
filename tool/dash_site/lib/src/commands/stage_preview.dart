@@ -291,34 +291,36 @@ Future<int> _publishStagingDeploymentOnGitHub({
   );
   try {
     final repository = github.RepositorySlug.full(context.repoFullName);
-    final previousDeploymentIds = await _findPreviewDeploymentIds(
+    final previousDeployments = await _findPreviewDeployments(
       gitHub: gitHub,
       repository: repository,
-      environment: environment,
+      environments: _previewEnvironmentsForSite(
+        site,
+        prNumber: context.prNumber,
+      ),
     );
-    final deploymentId = await _createPreviewDeployment(
-      gitHub: gitHub,
-      repository: repository,
-      site: site,
-      stagingUrl: stagingUrl,
-      environment: environment,
-      context: context,
-    );
-
-    await _createPreviewDeploymentStatus(
-      gitHub: gitHub,
-      repository: repository,
-      deploymentId: deploymentId,
-      site: site,
-      stagingUrl: stagingUrl,
-      environment: environment,
-      commitSha: context.commitSha,
-    );
+    // final deploymentId = await _createPreviewDeployment(
+    //   gitHub: gitHub,
+    //   repository: repository,
+    //   site: site,
+    //   stagingUrl: stagingUrl,
+    //   environment: environment,
+    //   context: context,
+    // );
+    //
+    // await _createPreviewDeploymentStatus(
+    //   gitHub: gitHub,
+    //   repository: repository,
+    //   deploymentId: deploymentId,
+    //   site: site,
+    //   stagingUrl: stagingUrl,
+    //   environment: environment,
+    //   commitSha: context.commitSha,
+    // );
     await _deletePreviewDeployments(
       gitHub: gitHub,
       repository: repository,
-      deploymentIds: previousDeploymentIds,
-      environment: environment,
+      deployments: previousDeployments,
     );
   } on github.GitHubError catch (error) {
     stderr.writeln('Error: Failed to publish the GitHub deployment: $error');
@@ -330,35 +332,45 @@ Future<int> _publishStagingDeploymentOnGitHub({
   return 0;
 }
 
-/// Returns existing deployment ids for a PR/site preview [environment].
-Future<List<int>> _findPreviewDeploymentIds({
+/// Returns existing deployments for the PR/site preview [environments].
+Future<List<_PreviewDeployment>> _findPreviewDeployments({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
-  required String environment,
+  required List<String> environments,
 }) async {
-  final deploymentIds = <int>[];
-  var page = 1;
-  while (true) {
-    final deployments = await gitHub.getJSON<Object?, List<Object?>>(
-      '/repos/${repository.fullName}/deployments',
-      params: <String, String>{
-        'environment': environment,
-        'task': _previewDeploymentTask,
-        'per_page': '100',
-        'page': '$page',
-      },
-      convert: (json) => json as List<Object?>,
-    );
-    if (deployments.isEmpty) {
-      return deploymentIds;
-    }
-    for (final deployment in deployments) {
-      if (deployment case <String, Object?>{'id': final num id}) {
-        deploymentIds.add(id.toInt());
+  final previewDeployments = <_PreviewDeployment>[];
+  final seenDeploymentIds = <int>{};
+  for (final environment in environments) {
+    var page = 1;
+    while (true) {
+      final deployments = await gitHub.getJSON<Object?, List<Object?>>(
+        '/repos/${repository.fullName}/deployments',
+        params: <String, String>{
+          'environment': environment,
+          'task': _previewDeploymentTask,
+          'per_page': '100',
+          'page': '$page',
+        },
+        convert: (json) => json as List<Object?>,
+      );
+      if (deployments.isEmpty) {
+        break;
       }
+      for (final deployment in deployments) {
+        if (deployment case <String, Object?>{'id': final num id}) {
+          final deploymentId = id.toInt();
+          if (seenDeploymentIds.add(deploymentId)) {
+            previewDeployments.add((
+              id: deploymentId,
+              environment: environment,
+            ));
+          }
+        }
+      }
+      page += 1;
     }
-    page += 1;
   }
+  return previewDeployments;
 }
 
 /// Creates the GitHub deployment record for the staged preview.
@@ -430,19 +442,18 @@ Future<void> _createPreviewDeploymentStatus({
 Future<void> _deletePreviewDeployments({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
-  required List<int> deploymentIds,
-  required String environment,
+  required List<_PreviewDeployment> deployments,
 }) async {
-  for (final deploymentId in deploymentIds) {
+  for (final deployment in deployments) {
     await _createInactiveDeploymentStatus(
       gitHub: gitHub,
       repository: repository,
-      deploymentId: deploymentId,
-      environment: environment,
+      deploymentId: deployment.id,
+      environment: deployment.environment,
     );
     await gitHub.request(
       'DELETE',
-      '/repos/${repository.fullName}/deployments/$deploymentId',
+      '/repos/${repository.fullName}/deployments/${deployment.id}',
       statusCode: 204,
       headers: _githubJsonHeaders,
     );
@@ -508,6 +519,18 @@ String _firebaseChannelForSite(
 String _previewEnvironmentForSite(Site site, {required int prNumber}) =>
     'Preview: ${site.host} (PR #$prNumber)';
 
+/// Returns all environment names to clean up for a PR/site preview.
+List<String> _previewEnvironmentsForSite(Site site, {required int prNumber}) {
+  return <String>[
+    _previewEnvironmentForSite(site, prNumber: prNumber),
+    _legacyPreviewEnvironmentForSite(site, prNumber: prNumber),
+  ];
+}
+
+/// Returns the old PR/site preview environment name used by earlier builds.
+String _legacyPreviewEnvironmentForSite(Site site, {required int prNumber}) =>
+    'preview-${site.name}-pr-$prNumber';
+
 /// Returns the stable payload id for a PR/site preview deployment.
 String _previewDeploymentPayloadId(Site site, {required int prNumber}) =>
     '${site.name}-pr-$prNumber';
@@ -536,3 +559,6 @@ typedef _PullRequestContext = ({
   String githubToken,
   String commitSha,
 });
+
+/// A deployment that should be retired from a previous preview run.
+typedef _PreviewDeployment = ({int id, String environment});
