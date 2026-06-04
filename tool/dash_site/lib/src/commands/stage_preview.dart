@@ -258,14 +258,17 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
 /// The GitHub REST API version used for preview deployment calls.
 const String _githubApiVersion = '2026-03-10';
 
+/// The GitHub REST API media type used for raw deployment calls.
+const String _githubJsonMimeType = 'application/vnd.github+json';
+
 /// The deployment task used to distinguish site previews from other deploys.
 const String _previewDeploymentTask = 'deploy:preview';
 
 /// Publishes [stagingUrl] as the latest PR/site preview deployment.
 ///
 /// Each staging run creates a deployment for the staged commit. The success
-/// status is followed by inactive statuses on older successful deployments for
-/// the same environment.
+/// status is followed by inactive statuses and deletes for older deployments
+/// for the same environment.
 ///
 /// Returns `0` on success or `1` if the GitHub API call fails.
 Future<int> _publishStagingDeploymentOnGitHub({
@@ -293,25 +296,25 @@ Future<int> _publishStagingDeploymentOnGitHub({
       repository: repository,
       environment: environment,
     );
-    final deploymentId = await _createPreviewDeployment(
-      gitHub: gitHub,
-      repository: repository,
-      site: site,
-      stagingUrl: stagingUrl,
-      environment: environment,
-      context: context,
-    );
-
-    await _createPreviewDeploymentStatus(
-      gitHub: gitHub,
-      repository: repository,
-      deploymentId: deploymentId,
-      site: site,
-      stagingUrl: stagingUrl,
-      environment: environment,
-      commitSha: context.commitSha,
-    );
-    await _markPreviewDeploymentsInactive(
+    // final deploymentId = await _createPreviewDeployment(
+    //   gitHub: gitHub,
+    //   repository: repository,
+    //   site: site,
+    //   stagingUrl: stagingUrl,
+    //   environment: environment,
+    //   context: context,
+    // );
+    //
+    // await _createPreviewDeploymentStatus(
+    //   gitHub: gitHub,
+    //   repository: repository,
+    //   deploymentId: deploymentId,
+    //   site: site,
+    //   stagingUrl: stagingUrl,
+    //   environment: environment,
+    //   commitSha: context.commitSha,
+    // );
+    await _deletePreviewDeployments(
       gitHub: gitHub,
       repository: repository,
       deploymentIds: previousDeploymentIds,
@@ -423,46 +426,27 @@ Future<void> _createPreviewDeploymentStatus({
   );
 }
 
-/// Marks older successful transient preview deployments inactive.
-Future<void> _markPreviewDeploymentsInactive({
+/// Marks older transient preview deployments inactive and deletes them.
+Future<void> _deletePreviewDeployments({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
   required List<int> deploymentIds,
   required String environment,
 }) async {
   for (final deploymentId in deploymentIds) {
-    if (await _latestDeploymentStatusState(
-          gitHub: gitHub,
-          repository: repository,
-          deploymentId: deploymentId,
-        ) !=
-        'success') {
-      continue;
-    }
     await _createInactiveDeploymentStatus(
       gitHub: gitHub,
       repository: repository,
       deploymentId: deploymentId,
       environment: environment,
     );
+    await gitHub.request(
+      'DELETE',
+      '/repos/${repository.fullName}/deployments/$deploymentId',
+      statusCode: 204,
+      headers: _githubJsonHeaders,
+    );
   }
-}
-
-/// Returns the latest known status state for [deploymentId].
-Future<String?> _latestDeploymentStatusState({
-  required github.GitHub gitHub,
-  required github.RepositorySlug repository,
-  required int deploymentId,
-}) async {
-  final statuses = await gitHub.getJSON<Object?, List<Object?>>(
-    '/repos/${repository.fullName}/deployments/$deploymentId/statuses',
-    params: <String, String>{'per_page': '1'},
-    convert: (json) => json as List<Object?>,
-  );
-  if (statuses case [<String, Object?>{'state': final String state}, ...]) {
-    return state;
-  }
-  return null;
 }
 
 /// Creates an inactive status for a superseded transient preview deployment.
@@ -484,6 +468,11 @@ Future<void> _createInactiveDeploymentStatus({
     convert: _jsonMap,
   );
 }
+
+Map<String, String> get _githubJsonHeaders => <String, String>{
+  'Accept': _githubJsonMimeType,
+  'X-GitHub-Api-Version': _githubApiVersion,
+};
 
 /// Converts a decoded GitHub JSON object to a string-keyed map.
 Map<String, Object?> _jsonMap(Object? json) =>
