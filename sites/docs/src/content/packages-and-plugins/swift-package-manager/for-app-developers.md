@@ -1,4 +1,3 @@
----
 title: Swift Package Manager for app developers
 description: How to use Swift Package Manager for native iOS or macOS dependencies
 ---
