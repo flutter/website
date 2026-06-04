@@ -255,11 +255,17 @@ String? _extractDeployedUrl(String firebaseJsonOutput) {
   return null;
 }
 
+/// The GitHub REST API version used for preview deployment calls.
 const String _githubApiVersion = '2026-03-10';
-const String _githubJsonMimeType = 'application/vnd.github+json';
+
+/// The deployment task used to distinguish site previews from other deploys.
 const String _previewDeploymentTask = 'deploy:preview';
 
-/// Publishes [stagingUrl] as a GitHub deployment status.
+/// Publishes [stagingUrl] as the latest PR/site preview deployment.
+///
+/// Each staging run creates a deployment for the staged commit. The success
+/// status is followed by inactive statuses on older successful deployments for
+/// the same environment.
 ///
 /// Returns `0` on success or `1` if the GitHub API call fails.
 Future<int> _publishStagingDeploymentOnGitHub({
@@ -282,6 +288,11 @@ Future<int> _publishStagingDeploymentOnGitHub({
   );
   try {
     final repository = github.RepositorySlug.full(context.repoFullName);
+    final previousDeploymentIds = await _findPreviewDeploymentIds(
+      gitHub: gitHub,
+      repository: repository,
+      environment: environment,
+    );
     final deploymentId = await _createPreviewDeployment(
       gitHub: gitHub,
       repository: repository,
@@ -290,12 +301,6 @@ Future<int> _publishStagingDeploymentOnGitHub({
       environment: environment,
       context: context,
     );
-    if (deploymentId == null) {
-      stderr.writeln(
-        'Error: Failed to find a deployment id in the GitHub response.',
-      );
-      return 1;
-    }
 
     await _createPreviewDeploymentStatus(
       gitHub: gitHub,
@@ -306,16 +311,10 @@ Future<int> _publishStagingDeploymentOnGitHub({
       environment: environment,
       commitSha: context.commitSha,
     );
-
-    final deploymentIds = await _findPreviewDeploymentIds(
+    await _markPreviewDeploymentsInactive(
       gitHub: gitHub,
       repository: repository,
-      environment: environment,
-    );
-    await _deletePreviewDeployments(
-      gitHub: gitHub,
-      repository: repository,
-      deploymentIds: deploymentIds.where((id) => id < deploymentId).toList(),
+      deploymentIds: previousDeploymentIds,
       environment: environment,
     );
   } on github.GitHubError catch (error) {
@@ -360,7 +359,7 @@ Future<List<int>> _findPreviewDeploymentIds({
 }
 
 /// Creates the GitHub deployment record for the staged preview.
-Future<int?> _createPreviewDeployment({
+Future<int> _createPreviewDeployment({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
   required Site site,
@@ -393,10 +392,13 @@ Future<int?> _createPreviewDeployment({
   if (response case <String, Object?>{'id': final num id}) {
     return id.toInt();
   }
-  return null;
+  throw github.GitHubError(
+    gitHub,
+    'Failed to find a deployment id in the GitHub response.',
+  );
 }
 
-/// Creates a successful deployment status with [stagingUrl] as the target.
+/// Creates a successful deployment status with [stagingUrl] as the preview URL.
 Future<void> _createPreviewDeploymentStatus({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
@@ -421,38 +423,49 @@ Future<void> _createPreviewDeploymentStatus({
   );
 }
 
-/// Marks and deletes deployments superseded by the newly published preview.
-Future<void> _deletePreviewDeployments({
+/// Marks older successful transient preview deployments inactive.
+Future<void> _markPreviewDeploymentsInactive({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
   required List<int> deploymentIds,
   required String environment,
 }) async {
-  if (deploymentIds.isEmpty) {
-    return;
-  }
-
-  print(
-    'Deleting ${deploymentIds.length} older GitHub deployment(s) '
-    'for $environment...',
-  );
   for (final deploymentId in deploymentIds) {
+    if (await _latestDeploymentStatusState(
+          gitHub: gitHub,
+          repository: repository,
+          deploymentId: deploymentId,
+        ) !=
+        'success') {
+      continue;
+    }
     await _createInactiveDeploymentStatus(
       gitHub: gitHub,
       repository: repository,
       deploymentId: deploymentId,
       environment: environment,
     );
-    await gitHub.request(
-      'DELETE',
-      '/repos/${repository.fullName}/deployments/$deploymentId',
-      statusCode: 204,
-      headers: _githubJsonHeaders,
-    );
   }
 }
 
-/// Marks [deploymentId] inactive so GitHub allows it to be deleted.
+/// Returns the latest known status state for [deploymentId].
+Future<String?> _latestDeploymentStatusState({
+  required github.GitHub gitHub,
+  required github.RepositorySlug repository,
+  required int deploymentId,
+}) async {
+  final statuses = await gitHub.getJSON<Object?, List<Object?>>(
+    '/repos/${repository.fullName}/deployments/$deploymentId/statuses',
+    params: <String, String>{'per_page': '1'},
+    convert: (json) => json as List<Object?>,
+  );
+  if (statuses case [<String, Object?>{'state': final String state}, ...]) {
+    return state;
+  }
+  return null;
+}
+
+/// Creates an inactive status for a superseded transient preview deployment.
 Future<void> _createInactiveDeploymentStatus({
   required github.GitHub gitHub,
   required github.RepositorySlug repository,
@@ -472,12 +485,9 @@ Future<void> _createInactiveDeploymentStatus({
   );
 }
 
-Map<String, String> get _githubJsonHeaders => <String, String>{
-  'Accept': _githubJsonMimeType,
-  'X-GitHub-Api-Version': _githubApiVersion,
-};
-
-Map<String, Object?> _jsonMap(Object? json) => json as Map<String, Object?>;
+/// Converts a decoded GitHub JSON object to a string-keyed map.
+Map<String, Object?> _jsonMap(Object? json) =>
+    Map<String, Object?>.from(json as Map<dynamic, dynamic>);
 
 /// Builds a Firebase Hosting channel name for [site] that
 /// incorporates [branchOrSha] and if specified, [prNumber],
@@ -502,16 +512,18 @@ String _firebaseChannelForSite(
   return channel.replaceAll(RegExp(r'-+$'), '');
 }
 
-/// Returns the stable GitHub environment name for a PR/site preview.
+/// Returns the GitHub environment name shown for a PR/site preview.
 ///
-/// GitHub assigns deployment ids, so the environment is the stable PR/site key.
+/// The PR number keeps the deployment unique while giving GitHub's UI a
+/// readable environment name.
 String _previewEnvironmentForSite(Site site, {required int prNumber}) =>
-    'preview-${site.name}-pr-$prNumber';
+    'Preview: ${site.host} (PR #$prNumber)';
 
-/// Returns an opaque stable payload id for a PR/site preview deployment.
+/// Returns the stable payload id for a PR/site preview deployment.
 String _previewDeploymentPayloadId(Site site, {required int prNumber}) =>
     '${site.name}-pr-$prNumber';
 
+/// Returns a shortened commit SHA for status descriptions.
 String _shortSha(String sha) {
   if (sha.length <= 7) {
     return sha;
