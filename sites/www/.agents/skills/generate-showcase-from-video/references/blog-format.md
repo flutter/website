@@ -47,7 +47,7 @@ All showcase files MUST include the following YAML frontmatter at the top of the
 >    - ❌ `headline`
 >    - ✅ `"headline"`
 > 2. **Success Metrics Formatting:**
->    - `value` contains `perc` and `desc`.
+>    - Each item contains `perc` and `desc`.
 >    - `perc` is the primary number or value.
 
 ```yaml

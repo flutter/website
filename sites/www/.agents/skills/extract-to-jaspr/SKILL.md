@@ -17,7 +17,7 @@ The migration process follows a strict "Structure Only" approach:
 
 1.  **Fetch & Extract**:
     - Use `curl` to fetch the raw HTML. This ensures you get the initial server-rendered markup without client-side modifications.
-    - If needed, use browser dev tools to identifying the correct DOM node, but rely on `curl` for the source extraction.
+    - If needed, use browser dev tools to identify the correct DOM node, but rely on `curl` for the source extraction.
     - Note any dynamic classes or attributes controlled by JavaScript.
 
 2.  **Markup Translation (Exact Match)**:

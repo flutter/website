@@ -48,9 +48,9 @@ This skill automates the creation of high-quality Flutter case studies from vide
 - **Strict frontmatter schema**: Ensure the output follows the professional, data-driven tone specified in the guidelines. **MANDATORY**: You MUST follow the exact YAML frontmatter schema defined in [references/blog-format.md](references/blog-format.md).  
   - **YAML safety**: Always quote values that contain colons.
   - **Headline**: The `headline` field MUST be exactly the `company_name` (e.g., `headline: "BMW"`). Do NOT add descriptions or slogans to the headline.
-  - Specifically, `success_metrics` must include `type`, `value` (with `perc`, `unit`, and `desc`), and `id`.
+  - Specifically, `successMetrics` must include `perc` and `desc`.
   - Include the date field: `publishDate`.
-- Include the `video_embed_url` in the frontmatter if provided, formatting standard YouTube links as `/embed/` links (e.g., `https://www.youtube.com/embed/A3ApoV_QRio`).
+- Include the `videoEmbedUrl` in the frontmatter if provided, formatting standard YouTube links as `/embed/` links (e.g., `https://www.youtube.com/embed/A3ApoV_QRio`).
 - Make sure to map `logo:` and `card:` in the frontmatter to the newly generated `content/showcase/images/third_party/case_studies/<customer_name>/` images.
 - Ensure the company is added to `content/showcase/data/companies.yaml` if it doesn't already exist.
 
