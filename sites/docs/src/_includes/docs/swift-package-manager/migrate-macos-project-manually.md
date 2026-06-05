@@ -27,7 +27,7 @@ Migrating to SwiftPM requires updating the
 **The following steps must be completed for each flavor.**
 
 1. Go to **Product > Scheme > Edit Scheme**.
-1. Expand the **Build** section in the left side bar.
+1. Expand the **Build** section in the left sidebar.
 1. Click **Pre-actions**.
 1. Click the <Icon id="add" label="add/plus"></Icon> button
    and select **New Run Script Action** from the menu.

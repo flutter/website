@@ -51,7 +51,7 @@ add SwiftPM integration to your project.
 
 Most developers do not need to do this.
 
-If you experienced a problem automatically migrating your
+If you experience a problem automatically migrating your
 project to SwiftPM, please [file an issue][].
 Include the error message and, if possible,
 include a copy of the following files in your issue:
@@ -72,6 +72,8 @@ include a copy of the following files in your issue:
 
 </Tab>
 </Tabs>
+
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?template=02_bug.yml
 
 ### Add to an existing app (add-to-app)
 
@@ -138,7 +140,7 @@ To undo this migration:
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
-1. Expand the **Build** section in the left side bar.
+1. Expand the **Build** section in the left sidebar.
 
 1. Click **Pre-actions**.
 
@@ -181,11 +183,12 @@ To use the plugin:
    ```sh
    flutter build macos --config-only
    ```
+
 ## How to turn off Swift Package Manager
 
 In general, don't do this. Remember that
 the CocoaPods registry becomes read-only on December 2, 2026
-and disabling SwiftPM won't be allowed in future.
+and disabling SwiftPM won't be allowed in the future.
 
 Disabling Swift Package Manager causes Flutter to use CocoaPods for all
 dependencies. However, SwiftPM remains integrated with your project.

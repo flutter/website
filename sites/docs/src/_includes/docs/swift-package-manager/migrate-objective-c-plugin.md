@@ -363,8 +363,8 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
    :::
 
 1. If your `ios/plugin_name/Sources/plugin_name/include` directory only
-   contains a `.gitkeep`, you'll want update your `.gitignore` to include the
-   following:
+   contains a `.gitkeep`, you'll want to update your `.gitignore` to
+   include the following:
 
     ```text title=".gitignore"
     !.gitkeep
@@ -456,7 +456,6 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 
    * Follow instructions for [testing plugins][].
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets
