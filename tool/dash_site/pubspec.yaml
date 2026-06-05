@@ -1,5 +1,5 @@
 name: dash_site
-description: Dart-based tools for building docs.flutter.dev.
+description: Dart-based tools for building Flutter websites.
 publish_to: none
 
 resolution: workspace

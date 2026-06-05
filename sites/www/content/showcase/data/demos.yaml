@@ -1,0 +1,48 @@
+# This file contains the source data used to populate the
+# carousel of Flutter demos on the https://flutter.dev/showcase page.
+#
+# Don't directly open PRs with additions to this list.
+# Generally it is reserved for official Dart and Flutter demos.
+#
+# If you have a full demo you think should be included,
+# please open an issue with more information.
+
+- title: I/O Flip
+  description: An AI designed card game showcasing PaLM, MakerSuite, Dreambooth, Flutter, Firebase, and Cloud.
+  image: images/demos/Flip_Hero_Graphic.png
+  url: https://flip.withgoogle.com/
+
+- title: Holobooth
+  description: Flutter + MediaPipe and Tensorflow in an AI game experience on the web
+  image: images/demos/holobooth.png
+  url: https://holobooth.flutter.dev/
+
+- title: I/O Pinball
+  description: A Flutter Web game showcasing the capabilities of Flame, the Flutter 2D Game Engine
+  image: images/demos/io_pinball.png
+  url: https://pinball.flutter.dev/
+
+- title: I/O Photo Booth
+  description: Take a photo with this web app that showcased Flutter and Firebase for Google I/O 2021.
+  image: images/demos/io_photo_booth.jpg
+  url: https://photobooth.flutter.dev/
+
+- title: Dashatar
+  description: A Flutter web app demo to create a Dashatar for Flutter Engage.
+  image: images/demos/dashatar.jpg
+  url: https://dashatar-dev.web.app/
+
+- title: Flutter Flokk
+  description: A fresh and modern Google Contacts manager that integrates with GitHub and Twitter.
+  image: images/demos/flutter_flokk.jpg
+  url: https://flutter.gskinner.com/flokk
+
+- title: Flutter Folio
+  description: Try the scrapbooking app that runs on iOS, Android, Mac, Linux, Windows, and the web.
+  image: images/demos/flutter_folio.jpg
+  url: https://flutter.gskinner.com/folio
+
+- title: Flutter Vignette
+  description: Get inspiration with these innovative app designs made with Flutter.
+  image: images/demos/flutter_vignette.jpg
+  url: https://flutter.gskinner.com/vignettes

@@ -1,0 +1,47 @@
+# This file contains the source data used to populate the
+# "Flutter at Google" carousel on the https://flutter.dev/showcase page.
+#
+# Only apps built with Flutter by teams at Google should be added to this list.
+
+- title: NotebookLM
+  image: images/google_apps/image_1.png
+  url: /showcase/notebooklm
+
+- title: Google Pay
+  image: images/google_apps/google_pay_logo.webp
+  url: /showcase/google-pay
+
+- title: Google Earth
+  image: images/google_apps/google_earth_logo.webp
+
+- title: Google Ads
+  image: images/google_apps/google_ads_logo.webp
+
+- title: Google Classroom
+  image: images/google_apps/google_classroom_logo.webp
+  url: /showcase/google-classroom
+
+- title: YouTube Create
+  image: images/google_apps/youtube_create_logo.webp
+
+- title: Google Cloud
+  image: images/google_apps/google_cloud_logo.webp
+
+- title: Google One
+  image: images/google_apps/google_one_logo.webp
+
+- title: FamilyLink
+  image: images/google_apps/familylink_logo.webp
+
+- title: Crowdsource
+  image: images/google_apps/crowdsource_logo.webp
+  url: /showcase/crowdsource
+
+- title: Google Analytics
+  image: images/google_apps/google_analytics_logo.webp
+
+- title: Readalong
+  image: images/google_apps/readalong_logo.webp
+
+- title: Fitbit Ace
+  image: images/google_apps/fitbit_ace_logo.png

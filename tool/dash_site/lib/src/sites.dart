@@ -16,6 +16,16 @@ enum Site {
     firebaseEmulatorPort: 5502,
     defaultFirebaseProjectId: 'flutter-docs-prod',
     supportsCodeExcerpts: true,
+  ),
+
+  /// The Flutter marketing site.
+  www(
+    host: 'flutter.dev',
+    buildOutputPathSegments: ['sites', 'www', 'build', 'jaspr'],
+    contentPathSegments: ['content'],
+    firebaseConfigPathSegments: ['sites', 'www', 'firebase.json'],
+    firebaseEmulatorPort: 5503,
+    defaultFirebaseProjectId: 'flutter-dev-230821',
   );
 
   const Site({

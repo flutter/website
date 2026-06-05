@@ -1,0 +1,37 @@
+# This file contains the source data used to populate the
+# "Flutter games" carousel on the https://flutter.dev/games page.
+#
+# Don't directly open PRs with additions to this list.
+#
+# If you have a game you'd like to be listed,
+# please open an issue with more information.
+# Generally, it is preferred for entries to have a
+# case study or video of their Flutter usage published.
+
+- title: Google I/O Flip
+  url: /flip
+  image: images/featured/flip.png
+
+- title: PUBG Mobile
+  url: /showcase/pubg-mobile
+  image: images/featured/pubg.jpg
+
+- title: Google I/O Pinball
+  url: https://blog.flutter.dev/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d
+  image: images/featured/pinball.png
+
+- title: Super TicTacToe
+  url: https://www.youtube.com/watch?v=zGgeBNiRy-8
+  image: images/featured/tictactoe.png
+
+- title: Wallace & Gromit AR
+  url: /showcase/wallace-gromit-ar
+  image: images/featured/wallace-gromit.jpg
+
+- title: 4 Pics 1 Word
+  url: /showcase/lotum
+  image: images/featured/4pics1word.png
+
+- title: Doodle Dash
+  url: https://codelabs.developers.google.com/codelabs/flutter-flame-game#0
+  image: images/featured/doodle-dash.gif
