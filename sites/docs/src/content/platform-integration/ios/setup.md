@@ -252,6 +252,9 @@ or begin improving integration with iOS.
           <a class="text-button" href="/deployment/ios">Build and deploy to iOS</a>
         </li>
         <li>
+          <a class="text-button" href="/platform-integration/bind-native-code">Bind to native iOS code</a>
+        </li>
+        <li>
           <a class="text-button" href="/platform-integration/ios/apple-frameworks">Leverage system frameworks</a>
         </li>
         <li>

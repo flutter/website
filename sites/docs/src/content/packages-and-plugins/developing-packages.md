@@ -1026,8 +1026,6 @@ file, like any other Dart package.
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install
-[Android]: /platform-integration/android/c-interop
-[macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: /tools/editors
 [Flutter Favorites]: {{site.pub}}/flutter/favorites
