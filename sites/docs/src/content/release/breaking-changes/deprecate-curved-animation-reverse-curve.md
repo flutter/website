@@ -21,26 +21,22 @@ To support its [`reverseCurve`][] functionality,
 `CurvedAnimation` had to add listeners to its [`parent`][]
 to keep track of its direction.
 If you forget to call the [`dispose`][] method when you're done,
-those listeners would stick around in memory and prevent Dart from
-freeing up unneeded resources.
+those listeners would leak.
 
-But the most common use case of `CurvedAnimation` is with a single curve,
-meaning these listeners aren't even needed most of the time.
+However, most animations use the same curve for the forward
+and reverse directions.
 
-For this reason, [`reverseCurve`][] is being removed from [`CurvedAnimation`][]
-and moved to [`AsymmetricCurvedAnimation`][].
+To make the common case leak-proof, `CurvedAnimation`'s
+`reverseCurve` functionality is moving to a separate class:
+[`AsymmetricCurvedAnimation`][].
 
-After a migration period,
-it will be removed from `CurvedAnimation` alongside its listeners.
-This means more memory safety with [`CurvedAnimation`][] and
-less code to write, since you won't need to dispose it.
+In the future, the `reverseCurve` field will be removed from
+`CurvedAnimation`.
 
 :::note
-Until the migration period is over,
-remember to still call [`dispose`] when you're done.
-
-If you use [`AsymmetricCurvedAnimation`][],
-you still need to call its [`dispose`][] method regardless.
+Until the deprecation period is over, you must continue to
+call [`dispose`][] on [`CurvedAnimation`]. If you switch to [`AsymmetricCurvedAnimation`][], you must always call its
+[`dispose`][] method to clean up its active direction listeners.
 :::
 
 ## Migration guide
