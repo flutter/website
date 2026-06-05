@@ -176,9 +176,10 @@ use the following instructions:
 
 1.  If a properly signed `Framework` file is present,
     open `Runner.xcworkspace`.
-1.  Add the framework file to the **Embedded Binaries** section.
-1.  Additionally, add the framework file to
-    the **Linked Frameworks & Libraries** section of the target in Xcode.
+1.  Add the framework file to the
+    **Frameworks, Libraries, and Embedded Content** section of
+    the target in Xcode.
+1.  Under the **Embed** column, select **Embed & Sign**.
 
 #### Open-source third-party library {:#ios-open-source-third-party-library}
 
@@ -216,7 +217,8 @@ as shown in the CocoaPods example.
 
 When creating a release build, Xcode strips the symbols.
 
-1.  In Xcode, go to **Target Runner > Build Settings > Strip Style**.
+1.  In Xcode, select the **Runner** target,
+    then go to **Build Settings > Strip Style**.
 1.  Change from **All Symbols** to **Non-Global Symbols**.
 
 ### macOS
@@ -278,9 +280,10 @@ use the following instructions:
 
 1.  If a properly signed `Framework` file is present,
     open `Runner.xcworkspace`.
-1.  Add the framework file to the **Embedded Binaries** section.
-1.  Additionally, add the framework file to
-    the **Linked Frameworks & Libraries** section of the target in Xcode.
+1.  Add the framework file to the
+    **Frameworks, Libraries, and Embedded Content** section of
+    the target in Xcode.
+1.  Under the **Embed** column, select **Embed & Sign**.
 
 #### Compiled (dynamic) library, closed source {:#macos-compiled-dynamic-library-closed-source}
 
@@ -301,7 +304,7 @@ use the following instructions:
             no need to statically link.)
     1.  Click `Runner` and go to the `General` tab.
         1.  Drag `libyourlibrary.dylib` into the
-            **Frameworks, Libraries and Embedded Content** list.
+            **Frameworks, Libraries, and Embedded Content** list.
         1.  Select **Embed & Sign**.
     1.  Click **Runner** and go to the **Build Settings** tab.
         1.  In the **Search Paths** section configure the
@@ -321,7 +324,8 @@ use the following instructions:
 
 When creating a release build, Xcode strips the symbols.
 
-1.  In Xcode, go to **Target Runner > Build Settings > Strip Style**.
+1.  In Xcode, select the **Runner** target,
+    then go to **Build Settings > Strip Style**.
 1.  Change from **All Symbols** to **Non-Global Symbols**.
 
 ### Android
