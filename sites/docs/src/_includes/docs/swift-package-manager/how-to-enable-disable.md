@@ -1,10 +1,10 @@
 ## How to turn on Swift Package Manager
 
-As of Flutter 3.44, Flutter's Swift Package Manager support is turned on by
-default. You don't need to do anything to enable it.
+As of Flutter 3.44, Flutter's Swift Package Manager support is enabled by
+default. No additional steps are required to use it.
 
-If you're using an older Flutter version, or you previously turned Swift Package
-Manager support off, turn it on:
+If you're using an older Flutter version, or you previously disabled Swift Package
+Manager support, you can enable it:
 
 1. Upgrade to the latest Flutter SDK:
 

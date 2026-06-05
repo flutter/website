@@ -6,7 +6,7 @@ description: How to use Swift Package Manager for native iOS or macOS dependenci
 :::warning
 Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
 dependencies.
-As of Flutter 3.44, Swift Package Manager support is [on by default][].
+As of Flutter 3.44, Swift Package Manager support is [enabled by default][].
 If you find a bug in Flutter's Swift Package Manager support,
 [open an issue][].
 Flutter continues to support CocoaPods as a fallback.
@@ -22,7 +22,7 @@ Flutter's Swift Package Manager integration has several benefits:
    Swift Package Manager.
 
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[on by default]: #how-to-turn-on-swift-package-manager
+[enabled by default]: #how-to-turn-on-swift-package-manager
 [Swift packages]: https://swiftpackageindex.com/
 [open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
