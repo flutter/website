@@ -22,6 +22,22 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
+## 18 May 2026: Google I/O Release 3.44
+
+Flutter 3.44 is live! This release is jam packed.
+For details, check out the [Flutter 3.44 blog post][3.44-blog-post]
+and [watch the video][3.44-whats-new]:
+
+<div class="video-wrapper">
+<span class="video-intro">Check out the latest in Dart and Flutter</span>
+<YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
+</div>
+
+[3.44-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-44-b0cc1ad3c527
+[3.44-whats-new]: https://www.youtube.com/watch?v=I1uIbGh1dGE&t=451s
+
+More on the site updates to come.
+
 ## 11 February 2026: "Year of the Fire Horse" Release 3.41
 
 Flutter 3.41 is live! For details,
