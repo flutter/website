@@ -188,14 +188,6 @@ Learn how to add custom integrations with iOS to your Flutter app.
       <p>Learn about plugins that support functionality from native iOS frameworks.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/ios/c-interop">
-    <div class="card-header">
-      <span class="card-title">Bind to native code</span>
-    </div>
-    <div class="card-content">
-      <p>Learn how to bind to native C, Objective-C, and Swift code from your app.</p>
-    </div>
-  </a>
   <a class="card outlined-card" href="/platform-integration/ios/platform-views">
     <div class="card-header">
       <span class="card-title">Embed an iOS view</span>
