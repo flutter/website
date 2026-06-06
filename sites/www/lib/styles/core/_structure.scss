@@ -1,0 +1,57 @@
+@use 'breakpoints';
+
+main {
+  background-color: white;
+  flex: 1 0 auto;
+  overflow: hidden;
+}
+
+.module {
+  padding: var(--gutter-md) 0;
+}
+
+.container {
+  width: calc(100% - (var(--gutter-sm) * 2));
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+.grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2.19%;
+  margin: 0 auto;
+  max-width: var(--screen-xl-min);  
+}
+
+.centered {
+  text-align: center;
+}
+
+.push-left {
+  margin-left: 0;
+}
+
+@include breakpoints.screen(md) {
+  .container {
+    width: calc(100% - (var(--gutter) * 2));
+  }
+}
+
+@include breakpoints.screen(lg) {
+  .push-left {
+    margin-left: var(--gutter-lg);
+  }
+}
+
+.stacked-centered {
+  display: flex;
+  min-width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-content: space-between;
+  align-items: center;
+
+  > * {
+    margin-bottom: 1rem;
+  }
+}
