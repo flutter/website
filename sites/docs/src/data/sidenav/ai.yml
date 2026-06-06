@@ -15,8 +15,10 @@
       children:
         - title: Overview
           permalink: /ai/coding-assistants
-        - title: Flutter extension for Gemini CLI
-          permalink: /ai/gemini-cli-extension
+        - title: Antigravity IDE
+          permalink: /ai/antigravity
+        - title: Antigravity CLI
+          permalink: /ai/antigravity-cli
     - title: Developer experience
       permalink: /ai/best-practices/developer-experience
 
