@@ -19,6 +19,8 @@
           permalink: /ai/gemini-cli-extension
     - title: Developer experience
       permalink: /ai/best-practices/developer-experience
+    - title: "AI Evaluations (experimental)"
+      permalink: /ai/evals
 
 - title: Build AI-powered apps
   expanded: true
