@@ -59,5 +59,5 @@ This command parses your local Gemini configuration and copies its configuration
 
 Like the legacy Gemini CLI tool, Antigravity CLI respects custom development guidelines and configurations stored in your workspace directory:
 
-- **Local rules**: You can place rules files in your project directory (such as `.agents/skills/` or `AGENTS.md`) to instruct the agent on specific coding style guidelines or architectural patterns. Note that Antigravity CLI also supports backward compatibility with legacy `GEMINI.md` files; however, we recommend renaming it to `AGENTS.md`.
-- **Global configuration file**: Antigravity CLI stores global settings and configured MCP servers in `~/.antigravity/` (e.g., `~/.antigravity/mcp_config.json`).
+- **Local rules**: You can place rules files in your project directory (such as `.agents/skills/` or `AGENTS.md`) to instruct the agent on specific coding style guidelines or architectural patterns. Note that Antigravity CLI also supports backward compatibility with legacy `GEMINI.md` file; however, we recommend renaming it to `AGENTS.md`.
+- **Global configuration directory**: Antigravity CLI stores global settings and configured MCP servers in `~/.antigravity/` (e.g., `~/.antigravity/mcp_config.json`).
