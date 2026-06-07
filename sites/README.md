@@ -7,3 +7,8 @@ Flutter websites maintained in this repository.
 
   The documentation site for Flutter,
   hosted at [docs.flutter.dev](https://docs.flutter.dev).
+
+- [`/www`](www)
+
+  The marketing website for Flutter,
+  hosted at [flutter.dev](https://flutter.dev).
