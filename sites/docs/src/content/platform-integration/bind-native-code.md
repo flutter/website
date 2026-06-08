@@ -17,6 +17,12 @@ If you need to use the Flutter Plugin API, or if you need to configure a Google
 Play services runtime on Android, use the standard plugin template (`flutter create
 --template=plugin`).
 
+:::note
+Looking for the previous FFI plugin workflow? See
+[Bind to native code using the legacy FFI plugin template](/platform-integration/legacy-ffi-plugin),
+which documents the `plugin_ffi` template and OS-specific build files.
+:::
+
 [build hooks]: https://dart.dev/tools/hooks
 [dart:ffi]: {{site.dart.api}}/dart-ffi/dart-ffi-library.html
 [FFI]: https://en.wikipedia.org/wiki/Foreign_function_interface
@@ -106,6 +112,14 @@ For many system libraries on Android, iOS, Linux, and macOS, you can use
 
 For Windows, you often use `DynamicLoadingSystem()` and provide the name of the
 DLL.
+
+:::note
+For desktop-specific guidance on calling system APIs&mdash;including wrapper
+packages like [`package:win32`]({{site.pub-pkg}}/win32) and
+[Canonical's Linux packages]({{site.pub}}/publishers/canonical.com/packages)&mdash;see
+[Integrating with Windows](/platform-integration/windows/building#integrating-with-windows)
+and [Integrate with Linux](/platform-integration/linux/building#integrate-with-linux).
+:::
 
 Here is an example `build.dart` that links against system libraries to get the
 host name:

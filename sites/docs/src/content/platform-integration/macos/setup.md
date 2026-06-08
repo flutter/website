@@ -169,7 +169,7 @@ or begin expanding integration with macOS.
           <a class="text-button" href="/deployment/macos">Build and deploy to macOS</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/macos/c-interop">Bind to native macOS code</a>
+          <a class="text-button" href="/platform-integration/bind-native-code">Bind to native macOS code</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/macos/platform-views">Embed native macOS views</a>

@@ -141,12 +141,12 @@ Learn how to add custom integrations with Android to your Flutter app.
       <p>Learn how the latest Android APIs in your app from Dart.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/android/c-interop">
+  <a class="card outlined-card" href="/platform-integration/bind-native-code">
     <div class="card-header">
       <span class="card-title">Bind to native code</span>
     </div>
     <div class="card-content">
-      <p>Learn how to bind to native C code from your app on Android.</p>
+      <p>Learn how to bind to native code from your app on Android.</p>
     </div>
   </a>
   <a class="card outlined-card" href="/platform-integration/android/platform-views">
@@ -188,6 +188,14 @@ Learn how to add custom integrations with iOS to your Flutter app.
       <p>Learn about plugins that support functionality from native iOS frameworks.</p>
     </div>
   </a>
+  <a class="card outlined-card" href="/platform-integration/bind-native-code">
+    <div class="card-header">
+      <span class="card-title">Bind to native code</span>
+    </div>
+    <div class="card-content">
+      <p>Learn how to bind to native code from your app on iOS.</p>
+    </div>
+  </a>
   <a class="card outlined-card" href="/platform-integration/ios/platform-views">
     <div class="card-header">
       <span class="card-title">Embed an iOS view</span>
@@ -226,14 +234,6 @@ web platform to your Flutter app.
     </div>
     <div class="card-content">
       <p>Customize how your Flutter app is initialized on the web.</p>
-    </div>
-  </a>
-  <a class="card outlined-card" href="/platform-integration/android/c-interop">
-    <div class="card-header">
-      <span class="card-title">Bind to native code</span>
-    </div>
-    <div class="card-content">
-      <p>Learn how to bind to native C code from your app on Android.</p>
     </div>
   </a>
   <a class="card outlined-card" href="/platform-integration/web/web-content-in-flutter">
@@ -309,12 +309,12 @@ Learn how to add custom integrations with Windows to your Flutter app.
 Learn how to add custom integrations with macOS to your Flutter app.
 
 <div class="card-grid">
-  <a class="card outlined-card" href="/platform-integration/macos/c-interop">
+  <a class="card outlined-card" href="/platform-integration/bind-native-code">
     <div class="card-header">
       <span class="card-title">Bind to native code</span>
     </div>
     <div class="card-content">
-      <p>Learn how to bind to native C, Objective-C, and Swift code from your app.</p>
+      <p>Learn how to bind to native code from your app on macOS.</p>
     </div>
   </a>
   <a class="card outlined-card" href="/platform-integration/macos/platform-views">
