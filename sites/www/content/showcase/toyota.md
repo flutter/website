@@ -74,7 +74,7 @@ and achieved significant improvements:
   are all building on the same codebase.
 * **Cross-hardware agility:** Flutter enabled them
   to efficiently develop for a variety of hardware.
-* **Expansion Readiness:** Following its debut on the
+* **Expansion readiness:** Following its debut on the
   2026 Toyota RAV4 and 2026 Lexus ES,
   the system is fully prepared for a broader rollout
   to upcoming models like the 2027 Highlander
