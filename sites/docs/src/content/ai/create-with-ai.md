@@ -18,13 +18,13 @@ You can integrate AI-powered features like natural language understanding
 and content generation directly into your Flutter app
 using powerful SDKs, like the Firebase SDK for Generative AI.
 
-You can also use AI tools, such as Gemini Code Assist and Gemini CLI,
+You can also use AI tools, such as Gemini Code Assist and Antigravity CLI,
 to help with code generation and scaffolding.
 
 These tools are powered by the Dart and Flutter MCP server,
 which provides AI with a rich context about your codebase.
 
-The Flutter Extension for Gemini CLI makes it easy to leverage official rules,
+The Antigravity CLI makes it easy to leverage official rules,
 the MCP server, and custom commands for building your app.
 
 Additionally, rules files help fine-tune the AI's behavior
@@ -61,14 +61,14 @@ resources:
 ## AI development tools
 
 AI isn't only a feature in your app, but can also be a powerful assistant in
-your development workflow.  Tools like [Antigravity][],
-[Gemini Code Assist][], [Gemini CLI][], [Claude Code][],
+your development workflow. Tools like [Antigravity][],
+[Gemini Code Assist][], [Antigravity CLI][], [Claude Code][],
 [Cursor][], and [Windsurf][] can help you write code faster, understand complex
 concepts, and reduce boilerplate.
 
-[Antigravity]: /ai/coding-assistants
+[Antigravity]: /ai/antigravity
 [Gemini Code Assist]: /ai/coding-assistants
-[Gemini CLI]: /ai/coding-assistants
+[Antigravity CLI]: /ai/antigravity-cli
 [Claude Code]: https://www.claude.com/product/claude-code
 [Cursor]: https://cursor.com/
 [Windsurf]: https://windsurf.com/
@@ -121,9 +121,12 @@ To get started, check out the
 
 ### Antigravity
 
-[Antigravity](https://antigravity.google/) is an in-IDE AI agent that can read and write code, run
-terminal commands, and help you build complex features. Some of its capabilities
-include:
+[Antigravity](https://antigravity.google/) is a suite of agentic development tools that includes:
+
+*   **Antigravity 2.0**: The core agentic assistant experience (TUI/CLI-driven).
+*   **Antigravity IDE**: The focused editor experience featuring an integrated agent panel.
+
+Capabilities include:
 
 *   **Agentic capabilities**: Unlike chat-based assistants, Antigravity can
     proactively edit files and run terminal commands to complete tasks.
@@ -137,7 +140,7 @@ include:
   title="Flutter + Antigravity in 10 minutes">
 </YouTubeEmbed>
 
-To learn more, check out the [AI Coding Assistants](/ai/coding-assistants) guide.
+To learn more, check out the [Antigravity IDE](/ai/antigravity) guide.
 
 ### Gemini Code Assist
 
@@ -154,40 +157,17 @@ understanding of your project's codebase and can help you with:
 
 To learn more, check out the [AI Coding Assistants](/ai/coding-assistants) guide.
 
-### Gemini CLI
+### Antigravity CLI
 
-The [Gemini CLI](https://geminicli.com/) is a command-line AI workflow tool. It allows you to interact
-with Gemini models for a variety of tasks without leaving your development
-environment. You can use it to:
+The [Antigravity CLI](/ai/antigravity-cli) is a terminal-based interface (TUI) for the
+Antigravity 2.0 agentic coding assistant (`agy`). It allows you to:
 
 * Quickly scaffold a new Flutter widget, Dart function, or a complete app.
-* Use MCP server tools, such as the Dart and Flutter MCP server
-* Automate tasks like committing and pushing changes to a Git repository
+* Use MCP server tools, such as the Dart and Flutter MCP server.
+* Automate tasks like committing and pushing changes to a Git repository.
 
-To get started, visit the [Gemini CLI](https://geminicli.com/) website, or try this
-[Gemini CLI codelab][].
+To learn more, check out the [Antigravity CLI](/ai/antigravity-cli) guide.
 
-[Gemini CLI codelab]: https://codelabs.developers.google.com/gemini-cli-hands-on
-
-#### Flutter extension for Gemini CLI
-
-The [Flutter extension for Gemini CLI][flutter-extension] combines the
-[Dart and Flutter MCP server][dart-mcp-dart-docs] with rules and commands.
-It uses the default set of [AI rules for Flutter and Dart][],
-adds commands like `/create-app` and `/modify` to make
-structured changes to your app, and automatically configures the
-[Dart and Flutter MCP server][dart-mcp-dart-docs].
-
-You can install it by running the following command:
-
-```bash
-gemini extensions install https://github.com/gemini-cli-extensions/flutter
-```
-
-To learn more, check out
-[Flutter extension for Gemini CLI](/ai/gemini-cli-extension).
-
-[flutter-extension]: {{site.github}}/gemini-cli-extensions/flutter
 [dart-mcp-dart-docs]: /ai/mcp-server
 [AI rules for Flutter and Dart]: /ai/ai-rules
 
