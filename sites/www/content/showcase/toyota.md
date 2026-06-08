@@ -55,7 +55,7 @@ together as feedback comes in.
 Toyota built a custom embedder as one of their very first pieces of technology.
 They easily created plugins to support automotive functions
 that need to be accessed directly by the Flutter layers.
-They leveraged Flutter devtools, which are designed
+They leveraged Flutter DevTools, which are designed
 with a great development workflow in mind,
 even when targeting a vehicle instead of a phone.
 The `pub.dev` ecosystem, particularly the `provider` package,
