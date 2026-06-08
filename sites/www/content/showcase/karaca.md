@@ -29,7 +29,7 @@ successMetrics:
     desc: countries served
 ---
 
-<Image src="images/third_party/case_studies/karaca/case_study_body_2.png" format="fullwidth" alt="Karaca campaign screen" />
+<Image src="/images/third_party/case_studies/karaca/case_study_body_2.png" format="fullwidth" alt="Karaca campaign screen" />
 
 Karaca is a 50-year-old heritage brand.
 It evolved from a small glass workshop into a global omnichannel brand.
