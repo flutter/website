@@ -87,7 +87,7 @@ an iOS physical device or on the iOS Simulator.
 
 {: .steps}
 
-[xcode]: https://developer.apple.com/xcode/
+[xcode]: {{site.apple-dev}}/xcode/
 [cocoapods]: https://guides.cocoapods.org/using/getting-started.html#installation
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation

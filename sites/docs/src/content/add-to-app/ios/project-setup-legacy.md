@@ -9,7 +9,7 @@ description: Learn how to integrate a Flutter module into your existing iOS proj
 As of Flutter 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods
 as the default dependency manager for iOS and macOS Flutter apps.
 CocoaPods is officially in maintenance mode,
-and its registry will permanently [become read-only on December 2, 2026][].
+and its registry will permanently [become read-only on December 2, 2026][read-only].
 
 This guide is preserved for reference only, and will not receive ongoing maintenance.
 Please migrate to using Swift Package Manager using the [updated integration guide][].
@@ -204,8 +204,8 @@ You can now [add a Flutter screen][] to your existing iOS app.
 [CocoaPods]: https://cocoapods.org/
 [app-size]: /resources/faq#how-big-is-the-flutter-engine
 [VS Code]: /tools/vs-code
-[News Feed app]: https://github.com/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
+[News Feed app]: {{site.github}}/flutter/put-flutter-to-work/tree/022208184ec2623af2d113d13d90e8e1ce722365
 [Debugging your add-to-app module]: /add-to-app/debugging/
 [apple-silicon]: https://support.apple.com/en-us/116943
-[become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[read-only]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [updated integration guide]: /add-to-app/ios/project-setup

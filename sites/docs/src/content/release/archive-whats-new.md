@@ -170,7 +170,7 @@ This website release includes several important updates!
   [Intro to Dart][] page.
 
 * Further support and updated docs for the Swift Package Manager.
-  Specifically, you can now build on the stable channel for SPM,
+  Specifically, you can now build on the stable channel for SwiftPM,
   however, plugins will continue to be installed using
   CocoaPods as the SwiftPM feature remains
   unavailable on the stable channel:

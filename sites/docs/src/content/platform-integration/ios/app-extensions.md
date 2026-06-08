@@ -113,7 +113,7 @@ information about the generated code and WidgetKit, see
 
 [Apple's app extension documentation]: {{site.apple-dev}}/app-extensions/
 [Test your app with the simulator]: #test-extensions
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 
 ## Test an iOS app extension {: #test-extensions }
 
@@ -271,7 +271,7 @@ By default, flutter view does not handle scroll gestures
 in a [Share][] extension. To support a scrollable list in
 the Share extension, follow [the instructions on GitHub][issue-164670].
 
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [issue-164670]: {{site.repo.flutter}}/issues/164670#issuecomment-2762124121
 
 ### Open a Flutter app in an iOS app extension {: #creating-app-extension-uis-with-flutter }
@@ -480,7 +480,7 @@ class ShareViewController: UIViewController {
 8.  [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
 
 ### Register plugins
@@ -573,7 +573,7 @@ GeneratedPluginRegistrant.register(with: flutterEngine)
 5.  (Xcode) [Test your app with the simulator][].
 
 [Add an extension to your Flutter app]: #add-extension
-[Share]: https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
+[Share]: {{site.apple-dev}}/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html
 [Test your app with the simulator]: #test-extensions
 
 ## Constraints {: #constraints }

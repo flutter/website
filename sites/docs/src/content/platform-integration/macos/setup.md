@@ -80,7 +80,7 @@ compile and debug native Swift and Objective-C code.
 
 {: .steps}
 
-[xcode]: https://developer.apple.com/xcode/
+[xcode]: {{site.apple-dev}}/xcode/
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
