@@ -46,6 +46,9 @@
 - name: Kotak
   logo: /images/third_party/logos/kotak.svg
 
+- name: Karaca
+  logo: /images/third_party/logos/karaca.png
+
 - name: Lotum
   logo: /images/third_party/logos/lotum.svg
 
