@@ -4,9 +4,10 @@ description: Toyota is using Flutter to redesign their vehicle infotainment syst
 headline: Toyota
 summary: Improving infotainment systems at Toyota with Flutter
 companyName: Toyota
-logo: images/third_party/case_studies/toyota/logo.jpeg
+logo: images/third_party/case_studies/toyota/logo.png
 card: images/third_party/case_studies/toyota/case_study_card.png
-poster: images/third_party/case_studies/toyota/case_study_poster.png
+poster: images/third_party/case_studies/toyota/case_study_card.png
+videoEmbedUrl: "https://www.youtube.com/embed/X4376aLFHFA"
 locations:
   - North America
 platforms:
@@ -15,33 +16,70 @@ industries:
   - Travel & Lifestyle
 tags:
   - embedded
-publishDate: 2021-11-05
+publishDate: 2026-08-06
 ---
 
-**Goal**
+Toyota, one of the world's leading automotive manufacturers,
+faced a significant challenge with designing its infotainment systems.
+The role of the infotainment system is huge.
+It's what the customer sees when they first get in their vehicle,
+where the displays all light up and welcome all passengers.
+However, Toyota ran into challenges with bespoke platforms
+and suppliers that had their own way of building user experiences.
+They might spec something and then not see it for a year or two.
+When it came back, there was often not enough time to make changes,
+leading to compromises.
+Toyota wanted to have their hands on the steering wheel
+(no pun intended!) and control the customer user experience directly.
 
-At Toyota, every part of the driving experience is considered and perfected, right down to the on-screen infotainment systems on the dash. While Toyota had always developed their in-vehicle technology themselves, they were intrigued by Flutter and wondered how it could help them improve the user experience for their drivers.
+<Image src="images/third_party/case_studies/toyota/rav4.jpg" format="fullwidth" alt="Toyota RAV4 infotainment system" />
 
 **Why Flutter?**
 
-When Toyota discovered that Flutter was beginning to [support embedded devices](https://medium.com/googleplaydev/seamless-multi-platform-app-development-with-flutter-ea0e8003b0f9), they reached out about a partnership.​
+Toyota evaluated various platforms to find the best solution
+for the next generation of infotainment.
+Flutter stood out because of its qualitative experience;
+it felt more like a modern device than a kiosk when touching it.
+Additionally, cost was a significant factor.
+Many platforms are not open source and charge per seat,
+whereas Flutter offered an open-source solution.
+The team found Dart easy to learn, enabling them to jump in quickly.
+Flutter also enabled them to put designers and developers together,
+empowering them to sit down and solve problems
+together as feedback comes in.
 
-Toyota customers expect the same high level of performance in their infotainment systems as they do from the driving experience, so it was important that the on-screen experience match the Toyota look and feel. Thanks to Flutter’s high-performing rendering engine and features such as AOT compilation, the team felt confident that they could build something that felt premium — more like a smartphone app than a traditional embedded system.
+<Image src="images/third_party/case_studies/toyota/highlander.jpg" format="fullwidth" alt="Toyota Highlander infotainment system" />
 
-Flutter’s developer experience was another big selling point. The ability to hot-reload the app on desktop and deliver to iOS and Android tablets is extremely helpful for user testing, helping Toyota collect faster feedback for a better user experience.
+**Their solution: Building with Flutter**
 
-<Image src="images/third_party/case_studies/toyota/case_study_body_1.png" format="fullwidth" alt="" />
+Toyota built a custom embedder as one of their very first pieces of technology.
+They easily created plugins to support automotive functions
+that need to be accessed directly by the Flutter layers.
+They leveraged Flutter devtools, which are designed
+with a great development workflow in mind,
+even when targeting a vehicle instead of a phone.
+The `pub.dev` ecosystem, particularly the `provider` package,
+was a huge support and crucial for building their app.
 
-**Their Solution**
+**Key results and business impact**
 
-Toyota is currently using [Flutter’s Embedder API](https://flutter.dev/embedded) to develop their Linux-powered infotainment systems. By cross-compiling the engine and wrapping it in an embedder, the Flutter engine’s architecture makes it easy to embed in their target environment.
+By adopting Flutter, Toyota transformed its development process
+and achieved significant improvements:
 
-Using Dart and the Flutter SDK software design, Toyota has created several in-house tools to improve their development process. Flutter’s declarative UI and “code-as-configuration” have allowed the team to create design tools that generate code to run and validate software immediately, without confusing middle tiers.
+* **Rapid iteration:** Feedback can now be put into code
+  and working within the codebase within a single day,
+  compared to waiting years in the past.
+* **Global collaboration:** Teams across the globe,
+  including North America, Europe and Japan,
+  are all building on the same codebase.
+* **Cross-hardware agility:** Flutter enabled them
+  to efficiently develop for a variety of hardware.
+* **Expansion Readiness:** Following its debut on the
+  2026 Toyota RAV4 and 2026 Lexus ES,
+  the system is fully prepared for a broader rollout
+  to upcoming models like the 2027 Highlander
+  and the 2027 Lexus TZ.
 
-***“Flutter's open source principles and high-growth developer community have been critical to our success.”***
+<br/>
 
-\- Daniel Hall, Chief Engineer, Toyota Motor North America
-
-**Results**
-
-Flutter’s open-source principles and developer community have been critical to Toyota’s success. The team credits Flutter’s large and open ecosystem for helping them achieve their goals, and they look forward to the launch of their new infotainment system in future Toyota vehicles.
+<br/>
