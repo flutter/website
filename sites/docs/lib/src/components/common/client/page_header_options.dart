@@ -30,6 +30,7 @@ final class PageHeaderOptions extends StatefulComponent {
 
 final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
   bool _isShareSupported = false;
+  bool _copied = false;
 
   @override
   void initState() {
@@ -66,6 +67,10 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
     final response = await http.get(Uri.parse(rawUrl));
     if (response.statusCode == 200) {
       await web.window.navigator.clipboard.writeText(response.body).toDart;
+      setState(() => _copied = true);
+      Future<void>.delayed(const Duration(seconds: 2), () {
+        if (mounted) setState(() => _copied = false);
+      });
     }
   }
 
@@ -75,7 +80,8 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
   );
 
   @override
-  Component build(BuildContext _) => Dropdown(
+  Component build(BuildContext _) => .fragment([
+    Dropdown(
     id: 'page-header-options',
     toggle: const Button(icon: 'more_vert', title: 'View page options.'),
     content: nav(
@@ -113,8 +119,8 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
               li(
                 [
                   Button(
-                    icon: 'content_copy',
-                    content: 'Copy page',
+                    icon: _copied ? 'check' : 'content_copy',
+                    content: _copied ? 'Copied!' : 'Copy page',
                     onClick: () => _copyPageContent().ignore(),
                   ),
                 ],
@@ -151,5 +157,11 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
         ),
       ],
     ),
-  );
+  ),
+  if (_copied)
+    div(
+      classes: 'copy-page-toast',
+      [.text('Page copied to clipboard!')],
+    ),
+]);
 }
