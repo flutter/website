@@ -17,12 +17,14 @@ final class PageHeaderOptions extends StatefulComponent {
     required this.title,
     this.sourceUrl,
     this.issueUrl,
+    this.showCopyPage = true,
     super.key,
   });
 
   final String title;
   final String? sourceUrl;
   final String? issueUrl;
+  final bool showCopyPage;
 
   @override
   State<PageHeaderOptions> createState() => _PageHeaderOptionsState();
@@ -115,7 +117,7 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
                   ),
               ],
             ),
-            if (_rawMarkdownUrl != null)
+            if (component.showCopyPage && _rawMarkdownUrl != null)
               li(
                 [
                   Button(

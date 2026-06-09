@@ -116,6 +116,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         title: p['title'] as String,
         sourceUrl: p['sourceUrl'] as String?,
         issueUrl: p['issueUrl'] as String?,
+        showCopyPage: p['showCopyPage'] as bool,
       ),
       loader: _page_header_options.loadLibrary,
     ),

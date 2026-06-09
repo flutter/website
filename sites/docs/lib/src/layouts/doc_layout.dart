@@ -45,6 +45,14 @@ class DocLayout extends FlutterDocsLayout {
     );
   }
 
+  static final _htmlTagPattern = RegExp(r'<[^>]+>');
+
+  bool _hasSubstantialContent(Page page) {
+    final text = page.content.replaceAll(_htmlTagPattern, ' ');
+    final wordCount = text.trim().split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
+    return wordCount > 150;
+  }
+
   @override
   Component buildBody(Page page, Component child) {
     final pageData = page.data.page;
@@ -94,6 +102,7 @@ class DocLayout extends FlutterDocsLayout {
                 showBreadcrumbs:
                     allowBreadcrumbs &&
                     (pageData['showBreadcrumbs'] as bool? ?? true),
+                showCopyPage: _hasSubstantialContent(page),
               ),
 
               child,
