@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:http/http.dart' as http;
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/js_interop.dart';
@@ -51,6 +52,23 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
   String get _currentBaseUrl =>
       web.window.location.origin + web.window.location.pathname;
 
+  String? get _rawMarkdownUrl {
+    final sourceUrl = component.sourceUrl;
+    if (sourceUrl == null) return null;
+    return sourceUrl
+        .replaceFirst('github.com', 'raw.githubusercontent.com')
+        .replaceFirst('/blob/', '/');
+  }
+
+  Future<void> _copyPageContent() async {
+    final rawUrl = _rawMarkdownUrl;
+    if (rawUrl == null) return;
+    final response = await http.get(Uri.parse(rawUrl));
+    if (response.statusCode == 200) {
+      await web.window.navigator.clipboard.writeText(response.body).toDart;
+    }
+  }
+
   web.ShareData get _shareData => web.ShareData(
     url: _currentBaseUrl,
     title: component.title,
@@ -91,6 +109,16 @@ final class _PageHeaderOptionsState extends State<PageHeaderOptions> {
                   ),
               ],
             ),
+            if (_rawMarkdownUrl != null)
+              li(
+                [
+                  Button(
+                    icon: 'content_copy',
+                    content: 'Copy page',
+                    onClick: () => _copyPageContent().ignore(),
+                  ),
+                ],
+              ),
             if (component.sourceUrl case final sourceUrl?)
               li(
                 [
