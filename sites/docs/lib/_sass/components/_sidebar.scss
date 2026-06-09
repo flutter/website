@@ -166,6 +166,7 @@
     &:has(> a.nav-link.active:not(.collapsible)) {
       background-color: color-mix(in srgb, var(--site-primary-color) 12%, transparent);
       border-radius: 0.25rem;
+      border-inline-start: 3px solid var(--site-primary-color);
     }
   }
 
