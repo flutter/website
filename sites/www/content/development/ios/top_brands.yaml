@@ -1,0 +1,31 @@
+# This file contains the source data used to populate the
+# "Join other top brands and apps using Flutter" card grid on
+# the https://flutter.dev/multi-platform/ios page.
+#
+# Don't open PRs with additions to this list.
+# The site maintainers will update it as needed.
+
+- name: Alibaba
+  src: images/top-brands-alibaba.svg
+  href: /showcase/alibaba-group
+- name: Supercell
+  src: images/top-brands-supercell.svg
+  href: /showcase/supercell
+- name: Etermax
+  src: images/top-brands-etermax.svg
+  href: /showcase/etermax
+- name: Toyota
+  src: images/top-brands-toyota.svg
+  href: /showcase/toyota
+- name: Headspace
+  src: images/top-brands-headspace.svg
+  href: /showcase/headspace
+- name: BMW
+  src: images/top-brands-bmw.svg
+  href: /showcase/bmw
+- name: Universal
+  src: images/top-brands-universal.svg
+  href: /showcase/universal-studios
+- name: Tencent
+  src: images/top-brands-tencent.svg
+  href: /showcase/tencent

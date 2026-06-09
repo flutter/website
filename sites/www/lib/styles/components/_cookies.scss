@@ -1,0 +1,60 @@
+@use '../core/breakpoints';
+
+.cookie-snack {
+  background-color: white;
+  padding: var(--spacer) 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: var(--ui-drop-shadow);
+  opacity: 0;
+  display: none;
+  z-index: 11;
+
+  @keyframes fadein {
+      0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  &.show {
+    display: block;
+    animation-duration: 500ms;
+    animation-delay: 200ms;
+    animation-name: fadein;
+    animation-iteration-count: 1;
+    animation-timing-function: var(--ui-anim-func);
+    animation-fill-mode: forwards;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    top: 1px;
+
+    p {
+      max-width: 1200px;
+      margin-right: var(--gutter);
+      font-size: var(--font-size-heading-5);
+      line-height: 1.5;
+    }
+
+    .buttons-container {
+      display: flex;
+      gap: 16px;
+
+      button:first-child {
+        white-space: nowrap;
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      flex-direction: row;
+      gap: 0;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+body.learn {
+
+  section.hero {
+    background-image: var(--grad-violet-blue-35);
+  }
+
+  .learn-tabs {
+    padding-top: var(--gutter);
+    margin-bottom: var(--gutter-md);
+    
+    .tabs {
+      padding-bottom: var(--gutter-lg);
+      border-bottom: 1px solid var(--grey-4);
+    }
+  }
+
+  .learn-stage-grid {
+    padding: 0;
+
+    .feature-grid-features {
+      > div {
+        padding: var(--gutter-sm);
+
+        &:hover {
+          box-shadow: none !important;
+        }
+
+        i {
+          background-repeat: no-repeat;
+          background-color: #e7f8ff;
+          width: 68px;
+          height: 68px;
+          display: inline-block;
+          border-radius: 100%;
+          margin-bottom: var(--gutter-sm);
+        }
+
+        h4 {
+          padding-bottom: var(--spacer-md);
+          margin-bottom: var(--spacer-md);
+          font-size: var(--font-size-heading-3);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          min-height: 100px;
+        }
+
+        ul {
+          text-align: left;
+          list-style: none;
+          padding-left: var(--gutter-sm);
+          font-size: var(--font-size-heading-4);
+          line-height: 1.4;
+          color: var(--grey-6);
+
+          li {
+            margin-bottom: 14px;
+            position: relative;
+
+            a {
+              color: var(--primary);
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          li:not(.nested):before {
+            position: absolute;
+            top: -2px;
+            left: -1.2rem;
+            content: '\2022';
+            font-size: 1.2rem;
+            color: var(--grey-6);
+          }
+        }
+      }
+    }
+  }
+
+  #transition-docs {
+    background-image: linear-gradient(35deg, #F5FBFE 50%, #FCFCE2 90%);;
+  }
+
+  #cookbook {
+    background-image: var(--grad-violet-blue-35);
+
+    .features {
+      margin-bottom: 0;
+    }
+  }
+
+  .carousel-section {
+    padding-top: var(--gutter-lg);
+  }
+
+  #start-learning {
+    padding-top: var(--gutter-lg);
+  }
+}

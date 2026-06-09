@@ -377,7 +377,7 @@ or begin improving integration with Android.
           <a class="text-button" href="/deployment/android">Build and deploy to Android</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/android/c-interop">Bind to native Android code</a>
+          <a class="text-button" href="/platform-integration/bind-native-code">Bind to native Android code</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/android/splash-screen">Add a splash screen</a>

@@ -1,0 +1,53 @@
+:root {
+  --icon-fill: 0;
+  --icon-wght: 400;
+  --icon-grad: 0;
+  --icon-opsz: 24;
+}
+
+.material-symbols-rounded {
+  font-variation-settings:
+          'FILL' var(--icon-fill, 0),
+          'wght' var(--icon-wght, 400),
+          'GRAD' var(--icon-grad, 0),
+          'opsz' var(--icon-opsz, 24);
+}
+
+.icon {
+  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+
+  &.icon-xs {
+    font-size: 16px;
+    --icon-opsz: 16;
+  }
+
+  &.icon-sm {
+    font-size: 20px;
+    --icon-opsz: 20;
+  }
+
+  &.icon-md {
+    font-size: 24px;
+    --icon-opsz: 24;
+  }
+
+  &.icon-lg {
+    font-size: 32px;
+    --icon-opsz: 32;
+  }
+
+  &.icon-filled {
+    --icon-fill: 1;
+  }
+
+  &.link-arrow-icon {
+    position: relative;
+  }
+}

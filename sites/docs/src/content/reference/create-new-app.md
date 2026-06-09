@@ -304,7 +304,7 @@ check out the [IntelliJ for Flutter reference][ij-more].
 
 To create a Flutter app with Antigravity, you first need
 to install and set up Antigravity as described on the
-[Antigravity tools page](/tools/antigravity).
+[Antigravity page](/ai/antigravity).
 Then follow these steps:
 
  1. <h3>Open Antigravity and create a Workspace</h3>

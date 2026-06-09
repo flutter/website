@@ -170,7 +170,7 @@ This website release includes several important updates!
   [Intro to Dart][] page.
 
 * Further support and updated docs for the Swift Package Manager.
-  Specifically, you can now build on the stable channel for SPM,
+  Specifically, you can now build on the stable channel for SwiftPM,
   however, plugins will continue to be installed using
   CocoaPods as the SwiftPM feature remains
   unavailable on the stable channel:
@@ -1636,7 +1636,7 @@ Happy Fluttering!
 [Showcase]: {{site.main-url}}/showcase
 [`ToggleButtons`]: {{site.api}}/flutter/material/ToggleButtons-class.html
 [ToggleButtons demo]: {{site.github}}/csells/flutter_toggle_buttons
-[using the dart:ffi library]: /platform-integration/android/c-interop
+[using the dart:ffi library]: /platform-integration/legacy-ffi-plugin
 
 ## 09 Jul 2019: 1.7 release
 
