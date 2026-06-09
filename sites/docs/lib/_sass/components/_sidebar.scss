@@ -157,9 +157,15 @@
 
           &:not(.collapsible) {
             color: var(--site-link-fgColor);
+            background-color: transparent;
           }
         }
       }
+    }
+
+    &:has(> a.nav-link.active:not(.collapsible)) {
+      background-color: color-mix(in srgb, var(--site-primary-color) 12%, transparent);
+      border-radius: 0.25rem;
     }
   }
 
