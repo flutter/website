@@ -212,7 +212,7 @@ class AiPage extends StatelessComponent {
                 title: 'Build AI-powered apps with Genkit Dart',
                 description:
                     'Learn how to build AI-powered applications in Dart and Flutter using the Genkit framework.',
-                url: 'https://genkit.dev/docs/dart/overview/',
+                url: 'https://genkit.dev/docs/dart/overview',
                 icon: context.asset(
                   '/development/images/icons/get-started-in-docs.svg',
                 ),
