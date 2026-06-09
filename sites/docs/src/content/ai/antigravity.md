@@ -1,18 +1,18 @@
 ---
 title: Google Antigravity
 shortTitle: Antigravity
-description: Learn about the Antigravity agentic coding assistant.
+sidenav: ai
+description: Learn about Google Antigravity agentic coding tools.
 ---
 
 ## Introduction
 
-[Antigravity][ag] is a powerful agentic coding assistant
-and IDE for building apps, including Flutter apps.
-You can pair with Antigravity to solve your
-coding tasks, create new codebases, modify existing ones,
-and answer questions.
+Google Antigravity is a suite of agentic development tools designed for building apps, including Flutter apps. The suite includes:
 
-[ag]: https://antigravity.google/
+* **Antigravity 2.0**: The core agentic assistant experience, driven via a Terminal User Interface (TUI) or Command-Line Interface (CLI).
+* **Antigravity IDE**: The focused editor experience featuring an integrated agent panel.
+
+This page describes the Antigravity IDE. For details on using the command-line tool, see the [Antigravity CLI](/ai/antigravity-cli) page.
 
 To learn some of what Antigravity is capable of,
 watch this talk from Google I/O 2026.

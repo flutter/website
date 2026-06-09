@@ -18,10 +18,10 @@ A demo of hot reload in DartPad
 
 ## How to perform a hot reload
 
-If you are using an AI coding assistant like [Google Antigravity](/tools/antigravity),
+If you are using an AI coding assistant like [Google Antigravity](/ai/antigravity),
 you can use Agent mode to automatically hot reload your running application
 as soon as you prompt the agent to apply changes.
-For details, see [Agentic Hot Reload](/tools/antigravity#agentic-hot-reload).
+For details, see [Agentic Hot Reload](/ai/antigravity#agentic-hot-reload).
 
 To hot reload a Flutter app manually:
 
