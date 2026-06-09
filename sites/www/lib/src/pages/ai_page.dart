@@ -90,9 +90,7 @@ class AiPage extends StatelessComponent {
             div(classes: 'alternating-item', [
               div(classes: 'media', [
                 img(
-                  src: context.asset(
-                    'images/build-with-ai/vertex-tab.png',
-                  ),
+                  src: context.asset('images/build-with-ai/vertex-tab.png'),
                   alt: 'Vertex AI Logo',
                 ),
               ]),
@@ -117,9 +115,7 @@ class AiPage extends StatelessComponent {
               div(classes: 'media', [
                 img(
                   classes: 'genkit-logo',
-                  src: context.asset(
-                    'images/genkit.jpg',
-                  ),
+                  src: context.asset('images/genkit.jpg'),
                   alt: 'Genkit Logo',
                 ),
               ]),
@@ -132,7 +128,7 @@ class AiPage extends StatelessComponent {
                 ]),
                 a(
                   classes: 'btn',
-                  href: 'https://genkit.dev/docs/dart/get-started/',
+                  href: 'https://genkit.dev/docs/dart/overview/',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
@@ -216,7 +212,7 @@ class AiPage extends StatelessComponent {
                 title: 'Build AI-powered apps with Genkit Dart',
                 description:
                     'Learn how to build AI-powered applications in Dart and Flutter using the Genkit framework.',
-                url: 'https://genkit.dev/docs/dart/get-started/',
+                url: 'https://genkit.dev/docs/dart/overview/',
                 icon: context.asset(
                   '/development/images/icons/get-started-in-docs.svg',
                 ),
@@ -251,10 +247,7 @@ class AiPage extends StatelessComponent {
       a(href: item.href, target: Target.blank, [
         div([
           div(classes: 'image-container', [
-            img(
-              alt: item.title,
-              src: context.asset(item.image),
-            ),
+            img(alt: item.title, src: context.asset(item.image)),
           ]),
           div(classes: 'text', [
             h3([.text(item.title)]),

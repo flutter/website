@@ -55,7 +55,7 @@ resources:
 [Firebase AI Logic Showcase]: {{site.github}}/flutter/demos/tree/main/firebase_ai_logic_showcase
 [firebase-ai-logic-docs]: {{site.firebase}}/docs/ai-logic/get-started
 [Genkit Dart]: https://genkit.dev
-[genkit-dart-quickstart]: https://genkit.dev/docs/dart/get-started
+[genkit-dart-quickstart]: https://genkit.dev/docs/dart/overview
 [Flutter AI Toolkit]: /ai/ai-toolkit
 
 ## AI development tools
