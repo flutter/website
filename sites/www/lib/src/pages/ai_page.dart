@@ -128,7 +128,7 @@ class AiPage extends StatelessComponent {
                 ]),
                 a(
                   classes: 'btn',
-                  href: 'https://genkit.dev/docs/dart/overview/',
+                  href: 'https://genkit.dev/docs/dart/overview',
                   target: Target.blank,
                   [.text('Get started')],
                 ),
