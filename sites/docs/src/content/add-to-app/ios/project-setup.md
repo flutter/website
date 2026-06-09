@@ -4,18 +4,16 @@ shortTitle: Integrate Flutter
 description: Learn how to integrate a Flutter app into your existing iOS project.
 ---
 
-:::tip New! This guide has been updated to use Swift Package Manager
-
-As of Flutter 3.44, Swift Package Manager replaces CocoaPods
-as the default dependency manager for iOS and macOS Flutter apps.
-CocoaPods is officially in maintenance mode,
-and its registry will permanently [become read-only on December 2, 2026][].
-
-The [legacy integration guide][] is preserved for reference,
-but will not receive ongoing maintenance.
-Please migrate to using Swift Package Manager.
-
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
 :::
+
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
 
 Flutter UI components can be incrementally added
 into your existing iOS application using Swift packages.
@@ -25,7 +23,7 @@ into your existing iOS application using Swift packages.
 * Flutter 3.44 or later
 * Xcode 15.0 or later
 
-### Migrate from Legacy Integration (If Applicable) {: #migrate-legacy-integration}
+### Migrate from legacy integration (if applicable) {: #migrate-legacy-integration}
 
 If you've already integrated Flutter into your iOS app
 using CocoaPods or embedded frameworks,
@@ -273,5 +271,4 @@ You can now [add a Flutter screen][] to your existing iOS app.
 
 [add a Flutter screen]: /add-to-app/ios/add-flutter-screen
 [legacy integration guide]: /add-to-app/ios/project-setup-legacy
-[become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [build modes]: /testing/build-modes

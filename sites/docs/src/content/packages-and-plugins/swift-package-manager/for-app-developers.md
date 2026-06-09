@@ -3,50 +3,62 @@ title: Swift Package Manager for app developers
 description: How to use Swift Package Manager for native iOS or macOS dependencies
 ---
 
-:::warning
-Flutter is migrating to [Swift Package Manager][] to manage iOS and macOS native
-dependencies.
-Flutter's support of Swift Package Manager is under development.
-If you find a bug in Flutter's Swift Package Manager support,
-[open an issue][].
-Swift Package Manager support is [off by default][].
-Flutter continues to support CocoaPods.
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
 :::
 
-Flutter's Swift Package Manager integration has several benefits:
-
-1. **Provides access to the Swift package ecosystem**.
-   Flutter plugins can use the growing ecosystem of [Swift packages][].
-1. **Simplifies Flutter installation**.
-   Xcode includes Swift Package Manager.
-   You don't need to install Ruby and CocoaPods if your project uses
-   Swift Package Manager.
-
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [Swift Package Manager]: https://www.swift.org/documentation/package-manager/
-[off by default]: #how-to-turn-on-swift-package-manager
-[Swift packages]: https://swiftpackageindex.com/
-[open an issue]: {{site.github}}/flutter/flutter/issues/new?template=2_bug.yml
 
-{% render "docs/swift-package-manager/how-to-enable-disable.md", site: site %}
+## How to turn on Swift Package Manager
 
-## How to add Swift Package Manager integration
+As of the 3.44 release, Flutter's Swift Package Manager (SwiftPM)
+support is on by default.
+Upgrading Flutter and running your app automatically adds SwiftPM integration.
+This makes your project download the Swift packages that
+your Flutter plugins depend on.
+To use an older Flutter version,
+you might need to [remove Swift Package Manager integration][removeSPM]
+from the app.
 
-### Add to a Flutter app
+Note that Flutter falls back to CocoaPods for dependencies that don't
+yet support Swift Package Manager.
 
-<Tabs key="darwin-platform">
-<Tab name="iOS project">
+[Optional] To check if your project is using SwiftPM:
 
-{% render "docs/swift-package-manager/migrate-ios-project.md", site: site %}
+1. In Xcode, run the app.
+1. Ensure that  **Run Prepare Flutter Framework Script** runs as a pre-action
+   and that `FlutterGeneratedPluginSwiftPackage` is a target dependency.
 
-</Tab>
-<Tab name="macOS project">
+   <DashImage image="development/packages-and-plugins/swift-package-manager/flutter-pre-action-build-log.png" caption="Ensure **Run Prepare Flutter Framework Script** runs as a pre-action" />
 
-{% render "docs/swift-package-manager/migrate-macos-project.md", site: site %}
+If you previously disabled SwiftPM, you might need to enable it with
+`flutter config --enable-swift-package-manager`.
 
-</Tab>
-</Tabs>
+If automatic migration works for you, that's it!
+You are done with this page.
 
-### Add to a Flutter app _manually_
+## How to add Swift Package Manager integration manually
+
+When you upgrade to Flutter 3.44 or later and run
+your app, SwiftPM integration is automatically added. You only need
+these instructions if problems occurred and you need to manually
+add SwiftPM integration to your project.
+
+Most developers do not need to do this.
+
+If you experience a problem automatically migrating your
+project to SwiftPM, please [file an issue][].
+Include the error message and, if possible,
+include a copy of the following files in your issue:
+
+* `ios/Runner.xcodeproj/project.pbxproj`
+* `ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme`
+   (or the xcsheme for the flavor used)
 
 <Tabs key="darwin-platform">
 <Tab name="iOS project">
@@ -61,13 +73,17 @@ Flutter's Swift Package Manager integration has several benefits:
 </Tab>
 </Tabs>
 
+[file an issue]: {{site.github}}/flutter/flutter/issues/new?template=02_bug.yml
+
 ### Add to an existing app (add-to-app)
 
-Flutter's Swift Package Manager support doesn't work with add-to-app scenarios.
+To use SwiftPM, consult one of the following pages, as appropriate:
 
-To keep current on status updates, consult [flutter#146957][].
+* [Integrate a Flutter app into your iOS project][ios-add-2-app]
+* [Integrate a Flutter app into your macOS project][macos-add-2-app]
 
-[flutter#146957]: https://github.com/flutter/flutter/issues/146957
+[ios-add-2-app]:   /add-to-app/ios/project-setup
+[macos-add-2-app]: /add-to-app/macos/project-setup
 
 ### Add to a custom Xcode target
 
@@ -76,23 +92,23 @@ products, like frameworks or unit tests.
 You can add Swift Package Manager integration to these custom Xcode targets.
 
 Follow the steps in
-[How to add Swift Package Manager integration to a project _manually_][manualIntegration].
+[How to add Swift Package Manager integration][manualIntegration].
 
-In [Step 1][manualIntegrationStep1], list item 6 use your custom target instead
-of the `Flutter` target.
+In [Step 1][] for list item 6,
+use your custom target instead of the `Flutter` target.
 
-In [Step 2][manualIntegrationStep2], list item 6 use your custom target instead
-of the `Flutter` target.
+In [Step 2][] for list item 6,
+use your custom target instead of the `Flutter` target.
 
-[Xcode targets]: https://developer.apple.com/documentation/xcode/configuring-a-new-target-in-your-project
-[manualIntegration]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-add-swift-package-manager-integration-to-a-flutter-app-manually
-[manualIntegrationStep1]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
-[manualIntegrationStep2]: /packages-and-plugins/swift-package-manager/for-app-developers/#step-2-add-run-prepare-flutter-framework-script-pre-action
+[Xcode targets]: {{site.apple-dev}}/documentation/xcode/configuring-a-new-target-in-your-project
+[manualIntegration]: #how-to-add-swift-package-manager-integration-manually
+[Step 1]: #step-1-add-fluttergeneratedpluginswiftpackage-package-dependency
+[Step 2]: #step-2-add-run-prepare-flutter-framework-script-pre-action
 
 ## How to remove Swift Package Manager integration
 
-To add Swift Package Manager integration, the Flutter CLI migrates your project.
-This migration updates your Xcode project to add Flutter plugin dependencies.
+When your app is modified to support SwiftPM,
+the Xcode project is updated to add Flutter plugin dependencies.
 
 To undo this migration:
 
@@ -124,7 +140,7 @@ To undo this migration:
 
 1. Go to **Product > Scheme > Edit Scheme**.
 
-1. Expand the **Build** section in the left side bar.
+1. Expand the **Build** section in the left sidebar.
 
 1. Click **Pre-actions**.
 
@@ -134,7 +150,7 @@ To undo this migration:
 
    <DashImage image="development/packages-and-plugins/swift-package-manager/remove-flutter-pre-action.png" caption="The build pre-action to remove" />
 
-[Turn off Swift Package Manager]: /packages-and-plugins/swift-package-manager/for-app-developers/#how-to-turn-off-swift-package-manager
+[Turn off Swift Package Manager]: #how-to-turn-off-swift-package-manager
 
 ## How to use a Swift Package Manager Flutter plugin that requires a higher OS version
 
@@ -167,3 +183,44 @@ To use the plugin:
    ```sh
    flutter build macos --config-only
    ```
+
+## How to turn off Swift Package Manager
+
+In general, don't do this. Remember that
+the CocoaPods registry becomes read-only on December 2, 2026
+and disabling SwiftPM won't be allowed in the future.
+
+Disabling Swift Package Manager causes Flutter to use CocoaPods for all
+dependencies. However, SwiftPM remains integrated with your project.
+To remove Swift Package Manager integration completely from your project,
+follow the [How to remove Swift Package Manager integration][removeSPM]
+instructions.
+
+### Turn off SwiftPM for a single project
+
+In the project's `pubspec.yaml` file, under the `flutter` section,
+set `enable-swift-package-manager` to `false` in the `config` subsection.
+
+```yaml title="pubspec.yaml"
+# The following section is specific to Flutter packages.
+flutter:
+  config:
+    enable-swift-package-manager: false
+```
+
+This turns off Swift Package Manager for all contributors to this project.
+
+### Turn off SwiftPM globally for all projects
+
+Run the following command:
+
+```sh
+flutter config --no-enable-swift-package-manager
+```
+
+This turns off Swift Package Manager for the current user.
+
+If a project is incompatible with Swift Package Manager,
+all contributors need to run this command.
+
+[removeSPM]: #how-to-remove-swift-package-manager-integration

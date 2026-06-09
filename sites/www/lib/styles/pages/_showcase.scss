@@ -1,0 +1,230 @@
+@use '../core/breakpoints';
+
+body.showcase {
+  #header {
+    .container > .mantle > .media {
+      padding: 92px 0 92px;
+    }
+  }
+
+  #notification.module {
+    background-color: var(--grey-1);
+  }
+
+  #flutter-apps {
+    padding: 56px 0;
+
+    hgroup {
+      padding-left: 0 !important;
+    }
+
+    @include breakpoints.screen(lg) {
+      padding: var(--gutter-md) 0;
+    }
+
+    .carousel {
+      .carousel-slider {
+        padding: 20px 0 50px;
+
+        .story-item {
+          min-width: 222px;
+
+          &:first-child {
+            margin-left: var(--gutter);
+
+            @include breakpoints.screen(xl) {
+              margin-left: var(--gutter-auto);
+            }
+          }
+
+          img {
+            min-width: 222px;
+            max-width: 222px;
+            border-radius: 37px;
+          }
+
+          .text {
+            padding-right: 0;
+
+            h3 {
+              font-size: 24px;
+            }
+          }
+
+          .learn-more-button {
+            width: 100%;
+          }
+
+          a {
+            position: absolute;
+            cursor: pointer;
+
+            &:hover {
+              color: var(--blue-6);
+            }
+          }
+
+          &:hover {
+            color: var(--blue-6);
+          }
+
+          &:hover .learn-more-button {
+            width: 100%;
+            background-color: var(--blue-6);
+            color: white;
+          }
+        }
+      }
+
+      .carousel-progress {
+        .carousel-completed {
+          height: 4px;
+          border-radius: 4px;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+
+  #stories {
+    padding-bottom: var(--gutter-md);
+
+    .story-grid-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 100%;
+
+      h2 {
+        font-size: var(--font-size-heading-1);
+        margin-bottom: var(--gutter-sm);
+        width: 100%;
+      }
+
+      @include breakpoints.screen(md) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        h2 {
+          margin-bottom: 0;
+          text-align: left;
+        }
+      }
+    }
+
+    .story-item {
+      a:hover {
+        h4,
+        span,
+        p {
+          color: var(--primary);
+        }
+      }
+    }
+
+    .showcase__story-content {
+      > span {
+        font-size: var(--font-size-default);
+        margin-bottom: 16px;
+      }
+    }
+
+    .story-grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gutter);
+    }
+  }
+
+  #developer-stories {
+    .story-item {
+      max-width: calc(100% - var(--gutter));
+      min-width: calc(100% - var(--gutter));
+    }
+
+    .story-item:last-child {
+      margin-right: var(--gutter-sm);
+    }
+
+    @include breakpoints.screen(sm) {
+      .story-item {
+        min-width: var(--ui-card-width) !important;
+        max-width: var(--ui-card-width) !important;
+      }
+
+      .story-item:last-child {
+        margin-right: var(--gutter);
+      }
+    }
+  }
+
+  .see-more {
+    padding-top: var(--gutter);
+    text-align: center;
+
+    a.btn {
+      padding: 0;
+    }
+  }
+
+  #companies {
+    overflow: hidden;
+
+    h2 {
+      max-width: 460px;
+    }
+
+    .logo-garden {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .inner-fixed {
+      display: grid;
+      justify-content: center;
+    }
+
+    .logo-row {
+      display: flex;
+      gap: var(--gutter-sm);
+      margin-bottom: var(--gutter-sm);
+      align-self: center;
+      position: relative;
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        left: calc((164px / 2) + (var(--gutter-sm) / 2));
+      }
+
+      > div {
+        background-color: var(--grey-1);
+        border-radius: var(--ui-border-radius-sm);
+        box-shadow: var(--ui-drop-shadow-sm);
+        display: grid;
+        height: 164px;
+        padding: 37px;
+        place-items: center;
+        width: 164px;
+        min-width: 164px;
+      }
+    }
+  }
+}
+
+body.showcase-story {
+  .richtext-image {
+    &.rounded {
+      border-radius: 16px;
+    }
+  }
+
+  .richtext-image.full-width {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

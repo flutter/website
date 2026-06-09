@@ -25,6 +25,8 @@ following with native libraries:
 
 To learn more about calling C libraries from Flutter,
 consult [C interop using `dart:ffi`][].
+To bundle and bind your own native C or C++ code with your app,
+see [Bind to native code using FFI][].
 
 Many apps benefit from using a package that wraps the underlying library
 calls in a more convenient, idiomatic Dart API.
@@ -38,6 +40,7 @@ including common packages such as [`url_launcher`],
 [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
+[Bind to native code using FFI]: /platform-integration/bind-native-code
 [Canonical]: {{site.pub}}/publishers/canonical.com/packages
 [support-linux]: {{site.pub}}/packages?q=platform%3Alinux
 [`url_launcher`]: {{site.pub-pkg}}/url_launcher

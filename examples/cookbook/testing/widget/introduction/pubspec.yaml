@@ -3,7 +3,7 @@ description: Widget testing example snippets.
 
 resolution: workspace
 environment:
-  sdk: ^3.12.0-0
+  sdk: ^3.12.0
 
 dependencies:
   flutter:

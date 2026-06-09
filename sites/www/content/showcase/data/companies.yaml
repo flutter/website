@@ -1,0 +1,89 @@
+# This file contains the source data used to populate the
+# "Companies using Flutter" card grid at the
+# bottom of the https://flutter.dev/showcase page.
+#
+# Don't directly open PRs with additions to this list.
+#
+# If you'd like your company using Flutter to be listed,
+# please open an issue proposing a case study or showcase.
+
+- name: Alibaba
+  logo: /images/third_party/logos/alibaba.svg
+
+- name: Baidu
+  logo: /images/third_party/logos/baidu.svg
+
+- name: Betterment
+  logo: /images/third_party/logos/betterment.svg
+
+- name: Bytedance
+  logo: /images/third_party/logos/bytedance.svg
+
+- name: CrowdSource
+  logo: /images/third_party/logos/crowdsource.svg
+
+- name: Dream11
+  logo: /images/third_party/logos/dream11.svg
+
+- name: Ebay
+  logo: /images/third_party/logos/ebay.svg
+
+- name: GoogleAds
+  logo: /images/third_party/logos/googleads.svg
+
+- name: GooglePay
+  logo: /images/third_party/logos/googlepay.svg
+
+- name: Groupon
+  logo: /images/third_party/logos/groupon.svg
+
+- name: Hamilton
+  logo: /images/third_party/logos/hamilton.svg
+
+- name: iRobot
+  logo: /images/third_party/logos/irobot.svg
+
+- name: Kotak
+  logo: /images/third_party/logos/kotak.svg
+
+- name: Karaca
+  logo: /images/third_party/logos/karaca.png
+
+- name: Lotum
+  logo: /images/third_party/logos/lotum.svg
+
+- name: MGM
+  logo: /images/third_party/logos/mgm.svg
+
+- name: Nubank
+  logo: /images/third_party/logos/nubank.svg
+
+- name: NY Times
+  logo: /images/third_party/logos/nytimes.svg
+
+- name: Philips Hue
+  logo: /images/third_party/logos/philips-hue.png
+
+- name: Realtor.com
+  logo: /images/third_party/logos/realtor.svg
+
+- name: Square
+  logo: /images/third_party/logos/square.svg
+
+- name: Suamusica
+  logo: /images/third_party/logos/suamusica.svg
+
+- name: Surface
+  logo: /images/third_party/logos/surface.svg
+
+- name: Talabat
+  logo: /images/third_party/logos/talabat.png
+
+- name: Tencent
+  logo: /images/third_party/logos/tencent.svg
+
+- name: Toyota
+  logo: /images/third_party/logos/toyota.png
+
+- name: Ubuntu
+  logo: /images/third_party/logos/ubuntu.svg
