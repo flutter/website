@@ -27,6 +27,7 @@
     input.gsc-input {
       background-color: transparent !important;
       height: 2rem !important;
+      color: var(--site-base-fgColor);
     }
   }
 
@@ -92,11 +93,13 @@
 
     .gsc-result {
       border: none;
+      background: none;
     }
   }
 
   .gsc-cursor-box {
     .gsc-cursor-page {
+      background: none;
       color: var(--site-base-fgColor-lighter);
     }
 
