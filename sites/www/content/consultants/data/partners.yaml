@@ -1156,6 +1156,7 @@
     - "Startup"
     - "Small-to-medium Business"
     - "Enterprise"
+  options_GCP_partner: false
 - title: "Mabiloft"
   summary: "Is a UX-driven software engineering studio based in Italy, dedicated to building high impact digital products that scale."
   card: "images/third_party/partners/Mabiloft_logo.png"
