@@ -9,6 +9,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../components/common/client/cookie_notice.dart';
+import '../components/layout/banner.dart';
 import '../components/layout/footer.dart';
 import '../components/layout/header.dart';
 import '../components/layout/sidenav.dart';
@@ -268,6 +269,21 @@ if (sidenav) {
       '''),
       ],
     );
+  }
+
+  /// Builds the banner component for the given [page].
+  Component? buildBanner(Page page) {
+    final showBanner =
+        (page.data.page['showBanner'] as bool?) ??
+        (page.data.site['showBanner'] as bool?) ??
+        false;
+    if (showBanner) {
+      if (page.data['banner'] case final List<Object?> bannerData) {
+        return DashBanner(BannerContent.fromList(bannerData));
+      }
+    }
+
+    return null;
   }
 
   /// Builds the speculation rules `<script>` and `<link rel="prefetch">`
