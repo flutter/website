@@ -532,8 +532,8 @@ the Compass app's [`utils` directory][].
 
 :::tip Package option
 To use this pattern without writing your own command classes,
-consider using packages such as [`command_it`][],
-which provide command types to wrap actions and
+consider using a package such as [`command_it`][],
+which provides command types to wrap actions and
 track their running, completed, and error states.
 :::
 
