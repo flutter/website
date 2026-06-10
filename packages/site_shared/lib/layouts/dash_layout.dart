@@ -276,13 +276,8 @@ try {
         (page.data.site['showBanner'] as bool?) ??
         false;
     if (showBanner) {
-      if (page.data.site['bannerHtml'] case final String bannerHtml
-          when bannerHtml.trim().isNotEmpty) {
-        return DashBanner.inlineHtml(bannerHtml);
-      }
-
-      if (page.data['banner'] case final Map<String, Object?> bannerData) {
-        return DashBanner(BannerContent.fromMap(bannerData));
+      if (page.data['banner'] case final List<Object?> bannerData) {
+        return DashBanner(BannerContent.fromList(bannerData));
       }
     }
 

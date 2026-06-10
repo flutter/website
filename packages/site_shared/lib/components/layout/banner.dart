@@ -6,74 +6,75 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 /// The information to display in the site banner,
-/// as configured in the `src/data/banner.yml` file.
+/// as configured in `src/data/banner.yml`.
 @immutable
 final class BannerContent {
-  final String text;
-  final String linkText;
-  final String linkUri;
-  final bool newTab;
+  final List<BannerPart> parts;
 
-  const BannerContent({
+  const BannerContent({required this.parts});
+
+  factory BannerContent.fromList(List<Object?> bannerData) => BannerContent(
+    parts: [
+      for (final item in bannerData)
+        switch (item) {
+          {'text': final String text} => BannerText(text),
+          {'link': final Map<Object?, Object?> link} => BannerLink(
+            text: link['text'] as String,
+            url: link['url'] as String,
+            newTab: link['newTab'] as bool? ?? false,
+          ),
+          _ => throw FormatException('Invalid banner item: $item'),
+        },
+    ],
+  );
+}
+
+@immutable
+sealed class BannerPart {
+  const BannerPart();
+}
+
+final class BannerText extends BannerPart {
+  const BannerText(this.text);
+
+  final String text;
+}
+
+final class BannerLink extends BannerPart {
+  const BannerLink({
     required this.text,
-    required this.linkText,
-    required this.linkUri,
+    required this.url,
     this.newTab = false,
   });
 
-  factory BannerContent.fromMap(Map<String, Object?> bannerData) {
-    final text = bannerData['text'] as String;
-    final link = bannerData['link'] as Map<Object?, Object?>;
-    final linkText = link['text'] as String;
-    final linkUri = link['url'] as String;
-    final newTab = link['newTab'] as bool? ?? false;
-
-    return BannerContent(
-      text: text,
-      linkText: linkText,
-      linkUri: linkUri,
-      newTab: newTab,
-    );
-  }
+  final String text;
+  final String url;
+  final bool newTab;
 }
 
 /// The site-wide banner.
 class DashBanner extends StatelessComponent {
-  const DashBanner(this.content, {super.key}) : inlineHtmlContent = null;
+  const DashBanner(this.content, {super.key});
 
-  /// Creates a banner from raw, inline HTML content.
-  ///
-  /// This should only be sourced from managed content,
-  /// such as checked-in data files.
-  const DashBanner.inlineHtml(this.inlineHtmlContent, {super.key})
-    : content = null;
-
-  final BannerContent? content;
-  final String? inlineHtmlContent;
+  final BannerContent content;
 
   @override
-  Component build(BuildContext context) {
-    final inlineHtmlContent = this.inlineHtmlContent;
-    final content = this.content;
-
-    return div(
-      id: 'site-banner',
-      attributes: {'role': 'alert'},
-      [
-        p([
-          if (inlineHtmlContent != null)
-            RawText(inlineHtmlContent)
-          else if (content != null) ...[
-            .text(content.text),
-            const .text(' '),
-            a(
-              href: content.linkUri,
-              target: content.newTab ? Target.blank : null,
-              [.text(content.linkText)],
+  Component build(BuildContext context) => div(
+    id: 'site-banner',
+    attributes: {'role': 'alert'},
+    [
+      p([
+        for (final part in content.parts)
+          switch (part) {
+            BannerText(:final text) => .text(text),
+            BannerLink(:final text, :final url, :final newTab) => a(
+              href: url,
+              target: newTab ? Target.blank : null,
+              attributes: newTab ? const {'rel': 'noopener'} : null,
+              [.text(text)],
             ),
-          ],
-        ]),
-      ],
-    );
-  }
+          },
+      ]),
+    ],
+  );
 }
