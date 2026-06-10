@@ -39,24 +39,41 @@ final class BannerContent {
 
 /// The site-wide banner.
 class DashBanner extends StatelessComponent {
-  const DashBanner(this.content, {super.key});
+  const DashBanner(this.content, {super.key}) : inlineHtmlContent = null;
 
-  final BannerContent content;
+  /// Creates a banner from raw, inline HTML content.
+  ///
+  /// This should only be sourced from managed content,
+  /// such as checked-in data files.
+  const DashBanner.inlineHtml(this.inlineHtmlContent, {super.key})
+    : content = null;
+
+  final BannerContent? content;
+  final String? inlineHtmlContent;
 
   @override
-  Component build(BuildContext context) => div(
-    id: 'site-banner',
-    attributes: {'role': 'alert'},
-    [
-      p([
-        .text(content.text),
-        const .text(' '),
-        a(
-          href: content.linkUri,
-          target: content.newTab ? Target.blank : null,
-          [.text(content.linkText)],
-        ),
-      ]),
-    ],
-  );
+  Component build(BuildContext context) {
+    final inlineHtmlContent = this.inlineHtmlContent;
+    final content = this.content;
+
+    return div(
+      id: 'site-banner',
+      attributes: {'role': 'alert'},
+      [
+        p([
+          if (inlineHtmlContent != null)
+            RawText(inlineHtmlContent)
+          else if (content != null) ...[
+            .text(content.text),
+            const .text(' '),
+            a(
+              href: content.linkUri,
+              target: content.newTab ? Target.blank : null,
+              [.text(content.linkText)],
+            ),
+          ],
+        ]),
+      ],
+    );
+  }
 }

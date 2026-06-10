@@ -1,0 +1,32 @@
+# Featured events for the carousel on the events page.
+# Each event has: title, description, image, link, backgroundColor
+
+- title: "Google I/O"
+  description: "Join us in Sunnyvale, USA for Google I/O on May 19, 2026."
+  image: "images/featured/io-featured.gif"
+  link: "https://events.google.com/io"
+  backgroundColor: "#000000"
+
+- title: "Fluttercon USA"
+  description: "Join us in Orlando, FL for Fluttercon USA on July 16, 2026."
+  image: "images/featured/fluttercon-featured.avif"
+  link: "https://www.flutterconusa.dev/"
+  backgroundColor: "#3377FF"
+
+- title: "next.app devcon"
+  description: "Join us in Berlin, Germany for next.app devcon on October 7, 2026."
+  image: "images/featured/nextapp-featured.png"
+  link: "https://www.nextappcon.com/"
+  backgroundColor: "#FF55E7"
+
+- title: "Flutter & Friends"
+  description: "Join us in Stockholm, Sweden for Flutter & Friends on September 3, 2026."
+  image: "images/featured/flutter_friends-featured.png"
+  link: "https://flutterfriends.dev/"
+  backgroundColor: "#0072D6"
+
+- title: "FlutterConf LATAM"
+  description: "Join us in Cancún, México for FlutterConf LATAM on September 22, 2026."
+  image: "images/featured/flutterconflatam26-featured.png"
+  link: "https://flutterconflatam.dev/"
+  backgroundColor: "#042B59"

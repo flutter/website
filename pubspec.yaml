@@ -1,12 +1,15 @@
-name: docs_flutter_dev
+name: flutter_websites
+description: >-
+  Pub workspace for Flutter websites and related tooling.
 publish_to: none
 
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0
 
 workspace:
   - packages/analysis_defaults
   - packages/excerpter
   - packages/site_shared
-  - site
+  - sites/docs
+  - sites/www
   - tool/dash_site

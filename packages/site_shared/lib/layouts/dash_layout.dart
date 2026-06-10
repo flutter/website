@@ -56,6 +56,8 @@ abstract class DashLayout implements PageLayout {
 
   String get stylesHash;
 
+  Iterable<Component> buildExtraHead(Page page) => const [];
+
   Iterable<Component> _buildHead(Page page) {
     final pageData = page.data.page;
     final siteData = page.data.site;
@@ -148,6 +150,15 @@ abstract class DashLayout implements PageLayout {
         rel: 'stylesheet',
         href: '/assets/css/main.css?hash=${htmlEscape.convert(stylesHash)}',
       ),
+
+      if (pageData['js'] case final List<Object?> jsList)
+        for (final js in jsList)
+          if (js case {'url': final String jsUrl, 'defer': final Object? defer})
+            script(
+              src: jsUrl,
+              attributes: {if (defer == 'true' || defer == true) 'defer': ''},
+            ),
+      ...buildExtraHead(page),
 
       const script(
         src:
@@ -265,6 +276,11 @@ try {
         (page.data.site['showBanner'] as bool?) ??
         false;
     if (showBanner) {
+      if (page.data.site['bannerHtml'] case final String bannerHtml
+          when bannerHtml.trim().isNotEmpty) {
+        return DashBanner.inlineHtml(bannerHtml);
+      }
+
       if (page.data['banner'] case final Map<String, Object?> bannerData) {
         return DashBanner(BannerContent.fromMap(bannerData));
       }
@@ -324,7 +340,7 @@ try {
             'eagerness': 'eager',
           },
       ],
-    });
+    }).replaceAll('</', r'<\/');
 
     return [
       RawText('<script type="speculationrules">$rules</script>'),

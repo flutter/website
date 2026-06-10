@@ -7,35 +7,53 @@ content and code in this repository.
 ## Project overview
 
 This repository contains the source code and content for
-the Flutter framework's documentation website.
-It is hosted at `docs.flutter.dev` and shouldn't be confused with
-the marketing site at `flutter.dev` or the API docs at `api.flutter.dev`.
+the Flutter framework's documentation and marketing websites:
 
-The website is statically built and implemented with
+- `docs.flutter.dev`:
+  The Flutter framework's documentation website.
+- `flutter.dev`:
+  Flutter's homepage and marketing website.
+
+The API docs at `api.flutter.dev` are embedded in the Flutter SDK source
+and are maintained in the <https://github.com/flutter/flutter> repository.
+
+The websites are statically built and implemented with
 Dart and the [Jaspr](https://jaspr.site) web framework.
-For loading content, data, and some of its assets,
-it uses [Jaspr Content](https://docs.jaspr.site/content).
+For loading content, data, and some assets,
+they use [Jaspr Content](https://docs.jaspr.site/content).
 
 ### Directory structure
 
-- `src/content/`:
-  Markdown-based documentation pages.
-- `src/data/`:
-  YAML and JSON data files used by the site, such as
-  for the sidenav, glossary, and various indices.
-- `src/_includes/`:
-  Liquid partial files written in Markdown.
+- `sites/`:
+  Top-level directory containing each website maintained in this repository.
+  - `sites/docs/`:
+    The implementation of docs.flutter.dev,
+    written in Dart using Jaspr and Jaspr Content.
+    - `sites/docs/src/content/`:
+      Markdown-based documentation pages.
+    - `sites/docs/src/data/`:
+      YAML and JSON data files used by the site, such as
+      for the sidenav, glossary, and various indices.
+    - `sites/docs/src/_includes/`:
+      Liquid partial files written in Markdown.
+  - `sites/www/`:
+    The implementation of flutter.dev,
+    written in Dart using Jaspr and Jaspr Content.
+    - `sites/www/content/`:
+      Markdown-based marketing pages and structured content.
+    - `sites/www/lib/`:
+      Dart source code for the site.
+    - `sites/www/firebase.json`:
+      Firebase Hosting configuration for flutter.dev.
 - `examples/`:
   A pub workspace containing Dart and Flutter code examples,
-  referenced by code excerpts in the Markdown files.
-- `site/`:
-  The site implementation written in Dart using Jaspr and Jaspr Content.
+  referenced by code excerpts in the docs Markdown files.
 - `tool/dash_site/`:
   CLI tool for site development and maintenance.
 
 ## Common commands
 
-While working on the site,
+While working on these sites,
 you might need to run these commands:
 
 ```bash
@@ -43,13 +61,15 @@ you might need to run these commands:
 dart pub get
 
 # Serve a dev server of the site locally:
-dart run dash_site serve
+dart run dash_site --site=docs serve
+dart run dash_site --site=www serve
 
 # Build a production version of the site:
-dart run dash_site build
+dart run dash_site --site=docs build
+dart run dash_site --site=www build
 
-# Sync code excerpts to Markdown files:
-dart run dash_site refresh-excerpts
+# Sync docs code excerpts to Markdown files:
+dart run dash_site --site=docs refresh-excerpts
 
 # Learn what other commands are available:
 dart run dash_site --help

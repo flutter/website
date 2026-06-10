@@ -7,6 +7,7 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class CheckAllCommand extends Command<int> {
@@ -18,12 +19,16 @@ final class CheckAllCommand extends Command<int> {
 
   @override
   Future<int> run() async {
-    const verificationTasks = [
+    final selectedSite = this.selectedSite;
+    final verificationTasks = [
       ['format-dart', '--check'],
       ['analyze-dart'],
       ['test-dart'],
-      ['refresh-excerpts', '--fail-on-update', '--dry-run'],
+      if (selectedSite.supportsCodeExcerpts)
+        ['refresh-excerpts', '--fail-on-update', '--dry-run'],
     ];
+
+    final siteName = selectedSite.name;
 
     var seenFailure = false;
 
@@ -32,6 +37,7 @@ final class CheckAllCommand extends Command<int> {
       final process = await Process.start(Platform.resolvedExecutable, [
         'run',
         'dash_site',
+        '--$siteOptionName=$siteName',
         ...task,
       ]);
       await stdout.addStream(process.stdout);

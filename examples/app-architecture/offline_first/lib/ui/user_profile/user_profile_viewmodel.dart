@@ -5,8 +5,7 @@ import '../../domain/model/user_profile.dart';
 // #docregion UserProfileViewModel
 class UserProfileViewModel extends ChangeNotifier {
   // #enddocregion UserProfileViewModel
-  UserProfileViewModel({required UserProfileRepository userProfileRepository})
-    : _userProfileRepository = userProfileRepository {
+  UserProfileViewModel({required this._userProfileRepository}) {
     load();
   }
 

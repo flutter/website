@@ -1,0 +1,193 @@
+---
+title: Swift Package Manager for plugin authors
+description: How to add Swift Package Manager compatibility to iOS and macOS plugins
+---
+
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
+:::
+
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+
+For information on how to turn SwiftPM off and on, visit
+[Swift Package Manager for app developers][for-app-devs].
+
+[for-app-devs]: /packages-and-plugins/swift-package-manager/for-app-developers
+
+## How to add Swift Package Manager support to an existing Flutter plugin
+
+This guide shows how to add Swift Package Manager support to a plugin that
+already supports CocoaPods.
+This ensures the plugin is usable by all Flutter projects.
+
+Flutter plugins should support _both_ Swift Package Manager and CocoaPods until
+further notice.
+
+Swift Package Manager adoption will be gradual.
+As of Flutter 3.44, plugins that don't support
+CocoaPods aren't usable by projects that haven't
+migrated to Swift Package Manager yet.
+Plugins that don't support Swift Package Manager
+can cause problems for projects that have migrated.
+Please migrate your plugins as soon as possible.
+
+<Tabs key="darwin-plugin-type">
+<Tab name="Swift plugin">
+
+{% render "docs/swift-package-manager/migrate-swift-plugin.md", site: site %}
+
+</Tab>
+<Tab name="Objective-C plugin">
+
+{% render "docs/swift-package-manager/migrate-objective-c-plugin.md", site: site %}
+
+</Tab>
+</Tabs>
+
+## (Optional, but recommended) Add plugin as local package in example app
+
+If your plugin includes an example,
+it is recommended to add the plugin as a local package in the example app.
+This is not required, but provides better Xcode support when editing
+the plugin's source code in the example app.
+Visit [issue #179032](https://github.com/flutter/flutter/issues/179032).
+
+### Add plugin as local package
+
+1. In a terminal navigate to `my_plugin`.
+
+1. In Xcode, run the following command to open the example app's workspace,
+   (replace `ios` with `macos` as appropriate): 
+
+```bash
+open example/ios/Runner.xcworkspace
+```
+
+1. Right click **Flutter** > **Add Files to “Runner”**.
+
+   ![Add Files to Runner](/assets/images/docs/development/packages-and-plugins/swift-package-manager/add-files-to-runner.png)
+
+1. Select `my_plugin/ios/my_plugin`
+   (or `macos` or `darwin`, as appropriate).
+
+1. Make sure “Reference files in place” is selected
+   (it should be the default), and click **Finish**.
+
+   ![Select Reference files in place](/assets/images/docs/development/packages-and-plugins/swift-package-manager/reference-files-in-place.png)
+
+This adds the plugin as a local package,
+but it's referenced by absolute path,
+which isn't desirable for distribution.
+To change it to a relative path, use the following instructions.
+
+### Change to relative path
+
+1. Copy “Full Path” for plugin from the File Inspector.
+
+   ![Copy Full Path](/assets/images/docs/development/packages-and-plugins/swift-package-manager/copy-full-path.png)
+
+1. In terminal:
+   `open -a Xcode example/ios/Runner.xcodeproj/project.pbxproj`
+
+1. Find the following:
+   ```text
+   path = [COPIED FULL PATH]; sourceTree = "<absolute>"  
+   ```
+
+   For example:
+
+   ```text
+   path = /Users/username/path/to/my_plugin/ios/my_plugin; sourceTree = "<absolute>"
+   ```
+
+1. And replace with relative path:
+
+   ```text
+   path = ../../ios/my_plugin; sourceTree = "<group>"
+   ```
+   (Adjust `ios` to `macos` or `darwin` as needed).
+
+## How to update unit tests in a plugin's example app
+
+If your plugin has native XCTests,
+you might need to update them to work with
+Swift Package Manager if one of the following is true:
+
+* You're using a CocoaPod dependency for the test.
+* Your plugin is explicitly set to `type: .dynamic` in its `Package.swift` file.
+
+To update your unit tests:
+
+1. In Xcode, open your `example/ios/Runner.xcworkspace`.
+
+1. If you were using a CocoaPod dependency for tests, such as `OCMock`,
+   you'll want to remove it from your `Podfile` file.
+
+   ```ruby title="ios/Podfile" diff
+     target 'RunnerTests' do
+       inherit! :search_paths
+
+   -   pod 'OCMock', '3.5'
+     end
+   ```
+
+   Then in the terminal, run `pod install` in the `plugin_name_ios/example/ios`
+   directory.
+
+1. Navigate to **Package Dependencies** for the project.
+
+   <DashImage image="development/packages-and-plugins/swift-package-manager/package-dependencies.png" caption="The project's package dependencies" />
+
+1. Click the **+** button and add any test-only dependencies by searching for
+   them in the top right search bar.
+
+   <DashImage image="development/packages-and-plugins/swift-package-manager/search-for-ocmock.png" caption="Search for test-only dependencies" />
+
+   :::note
+   OCMock uses unsafe build flags and can only be used if targeted by commit.
+   `fe1661a3efed11831a6452f4b1a0c5e6ddc08c3d` is the commit for the 3.9.3
+   version.
+   :::
+
+1. Ensure the dependency is added to the `RunnerTests` Target.
+
+   <DashImage image="development/packages-and-plugins/swift-package-manager/choose-package-products-test.png" caption="Ensure the dependency is added to the `RunnerTests` target" />
+
+1. Click the **Add Package** button.
+
+1. If you've explicitly set your plugin's library type to `.dynamic` in its
+   `Package.swift` file
+   ([not recommended by Apple][library type recommendations]),
+   you'll also need to add it as a dependency to the `RunnerTests` target.
+
+   1. Ensure `RunnerTests` **Build Phases** has a **Link Binary With Libraries**
+      build phase:
+
+      <DashImage image="development/packages-and-plugins/swift-package-manager/runner-tests-link-binary-with-libraries.png" caption="The `Link Binary With Libraries` Build Phase in the `RunnerTests` target" />
+
+      If the build phase doesn't exist already, create one.
+      Click the <Icon id="add" label="plus/add"></Icon> button and
+      then click **New Link Binary With Libraries Phase**.
+
+      <DashImage image="development/packages-and-plugins/swift-package-manager/add-runner-tests-link-binary-with-libraries.png" caption="Add `Link Binary With Libraries` Build Phase" />
+
+   1. Navigate to **Package Dependencies** for the project.
+
+   1. Click the <Icon id="add" label="plus/add"></Icon> button.
+
+   1. In the dialog that opens, click the **Add Local...** button.
+
+   1. Navigate to `plugin_name/plugin_name_ios/ios/plugin_name_ios` and click
+      the **Add Package** button.
+
+   1. Ensure that it's added to the `RunnerTests` target and click the
+      **Add Package** button.
+
+1. Ensure tests pass **Product > Test**.
+
+[library type recommendations]: {{site.apple-dev}}/documentation/packagedescription/product/library(name:type:targets:)

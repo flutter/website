@@ -148,9 +148,8 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
    This command generates and serves the site on a
    local port that's printed to your terminal.
 
-5. View your changes in the browser by navigating to <http://localhost:8080>.
-
-   Note the port might be different if `8080` is taken.
+5. View your changes in the browser by navigating to
+   the local URL printed to your terminal.
 
 6. Make your changes to the local repo.
 
@@ -173,7 +172,7 @@ following the instructions in [Get the prerequisites](#get-the-prerequisites).
 ### Check documentation and example code
 
 If you've made changes to the code in
-the `/examples`, `/site`, or `/tool` directories,
+the `/examples`, `/sites`, or `/tool` directories,
 commit your work, and then run the following command to
 verify that it is up to date and matches site standards.
 

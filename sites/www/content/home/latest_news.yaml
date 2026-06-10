@@ -1,0 +1,54 @@
+# This file contains the source data used to populate the
+# "Latest news" carousel at the bottom of the site homepage.
+#
+# Generally this is reserved for official Dart and Flutter blog posts.
+# If you have some other news or posts you think should be added,
+# please first open an issue with relevant information.
+
+- title: "What's new in Flutter 3.44 and Dart 3.12"
+  url: "https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527"
+  image: "/news/images/featured/Flutter-344.gif"
+
+- title: "What's new in Flutter 3.41 and Dart 3.11"
+  url: "https://blog.flutter.dev/whats-new-in-flutter-3-41-302ec140e632"
+  image: "/news/images/featured/whats-new-flutter-3-41-dart-3-11.png"
+
+- title: "What's new in Flutter 3.35"
+  url: "https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766"
+  image: "/news/images/featured/whats-new-flutter-3-35.png"
+
+- title: "Announcing Dart 3.9"
+  url: "https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298"
+  image: "/news/images/featured/announcing-dart-3-9.png"
+
+- title: "Dart & Flutter momentum at Google I/O 2025"
+  url: "https://blog.flutter.dev/dart-flutter-momentum-at-google-i-o-2025-4863aa4f84a4"
+  image: "/news/images/featured/flutter-at-io-2025.webp"
+
+- title: "What’s new in Flutter 3.32"
+  url: "https://blog.flutter.dev/whats-new-in-flutter-3-32-40c1086bab6e"
+  image: "/news/images/featured/whats-new-flutter-3-32.webp"
+
+- title: "Announcing Dart 3.8"
+  url: "https://blog.dart.dev/announcing-dart-3-8-724eaaec9f47"
+  image: "/news/images/featured/announcing-dart-3-8.png"
+
+- title: "Gemini in Android Studio now speaks fluent Flutter!"
+  url: "https://blog.flutter.dev/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274"
+  image: "/news/images/featured/gemini-android-studio-flutter.png"
+
+- title: "Flutter’s path towards seamless interop"
+  url: "https://blog.flutter.dev/flutters-path-towards-seamless-interop-4bf7d4579d9a"
+  image: "/news/images/featured/flutter_logo.png"
+
+- title: "Announcing Dart 3.7"
+  url: "https://blog.dart.dev/announcing-dart-3-7-bf864a1b195c"
+  image: "/news/images/featured/announcing-dart-3-7.png"
+
+- title: "Sharing Flutter’s 2024 roadmap"
+  url: "https://blog.flutter.dev/sharing-flutters-2024-roadmap-22debd2bbd22"
+  image: "/news/images/featured/flutter-2024-roadmap.png"
+
+- title: "Announcing Flutter 3.38 & Dart 3.10"
+  url: "https://blog.flutter.dev/announcing-flutter-3-38-dart-3-10-building-the-future-of-apps-503429eeb685"
+  image: "/news/images/featured/announcing-flutter-3-38-dart-3-10.png"

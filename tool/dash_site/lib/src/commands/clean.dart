@@ -5,7 +5,9 @@
 import 'dart:io';
 
 import 'package:args/command_runner.dart';
+import 'package:path/path.dart' as path;
 
+import '../sites.dart';
 import '../utils.dart';
 
 final class CleanSiteCommand extends Command<int> {
@@ -21,19 +23,26 @@ final class CleanSiteCommand extends Command<int> {
   Future<int> run() async {
     print('Cleaning the Jaspr setup...');
 
-    installJasprCliIfNecessary();
+    if (installJasprCliIfNecessary() case final jasprInstallResult
+        when jasprInstallResult != 0) {
+      return jasprInstallResult;
+    }
+
+    final selectedSite = this.selectedSite;
 
     final process = await Process.start(
       Platform.resolvedExecutable,
       ['pub', 'global', 'run', 'jaspr_cli:jaspr', 'clean', '--kill'],
-      workingDirectory: 'site',
+      workingDirectory: selectedSite.directory,
       mode: ProcessStartMode.inheritStdio,
     );
 
     final processExitCode = await process.exitCode;
 
     print('Cleaning the site output directory...');
-    final outputDirectory = Directory(siteOutputDirectoryPath);
+    final outputDirectory = Directory(
+      path.join(repositoryRoot, selectedSite.buildOutputDirectory),
+    );
     if (outputDirectory.existsSync()) {
       outputDirectory.deleteSync(recursive: true);
     }
