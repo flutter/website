@@ -73,8 +73,9 @@ abstract class DashLayout implements PageLayout {
     final canonicalUrl = pageData['canonical'] as String?;
 
     return [
-      Component.element(tag: 'title', children: [Component.text(windowTitle)]),
-      meta(name: 'description', content: pageDescription),
+      Component.element(tag: 'title', children: [.text(windowTitle)]),
+      if (pageDescription case final String desc)
+        meta(name: 'description', content: desc),
 
       // URL
       if (pageData['noindex'] case final noIndex?

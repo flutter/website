@@ -43,6 +43,6 @@ The primary aims of this shared package are to:
 1.  Streamline styling and standardize UI component implementation
     across our various websites.
 1.  Prevent code duplication between the
-    `dart-lang/site-wwww` and `flutter/website` repositories.
+    `dart-lang/site-www` and `flutter/website` repositories.
 1.  Establish a robust codebase that can be
     updated, maintained, and improved in a unified way.
