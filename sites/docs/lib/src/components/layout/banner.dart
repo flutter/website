@@ -17,8 +17,8 @@ final class BannerContent {
 
   /// Creates banner content from the parsed [bannerData].
   ///
-  /// The [bannerData] list is expected to
-  /// contain `text` or `link` entries from `src/data/banner.yml`.
+  /// The [bannerData] list is expected to contain
+  /// `text`, `link`, or `newLine` entries from `src/data/banner.yml`.
   ///
   /// Throws if any entry has an unsupported structure.
   factory BannerContent.fromList(List<Object?> bannerData) => BannerContent(
@@ -31,6 +31,7 @@ final class BannerContent {
             url: link['url'] as String,
             newTab: link['newTab'] as bool? ?? false,
           ),
+          {'newLine': _} => const .newLine(),
           _ => throw FormatException('Invalid banner item: $item'),
         },
     ],
@@ -43,10 +44,10 @@ sealed class BannerPart {
   /// Creates a banner content part.
   const BannerPart();
 
-  /// Creates a [_BannerText] part with the specified [text].
+  /// Creates a text part with the specified [text].
   const factory BannerPart.text(String text) = _BannerText;
 
-  /// Creates a [_BannerLink] part with the specified [text] and [url].
+  /// Creates a link part with the specified [text] and [url].
   ///
   /// Unless [newTab] is `true`, the link opens in the same tab.
   const factory BannerPart.link({
@@ -54,6 +55,9 @@ sealed class BannerPart {
     required String url,
     bool newTab,
   }) = _BannerLink;
+
+  /// Creates a new line part that renders a line break.
+  const factory BannerPart.newLine() = _BannerNewLine;
 }
 
 /// Plain text within a site banner.
@@ -86,6 +90,12 @@ final class _BannerLink extends BannerPart {
   final bool newTab;
 }
 
+/// A line break within a site banner.
+final class _BannerNewLine extends BannerPart {
+  /// Creates a line break banner part.
+  const _BannerNewLine();
+}
+
 /// A site-wide banner rendered from structured content.
 class DashBanner extends StatelessComponent {
   /// Creates a site banner that displays the specified [content].
@@ -109,6 +119,7 @@ class DashBanner extends StatelessComponent {
               attributes: newTab ? const {'rel': 'noopener'} : null,
               [.text(text)],
             ),
+            _BannerNewLine() => const br(),
           },
       ]),
     ],
