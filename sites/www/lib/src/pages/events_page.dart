@@ -100,10 +100,10 @@ class EventsPage extends StatelessComponent {
       CalendarEvent.fromJson,
     );
 
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
+    final now = DateTime.now().toUtc();
+    final today = DateTime.utc(now.year, now.month, now.day);
     final events = rawEvents
-        .where((event) => !event.date.isBefore(today))
+        .where((event) => !DateTime.utc(event.date.year, event.date.month, event.date.day).isBefore(today))
         .toList();
 
     return section(id: 'stories', [
