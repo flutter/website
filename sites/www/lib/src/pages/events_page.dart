@@ -95,10 +95,16 @@ class EventsPage extends StatelessComponent {
   }
 
   Component _buildStoriesSection(BuildContext context) {
-    final events = context.decodeJsonList(
+    final rawEvents = context.decodeJsonList(
       'events.data.calendar',
       CalendarEvent.fromJson,
     );
+
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final events = rawEvents
+        .where((event) => !event.date.isBefore(today))
+        .toList();
 
     return section(id: 'stories', [
       EventsGrid(
