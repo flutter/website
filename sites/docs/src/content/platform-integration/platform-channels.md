@@ -1,7 +1,7 @@
 ---
-title: Writing custom platform-specific code
-shortTitle: Platform-specific code
-description: Learn how to write custom platform-specific code in your app.
+title: Using message passing to execute platform-specific code
+shortTitle: Platform-channel code
+description: Learn how to use platform channels in your app.
 ---
 
 <?code-excerpt path-base="platform_integration"?>
