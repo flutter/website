@@ -1,200 +1,176 @@
 ---
-title: "Calling Native APIs with jnigen"
-description: "Use an Android API directly from Flutter code"
+title: "Calling Android APIs using jnigen"
+description: "Learn how to use auto-generated Dart bindings to call native Android APIs directly from your Flutter plugins."
 ---
 
 ## Overview
 
-`jnigen` stands for Java Native Interface GENeration. It is a means for 
-calling native Java and Kotlin (JVM) code from Dart. It builds upon the FFI (Foreign Function Interface) package that C-based languages use. 
+In traditional Flutter development,
+calling native Android platform APIs requires mapping asynchronous message channels
+(using `MethodChannel` or `BasicMessageChannel`),
+writing Kotlin or Java host-side listeners,
+and manually serializing and deserializing types.
 
-## How It Works 
+With direct native interop using `jnigen` (Java Native Interface Generation),
+this process is simplified:
+1. **Configure**: Write a generation configuration script
+   pointing to the Android SDK or third-party classes you need.
+2. **Generate**: Run the generation package
+   to analyze native classes and compile a type-safe Dart API bridge.
+3. **Call directly**: Call Java/Kotlin code synchronously (where applicable)
+   and type-safely in your Dart code.
 
-Before we can use a native interop call in an application, we need to do a little setup. 
+![jnigen tooling flow chart](/assets/images/android/jnigen-flow.svg){:width="100%"}
 
-The APISummarizer is a tool that reads source and bytecode to determine which classes and functions are present. The abstract syntax tree defining the desired classes is read to create Dart versions with modifications to account for the differences between the Java platform and Dart.
+This tutorial guides you through building a Flutter plugin called `native_toast`
+that interacts directly with Android's system `Toast` messages
+without manually writing any Kotlin code.
 
+---
 
-<img src='/assets/images/android/jni-call-lifecycle-light.png' class="text-center diagram-wrap" alt="Node tree">
+## Step 1: Create a plugin and add dependencies
 
-
-
-:::warning
-There is an alternate method of specifying generation output using a `jnigen.yaml` file.
-That method is considered deprecated.
-:::
-
-
-### Step 1: Create a new app project
-
-### Step 2: Add `jni` and `jnigen` as dependencies 
-
-```sh
-dart pub add jni
-dart pub add jnigen --dev
-```
-
-To make sure that Android OS APIs and whatever dependencies are available to `jnigen`, run the following to build
-an Android apk of the application.
+First, create a new Flutter plugin template focused on the Android platform.
 
 ```sh
-flutter build apk
+flutter create --template=plugin --platforms=android native_toast
+cd native_toast
 ```
 
-### Step 3: Set configuration of Dart bindings
-There is a Dart API in `jnigen` to specify the properties your generated should have. You will create
-a Dart file. `tool/jnigen.dart` is the convention but you can create it anywhere. The file needs at
-minimum a single function call to `generateJniBindings` that accepts a `Config` object as a parameter.
+Now, add the mandatory runtime bindings package (`jni`),
+the Flutter hooks integration wrapper (`jni_flutter`),
+and the developer-facing generator tool (`jnigen`) as a dev dependency:
 
-Here is a minimal configuration file. 
+```sh
+flutter pub add jni jni_flutter
+flutter pub add dev:jnigen
+```
+
+---
+
+## Step 2: Create the generation config script
+
+Create a configuration script that details which native classes `jnigen`
+needs to generate Dart models for.
+
+Specify `tool/jnigen.dart` at the root of your plugin directory:
+
+```sh
+mkdir -p tool
+touch tool/jnigen.dart
+```
+
+Add the following configuration code to `tool/jnigen.dart`:
 
 ```dart
 import 'dart:io';
-
 import 'package:jnigen/jnigen.dart';
 
 void main(List<String> args) {
   final packageRoot = Platform.script.resolve('../');
+
   generateJniBindings(
     Config(
       outputConfig: OutputConfig(
         dartConfig: DartCodeOutputConfig(
-          path: packageRoot.resolve('lib/gen/'),
-          structure: OutputStructure.packageStructure,
-        ),
-      ),
-      classes: [
-        // Core Java classes are generally available
-        // like java.util.ArrayList, etc
-        
-        // Android OS classes are also available
-        // provided `flutter build apk` is run 
-        // before this function
-        
-        // 'java.util.ArrayList',
-        // 'android.widget.Toast',
-      ],
-    ),
-  );
-
-
-```
-
-The `Config` object is a Dart API for specifying:
-
-* the location of developer-created source code,
-* the final location of the generated Dart code,
-* dependencies to download from online repositories, and,
-* specifics of the Android version to build against.
-
-```dart
-Config({
-    required OutputConfig outputConfig,
-    required List<String> classes, 
-    Set<Experiment?>? experiments, 
-    List<Uri>? sourcePath,
-    List<Uri>? classPath,
-    String? preamble,
-    Map<String, String>? customClassBody, 
-    AndroidSdkConfig? androidSdkConfig, 
-    MavenDownloads? mavenDownloads, 
-    SummarizerOptions? summarizerOptions, 
-    List<String>? nonNullAnnotations, 
-    List<String>? nullableAnnotations, 
-    Level logLevel = Level.INFO,
-    String? dumpJsonTo, 
-    List<Uri>? imports, 
-    List<Visitor>? visitors
-})
-```
-
-Here is the final configuration file to generate Dart bindings to show an Android `Toast` message.
-
-```dart
-import 'dart:io';
-
-import 'package:jnigen/jnigen.dart';
-
-void main(List<String> args) {
-  final packageRoot = Platform.script.resolve('../');
-  generateJniBindings(
-    Config(
-      outputConfig: OutputConfig(
-        dartConfig: DartCodeOutputConfig(
-          path: packageRoot.resolve('lib/gen/android.g.dart'),
+          path: packageRoot.resolve('lib/src/generated/android_os.g.dart'),
           structure: OutputStructure.singleFile,
         ),
       ),
-      androidSdkConfig: AndroidSdkConfig(addGradleDeps: true),
+      // Automatically resolves your Android SDK path and evaluates the
+      // example app's build setup to acquire required platform dependencies.
+      androidSdkConfig: AndroidSdkConfig(
+        addGradleDeps: true,
+        androidExample: 'example/',
+      ),
       classes: [
-        'android.widget.Toast', // provided by Android OS
+        'android.widget.Toast',
+        'android.os.Vibrator',
+        'android.content.Context',
       ],
     ),
   );
 }
-
 ```
+---
 
-Finally, run
+## Step 3: Run the code generator
+
+Run the code generation script to compile your bindings:
 
 ```sh
-dart tool/jnigen.dart
+dart run tool/jnigen.dart
 ```
 
+Once execution completes,
+`jnigen` creates a type-safe bridge inside `lib/src/generated/android_os.g.dart`.
 
-### Step 4: Call Dart bindings
+---
 
-```dart
-// Retrieves an Android context to pass with native calls
-JObject context = Jni.androidApplicationContext;
+## Step 4: Implement the user-facing plugin API
 
-/// Display DateTime retrieved from Dart
-void showToast() {
-  final message = 'The time is now ${DateTime.now()}';
+Now, build a clean, developer-facing API
+that imports the generated interop bindings
+and abstracts away the JNI details.
 
-// Corresponds  to this second signature
-// public static Toast makeText (Context context,
-//              CharSequence text,
-//                int duration)
-// First one uses R namespace resources
-  Toast.makeText$1(context, message.toJString(), Toast.LENGTH_LONG)!.show();
-}
-```
-
-Here is the full `main.dart` file.
-
-:::note
-Java/Kotlin and Dart differ on support of overloaded functions, that's to say functions that use the same
-name but differ on return type, parameter type, or number of parameters.
-
-To compensate for this, when Dart bindings are built, overloaded functions take the form of 
-`functionName$<number>`. At present, they are parsed in the order that they appear in the files
-so there might not be a correlation between number and type of parameters and the eventual Dart identifier.
-:::
+Replace the contents of `lib/native_toast.dart` with the following implementation:
 
 ```dart
-
-import 'package:android_toast_demo/gen/android/os/_package.dart';
-import 'package:android_toast_demo/gen/android/widget/_package.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:jni/jni.dart';
+import 'package:jni_flutter/jni_flutter.dart';
+import 'src/generated/android_os.g.dart' as native;
 
+class NativeToast {
+  // Extracts the live Android OS context handle and casts it to our generated class
+  final native.Context _context = androidApplicationContext.as(native.Context.type);
 
-JObject context = Jni.androidApplicationContext;
-
-
-/// Display DateTime retrieved from Dart
-void showToast() {
-  final message = 'The time is now ${DateTime.now()}';
-
-// Corresponds  to this second signature
-// public static Toast makeText (Context context,
-//              CharSequence text,
-//                int duration)
-// First one uses R namespace resources
-  Toast.makeText$1(context, message.toJString(), Toast.LENGTH_LONG)!.show();
+  void showToast(String message) {
+    // 1. Convert the Dart String into a native Java JString reference pointer
+    final jMessage = message.toJString();
+    
+    // 2. Call the overloaded constructor generated by jnigen
+    final toast = native.Toast.makeText$1(
+      _context, 
+      jMessage, 
+      native.Toast.LENGTH_SHORT,
+    );
+    
+    // 3. Trigger the standard Android System layout service
+    toast!.show();
+    
+    // 4. Release the native JNI allocation pointer to prevent memory leaks
+    jMessage.release();
+  }
 }
+```
+
+### Understanding overloaded method mappings
+
+Java and Kotlin support method overloading (methods with the same name
+that differ by parameter count or types).
+Since Dart does not support method overloading,
+`jnigen` appends a dollar suffix (such as `$1` or `$2`)
+to disambiguate the generated Dart signatures in the order they are resolved.
+
+For example, `Toast.makeText` has two distinct signatures in Android:
+* `Toast.makeText(Context context, int resId, int duration)`
+* `Toast.makeText(Context context, CharSequence text, int duration)`
+
+In Dart, these are mapped respectively to:
+* `Toast.makeText(...)` (Default / first signature)
+* `Toast.makeText$1(...)` (Second signature, which accepts a string-mapped `CharSequence`)
+
+---
+
+## Step 5: Test in the example app
+
+Verify the plugin within the automatically generated sandbox project under `example/`.
+
+Replace the contents of `example/lib/main.dart` with:
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:native_toast/native_toast.dart';
 
 void main() {
   runApp(const MyApp());
@@ -206,35 +182,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.teal),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              child: const Text('Show Time'),
-              onPressed: () => showToast(),
-            ),
-          ],
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Modern Native Toast Demo'),
+          backgroundColor: Colors.teal,
+        ),
+        body: Center(
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.teal),
+            onPressed: () {
+              // Instantiate our type-safe plugin wrapper class
+              final toastPlugin = NativeToast();
+              
+              // Call the direct Android API wrapper
+              toastPlugin.showToast('Hello from Dart JNI Extension Types!');
+            },
+            child: const Text('Trigger Native Toast', style: TextStyle(color: Colors.white)),
+          ),
         ),
       ),
     );
   }
 }
-
 ```
+
+Connect an Android emulator or device,
+change into the example folder,
+and run:
+
+```sh
+cd example
+flutter run
+```
+
+Once the application launches,
+tap **Trigger Native Toast** to verify the system toast display:
+
+![JNI Toast Success Screenshot](/assets/images/android/jnigen-success.png){:width="300px" style="display: block; margin: 0 auto;"}

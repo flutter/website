@@ -6,51 +6,79 @@ description: Learn how about the options to call platform specific code in your 
 
 ## Overview
 
-You have a number of options to use platform-specific code 
-in your Dart and Flutter apps from low level options that 
-require a deep knowledge of Dart and the host language to
-high level options that allow you to use a high level API 
-to abstract some of the native bits away. They are:
+Flutter and Dart provide multiple options for using platform-specific code
+to access system APIs or leverage existing native SDKs.
+These options range from low-level direct interop
+requiring knowledge of Dart and the host language,
+to high-level messaging paradigms
+that abstract the details of the host platform.
 
-* Direct native interop using FFI or JNI
+## Plugins
 
-This method involves an additional step to generate code
-bindings from the host platform language into Dart. 
+We recommend checking [pub.dev](https://pub.dev) first
+to see if a package or plugin already exists.
+Using an existing plugin saves time, effort, and boilerplate.
+If no plugin exists,
+you can build a custom solution using one of the following approaches.
 
-* Self-managed platform channels
+## Custom solutions
 
-This method involves using a plugin that hosts native code
-which is executed asynchronously through message passing 
-from Dart to iOS/Android and back.
+If a package does not support your desired feature on pub.dev,
+or if you have custom integration requirements,
+you can write platform-specific code.
 
-* Type-safe platform channels via Pigeon
+Dart and Flutter support two primary architectures for custom integrations.
 
-With regular method channels, one must manage type safety 
-and object serialization on their own. With Pigeon, the 
-message contents are managed as well as giving the developer
-a level of control over the generated Dart API. It is best
-seen as a superset of regular platform channels. 
+:::note 
+Neither solution below is inherently better or worse than existing plugins,
+because all plugins use one of the following two options. 
+:::
 
-* Or some combination of the above.
+### Direct native interop (FFI or JNI)
 
+Direct native interop executes synchronously directly in memory.
+This approach compiles the binding into your Dart executable
+and executes native code on the UI thread.
 
-## Which should I use?
+To create compilation bindings automatically,
+use generator tools like [`ffigen`](https://pub.dev/packages/ffigen)
+(for C, Objective-C, and Swift)
+or [`jnigen`](https://pub.dev/packages/jnigen) (for Java and Kotlin on Android).
 
-There are a lot of considerations that may determine which to 
-use including familiarity with the language the native OS is
-written in, comfort with low-level considerations like memory 
-management, and the breadth of the underlying API surface you 
-would like to implement.
+For advanced or custom cases where automated generators do not fit,
+you can write manual binding code using `dart:ffi`.
 
-*I need to access a few native-code functions.*
+### Method channels
 
-Use `ffi/jnigen`. Making a discrete plugin for a single function
-on a single class would be overkill.
+Message passing uses asynchronous communication
+that serializes data across a platform bridge.
 
-*I need to implement the same interface on iOS and Android.*
+We recommend using [`pigeon`](https://pub.dev/packages/pigeon)
+to generate structured, type-safe channel code
+and handle serialization automatically.
 
-Use `pigeon`. 
+If Pigeon does not support your use case,
+you can write manual `MethodChannel` code
+to serialize and pass data yourself.
 
-*I need to re-implement a full native API in Dart.*
+---
 
-Consider `pigeon` augmented by `ffi/jnigen`.
+## Choose an approach
+
+Selecting an approach depends on your familiarity with the host languages,
+comfort with low-level details (like memory management),
+and the layout of the API you want to cover.
+
+### I need to access a few native-code functions
+
+Use **direct native interop** (`ffigen` or `jnigen`).
+Creating a complete plugin wrapper for a few discrete functions
+introduces unnecessary overhead.
+
+### I need to implement the same interface on iOS and Android
+
+Use **type-safe platform channels** with `pigeon`.
+
+### I need to re-implement a full native API in Dart
+
+Consider using **Pigeon** augmented by **`ffigen`/`jnigen`**.
