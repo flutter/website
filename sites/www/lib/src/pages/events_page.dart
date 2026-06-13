@@ -109,8 +109,14 @@ class EventsPage extends StatelessComponent {
     final now = DateTime.now().toUtc();
     final cutoff = DateTime.utc(now.year, now.month, now.day - visibleAfterDays);
     final events = rawEvents
-        .where((event) => !DateTime.utc(event.date.year, event.date.month, event.date.day).isBefore(today))
-        .toList();
+        .where(
+          (event) => !DateTime.utc(
+            event.date.year,
+            event.date.month,
+            event.date.day,
+          ).isBefore(today),
+        )
+        .toList(growable: false);
 
     return section(id: 'stories', [
       EventsGrid(
