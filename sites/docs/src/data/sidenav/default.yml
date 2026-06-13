@@ -409,6 +409,8 @@
           permalink: /platform-integration/ios/ios-latest
         - title: Leverage Apple's system libraries
           permalink: /platform-integration/ios/apple-frameworks
+        - title: Use ffigen to use Apple APIs (new)
+          permalink: /platform-integration/ios/ffigen
         - title: Add a launch screen
           permalink: /platform-integration/ios/launch-screen
         - title: Add iOS App Clip support
