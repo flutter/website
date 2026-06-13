@@ -173,7 +173,7 @@
       { "source": "/packages-and-plugins/plugin-api-migration", "destination": "/release/breaking-changes/plugin-api-migration", "type": 301 },
       { "source": "/platform-integration/android/androidx-migration", "destination": "/release/breaking-changes/androidx-migration", "type": 301 },
       { "source": "/platform-integration/android/c-interop", "destination": "/platform-integration/legacy-ffi-plugin", "type": 301 },
-      { "source": "/platform-integration/android/call-jetpack-apis", "destination": "/platform-integration/android/jnigen"},
+        { "source": "/platform-integration/android/call-jetpack-apis", "destination": "/platform-integration/android/jnigen", "type": 301},
       { "source": "/platform-integration/android/install-android", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/install-android/:rest*", "destination": "/platform-integration/android/setup", "type": 301 },
       { "source": "/platform-integration/android/splash-screen-migration", "destination": "/release/breaking-changes/splash-screen-migration", "type": 301 },
