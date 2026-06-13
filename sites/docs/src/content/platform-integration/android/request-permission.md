@@ -193,7 +193,8 @@ _permissionsPlugin.checkAndRequestPermission(
         ),
       ),
     );
-  
+  }
+}
 ```
 
 [this plugin]: https://github.com/flutter/demos/tree/main/native_interop_demos/permissions_plugin
