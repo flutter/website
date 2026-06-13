@@ -133,9 +133,9 @@ Learn how to add custom integrations with Android to your Flutter app.
       <p>Learn how to add the predictive back gesture to your app on Android.</p>
     </div>
   </a>
-  <a class="card outlined-card" href="/platform-integration/android/call-jetpack-apis">
+  <a class="card outlined-card" href="/platform-integration/android/jnigen">
     <div class="card-header">
-      <span class="card-title">Call JetPack APIs</span>
+      <span class="card-title">Call Android APIs</span>
     </div>
     <div class="card-content">
       <p>Learn how the latest Android APIs in your app from Dart.</p>
