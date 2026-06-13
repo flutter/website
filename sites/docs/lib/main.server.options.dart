@@ -169,7 +169,12 @@ Map<String, Object?> __feedbackFeedbackComponent(
 ) => {'issueUrl': c.issueUrl};
 Map<String, Object?> __page_header_optionsPageHeaderOptions(
   _page_header_options.PageHeaderOptions c,
-) => {'title': c.title, 'sourceUrl': c.sourceUrl, 'issueUrl': c.issueUrl};
+) => {
+  'title': c.title,
+  'sourceUrl': c.sourceUrl,
+  'issueUrl': c.issueUrl,
+  'showCopyPage': c.showCopyPage,
+};
 Map<String, Object?> __simple_tooltipSimpleTooltip(
   _simple_tooltip.SimpleTooltip c,
 ) => {'target': c.target.toId(), 'content': c.content.toId()};

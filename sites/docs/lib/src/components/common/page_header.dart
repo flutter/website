@@ -19,12 +19,14 @@ final class PageHeader extends StatelessComponent {
     this.description,
     this.wrap = true,
     this.showBreadcrumbs = true,
+    this.showCopyPage = true,
   });
 
   final String title;
   final String? description;
   final bool wrap;
   final bool showBreadcrumbs;
+  final bool showCopyPage;
 
   @override
   Component build(BuildContext context) {
@@ -49,6 +51,7 @@ final class PageHeader extends StatelessComponent {
           title: title,
           sourceUrl: sourceInfo.sourceUrl,
           issueUrl: sourceInfo.issueUrl,
+          showCopyPage: showCopyPage,
         ),
       ],
     );

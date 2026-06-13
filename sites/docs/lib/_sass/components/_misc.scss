@@ -1,3 +1,23 @@
+.copy-page-toast {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--site-primary-color, #0175c2);
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--site-radius, 0.5rem);
+  font-size: 0.9rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: copy-page-toast-in 0.2s ease;
+}
+
+@keyframes copy-page-toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(0.5rem); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
 #page-content p.install-help {
   text-align: right;
   margin-block-start: -2.5rem;
