@@ -69,12 +69,16 @@ class PermissionsPlugin {
 
   //
   bool checkPermission(JObject context, String permission) {
-    // Returns a simple true or false if the permission has been granted
-    var result = ContextCompat.checkSelfPermission(
-      context,
-      permission.toJString(),
-    );
-    return result == PackageManager.PERMISSION_GRANTED ? true : false;
+    final jPermission = permission.toJString();
+    try {
+      final result = ContextCompat.checkSelfPermission(
+        context,
+        jPermission,
+      );
+      return result == PackageManager.PERMISSION_GRANTED;
+    } finally {
+      jPermission.release();
+    }
   }
 
   int checkAndRequestPermission(
