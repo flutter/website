@@ -59,7 +59,7 @@ class _CopyButtonState extends State<CopyButton> {
             }
           }
 
-          // Remove zero-width spaces
+          // Remove zero-width spaces.
           final extracted = codeElement.textContent?.replaceAll('\u200B', '');
 
           assert(

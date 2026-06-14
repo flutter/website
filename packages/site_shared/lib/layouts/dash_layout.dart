@@ -135,7 +135,7 @@ abstract class DashLayout implements PageLayout {
         },
       ),
 
-      // Set site fonts.
+      // Set site fonts and related preconnection information.
       const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
       const link(
         rel: 'preconnect',
