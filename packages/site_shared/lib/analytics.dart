@@ -2,19 +2,18 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:meta/meta.dart';
-
 import 'src/analytics/analytics_server.dart'
     if (dart.library.js_interop) 'src/analytics/analytics_web.dart';
 
 /// Used to report analytic events.
-final analytics = AnalyticsImplementation();
+final Analytics analytics = AnalyticsImplementation();
 
-/// Contains methods for reporting analytics events.
+/// Used for reporting analytics events.
 abstract class Analytics {
-  @protected
+  /// Reports an event named [eventName], along with the specified [parameters].
   void sendEvent(String eventName, Map<String, Object?> parameters);
 
+  /// Reports whether the user found the current page [helpful].
   void sendFeedback(bool helpful) {
     sendEvent('feedback', {'feedback_type': helpful ? 'up' : 'down'});
   }
