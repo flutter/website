@@ -149,7 +149,8 @@ abstract class DashLayout implements PageLayout {
       // Styles
       link(
         rel: 'stylesheet',
-        href: '/assets/css/main.css?hash=${htmlEscape.convert(stylesHash)}',
+        href:
+            '/assets/css/main.css?hash=${Uri.encodeQueryComponent(stylesHash)}',
       ),
 
       if (pageData['js'] case final List<Object?> jsList)
