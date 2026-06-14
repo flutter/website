@@ -23,7 +23,8 @@ dependencies:
   opal: ^0.2.2
   path: ^1.9.1
   pub_semver: ^2.2.0
-  site_shared: any
+  site_shared:
+    path: ../../packages/site_shared
   universal_web: ^1.1.1+1
   yaml: ^3.1.3
 

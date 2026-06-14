@@ -77,7 +77,7 @@ abstract class DashLayout implements PageLayout {
       if (pageDescription case final String desc)
         meta(name: 'description', content: desc),
 
-      // URL
+      // Set indexing and canonical URL configuration.
       if (pageData['noindex'] case final noIndex?
           when noIndex == true || noIndex == 'true')
         const meta(name: 'robots', content: 'noindex'),
@@ -87,7 +87,7 @@ abstract class DashLayout implements PageLayout {
           when redirectTo.isNotEmpty)
         RawText('<script>window.location.replace("$redirectTo");</script>'),
 
-      // Icons
+      // Set site icons.
       link(rel: 'icon', href: iconUrl, attributes: {'sizes': '64x64'}),
       link(rel: 'apple-touch-icon', href: iconUrlApple),
       if (iconUrlApple152 case final url?)
@@ -109,7 +109,7 @@ abstract class DashLayout implements PageLayout {
           attributes: {'sizes': '167x167'},
         ),
 
-      // Social
+      // Set social media metadata.
       meta(
         name: 'twitter:card',
         content: pageImage != null ? 'summary_large_image' : 'summary',
@@ -137,7 +137,7 @@ abstract class DashLayout implements PageLayout {
         },
       ),
 
-      // Fonts
+      // Set site fonts.
       const link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
       const link(
         rel: 'preconnect',
@@ -146,13 +146,14 @@ abstract class DashLayout implements PageLayout {
       ),
       for (final font in fonts) link(rel: 'stylesheet', href: font),
 
-      // Styles
+      // Set site styles.
       link(
         rel: 'stylesheet',
         href:
             '/assets/css/main.css?hash=${Uri.encodeQueryComponent(stylesHash)}',
       ),
 
+      // Set site scripts.
       if (pageData['js'] case final List<Object?> jsList)
         for (final js in jsList)
           if (js case {'url': final String jsUrl, 'defer': final Object? defer})
@@ -173,7 +174,7 @@ abstract class DashLayout implements PageLayout {
         },
       ),
 
-      // Tag Manager and Analytics
+      // Set up tag manager and analytics.
       if (productionBuild) ...[
         const script(content: 'window.dataLayer = window.dataLayer || [];'),
         script(

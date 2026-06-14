@@ -34,8 +34,8 @@ class _CopyButtonState extends State<CopyButton> {
   @override
   void initState() {
     if (kIsWeb) {
-      if (component.toCopy != null) {
-        content = component.toCopy;
+      if (component.toCopy case final contentToCopy?) {
+        content = contentToCopy;
       } else {
         // Extract the code content and unhide the copy button on the client.
         context.binding.addPostFrameCallback(() {
