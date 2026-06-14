@@ -19,14 +19,18 @@ class ProgressRing extends CustomComponentBase {
     Map<String, String> attributes,
     Component? child,
   ) {
-    final progress = double.tryParse(attributes['progress'] ?? '') ?? 0.0;
+    final progress = double.tryParse(attributes['progress'] ?? '') ?? 0;
     assert(
-      progress >= 0.0 && progress <= 1.0,
+      progress >= 0 && progress <= 1,
       'ProgressRing progress must be between 0.0 and 1.0',
     );
 
     final small = attributes['small'] != null;
     final large = attributes['large'] != null;
+    assert(
+      !small || !large,
+      'ProgressRing can\'t be both small and large',
+    );
 
     return InteractiveProgressRing(
       progress: progress,
