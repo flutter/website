@@ -7,11 +7,10 @@ export 'src/utils/slugify.dart';
 /// Whether this build of the site will be deployed to production.
 const bool productionBuild = .fromEnvironment('PRODUCTION');
 
-final RegExp _attributePattern = RegExp(r'(\w+)="([^"]*)"');
-final RegExp _whitespacePattern = RegExp(r'\s+');
-final RegExp _wordPattern = RegExp(r'\S+(?:\s*|$)');
-final RegExp _trailingMarkdownLinkPattern = RegExp(r'(\[.+\]:\s*\S+\s*)+$');
-
+/// Parses attribute tokens from [attributeString] into HTML attributes.
+///
+/// Supports IDs (`#id`), classes (`.class`), and `key="value"` pairs,
+/// joining multiple classes into a single space-separated `class` value.
 Map<String, String> parseAttributes(String attributeString) {
   final attributes = <String, String>{};
   final classes = <String>[];
@@ -47,6 +46,17 @@ Map<String, String> parseAttributes(String attributeString) {
   return attributes;
 }
 
+final RegExp _attributePattern = RegExp(r'(\w+)="([^"]*)"');
+final RegExp _whitespacePattern = RegExp(r'\s+');
+final RegExp _wordPattern = RegExp(r'\S+(?:\s*|$)');
+final RegExp _trailingMarkdownLinkPattern = RegExp(r'(\[.+\]:\s*\S+\s*)+$');
+
+/// Truncates the specified [text] to the specified number of words [maxWords].
+///
+/// Leaves already-short text unchanged and
+/// appends `...` after normalizing retained word spacing.
+///
+/// Returns an empty string when [maxWords] is non-positive.
 String truncateWords(String text, int maxWords) {
   if (maxWords <= 0) {
     return '';
@@ -70,11 +80,13 @@ String truncateWordsMarkdown(String text, int maxWords) {
   }
 
   final trailingLinks = _trailingMarkdownLinkPattern.firstMatch(text);
-  var endContent = '';
+  final String endContent;
 
   if (trailingLinks != null) {
     text = text.substring(0, trailingLinks.start);
     endContent = '\n${trailingLinks.group(0)!}';
+  } else {
+    endContent = '';
   }
 
   final matches = _wordPattern.allMatches(text);
@@ -87,6 +99,7 @@ String truncateWordsMarkdown(String text, int maxWords) {
 }
 
 extension StringUnCapitalize on String {
+  /// Returns a new string with the first character converted to lowercase.
   String unCapitalize() =>
       isEmpty ? this : substring(0, 1).toLowerCase() + substring(1);
 }
