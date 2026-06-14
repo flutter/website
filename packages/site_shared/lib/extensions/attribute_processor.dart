@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr_content/jaspr_content.dart';
+
 import '../src/markdown/attribute_syntax.dart';
 
 /// A node-processing, page extension for Jaspr Content that looks for

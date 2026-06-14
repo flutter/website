@@ -3,7 +3,6 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-
 import 'package:universal_web/web.dart' as web;
 
 import '../button.dart';
