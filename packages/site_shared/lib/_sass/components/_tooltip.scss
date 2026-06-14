@@ -44,7 +44,7 @@
   }
 
   // On non-touch devices, show tooltip on hover or focus.
-  @media all and not (pointer: coarse) {
+  @media all and (not (pointer: coarse)) {
     &:hover .tooltip {
       visibility: visible;
     }
