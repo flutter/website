@@ -21,8 +21,7 @@ enum ResourceType {
   video,
   code,
   diagnostic,
-  external
-  ;
+  external;
 
   /// The ID of the material symbol icon associated with each resource type.
   String get icon => switch (this) {
