@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
-import 'package:site_shared/web_platform.dart';
+import 'package:site_shared/web_util.dart';
 import 'package:universal_web/js_interop.dart';
 import 'package:universal_web/web.dart' as web;
 

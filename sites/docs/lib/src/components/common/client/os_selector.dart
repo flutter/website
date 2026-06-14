@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:site_shared/util.dart';
-import 'package:site_shared/web_platform.dart';
+import 'package:site_shared/web_util.dart';
 import 'package:universal_web/web.dart' as web;
 
 @client
