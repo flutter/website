@@ -42,6 +42,8 @@ abstract class FlutterDocsLayout extends DashLayout {
   @override
   String get stylesHash => generatedStylesHash;
 
+  String get defaultSidenav => 'default';
+
   @override
   Iterable<Component> buildExtraHead(Page page) {
     return const [

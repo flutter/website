@@ -21,8 +21,6 @@ abstract class DashLayout implements PageLayout {
 
   List<String> get defaultBodyClasses => [];
 
-  String get defaultSidenav => 'default';
-
   String? get titleBase => null;
   String get siteHost;
   bool get cookieNoticeDarkMode => false;

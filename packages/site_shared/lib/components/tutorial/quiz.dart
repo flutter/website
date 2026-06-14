@@ -52,7 +52,7 @@ class Quiz extends CustomComponent {
     final data = loadYamlNode(content);
     assert(data is YamlList, 'Invalid Quiz content. Expected a YAML list.');
     final questions = (data as YamlList).nodes
-        .map((n) => Question.fromMap(n as YamlMap))
+        .map((n) => _parseQuestion(n as YamlMap))
         .toList();
     assert(questions.isNotEmpty, 'Quiz must contain at least one question.');
     return InteractiveQuiz(title: title, questions: questions);

@@ -15,9 +15,11 @@ import '../../src/utils/retake_element.dart';
 /// directly, by creating a unique ID on the server and retaking the dom node
 /// on the client.
 ///
-/// On the server, wrap your component with `context.ref(yourComponent)`, and
-/// pass the resulting [ComponentRef] to your @client component.
-/// On the client, retrieve the original component by calling `myRef.component`.
+/// Wrap your component with the top-level [ref] function, then pass the
+/// resulting [ComponentRef] directly to your `@client` component.
+/// Since [ComponentRef] is itself a [Component],
+/// the original component is rendered on the server and
+/// retaken from the DOM on the client during hydration.
 class ComponentRef extends StatelessComponent {
   const ComponentRef._(this.id, [this._component = const .empty()]);
 
@@ -46,6 +48,4 @@ class ComponentRef extends StatelessComponent {
   String toId() => id;
 }
 
-ComponentRef ref(Component child) {
-  return ComponentRef._(nanoid(length: 8), child);
-}
+ComponentRef ref(Component child) => ComponentRef._(nanoid(length: 8), child);
