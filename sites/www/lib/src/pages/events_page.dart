@@ -95,10 +95,31 @@ class EventsPage extends StatelessComponent {
   }
 
   Component _buildStoriesSection(BuildContext context) {
-    final events = context.decodeJsonList(
+    final rawEvents = context.decodeJsonList(
       'events.data.calendar',
       CalendarEvent.fromJson,
     );
+
+    // Events currently only have a start date,
+    // so keep them listed for a few extra days to
+    // cover multi-day events that might still be ongoing or
+    // events that recently ended and are potentially still relevant.
+    const visibleAfterDays = 3;
+    final now = DateTime.now().toUtc();
+    final cutoff = DateTime.utc(
+      now.year,
+      now.month,
+      now.day - visibleAfterDays,
+    );
+    final events = rawEvents
+        .where(
+          (event) => !DateTime.utc(
+            event.date.year,
+            event.date.month,
+            event.date.day,
+          ).isBefore(cutoff),
+        )
+        .toList(growable: false);
 
     return section(id: 'stories', [
       EventsGrid(

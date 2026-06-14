@@ -1,5 +1,11 @@
+# The following entries are rendered in order as part of the site banner.
+# Three types of entries are supported:
+# - `text` for plain text.
+# - `link` with `text`, `url`, and optional `newTab: true`.
+# - `newLine: true` for inserting a line break.
+
 - text: "Help improve Flutter! "
 - link:
-    text: Take our Q2 survey
+    text: "Take our Q2 survey"
     url: https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website
     newTab: true
