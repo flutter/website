@@ -5,7 +5,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:site_shared/layouts/dash_layout.dart';
+import 'package:site_shared/layouts.dart';
 import 'package:site_shared/util.dart';
 
 import '../components/layout/footer.dart';

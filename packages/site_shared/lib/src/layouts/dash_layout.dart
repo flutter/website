@@ -8,9 +8,9 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../components/common/client/cookie_notice.dart';
-import '../components/layout/banner.dart';
-import '../util.dart';
+import '../../components/common/client/cookie_notice.dart';
+import '../../components/layout/banner.dart';
+import '../../util.dart';
 
 /// The base Jaspr Content layout for all sites.
 abstract class DashLayout implements PageLayout {
