@@ -40,7 +40,6 @@ import 'src/loaders/data_processor.dart';
 import 'src/pages/custom_pages.dart';
 import 'src/pages/robots_txt.dart';
 import 'src/templating/dash_template_engine.dart';
-import 'src/util.dart';
 
 void main() {
   // Initializes the server environment with the generated default options.
@@ -53,19 +52,19 @@ Component get _docsFlutterDevSite => ContentApp.custom(
   eagerlyLoadAllPages: true,
   loaders: [
     FilesystemLoader(
-      path.join(siteSrcDirectoryPath, 'content'),
+      path.join(_siteSrcDirectoryPath, 'content'),
       keepSuffixPattern: _passThroughPattern,
     ),
     MemoryLoader(pages: allMemoryPages),
   ],
   configResolver: PageConfig.all(
     dataLoaders: [
-      FilesystemDataLoader(path.join(siteSrcDirectoryPath, 'data')),
+      FilesystemDataLoader(path.join(_siteSrcDirectoryPath, 'data')),
       DataProcessor(),
     ],
     templateEngine: DashTemplateEngine(
       partialDirectoryPath: path.canonicalize(
-        path.join(siteSrcDirectoryPath, '_includes'),
+        path.join(_siteSrcDirectoryPath, '_includes'),
       ),
     ),
     parsers: const [
@@ -104,6 +103,8 @@ Component get _docsFlutterDevSite => ContentApp.custom(
   ),
 );
 
+/// Path to the `/src` directory where site content is located.
+const String _siteSrcDirectoryPath = 'src';
 final RegExp _passThroughPattern = RegExp(r'.*\.(txt|json|pdf)$');
 
 /// Custom "components" that can be used from Markdown files.
@@ -117,7 +118,7 @@ List<CustomComponent> get _embeddableComponents => [
   const ProgressRing(),
   const SummaryCard(),
   DownloadableSnippet(
-    snippetsDirectoryPath: path.join(siteSrcDirectoryPath, '_snippets'),
+    snippetsDirectoryPath: path.join(_siteSrcDirectoryPath, '_snippets'),
   ),
   const Stepper(),
   const WidgetCatalogCategories(),

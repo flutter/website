@@ -10,14 +10,12 @@ import 'package:site_shared/util.dart';
 
 import '../components/pages/widget_catalog.dart';
 import '../models/widget_catalog_model.dart';
-import '../util.dart';
-
-final _widgetCatalogIndexFile = File(
-  path.join(siteSrcDirectoryPath, 'data', 'catalog', 'index.yml'),
-);
 
 List<MemoryPage> get widgetCatalogPages {
-  final catalogData = _widgetCatalogIndexFile.readAsStringSync();
+  final widgetCatalogIndexFile = File(
+    path.join('src', 'data', 'catalog', 'index.yml'),
+  );
+  final catalogData = widgetCatalogIndexFile.readAsStringSync();
   final catalog =
       (DataLoader.parseData('index.yml', catalogData) as List<Object?>)
           .cast<Map<String, Object?>>()
