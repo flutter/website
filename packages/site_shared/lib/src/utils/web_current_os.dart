@@ -10,12 +10,15 @@ import 'package:universal_web/web.dart' as web;
 
 /// An operating system that a user's web browser can run on.
 enum OperatingSystem {
-  windows('Windows'),
-  macOS('macOS'),
-  linux('Linux'),
-  chromeOS('ChromeOS');
+  windows(id: 'windows', label: 'Windows'),
+  macOS(id: 'macos', label: 'macOS'),
+  linux(id: 'linux', label: 'Linux'),
+  chromeOS(id: 'chromeos', label: 'ChromeOS');
 
-  const OperatingSystem(this.label);
+  const OperatingSystem({required this.id, required this.label});
+
+  /// All-lowercase identifier for the operating system.
+  final String id;
 
   /// Human-readable name of the operating system.
   final String label;

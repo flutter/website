@@ -74,7 +74,7 @@ class _OsSelectorState extends State<OsSelector> {
           [
             div(classes: 'card-leading', [
               img(
-                src: '/assets/images/docs/brand-svg/${os.name}.svg',
+                src: '/assets/images/docs/brand-svg/${os.id}.svg',
                 alt: '${os.label} logo',
                 attributes: {
                   'width': '72',
