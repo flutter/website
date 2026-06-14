@@ -6,7 +6,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
 
-import '../../extensions/code_block_processor.dart';
+import '../../src/extensions/code_block_processor.dart';
 import '../common/client/copy_button.dart';
 import '../common/client/download_button.dart';
 import '../common/wrapped_code_block.dart';

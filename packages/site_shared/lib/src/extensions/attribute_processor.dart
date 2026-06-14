@@ -4,7 +4,7 @@
 
 import 'package:jaspr_content/jaspr_content.dart';
 
-import '../src/markdown/attribute_syntax.dart';
+import '../markdown/attribute_syntax.dart';
 
 /// A node-processing, page extension for Jaspr Content that looks for
 /// attribute markers from [AttributeBlockSyntax] and [AttributeInlineSyntax],
