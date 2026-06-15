@@ -1,0 +1,14 @@
+builders:
+  stylesHashBuilder:
+    import: "package:site_shared/src/builders/styles_hash_builder.dart"
+    builder_factories: ["stylesHashBuilder"]
+    build_extensions:
+      "web/assets/css/main.css":
+        - "lib/src/style_hash.dart"
+    auto_apply: dependents
+    build_to: source
+    required_inputs:
+      - ".css"
+    defaults:
+      dev_options:
+        fixed_hash: true

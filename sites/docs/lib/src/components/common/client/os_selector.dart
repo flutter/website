@@ -4,9 +4,9 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/util.dart';
+import 'package:site_shared/web_util.dart';
 import 'package:universal_web/web.dart' as web;
-
-import '../../../util.dart';
 
 @client
 class OsSelector extends StatefulComponent {
@@ -27,7 +27,7 @@ class _OsSelectorState extends State<OsSelector> {
     super.initState();
 
     if (kIsWeb) {
-      final currentOs = getOS() ?? OperatingSystem.windows;
+      final currentOs = browserOperatingSystem ?? OperatingSystem.windows;
       setOS(currentOs);
     }
   }
@@ -74,7 +74,7 @@ class _OsSelectorState extends State<OsSelector> {
           [
             div(classes: 'card-leading', [
               img(
-                src: '/assets/images/docs/brand-svg/${os.name}.svg',
+                src: '/assets/images/docs/brand-svg/${os.id}.svg',
                 alt: '${os.label} logo',
                 attributes: {
                   'width': '72',
