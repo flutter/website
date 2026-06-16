@@ -78,7 +78,9 @@ class FeaturedEvent with FeaturedEventMappable {
 /// Expected data format:
 /// - `title`: non-empty event title.
 /// - `description`: non-empty description of the event.
-/// - `date`: ISO8601 date string in `yyyy-mm-dd` format.
+/// - `startDate`: ISO8601 date string in `yyyy-mm-dd` format.
+/// - `endDate`: ISO8601 date string in `yyyy-mm-dd` format,
+///   on or after `startDate`.
 /// - `link`: optional absolute HTTP(S) URL or root-relative path.
 /// - `card`: image asset path under `images/`.
 /// - `location`: one of the [EventLocation] labels
@@ -89,7 +91,8 @@ class FeaturedEvent with FeaturedEventMappable {
 class CalendarEvent with CalendarEventMappable {
   CalendarEvent({
     required this.title,
-    required this.date,
+    required this.startDate,
+    required this.endDate,
     required this.description,
     required this.card,
     required this.location,
@@ -99,8 +102,16 @@ class CalendarEvent with CalendarEventMappable {
   }) {
     checkFormat(isNotBlank(title), 'title must be a non-empty string.');
     checkFormat(
-      date == DateTime(date.year, date.month, date.day),
-      'date must be a date-only value.',
+      startDate == DateTime(startDate.year, startDate.month, startDate.day),
+      'startDate must be a date-only value.',
+    );
+    checkFormat(
+      endDate == DateTime(endDate.year, endDate.month, endDate.day),
+      'endDate must be a date-only value.',
+    );
+    checkFormat(
+      !endDate.isBefore(startDate),
+      'endDate must be on or after startDate.',
     );
     checkFormat(
       isNotBlank(description),
@@ -129,8 +140,11 @@ class CalendarEvent with CalendarEventMappable {
   /// Event title displayed in the calendar grid.
   final String title;
 
-  /// The date of the event.
-  final DateTime date;
+  /// The first date of the event.
+  final DateTime startDate;
+
+  /// The final date of the event.
+  final DateTime endDate;
 
   /// Description of the event.
   final String description;
@@ -159,8 +173,13 @@ class CalendarEvent with CalendarEventMappable {
   }
 
   /// Parses a calendar event model from YAML/JSON data.
-  static CalendarEvent fromJson(Map<String, Object?> json) =>
-      CalendarEventMapper.fromMap(json);
+  static CalendarEvent fromJson(Map<String, Object?> json) {
+    checkFormat(
+      !json.containsKey('date'),
+      'date is not supported. Use startDate and endDate instead.',
+    );
+    return CalendarEventMapper.fromMap(json);
+  }
 }
 
 /// Supported regions used to filter events on the events page.

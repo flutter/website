@@ -320,7 +320,8 @@ void main() {
     final valid = <String, Object?>{
       'title': 'FlutterCon',
       'description': 'Conference',
-      'date': '2025-09-24',
+      'startDate': '2025-09-24',
+      'endDate': '2025-09-26',
       'card': 'images/calendar/fluttercon.png',
       'location': 'EMEA',
       'host': 'Community',
@@ -330,7 +331,8 @@ void main() {
     test('decodes valid data and computes derived state', () {
       final decoded = CalendarEvent.fromJson(valid);
       expect(decoded.hasExternalLink, isFalse);
-      expect(decoded.date, DateTime(2025, 9, 24));
+      expect(decoded.startDate, DateTime(2025, 9, 24));
+      expect(decoded.endDate, DateTime(2025, 9, 26));
       expect(decoded.backgroundColor, '#eebb22');
       expect(decoded.location, EventLocation.emea);
       expect(decoded.host, EventHost.community);
@@ -351,8 +353,32 @@ void main() {
       expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
     });
 
-    test('throws when date includes a time', () {
-      final invalid = {...valid}..['date'] = DateTime(2025, 9, 24, 12);
+    test('throws when date is used', () {
+      final invalid = {
+        ...valid,
+        'date': '2025-09-24',
+      };
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when startDate includes a time', () {
+      final invalid = {
+        ...valid,
+      }..['startDate'] = DateTime(2025, 9, 24, 12);
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when endDate includes a time', () {
+      final invalid = {
+        ...valid,
+      }..['endDate'] = DateTime(2025, 9, 26, 12);
+      expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
+    });
+
+    test('throws when endDate is before startDate', () {
+      final invalid = {
+        ...valid,
+      }..['endDate'] = '2025-09-23';
       expect(() => CalendarEvent.fromJson(invalid), _throwsValidationError);
     });
 
