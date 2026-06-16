@@ -3,8 +3,8 @@
 // can be found in the LICENSE file.
 
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
-import '../../utils/component_ref.dart';
 import '../common/filters.dart';
 
 @client

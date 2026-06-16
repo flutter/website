@@ -26,7 +26,8 @@ import 'package:flutter_website/src/components/pages/showcase_grid.dart'
     deferred as _showcase_grid;
 import 'package:flutter_website/src/models/content/banner_content.dart'
     as _banner_content;
-import 'package:flutter_website/src/utils/component_ref.dart' as _component_ref;
+import 'package:site_shared/components/utils/component_ref.dart'
+    as _component_ref;
 
 /// Default [ClientOptions] for use with your Jaspr project.
 ///
