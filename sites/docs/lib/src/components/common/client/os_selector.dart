@@ -47,9 +47,9 @@ class _OsSelectorState extends State<OsSelector> {
 
     final bodyClasses = web.document.body!.classList;
     for (final os in OperatingSystem.values) {
-      bodyClasses.remove('show-${os.name}');
+      bodyClasses.remove('show-${os.id}');
     }
-    bodyClasses.add('show-${os.name}');
+    bodyClasses.add('show-${os.id}');
   }
 
   @override
@@ -57,13 +57,13 @@ class _OsSelectorState extends State<OsSelector> {
     return div(classes: 'card-grid narrow os-selector', [
       for (final os in OperatingSystem.values)
         button(
-          id: 'install-${os.name}',
+          id: 'install-${os.id}',
           classes: [
             'card outlined-card install-card',
             if (selectedOs == os) 'selected-card',
           ].toClasses,
           attributes: {
-            'data-os': os.name,
+            'data-os': os.id,
             'aria-label': 'Update docs to cover ${os.label}',
           },
           events: {
