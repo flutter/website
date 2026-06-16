@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/feature_grid.dart';
 import '../components/common/icon.dart';
@@ -13,7 +14,6 @@ import '../components/sections/cta_section.dart';
 import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
 import '../utils/asset_utils.dart';
-import '../utils/component_ref.dart';
 import '../utils/scroll_spy.dart';
 
 class MonetizationPage extends StatelessComponent {
