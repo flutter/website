@@ -46,8 +46,8 @@ class _OsSelectorState extends State<OsSelector> {
     }
 
     final bodyClasses = web.document.body!.classList;
-    for (final os in OperatingSystem.values) {
-      bodyClasses.remove('show-${os.id}');
+    for (final supportedOS in OperatingSystem.values) {
+      bodyClasses.remove('show-${supportedOS.id}');
     }
     bodyClasses.add('show-${os.id}');
   }
@@ -55,27 +55,27 @@ class _OsSelectorState extends State<OsSelector> {
   @override
   Component build(BuildContext context) {
     return div(classes: 'card-grid narrow os-selector', [
-      for (final os in OperatingSystem.values)
+      for (final supportedOS in OperatingSystem.values)
         button(
-          id: 'install-${os.id}',
+          id: 'install-${supportedOS.id}',
           classes: [
             'card outlined-card install-card',
-            if (selectedOs == os) 'selected-card',
+            if (selectedOs == supportedOS) 'selected-card',
           ].toClasses,
           attributes: {
-            'data-os': os.id,
-            'aria-label': 'Update docs to cover ${os.label}',
+            'data-os': supportedOS.id,
+            'aria-label': 'Update docs to cover ${supportedOS.label}',
           },
           events: {
             'click': (event) {
-              setOS(os);
+              setOS(supportedOS);
             },
           },
           [
             div(classes: 'card-leading', [
               img(
-                src: '/assets/images/docs/brand-svg/${os.id}.svg',
-                alt: '${os.label} logo',
+                src: '/assets/images/docs/brand-svg/${supportedOS.id}.svg',
+                alt: '${supportedOS.label} logo',
                 attributes: {
                   'width': '72',
                   'height': '72',
@@ -85,7 +85,7 @@ class _OsSelectorState extends State<OsSelector> {
             ]),
             div(classes: 'card-header text-center', [
               span(classes: 'card-title', [
-                .text(os.label),
+                .text(supportedOS.label),
               ]),
             ]),
           ],
