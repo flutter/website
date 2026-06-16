@@ -393,10 +393,10 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
-- title: "Atomic Robot"
-  summary: "Atomic Robot is a mobile app design and development agency headquartered in Cincinnati.  We've helped companies from startups to enterprise bring exceptional mobile apps to market."
-  card: "images/third_party/partners/atomic_robot.png"
-  external_url: "https://atomicrobot.com/services/"
+- title: "Ingage Partners"
+  summary: "Ingage Partners helps clients reinvent how they work through AI-enabled product delivery, design, and engineering. Over 15+ years, the team has shipped 200+ apps and connected experiences across mobile, web, and cloud."
+  card: "images/third_party/partners/ingage_logo.png"
+  external_url: "https://ingagepartners.com/flutter
   options_location:
     - "North America"
   options_customer_size:
