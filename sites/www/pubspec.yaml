@@ -22,8 +22,9 @@ dependencies:
   intl: ^0.20.2
   jaspr: ^0.23.1
   jaspr_content: ^0.5.2
-  nanoid2: ^2.0.1
   path: ^1.9.1
+  site_shared:
+    path: ../../packages/site_shared
   universal_web: ^1.1.1+1
 
 dev_dependencies:
