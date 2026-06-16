@@ -100,10 +100,8 @@ class EventsPage extends StatelessComponent {
       CalendarEvent.fromJson,
     );
 
-    // Events currently only have a start date,
-    // so keep them listed for a few extra days to
-    // cover multi-day events that might still be ongoing or
-    // events that recently ended and are potentially still relevant.
+    // Keep events listed for a few extra days after their end date
+    // because recently ended events might still be relevant.
     const visibleAfterDays = 3;
     final now = DateTime.now().toUtc();
     final cutoff = DateTime.utc(
@@ -114,9 +112,9 @@ class EventsPage extends StatelessComponent {
     final events = rawEvents
         .where(
           (event) => !DateTime.utc(
-            event.date.year,
-            event.date.month,
-            event.date.day,
+            event.endDate.year,
+            event.endDate.month,
+            event.endDate.day,
           ).isBefore(cutoff),
         )
         .toList(growable: false);
@@ -154,7 +152,7 @@ class EventsPage extends StatelessComponent {
           span([
             img(src: context.asset('/images/common/calendar.svg')),
             const RawText('&nbsp;'),
-            label([.text(_formatDate(event.date))]),
+            label([.text(_formatDateRange(event.startDate, event.endDate))]),
           ]),
           span([
             img(src: context.asset('/images/common/gps-location.svg')),
@@ -180,6 +178,26 @@ class EventsPage extends StatelessComponent {
   }
 
   static final DateFormat _eventDateFormat = .new('MMM d, yyyy', 'en-US');
+  static final DateFormat _eventRangeStartFormat = .new('MMM d', 'en-US');
 
+  /// Formats a single calendar date for display on event cards.
   static String _formatDate(DateTime date) => _eventDateFormat.format(date);
+
+  /// Formats an event date span, collapsing same-day events to one date.
+  static String _formatDateRange(DateTime startDate, DateTime endDate) {
+    if (_isSameDate(startDate, endDate)) return _formatDate(startDate);
+
+    if (startDate.year == endDate.year) {
+      return '${_eventRangeStartFormat.format(startDate)} - '
+          '${_formatDate(endDate)}';
+    }
+
+    return '${_formatDate(startDate)} - ${_formatDate(endDate)}';
+  }
+
+  /// Determines whether two [DateTime] values occur on the same calendar date.
+  static bool _isSameDate(DateTime startDate, DateTime endDate) =>
+      startDate.year == endDate.year &&
+      startDate.month == endDate.month &&
+      startDate.day == endDate.day;
 }
