@@ -19,6 +19,8 @@
       { "regex": "(.*)\\.$", "destination": ":1", "type": 301 },
 
       { "source": "/ads", "destination": "https://flutter.dev/monetization", "type": 301 },
+      { "source": "/blog", "destination": "https://flutter.dev/blog", "type": 301 },
+      { "source": "/blog/:rest*", "destination": "https://flutter.dev/blog/:rest*", "type": 301 },
       { "source": "/community", "destination": "https://flutter.dev/community", "type": 301 },
       { "source": "/gallery", "destination": "https://github.com/flutter/gallery#flutter-gallery", "type": 301 },
       { "source": "/showcase", "destination": "https://flutter.dev/showcase", "type": 301 },
