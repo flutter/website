@@ -129,10 +129,8 @@ class DefaultLayout extends PageLayout {
             ),
 
             // Project Styles
-            link(
-              href:
-                  '/main.css?'
-                  'hash=${Uri.encodeQueryComponent(generatedStylesHash)}',
+            const link(
+              href: '/main.css?hash=$generatedStylesHash',
               rel: 'stylesheet',
             ),
           ],

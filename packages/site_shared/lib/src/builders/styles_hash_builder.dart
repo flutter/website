@@ -30,7 +30,7 @@ class StylesHashBuilder implements Builder {
       final inputId = buildStep.inputId;
       final bytes = await buildStep.readAsBytes(inputId);
       final digest = sha256.convert(bytes);
-      hashString = base64.encode(digest.bytes).substring(0, 12);
+      hashString = base64Url.encode(digest.bytes).substring(0, 12);
     }
 
     final outputContent =
