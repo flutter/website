@@ -31,7 +31,7 @@
   font-size: 1.75rem;
   line-height: 1.25em;
   letter-spacing: 0.015em;
-  font-family: 'Google Sans', sans-serif;
+  font-family: var(--site-ui-fontFamily);
   user-select: none;
 
   >img {
