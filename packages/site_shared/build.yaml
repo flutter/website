@@ -5,6 +5,8 @@ builders:
     build_extensions:
       "web/assets/css/main.css":
         - "lib/src/style_hash.dart"
+      "web/main.css":
+        - "lib/src/style_hash.dart"
     auto_apply: dependents
     build_to: source
     required_inputs:

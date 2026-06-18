@@ -147,8 +147,7 @@ abstract class DashLayout implements PageLayout {
       // Set site styles.
       link(
         rel: 'stylesheet',
-        href:
-            '/assets/css/main.css?hash=${Uri.encodeQueryComponent(stylesHash)}',
+        href: '/assets/css/main.css?hash=$stylesHash',
       ),
 
       // Set site scripts.
