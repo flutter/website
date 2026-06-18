@@ -7,9 +7,8 @@ body.news {
     padding-top: var(--gutter) !important;
     padding-bottom: var(--gutter) !important;
 
-
     @include breakpoints.screen(lg) {
-      .container {        
+      .container {
         > h2 {
           max-width: 600px !important;
           margin-top: var(--spacer) !important;
@@ -26,12 +25,12 @@ body.news {
             h1 {
               max-width: 100%;
               font-size: 64px;
-              font-weight: 700;
+              font-weight: var(--font-weight-bold);
               line-height: 72px;
             }
 
             h2 {
-              font-weight: 400;
+              font-weight: var(--font-weight-normal);
               font-size: 34px;
               line-height: 40px;
             }

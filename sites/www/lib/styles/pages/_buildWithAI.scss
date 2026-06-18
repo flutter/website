@@ -63,7 +63,7 @@ body.buildWithAI {
 
     h2 {
       font-size: 32px;
-      font-weight: 400;
+      font-weight: var(--font-weight-normal);
       max-width: 800px;
       margin: 0 auto 45px;
       text-align: center;

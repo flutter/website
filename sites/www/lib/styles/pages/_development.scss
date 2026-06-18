@@ -82,7 +82,7 @@ body.development {
 
     .flutter-stat-cta__number {
       font-size: 3rem; /* 48px */
-      font-weight: bold;
+      font-weight: var(--font-weight-bold);
       color: #fff;
     }
 
@@ -104,7 +104,7 @@ body.development {
   }
 
   &.ios section {
-    font-family: var(--font-gsans);
+    font-family: var(--font-ui);
 
     .title {
       font-size: 48px;
@@ -121,10 +121,10 @@ body.development {
 
     .body {
       font-size: 20px;
-      font-family: var(--font-roboto);
+      font-family: var(--font-body);
       color: var(--grey-6);
       line-height: 30px;
-      font-weight: 400;
+      font-weight: var(--font-weight-normal);
       margin-bottom: 40px;
     }
 

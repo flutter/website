@@ -56,11 +56,12 @@
   --font-size-default: 14px;
   --font-size-scaling-2: calc(88 * 100vw / 1440);
   --font-size-scaling-3: calc(72 * 100vw / 1440);
-  --font-weight-default: 400;
-  --font-weight-bold: 700;
-  --font-gsans: 'Google Sans', ui-sans, sans-serif;
-  --font-roboto: 'Roboto', sans-serif;
-  --font-roboto-mono: 'Roboto Mono', monospace;
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 700;
+  --font-ui: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --font-body: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --font-code: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
 
   --screen-xs-min:  480px;     /* mobile portrait */
   --screen-sm-min:  640px;     /* mobile landscape */
