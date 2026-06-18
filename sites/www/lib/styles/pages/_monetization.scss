@@ -24,7 +24,7 @@ body.monetization {
 
     .tabs {
       .tabs-title {
-        font-weight: 400;
+        font-weight: var(--font-weight-normal);
         text-align: left;
         font-size: 24px;
         line-height: 32px;
@@ -137,7 +137,7 @@ body.monetization {
             .title {
               font-size: 24px;
               line-height: 36px;
-              font-weight: 700;
+              font-weight: var(--font-weight-bold);
               margin-bottom: 24px;
 
               @include breakpoints.screen(lg) {

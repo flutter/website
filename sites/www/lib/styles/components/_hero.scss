@@ -60,10 +60,10 @@ body.interior {
         }
       }
     }
-  
+
     h2 {
       font-size: var(--font-size-heading-2);
-      font-weight: 400;
+      font-weight: var(--font-weight-normal);
       max-width: 925px;
       margin: var(--gutter-lg) auto var(--spacer);
     }
