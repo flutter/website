@@ -23,7 +23,7 @@
     color: white;
     font-size: var(--font-size-default);
     font-weight: var(--font-weight-bold);
-    font-family: var(--font-gsans);
+    font-family: var(--font-ui);
 
     .event-bar__content {
       display: none;
@@ -121,7 +121,7 @@
       display: flex;
       text-wrap: nowrap;
       list-style: none;
-      font-family: var(--font-gsans);
+      font-family: var(--font-ui);
       font-weight: var(--font-weight-bold);
       font-size: var(--font-size-heading-4);
 
@@ -196,7 +196,7 @@
         padding: 0 8px;
         background-color: transparent;
         border: none;
-        font-family: var(--font-gsans);
+        font-family: var(--font-ui);
         font-weight: var(--font-weight-bold);
         font-size: var(--font-size-default);
         color: white;
@@ -345,7 +345,7 @@
               color: var(--grey-2);
               padding: 9px 16px;
               display: inline-block; /* not full width bg */
-              font-weight: var(--font-weight-default);
+              font-weight: var(--font-weight-normal);
               height: auto;
 
               /* TODO consolidate these because of new mobile dropdown */
@@ -496,7 +496,7 @@
               padding: var(--spacer-sm) 16px;
               display: flex;
               justify-content: flex-start;
-              font-weight: var(--font-weight-default);
+              font-weight: var(--font-weight-normal);
 
               &.active,
               &:active,

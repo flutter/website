@@ -59,7 +59,7 @@ section#stories {
 
   > h2 {
     font-size: var(--font-size-heading-2);
-    font-weight: 400;
+    font-weight: var(--font-weight-normal);
     max-width: 950px;
     margin: 0 auto var(--gutter-md);
   }
@@ -137,16 +137,16 @@ section#stories {
 
       > div {
         max-width: 195px;
-      
+
         h4 {
           font-size: 54px;
           margin-bottom: var(--spacer-sm);
         }
-  
+
         h3 {
-          font-family: var(--font-roboto);
+          font-family: var(--font-body);
           font-size: var(--font-size-heading-4);
-          font-weight: var(--font-weight-default);
+          font-weight: var(--font-weight-normal);
         }
       }
     }
@@ -223,7 +223,7 @@ section#stories {
 
   h4 {
     font-size: 14px;
-    font-weight: var(--font-weight-default);
+    font-weight: var(--font-weight-normal);
     margin-bottom: 14px;
   }
 
