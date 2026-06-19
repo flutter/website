@@ -1,8 +1,8 @@
 ---
 title: "Zoho Tables"
-description: "Learn how the Zoho Tables team built their cross-platform spreadsheet-database hybrid using Flutter, achieving feature parity in 14% less time with a team 60% smaller than the web team."
+description: "Learn how the Zoho Tables team built their multi-platform spreadsheet-database hybrid using Flutter, achieving feature parity in 14% less time with a 60% smaller team."
 headline: "Zoho Tables"
-summary: "Bringing a spreadsheet-database hybrid to mobile with Flutter"
+summary: "Building a spreadsheet-database hybrid with Flutter"
 appName: "Zoho Tables"
 companyName: "Zoho"
 logo: "images/third_party/case_studies/zoho-tables/zoho_tables_logo.png"
@@ -16,11 +16,11 @@ industries:
   - Productivity
 successMetrics:
   - perc: 60
-    desc: "smaller mobile team size compared to the web team"
+    desc: "smaller team size"
   - perc: 50
     desc: "reduction in developer costs"
   - perc: 42
-    desc: "higher refresh rates than competing frameworks during testing"
+    desc: "higher refresh rates"
 tags:
   - mobile
   - android
