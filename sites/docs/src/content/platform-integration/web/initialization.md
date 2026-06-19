@@ -250,8 +250,8 @@ loading.textContent = "Loading Entrypoint...";
 _flutter.loader.load({
   onEntrypointLoaded: async function(engineInitializer) {
     loading.textContent = "Initializing engine...";
-    // Pass your `config` here. Any config given to `load()` is not
-    // forwarded when you supply your own `onEntrypointLoaded` callback.
+    // If you have a `config`, pass it here. The config given to `load()`
+    // is not forwarded when you supply your own `onEntrypointLoaded`.
     const appRunner = await engineInitializer.initializeEngine();
 
     loading.textContent = "Running app...";
