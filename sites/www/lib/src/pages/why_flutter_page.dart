@@ -19,7 +19,7 @@ class WhyFlutterPage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return main_([
+    return main_(classes: 'why-flutter-page', [
       _buildHero(context),
       section(classes: 'content-container', attributes: scroll.spyContent, [
         _buildBusinessValue(context),
@@ -49,14 +49,14 @@ class WhyFlutterPage extends StatelessComponent {
           'Discover how Flutter transforms development speed, reduces costs, and delivers high-quality experiences across every screen.',
       media: .fragment([
         img(
-          src: context.asset('images/beautiful-apps-for-every-screen.png'),
-          alt: 'Why Flutter',
+          src: context.asset('home/images/hero/nu-app.png'),
+          alt: 'Flutter Apps',
         ),
-        div(classes: 'hero-actions', [
+        const div(classes: 'hero-actions', [
           a(
             href: '#whitepaper',
             classes: 'btn white',
-            const [.text('Download Whitepaper')],
+            [.text('Download Whitepaper')],
           ),
         ]),
       ]),
@@ -64,25 +64,25 @@ class WhyFlutterPage extends StatelessComponent {
   }
 
   Component _buildBusinessValue(BuildContext context) {
-    return section(id: 'business-value', classes: 'module', [
+    return const section(id: 'business-value', classes: 'module', [
       div(classes: 'container', [
-        const h2([.text('Maximize Business Value')]),
-        const p([
+        h2([.text('Maximize Business Value')]),
+        p(classes: 'text-center', [
           .text(
             'Flutter is more than a framework; it\'s a strategic choice that impacts your bottom line. '
             'By unifying your development team and codebase, you can reach more users with less effort.',
           ),
         ]),
-        div(id: 'whitepaper', classes: 'whitepaper-box module', [
+        div(id: 'whitepaper', classes: 'whitepaper-box', [
           div(classes: 'text', [
-            const h3([.text('Whitepaper: The ROI of Flutter')]),
-            const p([
+            h3([.text('Whitepaper: The ROI of Flutter')]),
+            p([
               .text(
                 'Download our comprehensive guide on how Flutter impacts time-to-market, '
                 'maintenance costs, and user engagement for modern enterprises.',
               ),
             ]),
-            const a(
+            a(
               href: '#', // Placeholder for actual PDF link
               classes: 'btn',
               [.text('Download PDF (Coming Soon)')],
@@ -99,25 +99,25 @@ class WhyFlutterPage extends StatelessComponent {
         title: 'Speed to Market',
         description:
             'Ship to iOS, Android, Web, and Desktop simultaneously from a single codebase.',
-        image: context.asset('images/single-codebase.png'),
+        image: context.asset('home/images/flexible.png'),
       ),
       FeatureColumn(
         title: 'Reduced Costs',
         description:
             'Halve your development and maintenance costs by eliminating platform-specific silos.',
-        image: context.asset('images/performant-by-design.png'),
+        image: context.asset('home/images/stable-and-reliable.jpg'),
       ),
       FeatureColumn(
         title: 'Unmatched Quality',
         description:
             'Deliver "jank-free" 60fps performance and beautiful, bespoke UIs that wow your users.',
-        image: context.asset('images/customize-every-pixel.svg'),
+        image: context.asset('home/images/development.jpg'),
       ),
     ]);
   }
 
   Component _buildProductivity(BuildContext context) {
-    return section(id: 'productivity', [
+    return section(id: 'productivity', classes: 'module', [
       div(classes: 'features container', [
         Feature(
           eyebrow: 'Productivity',
@@ -126,7 +126,7 @@ class WhyFlutterPage extends StatelessComponent {
               'With features like Hot Reload, developers can see changes in milliseconds, '
               'drastically reducing the feedback loop and increasing innovation.',
           media: img(
-            src: context.asset('home/images/feature-productive.png'),
+            src: context.asset('home/images/productive.png'),
             alt: 'Developer Productivity',
           ),
           active: true,
@@ -140,7 +140,6 @@ class WhyFlutterPage extends StatelessComponent {
       div(classes: 'container', [
         const h2([.text('Trusted by Global Leaders')]),
         div(classes: 'logo-garden', [
-          // Simplified logo garden for this page
           div(classes: 'logo-col', [
             img(
               src: context.asset('images/third_party/logos/bmw.svg'),
@@ -157,10 +156,12 @@ class WhyFlutterPage extends StatelessComponent {
           ]),
         ]),
         const br(),
-        const a(href: '/showcase', classes: 'btn quiet', [
-          .text('Explore Case Studies '),
-          RawText('&nbsp;'),
-          Icon(symbol: 'arrow_forward'),
+        const div(classes: 'text-center', [
+          a(href: '/showcase', classes: 'btn quiet', [
+            .text('Explore Case Studies '),
+            RawText('&nbsp;'),
+            Icon(symbol: 'arrow_forward'),
+          ]),
         ]),
       ]),
     ]);

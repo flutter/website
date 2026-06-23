@@ -27,7 +27,6 @@ class HomePage extends StatelessComponent {
       section(classes: 'content-container', attributes: scroll.spyContent, [
         _buildTabs(context),
         _buildFeatured(context),
-        _buildWhyFlutter(context),
         const br(),
         _buildDeveloperStory(context),
         _buildCommunity(context),
@@ -366,35 +365,22 @@ class HomePage extends StatelessComponent {
           reverse: true,
           noSpy: true,
         ),
-      ]),
-    ]);
-  }
-
-  Component _buildWhyFlutter(BuildContext context) {
-    return section(id: 'why-flutter-promo', classes: 'module', [
-      div(classes: 'insert why-flutter-insert container', [
-        div(classes: 'text', [
-          const h4(classes: 'eyebrow text-blue', [.text('Business Value')]),
-          const h3([
-            .text(
-              'Discover why industry leaders choose Flutter for their mission-critical apps',
-            ),
-          ]),
-          a(href: '/why-flutter', classes: 'btn', [
-            .text('Learn why '),
-            RawText('&nbsp;'),
-            Icon.linkArrow(),
-          ]),
-        ]),
-        div(classes: 'media', [
-          img(
-            src: context.asset(
-              'images/beautiful-apps-for-every-screen.png',
-              width: 385,
-            ),
+        Feature(
+          eyebrow: 'Business Value',
+          eyebrowClass: 'text-blue',
+          title: 'Deliver high-impact business results',
+          description:
+              'Discover why industry leaders choose Flutter for their mission-critical apps. From startups to global enterprises, learn how Flutter is transforming app development with its high-performance, multi-platform framework.',
+          actions: const [
+            FeatureAction(label: 'Learn why', url: '/why-flutter'),
+          ],
+          media: img(
+            src: context.asset('home/images/hero/sua-musica-app.png'),
             alt: 'Why Flutter',
+            width: 600,
           ),
-        ]),
+          noSpy: true,
+        ),
       ]),
     ]);
   }

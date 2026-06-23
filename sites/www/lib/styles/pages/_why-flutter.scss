@@ -1,0 +1,118 @@
+@use '../core/vars';
+@use '../core/breakpoints';
+
+.why-flutter-page {
+  .hero {
+    background: var(--grad-blue-light-35);
+    padding: var(--gutter-lg) 0;
+    
+    .mantle {
+      display: flex;
+      align-items: center;
+      gap: var(--gutter-md);
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    h1 {
+      font-size: var(--font-size-heading-1);
+      line-height: 1.1;
+      margin-bottom: var(--spacer-md);
+      background: linear-gradient(135deg, var(--blue-10) 0%, var(--blue-7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text p {
+      font-size: var(--font-size-heading-4);
+      color: var(--grey-6);
+      max-width: 600px;
+      margin-bottom: var(--spacer-md);
+    }
+
+    .hero-actions {
+      margin-top: var(--spacer-md);
+    }
+  }
+
+  .module {
+    padding: var(--gutter-lg) 0;
+  }
+
+  h2 {
+    font-size: var(--font-size-heading-2);
+    margin-bottom: var(--spacer-md);
+    text-align: center;
+  }
+
+  .whitepaper-box {
+    background: white;
+    border-radius: var(--ui-border-radius);
+    padding: var(--gutter-md);
+    display: flex;
+    align-items: center;
+    gap: var(--gutter);
+    box-shadow: var(--ui-drop-shadow);
+    margin: var(--gutter) 0;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 100%;
+      background: var(--blue-6);
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .text {
+      flex: 1;
+      h3 {
+        font-size: var(--font-size-heading-3);
+        margin-bottom: var(--spacer-sm);
+      }
+      p {
+        margin-bottom: var(--spacer-md);
+        color: var(--grey-6);
+      }
+    }
+  }
+
+  .logo-garden {
+    margin-top: var(--gutter);
+    .logo-col {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gutter-md);
+      opacity: 0.6;
+      filter: grayscale(1);
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+        filter: grayscale(0);
+      }
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+    }
+  }
+
+  #productivity {
+    background: var(--grey-1);
+  }
+}
