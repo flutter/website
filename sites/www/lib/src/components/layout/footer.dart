@@ -37,6 +37,9 @@ class Footer extends StatelessComponent {
               ]),
             ]),
             li([
+              a(href: '/why-flutter', [.text('Why Flutter')]),
+            ]),
+            li([
               a(href: '/brand', [.text('Brand')]),
             ]),
             li([

@@ -32,6 +32,7 @@ import 'src/pages/news_page.dart';
 import 'src/pages/not_found_page.dart';
 import 'src/pages/showcase_page.dart';
 import 'src/pages/web_page.dart';
+import 'src/pages/why_flutter_page.dart';
 import 'src/utils/asset_utils.dart';
 import 'src/utils/component_ref.dart';
 
@@ -161,6 +162,10 @@ void main() async {
             CustomComponent(
               pattern: 'NewsPage',
               builder: (_, _, _) => const NewsPage(),
+            ),
+            CustomComponent(
+              pattern: 'WhyFlutterPage',
+              builder: (_, _, _) => const WhyFlutterPage(),
             ),
             CustomComponent(
               pattern: 'Image',

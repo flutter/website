@@ -27,6 +27,7 @@ class HomePage extends StatelessComponent {
       section(classes: 'content-container', attributes: scroll.spyContent, [
         _buildTabs(context),
         _buildFeatured(context),
+        _buildWhyFlutter(context),
         const br(),
         _buildDeveloperStory(context),
         _buildCommunity(context),
@@ -365,6 +366,35 @@ class HomePage extends StatelessComponent {
           reverse: true,
           noSpy: true,
         ),
+      ]),
+    ]);
+  }
+
+  Component _buildWhyFlutter(BuildContext context) {
+    return section(id: 'why-flutter-promo', classes: 'module', [
+      div(classes: 'insert why-flutter-insert container', [
+        div(classes: 'text', [
+          const h4(classes: 'eyebrow text-blue', [.text('Business Value')]),
+          const h3([
+            .text(
+              'Discover why industry leaders choose Flutter for their mission-critical apps',
+            ),
+          ]),
+          a(href: '/why-flutter', classes: 'btn', [
+            .text('Learn why '),
+            RawText('&nbsp;'),
+            Icon.linkArrow(),
+          ]),
+        ]),
+        div(classes: 'media', [
+          img(
+            src: context.asset(
+              'images/beautiful-apps-for-every-screen.png',
+              width: 385,
+            ),
+            alt: 'Why Flutter',
+          ),
+        ]),
       ]),
     ]);
   }

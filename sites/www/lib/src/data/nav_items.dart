@@ -7,6 +7,10 @@ import '../models/layout/nav_content.dart';
 /// Items to render in the site-wide header.
 final List<NavItem> headerNavItems = [
   NavItem(
+    label: 'Why Flutter',
+    href: '/why-flutter',
+  ),
+  NavItem(
     label: 'Development',
     href: '/development',
     items: [
