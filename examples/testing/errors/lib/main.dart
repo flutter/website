@@ -36,5 +36,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion all-errors

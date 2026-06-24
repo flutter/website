@@ -56,5 +56,4 @@ class _ContactListView extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion contact_list_view

@@ -16,5 +16,4 @@ class SetupFlowState extends State<SetupFlow> {
     return const SizedBox();
   }
 }
-
 // #enddocregion SetupFlow

@@ -18,5 +18,4 @@ class GuessInput extends StatelessWidget {
     return Container();
   }
 }
-
 // #enddocregion GuessInput

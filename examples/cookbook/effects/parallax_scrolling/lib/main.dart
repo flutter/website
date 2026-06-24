@@ -134,7 +134,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
     required this.listItemContext,
     required this.backgroundImageKey,
   }) : super(repaint: scrollable.position);
-
   // #enddocregion SuperScrollPosition
 
   final ScrollableState scrollable;
@@ -197,7 +196,6 @@ class ParallaxFlowDelegate extends FlowDelegate {
         listItemContext != oldDelegate.listItemContext ||
         backgroundImageKey != oldDelegate.backgroundImageKey;
   }
-
   // #enddocregion ShouldRepaint
 }
 

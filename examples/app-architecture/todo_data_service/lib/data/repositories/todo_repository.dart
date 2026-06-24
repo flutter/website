@@ -29,5 +29,4 @@ class TodoRepository {
     return _database.delete(id);
   }
 }
-
 // #enddocregion TodoRepository

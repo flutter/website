@@ -93,6 +93,5 @@ class _TodoListScreenState extends State<TodoListScreen> {
       _controller.clear();
     }
   }
-
   // #enddocregion Add
 }

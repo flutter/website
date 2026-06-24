@@ -3,6 +3,7 @@
 import 'dart:math';
 
 // #enddocregion ShakeCurve
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const LogoApp());
@@ -133,5 +134,4 @@ class ShakeCurve extends Curve {
   @override
   double transform(double t) => sin(t * pi * 2);
 }
-
 // #enddocregion ShakeCurve

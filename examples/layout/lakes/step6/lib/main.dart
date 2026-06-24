@@ -219,5 +219,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 
   // #docregion favorite-state-fields
 }
-
 // #enddocregion favorite-state, favorite-state-fields, favorite-state-build

@@ -21,6 +21,5 @@ class ImageExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset('images/my_image.png');
   }
-
   // #enddocregion image-asset
 }

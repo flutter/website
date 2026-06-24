@@ -20,7 +20,6 @@ class ProblemWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion problem
 }
 
@@ -46,6 +45,5 @@ class SolutionWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion solution
 }

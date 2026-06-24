@@ -11,5 +11,4 @@ class DownloadButton extends StatelessWidget {
     return const SizedBox();
   }
 }
-
 // #enddocregion DownloadButton

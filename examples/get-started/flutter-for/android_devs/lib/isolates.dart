@@ -121,6 +121,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
     port.send([msg, response.sendPort]);
     return response.first;
   }
-
   // #enddocregion load-data
 }

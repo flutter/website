@@ -67,5 +67,4 @@ class TitleSection extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion title-section

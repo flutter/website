@@ -70,6 +70,8 @@ Future<int> _refreshExcerpts({
       // Workaround for https://github.com/dart-lang/dart_style/issues/1644
       // to remove extra new lines after block close.
       SimpleReplaceTransform(RegExp(r'[\r\n]+$'), ''),
+      // Compress extra empty lines, working around formatting oddities.
+      SimpleReplaceTransform('\n\n\n', '\n\n'),
     ],
   );
 

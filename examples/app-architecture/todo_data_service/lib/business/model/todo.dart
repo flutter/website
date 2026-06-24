@@ -13,5 +13,4 @@ abstract class Todo with _$Todo {
     required String task,
   }) = _Todo;
 }
-
 // #enddocregion Todo

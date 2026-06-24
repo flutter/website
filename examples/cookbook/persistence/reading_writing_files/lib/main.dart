@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 // #docregion localPath
 import 'package:path_provider/path_provider.dart';
+
 // #enddocregion localPath
 
 void main() {
@@ -54,7 +55,6 @@ class CounterStorage {
     // Write the file
     return file.writeAsString('$counter');
   }
-
   // #enddocregion writeCounter
 }
 
