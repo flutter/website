@@ -480,7 +480,7 @@ class HomePage extends StatelessComponent {
               ]),
               div([
                 img(
-                  src: context.asset('images/third_party/logos/toyota.svg'),
+                  src: context.asset('images/third_party/logos/toyota.png'),
                   alt: 'Toyota',
                 ),
               ]),
