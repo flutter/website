@@ -71,7 +71,7 @@ Future<int> _refreshExcerpts({
       // to remove extra new lines after block close.
       SimpleReplaceTransform(RegExp(r'[\r\n]+$'), ''),
       // Compress extra empty lines, working around formatting oddities.
-      SimpleReplaceTransform('\n\n\n', '\n\n'),
+      SimpleReplaceTransform(RegExp(r'\n{3,}'), '\n\n'),
     ],
   );
 
