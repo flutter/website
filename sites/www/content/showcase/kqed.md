@@ -13,8 +13,7 @@ platforms:
   - Mobile
   - Web
 industries:
-  - Social
-  - Education
+  - Media and Entertainment
 tags:
   - mobile
   - android
