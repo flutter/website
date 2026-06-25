@@ -12,7 +12,7 @@ locations:
 platforms:
   - Mobile
 industries:
-  - Productivity
+  - Media and Entertainment
 successMetrics:
   - perc: 80
     desc: increased debugging efficiency

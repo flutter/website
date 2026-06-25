@@ -46,6 +46,9 @@
 - name: Karaca
   logo: /images/third_party/logos/karaca.png
 
+- name: KQED
+  logo: /images/third_party/logos/kqed.png
+
 - name: Lotum
   logo: /images/third_party/logos/lotum.svg
 

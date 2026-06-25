@@ -19,7 +19,7 @@ tags:
   - mobile
   - android
   - ios
-publishDate: 2026-06-08
+publishDate: 2026-04-24
 successMetrics:
   - text: 2x
     desc: faster shipping of new features
