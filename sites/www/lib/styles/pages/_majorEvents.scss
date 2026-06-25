@@ -466,7 +466,7 @@
               margin: 64px 0;
               font-size: 34px;
               line-height: 40px;
-              font-weight: var(--font-weight-default);
+              font-weight: var(--font-weight-normal);
             }
   
             .schedule-container {
@@ -488,7 +488,7 @@
                 h3 {
                   font-size: 28px;
                   line-height: 34px;
-                  font-weight: var(--font-weight-default);
+                  font-weight: var(--font-weight-normal);
                   color: var(--grey-6);
                   margin: 0 0 8px 0;
                   min-width: 198px;
@@ -505,7 +505,7 @@
                 h4 {
                   font-size: 20px;
                   line-height: 24px;
-                  font-weight: var(--font-weight-default);
+                  font-weight: var(--font-weight-normal);
                   color: var(--grey-6);
                 }
   
@@ -691,7 +691,7 @@
                       h3 {
                         font-size: 28px;
                         line-height: 34px;
-                        font-weight: 700;
+                        font-weight: var(--font-weight-bold);
                       }
 
                       p {
@@ -1060,12 +1060,12 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
                 transition: top 0.5s cubic-bezier(.47,1.64,.41,.8), opacity 0.2s ease-in-out;
-                
+
                 color: white;
                 font-size: 40px;
                 line-height: 60px;
               }
-  
+
               .day-badge {
                 width: fit-content;
                 height: fit-content;
@@ -1086,7 +1086,7 @@
   
                 font-size: 40px;
                 line-height: 34px;
-                font-weight: 700;
+                font-weight: var(--font-weight-bold);
                 color: #041e3c;
   
                 img {
@@ -1181,7 +1181,7 @@
               margin-bottom: 32px;
   
               text-align: left;
-              font-weight: 700;
+              font-weight: var(--font-weight-bold);
               font-size: 28px;
               line-height: 34px;
             }
@@ -1189,7 +1189,7 @@
             p {
               padding: 0;
   
-              font-weight: 400;
+              font-weight: var(--font-weight-normal);
               font-size: 16px;
               line-height: 24px;
               margin-bottom: 0;
@@ -1419,7 +1419,7 @@
                 margin: 80px 0;
                 font-size: 40px;
                 line-height: 56px;
-                font-weight: var(--font-weight-default);
+                font-weight: var(--font-weight-normal);
               }
   
               .schedule-container {
@@ -1441,7 +1441,7 @@
                   h3 {
                     font-size: 28px;
                     line-height: 34px;
-                    font-weight: var(--font-weight-default);
+                    font-weight: var(--font-weight-normal);
                     color: var(--grey-6);
                   }
   
@@ -1454,7 +1454,7 @@
                   h4 {
                     font-size: 20px;
                     line-height: 24px;
-                    font-weight: var(--font-weight-default);
+                    font-weight: var(--font-weight-normal);
                     color: var(--grey-6);
                   }
   
@@ -1537,7 +1537,7 @@
                   > h3 {
                     font-size: 60px;
                     line-height: 60px;
-                    font-weight: 700;
+                    font-weight: var(--font-weight-bold);
                   }
                 }
               }

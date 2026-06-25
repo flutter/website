@@ -3,8 +3,8 @@
 // can be found in the LICENSE file.
 
 import 'package:dart_mappable/dart_mappable.dart';
+import 'package:site_shared/util.dart';
 
-import '../../utils/slugify.dart';
 import '../content/content_validation.dart';
 
 part 'nav_content.mapper.dart';

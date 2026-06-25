@@ -4,9 +4,9 @@ body {
   display: flex;
   flex-direction: column;
   line-height: inherit;
-  font-family: var(--font-roboto);
+  font-family: var(--font-body);
   font-size: var(--font-size-default);
-  font-weight: var(--font-weight-default);
+  font-weight: var(--font-weight-normal);
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -20,8 +20,8 @@ body {
 code,
 kbd,
 pre {
-	font-family: 'Google Sans Mono', 'Roboto Mono', ui-monospace, 'SFMono-Regular', monospace;
-	font-size: 1em;
+  font-family: var(--font-code);
+  font-size: 1em;
 }
 
 h1,
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-gsans);
+  font-family: var(--font-ui);
   line-height: 1.2;
   letter-spacing: -0.005em;
   font-weight: var(--font-weight-bold);

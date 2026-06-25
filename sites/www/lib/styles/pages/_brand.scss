@@ -41,7 +41,7 @@ body.brand {
 
       .btn.quiet {
         color: white !important;
-        font-weight: 400;
+        font-weight: var(--font-weight-normal);
 
         &:hover {
           text-decoration: underline;
@@ -202,11 +202,11 @@ body.brand {
 
     .compare-label {
       padding: var(--spacer-sm) 0;
-      font-weight: 400;
+      font-weight: var(--font-weight-normal);
       font-size: var(----font-size-default);
 
       span {
-        font-weight: 700;
+        font-weight: var(--font-weight-bolder);
       }
 
       &.good {
@@ -525,7 +525,7 @@ body.brand {
 
         h5 {
           font-size: 14px;
-          font-weight: 400;
+          font-weight: var(--font-weight-normal);
           color: var(--grey-6);
         }
       }
