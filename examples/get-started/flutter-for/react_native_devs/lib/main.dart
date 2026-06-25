@@ -51,5 +51,4 @@ void trueExample() {
 bool fn() {
   return true;
 }
-
 // #enddocregion function

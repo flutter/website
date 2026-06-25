@@ -14,7 +14,6 @@ class MyWidget extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-
   // #enddocregion elevated-button
 }
 
@@ -83,5 +82,4 @@ class _RotatingFlutterDetectorState extends State<RotatingFlutterDetector>
     );
   }
 }
-
 // #enddocregion rotating-flutter-detector

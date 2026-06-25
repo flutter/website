@@ -66,6 +66,5 @@ class _SampleAppPageState extends State<SampleAppPage> {
           .cast<Map<String, Object?>>();
     });
   }
-
   // #enddocregion load-data
 }

@@ -8,7 +8,6 @@ class ImageAssetExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Image.asset('images/my_icon.png');
   }
-
   // #enddocregion image-asset
 }
 
@@ -20,6 +19,5 @@ class AssetImageExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Image(image: AssetImage('images/my_image.png'));
   }
-
   // #enddocregion asset-image
 }

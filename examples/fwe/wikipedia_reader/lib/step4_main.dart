@@ -166,5 +166,4 @@ class ArticleWidget extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion article

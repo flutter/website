@@ -7,6 +7,7 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import 'fetch_album_test.mocks.dart';
+
 // #docregion mockClient
 
 // Generate a MockClient using the Mockito package.
@@ -46,5 +47,4 @@ void main() {
   });
   // #docregion mockClient
 }
-
 // #enddocregion mockClient

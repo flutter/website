@@ -30,5 +30,4 @@ class MyStatelessWidget extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion use-stateful-widget

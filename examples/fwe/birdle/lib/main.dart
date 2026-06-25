@@ -155,5 +155,4 @@ class Tile extends StatelessWidget {
     // #enddocregion AnimatedContainer
   }
 }
-
 // #enddocregion Tile

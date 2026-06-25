@@ -78,5 +78,4 @@ class LocationListItem extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion LocationListItem

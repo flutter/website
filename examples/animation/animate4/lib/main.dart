@@ -84,5 +84,4 @@ class _LogoAppState extends State<LogoApp> with SingleTickerProviderStateMixin {
 
   // #docregion print-state
 }
-
 // #enddocregion print-state

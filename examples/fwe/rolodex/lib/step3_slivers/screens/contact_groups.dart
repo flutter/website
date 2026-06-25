@@ -87,6 +87,5 @@ class _ContactGroupsView extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion build_trailing
 }

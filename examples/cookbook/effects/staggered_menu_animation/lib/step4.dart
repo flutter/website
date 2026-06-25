@@ -156,6 +156,5 @@ class _MenuState extends State<Menu> with SingleTickerProviderStateMixin {
       ),
     );
   }
-
   // #enddocregion build-get-started
 }

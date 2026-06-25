@@ -62,5 +62,4 @@ class _SampleAppPageState extends State<SampleAppPage> {
     );
   }
 }
-
 // #enddocregion add-remove-element

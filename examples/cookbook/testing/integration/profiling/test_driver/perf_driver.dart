@@ -28,5 +28,4 @@ Future<void> main() {
     },
   );
 }
-
 // #enddocregion Timeline

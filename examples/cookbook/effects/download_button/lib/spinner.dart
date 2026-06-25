@@ -147,6 +147,5 @@ class DownloadButton extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion Spinner
 }
