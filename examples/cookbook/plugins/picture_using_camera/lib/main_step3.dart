@@ -70,5 +70,4 @@ class TakePictureScreenState extends State<TakePictureScreen> {
     return Container();
   }
 }
-
 // #enddocregion controller

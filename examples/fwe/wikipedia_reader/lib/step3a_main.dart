@@ -38,5 +38,4 @@ class ArticleViewModel extends ChangeNotifier {
 
   ArticleViewModel(this.model);
 }
-
 // #enddocregion ArticleViewModel

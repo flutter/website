@@ -151,5 +151,4 @@ class DownloadButton extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion TapCallbacks

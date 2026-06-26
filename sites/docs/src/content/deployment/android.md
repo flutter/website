@@ -663,6 +663,13 @@ Such APKs are larger in size than their split counterparts,
 causing the user to download native binaries that
 aren't applicable to their device's architecture.
 
+When using split APKs, the framework adds `ABI_VERSION * 1000`
+to the version code. This is because the Google Play Store
+[doesn't allow](https://developer.android.com/studio/build/configure-apk-splits#configure-APK-versions)
+multiple APKs for the same app to have the same version code.
+To force the default version code, specify the
+`-P force-version-code-ignoring-abi=true` flag during the build.
+
 [obfuscating your Dart code]: /deployment/obfuscate
 
 ### Install an APK on a device

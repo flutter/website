@@ -69,7 +69,6 @@ class _MainAppState extends State<MainApp> {
       // Show Snackbar
     }
   }
-
   // #enddocregion _onViewModelChanged
 }
 
@@ -142,5 +141,4 @@ class HomeViewModel3 extends ChangeNotifier {
     // edit user
   }
 }
-
 // #enddocregion HomeViewModel3

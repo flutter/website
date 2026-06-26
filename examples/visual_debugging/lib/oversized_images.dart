@@ -15,5 +15,4 @@ class ResizedImage extends StatelessWidget {
     return Image.asset('dash.png', cacheHeight: 213, cacheWidth: 392);
   }
 }
-
 // #enddocregion resized-image

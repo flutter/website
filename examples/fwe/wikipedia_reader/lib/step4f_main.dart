@@ -13,5 +13,4 @@ class ArticleWidget extends StatelessWidget {
     return const Text('Article content will be displayed here...');
   }
 }
-
 // #enddocregion article

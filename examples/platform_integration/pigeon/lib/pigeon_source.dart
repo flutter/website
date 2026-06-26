@@ -22,5 +22,4 @@ abstract class Api {
   @async
   SearchReply search(SearchRequest request);
 }
-
 // #enddocregion search
