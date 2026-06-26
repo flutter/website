@@ -115,12 +115,16 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
@@ -168,11 +172,9 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
    For more instructions, visit
    [Bundling resources with a Swift package][].
 
-[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
-
 1. Move all files from `ios/Classes` to `ios/plugin_name/Sources/plugin_name`.
 
-1. Add the `FlutterFramework` as a dependency and update Dart and Flutter versions.
+1. Add the `FlutterFramework` as a dependency.
 
    Update `Package.swift` to include `FlutterFramework`:
 
@@ -188,15 +190,7 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
            ],
    ```
-
-   In `pubspec.yaml`, update versions to:
-
-   ```yaml title="pubspec.yaml"
-   environment:
-     sdk: ^3.11.0
-     flutter: ">=3.41.0"
-   ```
-
+   
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
 
@@ -379,3 +373,4 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
 [testing plugins]: /testing/testing-plugins
+[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
