@@ -259,6 +259,7 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            ]
        )
    ]
+   ```
 
 1. If your header files are no longer in the same directory as your
    implementation files, you should update your import statements.
