@@ -189,6 +189,8 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
            dependencies: [
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
            ],
+      )
+   ]
    ```
    
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
