@@ -242,8 +242,6 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
       This avoids conflicts with targets from other packages.
       :::
 
-[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription
-
 1. Update your `ios/plugin_name.podspec` to point to new paths.
 
    ```ruby title="ios/plugin_name.podspec" diff
@@ -374,3 +372,4 @@ The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applica
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
 [testing plugins]: /testing/testing-plugins
 [Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
+[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription
