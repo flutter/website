@@ -142,6 +142,7 @@ check out the [README.md][] file in the source tree.
 
 ## Additional information
 
+* [Impeller anti-aliasing][impeller-antialiasing]
 * [Frequently asked questions][impeller-faq]
 * [Impeller's coordinate system][impeller-coords]
 * [How to set up Xcode for GPU frame captures with metal][impeller-xcode-capture]
@@ -151,6 +152,7 @@ check out the [README.md][] file in the source tree.
 * [Guidance for writing efficient shaders][impeller-shader-optimization]
 * [How color blending works in Impeller][impeller-blending]
 
+[impeller-antialiasing]: /perf/antialiasing
 [impeller-faq]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/faq.md
 [impeller-coords]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/coordinate_system.md
 [impeller-xcode-capture]: {{site.repo.flutter}}/blob/main/docs/engine/impeller/docs/xcode_frame_capture.md
