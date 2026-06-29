@@ -35,8 +35,10 @@ In the future, the `reverseCurve` field will be removed from
 
 :::note
 Until the deprecation period is over, you must continue to
-call [`dispose`][] on [`CurvedAnimation`]. If you switch to [`AsymmetricCurvedAnimation`][], you must always call its
-[`dispose`][] method to clean up its active direction listeners.
+call [`dispose`][] on [`CurvedAnimation`].
+If you switch to [`AsymmetricCurvedAnimation`][], you must always call its
+[`dispose`][AsymmetricCurvedAnimation.dispose] method to clean up its
+active direction listeners.
 :::
 
 ## Migration guide
@@ -103,9 +105,10 @@ Relevant PRs:
 
 [`AsymmetricCurvedAnimation`]: {{site.main-api}}/flutter/animation/AsymmetricCurvedAnimation-class.html
 [`CurvedAnimation`]: {{site.main-api}}/flutter/animation/CurvedAnimation-class.html
-[`dispose`]: {{site.main-api}}/flutter/animation/AsymmetricCurvedAnimation/dispose.html
+[`dispose`]: {{site.main-api}}/flutter/animation/CurvedAnimation/dispose.html
+[AsymmetricCurvedAnimation.dispose]: {{site.main-api}}/flutter/animation/AsymmetricCurvedAnimation/dispose.html
 [`parent`]: {{site.main-api}}/flutter/animation/CurvedAnimation/parent.html
-[`reverseCurve`]: {{site.main-api}}/flutter/animation/AsymmetricCurvedAnimation/reverseCurve.html
+[`reverseCurve`]: {{site.main-api}}/flutter/animation/CurvedAnimation/reverseCurve.html
 
 [Disambiguate CurvedAnimation and CurveTween]: {{site.repo.flutter}}/issues/185468
 [Docs should instruct user to dispose `CurvedAnimation`]: {{site.repo.flutter}}/issues/183292
