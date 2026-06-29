@@ -67,11 +67,11 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
  3. Follow the first three steps in [Firebase's Flutter setup guide][]
     to add Firebase to your app.
 
- 4. Use `dart pub add` to add `genui` and `firebase_vertex_ai` as
+ 4. Use `dart pub add` to add `genui` and `firebase_ai` as
     dependencies in your `pubspec.yaml` file:
 
     ```console
-    $ dart pub add genui firebase_vertex_ai
+    $ dart pub add genui firebase_ai
     ```
 
  5. In your app's `main` method, ensure that the widget
@@ -96,9 +96,9 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
 
     ```dart
     import 'package:genui/genui.dart';
-    import 'package:firebase_vertex_ai/firebase_vertex_ai.dart';
+    import 'package:firebase_ai/firebase_ai.dart';
 
-    final catalog = Catalog(components: [
+    final catalog = Catalog([
       // ...
     ]);
     final catalogs = [catalog];
@@ -110,8 +110,8 @@ To connect to Gemini using the Vertex AI for Firebase SDK, follow these instruct
       systemPromptFragments: ['You are a helpful assistant.'],
     );
 
-    final model = FirebaseVertexAI.instance.generativeModel(
-      model: 'gemini-2.5-flash',
+    final model = FirebaseAI.vertexAI().generativeModel(
+      model: 'gemini-3.5-flash',
       systemInstruction: Content.system(promptBuilder.systemPromptJoined()),
     );
 
@@ -156,11 +156,11 @@ The main components in this package include:
 Follow these instructions:
 
  1. Set up dependencies:
-    Use `dart pub add` to add `genui`, `genui_a2a`, and `a2a` as
+    Use `dart pub add` to add `genui` and `genui_a2a` as
     dependencies in your `pubspec.yaml` file.
 
     ```console
-    $ dart pub add genui genui_a2a a2a
+    $ dart pub add genui genui_a2a
     ```
 
  2. Initialize `SurfaceController`:
@@ -272,15 +272,12 @@ Follow these instructions:
       void _handleSubmitted(String text) async {
         if (text.isEmpty) return;
         _textController.clear();
-        final message = ChatMessage.user(TextPart(text));
+        final message = ChatMessage.user(text);
         setState(() {
           _messages.insert(0, message);
         });
         
-        final responseText = await _connector.connectAndSend(
-            message,
-            clientCapabilities: A2uiClientCapabilities(supportedProtocols: ['a2ui/0.9.0'])
-        );
+        final responseText = await _connector.connectAndSend(message);
         
         // Handling response depends on your app's logic
       }
@@ -311,8 +308,7 @@ Follow these instructions:
               SizedBox(
                 height: 300,
                 child: Surface(
-                  surfaceController: _surfaceController,
-                  surfaceId: 'main_surface',
+                  surfaceContext: _surfaceController.contextFor('main_surface'),
                 ),
               ),
             ],
@@ -328,13 +324,13 @@ Follow these instructions:
             children: <Widget>[
               Container(
                 margin: const EdgeInsets.only(right: 16.0),
-                child: CircleAvatar(child: Text(message.role == Role.user ? 'U' : 'A')),
+                child: CircleAvatar(child: Text(message.role == ChatMessageRole.user ? 'U' : 'A')),
               ),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(message.role == Role.user ? 'User' : 'Agent',
+                    Text(message.role == ChatMessageRole.user ? 'User' : 'Agent',
                         style: const TextStyle(fontWeight: FontWeight.bold)),
                     Container(
                       margin: const EdgeInsets.only(top: 5.0),
@@ -649,18 +645,13 @@ To add your own widgets, use the following instructions.
       name: 'RiddleCard',
       dataSchema: _schema,
       widgetBuilder:
-          ({
-            required data,
-            required id,
-            required buildChild,
-            required dispatchEvent,
-            required context,
-            required dataContext,
-          }) {
-            final json = data as Map<String, Object?>;
+          (itemContext) {
+            final json = itemContext.data as Map<String, Object?>;
             final question = json['question'] as String;
             final answer = json['answer'] as String;
 
+            final context = itemContext.buildContext;
+    
             return Container(
               constraints: const BoxConstraints(maxWidth: 400),
               decoration: BoxDecoration(border: Border.all()),
@@ -684,7 +675,7 @@ To add your own widgets, use the following instructions.
 
     ```dart
     _surfaceController = SurfaceController(
-      catalogs: [BasicCatalogItems.asCatalog().copyWith([riddleCard])],
+      catalogs: [BasicCatalogItems.asCatalog().copyWith(newItems: [riddleCard])],
     );
     ```
 
@@ -736,6 +727,7 @@ the AI would generate:
 
 ```json
 {
+  "id": "welcome-text",
   "component": "Text",
   "text": "Welcome to GenUI",
   "variant": "h1"
@@ -746,6 +738,7 @@ the AI would generate:
 
 ```json
 {
+  "id": "image",
   "component": "Image",
   "url": "https://example.com/image.png",
   "variant": "mediumFeature"
@@ -785,15 +778,17 @@ This is why the [earlier example][instruction-example] includes
 a system instruction for the agent with the line
 "Every time I give you a word, you should generate UI that...":
 
-```dart highlightLines=4-5
+```dart highlightLines=5-6
 final promptBuilder = PromptBuilder.chat(
   catalog: catalog,
-  instructions: '''
+  systemPromptFragments: [
+    '''
     You are an expert in creating funny riddles.
     Every time I give you a word, you should generate UI that
     displays one new riddle related to that word.
     Each riddle should have both a question and an answer.
-    ''',
+    '''
+  ],
 );
 ```
 
@@ -810,7 +805,7 @@ enable logging in your `main` method.
 import 'package:logging/logging.dart';
 import 'package:genui/genui.dart';
 
-final logger = configureGenUiLogging(level: Level.ALL);
+final logger = configureLogging(level: Level.ALL);
 
 void main() async {
   logger.onRecord.listen((record) {

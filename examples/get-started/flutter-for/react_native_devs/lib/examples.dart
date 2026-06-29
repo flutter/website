@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 // #enddocregion package-import
 // #docregion shared-prefs
 import 'package:shared_preferences/shared_preferences.dart';
+
 // #enddocregion shared-prefs
 
 // #docregion main
@@ -161,7 +162,6 @@ class ThemeExample extends StatelessWidget {
       home: const StylingPage(),
     );
   }
-
   // #enddocregion theme
 }
 
@@ -199,7 +199,6 @@ class ThemeDataExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion theme-data
 }
 
@@ -249,7 +248,6 @@ class DrawerExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion drawer
 }
 
@@ -274,7 +272,6 @@ class ScaffoldExample extends StatelessWidget {
       body: Container(),
     );
   }
-
   // #enddocregion scaffold
 }
 
@@ -310,7 +307,6 @@ class GestureDetectorExample extends StatelessWidget {
       },
     );
   }
-
   // #enddocregion gesture-detector
 }
 
@@ -383,7 +379,6 @@ class _TextEditingExampleState extends State<TextEditingExample> {
       ],
     );
   }
-
   // #enddocregion text-editing-controller
 }
 
@@ -444,7 +439,6 @@ class _FormExampleState extends State<FormExample> {
       ),
     );
   }
-
   // #enddocregion form-state
 }
 

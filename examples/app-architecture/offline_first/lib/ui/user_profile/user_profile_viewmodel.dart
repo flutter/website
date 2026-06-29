@@ -55,5 +55,4 @@ class UserProfileViewModel extends ChangeNotifier {
     // #docregion UserProfileViewModel
   }
 }
-
 // #enddocregion UserProfileViewModel

@@ -22,5 +22,4 @@ class Tile extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion Tile

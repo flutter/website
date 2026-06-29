@@ -68,7 +68,6 @@ class UserProfileRepository {
 
     return Result.error(Exception('Failed to get user profile'));
   }
-
   // #enddocregion getUserProfile
 }
 

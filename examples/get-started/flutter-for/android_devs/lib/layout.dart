@@ -79,7 +79,6 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion simple-widget
 }
 
@@ -99,7 +98,6 @@ class RowExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion row
 }
 
@@ -119,7 +117,6 @@ class ColumnExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion column
 }
 
@@ -138,6 +135,5 @@ class ListViewExample extends StatelessWidget {
       ],
     );
   }
-
   // #enddocregion list-view
 }

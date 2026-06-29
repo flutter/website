@@ -124,7 +124,7 @@ class GamePage extends StatelessWidget {
 }
 ```
 
-Then update your `MainPage` widget to create and
+Then update your `MainApp` widget to create and
 display a `GamePage` widget instead of "Hello World!".
 
 <?code-excerpt "fwe/birdle/lib/step3_main.dart (MainApp)"?>

@@ -145,6 +145,5 @@ class DrawerExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion drawer
 }

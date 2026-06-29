@@ -125,5 +125,4 @@ class ContactGroupsModel {
     _listsNotifier.dispose();
   }
 }
-
 // #enddocregion model_class

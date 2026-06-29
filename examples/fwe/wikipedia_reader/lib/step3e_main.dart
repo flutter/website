@@ -36,6 +36,5 @@ class ArticleViewModel extends ChangeNotifier {
     isLoading = false;
     notifyListeners();
   }
-
   // #enddocregion fetchArticle
 }

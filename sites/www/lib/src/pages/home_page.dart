@@ -4,6 +4,7 @@
 
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:site_shared/components/utils/component_ref.dart';
 
 import '../components/common/carousel.dart';
 import '../components/common/feature.dart';
@@ -13,7 +14,6 @@ import '../components/sections/cta_section.dart';
 import '../components/sections/newsletter_section.dart';
 import '../models/content/home_content.dart';
 import '../utils/asset_utils.dart';
-import '../utils/component_ref.dart';
 import '../utils/data_utils.dart';
 import '../utils/scroll_spy.dart';
 
@@ -480,7 +480,7 @@ class HomePage extends StatelessComponent {
               ]),
               div([
                 img(
-                  src: context.asset('images/third_party/logos/toyota.svg'),
+                  src: context.asset('images/third_party/logos/toyota.png'),
                   alt: 'Toyota',
                 ),
               ]),

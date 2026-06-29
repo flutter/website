@@ -1,4 +1,4 @@
-@use '../base/mixins';
+@use 'package:site_shared/_sass/base/mixins';
 
 #resource-filter-group-wrapper {
   border: 1px solid var(--site-inset-borderColor);
@@ -130,7 +130,7 @@
     color: var(--site-base-fgColor-alt);
     background-color: var(--site-raised-bgColor);
     font-family: var(--site-ui-fontFamily);
-    font-weight: 700;
+    font-weight: 600;
     font-size: .925rem;
     padding: .5rem;
     border-bottom: 1px solid var(--site-inset-borderColor);
