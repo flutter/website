@@ -85,5 +85,8 @@
 - name: Toyota
   logo: /images/third_party/logos/toyota.png
 
+- name: SoFi
+  logo: /images/third_party/logos/sofi.svg
+
 - name: Ubuntu
   logo: /images/third_party/logos/ubuntu.svg
