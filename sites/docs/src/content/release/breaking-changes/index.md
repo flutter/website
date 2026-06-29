@@ -37,10 +37,12 @@ They're sorted by release and listed in alphabetical order:
 ### Not yet released to stable
 
 * [Added enabled property and made onChanged optional for DropdownButton][]
+* [Deprecate `CurvedAnimation.reverseCurve` in favor of `AsymmetricCurvedAnimation`][]
 * [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [Update semantics header and headingLevel behavior on iOS and Android][]
 
 [Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[Deprecate `CurvedAnimation.reverseCurve` in favor of `AsymmetricCurvedAnimation`]: /release/breaking-changes/deprecate-curved-animation-reverse-curve
 [Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
 
