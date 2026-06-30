@@ -11,7 +11,7 @@ To verify that lists contain the expected content
 using widget tests,
 you need a way to scroll through lists to search for particular items.
 
-To scroll through lists via integration tests,
+To scroll through lists via widget tests,
 use the methods provided by the [`WidgetTester`][] class,
 which is included in the [`flutter_test`][] package:
 
@@ -34,7 +34,7 @@ If you're unsure of how to work with long lists,
 see that recipe for an introduction.
 
 Add keys to the widgets you want to interact with
-inside the integration tests.
+inside the widget tests.
 
 <?code-excerpt "lib/main.dart"?>
 ```dart
