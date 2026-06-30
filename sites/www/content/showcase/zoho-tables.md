@@ -69,7 +69,7 @@ using Flutter's custom paint and scroll physics.
 This custom implementation achieved smooth scrolling
 for users interacting with anywhere from 100 to 100,000 rows of data.
 
-<Image src="images/third_party/case_studies/zoho-tables/iphone.png" format="fullwidth" alt="iPhone" />
+<Image src="images/third_party/case_studies/zoho-tables/iPhone.png" format="fullwidth" alt="iPhone" />
 
 To integrate native hardware features,
 the team combined Flutter's platform channels with native APIs.
