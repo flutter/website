@@ -50,7 +50,7 @@ This high performance was essential
 for the application's "infinite canvas,"
 which hosts massive spreadsheets, galleries, and calendars.
 
-<Image src="images/third_party/case_studies/zoho-tables/android.png" format="fullwidth" alt="Android" />
+<Image src="images/third_party/case_studies/zoho-tables/Android.png" format="fullwidth" alt="Android" />
 
 Additionally, Flutter's comprehensive documentation
 enabled their existing Java and Swift developers
