@@ -1,0 +1,28 @@
+.map {
+
+  button.gm-ui-hover-effect {
+    top: 1px !important;
+    right: 0px !important;
+  }
+  
+  .map-info-window {
+    padding: 20px;
+
+    h4 {
+      font-size: 14px;
+      font-weight: var(--font-weight-normal);
+      margin-bottom: var(--spacer-sm);
+      color: var(--primary);
+    }
+  
+    h3 {
+      font-size: var(--font-size-heading-3);
+      margin-bottom: var(--spacer-sm);
+    }
+  
+    p {
+      font-size: var(--font-size-heading-5);
+      margin-bottom: var(--gutter-sm);
+    }
+  }
+}

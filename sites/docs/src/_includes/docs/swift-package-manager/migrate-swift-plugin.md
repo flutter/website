@@ -1,7 +1,7 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
-The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
+The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applicable.
 
-1. [Turn on the Swift Package Manager feature][enableSPM].
+1. Ensure that you are using Flutter 3.44 or later. This enables SwiftPM by default.
 
 1. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -73,7 +73,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -98,7 +98,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
    ```
 
-   [supported platforms]: https://developer.apple.com/documentation/packagedescription/supportedplatform
+   [supported platforms]: {{site.apple-dev}}/documentation/packagedescription/supportedplatform
 
 1. Update the package, library, and target names in your `Package.swift` file.
 
@@ -115,17 +115,21 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -152,7 +156,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
                    // TODO: If your plugin requires a privacy manifest
                    // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    [!.process("PrivacyInfo.xcprivacy"),!]
 
@@ -165,12 +169,12 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 1. Move any resource files from `ios/Assets` to
    `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
-   For more instructions, see
-   [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
+   For more instructions, visit
+   [Bundling resources with a Swift package][].
 
 1. Move all files from `ios/Classes` to `ios/plugin_name/Sources/plugin_name`.
 
-1. **New in Flutter 3.41!** Add the FlutterFramework as a dependency and update Dart/Flutter version.
+1. Add the `FlutterFramework` as a dependency.
 
    Update `Package.swift` to include `FlutterFramework`:
 
@@ -185,16 +189,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            dependencies: [
                [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
            ],
+      )
+   ]
    ```
-
-   In `pubspec.yaml`, update versions to:
-
-   ```yaml title="pubspec.yaml"
-   environment:
-     sdk: ^3.11.0
-     flutter: ">=3.41.0"
-   ```
-
+   
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
 
@@ -211,7 +209,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. Update your `Package.swift` file with any customizations you might need.
 
-   1. Open the `ios/plugin_name/` directory in Xcode.
+   1. In Xcode, open the `ios/plugin_name/` directory.
 
    1. In Xcode, open your `Package.swift` file.
       Verify Xcode doesn't produce any warnings or errors for this file.
@@ -239,8 +237,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       ```
 
    1. Make any other customizations. For more information on how to write a
-      `Package.swift` file, see
-      [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
+      `Package.swift` file, visit [`PackageDescription`][].
 
       :::tip
       If you add targets to your `Package.swift` file, use unique names.
@@ -269,7 +266,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::note
    `Bundle.module` only works if there are resources
    [defined in the `Package.swift` file][Bundling resources] or
-   [automatically included by Xcode][Xcode resource detection]).
+   [automatically included by Xcode][Xcode resource detection].
    Otherwise, using `Bundle.module` results in an error.
    :::
 
@@ -353,7 +350,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       [undo the Swift Package Manager migration][removeSPM].
       :::
 
-   1. Open the plugin's example app in Xcode.
+   1. In Xcode, open the plugin's example app.
       Ensure that **Package Dependencies** shows in the left
       **Project Navigator**.
 
@@ -364,16 +361,17 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Follow instructions for [testing plugins][].
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
-[`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
+[`PrivacyInfo.xcprivacy` file]: {{site.apple-dev}}/documentation/bundleresources/privacy_manifest_files
 [Pigeon]: https://pub.dev/packages/pigeon
 [CocoaPods `dependency`]: https://guides.cocoapods.org/syntax/podspec.html#dependency
-[Swift Package Manager dependencies]: https://developer.apple.com/documentation/packagedescription/package/dependency
-[not recommended by Apple]: https://developer.apple.com/documentation/packagedescription/product/library(name:type:targets:)
-[Product]: https://developer.apple.com/documentation/packagedescription/product
-[`Bundle.module`]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
-[Bundling resources]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
-[Xcode resource detection]: https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
+[Swift Package Manager dependencies]: {{site.apple-dev}}/documentation/packagedescription/package/dependency
+[not recommended by Apple]: {{site.apple-dev}}/documentation/packagedescription/product/library(name:type:targets:)
+[Product]: {{site.apple-dev}}/documentation/packagedescription/product
+[`Bundle.module`]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#Access-a-resource-in-code
+[Bundling resources]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#Explicitly-declare-or-exclude-resources
+[Xcode resource detection]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package#:~:text=Xcode%20detects%20common%20resource%20types%20for%20Apple%20platforms%20and%20treats%20them%20as%20a%20resource%20automatically
 [removeSPM]: /packages-and-plugins/swift-package-manager/for-app-developers#how-to-remove-swift-package-manager-integration
 [update unit tests in the plugin's example app]: /packages-and-plugins/swift-package-manager/for-plugin-authors/#how-to-update-unit-tests-in-a-plugins-example-app
-[testing plugins]: https://docs.flutter.dev/testing/testing-plugins
+[testing plugins]: /testing/testing-plugins
+[Bundling resources with a Swift package]: {{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package
+[`PackageDescription`]: {{site.apple-dev}}/documentation/packagedescription

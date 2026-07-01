@@ -1,0 +1,256 @@
+@use '../core/breakpoints';
+
+.insert {
+  background-color: transparent;
+  border-radius: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+
+  .eyebrow {
+    color: black;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--gutter);
+    z-index: 2;
+
+    h4.eyebrow {
+      margin-bottom: var(--spacer-sm);
+    }
+
+    h3 {
+      font-size: var(--font-size-heading-2);
+      margin-bottom: var(--gutter-sm);
+      font-weight: var(--font-weight-normal);
+      max-width: 820px;
+    }
+
+    a,
+    a.btn {
+      font-weight: var(--font-weight-bold);
+      border-color: black;
+      color: black;
+
+      &:hover {
+        color: black;
+        background-color: transparent;
+      }
+    }
+
+    a.btn {
+      margin-bottom: var(--spacer-sm);
+    }
+  }
+
+  .media {
+    position: relative;
+    z-index: 1;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  /* Overrides */
+
+  &.dart-insert {
+    background-image: linear-gradient(to right, #9cc4f5, #b8f0f7);
+
+    .text {
+      h3 {
+        margin-bottom: var(--spacer);
+      }
+    }
+
+    .media {
+      min-height: 325px;
+
+      img {
+        right: 0;
+      }
+    }
+
+    &.dev {
+      .media {
+        height: 325px;
+
+        img {
+          position: relative;
+          height: 100%;
+          left: 50px;
+        }
+      }
+    }
+  }
+
+  &.culture-insert {
+    background-color: rgb(116, 199, 247);
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      min-width: 1024px;
+    }
+  }
+
+  &.developer-story-insert {
+    background-image: linear-gradient(to right, #ff8485, #f9eac6);
+
+    .media {
+      img {
+        position: static;
+        height: 385px;
+      }
+    }
+  }
+
+  &.cta-insert {
+    background-color: #042449;
+    overflow: hidden;
+
+    .text {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+
+    .media {
+      position: static;
+
+      img {
+        height: 100%;
+        bottom: auto;
+        top: 0;
+      }
+    }
+
+    a,
+    p,
+    h3 {
+      color: white;
+    }
+
+    h3 {
+      font-size: var(--font-size-heading-1);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--gutter-sm);
+    }
+
+    p {
+      font-size: var(--font-size-heading-4);
+      margin-bottom: 2rem;
+    }
+
+    a.btn:not(.quiet) {
+      background-color: white !important;
+      color: var(--blue-6) !important;
+    }
+
+    a.btn.quiet,
+    a.btn.quiet:hover {
+      color: white !important;
+    }
+  }
+
+  &.try-flutter-insert {
+    background-image: linear-gradient(to right, #b993f4, #53c0f9, #00f0ea);
+    border-radius: 40px;
+    font-family: var(--font-ui);
+
+    .text {
+      h2 {
+        font-size: 48px;
+        color: #ffffff;
+      }
+
+      p {
+        font-size: 24px;
+        color: #ffffff;
+      }
+
+      a.btn.primary {
+        background-color: #ffffff;
+        border-color: #ffffff;
+        color: #6a1ff4 !important;
+        font-weight: var(--font-weight-bold);
+        margin-right: var(--gutter-sm);
+      }
+
+      .follow-up {
+        white-space: nowrap;
+        padding: 0;
+      }
+    }
+
+    /* .media {
+      min-height: 325px;
+
+      img {
+        height: 100%;
+        right: 0;
+        border-radius: 0 40px 40px 0;
+      }
+    } */
+  }
+
+  @include breakpoints.screen(lg) {
+    grid-template-columns: 1fr minmax(0, 441px);
+    min-height: 315px;
+
+    .text {
+      padding: 64px;
+      padding-right: 0;
+    }
+
+    &.developer-story-insert {
+      .media {
+        position: static;
+
+        img {
+          position: absolute;
+        }
+      }
+    }
+
+    &.dart-insert {
+      grid-template-columns: 1fr minmax(0, 390px);
+      column-gap: var(--gutter-sm);
+
+      .media {
+        min-height: 315px;
+      }
+
+      &.dev {
+        .media {
+          min-height: auto;
+          height: auto;
+
+          img {
+            position: absolute;
+            height: auto;
+            left: auto;
+          }
+        }
+      }
+    }
+
+    &.cta-insert {
+      .text {
+        padding: var(--gutter-md);
+
+        h3 {
+          margin-bottom: var(--spacer-sm);
+        }
+      }
+    }
+  }
+}

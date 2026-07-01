@@ -97,7 +97,7 @@ In stable release: 2.0.0
 API documentation:
 
 * [`RenderBox`][]
-* [`computeMinInstrinsicWidth`][]
+* [`computeMinIntrinsicWidth`][]
 * [`computeDryLayout`][]
 * [`getDryLayout`][]
 * [`performResize`][]
@@ -114,7 +114,7 @@ Relevant PRs:
 
 [`RenderBox`]: {{site.api}}/flutter/rendering/RenderBox-class.html
 [`RenderBox.computeMinIntrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
-[`computeMinInstrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
+[`computeMinIntrinsicWidth`]: {{site.api}}/flutter/rendering/RenderBox/computeMinIntrinsicWidth.html
 [`computeDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/computeDryLayout.html
 [`getDryLayout`]: {{site.api}}/flutter/rendering/RenderBox/getDryLayout.html
 [`performResize`]: {{site.api}}/flutter/rendering/RenderBox/performResize.html

@@ -12,6 +12,9 @@ The Flutter SDK archive is a collection of all previous versions of the
 Flutter SDK. This archive is useful for developers who need to use an older
 version of Flutter for compatibility reasons or to investigate bugs.
 
+After you download a release, to set up Flutter,
+follow the [manual installation instructions][manual-install].
+
 The archive includes Flutter SDKs for Windows, macOS, and Linux on the
 following [channels][]:
 
@@ -52,27 +55,6 @@ SDK archive:
 
 [calendar versioning]: https://calver.org/
 [Flutter SDK versioning]: {{site.repo.flutter}}/blob/main/docs/releases/Release-versioning.md
-
-## Install from an archive
-
-After downloading a Flutter SDK archive from this page,
-use the following steps to install:
-
-1. Extract the downloaded archive to a desired location on your system.
-2. Add the Flutter `bin` directory to your system's `PATH`. For more information,
-   see [Add Flutter to PATH](/install/add-to-path).
-3. Run the following command to verify the installation:
-
-```bash id="yfl9s6"
-flutter doctor
-```
-
-The `flutter doctor` command checks your environment
-and reports on the status of your installation.
-
-For detailed platform-specific setup instructions,
-refer to the main [Flutter installation guide](../install).
-
 
 ## Public release windows
 
@@ -159,15 +141,21 @@ $ git clone -b main https://github.com/flutter/flutter.git
 $ ./flutter/bin/flutter --version
 ```
 
+<a id="install-from-an-archive" aria-hidden="true"></a>
+
 ## More information
 
-To learn what's new in the major Flutter builds, check out the
-[release notes][] page.
+- For instructions on installing Flutter from a downloaded SDK,
+  see [Install Flutter manually][manual-install].
 
-For details on how our installation bundles are structured,
-see [Installation bundles][].
+- To learn what's new in the major Flutter builds,
+  check out the [release notes][] page.
+
+- For details on how our installation bundles are structured,
+  see [Installation bundles][].
 
 [channels]: {{site.repo.flutter}}/blob/main/docs/releases/Flutter-build-release-channels.md
+[manual-install]: /install/manual
 [release notes]: /release/release-notes
 [GitHub repo]: {{site.repo.flutter}}
 [Installation bundles]: {{site.repo.flutter}}/blob/main/docs/infra/Flutter-Installation-Bundles.md

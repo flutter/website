@@ -30,5 +30,4 @@ class ThemeSwitch extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion ThemeSwitch

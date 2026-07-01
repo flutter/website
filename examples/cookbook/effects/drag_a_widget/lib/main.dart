@@ -389,5 +389,4 @@ class Customer {
     return '\$${(totalPriceCents / 100.0).toStringAsFixed(2)}';
   }
 }
-
 // #enddocregion CustomerClass

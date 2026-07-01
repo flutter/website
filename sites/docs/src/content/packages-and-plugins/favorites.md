@@ -39,7 +39,7 @@ using the following metrics:
 * Good **runtime behavior** in terms of CPU and memory usage
 * High quality **dependencies**
 
-## Flutter Ecosystem  Committee
+## Flutter Ecosystem Committee
 
 The Flutter Ecosystem Committee is comprised of Flutter
 team members and Flutter community members spread

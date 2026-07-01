@@ -531,7 +531,7 @@ to switch between a "touch" mode and a "traditional" (mouse and keyboard) mode
 for their focus highlights. When a user is using touch to navigate, the focus
 highlight is usually hidden, and when they switch to a mouse or keyboard, the
 focus highlight needs to be shown again so they know what is focused. The
-`hightlightStrategy` tells the focus manager how to interpret changes in the
+`highlightStrategy` tells the focus manager how to interpret changes in the
 usage mode of the device: it can either automatically switch between the two
 based on the most recent input events, or it can be locked in touch or
 traditional modes. The provided widgets in Flutter already know how to use this

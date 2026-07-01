@@ -22,6 +22,22 @@ and review the [Dart changelog][].
 [flutter-announce]: {{site.groups}}/forum/#!forum/flutter-announce
 [release notes]: /release/release-notes
 
+## 18 May 2026: Google I/O Release 3.44
+
+Flutter 3.44 is live! This release is jam packed.
+For details, check out the [Flutter 3.44 blog post][3.44-blog-post]
+and [watch the video][3.44-whats-new]:
+
+<div class="video-wrapper">
+<span class="video-intro">Check out the latest in Dart and Flutter</span>
+<YouTubeEmbed id="I1uIbGh1dGE" title="What's New in Dart and Flutter 3.44" fullWidth></YouTubeEmbed>
+</div>
+
+[3.44-blog-post]: {{site.flutter-blog}}/whats-new-in-flutter-3-44-b0cc1ad3c527
+[3.44-whats-new]: https://www.youtube.com/watch?v=I1uIbGh1dGE&t=451s
+
+More on the site updates to come.
+
 ## 11 February 2026: "Year of the Fire Horse" Release 3.41
 
 Flutter 3.41 is live! For details,
@@ -36,7 +52,7 @@ In addition to many smaller updates, here are some of the more
 significant changes:
 
 * We have introduced a new getting started experience for
-  both Flutter and Dart, as announced in a recent [blog post][fwe].
+  both Flutter and Dart, as announced in a recent [blog post][few].
   You can find the Flutter [learning pathway][] under the **Learn**
   tab at the top of [docs.flutter.dev][]. To return to the rest of the site,
   select the **Guides** tab. As always, the **Reference**
@@ -55,7 +71,7 @@ significant changes:
 [bc-3-41]: /release/breaking-changes#released-in-flutter-3-41
 [docs.flutter.dev]: /
 [Flutter API docs]: {{site.api}}
-[fwe]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
+[few]: {{site.flutter-blog}}/announcing-our-new-dart-and-flutter-getting-started-experience-b8c4b2be0984
 [learning pathway]: /learn
 [navaronbracke]: {{site.github}}/navaronbracke
 [official glossary]: /resources/glossary

@@ -4,7 +4,7 @@ import '../services/database_service.dart';
 
 // #docregion TodoRepository
 class TodoRepository {
-  TodoRepository({required DatabaseService database}) : _database = database;
+  TodoRepository({required this._database});
 
   final DatabaseService _database;
 
@@ -29,5 +29,4 @@ class TodoRepository {
     return _database.delete(id);
   }
 }
-
 // #enddocregion TodoRepository

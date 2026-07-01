@@ -29,7 +29,6 @@ class ShortcutsExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion shortcuts
 }
 
@@ -88,7 +87,6 @@ class SelectAllExample extends StatelessWidget {
       child: child,
     );
   }
-
   // #enddocregion select-all-usage
 }
 
@@ -142,7 +140,6 @@ class HandlerExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion handler
 }
 
@@ -192,7 +189,6 @@ class LoggingActionDispatcherExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion logging-action-dispatcher-usage
 }
 
@@ -231,6 +227,5 @@ class _CallbackShortcutsExampleState extends State<CallbackShortcutsExample> {
       ),
     );
   }
-
   // #enddocregion callback-shortcuts
 }

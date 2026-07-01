@@ -11,5 +11,4 @@ abstract class UserProfile with _$UserProfile {
     @Default(false) bool synchronized,
   }) = _UserProfile;
 }
-
 // #enddocregion UserProfile

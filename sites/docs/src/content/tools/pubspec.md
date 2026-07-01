@@ -63,7 +63,7 @@ publish_to: none
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.11.0
+  sdk: ^3.12.0
 
 dependencies:
   [!flutter:!]       # Required for every Flutter project
@@ -161,7 +161,7 @@ flutter:
 ```
 
 ```yaml
-# flavor_path_field strucure
+# flavor_path_field structure
 - path: path/to/directory
   flavors:
   - flavor_name

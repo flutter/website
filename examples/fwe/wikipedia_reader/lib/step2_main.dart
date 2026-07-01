@@ -40,5 +40,4 @@ class ArticleModel {
     return Summary.fromJson(jsonDecode(response.body) as Map<String, Object?>);
   }
 }
-
 // #enddocregion ArticleModel

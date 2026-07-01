@@ -18,5 +18,4 @@ class _SubscribeButtonState extends State<SubscribeButton> {
 class SubscribeButtonViewModel extends ChangeNotifier {}
 
 class SubscriptionRepository {}
-
 // #enddocregion Starter

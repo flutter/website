@@ -1,6 +1,6 @@
 // ignore_for_file: directives_ordering
 
-import './error_handler.dart';
+import 'error_handler.dart';
 // #docregion all-errors
 import 'package:flutter/material.dart';
 import 'dart:ui';
@@ -36,5 +36,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion all-errors

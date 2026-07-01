@@ -1,0 +1,259 @@
+@use '../core/breakpoints';
+
+body.events {
+  section.hero {
+    background-image: var(--grad-blue-yellow-35);
+  }
+
+  #notification.module {
+    background-color: var(--grey-1);
+  }
+
+  .carousel-featured-card {
+    &.flutter-apprentice .text {
+      background-color: var(--blue-7);
+    }
+
+    &.flutter-engage .text {
+      background-color: var(--blue-4);
+    }
+  }
+
+  #newsletter {
+    margin-top: var(--gutter-lg);
+  }
+
+  .event_image_container {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    /* Maintain a 16:9 aspect ratio (adjust as needed for other ratios) */
+    overflow: hidden;
+    margin-bottom: var(--gutter-sm);
+    background-color: var(--grey-1);
+    border-radius: 2%;
+
+    >img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  /* Override story detail defaults */
+  &.event-detail {
+    .story-detail {
+      >h1 {
+        margin-bottom: var(--spacer-md);
+      }
+
+      >h2 {
+        font-size: var(--font-size-heading-3);
+        max-width: 725px;
+      }
+
+      .story-logo {
+        padding: 35px;
+
+        img {
+          position: relative;
+          top: -6px;
+          left: -3px;
+        }
+      }
+
+      .story-body {
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .story-cta-button {
+        margin-bottom: 3rem;
+        position: relative;
+        top: -1rem;
+
+        a.btn {
+          height: 50px;
+          padding: 0 var(--gutter);
+          font-size: var(--font-size-heading-5);
+        }
+      }
+    }
+
+    &.event-challenge {
+      .story-detail {
+        >h1 {
+          max-width: 90% !important;
+        }
+      }
+    }
+
+    #winners,
+    #mentions,
+    #sessions {
+      hgroup {
+        margin-bottom: var(--gutter-sm);
+      }
+    }
+
+    #winners,
+    #sessions {
+      background-color: var(--grey-1);
+    }
+
+    .event-sessions,
+    .event-winners {
+      display: grid;
+      column-gap: var(--gutter);
+      row-gap: var(--gutter-md);
+      text-align: left;
+      padding: var(--spacer) 0;
+
+      .event-session,
+      .event-winner {
+        img {
+          margin-bottom: 16px;
+          width: 100%;
+        }
+
+        h3 {
+          margin-bottom: 10px;
+          font-size: 16px;
+          line-height: 1.4;
+          /* tighter */
+          text-align: center;
+
+          span {
+            font-weight: var(--font-weight-normal);
+            color: var(--grey-6);
+          }
+        }
+
+        h4 {
+          margin-bottom: var(--spacer-sm);
+          font-size: var(--font-size-heading-3);
+          line-height: 1.1;
+          /* tighter */
+          max-width: 90%;
+        }
+
+        p {
+          font-size: var(--font-size-heading-5);
+        }
+
+        a:hover {
+
+          h4,
+          p {
+            color: var(--primary);
+          }
+        }
+      }
+
+      @include breakpoints.screen(md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include breakpoints.screen(lg) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .other-sessions,
+    .event-mentions {
+      padding: var(--spacer) 0;
+
+      ul {
+        column-count: 1;
+        line-height: 1.5;
+
+        li {
+          margin-bottom: 12px;
+          font-size: var(--font-size-heading-5);
+
+          a {
+            color: var(--primary);
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
+      @include breakpoints.screen(md) {
+        ul {
+          column-count: 2;
+        }
+      }
+
+      @include breakpoints.screen(lg) {
+        ul {
+          column-count: 3;
+        }
+      }
+    }
+  }
+
+  #stories {
+    .story-grid-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      h3 {
+        margin-bottom: var(--gutter-sm);
+        width: 100%;
+      }
+
+      .dropdown {
+        margin-bottom: var(--gutter-sm);
+      }
+
+      @include breakpoints.screen(md) {
+        h3 {
+          margin-bottom: var(--gutter-md);
+          text-align: left;
+        }
+
+        .dropdown {
+          margin-bottom: 0;
+        }
+
+        flex-direction: row;
+        align-items: normal;
+        justify-content: space-between;
+      }
+    }
+
+    .story-item {
+      .text {
+        div {
+          margin-bottom: var(--gutter-sm);
+          display: flex;
+          gap: 1rem;
+
+          span {
+            display: flex;
+            align-items: center;
+
+            img {
+              height: 15px;
+              max-width: 12px;
+              margin: 0;
+              margin-bottom: 2px;
+            }
+
+            label {
+              text-wrap: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}

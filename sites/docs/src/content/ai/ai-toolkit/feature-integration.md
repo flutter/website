@@ -440,7 +440,7 @@ LlmChatView(
 ),
 ```
 
-In this particular example, the `RecipeReponseView` widget is constructed with
+In this particular example, the `RecipeResponseView` widget is constructed with
 the LLM provider's response text and uses that to implement its `build` method:
 
 ```dart

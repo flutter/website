@@ -1,0 +1,116 @@
+@use 'breakpoints';
+
+:root {
+  --blue-10:  #041E3C;
+  --blue-9:   #042B59;
+  --blue-8:   #043875;
+  --blue-7:   #0553B1;
+  --blue-6:   #0468D7; /* new primary */
+  --primary:  #0468D7; /* accessibility */
+  --blue-5:   #027DFD;
+  /* --primary:  #027DFD; old primary */
+  --blue-4:   #13B9FD;
+  --blue-3:   #81DDF9;
+  --blue-2:   #B8EAFE;
+  --blue-1:   #E7F8FF;
+  --pink:     #F8BBD0;
+  --red:      #D43324;
+  --coral:    #F25D50;
+  --yellow:   #F2DD22;
+  --violet-4: #833EF2;
+  --violet-3: #796CEB;
+  --violet-2: #6200EE;
+  --violet-1: #C6BAFA;
+  --green-3:  #14C2AD;
+  --green-2:  #A7FFEB;
+  --green-1:  #1CDAC5;
+  --grey-6:   #4A4A4A;
+  --grey-5:   #A4A4A4;
+  --grey-4:   #DADCE0;
+  --grey-3:   #E8EAED;
+  --grey-2:   #F1F3F4;
+  --grey-1:   #F8F9FA;
+  
+  --ui-anim-func: cubic-bezier(.27, .89, .39, .95);
+  --ui-border-radius: 24px;
+  --ui-border-radius-sm: 8px;
+  --ui-border-color: var(--grey-3);
+  --ui-btn-height: 40px;
+  --ui-card-width: 484px;
+  --ui-drop-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+  --ui-drop-shadow-sm: 0px 0px 16px rgba(0, 0, 0, 0.1);
+
+  --ui-header-event-banner-height: 50px;
+  --ui-header-navigation-height: 86px;
+  --ui-header-height: calc(
+    var(--ui-header-navigation-height) + 
+    var(--ui-header-event-banner-height)
+  );
+  --ui-logo-width: 126px;
+
+  --font-size-heading-1: 46px;
+  --font-size-heading-2: 34px;
+  --font-size-heading-3: 24px;
+  --font-size-heading-4: 18px;
+  --font-size-heading-5: 16px;
+  --font-size-default: 14px;
+  --font-size-scaling-2: calc(88 * 100vw / 1440);
+  --font-size-scaling-3: calc(72 * 100vw / 1440);
+  --font-weight-normal: 400;
+  --font-weight-bold: 600;
+  --font-weight-bolder: 700;
+  --font-ui: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --font-body: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --font-code: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
+
+  --screen-xs-min:  480px;     /* mobile portrait */
+  --screen-sm-min:  640px;     /* mobile landscape */
+  --screen-md-min:  768px;     /* tablet portrait */
+  --screen-lg-min:  1024px;    /* tablet landscape */
+  --screen-xl-min:  1280px;    /* arguable */
+
+  --spacer-sm: 8px;
+  --spacer-md: 32px;
+  --spacer: 40px;
+
+  --gutter-sm: 24px;
+  --gutter: 50px;
+  --gutter-md: 70px;
+  --gutter-lg: 112px;
+  --gutter-xl: 140px;
+
+  --max-width: calc(var(--screen-xl-min) - (var(--gutter) * 2));
+  --gutter-auto: calc((100vw - var(--max-width)) / 2);
+
+  --grad-blue-green-145:  linear-gradient(145deg, #F3FCFF 40%, #D3FFF5 90%);
+  --grad-yellow-blue-145: linear-gradient(145deg, #FAF9C5 40%, #E8F9FF 90%);
+  --grad-blue-yellow-35:  linear-gradient(35deg,  #E8F9FF 40%, #FAF9C5 90%);
+  --grad-yellow-blue-35:  linear-gradient(35deg,  #FAF9C5 40%, #E8F9FF 90%);
+  --grad-liteyellow-blue: linear-gradient(35deg,  #FCFCE2 40%, #F5FBFE 90%);
+  --grad-red-blue-35:     linear-gradient(35deg,  #FCDDE8 0%,  #F3FCFF 60%);
+  --grad-violet-blue-35:  linear-gradient(35deg,  #E3DDFD 30%, #F3FCFF 90%);
+  --grad-blue-light-35:   linear-gradient(35deg,  #DCF5FF 50%, #F3FCFF 90%);
+  --grad-yellow-blue-75:  linear-gradient(75deg, rgba(249, 248, 196, 0.5) 0%, rgba(231, 248, 255, 0.5) 100%);
+
+  @include breakpoints.screen(lg) {
+    /* REFERENCE original sizing
+    --font-size-heading-1: 74px;
+    --font-size-heading-2: 46px;
+    --font-size-heading-3: 34px;
+    --font-size-heading-4: 24px;
+    --font-size-heading-5: 18px;
+    --font-size-default: 16px; 
+    */
+    --font-size-heading-1: 60px;
+    --font-size-heading-2: 36px;
+    --font-size-heading-3: 28px;
+    --font-size-heading-4: 20px;
+    --font-size-heading-5: 16px;
+    --font-size-default: 14px;
+  }
+}
+
+.text-coral  { color: var(--coral) !important; }
+.text-green  { color: var(--green-3) !important; }
+.text-blue   { color: var(--blue-4) !important; }
+.text-violet { color: var(--violet-4) !important; }

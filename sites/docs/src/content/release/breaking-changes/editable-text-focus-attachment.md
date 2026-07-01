@@ -41,7 +41,7 @@ the reason stated above.
 `EditableTextState` now creates a dedicated `Focus` widget to
 host `EditableText.focusNode`.
 This allows `EditableTextState`s to define handlers for shortcut `Intent`s.
-For  instance, `EditableText` now has a handler that
+For instance, `EditableText` now has a handler that
 handles the "deleteCharacter" intent
 when the <kbd>DEL</kbd> key is pressed.
 

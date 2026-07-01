@@ -74,6 +74,5 @@ class _DraggableCardState extends State<DraggableCard>
     );
     // #enddocregion gesture
   }
-
   // #enddocregion build
 }

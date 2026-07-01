@@ -51,6 +51,5 @@ class _DraggableCardState extends State<DraggableCard>
   Widget build(BuildContext context) {
     return Align(child: Card(child: widget.child));
   }
-
   // #enddocregion build
 }

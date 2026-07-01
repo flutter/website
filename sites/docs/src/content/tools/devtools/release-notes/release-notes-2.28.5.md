@@ -19,7 +19,7 @@ To learn about the improvements included in DevTools 2.28.4, please read the
 
 * Only cache pub root directories added by the user. - [#6897](https://github.com/flutter/devtools/pull/6897)
 
-* Remove Flutter pub root if it was accidently cached. - [#6911](https://github.com/flutter/devtools/pull/6911)
+* Remove Flutter pub root if it was accidentally cached. - [#6911](https://github.com/flutter/devtools/pull/6911)
 
 ## DevTools Extension updates
 

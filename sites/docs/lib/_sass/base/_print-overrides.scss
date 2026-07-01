@@ -1,22 +1,21 @@
 // Overrides for printing so only page content is printed
 @media print {
 
-  // Ignore navigation elements and other non-necessary interactive ones
+  // Ignore navigation elements and other non-necessary interactive ones.
   #site-header,
-  .subnav,
   .site-footer,
   #sidenav,
   .navbar,
   #site-toc--side,
   #page-github-links,
   #cookie-notice,
-  .site-banner,
-  .code-excerpt__copy-btn,
-  .breadcrumb {
+  #site-banner,
+  .code-block-wrapper .copy-button,
+  nav.breadcrumbs {
     display: none !important;
   }
 
-  // Make sure content fills up 100% of width
+  // Make sure content fills up 100% of width.
   #page-content {
     max-width: 100% !important;
     margin-left: 0;
@@ -30,12 +29,12 @@
     display: none;
   }
 
-  // Display underlines under links
+  // Display underlines under links.
   a {
     text-decoration: underline;
   }
 
-  // Show borders around notes and code blocks
+  // Show borders around notes and code blocks.
   .alert,
   pre {
     border: 1px solid black;

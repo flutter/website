@@ -6,8 +6,7 @@ import 'package:collection/collection.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:liquify/liquify.dart';
 import 'package:path/path.dart' as path;
-
-import '../util.dart';
+import 'package:site_shared/util.dart';
 
 /// A template engine for Jaspr Content that
 /// uses `package:liquify` to parse and render Liquid templates.

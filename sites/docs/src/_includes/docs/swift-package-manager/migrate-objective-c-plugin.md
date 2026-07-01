@@ -1,7 +1,7 @@
 Replace `plugin_name` throughout this guide with the name of your plugin.
-The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
+The example below uses `ios`, replace `ios` with `macos` or `darwin`, as applicable.
 
-1. [Turn on the Swift Package Manager feature][enableSPM].
+1.  Ensure that you are running Flutter 3.44 or later. This enables SwiftPM by default.
 
 1. Start by creating a directory under the `ios`, `macos`, and/or `darwin`
    directories.
@@ -65,17 +65,22 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: "plugin-name", targets: ["plugin_name"])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: "plugin_name",
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
-                   // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
+                   // (in other words, if it uses any required reason APIs),
+                   // update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -104,7 +109,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
        ],
    ```
 
-   [supported platforms]: https://developer.apple.com/documentation/packagedescription/supportedplatform
+   [supported platforms]: {{site.apple-dev}}/documentation/packagedescription/supportedplatform
 
 1. Update the package, library, and target names in your `Package.swift` file.
 
@@ -121,17 +126,22 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
            // If the plugin name contains "_", replace with "-" for the library name
            .library(name: [!"plugin-name"!], targets: [[!"plugin_name"!]])
        ],
-       dependencies: [],
+       dependencies: [
+           .package(name: "FlutterFramework", path: "../FlutterFramework")
+       ],
        targets: [
            .target(
                // TODO: Update your target name.
                name: [!"plugin_name"!],
-               dependencies: [],
+               dependencies: [
+                   .product(name: "FlutterFramework", package: "FlutterFramework")
+               ],
                resources: [
                    // TODO: If your plugin requires a privacy manifest
-                   // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
+                   // (for example, if it uses any required reason APIs),
+                   // update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    // .process("PrivacyInfo.xcprivacy"),
 
@@ -160,9 +170,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    ```swift title="Package.swift"
                resources: [
                    // TODO: If your plugin requires a privacy manifest
-                   // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
+                   // (for example, if it uses any required reason APIs),
+                   // update the PrivacyInfo.xcprivacy file
                    // to describe your plugin's privacy impact, and then uncomment this line.
-                   // For more information, see:
+                   // For more information, visit:
                    // https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
                    [!.process("PrivacyInfo.xcprivacy"),!]
 
@@ -175,8 +186,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 1. Move any resource files from `ios/Assets` to
    `ios/plugin_name/Sources/plugin_name` (or a subdirectory).
    Add the resource files to your `Package.swift` file, if applicable.
-   For more instructions, see
-   [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package](https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package).
+   For more instructions, visit
+   [https://developer.apple.com/documentation/xcode/bundling-resources-with-a-swift-package]({{site.apple-dev}}/documentation/xcode/bundling-resources-with-a-swift-package).
 
 1. Move any public headers from `ios/Classes` to
    `ios/plugin_name/Sources/plugin_name/include/plugin_name`.
@@ -230,6 +241,25 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. The `ios/Assets`, `ios/Resources`, and `ios/Classes` directories should now
    be empty and can be deleted.
+
+1. Add the `FlutterFramework` as a dependency.
+
+   Update `Package.swift` to include `FlutterFramework`:
+
+   ```swift title="Package.swift"
+   dependencies: [
+       [!.package(name: "FlutterFramework", path: "../FlutterFramework")!]
+   ],
+   targets: [
+       .target(
+           // TODO: Update your target name.
+           name: "plugin_name",
+           dependencies: [
+               [!.product(name: "FlutterFramework", package: "FlutterFramework")!]
+           ]
+       )
+   ]
+   ```
 
 1. If your header files are no longer in the same directory as your
    implementation files, you should update your import statements.
@@ -292,10 +322,10 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
 1. Update your `Package.swift` file with any customizations you might need.
 
-   1. Open the `ios/plugin_name/` directory in Xcode.
+   1. In Xcode, open the `ios/plugin_name/` directory.
 
    1. In Xcode, open your `Package.swift` file.
-      Verify Xcode doesn't produce any warnings or errors for this file.
+      Verify that Xcode doesn't produce any warnings or errors for this file.
 
       :::tip
       If Xcode doesn't show any files, quit Xcode (**Xcode > Quit Xcode**) and
@@ -320,7 +350,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       ```
 
    1. Make any other customizations. For more information on how to write a
-      `Package.swift` file, see
+      `Package.swift` file, visit
       [https://developer.apple.com/documentation/packagedescription](https://developer.apple.com/documentation/packagedescription).
 
       :::tip
@@ -360,8 +390,8 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
    :::
 
 1. If your `ios/plugin_name/Sources/plugin_name/include` directory only
-   contains a `.gitkeep`, you'll want update your `.gitignore` to include the
-   following:
+   contains a `.gitkeep`, you'll want to update your `.gitignore` to
+   include the following:
 
     ```text title=".gitignore"
     !.gitkeep
@@ -442,7 +472,7 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
       [undo the Swift Package Manager migration][removeSPM].
       :::
 
-   1. Open the plugin's example app in Xcode.
+   1. In Xcode, open the plugin's example app.
       Ensure that **Package Dependencies** shows in the left
       **Project Navigator**.
 
@@ -453,7 +483,6 @@ The example below uses `ios`, replace `ios` with `macos`/`darwin` as applicable.
 
    * Follow instructions for [testing plugins][].
 
-[enableSPM]: /packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-turn-on-swift-package-manager
 [`PrivacyInfo.xcprivacy` file]: https://developer.apple.com/documentation/bundleresources/privacy_manifest_files
 [`public_header_files`]: https://guides.cocoapods.org/syntax/podspec.html#public_header_files
 [Swift Package Manager's documentation]: {{site.github}}/apple/swift-package-manager/blob/main/Documentation/Usage.md#creating-c-language-targets

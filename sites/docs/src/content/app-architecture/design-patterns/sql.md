@@ -277,7 +277,7 @@ It implements the `fetchTodos()`, `createTodo()`, and `deleteTodo()` methods.
 <?code-excerpt "lib/data/repositories/todo_repository.dart (TodoRepository)"?>
 ```dart
 class TodoRepository {
-  TodoRepository({required DatabaseService database}) : _database = database;
+  TodoRepository({required this._database});
 
   final DatabaseService _database;
 

@@ -1,3 +1,7 @@
+// Copyright 2025 The Flutter Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
 import 'dart:io';
 
 import 'package:collection/collection.dart';
@@ -5,18 +9,17 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:path/path.dart' as path;
+import 'package:site_shared/markdown.dart';
+import 'package:site_shared/util.dart';
 
 import '../components/pages/widget_catalog.dart';
-import '../markdown/markdown_parser.dart';
 import '../models/widget_catalog_model.dart';
-import '../util.dart';
-
-final _widgetCatalogIndexFile = File(
-  path.join(siteSrcDirectoryPath, 'data', 'catalog', 'index.yml'),
-);
 
 List<MemoryPage> get widgetCatalogPages {
-  final catalogData = _widgetCatalogIndexFile.readAsStringSync();
+  final widgetCatalogIndexFile = File(
+    path.join('src', 'data', 'catalog', 'index.yml'),
+  );
+  final catalogData = widgetCatalogIndexFile.readAsStringSync();
   final catalog =
       (DataLoader.parseData('index.yml', catalogData) as List<Object?>)
           .cast<Map<String, Object?>>()

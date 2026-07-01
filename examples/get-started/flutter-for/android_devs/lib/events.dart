@@ -15,7 +15,6 @@ class MyButton extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-
   // #enddocregion on-pressed
 }
 
@@ -63,6 +62,12 @@ class _SampleAppState extends State<SampleApp>
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
@@ -83,5 +88,4 @@ class _SampleAppState extends State<SampleApp>
     );
   }
 }
-
 // #enddocregion sample-app

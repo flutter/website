@@ -32,7 +32,7 @@ configure [`goldenFileComparator`][] and use it (when using a non-HTML web
 backend).
 
 For users that implement a custom [`WebGoldenComparator`][], you will
-migrate the implemenation to [`GoldenFileComparator`][]. Fortunately the
+migrate the implementation to [`GoldenFileComparator`][]. Fortunately the
 Canvas Kit and SkWasm backends already required similar methods (`compareButes`
 and `updateBytes`).
 
