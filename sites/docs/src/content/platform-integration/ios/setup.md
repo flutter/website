@@ -106,7 +106,7 @@ physical device.
 Start the iOS Simulator with the following command:
 
 ```console
-$ open -a Simulator
+$ open -a DeviceHub
 ```
 
 If you need to install a simulator for a different OS version,
