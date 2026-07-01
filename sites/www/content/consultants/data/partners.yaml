@@ -1168,3 +1168,19 @@
     - "Small-to-medium Business"
     - "Enterprise"
   options_GCP_partner: false
+- title: "Perpetio"
+  summary: "Is a boutique European agency that designs AI-first applications, from MVP to scalable products used by millions."
+  card: "images/third_party/partners/Perpetio_logo.png"
+  external_url: "https://perpet.io/services/flutter"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
