@@ -74,7 +74,8 @@ The migration to Flutter has been transformative for both users and the engineer
 * **Ratings surge:** User ratings on the App Store and Google Play jumped from a struggling 2.0 stars to a 4.8-star average.  
 * **Developer efficiency:** Moving to a single codebase improved internal developer productivity by 60%.  
 * **Codebase reduction:** Writing and maintaining logic once resulted in a 70% decrease in overall codebase size.  
-* **Velocity boost:** Feature release cadence increased by 55%, with a 13x increase in the number of features offered.
+* **Velocity boost:** Feature release cadence increased by 55%,
+  with a 13x increase in the number of features offered.
 
 <br />
 
