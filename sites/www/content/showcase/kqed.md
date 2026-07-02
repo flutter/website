@@ -33,7 +33,12 @@ successMetrics:
 
 [KQED](https://www.kqed.org/?utm_source=flutter_blog&utm_medium=referral&utm_campaign=flutter_showcase_2026&utm_content=kqed_org_link) is Northern California’s public media source for trustworthy news, local stories, NPR & PBS programs, podcasts, live radio, and community events. Serving the San Francisco Bay Area across on-air broadcast, the web, and mobile, KQED is powered by its members to inform, inspire, and connect the community.
 
-KQED needed to modernize its mobile experience. Initially, the team sought to quickly launch an updated app to meet the needs of users and internal stakeholders. Today, the goal is to make it easy for Bay Area audiences to access trusted local news, live radio, podcasts, and video in one place, while building daily habits and strengthening membership support.
+KQED needed to modernize its mobile experience.
+Initially, the team sought to quickly launch an updated app
+to meet the needs of users and internal stakeholders.
+Today, the goal is to make it easy for Bay Area audiences
+to access trusted local news, live radio, podcasts, and video in one place,
+while building daily habits and strengthening membership support.
 
 **Why Flutter?**
 
