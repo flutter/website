@@ -27,6 +27,7 @@ import 'src/components/common/code_preview.dart';
 import 'src/components/common/dash_image.dart';
 import 'src/components/pages/architecture_recommendations.dart';
 import 'src/components/pages/archive_table.dart';
+import 'src/components/pages/cuj_table.dart';
 import 'src/components/pages/devtools_release_notes_index.dart';
 import 'src/components/pages/expansion_list.dart';
 import 'src/components/pages/learning_resource_index.dart';
@@ -137,6 +138,7 @@ List<CustomComponent> get _embeddableComponents => [
     DownloadLatestButton.fromAttributes,
   ),
   defineComponentWithAttrs('ExpansionList', ExpansionList.fromAttributes),
+  defineComponentWithAttrs('CujTable', CujTable.fromAttributes),
   defineComponent(
     'DevToolsReleaseNotesIndex',
     const DevToolsReleaseNotesIndex(),

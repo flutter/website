@@ -28,3 +28,11 @@ Evals measure both deterministic code correctness
 (compilation, lints, automated tests) and qualitative performance
 (reasoning, safety, and conciseness) using automated model judges
 and expert human grading.
+
+## Dataset
+
+The Flutter and Dart evaluation dataset consists of Critical User Journeys (CUJs) representing real-world developer tasks across different personas and goals.
+
+To view the complete, scrollable dataset table, visit the [Critical User Journeys (CUJs)](/ai/cujs) page.
+
+

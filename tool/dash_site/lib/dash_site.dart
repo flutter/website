@@ -12,6 +12,7 @@ import 'src/commands/check_links.dart';
 import 'src/commands/clean.dart';
 import 'src/commands/deploy.dart';
 import 'src/commands/format_dart.dart';
+import 'src/commands/refresh_cujs.dart';
 import 'src/commands/refresh_excerpts.dart';
 import 'src/commands/serve.dart';
 import 'src/commands/stage_preview.dart';
@@ -45,6 +46,7 @@ final class DashSiteCommandRunner extends CommandRunner<int> {
     addCommand(DeployCommand());
     addCommand(FormatDartCommand());
     addCommand(RefreshExcerptsCommand());
+    addCommand(RefreshCujsCommand());
     addCommand(ServeSiteCommand());
     addCommand(StagePreviewCommand());
     addCommand(TestDartCommand());

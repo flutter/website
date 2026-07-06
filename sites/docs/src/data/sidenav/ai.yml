@@ -23,6 +23,11 @@
       permalink: /ai/best-practices/developer-experience
     - title: "AI evaluations (experimental)"
       permalink: /ai/evals
+      children:
+        - title: Overview
+          permalink: /ai/evals
+        - title: Critical User Journeys (CUJs)
+          permalink: /ai/cujs
 
 - title: Build AI-powered apps
   expanded: true
