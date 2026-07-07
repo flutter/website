@@ -2,7 +2,7 @@
 title: "How It’s Made: I/O FLIP"
 description: "AI-generated text and images add some fun to this card game built with Flutter, Firebase, and Google Cloud"
 publishDate: 2023-05-18
-author: VeryGoodOpenSource
+author: verygoodopensource
 image: images/1nGcHw9zmkDT1oGhYwuZMqA.jpeg
 category: events
 layout: blog

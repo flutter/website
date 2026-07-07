@@ -55,7 +55,7 @@ class _AuthorInfo extends StatelessComponent {
   Component build(BuildContext context) {
     return div(classes: 'post-info-author', [
       for (final author in authors)
-        if (author.image case final authorImage?)
+        if (author.image case final authorImage? when authorImage.isNotEmpty)
           img(
             src: context.resolveAsset('/blog/authors/$authorImage'),
             alt: author.name,

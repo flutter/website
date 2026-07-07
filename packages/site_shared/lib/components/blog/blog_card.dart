@@ -60,7 +60,8 @@ class BlogCard extends StatelessComponent {
           div(classes: 'blog-card-meta', [
             div(classes: 'blog-card-authors', [
               for (final author in authors)
-                if (author.image case final authorImage?)
+                if (author.image case final authorImage?
+                    when authorImage.isNotEmpty)
                   img(
                     src: context.resolveAsset('/blog/authors/$authorImage'),
                     alt: author.name,

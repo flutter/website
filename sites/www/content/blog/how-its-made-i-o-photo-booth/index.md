@@ -2,7 +2,7 @@
 title: "How It’s Made: I/O Photo Booth"
 description: "A closer look at building a web app with Flutter and Firebase"
 publishDate: 2021-05-17
-author: VeryGoodOpenSource
+author: verygoodopensource
 image: images/0diM5YKjX2b2OgNvD.png
 category: events
 layout: blog

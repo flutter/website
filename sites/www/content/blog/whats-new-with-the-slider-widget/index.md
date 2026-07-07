@@ -2,7 +2,7 @@
 title: "What’s new with the Slider widget?"
 description: "Flutter lets you create beautiful, natively compiled applications. The reason Flutter can do this is because Flutter loves Material…"
 publishDate: 2020-06-18
-author: JoseAlba
+author: josealba
 image: images/10vbyZT-NITTvqljO8HtU4w.png
 category: announcements
 layout: blog

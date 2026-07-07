@@ -2,7 +2,7 @@
 title: "How we built it: Creating the I/O Crossword puzzle, powered by AI"
 description: "Adding a fun, helpful twist to a classic word game with Flutter, Firebase Genkit, and the Gemini API"
 publishDate: 2024-06-26
-author: VeryGoodOpenSource
+author: verygoodopensource
 image: images/04ylubp836_tc4Nni.png
 category: spotlight
 layout: blog
