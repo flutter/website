@@ -9,7 +9,6 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../src/blog/atom_feed.dart';
 import '../../src/blog/models.dart';
 import '../common/button.dart';
-import 'blog_index.dart';
 import 'client/share_button.dart';
 
 class PostInfo extends StatelessComponent {

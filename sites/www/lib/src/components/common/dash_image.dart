@@ -50,16 +50,14 @@ class DashImage with CustomComponentBase {
         ),
         if (caption.isNotEmpty)
           figcaption(classes: 'figure-caption', [
-            DashMarkdown(content: caption),
+            DashMarkdown(content: caption, inline: true),
           ]),
       ]),
     );
 
     if (isFigure) {
       return figure(classes: figureClass, [
-        div(classes: 'site-figure-container', [
-          child,
-        ]),
+        child,
       ]);
     }
 

@@ -62,17 +62,33 @@
   --font-ui: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
   --font-body: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
   --font-code: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
-  --font-blog: 'Roboto Serif', 'Noto Serif', var(--font-body);
+  --site-blog-fontFamily: 'Roboto Serif', 'Noto Serif', var(--font-body);
+  --site-code-fontFamily: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
   --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
-
+  --site-ui-fontFamily: var(--font-ui);
+  --site-fontWeight-bold: var(--font-weight-bold);
+  --site-fontWeight-normal: var(--font-weight-normal);
 
   --site-outline: rgba(194, 198, 214, .75);
+  --site-outline-variant: #e7e8ed;
 
   --site-base-bgColor: #ffffff;
   --site-base-fgColor: #212121;
   --site-base-fgColor-lighter: #{color.scale(#212121, $lightness: 20%)};
   --site-base-fgColor-alt: #6a6f71;
   --site-primary-color: #1967d2;
+
+  --site-inset-bgColor: #f9fafb;
+  --site-inset-bgColor-translucent: rgba(237, 240, 242, 0.8);
+  --site-inset-bgColor-translucent-extra: rgba(237, 240, 242, 0.2);
+  --site-inset-fgColor: var(--site-base-fgColor);
+  --site-inset-borderColor: #dadce0;
+
+  --site-link-fgColor: var(--site-primary-color);
+  --site-link-fgColor-active: #0553b1;
+
+  --site-secondaryContainer-bgColor: #c2e5ff;
+  --site-secondaryContainer-fgColor: var(--site-base-fgColor);
 
   --screen-xs-min: 480px;
   /* mobile portrait */
@@ -124,6 +140,8 @@
     --font-size-heading-5: 16px;
     --font-size-default: 14px;
   }
+
+  --site-radius: 0.45rem;
 }
 
 .text-coral {

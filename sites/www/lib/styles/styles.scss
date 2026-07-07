@@ -13,6 +13,7 @@
 @use 'components/btn';
 @use 'components/carousel';
 @use 'components/cookies';
+@use 'components/content';
 @use 'components/embeds';
 @use 'components/features';
 @use 'components/filters-dropdown';
@@ -31,6 +32,7 @@
 @use 'components/testimonial';
 
 @use 'pages/brand';
+@use 'pages/blog_page';
 @use 'pages/buildWithAI';
 @use 'pages/community';
 @use 'pages/culture';
@@ -51,5 +53,5 @@
 
 @use 'package:site_shared/_sass/components/breadcrumbs';
 @use 'package:site_shared/_sass/components/blog';
-@use 'package:site_shared/_sass/components/button';
+@use 'package:site_shared/_sass/components/code';
 @use 'package:site_shared/_sass/components/dropdown';

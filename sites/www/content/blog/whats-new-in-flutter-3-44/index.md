@@ -559,6 +559,6 @@ This ecosystem is depended upon by and made up of industry leaders like LG, Toyo
 
 To try out all the new features, optimizations, and graphics enhancements, all it takes is a simple:
 
-```typescript
-flutter upgrade
+```console
+$ flutter upgrade
 ```

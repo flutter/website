@@ -114,19 +114,7 @@
         grid-template-columns: 1fr;
     }
 
-    &[data-selected="releases"] .blog-card:not([data-category="releases"]) {
-        display: none;
-    }
-
-    &[data-selected="announcements"] .blog-card:not([data-category="announcements"]) {
-        display: none;
-    }
-
-    &[data-selected="deep-dive"] .blog-card:not([data-category="deep-dive"]) {
-        display: none;
-    }
-
-    &[data-selected="other"] .blog-card:not([data-category="other"]) {
+    .blog-card:not(.layout-featured):not(.layout-grid):not(.layout-list) {
         display: none;
     }
 }
@@ -479,7 +467,7 @@
 .post-content {
     font-family: var(--site-blog-fontFamily);
     line-height: 1.7em;
-    font-size: 1.2em;
+    font-size: 1.2rem;
 
     h1,
     h2,

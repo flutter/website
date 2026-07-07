@@ -5,9 +5,18 @@ categories:
   - slug: announcements
     label: Announcements
     showFeatured: true
+  - slug: events
+    label: Events
+    showFeatured: false
+  - slug: spotlight
+    label: Spotlight
+    showFeatured: false
+  - slug: tutorial
+    label: Tutorial
+    showFeatured: false
   - slug: other
     label: Other
-    showFeatured: true
+    showFeatured: false
 nextPostsTitle: "More from Flutter"
 atom:
   # The title used for links pointing readers at the blog Atom feed.

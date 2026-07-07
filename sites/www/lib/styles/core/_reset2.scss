@@ -9,7 +9,7 @@ html {
   height: 100%;
 }
 
-*,
+*:not(:where(.post-content *)),
 *:before,
 *:after {
   margin-block-start: 0;
@@ -23,8 +23,7 @@ strong {
   font-weight: 600;
 }
 
-ol,
-ul {
+:is(ol, ul):not(:where(.post-content *)) {
   list-style: none;
   margin: 0;
   padding: 0;

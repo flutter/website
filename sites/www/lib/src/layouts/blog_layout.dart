@@ -47,7 +47,7 @@ class BlogLayout extends DefaultLayout {
     return super.buildLayout(
       page,
       main_([
-        article([
+        article(classes: 'content', [
           div(classes: 'content ${isPost ? 'post-content' : ''}', [
             div(id: 'site-content-title', [
               if (isPost)
