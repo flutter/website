@@ -90,3 +90,6 @@
 
 - name: Ubuntu
   logo: /images/third_party/logos/ubuntu.svg
+
+- name: Zoho
+  logo: /images/third_party/logos/zoho.png
