@@ -39,5 +39,4 @@ class ArticleModel {
     throw UnimplementedError();
   }
 }
-
 // #enddocregion ArticleModel

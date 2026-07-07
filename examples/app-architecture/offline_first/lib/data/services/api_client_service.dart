@@ -23,5 +23,4 @@ class ApiClientService {
     // #docregion ApiClientService
   }
 }
-
 // #enddocregion ApiClientService

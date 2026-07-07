@@ -41,5 +41,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion simple-list

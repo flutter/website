@@ -29,5 +29,4 @@ class HomePage extends StatelessWidget {
     return const Scaffold(body: Center(child: Text('Hello, World!')));
   }
 }
-
 // #enddocregion homepage

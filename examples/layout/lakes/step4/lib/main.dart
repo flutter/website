@@ -150,5 +150,4 @@ class TextSection extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion text-section

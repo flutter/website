@@ -116,5 +116,4 @@ class ContactListSection extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion contact_list_section

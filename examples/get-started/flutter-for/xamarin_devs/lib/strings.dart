@@ -56,6 +56,5 @@ class CustomFontExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion custom-font
 }

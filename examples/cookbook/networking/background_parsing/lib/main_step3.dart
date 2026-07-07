@@ -48,5 +48,4 @@ class Photo {
     );
   }
 }
-
 // #enddocregion Photo

@@ -28,5 +28,4 @@ class ArticleViewModel extends ChangeNotifier {
   // Methods will be added next.
   Future<void> fetchArticle() async {}
 }
-
 // #enddocregion ArticleViewModel

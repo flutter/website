@@ -90,7 +90,6 @@ class _SubscribeButtonState extends State<SubscribeButton> {
       ).showSnackBar(const SnackBar(content: Text('Failed to subscribe')));
     }
   }
-
   // #enddocregion listener2
 }
 
@@ -150,7 +149,6 @@ class SubscribeButtonViewModel extends ChangeNotifier {
       notifyListeners();
     }
   }
-
   // #enddocregion subscribe
 }
 // #enddocregion ViewModelFull
@@ -166,5 +164,4 @@ class SubscriptionRepository {
     throw Exception('Failed to subscribe');
   }
 }
-
 // #enddocregion SubscriptionRepository

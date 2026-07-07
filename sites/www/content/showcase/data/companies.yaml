@@ -16,9 +16,6 @@
 - name: Betterment
   logo: /images/third_party/logos/betterment.svg
 
-- name: Bytedance
-  logo: /images/third_party/logos/bytedance.svg
-
 - name: CrowdSource
   logo: /images/third_party/logos/crowdsource.svg
 
@@ -48,6 +45,9 @@
 
 - name: Karaca
   logo: /images/third_party/logos/karaca.png
+
+- name: KQED
+  logo: /images/third_party/logos/kqed.png
 
 - name: Lotum
   logo: /images/third_party/logos/lotum.svg
@@ -87,3 +87,6 @@
 
 - name: Ubuntu
   logo: /images/third_party/logos/ubuntu.svg
+
+- name: Zoho
+  logo: /images/third_party/logos/zoho.png

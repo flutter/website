@@ -2,8 +2,8 @@
 title: Structure & output
 sidenav: ai
 description: >
-  Learn how to use structured input and output schemas to receive reliable, 
-  parsable JSON data from an LLM.
+  Learn how to use structured input and output schemas to
+  receive reliable, parsable JSON data from an LLM.
 prev:
   title: Prompting
   path: /ai/best-practices/prompting

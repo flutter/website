@@ -6,7 +6,7 @@ summary: Karaca ships features twice as fast to over a million monthly users wit
 appName: Karaca
 companyName: Karaca
 logo: images/third_party/case_studies/karaca/logo.png
-card: images/third_party/case_studies/karaca/case_study_card.png
+card: images/third_party/case_studies/karaca/logo.png
 videoEmbedUrl: "https://www.youtube.com/embed/N8I-fdOYWnc"
 locations:
   - Europe
@@ -19,7 +19,7 @@ tags:
   - mobile
   - android
   - ios
-publishDate: 2026-06-08
+publishDate: 2026-04-24
 successMetrics:
   - text: 2x
     desc: faster shipping of new features

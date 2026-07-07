@@ -16,7 +16,7 @@ industries:
   - Travel & Lifestyle
 tags:
   - embedded
-publishDate: 2026-08-06
+publishDate: 2026-05-20
 ---
 
 Toyota, one of the world's leading automotive manufacturers,

@@ -22,5 +22,4 @@ class ArticlePage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion page
