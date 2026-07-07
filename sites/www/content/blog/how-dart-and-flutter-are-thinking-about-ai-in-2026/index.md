@@ -7,7 +7,7 @@ image: images/1acnlJyV5J3HU4jFbo2LQog.gif
 layout: blog
 ---
 
-<DashImage src="images/1acnlJyV5J3HU4jFbo2LQog.gif" alt="Dash imagines the future" caption="Dash imagines the future" />
+<DashImage figure src="images/1acnlJyV5J3HU4jFbo2LQog.gif" alt="Dash imagines the future" caption="Dash imagines the future" />
 
 
 Last month, we published [Flutter and Dart’s 2026 Roadmap](https://blog.flutter.dev/flutter-darts-2026-roadmap-89378f17ebbd), a peek into how our teams are approaching our core mission: Building the most popular, fastest growing, and highest-productivity multi-platform UI framework. But it’s impossible to talk about development in 2026 without acknowledging AI.

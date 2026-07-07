@@ -7,12 +7,12 @@ image: images/1JN1_t6kPRkgGFVJyetZE0w.png
 layout: blog
 ---
 
-<DashImage src="images/1JN1_t6kPRkgGFVJyetZE0w.png" alt="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" caption="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" />
+<DashImage figure src="images/1JN1_t6kPRkgGFVJyetZE0w.png" alt="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" caption="Material and Cupertino libraries are frozen and will be moved from the Flutter framework to new packages" />
 
 
 ## Flutter’s Material and Cupertino code freeze
 
-We’ve been hard at work preparing to decouple Material and Cupertino from the Framework, and now our first major milestone has arrived! As of April 7th, all contributions to the Material and Cupertino libraries in flutter/flutter are frozen. Our next milestone will be the re-release of these libraries as the `[material_ui](https://pub.dev/packages/material_ui)` and [`cupertino_ui`](https://pub.dev/packages/cupertino_ui) packages on pub.dev.
+We’ve been hard at work preparing to decouple Material and Cupertino from the Framework, and now our first major milestone has arrived! As of April 7th, all contributions to the Material and Cupertino libraries in flutter/flutter are frozen. Our next milestone will be the re-release of these libraries as the [`material_ui`](https://pub.dev/packages/material_ui) and [`cupertino_ui`](https://pub.dev/packages/cupertino_ui) packages on pub.dev.
 
 This means that, after the code freeze, no more changes will be allowed to the Material and Cupertino libraries inside of flutter/flutter. Further development on these libraries will resume in the [flutter/packages](https://github.com/flutter/packages) repository once the new packages are released.
 
@@ -36,7 +36,7 @@ The moment that we release the 1.0.0 versions of the `material_ui` and `cupertin
 
 The first step in the migration process for Flutter developers is to perform a normal SDK migration to v3.44 or above on any channel. Once there, we know that they have a copy of Material and Cupertino that is frozen. Even if they upgrade their SDK again, that Material and Cupertino code will not change (until it’s deprecated and deleted in the long term). What’s more, we know that the frozen Material and Cupertino code is identical to the code in the 1.0.0 `material_ui` and `cupertino_ui` packages, or as close to identical as possible. From there, the developer can migrate from the Material and Cupertino code inside their copy of the SDK onto the `material_ui` and `cupertino_ui` packages with minimal friction.
 
-<DashImage src="images/1NkrFO7smrNSo2NofNp0EVA.png" />
+<DashImage figure src="images/1NkrFO7smrNSo2NofNp0EVA.png" />
 
 
 ## How we got here

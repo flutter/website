@@ -7,7 +7,7 @@ image: images/18qm-mMi6Hod2jBw1_2nNEw.png
 layout: blog
 ---
 
-<DashImage src="images/18qm-mMi6Hod2jBw1_2nNEw.png" alt="Dash having fun building Flutter apps." caption="Dash having fun building Flutter apps." />
+<DashImage figure src="images/18qm-mMi6Hod2jBw1_2nNEw.png" alt="Dash having fun building Flutter apps." caption="Dash having fun building Flutter apps." />
 
 
 Hi, I’m Kevin Lamenzo! I recently joined the Dart and Flutter teams (🎉), and this January I set out on a quest: build 20 apps in 20 days using Flutter and [Antigravity](https://antigravity.google/). But why? First, the cost of curiosity has officially hit zero. You can go from idea to app in 10 minutes. Second, as a new member of the team I wanted to learn about the framework by building something. Last, and most importantly, I wanted to test the theory that in 2026, we all can be builders now.
@@ -20,7 +20,7 @@ My first app was a health tracker.
 
 During a recent check-up, my physician “strongly suggested” that I watch my blood pressure and alcohol intake. My first reaction? “Don’t tell me what to do!” My second reaction? “I’m gonna build my own app for that.” No subscription offers, no data harvesting, no gamified onboarding. Just a simple tool that solved my specific problem.
 
-<DashImage src="images/1sV9X0IeCaF-IInvjLa4Ucg.png" alt="My first app — a personal health tracker." caption="My first app — a personal health tracker." />
+<DashImage figure src="images/1sV9X0IeCaF-IInvjLa4Ucg.png" alt="My first app — a personal health tracker." caption="My first app — a personal health tracker." />
 
 
 ## Why Flutter?
@@ -29,7 +29,7 @@ I’m always on the go. I initially built a web app, which is nice, but I needed
 
 After building the mobile version, I even opened a [Google Play Developer](https://play.google.com/console/) account ($25), and released the app to myself as a tester. Now my creation is live on my own phone (although I still don’t have a logo or icon).
 
-<DashImage src="images/10WJQz_1nMC95larhInedMg.png" alt="The health tracker app, with a default icon, on my phone." caption="The health tracker app, with a default icon, on my phone." />
+<DashImage figure src="images/10WJQz_1nMC95larhInedMg.png" alt="The health tracker app, with a default icon, on my phone." caption="The health tracker app, with a default icon, on my phone." />
 
 
 ## Tearing through ideas
@@ -38,7 +38,7 @@ The success of building the health tracker was intoxicating. By the end of the f
 
 This felt like more than vibecoding — I was building. I was exploring my phone’s sensors, working with haptics, and even using APIs.
 
-<DashImage src="images/1Nrox9tKM1Jok5MQWp4q4Og.png" alt="My internal blog landing page — App a Day" caption="My internal blog landing page — App a Day" />
+<DashImage figure src="images/1Nrox9tKM1Jok5MQWp4q4Og.png" alt="My internal blog landing page — App a Day" caption="My internal blog landing page — App a Day" />
 
 
 ## Hitting a wall trying to scale
@@ -52,7 +52,7 @@ However, the beauty of the “App a Day” mentality is that you don’t always 
 This leads to my “AI thought leadership soapbox moment”:
 > Right now we’re all empowered to do amazing things alone, but the next frontier is **collaboration**. How we use our AI superpowers to work together in new ways is uncharted territory. So, if you go out and “vibe build” an app with your friends or a team, chart your journey and share it with the rest of us.
 
-<DashImage src="images/1fCJrAXkiAh4_FNu5I7L_bQ.png" alt="Dash making a point on his soapbox." caption="Dash making a point on his soapbox." />
+<DashImage figure src="images/1fCJrAXkiAh4_FNu5I7L_bQ.png" alt="Dash making a point on his soapbox." caption="Dash making a point on his soapbox." />
 
 
 ## My recommended flow
@@ -69,7 +69,7 @@ I got some questions from colleagues and friends about how I was staying organiz
 
 1. (optional) Deploy (Google Play, [Firebase](https://firebase.google.com/) - I’ve already mentioned getting my apps on my phone. Another great avenue for sharing is Firebase. Not sure where to start? Ask Gemini to guide you. Firebase makes hosting your apps and adding more advanced services (like authentication, for example) much easier.
 
-<DashImage src="images/16I979gEcIqfLnPdshiXjRQ.jpeg" />
+<DashImage figure src="images/16I979gEcIqfLnPdshiXjRQ.jpeg" />
 
 
 ## Breaking out of my internal blog
@@ -78,7 +78,7 @@ The energy I got from this challenge eventually helped me explode right out of i
 
 Come find me at [ladevzo.com/scrappy-path](http://ladevzo.com/scrappy-path) if you want to see how I’m applying these lessons outside the corporate firewall.
 
-<DashImage src="images/1JLGrYXO8VOHh2Qp1NeHykQ.png" alt="A screenshot of ladevzo.com. Check it out!" caption="A screenshot of ladevzo.com. Check it out!" />
+<DashImage figure src="images/1JLGrYXO8VOHh2Qp1NeHykQ.png" alt="A screenshot of ladevzo.com. Check it out!" caption="A screenshot of ladevzo.com. Check it out!" />
 
 
 ## Conclusion: find your own flow
@@ -133,4 +133,4 @@ The tools are ready. Are you?
 
 1. Pulse (14 files, 1928 LOC) — Large-scale project integrating generative AI, robust state management, and code generation.
 
-<DashImage src="images/1wJetTyHJ1UDBBdMXq8GfIg.png" alt="Dash getting fit on the treadmill." caption="Dash getting fit on the treadmill." />
+<DashImage figure src="images/1wJetTyHJ1UDBBdMXq8GfIg.png" alt="Dash getting fit on the treadmill." caption="Dash getting fit on the treadmill." />
