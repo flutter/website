@@ -414,4 +414,4 @@ Follow the [migration guide for app developers][app-migration-guide] to migrate 
 
 [app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
 [flutter-sdk-minimum-below-3.44]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#supporting-flutter-versions-earlier-than-3-44
-[update-plugin-changelog]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#update-the-plugins-changelog-md
+[update-plugin-changelog]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#update-the-plugins-changelogmd
