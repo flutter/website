@@ -5,14 +5,6 @@ email: flutter-dev@googlegroups.com
 
 showBanner: true
 
-# The raw, inline HTML to display in the banner.
-# Is automatically wrapped in a paragraph tag.
-bannerHtml: >-
-  Flutter 3.44 is here!
-  Everywhere, everyday, built by everyone, for everyone.<br>
-  Watch the <a href="https://www.youtube.com/live/3TfGKugPlpE" target="_blank">live announcement</a> and
-  read the <a href="https://blog.flutter.dev/whats-new-in-flutter-3-44-b0cc1ad3c527" target="_blank">blog post</a>.
-
 branch: main
 repo:
   organization: https://github.com/flutter

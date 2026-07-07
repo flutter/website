@@ -82,5 +82,4 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion detail

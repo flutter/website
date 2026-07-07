@@ -191,5 +191,4 @@ class _ExampleUiLoadingAnimationState extends State<ExampleUiLoadingAnimation> {
     );
   }
 }
-
 // #enddocregion ExampleUiAnimationState

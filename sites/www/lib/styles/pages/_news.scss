@@ -1,0 +1,117 @@
+@use '../core/breakpoints';
+
+body.news {
+
+  section.hero {
+    background-image: linear-gradient(35deg, #F3FCFF 10%, #93FAEE 80%);
+    padding-top: var(--gutter) !important;
+    padding-bottom: var(--gutter) !important;
+
+    @include breakpoints.screen(lg) {
+      .container {
+        > h2 {
+          max-width: 600px !important;
+          margin-top: var(--spacer) !important;
+          margin-bottom: var(--spacer) !important;
+        }
+
+        .mantle {
+          grid-template-columns: 1fr 55%;
+          gap: 0;
+
+          .text {
+            padding-left: 0;
+
+            h1 {
+              max-width: 100%;
+              font-size: 64px;
+              font-weight: var(--font-weight-bold);
+              line-height: 72px;
+            }
+
+            h2 {
+              font-weight: var(--font-weight-normal);
+              font-size: 34px;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .divider {
+    height: 4px;
+    width: 1340px;
+    background: var(--grey-3);
+    border-radius: 2px;
+    margin: 16px auto;
+  }
+
+  #feature-columns {
+    .container { margin: 0 auto; }
+
+    .feature-columns {
+
+      .card {
+        padding: 0;
+        border: none;
+        width: 100%;
+      }  
+    }
+
+    @include breakpoints.screen(lg) {
+      .feature-columns p {
+        min-height: 141px;
+      }
+    }
+  }
+
+  #flutter-news-toolkit {
+    .container { margin: 0 auto}
+
+    .media {
+      img { width: 312px; }
+    }
+    
+    h3 {
+      font-size: 44px;
+    }
+
+    @include breakpoints.screen(lg) {
+      .feature.toolkit {     
+        grid-template-columns: 1fr 1fr;
+        gap: 137px;
+
+        h4 {
+          font-size: 24px;
+        }
+
+        h3 {
+          font-size: 64px;
+        }
+
+        p {
+          font-size: 24px;
+        }
+  
+        .text {
+          padding: 0;
+          order: 2;
+        }
+  
+        .media {
+          img {
+            height: 575px;
+            width: 544px;
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+
+  #resources {
+    background-image: linear-gradient(145deg, #0654B2 20%, #28F5DE 80%);
+  }
+}

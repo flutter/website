@@ -15,7 +15,6 @@ class AbsorbKeysExample extends StatelessWidget {
       child: child,
     );
   }
-
   // #enddocregion absorb-keys
 }
 
@@ -34,7 +33,6 @@ class NoAExample extends StatelessWidget {
       child: const TextField(),
     );
   }
-
   // #enddocregion no-letter-a
 }
 
@@ -54,7 +52,6 @@ class BuilderExample extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion builder
 }
 
@@ -89,5 +86,4 @@ class OrderedButtonRow extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion ordered-button-row

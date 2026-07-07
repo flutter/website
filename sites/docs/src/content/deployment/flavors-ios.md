@@ -469,7 +469,7 @@ and `production` in an iOS project called `flavors_example`.
 1.  Ensure that these bundle identifiers are included in
     your App ID and your App ID is [registered in your Apple Developer account][].
 
-[registered in your Apple Developer account]: https://developer.apple.com/help/account/identifiers/register-an-app-id/
+[registered in your Apple Developer account]: {{site.apple-dev}}/help/account/identifiers/register-an-app-id/
 
 ### Bundle assets
 
@@ -540,8 +540,8 @@ If you would like to add additional build settings for
 a specific build configuration, see Apple's
 [Adding a build configuration file to your project][].
 
-[build settings]: https://developer.apple.com/documentation/xcode/build-settings-reference/
-[Adding a build configuration file to your project]: https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+[build settings]: {{site.apple-dev}}/documentation/xcode/build-settings-reference/
+[Adding a build configuration file to your project]: {{site.apple-dev}}/documentation/xcode/adding-a-build-configuration-file-to-your-project
 
 ### Add additional customizations
 
@@ -550,7 +550,7 @@ configurations, but there are many more that you can apply.
 To learn about them, see
 [Customizing the build schemes for a project][].
 
-[Customizing the build schemes for a project]: https://developer.apple.com/documentation/xcode/customizing-the-build-schemes-for-a-project
+[Customizing the build schemes for a project]: {{site.apple-dev}}/documentation/xcode/customizing-the-build-schemes-for-a-project
 
 ## More information
 

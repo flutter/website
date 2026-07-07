@@ -71,6 +71,5 @@ class MyApp extends StatelessWidget {
       leading: Icon(icon, color: Colors.blue[500]),
     );
   }
-
   // #enddocregion list
 }

@@ -37,5 +37,4 @@ class _ArticleViewState extends State<ArticleView> {
     );
   }
 }
-
 // #enddocregion view-model

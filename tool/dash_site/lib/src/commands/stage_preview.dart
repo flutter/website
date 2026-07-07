@@ -201,18 +201,14 @@ Future<String?> _deploySiteToStaging(
     'preview channel $channel...',
   );
 
-  final result = await Process.run(
-    firebaseCliExecutable,
-    [
-      'hosting:channel:deploy',
-      channel,
-      '--project=$project',
-      '--expires',
-      expires,
-      '--json',
-    ],
-    workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory),
-  );
+  final result = await Process.run(firebaseCliExecutable, [
+    'hosting:channel:deploy',
+    channel,
+    '--project=$project',
+    '--expires',
+    expires,
+    '--json',
+  ], workingDirectory: path.join(repositoryRoot, site.firebaseConfigDirectory));
 
   if (result.exitCode != 0) {
     stderr.writeln(result.stderr);

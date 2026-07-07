@@ -100,6 +100,5 @@ class _PageWithDatePickerState extends State<PageWithDatePicker> {
       ),
     );
   }
-
   // #enddocregion date-picker
 }

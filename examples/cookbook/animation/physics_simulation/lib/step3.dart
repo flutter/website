@@ -92,6 +92,5 @@ class _DraggableCardState extends State<DraggableCard>
     _controller.reset();
     _controller.forward();
   }
-
   // #enddocregion runAnimation
 }

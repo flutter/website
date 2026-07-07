@@ -16,6 +16,5 @@ class MyWidget extends StatelessWidget {
       ),
     );
   }
-
   // #enddocregion custom-font
 }

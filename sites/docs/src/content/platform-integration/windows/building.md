@@ -23,6 +23,8 @@ structs and callbacks, and ABI types like `long` and `size_t`.
 
 For more information about calling C libraries from Flutter,
 see [C interop using `dart:ffi`].
+To bundle and bind your own native C or C++ code with your app,
+see [Bind to native code using FFI][].
 
 In practice, while it is relatively straightforward to call
 basic Win32 APIs from Dart in this way,
@@ -45,6 +47,7 @@ More generally, many other [packages support Windows],
 including common packages such as [`url_launcher`], [`shared_preferences`], [`file_selector`], and [`path_provider`].
 
 [C interop using `dart:ffi`]: {{site.dart-site}}/guides/libraries/c-interop
+[Bind to native code using FFI]: /platform-integration/bind-native-code
 [win32 package]: {{site.pub}}/packages/win32
 [Windows registry]: {{site.pub}}/packages/win32_registry
 [gamepad support]: {{site.pub}}/packages/win32_gamepad

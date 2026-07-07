@@ -585,7 +585,7 @@ check out the Flutter [CHANGELOG][].
 * [native assets] Roll dependencies by @dcharkes in [167984](https://github.com/flutter/flutter/pull/167984)
 * [tool] Add a telemetry event to track SwiftPM migration by @loic-sharma in [166773](https://github.com/flutter/flutter/pull/166773)
 * feat: Arbitrary format options for localizations generation (#102983) by @Gustl22 in [167029](https://github.com/flutter/flutter/pull/167029)
-* Migrate SPM OS minimums to iOS 13, macOS 10.15 by @cbracken in [168153](https://github.com/flutter/flutter/pull/168153)
+* Migrate SwiftPM OS minimums to iOS 13, macOS 10.15 by @cbracken in [168153](https://github.com/flutter/flutter/pull/168153)
 * [native assets] Roll dependencies by @dcharkes in [168139](https://github.com/flutter/flutter/pull/168139)
 * Share common logic between UnpackMacOS and UnpackIOS build targets by @vashworth in [168034](https://github.com/flutter/flutter/pull/168034)
 * Add metrics for android gradle plugin version by @mboetger in [168181](https://github.com/flutter/flutter/pull/168181)

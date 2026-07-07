@@ -1,0 +1,165 @@
+@use '../core/breakpoints';
+
+body.partner {
+  font-family: var(--font-body);
+
+  #notification.module {
+    background-color: var(--grey-1);
+  }
+
+  section.hero {
+    background: linear-gradient(224deg, var(--blue-1) 0%, var(--blue-2) 100%);
+  }
+
+  .hero-content {
+    margin: 0 auto;
+    width: 90%;
+
+    h2 {
+      font-family: var(--font-ui);
+      margin: 0 !important;
+      font-size: 2.625rem !important;
+      font-weight: var(--font-weight-bolder) !important;
+      font-style: normal;
+    }
+
+    p {
+      margin: 1.5rem 0 0;
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-normal);
+      font-style: normal;
+    }
+  }
+
+  section.content-container {
+    .story-grid {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--gutter);
+    }
+  }
+
+  .terms-of-service-text-container {
+    padding: 7rem 0;
+
+
+    // Bold everything after the "PILOT AND AMENDMENTS" paragraph.
+    section.content p:nth-child(n+4) {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  .text-container {
+    width: 85%;
+    margin: 0 auto;
+
+    h3 {
+      font-family: var(--font-ui);
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-family: var(--font-body);
+      line-height: 1.5rem;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    p:first-of-type {
+      margin-top: 1.75rem;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    p > a {
+      text-decoration-line: underline;
+    }
+  }
+
+  .carousel-section {
+    h1 {
+      margin: auto 24px;
+    }
+
+    .carousel .carousel-slider {
+      padding-left: var(--gutter);
+    
+      .carousel-featured-card .text {
+        
+        h3, p, .btn.quiet {
+          color: white;
+  
+          &:hover {
+            color: white !important;
+          }
+        }
+      }
+    }
+  }
+  
+  #stories {
+    .story-grid-header {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  #newsletter {
+    background-color: white;
+    padding-top: var(--gutter-lg);
+  }
+
+  #cta {
+    background-color: white;
+  }
+
+  @include breakpoints.screen(md) {
+    .hero-content {
+      width: 80%;  
+    }
+
+    .text-container {
+      width: 70%;
+    }
+
+    .carousel-section {
+      padding: 0 80px 70px 80px;
+
+      h1 {
+        margin-left: 50px;
+        margin-bottom: 44px;
+      }
+    }
+  }
+
+  @include breakpoints.screen(lg) {
+    .hero-content {
+      width: 70%;
+      
+      h2 {
+        font-size: 3.625rem !important;
+      }
+    }
+
+    .text-container {
+      width: 50%;
+    }
+
+    .carousel-section {
+      padding: 0 80px 70px 80px;
+      
+      h1 {
+        margin-left: 50px;
+        margin-bottom: 44px;
+      }
+    }
+  }
+}

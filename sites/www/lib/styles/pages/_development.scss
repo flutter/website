@@ -1,0 +1,880 @@
+@use '../core/breakpoints';
+
+body.development {
+  /* Mobile */
+  &.mobile section.hero {
+    background-image: linear-gradient(35deg, #fcfce2 30%, #dcf5fe 60%);
+  }
+
+  &.mobile #feature-grid {
+    background-image: linear-gradient(145deg, #0569d8 30%, #833ff3 90%);
+  }
+
+  /* Embedded */
+  &.embedded section.hero {
+    background-image: linear-gradient(35deg, #dcf5ff 10%, #f3fcff 60%);
+  }
+
+  &.embedded #feature-grid {
+    background-image: linear-gradient(35deg, #0a71c8 30%, #14bafe 90%);
+  }
+
+  /* Desktop */
+  &.desktop section.hero {
+    background-image: linear-gradient(35deg, #d9fef7 10%, #f3fcff 60%);
+
+    .container > h2 {
+      max-width: 800px;
+    }
+  }
+
+  &.desktop #feature-grid {
+    background-image: linear-gradient(145deg, #0654b2 30%, #14b8fd 90%);
+  }
+
+  /* Web */
+  &.web section.hero {
+    background-image: linear-gradient(35deg, #e6e4fd 10%, #f3fcff 60%);
+  }
+
+  &.web #feature-grid {
+    background-image: linear-gradient(145deg, #037efe 30%, #1cdac6 90%);
+  }
+
+  #notification.module {
+    padding-bottom: 0;
+  }
+
+  /* iOS */
+  &.ios {
+    .partial-border {
+      position: relative;
+    }
+
+    .partial-border:after {
+      content: "";
+      width: 80%;
+      height: 2px;
+      background: #36aef0;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      bottom: 0px;
+
+      @include breakpoints.screen(lg) {
+        width: 60%;
+      }
+    }
+
+    .flutter-stat-cta {
+      width: 100%;
+      max-width: 502px;
+      border-radius: 48px;
+      padding: 24px;
+      background: linear-gradient(135deg, #d1e7d7 0%, #00f0e0 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .flutter-stat-cta__number {
+      font-size: 3rem; /* 48px */
+      font-weight: var(--font-weight-bold);
+      color: #fff;
+    }
+
+    .flutter-stat-cta__description {
+      margin-top: 0.5rem;
+      font-size: 1.125rem; /* 18px */
+      color: #3a3a7c;
+    }
+
+    .flutter-stat-cta__source {
+      margin-top: 1rem;
+      font-size: 0.875rem; /* 14px */
+      color: #3a3a7c;
+    }
+
+    .features .feature:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &.ios section {
+    font-family: var(--font-ui);
+
+    .title {
+      font-size: 48px;
+      text-align: center;
+      margin: 48px 0;
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: var(--grey-3);
+      margin-top: 56px;
+    }
+
+    .body {
+      font-size: 20px;
+      font-family: var(--font-body);
+      color: var(--grey-6);
+      line-height: 30px;
+      font-weight: var(--font-weight-normal);
+      margin-bottom: 40px;
+    }
+
+    .feature {
+      .text {
+        font-size: 32px;
+        line-height: 45px;
+        padding: 0;
+
+        p {
+          font-size: 32px;
+          line-height: 45px;
+        }
+      }
+
+      &.reverse {
+        text-align: right;
+
+        p {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+
+  &.ios section.hero {
+    background: linear-gradient(243.17deg, #e7f8ff 57.24%, #b8eafe 100%);
+
+    .container {
+      .mantle {
+        gap: 0;
+
+        @include breakpoints.screen(lg) {
+          grid-template-columns: 40% 1fr;
+        }
+
+        .text {
+          h1 {
+            font-size: 48px;
+            margin-top: var(--gutter-sm);
+          }
+
+          h3 {
+            white-space: pre-line;
+            margin-top: 8px;
+            margin-bottom: 32px;
+          }
+
+          .btn.primary {
+            background-color: #ffffff;
+            border-color: #ffffff;
+            color: var(--blue-5);
+          }
+
+          @include breakpoints.screen(lg) {
+            width: 450px;
+            margin-top: 0;
+          }
+        }
+
+        .media {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &.gif-container {
+            overflow: hidden;
+            height: 100%;
+            max-height: 580px;
+
+            img {
+              width: 100%;
+              min-width: calc(100% + 400px);
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+
+              @include breakpoints.screen(lg) {
+                min-width: 1250px;
+              }
+            }
+          }
+
+          &.img-container {
+            --mobile-header-max-height: 360px;
+
+            height: var(--mobile-header-max-height);
+            position: relative;
+            overflow: hidden; /* Clip content that might go too far out */
+            perspective: 800px; /* Enable 3D space for children */
+            transform-style: preserve-3d; /* Children exist in the same 3D space */
+
+            img {
+              /* This applies to the static background and items if not overridden */
+              height: 100%;
+              max-width: 100%;
+              width: fit-content;
+              object-fit: contain;
+            }
+
+            img.item {
+              position: absolute;
+              top: 50%; /* Center transform origin vertically */
+              left: 50%; /* Center transform origin horizontally */
+              max-width: 40%; /* Max width when at scale(1) in center */
+              max-height: 80%; /* Max height for items */
+              object-fit: contain; /* Ensure items are contained within their bounds */
+
+              animation-name: carouselRotate3D;
+              animation-duration: 10s;
+              animation-iteration-count: infinite;
+              animation-timing-function: ease-in-out;
+            }
+
+            /* Stagger animations for the 4 items */
+            img.item:nth-child(2) {
+              /* header-image-1.png - Starts at Left */
+              animation-delay: -7.5s;
+            }
+
+            img.item:nth-child(3) {
+              /* header-image-2.png - Starts at Center */
+              animation-delay: 0s;
+            }
+
+            img.item:nth-child(4) {
+              /* header-image-3.png - Starts at Right */
+              animation-delay: -2.5s;
+            }
+
+            img.item:nth-child(5) {
+              /* header-image-4.png - Starts at Back */
+              animation-delay: -5s;
+            }
+          }
+
+          @include breakpoints.screen(lg) {
+            &.img-container {
+              overflow: hidden;
+              height: 100%;
+              max-height: 580px;
+
+              img.background {
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+
+                @include breakpoints.screen(md) {
+                  width: 100%;
+                }
+              }
+
+              /* img {
+                width: 100%;
+                min-width: calc(100% + 400px);
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+
+                @include breakpoints.screen(lg) {
+                  min-width: 1250px;
+                }
+              } */
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.ios section#developer-metrics {
+    .media-container {
+      margin: var(--gutter) auto var(--gutter);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .ios-developer-metrics-svg {
+      display: none;
+      max-width: 931px;
+      max-height: 418px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .flutter-stat-cta {
+      .flutter-stat-cta__number {
+        font-size: 70px;
+        line-height: 100%;
+        color: #ffffff;
+      }
+
+      .flutter-stat-cta__description {
+        font-size: 20px;
+        line-height: 100%;
+        color: #ffffff;
+        white-space: pre-line;
+      }
+
+      .flutter-stat-cta__source {
+        font-size: 14px;
+        line-height: 100%;
+        color: #ffffff;
+      }
+
+      &:nth-child(2) {
+        background: linear-gradient(291.55deg, #0082f8 -1.99%, #00f6db 105.85%);
+      }
+
+      &:nth-child(3) {
+        background: linear-gradient(291.55deg, #3e28da -4.75%, #ffb5ce 110%);
+      }
+
+      &:nth-child(4) {
+        background: linear-gradient(291.55deg, #00ebd1 -3.37%, #ede9b1 103.09%);
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      .media-container {
+        margin: 150px auto 200px;
+        display: block;
+        position: relative;
+        max-width: 931px;
+        max-height: 418px;
+      }
+
+      .ios-developer-metrics-svg {
+        display: block;
+      }
+
+      .flutter-stat-cta {
+        position: absolute;
+        transform: translate(-50%, -50%);
+
+        .flutter-stat-cta__number {
+          font-size: 70px;
+          line-height: 100%;
+          color: #ffffff;
+        }
+
+        .flutter-stat-cta__description {
+          font-size: 20px;
+          line-height: 100%;
+          color: #ffffff;
+        }
+
+        .flutter-stat-cta__source {
+          font-size: 14px;
+          line-height: 100%;
+          color: #ffffff;
+        }
+      }
+
+      .flutter-stat-cta:nth-child(2) {
+        top: 90%;
+        left: 5%;
+      }
+
+      .flutter-stat-cta:nth-child(3) {
+        top: 50%;
+        left: 50%;
+      }
+
+      .flutter-stat-cta:nth-child(4) {
+        top: 10%;
+        left: 95%;
+
+        .flutter-stat-cta__description {
+          color: #6a20f4;
+        }
+
+        .flutter-stat-cta__source {
+          color: #6a20f4;
+        }
+      }
+    }
+  }
+
+  &.ios section#customers {
+    .title {
+      margin: 48px auto;
+      width: calc(100% - (var(--gutter-sm) * 2));
+    }
+
+    .feature {
+      grid-template-columns: 1fr;
+
+      &.nospy {
+        justify-items: center;
+
+        .text p {
+          margin: 0 auto var(--gutter-sm);
+        }
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      .feature {
+        grid-template-columns: 1fr 50%;
+      }
+    }
+  }
+
+  &.ios section#top-brands {
+    background: linear-gradient(0deg, #e7f8ff, #e7f8ff);
+
+    .title {
+      font-size: 32px;
+      text-align: center;
+      margin: 100px 0 48px;
+    }
+
+    .top-brands-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 42px;
+
+      a {
+        display: block;
+        width: 100%;
+        max-width: 360px;
+        margin: 0 auto;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+
+          .brand-wrapper {
+            opacity: 0.9;
+          }
+        }
+      }
+
+      .brand-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 43.61%; /* (157/360 = 0.4361) */
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100% 100%;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .brand-wrapper::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        max-height: 80%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        padding: 24px;
+      }
+    }
+
+    .carousel {
+      .carousel-slider {
+        padding: 20px 0;
+
+        .story-item {
+          min-width: 222px;
+
+          &:first-child {
+            margin-left: var(--gutter);
+
+            @include breakpoints.screen(xl) {
+              margin-left: var(--gutter-auto);
+            }
+          }
+
+          img {
+            min-width: 222px;
+            max-width: 222px;
+            border-radius: 37px;
+          }
+
+          .text {
+            padding-right: 0;
+
+            h3 {
+              font-size: 24px;
+            }
+          }
+
+          .learn-more-button {
+            width: 100%;
+          }
+
+          a {
+            position: absolute;
+            cursor: pointer;
+
+            &:hover {
+              img {
+                color: var(--blue-6);
+              }
+            }
+          }
+
+          &:hover {
+            color: var(--blue-6);
+          }
+
+          &:hover .learn-more-button {
+            width: 100%;
+            background-color: var(--blue-6);
+            color: white;
+          }
+        }
+      }
+
+      .carousel-progress {
+        .carousel-completed {
+          background-color: #00bafd;
+          height: 4px;
+          border-radius: 4px;
+          margin-bottom: 32px;
+        }
+      }
+
+      .carousel-nav {
+        gap: 32px;
+
+        a {
+          margin-left: 0;
+          &.disabled {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    @include breakpoints.screen(sm) {
+      .top-brands-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "img1 img1 img2 img2"
+          "img3 img3 img4 img4"
+          "img5 img5 img6 img6"
+          "img7 img7 img8 img8";
+
+        a {
+          width: 100%;
+          max-width: none;
+        }
+
+        & > a:nth-child(1) {
+          grid-area: img1;
+        }
+        & > a:nth-child(2) {
+          grid-area: img2;
+        }
+        & > a:nth-child(3) {
+          grid-area: img3;
+        }
+        & > a:nth-child(4) {
+          grid-area: img4;
+        }
+        & > a:nth-child(5) {
+          grid-area: img5;
+        }
+        & > a:nth-child(6) {
+          grid-area: img6;
+        }
+        & > a:nth-child(7) {
+          grid-area: img7;
+        }
+        & > a:nth-child(8) {
+          grid-area: img8;
+        }
+      }
+    }
+
+    @include breakpoints.screen(md) {
+      .top-brands-grid {
+        grid-template-areas:
+          ". img1 img1 img2 img2 ."
+          "img3 img3 img4 img4 img5 img5"
+          "img6 img6 img7 img7 img8 img8";
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+  }
+
+  &.ios section#rich-ecosystem {
+    .title {
+      margin: 48px auto;
+      width: calc(100% - (var(--gutter-sm) * 2));
+    }
+
+    .features .feature.nospy {
+      justify-items: center;
+
+      .text p {
+        margin: 0 auto var(--gutter-sm);
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      .features .feature.nospy {
+        justify-items: normal;
+      }
+    }
+  }
+
+  &.ios section#flutter-opensource {
+    .title {
+      margin: 48px auto;
+      width: calc(100% - (var(--gutter-sm) * 2));
+    }
+
+    .feature {
+      grid-template-columns: 1fr;
+
+      &.nospy {
+        justify-items: center;
+
+        .text p {
+          margin: 0 auto var(--gutter-sm);
+        }
+      }
+    }
+
+    .github-stats {
+      margin: 48px auto 0;
+      width: fit-content;
+
+      .stat {
+        margin-top: var(--gutter-sm);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    @include breakpoints.screen(lg) {
+      .feature {
+        grid-template-columns: 1fr 50%;
+
+        .text p {
+          display: inline-block;
+        }
+      }
+
+      .github-stats {
+        margin: 48px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .stat {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+        }
+      }
+    }
+  }
+
+  &.ios section#productive-team {
+    padding: var(--gutter-md) 0 96px;
+    background: linear-gradient(243.17deg, #e7f8ff 57.24%, #b8eafe 100%);
+
+    .title {
+      margin: 48px auto;
+      width: calc(100% - (var(--gutter-sm) * 2));
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+
+      .subtitle {
+        font-size: 32px;
+        line-height: 45px;
+        text-align: center;
+      }
+    }
+  }
+
+  &.ios section#flutter-ios {
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+
+    .title {
+      margin: 0 auto;
+      width: calc(100% - (var(--gutter-sm) * 2));
+    }
+
+    .subtitle {
+      font-size: 32px;
+      line-height: 45px;
+      text-align: center;
+      margin-top: var(--gutter);
+    }
+
+    .container {
+      /* margin: 200px auto; */
+
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: var(--gutter);
+
+
+      &.has-subtitle {
+        justify-content: flex-start;
+        margin-bottom: 100px
+      }
+      
+      
+      @include breakpoints.screen(sm) {
+        gap: var(--gutter-lg);
+        
+        &.has-subtitle {
+          margin-bottom: 200px
+        }
+      }
+    }
+
+    .background-shape {
+      position: absolute;
+      top: var(--gutter-md);
+      width: 100%;
+      height: calc(100% - (var(--gutter-md) * 2));
+      background: linear-gradient(56.47deg, #a081f5 17.25%, #00f6db 82.66%);
+      clip-path: polygon(100% 65.7%, 0% 100%, 0% 32.5%, 100% 0%);
+      z-index: -1;
+    }
+
+    /* .video-container {
+      .title {
+        margin-top: var(--gutter-md);
+      }
+
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+
+      .container {
+        max-width: 90%;
+      }
+    } */
+
+    .embed-container {
+      border-radius: 30px;
+    }
+  }
+}
+
+@keyframes carouselRotate3D {
+  0% {
+    /* Center State */
+    transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+
+  25% {
+    /* Right State */
+    transform: translate(-50%, -50%) translateX(93%) translateZ(-100px)
+      scale(0.95);
+    opacity: 1;
+    z-index: 2;
+  }
+
+  50% {
+    /* Back State */
+    transform: translate(-50%, -50%) translateX(0%) translateZ(-200px)
+      scale(0.85);
+    opacity: 1;
+    z-index: 1;
+  }
+
+  75% {
+    /* Left State */
+    transform: translate(-50%, -50%) translateX(-93%) translateZ(-100px)
+      scale(0.95);
+    opacity: 1;
+    z-index: 2;
+  }
+
+  100% {
+    /* Loop back to Center State */
+    transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+}
+
+@include breakpoints.screen(sm) {
+  @keyframes carouselRotate3D {
+    0% {
+      /* Center State */
+      transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+
+    25% {
+      /* Right State */
+      transform: translate(-50%, -50%) translateX(100%) translateZ(-100px)
+        scale(0.95);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    50% {
+      /* Back State */
+      transform: translate(-50%, -50%) translateX(0%) translateZ(-200px)
+        scale(0.85);
+      opacity: 1;
+      z-index: 1;
+    }
+
+    75% {
+      /* Left State */
+      transform: translate(-50%, -50%) translateX(-100%) translateZ(-100px)
+        scale(0.95);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    100% {
+      /* Loop back to Center State */
+      transform: translate(-50%, -50%) translateX(0%) translateZ(0px) scale(1);
+      opacity: 1;
+      z-index: 3;
+    }
+  }
+}

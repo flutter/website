@@ -75,7 +75,6 @@ class MyCartUsingWidget extends StatelessWidget {
       // #docregion build
     );
   }
-
   // #enddocregion build
 }
 
@@ -118,7 +117,6 @@ class MyCatalogItem extends StatelessWidget {
     var cartModel = somehowGetMyCartModel(context);
     cartModel.add(item);
   }
-
   // #enddocregion my-tap-handler
 }
 

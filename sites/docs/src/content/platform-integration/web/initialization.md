@@ -211,6 +211,29 @@ The initialization process is split into the following stages:
 [embedded-mode]: {{site.docs}}/platform-integration/web/embedding-flutter-web/#embedded-mode
 [js-promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
+:::warning
+When you provide your own `onEntrypointLoaded` callback, the `config`
+that you pass to `_flutter.loader.load()` is **not** forwarded to the
+engine automatically. Flutter only applies that `config` for you when
+you omit `onEntrypointLoaded` and let the loader start the app.
+
+In a custom callback, pass the configuration to `initializeEngine()`
+yourself, otherwise it's silently ignored:
+
+```js
+_flutter.loader.load({
+  onEntrypointLoaded: async function(engineInitializer) {
+    const appRunner = await engineInitializer.initializeEngine({
+      // Set your run-time configuration here.
+      renderer: 'canvaskit',
+    });
+    await appRunner.runApp();
+  },
+});
+```
+
+:::
+
 ## Example: Display a progress indicator
 
 To give the user of your application feedback
@@ -227,6 +250,8 @@ loading.textContent = "Loading Entrypoint...";
 _flutter.loader.load({
   onEntrypointLoaded: async function(engineInitializer) {
     loading.textContent = "Initializing engine...";
+    // If you have a `config`, pass it here. The config given to `load()`
+    // is not forwarded when you supply your own `onEntrypointLoaded`.
     const appRunner = await engineInitializer.initializeEngine();
 
     loading.textContent = "Running app...";

@@ -639,7 +639,7 @@ This page has release notes for Flutter 3.44.
 * Improve error message when `dart-define` content are not `base64 encoded` and add more test cases by @AbdeMohlbi in [184219](https://github.com/flutter/flutter/pull/184219)
 * [ Widget Preview ] Use analysis server for widget preview detection by @bkonyi in [184473](https://github.com/flutter/flutter/pull/184473)
 * [data_assets] Cleanup tests by @dcharkes in [184209](https://github.com/flutter/flutter/pull/184209)
-* Enable SPM by default on Stable by @okorohelijah in [184495](https://github.com/flutter/flutter/pull/184495)
+* Enable SwiftPM by default on Stable by @okorohelijah in [184495](https://github.com/flutter/flutter/pull/184495)
 * [ Widget Preview ] Handle collections and records in custom preview annotations by @bkonyi in [184518](https://github.com/flutter/flutter/pull/184518)
 * forward an application name to DDS by @jakemac53 in [184459](https://github.com/flutter/flutter/pull/184459)
 * Reverts "[data_assets] Cleanup tests (#184209)" by @auto-submit[bot] in [184575](https://github.com/flutter/flutter/pull/184575)

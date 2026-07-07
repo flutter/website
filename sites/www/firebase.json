@@ -1,0 +1,180 @@
+{
+  "hosting": {
+    "public": "build/jaspr",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
+    "redirects": [
+      { "source": "/learn", "destination": "https://docs.flutter.dev/learn", "type": 301 },
+      { "source": "/events/**", "destination": "/events", "type": 301 },
+      { "source": "/go/:rest*", "destination": "https://docs.flutter.dev/go/:rest*", "type": 301 },
+      { "source": "/docs", "destination": "https://docs.flutter.dev", "type": 301 },
+      { "source": "/docs/:rest*", "destination": "https://docs.flutter.dev/:rest*", "type": 301 },
+      { "source": "/jobs", "destination": "https://docs.flutter.dev/jobs", "type": 301 },
+      { "source": "/jobs/:rest*", "destination": "https://docs.flutter.dev/jobs/:rest*", "type": 301 },
+      { "source": "/create", "destination": "https://docs.flutter.dev/create", "type": 301 },
+      { "source": "/dash", "destination": "https://docs.flutter.dev/dash", "type": 301 },
+      { "source": "/search-all", "destination": "https://docs.flutter.dev/search-all", "type": 301 },
+      { "source": "/search", "destination": "https://docs.flutter.dev/search", "type": 301 },
+      { "source": "/to", "destination": "https://docs.flutter.dev/to", "type": 301 },
+      { "source": "/to/:rest*", "destination": "https://docs.flutter.dev/to/:rest*", "type": 301 },
+      { "source": "/tos", "destination": "https://docs.flutter.dev/tos", "type": 301 },
+
+      { "source": "/adoptawidget", "destination": "https://docs.flutter.dev/adoptawidget", "type": 301 },
+      { "source": "/ads", "destination": "/monetization", "type": 301 },
+      { "source": "/blog", "destination": "https://blog.flutter.dev/", "type": 302 },
+      { "source": "/blog/:rest*", "destination": "https://blog.flutter.dev/:rest*", "type": 302 },
+      { "source": "/clock", "destination": "https://docs.flutter.dev/clock", "type": 302 },
+      { "source": "/community/china", "destination": "https://docs.flutter.dev/community/china", "type": 301 },
+      { "source": "/desktop", "destination": "/development/desktop", "type": 301 },
+      { "source": "/embedded", "destination": "/development/embedded", "type": 301 },
+      { "source": "/multi-platform", "destination": "/development", "type": 301 },
+      { "source": "/multi-platform/:rest*", "destination": "/development/:rest*", "type": 301 },
+      { "source": "/freecourse", "destination": "https://docs.flutter.dev/apprentice-giveaway", "type": 301 },
+      { "source": "/apprentice-giveaway", "destination": "https://docs.flutter.dev/apprentice-giveaway", "type": 301 },
+      { "source": "/security", "destination": "https://docs.flutter.dev/security", "type": 301 },
+      { "source": "/subscribe", "destination": "/", "type": 301 },
+      { "source": "/subscribe/preferences", "destination": "https://docs.flutter.dev/subscribe/preferences", "type": 301 },
+      { "source": "/subscribe/subscribed", "destination": "/", "type": 301 },
+      { "source": "/support", "destination": "/community", "type": 301 },
+      { "source": "/wasm", "destination": "https://docs.flutter.dev/platform-integration/web/wasm", "type": 301 },
+      { "source": "/web", "destination": "/development/web", "type": 301 },
+
+      { "source": "/accessibility", "destination": "https://docs.flutter.dev/ui/accessibility", "type": 301 },
+      { "source": "/adaptations", "destination": "https://docs.flutter.dev/ui/adaptive-responsive/platform-adaptations", "type": 301 },
+      { "source": "/adaptive*", "destination": "https://docs.flutter.dev/ui/adaptive-responsive", "type": 301 },
+      { "source": "/android-release", "destination": "https://docs.flutter.dev/deployment/android", "type": 301 },
+      { "source": "/animations", "destination": "https://docs.flutter.dev/ui/animations", "type": 301 },
+      { "source": "/animations/:rest*", "destination": "https://docs.flutter.dev/ui/animations/:rest*", "type": 301 },
+      { "source": "/assets-and-images", "destination": "https://docs.flutter.dev/ui/assets/assets-and-images", "type": 301 },
+      { "source": "/bootstrap-into-dart", "destination": "https://docs.flutter.dev/resources/bootstrap-into-dart", "type": 301 },
+      { "source": "/bug-reports", "destination": "https://docs.flutter.dev/resources/bug-reports", "type": 301 },
+      { "source": "/cd", "destination": "https://docs.flutter.dev/deployment/cd", "type": 301 },
+      { "source": "/codelabs", "destination": "https://docs.flutter.dev/codelabs", "type": 301 },
+      { "source": "/cookbook", "destination": "https://docs.flutter.dev/cookbook", "type": 301 },
+      { "source": "/cookbook/:rest*", "destination": "https://docs.flutter.dev/cookbook/:rest*", "type": 301 },
+      { "source": "/custom-fonts", "destination": "https://docs.flutter.dev/cookbook/design/fonts", "type": 301 },
+      { "source": "/debugging", "destination": "https://docs.flutter.dev/testing/debugging", "type": 301 },
+      { "source": "/decouple-tracker", "destination": "https://github.com/flutter/flutter/issues/101479", "type": 301 },
+      { "source": "/deferred-components", "destination": "https://docs.flutter.dev/perf/deferred-components", "type": 301 },
+      { "source": "/developing-packages", "destination": "https://docs.flutter.dev/packages-and-plugins/developing-packages", "type": 301 },
+      { "source": "/devtools/:rest*", "destination": "https://docs.flutter.dev/tools/devtools/:rest*", "type": 301 },
+      { "source": "/download", "destination": "https://docs.flutter.dev/install", "type": 301 },
+      { "source": "/downloads/:resource*", "destination": "/resources/:resource*", "type": 301 },
+      { "source": "/faq", "destination": "https://docs.flutter.dev/resources/faq", "type": 301 },
+      { "source": "/fastlane-cd", "destination": "https://docs.flutter.dev/deployment/cd#fastlane", "type": 301 },
+      { "source": "/flutter-for-:platform*", "destination": "https://docs.flutter.dev/get-started/flutter-for/:platform*-devs", "type": 301 },
+      { "source": "/formatting", "destination": "https://docs.flutter.dev/tools/formatting", "type": 301 },
+      { "source": "/gestures", "destination": "https://docs.flutter.dev/ui/interactivity/gestures", "type": 301 },
+      { "source": "/get-started", "destination": "https://docs.flutter.dev/get-started", "type": 301 },
+      { "source": "/get-started/:rest*", "destination": "https://docs.flutter.dev/get-started/:rest*", "type": 301 },
+      { "source": "/getting-started", "destination": "https://docs.flutter.dev/get-started", "type": 301 },
+      { "source": "/hot-reload", "destination": "https://docs.flutter.dev/tools/hot-reload", "type": 301 },
+      { "source": "/ide-setup", "destination": "https://docs.flutter.dev/tools/editors", "type": 301 },
+      { "source": "/images/catalog-widget-placeholder.png", "destination": "/assets/images/docs/catalog-widget-placeholder.png", "type": 301 },
+      { "source": "/impeller", "destination": "https://docs.flutter.dev/perf/impeller", "type": 301 },
+      { "source": "/inspector", "destination": "https://docs.flutter.dev/tools/devtools/inspector", "type": 301 },
+      { "source": "/intellij-ide", "destination": "https://docs.flutter.dev/tools/android-studio", "type": 301 },
+      { "source": "/intellij-setup", "destination": "https://docs.flutter.dev/tools/android-studio", "type": 301 },
+      { "source": "/ios-release", "destination": "https://docs.flutter.dev/deployment/ios", "type": 301 },
+      { "source": "/json", "destination": "https://docs.flutter.dev/data-and-backend/serialization/json", "type": 301 },
+      { "source": "/layout", "destination": "https://docs.flutter.dev/ui/layout/constraints#unbounded", "type": 301 },
+      { "source": "/material-3-migration", "destination": "https://docs.flutter.dev/release/breaking-changes/material-3-migration", "type": 301 },
+      { "source": "/networking", "destination": "https://docs.flutter.dev/cookbook/networking/fetch-data", "type": 301 },
+      { "source": "/null-safety", "destination": "https://dart.dev/null-safety", "type": 301 },
+      { "source": "/overview", "destination": "https://docs.flutter.dev/resources/architectural-overview", "type": 301 },
+      { "source": "/platform-channels", "destination": "https://docs.flutter.dev/platform-integration/platform-channels", "type": 301 },
+      { "source": "/platform-plugins*", "destination": "https://docs.flutter.dev/packages-and-plugins/using-packages", "type": 301 },
+      { "source": "/platform-services", "destination": "https://docs.flutter.dev/platform-integration/platform-channels", "type": 301 },
+      { "source": "/reading-writing-files", "destination": "https://docs.flutter.dev/cookbook/persistence/reading-writing-files", "type": 301 },
+      { "source": "/responsive*", "destination": "https://docs.flutter.dev/ui/adaptive-responsive", "type": 301 },
+      { "source": "/release-notes", "destination": "https://docs.flutter.dev/release/release-notes", "type": 301 },
+      { "source": "/release-notes/:version*", "destination": "https://docs.flutter.dev/release/release-notes/:version*", "type": 301 },
+      { "source": "/routing-and-navigation", "destination": "https://docs.flutter.dev/ui/navigation", "type": 301 },
+      { "source": "/sdk-archive", "destination": "https://docs.flutter.dev/install/archive", "type": 301 },
+      { "source": "/setup-:os*", "destination": "https://docs.flutter.dev/get-started", "type": 301 },
+      { "source": "/setup", "destination": "https://docs.flutter.dev/get-started", "type": 301 },
+      { "source": "/technical-overview", "destination": "https://docs.flutter.dev/resources/architectural-overview", "type": 301 },
+      { "source": "/testing", "destination": "https://docs.flutter.dev/testing", "type": 301 },
+      { "source": "/text-input", "destination": "https://docs.flutter.dev/cookbook/forms/text-input", "type": 301 },
+      { "source": "/tutorials", "destination": "https://docs.flutter.dev/reference/learning-resources", "type": 301 },
+      { "source": "/tutorials/animation", "destination": "https://docs.flutter.dev/ui/animations/tutorial", "type": 301 },
+      { "source": "/tutorials/interactive", "destination": "https://docs.flutter.dev/ui/interactivity", "type": 301 },
+      { "source": "/tutorials/internationalization", "destination": "https://docs.flutter.dev/ui/internationalization", "type": 301 },
+      { "source": "/tutorials/layout", "destination": "https://docs.flutter.dev/ui/layout", "type": 301 },
+      { "source": "/unbounded-constraints", "destination": "https://docs.flutter.dev/ui/layout/constraints#unbounded", "type": 301 },
+      { "source": "/ui-performance", "destination": "https://docs.flutter.dev/perf/ui-performance", "type": 301 },
+      { "source": "/upgrading", "destination": "https://docs.flutter.dev/install/upgrade", "type": 301 },
+      { "source": "/using-ide-vscode", "destination": "https://docs.flutter.dev/tools/vs-code", "type": 301 },
+      { "source": "/using-ide", "destination": "https://docs.flutter.dev/tools/android-studio", "type": 301 },
+      { "source": "/using-packages", "destination": "https://docs.flutter.dev/packages-and-plugins/using-packages", "type": 301 },
+      { "source": "/web-analogs", "destination": "https://docs.flutter.dev/get-started/flutter-for/web-devs", "type": 301 },
+      { "source": "/webflutter.dev/web", "destination": "/web", "type": 301 },
+      { "source": "/widgets-intro", "destination": "https://docs.flutter.dev/ui", "type": 301 },
+      { "source": "/widgets", "destination": "https://docs.flutter.dev/ui/widgets", "type": 301 },
+      { "source": "/widgets/:rest*", "destination": "https://docs.flutter.dev/ui/widgets/:rest*", "type": 301 },
+
+      { "source": "/catalog/samples", "destination": "https://docs.flutter.dev/reference/learning-resources", "type": 301 },
+      { "source": "/chat", "destination": "https://github.com/flutter/flutter/blob/main/docs/contributing/Chat.md", "type": 302 },
+      { "source": "/custom-deferred-components", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#custom-implementations", "type": 301 },
+      { "source": "/deferred-components-wiki", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components", "type": 301 },
+      { "source": "/design-principles", "destination": "https://github.com/flutter/flutter/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md", "type": 301 },
+      { "source": "/fully-deferred-flutter", "destination": "https://github.com/flutter/flutter/wiki/Deferred-Components#fully-deferring-flutter-in-add-to-app", "type": 301 },
+      { "source": "/privacy", "destination": "https://www.google.com/intl/en/policies/privacy", "type": 301 },
+      { "source": "/report-jank", "destination": "https://github.com/flutter/flutter/issues/74833", "type": 301 },
+      { "source": "/research-optout", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSeG2Nhj0YQkr3m75P74Zb9G-v7zgNhAE9arCyig-a5B1A8uDw/viewform?usp=sf_link", "type": 301 },
+      { "source": "/research-signup", "destination": "https://docs.google.com/forms/d/e/1FAIpQLSe0i4De809KXVCdljGKrjMj3lxhuzbuFKCtY5PEQPCYtGxFMg/viewform?usp=sf_link", "type": 301 },
+      { "source": "/style-guide*", "destination": "https://github.com/flutter/flutter/blob/main/docs/contributing/Style-guide-for-Flutter-repo.md", "type": 301 },
+      { "source": "/youtube", "destination": "https://youtube.com/flutterdev", "type": 301 },
+      { "source": "/forum", "destination": "https://forum.itsallwidgets.com", "type": 301 }
+    ],
+    "headers": [
+      {
+        "source": "/assets/*.@(jpg|jpeg|png|webp|avif|svg|mp4|css)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=604800"
+          },
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy-Report-Only",
+            "value": "script-src 'self'"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "DENY"
+          },
+          {
+            "key": "X-XSS-Protection",
+            "value": "1;mode=block"
+          }
+        ]
+      }
+    ]
+  },
+  "emulators": {
+    "hosting": {
+      "port": 5503
+    }
+  }
+}

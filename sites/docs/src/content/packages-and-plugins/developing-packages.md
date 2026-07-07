@@ -462,7 +462,7 @@ Then use the following steps:
 The iOS platform code for your plugin is located in
 `Pods/Development Pods/hello/../../example/ios/.symlinks/plugins/hello/ios/Classes`
 in the Project Navigator. (If you are using `sharedDarwinSource`,
-the path will end with `hello/darwin/Classes` instead.)
+the path will end with `Flutter/hello/Sources/hello` instead.)
 
 You can run the example app by pressing the run (&#9654;) button.
 
@@ -490,7 +490,7 @@ visit the [Swift Package Manager for plugin authors][] guide.
 
 [Swift Package Manager for plugin authors]: /packages-and-plugins/swift-package-manager/for-plugin-authors
 
-##### Add CocoaPod dependencies (Legacy)
+##### Add CocoaPod dependencies (legacy)
 
 Flutter continues to support CocoaPods for backward compatibility. If your
 plugin needs to support developers who haven't migrated to Swift Package
@@ -1026,9 +1026,6 @@ file, like any other Dart package.
 [Effective Dart Documentation]: {{site.dart-site}}/guides/language/effective-dart/documentation
 [federated plugins]: #federated-plugins
 [ffigen docs]: {{site.pub-pkg}}/ffigen/install
-[Android]: /platform-integration/android/c-interop
-[iOS]: /platform-integration/ios/c-interop
-[macOS]: /platform-integration/macos/c-interop
 [`fluro`]: {{site.pub}}/packages/fluro
 [Flutter editor]: /tools/editors
 [Flutter Favorites]: {{site.pub}}/flutter/favorites

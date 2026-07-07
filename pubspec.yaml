@@ -4,10 +4,12 @@ description: >-
 publish_to: none
 
 environment:
-  sdk: ^3.12.0-0
+  sdk: ^3.12.0
 
 workspace:
   - packages/analysis_defaults
   - packages/excerpter
+  - packages/site_shared
   - sites/docs
+  - sites/www
   - tool/dash_site

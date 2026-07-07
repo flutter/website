@@ -52,16 +52,18 @@ jobs:
             experimental: true
     continue-on-error: ${{ matrix.experimental }}
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
       - uses: subosito/flutter-action@e938fdf56512cc96ef2f93601a5a40bde3801046
         with:
           channel: ${{ matrix.branch }}
       - name: Fetch Dart dependencies
         run: dart pub get
         continue-on-error: ${{ matrix.experimental }}
-      - name: Check Dart code formatting
-        run: dart run dash_site format-dart --check
-        continue-on-error: ${{ matrix.experimental }}
+# Disabled for now due to non-language versioned formatting changes.
+# TODO(parlough): Revisit this once standardized on 3.13 beta or newer.
+#      - name: Check Dart code formatting
+#        run: dart run dash_site format-dart --check
+#        continue-on-error: ${{ matrix.experimental }}
       - name: Analyze Dart code
         run: dart run dash_site analyze-dart
         continue-on-error: ${{ matrix.experimental }}

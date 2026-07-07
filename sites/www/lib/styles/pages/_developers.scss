@@ -1,0 +1,38 @@
+body.developers {
+
+  section.hero {
+    background-image: var(--grad-blue-green-145);
+  }
+
+  #feature-grid {
+    --lt-blue: #196BD4;
+    --dk-blue: #1783E1;
+
+    background-color: var(--primary);
+    background-image: 
+      linear-gradient(
+        to bottom, 
+        var(--lt-blue) 20%, 
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse at -50% -150%,
+        transparent 80%,
+        var(--lt-blue) 80%
+      ),
+      linear-gradient(
+        145deg, 
+        var(--lt-blue) 0%, 
+        var(--dk-blue) 60%
+      );
+  }
+
+  #stories {
+    hgroup {
+      h2 {
+        max-width: 650px;
+      }
+    }
+  }
+
+}

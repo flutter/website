@@ -5,10 +5,11 @@ $base_primary_color: #0468D7;
 // Root variables shared by both light and dark mode.
 body {
   // Site typography.
-  --site-ui-fontFamily: 'Google Sans', 'Roboto', ui-sans, sans-serif;
-  --site-body-fontFamily: 'Google Sans Text', 'Roboto', ui-sans, sans-serif;
-  --site-code-fontFamily: 'Google Sans Mono', 'Roboto Mono', ui-monospace, monospace;
+  --site-ui-fontFamily: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --site-body-fontFamily: 'Google Sans Flex', 'Roboto', ui-sans, sans-serif;
+  --site-code-fontFamily: 'Google Sans Code', 'Roboto Mono', ui-monospace, monospace;
   --site-icon-fontFamily: 'Material Symbols Outlined', 'Material Symbols', 'Material Icons';
+  font-optical-sizing: auto;
 
   // Site layout sizes.
   --site-header-height: 4rem;

@@ -1,6 +1,6 @@
+// ignore_for_file: prefer_final_fields, unused_field
+
 import 'package:flutter/material.dart';
-// ignore_for_file: prefer_final_fields
-// ignore_for_file: unused_field
 
 // #docregion Starter
 // The StatefulWidget's job is to take data and create a State class.
@@ -26,5 +26,4 @@ class _MyHomePageState extends State<MyHomePage> {
     return Container();
   }
 }
-
 // #enddocregion Starter

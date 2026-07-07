@@ -1,0 +1,117 @@
+---
+title: Google Antigravity
+shortTitle: Antigravity
+sidenav: ai
+description: Learn about Google Antigravity agentic coding tools.
+---
+
+## Introduction
+
+Google Antigravity is a suite of agentic development tools
+for building apps, including Flutter apps.
+You can pair with Antigravity to solve coding tasks,
+create new codebases, modify existing ones,
+and answer questions.
+
+The Antigravity suite includes:
+
+* **Antigravity 2.0**: The core agentic assistant experience,
+  driven via a Terminal User Interface (TUI)
+  or Command-Line Interface (CLI).
+* **Antigravity IDE**: The focused editor experience
+  featuring an integrated agent panel.
+
+This page describes the Antigravity IDE.
+For details on using the command-line tool,
+see the [Antigravity CLI](/ai/antigravity-cli) page.
+
+
+To learn some of what Antigravity is capable of,
+watch this talk from Google I/O 2026.
+
+<YouTubeEmbed id="UNdQhnpm8GY"
+  title="Vibe once, run anywhere with Google Antigravity and Flutter"></YouTubeEmbed>
+
+## Installation and setup {: #setup}
+
+Install the latest version of Antigravity for your platform by visiting
+the [Antigravity site](https://antigravity.google/download).
+
+ 1. <h3>Open Antigravity</h3>
+
+    When opening Antigravity for the first time,
+    a **How do you want to use Antigravity** screen displays and
+    provides some radio buttons and pulldown menus
+    for customizing your use of the tool.
+
+    We recommend that you select **Review-driven development**.
+    This means that Antigravity asks you to approve each command
+    that it wants to run.
+
+    You can change this setting at any time to give Antigravity
+    more or less control. Even if you select **Agent driven development**,
+    which allows Antigravity to directly run commands without approval,
+    you can specify certain commands that will _always_ ask
+    for your approval, such as the `rm` command to remove files.
+
+ 1. <h3>Install the Dart and Flutter extensions</h3>
+
+    Open the **Extensions** menu in the left nav and search for Dart.
+    The search results bring up both the Dart and Flutter extensions.
+    Click the **Install** button for Dart and then do the same
+    for Flutter.
+
+ 1. <h3>Set up any MCP servers that you use</h3>
+
+    1.  Navigate to or open the **Agent** side panel.
+
+        If it's closed, open it by either:
+
+        * Pressing <kbd class="special-key">Cmd/Ctrl</kbd> + <kbd>L</kbd>.
+        * Going to **View**
+          <span aria-label="and then">></span> **Open View...**
+          <span aria-label="and then">></span> **Agent**.
+
+        In the upper right of the **Agent** panel,
+        click the **Additional options** (`...`) menu button.
+
+    1.  Select **MCP Servers**.
+
+    1.  In the upper right of the **Agent** panel,
+        click **Manage MCP Servers**.
+
+        The **MCP Store** screen appears and you can search for Dart,
+        which is likely already in the list.
+        Click **Install**.
+
+        After installing any servers that you want,
+        view them by clicking the **Manage MCP Servers** button
+        and click **View raw config** to access your JSON manifest.
+
+ 1. <h3>Get started developing</h3>
+
+    For these tips and more that show some of Antigravity's benefits,
+    watch the following 10-minute [Flutter + Antigravity video][ag-video]:
+
+    <YouTubeEmbed id="YY2w2JEX2xk"
+      title="Flutter + Antigravity in 10 minutes"></YouTubeEmbed>
+
+    For a walkthrough on creating a new Flutter app in Antigravity,
+    visit [Create a new Flutter app][].
+    To learn more about the development features enabled by
+    the Dart and Flutter extensions,
+    check out [How to develop Flutter apps in VS Code][vs-code].
+
+{:.steps}
+
+## Agentic Hot Reload {: #agentic-hot-reload}
+
+If you are using Antigravity in Agent mode,
+the agent can automatically hot reload your running application
+when you prompt it to modify your app.
+This enables a hands-free, "prompt-to-reload" workflow
+that reduces context switching and development latency.
+
+[ag-video]: {{site.youtube-site}}/watch?v=YY2w2JEX2xk&t=1s
+[Create a new Flutter app]: /reference/create-new-app#antigravity
+[vs-code]: /tools/vs-code

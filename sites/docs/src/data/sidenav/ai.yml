@@ -10,15 +10,19 @@
       permalink: /ai/agent-skills
     - title: Dart & Flutter MCP server
       permalink: /ai/mcp-server
-    - title: AI Coding Assistants
+    - title: AI coding assistants
       permalink: /ai/coding-assistants
       children:
         - title: Overview
           permalink: /ai/coding-assistants
-        - title: Flutter extension for Gemini CLI
-          permalink: /ai/gemini-cli-extension
-    - title: Developer Experience
+        - title: Antigravity IDE
+          permalink: /ai/antigravity
+        - title: Antigravity CLI
+          permalink: /ai/antigravity-cli
+    - title: Developer experience
       permalink: /ai/best-practices/developer-experience
+    - title: "AI evaluations (experimental)"
+      permalink: /ai/evals
 
 - title: Build AI-powered apps
   expanded: true
@@ -51,7 +55,7 @@
           permalink: /ai/ai-toolkit/custom-llm-providers
         - title: Chat client sample
           permalink: /ai/ai-toolkit/chat-client-sample
-    - title: AI Best Practices
+    - title: AI best practices
       permalink: /ai/best-practices
       children:
         - title: Overview
