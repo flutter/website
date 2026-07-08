@@ -205,10 +205,10 @@ environment:
 # ...
 ```
 
-## Supporting Flutter versions earlier than 3.44
+### Supporting Flutter versions earlier than 3.44
 
 If you updated your plugin's Flutter SDK minimum to 3.44, skip this section
-and proceed to updating the plugin's `CHANGELOG.md`.
+and proceed to [updating the plugin's `CHANGELOG.md`][update-plugin-changelog].
 
 If you cannot update the plugin's Flutter SDK minimum to 3.44, you must make
 the following changes to `<plugin-project>/android/build.gradle` or
@@ -414,3 +414,4 @@ Follow the [migration guide for app developers][app-migration-guide] to migrate 
 
 [app-migration-guide]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-app-developers
 [flutter-sdk-minimum-below-3.44]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#supporting-flutter-versions-earlier-than-3-44
+[update-plugin-changelog]: {{site.flutter-docs}}/release/breaking-changes/migrate-to-built-in-kotlin/for-plugin-authors#update-the-plugins-changelogmd
