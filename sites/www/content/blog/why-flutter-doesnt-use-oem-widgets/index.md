@@ -3,12 +3,12 @@ title: "Why Flutter doesn’t use OEM widgets"
 description: "A developer’s journey from skepticism to excitement for the future of non-OEM widgets, and bespoke mobile design"
 publishDate: 2017-11-16
 author: xster
-image: images/1Tt9lpvpKa1700v74KcjcIw.png
+image: images/1Tt9lpvpKa1700v74KcjcIw.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/1Tt9lpvpKa1700v74KcjcIw.png" alt="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" caption="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" />
+<DashImage figure src="images/1Tt9lpvpKa1700v74KcjcIw.webp" alt="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" caption="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" />
 
 
 ## Preface
@@ -39,28 +39,28 @@ To get to the heart of products that resonate the most with the needs of their c
 
 Here’s a selection of highly acclaimed, award-winning apps we’ve all likely used and can extract learnings from:
 
-<DashImage figure src="images/1xIdaloHvQPE78oAXLJ7Rzg.png" />
+<DashImage figure src="images/1xIdaloHvQPE78oAXLJ7Rzg.webp" />
 
 
-<DashImage figure src="images/1cxcLBy8_MnUprKE_JliA7w.png" />
+<DashImage figure src="images/1cxcLBy8_MnUprKE_JliA7w.webp" />
 
 
-<DashImage figure src="images/1nQ9gwT4kdN8SIXzxq0XyYg.png" />
+<DashImage figure src="images/1nQ9gwT4kdN8SIXzxq0XyYg.webp" />
 
 
-<DashImage figure src="images/1CWtefgiPMBwNi8Q1dxPI5A.png" />
+<DashImage figure src="images/1CWtefgiPMBwNi8Q1dxPI5A.webp" />
 
 
-<DashImage figure src="images/1WiPwyMCRrVn_iit7HiG4Pg.png" />
+<DashImage figure src="images/1WiPwyMCRrVn_iit7HiG4Pg.webp" />
 
 
-<DashImage figure src="images/1N2U8dMlt2pD5ozUGHOTXwg.png" />
+<DashImage figure src="images/1N2U8dMlt2pD5ozUGHOTXwg.webp" />
 
 
-<DashImage figure src="images/1jSlI0OpsEEqomXhgEbZNTA.png" />
+<DashImage figure src="images/1jSlI0OpsEEqomXhgEbZNTA.webp" />
 
 
-<DashImage figure src="images/1eKLcIR16WZCNmwFcBzL8Zw.png" alt="A collection of 2016’s design award winning apps in both Android and iOS forms" caption="A collection of 2016’s design award winning apps in both Android and iOS forms" />
+<DashImage figure src="images/1eKLcIR16WZCNmwFcBzL8Zw.webp" alt="A collection of 2016’s design award winning apps in both Android and iOS forms" caption="A collection of 2016’s design award winning apps in both Android and iOS forms" />
 
 
 You’re likely to have already noticed some common patterns here.
@@ -209,15 +209,15 @@ By shipping the natively compiled framework in user space, the user’s experien
 
 Material Design can be implemented with as much fidelity on an early iOS 11 beta as it can be on a 2010 Nexus S (released 4 years before Material Design is even created!) on Android 4.1.2. Not that we necessarily encourage anyone to do it.
 
-<DashImage figure src="images/1G2Bl4jOqWjj1s3ojNLgERQ.png" />
+<DashImage figure src="images/1G2Bl4jOqWjj1s3ojNLgERQ.webp" />
 
 
-<DashImage figure src="images/1t3UOazDW4es-wlm5WhHlLw.png" alt="Consistent Material Design (or your design) on phones made way before Material Design existed" caption="Consistent Material Design (or your design) on phones made way before Material Design existed" />
+<DashImage figure src="images/1t3UOazDW4es-wlm5WhHlLw.webp" alt="Consistent Material Design (or your design) on phones made way before Material Design existed" caption="Consistent Material Design (or your design) on phones made way before Material Design existed" />
 
 
 Correspondingly, we can not only go back 7 years and ship the native iOS 11 beta look and feel on a 2010 Android device, we also made it easy enough to create any UI that we could do so before iOS 11 itself released. Again, not that anyone would want to make an iOS looking app on Android, but we hoped to use it as a litmus to make sure it’s easy to create any UI, whether stock or branded.
 
-<DashImage figure src="images/1mWZiUb3dO9aMN1iV8YFxCw.gif" alt="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" caption="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" />
+<DashImage figure src="images/1mWZiUb3dO9aMN1iV8YFxCw.webp" alt="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" caption="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" />
 
 
 ## Conclusion

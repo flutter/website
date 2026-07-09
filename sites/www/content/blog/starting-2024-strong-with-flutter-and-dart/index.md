@@ -23,7 +23,7 @@ Judging by the millions of talented and creative developers who support Flutter 
 
 Today we launched the [Google AI Dart SDK](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381), a new pub.dev package, [google_generative_ai,](https://pub.dev/packages/google_generative_ai) and [supporting resources](https://ai.google.dev/tutorials/dart_quickstart); together these enable you to build your own generative AI-based features like smart chat bots, visual search engines, and image descriptions into Dart and Flutter apps using the Gemini API. Flutter and Dart’s cross-platform capabilities and this new SDK make it easier for you to build interactive experiences across platforms.
 
-<DashImage figure src="images/05hGoIuMtVnvrZ2id.png" />
+<DashImage figure src="images/05hGoIuMtVnvrZ2id.webp" />
 
 
 And this is only the beginning of the innovations that we’re bringing to Flutter and Dart development with AI. For instance, soon Flutter and Dart developers can copy Dart code directly from [Google’s AI Studio](https://aistudio.google.com/?utm_source=flutter&utm_medium=referral&utm_campaign=blog_umbrella_announcement&utm_content=) after honing prompts for your use case.
@@ -59,7 +59,7 @@ These releases are focused on refinements and performance improvements that buil
 
 * And finally, we’re excited to share progress on our mission to help define the future of the web with Wasm
 
-<DashImage figure src="images/02UG76__vsbp6NHtN.png" />
+<DashImage figure src="images/02UG76__vsbp6NHtN.webp" />
 
 
 Dart 3.3 in turn, introduces extension types, a new model for interacting with JavaScript on the web, and updates to our work to support access to more and better web libraries. You can learn more about each release in the blog posts for [Flutter 3.19](https://medium.com/flutter/whats-new-in-flutter-3-19-58b1aae242d2) and [Dart 3.3](https://medium.com/dartlang/dart-3-3-325bf2bf6c13), respectively.
@@ -70,7 +70,7 @@ Each of these features is a small step in a larger journey we’re taking this y
 
 And while we’ll do our best to continue to remain transparent as changes inevitably force us to shift focus and make tradeoffs, we want to highlight that there are more contributors to Flutter and Dart outside of Google than those of us employed here, meaning that the things mentioned in our roadmap are but a small portion of the thousands of changes that will come to Dart and Flutter this year.
 
-<DashImage figure src="images/0oAoUwrRrrYWIbu_u.png" alt="2024 roadmap" caption="2024 roadmap" />
+<DashImage figure src="images/0oAoUwrRrrYWIbu_u.webp" alt="2024 roadmap" caption="2024 roadmap" />
 
 
 **Bringing it all together**

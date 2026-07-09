@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.29"
 description: "Enhancing Performance and Fidelity Across Platforms"
 publishDate: 2025-02-12
 author: itsjustkevin
-image: images/1-XHpdhmBoEU-K3pSPWTX3g.png
+image: images/1-XHpdhmBoEU-K3pSPWTX3g.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1-XHpdhmBoEU-K3pSPWTX3g.png" />
+<DashImage figure src="images/1-XHpdhmBoEU-K3pSPWTX3g.webp" />
 
 
 ## What’s new in Flutter 3.29
@@ -35,47 +35,47 @@ Other changes to the navigation bars include:
 
 * Thanks to community contributor [davidhicks980](http://github.com/davidhicks980), Cupertino popups now have [more vibrant background blurs](https://github.com/flutter/flutter/pull/159272), which improves native fidelity.
 
-<DashImage figure src="images/09o5hT9CkjtAs9PsH.png" />
+<DashImage figure src="images/09o5hT9CkjtAs9PsH.webp" />
 
 
 * The new [`CupertinoSheetRoute`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute-class.html) shows an iOS-styled modal sheet view that can be removed using the drag-to-dismiss gesture.
 
 * The new [`showCupertinoSheet`](https://main-api.flutter.dev/flutter/cupertino/showCupertinoSheet.html) function displays the sheet with a common setup for nested navigation baked in.
 
-<DashImage figure src="images/0wkUFtSuMJHMV7VBJ.gif" />
+<DashImage figure src="images/0wkUFtSuMJHMV7VBJ.webp" />
 
 
 * Community member [thejitenpatel](http://github.com/thejitenpatel) improved [`CupertinoAlertDialog`](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html)’s native fidelity in dark mode, as shown in the following screenshots:
 
-<DashImage figure src="images/1R83UkKDD_CWQyHJCbiEUoQ.png" alt="Before improvement — Left is a native view, right is a Flutter view" caption="Before improvement — Left is a native view, right is a Flutter view" />
+<DashImage figure src="images/1R83UkKDD_CWQyHJCbiEUoQ.webp" alt="Before improvement — Left is a native view, right is a Flutter view" caption="Before improvement — Left is a native view, right is a Flutter view" />
 
 
-<DashImage figure src="images/1RfA62aWh5rI6v1S7zGzerw.png" alt="After improvement — Left is a native view, right is a Flutter view" caption="After improvement — Left is a native view, right is a Flutter view" />
+<DashImage figure src="images/1RfA62aWh5rI6v1S7zGzerw.webp" alt="After improvement — Left is a native view, right is a Flutter view" caption="After improvement — Left is a native view, right is a Flutter view" />
 
 
 * When inverted, Flutter’s text selection handles swap their order on iOS, and the border color of the text selection magnifier now matches the current theme.
 
-<DashImage figure src="images/0Zz4XclkgqvYfadFw.gif" />
+<DashImage figure src="images/0Zz4XclkgqvYfadFw.webp" />
 
 
 ### Material
 
 * The [`FadeForwardsPageTransitionsBuilder`](https://main-api.flutter.dev/flutter/material/FadeForwardsPageTransitionsBuilder-class.html) is the new Material 3 (M3) page transition builder, designed to match the Android’s latest page transition behavior. During the transition, the incoming page slides in from right to left while simultaneously fading in, and the outgoing page slides out from right to left, fading out concurrently. This new transition also addresses the performance issues previously caused by the `ZoomPageTransitionsBuilder`.
 
-<DashImage figure src="images/04UHEVkh3Lnmhzzfa.gif" />
+<DashImage figure src="images/04UHEVkh3Lnmhzzfa.webp" />
 
 
 * This release updates the `CircularProgressIndicator` and `LinearProgressIndicator` to align with the latest Material Design 3 specifications. To use the updated styling, either set the `year2023` property to `false`, or set [`ProgressIndicatorThemeData.year2023`](https://main-api.flutter.dev/flutter/material/ProgressIndicatorThemeData/year2023.html) to `false`.
 
-<DashImage figure src="images/0HAZCXocwTzLyq3iO.gif" />
+<DashImage figure src="images/0HAZCXocwTzLyq3iO.webp" />
 
 
-<DashImage figure src="images/0IhJCAxTPoV0EOc9I.gif" />
+<DashImage figure src="images/0IhJCAxTPoV0EOc9I.webp" />
 
 
 * This release also introduces the latest Material 3 `Slider` design, featuring updated track and handle shapes. The `Slider` defaults to the previous Material 3 style. To enable the latest design, either set `year2023` to `false`, or set [`SliderThemeData.year2023`](https://main-api.flutter.dev/flutter/material/SliderThemeData/year2023.html) to `false`.
 
-<DashImage figure src="images/0RP8usLpbhUNSCOhS.png" />
+<DashImage figure src="images/0RP8usLpbhUNSCOhS.webp" />
 
 
 This release includes several bug fixes and feature enhancements for the Material library. Notable fixes include:
@@ -94,7 +94,7 @@ Flutter now gives you more information about the selection under a `SelectionAre
 
 Flutter also gives you information regarding the status of a `SelectionArea` or `SelectableRegion` through the [`SelectableRegionSelectionStatusScope`](https://main-api.flutter.dev/flutter/widgets/SelectableRegionSelectionStatusScope-class.html) inherited widget. You can check whether a parent `SelectionArea` or `SelectableRegion` is actively changing or has finalized its selection by using [`SelectableRegionSelectionStatusScope.maybeOf(context)`](https://main-api.flutter.dev/flutter/widgets/SelectableRegionSelectionStatusScope/maybeOf.html) and checking the [`SelectableRegionSelectionStatus`](https://main-api.flutter.dev/flutter/widgets/SelectableRegionSelectionStatus.html).
 
-<DashImage figure src="images/06P3X5mGDk25AoIW6.gif" />
+<DashImage figure src="images/06P3X5mGDk25AoIW6.webp" />
 
 
 ### Accessibility
@@ -161,7 +161,7 @@ Starting in 3.29, Flutter on Android and iOS execute Dart code on the applicatio
 
 The new DevTools inspector is enabled by default for all users. The new inspector has a condensed widget tree, a new widget properties view, and an option to automatically update in response to hot-reload and navigation events. For more details, visit the [new inspector page](https://docs.flutter.dev/tools/devtools/inspector#new) on docs.flutter.dev.
 
-<DashImage figure src="images/0u75a-VoDr43H_xxK.png" />
+<DashImage figure src="images/0u75a-VoDr43H_xxK.webp" />
 
 
 ### **Changes to on-device widget selection**
@@ -181,7 +181,7 @@ The Logging tool in DevTools has been improved in the following ways:
 
 * Significant improvement in performance and initial load time.
 
-<DashImage figure src="images/0mIvmDgvoydaAWE05.png" />
+<DashImage figure src="images/0mIvmDgvoydaAWE05.webp" />
 
 
 These are just a few highlights from this release. To learn more about all the updates included in Flutter 3.29, check out the release notes for DevTools [2.41.0](https://docs.flutter.dev/tools/devtools/release-notes/release-notes-2.41.0) and [2.42.2](https://docs.flutter.dev/tools/devtools/release-notes/release-notes-2.42.2).

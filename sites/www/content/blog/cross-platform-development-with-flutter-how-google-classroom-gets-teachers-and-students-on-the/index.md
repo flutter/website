@@ -3,7 +3,7 @@ title: "Cross Platform development with Flutter — How Google Classroom get
 description: "Google’s Classroom app, which originally launched in 2014, is used by 150 million educators and students around the world to organize…"
 publishDate: 2024-05-07
 author: craiglabenz
-image: images/1-u0y5vTqoC_sCyOHpvUnNA.png
+image: images/1-u0y5vTqoC_sCyOHpvUnNA.webp
 category: spotlight
 layout: blog
 ---
@@ -22,7 +22,7 @@ A spectrum of options were available, ranging from persevering with the status q
 
 The most visible of Classroom’s issues — UI variations — forced teachers to intimately know both the Android and iOS UIs. After all, it’s easy to imagine students asking questions about this homework screen and instructions from one platform’s perspective not making much sense against what a student was seeing on their device from the other platform.
 
-<DashImage figure src="images/1-u0y5vTqoC_sCyOHpvUnNA.png" />
+<DashImage figure src="images/1-u0y5vTqoC_sCyOHpvUnNA.webp" />
 
 
 The conventional approach is for separate client apps, developed by separate teams, that diverge over time. Only consistent, painstaking work to synchronize every feature can prevent this. In contrast, Flutter’s very nature inverts this default outcome. With Flutter, UIs are the same by default [1] until active work ([often in pursuit of adaptability](https://medium.com/flutter/extreme-ui-adaptability-in-flutter-how-google-earth-supports-every-use-case-on-earth-6db4661e7a17)) forces them to diverge for the benefit of the user.
@@ -78,12 +78,12 @@ The Classroom team was able to re-package this annotation functionality in a plu
 
 Below is a visualization of Classroom’s annotation feature on Android, outlining the mixture of native and Flutter UI components.
 
-<DashImage figure src="images/1yJhbJRuTHa2wt-ofA9fazw.png" alt="Four mobile screens side by side, collectively showing the user flow to select and annotate a file" caption="Four mobile screens side by side, collectively showing the user flow to select and annotate a file" />
+<DashImage figure src="images/1yJhbJRuTHa2wt-ofA9fazw.webp" alt="Four mobile screens side by side, collectively showing the user flow to select and annotate a file" caption="Four mobile screens side by side, collectively showing the user flow to select and annotate a file" />
 
 
 More broadly, typical plugin design in Flutter looks like the following, where a single, streamlined interface loads platform-specific libraries which, in turn, use FFI or JNI to talk to the underlying platform. This allows Flutter apps to engage with platform-specific native APIs across all of their build targets without leaking those considerations into Dart code.
 
-<DashImage figure src="images/1slexehY5Bz7L36tuIuxP4g.png" alt="A diagram of how to design a Flutter plugin" caption="A diagram of how to design a Flutter plugin" />
+<DashImage figure src="images/1slexehY5Bz7L36tuIuxP4g.webp" alt="A diagram of how to design a Flutter plugin" caption="A diagram of how to design a Flutter plugin" />
 
 
 ## Looking back
@@ -94,7 +94,7 @@ The Classroom team spent 2 years rewriting their app with a team that grew from 
 
 Part of the Classroom team’s decision to rewrite was, knowing that their project would never be “done”, new features were likely to be added long into the future. This allowed for a compelling case that a rewrite, even an expensive one, would eventually pay for itself. The formula for when the Classroom team would hit the break-even point on investment from their rewrite is:
 
-<DashImage figure src="images/1JS2z5_kG8Z8hAfbrxeOtCw.png" alt="The formula for estimating when increased velocity from rewriting an app in Flutter will exceed the time spent rewriting. The formula is time spent rewriting divided by the reduction in time spent writing features in Flutter equals the number of post-launch features to break even." caption="The formula for estimating when increased velocity from rewriting an app in Flutter will exceed the time spent rewriting. The formula is time spent rewriting divided by the reduction in time spent writing features in Flutter equals the number of post-launch features to break even." />
+<DashImage figure src="images/1JS2z5_kG8Z8hAfbrxeOtCw.webp" alt="The formula for estimating when increased velocity from rewriting an app in Flutter will exceed the time spent rewriting. The formula is time spent rewriting divided by the reduction in time spent writing features in Flutter equals the number of post-launch features to break even." caption="The formula for estimating when increased velocity from rewriting an app in Flutter will exceed the time spent rewriting. The formula is time spent rewriting divided by the reduction in time spent writing features in Flutter equals the number of post-launch features to break even." />
 
 
 In the 9 months since launching iOS, Classroom estimates to have already reclaimed 40% of that initial investment through the tripling of developer velocity offered by Flutter.

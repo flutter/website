@@ -3,14 +3,14 @@ title: "Platform channel examples"
 description: "Google Summer of Code (GSoC) ‘20"
 publishDate: 2020-08-29
 author: ayushbherwani1998
-image: images/15PoXySK4-tAKWAY1zCzfHg.png
+image: images/15PoXySK4-tAKWAY1zCzfHg.webp
 category: events
 layout: blog
 ---
 
 Google Summer of Code (GSoC) 2020
 
-<DashImage figure src="images/15PoXySK4-tAKWAY1zCzfHg.png" />
+<DashImage figure src="images/15PoXySK4-tAKWAY1zCzfHg.webp" />
 
 
 Google Summer of Code is an initiative by Google to promote open source among student developers, where students pair with a mentor and work with an open source organization for three months.
@@ -55,7 +55,7 @@ The EventChannel demo demonstrates how to implement an [`EventChannel`](https://
 
 Related PR: [#462](https://github.com/flutter/samples/pull/462)
 
-<DashImage figure src="images/1LSMSOh-0dz8TCaKP2Z-CoQ.gif" alt="EventChannel Demo in action" caption="EventChannel Demo in action" />
+<DashImage figure src="images/1LSMSOh-0dz8TCaKP2Z-CoQ.webp" alt="EventChannel Demo in action" caption="EventChannel Demo in action" />
 
 
 ### Platform Image demo
@@ -64,7 +64,7 @@ The Platform Image demo demonstrates how to use [`BasicMessageChannel`](https://
 
 Related PR: [475](https://github.com/flutter/samples/pull/475)
 
-<DashImage figure src="images/1mc9V6dDcmV0qT6UpzX1AQg.gif" alt="Platform Image demo in action" caption="Platform Image demo in action" />
+<DashImage figure src="images/1mc9V6dDcmV0qT6UpzX1AQg.webp" alt="Platform Image demo in action" caption="Platform Image demo in action" />
 
 
 ### BasicMessageChannel & different MessageCodec demo
@@ -73,7 +73,7 @@ The BasicMessageChannel demo demonstrates how to use `BasicMessageChannel` and [
 
 Related PRs: [#484](https://github.com/flutter/samples/pull/484), [#496](https://github.com/flutter/samples/pull/496)
 
-<DashImage figure src="images/1oXELli8oLVJuWFW6BtdXjw.gif" alt="BasicMessageChannel Demo in action" caption="BasicMessageChannel Demo in action" />
+<DashImage figure src="images/1oXELli8oLVJuWFW6BtdXjw.webp" alt="BasicMessageChannel Demo in action" caption="BasicMessageChannel Demo in action" />
 
 
 ## Federated plugin sample

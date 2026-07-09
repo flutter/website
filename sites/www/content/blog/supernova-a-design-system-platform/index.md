@@ -3,7 +3,7 @@ title: "Supernova: a design system platform"
 description: "Experience of an early adopter building a Flutter web app"
 publishDate: 2021-09-30
 author: mariam_hasnany
-image: images/1GOSImwOIA3oqItUMRmq5Kw.png
+image: images/1GOSImwOIA3oqItUMRmq5Kw.webp
 category: spotlight
 layout: blog
 ---
@@ -16,21 +16,21 @@ We think Supernova is a good example of the kind of experience Flutter enables o
 
 Usually design and developer teams are compartmentalized and never truly work together; this is because tooling is built with only one or the other discipline in mind. So we decided to build a platform where designers and developers can come together and work as a team.
 
-<DashImage figure src="images/1GOSImwOIA3oqItUMRmq5Kw.png" />
+<DashImage figure src="images/1GOSImwOIA3oqItUMRmq5Kw.webp" />
 
 
 ### **Tell me more about what sparked the idea for Supernova.**
 
 The idea stemmed from the need for a certain amount of automation in the design process to make the iterative workflow less cumbersome. What we’re launching today is a tool that automates the process of turning the design system built by designers into something developers can directly consume in the form of code.
 
-<DashImage figure src="images/1oqPmxo8kmisR_7oiZn06vQ.png" alt="Supernova, a platform that automates the design process" caption="Supernova, a platform that automates the design process" />
+<DashImage figure src="images/1oqPmxo8kmisR_7oiZn06vQ.webp" alt="Supernova, a platform that automates the design process" caption="Supernova, a platform that automates the design process" />
 
 
 ### **Can you go into more detail about the features users can expect in this launch?**
 
 For this launch you can bring your Figma designs to Supernova, manage style, assets, or other components and then export them into code. We’ve built a documentation editor that lets you create documents based on your design system, and finally, an automation engine that updates your documents and code automatically when design changes are made.
 
-<DashImage figure src="images/1YaZp-vdLHW17_b9ktY_4mQ.png" alt="Supernova’s documentation editor" caption="Supernova’s documentation editor" />
+<DashImage figure src="images/1YaZp-vdLHW17_b9ktY_4mQ.webp" alt="Supernova’s documentation editor" caption="Supernova’s documentation editor" />
 
 
 *Everything* in our platform is built with Flutter and Dart. There is a lot of sophisticated logic, so our application is more Dart-heavy than most, and Flutter is used for the visualization layer. Alongside Flutter’s CanvasKit renderer, we also have our own Skia engine to parse and render the components from a data model in Figma.
@@ -44,7 +44,7 @@ Our main consideration for Flutter was that we would be able to bend the platfor
 
 Despite some early struggles, we feel we made the right decision because of the flexibility that Flutter provided.
 
-<DashImage figure src="images/10vWG-4VTlJkHX_9z0nGNWg.png" alt="Supernova is not only built with Flutter but also exports Flutter code" caption="Supernova is not only built with Flutter but also exports Flutter code" />
+<DashImage figure src="images/10vWG-4VTlJkHX_9z0nGNWg.webp" alt="Supernova is not only built with Flutter but also exports Flutter code" caption="Supernova is not only built with Flutter but also exports Flutter code" />
 
 
 ### **So it wasn’t always smooth sailing. Can you describe some of those struggles and what you learned along the way?**
@@ -53,7 +53,7 @@ One of the very first technical challenges we encountered while working on our F
 
 The main thing we learned is the importance of interoperability between Dart and JavaScript specifically for web apps. Using web-specific libraries has limitations if you are also targeting other platforms supported by Flutter, but if your main focus is web apps, it can save a tremendous amount of time. We learned that using JavaScript libraries and embedding HTML can compensate for plugins that lack web support. As an example, we use this approach for a code preview widget, which we embed as HTML and use with a JavaScript library for syntax highlighting. I would say that familiarity with JavaScript helps a great deal when building a Flutter web app, along with understanding the strengths and limitations of Dart/JavaScript interoperability and HTML embedding.
 
-<DashImage figure src="images/1Zo9xfW_VtnLJmaTYq5ZJyg.png" alt="Code preview widget built using Dart/JavaScript interoperability" caption="Code preview widget built using Dart/JavaScript interoperability" />
+<DashImage figure src="images/1Zo9xfW_VtnLJmaTYq5ZJyg.webp" alt="Code preview widget built using Dart/JavaScript interoperability" caption="Code preview widget built using Dart/JavaScript interoperability" />
 
 
 We also learned that tuning performance for web apps with Flutter is not very different to other platforms supported by Flutter. In most cases issues can be resolved in one of two ways:
@@ -66,7 +66,7 @@ We also learned that tuning performance for web apps with Flutter is not very di
 
 Using the CanvasKit renderer through Flutter was a much more pleasant experience than writing shaders from scratch using WebGL. CanvasKit provided us with more higher level tools for rendering, letting us focus on nuances of converting Figma’s non-standard vector models to work with our Skia rendering engine.
 
-<DashImage figure src="images/1J7beI4HVjgoaD4JHk-JUyw.png" />
+<DashImage figure src="images/1J7beI4HVjgoaD4JHk-JUyw.webp" />
 
 
 Developers often underestimate the challenges of font management. In our case, we have to support any font the designers might be using. Flutter helps a great deal here, thanks to the [google_fonts package](https://pub.dev/packages/google_fonts) that automatically downloads fonts directly from Google.
@@ -94,7 +94,7 @@ That said, there are still opportunities to improve! In particular, we’re look
 
 With today’s launch, Supernova is now available to everyone! To get started, visit [supernova.io](https://www.supernova.io/) to register and provide a link to your Figma design file. Then, basically, the entire world is open to you from there. You can immediately start exporting code for Flutter (or any other framework) or get the assets for icons to start writing documentation.
 
-<DashImage figure src="images/1mtTv0oMcbsbStL_T9RSsZw.png" alt="Supernova’s component manager integrated with Figma" caption="Supernova’s component manager integrated with Figma" />
+<DashImage figure src="images/1mtTv0oMcbsbStL_T9RSsZw.webp" alt="Supernova’s component manager integrated with Figma" caption="Supernova’s component manager integrated with Figma" />
 
 
 We’re so happy to see one of Flutter’s early adopters launch on the web. Be sure to check it out for yourself! And if you are building with Flutter on the web, please tell us about it. As ever, you can find us on Twitter as [@flutterdev](https://twitter.com/FlutterDev). We can’t wait to see what you’ve created!

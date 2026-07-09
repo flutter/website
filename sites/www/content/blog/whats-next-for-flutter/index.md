@@ -3,7 +3,7 @@ title: "What’s next for Flutter"
 description: "Setting out our vision at the Flutter Forward event in Nairobi"
 publishDate: 2023-01-25
 author: timsneath
-image: images/01m_CqCW7oMEoqPrl.png
+image: images/01m_CqCW7oMEoqPrl.webp
 category: announcements
 layout: blog
 ---
@@ -24,7 +24,7 @@ But at this event, we’re looking ***forward***, offering a preview of the next
 
 *A disclaimer: the features we’re previewing here are still under development and may change significantly over the coming months. Showing them at this early stage is designed to give early adopters a chance to contribute.*
 
-<DashImage figure src="images/01m_CqCW7oMEoqPrl.png" />
+<DashImage figure src="images/01m_CqCW7oMEoqPrl.webp" />
 
 
 ## Breakthrough graphics performance
@@ -49,18 +49,18 @@ In addition to offering a silky-smooth UI, Impeller can drastically improve perf
 
 One advantage of building from the ground up is that the architecture can support brand new use cases. Newly introduced **support for custom shaders** is already leading to some [amazing new demos](https://twitter.com/reNotANumber/status/1599717360096620544) that show seamless integration with the Flutter widget hierarchy. Our work here isn’t limited to mobile devices, though: we now have early support for custom shaders on the web too, with the same code now powering hardware-accelerated experiences across iOS, Android, and the browser.
 
-<DashImage figure src="images/0aS5btwRMIK-AkltC.png" alt="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" caption="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" />
+<DashImage figure src="images/0aS5btwRMIK-AkltC.webp" alt="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" caption="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" />
 
 
 And now we’re starting early work on supporting **3D with Flutter**. During the keynote, we showed that you can import models created with [Blender](https://www.blender.org/), and even use hot reload to iterate with Blender in real-time and see the results in a running app. It’s early days, but we’re excited about the initial performance we’re getting, along with the potential of integrating 3D into other Flutter experiences.
 
-<DashImage figure src="images/1ZaldnkdSaQZqWX5LKWB5Ig.png" />
+<DashImage figure src="images/1ZaldnkdSaQZqWX5LKWB5Ig.webp" />
 
 
-<DashImage figure src="images/1MdyKANeEPV0iIQTTwOBGog.png" />
+<DashImage figure src="images/1MdyKANeEPV0iIQTTwOBGog.webp" />
 
 
-<DashImage figure src="images/1R-Lktrjfd8lLirhC_BBg5Q.png" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." />
+<DashImage figure src="images/1R-Lktrjfd8lLirhC_BBg5Q.webp" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." />
 
 
 Adding 3D and custom shaders raises the bar for graphics performance in a portable UI toolkit to a new level. We’re very excited to see what you do with these new features as they become available.
@@ -75,7 +75,7 @@ We’re also making some big changes to the [js](http://pub.dev/packages/js) pac
 
 Combining these two new features opens up some exciting new scenarios for using Flutter on the web. In [a proof-of-concept demo](https://flutter-forward-demos.web.app/#/) that we showed at Flutter Forward, you can see a simple Flutter app embedded in a HTML-based webpage. Using CSS, we apply an animated rotation effect; even while rotating, the Flutter content remains interactive. The demo also shows that you can use an HTML button and JavaScript event handler to make changes to the Flutter state, and vice versa. When this work is complete, we think this will open up many new opportunities to use Flutter to add interactivity to an existing web app.
 
-<DashImage figure src="images/1QjyV-g_N50iwOVNSGglxxA.png" alt="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." caption="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." />
+<DashImage figure src="images/1QjyV-g_N50iwOVNSGglxxA.webp" alt="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." caption="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." />
 
 
 Turning to Android and iOS, Flutter has long supported integration with system APIs using platform channels, which offer a message-based approach for communicating with code written in a language like Kotlin or Swift. While this unlocks access to those libraries, it requires an app author to be conversant with multiple languages and requires a fair amount of boilerplate code.
@@ -99,7 +99,7 @@ Foundational to everything we’ve described above is developer productivity, wh
 
 At Flutter Forward, we’re previewing some of our early work on some major new Dart language features that we hope demonstrate our commitment to tasteful evolution of the language. In our development channel, we now have early support for **records and patterns**, two new enhancements that work particularly well together.
 
-<DashImage figure src="images/0uGTJ0p_XZE_yZ9NS.png" alt="A simple example of records and patterns being used to return and receive multiple function parameters." caption="A simple example of records and patterns being used to return and receive multiple function parameters." />
+<DashImage figure src="images/0uGTJ0p_XZE_yZ9NS.webp" alt="A simple example of records and patterns being used to return and receive multiple function parameters." caption="A simple example of records and patterns being used to return and receive multiple function parameters." />
 
 
 We’re also **formally announcing Dart 3**, which is the culmination of our work to introduce sound null safety to the language. Dart 3 also removes other long-deprecated features to further modernize the language. We have started publishing alpha-quality builds of Dart 3, along with matching Flutter builds, enabling developers to test packages and apps. For more information on Dart 3, check out the [separate blog post on the Dart channel](https://medium.com/dart-lang/dart-3-alpha-f1458fb9d232).
@@ -115,7 +115,7 @@ We hope you share our excitement about where we’re taking Flutter moving forwa
 
 This image summarizes our direction:
 
-<DashImage figure src="images/1iIgYbZq3WKnUBctIWBap_Q.png" />
+<DashImage figure src="images/1iIgYbZq3WKnUBctIWBap_Q.webp" />
 
 
 Beyond our own development themes, it’s gratifying to see how the Flutter ecosystem continues to expand, like [FlutterFlow](https://flutterflow.io/) is a low-code builder for developing native mobile applications, and [Widgetbook](http://widgetbook.io), which provides flexible tooling for designers and developers to collaborate on user interface development.

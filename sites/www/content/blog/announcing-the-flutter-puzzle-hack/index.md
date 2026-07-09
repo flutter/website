@@ -3,19 +3,19 @@ title: "Announcing the Flutter Puzzle Hack!"
 description: "Push your creativity to its limits by reimagining this classic puzzle"
 publishDate: 2022-01-06
 author: kkboateng
-image: images/1RpaR1pTpRa0PUdNdfv4njA.png
+image: images/1RpaR1pTpRa0PUdNdfv4njA.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1RpaR1pTpRa0PUdNdfv4njA.png" alt="Flutter Puzzle Hack logo" caption="Flutter Puzzle Hack logo" />
+<DashImage figure src="images/1RpaR1pTpRa0PUdNdfv4njA.webp" alt="Flutter Puzzle Hack logo" caption="Flutter Puzzle Hack logo" />
 
 
 Ready to brush off the holiday cobwebs and try your hand at a fun coding project that will test your knowledge of Flutter? We’re excited to announce the Flutter Puzzle Hack, our latest challenge to see what *you* can do with Flutter and a chance to win one of over $50,000 worth of prizes. We’re asking you to develop the most creative yet solvable slide puzzle you can imagine, targeting Flutter on the web. Whether you create a new design, rebuild the puzzle from scratch, or integrate packages in new, interesting ways, we want to see just how far you can push your imagination.
 
 To get you started, we’ve written sample code that handles all of the puzzle logic. We’ve also curated loads of other documentation and resources to help you build a compelling submission, so whether you’re an experienced Flutter developer or you’re just joining the Flutter community after reading Flutter Apprentice, there’s something here for you!
 
-<DashImage figure src="images/1fzoYmZlFqBLxkXuCDM6IEw.png" />
+<DashImage figure src="images/1fzoYmZlFqBLxkXuCDM6IEw.webp" />
 
 
 Be sure to share your solutions on Twitter and tag them using the hashtag #flutterpuzzlehack for a chance to be featured on our Twitter account!

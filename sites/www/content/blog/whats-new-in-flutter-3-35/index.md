@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.35"
 description: "Hot Reload, Widget Previews, and More"
 publishDate: 2025-08-14
 author: itsjustkevin
-image: images/1KLn6ye1qAU9vAI3zgIhLCg.png
+image: images/1KLn6ye1qAU9vAI3zgIhLCg.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1KLn6ye1qAU9vAI3zgIhLCg.png" />
+<DashImage figure src="images/1KLn6ye1qAU9vAI3zgIhLCg.webp" />
 
 
 ## What’s new in Flutter 3.35
@@ -91,7 +91,7 @@ We’ve added brand new, highly requested components and shipped significant enh
 
 * **Introducing CupertinoExpansionTile ([#165606](https://github.com/flutter/flutter/pull/165606)):** Create expandable and collapsible list items with the new `CupertinoExpansionTile` widget.
 
-<DashImage figure src="images/1Npm3gOKVmU1hMq4ujCPxCg.gif" />
+<DashImage figure src="images/1Npm3gOKVmU1hMq4ujCPxCg.webp" />
 
 
 **Higher fidelity and interactivity**
@@ -244,7 +244,7 @@ By connecting your favorite AI tools like Gemini Code Assist, Firebase Studio, G
 
 For a comprehensive guide on what the Dart and Flutter MCP Server can do and how to configure it in your editor of choice, check out our detailed blog post [Supercharge Your Dart & Flutter Development Experience with the Dart and Flutter MCP Server](https://medium.com/flutter/supercharge-your-dart-flutter-development-experience-with-the-dart-mcp-server-2edcc8107b49), and [the documentation](https://dart.dev/tools/mcp-server).
 
-<DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.gif" alt="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" caption="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" />
+<DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.webp" alt="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" caption="*Fixing a layout issue, enabled by the Dart and Flutter MCP Server (Note: For brevity, parts of this recording have been sped up.)*" />
 
 
 ### DevTools updates
@@ -257,7 +257,7 @@ A highly-requested feature from the community is the ability to preview widgets 
 
 Flutter’s stateful hot reload is already best-in-class for iterating quickly on a running application. Widget previews complements this by allowing you to visualize and test your widgets in a sandboxed environment, completely separate from a full app. This is invaluable when building out a design system or testing a component across a matrix of different configurations, such as various screen sizes, themes, and text scales, all at once and side-by-side.
 
-<DashImage figure src="images/1lbPiKmVYKfvwC8v20DuGWA.gif" alt="*Experimenting with theming in Widget Previews*" caption="*Experimenting with theming in Widget Previews*" />
+<DashImage figure src="images/1lbPiKmVYKfvwC8v20DuGWA.webp" alt="*Experimenting with theming in Widget Previews*" caption="*Experimenting with theming in Widget Previews*" />
 
 
 This is an early, experimental release, and your feedback is critical in shaping its future. The APIs and user experience are not yet stable and will change as we learn from you. Based on early feedback, we are already planning future enhancements, including:
@@ -280,7 +280,7 @@ The [dart command-line tool](https://dart.dev/tools/dart-tool) commands that use
 
 There is no functional difference when using the AOT-compiled analysis server snapshot, but various tests indicate that there is a significant speedup in the time to analyze a project. Check out the change in stats when we ran some common commands on a sample package after this update:
 
-<DashImage figure src="images/1HQ1LCGF02lv7OmBz_lJ4-Q.png" />
+<DashImage figure src="images/1HQ1LCGF02lv7OmBz_lJ4-Q.webp" />
 
 
 Results vary depending on the source code, but in general, some short commands like formatting now complete in a fraction of the time and longer running ones like analysis got nearly 50% faster. This should make your everyday use of the tool feel much more responsive, and could make a big difference in common test workflows running in CI systems.
@@ -293,7 +293,7 @@ For a list of all the updates and fixes, see our [changelog](https://github.com/
 
 Consider subscribing to the dev channel to test the latest updates as they are released weekly. Find instructions are [here](https://github.com/flutter/flutter-intellij/blob/master/docs/Dev-Channel.md).
 
-<DashImage figure src="images/1v2ml1DWIPJRRnz8zEo8QaQ.png" alt="*The full set of IDEs supported by the Flutter IntelliJ Plugin version M87.*" caption="*The full set of IDEs supported by the Flutter IntelliJ Plugin version M87.*" />
+<DashImage figure src="images/1v2ml1DWIPJRRnz8zEo8QaQ.webp" alt="*The full set of IDEs supported by the Flutter IntelliJ Plugin version M87.*" caption="*The full set of IDEs supported by the Flutter IntelliJ Plugin version M87.*" />
 
 
 ## Breaking changes and deprecations

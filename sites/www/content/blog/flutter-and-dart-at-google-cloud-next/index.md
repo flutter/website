@@ -3,14 +3,14 @@ title: "Flutter and Dart at Google Cloud Next"
 description: "In case you missed it, the Flutter team attended Google Cloud Next for the first time this past week, a testament to Flutter’s growing…"
 publishDate: 2024-04-16
 author: kkboateng
-image: images/0mlHluTwnXfWI-Yzy.png
+image: images/0mlHluTwnXfWI-Yzy.webp
 category: events
 layout: blog
 ---
 
 In case you missed it, the Flutter team attended [Google Cloud Next](https://cloud.withgoogle.com/next) for the first time this past week, a testament to Flutter’s growing impact within the development community.
 
-<DashImage figure src="images/0mlHluTwnXfWI-Yzy.png" />
+<DashImage figure src="images/0mlHluTwnXfWI-Yzy.webp" />
 
 
 We partnered with teams across Google Cloud, Firebase, [Very Good Ventures](https://verygood.ventures/), and [Serverpod](https://serverpod.dev/) to deliver lightning talks, sessions, and a demo booth with a focus on streamlined workflows.

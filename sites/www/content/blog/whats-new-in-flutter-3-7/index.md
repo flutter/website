@@ -78,7 +78,7 @@ For macOS, create a menu bar using the `PlatformMenuBar` widget, which defines p
 
 And, for all platforms, you can define a [Material Design menu](https://m3.material.io/components/menus/overview) that provides cascading menu bars ([`MenuBar`](https://api.flutter.dev/flutter/material/MenuBar-class.html)), or standalone cascading menus triggered by another user interface element ([`MenuAnchor`](https://api.flutter.dev/flutter/material/MenuAnchor-class.html)). These menus are fully customizable, and the menu items can be custom widgets, or you can use the new menu item widgets ([`MenuItemButton`](https://api.flutter.dev/flutter/material/MenuItemButton-class.html), [`SubmenuButton`](https://api.flutter.dev/flutter/material/SubmenuButton-class.html)).
 
-<DashImage figure src="images/08T3nUAK-8AUveoD2.png" />
+<DashImage figure src="images/08T3nUAK-8AUveoD2.webp" />
 
 
 ## Impeller preview
@@ -99,21 +99,21 @@ When you release an iOS app, a [checklist of settings to update](https://docs.fl
 
 The `flutter build ipa` command now validates some of these settings, and informs you if there are changes that should be made to your app before release.
 
-<DashImage figure src="images/0nMxlWBkYUzlFdnI2.png" />
+<DashImage figure src="images/0nMxlWBkYUzlFdnI2.webp" />
 
 
 ## DevTools updates
 
 In this release, there are several new tooling features and overall improvements to try out. The DevTools Memory debugging tool has undergone a complete overhaul. There are three new feature tabs, **Profile**, **Trace**, and **Diff**, that support all the previously supported memory debugging features and added more for your debugging ease. New features include the ability to analyze the current memory allocation for your app by class and memory type, investigate what code paths are allocating memory for a set of classes at runtime, and diff memory snapshots to understand memory management between two points in time.
 
-<DashImage figure src="images/0i5K5F5bxN_5X0EAi.png" />
+<DashImage figure src="images/0i5K5F5bxN_5X0EAi.webp" />
 
 
 All of these new memory features have been documented on [docs.flutter.dev](https://docs.flutter.dev/development/tools/devtools/memory), so check out the documentation for more details.
 
 The Performance page also has a couple notable new features. A new **Frame Analysis** tab at the top of the Performance page provides insights for the selected Flutter frame. Insights might include suggestions on how to trace expensive parts of the Flutter frame in more detail, or warnings about expensive operations detected in the Flutter frame.
 
-<DashImage figure src="images/0op4bHcx7HvorMKSE.png" />
+<DashImage figure src="images/0op4bHcx7HvorMKSE.webp" />
 
 
 These are just a couple highlights, but this release contains several bug fixes and improvements beyond the features mentioned here, including some important bug fixes for the Inspector, the Network profiler, and the CPU profiler. For a more in-depth list of updates, check out the release notes for the DevTools changes that made it into Flutter 3.7.
@@ -132,12 +132,12 @@ You can now create custom context menus anywhere in a Flutter app. You can also 
 
 For example, you could add a “Send email” button to the default text selection toolbar that shows up when the user has selected an email address ([code](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/email_button_page.dart)). See the [`contextMenuBuilder`](https://api.flutter.dev/flutter/cupertino/CupertinoTextField/contextMenuBuilder.html) parameter, which has been added to existing widgets that show a context menu by default, like `TextField`. You can return any widget you want from `contextMenuBuilder`, including modifying the default platform-adaptive context menu.
 
-<DashImage figure src="images/0dYBqWaVEAscMJ2Yz.gif" />
+<DashImage figure src="images/0dYBqWaVEAscMJ2Yz.webp" />
 
 
 This new feature works outside of text selection, too. You could, for example, create an `Image` widget that shows a **Save** button when right clicked or long pressed ([code](https://github.com/flutter/samples/blob/main/experimental/context_menus/lib/image_page.dart)). Use [`ContextMenuController`](https://api.flutter.dev/flutter/widgets/ContextMenuController-class.html) to display the current platform’s default context menu, or a custom one, anywhere in your app.
 
-<DashImage figure src="images/0uq8A_Zq5BM2DGDRT.gif" />
+<DashImage figure src="images/0uq8A_Zq5BM2DGDRT.webp" />
 
 
 See a full suite of examples in [Flutter’s samples repository](https://github.com/flutter/samples/tree/main/experimental/context_menus).
@@ -146,10 +146,10 @@ See a full suite of examples in [Flutter’s samples repository](https://github.
 
 Thanks to the efforts of the Github user [Campovski](https://github.com/campovski), Cupertino has two new widgets, [`CupertinoListSection` and `CupertinoListTile`](https://github.com/flutter/flutter/pull/78732), for showing a scrollable list of widgets in the iOS style. They are the Cupertino versions of `ListView` and `ListTile` in Material.
 
-<DashImage figure src="images/07rMA1GAEoQxfkwYC.png" />
+<DashImage figure src="images/07rMA1GAEoQxfkwYC.webp" />
 
 
-<DashImage figure src="images/0oLSR3-_9jQzCozYV.png" />
+<DashImage figure src="images/0oLSR3-_9jQzCozYV.webp" />
 
 
 ## Scrolling improvements
@@ -173,7 +173,7 @@ Internationalization support has been completely revamped! We’ve completely re
 
 * Complex messages involving nested/multiple plurals, selects, and placeholders.
 
-<DashImage figure src="images/0VSZRJbLyqlfekARB.png" />
+<DashImage figure src="images/0VSZRJbLyqlfekARB.webp" />
 
 
 For more information, see the updated [Internationalizing Flutter apps](https://docs.flutter.dev/development/accessibility-and-localization/internationalization) page.
@@ -193,10 +193,10 @@ Now [Platform Channels](https://docs.flutter.dev/development/platform-integratio
 
 The magnifying glass that appears during text selection on Android and iOS now works in Flutter. This is enabled out of the box for all apps with text selection, but if you want to disable or customize it, see the [magnifierConfiguration](https://master-api.flutter.dev/flutter/material/TextField/magnifierConfiguration.html) property.
 
-<DashImage figure src="images/0vuIpoOEp5lqEZYeW.gif" />
+<DashImage figure src="images/0vuIpoOEp5lqEZYeW.webp" />
 
 
-<DashImage figure src="images/0FIlFtTa6DAlXUwqE.gif" />
+<DashImage figure src="images/0FIlFtTa6DAlXUwqE.webp" />
 
 
 ## Swift migration for plugins
@@ -223,7 +223,7 @@ We have published several new resources for iOS developers, including:
 
 By default, Flutter apps don’t have bitcode enabled, and we don’t expect this to impact many developers. However, if you have enabled bitcode manually in your Xcode project, disable it as soon as you upgrade to Xcode 14. You can do so by opening `ios/Runner.xcworkspace` and set **Enable Bitcode** to **No**. Add-to-app developers should disable it in the host Xcode project.
 
-<DashImage figure src="images/0OQtroLJAJcetxyeV.png" />
+<DashImage figure src="images/0OQtroLJAJcetxyeV.webp" />
 
 
 To learn more about bitcode distribution, Check out [Apple’s documentation](https://help.apple.com/xcode/mac/11.0/index.html?localePath=en.lproj#/devde46df08a).
@@ -232,7 +232,7 @@ To learn more about bitcode distribution, Check out [Apple’s documentation](ht
 
 We’ve added the ability for native iOS views to be blurred when rendered underneath a blurred Flutter widget, and `UiKitView` widgets can now be wrapped inside a `BackdropFilter`.
 
-<DashImage figure src="images/0kdYw1nYkT8aKHjZP.png" />
+<DashImage figure src="images/0kdYw1nYkT8aKHjZP.webp" />
 
 
 For more information, see the [iOS PlatformView BackdropFilter](http://flutter.dev/go/ios-platformview-backdrop-filter-blur) design doc.
@@ -243,14 +243,14 @@ This release introduces a few improvements to memory management that have the co
 
 As one example, we have expanded the existing practice of manually deallocating native resources that back certain `dart:ui` Dart objects. Previously, the native resources would be held by the Flutter engine until the Dart VM garbage collected the Dart objects. Through the analysis of user applications and our own benchmarks, we determined that this strategy in general doesn’t do enough to avoid ill-timed GCs and overuses memory. Therefore, in this release, the Flutter engine adds API for explicitly deallocating the native resources held by `Vertices`, `Paragraph`, and `ImageShader` objects.
 
-<DashImage figure src="images/0LmVDzMTW34id5CNV.png" />
+<DashImage figure src="images/0LmVDzMTW34id5CNV.webp" />
 
 
 In our benchmarks of the Flutter framework migrated to this API, these improvements reduced 90%-ile frame build times up to more than 30%, which end-users will experience as smoother animations with less jank.
 
 Additionally, the Flutter engine [no longer registers](https://github.com/flutter/engine/pull/35473) the size of GPU images with the Dart VM. As above, these images were already manually deallocated by the framework when no longer needed, so informing Dart’s GC policies of the size of the GPU memory backing the Dart heap objects needlessly increased Dart heap memory pressure, triggering ill-timed GCs that could not have collected any additional memory. Along similar lines, it’s now the policy of the Flutter engine to report to the Dart VM [only the shallow size](https://github.com/flutter/engine/pull/35813) of the native objects that back `dart:ui` Dart objects.
 
-<DashImage figure src="images/0P_s-0gE5JGUerDkA.png" />
+<DashImage figure src="images/0P_s-0gE5JGUerDkA.webp" />
 
 
 In our benchmarks, this change eliminates synchronous GC work while building frames when a widget creates GPU resident images.

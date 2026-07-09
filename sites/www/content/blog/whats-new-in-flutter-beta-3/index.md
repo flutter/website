@@ -3,7 +3,7 @@ title: "What’s New in Flutter Beta 3"
 description: "This week marks the release of the third beta for Flutter, our toolkit for building beautiful mobile UI for iOS and Android. In our…"
 publishDate: 2018-05-07
 author: timsneath
-image: images/0Sdp8z8g2G2spsW3j.png
+image: images/0Sdp8z8g2G2spsW3j.webp
 category: releases
 layout: blog
 ---
@@ -108,7 +108,7 @@ We continue to release regular updates to the **Flutter plugin for Android Studi
 
 Other notable features in this release for both Android Studio and Visual Studio Code include a broader set of refactorings. This includes an Extract Widget refactor that creates a new Widget class and inserts a call to its constructor in the original position:
 
-<DashImage figure src="images/0Sdp8z8g2G2spsW3j.png" />
+<DashImage figure src="images/0Sdp8z8g2G2spsW3j.webp" />
 
 
 ### Connecting with us

@@ -3,11 +3,11 @@ title: "Announcing XD to Flutter v2.0!"
 description: "Giving designers a fast path to production Flutter code"
 publishDate: 2021-04-29
 author: gskinner
-image: images/1OoVDCYfw18QB91Fpe5jDAg.png
+image: images/1OoVDCYfw18QB91Fpe5jDAg.webp
 layout: blog
 ---
 
-<DashImage figure src="images/1OoVDCYfw18QB91Fpe5jDAg.png" />
+<DashImage figure src="images/1OoVDCYfw18QB91Fpe5jDAg.webp" />
 
 
 Flutter is Google’s open-source UI toolkit for building beautiful apps for mobile, desktop, web, and embedded devices from a single codebase. Over the last couple of years, it has become the leading choice for developers who want to build apps for multiple platforms; but designers need a visual tool for prototyping and creating Flutter UI, rather than handcrafting Dart source code. Enter [*XD to Flutter*](https://github.com/AdobeXD/xd-to-flutter-plugin)!
@@ -35,15 +35,15 @@ While it was handy for grabbing an icon or text style, we wanted it to do more! 
 
 XD to Flutter supports the responsive layout features of XD, which lets you “pin” elements within their enclosing parent and precisely control how they resize.
 
-<DashImage figure src="images/1Ep_TKKdQqNDhNGtYjXSmzQ.png" alt="Responsive design in Adobe XD" caption="Responsive design in Adobe XD" />
+<DashImage figure src="images/1Ep_TKKdQqNDhNGtYjXSmzQ.webp" alt="Responsive design in Adobe XD" caption="Responsive design in Adobe XD" />
 
 
-<DashImage figure src="images/1A6Kateq9HjSt3XADTQzaow.gif" alt="Responsive resize in Flutter" caption="Responsive resize in Flutter" />
+<DashImage figure src="images/1A6Kateq9HjSt3XADTQzaow.webp" alt="Responsive resize in Flutter" caption="Responsive resize in Flutter" />
 
 
 This is achieved in Flutter by using a custom `Pinned` layout widget in the open-source [adobe_xd](https://pub.dev/packages/adobe_xd) package that developers can leverage directly in their projects.
 
-<DashImage figure src="images/1F_lxL7fE3-MkjobRiJLqpA.png" alt="Pinned widget code example" caption="Pinned widget code example" />
+<DashImage figure src="images/1F_lxL7fE3-MkjobRiJLqpA.webp" alt="Pinned widget code example" caption="Pinned widget code example" />
 
 
 ### Stacks & Scroll Groups
@@ -54,7 +54,7 @@ Scroll Groups predictably let you define an area to scroll a larger group of con
 
 XD to Flutter v2.0 supports both of these features, converting them into common Flutter widgets (`Column`, `Row`, and `SingleChildScrollView`). You can even put a stack into a scroll group to easily create a scrolling list of items.
 
-<DashImage figure src="images/1avGeBrHwEcAyptu0aKyc4w.gif" alt="Stacks & Scroll Groups in XD (left) and Flutter (right)" caption="Stacks & Scroll Groups in XD (left) and Flutter (right)" />
+<DashImage figure src="images/1avGeBrHwEcAyptu0aKyc4w.webp" alt="Stacks & Scroll Groups in XD (left) and Flutter (right)" caption="Stacks & Scroll Groups in XD (left) and Flutter (right)" />
 
 
 ### Padding & Background Elements
@@ -63,7 +63,7 @@ Another new feature is background elements, which let you designate a visual ele
 
 The Flutter export uses a `Stack` widget to layer the background element behind the content, which is placed into a `Padding` widget.
 
-<DashImage figure src="images/1-nUSSGKplXOzmySlrEUwXg.gif" alt="Padding & Background in XD (left) and Flutter (right)" caption="Padding & Background in XD (left) and Flutter (right)" />
+<DashImage figure src="images/1-nUSSGKplXOzmySlrEUwXg.webp" alt="Padding & Background in XD (left) and Flutter (right)" caption="Padding & Background in XD (left) and Flutter (right)" />
 
 
 ### Flutter 2 & null safety
@@ -72,7 +72,7 @@ The layout features described above enable much more responsive UI, complimentin
 
 Flutter 2 also introduces sound null safety — a language feature that helps developers catch nullability issues before they cause problems in apps. XD to Flutter v2.0 includes a new setting to “Export Null Safe Code”, ensuring that the generated code is future-ready.
 
-<DashImage figure src="images/14Gdqc7x5Vk85t47tQIocmw.png" alt="“Export Null Safe Code” setting and output" caption="“Export Null Safe Code” setting and output" />
+<DashImage figure src="images/14Gdqc7x5Vk85t47tQIocmw.webp" alt="“Export Null Safe Code” setting and output" caption="“Export Null Safe Code” setting and output" />
 
 
 ### Sounds great! How do I get started?
@@ -81,7 +81,7 @@ Whether you’re using it to copy the code for a tricky gradient, or to export f
 
 You can install it by selecting “Browse Plugins…” from Adobe XD’s “Plugin” menu and searching for “Flutter” (strangely, searching for “XD to Flutter” doesn’t work), or just visit [adobe.com/go/xd_to_flutter](https://adobe.com/go/xd_to_flutter).
 
-<DashImage figure src="images/1aSDHtLA_ZQyiyXX3y9j2Ng.png" />
+<DashImage figure src="images/1aSDHtLA_ZQyiyXX3y9j2Ng.webp" />
 
 
 Once you have it installed, open the XD to Flutter panel from the plugins panel, and tap the “Need help?” link to check out the [plugin documentation](https://github.com/AdobeXD/xd-to-flutter-plugin/blob/master/README.md).

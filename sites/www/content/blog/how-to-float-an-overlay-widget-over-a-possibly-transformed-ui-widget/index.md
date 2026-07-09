@@ -3,7 +3,7 @@ title: "How to float an overlay widget over a (possibly transformed) UI widget"
 description: "Say you have a widget in your app’s UI and you want to overlay a floating widget on top of that widget. Maybe that widget is rotated or…"
 publishDate: 2020-03-02
 author: josealba
-image: images/0FB5HpEeEvZ6NjJXl.gif
+image: images/0FB5HpEeEvZ6NjJXl.webp
 category: tutorial
 layout: blog
 ---
@@ -32,7 +32,7 @@ If an overlay entry needs to follow a ‘target’ that is not on the overlay st
 
 In the following GIF, the blue container is not on the overlay but the green container is. The blue container is a child of CompositedTransformTarget and the green container is the child of CompostedTransformFollower. They are linked together using the same LayerLink instance. Note how the green overlay widget is aware of the bounds of the blue UI widget, even though the blue widget is not in the overlay:
 
-<DashImage figure src="images/178wqXwvzHdc-vJ9lxtazkQ.gif" />
+<DashImage figure src="images/178wqXwvzHdc-vJ9lxtazkQ.webp" />
 
 
 Try it yourself using this [DartPad](https://dartpad.dev/8fd3ae34c3e5f1932dc687208be6f434) instance. The example code is as follows:
@@ -146,7 +146,7 @@ This example shows how to use these widgets together. To see the true power of t
 
 In the following GIF, the blue container is not on the overlay but the green container is. This time the CompositedTransformTarget has been rotated. As you can see, even though the CompositeTransformFollower is on the overlay stack, it still knows where the target is and any transformations that have been applied to it.
 
-<DashImage figure src="images/0FB5HpEeEvZ6NjJXl.gif" />
+<DashImage figure src="images/0FB5HpEeEvZ6NjJXl.webp" />
 
 
 Try it yourself using this [DartPad](https://dartpad.dev/58e5e12bb29370bbca75f19e2685387a) instance. The example code is as follows:

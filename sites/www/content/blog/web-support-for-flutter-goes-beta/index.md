@@ -3,7 +3,7 @@ title: "Web support for Flutter goes beta"
 description: "Posted by Mariam Hasnany, Product Manager, Flutter"
 publishDate: 2019-12-11
 author: mariam_hasnany
-image: images/0M7sTluUPVsk6DcnU.png
+image: images/0M7sTluUPVsk6DcnU.webp
 category: announcements
 layout: blog
 ---
@@ -32,7 +32,7 @@ As we’ve been developing Flutter’s support for running on the web, we have p
 
 Flutter can enable developers to build a single app from the same code across both mobile and browser experiences. [Journey](https://startyourjourney.io/), one of our early adopters, used Flutter to build an app across multiple platforms.
 
-<DashImage figure src="images/0E9vaDY0XLc4dCR2J.png" alt="Journey, a social app, recently launched a cross-platform app using Flutter" caption="Journey, a social app, recently launched a cross-platform app using Flutter" />
+<DashImage figure src="images/0E9vaDY0XLc4dCR2J.webp" alt="Journey, a social app, recently launched a cross-platform app using Flutter" caption="Journey, a social app, recently launched a cross-platform app using Flutter" />
 
 
 Luke O’Brien, Founder of Journey, states “*Four months ago I was about to build Journey for Android-only for the MVP. I discovered Flutter and thought, ‘This is too good to be true’, but decided to run with it. It has been the best decision I have made to date. Flutter has cut development time in half (probably more than half) and we’ve now launched across Android, iOS, and web — doubling user-growth potential. It’s difficult to overstate the impact Flutter has had in turning my vision into reality.’*
@@ -41,7 +41,7 @@ Luke O’Brien, Founder of Journey, states “*Four months ago I was about to bu
 
 One scenario is embedding a rich, data-centric, mini app within a parent site; there is no need for navigation services or other app-like functionality. Embedding a new car configurator, a crossword puzzle, or interactive data visualizations into an existing website are just a few key examples that fit this scenario. Early adopter [AEI Studio’s showcase](https://studio.aei.dev/showcase/) of chatbots embedded Flutter within their web chat dialog showcasing animations, text input by keyboard, and more.
 
-<DashImage figure src="images/0M7sTluUPVsk6DcnU.png" alt="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" caption="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" />
+<DashImage figure src="images/0M7sTluUPVsk6DcnU.webp" alt="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" caption="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" />
 
 
 **Lite apps**
@@ -74,12 +74,12 @@ We have also added new platform tagging and filtering on the pub.dev package rep
 
 First, on a package detail page, we list which platforms the package supports. This makes it easy to identify if a package has web support.
 
-<DashImage figure src="images/05vkz66kMYk5DTfSS.png" alt="*pub.dev package detail page showing SDK and platform compatibility tags*" caption="*pub.dev package detail page showing SDK and platform compatibility tags*" />
+<DashImage figure src="images/05vkz66kMYk5DTfSS.webp" alt="*pub.dev package detail page showing SDK and platform compatibility tags*" caption="*pub.dev package detail page showing SDK and platform compatibility tags*" />
 
 
 The search UI also has new filters, so you can find packages that have web support. This is based on the new [platform manifest tags](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms) that are now available in Flutter 1.12.
 
-<DashImage figure src="images/0QApzX3FOYgAGCFRK.png" alt="*pub.dev search UI showing SDK and platform filter support*" caption="*pub.dev search UI showing SDK and platform filter support*" />
+<DashImage figure src="images/0QApzX3FOYgAGCFRK.webp" alt="*pub.dev search UI showing SDK and platform filter support*" caption="*pub.dev search UI showing SDK and platform filter support*" />
 
 
 ## Road to stable

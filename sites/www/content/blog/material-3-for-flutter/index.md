@@ -3,12 +3,12 @@ title: "Material 3 for Flutter"
 description: "Sherlock Holmes and Dr Watson; peanut butter and jam; Flutter and Material! These matches are made in heaven!"
 publishDate: 2023-01-18
 author: esouthren
-image: images/0RuCmIqSnK0G0kHmy.png
+image: images/0RuCmIqSnK0G0kHmy.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/0RuCmIqSnK0G0kHmy.png" />
+<DashImage figure src="images/0RuCmIqSnK0G0kHmy.webp" />
 
 
 ## Material 3 for Flutter
@@ -23,7 +23,7 @@ I joined the Material for Flutter team in August 2022. Since then, I’ve been h
 
 In this article, I’ll show you the new features in Material 3, how to integrate them into your Flutter app, and update you on what’s coming next.
 
-<DashImage figure src="images/06JGBM5itMcIMnvYV.png" alt="The Flutter Material 3 sample app" caption="The Flutter Material 3 sample app" />
+<DashImage figure src="images/06JGBM5itMcIMnvYV.webp" alt="The Flutter Material 3 sample app" caption="The Flutter Material 3 sample app" />
 
 
 ## Material 3
@@ -79,7 +79,7 @@ We’ve increased our selection of `Button`s to include the new `[FilledButton](
 
 The new [`Badge`](https://master-api.flutter.dev/flutter/material/Badge-class.html) widget can be used to give extra information, generally indicating a count or change of status, to a parent widget. They’re available in large and small sizes:
 
-<DashImage figure src="images/0SgE01KkHs1LzX0TN.png" alt="Badge widgets attached to parent Icons" caption="Badge widgets attached to parent Icons" />
+<DashImage figure src="images/0SgE01KkHs1LzX0TN.webp" alt="Badge widgets attached to parent Icons" caption="Badge widgets attached to parent Icons" />
 
 
 ## Generating a color scheme
@@ -101,10 +101,10 @@ class MyApp extends StatelessWidget {
 ```
 
 
-<DashImage figure src="images/0udIjHdleLcn1C0Ox.png" />
+<DashImage figure src="images/0udIjHdleLcn1C0Ox.webp" />
 
 
-<DashImage figure src="images/0IM7o73HEWHQMgHUe.png" alt="Color schemes and tint values generated from a seed color" caption="Color schemes and tint values generated from a seed color" />
+<DashImage figure src="images/0IM7o73HEWHQMgHUe.webp" alt="Color schemes and tint values generated from a seed color" caption="Color schemes and tint values generated from a seed color" />
 
 
 If you’d like to customize your color scheme further, visit the [Material generator app](https://m3.material.io/theme-builder#/custom). You can define secondary and tertiary colors to create a completely unique color palette. Best of all, it exports Dart files that you can use immediately in your Flutter app.

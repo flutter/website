@@ -3,7 +3,7 @@ title: "Announcing Flutter’s beta 2 release"
 description: "We have a second beta build available of Flutter, Google’s new mobile UI framework that helps developers craft high-quality apps."
 publishDate: 2018-04-09
 author: mit-mit
-image: images/14DxDp03lkhJN3engJhXhWQ.png
+image: images/14DxDp03lkhJN3engJhXhWQ.webp
 category: releases
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 We have a second beta build (v0.2.8) available of Flutter, Google’s new mobile UI framework that helps developers craft high-quality native interfaces for both iOS and Android. We’ve been working hard to continue to support Flutter’s rapidly expanding community and are now introducing easier installation, default support for Dart 2, and more. If you are a new to Flutter, [get started](https://flutter.io/get-started/?utm_source=google&utm_medium=blog&utm_campaign=beta_get_started) today with beta 2 at [flutter.io](https://flutter.io/?utm_source=google&utm_medium=blog&utm_campaign=beta_announcement). If you are an existing Flutter user please review the ‘Call to action’ below to ensure your code is compatible with Dart 2.
 
-<DashImage figure src="images/14DxDp03lkhJN3engJhXhWQ.png" />
+<DashImage figure src="images/14DxDp03lkhJN3engJhXhWQ.webp" />
 
 
 ## A view back at beta 1
@@ -25,7 +25,7 @@ We have been delighted to see the [strong reception](https://twitter.com/_eseide
 
 We heard feedback that installation of Flutter could be easier; installing beta 1 required cloning our GitHub repo with git command line tools. So we reworked our installation procedure, and now support installing beta 2 by simply downloading and extracting an installation archive: [Windows](https://flutter.io/setup-windows/), [macOS](https://flutter.io/setup-macos/), and [Linux](https://flutter.io/setup-linux/). For Windows users, we also added a cool new Flutter Console so you can get started with Flutter commands right after downloading:
 
-<DashImage figure src="images/1hjgDPasw3bTtB9N54wxX2Q.png" alt="Screenshot of the new Flutter Console for Windows" caption="Screenshot of the new Flutter Console for Windows" />
+<DashImage figure src="images/1hjgDPasw3bTtB9N54wxX2Q.webp" alt="Screenshot of the new Flutter Console for Windows" caption="Screenshot of the new Flutter Console for Windows" />
 
 
 ### Improved developer tools

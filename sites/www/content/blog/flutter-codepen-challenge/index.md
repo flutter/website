@@ -3,12 +3,12 @@ title: "Flutter CodePen challenge"
 description: "Show your Flutter skills by building beautiful UIs on CodePen"
 publishDate: 2020-07-01
 author: anjannarain
-image: images/0lBCX1cQ8WF56oRAq.png
+image: images/0lBCX1cQ8WF56oRAq.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/0lBCX1cQ8WF56oRAq.png" />
+<DashImage figure src="images/0lBCX1cQ8WF56oRAq.webp" />
 
 
 From the outset, one of our goals with Flutter was to enable developers to create beautiful user experiences. And every day the worldwide community amazes us with [countless apps and experiments](https://twitter.com/i/events/1275593667017834502?s=20) that showcase Flutter’s creative potential. Today, we’re pleased to partner with CodePen on a fun series of new challenges to let you show off your Flutter skills.

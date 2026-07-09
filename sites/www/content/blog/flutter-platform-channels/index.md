@@ -3,7 +3,7 @@ title: "Flutter Platform Channels"
 description: "“Nice UI. But how does Flutter deal with platform-specific APIs?”"
 publishDate: 2018-08-28
 author: mravn
-image: images/1ykNghfAKtx0xsZWedfgslg.png
+image: images/1ykNghfAKtx0xsZWedfgslg.webp
 category: announcements
 layout: blog
 ---
@@ -61,7 +61,7 @@ For most use cases you would probably employ *method channels* for platform comm
 
 ### Foundations: asynchronous, binary messaging
 
-<DashImage figure src="images/1BIknuDE2gMHmbYg7S8_F0Q.png" />
+<DashImage figure src="images/1BIknuDE2gMHmbYg7S8_F0Q.webp" />
 
 
 At the most basic level, Flutter talks to platform code using asynchronous message passing with binary messages — meaning the message payload is a byte buffer. To distinguish between messages used for different purposes, each message is sent on a logical “channel” which is just a name string. The examples below use the channel name `foo`.
@@ -171,7 +171,7 @@ Working at the level of binary messages, you need to worry about delicate detail
 
 ### Message channels: name + codec
 
-<DashImage figure src="images/1Sd6s3EDGkU8TBS9xLc4Zvw.png" />
+<DashImage figure src="images/1Sd6s3EDGkU8TBS9xLc4Zvw.webp" />
 
 
 Suppose you want to send and receive string messages instead of byte buffers. This can be done using a message channel, a simple kind of platform channel, constructed with a string codec. The code below shows how to use message channels in both directions across Dart, Android, and iOS:
@@ -317,7 +317,7 @@ The first method fails at runtime, even if the reply received is a string. The c
 
 ### Method channels: standardized envelopes
 
-<DashImage figure src="images/1ykNghfAKtx0xsZWedfgslg.png" />
+<DashImage figure src="images/1ykNghfAKtx0xsZWedfgslg.webp" />
 
 
 Method channels are platform channels designed for invoking named pieces of code across Dart and Java/Kotlin or Objective-C/Swift. Method channels make use of standardized message “envelopes” to convey method name and arguments from sender to receiver, and to distinguish between successful and erroneous results in the associated reply. The envelopes and supported payload are defined by separate method codec classes, similarly to how message channels use message codecs.
@@ -516,7 +516,7 @@ These differences, mirrored also in the way message call handlers are written, a
 
 ### Event channels: streaming
 
-<DashImage figure src="images/1jd9Thys5_k-jbkKM7P69Ng.png" />
+<DashImage figure src="images/1jd9Thys5_k-jbkKM7P69Ng.webp" />
 
 
 An event channel is a specialized platform channel intended for the use case of exposing platform events to Flutter as a Dart stream. The Flutter SDK currently has no support for the symmetrical case of exposing Dart streams to platform code, though that could be built, if the need arises.

@@ -3,14 +3,14 @@ title: "Introducing Google Fonts for Flutter v 1.0.0!"
 description: "By MH Johnson and Anthony Robledo"
 publishDate: 2020-04-23
 author: clocksmith
-image: images/1ndZ8HED7jp2f0X4IFSwtdA.png
+image: images/1ndZ8HED7jp2f0X4IFSwtdA.webp
 category: announcements
 layout: blog
 ---
 
 By [Anthony Robledo](https://medium.com/@clocksmith) and [MH Johnson](https://medium.com/@johnsonmh)
 
-<DashImage figure src="images/1ndZ8HED7jp2f0X4IFSwtdA.png" />
+<DashImage figure src="images/1ndZ8HED7jp2f0X4IFSwtdA.webp" />
 
 
 Google Fonts for Flutter was first announced at Flutter Interact in December 2019. With help from the community (thank you!), we have added many new features and improved stability. After a successful time in beta, it is now ready for prime time use on Android, iOS, Web, and MacOS, as [Google Fonts 1.0.0](https://pub.dev/packages/google_fonts).

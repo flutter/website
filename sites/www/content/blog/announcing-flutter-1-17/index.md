@@ -3,7 +3,7 @@ title: "Announcing Flutter 1.17"
 description: "Includes Metal support for faster iOS performance, new Material components, new Network tracking tooling and more!"
 publishDate: 2020-05-06
 author: csells
-image: images/14MIF2GwByNG1MJ7DNslb3Q.gif
+image: images/14MIF2GwByNG1MJ7DNslb3Q.webp
 category: releases
 layout: blog
 ---
@@ -24,7 +24,7 @@ This release also provides a considerable app size improvement due to [several](
 
 For memory usage, this release brings [a 70% memory reduction](https://github.com/flutter/engine/pull/14265) in fast scrolling through large images, which can also result in a performance increase depending on how much memory the device has.
 
-<DashImage figure src="images/0vwCZv9MQd_BLv7ii.png" alt="*Test app memory usage for PRs merged over time (shorter bars are better)*" caption="*Test app memory usage for PRs merged over time (shorter bars are better)*" />
+<DashImage figure src="images/0vwCZv9MQd_BLv7ii.webp" alt="*Test app memory usage for PRs merged over time (shorter bars are better)*" caption="*Test app memory usage for PRs merged over time (shorter bars are better)*" />
 
 
 However the broadest performance improvement is the support for Metal in iOS.
@@ -33,7 +33,7 @@ However the broadest performance improvement is the support for Metal in iOS.
 
 Apple’s support for Metal on iOS provides nearly direct access to the underlying GPU and is Apple’s recommended graphics API. On the iOS devices that fully support Metal, Flutter now uses it by default, making your Flutter apps run faster most of the time, increasing [rendering speeds by about 50% on average](https://github.com/flutter/flutter/issues/53768) (depending on your workload).
 
-<DashImage figure src="images/0YPmVAVbn2SqtHpRF.png" alt="*Test iOS app frame rendering time for OpenGL vs. Metal (shorter bars are better)*" caption="*Test iOS app frame rendering time for OpenGL vs. Metal (shorter bars are better)*" />
+<DashImage figure src="images/0YPmVAVbn2SqtHpRF.webp" alt="*Test iOS app frame rendering time for OpenGL vs. Metal (shorter bars are better)*" caption="*Test iOS app frame rendering time for OpenGL vs. Metal (shorter bars are better)*" />
 
 
 For the devices that don’t support Metal fully (those prior to the A7 processor or those running iOS versions prior to 10), Flutter uses OpenGL as it has in the past, providing native rendering speeds for older devices. For more details, check out [the Metal on iOS FAQ on the Flutter wiki](https://github.com/flutter/flutter/wiki/Metal-on-iOS-FAQ).
@@ -42,14 +42,14 @@ For the devices that don’t support Metal fully (those prior to the A7 processo
 
 We continue to evolve and improve the Material design system implemented in Flutter, based on feedback from internal and external customers. In this release, we’ve added [`NavigationRail`](https://master-api.flutter.dev/flutter/material/NavigationRail-class.html), a new widget that offers a responsive app navigation model. It was [designed](https://material.io/components/navigation-rail) and implemented by the Google Material Design team. The `NavigationRail` is great for apps that can switch between mobile and desktop form factors because it’s very easy to swap in for a `BottomNavigator` as your app’s screen size increases.
 
-<DashImage figure src="images/0qB_uRnhlu9bb2C5i.gif" alt="The new NavigationRail widget" caption="The new NavigationRail widget" />
+<DashImage figure src="images/0qB_uRnhlu9bb2C5i.webp" alt="The new NavigationRail widget" caption="The new NavigationRail widget" />
 
 
 To see the `NavigationRail` in action, check out [the web_dashboard sample](https://github.com/flutter/samples/tree/master/experimental/web_dashboard) or try it [on DartPad](https://dartpad.dev/b9c6cd345fd1cff643353c1f4902f888).
 
 In addition to the new widget, this release includes updates to the Material [`DatePicker`](https://api.flutter.dev/flutter/material/showDatePicker.html) and text selection overflow widgets.
 
-<DashImage figure src="images/1Iy0WlfOaCAvgFwWwe4SKwQ.gif" alt="Updated Material DatePicker widget" caption="Updated Material DatePicker widget" />
+<DashImage figure src="images/1Iy0WlfOaCAvgFwWwe4SKwQ.webp" alt="Updated Material DatePicker widget" caption="Updated Material DatePicker widget" />
 
 
 This `DatePicker` release includes new visuals to match the [updated Material guidelines](https://material.io/components/pickers/#mobile-pickers) as well as a new text input mode. You can read about the details in the [Material Date Picker Redesign](https://flutter.dev/go/material-date-picker-redesign) specification.
@@ -57,14 +57,14 @@ This `DatePicker` release includes new visuals to match the [updated Material gu
 <DashImage figure src="images/0RMNYoiBJv-U3OC5C.gif" alt="Updated text selection overflow on Android" caption="Updated text selection overflow on Android" />
 
 
-<DashImage figure src="images/0vaELGcqyjmgMMF7W.gif" alt="Updated text selection overflow on iOS" caption="Updated text selection overflow on iOS" />
+<DashImage figure src="images/0vaELGcqyjmgMMF7W.webp" alt="Updated text selection overflow on iOS" caption="Updated text selection overflow on iOS" />
 
 
 The text selection menu now has improved fidelity for [Android](https://github.com/flutter/flutter/pull/49391) and [iOS](https://github.com/flutter/flutter/pull/54140) when the buttons are longer than can be displayed without overflow. This is particularly noticeable in locales where the menu item words can be longer.
 
 In the same timeframe as Flutter 1.17 but delivered out-of-band, we have also shipped [the new Animations Package](https://pub.dev/packages/animations) that provides pre-built animations that implement [the new Material motion specification](https://material.io/design/motion/the-motion-system.html).
 
-<DashImage figure src="images/14MIF2GwByNG1MJ7DNslb3Q.gif" alt="*Examples of Container transforms from the Animations package*" caption="*Examples of Container transforms from the Animations package*" />
+<DashImage figure src="images/14MIF2GwByNG1MJ7DNslb3Q.webp" alt="*Examples of Container transforms from the Animations package*" caption="*Examples of Container transforms from the Animations package*" />
 
 
 In [the Implementing Motion blog post](https://medium.com/google-design/implementing-motion-9f2839002016), the Material Design team defines four transition patterns that describe animations between components and fullscreen views: Container transform, Shared axis, Fade through, and Fade. While these animations have always been possible in Flutter, the Animations package makes it considerably easier to implement them. Drop them into your app and delight your users today!
@@ -75,7 +75,7 @@ In this release, the Flutter team has completed their implementation of the [Typ
 
 The names and configurations of the 2018 Material TextStyles are summarized by the following table.
 
-<DashImage figure src="images/1Jlt_w6Bs7KAae42rYkFlwg.png" />
+<DashImage figure src="images/1Jlt_w6Bs7KAae42rYkFlwg.webp" />
 
 
 Notice that the `TextStyles` called `body1` and `body2` in the Material Design specification are called `bodyText1` and `bodyText2` in the Flutter `TextTheme` API. Similarly, the `TextStyles` called `H1-H6` in the specification are called `headline1-headline6` in the `TextTheme` API.
@@ -99,12 +99,12 @@ On the internationalization front, we’ve been working on some issues affecting
 
 This release brings us very close to swapping out the current version of Dart DevTools with the new Flutter version. If you’d like to give it a try, start DevTools and click the “beaker” icon in the upper-right corner of DevTools.
 
-<DashImage figure src="images/0vjV5MYcLgBJmj_Ix.png" />
+<DashImage figure src="images/0vjV5MYcLgBJmj_Ix.webp" />
 
 
 While you’re using the pre-release version of Dart DevTools implemented with Flutter, you’re likely to notice all kinds of improvements, but the biggest one is the new **Network** tab.
 
-<DashImage figure src="images/1BitMBFadDAEiHFN5Al1mjQ.png" />
+<DashImage figure src="images/1BitMBFadDAEiHFN5Al1mjQ.webp" />
 
 
 If you’re not seeing the Network tab in the prerelease version of Dart DevTools (for example, if you’re running it from the command line), you can update it manually using the following command:
@@ -135,14 +135,14 @@ If you’d like earlier access to changes like these in the Flutter plugin for A
 
 For Visual Studio Code users, we recommend the new **Dart: List Outdated Packages** command that runs [the new ‘pub outdated’ command](https://medium.com/dartlang/announcing-dart-2-8-7750918db0a).
 
-<DashImage figure src="images/0kfSA8iTjVjrsPIyG.png" />
+<DashImage figure src="images/0kfSA8iTjVjrsPIyG.webp" />
 
 
 This command is meant to help you track down versioning issues in your dependencies.
 
 Last but not least, if you find yourself with a Flutter crash, you’ll be prompted to file the bug by the tools.
 
-<DashImage figure src="images/1OU1YDFMKeSUiaavoWohEUA.png" />
+<DashImage figure src="images/1OU1YDFMKeSUiaavoWohEUA.webp" />
 
 
 These bug reports are closely watched by the team for severity and frequency, so please do log them when prompted.
@@ -151,7 +151,7 @@ These bug reports are closely watched by the team for severity and frequency, so
 
 Of course, Flutter exists to enable beautiful application experiences. One example of a digital agency doing amazing things is [Superformula](https://superformula.com/flutter/), who has recently worked with MGM Resorts to deliver [a major update to their mobile application](https://www2.mgmresorts.com/app/), having completely rebuilt it in Flutter. They report that “adding Flutter to our core offerings has unlocked added speed and flexibility, which translates to real, measurable value for both our clients and their users.”
 
-<DashImage figure src="images/0nT-kBS1YB0XqZE4C.png" />
+<DashImage figure src="images/0nT-kBS1YB0XqZE4C.webp" />
 
 
 Superformula worked with the MGM Resorts design team to create a new MGM design language for all major web, mobile, and kiosk experiences. With a smaller team and all-new Flutter codebase, they were able to get the app rebuilt and shipped to both app stores much faster than they were able to before, resulting in a 9% increase in booking conversions for MGM.

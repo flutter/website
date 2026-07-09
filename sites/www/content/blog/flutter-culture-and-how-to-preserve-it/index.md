@@ -70,7 +70,7 @@ A healthy community is one that grows. There can be hidden costs behind a commun
 
 There isn’t a top-down way to preserve these values. Flutter is an open community. Its values will be preserved through the day-to-day decisions of its members. Small things like how you welcome new members, how you share your knowledge, how honest you are about your latest mistake, how nicely you talk about a competing framework. All those things ***are*** the Flutter community.
 
-<DashImage figure src="images/1I4r3rDh8039olbgfWiztkw.png" />
+<DashImage figure src="images/1I4r3rDh8039olbgfWiztkw.webp" />
 
 
 By focusing on openness, modesty, and respect to others in the ecosystem we will continue to foster a great developer experience for everyone. We hope that by identifying and naming what we see in the community, this article will help preserve it. After all, it’s hard to preserve something without realizing we have it.
@@ -87,4 +87,4 @@ By focusing on openness, modesty, and respect to others in the ecosystem we will
 
 As Flutter continues to grow in popularity, we are at an important point in our community’s history, and *you* are a crucial part of it! Let’s grow in the right way to continue to foster a great experience for everyone. When interacting with other folks on the internet remember to let the qualities of **openness**, **modesty**, and **respect to other ecosystems** guide your responses. Flutter has a [Code of Conduct](https://github.com/flutter/flutter/blob/master/CODE_OF_CONDUCT.md) and, as we mention there, should you experience anything that makes you feel unwelcome in Flutter’s community, please contact someone on the team such as one of us. And if you’re new here, welcome! We’re so excited you can join us.
 
-<DashImage figure src="images/1-P8cY8Ia17Xq1ufedJKyiQ.png" />
+<DashImage figure src="images/1-P8cY8Ia17Xq1ufedJKyiQ.webp" />

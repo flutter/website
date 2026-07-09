@@ -3,14 +3,14 @@ title: "Getting to the Bottom of Navigation in Flutter"
 description: "Bottom navigation in mobile apps is popular because our phones keep getting bigger but our thumbs do not. Here’s how to do it in Flutter."
 publishDate: 2019-06-27
 author: hansmuller
-image: images/1pzfLG6bpSs8KGe48AXZR_g.png
+image: images/1pzfLG6bpSs8KGe48AXZR_g.webp
 category: tutorial
 layout: blog
 ---
 
 Bottom navigation in mobile apps is popular because our phones keep getting bigger but our thumbs do not. The Material Design specification describes a [*bottom navigation bar*](https://material.io/design/components/bottom-navigation.html#) as a row of three to five buttons at the bottom of the screen that are used to select among as many *destinations*.
 
-<DashImage figure src="images/1pzfLG6bpSs8KGe48AXZR_g.png" alt="A typical bottom navigation bar; Flutter’s BottomNavigationBar widget." caption="A typical bottom navigation bar; Flutter’s BottomNavigationBar widget." />
+<DashImage figure src="images/1pzfLG6bpSs8KGe48AXZR_g.webp" alt="A typical bottom navigation bar; Flutter’s BottomNavigationBar widget." caption="A typical bottom navigation bar; Flutter’s BottomNavigationBar widget." />
 
 
 Flutter provides a [BottomNavigationBar](https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html) widget that’s essentially just a row of destination buttons and a single callback that’s passed the index of the button that was tapped. All the app has to do is to rebuild with a “destination view” widget that corresponds to the button the user tapped. Easy. There’s even a short example that demonstrates as much in the API docs. We’re done right?
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin<HomeP
 
 And that’s that, you now have bottom navigation with stateful destination views. Everyone is happy.
 
-<DashImage figure src="images/1VLSvnXBbA3ohu3YgpGVIhA.gif" />
+<DashImage figure src="images/1VLSvnXBbA3ohu3YgpGVIhA.webp" />
 
 
 Actually, everyone is not happy. The Material Design spec makes it clear that destination views should cross-fade into view. The indexed stack demo unceremoniously snaps the selected destination into view within a single frame. The spec also suggests that if a destination view is scrollable, the bottom navigation bar should optionally slide off screen when the user scrolls up, and only reappear when the user scrolls down. And finally there’s navigation: many apps require each destination view to be hosted by its own [Navigator](https://api.flutter.dev/flutter/widgets/Navigator-class.html), so that the view can display a stack of routes rather than a single interactive page.
@@ -201,7 +201,7 @@ onTap: () {
 
 The *ListPage* widget is similar. Tapping any list item causes it to push a ‘/text’ route which will contain a *TextPage* widget. The TextPage widget is essentially the same as the original DestinationView (it contains a single TextField).
 
-<DashImage figure src="images/1SWOS-PvXgnH9-0SWcPt2mA.gif" />
+<DashImage figure src="images/1SWOS-PvXgnH9-0SWcPt2mA.webp" />
 
 
 ## Cross Fading Destination Views
@@ -273,7 +273,7 @@ Stack(
 
 That’s it for cross fading. Hopefully it’s obvious that it would be easy to substitute a different transition for the fade.
 
-<DashImage figure src="images/12_97cfLZr3d3sp2Sgv71Lg.gif" />
+<DashImage figure src="images/12_97cfLZr3d3sp2Sgv71Lg.webp" />
 
 
 ## Hiding the Bottom Navigation Bar on Scroll
@@ -346,7 +346,7 @@ Widget build(BuildContext context) {
 
 That’s just about that for adding support for changing the visibility of the bottom navigation bar when the current destination is scrolled. If you read the source for the [complete demo](https://gist.github.com/HansMuller/b189642d10fd236a41044fdf7626f7b0) you’ll see one additional tweak. Each time a destination view’s navigator pushes or pops a new route, the bottom navigation bar is shown. This is done by giving each destination view navigator a *[NavigatorObserver](https://api.flutter.dev/flutter/widgets/Navigator/observers.html),* which ensures that the bottom navigation bar is visible.
 
-<DashImage figure src="images/1TIqGBqqOQsvHpUC5kx8P2w.gif" />
+<DashImage figure src="images/1TIqGBqqOQsvHpUC5kx8P2w.webp" />
 
 
 ## Summary

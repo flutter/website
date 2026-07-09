@@ -3,7 +3,7 @@ title: "Updates on Flutter Testing"
 description: "Updated integration testing that supports Firebase Test Lab on mobile; stand-alone support for web and desktop, too!"
 publishDate: 2020-12-09
 author: csells
-image: images/0PEc27voy2YR_winG.png
+image: images/0PEc27voy2YR_winG.webp
 category: announcements
 layout: blog
 ---
@@ -84,7 +84,7 @@ $ flutter drive \
 
 This command deploys your app to the simulator, executes your tests, and shows you the results.
 
-<DashImage figure src="images/0hurt3UPLzo0bnzMi.png" alt="Flutter integration_test in action" caption="Flutter integration_test in action" />
+<DashImage figure src="images/0hurt3UPLzo0bnzMi.webp" alt="Flutter integration_test in action" caption="Flutter integration_test in action" />
 
 
 This particular test is running on iOS, but the `integration_test` plugin also works for Android by changing the`--device-id` option, as appropriate. Furthermore, you can run your integration tests against the web and desktop targets, too, although this functionality is still is pre-release.
@@ -93,7 +93,7 @@ This particular test is running on iOS, but the `integration_test` plugin also w
 
 After you know that your tests work locally using either virtual or physical hardware, you can set your app loose on the plethora of devices available through Firebase Test Lab.
 
-<DashImage figure src="images/0PEc27voy2YR_winG.png" alt="Firebase Test Lab console" caption="Firebase Test Lab console" />
+<DashImage figure src="images/0PEc27voy2YR_winG.webp" alt="Firebase Test Lab console" caption="Firebase Test Lab console" />
 
 
 Firebase Test Lab is a cloud-based, app testing infrastructure. With one operation, you can test your Android or iOS app across a wide variety of devices and device configurations, and see the results — including logs, videos, and screenshots — in the Firebase console. One of the major advancements of the `integration_test` plugin is the ability to run your Flutter apps targeting Android and iOS on Firebase Test Lab, giving you the ability to test across hundreds of devices simultaneously in order to find platform, form factor, or device-specific issues before shipping your app.
@@ -104,7 +104,7 @@ To run a test on Firebase Test Lab, you need to do some configuration and use Gr
 
 For those of you with existing `flutter_driver` tests, moving to the new API isn’t too difficult. In addition to the appropriate initialization that was previously mentioned, you also need to move to the new `WidgetTester` API.
 
-<DashImage figure src="images/0aUliGJHIQ51Djk84.png" alt="flutter_driver API (left) vs. WidgetTesting API (right)" caption="flutter_driver API (left) vs. WidgetTesting API (right)" />
+<DashImage figure src="images/0aUliGJHIQ51Djk84.webp" alt="flutter_driver API (left) vs. WidgetTesting API (right)" caption="flutter_driver API (left) vs. WidgetTesting API (right)" />
 
 
 The `flutter_driver` API (shown on the left) and the `WidgetTester` API (shown on the right) are conceptually very similar, but you can see that a lot of the details are different. For example, instead of calling the `waitFor` method on the `flutter_driver`, you call the `pumpAndSettle` method on the `WidgetTester`. The former waits for a specific widget to appear, whereas the latter waits for the app’s UI rendering phase to settle. After you have a specific widget, you act on it similarly with the two APIs, but you use different objects. The `WidgetTest` API is more in-line with what you’re used to seeing in Dart unit tests. As you can see, the `expect` method is used to ensure that the contents of a widget are what you expect.

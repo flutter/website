@@ -3,7 +3,7 @@ title: "Build reactive mobile apps in Flutter — companion article"
 description: "UPDATE (March 2019) — If you’re just starting to learn about Flutter and state management, I recommend you read the state management…"
 publishDate: 2018-06-01
 author: filiph
-image: images/1DnixY5zJXnLe_x_eqSKkUA.gif
+image: images/1DnixY5zJXnLe_x_eqSKkUA.webp
 category: tutorial
 layout: blog
 ---
@@ -17,7 +17,7 @@ At Google I/O, Matt and I gave a talk about state management called [Build react
 
 The code for the talk is on github:
 
-<GitHubEmbed repo="filiph/state_experiments" title="state_experiments - Companion repository to the &quot;Build reactive mobile apps in Flutter&quot; talk" image="images/0k6VwvGyERET4BiU0.png" />
+<GitHubEmbed repo="filiph/state_experiments" title="state_experiments - Companion repository to the &quot;Build reactive mobile apps in Flutter&quot; talk" image="images/0k6VwvGyERET4BiU0.webp" />
 
 
 This article is about the things that didn’t fit into the 33-minute session.
@@ -174,7 +174,7 @@ With that, some additional notes about this pattern:
 
 Some people asked for a more complex BLoC sample. I recreated the shopping app into a more realistic example where the catalog of products is fetched from the network page by page, and we have an infinite list of these products. Also, for each product in the catalog, we want to change the presentation of the ProductSquare slightly when the product is already in the catalog. The network calls are simulated but the complexity of wiring different things together is there.
 
-<DashImage figure src="images/1DnixY5zJXnLe_x_eqSKkUA.gif" alt="You can see how, in this version of the sample, the products are loaded in batches, and the `ProductSquare`s show whether the product is in the cart (by underlining the product name, for simplicity)." caption="You can see how, in this version of the sample, the products are loaded in batches, and the `ProductSquare`s show whether the product is in the cart (by underlining the product name, for simplicity)." />
+<DashImage figure src="images/1DnixY5zJXnLe_x_eqSKkUA.webp" alt="You can see how, in this version of the sample, the products are loaded in batches, and the `ProductSquare`s show whether the product is in the cart (by underlining the product name, for simplicity)." caption="You can see how, in this version of the sample, the products are loaded in batches, and the `ProductSquare`s show whether the product is in the cart (by underlining the product name, for simplicity)." />
 
 
 You can find the code in the companion repository, at [`lib/src/bloc_complex`](https://github.com/filiph/state_experiments/tree/master/shared/lib/src/bloc_complex). There’s a README file with more information about this version.

@@ -3,11 +3,11 @@ title: "Vibe once, run anywhere with Antigravity and Flutter"
 description: "co-authored with Rody Davis"
 publishDate: 2026-06-29
 author: craiglabenz
-image: images/1Mg2Bj5FBg1I19r1Jw4q9Kg.png
+image: images/1Mg2Bj5FBg1I19r1Jw4q9Kg.webp
 layout: blog
 ---
 
-<DashImage figure src="images/1Mg2Bj5FBg1I19r1Jw4q9Kg.png" />
+<DashImage figure src="images/1Mg2Bj5FBg1I19r1Jw4q9Kg.webp" />
 
 
 Coding agents and the way we use them has already dramatically evolved since their arrival just a handful of months ago. Initially, the focus was heavily on observation — reviewing every single output line by line. But as models rapidly increased in capability, the industry shifted toward true agentic engineering. Today, developers, PMs, and designers are wearing multiple hats, focusing on lofty conceptual goals and letting agents tackle the individual components.

@@ -3,14 +3,14 @@ title: "We hear you — learnings from Q3 2019 Flutter user survey"
 description: "On performance, add-to-app, plugins, and more"
 publishDate: 2019-11-19
 author: jayoung-lee
-image: images/0UMfWbaBispXV0tMD.png
+image: images/0UMfWbaBispXV0tMD.webp
 category: announcements
 layout: blog
 ---
 
 ## We hear you — learnings from Q3 2019 Flutter user survey
 
-<DashImage figure src="images/1kC6Z0A82B9Yk4mV88fo9CQ.png" />
+<DashImage figure src="images/1kC6Z0A82B9Yk4mV88fo9CQ.webp" />
 
 
 Flutter’s User Experience team runs a survey every quarter to understand what we can do to help you be successful with Flutter. Over 7,500 users participated in the Q3 survey, and we’re here to share what we learned, [as always](https://medium.com/flutter/search?q=survey).
@@ -23,12 +23,12 @@ Flutter continues to polish its foundation, and that includes improving the expe
 
 While 78% of the users had experience with release or profile mode (performance should only be assessed in release or profile mode), 85% of them were positively satisfied (either *somewhat satisfied* or *very satisfied*) with Flutter’s performance. In addition, we asked about sub-categories of performance: rendering performance, memory performance, power usage performance, and binary size. We learned that 10% to 20% of users don’t know how to assess these aspects of performance, and the least satisfying aspect was the binary size (54% positively satisfied). For those who need more information about how to assess and optimize different aspects of performance, we will soon publish how-to guides, in addition to [the existing documentation on performance](https://flutter.dev/docs/perf). The survey was an opportunity for us to understand that some performance metrics, such as power usage or memory performance, are harder to assess than others.
 
-<DashImage figure src="images/0UMfWbaBispXV0tMD.png" alt="*10% to 20% of users don’t know how to assess these performances*" caption="*10% to 20% of users don’t know how to assess these performances*" />
+<DashImage figure src="images/0UMfWbaBispXV0tMD.webp" alt="*10% to 20% of users don’t know how to assess these performances*" caption="*10% to 20% of users don’t know how to assess these performances*" />
 
 
 We also learned that only about half of the users (47%) are using [Dart DevTools](https://flutter.dev/docs/development/tools/devtools/overview) to measure the performance of their Flutter app, which is a suite of performance tools for Dart and Flutter. Half of those who haven’t used Dart DevTools said that they didn’t know they exist (48%) and a fifth of them didn’t know how to use them (21%). We will put more effort on increasing the awareness of the DevTools. We will also more tightly integrate DevTools with the IDEs, making it easier to launch specific DevTools functionality, potentially without requiring opening a separate web browser.
 
-<DashImage figure src="images/0jKeTRjxJ0q0gFu2H.png" alt="*Performance profiling tool preference*" caption="*Performance profiling tool preference*" />
+<DashImage figure src="images/0jKeTRjxJ0q0gFu2H.webp" alt="*Performance profiling tool preference*" caption="*Performance profiling tool preference*" />
 
 
 ## **Add-to-app**
@@ -67,7 +67,7 @@ Ecosystem is another crucial part of Flutter; this enables developers to extend 
 
 We will focus on improving your experience around Flutter’s ecosystem and also make it easier for you to find quality plugins. As a starting point, Dart has recently released a “[verified publishers](https://medium.com/dartlang/verified-publishers-98f05466558a)” feature for [pub.dev](http://pub.dev) (on Dart’s 8th birthday!) to make it easy for users to identify trustworthy publishers. This was one of the planned improvements mentioned in the recap of the [previous survey](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6). Please keep your eye out for further improvements.
 
-<DashImage figure src="images/0rHPbdMZoe86uwe1H.png" alt="*First page of dart.dev features some verified Flutter packages*" caption="*First page of dart.dev features some verified Flutter packages*" />
+<DashImage figure src="images/0rHPbdMZoe86uwe1H.webp" alt="*First page of dart.dev features some verified Flutter packages*" caption="*First page of dart.dev features some verified Flutter packages*" />
 
 
 ## **Frustrating experiences**
@@ -76,7 +76,7 @@ We also asked another open-ended question about recurring annoyances. Although [
 
 We collected over 1,600 comments from this one question, and several team members dedicated many hours to reading and sorting them into categories. We were able to capture some minor but frequent failures that may potentially lead to annoyance and frustration, such as issues related to hot reload and debugging, issues with upgrades and migration, and so on. The sub-teams of Flutter were notified of issues relevant to their work, and it led to many productive discussions. For example, we are working on [better reporting](https://github.com/flutter/flutter/issues/42549) to understand hot reload issues. If you have recurring annoyances, do not hesitate to file an issue. We are tracking those with the “a: annoyance” [label](https://github.com/flutter/flutter/labels/a%3A%20annoyance).
 
-<DashImage figure src="images/0c_10W3HCaw0k6u_h.png" alt="*Track the progress on Github*" caption="*Track the progress on Github*" />
+<DashImage figure src="images/0c_10W3HCaw0k6u_h.webp" alt="*Track the progress on Github*" caption="*Track the progress on Github*" />
 
 
 Thank you again for participating in the survey! Please continue to provide valuable feedback to the Flutter team and help us plan for the coming quarters. Flutter’s UX research team also performs a variety of user experience studies so that we can learn how to make your experience with Flutter more pleasant. If you are interested in participating, please [sign up](http://flutter.dev/research-signup) for future studies.

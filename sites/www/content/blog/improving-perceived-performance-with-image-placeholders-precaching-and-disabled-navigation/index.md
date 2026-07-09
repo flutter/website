@@ -68,7 +68,7 @@ class ImageWidgetPlaceholder extends StatelessWidget {
 
 After adding placeholders, the layout no longer shifts around, and instead the images fade in as they load:
 
-<DashImage figure src="images/1ZI2zrU2e21dkkHtn49qskw.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" />
+<DashImage figure src="images/1ZI2zrU2e21dkkHtn49qskw.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" />
 
 
 ## Precaching images before they are displayed
@@ -82,7 +82,7 @@ precacheImage(NetworkImage(url), context);
 
 The following GIF shows an example of precaching images on a Welcome screen:
 
-<DashImage figure src="images/1iAiugn-WYkk7620I7TgMVg.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
+<DashImage figure src="images/1iAiugn-WYkk7620I7TgMVg.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
 
 
 ## Disabling navigation transitions on Flutter web
@@ -131,7 +131,7 @@ MaterialApp(
 
 The page transition without any animation:
 
-<DashImage figure src="images/1Db6XWyMRM9gGhSEpHY6w7A.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
+<DashImage figure src="images/1Db6XWyMRM9gGhSEpHY6w7A.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
 
 
 ## **Conclusion**

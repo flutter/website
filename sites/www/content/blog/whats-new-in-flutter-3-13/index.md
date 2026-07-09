@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.13"
 description: "2D scrolling, faster graphics, Material 3 updates and more"
 publishDate: 2023-08-16
 author: itsjustkevin
-image: images/0H4kTD2wabl_kscFq.png
+image: images/0H4kTD2wabl_kscFq.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/0H4kTD2wabl_kscFq.png" />
+<DashImage figure src="images/0H4kTD2wabl_kscFq.webp" />
 
 
 ## What’s new in Flutter 3.13
@@ -29,7 +29,7 @@ We’ve made several improvements to Impeller — our new graphics renderer — 
 
 Thanks to the high-quality feedback from Flutter users, in this release we have continued to improve the performance of Impeller on iOS. As a result of many different optimizations, the Impeller renderer on iOS now not only has lower latency (by completely eliminating shader compilation jank), but on some benchmarks also have higher average throughput. In particular, on our flutter/gallery transitions performance benchmark, average frame rasterization time is now around half of what it was with Skia.
 
-<DashImage figure src="images/0ivWbcnIt-1Mln5Lx.png" />
+<DashImage figure src="images/0ivWbcnIt-1Mln5Lx.webp" />
 
 
 *Improvements to average frame rasterization time in the Flutter Gallery transitions performance benchmark on an iPhone 11. The time period covered is roughly the time from the 3.10 branch cut to the 3.13 branch cut.*
@@ -56,7 +56,7 @@ In 3.10 we announced that wide gamut colors were available under a flag when usi
 
 We continue to make progress on the Vulkan backend for Impeller, however it hasn’t yet reached the level of quality where an official preview period would be useful. We want to ensure that our users’ first experience with Impeller on Android is high quality and we are not quite there yet. We hope to enter a preview period for Impeller on Android in a stable release later this year. Even though Impeller on Android isn’t quite ready for preview yet, the OpenGL and Vulkan backends have benefited from many of the backend agnostic optimizations that we’ve made to Impeller’s HAL during the past year. In particular, average frame rasterization times for Android have also improved significantly on the flutter/gallery transitions performance benchmark. Further improvements are in progress so that the preview on Android can be high quality.
 
-<DashImage figure src="images/0_hbW2fQla6t5bDSg.png" />
+<DashImage figure src="images/0_hbW2fQla6t5bDSg.webp" />
 
 
 Once again, our progress was greatly accelerated by contributions from the community, in particular GitHub user [ColdPaleLight](https://github.com/ColdPaleLight), who authored several much appreciated Impeller-related patches, improving fidelity and performance, including adding [support for conical gradients](https://github.com/flutter/engine/pull/42567).
@@ -71,7 +71,7 @@ We’re eager for you to test this out and provide feedback. The best way to hel
 
 Looking to try Impeller on macOS? [Install Wonderous from the Mac App Store](https://apps.apple.com/us/app/wonderous/id1612491897)!
 
-<DashImage figure src="images/0mr1oUAyNBl6RWCOD.gif" />
+<DashImage figure src="images/0mr1oUAyNBl6RWCOD.webp" />
 
 
 ## New engine API
@@ -90,7 +90,7 @@ We’ve made a number of improvements to the Material Framework to 1) offer more
 
 When using TextField on iOS, users will automatically see an option to use the device camera to recognize characters and insert them into the field.
 
-<DashImage figure src="images/1J-fzkm7jc2ORDimcTWRPxg.gif" />
+<DashImage figure src="images/1J-fzkm7jc2ORDimcTWRPxg.webp" />
 
 
 This feature would not be possible without the contributions of community members [luckysmg](https://github.com/luckysmg) (Author) and [tgucio](https://github.com/tgucio) (reviewer). This feature was a 1000 line and 70 commit effort that bridged the [engine](https://github.com/flutter/engine/pull/34751) and [framework](https://github.com/flutter/flutter/pull/96637)! Thank you!
@@ -101,26 +101,26 @@ An adaptive constructor has been added to the AlertDialog, along with the adapti
 
 Now using AlertDialog.adaptive() uses the [CupertinoAlertDialog](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html) widget on iOS:
 
-<DashImage figure src="images/0-F0HReZy8hO7g4Ua.png" />
+<DashImage figure src="images/0-F0HReZy8hO7g4Ua.webp" />
 
 
 And Material [AlertDialog](https://api.flutter.dev/flutter/material/AlertDialog-class.html) on Android.
 
-<DashImage figure src="images/0mXhB49hbDgipj12y.png" />
+<DashImage figure src="images/0mXhB49hbDgipj12y.webp" />
 
 
 ### CupertinoDatePicker with month and year
 
 Adds a monthYear mode to the CupertinoDatePicker.
 
-<DashImage figure src="images/0hduILuHCxPFxzZwT.png" />
+<DashImage figure src="images/0hduILuHCxPFxzZwT.webp" />
 
 
 ### Cupertino (iOS-style) check styled radio
 
 The useCheckmarkStyle property has been added to CupertinoRadio. This also allows the Radio.adaptive and RadioListTile.adaptive widgets to control whether they use the checkmark style on iOS.
 
-<DashImage figure src="images/0cmIR1i5jjDqtSf7e.png" />
+<DashImage figure src="images/0cmIR1i5jjDqtSf7e.webp" />
 
 
 ### More customization options for Material widgets
@@ -129,46 +129,46 @@ There have been several improvements that make it easier to customize the design
 
 * You can now use the error property for InputDecoration (as opposed to a string) to customize the error widget that is shown on text fields:
 
-<DashImage figure src="images/0GxTex9TCfT9Hwmzg.png" />
+<DashImage figure src="images/0GxTex9TCfT9Hwmzg.webp" />
 
 
 * You can now add tooltips to ButtonSegment:
 
-<DashImage figure src="images/0HCwY_q2qHScr7iYn.png" />
+<DashImage figure src="images/0HCwY_q2qHScr7iYn.webp" />
 
 
 * You can now customize the gap in ExpansionPanelList using the materialGapSize property
 
-<DashImage figure src="images/0_kpFAizvZpn1TbiX.png" />
+<DashImage figure src="images/0_kpFAizvZpn1TbiX.webp" />
 
 
 * You can now customize the trackOutlineWidth for Switch
 
-<DashImage figure src="images/02iGWjI0i3e6CztlR.png" />
+<DashImage figure src="images/02iGWjI0i3e6CztlR.webp" />
 
 
 * You can now customize the padding with the tilePadding property on NavigationDrawer
 
-<DashImage figure src="images/0h1eFxKZNaxJoWshN.png" />
+<DashImage figure src="images/0h1eFxKZNaxJoWshN.webp" />
 
 
 * You can choose how to align the tabs using the alignment property for TabBar
 
-<DashImage figure src="images/0ALRxynRXg1MkS-nB.png" />
+<DashImage figure src="images/0ALRxynRXg1MkS-nB.webp" />
 
 
 ### MaterialState color for chips
 
 [This](https://github.com/flutter/flutter/pull/128584) makes it possible to customize the color of the chips in all of the different states.
 
-<DashImage figure src="images/0EzVRz68A8GCFiuJN.png" />
+<DashImage figure src="images/0EzVRz68A8GCFiuJN.webp" />
 
 
 ### Elevated Chips
 
 FilterChip.elevated,ChoiceChip.elevated,and ActionChip.elevated variants have been added in accordance with the [Material 3 specs.](https://m3.material.io/components/chips/overview)
 
-<DashImage figure src="images/0VxRhItQg2lCdN5ka.png" />
+<DashImage figure src="images/0VxRhItQg2lCdN5ka.webp" />
 
 
 ### onSubmitted to SearchBar
@@ -185,7 +185,7 @@ A base class has been added for a family of classes, which includes support for 
 
 AppLifecycleListener class was [added](https://github.com/flutter/flutter/pull/123274) for listening to changes in the application lifecycle, and responding to requests to exit the application.
 
-<DashImage figure src="images/0bN0QtrIRWGDMC9LJ.png" />
+<DashImage figure src="images/0bN0QtrIRWGDMC9LJ.webp" />
 
 
 ## Scrolling
@@ -220,7 +220,7 @@ Also new to the sliver library is [DecoratedSliver](https://master-api.flutter.d
 
 See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id=6e2b7245063001576a3a83adb23f1121) example.
 
-<DashImage figure src="images/0OY76w1Hu7LqTODA9.png" />
+<DashImage figure src="images/0OY76w1Hu7LqTODA9.webp" />
 
 
 ## Accessibility
@@ -229,7 +229,7 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 
 * The onOffSwitchLabels accessibility property was added for CupertinoSwitch to display I/O labels
 
-<DashImage figure src="images/0aKqjrDI5zXHm7Dza.gif" />
+<DashImage figure src="images/0aKqjrDI5zXHm7Dza.webp" />
 
 
 * The [FocusSemanticEvent has been added. ](https://github.com/flutter/flutter/pull/126171)However, it should be used with caution as it might break a users’ expectation of how a11y focus works.
@@ -250,14 +250,14 @@ With this release, Flutter now supports targeting [Android 14/ API 34](https://d
 
 When an iOS screen rotates, Flutter apps would previously experience some distortion that looked different from native iOS applications. We’ve made some modifications to reduce the [distortion](https://github.com/flutter/flutter/issues/16322):
 
-<DashImage figure src="images/0veAtL_lhOkJ7kU7b.gif" />
+<DashImage figure src="images/0veAtL_lhOkJ7kU7b.webp" />
 
 
 ### Renaming Runner
 
 When a Flutter iOS app is created, a *Runner* Xcode project and Xcode workspace are created in the `/ios` folder. Now, you can rename the workspace or project so that you don’t end up with a list of *Runners*.
 
-<DashImage figure src="images/0HuzkGU7owliBNi5N.png" />
+<DashImage figure src="images/0HuzkGU7owliBNi5N.webp" />
 
 
 ### Preparing for iOS 17 and Xcode 15
@@ -286,15 +286,15 @@ We’ve made improvements to the performance and usability of DevTools that incl
 
 We added a new overflow menu on the navigation bar to handle cases when the list of tabs can’t be displayed at once.
 
-<DashImage figure src="images/05Z-VWLi5EB_4_s1x.gif" />
+<DashImage figure src="images/05Z-VWLi5EB_4_s1x.webp" />
 
 
-<DashImage figure src="images/0eenzRMajhOc8R62L.png" />
+<DashImage figure src="images/0eenzRMajhOc8R62L.webp" />
 
 
 We added a legend for class types on the Memory tab.
 
-<DashImage figure src="images/0K_zKIHXbEXlHt-Jz.png" />
+<DashImage figure src="images/0K_zKIHXbEXlHt-Jz.webp" />
 
 
 Additionally, we made scrolling a tree table in the CPU profiler faster and smoother. In the debugger, we’ve made searching in a file, or searching for a file up to 5x faster.
@@ -335,7 +335,7 @@ Over the past few months we have adopted a new set of definitions for our priori
 
 We’ve also introduced a [new triage scheme](https://github.com/flutter/flutter/wiki/Triage) for our teams, which we hope will make it harder for issues to fall between the cracks. If you are active in our issue database you may see our new bot commenting and adding or removing labels:
 
-<DashImage figure src="images/0xDizfkUpX6Kk5wCR.png" />
+<DashImage figure src="images/0xDizfkUpX6Kk5wCR.webp" />
 
 
 This bot also integrates with [our Discord](https://discord.com/invite/N7Yshp4), helping us keep on top of what is happening on GitHub. We hope it will make us more productive in the long run, but bear with us while we get used to the new system!

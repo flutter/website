@@ -3,7 +3,7 @@ title: "Flutter Create is live with over $10,000 in prizes"
 description: "Tl;DR: Flutter Create is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or…"
 publishDate: 2019-02-21
 author: aguinis
-image: images/1AyxOZQPLHstjafeVvwHbUg.png
+image: images/1AyxOZQPLHstjafeVvwHbUg.webp
 category: events
 layout: blog
 ---
@@ -19,14 +19,14 @@ We are introducing Flutter Create, an initiative where new and experienced devel
 
 So we thought we’d see what you can do. Amaze us with what you can build with Dart in just 5 kilobytes, and you might win one of the following prizes:
 
-<DashImage figure src="images/15XImuQBc3XbmTW9RZTbUEg.png" />
+<DashImage figure src="images/15XImuQBc3XbmTW9RZTbUEg.webp" />
 
 
 Winners will be announced at Google I/O 2019.
 
 *[flutter.dev/create](http://flutter.dev/create) is your source for all challenge details and submissions.*
 
-<DashImage figure src="images/1AyxOZQPLHstjafeVvwHbUg.png" />
+<DashImage figure src="images/1AyxOZQPLHstjafeVvwHbUg.webp" />
 
 
 **High Level Details**

@@ -3,7 +3,7 @@ title: "Developing Flutter apps for Large screens"
 description: "How to optimize your Flutter app to meet Android’s large screen requirements"
 publishDate: 2023-09-26
 author: mariam_hasnany
-image: images/04I4h-v1nPuUbxBt4.gif
+image: images/04I4h-v1nPuUbxBt4.webp
 category: announcements
 layout: blog
 ---
@@ -56,7 +56,7 @@ When Wonderous was folded and unfolded, the app experienced state-loss and would
 
 We thought we might need a lot of boilerplate code to ensure that a list maintained its scroll position when the screen size changed. We first used the key:PageStorageKey API and it fixed most of our list views. The “learnings” section below describes the situation where you need to go further.
 
-<DashImage figure src="images/04I4h-v1nPuUbxBt4.gif" alt="Collections page in Wonderous app not maintaining scroll position" caption="Collections page in Wonderous app not maintaining scroll position" />
+<DashImage figure src="images/04I4h-v1nPuUbxBt4.webp" alt="Collections page in Wonderous app not maintaining scroll position" caption="Collections page in Wonderous app not maintaining scroll position" />
 
 
 **Fix:** Use the ****key: PageStorageKey API to maintain scroll position for lists that keep their layout the same when device orientation changes. ****By [adding a PageStorageKey to the collections page](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64) the scroll position of the SingleChildScrollView widget [will be stored automatically](https://api.flutter.dev/flutter/widgets/PageStorage-class.html)**.**
@@ -71,7 +71,7 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 
 With the advent of[ “screen splitting”](https://developer.android.com/guide/topics/large-screens/multi-window-support), the user can, with some orientations and aspect ratios, put the app into less than two inches of vertical space. When the screen was split to ⅓ of the display area, the Wonderous app was [letterboxed](https://developer.android.com/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing) or positioned in the center of the display area with a solid color background filling the unused area (shown below).
 
-<DashImage figure src="images/0CUG7wMHjzHSFKMpV.gif" alt="Wonderous app being letterboxed in split-screen mode on Pixel Fold" caption="Wonderous app being letterboxed in split-screen mode on Pixel Fold" />
+<DashImage figure src="images/0CUG7wMHjzHSFKMpV.webp" alt="Wonderous app being letterboxed in split-screen mode on Pixel Fold" caption="Wonderous app being letterboxed in split-screen mode on Pixel Fold" />
 
 
 This happened because we chose to disable landscape on smaller screens by using MediaQuery to determine the size of the device. Unfortunately, MediaQuery doesn’t actually give you the screen size when you’re in split-screen mode and mistakenly identifies large devices with split-screens as small devices.
@@ -96,7 +96,7 @@ Flutter’s Material buttons handle basic focus states by default. In the case o
 
 The mouse scroll wheel didn’t work well on some devices throughout the app. A user had to move the scroll wheel a lot for the screen to respond . This was a known[ issue](https://github.com/flutter/flutter/issues/82973), thanks to our community. We noticed that it was more pronounced on tablets and foldables.
 
-<DashImage figure src="images/0-7rhN0eWj8p1EZ3_.gif" alt="Scrolling Wonderous app with a mouse is slow" caption="Scrolling Wonderous app with a mouse is slow" />
+<DashImage figure src="images/0-7rhN0eWj8p1EZ3_.webp" alt="Scrolling Wonderous app with a mouse is slow" caption="Scrolling Wonderous app with a mouse is slow" />
 
 
 **Fix:** We [fixed](https://github.com/flutter/engine/pull/44724) it in the framework since it affected all Flutter apps and it will be in the next Flutter stable release.
@@ -111,7 +111,7 @@ The mouse scroll wheel didn’t work well on some devices throughout the app. A 
 
 In the first iteration of Wonderous, we disabled the rotation of the app on small form factors since the app lacked proper landscape support on smaller screens. As mentioned earlier, we fixed the app to be able to support landscape mode for smaller screens during split-screen mode on large screen devices. While this approach fixed the letterboxing issue, it became more obvious that the app’s navigation lacked the proper ergonomics for larger screens.
 
-<DashImage figure src="images/0FkMJSwc7jtu4K7HR.gif" alt="Before using Material’s Navigation rail" caption="Before using Material’s Navigation rail" />
+<DashImage figure src="images/0FkMJSwc7jtu4K7HR.webp" alt="Before using Material’s Navigation rail" caption="Before using Material’s Navigation rail" />
 
 
 This required the app to layout the navigation close to the edges of the screen where it is easier to reach, such as the left side edge of a tablet to free up precious vertical space for app content in landscape mode.
@@ -120,7 +120,7 @@ This required the app to layout the navigation close to the edges of the screen 
 
 **Learning:** Make sure the layouts and navigation in your app can function properly in large screen devices and ~2” of vertical space if the screen is in split-mode. To make this feasible use [adaptive widgets](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps) like Material’s Navigation rail**.**
 
-<DashImage figure src="images/1T0mBXs1X6YdvCQmQlP5ryg.gif" alt="After using Material’s Navigation rail" caption="After using Material’s Navigation rail" />
+<DashImage figure src="images/1T0mBXs1X6YdvCQmQlP5ryg.webp" alt="After using Material’s Navigation rail" caption="After using Material’s Navigation rail" />
 
 
 ## Other things to consider

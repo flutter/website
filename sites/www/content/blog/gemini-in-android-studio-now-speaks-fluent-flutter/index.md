@@ -45,7 +45,7 @@ We’ve seen incredible progress in AI’s ability to understand and generate co
 
 * **Prompt Library:** Access and create a library of your common Flutter-specific prompts for Gemini in Android Studio.
 
-<DashImage figure src="images/0zs4BmQVfpjV5cawH.gif" />
+<DashImage figure src="images/0zs4BmQVfpjV5cawH.webp" />
 
 
 *Using the Prompt Library*

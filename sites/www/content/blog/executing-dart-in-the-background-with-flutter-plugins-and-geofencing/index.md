@@ -3,12 +3,12 @@ title: "Executing Dart in the Background with Flutter Plugins and Geofencing"
 description: "04/11/2022: This article has been updated to replace broken links due to docs and plugins changing names or locations."
 publishDate: 2018-09-20
 author: bkonyi
-image: images/0ae_YppUn96m93qkT.png
+image: images/0ae_YppUn96m93qkT.webp
 category: tutorial
 layout: blog
 ---
 
-<DashImage figure src="images/0ae_YppUn96m93qkT.png" alt="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" caption="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" />
+<DashImage figure src="images/0ae_YppUn96m93qkT.webp" alt="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" caption="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" />
 
 
 ***04/11/2022***: *This article has been updated to replace broken links due to docs and plugins changing names or locations.*
@@ -143,7 +143,7 @@ abstract class GeofencingPlugin {
 
 If you’ve previously developed Flutter plugins and are familiar with `MethodChannel`, this should look as expected, for the most part. (If you’re new to plugin development, check out [the platform channels article](https://flutter.io/platform-channels/) for an introduction). However, the two calls to `PluginUtilities.getCallbackHandle` might stand out.
 
-<DashImage figure src="images/0ilMs7WWcpN3q9UxO.png" alt="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" caption="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" />
+<DashImage figure src="images/0ilMs7WWcpN3q9UxO.webp" alt="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" caption="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" />
 
 
 In order to invoke a Dart callback as a result of a background event, you must retrieve a handle that is passed between Dart and platform code while also allowing for lookup of the callback across platform threads and Dart [isolates](https://api.dartlang.org/stable/2.0.0/dart-isolate/dart-isolate-library.html).
@@ -688,13 +688,13 @@ If the application is launched as the result of a geofence being triggered, the 
 
 Now that the geofencing plugin is fully implemented for both Android and iOS, I can finally put it to good use: automatically opening my garage door as I pedal towards my house!
 
-<DashImage figure src="images/0ae_YppUn96m93qkT.png" />
+<DashImage figure src="images/0ae_YppUn96m93qkT.webp" />
 
 
-<DashImage figure src="images/0at7FCzjM5lAd8NC_.png" alt="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." caption="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." />
+<DashImage figure src="images/0at7FCzjM5lAd8NC_.webp" alt="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." caption="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." />
 
 
-<DashImage figure src="images/074sQ7Fl7ueommzJy.png" alt="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" caption="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" />
+<DashImage figure src="images/074sQ7Fl7ueommzJy.webp" alt="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" caption="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" />
 
 
 <iframe src="https://gfycat.com/WickedHospitableEidolonhelvum" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
@@ -892,7 +892,7 @@ I’ve had a lot of fun implementing background execution support for Flutter, a
 
 Thanks for reading and happy Fluttering!
 
-<DashImage figure src="images/0D6jZA_ksvRN5EJi1.png" alt="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." caption="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." />
+<DashImage figure src="images/0D6jZA_ksvRN5EJi1.webp" alt="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." caption="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." />
 
 
 ## Resources

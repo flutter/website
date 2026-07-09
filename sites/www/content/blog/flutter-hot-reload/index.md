@@ -3,14 +3,14 @@ title: "Flutter Hot Reload"
 description: "What happens during a hot reload, and how we made it faster for Flutter 2.2."
 publishDate: 2021-08-19
 author: jensjohansen
-image: images/1iaLz5LEBdsZJRR_W8UCQcQ.png
+image: images/1iaLz5LEBdsZJRR_W8UCQcQ.webp
 category: announcements
 layout: blog
 ---
 
 Hot reload was fast in Flutter 2.0, but it’s faster in Flutter 2.2. Read on for details on hot reload in general, and how we made it faster for Flutter 2.2.
 
-<DashImage figure src="images/1iaLz5LEBdsZJRR_W8UCQcQ.png" />
+<DashImage figure src="images/1iaLz5LEBdsZJRR_W8UCQcQ.webp" />
 
 
 ## Introduction

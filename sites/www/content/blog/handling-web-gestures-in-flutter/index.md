@@ -3,14 +3,14 @@ title: "Handling Web Gestures in Flutter"
 description: "Flutter has released web support that allows you to create dynamic websites. With Flutter web, MacOS, Linux, and Windows operating systems…"
 publishDate: 2020-09-21
 author: josealba
-image: images/1BzcKF4qdbLIFFB6XL8x-9A.png
+image: images/1BzcKF4qdbLIFFB6XL8x-9A.webp
 category: announcements
 layout: blog
 ---
 
 ## Handling web gestures in Flutter
 
-<DashImage figure src="images/1BzcKF4qdbLIFFB6XL8x-9A.png" />
+<DashImage figure src="images/1BzcKF4qdbLIFFB6XL8x-9A.webp" />
 
 
 Flutter has released web support that allows you to create dynamic websites. With Flutter web, MacOS, Linux, and Windows operating systems (even on mobile devices connected to a mouse, keyboard, or other peripherals), you now have access to platform-specific behaviors including focus support, keyboard input, custom mouse cursors, and hover input. But, how do you make use of these platform behaviors in Flutter?

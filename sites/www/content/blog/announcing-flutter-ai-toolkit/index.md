@@ -3,7 +3,7 @@ title: "Announcing Flutter AI Toolkit"
 description: "Want AI chat in your Flutter app? This toolkit makes it easy."
 publishDate: 2024-12-17
 author: antfitch
-image: images/1u_atZ9LOO85MJMWdLFvxow.png
+image: images/1u_atZ9LOO85MJMWdLFvxow.webp
 category: announcements
 layout: blog
 ---
@@ -21,42 +21,42 @@ Imagine you’re talking to a friend. They ask if you have a pet and you tell th
 
 That’s essentially what multi-turn chat does! It helps the LLM (generative AI Large Language Model) remember what is being talked about.
 
-<DashImage figure src="images/1u_atZ9LOO85MJMWdLFvxow.png" alt="Multi-turn chat in Flutter AI Toolkit" caption="Multi-turn chat in Flutter AI Toolkit" />
+<DashImage figure src="images/1u_atZ9LOO85MJMWdLFvxow.webp" alt="Multi-turn chat in Flutter AI Toolkit" caption="Multi-turn chat in Flutter AI Toolkit" />
 
 
 ## Rich text display
 
 Rich-text format is supported in the responses produced by the LLM. Instead of producing just plain-text words, the LLM can format the text to be more interesting to read. For example, the response could include bold text, images, bullets, and more.
 
-<DashImage figure src="images/1m5BA-Jaa7l9uPr9NHoWjKA.png" alt="Rich-format support in Flutter AI Toolkit" caption="Rich-format support in Flutter AI Toolkit" />
+<DashImage figure src="images/1m5BA-Jaa7l9uPr9NHoWjKA.webp" alt="Rich-format support in Flutter AI Toolkit" caption="Rich-format support in Flutter AI Toolkit" />
 
 
 ## Voice input
 
 Voice input can be used to convert messages to text. This hands-free option is perfect for those who prefer not to type or who want a faster way to compose messages.
 
-<DashImage figure src="images/0KgA9lHvHX_FF3r50.png" alt="Voice input support in Flutter AI Toolkit" caption="Voice input support in Flutter AI Toolkit" />
+<DashImage figure src="images/0KgA9lHvHX_FF3r50.webp" alt="Voice input support in Flutter AI Toolkit" caption="Voice input support in Flutter AI Toolkit" />
 
 
 ## Multimedia attachments
 
 Pictures, videos, audio, PDFs, and other files can be added to conversations separately or all together.
 
-<DashImage figure src="images/1HxICVJ2oeINpsTb4DDdnqg.png" alt="Multimedia attachment support in Flutter AI Toolkit" caption="Multimedia attachment support in Flutter AI Toolkit" />
+<DashImage figure src="images/1HxICVJ2oeINpsTb4DDdnqg.webp" alt="Multimedia attachment support in Flutter AI Toolkit" caption="Multimedia attachment support in Flutter AI Toolkit" />
 
 
 ## Custom response widgets
 
 Design specialized UI components for responses. For example, if someone requests a recipe, you can show an interactive recipe card with an option to save the recipe directly to a database.
 
-<DashImage figure src="images/1j-2lxsZJ-WEREg7X4O7Cog.png" alt="Custom AI response widget support in Flutter AI Toolkit" caption="Custom AI response widget support in Flutter AI Toolkit" />
+<DashImage figure src="images/1j-2lxsZJ-WEREg7X4O7Cog.webp" alt="Custom AI response widget support in Flutter AI Toolkit" caption="Custom AI response widget support in Flutter AI Toolkit" />
 
 
 ## Custom styling
 
 Configure the chat appearance to match your app. Change the colors of the chat bubbles, the background, the UI fonts, and even add UI pictures or animations to reflect your brand identity.
 
-<DashImage figure src="images/1ctMwVabsBVXa-ppooNwGsw.png" alt="Custom styling support in Flutter AI Toolkit" caption="Custom styling support in Flutter AI Toolkit" />
+<DashImage figure src="images/1ctMwVabsBVXa-ppooNwGsw.webp" alt="Custom styling support in Flutter AI Toolkit" caption="Custom styling support in Flutter AI Toolkit" />
 
 
 ## Cross-platform support
@@ -71,7 +71,7 @@ Flutter AI Toolkit makes it easy to add AI to your app, whether you want to use 
 
 Build a full-fledged chat app that can store and manage multiple conversations. To help you get started, Flutter AI Toolkit comes with a sample project that leverages a [Cloud Firestore](https://firebase.google.com/docs/firestore) database and [Vertex AI in Firebase](https://firebase.google.com/docs/vertex-ai).
 
-<DashImage figure src="images/1gAt7fwWLXUWX_nHPwzYzxg.png" alt="Flutter AI Chat App" caption="Flutter AI Chat App" />
+<DashImage figure src="images/1gAt7fwWLXUWX_nHPwzYzxg.webp" alt="Flutter AI Chat App" caption="Flutter AI Chat App" />
 
 
 ## Try Flutter AI Toolkit now

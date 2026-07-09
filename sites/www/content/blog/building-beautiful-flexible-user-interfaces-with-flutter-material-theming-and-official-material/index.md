@@ -3,7 +3,7 @@ title: "Building beautiful, flexible user interfaces with Flutter, Material Them
 description: "At Google I/O 2018, the Material team announced a important update to Material Design, with a strong focus on enabling mobile apps to stand…"
 publishDate: 2018-05-10
 author: mit-mit
-image: images/1cyTGpzWuHqvYFGTV7uQyXA.png
+image: images/1cyTGpzWuHqvYFGTV7uQyXA.webp
 category: announcements
 layout: blog
 ---
@@ -16,12 +16,12 @@ At [Google I/O 2018](https://events.google.com/io/), the Material team [announce
 
 - Matías Duarte, VP, Material Design
 
-<DashImage figure src="images/1cyTGpzWuHqvYFGTV7uQyXA.png" alt="UI elements from the ‘Shrine brand-specific design’ using
+<DashImage figure src="images/1cyTGpzWuHqvYFGTV7uQyXA.webp" alt="UI elements from the ‘Shrine brand-specific design’ using
 Material Theming and Material Components" caption="UI elements from the ‘Shrine brand-specific design’ using
 Material Theming and Material Components" />
 
 
-<DashImage figure src="images/1L2vOm-w6u4c-WRU6qZ9W_A.png" alt="A screenshot from the Shrine design implemented using Flutter & Material Components" caption="A screenshot from the Shrine design implemented using Flutter & Material Components" />
+<DashImage figure src="images/1L2vOm-w6u4c-WRU6qZ9W_A.webp" alt="A screenshot from the Shrine design implemented using Flutter & Material Components" caption="A screenshot from the Shrine design implemented using Flutter & Material Components" />
 
 
 ### Official Flutter support for Material Components
@@ -32,7 +32,7 @@ One of Flutter’s core tenets is best-in-class support for creating expressive 
 
 Just in time for I/O, Flutter’s Material Components library has been updated to support dozens of new features, styles, and components from the updated Material system. These are available in [Flutter beta 3](https://medium.com/flutter-io/flutter-beta-3-7d88125245dc), and are built right into the Flutter framework with no additional libraries needed! We have also worked on adding more examples of how to use these widgets in the [Flutter Gallery](https://play.google.com/store/apps/details?id=io.flutter.demo.gallery):
 
-<DashImage figure src="images/13U83sHXcjpSZCceOlIjyHg.png" alt="A selection of Material Components from the Flutter Gallery" caption="A selection of Material Components from the Flutter Gallery" />
+<DashImage figure src="images/13U83sHXcjpSZCceOlIjyHg.webp" alt="A selection of Material Components from the Flutter Gallery" caption="A selection of Material Components from the Flutter Gallery" />
 
 
 ## Learning more

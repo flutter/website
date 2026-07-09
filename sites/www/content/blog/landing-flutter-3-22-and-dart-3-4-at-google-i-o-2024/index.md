@@ -25,7 +25,7 @@ If you want more details on everything included in the releases, check out the d
 
 Flutter developers are busy launching large, new apps into the app stores. Let’s look at a few.
 
-<DashImage figure src="images/0cF6UE3y05YTyMBQn.png" />
+<DashImage figure src="images/0cF6UE3y05YTyMBQn.webp" />
 
 
 ### Helping large, enterprise-scale applications deliver on mobile and the web
@@ -55,7 +55,7 @@ Our support for Wasm has been a deep, multi-year investment. First we partnered 
 
 So what’s the net result? We’re seeing much improved performance, approaching what we have on mobile and desktop devices running machine code. In our internal benchmarks (in Chrome on an M1 MacBook), the frame rendering time of [Wonderous](https://flutter.gskinner.com/wonderous/) improved by 2x in the general case and by 3x for the 99% worst case performance. Improved rendering performance is critical in demanding apps that feature animations and rich transitions, where exceeding the frame budget (the time allocated to render the next frame) causes very visible jank. Wasm has the potential to eliminate that, as illustrated by the juxtaposition below of the Wonderous app running with our traditional JS compilation compared to Wasm compilation.
 
-<DashImage figure src="images/0ebpdPSPlak3EwoAU.gif" alt="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" caption="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" />
+<DashImage figure src="images/0ebpdPSPlak3EwoAU.webp" alt="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" caption="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" />
 
 
 Wasm compilation for Flutter web apps is available in stable today. To get started, check out our [Dart Wasm documentation](https://dart.dev/web/wasm) and [Flutter Wasm documentation](https://docs.flutter.dev/platform-integration/web/wasm).
@@ -70,7 +70,7 @@ Today, we’re announcing a preview of a better option for JSON: the [JsonCodabl
 
 Macros are code that creates more code. They’re like code generation, except the macro system is *built into Dart* and happens *in real-time* as you are editing and running the code. It’s an integrated experience without delays, fully supporting our existing developer workflows such as hot reload, as illustrated by this screencast:
 
-<DashImage figure src="images/0rWeEWxzBvcmOFNM4.gif" alt="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" caption="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" />
+<DashImage figure src="images/0rWeEWxzBvcmOFNM4.webp" alt="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" caption="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" />
 
 
 We’re excited to see macros solve all kinds of problems for our developers. Take, for example, data classes, the [highest voted](https://github.com/dart-lang/language/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc) Dart language feature. Beyond specific applications, our eventual goal is to have a macro system in Dart that allows users to create their own macros and raise the abstraction level of Dart programming.
@@ -79,7 +79,7 @@ Designing and implementing such a powerful macro system is a large task, so ther
 
 ## New resources for Flutter game development
 
-<DashImage figure src="images/0F19xflZ4BfoCekFQ.png" />
+<DashImage figure src="images/0F19xflZ4BfoCekFQ.webp" />
 
 
 We’re seeing promising results from our early investment in games, including success stories from industry leaders like [Etermax](http://flutter.dev/showcase/etermax) and [Supercell](http://flutter.dev/showcase/supercell), who are each leveraging Flutter’s power and flexibility to efficiently deliver delightful user experiences and expand their reach.

@@ -3,7 +3,7 @@ title: "Progress of the Flutter Package Ecosystem"
 description: "Continued growth, new Flutter Favorites, Ecosystem Virtual Summit and things to know"
 publishDate: 2024-01-22
 author: anderdobo
-image: images/0tkq_040X0xa_Noms.png
+image: images/0tkq_040X0xa_Noms.webp
 category: announcements
 layout: blog
 ---
@@ -12,14 +12,14 @@ layout: blog
 
 The Flutter and Dart package ecosystem remains a key enabler for developers to build beautiful, performant apps for any screen from a single codebase. The ecosystem grew 26% in 2023 from 38,000 packages in January to 48,000 at the end of December.
 
-<DashImage figure src="images/0tkq_040X0xa_Noms.png" />
+<DashImage figure src="images/0tkq_040X0xa_Noms.webp" />
 
 
 Pub.dev now has more than 700,000 monthly active users as of January 2024. The Flutter team remains keen and committed to supporting this growth into the future, and enabling developers to build with and contribute to Flutter and Dart. In this update, we’ll take a look at the newest Flutter Favorites, results of the Package Ecosystem Virtual Summit and share some notable updates and things to know.
 
 ## New Flutter Favorites
 
-<DashImage figure src="images/0gI42oCiw6spGZfOy.png" />
+<DashImage figure src="images/0gI42oCiw6spGZfOy.webp" />
 
 
 The [Flutter Favorites](https://docs.flutter.dev/packages-and-plugins/favorites) program recognizes and helps developers discover the highest quality packages to consider using in their apps. We’re pleased to announce seven new Flutter Favorite packages that have demonstrated exceptional quality, popularity, and community engagement, making them invaluable tools for Flutter developers. Let’s dive into each:
@@ -44,7 +44,7 @@ We decided to sunset the Happy Paths program to enable a more dedicated focus on
 
 ## Package Ecosystem Virtual Summit
 
-<DashImage figure src="images/0NzfQsOUhVaeUcGB8.png" />
+<DashImage figure src="images/0NzfQsOUhVaeUcGB8.webp" />
 
 
 At the end of August 2023, we held a first-time [virtual summit](https://rsvp.withgoogle.com/events/flutter-package-ecosystem-summit-2023) for the Flutter and Dart package ecosystem, attended by more than 50 non-Googler and Googler contributors to [pub.dev](https://pub.dev/). We started with a relatively small invitee list to fit the unconference-style format, and to learn from this first-time event before figuring out what it might look like in the future. The goal was to bring contributors together in unconference-style discussions to plan, educate, learn, and share amongst the community. We had three discussion sessions, each on topics that were voted on by registered attendees in the weeks leading up to the summit. The three discussion topics were 1) Building high quality packages — best practices, and challenges, 2) Maintaining packages long term — sustainable models, and 3) Flutter and Dart DevTools Extensions. ****Respondents to the post-event survey gave us insightful feedback that we’ll incorporate in future event planning. Thank you! Overall, we consider this first summit a success. Going forward, we’re keen to partner with the community on similar standalone events, or sessions focused on the Flutter and Dart ecosystem, set within more general events.
@@ -71,14 +71,14 @@ There are a lot more developments between v5.0.0 in January and v15.0.2 in Decem
 
 [DartPad](https://dartpad.dev/) supports a fixed set of packages that you can view by clicking the info icon in the bottom, right-hand corner of the screen. The Flutter and Dart team at Google reviews and prioritizes package requests on an ongoing basis. If you’d like a package to be added to DartPad, add your thumbs up to an [existing package suggestion](https://github.com/dart-lang/dart-pad/issues?q=is%3Aissue+is%3Aopen+label%3Asuggested-package+sort%3Areactions-%2B1-desc), if there is one, or [open a new issue](https://github.com/dart-lang/dart-pad/issues/new?assignees=&labels=&projects=&template=everything-else.md&title=) with your suggestion.
 
-<DashImage figure src="images/0U2blC-2k01FIuCsZ.png" />
+<DashImage figure src="images/0U2blC-2k01FIuCsZ.webp" />
 
 
 ## Proposal for canonical topics on pub.dev
 
 In 2023 we launched the ability for package authors to tag their package with 1–5 free text topics in the pubspec file. The goal was to improve discovery of packages by potential users by adding a form of package categorization. We’ve seen a healthy uptake of the feature with many packages tagged. We’re exploring a proposal to improve the feature by merging topics that are effectively the same (For example, `widget` and `widgets`). We invite the community to share feedback or contribute PRs to this [canonicalize topics issue](https://github.com/dart-lang/pub-dev/issues/7263).
 
-<DashImage figure src="images/0BhBIcosj4JSij9xk.png" />
+<DashImage figure src="images/0BhBIcosj4JSij9xk.webp" />
 
 
 That’s it for now! To engage with the amazing community of package authors, check out the [#package-authors](https://discord.com/channels/608014603317936148/1014208569706561567) Discord channel (you first need to join the [Flutter Discord server](https://github.com/flutter/flutter/wiki/Chat)).

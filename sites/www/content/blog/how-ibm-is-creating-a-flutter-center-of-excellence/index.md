@@ -3,7 +3,7 @@ title: "How IBM is creating a Flutter Center of Excellence"
 description: "Learn why and how IBM makes their clients successful with Flutter"
 publishDate: 2023-09-13
 author: jjmutter
-image: images/1YqawQ_2If_xPlvIbC0mj3g.png
+image: images/1YqawQ_2If_xPlvIbC0mj3g.webp
 category: spotlight
 layout: blog
 ---
@@ -20,7 +20,7 @@ By targeting multiple platforms from a single codebase, our team can prototype, 
 
 During the early days of the Covid-19 crisis, the government of Bizkaia, Spain approached IBM to help keep its citizens informed of the latest actions and news. They needed a mobile app — in two weeks. With Flutter, the first version of the app was published in just 11 days. It quickly became the third most-downloaded app in the region.
 
-<DashImage figure src="images/1YqawQ_2If_xPlvIbC0mj3g.png" />
+<DashImage figure src="images/1YqawQ_2If_xPlvIbC0mj3g.webp" />
 
 > “In such a constrained timeframe, Flutter came to our rescue. It was the quickest hard decision we took and one of the most relevant we made. Building the app both for iOS and Android was like having super powers for our development team and beating the race against the clock.”
 — IBM Project Director Joanra Mallart

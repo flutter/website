@@ -3,7 +3,7 @@ title: "Flutter: Don’t Fear the Garbage Collector"
 description: "Flutter uses Dart as a development language and as a runtime. Dart’s runtime is ever-present, both in debug and release modes, but there…"
 publishDate: 2019-01-04
 author: mjohnsullivan
-image: images/1oVVba1QhXL1hUBKE9sfenw.png
+image: images/1oVVba1QhXL1hUBKE9sfenw.webp
 category: tutorial
 layout: blog
 ---
@@ -12,7 +12,7 @@ Flutter uses [Dart](https://www.dartlang.org/) as a development language and as 
 
 In debug mode, most of Dart’s plumbing is shipped to the device: the Dart runtime, the just-in-time compiler/interpreter (JIT for Android and interpreter for iOS), debugging and profiling services. In release mode, the JIT/interpreter and debugging services are stripped out, but the runtime remains, and this is a major contributor to the base size of a Flutter app.
 
-<DashImage figure src="images/1oVVba1QhXL1hUBKE9sfenw.png" alt="*Dart components in Flutter’s debug and release modes*" caption="*Dart components in Flutter’s debug and release modes*" />
+<DashImage figure src="images/1oVVba1QhXL1hUBKE9sfenw.webp" alt="*Dart components in Flutter’s debug and release modes*" caption="*Dart components in Flutter’s debug and release modes*" />
 
 
 Dart’s runtime includes a garbage collector, a necessary component for allocating and deallocating memory as objects are instantiated and become unreachable.
@@ -47,7 +47,7 @@ To determine which objects are alive or dead, the collector starts with root obj
 
 For more information on this, check out [Cheney’s algorithm](https://en.wikipedia.org/wiki/Cheney%27s_algorithm).
 
-<DashImage figure src="images/1pNaeZ0l8oMCP-f1UUs-V1g.png" alt="*Young Space Scavenger garbage collection*" caption="*Young Space Scavenger garbage collection*" />
+<DashImage figure src="images/1pNaeZ0l8oMCP-f1UUs-V1g.webp" alt="*Young Space Scavenger garbage collection*" caption="*Young Space Scavenger garbage collection*" />
 
 
 ### Parallel Marking and Concurrent Sweeping

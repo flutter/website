@@ -3,7 +3,7 @@ title: "Flutter’s iOS Application Bundle"
 description: "This document describes how Flutter’s build system converts your Flutter project (along with its assets), into an iOS application bundle. I…"
 publishDate: 2018-07-20
 author: chinmaygarde
-image: images/1xfvovQJT-5OsHBDBIQa92A.png
+image: images/1xfvovQJT-5OsHBDBIQa92A.webp
 category: tutorial
 layout: blog
 ---
@@ -18,7 +18,7 @@ All the information in this document applies to iOS application bundles prepared
 
 A Flutter application renders the user interface into a single view in the native view hierarchy.
 
-<DashImage figure src="images/1xfvovQJT-5OsHBDBIQa92A.png" alt="The Flutter view hierarchy visualized in Xcode. There is not much to see." caption="The Flutter view hierarchy visualized in Xcode. There is not much to see." />
+<DashImage figure src="images/1xfvovQJT-5OsHBDBIQa92A.webp" alt="The Flutter view hierarchy visualized in Xcode. There is not much to see." caption="The Flutter view hierarchy visualized in Xcode. There is not much to see." />
 
 
 ## The Application Bundle

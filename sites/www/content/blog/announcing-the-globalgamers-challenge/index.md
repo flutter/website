@@ -3,12 +3,12 @@ title: "Announcing the #GlobalGamers Challenge"
 description: "Build epic Flutter games to assist in the battle to defend the planet"
 publishDate: 2024-01-09
 author: kkboateng
-image: images/0e6DUZrDIvURyxTW2.png
+image: images/0e6DUZrDIvURyxTW2.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/0e6DUZrDIvURyxTW2.png" />
+<DashImage figure src="images/0e6DUZrDIvURyxTW2.webp" />
 
 
 We know Flutter devs love a good [challenge](https://flutter.dev/events/puzzle-hack), so just in time for the new year, we’re excited to announce the next Flutter challenge!
@@ -30,7 +30,7 @@ Europe is home to many of the world’s greatest public transportation systems. 
 
 We’re confident that games can encourage players to take small, real life, actions that add up to a large impact for the environment. In fact, [if you’d like to take direct action on these items, check out the campaigns Global Citizen is running now](https://www.globalcitizen.org/en/categories/defend-the-planet/).
 
-<DashImage figure src="images/0BI7eVnRDmTOmFkaQ.gif" />
+<DashImage figure src="images/0BI7eVnRDmTOmFkaQ.webp" />
 
 
 ## Why join the Global Gamers Challenge?
@@ -79,12 +79,12 @@ We’ve compiled a bunch of [resources](http://flutter.dev/global-gamers/#resour
 
 We recommend completing this challenge as part of a team. When you [register for the challenge](http://globalgamers.devpost.com/) on Devpost, you’ll be able to share your skillset, your team status, and your ideas.
 
-<DashImage figure src="images/0fJPnnrD19GKt6MiK.png" />
+<DashImage figure src="images/0fJPnnrD19GKt6MiK.webp" />
 
 
 So, whether you have a great idea but need teammates with technical skills to bring it to life, or if you have the technical skills, but want a great idea, make sure to fill out your profile accordingly and then peruse the [participants tab](https://globalgamers.devpost.com/participants) and look for folks whose profile details match what you’re looking for!
 
-<DashImage figure src="images/0L51Psa66pNh99Rsd.png" />
+<DashImage figure src="images/0L51Psa66pNh99Rsd.webp" />
 
 
 We’re particularly excited for the ideas that will come from technologists and activists working together towards a common goal. If you need extra support in finding a teammate, read over this [help article](https://help.devpost.com/hc/en-us/articles/360022031411-Participants-page-forming-a-team).

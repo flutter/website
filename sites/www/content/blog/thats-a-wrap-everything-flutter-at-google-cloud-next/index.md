@@ -3,12 +3,12 @@ title: "That’s a wrap: Everything Flutter at Google Cloud Next"
 description: "Our team has been hard at work this Spring, preparing to meet over 30,000 of you in Las Vegas for Google Cloud Next. For those who couldn’t…"
 publishDate: 2026-04-27
 author: twerske
-image: images/1MdrcuqmMZPxXdrkJbDAdIA.png
+image: images/1MdrcuqmMZPxXdrkJbDAdIA.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1MdrcuqmMZPxXdrkJbDAdIA.png" alt="Google Cloud Next Recap 2026" caption="Google Cloud Next Recap 2026" />
+<DashImage figure src="images/1MdrcuqmMZPxXdrkJbDAdIA.webp" alt="Google Cloud Next Recap 2026" caption="Google Cloud Next Recap 2026" />
 
 
 ## That’s a wrap: Everything Flutter at Google Cloud Next
@@ -30,7 +30,7 @@ Check out the announcement blog, and documentation, and stay tuned for a full br
 <DashImage figure src="images/1HIkUhLDGGJknOoFb8AC2GQ.jpeg" alt="The GenLatte booth" caption="The GenLatte booth" />
 
 
-<DashImage figure src="images/1TIrEkPNew4nRhnOX_JZeKw.png" alt="Use a Flutter app to order a latte with custom foam art!" caption="Use a Flutter app to order a latte with custom foam art!" />
+<DashImage figure src="images/1TIrEkPNew4nRhnOX_JZeKw.webp" alt="Use a Flutter app to order a latte with custom foam art!" caption="Use a Flutter app to order a latte with custom foam art!" />
 
 
 <DashImage figure src="images/175RjqqMruwwRcwQVWjkmcQ.jpeg" alt="Attendees enjoying their custom lattes" caption="Attendees enjoying their custom lattes" />
@@ -47,12 +47,12 @@ Check out the announcement blog, and documentation, and stay tuned for a full br
 <DashImage figure src="images/1g7pI_LsKz7SMDpaDrsw1GA.jpeg" alt="Demoing Firebase Functions for Dart" caption="Demoing Firebase Functions for Dart" />
 
 
-<DashImage figure src="images/1ftJN2u294p-nycRBfkwigQ.gif" alt="The Partiful app— the UI you see is generated on the fly" caption="The Partiful app— the UI you see is generated on the fly" />
+<DashImage figure src="images/1ftJN2u294p-nycRBfkwigQ.webp" alt="The Partiful app— the UI you see is generated on the fly" caption="The Partiful app— the UI you see is generated on the fly" />
 
 
 * **The Builder hub:** This served as the “home base” for the developer community on the Expo floor. It featured dedicated booths for **Flutter** and our friends at Firebase and Go, providing a space for developers to connect with experts and explore new tools.
 
-<DashImage figure src="images/1g7OlGkj6nfHBCjiX3MNFDA.png" alt="The Builder Hub where developers can greet, meet, and repeat" caption="The Builder Hub where developers can greet, meet, and repeat" />
+<DashImage figure src="images/1g7OlGkj6nfHBCjiX3MNFDA.webp" alt="The Builder Hub where developers can greet, meet, and repeat" caption="The Builder Hub where developers can greet, meet, and repeat" />
 
 
 ## Key sessions & customer stories
@@ -67,7 +67,7 @@ Check out the announcement blog, and documentation, and stay tuned for a full br
 
 * **Toyota & Talabat:** Real-world enterprise success was a major theme. Abdallah Shaban took the stage alongside industry leaders to showcase how Flutter is transforming their core products. [Toyota shared how they are revolutionizing automotive UX using Flutter](https://www.youtube.com/watch?v=A3ApoV_QRio) for their next-generation infotainment systems, while [Talabat demonstrated how they innovate faster and scale across the Middle East](https://www.youtube.com/watch?v=A3ApoV_QRio) using the framework.
 
-<DashImage figure src="images/1Z5ZnnwJZgPjU71ahEdXKMg.png" alt="Toyota session" caption="Toyota session" />
+<DashImage figure src="images/1Z5ZnnwJZgPjU71ahEdXKMg.webp" alt="Toyota session" caption="Toyota session" />
 
 
 <DashImage figure src="images/1JTvcXKm4OadZ9FjHAyjAzg.jpeg" alt="Talabat session" caption="Talabat session" />

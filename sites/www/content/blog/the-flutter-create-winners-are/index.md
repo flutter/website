@@ -29,21 +29,21 @@ We hope you had fun using [Flutter](http://flutter.dev), and participating in th
 
 ## Grand Prize Winner: Compass by Zebiao Hu
 
-<DashImage figure src="images/09r31IUKmyYJdBwX0.gif" />
+<DashImage figure src="images/09r31IUKmyYJdBwX0.webp" />
 
 
 [This app](https://github.com/zesage/flutter_compass) is a polished, custom-designed fully functioning compass. Once you scroll up, it displays a globe that users can rotate and get real-time weather data wherever the red dot is placed.
 
 ## Visual Beauty Winner: Relax by Erin Morrissey
 
-<DashImage figure src="images/0PfWbKHdiDVCfn3b-.gif" />
+<DashImage figure src="images/0PfWbKHdiDVCfn3b-.webp" />
 
 
 [Relax](https://github.com/erinmorrissey/relax) is a beautiful audio meditation app that displays imagery of rain, forest, sunset, and ocean with corresponding sounds.
 
 ## Code Quality Winner: Pocket Piano by Rody Davis
 
-<DashImage figure src="images/0bsrTVoVwYi38mp0m.gif" />
+<DashImage figure src="images/0bsrTVoVwYi38mp0m.webp" />
 
 
 A piano built for both iOS and Android. You can change the octave (by sliding to the left or right), and key width, toggle labels on the keys, and play any note (or notes) by tapping. The piano also fully supports semantics for screen reader users. [Check out their tutorial](https://rodydavisjr.com/2019/03/12/making-a-piano/) to build the app yourself.
@@ -57,7 +57,7 @@ A piano built for both iOS and Android. You can change the octave (by sliding to
 
 ## Novelty of Idea Winner: Flutter Events by Noel Jacob
 
-<DashImage figure src="images/0peT4RsFqjTeCAeBn.gif" />
+<DashImage figure src="images/0peT4RsFqjTeCAeBn.webp" />
 
 
 [This app](https://github.com/noejac123/Flutter-Event) allows event calendars to be encoded in QR codes so that attendees can quickly see what is happening at their event. It is impressive how much of an application’s UI can be stored in a JSON file (in a QR code) rather than being hard-coded in the application.

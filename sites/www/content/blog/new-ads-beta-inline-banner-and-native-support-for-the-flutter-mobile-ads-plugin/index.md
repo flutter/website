@@ -3,7 +3,7 @@ title: "New ad formats for Flutter"
 description: "Beta program opens for inline banner and native ads support"
 publishDate: 2020-11-11
 author: haddadniaj
-image: images/10kWrLLh_g2Ywwgcs_iAL-w.png
+image: images/10kWrLLh_g2Ywwgcs_iAL-w.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ There are many ways that mobile app developers get paid for their work. Monetizi
 
 [Native ad format support](https://github.com/flutter/flutter/issues/12114), in particular, is one of the top five requested features for Flutter. The previously available Google ads plugin (also known as the `firebase_admob` plugin) provided by the Flutter team supported overlay banner, interstitial, and rewarded video, but couldn’t render formats such as inline banner or native ads.
 
-<DashImage figure src="images/10kWrLLh_g2Ywwgcs_iAL-w.png" />
+<DashImage figure src="images/10kWrLLh_g2Ywwgcs_iAL-w.webp" />
 
 
 ## Inline Banner and Native Ads

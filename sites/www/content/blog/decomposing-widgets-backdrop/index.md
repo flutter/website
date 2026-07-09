@@ -12,7 +12,7 @@ While it’s easy to create custom widgets in Flutter, it’s often useful to ex
 
 [Hans Muller](https://github.com/HansMuller) and [Mary Xia](https://github.com/maryx) created Backdrop, a widget that implements the [Material Backdrop component](https://material.io/design/components/backdrop.html), and used in the Flutter Gallery, [Flutter’s Udacity course](https://www.udacity.com/course/build-native-mobile-apps-with-flutter--ud905) and the [Flutter Material Design talk](https://www.youtube.com/watch?v=hA0hrpR-o8U) at I/O 2018. Backdrop manages a front layer widget that overlays a back layer and can be opened and closed.
 
-<DashImage figure src="images/0RLNPIlZaftyTRlhw.gif" alt="Unit Converter app from Flutter’s Udacity course" caption="Unit Converter app from Flutter’s Udacity course" />
+<DashImage figure src="images/0RLNPIlZaftyTRlhw.webp" alt="Unit Converter app from Flutter’s Udacity course" caption="Unit Converter app from Flutter’s Udacity course" />
 
 
 Backdrop uses a number of Flutter widgets to accomplish this: Stack, Expanded, LayoutBuilder, Animation, Tween, and PositionedTransition. It serves as a good example of how to compose standard Flutter widgets together to create something more complex.
@@ -206,7 +206,7 @@ void didUpdateWidget(Backdrop oldWidget) {
 
 The SimpleExample widget shows how to use Backdrop in the simplest of cases. Clicking the button changes the value in ValueNotifier and triggers the front layer to open or close. The notifier is also used to change the Text widget in the back layer.
 
-<DashImage figure src="images/0EhUXhOHx6i4KCuUj.gif" alt="Simple example" caption="Simple example" />
+<DashImage figure src="images/0EhUXhOHx6i4KCuUj.webp" alt="Simple example" caption="Simple example" />
 
 
 ## ComplexExample
@@ -269,7 +269,7 @@ Center(
 
 The buttons in the back layer control which widget is displayed in the front layer.
 
-<DashImage figure src="images/0RLdUfeFhMFa502tl.gif" alt="Complex example" caption="Complex example" />
+<DashImage figure src="images/0RLdUfeFhMFa502tl.webp" alt="Complex example" caption="Complex example" />
 
 
 ## Final Thoughts

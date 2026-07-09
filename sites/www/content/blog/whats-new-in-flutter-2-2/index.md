@@ -3,7 +3,7 @@ title: "What’s new in Flutter 2.2"
 description: "The Flutter 2.2 release focuses on polish and optimization, including iOS performance improvements, Android deferred components, updated…"
 publishDate: 2021-05-19
 author: csells
-image: images/0fS4WbRPwmo_FQgDo.png
+image: images/0fS4WbRPwmo_FQgDo.webp
 category: releases
 layout: blog
 ---
@@ -69,7 +69,7 @@ While we’ve made significant progress with support for a set of core accessibi
 
 And last but certainly not least, the latest version of Flutter DevTools now supports the layout explorer for your Flutter web apps.
 
-<DashImage figure src="images/0fS4WbRPwmo_FQgDo.png" />
+<DashImage figure src="images/0fS4WbRPwmo_FQgDo.webp" />
 
 
 This update gives you the same layout debugging tool on the web that you’re used to with your mobile and desktop apps.
@@ -93,7 +93,7 @@ And, finally, for sample apps that have been written for multiple platforms acco
 
 The UX portions of the Flutter platform adaptive apps guidance is based on the new [Material Guidance for Large Screens](https://material.io/blog/material-design-for-large-screens). This new guidance from the Material team includes reworks of several of the main layout articles as well as updates to several components and an updated Design Kit, all with large screens in mind.
 
-<DashImage figure src="images/0ROXD5MqgkYuZgDZQ.png" />
+<DashImage figure src="images/0ROXD5MqgkYuZgDZQ.webp" />
 
 
 Flutter’s goal has always been to enable apps that do more than just run on multiple platforms; we’re not done until your apps run *great* on all of the platforms you’re targeting. Flutter has the support you need to not only target your app at multiple platforms but also intends to *tailor* your apps for screen size, input modes, and idioms of each of these platforms.
@@ -102,15 +102,15 @@ Flutter’s goal has always been to enable apps that do more than just run on mu
 
 And on the subject of Material guidance, in this release we’ve landed not one but [two](https://github.com/flutter/flutter/pull/76607) [separate](https://github.com/flutter/flutter/pull/78311) PRs adding new Material icons to Flutter, including an icon for Dash herself!
 
-<DashImage figure src="images/0hlsSKR8Uco4AurMH.png" />
+<DashImage figure src="images/0hlsSKR8Uco4AurMH.webp" />
 
 
-<DashImage figure src="images/0K7L6ppH1A1gBmVY-.png" />
+<DashImage figure src="images/0K7L6ppH1A1gBmVY-.webp" />
 
 
 These updates bring the total number of Material icons for your apps up to more than 7,000. If you have trouble finding the icon you’re looking for in that embarrassment of riches (who wouldn’t?) you can search by category and name at [fonts.google.com/icons](http://fonts.google.com/icons).
 
-<DashImage figure src="images/0NofBGAEBtDHtwclP.png" alt="Searching for Flutter Material icons by name" caption="Searching for Flutter Material icons by name" />
+<DashImage figure src="images/0NofBGAEBtDHtwclP.webp" alt="Searching for Flutter Material icons by name" caption="Searching for Flutter Material icons by name" />
 
 
 Once you find the perfect icon, the new ‘Flutter’ tab shows you how to use it, or you can download just that icon for use as a stand-alone asset in your app. Adding Dash to your Flutter app has never been easier.
@@ -148,7 +148,7 @@ class HomePage extends StatelessWidget {
 
 ```
 
-<DashImage figure src="images/0krVx4ycTN2nTl7wO.png" alt="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" caption="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" />
+<DashImage figure src="images/0krVx4ycTN2nTl7wO.webp" alt="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" caption="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" />
 
 
 Custom text actions allow you to do things like special handling of the Enter key in a TextField; for example, you can trigger sending a message in a chat client while still allowing a newline to be inserted via Ctrl+Enter. These same text actions [allow Flutter itself to provide different keystrokes](https://github.com/flutter/flutter/pull/75032) to match the behavior of text editing to the host OS itself, for example, Ctrl+C on Windows and Linux, but Cmd+C on macOS.
@@ -231,7 +231,7 @@ class ClearAction extends Action<ClearIntent> {
 }
 ```
 
-<DashImage figure src="images/0RFbQWBEWCoP4PF1j.png" alt="Unforgiving TextField example where pressing left arrow or ESC clears the text" caption="Unforgiving TextField example where pressing left arrow or ESC clears the text" />
+<DashImage figure src="images/0RFbQWBEWCoP4PF1j.webp" alt="Unforgiving TextField example where pressing left arrow or ESC clears the text" caption="Unforgiving TextField example where pressing left arrow or ESC clears the text" />
 
 
 We’ve still got more work to do, but we’re working to give you complete text editing actions. Our goal is that, by the time Flutter desktop gets to stable, your users won’t be able to tell the difference between editing text in their Flutter apps vs any other app on the host OS.
@@ -269,7 +269,7 @@ class HomePage extends StatelessWidget {
 
 When running it on the desktop, a scrollbar appears:
 
-<DashImage figure src="images/0ymJePefMMrQBezVi.png" />
+<DashImage figure src="images/0ymJePefMMrQBezVi.webp" />
 
 
 If you don’t like the way the scrollbar looks or that it’s always shown, you can set a [`ScrollBarTheme`](https://api.flutter.dev/flutter/material/ThemeData/scrollbarTheme.html). If you don’t like this default behavior, you can change it app-wide or on a particular instance by setting a [`ScrollBehavior`](https://api.flutter.dev/flutter/widgets/ScrollBehavior-class.html). For more details about the new default scrollbar behavior and how to migrate your code to the new set of best practices, check out [the docs on flutter.dev](https://flutter.dev/docs/release/breaking-changes/default-desktop-scrollbars).
@@ -326,7 +326,7 @@ class HomePage extends StatelessWidget {
 
 Now you can have all of the wrapping text spans you want and any of them with recognizers will get the appropriate mouse cursors.
 
-<DashImage figure src="images/0u6tJI44Ucu9fDvAb.png" />
+<DashImage figure src="images/0u6tJI44Ucu9fDvAb.webp" />
 
 
 In this release, `TextSpan` also supports `onEnter` and `onExit` along with the `mouseCursor`. Things like this may seem small but they go a long way towards making a Flutter app feel just like a user expects it to feel.
@@ -347,7 +347,7 @@ Therefore, until now, the only way to avoid this jank on iOS was to simplify sce
 
 However, right now on the dev channel is a preview of [the new support in Skia for shader warm-up for Metal](https://github.com/flutter/flutter/issues/79298). Through Skia, Flutter now compiles the bundled shaders before the first frame workload begins.
 
-<DashImage figure src="images/00_8hDcyhjXasCJX3.png" alt="Traces showing precompilation occuring during application launch" caption="Traces showing precompilation occuring during application launch" />
+<DashImage figure src="images/00_8hDcyhjXasCJX3.webp" alt="Traces showing precompilation occuring during application launch" caption="Traces showing precompilation occuring during application launch" />
 
 
 This solution comes with some caveats, however:
@@ -376,7 +376,7 @@ You can follow along with [this project in the Flutter repo](https://github.com/
 
 For Android, this release uses Dart’s split AOT compilation feature to [allow Flutter apps to download modules containing ahead-of-time compiled code and assets at runtime](https://github.com/flutter/flutter/pull/76192). We call each of these installable splits a *deferred component*. By deferring the download of code and assets to only when needed, initial install size can be significantly reduced. For example, we implemented a version of Flutter Gallery with all studies and demos deferred and saw a 46% decrease in initial install size.
 
-<DashImage figure src="images/0uLg1AGohi6Xzud9H.gif" alt="Downloading the Crane study in the Flutter Gallery" caption="Downloading the Crane study in the Flutter Gallery" />
+<DashImage figure src="images/0uLg1AGohi6Xzud9H.webp" alt="Downloading the Crane study in the Flutter Gallery" caption="Downloading the Crane study in the Flutter Gallery" />
 
 
 When building with deferred components enabled, Dart compiles code imported exclusively with the `deferred` keyword into separate shared libraries that are packed into deferred components together with assets.
@@ -406,7 +406,7 @@ $ flutter run -d winuwp*
 
 Because you’re building a Windows UWP app, which runs in a sandbox environment on Windows, you’ll need to punch a hole in the app’s firewall on localhost during development to enable things like hot reload and debugger breakpoints. You can do that with a `checknetisolation` command by following the instructions on [the Flutter desktop docs page](http://flutter.dev/desktop/#windows-uwp). Once you’ve done that, you can see your favorite Flutter app running as a UWP app on Windows.
 
-<DashImage figure src="images/0d2HU5GSLz88DZ7pv.png" alt="Your favorite Flutter app running in a Windows UWP container" caption="Your favorite Flutter app running in a Windows UWP container" />
+<DashImage figure src="images/0d2HU5GSLz88DZ7pv.webp" alt="Your favorite Flutter app running in a Windows UWP container" caption="Your favorite Flutter app running in a Windows UWP container" />
 
 
 Of course, you can run much more interesting UWP apps, like these Flutter apps running on an Xbox.
@@ -420,7 +420,7 @@ Special shout out to [clarkezone](https://github.com/clarkezone) who’s been wo
 
 Another excellent effort by a Flutter community member-at-large is from [HidenoriMatsubayashi](https://github.com/HidenoriMatsubayashi), a software engineer at Sony, who has contributed [support for targeting ARM64 Linux](https://github.com/flutter/flutter/pull/61221). This PR enables you to build and run Flutter apps on ARM64 Linux machines.
 
-<DashImage figure src="images/0hZswrrQ3ANrj6spe.png" alt="Your favorite Flutter app running on an ARM64 Linux machine" caption="Your favorite Flutter app running on an ARM64 Linux machine" />
+<DashImage figure src="images/0hZswrrQ3ANrj6spe.webp" alt="Your favorite Flutter app running on an ARM64 Linux machine" caption="Your favorite Flutter app running on an ARM64 Linux machine" />
 
 
 It’s exciting to see the Flutter community bringing Flutter to places that the team at Google could never have imagined. Keep up the good work, HidenoriMatsubayashi!
@@ -461,7 +461,7 @@ The `googleapis` plugin provides auto-generated Dart wrappers around 185 Google 
 
 The win32 package is a marvel of engineering, wrapping most of the commonly used Win32 API calls using [Dart FFI](https://dart.dev/guides/libraries/c-interop) to make them accessible to Dart code without requiring a C compiler or the Windows SDK. As Flutter gains popularity on the Windows platform, the `win32` package has become a key dependency for many popular plugins, including [`path_provider`](https://pub.dev/packages/path_provider), one of the most popular. And as a test of completeness, the author [timsneath](https://github.com/timsneath) has done crazy things like implementing [notepad](https://github.com/timsneath/win32/tree/main/example/notepad), [snake](https://github.com/timsneath/win32/blob/main/example/snake.dart) and [tetris](https://github.com/timsneath/win32/tree/main/example/tetris), all in raw Win32 using raw Dart.
 
-<DashImage figure src="images/0rMkCGirgD14ME-Na.png" alt="Tetris running on Windows built using Dart FFI and Win32 calls only" caption="Tetris running on Windows built using Dart FFI and Win32 calls only" />
+<DashImage figure src="images/0rMkCGirgD14ME-Na.webp" alt="Tetris running on Windows built using Dart FFI and Win32 calls only" caption="Tetris running on Windows built using Dart FFI and Win32 calls only" />
 
 
 The `win32` package is definitely worth checking out if you do anything with Dart or Flutter on Windows.
@@ -486,19 +486,19 @@ Flutter DevTools comes with a number of notable updates with this release, inclu
 
 The first memory tracking improvement in this release of DevTools provides the ability to track down where an object was allocated. This is handy to find the location in your code of a memory leak.
 
-<DashImage figure src="images/0mMd1Bs_OZWT7UB0l.png" alt="Flutter DevTools memory tab allocation stack trace" caption="Flutter DevTools memory tab allocation stack trace" />
+<DashImage figure src="images/0mMd1Bs_OZWT7UB0l.webp" alt="Flutter DevTools memory tab allocation stack trace" caption="Flutter DevTools memory tab allocation stack trace" />
 
 
 The second is the ability to inject custom messages into the memory timeline. This allows you to provide markers specific to your app, like before and after you’ve done some memory intensive work so that you can check that you’re cleaning things up properly.
 
-<DashImage figure src="images/0FcPA9ntTT4JPVo5U.png" alt="Flutter DevTools timeline tab custom memory events" caption="Flutter DevTools timeline tab custom memory events" />
+<DashImage figure src="images/0FcPA9ntTT4JPVo5U.webp" alt="Flutter DevTools timeline tab custom memory events" caption="Flutter DevTools timeline tab custom memory events" />
 
 
 As Flutter apps in the wild get larger and larger, we will continue to ensure that Flutter developers have the tools they need to track down and fix memory leaks and runtime issues of all kinds.
 
 It isn’t just runtime issues in your use of the Flutter framework you want to track down; sometimes you want to track down issues related to packages as well. With over 15,000 Flutter-compatible packages and plugins on pub.dev, this becomes increasingly likely as your apps use more packages over time. So, with that in mind, we’ve been experimenting with adding a new **Provider** tab to Flutter DevTools. In fact, this tab was built by [Remi Roussel](https://github.com/rrousselGit), the author of [the `provider` package](http://pub.dev/packages/provider) itself (among many other wonderful things). If you’re running the latest version of Flutter DevTools and you are debugging a Flutter app that uses the `provider` plugin, you’ll automatically get the new **Provider** tab.
 
-<DashImage figure src="images/0UgjcNnlHqFgKCH-t.gif" alt="Flutter DevTools Provider tab in action" caption="Flutter DevTools Provider tab in action" />
+<DashImage figure src="images/0UgjcNnlHqFgKCH-t.webp" alt="Flutter DevTools Provider tab in action" caption="Flutter DevTools Provider tab in action" />
 
 
 The Provider tab shows you the data associated with each of your providers, including real-time changes as you run your app. And as if that weren’t amazing enough, it allows you to change the data directly as a way to test the corner cases of your app!
@@ -517,12 +517,12 @@ This is only a few of the cool new things in Flutter DevTools in this release. F
 
 Both the Visual Studio Code and the IntelliJ/Android Studio IDE extensions for Flutter were updated in this release as well. For example, the Visual Studio Code extension now supports two additional Dart code refactors: Inline Method and Inline Local Variable.
 
-<DashImage figure src="images/0C2RP0oCtMM9fvpgp.gif" alt="The new Dart refactor Inline Method in action" caption="The new Dart refactor Inline Method in action" />
+<DashImage figure src="images/0C2RP0oCtMM9fvpgp.webp" alt="The new Dart refactor Inline Method in action" caption="The new Dart refactor Inline Method in action" />
 
 
 In the Android Studio/IntelliJ extension, we’ve added the ability to print all stack traces to the console with an option.
 
-<DashImage figure src="images/00pqAAk_u0mKtRZx9.png" alt="You can now get all of the stack traces and not just the first one" caption="You can now get all of the stack traces and not just the first one" />
+<DashImage figure src="images/00pqAAk_u0mKtRZx9.webp" alt="You can now get all of the stack traces and not just the first one" caption="You can now get all of the stack traces and not just the first one" />
 
 
 This is helpful in projects where the root cause might be in a different package, which previously wasn’t being printed. We already have ideas on how to make this less obviously verbose, so look for more changes in the future.
@@ -541,7 +541,7 @@ For the full list of changes to the IDE extensions for this release, check out t
 
 To ensure that we have documentation ready across a rapidly growing Flutter developer community, the Dart and Flutter teams are always looking at ways to improve and expand the ways to create educational content. With this release, we’re adding a new, step-by-step UI for DartPad that devs can use to follow along with instructor-led workshops.
 
-<DashImage figure src="images/058dlCP5YlIl5BdvR.png" alt="A DartPad workshop in action" caption="A DartPad workshop in action" />
+<DashImage figure src="images/058dlCP5YlIl5BdvR.webp" alt="A DartPad workshop in action" caption="A DartPad workshop in action" />
 
 
 By adding instructions directly to DartPad, we’re enabling [a guided workshop experience for I/O](https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop). However, we didn’t just build it for our own workshops; if you’d like to use it in your Dart or Flutter workshops, you can do so by following [the DartPad Workshop Authoring Guide](https://github.com/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide). This is in addition to being able to [share code using DartPad in a Gist](https://github.com/dart-lang/dart-pad/wiki/Sharing-Guide) and [embedding DartPad in your own site](https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide), which have been available for awhile now.
@@ -571,7 +571,7 @@ You can [find mitigations for these breaking changes on flutter.dev](https://flu
 
 As always, from all of us here on the Flutter Team at Google, we want to say — thank you. Thank you for being part of the community that makes all of this possible. With more than one in eight of new apps in the Play Store being built with Flutter and over 200,000 Flutter apps in the Play Store alone, our continued growth is mind blowing. Apps of all sizes around the world are entrusting their UI to Flutter to craft beautiful multi platform experiences to meet users wherever they may be.
 
-<DashImage figure src="images/0rn6BZioI2VeCqSQY.png" />
+<DashImage figure src="images/0rn6BZioI2VeCqSQY.webp" />
 
 
 Finally, in case you missed it, before you leave I/O this year, don’t forget to check out the [I/O Photo Booth](https://photobooth.flutter.dev/#/) web app built in Flutter & Firebase to grab a selfie with Dash. We [open sourced the code](https://github.com/flutter/photobooth) so you can dig into best practices for Flutter web, camera plugin web support, and learn how we used cloud functions to generate custom social posts.

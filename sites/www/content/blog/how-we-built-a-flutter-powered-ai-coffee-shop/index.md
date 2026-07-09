@@ -60,13 +60,13 @@ At its core, our system involved upscaling the user’s happy place, a prompt ca
 
 We also optimized Nano Banana for pleasing compositions; specifically, “a leading S curve toward the subject”, which rotated between roads, rivers, hills, coastlines, or other abstractions. This prompting trick greatly increased Nano Banana’s percentage of appealing, usable images.
 
-<DashImage figure src="images/1mQmkXnT5Dzc26Sm7e_RK5g.png" alt="Sample Nano Banana image: a puppy on a trail." caption="Sample Nano Banana image: a puppy on a trail." />
+<DashImage figure src="images/1mQmkXnT5Dzc26Sm7e_RK5g.webp" alt="Sample Nano Banana image: a puppy on a trail." caption="Sample Nano Banana image: a puppy on a trail." />
 
 
-<DashImage figure src="images/1BkccCrU04OtaehRtGmMlEA.png" alt="Sample Nano Banana image: a compass on a trail." caption="Sample Nano Banana image: a compass on a trail." />
+<DashImage figure src="images/1BkccCrU04OtaehRtGmMlEA.webp" alt="Sample Nano Banana image: a compass on a trail." caption="Sample Nano Banana image: a compass on a trail." />
 
 
-<DashImage figure src="images/18z1hY0jGVYmpLVpG_iZ4Dg.png" alt="Sample Nano Banana image: a whimsical forest." caption="Sample Nano Banana image: a whimsical forest." />
+<DashImage figure src="images/18z1hY0jGVYmpLVpG_iZ4Dg.webp" alt="Sample Nano Banana image: a whimsical forest." caption="Sample Nano Banana image: a whimsical forest." />
 
 
 For GenLatte’s second appearance, as Antigravity Coffee Co, at I/O in Mountain View this May, we updated our prompts to rotate through different suggested compositions. This kept things fresh for both event staff seeing hundreds of images per day and individual guests who simply wanted an evocative image for *their* coffee.

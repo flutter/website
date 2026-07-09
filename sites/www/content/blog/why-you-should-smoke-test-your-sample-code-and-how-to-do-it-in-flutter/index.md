@@ -3,14 +3,14 @@ title: "Why you should smoke-test your sample code, and how to do it in Flutter"
 description: "[ If you’re already convinced that you want to smoke-test your Flutter samples, you can skip to “Smoke-testing Flutter” below. What follows…"
 publishDate: 2018-06-06
 author: filiph
-image: images/1khKciHLLdyG1gIY3qmwbLw.png
+image: images/1khKciHLLdyG1gIY3qmwbLw.webp
 category: tutorial
 layout: blog
 ---
 
 *[ If you’re already convinced that you want to smoke-test your Flutter samples, you can skip to “Smoke-testing Flutter” below. What follows is a general guideline applicable to any technology. ]*
 
-<DashImage figure src="images/1khKciHLLdyG1gIY3qmwbLw.png" />
+<DashImage figure src="images/1khKciHLLdyG1gIY3qmwbLw.webp" />
 
 
 When learning any new technology, sooner or later developers want to look at sample code. Not just a few lines, either. Often, they want to see a whole project and how it’s assembled.
@@ -133,7 +133,7 @@ This test runs completely headless, and, on my work laptop, it completes in 50 m
 
 Just for fun, try to run it as a full app (`flutter run test/smoke_test.dart` instead of the usual `flutter test`), and you’ll see something like this:
 
-<DashImage figure src="images/1UNPFvzQCMU0xbqqbNXUAcw.gif" alt="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." caption="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." />
+<DashImage figure src="images/1UNPFvzQCMU0xbqqbNXUAcw.webp" alt="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." caption="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." />
 
 
 This is useful to visualize your test, and to verify that it’s doing what you think it’s doing.
@@ -240,7 +240,7 @@ Now, we don’t only want the build to run on every commit or PR (the default wi
 
 We can use Travis’ [“Cron Job” feature](https://docs.travis-ci.com/user/cron-jobs/). Just head over to [travis-ci.org](https://travis-ci.org/) and set it up.
 
-<DashImage figure src="images/1H2OK-1btsNZfUcu57PTsPQ.png" />
+<DashImage figure src="images/1H2OK-1btsNZfUcu57PTsPQ.webp" />
 
 
 ### Set up notifications
@@ -251,12 +251,12 @@ By default, Travis will send you an email any time the build fails. But I highly
 
 Last but not least, add the build badge to your sample’s README.md. Head over to Travis again, and click on the badge icon. It’ll give you the code to use.
 
-<DashImage figure src="images/1qWrX4tkqykAQHW3kSkuo8g.gif" />
+<DashImage figure src="images/1qWrX4tkqykAQHW3kSkuo8g.webp" />
 
 
 Paste this to the top of your README.md. Then commit, push, and behold:
 
-<DashImage figure src="images/1am1D-P1vH_f6y1Q-9dgCdw.png" />
+<DashImage figure src="images/1am1D-P1vH_f6y1Q-9dgCdw.webp" />
 
 
 Congratulations. Your sample code is now smoke tested.

@@ -3,17 +3,17 @@ title: "Put Flutter to Work"
 description: "Connect a Flutter feature to a native app and get up and running in just a few lines of code"
 publishDate: 2022-05-26
 author: verygoodopensource
-image: images/17pcNynupdvylRqlRdi6rPQ.png
+image: images/17pcNynupdvylRqlRdi6rPQ.webp
 category: spotlight
 layout: blog
 ---
 
-<DashImage figure src="images/17pcNynupdvylRqlRdi6rPQ.png" />
+<DashImage figure src="images/17pcNynupdvylRqlRdi6rPQ.webp" />
 
 
 If you’ve ever wanted to try using Flutter, but don’t want to build something from scratch, Flutter’s [add-to-app functionality](https://docs.flutter.dev/development/add-to-app) is a great place to start. To make it even easier to put Flutter to work for you, we teamed up with the Flutter team to create a sample add-to-app prototype to showcase how Flutter can be integrated into a native codebase with minimal effort. Whether you want to take Flutter for a trial run or show your team how Flutter works in a tangible way, this article is for you!
 
-<DashImage figure src="images/1gJk1B6Jqynp6QGXirf8VBQ.gif" />
+<DashImage figure src="images/1gJk1B6Jqynp6QGXirf8VBQ.webp" />
 
 
 ## Adding Flutter to a native newsfeed app

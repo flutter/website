@@ -3,14 +3,14 @@ title: "Going deeper with Flutter’s web support"
 description: "Harnessing the full power of the web platform for app-centric experiences"
 publishDate: 2020-07-29
 author: mariam_hasnany
-image: images/1dbcXXNRiMmMXxA1YsZYwcQ.png
+image: images/1dbcXXNRiMmMXxA1YsZYwcQ.webp
 category: announcements
 layout: blog
 ---
 
 Today we want to give an update on our progress towards bringing Flutter to the web, with a particular focus on work we’re doing to integrate deeply and natively with the web platform.
 
-<DashImage figure src="images/1dbcXXNRiMmMXxA1YsZYwcQ.png" />
+<DashImage figure src="images/1dbcXXNRiMmMXxA1YsZYwcQ.webp" />
 
 
 Our vision for Flutter is to provide a portable toolkit for building beautiful experiences wherever you might want to paint pixels on the screen. As [we’ve noted previously](https://medium.com/flutter/flutter-web-support-updates-8b14bfe6a908), we are deliberately app-centric with our framework and API choices, building a layered architecture that can scale across mobile, desktop, and embedded devices without compromising performance or quality.
@@ -35,7 +35,7 @@ Let’s start with a recap of Flutter’s web architecture. Flutter is a [multil
 
 The framework code is written in Dart. We combine that with your own code and at compile time apply [tree-shaking algorithms](https://medium.com/flutter/optimizing-performance-in-flutter-web-apps-with-tree-shaking-and-deferred-loading-535fbe3cd674) so that only the code used by your application is downloaded to the browser. Flutter adopts a reactive model, rendering the user interface in response to state changes. Within each frame Flutter builds widgets, performs layout, and lastly paints changes to the UI using the underlying browser APIs.
 
-<DashImage figure src="images/0RAaqRbmWskcjj6j2.png" alt="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." caption="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." />
+<DashImage figure src="images/0RAaqRbmWskcjj6j2.webp" alt="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." caption="Flutter’s architecture for the web is multilayer system with a Framework on top of a browser engine." />
 
 
 By default, the web mode uses standard HTML DOM and Canvas technologies. In this mode, the engine translates each generated Flutter scene into HTML, CSS or Canvas, and renders a frame onto the page as a tree of HTML elements.
@@ -72,7 +72,7 @@ Unlike native apps, web apps come with a built-in back button in the browser. To
 
 As an example of Flutter’s navigation support today, you can try going from [google.com](https://google.com) to [gallery.flutter.dev/#/demo/banner](https://gallery.flutter.dev/#/demo/banner), and then clicking the browser back button.
 
-<DashImage figure src="images/1cDlTCoUW0SRMVUl4B1sDPw.gif" alt="Today the browser back button tries to match the Flutter app’s back button routing history." caption="Today the browser back button tries to match the Flutter app’s back button routing history." />
+<DashImage figure src="images/1cDlTCoUW0SRMVUl4B1sDPw.webp" alt="Today the browser back button tries to match the Flutter app’s back button routing history." caption="Today the browser back button tries to match the Flutter app’s back button routing history." />
 
 
 You’ll notice it doesn’t take you back to google.com, as you might expect, but instead the home page of the site: gallery.flutter.dev. Flutter splits the initial gallery app path, pushing both gallery.flutter.dev and the /demo/banner page, so when the browser back button triggers `Navigator.pop()` it goes back to gallery.flutter.dev because that’s how the app’s internal history was set up.
@@ -87,7 +87,7 @@ To do this on the web, we generate a second DOM tree parallel to the DOM tree us
 
 Every Flutter web app can be made [accessible](https://flutter.dev/docs/development/accessibility-and-localization/accessibility). For example, the [Flutter Gallery app](https://gallery.flutter.dev/#/) is accessible once you have first enabled a screen reader assistive technology like [VoiceOver](https://www.apple.com/accessibility/mac/vision/), which works for web apps on both iOS and macOS. When you follow the screen reader instructions to explicitly enable accessibility for the app, you’ll see a semantic tree is produced.
 
-<DashImage figure src="images/0Qvklox5veq6mDZhF.png" alt="Every Flutter web app exposes a semantic tree to accessibility tools like VoiceOver." caption="Every Flutter web app exposes a semantic tree to accessibility tools like VoiceOver." />
+<DashImage figure src="images/0Qvklox5veq6mDZhF.webp" alt="Every Flutter web app exposes a semantic tree to accessibility tools like VoiceOver." caption="Every Flutter web app exposes a semantic tree to accessibility tools like VoiceOver." />
 
 
 Flutter’s web semantic features have reached parity with what exists for Flutter’s semantic system today, but we need to add automated testing to ensure that we don’t have regressions. There are complex features that we still need to support such as [tables](https://github.com/flutter/flutter/issues/45205) and [relationships between elements](https://developers.google.com/web/fundamentals/accessibility/semantics-aria/aria-labels-and-relationships).

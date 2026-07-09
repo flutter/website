@@ -3,7 +3,7 @@ title: "Perspectives from early adopters of Flutter as a game development tool"
 description: "How user research shaped the Flutter Casual Game Toolkit"
 publishDate: 2022-05-12
 author: taodong
-image: images/0ZrpkIfhAQ0MW1RYp.png
+image: images/0ZrpkIfhAQ0MW1RYp.webp
 category: announcements
 layout: blog
 ---
@@ -134,7 +134,7 @@ As mentioned, we conducted a complementary survey to get a broader view on game 
 
 It’s unsurprising that many Flutter users (62.4%) didn’t know that they could use Flutter to write games. However, 39.2% were interested in learning more.
 
-<DashImage figure src="images/0n0cpV0PkueLSiSYx.png" />
+<DashImage figure src="images/0n0cpV0PkueLSiSYx.webp" />
 
 
 The wide interest in building games with Flutter is also reflected in the fact that many Flutter users are no strangers to game development in general. Out of 936 respondents, 500+ had experience with Unity, 130+ with Unreal, 120+ with [Flame](https://docs.flame-engine.org/1.0.0/#), and 80+ with Godot. It’s encouraging to see that many developers are already equipped with game development skills.
@@ -143,7 +143,7 @@ The wide interest in building games with Flutter is also reflected in the fact t
 
 We then asked those who were either aware of or interested in Flutter’s ability to build games to tell us where they’re at in their game development process. Within this group, 43.2% hadn’t started a concrete game project yet, suggesting the need for getting-started support.
 
-<DashImage figure src="images/0ZrpkIfhAQ0MW1RYp.png" />
+<DashImage figure src="images/0ZrpkIfhAQ0MW1RYp.webp" />
 
 
 ### There are more Flutter games out there than we thought
@@ -152,7 +152,7 @@ We asked respondents to point us to any games they have built with Flutter. To o
 
 It seems to be entirely possible to build highly successful mobile games with Flutter. For example, [Kelimelik](https://play.google.com/store/apps/details?id=com.he2apps.kelimelik&hl=en_US&gl=US), a Flutter game we learned about through this survey, had 4.5 stars on Google Play with more than 356,000 reviews and 5,000,000 installs at the time of writing!
 
-<DashImage figure src="images/1gq-r9Mn1BzgKL8XYLnFsEQ.png" />
+<DashImage figure src="images/1gq-r9Mn1BzgKL8XYLnFsEQ.webp" />
 
 
 ### Flutter users want more documentation for game development

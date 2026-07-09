@@ -25,7 +25,7 @@ Historically, cross-platform frameworks have required compromise on visuals, due
 
 We’re excited to share an early preview of the new [Flutter GPU API](https://github.com/flutter/engine/blob/main/docs/impeller/Flutter-GPU.md), a powerful, low-level graphics API integrated directly into the Flutter SDK. The API allows you to define custom raster pipelines and submit draw calls directly to the GPU, making it possible to create specialized renderers like 2D Canvas alternatives, 3D scene graphs, or even particle systems for visually stunning, performant, and immersive experiences without the engine-level bulk typically needed.
 
-<DashImage figure src="images/0QC1D0LdTgLynDOnV.gif" alt="3D animation of a sci-fi space helmet rendered in flutter_scene." caption="3D animation of a sci-fi space helmet rendered in flutter_scene." />
+<DashImage figure src="images/0QC1D0LdTgLynDOnV.webp" alt="3D animation of a sci-fi space helmet rendered in flutter_scene." caption="3D animation of a sci-fi space helmet rendered in flutter_scene." />
 
 
 Given how low-level the API is, we expect a learning curve for developers who don’t have significant experience developing graphics. That’s why we’re investing in rendering packages, like the new `flutter_scene` package, which leverages the Flutter GPU API to allow importing animated glTF models and constructing 3D scenes, enabling you to easily build 3D apps and games in Flutter and Dart, like the one below.

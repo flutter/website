@@ -17,7 +17,7 @@ Empowering developers at Google I/O 2026
 
 Flutter 3.44 is here, and it’s a big one! This release celebrates a milestone in the Flutter timeline: Hybrid Composition++ for Android, Swift Package Manager as the new iOS/macOS default, and improved Vulkan support for Impeller. We’re previewing multi-window desktop support with Canonical as our new lead maintainer, and embarking on a major architectural evolution by decoupling Material and Cupertino from the core framework. We’re redefining UX for agentic user experiences with GenUl and reimagining developer experience with Agentic Hot Reload and Dart & Flutter Agent Skills. Flutter is empowering the next generation of apps-everywhere from the 2026 Toyota RAV4 multimedia system to the upcoming LG webOS SDK. We’re so excited to share all of the news and updates with you; welcome to Flutter 3.44!
 
-<DashImage figure src="images/1gz1il93fimwoqoeeWXnROA.gif" alt="Flutter is everywhere, everyday, built by everyone, for everyone." caption="Flutter is everywhere, everyday, built by everyone, for everyone." />
+<DashImage figure src="images/1gz1il93fimwoqoeeWXnROA.webp" alt="Flutter is everywhere, everyday, built by everyone, for everyone." caption="Flutter is everywhere, everyday, built by everyone, for everyone." />
 
 
 This year’s Flutter theme at Google I/O is: Flutter is everywhere, everyday, built by everyone, for everyone.
@@ -48,7 +48,7 @@ This release brings further performance improvements and features to the Widget 
 
 * **Preview filtering**: It’s now possible to filter previews by group, name, and script and package URIs, making it easier to work in projects with many previews. Special thanks to community member[ NamanGoyalK](https://github.com/NamanGoyalK) for this[ contribution](https://github.com/flutter/flutter/pull/184023)!
 
-<DashImage figure src="images/1AWOBIU0sytlgElyB3n-x9w.gif" alt="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" caption="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" />
+<DashImage figure src="images/1AWOBIU0sytlgElyB3n-x9w.webp" alt="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" caption="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" />
 
 
 **Learn more**: [Flutter Widget Previewer](https://docs.flutter.dev/tools/widget-previewer)
@@ -80,7 +80,7 @@ We also recently launched **Agent Skills for Dart and Flutter**, equipping your 
 
 **Learn more**: [Introducing skills for Dart and Flutter](https://blog.flutter.dev/introducing-skills-for-dart-and-flutter-23837c6ec0ae), [Dart and Flutter MCP server](https://docs.flutter.dev/ai/mcp-server)
 
-<DashImage figure src="images/1qw6H8YVAmVFUWuI0b38bZg.gif" alt="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" caption="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" />
+<DashImage figure src="images/1qw6H8YVAmVFUWuI0b38bZg.webp" alt="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" caption="Dart & Flutter Agent Skills give your agent step-by-step instructions on how to complete a variety of tasks, like writing integration tests" />
 
 
 ### AI on every screen with Flutter: Building the next generation of AI-native apps
@@ -97,7 +97,7 @@ Firebase AI Logic now features [Server Prompt Templates](https://firebase.google
 
 [Firebase Agent Skills for Flutter](https://firebase.google.com/docs/ai-assistance/agent-skills) are now available, providing step-by-step guidance to help you build full-stack Flutter and Firebase applications more effectively.
 
-<DashImage figure src="images/1uq-70ckWhRQm15bI26Evfg.png" alt="MacroFactor is a Flutter app that uses Firebase AI Logic to make API calls directly to Gemini models, leveraging its multimodal vision capabilities to simplify the user journey for logging meals." caption="MacroFactor is a Flutter app that uses Firebase AI Logic to make API calls directly to Gemini models, leveraging its multimodal vision capabilities to simplify the user journey for logging meals." />
+<DashImage figure src="images/1uq-70ckWhRQm15bI26Evfg.webp" alt="MacroFactor is a Flutter app that uses Firebase AI Logic to make API calls directly to Gemini models, leveraging its multimodal vision capabilities to simplify the user journey for logging meals." caption="MacroFactor is a Flutter app that uses Firebase AI Logic to make API calls directly to Gemini models, leveraging its multimodal vision capabilities to simplify the user journey for logging meals." />
 
 
 **Learn more:** [MacroFactor revolutionizes nutrition with AI for 400k+ users with Firebase, Flutter, and Gemini](https://cloud.google.com/customers/macrofactor)
@@ -136,7 +136,7 @@ We’re incredibly proud to see Flutter developers pushing the boundaries of wha
 
 * Vite Vere assists those with cognitive disabilities in completing tasks in their daily lives.
 
-<DashImage figure src="images/1ihBR-fBmc1L-kQdlnAKPNA.png" alt="Congratulations to Tomasso, creator of Gemma Vision, and Guido, creator of Vite Vere. They won first and second place, respectively, in the Gemma 3n Impact Challenge!" caption="Congratulations to Tomasso, creator of Gemma Vision, and Guido, creator of Vite Vere. They won first and second place, respectively, in the Gemma 3n Impact Challenge!" />
+<DashImage figure src="images/1ihBR-fBmc1L-kQdlnAKPNA.webp" alt="Congratulations to Tomasso, creator of Gemma Vision, and Guido, creator of Vite Vere. They won first and second place, respectively, in the Gemma 3n Impact Challenge!" caption="Congratulations to Tomasso, creator of Gemma Vision, and Guido, creator of Vite Vere. They won first and second place, respectively, in the Gemma 3n Impact Challenge!" />
 
 
 **Learn more**: [Gemma 3n Impact Challenge winners](https://www.kaggle.com/competitions/google-gemma-3n-hackathon/hackathon-winners)
@@ -151,7 +151,7 @@ Historically, managing these on-device models across diverse hardware was comple
 
 ### LiteRT-LM for Flutter
 
-<DashImage figure src="images/1HeoTr2vo8Ua7b2kL-Qn1-Q.png" />
+<DashImage figure src="images/1HeoTr2vo8Ua7b2kL-Qn1-Q.webp" />
 
 
 As I was digging into the code for both Gemma Vision and [Vite Vere](https://ai.google.dev/competition/projects/vite-vere), it was inspiring to see both leveraging the `flutter_gemma`, a plugin available from pub.dev, to integrate with Gemma.
@@ -188,7 +188,7 @@ Li-Te Cheng and his team from Google DeepMind were pioneers in the GenUI space. 
 
 He joined us for the What’s New in Flutter talk to share his experience building the Gemini App’s “Visual Layout” experiment with Flutter. Here’s the web version:
 
-<DashImage figure src="images/1WEch_2CJNkOt1NChpXZlZw.gif" alt="Starting from an initial user prompt, the Visual Layout Experiment encouraged users to select, click, and explore information customized and updated on-the-fly through Generative UI." caption="Starting from an initial user prompt, the Visual Layout Experiment encouraged users to select, click, and explore information customized and updated on-the-fly through Generative UI." />
+<DashImage figure src="images/1WEch_2CJNkOt1NChpXZlZw.webp" alt="Starting from an initial user prompt, the Visual Layout Experiment encouraged users to select, click, and explore information customized and updated on-the-fly through Generative UI." caption="Starting from an initial user prompt, the Visual Layout Experiment encouraged users to select, click, and explore information customized and updated on-the-fly through Generative UI." />
 
 
 He touched on why his team tends to reach for Flutter as their UI toolkit of choice… Hint: It’s the same reason that we all love Flutter:
@@ -237,7 +237,7 @@ Flutter 3.44 introduces Hybrid Composition++ (HCPP) as an opt-in feature to solv
 
 The result is high-performance scrolling and accurate touch input. It also brings reliable support for `SurfaceView` components, which presented challenges for older modes.
 
-<DashImage figure src="images/1xNy4ENkOUVx7fotyFcG8_A.gif" alt="HC on the left, HCPP on the right" caption="HC on the left, HCPP on the right" />
+<DashImage figure src="images/1xNy4ENkOUVx7fotyFcG8_A.webp" alt="HC on the left, HCPP on the right" caption="HC on the left, HCPP on the right" />
 
 
 HCPP has [Android API and hardware requirements](https://docs.flutter.dev/platform-integration/android/platform-views#hcpp), so not all devices can use HCPP even when opted in. There are no new APIs to adopt, and you simply need to enable the flag to upgrade your existing platform views. You can test the new mode before it becomes the default rendering mode in the future by passing the `--enable-hcpp` flag to your `run` command, or by adding the configuration flag to your `AndroidManifest.xml` file:
@@ -287,7 +287,7 @@ If your app uses custom `abiFilters` inside specific build types or product flav
 
 ## iOS support
 
-<DashImage figure src="images/1TAkSiptrLpWXi-x8V6perA.png" alt="Swift Package Manager is now the default" caption="Swift Package Manager is now the default" />
+<DashImage figure src="images/1TAkSiptrLpWXi-x8V6perA.webp" alt="Swift Package Manager is now the default" caption="Swift Package Manager is now the default" />
 
 
 ### Swift Package Manager is now the default for iOS and macOS
@@ -338,7 +338,7 @@ Development workflows and browser integration have never been smoother. The engi
 
 ## Desktop support
 
-<DashImage figure src="images/13z_r0es7chMz1dSDxT8zsg.png" alt="Canonical will lead the Flutter Desktop roadmap and oversee the maintenance of our Linux, Windows, and macOS embedders." caption="Canonical will lead the Flutter Desktop roadmap and oversee the maintenance of our Linux, Windows, and macOS embedders." />
+<DashImage figure src="images/13z_r0es7chMz1dSDxT8zsg.webp" alt="Canonical will lead the Flutter Desktop roadmap and oversee the maintenance of our Linux, Windows, and macOS embedders." caption="Canonical will lead the Flutter Desktop roadmap and oversee the maintenance of our Linux, Windows, and macOS embedders." />
 
 
 **We are excited to announce an expanded partnership with Canonical, who will now serve as the lead maintainer and Strategic Steward for Flutter Desktop.** With their deep technical expertise, Canonical will lead the Flutter Desktop roadmap and oversee the maintenance of our Linux, Windows, and macOS embedders.
@@ -353,7 +353,7 @@ To inquire about partnering with the Flutter team, contact [partners@flutter.dev
 
 *⚠️ **Note:** Windowing features are currently only available on the [main channel](https://docs.flutter.dev/install/upgrade#switching-flutter-channels). They are not yet intended for production use.*
 
-<DashImage figure src="images/1jge3MA91e1nbNjncqu9dtA.gif" alt="Flutter now supports Tooltips and separate Dialog windows across platforms" caption="Flutter now supports Tooltips and separate Dialog windows across platforms" />
+<DashImage figure src="images/1jge3MA91e1nbNjncqu9dtA.webp" alt="Flutter now supports Tooltips and separate Dialog windows across platforms" caption="Flutter now supports Tooltips and separate Dialog windows across platforms" />
 
 
 Canonical continues to make excellent progress on desktop’s experimental windowing APIs! New features include:
@@ -389,14 +389,14 @@ Check out the showcase video:
 <YoutubeEmbed id="X4376aLFHFA" title="How Toyota is revolutionized their infotainment system with Flutter" fullwidth="true"/>
 
 
-<DashImage figure src="images/1lQx3GCLqTFbDzK4meOjo1Q.png" alt="Flutter Outbound product manager, Abdallah, and I getting our photos taken on the Toyota Test Track!" caption="Flutter Outbound product manager, Abdallah, and I getting our photos taken on the Toyota Test Track!" />
+<DashImage figure src="images/1lQx3GCLqTFbDzK4meOjo1Q.webp" alt="Flutter Outbound product manager, Abdallah, and I getting our photos taken on the Toyota Test Track!" caption="Flutter Outbound product manager, Abdallah, and I getting our photos taken on the Toyota Test Track!" />
 
 
 **Learn more**: Toyota’s press release, [The Latest Evolution of Toyota’s Multimedia Coming to a Screen Near You](https://pressroom.toyota.com/the-latest-evolution-of-toyotas-multimedia-coming-to-a-screen-near-you/)
 
 ### LG
 
-<DashImage figure src="images/1Pdl2nE7Nidvg-oVf8wwKwA.png" alt="The LG webOS SDK will enable developers build Flutter apps that target WebOS devices" caption="The LG webOS SDK will enable developers build Flutter apps that target WebOS devices" />
+<DashImage figure src="images/1Pdl2nE7Nidvg-oVf8wwKwA.webp" alt="The LG webOS SDK will enable developers build Flutter apps that target WebOS devices" caption="The LG webOS SDK will enable developers build Flutter apps that target WebOS devices" />
 
 
 LG is on the verge of launching the webOS SDK to help developers easily build Flutter apps that target WebOS devices, empowering Flutter for the big screen and beyond.
@@ -419,7 +419,7 @@ This release includes several Vulkan improvements including better memory manage
 
 The math for rendering circles has been updated to support cleaner circles using signed-distance functions. There were cases where they would previously be aliased, but that has been resolved. ([#183536](https://github.com/flutter/flutter/pull/183536), [#183184](https://github.com/flutter/flutter/pull/183184))
 
-<DashImage figure src="images/1Je2nftTI2SbCoW0AybhYiQ.png" alt="Enhanced visual fidelity, utilizing signed-distance functions (SDFs), to ensure high-quality, anti-aliased rendering for complex shapes." caption="Enhanced visual fidelity, utilizing signed-distance functions (SDFs), to ensure high-quality, anti-aliased rendering for complex shapes." />
+<DashImage figure src="images/1Je2nftTI2SbCoW0AybhYiQ.webp" alt="Enhanced visual fidelity, utilizing signed-distance functions (SDFs), to ensure high-quality, anti-aliased rendering for complex shapes." caption="Enhanced visual fidelity, utilizing signed-distance functions (SDFs), to ensure high-quality, anti-aliased rendering for complex shapes." />
 
 
 **Shadow and perspective fixes**
@@ -459,28 +459,28 @@ This release marks a massive milestone for the Material and Cupertino libraries.
 
 Despite the freeze, this release is packed with refinements. A major highlight is the modernization of menus in the Cupertino library. The new `CupertinoMenuAnchor` widget, built on the flexible `RawMenuAnchor` foundation, provides a more robust and native-feeling menu experience for iOS applications ([#182036](https://github.com/flutter/flutter/pull/182036)). This work was made possible by the extensive contributions of community member [davidhicks980](https://github.com/davidhicks980), who also created the RawMenuAnchor widget.
 
-<DashImage figure src="images/17uz0MAnNLfnKOmRGweNcgg.gif" alt="Example of CupertinoMenuAnchor in action." caption="Example of CupertinoMenuAnchor in action." />
+<DashImage figure src="images/17uz0MAnNLfnKOmRGweNcgg.webp" alt="Example of CupertinoMenuAnchor in action." caption="Example of CupertinoMenuAnchor in action." />
 
 
 **Learn more**: [`CupertinoMenuAnchor`](https://main-api.flutter.dev/flutter/cupertino/CupertinoMenuAnchor-class.html)
 
 On the Material side, menus also receive a polish with the addition of Material 3 animations to the `MenuAnchor` class. These animations provide a smoother, more responsive feel, and a new `hoverOpenDelay` parameter on `SubmenuButton` gives you finer control over submenu interactions. The animation is disabled by default, and is enabled by setting animated to true. ([#176494](https://github.com/flutter/flutter/pull/176494)).
 
-<DashImage figure src="images/1VdQhRElD22jiVdNmjLllhw.gif" alt="Thee addition of Material 3 animations to the MenuAnchor class." caption="Thee addition of Material 3 animations to the MenuAnchor class." />
+<DashImage figure src="images/1VdQhRElD22jiVdNmjLllhw.webp" alt="Thee addition of Material 3 animations to the MenuAnchor class." caption="Thee addition of Material 3 animations to the MenuAnchor class." />
 
 
 **Learn more**: [`MenuAnchor`](https://main-api.flutter.dev/flutter/material/MenuAnchor-class.html), [`SubmenuButton.hoverOpenDelay`](https://main-api.flutter.dev/flutter/material/SubmenuButton/hoverOpenDelay.html)
 
 This release also enables scrollable content within a `CupertinoSheetRoute` to work seamlessly with the dragging animation, allowing for a more fluid transition between scrolling and dismissing the sheet ([#177337](https://github.com/flutter/flutter/pull/177337)). For developers needing custom drag regions, the new `scrollableBuilder` allows you to pass the managed `ScrollController` to the body’s scrollable areas to coordinate sheet dragging for you.
 
-<DashImage figure src="images/1BbFM0AsTzm5tN8ZSbC-6Aw.gif" alt="Scrollable content within a `CupertinoSheetRoute` working seamlessly with the dragging animation" caption="Scrollable content within a `CupertinoSheetRoute` working seamlessly with the dragging animation" />
+<DashImage figure src="images/1BbFM0AsTzm5tN8ZSbC-6Aw.webp" alt="Scrollable content within a `CupertinoSheetRoute` working seamlessly with the dragging animation" caption="Scrollable content within a `CupertinoSheetRoute` working seamlessly with the dragging animation" />
 
 
 **Learn more**: [`CupertinoSheetRoute`](https://api.flutter.dev/flutter/cupertino/CupertinoSheetRoute-class.html), [`CupertinoSheetRoute.scrollableBuilder`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute/scrollableBuilder.html)
 
 The `CarouselView` component sees major functional improvements in this release. It now supports infinite scrolling ([#175710](https://github.com/flutter/flutter/pull/175710)), allowing you to create seamlessly looping carousels. It also features a new `onIndexChanged` callback and a `leadingItem` property on its controller, providing better visibility into the carousel’s state as the user interacts with it ([#180667](https://github.com/flutter/flutter/pull/180667)).
 
-<DashImage figure src="images/1lx61h88hYLIWaeSYuIQ14g.gif" alt="CarouselView now supports infinite scrolling!" caption="CarouselView now supports infinite scrolling!" />
+<DashImage figure src="images/1lx61h88hYLIWaeSYuIQ14g.webp" alt="CarouselView now supports infinite scrolling!" caption="CarouselView now supports infinite scrolling!" />
 
 
 **Learn more**: [`CarouselView`](https://main-api.flutter.dev/flutter/material/CarouselView-class.html)
@@ -559,6 +559,6 @@ This ecosystem is depended upon by and made up of industry leaders like LG, Toyo
 
 To try out all the new features, optimizations, and graphics enhancements, all it takes is a simple:
 
-```console
-$ flutter upgrade
+```typescript
+flutter upgrade
 ```

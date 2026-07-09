@@ -3,7 +3,7 @@ title: "Announcing Flutter 1.20"
 description: "Performance improvements, mobile autofill, a new widget and more!"
 publishDate: 2020-08-05
 author: csells
-image: images/0Ve1UjCRej9MtX2kv.png
+image: images/0Ve1UjCRej9MtX2kv.webp
 category: releases
 layout: blog
 ---
@@ -26,7 +26,7 @@ On the Flutter team, we’re always looking for new ways to decrease the size an
 
 Another performance improvement we’ve made in this release reduces jank in the initial display of your animation using a warm-up phase. You can see an example of the jank improvement in this animation (slowed down to half speed).
 
-<DashImage figure src="images/0LJO_r2jMcO7_49Jj.gif" alt="animation without and with the SkSL warm-up" caption="animation without and with the SkSL warm-up" />
+<DashImage figure src="images/0LJO_r2jMcO7_49Jj.webp" alt="animation without and with the SkSL warm-up" caption="animation without and with the SkSL warm-up" />
 
 
 If a Flutter app has janky animations during the first run, the Skia Shading Language shader provides for pre-compilation as part of your app’s build that can speed it up by more than 2x. If you’d like to take advantage of this advanced functionality, see [the SkSL warm-up page](https://flutter.dev/docs/perf/rendering/shader) on flutter.dev.
@@ -44,7 +44,7 @@ This release of Flutter is built on the 2.9 release of Dart. This features a new
 
 One of the #1 most requested Flutter features for a while has been to support the underlying Android and iOS support for text autofill in Flutter programs. With [PR 52126](https://github.com/flutter/flutter/pull/52126), we’re pleased to say that the wait is over — no more asking your users to re-enter data that the OS has already gathered for them.
 
-<DashImage figure src="images/0fI60rwc5QF7eh8jr.gif" alt="Autofill in action" caption="Autofill in action" />
+<DashImage figure src="images/0fI60rwc5QF7eh8jr.webp" alt="Autofill in action" caption="Autofill in action" />
 
 
 You’ll be pleased to hear that we’ve already started adding this functionality for the web, as well.
@@ -53,14 +53,14 @@ You’ll be pleased to hear that we’ve already started adding this functionali
 
 This release introduces a new widget, the `InteractiveViewer`. The `InteractiveViewer` is designed for building common kinds of interactivity into your app, like pan, zoom, and drag ’n’ drop, even in the face of resizing, which [this simple Go board sample](https://github.com/justinmc/flutter-go) demonstrates.
 
-<DashImage figure src="images/1NgNeXqnYnJaekXxEJqSE-w.gif" alt="Zooming, panning, resizing, dragging and dropping with the `InteractiveViewer`" caption="Zooming, panning, resizing, dragging and dropping with the `InteractiveViewer`" />
+<DashImage figure src="images/1NgNeXqnYnJaekXxEJqSE-w.webp" alt="Zooming, panning, resizing, dragging and dropping with the `InteractiveViewer`" caption="Zooming, panning, resizing, dragging and dropping with the `InteractiveViewer`" />
 
 
 To see how to integrate the `InteractiveViewer` into your own app, [check out the API documentation](https://api.flutter.dev/flutter/widgets/InteractiveViewer-class.html) where you can play with it in DartPad. Also, if you’d like to hear about how the `InteractiveViewer` was designed and developed, you can [see a presentation by the author for Chicago Flutter on YouTube](https://www.youtube.com/watch?v=ChFa0A72Uto).
 
 If you’re interested in adding the kind of interactivity to your Flutter app that `InteractiveViewer` enables, then you’ll probably also be happy to hear that we’ve [added more capabilities to drag ’n’ drop](https://github.com/monkeyswarm/DragTargetDetailsExample) in this release. Specifically, if you’d like to know precisely where the drop happened on the target widget (it’s always been available to the *Draggable* object itself), now you can get that information with the *DragTarget onAcceptDetails* method.
 
-<DashImage figure src="images/0dfvbXEE8UpLj6nGS.gif" alt="New drag target accept details in action" caption="New drag target accept details in action" />
+<DashImage figure src="images/0dfvbXEE8UpLj6nGS.webp" alt="New drag target accept details in action" caption="New drag target accept details in action" />
 
 
 Check out [this sample](https://github.com/monkeyswarm/DragTargetDetailsExample) for the details and look forward to a future release that will make this information available during the drag as well so that the *DragTarget* can more easily provide visual updates during a drag operation.
@@ -69,20 +69,20 @@ Check out [this sample](https://github.com/monkeyswarm/DragTargetDetailsExample)
 
 In addition to new widgets, this release includes a number of updated widgets to match [the latest Material guidelines](https://material.io/components/sliders). These include `Slider` and `RangeSlider`. For more information, see [What’s new with the Slider widget?](https://medium.com/flutter/whats-new-with-the-slider-widget-ce48a22611a3)
 
-<DashImage figure src="images/0q-1IbQugDfhrwqDK.png" alt="updated Material Slider" caption="updated Material Slider" />
+<DashImage figure src="images/0q-1IbQugDfhrwqDK.webp" alt="updated Material Slider" caption="updated Material Slider" />
 
 
-<DashImage figure src="images/05zRP2E4rqoKmOkxH.png" alt="Updated Material RangeSlider" caption="Updated Material RangeSlider" />
+<DashImage figure src="images/05zRP2E4rqoKmOkxH.webp" alt="Updated Material RangeSlider" caption="Updated Material RangeSlider" />
 
 
 `DatePicker` has been updated to include a new compact design as well as support for date ranges.
 
-<DashImage figure src="images/0rVf86HRSJ0MyVMB7.gif" alt="updated DatePicker" caption="updated DatePicker" />
+<DashImage figure src="images/0rVf86HRSJ0MyVMB7.webp" alt="updated DatePicker" caption="updated DatePicker" />
 
 
 And finally, `TimePicker` has a completely new style.
 
-<DashImage figure src="images/0Ve1UjCRej9MtX2kv.png" alt="updated TimePicker" caption="updated TimePicker" />
+<DashImage figure src="images/0Ve1UjCRej9MtX2kv.webp" alt="updated TimePicker" caption="updated TimePicker" />
 
 
 If you’d like to play around with it, here’s [a fun web demo built with Flutter](https://flutter-time-picker.firebaseapp.com/#/).
@@ -91,7 +91,7 @@ If you’d like to play around with it, here’s [a fun web demo built with Flut
 
 Another update this release is the new responsive licenses page available from the `AboutDialog`.
 
-<DashImage figure src="images/0goluPziG4B5Be-NT.png" alt="new licenses page" caption="new licenses page" />
+<DashImage figure src="images/0goluPziG4B5Be-NT.webp" alt="new licenses page" caption="new licenses page" />
 
 
 [PR 57588](https://github.com/flutter/flutter/pull/57588), from community contributor [TonicArtos](https://github.com/TonicArtos), is not only updated to match Material guidelines, making it just plain nice to look at, but it’s easier to navigate and designed to work as well on tablets and desktops as on phones. Thanks, TonicArtos! Since every Flutter app should be showing the licenses for the packages they’re using, you just made every Flutter app better!
@@ -102,7 +102,7 @@ Of course, Flutter isn’t just the widgets; it’s also the tooling and this re
 
 First and foremost, a public service announcement: if you’re a Flutter plugin author, then the legacy `pubspec.yaml` format is no longer supported for publishing plugins. If you try, you’ll get the following error message when executing *pub publish*:
 
-<DashImage figure src="images/0PWJq9DpGlqdZkkLH.png" alt="Legacy pubspec format error message upon plugin publication" caption="Legacy pubspec format error message upon plugin publication" />
+<DashImage figure src="images/0PWJq9DpGlqdZkkLH.webp" alt="Legacy pubspec format error message upon plugin publication" caption="Legacy pubspec format error message upon plugin publication" />
 
 
 The old format did not support specifying which platforms your plugins support, and has been deprecated since Flutter 1.12. [The new `pubspec.yaml` format](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms) is now required for publishing new or updated plugins.
@@ -113,17 +113,17 @@ For clients of plugins, the tools still understand the old pubspec format and wi
 
 The biggest tooling update in this release comes to the Visual Studio Code extension, which provides a preview of a new feature to enable you to bring Dart DevTools screens directly into your coding workspace.
 
-<DashImage figure src="images/0aAYBrux106MX4MxQ.png" alt="Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code" caption="Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code" />
+<DashImage figure src="images/0aAYBrux106MX4MxQ.webp" alt="Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code" caption="Preview of Layout Explorer from Dart DevTools embedded into Visual Studio Code" />
 
 
 Enable this feature with the new *dart.previewEmbeddedDevTools* setting. The above screenshot shows the Flutter Widget Inspector embedded directly into Visual Studio Code but with this new setting enabled, you can choose your favorite page embed using the Dart DevTools menu on the status bar.
 
-<DashImage figure src="images/0uzKuydE5rOcPqqnX.png" />
+<DashImage figure src="images/0uzKuydE5rOcPqqnX.webp" />
 
 
 This menu allows you to choose which pages to show.
 
-<DashImage figure src="images/0TcCxp1ljELxXMG8c.png" />
+<DashImage figure src="images/0TcCxp1ljELxXMG8c.webp" />
 
 
 This feature is still in preview, so [let us know if you have any trouble with it](https://github.com/Dart-Code/Dart-Code/issues).
@@ -132,7 +132,7 @@ This feature is still in preview, so [let us know if you have any trouble with i
 
 The latest version of Dart DevTools comes with an updated version of the Network page that enables web socket profiling.
 
-<DashImage figure src="images/0hv9zwpJyaf8H-Ssa.png" alt="Timing, status and content type of socket connections on the Network page of Dart DevTools" caption="Timing, status and content type of socket connections on the Network page of Dart DevTools" />
+<DashImage figure src="images/0hv9zwpJyaf8H-Ssa.webp" alt="Timing, status and content type of socket connections on the Network page of Dart DevTools" caption="Timing, status and content type of socket connections on the Network page of Dart DevTools" />
 
 
 The Network page now adds timing information to the network calls from your app, along with other information like status and content type. Additional improvements have been made to the details UI to provide an overview of the data in a websocket or http request. We’ve also got more plans for this page to include HTTP request/response bodies and monitoring gRPC traffic.
@@ -141,7 +141,7 @@ The Network page now adds timing information to the network calls from your app,
 
 Another new feature for Visual Studio Code is updating imports on rename, which automatically updates *import* statements when files are moved or renamed.
 
-<DashImage figure src="images/00Xhr32bM0mcyJFXl.gif" alt="moving Dart files in Visual Studio Code updates the import statements" caption="moving Dart files in Visual Studio Code updates the import statements" />
+<DashImage figure src="images/00Xhr32bM0mcyJFXl.webp" alt="moving Dart files in Visual Studio Code updates the import statements" caption="moving Dart files in Visual Studio Code updates the import statements" />
 
 
 This feature currently only works for single files and not multiple files or folders, but that support is coming soon.
@@ -158,12 +158,12 @@ One more update to mention is for people building Flutter tooling. We’ve creat
 
 This is the same metadata that we use for the Android Studio / IntelliJ and VS Code extensions ourselves; we thought you might find it useful when building your own tools. In fact, this metadata enables the feature in the IntelliJ family of IDEs to show the color being used in your Flutter code:
 
-<DashImage figure src="images/0QfzssiJe72kCh0LU.png" />
+<DashImage figure src="images/0QfzssiJe72kCh0LU.webp" />
 
 
 Related to that is a new feature in IntelliJ and Android Studio that displays color blocks for Color.fromARGB() and Color.fromRGBO():
 
-<DashImage figure src="images/0J4G5VKzvTTxFJaxb.png" />
+<DashImage figure src="images/0J4G5VKzvTTxFJaxb.webp" />
 
 
 Special thanks to [dratushnyy](https://github.com/dratushnyy) on GitHub for contributing improvements to the color previews in IntelliJ!
@@ -172,7 +172,7 @@ Special thanks to [dratushnyy](https://github.com/dratushnyy) on GitHub for cont
 
 In response to popular demand from plugin authors in our user surveys, recently we’ve been experimenting on how to make communication between Flutter and the host platform safer and easier for [plugins](https://flutter.dev/docs/development/packages-and-plugins/developing-packages) and [Add-to-App](https://flutter.dev/docs/development/add-to-app). To address this need, we created [Pigeon](https://pub.dev/packages/pigeon), a command-line tool that uses Dart syntax to generate type-safe messaging code on top of platform channels without adding additional runtime dependencies. With Pigeon, instead of manually matching method strings on platform channels and serializing arguments, you can invoke Java/Objective-C/Kotlin/Swift class methods and pass non-primitive data objects by directly calling Dart methods (and vice versa).
 
-<DashImage figure src="images/0Pe9BXnIWEyUpoI-_.png" />
+<DashImage figure src="images/0Pe9BXnIWEyUpoI-_.webp" />
 
 
 While still in prerelease, Pigeon has become mature enough that we’re using it ourselves in the [video_player](https://pub.dev/packages/video_player) plugin. If you’d interested in testing out Pigeon for your own uses, see the updated the [platform channel documentation](https://flutter.dev/docs/development/platform-integration/platform-channels#pigeon) as well as this [sample project](https://github.com/flutter/samples/tree/master/add_to_app/flutter_module_books).

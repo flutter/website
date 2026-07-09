@@ -3,7 +3,7 @@ title: "Flutter Performance Updates in the first half of 2020"
 description: "By Yuqian Li and Shams Zakhour"
 publishDate: 2021-02-12
 author: liyuqian
-image: images/15WEbz38iKKh5EfCj55mGYw.png
+image: images/15WEbz38iKKh5EfCj55mGYw.webp
 category: announcements
 layout: blog
 ---
@@ -56,7 +56,7 @@ contributors: [chinmaygarde](https://github.com/chinmaygarde), [dnfield](https:/
 
 contributors: [liyuqian](https://github.com/liyuqian), [jonahwilliams](https://github.com/jonahwilliams), [chinmaygarde](https://github.com/chinmaygarde), [iskakaushik](https://github.com/iskakaushik), [zanderso](https://github.com/zanderso), [sfshaza2](https://github.com/sfshaza2), [filiph](https://github.com/filiph), [acoutts](https://github.com/acoutts)
 
-<DashImage figure src="images/15WEbz38iKKh5EfCj55mGYw.png" />
+<DashImage figure src="images/15WEbz38iKKh5EfCj55mGYw.webp" />
 
 
 * PR [#17300](https://github.com/flutter/engine/pull/17300), [#53859](https://github.com/flutter/flutter/pull/53859), [#17601](https://github.com/flutter/engine/pull/17601), [#17861](https://github.com/flutter/engine/pull/17861), [#58743](https://github.com/flutter/flutter/pull/58743), [#56638](https://github.com/flutter/flutter/pull/56638), [#4430](https://github.com/flutter/website/pull/4430), [#12142](https://github.com/flutter/engine/pull/12412)

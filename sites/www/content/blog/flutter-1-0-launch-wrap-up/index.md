@@ -3,7 +3,7 @@ title: "Flutter 1.0 Launch Wrap-up"
 description: "A few reflections on Flutter Live, our global celebration of the Flutter 1.0 launch."
 publishDate: 2018-12-28
 author: csells
-image: images/14_hWh5hMP6F3W6DZ-6OK2Q.png
+image: images/14_hWh5hMP6F3W6DZ-6OK2Q.webp
 category: releases
 layout: blog
 ---
@@ -46,7 +46,7 @@ China:
 
 And Kampala, Uganda:
 
-<DashImage figure src="images/0kS0qvDFLKFUHsmKl.png" />
+<DashImage figure src="images/0kS0qvDFLKFUHsmKl.webp" />
 
 
 And thanks to all of the developers that posted to #MyFlutterStory! It was hard to pick the best contributions.
@@ -73,4 +73,4 @@ From the beginning, Flutter has been a UI toolkit for all screens, not just mobi
 
 So while we’ve got lots planned for Flutter in the future, it’s ready for you right now. What will you build?
 
-<DashImage figure src="images/14_hWh5hMP6F3W6DZ-6OK2Q.png" />
+<DashImage figure src="images/14_hWh5hMP6F3W6DZ-6OK2Q.webp" />

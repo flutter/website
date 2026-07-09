@@ -3,7 +3,7 @@ title: "Which factors affected users’ decisions to adopt Flutter? — Q1 2
 description: "The Flutter team is here to share the results from this quarter’s user survey! This quarter, we collected over 8,000 responses over 7 days, between March 5th and 11th. The goal of this quarterly survey program is to hear from you, in a structured format, so that the Flutter team can focus on things that matter most to our users. Results from the previous surveys are published on Medium too."
 publishDate: 2021-05-13
 author: jayoung-lee
-image: images/0_m-0usdhsHPmeZ8U.png
+image: images/0_m-0usdhsHPmeZ8U.webp
 category: announcements
 layout: blog
 ---
@@ -16,7 +16,7 @@ In this quarter’s survey, 92% of the 8,652 respondents said that they are posi
 
 What’s notable this quarter is that 89% of the respondents were also positively satisfied with the Dart language, which is an all-time high score. This was very encouraging news to the team, because the percentage started at 80 in 2019. The Dart team did tremendous work to improve the developers’ experience with the Dart language to achieve this satisfaction rate, including [sound null safety](https://dart.dev/null-safety). We’re very happy to share this survey result, and we thank those who acknowledged the unique strengths of the language.
 
-<DashImage figure src="images/09CO8AmwyqIudhgK6.png" alt="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" caption="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" />
+<DashImage figure src="images/09CO8AmwyqIudhgK6.webp" alt="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" caption="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" />
 
 
 ## Which factors affected users’ decisions to adopt Flutter?
@@ -33,7 +33,7 @@ First, we asked what made users lean toward adopting Flutter. As shown in the fo
 
 1. Hot reload.
 
-<DashImage figure src="images/0lmC1UJVINDIXumGt.png" alt="*Factors that made developers lean toward adopting Flutter for their next project*" caption="*Factors that made developers lean toward adopting Flutter for their next project*" />
+<DashImage figure src="images/0lmC1UJVINDIXumGt.webp" alt="*Factors that made developers lean toward adopting Flutter for their next project*" caption="*Factors that made developers lean toward adopting Flutter for their next project*" />
 
 
 Next, we asked what made users lean against adopting Flutter. The users were most concerned about the following, listed in order of importance:
@@ -44,7 +44,7 @@ Next, we asked what made users lean against adopting Flutter. The users were mos
 
 1. Packages and plugins available in Flutter’s ecosystem.
 
-<DashImage figure src="images/00d3CyUdb9K75qjt2.png" alt="*Factors that made developers lean against adopting Flutter for their next project*" caption="*Factors that made developers lean against adopting Flutter for their next project*" />
+<DashImage figure src="images/00d3CyUdb9K75qjt2.webp" alt="*Factors that made developers lean against adopting Flutter for their next project*" caption="*Factors that made developers lean against adopting Flutter for their next project*" />
 
 
 From these results, the team learned that users fear whether Flutter will be around for the long term. It’s a reasonable concern, because you’re tying your career or apps to our framework. So, we want to mention the scale of internal adoption again. At Flutter Engage, we shared that there are more than 30 teams at Google who are building mission-critical apps with Flutter. These are teams like [Google Pay, Google Ads, Nest Hub, and Stadia](https://youtu.be/IdrCyS7EF8M?t=67) who have thousands of developers committed to Flutter development. Flutter will be prominently featured at [Google I/O](https://events.google.com/io/) again this year. Stay tuned for our latest announcements, and sign up for the Flutter sessions listed on the[ I/O website](https://events.google.com/io/program/content?4=topic_flutter&lng=en), starting May 5th.
@@ -55,7 +55,7 @@ The next concern was about the maturity of Flutter, including the ecosystem arou
 
 We also collected thousands of raw comments about various topics in response to open-ended questions. We had at least three different workshops where engineers in the Flutter subteams gathered to read and digest comments about various topics, including ecosystem, developer tools, and so on. The ideas generated during the workshop will be used as input for the team’s goals for the coming quarters.
 
-<DashImage figure src="images/0_m-0usdhsHPmeZ8U.png" alt="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" caption="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" />
+<DashImage figure src="images/0_m-0usdhsHPmeZ8U.webp" alt="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" caption="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" />
 
 
 There are things that community contributors can do too. We learned from the user comments that many Flutter developers still want to have higher-quality packages with better maintenance, even though they acknowledge that Flutter’s ecosystem has matured over time. There were a lot of mentions of multimedia packages (like audio and video players) and Bluetooth packages that need better support. We welcome you to contribute to those areas and expand the coverage, by, for example, submitting PRs to existing packages, as the Flutter team strives to provide high-quality, [first-party packages](https://pub.dev/publishers/flutter.dev/packages).
@@ -66,12 +66,12 @@ The Flutter team knows that there is an interest for cloud services among some F
 
 For those who are already using cloud-based services, the most popular cloud solution was Firebase (82%), followed by Google Cloud Platform (GCP) (34%), and Amazon Web Services (AWS) (25%).
 
-<DashImage figure src="images/0VLupMT920gd2acrw.png" />
+<DashImage figure src="images/0VLupMT920gd2acrw.webp" />
 
 
 Users said that they chose Firebase and GCP, because they were easy to use with Flutter. Many users who chose AWS and Azure said that it was because of existing familiarity.
 
-<DashImage figure src="images/0d0IHqqnl0KoeLuT8.png" />
+<DashImage figure src="images/0d0IHqqnl0KoeLuT8.webp" />
 
 
 The Flutter team is working closely with Firebase and GCP. We will continue to support [FlutterFire plugins](https://firebase.flutter.dev/), and the team is also working with the GCP team to make it easier to use with Flutter.

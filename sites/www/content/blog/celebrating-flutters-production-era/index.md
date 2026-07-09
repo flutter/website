@@ -3,7 +3,7 @@ title: "Celebrating Flutter’s “Production Era”"
 description: "Just over six years ago, we unveiled Flutter 1.0. Today, at #FlutterInProduction, we’re celebrating how far we’ve come — from the immense…"
 publishDate: 2024-12-17
 author: mit-mit
-image: images/1nlSy3ZCCbdUXFRH4Q1zstg.png
+image: images/1nlSy3ZCCbdUXFRH4Q1zstg.webp
 category: announcements
 layout: blog
 ---
@@ -24,7 +24,7 @@ With the launch of Flutter 1.0 in 2018 we had a clear mission to resolve that te
 
 Our focus has remained constant through Flutter’s growth era, even as we’ve added support for the six major platforms across mobile, web, and desktop — and continue to push [beyond](https://flutter.dev/multi-platform/embedded), with work like Toyota’s use of Flutter for infotainment systems.
 
-<DashImage figure src="images/1nlSy3ZCCbdUXFRH4Q1zstg.png" />
+<DashImage figure src="images/1nlSy3ZCCbdUXFRH4Q1zstg.webp" />
 
 
 We’re now in the “production era,” and we’re celebrating that with **`#FlutterInProduction`**! This event spotlights the achievements of developers using Flutter in real-world applications.
@@ -47,7 +47,7 @@ It all starts with a focus on enabling amazing user experiences. Free from typic
 With Flutter, you have the flexibility and power to realize *any design* your design team envisions. This is exemplified by Scandinavian Airlines, who after creating their new mobile app with Flutter have filled their trophy case with prestigious design awards such as the Red Dot Design Award, the Webby People’s Voice Award, and the iF Design Gold Award. Charlotte Svensson, EVP & CIO at SAS [explains](https://www.sasgroup.net/newsroom/press-releases/2023/sas-wins-webby-award-for-redesigned-app/):
 > “I’m extremely proud over this award, which is not just an industry award, but a global recognition. It’s a testament to what we can do, when we go above-and-beyond in focusing on improving the customer experience, and when we interact and develop together with our customers. SAS has always been at the forefront of innovation in the aviation industry, and this award serves as a validation of its dedication to providing exceptional digital solutions for our customers.”
 
-<DashImage figure src="images/03685YaIo_7soz-qF.png" alt="Scandinavian Airlines design awards" caption="Scandinavian Airlines design awards" />
+<DashImage figure src="images/03685YaIo_7soz-qF.webp" alt="Scandinavian Airlines design awards" caption="Scandinavian Airlines design awards" />
 
 
 ## Great performance & reliability
@@ -89,7 +89,7 @@ Superformula also used Flutter to [revitalize the digital dining experience](htt
 
 Earlier this year, American auto insurance company GEICO [published a blog post](https://www.geico.com/techblog/flutter-as-the-multi-channel-ux-framework/) detailing their experiences with Flutter and how it had improved their productivity. They were able to change the structure of their organization so that UX teams now own the entire experience *across all channels*, reducing the amount of drift between the different implementations of the same functionality. They also describe Flutter’s development experience as *“mature, with rich tooling and support for the Software Development Lifecycle (SDLC)”.*
 
-<DashImage figure src="images/0Y65O6741pXOhM35S.png" alt="GEICO user interface elements shared across web, iOS, and Android." caption="GEICO user interface elements shared across web, iOS, and Android." />
+<DashImage figure src="images/0Y65O6741pXOhM35S.webp" alt="GEICO user interface elements shared across web, iOS, and Android." caption="GEICO user interface elements shared across web, iOS, and Android." />
 
 
 ## A sneak preview of the future

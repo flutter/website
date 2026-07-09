@@ -3,14 +3,14 @@ title: "Flutter takes the stage at GDC"
 description: "Last year saw a major update to the Flutter Casual Games toolkit. This week, Flutter made its debut at the Game Developers Conference (GDC)…"
 publishDate: 2024-03-20
 author: zoeyfan
-image: images/0zVBJt_90TX8KEYoD.png
+image: images/0zVBJt_90TX8KEYoD.webp
 category: events
 layout: blog
 ---
 
 Last year saw a [major update to the Flutter Casual Games toolkit](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440). This week, Flutter made its [debut](https://schedule.gdconf.com/session/google-developer-summit-building-multiplatform-games-with-flutter-presented-by-google/903077) at the [Game Developers Conference](https://gdconf.com/) (GDC) in San Francisco, the game industry’s premier professional event, championing game developers and the advancement of their craft. Read on to see progress developers have made building games on Flutter, and what’s in store for the future of Flutter game development.
 
-<DashImage figure src="images/0zVBJt_90TX8KEYoD.png" alt="Flutter for Games hero image" caption="Flutter for Games hero image" />
+<DashImage figure src="images/0zVBJt_90TX8KEYoD.webp" alt="Flutter for Games hero image" caption="Flutter for Games hero image" />
 
 
 Since the launch of the [Flutter Casual Games Toolkit](http://flutter.dev/games), Flutter has made strong progress within the game development arena. More than 15,000 new mobile games have been developed with Flutter in the last 12 months.

@@ -27,7 +27,7 @@ Keep reading to learn about all the new additions and improvements the Flutter c
 
 The Google AI Dart SDK has been released to beta. This enables you to build generative AI features into your Dart or Flutter app, powered by Gemini, Google’s latest family of AI models. There is now a [`google_generative_ai`](https://pub.dev/packages/google_generative_ai) package on pub.dev. Learn more about how to build with the Google AI Dart SDK in [this blog post](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381) or jump straight into the [Dart quickstart](https://ai.google.dev/tutorials/dart_quickstart).
 
-<DashImage figure src="images/013y0iIXD9nN5wCcX.png" />
+<DashImage figure src="images/013y0iIXD9nN5wCcX.webp" />
 
 
 ## Framework
@@ -94,7 +94,7 @@ This release includes two new methods on `dart:ui`’s `Paragraph` object: `getC
 
 Under Impeller on Metal (iOS, macOS, Simulator) and on Vulkan-enabled Android devices, the Flutter engine now reports GPU times for each frame in the timeline in debug and profile builds. GPU frame timing can be inspected in DevTools under the “GPUTracer” heading.
 
-<DashImage figure src="images/0m3qW6u7Q4mNfTKxN.png" />
+<DashImage figure src="images/0m3qW6u7Q4mNfTKxN.webp" />
 
 
 Please note that since non-Vulkan Android devices might misreport their support for querying GPU timing, Impeller’s GPU tracing can only be enabled with a flag set in the `AndroidManifest.xml` file on these devices.
@@ -118,7 +118,7 @@ There is much more work to do, however this release includes a couple of nice pe
 
 Further, Impeller [no longer unconditionally stores the stencil buffer](https://github.com/flutter/engine/pull/47397) on every backdrop filter. Instead, any clip affecting operations are recorded, and replayed into a new stencil buffer when restoring the save layer for the backdrop filter.
 
-<DashImage figure src="images/06Of__x8KILe6U5Si.png" />
+<DashImage figure src="images/06Of__x8KILe6U5Si.webp" />
 
 
 With this change, our benchmark of animated advanced blend modes on a Pixel 7 Pro running Impeller with the Vulkan backend improved average GPU frame times from 55ms to 16ms, and improved 90%-ile raster thread CPU times from around 110ms down to 22ms.
@@ -133,7 +133,7 @@ In this early version, the Flutter deep link validator supports web check on And
 
 We hope this tool is the first step to simplify your deep linking implementation journey. We will continue to work on providing future support for web check on iOS, and app check on both iOS and Android!
 
-<DashImage figure src="images/01YoGEcLgpaFythel.png" />
+<DashImage figure src="images/01YoGEcLgpaFythel.webp" />
 
 
 ### Support for Share.invoke
@@ -160,7 +160,7 @@ Android apps can add custom text selection menu items that appear in all text se
 
 Flutter text now looks a little more compact and a little more native on iOS. According to the Apple design guidelines, smaller fonts on iOS should be more spread out in order to be easier to read on mobile, while larger fonts should be more compact to not take up as much space. Before, we were incorrectly using the smaller, more spaced out font in all cases. Now, by default Flutter will use the compact font for larger text.
 
-<DashImage figure src="images/0q9BjqFkxrFRfx9eP.png" />
+<DashImage figure src="images/0q9BjqFkxrFRfx9eP.webp" />
 
 
 ## DevTools
@@ -173,7 +173,7 @@ Some highlights for DevTools with this release are:
 
 * Added an option in the **Enhance Tracing** menu for tracking platform channel activity. This is useful for apps with plugins.
 
-<DashImage figure src="images/0zDY2wXaCTMankTTb.png" />
+<DashImage figure src="images/0zDY2wXaCTMankTTb.webp" />
 
 
 * The Performance and CPU profiler screens are now made available when there is no connected app. Performance data or CPU profiles that were previously saved from DevTools can be reloaded for viewing from these screens.

@@ -3,11 +3,11 @@ title: "The Top Ten Highlights from Flutter & Dart in 2025"
 description: "Hi, Flutter community! My name is Emma Twersky, and I’m back with monthly updates from the Flutterverse. I’m so thankful for the warm…"
 publishDate: 2025-12-17
 author: twerske
-image: images/138nWNBqHADyCszyyX-h98Q.png
+image: images/138nWNBqHADyCszyyX-h98Q.webp
 layout: blog
 ---
 
-<DashImage figure src="images/138nWNBqHADyCszyyX-h98Q.png" />
+<DashImage figure src="images/138nWNBqHADyCszyyX-h98Q.webp" />
 
 
 ## The Top Ten Highlights from Flutter & Dart in 2025

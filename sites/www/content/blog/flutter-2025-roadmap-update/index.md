@@ -3,7 +3,7 @@ title: "Flutter 2025 roadmap update"
 description: "Transparency is a core goal of the Flutter open source project, with everything from issues to design specifications being shared in the…"
 publishDate: 2025-04-02
 author: mit-mit
-image: images/0sO8Aqa-_eHZ9jcZz.png
+image: images/0sO8Aqa-_eHZ9jcZz.webp
 category: announcements
 layout: blog
 ---
@@ -14,7 +14,7 @@ We’ve been publishing our roadmaps since 2020, and this is a natural continuat
 
 For all the details, check out the freshly updated [Flutter roadmap on GitHub](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md).
 
-<DashImage figure src="images/0sO8Aqa-_eHZ9jcZz.png" />
+<DashImage figure src="images/0sO8Aqa-_eHZ9jcZz.webp" />
 
 
 As with any other software product roadmap, note that plans tend to shift and adapt throughout the year, so don’t be surprised if some changes happen along the way. But we still feel it’s important to share our overall plans.

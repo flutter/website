@@ -3,7 +3,7 @@ title: "How we built it: Ask Dash — A generative AI Flutter application"
 description: "As part of the Google Cloud Applied AI Summit, the Flutter and Vertex AI teams collaborated with Very Good Ventures to create an…"
 publishDate: 2023-12-13
 author: verygoodopensource
-image: images/092qfA1AlxG0HMJCE.gif
+image: images/092qfA1AlxG0HMJCE.webp
 category: spotlight
 layout: blog
 ---
@@ -22,14 +22,14 @@ This article takes you through how our partner, Very Good Ventures, built a Flut
 
 The idea of creating a search application trained on the Flutter docs was straightforward. In fact, the [official Flutter documentation](https://docs.flutter.dev/) already provides a simple search experience that delivers relevant page results for questions on Flutter. However, when conceptualizing what to build, we wanted to demonstrate how Flutter can be used to create visually appealing interactive experiences that are fun and engaging.
 
-<DashImage figure src="images/092qfA1AlxG0HMJCE.gif" />
+<DashImage figure src="images/092qfA1AlxG0HMJCE.webp" />
 
 
 **Creating interactive animations in Flutter**
 
 Flutter empowered the team to implement a wide array of animations seamlessly. Its rich set of animations, coupled with the flexibility of widgets, allowed us to create transitions, engaging motion effects, and fluid user interactions. From creating animated loading states while generating the results, to a Dash sprite that waves when the answers appear, Flutter provided flexibility to turn what could be a basic text response into something fun for users to interact with.
 
-<DashImage figure src="images/00gsPB_1VlYop9DPL.gif" />
+<DashImage figure src="images/00gsPB_1VlYop9DPL.webp" />
 
 
 **Visualizing natural language search results**

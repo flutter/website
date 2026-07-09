@@ -3,11 +3,11 @@ title: "New updates to A2UI and Flutter’s GenUI package"
 description: "Generative UI, or GenUI for short, is a user experience pattern in which an agent not only generates content, but also makes decisions…"
 publishDate: 2026-05-14
 author: redbrogdon
-image: images/1yPatUacknopOAVF_Vr86OA.png
+image: images/1yPatUacknopOAVF_Vr86OA.webp
 layout: blog
 ---
 
-<DashImage figure src="images/1yPatUacknopOAVF_Vr86OA.png" />
+<DashImage figure src="images/1yPatUacknopOAVF_Vr86OA.webp" />
 
 
 Generative UI, or GenUI for short, is a user experience pattern in which an agent not only generates content, but also makes decisions about how that content should be displayed and made interactive for the user. For Flutter developers, implementing GenUI means using A2UI, an open protocol that defines a way for agents and clients (or “renderers”) to collaborate on the composition and state of a user interface. To capitalize on this, the Flutter team built genui, a package that uses A2UI to connect with an agent and provide it with a catalog of widgets to use, and then presents those widgets to the user.

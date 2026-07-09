@@ -3,12 +3,12 @@ title: "Learn how to build agentic apps with Flutter, Angular, Firebase, and Ver
 description: "The way we build applications is evolving. Imagine apps that don’t just respond to user input but proactively assist, automate tasks, and…"
 publishDate: 2025-04-24
 author: kkboateng
-image: images/0bWWt_FlITTVh_813.png
+image: images/0bWWt_FlITTVh_813.webp
 category: spotlight
 layout: blog
 ---
 
-<DashImage figure src="images/0bWWt_FlITTVh_813.png" />
+<DashImage figure src="images/0bWWt_FlITTVh_813.webp" />
 
 
 The way we build applications is evolving. Imagine apps that don’t just respond to user input but proactively assist, automate tasks, and create entirely new kinds of experiences. Welcome to the world of **agentic apps**!

@@ -3,12 +3,12 @@ title: "Announcing the Flutter News Toolkit"
 description: "An accelerated toolkit for building mobile apps for news and content"
 publishDate: 2023-01-25
 author: zoeyfan
-image: images/0_Xb_zBUOvsH6CL9A.png
+image: images/0_Xb_zBUOvsH6CL9A.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/0_Xb_zBUOvsH6CL9A.png" />
+<DashImage figure src="images/0_Xb_zBUOvsH6CL9A.webp" />
 
 
 Google’s Flutter team has partnered closely with the [Google News Initiative (GNI)](https://newsinitiative.withgoogle.com/) in creating the [Flutter News Toolkit](https://github.com/flutter/news_toolkit) — a free, prebuilt Flutter app template — to accelerate news application development. Some early adopters have already built iOS and Android applications in as little as 6 weeks, claiming up to 80% time savings compared to traditional double-ended development on iOS and Android.
@@ -41,7 +41,7 @@ Using best practices from [News Consumer Insights](https://news-consumer-insight
 
 You can use these pre-integrated features out-of-the-box, or easily modify and swap them with other functionalities you prefer.
 
-<DashImage figure src="images/1HOaHUtxwx2S4urCrztI88g.png" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
+<DashImage figure src="images/1HOaHUtxwx2S4urCrztI88g.webp" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
 
 
 ### Early adopters
@@ -91,7 +91,7 @@ While the news template can lower the barrier to entry for building news mobile 
 
 We have mapped out the deployment process at a high-level with an assumption of 2 Flutter engineers working on the project. As an example, early adopters like Hespress finished their application development within 6 weeks. But we also have customers like AnyMind launched the app within 2 weeks with 1 engineer.
 
-<DashImage figure src="images/0n4yFaH37OzEQ9Ys8.png" alt="*Deployment process at a high-level*" caption="*Deployment process at a high-level*" />
+<DashImage figure src="images/0n4yFaH37OzEQ9Ys8.webp" alt="*Deployment process at a high-level*" caption="*Deployment process at a high-level*" />
 
 
 ### If I don’t have an in-house development team, how can I use the template?

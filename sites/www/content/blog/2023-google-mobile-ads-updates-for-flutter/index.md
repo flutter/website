@@ -3,12 +3,12 @@ title: "2023 Google Mobile Ads Updates for Flutter"
 description: "We added new GMA Flutter features based on your feedback!"
 publishDate: 2023-05-10
 author: timothyhoang
-image: images/1PLQQUPqp_e0LmXTbAgb_iQ.png
+image: images/1PLQQUPqp_e0LmXTbAgb_iQ.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/1PLQQUPqp_e0LmXTbAgb_iQ.png" />
+<DashImage figure src="images/1PLQQUPqp_e0LmXTbAgb_iQ.webp" />
 
 
 As you build and grow your Flutter apps, you may want your apps to make money. You can monetize appin many ways. Introducing advertising would be one of the most common strategies. To introduce ads, you can use the [Google Mobile Ads](https://pub.dev/packages/google_mobile_ads) (GMA) Flutter plugin. The GMA plugin can place ads from AdMob, Google Ad Manager, or AdSense in your Flutter mobile app.
@@ -27,7 +27,7 @@ With Native ads, you can customize the look and feel of the ads that appear in y
 
 Native ads can match the layout of the surrounding content. This results in a more cohesive, natural app experience. You can implement these ads in a number of ways. Add them in your feeds, on transition screens and overlays, or anywhere else you want ads within your app.
 
-<DashImage figure src="images/1CkTEpg9fxmW7j_UxQX481A.png" />
+<DashImage figure src="images/1CkTEpg9fxmW7j_UxQX481A.webp" />
 
 
 Before, implementing Native ads required writing platform code. We agree this was a suboptimal developer experience and want to enable you to use Dart whenever possible.
@@ -44,7 +44,7 @@ When you submit issues on the GMA Flutter plugin, it helps if you include a mini
 
 To simplify troubleshooting issues, we cut our big sample into smaller samples. We replaced our monolithic app sample with [samples for each ad format and mediation](https://github.com/googleads/googleads-mobile-flutter/tree/main/samples/admob). When you submit issues now, you can use these apps. These apps allow you to share a minimum reproducible sample. This helps when sharing a sample of your own app would be cumbersome or impossible.
 
-<DashImage figure src="images/1AwHtPUcFDv1jToZIKjye_w.png" />
+<DashImage figure src="images/1AwHtPUcFDv1jToZIKjye_w.webp" />
 
 
 We hope that these smaller individual app samples simplify testing out new formats or mediation. Each sample includes a readme that supplements our GMA developer documentation ([Ad Manager](https://developers.google.com/ad-manager/mobile-ads-sdk/flutter/quick-start), [AdMob](https://developers.google.com/admob/flutter/quick-start)).
@@ -80,7 +80,7 @@ We understand some developers prefer using WebViews in their mobile apps. This a
 
 To support Ad Manager and AdSense monetization of mobile app WebViews, we’re introducing Flutter support for the GMA WebView API for Ads. If your app uses WebViews to display web content that serves ads from Ad Manager or AdSense, you must use the WebView API for Ads.
 
-<DashImage figure src="images/1Vj2zT8BlnstyfZmvgSXuSw.png" />
+<DashImage figure src="images/1Vj2zT8BlnstyfZmvgSXuSw.webp" />
 
 
 1. If you don’t need to request ads from an in-app WebView, implement the ad format using the GMA Flutter plugin ([Ad Manager guide](https://support.google.com/admanager/answer/6238696), [AdMob guide](https://support.google.com/admob/answer/6128738))

@@ -13,7 +13,7 @@ layout: blog
 
 When it first clicked for me that Flutter gives me full control of everything on the screen, right down to the last pixel, I immediately wanted to go beyond the fixed and predictable world of most app UIs. The fully custom widgets that I could draw using [CustomPaint](https://api.flutter.dev/flutter/widgets/CustomPaint-class.html) begged to be broken out of the typical ScrollView or Container. I wanted to move around, zoom in on things, and navigate the world that Flutter makes it possible to create. The [Transform](https://api.flutter.dev/flutter/widgets/Transform-class.html) widget was my vehicle for navigating this world, and [GestureDetector](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html) provided the controls.
 
-<DashImage figure src="images/096VXf5cl-KdkF0st.gif" />
+<DashImage figure src="images/096VXf5cl-KdkF0st.webp" />
 
 
 GestureDetector gives easy access to most gestures, and Transform provides the ability to modify the perspective in which a child widget is seen. Both are simple, independent widgets that follow Flutter’s pattern of composability. When we combine the two, every gesture on a widget becomes a way to explore.
@@ -28,17 +28,17 @@ Imagine the user performs a series of gestures back to back. If the gestures are
 
 A transformation matrix can be combined with any number of other transformation matrices indefinitely, and the result is always another single matrix of the same size. The GPU is very fast at doing this sort of math, even massively in parallel, such as for every pixel on the screen. This makes it great for storing the state of a widget like Transform, and the result is a very straightforward widget for Flutter developers to use.
 
-<DashImage figure src="images/0VQ-yBPvchbC0k_tX.gif" />
+<DashImage figure src="images/0VQ-yBPvchbC0k_tX.webp" />
 
 
 ## Detecting gestures
 
 If we tie some user gestures into updating the transformation matrix using a GestureDetector, then the user has the freedom to navigate the scene that we’re displaying to them. GestureDetector provides easy access to gestures like drag, which we can use for translation, pinch, for zooming, and even a two-finger rotation.
 
-<DashImage figure src="images/0IjMrne-3AEcMAkUP.gif" />
+<DashImage figure src="images/0IjMrne-3AEcMAkUP.webp" />
 
 
-<DashImage figure src="images/0Ut-Uqv6H9ypaumF2.gif" />
+<DashImage figure src="images/0Ut-Uqv6H9ypaumF2.webp" />
 
 
 <DashImage figure src="images/0-BQ6W3Ke-W_JQiX4.gif" />

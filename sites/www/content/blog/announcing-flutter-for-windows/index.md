@@ -18,7 +18,7 @@ Our goal with Flutter is to give you the tools you need to build a great experie
 
 So far, we’ve seen momentum that has exceeded our expectations, with nearly half a million apps now released that use Flutter, including big apps from companies like [Betterment](https://verygood.ventures/success-stories/betterment), BMW, and ByteDance, and apps from thirty teams at Google. In 2021, Flutter became the most popular cross-platform UI toolkit, as measured by analysts like [Statista](https://www.statista.com/) and [SlashData](https://www.slashdata.co/):
 
-<DashImage figure src="images/0w2gBpEJcFceqjIRv.png" />
+<DashImage figure src="images/0w2gBpEJcFceqjIRv.webp" />
 
 
 Our own data backs this up, with a consistent [92% of Flutter developers expressing positive satisfaction](https://medium.com/flutter/about-web-community-and-code-samples-q3-2021-survey-results-b67f5b997dca) with our tools in all four quarterly surveys in 2021. (And to the other 8% of you, we’re listening to your feedback and want you to be happy as well!)
@@ -38,12 +38,12 @@ So while we’ve brought Flutter *to* Windows, we’ve also tailored it *for* Wi
 
 Just as with our support for Android and iOS, the Windows implementation of Flutter combines a Dart framework and C++ engine. Windows and Flutter communicate through an embedding layer that hosts the Flutter engine and is responsible for translating and dispatching Windows messages. Flutter coordinates with Windows to paint your UI to the screen, handles events like window resizing and DPI changes, and works with existing Windows modalities for internationalization, such as input method editors.
 
-<DashImage figure src="images/0nmWy9ouW6nL5vrlB.png" alt="On Windows, Flutter uses exactly the same Dart code, but takes advantage of native Windows APIs." caption="On Windows, Flutter uses exactly the same Dart code, but takes advantage of native Windows APIs." />
+<DashImage figure src="images/0nmWy9ouW6nL5vrlB.webp" alt="On Windows, Flutter uses exactly the same Dart code, but takes advantage of native Windows APIs." caption="On Windows, Flutter uses exactly the same Dart code, but takes advantage of native Windows APIs." />
 
 
 Your app can use every part of the Flutter framework, and on Windows, it can also talk to the Win32, COM, and Windows Runtime APIs either directly through Dart’s C interop layer, or using a platform plugin written in C++. We’ve also adapted a number of common plugins to include Windows support, including `camera`, `file_picker`, and `shared_preferences`. More importantly, the community has already added Windows support for a broad array of other packages, covering everything from Windows taskbar integration to serial port access.
 
-<DashImage figure src="images/0EgO7uhhHTZ5M5RWX.png" alt="There are already hundreds of packages that have been adapted to support Flutter apps built for Windows." caption="There are already hundreds of packages that have been adapted to support Flutter apps built for Windows." />
+<DashImage figure src="images/0EgO7uhhHTZ5M5RWX.webp" alt="There are already hundreds of packages that have been adapted to support Flutter apps built for Windows." caption="There are already hundreds of packages that have been adapted to support Flutter apps built for Windows." />
 
 
 For a fully tailored Windows UI, you can also use packages like [`fluent_ui`](https://pub.dev/packages/fluent_ui) and [`flutter_acrylic`](https://pub.dev/packages/flutter_acrylic) to create an app that expresses the Microsoft Fluent design system beautifully. And using the [`msix`](https://pub.dev/packages/msix) tool you can wrap your app in an installer that can be uploaded to the Microsoft Store on Windows.
@@ -53,19 +53,19 @@ Together, this fosters creation of apps that look great on Windows, run fast on 
 <DashImage figure src="images/1UuEJrQgjNUXhxgDJgjhQLg.jpeg" />
 
 
-<DashImage figure src="images/0CV_R70NqCzCoGxuI.png" />
+<DashImage figure src="images/0CV_R70NqCzCoGxuI.webp" />
 
 
-<DashImage figure src="images/0EokU2CUDhjr6nDpW.png" />
+<DashImage figure src="images/0EokU2CUDhjr6nDpW.webp" />
 
 
-<DashImage figure src="images/02FlTNeXvMtnATYfw.png" />
+<DashImage figure src="images/02FlTNeXvMtnATYfw.webp" />
 
 
-<DashImage figure src="images/0QZlDI5SemNqlOuX1.png" />
+<DashImage figure src="images/0QZlDI5SemNqlOuX1.webp" />
 
 
-<DashImage figure src="images/0EqTtZLTkDhGrNAZj.png" alt="Some early community examples of Windows apps built with Flutter, including [Harmonoid](https://github.com/harmonoid/harmonoid) and [Rows](https://rows.com/)." caption="Some early community examples of Windows apps built with Flutter, including [Harmonoid](https://github.com/harmonoid/harmonoid) and [Rows](https://rows.com/)." />
+<DashImage figure src="images/0EqTtZLTkDhGrNAZj.webp" alt="Some early community examples of Windows apps built with Flutter, including [Harmonoid](https://github.com/harmonoid/harmonoid) and [Rows](https://rows.com/)." caption="Some early community examples of Windows apps built with Flutter, including [Harmonoid](https://github.com/harmonoid/harmonoid) and [Rows](https://rows.com/)." />
 
 
 ## Microsoft and Flutter
@@ -77,7 +77,7 @@ Indeed, several teams from Microsoft have contributed to today’s announcement.
 
 We’ve also been impressed with the investments Microsoft has made around accessibility for Windows, and we’re grateful for that team’s assistance to ensure Flutter has support for screen readers from day one. It’s a mistake to dismiss accessibility as a niche requirement. As this diagram from the [Microsoft inclusive design toolkit](https://www.microsoft.com/design/inclusive/) illustrates, we all have reason to care about delivering experiences that adapt for different permanent, temporary, or situational needs.
 
-<DashImage figure src="images/1kZRGSKMDQQhbINmZRw6z4w.png" />
+<DashImage figure src="images/1kZRGSKMDQQhbINmZRw6z4w.webp" />
 
 
 The video below demonstrates how Flutter integrates with Windows Narrator. For the purposes of this video, we’ve deliberately blurred the screen to give you a sense of how valuable this feature is to users who need it.
@@ -99,7 +99,7 @@ Our tooling partners are also adding support for Windows. To highlight a few:
 
 * Lastly, [Rive](https://rive.app/) announced today an upcoming Windows version of their popular graphics tooling suite, allowing designers and developers to create interactive vector animations that can respond to code in real time using a state machine. The upcoming Windows edition of their app offers screaming fast performance and a lower memory footprint, and will be available soon in the Microsoft Store for download.
 
-<DashImage figure src="images/1IDu8nsxUNLecfET3nuSdDg.png" alt="[Rive](https://rive.app), coming soon to the Microsoft Store on Windows." caption="[Rive](https://rive.app), coming soon to the Microsoft Store on Windows." />
+<DashImage figure src="images/1IDu8nsxUNLecfET3nuSdDg.webp" alt="[Rive](https://rive.app), coming soon to the Microsoft Store on Windows." caption="[Rive](https://rive.app), coming soon to the Microsoft Store on Windows." />
 
 
 It’s very exciting for us to see a mature ecosystem built around Flutter, and we’d encourage you to check out each of these partners as you start building Windows apps with Flutter.
@@ -112,4 +112,4 @@ In the coming months, you’ll hear more from us on completing stable support fo
 
 In the meantime, thank you for your support of Flutter. We’re excited to see what you build for Windows!
 
-<DashImage figure src="images/0vowtRZE_wvyVA7CB.png" />
+<DashImage figure src="images/0vowtRZE_wvyVA7CB.webp" />

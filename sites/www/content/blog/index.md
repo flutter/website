@@ -1,6 +1,6 @@
 ---
 title: "The Flutter Blog"
-description: "Flutter is cool."
+description: "Build beautiful native apps in record time"
 layout: blog
 showBreadcrumbs: false
 ---

@@ -3,7 +3,7 @@ title: "Supercharge Your Dart & Flutter Development Experience with the Dart MCP
 description: "By Ander Dobo — Product Manager, and Kenzie Davisson — Engineer"
 publishDate: 2025-07-23
 author: anderdobo
-image: images/13K1rgoDtIBWbIFZPp1VCEQ.gif
+image: images/13K1rgoDtIBWbIFZPp1VCEQ.webp
 category: announcements
 layout: blog
 ---
@@ -48,7 +48,7 @@ The true power of the Dart and Flutter MCP Server is how it enables AI assistant
 
 We’ve all been there: you build a beautiful UI, run the app, and are greeted by the infamous yellow-and-black stripes of a `RenderFlex` overflow error. Instead of manually debugging the widget tree, you can now ask your AI assistant for help.
 
-<DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.gif" />
+<DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.webp" />
 
 
 **Prompt:** *“Check for and fix static and runtime analysis issues. Check for and fix any layout issues.” (Note: For brevity, parts of this recording have been sped up.)*
@@ -94,7 +94,7 @@ First, the Dart and Flutter MCP Server requires Dart SDK 3.9/Flutter 3.35 beta o
 
 The [Gemini CLI](https://github.com/google-gemini/gemini-cli) is an open-source AI agent that brings the power of Gemini directly into your terminal, providing a direct path from your prompt to the model. While it excels at coding, the Gemini CLI is a versatile, local utility that you can use for a wide range of tasks, from content generation and problem solving to deep research and task management.
 
-<DashImage figure src="images/0gD-O6VeS0xT6EdDh.png" />
+<DashImage figure src="images/0gD-O6VeS0xT6EdDh.webp" />
 
 
 Follow the [quickstart instructions](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#quickstart) to install the Gemini CLI on your machine.
@@ -140,7 +140,7 @@ To configure Gemini Code Assist to use the Dart and Flutter MCP Server, use the 
 
 You can verify the MCP server has been configured properly by entering `/mcp` in the chat window in Agent mode.
 
-<DashImage figure src="images/1eYea3SzwoGDCQeP5Tmq-Pg.png" />
+<DashImage figure src="images/1eYea3SzwoGDCQeP5Tmq-Pg.webp" />
 
 
 ## Firebase Studio
@@ -157,7 +157,7 @@ To add an MCP server in Firebase Studio
 
 For more information about MCP server configuration in Firebase Studio, see [Customize your Firebase Studio workspace](https://firebase.google.com/docs/studio/customize-workspace?utm_source=firebase_blog&utm_medium=blog&utm_campaign=FY25-Q3-firebasestudio_cloudsummitlondon&utm_term=firebase_studio_devrel&utm_content=supercharge_firebase_studio_with_mcp#mcp).
 
-<DashImage figure src="images/0Vjo7hhpe6uDe05yS.png" />
+<DashImage figure src="images/0Vjo7hhpe6uDe05yS.webp" />
 
 
 ## GitHub Copilot in VS Code

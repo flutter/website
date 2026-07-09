@@ -3,14 +3,14 @@ title: "All the Flutter news from a busy Google I/O 2024"
 description: "Catch up on all the big product updates, new resources, and success stories announced at Google I/O 2024"
 publishDate: 2024-05-30
 author: mit-mit
-image: images/1--DvqdXSA38rPuqMK5c0tQ.png
+image: images/1--DvqdXSA38rPuqMK5c0tQ.webp
 category: events
 layout: blog
 ---
 
 It’s hard to believe that [Google I/O 2024](https://io.google/2024/) was already two weeks ago. We couldn’t be more grateful for the Flutter community’s support — the energy was uplifting!
 
-<DashImage figure src="images/1--DvqdXSA38rPuqMK5c0tQ.png" alt="Flutter logo illustration" caption="Flutter logo illustration" />
+<DashImage figure src="images/1--DvqdXSA38rPuqMK5c0tQ.webp" alt="Flutter logo illustration" caption="Flutter logo illustration" />
 
 
 We shared a lot of product updates, resources, developer stories, technical sessions, and workshops, across several blogs, videos, and events — and we know it can be tough to keep track of it all.

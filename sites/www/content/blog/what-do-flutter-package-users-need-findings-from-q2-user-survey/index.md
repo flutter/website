@@ -3,12 +3,12 @@ title: "What do Flutter package users need? Findings from Q2 user survey"
 description: "We recently ran our sixth quarterly user survey and collected responses from over 7,000 Flutter users."
 publishDate: 2019-07-25
 author: jayoung-lee
-image: images/0JGPtcSX7QYbN8Dvn.png
+image: images/0JGPtcSX7QYbN8Dvn.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/0JGPtcSX7QYbN8Dvn.png" alt="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" caption="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" />
+<DashImage figure src="images/0JGPtcSX7QYbN8Dvn.webp" alt="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" caption="*A word cloud made with the Q2 survey comments* ☁️ *(link to the original [image](https://raw.githubusercontent.com/timsneath/wordcloud_flutter/master/flutter_wordcloud.png), [code](https://github.com/timsneath/wordcloud_flutter))*" />
 
 
 We recently ran our sixth quarterly user survey and collected responses from over 7,000 Flutter users. We found that 92.5% of the respondents are satisfied or very satisfied, which is slightly higher than the [last quarter](https://medium.com/flutter/insights-from-flutters-first-user-survey-of-2019-3659b02303a5)! We are thrilled to see a consistent level of satisfaction with Flutter. In this article, we cover some deep-dive questions around Flutter’s ecosystem, because we recognize that helping the Flutter community grow the ecosystem is important.
@@ -19,10 +19,10 @@ Even though the ecosystem has been exploding, we recognize that there is still p
 
 Overall, 80.6% of 5,250 respondents were either *very satisfied* or *somewhat satisfied* with the Flutter ecosystem. This is not bad, but at the same time, it is one of the lower-scoring parts of the survey.
 
-<DashImage figure src="images/0MjrAD-ZGebXA-xaX.png" alt="*Satisfaction with ecosystem*" caption="*Satisfaction with ecosystem*" />
+<DashImage figure src="images/0MjrAD-ZGebXA-xaX.webp" alt="*Satisfaction with ecosystem*" caption="*Satisfaction with ecosystem*" />
 
 
-<DashImage figure src="images/0LDgXRVH9t_ZteWDV.png" alt="*Overall satisfaction with Flutter*" caption="*Overall satisfaction with Flutter*" />
+<DashImage figure src="images/0LDgXRVH9t_ZteWDV.webp" alt="*Overall satisfaction with Flutter*" caption="*Overall satisfaction with Flutter*" />
 
 
 When asked about the dissatisfaction with Flutter’s ecosystem, the reason selected by the most respondents was that “critical packages I need **do not exist** yet” (18%), which is perhaps to be expected for a relatively new technology.
@@ -31,7 +31,7 @@ However, we are happy to find that our community is actively adding to the Flutt
 
 If you can’t decide which package to share with the Flutter community, visit the Flutter repository on GitHub and search for [issues labeled with “would be a good package”](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22would+be+a+good+package%22+sort%3Areactions-%2B1-desc) to see what has been requested. You can upvote your favorite requests to increase their visibility.
 
-<DashImage figure src="images/0UdtJOiVqBwXOmDl_.png" alt="*Reasons for dissatisfaction with Flutter’s ecosystem ( a multiple choice question)*" caption="*Reasons for dissatisfaction with Flutter’s ecosystem ( a multiple choice question)*" />
+<DashImage figure src="images/0UdtJOiVqBwXOmDl_.webp" alt="*Reasons for dissatisfaction with Flutter’s ecosystem ( a multiple choice question)*" caption="*Reasons for dissatisfaction with Flutter’s ecosystem ( a multiple choice question)*" />
 
 
 However, there is an even better way to contribute to the ecosystem, if you’re interested in helping out. Note that all other reasons start with “critical packages I need do exist…”, meaning that package users were facing challenges even when packages exist. This tells us that we can improve the ecosystem by improving what is already there — by filing bugs, improving documentation, adding missing features, implementing support for the ‘other’ platform, adding tests, and so on. Consider finding a package that has potential but has not been loved enough and contribute towards it — with tests, bug reports, feature contributions, or examples!
@@ -65,10 +65,10 @@ The Flutter/Dart team at Google is also investigating ways to improve your exper
 
 In the meantime, it might be worth pointing out that each package on pub.dev already receives scores for popularity, health, and maintenance; these scores help users gauge the quality of a package. You can find details of the scoring system on [pub.dev/help#scoring](https://pub.dev/help#scoring).
 
-<DashImage figure src="images/0DSPe0z8OcY1Dzlet.png" alt="*Scoring example*" caption="*Scoring example*" />
+<DashImage figure src="images/0DSPe0z8OcY1Dzlet.webp" alt="*Scoring example*" caption="*Scoring example*" />
 
 
-<DashImage figure src="images/0Kxtw9kjb1h_6DTAK.png" alt="*Maintenance suggestions*" caption="*Maintenance suggestions*" />
+<DashImage figure src="images/0Kxtw9kjb1h_6DTAK.webp" alt="*Maintenance suggestions*" caption="*Maintenance suggestions*" />
 
 
 With the scoring system, package authors can understand what they can do to improve the quality of the package, and package users can estimate the quality (for example, the outdatedness) of a package.
@@ -81,7 +81,7 @@ We want to convey a huge thank you to the more than 7,000 Flutter users who fill
 
 * For the API documentation on [api.flutter.dev](http://api.flutter.dev), sample code in the class doc was rated as the most useful resource. We have added full code samples to some of the classes in the API docs with the 1.7 release, but will continue expanding this feature to more classes. (We also accept PRs against the API docs on the [flutter/flutter repo](https://github.com/flutter/flutter/labels/d%3A%20api%20docs)!)
 
-<DashImage figure src="images/0PceEjhOlGlSQw1oK.png" />
+<DashImage figure src="images/0PceEjhOlGlSQw1oK.webp" />
 
 
 * Lastly, many of you noticed that the number of unresolved issues in the GitHub repo is growing, which is an unfortunate side-effect of the exploding popularity of Flutter. While we closed over 1,250 issues in the last release, we have more work to do here. As mentioned in the Flutter 1.7 blog post, we’re working to increase staffing in this area, which will help with faster triaging of new bugs, faster attention to critical/crashing issues, closing and merging duplicate issues, and redirecting support requests to [StackOverflow](https://stackoverflow.com/questions/tagged/flutter).

@@ -3,7 +3,7 @@ title: "Accessible expression with Material Icons and Flutter"
 description: "Material Design and Flutter both help developers build experiences that are flexible, accessible, and expressive…"
 publishDate: 2020-11-04
 author: andremobilelabonte
-image: images/1kcT41A5GvXp8XrjHjiuc4A.png
+image: images/1kcT41A5GvXp8XrjHjiuc4A.webp
 category: announcements
 layout: blog
 ---
@@ -16,7 +16,7 @@ Flutter now has support for all four icon styles — *filled, outlined, sharp, a
 
 Here are a few icons that showcase the range of options you’ll find in Material’s catalog. You can browse the full set of icons and download bitmap or vector versions for use in your favorite design tool on [Material.io](https://material.io/resources/icons/), or view Flutter’s versions on the [`Icons`](https://api.flutter.dev/flutter/material/Icons-class.html) API page.
 
-<DashImage figure src="images/1kcT41A5GvXp8XrjHjiuc4A.png" alt="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." caption="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." />
+<DashImage figure src="images/1kcT41A5GvXp8XrjHjiuc4A.webp" alt="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." caption="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." />
 
 
 **Getting started**
@@ -35,7 +35,7 @@ For example, when an icon is used in conjunction with an action element, like a 
 
 [Material.io offers guidance](https://material.io/design/usability/accessibility.html#writing) on indicating UI elements by action. A common mistake is to default the semantic label to the name of the icon, as opposed to the action that is performed when that icon is selected.
 
-<DashImage figure src="images/1sZKrpmVM5f5bRSgy453T1Q.png" />
+<DashImage figure src="images/1sZKrpmVM5f5bRSgy453T1Q.webp" />
 
 
 To learn more about the importance of building accessible digital experiences, see [Accessibility](https://flutter.dev/docs/development/accessibility-and-localization/accessibility) on flutter.dev.

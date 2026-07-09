@@ -3,19 +3,19 @@ title: "Hummingbird: Building Flutter for the Web"
 description: "At Flutter Live today, we announced that we are experimenting with running Flutter on the Web. In this post, we describe how we are…"
 publishDate: 2018-12-04
 author: yegorj
-image: images/0gD64Y8ECWBBuSZrx.png
+image: images/0gD64Y8ECWBBuSZrx.webp
 category: spotlight
 layout: blog
 ---
 
 At Flutter Live today, we announced that we are experimenting with running Flutter on the Web. In this post, we describe how we are approaching the challenge, and the current state of the technology. At the end of the post you will find answers to questions about interop and embedding.
 
-<DashImage figure src="images/0gD64Y8ECWBBuSZrx.png" />
+<DashImage figure src="images/0gD64Y8ECWBBuSZrx.webp" />
 
 
 Let’s begin with a quick refresher of Flutter’s architecture. Flutter is a multi-layered system, such that higher layers are easier to use and allow you to express a lot with little code, and the lower layers give you more control at the expense of having to deal with some complexity. When a higher layer does not do what a developer wants, they can drop to a lower layer. Developers have access to all the layers above the Flutter Engine.
 
-<DashImage figure src="images/1pUNwEsIf3HKaarmNVRwP7Q.png" alt="Flutter for Mobile Architecture" caption="Flutter for Mobile Architecture" />
+<DashImage figure src="images/1pUNwEsIf3HKaarmNVRwP7Q.webp" alt="Flutter for Mobile Architecture" caption="Flutter for Mobile Architecture" />
 
 
 Flutter Engine is exposed as the lowest-level library in Flutter, *dart:ui*. It knows nothing about widgets, physics, animation, or layout (except text layout). All it knows is how to compose [pictures](https://docs.flutter.io/flutter/dart-ui/Picture-class.html) onto the screen and turn them into pixels. It would be hard to write applications directly on top of dart:ui. This is why the higher layers were created.
@@ -48,7 +48,7 @@ One of the most valuable features of Flutter is that it is *portable* across pla
 
 After attempting to port several sample applications to the Web we realized that prototypes #1 and #2 would not provide the level of portability that Flutter developers have come to enjoy. We therefore decided to go with prototype #3, the Flutter Web Engine design, since this would allow the highest framework-level code reuse between platforms:
 
-<DashImage figure src="images/1M0ik7rqmkK1Cf0xB4iwbxg.png" alt="*Flutter for the Web Architecture (Hummingbird)*" caption="*Flutter for the Web Architecture (Hummingbird)*" />
+<DashImage figure src="images/1M0ik7rqmkK1Cf0xB4iwbxg.webp" alt="*Flutter for the Web Architecture (Hummingbird)*" caption="*Flutter for the Web Architecture (Hummingbird)*" />
 
 
 Now that we know we want to implement the entire dart:ui API we need to pick a set of Web technologies to build on top of. Flutter renders UI one frame at a time. Within each frame Flutter ***builds*** widgets, performs ***layout***, and finally ***paints*** them on the screen.
@@ -65,7 +65,7 @@ In Flutter you lay out a paragraph of text by creating a [Paragraph](https://doc
 
 When laying out a paragraph of text Flutter measures the paragraph’s height, width, maximum intrinsic width, minimum intrinsic width, and alphabetic and ideographic baselines. These properties are illustrated below.
 
-<DashImage figure src="images/1KpntaDMPfVygd3iTCUgI1A.png" alt="*Paragraph layout attributes*" caption="*Paragraph layout attributes*" />
+<DashImage figure src="images/1KpntaDMPfVygd3iTCUgI1A.webp" alt="*Paragraph layout attributes*" caption="*Paragraph layout attributes*" />
 
 
 You can find more details in Flutter’s [Paragraph documentation](https://docs.flutter.io/flutter/dart-ui/Paragraph-class.html).
@@ -100,12 +100,12 @@ To express Flutter’s opacity, transform, offset, clip rect, and other [layers]
 
 When all is said and done, a frame is rendered onto the page as a tree of HTML elements with DomCanvas and BitmapCanvas as leaf nodes. For example:
 
-<DashImage figure src="images/1srIZflrlT4IhxER1nnOtJw.png" alt="*Sample HTML DOM structure of a frame*" caption="*Sample HTML DOM structure of a frame*" />
+<DashImage figure src="images/1srIZflrlT4IhxER1nnOtJw.webp" alt="*Sample HTML DOM structure of a frame*" caption="*Sample HTML DOM structure of a frame*" />
 
 
 An equivalent Flutter layer tree (called [*flow layer*](https://github.com/flutter/engine/tree/master/flow/layers)) in the Flutter Engine would look like this:
 
-<DashImage figure src="images/1yjnmm_UQ6wrQD5AssXxqLg.png" alt="*Sample Flutter Engine layer structure*" caption="*Sample Flutter Engine layer structure*" />
+<DashImage figure src="images/1yjnmm_UQ6wrQD5AssXxqLg.webp" alt="*Sample Flutter Engine layer structure*" caption="*Sample Flutter Engine layer structure*" />
 
 
 Structurally they are very similar. The biggest difference is that on the Web we have to pick different implementations for pictures based on their contents.

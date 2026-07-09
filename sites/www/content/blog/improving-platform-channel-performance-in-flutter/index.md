@@ -3,12 +3,12 @@ title: "Improving Platform Channel Performance in Flutter"
 description: "Over the past couple of years, I’ve been interested in the problem of “How do we make communication between Flutter and its host platform…"
 publishDate: 2021-06-14
 author: gaaclarke
-image: images/10lyQIh8t-STSy1o2Yjj1tQ.png
+image: images/10lyQIh8t-STSy1o2Yjj1tQ.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/10lyQIh8t-STSy1o2Yjj1tQ.png" />
+<DashImage figure src="images/10lyQIh8t-STSy1o2Yjj1tQ.webp" />
 
 
 Over the past couple of years, I’ve been interested in the problem of “How do we make communication between Flutter and its host platform faster and easier?” This is a question of particular interest to Flutter plugin developers and add-to-app developers.
@@ -35,7 +35,7 @@ The platform channels API hasn’t changed much since 2017. Because the platform
 
 The following diagram outlines the original process the framework followed when a platform channel was used to communicate with iOS from Flutter:
 
-<DashImage figure src="images/02fUEEmUdocImYO4x.png" />
+<DashImage figure src="images/02fUEEmUdocImYO4x.webp" />
 
 
 Some takeaways from the diagram:

@@ -3,12 +3,12 @@ title: "Announcing the winners of the Global Gamers Challenge"
 description: "Our 10 top projects, and how to stay involved with sustainability games"
 publishDate: 2024-05-14
 author: kkboateng
-image: images/0S_bBN0WiR_Q5F08J.png
+image: images/0S_bBN0WiR_Q5F08J.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/0S_bBN0WiR_Q5F08J.png" />
+<DashImage figure src="images/0S_bBN0WiR_Q5F08J.webp" />
 
 
 We asked the Flutter and Global Citizen communities to come together to build epic Flutter games that focused on helping the planet. Hundreds of innovative game projects were submitted by thousands of passionate developers spanning over 50 countries.
@@ -54,7 +54,7 @@ Visually appealing, educational, waste management game, inspired by Japanese cul
 
 Charming design and collectible elements that effectively communicate its core message about the limitations of recycling and thinking critically about environmental issues.
 
-<DashImage figure src="images/0W8ns7jNJ3jZ0SXbd.gif" />
+<DashImage figure src="images/0W8ns7jNJ3jZ0SXbd.webp" />
 
 
 ### [MGame — A waste management game](https://devpost.com/software/mgame-a-waste-management-game)
@@ -82,14 +82,14 @@ City-builder style game presenting a complex environmental challenge through eng
 
 Waste sorting game featuring intuitive gameplay and effectively educating players on proper waste disposal.
 
-<DashImage figure src="images/0m_Lo2d9Tfr1eqyUw.gif" />
+<DashImage figure src="images/0m_Lo2d9Tfr1eqyUw.webp" />
 
 
 ### [Whaley’s Bins Waste Sorting](https://devpost.com/software/whaley-s-bins-waste-sorting)
 
 Waste sorting game with a creative approach to recycling education, featuring distinctive pixel art visuals.
 
-<DashImage figure src="images/04TtFim6qaLkM0-rj.gif" />
+<DashImage figure src="images/04TtFim6qaLkM0-rj.webp" />
 
 
 We look forward to hanging out with these teams in New York City for a day of workshops and more in the Google offices and to celebrate with 60,000 other Global Citizens at Global Citizen Festival 2024!

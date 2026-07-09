@@ -3,7 +3,7 @@ title: "Zero to One with Flutter"
 description: "It was late summer 2016, and my first task as a new hire at the Google office in Aarhus, Denmark was to implement animated charts in an…"
 publishDate: 2017-02-22
 author: mravn
-image: images/1n76TpChNv8Q25WrfBiuWpw.gif
+image: images/1n76TpChNv8Q25WrfBiuWpw.webp
 category: spotlight
 layout: blog
 ---
@@ -29,7 +29,7 @@ Moving to a new development stack makes you aware of your priorities. Near the t
 
 Flutter is a new platform for developing Android and iOS apps from a single codebase, written in Dart. Since our requirements spoke of a fairly complex UI including animated charts, the idea of building it only once seemed very attractive. My tasks involved exercising Flutter’s CLI tools, some pre-built widgets, and its 2D rendering engine — in addition to writing a lot of plain Dart code to model and animate charts. I’ll share below some conceptual highlights of my learning experience, and provide a starting point for your own evaluation of the Flutter/Dart stack.
 
-<DashImage figure src="images/1OKV3RzTg89W3VxXnpAH3Eg.gif" alt="A simple animated bar chart, captured from an iOS simulator during development" caption="A simple animated bar chart, captured from an iOS simulator during development" />
+<DashImage figure src="images/1OKV3RzTg89W3VxXnpAH3Eg.webp" alt="A simple animated bar chart, captured from an iOS simulator during development" caption="A simple animated bar chart, captured from an iOS simulator during development" />
 
 
 This is part one of a [two-part](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb) introduction to Flutter and its ‘widget’ and ‘tween’ concepts. I’ll illustrate the strength of these concepts by using them to display and animate charts like the one shown above. Full code samples should provide an impression of the level of code clarity achievable with Dart. And I’ll include enough detail that you should be able to follow along on your own laptop (and emulator or device), and experience the length of the Flutter development cycle.
@@ -132,7 +132,7 @@ class ChartPageState extends State<ChartPage> {
 
 Save the changes, then restart the app. You can do that from the terminal, by pressing `R`. This ‘full restart’ operation throws away the application state, then rebuilds the UI. For situations where the existing application state still makes sense after the code change, one can press `r` to do a ‘hot reload’, which only rebuilds the UI. There is also a Flutter plugin for IntelliJ IDEA providing the same functionality integrated with a Dart editor:
 
-<DashImage figure src="images/1soCdZ19Qugtv1YJewMQZGg.png" alt="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." caption="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." />
+<DashImage figure src="images/1soCdZ19Qugtv1YJewMQZGg.webp" alt="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." caption="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." />
 
 
 Once restarted, the app shows a centered text label saying `Data set: null` and a floating action button to refresh the data. Yes, humble beginnings.
@@ -608,4 +608,4 @@ class ChartPageState extends State<ChartPage> with TickerProviderStateMixin {
 
 The new version is longer, and the extra code should carry its weight. It will, as we tackle increased chart complexity in [part two](https://medium.com/@mravn/zero-to-one-with-flutter-part-two-5aa2f06655cb). Our requirements speak of colored bars, multiple bars, partial data, stacked bars, grouped bars, stacked and grouped bars, … all of it animated. Stay tuned.
 
-<DashImage figure src="images/1n76TpChNv8Q25WrfBiuWpw.gif" alt="A preview of one of the animations we’ll do in part two." caption="A preview of one of the animations we’ll do in part two." />
+<DashImage figure src="images/1n76TpChNv8Q25WrfBiuWpw.webp" alt="A preview of one of the animations we’ll do in part two." caption="A preview of one of the animations we’ll do in part two." />

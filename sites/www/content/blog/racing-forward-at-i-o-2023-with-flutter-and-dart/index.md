@@ -3,19 +3,19 @@ title: "Racing Forward at I/O 2023 with Flutter and Dart"
 description: "Major updates to graphics performance, web integration, developer productivity and security in Flutter 3.10"
 publishDate: 2023-05-10
 author: timsneath
-image: images/1bzC0ul7jBVhOJiastVGKlw.png
+image: images/1bzC0ul7jBVhOJiastVGKlw.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1bzC0ul7jBVhOJiastVGKlw.png" />
+<DashImage figure src="images/1bzC0ul7jBVhOJiastVGKlw.webp" />
 
 
 We’re *delighted* to be back for this year’s Google I/O, streaming live around the world from near our headquarters in Mountain View, California!
 
 Just over three months ago, we introduced a bold new roadmap for Flutter and Dart at Flutter Forward in Nairobi, Kenya. At I/O, we’re sharing our progress against that vision with updates across the four themes that we shared: breakthrough graphics experiences, seamless integration with web and platforms, support for new and emerging architectures, and a focus on developer experience.
 
-<DashImage figure src="images/1Zd93zNHQec6C55G3pEJuvA.png" />
+<DashImage figure src="images/1Zd93zNHQec6C55G3pEJuvA.webp" />
 
 
 As you probably know, Flutter is a UI toolkit that enables app developers to build for mobile, web, desktop, and embedded devices from a single codebase. Flutter enables you to build **beautiful** apps, giving you complete control over every pixel on the screen. It’s **fast**, taking advantage of your device’s capabilities with support for hardware-accelerated graphics and natively-compiled machine code. It’s **productive**, with technologies like stateful hot reload that allow you to immediately see code changes in your app. Its **portability** enables you to deploy to a wide variety of platforms with the same source code and without surprises. And it’s fully **open source**, with no cost to license it or need to pay for tools to develop for it.

@@ -20,29 +20,29 @@ When thinking through adaptive design, designers should first ask *“What form 
 
 When adapting the design of an app to larger screen sizes, designers should consider how to take advantage of the extra real estate. This might mean enhancing the presentation by showing a different layout. For example:
 
-<DashImage figure src="images/1Y_ROvg5zl7edWeA-G6THzg.png" alt="*iPad Pro 12.9-inch portrait and landscape*" caption="*iPad Pro 12.9-inch portrait and landscape*" />
+<DashImage figure src="images/1Y_ROvg5zl7edWeA-G6THzg.webp" alt="*iPad Pro 12.9-inch portrait and landscape*" caption="*iPad Pro 12.9-inch portrait and landscape*" />
 
 
 Adding additional rows or columns:
 
-<DashImage figure src="images/1G0_f2A0k1sK7aWmFbKAFlg.png" alt="*iPad Pro 12.9-inch and iPhone 11*" caption="*iPad Pro 12.9-inch and iPhone 11*" />
+<DashImage figure src="images/1G0_f2A0k1sK7aWmFbKAFlg.webp" alt="*iPad Pro 12.9-inch and iPhone 11*" caption="*iPad Pro 12.9-inch and iPhone 11*" />
 
 
 Or changing columns to rows:
 
-<DashImage figure src="images/1g3j3u2aTh1m5pR4M5CqX_w.png" alt="*iPad Pro 12.9-inch portrait and landscape*" caption="*iPad Pro 12.9-inch portrait and landscape*" />
+<DashImage figure src="images/1g3j3u2aTh1m5pR4M5CqX_w.webp" alt="*iPad Pro 12.9-inch portrait and landscape*" caption="*iPad Pro 12.9-inch portrait and landscape*" />
 
 
 Alternatively, you might use the extra canvas to do more of the same. Wonderous features beautiful illustrations so the larger screen sizes allowed us to showcase even more of this work:
 
-<DashImage figure src="images/1PpfHUeUH0sr5vDUUdcG81A.png" alt="*iPhone 11, Samsung Fold4 closed, iPad Pro 12.9-inch*" caption="*iPhone 11, Samsung Fold4 closed, iPad Pro 12.9-inch*" />
+<DashImage figure src="images/1PpfHUeUH0sr5vDUUdcG81A.webp" alt="*iPhone 11, Samsung Fold4 closed, iPad Pro 12.9-inch*" caption="*iPhone 11, Samsung Fold4 closed, iPad Pro 12.9-inch*" />
 
 
 **Consider approaches for how UI components can react**
 
 As the screen becomes larger, you’ll need to consider how your app’s UI components will react. For example, you might scale the component to fit the available space:
 
-<DashImage figure src="images/1IURgMIU9x8zzm-p6lZUNwg.png" alt="*Samsung Fold4 open and iPhone 11*" caption="*Samsung Fold4 open and iPhone 11*" />
+<DashImage figure src="images/1IURgMIU9x8zzm-p6lZUNwg.webp" alt="*Samsung Fold4 open and iPhone 11*" caption="*Samsung Fold4 open and iPhone 11*" />
 
 
 You might also consider keeping the content center weighted, or pinning certain assets to the device bounds:

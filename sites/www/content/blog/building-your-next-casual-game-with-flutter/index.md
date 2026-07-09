@@ -3,7 +3,7 @@ title: "Building your next casual game with Flutter"
 description: "Free & open source multi-platform 2D game development in Flutter"
 publishDate: 2023-11-15
 author: zoeyfan
-image: images/03DmGJe1yD4eKdnfs.gif
+image: images/03DmGJe1yD4eKdnfs.webp
 category: announcements
 layout: blog
 ---
@@ -14,7 +14,7 @@ Flutter is Google’s open source UI framework for building beautiful multi-plat
 
 Over the past few years, we’ve seen a growing community around casual game development. Tens of thousands of games have been published using Flutter, from simple but fun puzzles to more complex arcade games. Some of our favorites include Etermax’s [Trivia Crack](https://triviacrack.com/), Lotum’s [4 Pics 1 Word](https://flutter.dev/showcase/lotum) (word guess game), Dong Digital’s [Brick Mania](https://play.google.com/store/apps/details?id=net.countrymania.brick&hl=en) (arcade game), Onrizon’s [StopotS](https://play.google.com/store/apps/details?id=com.gartic.StopotS&hl=en) (categories game), the [retro pinball game](https://pinball.flutter.dev/) we built in Flutter for I/O, and [PUBG](https://flutter.dev/showcase/pubg-mobile) mobile who uses Flutter in their social and menu screens.
 
-<DashImage figure src="images/03DmGJe1yD4eKdnfs.gif" alt="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." caption="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." />
+<DashImage figure src="images/03DmGJe1yD4eKdnfs.webp" alt="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." caption="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." />
 
 
 ## Why choose Flutter for casual games
@@ -33,17 +33,17 @@ Since we released the first version of the toolkit in 2022, we’ve seen a lot o
 
 We added three new game templates to provide a starting point for building a casual game. First, you will find a [basic template](https://github.com/flutter/games/tree/main/templates/basic) that has a simple UI for the main menu, settings screen, simple level selection, and audio integration.
 
-<DashImage figure src="images/0_MYAbH0pmAhJ3D6B.gif" alt="An animated gif showing the basic template" caption="An animated gif showing the basic template" />
+<DashImage figure src="images/0_MYAbH0pmAhJ3D6B.webp" alt="An animated gif showing the basic template" caption="An animated gif showing the basic template" />
 
 
 Second, you will find a [Card game template](https://github.com/flutter/games/tree/main/templates/card) that builds on top of the base template and adds basic drag and drop of cards, and is ready for multiplayer integration.
 
-<DashImage figure src="images/00GvQrqyBDG2NVb42.gif" alt="An animated gif showing the card template" caption="An animated gif showing the card template" />
+<DashImage figure src="images/00GvQrqyBDG2NVb42.webp" alt="An animated gif showing the card template" caption="An animated gif showing the card template" />
 
 
 Third, we partnered with the open source game engine [Flame](http://flame-engine.org) (built on top of Flutter), to provide an [endless runner template](https://github.com/flutter/games/tree/main/templates/endless_runner). While you can already use *only* Flutter to build many turn-based games such as card games, word puzzles, and board games that respond to simple user input, you might also want to build real-time games such as endless runners, shooters, and racing games that require a game loop. In those cases, you can use Flame to implement play steering, collision detection, parallax, spawning, and different visual effects.
 
-<DashImage figure src="images/0SDayAkeAnC_NtiLU.gif" alt="An animated gif showing the endless runner template" caption="An animated gif showing the endless runner template" />
+<DashImage figure src="images/0SDayAkeAnC_NtiLU.webp" alt="An animated gif showing the endless runner template" caption="An animated gif showing the endless runner template" />
 
 
 To use these templates, simply check out the [repo](https://github.com/flutter/games), and start building your game using the template that is the closest to what you want.

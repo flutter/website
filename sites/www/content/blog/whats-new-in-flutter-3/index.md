@@ -3,14 +3,14 @@ title: "What’s new in Flutter 3"
 description: "Deep dive into our latest release, including macOS and Linux stable, performance improvements, and more!"
 publishDate: 2022-05-11
 author: itsjustkevin
-image: images/1K1Ru7PVkH74N56hgjBTjjQ.png
+image: images/1K1Ru7PVkH74N56hgjBTjjQ.webp
 category: releases
 layout: blog
 ---
 
 It’s time again for a Flutter stable release — and we are incredibly proud to announce **Flutter 3**! Only three months ago, we announced Flutter support for Windows. Today, we are excited to announce that Flutter is now stable for macOS and Linux, in addition to Windows!
 
-<DashImage figure src="images/1K1Ru7PVkH74N56hgjBTjjQ.png" />
+<DashImage figure src="images/1K1Ru7PVkH74N56hgjBTjjQ.webp" />
 
 
 Thanks to the hard work of our Flutter contributors, we’ve merged 5248 pull requests!
@@ -25,7 +25,7 @@ Linux and macOS have reached stable and include the following features:
 
 You can now create platform-rendered menu bars on macOS using the `PlatformMenuBar` widget, which supports insertion of platform-only menus, and control over what appears in the macOS application menus.
 
-<DashImage figure src="images/1kS32jfapJAvSyspT3aOH5A.gif" alt="Cascading menus demo" caption="Cascading menus demo" />
+<DashImage figure src="images/1kS32jfapJAvSyspT3aOH5A.webp" alt="Cascading menus demo" caption="Cascading menus demo" />
 
 
 ### Full support for international text input on all desktop platforms
@@ -55,7 +55,7 @@ The Flutter 3 release supports foldable mobile devices. In a collaboration spear
 
 As part of this work, [`MediaQuery`](https://master-api.flutter.dev/flutter/widgets/MediaQuery-class.html) now contains a list of [`DisplayFeatures`](https://master-api.flutter.dev/flutter/dart-ui/DisplayFeature-class.html), describing the bounds and states of device elements like hinges, folds, and cutouts. Additionally, the [`DisplayFeatureSubScreen`](https://master-api.flutter.dev/flutter/widgets/DisplayFeatureSubScreen-class.html) widget now positions its child widget without overlapping the bounds of `DisplayFeatures`, and has already been integrated with the framework’s default dialogs and pop-ups, making Flutter aware and responsive to these elements **out of the box**.
 
-<DashImage figure src="images/0z8pzEtJOPFv-xzw2.png" />
+<DashImage figure src="images/0z8pzEtJOPFv-xzw2.webp" />
 
 
 Many thanks goes to the Microsoft team, and especially to [@andreidiaconu](https://github.com/andreidiaconu), for their contributions!

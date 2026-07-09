@@ -3,7 +3,7 @@ title: "How to debug layout issues with the Flutter Inspector"
 description: "Exploring why they occur and how to solve them"
 publishDate: 2020-07-27
 author: ktjlee
-image: images/1oWDuoKe1gCDL5UPrQUwePg.png
+image: images/1oWDuoKe1gCDL5UPrQUwePg.webp
 category: tutorial
 layout: blog
 ---
@@ -11,7 +11,7 @@ layout: blog
 
 As a Flutter developer, you’ve probably run into issues where an image is cut off (or not even visible) on your app. Maybe you got the “viewport was given unbounded height” error.” In fact, the two most frequent types of Flutter errors are both problems with layout: widget overflow and “renderbox not laid out” issues. You’re not alone in running into layout problems, but, where do you go to solve them?
 
-<DashImage figure src="images/1oWDuoKe1gCDL5UPrQUwePg.png" />
+<DashImage figure src="images/1oWDuoKe1gCDL5UPrQUwePg.webp" />
 
 
 Fortunately, the Dart DevTool’s [Flutter Inspector](https://flutter.dev/docs/development/tools/devtools/inspector) can help you understand *why* they occur and also *how* you can solve them. **In this article, you learn how to use the tool by debugging 3 common layout issues. So, the next time you encounter an issue, you can solve it like a pro!**
@@ -31,7 +31,7 @@ Fortunately, the Dart DevTool’s [Flutter Inspector](https://flutter.dev/docs/d
 
 The Flutter Inspector is a tool (part of the [Dart DevTools](https://flutter.dev/docs/development/tools/devtools/overview) suite) for exploring and visualizing widget trees. It’s perfect for discovering the ins and outs of your app layout. Take a peek at the tool in the following GIF:
 
-<DashImage figure src="images/1ZoMUEbRIQoIzKGtB82VIZg.gif" alt="A GIF showing the Details Tree and Layout Explorer features of the Flutter Inspector" caption="A GIF showing the Details Tree and Layout Explorer features of the Flutter Inspector" />
+<DashImage figure src="images/1ZoMUEbRIQoIzKGtB82VIZg.webp" alt="A GIF showing the Details Tree and Layout Explorer features of the Flutter Inspector" caption="A GIF showing the Details Tree and Layout Explorer features of the Flutter Inspector" />
 
 
 With the inspector, you can select widgets on the app or even remove the debug banner. It’s got you covered whether you’re wondering why your widget is invisible or curious about how adding flex to a **Row**’s child affects the UI. The article focuses on the following features:
@@ -46,7 +46,7 @@ At this point, you might be wondering, “How do I try this awesome tool?” Jus
 
 Let’s start with a demo app containing 3 layout problems that you will debug. You’ll use the Flutter Inspector to debug each issue separately, and combine the fixed issues at the end to complete a simple menu app that looks like the following screenshot
 
-<DashImage figure src="images/18LUuPonWPA0T7yf2cNx7aQ.png" alt="End menu app with the fixed issues" caption="End menu app with the fixed issues" />
+<DashImage figure src="images/18LUuPonWPA0T7yf2cNx7aQ.webp" alt="End menu app with the fixed issues" caption="End menu app with the fixed issues" />
 
 
 Use the following steps when approaching a layout issue. To help you remember, use the COIN acronym. Who coined this term? I did, just now.
@@ -198,14 +198,14 @@ class Example3 extends StatelessWidget {
 
 When you run the app, you see a yellow and black diagonally striped box at the end of the line, similar to [caution tape](https://www.google.com/search?q=caution+tape&sxsrf=ALeKk00_Sm0OMCspL5iNnp6rb6hX6KKvjg:1595272791540&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjevbygxtzqAhW7HzQIHX11APAQ_AUoAXoECA0QAw&biw=807&bih=351):
 
-<DashImage figure src="images/1G8q-b4kRipk4uR3TRtWQNQ.png" />
+<DashImage figure src="images/1G8q-b4kRipk4uR3TRtWQNQ.webp" />
 
 
 This means that there’s an overflow error — the most common Flutter layout error. Now, let’s follow the debugging steps to identify the problem and find the right fix.
 
 **1. Check the error message on the console.**
 
-<DashImage figure src="images/1N6UBt6twhPEZp7OYxBdoEw.png" alt="Overflow error on the Debug Console" caption="Overflow error on the Debug Console" />
+<DashImage figure src="images/1N6UBt6twhPEZp7OYxBdoEw.webp" alt="Overflow error on the Debug Console" caption="Overflow error on the Debug Console" />
 
 
 First, identify which widget is causing the problem The error message indicates that the `Row` on line 54 of `main.dart` is causing the problem. Because `Row` is a `Flex` widget (meaning that`Row` extends the `Flex` class), you can examine it with the **Layout Explorer**.
@@ -214,7 +214,7 @@ First, identify which widget is causing the problem The error message indicates 
 
 Navigate to DevTools and open the **Layout Explorer** tab.
 
-<DashImage figure src="images/10_1C8Xaq_vCvf0DGmshNiw.png" alt="Overflow error on the Layout Explorer" caption="Overflow error on the Layout Explorer" />
+<DashImage figure src="images/10_1C8Xaq_vCvf0DGmshNiw.webp" alt="Overflow error on the Layout Explorer" caption="Overflow error on the Layout Explorer" />
 
 
 Click **Row**. (The numbers on the image correlate to the following steps.)
@@ -230,7 +230,7 @@ In this scenario, you can skip this step because the problem has been identified
 
 **4. Navigate back to the code and fix it.**
 
-<DashImage figure src="images/13IBbh6w93WVhHZ4i0asjUQ.gif" alt="Wrap Text with Expanded using smart refactoring on VS Code (similar method on other editors)" caption="Wrap Text with Expanded using smart refactoring on VS Code (similar method on other editors)" />
+<DashImage figure src="images/13IBbh6w93WVhHZ4i0asjUQ.webp" alt="Wrap Text with Expanded using smart refactoring on VS Code (similar method on other editors)" caption="Wrap Text with Expanded using smart refactoring on VS Code (similar method on other editors)" />
 
 
 Wrap `Text` with `Expanded`. The default flex is 1, so you don’t have to specify this property.
@@ -251,14 +251,14 @@ Column(
 
 Nothing displays on the app, despite having a `ListView` with various menu items in the `Example2` class:
 
-<DashImage figure src="images/1LcKvZCtlUTxX31rFxF8c8A.png" />
+<DashImage figure src="images/1LcKvZCtlUTxX31rFxF8c8A.webp" />
 
 
 What’s going on?
 
 **1. Check the error message on the console.**
 
-<DashImage figure src="images/1bZaSpjwB5GCoM7wpSrgR6w.png" alt="Unbounded height error on the Debug Console" caption="Unbounded height error on the Debug Console" />
+<DashImage figure src="images/1bZaSpjwB5GCoM7wpSrgR6w.webp" alt="Unbounded height error on the Debug Console" caption="Unbounded height error on the Debug Console" />
 
 
 `ListView` on line 72 of `main.dart` is causing the “Vertical viewport was given unbounded height” error. At first glance, the terms *vertical viewport* and *unbounded* are unclear, so continue to the next step.
@@ -267,14 +267,14 @@ What’s going on?
 
 Navigate back to DevTools and open the **Layout Explorer** tab.
 
-<DashImage figure src="images/1TgBQisZYEvQbDnntk9-a9Q.png" alt="Layout Explorer doesn’t display grandchildren of Flex widgets." caption="Layout Explorer doesn’t display grandchildren of Flex widgets." />
+<DashImage figure src="images/1TgBQisZYEvQbDnntk9-a9Q.webp" alt="Layout Explorer doesn’t display grandchildren of Flex widgets." caption="Layout Explorer doesn’t display grandchildren of Flex widgets." />
 
 
 Refresh the tree by clicking on the refresh icon at the top. Nothing appears after clicking **ListView** because the **Layout Explorer** only supports `Flex` widgets and their direct children. Interestingly, clicking **Example2** and **Column** doesn’t do the trick either — the **Layout Explorer** is still blank. Move on to the next step.
 
 **3. Inspect the size and constraints with the Details Tree.**
 
-<DashImage figure src="images/0I294y1ZUpA3AGe2G.png" alt="ListView’s constraints and size on the Details Tree" caption="ListView’s constraints and size on the Details Tree" />
+<DashImage figure src="images/0I294y1ZUpA3AGe2G.webp" alt="ListView’s constraints and size on the Details Tree" caption="ListView’s constraints and size on the Details Tree" />
 
 
 Expand `ListView`’s first `renderObject`, which contains the information for painting the widget.
@@ -329,7 +329,7 @@ Column(
 
 Take a close look at the `Example3` class in the code. Notice that the `VerticalDivider` exists, but only two buttons appear on the app after hot reloading:
 
-<DashImage figure src="images/1C_XdNuBceIRYcA76Ig8NTA.png" />
+<DashImage figure src="images/1C_XdNuBceIRYcA76Ig8NTA.webp" />
 
 
 Why is the `VerticalDivider` invisible?
@@ -340,7 +340,7 @@ You didn’t get any error messages this time. Continue to the next step.
 **2. Open the Layout Explorer.**
 Navigate back to DevTools and click on the **Layout Explorer** tab.
 
-<DashImage figure src="images/0O9felhcXAjXxjKcQ.png" alt="VerticalDivider on the Layout Explorer" caption="VerticalDivider on the Layout Explorer" />
+<DashImage figure src="images/0O9felhcXAjXxjKcQ.webp" alt="VerticalDivider on the Layout Explorer" caption="VerticalDivider on the Layout Explorer" />
 
 
 After refreshing the tree, click **VerticalDivider** and scroll to the right side of the **Layout Explorer.** Observe that **VerticalDivider**’s width and height are unconstrained.
@@ -353,7 +353,7 @@ After refreshing the tree, click **VerticalDivider** and scroll to the right sid
 
 **3. Inspect the size and constraints with the Details Tree.**
 
-<DashImage figure src="images/0dYdomk1To1NJBTCp.png" alt="Inspecting Row and its children using the Details Tree" caption="Inspecting Row and its children using the Details Tree" />
+<DashImage figure src="images/0dYdomk1To1NJBTCp.webp" alt="Inspecting Row and its children using the Details Tree" caption="Inspecting Row and its children using the Details Tree" />
 
 
 1. Open the first `renderObject` under `VerticalDivider`. The constraints property indicates that the widget has neither width nor height constraints, matching what the **Layout Explorer** displays. But, under `additionalConstraints`, the width is 20 (as explicitly defined in the sample code), but height still has no constraints. The width isn’t the problem here, so let’s focus on the height.

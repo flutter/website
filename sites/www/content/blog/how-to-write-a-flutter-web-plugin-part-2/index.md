@@ -3,7 +3,7 @@ title: "How To Write a Flutter Web Plugin: Part 2"
 description: "A guide for writing modern Flutter Web plugins"
 publishDate: 2020-02-13
 author: harry_terkelsen
-image: images/1jLlh4b9zQ3u0aUA-hHAgKg.png
+image: images/1jLlh4b9zQ3u0aUA-hHAgKg.webp
 category: tutorial
 layout: blog
 ---
@@ -63,7 +63,7 @@ Let’s work through an example of how this would be done for a real plugin.
 
 ## Example: Migrating package:url_launcher
 
-<DashImage figure src="images/1jLlh4b9zQ3u0aUA-hHAgKg.png" />
+<DashImage figure src="images/1jLlh4b9zQ3u0aUA-hHAgKg.webp" />
 
 
 ## Step 1: Creating the platform interface package

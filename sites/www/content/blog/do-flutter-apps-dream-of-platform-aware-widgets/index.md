@@ -3,7 +3,7 @@ title: "Do Flutter apps dream of platform aware widgets?"
 description: "Agnostic layout with platform specific widgets"
 publishDate: 2018-03-01
 author: swavkulinski
-image: images/1xgjvZHIs2PUHXRrn8COFRw.png
+image: images/1xgjvZHIs2PUHXRrn8COFRw.webp
 category: tutorial
 layout: blog
 ---
@@ -14,7 +14,7 @@ But what about brands who would like to keep a platform-specific look and feel? 
 
 Flutter is equipped with packages which contain a healthy set of native widgets for iOS and Android called **Cupertino** and **Material**.
 
-<DashImage figure src="images/1xgjvZHIs2PUHXRrn8COFRw.png" alt="Cupertino and Material widgets in Flutter" caption="Cupertino and Material widgets in Flutter" />
+<DashImage figure src="images/1xgjvZHIs2PUHXRrn8COFRw.webp" alt="Cupertino and Material widgets in Flutter" caption="Cupertino and Material widgets in Flutter" />
 
 
 The framework is agnostic in its essence when it comes to UI. However, some widgets require an ancestor which belongs to the same “platform-specific” library, e.g. **RaisedButton** belongs to the Material package library and it requires a **Material** widget to be one of its ancestors. This presents developers with a problem in terms of reusability of the layout code.

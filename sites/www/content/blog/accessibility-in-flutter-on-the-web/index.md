@@ -3,14 +3,14 @@ title: "Accessibility in Flutter on the Web"
 description: "How Flutter aims to make canvas-rendered apps accessible to users of assistive technologies"
 publishDate: 2024-04-16
 author: tomayac
-image: images/0pF3_jPjWNcie3LH0.gif
+image: images/0pF3_jPjWNcie3LH0.webp
 category: announcements
 layout: blog
 ---
 
 One of the target platforms the Flutter framework supports is the web. Flutter applications guarantee pixel perfection and platform consistency through rendering all UI onto a canvas element. However, by default canvas elements are not accessible. This case study explains how accessibility support works for such canvas-rendered Flutter apps.
 
-<DashImage figure src="images/1YhNtNltzEiKubvyWKUXKVw.png" />
+<DashImage figure src="images/1YhNtNltzEiKubvyWKUXKVw.webp" />
 
 
 Flutter has a large number of default widgets that [generate an accessibility tree](https://docs.flutter.dev/ui/accessibility-and-localization/accessibility?tab=browsers#:%7E:text=Flutter%E2%80%99s%20standard%20widgets%20generate%20an%20accessibility%20tree%20automatically.) automatically. An accessibility tree is a tree of accessibility objects that assistive technology can query for attributes and properties and perform actions on. For custom widgets, Flutter’s [`Semantics`](https://api.flutter.dev/flutter/widgets/Semantics-class.html) class lets developers describe the meaning of their widgets, helping assistive technologies make sense of the widget content.
@@ -62,31 +62,31 @@ flutter-view {
 
 What happens when a screen reader user clicks this button? Consider a not too complex example like the [card](https://flutter-gallery-archive.web.app/#/demo/card) from the Flutter Gallery as displayed in the following screenshot.
 
-<DashImage figure src="images/0mhvYLQo_t9Sm_ecS.png" />
+<DashImage figure src="images/0mhvYLQo_t9Sm_ecS.webp" />
 
 
 To better understand what’s changing when a user clicks the button, compare the before and after screenshots of Chrome DevTools when you [inspect the accessibility tree](https://developer.chrome.com/blog/full-accessibility-tree/). The second screenshot exposes a lot more semantic information than the first.
 
 **Before opt-in:**
 
-<DashImage figure src="images/0Y_VjMeKGuxCGCkSs.png" />
+<DashImage figure src="images/0Y_VjMeKGuxCGCkSs.webp" />
 
 
 **After opt-in:**
 
-<DashImage figure src="images/0dxy3KYQVwetiInqh.png" />
+<DashImage figure src="images/0dxy3KYQVwetiInqh.webp" />
 
 
 ## Details of the implementation
 
 The core idea in Flutter is to create an accessible DOM structure that reflects what’s right now displayed on the canvas. This consists of an `&lt;flt-semantics-host&gt;` parent custom element that has `&lt;flt-semantics&gt;` and `&lt;flt-semantics-container&gt;` child elements that in turn can be nested. Consider a button widget, such as [`TextButton`](https://api.flutter.dev/flutter/material/TextButton-class.html). This widget is represented by an `&lt;flt-semantics&gt;` element in the DOM. The ARIA annotations (e.g., [`role`](https://developer.mozilla.org/en-US/docs/Web/API/ElementInternals/role) or [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)) and other DOM properties ([`tabindex`](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex), event listeners) on the `&lt;flt-semantics&gt;` element allows the screen reader to announce the element as a button to the user, and support clicking and tapping on it, even though it’s not a literal [`&lt;button&gt;`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) element. In the following screenshot the **Share** button is one example of such a button.
 
-<DashImage figure src="images/05snhUrdCrAAauosx.png" />
+<DashImage figure src="images/05snhUrdCrAAauosx.webp" />
 
 
 This `&lt;flt-semantics&gt;` element is absolutely positioned to appear exactly at the position where the corresponding button is painted on the canvas. This is because Flutter owns the layout of all widgets and it precomputes the positions and sizes of every semantic node. Absolute layout allows placing the accessibility element exactly where the user would expect it. However, what this also means is that whenever the user scrolls, the positions need to be adjusted, which can be expensive in some situations.
 
-<DashImage figure src="images/0pF3_jPjWNcie3LH0.gif" />
+<DashImage figure src="images/0pF3_jPjWNcie3LH0.webp" />
 
 
 ## Expanding the approach to all default widgets
@@ -127,22 +127,22 @@ For example, you can explore the team class picker live in the [I/O Flip game](h
 
 **Before scrolling:**
 
-<DashImage figure src="images/0fouBgFDZseB3agw8.png" />
+<DashImage figure src="images/0fouBgFDZseB3agw8.webp" />
 
 
 **After scrolling:**
 
-<DashImage figure src="images/0wY_EYxQGJey5Vn4f.png" />
+<DashImage figure src="images/0wY_EYxQGJey5Vn4f.webp" />
 
 
 If you look at the [source code](https://github.com/flutter/io_flip/blob/a128c2ed1afcfbbd79edf2dfc21682bcc0dc3067/lib/prompt/view/prompt_form_view.dart), you can see that it doesn’t use the [`Semantics`](https://api.flutter.dev/flutter/widgets/Semantics-class.html) class, since Semantics doesn’t support the listbox and option role annotation use case yet. But it does use a [`ListWheelScrollView`](https://api.flutter.dev/flutter/widgets/ListWheelScrollView-class.html), which is similar to a regular [`ListView`](https://api.flutter.dev/flutter/widgets/ListView-class.html), so it knows it’s dealing with a list. Note, though, how the accessibility tree only ever shows the now visible items, plus a few items above and below the viewport, but never all items. (This is a common app performance trick that we almost got natively on the web, too, in the form of a [`&lt;virtual-scroller&gt;`](https://github.com/WICG/virtual-scroller).)
 
-<DashImage figure src="images/0506M98hmpxgRJFd7.gif" />
+<DashImage figure src="images/0506M98hmpxgRJFd7.webp" />
 
 
 Compare Flutter’s accessibility tree to that of the [scrollable listbox example](https://www.w3.org/WAI/ARIA/apg/patterns/listbox/examples/listbox-scrollable/) from the [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/patterns/), where all options are shown in the accessibility tree, even those outside of the viewport. Not fully supporting this listbox use case is at the time of this writing a shortcoming of the Flutter solution that will get addressed in the future.
 
-<DashImage figure src="images/0clEvyPhHbCFI71Wc.png" />
+<DashImage figure src="images/0clEvyPhHbCFI71Wc.webp" />
 
 
 ## Text editing
@@ -154,7 +154,7 @@ Flutter has an `&lt;flt-text-editing-host&gt;` element that has either an `&lt;i
 
 While for sighted users the label texts displayed in the text inputs are visible, for screen reader users the text fields are announced as “edit, blank” with [NVDA](https://www.nvaccess.org/about-nvda/) on Windows or “edit text, blank” with [VoiceOver](https://www.apple.com/voiceover/info/guide/_1121.html) on macOS, since Flutter at the moment doesn’t create `&lt;label&gt;` elements yet. You can see VoiceOver’s screen reader output at the bottom of the images. This is something Flutter will fix in the future.
 
-<DashImage figure src="images/0UpUS0j53XBPfPB8j.gif" />
+<DashImage figure src="images/0UpUS0j53XBPfPB8j.webp" />
 
 
 When text fields are properly labeled, the screen reader announces the intended meaning, as depicted in the following pure HTML example.

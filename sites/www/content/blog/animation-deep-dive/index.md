@@ -3,7 +3,7 @@ title: "Animation deep dive"
 description: "Last year, I got to record one of the episodes in the Flutter Animations series, and I thought I’d publish the same content for those who…"
 publishDate: 2020-04-17
 author: filiph
-image: images/14bIqmJ8DQLSnlFtkN6bjaA.gif
+image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp
 layout: blog
 ---
 
@@ -20,7 +20,7 @@ Let’s start with something simple and lighthearted:
 
 You see, motion is an illusion. Look at this:
 
-<DashImage figure src="images/14bIqmJ8DQLSnlFtkN6bjaA.gif" alt="A video of Filip waving his hand." caption="A video of Filip waving his hand." />
+<DashImage figure src="images/14bIqmJ8DQLSnlFtkN6bjaA.webp" alt="A video of Filip waving his hand." caption="A video of Filip waving his hand." />
 
 
 It’s a lie. What you’re actually seeing are many still images shown in quick succession. This is how movies work. The individual pictures are called frames in cinema— and because digital screens work similarly— they’re called frames here too. Cinema normally shows 24 frames per second. Modern digital devices show 60 to 120 frames per second.
@@ -40,7 +40,7 @@ There you go. Animations in Flutter are just a quick succession of changing the 
 
 I can prove it. Here’s an animation that “animates” from zero to the speed of light. Although it’s changing the text on every frame, from Flutter’s perspective, it’s just another animation.
 
-<DashImage figure src="images/1y4Pbt8ehWTAEfL9_M8Aoog.gif" />
+<DashImage figure src="images/1y4Pbt8ehWTAEfL9_M8Aoog.webp" />
 
 
 Let’s use Flutter’s animation framework to build that animation from first principles.
@@ -106,7 +106,7 @@ What this means is that the Flutter framework can ask your state for a ticker. M
 
 `AnimationController` is what you normally use to play, pause, reverse, and stop animations. Instead of pure “tick” events, `AnimationController` tells us at which *point* of the animation we are, at any time. For example, are we halfway there? Are we 99% there? Have we completed the animation?
 
-<DashImage figure src="images/1nKjFR7DVd-2r7_sSgBprfA.gif" />
+<DashImage figure src="images/1nKjFR7DVd-2r7_sSgBprfA.webp" />
 
 
 Normally, you take the `AnimationController`, maybe transform it with a `Curve`, put it through a `Tween`, and use it in one of the handy widgets like `FadeTransition` or `TweenAnimationBuilder`. But, for educational purposes, let’s not do that. Instead, we will directly call `setState`.
@@ -211,7 +211,7 @@ Now, we just need to tell the animation how long it should take to complete, and
 
 The widget animates as soon as it’s added to the screen. And it “animates” from zero to the speed of light in a second.
 
-<DashImage figure src="images/1uuyMl4qHr_bFZJENdMDimQ.gif" />
+<DashImage figure src="images/1uuyMl4qHr_bFZJENdMDimQ.webp" />
 
 
 ## Disposing of the controller

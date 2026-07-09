@@ -3,7 +3,7 @@ title: "What can we do better to improve Flutter? — Q2 2021 user survey re
 description: "Written by JaYoung & Mariam"
 publishDate: 2021-08-13
 author: jayoung-lee
-image: images/0m2ihVMc99emY4hQY.png
+image: images/0m2ihVMc99emY4hQY.webp
 category: announcements
 layout: blog
 ---
@@ -16,7 +16,7 @@ The Flutter team runs a user survey every quarter to hear from Flutter users and
 
 Overall, 92% of respondents said that they are positively satisfied with Flutter (39% somewhat satisfied and 53% very satisfied). Subsystems of Flutter scored different levels of satisfaction, ranging from 72% to 93%, as shown in the following graph. While we’re happy to share that we’re maintaining a high level of satisfaction, we’re also paying attention to specific areas where we can improve.
 
-<DashImage figure src="images/0m2ihVMc99emY4hQY.png" />
+<DashImage figure src="images/0m2ihVMc99emY4hQY.webp" />
 
 
 ## Open-ended questions

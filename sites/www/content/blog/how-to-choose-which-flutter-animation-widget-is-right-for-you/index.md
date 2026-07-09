@@ -3,7 +3,7 @@ title: "How to Choose Which Flutter Animation Widget is Right for You?"
 description: "There are many widgets for animations, but which one to use?"
 publishDate: 2020-04-01
 author: fitzface
-image: images/0oiCAPHSQGyFgZlUd.png
+image: images/0oiCAPHSQGyFgZlUd.webp
 category: tutorial
 layout: blog
 ---
@@ -18,7 +18,7 @@ I’ll walk through a series of questions you can ask yourself about the animati
 
 Take a look at the following decision tree, which I’ll explain in this article:
 
-<DashImage figure src="images/0T-YZa36Dv2a9xTLc.png" alt="*A pocket flow chart for all your animation decisions.*" caption="*A pocket flow chart for all your animation decisions.*" />
+<DashImage figure src="images/0T-YZa36Dv2a9xTLc.webp" alt="*A pocket flow chart for all your animation decisions.*" caption="*A pocket flow chart for all your animation decisions.*" />
 
 
 Broadly speaking, there are two main types of animations that you might want to include in your Flutter app: drawing-based animations, and code-based animations.
@@ -35,7 +35,7 @@ Otherwise, if your animations involve mutating widgets — such as changing colo
 
 Flutter code-based animations come in two flavors: implicit and explicit animations. The next step is figuring out which type you need.
 
-<DashImage figure src="images/0LJO-BZLYkE68UdlX.gif" alt="*Implicit Animation Widgets animate when the values change.*" caption="*Implicit Animation Widgets animate when the values change.*" />
+<DashImage figure src="images/0LJO-BZLYkE68UdlX.webp" alt="*Implicit Animation Widgets animate when the values change.*" caption="*Implicit Animation Widgets animate when the values change.*" />
 
 
 Implicit animations rely on simply setting a new value for some widget property and Flutter takes care of animating it from the current value to the new value. These widgets are easy to use and are amazingly powerful. All of the animations you see above are done with implicitly animated widgets. Implicit animations are a good place to start when looking to animate something.
@@ -46,12 +46,12 @@ There are three questions to ask yourself to determine what type of widget you n
 
 The second question to ask yourself is whether the values in your animation are discontinuous. An example of what I mean by a discontinuous animation is this growing circle animation. The circle repeatedly grows small-large, small-large. It never grows small-large and then shrinks back down again. In this case, the circle’s size is discontinuous.
 
-<DashImage figure src="images/0VMomX3dS34GVis3W.gif" alt="*A circle that only grows, never shrinks. It’s a discontinuous animation!*" caption="*A circle that only grows, never shrinks. It’s a discontinuous animation!*" />
+<DashImage figure src="images/0VMomX3dS34GVis3W.webp" alt="*A circle that only grows, never shrinks. It’s a discontinuous animation!*" caption="*A circle that only grows, never shrinks. It’s a discontinuous animation!*" />
 
 
 The last question to ask yourself is whether multiple widgets are animating in a coordinated fashion together? For example:
 
-<DashImage figure src="images/0fjdxxt_qXL1o9y_V.gif" alt="*Multiple boxes animating together.*" caption="*Multiple boxes animating together.*" />
+<DashImage figure src="images/0fjdxxt_qXL1o9y_V.webp" alt="*Multiple boxes animating together.*" caption="*Multiple boxes animating together.*" />
 
 
 If you answered “yes” to any of those three questions, you need to use an explicit widget. Otherwise, you can use an implicit widget! Once you’ve decided whether you need an implicit or explicit widget, the last question will lead you to finding the specific widget you need.
@@ -70,7 +70,7 @@ There’s one last option to consider if you’re seeing performance problems, a
 
 In summary, there are a series of high-level questions you can ask yourself that guide how to create your animation. That sequence of questions creates a decision tree for determining what widget or package is right for your needs. If you collapse those end-points, they fall into a line, approximately indicating difficulty from left to right. Thanks for reading, and go forth and create great Flutter animations — through a third-party framework, or with packages, either explicitly, or implicitly!
 
-<DashImage figure src="images/0oiCAPHSQGyFgZlUd.png" alt="*Animation widgets from easiest … to hardest.*" caption="*Animation widgets from easiest … to hardest.*" />
+<DashImage figure src="images/0oiCAPHSQGyFgZlUd.webp" alt="*Animation widgets from easiest … to hardest.*" caption="*Animation widgets from easiest … to hardest.*" />
 
 
 Articles in this series:

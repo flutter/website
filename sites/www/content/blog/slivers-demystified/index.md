@@ -108,10 +108,10 @@ SliverGrid(
 ```
 
 
-<DashImage figure src="images/1uKP16BI3_8_a9Fk_Q2oNvA.png" />
+<DashImage figure src="images/1uKP16BI3_8_a9Fk_Q2oNvA.webp" />
 
 
-<DashImage figure src="images/1WM9-Gu6XUz4CYCS2hXfqSA.png" alt="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." caption="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." />
+<DashImage figure src="images/1WM9-Gu6XUz4CYCS2hXfqSA.webp" alt="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." caption="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." />
 
 
 ## SliverAppBar

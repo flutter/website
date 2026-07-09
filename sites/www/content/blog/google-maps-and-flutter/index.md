@@ -3,7 +3,7 @@ title: "Google Maps and Flutter"
 description: "This article will show you step-by-step how to add a Google Map widget to your Flutter application."
 publishDate: 2018-12-14
 author: kenzieschmoll
-image: images/14dSyF9z9lAYvHVxFPS_oiw.png
+image: images/14dSyF9z9lAYvHVxFPS_oiw.webp
 category: spotlight
 layout: blog
 ---
@@ -14,7 +14,7 @@ layout: blog
 
 This article shows you step-by-step how to add a Google Map widget to your Flutter application. Here’s what you’re going to build today:
 
-<DashImage figure src="images/14dSyF9z9lAYvHVxFPS_oiw.png" />
+<DashImage figure src="images/14dSyF9z9lAYvHVxFPS_oiw.webp" />
 
 
 ## Setup
@@ -125,7 +125,7 @@ Important bits:
 
 If you run your app at this point, it should look like this:
 
-<DashImage figure src="images/1fEcIp4V3mkrATwJl7qhSJg.png" />
+<DashImage figure src="images/1fEcIp4V3mkrATwJl7qhSJg.webp" />
 
 
 ## Upgrading to Google Maps SDK for iOS 3.0
@@ -138,7 +138,7 @@ Then run **(cd ios && pod update)** from command line to pull the newest version
 
 Next, return to your main project directory (**cd ..)** and run **open ios/Runner.xcworkspace/** from command line. This will open the iOS Runner Xcode project, where we need to set the Deployment Target iOS version to 9.0.
 
-<DashImage figure src="images/1QTwIbpR2MgBuEgwt9zZK-w.png" />
+<DashImage figure src="images/1QTwIbpR2MgBuEgwt9zZK-w.webp" />
 
 
 Run your app again, and verify the new version available warning is no longer there.
@@ -220,7 +220,7 @@ child: FloatingActionButton(
 ```
 
 
-<DashImage figure src="images/12L9hKzQdpz2YfSfkKQ5fYg.gif" />
+<DashImage figure src="images/12L9hKzQdpz2YfSfkKQ5fYg.webp" />
 
 
 ### Add a marker
@@ -305,7 +305,7 @@ void _onAddMarkerButtonPressed() {
 }
 ```
 
-<DashImage figure src="images/1b_SmpOTvtt2G6HWwQpQFdQ.png" />
+<DashImage figure src="images/1b_SmpOTvtt2G6HWwQpQFdQ.webp" />
 
 
 You can customize the markers with different colors, for example `BitmapDescriptor.*defaultMarkerWithHue*(BitmapDescriptor.*hueViolet*),` or even with custom icons, for example `BitmapDescriptor.fromAsset(‘assets/asset_name.png)`.
@@ -422,7 +422,7 @@ class _MyAppState extends State<MyApp> {
 
 Once again, *the GoogleMap widget is just a widget***.** This means you can place widgets on top of it (like you just did), you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget*.
 
-<DashImage figure src="images/1Z72fYzGsnj_UVNQZx9o-2A.gif" />
+<DashImage figure src="images/1Z72fYzGsnj_UVNQZx9o-2A.webp" />
 
 
 The possibilities extend as far as you’d like to take them. Checkout the [Place Tracker](https://github.com/flutter/samples/tree/master/place_tracker) app in [flutter/samples](https://github.com/flutter/samples) for a more complete Google Maps demo. You can also checkout the [google_maps_flutter plugin example app](https://github.com/flutter/plugins/tree/master/packages/google_maps_flutter/example) for a demonstration on using the plugin.

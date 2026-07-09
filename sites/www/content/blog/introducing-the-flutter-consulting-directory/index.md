@@ -3,7 +3,7 @@ title: "Introducing the Flutter Consulting Directory"
 description: "Where organizations can find consultants to help build their next application"
 publishDate: 2023-09-13
 author: leighajarett
-image: images/1m5eYW0Qgmdse1bpkqbsPLQ.png
+image: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
 category: spotlight
 layout: blog
 ---
@@ -12,7 +12,7 @@ Design agencies and digital technology consultancies play a vital role in the su
 
 That’s why we’re excited to launch the [Flutter Consultant Directory.](http://flutter.dev/consultants)
 
-<DashImage figure src="images/1m5eYW0Qgmdse1bpkqbsPLQ.png" alt="flutter.dev/consultants" caption="flutter.dev/consultants" />
+<DashImage figure src="images/1m5eYW0Qgmdse1bpkqbsPLQ.webp" alt="flutter.dev/consultants" caption="flutter.dev/consultants" />
 
 
 We’re launching this new page to simplify finding trusted Flutter partners. We vet the partners listed in the directory to verify their record of successful Flutter projects, a sufficient number of skilled developers on staff, and their commitment to grow the Flutter community.
@@ -25,7 +25,7 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 *Make a copy and add in some studies from your own team to make a compelling Flutter case for potential clients*
 
-<DashImage figure src="images/07xi_G_tYKGROB8su.png" alt="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." caption="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." />
+<DashImage figure src="images/07xi_G_tYKGROB8su.webp" alt="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." caption="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." />
 
 
 ### Building Wonders with Flutter
@@ -46,14 +46,14 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 *Learn why and how IBM built out a Flutter Center of Excellence with hundreds of Flutter developers. [Read the blog post](https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441).*
 
-<DashImage figure src="images/1wgS4PLHJhlegD-knIZhEFA.png" />
+<DashImage figure src="images/1wgS4PLHJhlegD-knIZhEFA.webp" />
 
 
 ### [Training Clients on Flutter](http://verygood.ventures/blog/training-clients-in-flutter)
 
 *Learn how VGV created their successful Flutter training program. You can up skill your own developers, or your clients.* [*Read the blog post*](https://verygood.ventures/blog/training-clients-in-flutter).
 
-<DashImage figure src="images/00WsqrUDKa7Uikyh9.png" />
+<DashImage figure src="images/00WsqrUDKa7Uikyh9.webp" />
 
 
 ## **Ready to apply?**

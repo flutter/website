@@ -3,7 +3,7 @@ title: "Learning Flutter’s new Navigation and Routing system"
 description: "This article explains how Flutter’s new Navigator and Router API works. If you follow Flutter’s open design docs, you might have seen…"
 publishDate: 2020-09-30
 author: johnpryan
-image: images/1PYHrYurwAGyQC8vsnAaWiA.gif
+image: images/1PYHrYurwAGyQC8vsnAaWiA.webp
 category: tutorial
 layout: blog
 ---
@@ -20,7 +20,7 @@ The `Router` provides the ability to handle routes from the underlying platform 
 
 This article helps you choose which `Navigator` pattern works best for your app, and explains how to use Navigator 2.0 to parse browser URLs and take full control over the stack of pages that are active. The exercise in this article shows how to build an app that handles incoming routes from the platform and manages the pages of your app. The following GIF shows the example app in action:
 
-<DashImage figure src="images/17-wvbHmckKFVagnUwsQI2g.gif" />
+<DashImage figure src="images/17-wvbHmckKFVagnUwsQI2g.webp" />
 
 
 ## Navigator 1.0
@@ -98,7 +98,7 @@ class DetailScreen extends StatelessWidget {
 
 When `push()` is called, the `DetailScreen` widget is placed on top of the `HomeScreen` widget like this:
 
-<DashImage figure src="images/1v77nG0BRIWrOghj8fCq_EA.png" />
+<DashImage figure src="images/1v77nG0BRIWrOghj8fCq_EA.webp" />
 
 
 The previous screen (`HomeScreen`) is still part of the widget tree, so any `State` object associated with it stays around while `DetailScreen` is visible.
@@ -304,7 +304,7 @@ The Navigator 2.0 API adds new classes to the framework in order to make the app
 
 The following diagram shows how the `RouterDelegate` interacts with the `Router`, `RouteInformationParser`, and the app’s state:
 
-<DashImage figure src="images/1hNt4Bc8FZBp_Gqh7iED3FA.png" />
+<DashImage figure src="images/1hNt4Bc8FZBp_Gqh7iED3FA.webp" />
 
 
 Here’s an example of how these pieces interact:
@@ -321,7 +321,7 @@ Here’s an example of how these pieces interact:
 
 This section leads you through an exercise using the Navigator 2.0 API. We’ll end up with an app that can stay in sync with the URL bar, and handle back button presses from the app and the browser, as shown in the following GIF:
 
-<DashImage figure src="images/1PYHrYurwAGyQC8vsnAaWiA.gif" />
+<DashImage figure src="images/1PYHrYurwAGyQC8vsnAaWiA.webp" />
 
 
 To follow along, [switch to the master channel](https://flutter.dev/docs/development/tools/sdk/upgrading#switching-flutter-channels), [create a new Flutter project with web support](https://flutter.dev/docs/get-started/web#create-a-new-project-with-web-support), and replace the contents of `lib/main.dart` with the following:

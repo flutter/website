@@ -3,7 +3,7 @@ title: "How to Create Stateless Widgets"
 description: "When getting started with Flutter, one of the first things you need to learn about is stateless widgets. We recorded a series that covers…"
 publishDate: 2019-02-14
 author: aguinis
-image: images/0GoTVv7PbwxvjCh4S.png
+image: images/0GoTVv7PbwxvjCh4S.webp
 category: tutorial
 layout: blog
 ---
@@ -21,7 +21,7 @@ For those that prefer to read articles over watching videos, this post explains 
 
 To keep things quick, I’m starting with a basic app here. It contains a Scaffold widget, an AppBar widget, and a couple Text widgets that display info about my yellow Labrador, Rocky.
 
-<DashImage figure src="images/0GoTVv7PbwxvjCh4S.png" />
+<DashImage figure src="images/0GoTVv7PbwxvjCh4S.webp" />
 
 
 Widgets are the basic building blocks of a Flutter app. Each one is an immutable declaration of an aspect of the user interface, and they can take on many tasks.
@@ -73,7 +73,7 @@ class DogApp extends StatelessWidget {
 
 And now my text widget has a background color.
 
-<DashImage figure src="images/1bk-ErE0V-mSofAW6dze8jQ.png" />
+<DashImage figure src="images/1bk-ErE0V-mSofAW6dze8jQ.webp" />
 
 
 Maybe I’d like padding around the text.
@@ -112,7 +112,7 @@ class DogApp extends StatelessWidget {
 
 And now I’ve got padding.
 
-<DashImage figure src="images/1dH1_jmYHx1UxfioPteGiKQ.png" />
+<DashImage figure src="images/1dH1_jmYHx1UxfioPteGiKQ.webp" />
 
 
 This process of putting widgets together is what we call “composition.” I’m composing my interface by combining simple widgets, each of which handles one particular job: Padding pads things, DecoratedBox decorates a box, and so on.
@@ -172,7 +172,7 @@ class DogApp extends StatelessWidget {
 
 I use a widget called SizedBox to add blank space between them, which results in this:
 
-<DashImage figure src="images/1NW7SMJnwzENu3avGQpDgAg.png" />
+<DashImage figure src="images/1NW7SMJnwzENu3avGQpDgAg.webp" />
 
 
 But you know, I’ve got a lot of repeated code(also called *boilerplate*) in these three name boxes. Wouldn’t it be great if I could make my own widget that takes a name and handled the details for me?
@@ -277,7 +277,7 @@ class DogApp extends StatelessWidget {
 
 As you can see, this results in the same UI, but the code is tighter thanks to StatelessWidget and Flutter’s use of composition.
 
-<DashImage figure src="images/1NW7SMJnwzENu3avGQpDgAg.png" />
+<DashImage figure src="images/1NW7SMJnwzENu3avGQpDgAg.webp" />
 
 
 ## Part 2 — Widget Trees and Element Trees
@@ -288,7 +288,7 @@ We tend to think of apps built with Flutter as a tree of widgets, and that’s n
 
 Each widget class has both a corresponding element class and a method to create an instance.
 
-<DashImage figure src="images/1gG5opaiBFJ0A1ka9tZMeSQ.png" />
+<DashImage figure src="images/1gG5opaiBFJ0A1ka9tZMeSQ.webp" />
 
 
 StatelessWidget, for example, creates a StatelessElement.
@@ -297,17 +297,17 @@ When a widget is mounted to the tree, Flutter calls the createElement() method. 
 
 StatefulElement then asks “I wonder if I have any children?” and calls the Widget’s build() method.
 
-<DashImage figure src="images/10IZb-Rcyw4yBo3CXQM5zTg.png" />
+<DashImage figure src="images/10IZb-Rcyw4yBo3CXQM5zTg.webp" />
 
 
 In this app, it has several. These widgets then create their own corresponding elements.
 
-<DashImage figure src="images/17qIL1q-ZP005QS_zTt0j5A.png" />
+<DashImage figure src="images/17qIL1q-ZP005QS_zTt0j5A.webp" />
 
 
 And those are mounted to the element tree as well.
 
-<DashImage figure src="images/1O-D8lfgoAmMqHViU2dWuyg.png" />
+<DashImage figure src="images/1O-D8lfgoAmMqHViU2dWuyg.webp" />
 
 
 So the app now has two trees: one that represents what’s actually on the screen (the elements), and one that holds the blueprints they were made from (the widgets).
@@ -390,12 +390,12 @@ class DogApp extends StatelessWidget {
 
 Then, Flutter progresses through all of the build() methods in the widget tree, creating widgets and using them to make elements, until everything is built, mounted onscreen, and ready to be laid out and rendered.
 
-<DashImage figure src="images/0QLq-DId9PheGXmk9.png" />
+<DashImage figure src="images/0QLq-DId9PheGXmk9.webp" />
 
 
 Which is how it displays three little boxes containing the names of the yellow labs.
 
-<DashImage figure src="images/1lRBiFALMxP8-RPAsmlk7pw.png" />
+<DashImage figure src="images/1lRBiFALMxP8-RPAsmlk7pw.webp" />
 
 
 So that’s an introduction to composing with StatelessWidgets and building an interface. One thing I didn’t mention is how to update or rebuild an interface when the data changes. That’s because StatelessWidgets don’t do that. They’re stateless, so they can’t track data over time, or trigger rebuilds on their own.

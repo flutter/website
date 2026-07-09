@@ -3,7 +3,7 @@ title: "Announcing Flutter Windows Alpha"
 description: "Native Windows app compilation, some early plugins, and a desktop-ready Flutter Gallery app"
 publishDate: 2020-09-23
 author: csells
-image: images/039MKtw4ICepbL_8d.png
+image: images/039MKtw4ICepbL_8d.webp
 category: announcements
 layout: blog
 ---
@@ -34,14 +34,14 @@ This alpha release offers a solid foundation that we’ll stabilize over the com
 
 To see Flutter support for Windows in action, you might want to try out some of the sample apps that we’ve created that run well on Windows with our newly-added support. The first, the Flokk app, was created in concert with the designers and developers at [gskinner.com](http://gskinner.com). The goal was to demonstrate that Flutter was ready for the desktop by creating an innovative, beautiful Flutter desktop app. Flokk is an app that works with your real Google Contacts data as well as showing your contacts’ activity on GitHub and Twitter.
 
-<DashImage figure src="images/039MKtw4ICepbL_8d.png" />
+<DashImage figure src="images/039MKtw4ICepbL_8d.webp" />
 
 
 If you’d like to use the Flokk app on your Windows machine, you can [download the latest release on GitHub](https://github.com/gskinnerTeam/Flokk/releases). And if you’d like to read about how gskinner built this app, see their excellent blog post: [Flokk — How we built a Desktop App Using Flutter](https://blog.gskinner.com/archives/2020/09/flokk---how-we-built-a-desktop-app-using-flutter.html).
 
 In addition, the Flutter Gallery app, our showcase app for all things Flutter, was completely rewritten recently to add support for desktop form factors. This allowed us to check that it works well on [the web](https://gallery.flutter.dev) as well as Windows, macOS, and Linux.
 
-<DashImage figure src="images/0N_tKeqs435R4yICO.png" />
+<DashImage figure src="images/0N_tKeqs435R4yICO.webp" />
 
 
 Many studies in the Gallery demonstrate ideas for different app styles that we recommend when designing your own Windows app with Flutter. When you find something you like, [the code is available on GitHub](https://github.com/flutter/gallery).
@@ -61,12 +61,12 @@ The first command sets Flutter to use the experimental-quality “dev” channel
 
 Once you’ve set it up, every time you create a new Flutter app, using the extension support for either [Android Studio](https://flutter.dev/docs/get-started/editor?tab=androidstudio) or [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=vscode), or from the command line, it creates a windows subfolder.
 
-<DashImage figure src="images/0O-akivVSsv0tL0wI.png" />
+<DashImage figure src="images/0O-akivVSsv0tL0wI.webp" />
 
 
 If you’re curious, running the default app on Windows looks like the following:
 
-<DashImage figure src="images/1fsnlPFkpQWZjYIv-NCE6Vg.png" />
+<DashImage figure src="images/1fsnlPFkpQWZjYIv-NCE6Vg.webp" />
 
 
 And finally, once you’ve created your app, building it creates a release-mode, native EXE file as well as the necessary supporting DLLs. At that point, if you want to experiment with running your new Windows app on any Windows 10 machine, even those that don’t have Flutter installed, you can follow [the steps to zip up the necessary files](https://flutter.dev/desktop#distribution) and go.
@@ -140,7 +140,7 @@ This code doesn’t incur the overhead of transitioning between two threads like
 
 Wherever you are in your Flutter for Windows journey, you should be sure to [read the desktop documentation on flutter.dev](http://flutter.dev/desktop), which includes the latest details. Also, you’ll want to take a spin through the Flutter [codelab for writing a Windows, macOS, and Windows desktop-targeted application](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client), which includes code for real-world scenarios like authentication using OAuth, accessing the GitHub API, and using GraphQL. Or, for another good example of Flutter desktop code that works on Windows, [check out the Photo Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search).
 
-<DashImage figure src="images/03OlPPAMAvO84mJ6M.png" />
+<DashImage figure src="images/03OlPPAMAvO84mJ6M.webp" />
 
 
 It uses the standard Windows File Open dialog, a tree view widget, a splitter widget, and integrates the results with a real-world REST API.
@@ -149,7 +149,7 @@ For other helpful desktop-oriented widgets, we recommend [the menubar plugin](ht
 
 Another useful set of widgets to explore are [those from SyncFusion](https://pub.dev/publishers/syncfusion.com/packages), who are already well-known in the Windows development community. They provide a wide range of enterprise-quality widgets for creating charts, gauges, data grids, and more.
 
-<DashImage figure src="images/0dY1TC_i0KyjKNrvh.png" />
+<DashImage figure src="images/0dY1TC_i0KyjKNrvh.webp" />
 
 
 These widgets have a community and enterprise license, so you can find the right fit for your project.
@@ -158,7 +158,7 @@ These widgets have a community and enterprise license, so you can find the right
 
 In addition to packages and plugins for Windows (and Flutter desktop in general), Flutter developers have also been building great apps to target Windows, like this experimental build from [Invoice Ninja](https://www.invoiceninja.com/):
 
-<DashImage figure src="images/0ZuwlwG4e6fwCeQ_1.png" />
+<DashImage figure src="images/0ZuwlwG4e6fwCeQ_1.webp" />
 
 
 Invoice Ninja is an invoicing company that depends on Flutter to bring in its revenue. They target Android and iOS in production today and have [a web-based demo](https://demo.invoiceninja.com) for you to try, but are also looking ahead to providing a desktop version.
@@ -189,12 +189,12 @@ In addition to supporting the classic Win32 API, we’re also experimenting with
 
 The following screenshot shows the UWP-based Flutter Gallery running on an Xbox:
 
-<DashImage figure src="images/0cNcLDSm8fwlwux15.png" />
+<DashImage figure src="images/0cNcLDSm8fwlwux15.webp" />
 
 
 And here’s the same app running on a dual-screen Windows device running on the [Windows 10X emulator](https://docs.microsoft.com/en-us/dual-screen/windows/get-dev-tools):
 
-<DashImage figure src="images/1ZIxhg4Lx_KI5v4bc1zi5zg.png" />
+<DashImage figure src="images/1ZIxhg4Lx_KI5v4bc1zi5zg.webp" />
 
 
 [You can read more about the progress on Flutter for UWP on GitHub](https://github.com/flutter/flutter/issues/14967#issuecomment-697108439).

@@ -3,7 +3,7 @@ title: "Best practices for optimizing Flutter web loading speed"
 description: "As a Flutter developer working with the Google Flutter team and personally in my private time, I encounter and understand the concerns…"
 publishDate: 2024-05-06
 author: mhclin113
-image: images/0_bz3_DRzn9aoB0qD.png
+image: images/0_bz3_DRzn9aoB0qD.webp
 category: tutorial
 layout: blog
 ---
@@ -101,7 +101,7 @@ Flutter automatically handles [loading assets at the appropriate resolution base
 
 PNG and JPG are among the most prevalent image formats used on websites. These formats are renowned for their widespread support and compatibility. However, emerging next-generation formats like [WebP](https://developers.google.com/speed/webp) and [AVIF](https://netflixtechblog.com/avif-for-next-generation-image-coding-b1d75675fe4) offer significant advancements in reducing file sizes without substantially compromising image quality. For instance, a PNG image with an original size of 319 KB can be compressed to just 38 KB in WebP format or, even more impressively, to 10 KB in AVIF format. These reductions in file size are achieved with minimal perceptible loss in quality to the human eye, demonstrating the potential of these formats to enhance website loading speeds while maintaining visual fidelity.
 
-<DashImage figure src="images/0_bz3_DRzn9aoB0qD.png" alt="PNG 319 KB / WebP 38 KB / AVIF 10 KB" caption="PNG 319 KB / WebP 38 KB / AVIF 10 KB" />
+<DashImage figure src="images/0_bz3_DRzn9aoB0qD.webp" alt="PNG 319 KB / WebP 38 KB / AVIF 10 KB" caption="PNG 319 KB / WebP 38 KB / AVIF 10 KB" />
 
 
 However, it’s important to note that not all browsers support [WebP](https://caniuse.com/webp) and [AVIF](https://caniuse.com/avif) images. Before integrating these formats into your website, verify their compatibility with the browsers your audience uses most frequently. This will help you determine whether these next-generation image formats align with your website’s requirements and audience needs.

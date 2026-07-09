@@ -50,7 +50,7 @@ Playing cards are a key element of I/O FLIP. Thousands of cards could end up in 
 
 ### Cards created with AI-generated images and descriptions
 
-<DashImage figure src="images/1-8FtGtAwiERpc5_ctA0GKg.png" alt="Example I/O FLIP cards" caption="Example I/O FLIP cards" />
+<DashImage figure src="images/1-8FtGtAwiERpc5_ctA0GKg.webp" alt="Example I/O FLIP cards" caption="Example I/O FLIP cards" />
 
 
 Each card in I/O FLIP is unique because it contains an AI-generated image and description. At the beginning of the game, players answer two prompts. These prompts help populate a deck of 12 cards that feature images and descriptions that AI models pre-generated.

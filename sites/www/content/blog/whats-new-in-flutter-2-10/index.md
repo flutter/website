@@ -3,7 +3,7 @@ title: "What’s New in Flutter 2.10"
 description: "Windows stable, performance improvements, Material 3 updates and more!"
 publishDate: 2022-02-03
 author: csells
-image: images/0278rYAB5Pac8_7SD.png
+image: images/0278rYAB5Pac8_7SD.webp
 category: releases
 layout: blog
 ---
@@ -16,7 +16,7 @@ We have several exciting things to announce as part of this release, including a
 
 First and foremost, the Flutter 2.10 release brings with it the stable release of Windows support. You no longer need to flip a flag to get the functionality that produces Windows apps on the stable channel of Flutter — now it’s available by default!
 
-<DashImage figure src="images/0278rYAB5Pac8_7SD.png" />
+<DashImage figure src="images/0278rYAB5Pac8_7SD.webp" />
 
 
 Of course, we did a lot more than just flip a flag. This release includes extensive improvements for text handling, keyboard handling, and keyboard shortcuts, as well as new integrations directly into Windows, with support for command-line arguments, globalized text entry, and accessibility.
@@ -27,21 +27,21 @@ For much more on the Windows stable launch, see [the Announcing Flutter for Wind
 
 This release of Flutter includes initial support for **dirty region management** provided by Flutter community member [knopp](https://github.com/knopp). He’s enabled [partial repaints for a single dirty region on iOS/Metal](https://github.com/flutter/engine/pull/28801). This change reduced 90th and 99th percentile rasterization times on a few benchmarks by an order of magnitude, and reduced GPU utilization on these benchmarks from more than 90% to less than 10%.
 
-<DashImage figure src="images/0mWerp_uZBj64dBeC.png" />
+<DashImage figure src="images/0mWerp_uZBj64dBeC.webp" />
 
 
 We expect to bring the benefits of partial repaints to [other platforms](https://github.com/flutter/engine/pull/29591) in future releases.
 
 In the Flutter 2.8 release, we [landed our own internal picture recording format](https://github.com/flutter/flutter/issues/53501). Now in Flutter 2.10, we’ve started building optimizations with it. As an example, one common case of **opacity layers is now [implemented much more efficiently](https://github.com/flutter/engine/pull/29775)**. Even in the worst case, frame raster times in our benchmarks fell to under a third of their previous value.
 
-<DashImage figure src="images/0sJIYBXONsWsYa5l4.png" />
+<DashImage figure src="images/0sJIYBXONsWsYa5l4.webp" />
 
 
 We expect this optimization to expand to cover more cases as we continue developing the picture recording format.
 
 In profile and release modes, Dart code is compiled ahead of time to native machine code. The key to the efficiency and small size of this code is a whole program type flow analysis that unlocks many compiler optimizations and aggressive tree-shaking. However, as the type flow analysis must cover the whole program, it can be somewhat expensive. This release includes [**a faster implementation of type flow analysis**](https://dart.googlesource.com/sdk.git/+/e698500693603374ecc409e158f36c25bff45b12). Overall build time for the Flutter app in our benchmarks fell by ~10%.
 
-<DashImage figure src="images/03bjgNV_6OjBYDj24.png" />
+<DashImage figure src="images/03bjgNV_6OjBYDj24.webp" />
 
 
 As always, performance enhancements, reduced memory usage, and reduced latency are a priority for the Flutter team. Look forward to further improvements in future releases.
@@ -50,7 +50,7 @@ As always, performance enhancements, reduced memory usage, and reduced latency a
 
 In addition to performance improvements, we’ve also added some platform-specific features and enhancements. One new enhancement is [smoother keyboard animations in iOS](https://github.com/flutter/engine/pull/29281) from [luckysmg](https://github.com/luckysmg), which is provided automatically to your app without you having to do a thing.
 
-<DashImage figure src="images/0qMbaTcooLzyIxwgp.gif" />
+<DashImage figure src="images/0qMbaTcooLzyIxwgp.webp" />
 
 
 We’ve also improved the stability of the camera plugin for iOS by fixing a few [edge](https://github.com/flutter/plugins/pull/4608) [case](https://github.com/flutter/plugins/pull/4661) [crashes](https://github.com/flutter/plugins/pull/4619).
@@ -69,7 +69,7 @@ This release contains a number of improvements for Android as well. By default, 
 
 And last but not least, we listened to your feedback that Gradle error messages can be intimidating. For this reason, **the Flutter tool now suggests resolution steps to common issues**. For example, if you add a plugin to your app that requires you to increase the minimum supported Android SDK version, you now see a “Flutter Fix” suggestion in the logs.
 
-<DashImage figure src="images/01U5AWT3j69NL5jWn.png" />
+<DashImage figure src="images/01U5AWT3j69NL5jWn.webp" />
 
 
 We continue to add more suggestions to common error messages, and would love to get your feedback on other error messages where this treatment would be useful.
@@ -105,7 +105,7 @@ In addition, this release includes **the `ThemeData.useMaterial3` flag, which sw
 
 Last but not least, **we’ve added [1,028 new Material icons](https://github.com/flutter/flutter/pull/95007)**.
 
-<DashImage figure src="images/0-XysmyfnVC_Rt_rj.png" alt="*A tiny sample of the 1,028 new Material icons*" caption="*A tiny sample of the 1,028 new Material icons*" />
+<DashImage figure src="images/0-XysmyfnVC_Rt_rj.webp" alt="*A tiny sample of the 1,028 new Material icons*" caption="*A tiny sample of the 1,028 new Material icons*" />
 
 
 Updates can be found in [the issue tracking our Material 3 work](https://github.com/flutter/flutter/issues/91605); feel free to leave your feedback.
@@ -116,7 +116,7 @@ In December of 2020, we announced a new way to [do end-to-end testing using the 
 
 Since that time, we’ve made further improvements in the integration testing story, including **bundling the integration_test package into the Flutter SDK itself**, making it easier to integrate with your app. There’s also **a new [migration guide if you’re moving your existing flutter_driver tests to integration_test](https://docs.flutter.dev/testing/integration-tests/migration)**.
 
-<DashImage figure src="images/004e4XmQgP9CAyJ6x.png" alt="*An example from the new flutter_driver to integration_test migration guide*" caption="*An example from the new flutter_driver to integration_test migration guide*" />
+<DashImage figure src="images/004e4XmQgP9CAyJ6x.webp" alt="*An example from the new flutter_driver to integration_test migration guide*" caption="*An example from the new flutter_driver to integration_test migration guide*" />
 
 
 Several of the [existing](https://docs.flutter.dev/testing/integration-tests) [docs](https://docs.flutter.dev/cookbook/testing/integration/profiling), [samples](https://github.com/flutter/samples/tree/master/testing_app) and [codelabs](https://codelabs.developers.google.com/codelabs/flutter-app-testing) have also been updated for integration_test. To get started, point your browser to the [Testing Flutter apps](https://docs.flutter.dev/testing) page on flutter.dev. If you aren’t already using integration_test on your Flutter apps, now’s the time to start!
@@ -127,12 +127,12 @@ We’ve done some work on Flutter DevTools in this release as well, including on
 
 We’ve also made a number [of](https://github.com/flutter/devtools/pull/3526) [usability](https://github.com/flutter/devtools/pull/3493) [updates](https://github.com/flutter/devtools/pull/3480), including [**improved support for inspecting large lists and maps in the Debugger variables pane**](https://github.com/flutter/devtools/pull/3497) (thanks to [elliette](https://github.com/elliette)).
 
-<DashImage figure src="images/0Tau4a2z5GHZzuJky.gif" />
+<DashImage figure src="images/0Tau4a2z5GHZzuJky.webp" />
 
 
 And finally, we’re about to release our **annual DevTools survey**! Please provide your feedback and help us improve your development experience.
 
-<DashImage figure src="images/0bc2CaiWCLCpaYWMV.png" />
+<DashImage figure src="images/0bc2CaiWCLCpaYWMV.webp" />
 
 
 This survey prompt will show up directly in DevTools sometime in mid-February. Thanks!
@@ -141,12 +141,12 @@ This survey prompt will show up directly in DevTools sometime in mid-February. T
 
 The Visual Studio Code extension for Flutter has also gotten a number of enhancements, including **color previews in more places in your code** and [**a color picker that updates your code for you**](https://github.com/Dart-Code/Dart-Code/issues/3240).
 
-<DashImage figure src="images/0eA2UN8_kzzJreUQf.gif" />
+<DashImage figure src="images/0eA2UN8_kzzJreUQf.webp" />
 
 
 In addition, if you’d like to be a tester on prerelease versions of the Dart and Flutter extensions for VSCode, you can [switch to prerelease versions in your extension settings](https://github.com/Dart-Code/Dart-Code/issues/3729).
 
-<DashImage figure src="images/08k22xPfwMobXvYJB.png" />
+<DashImage figure src="images/08k22xPfwMobXvYJB.webp" />
 
 
 You can read about the details of this update and more in [this post](https://groups.google.com/g/flutter-announce/c/lR-yn1s9HKk) on [the flutter-announce mailing list](https://groups.google.com/g/flutter-announce).

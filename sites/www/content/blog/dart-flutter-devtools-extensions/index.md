@@ -3,7 +3,7 @@ title: "Dart & Flutter DevTools Extensions"
 description: "A guide for building custom tooling in Dart & Flutter DevTools"
 publishDate: 2023-11-15
 author: kenzieschmoll
-image: images/1JsdgKjxlVmm5EAFfXvQ2yA.png
+image: images/1JsdgKjxlVmm5EAFfXvQ2yA.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ Have you ever wanted to build developer tooling for Dart and Flutter but didn’
 
 With the new Dart & Flutter DevTools extensions framework, you can easily build developer tooling that is tightly integrated with the existing DevTools tooling suite. Extensions are built using Flutter web and leverage existing frameworks and utilities from DevTools to simplify the developer tool authoring experience.
 
-<DashImage figure src="images/1JsdgKjxlVmm5EAFfXvQ2yA.png" alt="Example DevTools extension for package:foo" caption="Example DevTools extension for package:foo" />
+<DashImage figure src="images/1JsdgKjxlVmm5EAFfXvQ2yA.webp" alt="Example DevTools extension for package:foo" caption="Example DevTools extension for package:foo" />
 
 
 ## How do DevTools extensions work?
@@ -21,7 +21,7 @@ Extensions are shipped as part of a pub package. You can add a DevTools extensio
 
 For example, imagine we have some `package:foo`, and this package provides a DevTools extension. When a user depends on `package:foo` in their app, they automatically get access to the DevTools extension provided by this package. When DevTools detects the `package:foo`extension is available, based on information from the user’s app or from their IDE, a new tab “Foo” will be added to DevTools that contains the developer tools provided by `package:foo`.
 
-<DashImage figure src="images/1FFl2jeYpyn8DfjRI5xQ8mQ.jpeg" />
+<DashImage figure src="images/1FFl2jeYpyn8DfjRI5xQ8mQ.webp" />
 
 
 Some examples of packages that have added a DevTools extension to an existing package are [package:provider](https://pub.dev/packages/provider), [package:patrol](https://pub.dev/packages/patrol), and [package:drift](https://pub.dev/packages/drift).
@@ -152,12 +152,12 @@ For each key, fill in the appropriate value for your package.
 
 * `issueTracker`: the URL for your issue tracker. When a user clicks the “Report an issue” link in the DevTools UI, they are directed to this URL. **[required]**
 
-<DashImage figure src="images/1H0Q1Zv2L6_NUFUedI6mkQw.png" alt="DevTools extension screen title bar" caption="DevTools extension screen title bar" />
+<DashImage figure src="images/1H0Q1Zv2L6_NUFUedI6mkQw.webp" alt="DevTools extension screen title bar" caption="DevTools extension screen title bar" />
 
 
 * `materialIconCodePoint`: corresponds to the codepoint value of an icon from [material/icons.dart](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/material/icons.dart). This icon is used for the extension’s tab in the top-level DevTools tab bar. **[required]**
 
-<DashImage figure src="images/1bkNzahdp7eXUo7Xwh1U07Q.png" alt="DevTools extension tab icon" caption="DevTools extension tab icon" />
+<DashImage figure src="images/1bkNzahdp7eXUo7Xwh1U07Q.webp" alt="DevTools extension tab icon" caption="DevTools extension tab icon" />
 
 
 * `requiresConnection`: whether the extension requires a connected Dart or Flutter app to use. This is an optional field that will default to `true` if unspecified. **[optional]**
@@ -234,7 +234,7 @@ When developing and maintaining your DevTools extension, you’ll want to run, d
 
 For debugging purposes, you will likely want to use the “simulated DevTools environment”. This is a simulated environment that allows you to build your extension without having to develop it as an embedded iFrame in DevTools. Running your extension this way will wrap your extension with an environment that simulates the DevTools-to-DevTools extension connection. It also gives you access to hot restart and a faster development cycle.
 
-<DashImage figure src="images/1-3c-p57ai0Quc5rJOL9qEQ.png" alt="Debugging an extension with the Simulated DevTools Environment" caption="Debugging an extension with the Simulated DevTools Environment" />
+<DashImage figure src="images/1-3c-p57ai0Quc5rJOL9qEQ.webp" alt="Debugging an extension with the Simulated DevTools Environment" caption="Debugging an extension with the Simulated DevTools Environment" />
 
 
 1. *Your DevTools extension.*
@@ -316,10 +316,10 @@ In the Dart or Flutter project where you are adding a dependency on your package
 
 4. Once you have opened DevTools, you should see a tab in the DevTools app bar for your extension. The enabled or disabled state of your extension is managed by DevTools, which is exposed from an “Extensions” menu, available from the action buttons in the upper right corner of the screen.
 
-<DashImage figure src="images/0s9-Y9X5dTyuk6Xj4.png" alt="DevTools Extensions menu button" caption="DevTools Extensions menu button" />
+<DashImage figure src="images/0s9-Y9X5dTyuk6Xj4.webp" alt="DevTools Extensions menu button" caption="DevTools Extensions menu button" />
 
 
-<DashImage figure src="images/1DSi_p-2FO60qo5JUKXk-3Q.png" alt="DevTools Extensions menu" caption="DevTools Extensions menu" />
+<DashImage figure src="images/1DSi_p-2FO60qo5JUKXk-3Q.webp" alt="DevTools Extensions menu" caption="DevTools Extensions menu" />
 
 
 ## Step 5: Publish your package with a DevTools extension

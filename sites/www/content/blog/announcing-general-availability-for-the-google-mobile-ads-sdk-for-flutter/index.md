@@ -3,12 +3,12 @@ title: "Announcing General Availability for the Google Mobile Ads SDK for Flutte
 description: "There are many ways for apps to make money: accepting payments as a storefront for a physical business; offering subscriptions or in-app…"
 publishDate: 2021-11-16
 author: zoeyfan
-image: images/0zOegrJCYTuapgWgf.png
+image: images/0zOegrJCYTuapgWgf.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/0zOegrJCYTuapgWgf.png" />
+<DashImage figure src="images/0zOegrJCYTuapgWgf.webp" />
 
 
 There are many ways for apps to make money: accepting payments as a storefront for a physical business; offering subscriptions or in-app purchases; or including ads directly in your application. Today, we are excited to announce the [Google Mobile Ads SDK for Flutter](https://pub.dev/packages/google_mobile_ads) is now generally available, after a six-month beta period. Great news for Flutter apps that require the presence of in-app ads!
@@ -27,7 +27,7 @@ The Google Mobile Ads (GMA) SDK for Flutter works on both iOS and Android, and s
 
 **App Open Ads:** An ad format that monetizes your mobile app loading experience. App open ads are served when a user opens or switches back to your app.
 
-<DashImage figure src="images/0RZUZCrtJ7df_hnjI.png" />
+<DashImage figure src="images/0RZUZCrtJ7df_hnjI.webp" />
 
 
 ## Google AdMob and Ad Manager
@@ -38,7 +38,7 @@ If you are not familiar with Google’s ads services, you might not know that [A
 
 T[he GMA SDK for Flutter](https://pub.dev/packages/google_mobile_ads) unifies these products to help meet your monetization needs by sharing code across iOS and Android and not having to rewrite your code as your needs grow.
 
-<DashImage figure src="images/0_i1bA47tKTTOaFAU.png" />
+<DashImage figure src="images/0_i1bA47tKTTOaFAU.webp" />
 
 
 ## Mediation and Bidding

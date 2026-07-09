@@ -27,7 +27,7 @@ You can also add this directly on your Google Calendar by [clicking here](https:
 
 Organizations all over the world are hosting free viewing parties to watch and discuss Flutter Live. Find one of the 150+ parties happening near you; [here is the full list](https://developers.google.com/events/flutter-live/viewing-parties/).
 
-<DashImage figure src="images/1zc_G0l9afXZxqPAZ7rmrGQ.png" />
+<DashImage figure src="images/1zc_G0l9afXZxqPAZ7rmrGQ.webp" />
 
 
 ## Get Involved with #MyFlutterStory, #AskFlutter, and #FlutterLive

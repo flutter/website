@@ -3,7 +3,7 @@ title: "Material Range Slider in Flutter"
 description: "What is it? Why might you use it? How do you theme it?"
 publishDate: 2019-07-11
 author: clocksmith
-image: images/0wtmSldtwjSvtRtuI.png
+image: images/0wtmSldtwjSvtRtuI.webp
 category: tutorial
 layout: blog
 ---
@@ -17,12 +17,12 @@ The range slider, a highly customizable component for selecting a range of value
 
 A slider component can offer a single selection or multiple selections on either a discrete or continuous track. Unlike single selection sliders that predetermine either a minimum or maximum value with the ability to adjust the selection in one direction, range sliders have two selection points that allow for a flexible adjustment of minimum and maximum value points. This flexibility makes it a useful component for instances when a user prefers to control a specific range, such as indicating price points or a length of time.
 
-<DashImage figure src="images/0Mu435B7sBkJHMuY4.gif" />
+<DashImage figure src="images/0Mu435B7sBkJHMuY4.webp" />
 
 
 ### Structure & Implementation
 
-<DashImage figure src="images/0wtmSldtwjSvtRtuI.png" />
+<DashImage figure src="images/0wtmSldtwjSvtRtuI.webp" />
 
 
 The `RangeSlider` consists of 5 parts:
@@ -54,7 +54,7 @@ RangeSlider(
 );
 ```
 
-<DashImage figure src="images/0B0bu8hC9PtI5xXBL.png" />
+<DashImage figure src="images/0B0bu8hC9PtI5xXBL.webp" />
 
 
 The `RangeSlider`’s `State` object builds a `LeafRenderObjectWidget`. Everything is painted in its inner `RenderBox`, which also handles touch input.
@@ -83,12 +83,12 @@ The default thumb selector first attempts to find the closest thumb in `_startIn
 
 When the thumbs are further apart, touching the inner track does not select a thumb:
 
-<DashImage figure src="images/0mlCfCFNzbUsT6P5l.gif" />
+<DashImage figure src="images/0mlCfCFNzbUsT6P5l.webp" />
 
 
 When the thumbs are closer together, the drag displacement is used to determine the thumb selection:
 
-<DashImage figure src="images/0vcWwbYKPKh0Q-Cbc.gif" />
+<DashImage figure src="images/0vcWwbYKPKh0Q-Cbc.webp" />
 
 
 Implementation of the default thumb selector with the behavior described above:
@@ -144,7 +144,7 @@ The last step is `_endInteraction`. Once the tap or drag gesture is lifted, the 
 
 In the previous section, you saw the code for Material’s default thumb selection behavior. **But what if you wanted something different?** The following code shows how to write a thumb selector that always selects the closest thumb, regardless of what part of the track is touched.
 
-<DashImage figure src="images/0HLlGFubMmDajfdYU.gif" />
+<DashImage figure src="images/0HLlGFubMmDajfdYU.webp" />
 
 
 Implementation of a custom thumb selector that always finds the closest thumb:
@@ -193,7 +193,7 @@ SliderTheme(
 
 Above, you saw how to use the SliderThemeData to customize how the thumbs are selected. This section shows how to limit the positions that the thumbs can be dragged, or set, to. There are 2 ways to control the allowed positions of thumbs. It can be done by **value**, or it can be done by **space.** By value can be useful, for example, if you have a price selector. Let’s say the allowed prices can be within $0 and $100, but you want the range to be at least $20 apart. So the range [$30, $50] would be allowed but the range [$33, $34] would not be allowed. Simply adjust the onChanged function as follows:
 
-<DashImage figure src="images/0tqIVrQZCHKLeLZCV.gif" />
+<DashImage figure src="images/0tqIVrQZCHKLeLZCV.webp" />
 
 
 ```dart
@@ -220,7 +220,7 @@ RangeSlider(
 
 If it is only necessary to restrict the thumbs for the sake of appearances, then the minThumbSeparation property can be used to limit the number of logical pixels that separate the 2 thumbs. The default top thumb will draw a white outline around itself for better contrast between the thumbs. Here is a side by side comparison showing the default value of 8 vs a custom value of 24
 
-<DashImage figure src="images/0kChVA0QLDWygcEn0.png" />
+<DashImage figure src="images/0kChVA0QLDWygcEn0.webp" />
 
 
 ### Painting Shapes
@@ -326,7 +326,7 @@ SliderTheme(
 ),
 ```
 
-<DashImage figure src="images/0w97BioIrNzfHqQ43.gif" />
+<DashImage figure src="images/0w97BioIrNzfHqQ43.webp" />
 
 
 ### Closing Remarks

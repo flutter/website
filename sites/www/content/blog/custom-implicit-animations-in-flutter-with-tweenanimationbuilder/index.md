@@ -10,7 +10,7 @@ layout: blog
 
 To make animations in Flutter, there are many different options available. How do you choose the right animation widget? This article, [part](https://medium.com/flutter/flutter-animation-basics-with-implicit-animations-95db481c5916) of [our](https://medium.com/flutter/directional-animations-with-built-in-explicit-animations-3e7c5e6fbbd7) animation series, delves into the best use cases for `TweenAnimationBuilder` versus when a different widget is best for the job. The previous article in this series explains just how powerful all the built-in implicit animation widgets are and how much you can accomplish with them.
 
-<DashImage figure src="images/11wJWHHPYfOYUCDBAcmIpjg.png" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." />
+<DashImage figure src="images/11wJWHHPYfOYUCDBAcmIpjg.webp" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the second-from-the-right “end state”, TweenAnimationBuilder." />
 
 
 Why use `TweenAnimationBuilder`? Suppose you want to create a *basic* animation: an animation that *doesn’t* repeat forever and is just one widget or widget tree. Flutter has a convention of naming its implicitly animated widgets `AnimatedFoo`, where `Foo` is the name of the property that animates. Don’t believe me? Here’s a sample of built-in, implicitly animated widgets: `AnimatedContainer`, `AnimatedCrossFade`, `AnimatedDefaultTextStyle`, `AnimatedModalBarrier`, `AnimatedOpacity`, `AnimatedPadding`, `AnimatedPhysicalModel`, `AnimatedPositioned`, `AnimatedPositionedDirectional`, `AnimatedSwitcher`. This set of widgets is impressively powerful, and you can accomplish a lot of your needs just using those. `AnimatedContainer` can even let you animate gradients and rotate widgets, all without needing to worry about an `AnimationController`!
@@ -58,7 +58,7 @@ The example code above showed the bare-minimum set of arguments necessary to use
 
 In the Doppler effect, when a star moves away from you in space, the waves of light elongate, making the light shift closer to the red end of the spectrum. This effect is very subtle and not visible to the naked eye, but astronomers use it to determine the velocity of stars and galaxies relative to us.
 
-<DashImage figure src="images/11-TXNn5MMPC7MDr4OZd-EA.gif" alt="Consult your local astrophysicist for more details." caption="Consult your local astrophysicist for more details." />
+<DashImage figure src="images/11-TXNn5MMPC7MDr4OZd-EA.webp" alt="Consult your local astrophysicist for more details." caption="Consult your local astrophysicist for more details." />
 
 
 In our app we’re going to make this a little less subtle. I have a nice image of a star, and to change its color, I’m going to use the `ColorFiltered` widget. I apply a blend mode, and tell it to blend orange into the image to make it a little more reddish.
@@ -87,7 +87,7 @@ TweenAnimationBuilder(
 ```
 
 
-<DashImage figure src="images/1_JRebndf4uwMwxVzyNunYg.gif" />
+<DashImage figure src="images/1_JRebndf4uwMwxVzyNunYg.webp" />
 
 
 Depending on *what* you want to animate though, your `Tween` can specify ranges between things other than colors or numbers. You can have a `Tween` with `Offset` objects to animate the change of a widget’s position, or you can even animate how the border of a widget changes! The point is you have a ton of options.
@@ -268,7 +268,7 @@ class _BackAndForthState extends State<MyHomePage> {
 }
 ```
 
-<DashImage figure src="images/17xwzsHM8FSwtXlWP_3q9qA.gif" />
+<DashImage figure src="images/17xwzsHM8FSwtXlWP_3q9qA.webp" />
 
 
 There’s one last parameter we haven’t discussed yet: the child parameter. Setting the child parameter is a potential performance optimization. Even though the color changes, the star image widget itself stays the same. As it’s currently written though, that image widget gets reconstructed every time that builder method gets called. We can build that star image ahead of time by passing it in as a child parameter. This way, Flutter knows the only widget that it needs to rebuild from frame to frame is the new color filter, not the star image itself. This example is simple so there’s really no noticeable difference. But, if we were animating a much more complex component, you can imagine performance optimization might become more important.

@@ -3,14 +3,14 @@ title: "How it’s made: Holobooth"
 description: "A virtual photo booth experience showcasing Flutter and Machine Learning"
 publishDate: 2023-01-24
 author: verygoodopensource
-image: images/18zOCQg2Qwh_dzC4ndMzoqg.png
+image: images/18zOCQg2Qwh_dzC4ndMzoqg.webp
 category: spotlight
 layout: blog
 ---
 
 Introducing the Flutter Forward [Holobooth](https://holobooth.flutter.dev/), a new experience showcasing the power of [Flutter](https://flutter.dev/), [Firebase](https://firebase.google.com/), and Machine Learning (using [MediaPipe](https://mediapipe.dev/) and [TensorFlow.js](https://tensorflow.org/js)) in a virtual photo booth experience. Start by selecting your avatar (Dash or Sparky) and transport yourself to a tropical beach, volcanic mountain, outer space, the ocean floor, or somewhere else! Since we can’t transport everyone to Nairobi to attend [Flutter Forward](https://flutter.dev/events/flutter-forward) in person, we wanted to provide a virtual experience that is just as exciting! With Holobooth, you can capture a short video to commemorate your virtual visit. Then, show your friends by sharing on Twitter or Facebook.
 
-<DashImage figure src="images/18zOCQg2Qwh_dzC4ndMzoqg.png" alt="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" caption="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" />
+<DashImage figure src="images/18zOCQg2Qwh_dzC4ndMzoqg.webp" alt="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" caption="Try out the Flutter Forward Holobooth at [holobooth.flutter.dev](https://holobooth.flutter.dev/)" />
 
 
 The Holobooth builds on the first version of the [Photo Booth app from Google I/O 2021](https://medium.com/flutter/how-its-made-i-o-photo-booth-3b8355d35883). Instead of taking photos of you and Dash or Sparky, Holobooth uses machine learning to control animations of Dash or Sparky using your facial expressions.
@@ -21,7 +21,7 @@ We’ll break down how our team collaborated with Google to create a more immers
 
 One of the most exciting features of the [Holobooth](https://holobooth.flutter.dev/) is the ability to map live video of your face onto a 3D model of Dash (or Sparky) as you travel through their virtual world. If your face expresses surprise, Dash’s face expresses surprise, and so on. To achieve this, we used the [camera](https://pub.dev/packages/camera) plugin for Flutter web and [TensorFlow.js](https://www.tensorflow.org/js) to detect the user’s face within the frame of the camera. More specifically, we used the [MediaPipe FaceMesh](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection) model, which estimates 468 3D face landmarks in real-time, to detect features of the user’s face within the camera frame across web and mobile browsers.
 
-<DashImage figure src="images/1_Pp7DaS5DOfQJtMfjJ3m2Q.png" alt="Features detected with the MediaPipe FaceMesh model" caption="Features detected with the MediaPipe FaceMesh model" />
+<DashImage figure src="images/1_Pp7DaS5DOfQJtMfjJ3m2Q.webp" alt="Features detected with the MediaPipe FaceMesh model" caption="Features detected with the MediaPipe FaceMesh model" />
 
 
 Based on the position of each facial feature, we can determine if the user is in frame, if their eyes or mouth are open, and more. As the user moves around the camera view, the MediaPipe [FaceMesh](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection) model (available via the [TensorFlow.js Face Landmarks Detection package](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection)) ensures that we can track the exact coordinates of the user’s features so that we can mirror them on Dash or Sparky. For more details, you can dig into the [face_geometry.dart file](https://github.com/flutter/holobooth/blob/1c5bc00f0b43dd56ea7f964b26756a5991d6502e/packages/face_geometry/lib/src/face_geometry.dart). While there isn’t an official Dart package for TensorFlow.js yet, the Dart [JS](https://pub.dev/packages/js) package allowed us to import the javascript library into a Flutter web app (see the [tensorflow_models](https://github.com/flutter/holobooth/tree/1c5bc00f0b43dd56ea7f964b26756a5991d6502e/packages/tensorflow_models) package folder for more details).
@@ -92,7 +92,7 @@ The main feature of Holobooth is the GIF or video that you can share to celebrat
 
 To share your GIF directly to Twitter or Facebook, you can click the share button. You are then taken to the selected platform with a pre-populated post containing a photo of the first frame of your video. To see the full video, click on the link to your holocard — a web page that displays your video in full and a button directing visitors to try out Holobooth for themselves!
 
-<DashImage figure src="images/1gqq0z-7kyXE0GS086zbVUw.png" alt="Example holocard" caption="Example holocard" />
+<DashImage figure src="images/1gqq0z-7kyXE0GS086zbVUw.webp" alt="Example holocard" caption="Example holocard" />
 
 
 ## Challenges and how we addressed them

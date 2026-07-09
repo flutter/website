@@ -3,7 +3,7 @@ title: "Building a QR code Widget in Flutter"
 description: "Making Flutter Widgets is fun so get going!"
 publishDate: 2018-03-05
 author: lukeaf
-image: images/1iuOxHUF0bBlZtiktVx6XyA.png
+image: images/1iuOxHUF0bBlZtiktVx6XyA.webp
 category: tutorial
 layout: blog
 ---
@@ -58,7 +58,7 @@ new QrImage(
 
 You can create the following QR code in your app:
 
-<DashImage figure src="images/1iuOxHUF0bBlZtiktVx6XyA.png" alt="Beaut!" caption="Beaut!" />
+<DashImage figure src="images/1iuOxHUF0bBlZtiktVx6XyA.webp" alt="Beaut!" caption="Beaut!" />
 
 
 All this will be in pub soon so you wont’ have to reproduce it for your purposes, but if you want to then have at it because it is open source. Hopefully, beyond getting a cool QR code Widget for your app, this gave you some small insight into how quick and easy it is to build a Widget in Flutter.

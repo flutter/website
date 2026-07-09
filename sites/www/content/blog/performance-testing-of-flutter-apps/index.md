@@ -3,7 +3,7 @@ title: "Performance Testing of Flutter apps"
 description: "The Flutter framework does a good job being fast by default, but does that mean you don’t need to think about performance at all? No. It…"
 publishDate: 2019-05-09
 author: filiph
-image: images/1MxtHyEfdBlANwu7ZRyX2mw.png
+image: images/1MxtHyEfdBlANwu7ZRyX2mw.webp
 category: tutorial
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 The Flutter framework does a good job being fast by default, but does that mean you don’t need to think about performance at all? No. It is absolutely possible to write Flutter apps that are slow. On the other hand, it is also possible to make the most of the framework, and make your apps not only fast, but also efficient, consuming less CPU time and battery.
 
-<DashImage figure src="images/1MxtHyEfdBlANwu7ZRyX2mw.png" alt="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." caption="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." />
+<DashImage figure src="images/1MxtHyEfdBlANwu7ZRyX2mw.webp" alt="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." caption="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." />
 
 
 There are some general guidelines for performance optimization in Flutter:
@@ -39,7 +39,7 @@ The downside is that you can make your app significantly *faster* by making it w
 
 Below, you can see how adding a loop with nonsensical print statements to an app made the governor switch into higher gear, making the app much faster and its performance more predictable.
 
-<DashImage figure src="images/0vJSgoS61dEqAK7kf.png" alt="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." caption="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." />
+<DashImage figure src="images/0vJSgoS61dEqAK7kf.webp" alt="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." caption="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." />
 
 
 In this experiment, worse code resulted in faster build times (above), faster rasterization times, and higher frame rate. When objectively worse code results in better performance metrics, you can’t depend on those metrics for guidance.
@@ -83,7 +83,7 @@ echo "- result: ${ACTUAL_GOV}"
 
 * In the end, you need to experiment, and tailor the shell script to the device you’ll be using. It’s work, but until you do this, your performance data will lie to you.
 
-<DashImage figure src="images/0PVigpdSw-WlNfJHI.gif" alt="An early version of Developer Quest being exercised by Flutter Driver on my desk." caption="An early version of Developer Quest being exercised by Flutter Driver on my desk." />
+<DashImage figure src="images/0PVigpdSw-WlNfJHI.webp" alt="An early version of Developer Quest being exercised by Flutter Driver on my desk." caption="An early version of Developer Quest being exercised by Flutter Driver on my desk." />
 
 
 ## Flutter Driver
@@ -102,7 +102,7 @@ Flutter Driver lets you exercise your app automatically. Read the [Performance p
 
 * For each version of your app, exercise it many times. For Developer Quest, I converged to 100 runs. (When you measure things that are noisier, like 99th percentile, you might need a lot more runs.) For POSIX-based systems, that just means running something like the following: `for i in {1..100}; do flutter drive --target=test_driver/perf.dart --profile; done`.
 
-<DashImage figure src="images/1Y7-lpotj3tTjqJyobYyKHw.png" alt="Using Chrome’s timeline tool to inspect Flutter’s profile output." caption="Using Chrome’s timeline tool to inspect Flutter’s profile output." />
+<DashImage figure src="images/1Y7-lpotj3tTjqJyobYyKHw.webp" alt="Using Chrome’s timeline tool to inspect Flutter’s profile output." caption="Using Chrome’s timeline tool to inspect Flutter’s profile output." />
 
 
 ## Timeline
@@ -127,14 +127,14 @@ It’s better to look at as many metrics as possible, but I’ve found some more
 
 * I personally get the most useful data by measuring the total CPU time spent running Dart code. This counts code executed both in your build methods and outside of them. Assuming you run your profile tests on a scale-locked device, total CPU time is a good approximation of how much more/less battery your app will consume.
 
-<DashImage figure src="images/00S0itDkQHzRjcY1N.png" />
+<DashImage figure src="images/00S0itDkQHzRjcY1N.webp" />
 
 
 * The easiest way to find out the total CPU time spent running Dart code is to measure the extent of `MessageLoop:FlushTasks` events in the timeline. For Developer Quest, I have written [a Dart tool](https://github.com/2d-inc/developer_quest/blob/master/test_driver/parse_timeline.dart#L82) to extract these.
 
 * To detect jank (i.e. skipped frames), look for extremes. For example, for the particular case of Developer Quest and the device we have for testing, it was helpful to look at 95th percentile build times. (The 90th percentile build times were too similar even when comparing code with vastly different levels of efficiency, and 99th percentile numbers tend to be noisy. Your mileage may vary.)
 
-<DashImage figure src="images/0ewPiWp1FMME8HDnV.png" />
+<DashImage figure src="images/0ewPiWp1FMME8HDnV.webp" />
 
 
 * As mentioned above, exercise each version of your app several (perhaps 100) times. Then use average or percentile data with margins of error. Even better, use boxplots.
@@ -143,7 +143,7 @@ It’s better to look at as many metrics as possible, but I’ve found some more
 
 Once this is set up, you will be able to compare commits and experiments with confidence. Below, you can see an answer to a common dilemma: “is this optimization worth the maintenance overhead?”
 
-<DashImage figure src="images/1ynM53tboJVQFcpmxRuuu4A.png" />
+<DashImage figure src="images/1ynM53tboJVQFcpmxRuuu4A.webp" />
 
 
 I think that in *this particular* case, the answer is yes. With only a few more lines of code, each automated walkthrough of our app takes, on average, 12% less CPU time.

@@ -3,7 +3,7 @@ title: "Updates on Flutter and Firebase"
 description: "Updated Firebase plugins for higher quality and a new site with Flutter-specific docs, snippets and videos"
 publishDate: 2020-08-19
 author: csells
-image: images/0v4wFYjvXB2iCem55.png
+image: images/0v4wFYjvXB2iCem55.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 Flutter is more than just an engine, a set of widgets, and some tools; it also includes a large ecosystem of packages to add functionality to your apps beyond what comes out of the box. Some of the most popular packages are the set that supports Firebase (aka FlutterFire). As part of our continued focus on quality for all aspects of Flutter, [we recently announced](https://medium.com/flutter/flutter-package-ecosystem-update-d50645f2d7bc) that Invertase, a consulting firm with deep expertise in Dart, Flutter, and Firebase, would be taking over the bulk of the development and maintenance of the FlutterFire plugins. In just the short amount of time since that announcement, they’ve made a tremendous amount of progress, including a new set of Core, Authentication, and Firestore plugins that provide new functionality and align the APIs more closely with other Firebase SDKs. In addition, they’ve created a whole site of Flutter-specific documentation for each of the Firebase plugins that includes installation instructions and code snippets for common scenarios, as well as a migration guide to help you move your code to this new version. And finally, in addition to all of that great work, this release represents 300+ issues resolved and 80+ pull requests merged.
 
-<DashImage figure src="images/0kZUvqusPkrzKt54k.png" />
+<DashImage figure src="images/0kZUvqusPkrzKt54k.webp" />
 
 
 ## Principles
@@ -49,7 +49,7 @@ For the full list of changes for the new versions of Core, Authentication, and F
 
 The work that Invertase is doing is currently focused on Android and iOS, with macOS thrown in since it shares 99% of the same code with iOS. You can see the support for the Firebase plugins at the new documentation site for FlutterFire: [https://firebase.flutter.dev/](https://firebase.flutter.dev/)
 
-<DashImage figure src="images/0v4wFYjvXB2iCem55.png" alt="Current status of the Firebase plugins for Flutter" caption="Current status of the Firebase plugins for Flutter" />
+<DashImage figure src="images/0v4wFYjvXB2iCem55.webp" alt="Current status of the Firebase plugins for Flutter" caption="Current status of the Firebase plugins for Flutter" />
 
 
 You’ll notice that while every Firebase plugin supports mobile, which includes Android and iOS, not all of them support macOS. We’ll bring that support along as we work our way through the list. You’ll also notice that several of the plugins already support Flutter on the web as well as mobile. The breadth of support will continue to grow as work continues.
@@ -58,7 +58,7 @@ You’ll notice that while every Firebase plugin supports mobile, which includes
 
 In addition to providing a comprehensive migration guide and showing platform support for each plugin, we’ve also provided the first draft at a Flutter-centric set of documentation at [https://firebase.flutter.dev/docs](https://firebase.flutter.dev/docs).
 
-<DashImage figure src="images/0UYxGBLGPhiFgOv2j.png" />
+<DashImage figure src="images/0UYxGBLGPhiFgOv2j.webp" />
 
 
 No more reading the native Android or web Firebase docs and using that to guess the equivalent APIs to use in your Flutter apps! On this site, you’ll find docs for most of the Firebase plugins (many more than just Core, Authentication, and Firestore), Android, iOS, web-specific installation instructions, an overview of common scenarios with code snippets, and videos.

@@ -3,12 +3,12 @@ title: "Learn to build native mobile apps with Flutter with our free Udacity cou
 description: "TL;DR: Sign up here to get started with our free Udacity course!"
 publishDate: 2018-07-02
 author: maryx
-image: images/1v_vdCNpmwHNcOM0xiqXIOQ.png
+image: images/1v_vdCNpmwHNcOM0xiqXIOQ.webp
 category: tutorial
 layout: blog
 ---
 
-<DashImage figure src="images/1v_vdCNpmwHNcOM0xiqXIOQ.png" />
+<DashImage figure src="images/1v_vdCNpmwHNcOM0xiqXIOQ.webp" />
 
 
 Hi everyone! I’m Mary, a software engineer who works with Flutter at Google. I used to work on web development, and transitioned to learning and building with Flutter over the past year. It’s been fun and interesting to build with Flutter, and I wanted to share my knowledge. That’s why the Flutter team at Google, Udacity, and I collaborated to create the free online video course, [“Build Native Mobile Apps with Flutter”](https://udacity.com/course/ud905). I injected my “learning Flutter” experience into the course, which teaches you what Flutter is, and how to (intuitively!) build mobile apps for both iOS and Android.

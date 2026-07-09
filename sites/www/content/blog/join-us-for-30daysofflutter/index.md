@@ -3,12 +3,12 @@ title: "Join us for #30DaysOfFlutter"
 description: "Happy New Year folks. It’s the perfect time of year to learn something new! Do you have an app idea you’ve been dreaming of over the…"
 publishDate: 2021-01-26
 author: nikkitagandhi
-image: images/1v7ytVK_8WbqA7Gc-Uol-wQ.jpeg
+image: images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1v7ytVK_8WbqA7Gc-Uol-wQ.jpeg" alt="Banner for 30 Days of Flutter" caption="Banner for 30 Days of Flutter" />
+<DashImage figure src="images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp" alt="Banner for 30 Days of Flutter" caption="Banner for 30 Days of Flutter" />
 
 
 Happy New Year folks. It’s the perfect time of year to learn something new! Do you have an app idea you’ve been dreaming of over the holidays? If so, we have just the opportunity for you! Starting February 1st, leading up to our big [event on March 3rd](https://events.flutter.dev/?utm_source=30DaysOfFlutter&utm_medium=email&utm_campaign=30Days_Engage), join us for **#30DaysOfFlutter** to kickstart your learning journey and meet Flutter experts in the community. Whether you are building your first Flutter app or looking to improve your Flutter skills, we have curated content, code labs, and demos!

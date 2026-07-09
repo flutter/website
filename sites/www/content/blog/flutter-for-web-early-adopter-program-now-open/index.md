@@ -3,14 +3,14 @@ title: "Flutter for web early adopter program now open"
 description: "Ready for active development of production-quality web apps"
 publishDate: 2019-07-25
 author: kevmoo
-image: images/1HcggEjhP_Li6Tt7KIzB10g.png
+image: images/1HcggEjhP_Li6Tt7KIzB10g.webp
 category: announcements
 layout: blog
 ---
 
 Our vision for Flutter has always been to provide a fast, productive and open toolkit for creating beautiful user experiences on any platform. We started with mobile, with a toolkit that is already in use for tens of thousands of apps, big and small. At Google I/O this year, we announced the [first preview of Flutter support for the web](https://developers.googleblog.com/2019/05/Flutter-io19.html), allowing developers to use the same skills and code to target the web browser, and we’ve seen a *lot* of interest already. Thank you to the thousands of you who are already experimenting with Flutter on the web and giving us your feedback.
 
-<DashImage figure src="images/1HcggEjhP_Li6Tt7KIzB10g.png" />
+<DashImage figure src="images/1HcggEjhP_Li6Tt7KIzB10g.webp" />
 
 
 We’re excited to announce that we are moving into a new phase of development as we get closer to a production-quality release of our web support. Today, we are [opening an exclusive program for companies, design agencies and startups](https://forms.gle/32JCpbYefLaZE3xp8) who are ready to build in earnest on Flutter for the web. We have a limited number of slots available by application to those who are ready to engage with us directly on a first wave of production Flutter web applications.

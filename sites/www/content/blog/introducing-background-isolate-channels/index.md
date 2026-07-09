@@ -3,12 +3,12 @@ title: "Introducing background isolate channels"
 description: "Now as of Flutter 3.7, I’m pleased to announce that developers can use Plugins and Platform Channels from any isolate. This has been one of…"
 publishDate: 2023-01-09
 author: gaaclarke
-image: images/1bSKidxVM7-brUJFuyKdVFg.png
+image: images/1bSKidxVM7-brUJFuyKdVFg.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/1bSKidxVM7-brUJFuyKdVFg.png" />
+<DashImage figure src="images/1bSKidxVM7-brUJFuyKdVFg.webp" />
 
 
 Now as of Flutter 3.7, I’m pleased to announce that developers can use Plugins and Platform Channels from *any* isolate. This has been one of our [highest ranked issues](https://github.com/flutter/flutter/issues/13937) and has been around since 2018. It was deprioritized since it wasn’t trivial to implement and there was a workaround, albeit cumbersome: always use Plugins from the root isolate (the isolate that Flutter provides). However, as Flutter has matured it has increasingly focused on performance, following the old software adage “Make it work, make it right, make it fast.” Choosing to implement this feature was a happy intersection of improving performance and also making Flutter easier to use. So, it became an easy decision to make the investment.
@@ -60,7 +60,7 @@ void _isolateMain(RootIsolateToken rootIsolateToken) async {
 
 Here is a high level overview of how Platform Channels work:
 
-<DashImage figure src="images/0Db7Niu7FqKGszecZ.png" />
+<DashImage figure src="images/0Db7Niu7FqKGszecZ.webp" />
 
 
 When the result from the Platform Channel was invoked there was a hardcoded hop to the *platform* thread. In order for Background Isolate Channels to work, the isolate sending the message must be stored so that the engine can schedule the result on that isolate’s event loop. That was implemented by using [Dart’s *ports](https://github.com/dart-lang/sdk/blob/eb9554d70e386bb3177f63509ba8f7e4bbf500a0/runtime/include/dart_native_api.h#L125).* Dart *ports* store the isolate that owns them and is the only way to schedule on those isolates from the C API.

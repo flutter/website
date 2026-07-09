@@ -3,7 +3,7 @@ title: "Zero to One with Flutter, Part Two"
 description: "Discovering how to animate composite graphical objects in the context of a cross-platform mobile app. Join an avid concept miner in…"
 publishDate: 2017-03-31
 author: mravn
-image: images/1OSc2sFHg8KH4ZQR2ymytKg.png
+image: images/1OSc2sFHg8KH4ZQR2ymytKg.webp
 category: spotlight
 layout: blog
 ---
@@ -12,7 +12,7 @@ Discovering how to animate composite graphical objects in the context of a cross
 
 Edit: updated for Dart 2 on August 8, 2018. [GitHub repo](https://github.com/mravn/charts) and diff links added on October 17, 2018.
 
-<DashImage figure src="images/1OSc2sFHg8KH4ZQR2ymytKg.png" />
+<DashImage figure src="images/1OSc2sFHg8KH4ZQR2ymytKg.webp" />
 
 
 How do you enter into a new field of programming? Experimentation is obviously key, as is studying and emulating programs written by more experienced peers. I personally like to complement these approaches with concept mining: Trying to work from first principles, identifying concepts, exploring their strength, deliberately seeking their guidance. It is a rationalistic approach which cannot stand on its own, but one that is intellectually stimulating and may lead you to deeper insights faster.
@@ -23,7 +23,7 @@ This is the second and final part of an introduction to Flutter and its widget a
 
 * a floating action button widget for initiating an animated change of the bar’s height.
 
-<DashImage figure src="images/15ggIsPDAwb8sAgPw8vZkyw.gif" alt="Animating bar height." caption="Animating bar height." />
+<DashImage figure src="images/15ggIsPDAwb8sAgPw8vZkyw.webp" alt="Animating bar height." caption="Animating bar height." />
 
 
 The animation was implemented using a `BarTween`, and I claimed that the tween concept would scale to handle more complex situations. Here in part two, I’ll fulfill that claim by generalizing the design to bars with more properties, and to bar charts containing multiple bars in various configurations.
@@ -64,7 +64,7 @@ class BarTween extends Tween<Bar> {
 
 Notice the utility of the static `lerp` method idiom here. Without `Bar.lerp`, `lerpDouble` (morally `double.lerp`), and `Color.lerp` we’d have to implement `BarTween` by creating a `Tween&lt;double&gt;` for the height and a `Tween&lt;Color&gt;` for the color. Those tweens would be instance fields of `BarTween`, initialized by its constructor, and used in its `lerp` method. We’d be duplicating knowledge about the properties of `Bar` several times over, outside the `Bar` class. Maintainers of our code would likely find that less than ideal.
 
-<DashImage figure src="images/1kCvpZWFivphnjDnOiIoaIw.gif" alt="Animating bar height and color." caption="Animating bar height and color." />
+<DashImage figure src="images/1kCvpZWFivphnjDnOiIoaIw.webp" alt="Animating bar height and color." caption="Animating bar height and color." />
 
 
 To make use of colored bars in our app, we’ll update `BarChartPainter` to get the bar color from the `Bar`. In `main.dart`, we need to be able to create an empty `Bar` and a random `Bar`. We’ll use a fully transparent color for the former, and a random color for the latter. Colors will be taken from a simple `ColorPalette` which we quickly introduce in a file of its own. We’ll make both `Bar.empty` and `Bar.random` factory constructors on `Bar` ([code listing](https://gist.github.com/mravn-google/90bda9c82df356338b3fe3f733066f6c), [diff](https://github.com/mravn/charts/commit/91c800e7e69f2208afb20535aeeacce5a83b8f01)).
@@ -182,7 +182,7 @@ class BarChartPainter extends CustomPainter {
 
 The `BarChartPainter` distributes available width evenly among the bars and makes each bar take up 75% of the width available to it.
 
-<DashImage figure src="images/1aiUQNf70oukpvNf6sVw3GA.gif" alt="Fixed-category bar chart." caption="Fixed-category bar chart." />
+<DashImage figure src="images/1aiUQNf70oukpvNf6sVw3GA.webp" alt="Fixed-category bar chart." caption="Fixed-category bar chart." />
 
 
 Notice how `BarChart.lerp` is implemented in terms of `Bar.lerp`, regenerating the list structure on the fly. Fixed-category bar charts are composite values for which straightforward component-wise lerping makes sense, precisely as for single bars with multiple properties ([diff](https://github.com/mravn/charts/commit/17cb4074be0f8267121ae36d865d9a13393e9e39)).
@@ -287,7 +287,7 @@ class Bar {
 
 Integrating the above code into our app involves redefining `BarChart.empty` and `BarChart.random` for this new setting. An empty bar chart can now reasonable be taken to contain zero bars, while a random one might contain a random number of bars all of the same randomly chosen color, and each having a randomly chosen height. But since position and width are now part of the definition of `Bar`, we need `BarChart.random` to specify those attributes too. It seems reasonable to provide `BarChart.random` with the chart `Size` parameter, and then relieve `BarChartPainter.paint` of most of its calculations ([code listing](https://gist.github.com/mravn-google/cac095296074b8b1b7ad6c91a21a5f1a), [diff](https://github.com/mravn/charts/commit/50585bd40160c336e80f3ec867bad01d08d8e0ec)).
 
-<DashImage figure src="images/1dN9og1kRYpRsL-cFIgO23w.gif" alt="Lerping to/from invisible bars." caption="Lerping to/from invisible bars." />
+<DashImage figure src="images/1dN9og1kRYpRsL-cFIgO23w.webp" alt="Lerping to/from invisible bars." caption="Lerping to/from invisible bars." />
 
 
 The astute reader may have noticed a potential inefficiency in our definition of `BarChart.lerp` above. We are creating collapsed `Bar` instances only to be given as arguments to `Bar.lerp`, and that happens repeatedly, for every value of the animation parameter `t`. At 60 frames per second, that could mean a lot of `Bar` instances being fed to the garbage collector, even for a relatively short animation. There are alternatives:
@@ -393,7 +393,7 @@ Concretely, we’ll assign each bar a sort key in the form of an integer `rank` 
 
 A random bar chart will now be based on a random selection of ranks to include ([code listing](https://gist.github.com/mravn-google/4f7194e8c1f875eba189856eb40e6b1e), [diff](https://github.com/mravn/charts/commit/5a41b26279fb5ba334c219bf4f6d74cd33daf01b)).
 
-<DashImage figure src="images/1MuSAOLktwY8bTJdPGuoNqA.gif" alt="Arbitrary categories. Merge-based lerping." caption="Arbitrary categories. Merge-based lerping." />
+<DashImage figure src="images/1MuSAOLktwY8bTJdPGuoNqA.webp" alt="Arbitrary categories. Merge-based lerping." caption="Arbitrary categories. Merge-based lerping." />
 
 
 This works nicely, but is perhaps not the most efficient solution. We are repeatedly executing the merge algorithm in `BarChart.lerp`, once for every value of `t`. To fix that, we’ll implement the idea mentioned earlier to store reusable information in `BarChartTween`.
@@ -454,17 +454,17 @@ Armed with these insights, we are finally in position to animate more complex ch
 
 * Stacked bars are used for data sets where categories are two-dimensional and it makes sense to add up the numerical quantity represented by bar heights. An example might be revenue per product and geographical region. Stacking by product makes it easy to compare product performance in the global market. Stacking by region shows which regions are important.
 
-<DashImage figure src="images/1qKUFM56S-ZonH1amVDDXTw.gif" alt="Stacked bars." caption="Stacked bars." />
+<DashImage figure src="images/1qKUFM56S-ZonH1amVDDXTw.webp" alt="Stacked bars." caption="Stacked bars." />
 
 
 * Grouped bars are also used for data sets with two-dimensional categories, but where it is not meaningful or desirable to stack the bars. For instance, if the numeric quantity is market share in percent per product and region, stacking by product makes no sense. Even where stacking does makes sense, grouping can be preferable as it makes it easier to do quantitative comparisons across both category dimensions at the same time.
 
-<DashImage figure src="images/1YiojxPiaWY7lB5v9iZVgDg.gif" alt="Grouped bars." caption="Grouped bars." />
+<DashImage figure src="images/1YiojxPiaWY7lB5v9iZVgDg.webp" alt="Grouped bars." caption="Grouped bars." />
 
 
 * Stacked+grouped bars support three-dimensional categories, like revenue per product, geographical region, and sales channel.
 
-<DashImage figure src="images/19ObVOKbos4DoQsmsqbMnRQ.gif" alt="Stacked+grouped bars." caption="Stacked+grouped bars." />
+<DashImage figure src="images/19ObVOKbos4DoQsmsqbMnRQ.webp" alt="Stacked+grouped bars." caption="Stacked+grouped bars." />
 
 
 In all three variants, animation can be used to visualize data set changes, thus introducing an additional dimension (typically time) without cluttering the charts.

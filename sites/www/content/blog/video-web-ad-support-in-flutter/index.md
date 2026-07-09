@@ -3,7 +3,7 @@ title: "Video & web ad support in Flutter"
 description: "Coauthors: Zoey Fan, Harold Benson, Alak Jhunjhunwala"
 publishDate: 2024-12-17
 author: zoeyfan
-image: images/0xsAbaMexfbR30wgK.gif
+image: images/0xsAbaMexfbR30wgK.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ Monetizing your Flutter app just got easier and more rewarding. Today, we are th
 
 ### Video ads now available for Flutter developers
 
-<DashImage figure src="images/0xsAbaMexfbR30wgK.gif" alt="An animated gif showing a sample video ads" caption="An animated gif showing a sample video ads" />
+<DashImage figure src="images/0xsAbaMexfbR30wgK.webp" alt="An animated gif showing a sample video ads" caption="An animated gif showing a sample video ads" />
 
 
 Let’s start by turning your video content into a revenue-generating powerhouse!
@@ -34,7 +34,7 @@ Are you ready to supercharge your Flutter app with video ads? Head over to[ pub.
 
 ### Beta: Monetize your Flutter web games with AdSense ads
 
-<DashImage figure src="images/0wz_WITqUIrY1dR7w.gif" alt="An animated gif showing a sample AdSense Ads in a game" caption="An animated gif showing a sample AdSense Ads in a game" />
+<DashImage figure src="images/0wz_WITqUIrY1dR7w.webp" alt="An animated gif showing a sample AdSense Ads in a game" caption="An animated gif showing a sample AdSense Ads in a game" />
 
 
 Many Flutter developers want a way to monetize their Flutter web projects just like their mobile counterparts. We have been busy working behind the scenes, and have some exciting progress to share!
@@ -67,7 +67,7 @@ Here’s why deep linking is a game-changer for advertisers:
 
 While deeplinking offers all these great benefits, it can be quite cumbersome to set up. Therefore, we’re also making deep linking more robust and reliable than ever before. With full [web and app check validation support](https://docs.flutter.dev/tools/devtools/deep-links) across iOS and Android in Flutter DevTools, you can ensure your deep links are configured correctly and securely. Your users will enjoy seamless transitions between web and app content, increasing engagement and satisfaction! To start, go to Flutter DevTools, and open the Deeplinking validation tab.
 
-<DashImage figure src="images/1W-CAR3hmZRMA03b20508iw.gif" alt="An animated gif showing Deeplinking Validation in Flutter DevTools" caption="An animated gif showing Deeplinking Validation in Flutter DevTools" />
+<DashImage figure src="images/1W-CAR3hmZRMA03b20508iw.webp" alt="An animated gif showing Deeplinking Validation in Flutter DevTools" caption="An animated gif showing Deeplinking Validation in Flutter DevTools" />
 
 
 We’re committed to providing you, the Flutter developer, with the tools and resources you need to succeed. These new features are a testament to that commitment. So go ahead, take your Flutter app to new heights, and unlock its full potential!

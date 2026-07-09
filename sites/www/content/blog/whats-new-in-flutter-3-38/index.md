@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.38"
 description: "Write less, see more, build faster"
 publishDate: 2025-11-12
 author: itsjustkevin
-image: images/1MMtTv_yj5ycI6is3vkXRow.png
+image: images/1MMtTv_yj5ycI6is3vkXRow.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1MMtTv_yj5ycI6is3vkXRow.png" />
+<DashImage figure src="images/1MMtTv_yj5ycI6is3vkXRow.webp" />
 
 
 ## What’s new in Flutter 3.38
@@ -98,7 +98,7 @@ Building on the deprecation of `MaterialState`, this release continues the inter
 
 This release also introduces several new features and convenience APIs. The `Badge.count` constructor now includes a `maxCount` parameter ([#171054](https://github.com/flutter/flutter/pull/171054)) to easily cap the displayed count (for example, showing “99+” instead of “100”).
 
-<DashImage figure src="images/1ecwWHV6xbxpgEhgCf11kug.png" />
+<DashImage figure src="images/1ecwWHV6xbxpgEhgCf11kug.webp" />
 
 
 For finer-grained gesture control, the `InkWell` widget now features an `onLongPressUp` callback ([#173221](https://github.com/flutter/flutter/pull/173221)), useful for triggering actions that should only complete when the user lifts their finger.
@@ -249,7 +249,7 @@ Flutter 3.35 introduced Widget Previews, an experimental feature ready for early
 
 * **IDE integration**: Both our VSCode and Intellij / Android Studio plugins are updated with initial support for Widget Previews. You can now view your previews directly within your IDE for a more seamless development experience.
 
-<DashImage figure src="images/1NE0-VXAW-sVf3VESZEfZrw.png" alt="*Widget Previews embedded in VSCode.*" caption="*Widget Previews embedded in VSCode.*" />
+<DashImage figure src="images/1NE0-VXAW-sVf3VESZEfZrw.webp" alt="*Widget Previews embedded in VSCode.*" caption="*Widget Previews embedded in VSCode.*" />
 
 
 When used within an IDE, the widget preview environment is configured by default to filter the displayed previews based on the currently selected source file:
@@ -259,22 +259,22 @@ When used within an IDE, the widget preview environment is configured by default
 
 * **Widget preview environment theming and control improvements**: The widget preview environment now supports light and dark modes, as well as custom IDE color schemes to match your development environment. Controls within the widget preview environment have also been adjusted to use less space, leaving more room available for rendering previews.
 
-<DashImage figure src="images/1eYq9jc4L08SjK4DYZx1qZQ.png" alt="*Custom theming support for the Widget Previews environment.*" caption="*Custom theming support for the Widget Previews environment.*" />
+<DashImage figure src="images/1eYq9jc4L08SjK4DYZx1qZQ.webp" alt="*Custom theming support for the Widget Previews environment.*" caption="*Custom theming support for the Widget Previews environment.*" />
 
 
 * **Preview extensibility**: The Preview annotation class is no longer marked as final and can now be extended to create custom Preview annotations, allowing for less boilerplate for common preview types.
 
-<DashImage figure src="images/1Hvcea8STYP87B_MK01-buA.png" alt="*An example of a custom `BrightnessPreview` annotation.*" caption="*An example of a custom `BrightnessPreview` annotation.*" />
+<DashImage figure src="images/1Hvcea8STYP87B_MK01-buA.webp" alt="*An example of a custom `BrightnessPreview` annotation.*" caption="*An example of a custom `BrightnessPreview` annotation.*" />
 
 
 * **MultiPreview support**: A new `MultiPreview` base class allows for creating multiple Preview variations from a single, custom annotation.
 
-<DashImage figure src="images/14Yk43MDOrzRUt3lfkVKY0g.png" />
+<DashImage figure src="images/14Yk43MDOrzRUt3lfkVKY0g.webp" />
 
 
 * **Preview groups**: A new group parameter in the `Preview` class allows the grouping of related previews.
 
-<DashImage figure src="images/1SuEDY7F5DX6Ar2HQB523EQ.png" alt="*An example of multiple “Brightness” previews in a preview group.*" caption="*An example of multiple “Brightness” previews in a preview group.*" />
+<DashImage figure src="images/1SuEDY7F5DX6Ar2HQB523EQ.webp" alt="*An example of multiple “Brightness” previews in a preview group.*" caption="*An example of multiple “Brightness” previews in a preview group.*" />
 
 
 * **Reduced restrictions around @Preview annotation arguments**: Private constants are now supported as arguments to `Preview` annotations. Function arguments (such as wrapper and theme) are still required to have public, statically accessible names.

@@ -3,7 +3,7 @@ title: "Harness the Gemini API in your Dart and Flutter Apps"
 description: "Introducing the Google AI Dart SDK"
 publishDate: 2024-02-15
 author: anderdobo
-image: images/1-KkJmzvv3jNhh88TWxIBJg.png
+image: images/1-KkJmzvv3jNhh88TWxIBJg.webp
 category: spotlight
 layout: blog
 ---
@@ -22,7 +22,7 @@ With the Google AI Dart SDK, you can:
 
 * **Use the Gemini API in more than 180+ countries and territories:** Check the [available regions](https://ai.google.dev/available_regions#available_regions) for the most current list of countries and regions where the Gemini API and Google AI Studio (described further below) are available.
 
-<DashImage figure src="images/1-KkJmzvv3jNhh88TWxIBJg.png" />
+<DashImage figure src="images/1-KkJmzvv3jNhh88TWxIBJg.webp" />
 
 
 **What can you build?**
@@ -41,7 +41,7 @@ We believe generative AI holds immense potential to help you achieve your app an
 
 This list could go on because the possibilities are nearly endless!
 
-<DashImage figure src="images/07Zvr0YiN7O22wTOy.png" alt="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" caption="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" />
+<DashImage figure src="images/07Zvr0YiN7O22wTOy.webp" alt="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" caption="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" />
 
 
 **Getting Started**
@@ -109,7 +109,7 @@ Alongside the SDK, [Google AI Studio](https://aistudio.google.com/?utm_source=fl
 
 We will add Dart to Google AI Studio soon, so keep a lookout for the announcement! This will enable you to simply click on “Get code”, select a new Dart tab (which will be alongside the existing supported languages), and then “Copy” the Dart code to transfer your work to your IDE of choice.
 
-<DashImage figure src="images/0xhBJ20OLOQDtQ2xi.png" alt="Google AI Studio" caption="Google AI Studio" />
+<DashImage figure src="images/0xhBJ20OLOQDtQ2xi.webp" alt="Google AI Studio" caption="Google AI Studio" />
 
 
 **Share what you build!**

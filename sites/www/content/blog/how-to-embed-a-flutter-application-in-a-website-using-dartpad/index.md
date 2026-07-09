@@ -3,7 +3,7 @@ title: "How to embed a Flutter application in a Website using DartPad"
 description: "Have you ever wanted to embed your mobile application into a website? This is now easy to do with Flutter."
 publishDate: 2020-03-23
 author: josealba
-image: images/0u979IALi6tiDee8O.png
+image: images/0u979IALi6tiDee8O.webp
 category: tutorial
 layout: blog
 ---
@@ -101,7 +101,7 @@ Once your Flutter application builds in DartPad, copy this code and paste it int
 
 You can test if you did this correctly by checking if your gist is available on DartPad. To do this, replace everything before the gistID with “dartpat.dev/”. For example, to view “[https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf](https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf)” in DartPad, use the URL, “[https://dartpad.dev/a205e21aa0d0a64fe7c977107ce22cbf](https://dartpad.dev/a205e21aa0d0a64fe7c977107ce22cbf)”
 
-<DashImage figure src="images/0u979IALi6tiDee8O.png" />
+<DashImage figure src="images/0u979IALi6tiDee8O.webp" />
 
 
 To embed your Flutter application, prefix the gist ID with “[https://dartpad.dev/embed-flutter.html?id=](https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf)”. For example, to view “[https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf](https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf) “in an HTML iframe, use “[https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf](https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf)” . You can learn more details about embedding DartPad code into a website in the [DartPad Embedding Guide](https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide). I recommend you visit this page since it also explains the query parameters. The following example uses an &lt;iframe&gt; element:
@@ -115,7 +115,7 @@ To embed your Flutter application, prefix the gist ID with “[https://dartpad.d
 
 This code created the screenshot below:
 
-<DashImage figure src="images/0botL1tnoYh9nbjgw.png" />
+<DashImage figure src="images/0botL1tnoYh9nbjgw.webp" />
 
 
 ## Using a GitHub repo

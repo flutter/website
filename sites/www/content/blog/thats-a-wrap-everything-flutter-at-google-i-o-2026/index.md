@@ -3,12 +3,12 @@ title: "That’s a wrap: Everything Flutter at Google I/O 2026"
 description: "What a week! Google I/O 2026 is officially in the books. It’s time to recap the whirlwind of updates for the Flutter and Dart communities."
 publishDate: 2026-05-28
 author: twerske
-image: images/1N5Jz1tLlbGEC9sU49O97IA.png
+image: images/1N5Jz1tLlbGEC9sU49O97IA.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1N5Jz1tLlbGEC9sU49O97IA.png" alt="Flutter recap at Google I/O 2026!" caption="Flutter recap at Google I/O 2026!" />
+<DashImage figure src="images/1N5Jz1tLlbGEC9sU49O97IA.webp" alt="Flutter recap at Google I/O 2026!" caption="Flutter recap at Google I/O 2026!" />
 
 
 ## That’s a wrap: Everything Flutter at Google I/O 2026
@@ -20,7 +20,7 @@ What a week! Google I/O 2026 is officially in the books. It’s time to recap th
 
 The onsite star was a full-sized specialty coffee shop in the absolute center of Google I/O, built entirely with **Flutter GenUI**, where nanobanana-generated artwork was printed right on the coffee foam.
 
-<DashImage figure src="images/1URQ_4vTl-Zf47WKBM_I8sg.gif" alt="Just a few generated foam coffee art lattes at I/O" caption="Just a few generated foam coffee art lattes at I/O" />
+<DashImage figure src="images/1URQ_4vTl-Zf47WKBM_I8sg.webp" alt="Just a few generated foam coffee art lattes at I/O" caption="Just a few generated foam coffee art lattes at I/O" />
 
 
 But don’t worry if you weren’t able to make it to Shoreline. We recorded every moment and more, now available for on-demand viewing on the Flutter YouTube channel.

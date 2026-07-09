@@ -3,12 +3,12 @@ title: "What’s new with the Slider widget?"
 description: "Flutter lets you create beautiful, natively compiled applications. The reason Flutter can do this is because Flutter loves Material…"
 publishDate: 2020-06-18
 author: josealba
-image: images/10vbyZT-NITTvqljO8HtU4w.png
+image: images/10vbyZT-NITTvqljO8HtU4w.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/10vbyZT-NITTvqljO8HtU4w.png" />
+<DashImage figure src="images/10vbyZT-NITTvqljO8HtU4w.webp" />
 
 
 Flutter lets you create beautiful, natively compiled applications. The reason Flutter can do this is because Flutter loves Material. [Material](https://material.io) is a design system that helps build high-quality, digital experiences. As UI design continues to evolve, Material continues to update its components, motion, and design system.
@@ -17,14 +17,14 @@ Flutter recently updated the [`Slider`](https://api.flutter.dev/flutter/material
 
 This article describes the changes to the `Slider` and `RangeSlider` widgets.
 
-<DashImage figure src="images/0neQ_0e28CgjA00W_.gif" />
+<DashImage figure src="images/0neQ_0e28CgjA00W_.webp" />
 
 
 ## What’s new?
 
 `Slider` and `RangeSlider` were updated, to have a smoother experience when you work with these widgets. This diagram demonstrates the five different components that go into making the slider widgets.
 
-<DashImage figure src="images/0elEXE_pM0iEDuv_t.png" />
+<DashImage figure src="images/0elEXE_pM0iEDuv_t.webp" />
 
 
 Both `Slider` and `RangeSlider` consist of five parts:
@@ -49,7 +49,7 @@ Note: This article refers to two different types of overlays:
 
 The biggest visual difference between the old slider and the new slider widgets is the default value indicators: [`RectangularSliderValueIndicatorShape`](https://master-api.flutter.dev/flutter/material/RectangularSliderValueIndicatorShape-class.html) for `Slider` and [`RectangularRangeSliderValueIndicatorShape`](https://master-api.flutter.dev/flutter/material/RectangularRangeSliderValueIndicatorShape-class.html) for `RangeSlider`. The indicators reflect the latest design changes from Material. The old indicator shape was an upside-down pear, and the new shape is more rectangular and looks like a speech bubble. The value indicator was updated for both `Slider` and `RangeSlider`.
 
-<DashImage figure src="images/0i3IWhVNFBB5OJEze.png" />
+<DashImage figure src="images/0i3IWhVNFBB5OJEze.webp" />
 
 
 ## Value indicator paints on the overlay
@@ -58,14 +58,14 @@ The updated value indicator is now painted on the overlay. This means that the i
 
 The following diagram shows how the `Slider` and `RangeSlider` widgets are made:
 
-<DashImage figure src="images/0DEYZqsMMIdQWZ8mF.png" />
+<DashImage figure src="images/0DEYZqsMMIdQWZ8mF.webp" />
 
 
 You may notice that we use a separate `LeafRenderObjectWidget` to paint the indicators on the overlay. This is because we need to paint on both the `Overlay` class and the screen, which you can’t do from the same `LeafRenderObjectWidget` widget.
 
 Because we’re now painting the value indicator on the overlay, it’s no longer restricted to the scope of the `MediaQuery` that contains the slider. The indicator is no longer clipped to that box, which means that the entire value indicator is displayed always.
 
-<DashImage figure src="images/0HviG9DqaeW84PJi5.png" />
+<DashImage figure src="images/0HviG9DqaeW84PJi5.webp" />
 
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
@@ -131,7 +131,7 @@ double getHorizontalShift({
 ```
 
 
-<DashImage figure src="images/0f7ar1ek7C7pUx5cF.png" />
+<DashImage figure src="images/0f7ar1ek7C7pUx5cF.webp" />
 
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
@@ -140,7 +140,7 @@ Note: This example was made with the `textScaleFactor` set to 4 for better demon
 
 The `RangeSlider` value indicator was also updated so that the currently active indicator takes precedence over the resting indicator. This means that if the indicators overlap, then the active indicator ‘floats’ over the other one.
 
-<DashImage figure src="images/0dUrIA4k2wFu48rDe.png" />
+<DashImage figure src="images/0dUrIA4k2wFu48rDe.webp" />
 
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
@@ -154,31 +154,31 @@ We kept the `PaddleValueIndicator` widget, and updated it to have better scalabi
 
 If you want to continue using the old value indicator, then just wrap your `Slider` widget with `SliderTheme`, and set the `valueIndicatorShape` property in `SliderThemeData` to `PaddleSliderValueIndicatorShape`. The process is identical for `RangeSlider`. Wrap your `RangeSlider` widget with `SliderTheme`, and set the `rangeValueIndicatorShape` property in `SliderThemeData` to `PaddleRangeSliderValueIndicatorShape`.
 
-<DashImage figure src="images/0LNKN4lwqpBxQZ60A.png" />
+<DashImage figure src="images/0LNKN4lwqpBxQZ60A.webp" />
 
 
 ## The active track is bigger than the inactive track
 
 The other component shapes in `Slider` were also updated. The track shape was changed so that the active part of the track is bigger than the inactive part of the track. This means that if your application uses a left-to-right language, then the left part of the track is bigger than the right. If your application uses a right-to-left language, then the right part of the track is bigger than the left. For `RangeSlider`, the active track is the portion of the track between the two thumbs.
 
-<DashImage figure src="images/0q81pqrMZMWkCmRLF.png" />
+<DashImage figure src="images/0q81pqrMZMWkCmRLF.webp" />
 
 
-<DashImage figure src="images/0qIoICKw6wo7NcwOW.png" />
+<DashImage figure src="images/0qIoICKw6wo7NcwOW.webp" />
 
 
 ## Tick mark component
 
 The tick mark size and positioning changed. The tick marks are now part of the track component instead of extending the end of the track. There is also padding on the tick mark, so it appears within the track component. The size of the tick mark now has a radius of 1.
 
-<DashImage figure src="images/0PLNNQjK0_zOXok1A.png" />
+<DashImage figure src="images/0PLNNQjK0_zOXok1A.webp" />
 
 
 ## Thumb component has a shadow
 
 When the thumb slider component is activated, there is now a `Shadow` that appears on the `Overlay`.
 
-<DashImage figure src="images/0j7DxUmBmRK7Ztd5A.png" />
+<DashImage figure src="images/0j7DxUmBmRK7Ztd5A.webp" />
 
 
 ## Closing remarks

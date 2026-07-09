@@ -3,17 +3,17 @@ title: "How It’s Made: I/O Photo Booth"
 description: "A closer look at building a web app with Flutter and Firebase"
 publishDate: 2021-05-17
 author: verygoodopensource
-image: images/0diM5YKjX2b2OgNvD.png
+image: images/0diM5YKjX2b2OgNvD.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/0diM5YKjX2b2OgNvD.png" />
+<DashImage figure src="images/0diM5YKjX2b2OgNvD.webp" />
 
 
 We (the folks at Very Good Ventures) teamed up with Google to bring an interactive experience to this year’s Google I/O: a [photo booth](https://photobooth.flutter.dev/)! You can take pictures with well-known Google mascots: [Flutter’s Dash](https://flutter.dev/dash), Android Jetpack, Chrome’s Dino, and Firebase’s Sparky, and decorate photos with stickers, including party hats, pizza, funky glasses, and more. Finally, you can share photos on social media and download them to update your profile picture for the event!
 
-<DashImage figure src="images/0OQnK58irOAv-Pjzq.png" alt="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" caption="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" />
+<DashImage figure src="images/0OQnK58irOAv-Pjzq.webp" alt="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" caption="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" />
 
 
 We built the I/O Photo Booth using [Flutter on the web](https://flutter.dev/web) and [Firebase](https://firebase.google.com/). Because [Flutter now offers support for web apps](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65), we thought it would be a great way to make this app easily accessible to attendees all over the world for this year’s virtual Google I/O. Flutter’s web support eliminates the barrier of having to install an app from an app store and also gives you the flexibility to run it on your device of choice: mobile, desktop, or tablet. That opens up the I/O Photo Booth experience to anyone with access to any browser and device without requiring a download.
@@ -81,10 +81,10 @@ In our first approach, we tried capturing the default camera view, and then appl
 
 With the help of the Flutter team, we addressed this issue by wrapping the `VideoElement` in a [`DivElement`](https://api.flutter.dev/flutter/dart-html/DivElement-class.html) and updating the `VideoElement` to fill the `DivElement`’s width and height. This allowed us to apply the mirror to the video element without Flutter overriding the transform effect, because the parent element is a `div`. This approach gave us the desired mirrored camera view!
 
-<DashImage figure src="images/0Zd9s-7LFN9u17Ouo.png" alt="Un-mirrored view" caption="Un-mirrored view" />
+<DashImage figure src="images/0Zd9s-7LFN9u17Ouo.webp" alt="Un-mirrored view" caption="Un-mirrored view" />
 
 
-<DashImage figure src="images/0kkxXNd0m-t4sjCAo.png" alt="Mirrored view" caption="Mirrored view" />
+<DashImage figure src="images/0kkxXNd0m-t4sjCAo.webp" alt="Mirrored view" caption="Mirrored view" />
 
 
 ### Sticking to a strict aspect ratio
@@ -155,7 +155,7 @@ Transform(
 
 Finally, we created a separate package to determine whether your device supports touch input. The draggable, resizable widget adapts, based on touch capabilities. On devices with touch input, resizable anchors and a rotation icon aren’t visible, because you can pinch and pan to manipulate the image directly, whereas on devices without touch input (such as your desktop device), the anchors and rotation icon are added to accommodate clicking and dragging.
 
-<DashImage figure src="images/0MVI3wAXUfJdGls5X.png" />
+<DashImage figure src="images/0MVI3wAXUfJdGls5X.webp" />
 
 
 ## Prioritizing Flutter on the web
@@ -216,7 +216,7 @@ function renderSharePage(imageFileName: string, baseUrl: string): string {
 
 The final product looks something like this:
 
-<DashImage figure src="images/0tXpB_n44hmjGxHXf.png" />
+<DashImage figure src="images/0tXpB_n44hmjGxHXf.webp" />
 
 
 For more information about how to use Firebase in your Flutter projects, check out this [codelab](https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0).
@@ -225,7 +225,7 @@ For more information about how to use Firebase in your Flutter projects, check o
 
 This project was a good example of a web-first approach to building apps. We were pleasantly surprised by how similar our workflow for building this web application was, compared to our experience building mobile applications with Flutter. We had to consider elements like viewport sizes, responsiveness, touch versus mouse input, image load times, browser compatibility, and all the other considerations that come with building for the web. However, we were still writing Flutter code using the same patterns, architecture, and coding standards. We felt at home while building for the web. The tooling and growing ecosystem of Flutter packages, including the Firebase suite of tools, made I/O Photo Booth possible.
 
-<DashImage figure src="images/0CN8nNM1HaOjg9SfQ.png" alt="Very Good Ventures team who worked on I/O Photo Booth" caption="Very Good Ventures team who worked on I/O Photo Booth" />
+<DashImage figure src="images/0CN8nNM1HaOjg9SfQ.webp" alt="Very Good Ventures team who worked on I/O Photo Booth" caption="Very Good Ventures team who worked on I/O Photo Booth" />
 
 
 We’ve open sourced all the code. Check out the [photo_booth](https://github.com/flutter/photobooth) project on GitHub and show us your photos on Facebook and Twitter using #IOPhotoBooth!

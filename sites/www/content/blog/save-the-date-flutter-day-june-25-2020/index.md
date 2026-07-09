@@ -3,7 +3,7 @@ title: "Save the Date: Flutter Day, June 25, 2020"
 description: "As a team, we’re used to plenty of travel, hanging out at various events and user groups, and connecting with folks in person; we miss our…"
 publishDate: 2020-05-21
 author: csells
-image: images/0RDn0t0fyTKSy2x_k.png
+image: images/0RDn0t0fyTKSy2x_k.webp
 category: events
 layout: blog
 ---
@@ -20,7 +20,7 @@ Then, we’ve got three one-hour video streams for you spread throughout the day
 
 We have a great lineup, including engineers, PMs, and developer advocates from the Flutter and Dart teams.
 
-<DashImage figure src="images/0siIoSIIiPLyDxPTP.png" />
+<DashImage figure src="images/0siIoSIIiPLyDxPTP.webp" />
 
 
 For the Flutter Day details and to let us know that you’re interested in participating, [register on the Flutter Day website today](http://g.co/flutterday)!
@@ -29,7 +29,7 @@ For the Flutter Day details and to let us know that you’re interested in parti
 
 Of course, Flutter Day is for everyone, so we’re also coordinating with local Flutter user groups around the world to gather all of the virtual meetups going on to recognize Flutter Day.
 
-<DashImage figure src="images/0RDn0t0fyTKSy2x_k.png" />
+<DashImage figure src="images/0RDn0t0fyTKSy2x_k.webp" />
 
 
 No matter where you live, you’ll be able to find a local Flutter virtual meetup near you.
@@ -38,7 +38,7 @@ No matter where you live, you’ll be able to find a local Flutter virtual meetu
 
 And as if that weren’t enough, this year we’re teaming up with [the #Hack20 International Flutter Hackathon](https://flutterhackathon.com/#/).
 
-<DashImage figure src="images/0vValokazzfj52F2N.png" />
+<DashImage figure src="images/0vValokazzfj52F2N.webp" />
 
 
 Right after you’re done with the day of Flutter codelabs, you’re ready to jump into a weekend of Flutter hacking with prizes for the best app and featuring mentors from the Flutter community.

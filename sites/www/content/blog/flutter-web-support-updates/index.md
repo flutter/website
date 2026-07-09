@@ -3,7 +3,7 @@ title: "Flutter web support updates"
 description: "PWAs, better debugging, and CanvasKit-based rendering"
 publishDate: 2020-04-29
 author: mariam_hasnany
-image: images/1w9xtjSXgRDPcCtNJLYhzpQ.png
+image: images/1w9xtjSXgRDPcCtNJLYhzpQ.webp
 category: announcements
 layout: blog
 ---
@@ -22,7 +22,7 @@ Having Flutter code run in a web browser opens up an array of intriguing possibi
 
 Flutter was built to be unapologetically app-centric in its framework and API choices. We believe it is a distinct offering that contributes to the broad tapestry of web development. If we are successful at our goals, Flutter’s web support will provide a framework that takes full advantage of all that the web platform offers, allowing developers to build beautiful rich interactive applications that feel completely at home in a browser.
 
-<DashImage figure src="images/1w9xtjSXgRDPcCtNJLYhzpQ.png" alt="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." caption="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." />
+<DashImage figure src="images/1w9xtjSXgRDPcCtNJLYhzpQ.webp" alt="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." caption="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." />
 
 
 [Ampstor](https://ampstor.app/) is a powerful example. The team set out to build an editing tool for building [AMP Stories](https://amp.dev/about/stories/), a new format that helps content providers create visual narratives for mobile devices. Here’s what they had to say about using Flutter on the web:
@@ -38,7 +38,7 @@ With that in mind, here is an update on what the team has been working on since 
 
 Fans of [Progressive Web Apps](https://web.dev/what-are-pwas/) will be delighted to know that the default Flutter template for web apps now includes support for the core features needed for an installable, offline-capable PWA app:
 
-<DashImage figure src="images/0qu7hcAYfSXorb3jx.png" alt="The Flutter “counter” template app, running as a PWA on macOS." caption="The Flutter “counter” template app, running as a PWA on macOS." />
+<DashImage figure src="images/0qu7hcAYfSXorb3jx.webp" alt="The Flutter “counter” template app, running as a PWA on macOS." caption="The Flutter “counter” template app, running as a PWA on macOS." />
 
 
 Notice that this looks like a normal desktop app, but it’s really a Flutter web app that’s been installed into the browser as a PWA. You can see the difference with the added icon buttons in the title bar, which exposes Chrome functionality. Flutter-based PWAs can be [installed in the same way as any other web-based PWA](https://web.dev/install-criteria/); the settings signaling that your Flutter app is a PWA are provided by `manifest.json`, which is produced by `flutter create` in the `web/` subfolder.
@@ -71,17 +71,17 @@ This feature is available on the Flutter dev or master channel. Use the followin
 
 Configure your project to [run on the web](https://flutter.dev/docs/get-started/web). Within VS Code, enable expression evaluation for web in `launch.json`:
 
-<DashImage figure src="images/0K0gsPz3gj7SVvjr1.png" />
+<DashImage figure src="images/0K0gsPz3gj7SVvjr1.webp" />
 
 
 Set a breakpoint and start debugging. Try expression evaluation in the debug console using the expression evaluation box as shown below. Additionally, you can use the watch window or hover over variables to evaluate your code using expressions.
 
-<DashImage figure src="images/0Zg-bAhzitlDDVU9e.png" />
+<DashImage figure src="images/0Zg-bAhzitlDDVU9e.webp" />
 
 
 You can also try setting conditional breakpoints using expressions:
 
-<DashImage figure src="images/0hWsTPLh33YwdFhYG.png" />
+<DashImage figure src="images/0hWsTPLh33YwdFhYG.webp" />
 
 
 ### Testing
@@ -108,7 +108,7 @@ We’ve also fixed several text rendering issues such as text disappearing behin
 
 At [Flutter Interact](http://g.co/FlutterInteract) last year, we announced that our new Gallery sample app runs on the web using Flutter. Since then we’ve made significant performance optimizations in web support as well as the app, so that it runs even faster and smoother. As a result of these changes, initial load time is now three times faster, and the code size has been reduced by 2.7x.
 
-<DashImage figure src="images/19FIv19QYzuwBQ-4Hx3EkGA.png" alt="The Flutter Gallery app, running as a PWA on Windows." caption="The Flutter Gallery app, running as a PWA on Windows." />
+<DashImage figure src="images/19FIv19QYzuwBQ-4Hx3EkGA.webp" alt="The Flutter Gallery app, running as a PWA on Windows." caption="The Flutter Gallery app, running as a PWA on Windows." />
 
 
 Stay tuned for an upcoming blog series that will share more about what we’ve learned, as well as best practices for optimizing your Flutter app for performance. Until then, check out the updated [Flutter Gallery app](https://gallery.flutter.dev) for yourself.

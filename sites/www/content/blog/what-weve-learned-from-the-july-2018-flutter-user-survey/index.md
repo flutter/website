@@ -19,14 +19,14 @@ Flutter’s User Experience Research team recently conducted an online survey to
 
 As you may expect, Flutter users come from all kinds of backgrounds. When we asked about their experience in different mobile platforms (a multiple choice question), Android was the most popular (67%), followed by Web (45%) and iOS (30%). We saw a sizable growth in the proportion of Flutter users coming from a Web background, given that it was 33% in the survey in April. While the ratio of Android developers and iOS developers largely reflects the [global user base imbalance of these two technologies](https://insights.stackoverflow.com/survey/2018/#technology-platforms), we are working on ways to attract more iOS developers to the Flutter community.
 
-<DashImage figure src="images/1dYcTfPO6MS8RWpr9KB1cgg.png" />
+<DashImage figure src="images/1dYcTfPO6MS8RWpr9KB1cgg.webp" />
 
 
 ## **More Flutter apps coming in the wild?**
 
 We also found that 15% of the respondents have already published a Flutter app, and more excitingly, 52% are working on an app to be released within the next 6 months! We are looking forward to seeing these beautiful apps roll out to millions of mobile users.
 
-<DashImage figure src="images/11iG_hmhGXRwV4ZakI_cVjg.png" />
+<DashImage figure src="images/11iG_hmhGXRwV4ZakI_cVjg.webp" />
 
 
 ## **Are users satisfied with Flutter?**

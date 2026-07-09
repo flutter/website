@@ -3,14 +3,14 @@ title: "Insights from Flutter’s first user survey of 2019"
 description: "As we do every quarter, the Flutter UX research team ran a user survey in Q1 to gather your opinions, and we are back to share the results…"
 publishDate: 2019-04-12
 author: jayoung-lee
-image: images/1BvDZf83WrPTc4yqukshP-w.png
+image: images/1BvDZf83WrPTc4yqukshP-w.webp
 category: announcements
 layout: blog
 ---
 
 As we do every quarter, the Flutter UX research team ran a user survey in Q1 to gather your opinions, and we are back to share the results. In this survey, we heard from 1,961 users. As shown in the graph below, we discovered that 42% of the respondents had used Flutter for less than 3 months. So first of all, welcome all new users to the community!
 
-<DashImage figure src="images/1BvDZf83WrPTc4yqukshP-w.png" alt="42% of the respondents had used Flutter for less than 3 months" caption="42% of the respondents had used Flutter for less than 3 months" />
+<DashImage figure src="images/1BvDZf83WrPTc4yqukshP-w.webp" alt="42% of the respondents had used Flutter for less than 3 months" caption="42% of the respondents had used Flutter for less than 3 months" />
 
 
 ## Are users satisfied with Flutter?

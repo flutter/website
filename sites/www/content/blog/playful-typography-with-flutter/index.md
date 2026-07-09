@@ -3,7 +3,7 @@ title: "Playful typography with Flutter"
 description: "Exploring variable fonts and shaders"
 publishDate: 2023-01-20
 author: hellobrianjames
-image: images/0x9XqN84kLr7s86vK.png
+image: images/0x9XqN84kLr7s86vK.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 I’m Brian, a newcomer to the Flutter-verse, and I’ve been a UX engineer on Google’s Flutter team for about six months now. As a UX engineer, I combine my background as a graphic designer with coding skills to help the team build Flutter itself, and to show off what Flutter can do. This blog post shares one of my first experiments with Flutter as a hybrid designer–developer: a simple typography-themed puzzle app. It combined my creative background in design with technical explorations around a couple of Flutter APIs you might not have tried yet: [FontVariation](https://api.flutter.dev/flutter/dart-ui/FontVariation-class.html) and [AnimationController](https://api.flutter.dev/flutter/animation/AnimationController-class.html). I had a lot of fun creating this app, and through it I saw first-hand how great Flutter is for designers who code, or developers with an eye for design.
 
-<DashImage figure src="images/0x9XqN84kLr7s86vK.png" alt="*A palette of customized Flutter text widgets, using variable fonts and shaders.*" caption="*A palette of customized Flutter text widgets, using variable fonts and shaders.*" />
+<DashImage figure src="images/0x9XqN84kLr7s86vK.webp" alt="*A palette of customized Flutter text widgets, using variable fonts and shaders.*" caption="*A palette of customized Flutter text widgets, using variable fonts and shaders.*" />
 
 
 ## Typography
@@ -21,7 +21,7 @@ Graphic designers love geeking out on “typography,” which is just a fancy wo
 
 You’re probably already familiar with fonts in general, which determine what each character in a block of text looks like. Normal fonts usually give us a few settings that we can choose from, for instance weight: bold, normal, or light. Variable fonts take that customization to the next level. In the case of weight, for instance, we might be able to pick any numerical setting between 100 (extremely light) and 1000 (extremely bold). And we aren’t limited only to weight; font creators can allow users to set all kinds of things, like the width of the letters, or depth of the descenders (how far lowercase letters like ‘p’ and ‘y’ drop down), and much more. Each of these different settings is called an “axis,” like the axes of a graph.
 
-<DashImage figure src="images/0pO_MkjR1GrLhb8va.jpg" alt="*The letter ‘g’ in the variable font Roboto Flex, with variations along the width axis (left to right) and weight axis (top to bottom). These are just two of its many axes in effect!*" caption="*The letter ‘g’ in the variable font Roboto Flex, with variations along the width axis (left to right) and weight axis (top to bottom). These are just two of its many axes in effect!*" />
+<DashImage figure src="images/0pO_MkjR1GrLhb8va.webp" alt="*The letter ‘g’ in the variable font Roboto Flex, with variations along the width axis (left to right) and weight axis (top to bottom). These are just two of its many axes in effect!*" caption="*The letter ‘g’ in the variable font Roboto Flex, with variations along the width axis (left to right) and weight axis (top to bottom). These are just two of its many axes in effect!*" />
 
 
 Flutter offers a straightforward way to adjust these settings in the `TextStyle` widget, by using the `fontVariations` field. For example, the following code snippet would create a text style in the Roboto Flex variable font, at a size of 18, with variable axis settings for the weight (`wght`) and width (`wdth`):
@@ -66,7 +66,7 @@ The effect of the variable fonts, especially with animation, was great, but I wa
 
 Initially, just to show one possibility, I wrote a simple GLSL shader to act like a filter on one of my `WonkyChar` widgets (described above), to create the following effect:
 
-<DashImage figure src="images/0-N5jTlkJHFmEeb0e.png" alt="*WonkyChar widget before and after applying the shader.*" caption="*WonkyChar widget before and after applying the shader.*" />
+<DashImage figure src="images/0-N5jTlkJHFmEeb0e.webp" alt="*WonkyChar widget before and after applying the shader.*" caption="*WonkyChar widget before and after applying the shader.*" />
 
 
 ## Project description
@@ -75,7 +75,7 @@ These raw components — typography, variable font support, and shaders — were
 
 Each screen of the app features a puzzle consisting of scrambled pieces of a glitchy letter, surrounded by whole letters animating according to a variable font axis, like weight or width. The glitchy effect on the puzzle tiles is created by a different shader on each page, causing the tile pieces to look wavy, or fractured, etc. And, in a switch from the usual tile puzzle mechanics, I decided to have players solve puzzles by rotating tiles rather than sliding them, so that the entire letter could be viewed upon completion, with no empty slots. Looking back, this might have made the puzzles a little too easy, but maybe I can come up with more challenges for version 2.0!
 
-<DashImage figure src="images/090hPGzJLj7qBZp7t.gif" alt="*Variable fonts plus shader effects (on the tiles pieces) applied in the puzzle game app. Letters on this screen animate on the “optical size” axis.*" caption="*Variable fonts plus shader effects (on the tiles pieces) applied in the puzzle game app. Letters on this screen animate on the “optical size” axis.*" />
+<DashImage figure src="images/090hPGzJLj7qBZp7t.webp" alt="*Variable fonts plus shader effects (on the tiles pieces) applied in the puzzle game app. Letters on this screen animate on the “optical size” axis.*" caption="*Variable fonts plus shader effects (on the tiles pieces) applied in the puzzle game app. Letters on this screen animate on the “optical size” axis.*" />
 
 
 If you’d like to see how it all came together, check out the [`varfont_shader_puzzle`](https://github.com/flutter/samples/tree/main/experimental/varfont_shader_puzzle) example for the Type Jam app in the [flutter/samples repo](https://github.com/flutter/samples), in the “experimental” folder. As I mentioned before, I’m still pretty new to Flutter, and I have just a basic working knowledge of shaders, so I’m looking forward to improving it going forward! For now, please think of it as a quick demo, rather than as a template.

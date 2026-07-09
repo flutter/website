@@ -3,7 +3,7 @@ title: "Out of Depth with Flutter"
 description: "How reactive programming, widget composition, and UI-as-code might bury your view logic in deep nesting, and what you can do about it."
 publishDate: 2018-07-10
 author: mravn
-image: images/1RNOof30wEFXsbUsQ0Jof7Q.png
+image: images/1RNOof30wEFXsbUsQ0Jof7Q.webp
 category: tutorial
 layout: blog
 ---
@@ -40,7 +40,7 @@ Widgets are immutable descriptions of user interface. We are asked to return a s
 
 Widgets are typically simple, each doing one thing well: `Text`, `Icon`, `Padding`, `Center`, `Column`, `Row`, … To achieve any non-trivial outcome, many widgets must be composed. So our single expression easily becomes a deeply nested tree of widget constructor calls:
 
-<DashImage figure src="images/1RNOof30wEFXsbUsQ0Jof7Q.png" />
+<DashImage figure src="images/1RNOof30wEFXsbUsQ0Jof7Q.webp" />
 
 
 Widgets have properties other than child/children, but you get the idea.
@@ -55,7 +55,7 @@ And that, then, is the challenge.
 
 The flutter.io [layout tutorial](https://flutter.io/tutorials/layout/) provides an illustrative example using — so it seems — a lake explorer app.
 
-<DashImage figure src="images/1-1gqkQbEiJl2PKTlRBmYrg.png" />
+<DashImage figure src="images/1-1gqkQbEiJl2PKTlRBmYrg.webp" />
 
 
 Here is a raw widget tree implementing this view:

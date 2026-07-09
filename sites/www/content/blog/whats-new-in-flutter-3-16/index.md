@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.16"
 description: "Material 3 by default, Impeller preview for Android, DevTools extensions, and much more"
 publishDate: 2023-11-15
 author: itsjustkevin
-image: images/1TDndNB8cS95g5faXBKitHA.png
+image: images/1TDndNB8cS95g5faXBKitHA.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1TDndNB8cS95g5faXBKitHA.png" />
+<DashImage figure src="images/1TDndNB8cS95g5faXBKitHA.webp" />
 
 
 ## What’s new in Flutter 3.16
@@ -33,7 +33,7 @@ A [demo application](https://flutter.github.io/samples/material_3.html) allows y
 
 The appearance of Material 3 components are primarily determined by the values for [`ThemeData.colorScheme`] and [`ThemeData.textTheme`]. The preferred way to create a Material 3 color scheme is with `ColorScheme.fromSeed()`, which creates dark and light schemes that are both aesthetically pleasing and compliant with the contrast requirements for accessibility. You can also create a color scheme from the dominant colors in an image with `ColorScheme.fromImageProvider`. To further customize the appearance of Material 3 components, add component themes to your `ThemeData`, such as [`ThemeData.segmentedButtonTheme`](https://api.flutter.dev/flutter/material/SegmentedButtonThemeData-class.html) or [`ThemeData.snackBarTheme`](https://api.flutter.dev/flutter/material/SnackBarThemeData-class.html). Non-null component theme properties override the defaults specified in the component’s API documentation.
 
-<DashImage figure src="images/0LMOV8BTSB4tEIisF.gif" />
+<DashImage figure src="images/0LMOV8BTSB4tEIisF.webp" />
 
 
 ### Support Material 3 motion
@@ -44,7 +44,7 @@ Improvements to Material 3 motion includes the addition of `Easing` and `Duratio
 
 On native iOS, users can now select text and initiate a share menu that provides several standard services. In this release, we’ve added the look up, search, and share options.
 
-<DashImage figure src="images/0YKZc4cxJjsafHgd4.gif" />
+<DashImage figure src="images/0YKZc4cxJjsafHgd4.webp" />
 
 
 ### TextScaler for specifying a global text scale factor
@@ -66,7 +66,7 @@ Flutter’s `SelectionArea` is updated to support native gestures associated wit
 
 * Long press + drag: Extends the selection in word blocks.
 
-<DashImage figure src="images/0Xhow360Xn88KLAWF.gif" />
+<DashImage figure src="images/0Xhow360Xn88KLAWF.webp" />
 
 
 ### Menu items that operate on the focused widget
@@ -77,10 +77,10 @@ This release features cleanup of focus changes when using menu items: The `Focus
 
 Flutter apps on Mac platforms now order the shortcut modifiers in menus to follow Apple Human Interface Guidelines. ([#129309](https://github.com/flutter/flutter/pull/129309))
 
-<DashImage figure src="images/0b1mnWiuWv-cxt7g7.png" alt="Before" caption="Before" />
+<DashImage figure src="images/0b1mnWiuWv-cxt7g7.webp" alt="Before" caption="Before" />
 
 
-<DashImage figure src="images/0LbHdBtWltdB4_Kcf.png" alt="After" caption="After" />
+<DashImage figure src="images/0LbHdBtWltdB4_Kcf.webp" alt="After" caption="After" />
 
 
 ### MatrixTransition animation
@@ -139,7 +139,7 @@ Soon after the 3.13 release, the [two_dimensional_scrollables](https://pub.dev/p
 
 In this release, we are pleased to share that Impeller on Android is ready for preview feedback on the stable channel. Since early this year, the team has been hard at work on a Vulkan backend for Impeller, and this preview includes gathering feedback about Impeller’s characteristics on Vulkan-capable devices.
 
-<DashImage figure src="images/0wyMXhtcLW98BTKl-.png" alt="*This chart shows improvements over the past year in 99%-ile, 90%-ile, and average frame rasterization times on the Flutter Gallery transition performance benchmark running on Impeller’s Vulkan backend, which users will observe as both less jank and higher steady state framerates. Towards the end of this period, we switched from Samsung S10 devices to Pixel 7 Pro devices, which accounts for a substantial drop in the numbers. Nevertheless, we find the trend and overall results to be very encouraging.*" caption="*This chart shows improvements over the past year in 99%-ile, 90%-ile, and average frame rasterization times on the Flutter Gallery transition performance benchmark running on Impeller’s Vulkan backend, which users will observe as both less jank and higher steady state framerates. Towards the end of this period, we switched from Samsung S10 devices to Pixel 7 Pro devices, which accounts for a substantial drop in the numbers. Nevertheless, we find the trend and overall results to be very encouraging.*" />
+<DashImage figure src="images/0wyMXhtcLW98BTKl-.webp" alt="*This chart shows improvements over the past year in 99%-ile, 90%-ile, and average frame rasterization times on the Flutter Gallery transition performance benchmark running on Impeller’s Vulkan backend, which users will observe as both less jank and higher steady state framerates. Towards the end of this period, we switched from Samsung S10 devices to Pixel 7 Pro devices, which accounts for a substantial drop in the numbers. Nevertheless, we find the trend and overall results to be very encouraging.*" caption="*This chart shows improvements over the past year in 99%-ile, 90%-ile, and average frame rasterization times on the Flutter Gallery transition performance benchmark running on Impeller’s Vulkan backend, which users will observe as both less jank and higher steady state framerates. Towards the end of this period, we switched from Samsung S10 devices to Pixel 7 Pro devices, which accounts for a substantial drop in the numbers. Nevertheless, we find the trend and overall results to be very encouraging.*" />
 
 
 Impeller isn’t yet expected to perform well on devices without Vulkan support. As we bring Impeller’s OpenGL backend up to feature completeness in the coming months, we plan to also seek feedback about Impeller’s characteristics on such devices in a future stable release.
@@ -171,7 +171,7 @@ Further, Impeller’s Vulkan backend enables additional debugging capabilities i
 
 In addition to the focus on the Vulkan backend, since the beginning of the year, the team has also made a number of improvements to text performance in Impeller that benefit both Android and iOS. In particular, we have made improvements to the management of Impeller’s glyph atlas and the way that text workloads are divided across the Engine’s UI and raster threads. As a result, users will notice less jank in text heavy workloads.
 
-<DashImage figure src="images/0RPu62U3N57JJqu0b.png" alt="*This chart shows a decrease in 99%-ile, 90%-ile, and average frame rasterization times in milliseconds in one of our text-heavy benchmarks on an iPhone 11 using Impeller. In particular, 90%-ile and average frame rasterization times are nearly halved.*" caption="*This chart shows a decrease in 99%-ile, 90%-ile, and average frame rasterization times in milliseconds in one of our text-heavy benchmarks on an iPhone 11 using Impeller. In particular, 90%-ile and average frame rasterization times are nearly halved.*" />
+<DashImage figure src="images/0RPu62U3N57JJqu0b.webp" alt="*This chart shows a decrease in 99%-ile, 90%-ile, and average frame rasterization times in milliseconds in one of our text-heavy benchmarks on an iPhone 11 using Impeller. In particular, 90%-ile and average frame rasterization times are nearly halved.*" caption="*This chart shows a decrease in 99%-ile, 90%-ile, and average frame rasterization times in milliseconds in one of our text-heavy benchmarks on an iPhone 11 using Impeller. In particular, 90%-ile and average frame rasterization times are nearly halved.*" />
 
 
 The team has also been hard at work on fidelity and stability improvements for both Android and iOS, especially those reported by users. In particular, in the three months of this stable release cycle, the team has made 209 Impeller related commits to the flutter/engine repo, closing 217 issues, including 42 user reports of fidelity, stability, or performance issues.
@@ -180,7 +180,7 @@ The team has also been hard at work on fidelity and stability improvements for b
 
 To support better performance on mobile devices with heterogeneous multiprocessing, we [have modified](https://github.com/flutter/engine/pull/45673) the engine so threads that are performance sensitive, such as the UI and raster threads, have affinity for a device’s more powerful cores. We observed that this change had a positive impact across a range of benchmarks and devices. In some cases the improvement was dramatic, halving or better 99%-ile or 90%-ile frame times. We anticipate that users will notice less jank after this change with both the Skia and Impeller backends on Android. The effect is less dramatic on iOS devices, where there is a smaller difference between the more powerful and less powerful cores.
 
-<DashImage figure src="images/0v9hhy6Y9fhfIbejZ.png" alt="*This chart shows improvements in worst, 99%-ile, 90%-ile, and average frame build and frame rasterization times across nearly all of our Android benchmarks and devices.*" caption="*This chart shows improvements in worst, 99%-ile, 90%-ile, and average frame build and frame rasterization times across nearly all of our Android benchmarks and devices.*" />
+<DashImage figure src="images/0v9hhy6Y9fhfIbejZ.webp" alt="*This chart shows improvements in worst, 99%-ile, 90%-ile, and average frame build and frame rasterization times across nearly all of our Android benchmarks and devices.*" caption="*This chart shows improvements in worst, 99%-ile, 90%-ile, and average frame build and frame rasterization times across nearly all of our Android benchmarks and devices.*" />
 
 
 ### API and fidelity improvements
@@ -193,10 +193,10 @@ In previous releases, Flutter’s [performance overlay](https://docs.flutter.dev
 
 In this release, the `Paint.enableDithering` property is set to true, and is deprecated as per [Flutter’s deprecation policy](https://docs.flutter.dev/release/compatibility-policy#deprecation-policy). Dithering is now enabled by default (developer-configurable dithering is no longer supported), and you will no longer see banding issues. For the full explanation of this change and the migration guide, see [the breaking change page](https://docs.flutter.dev/release/breaking-changes/paint-enableDithering) on docs.flutter.dev.
 
-<DashImage figure src="images/0yoTgJmfOTF1NrHyf.png" alt="Before" caption="Before" />
+<DashImage figure src="images/0yoTgJmfOTF1NrHyf.webp" alt="Before" caption="Before" />
 
 
-<DashImage figure src="images/0cnBlQufEWMXx6AJI.png" alt="After" caption="After" />
+<DashImage figure src="images/0cnBlQufEWMXx6AJI.webp" alt="After" caption="After" />
 
 
 ## Games
@@ -218,7 +218,7 @@ Flutter Timeline events are now exposed in the performance panel of Chrome DevTo
 
 To learn more, check out [Debugging performance for web apps](https://docs.flutter.dev/perf/web-performance).
 
-<DashImage figure src="images/0UDd-ZshZBEIfb4OA.png" />
+<DashImage figure src="images/0UDd-ZshZBEIfb4OA.webp" />
 
 
 ## Android
@@ -229,17 +229,17 @@ While optimizing [Wonderous to meet Android’s large screen guidelines](https:/
 
 With this release, scrolling with a mouse on a flutter view matches the scroll speed on Android devices. ([44724](https://github.com/flutter/engine/pull/44724))
 
-<DashImage figure src="images/0wlSYQiElLRGgOTmO.gif" alt="Before" caption="Before" />
+<DashImage figure src="images/0wlSYQiElLRGgOTmO.webp" alt="Before" caption="Before" />
 
 
-<DashImage figure src="images/0KZki5KYsfeMi01Lw.gif" alt="After" caption="After" />
+<DashImage figure src="images/0KZki5KYsfeMi01Lw.webp" alt="After" caption="After" />
 
 
 ### Predictive back navigation
 
 The Android 14 release included the predictive back gesture feature that allows you to use the back gesture on your device to “peek” at the home screen behind your current screen. This update brings predictive back gestures to Flutter! Check out the [migration guide](https://docs.flutter.dev/release/breaking-changes/android-predictive-back#migration-guide).
 
-<DashImage figure src="images/0KdmeVMUgmKWzw0-P.gif" />
+<DashImage figure src="images/0KdmeVMUgmKWzw0-P.webp" />
 
 
 ## iOS
@@ -248,7 +248,7 @@ The Android 14 release included the predictive back gesture feature that allows 
 
 Flutter can now be used to target some[ iOS app extensions](https://developer.apple.com/app-extensions/). This means that you can draw the UI for certain types of iOS app extensions using Flutter widgets. This doesn’t work for all types of app extensions because there might be limitations to the API (for example, home screen widgets) or memory.
 
-<DashImage figure src="images/0OxjjAlCbFFXWrrR9.png" />
+<DashImage figure src="images/0OxjjAlCbFFXWrrR9.webp" />
 
 
 Learn more and see an example for how to target the Share extension at [Adding iOS app extensions](https://docs.flutter.dev/platform-integration/ios/app-extensions) on docs.flutter.dev.
@@ -261,7 +261,7 @@ We have rebooted the [Flutter Favorite](https://docs.flutter.dev/packages-and-pl
 
 Look out for new Flutter Favorites in the future. To nominate a package or plugin as a potential future Flutter Favorite, or to bring any other issues to the attention of the committee, send the committee an email at [flutter-committee@googlegroups.com](mailto:flutter-committee@googlegroups.com).
 
-<DashImage figure src="images/0RAkkLR53oDQekLmN.png" />
+<DashImage figure src="images/0RAkkLR53oDQekLmN.webp" />
 
 
 ### First package ecosystem virtual summit
@@ -272,7 +272,7 @@ In August, we held a first-time virtual summit for the package ecosystem, attend
 
 Google Maps Platform offers the ability to customize the style of your map from the Map Styles page in the Google Cloud Console. This lets you create a customized experience without having to update your app code each time you make a style change.
 
-<DashImage figure src="images/0b3vDhobD-p7YRw6O.png" />
+<DashImage figure src="images/0b3vDhobD-p7YRw6O.webp" />
 
 
 To use this feature in Flutter, you simply refer to your map using the Map ID set in the console:
@@ -327,13 +327,13 @@ The new [DevTools extensions framework](https://pub.dev/packages/devtools_extens
 
 Thanks to the package authors of [Provider](https://pub.dev/packages/provider), [Drift](https://pub.dev/packages/drift), and [Patrol](https://pub.dev/packages/patrol), this ecosystem is already being built out and you can use the DevTools extensions for those packages today!
 
-<DashImage figure src="images/0gprea_z4l0Y_mizE.png" alt="Provider" caption="Provider" />
+<DashImage figure src="images/0gprea_z4l0Y_mizE.webp" alt="Provider" caption="Provider" />
 
 
-<DashImage figure src="images/0uGcjhY3w8eKoKwLH.png" alt="Patrol" caption="Patrol" />
+<DashImage figure src="images/0uGcjhY3w8eKoKwLH.webp" alt="Patrol" caption="Patrol" />
 
 
-<DashImage figure src="images/0PlGmgXXrK7LBpiPR.png" alt="Drift" caption="Drift" />
+<DashImage figure src="images/0PlGmgXXrK7LBpiPR.webp" alt="Drift" caption="Drift" />
 
 
 For a deep dive into DevTools extensions, check out the [Dart and Flutter DevTools Extensions announcement](https://medium.com/flutter/dart-flutter-devtools-extensions-c8bc1aaf8e5f) by [Kenzie Davisson](https://medium.com/@kenzieschmoll).
@@ -346,7 +346,7 @@ Some highlights for DevTools with this release are:
 
 * Added a new “Home” screen that shows a summary of your connected app.
 
-<DashImage figure src="images/01nmVYze1uMCxvzoI.png" />
+<DashImage figure src="images/01nmVYze1uMCxvzoI.webp" />
 
 
 Other improvements include:

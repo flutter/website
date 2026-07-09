@@ -3,12 +3,12 @@ title: "Flutter’s hot reload is so hot right now."
 description: "Testing how Flutter’s hot reload scales up."
 publishDate: 2018-03-13
 author: swavkulinski
-image: images/17BKoEbJbiH08LxyMIpQdew.png
+image: images/17BKoEbJbiH08LxyMIpQdew.webp
 category: tutorial
 layout: blog
 ---
 
-<DashImage figure src="images/17BKoEbJbiH08LxyMIpQdew.png" />
+<DashImage figure src="images/17BKoEbJbiH08LxyMIpQdew.webp" />
 
 
 When it comes to discussing hot reload there is really no chance to avoid a Zoolander meme so please forgive me the title.

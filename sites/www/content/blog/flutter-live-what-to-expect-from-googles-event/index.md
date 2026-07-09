@@ -3,14 +3,14 @@ title: "Flutter Live — What to Expect from Google’s event"
 description: "tl;dr: Flutter Live, a celebration of Google’s new mobile app SDK, is happening on December 4th. Watch it at g.co/FlutterLive."
 publishDate: 2018-12-02
 author: csells
-image: images/0MhKKsmIlYcORAT-q.jpg
+image: images/0MhKKsmIlYcORAT-q.webp
 category: events
 layout: blog
 ---
 
 ## Flutter Live — What to Expect from Google’s event
 
-<DashImage figure src="images/0MhKKsmIlYcORAT-q.jpg" />
+<DashImage figure src="images/0MhKKsmIlYcORAT-q.webp" />
 
 
 ## What to expect at Flutter Live
@@ -28,20 +28,20 @@ Go to [g.co/FlutterLive](http://g.co/FlutterLive) and [sign up for livestream up
 
 Over 130 Organizations all over the world are hosting free viewing parties to watch and discuss Flutter Live. Find a viewing party happening near you; [here is the full list](https://developers.google.com/events/flutter-live/viewing-parties/).
 
-<DashImage figure src="images/0j1UikCUFWQNp5x0A.png" />
+<DashImage figure src="images/0j1UikCUFWQNp5x0A.webp" />
 
 
 ## #MyFlutterStory
 
 Developers around the world have been submitting their Flutter stories, and we will highlight some at the event.
 
-<DashImage figure src="images/0S2k_EeW-eFwWQwbu.png" />
+<DashImage figure src="images/0S2k_EeW-eFwWQwbu.webp" />
 
 
-<DashImage figure src="images/0AyHpMwfNETHD93mV.png" />
+<DashImage figure src="images/0AyHpMwfNETHD93mV.webp" />
 
 
-<DashImage figure src="images/0rv1oAlPBPjcbMwrb.png" />
+<DashImage figure src="images/0rv1oAlPBPjcbMwrb.webp" />
 
 
 ## #AskFlutter

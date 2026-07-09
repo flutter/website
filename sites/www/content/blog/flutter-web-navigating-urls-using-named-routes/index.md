@@ -3,7 +3,7 @@ title: "Flutter web: Navigating URLs using named routes"
 description: "Named routes can be used to navigate between pages inside a Flutter mobile app, but they also work for URLs in Flutter web apps. This…"
 publishDate: 2020-03-30
 author: perclasson
-image: images/0Uoo0IGsUFUf8GJsT.gif
+image: images/0Uoo0IGsUFUf8GJsT.webp
 category: announcements
 layout: blog
 ---
@@ -60,7 +60,7 @@ RaisedButton(
 
 See a [full interactive example of this on DartPad](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark). If you build and [run the application yourself for the web](https://flutter.dev/docs/get-started/web), you can also just type in `/#/overview` inside the web browser. This pushes the route named *overview* to the `Navigator`, and takes you to the `OverviewPage` widget, as you can see in the following GIF:
 
-<DashImage figure src="images/0kDK1lFIWHzjcEVKA.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" />
+<DashImage figure src="images/0kDK1lFIWHzjcEVKA.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" />
 
 
 ## Routing logic for dynamic URLs
@@ -131,7 +131,7 @@ static Route<dynamic> onGenerateRoute(RouteSettings settings) {
 
 Make sure to define the `onGenerateRoute` function inside the `MaterialApp` class; you have implemented dynamic URLs with Flutter, using named routes! You can [see a full interactive example on DartPad](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark).
 
-<DashImage figure src="images/0Uoo0IGsUFUf8GJsT.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" />
+<DashImage figure src="images/0Uoo0IGsUFUf8GJsT.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" />
 
 
 ## Conclusion

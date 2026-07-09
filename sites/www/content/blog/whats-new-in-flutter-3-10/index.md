@@ -3,7 +3,7 @@ title: "What’s new in Flutter 3.10"
 description: "Seamless web and mobile integration, breakthrough graphics performance via Impeller in stable, and more"
 publishDate: 2023-05-10
 author: itsjustkevin
-image: images/1CPv57Dp1cYXPz-YtZ2jMcA.gif
+image: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp
 category: releases
 layout: blog
 ---
@@ -26,38 +26,38 @@ To preview these changes, check out the [demo app](https://flutter.github.io/sam
 
 All M3 components configure the default colors of the theme’s `ColorScheme`. The default color scheme uses shades of purple. You can create a custom color scheme either from a single “seed” color or from an image. Try both variations with the demo. Color schemes generated should look good and be accessible.
 
-<DashImage figure src="images/1CPv57Dp1cYXPz-YtZ2jMcA.gif" />
+<DashImage figure src="images/1CPv57Dp1cYXPz-YtZ2jMcA.webp" />
 
 
 ### **NavigationBar**
 
 This provides an M3 version of `BottomNavigationBar` widget. While [M3](https://m3.material.io/components/navigation-bar/overview) uses different colors, highlighting, and elevation, it works as it did before. To override the default appearance of the `NavigationBars` widget, use the `NavigationBarTheme` widget. Though you don’t need to migrate existing apps to this component, you should use it for new apps.
 
-<DashImage figure src="images/1sApyn1E7o2DqWJx4fG6T8w.gif" />
+<DashImage figure src="images/1sApyn1E7o2DqWJx4fG6T8w.webp" />
 
 
 ### NavigationDrawer
 
 This provides an [M3](https://m3.material.io/components/navigation-drawer/overview) destination selection widget based on the Drawer widget. `NavigationDrawer` shows a single-selection list of `NavigationDestinations` widgets. You can include other widgets in this list as well. The `NavigationDrawer` can scroll when needed. To override the default appearance of the `NavigationDrawers` widget, use the `NavigationDrawerTheme` widget.
 
-<DashImage figure src="images/1tSZSZ2DVOT3CzX2OjxTg2Q.gif" />
+<DashImage figure src="images/1tSZSZ2DVOT3CzX2OjxTg2Q.webp" />
 
 
 ### SearchBar and SearchAnchor
 
 These components provide predictive text for search queries. When the user enters a search query, the app computes a list of matching responses in a “search view”. The user either selects one or adjusts the query. To override the [M3](https://m3.material.io/components/search/overview) design of these components, use the `SearchBarTheme` and `SearchAnchorTheme` widgets.
 
-<DashImage figure src="images/1SzGgItEwmTCzwMRTgnTy5A.gif" />
+<DashImage figure src="images/1SzGgItEwmTCzwMRTgnTy5A.webp" />
 
 
-<DashImage figure src="images/167iesripk2_62VSr5US-Iw.gif" />
+<DashImage figure src="images/167iesripk2_62VSr5US-Iw.webp" />
 
 
 ### Secondary Tab Bar
 
 M3 allows you to create a second tier of tabbed content. To distinguish this second `TabBar`, use [`TabBar.secondary`](https://m3.material.io/components/tabs/overview#34192702-8a18-4da7-b2cf-d1579632cb96).
 
-<DashImage figure src="images/1Fzkz6aIl-ZIry-vGojaM9w.gif" />
+<DashImage figure src="images/1Fzkz6aIl-ZIry-vGojaM9w.webp" />
 
 
 ### DatePicker updated for [M3](https://m3.material.io/components/date-pickers/overview)
@@ -78,7 +78,7 @@ The M3 `TimePicker`, like the `DatePicker`, updates the colors, layout, and shap
 
 Beyond M3 color and shape updates, the bottom sheet now adds an optional drag handle that’s included when you set `showDragHandle` to `true`.
 
-<DashImage figure src="images/1x52LrlHvIpARkrF1RevMeA.gif" />
+<DashImage figure src="images/1x52LrlHvIpARkrF1RevMeA.webp" />
 
 
 ### ListTile updated for [M3](https://m3.material.io/components/lists/overview)
@@ -140,7 +140,7 @@ Flutter Framework now compiles with Supply Chain Levels for Software Artifacts (
 
 * **Provenance**. Beta and stable releases now build with [provenance](https://slsa.dev/provenance/v0.1). This means trusted sources with expected contents built the framework release artifacts. Each release publishes links to view and verify provenance on the [SDK archive](https://docs.flutter.dev/release/archive).
 
-<DashImage figure src="images/1n2OloNCiXMyvmFrLOk_WBw.png" />
+<DashImage figure src="images/1n2OloNCiXMyvmFrLOk_WBw.webp" />
 
 
 This work also allows the team to advance toward SLSA L2 and L3 compliance. These two levels focus on protecting artifacts during and after the build process.
@@ -171,7 +171,7 @@ In the 3.7 stable release, we previewed [Impeller](https://docs.flutter.dev/perf
 
 Since the 3.7 release, Impeller on iOS has improved its memory footprint. Impeller uses fewer render passes and intermediate render targets. On newer iPhones, enabling lossy texture compression reduced memory footprint without affecting fidelity. These advances also made a marked improvement in performance on iPads.
 
-<DashImage figure src="images/1m8HdyPAVFESHa3dpiEU41g.png" />
+<DashImage figure src="images/1m8HdyPAVFESHa3dpiEU41g.webp" />
 
 
 Consider a complex screen like the “pull quote” screen in the [Wonderous](https://flutter.gskinner.com/wonderous/) app. Together, these improvements cut the memory footprint of those screens almost in half. The reduction in memory usage also gives a modest drop in GPU and CPU load. The Wondrous app may not register that drop in load. Its frames had rendered under budget before, but this change should extend battery life.
@@ -196,7 +196,7 @@ We want to thank open-source contributor [luckysmg](https://github.com/luckysmg)
 
 In the 3.7 stable release, we shifted loading of local images from the platform thread to the Dart thread to avoid delaying vsync events from the platform thread. However, [users](https://github.com/flutter/flutter/issues/121525) [noticed](https://github.com/flutter/flutter/issues/121351) that this additional work on the Dart thread also caused some jank. In this release, we moved the opening and decoding of local images from the Dart thread to a [background thread](https://github.com/flutter/engine/pull/39918). This change eliminates potential long pauses on screens with a lot of local images, while avoiding delaying vsync events. In our local testing and automated benchmarks, this change cut the load time for several simultaneous images in half.
 
-<DashImage figure src="images/1LyQyiGe8oQrQkQByS1PK5Q.png" />
+<DashImage figure src="images/1LyQyiGe8oQrQkQByS1PK5Q.webp" />
 
 
 We continue to build optimizations on top of Flutter’s new internal DisplayList structure. In this release, we added an [R-Tree based culling](https://github.com/flutter/engine/pull/38429) mechanism. This mechanism removes the processing of drawing operations much earlier in our renderer. This optimization accelerates, [for example](https://github.com/flutter/flutter/issues/92366), a custom painter whose output fails offscreen. Our [microbenchmarks](https://flutter-engine-perf.skia.org/e/?begin=1671661938&end=1671754421&keys=X789f7ff76f30f8ccc672464f335fe09b&num_commits=50&request_type=1&xbaroffset=31974) showed a decreased DisplayList processing time of up to 50%. Apps with clipped custom paints could see differing improvements. The degree of improvement depends on the complexity and number of hidden draw operations.
@@ -249,7 +249,7 @@ Flutter apps on iOS can now support accurate rendering for wide gamut images. To
 
 The `SpellCheckConfiguration()` widget now defaults to supporting [Apple’s spell check service](https://developer.apple.com/documentation/uikit/uitextchecker) on iOS. To use this widget, set it using the `spellCheckConfiguration` parameter in `CupertinoTextField`.
 
-<DashImage figure src="images/14ibBYWIZH1FhDIpaw0BDFg.gif" />
+<DashImage figure src="images/14ibBYWIZH1FhDIpaw0BDFg.webp" />
 
 
 ### Adaptive checkbox and radio
@@ -268,7 +268,7 @@ Flutter 3.10 improved some animations, transitions, and colors to match SwiftUI.
 
 * Adding several [new iOS system colors](https://github.com/flutter/flutter/pull/118971) to `CupertinoColors`
 
-<DashImage figure src="images/180sFA4-LrCTojCDvUJ9j2w.gif" />
+<DashImage figure src="images/180sFA4-LrCTojCDvUJ9j2w.webp" />
 
 
 ### PlatformView performance
@@ -337,7 +337,7 @@ We continue to improve DevTools, the suite of performance and debugging tools fo
 - Clicking and dragging to select multiple timeline events from multiple frames.
 - Using SQL queries to pull specific data from the timeline events.
 
-<DashImage figure src="images/1fOYGagsonbND_VnkasWmzw.png" />
+<DashImage figure src="images/1fOYGagsonbND_VnkasWmzw.webp" />
 
 
 To learn more, check out the release notes for [DevTools 2.23.1](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.23.1), [DevTools 2.22.2](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.22.2), and [DevTools 2.21.1](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.21.1).

@@ -3,12 +3,12 @@ title: "Best practices for hosting a live streaming coding session"
 description: "Live streaming has become an emerging practice for knowledge sharing in developer communities, where developers broadcast their work to…"
 publishDate: 2019-10-28
 author: yanchenum
-image: images/05e8cSvZaG83--mC7.png
+image: images/05e8cSvZaG83--mC7.webp
 category: spotlight
 layout: blog
 ---
 
-<DashImage figure src="images/05e8cSvZaG83--mC7.png" alt="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" caption="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" />
+<DashImage figure src="images/05e8cSvZaG83--mC7.webp" alt="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" caption="(credit: [https://www.youtube.com/watch?v=YYP5lqgno4k](https://www.youtube.com/watch?v=YYP5lqgno4k))" />
 
 
 Live streaming has become an emerging practice for knowledge sharing in developer communities, where developers broadcast their work to live audiences on streaming platforms such as YouTube. As a summer intern with Google’s Flutter team, I conducted an interview study to understand why and how developers share programming knowledge via live streaming. In this article, I would like to share some of the best practices I found for hosting a live streamed coding session, so that *you* can successfully create your own and share programming knowledge with your community. I would encourage anyone to try live streaming because not only can your livestream help others, but you, the streamer, can get real time feedback from your audience as well.
@@ -17,7 +17,7 @@ Live streaming has become an emerging practice for knowledge sharing in develope
 
 I interviewed 20 people, 14 streamers and 6 viewers, who regularly participated in programming live streams on YouTube or Twitch. The streamers we interviewed all reported that sharing programming knowledge and practical skills was the primary purpose of hosting live streams. In addition, we selected viewers who typically watch livestream for at least 30 minutes at a time to make sure they have an informed opinion about the topic.
 
-<DashImage figure src="images/0RWD-5EEHxQ1aCCwi.png" />
+<DashImage figure src="images/0RWD-5EEHxQ1aCCwi.webp" />
 
 
 The people I interviewed used different kinds of programming languages including JavaScript (8), Python (4), C# (3), Dart (2), Rust (2), and C (1). Out of the 20 interviewees, 14 were professional developers who were paid to develop software, 4 were students, and 2 were hobbyist programmers. Out of the 14 streamers, 7 of them primarily streamed about themselves working through programming tasks that are related to open source projects.
@@ -36,7 +36,7 @@ Some streamers chose stream topics based on the interests of their communities. 
 
 Most streamers keep a regular streaming time (for example, Sunday 10 a.m. — 12 p.m. EST), which is recommended if you want your viewers to make your session every week. However, if you don’t have a regular streaming time, or you want to change the time you stream this week, make sure you remind your viewers multiple times (for example, at 5 days, 2 days, and the day before you go live) when your streaming session is happening.
 
-<DashImage figure src="images/0WBnCrRnxqRMnFYdf.png" />
+<DashImage figure src="images/0WBnCrRnxqRMnFYdf.webp" />
 
 
 ### 3. Protect your privacy
@@ -45,7 +45,7 @@ All streamers have concerns regarding their privacy. This could include mistaken
 
 * Use incognito mode and hide your bookmarks
 
-<DashImage figure src="images/1BxmLRsMw0ZSPWXLF0JTtDQ.png" />
+<DashImage figure src="images/1BxmLRsMw0ZSPWXLF0JTtDQ.webp" />
 
 
 * Share only the relevant part of your screen
@@ -76,7 +76,7 @@ Some viewers will join in the middle of your stream, and they might be confused 
 
 Although the prep work for live streaming is much less than for recording a video, you may still want to have a high level plan. This could include writing down the steps of what you want to accomplish, which can help you stay focused.
 
-<DashImage figure src="images/0r3sTKix-QiZV6vrB.png" alt="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" caption="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" />
+<DashImage figure src="images/0r3sTKix-QiZV6vrB.webp" alt="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" caption="(credit: [https://unsplash.com/photos/RLw-UC03Gwc](https://unsplash.com/photos/RLw-UC03Gwc))" />
 
 
 ### 6. No need to complete the work before hand
@@ -95,13 +95,13 @@ There are two techniques to get your viewers engaged.
 
 The first one is narrating your thoughts *—* you can ask your viewers to remind you to do this if you find it difficult.
 
-<DashImage figure src="images/0h4OqTkRAx1_-RQiw.png" alt="(credit: [https://unsplash.com/photos/ASKeuOZqhYU](https://unsplash.com/photos/ASKeuOZqhYU))" caption="(credit: [https://unsplash.com/photos/ASKeuOZqhYU](https://unsplash.com/photos/ASKeuOZqhYU))" />
+<DashImage figure src="images/0h4OqTkRAx1_-RQiw.webp" alt="(credit: [https://unsplash.com/photos/ASKeuOZqhYU](https://unsplash.com/photos/ASKeuOZqhYU))" caption="(credit: [https://unsplash.com/photos/ASKeuOZqhYU](https://unsplash.com/photos/ASKeuOZqhYU))" />
 
 > *“I ask questions either about things I don’t know or things that I have a choice where I can implement either one thing or the other.” — A streamer*
 
 The second way is to ask viewers to provide input. For example, having a short Q&A session, or asking them to suggest what to do next using a poll. You can even ask your viewers for help if you get stuck coding. You don’t have to know everything, and they want to see you succeed!
 
-<DashImage figure src="images/01Qz7x7ZMo0Ar75hc.png" alt="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" caption="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" />
+<DashImage figure src="images/01Qz7x7ZMo0Ar75hc.webp" alt="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" caption="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" />
 
 
 ### **8. Chat moderation**
@@ -116,7 +116,7 @@ Congratulations! You’ve had a successful live streaming session. Now you can u
 
 Because a live stream recording is often long, viewers appreciate a Timestamp table to jump from topic to topic. The Flutter Boring Show provides a good example of such a table.
 
-<DashImage figure src="images/0KQvECPhOz7KPP1k2.png" alt="(link: [https://youtu.be/SJKrtx759Xk)](https://youtu.be/SJKrtx759Xk))" caption="(link: [https://youtu.be/SJKrtx759Xk)](https://youtu.be/SJKrtx759Xk))" />
+<DashImage figure src="images/0KQvECPhOz7KPP1k2.webp" alt="(link: [https://youtu.be/SJKrtx759Xk)](https://youtu.be/SJKrtx759Xk))" caption="(link: [https://youtu.be/SJKrtx759Xk)](https://youtu.be/SJKrtx759Xk))" />
 
 
 ## Ready to stream?

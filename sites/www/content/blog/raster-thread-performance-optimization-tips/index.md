@@ -3,14 +3,14 @@ title: "Raster thread performance optimization tips"
 description: "Recently, I sat down to tweak the performance of FlutterFolio, an app that was built as a design showcase for Flutter Engage. With a…"
 publishDate: 2021-09-01
 author: filiph
-image: images/116rv_KQNNU3IsAHCfI3G6A.png
+image: images/116rv_KQNNU3IsAHCfI3G6A.webp
 category: tutorial
 layout: blog
 ---
 
 Recently, I sat down to tweak the performance of FlutterFolio, an app that was built as a design showcase for Flutter Engage. With a single change, I made FlutterFolio significantly faster.
 
-<DashImage figure src="images/116rv_KQNNU3IsAHCfI3G6A.png" />
+<DashImage figure src="images/116rv_KQNNU3IsAHCfI3G6A.webp" />
 
 
 But, first, I had to search for what to change. This article is about that search.
@@ -34,7 +34,7 @@ What’s the first step of any optimization? Measurement. Knowing that an app se
 
 Performance profiling of apps is hard. I wrote [a long article](https://medium.com/flutter/performance-testing-of-flutter-apps-df7669bb7df7) about it in 2019. So, let’s start simple. We run the app in profile mode, turn on the performance overlay, and use the app, while watching the performance overlay graph.
 
-<DashImage figure src="images/0H6YKXQ1-ToTZ50v2.png" />
+<DashImage figure src="images/0H6YKXQ1-ToTZ50v2.webp" />
 
 
 Immediately, we see that the Raster thread is struggling.
@@ -62,14 +62,14 @@ The above code runs on the UI thread. The Flutter framework figures out where to
 
 Then, after Flutter knows everything about the frame, it’s over to the Raster thread. The Raster thread takes the bytes in `dash.png`, resizes the image (if needed), and then applies opacity, blend modes, blur, and so on, until it has the final pixels. The Raster thread then sends the resulting information to the graphics card, and, therefore, to the screen.
 
-<DashImage figure src="images/0zJIzYT-PwDfPDcj3.png" />
+<DashImage figure src="images/0zJIzYT-PwDfPDcj3.webp" />
 
 
 ## Step 2: Digging into the timeline
 
 OK, back to FlutterFolio. Opening Flutter DevTools lets us look more closely at the timeline.
 
-<DashImage figure src="images/0ypQsScjnj0Mw5Ijg.png" />
+<DashImage figure src="images/0ypQsScjnj0Mw5Ijg.webp" />
 
 
 On the **Performance** tab, you can see that the UI thread (the pale blue bars) is doing quite well, while the Raster thread (the dark blue and red bars) is taking a surprising amount of time for each frame, especially when scrolling down the home page. Therefore, the problem isn’t inefficient build methods or business logic. The problem is asking the Raster thread to do too much.
@@ -78,7 +78,7 @@ The fact that *every frame* spends a long time on the Raster thread tells us som
 
 Let’s pick a frame and look at the **Timeline Events** panel..
 
-<DashImage figure src="images/0W7OF2hEK--gS5XwF.png" />
+<DashImage figure src="images/0W7OF2hEK--gS5XwF.webp" />
 
 
 The top part of the timeline, with the light gray background, is the UI thread. Once again, you can see that the UI thread is not the problem.
@@ -105,7 +105,7 @@ We do *not* know what that homework is. Let’s review the code.
 
 Armed with knowledge, let’s look at the source code. If the code is unfamiliar (as it was for me in the case of FlutterFolio), it pays to switch from profile mode to debug mode, and use the [Flutter Inspector](https://flutter.dev/docs/development/tools/devtools/inspector) to jump to the source code of the relevant widgets.
 
-<DashImage figure src="images/0OvXs3e-CZJzW49hA.png" />
+<DashImage figure src="images/0OvXs3e-CZJzW49hA.webp" />
 
 
 FlutterFolio’s home page, at least on mobile devices, seems to be, basically, a [vertical PageView populated with BookCoverWidgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/covers_flow_list_mobile.dart#L36-L40). Looking at `BookCoverWidget`, you can see that it’s essentially [a Stack of various widgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/book_cover/book_cover.dart#L77-L122), starting with a large image at the bottom, continuing with some animated overlays, the main text content, and ending with a mouse-over overlay at the top.
@@ -171,7 +171,7 @@ Now, you need to drill down to find widgets that might be problematic. One way t
 
 Remember, the first child of the `Stack` is the background, and every subsequent child is a layer on top of the previous widgets. So, the first child is the background image, represented by `BookCoverImage`. You could remove it, but the homepage would look like this:
 
-<DashImage figure src="images/0gC4MeiTr5qVd1fW7.png" />
+<DashImage figure src="images/0gC4MeiTr5qVd1fW7.webp" />
 
 
 That defeats the purpose of the whole page. Looking closer at `BookCoverImage`, you can see that it’s just a simple wrapper around `Image`. With one notable exception (mentioned later in this article), there isn’t much that could be improved here.
@@ -187,14 +187,14 @@ AnimatedContainer(duration: Times.slow,
 
 This is a widget that covers the whole image with a layer of transparent black. `overlayOpacity` is 0 by default (and most of the time), so this layer is fully transparent. Hmm. Let’s remove it, and run the app in profile mode again.
 
-<DashImage figure src="images/0NiyiyjMKhKn7LJFk.png" />
+<DashImage figure src="images/0NiyiyjMKhKn7LJFk.webp" />
 
 
 Interesting! The Raster thread still takes quite a lot of load, but there is a major performance improvement.
 
 I decided to implement a more robust performance profiling tool for FlutterFolio, so that I can prove that the improvement is real and not just a fluke. This change gives me an impressive 20% less CPU time spent rasterizing overall and 50% less potential jank.
 
-<DashImage figure src="images/0oE665wZJZhFsz-7s.png" />
+<DashImage figure src="images/0oE665wZJZhFsz-7s.webp" />
 
 
 All in all, this is a massive change for removing a single widget that does nothing most of the time.
@@ -252,12 +252,12 @@ Here is one idea about what to do next: are the app’s image assets too large? 
 
 When your app is running in debug mode, you can use Flutter Inspector to [invert oversized images](https://api.flutter.dev/flutter/painting/debugInvertOversizedImages.html).
 
-<DashImage figure src="images/1VBQwkJIdQBuQl6G9Xy0glg.png" />
+<DashImage figure src="images/1VBQwkJIdQBuQl6G9Xy0glg.webp" />
 
 
 This will color invert and flip all images in your app that are too large for their actual use. You can then peruse the app and watch for unnatural changes.
 
-<DashImage figure src="images/0n7AfpJ2tNR4CLB0V.png" />
+<DashImage figure src="images/0n7AfpJ2tNR4CLB0V.webp" />
 
 
 The debug mode also reports an error every time it encounters such an image, for example:

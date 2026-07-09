@@ -3,12 +3,12 @@ title: "How to build your own Flutter slide puzzle"
 description: "By now you’ve probably read through the Flutter Puzzle Hack challenge and are already thinking of how to push your creativity to new…"
 publishDate: 2022-01-20
 author: verygoodopensource
-image: images/1r5DaUW3Cdoad6GQBwWIh3Q.png
+image: images/1r5DaUW3Cdoad6GQBwWIh3Q.webp
 category: spotlight
 layout: blog
 ---
 
-<DashImage figure src="images/1r5DaUW3Cdoad6GQBwWIh3Q.png" />
+<DashImage figure src="images/1r5DaUW3Cdoad6GQBwWIh3Q.webp" />
 
 
 By now you’ve probably read through the [Flutter Puzzle Hack](https://flutterhack.devpost.com/) challenge and are already thinking of how to push your creativity to new limits. We’re here to give you some more info about how the sample codebase is structured and give you some ideas for creating your contest submission.
@@ -47,7 +47,7 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
 
 The sample puzzle code contains both a Simple and Dashatar theme. These can be used as a jumping off point for your own customizations — borrow as much as you need, or start from scratch. How you implement your puzzle is up to you! One place you may consider getting creative is the puzzle theming.
 
-<DashImage figure src="images/0BHUg3jHaaIRFW_5O.png" />
+<DashImage figure src="images/0BHUg3jHaaIRFW_5O.webp" />
 
 
 All of the theming in the demo happens at the top of the `PuzzlePage`. It is abstracted, so you’ll only need to update the theme elements in one place and have the changes reflected everywhere. Both the Simple and Dashatar themes define a range of options such as screen background, menu, logo, buttons, text colors, whether the theme displays a timer (present in the Dashatar theme, but not in the Simple theme), and more. You can find these in the “dashatar” and “simple” directories at the root of the repository.
@@ -99,7 +99,7 @@ Widget backgroundBuilder(PuzzleState state) {
 
 Animations are a great element to explore in your slide puzzle. While the Simple theme does not contain any animations, the Dashatar code implements a few animations, some of which are [staggered](https://docs.flutter.dev/development/ui/animations/staggered-animations). These animations are driven by a single animation controller adjusted with [`Interval`](https://api.flutter.dev/flutter/animation/Interval-class.html) to delay the animation and [`Tween`](https://api.flutter.dev/flutter/animation/Tween-class.html) to define the range of values of the animation. This can be seen in the success state of the Dashatar puzzle where multiple widgets appear sequentially by animating their offset and opacity. Similarly, each tick of the countdown timer slowly grows in and then fades out just as the next tick is about to appear using the same technique.
 
-<DashImage figure src="images/0YPUf0ml0ggq7RJIL.png" />
+<DashImage figure src="images/0YPUf0ml0ggq7RJIL.webp" />
 
 
 Most of the animations in the Dashatar theme are implicit. This means that there is no need to write the whole animation yourself, as widgets animate changes to properties on their own. As an example, take a look at the `DashatarPuzzleTile` widget for how to animate the movement of tiles when the user taps a tile. Whenever a tile is tapped, its current position is updated and transitioned over the given `movementDuration` thanks to implicitly animated `AnimatedAlign`.
@@ -144,7 +144,7 @@ Feel free to use the demo codebase as a foundation for your submission. Or, you 
 
 The Simple and Dashatar examples should give you some ideas of where you can customize, or cool things you can create on your own. One interesting idea we explored was projecting the [Flutter Plasma created by Felix Blaschke](https://flutterplasma.dev/) onto the puzzle tiles. The plasma effect can be achieved using the `CustomPaint` widget wrapped with a `Transform` widget and animated with an `AnimationController`. You can find an [example of the plasma renderer used in the demos here](https://github.com/felixblaschke/sa3_liquid/blob/main/lib/liquid/plasma/plasma.dart).
 
-<DashImage figure src="images/04sa1RI3GzrlpRcQ4.png" />
+<DashImage figure src="images/04sa1RI3GzrlpRcQ4.webp" />
 
 
 Another idea would be to fetch images or other data from an API. For example, you could use the [Google Photos API](https://developers.google.com/photos) to make a slide puzzle using photos from one of your favorite Google Photos albums. The sky is the limit with this challenge!

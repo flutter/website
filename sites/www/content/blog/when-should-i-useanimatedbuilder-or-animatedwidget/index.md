@@ -16,7 +16,7 @@ As a reminder, we have two broad categories of animations in Flutter: explicit a
 
 So, if you’ve determined that you need an explicit animation, there are a whole host of explicit animation classes for you to choose from. Those are the classes generally named `FooTransition`, where *Foo* is the name of the property you are trying to animate. I recommend seeing if you can use one of those widgets to accomplish your needs first, *before* diving into the deep world of `AnimatedWidget` and `AnimatedBuilder`. There’s an amazing selection of widgets for pretty much anything you can think of — rotation, position, alignment, fading, text style, and many more. Plus, you can compose these widgets, so that you can rotate *and* fade. But, if none of those built-in widgets can do what you’re looking for, it’s time to build your own using `AnimatedWidget` or `AnimatedBuilder`.
 
-<DashImage figure src="images/1nXKMdHu2YNqZmrGClWlDZw.png" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." />
+<DashImage figure src="images/1nXKMdHu2YNqZmrGClWlDZw.webp" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." />
 
 
 ## Specific Example

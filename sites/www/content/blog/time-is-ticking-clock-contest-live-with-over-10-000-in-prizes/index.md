@@ -3,7 +3,7 @@ title: "Time is Ticking: Clock Contest live with over $10,000 in prizes"
 description: "Flutter Clock is a contest offered by Google, with participation from the Flutter, Google Assistant, and Lenovo teams, that challenges you…"
 publishDate: 2019-11-18
 author: aguinis
-image: images/1uDHQJzyDKsFEz4X59pi5Uw.png
+image: images/1uDHQJzyDKsFEz4X59pi5Uw.webp
 category: events
 layout: blog
 ---
@@ -27,4 +27,4 @@ layout: blog
 
 Good luck and have fun! Time is ticking…
 
-<DashImage figure src="images/1uDHQJzyDKsFEz4X59pi5Uw.png" />
+<DashImage figure src="images/1uDHQJzyDKsFEz4X59pi5Uw.webp" />

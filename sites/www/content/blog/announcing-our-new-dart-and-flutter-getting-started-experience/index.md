@@ -3,7 +3,7 @@ title: "Announcing our new Dart and Flutter Getting Started experience"
 description: "When I joined the Dash DevRel team, my manager gave me an onboarding doc which started like this: “Your new job in one sentence: Improve…"
 publishDate: 2026-02-03
 author: ericwindmill
-image: images/1rHBScksI6g6at1HsqSuPhA.png
+image: images/1rHBScksI6g6at1HsqSuPhA.webp
 category: announcements
 layout: blog
 ---
@@ -14,7 +14,7 @@ In time, I’ve come to understand the definition of ‘Dart and Flutter develop
 
 Today, we’ve landed something that we think improves the lives of those future Flutter developers: the [Dart and Flutter Getting Started experience](http://docs.flutter.dev/learn/pathway).
 
-<DashImage figure src="images/1rHBScksI6g6at1HsqSuPhA.png" />
+<DashImage figure src="images/1rHBScksI6g6at1HsqSuPhA.webp" />
 
 
 ## What we built
@@ -27,7 +27,7 @@ Since the release of hot reload on the web, Flutter learners can have the full F
 
 ### Two full tutorials: one for Dart, one for Flutter.
 
-<DashImage figure src="images/18VqmXOFJbmKgq41H5VzzoQ.png" />
+<DashImage figure src="images/18VqmXOFJbmKgq41H5VzzoQ.webp" />
 
 
 The [Dart tutorial](http://dart.dev/learn) was designed to lead into the Flutter tutorial, but they aren’t dependent on one another. If you’re already confident using a different modern, object-oriented language, you’re free to jump straight into the Flutter tutorial.
@@ -36,7 +36,7 @@ The [Dart tutorial](http://dart.dev/learn) was designed to lead into the Flutter
 
 Of all the design questions we asked ourselves, we spent the most time thinking about what the reader will actually build. Will it be one giant app, several discreet cookbook recipe-like pieces of Flutter code, or something in between?
 
-<DashImage figure src="images/1OqwtegPVcDWjkuE4Xw8BMQ.png" />
+<DashImage figure src="images/1OqwtegPVcDWjkuE4Xw8BMQ.webp" />
 
 
 Ultimately, we came to the conclusion that smaller apps provide a better experience for new learners for a few reasons:
@@ -57,21 +57,21 @@ Including these videos is important to me on a personal level too. Many years ag
 
 To that end, we use the videos as a way to teach Flutter, but also to introduce a handful of the real-life humans that work to make the Flutter and Dart better everyday — engineers, tech writers, and product managers are all featured.
 
-<DashImage figure src="images/1r-HMeY-tNkR80DbyIzOFTg.png" />
+<DashImage figure src="images/1r-HMeY-tNkR80DbyIzOFTg.webp" />
 
 
 ### Small quizzes throughout to confirm what you’ve learned.
 
 We added simple quizzes at the end of each tutorial page. They’re low-stakes and non-blocking. They exist only to give you a bit of feedback and confidence. If you don’t like ’em, skip ‘em!
 
-<DashImage figure src="images/1Ina6wQU6mBfspHKrfB3VHw.png" />
+<DashImage figure src="images/1Ina6wQU6mBfspHKrfB3VHw.webp" />
 
 
 ### The existing How Flutter Works YouTube series as a conclusion.
 
 We cap the learning tutorial off with Craig Labenz’s fantastic video series, released a few months ago, called ‘How Flutter Works’. This series teaches you the inner workings of Flutter with just enough depth that it’s still approachable, yet upgrades your ability to write Flutter apps. This is must-learn knowledge on the way to becoming an advanced Flutter developer.
 
-<DashImage figure src="images/1gyhT6-IMAj4pb1-wNGPxaQ.png" />
+<DashImage figure src="images/1gyhT6-IMAj4pb1-wNGPxaQ.webp" />
 
 
 ## Website updates
@@ -80,7 +80,7 @@ This tutorial is shipping alongside several updates to the Dart and Flutter webs
 
 As a reader, the most noticeable update is the separation of the main docs articles and the [Learn](http://docs.flutter.dev/learn) section of the website. The learn section of the site is reached by clicking on the Learn button in the site’s header navigation, as seen in this screenshot:
 
-<DashImage figure src="images/1BM-6gIW7qi51ojLzOQWFBw.png" />
+<DashImage figure src="images/1BM-6gIW7qi51ojLzOQWFBw.webp" />
 
 
 The Learn section is where we’ll organize all existing and future tutorial-style documentation and articles, in order to keep the main docs easier to navigate. In the header navigation the main docs can be reached with the “User Guides” button (or by clicking the site title).

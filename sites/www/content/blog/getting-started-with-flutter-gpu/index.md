@@ -3,7 +3,7 @@ title: "Getting started with Flutter GPU"
 description: "Build custom renderers and render 3D scenes in Flutter."
 publishDate: 2024-08-06
 author: bdero
-image: images/1jfeUgpEP9AgAz94yVxVW1g.gif
+image: images/1jfeUgpEP9AgAz94yVxVW1g.webp
 category: announcements
 layout: blog
 ---
@@ -22,7 +22,7 @@ If you’re an experienced graphics programmer or you’re interested in low lev
 
 ⚠️ Warning! ⚠️ Flutter GPU is ultimately a low-level API. It’s overwhelmingly likely that the vast majority of Flutter devs who will benefit from Flutter GPU’s existence will do so by consuming higher level rendering libraries published on pub.dev, such as the Flutter Scene rendering package. If you’re not interested in the Flutter GPU API itself and you’re just interested in 3D rendering, skip ahead to [3D rendering with Flutter Scene](#6b35).
 
-<DashImage figure src="images/0hAqIOVkaI1IWnOHE.png" alt="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." caption="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." />
+<DashImage figure src="images/0hAqIOVkaI1IWnOHE.webp" alt="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." caption="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." />
 
 
 ## Getting started with Flutter GPU
@@ -49,7 +49,7 @@ With a Canvas solution like `drawVertices`, bone weight transforms would need to
 
 With that out of the way, let’s get started with Flutter GPU by way of a gentle introduction: Drawing your first triangle!
 
-<DashImage figure src="images/0JEI3fLDGcRHWKruT.png" />
+<DashImage figure src="images/0JEI3fLDGcRHWKruT.webp" />
 
 
 ## Add Flutter GPU to your project
@@ -277,7 +277,7 @@ flutter run -d macos --enable-impeller
 ```
 
 
-<DashImage figure src="images/0lKTtaX2ih6dFpSMQ.png" />
+<DashImage figure src="images/0lKTtaX2ih6dFpSMQ.webp" />
 
 
 If Flutter GPU is working, then you should see the default color format printed to the console.
@@ -347,7 +347,7 @@ canvas.drawImage(image, Offset.zero, Paint());
 ```
 
 
-<DashImage figure src="images/0ebUDtzQOuIGmdlop.png" />
+<DashImage figure src="images/0ebUDtzQOuIGmdlop.webp" />
 
 
 Now that you have a `RenderPass` hooked up with results displayed to the screen, you’re ready to start drawing the triangle. To do this, set up the following:
@@ -396,7 +396,7 @@ renderPass.draw();
 
 If you launch your app, you should now see a green triangle!
 
-<DashImage figure src="images/0LWnGU5WPT_Eom0wJ.png" />
+<DashImage figure src="images/0LWnGU5WPT_Eom0wJ.webp" />
 
 
 Yay, you built a renderer from scratch with Flutter, Dart, and a little bit of GLSL!
@@ -413,7 +413,7 @@ Flutter Scene (package `flutter_scene`) is a new 3D scene graph package powered 
 
 The intent is to provide a package that makes building interactive 3D apps and games easy in Flutter.
 
-<DashImage figure src="images/0tC68CbPLef2rJp1e.png" />
+<DashImage figure src="images/0tC68CbPLef2rJp1e.webp" />
 
 
 This package started life as a `dart:ui` extension for a 3D renderer written in C++ and built directly into Flutter's native runtime, but it's been rewritten against Flutter GPU with a more flexible interface.
@@ -464,7 +464,7 @@ Next, import a 3D model!
 
 First, you need a 3D model to render. For this guide, you’ll use a common [glTF](https://en.wikipedia.org/wiki/GlTF) sample asset: [DamagedHelmet.glb](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/DamagedHelmet). Here's what it looks like.
 
-<DashImage figure src="images/0vVWRLxJ348tCxv7T.png" alt="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" caption="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" />
+<DashImage figure src="images/0vVWRLxJ348tCxv7T.webp" alt="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" caption="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" />
 
 
 You can grab it from the [glTF sample assets repository](https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb) hosted on GitHub. Place DamagedHelmet.glb in your project root.
@@ -588,7 +588,7 @@ flutter run -d macos --enable-impeller
 ```
 
 
-<DashImage figure src="images/074qs6ytcTjyVHwML.png" />
+<DashImage figure src="images/074qs6ytcTjyVHwML.webp" />
 
 
 Before continuing, set up the ticker for the animation. Override `initState` in `MyAppState` to call `createTicker`.
@@ -697,7 +697,7 @@ flutter run -d macos --enable-impeller
 ```
 
 
-<DashImage figure src="images/0_-OFc0vhBHAhrPrO.gif" />
+<DashImage figure src="images/0_-OFc0vhBHAhrPrO.webp" />
 
 
 Here's the full source we put together.
@@ -793,7 +793,7 @@ In the world of rendering performance, the situation is even worse. Specializing
 
 In short, it's just not possible to ship a generic 3D renderer that can solve every use case for everyone. But, by surfacing the low level APIs necessary for you to build your own solutions (Flutter GPU), and building a useful generic 3D renderer on top of it that's easy for the Flutter community to inspect and modify (Flutter Scene), we’re carving out the space for Flutter developers to enjoy low-risk for obsolescence and a high reward.
 
-<DashImage figure src="images/1jfeUgpEP9AgAz94yVxVW1g.gif" />
+<DashImage figure src="images/1jfeUgpEP9AgAz94yVxVW1g.webp" />
 
 
 I can't wait to see what you'll make with these new capabilities. Stay tuned for future releases of Flutter Scene. There's a lot on the way.

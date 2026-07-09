@@ -21,7 +21,7 @@ This blog shows the work I did for my project. [Check out all the projects under
 
 This year, at Flutter Engage, a beta snapshot of Flutter’s desktop support was included in the stable channel. This caused a need for a desktop sample for the [samples](https://github.com/flutter/samples) repo that could, later on, be released on the desktop app stores like the [macOS App Store](https://developer.apple.com/macos/distribution/), the [Microsoft Store](https://docs.microsoft.com/en-us/windows/uwp/publish/), and the [Linux Snap Store](https://snapcraft.io/docs/snapcraft-overview). After a discussion with Brett and the team, we decided to build a desktop sample that would also be a tool to help developers manage lint rules for their projects. Check out the [linting_tool on GitHub](https://github.com/flutter/samples/tree/master/experimental/linting_tool).
 
-<DashImage figure src="images/0Lh2I-A4Aak5UZXze.png" alt="A screenshot of the app" caption="A screenshot of the app" />
+<DashImage figure src="images/0Lh2I-A4Aak5UZXze.webp" alt="A screenshot of the app" caption="A screenshot of the app" />
 
 
 The app uses the lint rules that are hosted by the Dart team from the [dart-lang/linter](https://github.com/dart-lang/linter) repo, and the app can do the following:
@@ -36,7 +36,7 @@ Related PR: [#856](https://github.com/flutter/samples/pull/856)
 
 You can create different rule profiles for different types of projects. The app uses the [`hive`](https://pub.dev/packages/hive) database to maintain persistent storage.
 
-<DashImage figure src="images/0FwXcFHhXjCuOEaFw.png" alt="A list of saved profiles" caption="A list of saved profiles" />
+<DashImage figure src="images/0FwXcFHhXjCuOEaFw.webp" alt="A list of saved profiles" caption="A list of saved profiles" />
 
 
 Related PR: [#860](https://github.com/flutter/samples/pull/860)

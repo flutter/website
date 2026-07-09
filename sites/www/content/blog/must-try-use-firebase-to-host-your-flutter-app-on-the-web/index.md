@@ -3,14 +3,14 @@ title: "Must try: Use Firebase to host your Flutter app on the web"
 description: "So you have a Flutter app, and you want to show it to the world? Look no further! This tutorial will show you how to host your Flutter app…"
 publishDate: 2019-11-11
 author: clocksmith
-image: images/1eL-dHo08RwyLYOl17DNTog.png
+image: images/1eL-dHo08RwyLYOl17DNTog.webp
 category: spotlight
 layout: blog
 ---
 
 ## Use Firebase to host your Flutter app on the web
 
-<DashImage figure src="images/1eL-dHo08RwyLYOl17DNTog.png" />
+<DashImage figure src="images/1eL-dHo08RwyLYOl17DNTog.webp" />
 
 
 So you have a Flutter app, and you want to show it to the world? Look no further! This tutorial shows how to host your Flutter app on the web through a Firebase-hosted URL in just 4 easy steps (2 steps if you already have firebase-tools installed and an existing Firebase project). It is assumed that you have Flutter installed and are able to run your Flutter app locally. If you are new to Flutter, first check out the [getting started guide](https://flutter.dev/docs/get-started/install).
@@ -36,24 +36,24 @@ If you create a project after enabling the web, it automatically creates the `we
 
 In a browser, go to the [Firebase console](https://console.firebase.google.com/).
 
-<DashImage figure src="images/0J0ZaW4hZbSlEXjK9.png" />
+<DashImage figure src="images/0J0ZaW4hZbSlEXjK9.webp" />
 
 
 Click **Add project** and give your project a name:
 
-<DashImage figure src="images/00i_W2vNozOa87N_B.png" />
+<DashImage figure src="images/00i_W2vNozOa87N_B.webp" />
 
 
 ☝️Note: The actual project name might generate some extra characters at the end for uniqueness.
 
 Click **Continue.** For simplicity, don’t enable Google Analytics for this project, so turn off the switch and click **Create project**. If you want to use Google Analytics, leave the switch on, and there will be one extra step of choosing or creating a Google Analytics project.
 
-<DashImage figure src="images/0qUlFDIP4H0C4_urO.png" />
+<DashImage figure src="images/0qUlFDIP4H0C4_urO.webp" />
 
 
 Watch for a few seconds as the project is created, until you see that it is ready and click **Continue.**
 
-<DashImage figure src="images/0fL_0E_cbbMff5IIr.png" />
+<DashImage figure src="images/0fL_0E_cbbMff5IIr.webp" />
 
 
 That’s it for step 1!
@@ -111,19 +111,19 @@ $ firebase init
 ```
 
 
-<DashImage figure src="images/0F4TQYa2f-9bAaW3X.png" />
+<DashImage figure src="images/0F4TQYa2f-9bAaW3X.webp" />
 
 
 Use the arrow keys to navigate the cursor to **Hosting** and hit the spacebar to select it, then press enter. Now you will see this screen:
 
-<DashImage figure src="images/0KnlTgdXeNMDAMpna.png" />
+<DashImage figure src="images/0KnlTgdXeNMDAMpna.webp" />
 
 
 Select **Use an existing project** by pressing Enter. Use the arrow keys to select the project you made in step 1.
 
 Next, enter `build/web` as the public directory and press enter, then enter **y** (for yes) to select the single page app option:
 
-<DashImage figure src="images/0mYMsKK4g65KGh71f.png" />
+<DashImage figure src="images/0mYMsKK4g65KGh71f.webp" />
 
 
 ☝️Note: After this step, 2 new files are created (`.firebaserc` and `firebase.json`) in your root directory. Check and make sure they are there. If not, check for errors in the `firebase init` step and retry.

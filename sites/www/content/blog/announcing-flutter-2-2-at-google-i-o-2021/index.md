@@ -3,14 +3,14 @@ title: "Announcing Flutter 2.2 at Google I/O 2021"
 description: "Growing momentum for the leading UI toolkit for multiplatform development"
 publishDate: 2021-05-18
 author: timsneath
-image: images/0NCBwYFewFf602uvF.png
+image: images/0NCBwYFewFf602uvF.webp
 category: events
 layout: blog
 ---
 
 At Google I/O today, we announced [Flutter 2.2](https://flutter.dev/docs/whats-new), our latest release of the open source toolkit for building beautiful apps for any device from a single platform. Flutter 2.2 is the best version of Flutter yet, with updates that make it easier than ever for developers to monetize their apps through in-app purchases, payments and ads; to connect to cloud services and APIs that extend apps to support new capabilities; and with tooling and language features that allow developers to eliminate a whole class of errors, increase app performance and reduce package size.
 
-<DashImage figure src="images/0NCBwYFewFf602uvF.png" />
+<DashImage figure src="images/0NCBwYFewFf602uvF.webp" />
 
 
 ## Building on the foundation of Flutter 2
@@ -40,7 +40,7 @@ As the “secret sauce” that powers Flutter, [Dart](https://dart.dev) also get
 
 While Google continues to be the primary contributor to the Flutter project, we’re delighted to see the growth of the broader ecosystem around Flutter.
 
-<DashImage figure src="images/1zroRqBB-vjUR_UCvYCKSUg.png" />
+<DashImage figure src="images/1zroRqBB-vjUR_UCvYCKSUg.webp" />
 
 
 One area of particular growth over recent months has been the broadening of Flutter to an ever growing number of platforms and operating systems. At Flutter Engage, we announced that [Toyota is bringing Flutter to their next generation vehicle infotainment systems](https://medium.com/googleplaydev/seamless-multi-platform-app-development-with-flutter-ea0e8003b0f9#f53d). And last month, Canonical shipped their first release of [Ubuntu with integrated support for Flutter](https://ubuntu.com/blog/ubuntu-21-04-is-here), with Snap integration and support for Wayland.
@@ -62,4 +62,4 @@ We love seeing how you put Flutter to work. One example comes in the form of a p
 
 With a [wide variety of workshops, presentations and on-demand sessions about Flutter](https://events.google.com/io/program/content?4=topic_flutter) at Google I/O, we’re excited to share our work with all of you. And don’t forget to check out our fun [photo booth web app](https://photobooth.flutter.dev), built with Flutter, which lets you create a selfie with our Dash mascot and her friends!
 
-<DashImage figure src="images/0ZdwECz0chT1hOq6Y.png" />
+<DashImage figure src="images/0ZdwECz0chT1hOq6Y.webp" />

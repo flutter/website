@@ -3,7 +3,7 @@ title: "Flutter Spring 2020 Update"
 description: "Continued momentum and enterprise growth, new release model"
 publishDate: 2020-04-22
 author: timsneath
-image: images/0T39T7UB0oJVIQy_H.png
+image: images/0T39T7UB0oJVIQy_H.webp
 category: announcements
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 For the engineers, product managers, UX researchers, technical writers, and developer relations engineers here at Google that work on Flutter, the last couple of months have been filled with various challenges; like most of you, we are all grappling with very different daily routines than normal. And yet, as an open source project, we are able to continue to develop using publicly available tools. Within the limitations of sometimes challenging and certainly novel working environments, along with the need to care for dependents, we’re continuing to make progress against our spring backlog and have also learned plenty about contributing “from the outside”! We hope that you’re also able to make progress and stay healthy and safe.
 
-<DashImage figure src="images/0T39T7UB0oJVIQy_H.png" />
+<DashImage figure src="images/0T39T7UB0oJVIQy_H.webp" />
 
 
 ## Flutter momentum
@@ -110,7 +110,7 @@ In the meantime, check out some of the other announcements we’ve made over the
 
 * [Double pendulum](https://codepen.io/abhilas-csc/pen/qBOZKPj) (abhilas-csc)
 
-<DashImage figure src="images/0vX4VeEgvAD364f_2.png" />
+<DashImage figure src="images/0vX4VeEgvAD364f_2.webp" />
 
 
 And if you’re looking for Flutter learning resources, we now have [a free introductory Flutter training course](https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d) available online. This ten hour course presented by Angela Yu provides tutorials and labs to help you get started on your Flutter journey.

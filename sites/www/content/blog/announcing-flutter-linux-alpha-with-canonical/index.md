@@ -3,7 +3,7 @@ title: "Announcing Flutter Linux Alpha with Canonical"
 description: "The Ubuntu team has produced a new GTK+ based host for Flutter apps on all Linux distros"
 publishDate: 2020-07-08
 author: csells
-image: images/0uMT4fCQFO8VQwB0Q.png
+image: images/0uMT4fCQFO8VQwB0Q.webp
 category: spotlight
 layout: blog
 ---
@@ -45,14 +45,14 @@ To demonstrate that Flutter was ready for the desktop, we worked with the design
 
 In addition to being able to manage your contacts, including searching contacts, adding new contacts, and editing existing contacts, Flokk also lets you associate GitHub and Twitter handle information with your contacts.
 
-<DashImage figure src="images/0uMT4fCQFO8VQwB0Q.png" alt="The Flokk Contacts app was built with Flutter to target the desktop" caption="The Flokk Contacts app was built with Flutter to target the desktop" />
+<DashImage figure src="images/0uMT4fCQFO8VQwB0Q.webp" alt="The Flokk Contacts app was built with Flutter to target the desktop" caption="The Flokk Contacts app was built with Flutter to target the desktop" />
 
 
 The display of GitHub and Twitter notifications turns your contacts into your own personal social network. And if you’re not seeing your favorite social networks in Flokk Contacts, then the good news is that Flokk is [completely open source](https://github.com/gskinnerTeam/Flokk/), so you can submit a PR to add your favorite.
 
 In addition to innovating in the social space, Flokk uses Flutter features to look and feel great. As just one example, the dark theme not only switches the colors but animates the changes as it does so.
 
-<DashImage figure src="images/0dKv6teOS8d4zjiWk.gif" alt="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" caption="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" />
+<DashImage figure src="images/0dKv6teOS8d4zjiWk.webp" alt="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" caption="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" />
 
 
 The creative team behind the Flokk Contacts app was led by [Grant Skinner](http://gskinner.com), who’s well known for both excellence in design and implementation of innovative user experience. Grant had this to say about working with Flutter on Linux:
@@ -95,7 +95,7 @@ $ flutter run -d linux
 ```
 
 
-<DashImage figure src="images/0isPy4BXVD5J5hyQg.png" alt="The famous Flutter Counter app runs great on Linux, too" caption="The famous Flutter Counter app runs great on Linux, too" />
+<DashImage figure src="images/0isPy4BXVD5J5hyQg.webp" alt="The famous Flutter Counter app runs great on Linux, too" caption="The famous Flutter Counter app runs great on Linux, too" />
 
 
 What you’ll get is a shiny new Linux app built with Flutter running on the latest stable version of GTK+. If you have an existing Flutter project to which you’d like to add Linux support after you have Linux enabled, you can add the `linux` subdirectory like so:
@@ -186,19 +186,19 @@ For more details on building your first snap and publishing it in the Snap Store
 
 The Flokk app is an excellent example of a real-world Flutter app targeting the Linux desktop. For a simpler sample, you can check out [the Photo Search app](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search), which was also built specifically to show off desktop features.
 
-<DashImage figure src="images/0y2IpiLOI01i9BqiC.png" alt="Try the Photo Search sample on Linux" caption="Try the Photo Search sample on Linux" />
+<DashImage figure src="images/0y2IpiLOI01i9BqiC.webp" alt="Try the Photo Search sample on Linux" caption="Try the Photo Search sample on Linux" />
 
 
 Photo Search is a simple online photo search app that uses several plugins to access native platform functionality, supporting both macOS and Linux.
 
 For an example Linux desktop app with step-by-step instructions, I recommend [the Write a Flutter desktop application codelab](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html#0), which walks you through using OAuth and GraphQL to build a GitHub client in Flutter.
 
-<DashImage figure src="images/0vktUouQPnTpgk0Ko.png" alt="The Flutter GitHub codelab client application in action" caption="The Flutter GitHub codelab client application in action" />
+<DashImage figure src="images/0vktUouQPnTpgk0Ko.webp" alt="The Flutter GitHub codelab client application in action" caption="The Flutter GitHub codelab client application in action" />
 
 
 For a more comprehensive app that exercises much more of the surface area of Flutter as well as providing several little applets, I recommend [the Flutter Gallery](https://github.com/flutter/gallery), which was redesigned last year to support desktop as well as mobile. If you’d like to see that in action, you can check that out [on the Snap Store](https://snapcraft.io/flutter-gallery), too.
 
-<DashImage figure src="images/0yW96xpHMveP4-kUm.png" alt="The Flutter Gallery sample is available on the Snap Store" caption="The Flutter Gallery sample is available on the Snap Store" />
+<DashImage figure src="images/0yW96xpHMveP4-kUm.webp" alt="The Flutter Gallery sample is available on the Snap Store" caption="The Flutter Gallery sample is available on the Snap Store" />
 
 
 One more desktop app that shows off the fun side of Flutter is a multi-player game built by Thorsten Lorenz called [batufo](https://thlorenz.com/batufo/). Set against a beautiful backdrop, the game lets players from all over the world compete against each other in real time.

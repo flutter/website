@@ -3,12 +3,12 @@ title: "I/O Pinball Powered by Flutter and Firebase"
 description: "Take Flutter game development to the next level"
 publishDate: 2022-05-10
 author: verygoodopensource
-image: images/1yuiVVfFOuPnrsHcUx7xf_Q.png
+image: images/1yuiVVfFOuPnrsHcUx7xf_Q.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1yuiVVfFOuPnrsHcUx7xf_Q.png" />
+<DashImage figure src="images/1yuiVVfFOuPnrsHcUx7xf_Q.webp" />
 
 
 For Google I/O, we teamed up with the Flutter team to reimagine a classic pinball game built using Flutter and Firebase. Here’s how we brought [I/O Pinball](https://pinball.flutter.dev/) to life on the web with the help of the Flame game engine.
@@ -17,7 +17,7 @@ For Google I/O, we teamed up with the Flutter team to reimagine a classic pinbal
 
 The Flutter framework is a great choice for building games driven by user interaction, such as puzzles and word games. When it comes to games that use a game loop, [Flame](https://docs.flame-engine.org/), a 2D game engine built on top of Flutter, can be a helpful tool. I/O Pinball uses Flame’s out-of-the-box features, such as animations, physics, collision detection, and more, while also leveraging the infrastructure of the Flutter framework. If you can build an app with Flutter, you already have the foundation you need to build games with Flame.
 
-<DashImage figure src="images/1Qyyvx52AjpBRuI8MeZ7cAg.png" />
+<DashImage figure src="images/1Qyyvx52AjpBRuI8MeZ7cAg.webp" />
 
 
 ## Game loop
@@ -41,7 +41,7 @@ void update(double dt) {
 
 One of the challenges of building I/O Pinball was figuring out how to create a 3D effect using only 2D elements. Components are ordered to determine how they render on the screen. For example, as the ball is launched up the ramp, the ball’s order increases, so that it appears to be on top of the ramp.
 
-<DashImage figure src="images/103SErV-PT46HyU9nmuwd7g.png" />
+<DashImage figure src="images/103SErV-PT46HyU9nmuwd7g.webp" />
 
 
 The ball, plunger, both flippers, and the Chrome Dino are elements with a dynamic body, which are affected by the world’s physics. The ball also changes size depending on its position on the board. As the ball moves to the top of the board, it shrinks in size to appear farther away from the user’s perspective. In addition, the gravity on the ball is adjusted to take into account the angle of the pinball machine, so that the ball falls faster on an incline.
@@ -99,7 +99,7 @@ Body createBody() {
 
 There are a few elements on the pinball playfield, such as Android, Dash, Sparky, and Chrome Dino, which are animated. For these, we used sprite sheets, which are included in the Flame engine with the `SpriteAnimationComponent`. For each element, we had a file with the image in various orientations, the number of frames in the file, and the time between frames. Using this data, the `SpriteAnimationComponent` in Flame compiles all of the images together on a loop so that the element appears animated.
 
-<DashImage figure src="images/1l1WjOu97J6hfDTO0KgzKlA.png" alt="Sprite sheet example" caption="Sprite sheet example" />
+<DashImage figure src="images/1l1WjOu97J6hfDTO0KgzKlA.webp" alt="Sprite sheet example" caption="Sprite sheet example" />
 
 
 ```
@@ -133,7 +133,7 @@ animation = SpriteAnimation.fromFrameData(
 
 The I/O Pinball leaderboard displays the top scores of players around the world in real time. Users can also share their scores to Twitter and Facebook. We use Firebase [Cloud Firestore](https://firebase.google.com/docs/firestore) to track the top ten scores and fetch them to display on the leaderboard. When a new score is written to the leaderboard, a [Cloud Function](https://firebase.google.com/docs/functions) resorts the scores in descending order and removes any scores not currently in the top ten.
 
-<DashImage figure src="images/1vD6H6j8WKFxS5RJf8Z0EDA.png" />
+<DashImage figure src="images/1vD6H6j8WKFxS5RJf8Z0EDA.webp" />
 
 
 ```
@@ -168,7 +168,7 @@ The pinball codebase follows a layered architecture, with each feature in its ow
 
 The theme of pinball varies depending on which character a user selects before beginning the game. Theming is controlled with the `CharacterThemeCubit` class. Depending on the character selection, the ball color, background, and other elements are updated.
 
-<DashImage figure src="images/1I0xzMeuSQHI_vB0x28IucQ.png" />
+<DashImage figure src="images/1I0xzMeuSQHI_vB0x28IucQ.webp" />
 
 
 ```

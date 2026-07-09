@@ -3,12 +3,12 @@ title: "Global Gamers Challenge: Top 20 Revealed!"
 description: "The Global Gamers Challenge is nearing its conclusion, and it’s time to unveil the 20 projects progressing to the final round of judging."
 publishDate: 2024-04-04
 author: kkboateng
-image: images/03a0UYlMSfs-7N9fq.png
+image: images/03a0UYlMSfs-7N9fq.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/03a0UYlMSfs-7N9fq.png" />
+<DashImage figure src="images/03a0UYlMSfs-7N9fq.webp" />
 
 
 It’s been incredibly inspiring to see thousands of developers work together to develop epic games for the planet with Flutter and Dart over the last 9 weeks. Entries included RPGs, platformers, AI-powered, and more. Your creative ideas spanned continents, genres, formats, platforms, and even galaxies!

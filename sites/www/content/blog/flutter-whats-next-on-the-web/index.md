@@ -3,12 +3,12 @@ title: "Flutter: What’s next on the Web?"
 description: "Our priorities for upcoming releases, focusing on performance, developer experience and web integration"
 publishDate: 2021-09-14
 author: mariam_hasnany
-image: images/17iBUzC4UvwNi8agIsCrZ7w.png
+image: images/17iBUzC4UvwNi8agIsCrZ7w.webp
 category: announcements
 layout: blog
 ---
 
-<DashImage figure src="images/17iBUzC4UvwNi8agIsCrZ7w.png" />
+<DashImage figure src="images/17iBUzC4UvwNi8agIsCrZ7w.webp" />
 
 
 Flutter’s web support [hit the stable milestone](https://medium.com/flutter/flutter-web-support-hits-the-stable-milestone-d6b84e83b425) in March 2021. So what’s next?

@@ -3,12 +3,12 @@ title: "Only a few days left to submit for the Flutter Puzzle Hack + announcing 
 description: "Get your project in before the submission deadline!"
 publishDate: 2022-03-09
 author: kkboateng
-image: images/0LgF82TK9xt1aI14Y.png
+image: images/0LgF82TK9xt1aI14Y.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/0LgF82TK9xt1aI14Y.png" />
+<DashImage figure src="images/0LgF82TK9xt1aI14Y.webp" />
 
 
 There are only a few days left to submit to the [Flutter Puzzle Hack](https://flutterhack.devpost.com/). We’re excited by the puzzles we’ve seen so far, and can’t wait to see even more! Don’t forget that prizes include 4 fully loaded MacBooks, tons of Flutter swag, and cash to over 40 winners, so be sure to get your submission in for a chance at some of these awesome prizes.
@@ -53,7 +53,7 @@ Whether you’re still working out your idea, or you’ve already submitted your
 
 Check out what Twitter user [Roaa](https://twitter.com/roaakdm/status/1493614287515967492) is working on, for [example](https://twitter.com/timsneath/status/1493626374610845696?s=20&t=q7LNbDwEVprqvF9MdRozKg):
 
-<DashImage figure src="images/0A_NEHVtXjdO7Cu0T.png" />
+<DashImage figure src="images/0A_NEHVtXjdO7Cu0T.webp" />
 
 
 ## **There’s still time!**

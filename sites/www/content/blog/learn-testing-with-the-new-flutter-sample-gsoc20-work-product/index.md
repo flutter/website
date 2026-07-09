@@ -3,12 +3,12 @@ title: "Learn testing with the new Flutter sample | GSoC’20 Work Product"
 description: "By Abdullah Deshmukh"
 publishDate: 2020-08-29
 author: abd99
-image: images/15PoXySK4-tAKWAY1zCzfHg.png
+image: images/15PoXySK4-tAKWAY1zCzfHg.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/15PoXySK4-tAKWAY1zCzfHg.png" />
+<DashImage figure src="images/15PoXySK4-tAKWAY1zCzfHg.webp" />
 
 
 ## A quick introduction to GSoC

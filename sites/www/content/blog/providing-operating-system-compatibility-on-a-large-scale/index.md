@@ -30,7 +30,7 @@ Flutter is Google’s portable UI toolkit for building beautiful, natively-compi
 
 Consider Android: By [statcounter](https://gs.statcounter.com/os-version-market-share/android/mobile-tablet/worldwide), as of June 2020, Android versions in the wild consist of the following:
 
-<DashImage figure src="images/0cn2P4AQs91rSOztB.png" />
+<DashImage figure src="images/0cn2P4AQs91rSOztB.webp" />
 
 
 Looking at the numbers, Android KitKat (Android 4.x) has less than a 2% market share. The predominant share of Android devices (54%) are running Android Pie (Android 9.0) or Android 10. Supporting each version of Android requires an investment. Do you know why we invest in a platform, like KitKat, that has a low market share?

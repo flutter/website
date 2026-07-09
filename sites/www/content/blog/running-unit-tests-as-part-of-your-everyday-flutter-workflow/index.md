@@ -3,7 +3,7 @@ title: "Running unit tests as part of your everyday Flutter workflow"
 description: "So you have gotten started with Flutter, have your app prototype up and running, and have started thinking about how you’d test your app…"
 publishDate: 2018-03-06
 author: devoncarew
-image: images/1GKGBr7v55mRKhQyOkNaFoA.png
+image: images/1GKGBr7v55mRKhQyOkNaFoA.webp
 category: tutorial
 layout: blog
 ---
@@ -41,22 +41,22 @@ void main() {
 
 You can see that it verifies the behavior of the counter for the sample app. You may not have noticed the ‘run’ icons in the editor’s gutter:
 
-<DashImage figure src="images/1V_EILJ0CmVIDWCBbK-VmtQ.png" />
+<DashImage figure src="images/1V_EILJ0CmVIDWCBbK-VmtQ.webp" />
 
 
 This is the Flutter plugin parsing your unit test code and inserting handy ‘run test’ actions directly into your editor. From IntelliJ or Android Studio, click on the ‘run’ icon and select either the option to run or debug your test:
 
-<DashImage figure src="images/1pDCMYhDu_XxFEzUNRreupA.png" />
+<DashImage figure src="images/1pDCMYhDu_XxFEzUNRreupA.webp" />
 
 
 The tests will run, and the results will be displayed in the standard IntelliJ test result view:
 
-<DashImage figure src="images/1GKGBr7v55mRKhQyOkNaFoA.png" />
+<DashImage figure src="images/1GKGBr7v55mRKhQyOkNaFoA.webp" />
 
 
 To debug your test, just set a breakpoint where you’d like to pause the test and select the **Debug ‘test…’** option from the editor’s gutter run action. Your test will run and break at the breakpoint, letting you inspect variables and step through the code.
 
-<DashImage figure src="images/1lCTc5ZARrw1ops8H6zA37A.png" />
+<DashImage figure src="images/1lCTc5ZARrw1ops8H6zA37A.webp" />
 
 
 ## VS Code

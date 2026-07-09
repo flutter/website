@@ -3,7 +3,7 @@ title: "Announcing Flutter 3.3 at Flutter Vikings"
 description: "A new Flutter release, a beautiful new app, work on improving rendering performance, and a note of farewell"
 publishDate: 2022-08-30
 author: timsneath
-image: images/0bDz2chibrm3B6QZE.png
+image: images/0bDz2chibrm3B6QZE.webp
 category: events
 layout: blog
 ---
@@ -14,7 +14,7 @@ Greetings from the beautiful Norwegian capital of Oslo, where members of the Flu
 
 Flutter continues to grow, both in usage and in the size of the ecosystem. **Every day, more than 1,000 new mobile apps using Flutter are published** to the Apple and Google Play stores, along with more usage on web and desktop. And the Flutter package ecosystem [now comprises over 25,000 packages](https://pub.dev/packages?q=sdk%3Aflutter), providing further evidence of maturity and breadth.
 
-<DashImage figure src="images/0bDz2chibrm3B6QZE.png" />
+<DashImage figure src="images/0bDz2chibrm3B6QZE.webp" />
 
 
 **Today we’re announcing Flutter 3.3.** This release is focused on refinements and performance improvements that reinforce the features shipped in Flutter 3. It expands support for the evolving Material 3 specification with several new components and a number of bug fixes, and it includes new features aimed at tablet and desktop developers including Scribble handwriting support on iPad, selectable text grouping, and trackpad support. This release also includes Dart 2.18, which introduces FFI support for libraries and code written in Swift or Objective-C. Apps that are built against this release will experience improved performance across desktop, web, and mobile, so we encourage you to run flutter upgrade to get the latest on all your developer workstations!

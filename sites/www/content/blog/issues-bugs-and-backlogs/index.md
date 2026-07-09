@@ -3,7 +3,7 @@ title: "Issues, Bugs, and Backlogs"
 description: "Managing feedback in a large open source project like Flutter"
 publishDate: 2019-11-25
 author: kf6gpe
-image: images/1D_MCtnl2h_spFgoORikDcA.png
+image: images/1D_MCtnl2h_spFgoORikDcA.webp
 category: tutorial
 layout: blog
 ---
@@ -60,12 +60,12 @@ Once an issue has been completed to our satisfaction, it is closed. Often this i
 
 As you can imagine, as our popularity has grown, so has the number of opened and closed issues for [github.com/flutter/flutter](http://github.com/flutter/flutter) (this contains all issues except those for the web site, which are logged at [github.com/flutter/website](http://github.com/flutter/website)):
 
-<DashImage figure src="images/1D_MCtnl2h_spFgoORikDcA.png" alt="Closed vs. open bugs for month-ends since Jan-2018" caption="Closed vs. open bugs for month-ends since Jan-2018" />
+<DashImage figure src="images/1D_MCtnl2h_spFgoORikDcA.webp" alt="Closed vs. open bugs for month-ends since Jan-2018" caption="Closed vs. open bugs for month-ends since Jan-2018" />
 
 
 Equally exciting is the number of issues *not* bearing a label corresponding to one of our secondary triage teams, such as [framework](https://github.com/flutter/flutter/labels/framework), [engine](https://github.com/flutter/flutter/labels/engine), or [plugin](https://github.com/flutter/flutter/labels/plugin):
 
-<DashImage figure src="images/19ZXPKWTBT01b_6zsFtundg.png" alt="Issues not labeled for secondary triage, Mar-2019-present" caption="Issues not labeled for secondary triage, Mar-2019-present" />
+<DashImage figure src="images/19ZXPKWTBT01b_6zsFtundg.webp" alt="Issues not labeled for secondary triage, Mar-2019-present" caption="Issues not labeled for secondary triage, Mar-2019-present" />
 
 
 You can clearly see where we started to engage Nevercode in our triage process, first in early September, with great progress by mid-September as they got up to speed.

@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.24"
 description: "Unleashing Flutter GPU, Multi-View Embedding, and More"
 publishDate: 2024-08-06
 author: itsjustkevin
-image: images/0bdcb6KGonosfPZ6m.gif
+image: images/0bdcb6KGonosfPZ6m.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1EA-cAY6uwkYqYb725vnCIw.png" alt="Flutter 3.24 on a blue background" caption="Flutter 3.24 on a blue background" />
+<DashImage figure src="images/1EA-cAY6uwkYqYb725vnCIw.webp" alt="Flutter 3.24 on a blue background" caption="Flutter 3.24 on a blue background" />
 
 
 Welcome to the latest Flutter update! Flutter 3.24 is packed with exciting new features and enhancements to elevate your app development experience. This release highlights the preview of Flutter GPU, which enables advanced graphics and 3D scenes directly in Flutter. Web apps can now embed multiple Flutter views, enhancing your app’s versatility. And finally, we’ve added video ad monetization support to help you maximize revenue.
@@ -31,14 +31,14 @@ You can use these new slivers to make headers that float, stay pinned, or resize
 
 These new slivers come with new sample code. For example, `PinnedHeaderSliver`’s API documentation has an example that recreates effects like the iOS Settings app’s app bar:
 
-<DashImage figure src="images/0bdcb6KGonosfPZ6m.gif" />
+<DashImage figure src="images/0bdcb6KGonosfPZ6m.webp" />
 
 
 ### Updates in the Cupertino library
 
 In this release, we’ve improved the fidelity of [`CupertinoActionSheet`](https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html)**.** Sliding your finger across the action sheet’s buttons now provides haptic feedback. The buttons’ font size and weight now match their native counterparts.
 
-<DashImage figure src="images/0_o_9V0RlITOZdU4v.gif" />
+<DashImage figure src="images/0_o_9V0RlITOZdU4v.webp" />
 
 
 We’ve also added new focus properties to [`CupertinoButton`](https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html), and you can now customize the color of a disabled [`CupertinoTextField`](https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html).
@@ -49,7 +49,7 @@ A refresh of the Cupertino library is underway, expect more updates in future re
 
 The [`two_dimensional_scrollables`](https://pub.dev/packages/two_dimensional_scrollables) package released the [`TreeView`](https://pub.dev/documentation/two_dimensional_scrollables/latest/two_dimensional_scrollables/TreeView-class.html) widget, alongside several companion classes for building performant scrolling trees that can scroll in all directions as the tree grows. The sample app included in the package was also updated with several new examples of using the [`TableView`](https://pub.dev/documentation/two_dimensional_scrollables/latest/two_dimensional_scrollables/TableView-class.html) and [`TreeView`](https://pub.dev/documentation/two_dimensional_scrollables/latest/two_dimensional_scrollables/TreeView-class.html) widgets.
 
-<DashImage figure src="images/0wcmJCv-6owwsolRl.gif" />
+<DashImage figure src="images/0wcmJCv-6owwsolRl.webp" />
 
 
 [`TreeSliver`](https://api.flutter.dev/flutter/widgets/TreeSliver-class.html) was also added to the framework for building trees in one dimensional scrolling. The `TreeView` and `TreeSliver` APIs match, making it easy to switch between the one that is right for your use case.
@@ -58,7 +58,7 @@ The [`two_dimensional_scrollables`](https://pub.dev/packages/two_dimensional_scr
 
 This release included the [Material Design carousel](https://m3.material.io/components/carousel/overview) widget: `CarouselView`. The `CarouselView` presents the “[Uncontained](https://m3.material.io/components/carousel/specs#477de3a1-c9df-4742-baf3-bcd5eeb3764c)” layout: a scrollable list of items that scroll to the edge of the container, and the leading and the trailing items can dynamically change size when they are scrolling out of the view and scrolling in the view.
 
-<DashImage figure src="images/16ytqSvtR2TJzAE6LntHTGw.gif" />
+<DashImage figure src="images/16ytqSvtR2TJzAE6LntHTGw.webp" />
 
 
 ### More functionality available from widgets
@@ -115,16 +115,16 @@ In anticipation of removing the Impeller opt-out on iOS in a stable release comi
 
 Additionally, by [solving a number of issues](https://github.com/flutter/engine/pull/53042) we have also greatly improved the fidelity of Impeller’s text rendering in this release. In particular, text weight, spacing, and kerning now all match the fidelity of text with the legacy renderer.
 
-<DashImage figure src="images/0gIu2Wm9mpuMGb1JY.png" alt="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" caption="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" />
+<DashImage figure src="images/0gIu2Wm9mpuMGb1JY.webp" alt="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" caption="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" />
 
 
-<DashImage figure src="images/0tt9hlqhTbrmj4ZCt.png" alt="After" caption="After" />
+<DashImage figure src="images/0tt9hlqhTbrmj4ZCt.webp" alt="After" caption="After" />
 
 
-<DashImage figure src="images/0eMboSxWLEJBS_EyL.png" alt="Before (Note incorrect spacing, for example in “vergelijken”)" caption="Before (Note incorrect spacing, for example in “vergelijken”)" />
+<DashImage figure src="images/0eMboSxWLEJBS_EyL.webp" alt="Before (Note incorrect spacing, for example in “vergelijken”)" caption="Before (Note incorrect spacing, for example in “vergelijken”)" />
 
 
-<DashImage figure src="images/0uxeGJuIKWu0dPW1d.png" alt="After" caption="After" />
+<DashImage figure src="images/0uxeGJuIKWu0dPW1d.webp" alt="After" caption="After" />
 
 
 **Android Preview**
@@ -171,7 +171,7 @@ We have launched a new [Interactive Media Ads (IMA) plugin](https://pub.dev/pack
 
 Instream video ads are typically shown to a user in the video player before (preroll), during (midroll), or after (postroll) video content playback. Some instream video ads can be skippable as well.
 
-<DashImage figure src="images/0_c0s8KMdLNyfxOMQ.gif" />
+<DashImage figure src="images/0_c0s8KMdLNyfxOMQ.webp" />
 
 
 **Flutter IMA benefits**:
@@ -213,7 +213,7 @@ These new APIs are intended to replace the current SharedPreferences API in the 
 
 ## Flutter and Dart Package Ecosystem Summit Europe 2024
 
-<DashImage figure src="images/0fWo9ieYzQcJjwQBi.png" />
+<DashImage figure src="images/0fWo9ieYzQcJjwQBi.webp" />
 
 
 As part of Fluttercon Europe 2024, we held the first in-person Flutter and Dart Package Ecosystem Summit. This followed on from the first virtual summit we held in August 2023. See a summary of takeaways from the discussion sessions [here](https://docs.google.com/document/d/e/2PACX-1vRFLdpIJYO5YPARcyUT1FYPzwkFb1hxh_agqnCXxsyirXocLZS5jobs3xFV5ZGpSQHLHZiBzqbJlXNV/pub).
@@ -236,26 +236,26 @@ This release includes some exciting improvements to the Flutter DevTools tooling
 
 If you have ever wondered whether your Flutter app is building more Widgets than expected, a new feature in the **DevTools Performance** tool that can help with that. Using the new **Rebuild Stats** feature, you can capture information about how many times a widget was built in your app or even in a specific Flutter frame.
 
-<DashImage figure src="images/07LXjXlFR9w-VR6xk.png" />
+<DashImage figure src="images/07LXjXlFR9w-VR6xk.webp" />
 
 
 *A screenshot of the DevTools Performance tool tracking rebuild stats.*
 
 We’ve added polish and critical bug fixes to tools like the **Network profiler** and the **Flutter Deep Links tool**, and have made some general improvements to provide you with a better experience when you are using DevTools from within your IDE. Speaking of IDEs, did you know that you can use every DevTools tool directly inside your IDE?
 
-<DashImage figure src="images/0tdpToIuTd-mBq-_R.png" />
+<DashImage figure src="images/0tdpToIuTd-mBq-_R.webp" />
 
 
 *DevTools screens open inside a VS Code window.*
 
-<DashImage figure src="images/0QvoXCNqqfsrMn1oC.png" />
+<DashImage figure src="images/0QvoXCNqqfsrMn1oC.webp" />
 
 
 *DevTools screens open inside Android Studio tool windows.*
 
 This release includes improvements to the Flutter Sidebar in VS Code to give you easier access to the tools you are looking for. Upgrade to the latest versions of VS Code and the Flutter and Dart extensions to access the improved sidebar.
 
-<DashImage figure src="images/0BzEybhMlV-SnSZZl.gif" />
+<DashImage figure src="images/0BzEybhMlV-SnSZZl.webp" />
 
 
 *The Flutter Sidebar is adaptive and scales to fit your workspace*

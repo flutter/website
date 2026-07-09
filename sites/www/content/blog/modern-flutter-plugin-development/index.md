@@ -3,7 +3,7 @@ title: "Modern Flutter Plugin Development"
 description: "by Amir Hardon, Chris Sells, Collin Jackson, Harry Terkelsen and Matt Carroll"
 publishDate: 2020-04-30
 author: csells
-image: images/1yM2BlF_ckdUzoDnSdAjPoA.png
+image: images/1yM2BlF_ckdUzoDnSdAjPoA.webp
 category: announcements
 layout: blog
 ---
@@ -18,7 +18,7 @@ First, it is important to understand the `FlutterEngine` class within the v2 And
 
 The fundamental concept of “adding a plugin” to a Flutter app means applying that plugin to a single `FlutterEngine`. For example, if a Flutter app requires access to a camera, that capability is achieved by registering a camera plugin with a specific `FlutterEngine` instance. This registration is done for you automatically with a `GeneratedPluginRegistrant`, but it is important to understand that every `FlutterEngine` maintains its own set of Flutter plugins.
 
-<DashImage figure src="images/1V4h-nurkyQZvRIjJFifWUQ.png" />
+<DashImage figure src="images/1V4h-nurkyQZvRIjJFifWUQ.webp" />
 
 
 In the old v1 Android embedding, all plugins were initialized and configured at the very beginning of the Android app and there was only ever one Flutter experience. In the v2 embedding, we make no assumption about when a plugin is initialized, and a plugin must be initialized once per `FlutterEngine`. As a result, all Flutter plugins for Android must now support instantiation instead of static initialization, and they must support being attached to, and detached from a `FlutterEngine`. The following code samples demonstrate the difference between the old v1 plugin initialization implementation and the new v2 plugin initialization process.
@@ -151,7 +151,7 @@ The new plugin API explicitly recognizes that a plugin may or may not have an `A
 
 The key to writing a plugin for Flutter’s v2 Android embedding is to respect each plugin lifecycle callback that your plugin implements. As long as you wait until the right time to establish references, and you release those references at the appropriate time, your plugin will work as intended.
 
-<DashImage figure src="images/1I4K18qd0H98EZixwMmWGmg.png" />
+<DashImage figure src="images/1I4K18qd0H98EZixwMmWGmg.webp" />
 
 
 Some plugins, like a camera plugin, only make sense when an `Activity` is available. So what are these plugins to do? In the case of UI-only plugins, those plugins can wait until `onAttachedToActivity()` executes before doing any work. Then, in `onDetachedFromActivity()`, those plugins can clean up all references and essentially deactivate themselves. There is no requirement that a plugin do anything special within `onAttachedToFlutterEngine()`. It’s OK for a plugin to only do work when attached to an `Activity`.
@@ -298,7 +298,7 @@ So, how exactly do you create a *federated plugin*? Let’s start with some term
 
 * **platform interface package**: This is the glue that holds the *app-facing package* and the *platform packages* together. Whereas the *app-facing package* declares an API that can be called from a Flutter app, the *platform interface package* declares an interface that each *platform package* must implement in order to support the *app-facing package*. Having a single package that defines this interface ensures that all *platform packages* implement the same functionality in a uniform way.
 
-<DashImage figure src="images/1yM2BlF_ckdUzoDnSdAjPoA.png" />
+<DashImage figure src="images/1yM2BlF_ckdUzoDnSdAjPoA.webp" />
 
 
 The figure above shows the dependency graph between the app, the app-facing package, the platform packages, and the platform interface package. The app only ever imports the app-facing package (in this case `package:url_launcher`).

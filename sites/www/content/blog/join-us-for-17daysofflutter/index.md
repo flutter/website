@@ -3,12 +3,12 @@ title: "Join us for #17DaysOfFlutter"
 description: "Curated content leading up to the Flutter Forward event."
 publishDate: 2023-01-05
 author: shamiramarshall
-image: images/1cKk9QrcolzFfqB2ZWyUxSQ.png
+image: images/1cKk9QrcolzFfqB2ZWyUxSQ.webp
 category: events
 layout: blog
 ---
 
-<DashImage figure src="images/1cKk9QrcolzFfqB2ZWyUxSQ.png" alt="Banner for #17DaysOfFlutter" caption="Banner for #17DaysOfFlutter" />
+<DashImage figure src="images/1cKk9QrcolzFfqB2ZWyUxSQ.webp" alt="Banner for #17DaysOfFlutter" caption="Banner for #17DaysOfFlutter" />
 
 
 Happy 2023!

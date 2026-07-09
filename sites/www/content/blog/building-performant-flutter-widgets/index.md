@@ -3,7 +3,7 @@ title: "Building performant Flutter widgets"
 description: "This article is part of a series developed after the Flutter Material team worked on making the Flutter Gallery app more performant on the…"
 publishDate: 2020-07-23
 author: guidez
-image: images/0GWFHSeCrjUgPdkJ-.png
+image: images/0GWFHSeCrjUgPdkJ-.webp
 category: tutorial
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 By [Anthony Robledo](https://medium.com/@clocksmith) & [Pierre-Louis Guidez](https://medium.com/@guidez)
 
-<DashImage figure src="images/0GWFHSeCrjUgPdkJ-.png" />
+<DashImage figure src="images/0GWFHSeCrjUgPdkJ-.webp" />
 
 
 All stateless and stateful widgets implement `build()` methods that define how they’re rendered. A screen on an app can have hundreds or even thousands of widgets. These widgets may get built only once, or multiple times if there is an animation or some kind of interaction. While building widgets is relatively fast in Flutter, you must be vigilant in when and what you choose to build.
@@ -29,7 +29,7 @@ Calling `setState` schedules a `build()` method to be called. Doing this too oft
 
 Consider the following animation, where the display of the front (the black screen) is animated to slide down to reveal the back (the checkerboard), similar to how a [bottom sheet](https://material.io/components/sheets-bottom) might behave. The front widget is simple, but the back widget is busy:
 
-<DashImage figure src="images/0Bm6-mK_lPlO1deUS.gif" alt="A smooth animation" caption="A smooth animation" />
+<DashImage figure src="images/0Bm6-mK_lPlO1deUS.webp" alt="A smooth animation" caption="A smooth animation" />
 
 
 ```
@@ -72,7 +72,7 @@ This is not performant! Why not?
 
 Because the animation is doing unnecessary work.
 
-<DashImage figure src="images/0Q4WC3xmG1iRG1-lp.gif" alt="A janky animation" caption="A janky animation" />
+<DashImage figure src="images/0Q4WC3xmG1iRG1-lp.webp" alt="A janky animation" caption="A janky animation" />
 
 
 Here is the problematic code:
@@ -95,7 +95,7 @@ _animationController.addListener(() {
 
 * Calling `setState()` is actually not needed here!
 
-<DashImage figure src="images/0Zl3QkQlHJMoDkDQj.gif" />
+<DashImage figure src="images/0Zl3QkQlHJMoDkDQj.webp" />
 
 
 Even though the back widget is busy, it can animate smoothly at 60 FPS. For more on calling setState judiciously, see [Flutter Laggy Animations: How Not To setState](https://medium.com/flutter-community/flutter-laggy-animations-how-not-to-setstate-f2dd9873b8fc).
@@ -179,7 +179,7 @@ For more on lazily building lists, see [Slivers, Demystified](https://medium.com
 
 The Flutter Gallery supports over 100 locales; Those locales are listed using — you guessed it — a `ListView.builder`. By obtaining widget rebuild information, we noticed these list items were being built unnecessarily on startup. It was not obvious that these items were the culprit since they were in two levels of collapsed menus: the settings panel itself, and the locale expansion tile (as it turns out, the settings panel was rendered ‘invisible’ using a `ScaleTransition`, meaning it was very much being built).
 
-<DashImage figure src="images/0RtYWMsCJ83boCm6h.png" alt="Flutter Gallery settings panel with the locale options expanded" caption="Flutter Gallery settings panel with the locale options expanded" />
+<DashImage figure src="images/0RtYWMsCJ83boCm6h.webp" alt="Flutter Gallery settings panel with the locale options expanded" caption="Flutter Gallery settings panel with the locale options expanded" />
 
 
 By simply setting `ListView.builder`’s `itemCount` to 0 for non-expanded setting categories, we ensured that list items are only built for the expanded, visible category. The [one-line PR](https://github.com/flutter/gallery/pull/109/files) that resolved this issue improved render time on the web by more than 2x. The key was to identify excessive widget building.

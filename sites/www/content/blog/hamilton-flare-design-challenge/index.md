@@ -3,14 +3,14 @@ title: "Hamilton Flare Design Challenge"
 description: "The Flutter community continues to impress us and we constantly see new initiatives to help developers from around the world learn and…"
 publishDate: 2019-07-18
 author: aguinis
-image: images/0wAn4IQgexh-pkr6K.png
+image: images/0wAn4IQgexh-pkr6K.webp
 category: events
 layout: blog
 ---
 
 The Flutter community continues to impress us. We often see new initiatives to help developers from around the world learn and have fun with Flutter. [VeryGoodVentures](https://verygood.ventures/) just announced their first ever [Flare](https://www.2dimensions.com/about-flare) design challenge for the [Hamilton App](https://hamiltonmusical.com/app/), in partnership with [2Dimensions](https://www.2dimensions.com/). Check out [the official page](https://vgv.dev/hamappflare) of this contest for more details.
 
-<DashImage figure src="images/0wAn4IQgexh-pkr6K.png" />
+<DashImage figure src="images/0wAn4IQgexh-pkr6K.webp" />
 
 
 Hamilton was [one of the first apps built with Flutter](https://medium.com/flutter/video-hamilton-app-built-in-3-months-with-flutter-reaches-1m-installs-f37f81856be4). The app was built in 3 months, reached 1M+ installs, and was featured on the Apple App and Google Play stores. Here is a video we made about the app:
@@ -128,4 +128,4 @@ Need help finding something inspired by the Hamilton app to create with Flare? T
 
 Really any button, content, or interaction is fair game! Or just create something fun using Hamilton and its characters as your muse — think of it as interactive fan art!
 
-<DashImage figure src="images/0utEEfftXnEdaQlEF.png" />
+<DashImage figure src="images/0utEEfftXnEdaQlEF.webp" />

@@ -3,21 +3,21 @@ title: "Introducing Flutter 3"
 description: "The culmination of our journey to multiplatform UI development on phone, desktop, and web"
 publishDate: 2022-05-11
 author: timsneath
-image: images/0ZQ9Xa7CINFVMA95w.png
+image: images/0ZQ9Xa7CINFVMA95w.webp
 category: releases
 layout: blog
 ---
 
 *We’re delighted to announce the launch of Flutter 3 as part of the Google I/O keynote. Flutter 3 completes our roadmap from a mobile-centric to a multiplatform framework, with the availability of macOS and Linux desktop app support, along with improvements to Firebase integration, new productivity and performance features, and support for Apple Silicon.*
 
-<DashImage figure src="images/0ZQ9Xa7CINFVMA95w.png" />
+<DashImage figure src="images/0ZQ9Xa7CINFVMA95w.webp" />
 
 
 ## The journey to Flutter 3
 
 We started Flutter as an attempt to revolutionize app development: combining the iterative development model of the web with hardware-accelerated graphics rendering and pixel-level control that were previously the preserve of games. Over the last four years since Flutter 1.0 beta, we’ve gradually built on these foundations, adding new framework capabilities and new widgets, deeper integration with the underlying platforms, a rich library of packages and many performance and tooling improvements.
 
-<DashImage figure src="images/0pL2z2iYzWPrMu5hw.png" />
+<DashImage figure src="images/0pL2z2iYzWPrMu5hw.webp" />
 
 
 As the product has matured, more of you have started to build apps with it. Today there are over 500,000 apps built with Flutter. Analytics from research firms like [data.ai](https://www.data.ai/en/), along with public testimonials, show Flutter is used by a [broad list of customers](https://flutter.dev/showcase) in many segments: from social apps like [WeChat](https://play.google.com/store/apps/details?id=com.tencent.mm&hl=en_US&gl=US) to finance and banking apps like [Betterment](https://apps.apple.com/us/app/betterment-investing-saving/id393156562) and [Nubank](https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US&gl=US); from commerce apps like [SHEIN](https://play.google.com/store/apps/details?id=com.zzkko&hl=en_US&gl=US) and [trip.com](https://apps.apple.com/us/app/trip-com-hotels-flights-trains/id681752345) to lifestyle apps like [Fastic](https://fastic.com/) and [Tabcorp](https://auspreneur.com.au/tabcorp-adopts-googles-flutter-platform/); from companion apps like [My BMW](https://www.press.bmwgroup.com/global/article/detail/T0328610EN/the-my-bmw-app:-new-features-and-tech-insights-for-march-2021?language=en) to public institutions such as the [Brazil government](https://apps.apple.com/app/id1506827551).
@@ -56,7 +56,7 @@ In addition to the work mentioned above, with this version, Flutter is fully nat
 
 Our work for [Material Design 3](https://m3.material.io/) is largely complete in this release, allowing developers to take advantage of an adaptable, cross-platform design system that offers dynamic color schemes and updated visual components:
 
-<DashImage figure src="images/0LM_w2DE9aM-_9J0Z.png" />
+<DashImage figure src="images/0LM_w2DE9aM-_9J0Z.webp" />
 
 
 Our detailed technical blog post expands on these and the many other new features in Flutter 3.
@@ -77,12 +77,12 @@ In addition, we’ve made major improvements to support Flutter apps using Crash
 
 For most developers, Flutter is an app framework. But there’s also a growing community around casual game development, taking advantage of the hardware-accelerated graphics support provided by Flutter along with open source game engines like [Flame](https://flame-engine.org/). We want to make it easier for casual game developers to get started, so at I/O today we’re announcing the [Casual Games Toolkit](https://flutter.dev/games), which provides a starter kit of templates and best practices along with credits for ads and cloud services.
 
-<DashImage figure src="images/0wK4YI3N-Hh2vtDQ2.png" />
+<DashImage figure src="images/0wK4YI3N-Hh2vtDQ2.webp" />
 
 
 Although Flutter isn’t designed for high-intensity 3D action gaming, even some of those games have turned to Flutter for non-game UI, including popular games like [PUBG Mobile](https://play.google.com/store/apps/details?id=com.tencent.ig) that have hundreds of millions of users. And for I/O we thought we’d see how far we could push our technology, so we’ve created a fun pinball game that is powered by Firebase and Flutter’s web support. I/O Pinball provides a custom table designed around four of Google’s favorite mascots: Flutter’s Dash, Firebase’s Sparky, the Android robot, and the Chrome dinosaur, and lets you compete with others for the high score. We think it’s a fun way to showcase Flutter’s versatility.
 
-<DashImage figure src="images/087xQ1AYdEF2YrmQ1.png" />
+<DashImage figure src="images/087xQ1AYdEF2YrmQ1.webp" />
 
 
 ## Sponsored by Google, powered by community
@@ -98,4 +98,4 @@ We put together this video to showcase some of our favorite submissions and priz
 
 Thank you for your support of Flutter, and welcome to Flutter 3!
 
-<DashImage figure src="images/1mt5JTb-02GrFFtCnW20Tqg.png" />
+<DashImage figure src="images/1mt5JTb-02GrFFtCnW20Tqg.webp" />

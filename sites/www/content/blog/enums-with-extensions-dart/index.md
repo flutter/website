@@ -3,7 +3,7 @@ title: "Enums with Extensions Dart"
 description: "About the author: Jose recently graduated from university and now works on Material, a design system that helps teams build high-quality…"
 publishDate: 2020-07-17
 author: josealba
-image: images/1j9632GFfT3IT7sfeiHUZtw.png
+image: images/1j9632GFfT3IT7sfeiHUZtw.webp
 category: spotlight
 layout: blog
 ---
@@ -12,7 +12,7 @@ layout: blog
 
 How to write cleaner code using extension methods in Dart
 
-<DashImage figure src="images/1j9632GFfT3IT7sfeiHUZtw.png" alt="Example of Dart code using an extension method" caption="Example of Dart code using an extension method" />
+<DashImage figure src="images/1j9632GFfT3IT7sfeiHUZtw.webp" alt="Example of Dart code using an extension method" caption="Example of Dart code using an extension method" />
 
 
 Dart has recently released support for extension methods, which means that you can now use this awesome feature. This article describes one example of how I use extension methods in my Flutter code.

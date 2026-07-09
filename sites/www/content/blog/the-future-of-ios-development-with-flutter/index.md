@@ -3,7 +3,7 @@ title: "The future of iOS development with Flutter"
 description: "Our recent accomplishments and future priorities for making Flutter a better tool for developing iOS apps"
 publishDate: 2023-05-18
 author: leighajarett
-image: images/1OGs9_siPcMAYd1yDAp-AOA.png
+image: images/1OGs9_siPcMAYd1yDAp-AOA.webp
 category: announcements
 layout: blog
 ---
@@ -21,14 +21,14 @@ Today, I want to tell you about some recent improvements to Flutter and our futu
 
 Flutter has seen success across various industries and categories for iOS development. Large enterprises like [BMW](https://apps.apple.com/us/app/my-bmw/id1519457734), [Sonos](https://apps.apple.com/us/app/sonos/id1488977981), and [Nubank](https://apps.apple.com/us/app/nubank-conta-e-cart%C3%A3o/id814456780) build their digital experiences with Flutter.
 
-<DashImage figure src="images/1OGs9_siPcMAYd1yDAp-AOA.png" />
+<DashImage figure src="images/1OGs9_siPcMAYd1yDAp-AOA.webp" />
 
 
 Tech giants like [WeChat](https://apps.apple.com/us/app/wechat/id414478124) and [PUBG MOBILE](https://www.youtube.com/watch?v=03ETVuWZiBc) use Flutter to support over one billion active users. Smaller companies have also capitalized on Flutter’s quick development cycle. One example would be [BrickIt](https://apps.apple.com/us/app/brickit-app/id1477221636) which uses machine learning to suggest new LEGO brick creations.
 
 Apple and other tech leaders have even recognized Flutter iOS apps. [Wonderous](http://wonderous.app), Flutter’s reference app, was [nominated for a Webby in design](https://winners.webbyawards.com/2023/apps-dapps-and-software/app-features/best-user-interface/239934/wonderous). Apple accepted [Reflection.app](https://flutter.dev/showcase/reflectionapp) to its prestigious accelerator program. [So Vegan](https://flutter.dev/showcase/so-vegan) was awarded Apple’s App of the Day *several* times.
 
-<DashImage figure src="images/14QurT4QkFUMSNCSFtfOzxg.png" />
+<DashImage figure src="images/14QurT4QkFUMSNCSFtfOzxg.webp" />
 
 
 ## Recent enhancements
@@ -44,13 +44,13 @@ Impeller, our purpose-built rendering engine, now serves as the default for Flut
 
 Impeller also simplifies adding new features. These features range from wide gamut image support to custom rendering solutions. We demonstrated one such custom rendering solution, a proof of concept for 3D support, at [Flutter Forward.](https://www.youtube.com/watch?v=goL7tvLQ7Dw)
 
-<DashImage figure src="images/0MUGkFV9MRrcT7-68.png" />
+<DashImage figure src="images/0MUGkFV9MRrcT7-68.webp" />
 
 
-<DashImage figure src="images/0YnEEnzt7QIuuxofn.png" />
+<DashImage figure src="images/0YnEEnzt7QIuuxofn.webp" />
 
 
-<DashImage figure src="images/04Mb0dUry2lkuUvXI.png" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." />
+<DashImage figure src="images/04Mb0dUry2lkuUvXI.webp" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." />
 
 
 ### **Developer Experience Enhancements**
@@ -68,12 +68,12 @@ The [Cupertino library](https://docs.flutter.dev/ui/widgets/cupertino) provides 
 
 We’ve addressed top-voted issues and added new widgets like [CupertinoCheckbox](https://api.flutter.dev/flutter/cupertino/CupertinoCheckbox-class.html), [CupertinoRadio](https://api.flutter.dev/flutter/cupertino/CupertinoRadio-class.html), [CupertinoListTile](https://api.flutter.dev/flutter/cupertino/CupertinoListTile-class.html) and spell check support on text input fields.
 
-<DashImage figure src="images/1qYEQdMvlHvAFS1biiH6phg.png" alt="Automatic iOS style spell check on TextField and CupertinoTextField" caption="Automatic iOS style spell check on TextField and CupertinoTextField" />
+<DashImage figure src="images/1qYEQdMvlHvAFS1biiH6phg.webp" alt="Automatic iOS style spell check on TextField and CupertinoTextField" caption="Automatic iOS style spell check on TextField and CupertinoTextField" />
 
 
 In addition, we recognize the importance of cross-platform design. We’ve added [adaptive constructors](https://docs.flutter.dev/resources/platform-adaptations#ui-components) to several Material widgets. This allows your Flutter app to adapt between Android and iOS design conventions. For common widgets *without* adaptive constructors, we’ve created [preliminary guides](https://docs.flutter.dev/resources/platform-adaptations#top-app-bar-and-navigation-bar) to give you code snippets to adapt entire widgets or widget properties.
 
-<DashImage figure src="images/1rBWjG-4wCqJlY98oPeADrw.png" />
+<DashImage figure src="images/1rBWjG-4wCqJlY98oPeADrw.webp" />
 
 
 ## *Roadmap*
@@ -88,7 +88,7 @@ A few months ago, we launched [FFIgen](https://pub.dev/packages/ffigen). This to
 
 Furthermore, we know the importance of [app extensions](https://developer.apple.com/app-extensions/) within the iOS ecosystem. That’s why we’re developing a way to create the user interface (UI) for some extensions using Flutter. This will enable developers to reuse components from their Flutter app to design their extension’s interface. It’s worth noting that this approach won’t work for all types of extensions. WidgetKit widgets, for instance, have strict API restrictions. However, it will work for other common extensions such as [Share](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html#//apple_ref/doc/uid/TP40014214-CH12-SW1) or [iMessage](https://developer.apple.com/documentation/messages). To keep up with our progress, you can follow [this work in this Flutter Github issue](https://github.com/flutter/flutter/issues/124287).
 
-<DashImage figure src="images/1K2e5QrjXtv0bCU35H_uRkw.gif" alt="A proof of concept for a Flutter app running as an iOS share extension" caption="A proof of concept for a Flutter app running as an iOS share extension" />
+<DashImage figure src="images/1K2e5QrjXtv0bCU35H_uRkw.webp" alt="A proof of concept for a Flutter app running as an iOS share extension" caption="A proof of concept for a Flutter app running as an iOS share extension" />
 
 
 ### **Cross-platform design**

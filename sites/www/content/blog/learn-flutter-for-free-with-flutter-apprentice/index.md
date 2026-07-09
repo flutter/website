@@ -3,12 +3,12 @@ title: "Learn Flutter for free with Flutter Apprentice!"
 description: "A free book for learning Flutter, available for a time-limited period."
 publishDate: 2021-10-06
 author: sfshaza2
-image: images/1AvOHYfnMrCR81c4GltakzQ.png
+image: images/1AvOHYfnMrCR81c4GltakzQ.webp
 category: tutorial
 layout: blog
 ---
 
-<DashImage figure src="images/1AvOHYfnMrCR81c4GltakzQ.png" />
+<DashImage figure src="images/1AvOHYfnMrCR81c4GltakzQ.webp" />
 
 
 We’ve heard from many folk that they want to learn Flutter, but don’t know where to start. So we have some great news for you — we’re giving away a free book for the next three months, along with a book club to help track your progress and answer questions.
@@ -19,7 +19,7 @@ Flutter Apprentice comes from [Razeware](https://www.raywenderlich.com/), the te
 
 Flutter Apprentice is a practical book, with lots of examples to follow and code that you can put to use in your own apps. And it’s based on the very latest Flutter 2.5 release and the latest features in the Dart language. Whether you’re an experienced developer looking to deepen your understanding of Flutter’s more advanced features, or you’re new to app development and interested in adding Flutter to your front-end development toolkit, we think you’ll find plenty of useful content .
 
-<DashImage figure src="images/1n9wUoadF-zJLDqvZ09oXvw.png" />
+<DashImage figure src="images/1n9wUoadF-zJLDqvZ09oXvw.webp" />
 
 
 **Learn Together**

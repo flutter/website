@@ -3,7 +3,7 @@ title: "Optimizing performance in Flutter web apps with tree shaking and deferre
 description: "For the best user experience it is important that an app loads fast. The initial load time of a Flutter web application can be improved by…"
 publishDate: 2020-05-19
 author: perclasson
-image: images/0Z8CmvWbWVXUb9Wy4.png
+image: images/0Z8CmvWbWVXUb9Wy4.webp
 category: tutorial
 layout: blog
 ---
@@ -93,7 +93,7 @@ FutureBuilder(
 
 To try it yourself (see a [full example on GitHub](https://github.com/perclasson/flutter_code/tree/master/deferred_loading)), open Chrome DevTools and click the [**Network** tab](https://developers.google.com/web/tools/chrome-devtools/network) to inspect network activity. Reload the page to see when the library is loaded and imported. In the following screenshot, loading the `main.dart.js_1.part.js` file is deferred:
 
-<DashImage figure src="images/0Z8CmvWbWVXUb9Wy4.png" />
+<DashImage figure src="images/0Z8CmvWbWVXUb9Wy4.webp" />
 
 
 ## Deferred loading of localizations in the Flutter Gallery

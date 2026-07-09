@@ -3,7 +3,7 @@ title: "Directional animations with built-in explicit animations"
 description: "Hi! In our previous episodes, we learned how to do some awesome animations using Flutter’s implicit animations. AnimatedFoo and…"
 publishDate: 2020-01-10
 author: fitzface
-image: images/01xmX3Sfp_rLOAwwl.png
+image: images/01xmX3Sfp_rLOAwwl.webp
 category: tutorial
 layout: blog
 ---
@@ -22,7 +22,7 @@ But, what does that really mean for us as app developers? Let’s step through w
 
 Here, we’ll be creating an animation of galactic proportions, using this starting image. But, in this initial unanimated state, it doesn’t feel very galactic. Our first quest: to mix in some rotation.
 
-<DashImage figure src="images/01xmX3Sfp_rLOAwwl.png" alt="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" caption="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" />
+<DashImage figure src="images/01xmX3Sfp_rLOAwwl.webp" alt="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" caption="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" />
 
 
 ## `RotationTransition` as an example
@@ -63,17 +63,17 @@ RotationTransition(
 
 Last, what is this mysteriously named turns property? The API docs tell us this is… an `Animation`?!? Weren’t we creating an animation?
 
-<DashImage figure src="images/06d-qda9iAUu26wjA.png" alt="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" caption="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" />
+<DashImage figure src="images/06d-qda9iAUu26wjA.webp" alt="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" caption="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" />
 
 
 Not to worry! This is part of what makes `RotationTransition`, and all the other Transition widgets, an explicit animation. We *could* accomplish the same rotation effect with an `AnimatedContainer` and a transform, but then we’d rotate once and then stop. With our explicit animations, we have control of time and can make it so that our galaxy never stops spinning.
 
-<DashImage figure src="images/0WOcQ1I3-ThMzDyld.gif" alt="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" caption="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" />
+<DashImage figure src="images/0WOcQ1I3-ThMzDyld.webp" alt="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" caption="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" />
 
 
 The turns property expects something that gives it a value and notifies it when that value changes. An `Animation&lt;double&gt;` is just that. For `RotationTransition`, the value corresponds to how many times we’ve turned, or more specifically, the percentage of one rotation completed.
 
-<DashImage figure src="images/0VO7YjLAkYQsVLIWj.png" alt="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" caption="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" />
+<DashImage figure src="images/0VO7YjLAkYQsVLIWj.webp" alt="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" caption="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" />
 
 
 ## Creating an AnimationController
@@ -212,12 +212,12 @@ class TimeStopper extends StatelessWidget {
 
 With it, you can also animate to (or backwards from) a specific value, fling the animation forward with a given velocity, or control multiple animations with the same controller.
 
-<DashImage figure src="images/0UjrF-d2-BWLQyfEo.gif" alt="*Keeping your galaxy clean of unwanted rockets.*" caption="*Keeping your galaxy clean of unwanted rockets.*" />
+<DashImage figure src="images/0UjrF-d2-BWLQyfEo.webp" alt="*Keeping your galaxy clean of unwanted rockets.*" caption="*Keeping your galaxy clean of unwanted rockets.*" />
 
 
 This was just our first taste of explicit animations in Flutter. We saw how a Transition widget works with `AnimationController`, to provide some directionality and control over how our animation works. In future posts, we’ll be diving deeper into explicit animations and how to get even more customized.
 
-<DashImage figure src="images/0eSjSmRfA6LMzx_Yc.gif" alt="*When the galaxy stops, everything stops*" caption="*When the galaxy stops, everything stops*" />
+<DashImage figure src="images/0eSjSmRfA6LMzx_Yc.webp" alt="*When the galaxy stops, everything stops*" caption="*When the galaxy stops, everything stops*" />
 
 
 1. *Galactic ticks are hard to hear, but AnimationController and TickerProviders help.*

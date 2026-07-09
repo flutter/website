@@ -3,7 +3,7 @@ title: "What are the important & difficult tasks for Flutter devs? — Q1 20
 description: "Written by JaYoung Lee and Youyang Hou"
 publishDate: 2020-05-15
 author: jayoung-lee
-image: images/0OfKgvG4OS6Jt7Wum.png
+image: images/0OfKgvG4OS6Jt7Wum.webp
 category: announcements
 layout: blog
 ---
@@ -18,7 +18,7 @@ First, we learned that users are more satisfied with Flutter’s core framework 
 
 Next, about half of the respondents said that they’ve published apps with Flutter (51%). This number has been continuously growing — about a year ago, it was 34%. Those who published an app had a higher satisfaction rate with Flutter than those who haven’t.
 
-<DashImage figure src="images/0cqbZUVzw4XSlZyJR.png" alt="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" caption="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" />
+<DashImage figure src="images/0cqbZUVzw4XSlZyJR.webp" alt="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" caption="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" />
 
 
 Similarly, when we asked about their primary purpose for using Flutter, 48% of the respondents said that they are using Flutter for their main job. This number is also growing. A year ago, it was 30%. The number of users evaluating Flutter for potential production use has been decreasing, from 36% in 2019 to 25% in 2020. This implies that many of the users have completed evaluation and adopted Flutter for more serious purposes.
@@ -33,7 +33,7 @@ Some of the survey respondents were invited to take a longer survey. As a result
 
 We structured the survey so that a random half of the selected respondents were asked which of the tasks are important to them, and another half of the respondents were asked which of the tasks are difficult to accomplish. By dividing the respondents into two groups (aka “between-subject design”), we were able to reduce the total number of questions asked to each person. Also, by asking users to rate the importance and difficulty of the tasks, we are able to identify top priority tasks that are both important and difficult to Flutter developers. Below is the quadrant that the team used to decide what to do with each of the tasks.
 
-<DashImage figure src="images/0vABPU2mLHiRog8Vw.png" alt="*Importance-difficulty quadrant supports decision making.*" caption="*Importance-difficulty quadrant supports decision making.*" />
+<DashImage figure src="images/0vABPU2mLHiRog8Vw.webp" alt="*Importance-difficulty quadrant supports decision making.*" caption="*Importance-difficulty quadrant supports decision making.*" />
 
 
 The following tasks were ranked to be the top 6 most important tasks. It is notable that the important tasks were widely spread across different stages of app development, from performance and testing to UI development.
@@ -50,7 +50,7 @@ The following tasks were ranked to be the top 6 most important tasks. It is nota
 
 * Troubleshoot platform-specific issues with my Flutter app
 
-<DashImage figure src="images/0OfKgvG4OS6Jt7Wum.png" alt="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
+<DashImage figure src="images/0OfKgvG4OS6Jt7Wum.webp" alt="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
 
 
 The tasks below were ranked to be the top 6 most difficult tasks. We found several tasks related to troubleshooting and performance are difficult for Flutter professional developers. Most of the UI-related tasks were rated to be not very difficult.
@@ -67,7 +67,7 @@ The tasks below were ranked to be the top 6 most difficult tasks. We found sever
 
 * Develop a Flutter plugin (with a platform-specific implementation)
 
-<DashImage figure src="images/0nPtVnwI_F22HmC_F.png" alt="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
+<DashImage figure src="images/0nPtVnwI_F22HmC_F.webp" alt="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
 
 
 As you can see, some tasks appeared in the list of both highly important and difficult tasks (such as “troubleshooting platform-specific issues with my Flutter app”). This knowledge is valuable to the Flutter team, because they can prioritize these areas based on user input, and not by guesswork.

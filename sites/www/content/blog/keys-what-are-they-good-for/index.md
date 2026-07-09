@@ -370,7 +370,7 @@ return TodoItem(
 
 In a different scenario, perhaps you had an address book app that listed information about each user. In this case each child widget stores a more complex combination of data. Any of the individual fields, like a first name or birthday might be the same as another entry, but the combination is unique. In this scenario, an **`ObjectKey`** is probably most appropriate.
 
-<DashImage figure src="images/1vZV_QjG1GEg7nJILMbhEkA.png" />
+<DashImage figure src="images/1vZV_QjG1GEg7nJILMbhEkA.webp" />
 
 
 If you have multiple widgets in your collection with the same value or if you want to really ensure each widget is distinct from *all* others, you can use the **`UniqueKey`**. I used a `UniqueKey` in the example color-switching app because we didn’t have any other constant data that we’re storing in our tiles, and we don’t know what the color will be when we construct the widget. Be careful with `UniqueKey` though! If you construct a new`UniqueKey` inside a `build` method, the widget using that key will get a different, *unique* key every time you the build method re-executes. This will eliminate any benefits of using keys!

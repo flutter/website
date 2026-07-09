@@ -3,7 +3,7 @@ title: "What’s new in Flutter 3.3"
 description: "Exciting updates for text handling, performance improvements, and more!"
 publishDate: 2022-08-30
 author: itsjustkevin
-image: images/04Mac8uQL3ynXVIuD.gif
+image: images/04Mac8uQL3ynXVIuD.webp
 category: releases
 layout: blog
 ---
@@ -22,7 +22,7 @@ Until now, Flutter web apps didn’t match the expected behavior when attempting
 
 Today that all changes! With the introduction of the `SelectableArea` widget, any child of the `SelectableArea` widget has selection enabled for free!
 
-<DashImage figure src="images/04Mac8uQL3ynXVIuD.gif" />
+<DashImage figure src="images/04Mac8uQL3ynXVIuD.webp" />
 
 
 To take advantage of this powerful new feature, simply wrap your route body (such as the `Scaffold`) with the `SelectionArea` widget and let Flutter do the rest.
@@ -61,7 +61,7 @@ For more information, see the[ Flutter Trackpad Gesture](https://docs.google.com
 
 Thanks to the amazing contributions of community member [fbcouch](https://github.com/fbcouch), Flutter now supports [Scribble](https://support.apple.com/guide/ipad/enter-text-with-scribble-ipad355ab2a7/ipados) handwriting input using the Apple Pencil on iPadOS. This feature is enabled by default on `CupertinoTextField`, `TextField`, and `EditableText`. To enable this feature for your end users, simply upgrade to Flutter 3.3.
 
-<DashImage figure src="images/0SlsnQUfdOTijdsyF.gif" />
+<DashImage figure src="images/0SlsnQUfdOTijdsyF.webp" />
 
 
 ### Text input
@@ -76,20 +76,20 @@ To monitor the progress on the Material Design 3 migration, check out [Bring Mat
 
 ### IconButton
 
-<DashImage figure src="images/0AxLlKvPfaiODtzch.png" />
+<DashImage figure src="images/0AxLlKvPfaiODtzch.webp" />
 
 
 ### Chip
 
-<DashImage figure src="images/05fCsX84PRpjMtzx5.png" />
+<DashImage figure src="images/05fCsX84PRpjMtzx5.webp" />
 
 
 ### Medium and large AppBar
 
-<DashImage figure src="images/0jVFZWFsCOuzeqzTb.gif" />
+<DashImage figure src="images/0jVFZWFsCOuzeqzTb.webp" />
 
 
-<DashImage figure src="images/0c4wovLXB8TpulHVU.gif" />
+<DashImage figure src="images/0c4wovLXB8TpulHVU.webp" />
 
 
 ## Desktop
@@ -116,7 +116,7 @@ For more information, check out the [Navigation and routing](https://docs.flutte
 
 The Visual Studio Code extension for Flutter has several updates including improvements for adding dependencies. You can now add multiple, comma-separated dependencies in one step using **Dart: Add Dependency**.
 
-<DashImage figure src="images/0vFIZ4WL4UWSTrC27.gif" />
+<DashImage figure src="images/0vFIZ4WL4UWSTrC27.webp" />
 
 
 You can read about the Visual Studio Code extension enhancements made since the last Flutter stable release at:
@@ -147,7 +147,7 @@ This release increases the performance of loading images from assets by eliminat
 
 With [the addition](https://github.com/flutter/engine/pull/32999) of `ui.ImmutableBuffer.fromAsset`, compressed image bytes can be loaded directly into the structure used for decoding. This approach [requires changes](https://github.com/flutter/flutter/pull/103496) to the byte loading pipeline of `ImageProviders`. This process is also faster, because it bypasses some additional scheduling overhead required bythe previous method channel-based loader. In particular, image loading time improved by nearly 2x in our microbenchmarks.
 
-<DashImage figure src="images/0dZTaQMQri0EI7HCw.png" />
+<DashImage figure src="images/0dZTaQMQri0EI7HCw.webp" />
 
 
 For more information and a migration guide, see [Adding ImageProvider.loadBuffer](https://docs.flutter.dev/release/breaking-changes/image-provider-load-buffer) on docs.flutter.dev.
@@ -194,7 +194,7 @@ Bitcode [will no longer be accepted for iOS app submission in the upcoming Xcode
 
 By default, Flutter apps don’t have bitcode enabled, and we don’t expect this to impact many developers. However, if you have enabled bitcode manually in your Xcode project, disable it as soon as you upgrade to Xcode 14. You can do so by opening `ios/Runner.xcworkspace` and setting the build setting **Enable Bitcode** to **No**. Add-to-app developers should disable it in the host Xcode project.
 
-<DashImage figure src="images/04EQPd4ednGIAhMwl.png" />
+<DashImage figure src="images/04EQPd4ednGIAhMwl.webp" />
 
 
 See [Apple’s documentation](https://help.apple.com/xcode/mac/11.0/index.html?localePath=en.lproj#/devde46df08a) to learn more about bitcode distribution.

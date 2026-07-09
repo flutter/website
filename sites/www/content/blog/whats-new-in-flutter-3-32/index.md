@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.32"
 description: "Hot reload on web, native fidelity, and deeper integrations"
 publishDate: 2025-05-20
 author: itsjustkevin
-image: images/1FTpRgnrZGMzzCjEl4sCmiw.png
+image: images/1FTpRgnrZGMzzCjEl4sCmiw.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1FTpRgnrZGMzzCjEl4sCmiw.png" />
+<DashImage figure src="images/1FTpRgnrZGMzzCjEl4sCmiw.webp" />
 
 
 ## What’s new in Flutter 3.32
@@ -77,7 +77,7 @@ This release introduces a new [`Expansible`](https://main-api.flutter.dev/flutte
 
 Another valuable addition in this release is [`RawMenuAnchor`](https://main-api.flutter.dev/flutter/widgets/RawMenuAnchor-class.html), contributed by community member [@davidhicks980](http://github.com/davidhicks980). This widget now serves as the underlying building block for the Material-styled [`MenuAnchor`](https://main-api.flutter.dev/flutter/material/MenuAnchor-class.html), paving the way for the creation of menus with diverse visual themes. Furthermore, `RawMenuAnchor` can be used independently as an unstyled menu, granting you full control over its appearance.
 
-<DashImage figure src="images/0uHuGHM5dYCTkF_Vz.png" />
+<DashImage figure src="images/0uHuGHM5dYCTkF_Vz.webp" />
 
 
 Refactors like these add better support for core widgets to be used in the implementation of design languages like Cupertino and Material (and more!) with more consistent surfaces and code sharing.
@@ -111,24 +111,24 @@ There were also several issues addressed with the Cupertino sheet, including fix
 
 The sheet was adjusted to fix the navigation bar’s height and ensure content isn’t cut off at the bottom. The following screenshot demonstrates before and after this change.
 
-<DashImage figure src="images/0JjkFrjtxjh5tQmql.png" />
+<DashImage figure src="images/0JjkFrjtxjh5tQmql.webp" />
 
 
-<DashImage figure src="images/0YCBMHZS_mi2vJ92S.png" />
+<DashImage figure src="images/0YCBMHZS_mi2vJ92S.webp" />
 
 
 Other fixes in this release include an issue where the sheet transition was incompatible with `PopupMenuButton`, and the rounded corner transition of the sheet was improved to look correct on more devices. Previously, it looked incorrect on some screens with different corner radii.
 
 You can also now use the new [`enableDrag`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute/enableDrag.html) argument on [`CupertinoSheetRoute`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute-class.html) and [`showCupertinoSheet`](https://main-api.flutter.dev/flutter/cupertino/showCupertinoSheet.html) to disable the Cupertino bottom sheet’s drag-down-to-dismiss behavior. ([#163923](https://github.com/flutter/flutter/pull/163923)**)**
 
-<DashImage figure src="images/1iEWYohD1vd7FMpPWvK2__A.gif" />
+<DashImage figure src="images/1iEWYohD1vd7FMpPWvK2__A.webp" />
 
 
 **Navigation bars**
 
 [`CupertinoSliverNavigationBar.search`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar/CupertinoSliverNavigationBar.search.html) sees fidelity improvements to its animation while opening or closing the search view, as well as correct alignment of the search field’s prefix and suffix icons.
 
-<DashImage figure src="images/0R1tsiciz-w7OdOjr.gif" />
+<DashImage figure src="images/0R1tsiciz-w7OdOjr.webp" />
 
 
 Finally, the transition between routes with `CupertinoNavigationBars` or `CupertinoSliverNavigationBars` has been updated to match the latest iOS transitions ([#164956](https://github.com/flutter/flutter/pull/164956)).
@@ -141,22 +141,22 @@ The feature enhancements include:
 
 * The `CarouselController` provides a more convenient [`animateToIndex`](https://github.com/flutter/flutter/pull/162694) method, enabling a smooth, index-based navigation for carousels, whether with fixed- or dynamically-sized items using `flexWeights`.
 
-<DashImage figure src="images/0nT-5bpsRVyZELaTq.gif" />
+<DashImage figure src="images/0nT-5bpsRVyZELaTq.webp" />
 
 
 * TabBar now has [`onHover`](https://main-api.flutter.dev/flutter/material/TabBar/onHover.html) and [`onFocusChange`](https://main-api.flutter.dev/flutter/material/TabBar/onFocusChange.html) callbacks, giving you more control over the widget’s appearance in different states.
 
-<DashImage figure src="images/0nFVGZ5PG6gTqc_F7.gif" />
+<DashImage figure src="images/0nFVGZ5PG6gTqc_F7.webp" />
 
 
 * `SearchAnchor` and `SearchAnchor.bar` now include [`viewOnOpen` and `onOpen`](https://github.com/flutter/flutter/pull/164541) callbacks respectively, allowing for better observation and handling of open/close events.
 
-<DashImage figure src="images/0H9mW79LCQEJBJ_i2.gif" />
+<DashImage figure src="images/0H9mW79LCQEJBJ_i2.webp" />
 
 
 * [`CalendarDatePicker`](https://main-api.flutter.dev/flutter/material/CalendarDatePicker-class.html) now accepts a [`calendarDelegate`](https://main-api.flutter.dev/flutter/material/CalendarDatePicker/calendarDelegate.html) to enable the integration of custom calendar logic beyond the Gregorian Calendar System. The example demonstrates a hypothetical calendar system where even-numbered months have 21 days, odd-numbered months have 28 days, and every month starts on a Monday, showcasing the flexibility this delegate offers.
 
-<DashImage figure src="images/0uqbdwtRR2oryyhJy.gif" />
+<DashImage figure src="images/0uqbdwtRR2oryyhJy.webp" />
 
 
 Other minor enhancements include adding [`animationStyle`](https://github.com/flutter/flutter/pull/164002) to `showDialog`, `showAdaptiveDialog`, and `DialogRoute` to customize the animation when the dialog is opened and closed; `Divider` now accepts a [`borderRadius`](https://main-api.flutter.dev/flutter/material/Divider/radius.html) to allow customizing the border of the divider, especially when the divider is thick.
@@ -282,10 +282,10 @@ Finally, Flutter 3.27 has a number of rendering bugs and crashes related to Impe
 
 This release improves Impeller’s text rendering. Notably, text animations are smoother with less jitter thanks to higher resolution glyphs in Impeller’s glyph atlas, and fixing rounding errors in floating point calculations. More details can be found in [flutter#149652](https://github.com/flutter/flutter/issues/149652).
 
-<DashImage figure src="images/0yGjm9dQU4oCG5XwG.gif" alt="Before" caption="Before" />
+<DashImage figure src="images/0yGjm9dQU4oCG5XwG.webp" alt="Before" caption="Before" />
 
 
-<DashImage figure src="images/0s1EWYhGX9j4qOWB1.gif" alt="After" caption="After" />
+<DashImage figure src="images/0s1EWYhGX9j4qOWB1.webp" alt="After" caption="After" />
 
 
 This release also includes a variety of other fidelity and performance improvements, including:
@@ -304,10 +304,10 @@ This release also includes a variety of other fidelity and performance improveme
 
 Easily edit widget properties and read documentation from the new Property Editor tool, which is accessible from the Flutter Property Editor sidebar panel ([VS Code](https://docs.flutter.dev/tools/vs-code#property-editor)) or tool window ([Android Studio / IntelliJ](https://docs.flutter.dev/tools/android-studio#property-editor)).
 
-<DashImage figure src="images/0ZbSuN_xSc7pXkUyC.png" alt="VSCode" caption="VSCode" />
+<DashImage figure src="images/0ZbSuN_xSc7pXkUyC.webp" alt="VSCode" caption="VSCode" />
 
 
-<DashImage figure src="images/0KoBkOexQ6DyQdnQt.png" alt="Android Studio & IntelliJ" caption="Android Studio & IntelliJ" />
+<DashImage figure src="images/0KoBkOexQ6DyQdnQt.webp" alt="Android Studio & IntelliJ" caption="Android Studio & IntelliJ" />
 
 
 ### **DevTools improvements**
@@ -351,14 +351,14 @@ Many of you asked to use the Gemini Developer API, instead of Vertex AI, to take
 
 Check out the [`firebase_ai`](https://pub.dev/packages/firebase_ai) package for the new functionality. If you’re already using the [`firebase_vertexai`](https://pub.dev/packages/firebase_vertexai) package, it will continue to work as-is for now, but we encourage you to migrate to the new package.
 
-<DashImage figure src="images/0HlInLfTOQSZ3n-NG.png" />
+<DashImage figure src="images/0HlInLfTOQSZ3n-NG.webp" />
 
 
 ### **Gain Actionable Insights with AI Monitoring dashboard**
 
 The new AI Monitoring dashboard in the Firebase console provides detailed, actionable insights into your Gemini API usage. This includes comprehensive visibility into consumption patterns, performance metrics, and potential issues. This enables data-driven decisions and ensures that you’re using the Gemini APIs in the most efficient way. AI Monitoring also helps you to debug your Gemini API usage, and identify and address any unexpected behaviors.
 
-<DashImage figure src="images/0d7zwnDUZqn9bgnoS.gif" />
+<DashImage figure src="images/0d7zwnDUZqn9bgnoS.webp" />
 
 
 ## Breaking changes and deprecations

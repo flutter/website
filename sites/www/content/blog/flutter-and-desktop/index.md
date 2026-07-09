@@ -3,7 +3,7 @@ title: "Flutter and Desktop"
 description: "Ongoing progress towards an ambient computing vision"
 publishDate: 2020-06-17
 author: timsneath
-image: images/0OLMhLy7-b-4BisTc.png
+image: images/0OLMhLy7-b-4BisTc.webp
 category: announcements
 layout: blog
 ---
@@ -14,7 +14,7 @@ It’s no secret that our mission for Flutter is to target a broad variety of de
 
 Many of you are interested in progress on desktop operating systems including Windows, macOS, and Linux: in surveys and on GitHub, desktop is repeatedly one of the most popular new features. Over the coming weeks, we’re going to show off more of our work here, and we thought we’d start by surveying some of the work from various feature teams that contribute towards the overall project. While desktop support is currently a technical preview, there’s been plenty of work going on.
 
-<DashImage figure src="images/0OLMhLy7-b-4BisTc.png" />
+<DashImage figure src="images/0OLMhLy7-b-4BisTc.webp" />
 
 
 ## Release Mode
@@ -65,7 +65,7 @@ showMessageBox('Test Message', 'Window Caption'); // call just like any other Da
 
 In this code, we provide `typedef`s that represent the method signature both in its native and Dart-based representations. With these defined, we can load the Windows dynamic link library (DLL) that provides the implementation of the function via the `lookupFunction()` method, which maps the Dart function signature onto the underlying native entrypoint. Lastly, we optionally add a simple idiomatic wrapper to make it easily accessible from other Dart code, resulting in something like this:
 
-<DashImage figure src="images/0rCBxqUkuMqFvPvq4.png" alt="A simple Windows example app that uses the Win32 `MessageBox` API" caption="A simple Windows example app that uses the Win32 `MessageBox` API" />
+<DashImage figure src="images/0rCBxqUkuMqFvPvq4.webp" alt="A simple Windows example app that uses the Win32 `MessageBox` API" caption="A simple Windows example app that uses the Win32 `MessageBox` API" />
 
 
 You don’t have to do this work yourself, of course: chances are that [someone has already paved the way for the API that you want to use](https://pub.dev/packages/win32). You can [read more about using FFI from Flutter in our docs](https://flutter.dev/docs/development/platform-integration/c-interop).
@@ -86,7 +86,7 @@ Note that the Windows and Linux plugin APIs are still in flux, so while we encou
 
 One interesting aspect of the work that we’ve been doing on Windows is experimenting with various architectural approaches. On any platform, Flutter is embedded into a small host container app (an “embedder”), using a similar approach to game engines like Unity. This platform-specific embedder provides an entrypoint, coordinates with the underlying operating system for access to services like rendering surfaces, accessibility and input, and manages the message event loop.
 
-<DashImage figure src="images/1tCqp0X4-8_yDjhbtVbqx-w.png" />
+<DashImage figure src="images/1tCqp0X4-8_yDjhbtVbqx-w.webp" />
 
 
 Windows offers two distinct approaches for creating this embedder. First, the mature Win32 programming model can be used to create the entrypoint for Flutter content; this offers maximum backwards compatibility to platforms such as Windows 7 and builds a standard EXE file that many developers will expect. Conversely, the modern UWP app model is the recommended approach for Windows 10 and offers intriguing opportunities for expanding Flutter support to devices such as Xbox or the upcoming [Windows 10X](https://docs.microsoft.com/en-us/dual-screen/windows/get-dev-tools) operating system.
@@ -110,7 +110,7 @@ $ flutter config --enable-linux-desktop
 
 We’re already seeing some adventurous developers start to take advantage of Flutter on the desktop to create apps. One of the first Flutter macOS desktop apps that we’ve seen is [Sharezone](https://sharezone.net/), a student planner aimed at the German educational market, which started as a mobile app but has recently added web and desktop versions.
 
-<DashImage figure src="images/0iBeoGqAPyC66-BBe.png" alt="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." caption="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." />
+<DashImage figure src="images/0iBeoGqAPyC66-BBe.webp" alt="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." caption="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." />
 
 
 We’ll be sharing more about desktop support in the coming weeks; in the meantime, we’d love to hear more about your experiences. If you’re a plugin author, we’d encourage you to start evaluating the work to support these upcoming desktop platforms; if you’ve published an app, why not try running it as a desktop app and let us know how you get on?

@@ -34,7 +34,7 @@ I will be using Android Studio for this walkthrough. Your first step will be to 
 
 As shown above, you will need to add “**carousel: ^0.1.0**” directly under the flutter SDK dependency. This communicates to the app that you want to add carousel version 0.1.0. The caret (^) prefix indicates that minor patch updates to the specified version are permitted. You can read about the caret prefix [here](https://bytearcher.com/articles/semver-explained-why-theres-a-caret-in-my-package-json/).
 
-<DashImage figure src="images/1my7PRln0pZA7N9WytaYIog.png" alt="Click “Packages get” after declaring the carousel dependency in your pubspec" caption="Click “Packages get” after declaring the carousel dependency in your pubspec" />
+<DashImage figure src="images/1my7PRln0pZA7N9WytaYIog.webp" alt="Click “Packages get” after declaring the carousel dependency in your pubspec" caption="Click “Packages get” after declaring the carousel dependency in your pubspec" />
 
 
 Next, run **flutter packages get.** If you are in Android Studio, you can do this by clicking the hyperlink that sits directly above the pubspec.yaml file. Note that you must be viewing this file specifically to run **packages get.**
@@ -68,10 +68,10 @@ class MyApp extends StatelessWidget {
 
 You can go ahead and run the app at this point to ensure that everything is working as expected. In Android Studio, this is done by clicking the green play button. Once you have started the app, you can press **command+shift+s** to reload the app at any time.
 
-<DashImage figure src="images/13fBpctMQDW1Grz94Brr4jg.png" alt="Click the Green Play button to run the app. In this example we are using the iOS Simulator." caption="Click the Green Play button to run the app. In this example we are using the iOS Simulator." />
+<DashImage figure src="images/13fBpctMQDW1Grz94Brr4jg.webp" alt="Click the Green Play button to run the app. In this example we are using the iOS Simulator." caption="Click the Green Play button to run the app. In this example we are using the iOS Simulator." />
 
 
-<DashImage figure src="images/1Tqu0lBJy5DfrmgsxjixEwg.png" alt="This is what you should see upon loading the app." caption="This is what you should see upon loading the app." />
+<DashImage figure src="images/1Tqu0lBJy5DfrmgsxjixEwg.webp" alt="This is what you should see upon loading the app." caption="This is what you should see upon loading the app." />
 
 
 Let’s begin implementing the carousel feature. Your body value will be replaced with a Stack that has two children: a **PageView** and a **ListView**.
@@ -96,23 +96,23 @@ body: **new** Stack (
 
 Of course, testBGCarousel does not yet exist. In order to load an image into the background, we will have to create a new asset folder. Right click on the project folder and select New &gt; Directory. You can name the directory “images” or something comparable.
 
-<DashImage figure src="images/1_CXIYvhlix6kCN5PaySSdw.png" />
+<DashImage figure src="images/1_CXIYvhlix6kCN5PaySSdw.webp" />
 
 
 You can grab three background images at random for the purposes of testing. I like to format them ahead of time so they sit well in the app. Consider using 1000x1472 px with 72 dpi .jpg format. Place these images into the **images** folder that you created.
 
-<DashImage figure src="images/1Q5zBvfcEWWWcHUOlnl7tZw.png" />
+<DashImage figure src="images/1Q5zBvfcEWWWcHUOlnl7tZw.webp" />
 
 
 Just to make this extra simple, here are three full-size color templates you can download and use to run this code sample:
 
-<DashImage figure src="images/1XUFqw8TZ281xRUTvp6EERg.jpeg" />
+<DashImage figure src="images/1XUFqw8TZ281xRUTvp6EERg.webp" />
 
 
-<DashImage figure src="images/14936vpzIKoyCsk1z0_Xk4w.jpeg" />
+<DashImage figure src="images/14936vpzIKoyCsk1z0_Xk4w.webp" />
 
 
-<DashImage figure src="images/1BRF6ceZiW5XXgx78k1L3eQ.jpeg" alt="Download these three images and use them to test the carousel." caption="Download these three images and use them to test the carousel." />
+<DashImage figure src="images/1BRF6ceZiW5XXgx78k1L3eQ.webp" alt="Download these three images and use them to test the carousel." caption="Download these three images and use them to test the carousel." />
 
 
 ```
@@ -196,7 +196,7 @@ displayDuration: **const** Duration(seconds: 1),
 
 Below the children, the Carousel receives an additional, optional argument on the property **displayDuration** that changes the speed at which the carousel changes images. I added this for easy reference in case you want to do further customization. For additional properties that live on this Carousel widget, check out the **carousel.dart** file by holding the **command** key and left-clicking on the word Carousel within your file:
 
-<DashImage figure src="images/1cO4d8OZCrc3jwJnIWw4Lmw.png" alt="Command + Click the word Carousel to view carousel.dart" caption="Command + Click the word Carousel to view carousel.dart" />
+<DashImage figure src="images/1cO4d8OZCrc3jwJnIWw4Lmw.webp" alt="Command + Click the word Carousel to view carousel.dart" caption="Command + Click the word Carousel to view carousel.dart" />
 
 
 ```

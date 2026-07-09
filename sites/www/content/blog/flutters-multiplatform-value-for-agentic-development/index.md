@@ -3,7 +3,7 @@ title: "Flutter’s multiplatform value for agentic development"
 description: "The fundamental value of multiplatform development with Flutter lies in building apps that support multiple platforms with just a single…"
 publishDate: 2026-05-18
 author: mit-mit
-image: images/1aotSzcGPZg3gYqhwDy4LWQ.png
+image: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
 layout: blog
 ---
 
@@ -11,7 +11,7 @@ The fundamental value of multiplatform development with Flutter lies in building
 
 This is crucial in an AI-driven world where enhanced consistency, reduced token usage, and fast market reach become vital. By maintaining a single codebase, builders can focus their AI assistants on one unified context, drastically reduce token overhead, and minimize AI hallucinations. Instead of asking AI to translate features across fragmented, platform-specific languages, builders can leverage AI to write it once in Dart and instantly deploy it everywhere.
 
-<DashImage figure src="images/1aotSzcGPZg3gYqhwDy4LWQ.png" alt="Dash secretly hanging out in an alley doing agentive things" caption="Dash secretly hanging out in an alley doing agentive things" />
+<DashImage figure src="images/1aotSzcGPZg3gYqhwDy4LWQ.webp" alt="Dash secretly hanging out in an alley doing agentive things" caption="Dash secretly hanging out in an alley doing agentive things" />
 
 
 ## The existing value proposition

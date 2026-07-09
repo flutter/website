@@ -3,11 +3,11 @@ title: "Learning faster with Antigravity"
 description: "Creating Flutter frontends for ADK"
 publishDate: 2026-07-01
 author: redbrogdon
-image: images/1XhysKMaIjv--tjhGDEas6A.png
+image: images/1XhysKMaIjv--tjhGDEas6A.webp
 layout: blog
 ---
 
-<DashImage figure src="images/1XhysKMaIjv--tjhGDEas6A.png" alt="Dash enjoying Antigravity" caption="Dash enjoying Antigravity" />
+<DashImage figure src="images/1XhysKMaIjv--tjhGDEas6A.webp" alt="Dash enjoying Antigravity" caption="Dash enjoying Antigravity" />
 
 
 ## Learning faster with Antigravity
@@ -34,7 +34,7 @@ After that, Antigravity could generate the application’s code, run, and test i
 
 This is how it happened.
 
-<DashImage figure src="images/19kmUzKkC8c8EBCvMQKftBg.png" alt="Screenshot of a generated frontend for the deep_search agent" caption="Screenshot of a generated frontend for the deep_search agent" />
+<DashImage figure src="images/19kmUzKkC8c8EBCvMQKftBg.webp" alt="Screenshot of a generated frontend for the deep_search agent" caption="Screenshot of a generated frontend for the deep_search agent" />
 
 
 ## Start with the work of others
@@ -53,7 +53,7 @@ Those got me some basic smarts about ADK, its CLI tool, and Flutter. I also had 
 
 Rather than begin with a request for the agent to blast out an app, I established a kind of “learning loop” with it. First, I asked the coder agent to execute the workflow from my skill, and then I worked with the author agent to manually evaluate the coder’s output, identify gaps in the skill’s instructions, and update the guidelines to improve future runs. After each iteration I deleted the generated notes and app, started over, and discovered the next thing I needed to learn.
 
-<DashImage figure src="images/1GMT5ZFE5c7DhhwEqm7_iOw.png" alt="Behold my loop!" caption="Behold my loop!" />
+<DashImage figure src="images/1GMT5ZFE5c7DhhwEqm7_iOw.webp" alt="Behold my loop!" caption="Behold my loop!" />
 
 
 The loop consists of five distinct steps driven by conversations with Antigravity:
@@ -134,7 +134,7 @@ ListView.builder(
 
 This code leads to UI that looks like this:
 
-<DashImage figure src="images/1MuEwLr96JNe25xfg6kc4Rw.png" alt="Look at all those broken list items and half-bolded segments!" caption="Look at all those broken list items and half-bolded segments!" />
+<DashImage figure src="images/1MuEwLr96JNe25xfg6kc4Rw.webp" alt="Look at all those broken list items and half-bolded segments!" caption="Look at all those broken list items and half-bolded segments!" />
 
 
 The fix for this isn’t particularly hard, once you know the right thing to do. I didn’t, of course, so I started asking Antigravity questions like “How does ADK use SSE to stream events?” and “What does the over-the-wire data structure for an event look like, and how do I know if it’s a partial event?” If “vibe learning” were a thing, I was doing it.

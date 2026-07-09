@@ -3,7 +3,7 @@ title: "Dart sound null safety: technical preview 2"
 description: "Announcing null-safe support for the Flutter framework"
 publishDate: 2020-10-22
 author: mit-mit
-image: images/0FE-q5RdXwPgtRVE5.png
+image: images/0FE-q5RdXwPgtRVE5.webp
 category: announcements
 layout: blog
 ---
@@ -61,7 +61,7 @@ But there are more subtle cases to consider: `getTemperatures()` could also retu
 
 The null safety feature makes these problems go away by [validating your code](https://nullsafety.dartpad.dev/28f1db5ef4401d9e063375e5c58f0f86) as you’re typing:
 
-<DashImage figure src="images/0FE-q5RdXwPgtRVE5.png" alt="With null safety, Dart finds potential null errors in your code." caption="With null safety, Dart finds potential null errors in your code." />
+<DashImage figure src="images/0FE-q5RdXwPgtRVE5.webp" alt="With null safety, Dart finds potential null errors in your code." caption="With null safety, Dart finds potential null errors in your code." />
 
 
 With null safety, you can reason about your code with more confidence. No more pesky runtime null dereferencing errors in deployed apps. Instead, you get static errors as you code.
@@ -171,7 +171,7 @@ Why is the order important? Although you can make some progress migrating code b
 
 When your dependencies are ready, you can use our migration tool. The tool works by analyzing all of your existing code. The migration tool is interactive, so you can review the nullability properties that the tool has inferred. If you disagree with any of the tool’s conclusions, you can add nullability hints to change the inference. Adding a few migration hints can have a huge impact on migration quality.
 
-<DashImage figure src="images/0vRDfouqMsEojq6t9.png" alt="The migration tool helps you interactively migrate your code to null safety." caption="The migration tool helps you interactively migrate your code to null safety." />
+<DashImage figure src="images/0vRDfouqMsEojq6t9.webp" alt="The migration tool helps you interactively migrate your code to null safety." caption="The migration tool helps you interactively migrate your code to null safety." />
 
 
 ## 3. Fully sound

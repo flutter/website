@@ -3,7 +3,7 @@ title: "Animation Management with Flutter and Flux/Redux"
 description: "The Flux and Redux application architectures work well with reactive view frameworks like Flutter. Both architectures share two powerful…"
 publishDate: 2018-01-19
 author: amir_h
-image: images/10gdFpYTSo_TTCqd-XVcvYw.gif
+image: images/10gdFpYTSo_TTCqd-XVcvYw.webp
 category: spotlight
 layout: blog
 ---
@@ -14,7 +14,7 @@ It’s not always clear where to fit animation state management within these arc
 
 This is an expanded version of a lightning talk I gave at DartConf 2018: [Animation Management with Flutter and Redux (YouTube)](https://www.youtube.com/watch?v=9ZkLtr0Fbgk&index=22&list=PLOU2XLYxmsIIJr3vjxggY7yGcGO7i9BK5).
 
-<DashImage figure src="images/10gdFpYTSo_TTCqd-XVcvYw.gif" alt="An animation conflict resolved with a “jump cut” effect." caption="An animation conflict resolved with a “jump cut” effect." />
+<DashImage figure src="images/10gdFpYTSo_TTCqd-XVcvYw.webp" alt="An animation conflict resolved with a “jump cut” effect." caption="An animation conflict resolved with a “jump cut” effect." />
 
 
 ## The 2048 game
@@ -27,7 +27,7 @@ For purposes of this discussion, I’m going to explain the approach by walking 
 
 The example uses a typical Redux data flow:
 
-<DashImage figure src="images/1K_NpCWpLtmotANb-PihiaA.png" />
+<DashImage figure src="images/1K_NpCWpLtmotANb-PihiaA.webp" />
 
 
 The data flows as follows:
@@ -50,7 +50,7 @@ The game state is defined with a 4x4 integer matrix (a list of lists in [Dart](h
 
 Represents:
 
-<DashImage figure src="images/1znPAjWvnhngSihYnlzQmgA.png" />
+<DashImage figure src="images/1znPAjWvnhngSihYnlzQmgA.webp" />
 
 
 The game state supports four operations: moveLeft, moveRight, moveUp, and moveDown.
@@ -147,21 +147,21 @@ For example when the UI receives a store update with the following state:
 
 Given only this information, it’s possible to show any of the following transitions:
 
-<DashImage figure src="images/18rAC3V333Gf0okK8dZ7T0g.gif" />
+<DashImage figure src="images/18rAC3V333Gf0okK8dZ7T0g.webp" />
 
 
-<DashImage figure src="images/1FQAuiQXKSnCRxGLnAIK40g.gif" />
+<DashImage figure src="images/1FQAuiQXKSnCRxGLnAIK40g.webp" />
 
 
-<DashImage figure src="images/1nx_Zc1SySvxMP5k8mR_a-g.gif" />
+<DashImage figure src="images/1nx_Zc1SySvxMP5k8mR_a-g.webp" />
 
 
 To deal with this ambiguity, we provide more information with our store updates: In addition to the new state, our store update includes the previous state, and the action that triggered the update. This triplet is enough to figure which transition we should trigger (*):
 
-<DashImage figure src="images/1ph2_G0FsgvpK8nUxwQpxgA.png" />
+<DashImage figure src="images/1ph2_G0FsgvpK8nUxwQpxgA.webp" />
 
 
-<DashImage figure src="images/17qStCx_t14Hw6EQcazYcKg.gif" />
+<DashImage figure src="images/17qStCx_t14Hw6EQcazYcKg.webp" />
 
 
 * With the assumption that we are starting from a non transitioning state; see more on this below.
@@ -188,7 +188,7 @@ This is how the UI code responds to state updates:
 
 Let’s see what happens when a transition conflict occurs. In the following screen recording I swipe to the left and, while the tiles are sliding to the left, I swipe down (the white circles are tap indicators):
 
-<DashImage figure src="images/10GLFE1-zEg0xX0OnOXhcuw.gif" />
+<DashImage figure src="images/10GLFE1-zEg0xX0OnOXhcuw.webp" />
 
 
 This results in a [jump cut](https://en.wikipedia.org/wiki/Jump_cut) effect: the moveLeft animation immediately completes, and the moveDown animation starts.

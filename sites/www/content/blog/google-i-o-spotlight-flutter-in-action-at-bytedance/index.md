@@ -3,27 +3,27 @@ title: "Google I/O spotlight: Flutter in action at ByteDance"
 description: "Note: This article, originally written in Chinese by the ByteDance team, has been translated to English."
 publishDate: 2021-06-29
 author: sfshaza2
-image: images/0s0fEzRKPUlPITzxE.png
+image: images/0s0fEzRKPUlPITzxE.webp
 category: events
 layout: blog
 ---
 
 Flutter, a technology that [ByteDance](https://www.bytedance.com/en/) has been using and contributing to for some years now, was recently highlighted on the main stage of Google I/O. Developed and open sourced by Google, the multi-platform framework for front end UI development, has garnered over 120,000 stars on GitHub.
 
-<DashImage figure src="images/0s0fEzRKPUlPITzxE.png" alt="At Google I/O, Zoey Fan, one of Flutter’s product managers, talked about how the framework was adopted at ByteDance." caption="At Google I/O, Zoey Fan, one of Flutter’s product managers, talked about how the framework was adopted at ByteDance." />
+<DashImage figure src="images/0s0fEzRKPUlPITzxE.webp" alt="At Google I/O, Zoey Fan, one of Flutter’s product managers, talked about how the framework was adopted at ByteDance." caption="At Google I/O, Zoey Fan, one of Flutter’s product managers, talked about how the framework was adopted at ByteDance." />
 
 
-<DashImage figure src="images/0V8DV37bsn0UNXkvE.png" alt="More than 70 apps by ByteDance use Flutter as their multi-platform solution." caption="More than 70 apps by ByteDance use Flutter as their multi-platform solution." />
+<DashImage figure src="images/0V8DV37bsn0UNXkvE.webp" alt="More than 70 apps by ByteDance use Flutter as their multi-platform solution." caption="More than 70 apps by ByteDance use Flutter as their multi-platform solution." />
 
 
-<DashImage figure src="images/0jfsCt8xhuizJO7uf.png" alt="Flutter has reduced development time by 33%, as compared to developing separate apps for Android and iOS." caption="Flutter has reduced development time by 33%, as compared to developing separate apps for Android and iOS." />
+<DashImage figure src="images/0jfsCt8xhuizJO7uf.webp" alt="Flutter has reduced development time by 33%, as compared to developing separate apps for Android and iOS." caption="Flutter has reduced development time by 33%, as compared to developing separate apps for Android and iOS." />
 
 
 Today, there are more than 500 Flutter developers at ByteDance, and more than 200 of those are actively developing with Flutter. The developers use Flutter not only for mobile apps, but are also experimenting with it on web, desktop, and embedded platforms.
 
 Beyond this, ByteDance fundamental work across the organization and has made major contributions to the Flutter project by submitting dozens of pull requests (PRs).
 
-<DashImage figure src="images/084RzNeoAVCQu3shZ.png" />
+<DashImage figure src="images/084RzNeoAVCQu3shZ.webp" />
 
 
 ## What has ByteDance done to make Flutter really work for them?
@@ -42,7 +42,7 @@ When adopting Flutter, the ByteDance team encountered some unique challenges. Fo
 
 The ByteDance team started a special plan to optimize the package size by compressing the iOS data section, and stripping out the Skia library and other libraries (such as BoringSSL, ICU, text rendering, and libwebp). They analyzed Flutter Dart code against iOS native code and found that, to implement the same business feature, the Dart code generated more machine code instructions. To close the gap, they reduced alignment of instructions, removed debugging trap instructions, dropped redundant initialization of stores with null, removed `RawInstruction` headers with bare instructions mode, compressed `StackMap`s , removed `CodeSourceMap`, and so on.
 
-<DashImage figure src="images/0SHp5ZrnQvQ_bva8K.png" />
+<DashImage figure src="images/0SHp5ZrnQvQ_bva8K.webp" />
 
 
 Individually, each of these optimizations reduced the package size by 0.2 to 4 MB, and significantly reduced the total package size when combined. The ByteDance team shared their experience with Google engineers, and many improvements made their way to the Flutter open source project for the benefit of the larger community.
@@ -59,7 +59,7 @@ At first, the team used the [Timeline](https://flutter.dev/docs/development/tool
 
 These findings not only helped the team eliminate the jank, but resulted in 10 PRs being submitted to the Flutter open source project. With this fundamental work done, Flutter eventually became the go-to framework for multi-platform app development at ByteDance. Soon, the ByteDance team’s work with Flutter will be available to external developers using their mobile development framework, [veMARS](https://www.volcengine.com/product/vemars), benefiting the entire developer community.
 
-<DashImage figure src="images/03xKb80lXnsfJg3pP.png" />
+<DashImage figure src="images/03xKb80lXnsfJg3pP.webp" />
 
 
 ## From experiment to production, this is how ByteDance put Flutter into use
@@ -78,26 +78,26 @@ One of their education apps in China helps students learn the order of strokes o
 
 To implement it, the team took inspiration from some open source projects, and decided to use SVG paths to represent strokes. The paths would then be adjusted and positioned to compose the characters:
 
-<DashImage figure src="images/0eJK4geRY6r6kvPb-.png" />
+<DashImage figure src="images/0eJK4geRY6r6kvPb-.webp" />
 
 
 They defined the skeleton of each stroke to guide the movement of the virtual brush pen, so the pen moves just like it would in calligraphy:
 
-<DashImage figure src="images/0KRHUVfNaxppJLr86.png" />
+<DashImage figure src="images/0KRHUVfNaxppJLr86.webp" />
 
 
 Based on the defined order of the skeletons, a circle with a certain radius is drawn along each skeleton, and together these circles form the stroke. After that, the team added key frames to ensure that the frame rate of the animation is high enough to avoid jank.
 
 That is how they created the smooth tracking effect, as shown in the following GIF:
 
-<DashImage figure src="images/0WeR31rSBMqkRT6q_.gif" />
+<DashImage figure src="images/0WeR31rSBMqkRT6q_.webp" />
 
 
 The feature, built with Flutter, now supports more than 9,000 Chinese characters, including most of the commonly used characters. Compared to developing with native code, Flutter saved time and resources.
 
 Today, many apps by ByteDance employ a hybrid approach to development, combining the strengths of Flutter and other technologies, with newer apps leaning toward pure Flutter. For apps such as Xigua Video, TikTok Volcano, and Open Language, Flutter increased the productivity of the teams by about 33%.
 
-<DashImage figure src="images/0h1swTfindfOd_uAB.png" />
+<DashImage figure src="images/0h1swTfindfOd_uAB.webp" />
 
 
 ## ByteDancers embrace the latest technology

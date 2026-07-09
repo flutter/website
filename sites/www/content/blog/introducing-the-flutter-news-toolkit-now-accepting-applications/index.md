@@ -3,7 +3,7 @@ title: "Introducing the Flutter News Toolkit — now accepting applications"
 description: "Be among the first to launch news mobile applications with the Flutter News Toolkit"
 publishDate: 2022-11-10
 author: zoeyfan
-image: images/1eQsCJ1lXurwLVnD5wIDxkg.png
+image: images/1eQsCJ1lXurwLVnD5wIDxkg.webp
 category: events
 layout: blog
 ---
@@ -44,7 +44,7 @@ The Flutter News Toolkit includes critical features such as:
 
 You can use these pre-integrated features out of the box, or easily modify and swap them with other functionalities that you prefer.
 
-<DashImage figure src="images/1eQsCJ1lXurwLVnD5wIDxkg.png" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
+<DashImage figure src="images/1eQsCJ1lXurwLVnD5wIDxkg.webp" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
 
 
 ### Early adopter of the Flutter News Toolkit
@@ -53,7 +53,7 @@ One of the Flutter News Toolkit’s early adopters is Hespress, which is one of 
 
 “The Flutter News Toolkit was intuitive to work with and customized to look and feel like a proper Hespress app,” says El Guennouni Hassane, the General Manager of Hespress. “It contained all the core features, sections, and layouts that would be required for us. It helped us save months of development and optimized the whole process of revamping our English app while maintaining one code base instead of two.”
 
-<DashImage figure src="images/0TC5XvMCLwYWLzFhG.png" alt="*Screenshots of Hespress English app*" caption="*Screenshots of Hespress English app*" />
+<DashImage figure src="images/0TC5XvMCLwYWLzFhG.webp" alt="*Screenshots of Hespress English app*" caption="*Screenshots of Hespress English app*" />
 
 
 ### Apply now to access the Flutter News Toolkit
@@ -90,7 +90,7 @@ While the news template can lower the barrier to entry for building news mobile 
 
 We have mapped out the deployment process at a high-level with an assumption of 2–3 Flutter engineers working on the project. As an example, early adopters like Hespress finished their application development within 6 weeks.
 
-<DashImage figure src="images/0NfASfTMOVQde8r-K.png" alt="*Deployment process at a high-level*" caption="*Deployment process at a high-level*" />
+<DashImage figure src="images/0NfASfTMOVQde8r-K.webp" alt="*Deployment process at a high-level*" caption="*Deployment process at a high-level*" />
 
 
 ### If I don’t have an in-house development team, how can I use the template?

@@ -3,11 +3,11 @@ title: "Jaime’s build context: Prompt engineering as infrastructure"
 description: "Summary"
 publishDate: 2026-01-23
 author: jwren
-image: images/1HNqQFQ2hdhAgjew1pIMqXA.png
+image: images/1HNqQFQ2hdhAgjew1pIMqXA.webp
 layout: blog
 ---
 
-<DashImage figure src="images/1HNqQFQ2hdhAgjew1pIMqXA.png" />
+<DashImage figure src="images/1HNqQFQ2hdhAgjew1pIMqXA.webp" />
 
 
 ## Summary

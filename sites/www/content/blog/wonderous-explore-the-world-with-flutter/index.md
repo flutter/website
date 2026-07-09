@@ -3,7 +3,7 @@ title: "Wonderous: Explore the World with Flutter"
 description: "A reference app that shows how to develop tailored UI using Flutter"
 publishDate: 2022-08-30
 author: leighajarett
-image: images/1Tb-JXZnxo2pu232C4c2KqQ.png
+image: images/1Tb-JXZnxo2pu232C4c2KqQ.webp
 category: spotlight
 layout: blog
 ---
@@ -13,7 +13,7 @@ layout: blog
 
 Our vision for Flutter is to provide a blank canvas for you to design and paint beautiful apps without limitation. Recently, we teamed up with the amazing group at gskinner to make this vision a reality, by creating a new mobile app, [Wonderous](http://wonderous.app). Wonderous uses Flutter to create a highly expressive user interface, tailored to the mobile form factor, and doesn’t conform to a stock design system. Instead, Wonderous realizes the creative vision of its designer.
 
-<DashImage figure src="images/1Tb-JXZnxo2pu232C4c2KqQ.png" alt="Screenshots from the Wonderous App" caption="Screenshots from the Wonderous App" />
+<DashImage figure src="images/1Tb-JXZnxo2pu232C4c2KqQ.webp" alt="Screenshots from the Wonderous App" caption="Screenshots from the Wonderous App" />
 
 
 ### When developing Wonderous, we had a few goals in mind:
@@ -28,7 +28,7 @@ Our vision for Flutter is to provide a blank canvas for you to design and paint 
 
 1. **Create a source for learning materials and documentation.** Over the course of the next few weeks, the gskinner team will be launching more content surrounding Wonderous — including details on how the animations were created, how accessibility was incorporated, and best practices for app performance. Stay tuned!
 
-<DashImage figure src="images/1UhID-wmcu6aSotxCJjGVtQ.png" />
+<DashImage figure src="images/1UhID-wmcu6aSotxCJjGVtQ.webp" />
 
 
 After [downloading Wonderous](http://wonderous.app) from the Apple App Store or the Google Play Store there are a few characteristics you might want to explore:

@@ -3,14 +3,14 @@ title: "Announcing Flutter 1.7"
 description: "Continued refinement and polish for mobile platforms"
 publishDate: 2019-07-09
 author: timsneath
-image: images/1PzRLnOtNMtoO59dPPz--hA.png
+image: images/1PzRLnOtNMtoO59dPPz--hA.webp
 category: releases
 layout: blog
 ---
 
 Today we’re pleased to **announce the general availability of Flutter 1.7**, a smaller release after the major feature announcements at Google I/O. Flutter 1.7 contains support for AndroidX and for updated Play Store requirements, a number of new and enhanced components, and bug fixes to customer-reported issues.
 
-<DashImage figure src="images/1PzRLnOtNMtoO59dPPz--hA.png" />
+<DashImage figure src="images/1PzRLnOtNMtoO59dPPz--hA.webp" />
 
 
 If you already have Flutter on your system and you’re on the default stable channel, you can upgrade to version 1.7 by running `flutter upgrade` from the command line. The updated release is also included in [a new installation](https://flutter.dev/docs/get-started/install) of Flutter.
@@ -31,7 +31,7 @@ We want your apps to look great and feel natural, regardless of what platform yo
 
 This release features a new [`RangeSlider`](https://github.com/flutter/flutter/pull/31681) control that lets you select a range of values on a single slider (for example a minimum and maximum temperature value):
 
-<DashImage figure src="images/1rruCdwqtc2p3SXaMzUuE0Q.gif" alt="The new, themeable RangeSlider widget supports continuous or discrete styles" caption="The new, themeable RangeSlider widget supports continuous or discrete styles" />
+<DashImage figure src="images/1rruCdwqtc2p3SXaMzUuE0Q.webp" alt="The new, themeable RangeSlider widget supports continuous or discrete styles" caption="The new, themeable RangeSlider widget supports continuous or discrete styles" />
 
 
 The [updated `SnackBar` widget](https://github.com/flutter/flutter/pull/31275) supports an updated look in the Material spec, and a [number](https://github.com/flutter/flutter/pull/31294) [of](https://github.com/flutter/flutter/pull/32177) [new](https://github.com/flutter/flutter/pull/31929) [samples](https://github.com/flutter/flutter/pull/32703) are added [to the](https://github.com/flutter/flutter/pull/34679) [documentation](https://github.com/flutter/flutter/pull/32530).
@@ -42,7 +42,7 @@ We also made major improvements to the [text selection and editing experience on
 
 Text rendering gets a big upgrade with support for rich [typography features](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html), including tabular and old-style numbers, slashed zeros, and stylistic sets, as [this demo](https://github.com/timsneath/typography) shows:
 
-<DashImage figure src="images/00tdr7sHesqXfjWwK.png" alt="With Flutter, you can now add sophisticated typography with OpenType font feature support" caption="With Flutter, you can now add sophisticated typography with OpenType font feature support" />
+<DashImage figure src="images/00tdr7sHesqXfjWwK.webp" alt="With Flutter, you can now add sophisticated typography with OpenType font feature support" caption="With Flutter, you can now add sophisticated typography with OpenType font feature support" />
 
 
 Lastly, we’ve added support for [game controllers](https://github.com/flutter/flutter/pull/33868). Could this lead to some fun Flutter apps? You tell us!
@@ -66,7 +66,7 @@ flutter create --sample=material.AppBar.1 mysample
 
 If a sample can be created in this way, you’ll see a “Sample in the App” tab in the documentation, as in [this example for the AppBar widget](https://master-api.flutter.dev/flutter/material/AppBar-class.html):
 
-<DashImage figure src="images/1rARvCCVpn-cp1XoP5gXt9Q.png" />
+<DashImage figure src="images/1rARvCCVpn-cp1XoP5gXt9Q.webp" />
 
 
 We’re also continuing to embed the popular [Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) videos directly into the documentation, as an easy way to grok the various widgets in Flutter’s toolkit.

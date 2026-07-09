@@ -3,7 +3,7 @@ title: "Perspective on Flutter"
 description: "Fun with 3D and the Transform widget"
 publishDate: 2018-06-18
 author: wmleler1
-image: images/1WdpLQEC_L1PYDO1KgxxfMQ.gif
+image: images/1WdpLQEC_L1PYDO1KgxxfMQ.webp
 category: spotlight
 layout: blog
 ---
@@ -17,7 +17,7 @@ This article builds a simple demo program that shows how to use Flutter’s [`Tr
 
 Here’s the app we are going to build in action (the little circle reflects the position of the user’s finger on the screen):
 
-<DashImage figure src="images/1WdpLQEC_L1PYDO1KgxxfMQ.gif" />
+<DashImage figure src="images/1WdpLQEC_L1PYDO1KgxxfMQ.webp" />
 
 
 ## Getting started
@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 Running this code shows the default app being transformed slightly in 3D, with perspective:
 
-<DashImage figure src="images/1_hmzjJSeyWTnPccV5BsOHg.png" />
+<DashImage figure src="images/1_hmzjJSeyWTnPccV5BsOHg.webp" />
 
 
 We also removed some things we didn’t need, including all the extra comments, and (in honor of [Dart 2](https://www.dartlang.org/dart-2)) all the `new` keywords. For demonstration purposes we moved the layout part of the default app (the `build` method of `_MyHomePageState)` to a separate method called `_defaultApp` (lines 49–74). And for simplicity we set the AppBar title on line 52, rather than passing it as a parameter to `MyHomePage.`
@@ -135,7 +135,7 @@ Flutter does provide a [`makePerspectiveMatrix`](https://docs.flutter.io/flutter
 
 Next on lines 42 and 43 we apply two rotations based on the value of the `_offset` variable (from line 29; later we will use this variable to track the position of the user’s finger). Curiously, the X rotation is based on the Y offset, and the Y rotation is based on the X offset. Why?
 
-<DashImage figure src="images/1sSCRNrjBJYifAMUMpIbL7A.png" />
+<DashImage figure src="images/1sSCRNrjBJYifAMUMpIbL7A.webp" />
 
 
 Consider this image, which has added green arrows showing the X and Y axes for the display. The default origin of these axes is the upper left corner of the display (which is why the Y axis points down), but our program sets the origin (in line 44) to be the center of the display .

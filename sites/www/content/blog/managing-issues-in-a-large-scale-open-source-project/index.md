@@ -3,7 +3,7 @@ title: "Managing issues in a large-scale open source project"
 description: "How the Flutter team addresses its issue backlog"
 publishDate: 2020-07-17
 author: kf6gpe
-image: images/0E-lTv57-czvPhZre.png
+image: images/0E-lTv57-czvPhZre.webp
 category: spotlight
 layout: blog
 ---
@@ -60,7 +60,7 @@ It’s difficult to make apples-to-apples comparisons, though. Some projects pro
 
 A better metric to gauge the health of an open-source project is to look at the number of issues closed vs. the number of issues currently open. As of this writing (early July 2020), we have 7,757 issues open and 32,485 issues closed. The rate of closure has increased over the last year, although has flattened somewhat in recent months:
 
-<DashImage figure src="images/0E-lTv57-czvPhZre.png" />
+<DashImage figure src="images/0E-lTv57-czvPhZre.webp" />
 
 
 The dip in December is due to the holiday season; many contributors at Google and elsewhere take a vacation in that month. Regardless, the year-over-year average is 1314 issues closed, and if you look at the six-month average, you see that it’s considerably higher, at 1604 issues closed every month.
@@ -95,12 +95,12 @@ For older issues, the Nevercode team has found that fewer issues were invalid or
 
 As of this writing (early July 2020), here’s the breakdown of P0-P2 issues:
 
-<DashImage figure src="images/0aO0bWR8VrmusQNRi.png" />
+<DashImage figure src="images/0aO0bWR8VrmusQNRi.webp" />
 
 
 This chart shows a healthy number of issues that we’re actually working on with urgency. As you’d expect from a popular open-source project, there are a *lot* of other pieces of feedback in our issue database: here’s the breakdown of P3-P6 issues:
 
-<DashImage figure src="images/0shcSGNkownGkrpoM.png" />
+<DashImage figure src="images/0shcSGNkownGkrpoM.webp" />
 
 
 The team is actively working on many of the P3 issues, as well as the higher-priority P0-P2 issues.

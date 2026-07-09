@@ -3,12 +3,12 @@ title: "What’s new in Flutter 3.27"
 description: "Elevating App Development with Impeller, Cupertino Updates, and More"
 publishDate: 2024-12-11
 author: itsjustkevin
-image: images/1auh3JCfdFKzK_licnLrEKQ.png
+image: images/1auh3JCfdFKzK_licnLrEKQ.webp
 category: releases
 layout: blog
 ---
 
-<DashImage figure src="images/1auh3JCfdFKzK_licnLrEKQ.png" />
+<DashImage figure src="images/1auh3JCfdFKzK_licnLrEKQ.webp" />
 
 
 ## What’s new in Flutter 3.27
@@ -29,34 +29,34 @@ This release includes high fidelity updates to `CupertinoCheckbox` and `Cupertin
 
 `CupertinoSlidingSegmentedControl` sees some fidelity updates to its thumb radius, separator height, padding, shadows, and thumb scale alignment. It also now supports disabling individual segments, and proportional layout based on segment content.
 
-<DashImage figure src="images/0Nr0WuNhNxjlI1Pqg.png" />
+<DashImage figure src="images/0Nr0WuNhNxjlI1Pqg.webp" />
 
 
 Thanks to an amazing contribution from community member [@veloce](https://github.com/veloce), both `CupertinoNavigationBar`’s and `CupertinoSliverNavigationBar`’s backgrounds are now transparent until content is scrolled under them.
 
-<DashImage figure src="images/0dngArPlUvp4pVA-R.gif" />
+<DashImage figure src="images/0dngArPlUvp4pVA-R.webp" />
 
 
 This allows the sliver navigation bar to have the same color as its background in its expanded state, but a different customizable color in its collapsed state (and the ability to lerp between both colors on scroll).
 
 Thanks to an amazing contribution from community member [@kerberjg](http://github.com/kerberjg), you can now apply the iOS 15+ button styles using the new `CupertinoButtonSize` enum with the new `sizeStyle` property in `CupertinoButton`. Use the new `CupertinoButton.tinted` constructor to make buttons with a translucent background.
 
-<DashImage figure src="images/0vdSn5c7uavWstNO5.png" />
+<DashImage figure src="images/0vdSn5c7uavWstNO5.webp" />
 
 
-<DashImage figure src="images/0ZPrThBB6ZN8DEtUq.png" />
+<DashImage figure src="images/0ZPrThBB6ZN8DEtUq.webp" />
 
 
 `CupertinoButton` also has a new `onLongPress` handler, and allows performing actions through keyboard shortcuts.
 
 `CupertinoPicker` and `CupertinoDatePicker` will now scroll to tapped items.
 
-<DashImage figure src="images/0XUtBHK9h0zbWrKUF.gif" />
+<DashImage figure src="images/0XUtBHK9h0zbWrKUF.webp" />
 
 
 `CupertinoAlertDialog` now supports the tap-slide gesture.
 
-<DashImage figure src="images/0JYBUuzXHcYTCD4i5.gif" />
+<DashImage figure src="images/0JYBUuzXHcYTCD4i5.webp" />
 
 
 `CupertinoActionSheet` sees some high fidelity updates, including adjusting padding and font sizes across all system text size settings and supporting haptic feedback when sliding over buttons.
@@ -71,7 +71,7 @@ In this release, `CardTheme`, `DialogTheme` and `TabBarTheme` have been refactor
 
 This release introduces `CarouselView.weighted`, enabling more dynamic layouts within carousels. By adjusting the `flexWeights` parameter in the constructor, you can achieve a variety of item layouts. For instance, [3, 2, 1] creates a [multi-browse](https://m3.material.io/components/carousel/specs#3c9dc903-2f88-4b27-84e3-213c50674632) layout, [7, 1] produces a [hero](https://m3.material.io/components/carousel/specs#66eb8746-70f0-4bad-b940-8e1028268d65) layout, and [1, 7, 1] yields a [centered-hero](https://m3.material.io/components/carousel/specs#92c779ce-de8b-4dee-8201-95d3e429204f) layout. These values represent the relative weight each item occupies within the carousel view and can be customized to suit users’ specific needs.
 
-<DashImage figure src="images/0EUjz8K6BQZX2uumi.gif" />
+<DashImage figure src="images/0EUjz8K6BQZX2uumi.webp" />
 
 
 ### More in Material
@@ -80,7 +80,7 @@ This release includes a number of small feature enhancements and bug fixes. Some
 
 * `SegmentedButton` now has a `direction` property, so items can be aligned vertically.
 
-<DashImage figure src="images/0ECVkEydB6YuBSGs_.gif" />
+<DashImage figure src="images/0ECVkEydB6YuBSGs_.webp" />
 
 
 * more icon-related properties are added to the styleFrom method for `ButtonStyleButton` classes (`ElevatedButton`, `FilledButton`, `OutlinedButton`, `TextButton`, `MenuItemButton`, and `SubmenuButton`) to allow more customization.
@@ -97,7 +97,7 @@ Some bug fixes examples:
 
 [ModalRoutes](https://api.flutter.dev/flutter/widgets/ModalRoute-class.html) are now more flexible when the previous and new routes have different page transitions. When a new route enters the screen, sometimes they need the previous existing route to play a certain transition to sync up with the entrance transition of the new route. Now `ModalRoutes` can provide exit transition builders to each other so the enter and exit transitions always sync up. This allows pages to have multiple route transition options on one page using Flutter’s Navigator and Router.
 
-<DashImage figure src="images/0vyFYrAWVig8f8WGl.gif" />
+<DashImage figure src="images/0vyFYrAWVig8f8WGl.webp" />
 
 
 ### Text Selection Improvements
@@ -115,7 +115,7 @@ We also resolved some issues with RenderParagraph, so selecting text under a `Se
 
 This release also features a new convenience to using Rows and Columns, spacing! This double parameter will apply a fixed amount of pixels to offset children of Rows and Columns from each other, reducing the previous amount of code required to do so.
 
-<DashImage figure src="images/185CZePbMbJ99B5-hPvwpKQ.png" />
+<DashImage figure src="images/185CZePbMbJ99B5-hPvwpKQ.webp" />
 
 
 ## Engine
@@ -140,7 +140,7 @@ In previous versions of Flutter, users may have experienced [an issue](https://g
 
 In this release, open source contributor [@knopp](https://github.com/knopp) added [a new implementation](https://github.com/flutter/engine/pull/48226) of a Metal rendering surface that allows raster workloads to begin more consistently after the UI workload completes. This means that users will observe that overall frame times are more stable as there is less waiting on the iOS system compositor. In particular, Flutter will now much more consistently hit 120Hz on high frame-rate devices. In our benchmarks we have observed this improvement in a large reduction in average frame rasterization time across many scenarios.
 
-<DashImage figure src="images/0wsAPbKV2yW8tLXNb.png" alt="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" caption="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" />
+<DashImage figure src="images/0wsAPbKV2yW8tLXNb.webp" alt="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" caption="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" />
 
 
 ### Framework Wide Gamut Colors
@@ -236,7 +236,7 @@ A download is registered each time the package is downloaded from pub.dev. For e
 
 The download count numbers presented are raw download counts, and reflect usage from CI systems, package analysis, human pub client users, and more.
 
-<DashImage figure src="images/0tIfxBdBCHFzYhStI.png" />
+<DashImage figure src="images/0tIfxBdBCHFzYhStI.webp" />
 
 
 ### Pub workspaces
@@ -275,7 +275,7 @@ This release includes new features, overall improvements to robustness and polis
 
 Firstly, we added support for validating iOS deep link settings in the Flutter Deep Links tool. You can now validate deep links for Android and iOS.
 
-<DashImage figure src="images/0WO_tOgbNKHtMAJ4h.png" alt="*iOS deep link validation in the DevTools Deep Links tool.*" caption="*iOS deep link validation in the DevTools Deep Links tool.*" />
+<DashImage figure src="images/0WO_tOgbNKHtMAJ4h.webp" alt="*iOS deep link validation in the DevTools Deep Links tool.*" caption="*iOS deep link validation in the DevTools Deep Links tool.*" />
 
 
 Next, we’ve made some improvements to the workflow of working with “offline” data. Sometimes it is necessary to export the data you are viewing in DevTools for future use or for loading into another tool. This release adds support for exporting Network data as a `.har` file, and for loading memory snapshots into DevTools for viewing when DevTools is not connected to a running app.
@@ -290,7 +290,7 @@ These are just a few highlights from this release. To learn more about all the u
 
 The Flutter Inspector has undergone some major changes to improve usability and enhance your UI debugging journey. Enable the new Inspector by toggling the “New Inspector” setting.
 
-<DashImage figure src="images/0DdHEiQ7FUmFVIMGz.png" alt="*New Flutter Inspector in DevTools.*" caption="*New Flutter Inspector in DevTools.*" />
+<DashImage figure src="images/0DdHEiQ7FUmFVIMGz.webp" alt="*New Flutter Inspector in DevTools.*" caption="*New Flutter Inspector in DevTools.*" />
 
 
 A few of the changes include:
@@ -309,7 +309,7 @@ Enable the WebAssembly feature in DevTools settings to load the WASM-compiled De
 
 This should yield better performance than the default JS-compiled version of DevTools. This feature is experimental, so please file any[ issues](https://github.com/flutter/devtools/issues) you encounter with the WASM build.
 
-<DashImage figure src="images/0J2ur0Z_wJsdbAUt8.png" alt="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" caption="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" />
+<DashImage figure src="images/0J2ur0Z_wJsdbAUt8.webp" alt="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" caption="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" />
 
 
 ## Breaking Changes and Deprecations
@@ -326,7 +326,7 @@ The latest Material Design 3 tokens(v6.1) have been applied to the Flutter Mater
 
 * On-error-container (Error10 to Error30)
 
-<DashImage figure src="images/0_uQf9sIr4M1EC34y.png" />
+<DashImage figure src="images/0_uQf9sIr4M1EC34y.webp" />
 
 
 This affects widgets that use these roles as their default value.

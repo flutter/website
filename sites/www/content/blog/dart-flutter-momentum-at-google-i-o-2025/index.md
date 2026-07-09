@@ -3,7 +3,7 @@ title: "Dart & Flutter momentum at Google I/O 2025"
 description: "Today at the Google I/O conference, hosted at Shoreline Amphitheatre in Mountain View, California, we shared how Flutter continues to gain…"
 publishDate: 2025-05-21
 author: mit-mit
-image: images/0XtA6olQqCpKPyrdO.png
+image: images/0XtA6olQqCpKPyrdO.webp
 category: events
 layout: blog
 ---
@@ -43,7 +43,7 @@ Dart is a key ingredient to Flutter’s success. Our ability to evolve Dart and 
 
 We continue to evolve the Dart language — here’s a visualization of all the improvements we’ve made, since our major null safety feature, back in 2021.
 
-<DashImage figure src="images/0XtA6olQqCpKPyrdO.png" alt="Dart language evolution" caption="Dart language evolution" />
+<DashImage figure src="images/0XtA6olQqCpKPyrdO.webp" alt="Dart language evolution" caption="Dart language evolution" />
 
 
 ## Null-aware elements
@@ -111,7 +111,7 @@ We’ve also made several improvements to [pub.dev](https://pub.dev), the Dart p
 
 A brand new feature we’re announcing this week is Trending Packages, which shows packages that have a significant recent uptick in usage. This can be used for discovering new packages that might be of interest.
 
-<DashImage figure src="images/0BkRheYyGtlw1zwLZ.png" alt="pub.dev trending packages" caption="pub.dev trending packages" />
+<DashImage figure src="images/0BkRheYyGtlw1zwLZ.webp" alt="pub.dev trending packages" caption="pub.dev trending packages" />
 
 
 ### Improved formatting
@@ -170,7 +170,7 @@ Google is proud to support Flutter, but so much of the value for Flutter develop
 
 One big contributor is Canonical, the folks behind Ubuntu. They use Flutter themselves for Ubuntu’s first-party app marketplace, and have been excited to contribute toward Flutter’s overall quality on desktop, including contributing feature work for multi-window support.
 
-<DashImage figure src="images/0DyOOI5cfR4759Ka2.png" alt="Multi-window support running on Linux" caption="Multi-window support running on Linux" />
+<DashImage figure src="images/0DyOOI5cfR4759Ka2.webp" alt="Multi-window support running on Linux" caption="Multi-window support running on Linux" />
 
 
 They have also contributed to the desktop implementation of Flutter’s significant [thread merge](https://github.com/flutter/flutter/issues/150525). And they have fixed many issues related to accessibility, text input, focus, and keyboard & mouse events.
@@ -191,7 +191,7 @@ Vertex AI in Firebase is now known as Firebase AI Logic. And among many new thin
 
 We’ve added Gemini support directly into [DartPad](https://dartpad.dev/), which brings the power of Gemini code assistance right to your finger-tips with no setup or installation necessary.
 
-<DashImage figure src="images/1bvMcF-Tc30i2dMr2jFfECA.png" alt="Gemini-powered code generation in DartPad" caption="Gemini-powered code generation in DartPad" />
+<DashImage figure src="images/1bvMcF-Tc30i2dMr2jFfECA.webp" alt="Gemini-powered code generation in DartPad" caption="Gemini-powered code generation in DartPad" />
 
 
 That feature was built using the [Gemini API](https://ai.google.dev/). Its full source code is available in the DartPad GitHub repo and serves as a demonstration of how you can create AI-powered development tools.
@@ -206,7 +206,7 @@ And if you’re a VSCode or IntelliJ IDEA user, rest easy. The [Gemini Code Assi
 
 MCP is an exciting new open protocol that is gaining a lot of momentum for enabling AI agents to access and interact with various data sources and tools in a standardized way.
 
-<DashImage figure src="images/0n4GWT45AkStIiLZy.png" alt="Model Context Protocol" caption="Model Context Protocol" />
+<DashImage figure src="images/0n4GWT45AkStIiLZy.webp" alt="Model Context Protocol" caption="Model Context Protocol" />
 
 
 We are currently experimenting to see if it can enable us to provide more accurate and relevant code generation and allow tooling for complex tasks like fixing layout issues, managing dependencies, or even resolving runtime errors.

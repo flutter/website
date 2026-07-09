@@ -3,7 +3,7 @@ title: "Extreme UI Adaptability in Flutter — How Google Earth supports eve
 description: "When Google Earth set out to rewrite their mobile and web clients in Flutter, they knew they wanted to allow each and every one of their…"
 publishDate: 2024-02-07
 author: craiglabenz
-image: images/1RXf-GaJ4uz5_ZKU8QgIVkw.png
+image: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp
 category: spotlight
 layout: blog
 ---
@@ -131,12 +131,12 @@ class _AdaptableTextInputState extends State<AdaptableTextInput> {
 
 Navigation stacks and the app’s Back button also require special attention. Continuing with the above example of a desktop UI that shows multiple panels at once, now imagine a complementary mobile UI that presents those panels in a stack-like UI with forward and backward navigation. The implications of allowing desktops to use the mobile UI, and phones to use the desktop UI, was one of the big adaptability ideas Google Earth wanted to pursue.
 
-<DashImage figure src="images/1nHhbCY1mlIwlvQI60jaJHA.png" alt="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" caption="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" />
+<DashImage figure src="images/1nHhbCY1mlIwlvQI60jaJHA.webp" alt="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" caption="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" />
 
 
 If a desktop-UI user is on the red panel when they switch to the mobile UI, the Back button won’t automatically be wired up, because the navigation stack will be reset. This means your desktop UI needs to account for extra information technically only needed by the mobile UI, because at any moment the mobile UI could be asked to take over.
 
-<DashImage figure src="images/1RXf-GaJ4uz5_ZKU8QgIVkw.png" alt="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" caption="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" />
+<DashImage figure src="images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp" alt="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" caption="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" />
 
 
 Luckily, GoRouter’s declarative routing API can help. Create two separate routing declarations and switch to the appropriate route when your user toggles UI modes. In this situation, if the desktop UI has tracked the user’s last activity to the red panel when a request to activate the mobile UI comes in, calling `mobileRouter.go(‘home/blue/red’)` will create a navigation stack with a synthetic history, allowing the user to press the Back button to escape the red screen.

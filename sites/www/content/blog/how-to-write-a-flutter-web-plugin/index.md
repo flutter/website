@@ -3,7 +3,7 @@ title: "How to Write a Flutter Web Plugin"
 description: "Introduction"
 publishDate: 2019-11-20
 author: harry_terkelsen
-image: images/1UTowUOvpkFW35rcuJ3Lf1w.png
+image: images/1UTowUOvpkFW35rcuJ3Lf1w.webp
 category: tutorial
 layout: blog
 ---
@@ -104,7 +104,7 @@ class LaunchButton extends StatelessWidget {
 
 Verify that the app works by running it on your Android or iOS device, or simulator by running the app normally with `flutter run`. The app should look like this screenshot. Try clicking the **Launch**! button and verify that it opens Google.
 
-<DashImage figure src="images/1UTowUOvpkFW35rcuJ3Lf1w.png" alt="URL Launcher Example app" caption="URL Launcher Example app" />
+<DashImage figure src="images/1UTowUOvpkFW35rcuJ3Lf1w.webp" alt="URL Launcher Example app" caption="URL Launcher Example app" />
 
 
 Now, you can run the same app on the web with `flutter run -d chrome`. The app should open and render just like the mobile version, but clicking **Launch**! does nothing. Let’s start writing the web plugin for `url_launcher`.
