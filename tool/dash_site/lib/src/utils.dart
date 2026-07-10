@@ -79,6 +79,12 @@ int runPubGetIfNecessary(String directory) {
   return 0;
 }
 
+/// Returns [value] if it is non-null and non-empty, otherwise `null`.
+String? nonEmpty(String? value) {
+  if (value == null || value.isEmpty) return null;
+  return value;
+}
+
 extension ArgResultExtensions on ArgResults? {
   /// Assuming its type is [T], get the value specified for
   /// the argument named [key], or the [defaultValue] if not specified.
