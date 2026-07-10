@@ -33,7 +33,7 @@ class Image extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return img(
-      src: context.asset(src, width: 800),
+      src: context.asset(src, width: 1200),
       classes: [
         'richtext-image',
         if (fullWidth) 'full-width',

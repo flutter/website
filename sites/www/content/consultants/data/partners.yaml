@@ -460,6 +460,18 @@
   options_customer_size:
     - "Startup"
   options_GCP_partner: false
+- title: "SolGuruz LLP"
+  summary: "Is a full-stack development agency for web and mobile applications, dedicated to delivering top-tier, customized software solutions that align with their clients' unique goals.  SolGuruz is driven by a true passion for craft and aims to surpass expectations across every project."
+  card: "images/third_party/partners/SolGoruz.png"
+  external_url: "https://solguruz.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
 - title: "Paulonia"
   summary: "We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America."
   card: "images/third_party/partners/Paulonia.png"
