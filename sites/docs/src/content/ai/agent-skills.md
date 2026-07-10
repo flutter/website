@@ -44,9 +44,10 @@ tailored specifically for our frameworks.
 *   **[dart-lang/skills](https://github.com/dart-lang/skills)**: Provides skills
     for Dart development. Use these to generate unit tests, resolve package
     dependencies, and fix static analysis errors.
-*   **[flutter/skills](https://github.com/flutter/skills)**: Provides skills for
-    Flutter development. These skills help the AI build responsive layouts, wire
-    up declarative routing, and implement JSON serialization.
+*   **[flutter/agent-plugins](https://github.com/flutter/agent-plugins)**:
+    Provides skills for Flutter development.
+    These skills help the AI build responsive layouts,
+    wire up declarative routing, and implement JSON serialization.
 
 ## Getting started
 
@@ -59,8 +60,14 @@ CLI tool. It's distributed through npm, so you'll need
 
 To install the official Flutter skills:
 
+:::note
+The `flutter/skills` repository has been renamed to `flutter/agent-plugins`.
+If you previously installed skills using `flutter/skills`,
+update your commands to use `flutter/agent-plugins`.
+:::
+
 ```bash
-npx skills add flutter/skills --skill '*' --agent universal
+npx skills add flutter/agent-plugins --skill '*' --agent universal
 ```
 
 And to install the official Dart skills:
@@ -74,7 +81,7 @@ downloads the requested skills into your project.
 
 For more details on available skills, updating, and contributing, see the
 [Dart skills repository](https://github.com/dart-lang/skills) and the
-[Flutter skills repository](https://github.com/flutter/skills).
+[Flutter agent-plugins repository](https://github.com/flutter/agent-plugins).
 
 :::tip
 Once you've added skills to your project, try asking your AI agent to review
