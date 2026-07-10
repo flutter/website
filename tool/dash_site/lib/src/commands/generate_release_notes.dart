@@ -151,7 +151,8 @@ final class GenerateReleaseNotesCommand extends Command<int> {
 bool _isStableFlutterVersion(String version) =>
     _stableVersionPattern.hasMatch(version);
 
-/// Creates a docs.flutter.dev release-notes page for [release].
+/// Creates a docs.flutter.dev release-notes page for [release]
+/// with the specified [generatedNotes].
 String _createReleaseNotesPage(String release, String generatedNotes) {
   final featureRelease = release.substring(0, release.lastIndexOf('.'));
   final cleanedNotes = _cleanGeneratedReleaseNotes(generatedNotes);
@@ -201,8 +202,9 @@ String _cleanGeneratedReleaseNotes(String generatedNotes) {
   for (final line in cleanedLines) {
     final previousLine = normalizedLines.lastOrNull;
     if (line.isNotEmpty &&
-        (previousLine?.isNotEmpty ?? false) &&
-        (line.startsWith('##') || previousLine!.startsWith('##'))) {
+        previousLine != null &&
+        previousLine.isNotEmpty &&
+        (line.startsWith('##') || previousLine.startsWith('##'))) {
       normalizedLines.add('');
     }
     normalizedLines.add(line);
