@@ -36,5 +36,4 @@ class AreaRepaintsPage extends StatelessWidget {
     );
   }
 }
-
 // #enddocregion area-repaints

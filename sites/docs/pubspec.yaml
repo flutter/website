@@ -9,7 +9,6 @@ environment:
 dependencies:
   build: ^4.0.6
   collection: ^1.19.1
-  crypto: ^3.0.7
   html: ^0.15.6
   http: ^1.6.0
   jaspr: ^0.23.1
@@ -17,13 +16,15 @@ dependencies:
   # Used as our template engine.
   liquify: ^1.5.1
   markdown: ^7.3.1
-  markdown_description_list: ^0.1.1
+  markdown_description_list: ^0.2.0
   meta: ^1.18.2
   nanoid2: ^2.0.1
   # Used for syntax highlighting.
   opal: ^0.2.2
   path: ^1.9.1
   pub_semver: ^2.2.0
+  site_shared:
+    path: ../../packages/site_shared
   universal_web: ^1.1.1+1
   yaml: ^3.1.3
 

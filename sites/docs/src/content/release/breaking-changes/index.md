@@ -36,9 +36,13 @@ They're sorted by release and listed in alphabetical order:
 
 ### Not yet released to stable
 
-* [Large screen orientation and resizability restrictions ignored on Android 17][]
+* [Added enabled property and made onChanged optional for DropdownButton][]
+* [OpenGL ES render-to-texture content is stored top-down][]
+* [Update semantics header and headingLevel behavior on iOS and Android][]
 
-[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
+[Added enabled property and made onChanged optional for DropdownButton]: /release/breaking-changes/dropdownbutton-enabled-property
+[OpenGL ES render-to-texture content is stored top-down]: /release/breaking-changes/opengles-render-to-texture-top-down
+[Update semantics header and headingLevel behavior on iOS and Android]: /release/breaking-changes/semantics-header-heading-level
 
 <a id="released-in-flutter-344" aria-hidden="true"></a>
 ### Released in Flutter 3.44
@@ -48,6 +52,7 @@ They're sorted by release and listed in alphabetical order:
 * [Deprecate `TextInputConnection.setStyle`][]
 * [Deprecated `cacheExtent` and `cacheExtentStyle`][]
 * [`IconData` class marked as `final`][]
+* [Large screen orientation and resizability restrictions ignored on Android 17][]
 * [ListTile reports an error in debug when wrapped in a colored widget][]
 * [Migrating Flutter Android projects to built-in Kotlin][]
 * [Page transition builders reorganization][]
@@ -57,6 +62,7 @@ They're sorted by release and listed in alphabetical order:
 [Deprecated `cacheExtent` and `cacheExtentStyle`]: /release/breaking-changes/scroll-cache-extent
 [Deprecate `TextInputConnection.setStyle`]: /release/breaking-changes/deprecate-text-input-connection-set-style
 [`IconData` class marked as `final`]: /release/breaking-changes/icondata-class-marked-final
+[Large screen orientation and resizability restrictions ignored on Android 17]: /release/breaking-changes/android-large-screens-restrictions-ignored
 [ListTile reports an error in debug when wrapped in a colored widget]: /release/breaking-changes/list-tile-color-warning
 [Migrating Flutter Android projects to built-in Kotlin]: /release/breaking-changes/migrate-to-built-in-kotlin
 [Page transition builders reorganization]: /release/breaking-changes/decouple-page-transition-builders

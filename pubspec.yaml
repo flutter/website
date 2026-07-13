@@ -9,5 +9,7 @@ environment:
 workspace:
   - packages/analysis_defaults
   - packages/excerpter
+  - packages/site_shared
   - sites/docs
+  - sites/www
   - tool/dash_site

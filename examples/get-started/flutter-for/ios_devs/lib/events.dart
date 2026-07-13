@@ -14,7 +14,6 @@ class MyButton extends StatelessWidget {
       child: const Text('Button'),
     );
   }
-
   // #enddocregion on-pressed
 }
 
@@ -82,5 +81,4 @@ class _SampleAppState extends State<SampleApp>
     );
   }
 }
-
 // #enddocregion sample-app

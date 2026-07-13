@@ -19,6 +19,5 @@ class SetupFlowState extends State<SetupFlow> {
   PreferredSizeWidget _buildFlowAppBar() {
     return AppBar(title: const Text('Bulb Setup'));
   }
-
   // #enddocregion SetupFlow2
 }

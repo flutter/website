@@ -4,8 +4,7 @@
 
 import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-
-import '../util.dart';
+import 'package:site_shared/util.dart';
 
 /// The secondary output to configure to create
 /// a `robots.txt` file in the root directory.

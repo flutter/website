@@ -1,0 +1,1198 @@
+# This file contains the source data for the Flutter consultants directory.
+#
+# Don't directly open PRs with additions to this list.
+#
+# If your company is interested in being a listed consultant,
+# please visit the "Become a Flutter consultant" link
+# at the top of https://flutter.dev/consultants.
+
+- title: "Very Good Ventures"
+  summary: "VGV is a full service consultancy that works with the biggest enterprises and the most impactful startups to design, build, and scale successful software experiences. As early pioneers and world leaders in Flutter, VGV helps its clients do more with the resources available, reach any screen from a single codebase, and implement best practices for long-term growth."
+  card: "images/third_party/partners/VGV.png"
+  external_url: "https://verygood.ventures/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: true
+- title: "Rebel App Studio"
+  summary: "Rebel App Studio by Codemate is a prominent Flutter Consultancy company.  Currently, we are collaborating with renowned brands such as Burger King and Taco Bell to develop top-tier applications. As a Nordic Creative Tech agency, we are equipped with a team of 100 world-class senior software developers and designers. Our clientele includes prestigious names like Netflix, Singapore Airlines, and Google."
+  card: "images/third_party/partners/Rebel_App_Studio.png"
+  external_url: "https://rebelappstudio.com/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "LeanCode"
+  summary: "We consult, design and build great products using Flutter for scales-ups and enterprises with the shortest possible time-to-market."
+  card: "images/third_party/partners/Lean_Code.png"
+  external_url: "https://leancode.co/technologies/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Somnio"
+  summary: "Somnio Software is a Flutter Development Company specializing in developing multiplatform digital solutions. We offer nearshore services for Full Product Development & Staff Augmentation."
+  card: "images/third_party/partners/Somnio.png"
+  external_url: "https://somniosoftware.com/why-flutter"
+  options_location:
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "L+R"
+  summary: "L+R is an international Design and Technology Studio and boutique Strategy Consulting Firm. Maximizing utility with the balance of Strategy + Aesthetics."
+  card: "images/third_party/partners/LR.png"
+  external_url: "https://levinriegner.com/integrated-offering/flutter-development"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Accenture"
+  summary: "Accenture is a global professional services company that helps the world’s leading businesses, governments and other organizations build their digital core, optimize their operations, accelerate revenue growth and enhance citizen services—creating tangible value at speed and scale. We are a talent and innovation led company with 732,000 people serving clients in more than 120 countries."
+  card: "images/third_party/partners/Accenture.png"
+  external_url: "https://www.accenture.com/us-en/services/software-platforms/accenture-google-cloud-business-group"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "gskinner.com"
+  summary: "We collaborate with smart, motivated clients to conceptualize, design, and build world-class interactive experiences."
+  card: "images/third_party/partners/GSkinner.png"
+  external_url: "https://flutter.gskinner.com/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Baseflow"
+  summary: "Engineering the Future of Software development. Together with exceptional people, strategy, and design, we create software for every challenge."
+  card: "images/third_party/partners/Baseflow.png"
+  external_url: "https://www.baseflow.com/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Theodo Apps"
+  summary: "Mobile apps people love. Design and development of custom mobile applications."
+  card: "images/third_party/partners/Theodo_apps.png"
+  external_url: "https://www.bam.tech/en/expertise/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Superformula Corporation"
+  summary: "We are digital experts driven by the passion needed to accelerate and transform your business."
+  card: "images/third_party/partners/Superformula_1.png"
+  external_url: "https://www.superformula.com/services/flutter/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Black Airplane"
+  summary: "Whether you're a founder with a big idea or an industry leader with a big need for change, we blend deep technical expertise with uncommon creativity to help you create a product that matches your business needs.  If you're looking to streamline your business processes, enhance user experiences, or bring your digital ideas to life, we're here to pilot your vision to victory."
+  card: "images/third_party/partners/Black_Airplane.png"
+  external_url: "https://blackairplane.com/partners/flutter"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Merixstudio"
+  summary: "We build and modernize enterprise Flutter apps across mobile, web, and connected devices - consulting, design, and engineering in one team. 25+ years in business. 100+ experts. ISO 27001 & 9001 certified. Google-trusted Flutter Consultant. Clutch #1 in Poland."
+  card: "images/third_party/partners/Merix_Studio.png"
+  external_url: "https://www.merixstudio.com/development/flutter"
+  options_location:
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "glueglue"
+  summary: "We are a digital product agency specializing in turning the most complex and ambitious ideas into web and mobile apps that are not only beautiful but also incredibly user-friendly. Our mission is to create digital products that enhance people's lives. Our approach is straightforward and effective. We design solutions based on real needs and behaviors of individuals."
+  card: "images/third_party/partners/glueglue.png"
+  external_url: "https://www.glueglue.com/en/services/sviluppo-applicazioni-web-e-mobile-native-con-flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "Solid Software"
+  summary: "We build secure, complex, and well-designed Flutter mobile and web applications. Flutter Early Adopters from 2018."
+  card: "images/third_party/partners/Solid.png"
+  external_url: "https://solid.software"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Codigee"
+  summary: "With us, your app development is in daring hands. Don't worry, we've got this! Expect excellence."
+  card: "images/third_party/partners/Frame_18.png"
+  external_url: "https://codigee.com/services"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Walturn"
+  summary: "At Walturn our mission is to make technology more accessible for young startups in the impact driven space to help them build faster and efficiently using Flutter."
+  card: "images/third_party/partners/Walturn.png"
+  external_url: "https://www.walturn.com/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "Miquido"
+  summary: "Miquido is a full-service software development company that enables industry leaders to tackle business challenges with 360° digital acceleration services: Cross-Platform Web & Mobile Development, AI Consultancy, Product Design and Strategy."
+  card: "images/third_party/partners/Miquido.png"
+  external_url: "https://www.miquido.com/flutter-development-company/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Sunflower Lab"
+  summary: "Sunflower Lab is a mobile app development company delivering cutting-edge, enterprise-grade mobile applications for Android and iPhone."
+  card: "images/third_party/partners/Sunflower_Lab.png"
+  external_url: "https://www.thesunflowerlab.com/hire-flutter-developers/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Dribba"
+  summary: "Dribba is a Barcelona-based mobile technology consultant specializing in user-centric, high-quality software products developed with Flutter. We have been partnering with brands and startups since 2012 to digitalize their workflows and create impactful products."
+  card: "images/third_party/partners/Dribba.png"
+  external_url: "https://www.dribba.com/desarrollo-apps-flutter-barcelona"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Arch"
+  summary: "Since our founding in 2005, we have built a reputation for designing and developing high quality, innovative software for startups and established brands that offer their end-users the best possible experience."
+  card: "images/third_party/partners/Arch.png"
+  external_url: "https://wearearch.com/services-flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: true
+- title: "Hedgehog Lab"
+  summary: "Hedgehog lab is a human-centered global tech consultancy. Our experts in UXR, UI/UX, engineering, cloud, & data science partner to deliver custom app development and digital transformation services. With 15+ years experience, our team have worked for industry leaders including AJ Bell, Deliveroo, Kodak Alaris and Tesco Bank. Our labs are located in Newcastle Upon Tyne, York, Boston and Sofia."
+  card: "images/third_party/partners/Hedgehog_Lab.png"
+  external_url: "https://netsells.co.uk/services/flutter-app-development"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Infinum"
+  summary: "Infinum delivers high-end digital solutions to global clients ranging from venture backed start-ups to global enterprises across various industry verticals. We define, design, build, and scale products for mobile and web that grow businesses and empower people."
+  card: "images/third_party/partners/Infinum.png"
+  external_url: "https://infinum.com/services/engineering/flutter/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "PHNTM"
+  summary: "We help established corporations to build digital, multi-platform apps. We turn your idea into a real product."
+  card: "images/third_party/partners/phntm.png"
+  external_url: "https://phntm.xyz/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Zero One Group"
+  summary: "We empower companies through expertise, precision and passion in software development."
+  card: "images/third_party/partners/ZeroOneGroup.png"
+  external_url: "https://www.zero-one-technology.com/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Krootl"
+  summary: "Krootl is a full-cycle Flutter app development agency with a primary focus on creating digital solutions for the healthcare, financial, wellness, and retail industries.  We design, develop, and launch web and mobile apps that reflect business needs and generate revenue."
+  card: "images/third_party/partners/Krootl.png"
+  external_url: "https://www.krootl.com/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Antino"
+  summary: "We are product development and digital transformation company, united with the mission: to transform."
+  card: "images/third_party/partners/Antino.png"
+  external_url: "https://www.antino.com/mobile-app-development-company"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Snapp X"
+  summary: "We understand the importance of speed in today's digital world and develop engaging apps for any screen."
+  card: "images/third_party/partners/SnappX.png"
+  external_url: "https://www.snappx.io"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Chili Labs"
+  summary: "We've made mobile apps for the past 7 years, with Flutter, Kotlin and SwiftUI. We have a team of 25 mobile developers located in Riga, Latvia."
+  card: "images/third_party/partners/Chili.png"
+  external_url: "https://chililabs.io/services/development/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "iteo"
+  summary: "iteo is an international digital product studio founded in Poland. We offer business, technical and creative services to deliver digital products and experiences at scale. Our 12 years experience allows us to reveal the true digital potential of business models and drive digital transformation from within organizations."
+  card: "images/third_party/partners/Iteo.png"
+  external_url: "https://iteo.com/competences/mobile/flutter/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "OTAKOYI"
+  summary: "For over the decade OTAKOYI designs and builds software products for Startups, Scaleups, and Industry Giants worldwide. Our main goal is to help businesses succeed by delivering digital products of world-class standard, made up by the best engineering teams from Eastern Europe.  We are proud of being trusted by more than 150 companies from different parts of the world.   We are not just one more outsourcing company, but a trusted technical partner who you can rely on."
+  card: "images/third_party/partners/-_Eugene_Martseniuk.png"
+  external_url: "https://otakoyi.software/services/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Integrated Computer Solutions"
+  summary: "At the intersection of custom software development, engineering and UX design, Integrated Computer Solutions (ICS) creates sophisticated embedded touchscreen, voice and gesture-powered smart devices and products for global companies."
+  card: "images/third_party/partners/ICS.png"
+  external_url: "https://www.ics.com/technologies/flutter"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Apexive"
+  summary: "Top-notch software development for startups. In weeks, not months."
+  card: "images/third_party/partners/Saiful_Islam.png"
+  external_url: "https://apexive.com"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "Zühlke Engineering AG"
+  summary: "Zühlke is a global innovation service provider. We empower ideas and create new business models by developing services and products based on new technologies – from initial vision through development, deployment, production, and beyond."
+  card: "images/third_party/partners/Zuhlke.png"
+  external_url: "https://www.zuehlke.com/en/expertise/digital-experience"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Unlock'd"
+  summary: "Unlock'd specialises in 'all screen applications'. With the power of Dart & Flutter we develop for any screen. With our clients we aim to create business value by releasing new software versions in short iterations."
+  card: "images/third_party/partners/Unlockd.png"
+  external_url: "https://www.unlockd.be"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "intent"
+  summary: "intent is a team of business-savvy geeks that love treating projects as their own - we have built and scaled products across all stages of development. From initial R&D and prototyping to proof of concept and MVP - we get your product launched and on the market while helping you navigate any challenges along the way."
+  card: "images/third_party/partners/intent.png"
+  external_url: "https://withintent.com/flutter"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "Oceania"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Appventurez Mobitech Pvt Ltd"
+  summary: "We provide powerful product development solutions blended with state of-the-art technology to transform ideas into legacies. Redefining product development with agile services, a customer-first approach, and on-time delivery mechanisms across industries. We transform ideas into realities by providing end-to-end product development solutions from strategizing to production."
+  card: "images/third_party/partners/Appventurez.png"
+  external_url: "https://www.appventurez.com/flutter-app-development"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "FiveDotTwelve"
+  summary: "FiveDotTwelve is an app development company focusing on close cooperation with clients and individual approach to every project. We are passionate about delivering the highest quality products to our clients. We work hard to understand your business needs and then rapidly develop and implement fit-for-purpose solutions."
+  card: "images/third_party/partners/FiveDotTwelve.png"
+  external_url: "https://fivedottwelve.com/services/mobile-app-development/flutter-app-development/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "NextApps"
+  summary: "NextApps - A good app solves the problem."
+  card: "images/third_party/partners/Next_Apps_-_Lukasz_Lojerczuk.png"
+  external_url: "https://www.nextapps.co/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Ingage Partners"
+  summary: "Ingage Partners helps clients reinvent how they work through AI-enabled product delivery, design, and engineering. Over 15+ years, the team has shipped 200+ apps and connected experiences across mobile, web, and cloud."
+  card: "images/third_party/partners/ingage_logo.png"
+  external_url: "https://ingagepartners.com/flutter"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: true
+- title: "Never Inc."
+  summary: "We aim to create a new world and a better future through application development."
+  card: "images/third_party/partners/Shohei_Nakagawa.png"
+  external_url: "https://neverjp.com/contact/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Code Heroes"
+  summary: "Code Heroes is a Queensland based software development agency that specialise in designing and developing applications with Flutter. Since 2011 Code Heroes have a history of delivering bespoke, business-critical applications to clients across Australia, most recently developing the QLD Digital License application for the Department of Transport and Main Roads. The Code Heroes team are located in Queensland, Australia and service clients in APAC."
+  card: "images/third_party/partners/Codeheroes.png"
+  external_url: "https://www.codeheroes.com.au/flutter-developers-australia"
+  options_location:
+    - "Oceania"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: true
+- title: "Innoventix Solutions"
+  summary: "We are a Flutter exclusive mobile app development and Microsoft 365 cloud solutions agency. We help small, medium and enterprise businesses to bring their business process ideas to mobile first apps."
+  card: "images/third_party/partners/Innoventix.png"
+  external_url: "https://innoventixsolutions.com/flutter-app-development/"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "This Might Work"
+  summary: "As a Digital Product Studio, we partner with startups and brands to transform bold ideas into digital products and services."
+  card: "images/third_party/partners/ThisMightWork.png"
+  external_url: "https://www.thismightwork.co/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: true
+- title: "theTribe"
+  summary: "We're building apps like a design studio, where the user is in the center of our approach to make sure we reach your target with success once the app's published."
+  card: "images/third_party/partners/The_Tribe.png"
+  external_url: "https://thetribe.io/metier-flutter/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "FF.Next"
+  summary: "We are a digital product design agency creating beautifully-crafted & highly functional mobile and web applications in more than 20 countries. We’ve been creating & implementing design-driven mobile banking products from Singapore through Central-Eastern Europe to the UK already for 10+ banks and 20+ fintechs in the past 5 years."
+  card: "images/third_party/partners/ff.next.png"
+  external_url: "https://www.ffnext.io/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "SolGuruz LLP"
+  summary: "Is a full-stack development agency for web and mobile applications, dedicated to delivering top-tier, customized software solutions that align with their clients' unique goals.  SolGuruz is driven by a true passion for craft and aims to surpass expectations across every project."
+  card: "images/third_party/partners/SolGoruz.png"
+  external_url: "https://solguruz.com/services/flutter-app-development/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Paulonia"
+  summary: "We are a human team with skills in design and development of cross-platform apps in Flutter with the vision of being a technological reference in Latin America."
+  card: "images/third_party/partners/Paulonia.png"
+  external_url: "https://paulonia.dev/development"
+  options_location:
+    - "South America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "DiUS"
+  summary: "DiUS is a technology consultancy with leading capabilities in digital transformation and product development. Our team across Australia and New Zealand leverage specialist expertise in cloud, data, application development, mobile, experience design, IoT and machine learning."
+  card: "images/third_party/partners/Dius.png"
+  external_url: "https://dius.com.au/flutter"
+  options_location:
+    - "Oceania"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "icapps"
+  summary: "icapps is a digital product agency that started with the first Belgian made iOS apps and quickly grew into a company that covers all your custom software needs from strategy, design to development. icapps aims to be at the forefront in everything Flutter in Belgium."
+  card: "images/third_party/partners/William_Verhaeghe.png"
+  external_url: "https://icapps.com/development/mobile/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Nomtek"
+  summary: "Nomtek is a software development agency delivering impactful mobile and XR apps for change makers. We leverage 14 years of experience to build digital products that people love to use."
+  card: "images/third_party/partners/Marcin_Durawa.png"
+  external_url: "https://www.nomtek.com/mobile-development/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "F22 Labs"
+  summary: "We are a product design and development studio empowering businesses with cutting-edge, high-impact software solutions that fuel growth and drive success. Whether it's healthcare, finance, retail, or any other sector, we have led numerous digital transformations. If you have a problem, we would love to learn more and assist you in finding a solution."
+  card: "images/third_party/partners/f22_labs.png"
+  external_url: "https://www.f22labs.com/flutter-development/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Momentum"
+  summary: "Momentum is a digital health agency recognized for delivering innovative, secure, and scalable software solutions. Since 2016, we have been the trusted partner of HealthTech startups and global leaders, helping them overcome complex challenges. Our commitment to compliance, including adherence to ISO 13485 standards, has earned us recognition in the FT 1000 and Forbes Diamond Award."
+  card: "images/third_party/partners/Momentum.png"
+  external_url: "https://www.themomentum.ai/services/product-development-and-growth/mobile-app-development"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Approachable Geek"
+  summary: "Whether you are looking to improve your company's internal processes, or have a million-dollar app idea, we are the Approachable Geeks you have been looking for. We're Approachable (easy to talk to) and Geeks (technically proficient), and the combination of those means that you get clear communication throughout the process and killer code."
+  card: "images/third_party/partners/approachable_geek_-_Garrett_Barlocker.png"
+  external_url: "https://approachablegeek.com/services/flutter"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Loomery"
+  summary: "Loomery is a team of makers who partner with you to learn at pace, launch with impact and lead your organisation forward. Our making-led strategic approaches deliver solutions to help your organisation go further and accelerate towards your product future in days or weeks, not months or years. We're cross-platform advocates who have spent the last four years putting Flutter through its paces."
+  card: "images/third_party/partners/Loomery.png"
+  external_url: "https://www.loomery.com/loomery-x-flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Reactree"
+  summary: "Reactree is a rapidly growing technology company that empowers people to believe that sky is indeed the limit.  We craft attractive mobile & web app experiences driven by design, strategy and technology."
+  card: "images/third_party/partners/Reactree.png"
+  external_url: "https://reactree.com/flutter-development-services/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Netglade"
+  summary: "Netglade is a software agency specializing in Flutter app development. We create, maintain and improve apps that are used by over a million users every day."
+  card: "images/third_party/partners/Netglade.png"
+  external_url: "https://www.netglade.cz/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "GeekyAnts"
+  summary: "GeekyAnts provides end-to-end app development and consultation services. Powered by our passionate Flutter team, we solve problems for Small, Medium, and Enterprise companies. Our expertise is building custom internal software, B2B and B2C software, web and mobile applications, and MVPs."
+  card: "images/third_party/partners/GeekyAnts.png"
+  external_url: "https://geekyants.com/hire-flutter-developers/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mokutan Technologies Ltd"
+  summary: "We are a UK based Flutter development agency. Specialising in building custom B2B SaaS and internal business applications."
+  card: "images/third_party/partners/Mokutan.png"
+  external_url: "https://www.mokutan.io/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "GITS.id"
+  summary: "We thrive to develop applications for good. To empower people, to increase productivity, to ease your daily life. Our applications are to get it simple."
+  card: "images/third_party/partners/gits.id.png"
+  external_url: "https://gits.id/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: true
+- title: "Pentagon Co., Ltd."
+  summary: '"Pentagon, Inc. is a software company based in Tokyo that specializes in app development using Flutter. The company also shares Flutter technical knowledge on YouTube and its blog."'
+  card: "images/third_party/partners/Pentagon.png"
+  external_url: "https://pentagon.tokyo/flutter/"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "Supercharge"
+  summary: "At Supercharge, we are your innovation partner to turn disruption into opportunity. With our 200+ digital experts in London, New York, Helsinki, Amsterdam, Vienna, and Budapest, we work with our clients to create transformative digital solutions. We design, engineer, and scale digital products to make your business fit for the future."
+  card: "images/third_party/partners/Supercharge.png"
+  external_url: "https://insights.supercharge.io/book-tech-evaluation-flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "ArcTouch"
+  summary: "ArcTouch creates lovable apps, websites, and digital experiences to help companies forge meaningful connections with their customers."
+  card: "images/third_party/partners/ArcTouch.png"
+  external_url: "https://arctouch.com/flutter"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "OakTree Apps"
+  summary: "OakTree Apps is a fully remote company that works with small and medium enterprises on greenfield projects using Flutter for mobile apps. We are a team of 23, 18 of them being engineers (11 for Flutter/mobile and 7 for backend technologies)."
+  card: "images/third_party/partners/Pratik_Khivesara.png"
+  external_url: "https://oaktreeapps.com/services/flutter-app-development"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mr. Milu"
+  summary: "Independent Digital Agency with integral services: digital design, development, user experience, data analytics and digital marketing"
+  card: "images/third_party/partners/mr_milu.png"
+  external_url: "https://mrmilu.com/en/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "In The Pocket"
+  summary: "In The Pocket is a digital product studio. We take you from ideation to a full-blown digital experience, ready to hit the market and create value for your business."
+  card: "images/third_party/partners/Inthepocket.png"
+  external_url: "https://tech.inthepocket.com/technology/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Plangora Limited"
+  summary: "Founded in 2016, Plangora is driven by a passion for harnessing the power of cutting-edge technology to deliver exceptional results for our clients. With a focus on custom-tailored solutions, we have successfully transformed the visions of over 100 companies into tangible products and comprehensive IT solutions within just 7 years."
+  card: "images/third_party/partners/Plangora.png"
+  external_url: "https://www.plangora.com/flutter"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "JIITAK Inc."
+  summary: "Our company is a pioneering Flutter developer, harnessing its versatility to craft seamless applications across Android, iOS, web, Windows, MacOS, and iPad with a single codebase. Leveraging our proprietary frameworks and packages, we accelerate development, delivering unparalleled speed and user experiences indistinguishable from native apps."
+  card: "images/third_party/partners/Jiitaik.png"
+  external_url: "https://www.jiitak.co.jp/services/flutter"
+  options_location:
+    - "North America"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Incibit GmbH"
+  summary: "We are an app development agency focusing solely on Flutter app development. We also provide flutter consultancy services and also do Flutter trainings with our clients."
+  card: "images/third_party/partners/Incibit.png"
+  external_url: "https://incibit.dev/flutter-entwicklung/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Small-to-medium Business"
+  options_GCP_partner: true
+- title: "NetForemost, Inc"
+  summary: "Our main objective is to build the most outstanding and robust software development teams in Latin America for U.S companies looking for first class technological solutions."
+  card: "images/third_party/partners/Netforemost_logo.png"
+  external_url: "https://netforemost.com/technologies/flutter/"
+  options_location:
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "WebReinvent Technologies Pvt. Ltd."
+  summary: "WebReinvent Technologies Pvt. Ltd. is a software engineering company founded in 2010, working with global clients to build modern web and mobile solutions. We deliver end-to-end product development—from MVPs to scalable, user-centric digital platforms. Our expertise spans API design, multi-tenant SaaS systems, real-time applications, and Flutter-based cross-platform mobile apps with consistent UI, secure architecture, performant builds, and AI-driven capabilities. We are the only official partner in Asia for Flutter, Laravel, Vue, Nuxt, and Builder.io, reflecting our strong engineering standards and ecosystem leadership."
+  card: "images/third_party/partners/WebReinvent_logo.png"
+  external_url: "https://webreinvent.com/technologies/mobility/flutter-app-development"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "iglu.dev"
+  summary: "We help product and development teams write code for digital products and software. We use our unique cross-platform frameworks so you can deploy quality software on time."
+  card: "images/third_party/partners/Iglu_logo.png"
+  external_url: "https://iglu.dev"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "ThinkUp"
+  summary: "A LATAM-based digital product studio specialized in Flutter for banks, fintechs, and neobanks. We design, build, and scale secure, high-performance mobile apps end-to-end—leveraging Shorebird, Server-driven UI, analytics, and AI to drive activation and growth. We handle strategy, UX/UI, development, QA, and ongoing optimization for regulated financial products."
+  card: "images/third_party/partners/ThinkUp_logo.png"
+  external_url: "https://thinkupsoft.com/en/services/flutter-consultants"
+  options_location:
+    - "Europe"
+    - "South America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Koderead Solutions"
+  summary: "An end-to-end digital solutions company specializing in Flutter app development, e-business platforms, and web solutions. We leverage Flutter to build high-performance, cross-platform mobile apps with a unified codebase—helping you gain a competitive advantage and move confidently toward a successful digital future."
+  card: "images/third_party/partners/Koderead_logo.png"
+  external_url: "https://koderead.com"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Bacancy Technology"
+  summary: "A premier Mobile App development company since 2011. We have a skilled pool of 1050+ developers with expertise in multiple technologies. From startups to Fortune 500 companies partnering with brands worldwide, we deliver fast, high-quality, cost-effective solutions at affordable rates. Get quick access to Flutter developers with 4-6 years of experience"
+  card: "images/third_party/partners/Bacancy_logo.png"
+  external_url: "https://www.bacancytechnology.com/hire-flutter-developer"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Xmartlabs"
+  summary: "Xmartlabs is a digital product studio that helps US companies build and scale web and mobile products with senior teams across product, design, engineering, DevOps, and AI. Our work spans Fortune 500 brands and top-tier VC-backed startups."
+  card: "images/third_party/partners/Xmartlabs_logo.png"
+  external_url: "https://www.xmartlabs.com/flutter-services?utm_source=FlutterConsultants&utm_medium=website&utm_campaign=FlutterConsultants&utm_id=FlutterConsultants"
+  options_location:
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "impaktfull"
+  summary: "impaktfull is a product-focused digital agency specializing in Flutter mobile and web applications. We help brands and organizations turn ideas into impactful products by aligning design, technology, and strategy from first prototype to launch."
+  card: "images/third_party/partners/Impaktfull_logo.png"
+  external_url: "https://www.impaktfull.com/flutter-consultant"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "neusta mobile solutions GmbH"
+  summary: "Supports clients through every phase of the app development lifecycle: From initial product vision and UX conception to scalable Flutter engineering, deployment, and continuous evolution. Through a user-centric approach and uncompromising quality standards, our team delivers future-ready Flutter solutions that stand out."
+  card: "images/third_party/partners/Neusta_logo.png"
+  external_url: "https://neusta-ms.de/flutter_en/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Flutternest"
+  summary: "Specializes in providing world-class Flutter app development services to businesses looking for innovative, scalable, and cost-effective mobile and web solutions. Our team of expert Flutter developers is dedicated to transforming your vision into reality with cutting-edge technologies and tailor-made solutions, whether you need a simple app or a complex, enterprise-grade mobile platform."
+  card: "images/third_party/partners/Flutternest_logo.png"
+  external_url: "https://flutternest.com/hire-flutter-app-developers"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Q agency"
+  summary: "Q is known for delivering high-quality tech solutions, with a focus on software engineering and tech consultancy. Our team of over 300 engineers across 20 countries works seamlessly to deliver custom software solutions and build long-term partnerships tailored to the unique needs of our global clients."
+  card: "images/third_party/partners/Qagency_logo.png"
+  external_url: "https://q.agency/services/engineering/mobile/flutter-development-team/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Leenspace"
+  summary: "We are a LATAM-based agency 100% focused on Flutter, specializing in building AI-powered mobile applications."
+  card: "images/third_party/partners/LeenSpace_logo.png"
+  external_url: "https://www.leenspace.com?utm_source=Flutter_consultants&utm_medium=web&utm_campaign=flutter_consultants_directory"
+  options_location:
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Nagarro SE"
+  summary: "With 17k+ Nagarrians in 39 countries, Nagarro drives business value and engineering excellence in over 1000 clients globally. We are distinguished by our entrepreneurial, agile, and global character, as well as our CARING values and mindset. We are not trying to emulate the companies of yesterday, we are the company of tomorrow."
+  card: "images/third_party/partners/Nagarro_logo.png"
+  external_url: "https://www.nagarro.com/en/services/product-studio/flutter-multi-platform-app-development"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Logika Sarana Teknologi"
+  summary: "Specializes in using Flutter to create high-performance, visually stunning, and responsive mobile applications tailored to meet the unique needs of your business. Our price for mobile app development services is very competitive compared to the market, while maintaining the highest quality."
+  card: "images/third_party/partners/Logique_logo.png"
+  external_url: "https://www.logique.co.id/en/services/mobile-app-dev/flutter.php"
+  options_location:
+    - "Asia"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "BOSC Tech Labs"
+  summary: "BOSC Tech Labs is an early adopter of Flutter since 2019, delivering enterprise-grade, secure, and high-performance cross-platform applications for organizations worldwide.  We partner with enterprises to build scalable Flutter solutions featuring complex workflows, role-based access, and data-intensive systems engineered with strong architecture, performance optimization, and long-term maintainability at the core."
+  card: "images/third_party/partners/Bosc_logo.png"
+  external_url: "https://bosctechlabs.com/services/flutter-application-development/"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "Oceania"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "TechAhead Inc"
+  summary: "A pioneer in custom mobile app development since 2009, TechAhead leverages Flutter to craft fast, scalable, and beautifully designed cross-platform experiences for leading global brands."
+  card: "images/third_party/partners/Techahead_logo.png"
+  external_url: "https://www.techaheadcorp.com/services/flutter-app-development-company/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Octo Technology"
+  summary: "Through our technological and methodological expertise, we want to be proud of what we achieve for our clients, ranging from startups to multinational companies."
+  card: "images/third_party/partners/Octo_logo.png"
+  external_url: "https://publication.octo.com/en/octo-flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Cleveroad"
+  summary: "A cross-platform software development company that leverages Flutter to build high-performing apps for iOS, Android, and web. We help startups and SMBs accelerate time-to-market, streamline costs, and deliver native-like user experiences across industries including FinTech, Logistics, Healthcare, and Education."
+  card: "images/third_party/partners/Cleveroad_logo.png"
+  external_url: "https://www.cleveroad.com/services/flutter-app-development/"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "Oceania"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Mobitouch"
+  summary: "A Flutter development studio founded in Poland that helps startups and established companies build beautiful, high-performance mobile apps. We combine hands-on technical expertise with a genuine understanding of what makes products work—whether you're launching something new or scaling an existing app, we've got the experience to help you get there faster and smarter."
+  card: "images/third_party/partners/Mobitouch_logo.png"
+  external_url: "https://mobitouch.net/services/flutter-app-development"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "SHAPE"
+  summary: "A hybrid digital agency where human creativity meets Al-powered automation. Together, we're rewriting the rules for customer experiences, business processes, and digital innovation."
+  card: "images/third_party/partners/Shape_logo.png"
+  external_url: "https://shape.agency/leistungen/softwareentwicklung/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "zeb AI"
+  summary: "zeb is a leading digital transformation strategy company and AWS Premier, Databricks Select, and ServiceNow Premier Partner that offers customers a holistic product-centric approach by combining strategic planning with a proprietary AI-powered implementation methodology. With 15+ years of experience and a team of more than 1000 technologists, we are committed to harnessing bleeding-edge technologies to provide our clients maximum ROI."
+  card: "images/third_party/partners/zebAI_logo.png"
+  external_url: "https://zeb.co/digital-transformation/flutter/"
+  options_location:
+    - "Asia"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Double Coconut"
+  summary: "A boutique studio building striking and effective app and web experiences. Not just development -- we also help with UX, design, and making sure your app is a success. Custom development services with competitive pricing with specialties in gamification and games."
+  card: "images/third_party/partners/doublecoconut_logo.png"
+  external_url: "https://double.studio/flutter"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "CodeX Lancers"
+  summary: "CodeX Lancers is a full-cycle digital innovation agency specializing in building beautifully crafted, high-performance mobile applications. Since 2019 We help startups launch faster and support established brands in strengthening and expanding their digital presence. Our team brings strong cross-platform expertise, working across Flutter, FlutterFlow, Xamarin (MAUI), and native technologies such as Kotlin and Swift."
+  card: "images/third_party/partners/CodeXLancers.png"
+  external_url: "https://codexlancers.com/services/flutterf-app-development/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "TELUS Digital"
+  summary: "The customer experience transformation partner: TELUS Digital is the preferred partner to design, build, and deliver end-to-end, AI-fueled, premium customer experiences for global brands. TELUS Digital has a NPS of 79 among our 600+ clients, with an average client tenure of greater than 9 years, and has built many apps that have topped the iOS App Store and Google Play Store charts."
+  card: "images/third_party/partners/Telus.png"
+  external_url: "https://www.telusdigital.com/solutions/web-mobile-and-digital-marketing/mobile-app-web-development-services/flutter"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Open Reply"
+  summary: "Open Reply is a Reply Group company specialized in mobile and digital transformation, delivering end-to-end solutions. It supports enterprises in building scalable, secure, and high-performance digital experiences, combining deep technological expertise with agile delivery and design-driven innovation."
+  card: "images/third_party/partners/Open-Reply_logo.png"
+  external_url: "https://www.reply.com/open-reply-italy/en/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "fab App Agency"
+  summary: "fab is a Berlin-based app agency specializing in high-quality mobile app development with Flutter, working with leading German enterprises and ambitious startups. We build high-performance, scalable apps with outstanding UX design, integrating technologies such as AI, IoT, sensor systems and wearables to create future-ready digital products."
+  card: "images/third_party/partners/Fab_logo.png"
+  external_url: "https://flutterapps.agency/flutter-app-entwicklung/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Moonwise"
+  summary: "We are agent assisted Flutter experts from Sweden, designing and developing beautiful cross-platform apps."
+  card: "images/third_party/partners/Moonwise_logo.png"
+  external_url: "https://moonwise.se/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "TBR Group"
+  summary: "We help startups and established business evolve through design and development and overcome emerging challenges. We’ll give your product idea an efficient shape and functionality."
+  card: "images/third_party/partners/TBR-group_LOGO.png"
+  external_url: "https://tbrgroup.software/"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "FlutterLab"
+  summary: "FlutterLab is one of the first Flutter-focused Software Development companies been developing with Flutter since the first open beta in 2018. We grew up with Flutter-focus, helping worldwide startups and big companies to develop digital products with native performance, faster to the market."
+  card: "images/third_party/partners/Flutterlab_logo.png"
+  external_url: "https://flutterlabapps.com/flutter"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+  options_GCP_partner: false
+- title: "Liquid Studio"
+  summary: "A Barcelona-based development studio founded in 2016. We specialize in cross-platform mobile apps for iOS and Android using Flutter, delivering projects from concept to App Store. We've built 25+ apps for clients ranging from startups to enterprise brands. We also develop custom web applications with Laravel and premium CMS solutions with Craft CMS."
+  card: "images/third_party/partners/Liquid_logo.png"
+  external_url: "https://www.liquidbcn.com/en/technologies/flutter-app-development-barcelona"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Webkul Software Pvt Ltd"
+  summary: "Is a global IT solutions provider specializing in eCommerce, marketplace, and mobile app development, with strong expertise in Flutter for building scalable, high-performance cross-platform applications. We help businesses accelerate digital transformation through custom development, integrations, and SaaS solutions."
+  card: "images/third_party/partners/Webkul_logo.png"
+  external_url: "https://webkul.com/flutter-app-development-services/"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "LANARS AS"
+  summary: "Is a Norwegian software development company specializing in mobile and web application development, AI solutions, and system integrations for startups and enterprise clients across Europe. With a strong track record of delivering production-grade Flutter applications, we bring both technical depth and product-minded thinking to every engagement."
+  card: "images/third_party/partners/LANARS_logo.png"
+  external_url: "https://lanars.com/software-development/mobile-app-development"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Fueled Digital Media"
+  summary: "Is a premier digital product studio specializing in building high-impact mobile apps, websites, and digital experiences for startups and Fortune 500 brands. We combine strategy, design, and engineering to deliver scalable, user-centric products."
+  card: "images/third_party/partners/fueled_logo.png"
+  external_url: "https://fueled.com/flutter/"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "AppStarter"
+  summary: "AppStarter turns ambitious ideas into market-leading apps."
+  card: "images/third_party/partners/AppStarter_logo.png"
+  external_url: "https://appstarter.agency/en/technologies/flutter"
+  options_location:
+    - "Europe"
+    - "North America"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "7Span"
+  summary: "Is a digital engineering company specializing in building scalable web and mobile applications, with a strong focus on Flutter-based cross-platform solutions and modern architecture practices."
+  card: "images/third_party/partners/7span_logo.png"
+  external_url: "https://7span.com/flutter-consultants"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Flexion Infotech Private Limited"
+  summary: "Global AI automation and custom software engineering company specializing in scalable mobile and web applications, with strong expertise in Flutter app development."
+  card: "images/third_party/partners/Flexion_logo.png"
+  external_url: "https://flexioninfotech.com/services/flutter-development"
+  options_location:
+    - "Asia"
+    - "Europe"
+    - "North America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mobify"
+  summary: "A premier mobile development and digital growth studio based in France, dedicated to transforming concepts into high-performing, scalable mobile ecosystem."
+  card: "images/third_party/partners/Mobify_logo.png"
+  external_url: "https://mobify.fr/flutter-portfolio"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+  options_GCP_partner: false
+- title: "Hyper Pixel"
+  summary: "Hyper Pixel builds high-performance mobile apps designed to drive revenue. From pre-launch development to post-launch growth marketing."
+  card: "images/third_party/partners/HyperPixel_logo.png"
+  external_url: "https://hyperpixel.co.uk/services/mobile-app-development/"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Mabiloft"
+  summary: "Is a UX-driven software engineering studio based in Italy, dedicated to building high impact digital products that scale."
+  card: "images/third_party/partners/Mabiloft.png"
+  external_url: "https://mabiloft.com/en/flutter"
+  options_location:
+    - "Europe"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false
+- title: "Perpetio"
+  summary: "Is a boutique European agency that designs AI-first applications, from MVP to scalable products used by millions."
+  card: "images/third_party/partners/Perpetio_logo.png"
+  external_url: "https://perpet.io/services/flutter"
+  options_location:
+    - "Africa"
+    - "Asia"
+    - "Europe"
+    - "North America"
+    - "Oceania"
+    - "South America"
+  options_customer_size:
+    - "Startup"
+    - "Small-to-medium Business"
+    - "Enterprise"
+  options_GCP_partner: false

@@ -1,0 +1,70 @@
+body.culture {
+
+  section.hero {
+    background-image: linear-gradient(35deg, #DCF5FF 50%, #F3FCFF 90%);
+
+    .container {
+      > h2 {
+        font-size: var(--font-size-heading-2);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--gutter-sm);
+      }
+
+      > p {
+        font-family: var(--font-ui);
+        font-size: var(--font-size-heading-3);
+        margin-bottom: var(--gutter);
+      }
+
+      > h3 {
+        font-size: var(--font-size-heading-3);
+        font-weight: var(--font-weight-bold);
+        margin-bottom: var(--gutter-sm);
+      }
+    }
+  }
+  
+  #feature-columns {
+    .feature-columns {
+      > div {
+        border-color: var(--blue-4);
+      }
+    }
+  }
+
+  #code {
+    background-image: linear-gradient(35deg, #DCF5FF 10%, #F3FCFF 60%);
+    padding: var(--gutter-xl) 0;
+
+    > .container {
+      max-width: 886px;
+      margin: 0 auto;
+    }
+
+    .stacked-header {
+      hgroup {
+        padding-left: 0;
+        max-width: 660px;
+        margin-bottom: 81px;
+      }
+    }
+
+    .story-detail {
+      text-align: left;
+      padding: 0;
+
+      br {
+        display: block;
+      }
+
+      p, ol, ul {
+        padding: 0;
+
+        a, a:hover {
+          color: var(--grey-6);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

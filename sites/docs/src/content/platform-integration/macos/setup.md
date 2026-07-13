@@ -80,7 +80,7 @@ compile and debug native Swift and Objective-C code.
 
 {: .steps}
 
-[xcode]: https://developer.apple.com/xcode/
+[xcode]: {{site.apple-dev}}/xcode/
 [Flutter plugins]: /packages-and-plugins/developing-packages#types
 [CocoaPods]: https://cocoapods.org/
 [CocoaPods installation guide]: https://guides.cocoapods.org/using/getting-started.html#installation
@@ -169,7 +169,7 @@ or begin expanding integration with macOS.
           <a class="text-button" href="/deployment/macos">Build and deploy to macOS</a>
         </li>
         <li>
-          <a class="text-button" href="/platform-integration/macos/c-interop">Bind to native macOS code</a>
+          <a class="text-button" href="/platform-integration/bind-native-code">Bind to native macOS code</a>
         </li>
         <li>
           <a class="text-button" href="/platform-integration/macos/platform-views">Embed native macOS views</a>

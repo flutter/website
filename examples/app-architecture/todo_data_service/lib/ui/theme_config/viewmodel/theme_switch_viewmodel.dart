@@ -42,5 +42,4 @@ class ThemeSwitchViewModel extends ChangeNotifier {
     return result;
   }
 }
-
 // #enddocregion ThemeSwitchViewModel

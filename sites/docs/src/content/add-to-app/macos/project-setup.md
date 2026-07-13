@@ -4,6 +4,17 @@ shortTitle: Integrate Flutter
 description: Learn how to integrate a Flutter app into your existing macOS project.
 ---
 
+:::note
+As of the 3.44 release, Flutter uses [Swift Package Manager][]
+to manage iOS and macOS native dependencies.
+Flutter continues to support CocoaPods in maintenance mode,
+however, the CocoaPods registry permanently becomes
+[read-only on December 2, 2026][cocoapods].
+:::
+
+[cocoapods]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
+[Swift Package Manager]: https://www.swift.org/documentation/package-manager/
+
 Flutter UI components can be incrementally added
 into your existing macOS application using Swift packages.
 
@@ -200,5 +211,4 @@ The example directory structure resembles the following:
 You can now [add a Flutter screen][] to your existing macOS app.
 
 [add a Flutter screen]: /add-to-app/macos/add-flutter-screen
-[become read-only on December 2, 2026]: https://blog.cocoapods.org/CocoaPods-Specs-Repo/
 [build modes]: /testing/build-modes

@@ -18,7 +18,6 @@ class ProblemWidget extends StatelessWidget {
       child: Column(children: <Widget>[Text('Show Material Dialog')]),
     );
   }
-
   // #enddocregion problem
 }
 

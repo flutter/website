@@ -1,0 +1,12 @@
+# This file contains the source data used to populate the
+# "Explore Flutter + AI samples" carousel on the https://flutter.dev/ai page.
+#
+# If you have a sample or demo you'd like to be listed,
+# please open an issue or pull request with more information.
+
+- title: "Chat app with GenUI"
+  href: "https://github.com/flutter/genui/tree/main/examples/simple_chat"
+  image: "images/flutter-logo.png"
+- title: "Firebase AI Logic showcase"
+  href: "https://github.com/flutter/demos/tree/main/firebase_ai_logic_showcase"
+  image: "images/build-with-ai/vertex-tab.png"

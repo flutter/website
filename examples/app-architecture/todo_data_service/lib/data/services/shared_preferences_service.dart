@@ -14,5 +14,4 @@ class SharedPreferencesService {
     return prefs.getBool(_kDarkMode) ?? false;
   }
 }
-
 // #enddocregion SharedPreferencesService

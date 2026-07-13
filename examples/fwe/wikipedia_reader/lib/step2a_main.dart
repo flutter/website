@@ -30,5 +30,4 @@ class MainApp extends StatelessWidget {
 class ArticleModel {
   // Properties and methods will be added here.
 }
-
 // #enddocregion ArticleModel

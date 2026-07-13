@@ -21,6 +21,5 @@ class MyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(child: CustomButton('Hello'));
   }
-
   // #enddocregion use-custom-button
 }

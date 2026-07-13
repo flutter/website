@@ -1,0 +1,37 @@
+# This file contains the source data used to populate the
+# "Flutter games resources" carousel on the https://flutter.dev/games page.
+#
+# Don't directly open PRs with additions to this list.
+#
+# If you have a resource or integration you'd like to be listed,
+# please open an issue with more information.
+
+- title: Ads with Google
+  description: Reach a wider audience and maximize ad revenue with Flutter
+  url: https://docs.flutter.dev/cookbook/plugins/google-mobile-ads
+  image: images/integration/ads.png
+
+- title: In-app purchases
+  description: Build in-app revenue with Google Play and Apple App Store support for Flutter
+  url: https://codelabs.developers.google.com/codelabs/flutter-in-app-purchases#0
+  image: images/integration/iap.png
+
+- title: Leaderboards & badges
+  description: Increase user engagement with a leaderboard and achievements
+  url: https://docs.flutter.dev/cookbook/games/achievements-leaderboard
+  image: images/integration/leaderboards.png
+
+- title: User authentication
+  description: Securely save user data and personalize user experiencing with Firebase Auth
+  url: https://firebase.google.com/codelabs/firebase-auth-in-flutter-apps#0
+  image: images/integration/auth.png
+
+- title: Crash reporting
+  description: Get clear and actionable insights into game issues with Crash Reporting
+  url: https://firebase.flutter.dev/docs/crashlytics/overview/
+  image: images/integration/crash-reporting.png
+
+- title: Multiplayer support
+  description: Implement multiplayer capabilities in your game via Cloud Firestore
+  url: https://docs.flutter.dev/cookbook/games/firestore-multiplayer
+  image: images/integration/multiplayer.png

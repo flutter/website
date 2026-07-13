@@ -16,7 +16,6 @@ class CallbackPasser extends StatelessWidget {
   void myTapCallback(Item item) {
     print('user tapped on $item');
   }
-
   // #enddocregion methods
 }
 
