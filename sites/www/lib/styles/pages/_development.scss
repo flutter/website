@@ -60,6 +60,17 @@ body.development {
       }
     }
 
+    .use-cases-separator {
+      margin: 3rem 0;
+      border-top: 1px solid var(--grey-3);
+    }
+
+    .use-cases-subheading {
+      font-size: var(--font-size-heading-3);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
     .use-case-col {
       flex: 1;
 
@@ -70,6 +81,13 @@ body.development {
         &:hover {
           color: var(--blue-7);
         }
+      }
+
+      p {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        font-size: var(--font-size-heading-4);
+        color: var(--grey-6);
       }
 
       h4 {

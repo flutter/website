@@ -114,6 +114,58 @@ class WebPage extends StatelessComponent {
                 ]),
               ]),
             ]),
+            const div(classes: 'use-cases-separator', []),
+            const h3(
+              classes: 'use-cases-subheading',
+              [.text('How we build our own web experiences')],
+            ),
+            div(classes: 'use-cases-grid', [
+              div(classes: 'use-case-col', [
+                h4([.text('Application Tooling')]),
+                p([
+                  .text('Example: '),
+                  a(
+                    href: 'https://docs.flutter.dev/tools/devtools',
+                    [.text('Flutter & Dart DevTools')],
+                  ),
+                  .text('.'),
+                ]),
+                ul([
+                  li([
+                    .text('Complex, highly interactive developer tooling.'),
+                  ]),
+                  li([
+                    .text(
+                      'Built with Flutter Web (Canvas/Wasm) to leverage the same UI codebase and rich widgets.',
+                    ),
+                  ]),
+                ]),
+              ]),
+              div(classes: 'use-case-col', [
+                h4([.text('Content & Websites')]),
+                p([
+                  .text('Examples: '),
+                  a(href: 'https://dart.dev', [.text('dart.dev')]),
+                  .text(', '),
+                  a(href: 'https://flutter.dev', [.text('flutter.dev')]),
+                  .text(', and '),
+                  a(href: 'https://pub.dev', [.text('pub.dev')]),
+                  .text('.'),
+                ]),
+                ul([
+                  li([
+                    .text(
+                      'Document-centric pages requiring fast initial load times and SEO.',
+                    ),
+                  ]),
+                  li([
+                    .text(
+                      'Built with Jaspr (Dart\'s native static/SSR framework).',
+                    ),
+                  ]),
+                ]),
+              ]),
+            ]),
           ]),
         ]),
         section(id: 'feature-grid', classes: 'module', [
