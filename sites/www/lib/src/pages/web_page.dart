@@ -20,9 +20,9 @@ class WebPage extends StatelessComponent {
   Component build(BuildContext context) {
     return main_([
       HeroSection(
-        title: 'High-Performance Web Applications, Rendered Pixel-Perfect.',
+        title: 'Pixel-Perfect Web Applications',
         text:
-            'Bring your native mobile experience to the browser with zero compromise. '
+            'Bring your native mobile experience to the browser. '
             'Powered by WebAssembly for stable, 60fps performance. '
             'Best for SPAs, PWAs, and complex web tools.',
         media: img(
@@ -76,8 +76,13 @@ class WebPage extends StatelessComponent {
                   ]),
                   li([
                     .text(
-                      'Rich Application UIs: Productivity, creative, or specialized business tools',
+                      'Rich Application UIs: Productivity, creative, or specialized business tools (for example, ',
                     ),
+                    a(
+                      href: 'https://docs.flutter.dev/tools/devtools',
+                      [.text('DevTools')],
+                    ),
+                    .text(')'),
                   ]),
                   li([
                     .text(
@@ -109,59 +114,13 @@ class WebPage extends StatelessComponent {
                       'Alternative Option: If you want to build a traditional SEO-friendly page with Dart, consider ',
                     ),
                     a(href: 'https://jaspr.site/', [.text('Jaspr')]),
-                    .text('.'),
-                  ]),
-                ]),
-              ]),
-            ]),
-            const div(classes: 'use-cases-separator', []),
-            const h3(
-              classes: 'use-cases-subheading',
-              [.text('How we build our own web experiences')],
-            ),
-            div(classes: 'use-cases-grid', [
-              div(classes: 'use-case-col', [
-                h4([.text('Application Tooling')]),
-                p([
-                  .text('Example: '),
-                  a(
-                    href: 'https://docs.flutter.dev/tools/devtools',
-                    [.text('Flutter & Dart DevTools')],
-                  ),
-                  .text('.'),
-                ]),
-                ul([
-                  li([
-                    .text('Complex, highly interactive developer tooling.'),
-                  ]),
-                  li([
-                    .text(
-                      'Built with Flutter Web (Canvas/Wasm) to leverage the same UI codebase and rich widgets.',
-                    ),
-                  ]),
-                ]),
-              ]),
-              div(classes: 'use-case-col', [
-                h4([.text('Content & Websites')]),
-                p([
-                  .text('Examples: '),
-                  a(href: 'https://dart.dev', [.text('dart.dev')]),
-                  .text(', '),
-                  a(href: 'https://flutter.dev', [.text('flutter.dev')]),
-                  .text(', and '),
-                  a(href: 'https://pub.dev', [.text('pub.dev')]),
-                  .text('.'),
-                ]),
-                ul([
-                  li([
-                    .text(
-                      'Document-centric pages requiring fast initial load times and SEO.',
-                    ),
-                  ]),
-                  li([
-                    .text(
-                      'Built with Jaspr (Dart\'s native static/SSR framework).',
-                    ),
+                    .text(' (which powers '),
+                    a(href: 'https://dart.dev', [.text('dart.dev')]),
+                    .text(', '),
+                    a(href: 'https://flutter.dev', [.text('flutter.dev')]),
+                    .text(', and '),
+                    a(href: 'https://pub.dev', [.text('pub.dev')]),
+                    .text(').'),
                   ]),
                 ]),
               ]),
@@ -234,7 +193,7 @@ class WebPage extends StatelessComponent {
                         'https://docs.flutter.dev/get-started/flutter-for/web-devs',
                     classes: 'btn quiet',
                     [
-                      .text('Web developer guide'),
+                      .text('Get started'),
                       RawText('&nbsp;'),
                       Icon.linkArrow(),
                     ],
