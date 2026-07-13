@@ -80,29 +80,29 @@ it's enabled through configuration rather than standard Dart initialization meth
 
 You can enable HCPP using one of the following methods:
 
-1. **Command line flag (run/test)**:
-   Pass the `--enable-hcpp` flag to your `flutter run` or `flutter test` command:
+1.  **Command line flag (run/test)**:
+    Pass the `--enable-hcpp` flag to your `flutter run` or `flutter test` command:
 
-   ```bash
-   flutter run --enable-hcpp
-   ```
+    ```bash
+    flutter run --enable-hcpp
+    ```
 
-:::note
-   This flag is intended for local execution and testing.
-   **It can't be passed to the `flutter build` commands.**
-   For release builds, use the manifest configuration
-   as shown in the next step.
-:::
+    :::note
+    This flag is intended for local execution and testing.
+    **It can't be passed to the `flutter build` commands.**
+    For release builds, use the manifest configuration
+    as shown in the next step.
+    :::
 
-2. **AndroidManifest.xml**:
-   Include a `<meta-data>` tag inside the `<application>` block of your
-   `AndroidManifest.xml`:
+2.  **AndroidManifest.xml**:
+    Include a `<meta-data>` tag inside the `<application>` block of your
+    `AndroidManifest.xml`:
 
-   ```xml
-   <meta-data
-       android:name="io.flutter.embedding.android.EnableHcpp"
-       android:value="true" />
-   ```
+    ```xml
+    <meta-data
+        android:name="io.flutter.embedding.android.EnableHcpp"
+        android:value="true" />
+    ```
 
 ### Limitations and known issues
 
