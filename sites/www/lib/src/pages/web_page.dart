@@ -6,11 +6,10 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/common/feature_grid.dart';
+import '../components/common/icon.dart';
 import '../components/sections/case_studies.dart';
-import '../components/sections/cta_section.dart';
 import '../components/sections/feature_columns_section.dart';
 import '../components/sections/hero_section.dart';
-import '../components/common/icon.dart';
 import '../utils/asset_utils.dart';
 import '../utils/scroll_spy.dart';
 
@@ -56,7 +55,7 @@ class WebPage extends StatelessComponent {
             imageAlt: 'Ship with WebAssembly',
           ),
         ]),
-        section(classes: 'module', [
+        const section(classes: 'module', [
           div(classes: 'use-cases-header stacked-header container', [
             h2([.text('When to use Flutter on the web')]),
           ]),
@@ -162,7 +161,7 @@ class WebPage extends StatelessComponent {
         ]),
         section(id: 'cta', classes: 'module', [
           div(classes: 'insert cta-insert container', [
-            div(classes: 'text', [
+            const div(classes: 'text', [
               h3([.text('Get started')]),
               p([.text('Choose the pathway that matches your experience:')]),
               div(classes: 'cta-buttons', [
