@@ -63,6 +63,15 @@ body.development {
     .use-case-col {
       flex: 1;
 
+      a {
+        color: var(--blue-6);
+        text-decoration: underline;
+
+        &:hover {
+          color: var(--blue-7);
+        }
+      }
+
       h4 {
         margin-bottom: 1rem;
         font-weight: 600;
