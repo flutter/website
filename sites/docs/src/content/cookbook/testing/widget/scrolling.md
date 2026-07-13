@@ -11,7 +11,7 @@ To verify that lists contain the expected content
 using widget tests,
 you need a way to scroll through lists to search for particular items.
 
-To scroll through lists via widget tests,
+To scroll through lists using the widget tests,
 use the methods provided by the [`WidgetTester`][] class,
 which is included in the [`flutter_test`][] package:
 
