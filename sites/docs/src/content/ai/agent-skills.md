@@ -47,7 +47,7 @@ tailored specifically for our frameworks.
 *   **[flutter/agent-plugins](https://github.com/flutter/agent-plugins)**:
     Provides skills for Flutter development.
     These skills help the AI build responsive layouts,
-    wire up declarative routing, and implement JSON serialization.
+    set up declarative routing, and implement JSON serialization.
 
 ## Getting started
 
