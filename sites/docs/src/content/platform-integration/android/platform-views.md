@@ -37,20 +37,21 @@ The following matrix summarizes the different implementations and their trade-of
 
 | Mode | Benefits | Considerations | Enabler |
 | :--- | :--- | :--- | :--- |
-| **Texture layer** | • Best Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks | Default behavior or standard `AndroidView` |
-| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging, which degrades Flutter FPS | `PlatformViewLink` with `AndroidViewSurface` |
-| **HCPP** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+ and Vulkan support | • `<meta-data>` in `AndroidManifest.xml`<br>• `--enable-hcpp` local flag |
+| **Texture layer** | • Good Flutter performance<br>• Full widget transforms work | • Janky during quick scrolling<br>• SurfaceViews lose accessibility and text magnifier breaks | Default behavior or standard `AndroidView` |
+| **Hybrid composition** | • Full native fidelity<br>• Correct accessibility and SurfaceView support | • Causes thread merging of raster & platform, which degrades Flutter FPS<br>• Platform View -> Renders to texture -> Uploads to Impeller -> Impeller composites Flutter content and Platform View content |• `PlatformViewLink` with `AndroidViewSurface`<br>• [`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
+| **HCPP** (Experimental) | • Full fidelity and performance<br>• Solves original sync overhead | • Requires Android API 34+, Vulkan support, and use of the Impeller rendering engine<br>• Platform View -> Renders to native Android Surface, Impeller renders to native Android Surface, SurfaceFlinger composites the two together | • `<meta-data>` in `AndroidManifest.xml`<br>• `--enable-hcpp` local flag<br> •[`AndroidViewController` builds either a TLHC or an HC Platform View][AC] |
 
 {:.table .table-striped}
 
+[AC]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/hybrid_android_views/lib/android_platform_view.dart
 
-## Hybrid Composition  {: #hybrid-composition }
+## Hybrid composition {: #hybrid-composition }
 
 Platform Views are rendered as they are normally.
 Flutter content is rendered into a texture.
 SurfaceFlinger composes the Flutter content and the platform views.
 
-## Hybrid Composition++ (HCPP)  {: #hcpp }
+## Hybrid composition++ (HCPP) {: #hcpp }
 
 :::note
 This feature is experimental and is available starting from Flutter 3.44.
@@ -111,7 +112,7 @@ You can enable HCPP using one of the following methods:
   **Flutter canvas -> Platform View -> Overlay -> Transparent Platform View**,
   when all four of these layers intersect.
 
-## Texture layer  {: #texture-layer }
+## Texture layer {: #texture-layer }
 
 Platform Views are rendered into a texture.
 Flutter draws the platform views (using the texture).
@@ -120,7 +121,7 @@ Flutter content is rendered directly into a Surface.
 This approach provides:
 
 * good performance for Android Views
-* best performance for Flutter rendering
+* good performance for Flutter rendering
 * all transformations work correctly
 
 However, this approach might cause:
@@ -136,7 +137,7 @@ To create a platform view on Android, use the following steps.
 First, on the Dart side, create a `Widget` and add one of the
 following build implementations depending on your chosen strategy.
 
-### Hybrid Composition
+### Hybrid composition
 
 In your Dart file,
 for example `native_view_example.dart`,
@@ -543,7 +544,7 @@ This can cause jank during high-frequency updates like fast scrolling.
 For complex cases, there are some techniques that
 can be used to mitigate these issues.
 
-For example, you could use a placeholder texture
+For example, you can use a placeholder texture
 while an animation is happening in Dart.
 In other words, if an animation is slow while a
 platform view is rendered,
