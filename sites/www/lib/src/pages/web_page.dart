@@ -80,7 +80,7 @@ class WebPage extends StatelessComponent {
                     ),
                     a(
                       href: 'https://docs.flutter.dev/tools/devtools',
-                      [.text('DevTools')],
+                      [.text('Dart & Flutter DevTools')],
                     ),
                     .text(')'),
                   ]),
