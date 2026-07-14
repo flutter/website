@@ -783,7 +783,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
     `application:didFinishLaunchingWithOptions:` returns.
     To work around this restriction, plugins can expose an API that
     lets you register background tasks directly in the `AppDelegate`'s
-    `application:willFinishLaunchingWithOptions:` method.
+    `application:didFinishLaunchingWithOptions:` method.
 
     The following Apple APIs must be configured before app launch finishes:
 
@@ -826,7 +826,7 @@ migrate it to UIKit's scene-based lifecycle as follows:
           registrar.addApplicationDelegate(shared)
         }
     +   // A new API for apps to call in their `AppDelegate`'s `application:didFinishLaunchingWithOptions:`
-    +   public func registerBackgroundHandler(identifer: String) {
+    +   public func registerBackgroundHandler(identifier: String) {
     +     BGTaskScheduler.register(forTaskWithIdentifier: identifier, using: .main) { task in
     +       // Handle background task execution
     +     }
