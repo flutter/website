@@ -7,5 +7,4 @@
   void indent() {
     print('indent');
   }
-  
 ```

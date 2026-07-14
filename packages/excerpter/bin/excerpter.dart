@@ -77,10 +77,9 @@ Future<void> runExcerpter(final List<String> arguments) async {
     '${result.madeUpdates ? 'were updated' : 'need to be updated'}.',
   );
 
-  if (result.errors.length case final amountOfErrors when amountOfErrors > 0) {
-    io.exitCode = amountOfErrors;
-  } else if (failOnUpdate && result.excerptsNeedingUpdates > 0) {
-    io.exitCode = result.excerptsNeedingUpdates;
+  if (result.errors.isNotEmpty ||
+      (failOnUpdate && result.excerptsNeedingUpdates > 0)) {
+    io.exitCode = 1;
   }
 }
 
