@@ -33,7 +33,7 @@ class BlogLayout extends DefaultLayout {
     if (isPost && page.data.page['titleBase'] == null) {
       page.apply(
         data: {
-          'page': {'titleBase': 'The Dart Blog'},
+          'page': {'titleBase': 'The Flutter Blog'},
         },
       );
     }
