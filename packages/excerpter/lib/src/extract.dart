@@ -50,10 +50,6 @@ final class ExcerptExtractor {
     }
 
     final lines = await file.readAsLines();
-    if (lines.isEmpty) {
-      return const {};
-    }
-
     final regionContent = <String, Region>{_entireFileRegionName: Region._()};
     final currentRegions = <String>{_entireFileRegionName};
 

@@ -99,7 +99,8 @@ final class SkipTransform extends AmountTransform {
   @override
   Iterable<String> transform(Iterable<String> lines) {
     if (count.isNegative) {
-      return lines.take(lines.length + count);
+      final linesToTake = lines.length + count;
+      return linesToTake <= 0 ? const <String>[] : lines.take(linesToTake);
     } else {
       return lines.skip(count);
     }
@@ -116,7 +117,8 @@ final class TakeTransform extends AmountTransform {
   @override
   Iterable<String> transform(Iterable<String> lines) {
     if (count.isNegative) {
-      return lines.skip(lines.length + count);
+      final linesToSkip = lines.length + count;
+      return linesToSkip <= 0 ? lines : lines.skip(linesToSkip);
     } else {
       return lines.take(count);
     }
@@ -175,25 +177,26 @@ Iterable<ReplaceTransform> stringToReplaceTransforms(
     final originalPattern = parts[index];
     final replaceWith = parts[index + 1];
     final encodedReplaceWith = _encodeSlashChar(replaceWith);
+    final from = _parseRegExp(originalPattern, reportError);
 
     if (!encodedReplaceWith.contains(_matchDollarNumRE)) {
-      transforms.add(
-        SimpleReplaceTransform(
-          RegExp(originalPattern, multiLine: true),
-          encodedReplaceWith,
-        ),
-      );
+      transforms.add(SimpleReplaceTransform(from, encodedReplaceWith));
     } else {
-      transforms.add(
-        BackReferenceReplaceTransform(
-          RegExp(originalPattern, multiLine: true),
-          encodedReplaceWith,
-        ),
-      );
+      transforms.add(BackReferenceReplaceTransform(from, encodedReplaceWith));
     }
   }
 
   return transforms;
+}
+
+/// Parses [pattern] as a regular expression,
+/// reporting an error through [reportError] if parsing fails.
+RegExp _parseRegExp(String pattern, Never Function(String error) reportError) {
+  try {
+    return RegExp(pattern, multiLine: true);
+  } on FormatException catch (error) {
+    reportError('Invalid regular expression "$pattern": ${error.message}');
+  }
 }
 
 /// A base class for replacement transforms that convert
@@ -281,7 +284,8 @@ final class BackReferenceReplaceTransform extends ReplaceTransform {
               return '$escapedDollarSigns\$$potentialGroupReference';
             }
 
-            return '$escapedDollarSigns${match[groupNumber]}';
+            final capturedGroup = match[groupNumber] ?? '';
+            return '$escapedDollarSigns$capturedGroup';
           }),
         )
         .split('\n');
