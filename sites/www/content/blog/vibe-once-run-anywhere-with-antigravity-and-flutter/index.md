@@ -1,8 +1,11 @@
 ---
 title: "Vibe once, run anywhere with Antigravity and Flutter"
-description: "co-authored with Rody Davis"
+description: >-
+  How Flutter and Antigravity helped build and launch an asteroid landing game.
 publishDate: 2026-06-29
-author: craiglabenz
+author:
+  - craiglabenz
+  - rodydavis
 image: images/1Mg2Bj5FBg1I19r1Jw4q9Kg.webp
 layout: blog
 ---
