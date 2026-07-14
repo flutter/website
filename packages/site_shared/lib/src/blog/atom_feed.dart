@@ -73,7 +73,9 @@ final class BlogAtomFeedOutput implements SecondaryOutput {
     }
 
     final String feedAuthor;
-    if (pageData['blog'] case {'atom': {'feedAuthor': final String author}}) {
+    if (blogIndex.blogData case {
+      'atom': {'feedAuthor': final String author},
+    }) {
       feedAuthor = author;
     } else {
       throw Exception('Blog atom feed author not configured in page data.');
