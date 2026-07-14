@@ -1,6 +1,8 @@
 // Copyright (c) 2023. All rights reserved. Use of this source code
 // is governed by a MIT-style license that can be found in the LICENSE file.
 
+import 'dart:math' as math;
+
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 
@@ -99,8 +101,7 @@ final class SkipTransform extends AmountTransform {
   @override
   Iterable<String> transform(Iterable<String> lines) {
     if (count.isNegative) {
-      final linesToTake = lines.length + count;
-      return linesToTake <= 0 ? const <String>[] : lines.take(linesToTake);
+      return lines.take(math.max(lines.length + count, 0));
     } else {
       return lines.skip(count);
     }
@@ -117,8 +118,7 @@ final class TakeTransform extends AmountTransform {
   @override
   Iterable<String> transform(Iterable<String> lines) {
     if (count.isNegative) {
-      final linesToSkip = lines.length + count;
-      return linesToSkip <= 0 ? lines : lines.skip(linesToSkip);
+      return lines.skip(math.max(lines.length + count, 0));
     } else {
       return lines.take(count);
     }

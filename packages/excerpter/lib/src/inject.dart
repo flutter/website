@@ -516,7 +516,7 @@ Pattern _argStringToPattern(
   String value,
   Never Function(String error) reportError,
 ) {
-  if (value.startsWith('/') && value.endsWith('/')) {
+  if (value.length >= 2 && value.startsWith('/') && value.endsWith('/')) {
     final regularExpression = value.substring(1, value.length - 1);
     try {
       return RegExp(regularExpression);
