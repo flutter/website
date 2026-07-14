@@ -14,7 +14,7 @@ dependencies:
   jaspr: ^0.23.1
   jaspr_content: ^0.5.2
   markdown: ^7.3.1
-  markdown_description_list: ^0.1.1
+  markdown_description_list: ^0.2.0
   meta: ^1.18.2
   nanoid2: ^2.0.1
   opal: ^0.2.2
