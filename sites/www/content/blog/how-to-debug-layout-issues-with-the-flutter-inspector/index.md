@@ -7,6 +7,7 @@ image: images/1oWDuoKe1gCDL5UPrQUwePg.webp
 category: tutorial
 layout: blog
 ---
+
 > Note: Being familiar with `Row`, `Column`, and `Expanded` is useful, but not required, for this article.
 
 As a Flutter developer, you’ve probably run into issues where an image is cut off (or not even visible) on your app. Maybe you got the “viewport was given unbounded height” error.” In fact, the two most frequent types of Flutter errors are both problems with layout: widget overflow and “renderbox not laid out” issues. You’re not alone in running into layout problems, but, where do you go to solve them?
@@ -15,17 +16,6 @@ As a Flutter developer, you’ve probably run into issues where an image is cut 
 
 
 Fortunately, the Dart DevTool’s [Flutter Inspector](https://flutter.dev/docs/development/tools/devtools/inspector) can help you understand *why* they occur and also *how* you can solve them. **In this article, you learn how to use the tool by debugging 3 common layout issues. So, the next time you encounter an issue, you can solve it like a pro!**
-
-## Table of Contents
-
-1. [What is the Flutter Inspector?](#042b)
-
-1. [The debugging adventure](#37f6)
-• [Overflow](#738b)
-• [Unbounded height error](#1de2)
-• [Invisible VerticalDivider](#631b)
-
-1. [Summary](#04f5)
 
 ## What is the Flutter Inspector?
 

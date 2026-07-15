@@ -12,15 +12,15 @@ The Flutter 3.24 release introduces a new low-level graphics API called [Flutter
 
 This article contains two “getting started” guides for these packages:
 
-1. 🔺 **Advanced:** [Getting started with Flutter GPU](#d558)
-If you’re an experienced graphics programmer or you’re interested in low level graphics and want to build renderers from scratch in Flutter, then this guide will get you set up to start tinkering with Flutter GPU. You’ll draw your first triangle from scratch… in Flutter!
+1. 🔺 **Advanced:** [Getting started with Flutter GPU](/blog/getting-started-with-flutter-gpu#getting-started-with-flutter-gpu)
+   If you’re an experienced graphics programmer or you’re interested in low level graphics and want to build renderers from scratch in Flutter, then this guide will get you set up to start tinkering with Flutter GPU. You’ll draw your first triangle from scratch… in Flutter!
 
-1. 💚 **Intermediate:** [3D rendering with Flutter Scene](#6b35)
-If you’re a Flutter developer that wants to add 3D functionality to your apps, or you want to create 3D games using Dart and Flutter, then this is a guide for you! You’ll set up a project that imports and renders 3D assets in Flutter.
+1. 💚 **Intermediate:** [3D rendering with Flutter Scene](/blog/getting-started-with-flutter-gpu#3d-rendering-with-flutter-scene)
+   If you’re a Flutter developer that wants to add 3D functionality to your apps, or you want to create 3D games using Dart and Flutter, then this is a guide for you! You’ll set up a project that imports and renders 3D assets in Flutter.
 
 ## Getting started with Flutter GPU
 
-⚠️ Warning! ⚠️ Flutter GPU is ultimately a low-level API. It’s overwhelmingly likely that the vast majority of Flutter devs who will benefit from Flutter GPU’s existence will do so by consuming higher level rendering libraries published on pub.dev, such as the Flutter Scene rendering package. If you’re not interested in the Flutter GPU API itself and you’re just interested in 3D rendering, skip ahead to [3D rendering with Flutter Scene](#6b35).
+⚠️ Warning! ⚠️ Flutter GPU is ultimately a low-level API. It’s overwhelmingly likely that the vast majority of Flutter devs who will benefit from Flutter GPU’s existence will do so by consuming higher level rendering libraries published on pub.dev, such as the Flutter Scene rendering package. If you’re not interested in the Flutter GPU API itself and you’re just interested in 3D rendering, skip ahead to [3D rendering with Flutter Scene](/blog/getting-started-with-flutter-gpu#3d-rendering-with-flutter-scene).
 
 <DashImage figure src="images/0hAqIOVkaI1IWnOHE.webp" alt="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." caption="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." />
 
