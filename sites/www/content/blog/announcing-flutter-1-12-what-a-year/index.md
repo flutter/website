@@ -190,7 +190,7 @@ We’re so lucky to have such a great set of developers in the Flutter community
 
 ## Flutter Favorite packages
 
-When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it’s sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](http://go/dart-2.7-annoucement), which should help even more.
+When we released Flutter 1.0 in December, 2018, there were about 1000 packages on pub.dev that supported Flutter and we thought that was a huge number. As of this writing, that number has increased by more than 6x. With that many options, it’s sometimes hard to know which packages to choose. The overall score on pub.dev helps as well as the new [Verified Publishers](https://medium.com/dartlang/verified-publishers-98f05466558a) feature. Now, pub.dev is getting [a rating system](https://dart.dev/blog/announcing-dart-2-7-a-safer-more-expressive-dart#liking-packages-on-pub-dev), which should help even more.
 
 Still, our users have asked again and again for a set of “recommended” packages and plugins. With that in mind, we’re pleased to announce [the Flutter Favorite program](https://flutter.dev/docs/development/packages-and-plugins/favorites).
 

@@ -364,9 +364,9 @@ At this point, the set of Flutter-compatible packages and plugins numbers greate
 
 Congratulations to the authors of these packages! If you haven’t checked them out yet, or [the rest of the packages on the list](https://pub.dev/flutter/favorites), you should.
 
-And last but certainly not least, for package authors or package users interested in whether the latest version of a package works on a recent version of Flutter, you’ll want to check out Codemagic’s new [pub.green](http://pub.green) site.
+And last but certainly not least, for package authors or package users interested in whether the latest version of a package works on a recent version of Flutter, you’ll want to check out Codemagic’s new [pub.green](https://pub.green) site.
 
-<DashImage figure src="images/0-Ichbk_jGmhmdj3B.webp" alt="Codemagic’s new [pub.green](http://pub.green) site shows compatibility for the top packages with recent Flutter releases" caption="Codemagic’s new [pub.green](http://pub.green) site shows compatibility for the top packages with recent Flutter releases" />
+<DashImage figure src="images/0-Ichbk_jGmhmdj3B.webp" alt="Codemagic’s new pub.green site shows compatibility for the top packages with recent Flutter releases" caption="Codemagic’s new [pub.green](https://pub.green) site shows compatibility for the top packages with recent Flutter releases" />
 
 
 The pub.green site tests the compatibility of Flutter and Dart packages available on pub.dev with different Flutter versions. Think of it as the “can I use” for Flutter. For more details, I recommend [the announcement blog post from the CodeMagic team](https://blog.codemagic.io/pub-green/).

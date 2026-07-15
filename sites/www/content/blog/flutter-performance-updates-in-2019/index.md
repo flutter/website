@@ -213,7 +213,7 @@ contributors: [flar](https://github.com/flar), [yjbanov](https://github.com/yjba
 
 * [PR 37275: Optimize the transformRect and transformPoint methods in matrix_utils](https://github.com/flutter/flutter/pull/37275)
 
-* 5.3x speedup (2300ms to 430ms) in [`MatrixUtils_affine_transformRect_iteration`](http://go/flutter-benchmarks)
+* 5.3x speedup (2300ms to 430ms) in `MatrixUtils_affine_transformRect_iteration`
 
 * 1.5x speedup (466ms to 320ms) in `MatrixUtils_affine_transformPoint_iteration`
 
