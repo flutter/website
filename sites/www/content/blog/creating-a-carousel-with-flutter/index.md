@@ -21,14 +21,14 @@ You can follow along with this article to create the project from scratch, but i
 
 I will be using Android Studio for this walkthrough. Your first step will be to create a new Flutter Project. When the project has been created, navigate to the **pubspec.yaml** file located at the top level of your project directory:
 
-```
-**name:** carousel_demo
-**description:** Carousel_Demo
+```yaml
+name: carousel_demo
+description: Carousel_Demo
 
-**dependencies:
+dependencies:
   flutter:
-    sdk:** flutter
-  **carousel:** ^0.1.0
+    sdk: flutter
+  carousel: ^0.1.0
 ```
 
 
@@ -41,9 +41,9 @@ Next, run **flutter packages get.** If you are in Android Studio, you can do thi
 
 Once the package has been installed, navigate to your **main.dart** file where your landing page code currently lives. Delete everything that’s there and replace it with this barebones Hello World script. Notice that we are **importing carousel.dart** at the top of the file:
 
-```
-**import** 'package:flutter/material.dart';
-**import** 'package:carousel/carousel.dart';
+```dart
+import 'package:flutter/material.dart';
+import 'package:carousel/carousel.dart';
 
 void main() => runApp(new MyApp());
 
@@ -78,15 +78,15 @@ Let’s begin implementing the carousel feature. Your body value will be replace
 
 The **PageView** will handle our background image, while the ListView holds our “Hello World” text.
 
-```
-body: **new** Stack (
+```dart
+body: new Stack (
     children: <Widget>[
-      **new** PageView(
+      new PageView(
         children: [testBGCarousel],
       ),
-      **new** ListView(
+      new ListView(
         children: [
-          **new** Text('This text displays on top of the carousel'),
+          new Text('This text displays on top of the carousel'),
         ],
       ),
     ]
@@ -115,10 +115,10 @@ Just to make this extra simple, here are three full-size color templates you can
 <DashImage figure src="images/1BRF6ceZiW5XXgx78k1L3eQ.webp" alt="Download these three images and use them to test the carousel." caption="Download these three images and use them to test the carousel." />
 
 
-```
-     **** **new** ListView(
+```dart
+      new ListView(
         children: [
-          **new** Text('This text displays on top of the carousel'),
+          new Text('This text displays on top of the carousel'),
         ],
       ),
 ```
@@ -128,23 +128,23 @@ The aforementioned **ListView** is set up with a single child argument of new Te
 
 Next, in your **pubspec.yaml** file, declare these assets like this:
 
-```
-**name:** carousel_demo
-**description:** Carousel_Demo
+```yaml
+name: carousel_demo
+description: Carousel_Demo
 
-**dependencies:
+dependencies:
   flutter:
-    sdk:** flutter
-  **carousel:** ^0.1.0
-  ****cupertino_icons:** ^0.1.0
+    sdk: flutter
+  carousel: ^0.1.0
+  cupertino_icons: ^0.1.0
 
-**dev_dependencies:
+dev_dependencies:
   flutter_test:
-    sdk:** flutter
+    sdk: flutter
 
-****flutter:**
-  ****uses-material-design:** true
-  **assets:**
+flutter:
+  uses-material-design: true
+  assets:
       - images/img1.jpg
       - images/img2.jpg
       - images/img3.jpg
@@ -153,35 +153,35 @@ Next, in your **pubspec.yaml** file, declare these assets like this:
 
 This makes the image assets available to your app. Back in the **main.dart** file, add this carousel code to introduce the images:
 
-```
-**class** MyApp **extends** StatelessWidget {
+```dart
+class MyApp extends StatelessWidget {
   @override
 
-  Widget testBGCarousel = **new** Container(
-    child: **new** Carousel(
+  Widget testBGCarousel = new Container(
+    child: new Carousel(
       children: [
-        **new** AssetImage('images/img1.jpg'),
-        **new** AssetImage('images/img2.jpg'),
-        **new** AssetImage('images/img3.jpg'),
-      ].map((bgImg) => **new** Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList(),
-      displayDuration: **const** Duration(seconds: 1),
+        new AssetImage('images/img1.jpg'),
+        new AssetImage('images/img2.jpg'),
+        new AssetImage('images/img3.jpg'),
+      ].map((bgImg) => new Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList(),
+      displayDuration: const Duration(seconds: 1),
     ),
   );
 
 
   Widget build(BuildContext context) {
-    **return new** MaterialApp( ... )}
+    return new MaterialApp( ... )}
 ```
 
 
 I have abbreviated the Widget build to keep the code snippet short. All you need to add in is the testBGCarousel widget. Keep reading for a breakdown on how it works:
 
-**The Children List:** You can add as many AssetImages as you want, provided you keep the correct format. Follow the syntax shown above to access the .jpg files in the image folder you created. Note that ***arrays** are called [**lists**](https://api.dartlang.org/stable/1.24.3/dart-core/List-class.html) in Dart*.
+**The Children List:** You can add as many AssetImages as you want, provided you keep the correct format. Follow the syntax shown above to access the .jpg files in the image folder you created. Note that *arrays are called [lists](https://api.dartlang.org/stable/1.24.3/dart-core/List-class.html) in Dart*.
 
 **The Map Method:** Mapping is similar to a forEach loop; it takes each element of a list and performs some action. You can read up on Dart’s map method [here](https://api.dartlang.org/stable/1.24.3/dart-core/Iterable/map.html).
 
-```
-.map((bgImg) => **new** Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList()
+```dart
+.map((bgImg) => new Image(image: bgImg, width: 1500.0, height: 1500.0, fit: BoxFit.cover)).toList()
 ```
 
 
@@ -189,8 +189,8 @@ We are mapping over the list of AssetImages one at a time. The first argument (b
 
 **Each New Image:** The first property, *image,* receives the mapped element *bgImg* as a value. Additional properties are assigned. Note that I am using **fit: BoxFit.cover** to automatically fit the images within the box. The large width and height values ensure image scales into a large enough space. Once the new Image is created, the .toList() method pushes that image to a new version of the Carousel’s children List.
 
-```
-displayDuration: **const** Duration(seconds: 1),
+```dart
+displayDuration: const Duration(seconds: 1),
 ```
 
 
@@ -199,12 +199,12 @@ Below the children, the Carousel receives an additional, optional argument on th
 <DashImage figure src="images/1cO4d8OZCrc3jwJnIWw4Lmw.webp" alt="Command + Click the word Carousel to view carousel.dart" caption="Command + Click the word Carousel to view carousel.dart" />
 
 
-```
+```dart
 Carousel({
-  **this**.children,
-  **this**.animationCurve = Curves.*ease*,
-  **this**.animationDuration = **const** Duration(milliseconds: 250),
-  **this**.displayDuration = **const** Duration(seconds: 2)
+  this.children,
+  this.animationCurve = Curves.ease,
+  this.animationDuration = const Duration(milliseconds: 250),
+  this.displayDuration = const Duration(seconds: 2)
 }) :
 ```
 
@@ -213,9 +213,9 @@ To customize animation duration and curve, command + click on the property names
 
 Reload your app and voila, you have a working carousel. Here is the complete code:
 
-```
-**import** 'package:flutter/material.dart';
-**import** 'package:carousel/carousel.dart';
+```dart
+import 'package:flutter/material.dart';
+import 'package:carousel/carousel.dart';
 
 void main() => runApp(new MyApp());
 

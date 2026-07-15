@@ -19,7 +19,7 @@ What will you learn? The first lesson acquaints you with Dart and Flutter. You�
 
 Throughout the course, you’ll incrementally build a unit converter app. Yes, I hear you protesting about the apparent lack of creativity in such an endeavor. But, there are many open-ended areas to explore if you choose — such as customizing colors, shapes, theming, APIs, animations, and more. I’ve even added a list of goofy-but-real unit conversions to the mix, in case you’ve ever wanted to convert the mass of a bag of cement into that of a burrito*. Still, if you follow the course exactly, you’ll learn the Flutter fundamentals, and build a lovely unit converter to share with your friends, on any device! It’s a flexible course, so if you already have some Flutter experience, skip ahead, or delve more into a specific topic; we have linked to various resources where you can learn more.
 
-** This is unofficial, please don’t mention I snuck it in.*
+*This is unofficial, please don’t mention I snuck it in.*
 
 Why a course for Flutter? It’s a great development platform! Some of the coolest Flutter features, in my opinion, include:
 
@@ -32,7 +32,7 @@ Centering an item, and implementing sticky footers or efficient lists have often
 **Widget Customization and Extension**
 One time, I needed a slider for my app. Great, Flutter comes with a Slider widget! Boo, the widget didn’t let me customize its inactive color. I made a pull request to the Slider class, which added the inactive color property, and hooray, I extended the widget! This is just one way to extend existing widgets — you can also build custom widgets by composing widgets, as we do with the CategoryTile in the course.
 
-## **Get involved in the Flutter Community**
+## Get involved in the Flutter Community
 
 This course is meant to be a community project. Consider contributing your own tips and tricks, perhaps by writing a blog post, or making your own screencast. You’ll learn a lot through this process — I learned not only about Flutter, but also how to teach and lead. I discovered new ways to think about widgets, and how to mix-and-match them. Although we had fancy animations in our videos, anyone (including you!) can record a how-to video.
 
@@ -46,7 +46,7 @@ Feel free to contribute in any of the following ways:
 
 * Creating a local meetup in your area or school.
 
-## **Next steps**
+## Next steps
 
 Once you complete [“Build Native Apps with Flutter”](https://udacity.com/course/ud905), try our [Flutter codelabs](https://codelabs.developers.google.com/?cat=Flutter), watch our [Dev Bytes](https://www.youtube.com/watch?v=fq4N0hgOWzU&list=PLOU2XLYxmsIJ7dsVN4iRuA7BT8XHzGtCr) and [browse our website](https://flutter.io).
 

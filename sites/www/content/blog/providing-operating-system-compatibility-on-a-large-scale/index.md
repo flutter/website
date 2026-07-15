@@ -166,7 +166,7 @@ We have published a [request for comment about deprecating iOS 8](https://docs.g
 
 We are considering deprecating support for Android Jelly Bean because we no longer test devices with that version of Android in our lab, and sourcing reliable devices for lab use is increasingly difficult. Devices running Android Jelly Bean comprise some 0.46% of the user base of Android at this point.
 
-We have published a [request for comment about deprecating Android ](https://docs.google.com/document/d/1IjlypDrIIGgF2N76P6z8QL2rT5Uuh_rBvqOgDUyhCx8/edit)Jelly Bean, and we ask you to review it and participate in the discussion. Our intention is that Flutter 1.22 (our most recent stable release) will be the last stable release to support Android Jelly Bean. The RFC includes both the justification and what to do if you’re affected.
+We have published a [request for comment about deprecating Android](https://docs.google.com/document/d/1IjlypDrIIGgF2N76P6z8QL2rT5Uuh_rBvqOgDUyhCx8/edit) Jelly Bean, and we ask you to review it and participate in the discussion. Our intention is that Flutter 1.22 (our most recent stable release) will be the last stable release to support Android Jelly Bean. The RFC includes both the justification and what to do if you’re affected.
 
 ## How you can help
 

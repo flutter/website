@@ -61,7 +61,7 @@ This doesn’t mean that your creativity should be limited to mobile platforms. 
 <DashImage figure src="images/1sTD5PMhST3_73n4vnVcWBQ.webp" alt="Tic-Tac-Toe game running on the web and desktop" caption="Tic-Tac-Toe game running on the web and desktop" />
 
 
-Meanwhile, we recently added support for the community-driven game engine Flame on DartPad, so you can explore[ building games with Flame](https://dartpad.dev/?id=3e52ca7b51ba15f989ad880b8b3314a2) on DartPad without downloading the SDK. What’s more, the web-based [pinball game,](https://pinball.flutter.dev/) written by Very Good Ventures (VGV) and launched at Google I/O, was built in Flutter using the Flame engine! To learn how the pinball game was created, check out [the Pinball article](https://medium.com/flutter/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d) from the VGV team or [view the code](https://github.com/flutter/pinball).
+Meanwhile, we recently added support for the community-driven game engine Flame on DartPad, so you can explore [building games with Flame](https://dartpad.dev/?id=3e52ca7b51ba15f989ad880b8b3314a2) on DartPad without downloading the SDK. What’s more, the web-based [pinball game,](https://pinball.flutter.dev/) written by Very Good Ventures (VGV) and launched at Google I/O, was built in Flutter using the Flame engine! To learn how the pinball game was created, check out [the Pinball article](https://medium.com/flutter/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d) from the VGV team or [view the code](https://github.com/flutter/pinball).
 
 <DashImage figure src="images/0zJekiBgTaE-VTXfa.webp" alt="Web-based pinball game" caption="Web-based pinball game" />
 

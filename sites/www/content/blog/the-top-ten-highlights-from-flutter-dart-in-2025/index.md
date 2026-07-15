@@ -24,7 +24,7 @@ As you might know, Dart and Flutter ship quarterly updates. In 2025, we shipped 
 
 1. **[Flutter 3.29](https://blog.flutter.dev/whats-new-in-flutter-3-29-f90c380c2317) & [Dart 3.7](https://blog.dart.dev/announcing-dart-3-7-bf864a1b195c) (Feb 2025):** This release was all about performance and fidelity, with big Impeller updates, the move of Dart execution to the main thread on mobile to improve native interop, and a new Dart formatter.
 
-2. **[Flutter 3.32](https://blog.flutter.dev/whats-new-in-flutter-3-32-40c1086bab6e) & [Dart 3.8](https://blog.dart.dev/announcing-dart-3-8-724eaaec9f47) (May 2025[)](https://blog.flutter.dev/whats-new-in-flutter-3-32-40c1086bab6e):** We got experimental web hot reload, Cupertino “Squircles,” stylus support on Android, cross-compilation for Dart, and null-aware elements.
+2. **[Flutter 3.32](https://blog.flutter.dev/whats-new-in-flutter-3-32-40c1086bab6e) & [Dart 3.8](https://blog.dart.dev/announcing-dart-3-8-724eaaec9f47) (May 2025):** We got experimental web hot reload, Cupertino “Squircles,” stylus support on Android, cross-compilation for Dart, and null-aware elements.
 
 3. **[Flutter 3.35](https://blog.flutter.dev/whats-new-in-flutter-3-35-c58ef72e3766) & [Dart 3.9](https://blog.dart.dev/announcing-dart-3-9-ba49e8f38298) (Aug 2025):** Web hot reload became default, we launched experimental Widget Previews, introduced the Dart & Flutter [MCP server](https://docs.flutter.dev/ai/mcp-server), and announced the Material/Cupertino decoupling.
 

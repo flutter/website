@@ -36,7 +36,7 @@ We partnered with the Google Ads team to build this plugin as the official ads s
 
 If you are not familiar with Google’s ads services, you might not know that [AdMob](https://admob.google.com/home/) and [Ad Manager](http://admanager.google.com/home) are two different products with different monetization capabilities. The AdMob platform is designed for mobile developers who want to earn money from ads and gain actionable insights to grow the app business. The Ad Manager platform is designed for publishers who have significant direct sales or multiple inventory types.
 
-T[he GMA SDK for Flutter](https://pub.dev/packages/google_mobile_ads) unifies these products to help meet your monetization needs by sharing code across iOS and Android and not having to rewrite your code as your needs grow.
+[The GMA SDK for Flutter](https://pub.dev/packages/google_mobile_ads) unifies these products to help meet your monetization needs by sharing code across iOS and Android and not having to rewrite your code as your needs grow.
 
 <DashImage figure src="images/0_i1bA47tKTTOaFAU.webp" />
 
@@ -59,7 +59,7 @@ Thank you to Lotum and all the other early adopters who provided us with valuabl
 
 ## Other Monetization Features
 
-Besides ads, Flutter offers other ways to monetize apps. For example, the I[n-App Purchase](https://pub.dev/packages/in_app_purchase) plugin allows you to offer additional content in your app like premium services, digital goods, and subscriptions. Flutter’s [Pay ](https://pub.dev/packages/pay)plugin lets your app integrate with Google Pay on Android devices and Apple Pay on iOS. This makes it quick and easy to support both platforms with a seamless experience for your users to pay for things like groceries, retail merchandise, and food delivery.
+Besides ads, Flutter offers other ways to monetize apps. For example, the [In-App Purchase](https://pub.dev/packages/in_app_purchase) plugin allows you to offer additional content in your app like premium services, digital goods, and subscriptions. Flutter’s [Pay](https://pub.dev/packages/pay) plugin lets your app integrate with Google Pay on Android devices and Apple Pay on iOS. This makes it quick and easy to support both platforms with a seamless experience for your users to pay for things like groceries, retail merchandise, and food delivery.
 
 For more about our Ads or other monetization offerings, [please check out our newly refreshed website](https://flutter.dev/monetization), where you can find samples, codelabs, and documentation!
 

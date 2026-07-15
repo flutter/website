@@ -34,7 +34,7 @@ Additionally, we’ve added support for animated resources in formats like GIF a
 
 We also made a number of updates to the Flutter Gallery application to demonstrate these and other changes. For example:
 
-* We’ve [updated the text fields d](https://github.com/flutter/flutter/pull/15362)emo to demonstrate the new InputDecorator features;
+* We’ve [updated the text fields demo](https://github.com/flutter/flutter/pull/15362) to demonstrate the new InputDecorator features;
 
 * We’ve added a new [Backdrop demo](https://github.com/flutter/flutter/pull/15579/);
 

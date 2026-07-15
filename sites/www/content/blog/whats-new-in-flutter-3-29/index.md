@@ -157,21 +157,21 @@ Starting in 3.29, Flutter on Android and iOS execute Dart code on the applicatio
 
 ## DevTools and IDEs
 
-### **New DevTools inspector**
+### New DevTools inspector
 
 The new DevTools inspector is enabled by default for all users. The new inspector has a condensed widget tree, a new widget properties view, and an option to automatically update in response to hot-reload and navigation events. For more details, visit the [new inspector page](https://docs.flutter.dev/tools/devtools/inspector#new) on docs.flutter.dev.
 
 <DashImage figure src="images/0u75a-VoDr43H_xxK.webp" />
 
 
-### **Changes to on-device widget selection**
+### Changes to on-device widget selection
 
 After enabling widget selection mode from the DevTools inspector, any selections on the device are considered widget selections until you exit widget selection mode. Previously, after the initial widget selection you needed to click the on-device **Select widget** button to then select another widget. Instead, there is now an on-device button that can be used to quickly exit widget selection mode.
 
 <DashImage figure src="images/0BcgxalxFMTEB_RFP.gif" />
 
 
-### **Logging tool improvements**
+### Logging tool improvements
 
 The Logging tool in DevTools has been improved in the following ways:
 
@@ -214,11 +214,11 @@ Projects created before 3.16 that have not yet migrated will likely be impacted.
 
 ### Removal of the web HTML renderer
 
-This is the first release where the HTML renderer has been removed from Flutter web. For more information, visit [The intent to deprecate and remove the HTML renderer in Flutter web](https://docs.google.com/document/d/1DGamHsa2lz_Qtgfrfa3j3fRaEopJXc7tCFVM1TQlck8/edit?resourcekey=0-IjkqrCoo_EcRRS2bPYKI8w&tab=t.0) and[ Issue 145584: Intent to deprecate and remove the HTML renderer in Flutter web](https://github.com/flutter/flutter/issues/145954).
+This is the first release where the HTML renderer has been removed from Flutter web. For more information, visit [The intent to deprecate and remove the HTML renderer in Flutter web](https://docs.google.com/document/d/1DGamHsa2lz_Qtgfrfa3j3fRaEopJXc7tCFVM1TQlck8/edit?resourcekey=0-IjkqrCoo_EcRRS2bPYKI8w&tab=t.0) and [Issue 145584: Intent to deprecate and remove the HTML renderer in Flutter web](https://github.com/flutter/flutter/issues/145954).
 
 ### Web image handling
 
-This release also gives you [more control over how images are displayed on the web](https://github.com/flutter/flutter/pull/159917). In the previous beta release (3.28), Image widgets would automatically use `&lt;img&gt;` elements to display images from URLs when CORS errors occurred. This could lead to inconsistent behavior. Now, the `webHtmlElementStrategy` flag lets you choose when `&lt;img&gt;` elements are used. While this fallback is disabled by default, you can still enable the fallback or even prioritize `&lt;img&gt;` elements if needed for your application.
+This release also gives you [more control over how images are displayed on the web](https://github.com/flutter/flutter/pull/159917). In the previous beta release (3.28), Image widgets would automatically use `<img>` elements to display images from URLs when CORS errors occurred. This could lead to inconsistent behavior. Now, the `webHtmlElementStrategy` flag lets you choose when `<img>` elements are used. While this fallback is disabled by default, you can still enable the fallback or even prioritize `<img>` elements if needed for your application.
 
 ### Material normalization
 
@@ -230,7 +230,7 @@ For all [breaking changes](https://docs.flutter.dev/release/breaking-changes) in
 
 As always, many thanks to the community for [contributing tests](https://github.com/flutter/tests/blob/master/README.md) — these help us identify breaking changes. To learn more, check out [Flutter’s breaking change policy](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes).
 
-## **Conclusion**
+## Conclusion
 
 <DashImage figure src="images/1Mk6_aE2XEiK3Iq_H-q1L5Q.jpeg" />
 

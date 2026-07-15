@@ -71,8 +71,8 @@ Assets: finding and creating high-quality game assets are time consuming. (P02, 
 > *It’s probably the most time-consuming process. If I don’t find the assets that go along with each other, the game doesn’t look exactly how I wanted. And since I’m not that good at making art, finding the right assets is the most challenging task for me. (P03)*
 
 * Flame-specific challenges:
-– Participants noted that ****Flame’s documentation is not beginner friendly. In particular, [Forge2D](https://github.com/flame-engine/forge2d) (part of Flame) could use better documentation. (P03, P04)
-– Participants noted that collision detection in Flame is too basic. It doesn’t handle physics after two objects have collided, unless you use Forge2D. (P03)
+  * Participants noted that Flame’s documentation is not beginner friendly. In particular, [Forge2D](https://github.com/flame-engine/forge2d) (part of Flame) could use better documentation. (P03, P04)
+  * Participants noted that collision detection in Flame is too basic. It doesn’t handle physics after two objects have collided, unless you use Forge2D. (P03)
 
 * Missing features in Flutter’s SDK and tooling:
 – Lacking 3D support. (P02, P03) However, this doesn’t seem critical to these participants.

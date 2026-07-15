@@ -17,7 +17,7 @@ Monetizing your Flutter app just got easier and more rewarding. Today, we are th
 
 Let’s start by turning your video content into a revenue-generating powerhouse!
 
-We’d like to announce the launch of the[ Interactive Media Ads (IMA) plugin for Flutter](https://youtu.be/U8x5n6RwZOo). You can now seamlessly integrate high-quality video ads into your Flutter apps on iOS and Android. This means that you can now easily monetize your video content with video ads before (pre-roll), during (mid-roll), or after (post-roll) your video content playback. ******Just like the Google Mobile Ads plugin simplifies the display of mobile ads in your Flutter apps, the [IMA plugin](https://pub.dev/packages/interactive_media_ads) makes it easy to incorporate video ads. We’ve taken care of the heavy lifting, so you can focus on what matters most: creating amazing app experiences.
+We’d like to announce the launch of the [Interactive Media Ads (IMA) plugin for Flutter](https://youtu.be/U8x5n6RwZOo). You can now seamlessly integrate high-quality video ads into your Flutter apps on iOS and Android. This means that you can now easily monetize your video content with video ads before (pre-roll), during (mid-roll), or after (post-roll) your video content playback. Just like the Google Mobile Ads plugin simplifies the display of mobile ads in your Flutter apps, the [IMA plugin](https://pub.dev/packages/interactive_media_ads) makes it easy to incorporate video ads. We’ve taken care of the heavy lifting, so you can focus on what matters most: creating amazing app experiences.
 
 **Effortless integration, maximum impact**
 
@@ -30,7 +30,7 @@ We’d like to announce the launch of the[ Interactive Media Ads (IMA) plugin fo
 * **Access to premium ad demand**: IMA ensures you can monetize your video content with high quality and premium video ad demand from Google.
 
 **Get started today!**
-Are you ready to supercharge your Flutter app with video ads? Head over to[ pub.dev/packages/interactive_media_ads](https://pub.dev/packages/interactive_media_ads) to explore the IMA plugin and access detailed documentation. You’ll find everything you need to get started, including code samples and step-by-step guides. We’re excited to see how you use the IMA plugin to monetize your Flutter video content and create even more engaging app experiences!
+Are you ready to supercharge your Flutter app with video ads? Head over to [pub.dev/packages/interactive_media_ads](https://pub.dev/packages/interactive_media_ads) to explore the IMA plugin and access detailed documentation. You’ll find everything you need to get started, including code samples and step-by-step guides. We’re excited to see how you use the IMA plugin to monetize your Flutter video content and create even more engaging app experiences!
 
 ### Beta: Monetize your Flutter web games with AdSense ads
 
@@ -74,8 +74,8 @@ We’re committed to providing you, the Flutter developer, with the tools and re
 
 **Explore More:**
 
-* Dive into the world of Flutter monetization:[ flutter.dev/monetization](https://flutter.dev/monetization)
+* Dive into the world of Flutter monetization: [flutter.dev/monetization](https://flutter.dev/monetization)
 
-* Master the art of deep linking:[ Flutter documentation](https://docs.flutter.dev/development/ui/navigation/deep-linking)
+* Master the art of deep linking: [Flutter documentation](https://docs.flutter.dev/development/ui/navigation/deep-linking)
 
-* Stay updated with the latest Flutter news:[Flutter blog](https://medium.com/flutter)
+* Stay updated with the latest Flutter news: [Flutter blog](https://medium.com/flutter)

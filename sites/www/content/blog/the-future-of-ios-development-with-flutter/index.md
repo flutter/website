@@ -8,7 +8,7 @@ category: announcements
 layout: blog
 ---
 
-Since its launch in 2017, [Flutter](http://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over a[ ****million apps**](https://medium.com/flutter/racing-forward-at-i-o-2023-with-flutter-and-dart-df2a8fa841ab) **built using Flutter.
+Since its launch in 2017, [Flutter](http://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over [a million apps](https://medium.com/flutter/racing-forward-at-i-o-2023-with-flutter-and-dart-df2a8fa841ab) built using Flutter.
 
 For iOS developers who value innovative design, Flutter has become a go-to platform. By providing a blank canvas, Flutter gives designers endless possibilities. They can create original experiences that break free from pre-set design systems.
 
@@ -35,7 +35,7 @@ Apple and other tech leaders have even recognized Flutter iOS apps. [Wonderous](
 
 Flutter’s iOS support has been a top priority. We’ve made significant improvements in recent releases. Let’s review some highlights:
 
-### **Improved Performance**
+### Improved Performance
 
 Impeller, our purpose-built rendering engine, now serves as the default for Flutter on iOS. Impeller has been a multi-year journey for our team. It addresses the top concerns for iOS developers leveraging Flutter: smooth graphics and top tier performance. Since its release, we’ve seen great improvements in app quality. More recently, enhancements to Flutter’s engine continue to improve startup latency and reduce app size.
 
@@ -53,16 +53,16 @@ Impeller also simplifies adding new features. These features range from wide gam
 <DashImage figure src="images/04Mb0dUry2lkuUvXI.webp" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." />
 
 
-### **Developer Experience Enhancements**
+### Developer Experience Enhancements
 
-We understand the challenges of building and releasing an iOS app. To save help save developer’s time, we’ve added new tools and resources to simplify the entire process. You can now [connect to iOS devices](https://docs.flutter.dev/get-started/install/macos#ios-setup) over Wi-Fi to test and debug your app. We’ve also[ added validation](https://github.com/flutter/flutter/issues/97730) to the release process. This step ensures that you took all necessary steps before releasing your app to the App Store.
+We understand the challenges of building and releasing an iOS app. To save help save developer’s time, we’ve added new tools and resources to simplify the entire process. You can now [connect to iOS devices](https://docs.flutter.dev/get-started/install/macos#ios-setup) over Wi-Fi to test and debug your app. We’ve also [added validation](https://github.com/flutter/flutter/issues/97730) to the release process. This step ensures that you took all necessary steps before releasing your app to the App Store.
 
 <iframe src="https://twitter.com/EnzoConty/status/1656379609796038670" width="500" height="281" frameborder="0" allowfullscreen></iframe>
 
 
-In addition, we’ve created iOS-focused documentation and tutorials to help developers learn Flutter and build iOS apps. We’ve incorporated Swift and SwiftUI examples into our documentation. We added guides on moving from[ Swift to Dart](https://dart.dev/guides/language/coming-from/swift-to-dart), [SwiftUI to Flutter](https://docs.flutter.dev/get-started/flutter-for/swiftui-devs) and adding[ Flutter to an existing iOS app](https://docs.flutter.dev/add-to-app/ios/project-setup). We’ve also added resources for supporting [flavors on iOS](https://docs.flutter.dev/deployment/flavors) and using[ iOS app extensions](https://docs.flutter.dev/platform-integration/ios/app-extensions) like home and lock screen widgets.
+In addition, we’ve created iOS-focused documentation and tutorials to help developers learn Flutter and build iOS apps. We’ve incorporated Swift and SwiftUI examples into our documentation. We added guides on moving from [Swift to Dart](https://dart.dev/guides/language/coming-from/swift-to-dart), [SwiftUI to Flutter](https://docs.flutter.dev/get-started/flutter-for/swiftui-devs) and adding [ Flutter to an existing iOS app](https://docs.flutter.dev/add-to-app/ios/project-setup). We’ve also added resources for supporting [flavors on iOS](https://docs.flutter.dev/deployment/flavors) and using [ iOS app extensions](https://docs.flutter.dev/platform-integration/ios/app-extensions) like home and lock screen widgets.
 
-### **iOS-style UI ComponentUpdates**
+### iOS-style UI ComponentUpdates
 
 The [Cupertino library](https://docs.flutter.dev/ui/widgets/cupertino) provides widgets (UI components) resembling SwiftUI and UIKit views. This should make your app feel right at home on Apple devices. To better align with the latest iOS design guidelines, we’ve made significant updates to our Cupertino library.
 
@@ -80,7 +80,7 @@ In addition, we recognize the importance of cross-platform design. We’ve added
 
 As we continue to make Flutter a better tool for iOS developers, we’re focusing on a few key areas:
 
-### **Integrations with the Apple ecosystem**
+### Integrations with the Apple ecosystem
 
 Flutter developers should be able to easily use Apple’s APIs in their apps. This allows them to create immersive experiences that integrate all of Apple’s great offerings.
 
@@ -91,13 +91,13 @@ Furthermore, we know the importance of [app extensions](https://developer.apple.
 <DashImage figure src="images/1K2e5QrjXtv0bCU35H_uRkw.webp" alt="A proof of concept for a Flutter app running as an iOS share extension" caption="A proof of concept for a Flutter app running as an iOS share extension" />
 
 
-### **Cross-platform design**
+### Cross-platform design
 
 Deploying your app across multiple platforms requires some design considerations. There’s a balance between customizing the design of UI components to match your brand, while adhering to platform conventions.
 
 As such, we’re investigating ways to improve the experience for designing and building Flutter apps. First, we want to make Flutter’s out-of-the-box UI components more flexible. This way, developers can quickly customize widgets to match their own design systems. Second, we want to leverage more automated adaptations that make Flutter apps feel natural on both iOS and Android.
 
-### **Developer experience**
+### Developer experience
 
 We’re committed to improving the iOS developer experience with Flutter. One key focus is decreasing build times to improve developer productivity. Additionally, we’re addressing long-standing requests such as the ability to [rename the Runner app](https://github.com/flutter/flutter/issues/9767). Finally, we’ll continue to prioritize performance enhancements and general iOS fidelity.
 

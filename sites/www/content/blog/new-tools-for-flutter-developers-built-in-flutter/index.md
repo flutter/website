@@ -53,7 +53,7 @@ The analysis server can also use the [Language Server Protocol](https://microsof
 
 With Flutter, you build UI in code by creating widget trees. This means that a lot of Dart code is in the form of nested constructors like the following:
 
-```
+```dart
 return MaterialApp(
   title: 'My app',
   home: Scaffold(

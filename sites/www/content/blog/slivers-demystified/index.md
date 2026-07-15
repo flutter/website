@@ -51,7 +51,7 @@ All of these sliver components go inside a [CustomScrollView](https://docs.flutt
 
 SliverList takes a delegate parameter which provides the items in the list as they scroll into view. You can specify the actual list of children with a SliverChildListDelegate Or build them lazily with a SliverChildBuilderDelegate.
 
-```
+```dart
 // Explicit list of children. No efficiency savings here since the
 // children are already constructed.
 
@@ -92,7 +92,7 @@ SliverGrids *also* can specify children with a delegate, or an explicit list, ju
 
 1. Default constructor, passing in an explicit gridDelegate parameter:
 
-```
+```dart
 // Re-implementing the above SliverGrid.count example:
 SliverGrid(
   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -123,7 +123,7 @@ Okay, okay, enough exposition. Here’s what I know you all have been waiting fo
 
 Here’s the code for the above example:
 
-```
+```dart
 CustomScrollView(
     slivers: <Widget>[
       SliverAppBar(
@@ -169,7 +169,7 @@ I tried to imagine the most unusual scrolling behavior I could think of that sti
 <DashImage figure src="images/1g5kTqAzL6FTJKnFictwJ5w.gif" />
 
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 import 'dart:math' as math;

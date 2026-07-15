@@ -18,11 +18,11 @@ Today, we’re thrilled to announce the launch of starter kits for our latest le
 <YoutubeEmbed id="24xNuDY0y0c" title="Build agentic apps in Flutter and Angular" fullwidth="true"/>
 
 
-## **What are agentic apps?**
+## What are agentic apps?
 
 An agentic app includes user experiences powered by an agent — a combination of a large language model (LLM), a goal, and the tools (like APIs or functions) needed to achieve the goal. Picture a Flutter travel app that doesn’t just show destinations but also can generate a personalized packing list based on the weather forecast and planned activities, or an app that automatically summarizes your unread emails into a prioritized to-do list. With agents, apps can offer more help, be more proactive, and be easier to use than ever before.
 
-## **Why now?**
+## Why now?
 
 Because there’s no better time to become acquainted with the latest AI tools and see where they can (or can’t) help you deliver value to your users. By the end of three weeks, you’ll have built out an agentive experience and have a good handle on the terminology, the design patterns, and which user journeys are the most suited to AI, even if you’re a new developer!
 
@@ -34,6 +34,6 @@ Because there’s no better time to become acquainted with the latest AI tools a
 
 * **Community:** Connect with fellow developers, share your progress, and see what amazing things the community builds. We’re partnering with Google’s [Build With AI](https://developers.google.com/community) series to make sure their in-person events have access to the new resources.
 
-## **Get Started Today!**
+## Get Started Today!
 
 Register now by heading to [goo.gle/BuildingAgenticFlutter](http://goo.gle/BuildingAgenticFlutter) or [goo.gle/BuildingAgenticAngular](http://goo.gle/BuildingAgenticAngular). We can’t wait to see what you build!

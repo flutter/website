@@ -54,7 +54,7 @@ A companion app is a web experience built using Flutter to support your primary 
 
 ## Plugins are here!
 
-Flutter has a concept of plugins, which allows you to talk to native libraries for the platform you are running on. When running your Flutter app on the web, you can get full access to existing JS libraries. We do all the JS-interop code behind the scenes so the plugin works as you’d expect on both mobile and web. We’ve already implemented a handful of the top-requested plugins so they work consistently across your native and web applications. Now, you can also [write your own plugins](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) as [Ben Hagan](https://github.com/cbenhagen) did for video_player, and [Hadrien Lejard](https://github.com/lejard-h) did for the sentry package*.* The following packages are updated:
+Flutter has a concept of plugins, which allows you to talk to native libraries for the platform you are running on. When running your Flutter app on the web, you can get full access to existing JS libraries. We do all the JS-interop code behind the scenes so the plugin works as you’d expect on both mobile and web. We’ve already implemented a handful of the top-requested plugins so they work consistently across your native and web applications. Now, you can also [write your own plugins](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1) as [Ben Hagan](https://github.com/cbenhagen) did for video_player, and [Hadrien Lejard](https://github.com/lejard-h) did for the sentry package. The following packages are updated:
 
 * [shared_preferences](https://pub.dev/packages/shared_preferences)
 
@@ -88,7 +88,7 @@ We made a lot of progress with beta, but we still have a lot of work to do. Our 
 
 **Accessibility**
 
-We have accessibility support on mobile browsers through TalkBack on Android and VoiceOver on iOS. Some of the features that are already implemented for assistive technologies across platforms include things like UI traversal and traversal order, UI interaction cues like tappable, labels, editable, incremental, image, live region, and checkable. **And, we’re working on adding screen reader support for desktop web browsers.
+We have accessibility support on mobile browsers through TalkBack on Android and VoiceOver on iOS. Some of the features that are already implemented for assistive technologies across platforms include things like UI traversal and traversal order, UI interaction cues like tappable, labels, editable, incremental, image, live region, and checkable. And, we’re working on adding screen reader support for desktop web browsers.
 
 **Browser support**
 

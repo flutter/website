@@ -46,7 +46,7 @@ To get started, use the following instructions:
 
 3. Open the game template folder in your IDE or terminal and upgrade to the latest version of Flutter:
 
-```
+```bash
 $> flutter upgrade
 ```
 
@@ -55,7 +55,7 @@ $> flutter upgrade
 
 5. Run the app:
 
-```
+```bash
 $> flutter run
 ```
 
@@ -74,7 +74,7 @@ Now that you have the code, go to the [Firebase website](https://firebase.google
 
 If you enabled Google Analytics, install the Google Analytics Flutter plugin by using the following command:
 
-```
+```bash
 $> flutter pub add firebase_analytics
 ```
 
@@ -83,7 +83,7 @@ To learn more, refer to steps 1 and 2 in the [Use Google Analytics to get metric
 
 Next, install the Firebase CLI. Go to the [Firebase CLI docs](https://firebase.google.com/docs/cli), select your operating system, and follow the instructions. Once you’ve logged in, run the following command in your terminal and it should display a list of Firebase project names:
 
-```
+```bash
 $> firebase projects:list
 ```
 
@@ -94,7 +94,7 @@ Using your terminal, navigate to the root folder of the game template project. Y
 
 Now run this command:
 
-```
+```bash
 $> flutterfire configure
 ```
 
@@ -134,7 +134,7 @@ In your text editor or IDE of choice, navigate to the `main_menu` folder and ope
 
 Make a copy of the `ElevatedButton` and then, inside the `onPressed` call-back, instead of calling `GoRouter` to navigate to the **Settings** page, throw an exception. While you’re there, change the name of the button to something like **Throw Test Exception** as shown below:
 
-```
+```dart
 ElevatedButton(
   onPressed: () => GoRouter.of(context).go('/settings'),
   child: const Text('Settings'),
@@ -154,7 +154,7 @@ Next, navigate to the `audio` folder and open the `audio_controller.dart` file. 
 
 Inside the `else` statement, below where the `_stopMusic()` function is called, use the `_log.severe()` method to write a message to the console. Any log message with `Level.severe` or above is sent to Crashlytics, so this message will appear in the Crashlytics console, too. For demonstration purposes, throw another exception here as well:
 
-```
+```dart
 void _musicOnHandler() {
   if (_settings!.musicOn.value) {
     // Music got turned on.
@@ -203,7 +203,7 @@ The **Issues** table of the bottom of the Crashlytics dashboard displays the thr
 <DashImage figure src="images/1Tm7AYGZ0eWWjoCBdK0g1Nw.webp" alt="Crashlytics dashboard issues table" caption="Crashlytics dashboard issues table" />
 
 
-Clicking on a particular issue in the table shows a card for every time the issue has occurred, along with more detailed information about the issue. By default, the stack trace is shown, which allows you to identify where in your code the crash happened. As you can see in the screenshot below, the exception was thrown from the `_musicOnHandler()` **function on line 197 of the `audio_controller.dart` file. This is no surprise because that’s exactly where you placed that exception in the code, but imagine how useful this is for tracking down issues in complex production apps.
+Clicking on a particular issue in the table shows a card for every time the issue has occurred, along with more detailed information about the issue. By default, the stack trace is shown, which allows you to identify where in your code the crash happened. As you can see in the screenshot below, the exception was thrown from the `_musicOnHandler()` function on line 197 of the `audio_controller.dart` file. This is no surprise because that’s exactly where you placed that exception in the code, but imagine how useful this is for tracking down issues in complex production apps.
 
 <DashImage figure src="images/15pbF1OIADrJvldPPBOjTYg.webp" alt="Crashlytics dashboard stack trace" caption="Crashlytics dashboard stack trace" />
 

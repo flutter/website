@@ -210,12 +210,12 @@ void _onMapTypeButtonPressed() {
 }
 ```
 
-Finally, replace `() =&gt; print(‘button pressed’)` with `_onMapTypeButtonPressed`.
+Finally, replace `() => print(‘button pressed’)` with `_onMapTypeButtonPressed`.
 
-```
+```dart
 child: FloatingActionButton(
-  onPressed: **_onMapTypeButtonPressed,
-  ...**
+  onPressed: _onMapTypeButtonPressed,
+  ...
 ),
 ```
 
@@ -420,11 +420,11 @@ class _MyAppState extends State<MyApp> {
 
 ## What else can you do?
 
-Once again, *the GoogleMap widget is just a widget***.** This means you can place widgets on top of it (like you just did), you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget*.
+Once again, **the GoogleMap widget is just a widget.** This means you can place widgets on top of it (like you just did), you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget.
 
 <DashImage figure src="images/1Z72fYzGsnj_UVNQZx9o-2A.webp" />
 
 
 The possibilities extend as far as you’d like to take them. Checkout the [Place Tracker](https://github.com/flutter/samples/tree/master/place_tracker) app in [flutter/samples](https://github.com/flutter/samples) for a more complete Google Maps demo. You can also checkout the [google_maps_flutter plugin example app](https://github.com/flutter/plugins/tree/master/packages/google_maps_flutter/example) for a demonstration on using the plugin.
 
-*Using a transform widget to rotate the map is currently not supported on iOS. It might be in the future, but it is not the biggest priority for the plugin at this time.
+*Using a transform widget to rotate the map is currently not supported on iOS. It might be in the future, but it is not the biggest priority for the plugin at this time.*

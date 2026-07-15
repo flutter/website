@@ -63,7 +63,7 @@ In the Doppler effect, when a star moves away from you in space, the waves of li
 
 In our app we’re going to make this a little less subtle. I have a nice image of a star, and to change its color, I’m going to use the `ColorFiltered` widget. I apply a blend mode, and tell it to blend orange into the image to make it a little more reddish.
 
-```
+```dart
 ColorFiltered(
   child: Image.asset('assets/sun.png'),
   colorFilter: ColorFilter.mode(color, BlendMode.modulate),
@@ -73,7 +73,7 @@ ColorFiltered(
 
 Next step…animation! There isn’t a built-in widget that applies an arbitrary color filter to a widget, but we can build one ourselves with `TweenAnimationBuilder`. To change the color over time, we want to modify the color that we’re applying to the filter. So that’s the value that we’ll animate. We’ll put the `ColorFiltered` widget inside the builder function of the `TweenAnimationBuilder`. As I mentioned before, a `Tween` is just the range of values that we are animating between. In this case, we’ll use a `ColorTween` to animate between white, which is as if we had no filter, and orange. And there you have it! A nicely animated color filter in 10 lines of code.
 
-```
+```dart
 TweenAnimationBuilder(
   tween: ColorTween(begin: Colors.white, end: Colors.red),
   duration: Duration(seconds: 2),

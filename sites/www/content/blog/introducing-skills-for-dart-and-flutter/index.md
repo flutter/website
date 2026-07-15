@@ -54,7 +54,7 @@ Now, prompt your AI agent as usual. Here are 5 ways you can use these Skills tod
 
 Configures Flutter Driver for app interaction and converts MCP actions into permanent integration tests.
 
-```
+```plaintext
 Add an integration test for the checkout flow in my app
 ```
 
@@ -63,7 +63,7 @@ Add an integration test for the checkout flow in my app
 
 Adds localization support to your Flutter project
 
-```
+```plaintext
 Set up localization in my app
 ```
 
@@ -72,7 +72,7 @@ Set up localization in my app
 
 Uses `LayoutBuilder`, `MediaQuery`, or `Expanded`/`Flexible` to create a layout that adapts to different screen sizes.
 
-```
+```plaintext
 Ensure that the checkout screen uses repsonsive layout
 ```
 
@@ -81,7 +81,7 @@ Ensure that the checkout screen uses repsonsive layout
 
 Refactors code to use Dart’s pattern matching language capabilities where appropriate
 
-```
+```plaintext
 Refactor my code so that it uses pattern matching where possible
 ```
 
@@ -90,7 +90,7 @@ Refactor my code so that it uses pattern matching where possible
 
 Uses the `coverage` package to collect unit test coverage and generate an LCOV report.
 
-```
+```plaintext
 Collect test coverage for my project
 ```
 

@@ -50,7 +50,7 @@ While DomCanvas offers broader browser support, smaller code size, fast initial 
 
 For a web application to feel at home in the browser, it must support a wide variety of browser idioms, including natural text interaction and scrolling behavior, back/forward navigation, and accessibility, all with good performance across a wide variety of devices and form factors.
 
-### **Text rendering**
+### Text rendering
 
 One of the biggest challenges we faced when building Flutter’s web support was developing a layout system specifically for text layout. In order to lay out a paragraph of text, Flutter creates a [`paragraph`](https://api.flutter.dev/flutter/dart-ui/Paragraph-class.html) object and calls its [`layout()`](https://api.flutter.dev/flutter/dart-ui/Paragraph/layout.html) method. Since the web currently lacks a direct text layout API, we use the DOM to perform various measurements on the paragraph by triggering `layout()` and observing side-effects of layout properties for other elements in the frame.
 
@@ -58,7 +58,7 @@ As you can imagine, these measurements can become quite expensive, so we recentl
 
 While rendering the text quickly and correctly is important to the end-user experience, being able to interact with the text on the browser is just as important. Today you can make text selectable on a Flutter web app by using either the `SelectableText` or `EditableText` widgets. Soon you will also be able to copy/paste the selected text as well as have better text editing interactions with text field focus handling, form editing and more.
 
-### **Scrolling**
+### Scrolling
 
 There are two ways scrolling can make a Flutter web app feel more natural: scrolling performance and scrolling affordance.
 
@@ -66,7 +66,7 @@ Whether a mobile or web app, scrolling performance can dictate whether an app is
 
 Since Flutter’s framework was initially designed for native mobile apps, Flutter web apps already have excellent support for gestures and scrolling physics for mobile browsers. Scrolling behaviors for desktop browsers are contingent on the work we do for Flutter desktop on a framework level. So far, we are able to process drag scrolling with a mouse and other mouse/wheel events, but we still need to add keyboard scrolling support.
 
-### **Navigation**
+### Navigation
 
 Unlike native apps, web apps come with a built-in back button in the browser. Today the browser’s back button behaves like `Navigator.pop()` in any Flutter app. This means that when a user opens a link to a Flutter web app in the browser, the framework splits the initial route into parts and pushes each one.
 

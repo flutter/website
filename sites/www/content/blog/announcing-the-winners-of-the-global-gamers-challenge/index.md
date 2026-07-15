@@ -112,7 +112,7 @@ To stay connected with this burgeoning movement:
 
 * **Make your own voice heard**: Write about your experiences with sustainability game development, mentor aspiring developers, or organize your own initiatives. In sharing your knowledge and expertise, whether technical or environmental, you not only support the growth of the community but also inspire others to create games that make a positive impact on the planet.
 
-## **Keep building**
+## Keep building
 
 *by Clayton Whittle, Co-Chair, Climate SIG*
 
@@ -130,7 +130,7 @@ Green game design is an evolving field, with increasingly refined practices for 
 
 Remember, there are countless ways to develop impactful green games. Your ideas and designs might extend beyond this guidance into uncharted territories. What works for your team depends on your mission and audience. However, incorporating these principles into your design discussions help ensure that your team remains focused on its impact mission.
 
-## **How Flutter can help**
+## How Flutter can help
 
 Here are a couple ways that Flutter can help you spend less time worrying about where your game will run, and more time designing an impactful experience for your mission and audience.
 

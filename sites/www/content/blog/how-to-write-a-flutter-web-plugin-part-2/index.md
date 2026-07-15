@@ -40,7 +40,7 @@ How can we implement web support for a plugin without using a `MethodChannel`? B
 
 ## Example: `url_launcher` Platform Interface Sketch
 
-To give a concrete example of a platform interface, let’s look at a platform interface that could be defined for `package:url_launcher`. Our first web implementation of `url_launcher` set up a `MethodChannel` that listened for calls to the `launch` method, which took a `url` parameter. So, in order for a platform-specific backend to work with `package:url_launcher`, it needs to implement a method with the signature `Future&lt;bool&gt; launch(String url)`. A reasonable platform interface for `package:url_launcher` would look like this:
+To give a concrete example of a platform interface, let’s look at a platform interface that could be defined for `package:url_launcher`. Our first web implementation of `url_launcher` set up a `MethodChannel` that listened for calls to the `launch` method, which took a `url` parameter. So, in order for a platform-specific backend to work with `package:url_launcher`, it needs to implement a method with the signature `Future<bool> launch(String url)`. A reasonable platform interface for `package:url_launcher` would look like this:
 
 ```dart
 abstract class UrlLauncherPlatform {
@@ -70,7 +70,7 @@ Let’s work through an example of how this would be done for a real plugin.
 
 In the first step, we’ll create the platform interface package and rearrange the existing code to use our federated plugin directory layout. For the purposes of this example, we are assuming that the plugin is in a repo that is laid out like the [`flutter/plugins`](https://github.com/flutter/plugins) GitHub repo (in other words, the plugin lives in a directory like `packages/url_launcher`). Specifically, we are assuming a layout that looks like this:
 
-```
+```plaintext
 - README.md
 - packages/
     - some_other_plugin/
@@ -92,7 +92,7 @@ The gist of this refactoring is that we are creating a directory that holds not 
 
 Assuming you’re in the `packages/` directory, you can move the `url_launcher` plugin to a federated subdirectory by running the following:
 
-```
+```bash
 $ git mv url_launcher url_launcher_tmp
 $ mkdir url_launcher
 $ git mv url_launcher_tmp url_launcher/url_launcher
@@ -104,14 +104,14 @@ $ git commit -m "Move url_launcher to url_launcher/url_launcher"
 
 Move to the `packages/url_launcher` directory we created in the last step. Then create the platform interface package by running:
 
-```
+```bash
 $ mkdir url_launcher_platform_interface
 ```
 
 
 Now, you need to add a few files in the `url_launcher_platform_interface` to make it a real package. For the license file, you can usually `git cp` the `LICENSE` from the “plugin package” (in this case `package:url_launcher`). You should create a `CHANGELOG.md` file that contains the following:
 
-```
+```markdown
 ## 1.0.0
 
 - Initial open-source release.
@@ -212,7 +212,7 @@ Now that our platform interface package from Step 1 has been published to pub.de
 
 In the `pubspec.yaml` for `package:url_launcher`, add a dependency on `url_launcher_platform_interface` as shown below:
 
-```
+```yaml
 name: url_launcher
 version: <bump to next minor version>
 …

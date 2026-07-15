@@ -53,8 +53,8 @@ Let’s talk about Ticker first. 99% of the time, you won’t use a ticker direc
 
 A ticker is an object that calls a function for every frame.
 
-```
-**var** ticker = Ticker((elapsed) => print(**'hello'**));
+```dart
+var ticker = Ticker((elapsed) => print('hello'));
 ticker.start();
 ```
 
@@ -67,9 +67,9 @@ That’s why Flutter gives you `SingleTickerProviderStateMixin`, the aptly named
 
 This mixin takes care of the hassle of managing a ticker. Just slap it onto your widget’s state and now your state is secretly a `TickerProvider`.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget> 
-    **with** SingleTickerProviderStateMixin<MyWidget> {
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +81,10 @@ This mixin takes care of the hassle of managing a ticker. Just slap it onto your
 
 What this means is that the Flutter framework can ask your state for a ticker. Most important, `AnimationController` can ask the state for a ticker.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget>
-    **with** SingleTickerProviderStateMixin<MyWidget> {
-  AnimationController **_controller**;
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
+  AnimationController _controller;
 
   @override
   void initState() {
@@ -115,10 +115,10 @@ Normally, you take the `AnimationController`, maybe transform it with a `Curve`,
 
 After we initialize the `AnimationController`, we can add a listener to it. And, in that listener, we call `setState`.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget>
-    **with** SingleTickerProviderStateMixin<MyWidget> {
-  AnimationController **_controller**;
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
+  AnimationController _controller;
 
   @override
   void initState() {
@@ -143,10 +143,10 @@ After we initialize the `AnimationController`, we can add a listener to it. And,
 
 Now, we should probably have a state to set. Let’s keep it simple with an integer. And let’s not forget to actually use the state in our build method, and to change the state in our listener according to the current value of the controller.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget>
-    **with** SingleTickerProviderStateMixin<MyWidget> {
-  AnimationController **_controller**;
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
+  AnimationController _controller;
 
   int i = 0;
 
@@ -177,10 +177,10 @@ This code assigns a value from zero to the speed of light depending on the anima
 
 Now, we just need to tell the animation how long it should take to complete, and start the animation.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget>
-    **with** SingleTickerProviderStateMixin<MyWidget> {
-  AnimationController **_controller**;
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
+  AnimationController _controller;
 
   int i = 0;
 
@@ -218,10 +218,10 @@ The widget animates as soon as it’s added to the screen. And it “animates”
 
 Oh, and don’t forget to dispose of the `AnimationController`. Otherwise you have a memory leak in your app.
 
-```
-**class** _MyWidgetState **extends** State<MyWidget>
-    **with** SingleTickerProviderStateMixin<MyWidget> {
-  AnimationController **_controller**;
+```dart
+class _MyWidgetState extends State<MyWidget>
+    with SingleTickerProviderStateMixin<MyWidget> {
+  AnimationController _controller;
 
   int i = 0;
 
@@ -260,15 +260,15 @@ Oh, and don’t forget to dispose of the `AnimationController`. Otherwise you ha
 
 As you can see, doing it all by yourself is not great. The same functionality can be achieved with the `TweenAnimationBuilder` in much fewer lines of code, and without having to juggle an `AnimationController` and calling `setState`.
 
-```
-**class** MyPragmaticWidget **extends** StatelessWidget {
+```dart
+class MyPragmaticWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    **return** TweenAnimationBuilder(
+    return TweenAnimationBuilder(
       tween: IntTween(begin: 0, end: 299792458),
-      duration: **const** Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       builder: (BuildContext context, int i, Widget child) {
-        **return** Text(**'**$i m/s**'**);
+        return Text('$i m/s');
       },
     );
   }

@@ -42,7 +42,7 @@ First, add the following import:
 
 Next, from the class where the `FocusableActionDetector` is called, initialize two private variables. These variables map the keyboard input to the desired action:
 
-```
+```dart
 Map<LogicalKeySet, Intent> _shortcutMap;
 
 Map<Type, Action<Intent>> _actionMap;
@@ -51,7 +51,7 @@ Map<Type, Action<Intent>> _actionMap;
 
 Define a `FocusableActionDetector` widget. Note that the custom keyboard input activates only when the child widget is in focus:
 
-```
+```dart
 FocusableActionDetector(
 
   actions: _actionMap,
@@ -66,7 +66,7 @@ FocusableActionDetector(
 
 This class maps the enums and keyboard input type to the `Intent` class. The following setup is necessary because the actions and shortcuts parameter requires a class that extends `Intent`:
 
-```
+```dart
 class _ShowSecretMessageIntent extends Intent {
 
   const _ShowSecretMessageIntent({@required this.type});
@@ -115,7 +115,7 @@ enum _SecretMessageType {
 
 Within the `initState` method, initialize the mapping previously defined:
 
-```
+```dart
 void initState() {
 
   _shortcutMap = <LogicalKeySet, Intent>{
@@ -170,7 +170,7 @@ void initState() {
 
 The action handler links the keyboard input to a certain function within the application. Any time a character is pressed, an expanded container is added to the main part of the application. But in your application, you can use it for more creative purposes:
 
-```
+```dart
 void _actionHandler(_ShowSecretMessageIntent intent) {
 
   switch (intent.type) {
@@ -215,7 +215,7 @@ The focus tree allows you to navigate through your application using the tab key
 
 The `FocusableActionDetector` child widget is selected as the initial focus when no other node in its scope is currently focused. It’s important to set the `autofocus` parameter variable to `true` if you want your custom keyboard input to work regardless of whether your child widget has focus or not. This is because, by default, this `FocusableActionDetector` widget won’t be in focus, hence you won’t be able to use custom keyboard inputs:
 
-```
+```dart
 FocusableActionDetector(
 
   autofocus: true,

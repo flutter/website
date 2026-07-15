@@ -19,9 +19,9 @@ It’s amazing to be part of such a passionate and creative community. Who knew 
 
 **Without further ado… it’s time for the winners!**
 
-## **Category Winners**
+## Category Winners
 
-### **Best Execution**
+### Best Execution
 
 [**Planets**](https://fph-planets.web.app/#/) by Jyotirmoy Paul
 
@@ -30,7 +30,7 @@ It’s amazing to be part of such a passionate and creative community. Who knew 
 
 This project impressed the judges on many levels with its excellent use of animation, code quality, and pure creativity. On top of the code itself, Jyotirmoy shared some great learning moments along the way — [check it out](https://flutterhack.devpost.com/review/submissions/NG5qSUlZT0wrOTREM3ExNVZ4ZUx4ZmJacnVrRTVxU1pRKzdYOGFsVjlsME9Ia0FoLzNweHRkVmt5aldVNE1HZFkzY3dUdjN3ZHBna1h5cFBxTENYYVRGeEFOanptV1FodFN4Vm9BVWpMaVU9LS0wMkRkTzhNeTRxM2pPSEw5dlFkbFdnPT0=--f9621a4ed75f9e521ff0c61d2459f3c3f371d6f1) if you’re interested.
 
-### **Most Creative**
+### Most Creative
 
 [**The Werewolves Escape**](https://puzzle.wolfiz.com/) by Ahmad Ayaz Noor and team
 
@@ -39,7 +39,7 @@ This project impressed the judges on many levels with its excellent use of anima
 
 This feature-rich project combined the best of Flutter across web, mobile, and desktop. The storyline took the slide puzzle game to a completely new level of fun. Check out their [submission page](https://devpost.com/software/the-werewolves-escape) for more information on what this team learned as they built this project.
 
-### **Best Animation / Design**
+### Best Animation / Design
 
 [**Retro Slide Puzzle**](https://ashishbeck.github.io/slide_puzzle/) by Ashish Beck
 
@@ -48,7 +48,7 @@ This feature-rich project combined the best of Flutter across web, mobile, and d
 
 This puzzle’s extra-polished visuals caught the judges’ attention right away. The project incorporates smooth [Rive](https://rive.app/) animations, sound plug-ins, auto-complete, and other features that make it incredibly satisfying to play.
 
-### **Best Multiplatform**
+### Best Multiplatform
 
 [**Slide Party**](https://slideparty.vercel.app/#/) by Duong Bui Dai
 
@@ -57,7 +57,7 @@ This puzzle’s extra-polished visuals caught the judges’ attention right away
 
 Ever wanted to compete with your friends to see who can solve a slide puzzle the fastest? This puzzle lets you do just that! Not only that, but the players don’t even need to be on the same device or operating system, thanks to the flexibility of Flutter.
 
-## **Over 40 Winners!**
+## Over 40 Winners!
 
 <DashImage figure src="images/0f_uqnrRyCc2QtHwm.webp" />
 

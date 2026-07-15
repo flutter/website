@@ -26,7 +26,7 @@ First, go to the [example repository](https://github.com/flutter/put-flutter-to-
 
 ## Adding Flutter on the web with Angular
 
-The Flutter module runs as an `&lt;iframe&gt;` within the native web app. To integrate the feature into the Angular codebase, first run a Flutter build for the web target. This step generates an `index.html` and other necessary files. Copy all of the build files into the Angular app `src` folder. From there, you can reference the build files within the `iframe`. The next time you run the web app, you’ll see the Flutter feature!
+The Flutter module runs as an `<iframe>` within the native web app. To integrate the feature into the Angular codebase, first run a Flutter build for the web target. This step generates an `index.html` and other necessary files. Copy all of the build files into the Angular app `src` folder. From there, you can reference the build files within the `iframe`. The next time you run the web app, you’ll see the Flutter feature!
 
 **[View the README for full instructions](https://github.com/flutter/put-flutter-to-work#web).**
 
@@ -56,7 +56,7 @@ Note that the Flutter NPS module contains Material widgets, which automatically 
 
 This prototype includes a few [implicit animations](https://docs.flutter.dev/development/ui/animations/implicit-animations) that are easy to adjust since they are built into the Flutter framework. For example, if you want to make changes to the `AnimatedContainer` widget, simply adjust its properties, such as the duration of the animation, the height of the container, its shape, and color.
 
-```
+```dart
 ...
 return AnimatedContainer(
   duration: duration,
@@ -74,7 +74,7 @@ return AnimatedContainer(
 
 The NPS module includes a custom page animation transition. Take a look at the `SlideTransition` widget for another animation example that could be customized by updating its duration and other elements.
 
-```
+```dart
 SlideTransition(
   position: Tween<Offset>(
     begin: const Offset(0, 1),
@@ -91,7 +91,7 @@ If you want to take your animations to the next level, you could import the [`an
 
 It’s also simple to update the theme of the NPS module. Because it uses the built-in Material theming via [`ThemeData`](https://api.flutter.dev/flutter/material/ThemeData-class.html), you can simply update the colors, button style, and font all in one place. For example, to change the `accentColor` and `backgroundColor` of the NPS module with Flutter, update to your desired color using the provided [Material color palette shades](https://api.flutter.dev/flutter/material/Colors-class.html), or your desired custom colors.
 
-```
+```dart
 class AppTheme {
   ThemeData get theme => ThemeData(
         colorScheme: ColorScheme.fromSwatch(
@@ -129,7 +129,7 @@ class AppTheme {
 
 ## Additional features
 
-The Flutter NPS module uses [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) for state management to keep track of the user’s score response. Cubit is one of [many options for state management ](https://docs.flutter.dev/development/data-and-backend/state-mgmt/options)when building Flutter applications. The feature also includes [unit and widget tests](https://docs.flutter.dev/testing), which are useful tools to ensure that the code you’re writing is working as intended. Finally, the codebase has [localization](https://docs.flutter.dev/development/accessibility-and-localization/internationalization) support for 78 languages out of the box. This project has [GitHub Actions integration for continuous integration](https://github.com/VGVentures/take-flutter-home/tree/main/.github/workflows) to run formatting, linting, and test phases before merging changes.
+The Flutter NPS module uses [`flutter_bloc`](https://pub.dev/packages/flutter_bloc) for state management to keep track of the user’s score response. Cubit is one of [many options for state management](https://docs.flutter.dev/development/data-and-backend/state-mgmt/options) when building Flutter applications. The feature also includes [unit and widget tests](https://docs.flutter.dev/testing), which are useful tools to ensure that the code you’re writing is working as intended. Finally, the codebase has [localization](https://docs.flutter.dev/development/accessibility-and-localization/internationalization) support for 78 languages out of the box. This project has [GitHub Actions integration for continuous integration](https://github.com/VGVentures/take-flutter-home/tree/main/.github/workflows) to run formatting, linting, and test phases before merging changes.
 
 ## Backend
 

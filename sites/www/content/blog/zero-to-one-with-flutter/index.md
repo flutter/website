@@ -36,14 +36,14 @@ This is part one of a [two-part](https://medium.com/dartlang/zero-to-one-with-fl
 
 The starting point is a fresh [installation of Flutter](https://flutter.io/setup). Run
 
-```
+```bash
 $ flutter doctor
 ```
 
 
 to check the setup:
 
-```
+```plaintext
 $ flutter doctor
 Doctor summary (to see all details, run flutter doctor -v):
 [✓] Flutter
@@ -61,14 +61,14 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 With enough check marks, you can create a Flutter app. Let’s call it `charts`:
 
-```
+```bash
 $ flutter create charts
 ```
 
 
 That should give you a directory of the same name:
 
-```
+```plaintext
 charts
   android
   ios
@@ -81,7 +81,7 @@ About sixty files have been generated, making up a complete sample app that can 
 
 You should verify that you can launch the sample app. Start an emulator or plug in a device, then execute
 
-```
+```bash
 $ flutter run
 ```
 
@@ -143,7 +143,7 @@ Our simple app shows two central aspects of the Flutter widget concept in action
 
 * The user interface is defined by a tree of **immutable widgets** which is built via a foxtrot of constructor calls (where you get to configure widgets) and `build` methods (where widget implementations get to decide how their sub-trees look). The resulting tree structure for our app is shown below, with the main role of each widget in parentheses. As you can see, while the widget concept is quite broad, each concrete widget type typically has a very focused responsibility.
 
-```
+```plaintext
 MaterialApp                    (navigation)
   ChartPage                    (state management)
     Scaffold                   (layout)
@@ -351,7 +351,7 @@ Enter **tweens**. While far from unique to Flutter, they are a delightfully simp
 <DashImage figure src="images/13KpUQjhZLrvwvjF0daKg9g.jpeg" />
 
 
-Tweens are generic in the type of these other values, and can be expressed in Dart as objects of the type `Tween&lt;T&gt;`:
+Tweens are generic in the type of these other values, and can be expressed in Dart as objects of the type `Tween<T>`:
 
 ```dart
 abstract class Tween<T> {
@@ -367,9 +367,9 @@ abstract class Tween<T> {
 
 The jargon `lerp` comes from the field of computer graphics and is short for both *linear interpolation* (as a noun) and *linearly interpolate* (as a verb). The parameter `t` is the animation value, and a tween should thus lerp from `begin` (when `t` is zero) to `end` (when `t` is one).
 
-The Flutter SDK’s [`Tween&lt;T&gt;`](https://docs.flutter.io/flutter/animation/Tween-class.html) class is very similar to the above, but is a concrete class that supports mutating `begin` and `end`. I’m not entirely sure why that choice was made, but there are probably good reasons for it in areas of the SDK’s animation support that I have yet to explore. In the following, I’ll use the Flutter `Tween&lt;T&gt;`, but pretend it is immutable.
+The Flutter SDK’s [`Tween<T>`](https://docs.flutter.io/flutter/animation/Tween-class.html) class is very similar to the above, but is a concrete class that supports mutating `begin` and `end`. I’m not entirely sure why that choice was made, but there are probably good reasons for it in areas of the SDK’s animation support that I have yet to explore. In the following, I’ll use the Flutter `Tween<T>`, but pretend it is immutable.
 
-We can clean up our code using a single `Tween&lt;double&gt;` for the bar height:
+We can clean up our code using a single `Tween<double>` for the bar height:
 
 ```dart
 import 'dart:math';
@@ -471,7 +471,7 @@ class BarChartPainter extends CustomPainter {
 
 We’re using `Tween` for packaging the bar height animation end-points in a single value. It interfaces neatly with the `AnimationController` and `CustomPainter`, avoiding widget tree rebuilds during animation as the Flutter infrastructure now marks `CustomPaint` for repaint at each animation tick, rather than marking the whole `ChartPage` subtree for rebuild, relayout, and repaint. These are definite improvements. But there’s more to the tween concept; it offers *structure* to organize our thoughts and code, and we haven’t really taken that seriously. The tween concept says,
 
-*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween&lt;T&gt;`.*
+*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween<T>`.*
 
 In the code above, `T` is a `double`, but we do not want to animate `double`s, we want to animate bar charts! Well, OK, single bars for now, but the concept is strong, and it scales, if we let it.
 

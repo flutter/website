@@ -20,7 +20,7 @@ To see tree shaking in action:
 
 1. Create a Dart file `greeter.dart`:
 
-```
+```dart
 abstract class Greeter {
   String greet(String name);
 }
@@ -45,7 +45,7 @@ In the generated JavaScript code, there aren’t any references to the `SwedishG
 
 The compiler can only figure out what code is reachable, and what is dead code, with static analysis. Take the following example, where the greeter is defined depending on the system locale:
 
-```
+```dart
 Locale locale = Localizations.localeOf(context);
 if (locale.languageCode == 'sv') {
   greeter = SwedishGreeter();
@@ -61,7 +61,7 @@ The compiler doesn’t know the user’s system locale, therefore both `EnglishG
 
 [Deferred loading](https://dart.dev/guides/language/language-tour#deferred-loading), also called lazy loading, allows you to load libraries if and when needed. It can be used to load rarely-used functionality of an application. Please note that deferred loading is a `dart2js` feature, so this is not available for Flutter mobile applications. In the simplest case, mark an imported package or file as `deferred` and wait for it to load before using it:
 
-```
+```dart
 import 'greeter.dart' deferred as greeter;
 
 void main() async {
@@ -75,7 +75,7 @@ Compiling this code generates two JavaScript files. When `loadLibrary` is called
 
 In Flutter, where everything is a widget, you might want to make use of the [`FutureBuilder`](https://api.flutter.dev/flutter/widgets/FutureBuilder-class.html). A widget’s build method is expected to be synchronous, therefore you can’t call `await` on `loadLibrary` inside of a build method. However, you can return a `FutureBuilder` in a build method, and you can also use it to show a different UI while the library is loading:
 
-```
+```dart
 import 'greeter.dart' deferred as greeter;
 
 FutureBuilder(

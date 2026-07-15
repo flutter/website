@@ -14,8 +14,7 @@ Flutter UX research team is back to share the results of our latest user survey!
 
 We received responses from 1,966 users, distributed in 108 different countries and regions. The number of respondents has almost doubled since the [last survey in July](https://medium.com/flutter-io/what-weve-learned-from-the-july-2018-flutter-user-survey-cbbf1e04370c), from 1,016. Thank you all for taking your time to answer the questions!
 
-[**What We’ve Learned from the July 2018 Flutter User Survey**
-*Flutter’s User Experience Research team recently conducted an online survey to measure user satisfaction and understand…*medium.com](https://medium.com/flutter-io/what-weve-learned-from-the-july-2018-flutter-user-survey-cbbf1e04370c)
+[What We’ve Learned from the July 2018 Flutter User Survey](https://medium.com/flutter-io/what-weve-learned-from-the-july-2018-flutter-user-survey-cbbf1e04370c)
 
 ## Are users satisfied with Flutter?
 

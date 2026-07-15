@@ -150,7 +150,7 @@ contributors: [cskau-g](https://github.com/cskau-g), [mkustermann](https://githu
 
 * [Memory leak when using `PlatformView` [IOS]](https://github.com/flutter/flutter/issues/24714)
 
-## **Fixed a memory leak when animation is playing on iOS**
+## Fixed a memory leak when animation is playing on iOS
 
 * [Gerrit 260538: Don’t allocate invalidation messages for generators that make uncacheable textures](https://skia-review.googlesource.com/c/skia/+/260538)
 
@@ -213,7 +213,7 @@ contributors: [flar](https://github.com/flar), [yjbanov](https://github.com/yjba
 
 * [PR 37275: Optimize the transformRect and transformPoint methods in matrix_utils](https://github.com/flutter/flutter/pull/37275)
 
-* 5.3x speedup (2300ms to 430ms) in `MatrixUtils_affine_transformRect_iteratio[n](http://go/flutter-benchmarks)`
+* 5.3x speedup (2300ms to 430ms) in [`MatrixUtils_affine_transformRect_iteration`](http://go/flutter-benchmarks)
 
 * 1.5x speedup (466ms to 320ms) in `MatrixUtils_affine_transformPoint_iteration`
 

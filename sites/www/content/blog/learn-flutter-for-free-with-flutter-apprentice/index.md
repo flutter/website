@@ -26,7 +26,7 @@ Flutter Apprentice is a practical book, with lots of examples to follow and code
 
 We’re also excited to host the [*Flutter Apprentice Book Club*](https://www.youtube.com/playlist?list=PL4dBIh1xps-HAaadBRWQobCO_IJ4gMOG2), a weekly opportunity to hear live discussion and have your questions answered by the book’s authors and community experts. We’ll be partnering with Flutteristas and other prominent leaders in the Flutter community to host the book club. Join us each Wednesday at 12pm EST / 9am PST on the [Flutter Community YouTube channel](https://www.youtube.com/c/FlutterCommunityVideos) for summaries, and discussions.
 
-[Stay tuned ](https://twitter.com/FlutterDev)for pop quizzes, chances to win your very own Dash plushie, AMAs with the book’s authors and more.
+[Stay tuned](https://twitter.com/FlutterDev) for pop quizzes, chances to win your very own Dash plushie, AMAs with the book’s authors and more.
 
 **Get Access**
 

@@ -26,7 +26,7 @@ The latest version of package:genui removes `ContentGenerator`. Instead, the fra
 
 * **Engine** (`SurfaceController`): Manages the state and rendering of your UI.
 
-* **Transport (**`A2uiTransportAdapter`**)**: Streams messages between the agent and renderer.
+* **Transport (`A2uiTransportAdapter`)**: Streams messages between the agent and renderer.
 
 * **Facade** (`Conversation`): Provides a high-level API for managing chat states.
 
@@ -137,33 +137,33 @@ If your code manually constructs A2UI JSON or relies on specific payload structu
 
 **Property renames:**
 
-* `distribution` =&gt; `justify`
+* `distribution` => `justify`
 
-* `alignment` =&gt; `align`
+* `alignment` => `align`
 
-* `usageHint` =&gt; `variant`
+* `usageHint` => `variant`
 
-* `text` (in `TextField`) =&gt; `value`
+* `text` (in `TextField`) => `value`
 
-* `userAction` =&gt; `action`
+* `userAction` => `action`
 
 ## Other stuff got renamed!
 
 Along with some other small tweaks, the `GenUi` prefix has been dropped from almost all core classes:
 
-* `GenUiConversation` =&gt; `Conversation`
+* `GenUiConversation` => `Conversation`
 
-* `GenUiController` =&gt; `SurfaceController`
+* `GenUiController` => `SurfaceController`
 
-* `GenUiSurface` =&gt; `Surface`
+* `GenUiSurface` => `Surface`
 
-* `GenUiHost` =&gt; `SurfaceHost`
+* `GenUiHost` => `SurfaceHost`
 
-* `GenUiContext` =&gt; `SurfaceContext`
+* `GenUiContext` => `SurfaceContext`
 
-* `GenUiTransport` =&gt; `Transport`
+* `GenUiTransport` => `Transport`
 
-* `GenUiFallback` =&gt; `FallbackWidget`
+* `GenUiFallback` => `FallbackWidget`
 
 In addition, `CoreCatalogItems` was renamed to `BasicCatalogItems` to clarify that it serves as a baseline implementation rather than a strict requirement.
 

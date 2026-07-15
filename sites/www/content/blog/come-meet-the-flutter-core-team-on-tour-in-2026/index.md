@@ -70,7 +70,7 @@ If you’ve been looking for an opportunity to connect with the team, see a live
 
 * [**Flutter Kaigi/Ninjas**](https://medium.com/flutterkaigi/flutterkaigi-2026-%E9%96%8B%E5%82%AC%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B-f78a1421fe08) (Tokyo, Japan) — October 29–30
 
-* **[Google for Developers events ](https://developers.google.com/community)(DevFest and Build with AI)** — Throughout Fall and Winter 2026.
+* **[Google for Developers events](https://developers.google.com/community) (DevFest and Build with AI)** — Throughout Fall and Winter 2026.
 
 Stay tuned and bookmark Flutter.dev’s [Events](https://flutter.dev/events) page as we continue to add more events throughout the year.
 

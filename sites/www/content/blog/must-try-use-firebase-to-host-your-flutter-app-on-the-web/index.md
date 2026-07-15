@@ -19,7 +19,7 @@ So you have a Flutter app, and you want to show it to the world? Look no further
 
 If your project was created before flutter web was enabled, your project needs a copy of the web folder with an `index.html` file. If there is not a web folder in your root directory, run the following command to make one:
 
-```
+```bash
 $ flutter create .
 ```
 
@@ -76,7 +76,7 @@ Or download it directly from [Node.js](https://nodejs.org).
 
 Once `npm` is installed, run the following command to install the `firebase-tools`:
 
-```
+```bash
 $ npm install -g firebase-tools
 ```
 
@@ -87,14 +87,14 @@ $ npm install -g firebase-tools
 
 Open a terminal and navigate to the root directory for your Flutter app and run this command to login:
 
-```
+```bash
 $ firebase login
 ```
 
 
 ☝️Note: If you are already logged in and want to re-login as different account, first logout with:
 
-```
+```bash
 $ firebase logout
 ```
 
@@ -106,7 +106,7 @@ Follow the command prompt and the link in your browser. Accept the permissions b
 
 Next, run this command from the root directory of your Flutter app to initialize your Firebase project:
 
-```
+```bash
 $ firebase init
 ```
 
@@ -132,16 +132,16 @@ Next, enter `build/web` as the public directory and press enter, then enter **y*
 
 Build your app for web:
 
-```
+```bash
 $ flutter build web
 ```
 
 
-This builds the necessary files in `&lt;root-directory&gt;/build/web`.
+This builds the necessary files in `<root-directory>/build/web`.
 
 Note: If you see a warning: “Experimental feature web is not supported on stable branches”, make sure you are on at least the dev channel and have web enabled. For example:
 
-```
+```plaintext
 $ flutter channel
   beta
 * dev
@@ -157,7 +157,7 @@ Web Server • web-server • web-javascript • Flutter Tools
 
 Finally, run:
 
-```
+```bash
 $ firebase deploy
 ```
 

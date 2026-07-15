@@ -122,7 +122,7 @@ Here on the Flutter team, we are often cautious about labeling something as “p
 <DashImage figure src="images/0luz0EiazQQqsAEC4.webp" alt="webview_flutter plugin hosting flutter.dev" caption="webview_flutter plugin hosting flutter.dev" />
 
 
-In Flutter 1.22, we’ve added an alternative Platform Views implementation that fixes [all known keyboard, and accessibility issues for Android views](https://github.com/flutter/flutter/issues/61133). Also, it works with Android API level 19 and above (it used to require level 20). We have also made threading improvements on iOS that make platform views more efficient and more robust (and no longer requires you to add the `io.flutter.embedded_views_preview` flag to your iOS `Info.plist`)*.*
+In Flutter 1.22, we’ve added an alternative Platform Views implementation that fixes [all known keyboard, and accessibility issues for Android views](https://github.com/flutter/flutter/issues/61133). Also, it works with Android API level 19 and above (it used to require level 20). We have also made threading improvements on iOS that make platform views more efficient and more robust (and no longer requires you to add the `io.flutter.embedded_views_preview` flag to your iOS `Info.plist`).
 
 The `webview_flutter` plugin supports the new Android Platform Views mode but currently it needs to be [enabled manually](https://github.com/flutter/plugins/blob/master/packages/webview_flutter/README.md#android). We’ll enable it by default in future versions once it’s gotten more use in the wider community.
 
@@ -130,7 +130,7 @@ The Google Maps and WebView plugins already benefit from the improvements in Pla
 
 ## Navigator 2.0
 
-If you’ve used [navigation](https://flutter.dev/docs/development/ui/navigation) in your Flutter apps before, you may have noticed that the core data structure, the stack of pages that your user is navigating through, is hidden from you. Instead, to manage it, you call `Navigator.pop()` **or `Navigator.push()`. For example, let’s say that you wanted to show a list of widgets on your home page and allow the user to tap on one to get to a detail page dedicated to just that color.
+If you’ve used [navigation](https://flutter.dev/docs/development/ui/navigation) in your Flutter apps before, you may have noticed that the core data structure, the stack of pages that your user is navigating through, is hidden from you. Instead, to manage it, you call `Navigator.pop()` or `Navigator.push()`. For example, let’s say that you wanted to show a list of widgets on your home page and allow the user to tap on one to get to a detail page dedicated to just that color.
 
 <DashImage figure src="images/0OVbaUaMkAXrpLQCy.webp" />
 
@@ -269,7 +269,7 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 
 ```
 
-Briefly, each widget gets a storage bucket, which is registered with the [`RestorationMixin`](https://api.flutter.dev/flutter/widgets/RestorationMixin-mixin.html) using a unique ID. By using a [`RestorableProperty`](https://master-api.flutter.dev/flutter/widgets/RestorableProperty-class.html) type (like `RestorableInt` used here) to store the UI-specific data, and by registering that data with the State Restoration feature, the data is automatically stored before Android kills the app, and restored when it’s brought back to life. And that’s it. Any data that’s stored in a `Restoration*` type, like `RestorableInt`, `RestorableString` and `RestorableTextEditingController` (we’ve got a bunch of them) will be restored. And if we don’t cover all of the types you’d like to have restored, you can create your own by extending [`RestorableProperty&lt;T&gt;`](https://api.flutter.dev/flutter/widgets/RestorableProperty-class.html).
+Briefly, each widget gets a storage bucket, which is registered with the [`RestorationMixin`](https://api.flutter.dev/flutter/widgets/RestorationMixin-mixin.html) using a unique ID. By using a [`RestorableProperty`](https://master-api.flutter.dev/flutter/widgets/RestorableProperty-class.html) type (like `RestorableInt` used here) to store the UI-specific data, and by registering that data with the State Restoration feature, the data is automatically stored before Android kills the app, and restored when it’s brought back to life. And that’s it. Any data that’s stored in a `Restoration*` type, like `RestorableInt`, `RestorableString` and `RestorableTextEditingController` (we’ve got a bunch of them) will be restored. And if we don’t cover all of the types you’d like to have restored, you can create your own by extending [`RestorableProperty<T>`](https://api.flutter.dev/flutter/widgets/RestorableProperty-class.html).
 
 <DashImage figure src="images/01298qhTKz_FjPuRN.webp" />
 
@@ -302,7 +302,7 @@ Dart historically has had many smaller developer tools (such as `dartfmt` for fo
 <DashImage figure src="images/19pvyafhpaMEMhJfLVsz1JQ.webp" />
 
 
-Starting with today’s Flutter 1.22 SDK, you will find that the `&lt;flutter-sdk&gt;/bin` folder (which you likely have in your`PATH`) contains both `flutter` and `dart` commands. For more details, see the [Dart 2.10 blog post](https://medium.com/@mit.mit/announcing-dart-2-10-350823952bd5).
+Starting with today’s Flutter 1.22 SDK, you will find that the `<flutter-sdk>/bin` folder (which you likely have in your `PATH`) contains both `flutter` and `dart` commands. For more details, see the [Dart 2.10 blog post](https://medium.com/@mit.mit/announcing-dart-2-10-350823952bd5).
 
 ## App size analysis tool
 

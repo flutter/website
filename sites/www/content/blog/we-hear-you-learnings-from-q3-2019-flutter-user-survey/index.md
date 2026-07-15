@@ -17,7 +17,7 @@ Flutter’s User Experience team runs a survey every quarter to understand what 
 
 Overall, 92% of the users were either *somewhat satisfied* or *very satisfied* with Flutter. This is the first question we ask in every survey, because it is important for us to build a product that you love. We are excited to see the same level of satisfaction as [last quarter](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6).
 
-## **Performance**
+## Performance
 
 Flutter continues to polish its foundation, and that includes improving the experience around Flutter’s performance. To better understand how we’re doing on this topic, we covered the performance of Flutter as one of the main topics in this survey.
 
@@ -31,7 +31,7 @@ We also learned that only about half of the users (47%) are using [Dart DevTools
 <DashImage figure src="images/0jKeTRjxJ0q0gFu2H.webp" alt="*Performance profiling tool preference*" caption="*Performance profiling tool preference*" />
 
 
-## **Add-to-app**
+## Add-to-app
 
 Add-to-app is the incremental adoption of Flutter by adding a Flutter-rendered screen into an existing Android or iOS app, rather than creating a from-scratch Flutter-only project. This is a great way to adopt Flutter when there are constraints that prevent you from writing an app from scratch, and the team is investing into supporting such a journey.
 
@@ -39,7 +39,7 @@ From the survey, we learned that 56% of respondents are interested in add-to-app
 
 The survey also helped the team identify future plans, such as which UI pattern to prioritize (i.e., full screen vs. partial screen), which tooling to improve first, and so on. It was also news to us that the lack of coverage in middleware (such as platform ⇄ Flutter interoperability) was the biggest challenge to those who tried add-to-app already, even more than the lack of capability/APIs or documentation. The team is working towards a better add-to-app experience. You can watch their progress in the [Add to App 2019 GitHub project](https://github.com/flutter/flutter/projects/51).
 
-## **Plugins**
+## Plugins
 
 Ecosystem is another crucial part of Flutter; this enables developers to extend the capabilities of Flutter with packages and plugins when the core framework doesn’t support a particular feature. In the Q2 survey, we covered a number of [ecosystem-related questions](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6) to understand your pain points. In Q3, we added two open-ended questions to better understand which plugins (or lack of plugins) are impeding the development and release of your apps.
 
@@ -70,7 +70,7 @@ We will focus on improving your experience around Flutter’s ecosystem and also
 <DashImage figure src="images/0rHPbdMZoe86uwe1H.webp" alt="*First page of dart.dev features some verified Flutter packages*" caption="*First page of dart.dev features some verified Flutter packages*" />
 
 
-## **Frustrating experiences**
+## Frustrating experiences
 
 We also asked another open-ended question about recurring annoyances. Although [GitHub issues](https://github.com/flutter/flutter/issues) are open to anyone who wants to file, comment, or upvote, on this survey we wanted to capture frictions that users might not have reported on Github.
 

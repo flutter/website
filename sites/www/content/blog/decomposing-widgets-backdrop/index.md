@@ -27,7 +27,7 @@ Let’s dig in and explore how this widget works.
 
 Backdrop is a StatefulWidget whose state manages the position and animation of the front layer. Let’s start by focusing on Backdrop’s build() function.
 
-```
+```dart
 AnimationController _controller;
 
 Widget build(BuildContext context) {
@@ -70,7 +70,7 @@ The BackdropPanel widget implements the front layer with a Column containing the
 
 The Material widget decorates the panel with a drop shadow and beveled edges using BorderRadius.
 
-```
+```dart
 Widget build(BuildContext context) {
   return Material(
     elevation: 12.0,
@@ -100,7 +100,7 @@ Widget build(BuildContext context) {
 
 The remaining code in Backdrop primarily implements dragging and animations. BackdropState has an AnimationController where a value of 1 opens the front layer, and 0 closes it.
 
-```
+```dart
 _controller = AnimationController(
       duration: Duration(milliseconds: 300),
       // 0 hides the panel; 1 shows the panel
@@ -112,7 +112,7 @@ _controller = AnimationController(
 
 The status of the controller can be queried to determine the state of the layer:
 
-```
+```dart
 bool get _backdropPanelVisible =>
       _controller.status == AnimationStatus.completed ||
       _controller.status == AnimationStatus.forward;
@@ -121,7 +121,7 @@ bool get _backdropPanelVisible =>
 
 fling() can be called to open or close the layer:
 
-```
+```dart
 void _toggleBackdropPanelVisibility() => _controller.fling(
       velocity: _backdropPanelVisible 
         ? -_kFlingVelocity
@@ -132,7 +132,7 @@ void _toggleBackdropPanelVisibility() => _controller.fling(
 
 Dragging the layer is supported by _handleDragUpdate(). _handleDragEnd() determines whether the layer should animate open or closed, depending on drag direction, velocity, and position. These functions are used by the GestureDetector widget in BackdropPanel.
 
-```
+```dart
 void _handleDragUpdate(DragUpdateDetails details) {
   if (!_controller.isAnimating)
     _controller.value -= details.primaryDelta / _backdropHeight;
@@ -170,7 +170,7 @@ A boolean value, representing the layer’s open/closed state, is held by ValueN
 
 Firstly we ensure that the value is updated when the layer is opened or closed, by listening to the AnimationController’s status in Backdrop:
 
-```
+```dart
 if (widget.panelVisible != null) {
   _controller.addStatusListener((status) {
     if (status == AnimationStatus.completed)
@@ -183,7 +183,7 @@ if (widget.panelVisible != null) {
 
 Backdrop also listens for changes in the value, so that other widgets can trigger a change in the front layer’s state:
 
-```
+```dart
 void _subscribeToValueNotifier() {
   if (widget.panelVisible.value != _backdropPanelVisible)
     _toggleBackdropPanelVisibility();
@@ -193,7 +193,7 @@ void _subscribeToValueNotifier() {
 
 One subtle, but important, side effect of using and subscribing to ValueNotifiers is that when the app is hot reloaded, the widgets may get rebuilt and, if you’ve subscribed to the notifier in initState(), the subscription is no longer valid. To fix this, implement the StatefulWidget’s didWidgetUpdate() method and add a new listener:
 
-```
+```dart
 void didUpdateWidget(Backdrop oldWidget) {
   super.didUpdateWidget(oldWidget);
   oldWidget.panelVisible?.removeListener(_subscribeToValueNotifier);
@@ -213,7 +213,7 @@ The SimpleExample widget shows how to use Backdrop in the simplest of cases. Cli
 
 ComplexExample demonstrates how to use Backdrop to show different content in the front layer and uses ScopedModel to track the content state. A Model is first defined to manage the front layer state.
 
-```
+```dart
 enum FrontPanels { tealPanel, limePanel }
 
 class FrontPanelModel extends Model {
@@ -239,7 +239,7 @@ void activate(FrontPanels panel) {
 
 The model is placed in the widget tree, using a ScopedModel widget, and the ScopedModelDescendant widgets provide access to the model. They rebuild whenever the model changes, unless the rebuildOnChange flag is set to false.
 
-```
+```dart
 Widget build(BuildContext context) => ScopedModel(
     model: FrontPanelModel(FrontPanels.firstPanel),
     child: Scaffold(body: SafeArea(child: Panels())));

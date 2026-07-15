@@ -18,7 +18,7 @@ First, let’s create an example app that uses `package:url_launcher`, so you ca
 
 In order to use web plugins, you need to be on the Flutter dev channel. Make sure that you’re on the dev channel by running:
 
-```
+```bash
 $ flutter channel dev
 $ flutter upgrade
 ```
@@ -26,14 +26,14 @@ $ flutter upgrade
 
 Now, you need to enable web support so that Flutter can set up your app to run on the web:
 
-```
+```bash
 $ flutter config --enable-web
 ```
 
 
 Now, create a directory named `url_launcher_example`(let’s assume `~/url_launcher_example`), and create a Flutter project in it:
 
-```
+```bash
 $ mkdir “~/url_launcher_example”
 $ cd “~/url_launcher_example”
 $ flutter create .
@@ -46,13 +46,13 @@ Our example app will have just a button that launches google.com.
 
 First, update the pubspec so that you depend on `package:url_launcher`. In `pubspec.yaml`, under `dependencies`, add the line (highlighted in bold):
 
-```
+```yaml
 name: url_launcher_example
  ...
 dependencies:
   flutter:
     sdk: flutter
-  **url_launcher: 5.2.3**
+  url_launcher: 5.2.3
   ...
 ```
 
@@ -109,11 +109,11 @@ Verify that the app works by running it on your Android or iOS device, or simula
 
 Now, you can run the same app on the web with `flutter run -d chrome`. The app should open and render just like the mobile version, but clicking **Launch**! does nothing. Let’s start writing the web plugin for `url_launcher`.
 
-## **Creating `package:url_launcher_web`**
+## Creating `package:url_launcher_web`
 
 Create a new directory called `url_launcher_web` (let’s assume `~/url_launcher_web`):
 
-```
+```bash
 $ mkdir “~/url_launcher_web”
 $ cd “~/url_launcher_web”
 ```
@@ -238,13 +238,13 @@ Our web plugin is looking good! Now, we need to use it from the example app we c
 
 Modify the pubspec in `~/url_launcher_example` to add a dependency to `~/url_launcher_web`. Your change should look something like this. (Make sure to use the correct path for where you actually put your directories):
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
   url_launcher: 5.2.3
-  **url_launcher_web:
-    path: ../url_launcher_web**
+  url_launcher_web:
+    path: ../url_launcher_web
 ```
 
 

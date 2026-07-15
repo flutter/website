@@ -12,7 +12,7 @@ The basics of a good client engagement include two critical factors: wise use of
 
 In today’s mobile and digital-first world, clients have exponentially increased their expectations for experiences, speed, personalization, and convenience. Using Flutter, developers and designers can create beautiful cross-platform web and mobile applications faster, and more efficiently.
 
-## **Why we’re expanding our Flutter practice**
+## Why we’re expanding our Flutter practice
 
 ### *Flutter helps us deliver client projects faster*
 
@@ -37,7 +37,7 @@ Flutter has grown in popularity — as seen in the recent [StackOverflow report]
 
 As a premier Google Cloud partner, IBM and Google already have a close relationship. By adopting Flutter, we’re able to take advantage of seamless integration between developer offerings while leveraging support from the Google team where necessary.
 
-## **How we’re building a center of excellence**
+## How we’re building a center of excellence
 
 For decades, IBM has been at the forefront of user-centric mobile innovation, led by IBM iX, the experience and design partner within IBM Consulting. We’ve been delivering exceptional mobile experiences to clients across the globe in our 60 IBM iX studios with over 15,000 development, design, and strategy practitioners.
 
@@ -45,29 +45,29 @@ However, with a large, distributed team, it was vital to create a single place f
 
 Here’s what we prioritized for creating an IBM Consulting center of excellence for Flutter development and design:
 
-### **1. Host a regular community forum**
+### 1. Host a regular community forum
 
 At IBM, we host a quarterly Flutter community call. On this call, developers and designers can share learnings from client engagements, discuss new Flutter and Dart features, and get updates from the broader Flutter community.
 
-### **2. Create an environment for asking questions**
+### 2. Create an environment for asking questions
 
 We’ve created a dedicated chat room where developers and designers can ask Flutter-specific questions at any time. We have a group of Flutter experts who jump in to help troubleshoot issues or recommend specific approaches.
 
-### **3. Centralize knowledge sharing and reusable components**
+### 3. Centralize knowledge sharing and reusable components
 
 Many client projects share similarities in their architecture. Therefore, we’ve created simple project templates that practitioners can pull from to expedite their development.
 
-### **4. Build educational materials for clients**
+### 4. Build educational materials for clients
 
-While many clients know about Flutter’s benefits, some might want to better understand how Flutter can help *them*. Building off the[ Flutter pitch deck,](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) we’ve developed materials to educate clients on how Flutter differs from other frameworks. We’ve created a central repository of client case studies to easily showcase how Flutter has helped past clients.
+While many clients know about Flutter’s benefits, some might want to better understand how Flutter can help *them*. Building off the [Flutter pitch deck,](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) we’ve developed materials to educate clients on how Flutter differs from other frameworks. We’ve created a central repository of client case studies to easily showcase how Flutter has helped past clients.
 
-### **5. Create a learning path for Flutter practitioners**
+### 5. Create a learning path for Flutter practitioners
 
 At IBM, practitioners can become certified in specific technologies or areas. We’ve created a dedicated learning path to help developers learn Flutter and apply those learnings to new client engagements. When a practitioner completes this path, they’re recorded as a Flutter practitioner in our database — so it’s easy to quickly staff Flutter engagements.
 
 By creating this center of excellence, we’ve helped our practitioners expedite their Flutter learning. With this information, we can deliver client projects better and faster.
 
-## **The Future: Fueling Excellence in Flutter**
+## The Future: Fueling Excellence in Flutter
 
 To date, IBM has seen major success in delivering Flutter projects. Our clients include global banks, federal and state governments, and international military personnel. We have also delivered numerous proofs of concept around the world.
 

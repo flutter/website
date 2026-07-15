@@ -46,7 +46,7 @@ This release brings further performance improvements and features to the Widget 
 
 * **Preview detection rewrite**: The detection logic now utilizes the Dart Analysis Server, significantly reducing memory usage by the flutter tool. For IDE users, overall memory usage should be reduced by up to 50%.
 
-* **Preview filtering**: It’s now possible to filter previews by group, name, and script and package URIs, making it easier to work in projects with many previews. Special thanks to community member[ NamanGoyalK](https://github.com/NamanGoyalK) for this[ contribution](https://github.com/flutter/flutter/pull/184023)!
+* **Preview filtering**: It’s now possible to filter previews by group, name, and script and package URIs, making it easier to work in projects with many previews. Special thanks to community member [NamanGoyalK](https://github.com/NamanGoyalK) for this [contribution](https://github.com/flutter/flutter/pull/184023)!
 
 <DashImage figure src="images/1AWOBIU0sytlgElyB3n-x9w.webp" alt="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" caption="Widget Previews enables you to preview standalone widgets in isolation, separate from your full app" />
 

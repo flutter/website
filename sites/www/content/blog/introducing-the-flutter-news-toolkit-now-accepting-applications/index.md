@@ -18,11 +18,11 @@ We’ve invested in helping news organizations solve this problem, using industr
 
 ### Introducing the Flutter News Toolkit
 
-We’re excited to announce that Google’s Flutter team is partnering with the [Google News Initiative (GNI)](https://newsinitiative.withgoogle.com/) to release[ a free toolkit](https://forms.gle/J6t3Auz4QoZTunBJ7) that allows publishers to create mobile apps on iOS and Android faster by reducing the app development time up to 80%.
+We’re excited to announce that Google’s Flutter team is partnering with the [Google News Initiative (GNI)](https://newsinitiative.withgoogle.com/) to release [a free toolkit](https://forms.gle/J6t3Auz4QoZTunBJ7) that allows publishers to create mobile apps on iOS and Android faster by reducing the app development time up to 80%.
 
 The Flutter News Toolkit is an easy-to-use template on which a news organization can build an app and includes blocks of sample code for common user interface and app functionalities.
 
-We worked closely with industry experts and news publishers across the world to understand the most critical features and user workflows for a news application, and incorporated the best practices from [News Consumer Insights ](https://news-consumer-insights.appspot.com/)to help you achieve higher reader engagement and meet financial goals through the Flutter news toolkit.
+We worked closely with industry experts and news publishers across the world to understand the most critical features and user workflows for a news application, and incorporated the best practices from [News Consumer Insights](https://news-consumer-insights.appspot.com/) to help you achieve higher reader engagement and meet financial goals through the Flutter news toolkit.
 
 The Flutter News Toolkit includes critical features such as:
 
@@ -80,7 +80,7 @@ Flutter is Google’s open source UI toolkit for building beautiful apps for mob
 
 Yes, for developers who have knowledge of other programming languages such as Java, learning Flutter is quick. Besides, we have a wealth of [learning resources](https://flutter.dev/learn) available for you to get started.
 
-### **Can I use other non-Google services such as Ads, analytics, and subscriptions in the app?**
+### Can I use other non-Google services such as Ads, analytics, and subscriptions in the app?
 
 Of course! The Flutter News Toolkit only aims to provide a sample. You are not required to use any service you don’t want. In fact, it is easy to remove or swap the existing integrations with other services. For example, if you want to use non-Google Ads services, you can find other [packages](https://pub.dev/packages?q=platform%3Aandroid+platform%3Aios+ads) on pub.dev.
 

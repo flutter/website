@@ -57,7 +57,7 @@ We also exposed the semantics node debug tree with a command line flag in profil
 
 To enable this for your own Flutter web app, run the following:
 
-```
+```bash
 $ flutter run -d chrome --profile \
   --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
@@ -387,7 +387,7 @@ Deferred components are currently available only on Android, and this feature is
 
 Another update for Flutter in this release is for desktop lovers; support for Windows UWP has moved to alpha in the dev channel (beyond the stable 2.2 version). UWP allows you to take your Flutter apps to devices where standard Windows apps don’t run, including Xbox. To try it out, you first need to [set up the UWP prerequisites](https://flutter.dev/desktop#windows-uwp). Then, switch to the dev channel and enable UWP support:
 
-```
+```bash
 *$ flutter channel dev
 $ flutter upgrade
 $ flutter config — enable-windows-uwp-desktop*
@@ -396,7 +396,7 @@ $ flutter config — enable-windows-uwp-desktop*
 
 Once enabled, creating a Flutter app includes a new a `winuwp` folder, which allows you to build and run your app in a UWP container:
 
-```
+```bash
 *$ flutter create uwp_fun
 $ cd uwp_fun
 $ flutter pub get

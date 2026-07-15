@@ -8,7 +8,7 @@ category: announcements
 layout: blog
 ---
 
-## **Improving Flutter with your opinion — Q4 2019 survey results**
+## Improving Flutter with your opinion — Q4 2019 survey results
 
 <DashImage figure src="images/0W4ladsI7F9pgXph1.webp" />
 

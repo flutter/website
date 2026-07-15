@@ -75,7 +75,7 @@ Macros are code that creates more code. They’re like code generation, except t
 
 We’re excited to see macros solve all kinds of problems for our developers. Take, for example, data classes, the [highest voted](https://github.com/dart-lang/language/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc) Dart language feature. Beyond specific applications, our eventual goal is to have a macro system in Dart that allows users to create their own macros and raise the abstraction level of Dart programming.
 
-Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out[ macros documentation](http://dart.dev/go/json-codable).
+Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](http://dart.dev/go/json-codable).
 
 ## New resources for Flutter game development
 
@@ -105,7 +105,7 @@ Congrats to all of the winners!
 
 That’s all we have time to spotlight today, but there are many more exciting improvements that we didn’t touch on. Here are a few more things to know:
 
-* You can ****preview [**the Vertex AI for Firebase Dart SDK**](https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter) to use the Gemini API for AI-driven features in a Dart or Flutter app. The SDK is integrated with Firebase App Check, which protects your API calls, and safeguards your backend infrastructure from serious threats like billing fraud, phishing, and app impersonation. For details, see our [AI page](http://flutter.dev/ai).
+* You can preview [**the Vertex AI for Firebase Dart SDK**](https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter) to use the Gemini API for AI-driven features in a Dart or Flutter app. The SDK is integrated with Firebase App Check, which protects your API calls, and safeguards your backend infrastructure from serious threats like billing fraud, phishing, and app impersonation. For details, see our [AI page](http://flutter.dev/ai).
 
 * **Impeller**, our [next-gen rendering engine](https://docs.flutter.dev/perf/impeller), is now feature complete on Android.
 

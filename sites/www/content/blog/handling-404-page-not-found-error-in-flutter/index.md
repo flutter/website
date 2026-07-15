@@ -35,7 +35,7 @@ If your route isn’t handled in any of these tables then it uses the [`onUnknow
 
 The following example code demonstrates how to define an anonymous function for the `onUnknownRoute` property, which takes a `RouteFactory`, a factory method that takes a `RouteSettings function` as input and returns a `Route`. The following snippet shows how simple it can be to define the `onUnknownRoute` property:
 
-```
+```dart
 onUnknownRoute: (settings) {
 
   return MaterialPageRoute(builder: (_) => PageNotFound());

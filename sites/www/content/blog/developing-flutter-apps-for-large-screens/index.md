@@ -59,7 +59,7 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 <DashImage figure src="images/04I4h-v1nPuUbxBt4.webp" alt="Collections page in Wonderous app not maintaining scroll position" caption="Collections page in Wonderous app not maintaining scroll position" />
 
 
-**Fix:** Use the ****key: PageStorageKey API to maintain scroll position for lists that keep their layout the same when device orientation changes. ****By [adding a PageStorageKey to the collections page](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64) the scroll position of the SingleChildScrollView widget [will be stored automatically](https://api.flutter.dev/flutter/widgets/PageStorage-class.html)**.**
+**Fix:** Use the `key: PageStorageKey` API to maintain scroll position for lists that keep their layout the same when device orientation changes. By [adding a PageStorageKey to the collections page](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64), the scroll position of the `SingleChildScrollView` widget [will be stored automatically](https://api.flutter.dev/flutter/widgets/PageStorage-class.html).
 
 **Learning:** While key: PageStorageKey offers an elegant way to maintain scroll position with a list, it doesn’t work if your List changes layout from vertical to horizontal. The previous GIF shows what happened with some of the Wonderous pages. In this case, you might have to [do a bit of math and change the scroll position on screen rotation](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39).
 
@@ -69,7 +69,7 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 
 ### Problem: Letterboxing due to split screen view
 
-With the advent of[ “screen splitting”](https://developer.android.com/guide/topics/large-screens/multi-window-support), the user can, with some orientations and aspect ratios, put the app into less than two inches of vertical space. When the screen was split to ⅓ of the display area, the Wonderous app was [letterboxed](https://developer.android.com/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing) or positioned in the center of the display area with a solid color background filling the unused area (shown below).
+With the advent of [“screen splitting”](https://developer.android.com/guide/topics/large-screens/multi-window-support), the user can, with some orientations and aspect ratios, put the app into less than two inches of vertical space. When the screen was split to ⅓ of the display area, the Wonderous app was [letterboxed](https://developer.android.com/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing) or positioned in the center of the display area with a solid color background filling the unused area (shown below).
 
 <DashImage figure src="images/0CUG7wMHjzHSFKMpV.webp" alt="Wonderous app being letterboxed in split-screen mode on Pixel Fold" caption="Wonderous app being letterboxed in split-screen mode on Pixel Fold" />
 
@@ -94,7 +94,7 @@ Flutter’s Material buttons handle basic focus states by default. In the case o
 
 ### Problem: Mouse scroll slow
 
-The mouse scroll wheel didn’t work well on some devices throughout the app. A user had to move the scroll wheel a lot for the screen to respond . This was a known[ issue](https://github.com/flutter/flutter/issues/82973), thanks to our community. We noticed that it was more pronounced on tablets and foldables.
+The mouse scroll wheel didn’t work well on some devices throughout the app. A user had to move the scroll wheel a lot for the screen to respond . This was a known [issue](https://github.com/flutter/flutter/issues/82973), thanks to our community. We noticed that it was more pronounced on tablets and foldables.
 
 <DashImage figure src="images/0-7rhN0eWj8p1EZ3_.webp" alt="Scrolling Wonderous app with a mouse is slow" caption="Scrolling Wonderous app with a mouse is slow" />
 
@@ -118,7 +118,7 @@ This required the app to layout the navigation close to the edges of the screen 
 
 **Fix:** Update the design and implement a navigation similar to [Material’s Navigation rail](https://material.io/components/navigation-rail).
 
-**Learning:** Make sure the layouts and navigation in your app can function properly in large screen devices and ~2” of vertical space if the screen is in split-mode. To make this feasible use [adaptive widgets](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps) like Material’s Navigation rail**.**
+**Learning:** Make sure the layouts and navigation in your app can function properly in large screen devices and ~2” of vertical space if the screen is in split-mode. To make this feasible use [adaptive widgets](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps) like Material’s Navigation rail.
 
 <DashImage figure src="images/1T0mBXs1X6YdvCQmQlP5ryg.webp" alt="After using Material’s Navigation rail" caption="After using Material’s Navigation rail" />
 
@@ -127,7 +127,7 @@ This required the app to layout the navigation close to the edges of the screen 
 
 ### Problem: Camera preview and media projection
 
-[To achieve Android’s Tier 3 ](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality#T3-7)status, your app needs to support camera preview and media projection in different orientations, screen sizes, and in multi-window mode. Since Wonderous doesn’t have a camera feature, this requirement didn’t apply.
+[To achieve Android’s Tier 3](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality#T3-7) status, your app needs to support camera preview and media projection in different orientations, screen sizes, and in multi-window mode. Since Wonderous doesn’t have a camera feature, this requirement didn’t apply.
 
 **Learning:** [Showing camera previews](https://developer.android.com/guide/topics/large-screens/large-screen-app-compatibility#camera_preview) can be surprisingly complex, but the [Jetpack CameraX library](https://developer.android.com/training/camerax) handles many of these details for you. In Flutter 3.10, we added preliminary support for CameraX to our Flutter camera plugin. To try it, opt in by adding the following line to your pubspec.yaml file.
 

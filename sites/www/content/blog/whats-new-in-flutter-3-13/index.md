@@ -232,9 +232,9 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 <DashImage figure src="images/0aKqjrDI5zXHm7Dza.webp" />
 
 
-* The [FocusSemanticEvent has been added. ](https://github.com/flutter/flutter/pull/126171)However, it should be used with caution as it might break a users’ expectation of how a11y focus works.
+* The [FocusSemanticEvent has been added.](https://github.com/flutter/flutter/pull/126171) However, it should be used with caution as it might break a users’ expectation of how a11y focus works.
 
-* IconButton’s isSelected is[ now available to screen readers](https://github.com/flutter/flutter/issues/127145).
+* IconButton’s isSelected is [now available to screen readers](https://github.com/flutter/flutter/issues/127145).
 
 ## Platforms
 
@@ -315,9 +315,9 @@ The [Material 3 demo](https://flutter.github.io/samples/web/material_3_demo/#/) 
 
 Flutter no longer supports the Android Jelly Bean API levels (16, 17, and 18). The good news is that most apps should be [migrated to this new minSdkVersion by default](https://github.com/flutter/flutter/pull/129729).
 
-However, if you were not migrated automatically, it could be because you made changes to your module level build.gradle, and you might need to increase the minSdkVersion manually. To update, locate the module level `build.gradle` from the root of your Flutter project. It is typically found at `&lt;YOUR PROJECT&gt;/android/app/build.gradle`. Bump `minSdkVersion` version to 19. If you see flutter.minSdkVersion and it’s at least 19, then your minimum is set correctly.
+However, if you were not migrated automatically, it could be because you made changes to your module level build.gradle, and you might need to increase the minSdkVersion manually. To update, locate the module level `build.gradle` from the root of your Flutter project. It is typically found at `<YOUR PROJECT>/android/app/build.gradle`. Bump `minSdkVersion` version to 19. If you see flutter.minSdkVersion and it’s at least 19, then your minimum is set correctly.
 
-Flutter plugins won’t be migrated by default, so plugin authors should update the `minSdkVersion` in the top level `build.gradle` file found at `&lt;YOUR PLUGIN&gt;/android/build.gradle`.
+Flutter plugins won’t be migrated by default, so plugin authors should update the `minSdkVersion` in the top level `build.gradle` file found at `<YOUR PLUGIN>/android/build.gradle`.
 
 ### List of changes and migration guides
 

@@ -101,7 +101,7 @@ I have decided to go nuts and hit it with 1000 nested widgets.
 
 The result was interesting. Compiler hit me with an error:
 
-```
+```plaintext
 error: line 265 pos 8: stack overflow while parsing
 ```
 
@@ -152,7 +152,7 @@ Now I was able to pack more classes into more layouts without hitting the “mag
 
 However this one returned with a warning
 
-```
+```plaintext
 Some program elements were changed during reload but did not run when the view was reassembled;
 you may need to restart the app (by pressing “R”) for the changes to have an effect.
  • Package4MainLayout.build (lib/package_4/generated_widget.dart:10)
@@ -164,7 +164,7 @@ you may need to restart the app (by pressing “R”) for the changes to have an
 
 then I added 75 more packages and the result was a Dart VM timeout error:
 
-```
+```plaintext
 TimeoutException: Request to Dart VM Service timed out
 …
 Application finished.
@@ -174,7 +174,7 @@ Application finished.
 
 I restarted Flutter and continued from 80 x 80. Then I pressed reload and noticed
 
-```
+```plaintext
 Reloaded 82 of 644 libraries in 1,209ms.
 ```
 
@@ -187,7 +187,7 @@ It was time for a pedal to the metal. **80 widgets x 250 packages** — if you a
 
 The result of this craziness was:
 
-```
+```plaintext
 Reloaded 252 of 984 libraries in 3,219ms.
 ```
 

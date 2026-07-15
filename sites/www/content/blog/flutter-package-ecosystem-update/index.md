@@ -57,7 +57,7 @@ It’s not just the community that produces plugins. A team of Googlers working 
 
 By convention, we advise developers to use the caret syntax when depending on a package, for example: ^current-version. This syntax is interpreted by ‘flutter pub get’ to mean “I’d like the highest available version equal to or greater than the version I’ve specified without changing the major version.” This is [Dart’s implementation](https://medium.com/@nex3/pubgrub-2fb6470504f) of [semantic versioning](https://semver.org/), which states that major versions are to be used for breaking changes and should be chosen explicitly. However, in the case of this set of Flutter plugins maintained by Google, we’ve stabilized the API such that it’s safe to specify the version string to include 1.x versions, which you can do in your pubspec.yaml like so:
 
-```
+```yaml
 dependencies:
 
   shared_preferences: ‘>=0.5.7+2 <2.0.0’

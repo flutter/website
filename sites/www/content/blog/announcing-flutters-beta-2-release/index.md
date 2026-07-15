@@ -66,7 +66,7 @@ class TodoList extends StatefulWidget {
 }
 ```
 
-The code has a bug. It’s passing a list of strings and tasks to a widget that expects a list of widgets. Static analysis does not catch this, because the programmer intentionally used lax static typing for the todo list (`List` is shorthand for `List&lt;dynamic&gt;`).
+The code has a bug. It’s passing a list of strings and tasks to a widget that expects a list of widgets. Static analysis does not catch this, because the programmer intentionally used lax static typing for the todo list (`List` is shorthand for `List<dynamic>`).
 
 Next consider how the app is using this list:
 
@@ -91,7 +91,7 @@ type 'String' is not a subtype of type 'Widget' of 'child' where
   Widget is from package:flutter/src/widgets/framework.dart
 ```
 
-With the new complete run-time checks in Dart 2, we prevent “errors waiting to happen” like this by instead failing early, at the point where your code makes a false claim about generic types. In this case, we fail as soon as the app launches, and the dynamic list `todo` is passed to the `TodoList` constructor, which expects a `List&lt;Widget&gt;`:
+With the new complete run-time checks in Dart 2, we prevent “errors waiting to happen” like this by instead failing early, at the point where your code makes a false claim about generic types. In this case, we fail as soon as the app launches, and the dynamic list `todo` is passed to the `TodoList` constructor, which expects a `List<Widget>`:
 
 ```text
 type 'List<dynamic>' is not a subtype of type 'List<Widget>' where

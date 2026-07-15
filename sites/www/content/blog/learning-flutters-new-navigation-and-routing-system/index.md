@@ -664,7 +664,7 @@ So far, the app can show different pages, but it can’t handle routes from the 
 
 This section shows how to implement the `RouteInformationParser`, `RouterDelegate`, and update the app state. Once set up, the app stays in sync with the browser’s URL.
 
-### **Data types**
+### Data types
 
 The `RouteInformationParser` parses the route information into a user-defined data type, so we’ll define that first:
 
@@ -692,7 +692,7 @@ class BookRoutePath {
 
 In this app, all of the routes in the app can be represented using a single class. Instead, you might choose to use different classes that implement a superclass, or manage the route information in another way.
 
-### **RouterDelegate**
+### RouterDelegate
 
 Next, add a class that extends `RouterDelegate`:
 
@@ -828,7 +828,7 @@ When a new route has been pushed to the application, `Router` calls `setNewRoute
   }
 ```
 
-### **RouteInformationParser**
+### RouteInformationParser
 
 The `RouteInformationParser` provides a hook to parse incoming routes (`RouteInformation`) and convert it into a user defined type (`BookRoutePath`). Use the `Uri` class to take care of the parsing:
 
@@ -1149,7 +1149,7 @@ class UnknownScreen extends StatelessWidget {
 
 Running this sample in Chrome now shows the routes as they are being navigated, and navigates to the correct page when the URL is manually edited.
 
-### **TransitionDelegate**
+### TransitionDelegate
 
 You can provide a custom implementation of `TransitionDelegate` that customizes how routes appear on (or are removed from) the screen when the list of pages changes. If you need to customize this, read on, but if you are happy with the default behavior you can skip this section.
 

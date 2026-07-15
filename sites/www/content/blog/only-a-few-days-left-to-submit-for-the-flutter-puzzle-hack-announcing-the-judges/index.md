@@ -13,11 +13,11 @@ layout: blog
 
 There are only a few days left to submit to the [Flutter Puzzle Hack](https://flutterhack.devpost.com/). We’re excited by the puzzles we’ve seen so far, and can’t wait to see even more! Don’t forget that prizes include 4 fully loaded MacBooks, tons of Flutter swag, and cash to over 40 winners, so be sure to get your submission in for a chance at some of these awesome prizes.
 
-## **Welcome to the Flutter community**
+## Welcome to the Flutter community
 
 With the final submission date approaching so quickly, we wanted to take a moment to welcome many new developers to the Flutter [community](https://flutter.dev/community). We can’t wait to see what you build, starting, of course, with your Flutter Puzzle Hack submission!
 
-## **Announcing our judges**
+## Announcing our judges
 
 In honor of the final week of the Flutter Puzzle Hack, we’re excited to announce our judges, including many Flutter veterans who helped to build the framework since its inception. A puzzle hack submission is an amazing opportunity to have your work reviewed by some of the world’s foremost Flutter experts.
 
@@ -47,7 +47,7 @@ In honor of the final week of the Flutter Puzzle Hack, we’re excited to announ
 
 * Eric Windmill, Developer Relations Engineer, Firebase and Flutter
 
-## **Tell us when you submit**
+## Tell us when you submit
 
 Whether you’re still working out your idea, or you’ve already submitted your app, tag us on Twitter with the hashtag [#FlutterPuzzleHack](https://twitter.com/hashtag/flutterpuzzlehack) where we’ll be sure to share your work with the Flutter community.
 
@@ -56,6 +56,6 @@ Check out what Twitter user [Roaa](https://twitter.com/roaakdm/status/1493614287
 <DashImage figure src="images/0A_NEHVtXjdO7Cu0T.webp" />
 
 
-## **There’s still time!**
+## There’s still time!
 
 If you’re still thinking about starting a submission, it’s not too late. Check out the starter [sample app](https://flutter.github.io/samples/slide_puzzle.html), the [blog post](https://medium.com/flutter/how-to-build-your-own-flutter-slide-puzzle-93721ac5fad2) explaining how the app works, and then head over to [flutterhack.devpost.com](https://flutterhack.devpost.com/) to check out the rules for the challenge.

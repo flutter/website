@@ -32,7 +32,7 @@ Consider the following animation, where the display of the front (the black scre
 <DashImage figure src="images/0Bm6-mK_lPlO1deUS.webp" alt="A smooth animation" caption="A smooth animation" />
 
 
-```
+```dart
 Stack(
    children: [
      Back(),
@@ -50,7 +50,7 @@ Stack(
 
 You might be tempted to set up the parent widget as follows, but in this scenario, this is wrong!
 
-```
+```dart
 // BAD CODE
 [@override](http://twitter.com/override)
 void initState() {
@@ -77,7 +77,7 @@ Because the animation is doing unnecessary work.
 
 Here is the problematic code:
 
-```
+```dart
 // BAD CODE
 _animationController.addListener(() {
  setState(() {
@@ -118,7 +118,7 @@ To illustrate the benefits of `ListView.builder` over `ListView` when you have a
 
 Run the following`ListView` [example in DartPad](https://dartpad.dev/e41ed2678b9b9d7347880c20ec49f3f2). Observe that all 8 items are created. (Click **Console** in the lower left to display the console, and then click **Run**. The output window has no scrollbar, but you can scroll the content and observe the console to see what is created and built when.)
 
-```
+```dart
 ListView(
   children: [
     _ListItem(index: 0),
@@ -136,7 +136,7 @@ ListView(
 
 Next, run the `ListView.builder` [example in DartPad](https://dartpad.dev/1ae687f1c0d17eb80c8e28a70fb5b8d1). Observe that only the visible items are created. As you scroll, it creates (and builds) new rows.
 
-```
+```dart
 ListView.builder(
   itemBuilder: (context, index) {
     return _ListItem(index: index);
@@ -148,7 +148,7 @@ ListView.builder(
 
 Now, run the [example in DartPad](https://dartpad.dev/a338a69afea04f746015861cd55782db) where`ListView`’s children are created in advance, all at once when the `ListView` itself is created. In this scenario, it’s more efficient to use the `ListView` constructor.
 
-```
+```dart
 final listItems = [
   _ListItem(index: 0),
   _ListItem(index: 1),
@@ -198,7 +198,7 @@ If you use a different editor, or would like to know widget rebuild information 
 
 Sample output:
 
-```
+```plaintext
 RaisedButton 1
 RawMaterialButton 2
 ExpensiveWidget 538
@@ -206,9 +206,9 @@ Header 5
 ```
 
 
-Locate `&lt;Flutter path&gt;/packages/flutter/lib/src/widgets/framework.dart`. Add the following code, which counts the number of times widgets are built at startup, and outputs the results after some duration (here, 10 seconds).
+Locate `<Flutter path>/packages/flutter/lib/src/widgets/framework.dart`. Add the following code, which counts the number of times widgets are built at startup, and outputs the results after some duration (here, 10 seconds).
 
-```
+```dart
 bool _outputScheduled = false;
 Map<String, int> _outputMap = <String, int>{};
 void _output(Widget widget) { 
@@ -241,7 +241,7 @@ void _output(Widget widget) {
 
 Then, modify the `build` methods for `StatelessElement` and `StatefulElement` to call `_output(widget)`.
 
-```
+```dart
 class StatelessElement extends ComponentElement {
   ...
 
@@ -270,7 +270,7 @@ Note that numerous rebuilds doesn’t necessarily indicate a problem. However, i
 
 **Tip for web only**: you can add a `resetOutput` function (that can be called from a browser’s developer tools) to obtain widget build counts at any point in time.
 
-```
+```dart
 import 'dart:js' as js;
  
 void resetOutput() {

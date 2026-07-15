@@ -40,7 +40,7 @@ The data flows as follows:
 
 The game state is defined with a 4x4 integer matrix (a list of lists in [Dart](https://www.dartlang.org/)). Zeros represent empty cells, and integer values represent each tile:
 
-```
+```plaintext
 [0, 0, 0, 2],
 [0, 0, 0, 4],
 [0, 0, 0, 0],
@@ -137,7 +137,7 @@ The first problem we encounter is that the store update which only includes the 
 
 For example when the UI receives a store update with the following state:
 
-```
+```plaintext
 [0, 0, 0, 2],
 [0, 0, 0, 4],
 [0, 0, 0, 0],
@@ -172,7 +172,7 @@ One thing we need to take into account is that the user might trigger events whi
 
 Transition conflicts are a common cause of application bugs. Sometimes, animations conflict (even when they are presumably unrelated to each other), leaving the UI in an inconsistent state. These bugs can be a pain to diagnose: a user reports that the UI is in an inconsistent state, and he’s not sure how to reproduce it (which usually ends up being something like “tap button A and quickly tap button B”).
 
-Sometimes these bugs are not easy to fix and developers resort to a quick-and-dirty solution, such as “disable button A while the animation is running”, which can introduce more subtle bugs. One example of such a bug that was made public is the [iPhone’s calculator “1+2+3” bug](https://qz.com/1114019/if-you-type-123-into-your-apple-iphones-calculator-on-ios-11-you-probably-wont-get-6-aapl/). (Have you ever dealt with an animation conflict bug that you can publicly share? I’d love to hear about it in the comments section!*)*
+Sometimes these bugs are not easy to fix and developers resort to a quick-and-dirty solution, such as “disable button A while the animation is running”, which can introduce more subtle bugs. One example of such a bug that was made public is the [iPhone’s calculator “1+2+3” bug](https://qz.com/1114019/if-you-type-123-into-your-apple-iphones-calculator-on-ios-11-you-probably-wont-get-6-aapl/). (Have you ever dealt with an animation conflict bug that you can publicly share? I’d love to hear about it in the comments section!)
 
 ## Dealing with transition conflicts
 

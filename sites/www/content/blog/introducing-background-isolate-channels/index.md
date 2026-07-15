@@ -33,7 +33,7 @@ At least 3 plugins were used from a background isolate in this example, one to r
 
 Here is a quick sample using the new API to call the *shared_preferences* plugin from a background isolate:
 
-```
+```dart
 import ‘package:flutter/services.dart’;
 import ‘package:shared_preferences/shared_preferences.dart’;
 

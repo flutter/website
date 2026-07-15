@@ -28,7 +28,7 @@ Out of my two submitted proposals, the [Testing sample app](https://github.com/d
 
 We built an app that contains a list of items. The user can add items to, and remove items from, a favorites list. Then we used a tool named Flutter Driver to perform several types of testing. (Flutter Driver lets you create instrumented apps and drive those apps from a test suite.) We demonstrated the following types of testing:
 
-### **Widget testing**
+### Widget testing
 
 A type of testing where you can test each and every individual widget of your choice. It is important to know whether each individual widget is working as intended.
 
@@ -36,7 +36,7 @@ For more info on Flutter widget testing, see [An introduction to widget testing]
 
 Related PR: [#476](https://github.com/flutter/samples/pull/476)
 
-### **Integration testing (Flutter Driver)**
+### Integration testing (Flutter Driver)
 
 Using Flutter Driver for integration testing is similar to using Selenium WebDriver (generic web), Protractor (Angular), Espresso (Android), or Earl Gray (iOS). Integration testing with Flutter Driver gives us a good idea of how different pieces of our app perform as a whole on a real device.
 
@@ -44,7 +44,7 @@ For more info on Flutter integration testing, see [An introduction to integratio
 
 Related PR: [#481](https://github.com/flutter/samples/pull/481)
 
-### **Performance testing**
+### Performance testing
 
 Flutter Driver lets us trace the performance of the app on real devices and store the entire timeline of the task.
 
@@ -52,7 +52,7 @@ For more info on Flutter performance testing, see [Performance profiling](https:
 
 Related PR: [#494](https://github.com/flutter/samples/pull/494)
 
-### **State management testing**
+### State management testing
 
 Testing state is quite important, especially in complex apps where a lot of state data is present and a dedicated state management approach is used. This app manages state using the [provider package](https://pub.dev/packages/provider). The sample demonstrates how to test state using the Flutter Driver.
 

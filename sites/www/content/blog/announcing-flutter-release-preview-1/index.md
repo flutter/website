@@ -62,7 +62,7 @@ Lastly, we’ve added experimental instructions on [adding Flutter widgets to an
 
 How do you [upgrade](https://flutter.io/upgrading/) to Flutter Release Preview 1? If you’re on the beta channel already, it just takes one command:
 
-```
+```bash
 $ flutter upgrade
 ```
 

@@ -229,11 +229,11 @@ To ensure that your application seamlessly across Flutter releases, we strongly 
 
 The performance overlay has been refactored to be more efficient, reducing its rendering time on both Skia and Impeller backends. This means you get more accurate performance data with less overhead. ([#176364](https://github.com/flutter/flutter/pull/176364))
 
-### **Vulkan and OpenGL ES**
+### Vulkan and OpenGL ES
 
 Numerous fixes and improvements to the Vulkan and OpenGL ES backends improve stability and performance on a wider range of devices. This includes better handling of pipeline caches ([#176322](https://github.com/flutter/flutter/pull/176322)), fence waiters ([#173085](https://github.com/flutter/flutter/pull/173085)), and image layout transitions ([#173884](https://github.com/flutter/flutter/pull/173884)).
 
-### **Renderer unification**
+### Renderer unification
 
 Work continues to unify the CanvasKit and Skwasm renderers. This release includes significant refactoring to share more code between the two, which will lead to a more consistent experience and faster development in the future ([#174588](https://github.com/flutter/flutter/pull/174588)).
 
@@ -297,9 +297,9 @@ To get started, check out the documentation and let us know what you think!
 
 * **Read the docs**: [Getting Started with Flutter Widget Previews (Experimental)](https://docs.flutter.dev/tools/widget-previewer)
 
-* **Give feedback**: File issues and feature requests in the[ Flutter GitHub repository](https://github.com/flutter/flutter/issues/new/choose).
+* **Give feedback**: File issues and feature requests in the [Flutter GitHub repository](https://github.com/flutter/flutter/issues/new/choose).
 
-* **Learn more**: For a technical deep-dive, see the[ Flutter Widget Previews Architecture document](https://flutter.dev/go/widget-previews-architecture).
+* **Learn more**: For a technical deep-dive, see the [Flutter Widget Previews Architecture document](https://flutter.dev/go/widget-previews-architecture).
 
 ***Important Note**: There’s a known issue where the Widget Previewer can crash or stop updating after a `flutter pub get`. If you encounter this issue, run* `flutter pub get` *in your project and restart your IDE. See [#178317](https://github.com/flutter/flutter/issues/178317) for details.*
 

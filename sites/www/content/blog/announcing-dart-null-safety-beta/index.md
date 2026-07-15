@@ -26,16 +26,16 @@ With beta, we’re also starting the home stretch before shipping a stable versi
 
 Before we discuss null safety migration, it’s important to repeat that (as stated in our [null safety principles](https://dart.dev/null-safety#null-safety-principles)) you’re in control of when to begin null safety adoption. Apps and packages will only run with null safety if their minimum [Dart SDK constraint](https://dart.dev/null-safety#enable-null-safety) is at least a Dart 2.12 prerelease:
 
-```
+```yaml
 environment:
-  sdk: "**>=2.12.0-0** <3.0.0"
+  sdk: ">=2.12.0-0 <3.0.0"
 ```
 
 
 To experience this, try to create a small null-safe hello app (for example, using `dart create`) containing code like shown below. You can then try to run the app both before and after changing the SDK constraint and running `dart pub get`, and experience how the program behavior changes. (Make sure to use an SDK that reports 2.12 in `dart --version`.)
 
-```
-***bin/hello.dart:***
+```plaintext
+bin/hello.dart:
 ...
 void main() {
   var hello = 'Hello Dart developers';
@@ -103,7 +103,7 @@ We’ve had a small number of Dart package authors test-drive migration using ea
 
 Update your packages using `pub get` in your IDE or on the command line. Then use your IDE or the command line to perform static analysis on your Dart code:
 
-```
+```bash
 $ dart pub get
 $ dart analyze
 ```
@@ -111,7 +111,7 @@ $ dart analyze
 
 Or on your Flutter code:
 
-```
+```bash
 $ flutter pub get
 $ flutter analyze
 ```
@@ -137,9 +137,9 @@ Our previous blog posts for the technical previews of null safety [in Dart](http
 
 ### Safer code
 
-Just recently, we [discovered a bug](https://github.com/flutter/flutter/issues/69863) in the Flutter master channel where various `flutter` tool commands would crash on certain machine configurations with a null error: `The method '&gt;=' was called on null`. The underlying issue was a recent pull request to add support for detecting Android Studio 4.1. That PR added code like this:
+Just recently, we [discovered a bug](https://github.com/flutter/flutter/issues/69863) in the Flutter master channel where various `flutter` tool commands would crash on certain machine configurations with a null error: `The method '>=' was called on null`. The underlying issue was a recent pull request to add support for detecting Android Studio 4.1. That PR added code like this:
 
-```
+```dart
 final int major = version?.major;
 final int minor = version?.minor;
 if (globals.platform.isMacOS) {
@@ -166,7 +166,7 @@ That was a pretty simple error. During our early use of null safety in code inte
 
 The soundness of Dart’s null safety has another welcome implication: it means the Dart compilers can leverage the nullability information. This can potentially make your programs smaller and faster. We don’t have a lot of real-world apps fully migrated to sound null safety yet (as we’re just now kicking off the ecosystem migration of packages that these apps depend on for soundness), but we’re seeing very encouraging results from the core framework.
 
-We recently did a test recompilation of the [hello_world](https://github.com/flutter/flutter/blob/master/examples/hello_world/lib/main.dart) sample to measure the impact of null safety on app size.This is a minimal example that simply displays “hello world”. In [comparing ](https://gist.github.com/mit-mit/64e160f9dc3bf6c69c7ef2f81384594a)the overall size of the compiled code, the uncompressed (installed on device) code size shrank by 3.5% without doing anything but recompiling with sound null safety. This was possible, despite this app being just 10 lines of code, because the code size of all included libraries shrank; for example the Flutter framework itself (`package:flutter`) shrank by 3.9%.
+We recently did a test recompilation of the [hello_world](https://github.com/flutter/flutter/blob/master/examples/hello_world/lib/main.dart) sample to measure the impact of null safety on app size.This is a minimal example that simply displays “hello world”. In [comparing](https://gist.github.com/mit-mit/64e160f9dc3bf6c69c7ef2f81384594a) the overall size of the compiled code, the uncompressed (installed on device) code size shrank by 3.5% without doing anything but recompiling with sound null safety. This was possible, despite this app being just 10 lines of code, because the code size of all included libraries shrank; for example the Flutter framework itself (`package:flutter`) shrank by 3.9%.
 
 As for code speed, having to enforce a sound type system potentially adds overhead. However, having fewer null checks also potentially makes the code faster. Our initial analysis of benchmarks shows that performance is on par with previous releases, and that the new additional type information creates the potential for us to do new kinds of performance improvements in the future. We plan on writing more about our performance work in future blog posts.
 

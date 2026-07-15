@@ -148,7 +148,7 @@ If you’ve previously developed Flutter plugins and are familiar with `MethodCh
 
 In order to invoke a Dart callback as a result of a background event, you must retrieve a handle that is passed between Dart and platform code while also allowing for lookup of the callback across platform threads and Dart [isolates](https://api.dartlang.org/stable/2.0.0/dart-isolate/dart-isolate-library.html).
 
-**Aside:** Retrieving a `CallbackHandle` for a method from `PluginUtilities.getCallbackHandle` has the side effect of populating a callback cache within the Flutter engine, as seen in the diagram above. This cache maps information required to retrieve callbacks to raw integer handles, which are simply hashes calculated based on the properties of the callback. This cache persists across launches, but be aware that ***callback lookups may fail if the callback is renamed or moved and `PluginUtilities.getCallbackHandle` is not called for the updated callback**.*
+**Aside:** Retrieving a `CallbackHandle` for a method from `PluginUtilities.getCallbackHandle` has the side effect of populating a callback cache within the Flutter engine, as seen in the diagram above. This cache maps information required to retrieve callbacks to raw integer handles, which are simply hashes calculated based on the properties of the callback. This cache persists across launches, but be aware that **callback lookups may fail if the callback is renamed or moved and `PluginUtilities.getCallbackHandle` is not called for the updated callback**.
 
 In the code above, two instances of `CallbackHandle` are obtained: one for the callback, which is associated with a `GeofenceRegion`, and another for a method of the name `callbackDispatcher`. The `callbackDispatcher` method, the entrypoint of the background isolate, is responsible for preprocessing raw geofence event data, looking up callbacks via `PluginUtilities.getCallbackFromHandle`, and invoking them for registered geofences.
 
@@ -194,7 +194,7 @@ As you can see, on the invocation of `callbackDispatcher` (upon the creation of 
 
 Once the plugin starts sending events to the callback dispatcher, the callback provided by the plugin user can be invoked. First, `PluginUtilities.getCallbackFromHandle` is called to retrieve an instance of the callback associated with the triggered geofencing event using the raw callback handle. Next, the raw arguments from the `MethodCall` are refined into:
 
-* An instance of `List&lt;String&gt;` for the IDs of the geofences that were triggered
+* An instance of `List<String>` for the IDs of the geofences that were triggered
 
 * An instance of `Location` describing the current location of the device
 

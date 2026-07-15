@@ -27,11 +27,11 @@ We’re excited to announce that you can now hot reload on the web! Web support 
 
 If you discover any issues, file a bug using Dart’s [Web Hot Reload issue template](https://github.com/dart-lang/sdk/issues/new?template=6_web_hot_reload.yml). You can find a list of known issues on the [Web Hot Reload Known Issues](https://github.com/orgs/dart-lang/projects/107/views/1) GitHub project.
 
-### **Now the fun part: how to use the feature**
+### Now the fun part: how to use the feature
 
 We’ve added a simple command line flag `--web-experimental-hot-reload` that you can pass to Flutter anywhere you invoke `flutter run`.
 
-### **Running from VS Code**
+### Running from VS Code
 
 If you use debug configurations in VS Code, you can add this extra configuration to your [launch.json file](https://code.visualstudio.com/docs/editor/debugging-configuration):
 
@@ -55,7 +55,7 @@ If you use debug configurations in VS Code, you can add this extra configuration
 
 For best results, we recommend enabling the “[Dart: Flutter Hot Reload On Save](https://code.visualstudio.com/docs/editor/settings)” setting in VS Code. A hot reload can also be triggered with the ⚡icon in the Run/Debug panel. Hot restarts can still be triggered by using the ⟳ button.
 
-### **Running from the command line**
+### Running from the command line
 
 If you use “flutter run” on the command line, you can now run hot reload on the web with the following:
 
@@ -63,9 +63,9 @@ If you use “flutter run” on the command line, you can now run hot reload on 
 
 When hot reload is enabled, you can reload your application by pressing “r” in the running terminal, or “R” to hot restart.
 
-### **Reloading in DartPad**
+### Reloading in DartPad
 
-Hot reload is also now available on [DartPad](https://dartpad.dev/) with a new **Reload** button. The feature is only available if Flutter is detected in the running application. You can try it using a[ sample app](https://dartpad.dev/?sample=counter&channel=main) provided by DartPad.
+Hot reload is also now available on [DartPad](https://dartpad.dev/) with a new **Reload** button. The feature is only available if Flutter is detected in the running application. You can try it using a [sample app](https://dartpad.dev/?sample=counter&channel=main) provided by DartPad.
 
 Thanks for taking the time to help us make Hot Reload on the web amazing!
 
@@ -119,7 +119,7 @@ The sheet was adjusted to fix the navigation bar’s height and ensure content i
 
 Other fixes in this release include an issue where the sheet transition was incompatible with `PopupMenuButton`, and the rounded corner transition of the sheet was improved to look correct on more devices. Previously, it looked incorrect on some screens with different corner radii.
 
-You can also now use the new [`enableDrag`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute/enableDrag.html) argument on [`CupertinoSheetRoute`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute-class.html) and [`showCupertinoSheet`](https://main-api.flutter.dev/flutter/cupertino/showCupertinoSheet.html) to disable the Cupertino bottom sheet’s drag-down-to-dismiss behavior. ([#163923](https://github.com/flutter/flutter/pull/163923)**)**
+You can also now use the new [`enableDrag`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute/enableDrag.html) argument on [`CupertinoSheetRoute`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSheetRoute-class.html) and [`showCupertinoSheet`](https://main-api.flutter.dev/flutter/cupertino/showCupertinoSheet.html) to disable the Cupertino bottom sheet’s drag-down-to-dismiss behavior. ([#163923](https://github.com/flutter/flutter/pull/163923))
 
 <DashImage figure src="images/1iEWYohD1vd7FMpPWvK2__A.webp" />
 
@@ -242,7 +242,7 @@ project.set_ui_thread_policy(flutter::UIThreadPolicy::RunOnPlatformThread)
 ```
 
 
-On macOS, you can turn on merged threads by adding the following to your `macos/Runner/Info.plist` file, inside the `&lt;dict&gt;` element:
+On macOS, you can turn on merged threads by adding the following to your `macos/Runner/Info.plist` file, inside the `<dict>` element:
 
 ```xml
 <key>FLTEnableMergedPlatformUIThread</key>
@@ -264,7 +264,7 @@ Flutter’s Gradle plugin has been converted from Groovy to Kotlin. This transit
 
 ### Scribe / Stylus support
 
-You can now use your stylus to write into text fields on Android, in the same way that Apple Pencil handwriting input already works on Flutter iOS apps. Users can start writing directly on top of any Flutter text input field, and the handwriting will appear as text in the field. Not all gestures are supported yet, but we are [working to close those gaps](https://github.com/flutter/flutter/issues/156018). This feature is supported on Android 14 and above and can be disabled, if needed, with the[`TextField.stylusHandwritingEnabled`](https://api.flutter.dev/flutter/material/TextField/stylusHandwritingEnabled.html) or [`CupertinoTextField.stylusHandwritingEnabled`](https://api.flutter.dev/flutter/cupertino/CupertinoTextField/stylusHandwritingEnabled.html) parameters.
+You can now use your stylus to write into text fields on Android, in the same way that Apple Pencil handwriting input already works on Flutter iOS apps. Users can start writing directly on top of any Flutter text input field, and the handwriting will appear as text in the field. Not all gestures are supported yet, but we are [working to close those gaps](https://github.com/flutter/flutter/issues/156018). This feature is supported on Android 14 and above and can be disabled, if needed, with the [`TextField.stylusHandwritingEnabled`](https://api.flutter.dev/flutter/material/TextField/stylusHandwritingEnabled.html) or [`CupertinoTextField.stylusHandwritingEnabled`](https://api.flutter.dev/flutter/cupertino/CupertinoTextField/stylusHandwritingEnabled.html) parameters.
 
 ## Engine
 
@@ -300,7 +300,7 @@ This release also includes a variety of other fidelity and performance improveme
 
 ## DevTools and IDEs
 
-### **[New] Flutter Property Editor**
+### [New] Flutter Property Editor
 
 Easily edit widget properties and read documentation from the new Property Editor tool, which is accessible from the Flutter Property Editor sidebar panel ([VS Code](https://docs.flutter.dev/tools/vs-code#property-editor)) or tool window ([Android Studio / IntelliJ](https://docs.flutter.dev/tools/android-studio#property-editor)).
 
@@ -310,17 +310,17 @@ Easily edit widget properties and read documentation from the new Property Edito
 <DashImage figure src="images/0KoBkOexQ6DyQdnQt.webp" alt="Android Studio & IntelliJ" caption="Android Studio & IntelliJ" />
 
 
-### **DevTools improvements**
+### DevTools improvements
 
 Additional improvements have been made across DevTools, including new offline support for the Network screen, bug fixes for issues related to review history, inspector errors, the Deep Links tool, and data improvements for the CPU Profiler and Memory screens. This release also includes several performance and memory improvements for DevTools, which will result in faster data load times and fewer memory-related crashes.
 
 These are just a few highlights from this release. To learn more about all the updates included in Flutter 3.32, check out the release notes for DevTools [2.44.0](https://docs.flutter.dev/tools/devtools/release-notes/release-notes-2.44.0) and [2.45.0](https://docs.flutter.dev/tools/devtools/release-notes/release-notes-2.45.0).
 
-### **Analyzer improvements**
+### Analyzer improvements
 
 We have continued to make improvements to the Dart Analyzer, and hence the developer experience. This includes adding “doc imports,” a new comment-based syntax that enables external elements to be referenced in documentation comments without actually importing them. Check out the details on [dart.dev](https://dart.dev/tools/doc-comments/references#doc-imports). We’ve also made several quick fix, assist, and renaming improvements.
 
-### **Gemini in Android Studio now speaks fluent Flutter and Dart**
+### Gemini in Android Studio now speaks fluent Flutter and Dart
 
 Gemini in Android Studio now offers first-class support for Dart and Flutter development! This means you can leverage the power of Gemini directly within your favorite IDE to build beautiful, high-performance Flutter apps faster and easier than ever before.
 
@@ -329,7 +329,7 @@ Gemini in Android Studio now offers first-class support for Dart and Flutter dev
 <DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
 
 
-### **Dart and Flutter support for the Model Context Protocol ([MCP](https://modelcontextprotocol.io/introduction)) is on the way**
+### Dart and Flutter support for the Model Context Protocol ([MCP](https://modelcontextprotocol.io/introduction)) is on the way
 
 Support for the Model Context Protocol ([MCP](https://modelcontextprotocol.io/introduction)) and the recently published [Dart MCP SDK](https://pub.dev/packages/dart_mcp), is actively underway. A new [Dart Tooling MCP Server](https://github.com/dart-lang/ai/tree/main/pkgs/dart_tooling_mcp_server), also under development, will expose Dart and Flutter static, runtime, and ecosystem tooling to MCP clients, such as IDEs.
 
@@ -343,7 +343,7 @@ Watch this space!
 
 ## Build with AI
 
-### **Introducing Firebase AI Logic**
+### Introducing Firebase AI Logic
 
 You might have heard of, or even used Vertex AI in Firebase, our client SDK for directly integrating Gemini API-driven functionality into your Flutter app.
 
@@ -354,7 +354,7 @@ Check out the [`firebase_ai`](https://pub.dev/packages/firebase_ai) package for 
 <DashImage figure src="images/0HlInLfTOQSZ3n-NG.webp" />
 
 
-### **Gain Actionable Insights with AI Monitoring dashboard**
+### Gain Actionable Insights with AI Monitoring dashboard
 
 The new AI Monitoring dashboard in the Firebase console provides detailed, actionable insights into your Gemini API usage. This includes comprehensive visibility into consumption patterns, performance metrics, and potential issues. This enables data-driven decisions and ensures that you’re using the Gemini APIs in the most efficient way. AI Monitoring also helps you to debug your Gemini API usage, and identify and address any unexpected behaviors.
 
@@ -367,7 +367,7 @@ The new AI Monitoring dashboard in the Firebase console provides detailed, actio
 
 On Android, semantic announcement events are now [deprecated, as of API 36](https://api.flutter.dev/flutter/semantics/AnnounceSemanticsEvent-class.html#android). Instead, use “polite” implicit announcements by configuring a [`SemanticProperties.liveRegion`](https://api.flutter.dev/flutter/semantics/SemanticsProperties/liveRegion.html). Currently, there is a known limitation when announcing text that should not be focusable. See issue [#165857](https://github.com/flutter/flutter/issues/165857#issue-2945314471) for details on this limitation and the plans to resolve this issue. To see alternative solutions, check the [documentation on SemanticService.announce](https://api.flutter.dev/flutter/semantics/SemanticsService/announce.html).
 
-### **Discontinued support for 6 packages**
+### Discontinued support for 6 packages
 
 As we planned and shared in our [Flutter 3.29 release blog post](https://medium.com/flutter/whats-new-in-flutter-3-29-f90c380c2317) we have discontinued support for the following packages:
 

@@ -28,7 +28,7 @@ This article is about the things that didn’t fit into the 33-minute session.
 
 You can use `ValueNotifier` like this:
 
-```
+```dart
 final counter = ValueNotifier(0);
 
 counter.addListener(_myCallback);
@@ -48,7 +48,7 @@ In other words, whenever you set the `value` to something new, all the registere
 
 You can extend `ValueNotifier` to get more functionality. This makes the most sense with mutable values.
 
-```
+```dart
 class CartObservable extends ValueNotifier<Cart> {
   CartObservable(Cart value) : super(value);
 
@@ -68,7 +68,7 @@ In the talk, we show how to use the `StreamBuilder` widget to automatically rebu
 
 [Cloud Firestore](https://firebase.google.com/docs/firestore/) (and its older sibling, [Firebase Realtime Database](https://firebase.google.com/docs/database/)) have great Flutter plugins ([`cloud_firestore`](https://pub.dartlang.org/packages/cloud_firestore) and [`firebase_database`](https://pub.dartlang.org/packages/firebase_database)), and these plugins use Streams. So, for example, you can just plug your Firestore snapshots into a StreamBuilder, and you’re done.
 
-```
+```dart
 StreamBuilder(
   stream: Firestore.instance.collection('baby').snapshots(),
   builder: (context, snapshot) {
@@ -95,7 +95,7 @@ We used `InheritedWidget` extensively in our talk: implicitly with `ScopedModel`
 
 Defining an `InheritedWidget` is simple:
 
-```
+```dart
 class MyInheritedValue extends InheritedWidget {
   const MyInheritedValue({
     Key key,
@@ -120,7 +120,7 @@ class MyInheritedValue extends InheritedWidget {
 
 It’s also easy to provide it to an ancestor:
 
-```
+```dart
 Widget build(BuildContext context) {
   return MyInheritedValue(
     value: 42,
@@ -132,7 +132,7 @@ Widget build(BuildContext context) {
 
 And it’s easy to use it down the tree.
 
-```
+```dart
 MyInheritedValue.of(context).value
 ```
 

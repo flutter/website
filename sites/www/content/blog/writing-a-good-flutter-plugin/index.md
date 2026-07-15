@@ -57,7 +57,7 @@ class StoragePlugin {
 
 Flutter is platform agnostic so it is out of character for Flutter apps to be forced to write platform specific code. If the plugin user is doing the following in their application:
 
-```
+```dart
 if (Platform.isIos) {
   myPlugin.doIOSThing();
 } else if (Platform.isAndroid) {
@@ -68,7 +68,7 @@ if (Platform.isIos) {
 
 consider moving the platform specific logic to the plugin itself so that, they can write:
 
-```
+```dart
 myPlugin.doThing();
 ```
 
@@ -96,7 +96,7 @@ Ideally, your native layer will simply listen for method calls, forward them to 
 
 It is tempting to expose just:
 
-```
+```dart
 Future<User> authenticate() async {
   // Some code
 }
@@ -105,7 +105,7 @@ Future<User> authenticate() async {
 
 However, prefer:
 
-```
+```dart
 class AuthenticatePlugin {
   Future<User> authenticate() async {
     // Some code

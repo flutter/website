@@ -57,7 +57,7 @@ It’s pretty easy to use Charts for Flutter! We’ll start by [creating](https:
 
 Start by declaring a dependency on the package: Open the `pubspec.yaml` file, and add an entry for `charts_flutter` in the dependencies section.
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter

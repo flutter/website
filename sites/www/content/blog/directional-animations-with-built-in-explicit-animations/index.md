@@ -29,7 +29,7 @@ Here, we’ll be creating an animation of galactic proportions, using this start
 
 The [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) widget is a handy one that takes care of all of the trigonometry and transformations math to make things spin. Its constructor only takes three things:
 
-```
+```dart
 // [Most of] RotationTransition’s constructor
 RotationTransition({
   Widget child,
@@ -41,7 +41,7 @@ RotationTransition({
 
 First is a child —the widget we want to rotate. The galaxy fits, so we’ll put it there:
 
-```
+```dart
 RotationTransition(
   child: GalaxyFitz(),
   alignment: null, /*TODO*/
@@ -52,7 +52,7 @@ RotationTransition(
 
 Next, we need to give `RotationTransition` the point our galaxy rotates around. Our galaxy’s black hole is roughly in the middle of the image where we’d normally expect. So, we’ll give an `alignment` of center, making all of our rotational math “aligned” to that point.
 
-```
+```dart
 RotationTransition(
   child: GalaxyFitz(),
   alignment: Alignment.center,
@@ -71,14 +71,14 @@ Not to worry! This is part of what makes `RotationTransition`, and all the other
 <DashImage figure src="images/0WOcQ1I3-ThMzDyld.webp" alt="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" caption="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" />
 
 
-The turns property expects something that gives it a value and notifies it when that value changes. An `Animation&lt;double&gt;` is just that. For `RotationTransition`, the value corresponds to how many times we’ve turned, or more specifically, the percentage of one rotation completed.
+The turns property expects something that gives it a value and notifies it when that value changes. An `Animation<double>` is just that. For `RotationTransition`, the value corresponds to how many times we’ve turned, or more specifically, the percentage of one rotation completed.
 
 <DashImage figure src="images/0VO7YjLAkYQsVLIWj.webp" alt="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" caption="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" />
 
 
 ## Creating an AnimationController
 
-One of the easiest ways to get an `Animation&lt;double&gt;` is to create an `AnimationController`, which is a [controller for an animation](https://api.flutter.dev/flutter/animation/AnimationController-class.html). This controller handles listening for ticks¹ and gives us some useful controls over what the animation is doing.
+One of the easiest ways to get an `Animation<double>` is to create an `AnimationController`, which is a [controller for an animation](https://api.flutter.dev/flutter/animation/AnimationController-class.html). This controller handles listening for ticks¹ and gives us some useful controls over what the animation is doing.
 
 We’ll need to create this in a stateful widget because keeping a handle on the controller will be important in our not-too-distant future. Because `AnimationController` also has its own state to manage, we initialize it in initState, and dispose of it in dispose.
 
@@ -105,7 +105,7 @@ class _TimeMachineState extends State<TimeMachine> {
 
 There are two parameters we must give to `AnimationController`’s constructor. The first is a duration, which is how long our ̶t̶i̶m̶e̶ ̶m̶a̶c̶h̶i̶n̶e̶ animation lasts. The whole reason we’re here is that we need an object to tell us how far along we are in a single rotation. By default, `AnimationController` “emits” values from `0.0` to `1.0`. How many and how granular those values are depends on how long we want a single rotation to take. Fortunately, Dart gives us a `Duration` class to use. For the sake of this demo, we should have the galaxy spinning somewhere between 5 seconds and 230 million years per rotation. How about 15 seconds per turn then?
 
-```
+```dart
 _animationController = AnimationController(
   duration: Duration(seconds: 15),
   // TODO: finish constructing me.
@@ -140,7 +140,7 @@ with SingleTickerProviderStateMixin {
 
 If we left things at that, nothing much happens. That’s because we’ve been given a controller, but haven’t pushed any of its buttons! We want our galaxy to spin forever, right? For that, we’ll just ask the controller to continually repeat the animation.
 
-```
+```dart
 _animationController = AnimationController(
   duration: Duration(seconds: 15),
   vsync: this,
@@ -150,7 +150,7 @@ _animationController = AnimationController(
 
 Finally, we can go back and replace that null we left lingering around, by passing the animation controller to the `turns` parameter in our `RotationTransition`.
 
-```
+```dart
 RotationTransition(
   child: GalaxyFitz(),
   alignment: Alignment.center,

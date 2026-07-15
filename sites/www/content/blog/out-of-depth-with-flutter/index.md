@@ -26,10 +26,10 @@ Below I’ll discuss why this issue arises and what you can do about it. Along t
 
 Flutter’s reactive programming model invites you to use declarative programming to define your user interface, as a function of current state:
 
-```
+```dart
 @override
 Widget build(BuildContext context) {
-  **return** // *some widget based on current state*
+  return // some widget based on current state
 }
 ```
 
@@ -205,20 +205,20 @@ Challenge accepted.
 
 With Flutter’s UI-as-code approach, the widget tree is, well, just code. So we can employ all of our usual code organizing tools to improve the situation. One of the simplest tools in the box is naming subexpressions. This turns the widget tree inside out, syntactically. Instead of
 
-```
-**return** A(B(C(D(), E())), F());
+```dart
+return A(B(C(D(), E())), F());
 ```
 
 
 we might name every subexpression and get
 
-```
-**final** Widget d = D();
-**final** Widget e = E();
-**final** Widget c = C(d, e);
-**final** Widget b = B(c);
-**final** Widget f = F();
-**return** A(b, f);
+```dart
+final Widget d = D();
+final Widget e = E();
+final Widget c = C(d, e);
+final Widget b = B(c);
+final Widget f = F();
+return A(b, f);
 ```
 
 
@@ -507,7 +507,7 @@ But hey, wouldn’t a top-level `action` function serve the same need?
 
 In general, no.
 
-* Many widgets are constructed from other widgets; their constructors have `child` and `children` parameters typed `Widget` and `List&lt;Widget&gt;`. So the `action` function cannot be passed to any of those. Of course, the result of *invoking* `action` can. But then you would pass a widget tree pre-built in the current build context, rather than a `StatelessWidget` that builds its subtree only if needed and in the context defined by wherever it ends up in the overall tree. Noticed the expression `Theme.of(context).primaryColor` at the start of `Action.build`? It retrieves the primary color from the nearest `Theme` widget up the parent chain — which may well be different from the nearest `Theme` at the point where `action` would be invoked.
+* Many widgets are constructed from other widgets; their constructors have `child` and `children` parameters typed `Widget` and `List<Widget>`. So the `action` function cannot be passed to any of those. Of course, the result of *invoking* `action` can. But then you would pass a widget tree pre-built in the current build context, rather than a `StatelessWidget` that builds its subtree only if needed and in the context defined by wherever it ends up in the overall tree. Noticed the expression `Theme.of(context).primaryColor` at the start of `Action.build`? It retrieves the primary color from the nearest `Theme` widget up the parent chain — which may well be different from the nearest `Theme` at the point where `action` would be invoked.
 
 * `Action` is defined as a `StatelessWidget` which is little more than a build function turned into an instance method. But there are other kinds of widget with more elaborate behavior. Clients of `Action` shouldn’t care what kind of widget `Action` is. As an example, if we wanted to endow `Action` with an intrinsic animation, we might have to turn it into a `StatefulWidget` to manage the animation state. The rest of the app should be unaffected by such a change.
 
@@ -515,12 +515,12 @@ In general, no.
 
 State management is the cue to start taking advantage of Flutter’s reactive programming model and make our static view come alive. Let’s define the state of the app. We’ll keep it simple, and assume a `Lake` business logic class whose only mutable state is whether the user has starred it:
 
-```
-**abstract class** Lake {
-  String **get** imageAsset;
-  String **get** name;
-  String **get** locationName;
-  String **get** description;
+```dart
+abstract class Lake {
+  String get imageAsset;
+  String get name;
+  String get locationName;
+  String get description;
 
   int get starCount;
   bool get isStarred;

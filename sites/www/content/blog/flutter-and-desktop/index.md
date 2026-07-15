@@ -99,7 +99,7 @@ This work remains in technical preview, and the APIs and tooling are not yet sta
 
 If you want to try it out, you’ll need to be on a development channel. Windows and Linux are only available on the `master` branch, which is where active Flutter development takes place. macOS is available on the `dev` branch, which is slightly more stable but not recommended for production use. You can switch channels with `flutter channel master` or `flutter channel dev`, and then use one of these commands to enable support for the platform you’re using:
 
-```
+```plaintext
 C:\flutter> flutter config --enable-windows-desktop
 
 $ flutter config --enable-macos-desktop

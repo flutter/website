@@ -61,7 +61,7 @@ When we launched beta, only a few plugins supported the web. Since then, we’re
 
 While we plan on extending a few more popular Google-authored plugins for the web ourselves, we largely depend on the community to help bring web support to existing packages. To help you get started, we have published a couple of articles explaining [how to write a web plugin](https://medium.com/flutter/how-to-write-a-flutter-web-plugin-5e26c689ea1).
 
-### **Web Debugging with Expression Evaluation**
+### Web Debugging with Expression Evaluation
 
 Debugging is a crucial step in the development process, and is one of the areas of active development for creating a richer Flutter web experience. If you use VS Code to develop Flutter applications, you’re probably expecting the full set of debug capabilities to be available to you, including evaluating expressions in the debug window, using the watch functionality, or hovering over variables to see their value.
 
@@ -92,7 +92,7 @@ The latest builds of Flutter now support running automated Flutter driver UI tes
 
 Over the past few months, our focus has been spent on improving the infrastructure, quality and rendering for Flutter’s web support. While we still have a lot to do, we have made significant progress in all three areas.
 
-### **Test infrastructure and benchmarks**
+### Test infrastructure and benchmarks
 
 Building test infrastructure is one of those improvements that isn’t always visible to those developing with Flutter but is nonetheless important to building a stable version of Flutter on the web.
 
@@ -129,7 +129,7 @@ We believe that both DomCanvas and CanvasKit offer advantages in different scena
 
 By default, Flutter’s web support uses DomCanvas, but you can enable the CanvasKit rendering engine with this command:
 
-```
+```bash
 flutter run -d chrome --release 
             --dart-define=FLUTTER_WEB_USE_SKIA=true
 ```

@@ -41,7 +41,7 @@ We are in awe of your work, and incredibly thankful for the many brilliant contr
 
 * [Rafael Barbosa](https://github.com/RafaelBarbosatec) ([Bonfire](https://bonfire-engine.github.io/#/)): Your powerful and versatile game engine is a fantastic tool for building RPG-style games.
 
-* [Filip ](https://github.com/filiph)Hráček: Your templates and tutorials provide an invaluable starting point for many new game developers.
+* [Filip](https://github.com/filiph) Hráček: Your templates and tutorials provide an invaluable starting point for many new game developers.
 
 * [Jeff Ward](https://github.com/subhash279): Embedding Dart in other game engines opens up exciting possibilities.
 

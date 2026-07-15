@@ -17,35 +17,35 @@ We are always amazed by what developers around the world are building with Flutt
 
 ## The winners are… 🥁🥁🥁
 
-### **Grand Prize Winner: [Particle Clock](https://github.com/miickel/flutter_particle_clock) by Mickel Andersson**
+### Grand Prize Winner: [Particle Clock](https://github.com/miickel/flutter_particle_clock) by Mickel Andersson
 
 <iframe src="https://media.giphy.com/media/MES3zoI1GUgMYB2qnu/giphy.gif" width="435" height="261" frameborder="0" allowfullscreen></iframe>
 
 
 Judges were in awe from the visual effect, execution, code quality and overall novelty of this clock. The mathematical complexity of particle calculation was impressive.
 
-### **Visual Beauty Winner: [Cloom Clock](https://github.com/OldMetalmind/cloom_clock) by Filipe Barroso and Francisco Frutuoso**
+### Visual Beauty Winner: [Cloom Clock](https://github.com/OldMetalmind/cloom_clock) by Filipe Barroso and Francisco Frutuoso
 
 <iframe src="https://media.giphy.com/media/KB1Xj416G8LJszyQan/giphy.gif" width="435" height="255" frameborder="0" allowfullscreen></iframe>
 
 
 The custom type and elegant animations made this clock a visual stand out. They used [Rive](https://rive.app/) for excellent animations, and had a vibrant color selection.
 
-### **Overall Execution Winner: [Humanbeans Clock](https://github.com/brestnichki/humanbeans-clock) by Boris Brestnichki**
+### Overall Execution Winner: [Humanbeans Clock](https://github.com/brestnichki/humanbeans-clock) by Boris Brestnichki
 
 <iframe src="https://media.giphy.com/media/kdcqAfxWpSMQ8EF9Kl/giphy.gif" width="435" height="244" frameborder="0" allowfullscreen></iframe>
 
 
 This submission has a great storyline and thought out UX. The attention to detail, including custom illustration and hand drawn numerals, made this clock stand out.
 
-### **Code Quality Winner: [Creative Creator Or Maybe Not Clock](https://github.com/creativecreatorormaybenot/clock) by Hubert Henkemeier**
+### Code Quality Winner: [Creative Creator Or Maybe Not Clock](https://github.com/creativecreatorormaybenot/clock) by Hubert Henkemeier
 
 <iframe src="https://media.giphy.com/media/IzzvHEhJQbaNuWFQcd/giphy.gif" width="435" height="261" frameborder="0" allowfullscreen></iframe>
 
 
 It’s impressive how well documented and written this clock is. The participant even [authored a detailed post](https://medium.com/flutter-community/pure-flutterclock-face-every-line-customly-drawn-with-pixel-perfect-control-c27cba427801?_branch_match_id=653740167174388407) describing their full process. Everything is painted purely with Flutter’s Canvas: no assets, no packages, and no prebuilt widgets were used.
 
-### **Novelty of Idea Winner: [Sunset Reflections Clock](https://github.com/vmorilla/sunset_reflections_clock) by Victor Morilla**
+### Novelty of Idea Winner: [Sunset Reflections Clock](https://github.com/vmorilla/sunset_reflections_clock) by Victor Morilla
 
 <iframe src="https://media.giphy.com/media/XClwr7rqCItUOhDI4i/giphy.gif" width="435" height="244" frameborder="0" allowfullscreen></iframe>
 

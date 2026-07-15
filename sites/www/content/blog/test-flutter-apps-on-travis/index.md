@@ -51,7 +51,7 @@ void main() {
 
 If you run `flutter test` you should see something like:
 
-```
+```plaintext
 $ flutter test
 00:00 +1: All tests passed!
 ```

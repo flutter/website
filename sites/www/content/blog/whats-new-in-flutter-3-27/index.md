@@ -153,7 +153,7 @@ Flutter now supports defining UI’s with colors in the DisplayP3 color space to
 
 This release brings a variety of improvements to Flutter web, focusing on performance, efficiency, and accessibility:
 
-* Image decoding in Safari and Firefox is now done using an `&lt;img&gt;` element instead of WebAssembly codecs for all static images. This removes jank related to image decoding and reduces WASM memory usage.
+* Image decoding in Safari and Firefox is now done using an `<img>` element instead of WebAssembly codecs for all static images. This removes jank related to image decoding and reduces WASM memory usage.
 
 * Platform views were optimized to reduce the number of canvas overlays, improving rendering efficiency.
 
@@ -200,9 +200,9 @@ By default on devices running Android 15+, your app will use edge-to-edge mode a
 Developers can now use `build.gradle.kts` files. 
 Flutter tooling now supports Kotlin build files. If you encounter a place where we don’t support Kotlin, [please file a bug](https://github.com/flutter/flutter/issues/new/choose). Groovy remains a supported Gradle language.
 
-Flutter 3.27 is the last release that will support [Gradle’s legacy apply script method](https://docs.gradle.org/8.5/userguide/plugins.html#sec:script_plugins). See[ migration docs](https://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply).
+Flutter 3.27 is the last release that will support [Gradle’s legacy apply script method](https://docs.gradle.org/8.5/userguide/plugins.html#sec:script_plugins). See [migration docs](https://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply).
 
-**Note: Most apps will need to manually migrate. Newly created apps will[ use kotlin build files](https://github.com/flutter/flutter/pull/157195).**
+**Note: Most apps will need to manually migrate. Newly created apps will [use kotlin build files](https://github.com/flutter/flutter/pull/157195).**
 
 Moving to declarative inclusion of the Flutter Gradle Plugin helps Flutter migrate to Kotlin builds files with better type safety and easier to maintain unit tests for build code. It is also a part of a broader effort to bring more stability across Android tooling versions.
 
@@ -226,7 +226,7 @@ We’re looking forward to holding more of these summits going forward, in partn
 
 We launched download count metrics on pub.dev!
 
-Providing more precise popularity metrics on[ pub.dev](https://pub.dev) has been[ the most requested](https://github.com/dart-lang/pub-dev/issues/2714) feature in the site’s issue tracker for a long time.
+Providing more precise popularity metrics on [pub.dev](https://pub.dev) has been [the most requested](https://github.com/dart-lang/pub-dev/issues/2714) feature in the site’s issue tracker for a long time.
 
 Now, when you view a package page you will see a 30-day download count replacing the former “popularity score”.
 
@@ -301,13 +301,13 @@ A few of the changes include:
 
 * A details view for the selected widget that shows an inline layout viewer, widget and render object properties, and a flex layout explorer for Flex widgets and their children.
 
-More improvements are coming soon for the new Inspector, but these changes are ready for you to try out! Please file any[ issues](https://github.com/flutter/devtools/issues) you encounter so that we can fix them before enabling the new Inspector by default.
+More improvements are coming soon for the new Inspector, but these changes are ready for you to try out! Please file any [issues](https://github.com/flutter/devtools/issues) you encounter so that we can fix them before enabling the new Inspector by default.
 
 ### Flutter DevTools — Try with WebAssembly
 
 Enable the WebAssembly feature in DevTools settings to load the WASM-compiled DevTools web app.
 
-This should yield better performance than the default JS-compiled version of DevTools. This feature is experimental, so please file any[ issues](https://github.com/flutter/devtools/issues) you encounter with the WASM build.
+This should yield better performance than the default JS-compiled version of DevTools. This feature is experimental, so please file any [issues](https://github.com/flutter/devtools/issues) you encounter with the WASM build.
 
 <DashImage figure src="images/0J2ur0Z_wJsdbAUt8.webp" alt="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" caption="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" />
 
@@ -335,7 +335,7 @@ The border color of `Chip`s (`Chip`, `ActionChip`, `ChoiceChip`, `FilterChip`, a
 
 ### Objective-C iOS projects
 
-Since Flutter 1.9.1 released in 2019, new iOS projects use Swift by default. Creating a[ new Objective-C iOS project is now deprecated](https://github.com/flutter/flutter/issues/148586), and the `flutter create --ios-language objc` flag will be removed in a future version of Flutter. You will still be able to open your Xcode project and add Objective-C files, including for plugins. Java continues to be supported for Android apps with the `flutter create --android-language java` flag.
+Since Flutter 1.9.1 released in 2019, new iOS projects use Swift by default. Creating a [new Objective-C iOS project is now deprecated](https://github.com/flutter/flutter/issues/148586), and the `flutter create --ios-language objc` flag will be removed in a future version of Flutter. You will still be able to open your Xcode project and add Objective-C files, including for plugins. Java continues to be supported for Android apps with the `flutter create --android-language java` flag.
 
 ### Deep link default flag
 

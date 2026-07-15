@@ -62,7 +62,7 @@ A piano built for both iOS and Android. You can change the octave (by sliding to
 
 [This app](https://github.com/noejac123/Flutter-Event) allows event calendars to be encoded in QR codes so that attendees can quickly see what is happening at their event. It is impressive how much of an application’s UI can be stored in a JSON file (in a QR code) rather than being hard-coded in the application.
 
-## **Other Submissions**
+## Other Submissions
 
 Judging was no small task, and our judges found it difficult to choose a mere 5 winners out of all the entries based on our criteria. Therefore, our judges also awarded honorable mentions to the following entries, in alphabetical order:
 

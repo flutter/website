@@ -106,7 +106,7 @@ You can test if you did this correctly by checking if your gist is available on 
 
 To embed your Flutter application, prefix the gist ID with “[https://dartpad.dev/embed-flutter.html?id=](https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf)”. For example, to view “[https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf](https://gist.github.com/JoseAlba/a205e21aa0d0a64fe7c977107ce22cbf) “in an HTML iframe, use “[https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf](https://dartpad.dev/embed-flutter.html?id=a205e21aa0d0a64fe7c977107ce22cbf)” . You can learn more details about embedding DartPad code into a website in the [DartPad Embedding Guide](https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide). I recommend you visit this page since it also explains the query parameters. The following example uses an &lt;iframe&gt; element:
 
-```
+```html
 <div style=”position:relative;padding-top:56.25%;”>
 <iframe src=’https://dartpad.dev/embed-flutter.html?id=d&theme=dark&run=true&split=50' style=”position:absolute;top:0;left:0;width:100%;height:100%;”>.       </iframe>
 </div>
@@ -172,7 +172,7 @@ The DartPad URL would be:
 
 1. To embed a flutter application into an iframe, specify the following:
 
-```
+```html
 <div style=”position:relative;padding-top:56.25%;”>
 
 <iframe src=’https://dartpad.dev/embed-flutter.html?gh_owner=JoseAlba&gh_repo=flutter_code&gh_path=lib/dartpad&theme=dark&run=true&split=50' style=”position:absolute;top:0;left:0;width:100%;height:100%;”></iframe>

@@ -1,6 +1,6 @@
 ---
 title: "Why you should smoke-test your sample code, and how to do it in Flutter"
-description: "[ If you’re already convinced that you want to smoke-test your Flutter samples, you can skip to “Smoke-testing Flutter” below. What follows…"
+description: "Learn why sample apps need smoke tests and how to use Flutter widget tests with Travis CI to catch breakages on every change and across Flutter releases."
 publishDate: 2018-06-06
 author: filiph
 image: images/1khKciHLLdyG1gIY3qmwbLw.webp
@@ -114,10 +114,10 @@ Given unlimited time and resources, you’d want to use full integration testing
 
 Instead, you want to use a *widget* test. Remember: in Flutter, everything is a widget, and that applies for your whole app as well. You can easily widget-test your whole app. Like so:
 
-```
-testWidgets(**'smoke test'**, (WidgetTester tester) **async** {
-  **final** app = MyApp();
-  **await** tester.pumpWidget(app);
+```dart
+testWidgets('smoke test', (WidgetTester tester) async {
+  final app = MyApp();
+  await tester.pumpWidget(app);
 
   expect(find.text("0"), findsOneWidget);
 
@@ -142,7 +142,7 @@ This is useful to visualize your test, and to verify that it’s doing what you 
 
 Now that you have a smoke test, let’s configure Travis CI to watch your repo (getting started instructions are [here](https://docs.travis-ci.com/user/getting-started/)) and add the following `.travis.yml` file to the root of your repository. I’ll explain its contents step-by-step below. But first, let’s see the whole file:
 
-```
+```yaml
 os:
   - linux
 sudo: false
@@ -180,7 +180,7 @@ Another optional but useful configuration is `cache`. It can make your builds fa
 
 Then, we have this:
 
-```
+```yaml
 env:
   - FLUTTER_VERSION=beta
   - FLUTTER_VERSION=dev
@@ -191,7 +191,7 @@ This tells Travis to run two separate builds: one with the custom variable `FLUT
 
 Next, we allow the `FLUTTER_VERSION=dev` build to fail using Travis’ [build matrix functionality](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix):
 
-```
+```yaml
 matrix:
   allow_failures:
     - env: FLUTTER_VERSION=dev
@@ -202,7 +202,7 @@ It’s good to know whether our sample works with the bleeding edge version of F
 
 Next, we actually use the `$FLUTTER_VERSION` variable when installing Flutter:
 
-```
+```yaml
 before_script:
   - git clone [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git) -b $FLUTTER_VERSION
 ```
@@ -212,7 +212,7 @@ Git fetches the branch specified with `-b`, which in our case is either `beta` o
 
 Still in `before_script`, we run `flutter doctor`. This is to make sure the Flutter installation is sound.
 
-```
+```yaml
   - ./flutter/bin/flutter doctor
 ```
 
@@ -221,7 +221,7 @@ Note that we didn’t add the `flutter` tool to `$PATH`, so we’re accessing it
 
 Lastly, we actually run the test:
 
-```
+```yaml
 script:
   - ./flutter/bin/flutter test
 ```

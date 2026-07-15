@@ -15,7 +15,7 @@ Google I/O 2018 is just a week away, and Flutter will be showing up in style at 
 
 To see the various Flutter-related sessions, visit [https://google.com/io/](https://events.google.com/io/) where you will be able to view each of the following talks online, both live and on-demand:
 
-* Tuesday, May 8 at 2:00 PM PDT —[ Customize Material Components for your product](https://events.google.com/io/schedule/?section=may-8&sid=247e7a44-c632-464e-954c-303ede5befd5&livestream=true&topic=flutter)
+* Tuesday, May 8 at 2:00 PM PDT —[Customize Material Components for your product](https://events.google.com/io/schedule/?section=may-8&sid=247e7a44-c632-464e-954c-303ede5befd5&livestream=true&topic=flutter)
 
 * Tuesday, May 8 at 5:00 PM PDT — [Build great Material Design products across platforms](https://events.google.com/io/schedule/?section=may-8&sid=03c677fd-d082-4bf9-ae38-06829cfdada9&livestream=true&topic=flutter)
 

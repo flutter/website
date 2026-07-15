@@ -42,7 +42,7 @@ To begin the process of integrating your app with Cloud Firestore, you must firs
 
 Next to your project’s auto-generated main.dart file, create a new file named `counter_manager.dart`, and copy the following code in it:
 
-```
+```dart
 class CounterManager {
   /// Create a private integer to store the count. Make this private
   /// so that Widgets can't modify it directly, but instead must 
@@ -60,14 +60,14 @@ class CounterManager {
 
 With this code in place, add the following line to the top of `firebasecounter/lib/main.dart`:
 
-```
+```dart
 import 'package:firebasecounter/counter_manager.dart';
 ```
 
 
 Then, change `_MyHomePageState`’s code to this:
 
-```
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   final manager = CounterManager();
 
@@ -110,7 +110,7 @@ After a hot restart, you should be back where you started: at a count of 0 and a
 
 This is a good time to run the single test that Flutter provides in any new project. You can find its definition at `test/widget_test.dart`, and execute it by running:
 
-```
+```bash
 $ flutter test
 ```
 
@@ -122,7 +122,7 @@ Assuming that the test passes, you should be ready to continue!
 
 The initial app description mentioned persisting the timestamp of each click. So far, you haven’t added any infrastructure to satisfy that second requirement, so create another new file named `app_state.dart`, and add the following class:
 
-```
+```dart
 /// Container for the entirety of the app's state. An instance of 
 /// this class should be able to inform what is rendered at any
 /// point in time.
@@ -155,7 +155,7 @@ Keeping testing in mind, you can begin making changes to the `CounterManager` co
 
 Open `counter_manager.dart` again, and add the following code at the top of the file:
 
-```
+```dart
 import 'package:firebasecounter/app_state.dart';
 
 /// Interface that defines the functions required to manipulate
@@ -178,7 +178,7 @@ abstract class ICounterManager {
 
 The next step is to update `CounterManager` to explicitly descend from `ICounterManager`. Update its definition to this:
 
-```
+```dart
 class CounterManager implements ICounterManager {
   AppState state = AppState();
 
@@ -191,14 +191,14 @@ At this point, our helper code looks pretty good, but `main.dart` has fallen beh
 
 1. Add the missing import to the top of the `main.dart`:
 
-```
+```dart
 import 'package:firebasecounter/app_state.dart';
 ```
 
 
 2. Update `_MyHomePageState` as follows:
 
-```
+```dart
 class _MyHomePageState extends State<MyHomePage> {
   final ICounterManager manager;
   _MyHomePageState({@required this.manager});
@@ -244,7 +244,7 @@ Enter: [Provider](https://pub.dev/packages/provider)
 
 To add `Provider` to your application, open `pubspec.yaml`, and add it under the dependencies section:
 
-```
+```yaml
 dependencies:
   flutter:
     sdk: flutter
@@ -255,14 +255,14 @@ dependencies:
 
 After adding that line to your `pubspec.yaml` file, run the following to download `Provider` onto your machine:
 
-```
+```bash
 $ flutter pub get
 ```
 
 
 Next to `main.dart`, create a new file named `dependencies.dart` and copy the following code into it:
 
-```
+```dart
 import 'package:firebasecounter/counter_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -292,7 +292,7 @@ A few notes about `DependenciesProvider`:
 
 Next, make the new `DependenciesProvider` available to the entire app. A simple way to do this is to wrap the entire `MaterialApp` widget with it. Open `main.dart`, and update the `main` method to look like this:
 
-```
+```dart
 void main() {
   runApp(
     DependenciesProvider(child: MyApp()),
@@ -303,7 +303,7 @@ void main() {
 
 You also need to import `dependencies.dart` in `main.dart`:
 
-```
+```dart
 import 'package:firebasecounter/dependencies.dart';
 ```
 
@@ -322,7 +322,7 @@ To achieve this, you need to refactor the app so that there is a clean point whe
 
 Open `main.dart` and replace your `MyApp` widget with the following code:
 
-```
+```dart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -346,7 +346,7 @@ class MyApp extends StatelessWidget {
 
 Also, import `Provider` at the top of `main.dart`:
 
-```
+```dart
 import 'package:provider/provider.dart';
 ```
 
@@ -356,7 +356,7 @@ Wrapping `MyHomePage` in a `Consumer` widget allows you to reach arbitrarily hig
 Next, in the same file, make this edit to `MyHomePage`:
 > Note: Don’t worry if you see a red screen after saving this change. More edits are needed to complete the refactor!
 
-```
+```dart
 class MyHomePage extends StatefulWidget {
   final ICounterManager manager;
   MyHomePage({@required this.manager, Key key, this.title}) : super(key: key);
@@ -373,7 +373,7 @@ This simple constructor change allows the code to accept the variable passed in 
 
 Finally, complete the refactor by making this edit to `_MyHomePageState`:
 
-```
+```dart
 class _MyHomePageState extends State<MyHomePage> {
 
   // No longer expect to receive a `ICounterManager object`
@@ -421,7 +421,7 @@ If you run `flutter test` right now, you’ll see that the test suite no longer 
 
 This is where dependency injection begins to pay dividends. Instead of mimicking the production code in tests (by wrapping `MyApp` with `DependenciesProvider`), change the test to initialize `MyHomePage`. Update `widget_test.dart` to look like this:
 
-```
+```dart
 import 'package:firebasecounter/counter_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -463,7 +463,7 @@ By using a `MyHomePage` instance directly (along with a wrapping `MaterialApp` t
 
 So far, you’ve moved around a lot of code and introduced several helper classes, but you haven’t changed anything about how the app works. The good news is that everything is in place to begin writing some code that knows about Cloud Firestore. To start, open `pubspec.yaml`, and add these two lines:
 
-```
+```yaml
 dependencies:
   # Add this
   cloud_firestore: ^0.14.1
@@ -477,7 +477,7 @@ dependencies:
 
 As always when you apply changes to `pubspec.yaml` (unless your IDE does this for you), run the following command to download and link your new libraries:
 
-```
+```bash
 $ flutter pub get
 ```
 
@@ -489,7 +489,7 @@ The first step to successfully use Cloud Firestore is to initialize Firebase and
 
 Create a new file at `firebasecounter/lib/firebase_waiter.dart` and add the following code:
 
-```
+```dart
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -529,7 +529,7 @@ class _FirebaseWaiterState extends State<FirebaseWaiter> {
 
 This class uses the pattern in Flutter of leveraging certain widgets to completely handle a specific dependency or problem within your app. To use this `FirebaseWaiter` widget, return to `main.dart`, and apply the following change to `MyApp`:
 
-```
+```dart
 // Add this import at the top
 import 'package:firebasecounter/firebase_waiter.dart';
 
@@ -568,14 +568,14 @@ Now, the app is able to wait for Firebase’s initialization, but can skip this 
 
 First, import Cloud Firestore by adding the following line to the top of `counter_manager.dart`:
 
-```
+```dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 ```
 
 
 Next, also in `counter_manager.dart`, add the following class:
 
-```
+```dart
 class FirestoreCounterManager implements ICounterManager {
   AppState state;
   final FirebaseFirestore _firestore;
@@ -645,7 +645,7 @@ And last, in Part 7, the callback updates the `state` object.
 
 To use the new class, open `dependencies.dart`, and replace its contents with this:
 
-```
+```dart
 import 'package:firebasecounter/counter_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -674,7 +674,7 @@ If you run this code as is, you’ll *almost* see the desired behavior. Everythi
 
 The issue arises from an incompatibility with the initial counter implementation and the current, stream-based implementation. The `FloatingActionButton`’s `onPressed` handler looks like this:
 
-```
+```dart
 floatingActionButton: FloatingActionButton(
   onPressed: () => setState(() => widget.manager.increment()),
   ...
@@ -697,7 +697,7 @@ Enter: [ChangeNotifier](https://flutter.dev/docs/development/data-and-backend/st
 
 The first step in this process is to update the `ICounterManager` interface to extend `ChangeNotifier`. To do this, open `firebasecounter/lib/counter_manager.dart`, and make the following changes to the `ICounterManager` declaration:
 
-```
+```dart
 // Add `extends ChangeNotifier` to your declaration
 abstract class ICounterManager extends ChangeNotifier {
   // Everything inside the class is the same.
@@ -707,14 +707,14 @@ abstract class ICounterManager extends ChangeNotifier {
 
 If you haven’t imported `flutter/material.dart` yet, open `firebasecounter/lib/counter_manager.dart`, and add it to the top:
 
-```
+```dart
 import 'package:flutter/material.dart';
 ```
 
 
 You’re now ready to update the definitions of `CounterManager` and `FirestoreCounterManager`. For `CounterManager`, replace its code with the following implementation:
 
-```
+```dart
 class CounterManager extends ChangeNotifier implements ICounterManager {
   AppState state = AppState();
 
@@ -734,7 +734,7 @@ And, for `FirebaseCounterManager`, apply the following changes:
 
 1. Edit its signature to match this:
 
-```
+```dart
 class FirestoreCounterManager extends ChangeNotifier
     implements ICounterManager {
     ...
@@ -744,7 +744,7 @@ class FirestoreCounterManager extends ChangeNotifier
 
 2. Add the same `notifyListeners();` line to the end of `_watchCollection()`, as follows:
 
-```
+```dart
 void _watchCollection() {
   _firestore
       .collection('clicks')
@@ -767,7 +767,7 @@ You’ve now set up half of the changes necessary for the `ICounterManager` clas
 
 To fix this, open `dependencies.dart` and replace the implementation of `DependenciesProvider` with the following:
 
-```
+```dart
 class DependenciesProvider extends StatelessWidget {
   final Widget child;
   DependenciesProvider({@required this.child});
@@ -790,7 +790,7 @@ class DependenciesProvider extends StatelessWidget {
 
 As a last change, remove `setState` from `_MyHomePageState` to skip an unnecessary re-render. Update its `FloatingActionButton` to look like this:
 
-```
+```dart
       floatingActionButton: FloatingActionButton(
         // Remove setState()!
         onPressed: widget.manager.increment,
@@ -814,7 +814,7 @@ In `widget_test.dart`, the code passes a `CounterManager` instance directly with
 
 One solution is to create `TestDependenciesProvider`, which can contain the testing versions of all of the dependencies. Open `firebasecounter/lib/dependencies.dart`, and add the following class:
 
-```
+```dart
 class TestDependenciesProvider extends StatelessWidget {
   final Widget child;
   TestDependenciesProvider({@required this.child});
@@ -838,7 +838,7 @@ This class is almost identical to `DependenciesProvider`, but `TestDependenciesP
 
 Now, in `test/widget_test.dart`, update the test widget initialization to this:
 
-```
+```dart
 await tester.pumpWidget(
   TestDependenciesProvider(
     child: MaterialApp(
@@ -856,7 +856,7 @@ await tester.pumpWidget(
 
 If you haven’t yet, add these two imports near the top of `test/widget_test.dart`:
 
-```
+```dart
 import 'package:firebasecounter/dependencies.dart';
 import 'package:provider/provider.dart';
 ```

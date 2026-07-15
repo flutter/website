@@ -19,7 +19,7 @@ Your second choice is to use the beta for the upcoming Flutter 1.22 that we’ve
 
 To obtain the Flutter 1.22 beta, use the following commands:
 
-```
+```bash
 $ flutter channel beta
 $ flutter upgrade
 ```

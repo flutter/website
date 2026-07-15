@@ -37,7 +37,7 @@ The pub.dev package repository already has [more than 1,000 null safe](https://p
 
 In this release, we’re pleased to announce that Flutter’s desktop support is available in the stable channel under an early release flag. What this means is that we’re ready for you to give it a try as a deployment target for your Flutter apps: you can think of it as a “beta snapshot” that previews the final stable release coming later this year.
 
-To bring Flutter desktop to this degree of quality, there have been improvements both big and small, starting with working to ensure that text editing operates like the native experience on each of the supported platforms, including foundational features like [text selection pivot points](https://github.com/flutter/flutter/pull/71756) and being able to stop propagation of[ a keyboard event once it’s been handled](https://github.com/flutter/flutter/issues/33521). On the mouse input side, dragging with a high precision pointing device now starts immediately instead of waiting for the lag needed when handling touch input. Also, a built-in context menu has been added to the TextField and TextFormField widgets for [Material](https://github.com/flutter/flutter/pull/74286) and [Cupertino](https://github.com/flutter/flutter/pull/73882) design languages. Finally, [grab handles have been added](https://github.com/flutter/flutter/pull/74299) to the ReorderableListView widget.
+To bring Flutter desktop to this degree of quality, there have been improvements both big and small, starting with working to ensure that text editing operates like the native experience on each of the supported platforms, including foundational features like [text selection pivot points](https://github.com/flutter/flutter/pull/71756) and being able to stop propagation of [a keyboard event once it’s been handled](https://github.com/flutter/flutter/issues/33521). On the mouse input side, dragging with a high precision pointing device now starts immediately instead of waiting for the lag needed when handling touch input. Also, a built-in context menu has been added to the TextField and TextFormField widgets for [Material](https://github.com/flutter/flutter/pull/74286) and [Cupertino](https://github.com/flutter/flutter/pull/73882) design languages. Finally, [grab handles have been added](https://github.com/flutter/flutter/pull/74299) to the ReorderableListView widget.
 
 <DashImage figure src="images/0uxIQpd8XEMIsyePK.gif" alt="The ReorderableListView now has grab handles for easy drag ’n’ drop with a mouse" caption="The ReorderableListView now has grab handles for easy drag ’n’ drop with a mouse" />
 
@@ -75,7 +75,7 @@ If you’d like to see how you can make your own apps platform adaptive, you can
 
 ## Google Mobile Ads to Beta
 
-In addition to Flutter desktop moving to beta, today we’re excited to announce an open beta for[ Google Mobile Ads SDK for Flutter](https://pub.dev/packages/google_mobile_ads). This is a brand new plugin that provides inline banner and native ads, in addition to the existing overlay formats (overlay banner, interstitial, and rewarded video ads). This plugin unifies support for Ad Manager and Admob, so no matter what size publisher you are, this plugin can be tailored to your scenarios.
+In addition to Flutter desktop moving to beta, today we’re excited to announce an open beta for [Google Mobile Ads SDK for Flutter](https://pub.dev/packages/google_mobile_ads). This is a brand new plugin that provides inline banner and native ads, in addition to the existing overlay formats (overlay banner, interstitial, and rewarded video ads). This plugin unifies support for Ad Manager and Admob, so no matter what size publisher you are, this plugin can be tailored to your scenarios.
 
 <DashImage figure src="images/0h4J8qtxzJXTg769G.webp" />
 
@@ -116,7 +116,7 @@ Likewise, [the ScaffoldMessenger](https://github.com/flutter/flutter/pull/64101)
 
 All of this goodness can be yours with a couple of lines of code that you should be using from now on to display your SnackBars:
 
-```
+```dart
 final messenger = ScaffoldMessenger.of(context);
 messenger.showSnackBar(SnackBar(content: Text(‘I can fly.’)));
 ```
@@ -155,14 +155,14 @@ Because the argument to this constructor is deprecated, it should be replaced wi
 
 Even if you’re familiar with all of the many Flutter deprecations, the larger the number of changes you have to make in your code, the harder it is for you to apply all of the fixes and the easier it is to make mistakes; humans are not great at these kinds of repetitive tasks. But computers are; by executing the following command, you can see all of the fixes we know how to make across your entire project:
 
-```
+```bash
 $ dart fix --dry-run
 ```
 
 
 If you’d like to apply them in bulk, you can easily do so:
 
-```
+```bash
 $ dart fix --apply
 ```
 
@@ -407,7 +407,7 @@ We’ve made the following breaking changes for Flutter 2, many of which can be 
 
 * [72890](https://github.com/flutter/flutter/pull/72890) Remove deprecated Scaffold.resizeToAvoidBottomPadding
 
-* [72893](https://github.com/flutter/flutter/pull/72893) Remove deprecated WidgetsBinding.[deferFirstFrameReport, allowFirstFrameReport]
+* [72893](https://github.com/flutter/flutter/pull/72893) Remove deprecated `WidgetsBinding.deferFirstFrameReport` and `WidgetsBinding.allowFirstFrameReport`
 
 * [72901](https://github.com/flutter/flutter/pull/72901) Remove deprecated StatefulElement.inheritFromElement
 
@@ -415,7 +415,7 @@ We’ve made the following breaking changes for Flutter 2, many of which can be 
 
 * [73604](https://github.com/flutter/flutter/pull/73604) Remove deprecated CupertinoDialog
 
-* [73745](https://github.com/flutter/flutter/pull/73745) Remove deprecated actionsForegroundColor from Cupertino[Sliver]NavigationBar
+* [73745](https://github.com/flutter/flutter/pull/73745) Remove deprecated `actionsForegroundColor` from `CupertinoNavigationBar` and `CupertinoSliverNavigationBar`
 
 * [73746](https://github.com/flutter/flutter/pull/73746) Remove deprecated ButtonTheme.bar
 

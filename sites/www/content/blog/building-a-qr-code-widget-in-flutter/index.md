@@ -46,9 +46,9 @@ The painter itself is contained in a [**CustomPaint**](https://docs.flutter.io/f
 
 As you can see on *line 20 + 21*, this is where the developer can constrain the **Container** size if they want. If no size is set then the **Container** will be inherently zero sized unless it is inside something else that determines its size. This is great because it allows for a lot of flexibility if you want to explicitly define the size in a different part of your app without having to hard code it or define it explicitly on your **QrImage** instance.
 
-That’s pretty much all she wrote on the subject, so, how does it all look? With a simple **QrImage** definition ****like so:
+That’s pretty much all she wrote on the subject, so, how does it all look? With a simple **QrImage** definition like so:
 
-```
+```dart
 new QrImage(
   data: "Hello, world in QR form!",
   size: 200.0,

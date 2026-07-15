@@ -43,7 +43,7 @@ Flutter 3.3 provides improved support for trackpad input. This not only provides
 
 1. After installing Flutter 3.3, scrolling on a trackpad correctly scrolls the list because Flutter is delivering the “scrolling” gesture, which isn’t recognized by the cards, but *is* recognized by the scroll view
 
-For more information, see the[ Flutter Trackpad Gesture](https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8/edit?resourcekey=0-pt4_T7uggSTrsq2gWeGsYQ) design doc, and the following PRs on GitHub:
+For more information, see the [Flutter Trackpad Gesture](https://docs.google.com/document/d/1oRvebwjpsC3KlxN1gOYnEdxtNpQDYpPtUFAkmTUe-K8/edit?resourcekey=0-pt4_T7uggSTrsq2gWeGsYQ) design doc, and the following PRs on GitHub:
 
 * PR 89944: [Support trackpad gestures in framework](https://github.com/flutter/flutter/pull/89944)
 

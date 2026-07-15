@@ -66,7 +66,7 @@ Now that you’ve seen how well Flutter works for desktop-class applications, es
 
 For example, if you’d like to get started developing Flutter applications for Linux and your IDE of choice is Visual Studio Code, this is all you need to do at your Linux terminal:
 
-```
+```bash
 $ snap install --classic flutter
 $ snap install --classic code
 $ code --install-extension dart-code.flutter
@@ -79,7 +79,7 @@ If you also want to use Linux to develop mobile apps, you can do so by [installi
 
 Once the Flutter SDK is installed on your Linux machine, to build a desktop app you need to upgrade to the Flutter dev or master channel. Then enable Linux desktop support:
 
-```
+```bash
 $ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-linux-desktop
@@ -88,7 +88,7 @@ $ flutter config --enable-linux-desktop
 
 Now when you create a new Flutter project, you’ll get a `linux` subdirectory that lets you run the app on your Linux desktop:
 
-```
+```bash
 $ flutter create counter
 $ cd counter
 $ flutter run -d linux
@@ -100,7 +100,7 @@ $ flutter run -d linux
 
 What you’ll get is a shiny new Linux app built with Flutter running on the latest stable version of GTK+. If you have an existing Flutter project to which you’d like to add Linux support after you have Linux enabled, you can add the `linux` subdirectory like so:
 
-```
+```bash
 $ cd my_flutter_app
 $ flutter create .
 ```
@@ -124,14 +124,14 @@ Each of these plugins is available for you to use in your apps, as well as servi
 
 To deploy your Flutter app to the Snap Store, you first need to install Snapcraft, the tool that you’ll use to build and publish your application as a snap:
 
-```
+```bash
 $ sudo snap install snapcraft --classic
 ```
 
 
 To drive the Snapcraft tool, you’ll need to create a `snapcraft.yaml` file in your app’s project directory. As one example, this is the `snapcraft.yaml` file for Flokk:
 
-```
+```yaml
 name: flokk-contacts
 version: 1.0.1
 summary: Flokk Contacts
@@ -157,7 +157,7 @@ parts:
 
 In the directory with your `snapcraft.yaml` file, you can now run `snapcraft` to build a snap of your application.
 
-```
+```bash
 $ snapcraft
 ```
 
@@ -166,7 +166,7 @@ If all goes well, this produces a file in your current working directory like `f
 
 Once you’ve [set up your account](https://snapcraft.io/docs/creating-your-developer-account) for publishing in the Snap Store, you can publish your snap:
 
-```
+```bash
 $ snapcraft login
 $ snapcraft register flokk-contacts
 $ snapcraft upload flokk-contacts_1.0.1_amd64.snap --release edge
@@ -175,7 +175,7 @@ $ snapcraft upload flokk-contacts_1.0.1_amd64.snap --release edge
 
 This command will upload the application to the Snap Store and attempt to publish it to the [edge channel](https://snapcraft.io/docs/channels#heading--risk-levels). Once your application is published in the edge channel, it can be installed either via the Snap Store Desktop client or using the command line:
 
-```
+```bash
 $ snap install --edge flokk-contacts
 ```
 

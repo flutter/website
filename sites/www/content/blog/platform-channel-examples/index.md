@@ -34,7 +34,7 @@ The completed Platform Channel sample demonstrates how to use different kinds of
 
 You can find the complete [platform channel sample](https://github.com/flutter/samples/tree/master/platform_channels) on GitHub.
 
-## **PlatformChannel sample**
+## PlatformChannel sample
 
 I was selected to create the `PlatformChannel` sample app, which aims to demonstrate how to send data back and forth in messages between Dart and native code using platform channels.
 
@@ -86,27 +86,27 @@ Related PRs: [#497](https://github.com/flutter/samples/pull/497), [#503](https:/
 
 Check out all of [my PRs for flutter/samples](https://github.com/flutter/samples/pulls?q=+is%3Apr+author%3AAyushBherwani1998+).
 
-### **Other Contributions**
+### Other Contributions
 
 Apart from working on the main project and contributing to the [flutter/samples](https://github.com/flutter/samples) repository, I also contributed to the [flutter/flutter](https://github.com/flutter/flutter) repository, and it has been a fabulous learning journey for me. During the GSoC period, I opened 20 pull requests, of which 16 got merged and three are still in review. Check out [my PRs to flutter/flutter](https://github.com/flutter/flutter/pulls?q=is%3Apr+author%3AAyushBherwani1998+).
 
 Taking the first step and contributing to any open source project is often challenging. We all have encountered this situation, therefore to help the first time contributors and share my experience, I penned a blog, [Contributing to Flutter: Getting Started](https://medium.com/flutter-community/contributing-to-flutter-getting-started-a0db68cbcd5b).
 
-## **Experience**
+## Experience
 
 It has been a great journey to work and learn under the mentorship of the Flutter team. For me, the best thing about GSoC is not the stipend but the mentorship and learning experience that I can cherish my whole life.
 
-### **Mentorship**
+### Mentorship
 
 [Andrew](https://twitter.com/redbrogdon) has not only been a great guide but also a friend who has helped me to improve my technical skills and with my career-related questions. He always trusted my abilities and allowed me to explore and experiment with the samples. Whenever I was stuck on a problem, he proactively helped me to find a way around, or introduced me to someone from the Flutter team who could help me. The same goes for [Brett](https://twitter.com/DomesticMouse). Though not my primary mentor, he helped me whenever I reached out to him.
 
-### **Learning**
+### Learning
 
 I am glad Andrew and I decided to follow the [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) process, which has helped me to understand a different type of software development and get a better understanding of how platform channels work internally. Working on a federated plugin sample also gave me a chance to explore win32 development.
 
-### **Challenges**
+### Challenges
 
 Challenges are what makes GSoC a great learning journey. One of the hurdles we faced was designing the WinRT/C++ API for the federated plugin sample. Though we were not able to overcome it due to some constraints, doing research about the topic helped me to explore the other paths and find an alternate solution.
 > # That’s it for this article, I would like to thanks Andrew, Brett, and the Flutter team, who helped me to complete the samples and contribute to the Flutter SDK 🎉
 
-*About the author: Ayush is an Undergraduate student who is passionate about developing efficient Mobile apps in both Flutter and Android. Apart from Mobile Development, his interest lies in developing Mobile DApps. You can connect with him on[ Twitter](https://twitter.com/ayushbherwani),[ LinkedIn](https://linkedin.com/in/ayushbherwani), and[ GitHub](https://github.com/AyushBherwani1998).*
+*About the author: Ayush is an Undergraduate student who is passionate about developing efficient Mobile apps in both Flutter and Android. Apart from Mobile Development, his interest lies in developing Mobile DApps. You can connect with him on [Twitter](https://twitter.com/ayushbherwani), [LinkedIn](https://linkedin.com/in/ayushbherwani), and [GitHub](https://github.com/AyushBherwani1998).*

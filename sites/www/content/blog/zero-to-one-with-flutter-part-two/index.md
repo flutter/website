@@ -62,7 +62,7 @@ class BarTween extends Tween<Bar> {
 }
 ```
 
-Notice the utility of the static `lerp` method idiom here. Without `Bar.lerp`, `lerpDouble` (morally `double.lerp`), and `Color.lerp` we’d have to implement `BarTween` by creating a `Tween&lt;double&gt;` for the height and a `Tween&lt;Color&gt;` for the color. Those tweens would be instance fields of `BarTween`, initialized by its constructor, and used in its `lerp` method. We’d be duplicating knowledge about the properties of `Bar` several times over, outside the `Bar` class. Maintainers of our code would likely find that less than ideal.
+Notice the utility of the static `lerp` method idiom here. Without `Bar.lerp`, `lerpDouble` (morally `double.lerp`), and `Color.lerp` we’d have to implement `BarTween` by creating a `Tween<double>` for the height and a `Tween<Color>` for the color. Those tweens would be instance fields of `BarTween`, initialized by its constructor, and used in its `lerp` method. We’d be duplicating knowledge about the properties of `Bar` several times over, outside the `Bar` class. Maintainers of our code would likely find that less than ideal.
 
 <DashImage figure src="images/1kCvpZWFivphnjDnOiIoaIw.webp" alt="Animating bar height and color." caption="Animating bar height and color." />
 
@@ -199,7 +199,7 @@ There are, however, situations in which this pretty picture breaks down. We may 
 
 You might readily come up with several different ad-hoc solutions to this problem, and might then go ask your UX designer to choose between them. That’s a valid approach, though I believe it pays to keep in mind during your discussion the fundamental structure common to those different solutions: The tween. Recall from part one:
 
-*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween&lt;T&gt;`.*
+*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween<T>`.*
 
 The central question to answer with the UX designer is this: What are the intermediate values between a chart with five bars and one with seven? An obvious choice is to have six bars, but we need more intermediate values than that to animate smoothly. We need to draw bars differently, stepping outside the realm of equal-width, uniformly spaced bars, fitted to 200 pixels. In other words, the space of `T` values must be generalized.
 
@@ -294,7 +294,7 @@ The astute reader may have noticed a potential inefficiency in our definition of
 
 * Collapsed `Bar` instances can be reused by being created only once in the `Bar` class rather than on each call to `collapsed`. This approach works here, but is not generally applicable.
 
-* The reuse can be handled by `BarChartTween` instead, by having its constructor create a list `_tween` of `BarTween` instances used during the creation of the lerped bar chart: `(i) =&gt; _tweens[i].lerp(t)`. This approach breaks with the convention of using static `lerp` methods throughout. There is no object involved in the static `BarChart.lerp` in which to store the tween list for the duration of the animation. The `BarChartTween` object, by contrast, is perfectly suited for this.
+* The reuse can be handled by `BarChartTween` instead, by having its constructor create a list `_tween` of `BarTween` instances used during the creation of the lerped bar chart: `(i) => _tweens[i].lerp(t)`. This approach breaks with the convention of using static `lerp` methods throughout. There is no object involved in the static `BarChart.lerp` in which to store the tween list for the duration of the animation. The `BarChartTween` object, by contrast, is perfectly suited for this.
 
 * A `null` bar can be used to represent a collapsed bar, assuming suitable conditional logic in `Bar.lerp`. This approach is slick and efficient, but does require some care to avoid dereferencing or misinterpreting `null`. It is commonly used in the Flutter SDK where static `lerp` methods tend to accept `null` as an animation end point, typically interpreting it as some sort of invisible element, like a completely transparent color or a zero-size graphical element. As the most basic example, `lerpDouble` treats `null` as zero, unless both animation end-points are `null`.
 
@@ -350,7 +350,7 @@ I think it’s fair to say that Dart’s `?` syntax is well suited to the task. 
 
 We have one more step to take before we can tackle bar chart animation in full generality. Consider an app using a bar chart to show sales by product category for a given year. The user can select another year, and the app should then animate to the bar chart for that year. If the product categories were the same for the two years, or happened to be the same except for some additional categories shown to the right in one of the charts, we could use our existing code above. But what if the company had product categories A, B, C, and X in 2016, but had discontinued B and introduced D in 2017? Our existing code would animate as follows:
 
-```
+```plaintext
 2016  2017
   A -> A
   B -> C
@@ -436,7 +436,7 @@ We can now remove the static `BarChart.lerp` method ([diff](https://github.com/m
 
 Let’s summarize what we’ve learned about the tween concept so far:
 
-*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween&lt;T&gt;`.*
+*Animate `T`s by tracing out a path in the space of all `T`s as the animation value runs from zero to one. Model the path with a `Tween<T>`.*
 
 *Generalize the `T` concept as needed until it encompasses all animation end points and intermediate values.*
 
@@ -519,7 +519,7 @@ class MergeTween<T extends MergeTweenable<T>> extends Tween<List<T>> {
 
 ```
 
-The `MergeTweenable&lt;T&gt;` interface captures precisely what is needed to be able to create a tween of two sorted lists of `T`s by merging. We’ll instantiate the type parameter `T` with `Bar`, `BarStack`, and `BarGroup`, and make all these types implement `MergeTweenable&lt;T&gt;` ([diff](https://github.com/mravn/charts/commit/e7ec4c94bf560e483a267e60ee2b11c68932d4e0)).
+The `MergeTweenable<T>` interface captures precisely what is needed to be able to create a tween of two sorted lists of `T`s by merging. We’ll instantiate the type parameter `T` with `Bar`, `BarStack`, and `BarGroup`, and make all these types implement `MergeTweenable<T>` ([diff](https://github.com/mravn/charts/commit/e7ec4c94bf560e483a267e60ee2b11c68932d4e0)).
 
 The [stacked](https://gist.github.com/mravn-google/78326296c59f0544d280a987d9ba39e2) ([diff](https://github.com/mravn/charts/commit/912b5eafd5296a549c6fbb6090bbcd3cb4bb4342)), [grouped](https://gist.github.com/mravn-google/d3f0f2a93cb478ab3a50dab03437a5d5) ([diff](https://github.com/mravn/charts/commit/b0b3af8115f3632971b33a4b74204dd8943db53e)), and [stacked+grouped](https://gist.github.com/mravn-google/cbd4a89e7b9e5431898a16727f7642b6) ([diff](https://github.com/mravn/charts/commit/44b0e5d07633edcf7770f5719ec1d1aa082a853c)) implementations have been written to be directly comparable. I encourage you to play around with the code:
 
@@ -531,7 +531,7 @@ The [stacked](https://gist.github.com/mravn-google/78326296c59f0544d280a987d9ba3
 
 * Implement horizontal bar charts.
 
-* Implement other chart types (pie, line, stacked area). Animate them using `MergeTweenable&lt;T&gt;` or similar.
+* Implement other chart types (pie, line, stacked area). Animate them using `MergeTweenable<T>` or similar.
 
 * Add chart legends and/or labels and axes, then animate those too.
 

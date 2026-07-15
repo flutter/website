@@ -17,7 +17,7 @@ That’s why we’re excited to launch the [Flutter Consultant Directory.](http:
 
 We’re launching this new page to simplify finding trusted Flutter partners. We vet the partners listed in the directory to verify their record of successful Flutter projects, a sufficient number of skilled developers on staff, and their commitment to grow the Flutter community.
 
-## **Resources for consultants**
+## Resources for consultants
 
 As part of this launch, we’re highlighting resources to help prospective consultants ramp up their Flutter expertise. This includes:
 
@@ -56,10 +56,10 @@ As part of this launch, we’re highlighting resources to help prospective consu
 <DashImage figure src="images/00WsqrUDKa7Uikyh9.webp" />
 
 
-## **Ready to apply?**
+## Ready to apply?
 
 To apply, agencies and consultancies should complete [this Google form](https://docs.google.com/forms/d/1CS1Ysbwyeya4o0kzu1acPFie8ozHrUgEmAK4kx0_MZM/edit?usp=drive_open&resourcekey=0-Qi5RvEWxp_WT86zHombxgg). We review submissions on a periodic basis and will inform you of your status in due course. We ask consultants to update their information on a quarterly basis to ensure the accuracy and relevance of the directory.
 
-## **Have feedback?**
+## Have feedback?
 
 We’re always eager for feedback. If you have ideas on how to improve the directory or partner resources, send us a note at [flutter-partner-program@google.com](mailto:flutter-partner-program@google.com).

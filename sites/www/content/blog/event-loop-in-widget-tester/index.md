@@ -35,7 +35,7 @@ With pump, you are able to rebuild the widget and the test passes:
 
 You might think calling pump advances the clock because that’s how your widget works in real life. You initiate a data fetch, some time later the Future resolves and your widget displays the data. In reality, pump does not advance the clock. For instance, an animation that has a preset duration will *never* finish just by calling pump.
 
-To solve this problem, you will have to call pump with a *duration*. It flushes microtasks, schedules a frame but also advances the clock by the specified duration. It effectively schedules a new frame, then pretends that all frames were missed until the duration has expired, as if there the system had been too busy to schedule the app for that time. This allows you to jump past animations quickly and is essentially how the *pumpAndSettle* API **is implemented.
+To solve this problem, you will have to call pump with a *duration*. It flushes microtasks, schedules a frame but also advances the clock by the specified duration. It effectively schedules a new frame, then pretends that all frames were missed until the duration has expired, as if there the system had been too busy to schedule the app for that time. This allows you to jump past animations quickly and is essentially how the *pumpAndSettle* API is implemented.
 
 ## FakeAsync
 

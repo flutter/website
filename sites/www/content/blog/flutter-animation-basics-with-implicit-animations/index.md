@@ -33,7 +33,7 @@ In this app, there is a container and a button. When the button is pressed, `set
 <DashImage figure src="images/0TRpN2WHDqNJtk7vI.gif" alt="The star gets bigger instantly, with no animation between its states." caption="The star gets bigger instantly, with no animation between its states." />
 
 
-```
+```dart
 [@override](http://twitter.com/override)
 Widget build(BuildContext context) {
   return Column(
@@ -57,7 +57,7 @@ Widget build(BuildContext context) {
 
 We can add some animation to this app by switching the Container widget for an AnimatedContainer widget and specifying an animation duration.
 
-```
+```dart
 AnimatedContainer(
   width: _bigger ? 100 : 500,
   child: Image.asset('assets/star.png'),
@@ -75,7 +75,7 @@ The process of animating through the values between the old and new value is cal
 
 This applies to all of the AnimatedContainer’s properties, including, for example, the [decoration](https://api.flutter.dev/flutter/widgets/AnimatedContainer/decoration.html). We can modify the gradient within a decoration and the AnimatedContainer handles interpolating between the old and new gradient:
 
-```
+```dart
 AnimatedContainer(
   decoration: BoxDecoration(
     gradient: RadialGradient(
@@ -93,7 +93,7 @@ AnimatedContainer(
 
 Implicitly animated widgets like AnimatedContainer have two properties that you can use to control the animation’s behavior. You can control how long it takes to interpolate to the new value by setting the [duration](https://api.flutter.dev/flutter/widgets/ImplicitlyAnimatedWidget/duration.html) property.
 
-```
+```dart
 AnimatedContainer(
   width: _bigger ? 100 : 500,
   child: Image.asset('assets/star.png'),
@@ -112,7 +112,7 @@ In this example, we made the animation take a much longer amount of time.
 
 You can also control the way the widget interpolates from the old to the new value by using a [Curve](https://api.flutter.dev/flutter/animation/Curve-class.html). Curves control the rate of change over time and can help your animations feel more realistic. In this example, we changed the curve from the default linear curve to a more exaggerated quintic curve:
 
-```
+```dart
 AnimatedContainer(
   width: _bigger ? 100 : 500,
   child: Image.asset('assets/star.png'),
@@ -132,7 +132,7 @@ There are many different [built-in Curves](https://api.flutter.dev/flutter/anima
 
 Here’s an example of a custom curve called SineCurve that uses the sine function to make a curve that bounces:
 
-```
+```dart
 class SineCurve extends Curve {
   final double count;
  

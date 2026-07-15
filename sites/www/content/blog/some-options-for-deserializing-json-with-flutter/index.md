@@ -86,7 +86,7 @@ try {
 
 ```
 
-If the string contains valid JSON, you’ll get back a `dynamic` reference to either a `List&lt;dynamic&gt;` or a `Map&lt;String, dynamic&gt;` depending on whether the JSON string held an array or a single object. For simple things like a list of integers, you’re pretty much done at this point. You’ll probably want to create a second, strongly typed reference to the data, though, before you use it:
+If the string contains valid JSON, you’ll get back a `dynamic` reference to either a `List<dynamic>` or a `Map<String, dynamic>` depending on whether the JSON string held an array or a single object. For simple things like a list of integers, you’re pretty much done at this point. You’ll probably want to create a second, strongly typed reference to the data, though, before you use it:
 
 ```dart
 final dynamicListOfInts = json.decode(aJsonArrayOfInts);
@@ -100,11 +100,11 @@ final strongListOfInts = List<int>.from(dynamicListOfInts);
 final anotherStrongListOfInts = List<int>.from(dynamicListOfInts);
 ```
 
-More sophisticated payloads are where things get interesting. Converting a `Map&lt;String, dynamic&gt;` into an actual model object can involve casting, default values, nulls, and nested objects. There are many ways things can go wrong, and many annoying details that need to be updated if you later decide to rename or add/remove a property.
+More sophisticated payloads are where things get interesting. Converting a `Map<String, dynamic>` into an actual model object can involve casting, default values, nulls, and nested objects. There are many ways things can go wrong, and many annoying details that need to be updated if you later decide to rename or add/remove a property.
 
 ## Handwritten constructors
 
-One has to start somewhere, right? If you have a small app and the data is not that complicated, you can go a long way by writing your own [factory constructors](https://www.dartlang.org/guides/language/language-tour#factory-constructors) that take a `Map&lt;String, dynamic&gt;` parameter. For example, if you’re fetching that looks like this:
+One has to start somewhere, right? If you have a small app and the data is not that complicated, you can go a long way by writing your own [factory constructors](https://www.dartlang.org/guides/language/language-tour#factory-constructors) that take a `Map<String, dynamic>` parameter. For example, if you’re fetching that looks like this:
 
 ```json
 {
@@ -196,11 +196,11 @@ The basic process for putting it to work in an app looks like this:
 
 I’ll tackle these one at a time.
 
-### **Import the `json_serializable` package into your project**
+### Import the `json_serializable` package into your project
 
 You can find `json_serializable` in the [Dart package catalog](https://pub.dartlang.org/packages/json_serializable). Just [update your `pubspec.yaml`](https://flutter.io/using-packages/#adding-a-package-dependency-to-an-app) as directed, and you’re good to go.
 
-### **Define a data class**
+### Define a data class
 
 No surprises here. Make a data class with basic properties and a constructor. The properties you plan to serialize should either be value types or other classes made to work with `json_serializable`.
 
@@ -225,7 +225,7 @@ class SimpleObject {
 
 ```
 
-### **Add the @JsonSerializable annotation**
+### Add the @JsonSerializable annotation
 
 The `json_serializable` package only generates code for classes that have been tagged with the `@JsonSerializable` annotation:
 
@@ -239,7 +239,7 @@ class SimpleObject {
 
 ```
 
-### **Link the generated code with yours**
+### Link the generated code with yours
 
 Next up are three changes that wire the class definition to its corresponding part file:
 
@@ -274,11 +274,11 @@ class SimpleObject extends Object with _$SimpleObjectSerializerMixin {
 
 The first of these is the `part` declaration, which tells the compiler to inline `simple_object.g.dart` (more on that in a minute). Then there’s an update to the class definition to use a mixin. Finally, update the class to use the `fromJson` constructor. The last two changes each reference code in the generated file.
 
-### **Run source_gen**
+### Run source_gen
 
 Kick off code generation from your project folder with this command:
 
-```
+```bash
 flutter packages pub run build_runner build
 ```
 
@@ -392,7 +392,7 @@ The differences between this and the version of `SimpleObject` we started with a
 
 * A part file is declared, just like `json_serializable`.
 
-* An interface, `Built&lt;SimpleObject, SimpleObjectBuilder&gt;`, is being implemented.
+* An interface, `Built<SimpleObject, SimpleObjectBuilder>`, is being implemented.
 
 * A static getter for a serializer object has been added.
 
@@ -437,7 +437,7 @@ SimpleObject._();
 
 That guarantees that your app’s code can’t directly instantiate an instance of `SimpleObject`. In order to get one, you have to use the factory constructor, which uses `SimpleObjectBuilder` and always produces an instance of the `_$SimpleObject` subclass.
 
-### **That’s great, but I thought we were talking about deserialization?**
+### That’s great, but I thought we were talking about deserialization?
 
 I’m getting to that! To serialize and deserialize instances, you’ll need to add a little code somewhere in the app (creating a file called `serializers.dart`, for example, is a good approach):
 
@@ -473,7 +473,7 @@ final Serializers serializers =
     (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
 ```
 
-`built_value` is designed to be as extensible as possible, and it includes a plugin system for defining custom serialization formats (you could, for example, write one to translate to and from XML or your own binary format). I’m using it in this example to add a plugin called `StandardJsonPlugin` because, by default, `built_value` d*oesn’t use the map-based JSON format that you’re probably used to*.
+`built_value` is designed to be as extensible as possible, and it includes a plugin system for defining custom serialization formats (you could, for example, write one to translate to and from XML or your own binary format). I’m using it in this example to add a plugin called `StandardJsonPlugin` because, by default, `built_value` *doesn’t use the map-based JSON format that you’re probably used to*.
 
 Instead, it uses a list-based format. For example, a simple object with `String`, `int`, and `double` members would be serialized like this:
 

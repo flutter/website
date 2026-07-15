@@ -32,7 +32,7 @@ We identified two APIs that would be critical for building the I/O Photo Booth c
 
 1. **Taking the photo:** We used the built-in [`HtmlElementView`](https://api.flutter.dev/flutter/widgets/HtmlElementView-class.html) that uses platform views to render native web elements as Flutter widgets. In this project, we render a [`VideoElement`](https://api.flutter.dev/flutter/dart-html/VideoElement-class.html) as a native HTML element, which is what you see on the screen before you take your photo. We use a [`CanvasElement`](https://api.flutter.dev/flutter/dart-html/CanvasElement-class.html) that is rendered as another HTML element. This allows us to capture the image from the media stream when you click the take photo button.
 
-```
+```dart
 Future<CameraImage> takePicture() async {
  final videoWidth = videoElement.videoWidth;
  final videoHeight = videoElement.videoHeight;
@@ -58,7 +58,7 @@ Future<CameraImage> takePicture() async {
 
 After we got the Flutter Camera plugin working on the web, we created an abstraction to display different UIs depending on the camera permissions. For example, while waiting for you to allow or deny browser camera use, or if there are no available cameras to access, we can display an instructional message.
 
-```
+```dart
 Camera(
  controller: _controller,
  placeholder: (_) => const SizedBox(),
@@ -93,7 +93,7 @@ Enforcing a strict aspect ratio of 4:3 for large screens and 3:4 for small scree
 
 To enforce a strict aspect ratio, the app first requests the maximum resolution possible from the device camera using the JavaScript [`getUserMedia` API](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia). We then feed this API into the `VideoElement` stream, which is what you see in the camera view (mirrored, of course). We also applied an [`object-fit`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) CSS property to ensure that the video element covers its parent container. This sets the aspect ratio using the built-in `AspectRatio` widget from Flutter. As a result, the camera doesn’t make any assumptions about the aspect ratio being displayed; it always returns the maximum resolution supported, and then conforms to the constraints provided by Flutter (in this case 4:3 or 3:4).
 
-```
+```dart
 final orientation = MediaQuery.of(context).orientation;
 final aspectRatio = orientation == Orientation.portrait
    ? PhotoboothAspectRatio.portrait
@@ -121,7 +121,7 @@ return Scaffold(
 
 A huge part of the I/O Photo Booth experience is taking a photo with your favorite Google friends and adding props. You are able to drag and drop the friends and props within the photo, as well as resize and rotate them until you get an image that you like. You’ll notice that, when adding a friend to the screen, you can drag and resize them. The friends are also animated — sprite sheets to achieve this effect.
 
-```
+```dart
 for (final character in state.characters)
  DraggableResizable(   
    canTransform: character.id == state.selectedAssetId,
@@ -140,9 +140,9 @@ for (final character in state.characters)
 
 To resize the objects, we created a draggable, resizable widget that can be wrapped around any Flutter widget, in this case, the friends and props. This widget uses a [`LayoutBuilder`](https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html) to handle scaling the widgets based on the constraints of the viewport. Internally, we used [`GestureDetectors`](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html) to hook into `onScaleStart`, `onScaleUpdate`, and `onScaleEnd`. These callbacks provide details about the gesture needed to reflect the changes you make to the friends and props.
 
-The[`Transform`](https://api.flutter.dev/flutter/widgets/Transform-class.html) widget and 4D Matrix transformations handle scaling and rotating the friends and props based on the various gestures that you made, as reported by multiple `GestureDetector`s.
+The [`Transform`](https://api.flutter.dev/flutter/widgets/Transform-class.html) widget and 4D Matrix transformations handle scaling and rotating the friends and props based on the various gestures that you made, as reported by multiple `GestureDetector`s.
 
-```
+```dart
 Transform(
  alignment: Alignment.center,
  transform: Matrix4.identity()
@@ -202,7 +202,7 @@ We use the [`OffscreenCanvas`](https://developer.mozilla.org/en-US/docs/Web/API/
 
 We then tap into Firebase’s powerful [Cloud Functions](https://firebase.google.com/docs/functions) to assist with sharing the photo to social media. When you click the share button, you are taken to a new tab on the selected platform with a pre-populated post. The post has a URL that redirects to the cloud function that we wrote. When the browser analyzes the URL, it detects the dynamic meta information that the cloud function generated. This information allows the browser to display a nice preview image of your photo in your social post and a link to a share page where your followers can view the photo and navigate back to the I/O Photo Booth app to take their own.
 
-```
+```typescript
 function renderSharePage(imageFileName: string, baseUrl: string): string {
  const context = Object.assign({}, BaseHTMLContext, {
    appUrl: baseUrl,

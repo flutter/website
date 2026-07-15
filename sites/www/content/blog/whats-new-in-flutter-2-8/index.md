@@ -251,7 +251,7 @@ With this Dart-only initialization of FlutterFire, you can now use Firebase from
 <DashImage figure src="images/0y2N78Oatw9te8kPh.webp" />
 
 
-T[his example](https://dartpad.dev/?id=d57c6c898dabb8c6fb41018588b8cf73) demonstrates [a little chat app](https://twitter.com/puf/status/1458516522133909506) using Flutter, Firebase, and DartPad, all of which you can use right now with no installation. Today DartPad’s Firebase support already includes the core APIs, Authentication, and Firestore. Expect more Firebase services to appear in DartPad over time.
+[This example](https://dartpad.dev/?id=d57c6c898dabb8c6fb41018588b8cf73) demonstrates [a little chat app](https://twitter.com/puf/status/1458516522133909506) using Flutter, Firebase, and DartPad, all of which you can use right now with no installation. Today DartPad’s Firebase support already includes the core APIs, Authentication, and Firestore. Expect more Firebase services to appear in DartPad over time.
 
 The other thing that FlutterFire support in DartPad enables is the ability to use [an embedded instance of DartPad right in the docs](https://firebase.flutter.dev/docs/firestore/example/).
 
@@ -330,7 +330,7 @@ This screenshot shows the mobile version, but because the `flutterfire_ui` scree
 <DashImage figure src="images/00frogkEKgpNOgCVF.webp" />
 
 
-If the user has an email/password already, they can log in and be done. If they use Google auth, they’ll be shown the normal Google auth flow, whether they’re on mobile, web, or desktop. If they don’t have an account already, they can press the button on the login screen and get to the registration screen. Once they’ve logged in or registered, there are flows for validating their email address, resetting their password, logging out, and linking social authentication accounts. Logging in by email works on all platforms along with social auth support for Google, Facebook, and Twitter, with partial support for Apple (it doesn’t work on Android). Authentication support in `flutterfire_ui` supports a number of scenarios and navigation schemes, along with customization and localization options. C[heck out the detailed docs and samples in the firebase.flutter.dev docs](https://firebase.flutter.dev/docs/ui/overview).
+If the user has an email/password already, they can log in and be done. If they use Google auth, they’ll be shown the normal Google auth flow, whether they’re on mobile, web, or desktop. If they don’t have an account already, they can press the button on the login screen and get to the registration screen. Once they’ve logged in or registered, there are flows for validating their email address, resetting their password, logging out, and linking social authentication accounts. Logging in by email works on all platforms along with social auth support for Google, Facebook, and Twitter, with partial support for Apple (it doesn’t work on Android). Authentication support in `flutterfire_ui` supports a number of scenarios and navigation schemes, along with customization and localization options. [Check out the detailed docs and samples in the firebase.flutter.dev docs](https://firebase.flutter.dev/docs/ui/overview).
 
 Furthermore, authentication is not the only Firebase UI-related feature that flutterfire_ui supports. For showing users a live, infinite scroll list of data from a Firebase query, this release includes the `FirestoreListView`, which you can drop into your app with a live query as follows:
 

@@ -88,7 +88,7 @@ Since the Model Context Protocol is rapidly becoming the standard for integratin
 
 First, the Dart and Flutter MCP Server requires Dart SDK 3.9/Flutter 3.35 beta or later, so switch to the beta channel and run `flutter upgrade` to ensure you have the latest versions.
 
-**To access all the features of the Dart and Flutter MCP Server, an MCP client must support [Tools](https://modelcontextprotocol.io/docs/concepts/tools) and [Resources](https://modelcontextprotocol.io/docs/concepts/resources). For the best development experience with the Dart and Flutter MCP Server, an MCP client should also support [Roots](https://modelcontextprotocol.io/docs/concepts/roots).*
+*To access all the features of the Dart and Flutter MCP Server, an MCP client must support [Tools](https://modelcontextprotocol.io/docs/concepts/tools) and [Resources](https://modelcontextprotocol.io/docs/concepts/resources). For the best development experience with the Dart and Flutter MCP Server, an MCP client should also support [Roots](https://modelcontextprotocol.io/docs/concepts/roots).*
 
 ## Gemini CLI
 
@@ -168,7 +168,7 @@ Ensure your environment is running Dart SDK 3.9/Flutter 3.35 beta or later. Swit
 
 To configure the Dart and Flutter MCP Server, add the following to your VS Code user settings:
 
-```
+```json
 "dart.mcpServer": true
 ```
 
@@ -203,7 +203,7 @@ To configure Cursor to use the Dart and Flutter MCP Server, you can either click
 
 The Dart and Flutter MCP Server can be used anywhere that MCP is supported*. Follow the instructions provided by your MCP client of choice to configure the Dart and Flutter MCP Server.
 
-**Not all tools are supported since some require access to specific IDE services.*
+*Not all tools are supported since some require access to specific IDE services.*
 
 ## What’s coming next?
 
@@ -223,4 +223,4 @@ By giving your coding assistant the context of your project and access to the of
 
 This is just the beginning. As the Model Context Protocol becomes more widespread and the Dart and Flutter MCP Server gains more capabilities, the collaboration between you and your AI-powered development tools and agents will only get smarter and more seamless.
 
-**This feature is still experimental, and your feedback is invaluable.** Try it out today by enabling it in your favorite editor, and let us know what you think by filing an issue on our[ GitHub repository](https://github.com/dart-lang/ai/issues/new/choose). Embrace the future of AI-assisted development and unlock new levels of productivity in your Dart and Flutter projects. We can’t wait to see what you build!
+**This feature is still experimental, and your feedback is invaluable.** Try it out today by enabling it in your favorite editor, and let us know what you think by filing an issue on our [GitHub repository](https://github.com/dart-lang/ai/issues/new/choose). Embrace the future of AI-assisted development and unlock new levels of productivity in your Dart and Flutter projects. We can’t wait to see what you build!

@@ -82,7 +82,7 @@ These images were derived from the original, upscaled prompt itself; so returnin
 
 Once the user’s answers were in, we went back to Nano Banana with the same prompt, submitted multiple times concurrently, to get new art. The prompt looked something like this:
 
-```
+```plaintext
 After seeing an image derived from this original prompt:
 
 {{original_prompt}}

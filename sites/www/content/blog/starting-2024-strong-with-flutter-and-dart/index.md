@@ -15,7 +15,7 @@ layout: blog
 
 **Flutter and Dart’s value and future**
 
-I recently joined the Flutter and Dart team, and am excited to work with our developer community at a time when AI is moving quickly to enhance developer productivity and unlock new types of user experiences. I see endless potential in Flutter and Dart’s role in helping to shape this future. I’m equally inspired by the original vision for Flutter to improve the experience of building beautiful, performant, multi platform apps for any device***.***
+I recently joined the Flutter and Dart team, and am excited to work with our developer community at a time when AI is moving quickly to enhance developer productivity and unlock new types of user experiences. I see endless potential in Flutter and Dart’s role in helping to shape this future. I’m equally inspired by the original vision for Flutter to improve the experience of building beautiful, performant, multi platform apps for any device.
 
 Judging by the millions of talented and creative developers who support Flutter with contributions to the framework, or by building amazing experiences — it’s clear others see this vision and are motivated to help. And the core mission remains the same: to deliver a strong language and framework pairing, enabling creative developers to build beautiful, rich, and performant apps for any device. Let’s do this together!
 
@@ -79,7 +79,7 @@ I’ve worked on many fun and innovative projects during my 17+ years at Google 
 
 Part of what drives my enthusiasm is, well, your enthusiasm. Just in 2024 so far, I’ve seen such amazing things come out of this community, including:
 
-* Over 2,700 of you have joined our[ Global Gamers Challenge](http://flutter.dev/global-gamers), which we’re hosting in partnership with international advocacy firm Global Citizen to challenge you to use your skills to build Flutter games that inspire the world to live more sustainably.
+* Over 2,700 of you have joined our [Global Gamers Challenge](http://flutter.dev/global-gamers), which we’re hosting in partnership with international advocacy firm Global Citizen to challenge you to use your skills to build Flutter games that inspire the world to live more sustainably.
 
 * [Superlist](https://youtu.be/37qvcjmE51w), who announced version 1.0 yesterday, is using Flutter to redefine task management, note taking, and everything in between.
 

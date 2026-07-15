@@ -53,7 +53,7 @@ await expectLater(
 
 ## a11y testing
 
-*a11y*, or accessibility **testing, is a type of usability testing performed to ensure that the application is usable by people with disabilities, such as vision impairment, hearing loss, a motor disability, and so on. Use `flutterDriver.getSemanticsId` to verify semantic labels, for example, to verify that all images have semantic labels.
+*a11y*, or accessibility testing, is a type of usability testing performed to ensure that the application is usable by people with disabilities, such as vision impairment, hearing loss, a motor disability, and so on. Use `flutterDriver.getSemanticsId` to verify semantic labels, for example, to verify that all images have semantic labels.
 
 ```dart
 final imageLabel = find.bySemanticsLabel('Company logo');
@@ -69,7 +69,7 @@ Learn more about testing for accessibility in another great article by Darshan K
 
 Depending on how your localization code is set up, you might change locales using your localizations’ delegate.
 
-```
+```dart
 ExampleAppLocalizationsDelegate.load(Locale(‘fr’));
 ```
 

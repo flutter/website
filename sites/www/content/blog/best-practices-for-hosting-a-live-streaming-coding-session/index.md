@@ -26,7 +26,7 @@ The people I interviewed used different kinds of programming languages including
 
 I learned many best practices to follow, and pitfalls to avoid from speaking with experienced streamers and viewers in the developer community. I’d like to share 9 tips with you, broken up into three sections: before the livestream, during the livestream, and after the livestream.
 
-## ***Before Stream***
+## *Before Stream*
 
 ### 1. Find a topic of interest to your community
 
@@ -85,11 +85,11 @@ Although the prep work for live streaming is much less than for recording a vide
 Several viewers reported that when deciding to watch live streams they do not have specific problems to solve or concrete learning objectives. This means that you don’t have to work everything out beforehand. Viewers like to see what kinds of issues you will run into and how you address them. For example, here is what one viewer said in our study:
 > *“I like to see how the person thinks and makes mistakes, and a lot of people edit it too harshly. And then it ends up being this one fluid front-to-back program with no mistakes. They are not researching anything or looking anything up, and that’s not realistic to me. So I think it’s a bit more entertaining, and a bit easier to sit through a lot of the live stream videos or even their arcade videos when they leave in the mistakes.” — A viewer*
 
-## ***During Stream***
+## *During Stream*
 
 Great! You’ve done all your preparation, and now you’re on-air! Viewers watch live streams because they want to understand the streamer’s thinking process, debugging approach, and why they choose one strategy versus another. That brings us to the next tip:
 
-### **7. Keep your viewers engaged**
+### 7. Keep your viewers engaged
 
 There are two techniques to get your viewers engaged.
 
@@ -104,15 +104,15 @@ The second way is to ask viewers to provide input. For example, having a short Q
 <DashImage figure src="images/01Qz7x7ZMo0Ar75hc.webp" alt="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" caption="(credit: [https://unsplash.com/photos/YLUvemTiRtk](https://unsplash.com/photos/YLUvemTiRtk))" />
 
 
-### **8. Chat moderation**
+### 8. Chat moderation
 
 Once your audience grows large, ask some trustworthy viewers to help you moderate the chat so that you can focus on coding. To grow a healthy community, make sure you address issues such as harassment, spam, and trolling as soon as you see them.
 
-## ***After stream***
+## *After stream*
 
 Congratulations! You’ve had a successful live streaming session. Now you can upload your video to YouTube to share it with a broader audience. That brings us to the last tip:
 
-### **9. Create a timetable if you have time**
+### 9. Create a timetable if you have time
 
 Because a live stream recording is often long, viewers appreciate a Timestamp table to jump from topic to topic. The Flutter Boring Show provides a good example of such a table.
 

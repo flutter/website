@@ -16,7 +16,7 @@ I meant the functionality of showing websites in Flutter apps… not rehabilitat
 
 Incorporating the WebView plugin into your app is extremely simple. It’s just a widget like any other: `WebView(initialUrl: ‘https://flutter.io')`. You can also optionally enable or disable JavaScript in your WebView with the `javascriptMode` parameter. By default, JavaScript in your WebView is disabled, so to enable it you’d construct a WebView like so:
 
-```
+```dart
 WebView(
   initialUrl: 'https://flutter.io',
   javascriptMode: JavascriptMode.unrestricted,
@@ -26,7 +26,7 @@ WebView(
 
 Pretty much all the information you want to know about your WebView and also the ability to control your WebView happens through the…wait for it… WebViewController. This controller is returned in a callback when the WebView is fully built:
 
-```
+```dart
 WebViewController _controller;
 WebView(
   initialUrl: 'https://flutter.io',
@@ -114,7 +114,7 @@ Since WebViews are Flutter widgets, they can participate in Flutter’s gesture 
 
 If your WebView is inside another widget that responds to gestures, for example a ListView, you might want to specify how your app responds to gestures. If the user drags their finger across the screen, should you scroll the ListView or the WebView? If you want both widgets to be scrollable, the WebView widget can “capture” the drag gesture so that it scrolls when the user drags the WebView, but scrolls the ListView otherwise. You can specify which gestures get passed on to the WebView widget with the `gestureRecognizers` parameter. The parameter takes a Set of all the GestureRecognizers that you want to capture. Don’t be scared off by that Factory object, either — it’s basically just a glorified builder method. To capture the vertical scroll event, I can write this:
 
-```
+```dart
 WebView(
   initialUrl: someUrl,
   gestureRecognizers: Set()
@@ -126,7 +126,7 @@ WebView(
 
 Or, written another way:
 
-```
+```dart
 var verticalGestures = Factory<VerticalDragGestureRecognizer>(
   () => VerticalDragGestureRecognizer());
 var gestureSet = Set.from([verticalGestures]);
@@ -151,7 +151,7 @@ The code for this Hacker News reader app can be found at [this GitHub repo](http
 
 However, if the WebView is inside a widget that only captures gestures you don’t care about, no gesture detector is needed. For example, a PageController only responds to horizontal drag gestures, and you just want the WebView to be able to scroll vertically, you can write the code like this:
 
-```
+```dart
 PageView(children: [
   WebView(initialUrl: urlOne),
   WebView(initialUrl: urlTwo),
@@ -186,9 +186,9 @@ Similarly, if you use WebViews in the context of a [Hero](https://flutter.io/doc
 
 ## A few remaining things to bear in mind:
 
-The WebView plugin is currently in Developer Preview while we finish adding polish. This means that if you want to run the webview plugin on iOS, you also need to add the following line inside the `&lt;dict&gt;` in your `ios/Runner/Info.plist`:
+The WebView plugin is currently in Developer Preview while we finish adding polish. This means that if you want to run the webview plugin on iOS, you also need to add the following line inside the `<dict>` in your `ios/Runner/Info.plist`:
 
-`&lt;key&gt;io.flutter.embedded_views_preview&lt;/key&gt;&lt;string&gt;yes&lt;/string&gt;` [as described in this GitHub issue](https://github.com/flutter/flutter/issues/19030#issuecomment-437534853).
+`<key>io.flutter.embedded_views_preview</key><string>yes</string>` [as described in this GitHub issue](https://github.com/flutter/flutter/issues/19030#issuecomment-437534853).
 
 There is another community-based WebView plugin though it doesn’t have all of the functionality of the above plugin by the Flutter team. It is simply displays a webpage in a native view, and is not integrated with the rest of the Flutter widget tree. Therefore that version does not allow you to compose WebViews with arbitrary other Flutter widgets. Using the [webview_flutter plugin](https://pub.dartlang.org/packages/webview_flutter) described in this article avoids this problem.
 

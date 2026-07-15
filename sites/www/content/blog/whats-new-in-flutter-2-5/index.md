@@ -37,7 +37,7 @@ One final performance update if you’re targeting iOS: In this release, Flutter
 
 ## Dart 2.14: formatting, language features, pub & linting out-of-the-box
 
-Of course, Flutter isn’t Flutter without the Dart language and runtime on which it builds. This release of Flutter comes with Dart 2.14. [The new release of Dart ](https://medium.com/@mit.mit/announcing-dart-2-14-b48b9bb2fb67)comes with new formatting to make [cascades](https://dart.dev/guides/language/language-tour#cascade-notation) more clear, new pub support for ignoring files, and new language features, including the return of the legendary triple shift operator. In addition, and one of the best things about Dart 2.14, is that this release has created a standard set of lints shared between new Dart and Flutter projects that come right out of the box.
+Of course, Flutter isn’t Flutter without the Dart language and runtime on which it builds. This release of Flutter comes with Dart 2.14. [The new release of Dart](https://medium.com/@mit.mit/announcing-dart-2-14-b48b9bb2fb67) comes with new formatting to make [cascades](https://dart.dev/guides/language/language-tour#cascade-notation) more clear, new pub support for ignoring files, and new language features, including the return of the legendary triple shift operator. In addition, and one of the best things about Dart 2.14, is that this release has created a standard set of lints shared between new Dart and Flutter projects that come right out of the box.
 
 <DashImage figure src="images/0CNbVsc26rivkp2vI.webp" alt="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" caption="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" />
 
@@ -64,7 +64,7 @@ And while we’re talking about scrolling, another improvement is the addition o
 <DashImage figure src="images/011VHtSVUTukATeQN.webp" alt="*The new scroll metrics notifications enabling the scrollbar to appear and disappear automatically without scrolling*" caption="*The new scroll metrics notifications enabling the scrollbar to appear and disappear automatically without scrolling*" />
 
 
-In this case, you don’t have to write any code but if you want to capture the [`ScrollMetricNotification`](https://master-api.flutter.dev/flutter/widgets/ScrollMetricsNotification-class.html)changes, you can. Special thanks goes out to community contributor [xu-baolin](https://github.com/xu-baolin) who worked hard on this and came up with a great solution.
+In this case, you don’t have to write any code but if you want to capture the [`ScrollMetricNotification`](https://master-api.flutter.dev/flutter/widgets/ScrollMetricsNotification-class.html) changes, you can. Special thanks goes out to community contributor [xu-baolin](https://github.com/xu-baolin) who worked hard on this and came up with a great solution.
 
 Another excellent contribution from the community is the addition of Material banner support to the `ScaffoldMessenger`. You may remember the `ScaffoldMessenger` from [the Flutter 2.0 release announcement](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65) as a more robust way to show `SnackBars` at the bottom of the screen to provide users with notifications. In Flutter 2.5, you can now add a banner to the top of your scaffold that stays in place until the user dismisses it.
 
@@ -249,7 +249,7 @@ To enable icon previews you need to tell the plugin which packages you are using
 <DashImage figure src="images/0GTrbuGlv9G-YPvOi.webp" />
 
 
-Note that this works for icons defined as static constants in a class, as shown in the sample code in the screen shot. It won’t work for expressions, such as`LineIcons.addressBook()` or `LineIcons.values['code']`. If you are the author of an icon package that does NOT work with this feature, please create an [issue](https://github.com/flutter/flutter-intellij/issues).
+Note that this works for icons defined as static constants in a class, as shown in the sample code in the screen shot. It won’t work for expressions, such as `LineIcons.addressBook()` or `LineIcons.values['code']`. If you are the author of an icon package that does NOT work with this feature, please create an [issue](https://github.com/flutter/flutter-intellij/issues).
 
 That are lots more updates for the IntelliJ/Android Studio plugin for Flutter that you can read about in the release notes:
 

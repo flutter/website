@@ -37,7 +37,7 @@ We’re confident that games can encourage players to take small, real life, act
 
 ## Defend the planet
 
-This contest was inspired by the [Playing for the Planet Alliance](https://www.playing4theplanet.org/), a United Nations-facilitated alliance of 50 game studios and companies, [including Google](https://blog.google/around-the-globe/google-europe/sustainable-gaming-with-the-playing-for-the-planet-alliance/), with a mission to reduce the industry’s environmental impact and **leverage the power of gaming to bring awareness to and coordinate action for important environmental issues like climate change, biodiversity loss, and pollution.
+This contest was inspired by the [Playing for the Planet Alliance](https://www.playing4theplanet.org/), a United Nations-facilitated alliance of 50 game studios and companies, [including Google](https://blog.google/around-the-globe/google-europe/sustainable-gaming-with-the-playing-for-the-planet-alliance/), with a mission to reduce the industry’s environmental impact and **leverage the power of gaming to bring awareness to and coordinate action for important environmental issues like climate change, biodiversity loss, and pollution**.
 
 Games produced by members of the Playing for the Planet Alliance have a combined reach of over 1 billion people. Through the Alliance’s flagship initiative, the [Green Game Jam](https://www.playing4theplanet.org/green-game-jam-2023), participating games have created real-world impact by raising funds to plant 2.75 million trees and raised roughly $1,500,000 USD to protect wildlife and support environmental causes.
 

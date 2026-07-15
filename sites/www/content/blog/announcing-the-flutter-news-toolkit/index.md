@@ -54,7 +54,7 @@ The Flutter News Toolkit has already begun helping news publishers across the gl
 
 * [Boldsports](https://play.google.com/store/apps/details?id=ng.boldsports.news.template&hl=en&gl=US), a Nigerian-based sports news start-up, created an early version within just a few days;
 
-* Hespress (one of Morocco’s largest news sites) finished its[ English app](https://play.google.com/store/apps/details?id=com.hespress.english&hl=en&gl=US) development within 6 weeks and also reported that the new app drove 93% higher organic user acquisition organically and 50% growth in ad revenue within two months of launching the app.
+* Hespress (one of Morocco’s largest news sites) finished its [English app](https://play.google.com/store/apps/details?id=com.hespress.english&hl=en&gl=US) development within 6 weeks and also reported that the new app drove 93% higher organic user acquisition organically and 50% growth in ad revenue within two months of launching the app.
 
 Let’s hear from some of them in their own words.
 

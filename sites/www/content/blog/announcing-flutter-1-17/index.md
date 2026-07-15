@@ -109,23 +109,23 @@ While you’re using the pre-release version of Dart DevTools implemented with F
 
 If you’re not seeing the Network tab in the prerelease version of Dart DevTools (for example, if you’re running it from the command line), you can update it manually using the following command:
 
-```
+```bash
 $ pub global activate devtools
 ```
 
 
 The Network tab shows you network traffic for your Flutter app once you press the Record button. Further, if you’d like to catch network traffic starting immediately from when you start your app, you can include this line of code in your `main()` method:
 
-```
+```dart
 void main() {
-  **// enable network traffic logging**
-  **HttpClient.enableTimelineLogging = true;**
+  // enable network traffic logging
+  HttpClient.enableTimelineLogging = true;
   runApp(MyApp());
 }
 ```
 
 
-In addition to an updated Dart DevTools, this release also adds support for [an experimental “fast start” option](https://github.com/flutter/flutter/pull/46140), which allows you to start your Flutter app debugging as much as 70% faster when targeting Android. You can access this option via `flutter run —-fast-start -d &lt;your Android device&gt;`. This option installs a generic Android app that only depends on your plugin code, excluding any Dart code or assets. This allows repeated `flutter run` commands to start up faster, since changes to Dart code or assets don’t require the APK to be rebuilt. This option bundles your app into a generic Android “wrapper” that doesn’t actually get installed on your device, which is different from our normal start options. Furthermore, there are some cases where it won’t work, e.g. when you’re using plugins that access background execution. On the other hand, if your Android debugging startup time is getting you down, give it a try.
+In addition to an updated Dart DevTools, this release also adds support for [an experimental “fast start” option](https://github.com/flutter/flutter/pull/46140), which allows you to start your Flutter app debugging as much as 70% faster when targeting Android. You can access this option via `flutter run —-fast-start -d <your Android device>`. This option installs a generic Android app that only depends on your plugin code, excluding any Dart code or assets. This allows repeated `flutter run` commands to start up faster, since changes to Dart code or assets don’t require the APK to be rebuilt. This option bundles your app into a generic Android “wrapper” that doesn’t actually get installed on your device, which is different from our normal start options. Furthermore, there are some cases where it won’t work, e.g. when you’re using plugins that access background execution. On the other hand, if your Android debugging startup time is getting you down, give it a try.
 
 Another change to note if you’re targeting Android is that now AndroidX is the only option when creating a new Flutter project. [AndroidX](https://developer.android.com/jetpack/androidx) libraries provide advanced Android functionality known as [Android Jetpack](https://developer.android.com/jetpack/?gclid=Cj0KCQjwka_1BRCPARIsAMlUmEpxmZqWZyO2NTx1F_aYYRm0EUtwl6Rlr2ViKXwZpsQKo7ailItPdJkaAhnNEALw_wcB). In the last release, we deprecated the original Android Support Library and moved to AndroidX as the default for all new projects. With this release, the --`androidx` flag to `flutter create` is now the only option available. While existing applications that don’t use AndroidX can continue to be compiled with Flutter, [now is a great time](https://flutter.dev/docs/development/androidx-migration) to migrate over to the new library.
 

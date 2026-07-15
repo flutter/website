@@ -19,7 +19,7 @@ If you prefer to listen/watch rather than read, that video should cover all of t
 
 ## The Inside Scoop on Keys
 
-Most of the time… you don’t need keys! Generally, there’s no harm adding them, but it’s also unnecessary and just takes up unnecessary space, just like the new keyword, or declaring types on both the right side and left side of a new variable (I’m looking at you, `Map&lt;Foo, Bar&gt; aMap = Map&lt;Foo, Bar&gt;()`). But, if you find yourself adding, removing, or reordering a collection of widgets of the same type that *hold some state*, using keys is likely in your future!
+Most of the time… you don’t need keys! Generally, there’s no harm adding them, but it’s also unnecessary and just takes up unnecessary space, just like the new keyword, or declaring types on both the right side and left side of a new variable (I’m looking at you, `Map<Foo, Bar> aMap = Map<Foo, Bar>()`). But, if you find yourself adding, removing, or reordering a collection of widgets of the same type that *hold some state*, using keys is likely in your future!
 > # If you find yourself adding, removing, or reordering a collection of widgets of the same type that *hold some state*, using keys is likely in your future.
 
 To illustrate why you need keys when modifying a collection of widgets, I wrote an extremely simple app with two randomly colored widgets that swap places when you tap a button:
@@ -359,7 +359,7 @@ Consider the following To-do list app¹, where you can reorder the items in your
 
 In this scenario, you might expect the text of a To-do item to be constant and unique. If that is the case, it is probably a good candidate for a **`ValueKey`**, where the text is the “value”.
 
-```
+```dart
 return TodoItem(
   key: ValueKey(todo.task),
   todo: todo,

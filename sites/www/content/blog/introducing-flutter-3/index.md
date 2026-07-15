@@ -52,7 +52,7 @@ A great example of how Flutter enables beautiful desktop experiences is [Superli
 
 Flutter 3 also improves on many of the fundamentals, with improved performance, Material You support, and productivity updates.
 
-In addition to the work mentioned above, with this version, Flutter is fully native on [Apple silicon](https://support.apple.com/en-us/HT211814) for *development*. While Flutter has been compatible with M1-powered Apple devices since their release, Flutter now takes full advantage of [Dart’s support for Apple silicon](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67), enabling much faster compilation on M1-powered devices and support for [universal binaries](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) ****for macOS apps.
+In addition to the work mentioned above, with this version, Flutter is fully native on [Apple silicon](https://support.apple.com/en-us/HT211814) for *development*. While Flutter has been compatible with M1-powered Apple devices since their release, Flutter now takes full advantage of [Dart’s support for Apple silicon](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67), enabling much faster compilation on M1-powered devices and support for [universal binaries](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) for macOS apps.
 
 Our work for [Material Design 3](https://m3.material.io/) is largely complete in this release, allowing developers to take advantage of an adaptable, cross-platform design system that offers dynamic color schemes and updated visual components:
 

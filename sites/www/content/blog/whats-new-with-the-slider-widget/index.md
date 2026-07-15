@@ -72,7 +72,7 @@ Note: This example was made with the `textScaleFactor` set to 4 for better demon
 
 The value indicator rectangle is shifted so that part of the indicator doesn’t go off screen. This improvement allows you to increase the number of digits within the indicator and increase the text scale factor of your application without worrying if the text exceeds the screen size. In the following image, the value indicator text scale is 4 and contains a 3-digit value, but the slider handles it with no problem.
 
-```
+```dart
 double getHorizontalShift({
 
   RenderBox parentBox,

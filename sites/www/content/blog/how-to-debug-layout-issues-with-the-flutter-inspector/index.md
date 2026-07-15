@@ -16,7 +16,7 @@ As a Flutter developer, you’ve probably run into issues where an image is cut 
 
 Fortunately, the Dart DevTool’s [Flutter Inspector](https://flutter.dev/docs/development/tools/devtools/inspector) can help you understand *why* they occur and also *how* you can solve them. **In this article, you learn how to use the tool by debugging 3 common layout issues. So, the next time you encounter an issue, you can solve it like a pro!**
 
-## **Table of Contents**
+## Table of Contents
 
 1. [What is the Flutter Inspector?](#042b)
 
@@ -63,13 +63,13 @@ It’s best if you follow along the rest of the article on your own computer. So
 
 1. Create a new Flutter project called `menu`.
 
-```
+```bash
 $ flutter create menu
 ```
 
 
 2. Replace the `lib/main.dart` file content.
-Each layout issue is separated into its own `Example` ****class in the code, starting with `Example1` in the body of the app. Replace `lib/main.dart` with the following code:
+Each layout issue is separated into its own `Example` class in the code, starting with `Example1` in the body of the app. Replace `lib/main.dart` with the following code:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -239,7 +239,7 @@ Wrap `Text` with `Expanded`. The default flex is 1, so you don’t have to speci
 
 Let’s move on to the next example by replacing `Example1()` inside the Column with `Example2()` and hot reloading.
 
-```
+```dart
 Column(
   children: [
     // Modify code here
@@ -297,7 +297,7 @@ And, the widgets don’t know what to do … size can’t be determined because 
 
 **4. Navigate back to your code and fix it.**
 
-```
+```dart
 class Example2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -317,7 +317,7 @@ Remember from earlier that **wrapping a widget with** `Expanded` **gives it a *b
 
 Now, replace `Example2()` in the `Column` with `Example3()`.
 
-```
+```dart
 Column(
   children: [
     // Modify code here
@@ -372,7 +372,7 @@ The most important thing to remember is that *constraints are passed down:*
 
 **4. Navigate back to your code and fix it.**
 
-```
+```dart
 class Example3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -394,7 +394,7 @@ Hot reload. Voila! `VerticalDivider` pops up on the screen.
 
 Now, let’s put the fixed code from all 3 examples together inside the `Column`:
 
-```
+```dart
 Column(
   children: [
     // Modify code here
@@ -414,7 +414,7 @@ Through this tutorial, you learned:
 
 * Constraints are passed down the widget tree.
 
-* `Expanded` ****provides *bounded* constraints to a `Row` or `Column`’s child.
+* `Expanded` provides *bounded* constraints to a `Row` or `Column`’s child.
 
 * Flutter Inspector is your best friend when dealing with layout issues.
 

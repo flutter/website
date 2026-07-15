@@ -35,7 +35,7 @@ The `Image.frameBuilder` property is responsible for building the Image widget a
 
 When implementing a placeholder widget, first check whether the image has already been loaded with `wasSynchronouslyLoaded` and, if so, return the `child`. If not, use [`AnimatedSwitcher`](https://api.flutter.dev/flutter/widgets/AnimatedSwitcher-class.html) to create a cross-fade between the placeholder and the image as it loads:
 
-```
+```dart
 class ImageWidgetPlaceholder extends StatelessWidget {
   const ImageWidgetPlaceholder({
     required this.image,
@@ -75,7 +75,7 @@ After adding placeholders, the layout no longer shifts around, and instead the i
 
 If your app has a splash or welcome screen before images are shown, you can also precache those images by calling the [`precacheImage`](https://api.flutter.dev/flutter/widgets/precacheImage.html) function.
 
-```
+```dart
 precacheImage(NetworkImage(url), context);
 ```
 
@@ -91,7 +91,7 @@ The following GIF shows an example of precaching images on a Welcome screen:
 
 By default, `MaterialApp` uses page transitions for routing relevant to the platform (slide in upwards for Android or from the side for iOS). To override this behavior, you can create your own [`PageTransitionsTheme`](https://api.flutter.dev/flutter/material/PageTransitionsTheme-class.html) class. To detect when the application runs on the web, use the [`kIsWeb`](https://api.flutter.dev/flutter/foundation/kIsWeb-constant.html) constant. If it is on the web, disable the transition by returning the child:
 
-```
+```dart
 import 'package:flutter/material.dart';
 
 class NoTransitionsOnWeb extends PageTransitionsTheme {
@@ -120,7 +120,7 @@ class NoTransitionsOnWeb extends PageTransitionsTheme {
 
 Set the `pageTransitionsTheme` for our `MaterialApp`:
 
-```
+```dart
 MaterialApp(
   theme: ThemeData(
     pageTransitionsTheme: NoTransitionsOnWeb(),
@@ -134,7 +134,7 @@ The page transition without any animation:
 <DashImage figure src="images/1Db6XWyMRM9gGhSEpHY6w7A.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
 
 
-## **Conclusion**
+## Conclusion
 
 I hope you found some useful tips in this article for how to improve the perceived performance in a Flutter web application. For the [Flutter Gallery](https://gallery.flutter.dev/#/), we disabled the page transitions on the web and added placeholders for images to avoid a layout shift while loading. The implementation is similar to what is described in this article, and if you want to see the code you can find it on [GitHub](https://github.com/flutter/gallery).
 

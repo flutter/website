@@ -50,7 +50,7 @@ Many studies in the Gallery demonstrate ideas for different app styles that we r
 
 Get started by installing the Flutter SDK according to the [Windows install instructions](https://flutter.dev/docs/get-started/install/windows). To target Windows desktop, you first need to [install the tooling described in the desktop docs](https://flutter.dev/desktop#additional-windows-requirements). By default, Flutter assumes that you’re building production software and isn’t configured to develop Windows apps. However, that’s easily fixed from the command line:
 
-```
+```bash
 $ flutter channel dev
 $ flutter upgrade
 $ flutter config --enable-windows-desktop
@@ -91,7 +91,7 @@ The benefit of using these plugins is that most of them also support other Flutt
 
 If you’d like to build your own plugins for Windows, you can. Once you’re on the dev channel and you have Windows enabled for your machine, you can get started with the following command:
 
-```
+```bash
 $ flutter create --template plugin --platforms windows hello_plugin
 ```
 

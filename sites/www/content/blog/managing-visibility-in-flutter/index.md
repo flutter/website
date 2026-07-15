@@ -17,7 +17,7 @@ I thought I’d write a quick snippet / tutorial on how you can easily write a g
 
 For most use cases there are going to be four specific visibility states:
 
-### **Visible**
+### Visible
 
 This is self explanatory.
 
@@ -35,7 +35,7 @@ Your widget is not rendered at all. Ideally the widget is never included in the 
 
 Regarding cost, you should consider the following: **It is always going to be better for your app to never include the widget in the first place**. This way Flutter doesn’t have to worry about widgets that aren’t ever going to be displayed. If it’s something that you *may* include based on some state then you can still use this approach as well but it *may* help to simplify things by using a more generic mechanism. In general, your approach will be a bit like:
 
-```
+```dart
 List<Widget> views = [];
 if (shouldBeIncluded) {
   views.add(myView);
@@ -59,7 +59,7 @@ So, what does the code look like? Like this:
 
 A quick note on how it works before we get into the caveats:
 
-* For **Visible**: ****we don’t do anything special.
+* For **Visible**: we don’t do anything special.
 
 * For **Invisible**: we wrap the widget in an IgnorePointer widget and an Opacity widget with the value zero. This limits your ability to interact with the widget and hides it but *will keep it in place*. So, you will see empty space wherever the widget is inserted.
 

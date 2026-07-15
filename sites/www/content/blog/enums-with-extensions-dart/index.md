@@ -21,7 +21,7 @@ I’ve always used enums in my Flutter code, but integrating enums and extension
 
 Let’s say you make an enumeration and your text is dependent on your enum. Previously, I would have used a switch statement within the `Widget` by using [IIFE](https://en.wikipedia.org/wiki/Immediately_invoked_function_expression) ([medium post](https://medium.com/dartlang/3-cool-dart-patterns-6d8d9d3d8fb8)). An *immediately invoked function expression* lets you invoke an anonymous method, which is a useful Dart pattern. But using this pattern might lead to spaghetti code, as shown in the example below. Also, if you need to add the same text elsewhere, you would have to copy the entire code snippet instead of just making a function call.
 
-```
+```dart
 Text((){
 
   switch (selectedColor) {
@@ -68,7 +68,7 @@ Also, what happens if you need to change the text color based on the enum? You w
 
 Instead, you can extend your enum and create a method within that extension so you don’t have to use an IIFE . That way when you invoke your method in your code, it looks cleaner but still gives you the same result. This is an important technique that Java developers are familiar with, and is an expected capability of enums.
 
-```
+```dart
 enum SelectedColor {
 
   primaryColor,
@@ -107,7 +107,7 @@ extension SelectedColorExtension on SelectedColor {
 
 The `describeEnum()` function, which is defined in the Flutter foundation library, strips off the enum class name from `enumEntry.toString()`. I provide the code below in the event that you want to use it outside of Flutter development, for other Dart projects:
 
-```
+```dart
 String describeEnum(Object enumEntry) {
 
   final String description = enumEntry.toString();
@@ -135,7 +135,7 @@ The [Flutter Gallery](https://gallery.flutter.dev/#/) uses enums with extensions
 
 [Extension methods](https://dart.dev/guides/language/extension-methods) are a powerful tool provided by Dart. By using enums and extension methods together, you can have cleaner, more scalable code.
 
-Learn more about the useful dart patterns in[ 3 Cool Dart Patterns for everyday programming in Flutter.](https://medium.com/dartlang/3-cool-dart-patterns-6d8d9d3d8fb8)
+Learn more about the useful dart patterns in [3 Cool Dart Patterns for everyday programming in Flutter.](https://medium.com/dartlang/3-cool-dart-patterns-6d8d9d3d8fb8)
 
 *About the author: Jose recently graduated from university and now works on [Material](https://material.io), a design system that helps teams build high-quality digital experiences. Jose’s team maintains the Flutter [material library](https://api.flutter.dev/flutter/material/material-library.html).*
 

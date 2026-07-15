@@ -8,7 +8,7 @@ category: releases
 layout: blog
 ---
 
-Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) and [Dart 3.5](https://medium.com/dartlang/dart-3.5-6ca36259fa2f) alongside the last stop[ in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
+Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) and [Dart 3.5](https://medium.com/dartlang/dart-3.5-6ca36259fa2f) alongside the last stop [in the I/O 2024 Connect series,](https://ioconnectchina.googlecnapps.cn/) happening in just a few hours in China — one of Flutter’s most prolific communities in the world, making this moment very special.
 
 <DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.gif" />
 

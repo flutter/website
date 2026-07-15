@@ -13,21 +13,21 @@ The first thing to add to your code is a good README that starts with a summary 
 
 Next up, the code itself. Does the code follow conventions for layout and usage? This may be as simple as where does the code go, or as intricate as appropriate settings for linters and the like. I like programming community languages that have adopted a strong standard as to code formatting, layout, and linting rule sets. These standards bring conformity to the look and feel of the code which make it easier to navigate. To enforce code formatting for Dart and Flutter you can add the following command to your CI pipeline to fail the build if it isn’t correctly formatted:
 
-```
+```bash
 $ dart format --output none --set-exit-if-changed .
 ```
 
 
 After code formatting, the next step is enforcing a good set of lints. For Dart, I strongly recommend investigating the [lints](https://pub.dev/packages/lints) package, and for Flutter I likewise recommend the [flutter_lints](https://pub.dev/packages/flutter_lints) package. To make sure the lints pass in the CI pipeline, add the following command:
 
-```
+```bash
 $ dart analyze
 ```
 
 
 Tests. Oh so many tests. Unit tests, integration tests, and for Flutter we also have Widget tests. Tests are great for samples, as the tests communicate intent of how a piece of code is intended to be used. The tests also keep a codebase evergreen, when used in combination with the aforementioned CI pipeline. A good place to learn more about Flutter’s testing capability is the [How to test a Flutter app codelab](https://codelabs.developers.google.com/codelabs/flutter-app-testing). The CI commands for Dart and Flutter respectively:
 
-```
+```bash
 $ flutter test   # for Flutter projects
 $ dart test      # for pure Dart projects
 ```

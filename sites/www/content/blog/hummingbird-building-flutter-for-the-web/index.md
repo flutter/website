@@ -96,7 +96,7 @@ If we are unable to express a picture using HTML+CSS, we fall back to canvas. Ca
 
 One challenge with the 2D canvas is that browsers represent it as a bitmap, a buffer of memory that stores *Width* x *Height* pixels. As a result scaling a canvas results in pixelation. If scaling results in resizing the picture we need to resize the canvas. We found that allocating canvases is fairly expensive, and so is resizing them. On top of that, when compositing multiple canvases onto the same page the browser has to perform raster composition, which also shows up in our profiles. Compositing rasters works differently from display lists. You can paint multiple display lists onto the same memory buffer. We call Canvas 2D-backed canvas implementation *BitmapCanvas*. We are researching ways to make bitmap canvases more efficient.
 
-To express Flutter’s opacity, transform, offset, clip rect, and other [layers](https://docs.flutter.io/flutter/rendering/Layer-class.html) we use plain HTML elements. For example, an opacity layer becomes an `&lt;flt-opacity&gt;` element with the `opacity` CSS attribute on it, a transform layer becomes an `&lt;flt-transform&gt;` element with the `transform` CSS attribute, and clip rect becomes an `&lt;flt-clip-rect&gt;` with `overflow: hidden`.
+To express Flutter’s opacity, transform, offset, clip rect, and other [layers](https://docs.flutter.io/flutter/rendering/Layer-class.html) we use plain HTML elements. For example, an opacity layer becomes an `<flt-opacity>` element with the `opacity` CSS attribute on it, a transform layer becomes an `<flt-transform>` element with the `transform` CSS attribute, and clip rect becomes an `<flt-clip-rect>` with `overflow: hidden`.
 
 When all is said and done, a frame is rendered onto the page as a tree of HTML elements with DomCanvas and BitmapCanvas as leaf nodes. For example:
 
@@ -124,7 +124,7 @@ HTML+CSS+Canvas works in all modern browsers. However, we are already looking in
 
 As of this writing, Chrome and Opera are the only browsers to support CSS Paint in production. However, other browsers [are in various stages of shipping](https://ishoudinireadyyet.com/) their implementations.
 
-We have experimental support for the CSS Paint API in Flutter for Web and it shows good results already, particularly in performance. Our implementation simply serializes paint commands into a custom CSS property. The paint worklet reads those commands and executes them. We render text using the normal `&lt;p&gt;` and `&lt;span&gt;` HTML elements.
+We have experimental support for the CSS Paint API in Flutter for Web and it shows good results already, particularly in performance. Our implementation simply serializes paint commands into a custom CSS property. The paint worklet reads those commands and executes them. We render text using the normal `<p>` and `<span>` HTML elements.
 
 Our current serialization mechanism isn’t particularly efficient — it’s a tree of nested lists converted to JSON — but part of the Houdini project is to add support for [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays). When it becomes available we will encode paint commands as typed arrays instead of JSON strings. Typed arrays are [transferable](https://developer.mozilla.org/en-US/docs/Web/API/Transferable), which means they can be passed from the main isolate to the paint worklet by reference. No copying of memory involved.
 
@@ -148,7 +148,7 @@ Finally, in the spirit of keeping Flutter code portable across platforms, we avo
 
 ### Embedding Flutter in existing web-apps
 
-We have not yet added proper support for this, but we intend to explore it in the future. A couple of approaches we are considering are `&lt;iframe&gt;` and shadow DOM.
+We have not yet added proper support for this, but we intend to explore it in the future. A couple of approaches we are considering are `<iframe>` and shadow DOM.
 
 ### Embedding non-Flutter components in Flutter
 

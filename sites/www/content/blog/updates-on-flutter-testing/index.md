@@ -20,7 +20,7 @@ And so, to solve these problems and continue to improve the Flutter testing expe
 
 Using the `integration_test` plugin requires two steps. First, add the plugin to your `pubspec.yaml` file as a development dependency, and use `flutter pub get` to pull the plugin into your project:
 
-```
+```yaml
 # pubspec.yaml
 …
 dev_dependencies:
@@ -75,7 +75,7 @@ Future<void> main() => integrationDriver();
 
 This call to `integrationDriver` is a convenience wrapper around the `integrationDriver` plugin to enable you to run your new tests with the `flutter drive` command:
 
-```
+```bash
 $ flutter drive \
   --driver=test_driver/integration_test.dart \
   --target=test/widget_integration_test.dart

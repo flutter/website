@@ -59,7 +59,7 @@ We also fixed the top crashing bug, which was an error when the Flutter tool is 
 
 In terms of documentation, we have an ever increasing list of samples that can be created directly from the flutter create tool. From the command line, you can run a command such as:
 
-```
+```bash
 flutter create --sample=material.AppBar.1 mysample
 ```
 

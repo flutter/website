@@ -29,7 +29,7 @@ All M3 components configure the default colors of the theme’s `ColorScheme`. T
 <DashImage figure src="images/1CPv57Dp1cYXPz-YtZ2jMcA.webp" />
 
 
-### **NavigationBar**
+### NavigationBar
 
 This provides an M3 version of `BottomNavigationBar` widget. While [M3](https://m3.material.io/components/navigation-bar/overview) uses different colors, highlighting, and elevation, it works as it did before. To override the default appearance of the `NavigationBars` widget, use the `NavigationBarTheme` widget. Though you don’t need to migrate existing apps to this component, you should use it for new apps.
 
@@ -96,7 +96,7 @@ The M3 `Drawer` updates the colors and elevation while making some small layout 
 
 M3 updates all `TextField` widgets to support native gestures. Double clicking or triple clicking with a mouse work the same as double tapping or triple tapping on a touch device. By default, the `TextField` and `CupertinoTextField` widgets use these features.
 
-### **`TextField` double click/tap gestures**
+### `TextField` double click/tap gestures
 
 * **Double click + drag:** Extends the selection in word blocks.
 
@@ -105,7 +105,7 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 <DashImage figure src="images/1QFzoK7Gj3Q6uFopP7dOJhw.gif" />
 
 
-### **`TextField` triple click/tap gestures**
+### `TextField` triple click/tap gestures
 
 ### Triple click
 
@@ -147,19 +147,19 @@ This work also allows the team to advance toward SLSA L2 and L3 compliance. Thes
 
 ## Web
 
-### **Flutter web apps improved load times**
+### Flutter web apps improved load times
 
 This release reduces the file size of icon fonts. It pruned unused glyphs from both Material and Cupertino.
 
-### **CanvasKit reduced size for all browsers**
+### CanvasKit reduced size for all browsers
 
 Chromium-based browsers can use an even smaller custom CanvasKit “flavor”. The hosted CanvasKit serves from Google’s industry-leading CDN. This should improve performance further.
 
-### **Element embedding**
+### Element embedding
 
 You can now [serve Flutter web apps from a specific element in a page](https://docs.flutter.dev/deployment/web#embedding-a-flutter-app-into-an-html-page). Before this release, your apps could either fill the entire page body or display within an `iframe` tag. [Sample code](https://github.com/flutter/samples/tree/main/web_embedding) can be found in GitHub.
 
-### **Shader support**
+### Shader support
 
 Web apps can use Flutter’s [fragment shader support](https://docs.flutter.dev/development/ui/advanced/shaders).
 
@@ -303,7 +303,7 @@ The documentation now includes cross platform design considerations for specific
 
 ## Android
 
-### **Android CameraX support**
+### Android CameraX support
 
 [Camera X](https://developer.android.com/training/camerax), a Jetpack library, simplifies adding rich camera functionality to your Android app. This functionality applies across a wide selection of Android Camera hardware. With this release, we add preliminary support for CameraX to the Flutter Camera plugin. This support covers the following use cases:
 

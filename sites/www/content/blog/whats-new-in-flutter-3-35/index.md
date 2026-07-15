@@ -39,11 +39,11 @@ Previously, you had to explicitly enable stateful hot reload on the web using an
 
 The `--web-experimental-hot-reload` flag is no longer necessary to enable hot reload and you can remove it from your workflow or any IDE launch configurations you may have configured.
 
-### **Feedback**
+### Feedback
 
 We know everyone can have a slightly different development environment, so if yours is broken by this change, you can disable hot reload with the flag `--no-web-experimental-hot-reload` for now. If you discover any issues, please file a bug using Dart’s [web hot reload issue template](https://github.com/dart-lang/sdk/issues/new?template=5_web_hot_reload.yml). For more information, see the [hot reload on the web documentation](https://docs.flutter.dev/platform-integration/web/building#hot-reload-web).
 
-### **What’s next?**
+### What’s next?
 
 Current active work will bring hot reload to more development environments, including `-d web-server`. We expect this will unlock more of your productivity while developing on the web, so keep an eye out for future releases!
 
@@ -270,9 +270,9 @@ We are incredibly excited to get this into your hands. To get started, check out
 
 * **Read the docs**: **[**Getting Started with Flutter Widget Previewer (Experimental)](https://docs.flutter.dev/development/tools/widget-previewer)
 
-* **Give feedback**: File issues and feature requests in the[ Flutter GitHub repository](https://github.com/flutter/flutter/issues/new/choose).
+* **Give feedback**: File issues and feature requests in the [Flutter GitHub repository](https://github.com/flutter/flutter/issues/new/choose).
 
-* **Learn more**: For a technical deep-dive, see the[ Flutter Widget Previews Architecture document](https://flutter.dev/go/widget-previews-architecture).
+* **Learn more**: For a technical deep-dive, see the [Flutter Widget Previews Architecture document](https://flutter.dev/go/widget-previews-architecture).
 
 ### Analysis Server speed improvements
 

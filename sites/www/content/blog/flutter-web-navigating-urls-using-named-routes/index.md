@@ -67,7 +67,7 @@ See a [full interactive example of this on DartPad](https://dartpad.dev/embed-fl
 
 You may need to address more complex scenarios then addressed here, such as having pattern matching inside the routes to allow for dynamic URLs. To extend this example, assume that you have many different articles on the overview page. For each article you want to be able to navigate directly via URLs:
 
-```
+```plaintext
 /#/article/a-very-interesting-article
 /#/article/newsworthy-news
 ```

@@ -69,7 +69,7 @@ Adding 3D and custom shaders raises the bar for graphics performance in a portab
 
 While you can write an app entirely using Flutter and Dart, almost any non-trivial project needs to connect with other code. On the web, Flutter may be used as an embedded component within a larger app; on mobile, apps may need to call system APIs or other code written in another language. Our second major theme of investment is therefore *seamless integration for web and mobile.*
 
-On the web, we’re previewing a new feature that we’re calling **element embedding**, which allows Flutter content to be added to any standard web `&lt;div&gt;`. When embedded in this way, Flutter just becomes a web component, integrating cleanly with the web DOM and even enabling the use of CSS selectors and transformations to style the parent Flutter object.
+On the web, we’re previewing a new feature that we’re calling **element embedding**, which allows Flutter content to be added to any standard web `<div>`. When embedded in this way, Flutter just becomes a web component, integrating cleanly with the web DOM and even enabling the use of CSS selectors and transformations to style the parent Flutter object.
 
 We’re also making some big changes to the [js](http://pub.dev/packages/js) package, to enable seamless **interoperability between JavaScript and Dart** code. With js, you can annotate any function in your Dart code with a `@JSExport` attribute, and then call it from your JavaScript code.
 

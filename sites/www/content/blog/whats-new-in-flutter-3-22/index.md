@@ -36,7 +36,7 @@ Flutter 3.22 introduces significant updates to Impeller, the rendering engine th
 
 ### Impeller
 
-### **Vulkan backend feature complete on Android**
+### Vulkan backend feature complete on Android
 
 In this release, Impeller’s Vulkan backend for Android is feature complete. In particular, in the past few months, the team has been hard at work completing the implementation of [fast advanced blends](https://github.com/flutter/engine/pull/50154), support for custom fragment shaders with the [FragmentProgram API](https://github.com/flutter/engine/pull/49543), [PlatformView](https://github.com/flutter/engine/pull/50730) support (though it requires a [small API migration](https://docs.flutter.dev/release/breaking-changes/android-surface-plugins)), and fully implementing [all blur styles](https://github.com/flutter/flutter/issues/134178).
 
@@ -205,7 +205,7 @@ For those of you monetizing your Flutter apps with Ads, we’ve got some excitin
 
 **Enhanced support for User Messaging Platform (UMP) SDK:** The update adds support for the latest APIs from the Android UMP SDK version 2.2.0 and iOS UMP SDK version 2.4.0. The UMP SDK is crucial for complying with privacy regulations, making it easier for you to obtain user consent for personalized ads. This new version introduces several new APIs to simplify the consent gathering process.
 
-**Expanded mediation partners:** We’ve broadened your ad monetization horizons by offering integrations with popular ad partners, including [Unity](https://pub.dev/packages/gma_mediation_unity), [Meta](https://pub.dev/packages/gma_mediation_meta), [AppLovin](https://pub.dev/packages/gma_mediation_applovin), [Iron Source](https://pub.dev/packages/gma_mediation_ironsource), [Mintegral](https://pub.dev/packages/gma_mediation_mintegral), [Pangle](https://pub.dev/packages/gma_mediation_pangle), [DT Exchange](https://pub.dev/packages/gma_mediation_dtexchange), [InMobi](https://pub.dev/packages/gma_mediation_inmobi), and[ Liftoff.](https://pub.dev/packages/gma_mediation_liftoffmonetize) You can now maximize your app revenue with expanded mediation options and simplified implementation.
+**Expanded mediation partners:** We’ve broadened your ad monetization horizons by offering integrations with popular ad partners, including [Unity](https://pub.dev/packages/gma_mediation_unity), [Meta](https://pub.dev/packages/gma_mediation_meta), [AppLovin](https://pub.dev/packages/gma_mediation_applovin), [Iron Source](https://pub.dev/packages/gma_mediation_ironsource), [Mintegral](https://pub.dev/packages/gma_mediation_mintegral), [Pangle](https://pub.dev/packages/gma_mediation_pangle), [DT Exchange](https://pub.dev/packages/gma_mediation_dtexchange), [InMobi](https://pub.dev/packages/gma_mediation_inmobi), and [Liftoff.](https://pub.dev/packages/gma_mediation_liftoffmonetize) You can now maximize your app revenue with expanded mediation options and simplified implementation.
 
 We encourage you to try out these new features in your Flutter apps and let us know which other mediation partners you’d like to see us support. Your feedback is invaluable as we continue to enhance the Google Mobile Ads SDK for Flutter.
 

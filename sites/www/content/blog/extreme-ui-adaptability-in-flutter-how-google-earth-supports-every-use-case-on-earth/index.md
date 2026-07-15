@@ -16,7 +16,7 @@ The search for Google Earth’s tech stack of the future was heavily informed by
 
 The deciding factors to use Flutter were twofold. First, integrating with the existing Google Earth engine proved to be a straightforward task using method channels. Second, Google Earth not only wanted to streamline their codebases, but also to reimagine their UI entirely. Any major UI overhaul is already something of a rewrite, and Google Earth opted to write one new Flutter app instead of performing surgery on three existing apps. This complicated the task, but the team committed to a clean break and obsessive focus on adaptability. In the end, the Google Earth team came to power their UI across three platforms with Flutter.
 
-## **Defining adaptability**
+## Defining adaptability
 
 And so, the Google Earth team set out on an adventure to push the limits of UI adaptability. Prior art abounds on creating UIs tailored to different user journeys — dating back to the dawn of smartphones and the entire internet’s collective realization that most websites needed a rethink for small screens. Browser APIs and CSS patterns emerged to build websites with an awareness of their screen’s resolution; and those ideas have been prominent ever since. Even in Flutter’s earliest days, developers knew phone screens would vary and made their apps’ UIs depend on the screen’s resolution. And if that resolution changed — either because the user rotated their phone or resized their browser window, the app’s UI would *respond*. In Flutter, as in the web for years before it, ***responsive UIs*** improved user experiences.
 

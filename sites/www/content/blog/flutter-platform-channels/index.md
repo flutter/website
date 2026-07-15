@@ -66,7 +66,7 @@ For most use cases you would probably employ *method channels* for platform comm
 
 At the most basic level, Flutter talks to platform code using asynchronous message passing with binary messages — meaning the message payload is a byte buffer. To distinguish between messages used for different purposes, each message is sent on a logical “channel” which is just a name string. The examples below use the channel name `foo`.
 
-```
+```dart
 *// Send a binary message from Dart to the platform.*
 
 final WriteBuffer buffer = WriteBuffer()
@@ -80,10 +80,10 @@ print('Message sent, reply ignored');
 
 On Android such a message can be received, as a `java.nio.ByteBuffer`, using the following Kotlin code:
 
-```
-*// Receive binary messages from Dart on Android.
+```kotlin
+// Receive binary messages from Dart on Android.
 // This code can be added to a FlutterActivity subclass, typically
-// in onCreate.*
+// in onCreate.
 
 flutterView.setMessageHandler("foo") { message, reply ->
   message.order(ByteOrder.nativeOrder())
@@ -97,10 +97,10 @@ flutterView.setMessageHandler("foo") { message, reply ->
 
 The `ByteBuffer` API supports reading off primitive values while automatically advancing the current read position. The story on iOS is similar; suggestions for improving my weak Swift fu are very welcome:
 
-```
-*// Receive binary messages from Dart on iOS.*
-*// This code can be added to a FlutterAppDelegate subclass,
-// typically in application:didFinishLaunchingWithOptions:.*
+```swift
+// Receive binary messages from Dart on iOS.
+// This code can be added to a FlutterAppDelegate subclass,
+// typically in application:didFinishLaunchingWithOptions:.
 
 let flutterView =
   window?.rootViewController as! FlutterViewController;
@@ -118,7 +118,7 @@ flutterView.setMessageHandlerOnChannel("foo") {
 
 Communication is bidirectional, so you can send messages in the opposite direction too, from Java/Kotlin or Objective-C/Swift to Dart. Reversing the direction of the above setup looks as follows:
 
-```
+```plaintext
 *// Send a binary message from Android.*
 
 val message = ByteBuffer.allocateDirect(12)
@@ -176,7 +176,7 @@ Working at the level of binary messages, you need to worry about delicate detail
 
 Suppose you want to send and receive string messages instead of byte buffers. This can be done using a message channel, a simple kind of platform channel, constructed with a string codec. The code below shows how to use message channels in both directions across Dart, Android, and iOS:
 
-```
+```plaintext
 *// String messages*
 
 // Dart side
@@ -236,8 +236,8 @@ The channel name is specified only on channel construction. After that, calls to
 
 These are noble advantages to be sure, but you’d probably agree that `BasicMessageChannel` doesn’t do all that much. Which is on purpose. The Dart code above is equivalent to the following use of the binary messaging foundations:
 
-```
-**const** codec = StringCodec();
+```dart
+const codec = StringCodec();
 
 // Send message to platform and receive reply.
 final String reply = codec.decodeMessage(
@@ -268,13 +268,13 @@ This remark applies to the [Android](https://docs.flutter.io/javadoc/io/flutter/
 
 For various historical reasons, the Flutter framework defines four different message codecs:
 
-* [`StringCodec`](https://docs.flutter.io/flutter/services/StringCodec-class.html) Encodes strings using UTF-8. As we’ve just seen, message channels with this codec have type `BasicMessageChannel&lt;String&gt;` in Dart.
+* [`StringCodec`](https://docs.flutter.io/flutter/services/StringCodec-class.html) Encodes strings using UTF-8. As we’ve just seen, message channels with this codec have type `BasicMessageChannel<String>` in Dart.
 
-* [`BinaryCodec`](https://docs.flutter.io/flutter/services/BinaryCodec-class.html) Implementing the identity mapping on byte buffers, this codec allows you to enjoy the convenience of channel objects in cases where you don’t need encoding/decoding. Dart message channels with this codec have type `BasicMessageChannel&lt;ByteData&gt;`.
+* [`BinaryCodec`](https://docs.flutter.io/flutter/services/BinaryCodec-class.html) Implementing the identity mapping on byte buffers, this codec allows you to enjoy the convenience of channel objects in cases where you don’t need encoding/decoding. Dart message channels with this codec have type `BasicMessageChannel<ByteData>`.
 
-* [`JSONMessageCodec`](https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html) Deals in “JSON-like” values (strings, numbers, Booleans, null, lists of such values, and string-keyed maps of such values). Lists and maps are heterogeneous and can be nested. During encoding, the values are turned into JSON strings and then to bytes using UTF-8. Dart message channels have type `BasicMessageChannel&lt;dynamic&gt;` with this codec.
+* [`JSONMessageCodec`](https://docs.flutter.io/flutter/services/JSONMessageCodec-class.html) Deals in “JSON-like” values (strings, numbers, Booleans, null, lists of such values, and string-keyed maps of such values). Lists and maps are heterogeneous and can be nested. During encoding, the values are turned into JSON strings and then to bytes using UTF-8. Dart message channels have type `BasicMessageChannel<dynamic>` with this codec.
 
-* [`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html) Deals in slightly more generalized values than the JSON codec, supporting also homogeneous data buffers (`UInt8List`, `Int32List`, `Int64List`, `Float64List`) and maps with non-string keys. The handling of numbers differs from JSON with Dart ints arriving as 32 or 64 bit signed integers on the platform, depending on magnitude — never as floating-point numbers. Values are encoded into a custom, reasonably compact, and extensible binary format. The standard codec is designed to be the default choice for channel communication in Flutter. As for JSON, Dart message channels constructed with the standard codec have type `BasicMessageChannel&lt;dynamic&gt;`.
+* [`StandardMessageCodec`](https://docs.flutter.io/flutter/services/StandardMessageCodec-class.html) Deals in slightly more generalized values than the JSON codec, supporting also homogeneous data buffers (`UInt8List`, `Int32List`, `Int64List`, `Float64List`) and maps with non-string keys. The handling of numbers differs from JSON with Dart ints arriving as 32 or 64 bit signed integers on the platform, depending on magnitude — never as floating-point numbers. Values are encoded into a custom, reasonably compact, and extensible binary format. The standard codec is designed to be the default choice for channel communication in Flutter. As for JSON, Dart message channels constructed with the standard codec have type `BasicMessageChannel<dynamic>`.
 
 As you may have guessed, message channels work with any message codec implementation that satisfies a simple contract. This allows you to plug in your own codec, if you need to. You’ll have to implement compatible encoding and decoding in Dart, Java/Kotlin, and Objective-C/Swift.
 
@@ -284,34 +284,34 @@ As you may have guessed, message channels work with any message codec implementa
 
 *Static typing of messages in Dart.* A message channel configured with the standard message codec gives type `dynamic` to messages and replies. You’d often make your type expectations explicit by assigning to a typed variable:
 
-```
-**final** String reply1 = **await** channel.send(msg1);
-**final** int reply2 = **await** channel.send(msg2);
+```dart
+final String reply1 = await channel.send(msg1);
+final int reply2 = await channel.send(msg2);
 ```
 
 
 But there’s a caveat when dealing with replies involving generic type parameters:
 
-```
-**final** List<String> reply3 = **await** channel.send(msg3);      *// Fails.*
-**final** List<dynamic> reply3 = **await** channel.send(msg3);     *// Works.*
+```dart
+final List<String> reply3 = await channel.send(msg3);      // Fails.
+final List<dynamic> reply3 = await channel.send(msg3);     // Works.
 ```
 
 
-The first line fails at runtime, unless the reply is null. The standard message codec is written for heterogeneous lists and maps. On the Dart side, these have runtime types `List&lt;dynamic&gt;` and `Map&lt;dynamic, dynamic&gt;`, and Dart 2 prevents such values from being assigned to variables with more specific type arguments. This situation is similar to Dart JSON deserialization which produces `List&lt;dynamic&gt;` and `Map&lt;String, dynamic&gt;` — as does the JSON message codec.
+The first line fails at runtime, unless the reply is null. The standard message codec is written for heterogeneous lists and maps. On the Dart side, these have runtime types `List<dynamic>` and `Map<dynamic, dynamic>`, and Dart 2 prevents such values from being assigned to variables with more specific type arguments. This situation is similar to Dart JSON deserialization which produces `List<dynamic>` and `Map<String, dynamic>` — as does the JSON message codec.
 
 Futures can get you into similar trouble:
 
-```
-Future<String> greet() => channel.send('hello, world');    *// Fails.*
-Future<String> greet() **async** {                             *// Works.*
-  **final** String reply = **await** channel.send('hello, world');
-  **return** reply;
+```dart
+Future<String> greet() => channel.send('hello, world');    // Fails.
+Future<String> greet() async {                             // Works.
+  final String reply = await channel.send('hello, world');
+  return reply;
 }
 ```
 
 
-The first method fails at runtime, even if the reply received is a string. The channel implementation creates a `Future&lt;dynamic&gt;` regardless of the type of the reply, and such an object cannot be assigned to a `Future&lt;String&gt;`.
+The first method fails at runtime, even if the reply received is a string. The channel implementation creates a `Future<dynamic>` regardless of the type of the reply, and such an object cannot be assigned to a `Future<String>`.
 
 *Why the “basic“ in BasicMessageChannel?* Message channels seem to be used only in rather restricted situations where you are communicating some form of homogeneous event stream in an implied context. Like keyboard events, perhaps. For most applications of platform channels, you’re going to need to communicate not only values, but also what you want to happen with each value, or how you’d like it to be interpreted by the receiver. One way to do that is to have the message represent a method call with the value as argument. So you’ll want a standard way of separating the method name from the argument in the message. And you’ll also want a standard way to distinguish between success and error replies. This is what *method* channels do for you. Now, `BasicMessageChannel` was originally named `MessageChannel`, but was renamed to avoid confusing `MessageChannel` with `MethodChannel` in code. Being more generally applicable, method channels kept the shorter name.
 
@@ -332,7 +332,7 @@ Method channels were the Flutter team’s answer to the challenge of defining a 
 
 Here’s how you would use a method channel in the simple case of invoking a bit of platform code from Dart. The code is associated with the name `bar` which is not a method name in this case, but could have been. All it does is construct a greeting string and return it to the caller, so we can code this with the reasonable assumption that the platform invocation won’t fail (we’ll look at error handling further below):
 
-```
+```plaintext
 *// Invocation of platform methods, simple case.*
 
 // Dart side.
@@ -370,8 +370,8 @@ By adding cases to the switch constructs, we can easily extend the above to hand
 
 The Dart code above is equivalent to the following:
 
-```
-**const** codec = StandardMethodCodec();
+```dart
+const codec = StandardMethodCodec();
 
 final ByteData reply = await BinaryMessages.send(
   'foo',
@@ -388,10 +388,10 @@ The [Android](https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodCha
 
 The argument value in the example is the single string `world`. But the default method codec, aptly named the “standard method codec”, uses the standard *message* codec under the hood to encode payload values. This means that the “generalized JSON-like” values described earlier are all supported as method arguments and (successful) results. In particular, heterogeneous lists support multiple arguments, while heterogeneous maps support named arguments. The default arguments value is null. A few examples:
 
-```
-**await** channel.invokeMethod('bar');
-**await** channel.invokeMethod('bar', <dynamic>['world', 42, pi]);
-**await** channel.invokeMethod('bar', <String, dynamic>{
+```dart
+await channel.invokeMethod('bar');
+await channel.invokeMethod('bar', <dynamic>['world', 42, pi]);
+await channel.invokeMethod('bar', <String, dynamic>{
   name: 'world',
   answer: 42,
   math: pi,
@@ -407,7 +407,7 @@ The Flutter SDK includes two method codecs:
 
 You can configure method channels with any method codec, including custom ones. To fully understand what is involved in implementing a codec, let’s look at how errors are handled at the method channel API level by extending the example above with a fallible `baz` method:
 
-```
+```plaintext
 *// Method calls with error handling.*
 
 // Dart side.
@@ -523,7 +523,7 @@ An event channel is a specialized platform channel intended for the use case of 
 
 Here’s how you would consume a platform event stream on the Dart side:
 
-```
+```dart
 *// Consuming events on the Dart side.*
 
 const channel = EventChannel('foo');
@@ -538,7 +538,7 @@ channel.receiveBroadcastStream().listen((dynamic event) {
 
 The code below shows how to produce events on the platform side, using sensor events on Android as an example. The main concern is to ensure that we are listening to events from the platform source (the sensor manager in this case) and sending them through the event channel precisely when 1) there is at least one stream listener on the Dart side and 2) the ambient `Activity` is running. Packaging up the necessary logic in a single class increases the chance of doing this correctly:
 
-```
+```kotlin
 *// Producing sensor events on Android.*
 
 // SensorEventListener/EventChannel adapter.
@@ -642,9 +642,9 @@ Inside modules, our main concern is to guard against programming errors that are
 
 Two simple examples:
 
-```
-*// Dart: we expect to receive a non-null List of integers.*
-**for (final** int n **in** **await** channel.invokeMethod('getFib', 100)) {
+```plaintext
+// Dart: we expect to receive a non-null List of integers.
+for (final int n in await channel.invokeMethod('getFib', 100)) {
   print(n * n);
 }
 
@@ -665,7 +665,7 @@ fun process(name: String, age: Int, result: Result) { ... }
 ```
 
 
-The Android code exploits the generically typed `&lt;T&gt; T argument(String key)` method of `MethodCall` which looks up the key in the arguments, assumed to be a map, and casts the value found to the target (call site) type. A suitable exception is thrown, if this fails for any reason. Being thrown from a method call handler, it would be logged, and an error result sent to the Dart side.
+The Android code exploits the generically typed `<T> T argument(String key)` method of `MethodCall` which looks up the key in the arguments, assumed to be a map, and casts the value found to the target (call site) type. A suitable exception is thrown, if this fails for any reason. Being thrown from a method call handler, it would be logged, and an error result sent to the Dart side.
 
 ### Don’t mock platform channels
 
@@ -673,26 +673,26 @@ The Android code exploits the generically typed `&lt;T&gt; T argument(String key
 
 You can certainly do that, but channel objects don’t actually need to be mocked to play nicely with unit tests. Instead, you can register mock message or method handlers to play the role of the platform during a particular test. Here is a unit test of a function `hello` that is supposed to invoke the `bar` method on channel `foo`:
 
-```
-test('gets greeting from platform', () **async** {
-  **const** channel = MethodChannel('foo');
-  channel.setMockMethodCallHandler((MethodCall call) **async** {
-    **if** (call.method == 'bar')
-      **return** 'Hello, ${call.arguments}';
-    **throw** MissingPluginException();
+```dart
+test('gets greeting from platform', () async {
+  const channel = MethodChannel('foo');
+  channel.setMockMethodCallHandler((MethodCall call) async {
+    if (call.method == 'bar')
+      return 'Hello, ${call.arguments}';
+    throw MissingPluginException();
   });
-  expect(**await** hello('world'), 'Platform says: Hello, world');
+  expect(await hello('world'), 'Platform says: Hello, world');
 });
 ```
 
 
 To test code that sets up message or method handlers, you can synthesize incoming messages using `BinaryMessages.handlePlatformMessage`. At present, this method is not mirrored on platform channels, though that could easily be done as indicated in the code below. The code defines a unit test of a class `Hello` that is supposed to collect incoming arguments of calls to method `bar` on channel `foo`, while returning greetings:
 
-```
-test('collects incoming arguments', () **async** {
-  **const** channel = MethodChannel('foo');
-  **final** hello = Hello();
-  **final** String result = **await** handleMockCall(
+```dart
+test('collects incoming arguments', () async {
+  const channel = MethodChannel('foo');
+  final hello = Hello();
+  final String result = await handleMockCall(
     channel,
     MethodCall('bar', 'world'),
   );

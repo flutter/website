@@ -68,7 +68,7 @@ On Android, you can turn these governors off. We call this process “scale lock
 
 * You probably want something less generic and more lightweight unless you’re running a large benchmarking operation like Skia. Have a look at Developer Quest’s [shell script](https://github.com/2d-inc/developer_quest/blob/master/tool/lock_android_scaling.sh) for some pointers. For example, the following excerpt sets a CPU to the `userspace` governor (the only governor that doesn’t change CPU frequencies on its own).
 
-```
+```bash
 #!/usr/bin/env bash
 
 GOV="userspace"

@@ -20,7 +20,7 @@ To get you started, we’ve written sample code that handles all of the puzzle l
 
 Be sure to share your solutions on Twitter and tag them using the hashtag #flutterpuzzlehack for a chance to be featured on our Twitter account!
 
-## **Details**
+## Details
 
 **Date**: *All projects must be submitted by February 28, 2022, 1:59pm PT (GMT -7). Winners will be announced on March 23, 2022.*
 
@@ -42,15 +42,15 @@ Be sure to share your solutions on Twitter and tag them using the hashtag #flutt
 
 **Prizes** *include a fully loaded Macbook Pro, cash, Flutter swag, and the opportunity to be featured on Flutter’s promotional channels.*
 
-## **Product Info Sessions**
+## Product Info Sessions
 
 On top of all of those resources, we’re partnering with the Flutter Community YouTube channel to host teams like Google Chrome, Firebase, and Rive to talk about everything from best practices for building on the web to effective use of integrations to take your project to the next level. Check out the [contest page](https://flutterhack.devpost.com/) for a detailed schedule.
 
 <YoutubeEmbed id="ue2qa2L5CF4" title="Flutter Puzzle Hack Reveal" fullwidth="true"/>
 
 
-## **Stay Connected**
+## Stay Connected
 
 We’re working with our friends at DevPost for this challenge, which means that you’ll be able to vote for your favorite submissions, connect with other participants and find all relevant contest updates on the DevPost platform.
 
-Head to [flutterhack.devpost.com ](https://flutterhack.devpost.com/)to get started. Good luck, and have fun!
+Head to [flutterhack.devpost.com](https://flutterhack.devpost.com/) to get started. Good luck, and have fun!

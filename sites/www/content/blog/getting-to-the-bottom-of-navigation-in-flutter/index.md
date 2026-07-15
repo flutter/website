@@ -206,7 +206,7 @@ The *ListPage* widget is similar. Tapping any list item causes it to push a ‘/
 
 ## Cross Fading Destination Views
 
-The basic idea here is pretty simple: stack the destination views, fade in the selected view, and fade out the unselected view[s]. Once a destination has faded out we’ll move it [*Offstage*](https://api.flutter.dev/flutter/widgets/Offstage-class.html) so that it’s no longer rendered or hit tested. To ensure that moving views offstage preserves their state, give them a Global Key.
+The basic idea here is pretty simple: stack the destination views, fade in the selected view, and fade out the unselected views. Once a destination has faded out we’ll move it [*Offstage*](https://api.flutter.dev/flutter/widgets/Offstage-class.html) so that it’s no longer rendered or hit tested. To ensure that moving views offstage preserves their state, give them a Global Key.
 
 A brief word about global keys and preserving a widget’s state.
 

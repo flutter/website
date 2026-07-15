@@ -24,7 +24,7 @@ The Flutter framework is a great choice for building games driven by user intera
 
 In conventional apps, screens are usually visually static until there is an event or interaction from the user. With games, the inverse is true — the UI is rendered continuously and the state of the game constantly changes. Flame provides a game widget, which internally manages the game loop so that the UI is constantly rendering in a performant way. The `Game` class contains the implementation of the game components and logic, which is passed to the `GameWidget` in the widget tree. In I/O Pinball, the game loop reacts to the position and state of the ball on the playfield and applies the necessary effects if the ball collides with an object or falls out of play.
 
-```
+```dart
 @override
 void update(double dt) {
   super.update(dt);
@@ -46,7 +46,7 @@ One of the challenges of building I/O Pinball was figuring out how to create a 3
 
 The ball, plunger, both flippers, and the Chrome Dino are elements with a dynamic body, which are affected by the world’s physics. The ball also changes size depending on its position on the board. As the ball moves to the top of the board, it shrinks in size to appear farther away from the user’s perspective. In addition, the gravity on the ball is adjusted to take into account the angle of the pinball machine, so that the ball falls faster on an incline.
 
-```
+```dart
 /// Scales the ball's body and sprite according to its position on the board.
 class BallScalingBehavior extends Component with ParentIsA<Ball> {
   @override
@@ -79,7 +79,7 @@ I/O Pinball heavily relies upon the [`forge2d`](https://pub.dev/packages/forge2d
 
 `forge2D` allows us to listen to when collisions between `Fixtures` occur. We then add `ContactCallbacks` to `Fixtures` to be notified when contact happens between two elements. For example, when the ball (which has a `Fixture` with a `CircleShape`) comes in contact with a bumper (which has a `Fixture` with an `EllipseShape`), the score increases. On these callbacks we can set exactly where contact begins and ends, so that when two elements come in contact with another, a collision occurs.
 
-```
+```dart
 @override
 Body createBody() {
   final shape = CircleShape()..radius = size.x / 2;
@@ -102,7 +102,7 @@ There are a few elements on the pinball playfield, such as Android, Dash, Sparky
 <DashImage figure src="images/1l1WjOu97J6hfDTO0KgzKlA.webp" alt="Sprite sheet example" caption="Sprite sheet example" />
 
 
-```
+```dart
 final spriteSheet = gameRef.images.fromCache(
   Assets.images.android.spaceship.animatronic.keyName,
 );
@@ -136,7 +136,7 @@ The I/O Pinball leaderboard displays the top scores of players around the world 
 <DashImage figure src="images/1vD6H6j8WKFxS5RJf8Z0EDA.webp" />
 
 
-```
+```dart
 /// Acquires top 10 [LeaderboardEntryData]s.
 Future<List<LeaderboardEntryData>> fetchTop10Leaderboard() async {
   try {
@@ -171,7 +171,7 @@ The theme of pinball varies depending on which character a user selects before b
 <DashImage figure src="images/1I0xzMeuSQHI_vB0x28IucQ.webp" />
 
 
-```
+```dart
 /// {@template character_theme}
 /// Base class for creating character themes.
 ///
@@ -215,7 +215,7 @@ abstract class CharacterTheme extends Equatable {
 
 I/O Pinball game state is handled with [`flame_bloc`](https://pub.dev/packages/flame_bloc), a package that bridges blocs with Flame components. For example, we use `flame_bloc` to keep track of the number of rounds left to play, any bonuses achieved through the game, as well as the current game score. In addition, there is a widget at the top of the widget tree that contains logic for the loading page, including instructions for how to play the game. We also follow the [behavior pattern](https://en.wikipedia.org/wiki/Behavioral_pattern) to encapsulate and isolate certain elements of a game feature based on its components. For example, the bumpers play a sound when hit by the ball, so we implemented the `BumperNoiseBehavior` class to handle this.
 
-```
+```dart
 class BumperNoiseBehavior extends ContactBehavior {
   @override
   void beginContact(Object other, Contact contact) {

@@ -59,7 +59,7 @@ To get most of the widget changes, set the `useMaterial3` flag. However, some wi
 
 ### NavigationBar & NavigationDrawer
 
-The [`BottomNavigationBar`](https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html) widget has been replaced with the `[NavigationBa](https://api.flutter.dev/flutter/material/NavigationBar-class.html)r`. It’s a little taller and doesn’t have a drop-shadow (that indicates elevation).
+The [`BottomNavigationBar`](https://api.flutter.dev/flutter/material/BottomNavigationBar-class.html) widget has been replaced with the [`NavigationBar`](https://api.flutter.dev/flutter/material/NavigationBar-class.html). It’s a little taller and doesn’t have a drop-shadow (that indicates elevation).
 
 ### Segmented buttons
 
@@ -113,6 +113,6 @@ If you’d like to customize your color scheme further, visit the [Material gene
 
 Flutter’s migration to Material 3 continues. You can follow the progress at the [Bring Material 3 to Flutter](https://github.com/flutter/flutter/issues/91605#issuecomment-1264995277) GitHub issue. You can also contribute! We welcome bug reports and fixes that make Material 3 even better for Flutter developers like you.
 
-Our most recent update brought the [`SnackBar`](https://api.flutter.dev/flutter/material/SnackBar-class.html), [`TabBar`](https://api.flutter.dev/flutter/material/TabBar-class.html) and [`Slider`](https://api.flutter.dev/flutter/material/Slider-class.html)widgets up to Material 3 spec. So far, we’ve migrated 27/30 components, and added a range of new features to support dynamic color, text themes, Android 12 functionality, and more.
+Our most recent update brought the [`SnackBar`](https://api.flutter.dev/flutter/material/SnackBar-class.html), [`TabBar`](https://api.flutter.dev/flutter/material/TabBar-class.html) and [`Slider`](https://api.flutter.dev/flutter/material/Slider-class.html) widgets up to Material 3 spec. So far, we’ve migrated 27/30 components, and added a range of new features to support dynamic color, text themes, Android 12 functionality, and more.
 
 If you’d like to get more involved with the Flutter community, head over to [flutter.dev/community](https://flutter.dev/community) and find us on your favorite social platform. See you there!

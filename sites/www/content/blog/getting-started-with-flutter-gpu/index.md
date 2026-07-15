@@ -16,7 +16,7 @@ This article contains two “getting started” guides for these packages:
 If you’re an experienced graphics programmer or you’re interested in low level graphics and want to build renderers from scratch in Flutter, then this guide will get you set up to start tinkering with Flutter GPU. You’ll draw your first triangle from scratch… in Flutter!
 
 1. 💚 **Intermediate:** [3D rendering with Flutter Scene](#6b35)
-****If you’re a Flutter developer that wants to add 3D functionality to your apps, or you want to create 3D games using Dart and Flutter, then this is a guide for you! You’ll set up a project that imports and renders 3D assets in Flutter.
+If you’re a Flutter developer that wants to add 3D functionality to your apps, or you want to create 3D games using Dart and Flutter, then this is a guide for you! You’ll set up a project that imports and renders 3D assets in Flutter.
 
 ## Getting started with Flutter GPU
 
@@ -282,14 +282,14 @@ flutter run -d macos --enable-impeller
 
 If Flutter GPU is working, then you should see the default color format printed to the console.
 
-```
+```plaintext
 flutter: Default color format: PixelFormat.b8g8r8a8UNormInt
 ```
 
 
 If Impeller isn't enabled, an exception is thrown when attempting to access `gpu.gpuContext`.
 
-```
+```plaintext
 Exception: Flutter GPU requires the Impeller rendering backend to be enabled.
 
 The relevant error-causing widget was:
@@ -621,7 +621,7 @@ Use `Node.fromAsset` to load the model from the asset bundle. Place the followin
 ```
 
 
-`Node.fromAsset` asynchronously deserializes the model from the asset bundle and resolves the returned `Future&lt;Node&gt;` once it's ready to be added to the scene.
+`Node.fromAsset` asynchronously deserializes the model from the asset bundle and resolves the returned `Future<Node>` once it's ready to be added to the scene.
 
 The `MyAppState.initState` should now look as follows:
 

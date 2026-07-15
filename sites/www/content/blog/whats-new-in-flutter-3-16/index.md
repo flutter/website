@@ -135,7 +135,7 @@ Soon after the 3.13 release, the [two_dimensional_scrollables](https://pub.dev/p
 
 ### Impeller
 
-### **Android**
+### Android
 
 In this release, we are pleased to share that Impeller on Android is ready for preview feedback on the stable channel. Since early this year, the team has been hard at work on a Vulkan backend for Impeller, and this preview includes gathering feedback about Impeller’s characteristics on Vulkan-capable devices.
 
@@ -144,7 +144,7 @@ In this release, we are pleased to share that Impeller on Android is ready for p
 
 Impeller isn’t yet expected to perform well on devices without Vulkan support. As we bring Impeller’s OpenGL backend up to feature completeness in the coming months, we plan to also seek feedback about Impeller’s characteristics on such devices in a future stable release.
 
-Flutter developers can try out Impeller on Vulkan-capable Android devices by passing the `— enable-impeller` flag to `flutter run`, or by adding the following setting to their project’s `AndroidManifest.xml` file under the `&lt;application&gt;` tag:
+Flutter developers can try out Impeller on Vulkan-capable Android devices by passing the `— enable-impeller` flag to `flutter run`, or by adding the following setting to their project’s `AndroidManifest.xml` file under the `<application>` tag:
 
 ```bash
 <meta-data
@@ -246,7 +246,7 @@ The Android 14 release included the predictive back gesture feature that allows 
 
 ### App extensions
 
-Flutter can now be used to target some[ iOS app extensions](https://developer.apple.com/app-extensions/). This means that you can draw the UI for certain types of iOS app extensions using Flutter widgets. This doesn’t work for all types of app extensions because there might be limitations to the API (for example, home screen widgets) or memory.
+Flutter can now be used to target some [iOS app extensions](https://developer.apple.com/app-extensions/). This means that you can draw the UI for certain types of iOS app extensions using Flutter widgets. This doesn’t work for all types of app extensions because there might be limitations to the API (for example, home screen widgets) or memory.
 
 <DashImage figure src="images/0OxjjAlCbFFXWrrR9.webp" />
 

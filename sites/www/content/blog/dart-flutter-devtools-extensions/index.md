@@ -58,7 +58,7 @@ Now let’s get started!
 
 What you will need:
 
-* Flutter SDK &gt;= `3.17.0–0.0.pre` & Dart SDK &gt;= `3.2`.
+* Flutter SDK &gt;= `3.17.0–0.0.pre` & Dart SDK >= `3.2`.
 
 * A [Pub](https://pub.dev/) package (existing or new) to add a DevTools extension to.
 > To use the latest [devtools_extensions](https://pub.dev/packages/devtools_extensions) and [devtools_app_shared](https://pub.dev/packages/devtools_app_shared) packages, it is acceptable to develop your extension from the Flutter master or beta channel.
@@ -113,7 +113,7 @@ foo/  # formerly the repository root of your pub package
 
 In the Dart package that will provide the DevTools extension to users, add a top-level `extension` directory:
 
-```
+```plaintext
 foo/
   extension/
   lib/
@@ -123,7 +123,7 @@ foo/
 
 Under the `extension` directory, create the following structure **exactly as shown**:
 
-```
+```plaintext
 extension/
   devtools/
     build/
@@ -172,7 +172,7 @@ Now it is time to build your extension.
 
 *Note: skip this step if you are building a standalone extension, since you already did this when you set up your package hierarchy.*
 
-From the directory where you want your extension source code to live, run the following command, replacing `foo_devtools_extension` with `&lt;your_package_name&gt;_devtools_extension`:
+From the directory where you want your extension source code to live, run the following command, replacing `foo_devtools_extension` with `<your_package_name>_devtools_extension`:
 
 ```shell
 flutter create --template app --platforms web foo_devtools_extension

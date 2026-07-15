@@ -161,7 +161,7 @@ Push the build artifacts to the target Raspberry Pi device.
 
 On the host, check out the application you want to run on the Raspberry Pi, and build the application bundle using the Flutter tools. This can be done with the following command:
 
-```
+```bash
 flutter build bundle
 ```
 
@@ -172,7 +172,7 @@ Push this bundle to the Raspberry Pi.
 
 In the specific case of the Raspberry Pi Embedder, run the application using the following invocation:
 
-```
+```bash
 flutter /path/to/flutter_assets/
 ```
 

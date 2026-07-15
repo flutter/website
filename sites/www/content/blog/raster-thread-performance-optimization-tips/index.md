@@ -51,7 +51,7 @@ All Flutter apps run on at least two parallel threads: the UI thread and the Ras
 
 To be more concrete, let’s have a look at a build function:
 
-```
+```dart
 Widget build(BuildContext context) {
   return Image.asset('dash.png');
 }
@@ -110,7 +110,7 @@ Armed with knowledge, let’s look at the source code. If the code is unfamiliar
 
 FlutterFolio’s home page, at least on mobile devices, seems to be, basically, a [vertical PageView populated with BookCoverWidgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/covers_flow_list_mobile.dart#L36-L40). Looking at `BookCoverWidget`, you can see that it’s essentially [a Stack of various widgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/book_cover/book_cover.dart#L77-L122), starting with a large image at the bottom, continuing with some animated overlays, the main text content, and ending with a mouse-over overlay at the top.
 
-```
+```dart
 child: Stack(fit: StackFit.expand, children: [
   /// /////////////////////////////
   /// Background Image
@@ -178,7 +178,7 @@ That defeats the purpose of the whole page. Looking closer at `BookCoverImage`, 
 
 Moving on, there’s this code:
 
-```
+```dart
 /// Black overlay, fades out on mouseOver
 AnimatedContainer(duration: Times.slow, 
   color: Colors.black.withOpacity(overlayOpacity)),
@@ -201,7 +201,7 @@ All in all, this is a massive change for removing a single widget that does noth
 
 The [fix](https://github.com/gskinnerTeam/flutter-folio/pull/62) is simple:
 
-```
+```dart
 /// Black overlay, fades out on mouseOver
 if (overlayOpacity > 0)
   AnimatedContainer(duration: Times.slow,
@@ -223,7 +223,7 @@ Before moving on to a completely different issue, it’s often a good idea to lo
 
 In this case, the next few lines create large gradients that fade in as you scroll:
 
-```
+```dart
 /// When in large mode, show some gradients, 
 /// should sit under the Text elements
 if (widget.largeMode) ...[

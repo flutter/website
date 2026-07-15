@@ -25,7 +25,7 @@ In the old v1 Android embedding, all plugins were initialized and configured at 
 
 **Old plugin initialization**
 
-```
+```java
 class MyOldPlugin {
   public static void registerWith(PluginRegistrar registrar) {
     // Obtain any references that the plugin requires from the 
@@ -40,7 +40,7 @@ class MyOldPlugin {
 
 **New plugin initialization**
 
-```
+```java
 *class* MyNewPlugin implements FlutterPlugin {
   public MyNewPlugin() {
     // All Android plugin classes must support a no-args 
@@ -89,7 +89,7 @@ Additionally, your plugin must not depend upon an `Activity` reference within `o
 
 Plugins that require access to an `Activity` must implement a 2nd interface called `ActivityAware`. The `ActivityAware` interface adds callbacks to your plugin class that tell your plugin when it’s sitting in an `Activity`, when that `Activity` goes through config changes, and when your plugin is no longer sitting in an `Activity`. Your plugin must respect these callbacks. The following example shows the outline of an `ActivityAware` plugin:
 
-```
+```java
 class MyNewPlugin implements FlutterPlugin, ActivityAware {
   @override
   public void onAttachedToFlutterEngine(FlutterPluginBinding binding) {
@@ -172,7 +172,7 @@ The core missing piece was a clear indication for which platforms a plugin suppo
 
 Under the previous `pubspec` schema the `flutter.plugin` key contained the different plugin configuration bits, instead we’ve introduced a new key per platform under the `flutter.plugin.platforms` key with the platform-specific plugin configuration. For example, here’s what the `pubspec` for a plugin that supports Android, iOS, macOS, and web looks like:
 
-```
+```yaml
 flutter:
   plugin:
     platforms:
@@ -197,7 +197,7 @@ environment:
 
 A plugin that supports a subset of these platforms can omit platform keys from the platforms map, for example:
 
-```
+```yaml
 flutter:
   plugin:
     platforms:
@@ -225,7 +225,7 @@ The most important thing to do when migrating is to only declare support for pla
 
 These are the relevant parts of a sample plugin’s `pubspec.yaml` file prior to the migration:
 
-```
+```yaml
 name: sample
 version: 0.3.1+5
 
@@ -252,7 +252,7 @@ Assuming that the plugin supports Android and iOS, upgrading to the new schema i
 
 The updated `pubspec` for this plugin looks like:
 
-```
+```yaml
 name: sample
 version: 0.3.2
 
@@ -307,7 +307,7 @@ How does the *platform interface* glue together the app-facing package and the c
 
 ## Old way of launching a URL
 
-```
+```dart
 Future<void> launch(String url) {
   channel.invokeMethod('launch', {
     'url': url,
@@ -318,7 +318,7 @@ Future<void> launch(String url) {
 
 In the federated plugin structure, the *platform interface package* replaces the `MethodChannel`. The platform-specific functionality that the app-facing package needs from the platform packages is encapsulated in a platform interface. In our example, the app-facing package is `package:url_launcher`, and the only platform-specific functionality it needs is the ability to launch a URL on the given platform. A (very) simple platform interface would look like:
 
-```
+```dart
 abstract class UrlLauncherPlatform {
   /// Launches the given [url].
   Future<void> launch(String url);
@@ -344,7 +344,7 @@ Now, instead of calling on the `MethodChannel`, the app-facing package would cal
 
 ## New way of launching a URL
 
-```
+```dart
 Future<void> launch(String url) {
   return UrlLauncherPlatform.instance.launch(url);
 }
@@ -355,7 +355,7 @@ So, the *app-facing package* calls into the *platform interface*. How does the p
 
 For example, if we wanted to write `package:url_launcher_web`, we would only need to write a class that extends `UrlLauncherPlatform` and launches a URL for the web platform. The code would look something like this:
 
-```
+```dart
 class UrlLauncherWeb extends UrlLauncherPlatform {
   /// The web platform automatically calls this when the app
   /// initializes.
@@ -386,7 +386,7 @@ Tests that use `AutomatedWidgetsFlutterBinding` run on the development machine, 
 
 **In the app-facing package** (such as `myplugin`), the package’s unit tests ensure that calls to the app-facing API result in expected interactions with the platform interface package. These tests typically import `package:mockito` to provide a fake platform interface and verify that it receives the correct calls. Here is an [example test](https://github.com/flutter/plugins/blob/master/packages/url_launcher/url_launcher/test/url_launcher_test.dart#L25) from package:url_launcher:
 
-```
+```dart
 test('returns true', () async {
   when(mock.canLaunch('foo')).thenAnswer((_) =>
     Future<bool>.value(true));
@@ -398,7 +398,7 @@ test('returns true', () async {
 
 **In the platform interface package** (such as `myplugin_platform_interface`), a platform interface is an abstract class and cannot be instantiated directly. However, the platform interface package typically contains the method channel implementation of the platform interface as well, so that’s what you should test. Tests for this package should focus on the method channel invocations that result from calls to the platform interface and the method channel. These tests typically use [`setMockMethodCallHandler`](https://api.flutter.dev/flutter/services/MethodChannel/setMockMethodCallHandler.html) with the [`isMethodCall`](https://api.flutter.dev/flutter/flutter_test/isMethodCall.html) matcher to verify behavior.
 
-```
+```dart
 test('canLaunch', () async {
   await launcher.canLaunch('[http://example.com/'](http://example.com/'));
   expect(
@@ -417,7 +417,7 @@ test('canLaunch', () async {
 
 This test mode is useful for writing tests in the platform implementation package (for example, `myplugin_web`).
 
-```
+```dart
 test('cannot launch "tel" URLs', () {
   expect(canLaunch('tel:5551234567'), completion(isFalse));
 });

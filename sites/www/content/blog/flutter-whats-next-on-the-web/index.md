@@ -23,7 +23,7 @@ This article provides more detail into our roadmap and the work planned for each
 
 It’s important that Flutter web apps feel natural on the web. This includes features such as scrolling behavior, text functionality, splash screens, hyperlinks, SEO, and other web-specific UI features.
 
-### **RTL text**
+### RTL text
 
 Previously, Flutter offered incomplete web support for right-to-left (RTL) languages such as Arabic and Hebrew. While the framework itself supported RTL text, the web engine produced undefined behavior because it ignored the distinction between LTR and RTL.
 
@@ -37,7 +37,7 @@ The recent stable release (2.5) added basic support for RTL so that all major us
 
 * [InlineSpans in RichText overlaps in RTL application](https://github.com/flutter/flutter/issues/82136) (fixed)
 
-### **Scrolling Behavior**
+### Scrolling Behavior
 
 While Flutter 2 included [several improvements](https://github.com/flutter/flutter/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged+label%3A%22f%3A+scrolling%22) to support scrolling behavior on desktop browsers (such as scroll bar support), scrolling behavior is still an area that at times doesn’t look or feel right on the browser or on the OS that the web app is running on.
 
@@ -55,7 +55,7 @@ While some of these behaviors depend on the work for Flutter desktop support, th
 
 🔍 Research for [trackpad support](https://github.com/flutter/flutter/issues/23604)
 
-### **App loading API**
+### App loading API
 
 Some web apps prefer to show a splash screen, loading indicator, or landing page when an app is loading or to offer a custom experience. Currently, there is no easy way to implement a custom experience or indicate that a Flutter web app is loading; this became more critical when rendering with the CanvasKit’s larger bundle size.
 
@@ -69,7 +69,7 @@ Accessibility is one of our top priorities; we aim to provide you with the tools
 
 Flutter 2.2 made significant improvements to accessibility support. Since then, we’ve heard concerns from end users trying to traverse their web apps with screen readers, such as [JAWS](https://www.freedomscientific.com/products/software/jaws/).
 
-In this roadmap, we are focusing on the issues with [supported screen readers ](https://flutter.dev/docs/development/accessibility-and-localization/accessibility#screen-readers)for desktop browsers, such as snackbar announcements. We will also continue to investigate ways to improve our overall accessibility support.
+In this roadmap, we are focusing on the issues with [supported screen readers](https://flutter.dev/docs/development/accessibility-and-localization/accessibility#screen-readers) for desktop browsers, such as snackbar announcements. We will also continue to investigate ways to improve our overall accessibility support.
 
 * [Fail to announce button press when using enter key](https://github.com/flutter/flutter/issues/83812)
 
@@ -79,7 +79,7 @@ In this roadmap, we are focusing on the issues with [supported screen readers ](
 
 Performance is an area we will always prioritize to improve the user experience with Flutter web apps. Currently, our main focus will improve scrolling jank, and speed up the initial load of web apps.
 
-### **Scrolling jank**
+### Scrolling jank
 
 Based on our recent quarterly survey, scrolling jank was one of the top performance issues reported. Our goal is to ensure that Flutter web apps scroll smoothly using gestures on mobile and mouse/keyboard on desktop, but that also depends on the type and quantity of content a web app expects a user to scroll through.
 
@@ -89,7 +89,7 @@ In the coming months we will primarily focus on improving jank due to image deco
 
 * [Make platform views less expensive in the CanvasKit renderer](https://github.com/flutter/flutter/issues/71884)
 
-### **Bundling CanvasKit (offline support)**
+### Bundling CanvasKit (offline support)
 
 Currently, Flutter web apps rendered in CanvasKit require extra manual steps to work offline as a Progressive Web App (PWA). In order to work fully as a PWA in offline mode out of the box, and ensure that the app meets strict content security policies, we need to bundle CanvasKit and font fallbacks.
 
@@ -99,7 +99,7 @@ We will start by bundling CanvasKit first, then bundle fonts, and add the toolin
 
 * [Support bundling CanvasKit instead of CDN](https://github.com/flutter/flutter/issues/70101)
 
-### **CanvasKit download size**
+### CanvasKit download size
 
 CanvasKit offers better performance than DOM-based approaches, and is therefore our default renderer on desktop browsers. However, the time needed to download an app impacts initial load performance (and the Lighthouse score for Flutter apps running on the web).
 
@@ -113,7 +113,7 @@ In this roadmap, we will investigate ways to reduce the download size of CanvasK
 
 The ability to integrate with browser code is important for leveraging the strength of the web platform. There are two ways for Flutter web apps to integrate with HTML: 1) using HTML platform views within Flutter web apps, or 2) embedding Flutter as a content island into an existing web app (sort of an add to app for web). While the former exists today and may need improvement, the latter will be a new feature that needs further design and development.
 
-### **Embedding with custom element (Add to app)**
+### Embedding with custom element (Add to app)
 
 Today, the only way to embed a Flutter web app into an existing website/web app is through an iframe. While that works for some use cases, it is not always an ideal solution for those slowly migrating their web app to use Flutter.
 
@@ -125,7 +125,7 @@ In this roadmap, we will investigate and design a custom solution that enables y
 
 Flutter’s ecosystem includes features that you use for development but currently lack web support, such as plugins, debugging, hot reload, and so on. In order for you to have a great developer experience on the web, we will continue to bridge the parity gap between mobile and web.
 
-### **Camera plugin**
+### Camera plugin
 
 A camera plugin has been one of the most requested plugins since our initial stable release; many of you find the parity gap to be a blocker when bringing Flutter mobile apps to the web.
 

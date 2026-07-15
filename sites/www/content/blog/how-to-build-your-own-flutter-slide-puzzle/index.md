@@ -15,11 +15,11 @@ By now you’ve probably read through the [Flutter Puzzle Hack](https://flutterh
 
 ## Slide puzzle architecture
 
-The provided source code implements a layered architecture with `flutter_bloc` ****to manage the state. Blocs handle everything from the game logic to theming. All state is managed in a consistent way; for any updates to the logic of the puzzle, you’ll only need to find the corresponding bloc and update it. The reset and shuffle game buttons, timer, and countdown are all separate blocs, so these might be other places where you consider implementing something creative: maybe an hourglass for a timer? Or a snazzy shuffle sequence?
+The provided source code implements a layered architecture with `flutter_bloc` to manage the state. Blocs handle everything from the game logic to theming. All state is managed in a consistent way; for any updates to the logic of the puzzle, you’ll only need to find the corresponding bloc and update it. The reset and shuffle game buttons, timer, and countdown are all separate blocs, so these might be other places where you consider implementing something creative: maybe an hourglass for a timer? Or a snazzy shuffle sequence?
 
 Note that all of the game logic is contained within a single bloc called `PuzzleBloc`. This will update with events such as tapping a tile to move the puzzle tile with `TileTapped` event or resetting the puzzle board completely with `PuzzleReset`. Each time a puzzle is updated, a new puzzle state is emitted.
 
-```
+```dart
 class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   PuzzleBloc(this._size, {this.random}) : super(const PuzzleState() {
     on<PuzzleInitialized>(_onPuzzleInitialized);
@@ -52,7 +52,7 @@ The sample puzzle code contains both a Simple and Dashatar theme. These can be u
 
 All of the theming in the demo happens at the top of the `PuzzlePage`. It is abstracted, so you’ll only need to update the theme elements in one place and have the changes reflected everywhere. Both the Simple and Dashatar themes define a range of options such as screen background, menu, logo, buttons, text colors, whether the theme displays a timer (present in the Dashatar theme, but not in the Simple theme), and more. You can find these in the “dashatar” and “simple” directories at the root of the repository.
 
-```
+```dart
 /// {@template simple_theme}
 /// The simple puzzle theme.
 /// {@endtemplate}
@@ -79,7 +79,7 @@ class SimpleTheme extends PuzzleTheme {
 
 Each puzzle theme has a `LayoutDelegate` that computes the layout of this theme. You can create new themes by reusing the same layout objects and only adjusting some theme options. For more advanced designs, the whole theme `LayoutDelegate` can be customized. For example, you can override the `backgroundBuilder` to make a custom background, displayed only on a large screen.
 
-```
+```dart
 @override
 Widget backgroundBuilder(PuzzleState state) {
   return Positioned(
@@ -104,7 +104,7 @@ Animations are a great element to explore in your slide puzzle. While the Simple
 
 Most of the animations in the Dashatar theme are implicit. This means that there is no need to write the whole animation yourself, as widgets animate changes to properties on their own. As an example, take a look at the `DashatarPuzzleTile` widget for how to animate the movement of tiles when the user taps a tile. Whenever a tile is tapped, its current position is updated and transitioned over the given `movementDuration` thanks to implicitly animated `AnimatedAlign`.
 
-```
+```dart
 class DashatarPuzzleTile extends StatelessWidget {
   ... 
   

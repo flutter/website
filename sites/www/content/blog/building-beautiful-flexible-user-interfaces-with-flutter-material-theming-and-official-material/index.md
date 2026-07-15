@@ -44,17 +44,13 @@ For a quick introduction to Material Theming with Flutter, check-out our Google 
 
 Lastly, we are happy to announce four new codelabs that teach core concepts required to create beautiful and flexible user interfaces with Flutter and Material Components:
 
-1. [**MDC 101 Flutter: Material Components Basics**
-](https://codelabs.developers.google.com/codelabs/mdc-101-flutter/)Learn the basics of using Material Components by building a simple app with core components.
+1. [**MDC 101 Flutter: Material Components Basics**](https://codelabs.developers.google.com/codelabs/mdc-101-flutter/): Learn the basics of using Material Components by building a simple app with core components.
 
-1. [**MDC 102 Flutter: Material Structure and Layout**
-](https://codelabs.developers.google.com/codelabs/mdc-102-flutter/)Learn how to use Material for structure and layout in Flutter, adding navigation, structure, and data.
+1. [**MDC 102 Flutter: Material Structure and Layout**](https://codelabs.developers.google.com/codelabs/mdc-102-flutter/): Learn how to use Material for structure and layout in Flutter, adding navigation, structure, and data.
 
-1. [**MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type**
-](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/)Use Material Components for Flutter to differentiate your product, and express your brand through design.
+1. [**MDC 103 Flutter: Material Theming with Color, Shape, Elevation, and Type**](https://codelabs.developers.google.com/codelabs/mdc-103-flutter/): Use Material Components for Flutter to differentiate your product, and express your brand through design.
 
-1. [**MDC 104 Flutter: Material Advanced Components**
-](https://codelabs.developers.google.com/codelabs/mdc-104-flutter/)Improve your design and learn to use our advanced component backdrop menu.
+1. [**MDC 104 Flutter: Material Advanced Components**](https://codelabs.developers.google.com/codelabs/mdc-104-flutter/): Improve your design and learn to use our advanced component backdrop menu.
 
 ### Next steps
 
