@@ -470,6 +470,8 @@
   children:
     - title: Use packages & plugins
       permalink: /packages-and-plugins/using-packages
+    - title: Package dependency management
+      permalink: /packages-and-plugins/dependency-management
     - title: Develop packages & plugins
       permalink: /packages-and-plugins/developing-packages
     - title: Swift Package Manager
