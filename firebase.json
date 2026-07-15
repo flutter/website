@@ -313,6 +313,7 @@
       { "source": "/go/admob-banner-recycle-perf", "destination": "https://docs.google.com/document/d/1A5IokVzA770_9EnatIV-rd4Zf51p06nR4i7hM8K3E_o/edit?tab=t.0", "type": 301 },
       { "source": "/go/agentic-apps-campaign", "destination": "https://flutter.dev/events/building-agentic-apps", "type": 301 },
       { "source": "/go/agentive-apps-campaign", "destination": "https://flutter.dev/events/building-agentic-apps", "type": 301 },
+      { "source": "/go/ai-guidelines", "destination": "https://github.com/flutter/flutter/blob/main/docs/contributing/Tree-hygiene.md#ai-contribution-guidelines", "type": 301 },
       { "source": "/go/allow-datatable-row-height-to-expand", "destination": "https://docs.google.com/document/d/1qr1IgaU2z9eaM6zCa4u-Q8kJD5Zq7IcdxVyrgR7CwZc/edit?usp=sharing&resourcekey=0-1bNp0ocF4AwGBj6NvRfrEA", "type": 301 },
       { "source": "/go/analyze-flutter-in-runtime", "destination": "https://docs.google.com/document/d/1VZOv9NsmNeXaqM9h9EjKTz5cg7lEsA623XBfbojXU5U/edit?usp=sharing", "type": 301 },
       { "source": "/go/android-assets-in-flutter", "destination": "https://docs.google.com/document/d/1jymgQYxRTe5rdprt74ERh7Jsa0lfnRuMnkOmJusLWsE/edit", "type": 301 },
