@@ -52,7 +52,7 @@ You might be tempted to set up the parent widget as follows, but in this scenari
 
 ```dart
 // BAD CODE
-[@override](http://twitter.com/override)
+@override
 void initState() {
  super.initState();
  _animationController = AnimationController(

@@ -34,7 +34,7 @@ In this app, there is a container and a button. When the button is pressed, `set
 
 
 ```dart
-[@override](http://twitter.com/override)
+@override
 Widget build(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -135,10 +135,10 @@ Here’s an example of a custom curve called SineCurve that uses the sine functi
 ```dart
 class SineCurve extends Curve {
   final double count;
- 
+
   SineCurve({this.count = 1});
- 
-  [@override](http://twitter.com/override)
+
+  @override
   double transformInternal(double t) {
     return sin(count * 2 * pi * t) * 0.5 + 0.5;
   }
