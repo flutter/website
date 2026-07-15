@@ -75,7 +75,7 @@ We have continued our effort to move logic from the Material library to the widg
 
 This release introduces a new [`Expansible`](https://main-api.flutter.dev/flutter/widgets/Expansible-class.html) widget that makes it easier to create widgets that expand and collapse with different visual themes. This new widget serves as the underlying building block for the Material-styled [`ExpansionTile`](https://main-api.flutter.dev/flutter/material/ExpansionTile-class.html).
 
-Another valuable addition in this release is [`RawMenuAnchor`](https://main-api.flutter.dev/flutter/widgets/RawMenuAnchor-class.html), contributed by community member [@davidhicks980](http://github.com/davidhicks980). This widget now serves as the underlying building block for the Material-styled [`MenuAnchor`](https://main-api.flutter.dev/flutter/material/MenuAnchor-class.html), paving the way for the creation of menus with diverse visual themes. Furthermore, `RawMenuAnchor` can be used independently as an unstyled menu, granting you full control over its appearance.
+Another valuable addition in this release is [`RawMenuAnchor`](https://main-api.flutter.dev/flutter/widgets/RawMenuAnchor-class.html), contributed by community member [@davidhicks980](https://github.com/davidhicks980). This widget now serves as the underlying building block for the Material-styled [`MenuAnchor`](https://main-api.flutter.dev/flutter/material/MenuAnchor-class.html), paving the way for the creation of menus with diverse visual themes. Furthermore, `RawMenuAnchor` can be used independently as an unstyled menu, granting you full control over its appearance.
 
 <DashImage figure src="images/0uHuGHM5dYCTkF_Vz.webp" />
 

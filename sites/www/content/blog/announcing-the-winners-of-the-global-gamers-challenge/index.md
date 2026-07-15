@@ -94,7 +94,7 @@ Waste sorting game with a creative approach to recycling education, featuring di
 
 We look forward to hanging out with these teams in New York City for a day of workshops and more in the Google offices and to celebrate with 60,000 other Global Citizens at Global Citizen Festival 2024!
 
-But these are just 10 of over 30 teams that won prizes from the Global Gamers Challenge, including other members of the Top 20, who you’ll see in the Honorable Mentions list. Head to [flutter.dev/global-gamers/#winners](http://flutter.dev/global-gamers/#winners) to see all of them!
+But these are just 10 of over 30 teams that won prizes from the Global Gamers Challenge, including other members of the Top 20, who you’ll see in the Honorable Mentions list. Head to [flutter.dev/global-gamers/#winners](https://flutter.dev/global-gamers/#winners) to see all of them!
 
 Congratulations to all of the winners!
 
@@ -136,6 +136,6 @@ Here are a couple ways that Flutter can help you spend less time worrying about 
 
 * **Flutter is productive:** Single codebase development with Flutter means you can write your game just one time, and deploy it across platforms. Features like stateful hot reload help you iterate quickly, speeding up your development flow.
 
-* **Flutter is easy to learn**: Even if you’re not a professional game developer, Starting with Flutter can be easier than with traditional game development tools. We also offer several resources, like game templates as part of the [Flutter Casual Games Toolkit](http://flutter.dev/games) that give you a launching pad to boost your game development skills.
+* **Flutter is easy to learn**: Even if you’re not a professional game developer, Starting with Flutter can be easier than with traditional game development tools. We also offer several resources, like game templates as part of the [Flutter Casual Games Toolkit](https://flutter.dev/games) that give you a launching pad to boost your game development skills.
 
 Thank you all for joining us on this journey! We can’t wait to see what you build next!

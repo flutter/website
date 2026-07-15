@@ -268,7 +268,7 @@ With the impending release of iOS 17 and Xcode 15, users who desire to develop u
 
 ### Flutter games updates
 
-We launched the [Flutter casual games toolkit](http://flutter.dev/games) in 2022 with a game template, tutorials, documentation, community spaces, and GCP/Firebase/Ad credits to jumpstart game development for Flutter Developers. Since then, tens of thousands of games have been published using Flutter! Since launch, we’ve actively engaged and surveyed Flutter game developers to find out how we could improve the games toolkit. Almost all of them mentioned wanting more resources and sample code to help them better design, develop and monetize their games.
+We launched the [Flutter casual games toolkit](https://flutter.dev/games) in 2022 with a game template, tutorials, documentation, community spaces, and GCP/Firebase/Ad credits to jumpstart game development for Flutter Developers. Since then, tens of thousands of games have been published using Flutter! Since launch, we’ve actively engaged and surveyed Flutter game developers to find out how we could improve the games toolkit. Almost all of them mentioned wanting more resources and sample code to help them better design, develop and monetize their games.
 
 Today, we are releasing a new update to the [Flutter Games web page](https://flutter.dev/games) with a carousel of video resources and new games to learn about while building in Flutter. We have a number of new updates to the toolkit coming in the next few months with additional resources and samples to kickstart your game development journey.
 

@@ -8,7 +8,7 @@ category: events
 layout: blog
 ---
 
-**Tl;DR: Flutter Create is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or less of Dart code. Whether you’re an expert or a beginner with Flutter, we invite you to join us and see what you can create. We also have over $10,000 in prizes for a few winners! Visit [flutter.dev/create](http://flutter.dev/create) to enter.**
+**Tl;DR: Flutter Create is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or less of Dart code. Whether you’re an expert or a beginner with Flutter, we invite you to join us and see what you can create. We also have over $10,000 in prizes for a few winners! Visit [flutter.dev/create](https://flutter.dev/create) to enter.**
 
 <YoutubeEmbed id="BKl6gUvvZGs" title="Introducing Flutter Create" fullwidth="true"/>
 
@@ -24,7 +24,7 @@ So we thought we’d see what you can do. Amaze us with what you can build with 
 
 Winners will be announced at Google I/O 2019.
 
-*[flutter.dev/create](http://flutter.dev/create) is your source for all challenge details and submissions.*
+*[flutter.dev/create](https://flutter.dev/create) is your source for all challenge details and submissions.*
 
 <DashImage figure src="images/1AyxOZQPLHstjafeVvwHbUg.webp" />
 
@@ -33,7 +33,7 @@ Winners will be announced at Google I/O 2019.
 
 ***Date:** All projects must be submitted by April 7 11:59pm PDT (GMT -7).*
 
-***How to Submit:** Entries will be collected on the form linked at [flutter.dev/create](http://flutter.dev/create).*
+***How to Submit:** Entries will be collected on the form linked at [flutter.dev/create](https://flutter.dev/create).*
 
 ***Winners & Prizes:** Submissions will be rated by Flutter experts against the following rubric: visual beauty, code quality, novelty of idea, and overall execution. Prizes include a fully loaded iMac Pro, Google Home Max, and Google Home Mini.*
 

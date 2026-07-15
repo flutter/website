@@ -35,7 +35,7 @@ Before diving head-first into how Flutter is built and why OEM widgets weren’t
 
 This is the part that excites me the most. That is, going back to first principles and thinking about what helps mobile developers most efficiently add value for their users, and what types of products do people want to create.
 
-To get to the heart of products that resonate the most with the needs of their customers, let’s look through some popular and editorial reviews and awards for past years’ trending apps. For example, MWC’s [Glomo Awards](https://www.globalmobileawards.com/nominee2017/), TIME’s [Best Apps of the Year](http://time.com/4549647/best-apps-year-2016/) and the Webby Awards’s [Mobile Apps](https://www.webbyawards.com/winners/2017/mobile-sites-apps/features-categories/best-practices/) section, with their People’s Voice awards selected by popular votes.
+To get to the heart of products that resonate the most with the needs of their customers, let’s look through some popular and editorial reviews and awards for past years’ trending apps. For example, MWC’s [Glomo Awards](https://www.globalmobileawards.com/nominee2017/), TIME’s [Best Apps of the Year](https://time.com/4549647/best-apps-year-2016/) and the Webby Awards’s [Mobile Apps](https://www.webbyawards.com/winners/2017/mobile-sites-apps/features-categories/best-practices/) section, with their People’s Voice awards selected by popular votes.
 
 Here’s a selection of highly acclaimed, award-winning apps we’ve all likely used and can extract learnings from:
 

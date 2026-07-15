@@ -402,6 +402,6 @@ So that’s an introduction to composing with StatelessWidgets and building an i
 
 Fortunately, Flutter also has StatefulWidgets, which we’ll tell you about in the next episode of this series.
 
-For more information about Flutter and all of its many widgets, head to [flutter.io](http://flutter.io).
+For more information about Flutter and all of its many widgets, head to [flutter.io](https://flutter.io).
 
-You can also [watch other episodes in the series here](http://bit.ly/FlutterWidgets101) or [try a Flutter codelab](http://bit.ly/Flutter-Codelab).
+You can also [watch other episodes in the series here](https://bit.ly/FlutterWidgets101) or [try a Flutter codelab](https://bit.ly/Flutter-Codelab).

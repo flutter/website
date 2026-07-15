@@ -76,7 +76,7 @@ I got some questions from colleagues and friends about how I was staying organiz
 
 The energy I got from this challenge eventually helped me explode right out of it. Instead of an internal blog, I went and launched my own personal site. Here I’m working outside the artificial bounds of building one small thing a day. Instead, I’m working on things big and small, grabbing ideas as they come, and moving on without hesitation.
 
-Come find me at [ladevzo.com/scrappy-path](http://ladevzo.com/scrappy-path) if you want to see how I’m applying these lessons outside the corporate firewall.
+Come find me at [ladevzo.com/scrappy-path](https://ladevzo.com/scrappy-path) if you want to see how I’m applying these lessons outside the corporate firewall.
 
 <DashImage figure src="images/1JLGrYXO8VOHh2Qp1NeHykQ.webp" alt="A screenshot of ladevzo.com. Check it out!" caption="A screenshot of ladevzo.com. Check it out!" />
 

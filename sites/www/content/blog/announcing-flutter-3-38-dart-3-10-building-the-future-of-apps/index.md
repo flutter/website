@@ -33,12 +33,12 @@ We’ve got a whole [Flutter Flight Plans series](https://www.youtube.com/playli
 <YoutubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI" fullwidth="true"/>
 
 
-**The easiest way to build with AI:** We’ve built a sample app powered by Firebase AI logic that helps you create a nice launching point for integrating AI features into your app. This sample app covers features such as using multi-modal content generation, in addition to the Gemini conversational live API. Get your hands dirty in the [Flutter AI Playground](http://g.co/firebase/flutter-ai-playground).
+**The easiest way to build with AI:** We’ve built a sample app powered by Firebase AI logic that helps you create a nice launching point for integrating AI features into your app. This sample app covers features such as using multi-modal content generation, in addition to the Gemini conversational live API. Get your hands dirty in the [Flutter AI Playground](https://g.co/firebase/flutter-ai-playground).
 
 <YoutubeEmbed id="tErMAB5FKNw" title="How I built a Google I/O keynote demo in 30 minutes" fullwidth="true"/>
 
 
-**Build multi-platform Flutter apps with Gemini CLI:** Head to [the docs](http://docs.flutter.dev/ai/create-with-ai#flutter-extension-for-gemini-cli) to jump into the Flutter extension for Gemini CLI.
+**Build multi-platform Flutter apps with Gemini CLI:** Head to [the docs](https://docs.flutter.dev/ai/create-with-ai#flutter-extension-for-gemini-cli) to jump into the Flutter extension for Gemini CLI.
 
 <YoutubeEmbed id="RZPkE5sllck" title="Build multiplatform apps with Gemini CLI" fullwidth="true"/>
 
@@ -104,6 +104,6 @@ So, what are you waiting for? Upgrade to Flutter 3.38 and Dart 3.10 and let’s 
 
 * Dive into [the future of AI apps](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)
 
-* Play in the [Flutter AI Playground](http://g.co/firebase/flutter-ai-playground)
+* Play in the [Flutter AI Playground](https://g.co/firebase/flutter-ai-playground)
 
-* Join the [flutter.dev/community](http://flutter.dev/community)
+* Join the [flutter.dev/community](https://flutter.dev/community)

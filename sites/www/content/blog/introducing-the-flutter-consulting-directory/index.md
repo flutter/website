@@ -10,7 +10,7 @@ layout: blog
 
 Design agencies and digital technology consultancies play a vital role in the success of applications. Enterprises often look to consultancies to help them build out proof of concepts, re-design existing applications, or act as a subject matter expert for development projects. Startups look to agencies to build their brand identity and create minimum viable prototypes. These trusted partners can be difficult to find.
 
-That’s why we’re excited to launch the [Flutter Consultant Directory.](http://flutter.dev/consultants)
+That’s why we’re excited to launch the [Flutter Consultant Directory.](https://flutter.dev/consultants)
 
 <DashImage figure src="images/1m5eYW0Qgmdse1bpkqbsPLQ.webp" alt="flutter.dev/consultants" caption="flutter.dev/consultants" />
 
@@ -49,7 +49,7 @@ As part of this launch, we’re highlighting resources to help prospective consu
 <DashImage figure src="images/1wgS4PLHJhlegD-knIZhEFA.webp" />
 
 
-### [Training Clients on Flutter](http://verygood.ventures/blog/training-clients-in-flutter)
+### [Training Clients on Flutter](https://verygood.ventures/blog/training-clients-in-flutter)
 
 *Learn how VGV created their successful Flutter training program. You can up skill your own developers, or your clients.* [*Read the blog post*](https://verygood.ventures/blog/training-clients-in-flutter).
 

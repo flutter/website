@@ -10,7 +10,7 @@ layout: blog
 
 *The Flutter 2.2 release focuses on polish and optimization, including iOS performance improvements, Android deferred components, updated service worker for Flutter web and more!*
 
-Today is the day we make Flutter 2.2 available. You get to it by switching to the stable channel and upgrading your current Flutter installation, or going to [flutter.dev/docs/get-started](http://flutter.dev/docs/get-started) to start a new installation.
+Today is the day we make Flutter 2.2 available. You get to it by switching to the stable channel and upgrading your current Flutter installation, or going to [flutter.dev/docs/get-started](https://flutter.dev/docs/get-started) to start a new installation.
 
 Even though it’s only been a couple of months since the Flutter 2 release, we have a lot of improvements to share in 2.2. This release merges 2,456 PRs and closes 3,105 issues across the framework, engine, and plugins repositories. Special shoutout to the Flutter community at large who provided a significant number of PRs and PR reviews, including [Abhishek01039](https://github.com/Abhishek01039) who contributed the most PRs (17) and [xu-baolin](https://github.com/xu-baolin), who reviewed the most PRs (9) towards Flutter 2.2. Thanks to all contributors for your help in bringing Flutter 2.2 to the stable channel. We couldn’t do it without you.
 
@@ -108,7 +108,7 @@ And on the subject of Material guidance, in this release we’ve landed not one 
 <DashImage figure src="images/0K7L6ppH1A1gBmVY-.webp" />
 
 
-These updates bring the total number of Material icons for your apps up to more than 7,000. If you have trouble finding the icon you’re looking for in that embarrassment of riches (who wouldn’t?) you can search by category and name at [fonts.google.com/icons](http://fonts.google.com/icons).
+These updates bring the total number of Material icons for your apps up to more than 7,000. If you have trouble finding the icon you’re looking for in that embarrassment of riches (who wouldn’t?) you can search by category and name at [fonts.google.com/icons](https://fonts.google.com/icons).
 
 <DashImage figure src="images/0NofBGAEBtDHtwclP.webp" alt="Searching for Flutter Material icons by name" caption="Searching for Flutter Material icons by name" />
 
@@ -333,7 +333,7 @@ In this release, `TextSpan` also supports `onEnter` and `onExit` along with the 
 
 ## Flutter 2.2 updates in preview
 
-In addition to the new features available for production use, Flutter 2.2 comes with a number of features in preview, including iOS shader compiler performance improvements, Android deferred component support, Flutter desktop updates, and ARM64 Linux host support from Sony. Please give these a try and [let us know if you have any issues](http://github.com/flutter/flutter/issues).
+In addition to the new features available for production use, Flutter 2.2 comes with a number of features in preview, including iOS shader compiler performance improvements, Android deferred component support, Flutter desktop updates, and ARM64 Linux host support from Sony. Please give these a try and [let us know if you have any issues](https://github.com/flutter/flutter/issues).
 
 ### Preview: iOS shader compilation improvements
 
@@ -381,7 +381,7 @@ For Android, this release uses Dart’s split AOT compilation feature to [allow 
 
 When building with deferred components enabled, Dart compiles code imported exclusively with the `deferred` keyword into separate shared libraries that are packed into deferred components together with assets.
 
-Deferred components are currently available only on Android, and this feature is offered as an early preview. Learn how to implement deferred components in the new [Deferred components](https://flutter.dev/docs/perf/deferred-components) page on flutter.dev. This page also links to a page on the Flutter wiki that contains a deep dive on how this feature works. Please log issues on [the Flutter issue tracker](http://github.com/flutter/flutter/issues).
+Deferred components are currently available only on Android, and this feature is offered as an early preview. Learn how to implement deferred components in the new [Deferred components](https://flutter.dev/docs/perf/deferred-components) page on flutter.dev. This page also links to a page on the Flutter wiki that contains a deep dive on how this feature works. Please log issues on [the Flutter issue tracker](https://github.com/flutter/flutter/issues).
 
 ### Flutter Windows UWP alpha
 
@@ -404,7 +404,7 @@ $ flutter run -d winuwp*
 ```
 
 
-Because you’re building a Windows UWP app, which runs in a sandbox environment on Windows, you’ll need to punch a hole in the app’s firewall on localhost during development to enable things like hot reload and debugger breakpoints. You can do that with a `checknetisolation` command by following the instructions on [the Flutter desktop docs page](http://flutter.dev/desktop/#windows-uwp). Once you’ve done that, you can see your favorite Flutter app running as a UWP app on Windows.
+Because you’re building a Windows UWP app, which runs in a sandbox environment on Windows, you’ll need to punch a hole in the app’s firewall on localhost during development to enable things like hot reload and debugger breakpoints. You can do that with a `checknetisolation` command by following the instructions on [the Flutter desktop docs page](https://flutter.dev/desktop/#windows-uwp). Once you’ve done that, you can see your favorite Flutter app running as a UWP app on Windows.
 
 <DashImage figure src="images/0d2HU5GSLz88DZ7pv.webp" alt="Your favorite Flutter app running in a Windows UWP container" caption="Your favorite Flutter app running in a Windows UWP container" />
 
@@ -414,7 +414,7 @@ Of course, you can run much more interesting UWP apps, like these Flutter apps r
 <YoutubeEmbed id="s_zIzr60vMA" title="Flutter UWP on XBOX" fullwidth="true"/>
 
 
-Special shout out to [clarkezone](https://github.com/clarkezone) who’s been working on this support for about as long as I’ve been on the Flutter team. For more details about the Windows UWP alpha, check out [flutter.dev/desktop/#windows-uwp](http://flutter.dev/desktop/#windows-uwp).
+Special shout out to [clarkezone](https://github.com/clarkezone) who’s been working on this support for about as long as I’ve been on the Flutter team. For more details about the Windows UWP alpha, check out [flutter.dev/desktop/#windows-uwp](https://flutter.dev/desktop/#windows-uwp).
 
 ### ARM64 Linux host support from Sony
 
@@ -439,9 +439,9 @@ Last but not least, there’s a new low-code app design and building tool called
 
 As part of this release, the Flutter Ecosystem Committee has been working hard to certify 24 new Flutter Favorite packages, our largest expansion yet. The newly tagged Flutter Favorites include:
 
-* **[FlutterFire packages](http://firebase.flutter.dev) in production:** `cloud_firestore`, `cloud_functions`, `firebase_auth`, `firebase_core`, `firebase_crashlytics`, `firebase_messaging,` and `firebase_storage`
+* **[FlutterFire packages](https://firebase.flutter.dev) in production:** `cloud_firestore`, `cloud_functions`, `firebase_auth`, `firebase_core`, `firebase_crashlytics`, `firebase_messaging,` and `firebase_storage`
 
-* **[Flutter Community “plus” packages](http://plus.fluttercommunity.dev):** `android_alarm_manager_plus`, `android_intent_plus`, `battery_plus`, `connectivity_plus`, `device_info_plus`, `network_info_plus`, `package_info_plus`, `sensors_plus,` and `share_plus`
+* **[Flutter Community “plus” packages](https://plus.fluttercommunity.dev):** `android_alarm_manager_plus`, `android_intent_plus`, `battery_plus`, `connectivity_plus`, `device_info_plus`, `network_info_plus`, `package_info_plus`, `sensors_plus,` and `share_plus`
 
 * **[`googleapis`](https://pub.dev/packages/googleapis) package**
 
@@ -496,7 +496,7 @@ The second is the ability to inject custom messages into the memory timeline. Th
 
 As Flutter apps in the wild get larger and larger, we will continue to ensure that Flutter developers have the tools they need to track down and fix memory leaks and runtime issues of all kinds.
 
-It isn’t just runtime issues in your use of the Flutter framework you want to track down; sometimes you want to track down issues related to packages as well. With over 15,000 Flutter-compatible packages and plugins on pub.dev, this becomes increasingly likely as your apps use more packages over time. So, with that in mind, we’ve been experimenting with adding a new **Provider** tab to Flutter DevTools. In fact, this tab was built by [Remi Roussel](https://github.com/rrousselGit), the author of [the `provider` package](http://pub.dev/packages/provider) itself (among many other wonderful things). If you’re running the latest version of Flutter DevTools and you are debugging a Flutter app that uses the `provider` plugin, you’ll automatically get the new **Provider** tab.
+It isn’t just runtime issues in your use of the Flutter framework you want to track down; sometimes you want to track down issues related to packages as well. With over 15,000 Flutter-compatible packages and plugins on pub.dev, this becomes increasingly likely as your apps use more packages over time. So, with that in mind, we’ve been experimenting with adding a new **Provider** tab to Flutter DevTools. In fact, this tab was built by [Remi Roussel](https://github.com/rrousselGit), the author of [the `provider` package](https://pub.dev/packages/provider) itself (among many other wonderful things). If you’re running the latest version of Flutter DevTools and you are debugging a Flutter app that uses the `provider` plugin, you’ll automatically get the new **Provider** tab.
 
 <DashImage figure src="images/0UgjcNnlHqFgKCH-t.webp" alt="Flutter DevTools Provider tab in action" caption="Flutter DevTools Provider tab in action" />
 

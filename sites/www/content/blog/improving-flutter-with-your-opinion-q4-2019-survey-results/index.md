@@ -139,6 +139,6 @@ The results from this survey will help the team evaluate the options and tradeof
 
 ## And finally..
 
-Flutter’s quarterly user survey is an invaluable way for us to understand your experience with Flutter. Your feedback directly affects where we focus our efforts. Please continue to support the surveys, and also consider [signing up](http://flutter.dev/research-signup) for future UX studies.
+Flutter’s quarterly user survey is an invaluable way for us to understand your experience with Flutter. Your feedback directly affects where we focus our efforts. Please continue to support the surveys, and also consider [signing up](https://flutter.dev/research-signup) for future UX studies.
 
 Thank you!

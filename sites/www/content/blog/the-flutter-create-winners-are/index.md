@@ -8,7 +8,7 @@ category: events
 layout: blog
 ---
 
-[Flutter Create](http://flutter.dev/create) is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or less of Dart code.
+[Flutter Create](https://flutter.dev/create) is a contest that challenges you to build something interesting, inspiring, and beautiful with Flutter using 5KB or less of Dart code.
 
 We received over 750 unique submissions from 60+ countries and regions, and included entries from first time coders to Flutter experts. This video provides a glimpse of what you made from the hundreds of submissions we received:
 
@@ -23,7 +23,7 @@ To put the limited size in perspective, 5KB is…
 
 * **[The size of a 80x60 image](https://drive.google.com/file/d/1qnjyrBhGrx07CygxmIq6NJ8tZb6lK86q/view?usp=sharing), encoded in GIF format.** [Original image](https://drive.google.com/file/d/1Krxrdn9Q_GDzfLWBmDnu4f9Pyk83DpY8/view).
 
-We hope you had fun using [Flutter](http://flutter.dev), and participating in the inaugural [Flutter Create contest](http://flutter.dev/create).
+We hope you had fun using [Flutter](https://flutter.dev), and participating in the inaugural [Flutter Create contest](https://flutter.dev/create).
 
 ## The winners are… 🥁🥁🥁
 

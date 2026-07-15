@@ -33,7 +33,7 @@ Other changes to the navigation bars include:
 
 * A new [`CupertinoNavigationBar.large`](https://main-api.flutter.dev/flutter/cupertino/CupertinoNavigationBar/CupertinoNavigationBar.large.html) constructor allows the static navigation bar to display a large title.
 
-* Thanks to community contributor [davidhicks980](http://github.com/davidhicks980), Cupertino popups now have [more vibrant background blurs](https://github.com/flutter/flutter/pull/159272), which improves native fidelity.
+* Thanks to community contributor [davidhicks980](https://github.com/davidhicks980), Cupertino popups now have [more vibrant background blurs](https://github.com/flutter/flutter/pull/159272), which improves native fidelity.
 
 <DashImage figure src="images/09o5hT9CkjtAs9PsH.webp" />
 
@@ -45,7 +45,7 @@ Other changes to the navigation bars include:
 <DashImage figure src="images/0wkUFtSuMJHMV7VBJ.webp" />
 
 
-* Community member [thejitenpatel](http://github.com/thejitenpatel) improved [`CupertinoAlertDialog`](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html)’s native fidelity in dark mode, as shown in the following screenshots:
+* Community member [thejitenpatel](https://github.com/thejitenpatel) improved [`CupertinoAlertDialog`](https://api.flutter.dev/flutter/cupertino/CupertinoAlertDialog-class.html)’s native fidelity in dark mode, as shown in the following screenshots:
 
 <DashImage figure src="images/1R83UkKDD_CWQyHJCbiEUoQ.webp" alt="Before improvement — Left is a native view, right is a Flutter view" caption="Before improvement — Left is a native view, right is a Flutter view" />
 

@@ -14,7 +14,7 @@ So with the Google API option out the window, it was time to look for a differen
 
 ## Defining our Widget
 
-The way that qr.dart (and QR codes) works is that you give it a QR code **version** and **error correction level**. The Higher the [version](http://www.qrcode.com/en/about/version.html), the more data you can store. The error correction value determines how much of the QR code can be missing / damaged before it is unusable (up to 30%). However, a higher error correction value increases the data needed for redundancy which reduces your total allowed characters so keep that in mind. Anyway, that’s the low down on QR codes for our purposes.
+The way that qr.dart (and QR codes) works is that you give it a QR code **version** and **error correction level**. The Higher the [version](https://www.qrcode.com/en/about/version.html), the more data you can store. The error correction value determines how much of the QR code can be missing / damaged before it is unusable (up to 30%). However, a higher error correction value increases the data needed for redundancy which reduces your total allowed characters so keep that in mind. Anyway, that’s the low down on QR codes for our purposes.
 
 Rather than just jumping into code, let’s talk about how we want to define the Widget so that it’s helpful to everyone and not just something we shove into our code. I feel like most tutorials of this kind don’t bother, so I figured let’s give this a try. Anyhow, let’s move to list form:
 

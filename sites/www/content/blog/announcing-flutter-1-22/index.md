@@ -91,7 +91,7 @@ Meanwhile, if you still have a Flutter application based on v1 Android APIs, it 
 <DashImage figure src="images/1crNLxg7CCtlQkB4mLI_ErA.webp" alt="A new universe of Material Design buttons" caption="A new universe of Material Design buttons" />
 
 
-Existing Flutter buttons look good but can be [hard to use](http://flutter.dev/go/material-button-system-updates), especially when you need custom theming. Furthermore, the Material specification has expanded to include new buttons with new styles.
+Existing Flutter buttons look good but can be [hard to use](https://flutter.dev/go/material-button-system-updates), especially when you need custom theming. Furthermore, the Material specification has expanded to include new buttons with new styles.
 
 To keep Flutter up to date with Material guidelines, we’re happy to announce a whole new “universe” of buttons in Flutter 1.22.
 
@@ -109,7 +109,7 @@ Flutter has provided the core functionality you need for the internationalizatio
 <DashImage figure src="images/0UBVlGmhw5NUWbg5I.webp" />
 
 
-If you’d like more details about Flutter’s support for l10n, including localized messages, messages with parameters, dates, numbers, and currencies, [read the Flutter Internationalization User Guide](http://flutter.dev/go/i18n-user-guide).
+If you’d like more details about Flutter’s support for l10n, including localized messages, messages with parameters, dates, numbers, and currencies, [read the Flutter Internationalization User Guide](https://flutter.dev/go/i18n-user-guide).
 
 Furthermore, if you’re interested in i18n and l10n, then you’re probably also interested in strings with characters that don’t fit into plain old ASCII, like Unicode and emoji. Recently, the Dart team released [the `characters` package](https://pub.dev/packages/characters), which helps developers deal with Unicode (extended) grapheme clusters. This package helps solve problems like how to properly abbreviate a string like “A 🇬🇧 text in English” to the first 15 characters. Using the `String` class, that abbreviation would be “A 🇬🇧 text in”, which is only 12 user-perceived characters. On the other hand, using the `characters` package yields the correct abbreviation of “A 🇬🇧 text in Eng”.
 
@@ -117,7 +117,7 @@ With [this PR](https://github.com/flutter/flutter/pull/59267), Flutter uses the 
 
 ## Google Maps and WebView plugins ready for production
 
-Here on the Flutter team, we are often cautious about labeling something as “production ready” until we’ve tested it thoroughly ourselves. In the case of the [`google_maps_flutter`](https://pub.dev/packages/google_maps_flutter) and [`webview_flutter`](https://pub.dev/packages/webview_flutter) plugins, the gating factor has been the underlying [Platform Views](http://flutter.dev/docs/development/platform-integration/platform-views) implementation, which allows native UI components from both Android and iOS to be hosted in a Flutter app. With this release of Flutter, we’re happy to announce that we have hardened the framework plumbing enough to declare both of these plugins as production ready.
+Here on the Flutter team, we are often cautious about labeling something as “production ready” until we’ve tested it thoroughly ourselves. In the case of the [`google_maps_flutter`](https://pub.dev/packages/google_maps_flutter) and [`webview_flutter`](https://pub.dev/packages/webview_flutter) plugins, the gating factor has been the underlying [Platform Views](https://flutter.dev/docs/development/platform-integration/platform-views) implementation, which allows native UI components from both Android and iOS to be hosted in a Flutter app. With this release of Flutter, we’re happy to announce that we have hardened the framework plumbing enough to declare both of these plugins as production ready.
 
 <DashImage figure src="images/0luz0EiazQQqsAEC4.webp" alt="webview_flutter plugin hosting flutter.dev" caption="webview_flutter plugin hosting flutter.dev" />
 

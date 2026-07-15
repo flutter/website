@@ -27,7 +27,7 @@ To understand how we might provide better support, we [interviewed several devel
 
 Meanwhile, study participants mentioned that the biggest challenge in creating a Flutter game is finding resources and learning materials to get started and integrate with platform gaming services. To address these needs, we’re releasing a new starter toolkit to accelerate your game development.
 
-The [Flutter Casual Games Toolkit](http://flutter.dev/games) offers a specialized template (developed by [Filip Hracek](https://github.com/filiph)) that you can use to build your own game. This starter project provides pre-built “bells & whistles” such as a main menu, a settings page, sound support, and so on, but leaves the fun part to you: building the game!
+The [Flutter Casual Games Toolkit](https://flutter.dev/games) offers a specialized template (developed by [Filip Hracek](https://github.com/filiph)) that you can use to build your own game. This starter project provides pre-built “bells & whistles” such as a main menu, a settings page, sound support, and so on, but leaves the fun part to you: building the game!
 
 <DashImage figure src="images/0NwJbJ1BD7MvehPAA.webp" alt="Tic-Tac-Toe game running on a mobile device" caption="Tic-Tac-Toe game running on a mobile device" />
 
@@ -70,6 +70,6 @@ Game development is a new but exciting scenario for Flutter! Going forward, we h
 
 ### flutter.dev/games
 
-Please check out the dedicated [game development](http://flutter.dev/games) page, where you can learn more about the above-mentioned resources, and also find links to [documentation](http://docs.flutter.dev/resources/games-toolkit), and references to libraries, packages, and tools recommended by game development experts in the Flutter community.
+Please check out the dedicated [game development](https://flutter.dev/games) page, where you can learn more about the above-mentioned resources, and also find links to [documentation](https://docs.flutter.dev/resources/games-toolkit), and references to libraries, packages, and tools recommended by game development experts in the Flutter community.
 
 Since the launch of Flutter 1.0, you have continued to amaze us with great apps, and now we can’t wait to see what exciting games you will launch with Flutter!

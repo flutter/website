@@ -199,7 +199,7 @@ Another big part of the Flutter ecosystem is FlutterFire, which is used by two-t
 
 ## Production Quality
 
-[The FlutterFire plugins](http://firebase.flutter.dev) have (almost) all moved from beta to stable quality.
+[The FlutterFire plugins](https://firebase.flutter.dev) have (almost) all moved from beta to stable quality.
 
 <DashImage figure src="images/00BHU6qlHwKUxPrXb.webp" />
 
@@ -459,7 +459,7 @@ The ODM also supports defining strongly typed sub-collections and provides built
 
 The Flutter 2.8 release includes another big step along the road to the stable release of Windows, macOS, and Linux. The quality bar is high, including internationalization and localization support like the recently landed [Chinese IME support](https://github.com/flutter/engine/pull/29620), [Korean IME support](https://github.com/flutter/engine/pull/24713), and [Kanji IME support](https://github.com/flutter/engine/pull/29761). Or, like the tight integration being built into [Windows accessibility support](https://github.com/flutter/flutter/issues/77838). It’s not enough for Flutter to run on desktop on the stable channel (which it already does [in beta behind a flag](https://docs.flutter.dev/desktop#beta-snapshot-in-stable-channel)), it has to run well for languages and cultures around the world and for people of varying kinds of abilities. It’s not quite where we want to be yet, but it’s getting there!
 
-One example of the ongoing work to prepare desktop for a stable release is [the complete re-architecture of how Flutter handles keyboard events to allow for synchronous response](http://flutter.dev/go/handling-synchronous-keyboard-events). This enables a widget to handle a keystroke and cancel its propagation through the rest of the tree. [The initial work landed](https://github.com/flutter/flutter/issues/33521) in Flutter 2.5 and Flutter 2.8 adds fixes for issues and regressions as it approaches stable quality. This is in addition to the ongoing work to re-engineer [how we handle device-specific keyboard input](https://github.com/flutter/flutter/issues/44918) and [a refactor of the way that Flutter handles text editing](https://github.com/flutter/flutter/pull/86736), all of which are necessary for keyboard input-intensive desktop apps.
+One example of the ongoing work to prepare desktop for a stable release is [the complete re-architecture of how Flutter handles keyboard events to allow for synchronous response](https://flutter.dev/go/handling-synchronous-keyboard-events). This enables a widget to handle a keystroke and cancel its propagation through the rest of the tree. [The initial work landed](https://github.com/flutter/flutter/issues/33521) in Flutter 2.5 and Flutter 2.8 adds fixes for issues and regressions as it approaches stable quality. This is in addition to the ongoing work to re-engineer [how we handle device-specific keyboard input](https://github.com/flutter/flutter/issues/44918) and [a refactor of the way that Flutter handles text editing](https://github.com/flutter/flutter/pull/86736), all of which are necessary for keyboard input-intensive desktop apps.
 
 In addition, [we continue to expand Flutter’s support for visual density](https://github.com/flutter/flutter/pull/89353) and [expose alignment for dialogs](https://github.com/flutter/flutter/pull/88984), both to enable more desktop-friendly UI.
 
@@ -511,7 +511,7 @@ As always, we strive to reduce the number of breaking changes in each release. I
 
 * [90293](https://github.com/flutter/flutter/pull/90293) Remove `FloatingHeaderSnapConfiguration.vsync` deprecation
 
-* [90294](https://github.com/flutter/flutter/pull/90294) Remove [`AndroidViewController.id`](http://androidviewcontroller.id/) deprecation
+* [90294](https://github.com/flutter/flutter/pull/90294) Remove [`AndroidViewController.id`](https://androidviewcontroller.id/) deprecation
 
 * [90295](https://github.com/flutter/flutter/pull/90295) Remove `BottomNavigationBarItem.title` deprecation
 

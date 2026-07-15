@@ -101,6 +101,6 @@ A few of the highlights:
 
 …and that’s it!
 
-Thank you all for joining along as we brewed up one of our favorite I/Os yet. Stay tuned for more blog posts, videos and docs about everything we announced, and [all of the community events](http://flutter.dev/events) we’re attending starting next month.
+Thank you all for joining along as we brewed up one of our favorite I/Os yet. Stay tuned for more blog posts, videos and docs about everything we announced, and [all of the community events](https://flutter.dev/events) we’re attending starting next month.
 
 <DashImage figure src="images/1np8TNr84DxJv7bO_nx_h8g.jpeg" alt="Farewell from Google I/O 2026!" caption="Farewell from Google I/O 2026!" />

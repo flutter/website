@@ -79,7 +79,7 @@ We used Stitch to generate our marketing landing page from a single prompt, pass
 
 Finally, we used the Antigravity CLI to build our Flutter web app, copy the build directory over to Jaspr, run the build script, and deploy directly to Firebase Hosting — all in one unbroken terminal workflow.
 
-While DashLander is currently web-first to easily validate mechanics, because it’s built with Flutter, we are always just one command away from deploying to iOS, Android, macOS, Windows, Linux, or even the infotainment panel in a Toyota RAV4. As of this writing, the game is currently available at [dashlander.com](http://dashlander.com); though if you find this article far enough into the future that that link has gone dry, you’re welcome to download the [code straight from GitHub](https://github.com/craiglabenz/dashlander).
+While DashLander is currently web-first to easily validate mechanics, because it’s built with Flutter, we are always just one command away from deploying to iOS, Android, macOS, Windows, Linux, or even the infotainment panel in a Toyota RAV4. As of this writing, the game is currently available at [dashlander.com](https://dashlander.com); though if you find this article far enough into the future that that link has gone dry, you’re welcome to download the [code straight from GitHub](https://github.com/craiglabenz/dashlander).
 
 ### Realizing YOUR vision
 

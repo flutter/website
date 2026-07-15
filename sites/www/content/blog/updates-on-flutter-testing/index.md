@@ -98,7 +98,7 @@ After you know that your tests work locally using either virtual or physical har
 
 Firebase Test Lab is a cloud-based, app testing infrastructure. With one operation, you can test your Android or iOS app across a wide variety of devices and device configurations, and see the results — including logs, videos, and screenshots — in the Firebase console. One of the major advancements of the `integration_test` plugin is the ability to run your Flutter apps targeting Android and iOS on Firebase Test Lab, giving you the ability to test across hundreds of devices simultaneously in order to find platform, form factor, or device-specific issues before shipping your app.
 
-To run a test on Firebase Test Lab, you need to do some configuration and use Gradle commands to build an instrumentation test for both Android and iOS, as appropriate. For those details, check out [the new integration test documentation on flutter.dev](http://flutter.dev/docs/testing/integration-tests).
+To run a test on Firebase Test Lab, you need to do some configuration and use Gradle commands to build an instrumentation test for both Android and iOS, as appropriate. For those details, check out [the new integration test documentation on flutter.dev](https://flutter.dev/docs/testing/integration-tests).
 
 ## Migrating from Flutter driver tests
 
@@ -109,7 +109,7 @@ For those of you with existing `flutter_driver` tests, moving to the new API isn
 
 The `flutter_driver` API (shown on the left) and the `WidgetTester` API (shown on the right) are conceptually very similar, but you can see that a lot of the details are different. For example, instead of calling the `waitFor` method on the `flutter_driver`, you call the `pumpAndSettle` method on the `WidgetTester`. The former waits for a specific widget to appear, whereas the latter waits for the app’s UI rendering phase to settle. After you have a specific widget, you act on it similarly with the two APIs, but you use different objects. The `WidgetTest` API is more in-line with what you’re used to seeing in Dart unit tests. As you can see, the `expect` method is used to ensure that the contents of a widget are what you expect.
 
-For the details about how to move your tests from flutter_driver to integration_test and WidgetTester, see [the migration docs on flutter.dev](http://flutter.dev/docs/testing/integration-tests#migrating-from-flutter_driver).
+For the details about how to move your tests from flutter_driver to integration_test and WidgetTester, see [the migration docs on flutter.dev](https://flutter.dev/docs/testing/integration-tests#migrating-from-flutter_driver).
 
 ## Native UI testing
 
@@ -117,4 +117,4 @@ If you have an existing Android or iOS app to which you’re adding Flutter usin
 
 ## Summary
 
-This announcement presents a new foundation for integration testing using the new `integration_test` plugin for Flutter. Not only is the API simpler and more consistent, tests written using `integration_test` can run on hundreds of different devices using the Firebase Test Lab. The Flutter team plans to build on this new foundation by updating the `flutter create` template to use `integration_test` out of the box, adding updates to the test output to support existing testing tools using the `JUnit` format, adding the ability to take screenshots during tests for golden testing comparisons, and more. For the full list of details about our new integration testing recommendations for your Flutter apps and plugins, see [the testing docs on flutter.dev](http://flutter.dev/docs/testing/integration-tests).
+This announcement presents a new foundation for integration testing using the new `integration_test` plugin for Flutter. Not only is the API simpler and more consistent, tests written using `integration_test` can run on hundreds of different devices using the Firebase Test Lab. The Flutter team plans to build on this new foundation by updating the `flutter create` template to use `integration_test` out of the box, adding updates to the test output to support existing testing tools using the `JUnit` format, adding the ability to take screenshots during tests for golden testing comparisons, and more. For the full list of details about our new integration testing recommendations for your Flutter apps and plugins, see [the testing docs on flutter.dev](https://flutter.dev/docs/testing/integration-tests).

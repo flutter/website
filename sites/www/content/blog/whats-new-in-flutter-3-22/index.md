@@ -96,7 +96,7 @@ Developers using the [flavors](https://docs.flutter.dev/deployment/flavors) feat
 
 ### Transformation of assets using Dart packages
 
-Users can now configure Dart packages to transform their app’s assets as they are bundled. For more information, check out [Transforming assets at built time](http://docs.flutter.dev/ui/assets/asset-transformation).
+Users can now configure Dart packages to transform their app’s assets as they are bundled. For more information, check out [Transforming assets at built time](https://docs.flutter.dev/ui/assets/asset-transformation).
 
 ## Android
 

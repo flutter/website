@@ -31,7 +31,7 @@ In the weeks following I/O, we have been greatly encouraged by the number of use
 <DashImage figure src="images/0-1m66Jxnec3s8Qnb.webp" alt="Flutter events happening around the world" caption="Flutter events happening around the world" />
 
 
-In addition to these worldwide community events, we’re also starting to see early adopters of Flutter publish their work to the Apple and Google stores. At Google I/O, we highlighted some [apps and endorsements such as Alibaba, Groupon, and Google AdWords](http://flutter.io/showcase); it’s since been fun to see both larger and smaller-scale apps starting to appear from the community. Here are a few diverse examples from around the world:
+In addition to these worldwide community events, we’re also starting to see early adopters of Flutter publish their work to the Apple and Google stores. At Google I/O, we highlighted some [apps and endorsements such as Alibaba, Groupon, and Google AdWords](https://flutter.io/showcase); it’s since been fun to see both larger and smaller-scale apps starting to appear from the community. Here are a few diverse examples from around the world:
 
 * Suez Canal Authority (Egypt): [Android](https://play.google.com/store/apps/details?id=com.suezcanal.obour), [iOS](https://itunes.apple.com/us/app/elnasr-bridge/id1347983514?mt=8)
 
@@ -78,7 +78,7 @@ Google is not the only organization working on Flutter tooling. One community ef
 
 ## Flutter in China
 
-China has the third largest population of developers using Flutter, after the USA and India. We are hugely appreciative of the local developers who have helped us with China-based mirrors of the pub package site and community-maintained translations of the code labs. A [Flutter in China website](http://flutter-io.cn) is now available — launched jointly with the community to help developers in China build their skills.
+China has the third largest population of developers using Flutter, after the USA and India. We are hugely appreciative of the local developers who have helped us with China-based mirrors of the pub package site and community-maintained translations of the code labs. A [Flutter in China website](https://flutter-io.cn) is now available — launched jointly with the community to help developers in China build their skills.
 
 <DashImage figure src="images/1LZ8v_AJHi69RCnxq7EeftQ.webp" alt="Flutter in China website" caption="Flutter in China website" />
 

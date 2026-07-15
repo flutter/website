@@ -51,20 +51,20 @@ Looking forward, we’re excited to invest more in additional Cupertino widget f
 
 We also want to acknowledge that these releases wouldn’t be possible without contributions from the community, including you! This set of releases consist of almost 1,500 commits from over 167 unique contributors, including 49 *new* contributors. We’re inspired by the continued high levels of activity, commitment, and growth in the Flutter community, including those actively building the framework. Thank you!
 
-The impact of our collective work is showing up all over the world in incredible apps and experiences that millions of people use every day. For instance, here is a sneak peek at a [case study](http://flutter.dev/showcase/xiaomi) showing how and why a small team at a Chinese technology company, Xiaomi, used Flutter to develop a companion app for the firm’s popular new EV, the [Xiaomi SU7.](https://www.mi.com/global/discover/article?id=3263&ref=renatomitra.com)
+The impact of our collective work is showing up all over the world in incredible apps and experiences that millions of people use every day. For instance, here is a sneak peek at a [case study](https://flutter.dev/showcase/xiaomi) showing how and why a small team at a Chinese technology company, Xiaomi, used Flutter to develop a companion app for the firm’s popular new EV, the [Xiaomi SU7.](https://www.mi.com/global/discover/article?id=3263&ref=renatomitra.com)
 
 <YoutubeEmbed id="wfD7ZQhwACU" title="Xiaomi (Flutter Developer Stories)" fullwidth="true"/>
 
 
 Several other exciting examples of Flutter apps popping up all over the world:
 
-* [**SNCF Connect**](http://flutter.dev/showcase/sncf-connect), the French railway, and owners of the largest Flutter app in Europe at over 150 screens, partnered with the Olympics to deliver many updates to the Flutter app that enabled millions of visitors to travel across France during the Olympic games.
+* [**SNCF Connect**](https://flutter.dev/showcase/sncf-connect), the French railway, and owners of the largest Flutter app in Europe at over 150 screens, partnered with the Olympics to deliver many updates to the Flutter app that enabled millions of visitors to travel across France during the Olympic games.
 
-* [**Wolt**](http://flutter.dev/showcase/wolt), part of DoorDash International, used Flutter to expand into the merchant retail market.
+* [**Wolt**](https://flutter.dev/showcase/wolt), part of DoorDash International, used Flutter to expand into the merchant retail market.
 
-* [**Whirlpool**](http://flutter.dev/showcase/whirlpool), a Fortune 500 company with a worldwide presence, is exploring new sales channels in Brazil using Flutter.
+* [**Whirlpool**](https://flutter.dev/showcase/whirlpool), a Fortune 500 company with a worldwide presence, is exploring new sales channels in Brazil using Flutter.
 
-* [**Monta**](http://flutter.dev/showcase/monta), a Danish EV charging ecosystem startup, brought their first mobile app to market in just 3 months with Flutter, and later successfully ported their web app to Flutter too.
+* [**Monta**](https://flutter.dev/showcase/monta), a Danish EV charging ecosystem startup, brought their first mobile app to market in just 3 months with Flutter, and later successfully ported their web app to Flutter too.
 
 ## Wrap up
 

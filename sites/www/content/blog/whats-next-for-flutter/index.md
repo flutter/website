@@ -71,7 +71,7 @@ While you can write an app entirely using Flutter and Dart, almost any non-trivi
 
 On the web, we’re previewing a new feature that we’re calling **element embedding**, which allows Flutter content to be added to any standard web `<div>`. When embedded in this way, Flutter just becomes a web component, integrating cleanly with the web DOM and even enabling the use of CSS selectors and transformations to style the parent Flutter object.
 
-We’re also making some big changes to the [js](http://pub.dev/packages/js) package, to enable seamless **interoperability between JavaScript and Dart** code. With js, you can annotate any function in your Dart code with a `@JSExport` attribute, and then call it from your JavaScript code.
+We’re also making some big changes to the [js](https://pub.dev/packages/js) package, to enable seamless **interoperability between JavaScript and Dart** code. With js, you can annotate any function in your Dart code with a `@JSExport` attribute, and then call it from your JavaScript code.
 
 Combining these two new features opens up some exciting new scenarios for using Flutter on the web. In [a proof-of-concept demo](https://flutter-forward-demos.web.app/#/) that we showed at Flutter Forward, you can see a simple Flutter app embedded in a HTML-based webpage. Using CSS, we apply an animated rotation effect; even while rotating, the Flutter content remains interactive. The demo also shows that you can use an HTML button and JavaScript event handler to make changes to the Flutter state, and vice versa. When this work is complete, we think this will open up many new opportunities to use Flutter to add interactivity to an existing web app.
 
@@ -118,7 +118,7 @@ This image summarizes our direction:
 <DashImage figure src="images/1iIgYbZq3WKnUBctIWBap_Q.webp" />
 
 
-Beyond our own development themes, it’s gratifying to see how the Flutter ecosystem continues to expand, like [FlutterFlow](https://flutterflow.io/) is a low-code builder for developing native mobile applications, and [Widgetbook](http://widgetbook.io), which provides flexible tooling for designers and developers to collaborate on user interface development.
+Beyond our own development themes, it’s gratifying to see how the Flutter ecosystem continues to expand, like [FlutterFlow](https://flutterflow.io/) is a low-code builder for developing native mobile applications, and [Widgetbook](https://widgetbook.io), which provides flexible tooling for designers and developers to collaborate on user interface development.
 
 In closing, it has been wonderful to come to Kenya and see the entrepreneurship and talent of local developers. The vibrancy of the Flutter community here in Africa is special; the Flutter Kenya user group alone has over 1,000 developers. And we’re thrilled that Flutter can provide new opportunities for developers across Africa to participate in the fast-growing app economy. Klasha is a great example of this promise, using Flutter to quickly get to market and solve local problems. Here’s a video of their experience with Flutter:
 

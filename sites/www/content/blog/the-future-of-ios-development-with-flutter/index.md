@@ -8,7 +8,7 @@ category: announcements
 layout: blog
 ---
 
-Since its launch in 2017, [Flutter](http://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over [a million apps](https://medium.com/flutter/racing-forward-at-i-o-2023-with-flutter-and-dart-df2a8fa841ab) built using Flutter.
+Since its launch in 2017, [Flutter](https://flutter.dev) has quickly become a top choice for iOS app development. Developers worldwide *love* Flutter. Using Flutter, they can code once and deploy their apps to iOS, Android, web and desktop. This has led to a massive following, with over [a million apps](https://medium.com/flutter/racing-forward-at-i-o-2023-with-flutter-and-dart-df2a8fa841ab) built using Flutter.
 
 For iOS developers who value innovative design, Flutter has become a go-to platform. By providing a blank canvas, Flutter gives designers endless possibilities. They can create original experiences that break free from pre-set design systems.
 
@@ -26,7 +26,7 @@ Flutter has seen success across various industries and categories for iOS develo
 
 Tech giants like [WeChat](https://apps.apple.com/us/app/wechat/id414478124) and [PUBG MOBILE](https://www.youtube.com/watch?v=03ETVuWZiBc) use Flutter to support over one billion active users. Smaller companies have also capitalized on Flutter’s quick development cycle. One example would be [BrickIt](https://apps.apple.com/us/app/brickit-app/id1477221636) which uses machine learning to suggest new LEGO brick creations.
 
-Apple and other tech leaders have even recognized Flutter iOS apps. [Wonderous](http://wonderous.app), Flutter’s reference app, was [nominated for a Webby in design](https://winners.webbyawards.com/2023/apps-dapps-and-software/app-features/best-user-interface/239934/wonderous). Apple accepted [Reflection.app](https://flutter.dev/showcase/reflectionapp) to its prestigious accelerator program. [So Vegan](https://flutter.dev/showcase/so-vegan) was awarded Apple’s App of the Day *several* times.
+Apple and other tech leaders have even recognized Flutter iOS apps. [Wonderous](https://wonderous.app), Flutter’s reference app, was [nominated for a Webby in design](https://winners.webbyawards.com/2023/apps-dapps-and-software/app-features/best-user-interface/239934/wonderous). Apple accepted [Reflection.app](https://flutter.dev/showcase/reflectionapp) to its prestigious accelerator program. [So Vegan](https://flutter.dev/showcase/so-vegan) was awarded Apple’s App of the Day *several* times.
 
 <DashImage figure src="images/14QurT4QkFUMSNCSFtfOzxg.webp" />
 
@@ -105,11 +105,11 @@ We’re committed to improving the iOS developer experience with Flutter. One ke
 
 As an open source project, you can track our progress on [GitHub](https://github.com/flutter/flutter). We may add, prolong, or defer features based on what we learn and what you tell us.
 
-As always, we value your feedback and appreciate your support! The best way to send us your input is by filing issues in [GitHub](http://github.com/flutter/flutter/issues) and filling out our quarterly user survey. You can stay up to date on future Flutter iOS work by following me on [Twitter](https://twitter.com/LeighaJarett).
+As always, we value your feedback and appreciate your support! The best way to send us your input is by filing issues in [GitHub](https://github.com/flutter/flutter/issues) and filling out our quarterly user survey. You can stay up to date on future Flutter iOS work by following me on [Twitter](https://twitter.com/LeighaJarett).
 
 ## Resources
 
-* [Flutter website](http://flutter.dev)
+* [Flutter website](https://flutter.dev)
 
 * [Wonderous app GitHub](https://github.com/gskinnerTeam/flutter-wonderous-app)
 

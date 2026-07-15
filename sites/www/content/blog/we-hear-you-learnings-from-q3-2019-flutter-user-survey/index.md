@@ -65,7 +65,7 @@ Ecosystem is another crucial part of Flutter; this enables developers to extend 
 
 1. Background services
 
-We will focus on improving your experience around Flutter’s ecosystem and also make it easier for you to find quality plugins. As a starting point, Dart has recently released a “[verified publishers](https://medium.com/dartlang/verified-publishers-98f05466558a)” feature for [pub.dev](http://pub.dev) (on Dart’s 8th birthday!) to make it easy for users to identify trustworthy publishers. This was one of the planned improvements mentioned in the recap of the [previous survey](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6). Please keep your eye out for further improvements.
+We will focus on improving your experience around Flutter’s ecosystem and also make it easier for you to find quality plugins. As a starting point, Dart has recently released a “[verified publishers](https://medium.com/dartlang/verified-publishers-98f05466558a)” feature for [pub.dev](https://pub.dev) (on Dart’s 8th birthday!) to make it easy for users to identify trustworthy publishers. This was one of the planned improvements mentioned in the recap of the [previous survey](https://medium.com/flutter/what-do-flutter-package-users-need-6ecba57ed1d6). Please keep your eye out for further improvements.
 
 <DashImage figure src="images/0rHPbdMZoe86uwe1H.webp" alt="*First page of dart.dev features some verified Flutter packages*" caption="*First page of dart.dev features some verified Flutter packages*" />
 
@@ -79,4 +79,4 @@ We collected over 1,600 comments from this one question, and several team member
 <DashImage figure src="images/0c_10W3HCaw0k6u_h.webp" alt="*Track the progress on Github*" caption="*Track the progress on Github*" />
 
 
-Thank you again for participating in the survey! Please continue to provide valuable feedback to the Flutter team and help us plan for the coming quarters. Flutter’s UX research team also performs a variety of user experience studies so that we can learn how to make your experience with Flutter more pleasant. If you are interested in participating, please [sign up](http://flutter.dev/research-signup) for future studies.
+Thank you again for participating in the survey! Please continue to provide valuable feedback to the Flutter team and help us plan for the coming quarters. Flutter’s UX research team also performs a variety of user experience studies so that we can learn how to make your experience with Flutter more pleasant. If you are interested in participating, please [sign up](https://flutter.dev/research-signup) for future studies.

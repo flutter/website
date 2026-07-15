@@ -77,7 +77,7 @@ As an example of Flutter’s navigation support today, you can try going from [g
 
 You’ll notice it doesn’t take you back to google.com, as you might expect, but instead the home page of the site: gallery.flutter.dev. Flutter splits the initial gallery app path, pushing both gallery.flutter.dev and the /demo/banner page, so when the browser back button triggers `Navigator.pop()` it goes back to gallery.flutter.dev because that’s how the app’s internal history was set up.
 
-There’s an ongoing effort to improve navigation/routing in Flutter for all platforms with [Navigator 2.0](http://flutter.dev/go/navigator-with-router) and a new [Router widget](http://flutter.dev/go/router-and-widgetsapp-integration). This will not only make navigation more declarative and flexible, but also improve how routing history works for Flutter web apps.
+There’s an ongoing effort to improve navigation/routing in Flutter for all platforms with [Navigator 2.0](https://flutter.dev/go/navigator-with-router) and a new [Router widget](https://flutter.dev/go/router-and-widgetsapp-integration). This will not only make navigation more declarative and flexible, but also improve how routing history works for Flutter web apps.
 
 ## Being accessible
 

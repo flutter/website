@@ -153,4 +153,4 @@ Also, we skipped a couple of technical details when we talked about comparing fi
 
 Hot reload was fast in Flutter 2.0, but it’s faster in Flutter 2.2. On average, hot reload is around 30% faster in Flutter 2.2 than in Flutter 2.0, saving Flutter developers, collectively, more than a year of waiting for hot reload every 5 days.
 
-If you haven’t updated yet (or haven’t even tried Flutter yet), now might be a good time to visit [flutter.dev](http://flutter.dev) and give it a try.
+If you haven’t updated yet (or haven’t even tried Flutter yet), now might be a good time to visit [flutter.dev](https://flutter.dev) and give it a try.

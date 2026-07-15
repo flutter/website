@@ -32,7 +32,7 @@ This alpha release offers a solid foundation that we’ll stabilize over the com
 
 ## Exploring some sample apps
 
-To see Flutter support for Windows in action, you might want to try out some of the sample apps that we’ve created that run well on Windows with our newly-added support. The first, the Flokk app, was created in concert with the designers and developers at [gskinner.com](http://gskinner.com). The goal was to demonstrate that Flutter was ready for the desktop by creating an innovative, beautiful Flutter desktop app. Flokk is an app that works with your real Google Contacts data as well as showing your contacts’ activity on GitHub and Twitter.
+To see Flutter support for Windows in action, you might want to try out some of the sample apps that we’ve created that run well on Windows with our newly-added support. The first, the Flokk app, was created in concert with the designers and developers at [gskinner.com](https://gskinner.com). The goal was to demonstrate that Flutter was ready for the desktop by creating an innovative, beautiful Flutter desktop app. Flokk is an app that works with your real Google Contacts data as well as showing your contacts’ activity on GitHub and Twitter.
 
 <DashImage figure src="images/039MKtw4ICepbL_8d.webp" />
 
@@ -85,7 +85,7 @@ Even though we’ve just reached the alpha release, the Flutter community has al
 
 * [flutter_audio_desktop](https://pub.dev/packages/flutter_audio_desktop): play audio from your desktop apps
 
-The benefit of using these plugins is that most of them also support other Flutter platforms, which enables you to target your apps at Android, iOS, web, etc. as well as Windows. Furthermore, while about one-third of the available packages on [pub.dev](http://pub.dev) (the package manager for Dart and Flutter) are plugins with platform-specific code, most are not. For instance, [many of the highest quality and most used packages](https://pub.dev/flutter/favorites) are part of the Flutter Favorite program and most of them work on Windows. If you’d like to see the full list of packages that run on Windows, you can [run this query on pub.dev](https://pub.dev/flutter/packages?platform=windows).
+The benefit of using these plugins is that most of them also support other Flutter platforms, which enables you to target your apps at Android, iOS, web, etc. as well as Windows. Furthermore, while about one-third of the available packages on [pub.dev](https://pub.dev) (the package manager for Dart and Flutter) are plugins with platform-specific code, most are not. For instance, [many of the highest quality and most used packages](https://pub.dev/flutter/favorites) are part of the Flutter Favorite program and most of them work on Windows. If you’d like to see the full list of packages that run on Windows, you can [run this query on pub.dev](https://pub.dev/flutter/packages?platform=windows).
 
 ## Interop with Windows
 
@@ -138,7 +138,7 @@ This code doesn’t incur the overhead of transitioning between two threads like
 
 ## Flutter for Windows resources
 
-Wherever you are in your Flutter for Windows journey, you should be sure to [read the desktop documentation on flutter.dev](http://flutter.dev/desktop), which includes the latest details. Also, you’ll want to take a spin through the Flutter [codelab for writing a Windows, macOS, and Windows desktop-targeted application](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client), which includes code for real-world scenarios like authentication using OAuth, accessing the GitHub API, and using GraphQL. Or, for another good example of Flutter desktop code that works on Windows, [check out the Photo Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search).
+Wherever you are in your Flutter for Windows journey, you should be sure to [read the desktop documentation on flutter.dev](https://flutter.dev/desktop), which includes the latest details. Also, you’ll want to take a spin through the Flutter [codelab for writing a Windows, macOS, and Windows desktop-targeted application](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client), which includes code for real-world scenarios like authentication using OAuth, accessing the GitHub API, and using GraphQL. Or, for another good example of Flutter desktop code that works on Windows, [check out the Photo Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search).
 
 <DashImage figure src="images/03OlPPAMAvO84mJ6M.webp" />
 

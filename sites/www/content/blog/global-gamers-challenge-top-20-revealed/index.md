@@ -63,7 +63,7 @@ Drumroll please! Here are the 20 projects moving on to the final round:
 
 It gets even more exciting from here! The final panel of judges, representing Global Citizen, the UN Playing for the Planet Alliance, Google Play, YouTube, and the Flutter community, will choose our 10 finalists. The Top 10 will be announced in May 2024.
 
-In the meantime, starting April 22nd, you get to vote for your favorites! Head over to [globalgamers.devpost.com](http://globalgamers.devpost.com) to cast your vote and help determine our Community Choice champs!
+In the meantime, starting April 22nd, you get to vote for your favorites! Head over to [globalgamers.devpost.com](https://globalgamers.devpost.com) to cast your vote and help determine our Community Choice champs!
 
 ## Thank you and keep building!
 

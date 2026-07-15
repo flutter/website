@@ -79,7 +79,7 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 
 * [Flutter web sample gallery](https://flutter.github.io/samples/)
 
-* [2Dimensions: Developer Quest game](http://github.com/2d-inc/developer_quest) ([iOS](https://itunes.apple.com/app/id1455994402), [Android](https://play.google.com/store/apps/details?id=dev.flutter.devRpg))
+* [2Dimensions: Developer Quest game](https://github.com/2d-inc/developer_quest) ([iOS](https://itunes.apple.com/app/id1455994402), [Android](https://play.google.com/store/apps/details?id=dev.flutter.devRpg))
 
 * Three new codelabs for Flutter: [Photos API](https://codelabs.developers.google.com/codelabs/google-photos-sharing/index.html), [Google Maps](https://codelabs.developers.google.com/codelabs/google-maps-in-flutter/index.html), [iOS apps](https://codelabs.developers.google.com/codelabs/flutter-cupertino/index.html)
 

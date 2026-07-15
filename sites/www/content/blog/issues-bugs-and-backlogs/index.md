@@ -58,7 +58,7 @@ Once an issue has been completed to our satisfaction, it is closed. Often this i
 
 ## Our Progress Thus Far
 
-As you can imagine, as our popularity has grown, so has the number of opened and closed issues for [github.com/flutter/flutter](http://github.com/flutter/flutter) (this contains all issues except those for the web site, which are logged at [github.com/flutter/website](http://github.com/flutter/website)):
+As you can imagine, as our popularity has grown, so has the number of opened and closed issues for [github.com/flutter/flutter](https://github.com/flutter/flutter) (this contains all issues except those for the web site, which are logged at [github.com/flutter/website](https://github.com/flutter/website)):
 
 <DashImage figure src="images/1D_MCtnl2h_spFgoORikDcA.webp" alt="Closed vs. open bugs for month-ends since Jan-2018" caption="Closed vs. open bugs for month-ends since Jan-2018" />
 

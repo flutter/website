@@ -13,7 +13,7 @@ As we navigate through the current global crisis together, we know a lot of peop
 <DashImage figure src="images/0li3Xi9x6pYTCZYE2.webp" />
 
 
-[Flutter](http://flutter.dev) is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. Over [a million developers worldwide](https://youtu.be/REJDzio_h7o) are using it, from individuals and startups to big companies like Alibaba, Capital One, and eBay.
+[Flutter](https://flutter.dev) is Google’s UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. Over [a million developers worldwide](https://youtu.be/REJDzio_h7o) are using it, from individuals and startups to big companies like Alibaba, Capital One, and eBay.
 
 We are giving away the [*Introduction to Flutter Development*](https://www.appbrewery.co/courses/intro-to-flutter) course for free with lifetime access if activated during the next three months. The course covers some of the fundamental concepts for Flutter development, teaching you how to code using Dart and walking you through building nine real-world apps that run on iOS and Android, even if you have no programming experience.
 

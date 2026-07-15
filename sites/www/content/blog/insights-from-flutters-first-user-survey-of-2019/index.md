@@ -78,4 +78,4 @@ The survey results helped the team understand preferences and concerns around br
 
 Thank you again everyone for participating in the survey. Please look out for the next survey, which will be announced on the flutter.dev website and community channels like Twitter ([@flutterdev](https://twitter.com/flutterdev)) and Reddit ([r/FlutterDev](https://www.reddit.com/r/FlutterDev/)).
 
-Flutter’s UX research team is also performing a wide variety of user experience studies to make your experience with Flutter more pleasant. If you are interested in participating, you can [sign up](http://flutter.dev/research-signup) for future studies.
+Flutter’s UX research team is also performing a wide variety of user experience studies to make your experience with Flutter more pleasant. If you are interested in participating, you can [sign up](https://flutter.dev/research-signup) for future studies.

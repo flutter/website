@@ -12,7 +12,7 @@ When I joined the Dash DevRel team, my manager gave me an onboarding doc which s
 
 In time, I’ve come to understand the definition of ‘Dart and Flutter developers’ to include those who don’t yet even call themselves Dart and Flutter developers; they’re just Flutter-curious.
 
-Today, we’ve landed something that we think improves the lives of those future Flutter developers: the [Dart and Flutter Getting Started experience](http://docs.flutter.dev/learn/pathway).
+Today, we’ve landed something that we think improves the lives of those future Flutter developers: the [Dart and Flutter Getting Started experience](https://docs.flutter.dev/learn/pathway).
 
 <DashImage figure src="images/1rHBScksI6g6at1HsqSuPhA.webp" />
 
@@ -23,14 +23,14 @@ The Getting Started experience is a multi-disciplinary learning pathway for prog
 
 ### A quick install guide for those who just want to try Flutter out.
 
-Since the release of hot reload on the web, Flutter learners can have the full Flutter experience without having to download platform-specific development environments until they need them. We wrote [a new quick install guide](http://docs.flutter.dev/learn/learn/pathway/quick-install) to reduce the friction of *trying* Flutter. We don’t want it to feel like a commitment before you even start!
+Since the release of hot reload on the web, Flutter learners can have the full Flutter experience without having to download platform-specific development environments until they need them. We wrote [a new quick install guide](https://docs.flutter.dev/learn/learn/pathway/quick-install) to reduce the friction of *trying* Flutter. We don’t want it to feel like a commitment before you even start!
 
 ### Two full tutorials: one for Dart, one for Flutter.
 
 <DashImage figure src="images/18VqmXOFJbmKgq41H5VzzoQ.webp" />
 
 
-The [Dart tutorial](http://dart.dev/learn) was designed to lead into the Flutter tutorial, but they aren’t dependent on one another. If you’re already confident using a different modern, object-oriented language, you’re free to jump straight into the Flutter tutorial.
+The [Dart tutorial](https://dart.dev/learn) was designed to lead into the Flutter tutorial, but they aren’t dependent on one another. If you’re already confident using a different modern, object-oriented language, you’re free to jump straight into the Flutter tutorial.
 
 ### Four apps that you’ll build from scratch.
 
@@ -78,7 +78,7 @@ We cap the learning tutorial off with Craig Labenz’s fantastic video series, r
 
 This tutorial is shipping alongside several updates to the Dart and Flutter websites. You may know that we’ve been migrating our website infrastructure from JavaScript-based static site generators (SSGs) to [Jaspr](https://jaspr.site/), a Dart SSG. The timing of that migration isn’t random! We knew we wanted to do it, and it seemed like the right thing to do before we started work on the considerable updates to the website we made for the Getting Started tutorials.
 
-As a reader, the most noticeable update is the separation of the main docs articles and the [Learn](http://docs.flutter.dev/learn) section of the website. The learn section of the site is reached by clicking on the Learn button in the site’s header navigation, as seen in this screenshot:
+As a reader, the most noticeable update is the separation of the main docs articles and the [Learn](https://docs.flutter.dev/learn) section of the website. The learn section of the site is reached by clicking on the Learn button in the site’s header navigation, as seen in this screenshot:
 
 <DashImage figure src="images/1BM-6gIW7qi51ojLzOQWFBw.webp" />
 

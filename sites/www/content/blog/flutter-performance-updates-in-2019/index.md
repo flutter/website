@@ -31,7 +31,7 @@ contributors: [liyuqian](https://github.com/liyuqian), [dnfield](https://github.
 * [Issue 19558: IO thread GrContext memory needs to be cleaned up](https://github.com/flutter/flutter/issues/19558)
 
 **40% reduction in CPU/GPU usages for simple iOS animations
-contributors: [flar](https://github.com/flar), [liyuqian](http://github.com/liyuqian), [hixie](https://github.com/hixie), [chinmaygarde](http://github.com/chinmaygarde)**
+contributors: [flar](https://github.com/flar), [liyuqian](https://github.com/liyuqian), [hixie](https://github.com/hixie), [chinmaygarde](https://github.com/chinmaygarde)**
 
 * [PR 14104: Rework simpler conditional offscreen for screen readback support](https://github.com/flutter/engine/pull/14104)
 
@@ -42,7 +42,7 @@ contributors: [flar](https://github.com/flar), [liyuqian](http://github.com/liyu
 * [40% (23%-CPU-14%-GPU to 13%-CPU-8.5%-GPU) reduction in simple_animation_perf_iphonexs cpu_percentage, gpu_percentage](https://github.com/flutter/flutter/issues/31865#issuecomment-566268237)
 
 **41% speedup for caret performance
-contributors: [garyqian](https://github.com/garyqian), [liyuqian](http://github.com/liyuqian), [justinmc](https://github.com/justinmc)**
+contributors: [garyqian](https://github.com/garyqian), [liyuqian](https://github.com/liyuqian), [justinmc](https://github.com/justinmc)**
 
 * [PR 46720: Pass _caretPrototype to prevent cache miss](https://github.com/flutter/flutter/pull/46720)
 
@@ -51,7 +51,7 @@ contributors: [garyqian](https://github.com/garyqian), [liyuqian](http://github.
 * Fixed [Issue 24522: Caret performance is poor, high GPU time per frame](https://github.com/flutter/flutter/issues/24522)
 
 **10% speedup for list scrolling by fixing raster cache throttling
-contributors: [liyuqian](http://github.com/liyuqian), [chinmaygarde](http://github.com/chinmaygarde), [flar](https://github.com/flar), [cyanglaz](https://github.com/cyanglaz), [zsunkun](https://github.com/zsunkun)**
+contributors: [liyuqian](https://github.com/liyuqian), [chinmaygarde](https://github.com/chinmaygarde), [flar](https://github.com/flar), [cyanglaz](https://github.com/cyanglaz), [zsunkun](https://github.com/zsunkun)**
 
 * [PR 31865: Simple animation costs high CPU/GPU/Power usages (~20%) on iPhone 6](https://github.com/flutter/flutter/issues/31865)
 
@@ -78,7 +78,7 @@ contributors: [jonahwilliams](https://github.com/jonahwilliams), [blasten](https
 * [2.3x speedup (140s to 60s) in a release build of an APK for target platforms android-arm, android-arm64, and android-x64](https://github.com/flutter/flutter/pull/44534#issue-339112036)
 
 **+103 performance metrics recorded per Flutter engine commit
-contributors: [liyuqian](http://github.com/liyuqian), [digiter](https://github.com/digiter), [keyonghan](https://github.com/keyonghan), [godofredoc](https://github.com/godofredoc), [cbracken](https://github.com/cbracken)**
+contributors: [liyuqian](https://github.com/liyuqian), [digiter](https://github.com/digiter), [keyonghan](https://github.com/keyonghan), [godofredoc](https://github.com/godofredoc), [cbracken](https://github.com/cbracken)**
 
 * [PR 14556: Run and collect benchmarks](https://github.com/flutter/engine/pull/14556)
 
@@ -218,7 +218,7 @@ contributors: [flar](https://github.com/flar), [yjbanov](https://github.com/yjba
 * 1.5x speedup (466ms to 320ms) in `MatrixUtils_affine_transformPoint_iteration`
 
 **N/2–1 fewer missed frames on iPhone X/Xs scrolling
-contributors: [liyuqian](http://github.com/liyuqian), [chinmaygarde](http://github.com/chinmaygarde), [gaaclarke](https://github.com/gaaclarke)**
+contributors: [liyuqian](https://github.com/liyuqian), [chinmaygarde](https://github.com/chinmaygarde), [gaaclarke](https://github.com/gaaclarke)**
 
 * [https://github.com/flutter/engine/pull/12385](https://github.com/flutter/engine/pull/12385)
 
@@ -230,14 +230,14 @@ contributors: [liyuqian](http://github.com/liyuqian), [chinmaygarde](http://gith
 [Issue 31086: Scroll performance significantly degraded on iPhone X, Xs devices due to irregular input events delivery](https://github.com/flutter/flutter/issues/31086)
 
 **15% faster engine start and shutdown with parallel initialization
-contributors: [gaaclarke](https://github.com/gaaclarke), [chinmaygarde](http://github.com/chinmaygarde), [liyuqian](http://github.com/liyuqian)**
+contributors: [gaaclarke](https://github.com/gaaclarke), [chinmaygarde](https://github.com/chinmaygarde), [liyuqian](https://github.com/liyuqian)**
 
 * [PR 10182: Made flutter startup faster by allowing initialization to be parallelized](https://github.com/flutter/engine/pull/10182)
 
 * [1.16x speedup (3829377 ns to 3286713 ns) in BM_ShellInitializationAndShutdown](https://github.com/flutter/engine/pull/10182#issuecomment-531953100)
 
 **14.57ms faster startup and 8MB smaller memory usage for shader warm-up
-contributors: [gaaclarke](https://github.com/gaaclarke), [liyuqian](http://github.com/liyuqian), [dnfield](https://github.com/dnfield)**
+contributors: [gaaclarke](https://github.com/gaaclarke), [liyuqian](https://github.com/liyuqian), [dnfield](https://github.com/dnfield)**
 
 * [PR 36482: Sped up shader warmup by only drawing on a 100x100 surface](https://github.com/flutter/flutter/pull/36482)
 
@@ -280,7 +280,7 @@ contributors: [dreveman](https://github.com/dreveman), [amott](https://github.co
 ### Quantified regression fixes
 
 **3x speedup for BackdropFilter on iOS
-contributors: [lhkbob](https://github.com/lhkbob), [liyuqian](http://github.com/liyuqian), [flar](https://github.com/flar)**
+contributors: [lhkbob](https://github.com/lhkbob), [liyuqian](https://github.com/liyuqian), [flar](https://github.com/flar)**
 
 * [https://skia-review.googlesource.com/c/skia/+/237904](https://skia-review.googlesource.com/c/skia/+/237904)
 

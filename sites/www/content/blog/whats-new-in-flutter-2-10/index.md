@@ -167,11 +167,11 @@ In [the Flutter 2.8 release](https://medium.com/flutter/whats-new-in-flutter-2-8
 
 * Removed dev channel support from DartPad, pre-submit tests, and the website
 
-The dev channel has now been scrubbed away. If we missed a spot, please [let us know](http://github.com/flutter/flutter/issues).
+The dev channel has now been scrubbed away. If we missed a spot, please [let us know](https://github.com/flutter/flutter/issues).
 
 ## Sunsetting Support for iOS 9.3.6
 
-Due to decreased usage and increased difficulty in maintaining the target devices in our lab, we are **[moving support](http://flutter.dev/go/rfc-32-bit-ios-support) for iOS 9.3.6 [from the “Supported” tier to the “Best Effort” tier](https://docs.flutter.dev/development/tools/sdk/release-notes/supported-platforms)**. This means that support for iOS 9.3.6 and support for 32-bit iOS devices will be maintained only through coding practices, and ad-hoc and community testing.
+Due to decreased usage and increased difficulty in maintaining the target devices in our lab, we are **[moving support](https://flutter.dev/go/rfc-32-bit-ios-support) for iOS 9.3.6 [from the “Supported” tier to the “Best Effort” tier](https://docs.flutter.dev/development/tools/sdk/release-notes/supported-platforms)**. This means that support for iOS 9.3.6 and support for 32-bit iOS devices will be maintained only through coding practices, and ad-hoc and community testing.
 
 In the Q3, 2022 stable release, we expect to drop support for 32-bit iOS devices and iOS versions 9 and 10 from Flutter stable releases. This means that apps built against stable Flutter SDKs after that point will no longer work on 32-bit iOS devices, and the minimum iOS version supported by Flutter will increase to iOS 11.
 

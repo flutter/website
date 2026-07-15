@@ -98,7 +98,7 @@ We launched an initial suite of Firebase plugins at Google I/O last year. Severa
 
 Our support for ads powered by [AdMob by Google](https://www.google.com/admob/) is graduating to beta, enabling you to monetize your Flutter-based applications. The [AdMob plugin](https://pub.dartlang.org/packages/firebase_admob) supports loading and displaying banner, interstitial (full-screen), and rewarded video ads using the [AdMob API](https://firebase.google.com/docs/admob/).
 
-There are many other packages that have recently been made available for Flutter, some [contributed by the Flutter team](https://pub.dartlang.org/packages?q=email%3Aflutter-dev%40googlegroups.com) directly, others by community members. As mentioned in our I/O announcement post, Flutter is a first-class toolkit for [Material](http://material.io/components), which means the Material and Flutter teams have partnered to deliver even more support for Material Design.
+There are many other packages that have recently been made available for Flutter, some [contributed by the Flutter team](https://pub.dartlang.org/packages?q=email%3Aflutter-dev%40googlegroups.com) directly, others by community members. As mentioned in our I/O announcement post, Flutter is a first-class toolkit for [Material](https://material.io/components), which means the Material and Flutter teams have partnered to deliver even more support for Material Design.
 
 ### Tooling
 

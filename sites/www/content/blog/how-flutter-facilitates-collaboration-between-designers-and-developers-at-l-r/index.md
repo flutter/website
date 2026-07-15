@@ -91,7 +91,7 @@ With hot reload, developers can tweak the code while screen-sharing with the des
 
 **Smooth animations**
 
-One thing that helps an app feel polished is adding thoughtful animations. Flutter’s animation framework is flexible and powerful, however it can be difficult for designers to understand. One thing that helped our team was to reference beautiful animations in open source apps. Specifically, we looked at the codebase for the [Wonderous app](http://wonderous.app). We’ve since leveraged the open-source library, [`flutter_animate`](https://pub.dev/packages/flutter_animate), that powers Wonderous to add simple yet enriching animations to key functionalities.
+One thing that helps an app feel polished is adding thoughtful animations. Flutter’s animation framework is flexible and powerful, however it can be difficult for designers to understand. One thing that helped our team was to reference beautiful animations in open source apps. Specifically, we looked at the codebase for the [Wonderous app](https://wonderous.app). We’ve since leveraged the open-source library, [`flutter_animate`](https://pub.dev/packages/flutter_animate), that powers Wonderous to add simple yet enriching animations to key functionalities.
 
 The video in the following link highlights part of the “Take Action” flow, where the user navigates through a series of informative screens to learn more about the issue.
 

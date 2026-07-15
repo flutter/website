@@ -13,7 +13,7 @@ layout: blog
 
 We know Flutter devs love a good [challenge](https://flutter.dev/events/puzzle-hack), so just in time for the new year, we’re excited to announce the next Flutter challenge!
 
-[The Global Gamers Challenge](http://flutter.dev/global-gamers) is an 8 week contest to design, build, and publish sustainable games, sponsored by Flutter and [Global Citizen](https://www.globalcitizen.org/en/). The contest’s winners will receive a trip to NYC in September 2024 to meet some of the Flutter team for a day of workshops and mentorship, and then celebrate their achievements with up to 60,000 other Global Citizens at Global Citizen Festival 2024.
+[The Global Gamers Challenge](https://flutter.dev/global-gamers) is an 8 week contest to design, build, and publish sustainable games, sponsored by Flutter and [Global Citizen](https://www.globalcitizen.org/en/). The contest’s winners will receive a trip to NYC in September 2024 to meet some of the Flutter team for a day of workshops and mentorship, and then celebrate their achievements with up to 60,000 other Global Citizens at Global Citizen Festival 2024.
 
 ## What are sustainable games?
 
@@ -55,7 +55,7 @@ All projects must be submitted by March 5, 2024, 2:59pm PT (GMT -8). A Top 20 wi
 
 ## Submission guidelines
 
-Registration and entry submission instructions can be found at [DevPost](http://globalgamers.devpost.com/).
+Registration and entry submission instructions can be found at [DevPost](https://globalgamers.devpost.com/).
 
 ## Awards
 
@@ -73,11 +73,11 @@ We won’t just award great coding ability, though. We also have prizes for grea
 
 **Resources**
 
-We’ve compiled a bunch of [resources](http://flutter.dev/global-gamers/#resources) to help you build a game, including a [guide](http://flutter.dev/global-gamers/#guide) to navigating this challenge, kind of like a game map. It shows you the resources you need, helps you become a Global Citizen through a new [learning journey](https://glblctzn.co/hQ5oyPFbcGb) in the Global Citizen application, and contains instructions on how to register and submit your game.
+We’ve compiled a bunch of [resources](https://flutter.dev/global-gamers/#resources) to help you build a game, including a [guide](https://flutter.dev/global-gamers/#guide) to navigating this challenge, kind of like a game map. It shows you the resources you need, helps you become a Global Citizen through a new [learning journey](https://glblctzn.co/hQ5oyPFbcGb) in the Global Citizen application, and contains instructions on how to register and submit your game.
 
 ## Teams
 
-We recommend completing this challenge as part of a team. When you [register for the challenge](http://globalgamers.devpost.com/) on Devpost, you’ll be able to share your skillset, your team status, and your ideas.
+We recommend completing this challenge as part of a team. When you [register for the challenge](https://globalgamers.devpost.com/) on Devpost, you’ll be able to share your skillset, your team status, and your ideas.
 
 <DashImage figure src="images/0fJPnnrD19GKt6MiK.webp" />
 

@@ -38,7 +38,7 @@ Google’s initial announcement announcement of Flutter desktop support started 
 
 ## Flokk: Proving Flutter’s readiness for the desktop
 
-To demonstrate that Flutter was ready for the desktop, we worked with the designers and developers at [gskinner](http://gskinner.com) to create an innovative, beautiful Flutter desktop app. Flokk is a real-world app that works with real-world data, specifically your Google Contacts list.
+To demonstrate that Flutter was ready for the desktop, we worked with the designers and developers at [gskinner](https://gskinner.com) to create an innovative, beautiful Flutter desktop app. Flokk is a real-world app that works with real-world data, specifically your Google Contacts list.
 
 <YoutubeEmbed id="cTFJcq7UTRY" title="YouTube" fullwidth="true"/>
 
@@ -55,7 +55,7 @@ In addition to innovating in the social space, Flokk uses Flutter features to lo
 <DashImage figure src="images/0dKv6teOS8d4zjiWk.webp" alt="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" caption="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" />
 
 
-The creative team behind the Flokk Contacts app was led by [Grant Skinner](http://gskinner.com), who’s well known for both excellence in design and implementation of innovative user experience. Grant had this to say about working with Flutter on Linux:
+The creative team behind the Flokk Contacts app was led by [Grant Skinner](https://gskinner.com), who’s well known for both excellence in design and implementation of innovative user experience. Grant had this to say about working with Flutter on Linux:
 > *“Building the Flokk Contacts app was a breeze! We were able to apply all our previous expertise in Flutter to target Linux with virtually no adjustments, and the app runs fantastically. Working with the Canonical team was a wonderful experience; they were enthusiastic, engaged, and passionate about making Flutter better not just for Linux, but for every platform. It was an amazing project, and I’m thrilled to be able to target another major OS with Flutter.” — Grant Skinner*
 
 If you’d like to use the Flokk app on your Linux machine, you can download the latest release on [GitHub](https://github.com/gskinnerTeam/Flokk/releases). Or, if you’re running snapd, you can download the Flokk App from the [Snap Store](https://snapcraft.io/flokk-contacts).
@@ -110,7 +110,7 @@ This will create the `linux` subdirectory with the Runner project that you need 
 
 ## Accessing native code in Linux from Flutter
 
-In addition to supporting the desktop by writing Dart to create Flutter widgets, your Linux desktop apps can also access all of native Linux using [platform channels](https://flutter.dev/docs/development/platform-integration/platform-channels) or [the Dart Foreign Function Interface for C/C++](https://dart.dev/guides/libraries/c-interop). Or, if you’d like to reuse pre-existing code, you can [find that code on pub.dev](http://pub.dev/flutter/packages?platform=linux), Dart and Flutter’s package manager site. Most of the packages you’ll find on pub.dev are pure Dart, most of which work just fine in Linux apps. Some packages, called plugins, have native code in them that are specific to one or more platforms. As part of this release, we’ve published three plugins on pub.dev that use native functionality of Linux:
+In addition to supporting the desktop by writing Dart to create Flutter widgets, your Linux desktop apps can also access all of native Linux using [platform channels](https://flutter.dev/docs/development/platform-integration/platform-channels) or [the Dart Foreign Function Interface for C/C++](https://dart.dev/guides/libraries/c-interop). Or, if you’d like to reuse pre-existing code, you can [find that code on pub.dev](https://pub.dev/flutter/packages?platform=linux), Dart and Flutter’s package manager site. Most of the packages you’ll find on pub.dev are pure Dart, most of which work just fine in Linux apps. Some packages, called plugins, have native code in them that are specific to one or more platforms. As part of this release, we’ve published three plugins on pub.dev that use native functionality of Linux:
 
 * [url_launcher](https://pub.dev/packages/url_launcher): launch the default browser at a URL provided
 
@@ -210,7 +210,7 @@ Thorsten has been building this game to support multiple Flutter platforms inclu
 
 ## Summary
 
-With this alpha release and the close partnership between Google and Canonical, Linux developers get Flutter support for their operating system of choice. Install the [Flutter SDK via snap](https://snapcraft.io/flutter). Build and test your desktop app on Linux using Visual Studio Code or Android Studio. Deploy your app to the Snap Store. For the latest details, see [the desktop page on flutter.dev](http://flutter.dev/desktop). And above all else, [make sure to provide feedback](https://github.com/flutter/flutter/issues) so that we can continue making Flutter the best it can be on Linux, as we strive to do for every supported Flutter platform.
+With this alpha release and the close partnership between Google and Canonical, Linux developers get Flutter support for their operating system of choice. Install the [Flutter SDK via snap](https://snapcraft.io/flutter). Build and test your desktop app on Linux using Visual Studio Code or Android Studio. Deploy your app to the Snap Store. For the latest details, see [the desktop page on flutter.dev](https://flutter.dev/desktop). And above all else, [make sure to provide feedback](https://github.com/flutter/flutter/issues) so that we can continue making Flutter the best it can be on Linux, as we strive to do for every supported Flutter platform.
 
 Flutter for Linux from the Canonical team is a giant step forward for our dream of making Flutter the best way to build an app, no matter which platform you’re targeting. Targeting the desktop has made the Flutter engine that much more adaptable to a long tail of devices that Google itself can’t support directly, but for which we plan to continue to build partnerships and to enable the ecosystem.
 

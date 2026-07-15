@@ -19,7 +19,7 @@ Flutter is Google’s open source UI toolkit for building beautiful, natively co
 
 Along with the curated content, we will also have four live AskMeAnything sessions (#AMAs), where you can meet members of Google’s Flutter team and community. You can also join us on the [FlutterDev Discord channel](https://discord.com/invite/N7Yshp4), where you can meet the other members of the community, ask and answer questions, and maybe make some new Flutter friends too!
 
-Does this sound exciting? Visit the [**30 Days of Flutter website**](http://goo.gle/30daysofflutter) to get more information and to register to join. Last date to register is 31st January 2021, 11:30pm PST.
+Does this sound exciting? Visit the [**30 Days of Flutter website**](https://goo.gle/30daysofflutter) to get more information and to register to join. Last date to register is 31st January 2021, 11:30pm PST.
 
 ### #30DaysOfFlutter Schedule
 
@@ -43,4 +43,4 @@ Complete your project and learn how to share it with the Flutter community.
 
 Are you ready to learn one of the most in demand developer skills in the world?
 
-[*Sign up*](http://goo.gle/30daysofflutter) to be a part of the journey and be sure to follow [@FlutterDev](https://twitter.com/FlutterDev) on Twitter, to get updates about **#30DaysOfFlutter**.
+[*Sign up*](https://goo.gle/30daysofflutter) to be a part of the journey and be sure to follow [@FlutterDev](https://twitter.com/FlutterDev) on Twitter, to get updates about **#30DaysOfFlutter**.

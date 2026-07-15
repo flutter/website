@@ -34,7 +34,7 @@ The Google Mobile Ads (GMA) SDK for Flutter works on both iOS and Android, and s
 
 We partnered with the Google Ads team to build this plugin as the official ads solution for Flutter developers. The GMA SDK for Flutter unifies support for both **Google AdMob and Google Ad Manager** into a single plugin.
 
-If you are not familiar with Google’s ads services, you might not know that [AdMob](https://admob.google.com/home/) and [Ad Manager](http://admanager.google.com/home) are two different products with different monetization capabilities. The AdMob platform is designed for mobile developers who want to earn money from ads and gain actionable insights to grow the app business. The Ad Manager platform is designed for publishers who have significant direct sales or multiple inventory types.
+If you are not familiar with Google’s ads services, you might not know that [AdMob](https://admob.google.com/home/) and [Ad Manager](https://admanager.google.com/home) are two different products with different monetization capabilities. The AdMob platform is designed for mobile developers who want to earn money from ads and gain actionable insights to grow the app business. The Ad Manager platform is designed for publishers who have significant direct sales or multiple inventory types.
 
 [The GMA SDK for Flutter](https://pub.dev/packages/google_mobile_ads) unifies these products to help meet your monetization needs by sharing code across iOS and Android and not having to rewrite your code as your needs grow.
 

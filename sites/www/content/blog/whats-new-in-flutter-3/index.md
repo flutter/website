@@ -64,7 +64,7 @@ Try [the Surface Duo emulator samples](https://docs.microsoft.com/en-us/dual-scr
 
 ### iOS variable refresh rate support
 
-Flutter now supports variable refresh rate on iOS devices with ProMotion displays, including iPhone 13 Pro and iPad Pro. On these devices, Flutter apps can render at refresh rates reaching 120 hz, which were previously limited to 60 hz. This results in a smoother experience during fast animations such as scrolling. See [flutter.dev/go/variable-refresh-rate](http://flutter.dev/go/variable-refresh-rate) for more details.
+Flutter now supports variable refresh rate on iOS devices with ProMotion displays, including iPhone 13 Pro and iPad Pro. On these devices, Flutter apps can render at refresh rates reaching 120 hz, which were previously limited to 60 hz. This results in a smoother experience during fast animations such as scrolling. See [flutter.dev/go/variable-refresh-rate](https://flutter.dev/go/variable-refresh-rate) for more details.
 
 ### Simplified iOS releases
 
@@ -78,7 +78,7 @@ If you create a new project with the Flutter tool, you might notice that the gen
 
 As we announced in Feb 2022 with the 2.10 stable release, Flutter’s support for 32-bit iOS devices and iOS versions 9 and 10 is coming to an end. This change affects the iPhone 4S, iPhone 5, iPhone 5C, and the 2nd, 3d, and 4th gen iPad devices. Flutter 3 is the last stable release that supports these iOS versions and devices.
 
-To learn more about this change, take a look at [RFC: End of support for 32-bit iOS devices](http://flutter.dev/go/rfc-32-bit-ios-unsupported).
+To learn more about this change, take a look at [RFC: End of support for 32-bit iOS devices](https://flutter.dev/go/rfc-32-bit-ios-unsupported).
 
 ## Web updates
 

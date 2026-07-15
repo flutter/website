@@ -15,9 +15,9 @@ layout: blog
 
 ### AI-generated text and images add some fun to this card game built with Flutter, Firebase, and Google Cloud
 
-[I/O FLIP](http://flip.withgoogle.com) is an AI-designed card game powered by Google and built in Flutter. It unites a handful of Google products and techniques. This includes [Flutter](https://flutter.dev/), [Firebase](https://firebase.google.com/), generative AI tools, Dreambooth on Muse, [PaLM API](https://developers.googleblog.com/2023/03/announcing-palm-api-and-makersuite.html), and [MakerSuite](https://developers.googleblog.com/2023/03/announcing-palm-api-and-makersuite.html). Players can play multiple matches and share cards from their game to social media.
+[I/O FLIP](https://flip.withgoogle.com) is an AI-designed card game powered by Google and built in Flutter. It unites a handful of Google products and techniques. This includes [Flutter](https://flutter.dev/), [Firebase](https://firebase.google.com/), generative AI tools, Dreambooth on Muse, [PaLM API](https://developers.googleblog.com/2023/03/announcing-palm-api-and-makersuite.html), and [MakerSuite](https://developers.googleblog.com/2023/03/announcing-palm-api-and-makersuite.html). Players can play multiple matches and share cards from their game to social media.
 
-To play the game, visit [http://flip.withgoogle.com](http://flip.withgoogle.com). To start and to generate your deck, answer a few prompts. To make your hand and join a match, select three cards. You’ll use these cards to play your opponent for three rounds in which the highest card wins the round. The fun doesn’t have to end when the match does. Keep playing matches to increase your win streak and try to make the leaderboard!
+To play the game, visit [https://flip.withgoogle.com](https://flip.withgoogle.com). To start and to generate your deck, answer a few prompts. To make your hand and join a match, select three cards. You’ll use these cards to play your opponent for three rounds in which the highest card wins the round. The fun doesn’t have to end when the match does. Keep playing matches to increase your win streak and try to make the leaderboard!
 
 Let’s dig into the technical details of we used Flutter and Firebase to build I/O FLIP.
 
@@ -163,4 +163,4 @@ Dart Frog also facilitates sharing on social media. When selecting cards, a play
 
 I/O FLIP showcases how to combine Flutter and Firebase, along with Google generative AI tools and techniques, in a fun game that people around the world can play.
 
-[Play a game](http://flip.withgoogle.com) and show us your hand, or dig into the [open source code](https://github.com/flutter/io_flip)!
+[Play a game](https://flip.withgoogle.com) and show us your hand, or dig into the [open source code](https://github.com/flutter/io_flip)!

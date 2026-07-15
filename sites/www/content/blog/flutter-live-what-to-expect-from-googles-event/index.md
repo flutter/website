@@ -15,14 +15,14 @@ layout: blog
 
 ## What to expect at Flutter Live
 
-[Flutter Live](https://developers.google.com/events/flutter-live/) is happening on December 4th, with a small in-person event at the Science Museum in London, and a large global livestream audience. This event is a celebration of [Flutter](http://flutter.io), Google’s free and open source SDK for building high-quality native iOS and Android apps from a single codebase.
+[Flutter Live](https://developers.google.com/events/flutter-live/) is happening on December 4th, with a small in-person event at the Science Museum in London, and a large global livestream audience. This event is a celebration of [Flutter](https://flutter.io), Google’s free and open source SDK for building high-quality native iOS and Android apps from a single codebase.
 
 <YoutubeEmbed id="M71JIWWV_Q0" title="Announcing Flutter Live!" fullwidth="true"/>
 
 
 ## Tune in to the livestream
 
-Go to [g.co/FlutterLive](http://g.co/FlutterLive) and [sign up for livestream updates](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform). The event will be broadcasted on the website Dec 4 with a pre-show starting at [4:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T160000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33) and the keynote at [5:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T170000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33).
+Go to [g.co/FlutterLive](https://g.co/FlutterLive) and [sign up for livestream updates](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform). The event will be broadcasted on the website Dec 4 with a pre-show starting at [4:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T160000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33) and the keynote at [5:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T170000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33).
 
 ## Viewing Parties
 
@@ -51,4 +51,4 @@ Given this is a global event, Andrew from our team will be live after the Keynot
 <YoutubeEmbed id="drNPMrdmqMQ" title="#AskFlutter at Flutter Live - Ask us your questions!" fullwidth="true"/>
 
 
-We are thrilled that you will experience Flutter Live with us on December 4th. In the meantime, follow us on twitter at [@flutterio](https://twitter.com/flutterio) and get started with Flutter at [flutter.io](http://flutter.io).
+We are thrilled that you will experience Flutter Live with us on December 4th. In the meantime, follow us on twitter at [@flutterio](https://twitter.com/flutterio) and get started with Flutter at [flutter.io](https://flutter.io).

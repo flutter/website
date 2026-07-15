@@ -8,18 +8,18 @@ category: events
 layout: blog
 ---
 
-### Tl;dr: [Flutter Live](https://developers.google.com/events/flutter-live/), a celebration of Google’s new mobile app SDK, is happening on December 4th. [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform) for our global livestream and watch it at [g.co/FlutterLive](http://g.co/FlutterLive).
+### Tl;dr: [Flutter Live](https://developers.google.com/events/flutter-live/), a celebration of Google’s new mobile app SDK, is happening on December 4th. [Sign up here](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform) for our global livestream and watch it at [g.co/FlutterLive](https://g.co/FlutterLive).
 
 ## What to expect at Flutter Live
 
-[Flutter Live](https://developers.google.com/events/flutter-live/) is happening on December 4th, with a small in-person event at the Science Museum in London, and a large global livestream audience. This event is a celebration of [Flutter](http://flutter.io), Google’s free and open source SDK for building high-quality native iOS and Android apps from a single codebase.
+[Flutter Live](https://developers.google.com/events/flutter-live/) is happening on December 4th, with a small in-person event at the Science Museum in London, and a large global livestream audience. This event is a celebration of [Flutter](https://flutter.io), Google’s free and open source SDK for building high-quality native iOS and Android apps from a single codebase.
 
 <YoutubeEmbed id="hFOS9VGs6yo" title="FL18300 v3" fullwidth="true"/>
 
 
 ## Tune in to the livestream
 
-Go to [g.co/FlutterLive](http://g.co/FlutterLive) and [sign up for livestream updates](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform). The event will be broadcasted on the website Dec 4 with a pre-show starting at [4:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T160000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33) and the keynote at [5:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T170000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33).
+Go to [g.co/FlutterLive](https://g.co/FlutterLive) and [sign up for livestream updates](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform). The event will be broadcasted on the website Dec 4 with a pre-show starting at [4:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T160000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33) and the keynote at [5:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T170000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33).
 
 You can also add this directly on your Google Calendar by [clicking here](https://goo.gl/sDmu12).
 
@@ -46,6 +46,6 @@ Andrew Brogdon from our team will be LIVE on-site answering questions in real ti
 
 This is our overall event hashtag. We will have a social wall that is constantly showing tweets coming in with #FlutterLive both on-site and on our livestream. Make sure to tweet with pictures, comments, videos, and questions while you experience Flutter Live.
 
-We are thrilled that you will experience Flutter Live with us on December 4th. In the meantime, follow us on twitter at [@flutterio](https://twitter.com/flutterio) and get started with Flutter at [flutter.io](http://flutter.io).
+We are thrilled that you will experience Flutter Live with us on December 4th. In the meantime, follow us on twitter at [@flutterio](https://twitter.com/flutterio) and get started with Flutter at [flutter.io](https://flutter.io).
 
 <DashImage figure src="images/1WCwp_dTUQuDPDQIa1PV3cA.jpeg" />

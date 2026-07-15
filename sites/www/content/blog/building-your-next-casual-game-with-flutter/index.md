@@ -8,7 +8,7 @@ category: announcements
 layout: blog
 ---
 
-Today I’m excited to introduce you to a major update of the [Flutter Casual Games Toolkit](http://flutter.dev/games), a collection of new templates and new developer resources to make game developers more productive with Flutter.
+Today I’m excited to introduce you to a major update of the [Flutter Casual Games Toolkit](https://flutter.dev/games), a collection of new templates and new developer resources to make game developers more productive with Flutter.
 
 Flutter is Google’s open source UI framework for building beautiful multi-platform applications. Today, Flutter is used in more than one million apps ranging from early stage startups to large companies like ByteDance, Tencent, BMW, and Google, to deliver beautiful, performant, and portable experiences across platforms, from a single codebase.
 
@@ -19,7 +19,7 @@ Over the past few years, we’ve seen a growing community around casual game dev
 
 ## Why choose Flutter for casual games
 
-Flutter is a great choice for game developers. First, it’s free and open source, giving you fine-grained control over your game’s rendering and input handling logic. This allows you to debug issues at their core and customize the engine to your needs. Flutter’s openness also extends to our ecosystem. All [Flutter plugins and packages](http://pub.dev) are also available for integration at no cost.
+Flutter is a great choice for game developers. First, it’s free and open source, giving you fine-grained control over your game’s rendering and input handling logic. This allows you to debug issues at their core and customize the engine to your needs. Flutter’s openness also extends to our ecosystem. All [Flutter plugins and packages](https://pub.dev) are also available for integration at no cost.
 
 Second, developing in Flutter is highly productive. Flutter introduced a revolutionary capability called [hot-reload](https://docs.flutter.dev/tools/hot-reload#how-to-perform-a-hot-reload) that allows developers to see instant UI updates after making code changes, thus making the development process more iterative and efficient. Besides, Flutter supports multi-platform game development, so you can build your game for **iOS and Android, web, and desktop** all from a single, shared codebase. This saves you time and effort, and allows your game to reach a wider audience from day one.
 
@@ -41,7 +41,7 @@ Second, you will find a [Card game template](https://github.com/flutter/games/tr
 <DashImage figure src="images/00GvQrqyBDG2NVb42.webp" alt="An animated gif showing the card template" caption="An animated gif showing the card template" />
 
 
-Third, we partnered with the open source game engine [Flame](http://flame-engine.org) (built on top of Flutter), to provide an [endless runner template](https://github.com/flutter/games/tree/main/templates/endless_runner). While you can already use *only* Flutter to build many turn-based games such as card games, word puzzles, and board games that respond to simple user input, you might also want to build real-time games such as endless runners, shooters, and racing games that require a game loop. In those cases, you can use Flame to implement play steering, collision detection, parallax, spawning, and different visual effects.
+Third, we partnered with the open source game engine [Flame](https://flame-engine.org) (built on top of Flutter), to provide an [endless runner template](https://github.com/flutter/games/tree/main/templates/endless_runner). While you can already use *only* Flutter to build many turn-based games such as card games, word puzzles, and board games that respond to simple user input, you might also want to build real-time games such as endless runners, shooters, and racing games that require a game loop. In those cases, you can use Flame to implement play steering, collision detection, parallax, spawning, and different visual effects.
 
 <DashImage figure src="images/0SDayAkeAnC_NtiLU.webp" alt="An animated gif showing the endless runner template" caption="An animated gif showing the endless runner template" />
 

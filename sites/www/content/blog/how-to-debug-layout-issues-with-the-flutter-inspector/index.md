@@ -422,4 +422,4 @@ To learn more, check out [understanding constraints](https://flutter.dev/docs/de
 
 Happy debugging!
 
-*About the author: Katie is a rising senior at University of Michigan studying Computer Science. She’s currently an intern on the Flutter Developer Relations team, helping developers learn and build awesome apps. To see what she’s up to, visit her [GitHub](https://github.com/katisari) and [LinkedIn](http://www.linkedin.com/in/katiesaari).*
+*About the author: Katie is a rising senior at University of Michigan studying Computer Science. She’s currently an intern on the Flutter Developer Relations team, helping developers learn and build awesome apps. To see what she’s up to, visit her [GitHub](https://github.com/katisari) and [LinkedIn](https://www.linkedin.com/in/katiesaari).*

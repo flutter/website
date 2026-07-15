@@ -12,7 +12,7 @@ layout: blog
 
 As a team, we’re used to plenty of travel, hanging out at various events and user groups, and connecting with folks in person; we miss our time with the Flutter community! So, while we’re not able to get together face-to-face, we’re going to do the next best thing: bring the gathering to you with a dedicated day of Flutter.
 
-Flutter Day ([g.co/FlutterDay](http://g.co/FlutterDay)) starts at 9am Pacific Time on June 25th, 2020 and goes for 24 hours worldwide, enjoying all things Flutter: the technology, ecosystem and most importantly, the community.
+Flutter Day ([g.co/FlutterDay](https://g.co/FlutterDay)) starts at 9am Pacific Time on June 25th, 2020 and goes for 24 hours worldwide, enjoying all things Flutter: the technology, ecosystem and most importantly, the community.
 
 First and foremost, we’ve got codelabs, both existing ones that have been lovingly updated and brand new ones! Whether you’re new to Flutter or a seasoned pro, you’re going to find something you like in this list. And to make sure you get the help you need, we’ll have a 24-hour support channel for you to get your codelab questions answered.
 
@@ -23,7 +23,7 @@ We have a great lineup, including engineers, PMs, and developer advocates from t
 <DashImage figure src="images/0siIoSIIiPLyDxPTP.webp" />
 
 
-For the Flutter Day details and to let us know that you’re interested in participating, [register on the Flutter Day website today](http://g.co/flutterday)!
+For the Flutter Day details and to let us know that you’re interested in participating, [register on the Flutter Day website today](https://g.co/flutterday)!
 
 ## Flutter Day Near You
 
@@ -45,4 +45,4 @@ Right after you’re done with the day of Flutter codelabs, you’re ready to ju
 
 ## Something for Everyone
 
-Whether you’re trying Flutter for the first time, or a seasoned veteran, Flutter Day has something for you. Hang out with Flutter fans from around the world, get your Flutter questions answered, enjoy some Flutter content from around the world, and then spend the weekend at a hackathon. Don’t forget to register your interest and see the details at [g.co/FlutterDay](http://g.co/FlutterDay) today.
+Whether you’re trying Flutter for the first time, or a seasoned veteran, Flutter Day has something for you. Hang out with Flutter fans from around the world, get your Flutter questions answered, enjoy some Flutter content from around the world, and then spend the weekend at a hackathon. Don’t forget to register your interest and see the details at [g.co/FlutterDay](https://g.co/FlutterDay) today.

@@ -11,7 +11,7 @@ layout: blog
 <YoutubeEmbed id="6Hb3QiH_yps" title="Wonderous App, built with Flutter" fullwidth="true"/>
 
 
-Our vision for Flutter is to provide a blank canvas for you to design and paint beautiful apps without limitation. Recently, we teamed up with the amazing group at gskinner to make this vision a reality, by creating a new mobile app, [Wonderous](http://wonderous.app). Wonderous uses Flutter to create a highly expressive user interface, tailored to the mobile form factor, and doesn’t conform to a stock design system. Instead, Wonderous realizes the creative vision of its designer.
+Our vision for Flutter is to provide a blank canvas for you to design and paint beautiful apps without limitation. Recently, we teamed up with the amazing group at gskinner to make this vision a reality, by creating a new mobile app, [Wonderous](https://wonderous.app). Wonderous uses Flutter to create a highly expressive user interface, tailored to the mobile form factor, and doesn’t conform to a stock design system. Instead, Wonderous realizes the creative vision of its designer.
 
 <DashImage figure src="images/1Tb-JXZnxo2pu232C4c2KqQ.webp" alt="Screenshots from the Wonderous App" caption="Screenshots from the Wonderous App" />
 
@@ -31,7 +31,7 @@ Our vision for Flutter is to provide a blank canvas for you to design and paint 
 <DashImage figure src="images/1UhID-wmcu6aSotxCJjGVtQ.webp" />
 
 
-After [downloading Wonderous](http://wonderous.app) from the Apple App Store or the Google Play Store there are a few characteristics you might want to explore:
+After [downloading Wonderous](https://wonderous.app) from the Apple App Store or the Google Play Store there are a few characteristics you might want to explore:
 
 * Transitions that would likely be difficult without Flutter, these are especially noticeable when swiping left to right between Wonders
 

@@ -1221,13 +1221,13 @@ This class only affects the *declarative* API, which is why the **back** button 
 
 **How this example works:** This example looks at both the new routes and the routes that are exiting the screen. It goes through all of the objects in `newPageRouteHistory` and marks them to be added without a transition animation using `markForAdd`. Next, it loops through values of the `locationToExitingPageRoute` map. If it finds a route marked as `isWaitingForExitingDecision`, then it calls `markForRemove` to indicate that the route should be removed without a transition and without completing.
 
-[Here’s the full sample(Gist)](http://gist.github.com/5ce79aee5b5f83cfababa97c9cf0a204).
+[Here’s the full sample(Gist)](https://gist.github.com/5ce79aee5b5f83cfababa97c9cf0a204).
 
 ### Nested routers
 
 This larger demo shows how to add a `Router` within another `Router`. Many apps require routes for the destinations in a `BottomAppBar`, and routes for a stack of views above it, which [requires two Navigators](https://medium.com/flutter/getting-to-the-bottom-of-navigation-in-flutter-b3e440b9386). To do this, the app uses an application state object to store app-specific navigation state (the selected menu index and the selected `Book` object). This example also shows how to configure which `Router` handles the back button.
 
-[Nested router sample(Gist)](http://gist.github.com/bbca91e23bbb4d39247fa922533be7c9)
+[Nested router sample(Gist)](https://gist.github.com/bbca91e23bbb4d39247fa922533be7c9)
 
 ## What’s next
 

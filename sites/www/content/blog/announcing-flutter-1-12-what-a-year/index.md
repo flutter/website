@@ -41,7 +41,7 @@ Another improvement in our mobile support is an update to Add-to-App, which is t
 
 With Flutter 1.12, Add-to-App is now officially supported for adding one fullscreen Flutter instance to your app. In supporting this functionality, we’ve also:
 
-* Stabilized the APIs for platform integration in Java, Kotlin, Objective-C and Swift, including a new set of APIs for Android. See [the Android project migration docs](http://flutter.dev/go/android-project-migration) for details on changes.
+* Stabilized the APIs for platform integration in Java, Kotlin, Objective-C and Swift, including a new set of APIs for Android. See [the Android project migration docs](https://flutter.dev/go/android-project-migration) for details on changes.
 
 * Added support for using plugins in embedded Flutter modules.
 
@@ -121,7 +121,7 @@ And finally, to improve the experience of Flutter desktop apps, we’ve done a l
 
 In addition to the Flutter sample, we also recommend [the new Photos Search sample](https://github.com/flutter/samples/tree/master/experimental/desktop_photo_search), which shows off a lot of desktop goodness, including keyboard handling, the new widget density, the new plugins, and the new widgets.
 
-For those of you curious about progress on Windows and Linux, they’re still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We’ll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](http://flutter.dev/desktop).
+For those of you curious about progress on Windows and Linux, they’re still in technical preview, but both benefit from a lot of the work to get macOS to alpha. We’ll share the updates to those platforms soon. For more details of where we are with desktop support in Flutter for macOS, Windows and Linux, please see [flutter.dev/desktop](https://flutter.dev/desktop).
 
 ## Flutter tooling
 

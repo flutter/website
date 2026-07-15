@@ -79,7 +79,7 @@ I’ve worked on many fun and innovative projects during my 17+ years at Google 
 
 Part of what drives my enthusiasm is, well, your enthusiasm. Just in 2024 so far, I’ve seen such amazing things come out of this community, including:
 
-* Over 2,700 of you have joined our [Global Gamers Challenge](http://flutter.dev/global-gamers), which we’re hosting in partnership with international advocacy firm Global Citizen to challenge you to use your skills to build Flutter games that inspire the world to live more sustainably.
+* Over 2,700 of you have joined our [Global Gamers Challenge](https://flutter.dev/global-gamers), which we’re hosting in partnership with international advocacy firm Global Citizen to challenge you to use your skills to build Flutter games that inspire the world to live more sustainably.
 
 * [Superlist](https://youtu.be/37qvcjmE51w), who announced version 1.0 yesterday, is using Flutter to redefine task management, note taking, and everything in between.
 

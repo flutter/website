@@ -75,7 +75,7 @@ In some cases, we can help. For example, there are 181 packages on pub.dev that 
 
 ## Bringing Google Flutter Plugins to Production
 
-You may have noticed that not all of Google Flutter plugins are listed in the discussion above, like Firebase, Camera, Video Player, etc. That’s because we’ve got some more work to do on some plugins to bring them up to production quality; for example, the Firebase plugins need better, more thorough documentation as well as faster build times and simpler configuration. To help us get there, I’m happy to announce that we’ve engaged with [Invertase](http://invertase.io), a UK-based consulting firm with deep expertise in Dart and Flutter.
+You may have noticed that not all of Google Flutter plugins are listed in the discussion above, like Firebase, Camera, Video Player, etc. That’s because we’ve got some more work to do on some plugins to bring them up to production quality; for example, the Firebase plugins need better, more thorough documentation as well as faster build times and simpler configuration. To help us get there, I’m happy to announce that we’ve engaged with [Invertase](https://invertase.io), a UK-based consulting firm with deep expertise in Dart and Flutter.
 
 <DashImage figure src="images/0lfpUSCU8N0mJf1BH.webp" />
 

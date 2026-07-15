@@ -63,7 +63,7 @@ But that’s not all — in addition to the existing set of packages to [add Fir
 
 On the tooling side, you’re probably already familiar with the Flutter plugins for [Android Studio](https://flutter.io/docs/get-started/editor?tab=androidstudio) and [Visual Studio Code](https://flutter.io/docs/get-started/editor?tab=vscode), but did you know about [2Dimensions Flare](https://medium.com/2dimensions/flare-launch-d524067d34d8), which helps you build great vector animations for Flutter, or [Nevercode Codemagic](https://nevercode.io/blog/why-we-built-codemagic/), which provides testing and continuous deployment to the Google Play and Apple App Store for your Flutter app?
 
-It’s clear that the Flutter community is strong and it’s getting stronger. To get started, you’ll find an excellent set of docs, samples, videos and codelabs provided on the Flutter site at [flutter.io](http://flutter.io). And when you’ve got questions about Flutter development, issues to report or features to request, [become a part of the Flutter community](https://flutter.io/community).
+It’s clear that the Flutter community is strong and it’s getting stronger. To get started, you’ll find an excellent set of docs, samples, videos and codelabs provided on the Flutter site at [flutter.io](https://flutter.io). And when you’ve got questions about Flutter development, issues to report or features to request, [become a part of the Flutter community](https://flutter.io/community).
 
 ## Flutter Future
 

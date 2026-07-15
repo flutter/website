@@ -106,7 +106,7 @@ Recently we landed an optimization in Flutter for web that improves scrolling fo
 
 We’ve also fixed several text rendering issues such as text disappearing behind the canvas or cursor problems with multiline text. These text correctness fixes are currently enabled behind the `FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT` flag; our plan is to make this the platform default soon.
 
-At [Flutter Interact](http://g.co/FlutterInteract) last year, we announced that our new Gallery sample app runs on the web using Flutter. Since then we’ve made significant performance optimizations in web support as well as the app, so that it runs even faster and smoother. As a result of these changes, initial load time is now three times faster, and the code size has been reduced by 2.7x.
+At [Flutter Interact](https://g.co/FlutterInteract) last year, we announced that our new Gallery sample app runs on the web using Flutter. Since then we’ve made significant performance optimizations in web support as well as the app, so that it runs even faster and smoother. As a result of these changes, initial load time is now three times faster, and the code size has been reduced by 2.7x.
 
 <DashImage figure src="images/19FIv19QYzuwBQ-4Hx3EkGA.webp" alt="The Flutter Gallery app, running as a PWA on Windows." caption="The Flutter Gallery app, running as a PWA on Windows." />
 

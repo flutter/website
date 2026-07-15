@@ -170,7 +170,7 @@ In previous releases, you had to manually configure a custom `Zone` in order to 
 
 ### FragmentProgram changes
 
-Fragment shaders written in GLSL and listed under a `shaders:` section in the Flutter manifest of an application’s `pubspec.yaml` file will now be automatically compiled to the correct format understood by the Engine and bundled with the application as an asset. Thanks to this change, you will no longer have to manually compile shaders using third-party tools. Going forward, you should regard the Engine’s `FragmentProgram` API as accepting only the output of Flutter’s build tooling. This isn’t yet the case, but this change is planned for a future release, as described in the [FragmentProgram API Support improvements](http://flutter.dev/go/fragment-program-support) design doc.
+Fragment shaders written in GLSL and listed under a `shaders:` section in the Flutter manifest of an application’s `pubspec.yaml` file will now be automatically compiled to the correct format understood by the Engine and bundled with the application as an asset. Thanks to this change, you will no longer have to manually compile shaders using third-party tools. Going forward, you should regard the Engine’s `FragmentProgram` API as accepting only the output of Flutter’s build tooling. This isn’t yet the case, but this change is planned for a future release, as described in the [FragmentProgram API Support improvements](https://flutter.dev/go/fragment-program-support) design doc.
 
 For an example of this change, see this [Flutter shader example](https://github.com/zanderso/fragment_shader_example).
 
@@ -182,7 +182,7 @@ Previously, the Flutter Engine would always align composited layers to exact pix
 
 ### 32-bit iOS deprecation
 
-As we announced earlier with the 3.0 stable release, due to decreased usage, that release was the [last one to support 32-bit iOS devices and iOS versions 9 and 10](http://flutter.dev/go/rfc-32-bit-ios-unsupported). This change affects the iPhone 4S, iPhone 5, iPhone 5C, and the 2nd, 3d, and 4th generation iPad devices. The 3.3 stable version of Flutter and all following stable releases no longer support 32-bit iOS devices and iOS versions 9 and 10. This means that apps built against Flutter 3.3 and later won’t run on those devices.
+As we announced earlier with the 3.0 stable release, due to decreased usage, that release was the [last one to support 32-bit iOS devices and iOS versions 9 and 10](https://flutter.dev/go/rfc-32-bit-ios-unsupported). This change affects the iPhone 4S, iPhone 5, iPhone 5C, and the 2nd, 3d, and 4th generation iPad devices. The 3.3 stable version of Flutter and all following stable releases no longer support 32-bit iOS devices and iOS versions 9 and 10. This means that apps built against Flutter 3.3 and later won’t run on those devices.
 
 ### Sunsetting macOS 10.11 and 10.12
 

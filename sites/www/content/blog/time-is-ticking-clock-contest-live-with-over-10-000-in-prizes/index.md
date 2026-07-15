@@ -8,7 +8,7 @@ category: events
 layout: blog
 ---
 
-[Flutter Clock](http://flutter.dev/clock) is a contest offered by Google, with participation from the Flutter, Google Assistant, and Lenovo teams, that challenges you to build a Flutter clock face application for the Lenovo Smart Clock that is beautiful and innovative. Whether you’re a Flutter expert or novice, we invite you to join us and see what you can create. Over $10,000 in prizes will be awarded to the winners! Visit [flutter.dev/clock](http://flutter.dev/clock) to enter.
+[Flutter Clock](https://flutter.dev/clock) is a contest offered by Google, with participation from the Flutter, Google Assistant, and Lenovo teams, that challenges you to build a Flutter clock face application for the Lenovo Smart Clock that is beautiful and innovative. Whether you’re a Flutter expert or novice, we invite you to join us and see what you can create. Over $10,000 in prizes will be awarded to the winners! Visit [flutter.dev/clock](https://flutter.dev/clock) to enter.
 
 <YoutubeEmbed id="rxs69_szCkE" title="FOO014 Final" fullwidth="true"/>
 
@@ -17,7 +17,7 @@ layout: blog
 
 ***Date:** All entries must be submitted by January 20, 2020 11:59 PM PST (GMT-8).*
 
-***How to Submit:** Entries will be collected on the form linked at [flutter.dev/clock](http://flutter.dev/clock), but see the [Official Rules](https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit) for full details.*
+***How to Submit:** Entries will be collected on the form linked at [flutter.dev/clock](https://flutter.dev/clock), but see the [Official Rules](https://docs.google.com/document/d/1ybyQCK8Sy7vrD9wuc6pbgwVkyrVZ7Rd_41r5NXGqlt8/edit) for full details.*
 
 ***Winners:** Submissions will be rated by Google and Flutter expert judges against the following rubric: visual beauty, code quality, novelty of idea, and overall execution.*
 

@@ -23,11 +23,11 @@ So, dive in and discover all the new features and enhancements that the Flutter 
 
 This release adds new slivers that can be composed together for dynamic app bar behaviors:
 
-* [PinnedHeaderSliver](http://api.flutter.dev/flutter/widgets/PinnedHeaderSliver-class.html)
+* [PinnedHeaderSliver](https://api.flutter.dev/flutter/widgets/PinnedHeaderSliver-class.html)
 
-* [SliverResizingHeader](http://api.flutter.dev/flutter/widgets/SliverResizingHeader-class.html)
+* [SliverResizingHeader](https://api.flutter.dev/flutter/widgets/SliverResizingHeader-class.html)
 
-You can use these new slivers to make headers that float, stay pinned, or resize as the user scrolls. These new slivers are similar to the existing [`SliverPersistentHeader`](https://api.flutter.dev/flutter/widgets/SliverPersistentHeader-class.html) and [`SliverAppBar`](http://sliverappbar) slivers, but have simpler APIs that can be combined for greater effect.
+You can use these new slivers to make headers that float, stay pinned, or resize as the user scrolls. These new slivers are similar to the existing [`SliverPersistentHeader`](https://api.flutter.dev/flutter/widgets/SliverPersistentHeader-class.html) and [`SliverAppBar`](https://api.flutter.dev/flutter/material/SliverAppBar-class.html) slivers, but have simpler APIs that can be combined for greater effect.
 
 These new slivers come with new sample code. For example, `PinnedHeaderSliver`’s API documentation has an example that recreates effects like the iOS Settings app’s app bar:
 

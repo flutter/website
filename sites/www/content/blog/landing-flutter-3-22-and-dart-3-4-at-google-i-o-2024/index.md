@@ -30,7 +30,7 @@ Flutter developers are busy launching large, new apps into the app stores. Let�
 
 ### Helping large, enterprise-scale applications deliver on mobile and the web
 
-* In the United Kingdom, financial institution [Virgin Money](https://uk.virginmoney.com/) is [using Flutter](http://flutter.dev/showcase/virgin-money) across their suite of mobile banking and credit card apps to unify app development processes, speed up change, and enable an industry-leading user experience.
+* In the United Kingdom, financial institution [Virgin Money](https://uk.virginmoney.com/) is [using Flutter](https://flutter.dev/showcase/virgin-money) across their suite of mobile banking and credit card apps to unify app development processes, speed up change, and enable an industry-leading user experience.
 
 * US insurance company [GEICO](https://www.geico.com/about/corporate/at-a-glance/) recently [shared](https://www.geico.com/techblog/flutter-as-the-multi-channel-ux-framework/) that Flutter helped them improve branded user experiences across iOS, Android, and the web, reduce the size of their codebase, and increase development efficiency, all at scale.
 
@@ -75,14 +75,14 @@ Macros are code that creates more code. They’re like code generation, except t
 
 We’re excited to see macros solve all kinds of problems for our developers. Take, for example, data classes, the [highest voted](https://github.com/dart-lang/language/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc) Dart language feature. Beyond specific applications, our eventual goal is to have a macro system in Dart that allows users to create their own macros and raise the abstraction level of Dart programming.
 
-Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](http://dart.dev/go/json-codable).
+Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](https://dart.dev/go/json-codable).
 
 ## New resources for Flutter game development
 
 <DashImage figure src="images/0F19xflZ4BfoCekFQ.webp" />
 
 
-We’re seeing promising results from our early investment in games, including success stories from industry leaders like [Etermax](http://flutter.dev/showcase/etermax) and [Supercell](http://flutter.dev/showcase/supercell), who are each leveraging Flutter’s power and flexibility to efficiently deliver delightful user experiences and expand their reach.
+We’re seeing promising results from our early investment in games, including success stories from industry leaders like [Etermax](https://flutter.dev/showcase/etermax) and [Supercell](https://flutter.dev/showcase/supercell), who are each leveraging Flutter’s power and flexibility to efficiently deliver delightful user experiences and expand their reach.
 
 Today, we’re excited to continue to build on that momentum with these new resources for Flutter game developers:
 
@@ -105,7 +105,7 @@ Congrats to all of the winners!
 
 That’s all we have time to spotlight today, but there are many more exciting improvements that we didn’t touch on. Here are a few more things to know:
 
-* You can preview [**the Vertex AI for Firebase Dart SDK**](https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter) to use the Gemini API for AI-driven features in a Dart or Flutter app. The SDK is integrated with Firebase App Check, which protects your API calls, and safeguards your backend infrastructure from serious threats like billing fraud, phishing, and app impersonation. For details, see our [AI page](http://flutter.dev/ai).
+* You can preview [**the Vertex AI for Firebase Dart SDK**](https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter) to use the Gemini API for AI-driven features in a Dart or Flutter app. The SDK is integrated with Firebase App Check, which protects your API calls, and safeguards your backend infrastructure from serious threats like billing fraud, phishing, and app impersonation. For details, see our [AI page](https://flutter.dev/ai).
 
 * **Impeller**, our [next-gen rendering engine](https://docs.flutter.dev/perf/impeller), is now feature complete on Android.
 

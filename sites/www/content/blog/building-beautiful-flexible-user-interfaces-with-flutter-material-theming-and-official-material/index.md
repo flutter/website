@@ -10,7 +10,7 @@ layout: blog
 
 ## Building beautiful, flexible user interfaces with Flutter, Material Theming, and official Material Components (MDC)
 
-At [Google I/O 2018](https://events.google.com/io/), the Material team [announced](https://design.google/library/making-more-with-material/) a important update to Material Design, with a strong focus on enabling mobile apps to stand out from the rest by systematically applying brand-specific design. This is [Material Theming](https://material.io/design/material-theming/). The following study shows customized Material components, combined together to create a brand-specific design for ‘Shrine’, an e-commerce app that sells clothing and home goods. [Flutter](http://flutter.io) is the perfect framework for realizing designs like this!
+At [Google I/O 2018](https://events.google.com/io/), the Material team [announced](https://design.google/library/making-more-with-material/) a important update to Material Design, with a strong focus on enabling mobile apps to stand out from the rest by systematically applying brand-specific design. This is [Material Theming](https://material.io/design/material-theming/). The following study shows customized Material components, combined together to create a brand-specific design for ‘Shrine’, an e-commerce app that sells clothing and home goods. [Flutter](https://flutter.io) is the perfect framework for realizing designs like this!
 
 *“I’m incredibly excited to welcome Flutter into the official set of Material Design Components as a full fledged peer to our Android, iOS and Web offerings. Flutter’s philosophy of flexible and adaptable widgets is a great fit for Material Theming, and Flutter’s ability for real time UI iteration is a game changer in the way we polish and refine designs.”*
 
@@ -26,7 +26,7 @@ Material Theming and Material Components" />
 
 ### Official Flutter support for Material Components
 
-One of Flutter’s core tenets is best-in-class support for creating expressive and flexible mobile UI. To support this goal, we are delighted to announce that Material has now adopted Flutter as a first-class platform! Flutter is included in design and engineering discussions, documentation, official support, content from Google Design, and education along with Android, iOS, and web. Material has even started a dedicated Flutter engineering team that works hand-in-hand with Flutter’s Material library engineers. This partnership will allow Flutter to stay even more current as Material Design continues to evolve and add features like Material Theming. You can find more information at [material.io/develop/flutter](http://material.io/develop/flutter).
+One of Flutter’s core tenets is best-in-class support for creating expressive and flexible mobile UI. To support this goal, we are delighted to announce that Material has now adopted Flutter as a first-class platform! Flutter is included in design and engineering discussions, documentation, official support, content from Google Design, and education along with Android, iOS, and web. Material has even started a dedicated Flutter engineering team that works hand-in-hand with Flutter’s Material library engineers. This partnership will allow Flutter to stay even more current as Material Design continues to evolve and add features like Material Theming. You can find more information at [material.io/develop/flutter](https://material.io/develop/flutter).
 
 ### Using Material Theming and Material Components in Flutter
 

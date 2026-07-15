@@ -8,7 +8,7 @@ category: events
 layout: blog
 ---
 
-We are always amazed by what developers around the world are building with Flutter. This year we partnered with the Google Assistant and Lenovo teams to bring you our most recent contest: [Flutter Clock](http://flutter.dev/clock) — challenging you to build a Flutter clock face application for the [Lenovo Smart Clock](https://www.lenovo.com/us/en/smart-clock) that is beautiful and innovative.
+We are always amazed by what developers around the world are building with Flutter. This year we partnered with the Google Assistant and Lenovo teams to bring you our most recent contest: [Flutter Clock](https://flutter.dev/clock) — challenging you to build a Flutter clock face application for the [Lenovo Smart Clock](https://www.lenovo.com/us/en/smart-clock) that is beautiful and innovative.
 
 **We received over 850 unique submissions across 86 different countries.** This included entries from first time coders to Flutter experts. The following video provides a glimpse of what you made from the hundreds of submissions we received:
 

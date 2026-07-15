@@ -208,7 +208,7 @@ Over the past few years, we’ve seen a growing community around casual game dev
 <DashImage figure src="images/1yWHI-1YwQAFUIVFvr5jGHQ.gif" />
 
 
-To help game developers become more productive, today Flutter is launching a major update to its [Casual Games Toolkit.](http://flutter.dev) It is a collection of new resources to help you move from concept to launch with more genre-specific templates such as a card game, an endless runner game, and service integrations like Play Games Services, in-app purchase, ads, achievements, crashlytics and multiplayer support. To learn more, check out the [games toolkit launch post](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440) by [Zoey Fan](https://medium.com/@zoeyfan_43394).
+To help game developers become more productive, today Flutter is launching a major update to its [Casual Games Toolkit.](https://flutter.dev) It is a collection of new resources to help you move from concept to launch with more genre-specific templates such as a card game, an endless runner game, and service integrations like Play Games Services, in-app purchase, ads, achievements, crashlytics and multiplayer support. To learn more, check out the [games toolkit launch post](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440) by [Zoey Fan](https://medium.com/@zoeyfan_43394).
 
 ## Web
 
@@ -311,7 +311,7 @@ We would love your feedback as we plan on making CameraX the default implementat
 
 We have added macOS support to the [video player plugin](https://pub.dev/packages/video_player), allowing developers to play videos on a widget surface.
 
-To learn more check out the [video player plugin](https://pub.dev/packages/video_player) on [pub.dev](http://pub.dev).
+To learn more check out the [video player plugin](https://pub.dev/packages/video_player) on [pub.dev](https://pub.dev).
 
 ## DevTools
 

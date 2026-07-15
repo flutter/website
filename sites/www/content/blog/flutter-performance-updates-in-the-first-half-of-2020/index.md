@@ -293,7 +293,7 @@ contributors: [iskakaushik](https://github.com/iskakaushik), [gaaclarke](https:/
 
 * Issue [#58803](https://github.com/flutter/flutter/issues/58803), PR [#18087](https://github.com/flutter/engine/pull/18087), [#18516](https://github.com/flutter/engine/pull/18516), [#18752](https://github.com/flutter/engine/pull/18752)
 
-* [http://flutter.dev/go/engine-cpu-profiling](http://flutter.dev/go/engine-cpu-profiling)
+* [https://flutter.dev/go/engine-cpu-profiling](https://flutter.dev/go/engine-cpu-profiling)
 
 ### [memory] ImageCache flushes itself when told about memory pressure
 

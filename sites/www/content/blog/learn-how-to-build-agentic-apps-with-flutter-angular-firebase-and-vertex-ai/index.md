@@ -36,4 +36,4 @@ Because there’s no better time to become acquainted with the latest AI tools a
 
 ## Get Started Today!
 
-Register now by heading to [goo.gle/BuildingAgenticFlutter](http://goo.gle/BuildingAgenticFlutter) or [goo.gle/BuildingAgenticAngular](http://goo.gle/BuildingAgenticAngular). We can’t wait to see what you build!
+Register now by heading to [goo.gle/BuildingAgenticFlutter](https://goo.gle/BuildingAgenticFlutter) or [goo.gle/BuildingAgenticAngular](https://goo.gle/BuildingAgenticAngular). We can’t wait to see what you build!

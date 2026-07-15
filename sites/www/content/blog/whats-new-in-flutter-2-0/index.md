@@ -60,7 +60,7 @@ When it comes to trying the beta for Flutter desktop, you can access it by switc
 
 However, if you choose to stay on the stable channel to access the desktop beta, you won’t get new features or bug fixes as quickly as switching to the beta or dev channels. So, if you’re actively targeting Windows, macOS, or Linux, we recommend switching to a channel that provides updates more quickly.
 
-As we approach our first full production-quality release of Flutter desktop, we know we have more to do, including support for integration with native top-level menus, text editing that feels more like the experience of the individual platforms, and accessibility support, as well as general bug fixes and performance enhancements. If there are other things you think need doing before the desktop moves to production quality, [please be sure to provide your feedback](http://github.com/flutter/flutter/issues).
+As we approach our first full production-quality release of Flutter desktop, we know we have more to do, including support for integration with native top-level menus, text editing that feels more like the experience of the individual platforms, and accessibility support, as well as general bug fixes and performance enhancements. If there are other things you think need doing before the desktop moves to production quality, [please be sure to provide your feedback](https://github.com/flutter/flutter/issues).
 
 ## Platform Adaptive Apps: Flutter Folio Sample
 
@@ -82,7 +82,7 @@ In addition to Flutter desktop moving to beta, today we’re excited to announce
 
 We’ve been piloting this plugin with some of our early customers in a private beta program, and many of them have successfully launched their apps with these new formats. For example, Sua Musica (largest Latin American music platform for independent artists with more than 15k verified artists and 10M MAU) launched their new Flutter app with the Google Mobile Ads SDK for Flutter plugin. They saw an 350% increase on Impressions with a 43% increase on CTR and 13% increase on eCPM.
 
-This [plugin](https://pub.dev/packages/google_mobile_ads) is available for you to use today. As part of Flutter Engage, Andrew Brogdon and Zoey Fan presented a session on “Monetizing apps with Flutter” ([available on the Flutter Engage](http://goo.gle/EngageOnDemand) site), where they talk about monetization strategies for apps built with Flutter, and how you can load ads in your Flutter app. Moreover, we created a new [Ads](http://flutter.dev/ads) page on flutter.dev where you can find all helpful resources such as the [plugin implementation guide](https://developers.google.com/admob/flutter), the [inline banner and native ads](https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter) codelab, and the [overlay banner, interstitial and rewarded video ads](https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter#0) codelab. Please be sure to check them out!
+This [plugin](https://pub.dev/packages/google_mobile_ads) is available for you to use today. As part of Flutter Engage, Andrew Brogdon and Zoey Fan presented a session on “Monetizing apps with Flutter” ([available on the Flutter Engage](https://goo.gle/EngageOnDemand) site), where they talk about monetization strategies for apps built with Flutter, and how you can load ads in your Flutter app. Moreover, we created a new [Ads](https://flutter.dev/ads) page on flutter.dev where you can find all helpful resources such as the [plugin implementation guide](https://developers.google.com/admob/flutter), the [inline banner and native ads](https://codelabs.developers.google.com/codelabs/admob-inline-ads-in-flutter) codelab, and the [overlay banner, interstitial and rewarded video ads](https://codelabs.developers.google.com/codelabs/admob-ads-in-flutter#0) codelab. Please be sure to check them out!
 
 ## New iOS features
 
@@ -139,7 +139,7 @@ The new APIs to enable this are in preview on the beta channel and are [document
 
 Whenever any framework matures and gathers users with larger and larger code bases, the tendency over time is to avoid making any changes to the framework API to avoid breaking an increasing number of lines of code. With over 500,000 Flutter developers across a growing number of platforms, Flutter 2 is quickly falling into this category. However, for us to continue to improve Flutter over time, we want to be able to make breaking changes to the API. The question becomes, how to continue to improve the Flutter API without breaking our developers?
 
-Our answer is [Flutter Fix](http://flutter.dev/docs/development/tools/flutter-fix).
+Our answer is [Flutter Fix](https://flutter.dev/docs/development/tools/flutter-fix).
 
 Flutter Fix is a combination of things. First, there’s a new command-line option to the `dart` CLI tool called `dart fix`that knows where to look for a list of deprecated APIs and how to update code using those APIs. Second, it’s the list of available fixes itself, which is bundled with the Flutter SDK as of version 2. And finally, it’s an updated set of Flutter extensions for the VS Code, IntelliJ,and Android Studio IDEs that know how to expose that same list of available fixes as quick fixes with little light bulbs that will help you to change the code with a click of your mouse.
 
@@ -305,7 +305,7 @@ Now you can try the new null safe version of Flutter without leaving the comfort
 
 The Flutter development experience includes more than the framework and the tools; it also includes the wide range of packages and plugins available for Flutter apps. In the time since the last Flutter stable release, much has happened in that space as well. For example, between the camera and the video_player plugins, nearly 30 PRs have been merged to greatly increase the quality of both. If you’ve had trouble using either of these in the past, you should have another look; we think you’ll find them much more robust.
 
-Also, if you’re a Firebase user, we are pleased to announce that the most popular plugins have been brought to production quality, including null safety support, and [a full set of reference documentation and common usage tutorials](http://firebase.flutter.dev) for Android, iOS, web, and macOS. These plugins include the following:
+Also, if you’re a Firebase user, we are pleased to announce that the most popular plugins have been brought to production quality, including null safety support, and [a full set of reference documentation and common usage tutorials](https://firebase.flutter.dev) for Android, iOS, web, and macOS. These plugins include the following:
 
 * Core
 
@@ -328,7 +328,7 @@ Also, if you’re looking for crash reporting for your app, you may want to cons
 
 With Sentry’s SDK for Flutter, you can be notified of errors that occur on Android, iOS, or native platforms in real-time. You can see the details in [the Sentry documentation](https://docs.sentry.io/platforms/flutter/).
 
-In addition, if you haven’t yet seen [the Flutter Community “plus” plugins](http://plus.fluttercommunity.dev/), you’ll want to check them out. They’ve forked a number of the popular plugins initially developed by the Flutter team and have added null safety support, support for additional platforms and a whole new set of [documentation](https://plus.fluttercommunity.dev/docs/overview/) as well as beginning to fix appropriate issues from the flutter/plugins repository. This plugins include the following:
+In addition, if you haven’t yet seen [the Flutter Community “plus” plugins](https://plus.fluttercommunity.dev/), you’ll want to check them out. They’ve forked a number of the popular plugins initially developed by the Flutter team and have added null safety support, support for additional platforms and a whole new set of [documentation](https://plus.fluttercommunity.dev/docs/overview/) as well as beginning to fix appropriate issues from the flutter/plugins repository. This plugins include the following:
 
 * Android Alarm+
 

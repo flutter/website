@@ -31,7 +31,7 @@ To work with the Timeline, you need the following:
 
 The events logged in the ring buffer are extremely lightweight. To actually view these events in a diagnosable form, you must export it to a suitably portable format. The [Trace Event Format](https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit) is used by Flutter to export these timeline events for viewing in a dedicated trace viewer. This is the same format and viewer developed in the [Catapult](https://github.com/catapult-project/catapult) family of performance profile gathering, display and analysis tools.
 
-The Trace Event Format and Viewer and used by a number of other projects. Such projects include [Chromium](http://dev.chromium.org/developers/how-tos/trace-event-profiling-tool) & [Android (via systrace)](https://developer.android.com/studio/command-line/systrace). In fact, it is so useful that Chromium has one built-in. Try navigating to *chrome://tracing* in a Chromium based browser.
+The Trace Event Format and Viewer and used by a number of other projects. Such projects include [Chromium](https://dev.chromium.org/developers/how-tos/trace-event-profiling-tool) & [Android (via systrace)](https://developer.android.com/studio/command-line/systrace). In fact, it is so useful that Chromium has one built-in. Try navigating to *chrome://tracing* in a Chromium based browser.
 
 Traces that you share with other developers are JSON files or their tarballs. A neat tip that I didn’t know until recently is that the trace viewer can untar the JSON file tarball for you automatically.
 

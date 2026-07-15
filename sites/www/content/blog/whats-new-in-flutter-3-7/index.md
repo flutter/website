@@ -235,7 +235,7 @@ We’ve added the ability for native iOS views to be blurred when rendered under
 <DashImage figure src="images/0kdYw1nYkT8aKHjZP.webp" />
 
 
-For more information, see the [iOS PlatformView BackdropFilter](http://flutter.dev/go/ios-platformview-backdrop-filter-blur) design doc.
+For more information, see the [iOS PlatformView BackdropFilter](https://flutter.dev/go/ios-platformview-backdrop-filter-blur) design doc.
 
 ## Memory management
 

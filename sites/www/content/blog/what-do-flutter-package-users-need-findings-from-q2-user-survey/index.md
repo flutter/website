@@ -27,7 +27,7 @@ Overall, 80.6% of 5,250 respondents were either *very satisfied* or *somewhat sa
 
 When asked about the dissatisfaction with Flutter’s ecosystem, the reason selected by the most respondents was that “critical packages I need **do not exist** yet” (18%), which is perhaps to be expected for a relatively new technology.
 
-However, we are happy to find that our community is actively adding to the Flutter package ecosystem. 15% of respondents had experience developing packages for Flutter, and 59% had published their packages to pub.dev, the site for sharing packages written for Flutter and Dart apps. If you’ve written a package but have not published yet, you can read [Developing packages & plugins](https://flutter.dev/docs/development/packages-and-plugins/developing-packages) on [flutter.dev](http://flutter.dev), and contribute back to the Flutter community by publishing your package. It is not difficult — of those who had published to [pub.dev](http://pub.dev), 81% thought that it was *very easy* or *somewhat easy*.
+However, we are happy to find that our community is actively adding to the Flutter package ecosystem. 15% of respondents had experience developing packages for Flutter, and 59% had published their packages to pub.dev, the site for sharing packages written for Flutter and Dart apps. If you’ve written a package but have not published yet, you can read [Developing packages & plugins](https://flutter.dev/docs/development/packages-and-plugins/developing-packages) on [flutter.dev](https://flutter.dev), and contribute back to the Flutter community by publishing your package. It is not difficult — of those who had published to [pub.dev](https://pub.dev), 81% thought that it was *very easy* or *somewhat easy*.
 
 If you can’t decide which package to share with the Flutter community, visit the Flutter repository on GitHub and search for [issues labeled with “would be a good package”](https://github.com/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22would+be+a+good+package%22+sort%3Areactions-%2B1-desc) to see what has been requested. You can upvote your favorite requests to increase their visibility.
 
@@ -79,7 +79,7 @@ We want to convey a huge thank you to the more than 7,000 Flutter users who fill
 
 * Some Flutter users are not completely satisfied with the animation framework, not because it’s hard to achieve intended effects, but because it’s hard to get started. Respondents, especially new users, did not know where to begin, and it’s hard for them to understand how various concepts link together. Therefore, we are investing more into the learning materials for the animation framework.
 
-* For the API documentation on [api.flutter.dev](http://api.flutter.dev), sample code in the class doc was rated as the most useful resource. We have added full code samples to some of the classes in the API docs with the 1.7 release, but will continue expanding this feature to more classes. (We also accept PRs against the API docs on the [flutter/flutter repo](https://github.com/flutter/flutter/labels/d%3A%20api%20docs)!)
+* For the API documentation on [api.flutter.dev](https://api.flutter.dev), sample code in the class doc was rated as the most useful resource. We have added full code samples to some of the classes in the API docs with the 1.7 release, but will continue expanding this feature to more classes. (We also accept PRs against the API docs on the [flutter/flutter repo](https://github.com/flutter/flutter/labels/d%3A%20api%20docs)!)
 
 <DashImage figure src="images/0PceEjhOlGlSQw1oK.webp" />
 
@@ -88,4 +88,4 @@ We want to convey a huge thank you to the more than 7,000 Flutter users who fill
 
 We value your responses to the survey and will use this information when determining work priorities. Please participate in our Q3 survey, which will be launched in August, and will explore new topic areas.
 
-Flutter’s UX research team performs a variety of user experience studies so that we can learn how to make your experience with Flutter more pleasant. If you are interested in participating, please [sign up](http://flutter.dev/research-signup) for future studies.
+Flutter’s UX research team performs a variety of user experience studies so that we can learn how to make your experience with Flutter more pleasant. If you are interested in participating, please [sign up](https://flutter.dev/research-signup) for future studies.

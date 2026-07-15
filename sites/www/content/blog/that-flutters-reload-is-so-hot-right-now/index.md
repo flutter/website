@@ -23,7 +23,7 @@ start to fade away and give more more time questions rooted in large-scale devel
 What does CI support look like?
 How automated testing looks like?
 
-During last Flutter meetup [@Skillsmatter](http://twitter.com/Skillsmatter) one of the developers asked a quite serious question:
+During last Flutter meetup [@Skillsmatter](https://twitter.com/Skillsmatter) one of the developers asked a quite serious question:
 > *Will hot reload slow down as the project gets bigger? How much?*
 
 My own projects in Flutter have never got bigger than a couple of dozens of classes and a handful of screens. My hot reload always stays steady at 650 ms, hence my curiosity.

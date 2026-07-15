@@ -142,7 +142,7 @@ Build a GenUI Live Sketch Pad app where typed UI descriptions are rendered in re
 
 7. **Modernize Your Codebase:** Supercharge your existing Flutter project by refactoring it with [Dart 3.10’s dot shorthands](https://dart.dev/language/dot-shorthands) for cleaner, more concise code.
 
-8. **Exploring Gemini APIs in Flutter** Build a voice app showcasing different Gemini API features using the [Flutter AI Playground](http://g.co/firebase/flutter-ai-playground) sample app which uses the Firebase AI Logic SDK.
+8. **Exploring Gemini APIs in Flutter** Build a voice app showcasing different Gemini API features using the [Flutter AI Playground](https://g.co/firebase/flutter-ai-playground) sample app which uses the Firebase AI Logic SDK.
 
 9. **Build Your Own Code Assistant:** Train an agent on your GitHub repository to automatically manage your package dependencies or perform other tedious tasks.
 

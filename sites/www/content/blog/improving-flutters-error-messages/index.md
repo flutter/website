@@ -105,4 +105,4 @@ Not all Flutter errors were refactored to take full advantage of this new struct
 
 ## Acknowledgement
 
-The Flutter team’s former UX Research intern [Kandarp Khandwala](http://kandarp.xyz/) made an instrumental contribution to the research described in this article. We also thank all the Flutter users who participated in the experiment.
+The Flutter team’s former UX Research intern [Kandarp Khandwala](https://kandarp.xyz/) made an instrumental contribution to the research described in this article. We also thank all the Flutter users who participated in the experiment.

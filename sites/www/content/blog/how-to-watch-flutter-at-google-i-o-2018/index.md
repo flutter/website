@@ -29,12 +29,12 @@ To see the various Flutter-related sessions, visit [https://google.com/io/](http
 
 The full Flutter livestream schedule can be [found here](https://events.google.com/io/schedule/?section=may-8&livestream=true&topic=flutter&utm_source=flutter&utm_medium=pre%20io%20announcement&utm_campaign=io18). Favorite these sessions on the website to find them easily later on.
 
-Also, be sure to check out a virtual tour of the Flutter Sandbox, which will be available on [g.co/io/guides](http://g.co/io/guides) by May 9. You will get to see what 2Dimensions has built for this!
+Also, be sure to check out a virtual tour of the Flutter Sandbox, which will be available on [g.co/io/guides](https://g.co/io/guides) by May 9. You will get to see what 2Dimensions has built for this!
 
 <DashImage figure src="images/1ZPr26vDyRE90NtHZJ6Jmgg.webp" />
 
 
-To get involved in discussions with other developers about Flutter and I/O, be sure to participate in one of the various global [I/O Extended events](http://google.com/io/extended) near you. If you’re interested in hosting your own viewing party, we’d [love to promote it](https://events.google.com/io/extended/form/).
+To get involved in discussions with other developers about Flutter and I/O, be sure to participate in one of the various global [I/O Extended events](https://google.com/io/extended) near you. If you’re interested in hosting your own viewing party, we’d [love to promote it](https://events.google.com/io/extended/form/).
 
 Anyone can get involved this year: at home, at the event, or at an I/O Extended gathering. Be sure to share your Flutter experiences with #Flutter on Twitter.
 

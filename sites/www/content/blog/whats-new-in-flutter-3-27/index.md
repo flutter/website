@@ -39,7 +39,7 @@ Thanks to an amazing contribution from community member [@veloce](https://github
 
 This allows the sliver navigation bar to have the same color as its background in its expanded state, but a different customizable color in its collapsed state (and the ability to lerp between both colors on scroll).
 
-Thanks to an amazing contribution from community member [@kerberjg](http://github.com/kerberjg), you can now apply the iOS 15+ button styles using the new `CupertinoButtonSize` enum with the new `sizeStyle` property in `CupertinoButton`. Use the new `CupertinoButton.tinted` constructor to make buttons with a translucent background.
+Thanks to an amazing contribution from community member [@kerberjg](https://github.com/kerberjg), you can now apply the iOS 15+ button styles using the new `CupertinoButtonSize` enum with the new `sizeStyle` property in `CupertinoButton`. Use the new `CupertinoButton.tinted` constructor to make buttons with a translucent background.
 
 <DashImage figure src="images/0vdSn5c7uavWstNO5.webp" />
 
@@ -351,7 +351,7 @@ However, if you’re using third-party plugins for deep links, such as:
 
 This update will introduce a breaking change. In this case, you’ll need to manually reset the Flutter deep linking flag to **false**.
 
-For more details, refer to the design document: [flutter.dev/go/deep-link-flag-migration](http://flutter.dev/go/deep-link-flag-migration).
+For more details, refer to the design document: [flutter.dev/go/deep-link-flag-migration](https://flutter.dev/go/deep-link-flag-migration).
 
 ### Deprecating support for older SDKs in IDE
 
