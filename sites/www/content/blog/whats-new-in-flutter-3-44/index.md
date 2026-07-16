@@ -108,20 +108,19 @@ We’re also excited to share the preview launch of Genkit Dart, an open-source 
 
 You can run Genkit Dart server-side or client-side in Flutter apps, too!
 
-```cpp
+```dart
 import 'package:genkit/genkit.dart';
 import 'package:genkit_google_genai/genkit_google_genai.dart';
 
 void main() async {
- final ai = Genkit(plugins: [googleAI()]);
+  final ai = Genkit(plugins: [googleAI()]);
+  
+  final response = await ai.generate(
+    model: googleAI.gemini('gemini-flash-latest'),
+    prompt: 'Why is Dart a great language for AI applications?',
+  );
 
- final response = await ai.generate(
-   model: googleAI.gemini('gemini-flash-latest'),
-   prompt: 'Why is Dart a great language for AI
-            applications?',
- );
-
- print(response.text);
+  print(response.text);
 }
 ```
 

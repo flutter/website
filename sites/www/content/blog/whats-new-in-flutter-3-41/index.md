@@ -114,7 +114,7 @@ In Q4 2025, we surveyed developers using the `FragmentShader` API and asked simp
 
 * We’ve also added support for High Bitrate Textures (up to 128-bit float), unlocking the ability to use high-resolution lookup tables (LUTs) for GPU-accelerated photo filters and SDFs.
 
-```cpp
+```dart
 void attachTexture(ui.FragmentShader shader) {
   ui.PictureRecorder recorder = ui.PictureRecorder();
   Canvas canvas = Canvas(recorder);
