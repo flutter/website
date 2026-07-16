@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/10vbyZT-NITTvqljO8HtU4w.webp" />
 
-
 Flutter lets you create beautiful, natively compiled applications. The reason Flutter can do this is because Flutter loves Material. [Material](https://material.io) is a design system that helps build high-quality, digital experiences. As UI design continues to evolve, Material continues to update its components, motion, and design system.
 
 Flutter recently updated the [`Slider`](https://api.flutter.dev/flutter/material/Slider-class.html) and [`RangeSlider`](https://api.flutter.dev/flutter/material/RangeSlider-class.html) widgets to the latest the Material guidelines. The new sliders were designed with better accessibility in mind: The tracks are taller, the thumbs have shadows, and the value indicators have a new shape and improved text scaling support.
@@ -19,13 +18,11 @@ This article describes the changes to the `Slider` and `RangeSlider` widgets.
 
 <DashImage figure src="images/0neQ_0e28CgjA00W_.webp" />
 
-
 ## What’s new?
 
 `Slider` and `RangeSlider` were updated, to have a smoother experience when you work with these widgets. This diagram demonstrates the five different components that go into making the slider widgets.
 
 <DashImage figure src="images/0elEXE_pM0iEDuv_t.webp" />
-
 
 Both `Slider` and `RangeSlider` consist of five parts:
 
@@ -51,7 +48,6 @@ The biggest visual difference between the old slider and the new slider widgets 
 
 <DashImage figure src="images/0i3IWhVNFBB5OJEze.webp" />
 
-
 ## Value indicator paints on the overlay
 
 The updated value indicator is now painted on the overlay. This means that the indicator is no longer restricted to the scope of the slider’s `MediaQuery` and can be displayed over other widgets. This is expected because the indicator is only activated when dealing with the gesture detector, which means that it’s only shown when the user interacts with the slider. By integrating the [`Overlay`](https://api.flutter.dev/flutter/widgets/Overlay-class.html) with the [`CompositedTransformTarget`](https://api.flutter.dev/flutter/widgets/CompositedTransformTarget-class.html), [`CompositedTransformFollower`](https://api.flutter.dev/flutter/widgets/CompositedTransformFollower-class.html), and [`Layerlink`](https://api.flutter.dev/flutter/rendering/LayerLink-class.html) widgets, the value indicator can display over other widgets. To learn more about this mechanism, see [How to float an overlay widget over a (possibly transformed) UI widget](https://medium.com/flutter/how-to-float-an-overlay-widget-over-a-possibly-transformed-ui-widget-1d15ca7667b6).
@@ -60,13 +56,11 @@ The following diagram shows how the `Slider` and `RangeSlider` widgets are made:
 
 <DashImage figure src="images/0DEYZqsMMIdQWZ8mF.webp" />
 
-
 You may notice that we use a separate `LeafRenderObjectWidget` to paint the indicators on the overlay. This is because we need to paint on both the `Overlay` class and the screen, which you can’t do from the same `LeafRenderObjectWidget` widget.
 
 Because we’re now painting the value indicator on the overlay, it’s no longer restricted to the scope of the `MediaQuery` that contains the slider. The indicator is no longer clipped to that box, which means that the entire value indicator is displayed always.
 
 <DashImage figure src="images/0HviG9DqaeW84PJi5.webp" />
-
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
 
@@ -130,9 +124,7 @@ double getHorizontalShift({
 }
 ```
 
-
 <DashImage figure src="images/0f7ar1ek7C7pUx5cF.webp" />
-
 
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
 
@@ -142,7 +134,6 @@ The `RangeSlider` value indicator was also updated so that the currently active 
 
 <DashImage figure src="images/0dUrIA4k2wFu48rDe.webp" />
 
-
 Note: This example was made with the `textScaleFactor` set to 4 for better demonstration.
 
 ## Old value indicator updated
@@ -151,11 +142,9 @@ We kept the `PaddleValueIndicator` widget, and updated it to have better scalabi
 
 <iframe src="https://codepen.io/JoseAlba/embed/qBOXGYx" width="800" height="600" frameborder="0" allowfullscreen></iframe>
 
-
 If you want to continue using the old value indicator, then just wrap your `Slider` widget with `SliderTheme`, and set the `valueIndicatorShape` property in `SliderThemeData` to `PaddleSliderValueIndicatorShape`. The process is identical for `RangeSlider`. Wrap your `RangeSlider` widget with `SliderTheme`, and set the `rangeValueIndicatorShape` property in `SliderThemeData` to `PaddleRangeSliderValueIndicatorShape`.
 
 <DashImage figure src="images/0LNKN4lwqpBxQZ60A.webp" />
-
 
 ## The active track is bigger than the inactive track
 
@@ -163,9 +152,7 @@ The other component shapes in `Slider` were also updated. The track shape was ch
 
 <DashImage figure src="images/0q81pqrMZMWkCmRLF.webp" />
 
-
 <DashImage figure src="images/0qIoICKw6wo7NcwOW.webp" />
-
 
 ## Tick mark component
 
@@ -173,13 +160,11 @@ The tick mark size and positioning changed. The tick marks are now part of the t
 
 <DashImage figure src="images/0PLNNQjK0_zOXok1A.webp" />
 
-
 ## Thumb component has a shadow
 
 When the thumb slider component is activated, there is now a `Shadow` that appears on the `Overlay`.
 
 <DashImage figure src="images/0j7DxUmBmRK7Ztd5A.webp" />
-
 
 ## Closing remarks
 

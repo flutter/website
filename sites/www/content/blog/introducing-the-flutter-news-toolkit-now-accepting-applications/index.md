@@ -46,7 +46,6 @@ You can use these pre-integrated features out of the box, or easily modify and s
 
 <DashImage figure src="images/1eQsCJ1lXurwLVnD5wIDxkg.webp" alt="*Sample features provided in the Flutter News Toolkit*" caption="*Sample features provided in the Flutter News Toolkit*" />
 
-
 ### Early adopter of the Flutter News Toolkit
 
 One of the Flutter News Toolkit’s early adopters is Hespress, which is one of Morocco’s largest news sites. Hespress had been wanting to reach more audiences by creating a mobile application targeting English speakers, but didn’t have enough resources to get started. With the Flutter News Toolkit, Hespress was able to finish the entire application development within 6 weeks and they have recently launched their app [Hespress](https://apps.apple.com/us/app/hespress-english/id1609463589) [English](https://play.google.com/store/apps/details?id=com.hespress.english&hl=en_US&gl=US).
@@ -54,7 +53,6 @@ One of the Flutter News Toolkit’s early adopters is Hespress, which is one of 
 “The Flutter News Toolkit was intuitive to work with and customized to look and feel like a proper Hespress app,” says El Guennouni Hassane, the General Manager of Hespress. “It contained all the core features, sections, and layouts that would be required for us. It helped us save months of development and optimized the whole process of revamping our English app while maintaining one code base instead of two.”
 
 <DashImage figure src="images/0TC5XvMCLwYWLzFhG.webp" alt="*Screenshots of Hespress English app*" caption="*Screenshots of Hespress English app*" />
-
 
 ### Apply now to access the Flutter News Toolkit
 
@@ -91,7 +89,6 @@ While the news template can lower the barrier to entry for building news mobile 
 We have mapped out the deployment process at a high-level with an assumption of 2–3 Flutter engineers working on the project. As an example, early adopters like Hespress finished their application development within 6 weeks.
 
 <DashImage figure src="images/0NfASfTMOVQde8r-K.webp" alt="*Deployment process at a high-level*" caption="*Deployment process at a high-level*" />
-
 
 ### If I don’t have an in-house development team, how can I use the template?
 

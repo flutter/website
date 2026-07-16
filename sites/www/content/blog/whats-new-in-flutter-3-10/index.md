@@ -28,13 +28,11 @@ All M3 components configure the default colors of the theme’s `ColorScheme`. T
 
 <DashImage figure src="images/1CPv57Dp1cYXPz-YtZ2jMcA.webp" />
 
-
 ### NavigationBar
 
 This provides an M3 version of `BottomNavigationBar` widget. While [M3](https://m3.material.io/components/navigation-bar/overview) uses different colors, highlighting, and elevation, it works as it did before. To override the default appearance of the `NavigationBars` widget, use the `NavigationBarTheme` widget. Though you don’t need to migrate existing apps to this component, you should use it for new apps.
 
 <DashImage figure src="images/1sApyn1E7o2DqWJx4fG6T8w.webp" />
-
 
 ### NavigationDrawer
 
@@ -42,16 +40,13 @@ This provides an [M3](https://m3.material.io/components/navigation-drawer/overvi
 
 <DashImage figure src="images/1tSZSZ2DVOT3CzX2OjxTg2Q.webp" />
 
-
 ### SearchBar and SearchAnchor
 
 These components provide predictive text for search queries. When the user enters a search query, the app computes a list of matching responses in a “search view”. The user either selects one or adjusts the query. To override the [M3](https://m3.material.io/components/search/overview) design of these components, use the `SearchBarTheme` and `SearchAnchorTheme` widgets.
 
 <DashImage figure src="images/1SzGgItEwmTCzwMRTgnTy5A.webp" />
 
-
 <DashImage figure src="images/167iesripk2_62VSr5US-Iw.webp" />
-
 
 ### Secondary Tab Bar
 
@@ -59,13 +54,11 @@ M3 allows you to create a second tier of tabbed content. To distinguish this sec
 
 <DashImage figure src="images/1Fzkz6aIl-ZIry-vGojaM9w.webp" />
 
-
 ### DatePicker updated for [M3](https://m3.material.io/components/date-pickers/overview)
 
 The M3 `DatePicker` updates the colors, layout, and shape for both the calendar and textfield versions of the widget. This doesn’t change the API, but adds a new `DatePickerTheme`.
 
 <DashImage figure src="images/16cpF7kqYEBCHqv-YswfLhg.gif" />
-
 
 ### TimePicker updated for [M3](https://m3.material.io/components/time-pickers/overview)
 
@@ -73,20 +66,17 @@ The M3 `TimePicker`, like the `DatePicker`, updates the colors, layout, and shap
 
 <DashImage figure src="images/1jYLsooI9kMMCqibaOgwwFA.gif" />
 
-
 ### BottomSheet updated for [M3](https://m3.material.io/components/bottom-sheets/overview)
 
 Beyond M3 color and shape updates, the bottom sheet now adds an optional drag handle that’s included when you set `showDragHandle` to `true`.
 
 <DashImage figure src="images/1x52LrlHvIpARkrF1RevMeA.webp" />
 
-
 ### ListTile updated for [M3](https://m3.material.io/components/lists/overview)
 
 The M3 `ListTile` updates positioning and spacing of this widget. This includes content padding, leading and trailing widget alignment, minimum leading width, and vertical spacing. The API remains unchanged.
 
 <DashImage figure src="images/154RCRghfN9g3tTXzl0U9ew.gif" />
-
 
 ### Drawer updated for M3
 
@@ -103,7 +93,6 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 * **Double tap + drag:** Extends the selection in word blocks.
 
 <DashImage figure src="images/1QFzoK7Gj3Q6uFopP7dOJhw.gif" />
-
 
 ### `TextField` triple click/tap gestures
 
@@ -129,7 +118,6 @@ M3 updates all `TextField` widgets to support native gestures. Double clicking o
 
 <DashImage figure src="images/1sqmvK_z8gkQw-eFNur6PIQ.gif" />
 
-
 ## Flutter supports SLSA level 1
 
 Flutter Framework now compiles with Supply Chain Levels for Software Artifacts ([SLSA](https://slsa.dev/)) Level 1. This acknowledges the implementation of many security features including:
@@ -141,7 +129,6 @@ Flutter Framework now compiles with Supply Chain Levels for Software Artifacts (
 * **Provenance**. Beta and stable releases now build with [provenance](https://slsa.dev/provenance/v0.1). This means trusted sources with expected contents built the framework release artifacts. Each release publishes links to view and verify provenance on the [SDK archive](https://docs.flutter.dev/release/archive).
 
 <DashImage figure src="images/1n2OloNCiXMyvmFrLOk_WBw.webp" />
-
 
 This work also allows the team to advance toward SLSA L2 and L3 compliance. These two levels focus on protecting artifacts during and after the build process.
 
@@ -173,7 +160,6 @@ Since the 3.7 release, Impeller on iOS has improved its memory footprint. Impell
 
 <DashImage figure src="images/1m8HdyPAVFESHa3dpiEU41g.webp" />
 
-
 Consider a complex screen like the “pull quote” screen in the [Wonderous](https://flutter.gskinner.com/wonderous/) app. Together, these improvements cut the memory footprint of those screens almost in half. The reduction in memory usage also gives a modest drop in GPU and CPU load. The Wondrous app may not register that drop in load. Its frames had rendered under budget before, but this change should extend battery life.
 
 Impeller also unlocks the team’s ability to deliver popular feature requests faster. One example results in support for the wider P3 color gamut on iOS. Look elsewhere in this post for a description of that feature.
@@ -197,7 +183,6 @@ We want to thank open-source contributor [luckysmg](https://github.com/luckysmg)
 In the 3.7 stable release, we shifted loading of local images from the platform thread to the Dart thread to avoid delaying vsync events from the platform thread. However, [users](https://github.com/flutter/flutter/issues/121525) [noticed](https://github.com/flutter/flutter/issues/121351) that this additional work on the Dart thread also caused some jank. In this release, we moved the opening and decoding of local images from the Dart thread to a [background thread](https://github.com/flutter/engine/pull/39918). This change eliminates potential long pauses on screens with a lot of local images, while avoiding delaying vsync events. In our local testing and automated benchmarks, this change cut the load time for several simultaneous images in half.
 
 <DashImage figure src="images/1LyQyiGe8oQrQkQByS1PK5Q.webp" />
-
 
 We continue to build optimizations on top of Flutter’s new internal DisplayList structure. In this release, we added an [R-Tree based culling](https://github.com/flutter/engine/pull/38429) mechanism. This mechanism removes the processing of drawing operations much earlier in our renderer. This optimization accelerates, [for example](https://github.com/flutter/flutter/issues/92366), a custom painter whose output fails offscreen. Our [microbenchmarks](https://flutter-engine-perf.skia.org/e/?begin=1671661938&end=1671754421&keys=X789f7ff76f30f8ccc672464f335fe09b&num_commits=50&request_type=1&xbaroffset=31974) showed a decreased DisplayList processing time of up to 50%. Apps with clipped custom paints could see differing improvements. The degree of improvement depends on the complexity and number of hidden draw operations.
 
@@ -251,7 +236,6 @@ The `SpellCheckConfiguration()` widget now defaults to supporting [Apple’s spe
 
 <DashImage figure src="images/14ibBYWIZH1FhDIpaw0BDFg.webp" />
 
-
 ### Adaptive checkbox and radio
 
 This release adds the `CupertinoCheckBox` and `CupertinoRadio` widgets to the `Cupertino` library. They create checkbox and radio button components that match Apple’s styling.
@@ -269,7 +253,6 @@ Flutter 3.10 improved some animations, transitions, and colors to match SwiftUI.
 * Adding several [new iOS system colors](https://github.com/flutter/flutter/pull/118971) to `CupertinoColors`
 
 <DashImage figure src="images/180sFA4-LrCTojCDvUJ9j2w.webp" />
-
 
 ### PlatformView performance
 
@@ -289,7 +272,6 @@ macos:
   dartPluginClass: PathProviderFoundation
   sharedDarwinSource: true
 ```
-
 
 ### New resources for app extensions
 
@@ -321,7 +303,6 @@ dependencies:
   camera_android_camerax: ^0.5.0
 ```
 
-
 We would love your feedback as we continue to add more CameraX features then make CameraX the default implementation.
 
 ## DevTools
@@ -338,7 +319,6 @@ We continue to improve DevTools, the suite of performance and debugging tools fo
   * Using SQL queries to pull specific data from the timeline events.
 
 <DashImage figure src="images/1fOYGagsonbND_VnkasWmzw.webp" />
-
 
 To learn more, check out the release notes for [DevTools 2.23.1](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.23.1), [DevTools 2.22.2](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.22.2), and [DevTools 2.21.1](https://docs.flutter.dev/development/tools/devtools/release-notes/release-notes-2.21.1).
 

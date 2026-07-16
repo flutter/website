@@ -12,7 +12,6 @@ It has been over a year since [What’s Revolutionary about Flutter](https://hac
 
 <DashImage figure src="images/1OOmIZ2plXASJUl49v6TlDA.gif" alt="Reflectly intelligent journaling Flutter app" caption="Reflectly intelligent journaling Flutter app" />
 
-
 Developers often tell me that one of their biggest challenges now is convincing their company management — or if they are an agency or freelancer, convincing their clients — to try Flutter. These decision-makers are not as eager to adopt the latest technology, just for technology’s sake. They are typically tech savvy, but that is not their only concern. They want to know if using something new will help their company succeed; for example, by bringing in new customers or reducing risks.
 
 This article is aimed at two groups:
@@ -50,13 +49,11 @@ The fact that Flutter is a complete SDK means that it can be ported to run on vi
 
 <DashImage figure src="images/1_3mc2w0ZoMF86d5kbuvWwA.webp" alt="Flutter on desktop and Raspberry Pi" caption="Flutter on desktop and Raspberry Pi" />
 
-
 While at Google we have been focused on mobile apps, various third parties have done ports of Flutter to [desktop computers](https://github.com/google/flutter-desktop-embedding) (macOS shown at left, Windows, Linux, and [others](https://groups.google.com/forum/?pli=1#!forum/flutter-desktop-embedding-dev)), to [TVs](https://groups.google.com/forum/#!topic/flutter-dev/0Yf-b8fwGZs) (here’s a [video of Flutter running on an Nvidia Shield TV](https://youtu.be/crODae5bIew)), and to the Raspberry Pi (shown at bottom left). Internally, Flutter is also used to build user interfaces for [Fuchsia](https://github.com/fuchsia-mirror).
 
 Increasingly, apps will expand beyond mobile phones. It will be common to access apps across multiple devices, including home assistants (Google Home Hub, Lenovo Smart Display, etc.), interactive displays in cars, home appliances (refrigerators), wearables (watches, clothing), and other [IoT](https://en.wikipedia.org/wiki/Internet_of_things) devices. In 2017 there were 8.4 billion such devices online. By 2020 (less than two years from now) [IDC estimates](https://www.businesswire.com/news/home/20131003005687/en/Internet-Poised-Change-IDC) that there will be over 30 billion (compared to 5 billion mobile phones). Many of these devices will have interactive screens. Flutter’s architecture has all the ingredients to create [powerful and beautiful user interfaces for these new devices](https://www.forbes.com/sites/forbesnycouncil/2018/07/26/why-you-should-start-looking-at-googles-flutter-and-fuchsia-now/#228e36cca309).
 
 <DashImage figure src="images/10cJ-ZDludFJ-rcVp92lI8A.webp" alt="Screens everywhere!" caption="Screens everywhere!" />
-
 
 And of course, Flutter is completely free and open source.
 
@@ -66,9 +63,7 @@ How can you ensure the mobile app you are creating will succeed when it is compe
 
 <DashImage figure src="images/1vFj6DgGFh43jJS6sX2ZxWw.jpeg" alt="Alibaba (left) and Topline (right)" caption="Alibaba (left) and Topline (right)" />
 
-
 <DashImage figure src="images/1HyTUK7HxEJfJZofdMGcSJA.gif" alt="2Dimensions" caption="2Dimensions" />
-
 
 Studies have shown that having an [appealing design can be very important](https://medium.com/coffee-and-junk/design-psychology-aesthetic-usability-effect-494ed0f22571). If you look at the most popular mobile apps from the last few years, they each have their own design aesthetic. In addition, beautiful apps win awards, which provides valuable publicity.
 
@@ -97,7 +92,6 @@ In order to receive the advantages of native apps, mobile developers have typica
 
 <DashImage figure src="images/1EJba6N3Cb1qa1DUdcc0-kQ.webp" alt="Which one is “native”? Both!" caption="Which one is “native”? Both!" />
 
-
 What about the widgets? Because [Flutter provides its own widgets](https://medium.com/flutter-io/why-flutter-doesnt-use-oem-widgets-94746e812510), you might be afraid that Flutter apps will look or feel uncannily different than apps developed using the platform widgets and tools.
 
 To the left, the iOS platform settings screen is compared to the same screen created using Flutter. Even though there are a few small differences at the pixel level, the bottom line is that Flutter makes it easy to create screens that look and feel like platform screens.
@@ -111,7 +105,6 @@ The high platform fidelity of Flutter apps is possible because Flutter is a comp
 Flutter also avoids the need for [compatibility libraries](https://developer.android.com/topic/libraries/support-library/). For example, here is a Flutter app that uses Material Design widgets, on a phone running Android Jelly Bean (4.1.2). This phone came out *two years before* Material Design was even created, so the phone has no built-in widgets for Material Design at all. But your Flutter app will run the same as it does on a more modern phone with a more recent OS, and look great.
 
 <DashImage figure src="images/1-ehN32qJg_iFuBjuMdUYew.webp" />
-
 
 Without Flutter, you would have to deal with these problems yourself. This means more testing on older versions of the OS, and workarounds for platforms that don’t provide features that your app uses. Developers tell us that testing is dramatically easier using Flutter.
 
@@ -135,7 +128,6 @@ Last, but certainly not least, Flutter lets you develop *better* apps *faster*. 
 
 <DashImage figure src="images/1DDzx3KU38jeAs2gWYc1KVQ.gif" alt="Stateful hot reload!" caption="Stateful hot reload!" />
 
-
 Flutter’s stateful hot reload is made possible by advanced compiler technology (developed by some of the same people who built the [V8 compiler](https://en.wikipedia.org/wiki/Chrome_V8) for JavaScript and [Strongtalk](https://en.wikipedia.org/wiki/Strongtalk) for Smalltalk) and the fact that Flutter is native and based on reactive views.
 
 In addition to speeding things up, many developers report that Flutter dramatically changes the way they code. They can try out new ideas and new layouts quickly. They can make changes requested by their stakeholders right in front of them.
@@ -151,13 +143,11 @@ Likewise, [Alibaba](https://hackernoon.com/making-the-most-of-flutter-from-basic
 
 <DashImage figure src="images/1CPLZMvIh93Amt_RvTJ8lPg.webp" alt="Hamilton, the app" caption="Hamilton, the app" />
 
-
 In [the Hamilton app](https://youtu.be/kfd-oLypqFI), the developers actually made a major change to the app *the night before* they released it, with the confidence that the app would be rock solid. That app, built in three short months, was featured on both app stores. Plus Flutter makes it easier for them continue to add new features frequently, to keep their users active and coming back for more.
 
 That’s how you build a successful mobile app.
 
 <DashImage figure src="images/1PyYYwZB4TXMqF7W3SHVv0w.jpeg" />
-
 
 Not only is it easy and fast to build and modify your apps, it is just as fast to update the Flutter widgets. A common concern about Flutter not using the platform widgets is that Flutter will struggle to keep up with the platforms as they release new widgets or improve old ones.
 

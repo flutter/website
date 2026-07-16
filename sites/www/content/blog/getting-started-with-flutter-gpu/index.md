@@ -24,7 +24,6 @@ This article contains two “getting started” guides for these packages:
 
 <DashImage figure src="images/0hAqIOVkaI1IWnOHE.webp" alt="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." caption="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." />
 
-
 ## Getting started with Flutter GPU
 
 Flutter GPU is Flutter’s built-in low-level graphics API. It allows you to build and integrate custom renderers in Flutter by writing Dart code and GLSL shaders. No native platform code required.
@@ -51,7 +50,6 @@ With that out of the way, let’s get started with Flutter GPU by way of a gentl
 
 <DashImage figure src="images/0JEI3fLDGcRHWKruT.webp" />
 
-
 ## Add Flutter GPU to your project
 
 First, note that Flutter GPU is currently in an early preview state and might be prone to API breakages. Quite a lot is already possible with the current API, but experienced graphics engineers might notice some missing common functionality. Much is planned for Flutter GPU over the coming months.
@@ -65,7 +63,6 @@ flutter channel main
 flutter upgrade
 ```
 
-
 Now create a fresh Flutter project.
 
 ```bash
@@ -73,13 +70,11 @@ flutter create my_cool_renderer
 cd my_cool_renderer
 ```
 
-
 Next, add the flutter_gpu SDK package to your pubspec.
 
 ```bash
 flutter pub add flutter_gpu --sdk=flutter
 ```
-
 
 ## Build and import shader bundles.
 
@@ -97,7 +92,6 @@ void main() {
 }
 ```
 
-
 When drawing the triangle, you’ll have a list of data that defines each vertex. In this case, it merely lists 2D positions. For each of these vertices, a simple vertex shader assigns these 2D positions to the clip space output intrinsic `gl_Position`.
 
 ```glsl
@@ -110,7 +104,6 @@ void main() {
 }
 ```
 
-
 The fragment shader is even simpler; it outputs an RGBA color with a range of `(0, 0, 0, 0)` to `(1, 1, 1, 1)`. So everything will be shaded as green.
 
 Okay, so now that you have your shaders, compile them using Flutter's ahead of time (AOT) shader compiler . To set up automated builds for shader bundles, we recommend using the [flutter_gpu_shaders](https://pub.dev/packages/flutter_gpu_shaders) package.
@@ -120,7 +113,6 @@ Use pub to add `flutter_gpu_shaders` as a regular dependency in your project.
 ```bash
 flutter pub add flutter_gpu_shaders
 ```
-
 
 Flutter GPU shaders are bundled into `.shaderbundle` files, which can be added to your project's asset bundle as regular assets. Shader bundles contain the compiled shader sources for the platform target(s).
 
@@ -139,7 +131,6 @@ Next, create a shader bundle manifest file that describes the contents of the sh
 }
 ```
 
-
 Each entry in the shader bundle can have an arbitrary name. In this case, the names are "SimpleVertex" and "SimpleFragment". These names are used to look up the shaders in your app.
 
 Next, use the `flutter_gpu_shaders` package to build the shaderbundle. You can add a hook that automatically triggers a build by enabling the experimental "native assets" feature. Use the following commands to enable native assets and install the `native_assets_cli` package.
@@ -148,7 +139,6 @@ Next, use the `flutter_gpu_shaders` package to build the shaderbundle. You can a
 flutter config --enable-native-assets
 flutter pub add native_assets_cli
 ```
-
 
 With the native assets feature enabled, add a `build.dart` script under the `hook` directory that will trigger building the shader bundle automatically.
 
@@ -168,7 +158,6 @@ void main(List<String> args) async {
 }
 ```
 
-
 After this change, when the Flutter tool is building the project, `buildShaderBundleJson` builds the shader bundle and outputs the result to `build/shaderbundles/my_renderer.shaderbundle` under the package root.
 
 The shader bundle format itself is tied to the specific version of Flutter you're using and might change over time. If you're authoring a package that builds shader bundles, do **not** check the generated `.shaderbundle` files into your source tree. Instead, use a build hook to automate the build process (as previously explained).
@@ -182,7 +171,6 @@ flutter:
   assets:
     - build/shaderbundles/
 ```
-
 
 In the future, the native assets feature will allow build hooks to append data assets to the bundle. Once this happens, it will no longer be necessary to add an asset import rule alongside the build hook.
 
@@ -212,7 +200,6 @@ gpu.ShaderLibrary get shaderLibrary {
   throw Exception("Failed to load shader bundle! ($_kShaderBundlePath)");
 }
 ```
-
 
 This code creates a singleton getter for the Flutter GPU shader runtime library. The first time `shaderLibrary` is accessed, the runtime shader library is initialized using the built asset bundle with `gpu.ShaderLibrary.fromAsset(shader_bundle_path)`.
 
@@ -269,23 +256,19 @@ class TrianglePainter extends CustomPainter {
 }
 ```
 
-
 Now, run the app. As a reminder, Flutter GPU currently requires [Impeller to be enabled](https://docs.flutter.dev/perf/impeller#availability). So you must use an Impeller-supported platform. For this guide, I'll be targeting macOS.
 
 ```bash
 flutter run -d macos --enable-impeller
 ```
 
-
 <DashImage figure src="images/0lKTtaX2ih6dFpSMQ.webp" />
-
 
 If Flutter GPU is working, then you should see the default color format printed to the console.
 
 ```plaintext
 flutter: Default color format: PixelFormat.b8g8r8a8UNormInt
 ```
-
 
 If Impeller isn't enabled, an exception is thrown when attempting to access `gpu.gpuContext`.
 
@@ -295,7 +278,6 @@ Exception: Flutter GPU requires the Impeller rendering backend to be enabled.
 The relevant error-causing widget was:
   CustomPaint
 ```
-
 
 For the sake of simplicity, you’ll only modify the `paint` method from here onwards.
 
@@ -307,7 +289,6 @@ Create a `Texture` the size of the `Canvas`. A `StorageMode` must be chosen. In 
 final texture = gpu.gpuContext.createTexture(gpu.StorageMode.devicePrivate,
     size.width.toInt(), size.height.toInt())!;
 ```
-
 
 If overwriting the texture's data by uploading it from the host (CPU), then use `StorageMode.hostVisible` instead.
 
@@ -324,7 +305,6 @@ final renderTarget = gpu.RenderTarget.singleColor(
 gpu.ColorAttachment(texture: texture, clearValue: Colors.lightBlue));
 ```
 
-
 Notice that this code sets the `clearValue` to light blue. Each attachment has a `LoadAction` and a `StoreAction` that determines what should happen to the attachment's ephemeral tile memory at the beginning and end of the pass, respectively.
 
 By default, color attachments are set to `LoadAction.clear` (which initializes the tile memory to a given color), and `StoreAction.store` (which saves the results to the attached texture's VRAM allocation).
@@ -338,7 +318,6 @@ final renderPass = commandBuffer.createRenderPass(renderTarget);
 commandBuffer.submit();
 ```
 
-
 All that's left is to draw the initialized texture to the Canvas!
 
 ```dart
@@ -346,9 +325,7 @@ final image = texture.asImage();
 canvas.drawImage(image, Offset.zero, Paint());
 ```
 
-
 <DashImage figure src="images/0ebUDtzQOuIGmdlop.webp" />
-
 
 Now that you have a `RenderPass` hooked up with results displayed to the screen, you’re ready to start drawing the triangle. To do this, set up the following:
 
@@ -364,7 +341,6 @@ final frag = shaderLibrary['SimpleFragment']!;
 final pipeline = gpu.gpuContext.createRenderPipeline(vert, frag);
 ```
 
-
 Now for the geometry. Recall that the "SimpleVertex" shader only has one input: `in vec2 position`. So, to draw the three vertices, you need three sets of two floating point numbers.
 
 ```dart
@@ -376,7 +352,6 @@ final vertices = Float32List.fromList([
 final verticesDeviceBuffer = gpu.gpuContext
     .createDeviceBufferWithCopy(ByteData.sublistView(vertices))!;
 ```
-
 
 All that's remaining is to bind the new resources and call `renderPass.draw()` to finish recording the draw call.
 
@@ -393,11 +368,9 @@ renderPass.bindVertexBuffer(verticesView, 3);
 renderPass.draw();
 ```
 
-
 If you launch your app, you should now see a green triangle!
 
 <DashImage figure src="images/0LWnGU5WPT_Eom0wJ.webp" />
-
 
 Yay, you built a renderer from scratch with Flutter, Dart, and a little bit of GLSL!
 
@@ -415,7 +388,6 @@ The intent is to provide a package that makes building interactive 3D apps and g
 
 <DashImage figure src="images/0tC68CbPLef2rJp1e.webp" />
 
-
 This package started life as a `dart:ui` extension for a 3D renderer written in C++ and built directly into Flutter's native runtime, but it's been rewritten against Flutter GPU with a more flexible interface.
 
 As with the Flutter GPU API itself, Flutter Scene is currently in an early preview state and requires [Impeller to be enabled](https://docs.flutter.dev/perf/impeller#availability). Flutter Scene generally keeps up to date with breaking changes to Flutter GPU's API, and so it's strongly recommended to use the [main channel](https://docs.flutter.dev/release/upgrade#other-channels) when experimenting with Flutter Scene.
@@ -431,14 +403,12 @@ flutter channel main
 flutter upgrade
 ```
 
-
 Next, create a fresh Flutter project.
 
 ```bash
 flutter create my_3d_app
 cd my_3d_app
 ```
-
 
 Flutter Scene relies on the experimental "native assets" feature for automatically building shaders. You’ll use native assets in a moment to set up automatic importing of 3D models for Flutter Scene.
 
@@ -448,7 +418,6 @@ Enable native assets with the following command.
 flutter config --enable-native-assets
 ```
 
-
 And finally, add Flutter Scene as a project dependency.
 
 You’ll also need to use several `vector_math` constructs while interacting with Flutter Scene's API, so add the `vector_math` package as well.
@@ -456,7 +425,6 @@ You’ll also need to use several `vector_math` constructs while interacting wit
 ```bash
 flutter pub add flutter_scene vector_math
 ```
-
 
 Next, import a 3D model!
 
@@ -466,13 +434,11 @@ First, you need a 3D model to render. For this guide, you’ll use a common [glT
 
 <DashImage figure src="images/0vVWRLxJ348tCxv7T.webp" alt="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" caption="The original Damaged Helmet model was created by theblueturtle_ in 2016 (license: [CC BY-NC 4.0 International](https://creativecommons.org/licenses/by-nc/4.0/legalcode)). The converted glTF version was created by ctxwing in 2018 (license: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/legalcode))" />
 
-
 You can grab it from the [glTF sample assets repository](https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/DamagedHelmet/glTF-Binary/DamagedHelmet.glb) hosted on GitHub. Place DamagedHelmet.glb in your project root.
 
 ```bash
 curl -O https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb
 ```
-
 
 Like most real-time 3D renderers, Flutter Scene uses a specialized 3D model format internally. You can convert standard glTF binaries (.glb files) to this format using Flutter Scene's offline importer tool.
 
@@ -481,7 +447,6 @@ Add the `flutter_scene_importer` package to the project as a regular dependency.
 ```bash
 flutter pub add flutter_scene_importer
 ```
-
 
 **Note:** The importer will automatically build itself using CMake when invoked. So be sure to [install CMake](https://cmake.org/download/). Otherwise, you will run into “***ProcessException: No such file or directory”*** errors.
 
@@ -494,13 +459,11 @@ dart --enable-experiment=native-assets \
      --output "path/to/my/imported_model.model"
 ```
 
-
 You can automatically run the importer by using a native assets build hook. To do this, first install `native_assets_cli` as a regular project dependency.
 
 ```bash
 flutter pub add native_assets_cli
 ```
-
 
 You can now write the build hook. Create `hook/build.dart` with the following contents.
 
@@ -517,7 +480,6 @@ void main(List<String> args) {
 }
 ```
 
-
 Using the `buildModels` utility from `flutter_scene_importer`, supply a list of models to build. The paths are relative to the build root of the project.
 
 When the Flutter tool is building the project, `buildModels` now builds the shader bundle and outputs the result to `build/models/DamagedModel.model` under the package root.
@@ -533,7 +495,6 @@ flutter:
   assets:
     - build/models/
 ```
-
 
 In the future, the native assets feature will allow build hooks to append data assets to the bundle. Once this happens, it will no longer be necessary to add an asset import rule alongside the build hook.
 
@@ -580,16 +541,13 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 }
 ```
 
-
 Run the app as a smoke test to ensure there are no errors. And remember to [enable Impeller](https://docs.flutter.dev/perf/impeller#availability)!
 
 ```bash
 flutter run -d macos --enable-impeller
 ```
 
-
 <DashImage figure src="images/074qs6ytcTjyVHwML.webp" />
-
 
 Before continuing, set up the ticker for the animation. Override `initState` in `MyAppState` to call `createTicker`.
 
@@ -606,7 +564,6 @@ Before continuing, set up the ticker for the animation. Override `initState` in 
   }
 ```
 
-
 As long as the widget is visible, the ticker callback is invoked for every frame. Calling `setState` triggers this widget to rebuild every frame.
 
 Next, load up the 3D model that you placed in the project earlier and add it to the Scene.
@@ -619,7 +576,6 @@ Use `Node.fromAsset` to load the model from the asset bundle. Place the followin
       scene.add(model);
     });
 ```
-
 
 `Node.fromAsset` asynchronously deserializes the model from the asset bundle and resolves the returned `Future<Node>` once it's ready to be added to the scene.
 
@@ -643,7 +599,6 @@ The `MyAppState.initState` should now look as follows:
   }
 ```
 
-
 However, you’re still not actually rendering the 3D Scene yet! To do this, use `Scene.render`, which takes a UI `Canvas`, a Flutter Scene `Camera`, and a size.
 
 One way to access a Canvas is to create a `CustomPainter`:
@@ -663,7 +618,6 @@ class ScenePainter extends CustomPainter {
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
 ```
-
 
 Don't forget to set the `shouldRepaint` override to return true so that the custom painter will repaint whenever a rebuild occurs.
 
@@ -687,7 +641,6 @@ Lastly, add the `CustomPainter` to the source tree.
   }
 ```
 
-
 This code instructs the camera to move in a continuous circle, but always facing towards the origin.
 
 Finally, start the app!
@@ -696,9 +649,7 @@ Finally, start the app!
 flutter run -d macos --enable-impeller
 ```
 
-
 <DashImage figure src="images/0_-OFc0vhBHAhrPrO.webp" />
-
 
 Here's the full source we put together.
 
@@ -774,7 +725,6 @@ class ScenePainter extends CustomPainter {
 }
 ```
 
-
 ## Flutter’s great future ahead
 
 If you were able to successfully follow one of these guides and get something up and running: Woohoo, congrats!
@@ -794,7 +744,6 @@ In the world of rendering performance, the situation is even worse. Specializing
 In short, it's just not possible to ship a generic 3D renderer that can solve every use case for everyone. But, by surfacing the low level APIs necessary for you to build your own solutions (Flutter GPU), and building a useful generic 3D renderer on top of it that's easy for the Flutter community to inspect and modify (Flutter Scene), we’re carving out the space for Flutter developers to enjoy low-risk for obsolescence and a high reward.
 
 <DashImage figure src="images/1jfeUgpEP9AgAz94yVxVW1g.webp" />
-
 
 I can't wait to see what you'll make with these new capabilities. Stay tuned for future releases of Flutter Scene. There's a lot on the way.
 

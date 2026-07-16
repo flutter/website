@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1q-Y9wu-ZE_4YHLYcPpjgGA.jpeg" alt="By Marian ([https://www.flickr.com/photos/lescientist/8430282209](https://www.flickr.com/photos/lescientist/8430282209)) ([CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/))" caption="By Marian ([https://www.flickr.com/photos/lescientist/8430282209](https://www.flickr.com/photos/lescientist/8430282209)) ([CC BY-NC-SA 2.0](https://creativecommons.org/licenses/by-nc-sa/2.0/))" />
 
-
 **Update**: Flutter now has a built in Visibility widget so it’s better you use that. However, it’s still a good read on widget design and implementation so give it a read and a clap!
 
 I thought I’d write a quick snippet / tutorial on how you can easily write a generic widget to manage visibility in your Flutter application. It’s a pretty common task and it’s something that, once you’ve written it, you’ll probably re-use across all your projects. But, before we begin, let’s talk about what visibility *means*.
@@ -43,7 +42,6 @@ if (shouldBeIncluded) {
 // use views later
 ```
 
-
 When deciding what strategy to use, ask yourself the following:
 
 * **Will the condition for displaying my widget never be met for certain cases?** An example is when you have a first time experience, on-boarding, etc. If you have a condition where you only show it the first time the app starts then you won’t want to include it ever again. So, this one is easy. In this case you should not include your widget in the first place. You can use a *Gone* strategy.
@@ -55,7 +53,6 @@ When deciding what strategy to use, ask yourself the following:
 So, keeping in mind all of this information, is it possible to develop a re-usable widget to manage visibility? Yes. **With caveats**.
 
 So, what does the code look like? Like this:
-
 
 A quick note on how it works before we get into the caveats:
 
@@ -75,6 +72,6 @@ So a couple of quick caveats:
 
 Aaaand that’s it. This widget is still pretty useful but, be smart and write efficient code. Your visibility approach will/should always take into consideration your specific needs so be sure to always think about what is the best approach.
 
-____
+---
 
 *Luke is a mobile developer and an agency veteran. He’s a Dart + Flutter GDE and passionate about technology. If you want to hire him, drop him a line!*

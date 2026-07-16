@@ -24,5 +24,4 @@ $ flutter channel beta
 $ flutter upgrade
 ```
 
-
 In either case, you’ll want to check out [the Developing for iOS 14 page](https://flutter.dev/docs/development/ios-14) for helpful information about targeting iOS 14 with Flutter. If you have any trouble with iOS 14, please [file issues on the Flutter repo](https://github.com/flutter/flutter/issues). If you have any questions, please post them on [the flutter-dev group](https://groups.google.com/g/flutter-dev).

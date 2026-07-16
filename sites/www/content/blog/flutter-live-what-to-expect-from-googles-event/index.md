@@ -12,13 +12,11 @@ layout: blog
 
 <DashImage figure src="images/0MhKKsmIlYcORAT-q.webp" />
 
-
 ## What to expect at Flutter Live
 
 [Flutter Live](https://developers.google.com/events/flutter-live/) is happening on December 4th, with a small in-person event at the Science Museum in London, and a large global livestream audience. This event is a celebration of [Flutter](https://flutter.io), Google’s free and open source SDK for building high-quality native iOS and Android apps from a single codebase.
 
 <YoutubeEmbed id="M71JIWWV_Q0" title="Announcing Flutter Live!" fullwidth="true"/>
-
 
 ## Tune in to the livestream
 
@@ -30,25 +28,20 @@ Over 130 Organizations all over the world are hosting free viewing parties to wa
 
 <DashImage figure src="images/0j1UikCUFWQNp5x0A.webp" />
 
-
 ## #MyFlutterStory
 
 Developers around the world have been submitting their Flutter stories, and we will highlight some at the event.
 
 <DashImage figure src="images/0S2k_EeW-eFwWQwbu.webp" />
 
-
 <DashImage figure src="images/0AyHpMwfNETHD93mV.webp" />
 
-
 <DashImage figure src="images/0rv1oAlPBPjcbMwrb.webp" />
-
 
 ## #AskFlutter
 
 Given this is a global event, Andrew from our team will be live after the Keynote to answer questions that come in with #AskFlutter.
 
 <YoutubeEmbed id="drNPMrdmqMQ" title="#AskFlutter at Flutter Live - Ask us your questions!" fullwidth="true"/>
-
 
 We are thrilled that you will experience Flutter Live with us on December 4th. In the meantime, follow us on twitter at [@flutterio](https://twitter.com/flutterio) and get started with Flutter at [flutter.io](https://flutter.io).

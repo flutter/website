@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/17BKoEbJbiH08LxyMIpQdew.webp" />
 
-
 When it comes to discussing hot reload there is really no chance to avoid a Zoolander meme so please forgive me the title.
 
 One of the most popular features of Flutter framework is its **hot reload**. It allows reloading the code on the running app without losing the state, massively reducing development time. What is really important is that Flutter’s hot reload isn’t a feature which was added to the framework, like **Instant Run** in AndroidStudio. Flutter was designed this way from day one and it just leverages the power of its architecture. Flutter is fairly young but mobile companies already try to tackle full-scale development. I have noticed this by observing the shift in questions asked on [https://gitter.im/flutter/flutter](https://gitter.im/flutter/flutter) and on meetups. The initial wave of questions :
@@ -37,33 +36,32 @@ This is why I have decided to create a dummy project to take hot reload for a sp
 My first attempt was quite simplistic.
 
 1) The generator will create a specific number of stateless widgets
-2) The generator will create a layout which nests them. 
+2) The generator will create a layout which nests them.
 3) I will manually modify generated .dart file and observe hot reload time
 
 Below is an example of one of the generated stateless widget class.
 
 ```dart
 class GeneratedWidget0 extends StatelessWidget {
- 
   final Widget child;
-  
+
   GeneratedWidget0({this.child});
-  
+
   Widget build(BuildContext context) {
-    return new Center(
-      child: new DecoratedBox(
-        decoration: new BoxDecoration(border: new Border(
-          top: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
-          bottom: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
-          left: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
-          right: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
-        )),
-         child: new Padding( 
-          padding: new EdgeInsets.all(1.1),
-          child: child,
-         )
-      ) 
-    );
+    return new Center(
+      child: new DecoratedBox(
+        decoration: new BoxDecoration(border: new Border(
+          top: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
+          bottom: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
+          left: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
+          right: const BorderSide(color: Colors.blue,width: 0.5,style: BorderStyle.solid),
+        )),
+         child: new Padding(
+          padding: new EdgeInsets.all(1.1),
+          child: child,
+         )
+      )
+    );
   }
 }
 ```
@@ -71,25 +69,25 @@ class GeneratedWidget0 extends StatelessWidget {
 The generated layout looks like this:
 
 ```dart
-import ‘package:flutter/material.dart’;
- 
-  class MainLayout extends StatelessWidget {
- 
-@override
+import 'package:flutter/material.dart';
+
+class MainLayout extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
-    return new Material( child: new GeneratedWidget4 (
+    return new Material(child: new GeneratedWidget4 (
       child: new GeneratedWidget3 (
         child: new GeneratedWidget2 (
           child: new GeneratedWidget1 (
             child: new GeneratedWidget0 (
               child: new GeneratedWidget0 (
-                child: new Text(‘test with 5 items’,style: Theme.of(context).textTheme.body1,),
+                child: new Text('test with 5 items',style: Theme.of(context).textTheme.body1,),
               ),
             ),
           ),
         ),
       ),
-    );
+    ));
+  }
 }
 
 ```
@@ -105,7 +103,6 @@ The result was interesting. Compiler hit me with an error:
 error: line 265 pos 8: stack overflow while parsing
 ```
 
-
 By trial and error, I’ve concluded that it takes roughly about 250 unique nested widgets to get this error. This wasn’t a result I was looking for. I wanted to see how hot reload slows down, not where compiler tells me that I am insane.
 
 I had to find the way to pass the limit nested widgets without breaking the parser.
@@ -115,34 +112,31 @@ I modified the generator to create a number of packages, each one with a generat
 Below you can see the router for 5 packages.
 
 ```dart
-
-import ‘package:flutter/material.dart’;
-import ‘package_0/generated_widget.dart’;
-import ‘package_1/generated_widget.dart’;
-import ‘package_2/generated_widget.dart’;
-import ‘package_3/generated_widget.dart’;
-import ‘package_4/generated_widget.dart’;
+import 'package:flutter/material.dart';
+import 'package_0/generated_widget.dart';
+import 'package_1/generated_widget.dart';
+import 'package_2/generated_widget.dart';
+import 'package_3/generated_widget.dart';
+import 'package_4/generated_widget.dart';
 
 class Router extends StatelessWidget {
-  
-  @override build(BuildContext context) {
-  
+  @override 
+  Widget build(BuildContext context) {
     return new MaterialApp(
-      title: ‘Flutter Demo’,
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      routes : {
-        ‘/’ : (context) => new Package0MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed(‘/route_1’)),
-        ‘/route_1’ : (context) => new Package1MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed(‘/route_2’)),
-        ‘/route_2’ : (context) => new Package2MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed(‘/route_3’)),
-        ‘/route_3’ : (context) => new Package3MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed(‘/route_4’)),
-        ‘/route_4’ : (context) => new Package4MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed(‘/’)),
+      title: 'Flutter Demo',
+      theme: new ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      routes : {
+        '/' : (context) => new Package0MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed('/route_1')),
+        '/route_1' : (context) => new Package1MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed('/route_2')),
+        '/route_2' : (context) => new Package2MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed('/route_3')),
+        '/route_3' : (context) => new Package3MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed('/route_4')),
+        '/route_4' : (context) => new Package4MainLayout(onTapHandler:()=>Navigator.of(context).pushNamed('/')),
       },
-    );
-  }
+    );
+  }
 }
-
 ```
 
 Now I was able to pack more classes into more layouts without hitting the “magic 250 nested widgets wall”. I was out of the woods with the parser problem and able to continue my tests.
@@ -154,13 +148,12 @@ However this one returned with a warning
 
 ```plaintext
 Some program elements were changed during reload but did not run when the view was reassembled;
-you may need to restart the app (by pressing “R”) for the changes to have an effect.
+you may need to restart the app (by pressing "R") for the changes to have an effect.
  • Package4MainLayout.build (lib/package_4/generated_widget.dart:10)
  • Package3MainLayout.build (lib/package_3/generated_widget.dart:10)
  • Package2MainLayout.build (lib/package_2/generated_widget.dart:10)
 
 ```
-
 
 then I added 75 more packages and the result was a Dart VM timeout error:
 
@@ -171,13 +164,11 @@ Application finished.
 
 ```
 
-
 I restarted Flutter and continued from 80 x 80. Then I pressed reload and noticed
 
 ```plaintext
 Reloaded 82 of 644 libraries in 1,209ms.
 ```
-
 
 OK. So **it depends on how many classes we modify**, not on the size of the project itself. Flutter reloaded 80 widgets in 80 packages in slightly more than 1.2 seconds. I’ve realised that the reason why I was receiving same 650 ms result was one of the Dart’s and Flutter’s strongest side — **immutability**. Dart and Flutter reuse most of the old object when creating new state. Only parts which are inevitably modified are replaced.
 
@@ -190,7 +181,6 @@ The result of this craziness was:
 ```plaintext
 Reloaded 252 of 984 libraries in 3,219ms.
 ```
-
 
 I must say, Flutter’s hot reload is really impressive. For day to day use it won’t jump above its usual time as long as we do nice and small incremental changes. Size of the project doesn’t matter that much.
 

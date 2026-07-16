@@ -24,20 +24,17 @@ The idea of creating a search application trained on the Flutter docs was straig
 
 <DashImage figure src="images/092qfA1AlxG0HMJCE.webp" />
 
-
 **Creating interactive animations in Flutter**
 
 Flutter empowered the team to implement a wide array of animations seamlessly. Its rich set of animations, coupled with the flexibility of widgets, allowed us to create transitions, engaging motion effects, and fluid user interactions. From creating animated loading states while generating the results, to a Dash sprite that waves when the answers appear, Flutter provided flexibility to turn what could be a basic text response into something fun for users to interact with.
 
 <DashImage figure src="images/00gsPB_1VlYop9DPL.webp" />
 
-
 **Visualizing natural language search results**
 
 Unlike a traditional search experience, Vertex AI Search provides a natural language response to the question asked. The answer is generated with AI sourced from various pages within the Flutter documentation and presented as a summarized response alongside cards that display the relevant pages used by the AI. Each card provides the title to the page and a description so that the user can flip through the cards to get more context on the AI response.
 
 <DashImage figure src="images/0FapWwJ2wFpi8l9ZZ.gif" />
-
 
 Additionally, within the natural language response, Vertex AI Search provides a link to the source of each sentence in the response — giving the user a more granular understanding of where each part of the response originated. In the demo, clicking on the number next to each sentence flips the cards to the relevant source page.
 

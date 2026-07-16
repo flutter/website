@@ -14,7 +14,6 @@ layout: blog
 
 <DashImage figure src="images/1K1lyX_AOOILKyv3stAtlQg.jpeg" alt="Flutter on Raspberry Pi" caption="Flutter on Raspberry Pi" />
 
-
 Bringing Flutter to a new platform requires porting the [Flutter Engine](https://github.com/flutter/engine) to the target, as well as implementing an embedder. The Flutter engine is inherently cross platform and can work with a variety of client rendering APIs (OpenGL, Vulkan and Software rendering). It includes the Dart runtime VM.
 
 The engine is typically packaged as a dynamic library and consumed by thin embedders that are platform specific. It has a small C API. Engine developers guarantee that this API is backwards compatible and has a stable [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) moving forward. The API consists of a [single C header](https://github.com/flutter/engine/blob/436f9707b94774d1d049c04b8cda9d81d85aa4a8/shell/platform/embedder/embedder.h) file with no platform specific dependencies.
@@ -66,7 +65,7 @@ Once, you have the Clang/LLVM toolchain, you need Binutils built for ***`arm-lin
     --target=arm-linux-gnueabihf
 ```
 
-You now have a toolchain capable of building for (and only for) ***arm`-linux-gnueabihf`***. If you already have a toolchain that is fairly close to Tip-of-Tree Clang that is also capable of targeting this platform, you can use that. But, this toolchain gives you a better chance of avoiding compiler specific issues due to subtle version mismatches.
+You now have a toolchain capable of building for (and only for) ***`arm-linux-gnueabihf`***. If you already have a toolchain that is fairly close to Tip-of-Tree Clang that is also capable of targeting this platform, you can use that. But, this toolchain gives you a better chance of avoiding compiler specific issues due to subtle version mismatches.
 
 ### **libcxx** and libcxxabi
 
@@ -165,7 +164,6 @@ On the host, check out the application you want to run on the Raspberry Pi, and 
 flutter build bundle
 ```
 
-
 Push this bundle to the Raspberry Pi.
 
 ## Run the Application on the Raspberry Pi
@@ -175,7 +173,6 @@ In the specific case of the Raspberry Pi Embedder, run the application using the
 ```bash
 flutter /path/to/flutter_assets/
 ```
-
 
 Automate this process to your desired workflow.
 

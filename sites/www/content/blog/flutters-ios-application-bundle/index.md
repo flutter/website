@@ -20,7 +20,6 @@ A Flutter application renders the user interface into a single view in the nativ
 
 <DashImage figure src="images/1xfvovQJT-5OsHBDBIQa92A.webp" alt="The Flutter view hierarchy visualized in Xcode. There is not much to see." caption="The Flutter view hierarchy visualized in Xcode. There is not much to see." />
 
-
 ## The Application Bundle
 
 The application bundle created using the `flutter build ios --release` command (or using your IDE) looks remarkably similar to a typical iOS app bundle that contains the application executable along with any referenced frameworks and resources.
@@ -36,10 +35,10 @@ Runner.app
 │   └── Main.storyboardc
 ├── Debug.xcconfig
 ├── Frameworks
-│   ├── App.framework            # See “App framework bundle”
+│   ├── App.framework            # See "App framework bundle"
 │   │   ├── App
 │   │   ├── Info.plist
-│   └── Flutter.framework        # See “Flutter framework bundle”
+│   └── Flutter.framework        # See "Flutter framework bundle"
 │       ├── Flutter
 │       ├── Info.plist
 │       └── icudtl.dat
@@ -55,7 +54,6 @@ Runner.app
 └── assets
 └── CupertinoIcons.ttf
 ```
-
 
 ## Compiling the Application
 
@@ -102,20 +100,19 @@ Runner.app/Frameworks/App.framework/App (for architecture arm64):
 0000000000005000 T _kDartVmSnapshotInstructions
 ```
 
-
 Their purpose is as follows:
 
-* Dart VM Snapshot (***`kDartVmSnapshotData`***): 
-Represents the initial state of the Dart heap shared between isolates. This helps launch Dart isolates faster, but doesn’t contain any isolate-specific information.
+* Dart VM Snapshot (***`kDartVmSnapshotData`***):
+  Represents the initial state of the Dart heap shared between isolates. This helps launch Dart isolates faster, but doesn’t contain any isolate-specific information.
 
-* Dart VM Instructions (***`kDartVmSnapshotInstructions`***): 
-Contains AOT instructions for common routines shared between all Dart isolates in the VM. This snapshot is typically extremely small and mostly contains stubs.
+* Dart VM Instructions (***`kDartVmSnapshotInstructions`***):
+  Contains AOT instructions for common routines shared between all Dart isolates in the VM. This snapshot is typically extremely small and mostly contains stubs.
 
-* Isolate Snapshot (***`kDartIsolateSnapshotData`***): 
-Represents the initial state of the Dart heap and includes isolate-specific information.
+* Isolate Snapshot (***`kDartIsolateSnapshotData`***):
+  Represents the initial state of the Dart heap and includes isolate-specific information.
 
-* Isolate Instructions (***`kDartIsolateSnapshotInstructions`***): 
-Contains the AOT code that is executed by the Dart isolate.
+* Isolate Instructions (***`kDartIsolateSnapshotInstructions`***):
+  Contains the AOT code that is executed by the Dart isolate.
 
 Invoking `gen_snapshot` is simple. You point it to the Dart source code, and it spits out a blob for each of these four symbols. Then, Xcode packages the symbols into an iOS framework bundle just like it would for a framework written in C, C++, Objective-C or Swift.
 
@@ -125,7 +122,7 @@ Apart from munging code, the Flutter tools also make sure that the assets refere
 
 ## A Note about Android
 
-The process for building an Android APK bundle (using `flutter build apk — release`, or your IDE) results in the following file structure:
+The process for building an Android APK bundle (using `flutter build apk --release`, or your IDE) results in the following file structure:
 
 ```plaintext
 $ Runner.apk.unzipped
@@ -151,7 +148,6 @@ $ Runner.apk.unzipped
 ├── res
 └── resources.arsc
 ```
-
 
 It is mostly the same as an iOS release bundle, except:
 

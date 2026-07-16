@@ -32,13 +32,11 @@ The overall architecture of Flutter on the web closely resembles Flutter on mobi
 
 <DashImage figure src="images/1D5HYFARy1U-T4E9OtK3LMA.webp" alt="Flutter for web architecture" caption="Flutter for web architecture" />
 
-
 The Flutter framework (green in the diagram above) is shared between the mobile and web offerings. It provides high-level abstractions for the UI foundations of Flutter, including animation, gestures, base widget classes, as well as a Material-themed set of widgets for most common application needs. If you’re already building on Flutter, you will feel immediately at home with Flutter for the web.
 
 The magic comes in translating these concepts to the browser. We’ve reimplemented the dart:ui library, replacing the bindings to the Skia engine used by mobile, with code that targets the DOM and Canvas. When you compile Flutter code for the web, your application, the Flutter framework, and the web-flavored dart:ui library — all written in Dart — are compiled to JavaScript that can run on any modern browser.
 
 <DashImage figure src="images/1jQBkI-cZwOP_KAEnPhzDtg.webp" alt="Flutter for web demo running on Chrome, Firefox, and Safari" caption="Flutter for web demo running on Chrome, Firefox, and Safari" />
-
 
 We are thoughtfully embracing core web features, like seamless integration of browser history with Flutter’s routing model. We are also coordinating with [Flutter’s desktop effort](https://github.com/flutter/flutter/wiki/Desktop-shells) to enable mouse scrolling, hover, and focus — features that not required in mobile experiences.
 

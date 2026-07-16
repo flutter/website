@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1y6lc2WLpxXBKsuoKJywapQ.webp" alt="Rebuilding three websites using Jaspr, a Dart-based, open-source web framework." caption="Rebuilding three websites using Jaspr, a Dart-based, open-source web framework." />
 
-
 Despite Dart starting out as a web language and being used every day to build apps across platforms, including the web, our own websites ([dart.dev](https://dart.dev), [flutter.dev](https://flutter.dev), [docs.flutter.dev](https://docs.flutter.dev)) relied on a fragmented mix of non-Dart tools. That’s finally changed. We’ve migrated all three websites to use [Jaspr](https://jaspr.site/), an open-source framework for building websites with Dart.
 
 The result is a unified stack with a consistent developer experience where contributing only requires Dart. If you’re curious about building web experiences with Dart beyond standard Flutter web apps, this post explores what motivated our migration and how Dart and Jaspr made it all possible.
@@ -49,7 +48,6 @@ class FeatureCard extends StatelessComponent {
   }
 }
 ```
-
 
 With Jaspr, contributors can directly apply the Dart and Flutter experience they already have to a new platform, significantly lowering the barrier to entry for team and community members who want to improve our documentation and websites.
 
@@ -103,7 +101,6 @@ Component build(BuildContext context) => const div([
 ]);
 ```
 
-
 The result was a more consistent API with better discoverability and a concise syntax that still works in constant contexts. Best of all, Jaspr’s CLI comes with a `jaspr migrate` command that automatically handled the migration to the new API as well as other changes.
 
 **Null-aware collection elements simplify conditional rendering.** Dart 3.8 added support for [null-aware collection elements](https://dart.dev/language/collections#null-aware-element), providing a clean syntax to conditionally include non-null values in collections. In Jaspr code, where you’re regularly composing lists of child components, they offer an elegant way to handle conditional UI elements:
@@ -119,7 +116,6 @@ Component build(BuildContext context) => div(classes: 'header', [
   ?eventBanner,
 ]);
 ```
-
 
 No more verbose `if` checks and not-null assertions cluttering your component trees.
 

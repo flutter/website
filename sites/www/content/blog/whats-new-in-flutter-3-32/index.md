@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1FTpRgnrZGMzzCjEl4sCmiw.webp" />
 
-
 ## What’s new in Flutter 3.32
 
 ### Hot reload on web, native fidelity, and deeper integrations
@@ -52,7 +51,6 @@ If you use debug configurations in VS Code, you can add this extra configuration
 ]
 ```
 
-
 For best results, we recommend enabling the “[Dart: Flutter Hot Reload On Save](https://code.visualstudio.com/docs/editor/settings)” setting in VS Code. A hot reload can also be triggered with the ⚡icon in the Run/Debug panel. Hot restarts can still be triggered by using the ⟳ button.
 
 ### Running from the command line
@@ -79,7 +77,6 @@ Another valuable addition in this release is [`RawMenuAnchor`](https://main-api.
 
 <DashImage figure src="images/0uHuGHM5dYCTkF_Vz.webp" />
 
-
 Refactors like these add better support for core widgets to be used in the implementation of design languages like Cupertino and Material (and more!) with more consistent surfaces and code sharing.
 
 ### Cupertino
@@ -89,7 +86,6 @@ Refactors like these add better support for core widgets to be used in the imple
 We’re pleased to introduce a significant new addition to Flutter’s shape capabilities: the rounded superellipse.
 
 <DashImage figure src="images/0NIsvxkNdRcbgtLdk.gif" />
-
 
 Often referred to as the “Apple squircle”, this shape is a cornerstone of the iOS design language, known for its smoother and more continuous curves compared to traditional rounded rectangles. Support for this shape was a frequent request from the Flutter community. Its inclusion represents another step in our efforts to provide high-fidelity UI with native look and feel on Apple platforms.
 
@@ -101,7 +97,7 @@ You can add rounded superellipses to your applications using these new APIs:
 
 1. [`ClipRSuperellipse`](https://main-api.flutter.dev/flutter/widgets/ClipRSuperellipse-class.html) for clipping.
 
-1. `[Canvas.drawRSuperellipse](https://main-api.flutter.dev/flutter/dart-ui/Canvas/drawRSuperellipse.html), [Canvas.clipRSuperellipse](https://main-api.flutter.dev/flutter/dart-ui/Canvas/clipRSuperellipse.html)`, and [`Path.addRSuperellipse`](https://main-api.flutter.dev/flutter/dart-ui/Path/addRSuperellipse.html) for lower-level APIs that offer more direct control.
+1. [`Canvas.drawRSuperellipse`](https://main-api.flutter.dev/flutter/dart-ui/Canvas/drawRSuperellipse.html), [`Canvas.clipRSuperellipse`](https://main-api.flutter.dev/flutter/dart-ui/Canvas/clipRSuperellipse.html), and [`Path.addRSuperellipse`](https://main-api.flutter.dev/flutter/dart-ui/Path/addRSuperellipse.html) for lower-level APIs that offer more direct control.
 
 Please note that the rounded superellipse is under active development. Currently, it’s only supported on iOS and Android, otherwise the behavior falls back to a standard rounded rectangle. Performance optimizations are also ongoing. We encourage you to explore this new feature with these considerations in mind, and we look forward to enhancing its capabilities in future updates!
 
@@ -113,9 +109,7 @@ The sheet was adjusted to fix the navigation bar’s height and ensure content i
 
 <DashImage figure src="images/0JjkFrjtxjh5tQmql.webp" />
 
-
 <DashImage figure src="images/0YCBMHZS_mi2vJ92S.webp" />
-
 
 Other fixes in this release include an issue where the sheet transition was incompatible with `PopupMenuButton`, and the rounded corner transition of the sheet was improved to look correct on more devices. Previously, it looked incorrect on some screens with different corner radii.
 
@@ -123,13 +117,11 @@ You can also now use the new [`enableDrag`](https://main-api.flutter.dev/flutter
 
 <DashImage figure src="images/1iEWYohD1vd7FMpPWvK2__A.webp" />
 
-
 **Navigation bars**
 
 [`CupertinoSliverNavigationBar.search`](https://main-api.flutter.dev/flutter/cupertino/CupertinoSliverNavigationBar/CupertinoSliverNavigationBar.search.html) sees fidelity improvements to its animation while opening or closing the search view, as well as correct alignment of the search field’s prefix and suffix icons.
 
 <DashImage figure src="images/0R1tsiciz-w7OdOjr.webp" />
-
 
 Finally, the transition between routes with `CupertinoNavigationBars` or `CupertinoSliverNavigationBars` has been updated to match the latest iOS transitions ([#164956](https://github.com/flutter/flutter/pull/164956)).
 
@@ -143,21 +135,17 @@ The feature enhancements include:
 
 <DashImage figure src="images/0nT-5bpsRVyZELaTq.webp" />
 
-
 * TabBar now has [`onHover`](https://main-api.flutter.dev/flutter/material/TabBar/onHover.html) and [`onFocusChange`](https://main-api.flutter.dev/flutter/material/TabBar/onFocusChange.html) callbacks, giving you more control over the widget’s appearance in different states.
 
 <DashImage figure src="images/0nFVGZ5PG6gTqc_F7.webp" />
-
 
 * `SearchAnchor` and `SearchAnchor.bar` now include [`viewOnOpen` and `onOpen`](https://github.com/flutter/flutter/pull/164541) callbacks respectively, allowing for better observation and handling of open/close events.
 
 <DashImage figure src="images/0H9mW79LCQEJBJ_i2.webp" />
 
-
 * [`CalendarDatePicker`](https://main-api.flutter.dev/flutter/material/CalendarDatePicker-class.html) now accepts a [`calendarDelegate`](https://main-api.flutter.dev/flutter/material/CalendarDatePicker/calendarDelegate.html) to enable the integration of custom calendar logic beyond the Gregorian Calendar System. The example demonstrates a hypothetical calendar system where even-numbered months have 21 days, odd-numbered months have 28 days, and every month starts on a Monday, showcasing the flexibility this delegate offers.
 
 <DashImage figure src="images/0uqbdwtRR2oryyhJy.webp" />
-
 
 Other minor enhancements include adding [`animationStyle`](https://github.com/flutter/flutter/pull/164002) to `showDialog`, `showAdaptiveDialog`, and `DialogRoute` to customize the animation when the dialog is opened and closed; `Divider` now accepts a [`borderRadius`](https://main-api.flutter.dev/flutter/material/Divider/radius.html) to allow customizing the border of the divider, especially when the divider is thick.
 
@@ -241,14 +229,12 @@ On Windows, you can turn on merged threads by adding the following to your `wind
 project.set_ui_thread_policy(flutter::UIThreadPolicy::RunOnPlatformThread)
 ```
 
-
 On macOS, you can turn on merged threads by adding the following to your `macos/Runner/Info.plist` file, inside the `<dict>` element:
 
 ```xml
 <key>FLTEnableMergedPlatformUIThread</key>
 <true />
 ```
-
 
 In a future release, we will turn on merged threads by default on Windows and macOS. Please try this out and [create issues](https://github.com/flutter/flutter/issues/new/choose) if you run into any bugs!
 
@@ -284,9 +270,7 @@ This release improves Impeller’s text rendering. Notably, text animations are 
 
 <DashImage figure src="images/0yGjm9dQU4oCG5XwG.webp" alt="Before" caption="Before" />
 
-
 <DashImage figure src="images/0s1EWYhGX9j4qOWB1.webp" alt="After" caption="After" />
-
 
 This release also includes a variety of other fidelity and performance improvements, including:
 
@@ -306,9 +290,7 @@ Easily edit widget properties and read documentation from the new Property Edito
 
 <DashImage figure src="images/0ZbSuN_xSc7pXkUyC.webp" alt="VSCode" caption="VSCode" />
 
-
 <DashImage figure src="images/0KoBkOexQ6DyQdnQt.webp" alt="Android Studio & IntelliJ" caption="Android Studio & IntelliJ" />
-
 
 ### DevTools improvements
 
@@ -327,7 +309,6 @@ Gemini in Android Studio now offers first-class support for Dart and Flutter dev
 [Read this blog post](https://medium.com/flutter/gemini-in-android-studio-now-speaks-fluent-flutter-915dfec98274) to learn more.
 
 <DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
-
 
 ### Dart and Flutter support for the Model Context Protocol ([MCP](https://modelcontextprotocol.io/introduction)) is on the way
 
@@ -353,13 +334,11 @@ Check out the [`firebase_ai`](https://pub.dev/packages/firebase_ai) package for 
 
 <DashImage figure src="images/0HlInLfTOQSZ3n-NG.webp" />
 
-
 ### Gain Actionable Insights with AI Monitoring dashboard
 
 The new AI Monitoring dashboard in the Firebase console provides detailed, actionable insights into your Gemini API usage. This includes comprehensive visibility into consumption patterns, performance metrics, and potential issues. This enables data-driven decisions and ensures that you’re using the Gemini APIs in the most efficient way. AI Monitoring also helps you to debug your Gemini API usage, and identify and address any unexpected behaviors.
 
 <DashImage figure src="images/0d7zwnDUZqn9bgnoS.webp" />
-
 
 ## Breaking changes and deprecations
 

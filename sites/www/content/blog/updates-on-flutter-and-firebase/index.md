@@ -14,7 +14,6 @@ Flutter is more than just an engine, a set of widgets, and some tools; it also i
 
 <DashImage figure src="images/0kZUvqusPkrzKt54k.webp" />
 
-
 ## Principles
 
 Historically, the Firebase plugins for Flutter grew organically due to passionate team members contributing when they could. With the transfer of plugin engineering to Invertase, the Flutter team and Invertase together took the opportunity to reexamine the basics. This exercise led to a number of principles:
@@ -51,7 +50,6 @@ The work that Invertase is doing is currently focused on Android and iOS, with m
 
 <DashImage figure src="images/0v4wFYjvXB2iCem55.webp" alt="Current status of the Firebase plugins for Flutter" caption="Current status of the Firebase plugins for Flutter" />
 
-
 You’ll notice that while every Firebase plugin supports mobile, which includes Android and iOS, not all of them support macOS. We’ll bring that support along as we work our way through the list. You’ll also notice that several of the plugins already support Flutter on the web as well as mobile. The breadth of support will continue to grow as work continues.
 
 ## Documentation
@@ -59,7 +57,6 @@ You’ll notice that while every Firebase plugin supports mobile, which includes
 In addition to providing a comprehensive migration guide and showing platform support for each plugin, we’ve also provided the first draft at a Flutter-centric set of documentation at [https://firebase.flutter.dev/docs](https://firebase.flutter.dev/docs).
 
 <DashImage figure src="images/0UYxGBLGPhiFgOv2j.webp" />
-
 
 No more reading the native Android or web Firebase docs and using that to guess the equivalent APIs to use in your Flutter apps! On this site, you’ll find docs for most of the Firebase plugins (many more than just Core, Authentication, and Firestore), Android, iOS, web-specific installation instructions, an overview of common scenarios with code snippets, and videos.
 

@@ -14,7 +14,6 @@ How to write cleaner code using extension methods in Dart
 
 <DashImage figure src="images/1j9632GFfT3IT7sfeiHUZtw.webp" alt="Example of Dart code using an extension method" caption="Example of Dart code using an extension method" />
 
-
 Dart has recently released support for extension methods, which means that you can now use this awesome feature. This article describes one example of how I use extension methods in my Flutter code.
 
 I’ve always used enums in my Flutter code, but integrating enums and extension methods has made developing in Flutter easier and the code cleaner to read.
@@ -63,7 +62,6 @@ Text((){
 }()),
 ```
 
-
 Also, what happens if you need to change the text color based on the enum? You would need to use another IIFE to get the `PrimaryColor` or `SecondaryColor`.
 
 Instead, you can extend your enum and create a method within that extension so you don’t have to use an IIFE . That way when you invoke your method in your code, it looks cleaner but still gives you the same result. This is an important technique that Java developers are familiar with, and is an expected capability of enums.
@@ -104,7 +102,6 @@ extension SelectedColorExtension on SelectedColor {
 }
 ```
 
-
 The `describeEnum()` function, which is defined in the Flutter foundation library, strips off the enum class name from `enumEntry.toString()`. I provide the code below in the event that you want to use it outside of Flutter development, for other Dart projects:
 
 ```dart
@@ -121,11 +118,9 @@ String describeEnum(Object enumEntry) {
 }
 ```
 
-
 To play around with the example mentioned above try this Pen.
 
 <iframe src="https://codepen.io/JoseAlba/embed/zYvLPBM" width="800" height="600" frameborder="0" allowfullscreen></iframe>
-
 
 In the full example, which you can see in CodePen above, the enum is extended with four methods: `displayTitle()`, `displayColorChangeText()`, `color()`, and `getRandomSelectedColor()`. When calling the `displayTitle()` method within the Flutter code you can see that the code is modularized, making it cleaner, as compared to the IIFE. Additionally, if you ever decide to add another enum variable within your enumeration it’s easier to update since all of the code is within the extension. This is seen when the `color()` method was called to change the text color. If I wanted to do this with the IIFE the code would get complicated quickly. It’s also easier to add methods in the future by using extensions; you can see this when the `color()` method was invoked in the CodePen.
 

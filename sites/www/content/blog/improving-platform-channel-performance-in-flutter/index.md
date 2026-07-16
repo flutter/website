@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/10lyQIh8t-STSy1o2Yjj1tQ.webp" />
 
-
 Over the past couple of years, I’ve been interested in the problem of “How do we make communication between Flutter and its host platform faster and easier?” This is a question of particular interest to Flutter plugin developers and add-to-app developers.
 
 Communication between Flutter and the host platform is typically done with [platform channels](https://flutter.dev/docs/development/platform-integration/platform-channels), so my energy has been focused there. In late 2019, to remedy the amount of boilerplate and [stringly typed](https://wiki.c2.com/?StringlyTyped) code required to use platform channels, I designed a `codegen` package, [Pigeon](https://pub.dev/packages/pigeon), that makes platform channels type-safe, and the team continues to improve it. In spring 2020, I performed an [audit of platform channel and foreign function interface (FFI) performance](https://docs.google.com/document/d/1bD_tiN987fWEPtw7tjXHzqZVg_g9H95IS32Cm609VZ8/edit). Now, I’ve set my sights on [improving the performance](https://docs.google.com/document/d/1oNLxJr_ZqjENVhF94-PqxsGPx0qGXx-pRJxXL6LSagc/edit?usp=sharing) of platform channels. Because Pigeon is built on top of platform channels, and I plan to build a [data synchronization solution](https://flutter.dev/go/data-sync) for multiple Flutter instances on top of Pigeon, this is a good opportunity to help with the many different needs of developers and with my initiatives.
@@ -36,7 +35,6 @@ The platform channels API hasn’t changed much since 2017. Because the platform
 The following diagram outlines the original process the framework followed when a platform channel was used to communicate with iOS from Flutter:
 
 <DashImage figure src="images/02fUEEmUdocImYO4x.webp" />
-
 
 Some takeaways from the diagram:
 

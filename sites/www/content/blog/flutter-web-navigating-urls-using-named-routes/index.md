@@ -62,7 +62,6 @@ See a [full interactive example of this on DartPad](https://dartpad.dev/embed-fl
 
 <DashImage figure src="images/0kDK1lFIWHzjcEVKA.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=named_routes/lib&theme=dark)" />
 
-
 ## Routing logic for dynamic URLs
 
 You may need to address more complex scenarios then addressed here, such as having pattern matching inside the routes to allow for dynamic URLs. To extend this example, assume that you have many different articles on the overview page. For each article you want to be able to navigate directly via URLs:
@@ -71,7 +70,6 @@ You may need to address more complex scenarios then addressed here, such as havi
 /#/article/a-very-interesting-article
 /#/article/newsworthy-news
 ```
-
 
 To define named routes for all of the articles within the `MaterialApp` does not scale very well. For such dynamic cases you need to do something more custom. As of this writing, the stable channel of Flutter is at v1.12, and there is no *simple way* to do this, though there are plans to add support for more advanced routing with the [new Navigator](https://github.com/flutter/flutter/issues/45938).
 
@@ -84,7 +82,7 @@ For each route, define a `Path` with a `RegEx` pattern. If the named route match
 ```dart
 class Path {
   const Path(this.pattern, this.builder);
-  
+
   final String pattern;
   final Widget Function(BuildContext, String) builder;
 }
@@ -132,7 +130,6 @@ static Route<dynamic> onGenerateRoute(RouteSettings settings) {
 Make sure to define the `onGenerateRoute` function inside the `MaterialApp` class; you have implemented dynamic URLs with Flutter, using named routes! You can [see a full interactive example on DartPad](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark).
 
 <DashImage figure src="images/0Uoo0IGsUFUf8GJsT.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=custom_named_routes/lib&theme=dark)" />
-
 
 ## Conclusion
 

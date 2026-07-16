@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1Nx4rPo-suELodUsEQqLFdQ.webp" />
 
-
 ## Flutter & Dart’s 2026 roadmap
 
 Transparency is a core goal of the Flutter open source project, and today we’re happy to share our roadmap for the next generation of apps. Our mission remains largely unchanged, we’re still working toward our long-term goal of creating the most popular, fastest growing, and highest-productivity multi-platform UI framework. You can check out the [**freshly updated roadmap on GitHub**](https://github.com/flutter/flutter/blob/master/docs/roadmap/Roadmap.md) for all the details, and in this post we will cover the themes driving our mission.

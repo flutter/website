@@ -14,7 +14,6 @@ layout: blog
 
 <DashImage figure src="images/12t8GffL0BcNoGLU-IgHT9w.jpeg" />
 
-
 **TL;DR** Discovering the strength of Flutter’s widget and tween concepts by writing chart animations in Dart for an Android/iOS app.
 
 Updated on August 7, 2018 to use Dart 2 syntax. [GitHub repo](https://github.com/mravn/charts) added on October 17, 2018. Each step described below is a separate commit.
@@ -31,7 +30,6 @@ Flutter is a new platform for developing Android and iOS apps from a single code
 
 <DashImage figure src="images/1OKV3RzTg89W3VxXnpAH3Eg.webp" alt="A simple animated bar chart, captured from an iOS simulator during development" caption="A simple animated bar chart, captured from an iOS simulator during development" />
 
-
 This is part one of a [two-part](https://medium.com/dartlang/zero-to-one-with-flutter-part-two-5aa2f06655cb) introduction to Flutter and its ‘widget’ and ‘tween’ concepts. I’ll illustrate the strength of these concepts by using them to display and animate charts like the one shown above. Full code samples should provide an impression of the level of code clarity achievable with Dart. And I’ll include enough detail that you should be able to follow along on your own laptop (and emulator or device), and experience the length of the Flutter development cycle.
 
 The starting point is a fresh [installation of Flutter](https://flutter.io/setup). Run
@@ -39,7 +37,6 @@ The starting point is a fresh [installation of Flutter](https://flutter.io/setup
 ```bash
 $ flutter doctor
 ```
-
 
 to check the setup:
 
@@ -58,13 +55,11 @@ Doctor summary (to see all details, run flutter doctor -v):
 • No issues found!
 ```
 
-
 With enough check marks, you can create a Flutter app. Let’s call it `charts`:
 
 ```bash
 $ flutter create charts
 ```
-
 
 That should give you a directory of the same name:
 
@@ -76,7 +71,6 @@ charts
     main.dart
 ```
 
-
 About sixty files have been generated, making up a complete sample app that can be installed on both Android and iOS. We’ll do all our coding in `main.dart` and sibling files, with no pressing need to touch any of the other files or directories.
 
 You should verify that you can launch the sample app. Start an emulator or plug in a device, then execute
@@ -84,7 +78,6 @@ You should verify that you can launch the sample app. Start an emulator or plug 
 ```bash
 $ flutter run
 ```
-
 
 in the `charts` directory. You should then see a simple counting app on your emulator or device. It uses Material Design widgets, which is nice, but optional. As the top-most layer of the Flutter architecture, those widgets are completely replaceable.
 
@@ -127,13 +120,11 @@ class ChartPageState extends State<ChartPage> {
     );
   }
 }
-
 ```
 
 Save the changes, then restart the app. You can do that from the terminal, by pressing `R`. This ‘full restart’ operation throws away the application state, then rebuilds the UI. For situations where the existing application state still makes sense after the code change, one can press `r` to do a ‘hot reload’, which only rebuilds the UI. There is also a Flutter plugin for IntelliJ IDEA providing the same functionality integrated with a Dart editor:
 
 <DashImage figure src="images/1soCdZ19Qugtv1YJewMQZGg.webp" alt="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." caption="Screen shot from IntelliJ IDEA with an older version of the Flutter plug-in, showing the reload and restart buttons in the top-right corner. These buttons are enabled, if the app has been started from within the IDE. Newer versions of the plugin do hot reload on save." />
-
 
 Once restarted, the app shows a centered text label saying `Data set: null` and a floating action button to refresh the data. Yes, humble beginnings.
 
@@ -150,9 +141,8 @@ MaterialApp                    (navigation)
       Center                   (layout)
         Text                   (text)
       FloatingActionButton     (user interaction)
-        Icon                   (graphics) 
+        Icon                   (graphics)
 ```
-
 
 * With an immutable tree of immutable widgets defining the user interface, the only way to change that interface is to rebuild the tree. Flutter takes care of that, when the next frame is due. All we have to do is tell Flutter that some state on which a subtree depends has changed. The root of such a **state-dependent subtree** must be a `StatefulWidget`. Like any decent widget, a `StatefulWidget` is not mutable, but its subtree is built by a `State` object which is. Flutter retains `State` objects across tree rebuilds and attaches each to their respective widget in the new tree during building. They then determine how that widget’s subtree is built. In our app, `ChartPage` is a `StatefulWidget` with `ChartPageState` as its `State`. Whenever the user presses the button, we execute some code to change `ChartPageState.` We’ve demarcated the change with `setState` so that Flutter can do its housekeeping and schedule the widget tree for rebuilding. When that happens, `ChartPageState` will build a slightly different subtree rooted at the new instance of `ChartPage`.
 
@@ -350,16 +340,15 @@ Enter **tweens**. While far from unique to Flutter, they are a delightfully simp
 
 <DashImage figure src="images/13KpUQjhZLrvwvjF0daKg9g.jpeg" />
 
-
 Tweens are generic in the type of these other values, and can be expressed in Dart as objects of the type `Tween<T>`:
 
 ```dart
 abstract class Tween<T> {
   final T begin;
   final T end;
-  
+
   Tween(this.begin, this.end);
-  
+
   T lerp(double t);
 }
 

@@ -20,7 +20,6 @@ This article discusses our current policies for breaking changes and deprecation
 
 <DashImage figure src="images/0kp3Y8CnUirX421Fi.jpg" alt="Photo by [CHUTTERSNAP](https://unsplash.com/@chuttersnap?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)" caption="Photo by [CHUTTERSNAP](https://unsplash.com/@chuttersnap?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)" />
 
-
 The process for deprecating code in Flutter begins with [our breaking change policy](https://github.com/flutter/flutter/wiki/Tree-hygiene#handling-breaking-changes). Deprecations are considered breaking changes, which means that they must follow the [public design document](https://flutter.dev/docs/resources/design-docs) guidelines which requires a period for discussion. (The design document for this proposal is [Implementing a Lifetime for Deprecations](https://docs.google.com/document/d/1Gc3ecrMghzc7WU4pgzKB8uBaTPpRdWfozn0otBbxR7s/edit).) In addition to providing a design document, we reach out on the [Flutter Contributor Discord](https://github.com/flutter/flutter/wiki/Chat) and popular groups like [flutter-announce](https://groups.google.com/g/flutter-announce) and [flutter-dev](https://groups.google.com/g/flutter-dev), all before making any changes. This is one of my favorite parts of the process as an engineer: I get to hear from you. Our wonderful community is incredibly engaged with this process, and we are better for it. On multiple occasions, I’ve seen the design of a feature improve greatly — all thanks to feedback from our community — after publicizing it through these channels.
 
 Authors of breaking changes migrate customer code affected by a breaking change. In the last update to our breaking change policy, [we invited](https://groups.google.com/g/flutter-announce/c/Z09a317E21o) you to submit your tests to our [customer test repo](https://github.com/flutter/tests). These tests are our signal that a change is breaking, and we are committed to working with the test authors to migrate their code before making the change.
@@ -36,7 +35,6 @@ Our breaking change policy is based on this study. As always, there are exceptio
 ## Aging deprecations
 
 <DashImage figure src="images/0n5eFBwWfgtkuLtDf.jpg" alt="Photo by [Dilyara Garifullina](https://unsplash.com/@dilja96?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)" caption="Photo by [Dilyara Garifullina](https://unsplash.com/@dilja96?utm_source=medium&utm_medium=referral) on [Unsplash](https://unsplash.com?utm_source=medium&utm_medium=referral)" />
-
 
 The migration grace period begins when the deprecation is released on the [stable channel](https://flutter.dev/docs/development/tools/sdk/releases?tab=windows). The timeline for when the grace period ends is 1 calendar year or 4 stable releases, whichever is longer. In order to come up with a timeline that we thought was comfortable, we looked at our growth and adoption, and we evaluated some of the Flutter applications and packages that are open sourced.
 

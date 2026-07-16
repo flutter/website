@@ -27,11 +27,9 @@ Without pump, the event flow looks like this:
 
 <DashImage figure src="images/1ajiMVoQuEXYZ4IJzr-yOQQ.webp" alt="Tester flow without pump" caption="Tester flow without pump" />
 
-
 With pump, you are able to rebuild the widget and the test passes:
 
 <DashImage figure src="images/1hf94gBylm_JwULMwfWFncw.webp" />
-
 
 You might think calling pump advances the clock because that’s how your widget works in real life. You initiate a data fetch, some time later the Future resolves and your widget displays the data. In reality, pump does not advance the clock. For instance, an animation that has a preset duration will *never* finish just by calling pump.
 
@@ -49,11 +47,11 @@ import "package:flutter_test/flutter_test.dart";
 
 void main() {
   Future future;
-  
+
   setUp(() {
     future = new Future.value();
   });
-  
+
   testWidgets("awaiting future with value from setUp works", (WidgetTester tester) async {
     await future;
   });
@@ -70,7 +68,7 @@ import "package:flutter_test/flutter_test.dart";
 
 void main() {
   Future future;
-  
+
   setUp(() {
     future = new Future.value();
   });

@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg" />
 
-
 Hi, I’m Jaime Wren, a long-time developer tooling software engineer on the Flutter team. I’ve seen many shifts in the software industry over the years, but the whole industry has just stepped into a new Wild West at breakneck speed and this is both exciting and nerve-wracking.
 
 In my opinion, we developers are complicated creatures driven by two forces: the need for productivity with our tasks and our inherent joy of programming itself. We thrive when we can slip into a fast, uninterrupted loop. To realize our full potential as developers, we need our entire toolchain to come together without introducing friction. As we transition into the Agentic Era, this need for a cohesive loop is non-negotiable; this is where Flutter has a distinct advantage.
@@ -33,16 +32,14 @@ fix them one by one. After applying each fix, re-run the full suite one
 last time to ensure no regressions.
 ```
 
-
 ### Fix errors and warnings
 
 To prepare a PR before pushing it, you can use Antigravity to fix your errors, warnings and lints. Here is my prompt for this:
 
 ```plaintext
-Run `flutter analyze` over my project. If it fails, fix any errors and 
+Run `flutter analyze` over my project. If it fails, fix any errors and
 warnings, then validate that they are fixed.
 ```
-
 
 ### Discover lints and use them
 
@@ -53,7 +50,6 @@ Read https://dart.dev/tools/linter-rules and identify rules I am
 implicitly following but haven't enabled. Add them to analysis_options.yaml,
 run flutter analyze, and fix any resulting violations.
 ```
-
 
 ### Discover good pub.dev packages for my project
 
@@ -67,7 +63,6 @@ Then, find an example in my project to use this new package,
 fix any issues that appear from `flutter analyze`, and fix them.
 Finally, add a test for the new feature.
 ```
-
 
 ## Thoughts about my journey with Flutter over the years and why I’m excited
 

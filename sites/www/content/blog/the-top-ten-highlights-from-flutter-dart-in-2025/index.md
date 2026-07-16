@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/138nWNBqHADyCszyyX-h98Q.webp" />
 
-
 ## The Top Ten Highlights from Flutter & Dart in 2025
 
 Hi, Flutter community! My name is Emma Twersky, and I’m back with monthly updates from the Flutterverse. I’m so thankful for the warm welcome, and excited to be a part of this community.
@@ -45,26 +44,21 @@ Some highlights from this year include:
 
 <YoutubeEmbed id="A3ApoV_QRio" title="Rewriting an app with millions of users: The Talabat Story" fullwidth="true"/>
 
-
 **Google’s NotebookLM** used Flutter to meet explosive user demand, delivering a delightful 4.8-star mobile experience in under 7 months.
 
 <YoutubeEmbed id="pMoUg3dkDJk" title="How NotebookLM built and shipped a 4.8-Star Flutter App in 7 Months" fullwidth="true"/>
-
 
 **teamLab** uses Flutter in art and digital solutions, extending experiences to over 35 million people.
 
 <YoutubeEmbed id="OyS812ZoTzw" title="teamLab: Flutter developer story" fullwidth="true"/>
 
-
 Flutter is woven into **Agapé Wellness’s** mission to help people feel close, even when apart.
 
 <YoutubeEmbed id="H9njcR0fjO0" title="Agapé: Flutter developer story" fullwidth="true"/>
 
-
 7. As we continue growing, it’s important to understand **How Flutter Works.** So, we made [a whole series on that](https://www.youtube.com/watch?v=0Xn1QhNtPkQ&list=PLjxrf2q8roU1nbstACpBBSwHa-BuOILlM).
 
 <YoutubeEmbed id="0Xn1QhNtPkQ" title="How Flutter Works: Architecture #DecodingFlutter (1/6)" fullwidth="true"/>
-
 
 Now that we know how it works, let’s make it more flexible for the future.
 
@@ -72,11 +66,9 @@ Now that we know how it works, let’s make it more flexible for the future.
 
 <YoutubeEmbed id="W4olXg91iX8" title="Strengthening Flutter's core widgets" fullwidth="true"/>
 
-
 9. We know speed matters… so **we made build_runner faster** (two or more times in some cases!). John shares how we’re accelerating Dart code generation in this great video:
 
 <YoutubeEmbed id="6PKIv7yUKwQ" title="Accelerating Dart code generation" fullwidth="true"/>
-
 
 10. Another thing that sped up in 2025 is the pace of AI.
 
@@ -97,7 +89,6 @@ GenUI is here to help you generate Flutter UI from natural language or structure
 
 <YoutubeEmbed id="K2p5Nrn2OSU" title="Building interactive UIs for Agent-powered apps with Generative UI" fullwidth="true"/>
 
-
 It’s fantastic to see the community already building on GenUI!
 Check out two community members doing just that:
 
@@ -112,7 +103,6 @@ One way is partnering with the teams behind [**ADK**](https://google.github.io/a
 
 <YoutubeEmbed id="Dum-LYLm0Uw" title="How to connect interfaces to the cloud with AI agents" fullwidth="true"/>
 
-
 ## What are you building over winter break?
 
 I ended that list feeling inspired and *overwhelmed*. There’s so much innovation it’s sometimes hard to keep up. But luckily, the holidays are a perfect time to tinker!
@@ -126,7 +116,6 @@ Take an existing website and use an agent to migrate it to Jaspr in a fraction o
 
 <YoutubeEmbed id="w05Mwgk_R4g" title="Building websites with Dart and Jaspr" fullwidth="true"/>
 
-
 2. **Start learning about the future of Dynamic UI with GenUI**
 Build a GenUI Live Sketch Pad app where typed UI descriptions are rendered in real-time by GenUI. Or, if you build something else with the SDK, let us know on socials. The package is alpha so we’re actively looking for feedback on your experience using it!
 
@@ -137,7 +126,6 @@ Build a GenUI Live Sketch Pad app where typed UI descriptions are rendered in re
 5. **Become a Flutter contributor:** Make your first contribution to Flutter. Find and fix an open documentation issue or tackle a “good first bug.”
 
 <YoutubeEmbed id="4yBgOBAOx_A" title="How to contribute to Flutter (The Boring Flutter Development Show, Ep. 53)" fullwidth="true"/>
-
 
 6. **Crush Performance Bugs:** Use DevTools to [profile your app’s performance](https://docs.flutter.dev/perf). Identify and fix a performance bottleneck using tracing and your coding agent.
 

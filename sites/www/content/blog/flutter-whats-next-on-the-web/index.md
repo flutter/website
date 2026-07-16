@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/17iBUzC4UvwNi8agIsCrZ7w.webp" />
 
-
 Flutter’s web support [hit the stable milestone](https://medium.com/flutter/flutter-web-support-hits-the-stable-milestone-d6b84e83b425) in March 2021. So what’s next?
 
 According to our user research, the web is the target for over 10% of Flutter projects. So our focus is now on improving the quality of the initial stable release and enabling more of you to ship your Flutter web apps to production.

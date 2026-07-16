@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1auh3JCfdFKzK_licnLrEKQ.webp" />
 
-
 ## What’s new in Flutter 3.27
 
 ### Elevating App Development with Impeller, Cupertino Updates, and More
@@ -31,11 +30,9 @@ This release includes high fidelity updates to `CupertinoCheckbox` and `Cupertin
 
 <DashImage figure src="images/0Nr0WuNhNxjlI1Pqg.webp" />
 
-
 Thanks to an amazing contribution from community member [@veloce](https://github.com/veloce), both `CupertinoNavigationBar`’s and `CupertinoSliverNavigationBar`’s backgrounds are now transparent until content is scrolled under them.
 
 <DashImage figure src="images/0dngArPlUvp4pVA-R.webp" />
-
 
 This allows the sliver navigation bar to have the same color as its background in its expanded state, but a different customizable color in its collapsed state (and the ability to lerp between both colors on scroll).
 
@@ -43,9 +40,7 @@ Thanks to an amazing contribution from community member [@kerberjg](https://gith
 
 <DashImage figure src="images/0vdSn5c7uavWstNO5.webp" />
 
-
 <DashImage figure src="images/0ZPrThBB6ZN8DEtUq.webp" />
-
 
 `CupertinoButton` also has a new `onLongPress` handler, and allows performing actions through keyboard shortcuts.
 
@@ -53,11 +48,9 @@ Thanks to an amazing contribution from community member [@kerberjg](https://gith
 
 <DashImage figure src="images/0XUtBHK9h0zbWrKUF.webp" />
 
-
 `CupertinoAlertDialog` now supports the tap-slide gesture.
 
 <DashImage figure src="images/0JYBUuzXHcYTCD4i5.webp" />
-
 
 `CupertinoActionSheet` sees some high fidelity updates, including adjusting padding and font sizes across all system text size settings and supporting haptic feedback when sliding over buttons.
 
@@ -73,7 +66,6 @@ This release introduces `CarouselView.weighted`, enabling more dynamic layouts w
 
 <DashImage figure src="images/0EUjz8K6BQZX2uumi.webp" />
 
-
 ### More in Material
 
 This release includes a number of small feature enhancements and bug fixes. Some enhancement examples:
@@ -81,7 +73,6 @@ This release includes a number of small feature enhancements and bug fixes. Some
 * `SegmentedButton` now has a `direction` property, so items can be aligned vertically.
 
 <DashImage figure src="images/0ECVkEydB6YuBSGs_.webp" />
-
 
 * more icon-related properties are added to the styleFrom method for `ButtonStyleButton` classes (`ElevatedButton`, `FilledButton`, `OutlinedButton`, `TextButton`, `MenuItemButton`, and `SubmenuButton`) to allow more customization.
 
@@ -99,13 +90,11 @@ Some bug fixes examples:
 
 <DashImage figure src="images/0vyFYrAWVig8f8WGl.webp" />
 
-
 ### Text Selection Improvements
 
 Flutter’s `SelectionArea` now supports Shift + Click gesture to move the extent of the selection to the clicked position on Linux, macOS, and Windows.
 
 <DashImage figure src="images/0QwWCiz-DAHklZZAi.gif" />
-
 
 You can also now clear the selection under a SelectionArea and `SelectableRegion` through the method [`clearSelection`](https://main-api.flutter.dev/flutter/widgets/SelectableRegionState/clearSelection.html) on [`SelectableRegionState`](https://api.flutter.dev/flutter/widgets/SelectableRegionState-class.html). [`SelectableRegionState`](https://api.flutter.dev/flutter/widgets/SelectableRegionState-class.html) is also now accessible through `SelectionArea` by providing it a `GlobalKey` and accessing its [`SelectionAreaState.selectableRegion`](https://main-api.flutter.dev/flutter/material/SelectionAreaState/selectableRegion.html).
 
@@ -117,18 +106,19 @@ This release also features a new convenience to using Rows and Columns, spacing!
 
 <DashImage figure src="images/185CZePbMbJ99B5-hPvwpKQ.webp" />
 
-
 ## Engine
 
 ### Impeller on Android
 
 We are pleased to share that Impeller is now the default rendering engine on modern Android devices. While Impeller on these devices has been in preview since Flutter’s 3.16 stable release in November 2023, since then we have made large improvements to both performance and fidelity based on user feedback.
 
-On older Android devices and devices without Vulkan support, the Skia rendering engine will still be used as before. While we believe that Impeller’s performance and fidelity are both high quality, users are able to opt-out and return to the legacy Skia renderer by passing`--no-enable-impeller` to the `flutter` command line tool, or by placing the following in your `AndroidManifest.xml` file(s):
+On older Android devices and devices without Vulkan support, the Skia rendering engine will still be used as before. While we believe that Impeller’s performance and fidelity are both high quality, users are able to opt-out and return to the legacy Skia renderer by passing `--no-enable-impeller` to the `flutter` command line tool, or by placing the following in your `AndroidManifest.xml` file(s):
 
-`&lt;meta-data
- android:name=”io.flutter.embedding.android.EnableImpeller”
- android:value=”false” /&gt;`
+```xml
+<meta-data
+  android:name="io.flutter.embedding.android.EnableImpeller"
+  android:value="false" />
+```
 
 Going forward we will continue to make improvements to Impeller’s performance and fidelity on Android. Additionally, we intend to make Impeller’s OpenGL backend production ready to remove the Skia fallback.
 
@@ -141,7 +131,6 @@ In previous versions of Flutter, users may have experienced [an issue](https://g
 In this release, open source contributor [@knopp](https://github.com/knopp) added [a new implementation](https://github.com/flutter/engine/pull/48226) of a Metal rendering surface that allows raster workloads to begin more consistently after the UI workload completes. This means that users will observe that overall frame times are more stable as there is less waiting on the iOS system compositor. In particular, Flutter will now much more consistently hit 120Hz on high frame-rate devices. In our benchmarks we have observed this improvement in a large reduction in average frame rasterization time across many scenarios.
 
 <DashImage figure src="images/0wsAPbKV2yW8tLXNb.webp" alt="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" caption="*This chart shows an across-the-board decrease in average frame rasterization time in milliseconds on a large number of different benchmarks running on iPhone 11 devices.*" />
-
 
 ### Framework Wide Gamut Colors
 
@@ -190,14 +179,13 @@ By default on devices running Android 15+, your app will use edge-to-edge mode a
 
 <DashImage figure src="images/0CNcQF3yqFwc0IGNc.gif" />
 
-
 ### Support for Freeform
 
 [Android Freeform](https://android-developers.googleblog.com/2024/09/developer-preview-desktop-windowing-on-android-tablets.html) allows users to resize app windows and has been available as a developer option. Flutter’s `SafeArea` and `MediaQuery` have been updated to handle hardware cutouts when a freeform window moves into a hardware cutout.
 
 ### Kotlin build script support and declarative plugin migration
 
-Developers can now use `build.gradle.kts` files. 
+Developers can now use `build.gradle.kts` files.
 Flutter tooling now supports Kotlin build files. If you encounter a place where we don’t support Kotlin, [please file a bug](https://github.com/flutter/flutter/issues/new/choose). Groovy remains a supported Gradle language.
 
 Flutter 3.27 is the last release that will support [Gradle’s legacy apply script method](https://docs.gradle.org/8.5/userguide/plugins.html#sec:script_plugins). See [migration docs](https://docs.flutter.dev/release/breaking-changes/flutter-gradle-plugin-apply).
@@ -238,7 +226,6 @@ The download count numbers presented are raw download counts, and reflect usage 
 
 <DashImage figure src="images/0tIfxBdBCHFzYhStI.webp" />
 
-
 ### Pub workspaces
 
 We are launching [Pub Workspaces](https://dart.dev/go/pub-workspaces) with Dart 3.6, to support the development of multiple related packages in one monorepo
@@ -277,7 +264,6 @@ Firstly, we added support for validating iOS deep link settings in the Flutter D
 
 <DashImage figure src="images/0WO_tOgbNKHtMAJ4h.webp" alt="*iOS deep link validation in the DevTools Deep Links tool.*" caption="*iOS deep link validation in the DevTools Deep Links tool.*" />
 
-
 Next, we’ve made some improvements to the workflow of working with “offline” data. Sometimes it is necessary to export the data you are viewing in DevTools for future use or for loading into another tool. This release adds support for exporting Network data as a `.har` file, and for loading memory snapshots into DevTools for viewing when DevTools is not connected to a running app.
 
 Additionally, if you’ve ever been in the middle of debugging a memory issue with DevTools and lost your memory tool data because your app crashed (perhaps due to the very OOM issue you are trying to debug), we feel your frustration! We have fixed this UX pain point by allowing you to continue viewing the most recent memory tool data in DevTools, even after an app disconnects.
@@ -291,7 +277,6 @@ These are just a few highlights from this release. To learn more about all the u
 The Flutter Inspector has undergone some major changes to improve usability and enhance your UI debugging journey. Enable the new Inspector by toggling the “New Inspector” setting.
 
 <DashImage figure src="images/0DdHEiQ7FUmFVIMGz.webp" alt="*New Flutter Inspector in DevTools.*" caption="*New Flutter Inspector in DevTools.*" />
-
 
 A few of the changes include:
 
@@ -311,7 +296,6 @@ This should yield better performance than the default JS-compiled version of Dev
 
 <DashImage figure src="images/0J2ur0Z_wJsdbAUt8.webp" alt="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" caption="*DevTools setting to use the WebAssembly build instead of the Javascript build.*" />
 
-
 ## Breaking Changes and Deprecations
 
 ### Material Design 3 tokens
@@ -327,7 +311,6 @@ The latest Material Design 3 tokens(v6.1) have been applied to the Flutter Mater
 * On-error-container (Error10 to Error30)
 
 <DashImage figure src="images/0_uQf9sIr4M1EC34y.webp" />
-
 
 This affects widgets that use these roles as their default value.
 

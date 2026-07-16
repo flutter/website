@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/12A_CUygcOEFYUv5ms5KAJw.webp" alt="Dash migration!" caption="Dash migration!" />
 
-
 ## Saying goodbye to CocoaPods: Swift Package Manager is soon the default in Flutter!
 
 Starting with the next stable Flutter release, 3.44, Swift Package Manager (SwiftPM) replaces CocoaPods as the default dependency manager for iOS and macOS apps. *This means no more messing around with Ruby or CocoaPods installations just to get your app running!*
@@ -34,7 +33,6 @@ flutter:
   config:
     enable-swift-package-manager: false
 ```
-
 
 If you opt out, please file a bug report using the [Flutter GitHub issue template](https://github.com/flutter/flutter/issues/new/choose) and let us know! Include the error details, a list of your plugins and versions, and copies of your Xcode project files to help us resolve the issue before CocoaPods is completely removed.
 

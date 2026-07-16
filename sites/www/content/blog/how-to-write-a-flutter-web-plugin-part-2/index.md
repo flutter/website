@@ -65,7 +65,6 @@ Let’s work through an example of how this would be done for a real plugin.
 
 <DashImage figure src="images/1jLlh4b9zQ3u0aUA-hHAgKg.webp" />
 
-
 ## Step 1: Creating the platform interface package
 
 In the first step, we’ll create the platform interface package and rearrange the existing code to use our federated plugin directory layout. For the purposes of this example, we are assuming that the plugin is in a repo that is laid out like the [`flutter/plugins`](https://github.com/flutter/plugins) GitHub repo (in other words, the plugin lives in a directory like `packages/url_launcher`). Specifically, we are assuming a layout that looks like this:
@@ -85,7 +84,6 @@ In the first step, we’ll create the platform interface package and rearrange t
            …
 ```
 
-
 The gist of this refactoring is that we are creating a directory that holds not only the plugin package, but also the platform interface package and the web package. We want to move `packages/url_launcher` to `packages/url_launcher/url_launcher` and create another package `packages/url_launcher/url_launcher_platform_interface` (and eventually create another package `packages/url_launcher/url_launcher_web`).
 
 ## Move `url_launcher` to its own subdirectory
@@ -99,7 +97,6 @@ $ git mv url_launcher_tmp url_launcher/url_launcher
 $ git commit -m "Move url_launcher to url_launcher/url_launcher"
 ```
 
-
 ## Create the url_launcher_platform_interface package
 
 Move to the `packages/url_launcher` directory we created in the last step. Then create the platform interface package by running:
@@ -108,7 +105,6 @@ Move to the `packages/url_launcher` directory we created in the last step. Then 
 $ mkdir url_launcher_platform_interface
 ```
 
-
 Now, you need to add a few files in the `url_launcher_platform_interface` to make it a real package. For the license file, you can usually `git cp` the `LICENSE` from the “plugin package” (in this case `package:url_launcher`). You should create a `CHANGELOG.md` file that contains the following:
 
 ```markdown
@@ -116,7 +112,6 @@ Now, you need to add a few files in the `url_launcher_platform_interface` to mak
 
 - Initial open-source release.
 ```
-
 
 You also need to define a `pubspec.yaml`; you can use the [`pubspec.yaml`](https://github.com/flutter/plugins/blob/master/packages/url_launcher/url_launcher_platform_interface/pubspec.yaml) for the actual `package:url_launcher_platform_interface` as a template. The note about avoiding breaking changes should be included in the `pubspec.yaml` of every platform interface package.
 
@@ -222,7 +217,6 @@ dependencies:
   url_launcher_platform_interface: ^1.0.0
   # …
 ```
-
 
 ## Refactoring all usages of MethodChannel
 

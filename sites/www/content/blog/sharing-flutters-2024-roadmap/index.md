@@ -14,7 +14,6 @@ We’ve been publishing our roadmaps [since 2020](https://github.com/flutter/flu
 
 <DashImage figure src="images/18v__Z0fIVOBm4uxFnMLAVg.webp" />
 
-
 Note that what we’re listing here is primarily content gathered from those of us who work on Flutter as employees of Google. By now non-Google contributors outnumber those employed by Google, so this is not an exhaustive list of all the new and exciting things that we hope will come to Flutter this year!
 
 We’re **immensely thankful** for the community and your continued support. We can’t wait to see what you’ll build!

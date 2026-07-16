@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0H4kTD2wabl_kscFq.webp" />
 
-
 ## What’s new in Flutter 3.13
 
 ### 2D scrolling, faster graphics, Material 3 updates and more
@@ -30,7 +29,6 @@ We’ve made several improvements to Impeller — our new graphics renderer — 
 Thanks to the high-quality feedback from Flutter users, in this release we have continued to improve the performance of Impeller on iOS. As a result of many different optimizations, the Impeller renderer on iOS now not only has lower latency (by completely eliminating shader compilation jank), but on some benchmarks also have higher average throughput. In particular, on our flutter/gallery transitions performance benchmark, average frame rasterization time is now around half of what it was with Skia.
 
 <DashImage figure src="images/0ivWbcnIt-1Mln5Lx.webp" />
-
 
 *Improvements to average frame rasterization time in the Flutter Gallery transitions performance benchmark on an iPhone 11. The time period covered is roughly the time from the 3.10 branch cut to the 3.13 branch cut.*
 
@@ -58,7 +56,6 @@ We continue to make progress on the Vulkan backend for Impeller, however it hasn
 
 <DashImage figure src="images/0_hbW2fQla6t5bDSg.webp" />
 
-
 Once again, our progress was greatly accelerated by contributions from the community, in particular GitHub user [ColdPaleLight](https://github.com/ColdPaleLight), who authored several much appreciated Impeller-related patches, improving fidelity and performance, including adding [support for conical gradients](https://github.com/flutter/engine/pull/42567).
 
 Please continue to follow along with our progress on Impeller using the Impeller [project dashboard](https://github.com/orgs/flutter/projects/21) on GitHub. We greatly appreciate all the feedback and encourage users to continue filing fidelity and performance issues in the [issue tracker](https://github.com/flutter/flutter/issues).
@@ -72,7 +69,6 @@ We’re eager for you to test this out and provide feedback. The best way to hel
 Looking to try Impeller on macOS? [Install Wonderous from the Mac App Store](https://apps.apple.com/us/app/wonderous/id1612491897)!
 
 <DashImage figure src="images/0mr1oUAyNBl6RWCOD.webp" />
-
 
 ## New engine API
 
@@ -92,7 +88,6 @@ When using TextField on iOS, users will automatically see an option to use the d
 
 <DashImage figure src="images/1J-fzkm7jc2ORDimcTWRPxg.webp" />
 
-
 This feature would not be possible without the contributions of community members [luckysmg](https://github.com/luckysmg) (Author) and [tgucio](https://github.com/tgucio) (reviewer). This feature was a 1000 line and 70 commit effort that bridged the [engine](https://github.com/flutter/engine/pull/34751) and [framework](https://github.com/flutter/flutter/pull/96637)! Thank you!
 
 ### Platform adaptive dialog
@@ -103,11 +98,9 @@ Now using AlertDialog.adaptive() uses the [CupertinoAlertDialog](https://api.flu
 
 <DashImage figure src="images/0-F0HReZy8hO7g4Ua.webp" />
 
-
 And Material [AlertDialog](https://api.flutter.dev/flutter/material/AlertDialog-class.html) on Android.
 
 <DashImage figure src="images/0mXhB49hbDgipj12y.webp" />
-
 
 ### CupertinoDatePicker with month and year
 
@@ -115,13 +108,11 @@ Adds a monthYear mode to the CupertinoDatePicker.
 
 <DashImage figure src="images/0hduILuHCxPFxzZwT.webp" />
 
-
 ### Cupertino (iOS-style) check styled radio
 
 The useCheckmarkStyle property has been added to CupertinoRadio. This also allows the Radio.adaptive and RadioListTile.adaptive widgets to control whether they use the checkmark style on iOS.
 
 <DashImage figure src="images/0cmIR1i5jjDqtSf7e.webp" />
-
 
 ### More customization options for Material widgets
 
@@ -131,31 +122,25 @@ There have been several improvements that make it easier to customize the design
 
 <DashImage figure src="images/0GxTex9TCfT9Hwmzg.webp" />
 
-
 * You can now add tooltips to ButtonSegment:
 
 <DashImage figure src="images/0HCwY_q2qHScr7iYn.webp" />
-
 
 * You can now customize the gap in ExpansionPanelList using the materialGapSize property
 
 <DashImage figure src="images/0_kpFAizvZpn1TbiX.webp" />
 
-
 * You can now customize the trackOutlineWidth for Switch
 
 <DashImage figure src="images/02iGWjI0i3e6CztlR.webp" />
-
 
 * You can now customize the padding with the tilePadding property on NavigationDrawer
 
 <DashImage figure src="images/0h1eFxKZNaxJoWshN.webp" />
 
-
 * You can choose how to align the tabs using the alignment property for TabBar
 
 <DashImage figure src="images/0ALRxynRXg1MkS-nB.webp" />
-
 
 ### MaterialState color for chips
 
@@ -163,13 +148,11 @@ There have been several improvements that make it easier to customize the design
 
 <DashImage figure src="images/0EzVRz68A8GCFiuJN.webp" />
 
-
 ### Elevated Chips
 
 FilterChip.elevated,ChoiceChip.elevated,and ActionChip.elevated variants have been added in accordance with the [Material 3 specs.](https://m3.material.io/components/chips/overview)
 
 <DashImage figure src="images/0VxRhItQg2lCdN5ka.webp" />
-
 
 ### onSubmitted to SearchBar
 
@@ -186,7 +169,6 @@ A base class has been added for a family of classes, which includes support for 
 AppLifecycleListener class was [added](https://github.com/flutter/flutter/pull/123274) for listening to changes in the application lifecycle, and responding to requests to exit the application.
 
 <DashImage figure src="images/0bN0QtrIRWGDMC9LJ.webp" />
-
 
 ## Scrolling
 
@@ -222,7 +204,6 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 
 <DashImage figure src="images/0OY76w1Hu7LqTODA9.webp" />
 
-
 ## Accessibility
 
 ### Accessibility updates
@@ -230,7 +211,6 @@ See all of these new slivers in action in [this DartPad](https://dartpad.dev/?id
 * The onOffSwitchLabels accessibility property was added for CupertinoSwitch to display I/O labels
 
 <DashImage figure src="images/0aKqjrDI5zXHm7Dza.webp" />
-
 
 * The [FocusSemanticEvent has been added.](https://github.com/flutter/flutter/pull/126171) However, it should be used with caution as it might break a users’ expectation of how a11y focus works.
 
@@ -252,13 +232,11 @@ When an iOS screen rotates, Flutter apps would previously experience some distor
 
 <DashImage figure src="images/0veAtL_lhOkJ7kU7b.webp" />
 
-
 ### Renaming Runner
 
 When a Flutter iOS app is created, a *Runner* Xcode project and Xcode workspace are created in the `/ios` folder. Now, you can rename the workspace or project so that you don’t end up with a list of *Runners*.
 
 <DashImage figure src="images/0HuzkGU7owliBNi5N.webp" />
-
 
 ### Preparing for iOS 17 and Xcode 15
 
@@ -288,14 +266,11 @@ We added a new overflow menu on the navigation bar to handle cases when the list
 
 <DashImage figure src="images/05Z-VWLi5EB_4_s1x.webp" />
 
-
 <DashImage figure src="images/0eenzRMajhOc8R62L.webp" />
-
 
 We added a legend for class types on the Memory tab.
 
 <DashImage figure src="images/0K_zKIHXbEXlHt-Jz.webp" />
-
 
 Additionally, we made scrolling a tree table in the CPU profiler faster and smoother. In the debugger, we’ve made searching in a file, or searching for a file up to 5x faster.
 
@@ -336,7 +311,6 @@ Over the past few months we have adopted a new set of definitions for our priori
 We’ve also introduced a [new triage scheme](https://github.com/flutter/flutter/wiki/Triage) for our teams, which we hope will make it harder for issues to fall between the cracks. If you are active in our issue database you may see our new bot commenting and adding or removing labels:
 
 <DashImage figure src="images/0xDizfkUpX6Kk5wCR.webp" />
-
 
 This bot also integrates with [our Discord](https://discord.com/invite/N7Yshp4), helping us keep on top of what is happening on GitHub. We hope it will make us more productive in the long run, but bear with us while we get used to the new system!
 

@@ -12,19 +12,16 @@ layout: blog
 
 <DashImage figure src="images/0ZQ9Xa7CINFVMA95w.webp" />
 
-
 ## The journey to Flutter 3
 
 We started Flutter as an attempt to revolutionize app development: combining the iterative development model of the web with hardware-accelerated graphics rendering and pixel-level control that were previously the preserve of games. Over the last four years since Flutter 1.0 beta, we’ve gradually built on these foundations, adding new framework capabilities and new widgets, deeper integration with the underlying platforms, a rich library of packages and many performance and tooling improvements.
 
 <DashImage figure src="images/0pL2z2iYzWPrMu5hw.webp" />
 
-
 As the product has matured, more of you have started to build apps with it. Today there are over 500,000 apps built with Flutter. Analytics from research firms like [data.ai](https://www.data.ai/en/), along with public testimonials, show Flutter is used by a [broad list of customers](https://flutter.dev/showcase) in many segments: from social apps like [WeChat](https://play.google.com/store/apps/details?id=com.tencent.mm&hl=en_US&gl=US) to finance and banking apps like [Betterment](https://apps.apple.com/us/app/betterment-investing-saving/id393156562) and [Nubank](https://play.google.com/store/apps/details?id=com.nu.production&hl=en_US&gl=US); from commerce apps like [SHEIN](https://play.google.com/store/apps/details?id=com.zzkko&hl=en_US&gl=US) and [trip.com](https://apps.apple.com/us/app/trip-com-hotels-flights-trains/id681752345) to lifestyle apps like [Fastic](https://fastic.com/) and [Tabcorp](https://auspreneur.com.au/tabcorp-adopts-googles-flutter-platform/); from companion apps like [My BMW](https://www.press.bmwgroup.com/global/article/detail/T0328610EN/the-my-bmw-app:-new-features-and-tech-insights-for-march-2021?language=en) to public institutions such as the [Brazil government](https://apps.apple.com/app/id1506827551).
 > # Today there are over 500,000 apps built with Flutter.
 
 <YoutubeEmbed id="8RmsstcNE1Y" title="ByteDance - Building for any Screen with Flutter (Flutter Dev Story)" fullwidth="true"/>
-
 
 Developers tell us that Flutter helps build beautiful apps more quickly for more platforms. In our most recent user study:
 
@@ -49,7 +46,6 @@ A great example of how Flutter enables beautiful desktop experiences is [Superli
 
 <YoutubeEmbed id="YRuQj7mlH2I" title="Superlist Google I/O - Flutter & Superlist" fullwidth="true"/>
 
-
 Flutter 3 also improves on many of the fundamentals, with improved performance, Material You support, and productivity updates.
 
 In addition to the work mentioned above, with this version, Flutter is fully native on [Apple silicon](https://support.apple.com/en-us/HT211814) for *development*. While Flutter has been compatible with M1-powered Apple devices since their release, Flutter now takes full advantage of [Dart’s support for Apple silicon](https://medium.com/dartlang/announcing-dart-2-14-b48b9bb2fb67), enabling much faster compilation on M1-powered devices and support for [universal binaries](https://developer.apple.com/documentation/apple-silicon/building-a-universal-macos-binary) for macOS apps.
@@ -57,7 +53,6 @@ In addition to the work mentioned above, with this version, Flutter is fully nat
 Our work for [Material Design 3](https://m3.material.io/) is largely complete in this release, allowing developers to take advantage of an adaptable, cross-platform design system that offers dynamic color schemes and updated visual components:
 
 <DashImage figure src="images/0LM_w2DE9aM-_9J0Z.webp" />
-
 
 Our detailed technical blog post expands on these and the many other new features in Flutter 3.
 
@@ -79,11 +74,9 @@ For most developers, Flutter is an app framework. But there’s also a growing c
 
 <DashImage figure src="images/0wK4YI3N-Hh2vtDQ2.webp" />
 
-
 Although Flutter isn’t designed for high-intensity 3D action gaming, even some of those games have turned to Flutter for non-game UI, including popular games like [PUBG Mobile](https://play.google.com/store/apps/details?id=com.tencent.ig) that have hundreds of millions of users. And for I/O we thought we’d see how far we could push our technology, so we’ve created a fun pinball game that is powered by Firebase and Flutter’s web support. I/O Pinball provides a custom table designed around four of Google’s favorite mascots: Flutter’s Dash, Firebase’s Sparky, the Android robot, and the Chrome dinosaur, and lets you compete with others for the high score. We think it’s a fun way to showcase Flutter’s versatility.
 
 <DashImage figure src="images/087xQ1AYdEF2YrmQ1.webp" />
-
 
 ## Sponsored by Google, powered by community
 
@@ -94,7 +87,6 @@ To showcase the community at its best, we recently sponsored a Puzzle Hack chall
 We put together this video to showcase some of our favorite submissions and prize winners; we think you’ll enjoy it:
 
 <YoutubeEmbed id="l6hw4o6_Wcs" title="Puzzle App Hackathon winners and more!" fullwidth="true"/>
-
 
 Thank you for your support of Flutter, and welcome to Flutter 3!
 

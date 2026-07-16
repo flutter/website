@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1v_vdCNpmwHNcOM0xiqXIOQ.webp" />
 
-
 Hi everyone! I’m Mary, a software engineer who works with Flutter at Google. I used to work on web development, and transitioned to learning and building with Flutter over the past year. It’s been fun and interesting to build with Flutter, and I wanted to share my knowledge. That’s why the Flutter team at Google, Udacity, and I collaborated to create the free online video course, [“Build Native Mobile Apps with Flutter”](https://udacity.com/course/ud905). I injected my “learning Flutter” experience into the course, which teaches you what Flutter is, and how to (intuitively!) build mobile apps for both iOS and Android.
 
 This free course is for all developers; you might be a mobile app developer looking for ways to reach users on all platforms, or a web developer who wants to build for multiple platforms (like me!). Or, maybe you’ve been interested in Flutter but haven’t had time to dig in, or don’t know where to start. Well, you can [sign up for the course](https://udacity.com/course/ud905) and get watching right away! All the code is open source and located [on GitHub](https://github.com/flutter/udacity-course). Each topic is packaged into nicely-sized chunks, with short videos, quizzes, and small coding projects. You can pick it up and pause anytime. Complete the course at your leisure, such as over a weekend, or split it into several sections.

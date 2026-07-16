@@ -12,13 +12,11 @@ Today, we’re happy to announce two new SDK releases — Dart 3.2 and Flutter 3
 
 <DashImage figure src="images/1r2pc1eaUCaAe21EK-OlGpg.webp" alt="Flutter 3.16" caption="Flutter 3.16" />
 
-
 ## The Flutter and Dart value proposition
 
 At the beginning of the year at Flutter Forward in Nairobi, Kenya, we introduced new roadmaps for Flutter and Dart. Both roadmaps focused on four high-level themes: breakthrough graphics experiences, seamless integration with web and mobile platforms, early to new and emerging architectures, and continued focus on developer experience.
 
 <DashImage figure src="images/0iomk4DoJwIXI44jX.webp" alt="Four high-level themes from Flutter Forward" caption="Four high-level themes from Flutter Forward" />
-
 
 In May at Google I/O, we [announced](https://www.youtube.com/watch?v=yRlwOdCK7Ho&t=11s) significant progress towards that vision, including (but not limited to) improving rendering performance on iOS (with Impeller), supporting element embedding on the web, and the finalization of the journey towards 100% null safety in Dart 3.
 
@@ -38,7 +36,6 @@ This goal continues to resonate with developers both inside Google, and across F
 
 <DashImage figure src="images/0Vd72-ykzg8BadAGp.webp" alt="*Screenshots from Classroom (left), YouTube Create (middle), and Google Earth (right)*" caption="*Screenshots from Classroom (left), YouTube Create (middle), and Google Earth (right)*" />
 
-
 Flutter adoption also continues to grow outside of Google, across the globe:
 
 * Apps that shipped this year include banking apps like [Skandia](https://flutter.dev/showcase/skandia) in Sweden and [Credit Agricole](https://flutter.dev/showcase/credit-agricole) in Poland, the US [MarketWatch](https://flutter.dev/showcase/dow-jones) Virtual Stock Exchange investment education app, the [CZ](https://www.youtube.com/watch?v=OTn8Ngp2X8Q) health insurance app in the Netherlands, and Canada’s [Kijiji](https://flutter.dev/showcase/kijiji1) classifieds marketplace app. A common theme is that these teams chose Flutter to enable a consistent feature set across Android and iOS while still delivering a rich and compelling UI experience.
@@ -55,13 +52,11 @@ We firmly believe that multiplatform development shouldn’t imply a degradation
 
 <DashImage figure src="images/0vtUIXYkW6Bt9fvaI.webp" alt="Flutter Gallery benchmark showing a 2x+ improvement over the past year with Impeller on Vulkan" caption="Flutter Gallery benchmark showing a 2x+ improvement over the past year with Impeller on Vulkan" />
 
-
 ### Casual Games Toolkit
 
 One category of apps that especially benefits from fast and powerful graphics rendering is games. In 2022, we published the initial Flutter [Casual Games Toolkit](https://docs.flutter.dev/resources/games-toolkit). Today, we’re announcing a major update featuring a selection of new templates, from card games to runner-type games, and a set of game service developer resources for topics such as leaderboards, monetization, and telemetry. For more details, check out the [Casual Games Toolkit blog post](https://medium.com/flutter/building-your-next-casual-game-with-flutter-716ef457e440).
 
 <DashImage figure src="images/03DmGJe1yD4eKdnfs.webp" alt="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." caption="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." />
-
 
 ## Seamless integration
 
@@ -75,11 +70,9 @@ Throughout the year we’ve worked on completing support for [Material 3](https:
 
 <DashImage figure src="images/1ZACl0_Sm8xPguexZrc4vKA.webp" alt="Screenshots of the Material 3 demo" caption="Screenshots of the Material 3 demo" />
 
-
 Two significant improvements to developer tooling include a new sidebar for VS Code and support for adding extensions to DevTools. The sidebar enables easy discovery of core Flutter tools actions such as creating a new project, invoking hot reload, opening DevTools, or selecting a target device. DevTools extensions provide a framework that [allows you to create](https://medium.com/p/c8bc1aaf8e5f/edit) new custom tools that plug into DevTools, and offers additional framework-specific functionality. [Provider](https://pub.dev/packages/provider), [Patrol](https://pub.dev/packages/patrol), and [ServerPod](https://pub.dev/packages/serverpod) are a few examples of frameworks developing DevTools extensions.
 
 <DashImage figure src="images/0IWHCMv72Wj3NVy4f.webp" alt="*Screenshot of a DevTools extension for the framework Serverpod*" caption="*Screenshot of a DevTools extension for the framework Serverpod*" />
-
 
 We rebooted the [Flutter Favorite](https://docs.flutter.dev/packages-and-plugins/favorites) program and designated [flame](https://pub.dev/packages/flame), [flutter_animate](https://pub.dev/packages/flutter_animate), [flutter_rust_bridge](https://pub.dev/packages/flutter_rust_bridge), [riverpod](https://pub.dev/packages/riverpod), [video_player](https://pub.dev/packages/video_player), [macos_ui](https://pub.dev/packages/macos_ui) and [fpdart](https://pub.dev/packages/fpdart) as new Flutter Favorites. In August, we held a first-time virtual summit for the package ecosystem, attended by more than 50 non-Googler and Googler contributors to [pub.dev](https://pub.dev).
 
@@ -102,6 +95,5 @@ The Dart compiler support for Wasm is almost feature complete, and Flutter web n
 Today’s blog post provides a very small sampling of the thousands of improvements made over the past few quarters. More importantly, an increasing number of these improvements are coming from contributions made by developers outside of Google — the recently published [2023 GitHub Octoverse report](https://github.blog/2023-11-08-the-state-of-open-source-and-ai/) on open source activity lists the Flutter project in the top-3 among all GitHub open source projects.
 
 <DashImage figure src="images/0PY9bV7cnRCdxV2jU.webp" />
-
 
 We’ve had a great year thanks to your incredible support. We’re grateful for the diversity, enthusiasm, and kind spirit of the Dart and Flutter communities that play a critical role in making the product successful. We can’t wait to see what you build next. Until the next update, thanks 🙏, and have fun coding!

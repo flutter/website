@@ -14,7 +14,6 @@ By [Anthony Robledo](https://medium.com/@clocksmith) & [Pierre-Louis Guidez](htt
 
 <DashImage figure src="images/0GWFHSeCrjUgPdkJ-.webp" />
 
-
 All stateless and stateful widgets implement `build()` methods that define how they’re rendered. A screen on an app can have hundreds or even thousands of widgets. These widgets may get built only once, or multiple times if there is an animation or some kind of interaction. While building widgets is relatively fast in Flutter, you must be vigilant in when and what you choose to build.
 
 This article talks about building only what you need and only when you need it. Then we share how we used this approach to achieve a significant performance improvement in the Flutter Gallery web app. We’ll also share pro tips on how you can diagnose similar problems in your web app.
@@ -31,7 +30,6 @@ Consider the following animation, where the display of the front (the black scre
 
 <DashImage figure src="images/0Bm6-mK_lPlO1deUS.webp" alt="A smooth animation" caption="A smooth animation" />
 
-
 ```dart
 Stack(
    children: [
@@ -46,7 +44,6 @@ Stack(
    ],
  ),
 ```
-
 
 You might be tempted to set up the parent widget as follows, but in this scenario, this is wrong!
 
@@ -67,13 +64,11 @@ void initState() {
 }
 ```
 
-
 This is not performant! Why not?
 
 Because the animation is doing unnecessary work.
 
 <DashImage figure src="images/0Q4WC3xmG1iRG1-lp.webp" alt="A janky animation" caption="A janky animation" />
-
 
 Here is the problematic code:
 
@@ -86,7 +81,6 @@ _animationController.addListener(() {
 });
 ```
 
-
 * This style of animation is recommended when you need to animate the entire widget, but that is not what we are doing here.
 
 * Calling `setState()` in the animation listener causes the entire `Stack` to be rebuilt, which is not necessary!
@@ -96,7 +90,6 @@ _animationController.addListener(() {
 * Calling `setState()` is actually not needed here!
 
 <DashImage figure src="images/0Zl3QkQlHJMoDkDQj.webp" />
-
 
 Even though the back widget is busy, it can animate smoothly at 60 FPS. For more on calling setState judiciously, see [Flutter Laggy Animations: How Not To setState](https://medium.com/flutter-community/flutter-laggy-animations-how-not-to-setstate-f2dd9873b8fc).
 
@@ -116,7 +109,7 @@ First, let’s briefly cover the basics of displaying lists.
 
 To illustrate the benefits of `ListView.builder` over `ListView` when you have a large number of list items, let’s look at a couple of examples.
 
-Run the following`ListView` [example in DartPad](https://dartpad.dev/e41ed2678b9b9d7347880c20ec49f3f2). Observe that all 8 items are created. (Click **Console** in the lower left to display the console, and then click **Run**. The output window has no scrollbar, but you can scroll the content and observe the console to see what is created and built when.)
+Run the following `ListView` [example in DartPad](https://dartpad.dev/e41ed2678b9b9d7347880c20ec49f3f2). Observe that all 8 items are created. (Click **Console** in the lower left to display the console, and then click **Run**. The output window has no scrollbar, but you can scroll the content and observe the console to see what is created and built when.)
 
 ```dart
 ListView(
@@ -133,7 +126,6 @@ ListView(
 );
 ```
 
-
 Next, run the `ListView.builder` [example in DartPad](https://dartpad.dev/1ae687f1c0d17eb80c8e28a70fb5b8d1). Observe that only the visible items are created. As you scroll, it creates (and builds) new rows.
 
 ```dart
@@ -145,8 +137,7 @@ ListView.builder(
 );
 ```
 
-
-Now, run the [example in DartPad](https://dartpad.dev/a338a69afea04f746015861cd55782db) where`ListView`’s children are created in advance, all at once when the `ListView` itself is created. In this scenario, it’s more efficient to use the `ListView` constructor.
+Now, run the [example in DartPad](https://dartpad.dev/a338a69afea04f746015861cd55782db) where `ListView`’s children are created in advance, all at once when the `ListView` itself is created. In this scenario, it’s more efficient to use the `ListView` constructor.
 
 ```dart
 final listItems = [
@@ -172,7 +163,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 For more on lazily building lists, see [Slivers, Demystified](https://medium.com/flutter/slivers-demystified-6ff68ab0296f).
 
 ## How we improved the Flutter Gallery web page render time by more than 2x with a single line of code
@@ -180,7 +170,6 @@ For more on lazily building lists, see [Slivers, Demystified](https://medium.com
 The Flutter Gallery supports over 100 locales; Those locales are listed using — you guessed it — a `ListView.builder`. By obtaining widget rebuild information, we noticed these list items were being built unnecessarily on startup. It was not obvious that these items were the culprit since they were in two levels of collapsed menus: the settings panel itself, and the locale expansion tile (as it turns out, the settings panel was rendered ‘invisible’ using a `ScaleTransition`, meaning it was very much being built).
 
 <DashImage figure src="images/0RtYWMsCJ83boCm6h.webp" alt="Flutter Gallery settings panel with the locale options expanded" caption="Flutter Gallery settings panel with the locale options expanded" />
-
 
 By simply setting `ListView.builder`’s `itemCount` to 0 for non-expanded setting categories, we ensured that list items are only built for the expanded, visible category. The [one-line PR](https://github.com/flutter/gallery/pull/109/files) that resolved this issue improved render time on the web by more than 2x. The key was to identify excessive widget building.
 
@@ -205,13 +194,12 @@ ExpensiveWidget 538
 Header 5
 ```
 
-
 Locate `<Flutter path>/packages/flutter/lib/src/widgets/framework.dart`. Add the following code, which counts the number of times widgets are built at startup, and outputs the results after some duration (here, 10 seconds).
 
 ```dart
 bool _outputScheduled = false;
 Map<String, int> _outputMap = <String, int>{};
-void _output(Widget widget) { 
+void _output(Widget widget) {
   final String typeName = widget.runtimeType.toString();
   if (_outputMap.containsKey(typeName)) {
     _outputMap[typeName] = _outputMap[typeName] + 1;
@@ -238,7 +226,6 @@ void _output(Widget widget) {
 }
 ```
 
-
 Then, modify the `build` methods for `StatelessElement` and `StatefulElement` to call `_output(widget)`.
 
 ```dart
@@ -263,7 +250,6 @@ class StatefulElement extends ComponentElement {
   }
 ```
 
-
 See the resulting [framework.dart](https://gist.github.com/guidezpl/54f9a03b0adbf207153178dba0bf214c) file.
 
 Note that numerous rebuilds doesn’t necessarily indicate a problem. However, it can help debug performance issues by verifying that non-visible widgets aren’t being built, for example.
@@ -272,7 +258,7 @@ Note that numerous rebuilds doesn’t necessarily indicate a problem. However, i
 
 ```dart
 import 'dart:js' as js;
- 
+
 void resetOutput() {
  _outputScheduled = false;
  _outputMap = <String, int>{};
@@ -283,7 +269,6 @@ void _output(Widget widget) {
   js.context['resetOutput'] = resetOutput;
   ...
 ```
-
 
 See the resulting [framework.dart](https://gist.github.com/guidezpl/32518a6d22596393fa368c28e8f0ece4) file.
 

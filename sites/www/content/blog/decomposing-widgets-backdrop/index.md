@@ -14,7 +14,6 @@ While it’s easy to create custom widgets in Flutter, it’s often useful to ex
 
 <DashImage figure src="images/0RLNPIlZaftyTRlhw.webp" alt="Unit Converter app from Flutter’s Udacity course" caption="Unit Converter app from Flutter’s Udacity course" />
 
-
 Backdrop uses a number of Flutter widgets to accomplish this: Stack, Expanded, LayoutBuilder, Animation, Tween, and PositionedTransition. It serves as a good example of how to compose standard Flutter widgets together to create something more complex.
 
 I extracted Backdrop’s source code and wrote a couple of examples to demonstrate how it works. The revised code is [available on Github](https://github.com/mjohnsullivan/flutter-by-example/tree/master/16_panels), and I’d recommend you spend a couple of minutes playing with and examining the code before diving into the deconstruction below.
@@ -61,7 +60,6 @@ return Container(
 }
 ```
 
-
 The widget consists of a moveable front layer, stacked on top of an immovable back layer. The backLayer widget is placed first in the Stack widget so it appears underneath, followed by _BackdropPanel containing the frontLayer, wrapped in a SlideTransition. The [original version of Backdrop](https://github.com/flutter/flutter/blob/09276bea258737e11b109e227f70eac94a4e1691/examples/flutter_gallery/lib/gallery/backdrop.dart) used PositionTransition, but this was changed to avoid overflow issues when completely hiding the front layer.
 
 LayoutBuilder determines how much vertical space is available at run time, which can vary by screen size and density. This is then used to work out how much of the back layer is covered by the front layer when open. The Tween defines the open and closed positions of the front layer and uses the AnimationController to manage motion.
@@ -97,7 +95,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 The remaining code in Backdrop primarily implements dragging and animations. BackdropState has an AnimationController where a value of 1 opens the front layer, and 0 closes it.
 
 ```dart
@@ -109,7 +106,6 @@ _controller = AnimationController(
     );
 ```
 
-
 The status of the controller can be queried to determine the state of the layer:
 
 ```dart
@@ -118,17 +114,15 @@ bool get _backdropPanelVisible =>
       _controller.status == AnimationStatus.forward;
 ```
 
-
 fling() can be called to open or close the layer:
 
 ```dart
 void _toggleBackdropPanelVisibility() => _controller.fling(
-      velocity: _backdropPanelVisible 
+    velocity: _backdropPanelVisible 
         ? -_kFlingVelocity
         : _kFlingVelocity
     );
 ```
-
 
 Dragging the layer is supported by _handleDragUpdate(). _handleDragEnd() determines whether the layer should animate open or closed, depending on drag direction, velocity, and position. These functions are used by the GestureDetector widget in BackdropPanel.
 
@@ -159,7 +153,6 @@ final double flingVelocity =
 }
 ```
 
-
 ## ValueNotifier
 
 I extended the original implementation of Backdrop to take a ValueNotifier, which the widget uses to track the open or closed state of the panel. ValueNotifiers provide a mechanism by which objects can listen for changes to a value.
@@ -180,7 +173,6 @@ if (widget.panelVisible != null) {
   });
 ```
 
-
 Backdrop also listens for changes in the value, so that other widgets can trigger a change in the front layer’s state:
 
 ```dart
@@ -189,7 +181,6 @@ void _subscribeToValueNotifier() {
     _toggleBackdropPanelVisibility();
 }
 ```
-
 
 One subtle, but important, side effect of using and subscribing to ValueNotifiers is that when the app is hot reloaded, the widgets may get rebuilt and, if you’ve subscribed to the notifier in initState(), the subscription is no longer valid. To fix this, implement the StatefulWidget’s didWidgetUpdate() method and add a new listener:
 
@@ -201,13 +192,11 @@ void didUpdateWidget(Backdrop oldWidget) {
 }
 ```
 
-
 ## SimpleExample
 
 The SimpleExample widget shows how to use Backdrop in the simplest of cases. Clicking the button changes the value in ValueNotifier and triggers the front layer to open or close. The notifier is also used to change the Text widget in the back layer.
 
 <DashImage figure src="images/0EhUXhOHx6i4KCuUj.webp" alt="Simple example" caption="Simple example" />
-
 
 ## ComplexExample
 
@@ -235,7 +224,6 @@ void activate(FrontPanels panel) {
   }
 }
 ```
-
 
 The model is placed in the widget tree, using a ScopedModel widget, and the ScopedModelDescendant widgets provide access to the model. They rebuild whenever the model changes, unless the rebuildOnChange flag is set to false.
 
@@ -266,11 +254,9 @@ Center(
         ))),
 ```
 
-
 The buttons in the back layer control which widget is displayed in the front layer.
 
 <DashImage figure src="images/0RLdUfeFhMFa502tl.webp" alt="Complex example" caption="Complex example" />
-
 
 ## Final Thoughts
 

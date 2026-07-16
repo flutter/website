@@ -58,7 +58,6 @@ contributors: [liyuqian](https://github.com/liyuqian), [jonahwilliams](https://g
 
 <DashImage figure src="images/15WEbz38iKKh5EfCj55mGYw.webp" />
 
-
 * PR [#17300](https://github.com/flutter/engine/pull/17300), [#53859](https://github.com/flutter/flutter/pull/53859), [#17601](https://github.com/flutter/engine/pull/17601), [#17861](https://github.com/flutter/engine/pull/17861), [#58743](https://github.com/flutter/flutter/pull/58743), [#56638](https://github.com/flutter/flutter/pull/56638), [#4430](https://github.com/flutter/website/pull/4430), [#12142](https://github.com/flutter/engine/pull/12412)
 
 * 2.25x speedup ([90ms to 40ms](https://flutter-flutter-perf.skia.org/e/?begin=1597812484&end=1597873497&queries=branch%3Dmaster%26sub_result%3Dworst_frame_rasterizer_time_millis%26test%3Dflutter_gallery_sksl_warmup__transition_perf%26test%3Dflutter_gallery__transition_perf)) for Android flutter_gallery__transition_perf worst_frame_rasterizer_time_millis

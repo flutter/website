@@ -20,7 +20,6 @@ See the following GIF for an example of how it can look without using any placeh
 
 <DashImage figure src="images/1Pp2MNotBJdSHDcW3Fhz19A.gif" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_jumping_around/lib&theme=dark)" />
 
-
 If you already have a placeholder image cached and loaded in your application you can use the [`FadeInImage`](https://api.flutter.dev/flutter/widgets/FadeInImage-class.html) widget to show placeholders. If you want to use a widget instead of an image as a placeholder, you can achieve this with the [`Image.frameBuiler`](https://api.flutter.dev/flutter/widgets/Image/frameBuilder.html) property.
 
 The `Image.frameBuilder` property is responsible for building the Image widget and it has four arguments:
@@ -65,11 +64,9 @@ class ImageWidgetPlaceholder extends StatelessWidget {
 }
 ```
 
-
 After adding placeholders, the layout no longer shifts around, and instead the images fade in as they load:
 
 <DashImage figure src="images/1ZI2zrU2e21dkkHtn49qskw.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=images_with_placeholders/lib&theme=dark)" />
-
 
 ## Precaching images before they are displayed
 
@@ -79,11 +76,9 @@ If your app has a splash or welcome screen before images are shown, you can also
 precacheImage(NetworkImage(url), context);
 ```
 
-
 The following GIF shows an example of precaching images on a Welcome screen:
 
 <DashImage figure src="images/1iAiugn-WYkk7620I7TgMVg.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
-
 
 ## Disabling navigation transitions on Flutter web
 
@@ -117,7 +112,6 @@ class NoTransitionsOnWeb extends PageTransitionsTheme {
 }
 ```
 
-
 Set the `pageTransitionsTheme` for our `MaterialApp`:
 
 ```dart
@@ -128,11 +122,9 @@ MaterialApp(
 )
 ```
 
-
 The page transition without any animation:
 
 <DashImage figure src="images/1Db6XWyMRM9gGhSEpHY6w7A.webp" alt="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" caption="[See full interactive example on DartPad.](https://dartpad.dev/embed-flutter.html?gh_owner=perclasson&gh_repo=flutter_code&gh_path=precached_images/lib&theme=dark)" />
-
 
 ## Conclusion
 

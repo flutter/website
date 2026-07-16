@@ -70,9 +70,8 @@ Learn more about testing for accessibility in another great article by Darshan K
 Depending on how your localization code is set up, you might change locales using your localizations’ delegate.
 
 ```dart
-ExampleAppLocalizationsDelegate.load(Locale(‘fr’));
+ExampleAppLocalizationsDelegate.load(Locale('fr'));
 ```
-
 
 Alternatively, when using MaterialApp, simply allow overriding the locale for the app to run in a different locale.
 

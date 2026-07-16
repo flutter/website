@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1EA-cAY6uwkYqYb725vnCIw.webp" alt="Flutter 3.24 on a blue background" caption="Flutter 3.24 on a blue background" />
 
-
 Welcome to the latest Flutter update! Flutter 3.24 is packed with exciting new features and enhancements to elevate your app development experience. This release highlights the preview of Flutter GPU, which enables advanced graphics and 3D scenes directly in Flutter. Web apps can now embed multiple Flutter views, enhancing your app’s versatility. And finally, we’ve added video ad monetization support to help you maximize revenue.
 
 In the past few months, the Flutter community has been incredibly active, with 852 framework commits and 615 engine commits. We’re excited to welcome 49 new contributors who have helped make this release possible. Your dedication and passion are what drive Flutter forward.
@@ -33,13 +32,11 @@ These new slivers come with new sample code. For example, `PinnedHeaderSliver`�
 
 <DashImage figure src="images/0bdcb6KGonosfPZ6m.webp" />
 
-
 ### Updates in the Cupertino library
 
 In this release, we’ve improved the fidelity of [`CupertinoActionSheet`](https://api.flutter.dev/flutter/cupertino/CupertinoActionSheet-class.html). Sliding your finger across the action sheet’s buttons now provides haptic feedback. The buttons’ font size and weight now match their native counterparts.
 
 <DashImage figure src="images/0_o_9V0RlITOZdU4v.webp" />
-
 
 We’ve also added new focus properties to [`CupertinoButton`](https://api.flutter.dev/flutter/cupertino/CupertinoButton-class.html), and you can now customize the color of a disabled [`CupertinoTextField`](https://api.flutter.dev/flutter/cupertino/CupertinoTextField-class.html).
 
@@ -51,7 +48,6 @@ The [`two_dimensional_scrollables`](https://pub.dev/packages/two_dimensional_scr
 
 <DashImage figure src="images/0wcmJCv-6owwsolRl.webp" />
 
-
 [`TreeSliver`](https://api.flutter.dev/flutter/widgets/TreeSliver-class.html) was also added to the framework for building trees in one dimensional scrolling. The `TreeView` and `TreeSliver` APIs match, making it easy to switch between the one that is right for your use case.
 
 ### CarouselView
@@ -59,7 +55,6 @@ The [`two_dimensional_scrollables`](https://pub.dev/packages/two_dimensional_scr
 This release included the [Material Design carousel](https://m3.material.io/components/carousel/overview) widget: `CarouselView`. The `CarouselView` presents the “[Uncontained](https://m3.material.io/components/carousel/specs#477de3a1-c9df-4742-baf3-bcd5eeb3764c)” layout: a scrollable list of items that scroll to the edge of the container, and the leading and the trailing items can dynamically change size when they are scrolling out of the view and scrolling in the view.
 
 <DashImage figure src="images/16ytqSvtR2TJzAE6LntHTGw.webp" />
-
 
 ### More functionality available from widgets
 
@@ -95,7 +90,6 @@ Triple click
 
 <DashImage figure src="images/0_GmbsIKfnwEAW6G8.gif" />
 
-
 Double tap
 
 * Double tap + drag: extends the selection in word blocks (supported on native Android/Fuchsia/iOS, and iOS web).
@@ -103,7 +97,6 @@ Double tap
 * Double tap: selects the word at the tapped position (supported on native Android/Fuchsia/iOS, and Android/Fuchsia web).
 
 <DashImage figure src="images/0DwZgIybQr3FDFxXd.gif" />
-
 
 ## Engine
 
@@ -117,15 +110,11 @@ Additionally, by [solving a number of issues](https://github.com/flutter/engine/
 
 <DashImage figure src="images/0gIu2Wm9mpuMGb1JY.webp" alt="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" caption="Before (Note gaps instead of proper kerning, and lighter than intended font weight.)" />
 
-
 <DashImage figure src="images/0tt9hlqhTbrmj4ZCt.webp" alt="After" caption="After" />
-
 
 <DashImage figure src="images/0eMboSxWLEJBS_EyL.webp" alt="Before (Note incorrect spacing, for example in “vergelijken”)" caption="Before (Note incorrect spacing, for example in “vergelijken”)" />
 
-
 <DashImage figure src="images/0uxeGJuIKWu0dPW1d.webp" alt="After" caption="After" />
-
 
 **Android Preview**
 
@@ -173,7 +162,6 @@ Instream video ads are typically shown to a user in the video player before (pre
 
 <DashImage figure src="images/0_c0s8KMdLNyfxOMQ.webp" />
 
-
 **Flutter IMA benefits**:
 
 * Seamlessly monetize video player content on Flutter apps. For example, when an app user clicks **play** on video content, you can now implement the Flutter IMA plugin to first show the user a 15 second ad before starting the video content.
@@ -192,7 +180,7 @@ Today, Flutter uses CocoaPods to manage native iOS or macOS dependencies.
 
 Flutter 3.24 adds early support for Swift Package Manager. This brings several benefits, including:
 
-1. **Access to the Swift package ecosystem**. Flutter plugins will be able to leverage the growing ecosystem of [Swift packages](https://swiftpackageindex.com/)! 
+1. **Access to the Swift package ecosystem**. Flutter plugins will be able to leverage the growing ecosystem of [Swift packages](https://swiftpackageindex.com/)!
 2. **Simplifies Flutter installation**. Swift Package Manager is bundled with Xcode. In the future, you won’t need to install Ruby and CocoaPods to use Flutter for Apple’s platforms.
 
 We encourage plugin authors to [try adding support for Swift Package Manager to your plugins](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-plugin-authors#how-to-add-swift-package-manager-support-to-an-existing-flutter-plugin), and provide feedback on your experience.
@@ -214,7 +202,6 @@ These new APIs are intended to replace the current SharedPreferences API in the 
 ## Flutter and Dart Package Ecosystem Summit Europe 2024
 
 <DashImage figure src="images/0fWo9ieYzQcJjwQBi.webp" />
-
 
 As part of Fluttercon Europe 2024, we held the first in-person Flutter and Dart Package Ecosystem Summit. This followed on from the first virtual summit we held in August 2023. See a summary of takeaways from the discussion sessions [here](https://docs.google.com/document/d/e/2PACX-1vRFLdpIJYO5YPARcyUT1FYPzwkFb1hxh_agqnCXxsyirXocLZS5jobs3xFV5ZGpSQHLHZiBzqbJlXNV/pub).
 
@@ -238,25 +225,21 @@ If you have ever wondered whether your Flutter app is building more Widgets than
 
 <DashImage figure src="images/07LXjXlFR9w-VR6xk.webp" />
 
-
 *A screenshot of the DevTools Performance tool tracking rebuild stats.*
 
 We’ve added polish and critical bug fixes to tools like the **Network profiler** and the **Flutter Deep Links tool**, and have made some general improvements to provide you with a better experience when you are using DevTools from within your IDE. Speaking of IDEs, did you know that you can use every DevTools tool directly inside your IDE?
 
 <DashImage figure src="images/0tdpToIuTd-mBq-_R.webp" />
 
-
 *DevTools screens open inside a VS Code window.*
 
 <DashImage figure src="images/0QvoXCNqqfsrMn1oC.webp" />
-
 
 *DevTools screens open inside Android Studio tool windows.*
 
 This release includes improvements to the Flutter Sidebar in VS Code to give you easier access to the tools you are looking for. Upgrade to the latest versions of VS Code and the Flutter and Dart extensions to access the improved sidebar.
 
 <DashImage figure src="images/0BzEybhMlV-SnSZZl.webp" />
-
 
 *The Flutter Sidebar is adaptive and scales to fit your workspace*
 

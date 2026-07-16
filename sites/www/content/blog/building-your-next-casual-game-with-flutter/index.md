@@ -16,7 +16,6 @@ Over the past few years, we’ve seen a growing community around casual game dev
 
 <DashImage figure src="images/03DmGJe1yD4eKdnfs.webp" alt="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." caption="An animated gif showing multiple Flutter-based games such as Trivia Crack, Debertz, and Landover running on mobile, web and desktop devices." />
 
-
 ## Why choose Flutter for casual games
 
 Flutter is a great choice for game developers. First, it’s free and open source, giving you fine-grained control over your game’s rendering and input handling logic. This allows you to debug issues at their core and customize the engine to your needs. Flutter’s openness also extends to our ecosystem. All [Flutter plugins and packages](https://pub.dev) are also available for integration at no cost.
@@ -35,16 +34,13 @@ We added three new game templates to provide a starting point for building a cas
 
 <DashImage figure src="images/0_MYAbH0pmAhJ3D6B.webp" alt="An animated gif showing the basic template" caption="An animated gif showing the basic template" />
 
-
 Second, you will find a [Card game template](https://github.com/flutter/games/tree/main/templates/card) that builds on top of the base template and adds basic drag and drop of cards, and is ready for multiplayer integration.
 
 <DashImage figure src="images/00GvQrqyBDG2NVb42.webp" alt="An animated gif showing the card template" caption="An animated gif showing the card template" />
 
-
 Third, we partnered with the open source game engine [Flame](https://flame-engine.org) (built on top of Flutter), to provide an [endless runner template](https://github.com/flutter/games/tree/main/templates/endless_runner). While you can already use *only* Flutter to build many turn-based games such as card games, word puzzles, and board games that respond to simple user input, you might also want to build real-time games such as endless runners, shooters, and racing games that require a game loop. In those cases, you can use Flame to implement play steering, collision detection, parallax, spawning, and different visual effects.
 
 <DashImage figure src="images/0SDayAkeAnC_NtiLU.webp" alt="An animated gif showing the endless runner template" caption="An animated gif showing the endless runner template" />
-
 
 To use these templates, simply check out the [repo](https://github.com/flutter/games), and start building your game using the template that is the closest to what you want.
 

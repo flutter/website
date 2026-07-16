@@ -33,7 +33,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 Widgets are immutable descriptions of user interface. We are asked to return a single widget defined by a single expression. There is no sequence of mutator commands to configure or update a mutable view. Instead, we just call some widget constructor.
 
 ## Composition
@@ -41,7 +40,6 @@ Widgets are immutable descriptions of user interface. We are asked to return a s
 Widgets are typically simple, each doing one thing well: `Text`, `Icon`, `Padding`, `Center`, `Column`, `Row`, … To achieve any non-trivial outcome, many widgets must be composed. So our single expression easily becomes a deeply nested tree of widget constructor calls:
 
 <DashImage figure src="images/1RNOof30wEFXsbUsQ0Jof7Q.webp" />
-
 
 Widgets have properties other than child/children, but you get the idea.
 
@@ -56,7 +54,6 @@ And that, then, is the challenge.
 The flutter.io [layout tutorial](https://flutter.io/tutorials/layout/) provides an illustrative example using — so it seems — a lake explorer app.
 
 <DashImage figure src="images/1-1gqkQbEiJl2PKTlRBmYrg.webp" />
-
 
 Here is a raw widget tree implementing this view:
 
@@ -209,7 +206,6 @@ With Flutter’s UI-as-code approach, the widget tree is, well, just code. So we
 return A(B(C(D(), E())), F());
 ```
 
-
 we might name every subexpression and get
 
 ```dart
@@ -220,7 +216,6 @@ final Widget b = B(c);
 final Widget f = F();
 return A(b, f);
 ```
-
 
 Our lake app can be rewritten as follows:
 
@@ -531,7 +526,6 @@ abstract class Lake {
   void share();
 }
 ```
-
 
 We can then construct our widget tree dynamically from a `Lake` instance and, as part of that, set up event handlers to call its methods. The beauty of the reactive programming model is that we only have to do this once in the code base. The Flutter framework will rebuild our widget tree whenever the `Lake` instance changes — provided we tell the framework about it. That requires making `MyApp` a `StatefulWidget` which in turn involves delegating widget building to an associated `State` object and then calling the `State.setState` method whenever we toggle starring on our `Lake`.
 

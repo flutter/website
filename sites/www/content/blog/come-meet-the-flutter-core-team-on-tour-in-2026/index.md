@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1UVUiBS4ceEJmWIt8w8IeTQ.webp" alt="Upcoming events where you can meet members of the Flutter team" caption="Upcoming events where you can meet members of the Flutter team" />
 
-
 ## Come meet the Flutter core team on tour in 2026
 
 The Flutter team has been hard at work preparing for Google Cloud Next and Google I/O this Spring. I strongly believe in the power of community, whether digital and online, or in-person and interactive. For Flutter, that means a truly global community and hundreds of thousands of developers around the world. Some of the most impactful moments of my career have come from those — community thrives in community-led events.

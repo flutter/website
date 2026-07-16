@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1acnlJyV5J3HU4jFbo2LQog.gif" alt="Dash imagines the future" caption="Dash imagines the future" />
 
-
 Last month, we published [Flutter and Dart’s 2026 Roadmap](https://blog.flutter.dev/flutter-darts-2026-roadmap-89378f17ebbd), a peek into how our teams are approaching our core mission: Building the most popular, fastest growing, and highest-productivity multi-platform UI framework. But it’s impossible to talk about development in 2026 without acknowledging AI.
 
 To meet this moment, today we are sharing our data-driven and honest thoughts on *how* our teams approach Dart and Flutter + AI in 2026. This post is intended to be less of a roadmap and more of a collection of thoughts guiding our strategy. Transparency is a core pillar of Flutter, and as an open source project, we believe in the value of experimentation in public. Interpret this as a snapshot of how we’re thinking about AI today; we value your input and feedback but we also recognize that, in this rapidly shifting environment, strategy and approach may change as models, tools, and their use evolve.

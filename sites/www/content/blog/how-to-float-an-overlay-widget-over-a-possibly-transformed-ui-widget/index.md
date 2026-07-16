@@ -34,7 +34,6 @@ In the following GIF, the blue container is not on the overlay but the green con
 
 <DashImage figure src="images/178wqXwvzHdc-vJ9lxtazkQ.webp" />
 
-
 Try it yourself using this [DartPad](https://dartpad.dev/8fd3ae34c3e5f1932dc687208be6f434) instance. The example code is as follows:
 
 Code by Hans Muller
@@ -147,7 +146,6 @@ This example shows how to use these widgets together. To see the true power of t
 In the following GIF, the blue container is not on the overlay but the green container is. This time the CompositedTransformTarget has been rotated. As you can see, even though the CompositeTransformFollower is on the overlay stack, it still knows where the target is and any transformations that have been applied to it.
 
 <DashImage figure src="images/0FB5HpEeEvZ6NjJXl.webp" />
-
 
 Try it yourself using this [DartPad](https://dartpad.dev/58e5e12bb29370bbca75f19e2685387a) instance. The example code is as follows:
 

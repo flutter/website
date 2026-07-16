@@ -10,13 +10,11 @@ layout: blog
 
 <DashImage figure src="images/0bWWt_FlITTVh_813.webp" />
 
-
 The way we build applications is evolving. Imagine apps that don’t just respond to user input but proactively assist, automate tasks, and create entirely new kinds of experiences. Welcome to the world of **agentic apps**!
 
 Today, we’re thrilled to announce the launch of starter kits for our latest learning series, **[Building Agentic Apps](https://flutter.dev/events/building-agentic-apps),** running from today, **April 23rd to May 14th, 2025**! It’s three weeks of new resources, livestreams, and questions & answers, all aimed at giving Angular and Flutter developers the chance to spend a couple weekends hacking on AI tech and in the process gain an understanding of the building blocks of AI, know where and when to put them to work, and build a completed example worth showing off.
 
 <YoutubeEmbed id="24xNuDY0y0c" title="Build agentic apps in Flutter and Angular" fullwidth="true"/>
-
 
 ## What are agentic apps?
 

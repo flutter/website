@@ -12,13 +12,11 @@ With Google I/O 2019 just around the corner, we’re pleased to announce the ava
 
 <DashImage figure src="images/1udBMeDS6NNhlgbXYyHA_iA.webp" />
 
-
 ## What’s new?
 
 [The Flutter 1.5.4 release](https://github.com/flutter/flutter/wiki/Release-Notes-Flutter-1.5.4) comes with a number of updates for the iOS and Material widgets, increased support for our experiments in web and desktop, a number of important updates to our plugins and tools as well as fixes to two regressions from Flutter 1.2. However, the most requested new feature in Flutter 1.5 is [the In-App Purchase plugin](https://pub.dartlang.org/packages/in_app_purchase), which is now available in beta for Android and iOS.
 
 <DashImage figure src="images/1WNHFzXBcxTZVLYKHj5Pu_w.webp" alt="In-App Purchase plugin beta in action" caption="In-App Purchase plugin beta in action" />
-
 
 The IAP plugin integrates with the underlying in-app purchase services provided for both Android and iOS, allowing your Flutter app to easily show in-app products that are available for sale, allow users to purchase products and show in-app products that the user currently owns.
 

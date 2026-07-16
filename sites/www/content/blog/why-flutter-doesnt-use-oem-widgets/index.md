@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1Tt9lpvpKa1700v74KcjcIw.webp" alt="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" caption="Modern, consistent Material Design on a phone shipped **4 years** before Material Design was unveiled" />
 
-
 ## Preface
 
 Before joining the Flutter team early in 2017, I developed mobile applications for years — some in a fast-paced startup agency, and more recently for large-scale consumer applications inside Google.
@@ -41,27 +40,19 @@ Here’s a selection of highly acclaimed, award-winning apps we’ve all likely 
 
 <DashImage figure src="images/1xIdaloHvQPE78oAXLJ7Rzg.webp" />
 
-
 <DashImage figure src="images/1cxcLBy8_MnUprKE_JliA7w.webp" />
-
 
 <DashImage figure src="images/1nQ9gwT4kdN8SIXzxq0XyYg.webp" />
 
-
 <DashImage figure src="images/1CWtefgiPMBwNi8Q1dxPI5A.webp" />
-
 
 <DashImage figure src="images/1WiPwyMCRrVn_iit7HiG4Pg.webp" />
 
-
 <DashImage figure src="images/1N2U8dMlt2pD5ozUGHOTXwg.webp" />
-
 
 <DashImage figure src="images/1jSlI0OpsEEqomXhgEbZNTA.webp" />
 
-
 <DashImage figure src="images/1eKLcIR16WZCNmwFcBzL8Zw.webp" alt="A collection of 2016’s design award winning apps in both Android and iOS forms" caption="A collection of 2016’s design award winning apps in both Android and iOS forms" />
-
 
 You’re likely to have already noticed some common patterns here.
 
@@ -143,7 +134,6 @@ And because this toolset is written in [Dart](https://www.dartlang.org/) that’
 
 <DashImage figure src="images/1RLKlDP0xpOdbQYkdzNtVFw.jpeg" alt="Performance is literally right in our faces as we develop the framework" caption="Performance is literally right in our faces as we develop the framework" />
 
-
 Because Dart is both expressive and fast, it even allowed us to further empower our layered modularity principle by preserving as much composable UI building blocks accessible on the Dart side as possible vs the underlaying C++ side. For instance, the [layout mechanisms](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/rendering.dart) are developer customizable whereas they were buried deeper in the inaccessible C++ side for web browsers.
 
 And it is on this foundation that Flutter tied it all together with a declarative API pattern. Dart is also especially optimized for this design pattern because of its cheap instantiation costs of immutable virtual UI trees.
@@ -161,7 +151,6 @@ We also made sure these widgets (both included ones and the ones you create) eas
 * Platform specific behaviors like edge swipe to go back, status bar tap to scroll up on iOS and tap outside dialogs to dismiss on Android work as expected
 
 <YoutubeEmbed id="Zqv160V-oLo" title="Flutter's platform UI adaptations" fullwidth="true"/>
-
 
 With this full stack rendering approach, Flutter is able to deliver a UI building experience without compromising on performance, expressivity, flexibility, or consistency. And, by fulfilling these principles, we think we’ve created a tool that best allows developers to create customized UIs like those award-winning apps presented in the earlier screenshots.
 
@@ -211,14 +200,11 @@ Material Design can be implemented with as much fidelity on an early iOS 11 beta
 
 <DashImage figure src="images/1G2Bl4jOqWjj1s3ojNLgERQ.webp" />
 
-
 <DashImage figure src="images/1t3UOazDW4es-wlm5WhHlLw.webp" alt="Consistent Material Design (or your design) on phones made way before Material Design existed" caption="Consistent Material Design (or your design) on phones made way before Material Design existed" />
-
 
 Correspondingly, we can not only go back 7 years and ship the native iOS 11 beta look and feel on a 2010 Android device, we also made it easy enough to create any UI that we could do so before iOS 11 itself released. Again, not that anyone would want to make an iOS looking app on Android, but we hoped to use it as a litmus to make sure it’s easy to create any UI, whether stock or branded.
 
 <DashImage figure src="images/1mWZiUb3dO9aMN1iV8YFxCw.webp" alt="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" caption="iOS 11 on an old, single-core 1GHz Android phone before iOS 11 came out" />
-
 
 ## Conclusion
 

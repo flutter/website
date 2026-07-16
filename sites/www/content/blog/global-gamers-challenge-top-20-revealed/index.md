@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/03a0UYlMSfs-7N9fq.webp" />
 
-
 It’s been incredibly inspiring to see thousands of developers work together to develop epic games for the planet with Flutter and Dart over the last 9 weeks. Entries included RPGs, platformers, AI-powered, and more. Your creative ideas spanned continents, genres, formats, platforms, and even galaxies!
 
 Your creativity never fails to amaze us, so our panel of Flutter judges had some tough decisions to make as they evaluated hundreds of games from talented developers, designers, artists, and activists from every corner of the globe. Without further ado, here are the Top 20!

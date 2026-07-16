@@ -12,11 +12,9 @@ Today, as part of Mobile World Congress 2018, we are excited to announce the fir
 
 <YoutubeEmbed id="fq4N0hgOWzU" title="Introducing Flutter" fullwidth="true"/>
 
-
 Flutter targets the sweet spot of mobile development: performance and platform integrations of native mobile, with high-velocity development and multi-platform reach of portable UI toolkits.
 
 <DashImage figure src="images/1qo6Fo51uAmD3B3d6VfcbAQ.webp" />
-
 
 Designed for both new and experienced mobile developers, Flutter can help you build beautiful and successful apps in record time with benefits such as:
 
@@ -32,13 +30,11 @@ Our tools also improved significantly, with support for [Android Studio](https:/
 
 <DashImage figure src="images/0QcURHTZejNbiWHwB.webp" alt="Flutter’s new widget inspector helps you visualize your widget tree." caption="Flutter’s new widget inspector helps you visualize your widget tree." />
 
-
 Thanks to the many new features across the framework and tools, teams across Google (such as AdWords) and around the world have been successful with Flutter. Flutter has been used in production apps with millions of installs, apps built with Flutter have been featured in the App Store and Play Store (for example, [Hamilton: The Musical](https://www.blog.google/topics/developers/it-must-be-nice-have-hamilton-your-phone/)), and startups and agencies have been successful with Flutter.
 
 For example, [Codemate](https://www.codemate.com/), a development agency in Finland, attributes Flutter’s high-velocity dev cycle and customizable UI toolkit to their ability to quickly build a beautiful app for [Hookle](https://www.hookle.net/). “We now confidently recommend Flutter to help our clients perform better and deliver more value to their users across mobile.”, said Toni Piirainen, CEO of Codemate.
 
 <DashImage figure src="images/1VIYiGwYgYQAebs0ouJTW6g.webp" alt="Apps built with Flutter deliver quality, performance, and customized designs across platforms." caption="Apps built with Flutter deliver quality, performance, and customized designs across platforms." />
-
 
 Flutter’s beta also [works with a pre-release](https://github.com/flutter/flutter/wiki/Trying-the-preview-of-Dart-2-in-Flutter) of [Dart 2](https://medium.com/@asandholm/announcing-dart-2-80ba01f43b6), with improved support for declaring UI in code with minimal language ceremony. For example, Dart 2 infers `new` and `const` to remove boilerplate when building UI. Here is an example:
 

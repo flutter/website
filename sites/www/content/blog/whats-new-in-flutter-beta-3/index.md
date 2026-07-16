@@ -110,7 +110,6 @@ Other notable features in this release for both Android Studio and Visual Studio
 
 <DashImage figure src="images/0Sdp8z8g2G2spsW3j.webp" />
 
-
 ### Connecting with us
 
 There are a few ways to get in touch with us and find out what’s going on with Flutter.

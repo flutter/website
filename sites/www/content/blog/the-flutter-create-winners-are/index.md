@@ -14,7 +14,6 @@ We received over 750 unique submissions from 60+ countries and regions, and incl
 
 <YoutubeEmbed id="WLvpROMUjYQ" title="Flutter Create Highlight Reel" fullwidth="true"/>
 
-
 To put the limited size in perspective, 5KB is…
 
 * **Less than half a second of a typical music file.** A typical MP3 file is encoded at 128kbps (kilobits/sec). That’s 128/8 = 16 kilobytes / second. So 5KB is 0.3125s of a typical MP3 file.
@@ -31,13 +30,11 @@ We hope you had fun using [Flutter](https://flutter.dev), and participating in t
 
 <DashImage figure src="images/09r31IUKmyYJdBwX0.webp" />
 
-
 [This app](https://github.com/zesage/flutter_compass) is a polished, custom-designed fully functioning compass. Once you scroll up, it displays a globe that users can rotate and get real-time weather data wherever the red dot is placed.
 
 ## Visual Beauty Winner: Relax by Erin Morrissey
 
 <DashImage figure src="images/0PfWbKHdiDVCfn3b-.webp" />
-
 
 [Relax](https://github.com/erinmorrissey/relax) is a beautiful audio meditation app that displays imagery of rain, forest, sunset, and ocean with corresponding sounds.
 
@@ -45,20 +42,17 @@ We hope you had fun using [Flutter](https://flutter.dev), and participating in t
 
 <DashImage figure src="images/0bsrTVoVwYi38mp0m.webp" />
 
-
 A piano built for both iOS and Android. You can change the octave (by sliding to the left or right), and key width, toggle labels on the keys, and play any note (or notes) by tapping. The piano also fully supports semantics for screen reader users. [Check out their tutorial](https://rodydavisjr.com/2019/03/12/making-a-piano/) to build the app yourself.
 
 ## Overall Execution Winner: TimeFlow by Fabian Stein
 
 <DashImage figure src="images/0lMe2G_2Al68HniQ6.gif" />
 
-
 [TimeFlow](https://github.com/Fabian-Stein/timeflow) is a timer that displays a sphere that shatters into pieces and slowly reassembles in one, two, or three minutes, as selected (reassembly not shown in the video). This gentle approach to a timer addresses the complaint that numeric timers can stress the meditator.
 
 ## Novelty of Idea Winner: Flutter Events by Noel Jacob
 
 <DashImage figure src="images/0peT4RsFqjTeCAeBn.webp" />
-
 
 [This app](https://github.com/noejac123/Flutter-Event) allows event calendars to be encoded in QR codes so that attendees can quickly see what is happening at their event. It is impressive how much of an application’s UI can be stored in a JSON file (in a QR code) rather than being hard-coded in the application.
 

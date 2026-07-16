@@ -16,7 +16,7 @@ This works perfectly for many animation goals, but sometimes that ever-forward a
 
 Enter our first foray into Flutter’s explicit animations! We won’t be building any time machines today, but we will be learning how to gain a bit more control over your animations using Transition widgets.
 
-Transition widgets are a set of Flutter widgets whose names all end in — you guessed it —Transition. [`ScaleTransition`](https://api.flutter.dev/flutter/widgets/ScaleTransition-class.html), [`DecoratedBoxTransition`](https://api.flutter.dev/flutter/widgets/DecoratedBoxTransition-class.html), [`SizeTransition`](https://api.flutter.dev/flutter/widgets/SizeTransition-class.html), and more. They look and feel a lot like our `AnimatedBlah` widgets. [`PositionedTransition`](https://api.flutter.dev/flutter/widgets/PositionedTransition-class.html), for example, animates a widget’s transition between different positions. This is much like [`AnimatedPositioned`](https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html), but there is one major difference: these Transition widgets are extensions of [`AnimatedWidget`](https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.htmlhttps://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html). This makes them *explicit animations*.
+Transition widgets are a set of Flutter widgets whose names all end in — you guessed it —Transition. [`ScaleTransition`](https://api.flutter.dev/flutter/widgets/ScaleTransition-class.html), [`DecoratedBoxTransition`](https://api.flutter.dev/flutter/widgets/DecoratedBoxTransition-class.html), [`SizeTransition`](https://api.flutter.dev/flutter/widgets/SizeTransition-class.html), and more. They look and feel a lot like our `AnimatedBlah` widgets. [`PositionedTransition`](https://api.flutter.dev/flutter/widgets/PositionedTransition-class.html), for example, animates a widget’s transition between different positions. This is much like [`AnimatedPositioned`](https://api.flutter.dev/flutter/widgets/AnimatedPositioned-class.html), but there is one major difference: these Transition widgets are extensions of [`AnimatedWidget`](https://api.flutter.dev/flutter/widgets/AnimatedWidget-class.html). This makes them *explicit animations*.
 
 But, what does that really mean for us as app developers? Let’s step through what makes these animations tick.
 
@@ -24,20 +24,18 @@ Here, we’ll be creating an animation of galactic proportions, using this start
 
 <DashImage figure src="images/01xmX3Sfp_rLOAwwl.webp" alt="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" caption="*An image of Fitz’s galaxy just sitting there, **not** rotating.*" />
 
-
 ## `RotationTransition` as an example
 
 The [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) widget is a handy one that takes care of all of the trigonometry and transformations math to make things spin. Its constructor only takes three things:
 
 ```dart
-// [Most of] RotationTransition’s constructor
+// [Most of] RotationTransition's constructor
 RotationTransition({
   Widget child,
   Alignment alignment,
   Animation<double> turns,
 })
 ```
-
 
 First is a child —the widget we want to rotate. The galaxy fits, so we’ll put it there:
 
@@ -49,7 +47,6 @@ RotationTransition(
 )
 ```
 
-
 Next, we need to give `RotationTransition` the point our galaxy rotates around. Our galaxy’s black hole is roughly in the middle of the image where we’d normally expect. So, we’ll give an `alignment` of center, making all of our rotational math “aligned” to that point.
 
 ```dart
@@ -60,21 +57,17 @@ RotationTransition(
 )
 ```
 
-
 Last, what is this mysteriously named turns property? The API docs tell us this is… an `Animation`?!? Weren’t we creating an animation?
 
 <DashImage figure src="images/06d-qda9iAUu26wjA.webp" alt="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" caption="*The* [`RotationTransition`](https://api.flutter.dev/flutter/widgets/RotationTransition-class.html) *docs tell us that turns is of type Animation.*" />
-
 
 Not to worry! This is part of what makes `RotationTransition`, and all the other Transition widgets, an explicit animation. We *could* accomplish the same rotation effect with an `AnimatedContainer` and a transform, but then we’d rotate once and then stop. With our explicit animations, we have control of time and can make it so that our galaxy never stops spinning.
 
 <DashImage figure src="images/0WOcQ1I3-ThMzDyld.webp" alt="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" caption="*Astronomical tip of the day: Most galaxies take **a bit** longer than 5 seconds to complete one rotation.*" />
 
-
 The turns property expects something that gives it a value and notifies it when that value changes. An `Animation<double>` is just that. For `RotationTransition`, the value corresponds to how many times we’ve turned, or more specifically, the percentage of one rotation completed.
 
 <DashImage figure src="images/0VO7YjLAkYQsVLIWj.webp" alt="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" caption="*It would take the solar system around 30 million years to complete 12.6% of a rotation around the Milky Way. Our Flutter Galaxy will spin **slightly** faster than that.*" />
-
 
 ## Creating an AnimationController
 
@@ -85,16 +78,16 @@ We’ll need to create this in a stateful widget because keeping a handle on the
 ```dart
 class _TimeMachineState extends State<TimeMachine> {
   AnimationController _animationController;
- 
+
   @override
   void initState() {
     super.initState();
-    
+
     _animationController = AnimationController(
       // ...
     );
   }
-  
+
   @override
   void dispose() {
     _animationController.dispose();
@@ -112,24 +105,23 @@ _animationController = AnimationController(
 );
 ```
 
-
 The next required parameter is `vsync`. If you’re here from the future, welcome back! We hope you already know everything about vsync. For those who came here from the past, we’ll just say that this is what gives Flutter a reference to the object to notify about changes. `this` is that thing, and it needs to mix in some ticker provider code. A future post will dive into more detail about vsync and ticker providers.
 
 ```dart
-class _TimeMachineState extends State<TimeMachine> 
-with SingleTickerProviderStateMixin {
+class _TimeMachineState extends State<TimeMachine>
+    with SingleTickerProviderStateMixin {
   AnimationController _animationController;
- 
+
   @override
   void initState() {
     super.initState();
-    
+
     _animationController = AnimationController(
       duration: Duration(seconds: 15),
       vsync: this,
     );
   }
-  
+
   @override
   void dispose() {
     _animationController.dispose();
@@ -147,7 +139,6 @@ _animationController = AnimationController(
 )..repeat();
 ```
 
-
 Finally, we can go back and replace that null we left lingering around, by passing the animation controller to the `turns` parameter in our `RotationTransition`.
 
 ```dart
@@ -157,7 +148,6 @@ RotationTransition(
   turns: _animationController,
 )
 ```
-
 
 And, although we now have an infinitely rotating galaxy, this still doesn’t quite feel like we have control of time. The galaxy just does its thing now, right? Don’t forget, though, we have a handle on a controller. Let’s make use of it.²
 
@@ -177,7 +167,7 @@ Stack(
     Align(
       alignment: Alignment.center,
       child: RotationTransition(
-        child: GalaxyFitz(),        
+        child: GalaxyFitz(),
         alignment: Alignment.center,
         turns: _animationController,
       ),
@@ -191,9 +181,9 @@ The controller maintains — among other things — the status of the animation,
 ```dart
 class TimeStopper extends StatelessWidget {
   final AnimationController controller;
- 
+
   const TimeStopper({Key key, this.controller}) : super(key: key);
- 
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -214,11 +204,9 @@ With it, you can also animate to (or backwards from) a specific value, fling the
 
 <DashImage figure src="images/0UjrF-d2-BWLQyfEo.webp" alt="*Keeping your galaxy clean of unwanted rockets.*" caption="*Keeping your galaxy clean of unwanted rockets.*" />
 
-
 This was just our first taste of explicit animations in Flutter. We saw how a Transition widget works with `AnimationController`, to provide some directionality and control over how our animation works. In future posts, we’ll be diving deeper into explicit animations and how to get even more customized.
 
 <DashImage figure src="images/0eSjSmRfA6LMzx_Yc.webp" alt="*When the galaxy stops, everything stops*" caption="*When the galaxy stops, everything stops*" />
-
 
 1. *Galactic ticks are hard to hear, but AnimationController and TickerProviders help.*
 

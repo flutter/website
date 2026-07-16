@@ -16,7 +16,6 @@ One of the core complexities we discovered early was that great charts don’t j
 
 <DashImage figure src="images/1GM0z7Rbgpig7gKVB7WCNeg.webp" alt="Using animation to gradually bring in changes to the dataset" caption="Using animation to gradually bring in changes to the dataset" />
 
-
 Building animated charts is not as simple as it may seem. For a “behind the curtain” tale, check out Mikkel’s great post on the engineering challenge our team tackled when [we built the initial library](https://medium.com/flutter-io/zero-to-one-with-flutter-43b13fd7b354).
 
 ## Supported chart types
@@ -33,18 +32,13 @@ Here are a few sample charts created with Charts for Flutter:
 
 <DashImage figure src="images/1CB1OU6uH4SsgJUB2j962dg.webp" alt="Bar chart with three grouped series" caption="Bar chart with three grouped series" />
 
-
 <DashImage figure src="images/1CMgf7ecD3j4TDGYFcYEJpg.webp" alt="Bar chart with grouped and stacked bars" caption="Bar chart with grouped and stacked bars" />
-
 
 <DashImage figure src="images/1G5QWXo1DV1g_hy_Yj9gQGA.webp" alt="Donut chart" caption="Donut chart" />
 
-
 <DashImage figure src="images/1Ja5by3uzTNwQNKp3x-2gog.webp" alt="Line chart with custom dash-line patterns" caption="Line chart with custom dash-line patterns" />
 
-
 <DashImage figure src="images/1vGoaoEKT4ugjEJm2OvzvBQ.webp" alt="Bar chart with custom legend using symbols" caption="Bar chart with custom legend using symbols" />
-
 
 For more details, see the Charts Gallery app located inside the `/example/` folder of the repo, and in the [online gallery](https://google.github.io/charts/flutter/gallery).
 
@@ -53,7 +47,6 @@ For more details, see the Charts Gallery app located inside the `/example/` fold
 It’s pretty easy to use Charts for Flutter! We’ll start by [creating](https://flutter.io/get-started/test-drive/) a new Flutter app, and then add a bar chart to that to visualize the number of clicks: two bars visualizing the past number of clicks (fixed values), and one bar for the current year (tied to the current state of the `_counter` variable):
 
 <DashImage figure src="images/136hoBmockzA11GwUI9bvHQ.webp" alt="The Flutter counter app extended with a bar chart" caption="The Flutter counter app extended with a bar chart" />
-
 
 Start by declaring a dependency on the package: Open the `pubspec.yaml` file, and add an entry for `charts_flutter` in the dependencies section.
 
@@ -64,8 +57,7 @@ dependencies:
   charts_flutter: ^0.2.0
 ```
 
-
-Now run your IDE’s function to get packages, or run `flutter packages get`from the terminal.
+Now run your IDE’s function to get packages, or run `flutter packages get` from the terminal.
 
 Next, define a data type to hold the data for each bar column. Since we want years on the x-axis and counts on the y-axis, we create a class with a `String` and an `int` field:
 
@@ -92,7 +84,7 @@ class ClicksPerYear {
 }
 ```
 
-Next, we will update the `build()` method of `_MyHomePageState`to create the chart data set, using the `_counter` variable:
+Next, we will update the `build()` method of `_MyHomePageState` to create the chart data set, using the `_counter` variable:
 
 ```dart
 var data = [

@@ -16,12 +16,9 @@ Here are a few screenshots from the Global Citizen app:
 
 <DashImage figure src="images/0wuezwMGAnC91NBTJ.webp" />
 
-
 <DashImage figure src="images/0dv6mhmjDb4HP59LA.webp" />
 
-
 <DashImage figure src="images/0KD5yX1QHIghjtf78.webp" />
-
 
 **The design process**
 
@@ -31,11 +28,9 @@ When starting on the Global Citizen app rewrite, the design team expanded upon t
 
 <DashImage figure src="images/0DwbyxOv8yHSp1aFb.webp" />
 
-
 UI elements are created as *components* in Figma. Each component may have different *variants* depending on component type or state. For example, the following diagram shows several button variants:
 
 <DashImage figure src="images/0JXYimUKJxblL6LYA.webp" />
-
 
 When developing new components, the design team referenced the Material and iOS design kits in Figma for inspiration. This helps with translating the design to code as these Figma components closely correspond to widgets available in the Material and Cupertino libraries.
 
@@ -49,13 +44,11 @@ This barebones project contains a set of widgets that can be customized and used
 
 <DashImage figure src="images/0ApRsUADr-G3HYMzY.webp" />
 
-
 ,
 
 To make it easy to style these components based on the brand guidelines, we use the `ThemeData` class. Developers take the color schemes and text styles from Figma and map them to the corresponding theme properties.
 
 <DashImage figure src="images/0DOvyVLAckVSQqoax.webp" />
-
 
 Our team leveraged the existing properties in `ThemeData` as much as possible, and then used the `ThemeExtension` functionality to complete the remaining configurations.
 
@@ -67,21 +60,17 @@ For example, the `TextField` and `TextFormField` widgets from Material contained
 
 <DashImage figure src="images/0BrVLb8vUnOxCenlR.webp" />
 
-
 Having these out-of-the-box UI components that can easily be styled makes it easier to build and maintain our widgets. However, sometimes our designers create custom components that can’t be recreated using Flutter’s Material or Cupertino widgets. In these cases, the development team creates our own custom widgets from low-level Flutter widgets.
 
 One example from the Global Citizen app was progress indicators. For this app, our designers created a custom progress indicator as shown in the following GIF. The existing Material and Cupertino progress indicators didn’t work for this design. However, it was easy for our developers to create an entirely new widget using only containers, rows, and columns with intrinsic animations.
 
 <DashImage figure src="images/0FSZ6UZM2gdxag6tr.webp" />
 
-
 <DashImage figure src="images/0ecO_ptzWhoeP60fp.webp" />
-
 
 Community libraries were also incredibly useful for more complex and flexible components. For example we used a community- built [`flushbar`](https://pub.dev/packages/another_flushbar) to display alert notifications inside the Global Citizen app.
 
 <DashImage figure src="images/0vMiJl709u8ABpUE3.webp" />
-
 
 **Hot reload**
 

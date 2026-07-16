@@ -42,18 +42,15 @@ To demonstrate that Flutter was ready for the desktop, we worked with the design
 
 <YoutubeEmbed id="cTFJcq7UTRY" title="YouTube" fullwidth="true"/>
 
-
 In addition to being able to manage your contacts, including searching contacts, adding new contacts, and editing existing contacts, Flokk also lets you associate GitHub and Twitter handle information with your contacts.
 
 <DashImage figure src="images/0uMT4fCQFO8VQwB0Q.webp" alt="The Flokk Contacts app was built with Flutter to target the desktop" caption="The Flokk Contacts app was built with Flutter to target the desktop" />
-
 
 The display of GitHub and Twitter notifications turns your contacts into your own personal social network. And if you’re not seeing your favorite social networks in Flokk Contacts, then the good news is that Flokk is [completely open source](https://github.com/gskinnerTeam/Flokk/), so you can submit a PR to add your favorite.
 
 In addition to innovating in the social space, Flokk uses Flutter features to look and feel great. As just one example, the dark theme not only switches the colors but animates the changes as it does so.
 
 <DashImage figure src="images/0dKv6teOS8d4zjiWk.webp" alt="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" caption="Flutter enables Flokk to take advantage of smooth animation, high-performance scrolling, and easy theming" />
-
 
 The creative team behind the Flokk Contacts app was led by [Grant Skinner](https://gskinner.com), who’s well known for both excellence in design and implementation of innovative user experience. Grant had this to say about working with Flutter on Linux:
 > *“Building the Flokk Contacts app was a breeze! We were able to apply all our previous expertise in Flutter to target Linux with virtually no adjustments, and the app runs fantastically. Working with the Canonical team was a wonderful experience; they were enthusiastic, engaged, and passionate about making Flutter better not just for Linux, but for every platform. It was an amazing project, and I’m thrilled to be able to target another major OS with Flutter.” — Grant Skinner*
@@ -72,7 +69,6 @@ $ snap install --classic code
 $ code --install-extension dart-code.flutter
 ```
 
-
 If you also want to use Linux to develop mobile apps, you can do so by [installing the Android SDK or Android Studio](https://developer.android.com/studio/install#linux) (which includes the Android SDK). For more information on the Flutter SDK as a snap, see [https://snapcraft.io/flutter](https://snapcraft.io/flutter)
 
 ## Flutter for Linux desktop
@@ -85,7 +81,6 @@ $ flutter upgrade
 $ flutter config --enable-linux-desktop
 ```
 
-
 Now when you create a new Flutter project, you’ll get a `linux` subdirectory that lets you run the app on your Linux desktop:
 
 ```bash
@@ -94,9 +89,7 @@ $ cd counter
 $ flutter run -d linux
 ```
 
-
 <DashImage figure src="images/0isPy4BXVD5J5hyQg.webp" alt="The famous Flutter Counter app runs great on Linux, too" caption="The famous Flutter Counter app runs great on Linux, too" />
-
 
 What you’ll get is a shiny new Linux app built with Flutter running on the latest stable version of GTK+. If you have an existing Flutter project to which you’d like to add Linux support after you have Linux enabled, you can add the `linux` subdirectory like so:
 
@@ -104,7 +97,6 @@ What you’ll get is a shiny new Linux app built with Flutter running on the lat
 $ cd my_flutter_app
 $ flutter create .
 ```
-
 
 This will create the `linux` subdirectory with the Runner project that you need to build and run your Flutter app on the Linux desktop.
 
@@ -127,7 +119,6 @@ To deploy your Flutter app to the Snap Store, you first need to install Snapcraf
 ```bash
 $ sudo snap install snapcraft --classic
 ```
-
 
 To drive the Snapcraft tool, you’ll need to create a `snapcraft.yaml` file in your app’s project directory. As one example, this is the `snapcraft.yaml` file for Flokk:
 
@@ -154,13 +145,11 @@ parts:
     flutter-target: lib/main.dart # app's main entry-point file
 ```
 
-
 In the directory with your `snapcraft.yaml` file, you can now run `snapcraft` to build a snap of your application.
 
 ```bash
 $ snapcraft
 ```
-
 
 If all goes well, this produces a file in your current working directory like `flokk-contacts_1.0.1_amd64.snap`.
 
@@ -172,13 +161,11 @@ $ snapcraft register flokk-contacts
 $ snapcraft upload flokk-contacts_1.0.1_amd64.snap --release edge
 ```
 
-
 This command will upload the application to the Snap Store and attempt to publish it to the [edge channel](https://snapcraft.io/docs/channels#heading--risk-levels). Once your application is published in the edge channel, it can be installed either via the Snap Store Desktop client or using the command line:
 
 ```bash
 $ snap install --edge flokk-contacts
 ```
-
 
 For more details on building your first snap and publishing it in the Snap Store, see [https://snapcraft.io/first-snap#flutter](https://snapcraft.io/first-snap#flutter) for a guided tutorial.
 
@@ -188,23 +175,19 @@ The Flokk app is an excellent example of a real-world Flutter app targeting the 
 
 <DashImage figure src="images/0y2IpiLOI01i9BqiC.webp" alt="Try the Photo Search sample on Linux" caption="Try the Photo Search sample on Linux" />
 
-
 Photo Search is a simple online photo search app that uses several plugins to access native platform functionality, supporting both macOS and Linux.
 
 For an example Linux desktop app with step-by-step instructions, I recommend [the Write a Flutter desktop application codelab](https://codelabs.developers.google.com/codelabs/flutter-github-graphql-client/index.html#0), which walks you through using OAuth and GraphQL to build a GitHub client in Flutter.
 
 <DashImage figure src="images/0vktUouQPnTpgk0Ko.webp" alt="The Flutter GitHub codelab client application in action" caption="The Flutter GitHub codelab client application in action" />
 
-
 For a more comprehensive app that exercises much more of the surface area of Flutter as well as providing several little applets, I recommend [the Flutter Gallery](https://github.com/flutter/gallery), which was redesigned last year to support desktop as well as mobile. If you’d like to see that in action, you can check that out [on the Snap Store](https://snapcraft.io/flutter-gallery), too.
 
 <DashImage figure src="images/0yW96xpHMveP4-kUm.webp" alt="The Flutter Gallery sample is available on the Snap Store" caption="The Flutter Gallery sample is available on the Snap Store" />
 
-
 One more desktop app that shows off the fun side of Flutter is a multi-player game built by Thorsten Lorenz called [batufo](https://thlorenz.com/batufo/). Set against a beautiful backdrop, the game lets players from all over the world compete against each other in real time.
 
 <DashImage figure src="images/1ghwj9i6N9nvBvNmKdP8oZw.gif" alt="Play in real time across multiple Flutter platforms" caption="Play in real time across multiple Flutter platforms" />
-
 
 Thorsten has been building this game to support multiple Flutter platforms including Linux, macOS, Android, and iOS. If you’d like to see how he did it and follow along with future updates, he makes his coding sessions available as [videos](https://thlorenz.com/batufo/#watch) and [the code available on GitHub](https://github.com/thlorenz/batufo). To install the game from Linux, you can pull it down from the [Snap Store](https://snapcraft.io/batufo).
 

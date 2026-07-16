@@ -17,13 +17,11 @@ Next up, the code itself. Does the code follow conventions for layout and usage?
 $ dart format --output none --set-exit-if-changed .
 ```
 
-
 After code formatting, the next step is enforcing a good set of lints. For Dart, I strongly recommend investigating the [lints](https://pub.dev/packages/lints) package, and for Flutter I likewise recommend the [flutter_lints](https://pub.dev/packages/flutter_lints) package. To make sure the lints pass in the CI pipeline, add the following command:
 
 ```bash
 $ dart analyze
 ```
-
 
 Tests. Oh so many tests. Unit tests, integration tests, and for Flutter we also have Widget tests. Tests are great for samples, as the tests communicate intent of how a piece of code is intended to be used. The tests also keep a codebase evergreen, when used in combination with the aforementioned CI pipeline. A good place to learn more about Flutter’s testing capability is the [How to test a Flutter app codelab](https://codelabs.developers.google.com/codelabs/flutter-app-testing). The CI commands for Dart and Flutter respectively:
 
@@ -31,7 +29,6 @@ Tests. Oh so many tests. Unit tests, integration tests, and for Flutter we also 
 $ flutter test   # for Flutter projects
 $ dart test      # for pure Dart projects
 ```
-
 
 If your code repository is hosted on GitHub, then I suggest you use the [Dart Setup](https://github.com/marketplace/actions/setup-dart-sdk) action if you have a Dart project, and the [Flutter Action](https://github.com/marketplace/actions/flutter-action) if you have a Flutter project. For additional points, consider adding the [Very Good Coverage](https://github.com/marketplace/actions/very-good-coverage) action to keep test coverage high. Given you’ve gone this far, you probably should advertise your CI status with a [workflow status badge](https://docs.github.com/en/actions/managing-workflow-runs/adding-a-workflow-status-badge).
 

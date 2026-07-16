@@ -22,13 +22,11 @@ More big news in Flutter 1.12 is the completion of our work to support the iOS 1
 
 <DashImage figure src="images/1sW6TueDcNzw806cjigLJaA.webp" />
 
-
 If you’ll notice in the screen shots above, dark mode support is much more than just swapping out the background color, but also adapting the rest of the colors to be a good match. Such deep attention to dark mode was a huge amount of work, but worth it to get pixel-perfect iOS design support across both dark and light mode.
 
 Also, in our continuing goal for pixel-perfection for iOS 13, we’ve added two new widgets.
 
 <DashImage figure src="images/1seN7hLXrHJDEN3lH-IBZmw.webp" alt="[CupertinoContextMenu](https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)" caption="[CupertinoContextMenu](https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html) and [CupertinoSlidingSegmentedControl](https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html)" />
-
 
 And finally, in our quest to make a Flutter app feel as well as look native on iOS 13, we’ve [improved scrollbar fidelity](https://github.com/flutter/flutter/pull/41799), [provided for adaptive CupertinoAlertDialog padding](https://github.com/flutter/flutter/pull/42967), and [allowed for min/max date constraints on the CupertinoDatePicker](https://github.com/flutter/flutter/pull/44149).
 
@@ -37,7 +35,6 @@ And finally, in our quest to make a Flutter app feel as well as look native on i
 Another improvement in our mobile support is an update to Add-to-App, which is the ability to integrate Flutter into an existing Android or iOS app. Here, we’ve been working on simplifying the integration flow to make adding a Flutter library to your app a better experience, including the addition of a new Flutter Module wizard in Android Studio.
 
 <DashImage figure src="images/0bzkdx2Ls7IbhP1NZ.webp" />
-
 
 With Flutter 1.12, Add-to-App is now officially supported for adding one fullscreen Flutter instance to your app. In supporting this functionality, we’ve also:
 
@@ -65,7 +62,6 @@ The Flutter 1.12 master, dev and beta channels all provide improved support for 
 
 <DashImage figure src="images/0KNWOPgP4ZIQaobWo.webp" />
 
-
 One happy customer of Flutter on the web is [Rivet](https://rivet.area120.com/link/flutter), pictured above. Rivet is an education project that currently has a mobile app in production. They’re using Flutter and Firebase to build a web version of their app that they plan to launch in early 2020.
 
 You can learn more about what other customers are doing with Flutter’s web support as well as the rest of the details in the [Flutter web blog post](https://medium.com/flutter/web-support-for-flutter-goes-beta-35b64a1217c0).
@@ -75,7 +71,6 @@ You can learn more about what other customers are doing with Flutter’s web sup
 macOS desktop support isn’t far behind, moving from tech preview to alpha, available now in both master and dev channels (in Flutter SDK 1.13).
 
 <DashImage figure src="images/02cmIipg-JivBAlRW.webp" />
-
 
 Pictured here at desktop size is [a new version of the Flutter Gallery](https://flutter.github.io/samples/#/) that’s been completely updated to support macOS in addition to Android, iOS, and web.
 
@@ -87,11 +82,9 @@ Creating a Flutter project that runs on macOS is now just like creating any othe
 
 <DashImage figure src="images/00IEDbMjBcAYcEayr.webp" alt="Notice the new macos directory created by default" caption="Notice the new macos directory created by default" />
 
-
 In addition to the tooling support, we’ve also been working on the density that’s appropriate for desktop-sized apps. Mobile apps need relatively large controls to accommodate touch interactions whereas on desktop-sized devices, a user is more likely to be using a mouse. In bringing Flutter to the desktop, we’ve worked on allowing you to choose the density of your widgets to better accommodate the needs of your desktop users:
 
 <DashImage figure src="images/0lz9RcWYLigKtCaFp.gif" alt="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" caption="[Sample](https://github.com/gspencergoog/density_sample) demonstrating Flutter’s implementation of [the Material Density guidelines](https://material.io/design/layout/applying-density.html)" />
-
 
 And finally, to improve the experience of Flutter desktop apps, we’ve done a lot of work on keyboard navigation and keyboard access, including:
 
@@ -133,7 +126,6 @@ If you aren’t already using [DartPad](https://dartpad.dev), you should try it 
 
 <DashImage figure src="images/0O2FY0bB-BCao1kH2.webp" />
 
-
 The new DartPad leverages Flutter’s web support so that when you’re writing Flutter code on the left, you’re running a real, live Flutter (web) program on the right. The chief difference is that using DartPad, you can get started with Flutter without installing a thing.
 
 In addition to the stand-alone DartPad playground, we’ve also started adding DartPad with Flutter support into our docs and in our codelabs (like [Basic Flutter layout concepts](https://flutter.dev/docs/codelabs/layout-basics) and [Implicit animations](https://flutter.dev/docs/codelabs/implicit-animations)), so that you can learn about Flutter from the comfort of your browser. For more information on DartPad, please check out our [DartPad announcement post](https://medium.com/dartlang/a-brand-new-dartpad-dev-with-flutter-support-16fe6027784).
@@ -150,7 +142,6 @@ Whether you write the code by hand or let Hot UI write it for you, you’ve stil
 
 <DashImage figure src="images/0qQ342c4cR9qRce74.gif" />
 
-
 Not only does the Layout Explorer help you to visualize the layout of the widgets in your running app, but if you’d like to experiment with changing the layout options, it allows you to do so interactively. We’re hoping the preview of this feature helps make it easier to understand and fix your layout issues. To enable this feature, see [the Layout Explorer docs](https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer).
 
 ## Multi-device debugging
@@ -158,7 +149,6 @@ Not only does the Layout Explorer help you to visualize the layout of the widget
 When you’ve built and debugged your Flutter UI, you have most likely done it on a single device. Wouldn’t it be nice to be able to debug your app across multiple devices (physical or virtual) at the same time? With Flutter’s support for multi-session debugging in Visual Code, that’s just what you can do.
 
 <DashImage figure src="images/1cEO7t2m1M3nH9RWx0CJtaQ.webp" />
-
 
 Here we’ve got the same Flutter app running simultaneously on three separate debugging sessions. If we make a change in the code, Hot Reload makes sure that it’s reflected in all three apps. If we set a breakpoint, whichever app triggers that code gets stopped. If you’d like to stop debugging one, you can do so without stopping them all. You can learn how to configure this feature for [multiple device debugging on the wiki](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code).
 
@@ -176,7 +166,6 @@ The term “golden image” refers to a master image file that is considered the
 
 <DashImage figure src="images/0RfJiqYXXSujb8WCs.webp" />
 
-
 In this case, it’s clear that the differences between the master and the test image are all in the border, making it much easier to track down the discrepancy.
 
 ## Community
@@ -184,7 +173,6 @@ In this case, it’s clear that the differences between the master and the test 
 In addition to all of the work on Flutter and its associated tooling, the Flutter community continues to take Flutter into new and amazing directions! To see what developers in the community are doing, we’ve put together a little video.
 
 <YoutubeEmbed id="tWCr9vlGz_8" title="Developers using Flutter around the world" fullwidth="true"/>
-
 
 We’re so lucky to have such a great set of developers in the Flutter community. You make us all proud to be on the Flutter team!
 
@@ -196,7 +184,6 @@ Still, our users have asked again and again for a set of “recommended” packa
 
 <DashImage figure src="images/08Q2gB989P4yclIqD.webp" />
 
-
 A Flutter Favorite package (or plugin) is one that we think that you should consider first when building your app. The “we” in that sentence is the Flutter Ecosystem Committee, a group of regionally-diverse individuals picked from the Flutter team at Google and from the Flutter community at large to address issues across the Flutter ecosystem. Their first job was to establish a high quality bar and to identify an initial set of packages that met that quality bar. The authors of those packages are able to use the Flutter Favorite logo in their package documentation. Furthermore, pub.dev has been updated to show the logo in search results and other places.
 
 For details, see [the Flutter Favorite page on flutter.dev](https://flutter.dev/docs/development/packages-and-plugins/favorites). You can also see [the complete list of Flutter Favorite packages on pub.dev](https://pub.dev/flutter/favorites). The bottom line is that if you’re an app developer and you see that logo, you should have confidence in that package. If you’re a package author and you’ve been awarded the Flutter Favorite logo, thank you for your contribution to the Flutter ecosystem.
@@ -207,19 +194,15 @@ And speaking of contributions to be proud of, the Flutter community at large has
 
 <DashImage figure src="images/0mCfvSsh_GZmW2xYn.webp" alt="[Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)" caption="[Flutter Device Preview](https://github.com/aloisdeniel/flutter_device_preview)" />
 
-
 <DashImage figure src="images/0ArEfmlujiPiVUD1v.webp" alt="[Widget Maker](https://www.widgetmaker.dev/)" caption="[Widget Maker](https://www.widgetmaker.dev/)" />
 
-
 <DashImage figure src="images/1vJh-yghl3kJJdW0ZakbSzg.webp" alt="[Panache](https://rxlabz.github.io/panache/#/)" caption="[Panache](https://rxlabz.github.io/panache/#/)" />
-
 
 ## Featured tooling partner: Nevercode
 
 In addition to a great set of community tools, the Flutter ecosystem has a great set of tooling partners as well. One notable partner has always been Nevercode, who have a whole new set of features in their latest release, including [a Visual Studio Code plugin called Remote Mac](https://marketplace.visualstudio.com/items?itemName=codemagic.remote-mac).
 
 <DashImage figure src="images/0cmfHUry8I1ztX80M.webp" />
-
 
 The Remote Mac extension lets you connect directly to a Mac that they’ve hosted in the cloud for purposes of testing your iOS and macOS Flutter code. For more details about Nevercode’s latest release, including new support for Flutter on the web and on macOS, new enterprise features and more, check out [their newest blog post](https://blog.codemagic.io/more-professional-capable-accessible/).
 

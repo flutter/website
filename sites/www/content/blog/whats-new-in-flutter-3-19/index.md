@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0ZX3bHJdGGZwwOQHt.gif" />
 
-
 ## What’s new in Flutter 3.19
 
 ### Revolutionizing App Development with the Gemini API, Impeller Updates, and Windows Arm64 Support
@@ -28,7 +27,6 @@ Keep reading to learn about all the new additions and improvements the Flutter c
 The Google AI Dart SDK has been released to beta. This enables you to build generative AI features into your Dart or Flutter app, powered by Gemini, Google’s latest family of AI models. There is now a [`google_generative_ai`](https://pub.dev/packages/google_generative_ai) package on pub.dev. Learn more about how to build with the Google AI Dart SDK in [this blog post](https://medium.com/flutter/harness-gemini-in-your-dart-and-flutter-apps-00573e560381) or jump straight into the [Dart quickstart](https://ai.google.dev/tutorials/dart_quickstart).
 
 <DashImage figure src="images/013y0iIXD9nN5wCcX.webp" />
-
 
 ## Framework
 
@@ -96,7 +94,6 @@ Under Impeller on Metal (iOS, macOS, Simulator) and on Vulkan-enabled Android de
 
 <DashImage figure src="images/0m3qW6u7Q4mNfTKxN.webp" />
 
-
 Please note that since non-Vulkan Android devices might misreport their support for querying GPU timing, Impeller’s GPU tracing can only be enabled with a flag set in the `AndroidManifest.xml` file on these devices.
 
 ```dart
@@ -104,7 +101,6 @@ Please note that since non-Vulkan Android devices might misreport their support 
   android:name="io.flutter.embedding.android.EnableOpenGLGPUTracing"
   android:value="true" />
 ```
-
 
 ### Performance optimizations
 
@@ -120,7 +116,6 @@ Further, Impeller [no longer unconditionally stores the stencil buffer](https://
 
 <DashImage figure src="images/06Of__x8KILe6U5Si.webp" />
 
-
 With this change, our benchmark of animated advanced blend modes on a Pixel 7 Pro running Impeller with the Vulkan backend improved average GPU frame times from 55ms to 16ms, and improved 90%-ile raster thread CPU times from around 110ms down to 22ms.
 
 ## Android
@@ -134,7 +129,6 @@ In this early version, the Flutter deep link validator supports web check on And
 We hope this tool is the first step to simplify your deep linking implementation journey. We will continue to work on providing future support for web check on iOS, and app check on both iOS and Android!
 
 <DashImage figure src="images/01YoGEcLgpaFythel.webp" />
-
 
 ### Support for Share.invoke
 
@@ -162,7 +156,6 @@ Flutter text now looks a little more compact and a little more native on iOS. Ac
 
 <DashImage figure src="images/0q9BjqFkxrFRfx9eP.webp" />
 
-
 ## DevTools
 
 ### DevTools updates
@@ -174,7 +167,6 @@ Some highlights for DevTools with this release are:
 * Added an option in the **Enhance Tracing** menu for tracking platform channel activity. This is useful for apps with plugins.
 
 <DashImage figure src="images/0zDY2wXaCTMankTTb.webp" />
-
 
 * The Performance and CPU profiler screens are now made available when there is no connected app. Performance data or CPU profiles that were previously saved from DevTools can be reloaded for viewing from these screens.
 

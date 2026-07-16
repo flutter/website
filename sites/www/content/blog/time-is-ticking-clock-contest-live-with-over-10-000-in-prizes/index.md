@@ -12,7 +12,6 @@ layout: blog
 
 <YoutubeEmbed id="rxs69_szCkE" title="FOO014 Final" fullwidth="true"/>
 
-
 **High Level Details**
 
 ***Date:** All entries must be submitted by January 20, 2020 11:59 PM PST (GMT-8).*

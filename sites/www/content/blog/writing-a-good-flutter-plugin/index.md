@@ -19,10 +19,9 @@ When writing plugins, *think about functionality first, not APIs*. For instance,
 
 ```dart
 class StoragePlugin {
-  
   /// Reads a string
   Future<String> getString(String key) async {}
-  
+
   /// Writes a string
   Future<void> setString(String key, String value) async {}
 }
@@ -32,7 +31,6 @@ Only after you have the Dart API, start looking at the public API and see your A
 
 ```dart
 class StoragePlugin {
-  
   Future<String> getString(String key) async {
     if (Platform.isIos) {
       return await callMethodChannel('fetchValue', {'id': base64encode(key)});
@@ -40,7 +38,7 @@ class StoragePlugin {
       return await callMethodChannel('fetchValue', {'id': key});
     }
   }
-  
+
   Future<void> setString(String key, String value) async {
     if (Platform.isIos) {
       await callMethodChannel('setValue', {'id': base64encode(key), 'value': value});
@@ -50,6 +48,7 @@ class StoragePlugin {
   }
 }
 ```
+
 > If there’s a functionality you would like to provide which is not supported by one platform, it is OK for that API to **gracefully** fail for that platform.
 > You should not crash the app and the behavior should be thoroughly documented. You should also request the missing functionality from the platform so your plugin can be complete.
 
@@ -65,13 +64,11 @@ if (Platform.isIos) {
 }
 ```
 
-
 consider moving the platform specific logic to the plugin itself so that, they can write:
 
 ```dart
 myPlugin.doThing();
 ```
-
 
 ## Avoid supporting only one platform
 
@@ -102,7 +99,6 @@ Future<User> authenticate() async {
 }
 ```
 
-
 However, prefer:
 
 ```dart
@@ -112,7 +108,6 @@ class AuthenticatePlugin {
   }
 }
 ```
-
 
 which makes the plugin mock or fake friendly. Users can easily swap out the real implementation so their apps work on an emulator or a test harness.
 

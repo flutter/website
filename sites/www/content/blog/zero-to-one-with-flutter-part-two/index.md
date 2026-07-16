@@ -14,7 +14,6 @@ Edit: updated for Dart 2 on August 8, 2018. [GitHub repo](https://github.com/mra
 
 <DashImage figure src="images/1OSc2sFHg8KH4ZQR2ymytKg.webp" />
 
-
 How do you enter into a new field of programming? Experimentation is obviously key, as is studying and emulating programs written by more experienced peers. I personally like to complement these approaches with concept mining: Trying to work from first principles, identifying concepts, exploring their strength, deliberately seeking their guidance. It is a rationalistic approach which cannot stand on its own, but one that is intellectually stimulating and may lead you to deeper insights faster.
 
 This is the second and final part of an introduction to Flutter and its widget and tween concepts. At the end of [part one](https://medium.com/dartlang/zero-to-one-with-flutter-43b13fd7b354), we [arrived](https://github.com/mravn/charts/tree/992e11e9cdec5a9fb626d6e4c7b62c0d6c558a9d) at a widget tree containing, among various layout and state-handling widgets,
@@ -24,7 +23,6 @@ This is the second and final part of an introduction to Flutter and its widget a
 * a floating action button widget for initiating an animated change of the bar’s height.
 
 <DashImage figure src="images/15ggIsPDAwb8sAgPw8vZkyw.webp" alt="Animating bar height." caption="Animating bar height." />
-
 
 The animation was implemented using a `BarTween`, and I claimed that the tween concept would scale to handle more complex situations. Here in part two, I’ll fulfill that claim by generalizing the design to bars with more properties, and to bar charts containing multiple bars in various configurations.
 
@@ -66,14 +64,13 @@ Notice the utility of the static `lerp` method idiom here. Without `Bar.lerp`, `
 
 <DashImage figure src="images/1kCvpZWFivphnjDnOiIoaIw.webp" alt="Animating bar height and color." caption="Animating bar height and color." />
 
-
 To make use of colored bars in our app, we’ll update `BarChartPainter` to get the bar color from the `Bar`. In `main.dart`, we need to be able to create an empty `Bar` and a random `Bar`. We’ll use a fully transparent color for the former, and a random color for the latter. Colors will be taken from a simple `ColorPalette` which we quickly introduce in a file of its own. We’ll make both `Bar.empty` and `Bar.random` factory constructors on `Bar` ([code listing](https://gist.github.com/mravn-google/90bda9c82df356338b3fe3f733066f6c), [diff](https://github.com/mravn/charts/commit/91c800e7e69f2208afb20535aeeacce5a83b8f01)).
 
 Bar charts involve multiple bars in various configurations. To introduce complexity slowly, our first implementation will be suitable for bar charts displaying numeric quantities for a fixed set of categories. Examples include visitors per weekday or sales per quarter. For such charts, changing the data set to another week or another year does not change the categories used, only the bar shown for each category.
 
 We’ll update `main.dart` first this time, replacing `Bar` by `BarChart` and `BarTween` by `BarChartTween` ([code listing](https://gist.github.com/mravn-google/029930ddb613b00b6f5df7179d76fdc4), [diff](https://github.com/mravn/charts/commit/17cb4074be0f8267121ae36d865d9a13393e9e39#diff-fe53fad46868a294b309fc85ed138997)).
 
-To make the Dart analyzer happy, we create the `BarChart` class in `bar.dart` and implement it using a fixed-length list of `Bar` instances. We’ll use five bars, one for each day of the workweek. We then need to move the responsibility for creating empty and random instances from `Bar` to `BarChart`. With fixed categories, an empty bar chart is reasonably taken to be a collection of empty bars. On the other hand, letting a random bar chart be a collection of random bars would make our charts rather kaleidoscopic. Instead, we’ll choose a random color for the chart and let each bar, still of random height, inherit that.
+To make the Dart analyzer happy, we create the `BarChart` class in `bar.dart` and implement it using a fixed-length list of `Bar` instances. We’ll use five bars, one for each day of the workweek. We then need to move the responsibility for creating empty and random instances from `Bar` to `BarChart`. With fixed categories, an empty bar chart is reasonably taken to be a collection of empty bars. On the other hand, letting a random bar chart be a collection of random bars would make our charts rather kaleidoscopic. Instead, we’ll choose a random color for the chart and let each bar, still of random height, inherit that.
 
 ```dart
 import 'dart:math';
@@ -184,7 +181,6 @@ The `BarChartPainter` distributes available width evenly among the bars and make
 
 <DashImage figure src="images/1aiUQNf70oukpvNf6sVw3GA.webp" alt="Fixed-category bar chart." caption="Fixed-category bar chart." />
 
-
 Notice how `BarChart.lerp` is implemented in terms of `Bar.lerp`, regenerating the list structure on the fly. Fixed-category bar charts are composite values for which straightforward component-wise lerping makes sense, precisely as for single bars with multiple properties ([diff](https://github.com/mravn/charts/commit/17cb4074be0f8267121ae36d865d9a13393e9e39)).
 
 There is a pattern at play here. When a Dart class’s constructor takes multiple parameters, you can often lerp each parameter separately and the combination will look good, too. And you can nest this pattern arbitrarily: dashboards would be lerped by lerping their constituent bar charts, which are lerped by lerping their bars, which are lerped by lerping their height and color. And colors are lerped by lerping their RGB and alpha components. At the leaves of this recursion, we lerp numbers.
@@ -273,7 +269,7 @@ class Bar {
   final Color color;
 
   Bar get collapsed => Bar(x, 0.0, 0.0, color);
-  
+
   static Bar lerp(Bar begin, Bar end, double t) {
     return Bar(
       lerpDouble(begin.x, end.x, t),
@@ -288,7 +284,6 @@ class Bar {
 Integrating the above code into our app involves redefining `BarChart.empty` and `BarChart.random` for this new setting. An empty bar chart can now reasonable be taken to contain zero bars, while a random one might contain a random number of bars all of the same randomly chosen color, and each having a randomly chosen height. But since position and width are now part of the definition of `Bar`, we need `BarChart.random` to specify those attributes too. It seems reasonable to provide `BarChart.random` with the chart `Size` parameter, and then relieve `BarChartPainter.paint` of most of its calculations ([code listing](https://gist.github.com/mravn-google/cac095296074b8b1b7ad6c91a21a5f1a), [diff](https://github.com/mravn/charts/commit/50585bd40160c336e80f3ec867bad01d08d8e0ec)).
 
 <DashImage figure src="images/1dN9og1kRYpRsL-cFIgO23w.webp" alt="Lerping to/from invisible bars." caption="Lerping to/from invisible bars." />
-
 
 The astute reader may have noticed a potential inefficiency in our definition of `BarChart.lerp` above. We are creating collapsed `Bar` instances only to be given as arguments to `Bar.lerp`, and that happens repeatedly, for every value of the animation parameter `t`. At 60 frames per second, that could mean a lot of `Bar` instances being fed to the garbage collector, even for a relatively short animation. There are alternatives:
 
@@ -358,7 +353,6 @@ We have one more step to take before we can tackle bar chart animation in full g
   X -> X
 ```
 
-
 The animation might be beautiful and silky-smooth, but it would still be confusing to the user. Why? Because it doesn’t preserve semantics. It transforms a graphical element representing product category B into one representing category C, while the one for C goes elsewhere. Just because 2016 B happens to be drawn in the same position where 2017 C later appears doesn’t imply that the former should morph into the latter. Instead, 2016 B should disappear, 2016 C should move left and morph into 2017 C, and 2017 D should appear on its right. We can implement this mingling using one of the oldest algorithms in the book: merging sorted lists.
 
 *Lerp between composite values by lerping semantically corresponding components. When components form sorted lists, the merge algorithm can bring such components on a par, using invisible components as needed to deal with one-sided merges.*
@@ -394,7 +388,6 @@ Concretely, we’ll assign each bar a sort key in the form of an integer `rank` 
 A random bar chart will now be based on a random selection of ranks to include ([code listing](https://gist.github.com/mravn-google/4f7194e8c1f875eba189856eb40e6b1e), [diff](https://github.com/mravn/charts/commit/5a41b26279fb5ba334c219bf4f6d74cd33daf01b)).
 
 <DashImage figure src="images/1MuSAOLktwY8bTJdPGuoNqA.webp" alt="Arbitrary categories. Merge-based lerping." caption="Arbitrary categories. Merge-based lerping." />
-
 
 This works nicely, but is perhaps not the most efficient solution. We are repeatedly executing the merge algorithm in `BarChart.lerp`, once for every value of `t`. To fix that, we’ll implement the idea mentioned earlier to store reusable information in `BarChartTween`.
 
@@ -456,16 +449,13 @@ Armed with these insights, we are finally in position to animate more complex ch
 
 <DashImage figure src="images/1qKUFM56S-ZonH1amVDDXTw.webp" alt="Stacked bars." caption="Stacked bars." />
 
-
 * Grouped bars are also used for data sets with two-dimensional categories, but where it is not meaningful or desirable to stack the bars. For instance, if the numeric quantity is market share in percent per product and region, stacking by product makes no sense. Even where stacking does makes sense, grouping can be preferable as it makes it easier to do quantitative comparisons across both category dimensions at the same time.
 
 <DashImage figure src="images/1YiojxPiaWY7lB5v9iZVgDg.webp" alt="Grouped bars." caption="Grouped bars." />
 
-
 * Stacked+grouped bars support three-dimensional categories, like revenue per product, geographical region, and sales channel.
 
 <DashImage figure src="images/19ObVOKbos4DoQsmsqbMnRQ.webp" alt="Stacked+grouped bars." caption="Stacked+grouped bars." />
-
 
 In all three variants, animation can be used to visualize data set changes, thus introducing an additional dimension (typically time) without cluttering the charts.
 

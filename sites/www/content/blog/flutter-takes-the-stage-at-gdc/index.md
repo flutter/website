@@ -12,7 +12,6 @@ Last year saw a [major update to the Flutter Casual Games toolkit](https://mediu
 
 <DashImage figure src="images/0zVBJt_90TX8KEYoD.webp" alt="Flutter for Games hero image" caption="Flutter for Games hero image" />
 
-
 Since the launch of the [Flutter Casual Games Toolkit](https://flutter.dev/games), Flutter has made strong progress within the game development arena. More than 15,000 new mobile games have been developed with Flutter in the last 12 months.
 
 Flutter has proven to be an appealing option for game apps of all sizes, empowering both first-time game devs like [Tatsuya](https://github.com/tty215), who used Flutter to create [Tinies Merge](https://play.google.com/store/apps/details?id=com.ttydev.tiniesmerge) in his spare time and secured a spot as a top 20 finalist at [Google Play’s Indie Game Festival](https://android-developers-jp.googleblog.com/2023/07/IndieGamesFestival2023.html), to the teams behind popular titles such as [Trivia Crack](https://play.google.com/store/apps/details?id=com.etermax.preguntados.lite&hl=en_US&gl=US), which has hundreds of millions of downloads across the globe!

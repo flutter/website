@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0e6DUZrDIvURyxTW2.webp" />
 
-
 We know Flutter devs love a good [challenge](https://flutter.dev/events/puzzle-hack), so just in time for the new year, we’re excited to announce the next Flutter challenge!
 
 [The Global Gamers Challenge](https://flutter.dev/global-gamers) is an 8 week contest to design, build, and publish sustainable games, sponsored by Flutter and [Global Citizen](https://www.globalcitizen.org/en/). The contest’s winners will receive a trip to NYC in September 2024 to meet some of the Flutter team for a day of workshops and mentorship, and then celebrate their achievements with up to 60,000 other Global Citizens at Global Citizen Festival 2024.
@@ -31,7 +30,6 @@ Europe is home to many of the world’s greatest public transportation systems. 
 We’re confident that games can encourage players to take small, real life, actions that add up to a large impact for the environment. In fact, [if you’d like to take direct action on these items, check out the campaigns Global Citizen is running now](https://www.globalcitizen.org/en/categories/defend-the-planet/).
 
 <DashImage figure src="images/0BI7eVnRDmTOmFkaQ.webp" />
-
 
 ## Why join the Global Gamers Challenge?
 
@@ -81,11 +79,9 @@ We recommend completing this challenge as part of a team. When you [register for
 
 <DashImage figure src="images/0fJPnnrD19GKt6MiK.webp" />
 
-
 So, whether you have a great idea but need teammates with technical skills to bring it to life, or if you have the technical skills, but want a great idea, make sure to fill out your profile accordingly and then peruse the [participants tab](https://globalgamers.devpost.com/participants) and look for folks whose profile details match what you’re looking for!
 
 <DashImage figure src="images/0L51Psa66pNh99Rsd.webp" />
-
 
 We’re particularly excited for the ideas that will come from technologists and activists working together towards a common goal. If you need extra support in finding a teammate, read over this [help article](https://help.devpost.com/hc/en-us/articles/360022031411-Participants-page-forming-a-team).
 

@@ -14,7 +14,6 @@ The Flutter framework does a good job being fast by default, but does that mean 
 
 <DashImage figure src="images/1MxtHyEfdBlANwu7ZRyX2mw.webp" alt="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." caption="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." />
 
-
 There are some general guidelines for performance optimization in Flutter:
 
 * Target as few widgets as possible when updating state.
@@ -40,7 +39,6 @@ The downside is that you can make your app significantly *faster* by making it w
 Below, you can see how adding a loop with nonsensical print statements to an app made the governor switch into higher gear, making the app much faster and its performance more predictable.
 
 <DashImage figure src="images/0vJSgoS61dEqAK7kf.webp" alt="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." caption="The problem with governors: by default, is that you can’t trust your numbers. In this boxplot, we have individual runs on the x axis (labeled by the exact time they started), and build times on the y axis. As you can see, when we introduce some completely unnecessary print statements, it makes build times go down, not up." />
-
 
 In this experiment, worse code resulted in faster build times (above), faster rasterization times, and higher frame rate. When objectively worse code results in better performance metrics, you can’t depend on those metrics for guidance.
 
@@ -78,13 +76,11 @@ ACTUAL_GOV=`adb shell "cat /sys/devices/system/cpu/cpu${CPU_NO}/cpufreq/scaling_
 echo "- result: ${ACTUAL_GOV}"
 ```
 
-
 * Your goal here is not to simulate real-world performance (no user scale-locks their device), but to have comparable performance metrics between runs.
 
 * In the end, you need to experiment, and tailor the shell script to the device you’ll be using. It’s work, but until you do this, your performance data will lie to you.
 
 <DashImage figure src="images/0PVigpdSw-WlNfJHI.webp" alt="An early version of Developer Quest being exercised by Flutter Driver on my desk." caption="An early version of Developer Quest being exercised by Flutter Driver on my desk." />
-
 
 ## Flutter Driver
 
@@ -103,7 +99,6 @@ Flutter Driver lets you exercise your app automatically. Read the [Performance p
 * For each version of your app, exercise it many times. For Developer Quest, I converged to 100 runs. (When you measure things that are noisier, like 99th percentile, you might need a lot more runs.) For POSIX-based systems, that just means running something like the following: `for i in {1..100}; do flutter drive --target=test_driver/perf.dart --profile; done`.
 
 <DashImage figure src="images/1Y7-lpotj3tTjqJyobYyKHw.webp" alt="Using Chrome’s timeline tool to inspect Flutter’s profile output." caption="Using Chrome’s timeline tool to inspect Flutter’s profile output." />
-
 
 ## Timeline
 
@@ -129,13 +124,11 @@ It’s better to look at as many metrics as possible, but I’ve found some more
 
 <DashImage figure src="images/00S0itDkQHzRjcY1N.webp" />
 
-
 * The easiest way to find out the total CPU time spent running Dart code is to measure the extent of `MessageLoop:FlushTasks` events in the timeline. For Developer Quest, I have written [a Dart tool](https://github.com/2d-inc/developer_quest/blob/master/test_driver/parse_timeline.dart#L82) to extract these.
 
 * To detect jank (i.e. skipped frames), look for extremes. For example, for the particular case of Developer Quest and the device we have for testing, it was helpful to look at 95th percentile build times. (The 90th percentile build times were too similar even when comparing code with vastly different levels of efficiency, and 99th percentile numbers tend to be noisy. Your mileage may vary.)
 
 <DashImage figure src="images/0ewPiWp1FMME8HDnV.webp" />
-
 
 * As mentioned above, exercise each version of your app several (perhaps 100) times. Then use average or percentile data with margins of error. Even better, use boxplots.
 
@@ -144,7 +137,6 @@ It’s better to look at as many metrics as possible, but I’ve found some more
 Once this is set up, you will be able to compare commits and experiments with confidence. Below, you can see an answer to a common dilemma: “is this optimization worth the maintenance overhead?”
 
 <DashImage figure src="images/1ynM53tboJVQFcpmxRuuu4A.webp" />
-
 
 I think that in *this particular* case, the answer is yes. With only a few more lines of code, each automated walkthrough of our app takes, on average, 12% less CPU time.
 

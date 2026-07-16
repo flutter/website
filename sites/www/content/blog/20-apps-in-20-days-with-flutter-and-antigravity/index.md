@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/18qm-mMi6Hod2jBw1_2nNEw.webp" alt="Dash having fun building Flutter apps." caption="Dash having fun building Flutter apps." />
 
-
 Hi, I’m Kevin Lamenzo! I recently joined the Dart and Flutter teams (🎉), and this January I set out on a quest: build 20 apps in 20 days using Flutter and [Antigravity](https://antigravity.google/). But why? First, the cost of curiosity has officially hit zero. You can go from idea to app in 10 minutes. Second, as a new member of the team I wanted to learn about the framework by building something. Last, and most importantly, I wanted to test the theory that in 2026, we all can be builders now.
 
 I’m here to share what I learned from the trenches. If you take only one thing from this post, let it be this: stop reading, and go build something.
@@ -23,7 +22,6 @@ During a recent check-up, my physician “strongly suggested” that I watch my 
 
 <DashImage figure src="images/1sV9X0IeCaF-IInvjLa4Ucg.webp" alt="My first app — a personal health tracker." caption="My first app — a personal health tracker." />
 
-
 ## Why Flutter?
 
 I’m always on the go. I initially built a web app, which is nice, but I needed this tool to be in my pocket. Flutter makes the transition from web app to mobile app feel like magic. Antigravity barely needed to change the code.
@@ -32,7 +30,6 @@ After building the mobile version, I even opened a [Google Play Developer](https
 
 <DashImage figure src="images/10WJQz_1nMC95larhInedMg.webp" alt="The health tracker app, with a default icon, on my phone." caption="The health tracker app, with a default icon, on my phone." />
 
-
 ## Tearing through ideas
 
 The success of building the health tracker was intoxicating. By the end of the first week, I had four more apps on my phone and I had launched an internal blog (I called it “App a Day”) to document my journey and share the messiness with my colleagues.
@@ -40,7 +37,6 @@ The success of building the health tracker was intoxicating. By the end of the f
 This felt like more than vibecoding — I was building. I was exploring my phone’s sensors, working with haptics, and even using APIs.
 
 <DashImage figure src="images/1Nrox9tKM1Jok5MQWp4q4Og.webp" alt="My internal blog landing page — App a Day" caption="My internal blog landing page — App a Day" />
-
 
 ## Hitting a wall trying to scale
 
@@ -54,7 +50,6 @@ This leads to my “AI thought leadership soapbox moment”:
 > Right now we’re all empowered to do amazing things alone, but the next frontier is **collaboration**. How we use our AI superpowers to work together in new ways is uncharted territory. So, if you go out and “vibe build” an app with your friends or a team, chart your journey and share it with the rest of us.
 
 <DashImage figure src="images/1fCJrAXkiAh4_FNu5I7L_bQ.webp" alt="Dash making a point on his soapbox." caption="Dash making a point on his soapbox." />
-
 
 ## My recommended flow
 
@@ -72,7 +67,6 @@ I got some questions from colleagues and friends about how I was staying organiz
 
 <DashImage figure src="images/16I979gEcIqfLnPdshiXjRQ.jpeg" />
 
-
 ## Breaking out of my internal blog
 
 The energy I got from this challenge eventually helped me explode right out of it. Instead of an internal blog, I went and launched my own personal site. Here I’m working outside the artificial bounds of building one small thing a day. Instead, I’m working on things big and small, grabbing ideas as they come, and moving on without hesitation.
@@ -80,7 +74,6 @@ The energy I got from this challenge eventually helped me explode right out of i
 Come find me at [ladevzo.com/scrappy-path](https://ladevzo.com/scrappy-path) if you want to see how I’m applying these lessons outside the corporate firewall.
 
 <DashImage figure src="images/1JLGrYXO8VOHh2Qp1NeHykQ.webp" alt="A screenshot of ladevzo.com. Check it out!" caption="A screenshot of ladevzo.com. Check it out!" />
-
 
 ## Conclusion: find your own flow
 

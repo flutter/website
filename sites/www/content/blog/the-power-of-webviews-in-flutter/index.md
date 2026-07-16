@@ -14,7 +14,7 @@ I meant the functionality of showing websites in Flutter apps… not rehabilitat
 
 ## Flutter WebViews are just like any other widget
 
-Incorporating the WebView plugin into your app is extremely simple. It’s just a widget like any other: `WebView(initialUrl: ‘https://flutter.io')`. You can also optionally enable or disable JavaScript in your WebView with the `javascriptMode` parameter. By default, JavaScript in your WebView is disabled, so to enable it you’d construct a WebView like so:
+Incorporating the WebView plugin into your app is extremely simple. It’s just a widget like any other: `WebView(initialUrl: 'https://flutter.io')`. You can also optionally enable or disable JavaScript in your WebView with the `javascriptMode` parameter. By default, JavaScript in your WebView is disabled, so to enable it you’d construct a WebView like so:
 
 ```dart
 WebView(
@@ -22,7 +22,6 @@ WebView(
   javascriptMode: JavascriptMode.unrestricted,
 )
 ```
-
 
 Pretty much all the information you want to know about your WebView and also the ability to control your WebView happens through the…wait for it… WebViewController. This controller is returned in a callback when the WebView is fully built:
 
@@ -39,11 +38,9 @@ WebView(
 _controller.loadUrl('http://dartlang.org/');
 ```
 
-
 The WebViewController is your ticket to modifying the WebView programmatically from Flutter or accessing properties like the current URL being displayed. To see how all this works in practice, I wrote a simple Wikipedia-browsing app that allows you to bookmark pages for later, so that the completionist in you will never forget about that last fascinating Wikipedia article the next time you find yourself falling down a [Wiki rabbit hole](https://en.wikipedia.org/wiki/Wiki_rabbit_hole).
 
 <DashImage figure src="images/1aMgCX1bmq6hRNgmsDDVOXQ.gif" alt="A Wikipedia-exploring app written in Flutter using WebViews. You can favorite pages and save them for later viewing" caption="A Wikipedia-exploring app written in Flutter using WebViews. You can favorite pages and save them for later viewing" />
-
 
 The complete code for this Wiki-rabbit-hole-browser can be found at this [GitHub repository](https://github.com/efortuna/wiki_browser).
 
@@ -123,7 +120,6 @@ WebView(
 )
 ```
 
-
 Or, written another way:
 
 ```dart
@@ -136,16 +132,13 @@ return WebView(
 );
 ```
 
-
 If you watch the [Boring Flutter Development Show](https://www.youtube.com/playlist?list=PLOU2XLYxmsIK0r_D-zWcmJ1plIcDNnRkK) at all, you may have seen us develop the Kraken News, I mean the *Hacker* News Reader App.
 
 <DashImage figure src="images/1jqWObs72aipeAj8-1PmlZw.gif" alt="latest version of the Hacker News app that we’ve been developing on our YouTube show" caption="latest version of the Hacker News app that we’ve been developing on our YouTube show" />
 
-
 To show gesture capturing in the context of an app, I modified the Hacker News app to show part of the webpage as a “preview.” This allows the user to scroll through the linked page vertically to determine if they want to open it in a separate page for more in-depth reading.
 
 <DashImage figure src="images/1XpAN7M4hnhe5OvJL3L22gw.gif" alt="Hacker News Reader app with WebView previews of the links. The WebViews capture the vertical drag gesture to enable scrolling of the previews." caption="Hacker News Reader app with WebView previews of the links. The WebViews capture the vertical drag gesture to enable scrolling of the previews." />
-
 
 The code for this Hacker News reader app can be found at [this GitHub repo](https://github.com/efortuna/hn_app/blob/master/lib/main.dart). (perhaps show code for `_buildItem` here).
 
@@ -159,9 +152,7 @@ PageView(children: [
 ]));
 ```
 
-
 <DashImage figure src="images/1t_QQZf2S8t-i1IIDs4_Xcw.gif" alt="WebViews in a PageView. The PageView controls the horizontal swiping and the WebViews can scroll vertically with no extra work on your part." caption="WebViews in a PageView. The PageView controls the horizontal swiping and the WebViews can scroll vertically with no extra work on your part." />
-
 
 ## Your WebViews might need a key parameter
 
@@ -171,16 +162,13 @@ An example of this situation is actually in the Hacker News app! Here’s what h
 
 <DashImage figure src="images/1W_1b-8uIxDeFKplKkxtY0g.gif" alt="This is what happens if you don’t use keys in a stateful app. When we change to the “New Stories” tab the wrong web preview page displays." caption="This is what happens if you don’t use keys in a stateful app. When we change to the “New Stories” tab the wrong web preview page displays." />
 
-
 As you can see, when we switch tabs, the “Interview with Alan Kay” tile is expanded, but the webview still shows the BBC page about Virgin Galactic! This is fixed by putting a key at the *topmost* collection widget (in this case the `ExpansionTile`):
 
 <DashImage figure src="images/1fdVsrNAivMi-VLPXWMW8gg.gif" alt="Whew! Using keys fixes the problem by showing a different WebView (and the corresponding correct website) for each item in the reader app" caption="Whew! Using keys fixes the problem by showing a different WebView (and the corresponding correct website) for each item in the reader app" />
 
-
 The super abbreviated explanation of why keys solve this is that when Flutter switches the list of stories to display, it sees that each set of stories is made of a ListView with ExpansionTile items. Flutter has a fast comparison algorithm to avoid unnecessarily redrawing the screen that checks the widget type and key. Without a key, because the widget types of each list are the same, the stateless items (like link titles) all get updated, but stateful components, (like the expanded state of ExpansionTile and the website’s URL), they fail to get redrawn. Adding a key fixes this issue. For a more thorough explanation, check out this video on keys:
 
 <YoutubeEmbed id="kn0EOS-ZiIc" title="When to Use Keys - Flutter Widgets 101 Ep. 4" fullwidth="true"/>
-
 
 Similarly, if you use WebViews in the context of a [Hero](https://flutter.io/docs/development/ui/animations/hero-animations) widget, you’ll want to use a global key so that Flutter knows the two WebViews are actually the same and doesn’t try to re-render the second.
 

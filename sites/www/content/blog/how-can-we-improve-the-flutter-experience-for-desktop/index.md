@@ -18,13 +18,11 @@ On average 78% of Flutter desktop developers across Windows, macOS, and Linux re
 
 <DashImage figure src="images/13nXqiZ_vAvOXBU4yeRTOHA.webp" alt="Satisfaction by target platform" caption="Satisfaction by target platform" />
 
-
 ## What parts of the desktop developer workflow are most challenging?
 
 Next, we asked developers to gauge their satisfaction at various stages of the software development workflow. The results showed that satisfaction tended to decrease over the course of the desktop app development process. This resulted in the lowest user satisfaction while *debugging performance issues* and *deploying the app*. Additionally, finding Flutter packages that work for desktop is challenging, according to qualitative feedback from the survey and focus groups.
 
 <DashImage figure src="images/1VbmSF-liAOyeParju2Y4kw.webp" alt="Flutter for desktop satisfaction by development workflow stage" caption="Flutter for desktop satisfaction by development workflow stage" />
-
 
 The Flutter ecosystem needs more desktop-enabled packages to better support desktop. (The most requested packages are listed later in this article.) We are hard at work on new desktop-enabled APIs (more on that below), but we can’t do it all. We hope that the community will also step up and help fill those gaps by creating new packages and adding desktop support to existing ones using [federated plugins](https://docs.flutter.dev/development/packages-and-plugins/developing-packages#federated-plugins), for example.
 
@@ -44,7 +42,6 @@ Flutter desktop developers told us that deploying desktop apps requires too many
 
 <DashImage figure src="images/1kfqE355iFMpjF2r52wVviA.webp" alt="Which of the following could be improved to help you reach your design goals when using flutter to develop desktop apps?" caption="Which of the following could be improved to help you reach your design goals when using flutter to develop desktop apps?" />
 
-
 We strive to make Flutter the best *cross-platform* app development framework, so this is always top of mind. However, improving “*adaptive layouts*” is an ambiguous problem space that affects every target platform, not just desktop. There are also many factors at play including screen size, operating system, input devices (to name a few), so designing a useful solution isn’t a trivial task. But our engineers are on the job, working on improvements to the [flutter_adapative_scaffold](https://pub.dev/packages/flutter_adaptive_scaffold) package and creating codelabs to walk you through how to efficiently build adaptive apps. In the meantime, stay tuned for [Flutter Forward](https://flutter.dev/events/flutter-forward) in January, where Greg Spencer and Justin McCandless will be discussing how to architect adaptive apps using existing Flutter tools.
 
 As for drag and drop and keyboard shortcuts, they have both been on our radar for a while now. In fact, the [Shortcuts Widget](https://api.flutter.dev/flutter/widgets/Shortcuts-class.html) was recently released. You can see it in action in this recent “[Widget of the Week” episode](https://www.youtube.com/watch?v=6ZcQmdoz9N8). Finally, support for drag and drop is one of our top priorities in 2023!
@@ -63,7 +60,6 @@ Package support for desktop is still catching up to that of mobile and web. The 
 
 <DashImage figure src="images/1tleEgMs6XOSPDo4smD7Zvg.webp" alt="Which APIs or features do you wish were better supported by Flutter?" caption="Which APIs or features do you wish were better supported by Flutter?" />
 
-
 This feedback was closely aligned with Flutter’s current list of priorities with APIs for multi-window, native menus, and web views in the pipeline. Once those are released we can begin to prioritize solutions to local data storage and database access. Some additional package requests that are currently lower on the priority list, but also warrant consideration, are audio/video players and audio/video devices. A need for packages that support clipboard management and complex input devices (3D mouse, gamepad controllers, for example) came up during focus groups at Flutter Vikings, but wasn’t included in the quarterly survey.
 
 If you are interested in contributing to Flutter packages for desktop, consider helping grow the Flutter ecosystem by creating packages to fill these gaps or submitting PRs to existing packages. By working together, we are confident the Flutter package ecosystem will grow and adapt to better support desktop developers.
@@ -81,7 +77,6 @@ The last category surveyed covered Flutter’s desktop documentation. Satisfacti
 This feedback has been very helpful for prioritizing documentation work in Q4 2022 and 2023. As a result, our team is currently drafting documentation to help desktop developers publish their apps and including a helpful [codelab](https://github.com/flutter/codelabs/tree/main/ffigen_codelab) that is nearly complete! Although automatic updating is not a feature we maintain for Flutter, there are a number of [community](https://pub.dev/packages/auto_updater) [packages](https://pub.dev/packages/squirrel) in the Flutter ecosystem that provide this capability. Therefore, it’s not high on our priority list to provide an additional package. Please see [pub.dev](https://pub.dev) for automatic updating packages and their associated documentation.
 
 <DashImage figure src="images/1Ku1PCFW0lYew-Dh7pIGDvQ.webp" alt="Which of the following desktop-specific topics do you wish was better documented?" caption="Which of the following desktop-specific topics do you wish was better documented?" />
-
 
 ## What’s next?
 

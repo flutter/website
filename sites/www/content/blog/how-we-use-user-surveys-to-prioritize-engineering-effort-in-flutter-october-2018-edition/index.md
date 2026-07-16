@@ -28,11 +28,9 @@ One other interesting finding was that a larger percentage of advanced Flutter u
 
 <DashImage figure src="images/1cAJxrRQt1MrmnDJ2CkZrNQ.webp" alt="Satisfaction with Dart by self-reported level of experience with Flutter" caption="Satisfaction with Dart by self-reported level of experience with Flutter" />
 
-
 We also found that the proportion of respondents using Flutter for their main job has increased from 23% to 30%, while the proportion evaluating Flutter for potential production has decreased from 45% to 40%. We’re glad that more developers seemed to have moved from evaluating Flutter to using Flutter in production.
 
 <DashImage figure src="images/1gKUzs2GxDWCBIS-i218_zQ.webp" />
-
 
 In terms of the packages and plugin ecosystem, the percentage of users who are somewhat or very satisfied has decreased to 74% from 83%. It was a somewhat surprising result, because there has been rapid growth in the number of packages available to Flutter developers. At the end of July, there were 420 packages, and there are now [over 1,200 packages](https://pub.dartlang.org/flutter/packages?q=dependency%3Aflutter). We attributed this decrease in satisfaction to growing expectations of the maturity of Flutter’s package ecosystem, as Flutter itself approached 1.0. We expect this measure to improve as we deliver and refine more first-party plugins such as WebView and Google Maps (added after this survey) and more community members contribute to Flutter’s ecosystem.
 
@@ -46,18 +44,13 @@ First, users wanted Flutter to better support building iOS style UIs from the Ju
 
 <DashImage figure src="images/06d7cgqMRk3cxCH0V.webp" alt="[CupertinoActionSheet](https://docs.flutter.io/flutter/cupertino/CupertinoActionSheet-class.html)" caption="[CupertinoActionSheet](https://docs.flutter.io/flutter/cupertino/CupertinoActionSheet-class.html)" />
 
-
 <DashImage figure src="images/08bFlQeCsOjn4dJOM.webp" alt="[CupertinoDatePicker](https://docs.flutter.io/flutter/cupertino/CupertinoDatePicker-class.html)" caption="[CupertinoDatePicker](https://docs.flutter.io/flutter/cupertino/CupertinoDatePicker-class.html)" />
-
 
 <DashImage figure src="images/0RhjtQusRV-2jnKR1.webp" alt="[CupertinoSegmentedControl](https://docs.flutter.io/flutter/cupertino/CupertinoSegmentedControl-class.html)" caption="[CupertinoSegmentedControl](https://docs.flutter.io/flutter/cupertino/CupertinoSegmentedControl-class.html)" />
 
-
 <DashImage figure src="images/0Hdrg2nvtSyrnyC9v.webp" alt="Hero Nav" caption="Hero Nav" />
 
-
 <DashImage figure src="images/0sqHRiY_r9CnBz774.webp" alt="[CupertinoAlertDialog](https://docs.flutter.io/flutter/cupertino/CupertinoAlertDialog-class.html)" caption="[CupertinoAlertDialog](https://docs.flutter.io/flutter/cupertino/CupertinoAlertDialog-class.html)" />
-
 
 For more information, please see the [change log](https://github.com/flutter/flutter/wiki/Changelog). We found that this led to **14%** increase in the proportion of users very satisfied or somewhat satisfied with Cupertino widgets (from 58% to 72%).
 
@@ -67,12 +60,9 @@ The effort in improving documentation was not limited to state management. From 
 
 <DashImage figure src="images/1gm1C-7frVIwrLDmSJIHOhQ.webp" alt="Sample code of a Card class. The clipboard icon on the upper right corner help you copy the entire code at once." caption="Sample code of a Card class. The clipboard icon on the upper right corner help you copy the entire code at once." />
 
-
 <DashImage figure src="images/0c-MqZJ30E1AOVgrw.webp" alt="Sample app for a Card class. You can use the clipboard icon to copy the code for this app or use the command to create an app from the command line. See the gif below!" caption="Sample app for a Card class. You can use the clipboard icon to copy the code for this app or use the command to create an app from the command line. See the gif below!" />
 
-
 <DashImage figure src="images/0-yT0Ipqt2zlSl--a.webp" alt="Create a sample app from the command line" caption="Create a sample app from the command line" />
-
 
 ## How are we prioritizing our engineering effort with users’ feedback this time?
 

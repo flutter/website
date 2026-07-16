@@ -16,7 +16,6 @@ This article reviews how Flutter’s StatefulWidget and InheritedWidget classes 
 
 <DashImage figure src="images/1DsbHptClIQire31aIDtF6A.webp" alt="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." caption="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." />
 
-
 ## Disclaimers, Reader Expectations
 
 The approach for building MVC apps outlined in this article is not the one and only way to do so. There are many ways to bind Flutter to models and if you’re planning something big, you might want to survey your options, some of which I’ve listed at the end of this article. On the other hand, even if you don’t decide to adopt the little ModelBinding class presented in the final section, you may learn something new about Flutter by reading this article.
@@ -271,7 +270,6 @@ This article was intended to explain the basics of Flutter’s StatefulWidget an
 ModelBinding&lt;T&gt; is a simple class based on InheritedWidget that can be used to bind an arbitrary model type of type T to an application’s widgets. Use it by [downloading the example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5), and dropping its page of code into your app. And if doesn’t work for you: change it.
 
 <DashImage figure src="images/1IVBU5tVCV5TFUI3E5V4fEg.webp" alt="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." caption="[View the complete ModelBinding&lt;T&gt; example](https://gist.github.com/HansMuller/a3a6d520c6a24238bf1b1b9e3d473bf5)." />
-
 
 ## Related Articles
 

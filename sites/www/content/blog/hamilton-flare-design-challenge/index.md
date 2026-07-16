@@ -12,18 +12,15 @@ The Flutter community continues to impress us. We often see new initiatives to h
 
 <DashImage figure src="images/0wAn4IQgexh-pkr6K.webp" />
 
-
 Hamilton was [one of the first apps built with Flutter](https://medium.com/flutter/video-hamilton-app-built-in-3-months-with-flutter-reaches-1m-installs-f37f81856be4). The app was built in 3 months, reached 1M+ installs, and was featured on the Apple App and Google Play stores. Here is a video we made about the app:
 
 <YoutubeEmbed id="kfd-oLypqFI" title="Hamilton app built with Flutter and featured on iOS and Android (Flutter Developer Story)" fullwidth="true"/>
-
 
 Flare is a new design and animation tool that allows users to build real, interactive, animated assets that run in real time in their final product. What better way to explore the potential of Flare for the Hamilton app than to open it up to designers, developers, and Hamilton fans.
 
 ## #HAMAPPFLARE
 
 <DashImage figure src="images/1N2BgtvNZQuZtG1ZpzNoxcA.gif" />
-
 
 **The #HamAppFlare Challenge is a unique opportunity to win prizes and be featured in the Hamilton app (built with Flutter) while learning to use Flare.**
 
@@ -58,7 +55,6 @@ This is your chance to create amazing animations with Flare and Flutter using th
 ## Hamilton — Rise Up With Flutter & Flare!
 
 <DashImage figure src="images/0_uc59w_DpnfksbT1.jpg" />
-
 
 In 2017, the hit Broadway musical, Hamilton, was the first brand outside of Google to launch a production app using [Flutter](https://flutter.dev/). The Hamilton app has been the [flagship Flutter app](https://www.youtube.com/watch?v=kfd-oLypqFI) since its launch with over 3 million installs globally.
 

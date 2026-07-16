@@ -14,7 +14,6 @@ In debug mode, most of Dart’s plumbing is shipped to the device: the Dart runt
 
 <DashImage figure src="images/1oVVba1QhXL1hUBKE9sfenw.webp" alt="*Dart components in Flutter’s debug and release modes*" caption="*Dart components in Flutter’s debug and release modes*" />
 
-
 Dart’s runtime includes a garbage collector, a necessary component for allocating and deallocating memory as objects are instantiated and become unreachable.
 
 And with Flutter, that can be *a lot* of objects. Stateless Widgets are created as they’re rendered on screen, destroyed and rebuilt when the app’s state changes or when they’re no longer visible, most with a short lifespan. For an app with a reasonably complex UI, that can run to thousands of widgets.
@@ -48,7 +47,6 @@ To determine which objects are alive or dead, the collector starts with root obj
 For more information on this, check out [Cheney’s algorithm](https://en.wikipedia.org/wiki/Cheney%27s_algorithm).
 
 <DashImage figure src="images/1pNaeZ0l8oMCP-f1UUs-V1g.webp" alt="*Young Space Scavenger garbage collection*" caption="*Young Space Scavenger garbage collection*" />
-
 
 ### Parallel Marking and Concurrent Sweeping
 

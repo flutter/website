@@ -18,7 +18,6 @@ If you’ve helped out with performance in 2020, we will cover that in a future 
 
 <DashImage figure src="images/1bWXPMmCXDmBWN7rZbxZcyg.webp" alt="70% memory reduction in fast scrolling through large images" caption="70% memory reduction in fast scrolling through large images" />
 
-
 **70% memory reduction in fast scrolling through large images
 contributors: [liyuqian](https://github.com/liyuqian), [dnfield](https://github.com/dnfield), [chinmaygarde](https://github.com/chinmaygarde)**
 
@@ -305,6 +304,5 @@ To achieve some huge improvements (3x for example), the bad performance of the o
 ## Conclusion
 
 <DashImage figure src="images/1VpFwtNIAQAKacPIFLIbGYw.webp" alt="57% of respondents are very satisfied with Flutter. In total, 94% are positively satisfied." caption="57% of respondents are very satisfied with Flutter. In total, 94% are positively satisfied." />
-
 
 Thanks to these contributions from our community, the proportion of users positively satisfied with Flutter’s mobile performance increased from 85% in Q3 2019 to 92% in 2020. Despite our best effort, some performance contributions in Q3-Q4 2019 may be missed in this update. Please don’t hesitate to let us know of any missing contributions, and we’ll put them in the next update.

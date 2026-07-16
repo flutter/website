@@ -50,7 +50,6 @@ We’ve all been there: you build a beautiful UI, run the app, and are greeted b
 
 <DashImage figure src="images/13K1rgoDtIBWbIFZPp1VCEQ.webp" />
 
-
 **Prompt:** *“Check for and fix static and runtime analysis issues. Check for and fix any layout issues.” (Note: For brevity, parts of this recording have been sped up.)*
 
 Behind the scenes, the AI agent uses the Dart and Flutter MCP Server’s tools to:
@@ -68,7 +67,6 @@ You can then keep or undo the code changes.
 Imagine you need to add a chart to your app. Which package should you use? How do you add it and write the boilerplate? The Dart and Flutter MCP Server streamlines this entire process.
 
 <DashImage figure src="images/1DGTEKfS3-ZANFr66VG8MRw.gif" />
-
 
 **Prompt:** *“Find a suitable package to add a line chart that maps the number of button presses over time.” (Note: For brevity, parts of this recording have been sped up.)*
 
@@ -96,7 +94,6 @@ The [Gemini CLI](https://github.com/google-gemini/gemini-cli) is an open-source 
 
 <DashImage figure src="images/0gD-O6VeS0xT6EdDh.webp" />
 
-
 Follow the [quickstart instructions](https://github.com/google-gemini/gemini-cli?tab=readme-ov-file#quickstart) to install the Gemini CLI on your machine.
 
 Ensure your environment is running Dart SDK 3.9/Flutter 3.35 beta or later. Switch channels and run `flutter upgrade` if you need to.
@@ -116,7 +113,6 @@ To configure the Gemini CLI to use the Dart and Flutter MCP Server, edit the `.g
   }
 }
 ```
-
 
 Pro tips:
 
@@ -142,7 +138,6 @@ You can verify the MCP server has been configured properly by entering `/mcp` in
 
 <DashImage figure src="images/1eYea3SzwoGDCQeP5Tmq-Pg.webp" />
 
-
 ## Firebase Studio
 
 [Firebase Studio](https://firebase.studio/) is an agentic, cloud-based development environment that helps you build and ship production-quality full-stack AI apps, including APIs, backends, frontends, mobile, and more.
@@ -159,7 +154,6 @@ For more information about MCP server configuration in Firebase Studio, see [Cus
 
 <DashImage figure src="images/0Vjo7hhpe6uDe05yS.webp" />
 
-
 ## GitHub Copilot in VS Code
 
 [GitHub Copilot](https://code.visualstudio.com/docs/copilot/overview) is an AI-powered coding assistant integrated into VS Code. The Dart VS Code extension provides a simple integration for Copilot by registering the Dart and Flutter MCP Server with VS Code. Copilot, or any other AI agent that supports the VS Code MCP [API](https://code.visualstudio.com/api/extension-guides/mcp), automatically configures the Dart and Flutter MCP Server on your behalf so that you don’t have to do it manually.
@@ -172,8 +166,7 @@ To configure the Dart and Flutter MCP Server, add the following to your VS Code 
 "dart.mcpServer": true
 ```
 
-
-You might also consider adding`"chat.mcp.discovery.enabled": true` to your VS Code user settings to automatically discover servers configured in other tools like Claude Desktop or Cursor.
+You might also consider adding `"chat.mcp.discovery.enabled": true` to your VS Code user settings to automatically discover servers configured in other tools like Claude Desktop or Cursor.
 
 ## Cursor
 
@@ -197,7 +190,6 @@ To configure Cursor to use the Dart and Flutter MCP Server, you can either click
   }
 }
 ```
-
 
 ## Other tools
 

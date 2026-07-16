@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1CXyt0NsoasPW5__Ev4AGNg.webp" />
 
-
 ## Meet the Flutter Extension for Gemini CLI
 
 ### Build high quality, feature rich apps with the new Flutter Extension for Gemini CLI
@@ -28,7 +27,6 @@ To get started, install the extension with the following command in your termina
 ```bash
 $ gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
-
 
 The Flutter Extension for Gemini CLI comes with a set of commands to help you with critical stages of development. Here are a few of the most common commands and how to use them:
 
@@ -48,9 +46,7 @@ You can create a new application using the `/create-app` command. This command b
 /create-app
 ```
 
-
 <DashImage figure src="images/1xmF3JHqzQi-d9W79JcscZw.gif" alt="Create app app with the /create-app command" caption="Create app app with the /create-app command" />
-
 
 The `DESIGN.md` file is a design document for the app; it specifies the problems that the app solves and provides technical details about how it will work. You can edit this file before you continue with the implementation steps, allowing you to guide Gemini to build the exact app that you’re looking for.
 
@@ -64,7 +60,6 @@ Before moving to the next phase, the extension will ask for your approval. You c
 
 <DashImage figure src="images/1fK1Ra4g1hYe0nGwRFj4nCQ.gif" alt="The guided implementation plan keeps Gemini CLI on track" caption="The guided implementation plan keeps Gemini CLI on track" />
 
-
 ### Modify
 
 To make changes to existing code, the `/modify` command initiates a guided development session. It asks for your goals, offers to create a new branch, and generates a `MODIFICATION_PLAN.md` design doc outlining the proposed modifications and a phased implementation plan.
@@ -73,9 +68,7 @@ To make changes to existing code, the `/modify` command initiates a guided devel
 /modify
 ```
 
-
 <DashImage figure src="images/18hlXVoJUQVz3piOiCsg-gQ.gif" alt="Use the /modify command to create a detailed modification plan for Gemini to follow" caption="Use the /modify command to create a detailed modification plan for Gemini to follow" />
-
 
 ### Clean up and commit
 
@@ -83,13 +76,11 @@ The final step is to commit the changes using `/commit`. This command prepares y
 
 <DashImage figure src="images/1CawKl49B-kWc1XoPGHVTaw.gif" alt="Use the /commit command to clean up and prepare the code for commit" caption="Use the /commit command to clean up and prepare the code for commit" />
 
-
 ## Fully loaded with best-practices
 
 Every interactive chat session includes rules containing best-practices for Flutter and Dart development. These rules ensure that Gemini writes high-quality Dart and Flutter code, interacts with MCP server tools correctly, and follows best practices such as creating unit tests, writing documentation, ensuring accessibility, and more.
 
 <DashImage figure src="images/1tOfRiFIWVkDO3IXLRFcnEw.gif" alt="The extension includes rules and best-practices" caption="The extension includes rules and best-practices" />
-
 
 ## Access to development tools with the Flutter and Dart MCP server
 
@@ -108,7 +99,6 @@ The Dart and Flutter MCP server is automatically configured when you install the
 * …and more!
 
 <DashImage figure src="images/1iiDlKE9ikBNvUMHvr6YWSw.gif" alt="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" caption="The MCP server provides Gemini CLI access to Dart and Flutter DevTools" />
-
 
 ## Try it out
 

@@ -16,7 +16,6 @@ For all the details, check out the freshly updated [Flutter roadmap on GitHub](h
 
 <DashImage figure src="images/0sO8Aqa-_eHZ9jcZz.webp" />
 
-
 As with any other software product roadmap, note that plans tend to shift and adapt throughout the year, so don’t be surprised if some changes happen along the way. But we still feel it’s important to share our overall plans.
 
 Also note that what we’re listing here is primarily content gathered from those of us who work on Flutter as employees of Google. By now non-Google contributors outnumber those employed by Google, so this is not an exhaustive list of all the new and exciting things that we hope will come to Flutter this year!

@@ -18,13 +18,11 @@ So, if you’ve determined that you need an explicit animation, there are a whol
 
 <DashImage figure src="images/1nXKMdHu2YNqZmrGClWlDZw.webp" alt="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." caption="A flow chart for understanding what animation to use in any scenario. This article focuses on the two bottom blue end-states, AnimatedBuilder and AnimatedWidget." />
 
-
 ## Specific Example
 
 To make this more concrete, let’s walk through a specific scenario: I want to write an app with an alien spaceship and have a spaceship beam animation.
 
 <DashImage figure src="images/1BdRzZMnfFtwe0Wn1dxWp4g.gif" alt="Maybe something exactly like this." caption="Maybe something exactly like this." />
-
 
 I drew a spaceship beam with a gradient that fades from yellow to transparent, beginning the fade at the very center of the gradient. Then, I created the “beam” shape from that gradient with a path clipper.
 
@@ -194,7 +192,7 @@ In this specific case, a *better* way to accomplish the same thing is to give `B
 
 So, we have our animation, but the build method that contains the `AnimatedBuilder` code is a little large. If your build method is starting to get hard to read, it’s time to refactor your code!
 
-You could pull your `AnimatedBuilder` code out into a separate widget, but then you just have a build method inside a build method, which is a little silly. Instead, you can accomplish the same animation by creating a new widget that extends `AnimatedWidget`. I’ll name my widget `BeamTransition` to be consistent with the *FooTransition* naming convention for explicit animations. I pass in the animation controller to `BeamTransition` and reuse the body of the `AnimatedBuilder’s` builder function.
+You could pull your `AnimatedBuilder` code out into a separate widget, but then you just have a build method inside a build method, which is a little silly. Instead, you can accomplish the same animation by creating a new widget that extends `AnimatedWidget`. I’ll name my widget `BeamTransition` to be consistent with the *FooTransition* naming convention for explicit animations. I pass in the animation controller to `BeamTransition` and reuse the body of the `AnimatedBuilder's` builder function.
 
 ```dart
 class MyHomePage extends StatefulWidget {
@@ -275,7 +273,6 @@ That’s a vote in favor of using `AnimatedWidget` whenever possible. However, i
 This is an article version of the video below. If you prefer videos, click below:
 
 <YoutubeEmbed id="fneC7t4R_B0" title="Creating custom explicit animations with AnimatedBuilder & AnimatedWidget - Flutter in Focus" fullwidth="true"/>
-
 
 Articles in this series:
 

@@ -13,7 +13,6 @@ layout: blog
 
 <DashImage figure src="images/1Mg2Bj5FBg1I19r1Jw4q9Kg.webp" />
 
-
 Coding agents and the way we use them has already dramatically evolved since their arrival just a handful of months ago. Initially, the focus was heavily on observation — reviewing every single output line by line. But as models rapidly increased in capability, the industry shifted toward true agentic engineering. Today, developers, PMs, and designers are wearing multiple hats, focusing on lofty conceptual goals and letting agents tackle the individual components.
 
 To explore this new frontier, our team wanted to build an experience that showcased this exact workflow. We wanted to build a game, generate its assets, write the marketing page, and deploy the whole thing, all using Google’s premiere AI-native platform: Antigravity.
@@ -56,13 +55,11 @@ Once we loaded the project into Antigravity, we equipped our agent with the MCP 
 
 <YoutubeEmbed id="3mKKi8ZW0Yg" title="Dashlander v1" fullwidth="true"/>
 
-
 It took about another 100 prompts to get the game to its final state. A huge percentage of those prompts were just about code organization and adding tests. Everyone has their own relationship with reading AI-generated code, but Rody and I highly value what I’ve been calling “cognitive ownership” and want to still understand the deep inner workings of our app. We read a lot of what Gemini wrote, pushing back on the LLM to refactor for clarity and reusability.
 
 I also had to face a harsh reality: I am not great at trigonometry, and *boy* is there a lot of it in DashLander. When the agents told me they perfectly implemented a new system like landing calculations and scoring, I’d often play the game and immediately see discrepancies. Unfortunately, no matter how much I read Gemini’s dense trigonometry in my codebase, I couldn’t pinpoint where the disconnect was hiding. To escape this Catch-22, I asked Gemini to build a top-secret debug mode behind a keyboard shortcut. It rendered overlays showing the exact terrain data, relative tilts of the surface, and collision hitboxes, allowing me to prove to myself exactly where the agent’s calculations were wrong. Armed with definitive evidence, I was able to help work with Gemini to fix problems in the files of dense math.
 
 <YoutubeEmbed id="cVcM8jZ_Ioo" title="Dashlander debug mode" fullwidth="true"/>
-
 
 ### The tricky business of time travel
 

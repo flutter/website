@@ -14,7 +14,6 @@ That’s why we’re excited to launch the [Flutter Consultant Directory.](https
 
 <DashImage figure src="images/1m5eYW0Qgmdse1bpkqbsPLQ.webp" alt="flutter.dev/consultants" caption="flutter.dev/consultants" />
 
-
 We’re launching this new page to simplify finding trusted Flutter partners. We vet the partners listed in the directory to verify their record of successful Flutter projects, a sufficient number of skilled developers on staff, and their commitment to grow the Flutter community.
 
 ## Resources for consultants
@@ -27,13 +26,11 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 <DashImage figure src="images/07xi_G_tYKGROB8su.webp" alt="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." caption="Visit the [link](https://docs.google.com/presentation/d/1TblnxXMVO1c75ggdLnA4cPh_nsDVvT--RsFqUIN6Fvg/copy) to make your own copy." />
 
-
 ### Building Wonders with Flutter
 
 *Testimonial from a top Flutter design agency, gSkinner, on why Flutter has been a valuable toolkit for their team.*
 
 <YoutubeEmbed id="6IKhXXFFOuw" title="Build Wonders with Flutter" fullwidth="true"/>
-
 
 ### [How FlutterFlow makes consultants faster](https://medium.com/flutterflow-enterprise/how-flutterflow-helps-consultants-solve-clients-last-mile-of-digital-transformation-b6d8e7d3b49e)
 
@@ -41,20 +38,17 @@ As part of this launch, we’re highlighting resources to help prospective consu
 
 <DashImage figure src="images/0H35eVj4imixLHgDv.gif" />
 
-
 ### [**How IBM Created their Flutter Center of Excellence**](https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441)
 
 *Learn why and how IBM built out a Flutter Center of Excellence with hundreds of Flutter developers. [Read the blog post](https://medium.com/flutter/how-ibm-is-creating-a-flutter-center-of-excellence-3c6a3c025441).*
 
 <DashImage figure src="images/1wgS4PLHJhlegD-knIZhEFA.webp" />
 
-
 ### [Training Clients on Flutter](https://verygood.ventures/blog/training-clients-in-flutter)
 
 *Learn how VGV created their successful Flutter training program. You can up skill your own developers, or your clients.* [*Read the blog post*](https://verygood.ventures/blog/training-clients-in-flutter).
 
 <DashImage figure src="images/00WsqrUDKa7Uikyh9.webp" />
-
 
 ## Ready to apply?
 

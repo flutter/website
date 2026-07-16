@@ -12,13 +12,11 @@ In M22 of the Flutter plugin for IntelliJ we added a new tool window — the Flu
 
 <DashImage figure src="images/0TUzb7DjU9HweZAAI.webp" />
 
-
 ## What’s new?
 
 Now with M23, we’ve introduced a new experimental feature — a live, in-IntelliJ rendering of the widget under development. This can be enabled from the Flutter preferences page in IntelliJ:
 
 <DashImage figure src="images/0NeOjBxMN6kT43xJ7.webp" />
-
 
 In order for this to work for a widget, the widget class must define a forDesignTime() constructor. The reason for this is that widgets are usually created with context specific constructor parameters. When rendering the preview of the widget, we don’t necessarily know the right values for these parameters. So, we let the user provide them for us via this specially named constructor.
 
@@ -60,7 +58,6 @@ class MyWidget extends StatelessWidget {
 and its preview would look something like this:
 
 <DashImage figure src="images/1Zut6fVhPFiAPFp2Uq24H6Q.webp" />
-
 
 When trying this out, you’ll note that the preview area will show you the layout of any number of different kinds of widgets (constructible using a forDesignTime() constructor), and will update automatically as you type.
 

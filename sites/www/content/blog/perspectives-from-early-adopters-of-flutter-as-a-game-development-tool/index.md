@@ -32,8 +32,8 @@ The following table provides more detail about the background of the developers 
 
 ID | Background | Types of games | Experience with game engines
 -- | -- | -- | --
-P01 | BFA in hand-drawn animation;  Developed video game graphic pipeline tools at small video game studio; Mobile game developer since 2011. | Puzzle | Unity, Godot, Flame
-P02 | 10 years software development experience mostly in web; P03’s company migrated mobile app stack from Xamarin to Flutter; Started own consulting firm in 2018 and a client requested a mobile game in Flutter after reading P02’s blog post about Flame. | Puzzle | Microsoft XNA, Unity, Flame
+P01 | BFA in hand-drawn animation;  Developed video game graphic pipeline tools at small video game studio; Mobile game developer since 2011. | Puzzle | Unity, Godot, Flame
+P02 | 10 years software development experience mostly in web; P03's company migrated mobile app stack from Xamarin to Flutter; Started own consulting firm in 2018 and a client requested a mobile game in Flutter after reading P02's blog post about Flame. | Puzzle | Microsoft XNA, Unity, Flame
 P03 | Uses C# and C++ at work for 3D modeling. Started developing a new game engine and were into graphic pipelines. P03 started with Flutter in 2019 on a 1-month side game project. | 2D Shooter, Platform game | Unity, Unreal, Godot, Flame
 P04 | Has experience in Java, frontend development with Angular. 2 years ago, P04 started mobile development with Kotlin/Android. | Platform game | Flame, some exposure to Unity and Unreal
 P05 & P06 | Established a game studio specializing in casual games for over 15 years. P05 & P06 worked on the same game and were interviewed together. | Word puzzle | None
@@ -136,7 +136,6 @@ It’s unsurprising that many Flutter users (62.4%) didn’t know that they coul
 
 <DashImage figure src="images/0n0cpV0PkueLSiSYx.webp" />
 
-
 The wide interest in building games with Flutter is also reflected in the fact that many Flutter users are no strangers to game development in general. Out of 936 respondents, 500+ had experience with Unity, 130+ with Unreal, 120+ with [Flame](https://docs.flame-engine.org/1.0.0/#), and 80+ with Godot. It’s encouraging to see that many developers are already equipped with game development skills.
 
 ### Many Flutter game developers are just getting started
@@ -145,7 +144,6 @@ We then asked those who were either aware of or interested in Flutter’s abilit
 
 <DashImage figure src="images/0ZrpkIfhAQ0MW1RYp.webp" />
 
-
 ### There are more Flutter games out there than we thought
 
 We asked respondents to point us to any games they have built with Flutter. To our pleasant surprise, we received 148 responses. Many of those games were 2D puzzles or [platform games](https://www.google.com/search?q=platformers+definition&oq=platform&aqs=chrome.0.69i59j46i67i433j69i64l3j69i65j69i60j69i61.2458j0j7&sourceid=chrome&ie=UTF-8), while a handful of them had attempted pseudo-3D effects using Flutter.
@@ -153,7 +151,6 @@ We asked respondents to point us to any games they have built with Flutter. To o
 It seems to be entirely possible to build highly successful mobile games with Flutter. For example, [Kelimelik](https://play.google.com/store/apps/details?id=com.he2apps.kelimelik&hl=en_US&gl=US), a Flutter game we learned about through this survey, had 4.5 stars on Google Play with more than 356,000 reviews and 5,000,000 installs at the time of writing!
 
 <DashImage figure src="images/1gq-r9Mn1BzgKL8XYLnFsEQ.webp" />
-
 
 ### Flutter users want more documentation for game development
 

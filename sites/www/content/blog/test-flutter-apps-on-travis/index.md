@@ -56,7 +56,6 @@ $ flutter test
 00:00 +1: All tests passed!
 ```
 
-
 Hurray! Now that we have the test running locally, let’s run it on Travis.
 
 ## Travis

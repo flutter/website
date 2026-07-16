@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/06wPqdCz_TzB2gAXr.webp" />
 
-
 Today we’re excited to announce that [CodePen](https://codepen.io), the leading social development environment for millions of front-end developers and designers, is adding [support for Flutter](https://codepen.io/flutter)! For web developers CodePen has long been a great place for sharing design explorations, new techniques, and ideas. Now with the introduction of Flutter, CodePen enables a new audience to learn, share and promote their creativity.
 
 In the words of Alex Vazquez, one of the co-founders of CodePen:
@@ -24,7 +23,6 @@ DartPad is an excellent tool for quickly testing an idea in code, or for sharing
 
 <DashImage figure src="images/1uEJNcnBPZRxMr1EK0aqBRw.webp" alt="*[“Light effect” animation](https://codepen.io/zoeyfan/pen/mdeebvy) by [Mariano Zorrilla](https://gist.github.com/mkiisoft)*" caption="*[“Light effect” animation](https://codepen.io/zoeyfan/pen/mdeebvy) by [Mariano Zorrilla](https://gist.github.com/mkiisoft)*" />
 
-
 ## Flutter editor on CodePen
 
 Let’s take a quick tour of the Flutter editor on CodePen. You can create a new Flutter pen (CodePen’s term for “code snippet”) either from [scratch](https://codepen.io/pen/editor/flutter) or from an existing [template](https://codepen.io/topic/flutter/templates). Many thanks to our esteemed Flutter community members ([@aednlaxer](https://github.com/aednlaxer), [@ayushnishad](https://github.com/ayushnishad), [@diegoveloper](https://github.com/diegoveloper/), [@divyanshub024](https://github.com/divyanshub024), [@egorbelibov](https://github.com/egorbelibov/), [@gskinnerTeam](https://github.com/gskinnerTeam), [@mkiisoft](https://gist.github.com/mkiisoft), [@orestesgaolin](https://github.com/orestesgaolin/), [@SlaxXxX](https://github.com/SlaxXxX), and others) for contributing some cool samples to the template list.
@@ -33,16 +31,13 @@ Let’s start with the [“GooeyEdge” template](https://codepen.io/zoeyfan/pen
 
 <DashImage figure src="images/111R_BtjzdSuPel44qDByKA.gif" alt="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" caption="*[“Gooey edge” animation](https://codepen.io/zoeyfan/pen/ExVaXGK) by [Grant Skinner](https://github.com/gskinnerTeam)*" />
 
-
 You can also make changes to the Flutter code, and see them take effect accordingly. For example, if we change the color of the page control indicator from “white” to “blue” (line 326), you can see the color gets updated within a few seconds! CodePen automatically recompiles your code each time you make a change. Just update a line, wait a few seconds, and the new output appears.
 
 <DashImage figure src="images/1YdadfEdp4pALMekmxaPWFA.webp" alt="Page control indicator changed into blue" caption="Page control indicator changed into blue" />
 
-
 Now let’s see what happens if I introduce a syntax error. Say I accidentally delete a semicolon at the end of line 1. I’ll immediately see a red bar warning of the syntax error. This allows you to easily spot and correct mistakes.
 
 <DashImage figure src="images/0bPcKdz1gG_1UxR6D.webp" alt="Warning message when introducing a syntax error" caption="Warning message when introducing a syntax error" />
-
 
 ## Social features
 
@@ -50,9 +45,7 @@ What we particularly love about CodePen is the social and community features it 
 
 <DashImage figure src="images/0zfGvzw1Zb8SwDcpv.webp" />
 
-
 <DashImage figure src="images/0ulpFtxXC_93Qp59b.webp" />
-
 
 ## Give it a try!
 

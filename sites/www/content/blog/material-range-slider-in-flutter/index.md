@@ -19,11 +19,9 @@ A slider component can offer a single selection or multiple selections on either
 
 <DashImage figure src="images/0Mu435B7sBkJHMuY4.webp" />
 
-
 ### Structure & Implementation
 
 <DashImage figure src="images/0wtmSldtwjSvtRtuI.webp" />
-
 
 The `RangeSlider` consists of 5 parts:
 
@@ -56,7 +54,6 @@ RangeSlider(
 
 <DashImage figure src="images/0B0bu8hC9PtI5xXBL.webp" />
 
-
 The `RangeSlider`’s `State` object builds a `LeafRenderObjectWidget`. Everything is painted in its inner `RenderBox`, which also handles touch input.
 
 ### Handling Touch Input
@@ -85,11 +82,9 @@ When the thumbs are further apart, touching the inner track does not select a th
 
 <DashImage figure src="images/0mlCfCFNzbUsT6P5l.webp" />
 
-
 When the thumbs are closer together, the drag displacement is used to determine the thumb selection:
 
 <DashImage figure src="images/0vcWwbYKPKh0Q-Cbc.webp" />
-
 
 Implementation of the default thumb selector with the behavior described above:
 
@@ -146,7 +141,6 @@ In the previous section, you saw the code for Material’s default thumb selecti
 
 <DashImage figure src="images/0HLlGFubMmDajfdYU.webp" />
 
-
 Implementation of a custom thumb selector that always finds the closest thumb:
 
 ```dart
@@ -195,7 +189,6 @@ Above, you saw how to use the SliderThemeData to customize how the thumbs are se
 
 <DashImage figure src="images/0tqIVrQZCHKLeLZCV.webp" />
 
-
 ```dart
 RangeSlider(
   values: _values,
@@ -221,7 +214,6 @@ RangeSlider(
 If it is only necessary to restrict the thumbs for the sake of appearances, then the minThumbSeparation property can be used to limit the number of logical pixels that separate the 2 thumbs. The default top thumb will draw a white outline around itself for better contrast between the thumbs. Here is a side by side comparison showing the default value of 8 vs a custom value of 24
 
 <DashImage figure src="images/0kChVA0QLDWygcEn0.webp" />
-
 
 ### Painting Shapes
 
@@ -327,7 +319,6 @@ SliderTheme(
 ```
 
 <DashImage figure src="images/0w97BioIrNzfHqQ43.webp" />
-
 
 ### Closing Remarks
 

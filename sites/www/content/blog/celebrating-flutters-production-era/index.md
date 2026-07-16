@@ -26,11 +26,9 @@ Our focus has remained constant through Flutter’s growth era, even as we’ve 
 
 <DashImage figure src="images/1nlSy3ZCCbdUXFRH4Q1zstg.webp" />
 
-
 We’re now in the “production era,” and we’re celebrating that with **`#FlutterInProduction`**! This event spotlights the achievements of developers using Flutter in real-world applications.
 
 <YoutubeEmbed id="AEXIrThTgb0" title="" fullwidth="true"/>
-
 
 ### Building in partnership with the community
 
@@ -49,7 +47,6 @@ With Flutter, you have the flexibility and power to realize *any design* your de
 
 <DashImage figure src="images/03685YaIo_7soz-qF.webp" alt="Scandinavian Airlines design awards" caption="Scandinavian Airlines design awards" />
 
-
 ## Great performance & reliability
 
 Performance and reliability are crucial for a positive user experience and brand perception. Slow or crash-prone apps not only frustrate users in the short term but can also damage your brand reputation in the long run through negative reviews and word-of-mouth.
@@ -62,13 +59,11 @@ For example, Universal Destinations and Experiences recently reported that by ad
 
 <YoutubeEmbed id="JTk2Exr7FO4" title="How Universal Destinations & Experiences build next generation experiences with #Flutter" fullwidth="true"/>
 
-
 ### LG Electronics performance
 
 LG Electronics has traditionally relied on web apps for their webOS-powered smart TVs due to concerns about the high development cost of traditional native apps. However, they found that web apps launch slower and consume more memory than native apps. With Flutter, LG Electronics has a solution that combines fast development speed and excellent performance. As a result, they plan to use Flutter for key applications in webOS TVs globally starting in 2025.
 
 <YoutubeEmbed id="l-J3Of7pLPw" title="How LG Electronics uses #FlutterInProduction" fullwidth="true"/>
-
 
 ## First-class developer experience and thriving ecosystem
 
@@ -84,13 +79,11 @@ Superformula also used Flutter to [revitalize the digital dining experience](htt
 
 <YoutubeEmbed id="huzVEL676lc" title="How MGM Resorts uses #FlutterInProduction" fullwidth="true"/>
 
-
 ### GEICO and the democratization of mobile development
 
 Earlier this year, American auto insurance company GEICO [published a blog post](https://www.geico.com/techblog/flutter-as-the-multi-channel-ux-framework/) detailing their experiences with Flutter and how it had improved their productivity. They were able to change the structure of their organization so that UX teams now own the entire experience *across all channels*, reducing the amount of drift between the different implementations of the same functionality. They also describe Flutter’s development experience as *“mature, with rich tooling and support for the Software Development Lifecycle (SDLC)”.*
 
 <DashImage figure src="images/0Y65O6741pXOhM35S.webp" alt="GEICO user interface elements shared across web, iOS, and Android." caption="GEICO user interface elements shared across web, iOS, and Android." />
-
 
 ## A sneak preview of the future
 

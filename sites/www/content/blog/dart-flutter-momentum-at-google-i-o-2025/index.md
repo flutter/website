@@ -12,7 +12,6 @@ Today at the Google I/O conference, hosted at Shoreline Amphitheatre in Mountain
 
 <YoutubeEmbed id="v6Rzo5khNE8" title="What's new in Flutter" fullwidth="true"/>
 
-
 First, according to the JetBrains [State of the Developer Ecosystem](https://www.jetbrains.com/lp/devecosystem-2024/) survey, Flutter has been the most used multi-platform app framework, since 2021.
 
 Second, according to app intelligence provider AppTopia, Flutter accounts for nearly 30% of all new free iOS apps.
@@ -45,7 +44,6 @@ We continue to evolve the Dart language — here’s a visualization of all the 
 
 <DashImage figure src="images/0XtA6olQqCpKPyrdO.webp" alt="Dart language evolution" caption="Dart language evolution" />
 
-
 ## Null-aware elements
 
 Today [in Dart 3.8](https://medium.com/dartlang/announcing-dart-3-8-724eaaec9f47), we’re adding **null-aware elements**, which allows you to include an element in a collection *only* if its runtime value is non-null. You can use this feature to rewrite code like this:
@@ -70,7 +68,6 @@ var listWithNullAwareElements = [
 ];
 ```
 
-
 ## Dot shorthands
 
 We also shared the news that we’re working on a new language feature called [**dot shorthands**](https://github.com/dart-lang/language/issues/357) — projected to release later this year — for addressing duplication in Flutter code with a new shorter syntax for selecting a member on a type that is known based on the context:
@@ -91,7 +88,6 @@ Column(
 );
 ```
 
-
 ## Updating the developer experience
 
 We take the Dart and Flutter developer experience very seriously and have several updates.
@@ -102,7 +98,6 @@ One of the trickiest parts of any framework is learning what all the available A
 
 <DashImage figure src="images/0XzkfOCEYvTEHsSyh.gif" alt="Property editor in VS Code" caption="Property editor in VS Code" />
 
-
 When you select a widget in your IDE, it shows the primary layout properties without having to read docs or go to declaration. You can then easily change them directly in the property editor, and have those changes propagate to the source code.
 
 ### Pub.dev improvements
@@ -112,7 +107,6 @@ We’ve also made several improvements to [pub.dev](https://pub.dev), the Dart p
 A brand new feature we’re announcing this week is Trending Packages, which shows packages that have a significant recent uptick in usage. This can be used for discovering new packages that might be of interest.
 
 <DashImage figure src="images/0BkRheYyGtlw1zwLZ.webp" alt="pub.dev trending packages" caption="pub.dev trending packages" />
-
 
 ### Improved formatting
 
@@ -172,7 +166,6 @@ One big contributor is Canonical, the folks behind Ubuntu. They use Flutter them
 
 <DashImage figure src="images/0DyOOI5cfR4759Ka2.webp" alt="Multi-window support running on Linux" caption="Multi-window support running on Linux" />
 
-
 They have also contributed to the desktop implementation of Flutter’s significant [thread merge](https://github.com/flutter/flutter/issues/150525). And they have fixed many issues related to accessibility, text input, focus, and keyboard & mouse events.
 
 ### LG
@@ -193,7 +186,6 @@ We’ve added Gemini support directly into [DartPad](https://dartpad.dev/), whic
 
 <DashImage figure src="images/1bvMcF-Tc30i2dMr2jFfECA.webp" alt="Gemini-powered code generation in DartPad" caption="Gemini-powered code generation in DartPad" />
 
-
 That feature was built using the [Gemini API](https://ai.google.dev/). Its full source code is available in the DartPad GitHub repo and serves as a demonstration of how you can create AI-powered development tools.
 
 ### Android Studio, VSCode, IntelliJ IDEA and Gemini
@@ -207,7 +199,6 @@ And if you’re a VSCode or IntelliJ IDEA user, rest easy. The [Gemini Code Assi
 MCP is an exciting new open protocol that is gaining a lot of momentum for enabling AI agents to access and interact with various data sources and tools in a standardized way.
 
 <DashImage figure src="images/0n4GWT45AkStIiLZy.webp" alt="Model Context Protocol" caption="Model Context Protocol" />
-
 
 We are currently experimenting to see if it can enable us to provide more accurate and relevant code generation and allow tooling for complex tasks like fixing layout issues, managing dependencies, or even resolving runtime errors.
 

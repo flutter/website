@@ -77,7 +77,7 @@ Converting a JSON string into an intermediate format can be done with the `dart:
 import 'dart:convert';
 
 try {
-  final parsed = json.decode(aJsonStr); 
+  final parsed = json.decode(aJsonStr);
 } on FormatException catch (e) {
   print("That string didn't look like Json.");
 } on NoSuchMethodError catch (e) {
@@ -115,7 +115,6 @@ One has to start somewhere, right? If you have a small app and the data is not t
   "aListOfInts": [1, 2, 3],
   "aListOfDoubles": [1.0, 2.0, 3.0]
 }
-
 ```
 
 The code for a matching class might look like this:
@@ -142,7 +141,7 @@ class SimpleObject {
     if (json == null) {
       throw FormatException("Null JSON provided to SimpleObject");
     }
-    
+
     return SimpleObject(
         aString: json['aString'],
         anInt: json['anInt'],
@@ -281,7 +280,6 @@ Kick off code generation from your project folder with this command:
 ```bash
 flutter packages pub run build_runner build
 ```
-
 
 When finished, you’ll have a new file called `simple_object.g.dart` sitting alongside the original. The contents look like this:
 

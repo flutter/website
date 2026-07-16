@@ -43,21 +43,17 @@ You can see that it verifies the behavior of the counter for the sample app. You
 
 <DashImage figure src="images/1V_EILJ0CmVIDWCBbK-VmtQ.webp" />
 
-
 This is the Flutter plugin parsing your unit test code and inserting handy ‘run test’ actions directly into your editor. From IntelliJ or Android Studio, click on the ‘run’ icon and select either the option to run or debug your test:
 
 <DashImage figure src="images/1pDCMYhDu_XxFEzUNRreupA.webp" />
-
 
 The tests will run, and the results will be displayed in the standard IntelliJ test result view:
 
 <DashImage figure src="images/1GKGBr7v55mRKhQyOkNaFoA.webp" />
 
-
 To debug your test, just set a breakpoint where you’d like to pause the test and select the **Debug ‘test…’** option from the editor’s gutter run action. Your test will run and break at the breakpoint, letting you inspect variables and step through the code.
 
 <DashImage figure src="images/1lCTc5ZARrw1ops8H6zA37A.webp" />
-
 
 ## VS Code
 

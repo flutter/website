@@ -14,7 +14,6 @@ For iOS developers who value innovative design, Flutter has become a go-to platf
 
 <YoutubeEmbed id="6IKhXXFFOuw" title="Build Wonders with Flutter" fullwidth="true"/>
 
-
 Today, I want to tell you about some recent improvements to Flutter and our future focus areas for iOS developers. If you’re a pro or new to Flutter, read on to learn about the future of Flutter for iOS.
 
 ## Notable Flutter iOS apps
@@ -23,13 +22,11 @@ Flutter has seen success across various industries and categories for iOS develo
 
 <DashImage figure src="images/1OGs9_siPcMAYd1yDAp-AOA.webp" />
 
-
 Tech giants like [WeChat](https://apps.apple.com/us/app/wechat/id414478124) and [PUBG MOBILE](https://www.youtube.com/watch?v=03ETVuWZiBc) use Flutter to support over one billion active users. Smaller companies have also capitalized on Flutter’s quick development cycle. One example would be [BrickIt](https://apps.apple.com/us/app/brickit-app/id1477221636) which uses machine learning to suggest new LEGO brick creations.
 
 Apple and other tech leaders have even recognized Flutter iOS apps. [Wonderous](https://wonderous.app), Flutter’s reference app, was [nominated for a Webby in design](https://winners.webbyawards.com/2023/apps-dapps-and-software/app-features/best-user-interface/239934/wonderous). Apple accepted [Reflection.app](https://flutter.dev/showcase/reflectionapp) to its prestigious accelerator program. [So Vegan](https://flutter.dev/showcase/so-vegan) was awarded Apple’s App of the Day *several* times.
 
 <DashImage figure src="images/14QurT4QkFUMSNCSFtfOzxg.webp" />
-
 
 ## Recent enhancements
 
@@ -41,24 +38,19 @@ Impeller, our purpose-built rendering engine, now serves as the default for Flut
 
 <YoutubeEmbed id="vd5NqS01rlA" title="Introducing Impeller - Flutter's new rendering engine" fullwidth="true"/>
 
-
 Impeller also simplifies adding new features. These features range from wide gamut image support to custom rendering solutions. We demonstrated one such custom rendering solution, a proof of concept for 3D support, at [Flutter Forward.](https://www.youtube.com/watch?v=goL7tvLQ7Dw)
 
 <DashImage figure src="images/0MUGkFV9MRrcT7-68.webp" />
 
-
 <DashImage figure src="images/0YnEEnzt7QIuuxofn.webp" />
 
-
 <DashImage figure src="images/04Mb0dUry2lkuUvXI.webp" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash (our mascot)." />
-
 
 ### Developer Experience Enhancements
 
 We understand the challenges of building and releasing an iOS app. To save help save developer’s time, we’ve added new tools and resources to simplify the entire process. You can now [connect to iOS devices](https://docs.flutter.dev/get-started/install/macos#ios-setup) over Wi-Fi to test and debug your app. We’ve also [added validation](https://github.com/flutter/flutter/issues/97730) to the release process. This step ensures that you took all necessary steps before releasing your app to the App Store.
 
 <iframe src="https://twitter.com/EnzoConty/status/1656379609796038670" width="500" height="281" frameborder="0" allowfullscreen></iframe>
-
 
 In addition, we’ve created iOS-focused documentation and tutorials to help developers learn Flutter and build iOS apps. We’ve incorporated Swift and SwiftUI examples into our documentation. We added guides on moving from [Swift to Dart](https://dart.dev/guides/language/coming-from/swift-to-dart), [SwiftUI to Flutter](https://docs.flutter.dev/get-started/flutter-for/swiftui-devs) and adding [ Flutter to an existing iOS app](https://docs.flutter.dev/add-to-app/ios/project-setup). We’ve also added resources for supporting [flavors on iOS](https://docs.flutter.dev/deployment/flavors) and using [ iOS app extensions](https://docs.flutter.dev/platform-integration/ios/app-extensions) like home and lock screen widgets.
 
@@ -70,11 +62,9 @@ We’ve addressed top-voted issues and added new widgets like [CupertinoCheckbox
 
 <DashImage figure src="images/1qYEQdMvlHvAFS1biiH6phg.webp" alt="Automatic iOS style spell check on TextField and CupertinoTextField" caption="Automatic iOS style spell check on TextField and CupertinoTextField" />
 
-
 In addition, we recognize the importance of cross-platform design. We’ve added [adaptive constructors](https://docs.flutter.dev/resources/platform-adaptations#ui-components) to several Material widgets. This allows your Flutter app to adapt between Android and iOS design conventions. For common widgets *without* adaptive constructors, we’ve created [preliminary guides](https://docs.flutter.dev/resources/platform-adaptations#top-app-bar-and-navigation-bar) to give you code snippets to adapt entire widgets or widget properties.
 
 <DashImage figure src="images/1rBWjG-4wCqJlY98oPeADrw.webp" />
-
 
 ## *Roadmap*
 
@@ -89,7 +79,6 @@ A few months ago, we launched [FFIgen](https://pub.dev/packages/ffigen). This to
 Furthermore, we know the importance of [app extensions](https://developer.apple.com/app-extensions/) within the iOS ecosystem. That’s why we’re developing a way to create the user interface (UI) for some extensions using Flutter. This will enable developers to reuse components from their Flutter app to design their extension’s interface. It’s worth noting that this approach won’t work for all types of extensions. WidgetKit widgets, for instance, have strict API restrictions. However, it will work for other common extensions such as [Share](https://developer.apple.com/library/archive/documentation/General/Conceptual/ExtensibilityPG/Share.html#//apple_ref/doc/uid/TP40014214-CH12-SW1) or [iMessage](https://developer.apple.com/documentation/messages). To keep up with our progress, you can follow [this work in this Flutter Github issue](https://github.com/flutter/flutter/issues/124287).
 
 <DashImage figure src="images/1K2e5QrjXtv0bCU35H_uRkw.webp" alt="A proof of concept for a Flutter app running as an iOS share extension" caption="A proof of concept for a Flutter app running as an iOS share extension" />
-
 
 ### Cross-platform design
 

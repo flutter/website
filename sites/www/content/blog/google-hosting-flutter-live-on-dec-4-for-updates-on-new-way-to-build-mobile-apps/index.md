@@ -16,7 +16,6 @@ layout: blog
 
 <YoutubeEmbed id="hFOS9VGs6yo" title="FL18300 v3" fullwidth="true"/>
 
-
 ## Tune in to the livestream
 
 Go to [g.co/FlutterLive](https://g.co/FlutterLive) and [sign up for livestream updates](https://docs.google.com/forms/d/e/1FAIpQLSc95VLm0odas0ieZ7-6K-5B95piV-SfgVvVxVwV39tZl_iSHw/viewform). The event will be broadcasted on the website Dec 4 with a pre-show starting at [4:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T160000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33) and the keynote at [5:00 p.m. GMT](https://www.timeanddate.com/worldclock/converter.html?iso=20181204T170000&p1=136&p2=137&p3=179&p4=213&p5=37&p6=771&p7=33).
@@ -28,7 +27,6 @@ You can also add this directly on your Google Calendar by [clicking here](https:
 Organizations all over the world are hosting free viewing parties to watch and discuss Flutter Live. Find one of the 150+ parties happening near you; [here is the full list](https://developers.google.com/events/flutter-live/viewing-parties/).
 
 <DashImage figure src="images/1zc_G0l9afXZxqPAZ7rmrGQ.webp" />
-
 
 ## Get Involved with #MyFlutterStory, #AskFlutter, and #FlutterLive
 

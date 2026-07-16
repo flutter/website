@@ -34,7 +34,6 @@ Flutter can enable developers to build a single app from the same code across bo
 
 <DashImage figure src="images/0E9vaDY0XLc4dCR2J.webp" alt="Journey, a social app, recently launched a cross-platform app using Flutter" caption="Journey, a social app, recently launched a cross-platform app using Flutter" />
 
-
 Luke O’Brien, Founder of Journey, states “*Four months ago I was about to build Journey for Android-only for the MVP. I discovered Flutter and thought, ‘This is too good to be true’, but decided to run with it. It has been the best decision I have made to date. Flutter has cut development time in half (probably more than half) and we’ve now launched across Android, iOS, and web — doubling user-growth potential. It’s difficult to overstate the impact Flutter has had in turning my vision into reality.’*
 
 **Embedded interactive content**
@@ -42,7 +41,6 @@ Luke O’Brien, Founder of Journey, states “*Four months ago I was about to bu
 One scenario is embedding a rich, data-centric, mini app within a parent site; there is no need for navigation services or other app-like functionality. Embedding a new car configurator, a crossword puzzle, or interactive data visualizations into an existing website are just a few key examples that fit this scenario. Early adopter [AEI Studio’s showcase](https://studio.aei.dev/showcase/) of chatbots embedded Flutter within their web chat dialog showcasing animations, text input by keyboard, and more.
 
 <DashImage figure src="images/0M7sTluUPVsk6DcnU.webp" alt="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" caption="Weatherbot is one of AEI Studio’s chatbots that embed Flutter within their web chat dialog" />
-
 
 **Lite apps**
 
@@ -76,11 +74,9 @@ First, on a package detail page, we list which platforms the package supports. T
 
 <DashImage figure src="images/05vkz66kMYk5DTfSS.webp" alt="*pub.dev package detail page showing SDK and platform compatibility tags*" caption="*pub.dev package detail page showing SDK and platform compatibility tags*" />
 
-
 The search UI also has new filters, so you can find packages that have web support. This is based on the new [platform manifest tags](https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms) that are now available in Flutter 1.12.
 
 <DashImage figure src="images/0QApzX3FOYgAGCFRK.webp" alt="*pub.dev search UI showing SDK and platform filter support*" caption="*pub.dev search UI showing SDK and platform filter support*" />
-
 
 ## Road to stable
 

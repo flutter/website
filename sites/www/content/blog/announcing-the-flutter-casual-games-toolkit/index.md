@@ -14,7 +14,6 @@ Over the past year, thousands of Flutter games have been published. For example,
 
 <DashImage figure src="images/1rIXhQTkBae35i5YkSN8soQ.webp" alt="Mobile games developed in Flutter" caption="Mobile games developed in Flutter" />
 
-
 To understand how we might provide better support, we [interviewed several developers](https://medium.com/flutter/perspectives-from-early-adopters-of-flutter-as-a-game-development-tool-f95fb3406d51) who have successfully built and released Flutter mobile games. We asked what they love about creating games using Flutter, and their answers revealed several themes:
 
 * Flutter is simple to learn and easy to use for building UIs and casual games
@@ -30,7 +29,6 @@ Meanwhile, study participants mentioned that the biggest challenge in creating a
 The [Flutter Casual Games Toolkit](https://flutter.dev/games) offers a specialized template (developed by [Filip Hracek](https://github.com/filiph)) that you can use to build your own game. This starter project provides pre-built “bells & whistles” such as a main menu, a settings page, sound support, and so on, but leaves the fun part to you: building the game!
 
 <DashImage figure src="images/0NwJbJ1BD7MvehPAA.webp" alt="Tic-Tac-Toe game running on a mobile device" caption="Tic-Tac-Toe game running on a mobile device" />
-
 
 ### Video Tutorial
 
@@ -60,11 +58,9 @@ This doesn’t mean that your creativity should be limited to mobile platforms. 
 
 <DashImage figure src="images/1sTD5PMhST3_73n4vnVcWBQ.webp" alt="Tic-Tac-Toe game running on the web and desktop" caption="Tic-Tac-Toe game running on the web and desktop" />
 
-
 Meanwhile, we recently added support for the community-driven game engine Flame on DartPad, so you can explore [building games with Flame](https://dartpad.dev/?id=3e52ca7b51ba15f989ad880b8b3314a2) on DartPad without downloading the SDK. What’s more, the web-based [pinball game,](https://pinball.flutter.dev/) written by Very Good Ventures (VGV) and launched at Google I/O, was built in Flutter using the Flame engine! To learn how the pinball game was created, check out [the Pinball article](https://medium.com/flutter/i-o-pinball-powered-by-flutter-and-firebase-d22423f3f5d) from the VGV team or [view the code](https://github.com/flutter/pinball).
 
 <DashImage figure src="images/0zJekiBgTaE-VTXfa.webp" alt="Web-based pinball game" caption="Web-based pinball game" />
-
 
 Game development is a new but exciting scenario for Flutter! Going forward, we hope to add more codelabs and other resources to help you develop your games. This is our first attempt at making it easier for you, and we are fully aware that there may be many areas for improvement. We’ve recently started collaborating with community member [@wolfenrain](https://github.com/wolfenrain) to triage game-related issues. Please file an issue (or vote on an existing issue) on GitHub if you need product features that you hope the Flutter SDK can better support.
 

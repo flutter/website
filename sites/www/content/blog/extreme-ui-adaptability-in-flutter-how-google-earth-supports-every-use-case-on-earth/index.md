@@ -81,7 +81,6 @@ At its simplest, building any Flutter app to seamlessly switch between two diffe
 child: mode == Mode.desktop ? DesktopUI() : MobileUI()
 ```
 
-
 However, this strategy (which is what Google Earth uses) implies some extra work elsewhere to fully realize. The issue — initially obscure — surfaces when *any* application state is stored within a Stateful widget, as toggling that `mode` variable completely replaces the widget tree, destroying all State objects and any information they hold. There are two layers to this problem.
 
 To imagine the first layer, consider a screen that has multiple panels on desktop, but reorganizes each of those panels into a tab bar experience on mobile. A mobile user will have an active tab, but that concept has no equivalent on desktop. Storing the active tab index within a StatefulWidget (an idiomatic decision in Flutter!) would always reset a mobile user’s position to the default tab after toggling back and forth through the desktop UI. The solution to this involves moving any primitive application state — strings, integers, and the like — out of StatefulWidgets and into your state management classes. This way, no shenanigans in your widget tree can reset critical values.
@@ -121,11 +120,10 @@ class _AdaptableTextInputState extends State<AdaptableTextInput> {
           Text(helpText);
         ],
       );
-    } 
+    }
   }
 }
 ```
-
 
 ## Navigation
 
@@ -133,13 +131,11 @@ Navigation stacks and the app’s Back button also require special attention. Co
 
 <DashImage figure src="images/1nHhbCY1mlIwlvQI60jaJHA.webp" alt="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" caption="A grid of UIs, showing a desktop UI on both desktop and mobile devices, and a mobile UI on both desktop and mobile devices" />
 
-
 If a desktop-UI user is on the red panel when they switch to the mobile UI, the Back button won’t automatically be wired up, because the navigation stack will be reset. This means your desktop UI needs to account for extra information technically only needed by the mobile UI, because at any moment the mobile UI could be asked to take over.
 
 <DashImage figure src="images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp" alt="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" caption="A desktop device rendering the same UI in two different modes — one typical of desktop, and one typical of mobile" />
 
-
-Luckily, GoRouter’s declarative routing API can help. Create two separate routing declarations and switch to the appropriate route when your user toggles UI modes. In this situation, if the desktop UI has tracked the user’s last activity to the red panel when a request to activate the mobile UI comes in, calling `mobileRouter.go(‘home/blue/red’)` will create a navigation stack with a synthetic history, allowing the user to press the Back button to escape the red screen.
+Luckily, GoRouter’s declarative routing API can help. Create two separate routing declarations and switch to the appropriate route when your user toggles UI modes. In this situation, if the desktop UI has tracked the user’s last activity to the red panel when a request to activate the mobile UI comes in, calling `mobileRouter.go('home/blue/red')` will create a navigation stack with a synthetic history, allowing the user to press the Back button to escape the red screen.
 
 ```dart
 final desktopRouter = GoRouter(
@@ -180,7 +176,6 @@ final mobileRouter = GoRouter(
   ],
 );
 ```
-
 
 Highly adaptive UIs like Google Earth’s require an implementation that treats all possible scenarios as always in play, even though only one given UI is ever being rendered. This means that the app must always be able to *completely* reconstruct its state from resources you completely control — whether that is because you have GlobalKeys to retain State objects holding important information, or because you’ve stored all relevant details in your state management classes.
 
@@ -224,7 +219,6 @@ class InputTypeBuilder extends StatelessWidget {
 }
 ```
 
-
 A widget like `InputTypeBuilder` listens to a top-level mechanism, the `InputTypeModel`, which itself subscribes to the Flutter Engine for updates on the last-used input. `InputTypeModel.inputType` is a property of the `InputType` enum. And with that, child widgets can make localized decisions about how to render themselves in light of how the user is currently interacting with the app. For example, if you had been using a mouse, but then tapped your finger on the touch screen, affordances that were once only revealed by the cursor’s hover effect would now appear all over the app. And similarly, if you switched back to using the mouse, this `InputTypeBuilder` would allow them to reverse the change.
 
 ```dart
@@ -244,11 +238,9 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 The following gif shows Google Earth’s desktop UI (running in Chrome), nimbly adjusting to the user alternating between touchscreen and mouse actions.
 
 <DashImage figure src="images/17hP0qPviv5Hrh7U82WWhQg.gif" alt="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" caption="Google Earth’s UI swapping between typical desktop and mobile affordances as the end-user interacts with different peripherals" />
-
 
 ## Conclusion
 

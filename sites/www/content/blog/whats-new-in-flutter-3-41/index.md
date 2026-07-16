@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1XxO20lj9p2xlQfuIiwa8mg.webp" />
 
-
 ## What’s new in Flutter 3.41
 
 ### Empowering the community
@@ -22,7 +21,6 @@ We are introducing public release windows to make it easier for you to know when
 There is so much to explore, so let’s dig right in…
 
 <DashImage figure src="images/1jmKuW7ItWRJAHNABfTEhHA.gif" />
-
 
 ## Structural transparency and modularity
 
@@ -66,7 +64,7 @@ The transition from CocoaPods to Swift Package Manager continues. We strongly en
 
 We continue to align with modern Android standards. With the release of Android Gradle Plugin (AGP) 9, we are working on supporting new strictness requirements and providing guidance on how to navigate them.
 
-**Warning:** **Do not** update your Flutter app for Android to AGP 9 as **migrating plugins to AGP 9 and Flutter apps on AGP 9 using plugins** is not yet supported ([#181383)](https://github.com/flutter/flutter/issues/181383). This support is paused while the Flutter team audits the migration for backwards compatibility with older versions of AGP. This [migration doc](https://docs.flutter.dev/release/breaking-changes/migrate-to-agp-9) will be updated as guidance changes.
+**Warning:** **Do not** update your Flutter app for Android to AGP 9 as **migrating plugins to AGP 9 and Flutter apps on AGP 9 using plugins** is not yet supported ([#181383](https://github.com/flutter/flutter/issues/181383)). This support is paused while the Flutter team audits the migration for backwards compatibility with older versions of AGP. This [migration doc](https://docs.flutter.dev/release/breaking-changes/migrate-to-agp-9) will be updated as guidance changes.
 
 Thanks to contributions from community member [Byoungchan Lee (bc-lee@)](https://github.com/bc-lee), new plugin projects now default to using the Kotlin DSL for Gradle.
 
@@ -84,7 +82,6 @@ flutter:
       platforms: [windows, linux, macos]
 ```
 
-
 ## Listening to the community
 
 The Flutter team at Google continues to prioritize what matters most to you.
@@ -92,7 +89,6 @@ The Flutter team at Google continues to prioritize what matters most to you.
 ### The getting started experience
 
 <DashImage figure src="images/1baxbpT88lI2jDoF7fQmErQ.webp" />
-
 
 For years, the community has called out that while Flutter is delightful and productive, it can be difficult to know where to begin the learning journey.
 
@@ -129,7 +125,6 @@ void attachTexture(ui.FragmentShader shader) {
 }
 ```
 
-
 ### Widget Previews (Experimental)
 
 Based on your early feedback, we are iterating rapidly on Widget Previews. With this release, Widget Previews have improved as follows:
@@ -137,7 +132,6 @@ Based on your early feedback, we are iterating rapidly on Widget Previews. With 
 * **Flutter Inspector support:** The Widget Preview environment now has access to an embedded Flutter Inspector instance, making it easy to inspect layouts and the state of previewed widgets. **Important note:** it might be necessary to configure additional package directories to see widgets from your project by default. To do this, open the Flutter Inspector settings by clicking the gear icon and add a new package directory pointing to your project.
 
 <DashImage figure src="images/1FyWSKI69_GcAv7MoAbPbww.webp" />
-
 
 * **Support for applications with `dart:ffi` dependencies:** Previously, previews that included widgets with transitive dependencies on libraries importing `dart:ffi` would cause compilation errors and prevent the preview environment from updating. This occurred because `dart:ffi` isn’t supported on web platforms ([flutter/flutter#166431](https://github.com/flutter/flutter/issues/166431)). The widget previewer can now handle previews that have dependencies on platform-specific libraries, including `dart:ffi` and `dart:io`. **Important note**: invoking APIs from these libraries isn’t supported in the widget previewer and will result in an error being displayed for previews calling these platform-specific APIs. See the [Dart documentation on conditional imports](https://dart.dev/tools/pub/create-packages#conditionally-importing-and-exporting-library-files) for examples of how to write code that’s compatible with both native and web platforms.
 
@@ -151,14 +145,11 @@ In Flutter 3.41 we’ve made visual improvements with the new “bounded blur”
 
 <DashImage figure src="images/1YQySx5fHQJ9zs7_EI_Y4_g.webp" />
 
-
 <DashImage figure src="images/1tM9ItzXJAm4nN_OcyxzLCw.webp" />
-
 
 We’ve also added support for native styled drag handling for `CupertinoSheet` through the `showDragHandle` property.
 
 <DashImage figure src="images/1ocj9sgfhhYAYFlVIqPxZmA.webp" />
-
 
 ### Add-to-App
 
@@ -166,13 +157,11 @@ Adding Flutter views to existing Android and iOS apps is now easier! Flutter vie
 
 To use this, your root widget must support unbounded constraints. Avoid using widgets that require a pre-defined size (like `ListView` or `LayoutBuilder`) at the top of your tree, as they will conflict with the dynamic sizing logic.
 
-To enable this behavior on iOS, [set`FlutterViewController.isAutoResizable` to true](https://docs.flutter.dev/add-to-app/ios/add-flutter-screen#content-sized-views). For Android, enable content sizing in your Android Manifest and [set the width or height of your FlutterView to content_wrap.](https://docs.flutter.dev/add-to-app/android/add-flutter-view#content-sized-views)
+To enable this behavior on iOS, [set `FlutterViewController.isAutoResizable` to true](https://docs.flutter.dev/add-to-app/ios/add-flutter-screen#content-sized-views). For Android, enable content sizing in your Android Manifest and [set the width or height of your FlutterView to content_wrap.](https://docs.flutter.dev/add-to-app/android/add-flutter-view#content-sized-views)
 
 <DashImage figure src="images/1BU1kKyxkWidSLXOA37nPLg.webp" />
 
-
 <DashImage figure src="images/146fO6mit5AFOq9ZY7YtRmA.webp" />
-
 
 ### Navigation and scrolling
 
@@ -183,7 +172,6 @@ We’ve worked hard to smooth out the rough edges in core interaction models thr
 * We reimplemented `StretchingOverscrollIndicator` using a simulation-based approach ported from Android 12. This ensures a more natural and fluid overscroll effect that responds correctly to high-velocity flings.
 
 <DashImage figure src="images/1klfeLTPZihrgBRUmUzWaIA.webp" />
-
 
 * We fixed an issue with pinned headers in `NestedScrollView` and `SliverMainAxisGroup`, ensuring headers correctly overlap subsequent slivers.
 
@@ -206,7 +194,7 @@ For example, here’s how you can make a square slide back-and-forth:
 ```dart
 RepeatingAnimationBuilder<Offset>(
   animatable: Tween<Offset>(
-    begin: const Offset(-1.0, 0.0), 
+    begin: const Offset(-1.0, 0.0),
     end: const Offset(1.0, 0.0),
   ),
   duration: const Duration(seconds: 1),
@@ -224,7 +212,6 @@ RepeatingAnimationBuilder<Offset>(
   ),
 ),
 ```
-
 
 We also updated `CarouselView` with a `.builder` constructor, making it easier to create carousels with dynamic content. `DropdownMenuFormField` now supports a custom `errorBuilder`, and `RawAutoComplete` now includes an `OptionsViewOpenDirection.mostSpace` option to intelligently position options based on available screen space.
 

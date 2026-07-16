@@ -12,7 +12,6 @@ Last year, I got to record one of the episodes in the Flutter Animations series,
 
 <YoutubeEmbed id="PbcILiN8rbo" title="Animation deep dive - Flutter in Focus" fullwidth="true"/>
 
-
 In the other episodes of the series, my colleagues talk about all the practical ways to build animations in Flutter. Not so in my episode. Here, you’ll learn how to implement animations in the *least* pragmatic way imaginable. (But, you’ll also learn some things along the way.)
 
 Let’s start with something simple and lighthearted:
@@ -22,7 +21,6 @@ Let’s start with something simple and lighthearted:
 You see, motion is an illusion. Look at this:
 
 <DashImage figure src="images/14bIqmJ8DQLSnlFtkN6bjaA.webp" alt="A video of Filip waving his hand." caption="A video of Filip waving his hand." />
-
 
 It’s a lie. What you’re actually seeing are many still images shown in quick succession. This is how movies work. The individual pictures are called frames in cinema— and because digital screens work similarly— they’re called frames here too. Cinema normally shows 24 frames per second. Modern digital devices show 60 to 120 frames per second.
 
@@ -36,13 +34,11 @@ Let’s look at one of the building blocks of Flutter animations: `AnimatedBuild
 
 <DashImage figure src="images/1-T1fn-7fK2OU-z711XG_8A.gif" alt="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." caption="This confusing screencast is just showing that I am telling the truth in the previous paragraph. Animated Builder really does call `setState()` on every frame." />
 
-
 There you go. Animations in Flutter are just a quick succession of changing the state of some widget, 60 to 120 times per second.
 
 I can prove it. Here’s an animation that “animates” from zero to the speed of light. Although it’s changing the text on every frame, from Flutter’s perspective, it’s just another animation.
 
 <DashImage figure src="images/1y4Pbt8ehWTAEfL9_M8Aoog.webp" />
-
 
 Let’s use Flutter’s animation framework to build that animation from first principles.
 
@@ -58,7 +54,6 @@ A ticker is an object that calls a function for every frame.
 var ticker = Ticker((elapsed) => print('hello'));
 ticker.start();
 ```
-
 
 In this case, we’re printing ‘hello’ every frame. Admittedly, that’s not very useful.
 
@@ -78,7 +73,6 @@ class _MyWidgetState extends State<MyWidget>
   }
 }
 ```
-
 
 What this means is that the Flutter framework can ask your state for a ticker. Most important, `AnimationController` can ask the state for a ticker.
 
@@ -100,7 +94,6 @@ class _MyWidgetState extends State<MyWidget>
 }
 ```
 
-
 `AnimationController` *needs* a ticker for it to function. If you use `SingleTickerProviderStateMixin` or its cousin `TickerProviderStateMixin`, you can just give `this` to the `AnimationController`, and you’re done.
 
 ## AnimationController
@@ -108,7 +101,6 @@ class _MyWidgetState extends State<MyWidget>
 `AnimationController` is what you normally use to play, pause, reverse, and stop animations. Instead of pure “tick” events, `AnimationController` tells us at which *point* of the animation we are, at any time. For example, are we halfway there? Are we 99% there? Have we completed the animation?
 
 <DashImage figure src="images/1nKjFR7DVd-2r7_sSgBprfA.webp" />
-
 
 Normally, you take the `AnimationController`, maybe transform it with a `Curve`, put it through a `Tween`, and use it in one of the handy widgets like `FadeTransition` or `TweenAnimationBuilder`. But, for educational purposes, let’s not do that. Instead, we will directly call `setState`.
 
@@ -141,7 +133,6 @@ class _MyWidgetState extends State<MyWidget>
 }
 ```
 
-
 Now, we should probably have a state to set. Let’s keep it simple with an integer. And let’s not forget to actually use the state in our build method, and to change the state in our listener according to the current value of the controller.
 
 ```dart
@@ -171,7 +162,6 @@ class _MyWidgetState extends State<MyWidget>
 }
 ```
 
-
 This code assigns a value from zero to the speed of light depending on the animation’s progress.
 
 ## Running the animation
@@ -189,7 +179,7 @@ class _MyWidgetState extends State<MyWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      vsync: this, 
+      vsync: this,
       duration: const Duration(seconds: 1),
     );
     _controller.addListener(_update);
@@ -209,11 +199,9 @@ class _MyWidgetState extends State<MyWidget>
 }
 ```
 
-
 The widget animates as soon as it’s added to the screen. And it “animates” from zero to the speed of light in a second.
 
 <DashImage figure src="images/1uuyMl4qHr_bFZJENdMDimQ.webp" />
-
 
 ## Disposing of the controller
 
@@ -230,7 +218,7 @@ class _MyWidgetState extends State<MyWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      vsync: this, 
+      vsync: this,
       duration: const Duration(seconds: 1),
     );
     _controller.addListener(_update);
@@ -256,7 +244,6 @@ class _MyWidgetState extends State<MyWidget>
 }
 ```
 
-
 ## Just use a built-in widget, maybe?
 
 As you can see, doing it all by yourself is not great. The same functionality can be achieved with the `TweenAnimationBuilder` in much fewer lines of code, and without having to juggle an `AnimationController` and calling `setState`.
@@ -275,7 +262,6 @@ class MyPragmaticWidget extends StatelessWidget {
   }
 }
 ```
-
 
 ## Summary
 

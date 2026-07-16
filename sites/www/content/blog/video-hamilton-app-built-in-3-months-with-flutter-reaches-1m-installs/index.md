@@ -9,7 +9,6 @@ layout: blog
 
 <YoutubeEmbed id="kfd-oLypqFI" title="Hamilton iOS and Android app built and featured with Flutter (Flutter Developer Story)" fullwidth="true"/>
 
-
 [Hamilton](https://hamiltonmusical.com/) and [Posse](https://goposse.com/), a design and development agency in New York, had *three* *short months* to develop and launch mobile apps for the hit Broadway show. How did they accomplish that? Using [Flutter](https://flutter.io/?utm_source=youtube&utm_medium=hamilton_flutter_vid), Google’s new mobile UI framework.
 
 Reaching millions of users — with an outstanding *half a million* monthly active users and featured on both the [App Store](https://itunes.apple.com/us/app/hamilton-the-official-app/id1255231054?mt=8) and [Google Play](https://play.google.com/store/apps/details?id=com.hamilton.app&hl=en) — the apps let fans enter the ticket lottery, buy merchandise, play trivia, take selfies with a #HamCam, read frequently updated news and interviews, and more.

@@ -12,7 +12,6 @@ Our vision for Flutter has always been to provide a fast, productive and open to
 
 <DashImage figure src="images/1HcggEjhP_Li6Tt7KIzB10g.webp" />
 
-
 We’re excited to announce that we are moving into a new phase of development as we get closer to a production-quality release of our web support. Today, we are [opening an exclusive program for companies, design agencies and startups](https://forms.gle/32JCpbYefLaZE3xp8) who are ready to build in earnest on Flutter for the web. We have a limited number of slots available by application to those who are ready to engage with us directly on a first wave of production Flutter web applications.
 
 We are looking for candidates with a compelling scenario, a plan to release a web-based Flutter experience within the next six to twelve months, as well as willingness to be featured as a showcase in marketing and launch activities. Like any preview program, there will inevitably be rough edges along the way, but we’re ready to provide support and early access to overcome any obstacles that you experience.

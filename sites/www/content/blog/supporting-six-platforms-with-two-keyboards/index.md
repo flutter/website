@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1RQs5hWCyE30nkyfsVqDb0A.jpeg" />
 
-
 The joy of Flutter is the ease of developing applications for six platforms. The pain is verifying your application on six platforms.
 
 I’m writing a codelab that uses Dart’s Foreign Function Interface (FFI) to integrate C code from iOS, Android, macOS, Linux, and Windows. This story describes how I can develop for all the platforms that Flutter supports without covering my desk in devices.

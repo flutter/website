@@ -10,13 +10,11 @@ layout: blog
 
 <DashImage figure src="images/1RpaR1pTpRa0PUdNdfv4njA.webp" alt="Flutter Puzzle Hack logo" caption="Flutter Puzzle Hack logo" />
 
-
 Ready to brush off the holiday cobwebs and try your hand at a fun coding project that will test your knowledge of Flutter? We’re excited to announce the Flutter Puzzle Hack, our latest challenge to see what *you* can do with Flutter and a chance to win one of over $50,000 worth of prizes. We’re asking you to develop the most creative yet solvable slide puzzle you can imagine, targeting Flutter on the web. Whether you create a new design, rebuild the puzzle from scratch, or integrate packages in new, interesting ways, we want to see just how far you can push your imagination.
 
 To get you started, we’ve written sample code that handles all of the puzzle logic. We’ve also curated loads of other documentation and resources to help you build a compelling submission, so whether you’re an experienced Flutter developer or you’re just joining the Flutter community after reading Flutter Apprentice, there’s something here for you!
 
 <DashImage figure src="images/1fzoYmZlFqBLxkXuCDM6IEw.webp" />
-
 
 Be sure to share your solutions on Twitter and tag them using the hashtag #flutterpuzzlehack for a chance to be featured on our Twitter account!
 
@@ -47,7 +45,6 @@ Be sure to share your solutions on Twitter and tag them using the hashtag #flutt
 On top of all of those resources, we’re partnering with the Flutter Community YouTube channel to host teams like Google Chrome, Firebase, and Rive to talk about everything from best practices for building on the web to effective use of integrations to take your project to the next level. Check out the [contest page](https://flutterhack.devpost.com/) for a detailed schedule.
 
 <YoutubeEmbed id="ue2qa2L5CF4" title="Flutter Puzzle Hack Reveal" fullwidth="true"/>
-
 
 ## Stay Connected
 

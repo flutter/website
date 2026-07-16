@@ -12,13 +12,11 @@ Google Summer of Code (GSoC) 2020
 
 <DashImage figure src="images/15PoXySK4-tAKWAY1zCzfHg.webp" />
 
-
 Google Summer of Code is an initiative by Google to promote open source among student developers, where students pair with a mentor and work with an open source organization for three months.
 
 This year marks the 16th year of Google Summer of Code, and the first year of the Dart organization taking part in GSoC. Many students might be thinking, that’s great, but where is Flutter?
 
 <iframe src="https://giphy.com/gifs/3ogwFTfjbRk2iz89Mc/html5" width="435" height="244" frameborder="0" allowfullscreen></iframe>
-
 
 The good news is, the projects listed include both Flutter and Dart projects. (And to be clear, all Flutter projects are written in the Dart language, but not all Dart projects use the Flutter framework.) Check out all of the project ideas on the [Dart wiki](https://github.com/dart-lang/sdk/wiki/Dart-GSoC-2020-Project-Ideas).
 
@@ -48,7 +46,6 @@ Related PR: [#453](https://github.com/flutter/samples/pull/453)
 
 <DashImage figure src="images/1raON7YDig_i1Lt88IsfjFA.gif" alt="MethodChannel demo in action" caption="MethodChannel demo in action" />
 
-
 ### EventChannel demo
 
 The EventChannel demo demonstrates how to implement an [`EventChannel`](https://api.flutter.dev/flutter/services/EventChannel-class.html) to listen to continuous values from the device’s `Accelerometer` sensor. It also shows how to test the `EventChannel` implementation, which gives you a deeper understanding of how `EventChannel` works.
@@ -57,15 +54,13 @@ Related PR: [#462](https://github.com/flutter/samples/pull/462)
 
 <DashImage figure src="images/1LSMSOh-0dz8TCaKP2Z-CoQ.webp" alt="EventChannel Demo in action" caption="EventChannel Demo in action" />
 
-
 ### Platform Image demo
 
-The Platform Image demo demonstrates how to use [`BasicMessageChannel`](https://api.flutter.dev/flutter/services/BasicMessageChannel-class.html) with [`StandardMessageCodec`](https://api.flutter.dev/flutter/services/StandardMessageCodec-class.html) to load an image from native assets. It also solves [issue #20879: Would like an example of sending an image across `PlatformChannels](https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fflutter%2Fissues%2F20879).`
+The Platform Image demo demonstrates how to use [`BasicMessageChannel`](https://api.flutter.dev/flutter/services/BasicMessageChannel-class.html) with [`StandardMessageCodec`](https://api.flutter.dev/flutter/services/StandardMessageCodec-class.html) to load an image from native assets. It also solves [issue #20879: Would like an example of sending an image across `PlatformChannels`](https://medium.com/r?url=https%3A%2F%2Fgithub.com%2Fflutter%2Fflutter%2Fissues%2F20879).
 
 Related PR: [475](https://github.com/flutter/samples/pull/475)
 
 <DashImage figure src="images/1mc9V6dDcmV0qT6UpzX1AQg.webp" alt="Platform Image demo in action" caption="Platform Image demo in action" />
-
 
 ### BasicMessageChannel & different MessageCodec demo
 
@@ -74,7 +69,6 @@ The BasicMessageChannel demo demonstrates how to use `BasicMessageChannel` and [
 Related PRs: [#484](https://github.com/flutter/samples/pull/484), [#496](https://github.com/flutter/samples/pull/496)
 
 <DashImage figure src="images/1oXELli8oLVJuWFW6BtdXjw.webp" alt="BasicMessageChannel Demo in action" caption="BasicMessageChannel Demo in action" />
-
 
 ## Federated plugin sample
 

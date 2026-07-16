@@ -16,11 +16,9 @@ Before jumping into the results of the first three special topics, we’d like t
 
 <DashImage figure src="images/0jYeqpOHh1OgqKmqW.webp" alt="Figure 1. Satisfaction with Flutter over time" caption="Figure 1. Satisfaction with Flutter over time" />
 
-
 As shown in **Figure 2**, our respondents love the core framework, Android support, and Material widgets. Our biggest opportunity lies with Cupertino widgets and web support. We continue to study what’s needed to improve developer experience in these areas and further invest to advance it. If you want to participate in future user studies, you can sign up at [flutter.dev/research-signup](https://flutter.dev/research-signup).
 
 <DashImage figure src="images/0XaZXV1SPtqbuZhFc.webp" alt="Figure 2. Satisfaction with subsystems" caption="Figure 2. Satisfaction with subsystems" />
-
 
 ## Firebase SDKs for Flutter
 
@@ -29,7 +27,6 @@ Flutter developers use [Firebase SDKs for Flutter](https://pub.dev/publishers/fi
 The most useful information we learned was the problems developers had when trying to use various Firebase packages. As shown in **Figure 3**, Developers cited “not enough real-world examples” as the most common issue that they faced when trying a new Firebase package (14.2%). This was particularly problematic for complex packages with many moving parts, like `firebase_messaging` or `firebase_dynamic_links`. To address this, we’ll be adding more [sample apps to the Firebase docs](https://firebase.google.com/docs/samples). We’re adding two types of sample apps. The first, “quickstart samples”, will cover the use of a specific Firebase package. The second will provide more complex, real-world example apps that use multiple Firebase packages.
 
 <DashImage figure src="images/0hdD0EJyfncwlgAtW.webp" alt="Figure 3. Problems with adopting a new Firebase SDK for Flutter" caption="Figure 3. Problems with adopting a new Firebase SDK for Flutter" />
-
 
 In the survey, a number of developers also selected “API design was too complicated or inconvenient”. This finding was consistent across many packages, like `firebase_database`, `firebase_in_app_messaging`, including the packages mentioned in the previous section. We found this result notable. Though some APIs are simple and small, the concepts they cover, like asynchronous data, aren’t. With this in mind, we will strive to simplify learning materials. Furthermore, we will aim to make new and existing APIs for tools and services as easy to understand as possible.
 
@@ -41,16 +38,13 @@ In the [first survey of 2022](https://medium.com/flutter/does-flutter-boost-deve
 
 <DashImage figure src="images/08Ewc1lTs1hnn1Y0w.webp" alt="Figure 4. Quick fixes and refactorings in VS Code" caption="Figure 4. Quick fixes and refactorings in VS Code" />
 
-
 First, we learned that more than half of the respondents think that quick fixes and refactorings work fine (53.1%), as shown in **Figure 5**. Yet, 34.6% said more features need to be added. This was almost three times more than the number of developers who asked us to fix bugs (12.4%).
 
 <DashImage figure src="images/0CfG7t7ePTA-LlwyZ.webp" alt="Figure 5. The current status of quick fixes and refactorings" caption="Figure 5. The current status of quick fixes and refactorings" />
 
-
 We then asked those who want new features what general category of quick fixes or refactoring features they needed. Before designing the question, we reviewed all the relevant GitHub issues and did a quick [Twitter survey](https://twitter.com/craig_labenz/status/1547650452023435%20267?s=20&t=hOjRR_RImDoyIP38CqsjLA) to organize various feature requests into groups. You can see the list of groups in **Figure 6.**
 
 <DashImage figure src="images/0rbSxslPyUG71IB-Y.webp" alt="Figure 6. Importance of quick fixes and various refactorings features" caption="Figure 6. Importance of quick fixes and various refactorings features" />
-
 
 From this question, we learned that respondents found adding more quick fixes for “fixing compilation errors, warnings, or lints” to be more important than others (76.4% “very important”), though it doesn’t reduce the importance of other features. We also learned that respondents found “extracting or moving widgets” to be more important than other refactorings (69.2% “very important”). We now know that, although we support extracting and moving widgets, developers want more options, such as extracting a widget to a new file. This matches various GitHub issues filed: [flutter/flutter-intellij/issues/5591](https://github.com/flutter/flutter-intellij/issues/5591), [Dart-Code/Dart-Code/issues/1831](https://github.com/Dart-Code/Dart-Code/issues/1831), [flutter-intellij/issues/4540](https://github.com/flutter/flutter-intellij/issues/4540), [dart-lang/sdk/issues/35767](https://github.com/dart-lang/sdk/issues/35767), and others. In addition, developers also want more features for restructuring libraries, classes, or methods (61.9% “very important”), as well as managing imports (59.7% “very important”).
 
@@ -64,11 +58,9 @@ As shown in **Figure 7**, most developers target Android (91.7%), iOS (61.3%), a
 
 <DashImage figure src="images/0WHlC27Td3vNoiDFc.webp" alt="Figure 7. Target platforms developers are actively building and app for" caption="Figure 7. Target platforms developers are actively building and app for" />
 
-
 In addition, we wanted to know how many of the developers were on a development team, where teammates developed for a platform that’s different from their own. For example, developer A targets Android and developer B targets iOS. As shown in **Figure 8**, 40% of the developers said they had a coworker who’s working on a different platform than theirs. This increased to 61%, when we filtered for the developers who said they themselves were developing for only one platform.
 
 <DashImage figure src="images/0DWsq2C8LftK67nYq.webp" alt="Figure 8. Teammates developing for an additional platform" caption="Figure 8. Teammates developing for an additional platform" />
-
 
 When combined, we could calculate that 91% of the Flutter teams are active multiplatform development teams (24%*0.61 + 76%). At least 72% of the respondents developed apps for both Android and iOS. Of the total respondents, 34% targeted iOS, Android, and the web and 12% targeted iOS, Android, the web, and Windows.
 

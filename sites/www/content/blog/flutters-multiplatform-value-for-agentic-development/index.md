@@ -14,7 +14,6 @@ This is crucial in an AI-driven world where enhanced consistency, reduced token 
 
 <DashImage figure src="images/1aotSzcGPZg3gYqhwDy4LWQ.webp" alt="Dash secretly hanging out in an alley doing agentive things" caption="Dash secretly hanging out in an alley doing agentive things" />
 
-
 ## The existing value proposition
 
 Multiplatform development relies on enabling a single, shared source codebase. In our first-party Flutter apps, between 95% and 99% of the source code is shared. This massive code reuse unlocks several benefits:

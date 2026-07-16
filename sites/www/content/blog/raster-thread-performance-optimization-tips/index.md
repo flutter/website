@@ -12,13 +12,11 @@ Recently, I sat down to tweak the performance of FlutterFolio, an app that was b
 
 <DashImage figure src="images/116rv_KQNNU3IsAHCfI3G6A.webp" />
 
-
 But, first, I had to search for what to change. This article is about that search.
 
 FlutterFolio is a fully functional app that was created in 6 weeks (!) from design to implementation, for mobile, desktop, and the web. The development team clearly had to cut some corners — no judgement there. The scope of the project and the very short timeline forced them to do that.
 
 <YoutubeEmbed id="x4xZkdlADWo" title="Flutter Folio Trailer" fullwidth="true"/>
-
 
 In fact, this presents a great opportunity, because the app is more “real life” than all the sample apps I can think of.
 
@@ -35,7 +33,6 @@ What’s the first step of any optimization? Measurement. Knowing that an app se
 Performance profiling of apps is hard. I wrote [a long article](https://medium.com/flutter/performance-testing-of-flutter-apps-df7669bb7df7) about it in 2019. So, let’s start simple. We run the app in profile mode, turn on the performance overlay, and use the app, while watching the performance overlay graph.
 
 <DashImage figure src="images/0H6YKXQ1-ToTZ50v2.webp" />
-
 
 Immediately, we see that the Raster thread is struggling.
 
@@ -57,20 +54,17 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 The above code runs on the UI thread. The Flutter framework figures out where to place the widget, what size to give it, and so on — still on the UI thread.
 
 Then, after Flutter knows everything about the frame, it’s over to the Raster thread. The Raster thread takes the bytes in `dash.png`, resizes the image (if needed), and then applies opacity, blend modes, blur, and so on, until it has the final pixels. The Raster thread then sends the resulting information to the graphics card, and, therefore, to the screen.
 
 <DashImage figure src="images/0zJIzYT-PwDfPDcj3.webp" />
 
-
 ## Step 2: Digging into the timeline
 
 OK, back to FlutterFolio. Opening Flutter DevTools lets us look more closely at the timeline.
 
 <DashImage figure src="images/0ypQsScjnj0Mw5Ijg.webp" />
-
 
 On the **Performance** tab, you can see that the UI thread (the pale blue bars) is doing quite well, while the Raster thread (the dark blue and red bars) is taking a surprising amount of time for each frame, especially when scrolling down the home page. Therefore, the problem isn’t inefficient build methods or business logic. The problem is asking the Raster thread to do too much.
 
@@ -79,7 +73,6 @@ The fact that *every frame* spends a long time on the Raster thread tells us som
 Let’s pick a frame and look at the **Timeline Events** panel..
 
 <DashImage figure src="images/0W7OF2hEK--gS5XwF.webp" />
-
 
 The top part of the timeline, with the light gray background, is the UI thread. Once again, you can see that the UI thread is not the problem.
 
@@ -107,7 +100,6 @@ Armed with knowledge, let’s look at the source code. If the code is unfamiliar
 
 <DashImage figure src="images/0OvXs3e-CZJzW49hA.webp" />
 
-
 FlutterFolio’s home page, at least on mobile devices, seems to be, basically, a [vertical PageView populated with BookCoverWidgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/covers_flow_list_mobile.dart#L36-L40). Looking at `BookCoverWidget`, you can see that it’s essentially [a Stack of various widgets](https://github.com/gskinnerTeam/flutter-folio/blob/2bb2101c14ee3f30e11f966e9ce6c50dee600c0b/lib/views/home_page/book_cover/book_cover.dart#L77-L122), starting with a large image at the bottom, continuing with some animated overlays, the main text content, and ending with a mouse-over overlay at the top.
 
 ```dart
@@ -123,10 +115,10 @@ child: Stack(fit: StackFit.expand, children: [
   ),
 
   /// Black overlay, fades out on mouseOver
-  AnimatedContainer(duration: Times.slow, 
+  AnimatedContainer(duration: Times.slow,
      color: Colors.black.withOpacity(overlayOpacity)),
 
-  /// When in large mode, show some gradients, 
+  /// When in large mode, show some gradients,
   /// should sit under the Text elements
   if (widget.largeMode) ...[
     FadeInLeft(
@@ -139,7 +131,7 @@ child: Stack(fit: StackFit.expand, children: [
   ],
 
   /// Sit under the text content, and unfocus when tapped.
-  GestureDetector(behavior: HitTestBehavior.translucent, 
+  GestureDetector(behavior: HitTestBehavior.translucent,
       onTap: InputUtils.unFocus),
 
   /// BookContent, shows either the Large cover or Small
@@ -162,7 +154,6 @@ child: Stack(fit: StackFit.expand, children: [
 ]),
 ```
 
-
 Now, remember: you’re looking for something that happens in every frame (that is, it’s always present), and that is potentially expensive for the Skia renderer to draw (images, blurs, blends, and so on).
 
 ## Step 4: Drill down
@@ -173,29 +164,25 @@ Remember, the first child of the `Stack` is the background, and every subsequent
 
 <DashImage figure src="images/0gC4MeiTr5qVd1fW7.webp" />
 
-
 That defeats the purpose of the whole page. Looking closer at `BookCoverImage`, you can see that it’s just a simple wrapper around `Image`. With one notable exception (mentioned later in this article), there isn’t much that could be improved here.
 
 Moving on, there’s this code:
 
 ```dart
 /// Black overlay, fades out on mouseOver
-AnimatedContainer(duration: Times.slow, 
+AnimatedContainer(duration: Times.slow,
   color: Colors.black.withOpacity(overlayOpacity)),
 ```
-
 
 This is a widget that covers the whole image with a layer of transparent black. `overlayOpacity` is 0 by default (and most of the time), so this layer is fully transparent. Hmm. Let’s remove it, and run the app in profile mode again.
 
 <DashImage figure src="images/0NiyiyjMKhKn7LJFk.webp" />
-
 
 Interesting! The Raster thread still takes quite a lot of load, but there is a major performance improvement.
 
 I decided to implement a more robust performance profiling tool for FlutterFolio, so that I can prove that the improvement is real and not just a fluke. This change gives me an impressive 20% less CPU time spent rasterizing overall and 50% less potential jank.
 
 <DashImage figure src="images/0oE665wZJZhFsz-7s.webp" />
-
 
 All in all, this is a massive change for removing a single widget that does nothing most of the time.
 
@@ -207,7 +194,6 @@ if (overlayOpacity > 0)
   AnimatedContainer(duration: Times.slow,
       color: Colors.black.withOpacity(overlayOpacity)),
 ```
-
 
 Now, you only add the transparent overlay when it has non-zero opacity (that is, it’s at least partially visible). You avoid the (very common!) scenario in which a completely transparent layer is created and rasterized, but doesn’t have any effect.
 
@@ -224,7 +210,7 @@ Before moving on to a completely different issue, it’s often a good idea to lo
 In this case, the next few lines create large gradients that fade in as you scroll:
 
 ```dart
-/// When in large mode, show some gradients, 
+/// When in large mode, show some gradients,
 /// should sit under the Text elements
 if (widget.largeMode) ...[
   FadeInLeft(
@@ -236,7 +222,6 @@ if (widget.largeMode) ...[
   FadeInUp(child: _BottomGradientSm(Colors.black)),
 ],
 ```
-
 
 And, sure enough, removing these animated, almost-full-screen gradients significantly improves the scrolling performance. Unfortunately, in this case, the solution isn’t as simple as with the previous example. These gradients aren’t invisible. They start fading in as soon as the user reaches that cover. Removing them *does* make a visual difference.
 
@@ -254,11 +239,9 @@ When your app is running in debug mode, you can use Flutter Inspector to [invert
 
 <DashImage figure src="images/1VBQwkJIdQBuQl6G9Xy0glg.webp" />
 
-
 This will color invert and flip all images in your app that are too large for their actual use. You can then peruse the app and watch for unnatural changes.
 
 <DashImage figure src="images/0n7AfpJ2tNR4CLB0V.webp" />
-
 
 The debug mode also reports an error every time it encounters such an image, for example:
 > [ERROR] Image assets/images/empty-background.png has a display size of 411×706 but a decode size of 2560×1600, which uses an additional 19818KB.

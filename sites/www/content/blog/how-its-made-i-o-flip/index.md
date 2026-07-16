@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1nGcHw9zmkDT1oGhYwuZMqA.jpeg" />
 
-
 ## How It’s Made: I/O FLIP
 
 ### AI-generated text and images add some fun to this card game built with Flutter, Firebase, and Google Cloud
@@ -47,11 +46,9 @@ Playing cards are a key element of I/O FLIP. Thousands of cards could end up in 
 …
 ```
 
-
 ### Cards created with AI-generated images and descriptions
 
 <DashImage figure src="images/1-8FtGtAwiERpc5_ctA0GKg.webp" alt="Example I/O FLIP cards" caption="Example I/O FLIP cards" />
-
 
 Each card in I/O FLIP is unique because it contains an AI-generated image and description. At the beginning of the game, players answer two prompts. These prompts help populate a deck of 12 cards that feature images and descriptions that AI models pre-generated.
 
@@ -66,7 +63,6 @@ To learn more about how the Generative AI aspects of the game were created, chec
 ### Shaders add foil effect to special cards
 
 <DashImage figure src="images/1oMUDkIUdJaEb6tX1jdQjKg.gif" alt="I/O FLIP uses a fragment shader to render the holo effect on a card" caption="I/O FLIP uses a fragment shader to render the holo effect on a card" />
-
 
 Flutter supports [fragment shaders](https://docs.flutter.dev/ui/advanced/shaders). To generate these per-pixel visual effects, Flutter runs the OpenGL Shading Language (GLSL) on the device’s GPU. Trading card collectors might remember the feeling of opening a pack to find a special edition card with a shiny, holographic foil. I/O FLIP includes special foil cards, too. They are valued at 100 points. Regular cards have a point values ranging from 10 to 99. We used custom shaders to render the foil effect.
 
@@ -112,7 +108,6 @@ vec4 rainbowEffect(vec2 uv) {
 }
 ```
 
-
 ## Firebase enables game hosting and sharing to social media
 
 All of the gameplay communication happens in real time via [Firebase’s Cloud Firestore](https://firebase.google.com/docs/firestore). Firebase Storage hosts the card assets that generate players’ card decks. We also use Cloud Firestore to track the “Highest Win Streak” on the leaderboard. When a leaderboard adds new leader, the [`firedart`](https://pub.dev/packages/firedart) package adds it to Firestore.
@@ -155,7 +150,6 @@ FutureOr<Response> onRequest(RequestContext context) async {
   return Response(statusCode: HttpStatus.methodNotAllowed);
 }
 ```
-
 
 Dart Frog also facilitates sharing on social media. When selecting cards, a player can share an individual card to Twitter or Facebook. When you submit your score to the leaderboard, you can share your hand to Twitter or Facebook. Once the user clicks **Share**, Dart Frog generates a pre-populated post. This post contains text and a link to a webpage with your corresponding hand or card and a button for visitors to play I/O FLIP themselves!
 

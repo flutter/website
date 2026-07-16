@@ -63,7 +63,6 @@ For most use cases you would probably employ *method channels* for platform comm
 
 <DashImage figure src="images/1BIknuDE2gMHmbYg7S8_F0Q.webp" />
 
-
 At the most basic level, Flutter talks to platform code using asynchronous message passing with binary messages — meaning the message payload is a byte buffer. To distinguish between messages used for different purposes, each message is sent on a logical “channel” which is just a name string. The examples below use the channel name `foo`.
 
 ```dart
@@ -76,7 +75,6 @@ final ByteData message = buffer.done();
 await BinaryMessages.send('foo', message);
 print('Message sent, reply ignored');
 ```
-
 
 On Android such a message can be received, as a `java.nio.ByteBuffer`, using the following Kotlin code:
 
@@ -93,7 +91,6 @@ flutterView.setMessageHandler("foo") { message, reply ->
   reply.reply(null)
 }
 ```
-
 
 The `ByteBuffer` API supports reading off primitive values while automatically advancing the current read position. The story on iOS is similar; suggestions for improving my weak Swift fu are very welcome:
 
@@ -114,7 +111,6 @@ flutterView.setMessageHandlerOnChannel("foo") {
   reply(nil)
 }
 ```
-
 
 Communication is bidirectional, so you can send messages in the opposite direction too, from Java/Kotlin or Objective-C/Swift to Dart. Reversing the direction of the above setup looks as follows:
 
@@ -153,7 +149,6 @@ BinaryMessages.setMessageHandler('foo', (ByteData message) async {
   return null;
 });
 ```
-
 
 **The fine print.** *Mandatory replies.* Each message send involves an asynchronous reply from the receiver. In the examples above, there is no interesting value to communicate back, but the null reply is necessary for the Dart future to complete and for the two platform callbacks to execute.
 
@@ -232,7 +227,6 @@ channel.setMessageHandler {
 }
 ```
 
-
 The channel name is specified only on channel construction. After that, calls to send a message or set a message handler can be done without repeating the channel name. More importantly, we leave it to the string codec class to deal with how to interpret bytes buffers as strings and vice versa.
 
 These are noble advantages to be sure, but you’d probably agree that `BasicMessageChannel` doesn’t do all that much. Which is on purpose. The Dart code above is equivalent to the following use of the binary messaging foundations:
@@ -255,7 +249,6 @@ BinaryMessages.setMessageHandler('foo', (ByteData message) async {
   return codec.encodeMessage('Hi from Dart');
 });
 ```
-
 
 This remark applies to the [Android](https://docs.flutter.io/javadoc/io/flutter/plugin/common/BasicMessageChannel.html) and [iOS](https://docs.flutter.io/objcdoc/Classes/FlutterBasicMessageChannel.html) implementations of message channels as well. *There is no magic involved*:
 
@@ -290,14 +283,12 @@ final String reply1 = await channel.send(msg1);
 final int reply2 = await channel.send(msg2);
 ```
 
-
 But there’s a caveat when dealing with replies involving generic type parameters:
 
 ```dart
 final List<String> reply3 = await channel.send(msg3);      // Fails.
 final List<dynamic> reply3 = await channel.send(msg3);     // Works.
 ```
-
 
 The first line fails at runtime, unless the reply is null. The standard message codec is written for heterogeneous lists and maps. On the Dart side, these have runtime types `List<dynamic>` and `Map<dynamic, dynamic>`, and Dart 2 prevents such values from being assigned to variables with more specific type arguments. This situation is similar to Dart JSON deserialization which produces `List<dynamic>` and `Map<String, dynamic>` — as does the JSON message codec.
 
@@ -311,7 +302,6 @@ Future<String> greet() async {                             // Works.
 }
 ```
 
-
 The first method fails at runtime, even if the reply received is a string. The channel implementation creates a `Future<dynamic>` regardless of the type of the reply, and such an object cannot be assigned to a `Future<String>`.
 
 *Why the “basic“ in BasicMessageChannel?* Message channels seem to be used only in rather restricted situations where you are communicating some form of homogeneous event stream in an implied context. Like keyboard events, perhaps. For most applications of platform channels, you’re going to need to communicate not only values, but also what you want to happen with each value, or how you’d like it to be interpreted by the receiver. One way to do that is to have the message represent a method call with the value as argument. So you’ll want a standard way of separating the method name from the argument in the message. And you’ll also want a standard way to distinguish between success and error replies. This is what *method* channels do for you. Now, `BasicMessageChannel` was originally named `MessageChannel`, but was renamed to avoid confusing `MessageChannel` with `MethodChannel` in code. Being more generally applicable, method channels kept the shorter name.
@@ -319,7 +309,6 @@ The first method fails at runtime, even if the reply received is a string. The c
 ### Method channels: standardized envelopes
 
 <DashImage figure src="images/1ykNghfAKtx0xsZWedfgslg.webp" />
-
 
 Method channels are platform channels designed for invoking named pieces of code across Dart and Java/Kotlin or Objective-C/Swift. Method channels make use of standardized message “envelopes” to convey method name and arguments from sender to receiver, and to distinguish between successful and erroneous results in the associated reply. The envelopes and supported payload are defined by separate method codec classes, similarly to how message channels use message codecs.
 
@@ -368,7 +357,6 @@ channel.setMethodCallHandler {
 }
 ```
 
-
 By adding cases to the switch constructs, we can easily extend the above to handle multiple methods. The default clause handles the situation where an unknown method is called (most likely due to a programming error).
 
 The Dart code above is equivalent to the following:
@@ -387,7 +375,6 @@ if (reply == null) {
 }
 ```
 
-
 The [Android](https://docs.flutter.io/javadoc/io/flutter/plugin/common/MethodChannel.html) and [iOS](https://docs.flutter.io/objcdoc/Classes/FlutterMethodChannel.html) implementations of method channels are similarly thin wrappers around calls to the binary messaging foundations. A null reply is used to represent a “not implemented” result. This conveniently makes the behavior at the receiving end indifferent to whether the invocation fell through to the default clause in the switch, or no method call handler had been registered with the channel at all.
 
 The argument value in the example is the single string `world`. But the default method codec, aptly named the “standard method codec”, uses the standard *message* codec under the hood to encode payload values. This means that the “generalized JSON-like” values described earlier are all supported as method arguments and (successful) results. In particular, heterogeneous lists support multiple arguments, while heterogeneous maps support named arguments. The default arguments value is null. A few examples:
@@ -401,7 +388,6 @@ await channel.invokeMethod('bar', <String, dynamic>{
   math: pi,
 }));
 ```
-
 
 The Flutter SDK includes two method codecs:
 
@@ -501,7 +487,6 @@ channel.setMethodCallHandler {
 }
 ```
 
-
 Errors are triples (code, message, details) where the code and message are strings. The message is intended for human consumption, the code for, well, code. The error details is some custom value, often null, which is constrained only by the kinds of value that the codec supports.
 
 **The fine print.** *Exceptions.* Any uncaught exception thrown in a Dart or Android method call handler is caught by the channel implementation, logged, and an error result is returned to the caller. Uncaught exceptions thrown in result handlers are logged.
@@ -522,7 +507,6 @@ These differences, mirrored also in the way message call handlers are written, a
 
 <DashImage figure src="images/1jd9Thys5_k-jbkKM7P69Ng.webp" />
 
-
 An event channel is a specialized platform channel intended for the use case of exposing platform events to Flutter as a Dart stream. The Flutter SDK currently has no support for the symmetrical case of exposing Dart streams to platform code, though that could be built, if the need arises.
 
 Here’s how you would consume a platform event stream on the Dart side:
@@ -538,7 +522,6 @@ channel.receiveBroadcastStream().listen((dynamic event) {
   print('Received error: ${error.message}');
 });
 ```
-
 
 The code below shows how to produce events on the platform side, using sensor events on Android as an example. The main concern is to ensure that we are listening to events from the platform source (the sensor manager in this case) and sending them through the event channel precisely when 1) there is at least one stream listener on the Dart side and 2) the ambient `Activity` is running. Packaging up the necessary logic in a single class increases the chance of doing this correctly:
 
@@ -609,7 +592,6 @@ class MainActivity: FlutterActivity() {
 }
 ```
 
-
 If you use the `android.arch.lifecycle` package in your app, you could make `SensorListener` more self-contained by making it a `LifecycleObserver`.
 
 **The fine print.** *Life of a stream handler.* The platform side stream handler has two methods, `onListen` and `onCancel`, which are invoked whenever the number of listeners to the Dart stream goes from zero to one and back, respectively. This can happen multiple times. The stream handler implementation is supposed to start pouring events into the event sink when the former is called, and stop when the latter is called. In addition, it should pause when the ambient app component is not running. The code above provides a typical example. Under the covers, a stream handler is of course just a binary message handler, registered with the Flutter view using the event channel’s name.
@@ -669,7 +651,6 @@ channel.setMethodCallHandler { call, result ->
 fun process(name: String, age: Int, result: Result) { ... }
 ```
 
-
 The Android code exploits the generically typed `<T> T argument(String key)` method of `MethodCall` which looks up the key in the arguments, assumed to be a map, and casts the value found to the target (call site) type. A suitable exception is thrown, if this fails for any reason. Being thrown from a method call handler, it would be logged, and an error result sent to the Dart side.
 
 ### Don’t mock platform channels
@@ -689,7 +670,6 @@ test('gets greeting from platform', () async {
   expect(await hello('world'), 'Platform says: Hello, world');
 });
 ```
-
 
 To test code that sets up message or method handlers, you can synthesize incoming messages using `BinaryMessages.handlePlatformMessage`. At present, this method is not mirrored on platform channels, though that could easily be done as indicated in the code below. The code defines a unit test of a class `Hello` that is supposed to collect incoming arguments of calls to method `bar` on channel `foo`, while returning greetings:
 
@@ -723,7 +703,6 @@ Future<dynamic> handleMockCall(
   return result;
 }
 ```
-
 
 Both examples above declare the channel object in the unit test. This works fine — unless you worry about the duplicated channel name and codec — because all channel objects with the same name and codec are equivalent. You can avoid the duplication by declaring the channel as a **`const`** somewhere visible to both your production code and the test.
 

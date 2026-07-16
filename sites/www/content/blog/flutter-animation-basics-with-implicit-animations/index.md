@@ -22,7 +22,6 @@ These widgets automatically animate changes to their properties. When you rebuil
 
 <DashImage figure src="images/08lW_z0nxESDIBO9R.gif" alt="A screen recording where the code for an app is modified and the application animates the size of a star widget." caption="A screen recording where the code for an app is modified and the application animates the size of a star widget." />
 
-
 These widgets are called [Implicitly Animated Widgets](https://api.flutter.dev/flutter/widgets/ImplicitlyAnimatedWidget-class.html). They are typically the first thing you reach for when you need to add animations to your app. They provide a way to add animations without adding additional complexity.
 
 ## The AnimatedContainer widget
@@ -32,7 +31,6 @@ Let’s look a little closer at how you can use one of these implicitly animated
 In this app, there is a container and a button. When the button is pressed, `setState` is called, and the container is rebuilt with a new value for `width`. Notice that the container changes its width immediately, without any animation.
 
 <DashImage figure src="images/0TRpN2WHDqNJtk7vI.gif" alt="The star gets bigger instantly, with no animation between its states." caption="The star gets bigger instantly, with no animation between its states." />
-
 
 ```dart
 @override
@@ -55,7 +53,6 @@ Widget build(BuildContext context) {
 }
 ```
 
-
 We can add some animation to this app by switching the Container widget for an AnimatedContainer widget and specifying an animation duration.
 
 ```dart
@@ -66,11 +63,9 @@ AnimatedContainer(
 ),
 ```
 
-
 Now, when the button is pressed, the container gradually animates from the previous width value to the new value.
 
 <DashImage figure src="images/0VdFcZ_eCsnJnJXb-.webp" alt="The star now animates between its states" caption="The star now animates between its states" />
-
 
 The process of animating through the values between the old and new value is called [interpolation](https://en.wikipedia.org/wiki/Interpolation). The AnimatedContainer handles interpolating its properties between the old and the new values whenever they change.
 
@@ -86,9 +81,7 @@ AnimatedContainer(
 ),
 ```
 
-
 <DashImage figure src="images/0k-sSbKs-rCvbxB1a.webp" alt="The star now has an animated gradient" caption="The star now has an animated gradient" />
-
 
 ## Controlling the animation with duration and curves
 
@@ -102,12 +95,9 @@ AnimatedContainer(
 ),
 ```
 
-
 <DashImage figure src="images/0wGVszwaj9kdJlOsS.webp" />
 
-
 <DashImage figure src="images/01g6d0g2ruUw0ZNBb.webp" alt="Faster on the left, slower on the right" caption="Faster on the left, slower on the right" />
-
 
 In this example, we made the animation take a much longer amount of time.
 
@@ -122,12 +112,9 @@ AnimatedContainer(
 ),
 ```
 
-
 <DashImage figure src="images/0UySYHB5By2kX9P_6.webp" />
 
-
 <DashImage figure src="images/0_8Ynon8NQu4zB3B7.webp" alt="Linear on the left, quintic on the right" caption="Linear on the left, quintic on the right" />
-
 
 There are many different [built-in Curves](https://api.flutter.dev/flutter/animation/Curves-class.html) available to give your animations a bit of character, and you can also define your own custom curves. Curves can even be discontinuous, like the [SawTooth](https://api.flutter.dev/flutter/animation/SawTooth-class.html) curve.
 
@@ -146,11 +133,9 @@ class SineCurve extends Curve {
 }
 ```
 
-
 Here, SineCurve makes the star bounce up and down:
 
 <DashImage figure src="images/0eouqer3J3CQE-fO4.webp" alt="Now that is a happy star" caption="Now that is a happy star" />
-
 
 ## To recap
 

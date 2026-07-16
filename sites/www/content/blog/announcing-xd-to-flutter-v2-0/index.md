@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1OoVDCYfw18QB91Fpe5jDAg.webp" />
 
-
 Flutter is Google’s open-source UI toolkit for building beautiful apps for mobile, desktop, web, and embedded devices from a single codebase. Over the last couple of years, it has become the leading choice for developers who want to build apps for multiple platforms; but designers need a visual tool for prototyping and creating Flutter UI, rather than handcrafting Dart source code. Enter [*XD to Flutter*](https://github.com/AdobeXD/xd-to-flutter-plugin)!
 
 It’s been almost a year since the first preview release of the plugin, and we’ve continued to refine and improve it with a handful of minor updates, a major v1.0 launch last summer, and now a v2.0 release to match with the launch of Flutter 2!
@@ -20,7 +19,6 @@ It’s been almost a year since the first preview release of the plugin, and we�
 The name probably gives it away, but the XD to Flutter plugin is a powerful, easy-to-use tool to export your stunning [Adobe XD](https://www.adobe.com/products/xd.html) designs into clean, functional code for Flutter. You can copy code for specific visual elements from your design, export reusable widgets, or even entire views.
 
 <YoutubeEmbed id="raG7NjM0p0k" title="Adobe XD to Flutter" fullwidth="true"/>
-
 
 That means that, with the XD to Flutter plugin, you can get your designs running on virtually any device with the click of a button. It’s not going to code your whole app for you, but it’ll give you a head start.
 
@@ -38,14 +36,11 @@ XD to Flutter supports the responsive layout features of XD, which lets you “p
 
 <DashImage figure src="images/1Ep_TKKdQqNDhNGtYjXSmzQ.webp" alt="Responsive design in Adobe XD" caption="Responsive design in Adobe XD" />
 
-
 <DashImage figure src="images/1A6Kateq9HjSt3XADTQzaow.webp" alt="Responsive resize in Flutter" caption="Responsive resize in Flutter" />
-
 
 This is achieved in Flutter by using a custom `Pinned` layout widget in the open-source [adobe_xd](https://pub.dev/packages/adobe_xd) package that developers can leverage directly in their projects.
 
 <DashImage figure src="images/1F_lxL7fE3-MkjobRiJLqpA.webp" alt="Pinned widget code example" caption="Pinned widget code example" />
-
 
 ### Stacks & Scroll Groups
 
@@ -57,7 +52,6 @@ XD to Flutter v2.0 supports both of these features, converting them into common 
 
 <DashImage figure src="images/1avGeBrHwEcAyptu0aKyc4w.webp" alt="Stacks & Scroll Groups in XD (left) and Flutter (right)" caption="Stacks & Scroll Groups in XD (left) and Flutter (right)" />
 
-
 ### Padding & Background Elements
 
 Another new feature is background elements, which let you designate a visual element as the background for a group. This can be paired with padding to space the background’s edges from the content.
@@ -65,7 +59,6 @@ Another new feature is background elements, which let you designate a visual ele
 The Flutter export uses a `Stack` widget to layer the background element behind the content, which is placed into a `Padding` widget.
 
 <DashImage figure src="images/1-nUSSGKplXOzmySlrEUwXg.webp" alt="Padding & Background in XD (left) and Flutter (right)" caption="Padding & Background in XD (left) and Flutter (right)" />
-
 
 ### Flutter 2 & null safety
 
@@ -75,7 +68,6 @@ Flutter 2 also introduces sound null safety — a language feature that helps de
 
 <DashImage figure src="images/14Gdqc7x5Vk85t47tQIocmw.webp" alt="“Export Null Safe Code” setting and output" caption="“Export Null Safe Code” setting and output" />
 
-
 ### Sounds great! How do I get started?
 
 Whether you’re using it to copy the code for a tricky gradient, or to export fully responsive, parameterized, interactive widgets, it’s simple to join the thousands of creative professionals that are already using the XD to Flutter plugin.
@@ -83,7 +75,6 @@ Whether you’re using it to copy the code for a tricky gradient, or to export f
 You can install it by selecting “Browse Plugins…” from Adobe XD’s “Plugin” menu and searching for “Flutter” (strangely, searching for “XD to Flutter” doesn’t work), or just visit [adobe.com/go/xd_to_flutter](https://adobe.com/go/xd_to_flutter).
 
 <DashImage figure src="images/1aSDHtLA_ZQyiyXX3y9j2Ng.webp" />
-
 
 Once you have it installed, open the XD to Flutter panel from the plugins panel, and tap the “Need help?” link to check out the [plugin documentation](https://github.com/AdobeXD/xd-to-flutter-plugin/blob/master/README.md).
 

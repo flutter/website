@@ -28,13 +28,11 @@ The following screenshot shows these four improvements, identified with blue cir
 
 <DashImage figure src="images/1l8l2xWisc5Mtc6xzFaucmg.webp" alt="An example of the new structured error message" caption="An example of the new structured error message" />
 
-
 Note that everything fits in one screen, making it possible to get a general understanding of the problem at a glance. The reduction in noise is done without deleting any information that might be useful for cases where more detail is important in order to fix the error.
 
 In contrast, the original error message is a lot denser and lacks structure, so it’s difficult to find the information that tells you how to fix the error. See the following screenshot.
 
 <DashImage figure src="images/1l8nn2JJ5rSQqfW2col87NQ.webp" alt="The original message for the same RenderFlex Overflow error" caption="The original message for the same RenderFlex Overflow error" />
-
 
 At this time, we refactored about 85% of the error messages in the Flutter framework, to take advantage of this new presentation. Improvements to the rest of the error messages will happen over time. We also plan to refine the general presentation of error messages based on user feedback.
 
@@ -45,7 +43,6 @@ The usability of error messages is a multifaceted problem. The content, structur
 As an example, let’s take a look at the “No Material widget found” error. This error occurs when a widget expects a Material widget in its ancestor tree but one isn’t found. The message for this error was so hard to figure out that a user [sought help](https://stackoverflow.com/questions/43947552/using-textfield-throws-no-material-widget-found-error) from StackOverflow. The accepted answer pointed out the key information already in the message, but the user either couldn’t find the needed information or didn’t understand it. No new information was given.
 
 <DashImage figure src="images/0X_nD364tctKThHvy.webp" alt="A question posted to StackOverflow about the “No Material widget found” error" caption="A question posted to StackOverflow about the “No Material widget found” error" />
-
 
 ### The new way of presenting error messages
 
@@ -61,16 +58,13 @@ To create the colors variant, we analyzed the relative importance of different p
 
 <DashImage figure src="images/1Vz1dqvpOYqnFOIEVIZuVww.webp" alt="The colors variant of the message for the “Missing Material” error" caption="The colors variant of the message for the “Missing Material” error" />
 
-
 The next variant is called spaces. We added whitespace to the error message to separate it into sections. We also added section headings such as Explanation and Potential Fix to make the message easier to skim.
 
 <DashImage figure src="images/0uct3j7acy9KVMqi2.webp" alt="The spaces variant of the message for the “Missing Material” error" caption="The spaces variant of the message for the “Missing Material” error" />
 
-
 Last, the ellipses variant applies the [progressive disclosure technique](https://www.nngroup.com/articles/progressive-disclosure) in error message presentation and leverages the capabilities of a modern IDE. For example, we collapsed the TextField widget’s parameter list and the widget’s ancestors after the first three are displayed. To see the rest of the list, just click the ellipsis that follows the last parameter or ancestor. The resulting error message is considerably shorter than the original, increasing the likelihood that your attention is drawn to the higher-level elements in the message, all at a glance.
 
 <DashImage figure src="images/1FHiGbc69QAdOuRGDezhc1A.webp" alt="The ellipses variant of the message for the “Missing Material” error" caption="The ellipses variant of the message for the “Missing Material” error" />
-
 
 We had good reason to believe that these variants would help the user, but we weren’t sure whether we could justify the cost to implement them. To make those presentations real, we needed to make the Flutter framework send structured error data to the IDE, so the IDE can style different parts (e.g., summary, detail, and hints) appropriately and collapse less important information. We asked ourselves if the potential improvement to the developer experience was worth the effort to refactor Flutter’s error API *and* the hundreds of errors that were already written. So, we decided to run an experiment, to find out how large the upside is of having structured error messages.
 
@@ -80,11 +74,9 @@ To compare the usability of the three variants with the original message, we con
 
 <DashImage figure src="images/0_b3-Pr2bUFSsbAUM.webp" alt="Error comprehension rates across four message variants" caption="Error comprehension rates across four message variants" />
 
-
 The results surprised us in a very positive way. Participants’ comprehension of the error message was substantially better in any of the three treatment groups than in the control group. In other words, the proportion of participants who correctly understood the error within the time limit was much higher when any of the variants were used rather than the original. The following chart shows that, the spaces variant outperforms the original formatting of the message by about 38 percentage points when participants were given 45 seconds in total to read the error message.
 
 <DashImage figure src="images/0evHu5BfK5pfBSCz3.webp" alt="Error fix rates across four message variants" caption="Error fix rates across four message variants" />
-
 
 Similarly, all the variants of the error message outperformed the message’s original presentation when it came to figuring out the solution.
 

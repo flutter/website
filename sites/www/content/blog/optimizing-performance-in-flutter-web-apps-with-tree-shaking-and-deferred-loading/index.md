@@ -38,7 +38,6 @@ void main() {
 }
 ```
 
-
 2. Run `dart2js -O4 greeter.dart` in your terminal and take a look at the generated output `out.js`.
 
 In the generated JavaScript code, there aren’t any references to the `SwedishGreeter` class, or any inclusion of the string `Hej $name`, as it was removed during tree shaking by the compiler.
@@ -54,7 +53,6 @@ if (locale.languageCode == 'sv') {
 }
 ```
 
-
 The compiler doesn’t know the user’s system locale, therefore both `EnglishGreeter` and `SwedishGreeter` are included in the JavaScript bundle. For such use cases deferred loading can help in minimizing the initial bundle size.
 
 ## Only load code when needed with deferred loading
@@ -69,7 +67,6 @@ void main() async {
   runApp(App(title: greeter.EnglishGreeter().greet('World')));
 }
 ```
-
 
 Compiling this code generates two JavaScript files. When `loadLibrary` is called on the deferred import, it loads the `greeter` library.
 
@@ -90,11 +87,9 @@ FutureBuilder(
 )
 ```
 
-
 To try it yourself (see a [full example on GitHub](https://github.com/perclasson/flutter_code/tree/master/deferred_loading)), open Chrome DevTools and click the [**Network** tab](https://developers.google.com/web/tools/chrome-devtools/network) to inspect network activity. Reload the page to see when the library is loaded and imported. In the following screenshot, loading the `main.dart.js_1.part.js` file is deferred:
 
 <DashImage figure src="images/0Z8CmvWbWVXUb9Wy4.webp" />
-
 
 ## Deferred loading of localizations in the Flutter Gallery
 

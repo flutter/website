@@ -20,7 +20,6 @@ Next, about half of the respondents said that they’ve published apps with Flut
 
 <DashImage figure src="images/0cqbZUVzw4XSlZyJR.webp" alt="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" caption="*Satisfaction with Flutter by the stage of app development. Developers who have published a Flutter app were more satisfied with Flutter than those who haven’t.*" />
 
-
 Similarly, when we asked about their primary purpose for using Flutter, 48% of the respondents said that they are using Flutter for their main job. This number is also growing. A year ago, it was 30%. The number of users evaluating Flutter for potential production use has been decreasing, from 36% in 2019 to 25% in 2020. This implies that many of the users have completed evaluation and adopted Flutter for more serious purposes.
 
 Finally, we found that 69% of the developers who have published a complete production app are building both iOS and Android apps. 16% said that they are trying Web, in addition to the two mobile platforms. Currently, there are approximately 50,000 Flutter apps published in the Play Store. This number has been growing exponentially, and we hope to see this trend continue in the coming months.
@@ -34,7 +33,6 @@ Some of the survey respondents were invited to take a longer survey. As a result
 We structured the survey so that a random half of the selected respondents were asked which of the tasks are important to them, and another half of the respondents were asked which of the tasks are difficult to accomplish. By dividing the respondents into two groups (aka “between-subject design”), we were able to reduce the total number of questions asked to each person. Also, by asking users to rate the importance and difficulty of the tasks, we are able to identify top priority tasks that are both important and difficult to Flutter developers. Below is the quadrant that the team used to decide what to do with each of the tasks.
 
 <DashImage figure src="images/0vABPU2mLHiRog8Vw.webp" alt="*Importance-difficulty quadrant supports decision making.*" caption="*Importance-difficulty quadrant supports decision making.*" />
-
 
 The following tasks were ranked to be the top 6 most important tasks. It is notable that the important tasks were widely spread across different stages of app development, from performance and testing to UI development.
 
@@ -52,7 +50,6 @@ The following tasks were ranked to be the top 6 most important tasks. It is nota
 
 <DashImage figure src="images/0OfKgvG4OS6Jt7Wum.webp" alt="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative importance of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
 
-
 The tasks below were ranked to be the top 6 most difficult tasks. We found several tasks related to troubleshooting and performance are difficult for Flutter professional developers. Most of the UI-related tasks were rated to be not very difficult.
 
 * Troubleshoot platform-specific issues with my Flutter app
@@ -68,7 +65,6 @@ The tasks below were ranked to be the top 6 most difficult tasks. We found sever
 * Develop a Flutter plugin (with a platform-specific implementation)
 
 <DashImage figure src="images/0nPtVnwI_F22HmC_F.webp" alt="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" caption="*Relative difficulty of tasks. Blue dots are estimated importance scores for individuals, red dots are averages.*" />
-
 
 As you can see, some tasks appeared in the list of both highly important and difficult tasks (such as “troubleshooting platform-specific issues with my Flutter app”). This knowledge is valuable to the Flutter team, because they can prioritize these areas based on user input, and not by guesswork.
 

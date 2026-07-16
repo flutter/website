@@ -32,7 +32,6 @@ Consider Android: By [statcounter](https://gs.statcounter.com/os-version-market-
 
 <DashImage figure src="images/0cn2P4AQs91rSOztB.webp" />
 
-
 Looking at the numbers, Android KitKat (Android 4.x) has less than a 2% market share. The predominant share of Android devices (54%) are running Android Pie (Android 9.0) or Android 10. Supporting each version of Android requires an investment. Do you know why we invest in a platform, like KitKat, that has a low market share?
 
 The answer is simple: raw numbers. With over a billion Android devices in use not running Android Pi or later, we want to ensure that Flutter is as broadly available as possible. We also want to support a diverse, global user base. And, because older versions of Android and iOS are often used by people in developing countries, we want to avoid deprecating support for older versions as long as we can.
@@ -48,7 +47,6 @@ Our continuous integration (CI) system builds Flutter and its tooling for macOS,
 Here’s a picture of one of the racks in our test lab:
 
 <DashImage figure src="images/0XGMajBOXRRgyu3Pa.jpg" />
-
 
 We run relatively low-end mobile devices in our device lab, because we do our [performance testing](https://flutter-dashboard.appspot.com/benchmarks.html) there. When testing, we want performance metrics from devices that are representative of what most users have. Doing this gives us worst-case, real-world performance. This philosophy carries over to the devices that the core engineering team uses. Most of the core engineering team isn’t doing Flutter debugging on the latest Google Pixel or Apple iPhone.
 

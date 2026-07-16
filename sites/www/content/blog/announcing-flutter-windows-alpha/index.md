@@ -36,13 +36,11 @@ To see Flutter support for Windows in action, you might want to try out some of 
 
 <DashImage figure src="images/039MKtw4ICepbL_8d.webp" />
 
-
 If you’d like to use the Flokk app on your Windows machine, you can [download the latest release on GitHub](https://github.com/gskinnerTeam/Flokk/releases). And if you’d like to read about how gskinner built this app, see their excellent blog post: [Flokk — How we built a Desktop App Using Flutter](https://blog.gskinner.com/archives/2020/09/flokk---how-we-built-a-desktop-app-using-flutter.html).
 
 In addition, the Flutter Gallery app, our showcase app for all things Flutter, was completely rewritten recently to add support for desktop form factors. This allowed us to check that it works well on [the web](https://gallery.flutter.dev) as well as Windows, macOS, and Linux.
 
 <DashImage figure src="images/0N_tKeqs435R4yICO.webp" />
-
 
 Many studies in the Gallery demonstrate ideas for different app styles that we recommend when designing your own Windows app with Flutter. When you find something you like, [the code is available on GitHub](https://github.com/flutter/gallery).
 
@@ -56,18 +54,15 @@ $ flutter upgrade
 $ flutter config --enable-windows-desktop
 ```
 
-
 The first command sets Flutter to use the experimental-quality “dev” channel (instead of the “stable” channel, which is the default). This allows you to use platform support that’s still in alpha, like Windows. The second command pulls down the latest bits on that channel. The third command enables Windows app development on your PC.
 
 Once you’ve set it up, every time you create a new Flutter app, using the extension support for either [Android Studio](https://flutter.dev/docs/get-started/editor?tab=androidstudio) or [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=vscode), or from the command line, it creates a windows subfolder.
 
 <DashImage figure src="images/0O-akivVSsv0tL0wI.webp" />
 
-
 If you’re curious, running the default app on Windows looks like the following:
 
 <DashImage figure src="images/1fsnlPFkpQWZjYIv-NCE6Vg.webp" />
-
 
 And finally, once you’ve created your app, building it creates a release-mode, native EXE file as well as the necessary supporting DLLs. At that point, if you want to experiment with running your new Windows app on any Windows 10 machine, even those that don’t have Flutter installed, you can follow [the steps to zip up the necessary files](https://flutter.dev/desktop#distribution) and go.
 
@@ -95,23 +90,22 @@ If you’d like to build your own plugins for Windows, you can. Once you’re on
 $ flutter create --template plugin --platforms windows hello_plugin
 ```
 
-
 At that point, you’ll be able to add your Flutter code to the `lib` subfolder and your Windows code to the `windows` subfolder in your plugin project. You’ll communicate between the two stacks using [Platform Channels](https://flutter.dev/docs/development/platform-integration/platform-channels), which is essentially message passing between your Dart and C++ code. For a well crafted example of this, [see the url_launcher implementation](https://github.com/flutter/plugins/tree/master/packages/url_launcher/url_launcher_windows).
 
 However, Platform Channels are not your only option for interop with Windows. If you like, you can use the [Dart FFI (Foreign Function Interface)](https://flutter.dev/docs/development/platform-integration/c-interop) to load libraries and call into C-style APIs, such as the Win32 API. Unlike url_launcher, which uses Platform Channels, the path_provider plugin was implemented using FFI, as you can see in [the GitHub repo](https://github.com/flutter/plugins/tree/master/packages/path_provider/path_provider_windows). Instead of going back and forth between Dart and C++, FFI allows you to write code to import the API that you want directly. For example, here’s the code for calling the MessageBox API:
 
 ```dart
 typedef MessageBoxNative = Int32 Function(
-  IntPtr hWnd, 
-  Pointer<Utf16> lpText, 
+  IntPtr hWnd,
+  Pointer<Utf16> lpText,
   Pointer<Utf16> lpCaption,
   Int32 uType
 );
 
 typedef MessageBoxDart = int Function(
-  int hWnd, 
-  Pointer<Utf16> lpText, 
-  Pointer<Utf16> lpCaption, 
+  int hWnd,
+  Pointer<Utf16> lpText,
+  Pointer<Utf16> lpCaption,
   int uType
 );
 
@@ -142,7 +136,6 @@ Wherever you are in your Flutter for Windows journey, you should be sure to [rea
 
 <DashImage figure src="images/03OlPPAMAvO84mJ6M.webp" />
 
-
 It uses the standard Windows File Open dialog, a tree view widget, a splitter widget, and integrates the results with a real-world REST API.
 
 For other helpful desktop-oriented widgets, we recommend [the menubar plugin](https://github.com/google/flutter-desktop-embedding/tree/master/plugins/menubar), [the NavigationRail widget](https://api.flutter.dev/flutter/material/NavigationRail-class.html), and [the DataTable widget](https://api.flutter.dev/flutter/material/DataTable-class.html). You might also be interested in [the InteractiveViewer widget](https://api.flutter.dev/flutter/widgets/InteractiveViewer-class.html), which has full desktop support for mouse gestures to pan and zoom child widgets.
@@ -151,7 +144,6 @@ Another useful set of widgets to explore are [those from SyncFusion](https://pub
 
 <DashImage figure src="images/0dY1TC_i0KyjKNrvh.webp" />
 
-
 These widgets have a community and enterprise license, so you can find the right fit for your project.
 
 ## Flutter for Windows in the wild
@@ -159,7 +151,6 @@ These widgets have a community and enterprise license, so you can find the right
 In addition to packages and plugins for Windows (and Flutter desktop in general), Flutter developers have also been building great apps to target Windows, like this experimental build from [Invoice Ninja](https://www.invoiceninja.com/):
 
 <DashImage figure src="images/0ZuwlwG4e6fwCeQ_1.webp" />
-
 
 Invoice Ninja is an invoicing company that depends on Flutter to bring in its revenue. They target Android and iOS in production today and have [a web-based demo](https://demo.invoiceninja.com) for you to try, but are also looking ahead to providing a desktop version.
 > “At Invoice Ninja we’ve struggled in the past to support just web and mobile, at one point maintaining three separate codebases. With Flutter, and more recently Flutter Desktop, we’ve been able to build apps for every major platform with a single codebase. Not only do we basically get a free desktop version of our app but it has the best performance of them all!”
@@ -171,13 +162,11 @@ If you’re interested in the implementation of a real-world, revenue-generating
 
 <YoutubeEmbed id="mGvPCT7Vc2Y" title="Flutter Client App for Aartos, Desktop + Mobile" fullwidth="true"/>
 
-
 Both of these versions, targeting iOS and Windows, share the exact same codebase.
 
 If you’re an experienced Flutter developer and you find yourself switching between different versions of Flutter; for example, one version to ship your production mobile apps and another to experiment with the Windows alpha, then you might appreciate the Flutter Version Manager, which now comes with [a Windows GUI that you can download](https://github.com/leoafarias/fvm/releases).
 
 <YoutubeEmbed id="_WA71wSt2ww" title="FVM App for Windows" fullwidth="true"/>
-
 
 This tool is open source, so can [see for yourself](https://github.com/leoafarias/fvm) how Leo makes it look so great.
 
@@ -191,11 +180,9 @@ The following screenshot shows the UWP-based Flutter Gallery running on an Xbox:
 
 <DashImage figure src="images/0cNcLDSm8fwlwux15.webp" />
 
-
 And here’s the same app running on a dual-screen Windows device running on the [Windows 10X emulator](https://docs.microsoft.com/en-us/dual-screen/windows/get-dev-tools):
 
 <DashImage figure src="images/1ZIxhg4Lx_KI5v4bc1zi5zg.webp" />
-
 
 [You can read more about the progress on Flutter for UWP on GitHub](https://github.com/flutter/flutter/issues/14967#issuecomment-697108439).
 

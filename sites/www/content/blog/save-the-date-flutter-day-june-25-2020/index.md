@@ -22,7 +22,6 @@ We have a great lineup, including engineers, PMs, and developer advocates from t
 
 <DashImage figure src="images/0siIoSIIiPLyDxPTP.webp" />
 
-
 For the Flutter Day details and to let us know that you’re interested in participating, [register on the Flutter Day website today](https://g.co/flutterday)!
 
 ## Flutter Day Near You
@@ -31,7 +30,6 @@ Of course, Flutter Day is for everyone, so we’re also coordinating with local 
 
 <DashImage figure src="images/0RDn0t0fyTKSy2x_k.webp" />
 
-
 No matter where you live, you’ll be able to find a local Flutter virtual meetup near you.
 
 ## Get Ready for Hack20
@@ -39,7 +37,6 @@ No matter where you live, you’ll be able to find a local Flutter virtual meetu
 And as if that weren’t enough, this year we’re teaming up with [the #Hack20 International Flutter Hackathon](https://flutterhackathon.com/#/).
 
 <DashImage figure src="images/0vValokazzfj52F2N.webp" />
-
 
 Right after you’re done with the day of Flutter codelabs, you’re ready to jump into a weekend of Flutter hacking with prizes for the best app and featuring mentors from the Flutter community.
 

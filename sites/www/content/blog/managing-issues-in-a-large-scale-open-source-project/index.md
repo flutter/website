@@ -62,7 +62,6 @@ A better metric to gauge the health of an open-source project is to look at the 
 
 <DashImage figure src="images/0E-lTv57-czvPhZre.webp" />
 
-
 The dip in December is due to the holiday season; many contributors at Google and elsewhere take a vacation in that month. Regardless, the year-over-year average is 1314 issues closed, and if you look at the six-month average, you see that it’s considerably higher, at 1604 issues closed every month.
 
 ## Understanding our open issues
@@ -97,11 +96,9 @@ As of this writing (early July 2020), here’s the breakdown of P0-P2 issues:
 
 <DashImage figure src="images/0aO0bWR8VrmusQNRi.webp" />
 
-
 This chart shows a healthy number of issues that we’re actually working on with urgency. As you’d expect from a popular open-source project, there are a *lot* of other pieces of feedback in our issue database: here’s the breakdown of P3-P6 issues:
 
 <DashImage figure src="images/0shcSGNkownGkrpoM.webp" />
-
 
 The team is actively working on many of the P3 issues, as well as the higher-priority P0-P2 issues.
 

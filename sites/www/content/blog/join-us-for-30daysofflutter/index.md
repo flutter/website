@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp" alt="Banner for 30 Days of Flutter" caption="Banner for 30 Days of Flutter" />
 
-
 Happy New Year folks. It’s the perfect time of year to learn something new! Do you have an app idea you’ve been dreaming of over the holidays? If so, we have just the opportunity for you! Starting February 1st, leading up to our big [event on March 3rd](https://events.flutter.dev/?utm_source=30DaysOfFlutter&utm_medium=email&utm_campaign=30Days_Engage), join us for **#30DaysOfFlutter** to kickstart your learning journey and meet Flutter experts in the community. Whether you are building your first Flutter app or looking to improve your Flutter skills, we have curated content, code labs, and demos!
 
 Flutter is Google’s open source UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase. It’s one of the fastest growing, most in-demand cross platform frameworks to learn and is used by freelance developers and large organizations around the world. Flutter uses the Dart language, so it will feel natural to many of you familiar with object-oriented languages.

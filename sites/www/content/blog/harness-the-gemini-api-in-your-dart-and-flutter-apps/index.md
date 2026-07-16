@@ -24,7 +24,6 @@ With the Google AI Dart SDK, you can:
 
 <DashImage figure src="images/1-KkJmzvv3jNhh88TWxIBJg.webp" />
 
-
 **What can you build?**
 
 We believe generative AI holds immense potential to help you achieve your app and business goals. And since the Gemini model is multimodal (it’s capable of processing information from multiple modalities, including images and text), it empowers you to be extremely creative. However, the first question we often get from app developers — and even from within our own team — is “What can I actually do with the Gemini API?” Here are a few examples of features you might create for your Dart or Flutter app:
@@ -43,12 +42,11 @@ This list could go on because the possibilities are nearly endless!
 
 <DashImage figure src="images/07Zvr0YiN7O22wTOy.webp" alt="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" caption="A screenshot of the Flutter sample app that uses the Google AI Dart SDK" />
 
-
 **Getting Started**
 
 Check out the [Dart quickstart](https://ai.google.dev/tutorials/dart_quickstart) for a detailed step-by-step guide on how to get set up. At a high level, here’s what you’ll do:
 
-1. Get a Gemini API key from Google AI Studio. Keep this key secure. We strongly recommend that you do not include the key directly in your code, or check files that contain the key into version control systems. While developing, we recommend using `flutter run -d [DEVICE NAME] — dart-define=API_KEY=[YOUR API KEY]` to run the app in an emulator/simulator, using your API key as an environment variable.
+1. Get a Gemini API key from Google AI Studio. Keep this key secure. We strongly recommend that you do not include the key directly in your code, or check files that contain the key into version control systems. While developing, we recommend using `flutter run -d [DEVICE NAME] --dart-define=API_KEY=[YOUR API KEY]` to run the app in an emulator/simulator, using your API key as an environment variable.
 
 1. Add the Google AI Dart SDK to your Dart or Flutter app by running `dart pub add google_generative_ai` or `flutter pub add google_generative_ai`, respectively. This adds `google_generative_ai` as a dependency to your `pubspec.yaml` file.
 
@@ -66,7 +64,6 @@ if (apiKey == null) {
 
 final model = GenerativeModel(model: 'MODEL_NAME', apiKey: apiKey);
 ```
-
 
 4. You can now start to explore using the Gemini API to implement different use cases. For example, when the prompt input includes both text and images, use the `gemini-pro-vision` model and the `generateContent` method to generate text output:
 
@@ -100,7 +97,6 @@ void main() async {
 }
 ```
 
-
 Explore the [Gemini API documentation](https://ai.google.dev/docs) and check out the [Dart and Flutter sample apps](https://github.com/google/generative-ai-dart/tree/main/samples) in the GitHub repo for detailed guides and examples on how to use the SDK for various use cases, or in [this sample app](https://dartpad.dev/?id=341bc46b2ed1d2055d357ab987ed5fc2) in DartPad, which is a free, open-source online editor for Dart and Flutter snippets, now built with Flutter. Please report any issues or tell us about feature requests in the [generative-ai-dart GitHub repo](https://github.com/google/generative-ai-dart/issues/new/choose).
 
 **Google AI Studio**
@@ -110,7 +106,6 @@ Alongside the SDK, [Google AI Studio](https://aistudio.google.com/?utm_source=fl
 We will add Dart to Google AI Studio soon, so keep a lookout for the announcement! This will enable you to simply click on “Get code”, select a new Dart tab (which will be alongside the existing supported languages), and then “Copy” the Dart code to transfer your work to your IDE of choice.
 
 <DashImage figure src="images/0xhBJ20OLOQDtQ2xi.webp" alt="Google AI Studio" caption="Google AI Studio" />
-
 
 **Share what you build!**
 

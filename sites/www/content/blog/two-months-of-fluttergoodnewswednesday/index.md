@@ -44,7 +44,6 @@ We also shared about [CodePen’s adoption of Flutter](https://medium.com/flutte
 
 <DashImage figure src="images/0B33kcAC_6aXEEdVZ.webp" alt="New CodePens that use Flutter’s web support to showcase prototypes and experiments." caption="New CodePens that use Flutter’s web support to showcase prototypes and experiments." />
 
-
 Keep exploring with CodePen: we have a challenge coming up for you!
 
 ## Flutter Momentum
@@ -52,7 +51,6 @@ Keep exploring with CodePen: we have a challenge coming up for you!
 For our third #FlutterGoodNewsWednesday blog post, [we shared some statistics about Flutter adoption, with two million developers now using Flutter](https://medium.com/flutter/flutter-spring-2020-update-f723d898d7af). There are now more developers using Flutter on a typical day than over the course of an entire week this time last year.
 
 <DashImage figure src="images/0h3Nhe6QdketsMi-z.webp" alt="The New York Times Spelling Bee game, implemented with Flutter." caption="The New York Times Spelling Bee game, implemented with Flutter." />
-
 
 At the time we shared that we’d seen about 50,000 apps uploaded to the Play Store. The pace of growth continues to accelerate, and we’re delighted to share that **a further 10,000 Flutter apps have been uploaded in the month since that post**. This level of momentum inspires us: thank you for your support!
 
@@ -109,7 +107,6 @@ But it’s always worth calling out some of the unsung heroes. With over 10,000 
 1. [smooth_star_rating](https://pub.dev/packages/smooth_star_rating) offers a compact control for selecting a star rating.
 
 <DashImage figure src="images/1VB60_VnsDmTKBsewFgus_Q.webp" alt="Some of the over 10,000 plugins on pub.dev that add everything from business charts, to 2D games engine support to Flutter." caption="Some of the over 10,000 plugins on pub.dev that add everything from business charts, to 2D games engine support to Flutter." />
-
 
 By the way, if you’re writing a package, make sure you haven’t missed our [article on tips and tricks for developing modern plugins](https://medium.com/flutter/modern-flutter-plugin-development-4c3ee015cf5a). And please fill out our [quarterly survey](https://google.qualtrics.com/jfe/form/SV_5oNFjVJWGRECS3z?Source=TwoMonths), which has a module focused on plugin development.
 

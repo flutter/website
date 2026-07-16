@@ -14,7 +14,6 @@ For the engineers, product managers, UX researchers, technical writers, and deve
 
 <DashImage figure src="images/0T39T7UB0oJVIQy_H.webp" />
 
-
 ## Flutter momentum
 
 We continue to see fast growth in Flutter usage, with over **two million developers having used Flutter** in the sixteen months since we released. Despite these unprecedented circumstances, in March we saw 10% month-over-month growth, with nearly half a million developers now using Flutter each month.
@@ -42,7 +41,6 @@ Flutter usage is growing fast among enterprise customers in particular, and our 
 Check out their developer story below, which explains some of the benefits they’re seeing with Flutter:
 
 <YoutubeEmbed id="vnj2i6RNo3g" title="Nubank (Flutter Developer Stories)" fullwidth="true"/>
-
 
 One common request from enterprises is professional components. We’re partnering with [SyncFusion](https://www.syncfusion.com/), whose Essential Studio product now includes a range of [high-quality Flutter components](https://www.syncfusion.com/flutter-widgets) including charting, PDF manipulation and barcode generation. With their [2020.1 release](https://www.businesswire.com/news/home/20200421005174/en/Syncfusion-Introduces-New-Flutter-Widgets-Web-Compatibility), all components support Android, iOS *and* web out of the box, and they now have a [web-based preview](https://flutter.syncfusion.com/#/) of their controls.
 
@@ -111,7 +109,6 @@ In the meantime, check out some of the other announcements we’ve made over the
 * [Double pendulum](https://codepen.io/abhilas-csc/pen/qBOZKPj) (abhilas-csc)
 
 <DashImage figure src="images/0vX4VeEgvAD364f_2.webp" />
-
 
 And if you’re looking for Flutter learning resources, we now have [a free introductory Flutter training course](https://medium.com/flutter/learn-flutter-for-free-c9bc3b898c4d) available online. This ten hour course presented by Angela Yu provides tutorials and labs to help you get started on your Flutter journey.
 

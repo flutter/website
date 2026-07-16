@@ -22,11 +22,9 @@ We use a simple app that contains an appbar, a floating action button, and an in
 
 <DashImage figure src="images/0adwmyiS509VwCCYl.webp" />
 
-
 The app has a second page containing some information.
 
 <DashImage figure src="images/0-d-mmdUUEW08ytWJ.webp" />
-
 
 You can clone the app here:
 
@@ -64,7 +62,6 @@ Run `flutter pub get` to pull in this package.
 Add a `benchmarks` directory under `lib`, and add a new dart file to it called `runner.dart`:
 
 <DashImage figure src="images/0tsvQSKBjpWJWkiKM.webp" />
-
 
 The contents of the file are as follows:
 
@@ -135,18 +132,15 @@ In the root directory of the project, run `flutter run -d chrome -t lib/benchmar
 
 <DashImage figure src="images/0imb9-c_LS4XF0xDX.webp" />
 
-
 We only have one benchmark so far, so click “scroll” to start it.
 
 <DashImage figure src="images/03aZa4m2GbsqHECNw.webp" />
-
 
 The test begins, and the list automatically scrolls down.
 
 The test ends in a few seconds, showing the following screen:
 
 <DashImage figure src="images/0LitJY47Vl0J17C5V.webp" />
-
 
 This chart shows the time it took for the app to draw each (recorded) frame. The horizontal axis represents the flow of time; the vertical axis, the duration each frame took.
 

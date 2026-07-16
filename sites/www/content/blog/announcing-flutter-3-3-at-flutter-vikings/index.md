@@ -16,7 +16,6 @@ Flutter continues to grow, both in usage and in the size of the ecosystem. **Eve
 
 <DashImage figure src="images/0bDz2chibrm3B6QZE.webp" />
 
-
 **Today we’re announcing Flutter 3.3.** This release is focused on refinements and performance improvements that reinforce the features shipped in Flutter 3. It expands support for the evolving Material 3 specification with several new components and a number of bug fixes, and it includes new features aimed at tablet and desktop developers including Scribble handwriting support on iPad, selectable text grouping, and trackpad support. This release also includes Dart 2.18, which introduces FFI support for libraries and code written in Swift or Objective-C. Apps that are built against this release will experience improved performance across desktop, web, and mobile, so we encourage you to run flutter upgrade to get the latest on all your developer workstations!
 
 For more on all the new features and improvements, check out the detailed [Flutter 3.3 release notes](https://medium.com/flutter/whats-new-in-flutter-3-3-893c7b9af1ff) and the [Dart 2.18 announcement blog post](https://medium.com/dartlang/dart-2-18-f4b3101f146c).
@@ -26,7 +25,6 @@ For more on all the new features and improvements, check out the detailed [Flutt
 In partnership with the design team at [gskinner](https://gskinner.com/), **today we’re launching Wonderous**, an app built to showcase Flutter’s capacity to deliver high-end, beautiful experiences without caveats. Even as it shows off the power of Flutter, we built Wonderous together to be a beautiful app in its own right. From the stunning Taj Mahal in the Indian city of Agra to the Mayan ruins of Chichén Itzá on the Yucatán peninsula of Mexico, Wonderous brings some of the most remarkable places in the world to your phone, using video and imagery to explore the intersection of art, history, and culture.
 
 <DashImage figure src="images/0La9LUctqdub-CvsS.jpg" />
-
 
 Wonderous is an app we hope you’ll share with your family and friends, but is also an open source project that you can explore as a developer. As a real-world app, it provides a comprehensive example of a wide variety of visual techniques and best practices that we think will inspire intermediate to advanced developers. Over the coming weeks, the gskinner.com team will be sharing more detailed technical articles on the making of the app, including its support for accessibility, animation techniques that are generalizable, and tips and tricks for performance.
 

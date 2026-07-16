@@ -18,7 +18,6 @@ First and foremost, the Flutter 2.10 release brings with it the stable release o
 
 <DashImage figure src="images/0278rYAB5Pac8_7SD.webp" />
 
-
 Of course, we did a lot more than just flip a flag. This release includes extensive improvements for text handling, keyboard handling, and keyboard shortcuts, as well as new integrations directly into Windows, with support for command-line arguments, globalized text entry, and accessibility.
 
 For much more on the Windows stable launch, see [the Announcing Flutter for Windows blog post](https://timsneath.medium.com/6979d0d01fed), which describes the architecture of Flutter on Windows that allows for deep integration and gives you a sense of just how many Flutter packages and plugins already support Windows. You can also see some examples of what our tooling and app partners are doing with Flutter on Windows!
@@ -29,20 +28,17 @@ This release of Flutter includes initial support for **dirty region management**
 
 <DashImage figure src="images/0mWerp_uZBj64dBeC.webp" />
 
-
 We expect to bring the benefits of partial repaints to [other platforms](https://github.com/flutter/engine/pull/29591) in future releases.
 
 In the Flutter 2.8 release, we [landed our own internal picture recording format](https://github.com/flutter/flutter/issues/53501). Now in Flutter 2.10, we’ve started building optimizations with it. As an example, one common case of **opacity layers is now [implemented much more efficiently](https://github.com/flutter/engine/pull/29775)**. Even in the worst case, frame raster times in our benchmarks fell to under a third of their previous value.
 
 <DashImage figure src="images/0sJIYBXONsWsYa5l4.webp" />
 
-
 We expect this optimization to expand to cover more cases as we continue developing the picture recording format.
 
 In profile and release modes, Dart code is compiled ahead of time to native machine code. The key to the efficiency and small size of this code is a whole program type flow analysis that unlocks many compiler optimizations and aggressive tree-shaking. However, as the type flow analysis must cover the whole program, it can be somewhat expensive. This release includes [**a faster implementation of type flow analysis**](https://dart.googlesource.com/sdk.git/+/e698500693603374ecc409e158f36c25bff45b12). Overall build time for the Flutter app in our benchmarks fell by ~10%.
 
 <DashImage figure src="images/03bjgNV_6OjBYDj24.webp" />
-
 
 As always, performance enhancements, reduced memory usage, and reduced latency are a priority for the Flutter team. Look forward to further improvements in future releases.
 
@@ -51,7 +47,6 @@ As always, performance enhancements, reduced memory usage, and reduced latency a
 In addition to performance improvements, we’ve also added some platform-specific features and enhancements. One new enhancement is [smoother keyboard animations in iOS](https://github.com/flutter/engine/pull/29281) from [luckysmg](https://github.com/luckysmg), which is provided automatically to your app without you having to do a thing.
 
 <DashImage figure src="images/0qMbaTcooLzyIxwgp.webp" />
-
 
 We’ve also improved the stability of the camera plugin for iOS by fixing a few [edge](https://github.com/flutter/plugins/pull/4608) [case](https://github.com/flutter/plugins/pull/4661) [crashes](https://github.com/flutter/plugins/pull/4619).
 
@@ -71,7 +66,6 @@ And last but not least, we listened to your feedback that Gradle error messages 
 
 <DashImage figure src="images/01U5AWT3j69NL5jWn.webp" />
 
-
 We continue to add more suggestions to common error messages, and would love to get your feedback on other error messages where this treatment would be useful.
 
 ## Web updates
@@ -79,7 +73,6 @@ We continue to add more suggestions to common error messages, and would love to 
 This release contains some improvements on the web as well. For example, in previous releases, when scrolling to the edge of a multiline `TextField` on the web, it wouldn’t scroll properly. This release introduces **[edge scrolling for text selection](https://github.com/flutter/flutter/pull/93170):** when the selection moves outside of the text field, the field scrolls to view the scroll extent. This new behavior is available for both web and desktop apps.
 
 <DashImage figure src="images/1VpOHaGxbrVr262jc6bMUmg.gif" />
-
 
 In addition, this release of Flutter includes another notable improvement in the web. We’re always looking to reduce the overhead of our mapping of Flutter to the web. In previous versions, every time we wanted to bring a native HTML widget into your Flutter app, we needed an overlay as part of our platform view support for the web. Each one of these overlays enables custom painting but represents a certain amount of overhead. If you have a large number of native HTML widgets in your app, such as links, that adds up to a lot of overhead. With this release, **we’ve created a new “non-painting platform view” for the web that essentially removes that overhead**. And we’ve [taken advantage of this optimization](https://github.com/flutter/plugins/pull/4578) in [the `Link` widget](https://pub.dev/documentation/url_launcher/latest/link/Link-class.html), which means if you have many links in your Flutter web app, they no longer represent any significant overhead at all. We’ll be applying this optimization to other widgets over time.
 
@@ -97,8 +90,8 @@ final darkScheme = ColorScheme.fromSeed(seedColor: Colors.green, brightness: Bri
 There’s also a new `colorSchemeSeed` parameter to the `ThemeData` factory constructor that allows you to generate the theme’s color scheme:
 
 ```dart
-final lightTheme = ThemeData(colorSchemeSeed: Colors.orange, …);
-final darkTheme = ThemeData(colorSchemeSeed: Colors.orange, brightness: Brightness.dark, …);
+final lightTheme = ThemeData(colorSchemeSeed: Colors.orange, …);
+final darkTheme = ThemeData(colorSchemeSeed: Colors.orange, brightness: Brightness.dark, …);
 ```
 
 In addition, this release includes **the `ThemeData.useMaterial3` flag, which switches components to the new Material 3 look**.
@@ -106,7 +99,6 @@ In addition, this release includes **the `ThemeData.useMaterial3` flag, which sw
 Last but not least, **we’ve added [1,028 new Material icons](https://github.com/flutter/flutter/pull/95007)**.
 
 <DashImage figure src="images/0-XysmyfnVC_Rt_rj.webp" alt="*A tiny sample of the 1,028 new Material icons*" caption="*A tiny sample of the 1,028 new Material icons*" />
-
 
 Updates can be found in [the issue tracking our Material 3 work](https://github.com/flutter/flutter/issues/91605); feel free to leave your feedback.
 
@@ -118,7 +110,6 @@ Since that time, we’ve made further improvements in the integration testing st
 
 <DashImage figure src="images/004e4XmQgP9CAyJ6x.webp" alt="*An example from the new flutter_driver to integration_test migration guide*" caption="*An example from the new flutter_driver to integration_test migration guide*" />
 
-
 Several of the [existing](https://docs.flutter.dev/testing/integration-tests) [docs](https://docs.flutter.dev/cookbook/testing/integration/profiling), [samples](https://github.com/flutter/samples/tree/master/testing_app) and [codelabs](https://codelabs.developers.google.com/codelabs/flutter-app-testing) have also been updated for integration_test. To get started, point your browser to the [Testing Flutter apps](https://docs.flutter.dev/testing) page on flutter.dev. If you aren’t already using integration_test on your Flutter apps, now’s the time to start!
 
 ## Flutter DevTools
@@ -129,11 +120,9 @@ We’ve also made a number [of](https://github.com/flutter/devtools/pull/3526) [
 
 <DashImage figure src="images/0Tau4a2z5GHZzuJky.webp" />
 
-
 And finally, we’re about to release our **annual DevTools survey**! Please provide your feedback and help us improve your development experience.
 
 <DashImage figure src="images/0bc2CaiWCLCpaYWMV.webp" />
-
 
 This survey prompt will show up directly in DevTools sometime in mid-February. Thanks!
 
@@ -143,11 +132,9 @@ The Visual Studio Code extension for Flutter has also gotten a number of enhance
 
 <DashImage figure src="images/0eA2UN8_kzzJreUQf.webp" />
 
-
 In addition, if you’d like to be a tester on prerelease versions of the Dart and Flutter extensions for VSCode, you can [switch to prerelease versions in your extension settings](https://github.com/Dart-Code/Dart-Code/issues/3729).
 
 <DashImage figure src="images/08k22xPfwMobXvYJB.webp" />
-
 
 You can read about the details of this update and more in [this post](https://groups.google.com/g/flutter-announce/c/lR-yn1s9HKk) on [the flutter-announce mailing list](https://groups.google.com/g/flutter-announce).
 

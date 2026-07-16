@@ -12,7 +12,6 @@ It’s time again for a Flutter stable release — and we are incredibly proud t
 
 <DashImage figure src="images/1K1Ru7PVkH74N56hgjBTjjQ.webp" />
 
-
 Thanks to the hard work of our Flutter contributors, we’ve merged 5248 pull requests!
 
 We have several exciting things to announce as part of this release, including the update on Flutter’s support for macOS and Linux, significant performance improvements, mobile and web updates — and much more! In addition, we have news about reduction in support for older versions of Windows, and a short list of breaking changes. So, let’s get down to business!
@@ -26,7 +25,6 @@ Linux and macOS have reached stable and include the following features:
 You can now create platform-rendered menu bars on macOS using the `PlatformMenuBar` widget, which supports insertion of platform-only menus, and control over what appears in the macOS application menus.
 
 <DashImage figure src="images/1kS32jfapJAvSyspT3aOH5A.webp" alt="Cascading menus demo" caption="Cascading menus demo" />
-
 
 ### Full support for international text input on all desktop platforms
 
@@ -57,7 +55,6 @@ As part of this work, [`MediaQuery`](https://master-api.flutter.dev/flutter/widg
 
 <DashImage figure src="images/0z8pzEtJOPFv-xzw2.webp" />
 
-
 Many thanks goes to the Microsoft team, and especially to [@andreidiaconu](https://github.com/andreidiaconu), for their contributions!
 
 Try [the Surface Duo emulator samples](https://docs.microsoft.com/en-us/dual-screen/flutter/samples), including one with a special fork of the Flutter Gallery, to see Flutter’s dual displays in action.
@@ -68,7 +65,7 @@ Flutter now supports variable refresh rate on iOS devices with ProMotion display
 
 ### Simplified iOS releases
 
-We’ve added [new options to the flutter build ipa command](https://github.com/flutter/flutter/pull/97672) to simplify releasing your iOS app. When you’re ready to distribute to TestFlight or the App Store, run `flutter build ipa` to build an Xcode archive (`.xcarchive` file) and an app bundle (`.ipa` file). You can optionally add `—-export-method ad-hoc`, `—-export-method development`, or `—-export-method enterprise`. Once the app bundle is built, upload it to Apple through the [Apple Transport macOS app](https://apps.apple.com/us/app/transporter/id1450874784) or on the command line using `xcrun altool` (run `man altool` for App Store Connect API key authentication instructions). After uploading, your app is available for release to [TestFlight or the App Store](https://docs.flutter.dev/deployment/ios#release-your-app-to-the-app-store). After setting up your initial [Xcode project settings](https://docs.flutter.dev/deployment/ios#review-xcode-project-settings), such as display name and app icon, you no longer need to open Xcode to release your app.
+We’ve added [new options to the flutter build ipa command](https://github.com/flutter/flutter/pull/97672) to simplify releasing your iOS app. When you’re ready to distribute to TestFlight or the App Store, run `flutter build ipa` to build an Xcode archive (`.xcarchive` file) and an app bundle (`.ipa` file). You can optionally add `--export-method ad-hoc`, `--export-method development`, or `--export-method enterprise`. Once the app bundle is built, upload it to Apple through the [Apple Transport macOS app](https://apps.apple.com/us/app/transporter/id1450874784) or on the command line using `xcrun altool` (run `man altool` for App Store Connect API key authentication instructions). After uploading, your app is available for release to [TestFlight or the App Store](https://docs.flutter.dev/deployment/ios#release-your-app-to-the-app-store). After setting up your initial [Xcode project settings](https://docs.flutter.dev/deployment/ios#review-xcode-project-settings), such as display name and app icon, you no longer need to open Xcode to release your app.
 
 ### Gradle version update
 
@@ -116,7 +113,7 @@ Version 2.0 of the lint packages have been released:
 
 Apps generated in Flutter 3 with `flutter create` automatically enable the v2.0 sets of lints. Existing apps, packages, and plugins are encouraged to migrate to v2.0 to follow the latest and greatest best practices in the Flutter world, by running `flutter pub upgrade --major-versions flutter_lints`.
 
-Most of the newly added lint warnings in v2 come with automated fixes. So, after upgrading to the latest package version in your app’s `pubspec.yaml` file, you can run `dart fix —-apply` over your code base to fix most lint warnings automatically (some warnings still require some manual work). Apps, packages, or plugins that aren’t using `package:flutter_lints` yet can migrate by following the [migration guide](https://docs.flutter.dev/release/breaking-changes/flutter-lints-package#migration-guide).
+Most of the newly added lint warnings in v2 come with automated fixes. So, after upgrading to the latest package version in your app’s `pubspec.yaml` file, you can run `dart fix --apply` over your code base to fix most lint warnings automatically (some warnings still require some manual work). Apps, packages, or plugins that aren’t using `package:flutter_lints` yet can migrate by following the [migration guide](https://docs.flutter.dev/release/breaking-changes/flutter-lints-package#migration-guide).
 
 ### Performance improvements
 
@@ -134,11 +131,11 @@ Thanks to open source contributor [ColdPaleLight](https://github.com/ColdPaleLig
 
 The team has been hard at work on a solution to address early-onset jank on iOS and other platforms. In the Flutter 3 release, you can preview an experimental rendering backend called [Impeller](https://github.com/flutter/engine/tree/main/impeller) on iOS. Impeller precompiles [a smaller, simpler set of shaders](https://github.com/flutter/flutter/issues/77412) at engine build time so that they won’t compile while an app is running; this has been a major source of jank in Flutter. Impeller is not production ready and is far from finished. Not all Flutter features are implemented yet, but we’re pleased enough with its fidelity and performance in the [flutter/gallery](https://github.com/flutter/gallery) app that we are sharing our progress. In particular, the worst frame in the transition animation of the Gallery app is around [20x faster](https://flutter-flutter-perf.skia.org/e/?begin=1650297849&end=1651261748&queries=sub_result%3Dworst_frame_rasterizer_time_millis%26test%3Dnew_gallery_impeller_ios__transition_perf%26test%3Dnew_gallery_ios__transition_perf&requestType=0).
 
-Impeller is available under a flag on iOS. You can pass `—-enable-impeller` to `flutter run`, or set the `FLTEnableImpeller` flag in your `Info.plist` file to `true`, to give Impeller a try. Development of Impeller continues on Flutter’s master channel, and we hope to provide further updates in future releases.
+Impeller is available under a flag on iOS. You can pass `--enable-impeller` to `flutter run`, or set the `FLTEnableImpeller` flag in your `Info.plist` file to `true`, to give Impeller a try. Development of Impeller continues on Flutter’s master channel, and we hope to provide further updates in future releases.
 
 ### Inline ads on android
 
-When you use the `[google_mobile](https://pub.dev/packages/google_mobile_ads)_ads` package, you should see better performance in user critical interactions such as scrolling and transitions between pages. This is particularly noticeable on devices popular in emerging markets. The best part is that no code changes are required!
+When you use the [`google_mobile_ads`](https://pub.dev/packages/google_mobile_ads) package, you should see better performance in user critical interactions such as scrolling and transitions between pages. This is particularly noticeable on devices popular in emerging markets. The best part is that no code changes are required!
 
 Under the hood, Flutter now composes Android views, commonly referred to as [platform views](https://docs.flutter.dev/development/platform-integration/platform-views), asynchronously. This means that the Flutter raster thread doesn’t need to wait for the Android view to render. Instead, the Flutter engine places the view on screen using an OpenGL texture that it manages.
 

@@ -10,11 +10,9 @@ layout: blog
 
 <DashImage figure src="images/16hQYJrDKEE1r961qkxrMwQ.jpeg" />
 
-
 When it first clicked for me that Flutter gives me full control of everything on the screen, right down to the last pixel, I immediately wanted to go beyond the fixed and predictable world of most app UIs. The fully custom widgets that I could draw using [CustomPaint](https://api.flutter.dev/flutter/widgets/CustomPaint-class.html) begged to be broken out of the typical ScrollView or Container. I wanted to move around, zoom in on things, and navigate the world that Flutter makes it possible to create. The [Transform](https://api.flutter.dev/flutter/widgets/Transform-class.html) widget was my vehicle for navigating this world, and [GestureDetector](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html) provided the controls.
 
 <DashImage figure src="images/096VXf5cl-KdkF0st.webp" />
-
 
 GestureDetector gives easy access to most gestures, and Transform provides the ability to modify the perspective in which a child widget is seen. Both are simple, independent widgets that follow Flutter’s pattern of composability. When we combine the two, every gesture on a widget becomes a way to explore.
 
@@ -30,19 +28,15 @@ A transformation matrix can be combined with any number of other transformation 
 
 <DashImage figure src="images/0VQ-yBPvchbC0k_tX.webp" />
 
-
 ## Detecting gestures
 
 If we tie some user gestures into updating the transformation matrix using a GestureDetector, then the user has the freedom to navigate the scene that we’re displaying to them. GestureDetector provides easy access to gestures like drag, which we can use for translation, pinch, for zooming, and even a two-finger rotation.
 
 <DashImage figure src="images/0IjMrne-3AEcMAkUP.webp" />
 
-
 <DashImage figure src="images/0Ut-Uqv6H9ypaumF2.webp" />
 
-
 <DashImage figure src="images/0-BQ6W3Ke-W_JQiX4.gif" />
-
 
 GestureDetector provides lots of different callbacks for various gestures and their start, update, and end states. However, if you’re implementing something like the pictured demo that combines several, the scale callbacks are all you’ll need. The onScaleUpdate callback provides a focalPoint, both horizontal and vertical scales, and rotation, all in one. This allows you to respond to multiple gestures at the same time, such as if the user is rotating and scaling in one gesture. See the [ScaleUpdateDetails](https://api.flutter.dev/flutter/gestures/ScaleUpdateDetails-class.html) for everything provided in the onScaleUpdate callback.
 

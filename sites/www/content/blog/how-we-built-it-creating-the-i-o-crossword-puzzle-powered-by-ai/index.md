@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/04ylubp836_tc4Nni.webp" />
 
-
 For this year’s I/O, Very Good Ventures partnered with the Flutter and Firebase teams at Google to create a unique, digital experience to showcase the power of the Gemini API.
 
 The fun (and challenge) of crossword puzzles is solving the clues to complete the board. A natural place to start for words and clues was everything we’ve talked about at I/O this year. To generate the game content, we gave videos of the keynotes to [Gemini Advanced](https://gemini.google.com/) and asked it to create a list of topical technology-related words and clues to make playing the game a fun way to learn about everything announced this year at I/O.
@@ -25,7 +24,6 @@ Need a hint? Click the **Hint** button, then ask up to ten yes-or-no questions a
 
 <DashImage figure src="images/01aAyHb71XpChgH6R.webp" />
 
-
 The design of the *hint* feature is a great example of how different technologies can work together to solve a problem. Hints are powered by [Firebase Genkit](https://firebase.google.com/docs/genkit), a new framework for AI development announced at I/O, and are deployed as a Firebase Function.
 
 The network request to the API includes the answer to the clue, so to keep the response hidden from the client in the message data, we built a simple Dart backend using the [Dart Frog package](https://pub.dev/packages/dart_frog) to make the experience more robust. The Frog backend calls Genkit to get the hint and retrieves the answer from the database. That way players can’t simply inspect the network call to figure out the answers to the game.
@@ -33,7 +31,6 @@ The network request to the API includes the answer to the clue, so to keep the r
 You can read more about how the Genkit flow was built in the [Firebase deep dive blog](https://firebase.blog/posts/2024/06/ai-powered-crossword-genkit).
 
 <DashImage figure src="images/05i_oBZnXJonFcLc5.webp" />
-
 
 **Rendering a performant crossword board with Flutter**
 
@@ -49,16 +46,13 @@ The `InteractiveViewer` has built-in zoom gestures, but we wanted to add more in
 
 <DashImage figure src="images/0D0vBnIvT4TKXnRnG.webp" />
 
-
 Once we have the new tentative viewport, we have to ensure that it fits within the boundaries of the board. We have two scenarios that we must allow for: when the viewport is bigger than the board, or when it’s positioned out of bounds. We update both the change in scale and the translation of the viewport to ensure it fits within the boundaries by tweaking the zoom level or the location of the viewport, as shown in the following code:
 
 <DashImage figure src="images/0wpfH-WuFnd984LEW.webp" />
 
-
 Finally, calculate the transformation and apply it to the `InteractiveViewer` controller:
 
 <DashImage figure src="images/0Sf93caUyyPq4OKKa.webp" />
-
 
 With this code, we’ve extended the zoom controls of the `InteractiveViewer` and transformed the viewport according to our needs.
 
@@ -67,7 +61,6 @@ With this code, we’ve extended the zoom controls of the `InteractiveViewer` an
 WebAssembly support for Flutter web apps was one of the major announcements for the Flutter community this year at IO. With players across the world playing the game at the same time, performance was a critical factor. We leveraged [WebAssembly (Wasm)](https://docs.flutter.dev/platform-integration/web/wasm), built into Flutter, to reduce performance bottlenecks and maintain a smooth frame rate, particularly when it comes to the character and board animations in the game.
 
 <DashImage figure src="images/0Nyoq1GrKd0eFce-M.webp" />
-
 
 **Dart Backend and Cloud Run: Seamless code sharing between backend and frontend**
 
@@ -79,11 +72,9 @@ We can see this pattern in action in the Player data model, for example, which c
 
 <DashImage figure src="images/0s1G59HNBAWqoq0xt.webp" />
 
-
 The app directly accesses the players leaderboard, reusing the same model and avoiding duplication and desynchronization:
 
 <DashImage figure src="images/0538Moipv7JTPricT.webp" />
-
 
 **Start playing: Solve the I/O Crossword puzzle!**
 

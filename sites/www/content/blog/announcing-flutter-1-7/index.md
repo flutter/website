@@ -12,7 +12,6 @@ Today we’re pleased to **announce the general availability of Flutter 1.7**, a
 
 <DashImage figure src="images/1PzRLnOtNMtoO59dPPz--hA.webp" />
 
-
 If you already have Flutter on your system and you’re on the default stable channel, you can upgrade to version 1.7 by running `flutter upgrade` from the command line. The updated release is also included in [a new installation](https://flutter.dev/docs/get-started/install) of Flutter.
 
 ## AndroidX Support for New Apps
@@ -33,7 +32,6 @@ This release features a new [`RangeSlider`](https://github.com/flutter/flutter/p
 
 <DashImage figure src="images/1rruCdwqtc2p3SXaMzUuE0Q.webp" alt="The new, themeable RangeSlider widget supports continuous or discrete styles" caption="The new, themeable RangeSlider widget supports continuous or discrete styles" />
 
-
 The [updated `SnackBar` widget](https://github.com/flutter/flutter/pull/31275) supports an updated look in the Material spec, and a [number](https://github.com/flutter/flutter/pull/31294) [of](https://github.com/flutter/flutter/pull/32177) [new](https://github.com/flutter/flutter/pull/31929) [samples](https://github.com/flutter/flutter/pull/32703) are added [to the](https://github.com/flutter/flutter/pull/34679) [documentation](https://github.com/flutter/flutter/pull/32530).
 
 For [Cupertino](https://flutter.dev/docs/development/ui/widgets/cupertino), the Flutter library for building pixel-perfect iOS applications, we’ve made a number of updates. In particular, we’ve improved the fidelity of the [`CupertinoPicker` and `CupertinoDateTimePicker` widgets](https://github.com/flutter/flutter/pull/31464), and added support for localization to non-English languages.
@@ -43,7 +41,6 @@ We also made major improvements to the [text selection and editing experience on
 Text rendering gets a big upgrade with support for rich [typography features](https://api.flutter.dev/flutter/painting/TextStyle/fontFeatures.html), including tabular and old-style numbers, slashed zeros, and stylistic sets, as [this demo](https://github.com/timsneath/typography) shows:
 
 <DashImage figure src="images/00tdr7sHesqXfjWwK.webp" alt="With Flutter, you can now add sophisticated typography with OpenType font feature support" caption="With Flutter, you can now add sophisticated typography with OpenType font feature support" />
-
 
 Lastly, we’ve added support for [game controllers](https://github.com/flutter/flutter/pull/33868). Could this lead to some fun Flutter apps? You tell us!
 
@@ -63,11 +60,9 @@ In terms of documentation, we have an ever increasing list of samples that can b
 flutter create --sample=material.AppBar.1 mysample
 ```
 
-
 If a sample can be created in this way, you’ll see a “Sample in the App” tab in the documentation, as in [this example for the AppBar widget](https://master-api.flutter.dev/flutter/material/AppBar-class.html):
 
 <DashImage figure src="images/1rARvCCVpn-cp1XoP5gXt9Q.webp" />
-
 
 We’re also continuing to embed the popular [Widget of the Week](https://www.youtube.com/playlist?list=PLjxrf2q8roU23XGwz3Km7sQZFTdB996iG) videos directly into the documentation, as an easy way to grok the various widgets in Flutter’s toolkit.
 
@@ -82,7 +77,6 @@ As ever, it’s exciting to see Flutter continue to grow in popularity and usage
 We’ve talked about [Reflectly](https://www.forbes.com/sites/heatherfarmbrough/2018/05/01/reflectly-wants-to-be-an-adidas-of-the-mind/#572291294204) before: a small Danish company who built a beautiful mindfulness app for iOS and Android. Their app was just featured as Apple’s App of the Day on their US iPhone app store, demonstrating how Flutter apps are more than capable of delivering reference-quality experiences:
 
 <YoutubeEmbed id="6ZpETbJjipQ" title="Reflectly App (Flutter Developer Story)" fullwidth="true"/>
-
 
 And at the [WeAreDevelopers](https://events.wearedevelopers.com/) conference in Berlin, [BMW announced their new Flutter-based app](https://youtu.be/80pRyn7fZRk?t=1234), currently in development. Here’s what Guy Duncan, CTO Connected Company at BMW, had to say:
 > *“By combining Dart and Flutter we have the first true cross-platform mobile toolkit; we feel it is a game changer to ensure feature parity for digital touchpoints and IoT.*

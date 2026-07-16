@@ -62,11 +62,9 @@ As you can imagine, as our popularity has grown, so has the number of opened and
 
 <DashImage figure src="images/1D_MCtnl2h_spFgoORikDcA.webp" alt="Closed vs. open bugs for month-ends since Jan-2018" caption="Closed vs. open bugs for month-ends since Jan-2018" />
 
-
 Equally exciting is the number of issues *not* bearing a label corresponding to one of our secondary triage teams, such as [framework](https://github.com/flutter/flutter/labels/framework), [engine](https://github.com/flutter/flutter/labels/engine), or [plugin](https://github.com/flutter/flutter/labels/plugin):
 
 <DashImage figure src="images/19ZXPKWTBT01b_6zsFtundg.webp" alt="Issues not labeled for secondary triage, Mar-2019-present" caption="Issues not labeled for secondary triage, Mar-2019-present" />
-
 
 You can clearly see where we started to engage Nevercode in our triage process, first in early September, with great progress by mid-September as they got up to speed.
 

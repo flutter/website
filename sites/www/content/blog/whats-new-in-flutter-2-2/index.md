@@ -52,7 +52,6 @@ For Flutter web, as well as Flutter in general, accessibility is one of our top 
 
 <YoutubeEmbed id="A6Sx0lBP8PI" title="Flutter's web support - Accessibility Demo" fullwidth="true"/>
 
-
 We also exposed the semantics node debug tree with a command line flag in profile and release modes to help developers debug accessibility by visualizing the semantic nodes created for their web app.
 
 To enable this for your own Flutter web app, run the following:
@@ -62,7 +61,6 @@ $ flutter run -d chrome --profile \
   --dart-define=FLUTTER_WEB_DEBUG_SHOW_SEMANTICS=true
 ```
 
-
 With that flag activated, you’ll be able to see your semantic nodes on top of the widgets, which allows you to debug and see if semantic elements are placed where they shouldn’t be. If you find examples like that, please don’t hesitate to [file a bug report](https://goo.gle/flutter_web_issue).
 
 While we’ve made significant progress with support for a set of core accessibility features, we will continue to improve accessibility support. In builds available on the master and dev channels beyond the 2.2 stable release, we’ve added an API to let developers programmatically [auto-enable accessibility](https://github.com/flutter/engine/pull/25830) for their apps and are fixing issues with [using Tab with screen readers](https://github.com/flutter/engine/pull/25797).
@@ -70,7 +68,6 @@ While we’ve made significant progress with support for a set of core accessibi
 And last but certainly not least, the latest version of Flutter DevTools now supports the layout explorer for your Flutter web apps.
 
 <DashImage figure src="images/0fS4WbRPwmo_FQgDo.webp" />
-
 
 This update gives you the same layout debugging tool on the web that you’re used to with your mobile and desktop apps.
 
@@ -90,11 +87,9 @@ And, finally, for sample apps that have been written for multiple platforms acco
 
 <YoutubeEmbed id="8YUIrIGGc3Y" title="Flutter Adaptive Demo App" fullwidth="true"/>
 
-
 The UX portions of the Flutter platform adaptive apps guidance is based on the new [Material Guidance for Large Screens](https://material.io/blog/material-design-for-large-screens). This new guidance from the Material team includes reworks of several of the main layout articles as well as updates to several components and an updated Design Kit, all with large screens in mind.
 
 <DashImage figure src="images/0ROXD5MqgkYuZgDZQ.webp" />
-
 
 Flutter’s goal has always been to enable apps that do more than just run on multiple platforms; we’re not done until your apps run *great* on all of the platforms you’re targeting. Flutter has the support you need to not only target your app at multiple platforms but also intends to *tailor* your apps for screen size, input modes, and idioms of each of these platforms.
 
@@ -104,14 +99,11 @@ And on the subject of Material guidance, in this release we’ve landed not one 
 
 <DashImage figure src="images/0hlsSKR8Uco4AurMH.webp" />
 
-
 <DashImage figure src="images/0K7L6ppH1A1gBmVY-.webp" />
-
 
 These updates bring the total number of Material icons for your apps up to more than 7,000. If you have trouble finding the icon you’re looking for in that embarrassment of riches (who wouldn’t?) you can search by category and name at [fonts.google.com/icons](https://fonts.google.com/icons).
 
 <DashImage figure src="images/0NofBGAEBtDHtwclP.webp" alt="Searching for Flutter Material icons by name" caption="Searching for Flutter Material icons by name" />
-
 
 Once you find the perfect icon, the new ‘Flutter’ tab shows you how to use it, or you can download just that icon for use as a stand-alone asset in your app. Adding Dash to your Flutter app has never been easier.
 
@@ -123,33 +115,32 @@ Being able to cancel a keystroke allows Flutter to implement things like using t
 
 ```dart
 import 'package:flutter/material.dart';
- 
+
 void main() => runApp(App());
- 
+
 class App extends StatelessWidget {
- @override
- Widget build(BuildContext context) => MaterialApp(
-       title: 'Flutter Text Editing Fun',
-       home: HomePage(),
-     );
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    title: 'Flutter Text Editing Fun',
+    home: HomePage(),
+  );
 }
- 
+
 class HomePage extends StatelessWidget {
- @override
- Widget build(BuildContext context) => Scaffold(
-       body: Column(
-         children: [
-           TextField(),
-           OutlinedButton(onPressed: () {}, child: const Text('Press Me')),
-         ],
-       ),
-     );
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    body: Column(
+      children: [
+        TextField(),
+        OutlinedButton(onPressed: () {}, child: const Text('Press Me')),
+      ],
+    ),
+  );
 }
 
 ```
 
 <DashImage figure src="images/0krVx4ycTN2nTl7wO.webp" alt="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" caption="Flutter 2.2 can cancel a keystroke from bubbling up the widget hierarchy, for example allowing TAB to change focus from a TextField" />
-
 
 Custom text actions allow you to do things like special handling of the Enter key in a TextField; for example, you can trigger sending a message in a chat client while still allowing a newline to be inserted via Ctrl+Enter. These same text actions [allow Flutter itself to provide different keystrokes](https://github.com/flutter/flutter/pull/75032) to match the behavior of text editing to the host OS itself, for example, Ctrl+C on Windows and Linux, but Cmd+C on macOS.
 
@@ -158,43 +149,43 @@ As an example of this, the following sample overrides the default left arrow act
 ```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
- 
+
 void main() => runApp(MyApp());
- 
+
 class MyApp extends StatelessWidget {
- @override
- Widget build(BuildContext context) => MaterialApp(
-       title: 'Flutter TextField Key Binding Demo',
-       home: Scaffold(body: UnforgivingTextField()),
-     );
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    title: 'Flutter TextField Key Binding Demo',
+    home: Scaffold(body: UnforgivingTextField()),
+  );
 }
- 
+
 /// A text field that clears itself if the user tries to back up or correct
 /// something.
 class UnforgivingTextField extends StatefulWidget {
- @override
- State<UnforgivingTextField> createState() => _UnforgivingTextFieldState();
+  @override
+  State<UnforgivingTextField> createState() => _UnforgivingTextFieldState();
 }
- 
+
 class _UnforgivingTextFieldState extends State<UnforgivingTextField> {
- // The text editing controller used to clear the text field.
- late TextEditingController controller;
- 
- @override
- void initState() {
-   super.initState();
-   controller = TextEditingController();
- }
- 
- @override
- Widget build(BuildContext context) => Shortcuts(
+  // The text editing controller used to clear the text field.
+  late TextEditingController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TextEditingController();
+  }
+
+  @override
+  Widget build(BuildContext context) => Shortcuts(
        shortcuts: <LogicalKeySet, Intent>{
          // This overrides the left arrow key binding that the text field normally
          // has in order to move the cursor back by a character. The default is
          // created by the MaterialApp, which has a DefaultTextEditingShortcuts
          // widget in it.
          LogicalKeySet(LogicalKeyboardKey.arrowLeft): const ClearIntent(),
- 
+
          // This binds the delete and backspace keys to also clear the text field.
          // You can bind any key, not just those already bound in
          // DefaultTextEditingShortcuts.
@@ -211,28 +202,27 @@ class _UnforgivingTextFieldState extends State<UnforgivingTextField> {
        ),
      );
 }
- 
+
 /// An intent that is bound to ClearAction.
 class ClearIntent extends Intent {
- const ClearIntent();
+  const ClearIntent();
 }
- 
+
 /// An action that is bound to ClearIntent that clears the TextEditingController
 /// passed to it.
 class ClearAction extends Action<ClearIntent> {
- ClearAction({required this.controller});
- 
- final TextEditingController controller;
- 
- @override
- Object? invoke(covariant ClearIntent intent) {
-   controller.clear();
- }
+  ClearAction({required this.controller});
+
+  final TextEditingController controller;
+
+  @override
+  Object? invoke(covariant ClearIntent intent) {
+    controller.clear();
+  }
 }
 ```
 
 <DashImage figure src="images/0RFbQWBEWCoP4PF1j.webp" alt="Unforgiving TextField example where pressing left arrow or ESC clears the text" caption="Unforgiving TextField example where pressing left arrow or ESC clears the text" />
-
 
 We’ve still got more work to do, but we’re working to give you complete text editing actions. Our goal is that, by the time Flutter desktop gets to stable, your users won’t be able to tell the difference between editing text in their Flutter apps vs any other app on the host OS.
 
@@ -244,25 +234,25 @@ Consider the following Scrollbar-less code:
 
 ```dart
 import 'package:flutter/material.dart';
- 
+
 void main() => runApp(App());
- 
+
 class App extends StatelessWidget {
- @override
- Widget build(BuildContext context) => MaterialApp(
-       title: 'Automatic Scrollbars',
-       home: HomePage(),
-     );
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    title: 'Automatic Scrollbars',
+    home: HomePage(),
+  );
 }
- 
+
 class HomePage extends StatelessWidget {
- @override
- Widget build(BuildContext context) => Scaffold(
-       body: ListView.builder(
-         itemCount: 100,
-         itemBuilder: (context, index) => Text('Item $index'),
-       ),
-     );
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    body: ListView.builder(
+      itemCount: 100,
+      itemBuilder: (context, index) => Text('Item $index'),
+    ),
+  );
 }
 
 ```
@@ -270,7 +260,6 @@ class HomePage extends StatelessWidget {
 When running it on the desktop, a scrollbar appears:
 
 <DashImage figure src="images/0ymJePefMMrQBezVi.webp" />
-
 
 If you don’t like the way the scrollbar looks or that it’s always shown, you can set a [`ScrollBarTheme`](https://api.flutter.dev/flutter/material/ThemeData/scrollbarTheme.html). If you don’t like this default behavior, you can change it app-wide or on a particular instance by setting a [`ScrollBehavior`](https://api.flutter.dev/flutter/widgets/ScrollBehavior-class.html). For more details about the new default scrollbar behavior and how to migrate your code to the new set of best practices, check out [the docs on flutter.dev](https://flutter.dev/docs/release/breaking-changes/default-desktop-scrollbars).
 
@@ -282,44 +271,44 @@ In previous versions of Flutter, you could add a mouse cursor (like a hand indic
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart' as urlLauncher;
- 
+
 void main() => runApp(App());
- 
+
 class App extends StatelessWidget {
- static const title = 'Flutter App';
- @override
- Widget build(BuildContext context) => MaterialApp(
-       title: title,
-       home: HomePage(),
-     );
+  static const title = 'Flutter App';
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    title: title,
+    home: HomePage(),
+  );
 }
- 
+
 class HomePage extends StatelessWidget {
- @override
- Widget build(BuildContext context) => Scaffold(
-       appBar: AppBar(title: Text(App.title)),
-       body: Center(
-         child: RichText(
-           text: TextSpan(
-             style: TextStyle(fontSize: 48),
-             children: [
-               TextSpan(
-                 text: 'This is not a link, ',
-                 style: TextStyle(color: Colors.black),
-               ),
-               TextSpan(
-                 text: 'but this is',
-                 style: TextStyle(color: Colors.blue),
-                 recognizer: TapGestureRecognizer()
-                   ..onTap = () {
-                     urlLauncher.launch('https://flutter.dev');
-                   },
-               ),
-             ],
-           ),
-         ),
-       ),
-     );
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text(App.title)),
+    body: Center(
+      child: RichText(
+        text: TextSpan(
+          style: TextStyle(fontSize: 48),
+          children: [
+            TextSpan(
+              text: 'This is not a link, ',
+              style: TextStyle(color: Colors.black),
+            ),
+            TextSpan(
+              text: 'but this is',
+              style: TextStyle(color: Colors.blue),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                urlLauncher.launch('https://flutter.dev');
+                },
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
 
 ```
@@ -327,7 +316,6 @@ class HomePage extends StatelessWidget {
 Now you can have all of the wrapping text spans you want and any of them with recognizers will get the appropriate mouse cursors.
 
 <DashImage figure src="images/0u6tJI44Ucu9fDvAb.webp" />
-
 
 In this release, `TextSpan` also supports `onEnter` and `onExit` along with the `mouseCursor`. Things like this may seem small but they go a long way towards making a Flutter app feel just like a user expects it to feel.
 
@@ -348,7 +336,6 @@ Therefore, until now, the only way to avoid this jank on iOS was to simplify sce
 However, right now on the dev channel is a preview of [the new support in Skia for shader warm-up for Metal](https://github.com/flutter/flutter/issues/79298). Through Skia, Flutter now compiles the bundled shaders before the first frame workload begins.
 
 <DashImage figure src="images/00_8hDcyhjXasCJX3.webp" alt="Traces showing precompilation occurring during application launch" caption="Traces showing precompilation occurring during application launch" />
-
 
 This solution comes with some caveats, however:
 
@@ -378,7 +365,6 @@ For Android, this release uses Dart’s split AOT compilation feature to [allow 
 
 <DashImage figure src="images/0uLg1AGohi6Xzud9H.webp" alt="Downloading the Crane study in the Flutter Gallery" caption="Downloading the Crane study in the Flutter Gallery" />
 
-
 When building with deferred components enabled, Dart compiles code imported exclusively with the `deferred` keyword into separate shared libraries that are packed into deferred components together with assets.
 
 Deferred components are currently available only on Android, and this feature is offered as an early preview. Learn how to implement deferred components in the new [Deferred components](https://flutter.dev/docs/perf/deferred-components) page on flutter.dev. This page also links to a page on the Flutter wiki that contains a deep dive on how this feature works. Please log issues on [the Flutter issue tracker](https://github.com/flutter/flutter/issues).
@@ -388,11 +374,10 @@ Deferred components are currently available only on Android, and this feature is
 Another update for Flutter in this release is for desktop lovers; support for Windows UWP has moved to alpha in the dev channel (beyond the stable 2.2 version). UWP allows you to take your Flutter apps to devices where standard Windows apps don’t run, including Xbox. To try it out, you first need to [set up the UWP prerequisites](https://flutter.dev/desktop#windows-uwp). Then, switch to the dev channel and enable UWP support:
 
 ```bash
-*$ flutter channel dev
+$ flutter channel dev
 $ flutter upgrade
-$ flutter config — enable-windows-uwp-desktop*
+$ flutter config --enable-windows-uwp-desktop
 ```
-
 
 Once enabled, creating a Flutter app includes a new a `winuwp` folder, which allows you to build and run your app in a UWP container:
 
@@ -403,16 +388,13 @@ $ flutter pub get
 $ flutter run -d winuwp*
 ```
 
-
 Because you’re building a Windows UWP app, which runs in a sandbox environment on Windows, you’ll need to punch a hole in the app’s firewall on localhost during development to enable things like hot reload and debugger breakpoints. You can do that with a `checknetisolation` command by following the instructions on [the Flutter desktop docs page](https://flutter.dev/desktop/#windows-uwp). Once you’ve done that, you can see your favorite Flutter app running as a UWP app on Windows.
 
 <DashImage figure src="images/0d2HU5GSLz88DZ7pv.webp" alt="Your favorite Flutter app running in a Windows UWP container" caption="Your favorite Flutter app running in a Windows UWP container" />
 
-
 Of course, you can run much more interesting UWP apps, like these Flutter apps running on an Xbox.
 
 <YoutubeEmbed id="s_zIzr60vMA" title="Flutter UWP on XBOX" fullwidth="true"/>
-
 
 Special shout out to [clarkezone](https://github.com/clarkezone) who’s been working on this support for about as long as I’ve been on the Flutter team. For more details about the Windows UWP alpha, check out [flutter.dev/desktop/#windows-uwp](https://flutter.dev/desktop/#windows-uwp).
 
@@ -421,7 +403,6 @@ Special shout out to [clarkezone](https://github.com/clarkezone) who’s been wo
 Another excellent effort by a Flutter community member-at-large is from [HidenoriMatsubayashi](https://github.com/HidenoriMatsubayashi), a software engineer at Sony, who has contributed [support for targeting ARM64 Linux](https://github.com/flutter/flutter/pull/61221). This PR enables you to build and run Flutter apps on ARM64 Linux machines.
 
 <DashImage figure src="images/0hZswrrQ3ANrj6spe.webp" alt="Your favorite Flutter app running on an ARM64 Linux machine" caption="Your favorite Flutter app running on an ARM64 Linux machine" />
-
 
 It’s exciting to see the Flutter community bringing Flutter to places that the team at Google could never have imagined. Keep up the good work, HidenoriMatsubayashi!
 
@@ -463,7 +444,6 @@ The win32 package is a marvel of engineering, wrapping most of the commonly used
 
 <DashImage figure src="images/0rMkCGirgD14ME-Na.webp" alt="Tetris running on Windows built using Dart FFI and Win32 calls only" caption="Tetris running on Windows built using Dart FFI and Win32 calls only" />
 
-
 The `win32` package is definitely worth checking out if you do anything with Dart or Flutter on Windows.
 
 ### FlutterFire updates and Firebase App Check
@@ -488,18 +468,15 @@ The first memory tracking improvement in this release of DevTools provides the a
 
 <DashImage figure src="images/0mMd1Bs_OZWT7UB0l.webp" alt="Flutter DevTools memory tab allocation stack trace" caption="Flutter DevTools memory tab allocation stack trace" />
 
-
 The second is the ability to inject custom messages into the memory timeline. This allows you to provide markers specific to your app, like before and after you’ve done some memory intensive work so that you can check that you’re cleaning things up properly.
 
 <DashImage figure src="images/0FcPA9ntTT4JPVo5U.webp" alt="Flutter DevTools timeline tab custom memory events" caption="Flutter DevTools timeline tab custom memory events" />
-
 
 As Flutter apps in the wild get larger and larger, we will continue to ensure that Flutter developers have the tools they need to track down and fix memory leaks and runtime issues of all kinds.
 
 It isn’t just runtime issues in your use of the Flutter framework you want to track down; sometimes you want to track down issues related to packages as well. With over 15,000 Flutter-compatible packages and plugins on pub.dev, this becomes increasingly likely as your apps use more packages over time. So, with that in mind, we’ve been experimenting with adding a new **Provider** tab to Flutter DevTools. In fact, this tab was built by [Remi Roussel](https://github.com/rrousselGit), the author of [the `provider` package](https://pub.dev/packages/provider) itself (among many other wonderful things). If you’re running the latest version of Flutter DevTools and you are debugging a Flutter app that uses the `provider` plugin, you’ll automatically get the new **Provider** tab.
 
 <DashImage figure src="images/0UgjcNnlHqFgKCH-t.webp" alt="Flutter DevTools Provider tab in action" caption="Flutter DevTools Provider tab in action" />
-
 
 The Provider tab shows you the data associated with each of your providers, including real-time changes as you run your app. And as if that weren’t amazing enough, it allows you to change the data directly as a way to test the corner cases of your app!
 
@@ -519,11 +496,9 @@ Both the Visual Studio Code and the IntelliJ/Android Studio IDE extensions for F
 
 <DashImage figure src="images/0C2RP0oCtMM9fvpgp.webp" alt="The new Dart refactor Inline Method in action" caption="The new Dart refactor Inline Method in action" />
 
-
 In the Android Studio/IntelliJ extension, we’ve added the ability to print all stack traces to the console with an option.
 
 <DashImage figure src="images/00pqAAk_u0mKtRZx9.webp" alt="You can now get all of the stack traces and not just the first one" caption="You can now get all of the stack traces and not just the first one" />
-
 
 This is helpful in projects where the root cause might be in a different package, which previously wasn’t being printed. We already have ideas on how to make this less obviously verbose, so look for more changes in the future.
 
@@ -543,7 +518,6 @@ To ensure that we have documentation ready across a rapidly growing Flutter deve
 
 <DashImage figure src="images/058dlCP5YlIl5BdvR.webp" alt="A DartPad workshop in action" caption="A DartPad workshop in action" />
 
-
 By adding instructions directly to DartPad, we’re enabling [a guided workshop experience for I/O](https://events.google.com/io/program/content?4=topic_flutter&5=type_workshop). However, we didn’t just build it for our own workshops; if you’d like to use it in your Dart or Flutter workshops, you can do so by following [the DartPad Workshop Authoring Guide](https://github.com/dart-lang/dart-pad/wiki/Workshop-Authoring-Guide). This is in addition to being able to [share code using DartPad in a Gist](https://github.com/dart-lang/dart-pad/wiki/Sharing-Guide) and [embedding DartPad in your own site](https://github.com/dart-lang/dart-pad/wiki/Embedding-Guide), which have been available for awhile now.
 
 We want everyone producing Dart and Flutter content to be able to provide rich, interactive experiences for their users. Please give this new feature a try and [let us know what you think](https://github.com/dart-lang/dart-pad/issues)!
@@ -553,7 +527,6 @@ We want everyone producing Dart and Flutter content to be able to provide rich, 
 FlutterFlow is a “low code” app design and development tool for building apps all within your browser. It provides a WYSIWYG environment for laying out your app across multiple pages using real data from Firebase. The goal of a low code tool is to do most of the common things easily, allowing you to write as few lines of custom code as possible. In fact, as a demo, they built an entire multi-page mobile app for browsing the Metropolitan Museum of Art with zero code in less than an hour. You can see the entire process on YouTube.
 
 <YoutubeEmbed id="TXsjnd_4SBo" title="Building FlutterMet" fullwidth="true"/>
-
 
 FlutterFlow outputs Flutter code, so if you need to add code to further customize your app, you can. You can read about [the FlutterFlow product launch on flutterflow.io](https://flutterflow.io/blog/launch).
 
@@ -572,6 +545,5 @@ You can [find mitigations for these breaking changes on flutter.dev](https://flu
 As always, from all of us here on the Flutter Team at Google, we want to say — thank you. Thank you for being part of the community that makes all of this possible. With more than one in eight of new apps in the Play Store being built with Flutter and over 200,000 Flutter apps in the Play Store alone, our continued growth is mind blowing. Apps of all sizes around the world are entrusting their UI to Flutter to craft beautiful multi platform experiences to meet users wherever they may be.
 
 <DashImage figure src="images/0rn6BZioI2VeCqSQY.webp" />
-
 
 Finally, in case you missed it, before you leave I/O this year, don’t forget to check out the [I/O Photo Booth](https://photobooth.flutter.dev/#/) web app built in Flutter & Firebase to grab a selfie with Dash. We [open sourced the code](https://github.com/flutter/photobooth) so you can dig into best practices for Flutter web, camera plugin web support, and learn how we used cloud functions to generate custom social posts.

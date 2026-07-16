@@ -36,7 +36,6 @@ Sometimes developers want to view performance trace data from Flutter alongside 
 
 <DashImage figure src="images/1eAFKwrcfLHlqKk6ng677pw.webp" alt="Flutter tracing events are now shown (bottom) in the Android systrace recording tooling" caption="Flutter tracing events are now shown (bottom) in the Android systrace recording tooling" />
 
-
 Additionally, to help create animations with less jank, some of you wanted [more information](https://github.com/flutter/flutter/issues/92286) in performance traces about the behavior of the raster cache, which allows Flutter to blit expensive, reused pictures instead of re-drawing them on each frame. [New flow events](https://github.com/flutter/flutter/issues/92286) in performance traces now allow you to track the lifetimes of raster cached pictures.
 
 ## Flutter DevTools
@@ -45,16 +44,13 @@ For debugging performance issues, this release of DevTools adds a [new “Enhanc
 
 <DashImage figure src="images/0QXiOV7Bm7wlP9gI-.webp" />
 
-
 When any of these tracing features are enabled, the Timeline includes new events for widgets built, render objects laid out, and render objects painted, as appropriate.
 
 <DashImage figure src="images/0ltUPM1ji3asrgDOw.webp" />
 
-
 In addition, this release of DevTools adds new [support for profiling the performance of your app’s startup](https://github.com/flutter/devtools/pull/3357). This profile contains CPU samples from the initialization of the Dart VM up until the first Flutter frame has been rendered. After you press the “Profile app start up” button and the app startup profile has been loaded, you will see that the “AppStartUp” user tag is selected for the profile. You can also load the app startup profile by selecting this user tag filter, when present, in the list of available user tags. Selecting this tag shows your profile data for your app’s startup.
 
 <DashImage figure src="images/0xpb0al6JT1AdKUjO.webp" />
-
 
 ## Web platform views
 
@@ -71,7 +67,6 @@ Flutter isn’t just the framework, the engine, and the tools — there are more
 First and foremost is the [release of the Google Mobile SDK for Flutter into general availability](https://medium.com/flutter/announcing-general-availability-for-the-google-mobile-ads-sdk-for-flutter-574e51ea6783) in November.
 
 <DashImage figure src="images/0hRLh9gi5n3E82lXG.webp" />
-
 
 This release supports 5 ad formats, integrates both AdMob and Ad Manager support and includes a beta of a new mediation feature to help you optimize ad performance. For more information about integrating Google Ads into your Flutter app as well as other monetization options, [check out the new monetization page on flutter.dev](https://flutter.dev/monetization).
 
@@ -127,7 +122,6 @@ When running on the web, it works as you’d expect:
 
 <DashImage figure src="images/04T03yBAog-6unwc8.webp" />
 
-
 Note that the current implementation of `webview_flutter` for web has a number of limitations based around the fact that it’s built using an `iframe`, which only supports simple URL loading and has no ability to control or interact with the loaded content (for more info, check out [the webview_flutter_web README](https://pub.dev/packages/webview_flutter_web)). However, we’re making `webview_flutter_web` available due to popular demand as [an unendorsed plugin](https://docs.flutter.dev/development/packages-and-plugins/developing-packages#endorsed-federated-plugin). If you want to give it a try, add the following line to your pubspec.yaml:
 
 ```yaml
@@ -153,7 +147,6 @@ The [Flutter Ecosystem Committee](https://docs.flutter.dev/development/packages-
 * And several great looking GUI packages: [`flex_color_scheme`](https://pub.dev/packages/flex_color_scheme), [`flutter_svg`](https://pub.dev/packages/flutter_svg), [`feedback`](https://pub.dev/packages/feedback), [`toggle_switch`](https://pub.dev/packages/toggle_switch), and [`auto_size_text`](https://pub.dev/packages/auto_size_text)
 
 <DashImage figure src="images/0raIVwhHpVh0ON5ha.webp" alt="The Flexfold app is built with flex_color_scheme" caption="The Flexfold app is built with flex_color_scheme" />
-
 
 Congratulations to those package authors and thank you for supporting the Flutter community with your hard work. If you’re interested in nominating your favorite Flutter package for a Flutter Favorite award, follow the guidelines and instructions on [the Flutter Favorite program page](https://docs.flutter.dev/development/packages-and-plugins/favorites).
 
@@ -203,7 +196,6 @@ Another big part of the Flutter ecosystem is FlutterFire, which is used by two-t
 
 <DashImage figure src="images/00BHU6qlHwKUxPrXb.webp" />
 
-
 Plugins moving to stable for Android, iOS, and web include [Analytics](https://firebase.flutter.dev/docs/analytics/overview), [Dynamic Links](https://firebase.flutter.dev/docs/dynamic-links/overview), [In-App Messaging](https://firebase.flutter.dev/docs/in-app-messaging/overview/), [Performance Monitoring](https://firebase.flutter.dev/docs/performance/overview), [Realtime Database](https://firebase.flutter.dev/docs/database/overview), [Remote Config](https://firebase.flutter.dev/docs/remote-config/overview) and, the new kid on the block, [Installations](https://firebase.flutter.dev/docs/installations/overview). The App Check plugin and macOS platform support are still in beta because of the phase of the Firebase libraries themselves, which are also in beta. If you’ve worried about whether to choose Realtime Database, Analytics, or Remote Config because the FlutterFire libraries weren’t ready for prime-time, worry no more. These are now fully supported plugins ready for production use.
 
 ## Dart-only Firebase Initialization
@@ -241,7 +233,6 @@ To gather the data for each platform’s initialization option data structure, c
 
 <DashImage figure src="images/069rsgRC_hcraKOAK.webp" />
 
-
 This tool digs into the data in your platform-specific sub-folders to find the unique bundle ID and then uses that to look up the Firebase-project specific details for your matching platform-specific apps, even creating a new Firebase project and/or new platform-specific apps if there aren’t any. What this means for you is no more downloading and adding a `json` file to your Android project, downloading and adding a `plist` file to your iOS and macOS projects, or [pasting code into your web project’s index.html](https://github.com/FirebaseExtended/flutterfire/pull/7359) — no matter which supported Firebase platform you’re targeting, this single snippet of Dart code initializes Firebase for your app. Note that this may not be the only initialization you have to do to get your FlutterFire app working; for example, you might want to integrate the creation of your Crashlytics symbols into your [Android build](https://firebase.google.com/docs/crashlytics/get-started?platform=android#add-plugin) or your [iOS build](https://firebase.google.com/docs/crashlytics/get-started?platform=ios#set-up-dsym-uploading), but it should get it up and running in minutes with any new Firebase project.
 
 ## Use Firebase with DartPad
@@ -250,13 +241,11 @@ With this Dart-only initialization of FlutterFire, you can now use Firebase from
 
 <DashImage figure src="images/0y2N78Oatw9te8kPh.webp" />
 
-
 [This example](https://dartpad.dev/?id=d57c6c898dabb8c6fb41018588b8cf73) demonstrates [a little chat app](https://twitter.com/puf/status/1458516522133909506) using Flutter, Firebase, and DartPad, all of which you can use right now with no installation. Today DartPad’s Firebase support already includes the core APIs, Authentication, and Firestore. Expect more Firebase services to appear in DartPad over time.
 
 The other thing that FlutterFire support in DartPad enables is the ability to use [an embedded instance of DartPad right in the docs](https://firebase.flutter.dev/docs/firestore/example/).
 
 <DashImage figure src="images/0_l1bJAoLwWB5DBdq.webp" />
-
 
 In this example, you’re seeing the docs for Cloud Firestore with the code for the [example application](https://github.com/FirebaseExtended/flutterfire/tree/master/packages/cloud_firestore/cloud_firestore/example) that you can run and edit directly in your browser without having to install a thing, create a test project, or even copy/paste the code. It’s all right there for your immediate use.
 
@@ -267,7 +256,6 @@ When integrating Firebase into an app, most apps have some kind of authenticatio
 Today, we’re pleased to announce that the [flutterfire_ui](https://pub.dev/packages/flutterfire_ui) package can create a basic authentication experience with a small amount of code. As an example, assume that you’ve got Email and Google authentication setup in your Firebase project:
 
 <DashImage figure src="images/09zL2daapFy48CypY.webp" />
-
 
 With this configuration, you can trigger an authentication experience as follows:
 
@@ -312,7 +300,7 @@ class AuthenticationGate extends StatelessWidget {
             );
           }
 
-          return HomePage(); // show your app’s home page after login
+          return HomePage(); // show your app's home page after login
         },
       );
 }
@@ -324,11 +312,9 @@ With a little more configuration, you can easily add an image and some custom te
 
 <DashImage figure src="images/0u_epPOxdzkf_z2W1.webp" />
 
-
 This screenshot shows the mobile version, but because the `flutterfire_ui` screens are responsive, here’s what you get on a desktop device:
 
 <DashImage figure src="images/00frogkEKgpNOgCVF.webp" />
-
 
 If the user has an email/password already, they can log in and be done. If they use Google auth, they’ll be shown the normal Google auth flow, whether they’re on mobile, web, or desktop. If they don’t have an account already, they can press the button on the login screen and get to the registration screen. Once they’ve logged in or registered, there are flows for validating their email address, resetting their password, logging out, and linking social authentication accounts. Logging in by email works on all platforms along with social auth support for Google, Facebook, and Twitter, with partial support for Apple (it doesn’t work on Android). Authentication support in `flutterfire_ui` supports a number of scenarios and navigation schemes, along with customization and localization options. [Check out the detailed docs and samples in the firebase.flutter.dev docs](https://firebase.flutter.dev/docs/ui/overview).
 
@@ -391,7 +377,6 @@ And this is what it looks like in action:
 
 <DashImage figure src="images/0jpo2j3C5Yo7HwuKW.webp" />
 
-
 Or, if you’d like to provide your users with the ability to create, read, update, and delete entries in a table, you’ve got the beginnings of that in `FirestoreDataTable`:
 
 ```dart
@@ -426,7 +411,6 @@ Which works like this:
 
 <DashImage figure src="images/05K_qZZ3Sb4n8tXiW.gif" />
 
-
 For details about authentication, list views, and data tables, [check out the `flutterfire_ui` docs](https://firebase.flutter.dev/docs/ui/overview/). As this is a preview release, additional features are planned. If you have a question or a feature request, please [head over to the repo on GitHub to log issues or ask questions in the discussion section](https://github.com/FirebaseExtended/flutterfire/discussions/6978).
 
 ## Firestore Object/Document Mapping
@@ -442,7 +426,7 @@ class Person {
   final int age;
 }
 
-@Collection<Person>(‘/persons’)
+@Collection<Person>('/persons')
 final personsRef = PersonCollectionReference();
 ```
 
@@ -465,11 +449,9 @@ In addition, [we continue to expand Flutter’s support for visual density](http
 
 <DashImage figure src="images/0SBoQZBrfuLVhEkdW.webp" />
 
-
 And finally, the Flutter team is not the only one working on Flutter desktop. As just one example, the desktop team at Canonical is working with Invertase on a Linux and Windows implementation of the most popular Firebase plugins for Flutter.
 
 <DashImage figure src="images/0xt35ZmY8r4BlFvfx.webp" />
-
 
 You can [read more about the preview release on the Invertase blog](https://invertase.io/blog/announcing-flutterfire-desktop).
 
@@ -479,13 +461,11 @@ A Flutter release is not complete without a look at the tooling improvements. Th
 
 <DashImage figure src="images/0gE84QAGGECM-tFAH.webp" />
 
-
 To learn the plan for adding new packages to DartPad over time, check out [this article on the Dart wiki](https://github.com/dart-lang/dart-pad/wiki/Adding-support-for-a-new-package).
 
 There’s another new DartPad feature that’s pretty handy, too. Previously, DartPad always ran the latest stable version. With this release, you can select the latest beta channel releases as well as the previous stable release (called the “old channel”), by using the new **Channel** menu in the status bar.
 
 <DashImage figure src="images/0ax1aVB0JnPAllO4a.webp" />
-
 
 This can be very useful if, for example, you’re writing a blog post where the latest stable isn’t quite new enough…
 

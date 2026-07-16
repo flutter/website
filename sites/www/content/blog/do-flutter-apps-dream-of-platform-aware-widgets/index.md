@@ -16,7 +16,6 @@ Flutter is equipped with packages which contain a healthy set of native widgets 
 
 <DashImage figure src="images/1xgjvZHIs2PUHXRrn8COFRw.webp" alt="Cupertino and Material widgets in Flutter" caption="Cupertino and Material widgets in Flutter" />
 
-
 The framework is agnostic in its essence when it comes to UI. However, some widgets require an ancestor which belongs to the same “platform-specific” library, e.g. **RaisedButton** belongs to the Material package library and it requires a **Material** widget to be one of its ancestors. This presents developers with a problem in terms of reusability of the layout code.
 
 One of the questions I get a lot from the business is — *“but can we effectively build native-looking apps and still have reusable code?”*
@@ -31,17 +30,17 @@ Consider the following constructors for two widgets which provide a top app bar:
 
 ```dart
 CupertinoNavigationBar ({
-    this.leading,
-    this.middle,
+  this.leading,
+  this.middle,
 })
 ```
 
 and
 
 ```dart
-AppBar ({
-    this.leading,
-    this.title
+AppBar({
+  this.leading,
+  this.title
 })
 ```
 
@@ -52,22 +51,20 @@ import 'package:flutter/material.dart';
 import 'dart:io' show Platform;
 
 abstract class PlatformWidget<I extends Widget, A extends Widget> extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
-    if(Platform.isAndroid) {
+    if (Platform.isAndroid) {
       return createAndroidWidget(context);
     } else if (Platform.isIOS) {
       return createIosWidget(context);
     }
-    // platform not supported returns an empty widget
+    // Not supported platforms return an empty widget.
     return new Container();
   }
-  
+
   I createIosWidget(BuildContext context);
-  
+
   A createAndroidWidget(BuildContext context);
-  
 }
 ```
 
@@ -80,28 +77,26 @@ Having this out of the way, we can implement our first platform aware widget.
 
 ```dart
 class PlatformAppBar extends PlatformWidget<CupertinoNavigationBar, AppBar> {
-    
-    final Widget leading;
-    final Widget title;
-    
-    PlatformWidget({
-        this.leading,
-        this.title,
-    });
-    
-    @Override 
-    CupertinoNavigationBar createIosWidget(BuildContext context) => new CupertinoNavigationBar (
-            leading: leading,
-            middle: title,
-    );
-    
-    @Override
-    AppBar createAndroidWidget(BuildContext context) =>
-        new AppBar(
-            leading: leading,
-            title: title,
-        )
-    );        
+  final Widget leading;
+  final Widget title;
+
+  PlatformWidget({
+    this.leading,
+    this.title,
+  });
+
+  @Override
+  CupertinoNavigationBar createIosWidget(BuildContext context) => new CupertinoNavigationBar(
+    leading: leading,
+    middle: title,
+  );
+
+  @Override
+  AppBar createAndroidWidget(BuildContext context) =>
+      new AppBar(
+        leading: leading,
+        title: title,
+      );
 }
 ```
 
@@ -111,11 +106,11 @@ For the sake of time, let’s assume we’ve implemented a scaffold and a button
 
 ```dart
 class PlatformScaffoldWidget extends PlatformWidget<CupertinoPageScaffold,Scaffold> {
-     ...
- }
+  // ...
+}
 
 class PlatformButton extends PlatformWidget<CupertinoButton,FlatButton> {
-    ...
+  // ...
 }
 ```
 

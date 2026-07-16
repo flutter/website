@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1hf9CEzGh0uhxnzVZi2Kk4g.webp" />
 
-
 ## What’s new in Flutter 3.22
 
 ### WebAssembly, Graphics rendering enhancements, and more options for AI integration
@@ -26,7 +25,6 @@ So, dive in and discover all the new features and enhancements that the Flutter 
 With the release of Flutter 3.22, Wasm is now available on the stable channel, offering significant performance improvements. In our internal benchmarks using Chrome on an M1 MacBook, the Wonderous app’s frame rendering time improved by 2x on average and 3x in worst-case scenarios.
 
 <DashImage figure src="images/0x6HEkml8cFGc96hg.webp" />
-
 
 These enhancements are vital for apps with animations and rich transitions, where maintaining a smooth frame rate is essential. Wasm helps achieve this by reducing performance bottlenecks, resulting in smoother animations and transitions. To start using Wasm with your Flutter web apps, check out our [Dart Wasm documentation](https://dart.dev/web/wasm) and [Flutter Wasm documentation](https://docs.flutter.dev/platform-integration/web/wasm). For the full announcement, visit the [Flutter at Google I/O blog post](https://medium.com/flutter/io24-5e211f708a37).
 
@@ -56,7 +54,6 @@ The chart below shows worst-case, 99%-ile, 90%-ile, and average frame rasterizat
 
 <DashImage figure src="images/0mtFyiLoIUSqk_zRB.webp" alt="99%-ile, 90%-ile and average frame rasterization times and GPU frame times in ms on an iPhone 11 device in a pathological benchmark intended to highlight blur performance" caption="99%-ile, 90%-ile and average frame rasterization times and GPU frame times in ms on an iPhone 11 device in a pathological benchmark intended to highlight blur performance" />
 
-
 ### Stencil-then-Cover
 
 Impeller on both iOS and Android has [moved to a new rendering strategy](https://github.com/flutter/engine/pull/51219) based on the Stencil-then-Cover approach described in the chapter “Drawing Filled, Concave Polygons Using the Stencil Buffer” in the [OpenGL Redbook](http://www.opengl-redbook.com/). Team members discussed more on this technique as it applies to Flutter in GitHub issue [#123671](https://github.com/flutter/flutter/issues/123671).
@@ -64,7 +61,6 @@ Impeller on both iOS and Android has [moved to a new rendering strategy](https:/
 This approach solves the issue where the raster thread was spending too much time calculating tessellations for complex paths on the CPU for example, SVGs and [Lottie animations](https://github.com/flutter/flutter/issues/141961). After the change, the total frame time (UI thread on the CPU + raster thread on the CPU + GPU work) is much lower for frames that contain complex paths. Users will notice that Lottie animations and other complex paths render more smoothly, with lower CPU utilization, and slightly higher GPU utilization.
 
 <DashImage figure src="images/11lCd7dBwJ0ab_sieDlQNFw.webp" alt="(Left) A Lottie animation. Previously, Impeller on a recent iPhone took 64ms / frame of raster thread CPU time to render it. (Right) The same animation on the same device after we landed the Stencil-then-Cover optimization. Raster times are nearly 10x faster." caption="(Left) A Lottie animation. Previously, Impeller on a recent iPhone took 64ms / frame of raster thread CPU time to render it. (Right) The same animation on the same device after we landed the Stencil-then-Cover optimization. Raster times are nearly 10x faster." />
-
 
 While pleased with these improvements, there is still more work to do. Among other opportunities, we are aware that polyline generation remains prominent in CPU profiles, and we intend to investigate shifting this work to the GPU, as well.
 
@@ -114,9 +110,7 @@ Flutter now adds more support for Android’s upcoming predictive back feature, 
 
 <DashImage figure src="images/08b6DxQuMXAyYVu-w.webp" />
 
-
 <DashImage figure src="images/0hr_OF9DsfUcsLNHv.webp" />
-
 
 ### Flutter tool enforces version requirements on Gradle, AGP, Java, and Kotlin
 
@@ -176,9 +170,7 @@ If you’ve previously experienced performance challenges when using multiple pl
 
 <DashImage figure src="images/0uk0URkHcImHdTq2M.webp" />
 
-
 <DashImage figure src="images/0-KX8Ubw77KpdGnPI.webp" />
-
 
 ## Ecosystem
 
@@ -187,7 +179,6 @@ If you’ve previously experienced performance challenges when using multiple pl
 The Vertex AI for Firebase product has been released to public preview and includes the Dart SDK. This enables you to use the Gemini API to build generative AI features for your Dart or Flutter app, with production, performance and enterprise scale in mind. The SDK is integrated with [Firebase App Check](https://firebase.google.com/docs/app-check), which protects your API calls, and safeguards your backend infrastructure from serious threats like billing fraud, phishing, and app impersonation. Jump into the [Getting Started for Dart](https://firebase.google.com/docs/vertex-ai/get-started?platform=flutter) and start using it with no cost with a promo code
 
 <DashImage figure src="images/0KmIhzrfoyskNW7r8.webp" />
-
 
 The [Google AI Dart SDK](https://ai.google.dev/gemini-api/docs/get-started/dart) remains available, and is recommended for prototyping only. Google AI has free-of-charge access (within limits and where available) and pay-as-you-go pricing. If you have been prototyping with the Google AI Dart SDK, and are ready to migrate to Vertex AI for Firebase, check out the [migration guide](https://firebase.google.com/docs/vertex-ai/migrate-to-vertex-ai?platform=flutter).
 

@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0lBCX1cQ8WF56oRAq.webp" />
 
-
 From the outset, one of our goals with Flutter was to enable developers to create beautiful user experiences. And every day the worldwide community amazes us with [countless apps and experiments](https://twitter.com/i/events/1275593667017834502?s=20) that showcase Flutter’s creative potential. Today, we’re pleased to partner with CodePen on a fun series of new challenges to let you show off your Flutter skills.
 
 CodePen is one of the top destinations on the internet for front-end developers to experiment, share, and iterate. Ever since we announced our [partnership with CodePen](https://medium.com/flutter/announcing-codepen-support-for-flutter-bb346406fe50) in April, we’ve been amazed by the Flutter Pens you’ve created. And so we want to give you the opportunity to show off your amazing Flutter designs to CodePen’s community of over a million designers and coders.
@@ -34,7 +33,6 @@ CodePen is one of the top destinations on the internet for front-end developers 
 Here’s an embedded CodePen that uses the Stack widget to create a three-panel view. Click **Run Pen** to see the app in action. Then click **Flutter** to see the code that implements the app.
 
 <iframe src="https://codepen.io/mkiisoft/embed/XWmGdxL" width="800" height="600" frameborder="0" allowfullscreen></iframe>
-
 
 ## Take the challenge!
 

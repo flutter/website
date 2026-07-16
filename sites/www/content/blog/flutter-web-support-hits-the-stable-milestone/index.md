@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1bbkcrsggiQLxNDRAgHiSBQ.webp" />
 
-
 Our vision for Flutter is to be a portable UI framework for building beautiful app experiences on any platform. Today, as part of [Flutter 2](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65), we’re announcing that Flutter’s web support has hit the stable milestone.
 
 The first Flutter release supported iOS and Android, and has been used to bring over 150,000 apps to mobile app stores. Now, adding web support means that those same apps can reach an even broader audience, as well as opening up new ways to build interactive experiences on the web.
@@ -27,7 +26,6 @@ This article describes what we’ve built so far, and explores examples of how y
 
 <DashImage figure src="images/0yDQInopKQv6QR0Hb.webp" alt="[iRobot Education](https://edu.irobot.com/the-latest/building-a-coding-experience-for-all) developed the [iRobot Coding app](https://code.irobot.com/) using Flutter to offer their learn-to code experience to everyone anywhere by making it available on the web." caption="[iRobot Education](https://edu.irobot.com/the-latest/building-a-coding-experience-for-all) developed the [iRobot Coding app](https://code.irobot.com/) using Flutter to offer their learn-to code experience to everyone anywhere by making it available on the web." />
 
-
 ## Our journey to the web
 
 Today’s web platform is richer than ever, with [hardware-accelerated 2D and 3D graphics](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), [offline and installation support](https://web.dev/progressive-web-apps/), and [access to the underlying operating system and hardware](https://web.dev/fugu-status/). The web has allowed a [broad](https://vuejs.org/) [array](https://angular.io/) [of](https://flask.palletsprojects.com/) [frameworks](https://reactjs.org/) that build on this underlying platform to offer developers great flexibility in how they create apps for the web.
@@ -37,7 +35,6 @@ Since Flutter is written in [Dart](https://dart.dev/), a language that offers Ja
 Our approach is to build a consistent toolkit that works across all platforms (rather than have two separate frameworks that have subtle deviations of behavior), to ensure that your own code runs without surprises.
 
 <DashImage figure src="images/0ai8xTn_dMUTB6af6.webp" />
-
 
 At an architectural level, Flutter is a [multilayer system](https://flutter.dev/docs/resources/technical-overview#layer-cakes-are-delicious) with:
 
@@ -59,7 +56,6 @@ Over this period, we have made major architectural improvements and added featur
 
 <DashImage figure src="images/1eq4uks7XD1mMWrTQVTUY6w.webp" />
 
-
 ### Performance
 
 The biggest area of improvement since our early releases is performance. During development, we’ve gained a better understanding of the performance and correctness characteristics of the various rendering technologies available on the web.
@@ -68,11 +64,9 @@ We originally started with an HTML, DOM-based model. In this model, Flutter’s 
 
 <DashImage figure src="images/0kS0WlZkECsmnqaY7.webp" alt="[Rive](https://rive.app/), a tool for creating custom animations, rebuilt their app using Flutter on the web and it is now available in beta." caption="[Rive](https://rive.app/), a tool for creating custom animations, rebuilt their app using Flutter on the web and it is now available in beta." />
 
-
 To handle the fidelity required to render intensive graphics efficiently, we started experimenting with [CanvasKit](https://skia.org/user/modules/canvaskit), which enables rendering Skia paint commands in the browser using [WebAssembly](https://webassembly.org/) and [WebGL](https://www.khronos.org/webgl/). We discovered that CanvasKit can deliver superior performance, fidelity, and correctness, enabling the level of graphical horsepower expressed in this [demo](https://flutterplasma.dev/) by [Felix Blaschke](https://github.com/felixblaschke), a talented member of the Flutter community.
 
 <DashImage figure src="images/0PHaTJqBxdvTDycOh.webp" alt="[Flutter Plasma](https://flutterplasma.dev/), a demo created by Felix Blaschke, running on Safari, Firefox, Edge and Chrome." caption="[Flutter Plasma](https://flutterplasma.dev/), a demo created by Felix Blaschke, running on Safari, Firefox, Edge and Chrome." />
-
 
 Each renderer offers advantages in different scenarios, so Flutter is supporting both rendering modes:
 
@@ -92,7 +86,6 @@ The web has many strengths, especially its global reach. One of the many reasons
 
 <DashImage figure src="images/0bf3e0LQ8MVQb0ETI.webp" alt="[Flutter Plasma demo](https://flutterplasma.dev/)’s showroom page is an example of the [url_strategy plugin](https://pub.dev/packages/url_strategy), based on Flutter’s custom URL strategies, in action." caption="[Flutter Plasma demo](https://flutterplasma.dev/)’s showroom page is an example of the [url_strategy plugin](https://pub.dev/packages/url_strategy), based on Flutter’s custom URL strategies, in action." />
 
-
 Hyperlinks are also critical to how users navigate the web. A new [`link widget`](https://pub.dev/documentation/url_launcher/latest/link/Link-class.html) in the `url_launcher` package enables users to deep link to anchors within your app or to external websites. You can use `link` on relevant widgets, including buttons, inline text, images, and specify whether the link opens in the same tab or in a new tab.
 
 Another integral part of any app is text rendering. Developing a layout system for text was one of the biggest challenges to support Flutter on the web. Since the web lacks a direct-text layout API, Flutter must perform various measurements on the [`paragraph`](https://api.flutter.dev/flutter/dart-ui/Paragraph-class.html) by triggering a [`layout()`](https://api.flutter.dev/flutter/dart-ui/Paragraph/layout.html). These measurements can become quite expensive, so a new [canvas-based text measurement](https://github.com/flutter/flutter/issues/33523) adds supports for both plain and rich text. Now, Flutter can do detailed measurements efficiently on the web, enabling things like painting highlight boxes accurately on selected text.
@@ -103,7 +96,6 @@ Flutter 2 is particularly suitable for implementing Progressive Web Apps, or PWA
 
 <DashImage figure src="images/0W5BGuCaX7v9rvtjh.webp" alt="[Invoice Ninja](https://www.invoiceninja.com/), an invoice management app, launched the PWA app using the same codebase as their existing Flutter mobile apps." caption="[Invoice Ninja](https://www.invoiceninja.com/), an invoice management app, launched the PWA app using the same codebase as their existing Flutter mobile apps." />
 
-
 When you create a Flutter web app, we include a PWA web manifest file, as well as code to setup service workers. The [manifest file](https://developer.mozilla.org/en-US/docs/Web/Manifest) provides metadata about how your app should run, including information like icons and an app title. [Service workers](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker) enable caching of resources and running your app offline. When running a Flutter app in the browser as a PWA, you’ll see the opportunity to install it to your device, whether as a mobile or desktop app.
 
 ### Support for desktop form factors
@@ -113,7 +105,6 @@ We want to make Flutter web experiences feel right, regardless of the shape and 
 For instance, there is an expectation for content on the desktop to display scrollbars that can be controlled by a mouse or keyboard. So the new [customizable interactive scrollbars](https://flutter.dev/go/update-scrollbars) support a [theme](https://api.flutter.dev/flutter/material/ScrollbarTheme-class.html), a track, and the ability to scroll by dragging a thumb. The [`PrimaryScrollController`](https://api.flutter.dev/flutter/widgets/PrimaryScrollController-class.html) has been expanded so that you can use [keyboard shortcuts to scroll](https://flutter.dev/go/default-scroll-action) without having to wire up your own scroll views.
 
 <DashImage figure src="images/06XtFgsx4cz1OY88N.jpg" alt="Property management solution for [Zurich Insurance](https://www.zurich.com/), built by [Spica Technologies](https://spicatech.co.uk/), is a great example of the business apps Flutter’s web support can enable on desktop browsers." caption="Property management solution for [Zurich Insurance](https://www.zurich.com/), built by [Spica Technologies](https://spicatech.co.uk/), is a great example of the business apps Flutter’s web support can enable on desktop browsers." />
-
 
 We also increased the [default content density](https://github.com/flutter/flutter/issues/43350), because mouse pointers support a tighter density than touch devices. And we added a superset of [system mouse cursors](https://github.com/flutter/flutter/issues/60641) in the framework to support all platforms.
 
@@ -149,7 +140,6 @@ Much of this release was defined by the feedback shared by early web adopters, a
 
 <DashImage figure src="images/0eLfOUS1mLRtcDr4j.webp" alt="[Moi Mobiili](https://www.moi.fi/), a modern Mobile Virtual Network Operator, recently launched their web app using Flutter." caption="[Moi Mobiili](https://www.moi.fi/), a modern Mobile Virtual Network Operator, recently launched their web app using Flutter." />
 
-
 Performance will likely always be an area of investment. Our goal is to reduce code size and increase frames per second (fps). Today, every Flutter web app downloads the engine code that it needs. We’re looking into possibilities to cache some of this logic, reducing startup time and download size. We recently did work in the Flutter Gallery demo app to reduce code size using deferred libraries and plan to share what we learned soon.
 
 We’re also continuing to refine a few areas over the coming months:
@@ -163,7 +153,6 @@ We’re also continuing to refine a few areas over the coming months:
 * Our plugin ecosystem is something we will also continue to invest in so that Google-published packages have greater parity across mobile and web.
 
 <DashImage figure src="images/0O9LlG-FDFRIFAsX0.webp" alt="[Simplebet](https://simplebet.io/) used Flutter’s web support to build highly interactive embeddable NFL & NBA betting experiences within Fanduel’s existing suite of mobile apps." caption="[Simplebet](https://simplebet.io/) used Flutter’s web support to build highly interactive embeddable NFL & NBA betting experiences within Fanduel’s existing suite of mobile apps." />
-
 
 ## Getting started with Flutter on the web
 

@@ -18,18 +18,15 @@ This release comes with several performance improvements. First on this list is 
 
 <DashImage figure src="images/04O_Zg7UAwbnGissJ.webp" alt="*Frame lag due to processing asynchronous event results before and after*" caption="*Frame lag due to processing asynchronous event results before and after*" />
 
-
 Another cause of jank is when the garbage collector (GC)pauses the UI thread to reclaim memory. Previously, memory for some images would only be reclaimed lazily in response to GC performed by the Dart VM. As a workaround in earlier releases, the Flutter Engine would hint to the Dart VM that image memory could be reclaimed by a GC, which in theory could lead to more timely memory reclamation. Unfortunately, in practice this led to too many major GCs, and the memory would still sometimes not be reclaimed quickly enough to avoid low-memory situations on memory constrained devices. In this release, memory for unused images is reclaimed eagerly ([#26219](https://github.com/flutter/engine/pull/26219), [#82883](https://github.com/flutter/flutter/pull/82883), [#84740](https://github.com/flutter/flutter/pull/84740)), reducing GCs considerably.
 
 <DashImage figure src="images/0OJrGTdsznMa2N0DI.webp" alt="*GCs before and after adding the fix to eagerly reclaim unused large image memory*" caption="*GCs before and after adding the fix to eagerly reclaim unused large image memory*" />
-
 
 For example, in one of our tests, playing a 20 second animated GIF went from needing 400+ GCs to needing just 4. Fewer major GCs means that animations involving images appearing and disappearing will have less jank, and consume less CPU and power.
 
 Another performance improvement in Flutter 2.5 is the latency when sending messages between Dart and Objective-C/Swift (iOS) or Dart and Java/Kotlin (Android). As part of [tuning-up](https://docs.google.com/document/d/1oNLxJr_ZqjENVhF94-PqxsGPx0qGXx-pRJxXL6LSagc/edit#heading=h.9gabvat7tlxf) message channels generally, removing unnecessary copies from messaging codecs reduced latencies by up to 50% depending on message size and device ([#25988](https://github.com/flutter/engine/pull/25988), [#26331](https://github.com/flutter/engine/pull/26331)).
 
 <DashImage figure src="images/0TvARS8SsME4sl-Ib.webp" alt="*iOS message latencies before and after*" caption="*iOS message latencies before and after*" />
-
 
 You can read more about the details of this work in the [Improving Platform Channel Performance in Flutter](https://medium.com/flutter/improving-platform-channel-performance-in-flutter-e5b4e5df04af) blog post by Aaron Clarke.
 
@@ -41,7 +38,6 @@ Of course, Flutter isn’t Flutter without the Dart language and runtime on whic
 
 <DashImage figure src="images/0CNbVsc26rivkp2vI.webp" alt="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" caption="*`flutter create` comes out of the box with an analysis_options.yaml file pre-populated with recommended Flutter lints*" />
 
-
 Not only do you get these lints when you create a new Dart or Flutter project, but with [just a few steps](https://flutter.dev/docs/release/breaking-changes/flutter-lints-package#migration-guide), you can add this same analysis to your existing apps as well. For the details of these lints, the new language features and more, check out [the release announcement for Dart 2.14](https://medium.com/dartlang/announcing-dart-2-13-c6d547b57067).
 
 ## Framework: Android full screen, Material You & text editing shortcuts
@@ -50,26 +46,21 @@ The Flutter 2.5 release includes a number of fixes and improvements to the frame
 
 <DashImage figure src="images/0-5pu9nXQw88jixos.webp" alt="*New Android edge-to-edge mode: normal mode (left), Edge to Edge mode (center), Edge to Edge with a custom SystemUIOverlayStyle (right)*" caption="*New Android edge-to-edge mode: normal mode (left), Edge to Edge mode (center), Edge to Edge with a custom SystemUIOverlayStyle (right)*" />
 
-
 In this release, we continue to build support for the new Material You (aka v3) specification, including updates to floating action button sizes and theming ([#86441](https://github.com/flutter/flutter/pull/86441)), and a new `MaterialState.scrolledUnder` state that you can see in action with the sample code in the PR ([#79999](https://github.com/flutter/flutter/pull/79999)).
 
 <DashImage figure src="images/07ivd_3xtI3uaZ4nO.webp" alt="*New Material You FAB sizes*" caption="*New Material You FAB sizes*" />
 
-
 <DashImage figure src="images/1uTH_ZL2MFJSlPvhuZ81o5A.webp" alt="*New MaterialState.scrolledUnder state in action*" caption="*New MaterialState.scrolledUnder state in action*" />
-
 
 And while we’re talking about scrolling, another improvement is the addition of scroll metrics notifications ([#85221](https://github.com/flutter/flutter/pull/85221), [#85499](https://github.com/flutter/flutter/pull/85499)), which provide notifications of scrollable areas even if the user isn’t scrolling. For example, the following shows the scrollbar appearing or disappearing as appropriate based on the underlying size of the `ListView`:
 
 <DashImage figure src="images/011VHtSVUTukATeQN.webp" alt="*The new scroll metrics notifications enabling the scrollbar to appear and disappear automatically without scrolling*" caption="*The new scroll metrics notifications enabling the scrollbar to appear and disappear automatically without scrolling*" />
-
 
 In this case, you don’t have to write any code but if you want to capture the [`ScrollMetricNotification`](https://master-api.flutter.dev/flutter/widgets/ScrollMetricsNotification-class.html) changes, you can. Special thanks goes out to community contributor [xu-baolin](https://github.com/xu-baolin) who worked hard on this and came up with a great solution.
 
 Another excellent contribution from the community is the addition of Material banner support to the `ScaffoldMessenger`. You may remember the `ScaffoldMessenger` from [the Flutter 2.0 release announcement](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65) as a more robust way to show `SnackBars` at the bottom of the screen to provide users with notifications. In Flutter 2.5, you can now add a banner to the top of your scaffold that stays in place until the user dismisses it.
 
 <DashImage figure src="images/0WnLtflm5SF1I9GxK.webp" />
-
 
 Your app can get this behavior by calling the `showMaterialBanner` method of `ScaffoldMessenger`:
 
@@ -157,11 +148,9 @@ Another valuable community contribution is by the Flutter Community organization
 
 <DashImage figure src="images/0rvrCGEZ-vkRxga-n.webp" />
 
-
 Furthermore, since these plugins are no longer actively maintained, they are no longer marked as Flutter Favorite plugins. If you haven’t already done so, we recommend moving to the plus versions of the following plugins:
 
 <DashImage figure src="images/1YX-xNXUTKnNuZNBAmt7CAQ.webp" />
-
 
 ## Flutter DevTools: performance, Widget inspector, & polish
 
@@ -169,40 +158,33 @@ This release of Flutter comes with a number of improvements to Flutter DevTools.
 
 <DashImage figure src="images/08evmW5s37nGUIc98.webp" />
 
-
 The Flutter engine now also identifies shader compilation events in the timeline. Flutter DevTools uses these events to help you diagnose shader compilation jank in your app.
 
 <DashImage figure src="images/0esYsdKzKL64130ln.webp" alt="DevTools detecting lost frames due to shader compilation" caption="DevTools detecting lost frames due to shader compilation" />
 
-
-With this new feature, DevTools detects when you’ve lost frames to shader compilation so that you can fix the issue. To run your app as if it’s the first time (before your shader cache has been populated as it would be for any user), use `flutter run`with the `--purge-persistent-cache` flag. This clears the cache to ensure you are reproducing the environment that users see for the “first run” or “re-open” (iOS) experience. This feature is still under development, so please [file issues](https://b.corp.google.com/issues/new?component=775375&template=1369639) for problems you find, or for any improvements we can make to help debug shader compilation jank.
+With this new feature, DevTools detects when you’ve lost frames to shader compilation so that you can fix the issue. To run your app as if it’s the first time (before your shader cache has been populated as it would be for any user), use `flutter run` with the `--purge-persistent-cache` flag. This clears the cache to ensure you are reproducing the environment that users see for the “first run” or “re-open” (iOS) experience. This feature is still under development, so please [file issues](https://b.corp.google.com/issues/new?component=775375&template=1369639) for problems you find, or for any improvements we can make to help debug shader compilation jank.
 
 In addition, when you’re tracking down CPU performance issues in your app, you may have been swamped in profiling data from Dart and Flutter libraries and/or the native code of the engine. If you’d like to turn any of these off to focus on your own code, you can do that with the new CPU Profiler feature ([#3236](https://github.com/flutter/devtools/pull/3236)) that enables you to hide profiler information from any of these sources.
 
 <DashImage figure src="images/0IzjrKssfjooCGzKm.webp" />
 
-
 For any of the categories you don’t filter out, they’ve now been color-coded ([#3310](https://github.com/flutter/devtools/pull/3310), [#3324](https://github.com/flutter/devtools/pull/3324)) so that you can easily see what parts of the CPU Frame Chart come from what parts of the system.
 
 <DashImage figure src="images/0ewigNSGco1ozScc0.webp" alt="Colored frame chart to identify app vs. native vs. Dart vs. Flutter code activities in your app" caption="Colored frame chart to identify app vs. native vs. Dart vs. Flutter code activities in your app" />
-
 
 Performance isn’t the only thing that you’ll want to debug. This release of DevTools comes with an update to the Widget Inspector that allows you to hover over a widget to evaluate the object, view properties, widget state, and so on.
 
 <DashImage figure src="images/0cLXjl-F3Vj0bFkKg.webp" />
 
-
 And, when you select a widget, it automatically populates in the new Widget Inspector Console, where you can explore the widget’s properties.
 
 <DashImage figure src="images/0l8XoqqLcz6W0CkRE.webp" />
-
 
 When paused at a breakpoint, you can also evaluate expressions from the console.
 
 In addition to the new features, the Widget Inspector has undergone a facelift. To make DevTools a more useful destination for understanding and debugging your Flutter apps, we partnered with [Codemate](https://codemate.com), a creative tech agency in Finland, to make some updates.
 
 <DashImage figure src="images/0iN9uTsyfsUOt8cTw.webp" alt="Flutter DevTools polished UX for greater ease of use" caption="Flutter DevTools polished UX for greater ease of use" />
-
 
 In this screenshot, you can see the following changes:
 
@@ -226,28 +208,23 @@ The IntelliJ/Android Studio plugin for Flutter has also undergone a number of im
 
 <DashImage figure src="images/0kTKO_OcWee8OS0Lo.webp" alt="Integration testing your Flutter app in IntelliJ/Android Studio" caption="Integration testing your Flutter app in IntelliJ/Android Studio" />
 
-
 To add an integration test to your project, [follow the instructions on flutter.dev](https://flutter.dev/docs/testing/integration-tests). To connect the test with IntelliJ or Android Studio, add a run configuration that launches the integration tests and connect a device for the test to use. Running the configuration allows you to run the test, including setting breakpoints, stepping, etc.
 
 In addition, the latest IJ/AS plugin for Flutter allows you to see the coverage information for both unit test and integration test runs. You can access this from the toolbar button next to the “Debug” button:
 
 <DashImage figure src="images/0vxdeNoUw3boFaeFu.webp" />
 
-
 Coverage info is displayed using red and green bars in the gutter of the editor. In this example, lines 9–13 were tested, but lines 3 and 4 were not.
 
 <DashImage figure src="images/0G5M8qrjxw3gyeT7a.webp" />
-
 
 The latest release also includes the new ability to preview icons used from packages from pub.dev built around TrueType font files ([#5504](https://github.com/flutter/flutter-intellij/pull/5504), [#5595](https://github.com/flutter/flutter-intellij/pull/5595), [#5677](https://github.com/flutter/flutter-intellij/pull/5677), [#5704](https://github.com/flutter/flutter-intellij/pull/5704)), just as the Material and Cupertino icons support previewing.
 
 <DashImage figure src="images/0TK2px5OYQ_ggn2jx.webp" alt="Icon preview in IntelliJ/Android Studio" caption="Icon preview in IntelliJ/Android Studio" />
 
-
 To enable icon previews you need to tell the plugin which packages you are using. There is a new text field in the plugin settings/preferences page:
 
 <DashImage figure src="images/0GTrbuGlv9G-YPvOi.webp" />
-
 
 Note that this works for icons defined as static constants in a class, as shown in the sample code in the screen shot. It won’t work for expressions, such as `LineIcons.addressBook()` or `LineIcons.values['code']`. If you are the author of an icon package that does NOT work with this feature, please create an [issue](https://github.com/flutter/flutter-intellij/issues).
 
@@ -267,13 +244,11 @@ The Visual Studio Code plugin for Flutter has also improved in this release, beg
 
 <DashImage figure src="images/0S8Nl6GbXHBHV64Rr.webp" alt="Adding a Dart dependency in Visual Studio Code" caption="Adding a Dart dependency in Visual Studio Code" />
 
-
 These commands provide functionality like [the Pubspec Assist plugin by Jeroen Meijer](https://marketplace.visualstudio.com/items?itemName=jeroen-meijer.pubspec-assist) has been providing for awhile now. These new commands come right out of the box and provide a type-to-filter list of packages periodically fetched from pub.dev.
 
 You may also be interested in the “Fix All” command ([#3445](https://github.com/Dart-Code/Dart-Code/issues/3445), [#3469](https://github.com/Dart-Code/Dart-Code/issues/3469)) that’s available for Dart files and can fix all of the same issues as [dart fix](https://dart.dev/tools/dart-fix) for the current open file in one step.
 
 <DashImage figure src="images/0dzvJ63ojTXw-Grsu.webp" alt="Using Flutter Fix rules to fix all known issues in your code" caption="Using Flutter Fix rules to fix all known issues in your code" />
-
 
 This can also be set to run on-save by adding `source.fixAll` to the `editor.codeActionsOnSave` VS Code setting.
 
@@ -281,11 +256,9 @@ Or, if you’d like to give the preview feature a try, you can enable the `dart.
 
 <DashImage figure src="images/0chKF4N2FzPBN3R3G.webp" alt="Using the new Visual Studio Code test runner test your Dart and Flutter code" caption="Using the new Visual Studio Code test runner test your Dart and Flutter code" />
 
-
 The Visual Studio Code test runner looks a little different than the current Dart and Flutter test runner and will persist results across sessions. The Visual Studio Code test runner also adds new gutter icons showing the last state of a test that can be clicked to run the test (or right-clicked for a context menu).
 
 <DashImage figure src="images/0snvlKGuZPa9zHFBc.webp" />
-
 
 In coming releases, the existing Dart and Flutter test runner will be removed in favor of the new Visual Studio Code test runner.
 
@@ -301,14 +274,13 @@ And this is just the tip of the iceberg with new Visual Studio Code features and
 
 ## Tools: exceptions, new app template & Pigeon 1.0
 
-In previous versions of Flutter, you may have been frustrated by exceptions that you expected to be unhandled so that you could trigger the debugger and figure out where they originated only to find that the Flutter framework did not let the exception through to trigger the “unhandled expectation” handler in your debugger. In this release, debuggers now break correctly on unhandled exceptions that previously were just caught by the framework ([#17007](https://github.com/flutter/flutter/issues/17007)). This improves the debugging experience as your debugger can now point you directly to the throwing line in their code instead of pointing to a random line deep in the framework. A related new feature enables you to decide if a FutureBuilder should rethrow or swallow errors (#[84308](https://github.com/flutter/flutter/pull/84308)). This should give you a large number of additional exceptions to help track down the issues in your Flutter apps.
+In previous versions of Flutter, you may have been frustrated by exceptions that you expected to be unhandled so that you could trigger the debugger and figure out where they originated only to find that the Flutter framework did not let the exception through to trigger the “unhandled expectation” handler in your debugger. In this release, debuggers now break correctly on unhandled exceptions that previously were just caught by the framework ([#17007](https://github.com/flutter/flutter/issues/17007)). This improves the debugging experience as your debugger can now point you directly to the throwing line in their code instead of pointing to a random line deep in the framework. A related new feature enables you to decide if a FutureBuilder should rethrow or swallow errors ([#84308](https://github.com/flutter/flutter/pull/84308)). This should give you a large number of additional exceptions to help track down the issues in your Flutter apps.
 
 Since the dawn of Flutter, there has been the Counter app template, which has many good qualities: it shows off many features of the Dart language, demonstrates several key Flutter concepts and it’s small enough to fit into a single file, even with a lot of explanatory comments. However, what it doesn’t do is provide a particularly good jumping off point for a real-world Flutter app. In this release, there’s a new template ([#83530](https://github.com/flutter/flutter/pull/83530)) available via the following command:
 
 `$ flutter create -t skeleton my_app`
 
 <DashImage figure src="images/03utkTiVxsZOcvcKl.webp" alt="*The new Flutter skeleton template in action*" caption="*The new Flutter skeleton template in action*" />
-
 
 The skeleton template generates a two-page List View Flutter app (with Detail View) that follows community best practices. It was developed with a great deal of internal and external review to provide a better base on which to build a production quality app and supports the following features:
 
@@ -331,7 +303,6 @@ Over time, as Flutter best practices evolve, expect this new template to evolve 
 If, on the other end of the spectrum, you’re developing a plugin and not an app, you may be interested in the 1.0 release of Pigeon. Pigeon is a codegen tool for generating typesafe interop code between Flutter and its host platform. It allows you to define a description of your plugin’s API and generate skeleton code for Dart, Java, and Objective-C (which are accessible to Kotlin and Swift, respectively).
 
 <DashImage figure src="images/0CfaqXymLvWZc6Cqo.webp" alt="Sample generated Pigeon code" caption="Sample generated Pigeon code" />
-
 
 Pigeon is already used in some of the plugins from the Flutter team. With this release, which provides more helpful error messages, added support for generics, primitive data types as arguments and return types, and multiple arguments, expect it to be used more heavily in the future. If you’d like to take advantage of Pigeon in your own plugin or add-to-app projects, you can find out more information at [the pigeon plugin page](https://pub.dev/packages/pigeon).
 

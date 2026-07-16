@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1XhysKMaIjv--tjhGDEas6A.webp" alt="Dash enjoying Antigravity" caption="Dash enjoying Antigravity" />
 
-
 ## Learning faster with Antigravity
 
 ### Creating Flutter frontends for ADK
@@ -37,7 +36,6 @@ This is how it happened.
 
 <DashImage figure src="images/19kmUzKkC8c8EBCvMQKftBg.webp" alt="Screenshot of a generated frontend for the deep_search agent" caption="Screenshot of a generated frontend for the deep_search agent" />
 
-
 ## Start with the work of others
 
 I’m not the only one writing skills around here, so the first step was to install some skills from the Google Cloud and Flutter teams:
@@ -47,7 +45,6 @@ npx skills add google/agents-cli --skill google-agents-cli-adk-code
 npx skills add flutter/skills
 ```
 
-
 Those got me some basic smarts about ADK, its CLI tool, and Flutter. I also had the Dart MCP server installed, thanks to the Dart extension for Antigravity.
 
 ## Establish the loop
@@ -56,12 +53,11 @@ Rather than begin with a request for the agent to blast out an app, I establishe
 
 <DashImage figure src="images/1GMT5ZFE5c7DhhwEqm7_iOw.webp" alt="Behold my loop!" caption="Behold my loop!" />
 
-
 The loop consists of five distinct steps driven by conversations with Antigravity:
 
 **1) Execute the current skill**: In a fresh conversation, the coder agent runs the workflow defined by the current version of the skill file.
 
-My prompt: `This codebase includes an agent built with ADK, but no frontend or client. I’d like you to read the instructions in flutter-frontend-for-adk/SKILL.md and follow the workflow. Do not examine git history, do not reference the context of other conversations we’ve had, and do not change git branches.`
+My prompt: `This codebase includes an agent built with ADK, but no frontend or client. I'd like you to read the instructions in flutter-frontend-for-adk/SKILL.md and follow the workflow. Do not examine git history, do not reference the context of other conversations we've had, and do not change git branches.`
 
 **2) Evaluate output and specifications**: In a second conversation, the author agent and I inspect the generated deliverables, such as architectural notes, design specifications, and the resulting code structure. I was better at noticing structural issues, while Antigravity helped catch all the little stuff.
 
@@ -69,11 +65,11 @@ My prompt: `While I review the notes and code, take a look at the generated arti
 
 **3) Identify gaps and failure modes**: We identify areas where the coder agent lacked specific guidance, made incorrect assumptions, or encountered integration issues.
 
-My prompt: `I noticed two issues in the last run: first, the root gitignore is ignoring the new frontend/lib/ folder due to a global ‘lib/’ ignore rule. Second, the coder agent is executing all six phases continuously without stopping. We need a way to pause and verify the deliverables after each stage.`
+My prompt: `I noticed two issues in the last run: first, the root gitignore is ignoring the new frontend/lib/ folder due to a global 'lib/' ignore rule. Second, the coder agent is executing all six phases continuously without stopping. We need a way to pause and verify the deliverables after each stage.`
 
 **4) Update central skill and references**: We update the instructions in SKILL.md or the sub-guides in the references/ directory to address the gaps.
 
-My prompt: `Let’s update Phase 6 in SKILL.md to explicitly handle the gitignore issue by adding ‘!frontend/lib’ if ‘lib/’ is ignored globally. Also, add a mandatory ‘Review’ step at the end of Phases 1 to 4 instructing the agent to pause and wait for my approval before proceeding.`
+My prompt: `Let's update Phase 6 in SKILL.md to explicitly handle the gitignore issue by adding '!frontend/lib' if 'lib/' is ignored globally. Also, add a mandatory 'Review' step at the end of Phases 1 to 4 instructing the agent to pause and wait for my approval before proceeding.`
 
 **5) Clear local files and rerun**: I delete temporary specification files, reset the git working tree, and head back to the top of the loop.
 
@@ -132,11 +128,9 @@ ListView.builder(
 )
 ```
 
-
 This code leads to UI that looks like this:
 
 <DashImage figure src="images/1MuEwLr96JNe25xfg6kc4Rw.webp" alt="Look at all those broken list items and half-bolded segments!" caption="Look at all those broken list items and half-bolded segments!" />
-
 
 The fix for this isn’t particularly hard, once you know the right thing to do. I didn’t, of course, so I started asking Antigravity questions like “How does ADK use SSE to stream events?” and “What does the over-the-wire data structure for an event look like, and how do I know if it’s a partial event?” If “vibe learning” were a thing, I was doing it.
 
@@ -150,11 +144,11 @@ await for (final event in stream) {
     // Accumulate streaming text
     _activeStreamingAuthor = event.author;
     _activeStreamingResponse =
-        (_activeStreamingResponse ?? ‘’) + event.contentText!;
+        (_activeStreamingResponse ?? '') + event.contentText!;
   } else {
     // Finished chunk: Clear accumulator and add to permanent events list
     _activeStreamingResponse = null;
-   
+
     final updatedEvents = List<Event>.from(_activeSession!.events)
         ..add(event);
 
@@ -177,11 +171,10 @@ await for (final event in stream) {
 
     _processCompletedEvent(event);
   }
-  
+
   notifyListeners();
 }
 ```
-
 
 ## Try it yourself
 

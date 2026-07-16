@@ -22,11 +22,9 @@ The momentum rolled right into the Flutter Live event, as you can see here in th
 
 <YoutubeEmbed id="DpBWkYiSBtQ" title="Flutter Live Event Guides Highlights" fullwidth="true"/>
 
-
 All of that was in preparation for the event itself, which is recapped in this 10-minute highlight reel.
 
 <YoutubeEmbed id="D-o4BqJxmJE" title="Flutter Live Keynote Recap" fullwidth="true"/>
-
 
 And if you haven’t seen it already, you can check out [the full playlist of content from Flutter Live](https://www.youtube.com/playlist?list=PLOU2XLYxmsILq4ysYNWXq5TOGLgYDJgVD).
 
@@ -38,26 +36,21 @@ The inspiration that Flutter has on developers doesn’t stop there. Developers 
 
 <YoutubeEmbed id="PcrIkshxnjo" title="Nevercode launches Codemagic - Flutter Live & Launch Party Aftermovie - December 4th, 2018" fullwidth="true"/>
 
-
 China:
 
 <YoutubeEmbed id="w68o_B76YlI" title="Flutter Live Beijing Sizzle Reel" fullwidth="true"/>
-
 
 And Kampala, Uganda:
 
 <DashImage figure src="images/0kS0qvDFLKFUHsmKl.webp" />
 
-
 And thanks to all of the developers that posted to #MyFlutterStory! It was hard to pick the best contributions.
 
 <YoutubeEmbed id="9WgQzB0UZOs" title="#MyFlutterStory - Stories From Developers Using Flutter" fullwidth="true"/>
 
-
 These developers haven’t been idle. Looking at [the list of Flutter packages](https://pub.dartlang.org/packages?q=dependency%3Aflutter) on pub.dartlang.org shows over 1000 community-contributed packages that you can drop into your projects today. You can see a small sample of what the community is already building using these resources today:
 
 <YoutubeEmbed id="REJDzio_h7o" title="Flutter App Highlight Reel" fullwidth="true"/>
-
 
 But that’s not all — in addition to the existing set of packages to [add Firebase to your Flutter app](https://firebaseopensource.com/projects/flutter/plugins/), there’s also [the new Firebase MLKit](https://pub.dartlang.org/packages/firebase_ml_vision), which enables real-time image and feature recognition, and [the two new Square SDKs for Flutter](https://squareup.com/us/en/flutter) that allows you to take payments from a Square Reader or directly inside your app.
 

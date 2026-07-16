@@ -12,14 +12,13 @@ By [Anthony Robledo](https://medium.com/@clocksmith) and [MH Johnson](https://me
 
 <DashImage figure src="images/1ndZ8HED7jp2f0X4IFSwtdA.webp" />
 
-
 Google Fonts for Flutter was first announced at Flutter Interact in December 2019. With help from the community (thank you!), we have added many new features and improved stability. After a successful time in beta, it is now ready for prime time use on Android, iOS, Web, and MacOS, as [Google Fonts 1.0.0](https://pub.dev/packages/google_fonts).
 
 Features added since beta:
 
 * Get a list of all supported fonts with `GoogleFonts.asMap()`
 
-* Use a font with a dynamic name: `GoogleFonts.getFont(‘Lato’)`
+* Use a font with a dynamic name: `GoogleFonts.getFont('Lato')`
 
 * Ensure secure downloads with checksum verification
 
@@ -30,7 +29,6 @@ Features added since beta:
 * Optionally disable fetching fonts at runtime (useful when debugging or pre-bundling)
 
 <DashImage figure src="images/06ZIbMT1ySdIZoHK4.gif" />
-
 
 Google Fonts allows developers to easily experiment with and use any of the fonts from fonts.google.com in their app. When the app is ready to publish, the developer then decides whether the user receives the font by downloading it from the API, or it’s pre-bundled with the app package.
 

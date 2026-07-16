@@ -18,7 +18,6 @@ Here are a few icons that showcase the range of options you’ll find in Materia
 
 <DashImage figure src="images/1kcT41A5GvXp8XrjHjiuc4A.webp" alt="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." caption="Sample of 4 icons: shopping_cart, chat, masks, wash. Displayed in the 4 supported styles: filled, outlined, rounded, sharp." />
 
-
 **Getting started**
 
 To get started with the [`Icon` class](https://master-api.flutter.dev/flutter/widgets/Icon-class.html), make sure to set `uses-material-design: true` in your project’s `pubspec.yaml` file. This tells Flutter to include the icon assets in your application.
@@ -36,7 +35,6 @@ For example, when an icon is used in conjunction with an action element, like a 
 [Material.io offers guidance](https://material.io/design/usability/accessibility.html#writing) on indicating UI elements by action. A common mistake is to default the semantic label to the name of the icon, as opposed to the action that is performed when that icon is selected.
 
 <DashImage figure src="images/1sZKrpmVM5f5bRSgy453T1Q.webp" />
-
 
 To learn more about the importance of building accessible digital experiences, see [Accessibility](https://flutter.dev/docs/development/accessibility-and-localization/accessibility) on flutter.dev.
 

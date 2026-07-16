@@ -18,7 +18,6 @@ What’s notable this quarter is that 89% of the respondents were also positivel
 
 <DashImage figure src="images/09CO8AmwyqIudhgK6.webp" alt="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" caption="*The percentage of users who are positively satisfied with Dart increased 9%, from 80% in Q3 2019 to 89% in Q1 2021.*" />
 
-
 ## Which factors affected users’ decisions to adopt Flutter?
 
 The Flutter team wanted to understand how different factors affect users’ decisions to adopt Flutter for their new projects. The goal was to find areas that the team should invest in to alleviate users’ concerns and delight our users. In addition, by sharing the results, we hope that you can also use the information to find ways to contribute to the Flutter community or to advocate for Flutter in your organization or community.
@@ -35,7 +34,6 @@ First, we asked what made users lean toward adopting Flutter. As shown in the fo
 
 <DashImage figure src="images/0lmC1UJVINDIXumGt.webp" alt="*Factors that made developers lean toward adopting Flutter for their next project*" caption="*Factors that made developers lean toward adopting Flutter for their next project*" />
 
-
 Next, we asked what made users lean against adopting Flutter. The users were most concerned about the following, listed in order of importance:
 
 1. Google’s commitment to Flutter.
@@ -45,7 +43,6 @@ Next, we asked what made users lean against adopting Flutter. The users were mos
 1. Packages and plugins available in Flutter’s ecosystem.
 
 <DashImage figure src="images/00d3CyUdb9K75qjt2.webp" alt="*Factors that made developers lean against adopting Flutter for their next project*" caption="*Factors that made developers lean against adopting Flutter for their next project*" />
-
 
 From these results, the team learned that users fear whether Flutter will be around for the long term. It’s a reasonable concern, because you’re tying your career or apps to our framework. So, we want to mention the scale of internal adoption again. At Flutter Engage, we shared that there are more than 30 teams at Google who are building mission-critical apps with Flutter. These are teams like [Google Pay, Google Ads, Nest Hub, and Stadia](https://youtu.be/IdrCyS7EF8M?t=67) who have thousands of developers committed to Flutter development. Flutter will be prominently featured at [Google I/O](https://events.google.com/io/) again this year. Stay tuned for our latest announcements, and sign up for the Flutter sessions listed on the [I/O website](https://events.google.com/io/program/content?4=topic_flutter&lng=en), starting May 5th.
 
@@ -57,7 +54,6 @@ We also collected thousands of raw comments about various topics in response to 
 
 <DashImage figure src="images/0_m-0usdhsHPmeZ8U.webp" alt="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" caption="*Online post-it notes that the Flutter team used to generate and organize ideas about developer tools, based on the comments from the survey*" />
 
-
 There are things that community contributors can do too. We learned from the user comments that many Flutter developers still want to have higher-quality packages with better maintenance, even though they acknowledge that Flutter’s ecosystem has matured over time. There were a lot of mentions of multimedia packages (like audio and video players) and Bluetooth packages that need better support. We welcome you to contribute to those areas and expand the coverage, by, for example, submitting PRs to existing packages, as the Flutter team strives to provide high-quality, [first-party packages](https://pub.dev/publishers/flutter.dev/packages).
 
 ## Cloud-based services and products
@@ -68,11 +64,9 @@ For those who are already using cloud-based services, the most popular cloud sol
 
 <DashImage figure src="images/0VLupMT920gd2acrw.webp" />
 
-
 Users said that they chose Firebase and GCP, because they were easy to use with Flutter. Many users who chose AWS and Azure said that it was because of existing familiarity.
 
 <DashImage figure src="images/0d0IHqqnl0KoeLuT8.webp" />
-
 
 The Flutter team is working closely with Firebase and GCP. We will continue to support [FlutterFire plugins](https://firebase.flutter.dev/), and the team is also working with the GCP team to make it easier to use with Flutter.
 

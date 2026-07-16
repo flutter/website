@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1HNqQFQ2hdhAgjew1pIMqXA.webp" />
 
-
 ## Summary
 
 In the era of agentic AI, the bottleneck for scaling projects has shifted from code volume to code integrity. To move at the speed AI allows without introducing systemic friction, we must stop treating AI as a magic wand and start treating it as a high-performance engine that requires a perfectly calibrated track.
@@ -117,7 +116,6 @@ description: Prepare current work for PR
     *   Provide a suggested Git commit message (e.g., "Prepare for PR: Fix tests and remove debug code").
 ```
 
-
 ## Example Skill: Single file test coverage
 
 ```markdown
@@ -151,7 +149,6 @@ description: Write a new test or modify an existing test
     *   Provide a suggested Git commit message (e.g., "Improve test coverage for [Class Name]").
 ```
 
-
 ## Example Skill: Migrate to modern Dart features
 
 ```markdown
@@ -184,7 +181,6 @@ description: Migrate to modern Dart features (Dart 3+)
     *   **Do not commit or push.**
     *   Provide a suggested Git commit message (e.g., "Refactor: Use switch expression in [Class Name]").
 ```
-
 
 ## In summary
 

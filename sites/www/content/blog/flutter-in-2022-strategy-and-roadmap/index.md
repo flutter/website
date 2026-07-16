@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1_CcfyhAWUIV8pWwuvdoSPA.webp" />
 
-
 ## Flutter in 2022: strategy and roadmap
 
 ### Areas of focus for Flutter as we build growth and momentum

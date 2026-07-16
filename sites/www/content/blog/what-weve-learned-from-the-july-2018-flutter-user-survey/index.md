@@ -12,7 +12,6 @@ layout: blog
 
 <DashImage figure src="images/1gM8BhAAqil2B79RCarJ5-A.jpeg" alt="Photo by [Jess Watters](https://unsplash.com/@designedbyjess) on [Unsplash](https://unsplash.com/)" caption="Photo by [Jess Watters](https://unsplash.com/@designedbyjess) on [Unsplash](https://unsplash.com/)" />
 
-
 Flutter’s User Experience Research team recently conducted an online survey to measure user satisfaction and understand user needs. The survey was open to the public for two weeks in July of 2018 and received responses from 1,016 users. Thank you so much for giving us your valuable feedback! In this post, we would like to share what we learned from the survey and what we plan to do to address your feedback.
 
 ## Who’s using Flutter?
@@ -21,13 +20,11 @@ As you may expect, Flutter users come from all kinds of backgrounds. When we ask
 
 <DashImage figure src="images/1dYcTfPO6MS8RWpr9KB1cgg.webp" />
 
-
 ## More Flutter apps coming in the wild?
 
 We also found that 15% of the respondents have already published a Flutter app, and more excitingly, 52% are working on an app to be released within the next 6 months! We are looking forward to seeing these beautiful apps roll out to millions of mobile users.
 
 <DashImage figure src="images/11iG_hmhGXRwV4ZakI_cVjg.webp" />
-
 
 ## Are users satisfied with Flutter?
 
@@ -51,7 +48,6 @@ We took all this feedback to heart. We were also heartened by some compliments u
 > *“I’m incredibly satisfied with flutter and the community. I’m looking forward to a desktop solution as well.”*
 
 <DashImage figure src="images/1g2MLIDuEz3HdUy1_JkjbVA.jpeg" />
-
 
 ## And are there more Cupertino widgets?
 

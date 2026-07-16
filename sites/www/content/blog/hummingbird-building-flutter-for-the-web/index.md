@@ -12,11 +12,9 @@ At Flutter Live today, we announced that we are experimenting with running Flutt
 
 <DashImage figure src="images/0gD64Y8ECWBBuSZrx.webp" />
 
-
 Let’s begin with a quick refresher of Flutter’s architecture. Flutter is a multi-layered system, such that higher layers are easier to use and allow you to express a lot with little code, and the lower layers give you more control at the expense of having to deal with some complexity. When a higher layer does not do what a developer wants, they can drop to a lower layer. Developers have access to all the layers above the Flutter Engine.
 
 <DashImage figure src="images/1pUNwEsIf3HKaarmNVRwP7Q.webp" alt="Flutter for Mobile Architecture" caption="Flutter for Mobile Architecture" />
-
 
 Flutter Engine is exposed as the lowest-level library in Flutter, *dart:ui*. It knows nothing about widgets, physics, animation, or layout (except text layout). All it knows is how to compose [pictures](https://docs.flutter.io/flutter/dart-ui/Picture-class.html) onto the screen and turn them into pixels. It would be hard to write applications directly on top of dart:ui. This is why the higher layers were created.
 
@@ -50,7 +48,6 @@ After attempting to port several sample applications to the Web we realized that
 
 <DashImage figure src="images/1M0ik7rqmkK1Cf0xB4iwbxg.webp" alt="*Flutter for the Web Architecture (Hummingbird)*" caption="*Flutter for the Web Architecture (Hummingbird)*" />
 
-
 Now that we know we want to implement the entire dart:ui API we need to pick a set of Web technologies to build on top of. Flutter renders UI one frame at a time. Within each frame Flutter ***builds*** widgets, performs ***layout***, and finally ***paints*** them on the screen.
 
 ## Building widgets
@@ -66,7 +63,6 @@ In Flutter you lay out a paragraph of text by creating a [Paragraph](https://doc
 When laying out a paragraph of text Flutter measures the paragraph’s height, width, maximum intrinsic width, minimum intrinsic width, and alphabetic and ideographic baselines. These properties are illustrated below.
 
 <DashImage figure src="images/1KpntaDMPfVygd3iTCUgI1A.webp" alt="*Paragraph layout attributes*" caption="*Paragraph layout attributes*" />
-
 
 You can find more details in Flutter’s [Paragraph documentation](https://docs.flutter.io/flutter/dart-ui/Paragraph-class.html).
 
@@ -102,11 +98,9 @@ When all is said and done, a frame is rendered onto the page as a tree of HTML e
 
 <DashImage figure src="images/1srIZflrlT4IhxER1nnOtJw.webp" alt="*Sample HTML DOM structure of a frame*" caption="*Sample HTML DOM structure of a frame*" />
 
-
 An equivalent Flutter layer tree (called [*flow layer*](https://github.com/flutter/engine/tree/master/flow/layers)) in the Flutter Engine would look like this:
 
 <DashImage figure src="images/1yjnmm_UQ6wrQD5AssXxqLg.webp" alt="*Sample Flutter Engine layer structure*" caption="*Sample Flutter Engine layer structure*" />
-
 
 Structurally they are very similar. The biggest difference is that on the Web we have to pick different implementations for pictures based on their contents.
 
@@ -163,7 +157,6 @@ Our goal is to make as much of the framework portable to the Web as possible. Ho
 We built enough of the Web Engine to render most of the Flutter Gallery. We have not ported Cupertino widgets, but all of the Material widgets, Material Theming, as well as the Shrine and Contact Profile demo apps run on the Web.
 
 <YoutubeEmbed id="5IrPi2Eo-xM" title="hummingbird screen recording" fullwidth="true"/>
-
 
 ## Where is the source code?
 

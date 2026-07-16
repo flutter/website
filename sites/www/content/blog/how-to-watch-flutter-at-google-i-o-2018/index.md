@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1dArkoJSnhvcjZ6p4ds63BA.webp" />
 
-
 Google I/O 2018 is just a week away, and Flutter will be showing up in style at the event, with sessions, codelabs, office hours, an interactive sandbox space, and more. This is how to stay up to date with all-things Flutter from May 8–10th regardless of where you’ll be.
 
 To see the various Flutter-related sessions, visit [https://google.com/io/](https://events.google.com/io/) where you will be able to view each of the following talks online, both live and on-demand:
@@ -32,7 +31,6 @@ The full Flutter livestream schedule can be [found here](https://events.google.c
 Also, be sure to check out a virtual tour of the Flutter Sandbox, which will be available on [g.co/io/guides](https://g.co/io/guides) by May 9. You will get to see what 2Dimensions has built for this!
 
 <DashImage figure src="images/1ZPr26vDyRE90NtHZJ6Jmgg.webp" />
-
 
 To get involved in discussions with other developers about Flutter and I/O, be sure to participate in one of the various global [I/O Extended events](https://google.com/io/extended) near you. If you’re interested in hosting your own viewing party, we’d [love to promote it](https://events.google.com/io/extended/form/).
 

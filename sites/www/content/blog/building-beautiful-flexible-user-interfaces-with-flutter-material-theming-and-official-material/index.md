@@ -16,13 +16,9 @@ At [Google I/O 2018](https://events.google.com/io/), the Material team [announce
 
 - Matías Duarte, VP, Material Design
 
-<DashImage figure src="images/1cyTGpzWuHqvYFGTV7uQyXA.webp" alt="UI elements from the ‘Shrine brand-specific design’ using
-Material Theming and Material Components" caption="UI elements from the ‘Shrine brand-specific design’ using
-Material Theming and Material Components" />
-
+<DashImage figure src="images/1cyTGpzWuHqvYFGTV7uQyXA.webp" alt="UI elements from the ‘Shrine brand-specific design’ using Material Theming and Material Components" caption="UI elements from the ‘Shrine brand-specific design’ using Material Theming and Material Components" />
 
 <DashImage figure src="images/1L2vOm-w6u4c-WRU6qZ9W_A.webp" alt="A screenshot from the Shrine design implemented using Flutter & Material Components" caption="A screenshot from the Shrine design implemented using Flutter & Material Components" />
-
 
 ### Official Flutter support for Material Components
 
@@ -34,13 +30,11 @@ Just in time for I/O, Flutter’s Material Components library has been updated t
 
 <DashImage figure src="images/13U83sHXcjpSZCceOlIjyHg.webp" alt="A selection of Material Components from the Flutter Gallery" caption="A selection of Material Components from the Flutter Gallery" />
 
-
 ## Learning more
 
 For a quick introduction to Material Theming with Flutter, check-out our Google I/O session:
 
 <YoutubeEmbed id="hA0hrpR-o8U" title="Code beautiful UI with Flutter and Material Design (Google I/O '18)" fullwidth="true"/>
-
 
 Lastly, we are happy to announce four new codelabs that teach core concepts required to create beautiful and flexible user interfaces with Flutter and Material Components:
 

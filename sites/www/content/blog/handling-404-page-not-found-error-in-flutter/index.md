@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1eU-430nepv8cz3OYLIycng.webp" />
 
-
 Flutter has released web support that allows you to create dynamic websites. Flutter supports handling any error that might come from web usage such as 404 errors. But, how do you make a custom 404 page for your Flutter application?
 
 This article describes how to create custom pages that are shown anytime a user navigates to a page that doesn’t exist.
@@ -42,7 +41,6 @@ onUnknownRoute: (settings) {
 
 },
 ```
-
 
 PageNotFound is a custom widget that creates the 404 page . This page might explain what happened and redirect the user to the home page, but you can be as creative as you want when creating your 404 your page.
 

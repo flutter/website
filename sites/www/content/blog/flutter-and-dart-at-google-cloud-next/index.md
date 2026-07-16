@@ -12,7 +12,6 @@ In case you missed it, the Flutter team attended [Google Cloud Next](https://clo
 
 <DashImage figure src="images/0mlHluTwnXfWI-Yzy.webp" />
 
-
 We partnered with teams across Google Cloud, Firebase, [Very Good Ventures](https://verygood.ventures/), and [Serverpod](https://serverpod.dev/) to deliver lightning talks, sessions, and a demo booth with a focus on streamlined workflows.
 
 Here’s a review of what we shared in case you missed it.

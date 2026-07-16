@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0ae_YppUn96m93qkT.webp" alt="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" caption="No garage door remote? Not a problem with Flutter and a Raspberry Pi!" />
 
-
 ***04/11/2022***: *This article has been updated to replace broken links due to docs and plugins changing names or locations.*
 
 ***09/10/2020***: *This article has been updated to reflect the move to the v2 Android embedding API. Migration instructions for applications created pre-1.12 can be found [here](https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects), and [here](https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration) for plugins.*
@@ -61,7 +60,7 @@ abstract class GeofenceRegion {
 
   /// Android-specific settings for a geofence.
   final AndroidGeofencingSettings androidSettings;
-  
+
   GeofenceRegion(
     this.id, double latitude, double longitude, this.radius, this.triggers,
     {AndroidGeofencingSettings androidSettings});
@@ -82,7 +81,7 @@ abstract class GeofencingPlugin {
 
   /// Stop receiving geofence events for a given [GeofenceRegion].
   static Future<bool> removeGeofence(GeofenceRegion region);
-  
+
   /// Stop receiving geofence events for an identifier associated with a
   /// geofence region.
   static Future<bool> removeGeofenceById(String id) async;
@@ -111,7 +110,7 @@ Now that the Dart interface defined, start adding plumbing to communicate with t
 abstract class GeofencingPlugin {
   static const MethodChannel _channel =
       const MethodChannel('plugins.flutter.io/geofencing_plugin');
-  
+
   static Future<bool> initialize() async {
     final callback = PluginUtilities.getCallbackHandle(callbackDispatcher);
     await _channel.invokeMethod('GeofencingPlugin.initializeService',
@@ -133,9 +132,9 @@ abstract class GeofencingPlugin {
     args.addAll(region._toArgs());
     _channel.invokeMethod('GeofencingPlugin.registerGeofence', args);
   }
-  
+
   /*
-  * … `removeGeofence` methods here …
+  * … `removeGeofence` methods here …
   */
 }
 
@@ -144,7 +143,6 @@ abstract class GeofencingPlugin {
 If you’ve previously developed Flutter plugins and are familiar with `MethodChannel`, this should look as expected, for the most part. (If you’re new to plugin development, check out [the platform channels article](https://flutter.io/platform-channels/) for an introduction). However, the two calls to `PluginUtilities.getCallbackHandle` might stand out.
 
 <DashImage figure src="images/0ilMs7WWcpN3q9UxO.webp" alt="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" caption="*Callback handles are managed by the Flutter engine and can be used to reference and lookup callbacks across isolates.*" />
-
 
 In order to invoke a Dart callback as a result of a background event, you must retrieve a handle that is passed between Dart and platform code while also allowing for lookup of the callback across platform threads and Dart [isolates](https://api.dartlang.org/stable/2.0.0/dart-isolate/dart-isolate-library.html).
 
@@ -161,29 +159,29 @@ void callbackDispatcher() {
   // 1. Initialize MethodChannel used to communicate with the platform portion of the plugin.
   const MethodChannel _backgroundChannel =
       MethodChannel('plugins.flutter.io/geofencing_plugin_background');
-  
+
   // 2. Setup internal state needed for MethodChannels.
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // 3. Listen for background events from the platform portion of the plugin.
   _backgroundChannel.setMethodCallHandler((MethodCall call) async {
     final args = call.arguments;
-    
+
     // 3.1. Retrieve callback instance for handle.
     final Function callback = PluginUtilities.getCallbackFromHandle(
         CallbackHandle.fromRawHandle(args[0]));
     assert(callback != null);
-    
+
     // 3.2. Preprocess arguments.
     final triggeringGeofences = args[1].cast<String>();
     final locationList = args[2].cast<double>();
     final triggeringLocation = locationFromList(locationList);
     final GeofenceEvent event = intToGeofenceEvent(args[3]);
-    
+
     // 3.3. Invoke callback.
     callback(triggeringGeofences, triggeringLocation, event);
   });
-  
+
   // 4. Alert plugin that the callback handler is ready for events.
   _backgroundChannel.invokeMethod('GeofencingService.initialized');
 }
@@ -291,7 +289,7 @@ val intent = Intent(context, GeofencingBroadcastReceiver::class.java)
 return PendingIntent.getBroadcast(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 }
 
-// TODO(bkonyi): Reregister geofences after reboot 
+// TODO(bkonyi): Reregister geofences after reboot
 // https://developer.android.com/training/location/geofencing
 @JvmStatic
 private fun registerGeofence(context: Context,
@@ -529,15 +527,15 @@ Additional state for the plugin is set when the `GeofencingPlugin` instance is c
 
   // 3. Initialize the Dart runner which will be used to run the callback
   // dispatcher.
-  _headlessRunner = [[FlutterEngine alloc] 
-                        initWithName:@"GeofencingIsolate" 
-                        project:nil 
+  _headlessRunner = [[FlutterEngine alloc]
+                        initWithName:@"GeofencingIsolate"
+                        project:nil
                         allowHeadlessExecution:YES];
   _registrar = registrar;
 
   // 4. Create the method channel used by the Dart interface to invoke
   // methods and register to listen for method calls.
-  _mainChannel = [FlutterMethodChannel 
+  _mainChannel = [FlutterMethodChannel
                   methodChannelWithName:@"plugins.flutter.io/geofencing_plugin"
                   binaryMessenger:[registrar messenger]];
   [registrar addMethodCallDelegate:self channel:_mainChannel];
@@ -645,7 +643,7 @@ Once the system determines that a geofence has been entered or exited, the `CLLo
     invokeMethod:@""
     arguments:@[
       @(handle),
-      @[ region.identifier ], 
+      @[ region.identifier ],
       @[ @(center.latitude), @(center.longitude) ],
       @(event)
     ]
@@ -672,7 +670,7 @@ For geofencing, the plugin needs to implement `didFinishLaunchingWithOptions` wh
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
   // Check to see if we're being launched due to a location event.
-  if (launchOptions[UIApplicationLaunchOptionsLocationKey] != nil) {
+  if (launchOptions[UIApplicationLaunchOptionsLocationKey] != nil) {
     // Restart the headless service.
     [self startGeofencingService:[self getCallbackDispatcherHandle]];
   }
@@ -690,15 +688,11 @@ Now that the geofencing plugin is fully implemented for both Android and iOS, I 
 
 <DashImage figure src="images/0ae_YppUn96m93qkT.webp" />
 
-
 <DashImage figure src="images/0at7FCzjM5lAd8NC_.webp" alt="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." caption="The relay is triggered by the Raspberry Pi, which opens and closes the door (left). A proximity sensor allows for the garage door service to know whether or not the door is currently open (right)." />
-
 
 <DashImage figure src="images/074sQ7Fl7ueommzJy.webp" alt="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" caption="*My garage door remote, built using Flutter. Can you tell that I’m a backend engineer?*" />
 
-
 <iframe src="https://gfycat.com/WickedHospitableEidolonhelvum" width="1920" height="1080" frameborder="0" allowfullscreen></iframe>
-
 
 Over the past couple of months I’ve been tinkering with a Raspberry Pi and the Dart [rpi_gpio package](https://pub.dartlang.org/packages/rpi_gpio/versions/0.4.0-dev.1#-readme-tab-) to get back into working with circuits. I had been toying around with the idea of making a Flutter application that would open my garage door for quite awhile, so it made sense for my first hardware project to use Dart and Flutter. Over a couple of weekends, I wrote a [service to control the garage door](https://github.com/bkonyi/GarageDoorController/blob/master/bin/garage_server.dart), performed minor surgery to wire a relay across the opener button, installed a proximity sensor to query the state of the door, and finally wrote a [simple application using Flutter that functions as a remote control](https://github.com/bkonyi/FlutterGarageDoorOpener).
 
@@ -806,7 +800,7 @@ First of all, the plugin needs to be initialized. This is done in a method named
 ```dart
 Future<void> initialize() async {
   // Perform other initialization
-  // …
+  // …
   // Initialize the geofencing plugin.
   await GeofencingManager.initialize();
 }
@@ -854,7 +848,7 @@ abstract class GeofenceTrigger {
       initialTrigger: [GeofenceEvent.exit],
       notificationResponsiveness: 0,
       loiteringDelay: 0);
-  
+
   static bool _isInitialized = false;
 
   static final homeRegion = GeofenceRegion(
@@ -893,7 +887,6 @@ I’ve had a lot of fun implementing background execution support for Flutter, a
 Thanks for reading and happy Fluttering!
 
 <DashImage figure src="images/0D6jZA_ksvRN5EJi1.webp" alt="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." caption="Like many members of the Dart and Flutter teams, Dash loves cycling. However, for obvious reasons, Dash has a bit of trouble riding a bike." />
-
 
 ## Resources
 

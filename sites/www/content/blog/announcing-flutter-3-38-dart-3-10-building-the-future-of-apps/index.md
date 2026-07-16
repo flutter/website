@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1DwdxTpj5OEQzUzyj4lq6_A.gif" />
 
-
 ## Announcing Flutter 3.38 & Dart 3.10: Building the future of apps
 
 Hi, Flutter community! My name is Emma Twersky, and I am unbelievably excited to be your new lead for Flutter and Dart DevRel. I’m not just here to talk about new features; I’m here for this community. The number one reason I’m here is for the incredible culture we have. If you haven’t read it, check out [Flutter culture and how to preserve it](https://blog.flutter.dev/flutter-culture-and-how-to-preserve-it-436b4ed1031d). It’s all about being open, modest, and respectful, all while building fantastic cross-platform apps, and that’s what Flutter and Dart are all about. I’m so excited to be a part of this community, and I can’t wait to share all that we’re working on.
@@ -18,7 +17,6 @@ Hi, Flutter community! My name is Emma Twersky, and I am unbelievably excited to
 Speaking of fantastic cross-platform apps, our friends over at NotebookLM have been going viral with their Flutter app this year. We visited them to hear about how Flutter accelerated their launch, check it out:
 
 <YoutubeEmbed id="pMoUg3dkDJk" title="How NotebookLM Built a 4.8-Star Flutter App" fullwidth="true"/>
-
 
 In fact, you can listen to the Audio Overview of this blog post (and all its linked sources) in [NotebookLM](https://notebooklm.google.com/notebook/be3457d4-2909-4290-9ba7-40ae015015cf?artifactId=f5b2b691-58a4-4c30-bb15-fcf944b9a255).
 
@@ -32,23 +30,19 @@ We’ve got a whole [Flutter Flight Plans series](https://www.youtube.com/playli
 
 <YoutubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI" fullwidth="true"/>
 
-
 **The easiest way to build with AI:** We’ve built a sample app powered by Firebase AI logic that helps you create a nice launching point for integrating AI features into your app. This sample app covers features such as using multi-modal content generation, in addition to the Gemini conversational live API. Get your hands dirty in the [Flutter AI Playground](https://g.co/firebase/flutter-ai-playground).
 
 <YoutubeEmbed id="tErMAB5FKNw" title="How I built a Google I/O keynote demo in 30 minutes" fullwidth="true"/>
 
-
 **Build multi-platform Flutter apps with Gemini CLI:** Head to [the docs](https://docs.flutter.dev/ai/create-with-ai#flutter-extension-for-gemini-cli) to jump into the Flutter extension for Gemini CLI.
 
 <YoutubeEmbed id="RZPkE5sllck" title="Build multiplatform apps with Gemini CLI" fullwidth="true"/>
-
 
 ## Productivity and platform power: What’s new in Flutter 3.38 and Dart 3.10
 
 Now for the main event. Here’s what’s new and why you should be excited.
 
 <YoutubeEmbed id="-AuAZTyRelY" title="What's new in Flutter 3.38 and Dart 3.10" fullwidth="true"/>
-
 
 ### Dart 3.10 highlights: More expressive, concise, and robust code.
 

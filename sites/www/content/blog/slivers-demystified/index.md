@@ -12,9 +12,7 @@ Hello, fearless Flutter fans! Today we’re going to delve into a highly special
 
 <DashImage figure src="images/1acfGrRUFKsC4z_0wHHt_Lg.gif" />
 
-
 <DashImage figure src="images/1MWOkQGMfHiH4qXuX1FXWCA.gif" alt="Two scenarios where you might want to use Slivers." caption="Two scenarios where you might want to use Slivers." />
-
 
 Read on…
 
@@ -22,9 +20,7 @@ Or wait… if you hate reading, check out these two videos that quickly summariz
 
 <YoutubeEmbed id="R9C5KMJKluE" title="SliverAppBar (Flutter Widget of the Week)" fullwidth="true"/>
 
-
 <YoutubeEmbed id="ORiTTaVY6mM" title="SliverList & SliverGrid (Flutter Widget of the Week)" fullwidth="true"/>
-
 
 What? You’re still here? Well in that case:
 
@@ -41,7 +37,6 @@ You might want this additional control in scrolling behavior if you:
 * Do something weird like a collapsing list with headers (see gif on the right at the top of this page).
 
 <DashImage figure src="images/1D0lutEyy9ouTE7TVgG4IXw.gif" alt="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." caption="Scenario where you might want to use slivers: scrolling a list of items and a grid of items all together as one unit." />
-
 
 ## How do I use it?
 
@@ -65,8 +60,8 @@ SliverList(
     ),
 );
 
-// This builds an infinite scrollable list of differently colored 
-// Containers.
+// This builds an infinite scrollable list of
+// differently colored Containers.
 
 SliverList(
     delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
@@ -80,7 +75,6 @@ SliverList(
   ),
 );
 ```
-
 
 ## SliverGrid
 
@@ -107,19 +101,15 @@ SliverGrid(
 );
 ```
 
-
 <DashImage figure src="images/1uKP16BI3_8_a9Fk_Q2oNvA.webp" />
 
-
 <DashImage figure src="images/1WM9-Gu6XUz4CYCS2hXfqSA.webp" alt="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." caption="Visual result of SliverGrid.count and SliverGrid.extent, respectively, from the above code snippets." />
-
 
 ## SliverAppBar
 
 Okay, okay, enough exposition. Here’s what I know you all have been waiting for. How do I make those gorgeous expanding and contracting app-bars? The secret is to set both the flexibleSpace parameter and the expandedHeight parameter. You can set both for a different height and appearance for your app bar when it is expanded to its full size vs the “compressed” version.
 
 <DashImage figure src="images/1Oz9-FVqgyjDr_wnrbSQEGQ.gif" />
-
 
 Here’s the code for the above example:
 
@@ -151,23 +141,19 @@ CustomScrollView(
 );
 ```
 
-
 There’s some additional customization you can add on SliverAppBar. You can set the floating parameter to true to make the app bar reappear when you scroll down, even if you haven’t reached the top of the list.
 
 <DashImage figure src="images/1s9aYJJApIUVblNZxOWs8DQ.gif" />
 
-
 If you add both the snap parameter with the floating parameter, you can make the app bar fully snap back into view when you scroll down.
 
 <DashImage figure src="images/1vkO1sczH3DPBGPlr3epW_Q.gif" />
-
 
 ## Putting it all together: a collapsible scrolling list with SliverPersistentHeader
 
 I tried to imagine the most unusual scrolling behavior I could think of that still might be useful. I came up with this scrolling collapsible list:
 
 <DashImage figure src="images/1g5kTqAzL6FTJKnFictwJ5w.gif" />
-
 
 ```dart
 import 'package:flutter/material.dart';
@@ -207,10 +193,10 @@ class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
 
   @override
   Widget build(
-      BuildContext context, 
-      double shrinkOffset, 
-      bool overlapsContent) 
-  {
+    BuildContext context,
+    double shrinkOffset,
+    bool overlapsContent,
+  ) {
     return new SizedBox.expand(child: child);
   }
 
@@ -270,7 +256,7 @@ class CollapsingList extends StatelessWidget {
         ),
         makeHeader('Header Section 3'),
         SliverGrid(
-          gridDelegate: 
+          gridDelegate:
               new SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200.0,
             mainAxisSpacing: 10.0,
@@ -289,7 +275,7 @@ class CollapsingList extends StatelessWidget {
           ),
         ),
         makeHeader('Header Section 4'),
-        // Yes, this could also be a SliverFixedExtentList. Writing 
+        // Yes, this could also be a SliverFixedExtentList. Writing
         // this way just for an example of SliverList construction.
         SliverList(
           delegate: SliverChildListDelegate(
@@ -306,6 +292,5 @@ class CollapsingList extends StatelessWidget {
   }
 }
 ```
-
 
 The last step (exercise left to the reader) would be to add a GestureDetector so that tapping on one of the headers allows you to jump to that section in the list. Take your newfound knowledge of Slivers and apply it to GestureDetection to make a cool collapsing list!

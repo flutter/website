@@ -10,11 +10,9 @@ layout: blog
 
 <DashImage figure src="images/0diM5YKjX2b2OgNvD.webp" />
 
-
 We (the folks at Very Good Ventures) teamed up with Google to bring an interactive experience to this year’s Google I/O: a [photo booth](https://photobooth.flutter.dev/)! You can take pictures with well-known Google mascots: [Flutter’s Dash](https://flutter.dev/dash), Android Jetpack, Chrome’s Dino, and Firebase’s Sparky, and decorate photos with stickers, including party hats, pizza, funky glasses, and more. Finally, you can share photos on social media and download them to update your profile picture for the event!
 
 <DashImage figure src="images/0OQnK58irOAv-Pjzq.webp" alt="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" caption="Flutter’s Dash, Firebase’s Sparky, Android Jetpack, and Chrome’s Dino" />
-
 
 We built the I/O Photo Booth using [Flutter on the web](https://flutter.dev/web) and [Firebase](https://firebase.google.com/). Because [Flutter now offers support for web apps](https://medium.com/flutter/whats-new-in-flutter-2-0-fe8e95ecc65), we thought it would be a great way to make this app easily accessible to attendees all over the world for this year’s virtual Google I/O. Flutter’s web support eliminates the barrier of having to install an app from an app store and also gives you the flexibility to run it on your device of choice: mobile, desktop, or tablet. That opens up the I/O Photo Booth experience to anyone with access to any browser and device without requiring a download.
 
@@ -53,7 +51,6 @@ Future<CameraImage> takePicture() async {
 }
 ```
 
-
 ### Camera permissions
 
 After we got the Flutter Camera plugin working on the web, we created an abstraction to display different UIs depending on the camera permissions. For example, while waiting for you to allow or deny browser camera use, or if there are no available cameras to access, we can display an instructional message.
@@ -70,7 +67,6 @@ Camera(
 )
 ```
 
-
 In this abstraction, the placeholder returns the initial UI as the app waits for you to grant permission to the camera. Preview returns the UI after you grant permission and provides the real-time video stream of the camera. The error builder allows us to capture an error if it occurs and renders a corresponding error message.
 
 ### Mirroring the photo
@@ -83,9 +79,7 @@ With the help of the Flutter team, we addressed this issue by wrapping the `Vide
 
 <DashImage figure src="images/0Zd9s-7LFN9u17Ouo.webp" alt="Un-mirrored view" caption="Un-mirrored view" />
 
-
 <DashImage figure src="images/0kkxXNd0m-t4sjCAo.webp" alt="Mirrored view" caption="Mirrored view" />
-
 
 ### Sticking to a strict aspect ratio
 
@@ -116,27 +110,25 @@ return Scaffold(
 );
 ```
 
-
 ### Adding friends and stickers with drag and drop
 
 A huge part of the I/O Photo Booth experience is taking a photo with your favorite Google friends and adding props. You are able to drag and drop the friends and props within the photo, as well as resize and rotate them until you get an image that you like. You’ll notice that, when adding a friend to the screen, you can drag and resize them. The friends are also animated — sprite sheets to achieve this effect.
 
 ```dart
 for (final character in state.characters)
- DraggableResizable(   
-   canTransform: character.id == state.selectedAssetId,
-   onUpdate: (update) {
-     context.read<PhotoboothBloc>().add(
-       PhotoCharacterDragged(
-         character: character, 
-         update: update,
-       ),
-     );
-   },
-   child: _AnimatedCharacter(name: character.asset.name),
- ),
+  DraggableResizable(
+    canTransform: character.id == state.selectedAssetId,
+    onUpdate: (update) {
+      context.read<PhotoboothBloc>().add(
+        PhotoCharacterDragged(
+          character: character,
+          update: update,
+        ),
+      );
+    },
+    child: _AnimatedCharacter(name: character.asset.name),
+  ),
 ```
-
 
 To resize the objects, we created a draggable, resizable widget that can be wrapped around any Flutter widget, in this case, the friends and props. This widget uses a [`LayoutBuilder`](https://api.flutter.dev/flutter/widgets/LayoutBuilder-class.html) to handle scaling the widgets based on the constraints of the viewport. Internally, we used [`GestureDetectors`](https://api.flutter.dev/flutter/widgets/GestureDetector-class.html) to hook into `onScaleStart`, `onScaleUpdate`, and `onScaleEnd`. These callbacks provide details about the gesture needed to reflect the changes you make to the friends and props.
 
@@ -144,19 +136,17 @@ The [`Transform`](https://api.flutter.dev/flutter/widgets/Transform-class.html) 
 
 ```dart
 Transform(
- alignment: Alignment.center,
- transform: Matrix4.identity()
-   ..scale(scale)
-   ..rotateZ(angle),
- child: _DraggablePoint(...),
+  alignment: Alignment.center,
+  transform: Matrix4.identity()
+    ..scale(scale)
+    ..rotateZ(angle),
+  child: _DraggablePoint(...),
 )
 ```
-
 
 Finally, we created a separate package to determine whether your device supports touch input. The draggable, resizable widget adapts, based on touch capabilities. On devices with touch input, resizable anchors and a rotation icon aren’t visible, because you can pinch and pan to manipulate the image directly, whereas on devices without touch input (such as your desktop device), the anchors and rotation icon are added to accommodate clicking and dragging.
 
 <DashImage figure src="images/0MVI3wAXUfJdGls5X.webp" />
-
 
 ## Prioritizing Flutter on the web
 
@@ -213,11 +203,9 @@ function renderSharePage(imageFileName: string, baseUrl: string): string {
 }
 ```
 
-
 The final product looks something like this:
 
 <DashImage figure src="images/0tXpB_n44hmjGxHXf.webp" />
-
 
 For more information about how to use Firebase in your Flutter projects, check out this [codelab](https://firebase.google.com/codelabs/firebase-get-to-know-flutter#0).
 
@@ -226,6 +214,5 @@ For more information about how to use Firebase in your Flutter projects, check o
 This project was a good example of a web-first approach to building apps. We were pleasantly surprised by how similar our workflow for building this web application was, compared to our experience building mobile applications with Flutter. We had to consider elements like viewport sizes, responsiveness, touch versus mouse input, image load times, browser compatibility, and all the other considerations that come with building for the web. However, we were still writing Flutter code using the same patterns, architecture, and coding standards. We felt at home while building for the web. The tooling and growing ecosystem of Flutter packages, including the Firebase suite of tools, made I/O Photo Booth possible.
 
 <DashImage figure src="images/0CN8nNM1HaOjg9SfQ.webp" alt="Very Good Ventures team who worked on I/O Photo Booth" caption="Very Good Ventures team who worked on I/O Photo Booth" />
-
 
 We’ve open sourced all the code. Check out the [photo_booth](https://github.com/flutter/photobooth) project on GitHub and show us your photos on Facebook and Twitter using #IOPhotoBooth!

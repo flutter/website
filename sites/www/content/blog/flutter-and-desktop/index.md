@@ -16,7 +16,6 @@ Many of you are interested in progress on desktop operating systems including Wi
 
 <DashImage figure src="images/0OLMhLy7-b-4BisTc.webp" />
 
-
 ## Release Mode
 
 Recently we checked in profile and [release mode for Windows](https://github.com/flutter/flutter/issues/38477) and [Linux](https://github.com/flutter/flutter/issues/38478), in addition to the existing support for macOS. For example, if you’re running the latest builds of Flutter, you can now compile a Flutter application to a Windows executable with `flutter build windows`. This uses our production [AOT compiler](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) to create native x64 machine code that can be distributed to a machine without Flutter installed.
@@ -67,7 +66,6 @@ In this code, we provide `typedef`s that represent the method signature both in 
 
 <DashImage figure src="images/0rCBxqUkuMqFvPvq4.webp" alt="A simple Windows example app that uses the Win32 `MessageBox` API" caption="A simple Windows example app that uses the Win32 `MessageBox` API" />
 
-
 You don’t have to do this work yourself, of course: chances are that [someone has already paved the way for the API that you want to use](https://pub.dev/packages/win32). You can [read more about using FFI from Flutter in our docs](https://flutter.dev/docs/development/platform-integration/c-interop).
 
 ## Updating the plugin model
@@ -88,7 +86,6 @@ One interesting aspect of the work that we’ve been doing on Windows is experim
 
 <DashImage figure src="images/1tCqp0X4-8_yDjhbtVbqx-w.webp" />
 
-
 Windows offers two distinct approaches for creating this embedder. First, the mature Win32 programming model can be used to create the entrypoint for Flutter content; this offers maximum backwards compatibility to platforms such as Windows 7 and builds a standard EXE file that many developers will expect. Conversely, the modern UWP app model is the recommended approach for Windows 10 and offers intriguing opportunities for expanding Flutter support to devices such as Xbox or the upcoming [Windows 10X](https://docs.microsoft.com/en-us/dual-screen/windows/get-dev-tools) operating system.
 
 We’ve been working informally with various contributors to explore different solutions here, and would gladly support a close collaboration with Microsoft to complete a high-quality solution. With the Surface family of devices extended to include Android and Windows, we think Flutter offers Microsoft a compelling platform for building beautiful native experiences that span their entire portfolio.
@@ -107,10 +104,8 @@ $ flutter config --enable-macos-desktop
 $ flutter config --enable-linux-desktop
 ```
 
-
 We’re already seeing some adventurous developers start to take advantage of Flutter on the desktop to create apps. One of the first Flutter macOS desktop apps that we’ve seen is [Sharezone](https://sharezone.net/), a student planner aimed at the German educational market, which started as a mobile app but has recently added web and desktop versions.
 
 <DashImage figure src="images/0iBeoGqAPyC66-BBe.webp" alt="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." caption="Sharezone Schulplan — an app for students, educators and parents to track homework, study groups and timetables." />
-
 
 We’ll be sharing more about desktop support in the coming weeks; in the meantime, we’d love to hear more about your experiences. If you’re a plugin author, we’d encourage you to start evaluating the work to support these upcoming desktop platforms; if you’ve published an app, why not try running it as a desktop app and let us know how you get on?

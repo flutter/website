@@ -58,7 +58,6 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 
 <DashImage figure src="images/04I4h-v1nPuUbxBt4.webp" alt="Collections page in Wonderous app not maintaining scroll position" caption="Collections page in Wonderous app not maintaining scroll position" />
 
-
 **Fix:** Use the `key: PageStorageKey` API to maintain scroll position for lists that keep their layout the same when device orientation changes. By [adding a PageStorageKey to the collections page](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/8a29d6709668980340b1b59c3d3588f123edd4d8/lib/ui/screens/wonder_events/widgets/_events_list.dart#L64), the scroll position of the `SingleChildScrollView` widget [will be stored automatically](https://api.flutter.dev/flutter/widgets/PageStorage-class.html).
 
 **Learning:** While key: PageStorageKey offers an elegant way to maintain scroll position with a list, it doesn’t work if your List changes layout from vertical to horizontal. The previous GIF shows what happened with some of the Wonderous pages. In this case, you might have to [do a bit of math and change the scroll position on screen rotation](https://github.com/gskinnerTeam/flutter-wonderous-app/blob/34e49a08084fbbe69ed67be948ab00ef23819313/lib/ui/screens/collection/widgets/_collection_list.dart#L39).
@@ -72,7 +71,6 @@ We thought we might need a lot of boilerplate code to ensure that a list maintai
 With the advent of [“screen splitting”](https://developer.android.com/guide/topics/large-screens/multi-window-support), the user can, with some orientations and aspect ratios, put the app into less than two inches of vertical space. When the screen was split to ⅓ of the display area, the Wonderous app was [letterboxed](https://developer.android.com/guide/topics/large-screens/large-screen-compatibility-mode#letterboxing) or positioned in the center of the display area with a solid color background filling the unused area (shown below).
 
 <DashImage figure src="images/0CUG7wMHjzHSFKMpV.webp" alt="Wonderous app being letterboxed in split-screen mode on Pixel Fold" caption="Wonderous app being letterboxed in split-screen mode on Pixel Fold" />
-
 
 This happened because we chose to disable landscape on smaller screens by using MediaQuery to determine the size of the device. Unfortunately, MediaQuery doesn’t actually give you the screen size when you’re in split-screen mode and mistakenly identifies large devices with split-screens as small devices.
 
@@ -98,7 +96,6 @@ The mouse scroll wheel didn’t work well on some devices throughout the app. A 
 
 <DashImage figure src="images/0-7rhN0eWj8p1EZ3_.webp" alt="Scrolling Wonderous app with a mouse is slow" caption="Scrolling Wonderous app with a mouse is slow" />
 
-
 **Fix:** We [fixed](https://github.com/flutter/engine/pull/44724) it in the framework since it affected all Flutter apps and it will be in the next Flutter stable release.
 
 **Learning:** Sometimes the issue is not unique to your app and needs to be fixed by the Flutter team :)
@@ -113,7 +110,6 @@ In the first iteration of Wonderous, we disabled the rotation of the app on smal
 
 <DashImage figure src="images/0FkMJSwc7jtu4K7HR.webp" alt="Before using Material’s Navigation rail" caption="Before using Material’s Navigation rail" />
 
-
 This required the app to layout the navigation close to the edges of the screen where it is easier to reach, such as the left side edge of a tablet to free up precious vertical space for app content in landscape mode.
 
 **Fix:** Update the design and implement a navigation similar to [Material’s Navigation rail](https://material.io/components/navigation-rail).
@@ -121,7 +117,6 @@ This required the app to layout the navigation close to the edges of the screen 
 **Learning:** Make sure the layouts and navigation in your app can function properly in large screen devices and ~2” of vertical space if the screen is in split-mode. To make this feasible use [adaptive widgets](https://docs.flutter.dev/ui/layout/responsive/building-adaptive-apps) like Material’s Navigation rail.
 
 <DashImage figure src="images/1T0mBXs1X6YdvCQmQlP5ryg.webp" alt="After using Material’s Navigation rail" caption="After using Material’s Navigation rail" />
-
 
 ## Other things to consider
 
@@ -136,7 +131,6 @@ dependencies:
   camera: ^0.10.4 # Latest camera version
   camera_android_camerax: ^0.5.0
 ```
-
 
 ### Not just for Android
 

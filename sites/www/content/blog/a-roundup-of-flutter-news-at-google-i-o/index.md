@@ -12,7 +12,6 @@ We shipped an almost overwhelming amount of news about Flutter at [I/O ’19](ht
 
 <DashImage figure src="images/13XedGb879lTK2vbCP0uscA.webp" alt="Flutter for Web technical preview, announced by Adam Seligman during the developer keynote at Google I/O ‘19" caption="Flutter for Web technical preview, announced by Adam Seligman during the developer keynote at Google I/O ‘19" />
 
-
 ### TL;DR
 
 Flutter expands from mobile devices to support the web and desktop: same codebase, same focus on fast, beautiful experiences with high productivity.
@@ -84,7 +83,6 @@ Flutter expands from mobile devices to support the web and desktop: same codebas
 * Three new codelabs for Flutter: [Photos API](https://codelabs.developers.google.com/codelabs/google-photos-sharing/index.html), [Google Maps](https://codelabs.developers.google.com/codelabs/google-maps-in-flutter/index.html), [iOS apps](https://codelabs.developers.google.com/codelabs/flutter-cupertino/index.html)
 
 <DashImage figure src="images/1iFS8mhfeoLHEBSfh0p7CTw.webp" alt="The New York Times KENKEN game, shown running on Chrome, macOS, mobile Safari, iPhone and Android." caption="The New York Times KENKEN game, shown running on Chrome, macOS, mobile Safari, iPhone and Android." />
-
 
 ### Press highlights
 

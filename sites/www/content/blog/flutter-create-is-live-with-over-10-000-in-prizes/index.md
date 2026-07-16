@@ -12,7 +12,6 @@ layout: blog
 
 <YoutubeEmbed id="BKl6gUvvZGs" title="Introducing Flutter Create" fullwidth="true"/>
 
-
 We are introducing Flutter Create, an initiative where new and experienced developers are asked to submit a Flutter-related project in less than 5KB of Dart code.
 
 5KB is less than half a second of a typical MP3 file. What can you do with just 5KB? It turns out — quite a lot. Flutter includes widgets and libraries that make developers productive with only a little code.
@@ -21,13 +20,11 @@ So we thought we’d see what you can do. Amaze us with what you can build with 
 
 <DashImage figure src="images/15XImuQBc3XbmTW9RZTbUEg.webp" />
 
-
 Winners will be announced at Google I/O 2019.
 
 *[flutter.dev/create](https://flutter.dev/create) is your source for all challenge details and submissions.*
 
 <DashImage figure src="images/1AyxOZQPLHstjafeVvwHbUg.webp" />
-
 
 **High Level Details**
 

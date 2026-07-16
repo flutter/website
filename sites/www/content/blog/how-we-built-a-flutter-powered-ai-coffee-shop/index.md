@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg" alt="Dash sits on a coffee shop’s checkout counter drinking a latte with the Flutter logo printed on top" caption="Dash sits on a coffee shop’s checkout counter drinking a latte with the Flutter logo printed on top" />
 
-
 If you start giving away coffee, people will show up. The Flutter team had been trying for a while to find a way to put this principle to work with a demo that started with a Flutter app and ended with a hot, tasty beverage. The problem was how to make it more interesting, more personal than just taking orders and delivering. Coffee’s cool, but it’s not *The One Thing You Definitely Remember from Google I/O* cool.
 
 So what changed? Two new bits of tech arrived on scene. One is Nano Banana, with its ability to quickly generate customized images. The second is GenUI, with its ability to generate UX dynamically at runtime and offer attendees personally tailored questions about how they’d like to modify those images. Put the two together with Flutter and you can offer folks the chance to order coffee with an image of their happy place printed on top with an inkjet printer. Now *that’s* pretty memorable.
@@ -33,15 +32,11 @@ Within the Flutter app itself, we built 5 separate UIs: the kiosk screen where s
 
 <YoutubeEmbed id="taWr5k-o6eY" title="GenLatte ordering and checkout flow" fullwidth="true"/>
 
-
 <YoutubeEmbed id="GbbGtYKQvaY" title="GenLatte moderator's order management" fullwidth="true"/>
-
 
 <YoutubeEmbed id="3Kd6WwcPM5M" title="GenLatte barista's order management" fullwidth="true"/>
 
-
 <YoutubeEmbed id="_2kbagKgUPM" title="GenLatte's whimsical recent orders screen" fullwidth="true"/>
-
 
 ## Demo-grade security
 
@@ -63,12 +58,9 @@ We also optimized Nano Banana for pleasing compositions; specifically, “a lead
 
 <DashImage figure src="images/1mQmkXnT5Dzc26Sm7e_RK5g.webp" alt="Sample Nano Banana image: a puppy on a trail." caption="Sample Nano Banana image: a puppy on a trail." />
 
-
 <DashImage figure src="images/1BkccCrU04OtaehRtGmMlEA.webp" alt="Sample Nano Banana image: a compass on a trail." caption="Sample Nano Banana image: a compass on a trail." />
 
-
 <DashImage figure src="images/18z1hY0jGVYmpLVpG_iZ4Dg.webp" alt="Sample Nano Banana image: a whimsical forest." caption="Sample Nano Banana image: a whimsical forest." />
-
 
 For GenLatte’s second appearance, as Antigravity Coffee Co, at I/O in Mountain View this May, we updated our prompts to rotate through different suggested compositions. This kept things fresh for both event staff seeing hundreds of images per day and individual guests who simply wanted an evocative image for *their* coffee.
 
@@ -77,7 +69,6 @@ For GenLatte’s second appearance, as Antigravity Coffee Co, at I/O in Mountain
 GenLatte’s true magic didn’t just come from whipping up an image and printing it on to coffee; but from specifically dialing it in to the person’s exact tastes. Behind that Tweak button were four questions, pre-written by Gemini, for how the image might be modified.
 
 <YoutubeEmbed id="b2yH9VXT1Dw" title="" fullwidth="true"/>
-
 
 These images were derived from the original, upscaled prompt itself; so returning to our cozy family happy place from earlier, Gemini might have provided questions about what type of food was on the table, whether there were more or fewer people, or whether the celebration was for any specific life event. The other “at home with my family” happy places the user saw might have gone in different directions, and so tweaking those selections would have surfaced different questions appropriate for those images.
 
@@ -98,7 +89,6 @@ The user requested these changes:
 Please generate this new image.
 ```
 
-
 From Las Vegas to Mountain View, it was magical for us, after months of building GenLatte, to see people’s faces light up at their modified images!
 
 ## A2UI and GenLatte
@@ -114,7 +104,6 @@ If you’d like to see what Gemini can do with more freedom, check out [Hatcha](
 After serving 1,200 lattes at Google Cloud Next and another 1,800 at Google I/O, it’s safe to say that GenLatte was a success. I’ve scarcely been more caffeinated than I was while building this demo or staffing it at both events, nor have I seen more delighted smiles on faces immediately after using an app.
 
 <YoutubeEmbed id="DHWiny5bjJc" title="The magic behind GenLatte: Flutter, Firebase, and Gemini" fullwidth="true"/>
-
 
 Flutter made the whimsical UI a delight to build; from its elegant support for dynamic layouts and custom shaders, to its ability to seamlessly target multiple platforms. Firebase made the backend a breeze: handling deployment and scaling headaches for us and offering reactive, full-stack data binding. Gemini and Nano Banana (of course) turned our users’ happy place prompts into fantastical art that was a delight to see take physical form. And of course, the true hero of the operation, our baristas, made excellent lattes — because the whole thing would have been a flop if the coffee wasn’t any good!
 > To read GenLatte’s code, visit its [folder in the flutter/demos repository](https://github.com/flutter/demos/tree/main/genlatte). However, be warned, code in that repository is unmaintained and offered for inspirational purposes only.

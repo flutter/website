@@ -14,12 +14,10 @@ In August, we partnered with the [gSkinner](https://gskinner.com/) team to launc
 
 <YoutubeEmbed id="6Hb3QiH_yps" title="Wonderous App, built with Flutter" fullwidth="true"/>
 
-
 Wonderous has been nominated for Best User Interface for Apps, dApps and Software in the 27th Annual Webby Awards. The New York Times hails the Webby Awards as the “Internet’s highest honor”. The International Academy of Digital Arts and Sciences (IADAS), the leading international awards organization honoring excellence on the Internet, presents the Webby Awards each year.
 > “Nominees are setting the standard for innovation and creativity on the Internet,” said Claire Graves, President of The Webby Awards. “It is an incredible achievement to be selected among the best from the nearly 14,000 entries we received this year.”
 
 <DashImage figure src="images/1XksvK4Wq0YbZoIG8udUShw.webp" />
-
 
 With beautiful graphics and unique animations, Wonderous lets you experience the wonders of the world straight from your device. Wonderous uses Flutter to create an expressive user interface that tailors to the mobile form factor and doesn’t conform to a stock design system. Instead, it realizes the creative vision of its designer.
 

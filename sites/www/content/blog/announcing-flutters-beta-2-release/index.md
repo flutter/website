@@ -14,7 +14,6 @@ We have a second beta build (v0.2.8) available of Flutter, Google’s new mobile
 
 <DashImage figure src="images/14DxDp03lkhJN3engJhXhWQ.webp" />
 
-
 ## A view back at beta 1
 
 We have been delighted to see the [strong reception](https://twitter.com/_eseidel/status/973641697962770432) since we launched [our first beta](https://medium.com/flutter-io/announcing-flutter-beta-1-build-beautiful-native-apps-dc142aea74c0) at Mobile World Congress in Barcelona in February. We saw a nice collection of posts in the general tech press (for example, [Ars Technica](https://arstechnica.com/gadgets/2018/02/google-starts-a-push-for-cross-platform-app-development-with-flutter-sdk/), [TechCrunch](https://techcrunch.com/2018/02/27/googles-flutter-ui-framework-is-now-in-beta/), [VentureBeat](https://venturebeat.com/2018/02/27/google-launches-flutter-beta-a-mobile-ui-framework-for-building-native-android-and-ios-apps/), [9to5Google](https://9to5google.com/2018/02/27/googles-flutter-sdk-now-available-beta/)), lots of new [Flutter posts on Medium](https://medium.com/tag/flutter/latest) by our awesome community, and a huge influx of new developers and organizations around the world downloading and using Flutter.
@@ -26,7 +25,6 @@ We have been delighted to see the [strong reception](https://twitter.com/_eseide
 We heard feedback that installation of Flutter could be easier; installing beta 1 required cloning our GitHub repo with git command line tools. So we reworked our installation procedure, and now support installing beta 2 by simply downloading and extracting an installation archive: [Windows](https://flutter.io/setup-windows/), [macOS](https://flutter.io/setup-macos/), and [Linux](https://flutter.io/setup-linux/). For Windows users, we also added a cool new Flutter Console so you can get started with Flutter commands right after downloading:
 
 <DashImage figure src="images/1hjgDPasw3bTtB9N54wxX2Q.webp" alt="Screenshot of the new Flutter Console for Windows" caption="Screenshot of the new Flutter Console for Windows" />
-
 
 ### Improved developer tools
 

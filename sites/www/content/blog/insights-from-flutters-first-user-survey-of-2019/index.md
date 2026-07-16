@@ -12,7 +12,6 @@ As we do every quarter, the Flutter UX research team ran a user survey in Q1 to 
 
 <DashImage figure src="images/1BvDZf83WrPTc4yqukshP-w.webp" alt="42% of the respondents had used Flutter for less than 3 months" caption="42% of the respondents had used Flutter for less than 3 months" />
 
-
 ## Are users satisfied with Flutter?
 
 Very similar to last time, 91% of the respondents were somewhat or very satisfied with Flutter ([92%](https://medium.com/flutter-io/what-weve-learned-from-the-july-2018-flutter-user-survey-cbbf1e04370c) and [93%](https://medium.com/flutter-io/how-we-use-user-surveys-to-prioritize-engineering-effort-in-flutter-october-2018-edition-a26e45abf5aa) in recent surveys). Because the number of Flutter users has tripled over the last three quarters, keeping up the high level of satisfaction has been a surprise and delight to the team.

@@ -12,7 +12,6 @@ At Google I/O today, we announced [Flutter 2.2](https://flutter.dev/docs/whats-n
 
 <DashImage figure src="images/0NCBwYFewFf602uvF.webp" />
 
-
 ## Building on the foundation of Flutter 2
 
 Flutter 2.2 is built on the foundation of Flutter 2, which extended Flutter from its mobile roots to incorporate web, desktop, and embedded usage. It is uniquely designed for a world of ambient computing, where users have a wide variety of different devices and form factors and are looking for consistent experiences that span across their daily lives. With Flutter 2.2, enterprises, startups, and entrepreneurs alike can build high-quality solutions that can reach the full potential of their addressable market, allowing creative inspiration (rather than target platform) to be the only limiting factor.
@@ -42,7 +41,6 @@ While Google continues to be the primary contributor to the Flutter project, we�
 
 <DashImage figure src="images/1zroRqBB-vjUR_UCvYCKSUg.webp" />
 
-
 One area of particular growth over recent months has been the broadening of Flutter to an ever growing number of platforms and operating systems. At Flutter Engage, we announced that [Toyota is bringing Flutter to their next generation vehicle infotainment systems](https://medium.com/googleplaydev/seamless-multi-platform-app-development-with-flutter-ea0e8003b0f9#f53d). And last month, Canonical shipped their first release of [Ubuntu with integrated support for Flutter](https://ubuntu.com/blog/ubuntu-21-04-is-here), with Snap integration and support for Wayland.
 
 Two new partners demonstrate this ever-growing ecosystem. [Samsung is porting Flutter to Tizen](https://github.com/flutter-tizen/flutter-tizen), with an open source repository that others can also contribute to. And [Sony is leading the effort to deliver a solution for embedded Linux](https://github.com/sony/flutter-embedded-linux).
@@ -58,7 +56,6 @@ More than anything, we built Flutter to help developers build great experiences.
 We love seeing how you put Flutter to work. One example comes in the form of a project from the US Veterans Administration. The video below shows how their Flutter app is helping them provide rehabilitation for soldiers with post-traumatic stress disorders.
 
 <YoutubeEmbed id="2S-KkvFuLWs" title="STAIR (Flutter Developer Stories)" fullwidth="true"/>
-
 
 With a [wide variety of workshops, presentations and on-demand sessions about Flutter](https://events.google.com/io/program/content?4=topic_flutter) at Google I/O, we’re excited to share our work with all of you. And don’t forget to check out our fun [photo booth web app](https://photobooth.flutter.dev), built with Flutter, which lets you create a selfie with our Dash mascot and her friends!
 

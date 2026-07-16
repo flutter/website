@@ -14,7 +14,6 @@ We remain committed to providing a strong language and framework pairing, enabli
 
 <DashImage figure src="images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif" />
 
-
 Flutter 3.22 and Dart 3.4 offer performance improvements and platform-specific refinements that bring us closer to that vision. We’re particularly excited to share more about our journey with Wasm, but you’ll find so much more, including an improved Impeller rendering engine, smoother visuals and reduced CPU usage on iOS, enhanced platform navigation with Android’s predictive back gesture, expanded monetization options with the Google Mobile Ads SDK, and a new powerful deep link validator in DevTools. Dart developers will enjoy streamlined API migration with `dart fix` directly in the IDE and new DevTools capabilities for advanced profiling. Plus, you can now preview the Vertex AI for Firebase Dart SDK, integrating AI-powered features with robust security measures.
 
 Today, we’ll also spotlight top companies using Flutter to increase productivity and build performant experiences. We’ll highlight just a few particularly exciting features that move us closer to our goal to deliver native-like performance across platforms, and include selected updates on our investments in productivity, developer experience, and games.
@@ -27,7 +26,6 @@ Flutter developers are busy launching large, new apps into the app stores. Let�
 
 <DashImage figure src="images/0cF6UE3y05YTyMBQn.webp" />
 
-
 ### Helping large, enterprise-scale applications deliver on mobile and the web
 
 * In the United Kingdom, financial institution [Virgin Money](https://uk.virginmoney.com/) is [using Flutter](https://flutter.dev/showcase/virgin-money) across their suite of mobile banking and credit card apps to unify app development processes, speed up change, and enable an industry-leading user experience.
@@ -37,7 +35,6 @@ Flutter developers are busy launching large, new apps into the app stores. Let�
 * [Universal Studios Destinations & Experiences](https://corporate.universaldestinationsandexperiences.com/) released new Flutter mobile apps for their Hollywood, Osaka, and Orlando parks. Watch the video below to learn why they chose Flutter and to see how it’s performing so far.
 
 <YoutubeEmbed id="JTk2Exr7FO4" title="How Universal Destinations & Experiences build next generation experiences with #Flutter" fullwidth="true"/>
-
 
 ### Going beyond mobile and the web
 
@@ -57,7 +54,6 @@ So what’s the net result? We’re seeing much improved performance, approachin
 
 <DashImage figure src="images/0ebpdPSPlak3EwoAU.webp" alt="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" caption="*Comparing the rendering speed of Javascript vs Wasm for the [Wonderous](https://flutter.gskinner.com/wonderous/) demo application.*" />
 
-
 Wasm compilation for Flutter web apps is available in stable today. To get started, check out our [Dart Wasm documentation](https://dart.dev/web/wasm) and [Flutter Wasm documentation](https://docs.flutter.dev/platform-integration/web/wasm).
 
 ## Dart macros: raising the development abstraction level
@@ -72,7 +68,6 @@ Macros are code that creates more code. They’re like code generation, except t
 
 <DashImage figure src="images/0rWeEWxzBvcmOFNM4.webp" alt="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" caption="*Screencast showing the experience of using a macro: Initially no toJson code completion exists, but after adding @JsonCodable to the class, the toJson code completion shows up immediately.*" />
 
-
 We’re excited to see macros solve all kinds of problems for our developers. Take, for example, data classes, the [highest voted](https://github.com/dart-lang/language/issues?q=is%3Aissue+is%3Aopen+sort%3Areactions-%2B1-desc) Dart language feature. Beyond specific applications, our eventual goal is to have a macro system in Dart that allows users to create their own macros and raise the abstraction level of Dart programming.
 
 Designing and implementing such a powerful macro system is a large task, so there is currently no date set for a stable release — for more details check out the [Dart 3.4 post](https://medium.com/dartlang/dart-3-4-bd8d23b4462a). In the meantime, try out a preview of the `JsonCodable` macro today. For more information, check out [macros documentation](https://dart.dev/go/json-codable).
@@ -80,7 +75,6 @@ Designing and implementing such a powerful macro system is a large task, so ther
 ## New resources for Flutter game development
 
 <DashImage figure src="images/0F19xflZ4BfoCekFQ.webp" />
-
 
 We’re seeing promising results from our early investment in games, including success stories from industry leaders like [Etermax](https://flutter.dev/showcase/etermax) and [Supercell](https://flutter.dev/showcase/supercell), who are each leveraging Flutter’s power and flexibility to efficiently deliver delightful user experiences and expand their reach.
 
@@ -97,7 +91,6 @@ Today, we’re excited to continue to build on that momentum with these new reso
 In January 2024, inspired by the [story](https://www.youtube.com/watch?v=qgOlg173gcI&pp=ygUWR2xvYmFsIENpdGl6ZW4gRmx1dHRlcg%3D%3D) behind their use of Flutter, we partnered with Global Citizen to challenge our communities to design, build, and publish sustainability games using Flutter. These games are meant to inspire and empower players to take small, but meaningful actions for the environment. Today, we’re announcing [the 10 winners](https://medium.com/flutter/announcing-the-winners-of-the-global-gamers-challenge-1ccf4d271226).
 
 <YoutubeEmbed id="_GgqdB9md1w" title="" fullwidth="true"/>
-
 
 Congrats to all of the winners!
 

@@ -10,13 +10,11 @@ layout: blog
 
 <DashImage figure src="images/0S_bBN0WiR_Q5F08J.webp" />
 
-
 We asked the Flutter and Global Citizen communities to come together to build epic Flutter games that focused on helping the planet. Hundreds of innovative game projects were submitted by thousands of passionate developers spanning over 50 countries.
 
 Each project aimed to empower players with knowledge and actions that can protect our planet. From resource conservation to combating pollution, these games have raised our collective awareness of pressing environmental issues while being genuinely fun to play! We’re deeply inspired by the incredible ideas and passion of the entries.
 
 <YoutubeEmbed id="_GgqdB9md1w" title="" fullwidth="true"/>
-
 
 ## One last drumroll for our Top 10
 
@@ -28,13 +26,11 @@ A variety of environmental themes, colorful visuals and music, and ideas to part
 
 <DashImage figure src="images/1tC1QJGzd_UQhSNuapBbFlA.gif" />
 
-
 ### [Craftown](https://devpost.com/software/craftown)
 
 A unique blend of classic real-time strategy and resource management gameplay, with a focus on sustainability themes.
 
 <DashImage figure src="images/05-BTF74D9iY2W-eg.gif" />
-
 
 ### [EcoShift Chronicles](https://devpost.com/software/ecoshift-chronicles)
 
@@ -42,13 +38,11 @@ Encourages positive action with charming visuals and sound design, presenting pl
 
 <DashImage figure src="images/02tKU55OoZoT6H8Df.gif" />
 
-
 ### [Gomiland](https://devpost.com/software/gomiland)
 
 Visually appealing, educational, waste management game, inspired by Japanese culture.
 
 <DashImage figure src="images/09PUEQpgttn8Oib0e.gif" />
-
 
 ### [Last Bottle](https://devpost.com/software/last-bottle)
 
@@ -56,13 +50,11 @@ Charming design and collectible elements that effectively communicate its core m
 
 <DashImage figure src="images/0W8ns7jNJ3jZ0SXbd.webp" />
 
-
 ### [MGame — A waste management game](https://devpost.com/software/mgame-a-waste-management-game)
 
 Ambitious simulation game that offers an engaging take on complex waste management systems, reminiscent of classic city-building titles.
 
 <DashImage figure src="images/0jof-AXtEcUz1_WFL.gif" />
-
 
 ### [Ocean Rangers](https://devpost.com/software/projectocean)
 
@@ -70,13 +62,11 @@ A compelling narrative, engaging characters, and strategic gameplay elements off
 
 <DashImage figure src="images/0P1nBcfMDFwveciQu.gif" />
 
-
 ### [PlasticPunk](https://devpost.com/software/plasticpunk)
 
 City-builder style game presenting a complex environmental challenge through engaging gameplay and appealing visuals.
 
 <DashImage figure src="images/09lzHmRWHxSyGI8pl.gif" />
-
 
 ### [Waste Wise](https://devpost.com/software/waste-wise)
 
@@ -84,13 +74,11 @@ Waste sorting game featuring intuitive gameplay and effectively educating player
 
 <DashImage figure src="images/0m_Lo2d9Tfr1eqyUw.webp" />
 
-
 ### [Whaley’s Bins Waste Sorting](https://devpost.com/software/whaley-s-bins-waste-sorting)
 
 Waste sorting game with a creative approach to recycling education, featuring distinctive pixel art visuals.
 
 <DashImage figure src="images/04TtFim6qaLkM0-rj.webp" />
-
 
 We look forward to hanging out with these teams in New York City for a day of workshops and more in the Google offices and to celebrate with 60,000 other Global Citizens at Global Citizen Festival 2024!
 

@@ -26,7 +26,6 @@ But at this event, we’re looking ***forward***, offering a preview of the next
 
 <DashImage figure src="images/01m_CqCW7oMEoqPrl.webp" />
 
-
 ## Breakthrough graphics performance
 
 Historically, cross-platform frameworks have required compromise on visuals, due to the challenges of creating an abstraction layer. Flutter has taken a different approach than most, with its own rendering layer that offers hardware-accelerated graphics and a consistent visual appearance on every device. Moving forward, we will invest in *breakthrough graphics performance* that extends Flutter’s existing strength in this area.
@@ -35,33 +34,25 @@ At Flutter Forward, we’re showing more progress on [**Impeller**](https://gith
 
 <DashImage figure src="images/1QrEupNb6Ebc5_4c0PW4fQw.jpeg" />
 
-
 <DashImage figure src="images/1-DXiE7L987-q6zs8hczbOQ.jpeg" />
 
-
 <DashImage figure src="images/1xoVH5v5x7znMLB6NTjcqCA.jpeg" alt="Impeller provides silky-smooth performance for demanding graphical apps like [Wonderous](https://wonderous.app), a beautiful app that takes you on a tour of the world’s wonders. Shown here: the latest version of Wonderous, which adapts its UI for different devices and form factors, available at [https://wonderous.app.](https://wonderous.app.)" caption="Impeller provides silky-smooth performance for demanding graphical apps like [Wonderous](https://wonderous.app), a beautiful app that takes you on a tour of the world’s wonders. Shown here: the latest version of Wonderous, which adapts its UI for different devices and form factors, available at [https://wonderous.app.](https://wonderous.app.)" />
-
 
 In addition to offering a silky-smooth UI, Impeller can drastically improve performance in certain scenarios. One demo (shown below) demonstrates a best-case example of this. On the left is a kaleidoscope app using SVG clipping, built using the current default renderer. Scrolling down the page, performance drops with rendering taking longer than the per-frame budget, leading to a frame rate of 7–10 fps. The right side shows the same app running under Impeller, rendering at a glitch-free 60 fps.
 
 <YoutubeEmbed id="Z7v-YRdHusM" title="Flutter Forward: Impeller side-by-side demo" fullwidth="true"/>
 
-
 One advantage of building from the ground up is that the architecture can support brand new use cases. Newly introduced **support for custom shaders** is already leading to some [amazing new demos](https://twitter.com/reNotANumber/status/1599717360096620544) that show seamless integration with the Flutter widget hierarchy. Our work here isn’t limited to mobile devices, though: we now have early support for custom shaders on the web too, with the same code now powering hardware-accelerated experiences across iOS, Android, and the browser.
 
 <DashImage figure src="images/0aS5btwRMIK-AkltC.webp" alt="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" caption="Flutter now supports pixel shaders on the web, enabling various cool visual effects. (Credit: [Erick Ghaumez](https://twitter.com/rxlabz).)" />
-
 
 And now we’re starting early work on supporting **3D with Flutter**. During the keynote, we showed that you can import models created with [Blender](https://www.blender.org/), and even use hot reload to iterate with Blender in real-time and see the results in a running app. It’s early days, but we’re excited about the initial performance we’re getting, along with the potential of integrating 3D into other Flutter experiences.
 
 <DashImage figure src="images/1ZaldnkdSaQZqWX5LKWB5Ig.webp" />
 
-
 <DashImage figure src="images/1MdyKANeEPV0iIQTTwOBGog.webp" />
 
-
 <DashImage figure src="images/1R-Lktrjfd8lLirhC_BBg5Q.webp" alt="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." caption="Impeller enables Flutter to render 3D graphics, as shown in this fun demo of Dash." />
-
 
 Adding 3D and custom shaders raises the bar for graphics performance in a portable UI toolkit to a new level. We’re very excited to see what you do with these new features as they become available.
 
@@ -77,7 +68,6 @@ Combining these two new features opens up some exciting new scenarios for using 
 
 <DashImage figure src="images/1QjyV-g_N50iwOVNSGglxxA.webp" alt="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." caption="With Element Embedding, you can embed Flutter into a &lt;div&gt; element and use CSS to style it." />
 
-
 Turning to Android and iOS, Flutter has long supported integration with system APIs using platform channels, which offer a message-based approach for communicating with code written in a language like Kotlin or Swift. While this unlocks access to those libraries, it requires an app author to be conversant with multiple languages and requires a fair amount of boilerplate code.
 
 We’re now starting work on **a new approach for system interoperability** that allows libraries to be called directly. On iOS, we’re building on our work on FFI for C interoperability, adding support for Swift and Objective-C libraries. On Android, we’re using JNI to bridge to Jetpack libraries written in Kotlin. With a new command, Dart automatically creates bindings for cross-language interoperation and converting data classes appropriately. When complete, we aspire that this work will enable a Flutter developer to call a new Jetpack or iOS library without needing to use a plugin or learn a different API syntax, as well as greatly easing the work for a plugin author. [Check out our sample](https://github.com/flutter/samples/tree/main/experimental/pedometer) to learn more!
@@ -92,7 +82,6 @@ Another platform architecture that is generating growing interest is [RISC-V](ht
 
 <DashImage figure src="images/1LfW_XnTVxV1dL1CLT7iAWQ.jpeg" alt="The ClockworkPi DevTerm R-01, an experimental RISC-V computer, running a Dart console app." caption="The ClockworkPi DevTerm R-01, an experimental RISC-V computer, running a Dart console app." />
 
-
 ## Continued focus on developer experience
 
 Foundational to everything we’ve described above is developer productivity, which has been a hallmark of Flutter since its inception, with features like stateful hot reload. Our fourth and final area of investment for the future is a *continued focus on developer experience*, across both Flutter and Dart.
@@ -101,13 +90,11 @@ At Flutter Forward, we’re previewing some of our early work on some major new 
 
 <DashImage figure src="images/0uGTJ0p_XZE_yZ9NS.webp" alt="A simple example of records and patterns being used to return and receive multiple function parameters." caption="A simple example of records and patterns being used to return and receive multiple function parameters." />
 
-
 We’re also **formally announcing Dart 3**, which is the culmination of our work to introduce sound null safety to the language. Dart 3 also removes other long-deprecated features to further modernize the language. We have started publishing alpha-quality builds of Dart 3, along with matching Flutter builds, enabling developers to test packages and apps. For more information on Dart 3, check out the [separate blog post on the Dart channel](https://medium.com/dart-lang/dart-3-alpha-f1458fb9d232).
 
 We’re investing in the developer experience for Flutter as well, of course. Following on from the success of the casual game toolkit we [announced at I/O](https://medium.com/flutter/announcing-the-flutter-casual-games-toolkit-c22e401d8fee) last year, we’re sharing [the first version of our **news toolkit**](https://medium.com/flutter/announcing-the-flutter-news-toolkit-180a0d32c012), which accelerates mobile development for news publishers and other content providers who want to reach mobile users without having to design an app from scratch. It includes everything you need to build an article-centric app, with navigation and search, authentication, ad integrations, notifications, profiles and subscriptions, while incorporating best practices from Google News Initiative’s research. We’re today featuring three early adopters here in Africa who are building apps based on this toolkit, including [Hespress](https://www.hespress.com/), one of the largest news sites in Morocco, [Bold Sports](https://boldsportsng.com/), a popular the Nigerian sports site; and [The Standard](https://www.standardmedia.co.ke/), the oldest newspaper in Kenya.
 
 <YoutubeEmbed id="YnJwjZ3jCTc" title="FOO041 v8" fullwidth="true"/>
-
 
 ## Moving forward together
 
@@ -116,7 +103,6 @@ We hope you share our excitement about where we’re taking Flutter moving forwa
 This image summarizes our direction:
 
 <DashImage figure src="images/1iIgYbZq3WKnUBctIWBap_Q.webp" />
-
 
 Beyond our own development themes, it’s gratifying to see how the Flutter ecosystem continues to expand, like [FlutterFlow](https://flutterflow.io/) is a low-code builder for developing native mobile applications, and [Widgetbook](https://widgetbook.io), which provides flexible tooling for designers and developers to collaborate on user interface development.
 

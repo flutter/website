@@ -16,7 +16,6 @@ This article shows you step-by-step how to add a Google Map widget to your Flutt
 
 <DashImage figure src="images/14dSyF9z9lAYvHVxFPS_oiw.webp" />
 
-
 ## Setup
 
 The first step is to add the Google Maps Flutter plugin as a dependency in the **pubspec.yaml** file. The package is available as [`google_maps_flutter`](https://pub.dartlang.org/packages/google_maps_flutter) on [pub.dartlang.org](https://pub.dartlang.org/).
@@ -126,19 +125,17 @@ If you run your app at this point, it should look like this:
 
 <DashImage figure src="images/1fEcIp4V3mkrATwJl7qhSJg.webp" />
 
-
 ## Upgrading to Google Maps SDK for iOS 3.0
 
 After running your app in the last step, you may have seen the warning: “*New version of Google Maps SDK for iOS available: 3.0*”. This is because Flutter supports a minimum of iOS version 8, while the latest version of Google Maps SDK for iOS supports minimum iOS version 9. In order to use the latest version of Google Maps SDK for iOS, we need to raise our iOS for Flutter minimum version to 9.
 
-Declare a minimum platform version of 9.0 by uncommenting this line in **ios/Podfile**: `platform :ios, ‘9.0’`.
+Declare a minimum platform version of 9.0 by uncommenting this line in **ios/Podfile**: `platform :ios, '9.0'`.
 
 Then run **(cd ios && pod update)** from command line to pull the newest version of the Google Maps SDK for iOS.
 
 Next, return to your main project directory (**cd ..)** and run **open ios/Runner.xcworkspace/** from command line. This will open the iOS Runner Xcode project, where we need to set the Deployment Target iOS version to 9.0.
 
 <DashImage figure src="images/1QTwIbpR2MgBuEgwt9zZK-w.webp" />
-
 
 Run your app again, and verify the new version available warning is no longer there.
 
@@ -209,7 +206,7 @@ void _onMapTypeButtonPressed() {
 }
 ```
 
-Finally, replace `() => print(‘button pressed’)` with `_onMapTypeButtonPressed`.
+Finally, replace `() => print('button pressed')` with `_onMapTypeButtonPressed`.
 
 ```dart
 child: FloatingActionButton(
@@ -218,9 +215,7 @@ child: FloatingActionButton(
 ),
 ```
 
-
 <DashImage figure src="images/12L9hKzQdpz2YfSfkKQ5fYg.webp" />
-
 
 ### Add a marker
 
@@ -306,8 +301,7 @@ void _onAddMarkerButtonPressed() {
 
 <DashImage figure src="images/1b_SmpOTvtt2G6HWwQpQFdQ.webp" />
 
-
-You can customize the markers with different colors, for example `BitmapDescriptor.*defaultMarkerWithHue*(BitmapDescriptor.*hueViolet*),` or even with custom icons, for example `BitmapDescriptor.fromAsset(‘assets/asset_name.png)`.
+You can customize the markers with different colors, for example `BitmapDescriptor.*defaultMarkerWithHue*(BitmapDescriptor.*hueViolet*),` or even with custom icons, for example `BitmapDescriptor.fromAsset('assets/asset_name.png)`.
 
 ### Final main.dart code
 
@@ -422,7 +416,6 @@ class _MyAppState extends State<MyApp> {
 Once again, **the GoogleMap widget is just a widget.** This means you can place widgets on top of it (like you just did), you can place it inside other widgets (like a ListView, for example), or if you’re feeling a bit wild, you could even place it in a Transform widget.
 
 <DashImage figure src="images/1Z72fYzGsnj_UVNQZx9o-2A.webp" />
-
 
 The possibilities extend as far as you’d like to take them. Checkout the [Place Tracker](https://github.com/flutter/samples/tree/master/place_tracker) app in [flutter/samples](https://github.com/flutter/samples) for a more complete Google Maps demo. You can also checkout the [google_maps_flutter plugin example app](https://github.com/flutter/plugins/tree/master/packages/google_maps_flutter/example) for a demonstration on using the plugin.
 

@@ -55,11 +55,9 @@ new QrImage(
 ),
 ```
 
-
 You can create the following QR code in your app:
 
 <DashImage figure src="images/1iuOxHUF0bBlZtiktVx6XyA.webp" alt="Beaut!" caption="Beaut!" />
-
 
 All this will be in pub soon so you wont’ have to reproduce it for your purposes, but if you want to then have at it because it is open source. Hopefully, beyond getting a cool QR code Widget for your app, this gave you some small insight into how quick and easy it is to build a Widget in Flutter.
 
@@ -68,6 +66,5 @@ Writing Widgets in Flutter is super easy and super fast. Flutter is ramping up a
 The finished product is available on [Github](https://github.com/lukef/qr.flutter) and on [pub](https://pub.dartlang.org/packages/qr_flutter).
 
 <GitHubEmbed repo="lukef/qr.flutter" title="qr.flutter - Create QR codes in Flutter" image="images/0_19ljt157eUKJMX7.jpg" />
-
 
 And that’s it. If you have specific questions feel free to reach out on the Flutter [Gitter](https://gitter.im/flutter/flutter) or leave a comment here and I’ll get back to you!

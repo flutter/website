@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1AvOHYfnMrCR81c4GltakzQ.webp" />
 
-
 We’ve heard from many folk that they want to learn Flutter, but don’t know where to start. So we have some great news for you — we’re giving away a free book for the next three months, along with a book club to help track your progress and answer questions.
 
 *Flutter Apprentice* is written to build on mobile development fundamentals. It takes you through your first fully-featured Flutter app, including designing a complex UI, as well as more advanced concepts such as persistence, state management, and cloud storage with Firebase. The book even covers publishing on both iOS and Android platforms.
@@ -20,7 +19,6 @@ Flutter Apprentice comes from [Razeware](https://www.raywenderlich.com/), the te
 Flutter Apprentice is a practical book, with lots of examples to follow and code that you can put to use in your own apps. And it’s based on the very latest Flutter 2.5 release and the latest features in the Dart language. Whether you’re an experienced developer looking to deepen your understanding of Flutter’s more advanced features, or you’re new to app development and interested in adding Flutter to your front-end development toolkit, we think you’ll find plenty of useful content .
 
 <DashImage figure src="images/1n9wUoadF-zJLDqvZ09oXvw.webp" />
-
 
 **Learn Together**
 

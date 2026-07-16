@@ -22,7 +22,6 @@ As of today, Flutter’s web support has transitioned from beta to the stable ch
 
 <DashImage figure src="images/0KQZef4s2-koToHMA.webp" alt="[Moi Mobiili](https://www.moi.fi/), a modern Mobile Virtual Network Operator striving for operational excellence through digitalization, chose Flutter to build their Mun Moi Account manager app and recently launched their web app." caption="[Moi Mobiili](https://www.moi.fi/), a modern Mobile Virtual Network Operator striving for operational excellence through digitalization, chose Flutter to build their Mun Moi Account manager app and recently launched their web app." />
 
-
 By leveraging the web platform’s many strengths, Flutter built a foundation for building rich interactive web applications. We primarily focused on performance and improvements to our rendering fidelity. In addition to our HTML renderer, we added a new CanvasKit-based renderer. We’ve also added web-specific features, such as a [Link widget](https://pub.dev/documentation/url_launcher/latest/link/Link-class.html), to make sure your app running in the browser feels like a web app.
 
 Find more details about this stable release in [Flutter’s web support blog post](https://medium.com/flutter/web-post-d6b84e83b425).
@@ -41,18 +40,15 @@ To bring Flutter desktop to this degree of quality, there have been improvements
 
 <DashImage figure src="images/0uxIQpd8XEMIsyePK.gif" alt="The ReorderableListView now has grab handles for easy drag ’n’ drop with a mouse" caption="The ReorderableListView now has grab handles for easy drag ’n’ drop with a mouse" />
 
-
 The ReorderableListView was always good at moving items around with very little effort on your part as a developer, but it required the user to initiate a drag using a long-press. That made sense on a mobile device, but few desktop users would think to long-press on an item with their mouse to move it around, so this release includes a grab handle suitable for mouse or touch input. Another improvement for platform-idiomatic functionality is [an updated scrollbar](https://github.com/flutter/flutter/pull/71664) that shows up correctly for the desktop form-factor.
 
 <DashImage figure src="images/0n6Lap1ZNfF-RL-Dd.gif" alt="This release includes an updated Scrollbar widget that works great in a desktop environment" caption="This release includes an updated Scrollbar widget that works great in a desktop environment" />
-
 
 The Scrollbar widget has been updated to provide the interactive features that are expected on the desktop, including the ability to drag the thumb, click on the track to page up and down, and to show a track when the mouse hovers over any part of the scrollbar. Furthermore, since the Scrollbar is themeable using [the new ScrollbarTheme class](https://api.flutter.dev/flutter/material/ScrollbarTheme-class.html), you can style it to match your app’s look and feel.
 
 For additional desktop-specific functionality, this release also enables command-line argument handling for Flutter apps so that simple things like a double-click on a data file in the Windows File Explorer can be used to open the file in your app. We’ve also worked hard to make resizing much smoother for both [Windows](https://github.com/flutter/engine/pull/23701) and [macOS](https://github.com/flutter/engine/pull/23924), and to enable IME (Input Method Editors) for international users.
 
 <DashImage figure src="images/0W1aGfw-fJXfFiqWR.webp" alt="Flutter desktop now supports intuitive IME input" caption="Flutter desktop now supports intuitive IME input" />
-
 
 In addition, we have provided [updated docs on what you need to do to begin preparing your desktop app for deployment to the appropriate OS-specific stores](https://flutter.dev/desktop#distribution). Give them a try and please provide feedback if we’ve missed anything.
 
@@ -68,7 +64,6 @@ Now that Flutter supports three platforms for production apps (Android, iOS, and
 
 <YoutubeEmbed id="x4xZkdlADWo" title="Flutter Folio Trailer" fullwidth="true"/>
 
-
 Folio is meant to be a simple example of an app that you’d want to run well on multiple platforms from a single code base. And by “well,” we mean that it looks good on small, medium, and large screens, that it takes advantage of touch, keyboard, and mouse input, and that it works well for the idioms of the platform, (for example, by using links on the web and menus on desktop). We call this kind of app “platform adaptive” because it adapts well to whatever platform it’s running on.
 
 If you’d like to see how you can make your own apps platform adaptive, you can check out [the source code for Folio](https://github.com/gskinnerTeam/flutter-folio). In the future, expect to find docs and codelabs that explore this topic more deeply. In the meantime, check out Aloïs Deniel’s [excellent blog post and video](https://aloisdeniel.com/#/posts/adaptative-ui) on this very topic.
@@ -78,7 +73,6 @@ If you’d like to see how you can make your own apps platform adaptive, you can
 In addition to Flutter desktop moving to beta, today we’re excited to announce an open beta for [Google Mobile Ads SDK for Flutter](https://pub.dev/packages/google_mobile_ads). This is a brand new plugin that provides inline banner and native ads, in addition to the existing overlay formats (overlay banner, interstitial, and rewarded video ads). This plugin unifies support for Ad Manager and Admob, so no matter what size publisher you are, this plugin can be tailored to your scenarios.
 
 <DashImage figure src="images/0h4J8qtxzJXTg769G.webp" />
-
 
 We’ve been piloting this plugin with some of our early customers in a private beta program, and many of them have successfully launched their apps with these new formats. For example, Sua Musica (largest Latin American music platform for independent artists with more than 15k verified artists and 10M MAU) launched their new Flutter app with the Google Mobile Ads SDK for Flutter plugin. They saw an 350% increase on Impressions with a 43% increase on CTR and 13% increase on eCPM.
 
@@ -92,11 +86,9 @@ A new [CupertinoSearchTextField](https://api.flutter.dev/flutter/cupertino/Cuper
 
 <DashImage figure src="images/0sm8nQOLfY63_D6p8.webp" />
 
-
 The [CupertinoFormSection](https://api.flutter.dev/flutter/cupertino/CupertinoFormSection-class.html), [CupertinoFormRow](https://api.flutter.dev/flutter/cupertino/CupertinoFormRow-class.html), and [CupertinoTextFormFieldRow](https://api.flutter.dev/flutter/cupertino/CupertinoTextFormFieldRow-class.html) widgets make it easier to produce validated form fields with iOS’s sectioned visual aesthetics.
 
 <DashImage figure src="images/0HwoWeVZall4b0VB5.webp" />
-
 
 In addition to the feature work for iOS, we’re continuing to [research performance improvements](https://github.com/flutter/flutter/issues/60267#issuecomment-762786388) for iOS and Flutter in general when it comes to shaders and animation. iOS continues to be a premier platform for Flutter and we’ll continue to work to bring important new features and performance improvements.
 
@@ -106,21 +98,18 @@ This release of Flutter comes with two additional new widgets, AutocompleteCore 
 
 <DashImage figure src="images/03GGvtXibNB3-X8jA.webp" />
 
-
 Autocomplete is an often-requested feature for Flutter, so this release starts to provide this functionality. You can use it today, but if you’re curious about the design for the complete feature, check out [the autocomplete design document](https://docs.google.com/document/d/1fV4FDNdcza1ITU7hlgweCDUZdWyCqd-rjz_J7K2KkfY/).
 
 Likewise, [the ScaffoldMessenger](https://github.com/flutter/flutter/pull/64101) was created to deal with a number of SnackBar-related issues, including the ability to easily create a SnackBar in response to an AppBar action, creating SnackBars to persist between Scaffold transitions, and being able to show SnackBars at the completion of an asynchronous action, even if the user has navigated to a page with a different Scaffold.
 
 <DashImage figure src="images/0vGJ5uq6V58RaGO5o.webp" />
 
-
 All of this goodness can be yours with a couple of lines of code that you should be using from now on to display your SnackBars:
 
 ```dart
 final messenger = ScaffoldMessenger.of(context);
-messenger.showSnackBar(SnackBar(content: Text(‘I can fly.’)));
+messenger.showSnackBar(SnackBar(content: Text('I can fly.')));
 ```
-
 
 As you might imagine, there’s more to it than that; for the details, check out [an excellent video from Kate Lovett on ScaffoldMessenger](https://www.youtube.com/watch?v=sYG7HAGu_Eg).
 
@@ -132,7 +121,6 @@ In the past, additional Flutter instances had the same memory cost as the first 
 
 <DashImage figure src="images/0huNKqtnnHVtbYW3_.webp" />
 
-
 The new APIs to enable this are in preview on the beta channel and are [documented on flutter.dev](https://flutter.dev/docs/development/add-to-app/multiple-flutters) along with [a set of sample projects demonstrating this new pattern](https://github.com/flutter/samples/tree/master/add_to_app/multiple_flutters). With this change, we no longer hesitate to recommend creating multiple instances of the Flutter engine in your native apps.
 
 ## Flutter Fix
@@ -141,17 +129,15 @@ Whenever any framework matures and gathers users with larger and larger code bas
 
 Our answer is [Flutter Fix](https://flutter.dev/docs/development/tools/flutter-fix).
 
-Flutter Fix is a combination of things. First, there’s a new command-line option to the `dart` CLI tool called `dart fix`that knows where to look for a list of deprecated APIs and how to update code using those APIs. Second, it’s the list of available fixes itself, which is bundled with the Flutter SDK as of version 2. And finally, it’s an updated set of Flutter extensions for the VS Code, IntelliJ,and Android Studio IDEs that know how to expose that same list of available fixes as quick fixes with little light bulbs that will help you to change the code with a click of your mouse.
+Flutter Fix is a combination of things. First, there’s a new command-line option to the `dart` CLI tool called `dart fix` that knows where to look for a list of deprecated APIs and how to update code using those APIs. Second, it’s the list of available fixes itself, which is bundled with the Flutter SDK as of version 2. And finally, it’s an updated set of Flutter extensions for the VS Code, IntelliJ,and Android Studio IDEs that know how to expose that same list of available fixes as quick fixes with little light bulbs that will help you to change the code with a click of your mouse.
 
 As an example, let’s say you had the following line of code in your app:
 
 <DashImage figure src="images/1Ky80dLtF0OQ81U3ohMc5jg.webp" alt="Creating a Flutter widget using a deprecated argument" caption="Creating a Flutter widget using a deprecated argument" />
 
-
 Because the argument to this constructor is deprecated, it should be replaced with the following:
 
 <DashImage figure src="images/1CsdmVrVcS7jYSBzldzIzzg.webp" alt="Creating a Flutter widget with the deprecated argument replaced" caption="Creating a Flutter widget with the deprecated argument replaced" />
-
 
 Even if you’re familiar with all of the many Flutter deprecations, the larger the number of changes you have to make in your code, the harder it is for you to apply all of the fixes and the easier it is to make mistakes; humans are not great at these kinds of repetitive tasks. But computers are; by executing the following command, you can see all of the fixes we know how to make across your entire project:
 
@@ -159,18 +145,15 @@ Even if you’re familiar with all of the many Flutter deprecations, the larger 
 $ dart fix --dry-run
 ```
 
-
 If you’d like to apply them in bulk, you can easily do so:
 
 ```bash
 $ dart fix --apply
 ```
 
-
 Or, if you’d like to apply these fixes interactively in your favorite IDE, you can do that, too.
 
 <DashImage figure src="images/0I9GWJb-XsUhJUKrH.webp" />
-
 
 While we’ve been marking old APIs as deprecated for a number of years now, now that we have [a policy about when we will actually remove deprecated APIs](https://medium.com/flutter/deprecation-lifetime-in-flutter-e4d76ee738ad), Flutter 2 is the first time that we’ve done so. Even though we haven’t yet captured all of the deprecated APIs as data to feed Flutter Fix, we continue to add more from previously deprecated APIs and will continue to do so with future breaking changes. Our goal is to do our best to make Flutter’s API the best it can be while also keeping your code up to date as we do it.
 
@@ -182,28 +165,23 @@ One new feature that helps you zero in on your issues even before you’ve launc
 
 <DashImage figure src="images/0O7zZDDpTc9cK-2X0.webp" alt="The Flutter IDE extensions notice when your app throws a layout overflow exception" caption="The Flutter IDE extensions notice when your app throws a layout overflow exception" />
 
-
 Pressing that button brings you right to the Flutter Inspector in DevTools on the widget that’s causing the trouble so you can fix it. We’re only doing this for layout overflow exceptions today but our plan is to include this kind of handling for all kinds of common exceptions for which DevTools can be the solution.
 
 Once you’ve got DevTools running, new error badges on the tabs help you track down specific issues in your app.
 
 <DashImage figure src="images/0q1ug8VRx6ewqU_Ks.webp" alt="The red dots in DevTools helps you focus on the parts of your app with errors" caption="The red dots in DevTools helps you focus on the parts of your app with errors" />
 
-
 Another new feature in DevTools is the ability to easily see an image that’s at a higher resolution than it’s displayed, which helps track down excessive app size and memory usage. To enable this feature, enable the Invert Oversized Images in the Flutter Inspector.
 
 <DashImage figure src="images/0xoGJox6uQxSbN3G3.webp" alt="Enable the “Invert Oversized Images” option to highlight images that are bigger than they need to be" caption="Enable the “Invert Oversized Images” option to highlight images that are bigger than they need to be" />
-
 
 Now, when you display an image that’s significantly larger in resolution than its display size, it will appear upside-down to make it easy to find in your app.
 
 <DashImage figure src="images/0gqIT_20hrbHlG8d_.webp" alt="The “Invert Oversized Images” option in action" caption="The “Invert Oversized Images” option in action" />
 
-
 Also, by popular demand, in addition to showing details about flexible layouts in the Flutter Inspector’s Layout Explorer, we’ve added the capability to show fixed layouts as well, enabling you to debug layouts of all kinds.
 
 <DashImage figure src="images/0oW2lFF9KTVUTaXeo.webp" alt="The new Layout Explorer shows layout details for fixed as well as flex layouts" caption="The new Layout Explorer shows layout details for fixed as well as flex layouts" />
-
 
 And that’s not all. Here’s just a summary of a few more of the new features in Flutter DevTools 2:
 
@@ -241,14 +219,11 @@ The Flutter plugin for the IntelliJ family of IDEs has gained a number of new fe
 
 <DashImage figure src="images/0RPj9uHm2n8Zx1w1X.webp" />
 
-
 <DashImage figure src="images/0vu31pLbeCjWZvvJI.webp" />
-
 
 Also, if you’re using IntelliJ or Android Studio on Linux to program against the [Flutter SDK installed from the Snap Store](https://snapcraft.io/flutter), the Flutter snap path has been added to the list of known SDK paths. This makes it easier for users of the Flutter snap to configure the Flutter SDK in Settings. Thanks to MarcusTomlinson@ for this contribution!
 
 <DashImage figure src="images/0N86bmi_l8Zx-UOnE.webp" alt="Android Studio on Linux is easier to use with the Flutter SDK installed via Snap" caption="Android Studio on Linux is easier to use with the Flutter SDK installed via Snap" />
-
 
 There’s a lot more good stuff you can read about in the announcements for the recent updates:
 
@@ -266,19 +241,15 @@ The Flutter extension for Visual Studio Code has improved for Flutter 2 as well,
 
 <DashImage figure src="images/0htJEMRQ54MN7hfcl.webp" />
 
-
 After two years in development, the LSP (Language Server Protocol) support for Dart is rolling out now as the default way to get to the Dart analyzer for integration into Visual Studio Code for the Flutter extension. The LSP support enables a number of improvements for Flutter development, including the ability to apply all fixes of a certain kind in the current Dart file and to cause code completion to generate complete function calls, including parenthesis and required arguments.
 
 <DashImage figure src="images/0YRyYVK1ObQ252jSL.webp" />
 
-
 <DashImage figure src="images/0eQD12Fr7liueGZXF.webp" />
-
 
 And the LSP support isn’t just for Dart; it also supports code completion in the `pubspec.yaml` and `analysis_options.yaml` files.
 
 <DashImage figure src="images/0IOR7QJ3FOqaGWIn9.webp" />
-
 
 These are just a few of the updates that the Visual Studio Code extension for Flutter has enjoyed recently. You can read the full list in these announcements:
 
@@ -297,7 +268,6 @@ These are just a few of the updates that the Visual Studio Code extension for Fl
 This list of tooling updates would not be complete without a mention of DartPad, which has been updated to support Flutter 2.
 
 <DashImage figure src="images/02bw4yhTolgWmIv1V.webp" alt="DartPad has been updated for Flutter 2" caption="DartPad has been updated for Flutter 2" />
-
 
 Now you can try the new null safe version of Flutter without leaving the comfort of your favorite browser.
 
@@ -324,7 +294,6 @@ Also, if you’re a Firebase user, we are pleased to announce that the most popu
 Also, if you’re looking for crash reporting for your app, you may want to consider Sentry, which has [announced a new SDK for Flutter apps](https://blog.sentry.io/2021/03/03/with-flutter-and-sentry-you-can-put-all-your-eggs-in-one-repo/).
 
 <DashImage figure src="images/0rGuUHqseWvUJ2FPl.webp" alt="The Sentry crash reporting tool now supports Flutter" caption="The Sentry crash reporting tool now supports Flutter" />
-
 
 With Sentry’s SDK for Flutter, you can be notified of errors that occur on Android, iOS, or native platforms in real-time. You can see the details in [the Sentry documentation](https://docs.sentry.io/platforms/flutter/).
 
@@ -367,7 +336,6 @@ Congratulations to the authors of these packages! If you haven’t checked them 
 And last but certainly not least, for package authors or package users interested in whether the latest version of a package works on a recent version of Flutter, you’ll want to check out Codemagic’s new [pub.green](https://pub.green) site.
 
 <DashImage figure src="images/0-Ichbk_jGmhmdj3B.webp" alt="Codemagic’s new pub.green site shows compatibility for the top packages with recent Flutter releases" caption="Codemagic’s new [pub.green](https://pub.green) site shows compatibility for the top packages with recent Flutter releases" />
-
 
 The pub.green site tests the compatibility of Flutter and Dart packages available on pub.dev with different Flutter versions. Think of it as the “can I use” for Flutter. For more details, I recommend [the announcement blog post from the CodeMagic team](https://blog.codemagic.io/pub-green/).
 
@@ -434,6 +402,5 @@ We’ve made the following breaking changes for Flutter 2, many of which can be 
 In closing, from all of us here on the Flutter Team at Google we want to say — thank you. Thank you ×150,000 for the more than 150,000 Flutter apps launched in the community in just the past two years. In case you missed it, we compiled a few of our favorite Flutter apps in this Mashup Video dedicated to you, the community, played at the opening of the Flutter Engage keynote.
 
 <YoutubeEmbed id="A3ltMaM6noM" title="- YouTube" fullwidth="true"/>
-
 
 Without your continued support and excitement for what we’re all creating, it wouldn’t have been possible to become one of the most vibrant global developer communities in the world. We can’t wait to see what you’ll build next.

@@ -12,7 +12,6 @@ layout: blog
 
 <DashImage figure src="images/1BzcKF4qdbLIFFB6XL8x-9A.webp" />
 
-
 Flutter has released web support that allows you to create dynamic websites. With Flutter web, MacOS, Linux, and Windows operating systems (even on mobile devices connected to a mouse, keyboard, or other peripherals), you now have access to platform-specific behaviors including focus support, keyboard input, custom mouse cursors, and hover input. But, how do you make use of these platform behaviors in Flutter?
 
 This article explains how to use the `FocusableActionDetector` widget, which handles keyboard input, focus input, hover input, and custom mouse cursors.
@@ -38,7 +37,7 @@ Flutter lets you define custom actions to handle keyboard input. Let’s say you
 
 First, add the following import:
 
-`import ‘package:flutter/services.dart’;`
+`import 'package:flutter/services.dart';`
 
 Next, from the class where the `FocusableActionDetector` is called, initialize two private variables. These variables map the keyboard input to the desired action:
 
@@ -47,7 +46,6 @@ Map<LogicalKeySet, Intent> _shortcutMap;
 
 Map<Type, Action<Intent>> _actionMap;
 ```
-
 
 Define a `FocusableActionDetector` widget. Note that the custom keyboard input activates only when the child widget is in focus:
 
@@ -62,7 +60,6 @@ FocusableActionDetector(
 
 )
 ```
-
 
 This class maps the enums and keyboard input type to the `Intent` class. The following setup is necessary because the actions and shortcuts parameter requires a class that extends `Intent`:
 
@@ -111,7 +108,6 @@ enum _SecretMessageType {
 
 }
 ```
-
 
 Within the `initState` method, initialize the mapping previously defined:
 
@@ -167,7 +163,6 @@ void initState() {
 }
 ```
 
-
 The action handler links the keyboard input to a certain function within the application. Any time a character is pressed, an expanded container is added to the main part of the application. But in your application, you can use it for more creative purposes:
 
 ```dart
@@ -187,7 +182,7 @@ void _actionHandler(_ShowSecretMessageIntent intent) {
 
               color: Colors.orange,
 
-              child: Text(‘Press L’),
+              child: Text('Press L'),
 
             ),
 
@@ -206,7 +201,6 @@ void _actionHandler(_ShowSecretMessageIntent intent) {
 }
 ```
 
-
 ## Focus input
 
 The `FocusableActionDetector` widget lets you perform action calls any time the specified widget is in focus.
@@ -224,7 +218,6 @@ FocusableActionDetector(
 
 ),
 ```
-
 
 Let’s say you want your child widget to have a different color when focused to identify that this widget is currently in focus. If you need to set custom actions whenever your widget has focus, use the `onShowFocusHighlight` property.
 

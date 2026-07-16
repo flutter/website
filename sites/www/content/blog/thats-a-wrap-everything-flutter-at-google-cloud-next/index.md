@@ -10,13 +10,11 @@ layout: blog
 
 <DashImage figure src="images/1MdrcuqmMZPxXdrkJbDAdIA.webp" alt="Google Cloud Next Recap 2026" caption="Google Cloud Next Recap 2026" />
 
-
 ## That’s a wrap: Everything Flutter at Google Cloud Next
 
 Our team has been hard at work this Spring, preparing to meet over 30,000 of you in Las Vegas for Google Cloud Next. For those who couldn’t make it in-person, here is a breakdown of the major highlights, announcements, and experiences from the Flutter and Dart team.
 
 <DashImage figure src="images/1cIHVKHTVvRkPEiualLOXeQ.jpeg" alt="Dash team at Google Cloud Next 2026" caption="Dash team at Google Cloud Next 2026" />
-
 
 ## Big announcements
 
@@ -29,31 +27,23 @@ Check out the announcement blog, and documentation, and stay tuned for a full br
 
 <DashImage figure src="images/1HIkUhLDGGJknOoFb8AC2GQ.jpeg" alt="The GenLatte booth" caption="The GenLatte booth" />
 
-
 <DashImage figure src="images/1TIrEkPNew4nRhnOX_JZeKw.webp" alt="Use a Flutter app to order a latte with custom foam art!" caption="Use a Flutter app to order a latte with custom foam art!" />
-
 
 <DashImage figure src="images/175RjqqMruwwRcwQVWjkmcQ.jpeg" alt="Attendees enjoying their custom lattes" caption="Attendees enjoying their custom lattes" />
 
-
 <DashImage figure src="images/1s757IVhn5sGl8hKwxtVl7A.jpeg" alt="Kate Lovett helps Dash fulfill her latte needs" caption="Kate Lovett helps Dash fulfill her latte needs" />
-
 
 * **Agentic mobile & web demos galore:** The expo floor was packed with energy, including three Dart and Flutter demos, showcasing Fullstack Dart, GenUI, and a special appearance by our friends over at [VGV](https://verygood.ventures/).
 
 <DashImage figure src="images/18tCVXW_vMObZzebVQdU96g.jpeg" alt="Answering questions about GenUI" caption="Answering questions about GenUI" />
 
-
 <DashImage figure src="images/1g7pI_LsKz7SMDpaDrsw1GA.jpeg" alt="Demoing Firebase Functions for Dart" caption="Demoing Firebase Functions for Dart" />
 
-
 <DashImage figure src="images/1ftJN2u294p-nycRBfkwigQ.webp" alt="The Partiful app— the UI you see is generated on the fly" caption="The Partiful app— the UI you see is generated on the fly" />
-
 
 * **The Builder hub:** This served as the “home base” for the developer community on the Expo floor. It featured dedicated booths for **Flutter** and our friends at Firebase and Go, providing a space for developers to connect with experts and explore new tools.
 
 <DashImage figure src="images/1g7OlGkj6nfHBCjiX3MNFDA.webp" alt="The Builder Hub where developers can greet, meet, and repeat" caption="The Builder Hub where developers can greet, meet, and repeat" />
-
 
 ## Key sessions & customer stories
 
@@ -61,23 +51,18 @@ Check out the announcement blog, and documentation, and stay tuned for a full br
 
 <DashImage figure src="images/1FOxGHPVfUKaibqcK0FSO2g.jpeg" alt="Richard Seroter and Emma Twersky giving the Developer Keynote" caption="Richard Seroter and Emma Twersky giving the Developer Keynote" />
 
-
 <YoutubeEmbed id="A01DQ8_xy7Q" title="Google Cloud Next '26 Developer Keynote" fullwidth="true"/>
-
 
 * **Toyota & Talabat:** Real-world enterprise success was a major theme. Abdallah Shaban took the stage alongside industry leaders to showcase how Flutter is transforming their core products. [Toyota shared how they are revolutionizing automotive UX using Flutter](https://www.youtube.com/watch?v=A3ApoV_QRio) for their next-generation infotainment systems, while [Talabat demonstrated how they innovate faster and scale across the Middle East](https://www.youtube.com/watch?v=A3ApoV_QRio) using the framework.
 
 <DashImage figure src="images/1Z5ZnnwJZgPjU71ahEdXKMg.webp" alt="Toyota session" caption="Toyota session" />
 
-
 <DashImage figure src="images/1JTvcXKm4OadZ9FjHAyjAzg.jpeg" alt="Talabat session" caption="Talabat session" />
-
 
 * **Generative UI Deep Dive:** Yegor Jbanov and Andrew Brogdon led a session on how to move beyond text-based chatbots by giving your agents the power to create their own UI.
 Stay tuned for Google I/O where this session will be available world wide on the Flutter YouTube channel.
 
 <DashImage figure src="images/1mH5YXCtec8kz7iNQhNnnQQ.jpeg" alt="GenUI session" caption="GenUI session" />
-
 
 * **Building full-stack Dart:** Rody Davis and Kevin Moore shared why you should be excited about today’s biggest announcement for Dart.
 Stay tuned for Google I/O where this session will be available world wide on the Flutter YouTube channel.
@@ -90,9 +75,7 @@ Stay tuned for Google I/O where this session will be available world wide on the
 
 <DashImage figure src="images/1qbiAd4dCqHePwPdD8nUf4g.jpeg" alt="Developer meetups at Cloud Next" caption="Developer meetups at Cloud Next" />
 
-
 <DashImage figure src="images/1B4G1_W-d0YsF_MWmqE6AvQ.jpeg" alt="Firebase meetup at Google Cloud Next" caption="Firebase meetup at Google Cloud Next" />
-
 
 And that’s a wrap! But not for long… [Register today for Google I/O 2026](https://io.google/2026/) where our team has even more planned. We can’t wait to surprise you. 😉
 

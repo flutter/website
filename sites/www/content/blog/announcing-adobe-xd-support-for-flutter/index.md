@@ -14,11 +14,9 @@ Last year at our [Flutter Interact event](https://www.youtube.com/watch?v=HjZxyT
 
 <DashImage figure src="images/0llO5f0NhDCAp5Y7j.webp" alt="Flutter is a rich canvas for creative expression: a toolkit for beautiful, native experiences that aren’t limited by traditional technical boundaries. (Generative artwork built with Flutter, courtesy of Robert Felker.)" caption="Flutter is a rich canvas for creative expression: a toolkit for beautiful, native experiences that aren’t limited by traditional technical boundaries. (Generative artwork built with Flutter, courtesy of Robert Felker.)" />
 
-
 Today, **we’re delighted to join Adobe in announcing that their XD to Flutter plugin is [now available as early access](https://adobe.com/go/xd_plugins_discover_plugin?pluginId=6eaf77ea)** for broader public testing. [Adobe XD](https://www.adobe.com/products/xd.html) is a UI/UX design and collaboration tool that helps teams create and share designs for websites, apps, voice interfaces, games, and more. Part of Adobe’s class-leading [Creative Cloud](https://www.adobe.com/creativecloud.html), XD allows designers to turn vector art, text, images, microinteractions, and animations into interactive prototypes that behave like working software products. The ability to export designs to Flutter further reduces the latency between creative ideas and product development, as an XD prototype can now become working Flutter code within minutes. Adobe XD supports design on Windows or macOS, and includes a [free starter plan](https://www.adobe.com/products/xd/compare-plans.html) to get you up and running.
 
 <DashImage figure src="images/0Vjx2GfxTsr8Imvew.webp" alt="Exporting from Adobe XD to Flutter is now just a plugin away." caption="Exporting from Adobe XD to Flutter is now just a plugin away." />
-
 
 ## Exporting Flutter code from Adobe XD
 
@@ -32,13 +30,11 @@ To export a single element, simply select the individual widget you’d like to 
 
 <DashImage figure src="images/0ADItKKHZGWwawDHa.webp" alt="Exported code can be integrated into your existing project and updated without reworking other files." caption="Exported code can be integrated into your existing project and updated without reworking other files." />
 
-
 Another approach is to export the entire project. Assuming you’ve already got a Flutter app that you want to load the content into (including the `adobe_xd` package reference in `pubspec.yaml`), you can simply choose *Plugins &gt; Flutter &gt; Export All Widgets* from the UI panel, and set any additional configuration options you want.
 
 This creates a series of classes in the `lib/` subdirectory of your project, which you can then use directly. You can continue to tweak the XD prototype and export again with ⇧⌘F (Ctrl+Shift+F on Windows) and, if you have enabled the Dart [*Hot Reload on Save Watcher* setting](https://dartcode.org/docs/settings/#dartpreviewhotreloadonsavewatcher) in Visual Studio Code, your app automatically reloads with any updates when you re-export the widgets.
 
 <DashImage figure src="images/0N-K68XqE0DBUV0EK.webp" alt="Having a fast turnaround from XD to code gives you a new way to turn prototypes into apps." caption="Having a fast turnaround from XD to code gives you a new way to turn prototypes into apps." />
-
 
 As an early access preview, there are of course some limitations, which are described in the [release notes](https://github.com/AdobeXD/xd-to-flutter-plugin/blob/master/README.md). One notable limitation is that responsive layout is not yet available, pending completion of a new XD API. But you’ll automatically get updates to the plugin as new features like this become available.
 

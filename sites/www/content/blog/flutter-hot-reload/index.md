@@ -12,7 +12,6 @@ Hot reload was fast in Flutter 2.0, but it’s faster in Flutter 2.2. Read on fo
 
 <DashImage figure src="images/1iaLz5LEBdsZJRR_W8UCQcQ.webp" />
 
-
 ## Introduction
 
 One of Flutter’s great features is *hot reload*. You press `r` on your keyboard, and moments later the impact of your changes can be seen on the device. In your terminal (or maybe at the bottom of your IDE) you can read something like `Reloaded 1 of 553 libraries in 297ms`. But what actually goes on under the hood when you initiate a hot reload, and how did the Dart and Flutter teams make it even faster?

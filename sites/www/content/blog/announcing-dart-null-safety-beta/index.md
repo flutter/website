@@ -14,11 +14,9 @@ Today we’re announcing that **sound null safety is available in beta** for Dar
 
 <YoutubeEmbed id="iYhOU9AuaFs" title="Null safety in Dart - Introduction" fullwidth="true"/>
 
-
 With null safety graduating to beta, **it’s time to start community migration** of the thousands of packages available on [pub.dev](https://pub.dev/). We’ve migrated the Dart core libraries, the Flutter framework, and [more than 40](https://pub.dev/packages?q=&prerelease-null-safe=1) Dart and Flutter packages. With that we hope to see the community embrace null safety by migrating their packages.
 
 <DashImage figure src="images/1kr-aQjGvnhY0JDCx1CGzRg.webp" />
-
 
 With beta, we’re also starting the home stretch before shipping a stable version of the null safety feature. We hope that you’ll use the feature and let us know if parts of it can be improved, if UI messages can be made easier to understand, or if documentation can be made clearer. We’re **really looking forward to [your feedback](https://github.com/dart-lang/sdk/issues/new?title=Null%20safety%20feedback:%20[issue%20summary]&labels=NNBD&body=Describe%20the%20issue%20or%20potential%20improvement%20in%20detail%20here)**.
 
@@ -30,7 +28,6 @@ Before we discuss null safety migration, it’s important to repeat that (as sta
 environment:
   sdk: ">=2.12.0-0 <3.0.0"
 ```
-
 
 To experience this, try to create a small null-safe hello app (for example, using `dart create`) containing code like shown below. You can then try to run the app both before and after changing the SDK constraint and running `dart pub get`, and experience how the program behavior changes. (Make sure to use an SDK that reports 2.12 in `dart --version`.)
 
@@ -68,7 +65,6 @@ hello = null;
             ^
 ```
 
-
 ## Migrating to null safety
 
 To migrate a package (or simple app) to null safety, follow these five steps, which are fully documented in the [migration guide](https://dart.dev/null-safety/migration-guide) on dart.dev.
@@ -79,7 +75,6 @@ We strongly recommend migrating code in order, with the leaves of the dependency
 
 <DashImage figure src="images/0fM8TG0L56zVeJVlG.webp" />
 
-
 Why is the order important? Although you can make some progress migrating code before your dependencies migrate, you risk having to do a second migration pass if your dependencies change their APIs during their migration. If a few of your dependencies aren’t null safe, consider reaching out to the package publishers using the contact details listed for each package on pub.dev.
 
 ### Verifying that dependencies are ready
@@ -88,14 +83,12 @@ To verify whether your app or package is ready to begin migration, you can use `
 
 <DashImage figure src="images/0zrUdYSzsjWZGr7Or.webp" />
 
-
 If null safety support is available in minor new versions, you’ll see those in the **Upgradable** column. Often null safety support will be available in major new versions; in that case you’ll see the versions listed under **Resolvable** in the outdated output. To upgrade to those, edit your `pubspec.yaml` file to allow those major versions. For example, you might change
 `process: ^3.0.13` to `process: ^4.0.0-nullsafety`.
 
 You can also find packages with null safety support on pub.dev using the new **Null safety** tags on package pages (for example [collection 1.15](https://pub.dev/packages/collection/versions/1.15.0-nullsafety.5)) and a new **Advanced** **search** [null safety search option](https://pub.dev/packages?q=&prerelease-null-safe=1).
 
 <DashImage figure src="images/1P2ufPitLRaJRAD__KUfbvg.webp" />
-
 
 ### Step 2: Migrate using the migration tool
 
@@ -104,7 +97,6 @@ If your dependencies are ready, you can proceed to migrating your app or package
 The migration tool is interactive, so you can review the nullability properties that the tool has inferred. If you disagree with any of the tool’s conclusions, you can add nullability hints to change the inference. Adding a few migration hints can have a huge impact on migration quality.
 
 <DashImage figure src="images/0dPlSded52Mt6P5tY.webp" />
-
 
 We’ve had a small number of Dart package authors test-drive migration using early preview builds of null safety, and their feedback has been encouraging. The migration guide has additional tips on how to use the migration tool.
 
@@ -117,14 +109,12 @@ $ dart pub get
 $ dart analyze
 ```
 
-
 Or on your Flutter code:
 
 ```bash
 $ flutter pub get
 $ flutter analyze
 ```
-
 
 ### Step 4: Ensure tests pass
 
@@ -157,11 +147,9 @@ if (globals.platform.isMacOS) {
     ...
 ```
 
-
 Can you spot the error? Because the version may be null, both major and minor may be null also. This bug may seem easy to spot here in isolation, but in practice code like this slips through all the time, even with a rigorous code review process like the one used in the Flutter repo. With null safety, static analysis [catches this issue immediately](https://dartpad.dev/0e9797be7488d8ec6c3fca92b7f2740f):
 
 <DashImage figure src="images/0AwqXx58arqVt6PhL.webp" />
-
 
 That was a pretty simple error. During our early use of null safety in code internally at Google, we’ve seen much more intricate errors be caught and then resolved via null safety. Here are a few examples:
 

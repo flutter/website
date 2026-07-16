@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/0RuCmIqSnK0G0kHmy.webp" />
 
-
 ## Material 3 for Flutter
 
 ### Sherlock Holmes and Dr Watson; peanut butter and jam; Flutter and Material! These matches are made in heaven!
@@ -24,7 +23,6 @@ I joined the Material for Flutter team in August 2022. Since then, I’ve been h
 In this article, I’ll show you the new features in Material 3, how to integrate them into your Flutter app, and update you on what’s coming next.
 
 <DashImage figure src="images/06JGBM5itMcIMnvYV.webp" alt="The Flutter Material 3 sample app" caption="The Flutter Material 3 sample app" />
-
 
 ## Material 3
 
@@ -48,7 +46,6 @@ class MyApp extends StatelessWidget {
 }
 ```
 
-
 For information on migrating an existing Flutter app, check out [Migrating a Flutter app to Material 3](https://blog.codemagic.io/migrating-a-flutter-app-to-material-3/), an article by Flutter contributor Taha Tesser at CodeMagic.
 
 At the time of this writing, you have the *option* to use Material 3. In the future, it will become the default (and mandatory) Material version for Flutter apps.
@@ -67,20 +64,17 @@ Segmented buttons give your user a toggleable choice from several options *in a 
 
 <DashImage figure src="images/0gjBdIy6V7lT5XGk2.gif" alt="Segmented buttons — single selection and multi selection" caption="Segmented buttons — single selection and multi selection" />
 
-
 ### Filled buttons
 
-We’ve increased our selection of `Button`s to include the new `[FilledButton](https://m3.material.io/components/buttons/guidelines#07a1577b-aaf5-4824-a698-03526421058b).` This button creates a colored, non-elevated button. The `FilledButton.tonal`method sets current background as a secondary color.
+We’ve increased our selection of `Button`s to include the new [`FilledButton`](https://m3.material.io/components/buttons/guidelines#07a1577b-aaf5-4824-a698-03526421058b). This button creates a colored, non-elevated button. The `FilledButton.tonal` method sets current background as a secondary color.
 
 <DashImage figure src="images/1Rh5tEKBvA8ivNBGgDB7X9w.gif" alt="Elevated, Filled, and Outlined buttons" caption="Elevated, Filled, and Outlined buttons" />
-
 
 ### Badges
 
 The new [`Badge`](https://master-api.flutter.dev/flutter/material/Badge-class.html) widget can be used to give extra information, generally indicating a count or change of status, to a parent widget. They’re available in large and small sizes:
 
 <DashImage figure src="images/0SgE01KkHs1LzX0TN.webp" alt="Badge widgets attached to parent Icons" caption="Badge widgets attached to parent Icons" />
-
 
 ## Generating a color scheme
 
@@ -100,12 +94,9 @@ class MyApp extends StatelessWidget {
   }
 ```
 
-
 <DashImage figure src="images/0udIjHdleLcn1C0Ox.webp" />
 
-
 <DashImage figure src="images/0IM7o73HEWHQMgHUe.webp" alt="Color schemes and tint values generated from a seed color" caption="Color schemes and tint values generated from a seed color" />
-
 
 If you’d like to customize your color scheme further, visit the [Material generator app](https://m3.material.io/theme-builder#/custom). You can define secondary and tertiary colors to create a completely unique color palette. Best of all, it exports Dart files that you can use immediately in your Flutter app.
 

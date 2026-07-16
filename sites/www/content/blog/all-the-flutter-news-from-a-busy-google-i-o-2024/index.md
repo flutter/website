@@ -12,13 +12,11 @@ It’s hard to believe that [Google I/O 2024](https://io.google/2024/) was alrea
 
 <DashImage figure src="images/1--DvqdXSA38rPuqMK5c0tQ.webp" alt="Flutter logo illustration" caption="Flutter logo illustration" />
 
-
 We shared a lot of product updates, resources, developer stories, technical sessions, and workshops, across several blogs, videos, and events — and we know it can be tough to keep track of it all.
 
 Below, you’ll find an overview of everything we shared at Google I/O 2024, as well as updates on locations and dates for events where you might be able to connect with us and other Flutter community members at I/O Connect in Berlin, Bengaluru, Beijing, and I/O Extended events all summer long.
 
 <YoutubeEmbed id="x2WOHonEwqM" title="" fullwidth="true"/>
-
 
 ## Blog posts
 

@@ -22,7 +22,6 @@ This article helps you choose which `Navigator` pattern works best for your app,
 
 <DashImage figure src="images/17-wvbHmckKFVagnUwsQI2g.webp" />
 
-
 ## Navigator 1.0
 
 If you’re using Flutter, you’re probably using the `Navigator` and are familiar with the following concepts:
@@ -100,7 +99,6 @@ When `push()` is called, the `DetailScreen` widget is placed on top of the `Home
 
 <DashImage figure src="images/1v77nG0BRIWrOghj8fCq_EA.webp" />
 
-
 The previous screen (`HomeScreen`) is still part of the widget tree, so any `State` object associated with it stays around while `DetailScreen` is visible.
 
 ### Named routes
@@ -162,7 +160,6 @@ class DetailScreen extends StatelessWidget {
     );
   }
 }
-
 ```
 
 These routes must be predefined. Although you can [pass arguments to a named route](https://flutter.dev/docs/cookbook/navigation/navigate-with-arguments), you can’t parse arguments from the route itself. For example, if the app is run on the web, you can’t parse the ID from a route like `/details/:id`.
@@ -177,7 +174,7 @@ onGenerateRoute: (settings) {
   if (settings.name == '/') {
     return MaterialPageRoute(builder: (context) => HomeScreen());
   }
-  
+
   // Handle '/details/:id'
   var uri = Uri.parse(settings.name);
   if (uri.pathSegments.length == 2 &&
@@ -185,7 +182,7 @@ onGenerateRoute: (settings) {
     var id = uri.pathSegments[1];
     return MaterialPageRoute(builder: (context) => DetailScreen(id: id));
   }
-  
+
   return MaterialPageRoute(builder: (context) => UnknownScreen());
 },
 ```
@@ -283,7 +280,6 @@ class UnknownScreen extends StatelessWidget {
     );
   }
 }
-
 ```
 
 Here, `settings` is an instance of [`RouteSettings`](https://api.flutter.dev/flutter/widgets/RouteSettings-class.html). The name and arguments fields are the values that were provided when [`Navigator.pushNamed`](https://api.flutter.dev/flutter/widgets/Navigator/pushNamed.html) was called, or what [`initialRoute`](https://api.flutter.dev/flutter/material/MaterialApp/initialRoute.html) is set to.
@@ -306,7 +302,6 @@ The following diagram shows how the `RouterDelegate` interacts with the `Router`
 
 <DashImage figure src="images/1hNt4Bc8FZBp_Gqh7iED3FA.webp" />
 
-
 Here’s an example of how these pieces interact:
 
 1. When the platform emits a new route (for example, “books/2”) , the `RouteInformationParser` converts it into an abstract data type `T` that you define in your app (for example, a class called `BooksRoutePath`).
@@ -322,7 +317,6 @@ Here’s an example of how these pieces interact:
 This section leads you through an exercise using the Navigator 2.0 API. We’ll end up with an app that can stay in sync with the URL bar, and handle back button presses from the app and the browser, as shown in the following GIF:
 
 <DashImage figure src="images/1PYHrYurwAGyQC8vsnAaWiA.webp" />
-
 
 To follow along, [switch to the master channel](https://flutter.dev/docs/development/tools/sdk/upgrading#switching-flutter-channels), [create a new Flutter project with web support](https://flutter.dev/docs/get-started/web#create-a-new-project-with-web-support), and replace the contents of `lib/main.dart` with the following:
 
@@ -366,7 +360,6 @@ class _BooksAppState extends State<BooksApp> {
     );
   }
 }
-
 ```
 
 ## Pages
@@ -385,7 +378,7 @@ class _BooksAppState extends State<BooksApp> {
     Book('Too Like the Lightning', 'Ada Palmer'),
     Book('Kindred', 'Octavia E. Butler'),
   ];
-  
+
   // ...
 ```
 
@@ -393,27 +386,29 @@ Then in `_BooksAppState`, return a `Navigator` with a list of `Page` objects:
 
 ```dart
 @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Books App',
-      home: Navigator(
-        pages: [
-          MaterialPage(
-            key: ValueKey('BooksListPage'),
-            child: BooksListScreen(
-              books: books,
-              onTapped: _handleBookTapped,
-            ),
+Widget build(BuildContext context) {
+  return MaterialApp(
+    title: 'Books App',
+    home: Navigator(
+      pages: [
+        MaterialPage(
+          key: ValueKey('BooksListPage'),
+          child: BooksListScreen(
+            books: books,
+            onTapped: _handleBookTapped,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 void _handleBookTapped(Book book) {
-    setState(() {
-      _selectedBook = book;
-    });
-  }
+  setState(() {
+    _selectedBook = book;
+  });
+}
+
 // ...
 class BooksListScreen extends StatelessWidget {
   final List<Book> books;
@@ -452,7 +447,7 @@ pages: [
       onTapped: _handleBookTapped,
     ),
   ),
-// New:
+  // New:
   if (show404)
     MaterialPage(key: ValueKey('UnknownPage'), child: UnknownScreen())
   else if (_selectedBook != null)
@@ -469,11 +464,11 @@ Note that the `key` for the page is defined by the value of the `book` object. T
 ```dart
 class BookDetailsPage extends Page {
   final Book book;
-  
+
   BookDetailsPage({
     this.book,
   }) : super(key: ValueKey(book));
-  
+
   Route createRoute(BuildContext context) {
     return PageRouteBuilder(
       settings: this,
@@ -508,7 +503,6 @@ onPopPage: (route, result) {
 
   return true;
 },
-
 ```
 
 It’s important to check whether `didPop` fails before updating the app state.
@@ -653,7 +647,6 @@ class BookDetailsScreen extends StatelessWidget {
     );
   }
 }
-
 ```
 
 As it stands, this app only enables us to define the stack of pages in a declarative way. We aren’t able to handle the platform’s back button, and the browser’s URL doesn’t change as we navigate.
@@ -687,7 +680,6 @@ class BookRoutePath {
 
   bool get isDetailsPage => id != null;
 }
-
 ```
 
 In this app, all of the routes in the app can be represented using a single class. Instead, you might choose to use different classes that implement a superclass, or manage the route information in another way.
@@ -715,7 +707,6 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
     throw UnimplementedError();
   }
 }
-
 ```
 
 The generic type defined on `RouterDelegate` is `BookRoutePath`, which contains all the state needed to decide which pages to show.
@@ -743,15 +734,15 @@ class BookRouterDelegate extends RouterDelegate<BookRoutePath>
 In order to show the correct path in the URL, we need to return a `BookRoutePath` based on the current state of the app:
 
 ```dart
-  BookRoutePath get currentConfiguration {
-    if (show404) {
-      return BookRoutePath.unknown();
-    }
-
-    return _selectedBook == null
-        ? BookRoutePath.home()
-        : BookRoutePath.details(books.indexOf(_selectedBook));
+BookRoutePath get currentConfiguration {
+  if (show404) {
+    return BookRoutePath.unknown();
   }
+
+  return _selectedBook == null
+      ? BookRoutePath.home()
+      : BookRoutePath.details(books.indexOf(_selectedBook));
+}
 ```
 
 Next, the `build` method in a `RouterDelegate` needs to return a `Navigator`:
@@ -788,7 +779,6 @@ Widget build(BuildContext context) {
     },
   );
 }
-
 ```
 
 The `onPopPage` callback now uses `notifyListeners` instead of `setState`, since this class is now a `ChangeNotifier`, not a widget. When the `RouterDelegate` notifies its listeners, the `Router` widget is likewise notified that the `RouterDelegate's` `currentConfiguration` has changed and that its `build` method needs to be called again to build a new `Navigator`.
@@ -796,36 +786,36 @@ The `onPopPage` callback now uses `notifyListeners` instead of `setState`, since
 The `_handleBookTapped` method also needs to use `notifyListeners` instead of `setState`:
 
 ```dart
-  void _handleBookTapped(Book book) {
-    _selectedBook = book;
-    notifyListeners();
-  }
+void _handleBookTapped(Book book) {
+  _selectedBook = book;
+  notifyListeners();
+}
 ```
 
 When a new route has been pushed to the application, `Router` calls `setNewRoutePath`, which gives our app the opportunity to update the app state based on the changes to the route:
 
 ```dart
-  @override
-  Future<void> setNewRoutePath(BookRoutePath path) async {
-    if (path.isUnknown) {
-      _selectedBook = null;
+@override
+Future<void> setNewRoutePath(BookRoutePath path) async {
+  if (path.isUnknown) {
+    _selectedBook = null;
+    show404 = true;
+    return;
+  }
+
+  if (path.isDetailsPage) {
+    if (path.id < 0 || path.id > books.length - 1) {
       show404 = true;
       return;
     }
 
-    if (path.isDetailsPage) {
-      if (path.id < 0 || path.id > books.length - 1) {
-        show404 = true;
-        return;
-      }
-
-      _selectedBook = books[path.id];
-    } else {
-      _selectedBook = null;
-    }
-
-    show404 = false;
+    _selectedBook = books[path.id];
+  } else {
+    _selectedBook = null;
   }
+
+  show404 = false;
+}
 ```
 
 ### RouteInformationParser
@@ -870,7 +860,6 @@ class BookRouteInformationParser extends RouteInformationParser<BookRoutePath> {
     return null;
   }
 }
-
 ```
 
 This implementation is specific to this app, not a general route parsing solution. More on that later.
@@ -878,11 +867,11 @@ This implementation is specific to this app, not a general route parsing solutio
 To use these new classes, we use the new `MaterialApp.router` constructor and pass in our custom implementations:
 
 ```dart
-    return MaterialApp.router(
-      title: 'Books App',
-      routerDelegate: _routerDelegate,
-      routeInformationParser: _routeInformationParser,
-    );
+return MaterialApp.router(
+  title: 'Books App',
+  routerDelegate: _routerDelegate,
+  routeInformationParser: _routeInformationParser,
+);
 ```
 
 Here’s the complete example:
@@ -1144,7 +1133,6 @@ class UnknownScreen extends StatelessWidget {
     );
   }
 }
-
 ```
 
 Running this sample in Chrome now shows the routes as they are being navigated, and navigates to the correct page when the URL is manually edited.
@@ -1202,7 +1190,6 @@ class NoAnimationTransitionDelegate extends TransitionDelegate<void> {
     return results;
   }
 }
-
 ```
 
 This custom implementation overrides `resolve(`), which is in charge of marking the various routes as either pushed, popped, added, completed, or removed:

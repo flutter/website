@@ -10,11 +10,9 @@ layout: blog
 
 <DashImage figure src="images/1rV1FMqYeyrHsOvtSUIOnOA.webp" />
 
-
 Developers around the world are using Google’s Gemini models to tackle real-world challenges, and one of the most exciting applications we’ve seen is in the field of sales. Meet Prospera, winner of both *best Flutter app* and *most Useful app* in our recent [Gemini API Developer Competition](https://ai.google.dev/competition)! Created by Leon Kukuk and Max Hasenohr from Germany, Prospera is an AI-powered sales coach that provides real-time guidance and feedback during and after calls. This innovative Flutter app showcases the power of Gemini to transform how sales professionals learn and improve their skills.
 
 <YoutubeEmbed id="ZTFKbhmGcUo" title="Prospera Gemini Demo" fullwidth="true"/>
-
 
 ## Gemini API at the core: real-time analysis and multimodal magic
 

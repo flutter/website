@@ -23,22 +23,19 @@ $ flutter channel dev
 $ flutter upgrade
 ```
 
-
 Now, you need to enable web support so that Flutter can set up your app to run on the web:
 
 ```bash
 $ flutter config --enable-web
 ```
 
-
 Now, create a directory named `url_launcher_example`(let’s assume `~/url_launcher_example`), and create a Flutter project in it:
 
 ```bash
-$ mkdir “~/url_launcher_example”
-$ cd “~/url_launcher_example”
+$ mkdir "~/url_launcher_example"
+$ cd "~/url_launcher_example"
 $ flutter create .
 ```
-
 
 **Use `package:url_launcher`**
 
@@ -55,7 +52,6 @@ dependencies:
   url_launcher: 5.2.3
   # ...
 ```
-
 
 Now, replace the entire contents of `lib/main.dart` with the following:
 
@@ -106,7 +102,6 @@ Verify that the app works by running it on your Android or iOS device, or simula
 
 <DashImage figure src="images/1UTowUOvpkFW35rcuJ3Lf1w.webp" alt="URL Launcher Example app" caption="URL Launcher Example app" />
 
-
 Now, you can run the same app on the web with `flutter run -d chrome`. The app should open and render just like the mobile version, but clicking **Launch**! does nothing. Let’s start writing the web plugin for `url_launcher`.
 
 ## Creating `package:url_launcher_web`
@@ -114,10 +109,9 @@ Now, you can run the same app on the web with `flutter run -d chrome`. The app s
 Create a new directory called `url_launcher_web` (let’s assume `~/url_launcher_web`):
 
 ```bash
-$ mkdir “~/url_launcher_web”
-$ cd “~/url_launcher_web”
+$ mkdir "~/url_launcher_web"
+$ cd "~/url_launcher_web"
 ```
-
 
 Unfortunately, there is no template for web plugins currently (that is, you can’t use `flutter create`), so you’ll have to create the plugin manually. But, before you start coding, some discussion is in order about how this is actually going to be implemented.
 
@@ -230,7 +224,7 @@ In this case, we are registering a `MethodChannel` to listen for incoming messag
 
 The `MethodChannel` we created registered `handleMethodCall` as its method call handler. This means that any time the app-side `MethodChannel` (the one created in `package:url_launcher`) sends a method call to the platform-side `MethodChannel` (the one we created in `registerWith`) this method call handler is invoked.
 
-If the handler receives a method call to the `‘launch’` method, then it invokes `_launch`, which simply opens a new window with the given URL.
+If the handler receives a method call to the `'launch'` method, then it invokes `_launch`, which simply opens a new window with the given URL.
 
 ## Using the web plugin in the example app
 
@@ -246,7 +240,6 @@ dependencies:
   url_launcher_web:
     path: ../url_launcher_web
 ```
-
 
 Now, run the example app again with `flutter run -d chrome`. Try clicking the **Launch**! button. It should open google.com in a new tab.
 

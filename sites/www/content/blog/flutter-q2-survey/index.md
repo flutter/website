@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1BVNfy8-YPsP5jHKuD3P-Cg.gif" alt="Dash completes the Q2 Flutter survey!" caption="Dash completes the Q2 Flutter survey!" />
 
-
 ## Flutter Q2 survey
 
 Just a reminder! Please take the [Flutter Q2 survey](https://google.qualtrics.com/jfe/form/SV_3drKjSfjNeLZfq6?Source=Website)! The survey closes at the end of day on Friday, June 19th.

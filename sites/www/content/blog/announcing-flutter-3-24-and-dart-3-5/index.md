@@ -12,7 +12,6 @@ Today, we’re unveiling [Flutter 3.24](https://medium.com/p/6c040f87d1e4/edit) 
 
 <DashImage figure src="images/1jzRGig761LnPlvokq2FaVA.gif" />
 
-
 We kicked off [Google I/O](https://io.google/2024/) in May with an [exciting slew of updates](https://medium.com/flutter/io24-5e211f708a37), including the graduation of support for WebAssembly compilation to the stable channel, improvements to Impeller, and an early look at the future of Dart macros.
 
 The Flutter 3.24 and Dart 3.5 releases build upon our mission to help you craft stunning, performant apps that reach users across mobile, web, and desktop — all from a single, shared codebase. They include an early preview of the new Flutter GPU API, enhancements to element embedding on the web, and several exciting updates for those interested in building for the iOS ecosystem, including early support for Swift Package Manager, and updated functionality to Cupertino widgets.
@@ -27,11 +26,9 @@ We’re excited to share an early preview of the new [Flutter GPU API](https://g
 
 <DashImage figure src="images/0QC1D0LdTgLynDOnV.webp" alt="3D animation of a sci-fi space helmet rendered in flutter_scene." caption="3D animation of a sci-fi space helmet rendered in flutter_scene." />
 
-
 Given how low-level the API is, we expect a learning curve for developers who don’t have significant experience developing graphics. That’s why we’re investing in rendering packages, like the new `flutter_scene` package, which leverages the Flutter GPU API to allow importing animated glTF models and constructing 3D scenes, enabling you to easily build 3D apps and games in Flutter and Dart, like the one below.
 
 <YoutubeEmbed id="Y-DFVKPikVM" title="3D scene demo" fullwidth="true"/>
-
 
 While the Flutter GPU API offers exciting possibilities, it’s still in early preview and we might make breaking changes to the API. We recommend developing against Flutter’s main channel when using Flutter GPU. Learn more in the blog post [Introducing Flutter GPU & Flutter Scene](https://medium.com/flutter/getting-started-with-flutter-gpu-f33d497b7c11).
 
@@ -54,7 +51,6 @@ We also want to acknowledge that these releases wouldn’t be possible without c
 The impact of our collective work is showing up all over the world in incredible apps and experiences that millions of people use every day. For instance, here is a sneak peek at a [case study](https://flutter.dev/showcase/xiaomi) showing how and why a small team at a Chinese technology company, Xiaomi, used Flutter to develop a companion app for the firm’s popular new EV, the [Xiaomi SU7.](https://www.mi.com/global/discover/article?id=3263&ref=renatomitra.com)
 
 <YoutubeEmbed id="wfD7ZQhwACU" title="Xiaomi (Flutter Developer Stories)" fullwidth="true"/>
-
 
 Several other exciting examples of Flutter apps popping up all over the world:
 

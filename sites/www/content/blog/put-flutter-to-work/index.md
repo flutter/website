@@ -10,11 +10,9 @@ layout: blog
 
 <DashImage figure src="images/17pcNynupdvylRqlRdi6rPQ.webp" />
 
-
 If you’ve ever wanted to try using Flutter, but don’t want to build something from scratch, Flutter’s [add-to-app functionality](https://docs.flutter.dev/development/add-to-app) is a great place to start. To make it even easier to put Flutter to work for you, we teamed up with the Flutter team to create a sample add-to-app prototype to showcase how Flutter can be integrated into a native codebase with minimal effort. Whether you want to take Flutter for a trial run or show your team how Flutter works in a tangible way, this article is for you!
 
 <DashImage figure src="images/1gJk1B6Jqynp6QGXirf8VBQ.webp" />
-
 
 ## Adding Flutter to a native newsfeed app
 
@@ -57,20 +55,19 @@ Note that the Flutter NPS module contains Material widgets, which automatically 
 This prototype includes a few [implicit animations](https://docs.flutter.dev/development/ui/animations/implicit-animations) that are easy to adjust since they are built into the Flutter framework. For example, if you want to make changes to the `AnimatedContainer` widget, simply adjust its properties, such as the duration of the animation, the height of the container, its shape, and color.
 
 ```dart
-...
+// ...
 return AnimatedContainer(
   duration: duration,
   height: Spacing.huge,
   decoration: BoxDecoration(
     shape: BoxShape.circle,
-    color: isSelected 
-      ? NpsColors.colorSecondary 
+    color: isSelected
+      ? NpsColors.colorSecondary
       : NpsColors.colorGrey5,
   ),
-...
-)
+  // ...
+);
 ```
-
 
 The NPS module includes a custom page animation transition. Take a look at the `SlideTransition` widget for another animation example that could be customized by updating its duration and other elements.
 
@@ -84,7 +81,6 @@ SlideTransition(
 );
 ```
 
-
 If you want to take your animations to the next level, you could import the [`animations`](https://pub.dev/packages/animations) package from pub.dev and use some of the fancy, pre-built animations.
 
 ## `Theming`
@@ -93,7 +89,8 @@ It’s also simple to update the theme of the NPS module. Because it uses the bu
 
 ```dart
 class AppTheme {
-  ThemeData get theme => ThemeData(
+  ThemeData get theme =>
+      ThemeData(
         colorScheme: ColorScheme.fromSwatch(
           accentColor: NpsColors.colorSecondary,
           backgroundColor: NpsColors.colorWhite,
@@ -124,8 +121,8 @@ class AppTheme {
           bodyText2: NpsStyles.link,
         ),
       );
+}
 ```
-
 
 ## Additional features
 

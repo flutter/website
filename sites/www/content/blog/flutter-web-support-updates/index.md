@@ -24,7 +24,6 @@ Flutter was built to be unapologetically app-centric in its framework and API ch
 
 <DashImage figure src="images/1w9xtjSXgRDPcCtNJLYhzpQ.webp" alt="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." caption="[Ampstor](https://ampstor.app/): a no-code tool for building better storytelling web pages, built with Flutter’s web support." />
 
-
 [Ampstor](https://ampstor.app/) is a powerful example. The team set out to build an editing tool for building [AMP Stories](https://amp.dev/about/stories/), a new format that helps content providers create visual narratives for mobile devices. Here’s what they had to say about using Flutter on the web:
 > “As a startup that helps customers build highly-branded experiences, it’s critical that we can get to market quickly and iterate based on customer feedback. We chose Flutter because it gave us the freedom to focus on the product, not the platform itself. We’re delighted with our experiences so far and our customers love the app we’ve built.”
 
@@ -39,7 +38,6 @@ With that in mind, here is an update on what the team has been working on since 
 Fans of [Progressive Web Apps](https://web.dev/what-are-pwas/) will be delighted to know that the default Flutter template for web apps now includes support for the core features needed for an installable, offline-capable PWA app:
 
 <DashImage figure src="images/0qu7hcAYfSXorb3jx.webp" alt="The Flutter “counter” template app, running as a PWA on macOS." caption="The Flutter “counter” template app, running as a PWA on macOS." />
-
 
 Notice that this looks like a normal desktop app, but it’s really a Flutter web app that’s been installed into the browser as a PWA. You can see the difference with the added icon buttons in the title bar, which exposes Chrome functionality. Flutter-based PWAs can be [installed in the same way as any other web-based PWA](https://web.dev/install-criteria/); the settings signaling that your Flutter app is a PWA are provided by `manifest.json`, which is produced by `flutter create` in the `web/` subfolder.
 
@@ -73,16 +71,13 @@ Configure your project to [run on the web](https://flutter.dev/docs/get-started/
 
 <DashImage figure src="images/0K0gsPz3gj7SVvjr1.webp" />
 
-
 Set a breakpoint and start debugging. Try expression evaluation in the debug console using the expression evaluation box as shown below. Additionally, you can use the watch window or hover over variables to evaluate your code using expressions.
 
 <DashImage figure src="images/0Zg-bAhzitlDDVU9e.webp" />
 
-
 You can also try setting conditional breakpoints using expressions:
 
 <DashImage figure src="images/0hWsTPLh33YwdFhYG.webp" />
-
 
 ### Testing
 
@@ -110,7 +105,6 @@ At [Flutter Interact](https://g.co/FlutterInteract) last year, we announced that
 
 <DashImage figure src="images/19FIv19QYzuwBQ-4Hx3EkGA.webp" alt="The Flutter Gallery app, running as a PWA on Windows." caption="The Flutter Gallery app, running as a PWA on Windows." />
 
-
 Stay tuned for an upcoming blog series that will share more about what we’ve learned, as well as best practices for optimizing your Flutter app for performance. Until then, check out the updated [Flutter Gallery app](https://gallery.flutter.dev) for yourself.
 
 ### Rendering improvements with CanvasKit
@@ -130,10 +124,9 @@ We believe that both DomCanvas and CanvasKit offer advantages in different scena
 By default, Flutter’s web support uses DomCanvas, but you can enable the CanvasKit rendering engine with this command:
 
 ```bash
-flutter run -d chrome --release 
+flutter run -d chrome --release
             --dart-define=FLUTTER_WEB_USE_SKIA=true
 ```
-
 
 One word of caution: the CanvasKit engine still has a few rough edges; for early adopters who are putting Flutter into production, the DomCanvas engine offers the greatest stability.
 

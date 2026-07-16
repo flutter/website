@@ -18,7 +18,6 @@ Overall, 92% of respondents said that they are positively satisfied with Flutter
 
 <DashImage figure src="images/0m2ihVMc99emY4hQY.webp" />
 
-
 ## Open-ended questions
 
 The survey had two open-ended questions:

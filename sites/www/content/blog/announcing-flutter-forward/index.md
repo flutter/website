@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/02u_pjVJlgpQw4XHy.webp" />
 
-
 Tune in for **Flutter Forward**, the next global Flutter event, streaming live from Nairobi, Kenya on January 25, 2023.
 
 [Registration is now open!](https://rsvp.withgoogle.com/events/flutter-forward-2022-virtual/forms/registration)

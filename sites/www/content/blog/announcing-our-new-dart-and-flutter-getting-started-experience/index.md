@@ -16,7 +16,6 @@ Today, we’ve landed something that we think improves the lives of those future
 
 <DashImage figure src="images/1rHBScksI6g6at1HsqSuPhA.webp" />
 
-
 ## What we built
 
 The Getting Started experience is a multi-disciplinary learning pathway for programmers who don’t yet know anything about Dart or Flutter. It spans both the Dart and Flutter websites, and combines written tutorials, video series, quizzes, and documentation to take you from setting up Flutter to building a handful of apps designed to teach the fundamentals.
@@ -29,7 +28,6 @@ Since the release of hot reload on the web, Flutter learners can have the full F
 
 <DashImage figure src="images/18VqmXOFJbmKgq41H5VzzoQ.webp" />
 
-
 The [Dart tutorial](https://dart.dev/learn) was designed to lead into the Flutter tutorial, but they aren’t dependent on one another. If you’re already confident using a different modern, object-oriented language, you’re free to jump straight into the Flutter tutorial.
 
 ### Four apps that you’ll build from scratch.
@@ -37,7 +35,6 @@ The [Dart tutorial](https://dart.dev/learn) was designed to lead into the Flutte
 Of all the design questions we asked ourselves, we spent the most time thinking about what the reader will actually build. Will it be one giant app, several discreet cookbook recipe-like pieces of Flutter code, or something in between?
 
 <DashImage figure src="images/1OqwtegPVcDWjkuE4Xw8BMQ.webp" />
-
 
 Ultimately, we came to the conclusion that smaller apps provide a better experience for new learners for a few reasons:
 
@@ -59,20 +56,17 @@ To that end, we use the videos as a way to teach Flutter, but also to introduce 
 
 <DashImage figure src="images/1r-HMeY-tNkR80DbyIzOFTg.webp" />
 
-
 ### Small quizzes throughout to confirm what you’ve learned.
 
 We added simple quizzes at the end of each tutorial page. They’re low-stakes and non-blocking. They exist only to give you a bit of feedback and confidence. If you don’t like ’em, skip ‘em!
 
 <DashImage figure src="images/1Ina6wQU6mBfspHKrfB3VHw.webp" />
 
-
 ### The existing How Flutter Works YouTube series as a conclusion.
 
 We cap the learning tutorial off with Craig Labenz’s fantastic video series, released a few months ago, called ‘How Flutter Works’. This series teaches you the inner workings of Flutter with just enough depth that it’s still approachable, yet upgrades your ability to write Flutter apps. This is must-learn knowledge on the way to becoming an advanced Flutter developer.
 
 <DashImage figure src="images/1gyhT6-IMAj4pb1-wNGPxaQ.webp" />
-
 
 ## Website updates
 
@@ -81,7 +75,6 @@ This tutorial is shipping alongside several updates to the Dart and Flutter webs
 As a reader, the most noticeable update is the separation of the main docs articles and the [Learn](https://docs.flutter.dev/learn) section of the website. The learn section of the site is reached by clicking on the Learn button in the site’s header navigation, as seen in this screenshot:
 
 <DashImage figure src="images/1BM-6gIW7qi51ojLzOQWFBw.webp" />
-
 
 The Learn section is where we’ll organize all existing and future tutorial-style documentation and articles, in order to keep the main docs easier to navigate. In the header navigation the main docs can be reached with the “User Guides” button (or by clicking the site title).
 

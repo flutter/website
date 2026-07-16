@@ -1,7 +1,6 @@
 ---
 title: "Gemini in Android Studio now speaks fluent Flutter!"
-description: "By Ander Dobo, Product Manager, Flutter & 
-Sandhya Mohan, Product Manager, Gemini in Android Studio"
+description: "By Ander Dobo, Product Manager, Flutter & Sandhya Mohan, Product Manager, Gemini in Android Studio"
 publishDate: 2025-05-20
 author: anderdobo
 image: images/151UZbL3Qb7BGDEuujTTg6A.gif
@@ -9,7 +8,7 @@ category: announcement
 layout: blog
 ---
 
-**By Ander Dobo, Product Manager, Flutter & 
+**By Ander Dobo, Product Manager, Flutter &
 Sandhya Mohan, Product Manager, Gemini in Android Studio**
 
 We’re thrilled to announce a major leap forward for Flutter developers creating Android apps in Android Studio. **Gemini in Android Studio now offers first-class support for Dart and Flutter development!** This means that you can leverage the power of Gemini directly within your favorite IDE to build beautiful, high-performance Flutter apps faster and easier than ever before.
@@ -32,7 +31,6 @@ This isn’t just generic AI assistance. Gemini in Android Studio recognizes Dar
 
 <DashImage figure src="images/151UZbL3Qb7BGDEuujTTg6A.gif" />
 
-
 *Explaining Code with Gemini in Android Studio*
 
 We’ve seen incredible progress in AI’s ability to understand and generate code, and we’re excited to bring these capabilities to the vibrant Flutter community in Android Studio. Our goal is for Gemini to provide relevant, accurate, and helpful assistance throughout the entire development lifecycle. Key features include:
@@ -46,7 +44,6 @@ We’ve seen incredible progress in AI’s ability to understand and generate co
 * **Prompt Library:** Access and create a library of your common Flutter-specific prompts for Gemini in Android Studio.
 
 <DashImage figure src="images/0zs4BmQVfpjV5cawH.webp" />
-
 
 *Using the Prompt Library*
 

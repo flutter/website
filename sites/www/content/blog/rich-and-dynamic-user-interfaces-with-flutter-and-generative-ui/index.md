@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/12R8k2Qbswy4G7h3yYIyk1A.webp" alt="Introducing the GenUI SDK for Flutter" caption="Introducing the GenUI SDK for Flutter" />
 
-
 ## Rich and dynamic user interfaces with Flutter and generative UI
 
 We’re thrilled to introduce GenUI SDK for Flutter, now available in alpha on [pub.dev](https://pub.dev/packages/genui). This new SDK for Flutter helps you generate dynamic, personalized UI with Gemini (or other LLMs) to significantly improve the usability and satisfaction of your GenAI and agent-based user experiences, which also adheres to your established brand guidelines and using your own widget catalog.
@@ -19,7 +18,6 @@ Today’s app users expect not only beautiful and fast UIs, but also more dynami
 
 <DashImage figure src="images/1yZgCoXy4aivZfEjgTJMOrA.webp" alt="From traditional chatbots to dynamic, interactive, graphical experiences" caption="From traditional chatbots to dynamic, interactive, graphical experiences" />
 
-
 A great example of a powerful generative UI experience built with Flutter and Gemini is the new experimental [visual layout](https://blog.google/products/gemini/gemini-3-gemini-app/) feature in the Gemini app ([App Store](https://apps.apple.com/us/app/google-gemini/id6477489729), [Play Store](https://play.google.com/store/apps/details?id=com.google.android.apps.bard&hl=en_US)), rolling out today. It generates an immersive, magazine-style view of the information, complete with photos and modules. These generative elements don’t just look great; they are interactive and help you further customize the experience. Gemini’s new visual layout feature inspired us to build the GenUI SDK for Flutter, so that anyone can also build the same kinds of dynamic, interactive, generative experiences.
 
 ## How does GenUI SDK for Flutter work?
@@ -27,7 +25,6 @@ A great example of a powerful generative UI experience built with Flutter and Ge
 At its core, the GenUI SDK for Flutter is an orchestration layer. It coordinates the flow of information between your user, your Flutter widgets, and an AI agent, transforming text-based conversations into rich, interactive experiences.
 
 <DashImage figure src="images/1hxPwEhX6gYuF8CO2lGydkg.webp" />
-
 
 1. **The app sends a request:** The user provides a prompt (for example, “Help me plan a trip to Tokyo!”). Your app calls your AI agent with the prompt and additional information about the catalog of widgets it can use and compose together in response.
 
@@ -42,7 +39,6 @@ This loop enables you to move beyond simple text responses. By defining your own
 For a more detailed explanation and walkthrough of the GenUI SDK for Flutter, check out the following video:
 
 <YoutubeEmbed id="nWr6eZKM6no" title="Getting started with GenUI" fullwidth="true"/>
-
 
 ### The UI protocol under the covers
 
@@ -65,7 +61,6 @@ To make it easy for your coding agent to build with the GenUI SDK for Flutter, w
 The [flutter/genui repo](https://github.com/flutter/genui) has sample apps that you can use to give you a good starting point for building GenUI experiences. The following video shows the [Landscape design app](https://github.com/flutter/genui/tree/main/examples/verdure) , which gives you an example of a Flutter client interacting with a Python-based server using A2A (Agent-to-Agent) and ADK, with UI generated dynamically by the AI agent. In this demo app, the user can upload a picture of their yard, Gemini analyzes it, and then through the GenUI SDK for Flutter provides a custom UI for the user to enter their constraints and requirements for updating their yard’s landscaping. Once the user inputs their preferences, then they would see a result that takes into account their selections. This app demonstrates how a GenUI-based experience improves the collaboration between human and agent.
 
 <DashImage figure src="images/1fvTGsrJGfrH1JCeBnMyHVA.webp" alt="Landscape design app demo" caption="Landscape design app demo" />
-
 
 ## What’s coming next?
 

@@ -14,7 +14,6 @@ There are many ways that mobile app developers get paid for their work. Monetizi
 
 <DashImage figure src="images/10kWrLLh_g2Ywwgcs_iAL-w.webp" />
 
-
 ## Inline Banner and Native Ads
 
 As the name suggests, inline banner ads let you integrate an ad unit as a part of the Flutter view, instead of overlaying the banner on top of the UI. Similarly, native ads allow you to design an ad experience that feels like a natural part of your app content. Some developers let us know that the lack of inline banner and native ads would hinder their ability to create beautiful and natural ads experiences, and others indicated that not having these features could potentially block them from adopting Flutter into their applications.

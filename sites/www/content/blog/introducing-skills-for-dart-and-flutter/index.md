@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1-cp6K90CIG7efKBLyiZ_jw.webp" alt="Introducing prepackaged Dart and Flutter Skills!" caption="Introducing prepackaged Dart and Flutter Skills!" />
 
-
 ## Introducing Skills for Dart and Flutter
 
 ### Improving AI with domain expertise
@@ -44,7 +43,6 @@ npx skills add flutter/skills - skill '*' - agent universal
 npx skills add dart-lang/skills - skill '*' - agent universal
 ```
 
-
 You will be asked to select the Skills you want to install. Pick all or select the specific ones you might find most useful.
 
 Then choose the agent that you prefer to develop with.
@@ -59,7 +57,6 @@ Configures Flutter Driver for app interaction and converts MCP actions into perm
 Add an integration test for the checkout flow in my app
 ```
 
-
 **Skill #2**: `flutter-setup-localiztion`
 
 Adds localization support to your Flutter project
@@ -67,7 +64,6 @@ Adds localization support to your Flutter project
 ```plaintext
 Set up localization in my app
 ```
-
 
 **Skill #3**: `flutter-build-responsive-layout`
 
@@ -77,7 +73,6 @@ Uses `LayoutBuilder`, `MediaQuery`, or `Expanded`/`Flexible` to create a layout 
 Ensure that the checkout screen uses repsonsive layout
 ```
 
-
 **Skill #4**: `dart-use-pattern-matching`
 
 Refactors code to use Dart’s pattern matching language capabilities where appropriate
@@ -86,7 +81,6 @@ Refactors code to use Dart’s pattern matching language capabilities where appr
 Refactor my code so that it uses pattern matching where possible
 ```
 
-
 **Skill #5**: `dart-collect-coverage`
 
 Uses the `coverage` package to collect unit test coverage and generate an LCOV report.
@@ -94,7 +88,6 @@ Uses the `coverage` package to collect unit test coverage and generate an LCOV r
 ```plaintext
 Collect test coverage for my project
 ```
-
 
 For more prompt examples, check out the readme [Flutter Skills](https://github.com/flutter/skills) or [Dart Skills](https://github.com/dart-lang/skills) repositories on GitHub.
 

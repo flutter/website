@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1OMkiWPCxgYijkAvNn-e3MA.webp" />
 
-
 As an open source project, we believe that we serve our customers best when we are transparent about our roadmap.
 
 For developers who adopt a technology like Flutter, it’s not enough for a product to merely offer a useful set of features. A dependency on Flutter is also a long-term commitment to maintain a skillset and codebase. For that reason, it’s important that we articulate a vision and direction that is compelling and realistic. We hope that sharing more about why we (Google) invest in Flutter will give you greater trust in our future and direction, and allow you to plan with better clarity as to how your investments might connect or supplement ours.

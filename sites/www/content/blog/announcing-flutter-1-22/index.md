@@ -46,13 +46,11 @@ One such feature is updated support for iOS’s new SF Symbols font, which inspi
 
 <DashImage figure src="images/0ZGKu3IhnPNp6fS_e.webp" />
 
-
 You can see the complete list of icons on the [`cupertino_icons`](https://flutter.github.io/cupertino_icons/) preview page and [a migration detail page on flutter.dev](https://flutter.dev/docs/release/breaking-changes/cupertino-icons-1.0.0).
 
 Another feature for you to try with Flutter on iOS 14 is [App Clips](https://developer.apple.com/app-clips/), a new iOS 14 feature that supports quick, no-install app executions of lightweight versions of apps under 10MB. In Flutter version 1.22, we have a preview of App Clip targets built with Flutter.
 
 <DashImage figure src="images/08MER4IM-IEt2ye2a.webp" alt="A Flutter-powered App Clip experience" caption="A Flutter-powered App Clip experience" />
-
 
 For more details on how to build App Clips with Flutter, check out [the docs on flutter.dev](https://flutter.dev/docs/development/platform-integration/ios-app-clip). You could also consult this [simple sample project](https://github.com/flutter/samples/tree/master/ios_app_clip).
 
@@ -64,13 +62,11 @@ Firstly, Flutter now supports exposing the safe insets of Android notches, cutou
 
 <DashImage figure src="images/0lPO4ueKwxvV0QP_I.webp" />
 
-
 By using the [`MediaQuery`](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html) and [`SafeArea`](https://api.flutter.dev/flutter/widgets/SafeArea-class.html) APIs, you can ensure that you’re placing active UI and interactive elements in the non-obstructed regions of the device’s display. Also, you’ll want to avoid gesture detectors in the waterfall edge area that may be prone to accidental touches.
 
 Secondly, the animation is synchronized with Android 11 as it displays the software keyboard.
 
 <DashImage figure src="images/0DFRjYzbqIc5kOoDm.webp" alt="See the position animation of the FAB" caption="See the position animation of the FAB" />
-
 
 Issue [#19279](https://github.com/flutter/flutter/issues/19279) has been a long-standing problem where the system keyboard show/hide animation isn’t synchronized with Flutter’s inset. This is fixed for Android 11.
 
@@ -80,7 +76,7 @@ If you’re still using the Android v1 API, here’s what this means for you:
 
 * Newly created plugins will no longer target the v1 APIs
 
-* The Flutter tool’s `—no-enable-android-embedding-v2` config flag has been removed and is now the default behavior
+* The Flutter tool’s `--no-enable-android-embedding-v2` config flag has been removed and is now the default behavior
 
 * Older applications still using the v1 APIs will show a deprecation warning during build that points to the [Supporting the new Android plugins APIs](https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration) docs
 
@@ -90,7 +86,6 @@ Meanwhile, if you still have a Flutter application based on v1 Android APIs, it 
 
 <DashImage figure src="images/1crNLxg7CCtlQkB4mLI_ErA.webp" alt="A new universe of Material Design buttons" caption="A new universe of Material Design buttons" />
 
-
 Existing Flutter buttons look good but can be [hard to use](https://flutter.dev/go/material-button-system-updates), especially when you need custom theming. Furthermore, the Material specification has expanded to include new buttons with new styles.
 
 To keep Flutter up to date with Material guidelines, we’re happy to announce a whole new “universe” of buttons in Flutter 1.22.
@@ -99,7 +94,6 @@ Rather than try and evolve the existing button classes and their theme in-place,
 
 <DashImage figure src="images/1di6uPEKEsRHoFtRryHeWPg.webp" />
 
-
 The new themes follow the “normalized” pattern that Flutter has recently adopted for new Material widgets. If you’d like to play with a demo, there’s [a great one here on DartPad](https://dartpad.dev/e560e1c2e4455ad53aac245079ccdcf2). This is not a breaking change as the semantics of `FlatButton`, `OutlineButton`, `RaisedButton`, `ButtonBar`, `ButtonBarTheme`, and `ButtonTheme` won’t change. You can mix and match the old buttons with the new. as you prefer.
 
 ## New internationalization and localization support
@@ -107,7 +101,6 @@ The new themes follow the “normalized” pattern that Flutter has recently ado
 Flutter has provided the core functionality you need for the internationalization (i18n) and localization (l10n) of your apps since Flutter’s inception. However, with this release, we’ve baked our opinions of best practices into our tools, even enabling hot reload support to update your app as you add new l10n information.
 
 <DashImage figure src="images/0UBVlGmhw5NUWbg5I.webp" />
-
 
 If you’d like more details about Flutter’s support for l10n, including localized messages, messages with parameters, dates, numbers, and currencies, [read the Flutter Internationalization User Guide](https://flutter.dev/go/i18n-user-guide).
 
@@ -121,7 +114,6 @@ Here on the Flutter team, we are often cautious about labeling something as “p
 
 <DashImage figure src="images/0luz0EiazQQqsAEC4.webp" alt="webview_flutter plugin hosting flutter.dev" caption="webview_flutter plugin hosting flutter.dev" />
 
-
 In Flutter 1.22, we’ve added an alternative Platform Views implementation that fixes [all known keyboard, and accessibility issues for Android views](https://github.com/flutter/flutter/issues/61133). Also, it works with Android API level 19 and above (it used to require level 20). We have also made threading improvements on iOS that make platform views more efficient and more robust (and no longer requires you to add the `io.flutter.embedded_views_preview` flag to your iOS `Info.plist`).
 
 The `webview_flutter` plugin supports the new Android Platform Views mode but currently it needs to be [enabled manually](https://github.com/flutter/plugins/blob/master/packages/webview_flutter/README.md#android). We’ll enable it by default in future versions once it’s gotten more use in the wider community.
@@ -134,7 +126,6 @@ If you’ve used [navigation](https://flutter.dev/docs/development/ui/navigation
 
 <DashImage figure src="images/0OVbaUaMkAXrpLQCy.webp" />
 
-
 The two screens could be implemented like so:
 
 ```dart
@@ -142,7 +133,7 @@ class ColorListScreen extends StatelessWidget {
  final List<Color> colors;
  final void Function(Color color) onTapped;
  ColorListScreen({this.colors, this.onTapped});
- 
+
  @override
  Widget build(BuildContext context) => Scaffold(
        appBar: AppBar(title: Text('Colors')),
@@ -160,11 +151,11 @@ class ColorListScreen extends StatelessWidget {
        ),
      );
 }
- 
+
 class ColorScreen extends StatelessWidget {
  final Color color;
  const ColorScreen({this.color});
- 
+
  @override
  Widget build(BuildContext context) => Scaffold(
        appBar: AppBar(title: Text('Color')),
@@ -178,7 +169,7 @@ Using the simplest Navigator 1.0 style allows you to navigate between these two 
 ```dart
 class _ColorAppState extends State<ColorApp> {
  List<Color> _colors = [Colors.red, Colors.green, Colors.blue];
- 
+
  @override
  Widget build(BuildContext context) => MaterialApp(
        title: 'Color App',
@@ -194,7 +185,6 @@ class _ColorAppState extends State<ColorApp> {
        ),
      );
 }
-
 ```
 
 The call to `Navigator.push()` is all that’s needed to push another page on top of the first one, creating a stack of two pages. However, unlike the list of `Containers` created in the build method of the `ColorListScreen`, that stack is hidden from you. And because it’s hidden, it’s hard to manage for other scenarios, like handling deep linking with an initial route provided by a native embedding, for example, or a URL from the web or intent from Android. It’s also exceedingly difficult to manage nested routing between different arrangements of the same page.
@@ -202,34 +192,32 @@ The call to `Navigator.push()` is all that’s needed to push another page on to
 Navigator 2.0 solves these problems and more by making the stack of pages visible. Here’s an updated example of navigating between the same `ColorListScreen` and `ColorScreen`:
 
 ```dart
-
 class _ColorAppState extends State<ColorApp> {
- Color _selectedColor;
- List<Color> _colors = [Colors.red, Colors.green, Colors.blue];
- 
- @override
- Widget build(BuildContext context) => MaterialApp(
-       title: 'Color App',
-       home: Navigator(
-           // you can see and decide on every page in this list
-         pages: [
-           MaterialPage(
-             child: ColorListScreen(
-               colors: _colors,
-               onTapped: (color) => setState(() => _selectedColor = color),
-             ),
-           ),
-           if (_selectedColor != null) MaterialPage(child: ColorScreen(color: _selectedColor)),
-         ],
-         onPopPage: (route, result) {
-           if (!route.didPop(result)) return false;
-           setState(() => _selectedColor = null);
-           return true;
-         },
-       ),
-     );
-}
+  Color _selectedColor;
+  List<Color> _colors = [Colors.red, Colors.green, Colors.blue];
 
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+    title: 'Color App',
+    home: Navigator(
+      // You can see and decide on every page in this list:
+      pages: [
+        MaterialPage(
+          child: ColorListScreen(
+            colors: _colors,
+            onTapped: (color) => setState(() => _selectedColor = color),
+          ),
+        ),
+        if (_selectedColor != null) MaterialPage(child: ColorScreen(color: _selectedColor)),
+      ],
+      onPopPage: (route, result) {
+        if (!route.didPop(result)) return false;
+        setState(() => _selectedColor = null);
+        return true;
+      },
+    ),
+  );
+}
 ```
 
 The app explicitly creates a `Navigator` and gives it a list of pages that represents the complete stack. We create an empty `_selectedColor` to indicate that no color has yet been selected, so we don’t show the `ColorScreen` initially. When the user selects a color, we call `setState()` as normal to indicate to Flutter that you’d like the `build()` method called again, which now creates a stack with the `ColorScreen` on top.
@@ -262,9 +250,9 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      body: Center(child: Text('${_counter.value}')),
-      floatingActionButton: FloatingActionButton(onPressed: _incrementCounter),
-    );
+    body: Center(child: Text('${_counter.value}')),
+    floatingActionButton: FloatingActionButton(onPressed: _incrementCounter),
+  );
 }
 
 ```
@@ -272,7 +260,6 @@ class CounterState extends State<RestorableCounter> with RestorationMixin {
 Briefly, each widget gets a storage bucket, which is registered with the [`RestorationMixin`](https://api.flutter.dev/flutter/widgets/RestorationMixin-mixin.html) using a unique ID. By using a [`RestorableProperty`](https://master-api.flutter.dev/flutter/widgets/RestorableProperty-class.html) type (like `RestorableInt` used here) to store the UI-specific data, and by registering that data with the State Restoration feature, the data is automatically stored before Android kills the app, and restored when it’s brought back to life. And that’s it. Any data that’s stored in a `Restoration*` type, like `RestorableInt`, `RestorableString` and `RestorableTextEditingController` (we’ve got a bunch of them) will be restored. And if we don’t cover all of the types you’d like to have restored, you can create your own by extending [`RestorableProperty<T>`](https://api.flutter.dev/flutter/widgets/RestorableProperty-class.html).
 
 <DashImage figure src="images/01298qhTKz_FjPuRN.webp" />
-
 
 For automated testing of state restoration, we’ve added [a new `restartAndRestore` API to WidgetTester](https://api.flutter.dev/flutter/flutter_test/WidgetTester/restartAndRestore.html). And to test manually, the easiest thing to do is to start your state restoration-enabled Flutter app on an Android device, enable “Don’t keep activities” in Android’s developer settings, run your Flutter app, put it into the background, and then return to it. At this point, Android will have killed and restored your app, so you can see if everything is working as you expect.
 
@@ -301,14 +288,13 @@ Dart historically has had many smaller developer tools (such as `dartfmt` for fo
 
 <DashImage figure src="images/19pvyafhpaMEMhJfLVsz1JQ.webp" />
 
-
 Starting with today’s Flutter 1.22 SDK, you will find that the `<flutter-sdk>/bin` folder (which you likely have in your `PATH`) contains both `flutter` and `dart` commands. For more details, see the [Dart 2.10 blog post](https://medium.com/@mit.mit/announcing-dart-2-10-350823952bd5).
 
 ## App size analysis tool
 
 The tooling released as part of Flutter 1.22 includes a new output size analysis utility. This tool helps diagnose Flutter whether the breakdown of your app’s size changes over time.
 
-You can use the tool to gather the data necessary for analysis by passing an`--analyze-size` flag to any of the following commands:
+You can use the tool to gather the data necessary for analysis by passing an `--analyze-size` flag to any of the following commands:
 
 * `flutter build apk`
 
@@ -326,11 +312,9 @@ Using this flag while building a Flutter output artifact prints a summary of the
 
 <DashImage figure src="images/0vfMD0AQZUOUwzfZ4.webp" alt="Example breakdown of the Flutter Gallery’s release APK" caption="Example breakdown of the Flutter Gallery’s release APK" />
 
-
 This summary is helpful in quickly identifying hotspots in the application’s package size usage. In addition, the gathered data is also available as a JSON file for use in Dart DevTools, which allows you to further explore your app’s contents, pinpoint size issues and see changes between two different JSON files by following [the instructions on flutter.dev](https://flutter.dev/docs/development/tools/devtools/app-size). Once you load the JSON file, you’ll have an interface that gives you a tree map view of your app’s size.
 
 <DashImage figure src="images/0gA2waLDAyITCzD7K.webp" alt="An example APK breakdown in Dart DevTools" caption="An example APK breakdown in Dart DevTools" />
-
 
 For more details of the things you can do with the App Size tool, read [the Using the app size tool docs](https://flutter.dev/docs/development/tools/devtools/app-size) on flutter.dev.
 
@@ -340,13 +324,11 @@ Another DevTools preview feature in this release is the ability to see HTTP and 
 
 <DashImage figure src="images/0-FukCwELl9DLlefP.webp" />
 
-
 To enable this feature, make sure you’re on the Flutter dev channel via `flutter channel dev` and `flutter channel upgrade`.
 
 In addition, for apps with lots of network traffic, we’ve provided the ability to search and filter.
 
 <DashImage figure src="images/0k-fEpOpbV_MiX9Fn.webp" />
-
 
 For the **Network** tab docs, see [Using the Network View](https://flutter.dev/docs/development/tools/devtools/network) on flutter.dev.
 
@@ -356,7 +338,6 @@ For a while now, we’ve been maintaining two copies of some of our Flutter tool
 
 <DashImage figure src="images/0RQZ-EVyFP1-BqBIX.webp" />
 
-
 Notice the addition of the Layout Explorer, which you can use right next to your code. To toggle this option on, go to **Preferences** &gt; **Languages & Frameworks** &gt; **Flutter** &gt; **Enable embedded DevTools inspector**.
 
 ## Improved output linking in Visual Studio Code
@@ -364,7 +345,6 @@ Notice the addition of the Layout Explorer, which you can use right next to your
 A regular activity that all Flutter developers face is going from the error output in the terminal or in their stack traces. In the most recent release of the Flutter extension for Visual Studio Code, these links are now properly parsed for you to enable links directly from the output.
 
 <DashImage figure src="images/0prigrwpp7gE6ChCE.webp" />
-
 
 It seems like a small thing, but initial feedback is already very positive on this feature.
 

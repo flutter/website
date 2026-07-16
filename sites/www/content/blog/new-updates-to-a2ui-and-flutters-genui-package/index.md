@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1yPatUacknopOAVF_Vr86OA.webp" />
 
-
 Generative UI, or GenUI for short, is a user experience pattern in which an agent not only generates content, but also makes decisions about how that content should be displayed and made interactive for the user. For Flutter developers, implementing GenUI means using A2UI, an open protocol that defines a way for agents and clients (or “renderers”) to collaborate on the composition and state of a user interface. To capitalize on this, the Flutter team built genui, a package that uses A2UI to connect with an agent and provide it with a catalog of widgets to use, and then presents those widgets to the user.
 
 Both the `genui` package and the A2UI protocol recently got an update!
@@ -55,7 +54,6 @@ final conversation = GenUiConversation(
 );
 ```
 
-
 **The new way:**
 
 ```dart
@@ -93,7 +91,6 @@ late final adapter = A2uiTransportAdapter(
 );
 ```
 
-
 You might look at those two examples and think, “Wait, shouldn’t API improvements mean I have to write *less* code rather than more?” It’s true that previously this bit of “wiring” code for connecting with the agent was included in the `genui` package, tucked away in a `ContentGenerator` class, but the new approach has some concrete advantages:
 
 * Without the requirement of a `ContentGenerator`, you can set your agent up the way you like, hold it in memory where you prefer, and manage its lifecycle. You can also use nearly any AI source you’d like without waiting for a package update with a new `ContentGenerator`.
@@ -123,7 +120,6 @@ final promptBuilder = PromptBuilder.chat(
 );
 ```
 
-
 Once set up, your app can retrieve a String version of the prompt using `promptBuilder.systemPrompt`, and then pass that value to the LLM.
 
 ## Protocol & schema adjustments
@@ -132,9 +128,9 @@ If your code manually constructs A2UI JSON or relies on specific payload structu
 
 * **Surface creation:** `beginRendering` is now `createSurface`.
 
-* **Flat component definitions:** Instead of nested keys (such as `{“Text”: {“text”: “Hello”}}`), components now use a flat discriminator: `{“component”: “Text”, “text”: “Hello”}`.
+* **Flat component definitions:** Instead of nested keys (such as `{"Text": {"text": "Hello"}}`), components now use a flat discriminator: `{"component": "Text", "text": "Hello"}`.
 
-* **Data binding:** Bindings are simplified. Use `{ “path”: “/path/to/var” }` for path resolution.
+* **Data binding:** Bindings are simplified. Use `{ "path": "/path/to/var" }` for path resolution.
 
 **Property renames:**
 

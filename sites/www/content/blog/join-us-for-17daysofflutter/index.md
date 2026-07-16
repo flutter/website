@@ -10,7 +10,6 @@ layout: blog
 
 <DashImage figure src="images/1cKk9QrcolzFfqB2ZWyUxSQ.webp" alt="Banner for #17DaysOfFlutter" caption="Banner for #17DaysOfFlutter" />
 
-
 Happy 2023!
 
 Why not celebrate the new year by leveling up your Flutter skills? Starting January 9th, and leading up to our [Flutter Forward event](https://flutter.dev/events/flutter-forward) on January 25th, we’ll be hosting 17 Days of Flutter, a Flutter content marathon unveiling brand new content on Monday through Friday from our Flutter experts. Plus, a chance to apply what you learn and share your work with the Flutter community. Whether you’re just starting out with Flutter, or you’re a seasoned Flutter pro, we have new YouTube videos, codelabs, live events, and other curated content to help you along your learning journey.
@@ -34,6 +33,5 @@ Get involved in the Flutter community by sharing your own game! Starting January
 Be sure to follow [@FlutterDev](https://twitter.com/flutterdev) on Twitter, to get updates about #17DaysOfFlutter.
 
 <YoutubeEmbed id="hpgkrUPRBjc" title="17 days of Flutter!" fullwidth="true"/>
-
 
 (Why 17DaysOfFlutter? Someone on the Flutter team decided to kick off Flutter Forward on a Wednesday, and we wanted at least two full weeks of content!)

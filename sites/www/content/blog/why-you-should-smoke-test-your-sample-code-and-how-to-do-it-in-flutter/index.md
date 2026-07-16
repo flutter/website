@@ -12,7 +12,6 @@ layout: blog
 
 <DashImage figure src="images/1khKciHLLdyG1gIY3qmwbLw.webp" />
 
-
 When learning any new technology, sooner or later developers want to look at sample code. Not just a few lines, either. Often, they want to see a whole project and how it’s assembled.
 
 That, by itself, means that any library, framework or SDK needs to maintain a number of sample apps. But there’s more.
@@ -26,7 +25,6 @@ With any sufficiently-complex technology, the developer first wants to see some 
 For the author of the samples, that means a lot of self-contained little apps. Which in turn means many code repositories. And any of these can (and will) get out of date, sooner or later.
 
 <DashImage figure src="images/1TLJOrUTMNXDYLtEHhpk0fg.jpeg" />
-
 
 You don’t want sample code to go out of date. For a developer, there are few things more frustrating than getting excited about a new technology, trying to run a sample app, and seeing it fail.
 
@@ -55,7 +53,6 @@ Many teams do this, and you can probably imagine how that goes, or at least how 
 For strongly typed languages, this is already way better than the previous option. But static analysis doesn’t catch all breakages. An app with no static errors can still fail to build, or crash at runtime.
 
 <DashImage figure src="images/1bRHZis_QLJmRF-ieQUVlCg.jpeg" />
-
 
 ### Full unit testing in CI
 
@@ -105,7 +102,6 @@ My point is that, for a sample app, smoke test is often all you need.
 
 <DashImage figure src="images/1KfSxgSjmEBFAJQwExa18hA.jpeg" />
 
-
 ## Smoke-testing Flutter sample apps on Travis CI
 
 The good news is that Flutter provides a really good testing framework: [flutter.io/testing](https://flutter.io/testing/). It has capabilities and convenience features for unit tests, widget tests, and integration tests.
@@ -128,13 +124,11 @@ testWidgets('smoke test', (WidgetTester tester) async {
 });
 ```
 
-
 This test runs completely headless, and, on my work laptop, it completes in 50 milliseconds. Yet it simulates the whole Flutter framework.
 
 Just for fun, try to run it as a full app (`flutter run test/smoke_test.dart` instead of the usual `flutter test`), and you’ll see something like this:
 
 <DashImage figure src="images/1UNPFvzQCMU0xbqqbNXUAcw.webp" alt="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." caption="These are the smoke tests for all the different architectural flavors of our Google I/O talk sample app, running on device with ``flutter run`` (instead of ``flutter test``). You should be able to see “Redux”, “ValueNotifier”, “ScopedModel” etc. in the title bar up there. I’m showing this instead of the test shown above because that one finishes way too fast, so there’s not much to look at." />
-
 
 This is useful to visualize your test, and to verify that it’s doing what you think it’s doing.
 
@@ -171,7 +165,6 @@ script:
   - ./flutter/bin/flutter test
 ```
 
-
 The lines at the top—everything between `os` and `fonts-droid`—are needed for any Flutter testing. [Yegor has a write-up](https://medium.com/flutter-io/test-flutter-apps-on-travis-3fd5142ecd8c) if you want to learn more.
 
 I tend to add the `git:` depth option — it tells Travis to fetch the latest few git versions of your app, instead of the whole history of your repo.
@@ -186,7 +179,6 @@ env:
   - FLUTTER_VERSION=dev
 ```
 
-
 This tells Travis to run two separate builds: one with the custom variable `FLUTTER_VERSION` set to `beta` (stable builds of Flutter), and one with it set to `dev` (~nightly builds of Flutter). These two builds run in parallel. We’ll use the variable below.
 
 Next, we allow the `FLUTTER_VERSION=dev` build to fail using Travis’ [build matrix functionality](https://docs.travis-ci.com/user/customizing-the-build#Build-Matrix):
@@ -197,8 +189,7 @@ matrix:
     - env: FLUTTER_VERSION=dev
 ```
 
-
-It’s good to know whether our sample works with the bleeding edge version of Flutter, but we don’t want to paint our sample red whenever it fails there. Consider the`FLUTTER_VERSION=dev` build to be an early warning system for breaking changes. It might tell us about things that are coming to Flutter that we should fix, or prepare to fix, in our sample. But there can be false positives here—it’s a bleeding edge channel, after all.
+It’s good to know whether our sample works with the bleeding edge version of Flutter, but we don’t want to paint our sample red whenever it fails there. Consider the `FLUTTER_VERSION=dev` build to be an early warning system for breaking changes. It might tell us about things that are coming to Flutter that we should fix, or prepare to fix, in our sample. But there can be false positives here—it’s a bleeding edge channel, after all.
 
 Next, we actually use the `$FLUTTER_VERSION` variable when installing Flutter:
 
@@ -207,7 +198,6 @@ before_script:
   - git clone [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git) -b $FLUTTER_VERSION
 ```
 
-
 Git fetches the branch specified with `-b`, which in our case is either `beta` or `dev`.
 
 Still in `before_script`, we run `flutter doctor`. This is to make sure the Flutter installation is sound.
@@ -215,7 +205,6 @@ Still in `before_script`, we run `flutter doctor`. This is to make sure the Flut
 ```yaml
   - ./flutter/bin/flutter doctor
 ```
-
 
 Note that we didn’t add the `flutter` tool to `$PATH`, so we’re accessing it via the full path. That’s just a matter of personal preference.
 
@@ -226,11 +215,9 @@ script:
   - ./flutter/bin/flutter test
 ```
 
-
 Nice! You can commit the `.travis.yml` file to your repository, push it to github, head over to [travis-ci.org](https://travis-ci.org/), and voilà:
 
 <DashImage figure src="images/1PF95FgsvYP71V5_5c0DMpA.gif" alt="Notice the two jobs, one of which is “Allowed Failure”." caption="Notice the two jobs, one of which is “Allowed Failure”." />
-
 
 The build runs for about 2 minutes, most of which is installation (the test itself takes a few seconds at most).
 
@@ -242,7 +229,6 @@ We can use Travis’ [“Cron Job” feature](https://docs.travis-ci.com/user/cr
 
 <DashImage figure src="images/1H2OK-1btsNZfUcu57PTsPQ.webp" />
 
-
 ### Set up notifications
 
 By default, Travis will send you an email any time the build fails. But I highly recommend to [check the settings for these notifications](https://docs.travis-ci.com/user/notifications/). Not only can you make sure that the right person or team is notified, but you can also set up fancy stuff like IRC or Slack alerts.
@@ -253,10 +239,8 @@ Last but not least, add the build badge to your sample’s README.md. Head over 
 
 <DashImage figure src="images/1qWrX4tkqykAQHW3kSkuo8g.webp" />
 
-
 Paste this to the top of your README.md. Then commit, push, and behold:
 
 <DashImage figure src="images/1am1D-P1vH_f6y1Q-9dgCdw.webp" />
-
 
 Congratulations. Your sample code is now smoke tested.

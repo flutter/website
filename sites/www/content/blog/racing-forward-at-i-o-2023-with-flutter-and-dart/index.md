@@ -10,13 +10,11 @@ layout: blog
 
 <DashImage figure src="images/1bzC0ul7jBVhOJiastVGKlw.webp" />
 
-
 We’re *delighted* to be back for this year’s Google I/O, streaming live around the world from near our headquarters in Mountain View, California!
 
 Just over three months ago, we introduced a bold new roadmap for Flutter and Dart at Flutter Forward in Nairobi, Kenya. At I/O, we’re sharing our progress against that vision with updates across the four themes that we shared: breakthrough graphics experiences, seamless integration with web and platforms, support for new and emerging architectures, and a focus on developer experience.
 
 <DashImage figure src="images/1Zd93zNHQec6C55G3pEJuvA.webp" />
-
 
 As you probably know, Flutter is a UI toolkit that enables app developers to build for mobile, web, desktop, and embedded devices from a single codebase. Flutter enables you to build **beautiful** apps, giving you complete control over every pixel on the screen. It’s **fast**, taking advantage of your device’s capabilities with support for hardware-accelerated graphics and natively-compiled machine code. It’s **productive**, with technologies like stateful hot reload that allow you to immediately see code changes in your app. Its **portability** enables you to deploy to a wide variety of platforms with the same source code and without surprises. And it’s fully **open source**, with no cost to license it or need to pay for tools to develop for it.
 
@@ -37,7 +35,6 @@ On the subject of Classroom, [we announced at Flutter Forward](https://www.youtu
 Rewriting Classroom in Flutter has even improved performance. The new version of the app has faster cold startup time than the old version, as this side-by-side video demonstrates:
 
 <YoutubeEmbed id="_5CIATSDSPI" title="Comparison of the previous Google Classroom with the new Flutter-powered version" fullwidth="true"/>
-
 
 We are continuing to invest in packages to connect your Flutter app with the rest of the Google developer ecosystem. This includes major updates to our [Google Ads support](https://medium.com/flutter/2023-google-mobile-ads-updates-for-flutter-16b603df9ec9) for native ads; [new Windows and better web support for Firebase](https://github.com/firebase/flutterfire); and new experimental support for [deeper Android interoperability](https://io.google/2023/program/2f02692d-9a41-49c0-8786-1a22b7155628/).
 
