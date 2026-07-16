@@ -75,16 +75,17 @@ configured for the app.
 ### Opt in
 
 Because HCPP acts as a global upgrade for how platform views are backed,
-it's enabled through configuration rather than standard Dart initialization methods
-(`initAndroidView`, and so on).
+it's enabled through configuration rather than
+standard Dart initialization methods (`initAndroidView`, and so on).
 
 You can enable HCPP using one of the following methods:
 
 1.  **Command line flag (run/test)**:
-    Pass the `--enable-hcpp` flag to your `flutter run` or `flutter test` command:
+    Pass the `--enable-hcpp` flag to your
+    `flutter run` or `flutter test` command:
 
-    ```bash
-    flutter run --enable-hcpp
+    ```console
+    $ flutter run --enable-hcpp
     ```
 
     :::note
@@ -95,8 +96,8 @@ You can enable HCPP using one of the following methods:
     :::
 
 2.  **AndroidManifest.xml**:
-    Include a `<meta-data>` tag inside the `<application>` block of your
-    `AndroidManifest.xml`:
+    Include a `<meta-data>` tag inside the
+    `<application>` block of your `AndroidManifest.xml`:
 
     ```xml
     <meta-data
