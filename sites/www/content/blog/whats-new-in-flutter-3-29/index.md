@@ -188,7 +188,7 @@ These are just a few highlights from this release. To learn more about all the u
 
 ## Breaking changes and deprecations
 
-### Discountinuing package support
+### Discontinuing package support
 
 We plan to discontinue support for the following packages on April 30th, 2025:
 

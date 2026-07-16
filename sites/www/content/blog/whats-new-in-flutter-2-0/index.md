@@ -395,7 +395,7 @@ We’ve made the following breaking changes for Flutter 2, many of which can be 
 
 * [68925](https://github.com/flutter/flutter/pull/68925) Remove nullOk parameter from AnimatedList.of and SliverAnimatedList.of
 
-* [69620](https://github.com/flutter/flutter/pull/69620) Remove deprecated methods from BuildContex
+* [69620](https://github.com/flutter/flutter/pull/69620) Remove deprecated methods from BuildContext
 
 * [70726](https://github.com/flutter/flutter/pull/70726) Remove the nullOk parameter from Navigator.of and add Navigator.maybeOft
 

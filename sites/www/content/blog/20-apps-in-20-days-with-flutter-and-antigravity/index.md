@@ -98,7 +98,7 @@ The tools are ready. Are you?
 
 1. Vip badge (1 file, 273 LOC) — Implements authentication through Firebase and Google Sign-In.
 
-1. My apps widget (4 files, 305 LOC) — An Android homescreen â€œcontainerâ€ to hold all of my apps. Utilizes Android Intents to create a home screen widget.
+1. My apps widget (4 files, 305 LOC) — An Android homescreen "container" to hold all of my apps. Utilizes Android Intents to create a home screen widget.
 
 1. Haptic soundboard (2 files, 311 LOC) — A soundboard application featuring audio playback capabilities.
 
@@ -108,13 +108,13 @@ The tools are ready. Are you?
 
 1. Jolt (6 files, 494 LOC) — Focuses on local storage with shared preferences and custom UI fonts.
 
-1. Accept changes (2 files, 547 LOC) — An attempt to bounce Antigravityâ€™s push notifications to my phone. Provides device feedback via notification and connects to a Realtime Database.
+1. Accept changes (2 files, 547 LOC) — An attempt to bounce Antigravity's push notifications to my phone. Provides device feedback via notification and connects to a Realtime Database.
 
 1. Street slueth (9 files, 574 LOC) — A spin on Geoguesser: a collaborative murder mystery game where you need to use Google Maps to find clues and solve a puzzle. Map-based application with user authentication and Google Street View integration.
 
 1. Learn witt (7 files, 588 LOC) — A learning app for understanding Wittgenstein. Focused on user interface design using custom fonts.
 
-1. Parcheesi game (5 files, 625 LOC) — A Parcheesi remake. This was an attempt at â€œonce shot promptingâ€ with Antigrabity. Manages complex logic and state using Riverpod and Equatable.
+1. Parcheesi game (5 files, 625 LOC) — A Parcheesi remake. This was an attempt at "one-shot prompting" with Antigravity. Manages complex logic and state using Riverpod and Equatable.
 
 1. Health tracker (6 files, 641 LOC) — Personal health tracking app for monitoring daily blood pressure and alcohol intake. Manages local state and utilizes the file system for storage.
 
@@ -128,7 +128,7 @@ The tools are ready. Are you?
 
 1. Human speed (15 files, 1124 LOC) — A personal thinking tool. Allows you to self-manage context across LLM threads. Full-stack AI application structured with Riverpod, GoRouter, and Firebase.
 
-1. Math facts AI(11 files, 1520 LOC) — Educational tool leveraging generative AI to teach math facts.
+1. Math facts AI (11 files, 1520 LOC) — Educational tool leveraging generative AI to teach math facts.
 
 1. Workout buddy (11 files, 1582 LOC) — Workout tracker, featuring Riverpod, Cloud Functions, and Freezed code generation.
 

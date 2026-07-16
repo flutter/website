@@ -11,7 +11,7 @@ layout: blog
 <DashImage figure src="images/1PLQQUPqp_e0LmXTbAgb_iQ.webp" />
 
 
-As you build and grow your Flutter apps, you may want your apps to make money. You can monetize appin many ways. Introducing advertising would be one of the most common strategies. To introduce ads, you can use the [Google Mobile Ads](https://pub.dev/packages/google_mobile_ads) (GMA) Flutter plugin. The GMA plugin can place ads from AdMob, Google Ad Manager, or AdSense in your Flutter mobile app.
+As you build and grow your Flutter apps, you may want your apps to make money. You can monetize your apps in many ways. Introducing advertising would be one of the most common strategies. To introduce ads, you can use the [Google Mobile Ads](https://pub.dev/packages/google_mobile_ads) (GMA) Flutter plugin. The GMA plugin can place ads from AdMob, Google Ad Manager, or AdSense in your Flutter mobile app.
 
 Feature and tooling requests have grown in step with GMA Flutter plugin usage. Based on your Ad Manager and AdMob survey responses, the plugin now supports:
 

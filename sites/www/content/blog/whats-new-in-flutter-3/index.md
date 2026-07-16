@@ -170,7 +170,7 @@ As we continue to grow and improve Flutter, we aim to keep the number of breakin
 
 * [Migrate useDeleteButtonTooltip to deleteButtonTooltipMessage of Chips](https://docs.flutter.dev/release/breaking-changes/chip-usedeletebuttontooltip-migration)
 
-If you are using any of these apis please refer to the [migration guide on Flutter.dev](https://docs.flutter.dev/release/breaking-changes).
+If you are using any of these APIs please refer to the [migration guide on Flutter.dev](https://docs.flutter.dev/release/breaking-changes).
 
 ## Summary
 

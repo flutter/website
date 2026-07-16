@@ -50,7 +50,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Applcation Embedded in Website'),
+        title: Text('Flutter Application Embedded in Website'),
       ),
       body: Center(
         child: Column(

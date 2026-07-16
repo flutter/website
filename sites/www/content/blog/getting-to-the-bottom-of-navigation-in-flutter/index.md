@@ -95,7 +95,7 @@ class _DestinationViewState extends State<DestinationView> {
 
 ```
 
-Finally the point of this whole exercise is revealed: the app’s *HomePage,* featuring a scaffold with a *BottomNavigationBar* for the destinations, and an *IndexedStack* for the destination views. As you can see, tapping on a destination (on a *BottomNavigationBarItem*) causes the home page to rebuild with a new value for*_currentIndex*. The indexed stack displays the destination view selected by the current index.
+Finally the point of this whole exercise is revealed: the app’s *HomePage,* featuring a scaffold with a *BottomNavigationBar* for the destinations, and an *IndexedStack* for the destination views. As you can see, tapping on a destination (on a *BottomNavigationBarItem*) causes the home page to rebuild with a new value for *_currentIndex*. The indexed stack displays the destination view selected by the current index.
 
 ```dart
 class HomePage extends StatefulWidget {

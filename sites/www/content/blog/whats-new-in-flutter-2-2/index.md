@@ -347,7 +347,7 @@ Therefore, until now, the only way to avoid this jank on iOS was to simplify sce
 
 However, right now on the dev channel is a preview of [the new support in Skia for shader warm-up for Metal](https://github.com/flutter/flutter/issues/79298). Through Skia, Flutter now compiles the bundled shaders before the first frame workload begins.
 
-<DashImage figure src="images/00_8hDcyhjXasCJX3.webp" alt="Traces showing precompilation occuring during application launch" caption="Traces showing precompilation occuring during application launch" />
+<DashImage figure src="images/00_8hDcyhjXasCJX3.webp" alt="Traces showing precompilation occurring during application launch" caption="Traces showing precompilation occurring during application launch" />
 
 
 This solution comes with some caveats, however:

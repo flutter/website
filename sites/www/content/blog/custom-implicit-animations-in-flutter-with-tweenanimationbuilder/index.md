@@ -25,8 +25,8 @@ The last thing I need to specify is the builder parameter, which returns what my
 
 ```dart
 /// This is an EXTREMELY bare-bones illustration of using TweenAnimationBuilder.
-/// See the rest of the article for optimizations. 
-/// Also note that this example is for illusration use only -- an implicit rotation
+/// See the rest of the article for optimizations.
+/// Also note that this example is for illustration use only -- an implicit rotation
 /// animation can be accomplished with AnimatedContainer.
 class SuperBasic extends StatelessWidget {
   @override
