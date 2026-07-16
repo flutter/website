@@ -8,6 +8,25 @@
         max-width: 100%;
         min-width: 8rem;
 
+        .post-info .post-info-actions {
+
+            a,
+            button {
+                color: var(--site-base-fgColor-lighter);
+                display: flex;
+                align-items: center;
+                padding: 0.25rem;
+                border-radius: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: none;
+                    background: rgba(0, 0, 0, 0.06);
+                }
+            }
+        }
+
+
         >.content {
             padding: 1.5rem;
             color: var(--site-base-fgColor)

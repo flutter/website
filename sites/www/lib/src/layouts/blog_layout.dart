@@ -12,6 +12,7 @@ import 'package:site_shared/components/blog/post_info.dart';
 import 'package:site_shared/components/common/breadcrumbs.dart';
 import 'package:site_shared/util.dart';
 
+import '../utils/scroll_spy.dart';
 import 'default_layout.dart';
 
 /// The Jaspr Content layout to use for blog pages,
@@ -53,43 +54,47 @@ class BlogLayout extends DefaultLayout {
       page,
       main_([
         article(classes: 'content', [
-          div(classes: 'content ${isPost ? 'post-content' : ''}', [
-            div(id: 'site-content-title', [
-              if (isPost)
-                PageBreadcrumbs(
-                  crumbs: [
-                    const BreadcrumbItem(
-                      title: 'The Flutter Blog',
-                      url: '/blog',
-                    ),
-                    if (pageCategory != null) ...[
+          div(
+            classes: 'content ${isPost ? 'post-content' : ''}',
+            attributes: scroll.spyContent,
+            [
+              div(id: 'site-content-title', [
+                if (isPost)
+                  PageBreadcrumbs(
+                    crumbs: [
+                      const BreadcrumbItem(
+                        title: 'The Flutter Blog',
+                        url: '/blog',
+                      ),
+                      if (pageCategory != null) ...[
+                        BreadcrumbItem(
+                          title: pageCategory.label,
+                          url: '/blog?category=${pageCategory.slug}',
+                        ),
+                      ],
                       BreadcrumbItem(
-                        title: pageCategory.label,
-                        url: '/blog?category=${pageCategory.slug}',
+                        title: pageTitle.split(':').first,
+                        url: page.url,
                       ),
                     ],
-                    BreadcrumbItem(
-                      title: pageTitle.split(':').first,
-                      url: page.url,
-                    ),
-                  ],
-                ),
-              h1(id: 'document-title', [
-                if (pageData['underscore_breaker_titles'] == true)
-                  ...splitByUnderscore(pageTitle)
-                else
-                  .text(pageTitle),
-              ]),
-              if (pageData['description'] != null)
-                p(classes: 'blog-subtitle', [
-                  .text(pageData['description'] as String),
+                  ),
+                h1(id: 'document-title', [
+                  if (pageData['underscore_breaker_titles'] == true)
+                    ...splitByUnderscore(pageTitle)
+                  else
+                    .text(pageTitle),
                 ]),
-            ]),
-            if (post != null) PostInfo(post: post, url: page.url),
-            child,
-            if (isPost)
-              BlogNextPosts(currentPage: page, category: pageCategory),
-          ]),
+                if (pageData['description'] != null)
+                  p(classes: 'blog-subtitle', [
+                    .text(pageData['description'] as String),
+                  ]),
+              ]),
+              if (post != null) PostInfo(post: post, url: page.url),
+              child,
+              if (isPost)
+                BlogNextPosts(currentPage: page, category: pageCategory),
+            ],
+          ),
         ]),
       ]),
     );
