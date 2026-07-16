@@ -55,10 +55,10 @@ We want to make it easy to experiment with the GenUI SDK for Flutter, so we’ve
 * First, grab the main pub package for [genui](https://pub.dev/packages/genui).
 
 * Next, choose a content generator. The following are the content generator options we provide that support a variety of use cases:
-- [Google Gemini API](https://pub.dev/packages/genui_google_generative_ai): Useful for experimentation and local testing as you’re mapping out your experience.
-- [Firebase AI logic](https://pub.dev/packages/genui_firebase_ai): Useful for production apps where interactions with the LLM are all in your Flutter client, without requiring a server. Firebase also makes it easier to ship your AI features securely since Firebase handles the management of your Gemini API key.
-- [A2UI](https://pub.dev/packages/genui_a2ui): Useful for client/server architectures where your agent is running on the server.
-- Build your own: Of course, you can also build your own adapter to connect to your preferred LLM provider. Expect more from us and the community soon.
+  * [Google Gemini API](https://pub.dev/packages/genui_google_generative_ai): Useful for experimentation and local testing as you’re mapping out your experience.
+  * [Firebase AI logic](https://pub.dev/packages/genui_firebase_ai): Useful for production apps where interactions with the LLM are all in your Flutter client, without requiring a server. Firebase also makes it easier to ship your AI features securely since Firebase handles the management of your Gemini API key.
+  * [A2UI](https://pub.dev/packages/genui_a2ui): Useful for client/server architectures where your agent is running on the server.
+  * Build your own: Of course, you can also build your own adapter to connect to your preferred LLM provider. Expect more from us and the community soon.
 
 To make it easy for your coding agent to build with the GenUI SDK for Flutter, we also included [markdown docs](https://github.com/flutter/genui/tree/main/packages/genui/.guides). These markdown files teach your coding agent how to use the various GenUI SDK APIs.
 

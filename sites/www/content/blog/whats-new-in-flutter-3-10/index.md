@@ -333,9 +333,9 @@ We continue to improve DevTools, the suite of performance and debugging tools fo
 * The DevTools console supports evaluations for a running app in debug mode. Before this release, you could only do this when you paused an app.
 
 * An embedded [Perfetto trace viewer](https://perfetto.dev/) replaces the previous timeline trace viewer. Perfetto handles larger datasets and performs better than the legacy trace viewer. Perfetto includes more features, such as:
-- Allowing you to pin threads of interest.
-- Clicking and dragging to select multiple timeline events from multiple frames.
-- Using SQL queries to pull specific data from the timeline events.
+  * Allowing you to pin threads of interest.
+  * Clicking and dragging to select multiple timeline events from multiple frames.
+  * Using SQL queries to pull specific data from the timeline events.
 
 <DashImage figure src="images/1fOYGagsonbND_VnkasWmzw.webp" />
 

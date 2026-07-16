@@ -301,19 +301,19 @@ dart run devtools_extensions validate --package=path/to/your_pub_package
 
 2. Prepare and a test environment with a dependency on your pub package that is providing the extension.
 
-In the Dart or Flutter project where you are adding a dependency on your package, add a [path](https://dart.dev/tools/pub/dependencies#path-packages) dependency that points to your local package source code (the package that contains the `extension/devtools/` directory with your extension's assets). Once you have done this, run `pub get` on the package.
+   In the Dart or Flutter project where you are adding a dependency on your package, add a [path](https://dart.dev/tools/pub/dependencies#path-packages) dependency that points to your local package source code (the package that contains the `extension/devtools/` directory with your extension's assets). Once you have done this, run `pub get` on the package.
 
-* **If your extension requires a running application**, then you’ll need to run the app that depends on your extension.
+   * **If your extension requires a running application**, then you’ll need to run the app that depends on your extension.
 
-* **If your extension does not require a running application**, then you will need to open the test Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio).
+   * **If your extension does not require a running application**, then you will need to open the test Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio).
 
 3. Start DevTools in one of the following ways:
 
-* **If your extension requires a running application**, you can open DevTools either from the URI that was printed to command line when you ran the test app, or from the IDE where you ran your test app.
+   * **If your extension requires a running application**, you can open DevTools either from the URI that was printed to command line when you ran the test app, or from the IDE where you ran your test app.
 
-* **If your extension does not require a running application**, you can open your Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio). Open DevTools from the IDE to see your extension in the browser.
+   * **If your extension does not require a running application**, you can open your Dart or Flutter project that depends on your package in a supported IDE (VS Code or IntelliJ / Android Studio). Open DevTools from the IDE to see your extension in the browser.
 
-* **If you need local or unreleased changes from DevTools**, you’ll need to build and run DevTools from source. See the DevTools [CONTRIBUTING.md](https://github.com/flutter/devtools/blob/7a53fd2ddf289ee1b76840b9bfd9a2cb7876f13b/packages/devtools_extensions) for a guide on how to do this. You’ll need to build DevTools with the server and the front end to test extensions — see [instructions](https://github.com/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app).
+   * **If you need local or unreleased changes from DevTools**, you’ll need to build and run DevTools from source. See the DevTools [CONTRIBUTING.md](https://github.com/flutter/devtools/blob/7a53fd2ddf289ee1b76840b9bfd9a2cb7876f13b/packages/devtools_extensions) for a guide on how to do this. You’ll need to build DevTools with the server and the front end to test extensions — see [instructions](https://github.com/flutter/devtools/blob/master/CONTRIBUTING.md#development-devtools-server--devtools-flutter-web-app).
 
 4. Once you have opened DevTools, you should see a tab in the DevTools app bar for your extension. The enabled or disabled state of your extension is managed by DevTools, which is exposed from an “Extensions” menu, available from the action buttons in the upper right corner of the screen.
 

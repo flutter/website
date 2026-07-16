@@ -63,27 +63,28 @@ Participants named multiple benefits of using Flutter to develop games. We list 
 As an emerging use case, developing games on Flutter is not without challenges. Participants highlighted the following issues they experienced in their respective projects:
 
 * Integration and ecosystem:
-– Difficulty integrating with Play game services. (P01, P03)
-– Missing good options for offline-first databases with conflict management. (P05)
-– Guidance is needed to select the best audio plugin that can play audio in foreground and background simultaneously. (P05)
-Assets: finding and creating high-quality game assets are time consuming. (P02, P03, P04)
-> *It’s probably the most time-consuming process. If I don’t find the assets that go along with each other, the game doesn’t look exactly how I wanted. And since I’m not that good at making art, finding the right assets is the most challenging task for me. (P03)*
+  * Difficulty integrating with Play game services. (P01, P03)
+  * Missing good options for offline-first databases with conflict management. (P05)
+  * Guidance is needed to select the best audio plugin that can play audio in foreground and background simultaneously. (P05)
+
+* Assets: finding and creating high-quality game assets are time consuming. (P02, P03, P04)
+  > *It’s probably the most time-consuming process. If I don’t find the assets that go along with each other, the game doesn’t look exactly how I wanted. And since I’m not that good at making art, finding the right assets is the most challenging task for me. (P03)*
 
 * Flame-specific challenges:
   * Participants noted that Flame’s documentation is not beginner friendly. In particular, [Forge2D](https://github.com/flame-engine/forge2d) (part of Flame) could use better documentation. (P03, P04)
   * Participants noted that collision detection in Flame is too basic. It doesn’t handle physics after two objects have collided, unless you use Forge2D. (P03)
 
 * Missing features in Flutter’s SDK and tooling:
-– Lacking 3D support. (P02, P03) However, this doesn’t seem critical to these participants.
-– No direct shader access for filters, effects, layers, or compositing. (P01, P02) This is somewhat important to participants who’re into computer graphics.
-– Lacks user-space APIs to control refresh rate, such as 120hz. (P01, P02)
-– Not sure if Flutter has GPU debugging tools that provide visibility into the frame buffer. Xcode has great OpenGL debugging tools. (P01)
+  * Lacking 3D support. (P02, P03) However, this doesn’t seem critical to these participants.
+  * No direct shader access for filters, effects, layers, or compositing. (P01, P02) This is somewhat important to participants who’re into computer graphics.
+  * Lacks user-space APIs to control refresh rate, such as 120hz. (P01, P02)
+  * Not sure if Flutter has GPU debugging tools that provide visibility into the frame buffer. Xcode has great OpenGL debugging tools. (P01)
 
 * Performance and bundle size:
-– DevTools isn’t always helpful in diagnosing performance issues on a game with a game loop. (P02)
-– Animation janks are present on low-end iOS devices. The shader warm-up workaround is useful but labor-intensive. (P05) There’s also no video tutorial on how to do this. (P03)
-– Lack of support on adapting app rendering qualities to the performance characteristics of the device. (P05)
-– Web bundle size is too large for web gaming platforms, such as Facebook Instant Game. (P05)
+  * DevTools isn’t always helpful in diagnosing performance issues on a game with a game loop. (P02)
+  * Animation janks are present on low-end iOS devices. The shader warm-up workaround is useful but labor-intensive. (P05) There’s also no video tutorial on how to do this. (P03)
+  * Lack of support on adapting app rendering qualities to the performance characteristics of the device. (P05)
+  * Web bundle size is too large for web gaming platforms, such as Facebook Instant Game. (P05)
 
 ### Comparing Flutter with alternative game development tools
 

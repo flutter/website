@@ -289,9 +289,9 @@ Based on early feedback, more enhancements are planned to improve the widget pre
 
 1. **Startup performance improvements**: Opportunities for performance improvements are being investigated to reduce initial startup times, including:
 
-* Launching a precompiled widget preview environment after the first run
+   * Launching a precompiled widget preview environment after the first run
 
-* Parallelizing preview detection logic to better handle large projects
+   * Parallelizing preview detection logic to better handle large projects
 
 To get started, check out the documentation and let us know what you think!
 
