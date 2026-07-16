@@ -41,15 +41,12 @@ Commit the `pubspec.lock` file to version control for application projects,
 but not for package projects.
 
 :::note Use version ranges, not exact versions
-Some developers specify exact versions in `pubspec.yaml`
-(for example, `foo: 1.0.0`) to guarantee that their builds are predictable.
-However, `pubspec.lock` already pins exact versions for predictable builds.
-
-Specify version ranges (using caret syntax) in your `pubspec.yaml` file
-instead of exact versions.
+Since `pubspec.lock` always pins exact versions for predictable builds,
+you should use ranges in your `pubspec.yaml` file (possibly using
+caret syntax described below).
 This allows the version solver to find compatible versions of
-transitive dependencies, and enables you to safely update dependencies
-using `flutter pub upgrade`.
+transitive dependencies,
+and enables you to safely update dependencies using `flutter pub upgrade`.
 :::
 
 ## The role of the version solver
@@ -119,8 +116,10 @@ dependencies:
   url_launcher: any
 ```
 
-Avoid using `any` because a future package update might introduce breaking
-changes that break your build.
+:::note Avoid using `any`
+We don't recommend using `any` because a future package
+update might introduce breaking changes that break your build.
+:::
 
 ## Understand dependency conflicts
 
@@ -133,13 +132,7 @@ Consider this example scenario:
 1. `package_a` depends on `foo: ^1.0.0`.
 1. `package_b` depends on `foo: ^2.0.0`.
 
-```mermaid
-graph TD
-  App[Your App] --> package_a[package_a ^1.0.0]
-  App --> package_b[package_b ^1.0.0]
-  package_a --> foo_v1[foo ^1.0.0]
-  package_b --> foo_v2[foo ^2.0.0]
-```
+![Version solver conflict](/assets/images/docs/development/packages-and-plugins/version-solver.png)
 
 Because `foo` cannot be both `^1.0.0` (which is `<2.0.0`) and
 `^2.0.0` (which is `>=2.0.0`), the version solver fails.
@@ -155,7 +148,9 @@ So, because my_app depends on both package_a ^1.0.0
 and package_b ^1.0.0, version solving failed.
 ```
 
-To read this error message, trace the conflict from the bottom up:
+To read this error message, trace the conflict from the bottom up
+in the dependency graph:
+
 1. Identify the conflicting package (`foo`).
 1. Find which packages require conflicting versions (`package_a` requires `foo
    ^1.0.0` and `package_b` requires `foo ^2.0.0`).
