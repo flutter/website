@@ -96,7 +96,14 @@ On the platform side, use either Swift or Objective-C:
 Implement the factory and the platform view.
 The `FLNativeViewFactory` creates the platform view,
 and the platform view provides a reference to the `UIView`.
-For example, `FLNativeView.swift`:
+
+Depending on the UI framework you are using,
+choose one of the following implementations:
+
+<Tabs key="swift-ui-framework">
+<Tab name="UIKit">
+
+For example, `FLNativeView.swift` using UIKit:
 
 ```swift
 import Flutter
@@ -158,6 +165,85 @@ class FLNativeView: NSObject, FlutterPlatformView {
     }
 }
 ```
+
+</Tab>
+<Tab name="SwiftUI">
+
+:::note
+SwiftUI requires iOS 13.0 or later.
+:::
+
+To display SwiftUI views within a platform view on iOS,
+wrap the SwiftUI view inside a `UIHostingController`.
+Since `UIHostingController` is a view controller,
+you can retrieve its view using the `view` property,
+and return it from the platform view's `view()` method.
+
+For example, `FLNativeView.swift` using SwiftUI:
+
+```swift
+import Flutter
+import UIKit
+import SwiftUI
+
+class FLNativeViewFactory: NSObject, FlutterPlatformViewFactory {
+    private var messenger: FlutterBinaryMessenger
+
+    init(messenger: FlutterBinaryMessenger) {
+        self.messenger = messenger
+        super.init()
+    }
+
+    func create(
+        withFrame frame: CGRect,
+        viewIdentifier viewId: Int64,
+        arguments args: Any?
+    ) -> FlutterPlatformView {
+        return FLNativeView(
+            frame: frame,
+            viewIdentifier: viewId,
+            arguments: args,
+            binaryMessenger: messenger)
+    }
+
+    /// Implementing this method is only necessary when the `arguments` in `createWithFrame` is not `nil`.
+    public func createArgsCodec() -> FlutterMessageCodec & NSObjectProtocol {
+          return FlutterStandardMessageCodec.sharedInstance()
+    }
+}
+
+class FLNativeView: NSObject, FlutterPlatformView {
+    private var _view: UIView
+
+    init(
+        frame: CGRect,
+        viewIdentifier viewId: Int64,
+        arguments args: Any?,
+        binaryMessenger messenger: FlutterBinaryMessenger?
+    ) {
+        let swiftUIView = MySwiftUIView()
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        _view = hostingController.view
+        super.init()
+    }
+
+    func view() -> UIView {
+        return _view
+    }
+}
+
+struct MySwiftUIView: View {
+    var body: some View {
+        Text("Native text from iOS (SwiftUI)")
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.blue)
+            .foregroundColor(.white)
+    }
+}
+```
+
+</Tab>
+</Tabs>
 
 Finally, register the platform view.
 This can be done in an app or a plugin.
