@@ -2,7 +2,7 @@
 title: "Introducing the Flutter Meetup Network!"
 description: "Sarah Fullmer tells us about support for Flutter meetups."
 publishDate: 2021-10-01
-author: sfshaza2
+author: sfshaza
 image: images/14eNp-BypLrDgEwkyWbm2zw.webp
 category: announcement
 layout: blog

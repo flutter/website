@@ -2,7 +2,7 @@
 title: "Flutter Q2 survey"
 description: "Just a reminder! Please take the Flutter Q2 survey! The survey closes at the end of day on Friday, June 19th."
 publishDate: 2026-06-15
-author: sfshaza2
+author: sfshaza
 image: images/1BVNfy8-YPsP5jHKuD3P-Cg.gif
 category: announcement
 layout: blog

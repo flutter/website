@@ -1,11 +1,12 @@
 # List of all blog authors.
-# New authors should be added here and referenced in the post frontmatter by their id.
+# New authors should be added here and
+# referenced in the post frontmatter by their ID.
 #
 # Authors should have:
 #  - name: The author's display name (required).
 #  - image: The author's image file, located in /content/blog/authors/ (optional).
 #  - imageUrl: A url to an image for the author, as an alternative to a local image (optional).
-#  - link: A link to their github, social profile or personal website (optional).
+#  - link: A link to their GitHub, social profile, or personal website (optional).
 abd99:
   name: "Abdullah Deshmukh"
   image: "1uLWpn1jOuAz8_lEu1M9Srw.webp"
@@ -17,7 +18,7 @@ abdallahshaban557:
 aguinis:
   name: "Martin Aguinis"
   image: "2AZjKy9ApAXsgYd9ElZSvlg.jpeg"
-  link: null
+  link: "https://github.com/maguinis"
 amir_h:
   name: "Amir Hardon"
   image: "1BgqwW36VvDjTOlmJk5VQ-A.jpeg"
@@ -29,7 +30,7 @@ anderdobo:
 andremobilelabonte:
   name: "André Labonté"
   image: "0MWQEEWaslbr-PNFW.webp"
-  link: null
+  link: "https://github.com/andrelabonte"
 anjannarain:
   name: "Anjan Narain"
   image: "0Rcs4RmjLKoM8oYfZ.webp"
@@ -41,7 +42,7 @@ antfitch:
 arbullard:
   name: "Anthony Bullard"
   image: "0tNv4NL4miSZG0eeS.jpg"
-  link: null
+  link: "https://github.com/gamebox"
 ayushbherwani1998:
   name: "Ayush Bherwani"
   image: "2Iw2blcHT-LRD9lr8NTx8HQ.jpeg"
@@ -65,7 +66,7 @@ chinmaygarde:
 clocksmith:
   name: "Anthony Robledo"
   image: "1fcJn7cFYnwInCzoug_PoDA.jpeg"
-  link: null
+  link: "https://github.com/clocksmith"
 craiglabenz:
   name: "Craig Labenz"
   image: "1PpHwzypsYF2ce75cfkt0_w.webp"
@@ -105,34 +106,34 @@ filiph:
 fitzface:
   name: "Andrew Fitz Gibbon"
   image: "2wcnmZEJVlZsf2nNvDOziRA.jpeg"
-  link: null
+  link: "https://github.com/afitzgibbon"
 gaaclarke:
   name: "Aaron Clarke"
   image: "0ALqtMy61v8ANAVWO.webp"
-  link: null
+  link: "https://github.com/gaaclarke"
 gskinner:
   name: "Grant Skinner"
   image: "1QrcTxiCCIAj38rUnnPTryg.jpeg"
   link: "https://github.com/gskinner"
 guidez:
   name: "Pierre-Louis Guidez"
-  link: null
+  link: "https://github.com/guidezpl"
 haddadniaj:
   name: "Justin Haddadnia"
   image: "0gNIf0pPqSsP1oOcM.jpg"
-  link: null
+  link: "https://github.com/Haddadnia"
 hansmuller:
   name: "Hans Muller"
   image: "09ombi9JukiF7Z1-d.webp"
-  link: null
-harry_terkelsen:
+  link: "https://github.com/HansMuller"
+harryterkelsen:
   name: "Harry Terkelsen"
   image: "0ob8GIJbyVIHe-aQu.jpg"
-  link: null
+  link: "https://github.com/harryterkelsen"
 hellobrianjames:
   name: "Brian James"
   image: "1EAeJ6vonuQM5daZCF9CfeQ.jpeg"
-  link: null
+  link: "https://github.com/malloc-error"
 itsjustkevin:
   name: "Kevin Chisholm"
   image: "1HEfsynQuQpVrGR-qdGeSvg.jpeg"
@@ -140,7 +141,7 @@ itsjustkevin:
 ivan:
   name: "Ivan Leider"
   image: "0SQ_vs0LMPjY6ejrP.webp"
-  link: null
+  link: "https://github.com/ileider"
 jayoung-lee:
   name: "JaYoung Lee"
   image: "109ekgauj46kjGlHoi94FwA.jpeg"
@@ -204,7 +205,7 @@ leighajarett:
 liyuqian:
   name: "Yuqian Li"
   image: "1T1lv65-OBsGrBSs6mvgvqg.jpeg"
-  link: null
+  link: "https://github.com/liyuqian"
 lukeaf:
   name: "Luke Freeman"
   image: "1osRrOD-rpUZlVPFwpn2_GQ.webp"
@@ -212,15 +213,15 @@ lukeaf:
 magder:
   name: "Jenn Magder"
   image: "1N3hr8E92Mseta1S7yCX2Mg.webp"
-  link: null
+  link: "https://github.com/magder"
 mariam_hasnany:
   name: "Mariam Hasnany"
   image: "1TDttyOKULZENb7QG-0Wl3w.jpeg"
-  link: null
+  link: "https://github.com/mariamhas"
 maryx:
   name: "Mary"
   image: "19Ub8P3iIx6Ji3hUUrSCZlg.webp"
-  link: null
+  link: "https://github.com/maryx"
 matthew-carroll:
   name: "Matt Carroll"
   image: "2j6fhR3Uq9ariRWaoB1MGPg.webp"
@@ -232,11 +233,11 @@ mehmetf:
 melyndahoover:
   name: "Mindy Hoover"
   image: "1NC_dwnZV11nnMuK4D0mXYA.jpeg"
-  link: null
+  link: "https://github.com/melyndahoover"
 mhclin113:
   name: "Cheng Lin"
   image: "1WKhF9u7jo7OkE26I5PjGiw.webp"
-  link: null
+  link: "https://x.com/chenglinlim"
 mit-mit:
   name: "Michael Thomsen"
   image: "0Y_CFLc1qadgr3tPK.jpg"
@@ -260,7 +261,7 @@ parlough:
 perclasson:
   name: "Per Classon"
   image: "2d-UpSVU0saEV2On5JBvYaQ.jpeg"
-  link: null
+  link: "https://github.com/perclasson"
 piinks:
   name: "Kate Lovett"
   image: "00yA7OjxKWthRwjK2.webp"
@@ -285,14 +286,14 @@ sethladd:
   name: "Seth Ladd"
   image: "10pSgo-h67AMv_gytSDEiJg.webp"
   link: "https://github.com/sethladd"
-sfshaza2:
+sfshaza:
   name: "Shams Zakhour"
   image: "0LHz-9FgHd3doKgCM.jpg"
   link: "https://github.com/sfshaza2"
 shamiramarshall:
   name: "Shamira Marshall"
   image: "0vHty7_58DD6eW53D.webp"
-  link: null
+  link: "https://github.com/MiraMarshall"
 swavkulinski:
   name: "Swav Kulinski"
   image: "0Qgrum-sTozr6lXCm.jpg"
@@ -300,11 +301,11 @@ swavkulinski:
 taodong:
   name: "Tao Dong"
   image: "0jbYlQ-K9Yh-HVUBp.jpg"
-  link: "https://twitter.com/taodong"
+  link: "https://github.com/InMatrix"
 theaflowers:
   name: "Alethea K. Flowers"
   image: "0cNAKYVA08TeS6TVB.webp"
-  link: null
+  link: "https://github.com/theacodes"
 tianguang:
   name: "Tianguang Zhang"
   image: "0xV6b-152TcEMSjUr.webp"
@@ -336,11 +337,11 @@ verygoodopensource:
 wmleler1:
   name: "Wm Leler"
   image: "0c8OAb9nT35XgY56T.jpg"
-  link: null
+  link: "https://github.com/wmleler"
 xster:
   name: "xster"
   image: "1h_lwkzhaAtW5WTkM750_Xw.jpeg"
-  link: "https://twitter.com/xsterx"
+  link: "https://github.com/xster"
 yanchenum:
   name: "Yan Chen"
   image: "0PSrFnoWOMMa0YZUM.jpg"
@@ -348,8 +349,8 @@ yanchenum:
 yegorj:
   name: "Yegor Jbanov"
   image: "08pUBYXbTsN324CAB.jpg"
-  link: "https://twitter.com/yegorjbanov"
+  link: "https://github.com/yjbanov"
 zoeyfan:
   name: "Zoey Fan"
   image: "2Cl8MkXie_Fr91CEmLGzQtw.jpeg"
-  link: null
+  link: "https://github.com/zoeyfan"

@@ -2,7 +2,7 @@
 title: "How to Write a Flutter Web Plugin"
 description: "Introduction"
 publishDate: 2019-11-20
-author: harry_terkelsen
+author: harryterkelsen
 image: images/1UTowUOvpkFW35rcuJ3Lf1w.webp
 category: tutorial
 layout: blog

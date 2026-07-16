@@ -2,7 +2,7 @@
 title: "Flutter Performance Updates in 2019"
 description: "By Yuqian Li and Shams Zakhour"
 publishDate: 2020-07-31
-author: sfshaza2
+author: sfshaza
 image: images/1bWXPMmCXDmBWN7rZbxZcyg.webp
 category: engineering
 layout: blog

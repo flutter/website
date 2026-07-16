@@ -2,7 +2,7 @@
 title: "Google I/O spotlight: Flutter in action at ByteDance"
 description: "Note: This article, originally written in Chinese by the ByteDance team, has been translated to English."
 publishDate: 2021-06-29
-author: sfshaza2
+author: sfshaza
 image: images/0s0fEzRKPUlPITzxE.webp
 category: story
 layout: blog
