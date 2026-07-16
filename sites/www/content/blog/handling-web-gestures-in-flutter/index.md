@@ -8,11 +8,9 @@ category: tutorial
 layout: blog
 ---
 
-## Handling web gestures in Flutter
-
 <DashImage figure src="images/1BzcKF4qdbLIFFB6XL8x-9A.webp" />
 
-Flutter has released web support that allows you to create dynamic websites. With Flutter web, MacOS, Linux, and Windows operating systems (even on mobile devices connected to a mouse, keyboard, or other peripherals), you now have access to platform-specific behaviors including focus support, keyboard input, custom mouse cursors, and hover input. But, how do you make use of these platform behaviors in Flutter?
+Flutter has released web support that allows you to create dynamic websites. With Flutter web, macOS, Linux, and Windows operating systems (even on mobile devices connected to a mouse, keyboard, or other peripherals), you now have access to platform-specific behaviors including focus support, keyboard input, custom mouse cursors, and hover input. But, how do you make use of these platform behaviors in Flutter?
 
 This article explains how to use the `FocusableActionDetector` widget, which handles keyboard input, focus input, hover input, and custom mouse cursors.
 
@@ -37,13 +35,14 @@ Flutter lets you define custom actions to handle keyboard input. Let’s say you
 
 First, add the following import:
 
-`import 'package:flutter/services.dart';`
+```dart
+import 'package:flutter/services.dart';
+```
 
 Next, from the class where the `FocusableActionDetector` is called, initialize two private variables. These variables map the keyboard input to the desired action:
 
 ```dart
 Map<LogicalKeySet, Intent> _shortcutMap;
-
 Map<Type, Action<Intent>> _actionMap;
 ```
 
@@ -51,61 +50,38 @@ Define a `FocusableActionDetector` widget. Note that the custom keyboard input a
 
 ```dart
 FocusableActionDetector(
-
   actions: _actionMap,
-
   shortcuts: _shortcutMap,
-
-  child:
-
-)
+  child: …,
+);
 ```
 
 This class maps the enums and keyboard input type to the `Intent` class. The following setup is necessary because the actions and shortcuts parameter requires a class that extends `Intent`:
 
 ```dart
 class _ShowSecretMessageIntent extends Intent {
-
   const _ShowSecretMessageIntent({@required this.type});
-
   const _ShowSecretMessageIntent.P() : type = _SecretMessageType.P;
-
   const _ShowSecretMessageIntent.L() : type = _SecretMessageType.L;
-
   const _ShowSecretMessageIntent.A() : type = _SecretMessageType.A;
-
   const _ShowSecretMessageIntent.T() : type = _SecretMessageType.T;
-
   const _ShowSecretMessageIntent.F() : type = _SecretMessageType.F;
-
   const _ShowSecretMessageIntent.O() : type = _SecretMessageType.O;
-
   const _ShowSecretMessageIntent.R() : type = _SecretMessageType.R;
-
   const _ShowSecretMessageIntent.M() : type = _SecretMessageType.M;
 
   final _SecretMessageType type;
-
 }
 
 enum _SecretMessageType {
-
   P,
-
   L,
-
   A,
-
   T,
-
   F,
-
   O,
-
   R,
-
   M,
-
 }
 ```
 
@@ -113,53 +89,22 @@ Within the `initState` method, initialize the mapping previously defined:
 
 ```dart
 void initState() {
-
   _shortcutMap = <LogicalKeySet, Intent>{
-
-    LogicalKeySet(LogicalKeyboardKey.keyP):
-
-      const _ShowSecretMessageIntent.P(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyL):
-
-      const _ShowSecretMessageIntent.L(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyA):
-
-      const _ShowSecretMessageIntent.A(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyT):
-
-      const _ShowSecretMessageIntent.T(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyF):
-
-      const _ShowSecretMessageIntent.F(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyO):
-
-      const _ShowSecretMessageIntent.O(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyR):
-
-      const _ShowSecretMessageIntent.R(),
-
-    LogicalKeySet(LogicalKeyboardKey.keyM):
-
-      const _ShowSecretMessageIntent.M(),
-
-    };
-
-  _actionMap = <Type, Action<Intent>>{
-
-    _ShowSecretMessageIntent: CallbackAction<_ShowSecretMessageIntent>(
-
-      onInvoke: _actionHandler,
-
-    ),
-
+    LogicalKeySet(LogicalKeyboardKey.keyP): const _ShowSecretMessageIntent.P(),
+    LogicalKeySet(LogicalKeyboardKey.keyL): const _ShowSecretMessageIntent.L(),
+    LogicalKeySet(LogicalKeyboardKey.keyA): const _ShowSecretMessageIntent.A(),
+    LogicalKeySet(LogicalKeyboardKey.keyT): const _ShowSecretMessageIntent.T(),
+    LogicalKeySet(LogicalKeyboardKey.keyF): const _ShowSecretMessageIntent.F(),
+    LogicalKeySet(LogicalKeyboardKey.keyO): const _ShowSecretMessageIntent.O(),
+    LogicalKeySet(LogicalKeyboardKey.keyR): const _ShowSecretMessageIntent.R(),
+    LogicalKeySet(LogicalKeyboardKey.keyM): const _ShowSecretMessageIntent.M(),
   };
 
+  _actionMap = <Type, Action<Intent>>{
+    _ShowSecretMessageIntent: CallbackAction<_ShowSecretMessageIntent>(
+      onInvoke: _actionHandler,
+    ),
+  };
 }
 ```
 
@@ -167,37 +112,21 @@ The action handler links the keyboard input to a certain function within the app
 
 ```dart
 void _actionHandler(_ShowSecretMessageIntent intent) {
-
   switch (intent.type) {
-
     case _SecretMessageType.P:
-
       setState(() {
-
         children.add(
-
           Expanded(
-
             child: Container(
-
               color: Colors.orange,
-
               child: Text('Press L'),
-
             ),
-
           ),
-
         );
-
       });
-
-    break;
-
-    …
-
+      break;
+    // …
   }
-
 }
 ```
 
@@ -211,11 +140,8 @@ The `FocusableActionDetector` child widget is selected as the initial focus when
 
 ```dart
 FocusableActionDetector(
-
   autofocus: true,
-
-  child : …
-
+  child: …,
 ),
 ```
 
@@ -239,7 +165,9 @@ This means you can have different custom actions anytime the widget is in focus 
 
 The `FocusableActionDetector` widget lets you implement custom mouse cursors. For example, if you want your users to know that a widget is draggable, changing the mouse cursor is a good indicator that you can do this. The `FocusableActionDetector` widget has a `mouseCursor` parameter.
 
-`mouseCursor: SystemMouseCursors.grabbing`
+```dart
+mouseCursor: SystemMouseCursors.grabbing,
+```
 
 The [DartPad #1](https://dartpad.dev/d16345202d0e26d40fe14904657dc24a) example demonstrates the different types of mouse cursors within Flutter. Click any of the icons in the app bar to try. There are nine different system default mouse cursors:
 
