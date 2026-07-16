@@ -20,15 +20,17 @@
         }
     }
 
-    a {
-        color: var(--site-primary-color);
 
-        &:hover {
-            text-decoration: underline;
-        }
+
+
+}
+
+:where(.blog main) a {
+    color: var(--site-primary-color);
+
+    &:hover {
+        text-decoration: underline;
     }
-
-
 }
 
 .blog header {
