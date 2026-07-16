@@ -2,6 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'dart:async';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:universal_web/web.dart' as web;
@@ -52,13 +54,23 @@ class BlogCategories extends StatefulComponent {
 
 class _BlogCategoriesState extends State<BlogCategories> {
   BlogCategory? selectedCategory;
+  StreamSubscription<web.PopStateEvent>? _popStateSubscription;
 
   @override
   void initState() {
     super.initState();
     if (kIsWeb) {
       _updateCategoryFromUrl();
+      _popStateSubscription = web.EventStreamProviders.popStateEvent
+          .forTarget(web.window)
+          .listen((_) => _updateCategoryFromUrl());
     }
+  }
+
+  @override
+  void dispose() {
+    unawaited(_popStateSubscription?.cancel());
+    super.dispose();
   }
 
   void _updateCategoryFromUrl() {

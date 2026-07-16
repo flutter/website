@@ -20,6 +20,15 @@
         }
     }
 
+    a {
+        color: var(--site-primary-color);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
 }
 
 .blog header {
