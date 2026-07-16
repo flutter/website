@@ -41,13 +41,13 @@ Let’s start with a demo app containing 3 layout problems that you will debug. 
 
 Use the following steps when approaching a layout issue. To help you remember, use the COIN acronym. Who coined this term? I did, just now.
 
-1. **C**heck the error message on the debug console to identify the error type and error-causing widget.
+1. Check the error message on the debug console to identify the error type and error-causing widget.
 
-1. **O**pen the **Layout Explorer** to visualize a `Flex` widget and its children.
+1. Open the **Layout Explorer** to visualize a `Flex` widget and its children.
 
-1. **I**nspect the size and constraints of the error-causing widget and its parent/children with the **Details Tree**.
+1. Inspect the size and constraints of the error-causing widget and its parent/children with the **Details Tree**.
 
-1. **N**avigate back to your code and fix the issue.
+1. Navigate back to your code and fix the issue.
 
 It’s best if you follow along the rest of the article on your own computer. So, open your favorite text editor or IDE, and let’s go on this adventure together!
 
