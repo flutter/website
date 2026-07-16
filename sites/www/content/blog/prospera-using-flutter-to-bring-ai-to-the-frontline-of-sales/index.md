@@ -4,7 +4,7 @@ description: "Developers around the world are using Google’s Gemini models to 
 publishDate: 2024-11-21
 author: tvolkert
 image: images/1rV1FMqYeyrHsOvtSUIOnOA.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

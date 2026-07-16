@@ -4,7 +4,7 @@ description: "Transparency is a core goal of the Flutter open source project, wi
 publishDate: 2025-04-02
 author: mit-mit
 image: images/0sO8Aqa-_eHZ9jcZz.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

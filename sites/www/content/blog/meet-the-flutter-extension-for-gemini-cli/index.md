@@ -4,7 +4,7 @@ description: "Build high quality, feature rich apps with the new Flutter Extensi
 publishDate: 2025-10-08
 author: johnpryan
 image: images/1CXyt0NsoasPW5__Ev4AGNg.webp
-category: spotlight
+category: announcement
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "This document describes how Flutter’s build system converts your
 publishDate: 2018-07-20
 author: chinmaygarde
 image: images/1xfvovQJT-5OsHBDBIQa92A.webp
-category: tutorial
+category: engineering
 layout: blog
 ---
 

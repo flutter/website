@@ -4,7 +4,7 @@ description: "New Flutter Favorites, Apple Sign In and bringing prerelease Flutt
 publishDate: 2020-05-20
 author: csells
 image: images/0jAThFFycWDnklih_.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

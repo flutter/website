@@ -4,7 +4,7 @@ description: "Google’s Classroom app, which originally launched in 2014, is us
 publishDate: 2024-05-07
 author: craiglabenz
 image: images/1-u0y5vTqoC_sCyOHpvUnNA.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

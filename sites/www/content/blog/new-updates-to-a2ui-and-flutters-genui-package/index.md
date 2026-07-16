@@ -4,6 +4,7 @@ description: "Generative UI, or GenUI for short, is a user experience pattern in
 publishDate: 2026-05-14
 author: redbrogdon
 image: images/1yPatUacknopOAVF_Vr86OA.webp
+category: announcement
 layout: blog
 ---
 

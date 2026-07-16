@@ -4,7 +4,7 @@ description: "We are always amazed by what developers around the world are build
 publishDate: 2020-02-25
 author: aguinis
 image: images/10z33rzzkJfYqORqmhtjdMg.jpeg
-category: events
+category: event
 layout: blog
 ---
 

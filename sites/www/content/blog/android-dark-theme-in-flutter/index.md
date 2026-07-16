@@ -4,7 +4,7 @@ description: "A week ago at Google I/O 2019, the Android team announced support 
 publishDate: 2019-05-15
 author: matthew-carroll
 image: images/1wogDV86zrS8BNYI-8Th-TA.jpeg
-category: announcements
+category: tutorial
 layout: blog
 ---
 

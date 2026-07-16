@@ -4,7 +4,7 @@ description: "Insights and priorities based on 2022 Flutter desktop user researc
 publishDate: 2022-12-12
 author: melyndahoover
 image: images/1VbmSF-liAOyeParju2Y4kw.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

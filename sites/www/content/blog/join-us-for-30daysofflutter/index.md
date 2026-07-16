@@ -4,7 +4,7 @@ description: "Happy New Year folks. It’s the perfect time of year to learn som
 publishDate: 2021-01-26
 author: nikkitagandhi
 image: images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp
-category: events
+category: event
 layout: blog
 ---
 

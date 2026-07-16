@@ -4,7 +4,7 @@ description: "WebAssembly, Graphics rendering enhancements, and more options for
 publishDate: 2024-05-14
 author: itsjustkevin
 image: images/1hf9CEzGh0uhxnzVZi2Kk4g.webp
-category: releases
+category: release
 layout: blog
 ---
 

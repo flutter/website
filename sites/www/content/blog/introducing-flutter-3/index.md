@@ -4,7 +4,7 @@ description: "The culmination of our journey to multiplatform UI development on 
 publishDate: 2022-05-11
 author: timsneath
 image: images/0ZQ9Xa7CINFVMA95w.webp
-category: releases
+category: release
 layout: blog
 ---
 

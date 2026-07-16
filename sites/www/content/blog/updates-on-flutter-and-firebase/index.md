@@ -4,7 +4,7 @@ description: "Updated Firebase plugins for higher quality and a new site with Fl
 publishDate: 2020-08-19
 author: csells
 image: images/0v4wFYjvXB2iCem55.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

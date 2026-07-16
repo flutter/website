@@ -4,7 +4,7 @@ description: "Flutter: beautiful apps for mobile, web and desktop"
 publishDate: 2019-05-08
 author: timsneath
 image: images/13XedGb879lTK2vbCP0uscA.webp
-category: events
+category: event
 layout: blog
 ---
 

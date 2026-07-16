@@ -4,7 +4,7 @@ description: "In case you missed it, the Flutter team attended Google Cloud Next
 publishDate: 2024-04-16
 author: kkboateng
 image: images/0mlHluTwnXfWI-Yzy.webp
-category: events
+category: event
 layout: blog
 ---
 

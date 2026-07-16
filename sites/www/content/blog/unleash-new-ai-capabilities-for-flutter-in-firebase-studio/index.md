@@ -4,7 +4,7 @@ description: "Flutter development just got a lot smarter in Firebase Studio! At 
 publishDate: 2025-07-23
 author: antfitch
 image: images/1lPy6kRkj2N5ybEhHIKjbVw.webp
-category: spotlight
+category: announcement
 layout: blog
 ---
 

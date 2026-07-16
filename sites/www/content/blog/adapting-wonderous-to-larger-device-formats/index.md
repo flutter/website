@@ -4,7 +4,7 @@ description: "Using Flutter to design mobile applications that look beautiful on
 publishDate: 2023-01-25
 author: leighajarett
 image: images/1RA_cBWkp9GOQsK_H0-Dg8w.gif
-category: spotlight
+category: story
 layout: blog
 ---
 

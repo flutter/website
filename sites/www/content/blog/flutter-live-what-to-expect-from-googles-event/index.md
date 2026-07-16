@@ -4,7 +4,7 @@ description: "tl;dr: Flutter Live, a celebration of Google’s new mobile app SD
 publishDate: 2018-12-02
 author: csells
 image: images/0MhKKsmIlYcORAT-q.webp
-category: events
+category: event
 layout: blog
 ---
 

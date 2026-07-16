@@ -4,7 +4,7 @@ description: "Flutter Create is a contest that challenges you to build something
 publishDate: 2019-05-07
 author: aguinis
 image: images/1q-DyfLgHgeJRsrEsm9wOVw.jpeg
-category: events
+category: event
 layout: blog
 ---
 

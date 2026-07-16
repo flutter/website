@@ -4,7 +4,7 @@ description: "Continued refinement and polish for mobile platforms"
 publishDate: 2019-07-09
 author: timsneath
 image: images/1PzRLnOtNMtoO59dPPz--hA.webp
-category: releases
+category: release
 layout: blog
 ---
 

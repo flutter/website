@@ -4,7 +4,7 @@ description: "Now as of Flutter 3.7, I’m pleased to announce that developers c
 publishDate: 2023-01-09
 author: gaaclarke
 image: images/1bSKidxVM7-brUJFuyKdVFg.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

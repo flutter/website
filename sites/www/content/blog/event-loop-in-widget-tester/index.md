@@ -4,7 +4,7 @@ description: "Flutter’s widget tester is a great way to do unit testing on wid
 publishDate: 2018-11-14
 author: mehmetf
 image: images/1ajiMVoQuEXYZ4IJzr-yOQQ.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

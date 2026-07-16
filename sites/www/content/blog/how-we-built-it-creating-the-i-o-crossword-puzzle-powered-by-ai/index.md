@@ -4,7 +4,7 @@ description: "Adding a fun, helpful twist to a classic word game with Flutter, F
 publishDate: 2024-06-26
 author: verygoodopensource
 image: images/04ylubp836_tc4Nni.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

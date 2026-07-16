@@ -4,7 +4,7 @@ description: "When it first clicked for me that Flutter gives me full control of
 publishDate: 2019-06-13
 author: justinmc
 image: images/16hQYJrDKEE1r961qkxrMwQ.jpeg
-category: announcements
+category: tutorial
 layout: blog
 ---
 

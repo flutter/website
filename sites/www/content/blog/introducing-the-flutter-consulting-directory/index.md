@@ -4,7 +4,7 @@ description: "Where organizations can find consultants to help build their next 
 publishDate: 2023-09-13
 author: leighajarett
 image: images/1m5eYW0Qgmdse1bpkqbsPLQ.webp
-category: spotlight
+category: announcement
 layout: blog
 ---
 

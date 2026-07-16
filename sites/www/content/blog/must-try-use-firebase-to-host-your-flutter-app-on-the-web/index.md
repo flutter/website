@@ -4,7 +4,7 @@ description: "So you have a Flutter app, and you want to show it to the world? L
 publishDate: 2019-11-11
 author: clocksmith
 image: images/1eL-dHo08RwyLYOl17DNTog.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

@@ -29,7 +29,7 @@ class BlogCard extends StatelessComponent {
     return a(
       href: url,
       classes: ['blog-card', ?className].toClasses,
-      attributes: {'data-category': post.category ?? 'other'},
+      attributes: {'data-category': post.category},
       [
         if (post.image case final postImage?)
           div(classes: 'blog-card-image', [

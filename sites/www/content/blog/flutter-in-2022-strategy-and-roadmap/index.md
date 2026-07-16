@@ -4,7 +4,7 @@ description: "Areas of focus for Flutter as we build growth and momentum"
 publishDate: 2022-02-09
 author: timsneath
 image: images/1_CcfyhAWUIV8pWwuvdoSPA.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

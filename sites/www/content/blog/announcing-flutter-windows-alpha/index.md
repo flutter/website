@@ -4,7 +4,7 @@ description: "Native Windows app compilation, some early plugins, and a desktop-
 publishDate: 2020-09-23
 author: csells
 image: images/039MKtw4ICepbL_8d.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

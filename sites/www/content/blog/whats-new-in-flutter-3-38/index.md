@@ -4,7 +4,7 @@ description: "Write less, see more, build faster"
 publishDate: 2025-11-12
 author: itsjustkevin
 image: images/1MMtTv_yj5ycI6is3vkXRow.webp
-category: releases
+category: release
 layout: blog
 ---
 

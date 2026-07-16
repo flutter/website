@@ -4,7 +4,7 @@ description: "How Flutter aims to make canvas-rendered apps accessible to users 
 publishDate: 2024-04-16
 author: tomayac
 image: images/0pF3_jPjWNcie3LH0.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "As we do every quarter, the Flutter UX research team ran a user su
 publishDate: 2019-04-12
 author: jayoung-lee
 image: images/1BvDZf83WrPTc4yqukshP-w.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

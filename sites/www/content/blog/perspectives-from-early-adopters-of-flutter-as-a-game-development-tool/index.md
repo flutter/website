@@ -4,7 +4,7 @@ description: "How user research shaped the Flutter Casual Game Toolkit"
 publishDate: 2022-05-12
 author: taodong
 image: images/0ZrpkIfhAQ0MW1RYp.webp
-category: announcements
+category: story
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Learn how to enable Crashlytics in the Flutter Games example to ma
 publishDate: 2022-08-03
 author: rich_hall
 image: images/1B5i6MSUhz554dVTR484AuA.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

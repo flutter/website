@@ -4,7 +4,7 @@ description: "The way we build applications is evolving. Imagine apps that donâ€
 publishDate: 2025-04-24
 author: kkboateng
 image: images/0bWWt_FlITTVh_813.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

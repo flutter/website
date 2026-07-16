@@ -4,6 +4,7 @@ description: "Hi, I’m Jaime Wren, a long-time developer tooling software engin
 publishDate: 2025-12-09
 author: jwren
 image: images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg
+category: tutorial
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Findings from the Q2 2022 user survey. Written by JaYoung Lee and 
 publishDate: 2022-09-12
 author: jayoung-lee
 image: images/1lHHYRiiookkYcA-Uhq9pgg.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

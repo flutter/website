@@ -4,7 +4,7 @@ description: "By now you’ve probably read through the Flutter Puzzle Hack chal
 publishDate: 2022-01-20
 author: verygoodopensource
 image: images/1r5DaUW3Cdoad6GQBwWIh3Q.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

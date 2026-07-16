@@ -4,7 +4,7 @@ description: "A closer look at building a web app with Flutter and Firebase"
 publishDate: 2021-05-17
 author: verygoodopensource
 image: images/0diM5YKjX2b2OgNvD.webp
-category: events
+category: story
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Seamless web and mobile integration, breakthrough graphics perform
 publishDate: 2023-05-10
 author: itsjustkevin
 image: images/1CPv57Dp1cYXPz-YtZ2jMcA.webp
-category: releases
+category: release
 layout: blog
 ---
 

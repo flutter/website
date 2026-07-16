@@ -4,7 +4,7 @@ description: "Last year saw a major update to the Flutter Casual Games toolkit. 
 publishDate: 2024-03-20
 author: zoeyfan
 image: images/0zVBJt_90TX8KEYoD.webp
-category: events
+category: event
 layout: blog
 ---
 

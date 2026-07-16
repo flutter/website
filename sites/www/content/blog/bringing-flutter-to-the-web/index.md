@@ -4,7 +4,7 @@ description: "Flutter, our portable UI framework for building beautiful, tailore
 publishDate: 2019-05-07
 author: kevmoo
 image: images/1jQBkI-cZwOP_KAEnPhzDtg.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

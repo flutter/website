@@ -4,7 +4,7 @@ description: "There are many ways for apps to make money: accepting payments as 
 publishDate: 2021-11-16
 author: zoeyfan
 image: images/0zOegrJCYTuapgWgf.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

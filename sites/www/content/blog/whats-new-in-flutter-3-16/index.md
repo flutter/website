@@ -4,7 +4,7 @@ description: "Material 3 by default, Impeller preview for Android, DevTools exte
 publishDate: 2023-11-15
 author: itsjustkevin
 image: images/1TDndNB8cS95g5faXBKitHA.webp
-category: releases
+category: release
 layout: blog
 ---
 

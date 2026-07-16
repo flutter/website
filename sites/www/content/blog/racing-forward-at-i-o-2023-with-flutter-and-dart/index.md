@@ -4,7 +4,7 @@ description: "Major updates to graphics performance, web integration, developer 
 publishDate: 2023-05-10
 author: timsneath
 image: images/1bzC0ul7jBVhOJiastVGKlw.webp
-category: events
+category: event
 layout: blog
 ---
 

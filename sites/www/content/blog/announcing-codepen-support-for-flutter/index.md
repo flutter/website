@@ -4,7 +4,7 @@ description: "Today we’re excited to announce that CodePen, the leading social
 publishDate: 2020-04-15
 author: zoeyfan
 image: images/06wPqdCz_TzB2gAXr.webp
-category: spotlight
+category: announcement
 layout: blog
 ---
 

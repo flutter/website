@@ -4,7 +4,7 @@ description: "Posted by Chris Sells, Product Manager, Flutter developer experien
 publishDate: 2019-12-11
 author: csells
 image: images/1sW6TueDcNzw806cjigLJaA.webp
-category: releases
+category: release
 layout: blog
 ---
 

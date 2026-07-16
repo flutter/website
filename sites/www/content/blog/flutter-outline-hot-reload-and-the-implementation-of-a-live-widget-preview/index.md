@@ -4,7 +4,7 @@ description: "In M22 of the Flutter plugin for IntelliJ we added a new tool wind
 publishDate: 2018-04-04
 author: scheglov
 image: images/0TUzb7DjU9HweZAAI.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

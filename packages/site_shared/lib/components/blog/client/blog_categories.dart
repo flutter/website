@@ -12,11 +12,13 @@ class BlogCategory {
   const BlogCategory({
     required this.slug,
     required this.label,
+    required this.description,
     required this.showFeatured,
   });
 
   final String slug;
   final String label;
+  final String description;
   final bool showFeatured;
 
   @decoder
@@ -24,13 +26,16 @@ class BlogCategory {
     return BlogCategory(
       slug: data['slug'] as String,
       label: data['label'] as String,
+      description: data['description'] as String,
       showFeatured: data['showFeatured'] == true,
     );
   }
+
   @encoder
   Map<String, Object?> toMap() => {
     'slug': slug,
     'label': label,
+    'description': description,
     'showFeatured': showFeatured,
   };
 }
@@ -104,7 +109,7 @@ class _BlogCategoriesState extends State<BlogCategories> {
 
         final isVisible = category == null || cardCategory == category.slug;
 
-        // Remove existing layout classes
+        // Remove existing layout classes.
         card.classList.remove('layout-featured');
         card.classList.remove('layout-grid');
         card.classList.remove('layout-list');

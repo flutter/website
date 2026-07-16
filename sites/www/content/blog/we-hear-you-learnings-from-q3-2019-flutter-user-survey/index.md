@@ -4,7 +4,7 @@ description: "On performance, add-to-app, plugins, and more"
 publishDate: 2019-11-19
 author: jayoung-lee
 image: images/0UMfWbaBispXV0tMD.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

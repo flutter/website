@@ -4,7 +4,7 @@ description: "“Nice UI. But how does Flutter deal with platform-specific APIs?
 publishDate: 2018-08-28
 author: mravn
 image: images/1ykNghfAKtx0xsZWedfgslg.webp
-category: announcements
+category: tutorial
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "A reference app that shows how to develop tailored UI using Flutte
 publishDate: 2022-08-30
 author: leighajarett
 image: images/1Tb-JXZnxo2pu232C4c2KqQ.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

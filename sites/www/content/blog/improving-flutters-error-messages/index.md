@@ -4,7 +4,7 @@ description: "Can visual design be applied to error messages? We found that it d
 publishDate: 2019-09-09
 author: taodong
 image: images/1l8l2xWisc5Mtc6xzFaucmg.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

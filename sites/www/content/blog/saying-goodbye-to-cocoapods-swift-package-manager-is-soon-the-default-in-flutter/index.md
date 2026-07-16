@@ -4,6 +4,7 @@ description: "Starting with the next stable Flutter release, 3.44, Swift Package
 publishDate: 2026-04-30
 author: magder
 image: images/12A_CUygcOEFYUv5ms5KAJw.webp
+category: announcement
 layout: blog
 ---
 

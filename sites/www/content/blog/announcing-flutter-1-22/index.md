@@ -4,7 +4,7 @@ description: "Supporting iOS 14 and Android 11, new i18n and l10n support, Googl
 publishDate: 2020-10-01
 author: csells
 image: images/0luz0EiazQQqsAEC4.webp
-category: releases
+category: release
 layout: blog
 ---
 

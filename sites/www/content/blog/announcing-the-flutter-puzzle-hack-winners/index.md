@@ -4,7 +4,7 @@ description: "Drumroll please…!!!"
 publishDate: 2022-04-21
 author: kkboateng
 image: images/1RpaR1pTpRa0PUdNdfv4njA.webp
-category: events
+category: event
 layout: blog
 ---
 

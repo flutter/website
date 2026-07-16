@@ -3,7 +3,7 @@ title: "Integration Testing with flutter_driver"
 description: "Unit tests ensure that individual parts of your application work as intended, but what about your application as a whole? This is where…"
 publishDate: 2020-09-29
 author: guidez
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

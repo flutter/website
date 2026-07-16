@@ -4,7 +4,7 @@ description: "Named routes can be used to navigate between pages inside a Flutte
 publishDate: 2020-03-30
 author: perclasson
 image: images/0Uoo0IGsUFUf8GJsT.webp
-category: announcements
+category: tutorial
 layout: blog
 ---
 

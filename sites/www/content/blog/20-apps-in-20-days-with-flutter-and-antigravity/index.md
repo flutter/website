@@ -4,6 +4,7 @@ description: "Why I stopped planning and started building"
 publishDate: 2026-03-05
 author: lamek
 image: images/18qm-mMi6Hod2jBw1_2nNEw.webp
+category: story
 layout: blog
 ---
 

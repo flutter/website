@@ -4,7 +4,7 @@ description: "Includes Metal support for faster iOS performance, new Material co
 publishDate: 2020-05-06
 author: csells
 image: images/14MIF2GwByNG1MJ7DNslb3Q.webp
-category: releases
+category: release
 layout: blog
 ---
 

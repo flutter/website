@@ -4,7 +4,7 @@ description: "Discovering how to animate composite graphical objects in the cont
 publishDate: 2017-03-31
 author: mravn
 image: images/1OSc2sFHg8KH4ZQR2ymytKg.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

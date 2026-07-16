@@ -4,7 +4,7 @@ description: "Major milestones for Flutter web apps, graphics performance upgrad
 publishDate: 2024-05-14
 author: mit-mit
 image: images/1Mq-Uj8c8l7rrpPxYQ6Gemw.gif
-category: events
+category: release
 layout: blog
 ---
 

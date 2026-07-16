@@ -1,21 +1,37 @@
 categories:
-  - slug: releases
+  - slug: release
     label: Releases
+    description: >-
+      Flutter and Dart SDK releases and summaries of the changes they include.
     showFeatured: true
-  - slug: announcements
+  - slug: announcement
     label: Announcements
+    description: >-
+      Time-sensitive news about Flutter and Dart products,
+      programs, roadmaps, and project milestones.
     showFeatured: true
-  - slug: events
-    label: Events
-    showFeatured: false
-  - slug: spotlight
-    label: Spotlight
+  - slug: engineering
+    label: Engineering
+    description: >-
+      Explanations of Flutter and Dart architecture, implementation,
+      technical decisions, and project processes.
     showFeatured: false
   - slug: tutorial
-    label: Tutorial
+    label: Tutorials
+    description: >-
+      Practical guidance and learning resources that help readers
+      accomplish a task with Flutter or Dart.
     showFeatured: false
-  - slug: other
-    label: Other
+  - slug: story
+    label: Stories
+    description: >-
+      Case studies and community, customer, partner, and project showcases.
+    showFeatured: false
+  - slug: event
+    label: Events
+    description: >-
+      News and recaps from conferences, contests, challenges,
+      and other Flutter and Dart events.
     showFeatured: false
 nextPostsTitle: "More from Flutter"
 atom:

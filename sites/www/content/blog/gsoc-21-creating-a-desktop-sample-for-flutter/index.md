@@ -4,7 +4,7 @@ description: "by Abdullah Deshmukh"
 publishDate: 2021-08-22
 author: abd99
 image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg
-category: events
+category: story
 layout: blog
 ---
 

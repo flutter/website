@@ -4,6 +4,7 @@ description: "Last year, I got to record one of the episodes in the Flutter Anim
 publishDate: 2020-04-17
 author: filiph
 image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp
+category: tutorial
 layout: blog
 ---
 

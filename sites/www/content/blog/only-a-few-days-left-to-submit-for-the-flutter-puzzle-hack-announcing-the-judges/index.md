@@ -4,7 +4,7 @@ description: "Get your project in before the submission deadline!"
 publishDate: 2022-03-09
 author: kkboateng
 image: images/0LgF82TK9xt1aI14Y.webp
-category: events
+category: event
 layout: blog
 ---
 

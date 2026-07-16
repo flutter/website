@@ -4,7 +4,7 @@ description: "Managing feedback in a large open source project like Flutter"
 publishDate: 2019-11-25
 author: kf6gpe
 image: images/1D_MCtnl2h_spFgoORikDcA.webp
-category: tutorial
+category: engineering
 layout: blog
 ---
 

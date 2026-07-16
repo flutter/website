@@ -3,7 +3,7 @@ title: "Test Flutter apps on Travis"
 description: "One of my favorite features of Flutter is the widget testing framework. It’s fast and reliable. It feels much more like unit testing rather…"
 publishDate: 2017-05-24
 author: yegorj
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

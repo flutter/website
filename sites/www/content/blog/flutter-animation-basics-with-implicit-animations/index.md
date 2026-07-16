@@ -4,6 +4,7 @@ description: "In this series of posts, we’re going to introduce you to animati
 publishDate: 2019-12-04
 author: theaflowers
 image: images/08lW_z0nxESDIBO9R.gif
+category: tutorial
 layout: blog
 ---
 

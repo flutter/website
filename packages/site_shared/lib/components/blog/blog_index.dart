@@ -14,11 +14,18 @@ import 'client/blog_categories.dart';
 
 extension PostIndex on BuildContext {
   List<({String url, Post post})> get blogPosts {
+    final categories = page.blogCategories;
     final posts = <({String url, Post post})>[
       for (final page in pages)
         if (page.url.startsWith('/blog/'))
-          if (Post.tryParse(page.data.page) case final post?)
-            (url: page.url, post: post),
+          (
+            url: page.url,
+            post: Post.parse(
+              page.data.page,
+              categories: categories,
+              source: page.url,
+            ),
+          ),
     ];
 
     return posts

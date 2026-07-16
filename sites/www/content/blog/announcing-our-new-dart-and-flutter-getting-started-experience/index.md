@@ -4,7 +4,7 @@ description: "When I joined the Dash DevRel team, my manager gave me an onboardi
 publishDate: 2026-02-03
 author: ericwindmill
 image: images/1rHBScksI6g6at1HsqSuPhA.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

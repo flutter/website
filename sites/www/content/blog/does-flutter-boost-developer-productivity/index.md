@@ -4,7 +4,7 @@ description: "The Flutter team continues to run a quarterly user survey to hear 
 publishDate: 2022-05-05
 author: jayoung-lee
 image: images/0hjsh42RwSy9QAK1S.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

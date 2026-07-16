@@ -4,7 +4,7 @@ description: "Our recent accomplishments and future priorities for making Flutte
 publishDate: 2023-05-18
 author: leighajarett
 image: images/1OGs9_siPcMAYd1yDAp-AOA.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

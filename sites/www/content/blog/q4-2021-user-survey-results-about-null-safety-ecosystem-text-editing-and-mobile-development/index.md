@@ -4,7 +4,7 @@ description: "Last November, the Flutter UX team ran the 15th quarterly user sur
 publishDate: 2022-02-22
 author: jayoung-lee
 image: images/0Zw_zyVq5CfP7Y09o.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

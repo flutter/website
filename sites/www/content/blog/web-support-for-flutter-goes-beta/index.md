@@ -4,7 +4,7 @@ description: "Posted by Mariam Hasnany, Product Manager, Flutter"
 publishDate: 2019-12-11
 author: mariam_hasnany
 image: images/0M7sTluUPVsk6DcnU.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

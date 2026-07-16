@@ -4,7 +4,7 @@ description: "Developing Flutter applications for Android, iOS, the web, Windows
 publishDate: 2022-12-06
 author: domesticmouse
 image: images/1RQs5hWCyE30nkyfsVqDb0A.jpeg
-category: announcements
+category: engineering
 layout: blog
 ---
 

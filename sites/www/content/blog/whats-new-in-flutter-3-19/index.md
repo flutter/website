@@ -4,7 +4,7 @@ description: "Revolutionizing App Development with the Gemini API, Impeller Upda
 publishDate: 2024-02-15
 author: itsjustkevin
 image: images/0ZX3bHJdGGZwwOQHt.gif
-category: releases
+category: release
 layout: blog
 ---
 

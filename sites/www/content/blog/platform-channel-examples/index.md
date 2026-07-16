@@ -4,7 +4,7 @@ description: "Google Summer of Code (GSoC) ‘20"
 publishDate: 2020-08-29
 author: ayushbherwani1998
 image: images/15PoXySK4-tAKWAY1zCzfHg.webp
-category: events
+category: story
 layout: blog
 ---
 

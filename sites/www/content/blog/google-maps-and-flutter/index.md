@@ -4,7 +4,7 @@ description: "This article will show you step-by-step how to add a Google Map wi
 publishDate: 2018-12-14
 author: kenzieschmoll
 image: images/14dSyF9z9lAYvHVxFPS_oiw.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

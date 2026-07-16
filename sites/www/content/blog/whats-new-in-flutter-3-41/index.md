@@ -4,7 +4,7 @@ description: "Empowering the community"
 publishDate: 2026-02-11
 author: itsjustkevin
 image: images/1jmKuW7ItWRJAHNABfTEhHA.gif
-category: releases
+category: release
 layout: blog
 ---
 

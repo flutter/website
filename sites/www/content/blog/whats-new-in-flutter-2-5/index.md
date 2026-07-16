@@ -4,7 +4,7 @@ description: "Performance improvements, DevTools updates, new Material You suppo
 publishDate: 2021-09-08
 author: csells
 image: images/0esYsdKzKL64130ln.webp
-category: releases
+category: release
 layout: blog
 ---
 

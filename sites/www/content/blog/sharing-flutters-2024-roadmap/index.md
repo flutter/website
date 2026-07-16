@@ -4,7 +4,7 @@ description: "As an open source project with a thriving community, we strive to 
 publishDate: 2024-02-15
 author: mit-mit
 image: images/18v__Z0fIVOBm4uxFnMLAVg.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

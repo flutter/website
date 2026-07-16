@@ -4,7 +4,7 @@ description: "We have a second beta build available of Flutter, Google’s new m
 publishDate: 2018-04-09
 author: mit-mit
 image: images/14DxDp03lkhJN3engJhXhWQ.webp
-category: releases
+category: release
 layout: blog
 ---
 

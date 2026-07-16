@@ -4,7 +4,7 @@ description: "The Flutter team has been running a quarterly user survey program 
 publishDate: 2023-06-30
 author: jayoung-lee
 image: images/0BujM3j2SMg1qp3hi.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

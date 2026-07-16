@@ -4,6 +4,7 @@ description: "Last month, we published Flutter and Dart’s 2026 Roadmap, a peek
 publishDate: 2026-04-01
 author: mariam_hasnany
 image: images/1acnlJyV5J3HU4jFbo2LQog.gif
+category: announcement
 layout: blog
 ---
 

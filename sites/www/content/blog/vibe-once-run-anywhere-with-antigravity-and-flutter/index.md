@@ -7,6 +7,7 @@ author:
   - craiglabenz
   - rodydavis
 image: images/1Mg2Bj5FBg1I19r1Jw4q9Kg.webp
+category: story
 layout: blog
 ---
 

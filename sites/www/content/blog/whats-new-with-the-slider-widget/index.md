@@ -4,7 +4,7 @@ description: "Flutter lets you create beautiful, natively compiled applications.
 publishDate: 2020-06-18
 author: josealba
 image: images/10vbyZT-NITTvqljO8HtU4w.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

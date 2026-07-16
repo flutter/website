@@ -3,7 +3,7 @@ title: "Supporting iOS 14 and Xcode 12 with Flutter"
 description: "As always, our goal is to make developers successful on Flutter regardless of the platform you’re targeting. Since the announcement of iOS…"
 publishDate: 2020-09-16
 author: csells
-category: announcements
+category: announcement
 layout: blog
 ---
 

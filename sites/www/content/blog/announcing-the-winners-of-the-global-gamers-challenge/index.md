@@ -4,7 +4,7 @@ description: "Our 10 top projects, and how to stay involved with sustainability 
 publishDate: 2024-05-14
 author: kkboateng
 image: images/0S_bBN0WiR_Q5F08J.webp
-category: events
+category: event
 layout: blog
 ---
 

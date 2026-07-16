@@ -4,7 +4,7 @@ description: "Continued growth, new Flutter Favorites, Ecosystem Virtual Summit 
 publishDate: 2024-01-22
 author: anderdobo
 image: images/0tkq_040X0xa_Noms.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

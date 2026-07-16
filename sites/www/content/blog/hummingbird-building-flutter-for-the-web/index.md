@@ -4,7 +4,7 @@ description: "At Flutter Live today, we announced that we are experimenting with
 publishDate: 2018-12-04
 author: yegorj
 image: images/0gD64Y8ECWBBuSZrx.webp
-category: spotlight
+category: engineering
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Written by the Flutter UXR team (JaYoung Lee, Youyang Hou, Jack Ki
 publishDate: 2020-10-20
 author: jayoung-lee
 image: images/0_CopRAy_n9COQGqR.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

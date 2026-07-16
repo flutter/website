@@ -4,7 +4,7 @@ description: "Our team has been hard at work this Spring, preparing to meet over
 publishDate: 2026-04-27
 author: twerske
 image: images/1MdrcuqmMZPxXdrkJbDAdIA.webp
-category: events
+category: event
 layout: blog
 ---
 

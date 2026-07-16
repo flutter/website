@@ -4,7 +4,7 @@ description: "A developer’s journey from skepticism to excitement for the futu
 publishDate: 2017-11-16
 author: xster
 image: images/1Tt9lpvpKa1700v74KcjcIw.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

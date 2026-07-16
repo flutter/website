@@ -4,7 +4,7 @@ description: "Updated integration testing that supports Firebase Test Lab on mob
 publishDate: 2020-12-09
 author: csells
 image: images/0PEc27voy2YR_winG.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

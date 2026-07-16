@@ -4,7 +4,7 @@ description: "Wonderous has been nominated for a Webby award in the Best User In
 publishDate: 2023-04-06
 author: leighajarett
 image: images/1XksvK4Wq0YbZoIG8udUShw.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

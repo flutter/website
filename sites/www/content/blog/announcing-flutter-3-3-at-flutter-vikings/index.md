@@ -4,7 +4,7 @@ description: "A new Flutter release, a beautiful new app, work on improving rend
 publishDate: 2022-08-30
 author: timsneath
 image: images/0bDz2chibrm3B6QZE.webp
-category: events
+category: release
 layout: blog
 ---
 

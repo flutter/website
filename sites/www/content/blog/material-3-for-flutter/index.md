@@ -4,7 +4,7 @@ description: "Sherlock Holmes and Dr Watson; peanut butter and jam; Flutter and 
 publishDate: 2023-01-18
 author: esouthren
 image: images/0RuCmIqSnK0G0kHmy.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

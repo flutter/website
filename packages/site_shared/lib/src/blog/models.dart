@@ -8,10 +8,36 @@ import 'package:jaspr_content/jaspr_content.dart';
 import '../../components/blog/client/blog_categories.dart';
 
 extension type Post(Map<String, Object?> data) {
+  static Post parse(
+    Map<String, Object?> data, {
+    required Iterable<BlogCategory> categories,
+    String? source,
+  }) {
+    final post = tryParse(data);
+    final sourceDescription = source == null ? '' : ' at "$source"';
+    if (post == null) {
+      throw ArgumentError(
+        'Missing or invalid required blog post metadata$sourceDescription.',
+      );
+    }
+
+    final supportedCategories = categories.map((category) => category.slug);
+    if (!supportedCategories.contains(post.category)) {
+      throw ArgumentError(
+        'Unsupported blog post category "${post.category}"'
+        '$sourceDescription. Supported categories: '
+        '${supportedCategories.join(', ')}.',
+      );
+    }
+
+    return post;
+  }
+
   static Post? tryParse(Map<String, Object?> data) {
     if (data['title'] is! String ||
         data['description'] is! String ||
         data['publishDate'] is! String ||
+        data['category'] is! String ||
         !_isValidAuthorProperty(data['author'])) {
       return null;
     }
@@ -35,7 +61,7 @@ extension type Post(Map<String, Object?> data) {
   };
 
   String get readingTime => data['readingTime'] as String? ?? '5 min read';
-  String? get category => data['category'] as String?;
+  String get category => data['category'] as String;
 }
 
 extension type Author(Map<String, Object?> data) {

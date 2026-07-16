@@ -4,6 +4,7 @@ description: "Creating Flutter frontends for ADK"
 publishDate: 2026-07-01
 author: redbrogdon
 image: images/1XhysKMaIjv--tjhGDEas6A.webp
+category: tutorial
 layout: blog
 ---
 

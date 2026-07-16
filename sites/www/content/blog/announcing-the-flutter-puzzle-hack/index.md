@@ -4,7 +4,7 @@ description: "Push your creativity to its limits by reimagining this classic puz
 publishDate: 2022-01-06
 author: kkboateng
 image: images/1RpaR1pTpRa0PUdNdfv4njA.webp
-category: events
+category: event
 layout: blog
 ---
 

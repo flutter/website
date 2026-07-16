@@ -8,6 +8,7 @@ import 'package:jaspr/server.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:xml/xml.dart';
 
+import '../../components/blog/client/blog_categories.dart';
 import 'models.dart';
 
 /// The site-relative path the [BlogAtomFeedOutput] publishes the blog feed at.
@@ -81,7 +82,11 @@ final class BlogAtomFeedOutput implements SecondaryOutput {
       throw Exception('Blog atom feed author not configured in page data.');
     }
 
-    final (:entries, :feedUpdated) = _entriesFor(siteBaseUrl, pages);
+    final (:entries, :feedUpdated) = _entriesFor(
+      siteBaseUrl,
+      pages,
+      categories: blogIndex.blogCategories,
+    );
 
     final builder = XmlBuilder();
     builder.processing('xml', 'version="1.0" encoding="utf-8"');
@@ -115,8 +120,9 @@ final class BlogAtomFeedOutput implements SecondaryOutput {
   /// latest `updated` timestamp across them.
   ({List<_AtomEntry> entries, DateTime feedUpdated}) _entriesFor(
     Uri siteBaseUrl,
-    List<Page> pages,
-  ) {
+    List<Page> pages, {
+    required Iterable<BlogCategory> categories,
+  }) {
     final entries = <_AtomEntry>[];
     DateTime? feedUpdated;
 
@@ -124,8 +130,11 @@ final class BlogAtomFeedOutput implements SecondaryOutput {
       if (!page.url.startsWith('/blog/')) continue;
       final pageData = page.data.page;
       if (pageData['atom'] == false) continue;
-      final post = Post.tryParse(pageData);
-      if (post == null) continue;
+      final post = Post.parse(
+        pageData,
+        categories: categories,
+        source: page.url,
+      );
 
       final published = _atomDateFormat.parseStrict(post.publishDate, true);
       final updated = switch (pageData['updatedDate']) {

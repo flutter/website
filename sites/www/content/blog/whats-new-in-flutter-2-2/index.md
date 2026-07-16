@@ -4,7 +4,7 @@ description: "The Flutter 2.2 release focuses on polish and optimization, includ
 publishDate: 2021-05-19
 author: csells
 image: images/0fS4WbRPwmo_FQgDo.webp
-category: releases
+category: release
 layout: blog
 ---
 

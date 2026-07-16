@@ -4,7 +4,7 @@ description: "The Flutter team is here to share the results from this quarter’
 publishDate: 2021-05-13
 author: jayoung-lee
 image: images/0_m-0usdhsHPmeZ8U.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

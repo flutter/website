@@ -4,7 +4,7 @@ description: "Note: This article, originally written in Chinese by the ByteDance
 publishDate: 2021-06-29
 author: sfshaza2
 image: images/0s0fEzRKPUlPITzxE.webp
-category: events
+category: story
 layout: blog
 ---
 

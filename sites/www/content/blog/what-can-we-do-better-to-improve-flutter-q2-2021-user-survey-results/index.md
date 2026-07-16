@@ -4,7 +4,7 @@ description: "Written by JaYoung & Mariam"
 publishDate: 2021-08-13
 author: jayoung-lee
 image: images/0m2ihVMc99emY4hQY.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

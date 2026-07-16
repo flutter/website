@@ -4,7 +4,7 @@ description: "A virtual photo booth experience showcasing Flutter and Machine Le
 publishDate: 2023-01-24
 author: verygoodopensource
 image: images/18zOCQg2Qwh_dzC4ndMzoqg.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

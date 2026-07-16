@@ -4,7 +4,7 @@ description: "Empowering developers at Google I/O 2026"
 publishDate: 2026-05-20
 author: khanhnwin
 image: images/1vZ-dmpSHSo3nF0ChZDb02A.gif
-category: releases
+category: release
 layout: blog
 ---
 

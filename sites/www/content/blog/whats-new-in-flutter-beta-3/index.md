@@ -4,7 +4,7 @@ description: "This week marks the release of the third beta for Flutter, our too
 publishDate: 2018-05-07
 author: timsneath
 image: images/0Sdp8z8g2G2spsW3j.webp
-category: releases
+category: release
 layout: blog
 ---
 

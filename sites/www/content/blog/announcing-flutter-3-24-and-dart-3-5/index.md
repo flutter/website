@@ -4,7 +4,7 @@ description: "An early look at Flutter GPU, web enhancements, and more!"
 publishDate: 2024-08-06
 author: mit-mit
 image: images/1jzRGig761LnPlvokq2FaVA.gif
-category: releases
+category: release
 layout: blog
 ---
 

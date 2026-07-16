@@ -4,7 +4,7 @@ description: "Do you want to write an app that can display a web page without ha
 publishDate: 2019-01-31
 author: efortuna
 image: images/1aMgCX1bmq6hRNgmsDDVOXQ.gif
-category: announcements
+category: tutorial
 layout: blog
 ---
 

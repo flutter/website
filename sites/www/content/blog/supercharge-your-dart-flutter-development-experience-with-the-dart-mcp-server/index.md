@@ -4,7 +4,7 @@ description: "By Ander Dobo — Product Manager, and Kenzie Davisson —�
 publishDate: 2025-07-23
 author: anderdobo
 image: images/13K1rgoDtIBWbIFZPp1VCEQ.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

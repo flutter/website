@@ -4,7 +4,7 @@ description: "Flutter web and Null Safety move to stable, Flutter desktop moves 
 publishDate: 2021-03-03
 author: csells
 image: images/0KQZef4s2-koToHMA.webp
-category: releases
+category: release
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Be among the first to launch news mobile applications with the Flu
 publishDate: 2022-11-10
 author: zoeyfan
 image: images/1eQsCJ1lXurwLVnD5wIDxkg.webp
-category: events
+category: announcement
 layout: blog
 ---
 

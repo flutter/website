@@ -4,7 +4,7 @@ description: "Connect a Flutter feature to a native app and get up and running i
 publishDate: 2022-05-26
 author: verygoodopensource
 image: images/17pcNynupdvylRqlRdi6rPQ.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

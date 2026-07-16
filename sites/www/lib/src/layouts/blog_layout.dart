@@ -2,6 +2,7 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:collection/collection.dart';
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
@@ -38,11 +39,15 @@ class BlogLayout extends DefaultLayout {
       );
     }
 
-    final categorySlug = pageData['category'] as String?;
     final categories = page.blogCategories;
-    final pageCategory = categories
-        .where((c) => c.slug == categorySlug)
-        .firstOrNull;
+    final post = isPost
+        ? Post.parse(pageData, categories: categories, source: page.url)
+        : null;
+    final pageCategory = post == null
+        ? null
+        : categories.firstWhereOrNull(
+            (category) => category.slug == post.category,
+          );
 
     return super.buildLayout(
       page,
@@ -57,8 +62,7 @@ class BlogLayout extends DefaultLayout {
                       title: 'The Flutter Blog',
                       url: '/blog',
                     ),
-                    if (pageCategory != null &&
-                        pageCategory.slug != 'other') ...[
+                    if (pageCategory != null) ...[
                       BreadcrumbItem(
                         title: pageCategory.label,
                         url: '/blog?category=${pageCategory.slug}',
@@ -81,7 +85,7 @@ class BlogLayout extends DefaultLayout {
                   .text(pageData['description'] as String),
                 ]),
             ]),
-            if (isPost) PostInfo(post: Post(pageData), url: page.url),
+            if (post != null) PostInfo(post: post, url: page.url),
             child,
             if (isPost)
               BlogNextPosts(currentPage: page, category: pageCategory),

@@ -4,7 +4,7 @@ description: "Material Design and Flutter both help developers build experiences
 publishDate: 2020-11-04
 author: andremobilelabonte
 image: images/1kcT41A5GvXp8XrjHjiuc4A.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

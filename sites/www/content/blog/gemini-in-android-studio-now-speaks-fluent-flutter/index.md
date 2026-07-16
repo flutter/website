@@ -5,7 +5,7 @@ Sandhya Mohan, Product Manager, Gemini in Android Studio"
 publishDate: 2025-05-20
 author: anderdobo
 image: images/151UZbL3Qb7BGDEuujTTg6A.gif
-category: spotlight
+category: announcement
 layout: blog
 ---
 

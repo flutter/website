@@ -4,7 +4,7 @@ description: "What happens during a hot reload, and how we made it faster for Fl
 publishDate: 2021-08-19
 author: jensjohansen
 image: images/1iaLz5LEBdsZJRR_W8UCQcQ.webp
-category: announcements
+category: engineering
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "Google I/O 2018 is just a week away, and Flutter will be showing u
 publishDate: 2018-05-01
 author: aguinis
 image: images/1dArkoJSnhvcjZ6p4ds63BA.webp
-category: events
+category: event
 layout: blog
 ---
 

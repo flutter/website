@@ -4,7 +4,7 @@ description: "Why we rebuilt Dart DevTools from scratch in Flutter"
 publishDate: 2020-06-24
 author: filiph
 image: images/0VLibsxLD9Wv35Pr8.webp
-category: spotlight
+category: announcement
 layout: blog
 ---
 

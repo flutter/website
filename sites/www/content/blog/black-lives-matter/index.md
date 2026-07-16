@@ -3,6 +3,7 @@ title: "Black Lives Matter"
 description: "We aren’t posting an article this week."
 publishDate: 2020-06-03
 author: timsneath
+category: announcement
 layout: blog
 ---
 

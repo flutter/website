@@ -4,7 +4,7 @@ description: "The Flux and Redux application architectures work well with reacti
 publishDate: 2018-01-19
 author: amir_h
 image: images/10gdFpYTSo_TTCqd-XVcvYw.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

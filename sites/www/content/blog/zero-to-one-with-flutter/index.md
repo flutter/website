@@ -4,7 +4,7 @@ description: "It was late summer 2016, and my first task as a new hire at the Go
 publishDate: 2017-02-22
 author: mravn
 image: images/1n76TpChNv8Q25WrfBiuWpw.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

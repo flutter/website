@@ -4,7 +4,7 @@ description: "At Google I/O 2018, the Material team announced a important update
 publishDate: 2018-05-10
 author: mit-mit
 image: images/1cyTGpzWuHqvYFGTV7uQyXA.webp
-category: announcements
+category: tutorial
 layout: blog
 ---
 

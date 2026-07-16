@@ -4,7 +4,7 @@ description: "Flutter has released web support that allows you to create dynamic
 publishDate: 2020-09-21
 author: josealba
 image: images/1BzcKF4qdbLIFFB6XL8x-9A.webp
-category: announcements
+category: tutorial
 layout: blog
 ---
 

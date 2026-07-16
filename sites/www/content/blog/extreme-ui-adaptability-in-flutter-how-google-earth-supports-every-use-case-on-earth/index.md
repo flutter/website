@@ -4,7 +4,7 @@ description: "When Google Earth set out to rewrite their mobile and web clients 
 publishDate: 2024-02-07
 author: craiglabenz
 image: images/1RXf-GaJ4uz5_ZKU8QgIVkw.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

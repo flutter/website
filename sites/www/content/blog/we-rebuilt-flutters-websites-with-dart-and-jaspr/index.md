@@ -4,6 +4,7 @@ description: "Despite Dart starting out as a web language and being used every d
 publishDate: 2026-04-15
 author: parlough
 image: images/1y6lc2WLpxXBKsuoKJywapQ.webp
+category: engineering
 layout: blog
 ---
 

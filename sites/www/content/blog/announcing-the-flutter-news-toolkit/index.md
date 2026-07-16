@@ -4,7 +4,7 @@ description: "An accelerated toolkit for building mobile apps for news and conte
 publishDate: 2023-01-25
 author: zoeyfan
 image: images/0_Xb_zBUOvsH6CL9A.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

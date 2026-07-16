@@ -4,7 +4,7 @@ description: "Tl;DR: Flutter Create is a contest that challenges you to build so
 publishDate: 2019-02-21
 author: aguinis
 image: images/1AyxOZQPLHstjafeVvwHbUg.webp
-category: events
+category: event
 layout: blog
 ---
 

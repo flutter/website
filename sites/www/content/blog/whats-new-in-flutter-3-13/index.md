@@ -4,7 +4,7 @@ description: "2D scrolling, faster graphics, Material 3 updates and more"
 publishDate: 2023-08-16
 author: itsjustkevin
 image: images/0H4kTD2wabl_kscFq.webp
-category: releases
+category: release
 layout: blog
 ---
 

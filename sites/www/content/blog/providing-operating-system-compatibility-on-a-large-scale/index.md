@@ -4,7 +4,7 @@ description: "Flutter’s approach to device diversity in software releases"
 publishDate: 2021-01-14
 author: kf6gpe
 image: images/0XGMajBOXRRgyu3Pa.jpg
-category: announcements
+category: engineering
 layout: blog
 ---
 

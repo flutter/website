@@ -4,7 +4,7 @@ description: "Build epic Flutter games to assist in the battle to defend the pla
 publishDate: 2024-01-09
 author: kkboateng
 image: images/0e6DUZrDIvURyxTW2.webp
-category: events
+category: event
 layout: blog
 ---
 

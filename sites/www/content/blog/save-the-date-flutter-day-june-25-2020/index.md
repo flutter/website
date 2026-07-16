@@ -4,7 +4,7 @@ description: "As a team, we’re used to plenty of travel, hanging out at variou
 publishDate: 2020-05-21
 author: csells
 image: images/0RDn0t0fyTKSy2x_k.webp
-category: events
+category: event
 layout: blog
 ---
 

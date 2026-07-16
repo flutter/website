@@ -4,7 +4,7 @@ description: "We recently ran our sixth quarterly user survey and collected resp
 publishDate: 2019-07-25
 author: jayoung-lee
 image: images/0JGPtcSX7QYbN8Dvn.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

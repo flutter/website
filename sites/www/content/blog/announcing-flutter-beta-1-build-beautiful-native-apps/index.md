@@ -4,7 +4,7 @@ description: "Today, as part of Mobile World Congress 2018, we are excited to an
 publishDate: 2018-02-27
 author: sethladd
 image: images/1qo6Fo51uAmD3B3d6VfcbAQ.webp
-category: releases
+category: release
 layout: blog
 ---
 

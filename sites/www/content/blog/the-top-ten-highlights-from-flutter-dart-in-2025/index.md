@@ -4,6 +4,7 @@ description: "Hi, Flutter community! My name is Emma Twersky, and I’m back wit
 publishDate: 2025-12-17
 author: twerske
 image: images/138nWNBqHADyCszyyX-h98Q.webp
+category: announcement
 layout: blog
 ---
 

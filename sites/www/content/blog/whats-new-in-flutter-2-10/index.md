@@ -4,7 +4,7 @@ description: "Windows stable, performance improvements, Material 3 updates and m
 publishDate: 2022-02-03
 author: csells
 image: images/0278rYAB5Pac8_7SD.webp
-category: releases
+category: release
 layout: blog
 ---
 

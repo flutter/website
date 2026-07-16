@@ -4,7 +4,7 @@ description: "Just a reminder! Please take the Flutter Q2 survey! The survey clo
 publishDate: 2026-06-15
 author: sfshaza2
 image: images/1BVNfy8-YPsP5jHKuD3P-Cg.gif
-category: announcements
+category: announcement
 layout: blog
 ---
 

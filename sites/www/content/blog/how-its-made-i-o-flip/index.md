@@ -4,7 +4,7 @@ description: "AI-generated text and images add some fun to this card game built 
 publishDate: 2023-05-18
 author: verygoodopensource
 image: images/1nGcHw9zmkDT1oGhYwuZMqA.jpeg
-category: events
+category: story
 layout: blog
 ---
 

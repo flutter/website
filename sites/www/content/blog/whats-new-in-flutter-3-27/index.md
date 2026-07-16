@@ -4,7 +4,7 @@ description: "Elevating App Development with Impeller, Cupertino Updates, and Mo
 publishDate: 2024-12-11
 author: itsjustkevin
 image: images/1auh3JCfdFKzK_licnLrEKQ.webp
-category: releases
+category: release
 layout: blog
 ---
 

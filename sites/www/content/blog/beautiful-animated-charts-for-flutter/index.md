@@ -4,7 +4,7 @@ description: "We are super excited to announce a fully-featured, animated charti
 publishDate: 2018-03-23
 author: mit-mit
 image: images/1CB1OU6uH4SsgJUB2j962dg.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

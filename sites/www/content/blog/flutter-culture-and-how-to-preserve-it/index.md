@@ -4,7 +4,7 @@ description: "A big part of what makes Flutter so delightful and productive is i
 publishDate: 2019-06-07
 author: filiph
 image: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
-category: spotlight
+category: story
 layout: blog
 ---
 

@@ -4,6 +4,7 @@ description: "The fundamental value of multiplatform development with Flutter li
 publishDate: 2026-05-18
 author: mit-mit
 image: images/1aotSzcGPZg3gYqhwDy4LWQ.webp
+category: engineering
 layout: blog
 ---
 

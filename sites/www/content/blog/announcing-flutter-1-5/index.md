@@ -4,7 +4,7 @@ description: "With Google I/O 2019 just around the corner, we’re pleased to an
 publishDate: 2019-05-07
 author: csells
 image: images/1udBMeDS6NNhlgbXYyHA_iA.webp
-category: releases
+category: release
 layout: blog
 ---
 

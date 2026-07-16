@@ -4,7 +4,7 @@ description: "About the author: Jose recently graduated from university and now 
 publishDate: 2020-07-17
 author: josealba
 image: images/1j9632GFfT3IT7sfeiHUZtw.webp
-category: spotlight
+category: tutorial
 layout: blog
 ---
 

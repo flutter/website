@@ -4,7 +4,7 @@ description: "Written by JaYoung Lee and Tao Dong"
 publishDate: 2020-02-11
 author: jayoung-lee
 image: images/0W4ladsI7F9pgXph1.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

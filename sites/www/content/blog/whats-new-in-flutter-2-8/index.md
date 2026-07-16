@@ -4,7 +4,7 @@ description: "Performance improvements, new Firebase features, desktop status, t
 publishDate: 2021-12-09
 author: csells
 image: images/00frogkEKgpNOgCVF.webp
-category: releases
+category: release
 layout: blog
 ---
 

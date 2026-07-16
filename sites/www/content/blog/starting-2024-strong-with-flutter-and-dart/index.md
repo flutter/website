@@ -4,7 +4,7 @@ description: "An introduction, two new SDK releases, and bringing Flutter and Da
 publishDate: 2024-02-15
 author: brandonbadger
 image: images/0gO0yYMh4FUkpue3w.gif
-category: announcements
+category: announcement
 layout: blog
 ---
 

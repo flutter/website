@@ -4,7 +4,7 @@ description: "A few reflections on Flutter Live, our global celebration of the F
 publishDate: 2018-12-28
 author: csells
 image: images/14_hWh5hMP6F3W6DZ-6OK2Q.webp
-category: releases
+category: release
 layout: blog
 ---
 

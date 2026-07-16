@@ -4,7 +4,7 @@ description: "Mark your calendars and be sure to tune into #FlutterInProduction 
 publishDate: 2024-12-03
 author: kkboateng
 image: images/1SSIgDyW3jMaOF5nxH5D9lw.gif
-category: events
+category: event
 layout: blog
 ---
 

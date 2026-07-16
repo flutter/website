@@ -4,7 +4,7 @@ description: "Register for the next Flutter event, streaming live from Nairobi, 
 publishDate: 2022-11-15
 author: kkboateng
 image: images/02u_pjVJlgpQw4XHy.webp
-category: events
+category: event
 layout: blog
 ---
 

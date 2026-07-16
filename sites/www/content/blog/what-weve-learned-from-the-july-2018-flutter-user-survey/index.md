@@ -4,7 +4,7 @@ description: "Flutter’s User Experience Research team recently conducted an on
 publishDate: 2018-08-30
 author: jayoung-lee
 image: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
-category: announcements
+category: announcement
 layout: blog
 ---
 

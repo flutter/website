@@ -4,7 +4,7 @@ description: "Flutter Clock is a contest offered by Google, with participation f
 publishDate: 2019-11-18
 author: aguinis
 image: images/1uDHQJzyDKsFEz4X59pi5Uw.webp
-category: events
+category: event
 layout: blog
 ---
 

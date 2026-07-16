@@ -4,6 +4,7 @@ description: "We’ve been hard at work preparing to decouple Material and Cuper
 publishDate: 2026-04-07
 author: justinmc
 image: images/1JN1_t6kPRkgGFVJyetZE0w.webp
+category: announcement
 layout: blog
 ---
 

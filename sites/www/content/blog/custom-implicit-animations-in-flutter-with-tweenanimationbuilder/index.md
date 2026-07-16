@@ -4,7 +4,7 @@ description: "To make animations in Flutter, there are many different options av
 publishDate: 2019-12-15
 author: efortuna
 image: images/1ZiMTAgg11y3BHH24bTt6Mg.gif
-category: announcements
+category: tutorial
 layout: blog
 ---
 

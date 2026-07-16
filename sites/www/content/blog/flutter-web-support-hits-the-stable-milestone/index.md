@@ -4,7 +4,7 @@ description: "Publish to web and mobile from the same codebase"
 publishDate: 2021-03-03
 author: mariam_hasnany
 image: images/1bbkcrsggiQLxNDRAgHiSBQ.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

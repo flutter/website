@@ -4,7 +4,7 @@ description: "As part of the Google Cloud Applied AI Summit, the Flutter and Ver
 publishDate: 2023-12-13
 author: verygoodopensource
 image: images/092qfA1AlxG0HMJCE.webp
-category: spotlight
+category: story
 layout: blog
 ---
 

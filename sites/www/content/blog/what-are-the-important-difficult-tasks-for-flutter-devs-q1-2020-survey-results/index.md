@@ -4,7 +4,7 @@ description: "Written by JaYoung Lee and Youyang Hou"
 publishDate: 2020-05-15
 author: jayoung-lee
 image: images/0OfKgvG4OS6Jt7Wum.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

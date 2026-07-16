@@ -4,7 +4,7 @@ description: "Deep dive into our latest release, including macOS and Linux stabl
 publishDate: 2022-05-11
 author: itsjustkevin
 image: images/1K1Ru7PVkH74N56hgjBTjjQ.webp
-category: releases
+category: release
 layout: blog
 ---
 

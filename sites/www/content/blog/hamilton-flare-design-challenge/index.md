@@ -4,7 +4,7 @@ description: "The Flutter community continues to impress us and we constantly se
 publishDate: 2019-07-18
 author: aguinis
 image: images/0wAn4IQgexh-pkr6K.webp
-category: events
+category: event
 layout: blog
 ---
 

@@ -4,7 +4,7 @@ description: "A guide for building custom tooling in Dart & Flutter DevTools"
 publishDate: 2023-11-15
 author: kenzieschmoll
 image: images/1JsdgKjxlVmm5EAFfXvQ2yA.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

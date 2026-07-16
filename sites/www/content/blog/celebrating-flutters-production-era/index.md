@@ -4,7 +4,7 @@ description: "Just over six years ago, we unveiled Flutter 1.0. Today, at #Flutt
 publishDate: 2024-12-17
 author: mit-mit
 image: images/1nlSy3ZCCbdUXFRH4Q1zstg.webp
-category: announcements
+category: announcement
 layout: blog
 ---
 

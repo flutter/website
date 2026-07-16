@@ -4,7 +4,7 @@ description: "Today at the Google I/O conference, hosted at Shoreline Amphitheat
 publishDate: 2025-05-21
 author: mit-mit
 image: images/0XtA6olQqCpKPyrdO.webp
-category: events
+category: event
 layout: blog
 ---
 

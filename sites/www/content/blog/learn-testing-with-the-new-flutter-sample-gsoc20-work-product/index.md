@@ -4,7 +4,7 @@ description: "By Abdullah Deshmukh"
 publishDate: 2020-08-29
 author: abd99
 image: images/15PoXySK4-tAKWAY1zCzfHg.webp
-category: events
+category: tutorial
 layout: blog
 ---
 

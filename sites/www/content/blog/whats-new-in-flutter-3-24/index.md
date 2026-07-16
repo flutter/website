@@ -4,7 +4,7 @@ description: "Unleashing Flutter GPU, Multi-View Embedding, and More"
 publishDate: 2024-08-06
 author: itsjustkevin
 image: images/0bdcb6KGonosfPZ6m.webp
-category: releases
+category: release
 layout: blog
 ---
 
