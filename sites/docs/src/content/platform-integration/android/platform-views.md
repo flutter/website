@@ -43,7 +43,7 @@ The following matrix summarizes the different implementations and their trade-of
 
 {:.table .table-striped}
 
-[AC]: {{site.github}}/flutter/flutter/blob/master/dev/integration_tests/hybrid_android_views/lib/android_platform_view.dart
+[AC]: {{site.repo.flutter}}/blob/main/dev/integration_tests/hybrid_android_views/lib/android_platform_view.dart
 
 ## Hybrid composition {: #hybrid-composition }
 
@@ -53,7 +53,7 @@ SurfaceFlinger composes the Flutter content and the platform views.
 
 ## Hybrid composition++ (HCPP) {: #hcpp }
 
-:::note
+:::version-note
 This feature is experimental and is available starting from Flutter 3.44.
 :::
 
@@ -507,7 +507,7 @@ Invalidate the view by calling `invalidate` on it or on one of its parents.
 
 Check out the [existing Platform View issues][] on GitHub.
 
-[existing Platform View issues]: {{site.github}}/flutter/flutter/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
+[existing Platform View issues]: {{site.repo.flutter}}/issues?q=is%3Aopen+is%3Aissue+label%3A%22a%3A+platform-views
 
 ## Performance
 
