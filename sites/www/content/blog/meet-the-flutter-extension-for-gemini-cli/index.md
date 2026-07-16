@@ -25,7 +25,7 @@ The Flutter Extension for Gemini CLI provides commands to accelerate app develop
 
 To get started, install the extension with the following command in your terminal:
 
-```ruby
+```bash
 $ gemini extensions install https://github.com/gemini-cli-extensions/flutter
 ```
 
@@ -44,7 +44,7 @@ To learn more about how to set up and use the Gemini CLI extension, follow the i
 
 You can create a new application using the `/create-app` command. This command bootstraps a brand-new, production-ready Flutter app. It goes beyond `flutter create` by asking for your app’s purpose, setting up recommended linter rules, and generating detailed `DESIGN.md` and `IMPLEMENTATION.md` files for your review before any code is written.
 
-```bash
+```plaintext
 /create-app
 ```
 
@@ -69,7 +69,7 @@ Before moving to the next phase, the extension will ask for your approval. You c
 
 To make changes to existing code, the `/modify` command initiates a guided development session. It asks for your goals, offers to create a new branch, and generates a `MODIFICATION_PLAN.md` design doc outlining the proposed modifications and a phased implementation plan.
 
-```bash
+```plaintext
 /modify
 ```
 

@@ -25,15 +25,15 @@ Write more concise Dart code! We’re excited to announce a new Dart feature —
 
 For example, you can use shorthands to write `.start` instead of `MainAxisAlignment.start` .
 
-```less
-// With shorthands
+```dart
+// With shorthands:
 Column(
   mainAxisAlignment: .start,
   crossAxisAlignment: .center,
   children: [ /* ... */ ],
 ),
 
-// Without shorthands
+// Without shorthands:
 Column(
   mainAxisAlignment: MainAxisAlignment.start,
   crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,7 +44,7 @@ Column(
 
 This also works for named constructors! You can write `.all` instead of `EdgeInsets.all`:
 
-```css
+```dart
 Padding(
   padding: .all(8.0),
   child: Text('Hello world'),

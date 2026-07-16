@@ -59,7 +59,6 @@ By convention, we advise developers to use the caret syntax when depending on a 
 
 ```yaml
 dependencies:
-
   shared_preferences: ‘>=0.5.7+2 <2.0.0’
 ```
 

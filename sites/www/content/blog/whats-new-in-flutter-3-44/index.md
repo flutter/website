@@ -241,7 +241,7 @@ The result is high-performance scrolling and accurate touch input. It also bring
 
 HCPP has [Android API and hardware requirements](https://docs.flutter.dev/platform-integration/android/platform-views#hcpp), so not all devices can use HCPP even when opted in. There are no new APIs to adopt, and you simply need to enable the flag to upgrade your existing platform views. You can test the new mode before it becomes the default rendering mode in the future by passing the `--enable-hcpp` flag to your `run` command, or by adding the configuration flag to your `AndroidManifest.xml` file:
 
-```kotlin
+```xml
 <meta-data
   android:name="io.flutter.embedding.android.EnableHcpp"
     android:value="true" />
@@ -433,10 +433,10 @@ Writing fragment shaders is now more intuitive and less error-prone, thanks to t
 
 You can now bind uniform variables in your shaders by name instead of manual offsets, dramatically simplifying shader code setup:
 
-```csharp
-    void setUp(ui.FragmentShader shader) {
-      shader.getUniformFloat('foobar').set(1.234);
-    }
+```dart
+void setUp(ui.FragmentShader shader) {
+  shader.getUniformFloat('foobar').set(1.234);
+}
 ```
 
 
@@ -558,6 +558,6 @@ This ecosystem is depended upon by and made up of industry leaders like LG, Toyo
 
 To try out all the new features, optimizations, and graphics enhancements, all it takes is a simple:
 
-```typescript
+```bash
 flutter upgrade
 ```

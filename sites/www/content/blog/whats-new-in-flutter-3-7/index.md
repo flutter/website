@@ -52,7 +52,7 @@ Material 3 support has been greatly enhanced in 3.7 with the migration of the fo
 
 To use these new features just turn on the [`useMaterial3`](https://api.flutter.dev/flutter/material/ThemeData/useMaterial3.html) flag in your application’s `[ThemeData](https://api.flutter.dev/flutter/material/ThemeData-class.html) widget.` To take full advantage of M3 support you will want a complete M3 color scheme. You can provide your own, use the new [theme builder](https://m3.material.io/theme-builder#/custom) tool, or Flutter can generate one for you from a single seed color using the `colorSchemeSeed` parameter of the [`ThemeData`](https://api.flutter.dev/flutter/material/ThemeData-class.html) constructor:
 
-```less
+```dart
 MaterialApp(
   theme: ThemeData(
      useMaterial3: true,

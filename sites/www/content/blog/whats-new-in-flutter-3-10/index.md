@@ -316,7 +316,7 @@ The documentation now includes cross platform design considerations for specific
 To give it a try, opt in to using the CameraX implementation. To opt in, add the following line to your `pubspec.yaml` file.
 
 ```yaml
-Dependencies:
+dependencies:
   camera: ^0.10.4 # Latest camera version
   camera_android_camerax: ^0.5.0
 ```

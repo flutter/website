@@ -204,12 +204,12 @@ We then tap into Firebase’s powerful [Cloud Functions](https://firebase.google
 
 ```typescript
 function renderSharePage(imageFileName: string, baseUrl: string): string {
- const context = Object.assign({}, BaseHTMLContext, {
-   appUrl: baseUrl,
-   shareUrl: `${baseUrl}/share/${imageFileName}`,
-   shareImageUrl: bucketPathForFile(`${UPLOAD_PATH}/${imageFileName}`),
- });
- return renderTemplate(shareTmpl, context);
+  const context = Object.assign({}, BaseHTMLContext, {
+    appUrl: baseUrl,
+    shareUrl: `${baseUrl}/share/${imageFileName}`,
+    shareImageUrl: bucketPathForFile(`${UPLOAD_PATH}/${imageFileName}`),
+  });
+  return renderTemplate(shareTmpl, context);
 }
 ```
 

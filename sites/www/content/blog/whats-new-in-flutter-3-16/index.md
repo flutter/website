@@ -146,7 +146,7 @@ Impeller isn’t yet expected to perform well on devices without Vulkan support.
 
 Flutter developers can try out Impeller on Vulkan-capable Android devices by passing the `— enable-impeller` flag to `flutter run`, or by adding the following setting to their project’s `AndroidManifest.xml` file under the `<application>` tag:
 
-```bash
+```xml
 <meta-data
   android:name="io.flutter.embedding.android.EnableImpeller"
   android:value="true" />
@@ -299,9 +299,9 @@ With this release, we’ve added most of the features needed by any app that use
 We encourage you to use the CameraX plugin. To opt in, add the following line to your pubspec.yaml file.
 
 ```yaml
-Dependencies:
- camera: ^0.10.4 # Or try the latest camera version
- camera_android_camerax: ^0.5.0
+dependencies:
+  camera: ^0.10.4 # Or try the latest camera version
+  camera_android_camerax: ^0.5.0
 ```
 
 

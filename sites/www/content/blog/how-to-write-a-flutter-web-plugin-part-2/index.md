@@ -215,12 +215,12 @@ In the `pubspec.yaml` for `package:url_launcher`, add a dependency on `url_launc
 ```yaml
 name: url_launcher
 version: <bump to next minor version>
-…
+# …
 dependencies:
   flutter:
     sdk: flutter
   url_launcher_platform_interface: ^1.0.0
-  …
+  # …
 ```
 
 

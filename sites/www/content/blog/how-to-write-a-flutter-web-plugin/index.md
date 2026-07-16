@@ -48,12 +48,12 @@ First, update the pubspec so that you depend on `package:url_launcher`. In `pubs
 
 ```yaml
 name: url_launcher_example
- ...
+# ...
 dependencies:
   flutter:
     sdk: flutter
   url_launcher: 5.2.3
-  ...
+  # ...
 ```
 
 

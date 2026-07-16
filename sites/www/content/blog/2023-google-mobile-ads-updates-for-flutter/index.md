@@ -61,10 +61,10 @@ To illustrate with the [banner app sample](https://github.com/googleads/googlead
 
 1. Replace the following test ad unit IDs with your own:
 
-```rust
+```dart
 final String _adUnitId = Platform.isAndroid
-? 'ca-app-pub-3940256099942544/6300978111'
-: 'ca-app-pub-3940256099942544/2934735716';
+    ? 'ca-app-pub-3940256099942544/6300978111'
+    : 'ca-app-pub-3940256099942544/2934735716';
 ```
 
 

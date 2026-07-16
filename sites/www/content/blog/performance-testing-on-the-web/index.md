@@ -51,7 +51,6 @@ dependencies:
   flutter:
     sdk: flutter
   web_benchmarks: ^0.0.2
-
 ```
 
 This dependency pulls in [`web_benchmarks`](https://pub.dev/packages/web_benchmarks), a minimal package that implements performance testing in Chrome.
@@ -182,7 +181,7 @@ Then, run `dart test/run_benchmarks.dart`.
 
 After about one minute, you should see the following results:
 
-```text
+```plaintext
 Received profile data
 {
   "scroll": [
@@ -240,7 +239,6 @@ Received profile data
     }
   ]
 }
-
 ```
 
 The exact benchmark values may vary depending on the machine.

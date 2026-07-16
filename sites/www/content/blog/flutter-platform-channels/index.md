@@ -67,7 +67,7 @@ For most use cases you would probably employ *method channels* for platform comm
 At the most basic level, Flutter talks to platform code using asynchronous message passing with binary messages — meaning the message payload is a byte buffer. To distinguish between messages used for different purposes, each message is sent on a logical “channel” which is just a name string. The examples below use the channel name `foo`.
 
 ```dart
-*// Send a binary message from Dart to the platform.*
+// Send a binary message from Dart to the platform.
 
 final WriteBuffer buffer = WriteBuffer()
   ..putFloat64(3.1415)
@@ -118,31 +118,33 @@ flutterView.setMessageHandlerOnChannel("foo") {
 
 Communication is bidirectional, so you can send messages in the opposite direction too, from Java/Kotlin or Objective-C/Swift to Dart. Reversing the direction of the above setup looks as follows:
 
-```plaintext
-*// Send a binary message from Android.*
+Send a binary message from Android:
 
+```kotlin
 val message = ByteBuffer.allocateDirect(12)
 message.putDouble(3.1415)
 message.putInt(123456789)
 flutterView.send("foo", message) { _ ->
   Log.i("MSG", "Message sent, reply ignored")
 }
+```
 
+Send a binary message from iOS:
 
-// Send a binary message from iOS.
-
+```swift
 var message = Data(capacity: 12)
-var x : Float64 = 3.1415
-var n : Int32 = 12345678
+var x: Float64 = 3.1415
+var n: Int32 = 12345678
 message.append(UnsafeBufferPointer(start: &x, count: 1))
 message.append(UnsafeBufferPointer(start: &n, count: 1))
 flutterView.send(onChannel: "foo", message: message) {(_) -> Void in
   os_log("Message sent, reply ignored")
 }
+```
 
+Receive binary messages from the platform in Dart:
 
-// Receive binary messages from the platform.
-
+```dart
 BinaryMessages.setMessageHandler('foo', (ByteData message) async {
   final ReadBuffer readBuffer = ReadBuffer(message);
   final double x = readBuffer.getFloat64();
@@ -173,14 +175,11 @@ Working at the level of binary messages, you need to worry about delicate detail
 
 <DashImage figure src="images/1Sd6s3EDGkU8TBS9xLc4Zvw.webp" />
 
+Suppose you want to send and receive string messages instead of byte buffers. This can be done using a message channel, a simple kind of platform channel, constructed with a string codec. The code below shows how to use message channels in both directions across Dart, Android, and iOS.
 
-Suppose you want to send and receive string messages instead of byte buffers. This can be done using a message channel, a simple kind of platform channel, constructed with a string codec. The code below shows how to use message channels in both directions across Dart, Android, and iOS:
+On the Dart side:
 
-```plaintext
-*// String messages*
-
-// Dart side
-
+```dart
 const channel = BasicMessageChannel<String>('foo', StringCodec());
 
 // Send message to platform and receive reply.
@@ -192,10 +191,11 @@ channel.setMessageHandler((String message) async {
   print('Received: $message');
   return 'Hi from Dart';
 });
+```
 
+On the Android side:
 
-// Android side
-
+```kotlin
 val channel = BasicMessageChannel<String>(
   flutterView, "foo", StringCodec.INSTANCE)
 
@@ -209,10 +209,11 @@ channel.setMessageHandler { message, reply ->
   Log.i("MSG", "Received: $message")
   reply.reply("Hi from Android")
 }
+```
 
+On the iOS side:
 
-// iOS side
-
+```swift
 let channel = FlutterBasicMessageChannel(
     name: "foo",
     binaryMessenger: controller,
@@ -330,20 +331,20 @@ In particular, no assumptions are being made about what code is executed on rece
 
 Method channels were the Flutter team’s answer to the challenge of defining a workable communication API for use by the, at the time, non-existing plugin ecosystem. We wanted something that plugin authors could start using right away, without a lot of boilerplate or complicated build setup. I think the method channel concept makes a decent answer, but I’d be surprised if it remains the *only* answer.
 
-Here’s how you would use a method channel in the simple case of invoking a bit of platform code from Dart. The code is associated with the name `bar` which is not a method name in this case, but could have been. All it does is construct a greeting string and return it to the caller, so we can code this with the reasonable assumption that the platform invocation won’t fail (we’ll look at error handling further below):
+Here’s how you would use a method channel in the simple case of invoking a bit of platform code from Dart. The code is associated with the name `bar` which is not a method name in this case, but could have been. All it does is construct a greeting string and return it to the caller, so we can code this with the reasonable assumption that the platform invocation won’t fail (we’ll look at error handling further below).
 
-```plaintext
-*// Invocation of platform methods, simple case.*
+On the Dart side:
 
-// Dart side.
-
+```dart
+// A basic example of invoking platform methods.
 const channel = MethodChannel('foo');
 final String greeting = await channel.invokeMethod('bar', 'world');
 print(greeting);
+```
 
+On the Android side:
 
-// Android side.
-
+```kotlin
 val channel = MethodChannel(flutterView, "foo")
 channel.setMethodCallHandler { call, result ->
   when (call.method) {
@@ -351,9 +352,11 @@ channel.setMethodCallHandler { call, result ->
     else -> result.notImplemented()
   }
 }
+```
 
-// iOS side.
+On the iOS side:
 
+```swift
 let channel = FlutterMethodChannel(
   name: "foo", binaryMessenger: flutterView)
 channel.setMethodCallHandler {
@@ -377,10 +380,11 @@ final ByteData reply = await BinaryMessages.send(
   'foo',
   codec.encodeMethodCall(MethodCall('bar', 'world')),
 );
-if (reply == null)
+if (reply == null) {
   throw MissingPluginException();
-else
+} else {
   print(codec.decodeEnvelope(reply));
+}
 ```
 
 
@@ -405,13 +409,11 @@ The Flutter SDK includes two method codecs:
 
 * [`JSONMethodCodec`](https://docs.flutter.io/flutter/services/JSONMethodCodec-class.html) which delegates the encoding of payload values to `JSONMessageCodec`.
 
-You can configure method channels with any method codec, including custom ones. To fully understand what is involved in implementing a codec, let’s look at how errors are handled at the method channel API level by extending the example above with a fallible `baz` method:
+You can configure method channels with any method codec, including custom ones. To fully understand what is involved in implementing a codec, let’s look at how errors are handled at the method channel API level by extending the example above with a fallible `baz` method.
 
-```plaintext
-*// Method calls with error handling.*
+On the Dart side:
 
-// Dart side.
-
+```dart
 const channel = MethodChannel('foo');
 
 // Invoke a platform method.
@@ -436,10 +438,11 @@ channel.setMethodCallHandler((MethodCall call) async {
       throw MissingPluginException();
   }
 });
+```
 
+On the Android side:
 
-// Android side.
-
+```kotlin
 val channel = MethodChannel(flutterView, "foo")
 
 // Invoke a Dart method.
@@ -465,10 +468,11 @@ channel.setMethodCallHandler { call, result ->
     else -> result.notImplemented()
   }
 }
+```
 
+On the iOS side:
 
-// iOS side.
-
+```swift
 let channel = FlutterMethodChannel(
   name: "foo", binaryMessenger: flutterView)
 
@@ -524,7 +528,7 @@ An event channel is a specialized platform channel intended for the use case of 
 Here’s how you would consume a platform event stream on the Dart side:
 
 ```dart
-*// Consuming events on the Dart side.*
+// Consuming events on the Dart side.
 
 const channel = EventChannel('foo');
 
@@ -539,7 +543,7 @@ channel.receiveBroadcastStream().listen((dynamic event) {
 The code below shows how to produce events on the platform side, using sensor events on Android as an example. The main concern is to ensure that we are listening to events from the platform source (the sensor manager in this case) and sending them through the event channel precisely when 1) there is at least one stream listener on the Dart side and 2) the ambient `Activity` is running. Packaging up the necessary logic in a single class increases the chance of doing this correctly:
 
 ```kotlin
-*// Producing sensor events on Android.*
+// Producing sensor events on Android.
 
 // SensorEventListener/EventChannel adapter.
 class SensorListener(private val sensorManager: SensorManager) :
@@ -640,16 +644,17 @@ Inside modules, our main concern is to guard against programming errors that are
 
 * If a value received over a platform channel is expected to be non-null, either set things up to have it dereferenced immediately, or assert that it is non-null before storing it for later. Depending on your programming language, you may be able to assign it to a variable of a non-nullable type instead.
 
-Two simple examples:
+The following Dart code expects to receive a non-null list of integers:
 
-```plaintext
-// Dart: we expect to receive a non-null List of integers.
+```dart
 for (final int n in await channel.invokeMethod('getFib', 100)) {
   print(n * n);
 }
+```
 
-// Android: we expect non-null name and age arguments for
-// asynchronous processing, delivered in a string-keyed map.
+The following Android code expects non-null `name` and `age` arguments for asynchronous processing, delivered in a string-keyed map:
+
+```kotlin
 channel.setMethodCallHandler { call, result ->
   when (call.method) {
     "bar" -> {

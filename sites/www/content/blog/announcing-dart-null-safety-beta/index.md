@@ -34,9 +34,11 @@ environment:
 
 To experience this, try to create a small null-safe hello app (for example, using `dart create`) containing code like shown below. You can then try to run the app both before and after changing the SDK constraint and running `dart pub get`, and experience how the program behavior changes. (Make sure to use an SDK that reports 2.12 in `dart --version`.)
 
-```plaintext
-bin/hello.dart:
-...
+In `bin/hello.dart`:
+
+```dart
+// ...
+
 void main() {
   var hello = 'Hello Dart developers';
   if (someCondition) {
@@ -44,13 +46,20 @@ void main() {
   }
   print(hello);
 }
+```
 
-Before changing the SDK constraint:
+Before changing the SDK constraint, run the app:
+
+```console
 $ dart run
 
 null
+```
 
-After changing the SDK constraint (and running dart pub get):
+After changing the SDK constraint and running `dart pub get`,
+run the app again:
+
+```plaintext
 $ dart run
 
 bin/hello.dart:6:13: Error: Null can't be assigned to a variable of type 'String' because 'String' is not nullable.

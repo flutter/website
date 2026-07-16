@@ -41,7 +41,7 @@ class MyOldPlugin {
 **New plugin initialization**
 
 ```java
-*class* MyNewPlugin implements FlutterPlugin {
+class MyNewPlugin implements FlutterPlugin {
   public MyNewPlugin() {
     // All Android plugin classes must support a no-args 
     // constructor. A no-arg constructor is provided by 
@@ -64,7 +64,7 @@ class MyOldPlugin {
     //
     // You can obtain a BinaryMessenger with 
     // binding.getBinaryMessenger()
-    // 
+    //
     // You can obtain the Application context with
     // binding.getApplicationContext()
     //
@@ -118,7 +118,7 @@ class MyNewPlugin implements FlutterPlugin, ActivityAware {
     // leave hints, and state saving callbacks by using the
     // appropriate methods on the binding.
   }
-  
+
   @override
   public void onDetachedFromActivityForConfigChanges() {
     // The Activity your plugin was associated with has been

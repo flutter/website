@@ -84,7 +84,7 @@ Widget build(BuildContext context) {
 
 Because access to the todo list items is conditional, the error kicks in late. In Flutter beta 1, there would be no error at startup, and only once the user has tapped the button would you be informed that a string cannot be used as a widget:
 
-```text
+```plaintext
 The following assertion was thrown building TodoList(dirty, state: TodoListState#fd618):
 type 'String' is not a subtype of type 'Widget' of 'child' where
   String is from dart:core
@@ -93,7 +93,7 @@ type 'String' is not a subtype of type 'Widget' of 'child' where
 
 With the new complete run-time checks in Dart 2, we prevent “errors waiting to happen” like this by instead failing early, at the point where your code makes a false claim about generic types. In this case, we fail as soon as the app launches, and the dynamic list `todo` is passed to the `TodoList` constructor, which expects a `List<Widget>`:
 
-```text
+```plaintext
 type 'List<dynamic>' is not a subtype of type 'List<Widget>' where
   List is from dart:core
   Object is from dart:core

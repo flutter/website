@@ -87,7 +87,7 @@ In order to render anything with Flutter GPU, you’ll need to author some GLSL 
 
 Start with defining the simplest possible shaders. You can place shaders anywhere in your project, but for this example, create a `shaders` directory and populate it with two shaders: `simple.vert` and `simple.frag` .
 
-```c
+```glsl
 // Copy into: shaders/simple.vert
 
 in vec2 position;
@@ -100,7 +100,7 @@ void main() {
 
 When drawing the triangle, you’ll have a list of data that defines each vertex. In this case, it merely lists 2D positions. For each of these vertices, a simple vertex shader assigns these 2D positions to the clip space output intrinsic `gl_Position`.
 
-```c
+```glsl
 // Copy into: shaders/simple.frag
 
 out vec4 frag_color;
@@ -117,7 +117,7 @@ Okay, so now that you have your shaders, compile them using Flutter's ahead of t
 
 Use pub to add `flutter_gpu_shaders` as a regular dependency in your project.
 
-```csharp
+```bash
 flutter pub add flutter_gpu_shaders
 ```
 
@@ -487,7 +487,7 @@ flutter pub add flutter_scene_importer
 
 Adding this package makes it possible to invoke the importer manually using `dart run`.
 
-```java
+```bash
 dart --enable-experiment=native-assets \
      run flutter_scene_importer:import \
      --input "path/to/my/source_model.glb" \
@@ -497,7 +497,7 @@ dart --enable-experiment=native-assets \
 
 You can automatically run the importer by using a native assets build hook. To do this, first install `native_assets_cli` as a regular project dependency.
 
-```csharp
+```bash
 flutter pub add native_assets_cli
 ```
 
@@ -583,7 +583,7 @@ class MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
 
 Run the app as a smoke test to ensure there are no errors. And remember to [enable Impeller](https://docs.flutter.dev/perf/impeller#availability)!
 
-```css
+```bash
 flutter run -d macos --enable-impeller
 ```
 

@@ -69,7 +69,7 @@ What you will need:
 
 For a standalone extension (an extension that is not being shipped as part of an existing pub package), it is acceptable to include your extension source code in the same package that the extension is shipped with. This will simplify development, and since users of your package will add a dependency on your package as a `dev_dependency`, the size of your package will not affect the user's app size. Your package structure will look like this:
 
-```bash
+```plaintext
 my_new_tool
   extension/
     devtools/
@@ -95,7 +95,7 @@ Now, use the `my_new_tool` package to configure your extension in the next step.
 
 For a companion extension (an extension that is shipped as part of an existing pub package), we recommend that you place your extension source code outside of your pub package. This will help keep your package size as small as possible, since you will want to avoid inflating the size of user apps that depend on your package. Here is the recommended package structure:
 
-```bash
+```plaintext
 foo/  # formerly the repository root of your pub package
   packages/
     foo/  # your pub package
@@ -249,9 +249,9 @@ The simulated environment is enabled by the environment parameter `use_simulated
 
 ```json
 {
-    ...
+    // ...
     "configurations": [
-        ...
+        // ...
         {
             "name": "foo_devtools_extension + simulated environment",
             "cwd": "packages/foo_devtools_extension",
@@ -261,6 +261,7 @@ The simulated environment is enabled by the environment parameter `use_simulated
                 "--dart-define=use_simulated_environment=true"
             ],
         },
+        // ...
     ]
 }
 ```

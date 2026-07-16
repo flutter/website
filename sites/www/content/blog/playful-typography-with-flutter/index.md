@@ -26,7 +26,7 @@ You’re probably already familiar with fonts in general, which determine what e
 
 Flutter offers a straightforward way to adjust these settings in the `TextStyle` widget, by using the `fontVariations` field. For example, the following code snippet would create a text style in the Roboto Flex variable font, at a size of 18, with variable axis settings for the weight (`wght`) and width (`wdth`):
 
-```less
+```dart
 TextStyle(
   fontFamily: 'RobotoFlex',
   fontSize: 18,
@@ -44,7 +44,7 @@ Setting the variations was easy enough, but then I wanted to animate from one va
 
 For my demo, I made a `WonkyChar` widget and a `WonkyAnimPalette` helper class, which gave me a simple way to choose any letters to show on screen, control the text size, and feed in a mix of settings related to variable font axes. The `WonkyChar` widget also contained a standard Flutter `AnimationController` object, which I used to animate the settings. In this example, the letter ‘M’ will show at a size of 200, and animate its weight (boldness) from very thin to very bold, in a four-second animation:
 
-```less
+```dart
 WonkyChar(
   text: 'M',
   size: 200,

@@ -36,7 +36,7 @@ This app demonstrates the updated components and lets you toggle between Materia
 
 To add Material 3 to your app, set the [`useMaterial3`](https://api.flutter.dev/flutter/material/ThemeData/useMaterial3.html) flag to `true` in your theme’s constructor:
 
-```less
+```dart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ The new [`Badge`](https://master-api.flutter.dev/flutter/material/Badge-class.ht
 
 A brand new feature of Material 3 allows you to set the color theme of your *entire* app from a single seed color. Set the color scheme seed parameter in your theme constructor and, from that *one* entry, Flutter generates a harmonious color scheme for **every** widget in your app. This scheme works in both light *and* dark modes!
 
-```less
+```dart
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

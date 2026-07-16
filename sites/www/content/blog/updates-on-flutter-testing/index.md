@@ -21,13 +21,12 @@ And so, to solve these problems and continue to improve the Flutter testing expe
 Using the `integration_test` plugin requires two steps. First, add the plugin to your `pubspec.yaml` file as a development dependency, and use `flutter pub get` to pull the plugin into your project:
 
 ```yaml
-# pubspec.yaml
-…
+# …
 dev_dependencies:
   flutter_test:
     sdk: flutter
   integration_test: ^1.0.0
-…
+# …
 ```
 
 

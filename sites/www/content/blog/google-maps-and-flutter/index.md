@@ -23,7 +23,7 @@ The first step is to add the Google Maps Flutter plugin as a dependency in the *
 
 ```yaml
 dependencies:
-  ...
+  # ...
   google_maps_flutter: ^0.4.0
 ```
 
@@ -40,7 +40,7 @@ The next step is getting an API key for both Android and iOS. For Android, follo
 
 For iOS, follow the instructions at [Maps SDK for iOS — Get API Key](https://developers.google.com/maps/documentation/ios-sdk/get-api-key). Once you have this key, add it to your Flutter app in the application delegate ([`ios/Runner/AppDelegate.m`](https://gist.github.com/kenzieschmoll/15aee1e8e3fbab3ba25a6a3c9425bbfb)):
 
-```objective-c
+```objc
 #include "AppDelegate.h"
 #include "GeneratedPluginRegistrant.h"
 // Add the GoogleMaps import.
@@ -62,10 +62,9 @@ On iOS, you also need to add a setting to the app’s **Info.plist** file ([`ios
 
 Add a boolean property with the key `io.flutter.embedded_views_preview` and the value `true`:
 
-```openstep property list
+```xml
 <key>io.flutter.embedded_views_preview</key>
 <true/>
-
 ```
 
 ## Adding a GoogleMap widget

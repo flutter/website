@@ -35,9 +35,9 @@ We’ve added a simple command line flag `--web-experimental-hot-reload` that yo
 
 If you use debug configurations in VS Code, you can add this extra configuration to your [launch.json file](https://code.visualstudio.com/docs/editor/debugging-configuration):
 
-```bash
+```json
 "configurations": [
-…
+  …
   {
     "name": "Flutter for web (hot reloadable)",
     "type": "dart",
@@ -237,7 +237,7 @@ Merged threads let you use Dart FFI to interoperate with native APIs that must b
 
 On Windows, you can turn on merged threads by adding the following to your `windows/runner/main.cpp` file, inside the `wWinMain` method:
 
-```less
+```cpp
 project.set_ui_thread_policy(flutter::UIThreadPolicy::RunOnPlatformThread)
 ```
 

@@ -132,9 +132,9 @@ This required the app to layout the navigation close to the edges of the screen 
 **Learning:** [Showing camera previews](https://developer.android.com/guide/topics/large-screens/large-screen-app-compatibility#camera_preview) can be surprisingly complex, but the [Jetpack CameraX library](https://developer.android.com/training/camerax) handles many of these details for you. In Flutter 3.10, we added preliminary support for CameraX to our Flutter camera plugin. To try it, opt in by adding the following line to your pubspec.yaml file.
 
 ```yaml
-Dependencies:
-camera: ^0.10.4 # Latest camera version
-camera_android_camerax: ^0.5.0
+dependencies:
+  camera: ^0.10.4 # Latest camera version
+  camera_android_camerax: ^0.5.0
 ```
 
 

@@ -38,7 +38,6 @@ P03 | Uses C# and C++ at work for 3D modeling. Started developing a new game eng
 P04 | Has experience in Java, frontend development with Angular. 2 years ago, P04 started mobile development with Kotlin/Android. | Platform game | Flame, some exposure to Unity and Unreal
 P05 & P06 | Established a game studio specializing in casual games for over 15 years. P05 & P06 worked on the same game and were interviewed together. | Word puzzle | None
 
-
 ```
 
 ### Perceived benefits of using Flutter to develop games

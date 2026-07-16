@@ -26,37 +26,37 @@ One of the most exciting features of the [Holobooth](https://holobooth.flutter.d
 
 Based on the position of each facial feature, we can determine if the user is in frame, if their eyes or mouth are open, and more. As the user moves around the camera view, the MediaPipe [FaceMesh](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection) model (available via the [TensorFlow.js Face Landmarks Detection package](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection)) ensures that we can track the exact coordinates of the user’s features so that we can mirror them on Dash or Sparky. For more details, you can dig into the [face_geometry.dart file](https://github.com/flutter/holobooth/blob/1c5bc00f0b43dd56ea7f964b26756a5991d6502e/packages/face_geometry/lib/src/face_geometry.dart). While there isn’t an official Dart package for TensorFlow.js yet, the Dart [JS](https://pub.dev/packages/js) package allowed us to import the javascript library into a Flutter web app (see the [tensorflow_models](https://github.com/flutter/holobooth/tree/1c5bc00f0b43dd56ea7f964b26756a5991d6502e/packages/tensorflow_models) package folder for more details).
 
-```javascript
-  FaceGeometry({
-    required tf.Face face,
-    required tf.Size size,
-  }) : this._(
-          rotation: FaceRotation(keypoints: face.keypoints),
-          leftEye: LeftEyeGeometry(
-            keypoints: face.keypoints,
-            boundingBox: face.boundingBox,
-          ),
-          rightEye: RightEyeGeometry(
-            keypoints: face.keypoints,
-            boundingBox: face.boundingBox,
-          ),
-          mouth: MouthGeometry(
-            keypoints: face.keypoints,
-            boundingBox: face.boundingBox,
-          ),
-          distance: FaceDistance(
-            boundingBox: face.boundingBox,
-            imageSize: size,
-          ),
-        );
+```dart
+FaceGeometry({
+  required tf.Face face,
+  required tf.Size size,
+}) : this._(
+        rotation: FaceRotation(keypoints: face.keypoints),
+        leftEye: LeftEyeGeometry(
+          keypoints: face.keypoints,
+          boundingBox: face.boundingBox,
+        ),
+        rightEye: RightEyeGeometry(
+          keypoints: face.keypoints,
+          boundingBox: face.boundingBox,
+        ),
+        mouth: MouthGeometry(
+          keypoints: face.keypoints,
+          boundingBox: face.boundingBox,
+        ),
+        distance: FaceDistance(
+          boundingBox: face.boundingBox,
+          imageSize: size,
+        ),
+      );
 
-  const FaceGeometry._({
-    required this.rotation,
-    required this.mouth,
-    required this.leftEye,
-    required this.rightEye,
-    required this.distance,
-  });
+const FaceGeometry._({
+  required this.rotation,
+  required this.mouth,
+  required this.leftEye,
+  required this.rightEye,
+  required this.distance,
+});
 ```
 
 
@@ -71,7 +71,7 @@ The avatars use Rive [State Machines](https://help.rive.app/editor/state-machine
 
 For Holobooth, we used inputs to control things like how wide a mouth is open or closed. Using the feature detection from the [FaceMesh](https://github.com/tensorflow/tfjs-models/tree/master/face-landmarks-detection) model, we can map them to the corresponding coordinates on our avatar models. Using the StateMachineController, we transform the input from the models to determine how the avatar appears on screen.
 
-```javascript
+```dart
 class CharacterStateMachineController extends StateMachineController {
   CharacterStateMachineController(Artboard artboard)
       : super(
