@@ -8,8 +8,6 @@ category: tutorial
 layout: blog
 ---
 
-## Flutter on Raspberry Pi (mostly) from scratch
-
 *This document describes an experiment in porting the Flutter engine to a target that is currently not supported. The fact that I used a Raspberry Pi is purely incidental. I have deliberately made no assumptions about the target. It is entirely possible that you already have a toolchain ready to use with your specific board. If so, large parts of this document can be skipped. This document also assumes that you are familiar with setting up your own toolchains and build environments.*
 
 <DashImage figure src="images/1K1lyX_AOOILKyv3stAtlQg.jpeg" alt="Flutter on Raspberry Pi" caption="Flutter on Raspberry Pi" />

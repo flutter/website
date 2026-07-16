@@ -7,8 +7,6 @@ category: tutorial
 layout: blog
 ---
 
-## Integration testing with flutter_driver
-
 Unit tests ensure that individual parts of your application work as intended, but what about your application as a whole? This is where integration testing comes in.
 
 ## Flutter driver

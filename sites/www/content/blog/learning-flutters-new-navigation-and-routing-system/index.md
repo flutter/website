@@ -8,8 +8,6 @@ category: tutorial
 layout: blog
 ---
 
-## Learning Flutter’s new navigation and routing system
-
 *Note: The sample code in this article is not null-safe and not compatible with Dart 3. For more information on the latest best-practices for navigation and routing in Flutter, go to the [Navigation and routing](https://docs.flutter.dev/ui/navigation) page on docs.flutter.dev.*
 
 This article explains how Flutter’s new `Navigator` and `Router` API works. If you follow Flutter’s open [design docs](https://flutter.dev/docs/resources/design-docs), you might have seen these new features referred to as the [Router](https://docs.google.com/document/d/1Q0jx0l4-xymph9O6zLaOY4d_f7YFpNWX_eGbzYxr9wY/edit#heading=h.l6kdsrb6j9id) widget. We’ll explore how these APIs enable more fine-tuned control over the screens in your app and how you can use it to parse routes.

@@ -8,8 +8,6 @@ category: tutorial
 layout: blog
 ---
 
-## Performance testing of Flutter apps
-
 The Flutter framework does a good job being fast by default, but does that mean you don’t need to think about performance at all? No. It is absolutely possible to write Flutter apps that are slow. On the other hand, it is also possible to make the most of the framework, and make your apps not only fast, but also efficient, consuming less CPU time and battery.
 
 <DashImage figure src="images/1MxtHyEfdBlANwu7ZRyX2mw.webp" alt="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." caption="This is what we want: a statistically significant result comparing two versions of your app on some meaningful metric. Read on to learn how to get this." />

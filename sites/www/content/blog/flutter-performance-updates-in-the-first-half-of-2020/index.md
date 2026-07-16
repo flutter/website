@@ -8,8 +8,6 @@ category: engineering
 layout: blog
 ---
 
-## Flutter performance updates in the first half of 2020
-
 Being fast is a key pillar to Flutter. This article highlights performance improvements from the first half of 2020 implemented by folks from the Flutter community.
 
 If you’ve helped out with performance after June 2020, we will cover that in a future post. We hope that sharing this with you, the Flutter community, inspires you to help us with this effort!

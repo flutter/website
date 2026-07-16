@@ -24,8 +24,6 @@ This article contains two “getting started” guides for these packages:
 
 <DashImage figure src="images/0hAqIOVkaI1IWnOHE.webp" alt="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." caption="Ooh shiny. This is a ray-marched signed distance field. You could render this using Flutter GPU, but it’s perfectly possible to do so with a [custom fragment shader](https://docs.flutter.dev/ui/design/graphics/fragment-shaders) as well." />
 
-## Getting started with Flutter GPU
-
 Flutter GPU is Flutter’s built-in low-level graphics API. It allows you to build and integrate custom renderers in Flutter by writing Dart code and GLSL shaders. No native platform code required.
 
 Currently, Flutter GPU is in early preview and offers a basic rasterization API, but more functionality will continue to be added and refined, as the API approaches stable.
