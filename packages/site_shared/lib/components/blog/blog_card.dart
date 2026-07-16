@@ -59,20 +59,14 @@ class BlogCard extends StatelessComponent {
           const span(classes: 'blog-card-spacer', []),
           div(classes: 'blog-card-meta', [
             div(classes: 'blog-card-authors', [
-              for (final author in authors)
-                if (author.image case final authorImage?
-                    when authorImage.isNotEmpty)
-                  img(
-                    src: context.resolveAsset('/blog/authors/$authorImage'),
-                    alt: author.name,
-                    classes: 'blog-card-avatar',
-                  )
-                else if (author.github?.avatarUrl case final avatarUrl?)
-                  img(
-                    src: avatarUrl,
-                    alt: author.name,
-                    classes: 'blog-card-avatar',
-                  ),
+              div(classes: 'blog-card-avatars', [
+                for (final author in authors)
+                  if (author.resolveImageUrl(context) case final imageUrl?)
+                    img(
+                      src: imageUrl,
+                      alt: author.name,
+                    ),
+              ]),
               span(classes: 'author', [
                 for (final (index, author) in authors.indexed) ...[
                   span(classes: 'author-name', [

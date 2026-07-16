@@ -3,6 +3,7 @@
 // found in the LICENSE file.
 
 import 'package:intl/intl.dart';
+import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 
 import '../../components/blog/client/blog_categories.dart';
@@ -66,26 +67,19 @@ extension type Post(Map<String, Object?> data) {
 
 extension type Author(Map<String, Object?> data) {
   String get name => data['name'] as String;
-  String? get bio => data['bio'] as String?;
   String? get image => data['image'] as String?;
-  String? get twitter => data['twitter'] as String?;
-  AuthorGithub? get github => data['github'] as AuthorGithub?;
+  String? get imageUrl => data['imageUrl'] as String?;
+  String? get link => data['link'] as String?;
 
-  String? get linkUrl {
-    if (github?.handle case final githubHandle? when githubHandle.isNotEmpty) {
-      return 'https://github.com/$githubHandle';
+  String? resolveImageUrl(BuildContext context) {
+    if (image case final localImage? when localImage.isNotEmpty) {
+      return context.resolveAsset('/blog/authors/$localImage');
     }
-    if (twitter case final twitterHandle? when twitterHandle.isNotEmpty) {
-      return 'https://twitter.com/$twitterHandle';
+    if (imageUrl case final url? when url.isNotEmpty) {
+      return url;
     }
     return null;
   }
-}
-
-extension type AuthorGithub(Map<String, Object?> data) {
-  String get handle => data['handle'] as String;
-  String? get name => data['username'] as String?;
-  String? get avatarUrl => data['avatar_url'] as String?;
 }
 
 extension BlogData on Page {
