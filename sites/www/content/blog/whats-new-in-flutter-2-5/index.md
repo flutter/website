@@ -280,7 +280,9 @@ In previous versions of Flutter, you may have been frustrated by exceptions that
 
 Since the dawn of Flutter, there has been the Counter app template, which has many good qualities: it shows off many features of the Dart language, demonstrates several key Flutter concepts and it’s small enough to fit into a single file, even with a lot of explanatory comments. However, what it doesn’t do is provide a particularly good jumping off point for a real-world Flutter app. In this release, there’s a new template ([#83530](https://github.com/flutter/flutter/pull/83530)) available via the following command:
 
-`$ flutter create -t skeleton my_app`
+```bash
+flutter create -t skeleton my_app
+```
 
 <DashImage figure src="images/03utkTiVxsZOcvcKl.webp" alt="*The new Flutter skeleton template in action*" caption="*The new Flutter skeleton template in action*" />
 

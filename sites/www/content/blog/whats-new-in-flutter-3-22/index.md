@@ -216,7 +216,9 @@ This release breaks Flutter tool support for v1 apps completely. **It is no long
 
 **Plugin authors, please note**: when the v1 android embedding was initially deprecated a migration doc was written for plugin authors at [https://docs.flutter.dev/release/breaking-changes/plugin-api-migration](https://docs.flutter.dev/release/breaking-changes/plugin-api-migration). As part of this migration, it was recommended that plugin authors keep support for apps using the v1 embedding, by including in their `*Plugin.java` a method with the signature
 
-`public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar)`
+```java
+public static void registerWith(@NonNull io.flutter.plugin.common.PluginRegistry.Registrar registrar)
+```
 
 We plan to fully delete the v1 Android embedding in the next release, **at which point plugins that include a method with this signature will no longer compile** (as it makes reference to a type from the v1 android embedding).
 

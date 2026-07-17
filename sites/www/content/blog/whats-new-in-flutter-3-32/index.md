@@ -58,7 +58,9 @@ For best results, we recommend enabling the “[Dart: Flutter Hot Reload On Save
 
 If you use “flutter run” on the command line, you can now run hot reload on the web with the following:
 
-`flutter run -d chrome --web-experimental-hot-reload`
+```bash
+flutter run -d chrome --web-experimental-hot-reload
+```
 
 When hot reload is enabled, you can reload your application by pressing “r” in the running terminal, or “R” to hot restart.
 

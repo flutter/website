@@ -180,7 +180,9 @@ All existing iOS Flutter applications must migrate to the new lifecycle. You hav
 
 1. Automatic migration (Experimental): Enable an experimental feature to handle the migration automatically. This will be enabled by default in a future release. Run the following command:
 
-`flutter config --enable-uiscene-migration`
+```bash
+flutter config --enable-uiscene-migration
+```
 
 **Migrating Flutter plugins**
 

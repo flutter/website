@@ -12,11 +12,15 @@ When writing widgets that manage non-trivial state, it sometimes becomes a strug
 
 I’ll start with an example: let’s say we are building a WebView widget that shows embedded web content . For simplicity, let’s start with a minimal API surface. We want to be able to load a specific URL and specify whether JavaScript is enabled. We want the API to feel “Fluttery”, so we create a widget with constructor parameters for these 2 controls. What a simple API! Every Flutter developer will feel at home right away! Want to load the YouTube homepage? Just build the widget:
 
-`WebView(url: 'https://youtube.com', javascriptEnabled: true)`
+```dart
+WebView(url: 'https://youtube.com', javascriptEnabled: true)
+```
 
 You now want to disable JavaScript? just rebuild the widget:
 
-`WebView(url: 'https://youtube.com', javascriptEnabled: false)`
+```dart
+WebView(url: 'https://youtube.com', javascriptEnabled: false)
+```
 
 Wait, let’s say that before we rebuilt the WebView with `javascriptEnabled=false`, the user clicked a link and the WebView navigated to a different URL. Before the rebuild, the WebView was on https://flutter.dev. What should the widget do when it’s rebuilt with `(url: 'https://youtube.com', javascriptEnabled: false)`? Should it return to https://youtube.com? Should it stay in the same page? None of these options are ideal as different apps might want a different thing to happen at different times. The app must be able to express which of the 2 possibilities should happen.
 
