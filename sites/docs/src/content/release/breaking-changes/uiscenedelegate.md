@@ -775,43 +775,16 @@ migrate it to UIKit's scene-based lifecycle as follows:
     Move any logic that relies on the launch options to the
     `scene:willConnectToSession:options:` event.
 
-    For apps that adopt `UIScene`, Flutter calls
-    `application:willFinishLaunchingWithOptions:` and
-    `application:didFinishLaunchingWithOptions:` during the
-    `scene:willConnectToSession:options:` callback.
-    However, some Apple APIs must be called before
-    `application:didFinishLaunchingWithOptions:` returns.
-    To work around this restriction, plugins can expose an API that
-    lets you register background tasks directly in the `AppDelegate`'s
-    `application:didFinishLaunchingWithOptions:` method.
+ 1. If your plugin uses an API that must be called before
+    `application:didFinishLaunchingWithOptions:` completes,
+    you should expose a public method that app developers
+    can call directly in their AppDelegate.
 
     The following Apple APIs must be configured before app launch finishes:
 
     - [`BGTaskScheduler.registerForTaskWithIdentifier:usingQueue:launchHandler:`][]
-
-    > Registration of all launch handlers must be complete
-    > before the end of `applicationDidFinishLaunching:`.
-
     - [`UNUserNotificationCenterDelegate`][]
-
-    > You must assign your delegate object to the `UNUserNotificationCenter`
-    > object before your app finishes launching.
-    > For example, in an iOS app, you must assign it in the
-    > `application:willFinishLaunchingWithOptions:` or
-    > `application:didFinishLaunchingWithOptions:`
-    > method of your app delegate.
-    > Assigning a delegate after the system calls these methods
-    > might cause you to miss incoming notifications.
-
     - [`HKHealthStore.enableBackgroundDeliveryForType:frequency:withCompletion:`][]
-
-    > If you plan on supporting background delivery,
-    > set up all your observer queries in your app delegate’s
-    > `application:didFinishLaunchingWithOptions:` method.
-    > By setting up the queries in
-    > `application:didFinishLaunchingWithOptions:`,
-    > you ensure that you’ve instantiated your queries,
-    > and they’re ready to use before HealthKit delivers the updates.
 
     For example, to support `BGTaskScheduler`: 
 
@@ -819,6 +792,8 @@ migrate it to UIKit's scene-based lifecycle as follows:
     <Tab name="Swift">
 
     ```swift diff
+      // Plugin
+
       public class BGTaskPlugin: NSObject, FlutterPlugin {
         public static let shared =  BGTaskPlugin()
         public static func register(with registrar: FlutterPluginRegistrar) {
@@ -837,14 +812,28 @@ migrate it to UIKit's scene-based lifecycle as follows:
     -       // Handle background task execution
     -     }
     -     return true
-    -  }
-    }
+    -   }
+      }
+
+      // App
+
+      class AppDelegate: FlutterAppDelegate {
+        override func application(
+          _ application: UIApplication,
+          didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+        ) -> Bool {
+    +     BGTaskPlugin.shared.registerBackgroundHandler(identifier: "com.example.task")
+          return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+        }
+      }
     ```
 
     </Tab>
     <Tab name="Objective-C">
 
     ```objc diff
+      // Plugin
+
       @interface BGTaskPlugin : NSObject <FlutterPlugin>
     + + (instancetype)sharedInstance;
     + - (void)registerBackgroundHandlerWithIdentifier:(NSString *)identifier;
@@ -885,12 +874,28 @@ migrate it to UIKit's scene-based lifecycle as follows:
     -   return YES;
     - }
       @end
+      
+      // App
+
+      @implementation AppDelegate
+      - (BOOL)application:(UIApplication *)application
+          didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    +   [[BGTaskPlugin sharedInstance] registerBackgroundHandlerWithIdentifier:@"com.example.task"];
+        return [super application:application didFinishLaunchingWithOptions:launchOptions];
+      }
+      @end
     ```
 
     </Tab>
     </Tabs>
 
- 1. Optional: Migrate other deprecated APIs to support
+    This change is required due to UIScene changing the app launch
+    sequence. For apps that adopt `UIScene`, Flutter calls
+    `application:willFinishLaunchingWithOptions:` and
+    `application:didFinishLaunchingWithOptions:` during the
+    `scene:willConnectToSession:options:` callback.
+
+ 1. Migrate other deprecated APIs to support
     multiple scenes in the future.
 
     | Deprecated API                     | UIScene replacement           |
