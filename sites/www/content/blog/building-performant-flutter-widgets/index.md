@@ -1,8 +1,8 @@
 ---
 title: "Building performant Flutter widgets"
 description: >-
-  This article is part of a series developed after the Flutter Material team
-  worked on making the Flutter Gallery app more performant on the…
+  Learn techniques for reducing unnecessary work and
+  building more performant Flutter widgets.
 publishDate: 2020-07-23
 author: guidez
 image: images/0GWFHSeCrjUgPdkJ-.webp

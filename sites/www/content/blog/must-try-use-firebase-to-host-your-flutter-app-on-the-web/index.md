@@ -1,8 +1,8 @@
 ---
 title: "Must try: Use Firebase to host your Flutter app on the web"
 description: >-
-  So you have a Flutter app, and you want to show it to the world? Look no
-  further! This tutorial will show you how to host your Flutter app…
+  So you have a Flutter app, and you want to show it to the world?
+  Look no further!
 publishDate: 2019-11-11
 author: clocksmith
 image: images/1eL-dHo08RwyLYOl17DNTog.webp

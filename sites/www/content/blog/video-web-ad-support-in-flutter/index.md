@@ -1,13 +1,16 @@
 ---
 title: "Video & web ad support in Flutter"
 description: >-
-  Coauthors: Zoey Fan, Harold Benson, Alak Jhunjhunwala
+  Learn about video and web ad support in the
+  Google Mobile Ads plugins for Flutter.
 publishDate: 2024-12-17
 author: zoeyfan
 image: images/0xsAbaMexfbR30wgK.webp
 category: announcement
 layout: blog
 ---
+
+_Authored by Zoey Fan, Harold Benson, and Alak Jhunjhunwala_
 
 Monetizing your Flutter app just got easier and more rewarding. Today, we are thrilled to announce a new suite of tools and feature updates that provide developers with a range of options to monetize your apps and grow your business.
 

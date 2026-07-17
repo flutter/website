@@ -1,8 +1,8 @@
 ---
 title: "Save the Date: Flutter Day, June 25, 2020"
 description: >-
-  As a team, we’re used to plenty of travel, hanging out at various events and
-  user groups, and connecting with folks in person; we miss our…
+  Join Flutter Day on June 25, 2020, for
+  livestreamed talks, codelabs, and community events.
 publishDate: 2020-05-21
 author: csells
 image: images/0RDn0t0fyTKSy2x_k.webp

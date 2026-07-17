@@ -1,16 +1,18 @@
 ---
 title: "Flutter culture and how to preserve it"
 description: >-
-  A big part of what makes Flutter so delightful and productive is its
-  community. We really want this to continue.
+  A big part of what makes
+  Flutter so delightful and productive is its community.
+  We really want this to continue.
 publishDate: 2019-06-07
-author: filiph
+author:
+  - filiph
+  - efortuna
 image: images/1pI9tDcnxm87Vq1hX1Yzwpg.jpeg
 category: story
 layout: blog
 ---
 
-*[[Emily Fortuna](https://medium.com/@emily.fortuna) and [Filip Hracek](https://medium.com/@filiph) wrote this article together.]*
 
 A big part of what makes Flutter so delightful and productive is its community. We really want this to continue, and so we thought we’d share some of our observations about the current culture, and some ideas on how to preserve it.
 

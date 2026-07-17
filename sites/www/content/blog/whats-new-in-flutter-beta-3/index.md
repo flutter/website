@@ -1,8 +1,8 @@
 ---
 title: "What’s New in Flutter Beta 3"
 description: >-
-  This week marks the release of the third beta for Flutter, our toolkit for
-  building beautiful mobile UI for iOS and Android. In our…
+  This week marks the release of the third beta for Flutter,
+  our toolkit for building beautiful mobile UI for iOS and Android.
 publishDate: 2018-05-07
 author: timsneath
 image: images/0Sdp8z8g2G2spsW3j.webp

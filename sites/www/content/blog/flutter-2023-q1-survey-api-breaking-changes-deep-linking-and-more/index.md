@@ -1,8 +1,8 @@
 ---
 title: "Flutter 2023 Q1 survey — API breaking changes, deep linking, and more"
 description: >-
-  The Flutter team has been running a quarterly user survey program since its
-  1.0 release in 2018. The 19th survey was announced in the…
+  Explore Q1 2023 survey findings on API breaking changes, deep linking,
+  and other priorities for Flutter developers.
 publishDate: 2023-06-30
 author: jayoung-lee
 image: images/0BujM3j2SMg1qp3hi.webp

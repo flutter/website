@@ -1,14 +1,17 @@
 ---
 title: "Google I/O spotlight: Flutter in action at ByteDance"
 description: >-
-  Note: This article, originally written in Chinese by the ByteDance team, has
-  been translated to English.
+  Explore how ByteDance uses Flutter at scale to
+  build and maintain applications across multiple platforms.
 publishDate: 2021-06-29
 author: sfshaza
 image: images/0s0fEzRKPUlPITzxE.webp
 category: story
 layout: blog
 ---
+
+Note: This article, originally written in Chinese by the ByteDance team,
+has been translated to English.
 
 Flutter, a technology that [ByteDance](https://www.bytedance.com/en/) has been using and contributing to for some years now, was recently highlighted on the main stage of Google I/O. Developed and open sourced by Google, the multi-platform framework for front end UI development, has garnered over 120,000 stars on GitHub.
 

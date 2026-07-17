@@ -1,7 +1,8 @@
 ---
 title: "Introducing Google Fonts for Flutter v 1.0.0!"
 description: >-
-  By MH Johnson and Anthony Robledo
+  Explore Google Fonts for Flutter and learn how to
+  add and configure fonts in Flutter apps.
 publishDate: 2020-04-23
 author: clocksmith
 image: images/1ndZ8HED7jp2f0X4IFSwtdA.webp

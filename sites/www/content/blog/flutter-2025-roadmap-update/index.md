@@ -1,8 +1,8 @@
 ---
 title: "Flutter 2025 roadmap update"
 description: >-
-  Transparency is a core goal of the Flutter open source project, with
-  everything from issues to design specifications being shared in the…
+  Explore Flutter's 2025 roadmap and the team's priorities for
+  the framework, tooling, platforms, and developer experience.
 publishDate: 2025-04-02
 author: mit-mit
 image: images/0sO8Aqa-_eHZ9jcZz.webp

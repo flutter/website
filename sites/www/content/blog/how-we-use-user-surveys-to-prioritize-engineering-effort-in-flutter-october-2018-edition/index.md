@@ -1,9 +1,12 @@
 ---
 title: "How we use user surveys to prioritize engineering effort in Flutter — October 2018 edition"
 description: >-
-  Written by Ja Young Lee & Tao Dong
+  Learn how the Flutter team uses quarterly survey results to
+  prioritize engineering investments and improve the developer experience.
 publishDate: 2019-01-17
-author: jayoung-lee
+author:
+  - jayoung-lee
+  - taodong
 image: images/1gKUzs2GxDWCBIS-i218_zQ.webp
 category: announcement
 layout: blog

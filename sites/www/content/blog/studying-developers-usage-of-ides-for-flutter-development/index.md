@@ -1,7 +1,8 @@
 ---
 title: "Studying developer’s usage of IDEs for Flutter development"
 description: >-
-  Findings from the Q2 2022 user survey. Written by JaYoung Lee and Ander Dobo.
+  Explore Q2 2022 survey findings about how Flutter developers
+  use IDEs and which editor features matter most.
 publishDate: 2022-09-12
 author: jayoung-lee
 image: images/1lHHYRiiookkYcA-Uhq9pgg.webp

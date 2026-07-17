@@ -1,8 +1,9 @@
 ---
 title: "Zero to One with Flutter"
 description: >-
-  It was late summer 2016, and my first task as a new hire at the Google office
-  in Aarhus, Denmark was to implement animated charts in an…
+  It was late summer 2016, and my first task as a
+  new hire at the Google office in Aarhus, Denmark was to
+  implement animated charts
 publishDate: 2017-02-22
 author: mravn
 image: images/1n76TpChNv8Q25WrfBiuWpw.webp

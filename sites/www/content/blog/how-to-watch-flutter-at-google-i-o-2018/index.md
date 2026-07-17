@@ -1,8 +1,8 @@
 ---
 title: "How to watch Flutter at Google I/O 2018"
 description: >-
-  Google I/O 2018 is just a week away, and Flutter will be showing up in style
-  at the event, with sessions, codelabs, office hours, an…
+  Google I/O 2018 is just a week away, and Flutter will be
+  showing up in style at the event.
 publishDate: 2018-05-01
 author: aguinis
 image: images/1dArkoJSnhvcjZ6p4ds63BA.webp

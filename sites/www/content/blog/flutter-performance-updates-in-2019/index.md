@@ -1,7 +1,8 @@
 ---
 title: "Flutter Performance Updates in 2019"
 description: >-
-  By Yuqian Li and Shams Zakhour
+  Review Flutter performance improvements from 2019,
+  including rendering, memory, and app size optimizations.
 publishDate: 2020-07-31
 author: sfshaza
 image: images/1bWXPMmCXDmBWN7rZbxZcyg.webp

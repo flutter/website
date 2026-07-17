@@ -1,8 +1,8 @@
 ---
 title: "Cross Platform development with Flutter — How Google Classroom gets teachers and students on the…"
 description: >-
-  Google’s Classroom app, which originally launched in 2014, is used by 150
-  million educators and students around the world to organize…
+  Explore how Google Classroom uses Flutter to
+  deliver a consistent experience for teachers and students across platforms.
 publishDate: 2024-05-07
 author: craiglabenz
 image: images/1-u0y5vTqoC_sCyOHpvUnNA.webp

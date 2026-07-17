@@ -1,7 +1,8 @@
 ---
 title: "GSoC ’21: Creating a desktop sample for Flutter"
 description: >-
-  by Abdullah Deshmukh
+  Explore a sample created as part of Google Summer of Code that
+  demonstrates Flutter desktop capabilities and best practices.
 publishDate: 2021-08-22
 author: abd99
 image: images/1aRiqWvnUYD-cSbGhxTnUsw.jpeg

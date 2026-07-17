@@ -1,8 +1,8 @@
 ---
 title: "Come meet the Flutter core team on tour in 2026"
 description: >-
-  The Flutter team has been hard at work preparing for Google Cloud Next and
-  Google I/O this Spring. I strongly believe in the power of…
+  Find out where to meet the Flutter team at
+  Google Cloud Next, Google I/O, and community events in 2026.
 publishDate: 2026-04-14
 author: twerske
 image: images/1UVUiBS4ceEJmWIt8w8IeTQ.webp

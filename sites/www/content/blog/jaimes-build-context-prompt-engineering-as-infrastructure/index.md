@@ -1,7 +1,8 @@
 ---
 title: "Jaime’s build context: Prompt engineering as infrastructure"
 description: >-
-  Summary
+  Learn how reproducible systems, versioned prompts, and shared skills
+  support reliable agentic development.
 publishDate: 2026-01-23
 author: jwren
 image: images/1HNqQFQ2hdhAgjew1pIMqXA.webp

@@ -1,7 +1,8 @@
 ---
 title: "Web support for Flutter goes beta"
 description: >-
-  Posted by Mariam Hasnany, Product Manager, Flutter
+  Explore Flutter's beta support for building
+  production-quality web apps from a shared codebase.
 publishDate: 2019-12-11
 author: mariam_hasnany
 image: images/0M7sTluUPVsk6DcnU.webp

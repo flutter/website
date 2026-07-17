@@ -1,8 +1,8 @@
 ---
 title: "Firebase Crashlytics and the Flutter Casual Games Toolkit"
 description: >-
-  Learn how to enable Crashlytics in the Flutter Games example to make detecting
-  and fixing issues in your game easier
+  Learn how to enable Crashlytics in the Flutter Games example to
+  make detecting and fixing issues in your game easier
 publishDate: 2022-08-03
 author: rich_hall
 image: images/1B5i6MSUhz554dVTR484AuA.webp

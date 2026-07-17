@@ -1,8 +1,7 @@
 ---
 title: "How we built a Flutter-powered AI coffee shop"
 description: >-
-  If you start giving away coffee, people will show up. The Flutter team had
-  been trying for a while to find a way to put this principle to…
+  If you start giving away coffee, people will show up.
 publishDate: 2026-06-22
 author: craiglabenz
 image: images/1o8sb5en4Yhr9J0R1cMMO_g.jpeg

@@ -1,8 +1,7 @@
 ---
 title: "Building beautiful, flexible user interfaces with Flutter, Material Theming, and official Material…"
 description: >-
-  At Google I/O 2018, the Material team announced a important update to Material
-  Design, with a strong focus on enabling mobile apps to stand…
+  Build flexible, branded interfaces with Flutter and Material Theming.
 publishDate: 2018-05-10
 author: mit-mit
 image: images/1cyTGpzWuHqvYFGTV7uQyXA.webp

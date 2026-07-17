@@ -1,8 +1,8 @@
 ---
 title: "Celebrating Flutter’s “Production Era”"
 description: >-
-  Just over six years ago, we unveiled Flutter 1.0. Today, at
-  #FlutterInProduction, we’re celebrating how far we’ve come — from the immense…
+  See how teams use Flutter in production an
+  explore the product updates announced at #FlutterInProduction.
 publishDate: 2024-12-17
 author: mit-mit
 image: images/1nlSy3ZCCbdUXFRH4Q1zstg.webp

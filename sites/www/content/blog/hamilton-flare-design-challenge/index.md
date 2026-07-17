@@ -1,8 +1,8 @@
 ---
 title: "Hamilton Flare Design Challenge"
 description: >-
-  The Flutter community continues to impress us and we constantly see new
-  initiatives to help developers from around the world learn and…
+  Join the Hamilton Flare Design Challenge and
+  create animations inspired by the Hamilton app.
 publishDate: 2019-07-18
 author: aguinis
 image: images/0wAn4IQgexh-pkr6K.webp

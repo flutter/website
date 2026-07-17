@@ -1,7 +1,8 @@
 ---
 title: "Flutter Performance Updates in the first half of 2020"
 description: >-
-  By Yuqian Li and Shams Zakhour
+  Review Flutter performance work from the first half of 2020,
+  including improvements to speed, memory use, and tooling.
 publishDate: 2021-02-12
 author: liyuqian
 image: images/15WEbz38iKKh5EfCj55mGYw.webp

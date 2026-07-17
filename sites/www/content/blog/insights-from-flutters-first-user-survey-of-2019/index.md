@@ -1,8 +1,8 @@
 ---
 title: "Insights from Flutter’s first user survey of 2019"
 description: >-
-  As we do every quarter, the Flutter UX research team ran a user survey in Q1
-  to gather your opinions, and we are back to share the results…
+  Explore findings from Flutter's first user survey of 2019 and
+  the priorities developers identified for the project.
 publishDate: 2019-04-12
 author: jayoung-lee
 image: images/1BvDZf83WrPTc4yqukshP-w.webp

@@ -1,8 +1,8 @@
 ---
 title: "Time is Ticking: Clock Contest live with over $10,000 in prizes"
 description: >-
-  Flutter Clock is a contest offered by Google, with participation from the
-  Flutter, Google Assistant, and Lenovo teams, that challenges you…
+  Enter the Flutter Clock challenge by designing a
+  beautiful, innovative clock face for the Lenovo Smart Clock.
 publishDate: 2019-11-18
 author: aguinis
 image: images/1uDHQJzyDKsFEz4X59pi5Uw.webp

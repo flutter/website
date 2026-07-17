@@ -1,8 +1,8 @@
 ---
 title: "Hummingbird: Building Flutter for the Web"
 description: >-
-  At Flutter Live today, we announced that we are experimenting with running
-  Flutter on the Web. In this post, we describe how we are…
+  At Flutter Live today, we announced that
+  we are experimenting with running Flutter on the Web.
 publishDate: 2018-12-04
 author: yegorj
 image: images/0gD64Y8ECWBBuSZrx.webp

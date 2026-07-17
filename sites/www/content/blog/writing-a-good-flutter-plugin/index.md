@@ -1,8 +1,8 @@
 ---
 title: "Writing a good Flutter plugin"
 description: >-
-  Plugins are essential to the Flutter ecosystem. They allow Flutter developers
-  to interact with libraries of the platform the app is…
+  Learn best practices for designing, implementing, documenting,
+  and maintaining a high-quality Flutter plugin
 publishDate: 2018-10-03
 author: mehmetf
 category: tutorial

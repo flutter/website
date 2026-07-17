@@ -1,8 +1,8 @@
 ---
 title: "Handling Web Gestures in Flutter"
 description: >-
-  Flutter has released web support that allows you to create dynamic websites.
-  With Flutter web, MacOS, Linux, and Windows operating systems…
+  Explore how pointer events, gesture detection, and scrolling behavior
+  differ when building Flutter apps for the web.
 publishDate: 2020-09-21
 author: josealba
 image: images/1BzcKF4qdbLIFFB6XL8x-9A.webp

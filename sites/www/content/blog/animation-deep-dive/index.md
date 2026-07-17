@@ -1,8 +1,8 @@
 ---
 title: "Animation deep dive"
 description: >-
-  Last year, I got to record one of the episodes in
-  the Flutter Animations series
+  Take a deeper look at Flutter animation concepts and
+  techniques from the Flutter Animations series.
 publishDate: 2020-04-17
 author: filiph
 image: images/14bIqmJ8DQLSnlFtkN6bjaA.webp

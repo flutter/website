@@ -1,8 +1,8 @@
 ---
 title: "Optimizing performance in Flutter web apps with tree shaking and deferred loading"
 description: >-
-  For the best user experience it is important that an app loads fast. The
-  initial load time of a Flutter web application can be improved by…
+  For the best user experience it is important that an app loads fast.
+  The initial load time of a Flutter web application can be improved by…
 publishDate: 2020-05-19
 author: perclasson
 image: images/0Z8CmvWbWVXUb9Wy4.webp

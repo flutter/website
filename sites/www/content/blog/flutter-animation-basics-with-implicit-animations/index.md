@@ -1,8 +1,8 @@
 ---
 title: "Flutter animation basics with implicit animations"
 description: >-
-  In this series of posts, we’re going to introduce you to animations in
-  Flutter, and show you how to build both simple and complex…
+  Learn the fundamentals of Flutter's implicit animations and
+  how to add polished motion to your apps.
 publishDate: 2019-12-04
 author: theaflowers
 image: images/08lW_z0nxESDIBO9R.gif

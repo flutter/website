@@ -1,8 +1,8 @@
 ---
 title: "Creating a Carousel with Flutter"
 description: >-
-  As a mobile developer, you may find yourself with a design that calls for
-  sliding, animated, background-image carousels. In this article, I…
+  As a mobile developer, you may find yourself with a design that
+  calls for sliding, animated, background-image carousels.
 publishDate: 2018-04-09
 author: ezra-sandzer-bell
 image: images/0-y8UdKzHXj8SEouz.jpg

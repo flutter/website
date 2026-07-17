@@ -1,8 +1,9 @@
 ---
 title: "Flutter web: Navigating URLs using named routes"
 description: >-
-  Named routes can be used to navigate between pages inside a Flutter mobile
-  app, but they also work for URLs in Flutter web apps. This…
+  Named routes can be used to navigate
+  between pages inside a Flutter mobile app,
+  but they also work for URLs in Flutter web apps.
 publishDate: 2020-03-30
 author: perclasson
 image: images/0Uoo0IGsUFUf8GJsT.webp

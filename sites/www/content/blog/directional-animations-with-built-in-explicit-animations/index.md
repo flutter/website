@@ -1,8 +1,8 @@
 ---
 title: "Directional animations with built-in explicit animations"
 description: >-
-  Hi! In our previous episodes, we learned how to do some awesome animations
-  using Flutter’s implicit animations. AnimatedFoo and…
+  Learn how to build animations that run forward and backward with
+  Flutter's built-in explicit animation widgets.
 publishDate: 2020-01-10
 author: fitzface
 image: images/01xmX3Sfp_rLOAwwl.webp

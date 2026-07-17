@@ -1,8 +1,8 @@
 ---
 title: "Flutter’s path towards seamless interop"
 description: >-
-  Today, we’re excited to announce an early access program for Flutter plugin
-  authors who are ready to build/re-build a plugin leveraging…
+  Learn about Flutter's early access program for
+  direct native interoperability with FFIgen and JNIgen.
 publishDate: 2025-05-20
 author: mariam_hasnany
 category: engineering

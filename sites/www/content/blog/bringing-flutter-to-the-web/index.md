@@ -1,8 +1,9 @@
 ---
 title: "Bringing Flutter to the Web"
 description: >-
-  Flutter, our portable UI framework for building beautiful, tailored
-  experiences, now supports the modern web! We’re pleased to release a…
+  Flutter, our portable UI framework for
+  building beautiful, tailored experiences,
+  now supports the modern web!
 publishDate: 2019-05-07
 author: kevmoo
 image: images/1jQBkI-cZwOP_KAEnPhzDtg.webp

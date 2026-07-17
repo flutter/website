@@ -1,8 +1,9 @@
 ---
 title: "Flutter’s Material and Cupertino code freeze"
 description: >-
-  We’ve been hard at work preparing to decouple Material and Cupertino from the
-  Framework, and now our first major milestone has arrived! As…
+  We’ve been hard at work preparing to
+  decouple Material and Cupertino from the Framework,
+  and now our first major milestone has arrived!
 publishDate: 2026-04-07
 author: justinmc
 image: images/1JN1_t6kPRkgGFVJyetZE0w.webp

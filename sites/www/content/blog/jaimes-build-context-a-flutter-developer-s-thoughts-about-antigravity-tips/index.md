@@ -1,8 +1,8 @@
 ---
 title: "Jaime’s build context: A Flutter developer’s thoughts about Antigravity + Tips!"
 description: >-
-  Hi, I’m Jaime Wren, a long-time developer tooling software engineer on the
-  Flutter team. I’ve seen many shifts in the software industry…
+  A long-time developer tooling software engineer shares
+  lessons and practical tips for building apps with Antigravity.
 publishDate: 2025-12-09
 author: jwren
 image: images/1iTTaVFKTZVHVl3ykFCmjyw.jpeg

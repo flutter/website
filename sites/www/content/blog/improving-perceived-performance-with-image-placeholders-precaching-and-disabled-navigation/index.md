@@ -1,8 +1,8 @@
 ---
 title: "Improving perceived performance with image placeholders, precaching, and disabled navigation…"
 description: >-
-  Perceived performance is how fast an application feels to the user. This
-  article covers three strategies that you can use in your…
+  Explore three strategies to
+  improve perceived performance in your Flutter apps.
 publishDate: 2020-05-26
 author: perclasson
 image: images/1Pp2MNotBJdSHDcW3Fhz19A.gif

@@ -1,8 +1,9 @@
 ---
 title: "Writing a good code sample"
 description: >-
-  Authoring a good code sample is hard. Let me clarify that, putting together a
-  sample that demonstrates the usage of an API, or shows off a…
+  Authoring a good code sample is hard.
+  Learn practical principles for writing focused, readable,
+  and maintainable Flutter code samples.
 publishDate: 2021-08-23
 author: domesticmouse
 category: tutorial

@@ -1,8 +1,8 @@
 ---
 title: "What do Flutter package users need? Findings from Q2 user survey"
 description: >-
-  We recently ran our sixth quarterly user survey and collected responses from
-  over 7,000 Flutter users.
+  Explore survey findings about how Flutter developers
+  discover, evaluate, and use packages.
 publishDate: 2019-07-25
 author: jayoung-lee
 image: images/0JGPtcSX7QYbN8Dvn.webp

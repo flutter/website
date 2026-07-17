@@ -1,8 +1,8 @@
 ---
 title: "Android Dark Theme in Flutter"
 description: >-
-  A week ago at Google I/O 2019, the Android team announced
-  support in Android Q for Dark Theme
+  Learn how to add Android dark theme support to a Flutter app and
+  respond to the system brightness setting.
 publishDate: 2019-05-15
 author: matthew-carroll
 image: images/1wogDV86zrS8BNYI-8Th-TA.jpeg

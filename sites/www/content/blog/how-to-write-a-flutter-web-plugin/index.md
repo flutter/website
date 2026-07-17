@@ -1,7 +1,8 @@
 ---
 title: "How to Write a Flutter Web Plugin"
 description: >-
-  Introduction
+  Learn the foundations of building a Flutter web plugin and
+  connecting Dart APIs to browser implementations.
 publishDate: 2019-11-20
 author: harryterkelsen
 image: images/1UTowUOvpkFW35rcuJ3Lf1w.webp

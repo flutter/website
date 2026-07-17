@@ -1,8 +1,8 @@
 ---
 title: "Flutter Create is live with over $10,000 in prizes"
 description: >-
-  Tl;DR: Flutter Create is a contest that challenges you to build something
-  interesting, inspiring, and beautiful with Flutter using 5KB or…
+  Enter Flutter Create by building an inspiring Flutter experience in
+  5 KB or less for a chance to win prizes.
 publishDate: 2019-02-21
 author: aguinis
 image: images/1AyxOZQPLHstjafeVvwHbUg.webp

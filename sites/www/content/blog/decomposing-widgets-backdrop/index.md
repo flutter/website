@@ -1,8 +1,8 @@
 ---
 title: "Decomposing Widgets: Backdrop"
 description: >-
-  While it’s easy to create custom widgets in Flutter, it’s often useful to
-  examine existing widgets to better understand how to compose…
+  Understand Flutter widget composition by
+  examining how the Material Backdrop widget is built.
 publishDate: 2018-06-26
 author: mjohnsullivan
 image: images/1in7MRIAKfRn-qDgJKc9XVw.jpeg

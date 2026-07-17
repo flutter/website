@@ -1,8 +1,8 @@
 ---
 title: "Prospera: using Flutter to bring AI to the frontline of sales"
 description: >-
-  Developers around the world are using Google’s Gemini models to tackle
-  real-world challenges, and one of the most exciting applications…
+  Explore how Prospera uses Flutter and Gemini to
+  give sales teams AI-powered insights in the field.
 publishDate: 2024-11-21
 author: tvolkert
 image: images/1rV1FMqYeyrHsOvtSUIOnOA.webp

@@ -1,8 +1,8 @@
 ---
 title: "Are you happy with Flutter? — Q4 2020 user survey results"
 description: >-
-  The Flutter team at Google has been running a quarterly survey program to
-  collect your feedback since 2018. The survey for the last…
+  Explore Q4 2020 survey findings about developer satisfaction and
+  feedback on Flutter tools and workflows.
 publishDate: 2021-02-11
 author: jayoung-lee
 image: images/0hs9oiR_zpBhkzT9u.webp

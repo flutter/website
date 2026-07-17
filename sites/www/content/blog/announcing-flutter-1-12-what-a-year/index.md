@@ -1,7 +1,8 @@
 ---
 title: "Announcing Flutter 1.12: What a year!"
 description: >-
-  Posted by Chris Sells, Product Manager, Flutter developer experience
+  Explore Flutter 1.12, with iOS 13 support, add-to-app improvements,
+  new tooling, and Dart 2.7.
 publishDate: 2019-12-11
 author: csells
 image: images/1sW6TueDcNzw806cjigLJaA.webp
@@ -77,7 +78,9 @@ Pictured here at desktop size is [a new version of the Flutter Gallery](https://
 
 The macOS alpha represents a big step forward for Flutter’s desktop support, including the new DataTree and Split sample widgets, several plugins ported to macOS, support for building in both release and profiling mode, and a greatly simplified tooling story. If you’re running from the dev or master channel, you can gain access to the macOS tooling by enabling macOS desktop support in Flutter’s system-wide config:
 
-`$ flutter config --enable-macos-desktop`
+```shell
+flutter config --enable-macos-desktop
+```
 
 Creating a Flutter project that runs on macOS is now just like creating any other new Flutter project with ‘flutter create’.
 
@@ -121,7 +124,7 @@ For those of you curious about progress on Windows and Linux, they’re still in
 
 In addition to the Framework and Engine, we also have a lot to talk about for Flutter tooling. This includes a new version of DartPad with support for Flutter, augmented IntelliJ-based IDEs with a preview of a new feature we’re calling “Hot UI”, enhanced Dart DevTools with a new visual layout view, enabled simultaneous multi-device debugging in Visual Studio Code, improved the Android build process and better support for finding differences in rendered widgets between test runs.
 
-## DartPad loves Flutter
+### DartPad loves Flutter
 
 If you aren’t already using [DartPad](https://dartpad.dev), you should try it out! It’s a great way to try Dart features without installing anything. Furthermore, with the new release of DartPad, now you get Flutter, too!
 
@@ -131,13 +134,13 @@ The new DartPad leverages Flutter’s web support so that when you’re writing 
 
 In addition to the stand-alone DartPad playground, we’ve also started adding DartPad with Flutter support into our docs and in our codelabs (like [Basic Flutter layout concepts](https://flutter.dev/docs/codelabs/layout-basics) and [Implicit animations](https://flutter.dev/docs/codelabs/implicit-animations)), so that you can learn about Flutter from the comfort of your browser. For more information on DartPad, please check out our [DartPad announcement post](https://medium.com/dartlang/a-brand-new-dartpad-dev-with-flutter-support-16fe6027784).
 
-## Build your widgets inline with Hot UI
+### Build your widgets inline with Hot UI
 
 If you install the Flutter tools locally on your own machine (and we hope you will), you’ll find a new feature previewed in the IntelliJ/Android Studio plugin for Flutter. It allows you to see and interact with your widgets directly in your IDE as you’re building them.
 
 We call this feature “Hot UI” and, like Hot Reload, as you make the changes in your code, it updates the hosted UI directly. You can also interact with the hosted UI (like changing a color, as shown here) and that change goes directly into your code. To enable the Hot UI preview, you can [read the instructions on the Flutter wiki](https://github.com/flutter/flutter-intellij/wiki/HotUI-Getting-Started-instructions).
 
-## Debug layout issues with the Layout Explorer
+### Debug layout issues with the Layout Explorer
 
 Whether you write the code by hand or let Hot UI write it for you, you’ve still got code and sometimes code has issues. Helping you track down and fix your issues is exactly why Dart DevTools was invented. In this new version of DevTools, we’ve added a feature called the “Layout Explorer” to augment the Inspector with a visual representation of your layout.
 
@@ -145,7 +148,7 @@ Whether you write the code by hand or let Hot UI write it for you, you’ve stil
 
 Not only does the Layout Explorer help you to visualize the layout of the widgets in your running app, but if you’d like to experiment with changing the layout options, it allows you to do so interactively. We’re hoping the preview of this feature helps make it easier to understand and fix your layout issues. To enable this feature, see [the Layout Explorer docs](https://flutter.dev/docs/development/tools/devtools/inspector#flutter-layout-explorer).
 
-## Multi-device debugging
+### Multi-device debugging
 
 When you’ve built and debugged your Flutter UI, you have most likely done it on a single device. Wouldn’t it be nice to be able to debug your app across multiple devices (physical or virtual) at the same time? With Flutter’s support for multi-session debugging in Visual Code, that’s just what you can do.
 
@@ -153,7 +156,7 @@ When you’ve built and debugged your Flutter UI, you have most likely done it o
 
 Here we’ve got the same Flutter app running simultaneously on three separate debugging sessions. If we make a change in the code, Hot Reload makes sure that it’s reflected in all three apps. If we set a breakpoint, whichever app triggers that code gets stopped. If you’d like to stop debugging one, you can do so without stopping them all. You can learn how to configure this feature for [multiple device debugging on the wiki](https://github.com/flutter/flutter/wiki/Multi-device-debugging-in-VS-Code).
 
-## Android build improvements
+### Android build improvements
 
 And finally, to continue to improve Android, we addressed some build problems in this release. Firstly, we made the Android build more robust, specifically around combining plugins using Support Libraries and those using AndroidX. We did this by moving the Flutter team’s plugins to AndroidX and [we recommend that apps and plugins move to AndroidX as well](https://flutter.dev/docs/development/packages-and-plugins/plugin-api-migration). However, for plugins that haven’t yet moved, if there is a build problem, we have an alternate code path in our build that uses Android Archive files and Jetifier. The build is slower, which is why it’s not the primary build mechanism, but we find that it solves about 95% of the build problems we’ve encountered.
 
@@ -161,7 +164,7 @@ Another issue we addressed was deprecating Proguard in favor of [R8](https://dev
 
 Furthermore, in our attempt to continue to make Flutter as slim as possible, we reduced the Hello, World app size for Android by 2.6% (reducing it from 3.8MB to 3.7MB). Every little bit helps!
 
-## Golden image testing
+### Golden image testing
 
 The term “golden image” refers to a master image file that is considered the true rendering of a given widget, state, application, or other visual representation you have chosen to capture. In Flutter 1.12, we have implementations of the [GoldenFileComparator](https://api.flutter.dev/flutter/flutter_test/GoldenFileComparator-class.html) and [LocalFileComparator](https://api.flutter.dev/flutter/flutter_test/LocalFileComparator-class.html) classes that compare by pixels instead of bits, [eliminating false positives](https://github.com/flutter/flutter/issues/30036). These new implementations highlight visual differences to make it clear when there are differences between your golden image and the updates under testing.
 

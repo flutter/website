@@ -1,7 +1,8 @@
 ---
 title: "What can we do better to improve Flutter? — Q2 2021 user survey results"
 description: >-
-  Written by JaYoung & Mariam
+  Explore Q2 2021 survey findings and the improvements
+  Flutter developers wanted most.
 publishDate: 2021-08-13
 author: jayoung-lee
 image: images/0m2ihVMc99emY4hQY.webp

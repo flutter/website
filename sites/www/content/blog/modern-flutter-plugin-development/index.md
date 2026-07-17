@@ -1,13 +1,16 @@
 ---
 title: "Modern Flutter Plugin Development"
 description: >-
-  by Amir Hardon, Chris Sells, Collin Jackson, Harry Terkelsen and Matt Carroll
+  Explore modern Flutter plugin architecture,
+  including federated plugins and platform implementations.
 publishDate: 2020-04-30
 author: csells
 image: images/1yM2BlF_ckdUzoDnSdAjPoA.webp
 category: engineering
 layout: blog
 ---
+
+_Authored by Amir Hardon, Chris Sells, Collin Jackson, Harry Terkelsen, and Matt Carroll_
 
 2019 was a big year for advancements in technology for Flutter plugin authors. We introduced the Android Plugin API 2.0, which provides a more robust and full-featured way to implement Android support in your plugins. We updated the `pubspec.yaml` format to make it possible to clearly specify Android and iOS support but also web, macOS, Windows, and Linux. Furthermore, as we push Flutter to support multiple platforms, we enabled federation, making it possible for multiple teams with different expertise to bring their code together into a seamless experience for the Flutter developer using the plugin. And finally, we made great strides in testing plugins, with more to come.
 
