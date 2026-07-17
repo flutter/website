@@ -142,7 +142,7 @@ Set up each iOS device on which you want to test.
     If the **Developer Mode** option is not visible
     under **Settings > Privacy & Security**, connect the device
     to your Mac, unlock it, and trust the computer.
-    Open Xcode (or run `flutter run`) to configure the device,
+    Open Xcode (or run `flutter run`) to initiate device configuration,
     which makes the option appear.
     :::
 
