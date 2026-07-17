@@ -22,18 +22,33 @@ class DefaultLayout extends PageLayout {
 
   @override
   Component buildLayout(Page page, Component child) {
-    final title = (page.data.page['title'] as String).trim();
-    final description = (page.data.page['description'] as String).trim();
+    final pageData = page.data.page;
+    final siteData = page.data.site;
+    final siteUrl = siteData['url'];
+    if (siteUrl is! String) {
+      throw Exception('Site URL not configured in site data.');
+    }
+    final siteBaseUrl = Uri.parse(siteUrl);
+
+    final title = (pageData['title'] as String).trim();
+    final description = (pageData['description'] as String).trim();
+    final pageImage = pageData['image'] as String?;
+
     if (title.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty title.');
     }
-
     if (description.isEmpty) {
       throw Exception('Page at ${page.path} can\'t have an empty description.');
     }
 
     return AsyncBuilder(
       builder: (context) async {
+        final socialPageUrl = _absoluteUrl(siteBaseUrl, page.url);
+        final socialImageUrl = _absoluteUrl(
+          siteBaseUrl,
+          pageImage ?? context.asset('/images/flutter-logo-sharing.png'),
+        );
+
         final banner = context.decodeJsonObject(
           'banner',
           BannerContent.fromJson,
@@ -48,20 +63,28 @@ class DefaultLayout extends PageLayout {
             ),
 
             meta(name: 'description', content: description),
-            const meta(name: 'twitter:card', content: 'summary_large_image'),
-            const meta(name: 'twitter:site', content: '@flutterdev'),
-            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
-              attributes: const {'property': 'og:url'},
-              content: '//flutter.dev${page.url}',
+              name: 'twitter:card',
+              content: pageImage != null ? 'summary_large_image' : 'summary',
             ),
+            const meta(name: 'twitter:site', content: '@flutterdev'),
+            meta(name: 'twitter:title', content: title),
+            meta(name: 'twitter:description', content: description),
+            if (pageImage != null)
+              meta(name: 'twitter:image', content: socialImageUrl),
+
+            meta(attributes: const {'property': 'og:title'}, content: title),
             meta(
               attributes: const {'property': 'og:description'},
               content: description,
             ),
             meta(
+              attributes: const {'property': 'og:url'},
+              content: socialPageUrl,
+            ),
+            meta(
               attributes: const {'property': 'og:image'},
-              content: context.asset('/images/flutter-logo-sharing.png'),
+              content: socialImageUrl,
             ),
 
             // Google Analytics
@@ -187,3 +210,9 @@ class DefaultLayout extends PageLayout {
     );
   }
 }
+
+/// Resolves [url] against [siteBaseUrl] to produce an absolute URL.
+///
+/// If [url] already has a scheme, it's returned unchanged.
+String _absoluteUrl(Uri siteBaseUrl, String url) =>
+    Uri.parse(url).hasScheme ? url : siteBaseUrl.resolve(url).toString();
