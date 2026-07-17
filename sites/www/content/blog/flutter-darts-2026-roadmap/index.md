@@ -2,7 +2,7 @@
 title: "Flutter & Dart’s 2026 roadmap"
 description: >-
   Transparency is a core goal of the Flutter open source project,
-  and today we’re happy to share our roadmap for the next generation of apps.
+  and today we're happy to share our roadmap for the next generation of apps.
 publishDate: 2026-02-24
 author: twerske
 image: images/1Nx4rPo-suELodUsEQqLFdQ.webp

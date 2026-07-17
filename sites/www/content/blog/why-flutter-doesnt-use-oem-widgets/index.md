@@ -1,8 +1,8 @@
 ---
 title: "Why Flutter doesn’t use OEM widgets"
 description: >-
-  A developer’s journey from skepticism to excitement for the future of non-OEM
-  widgets, and bespoke mobile design
+  A developer's journey from skepticism to excitement for
+  the future of non-OEM widgets, and bespoke mobile design
 publishDate: 2017-11-16
 author: xster
 image: images/1Tt9lpvpKa1700v74KcjcIw.webp

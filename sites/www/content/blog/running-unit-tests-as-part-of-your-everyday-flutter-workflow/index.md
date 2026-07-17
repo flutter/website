@@ -3,7 +3,7 @@ title: "Running unit tests as part of your everyday Flutter workflow"
 description: >-
   So you have gotten started with Flutter,
   have your app prototype up and running,
-  and have started thinking about how you’d test your app
+  and have started thinking about how you'd test your app
 publishDate: 2018-03-06
 author: devoncarew
 image: images/1GKGBr7v55mRKhQyOkNaFoA.webp

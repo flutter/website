@@ -1,8 +1,9 @@
 ---
 title: "Global Gamers Challenge: Top 20 Revealed!"
 description: >-
-  The Global Gamers Challenge is nearing its conclusion, and it’s time to unveil
-  the 20 projects progressing to the final round of judging.
+  The Global Gamers Challenge is nearing its conclusion,
+  and it's time to unveil the 20 projects
+  progressing to the final round of judging.
 publishDate: 2024-04-04
 author: kkboateng
 image: images/03a0UYlMSfs-7N9fq.webp

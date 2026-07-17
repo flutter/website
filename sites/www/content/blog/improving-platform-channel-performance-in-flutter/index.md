@@ -2,8 +2,8 @@
 title: "Improving Platform Channel Performance in Flutter"
 description: >-
   Over the past couple of years,
-  I’ve been interested in the problem of
-  “How do we make communication between Flutter and
+  I've been interested in the problem of
+  "How do we make communication between Flutter and
   its host platform faster and easier?"
 publishDate: 2021-06-14
 author: gaaclarke

@@ -1,7 +1,7 @@
 ---
 title: "How to float an overlay widget over a (possibly transformed) UI widget"
 description: >-
-  Say you have a widget in your app’s UI and
+  Say you have a widget in your app's UI and
   you want to overlay a floating widget on top of that widget.
 publishDate: 2020-03-02
 author: josealba

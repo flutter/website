@@ -1,7 +1,7 @@
 ---
 title: "Event Loop in Widget Tester"
 description: >-
-  Flutter’s widget tester is a great way to do unit testing on widgets.
+  Flutter's widget tester is a great way to do unit testing on widgets.
   Take a closer look at how they manage the event loop.
 publishDate: 2018-11-14
 author: mehmetf

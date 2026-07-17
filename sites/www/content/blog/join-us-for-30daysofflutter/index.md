@@ -2,8 +2,8 @@
 title: "Join us for #30DaysOfFlutter"
 description: >-
   Happy New Year folks.
-  It’s the perfect time of year to learn something new!
-  Do you have an app idea you’ve been dreaming of over the holidays?
+  It's the perfect time of year to learn something new!
+  Do you have an app idea you've been dreaming of over the holidays?
 publishDate: 2021-01-26
 author: nikkitagandhi
 image: images/1v7ytVK_8WbqA7Gc-Uol-wQ.webp

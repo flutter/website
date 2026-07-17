@@ -1,7 +1,7 @@
 ---
 title: "Google hosting Flutter Live on Dec 4 for updates on new way to build mobile apps"
 description: >-
-  Flutter Live, a celebration of Google’s new mobile app SDK,
+  Flutter Live, a celebration of Google's new mobile app SDK,
   is happening on December 4th.
 publishDate: 2018-11-15
 author: aguinis

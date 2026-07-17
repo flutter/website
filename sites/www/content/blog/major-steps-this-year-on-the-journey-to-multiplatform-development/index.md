@@ -1,8 +1,8 @@
 ---
 title: "Major steps this year on the journey to multiplatform development"
 description: >-
-  Today, we’re happy to announce two new SDK releases — Dart 3.2 and Flutter
-  3.16 — and a major refresh of the Flutter Casual Games Toolkit.
+  We're happy to announce Dart 3.2, Flutter 3.16,
+  and a major refresh of the Flutter Casual Games Toolkit.
 publishDate: 2023-11-15
 author: mit-mit
 image: images/0iomk4DoJwIXI44jX.webp

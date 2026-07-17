@@ -1,7 +1,7 @@
 ---
 title: "How to build your own Flutter slide puzzle"
 description: >-
-  By now you’ve probably read through the Flutter Puzzle Hack challenge and
+  By now you've probably read through the Flutter Puzzle Hack challenge and
   are already thinking of how to push your creativity to new limits.
 publishDate: 2022-01-20
 author: verygoodopensource

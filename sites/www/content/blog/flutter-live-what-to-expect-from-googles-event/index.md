@@ -1,8 +1,8 @@
 ---
 title: "Flutter Live — What to Expect from Google’s event"
 description: >-
-  tl;dr: Flutter Live, a celebration of Google’s new mobile app SDK, is
-  happening on December 4th. Watch it at g.co/FlutterLive.
+  Flutter Live, a celebration of Google's new mobile app SDK,
+  is happening on December 4th.
 publishDate: 2018-12-02
 author: csells
 image: images/0MhKKsmIlYcORAT-q.webp

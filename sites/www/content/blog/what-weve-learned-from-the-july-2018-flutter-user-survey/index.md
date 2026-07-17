@@ -1,8 +1,9 @@
 ---
 title: "What We’ve Learned from the July 2018 Flutter User Survey"
 description: >-
-  Flutter’s User Experience Research team recently conducted an online survey to
-  measure user satisfaction and understand user needs.
+  Flutter's User Experience Research team recently
+  conducted an online survey to measure
+  user satisfaction and understand user needs.
 publishDate: 2018-08-30
 author: jayoung-lee
 image: images/1gM8BhAAqil2B79RCarJ5-A.jpeg
