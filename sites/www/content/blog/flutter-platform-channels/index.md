@@ -39,23 +39,6 @@ And third, [**plugins**](https://flutter.io/developing-packages/) make it possib
 
 This article is an in-depth introduction to platform channels. Starting from Flutter’s messaging foundations, I’ll introduce the message/method/event channel concepts, and discuss some API design considerations. There’ll be no API listings, but short code samples for copy-paste reuse instead. A brief list of usage guidelines is provided, based on my experience contributing to the [flutter/plugins](https://github.com/flutter/plugins) GitHub repository as a member of the Flutter team. The article concludes with a list of additional resources, including links to the DartDoc/JavaDoc/ObjcDoc reference APIs.
 
-## Table of contents
-
-[**Platform channels API**](https://medium.com/p/ce7f540a104e#99ef)
-[Foundations: asynchronous, binary messaging](https://medium.com/p/ce7f540a104e#67d0)
-[Message channels: name + codec](https://medium.com/p/ce7f540a104e#5fc7)
-[Method channels: standardized envelopes](https://medium.com/p/ce7f540a104e#53af)
-[Event channels: streaming](https://medium.com/p/ce7f540a104e#03ed)
-
-[**Usage guidelines**](https://medium.com/p/ce7f540a104e#7547)
-[Prefix channel names by domain for uniqueness](https://medium.com/p/ce7f540a104e#2765)
-[Consider treating platform channels as intra-module communication](https://medium.com/p/ce7f540a104e#3615)
-[Don’t mock platform channels](https://medium.com/p/ce7f540a104e#8ab5)
-[Consider automated testing for your platform interaction](https://medium.com/p/ce7f540a104e#bc56)
-[Keep platform side ready for incoming synchronous calls](https://medium.com/p/ce7f540a104e#a3e8)
-
-[**Resources**](https://medium.com/p/ce7f540a104e#39c4)
-
 ## Platform channels API
 
 For most use cases you would probably employ *method channels* for platform communication. But since many of their properties are derived from the simpler *message channels* and from the underlying *binary messaging* foundations, I’ll start there.

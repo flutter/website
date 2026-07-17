@@ -21,22 +21,6 @@ Luckily, this is no longer the situation, thanks to the arrival of Flutter suppo
 
 Throughout the rest of this article, I’ll explore (in detail) the process of building a Flutter plugin that handles background geofencing events on both Android and iOS. Finally, just for fun, I’ll showcase how I used this [geofencing plugin](https://github.com/bkonyi/FlutterGeofencing) to create a simple application that can be used to open my garage door automatically when I get close to home.
 
-## Table of Contents
-
-* [Geofencing: defining the Dart API](https://medium.com/p/2b3e40a1a124#56b7)
-
-* [Dart background execution](https://medium.com/p/2b3e40a1a124#155c)
-
-* [Background execution: Android (Kotlin)](https://medium.com/p/2b3e40a1a124#1b99)
-
-* [Background execution: iOS (Objective-C)](https://medium.com/p/2b3e40a1a124#5979)
-
-* [Usage example: operating a garage door with geofencing](https://medium.com/p/2b3e40a1a124#6db8)
-
-* [Conclusion](https://medium.com/p/2b3e40a1a124#3d77)
-
-* [Resources](https://medium.com/p/2b3e40a1a124#2bc9)
-
 ## Geofencing: defining the Dart API
 
 Before writing any platform-specific code, I’ll first need to define the Dart API for the geofencing plugin. Since [Android](https://developer.android.com/training/location/geofencing) and [iOS](https://developer.apple.com/documentation/corelocation/monitoring_the_user_s_proximity_to_geographic_regions?language=objc) each have their own APIs for registering and handling geofencing events, I want the Dart interface to provide a reasonable geofencing abstraction that is compatible with both platforms. Without going into too much detail about Android and iOS APIs, the following roughly describes the Dart interface that I’ll use for my plugin:
