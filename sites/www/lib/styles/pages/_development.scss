@@ -90,6 +90,21 @@ body.development {
       }
     }
 
+    .use-cases-note {
+      margin-top: 2.5rem;
+      font-size: var(--font-size-heading-4);
+      line-height: 1.6;
+
+      a {
+        color: var(--blue-6);
+        text-decoration: underline;
+
+        &:hover {
+          color: var(--blue-7);
+        }
+      }
+    }
+
     .cta-insert {
       h4 {
         color: white;

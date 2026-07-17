@@ -22,7 +22,7 @@ class WebPage extends StatelessComponent {
       HeroSection(
         title: 'Pixel-Perfect Web Applications',
         text:
-            'Bring your native mobile experience to the browser. '
+            'Bring your native app experience to the browser. '
             'Powered by WebAssembly for stable, 60fps performance. '
             'Best for SPAs, PWAs, and complex web tools.',
         media: img(
@@ -35,7 +35,7 @@ class WebPage extends StatelessComponent {
           FeatureColumn(
             title: 'Same code',
             description:
-                'Almost all of your code — your Dart business logic and your Flutter widgets — '
+                'Your code — your Dart business logic and your Flutter widgets — '
                 'works identically across mobile, desktop, and the web, eliminating duplicate work.',
             image: context.asset('images/all-one-codebase.png'),
           ),
@@ -62,67 +62,71 @@ class WebPage extends StatelessComponent {
           div(classes: 'container', [
             div(classes: 'use-cases-grid', [
               div(classes: 'use-case-col ideal', [
-                h4([.text('Ideal Use Cases ✅')]),
+                h4([.text('Ideal use cases ✅')]),
                 ul([
                   li([
                     .text(
-                      'Progressive Web Apps (PWAs) and Single Page Apps (SPAs)',
+                      'Progressive Web Apps (PWAs) and single-page apps (SPAs).',
                     ),
                   ]),
                   li([
                     .text(
-                      'Code Sharing: Reusing UI and logic between mobile, desktop, and web apps',
+                      'Code sharing: Reusing UI and logic between mobile, desktop, and web apps.',
                     ),
                   ]),
                   li([
                     .text(
-                      'Rich Application UIs: Productivity, creative, or specialized business tools (for example, ',
+                      'Rich application UIs: Productivity, creative, or specialized business tools (for example, ',
                     ),
                     a(
                       href: 'https://docs.flutter.dev/tools/devtools',
                       [.text('Dart & Flutter DevTools')],
                     ),
-                    .text(')'),
+                    .text(').'),
                   ]),
                   li([
                     .text(
-                      'Highly Interactive Canvas Apps: Complex dashboards, games, or visualization tools',
+                      'Highly interactive canvas apps: Complex dashboards, games, or visualization tools.',
                     ),
                   ]),
                 ]),
               ]),
               div(classes: 'use-case-col less-ideal', [
-                h4([.text('Less Ideal Use Cases ⚠️')]),
+                h4([.text('Less ideal use cases ⚠️')]),
                 ul([
                   li([
                     .text(
-                      'SEO-Heavy Sites: Static blogs, documentation, or public marketing pages',
+                      'SEO-heavy sites: Static blogs, documentation, or public marketing pages.',
                     ),
                   ]),
                   li([
                     .text(
-                      'Simple Static Web Pages: Simple landing pages or sites with minimal interaction',
+                      'Simple static web pages: Simple landing pages or sites with minimal interaction.',
                     ),
                   ]),
                   li([
                     .text(
-                      'Heavy Text Selection: Pages where standard DOM-based text-selection and reader mode are critical',
+                      'Heavy text selection: Pages where standard DOM-based text-selection and reader mode are critical.',
                     ),
-                  ]),
-                  li([
-                    .text(
-                      'Alternative Option: If you want to build a traditional SEO-friendly page with Dart, consider ',
-                    ),
-                    a(href: 'https://jaspr.site/', [.text('Jaspr')]),
-                    .text(' (which powers '),
-                    a(href: 'https://dart.dev', [.text('dart.dev')]),
-                    .text(', '),
-                    a(href: 'https://flutter.dev', [.text('flutter.dev')]),
-                    .text(', and '),
-                    a(href: 'https://pub.dev', [.text('pub.dev')]),
-                    .text(').'),
                   ]),
                 ]),
+              ]),
+            ]),
+            div(classes: 'use-cases-note', [
+              p([
+                .text(
+                  'Building content-centric or SEO-heavy sites? Consider ',
+                ),
+                a(href: 'https://jaspr.site/', [.text('Jaspr')]),
+                .text(' (which powers '),
+                a(href: 'https://dart.dev', [.text('dart.dev')]),
+                .text(', '),
+                a(href: 'https://flutter.dev', [.text('flutter.dev')]),
+                .text(', and '),
+                a(href: 'https://pub.dev', [.text('pub.dev')]),
+                .text(
+                  ') or combining Jaspr with Flutter Web for a hybrid experience.',
+                ),
               ]),
             ]),
           ]),
