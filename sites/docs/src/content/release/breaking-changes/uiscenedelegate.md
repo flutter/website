@@ -907,8 +907,11 @@ migrate it to UIKit's scene-based lifecycle as follows:
 
     {:.table}
 
-    Instead of accessing these APIs,
-    access the `windowScene` through the `viewController`,
+    Because `UIApplication.shared.delegate.window` is `nil`
+    after adopting `UIScene`,
+    you should access the `viewController`
+    via the plugin registrar's `viewController` property
+    and retrieve the window or `windowScene` from there,
     as shown in the following examples.
 
     <Tabs key="ios-language-switcher">
