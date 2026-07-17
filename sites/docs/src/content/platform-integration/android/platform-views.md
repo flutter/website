@@ -67,6 +67,7 @@ It is currently available as an opt-in feature.
 * **Android API 34 or later**: Required for native transaction
   synchronization capabilities.
 * **Vulkan rendering**: The device must be capable of rendering with Vulkan.
+  Required for Impeller to be enabled.
 
 If these requirements are not met on the end-user device,
 Flutter will automatically fall back to the existing platform view strategy
